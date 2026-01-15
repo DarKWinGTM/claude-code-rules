@@ -27,6 +27,84 @@ This guide helps you plan output handling BEFORE executing commands to prevent t
 
 ---
 
+## ⚠️ Heredoc & Multi-Language Patterns (CRITICAL)
+
+`$$` expansion depends on **how the heredoc delimiter is quoted**:
+
+### Heredoc Quoting Rules
+
+| Pattern | `$$` Expansion | Example |
+|---------|----------------|---------|
+| `<<DELIM` (unquoted) | ✅ Expanded by bash | `python <<PY > /tmp/claude-$$-out.txt` |
+| `<<'DELIM'` (single-quoted) | ❌ **NOT expanded** | `python <<'PY' > /tmp/claude-$$-out.txt` |
+| `<<"DELIM"` (double-quoted) | ❌ **NOT expanded** | `python <<"PY" > /tmp/claude-$$-out.txt` |
+
+### ✅ Correct Heredoc Patterns
+
+```bash
+# Option 1: Unquoted delimiter (allows $$ expansion)
+python <<PY > /tmp/claude-$$-output.txt 2>&1
+print("hello")
+PY
+
+# Option 2: Use bash variable before heredoc
+OUTPUT_FILE="/tmp/claude-$$-output.txt"
+python <<'PY' > "$OUTPUT_FILE" 2>&1
+print("hello")
+PY
+
+# Option 3: Inline Python with -c flag
+python3 -c "
+import os
+output_file = f'/tmp/claude-{os.getpid()}-output.txt'
+# ... your code ...
+" > /tmp/claude-$$-output.txt 2>&1
+```
+
+### ❌ Wrong Heredoc Patterns
+
+```bash
+# WRONG: Quoted delimiter prevents $$ expansion
+python <<'PY' > /tmp/claude-$$-output.txt 2>&1
+# $$ will be literal "$$" not the PID!
+PY
+```
+
+### Multi-Language Session Isolation
+
+| Language | Session-Isolated Pattern |
+|----------|-------------------------|
+| **Bash** | `/tmp/claude-$$-output.txt` |
+| **Python** | `f'/tmp/claude-{os.getpid()}-output.txt'` |
+| **Node.js** | `` `/tmp/claude-${process.pid}-output.txt` `` |
+| **Ruby** | `"/tmp/claude-#{Process.pid}-output.txt"` |
+| **Perl** | `"/tmp/claude-$$-output.txt"` (works in Perl) |
+
+### 🎯 Best Practice: Use Read Tool When Possible
+
+For **reading files**, prefer the **Read tool** over bash/heredoc:
+
+```text
+✅ PREFERRED: Use Read tool directly
+   Read tool with offset/limit parameters
+
+❌ AVOID: Complex heredoc for file reading
+   python <<'PY' > /tmp/output.txt
+   # reading file with Python...
+   PY
+```
+
+**When to use each approach:**
+
+| Task | Recommended Approach |
+|------|---------------------|
+| Read specific lines from file | **Read tool** with offset/limit |
+| Search in files | **Grep tool** or Read tool |
+| Transform/process data | Bash with `$$` or Python with `os.getpid()` |
+| Run system commands | Bash with `$$` redirect |
+
+---
+
 ## 💡 The Golden Rule: Evaluate → Plan → Execute
 
 Before running any command, perform a quick **internal evaluation** to plan output handling:
@@ -266,6 +344,7 @@ RECOMMENDED PRACTICES
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 3.2 | 2026-01-15 | Added Heredoc & Multi-Language patterns section |
 | 3.1 | 2026-01-15 | Added session isolation with `$$` (PID) |
 | 3.0 | 2026-01-14 | Redesigned as Plan-Based Guide |
 | | | Focus on guidance, not restriction |
