@@ -364,8 +364,117 @@ paths:
 
 ---
 
-## 10. Version
+## 10. Image Generation Prompts
+
+### 10.1 Purpose
+
+Prompts สำหรับสร้างภาพ visualization ของ Claude Code Rules System ทั้งหมดใน 1 ภาพ
+ออกแบบโดย A-PIRO (Automatic Prompt Intent Recognition Optimization)
+
+### 10.2 Prompts (10 Concepts)
+
+---
+
+#### Prompt 1: The Citadel of Logic (Architectural)
+
+**Concept:** ป้อมปราการหลายชั้นที่แต่ละชั้นแทน rule hierarchy
+
+> A grand isometric architectural cross-section of a futuristic "Citadel of Logic." The foundation is made of 3 massive, unshakeable obsidian pillars (Truth & Accuracy). Above them, a shimmering crystalline wall (Output Safety) protects the interior. The middle tier features 4 soaring towers (User Control), and the topmost spire is a glowing beacon of pure light (Quality). 11 distinct glowing glyphs are etched into the stone throughout the structure. Cinematic lighting, hyper-realistic, 8k, architectural render, Unreal Engine 5 style, cyan and gold accents.
+
+---
+
+#### Prompt 2: The World Tree of Governance (Organic)
+
+**Concept:** ต้นไม้แห่งชีวิตที่รากคือ Truth และกิ่งก้านคือ Execution
+
+> A bioluminescent "World Tree of Code" in a void. 3 deep, glowing roots (Accuracy) anchor the tree into a bed of crystalline data. The trunk is wrapped in a protective mesh of silver light (Safety). 11 primary branches extend outward, each bearing a unique glowing fruit. At the very center of the trunk, a human handprint glows with golden light, representing "User Authority." Organic circuitry, ethereal atmosphere, macro photography style, neon veins, soft bokeh, intricate detail, Midjourney v6 aesthetic.
+
+---
+
+#### Prompt 3: The Governance Orrery (Mechanical)
+
+**Concept:** นาฬิกาดาราศาสตร์ที่แต่ละ rule คือเฟืองที่ต้องทำงานร่วมกัน
+
+> A complex, golden steampunk orrery (astronomical clock) floating in a dark library. 11 intricate gears of varying sizes are interlocked in a perfect vertical hierarchy. The 3 largest gears at the bottom are made of heavy iron (Truth). The middle gears are brass with safety-gate mechanisms. The central axle is a diamond spindle controlled by a human-operated lever. Cinematic shadows, polished metal reflections, "Golden Ratio" composition, macro detail, 8k, photorealistic, intricate engravings on the gears.
+
+---
+
+#### Prompt 4: The Geometric Core (Abstract)
+
+**Concept:** รูปทรงเรขาคณิต 3D ซ้อนกันแทน Safety Boundaries และ Quality Layers
+
+> An abstract 3D visualization of an AI mind. At the center is a solid, glowing white cube (The Truth Core). Surrounding it is a translucent blue sphere (The Safety Field). Encircling the sphere is a complex, rotating golden icosahedron (The Quality Layer). 11 rays of light emanate from the center, piercing through all layers. Minimalist, high-end 3D motion graphics style, Ray-traced glass, soft global illumination, clean white background, Apple-style aesthetic, depth of field.
+
+---
+
+#### Prompt 5: The Constellation of Law (Symbolic)
+
+**Concept:** 11 ดวงดาวสร้างเป็นกลุ่มดาว Shield/Compass บนท้องฟ้า
+
+> A cosmic view of a massive constellation in a deep purple nebula. 11 brilliant pulsars are connected by lines of white light, forming the shape of a celestial shield. The 3 brightest stars at the base represent the "Foundation of Truth." At the center of the shield, a golden nebula takes the shape of a compass needle pointing upward. Starry night, cinematic space art, nebula clouds, glowing light-links, ethereal, epic scale, Hubble telescope aesthetic.
+
+---
+
+#### Prompt 6: The Zen Garden of Verification (Environmental)
+
+**Concept:** สวนเซนสมดุลที่ทุกองค์ประกอบมีที่ทางและจุดประสงค์
+
+> A futuristic Zen garden inside a glass dome on a distant planet. 11 perfectly balanced stones are arranged in a vertical stack on a foundation of white raked sand (representing Flow Diagrams). A clear stream (Verification) flows around the base. A single wooden bridge (User Path) leads to the center. The lighting is calm and blue. Photorealistic, serene atmosphere, high-contrast, Japanese minimalist architecture, soft morning light, 8k.
+
+---
+
+#### Prompt 7: The 11 Wardens of the Code (Character-Based)
+
+**Concept:** 11 ผู้พิทักษ์ยืนเป็นวงกลมปกป้องแหล่งพลังงานกลาง
+
+> 11 hooded cybernetic guardians standing in a circle within a high-tech cathedral. Each warden holds a different symbolic tool (a shield, a lens, a compass, a scroll). The 3 "Truth Wardens" wear white robes at the base of a staircase. The "Safety Wardens" stand on the perimeter. At the center of the circle, a human figure sits on a throne of light, directing them. Cyberpunk-monastic style, dramatic "Chiaroscuro" lighting, foggy atmosphere, intricate armor detail, digital art, ArtStation style.
+
+---
+
+#### Prompt 8: The Digital Blueprint (Data Visualization)
+
+**Concept:** 3D holographic infographic แสดง "Operating Manual" ของระบบ
+
+> A 3D holographic blueprint of an AI operating system. The image shows a vertical stack of 11 glowing transparent panels. Each panel contains schematics, code snippets, and icons. The bottom 3 panels are labeled "ACCURACY" in bold, glowing text. The top panel is labeled "USER CONTROL." Isometric view, HUD interface elements, cyan and amber color palette, "Iron Man" lab aesthetic, complex data overlays, shallow depth of field.
+
+---
+
+#### Prompt 9: The Neural Command Center (Futuristic/Tech)
+
+**Concept:** โครงสร้างคล้ายสมองที่มี Safety Firewall และ Execution Nodes
+
+> A futuristic "Neural Command Center" inside a computer core. A glowing brain-like node is encased in 3 concentric rings of protective energy (Safety & Quality). 11 data-streams (The Rules) flow from a central console operated by a human silhouette. The environment is dark with glowing fiber-optic cables. Tron-legacy aesthetic, high-speed light trails, volumetric lighting, tech-noir, detailed circuit patterns.
+
+---
+
+#### Prompt 10: The Alchemical Synthesis (Artistic/Conceptual)
+
+**Concept:** ภาพ surreal แสดงการเปลี่ยน Data เป็น Truth
+
+> A surrealist painting of a giant glass hourglass held by two mechanical hands. Inside, instead of sand, 11 different colored liquids are layering perfectly without mixing. The bottom layer is a heavy, golden liquid (Truth). The middle layers are clear and protective. The top is a vibrant, swirling violet. Each layer has a floating symbol inside it. Salvador Dali meets Syd Mead, vivid colors, dream-like, conceptual art, oil painting texture, masterpiece.
+
+---
+
+### 10.3 Usage Guidelines
+
+| Prompt | Best For | Style |
+|--------|----------|-------|
+| 1. Citadel | Technical documentation | Architectural, isometric |
+| 2. World Tree | Organic/natural presentation | Bioluminescent, ethereal |
+| 3. Orrery | Precision/engineering focus | Steampunk, mechanical |
+| 4. Geometric | Minimalist/modern design | Abstract, Apple-style |
+| 5. Constellation | Inspirational/cosmic theme | Space art, epic |
+| 6. Zen Garden | Balance/harmony theme | Japanese, serene |
+| 7. Wardens | Team/guardian narrative | Cyberpunk, dramatic |
+| 8. Blueprint | Technical/HUD interface | Holographic, Iron Man |
+| 9. Neural | AI/brain metaphor | Tron, tech-noir |
+| 10. Alchemical | Artistic/philosophical | Surrealist, conceptual |
+
+---
+
+## 11. Version
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 1.1 | 2026-01-16 | เพิ่ม Image Generation Prompts (10 concepts) |
 | 1.0 | 2026-01-16 | Initial master design with 11 rules |
