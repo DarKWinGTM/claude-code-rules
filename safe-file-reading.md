@@ -8,6 +8,23 @@ This guide helps you plan file reading to ensure smooth, responsive sessions. Th
 
 ---
 
+## 🔒 Output Limits (Universal)
+
+**ไม่ว่าจะใช้วิธีใดในการอ่าน output ต้องไม่เกินค่าเหล่านี้:**
+
+| Constant | Value | Purpose |
+|----------|-------|---------|
+| MAX_OUTPUT_CHARS | 5000 | Hard limit ทุกกรณี |
+| MAX_OUTPUT_LINES | 100 | Soft limit (ถ้า chars OK) |
+| RISKY_FILE_CHARS | 3000 | .min.js, .html, .json, .svg |
+| PREVIEW_CHARS | 2000 | Quick preview / unknown files |
+
+**Applies to:** CLI commands, Read tool, Grep tool, Redirect patterns, Programming languages
+
+**Why?** `head -100` alone is NOT safe - one line can contain 500KB+ (base64, minified JS)
+
+---
+
 ## 💡 The Golden Rule: Evaluate Before Read
 
 Before reading any file, perform a quick **internal evaluation** to plan the best reading approach:
@@ -115,51 +132,87 @@ grep -n "export\|function\|class" /path/to/file.js | head -30
 
 ## 📋 Reading Methods Reference
 
-### Read Tool (Best for normal files)
-- Use for files < 256KB with many lines
-- Supports offset/limit for partial reading
-- Best for source code files
+### Universal Pattern (Apply to ALL methods)
 
-### head Command (Best for large/unknown files)
 ```bash
-head -c 2000 <file>     # First 2000 bytes
-head -100 <file>        # First 100 lines
-head -c 4000 <file> | fold -w 80  # With line wrapping
+# ALWAYS add character limit to prevent flooding
+<any-command> | head -c 5000
 ```
 
-### grep Command (Best for searching)
+### Claude Tools (Built-in limits)
+
+| Tool | Safe Pattern | Notes |
+|------|-------------|-------|
+| **Read** | `limit: 200` | ~5000 chars, use offset for large files |
+| **Grep** | `head_limit: 100` | Always review result size |
+| **Glob** | No limit needed | Results are file paths only |
+
+### CLI Commands (Must add character limit)
+
+| Command | ❌ Unsafe | ✅ Safe Pattern |
+|---------|----------|----------------|
+| head | `head -100` | `head -100 \| head -c 5000` |
+| tail | `tail -100` | `tail -100 \| head -c 5000` |
+| grep | `grep pattern` | `grep pattern \| head -c 5000` |
+| cat | `cat file` | ❌ ห้ามใช้ → `head -c 5000` แทน |
+| less/more | interactive | ❌ ห้ามใช้ → `head -c 5000` แทน |
+
+### Risky Files (Use character-first)
+
 ```bash
-grep -n "pattern" <file> | head -20      # Search with line numbers
-grep -n -C 3 "pattern" <file> | head -50 # With context
+# For .min.js, .html, .json, .svg, base64 content
+head -c 3000 <file>     # Character limit FIRST
+
+# NOT: head -100 <file>  ← One line can be 500KB!
 ```
 
-### tail Command (Best for logs)
+### Redirect Pattern (Unknown output)
+
 ```bash
-tail -100 <file>        # Last 100 lines
-tail -c 2000 <file>     # Last 2000 bytes
+# Step 1: Redirect to file
+<command> > /tmp/claude-$$-output.txt 2>&1
+
+# Step 2: Check size
+wc -c /tmp/claude-$$-output.txt
+
+# Step 3: Safe read with character limit
+head -c 5000 /tmp/claude-$$-output.txt
 ```
+
+### Programming Languages
+
+| Language | Safe Pattern |
+|----------|-------------|
+| Python | `content[:5000]` or `file.read(5000)` |
+| Node.js | `content.substring(0, 5000)` |
+| Bash | `${var:0:5000}` |
 
 ---
 
 ## ✅ Best Practices Summary
 
+### Universal Rule:
+**ทุกวิธีอ่าน → output ≤ 5000 chars**
+
 ### Before Reading:
 1. **Quick check** - `ls -lh && wc -l`
 2. **Choose method** - Based on size/type
-3. **Read efficiently** - Use appropriate tool
+3. **Add character limit** - `| head -c 5000` or Read tool limit
+4. **Read efficiently** - Use appropriate tool
 
-### Efficient Reading Tips:
-- Small files (< 50KB, many lines) → Read tool
-- Large files (> 256KB) → `head -c 2000`
-- Minified files (few lines, large size) → `head -c 2000`
-- Searching specific content → `grep` with `head`
-- Log files → `tail` for recent entries
+### Method Selection:
+- **Small files** (< 50KB, many lines) → Read tool with limit
+- **Large files** (> 256KB) → `head -c 3000`
+- **Minified files** (few lines, large size) → `head -c 3000`
+- **Searching specific content** → `grep | head -c 5000`
+- **Log files** → `tail -100 | head -c 5000`
+- **Unknown files** → `head -c 2000` (preview first)
 
-### Why Check Size?
-- Ensures responsive session
-- Helps choose optimal reading method
-- Prevents unnecessary large reads
-- Maintains smooth workflow
+### Why Character Limits?
+- `head -100` can still output 500KB+ if lines are long
+- Minified JS/CSS = entire file on 1 line
+- Base64 images = massive single line
+- Character limit = guaranteed safe output
 
 ---
 
@@ -180,23 +233,35 @@ grep -n "search_term" <file> | head -20
 ## ⚡ Quick Reference
 
 ```text
-PLAN BEFORE READ
+UNIVERSAL OUTPUT LIMIT (UOLF)
 
-Step 1: Check size
-  ls -lh <file> && wc -l <file>
+ทุกวิธีอ่าน → output ≤ 5000 chars
 
-Step 2: Choose method
-  - Small file, many lines → Read tool
-  - Large file → head -c 2000
-  - Searching → grep | head
+CONSTANTS
+  MAX_OUTPUT_CHARS = 5000 (hard limit)
+  MAX_OUTPUT_LINES = 100 (soft limit)
+  RISKY_FILE_CHARS = 3000
+  PREVIEW_CHARS = 2000
 
-RECOMMENDED PRACTICES
+SAFE PATTERNS
 
-- Check file size before reading
-- Use Read tool for normal source files
-- Use head -c for large/minified files
-- Use grep for searching specific content
-- Use tail for log files
+CLI Commands:
+  head -100 file | head -c 5000    # Double limit
+  tail -100 file | head -c 5000    # Double limit
+  grep pattern file | head -c 5000 # Search + limit
+  head -c 3000 file                # Risky files
+
+Claude Tools:
+  Read tool: limit: 200
+  Grep tool: head_limit: 100
+
+Redirect:
+  cmd > /tmp/file && head -c 5000 /tmp/file
+
+RISKY FILES (use head -c 3000)
+  .min.js, .min.css, .bundle.js
+  .html, .svg, .json (unknown)
+  base64 content, dist/*, build/*
 ```
 
 ---
@@ -205,5 +270,8 @@ RECOMMENDED PRACTICES
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 4.0 | 2026-01-16 | Added UOLF (Universal Output Limit Framework) |
+| | | Added character limits for all reading methods |
+| | | Added CLI, Claude Tools, Programming patterns |
 | 3.0 | 2026-01-14 | Redesigned as Plan-Based Guide |
 | | | Focus on guidance, not restriction |
