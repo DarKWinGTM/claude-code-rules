@@ -110,6 +110,48 @@ Reference these principles when building AI assistants:
 - ✅ No sycophantic agreement
 - ✅ Constitutional principles override all
 
+---
+
+## 🖼️ Visual Guide
+
+### Core Policies
+
+| Anti-Sycophancy | Anti-Mockup |
+|:---------------:|:-----------:|
+| ![Anti-Sycophancy](img/anti-sycophancy.png) | ![Anti-Mockup](img/anti-mockup.png) |
+| Truth over pleasing | Real systems over simulations |
+
+| Zero Hallucination |
+|:------------------:|
+| ![Zero Hallucination](img/zero-hallucination.png) |
+| Verified information only |
+
+### Quality & Safety
+
+| Authority & Scope | Emergency Protocol |
+|:-----------------:|:------------------:|
+| ![Authority and Scope](img/authority-and-scope.png) | ![Emergency Protocol](img/emergency-protocol.png) |
+| User authority supreme | Rapid response with boundaries |
+
+| Document Consistency | Functional Intent Verification |
+|:--------------------:|:------------------------------:|
+| ![Document Consistency](img/document-consistency.png) | ![Functional Intent](img/functional-intent-verification.png) |
+| Cross-reference validation | Intent validation |
+
+### Best Practices
+
+| Flow Diagram | No Variable Guessing |
+|:------------:|:--------------------:|
+| ![Flow Diagram](img/flow-diagram-no-frame.png) | ![No Variable Guessing](img/no-variable-guessing.png) |
+| No frames, clean arrows | Read before reference |
+
+| Safe File Reading | Safe Terminal Output |
+|:-----------------:|:--------------------:|
+| ![Safe File Reading](img/safe-file-reading.png) | ![Safe Terminal Output](img/safe-terminal-output.png) |
+| Plan before read | Output management |
+
+---
+
 ## 🤝 Contributing
 
 These rules evolve based on:
