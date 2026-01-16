@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/anti-sycophancy.png" alt="Claude Code Rules" width="600">
+  <img src="img/repo-banner.png" alt="Claude Code Rules" width="700">
 </p>
 
 <h1 align="center">🏛️ Claude Code Rules & Framework</h1>
