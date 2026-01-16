@@ -364,14 +364,80 @@ paths:
 
 ---
 
-## 10. Image Generation Prompts
+## 10. Version
 
-### 10.1 Purpose
+| Version | Date | Notes |
+|---------|------|-------|
+| 1.1 | 2026-01-16 | เพิ่ม Image Generation Prompts (10 concepts) |
+| 1.2 | 2026-01-16 | สร้าง image-prompts.md (110 prompts) และ generate 11 ภาพ |
+| 1.0 | 2026-01-16 | Initial master design with 11 rules |
 
-Prompts สำหรับสร้างภาพ visualization ของ Claude Code Rules System ทั้งหมดใน 1 ภาพ
+---
+
+## Appendix A: Image Generation Framework
+
+### A.1 Purpose
+
+Framework สำหรับสร้างภาพประกอบของ Claude Code Rules System
 ออกแบบโดย A-PIRO (Automatic Prompt Intent Recognition Optimization)
 
-### 10.2 Prompts (10 Concepts)
+### A.2 Architecture
+
+**โครงสร้างการสร้างภาพ:**
+
+```
+Claude Code Rules System Images
+  │
+  ├─ Master System (10 prompts)
+  │   └─ ภาพรวมของ Rules ทั้ง 11 rules ใน 1 ภาพ
+  │   └─ Context: design.md (master design)
+  │
+  └─ Per-Rule Images (11 rules × 10 prompts = 110 prompts)
+      ├─ anti-mockup (10 prompts) → Context: anti-mockup.md
+      ├─ anti-sycophancy (10 prompts) → Context: anti-sycophancy.md
+      ├─ authority-and-scope (10 prompts) → Context: authority-and-scope.md
+      ├─ document-consistency (10 prompts) → Context: document-consistency.md
+      ├─ emergency-protocol (10 prompts) → Context: emergency-protocol.md
+      ├─ flow-diagram-no-frame (10 prompts) → Context: flow-diagram-no-frame.md
+      ├─ functional-intent-verification (10 prompts) → Context: functional-intent-verification.md
+      ├─ no-variable-guessing (10 prompts) → Context: no-variable-guessing.md
+      ├─ safe-file-reading (10 prompts) → Context: safe-file-reading.md
+      ├─ safe-terminal-output (10 prompts) → Context: safe-terminal-output.md
+      └─ zero-hallucination (10 prompts) → Context: zero-hallucination.md
+```
+
+### A.3 Generation Command
+
+```bash
+# สำหรับ Master System Image (ภาพรวมทั้งระบบ)
+python image_gen.py "<prompt>" --doc design.md --aspect-ratio 16:9 --image-size 2K
+
+# สำหรับ Per-Rule Image (ภาพประกอบแต่ละ rule)
+python image_gen.py "<prompt>" --doc <rule-name>.md --aspect-ratio 16:9 --image-size 2K
+```
+
+| Setting | Value | Reason |
+|---------|-------|--------|
+| Aspect Ratio | 16:9 | Widescreen format สำหรับ presentation |
+| Image Size | 2K | High resolution สำหรับ documentation |
+| Context Doc | `<rule>.md` | ให้ AI เข้าใจ context ของ rule นั้นๆ |
+
+### A.4 10 Visual Styles (ใช้ได้กับทุก rule)
+
+| # | Style Name | Concept | Best For |
+|---|------------|---------|----------|
+| 1 | Citadel | Architectural fortress | Technical documentation |
+| 2 | World Tree | Organic bioluminescent tree | Natural presentation |
+| 3 | Orrery | Steampunk mechanical clock | Precision/engineering |
+| 4 | Geometric | Abstract 3D shapes | Minimalist/modern |
+| 5 | Constellation | Cosmic star patterns | Inspirational/cosmic |
+| 6 | Zen Garden | Japanese balanced garden | Balance/harmony |
+| 7 | Wardens | Cyberpunk guardians | Team/guardian narrative |
+| 8 | Blueprint | Holographic HUD interface | Technical/HUD |
+| 9 | Neural | Brain-like command center | AI/brain metaphor |
+| 10 | Alchemical | Surrealist transformation | Artistic/philosophical |
+
+### A.5 Master System Prompts (10 prompts สำหรับภาพรวม)
 
 ---
 
@@ -455,26 +521,47 @@ Prompts สำหรับสร้างภาพ visualization ของ Claud
 
 ---
 
-### 10.3 Usage Guidelines
+### A.6 Per-Rule Prompts (110 Prompts)
 
-| Prompt | Best For | Style |
-|--------|----------|-------|
-| 1. Citadel | Technical documentation | Architectural, isometric |
-| 2. World Tree | Organic/natural presentation | Bioluminescent, ethereal |
-| 3. Orrery | Precision/engineering focus | Steampunk, mechanical |
-| 4. Geometric | Minimalist/modern design | Abstract, Apple-style |
-| 5. Constellation | Inspirational/cosmic theme | Space art, epic |
-| 6. Zen Garden | Balance/harmony theme | Japanese, serene |
-| 7. Wardens | Team/guardian narrative | Cyberpunk, dramatic |
-| 8. Blueprint | Technical/HUD interface | Holographic, Iron Man |
-| 9. Neural | AI/brain metaphor | Tron, tech-noir |
-| 10. Alchemical | Artistic/philosophical | Surrealist, conceptual |
+**Prompt Reference:** ดู prompts ทั้งหมดได้ที่ `image-prompts.md`
+
+| Rule | Context File | 10 Styles Available |
+|------|--------------|---------------------|
+| anti-mockup | anti-mockup.md | Citadel, World Tree, Orrery, Geometric, Constellation, Zen Garden, Wardens, Blueprint, Neural, Alchemical |
+| anti-sycophancy | anti-sycophancy.md | (same 10 styles) |
+| authority-and-scope | authority-and-scope.md | (same 10 styles) |
+| document-consistency | document-consistency.md | (same 10 styles) |
+| emergency-protocol | emergency-protocol.md | (same 10 styles) |
+| flow-diagram-no-frame | flow-diagram-no-frame.md | (same 10 styles) |
+| functional-intent-verification | functional-intent-verification.md | (same 10 styles) |
+| no-variable-guessing | no-variable-guessing.md | (same 10 styles) |
+| safe-file-reading | safe-file-reading.md | (same 10 styles) |
+| safe-terminal-output | safe-terminal-output.md | (same 10 styles) |
+| zero-hallucination | zero-hallucination.md | (same 10 styles) |
 
 ---
 
-## 11. Version
+### A.7 Generated Images (2026-01-16)
 
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.1 | 2026-01-16 | เพิ่ม Image Generation Prompts (10 concepts) |
-| 1.0 | 2026-01-16 | Initial master design with 11 rules |
+ภาพประกอบที่ถูก generate สำหรับแต่ละ Rule (1 ภาพต่อ Rule จาก 10 styles):
+
+| # | Rule | Style Selected | Generated Image |
+|---|------|----------------|-----------------|
+| 1 | anti-mockup | Blueprint | image_20260116_052133_0.png |
+| 2 | anti-sycophancy | Wardens | image_20260116_054448_0.png |
+| 3 | authority-and-scope | Citadel | image_20260116_054559_0.png |
+| 4 | document-consistency | Orrery | image_20260116_054716_0.png |
+| 5 | emergency-protocol | Wardens | image_20260116_054819_0.png |
+| 6 | flow-diagram-no-frame | Constellation | image_20260116_054954_0.png |
+| 7 | functional-intent-verification | Neural | image_20260116_055059_0.png |
+| 8 | no-variable-guessing | Alchemical | image_20260116_055202_0.png |
+| 9 | safe-file-reading | Geometric | image_20260116_055318_0.png |
+| 10 | safe-terminal-output | Wardens | image_20260116_055424_0.png |
+| 11 | zero-hallucination | Neural | image_20260116_055539_0.png |
+
+**Image Location:** `/home/node/workplace/AWCLOUD/CLAUDE/claude-code-image-generator/generated_images/`
+
+**Settings Used:**
+- Aspect Ratio: 16:9
+- Image Size: 2K
+- Model: gemini-3-pro-image-preview
