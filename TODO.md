@@ -18,7 +18,7 @@
 - [x] **Session ID enforcement** - Real UUID from environment, no placeholders
 
 ### Document Design Control System
-- [x] **Create document-design-control.md v1.0** - Standards for design document structure
+- [x] **Create design/document-design-control.design.md v1.0** - Design specification for standards
 - [x] **Define file naming** - `.design.md` suffix for design documents
 - [x] **Define location standards** - `./design/` subdirectory for all design files
 - [x] **Document Control section** - Standard header format with version and session
@@ -27,6 +27,7 @@
 - [x] **TODO/task integration** - Checkbox format with status tracking
 - [x] **Cross-reference standards** - `[file.md#section]` and `[file.md#Lxx]` formats
 - [x] **Quality metrics** - Compliance checklists and standards
+- [x] **Fix violation** - Removed rules file created without proper design specification
 
 ### GitHub & Local Deployment
 - [x] **Review file changes** - Verify all changes before push

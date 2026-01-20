@@ -181,7 +181,6 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
-| [`document-design-control.md`](document-design-control.md) | Design document standards | Consistent structure |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 
