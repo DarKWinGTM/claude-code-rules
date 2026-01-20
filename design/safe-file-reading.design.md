@@ -4,16 +4,6 @@
 
 ---
 
-## Changelog
-
-| Date | Change |
-|------|--------|
-| 2026-01-16 | สร้าง design document สำหรับ Safe File Reading Guide |
-| 2026-01-16 | Added UOLF (Universal Output Limit Framework) v4.0 |
-| 2026-01-14 | Redesigned as Plan-Based Guide v3.0 |
-
----
-
 ## 1. Overview
 
 ### 1.1 Purpose
@@ -232,10 +222,16 @@ RISKY FILES (use head -c 3000)
 
 ---
 
-## 10. Version
+## 10. Version History (Unified)
 
-| Version | Date | Notes |
-|---------|------|-------|
-| 4.0 | 2026-01-16 | Added UOLF framework |
-| 3.0 | 2026-01-14 | Redesigned as Plan-Based Guide |
-| 1.0 | Initial | Basic reading guidelines |
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 4.1 | 2026-01-20 | **Added Version History (Unified)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Migrated from old changelog format to Version History (Unified) | |
+| | | Summary: Added version tracking for design document | |
+| 4.0 | 2026-01-16 | **Added UOLF framework** | LEGACY-001 |
+| | | - Added UOLF (Universal Output Limit Framework) | |
+| 3.0 | 2026-01-14 | **Redesigned as Plan-Based Guide** | LEGACY-001 |
+| | | - Redesigned as Plan-Based Guide | |
+| 1.0 | Initial | **Initial version** | LEGACY-001 |
+| | | - Basic reading guidelines | |

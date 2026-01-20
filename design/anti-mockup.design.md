@@ -4,15 +4,6 @@
 
 ---
 
-## Changelog
-
-| Date | Change |
-|------|--------|
-| 2026-01-16 | สร้าง design document สำหรับ Anti-Mockup Policy |
-| 2026-01-15 | Initial version - flexible approach with user override |
-
----
-
 ## 1. Overview
 
 ### 1.1 Purpose
@@ -158,9 +149,14 @@ function mockGetUser() { ... }
 
 ---
 
-## 7. Version
+## 7. Version History (Unified)
 
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.0 | 2026-01-15 | Initial version |
-| 1.1 | 2026-01-16 | Added design document |
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 1.2 | 2026-01-20 | **Added Version History (Unified)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Migrated from old changelog format to Version History (Unified) | |
+| | | Summary: Added version tracking for design document | |
+| 1.1 | 2026-01-16 | **Created design document** | LEGACY-001 |
+| | | - Created design document for Anti-Mockup Policy | |
+| 1.0 | 2026-01-15 | **Initial version** | LEGACY-001 |
+| | | - Initial version - flexible approach with user override | |

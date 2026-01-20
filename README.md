@@ -179,6 +179,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions |
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
+| [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
 
 ---
 
@@ -258,7 +259,19 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 <sub>Output management</sub>
 </td>
 </tr>
+<tr>
+<td align="center" width="25%">
+<img src="img/strict-file-hygiene.png" width="200"><br>
+<b>Strict File Hygiene</b><br>
+<sub>No unrequested docs</sub>
+</td>
+<td align="center" width="25%"></td>
+<td align="center" width="25%"></td>
+<td align="center" width="25%"></td>
+</tr>
 </table>
+
+> Note: Image placeholder for strict-file-hygiene.png will be generated later.
 
 ---
 

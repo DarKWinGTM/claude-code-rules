@@ -8,9 +8,41 @@
 
 | Date | Change |
 |------|--------|
+| 2026-01-20 | **เพิ่ม Claude Code Official Spec Reference** - เพิ่ม Section อ้างอิง Official Documentation |
+| 2026-01-20 | **เพิ่ม Memory Hierarchy (5 levels)** - Section 4: Enterprise, Project, Rules, User, Local |
+| 2026-01-20 | **เพิ่ม .claude/rules/ Format** - Section 5: Path-specific rules, YAML frontmatter, glob patterns |
+| 2026-01-20 | **เพิ่ม Memory Import Syntax** - Section 6: @path/to/import format |
+| 2026-01-20 | **เพิ่ม Subagents Format** - Section 7: YAML frontmatter, supported fields, scope |
 | 2026-01-16 | สร้าง Master Design Document สำหรับระบบ Rules |
 | 2026-01-16 | รวม design จาก 11 sub-rules |
 | 2026-01-16 | กำหนดโครงสร้างสำหรับ rules ใหม่ในอนาคต |
+| 2026-01-20 | เพิ่ม strict-file-hygiene ลงในระบบ rules และตารางอ้างอิง |
+| 2026-01-20 | เพิ่ม design สำหรับ Document Changelog & Versions History Control |
+| 2026-01-20 | อัปเดต changelog ของ strict-file-hygiene.md |
+
+---
+
+## Versions History (Short)
+- Current: 2026-01-20 – เพิ่ม Claude Code Official Spec (Memory Hierarchy, .claude/rules/, Subagents)
+- Previous: 2026-01-20 – เพิ่ม strict-file-hygiene และ doc changelog control
+- Previous: 2026-01-16 – สร้าง master design และโครงสร้างระบบ rules
+
+> Full history: N/A (Master document)
+
+---
+
+## Claude Code Official Specification Reference
+
+> **Source:** [Official Claude Code Documentation](https://code.claude.com/docs/en/overview)
+
+This design document is based on and extends the official Claude Code specifications:
+
+| Document | URL | Purpose |
+|----------|-----|---------|
+| **Settings** | https://code.claude.com/docs/en/settings | Configuration, permissions, scopes |
+| **Memory Management** | https://code.claude.com/docs/en/memory | CLAUDE.md, .claude/rules/, imports |
+| **Subagents** | https://code.claude.com/docs/en/sub-agents | Subagent YAML frontmatter format |
+| **Overview** | https://code.claude.com/docs/en/overview | General Claude Code information |
 
 ---
 
@@ -32,7 +64,7 @@
 | **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | ข้อมูลถูกต้อง |
 | **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | ป้องกัน flooding |
 | **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification | รักษา user authority |
-| **Quality** | document-consistency, anti-mockup | คุณภาพ output |
+| **Quality** | document-consistency, anti-mockup, strict-file-hygiene | คุณภาพ output |
 
 ---
 
@@ -97,6 +129,7 @@ emergency-protocol + functional-intent-verification (Execution)
 | 9 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
 | 10 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
 | 11 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
+| 12 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
 
 ### 3.2 Reserved for Future Rules
 
@@ -109,9 +142,173 @@ emergency-protocol + functional-intent-verification (Execution)
 
 ---
 
-## 4. Shared Frameworks
+## 4. Memory Hierarchy (Official Spec)
 
-### 4.1 UOLF (Universal Output Limit Framework)
+> **Source:** [Memory Management - Claude Code Docs](https://code.claude.com/docs/en/memory)
+
+Claude Code uses a **hierarchical memory system** with 5 levels. Higher priority memories are loaded first and provide foundation for more specific memories.
+
+| Memory Type | Location | Purpose | Shared With | Priority |
+|-------------|----------|---------|-------------|----------|
+| **Enterprise Policy** | macOS: `/Library/Application Support/ClaudeCode/CLAUDE.md`<br>Linux: `/etc/claude-code/CLAUDE.md`<br>Windows: `C:\Program Files\ClaudeCode\CLAUDE.md` | Organization-wide instructions managed by IT/DevOps | All users in organization | 1 (Highest) |
+| **Project Memory** | `./CLAUDE.md` or `./.claude/CLAUDE.md` | Team-shared instructions for the project | Team members via source control | 2 |
+| **Project Rules** | `./.claude/rules/*.md` | Modular, topic-specific project instructions | Team members via source control | 2 (Same as Project Memory) |
+| **User Memory** | `~/.claude/CLAUDE.md` | Personal preferences for all projects | Just you (all projects) | 3 |
+| **Project Local** | `./CLAUDE.local.md` | Personal project-specific preferences | Just you (current project) | 4 (Lowest) |
+
+**Key Points:**
+- All memory files are automatically loaded when Claude Code launches
+- Files higher in hierarchy take precedence
+- `CLAUDE.local.md` files are automatically added to `.gitignore`
+
+---
+
+## 5. .claude/rules/ Format (Official Spec)
+
+> **Source:** [Memory Management - Modular Rules](https://code.claude.com/docs/en/memory#modular-rules-with-clauderules)
+
+### 5.1 Basic Structure
+
+Place markdown files in `.claude/rules/` directory:
+
+```
+your-project/
+├── .claude/
+│   ├── CLAUDE.md           # Main project instructions
+│   └── rules/
+│       ├── code-style.md   # Code style guidelines
+│       ├── testing.md      # Testing conventions
+│       ├── security.md     # Security requirements
+│       ├── frontend/       # Subdirectories allowed
+│       │   ├── react.md
+│       │   └── styles.md
+│       └── backend/
+│           ├── api.md
+│           └── database.md
+```
+
+All `.md` files in `.claude/rules/` are automatically loaded as project memory.
+
+### 5.2 Path-Specific Rules
+
+Rules can be scoped to specific files using **YAML frontmatter** with the `paths` field:
+
+```yaml
+---
+paths:
+  - "src/api/**/*.ts"
+  - "lib/**/*.ts"
+---
+
+# API Development Rules
+
+- All API endpoints must include input validation
+- Use the standard error response format
+- Include OpenAPI documentation comments
+```
+
+**Rules without `paths` field** are loaded unconditionally and apply to all files.
+
+### 5.3 Glob Patterns
+
+The `paths` field supports standard glob patterns:
+
+| Pattern | Matches |
+|---------|---------|
+| `**/*.ts` | All TypeScript files in any directory |
+| `src/**/*` | All files under `src/` directory |
+| `*.md` | Markdown files in the project root |
+| `src/components/*.tsx` | React components in a specific directory |
+
+**Brace Expansion:**
+```yaml
+---
+paths:
+  - "src/**/*.{ts,tsx}"    # Match both .ts and .tsx
+  - "{src,lib}/**/*.ts"     # Match both src/ and lib/
+---
+```
+
+### 5.4 Best Practices
+
+| Practice | Description |
+|----------|-------------|
+| **Keep rules focused** | Each file should cover one topic |
+| **Use descriptive filenames** | The filename should indicate what the rules cover |
+| **Use conditional rules sparingly** | Only add `paths` frontmatter when rules truly apply to specific file types |
+| **Organize with subdirectories** | Group related rules (e.g., `frontend/`, `backend/`) |
+
+---
+
+## 6. Memory Import Syntax (Official Spec)
+
+> **Source:** [Memory Management - CLAUDE.md Imports](https://code.claude.com/docs/en/memory#claudemd-imports)
+
+CLAUDE.md files can import additional files using `@path/to/import` syntax:
+
+```markdown
+See @README for project overview and @package.json for available npm commands.
+
+# Additional Instructions
+
+- git workflow @docs/git-instructions.md
+```
+
+**Key Features:**
+- Both relative and absolute paths are allowed
+- Max recursion depth: **5 hops**
+- Imports are not evaluated inside markdown code spans and code blocks
+- Can import files from user's home dir: `@~/.claude/my-project-instructions.md`
+
+---
+
+## 7. Subagents Format (Official Spec)
+
+> **Source:** [Subagents - Claude Code Docs](https://code.claude.com/docs/en/sub-agents)
+
+### 7.1 File Format
+
+Subagents are defined in Markdown files with **YAML frontmatter**:
+
+```markdown
+---
+name: code-reviewer
+description: Reviews code for quality and best practices
+tools: Read, Glob, Grep
+model: sonnet
+---
+
+You are a code reviewer. When invoked, analyze the code and provide
+specific, actionable feedback on quality, security, and best practices.
+```
+
+### 7.2 Supported Frontmatter Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `name` | ✅ Yes | Unique identifier using lowercase letters and hyphens |
+| `description` | ✅ Yes | When Claude should delegate to this subagent |
+| `tools` | No | Tools the subagent can use. Inherits all tools if omitted |
+| `disallowedTools` | No | Tools to deny, removed from inherited or specified list |
+| `model` | No | Model to use: `sonnet`, `opus`, `haiku`, or `inherit`. Defaults to `sonnet` |
+| `permissionMode` | No | Permission mode: `default`, `acceptEdits`, `dontAsk`, `bypassPermissions`, or `plan` |
+| `skills` | No | Skills to load into the subagent's context at startup |
+| `hooks` | No | Lifecycle hooks scoped to this subagent |
+
+### 7.3 Subagent Scope
+
+| Location | Scope | Priority |
+|----------|-------|----------|
+| `--agents` CLI flag | Current session | 1 (highest) |
+| `.claude/agents/` | Current project | 2 |
+| `~/.claude/agents/` | All your projects | 3 |
+| Plugin's `agents/` directory | Where plugin is enabled | 4 (lowest) |
+
+---
+
+## 8. Shared Frameworks
+
+### 8.1 UOLF (Universal Output Limit Framework)
 
 **Used by:** safe-file-reading, safe-terminal-output
 
@@ -127,7 +324,7 @@ emergency-protocol + functional-intent-verification (Execution)
 <command> | head -100 | head -c 5000
 ```
 
-### 4.2 Evidence-Based Framework
+### 8.2 Evidence-Based Framework
 
 **Used by:** zero-hallucination, anti-sycophancy, no-variable-guessing
 
@@ -141,7 +338,7 @@ Verified? → State with confidence
 Uncertain? → Acknowledge uncertainty
 ```
 
-### 4.3 User Authority Framework
+### 8.3 User Authority Framework
 
 **Used by:** authority-and-scope, emergency-protocol, functional-intent-verification
 
