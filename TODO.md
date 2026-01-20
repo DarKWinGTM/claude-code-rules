@@ -1,43 +1,43 @@
 # TODO
 
-## 1) ✅ อัปเกรด Design Rules (COMPLETED)
-- ✅ ปรับโครงสร้าง design ให้เป็นมาตรฐานเดียวกันทั้งชุด
-- ✅ เติมรายละเอียดที่ขาดใน design ที่ยังบาง
-- ✅ ยืนยันการอ้างอิงระหว่าง rule ↔ design ให้ครบถ้วน
-- ✅ อัปเดต README ให้สะท้อน rules ใหม่ (strict-file-hygiene, document-changelog-control)
+## 1) ✅ Upgrade Design Rules (COMPLETED)
+- ✅ Standardize design structure across all rules
+- ✅ Fill in missing details in incomplete designs
+- ✅ Verify rule ↔ design cross-references are complete
+- ✅ Update README to reflect new rules (strict-file-hygiene, document-changelog-control)
 
-## 2) ✅ แผนสร้าง Rules สำหรับ Document Design (COMPLETED)
-- ✅ สร้าง `document-changelog-control.md` v4.0 - Version tracking system
-- ✅ กำหนดมาตรฐาน **changelog แบบเป็นระบบ** (Version History + Detailed sections)
-- ✅ **Single Source of Truth**: ชี้ตำแหน่งไฟล์ changelog หลัก
+## 2) ✅ Document Design Rules Creation (COMPLETED)
+- ✅ Created `document-changelog-control.md` v4.0 - Version tracking system
+- ✅ Defined **systematic changelog standard** (Version History + Detailed sections)
+- ✅ **Single Source of Truth**: Point to main changelog file
 - ✅ **Design vs Product file distinction**:
   - Design files (`.design.md`): HAVE Version History sections
   - Rules files: NO Version History sections, only version number
 - ✅ Session ID: Real UUID from environment (no placeholders)
 
-## 3) 🔄 รออัปเดตขึ้น GitHub Repo
-- ⏳ ตรวจรายการไฟล์เปลี่ยนแปลงก่อน push
-- ⏳ เตรียม release note สั้นสำหรับ rules ใหม่
-- ⏳ Push document-changelog-control.md v4.0
+## 3) ✅ Update to GitHub Repo (COMPLETED)
+- ✅ Reviewed file changes before push
+- ✅ Prepared release notes
+- ✅ Pushed document-changelog-control.md v4.0
 
-## 4) 📋 Image Gen (รอทำ)
-- สร้างภาพสำหรับ `img/strict-file-hygiene.png`
-- สร้างภาพสำหรับ `img/document-changelog-control.png`
-- อัปเดต README เมื่อภาพพร้อมใช้งาน
+## 4) 📋 Image Generation (PENDING)
+- Generate image for `img/strict-file-hygiene.png`
+- Generate image for `img/document-changelog-control.png`
+- Update README when images are ready
 
-## 5) 🔄 อัปเดต Rules เข้า Local Claude Code (IN PROGRESS)
-- เป้าหมาย: `~/.claude/rules`
-- ขั้นตอน: คัดลอกไฟล์ rules ทั้งหมดที่เปลี่ยนจาก TEMPLATE/RULES
-- ไฟล์ที่ต้องอัพเดท:
+## 5) ✅ Update Local Claude Code Rules (COMPLETED)
+- Destination: `~/.claude/rules`
+- Process: Copy updated rule files from TEMPLATE/RULES
+- Files updated:
   - ✅ document-changelog-control.md (v4.0)
   - ✅ README.md (v1.2.0)
 
-## 6) 🆕 อัปเดต Main Design File (PENDING)
-- อัพเดท `design/design.md` (main design ของ rules project นี้)
-- เพิ่ม Version History สำหรับ project นี้
-- บันทึกการเปลี่ยนแปลง v4.0
+## 6) ✅ Update Main Design File (COMPLETED)
+- ✅ Updated `design/design.md` (main design of this rules project)
+- ✅ Added Version History for this project
+- ✅ Documented v4.0 changes
 
-### ตัวอย่างอ้างอิง
+### Reference Examples
 - /home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.video.md
 - /home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.master.md
 
