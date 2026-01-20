@@ -8,6 +8,7 @@
 
 | Date | Change |
 |------|--------|
+| 2026-01-20 | **ดำเนินการ v4.0 ของ document-changelog-control** - สรุประบบ version tracking, แยก design vs product files, Single Source of Truth |
 | 2026-01-20 | **เพิ่ม Claude Code Official Spec Reference** - เพิ่ม Section อ้างอิง Official Documentation |
 | 2026-01-20 | **เพิ่ม Memory Hierarchy (5 levels)** - Section 4: Enterprise, Project, Rules, User, Local |
 | 2026-01-20 | **เพิ่ม .claude/rules/ Format** - Section 5: Path-specific rules, YAML frontmatter, glob patterns |
@@ -23,7 +24,8 @@
 ---
 
 ## Versions History (Short)
-- Current: 2026-01-20 – เพิ่ม Claude Code Official Spec (Memory Hierarchy, .claude/rules/, Subagents)
+- Current: 2026-01-20 – document-changelog-control v4.0: Design vs Product file distinction, Single Source of Truth, Lessons Learned
+- Previous: 2026-01-20 – เพิ่ม Claude Code Official Spec (Memory Hierarchy, .claude/rules/, Subagents)
 - Previous: 2026-01-20 – เพิ่ม strict-file-hygiene และ doc changelog control
 - Previous: 2026-01-16 – สร้าง master design และโครงสร้างระบบ rules
 
@@ -64,7 +66,7 @@ This design document is based on and extends the official Claude Code specificat
 | **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | ข้อมูลถูกต้อง |
 | **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | ป้องกัน flooding |
 | **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification | รักษา user authority |
-| **Quality** | document-consistency, anti-mockup, strict-file-hygiene | คุณภาพ output |
+| **Quality** | document-consistency, document-changelog-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
 
 ---
 
@@ -87,9 +89,11 @@ Claude Code Rules System
   │
   ├─ Quality Rules (Improve Output)
   │   ├─ document-consistency
+  │   ├─ document-changelog-control (v4.0)
   │   ├─ anti-mockup
   │   ├─ no-variable-guessing
-  │   └─ flow-diagram-no-frame
+  │   ├─ flow-diagram-no-frame
+  │   └─ strict-file-hygiene
   │
   └─ [Future Rules]
 ```

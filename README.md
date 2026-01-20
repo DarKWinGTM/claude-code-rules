@@ -99,6 +99,18 @@ cp /path/to/claude-code-rules/*.md .claude/rules/
 | **Global Config** | All projects | `~/.claude/CLAUDE.md` |
 | **Project** | Current project only | `./.claude/rules/*.md` |
 
+### 📂 Design Documentation
+
+| Location | Purpose | Path |
+|----------|---------|------|
+| **Design Docs** | Design specifications | `./design/*.design.md` |
+| **Rules Files** | Working rules from design | `*.md` (root level) |
+
+> **Note**: This project follows **Single Source of Truth** principle:
+> - Design files (`.design.md`) contain Version History sections
+> - Rules files are created from design and rely on Git for history
+> - No duplicated files - one authoritative source per document
+
 ### ✅ Verify Installation
 
 ```bash
@@ -168,6 +180,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 |:-----|:--------|:------------|
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
+| [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 
@@ -401,8 +414,8 @@ Personal rule set and configuration framework for Claude Code CLI. Inspired by:
 ---
 
 <p align="center">
-  <b>Version</b>: 1.1.0 |
-  <b>Last Updated</b>: 2026-01-16 |
+  <b>Version</b>: 1.2.0 |
+  <b>Last Updated</b>: 2026-01-20 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
