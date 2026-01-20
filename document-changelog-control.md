@@ -68,11 +68,19 @@ Time: [timestamp]
 
 ### What is "Navigator"?
 
-**Version History (Unified) Navigator** means:
-- ✅ Version History table with **ONLY 2-3 latest versions**
-- ✅ Each entry = **Headline + 1-line summary** (no bullet points)
-- ✅ Has **link to Full Changelog**: `> Full history: [changelog.md](changelog.md)`
-- ❌ NOT the full Version History (with all versions)
+**⚠️ CRITICAL: design.md Should NOT Have Version History Table**
+
+**Version History (Unified) Navigator** for design.md means:
+- ✅ **ONLY** the link to Full Changelog: `> Full history: [changelog.md](changelog.md)`
+- ❌ **NO** Version History table in design.md
+- ❌ **NO** version entries in design.md
+- ❌ **NOT** the full Version History (with all versions)
+
+**Why This Design?**
+- design.md is a **specification document** - not a changelog
+- All version history belongs in changelog.md
+- design.md provides **only a navigation link** to the full history
+- This prevents duplication and maintains Single Source of Truth
 
 ---
 
@@ -81,19 +89,16 @@ Time: [timestamp]
 #### design.md - at the end of file
 
 ```markdown
-## Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 3.9 | 2026-01-20 | **[Added design.md <> changelog.md Relationship Rule](changelog.md#L863)** | a77b77ae... |
-| | | Summary: Enforced clear separation between design (navigator) and changelog (full) | |
-| 3.8 | 2026-01-20 | **[Clarified changelog.md Location Patterns](changelog.md#L820)** | a77b77ae... |
-| | | Summary: Fixed AI confusion about master changelog location | |
-| 3.7 | 2026-01-20 | **[Standardized on Line Number Links](changelog.md#L750)** | a77b77ae... |
-| | | Summary: Line Number format for precise changelog navigation | |
+---
 
 > Full history: [changelog.md](changelog.md)
 ```
+
+**⚠️ IMPORTANT:**
+- design.md has **ONLY** the link above
+- **NO** Version History table in design.md
+- **NO** version entries
+- All version history is in changelog.md
 
 #### changelog.md - separate file
 

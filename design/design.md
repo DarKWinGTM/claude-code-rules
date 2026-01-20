@@ -766,3 +766,7 @@ python image_gen.py "<prompt>" --doc <rule-name>.md --aspect-ratio 16:9 --image-
 - Aspect Ratio: 16:9
 - Image Size: 2K
 - Model: gemini-3-pro-image-preview
+
+---
+
+> Full history: [changelog/changelog.md](changelog/changelog.md)
