@@ -81,9 +81,9 @@
 
 ---
 
-## 📝 Changelog
+## 📜 History
 
-[Recent updates to this TODO]
+[History of TODO.md updates and task progression]
 ```
 
 ### 3.2 Visual Hierarchy (ลำดับความสำคัญทางสายตา)
@@ -99,7 +99,7 @@
 | Planned | 📋 | Backlog |
 | Timeline | 📅 | Time-based |
 | Reference | 🔗 | Links |
-| Changelog | 📝 | Updates |
+| History | 📜 | Historical updates |
 
 **Priority Indicators:**
 
@@ -371,17 +371,17 @@ Tasks not yet started.
 
 **Progress:** 1/2 tasks (50%)
 
-### [P0] [Core] Fix Changelog Format Violation
+### [P0] [Core] Fix History Format
 
 **Status:** [IN PROGRESS] | **Assigned:** @ai-assistant | **Due:** 2026-01-20
 
 **Description:**
-Changelog files don't follow their own defined format standards.
+History section needs to follow proper format with timestamps.
 
 **Acceptance Criteria:**
-- [x] Identify all non-compliant changelogs
-- [ ] Update to Version History table format
-- [ ] Verify all examples match
+- [x] Identify that History section is different from Changelog
+- [ ] Update History section format in TODO.md
+- [ ] Verify format follows standards
 
 **Dependencies:**
 - Blocks: [P1] README Update
@@ -393,7 +393,7 @@ Changelog files don't follow their own defined format standards.
 
 ### [P1] [Docs] Update README with New Rules
 
-**Status:** [BLOCKED] | **Blocked by:** Changelog format fix
+**Status:** [BLOCKED] | **Blocked by:** History format update
 
 ### [P1] [Design] Create Image Generation Prompts
 
@@ -429,12 +429,12 @@ Script to verify design document compliance.
 ## 🔗 Quick Reference
 
 - [Design Docs](./design/)
-- [Changelog](./changelog/)
+- [History Section](#️-history)
 - [GitHub Issues](https://github.com/.../issues)
 
 ---
 
-## 📝 Changelog
+## 📜 History
 
 | Date | Changes |
 |------|---------|
@@ -617,6 +617,12 @@ Script to verify design document compliance.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-01-20 | **Fix: Rename Changelog to History** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Changed section name from Changelog to History | |
+| | | - Updated emoji from 📝 to 📜 | |
+| | | - Clarified purpose: History tracks TODO updates, not software changes | |
+| | | - Updated all references throughout design document | |
+| | | Summary: History section for TODO.md progression tracking | |
 | 1.1 | 2026-01-20 | **Add: Research References & Industry Best Practices** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Added Section 8: Research from web search | |
 | | | - Task Format Best Practices (verb + noun pattern) | |
