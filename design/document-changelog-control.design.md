@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.0
+> **Current Version:** 4.1
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-20)
 
 ---
@@ -115,7 +115,7 @@
 **Version History (Unified) Navigator** คือ:
 - ✅ Version History table ที่มี **เฉพาะ 2-3 version ล่าสุด** เท่านั้น
 - ✅ แต่ละ entry = **Headline + Summary 1 บรรทัด** (ไม่มี bullet points)
-- ✅ มี **link ไปยัง Full Changelog**: `> Full history: [changelog.md](changelog.md)`
+- ✅ มี **link ไปยัง Full Changelog**: `> Full history: [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)`
 - ❌ ไม่ใช่ Version History แบบเต็ม (ที่มีทุก version)
 
 ---
@@ -144,7 +144,7 @@
 | 3.7 | 2026-01-20 | **[Standardized on Line Number Links](changelog.md#L750)** | a77b77ae... |
 | | | Summary: Line Number format for precise changelog navigation | |
 
-> Full history: [changelog.md](changelog.md)
+> Full history: [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)
 ```
 
 #### changelog.md - ไฟล์แยก
@@ -929,6 +929,13 @@ Location ไม่ส่งผลต่อ master status แต่ **Pattern 2 (
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 4.1 | 2026-01-20 | **Clarify design.md = ONLY link, NO version table** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Added ⚠️ CRITICAL section: design.md Should NOT Have Version History Table | |
+| | | - Changed Navigator definition: design.md has ONLY Full history link | |
+| | | - Updated example to show design.md with NO table, only link | |
+| | | - Added \"Why This Design?\" explanation for Single Source of Truth | |
+| | | - Clarified design.md is specification document, NOT a changelog | |
+| | | Summary: Made it crystal clear - design.md provides ONLY navigation link | |
 | 4.0 | 2026-01-20 | **Clarified Navigator Format with Complete Examples** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Added explicit rule: Both design.md and changelog.md MUST exist together | |
 | | | - Added "What is Navigator?" explanation section with clear bullets | |
