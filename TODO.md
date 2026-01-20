@@ -1,45 +1,62 @@
 # TODO
 
-## 1) ✅ Upgrade Design Rules (COMPLETED)
-- ✅ Standardize design structure across all rules
-- ✅ Fill in missing details in incomplete designs
-- ✅ Verify rule ↔ design cross-references are complete
-- ✅ Update README to reflect new rules (strict-file-hygiene, document-changelog-control)
+---
 
-## 2) ✅ Document Design Rules Creation (COMPLETED)
-- ✅ Created `document-changelog-control.md` v4.0 - Version tracking system
-- ✅ Defined **systematic changelog standard** (Version History + Detailed sections)
-- ✅ **Single Source of Truth**: Point to main changelog file
-- ✅ **Design vs Product file distinction**:
+## ✅ Completed Tasks
+
+### Design System Upgrades
+- [x] Standardize design structure across all rules
+- [x] Fill in missing details in incomplete designs
+- [x] Verify rule ↔ design cross-references are complete
+- [x] Update README to reflect new rules (strict-file-hygiene, document-changelog-control)
+
+### Document Changelog Control System
+- [x] Create `document-changelog-control.md` v4.0 - Version tracking system
+- [x] Define **systematic changelog standard** (Version History + Detailed sections)
+- [x] Establish **Single Source of Truth** principle
+- [x] Clarify **Design vs Product file distinction**:
   - Design files (`.design.md`): HAVE Version History sections
   - Rules files: NO Version History sections, only version number
-- ✅ Session ID: Real UUID from environment (no placeholders)
+- [x] Enforce Session ID: Real UUID from environment (no placeholders)
 
-## 3) ✅ Update to GitHub Repo (COMPLETED)
-- ✅ Reviewed file changes before push
-- ✅ Prepared release notes
-- ✅ Pushed document-changelog-control.md v4.0
+### GitHub & Local Deployment
+- [x] Review file changes before push
+- [x] Prepare release notes
+- [x] Push document-changelog-control.md v4.0 to GitHub
+- [x] Update Local Claude Code Rules (`~/.claude/rules`)
+- [x] Copy document-changelog-control.md (v4.0) to local rules
+- [x] Copy README.md (v1.2.0) to local rules
 
-## 4) 📋 Image Generation (PENDING)
-- Generate image for `img/strict-file-hygiene.png`
-- Generate image for `img/document-changelog-control.png`
-- Update README when images are ready
+### Main Design File
+- [x] Update `design/design.md` (main design of this rules project)
+- [x] Add Version History for this project
+- [x] Document v4.0 changes
+- [x] Update rule hierarchy to include document-changelog-control
 
-## 5) ✅ Update Local Claude Code Rules (COMPLETED)
-- Destination: `~/.claude/rules`
-- Process: Copy updated rule files from TEMPLATE/RULES
-- Files updated:
-  - ✅ document-changelog-control.md (v4.0)
-  - ✅ README.md (v1.2.0)
+### Documentation
+- [x] Translate TODO.md to English
 
-## 6) ✅ Update Main Design File (COMPLETED)
-- ✅ Updated `design/design.md` (main design of this rules project)
-- ✅ Added Version History for this project
-- ✅ Documented v4.0 changes
+---
 
-### Reference Examples
-- /home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.video.md
-- /home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.master.md
+## 🔄 In Progress
+
+*No tasks currently in progress*
+
+---
+
+## 📋 Pending Tasks
+
+### Image Generation
+- [ ] Generate image for `img/strict-file-hygiene.png`
+- [ ] Generate image for `img/document-changelog-control.png`
+- [ ] Update README when images are ready
+
+---
+
+## 📚 Reference Examples
+
+- `/home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.video.md`
+- `/home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.master.md`
 
 ---
 
