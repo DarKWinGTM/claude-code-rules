@@ -66,7 +66,7 @@ This design document is based on and extends the official Claude Code specificat
 | **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | ข้อมูลถูกต้อง |
 | **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | ป้องกัน flooding |
 | **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification | รักษา user authority |
-| **Quality** | document-consistency, document-changelog-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
+| **Quality** | document-consistency, document-changelog-control, document-design-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
 
 ---
 
@@ -90,6 +90,7 @@ Claude Code Rules System
   ├─ Quality Rules (Improve Output)
   │   ├─ document-consistency
   │   ├─ document-changelog-control (v4.0)
+  │   ├─ document-design-control (v1.0)
   │   ├─ anti-mockup
   │   ├─ no-variable-guessing
   │   ├─ flow-diagram-no-frame
