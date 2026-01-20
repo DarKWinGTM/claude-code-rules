@@ -143,20 +143,6 @@ Update TODO.md to follow professional standards with timestamps and proper struc
 
 ---
 
-## 📚 Reference Examples
-
-### Design Document Examples
-- `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/design/todo-standards.design.md`
-- `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/design/document-design-control.design.md`
-- `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/design/document-changelog-control.design.md`
-
-### Changelog Examples
-- `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/changelog/document-design-control.changelog.md`
-- `/home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.video.md`
-- `/home/node/workplace/AWCLOUD/CLAUDE/claude-code-media-generator/design/changelog/changelog.master.md`
-
----
-
 ## 📝 Changelog
 
 | Date | Changes |
