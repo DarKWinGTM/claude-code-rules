@@ -147,6 +147,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-01-20 | Updated document-changelog-control.md to v4.3: Clarified changelog.md MUST have BOTH detailed sections (UPPER) + Version History Unified table (LOWER) |
 | 2026-01-20 | Renamed Changelog section to History (different purpose) |
 | 2026-01-20 | Completed TODO Standards Implementation task |
 | 2026-01-20 | Removed Reference Examples section |
