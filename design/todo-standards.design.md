@@ -1,0 +1,488 @@
+# TODO Standards
+
+## 0) Document Control
+
+> **Parent Scope:** RULES System Design
+> **Current Version:** 1.0
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-20)
+
+---
+
+## 1) Goal (เป้าหมาย)
+
+- สร้างมาตรฐานเดียวกันสำหรับ TODO.md ทั้งหมด
+- ทำให้ TODO.md ดูเป็นมืออาชีพ สวยงาม และใช้งานได้จริง
+- มีโครงสร้างที่ชัดเจน อ่านง่าย และหาข้อมูลได้รวดเร็ว
+- รองรับการ track progress, priority, และ dependencies
+
+---
+
+## 2) Scope (ขอบเขต)
+
+### 2.1 Documents Covered
+
+- TODO.md หลักของ project
+- TODO สำหรับ sub-projects หรือ modules
+
+### 2.2 Standards Defined
+
+- File structure and sections
+- Visual hierarchy and formatting
+- Task categorization
+- Priority indicators
+- Progress tracking
+- Timeline representation
+- Professional appearance
+
+---
+
+## 3) Standards (มาตรฐาน)
+
+### 3.1 Document Structure (โครงสร้างเอกสาร)
+
+```markdown
+# [Project Name] - TODO
+
+---
+
+## 📊 Project Status Dashboard
+
+[Quick summary: Progress, Active tasks, Blocked items, Upcoming]
+
+---
+
+## 🚀 High Priority (P0)
+
+[Critical tasks that block progress]
+
+---
+
+## 🔥 Active Work (P1)
+
+[Currently being worked on]
+
+---
+
+## 📋 Planned Tasks (P2)
+
+[Backlog, organized by category]
+
+---
+
+## 📅 Timeline & Milestones
+
+[Time-based view]
+
+---
+
+## 🔗 Quick Reference
+
+[Links to related docs]
+
+---
+
+## 📝 Changelog
+
+[Recent updates to this TODO]
+```
+
+### 3.2 Visual Hierarchy (ลำดับความสำคัญทางสายตา)
+
+**Use Emojis for Categories:**
+
+| Category | Emoji | Usage |
+|----------|-------|-------|
+| Dashboard | 📊 | Summary section |
+| Critical | 🚨 | Blocking issues |
+| High Priority | 🚀 | P0 tasks |
+| Active Work | 🔥 | Currently doing |
+| Planned | 📋 | Backlog |
+| Timeline | 📅 | Time-based |
+| Reference | 🔗 | Links |
+| Changelog | 📝 | Updates |
+
+**Priority Indicators:**
+
+```
+P0 - 🚨 Critical (blocks everything)
+P1 - 🔥 High (important, do soon)
+P2 - 📋 Medium (planned, not urgent)
+P3 - 💡 Low (nice to have)
+```
+
+**Status Badges:**
+
+```markdown
+[IN PROGRESS] - Currently working
+[REVIEW] - Awaiting review
+[BLOCKED] - Waiting for something
+[DONE] - Completed
+```
+
+### 3.3 Task Format (รูปแบบ Task)
+
+**⚠️ CRITICAL: All Tasks MUST Have Timestamps**
+
+Every TODO item MUST include:
+- **Created:** YYYY-MM-DD (when task was created/defined)
+- **Started:** YYYY-MM-DD (optional, when work began)
+- **Completed:** YYYY-MM-DD (optional, when finished)
+
+**Standard Format:**
+
+```markdown
+### [PRIORITY] [Category] Task Name
+
+**Status:** [STATUS] | **Assigned:** [Who]
+**Created:** YYYY-MM-DD | **Started:** YYYY-MM-DD (optional) | **Due:** YYYY-MM-DD
+
+**Description:**
+[Brief description of what needs to be done]
+
+**Acceptance Criteria:**
+- [ ] Criterion 1
+- [ ] Criterion 2
+- [ ] Criterion 3
+
+**Dependencies:**
+- Blocks: [task-name]
+- Blocked by: [task-name]
+
+**Notes:**
+[Additional context, links, etc.]
+```
+
+**Examples:**
+
+```markdown
+### [P0] [Core] Fix Authentication Bug
+
+**Status:** [IN PROGRESS] | **Assigned:** @darkwingtm
+**Created:** 2026-01-20 | **Started:** 2026-01-20 | **Due:** 2026-01-21
+
+**Description:**
+Users cannot login with valid credentials due to token validation error.
+
+**Acceptance Criteria:**
+- [x] Identify root cause
+- [ ] Fix token validation logic
+- [ ] Add unit tests
+- [ ] Deploy to staging
+
+**Dependencies:**
+- Blocks: [P1] User Profile Feature
+- Related: [GitHub Issue #123](https://github.com/.../issues/123)
+
+**Notes:**
+Found in auth/token_validator.js:142
+```
+
+### 3.4 Task Organization (การจัดระเบียบ Task)
+
+**MUST Separate Into Distinct Lists:**
+
+```markdown
+## ✅ Completed (เสร็จแล้ว)
+
+Tasks that are 100% done with completion date.
+
+### [P0] [Core] Task Name
+**Status:** [DONE] | **Completed:** 2026-01-20
+...
+
+---
+
+## 🔄 In Progress (กำลังทำ)
+
+Tasks currently being worked on.
+
+### [P1] [Feature] Task Name
+**Status:** [IN PROGRESS] | **Started:** 2026-01-20
+...
+
+---
+
+## 📋 Pending (รอดำเนินการ)
+
+Tasks not yet started.
+
+### [P2] [Enhancement] Task Name
+**Status:** [PENDING] | **Created:** 2026-01-20
+...
+```
+
+**Key Principles:**
+1. ✅ **Completed** - Top section, finished tasks with **Completed:** date
+2. 🔄 **In Progress** - Middle section, active tasks with **Started:** date
+3. 📋 **Pending** - Bottom section, planned tasks with **Created:** date only
+
+### 3.5 Progress Tracking (การติดตามความคืบหน้า)
+
+**Section Level Progress:**
+
+```markdown
+## 🚀 High Priority (P0)
+
+**Progress:** 2/5 tasks (40%)
+
+### ✅ Completed
+- [x] Task A
+- [x] Task B
+
+### 🔄 In Progress
+- [ ] Task C [IN PROGRESS]
+
+### ⏳ Pending
+- [ ] Task D
+- [ ] Task E
+```
+
+**Overall Dashboard:**
+
+```markdown
+## 📊 Project Status Dashboard
+
+| Metric | Value | Target |
+|--------|-------|--------|
+| Overall Progress | 45% | 100% |
+| Total Tasks | 20 | - |
+| Completed | 9 | - |
+| In Progress | 3 | - |
+| Blocked | 1 | - |
+| Pending | 7 | - |
+
+**Active Sprint:** Week 3 (2026-01-20 to 2026-01-27)
+**Sprint Progress:** 3/8 tasks (38%)
+```
+
+### 3.6 Timeline & Milestones (ไทม์ไลน์และเป้าหมาย)
+
+**Timeline Format:**
+
+```markdown
+## 📅 Timeline & Milestones
+
+### Q1 2026 (Jan - Mar)
+
+**Week 3 (Jan 20-26)**
+- [ ] [P0] Fix authentication bug
+- [ ] [P1] Add user profile
+- [ ] [P2] Update documentation
+
+**Week 4 (Jan 27 - Feb 2)**
+- [ ] [P1] Performance optimization
+- [ ] [P2] Database migration
+
+**Milestone: v1.0 Release (Feb 15)**
+- [ ] All P0 tasks complete
+- [ ] Testing complete
+- [ ] Documentation ready
+```
+
+---
+
+## 4) Best Practices (แนวปฏิบัติที่ดี)
+
+### 4.1 Writing Style
+
+**DO:**
+- ✅ Use clear, concise task names
+- ✅ Include acceptance criteria
+- ✅ Link to related issues/docs
+- ✅ Keep descriptions brief but informative
+- ✅ Update status regularly
+
+**DON'T:**
+- ❌ Use vague descriptions like "fix stuff"
+- ❌ Overload tasks with multiple goals
+- ❌ Forget to update completion status
+- ❌ Mix categories without clear separation
+
+### 4.2 Maintenance
+
+**Daily:**
+- Update task statuses
+- Mark completed items
+
+**Weekly:**
+- Review priorities
+- Update timeline
+- Check for blocked items
+
+**Monthly:**
+- Archive completed tasks to changelog
+- Review overall progress
+- Adjust milestones if needed
+
+---
+
+## 5) Examples (ตัวอย่าง)
+
+### 5.1 Minimal TODO (Small Project)
+
+```markdown
+# My Project - TODO
+
+## 📊 Status
+
+**Progress:** 3/5 tasks (60%)
+
+## 🔥 Active
+
+- [ ] [P1] Add login feature [IN PROGRESS]
+- [ ] [P1] Write tests
+
+## 📋 Planned
+
+- [ ] [P2] Update docs
+- [ ] [P2] Add dark mode
+
+## ✅ Done
+
+- [x] [P0] Setup project
+
+---
+
+> Session: uuid | Updated: 2026-01-20
+```
+
+### 5.2 Full TODO (Large Project)
+
+```markdown
+# RULES System - TODO
+
+---
+
+## 📊 Project Status Dashboard
+
+| Metric | Value | Target |
+|--------|-------|--------|
+| Overall Progress | 45% | 100% |
+| Total Tasks | 20 | - |
+| Completed | 9 | - |
+| In Progress | 3 | - |
+| Blocked | 1 | - |
+
+**Active Sprint:** v4.0 Development (2026-01-20 to 2026-01-27)
+
+---
+
+## 🚨 Critical Issues (P0)
+
+**Progress:** 1/2 tasks (50%)
+
+### [P0] [Core] Fix Changelog Format Violation
+
+**Status:** [IN PROGRESS] | **Assigned:** @ai-assistant | **Due:** 2026-01-20
+
+**Description:**
+Changelog files don't follow their own defined format standards.
+
+**Acceptance Criteria:**
+- [x] Identify all non-compliant changelogs
+- [ ] Update to Version History table format
+- [ ] Verify all examples match
+
+**Dependencies:**
+- Blocks: [P1] README Update
+- Related: [design/document-design-control.design.md](design/document-design-control.design.md)
+
+---
+
+## 🔥 Active Work (P1)
+
+### [P1] [Docs] Update README with New Rules
+
+**Status:** [BLOCKED] | **Blocked by:** Changelog format fix
+
+### [P1] [Design] Create Image Generation Prompts
+
+**Status:** [IN PROGRESS] | **Assigned:** @ai-assistant
+
+---
+
+## 📋 Planned Tasks (P2)
+
+### [P2] [Enhancement] Design Templates
+
+Create template files for new design documents.
+
+### [P2] [Automation] Validation Script
+
+Script to verify design document compliance.
+
+---
+
+## 📅 Timeline
+
+**Week 3 (2026-01-20 to 2026-01-26)**
+- [ ] [P0] Fix changelog format
+- [ ] [P1] Update README
+- [ ] [P1] Generate images
+
+**Week 4 (2026-01-27 to 2026-02-02)**
+- [ ] [P2] Create templates
+- [ ] [P2] Write validation script
+
+---
+
+## 🔗 Quick Reference
+
+- [Design Docs](./design/)
+- [Changelog](./changelog/)
+- [GitHub Issues](https://github.com/.../issues)
+
+---
+
+## 📝 Changelog
+
+| Date | Changes |
+|------|---------|
+| 2026-01-20 | Added P0 changelog fix task |
+| 2026-01-20 | Restructured to professional format |
+
+---
+
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Last Updated:** 2026-01-20
+```
+
+---
+
+## 6) Quality Metrics (ตัวชี้วัด)
+
+| Metric | Target | Notes |
+|--------|--------|-------|
+| Clear structure | 100% | All sections present |
+| Priority indicators | 100% | All tasks have P0-P3 |
+| **Timestamp compliance** | **100%** | **All tasks have Created/Started/Completed dates** |
+| Status separation | 100% | Completed / In Progress / Pending clearly separated |
+| Progress tracking | Active | Regularly updated |
+| Dependencies tracked | Yes | When applicable |
+| Professional appearance | High | Clean formatting |
+
+---
+
+## 7) Related Documents (เอกสารที่เกี่ยวข้อง)
+
+- [document-design-control.md](../document-design-control.md) - Design standards
+- [document-changelog-control.md](../document-changelog-control.md) - Version tracking
+
+---
+
+## Version History (Unified)
+
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 1.0 | 2026-01-20 | **Initial version** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Created comprehensive TODO standards | |
+| | | - Defined document structure with sections | |
+| | | - Added visual hierarchy (emojis, priorities, status) | |
+| | | - Specified task format with metadata | |
+| | | - Created progress tracking standards | |
+| | | - Added timeline & milestones format | |
+| | | - Provided minimal and full examples | |
+| | | - Defined best practices and maintenance routines | |
+| | | Summary: Professional TODO standards with clear structure | |
+
+> Full history: [todo-standards.changelog.md](changelog/todo-standards.changelog.md)
