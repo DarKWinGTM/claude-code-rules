@@ -470,10 +470,162 @@ Script to verify design document compliance.
 
 ---
 
+## 8) Research References & Industry Best Practices (ข้อมูลอ้างอิงและแนวปฏิบัติที่ดีจากอุตสาหกรรม)
+
+> **Sources:** Web search on professional TODO list best practices (2026-01-20)
+
+### 8.1 Task Format Best Practices (รูปแบบ Task ที่ดี)
+
+**Verb + Noun Pattern:**
+```
+✅ Good: "Implement login feature"
+✅ Good: "Fix authentication bug"
+✅ Good: "Write unit tests"
+
+❌ Avoid: "Login stuff"
+❌ Avoid: "Fix things"
+```
+
+**Actionable Tasks:**
+- Use specific, measurable verbs
+- Include acceptance criteria
+- Break down large tasks into smaller ones
+- Each task should be completable in one session
+
+**Sources:**
+- [A Better To-Do List, According to a Scrum Master - Medium](https://forge.medium.com/how-to-stay-on-track-to-reach-your-goals-70d90cfc95c3)
+- [How to Write a To-Do List That's Actionable AF - Work Brighter](https://workbrighter.co/actionable-to-do-list)
+
+### 8.2 Prioritization Techniques (เทคนิคการจัดลำดับความสำคัญ)
+
+**Eisenhower Matrix:**
+```
+┌─────────────────┬─────────────────┐
+│  Urgent          │  Urgent          │
+│  + Important     │  + Not Important │
+│  (DO FIRST)      │  (DELEGATE)      │
+├─────────────────┼─────────────────┤
+│  Not Urgent      │  Not Urgent      │
+│  + Important     │  + Not Important │
+│  (SCHEDULE)      │  (ELIMINATE)     │
+└─────────────────┴─────────────────┘
+```
+
+**80/20 Rule (Pareto Principle):**
+- 20% of features deliver 80% of impact
+- Identify high-value items and prioritize them
+
+**Priority Levels (Industry Standard):**
+- **P0** - Critical/Blocking: Must do now
+- **P1** - High: Important, do soon
+- **P2** - Medium: Planned, not urgent
+- **P3** - Low: Nice to have
+
+**Sources:**
+- [Avoid the "Urgency Trap" with the Eisenhower Matrix - Todoist](https://www.todoist.com/productivity-methods/eisenhower-matrix)
+- [Product Backlog Prioritization Techniques - Scrum.org](https://www.scrum.org/resources/blog/product-backlog-prioritization-techniques)
+- [9 tips for an effective to-do list format - Zapier](https://zapier.com/blog/effective-to-do-list-format)
+
+### 8.3 Agile & Scrum Best Practices (แนวปฏิบัติ Agile/Scrum)
+
+**Sprint Backlog Essentials:**
+- Clearly defined sprint goals
+- Understanding of team capacity
+- Prioritized set of backlog items
+
+**20-30-50 Rule for Backlog:**
+- **20%** - Ready for development immediately
+- **30%** - No external inputs needed, can design
+- **50%** - High-level ideas for discussion
+
+**Backlog Refinement:**
+- Should take 10% of total sprint length
+- Regular review and prioritization
+
+**Sources:**
+- [What Is a Sprint Backlog? - Atlassian](https://www.atlassian.com/agile/project-management/sprint-backlog)
+- [How to Prioritize Agile Backlog with 20-30-50 Rule - LinkedIn](https://www.linkedin.com/posts/jayita-dey_the-20-30-50-rule-in-agile-agile-projects-activity-7352999545569464320--_fX)
+- [7 Best Practices for Sprint Backlog Management in Agile](https://vlajkoknezic.com/articles/sprint-backlog)
+
+### 8.4 Progress Tracking Metrics (ตัวชี้วัดความคืบหน้า)
+
+**Essential Metrics:**
+| Metric | Purpose | Industry Standard |
+|--------|---------|-------------------|
+| Completion Rate | Track progress | % completed |
+| Cycle Time | Speed of delivery | Days from start to done |
+| Blockers | Identify issues | Count of blocked items |
+| Velocity | Team capacity | Tasks completed per sprint |
+
+**Status Tracking:**
+- **Completed** - 100% done with completion date
+- **In Progress** - Actively being worked on
+- **Blocked** - Waiting for dependencies
+- **Pending** - Not started yet
+
+**Sources:**
+- [Sprint Backlog Essentials - Parabol](https://www.parabol.co/blog/sprint-backlog-essentials)
+- [The Ultimate Agile Sprint Planning Guide - EasyAgile](https://www.easyagile.com/blog/agile-sprint-planning)
+
+### 8.5 GitHub-Specific Best Practices (แนวปฏิบัติเฉพาะสำหรับ GitHub)
+
+**Markdown Task Lists:**
+```markdown
+- [ ] Unfinished task
+- [x] Completed task
+```
+
+**GitHub Issues for Tracking:**
+- Use Issues for bugs and features
+- Include labels, milestones, and assignees
+- Link commits to issues with keywords
+
+**Project Boards:**
+- Kanban-style columns (To Do, In Progress, Done)
+- Automated workflows
+- Template repositories for consistency
+
+**Sources:**
+- [About tasklists - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/about-tasklists)
+- [GitHub Issues · Project planning for developers](https://github.com/features/issues)
+- [How to use GitHub for project management - Graphite](https://graphite.com/guides/github-project-management-guide)
+
+### 8.6 Key Insights Summary (สรุปข้อควรค้นพบ)
+
+**From Industry Research:**
+
+1. **Actionable Tasks** - Use verb + noun format, be specific
+2. **Time Constraints** - Include due dates and timestamps
+3. **Regular Review** - Update status daily, review weekly
+4. **Clear Priorities** - Use P0-P3 or Eisenhower Matrix
+5. **Progress Visibility** - Dashboard with metrics
+6. **Sprint Goals** - Clear objectives for each period
+7. **Capacity Planning** - Understand team velocity
+8. **Blocked Items** - Track and resolve quickly
+
+**Common Pitfalls to Avoid:**
+- ❌ Vague task descriptions ("do stuff")
+- ❌ Missing due dates
+- ❌ No priority levels
+- ❌ Everything is P0 (lack of prioritization)
+- ❌ Forgetting to update status
+- ❌ Not tracking blockers
+
+---
+
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-01-20 | **Add: Research References & Industry Best Practices** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Added Section 8: Research from web search | |
+| | | - Task Format Best Practices (verb + noun pattern) | |
+| | | - Prioritization Techniques (Eisenhower Matrix, 80/20 rule) | |
+| | | - Agile & Scrum Best Practices (20-30-50 rule) | |
+| | | - Progress Tracking Metrics (industry standards) | |
+| | | - GitHub-Specific Best Practices (markdown, issues, projects) | |
+| | | - Key Insights Summary & Common Pitfalls | |
+| | | Summary: Added industry research to support design decisions | |
 | 1.0 | 2026-01-20 | **Initial version** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Created comprehensive TODO standards | |
 | | | - Defined document structure with sections | |
