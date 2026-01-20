@@ -1,5 +1,11 @@
 # Document Changelog & Versions History Control
 
+> **Current Version:** 4.0
+> **Based on:** document-changelog-control.design.md v4.0
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+
+---
+
 ## Rule Statement
 
 **Core Principle: Every document must have traceable version history with real session IDs**
