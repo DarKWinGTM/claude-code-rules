@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.1
+> **Current Version:** 4.3
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-20)
 
 ---
@@ -929,6 +929,21 @@ Location ไม่ส่งผลต่อ master status แต่ **Pattern 2 (
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 4.3 | 2026-01-20 | **Clarify changelog.md MUST have BOTH: detailed sections + Version History Unified table** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - User clarified: changelog.md format has UPPER part (detailed sections) + LOWER part (summary table) | |
+| | | - Updated format table: changelog.md = Detailed sections (UPPER) + Version History Unified table (LOWER) | |
+| | | - Updated comparison table to reflect correct format | |
+| | | - Updated example to show BOTH parts of changelog.md | |
+| | | - Added link to changelog at end of rules files (NOT Version History section) | |
+| | | - Rules files rely on Git for history, NOT Version History sections | |
+| | | Summary: changelog.md has BOTH detailed sections AND Version History Unified table | |
+| 4.2 | 2026-01-20 | **Clarify changelog.md CAN have "## Version History" header** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Clarified distinction: "## Version History" HEADER is allowed, summary TABLE is not | |
+| | | - Updated format table: changelog.md may optionally have "## Version History" header | |
+| | | - changelog.md MUST NOT use summary table format (Version | Date | Changes | Session ID) | |
+| | | - Updated example to show changelog.md with "## Version History" header + detailed sections | |
+| | | - Fixed confusion: HEADER ≠ TABLE format | |
+| | | Summary: changelog.md can have "## Version History" section header, but not the summary table | |
 | 4.1 | 2026-01-20 | **Clarify design.md = ONLY link, NO version table** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Added ⚠️ CRITICAL section: design.md Should NOT Have Version History Table | |
 | | | - Changed Navigator definition: design.md has ONLY Full history link | |

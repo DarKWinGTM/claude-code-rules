@@ -1,7 +1,7 @@
 # Document Changelog & Versions History Control
 
-> **Current Version:** 4.1
-> **Based on:** document-changelog-control.design.md v4.1
+> **Current Version:** 4.3
+> **Based on:** document-changelog-control.design.md v4.3
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
 
 > **Full history:** [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)
@@ -58,13 +58,13 @@ Time: [timestamp]
 
 | File | MUST use | MUST NOT use |
 |------|----------|--------------|
-| **changelog.md** (main) | Full Changelog (Detailed sections) | Version History (Unified) table |
-| **design.md** | Version History (Unified) Navigator | Full Changelog sections |
+| **changelog.md** (main) | Detailed sections (UPPER) + Version History Unified table (LOWER) | Detailed sections ONLY, without summary table |
+| **design.md** | Version History (Unified) Navigator | Full Changelog sections, ANY version table or entries |
 
 **Key Principle:**
 - ✅ **BOTH files MUST exist together** - design.md and changelog.md must both be present
-- ✅ **design.md** = Version History (Unified) Navigator (short, 2-3 latest versions)
-- ✅ **changelog.md** = Full Changelog (Detailed sections with all versions)
+- ✅ **design.md** = ONLY link to changelog (NO table, NO entries)
+- ✅ **changelog.md** = Detailed sections (UPPER) + Version History Unified table (LOWER)
 
 ---
 
@@ -113,6 +113,10 @@ Time: [timestamp]
 
 ---
 
+## Version History
+
+---
+
 ## Version 3.9: Added design.md <> changelog.md Relationship Rule
 
 **Date:** 2026-01-20
@@ -150,16 +154,34 @@ Fixed AI confusion about which changelog.md is the master
 
 ### Links
 - Design: [design.md#version-38](design.md#version-38)
-```
+
+---
+
+## Version History (Unified)
+
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 3.9 | 2026-01-20 | **[Added design.md <> changelog.md Relationship Rule](#version-39)** | a77b77ae... |
+| | | Summary: Enforced clear separation between design (navigator) and changelog (full) | |
+| 3.8 | 2026-01-20 | **[Clarified changelog.md Location Patterns](#version-38)** | a77b77ae... |
+| | | Summary: Fixed AI confusion about master changelog location | |
+
+> **⚠️ IMPORTANT:** This changelog format has **BOTH**:
+> - **UPPER part**: Detailed sections for each version (full content)
+> - **LOWER part**: Version History (Unified) summary table
+> - The table provides quick navigation links to detailed sections
+> - Links in table use anchor format `#version-XY`
+
+---
 
 ---
 
 ### Comparison: Correct vs Incorrect
 
-| File | ✅ Correct (Navigator + Full) | ❌ Incorrect (Full everywhere) |
-|------|-------------------------------|------------------------------|
-| **design.md** | Has Version History table with 2-3 entries + link | No Version History or has full version |
-| **changelog.md** | Has Detailed sections with all versions | None or has only Version History table |
+| File | ✅ Correct (Navigator + Full with table) | ❌ Incorrect (missing parts) |
+|------|----------------------------------------|------------------------------|
+| **design.md** | ONLY the Full history link (NO table, NO entries) | Has Version History table or entries |
+| **changelog.md** | Detailed sections (UPPER) + Version History Unified table (LOWER) | Has only detailed sections OR only table (missing the other) |
 
 ---
 
@@ -405,4 +427,8 @@ For documents with frequent updates:
 - **Cross-reference check**: All links `changelog.<doc>.md` must reference existing files
 - **No duplicated history**: Do NOT copy full history across multiple files
 - **Git handles history**: Let Git track history, NOT suffixes in filenames
+
+---
+
+> **Full history:** [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)
 
