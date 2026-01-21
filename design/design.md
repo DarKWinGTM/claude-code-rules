@@ -2,55 +2,35 @@
 
 ## Master Design Document
 
----
-
-## Changelog
-
-| Date | Change |
-|------|--------|
-| 2026-01-20 | **ดำเนินการ v4.0 ของ document-changelog-control** - สรุประบบ version tracking, แยก design vs product files, Single Source of Truth |
-| 2026-01-20 | **เพิ่ม Claude Code Official Spec Reference** - เพิ่ม Section อ้างอิง Official Documentation |
-| 2026-01-20 | **เพิ่ม Memory Hierarchy (5 levels)** - Section 4: Enterprise, Project, Rules, User, Local |
-| 2026-01-20 | **เพิ่ม .claude/rules/ Format** - Section 5: Path-specific rules, YAML frontmatter, glob patterns |
-| 2026-01-20 | **เพิ่ม Memory Import Syntax** - Section 6: @path/to/import format |
-| 2026-01-20 | **เพิ่ม Subagents Format** - Section 7: YAML frontmatter, supported fields, scope |
-| 2026-01-16 | สร้าง Master Design Document สำหรับระบบ Rules |
-| 2026-01-16 | รวม design จาก 11 sub-rules |
-| 2026-01-16 | กำหนดโครงสร้างสำหรับ rules ใหม่ในอนาคต |
-| 2026-01-20 | เพิ่ม strict-file-hygiene ลงในระบบ rules และตารางอ้างอิง |
-| 2026-01-20 | เพิ่ม design สำหรับ Document Changelog & Versions History Control |
-| 2026-01-20 | อัปเดต changelog ของ strict-file-hygiene.md |
+> **Parent Scope:** RULES System Design
+> **Current Version:** 1.4
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-21)
 
 ---
 
-## Versions History (Short)
-- Current: 2026-01-20 – document-changelog-control v4.0: Design vs Product file distinction, Single Source of Truth, Lessons Learned
-- Previous: 2026-01-20 – เพิ่ม Claude Code Official Spec (Memory Hierarchy, .claude/rules/, Subagents)
-- Previous: 2026-01-20 – เพิ่ม strict-file-hygiene และ doc changelog control
-- Previous: 2026-01-16 – สร้าง master design และโครงสร้างระบบ rules
+## I. Document Control
 
-> Full history: N/A (Master document)
+### I.1 Version Information
 
----
+**Current Version:** 1.4
+**Last Updated:** 2026-01-21
+**Status:** Active
 
-## Claude Code Official Specification Reference
+### I.2 Change Summary
 
-> **Source:** [Official Claude Code Documentation](https://code.claude.com/docs/en/overview)
-
-This design document is based on and extends the official Claude Code specifications:
-
-| Document | URL | Purpose |
-|----------|-----|---------|
-| **Settings** | https://code.claude.com/docs/en/settings | Configuration, permissions, scopes |
-| **Memory Management** | https://code.claude.com/docs/en/memory | CLAUDE.md, .claude/rules/, imports |
-| **Subagents** | https://code.claude.com/docs/en/sub-agents | Subagent YAML frontmatter format |
-| **Overview** | https://code.claude.com/docs/en/overview | General Claude Code information |
+| Version | Date | Summary | Session ID |
+|---------|------|---------|------------|
+| 1.4 | 2026-01-21 | Removed Session ID from Rules File Standard Template (not required for rules files) | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 1.3 | 2026-01-21 | Restructured to systematic format (Sections I-VIII), added Rules File Standard Template | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 1.2 | 2026-01-20 | Updated document-changelog-control to v4.3 | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 1.1 | 2026-01-20 | Added Image Generation Framework | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 1.0 | 2026-01-16 | Initial master design | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 
 ---
 
-## 1. Overview
+## II. Overview
 
-### 1.1 Purpose
+### II.1 Purpose
 
 **Claude Code Rules System** คือชุด rules ที่ควบคุมพฤติกรรมของ AI ใน Claude Code เพื่อ:
 
@@ -59,20 +39,29 @@ This design document is based on and extends the official Claude Code specificat
 - ให้ user มี control เหนือ AI
 - รักษามาตรฐานคุณภาพสูง
 
-### 1.2 Rule Categories
+### II.2 Rule Categories
 
 | Category | Rules | Purpose |
 |----------|-------|---------|
 | **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | ข้อมูลถูกต้อง |
 | **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | ป้องกัน flooding |
 | **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification | รักษา user authority |
-| **Quality** | document-consistency, document-changelog-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
+| **Quality** | document-consistency, document-changelog-control, document-design-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
+
+### II.3 Scope
+
+This design document covers:
+- Architecture of the rules system
+- Standards for creating rules files
+- Version tracking and changelog integration
+- Quality metrics and compliance
+- Usage guidelines
 
 ---
 
-## 2. Architecture
+## III. Architecture
 
-### 2.1 Rule Hierarchy
+### III.1 Rule Hierarchy
 
 ```
 Claude Code Rules System
@@ -89,7 +78,8 @@ Claude Code Rules System
   │
   ├─ Quality Rules (Improve Output)
   │   ├─ document-consistency
-  │   ├─ document-changelog-control (v4.0)
+  │   ├─ document-changelog-control (v4.3)
+  │   ├─ document-design-control (v1.2)
   │   ├─ anti-mockup
   │   ├─ no-variable-guessing
   │   ├─ flow-diagram-no-frame
@@ -98,7 +88,7 @@ Claude Code Rules System
   └─ [Future Rules]
 ```
 
-### 2.2 Rule Dependencies
+### III.2 Rule Dependencies
 
 ```
 authority-and-scope (Foundation)
@@ -116,9 +106,9 @@ emergency-protocol + functional-intent-verification (Execution)
 
 ---
 
-## 3. Sub-Rule Index
+## IV. Sub-Rule Index
 
-### 3.1 Current Rules (11 Rules)
+### IV.1 Current Rules (12 Rules)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
@@ -126,16 +116,18 @@ emergency-protocol + functional-intent-verification (Execution)
 | 2 | anti-sycophancy.md | anti-sycophancy.design.md | Truth over pleasing |
 | 3 | authority-and-scope.md | authority-and-scope.design.md | User authority |
 | 4 | document-consistency.md | document-consistency.design.md | Cross-reference validation |
-| 5 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
-| 6 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
-| 7 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
-| 8 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
-| 9 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
-| 10 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
-| 11 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
-| 12 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
+| 5 | document-changelog-control.md | document-changelog-control.design.md v4.3 | Version tracking standard |
+| 6 | document-design-control.md | document-design-control.design.md v1.2 | Design document standards |
+| 7 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
+| 8 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
+| 9 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
+| 10 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
+| 11 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
+| 12 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
+| 13 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
+| 14 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
 
-### 3.2 Reserved for Future Rules
+### IV.2 Reserved for Future Rules
 
 | Category | Potential Rules | Purpose |
 |----------|-----------------|---------|
@@ -146,43 +138,33 @@ emergency-protocol + functional-intent-verification (Execution)
 
 ---
 
-## 4. Memory Hierarchy (Official Spec)
+## V. Standards & Frameworks
+
+### V.1 Memory Hierarchy (Official Spec)
 
 > **Source:** [Memory Management - Claude Code Docs](https://code.claude.com/docs/en/memory)
 
-Claude Code uses a **hierarchical memory system** with 5 levels. Higher priority memories are loaded first and provide foundation for more specific memories.
+Claude Code uses a **hierarchical memory system** with 5 levels:
 
 | Memory Type | Location | Purpose | Shared With | Priority |
 |-------------|----------|---------|-------------|----------|
-| **Enterprise Policy** | macOS: `/Library/Application Support/ClaudeCode/CLAUDE.md`<br>Linux: `/etc/claude-code/CLAUDE.md`<br>Windows: `C:\Program Files\ClaudeCode\CLAUDE.md` | Organization-wide instructions managed by IT/DevOps | All users in organization | 1 (Highest) |
-| **Project Memory** | `./CLAUDE.md` or `./.claude/CLAUDE.md` | Team-shared instructions for the project | Team members via source control | 2 |
-| **Project Rules** | `./.claude/rules/*.md` | Modular, topic-specific project instructions | Team members via source control | 2 (Same as Project Memory) |
-| **User Memory** | `~/.claude/CLAUDE.md` | Personal preferences for all projects | Just you (all projects) | 3 |
-| **Project Local** | `./CLAUDE.local.md` | Personal project-specific preferences | Just you (current project) | 4 (Lowest) |
+| **Enterprise Policy** | macOS: `/Library/Application Support/ClaudeCode/CLAUDE.md`<br>Linux: `/etc/claude-code/CLAUDE.md`<br>Windows: `C:\Program Files\ClaudeCode\CLAUDE.md` | Organization-wide instructions | All users | 1 (Highest) |
+| **Project Memory** | `./CLAUDE.md` or `./.claude/CLAUDE.md` | Team-shared instructions | Team via git | 2 |
+| **Project Rules** | `./.claude/rules/*.md` | Modular, topic-specific rules | Team via git | 2 |
+| **User Memory** | `~/.claude/CLAUDE.md` | Personal preferences | Just you (all projects) | 3 |
+| **Project Local** | `./CLAUDE.local.md` | Personal project-specific | Just you (current project) | 4 (Lowest) |
 
-**Key Points:**
-- All memory files are automatically loaded when Claude Code launches
-- Files higher in hierarchy take precedence
-- `CLAUDE.local.md` files are automatically added to `.gitignore`
-
----
-
-## 5. .claude/rules/ Format (Official Spec)
+### V.2 .claude/rules/ Format (Official Spec)
 
 > **Source:** [Memory Management - Modular Rules](https://code.claude.com/docs/en/memory#modular-rules-with-clauderules)
 
-### 5.1 Basic Structure
-
-Place markdown files in `.claude/rules/` directory:
-
+**Directory Structure:**
 ```
 your-project/
 ├── .claude/
 │   ├── CLAUDE.md           # Main project instructions
 │   └── rules/
-│       ├── code-style.md   # Code style guidelines
-│       ├── testing.md      # Testing conventions
-│       ├── security.md     # Security requirements
+│       ├── code-style.md   # Topic-specific rules
 │       ├── frontend/       # Subdirectories allowed
 │       │   ├── react.md
 │       │   └── styles.md
@@ -191,12 +173,7 @@ your-project/
 │           └── database.md
 ```
 
-All `.md` files in `.claude/rules/` are automatically loaded as project memory.
-
-### 5.2 Path-Specific Rules
-
-Rules can be scoped to specific files using **YAML frontmatter** with the `paths` field:
-
+**Path-Specific Rules (YAML frontmatter):**
 ```yaml
 ---
 paths:
@@ -205,76 +182,33 @@ paths:
 ---
 
 # API Development Rules
-
 - All API endpoints must include input validation
-- Use the standard error response format
-- Include OpenAPI documentation comments
 ```
 
-**Rules without `paths` field** are loaded unconditionally and apply to all files.
-
-### 5.3 Glob Patterns
-
-The `paths` field supports standard glob patterns:
-
-| Pattern | Matches |
-|---------|---------|
-| `**/*.ts` | All TypeScript files in any directory |
-| `src/**/*` | All files under `src/` directory |
-| `*.md` | Markdown files in the project root |
-| `src/components/*.tsx` | React components in a specific directory |
-
-**Brace Expansion:**
-```yaml
----
-paths:
-  - "src/**/*.{ts,tsx}"    # Match both .ts and .tsx
-  - "{src,lib}/**/*.ts"     # Match both src/ and lib/
----
-```
-
-### 5.4 Best Practices
-
-| Practice | Description |
-|----------|-------------|
-| **Keep rules focused** | Each file should cover one topic |
-| **Use descriptive filenames** | The filename should indicate what the rules cover |
-| **Use conditional rules sparingly** | Only add `paths` frontmatter when rules truly apply to specific file types |
-| **Organize with subdirectories** | Group related rules (e.g., `frontend/`, `backend/`) |
-
----
-
-## 6. Memory Import Syntax (Official Spec)
+### V.3 Memory Import Syntax (Official Spec)
 
 > **Source:** [Memory Management - CLAUDE.md Imports](https://code.claude.com/docs/en/memory#claudemd-imports)
 
-CLAUDE.md files can import additional files using `@path/to/import` syntax:
+**Syntax:** `@path/to/import`
 
 ```markdown
-See @README for project overview and @package.json for available npm commands.
+See @README for project overview and @package.json for available commands.
 
 # Additional Instructions
-
 - git workflow @docs/git-instructions.md
 ```
 
-**Key Features:**
-- Both relative and absolute paths are allowed
-- Max recursion depth: **5 hops**
-- Imports are not evaluated inside markdown code spans and code blocks
-- Can import files from user's home dir: `@~/.claude/my-project-instructions.md`
+**Features:**
+- Relative and absolute paths supported
+- Max recursion: 5 hops
+- Can import from user home: `@~/.claude/my-project-instructions.md`
 
----
-
-## 7. Subagents Format (Official Spec)
+### V.4 Subagents Format (Official Spec)
 
 > **Source:** [Subagents - Claude Code Docs](https://code.claude.com/docs/en/sub-agents)
 
-### 7.1 File Format
-
-Subagents are defined in Markdown files with **YAML frontmatter**:
-
-```markdown
+**YAML Frontmatter:**
+```yaml
 ---
 name: code-reviewer
 description: Reviews code for quality and best practices
@@ -282,83 +216,151 @@ tools: Read, Glob, Grep
 model: sonnet
 ---
 
-You are a code reviewer. When invoked, analyze the code and provide
-specific, actionable feedback on quality, security, and best practices.
+You are a code reviewer...
 ```
 
-### 7.2 Supported Frontmatter Fields
+**Scope:**
+| Location | Priority |
+|----------|----------|
+| `--agents` CLI flag | 1 (highest) |
+| `.claude/agents/` | 2 |
+| `~/.claude/agents/` | 3 |
+| Plugin's `agents/` | 4 (lowest) |
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | ✅ Yes | Unique identifier using lowercase letters and hyphens |
-| `description` | ✅ Yes | When Claude should delegate to this subagent |
-| `tools` | No | Tools the subagent can use. Inherits all tools if omitted |
-| `disallowedTools` | No | Tools to deny, removed from inherited or specified list |
-| `model` | No | Model to use: `sonnet`, `opus`, `haiku`, or `inherit`. Defaults to `sonnet` |
-| `permissionMode` | No | Permission mode: `default`, `acceptEdits`, `dontAsk`, `bypassPermissions`, or `plan` |
-| `skills` | No | Skills to load into the subagent's context at startup |
-| `hooks` | No | Lifecycle hooks scoped to this subagent |
+### V.5 Shared Frameworks
 
-### 7.3 Subagent Scope
+**UOLF (Universal Output Limit Framework)**
+- Used by: safe-file-reading, safe-terminal-output
+- MAX_OUTPUT_CHARS = 5000 (hard limit)
+- Double limit: `<command> | head -100 | head -c 5000`
 
-| Location | Scope | Priority |
-|----------|-------|----------|
-| `--agents` CLI flag | Current session | 1 (highest) |
-| `.claude/agents/` | Current project | 2 |
-| `~/.claude/agents/` | All your projects | 3 |
-| Plugin's `agents/` directory | Where plugin is enabled | 4 (lowest) |
+**Evidence-Based Framework**
+- Used by: zero-hallucination, anti-sycophancy, no-variable-guessing
+- Verify before stating claims
+- Acknowledge uncertainty when unsure
+
+**User Authority Framework**
+- Used by: authority-and-scope, emergency-protocol, functional-intent-verification
+- Priority: User > Safety > Rules > Defaults
 
 ---
 
-## 8. Shared Frameworks
+## VI. Rules File Standard Template
 
-### 8.1 UOLF (Universal Output Limit Framework)
+### VI.1 Purpose
 
-**Used by:** safe-file-reading, safe-terminal-output
+กำหนดรูปแบบมาตรฐาน (standard template) สำหรับ rules files (`.md`) เพื่อให้ทุกไฟล์มีความสม่ำเสมอกัน
 
-| Constant | Value | Purpose |
-|----------|-------|---------|
-| MAX_OUTPUT_CHARS | 5000 | Hard limit ทุกกรณี |
-| MAX_OUTPUT_LINES | 100 | Soft limit |
-| RISKY_FILE_CHARS | 3000 | For risky files |
-| PREVIEW_CHARS | 2000 | Quick preview |
+### VI.2 Mandatory Structure
 
-**Double Limit Pattern:**
-```bash
-<command> | head -100 | head -c 5000
+**All rules files MUST follow this template:**
+
+```markdown
+# [Rule Name]
+
+> **Current Version:** X.X
+
+## Rule Statement
+
+**Core Principle:** [One-line summary]
+
+**Design:** [rule-name.design.md](design/rule-name.design.md) vX.X
+
+This rule ensures...
+
+---
+
+[Content sections...]
+
+---
+
+> Full history: [changelog/rule-name.changelog.md](changelog/rule-name.changelog.md)
 ```
 
-### 8.2 Evidence-Based Framework
+### VI.3 Header Requirements (MANDATORY)
 
-**Used by:** zero-hallucination, anti-sycophancy, no-variable-guessing
+| Element | Required | Format |
+|---------|----------|--------|
+| **Current Version** | ✅ Yes | `> **Current Version:** X.X` |
+| **Design Link** | Optional | `**Design:** [file.design.md](design/file.design.md) vX.X` |
 
+### VI.4 Content Sections
+
+**Rules files should include:**
+
+1. **Rule Statement** - Core principle
+2. **Core Requirements** - Mandatory actions
+3. **Examples** - ✅ Correct/❌ Incorrect patterns
+4. **Quality Metrics** - Measurable targets
+5. **Integration** - Related rules
+
+### VI.5 PROHIBITED Elements
+
+| Element | Why Prohibited | Correct Alternative |
+|---------|----------------|---------------------|
+| **Version Table** | Version history belongs in changelog | Use changelog link |
+| **Placeholders** | Violates changelog rules | Use real data or omit |
+| **Mixed Formats** | Breaks consistency | Follow this template |
+
+### VI.6 Changelog Integration
+
+**Rules files MUST:**
+
+1. **Link to changelog** (at end):
+   ```markdown
+   > Full history: [changelog/rule-name.changelog.md](changelog/rule-name.changelog.md)
+   ```
+
+2. **NOT have Version table** in rules file:
+   - ❌ WRONG: Version table in rules file
+   - ✅ RIGHT: Version table ONLY in changelog file
+
+3. **Changelog file format:**
+   - changelog/rule-name.changelog.md = Full history with detailed sections
+   - changelog/changelog.md = Master changelog (for entire project)
+
+### VI.7 Examples
+
+**✅ Correct Rules File:**
+
+```markdown
+# Document Changelog Control
+
+> **Current Version:** 4.3
+
+## Rule Statement
+
+Core Principle: Every document must have traceable version history with real session IDs.
+
+---
+
+[Content...]
+
+---
+
+> Full history: [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)
 ```
-Before Making Claim
-  ↓
-Can verify with tools? → Verify
-  ↓
-Verified? → State with confidence
-  ↓
-Uncertain? → Acknowledge uncertainty
-```
 
-### 8.3 User Authority Framework
+**❌ Incorrect Rules File:**
 
-**Used by:** authority-and-scope, emergency-protocol, functional-intent-verification
+```markdown
+# Some Rule
 
-```
-Priority Order:
-1. User Instructions (Highest)
-2. Safety Policies
-3. Project Rules
-4. Default Behaviors (Lowest)
+## Rule Statement
+...
+
+---
+
+## Version  ← WRONG: Remove this table
+| Version | Date | Notes |
+| 1.0 | 2026-01-21 | Initial |
 ```
 
 ---
 
-## 5. Quality Metrics
+## VII. Quality Metrics
 
-### 5.1 System-Wide Metrics
+### VII.1 System-Wide Metrics
 
 | Metric | Target | Rules Involved |
 |--------|--------|----------------|
@@ -367,38 +369,83 @@ Priority Order:
 | Output Safety | ≤ 5000 chars | safe-file-reading, safe-terminal-output |
 | Verification | Default | no-variable-guessing, document-consistency |
 | Transparency | 100% | anti-mockup |
+| Document Consistency | 100% | document-*, flow-diagram-no-frame |
 
-### 5.2 Compliance Rate
+### VII.2 Compliance Rate
 
 - **Constitutional Compliance**: 100% (No exceptions)
 - **User Override Respect**: 100%
 - **Evidence-Based**: Default behavior
 - **Hallucination**: 0%
+- **Template Compliance**: 100% (all rules follow standard template)
 
 ---
 
-## 6. Adding New Rules
+## VIII. Creating New Rules
 
-### 6.1 Rule Template
+### VIII.1 Step-by-Step Process
+
+**Step 1: Create Design Document**
+```bash
+touch design/[rule-name].design.md
+```
+
+**Step 2: Create Rules File**
+```bash
+touch [rule-name].md
+```
+
+**Step 3: Create Changelog**
+```bash
+touch changelog/[rule-name].changelog.md
+```
+
+**Step 4: Add to Master Design**
+- Update Sub-Rule Index (Section IV)
+- Update Rule Hierarchy (Section III)
+- Add to Rule Categories (Section II)
+
+**Step 5: Update README**
+- Add rule to rules list
+- Update documentation
+
+### VIII.2 Rules File Template
 
 ```markdown
 # [Rule Name]
 
+> **Current Version:** 1.0
+> **Session:** [UUID] (YYYY-MM-DD)
+
 ## Rule Statement
 
-**Core Principle: [One-line principle]**
+**Core Principle:** [One-line principle]
 
-[Description]
+**Design:** [rule-name.design.md](design/rule-name.design.md) v1.0
+
+This rule ensures...
 
 ---
 
 ## Core Requirements
 
-### 1. [Requirement Category]
+### 1. [Category]
 
 **Required Actions:**
 - [Action 1]
 - [Action 2]
+
+---
+
+## Examples
+
+### ✅ Correct
+
+[Example of correct usage]
+
+### ❌ Incorrect
+
+[Example of incorrect usage]
 
 ---
 
@@ -410,168 +457,29 @@ Priority Order:
 
 ---
 
-## Version
+## Integration
 
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.0 | [Date] | Initial version |
+Related Rules:
+- [rule-1.md](rule-1.md)
+- [rule-2.md](rule-2.md)
+
+---
+
+> Full history: [changelog/rule-name.changelog.md](changelog/rule-name.changelog.md)
 ```
 
-### 6.2 Design Document Template
+### VIII.3 Checklist for New Rules
 
-```markdown
-# [Rule Name]
-
-## Rule Design Document
-
----
-
-## Changelog
-
-| Date | Change |
-|------|--------|
-| [Date] | Initial design document |
-
----
-
-## 1. Overview
-
-### 1.1 Purpose
-[Why this rule exists]
-
-### 1.2 Problem Statement
-[What problem it solves]
-
-### 1.3 Solution
-[How it solves the problem]
-
----
-
-## 2. Core Principles
-[Key principles]
-
----
-
-## 3. Implementation
-[How to implement]
-
----
-
-## 4. Quality Metrics
-[Metrics to track]
-
----
-
-## 5. Integration
-[Related rules and tools]
-
----
-
-## 6. Version
-[Version history]
-```
-
-### 6.3 Checklist for New Rules
-
-- [ ] Create `[rule-name].md` with rule content
+- [ ] Create `[rule-name].md` following standard template
 - [ ] Create `[rule-name].design.md` with design details
-- [ ] Add to this master design document
+- [ ] Create `changelog/[rule-name].changelog.md` for version tracking
+- [ ] Add to master design (Section IV: Sub-Rule Index)
+- [ ] Update rule hierarchy if needed
 - [ ] Define quality metrics
 - [ ] Specify related rules
 - [ ] Update README.md
-
----
-
-## 7. File Structure
-
-```
-/TEMPLATE/RULES/
-  ├─ README.md                           # Overview
-  ├─ design.md                           # This master design
-  │
-  ├─ anti-mockup.md                      # Rule files
-  ├─ anti-mockup.design.md               # Design docs
-  ├─ anti-sycophancy.md
-  ├─ anti-sycophancy.design.md
-  ├─ authority-and-scope.md
-  ├─ authority-and-scope.design.md
-  ├─ document-consistency.md
-  ├─ document-consistency.design.md
-  ├─ emergency-protocol.md
-  ├─ emergency-protocol.design.md
-  ├─ flow-diagram-no-frame.md
-  ├─ flow-diagram-no-frame.design.md
-  ├─ functional-intent-verification.md
-  ├─ functional-intent-verification.design.md
-  ├─ no-variable-guessing.md
-  ├─ no-variable-guessing.design.md
-  ├─ safe-file-reading.md
-  ├─ safe-file-reading.design.md
-  ├─ safe-terminal-output.md
-  ├─ safe-terminal-output.design.md
-  ├─ zero-hallucination.md
-  └─ zero-hallucination.design.md
-```
-
----
-
-## 8. Usage Guidelines
-
-### 8.1 For Claude Code
-
-Copy rules to `~/.claude/rules/`:
-```bash
-cp *.md ~/.claude/rules/
-```
-
-### 8.2 For Project-Specific
-
-Copy to project's `.claude/rules/`:
-```bash
-cp *.md /path/to/project/.claude/rules/
-```
-
-### 8.3 Scope Configuration
-
-For global rules (no paths restriction):
-```markdown
-# Don't add paths: to make it global
-```
-
-For file-specific rules:
-```yaml
-paths:
-  - src/**/*.ts
-  - src/**/*.js
-```
-
----
-
-## 9. Maintenance
-
-### 9.1 Version Management
-
-- Each rule has its own version
-- Master design tracks all changes
-- Changelog in each file
-
-### 9.2 Update Process
-
-1. Update rule file
-2. Update design doc
-3. Update this master design
-4. Commit with descriptive message
-5. Push to GitHub
-
----
-
-## 10. Version
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.1 | 2026-01-16 | เพิ่ม Image Generation Prompts (10 concepts) |
-| 1.2 | 2026-01-16 | สร้าง image-prompts.md (110 prompts) และ generate 11 ภาพ |
-| 1.0 | 2026-01-16 | Initial master design with 11 rules |
+- [ ] Test rule with real scenarios
+- [ ] Document examples
 
 ---
 
@@ -582,48 +490,17 @@ paths:
 Framework สำหรับสร้างภาพประกอบของ Claude Code Rules System
 ออกแบบโดย A-PIRO (Automatic Prompt Intent Recognition Optimization)
 
-### A.2 Architecture
-
-**โครงสร้างการสร้างภาพ:**
+### A.2 File Structure
 
 ```
-Claude Code Rules System Images
-  │
-  ├─ Master System (10 prompts)
-  │   └─ ภาพรวมของ Rules ทั้ง 11 rules ใน 1 ภาพ
-  │   └─ Context: design.md (master design)
-  │
-  └─ Per-Rule Images (11 rules × 10 prompts = 110 prompts)
-      ├─ anti-mockup (10 prompts) → Context: anti-mockup.md
-      ├─ anti-sycophancy (10 prompts) → Context: anti-sycophancy.md
-      ├─ authority-and-scope (10 prompts) → Context: authority-and-scope.md
-      ├─ document-consistency (10 prompts) → Context: document-consistency.md
-      ├─ emergency-protocol (10 prompts) → Context: emergency-protocol.md
-      ├─ flow-diagram-no-frame (10 prompts) → Context: flow-diagram-no-frame.md
-      ├─ functional-intent-verification (10 prompts) → Context: functional-intent-verification.md
-      ├─ no-variable-guessing (10 prompts) → Context: no-variable-guessing.md
-      ├─ safe-file-reading (10 prompts) → Context: safe-file-reading.md
-      ├─ safe-terminal-output (10 prompts) → Context: safe-terminal-output.md
-      └─ zero-hallucination (10 prompts) → Context: zero-hallucination.md
+/home/node/workplace/AWCLOUD/CLAUDE/claude-code-image-generator/
+├── image_gen.py                 # Image generation script
+├── image.prompt.design.md       # 140 prompts (10 styles × 14 rules)
+├── generated_images/            # Generated images
+└── design.md                     # Master design reference
 ```
 
-### A.3 Generation Command
-
-```bash
-# สำหรับ Master System Image (ภาพรวมทั้งระบบ)
-python image_gen.py "<prompt>" --doc design.md --aspect-ratio 16:9 --image-size 2K
-
-# สำหรับ Per-Rule Image (ภาพประกอบแต่ละ rule)
-python image_gen.py "<prompt>" --doc <rule-name>.md --aspect-ratio 16:9 --image-size 2K
-```
-
-| Setting | Value | Reason |
-|---------|-------|--------|
-| Aspect Ratio | 16:9 | Widescreen format สำหรับ presentation |
-| Image Size | 2K | High resolution สำหรับ documentation |
-| Context Doc | `<rule>.md` | ให้ AI เข้าใจ context ของ rule นั้นๆ |
-
-### A.4 10 Visual Styles (ใช้ได้กับทุก rule)
+### A.3 10 Visual Styles
 
 | # | Style Name | Concept | Best For |
 |---|------------|---------|----------|
@@ -638,134 +515,14 @@ python image_gen.py "<prompt>" --doc <rule-name>.md --aspect-ratio 16:9 --image-
 | 9 | Neural | Brain-like command center | AI/brain metaphor |
 | 10 | Alchemical | Surrealist transformation | Artistic/philosophical |
 
-### A.5 Master System Prompts (10 prompts สำหรับภาพรวม)
+### A.4 Generation Command
 
----
+> **See:** [image.prompt.design.md](image.prompt.design.md) for complete prompt specifications
 
-#### Prompt 1: The Citadel of Logic (Architectural)
-
-**Concept:** ป้อมปราการหลายชั้นที่แต่ละชั้นแทน rule hierarchy
-
-> A grand isometric architectural cross-section of a futuristic "Citadel of Logic." The foundation is made of 3 massive, unshakeable obsidian pillars (Truth & Accuracy). Above them, a shimmering crystalline wall (Output Safety) protects the interior. The middle tier features 4 soaring towers (User Control), and the topmost spire is a glowing beacon of pure light (Quality). 11 distinct glowing glyphs are etched into the stone throughout the structure. Cinematic lighting, hyper-realistic, 8k, architectural render, Unreal Engine 5 style, cyan and gold accents.
-
----
-
-#### Prompt 2: The World Tree of Governance (Organic)
-
-**Concept:** ต้นไม้แห่งชีวิตที่รากคือ Truth และกิ่งก้านคือ Execution
-
-> A bioluminescent "World Tree of Code" in a void. 3 deep, glowing roots (Accuracy) anchor the tree into a bed of crystalline data. The trunk is wrapped in a protective mesh of silver light (Safety). 11 primary branches extend outward, each bearing a unique glowing fruit. At the very center of the trunk, a human handprint glows with golden light, representing "User Authority." Organic circuitry, ethereal atmosphere, macro photography style, neon veins, soft bokeh, intricate detail, Midjourney v6 aesthetic.
-
----
-
-#### Prompt 3: The Governance Orrery (Mechanical)
-
-**Concept:** นาฬิกาดาราศาสตร์ที่แต่ละ rule คือเฟืองที่ต้องทำงานร่วมกัน
-
-> A complex, golden steampunk orrery (astronomical clock) floating in a dark library. 11 intricate gears of varying sizes are interlocked in a perfect vertical hierarchy. The 3 largest gears at the bottom are made of heavy iron (Truth). The middle gears are brass with safety-gate mechanisms. The central axle is a diamond spindle controlled by a human-operated lever. Cinematic shadows, polished metal reflections, "Golden Ratio" composition, macro detail, 8k, photorealistic, intricate engravings on the gears.
-
----
-
-#### Prompt 4: The Geometric Core (Abstract)
-
-**Concept:** รูปทรงเรขาคณิต 3D ซ้อนกันแทน Safety Boundaries และ Quality Layers
-
-> An abstract 3D visualization of an AI mind. At the center is a solid, glowing white cube (The Truth Core). Surrounding it is a translucent blue sphere (The Safety Field). Encircling the sphere is a complex, rotating golden icosahedron (The Quality Layer). 11 rays of light emanate from the center, piercing through all layers. Minimalist, high-end 3D motion graphics style, Ray-traced glass, soft global illumination, clean white background, Apple-style aesthetic, depth of field.
-
----
-
-#### Prompt 5: The Constellation of Law (Symbolic)
-
-**Concept:** 11 ดวงดาวสร้างเป็นกลุ่มดาว Shield/Compass บนท้องฟ้า
-
-> A cosmic view of a massive constellation in a deep purple nebula. 11 brilliant pulsars are connected by lines of white light, forming the shape of a celestial shield. The 3 brightest stars at the base represent the "Foundation of Truth." At the center of the shield, a golden nebula takes the shape of a compass needle pointing upward. Starry night, cinematic space art, nebula clouds, glowing light-links, ethereal, epic scale, Hubble telescope aesthetic.
-
----
-
-#### Prompt 6: The Zen Garden of Verification (Environmental)
-
-**Concept:** สวนเซนสมดุลที่ทุกองค์ประกอบมีที่ทางและจุดประสงค์
-
-> A futuristic Zen garden inside a glass dome on a distant planet. 11 perfectly balanced stones are arranged in a vertical stack on a foundation of white raked sand (representing Flow Diagrams). A clear stream (Verification) flows around the base. A single wooden bridge (User Path) leads to the center. The lighting is calm and blue. Photorealistic, serene atmosphere, high-contrast, Japanese minimalist architecture, soft morning light, 8k.
-
----
-
-#### Prompt 7: The 11 Wardens of the Code (Character-Based)
-
-**Concept:** 11 ผู้พิทักษ์ยืนเป็นวงกลมปกป้องแหล่งพลังงานกลาง
-
-> 11 hooded cybernetic guardians standing in a circle within a high-tech cathedral. Each warden holds a different symbolic tool (a shield, a lens, a compass, a scroll). The 3 "Truth Wardens" wear white robes at the base of a staircase. The "Safety Wardens" stand on the perimeter. At the center of the circle, a human figure sits on a throne of light, directing them. Cyberpunk-monastic style, dramatic "Chiaroscuro" lighting, foggy atmosphere, intricate armor detail, digital art, ArtStation style.
-
----
-
-#### Prompt 8: The Digital Blueprint (Data Visualization)
-
-**Concept:** 3D holographic infographic แสดง "Operating Manual" ของระบบ
-
-> A 3D holographic blueprint of an AI operating system. The image shows a vertical stack of 11 glowing transparent panels. Each panel contains schematics, code snippets, and icons. The bottom 3 panels are labeled "ACCURACY" in bold, glowing text. The top panel is labeled "USER CONTROL." Isometric view, HUD interface elements, cyan and amber color palette, "Iron Man" lab aesthetic, complex data overlays, shallow depth of field.
-
----
-
-#### Prompt 9: The Neural Command Center (Futuristic/Tech)
-
-**Concept:** โครงสร้างคล้ายสมองที่มี Safety Firewall และ Execution Nodes
-
-> A futuristic "Neural Command Center" inside a computer core. A glowing brain-like node is encased in 3 concentric rings of protective energy (Safety & Quality). 11 data-streams (The Rules) flow from a central console operated by a human silhouette. The environment is dark with glowing fiber-optic cables. Tron-legacy aesthetic, high-speed light trails, volumetric lighting, tech-noir, detailed circuit patterns.
-
----
-
-#### Prompt 10: The Alchemical Synthesis (Artistic/Conceptual)
-
-**Concept:** ภาพ surreal แสดงการเปลี่ยน Data เป็น Truth
-
-> A surrealist painting of a giant glass hourglass held by two mechanical hands. Inside, instead of sand, 11 different colored liquids are layering perfectly without mixing. The bottom layer is a heavy, golden liquid (Truth). The middle layers are clear and protective. The top is a vibrant, swirling violet. Each layer has a floating symbol inside it. Salvador Dali meets Syd Mead, vivid colors, dream-like, conceptual art, oil painting texture, masterpiece.
-
----
-
-### A.6 Per-Rule Prompts (110 Prompts)
-
-**Prompt Reference:** ดู prompts ทั้งหมดได้ที่ `image-prompts.md`
-
-| Rule | Context File | 10 Styles Available |
-|------|--------------|---------------------|
-| anti-mockup | anti-mockup.md | Citadel, World Tree, Orrery, Geometric, Constellation, Zen Garden, Wardens, Blueprint, Neural, Alchemical |
-| anti-sycophancy | anti-sycophancy.md | (same 10 styles) |
-| authority-and-scope | authority-and-scope.md | (same 10 styles) |
-| document-consistency | document-consistency.md | (same 10 styles) |
-| emergency-protocol | emergency-protocol.md | (same 10 styles) |
-| flow-diagram-no-frame | flow-diagram-no-frame.md | (same 10 styles) |
-| functional-intent-verification | functional-intent-verification.md | (same 10 styles) |
-| no-variable-guessing | no-variable-guessing.md | (same 10 styles) |
-| safe-file-reading | safe-file-reading.md | (same 10 styles) |
-| safe-terminal-output | safe-terminal-output.md | (same 10 styles) |
-| zero-hallucination | zero-hallucination.md | (same 10 styles) |
-
----
-
-### A.7 Generated Images (2026-01-16)
-
-ภาพประกอบที่ถูก generate สำหรับแต่ละ Rule (1 ภาพต่อ Rule จาก 10 styles):
-
-| # | Rule | Style Selected | Generated Image |
-|---|------|----------------|-----------------|
-| 1 | anti-mockup | Blueprint | image_20260116_052133_0.png |
-| 2 | anti-sycophancy | Wardens | image_20260116_054448_0.png |
-| 3 | authority-and-scope | Citadel | image_20260116_054559_0.png |
-| 4 | document-consistency | Orrery | image_20260116_054716_0.png |
-| 5 | emergency-protocol | Wardens | image_20260116_054819_0.png |
-| 6 | flow-diagram-no-frame | Constellation | image_20260116_054954_0.png |
-| 7 | functional-intent-verification | Neural | image_20260116_055059_0.png |
-| 8 | no-variable-guessing | Alchemical | image_20260116_055202_0.png |
-| 9 | safe-file-reading | Geometric | image_20260116_055318_0.png |
-| 10 | safe-terminal-output | Wardens | image_20260116_055424_0.png |
-| 11 | zero-hallucination | Neural | image_20260116_055539_0.png |
-
-**Image Location:** `/home/node/workplace/AWCLOUD/CLAUDE/claude-code-image-generator/generated_images/`
-
-**Settings Used:**
-- Aspect Ratio: 16:9
-- Image Size: 2K
-- Model: gemini-3-pro-image-preview
+```bash
+# Generate image for specific rule
+python image_gen.py "<prompt>" --doc <rule-name>.md --aspect-ratio 16:9 --image-size 2K
+```
 
 ---
 

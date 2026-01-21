@@ -500,15 +500,10 @@ Script to verify design document compliance.
 
 **Eisenhower Matrix:**
 ```
-┌─────────────────┬─────────────────┐
-│  Urgent          │  Urgent          │
-│  + Important     │  + Not Important │
-│  (DO FIRST)      │  (DELEGATE)      │
-├─────────────────┼─────────────────┤
-│  Not Urgent      │  Not Urgent      │
-│  + Important     │  + Not Important │
-│  (SCHEDULE)      │  (ELIMINATE)     │
-└─────────────────┴─────────────────┘
+Urgent + Important → DO FIRST
+Urgent + Not Important → DELEGATE
+Not Urgent + Important → SCHEDULE
+Not Urgent + Not Important → ELIMINATE
 ```
 
 **80/20 Rule (Pareto Principle):**
