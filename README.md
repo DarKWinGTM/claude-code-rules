@@ -446,14 +446,14 @@ Architect ──┘
 
 ```text
 User: "Set up database connection"
-
+       ↓
 AI: "Here's the connection string:
      DATABASE_URL=postgres://localhost:5432/mydb"
 
-❌ Guessed values
-❌ No verification
-❌ Potentially wrong
-❌ User frustrated
+Result: ❌ Guessed values
+        ❌ No verification
+        ❌ Potentially wrong
+        ❌ User frustrated
 ```
 
 ---
@@ -462,19 +462,21 @@ AI: "Here's the connection string:
 
 ```text
 User: "Set up database connection"
-
+       ↓
 AI: "Let me check your .env file first..."
-    [Reads actual configuration]
-    "Found your existing config:
-     DATABASE_URL=postgres://prod-server:5432/app_db
+     [Reading configuration...]
+     "Found your existing config:
+      DATABASE_URL=postgres://prod-server:5432/app_db
 
-     Should I use this, or do you want to change it?"
+      Should I use this, or do you want to change it?"
 
-✅ Verified from actual files
-✅ No guessing
-✅ User confirmation
-✅ Professional interaction
+Result: ✅ Verified from actual files
+        ✅ No guessing
+        ✅ User confirmation
+        ✅ Professional interaction
 ```
+
+**The difference?** Professional AI behavior that respects your existing configuration.
 
 </div>
 
