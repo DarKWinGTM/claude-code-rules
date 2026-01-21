@@ -398,8 +398,6 @@ Complex Tasks (Level 6-7)    → Deep Analysis
 
 ### 👥 TUMIX Multi-Agent System
 
-<div align="center">
-
 **Three expert perspectives analyzing every complex problem**
 
 ```text
@@ -415,8 +413,6 @@ Architect  ──┘
 4. **Synthesis** → All perspectives merge into unified recommendation
 
 **Result:** Comprehensive analysis from multiple angles
-
-</div>
 
 ---
 
