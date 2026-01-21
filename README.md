@@ -327,19 +327,16 @@ Level 6-7: Complex tasks    → Deep analysis
 
 Three perspectives analyzing every complex problem:
 
+```text
+Developer Agent  ───┐
+Security Agent   ───┼──→ Unified Recommendation
+Architect Agent   ───┘
 ```
-┌─────────────┐   ┌─────────────┐   ┌─────────────┐
-│  Developer  │   │  Security   │   │  Architect  │
-│    Agent    │   │    Agent    │   │    Agent    │
-└──────┬──────┘   └──────┬──────┘   └──────┬──────┘
-       │                 │                 │
-       └────────────┬────┴────────────────┘
-                    ▼
-           ┌───────────────┐
-           │    Unified    │
-           │ Recommendation│
-           └───────────────┘
-```
+
+**Process Flow:**
+- Each agent analyzes from their perspective
+- Perspectives merge into unified recommendation
+- Cross-functional collaboration ensures comprehensive analysis
 
 ### 📚 RoT (Retrieval of Thoughts)
 
