@@ -1,27 +1,61 @@
-<p align="center">
-  <img src="img/repo-banner.png" alt="Claude Code Rules" width="700">
+<div align="center">
+
+<!-- Hero Banner -->
+<img src="img/repo-banner.png" alt="Claude Code Rules" width="800">
+
+<!-- Hero Title -->
+<h1>
+  <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3db/32.svg" width="32">
+  Claude Code Rules & Framework
+  <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3db/32.svg" width="32">
+</h1>
+
+<p>
+  <i>Your Claude Code AI assistant, elevated to professional standards</i>
 </p>
 
-<h1 align="center">🏛️ Claude Code Rules & Framework</h1>
+<!-- Quick Stats Cards -->
+<table>
+<tr>
+<td align="center" width="200">
+  <img src="https://img.shields.io/badge/Accuracy-100%25-success?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTkgMTYuMTdMNCAxMWwxLTUuODNMOSAwbDkgOS4xN00xNiAxNy4wM2wtOSA5LjE3IDktOS4xN04xNiA4LjE3TDcgMmw1LjgzLTUuODNNNyAyTDE1IDhsLTguMTcgOC4xN00xNyAxN2w5LjE3LTkuMTdMMTYgOC4xN3oiLz48L3N2Zz4=">
+  <br><br>
+  <b>100%</b><br><sub>Factual Accuracy</sub>
+</td>
+<td align="center" width="200">
+  <img src="https://img.shields.io/badge/Efficiency-+40--82%25-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
+  <br><br>
+  <b>82%</b><br><sub>Token Savings</sub>
+</td>
+<td align="center" width="200">
+  <img src="https://img.shields.io/badge/Speed-+30--50%25-yellow?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdBoxZyI2LjAzNi02LjAzNiAwIDAgMS04LjQ4NSAwbC0uNzA3LjcwN0E2IDAgMCAxIDEyIDEyYTYgNiAwIDAgMS0xMiAweiIvPjwvc3ZnPg==">
+  <br><br>
+  <b>50%</b><br><sub>Faster Response</sub>
+</td>
+<td align="center" width="200">
+  <img src="https://img.shields.io/badge/Safety-100%25-red?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0QzMzI1RiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+  <br><br>
+  <b>100%</b><br><sub>Constitutional</sub>
+</td>
+</tr>
+</table>
 
-<p align="center">
-  <strong>Comprehensive rule set and constitutional framework for Claude Code AI assistant</strong>
-</p>
-
-<p align="center">
-  <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_seconds-brightgreen?style=for-the-badge" alt="Quick Start"></a>
-  <a href="#-installation"><img src="https://img.shields.io/badge/Install-Copy_&_Paste-blue?style=for-the-badge" alt="Installation"></a>
-  <a href="#-visual-guide"><img src="https://img.shields.io/badge/Rules-11_Policies-orange?style=for-the-badge" alt="Rules"></a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Accuracy-100%25-success" alt="Accuracy">
-  <img src="https://img.shields.io/badge/Token_Efficiency-+40--82%25-blue" alt="Token Efficiency">
-  <img src="https://img.shields.io/badge/Response_Speed-+30--50%25-yellow" alt="Response Speed">
-  <img src="https://img.shields.io/badge/Constitutional_Compliance-100%25-red" alt="Compliance">
+<!-- CTA Buttons -->
+<p>
+  <a href="#-quick-start">
+    <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
+  </a>
+  <a href="#-installation">
+    <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
+  </a>
+  <a href="#-visual-guide">
+    <img src="https://img.shields.io/badge/🖼️_Rules-15_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+  </a>
 </p>
 
 ---
+
+</div>
 
 ## 📑 Table of Contents
 
@@ -38,23 +72,25 @@
 
 ## ⚡ Quick Start
 
-**One-liner installation** - Copy all rules to your Claude Code:
+<div align="center">
 
 ```bash
-# Clone and install to ~/.claude/rules/
+# 🚀 One-line installation - Clone and install
 git clone https://github.com/DarKWinGTM/claude-code-rules.git && \
 cp claude-code-rules/*.md ~/.claude/rules/
 ```
 
-That's it! 🎉 Your Claude Code now has enhanced rules.
+✨ **That's it!** Your Claude Code is now enhanced with professional rules.
+
+</div>
 
 ---
 
 ## 📦 Installation
 
-### Method 1: Full Installation (Recommended)
+### 🎯 Method 1: Full Installation (Recommended)
 
-Copy all rule files to Claude Code's rules directory:
+Complete setup with all rules:
 
 ```bash
 # Step 1: Clone the repository
@@ -71,19 +107,19 @@ cp *.md ~/.claude/rules/
 ls ~/.claude/rules/
 ```
 
-### Method 2: Single Rule Installation
+### 🎯 Method 2: Pick Your Rules
 
-Install only specific rules you need:
+Install only what you need:
 
 ```bash
-# Example: Install only anti-sycophancy rule
+# Example: Install just the anti-sycophancy rule
 curl -o ~/.claude/rules/anti-sycophancy.md \
   https://raw.githubusercontent.com/DarKWinGTM/claude-code-rules/master/anti-sycophancy.md
 ```
 
-### Method 3: Project-Specific Rules
+### 🎯 Method 3: Project-Specific
 
-Add rules to a specific project only:
+Add rules to a single project:
 
 ```bash
 # In your project directory
@@ -93,23 +129,23 @@ cp /path/to/claude-code-rules/*.md .claude/rules/
 
 ### 📍 Installation Paths
 
-| Location | Scope | Path |
-|----------|-------|------|
-| **Global** | All projects | `~/.claude/rules/*.md` |
-| **Global Config** | All projects | `~/.claude/CLAUDE.md` |
-| **Project** | Current project only | `./.claude/rules/*.md` |
+| Location | Scope | Path | Use Case |
+|----------|-------|------|----------|
+| **Global** | All projects | `~/.claude/rules/*.md` | Default recommendation |
+| **Project** | Current project only | `./.claude/rules/*.md` | Project-specific needs |
 
-### 📂 Design Documentation
+### 📂 Design Documentation Structure
 
-| Location | Purpose | Path |
-|----------|---------|------|
-| **Design Docs** | Design specifications | `./design/*.design.md` |
-| **Rules Files** | Working rules from design | `*.md` (root level) |
+| Location | Purpose | File Type |
+|----------|---------|-----------|
+| `./design/*.design.md` | Design specifications | Design docs |
+| `*.md` (root) | Working rules | Rules files |
+| `./changelog/*.md` | Version history | Changelogs |
 
-> **Note**: This project follows **Single Source of Truth** principle:
+> **💡 Single Source of Truth Principle:**
 > - Design files (`.design.md`) contain Version History sections
-> - Rules files are created from design and rely on Git for history
-> - No duplicated files - one authoritative source per document
+> - Rules files rely on Git for history tracking
+> - One authoritative source per document type
 
 ### ✅ Verify Installation
 
@@ -123,50 +159,64 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 
 ## ✨ Features
 
+<div align="center">
+
+### 🎯 Core Capabilities
+
 <table>
 <tr>
 <td width="50%">
 
-### 🎯 Zero Hallucination
+#### 🔍 Zero Hallucination
 - 100% verified information only
 - Evidence-based responses
 - No guessing or assumptions
+- Source citations always included
 
 </td>
 <td width="50%">
 
-### 🛡️ Anti-Sycophancy
-- Truth over pleasing
+#### 🛡️ Anti-Sycophancy
+- Truth over agreement
 - Direct corrections when needed
-- No false agreement
+- No false praise
+- Honest feedback, always
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### 🔒 Security First
+#### 🔒 Security First
 - Real systems over simulations
-- No mock implementations
+- No mock implementations by default
 - Verified configurations only
+- Production-ready patterns
 
 </td>
 <td width="50%">
 
-### ⚡ Performance Optimized
+#### ⚡ Performance Optimized
 - 30-50% faster responses
 - 40-82% token reduction
 - Adaptive complexity (TRAAC)
+- Cost-efficient operations
 
 </td>
 </tr>
 </table>
 
+</div>
+
 ---
 
 ## 📁 Rule Files
 
-### 🔴 Core Policies
+<div align="center">
+
+### 🔴 Core Policies (3 rules)
+
+> **Fundamental principles that govern all AI behavior**
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
@@ -174,7 +224,11 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`anti-sycophancy.md`](anti-sycophancy.md) | Truth over agreement | Honest feedback always |
 | [`zero-hallucination.md`](zero-hallucination.md) | Verified information only | 100% accuracy |
 
-### 🟡 Quality & Safety
+---
+
+### 🟡 Quality & Safety (9 rules)
+
+> **Ensure consistent, safe, and well-documented outputs**
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
@@ -187,7 +241,11 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects |
 
-### 🟢 Best Practices
+---
+
+### 🟢 Best Practices (4 rules)
+
+> **Optimize your daily workflow efficiency**
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
@@ -196,11 +254,17 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
+**📊 Total: 16 Rules = Complete Professional Framework**
+
+</div>
+
 ---
 
 ## 🖼️ Visual Guide
 
-### Core Policies
+<div align="center">
+
+### 🔴 Core Policies Visual
 
 <table>
 <tr>
@@ -222,7 +286,9 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 </tr>
 </table>
 
-### Quality & Safety
+---
+
+### 🟡 Quality & Safety Visual
 
 <table>
 <tr>
@@ -266,12 +332,14 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 <td align="center" width="25%">
 <img src="img/project-documentation-standards.png" width="200"><br>
 <b>Project Documentation Standards</b><br>
-<sub>Standardized docs for all projects</sub>
+<sub>Standardized docs</sub>
 </td>
 </tr>
 </table>
 
-### Best Practices
+---
+
+### 🟢 Best Practices Visual
 
 <table>
 <tr>
@@ -296,14 +364,9 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 <sub>Output management</sub>
 </td>
 </tr>
-<tr>
-<td align="center" width="25%"></td>
-<td align="center" width="25%"></td>
-<td align="center" width="25%"></td>
-<td align="center" width="25%"></td>
-</tr>
 </table>
 
+</div>
 
 ---
 
@@ -311,130 +374,221 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 
 ### 🧠 TRAAC (Task Runtime Adaptive AI Compression)
 
+<div align="center">
+
+**Dynamic complexity adjustment based on task requirements**
+
 ```
-Level 0-2: Simple tasks     → Minimal processing
-Level 3-5: Standard tasks   → Balanced approach
-Level 6-7: Complex tasks    → Deep analysis
+Simple Tasks (Level 0-2)     → Minimal Processing
+     ↓
+Standard Tasks (Level 3-5)   → Balanced Approach
+     ↓
+Complex Tasks (Level 6-7)    → Deep Analysis
 ```
 
-| Metric | Improvement |
-|--------|-------------|
-| Response Speed | +30-50% |
-| Token Efficiency | +40-82% |
-| Cost Reduction | -25-35% |
+| Metric | Improvement | Impact |
+|--------|-------------|--------|
+| Response Speed | +30-50% | Faster answers |
+| Token Efficiency | +40-82% | Lower costs |
+| Cost Reduction | -25-35% | Budget-friendly |
+
+</div>
+
+---
 
 ### 👥 TUMIX Multi-Agent System
 
-Three perspectives analyzing every complex problem:
+<div align="center">
+
+**Three expert perspectives analyzing every complex problem**
 
 ```text
-Developer Agent  ───┐
-Security Agent   ───┼──→ Unified Recommendation
-Architect Agent   ───┘
+Developer ──┐
+Security  ──┼──→ Unified Recommendation
+Architect ──┘
 ```
 
-**Process Flow:**
-- Each agent analyzes from their perspective
-- Perspectives merge into unified recommendation
-- Cross-functional collaboration ensures comprehensive analysis
+**How It Works:**
+1. **Developer Agent** → Technical feasibility analysis
+2. **Security Agent** → Security & privacy evaluation
+3. **Architect Agent** → System design considerations
+4. **Synthesis** → All perspectives merge into unified recommendation
+
+**Result:** Comprehensive analysis from multiple angles
+
+</div>
+
+---
 
 ### 📚 RoT (Retrieval of Thoughts)
 
-- **Cache** verified reasoning patterns
-- **Reuse** for 40% speed boost
-- **Validate** before each use
+<div align="center">
+
+**Cache and reuse verified reasoning patterns**
+
+| Action | Benefit |
+|--------|---------|
+| **Cache** verified patterns | Store successful approaches |
+| **Reuse** for similar tasks | 40% speed improvement |
+| **Validate** before use | Ensure accuracy maintained |
+
+**Performance:** 82% cache hit rate for recurring patterns
+
+</div>
 
 ---
 
 ## 📊 Before & After
 
+<div align="center">
+
 ### ❌ Without Rules
 
-```
+```text
 User: "Set up database connection"
 
 AI: "Here's the connection string:
-DATABASE_URL=postgres://localhost:5432/mydb"
+     DATABASE_URL=postgres://localhost:5432/mydb"
 
 ❌ Guessed values
 ❌ No verification
 ❌ Potentially wrong
+❌ User frustrated
 ```
+
+---
 
 ### ✅ With Rules
 
-```
+```text
 User: "Set up database connection"
 
 AI: "Let me check your .env file first..."
-[Reads actual configuration]
-"Found your existing config:
-DATABASE_URL=postgres://prod-server:5432/app_db
+    [Reads actual configuration]
+    "Found your existing config:
+     DATABASE_URL=postgres://prod-server:5432/app_db
 
-Should I use this, or do you want to change it?"
+     Should I use this, or do you want to change it?"
 
 ✅ Verified from actual files
 ✅ No guessing
 ✅ User confirmation
+✅ Professional interaction
 ```
+
+</div>
 
 ---
 
 ## 📊 Performance Metrics
 
-| Metric | Target | Status |
-|--------|:------:|:------:|
-| Factual Accuracy | 100% | ✅ |
-| Constitutional Compliance | 100% | ✅ |
-| Token Efficiency | +40-82% | ✅ |
-| Response Speed | +30-50% | ✅ |
-| User Sovereignty | Absolute | ✅ |
+<div align="center">
+
+| Metric | Target | Status | Impact |
+|--------|:------:|:------:|--------|
+| Factual Accuracy | 100% | ✅ | Zero hallucinations |
+| Constitutional Compliance | 100% | ✅ | User sovereignty maintained |
+| Token Efficiency | +40-82% | ✅ | Cost reduction |
+| Response Speed | +30-50% | ✅ | Faster delivery |
+| User Sovereignty | Absolute | ✅ | User always in control |
+
+</div>
 
 ---
 
 ## 🔒 Safety Guarantees
 
-- ✅ **No mock/stub implementations** (unless explicitly requested)
-- ✅ **No guessing** variables or configurations
-- ✅ **No hallucinated** information
-- ✅ **No sycophantic** agreement
-- ✅ **Constitutional principles** override all
+<div align="center">
+
+### ✅ Our Commitment to You
+
+| Guarantee | Description |
+|-----------|-------------|
+| **No Mock/Stub** | Real implementations unless explicitly requested |
+| **No Guessing** | Always verify from actual sources |
+| **No Hallucinations** | 100% fact-based responses |
+| **No Sycophancy** | Truth over agreement, always |
+| **Constitutional** | Principles override everything |
+
+**Your safety and accuracy are non-negotiable.**
+
+</div>
 
 ---
 
 ## 🤝 Contributing
 
-These rules evolve based on:
-- 🔄 Real-world usage patterns
-- 💬 User feedback
-- 🔐 Safety considerations
-- ⚡ Performance optimization needs
+<div align="center">
 
-**Pull requests welcome!** Please ensure any new rules follow the existing format.
+These rules evolve based on real-world usage:
+
+- 🔄 **Real-world usage patterns** → What actually works
+- 💬 **User feedback** → Your experience matters
+- 🔐 **Safety considerations** → Always improving
+- ⚡ **Performance optimization** → Getting faster
+
+### 📝 Contribution Guidelines
+
+**Pull requests welcome!** Please ensure:
+1. New rules follow existing format
+2. Include clear documentation
+3. Add visual assets if applicable
+4. Update changelog
+
+**We value:** Quality over quantity, clarity over complexity
+
+</div>
 
 ---
 
 ## 📜 License
 
-MIT License - Feel free to adapt for your own use case.
+<div align="center">
+
+**MIT License** - Feel free to adapt for your own use case.
+
+> Attribution appreciated but not required.
+
+</div>
 
 ---
 
 ## 🙏 Acknowledgments
 
-Personal rule set and configuration framework for Claude Code CLI. Inspired by:
-- Constitutional AI principles
+<div align="center">
+
+Personal rule set and configuration framework for Claude Code CLI.
+
+**Inspired by:**
+- Constitutional AI principles (Anthropic)
 - Best practices for AI assistant development
 - Real-world production experience
+- Community feedback and contributions
+
+**Built with ❤️ for the Claude Code community**
+
+</div>
 
 ---
 
-<p align="center">
-  <b>Version</b>: 1.3.0 |
+<div align="center">
+
+---
+
+<p>
+  <b>Version</b>: 2.0.0 |
   <b>Last Updated</b>: 2026-01-21 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
-<p align="center">
+<p>
   <a href="#️-claude-code-rules--framework">⬆️ Back to Top</a>
 </p>
+
+---
+
+<p>
+  <sub>Made with 💙 by developers who care about AI quality</sub>
+</p>
+
+</div>
