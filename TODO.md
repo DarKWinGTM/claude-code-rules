@@ -6,14 +6,14 @@
 
 | Metric | Value | Target |
 |--------|-------|--------|
-| Overall Progress | 24/27 tasks (89%) | 100% |
-| Total Tasks | 27 | - |
-| Completed | 24 | - |
+| Overall Progress | 47/67 tasks (70%) | 100% |
+| Total Tasks | 67 | - |
+| Completed | 47 | - |
 | In Progress | 0 | - |
-| Pending | 3 | - |
+| Pending | 20 | - |
 
 **Active Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-**Last Updated:** 2026-01-20
+**Last Updated:** 2026-01-21
 
 ---
 
@@ -114,22 +114,194 @@
 
 ---
 
-## 🔄 In Progress
+### [P0] [Core] Document Design Control Rules File
 
-*No tasks currently in progress*
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Create document-design-control.md** - Rules file from design.spec v1.1
+- [x] **Update design.md structure** - Make systematic and properly integrated with changelog
+- [x] **Fix terminology** - Changed "Primary Reference" to "Related Reference" (v1.2)
+
+---
+
+### [P0] [Design] Restructure design.md (Master Design)
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Create changelog/changelog.md** - Master changelog for entire project
+- [x] **Restructure design.md sections** - Reorganize into systematic format (Sections I-VIII)
+- [x] **Remove scattered sections** - Consolidate into logical groups
+- [x] **Update design.md to link master changelog** - Point to changelog/changelog.md
+- [x] **Update version to 1.3** - Document the restructuring in changelog
+
+---
+
+### [P0] [Design] Rules File Standard Template (CRITICAL)
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Design Rules File Standard Template** - Define mandatory structure for all .md rules files in design.md
+- [x] **Specify header requirements** - Current Version only (Session ID NOT required per user feedback)
+- [x] **Remove Version tables from rules files** - Version history ONLY in changelog files
+- [x] **Define changelog link requirement** - All rules files must link to their changelog
+- [x] **Add template to design.md** - Include standard template in master design document
+- [x] **Migrate all 9 rules files** - Update all existing rules to follow new standard template (100% compliant)
+- [x] **Update design.md to v1.4** - Removed Session ID from Rules File Standard Template
+
+**Files Migrated:**
+- anti-mockup.md (v1.0)
+- anti-sycophancy.md (v1.0)
+- document-changelog-control.md (v4.3 - removed Session ID)
+- flow-diagram-no-frame.md (v1.0)
+- no-variable-guessing.md (v1.0)
+- safe-file-reading.md (v4.0)
+- safe-terminal-output.md (v4.0)
+- strict-file-hygiene.md (v1.2)
+- zero-hallucination.md (v1.0)
+
+---
+
+### [P0] [Core] Document Design Control Rules File (Completed)
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Generate document-design-control.png** - Visual representation for README ✅
+- [x] **Update README with new rule** - Added to Quality & Safety section ✅
+
+---
+
+### [P0] [Design] Restructure design.md - Completed
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Update design.md cross-references** - Fixed typo `chelog` → `changelog` ✅
+- [x] **Update design.md link to image.prompt.design.md** - Renamed file and added link ✅
+
+---
+
+### [P1] [Fix] Flow Diagram No-Frame Violation
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Fix flow-diagram-no-frame.md violation** - Fixed todo-standards.design.md ASCII box ✅
+- [x] **Review all design docs** - Checked for ASCII frame violations ✅
+- [x] **Update examples** - Replaced frame examples with text format ✅
+
+---
+
+### [P1] [Core] Project Documentation Standards Rule - Design Phase
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Design project-documentation-standards.md structure** - ✅ Design phase complete
+- [x] **Define required document rules** - Identified: document-design-control.md, document-changelog-control.md, todo-standards.design.md
+- [x] **Specify when to apply** - On project start, when creating designs, when tracking changes
+- [x] **Design compliance checklist** - Project start checklist with all required documents
+- [x] **Design onboarding integration** - New projects must acknowledge document standards
+
+**Design Output:**
+- Purpose: Every project must maintain standardized documentation
+- Required Documents: README.md, design.md, changelog.md, TODO.md
+- Compliance Checklist: All documents follow respective rules
+- Onboarding: New projects acknowledge standards
+
+**Note:** Design phase complete. Rules file creation pending user approval.
+
+---
+
+### [P1] [Core] Project Documentation Standards Rule - Design File Created
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Create design/project-documentation-standards.design.md** - ✅ Design file created (287 lines)
+- [x] **Follow document-design-control.md format** - ✅ Document Control section, Navigator format
+- [x] **Include all 10 sections** - ✅ Goal, Scope, Required Documents, Rules Applied, Checklist, Onboarding, Metrics, Examples, Related Docs, Notes
+- [x] **Add changelog link** - ✅ Links to changelog at end
+- [x] **Real Session ID** - ✅ a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+
+**File Location:** `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/design/project-documentation-standards.design.md`
+
+---
+
+### [P1] [Core] Project Documentation Standards Rule - Completed
+
+**Completed:** 2026-01-21 | **Created:** 2026-01-21
+
+- [x] **Create design/project-documentation-standards.design.md** - ✅ Design file created (287 lines)
+- [x] **Create project-documentation-standards.md** - ✅ Rules file created following master design template
+- [x] **Follow document-design-control.md format** - ✅ Current Version header, Design link, changelog link
+- [x] **Include Core Requirements** - ✅ Required Documents, Decision Tree, Rule Compliance, Checklist
+- [x] **Add Examples** - ✅ Simple, Standard, Complex project examples
+- [x] **Add Quality Metrics** - ✅ 5 metrics defined with targets
+- [x] **Add Integration section** - ✅ Links to related rules
+- [x] **Real Session ID** - ✅ a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+
+**Files Created:**
+1. `design/project-documentation-standards.design.md` (287 lines)
+2. `project-documentation-standards.md` (rules file)
+
+**Task Complete:** ✅ P1 Project Documentation Standards Rule implementation finished
+
+---
+
+## 🔄 In Progress
 
 ---
 
 ## 📋 Pending Tasks
 
+### [P2] [Design] Design Framework Enhancement
+
+**Status:** [PENDING] | **Created:** 2026-01-21
+
+- [ ] **Create design templates** - Template files for new design documents
+- [ ] **Design document checklist** - Comprehensive checklist before creating design
+- [ ] **Update design.md** - Add systematic structure framework
+- [ ] **Create integration examples** - Show how design.md + changelog.md work together
+- [ ] **Document best practices** - Writing guide for design documents
+
 ### [P2] [Visual] Image Generation
 
-**Status:** [PENDING] | **Created:** 2026-01-16
+**Status:** ✅ **COMPLETED** | **Created:** 2026-01-21 | **Completed:** 2026-01-21
 
-- [ ] **Generate strict-file-hygiene.png** - Visual representation for README
-- [ ] **Generate document-changelog-control.png** - Visual representation for README
-- [ ] **Generate document-design-control.png** - Visual representation for README
-- [ ] **Update README with images** - Add generated images to README
+- [x] **Generate strict-file-hygiene.png** - ✅ Completed 2026-01-21
+- [x] **Generate document-changelog-control.png** - ✅ Completed 2026-01-21
+- [x] **Generate document-design-control.png** - ✅ Completed 2026-01-21
+- [x] **Generate project-documentation-standards.png** - ✅ Completed 2026-01-21 (9 styles generated, selected Orrery style 9/10)
+- [x] **Update image with text overlay** - ✅ Updated 2026-01-21 (replaced "Rule Compliance Nebula" with "project-documentation-standards" text, 36px elegant font, cosmic-style image)
+- [x] **Update README with all images** - ✅ Completed 2026-01-21
+
+**Note:** design.md (master design document) does not require image - only rules files have images
+**Image Update:** Final image (3.1 MB) with text overlay verified via MCP analyze_image (Rating 9/10)
+
+### [P2] [Docs] Documentation Updates
+
+**Status:** [PENDING] | **Created:** 2026-01-21
+
+- [x] **Update design/design.md** - ✅ Fixed cross-references and updated examples ✅
+- [x] **Update README.md** - ✅ Added document-design-control to rules list ✅
+- [ ] **Create integration guide** - How design/changelog/rules files work together
+- [ ] **Add examples section** - Real examples from current project
+
+---
+
+### [P1] [Core] Project Documentation Standards Rule
+
+**Status:** ✅ **COMPLETED** | **Created:** 2026-01-21 | **Completed:** 2026-01-21
+
+- [x] **Design project-documentation-standards.md structure** - ✅ Complete
+- [x] **Create design/project-documentation-standards.design.md** - ✅ Design file created (287 lines)
+- [x] **Create project-documentation-standards.md** - ✅ Rules file created
+- [x] **Define required document rules** - ✅ All required rules identified
+- [x] **Specify when to apply** - ✅ Application timing defined
+- [x] **Design compliance checklist** - ✅ Project start checklist created
+- [x] **Design onboarding integration** - ✅ Onboarding requirements defined
+
+**Task Complete:** ✅ Both design file and rules file created following master design template
+
+---
+
+### [P3] [Enhancement] Future Enhancements
 
 ---
 
@@ -147,6 +319,24 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-01-21 | **Completed P1 task:** Created project-documentation-standards.md rules file (both design + rules files) |
+| 2026-01-21 | **Created design file:** design/project-documentation-standards.design.md (287 lines) |
+| 2026-01-21 | **Completed P1 task:** Designed project-documentation-standards.md structure (design phase complete) |
+| 2026-01-21 | **Completed P0 tasks:** Generate document-design-control.png, Update README, Fix design.md cross-references |
+| 2026-01-21 | **Completed P1 task:** Fixed Flow Diagram No-Frame violations in todo-standards.design.md |
+| 2026-01-21 | Updated progress dashboard: 46/67 tasks (69%) |
+| 2026-01-21 | Completed images: strict-file-hygiene.png, document-changelog-control.png, document-design-control.png |
+| 2026-01-21 | Added P0: Rules File Standard Template - Define mandatory structure, remove Version tables, add design links |
+| 2026-01-21 | Created changelog/changelog.md (Master Changelog) following Pattern 2 |
+| 2026-01-21 | Added P1: Project Documentation Standards Rule - Required document rules for all projects |
+| 2026-01-21 | Fixed document-design-control.md terminology: "Primary Reference" → "Related Reference" (v1.2) |
+| 2026-01-21 | Added comprehensive design work TODOs with proper framework |
+| 2026-01-21 | Added P0: Restructure design.md (Master Design) - systematic format |
+| 2026-01-21 | Added P2: Design Framework Enhancement - templates, checklists, examples |
+| 2026-01-21 | Added P2: Documentation Updates - integration guides, examples |
+| 2026-01-21 | Updated progress dashboard: 33/50 tasks (66%) |
+| 2026-01-21 | Added P0 task: Document Design Control Rules File creation |
+| 2026-01-21 | Added P1 task: Flow Diagram No-Frame Violation fix (detected in design proposal) |
 | 2026-01-20 | Updated document-changelog-control.md to v4.3: Clarified changelog.md MUST have BOTH detailed sections (UPPER) + Version History Unified table (LOWER) |
 | 2026-01-20 | Renamed Changelog section to History (different purpose) |
 | 2026-01-20 | Completed TODO Standards Implementation task |
@@ -159,4 +349,4 @@
 ---
 
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-> **Last Updated:** 2026-01-20
+> **Last Updated:** 2026-01-21

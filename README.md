@@ -181,8 +181,11 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
+| [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
+| [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects |
 
 ### 🟢 Best Practices
 
@@ -192,7 +195,6 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions |
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
-| [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
 
 ---
 
@@ -251,9 +253,21 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 <b>Document Changelog Control</b><br>
 <sub>Version tracking system</sub>
 </td>
-<td align="center" width="25%"></td>
-<td align="center" width="25%"></td>
-<td align="center" width="25%"></td>
+<td align="center" width="25%">
+<img src="img/document-design-control.png" width="200"><br>
+<b>Document Design Control</b><br>
+<sub>Design standards</sub>
+</td>
+<td align="center" width="25%">
+<img src="img/strict-file-hygiene.png" width="200"><br>
+<b>Strict File Hygiene</b><br>
+<sub>No unrequested docs</sub>
+</td>
+<td align="center" width="25%">
+<img src="img/project-documentation-standards.png" width="200"><br>
+<b>Project Documentation Standards</b><br>
+<sub>Standardized docs for all projects</sub>
+</td>
 </tr>
 </table>
 
@@ -283,11 +297,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 </td>
 </tr>
 <tr>
-<td align="center" width="25%">
-<img src="img/strict-file-hygiene.png" width="200"><br>
-<b>Strict File Hygiene</b><br>
-<sub>No unrequested docs</sub>
-</td>
+<td align="center" width="25%"></td>
 <td align="center" width="25%"></td>
 <td align="center" width="25%"></td>
 <td align="center" width="25%"></td>
