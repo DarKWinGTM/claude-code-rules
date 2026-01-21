@@ -403,9 +403,9 @@ Complex Tasks (Level 6-7)    → Deep Analysis
 **Three expert perspectives analyzing every complex problem**
 
 ```text
-Developer ──┐
-Security  ──┼──→ Unified Recommendation
-Architect ──┘
+Developer  ──┐
+Security   ──┼──→ Unified Recommendation
+Architect  ──┘
 ```
 
 **How It Works:**
