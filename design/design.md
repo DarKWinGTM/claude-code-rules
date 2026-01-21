@@ -3,8 +3,9 @@
 ## Master Design Document
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
+> **Current Version:** 1.6
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-21)
+> **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
 
@@ -20,6 +21,8 @@
 
 | Version | Date | Summary | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-01-21 | Removed Session ID from TODO standard - TODO.md should not have Session ID header | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 1.5 | 2026-01-21 | Added todo-standards and project-documentation-standards to rule hierarchy, updated rule count to 16 | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.4 | 2026-01-21 | Removed Session ID from Rules File Standard Template (not required for rules files) | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.3 | 2026-01-21 | Restructured to systematic format (Sections I-VIII), added Rules File Standard Template | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.2 | 2026-01-20 | Updated document-changelog-control to v4.3 | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
@@ -80,6 +83,8 @@ Claude Code Rules System
   │   ├─ document-consistency
   │   ├─ document-changelog-control (v4.3)
   │   ├─ document-design-control (v1.2)
+  │   ├─ todo-standards (v2.0)
+  │   ├─ project-documentation-standards
   │   ├─ anti-mockup
   │   ├─ no-variable-guessing
   │   ├─ flow-diagram-no-frame
@@ -108,7 +113,7 @@ emergency-protocol + functional-intent-verification (Execution)
 
 ## IV. Sub-Rule Index
 
-### IV.1 Current Rules (12 Rules)
+### IV.1 Current Rules (16 Rules)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
@@ -122,10 +127,12 @@ emergency-protocol + functional-intent-verification (Execution)
 | 8 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
 | 9 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
 | 10 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
-| 11 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
-| 12 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
-| 13 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
-| 14 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
+| 11 | project-documentation-standards.md | project-documentation-standards.design.md | Project documentation standards |
+| 12 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
+| 13 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
+| 14 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
+| 15 | todo-standards.md | todo-standards.design.md v2.0 | Simple TODO lists |
+| 16 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
 
 ### IV.2 Reserved for Future Rules
 

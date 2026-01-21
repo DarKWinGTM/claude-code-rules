@@ -25,7 +25,6 @@ Every TODO.md must have these sections:
 ```markdown
 # [Project Name] - TODO
 
-> **Session:** [Session ID]
 > **Last Updated:** YYYY-MM-DD
 
 ---
@@ -97,7 +96,6 @@ Every TODO.md must have these sections:
 
 When creating/updating TODO.md:
 
-- [ ] Have Session ID in header
 - [ ] Have Last Updated date
 - [ ] Have Completed section (what's done)
 - [ ] Have Tasks To Do section (what needs doing)
@@ -115,7 +113,6 @@ When creating/updating TODO.md:
 ```markdown
 # My Project - TODO
 
-> **Session:** abc-123-def-456
 > **Last Updated:** 2026-01-21
 
 ---
@@ -151,8 +148,6 @@ When creating/updating TODO.md:
 
 ```markdown
 # TODO
-
-> **Session:** abc-123-def-456
 
 ---
 

@@ -38,7 +38,6 @@
 ```markdown
 # [Project Name] - TODO
 
-> **Session:** [Session ID]
 > **Last Updated:** YYYY-MM-DD
 
 ---
@@ -101,7 +100,6 @@
 ```markdown
 # My Project - TODO
 
-> **Session:** abc-123-def-456
 > **Last Updated:** 2026-01-21
 
 ---
@@ -138,8 +136,6 @@
 ```markdown
 # TODO
 
-> **Session:** abc-123-def-456
-
 ---
 
 ## 📋 Tasks To Do
@@ -163,7 +159,6 @@
 
 เมื่อสร้าง/อัปเดต TODO.md:
 
-- [ ] มี Session ID ที่ header
 - [ ] มี Last Updated date
 - [ ] มี Completed section (สิ่งที่ทำเสร็จ)
 - [ ] มี Tasks To Do section (สิ่งที่ต้องทำ)
