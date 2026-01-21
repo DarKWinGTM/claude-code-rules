@@ -440,8 +440,6 @@ Architect  ──┘
 
 ## 📊 Before & After
 
-<div align="center">
-
 ### ❌ Without Rules
 
 ```text
@@ -477,8 +475,6 @@ Result: ✅ Verified from actual files
 ```
 
 **The difference?** Professional AI behavior that respects your existing configuration.
-
-</div>
 
 ---
 
