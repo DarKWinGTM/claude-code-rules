@@ -1,6 +1,6 @@
 # 🖼️ Claude Code Rules - Image Generation Prompts
 
-This document contains 110 optimized image generation prompts for the Claude Code Rules System, categorized by rule and visual style. Every prompt is designed to reflect the core technical concept of the rule.
+This document contains 140 optimized image generation prompts for the Claude Code Rules System, categorized by rule and visual style. Every prompt is designed to reflect the core technical concept of the rule.
 
 ## Rule: anti-mockup
 **Core Concept:** Real Systems Over Simulations. (Real APIs, actual databases, no placeholders).
@@ -188,5 +188,62 @@ This document contains 110 optimized image generation prompts for the Claude Cod
 | 8 | Blueprint | A screen showing "VERIFYING AGAINST DOCS..." with a green checkmark for "CONFIRMED" and a red "X" for "HALLUCINATED." |
 | 9 | Neural | A brain that triggers a "DOUBT RESPONSE" when a memory is fuzzy, blocking the mouth from speaking the unverified data. |
 | 10 | Alchemical | An alchemist who stops the experiment immediately if a reagent is unidentified, fearing a false and dangerous result. |
+
+---
+
+## Rule: document-changelog-control
+**Core Concept:** Every document must have traceable version history with real session IDs. Version History (Unified) format. design.md = ONLY link to changelog, changelog.md = Detailed sections + Version History table. Session IDs MUST be real UUID from environment (no placeholders).
+**Context File:** document-changelog-control.md
+
+| # | Style | Prompt |
+|---|-------|--------|
+| 1 | Citadel | Ancient stone fortress with glowing rune inscriptions on each block, golden timeline threads connecting fortress layers through history, fortified gates bearing real identification seals, crystalline bridge connecting two towers, 16:9, 2K, majestic architectural visualization |
+| 2 | World Tree | Massive ancient tree with branching document timelines, each branch labeled with real session IDs, interconnected root system showing version lineage, glowing golden leaves representing unified history, organic connection pathways between tree sections, 16:9, 2K, mystical forest atmosphere |
+| 3 | Orrery | Intricate brass clockwork mechanism with rotating document rings, central spindle showing version chronology, precision gears with engraved session identifiers, celestial bodies representing document versions, orbital paths showing history flow, 16:9, 2K, steampunk mechanical masterpiece |
+| 4 | Geometric | Interlocking hexagonal document panels forming unified matrix, each hexagon contains version number and session code, geometric flow lines connecting panels, triangular navigation arrows pointing between sections, clean minimalist aesthetic with gold accents, 16:9, 2K, modern abstract design |
+| 5 | Constellation | Cosmic star field where each star is a document version, constellation lines forming version history patterns, bright blue stars representing real session IDs, comet trails showing document evolution, navigator constellation linking two galaxy clusters, 16:9, 2K, space visualization |
+| 6 | Zen Garden | Serene rock garden with carefully placed document stones, sand raked in unified version timeline patterns, moss-covered tablets showing session identifiers, single wooden bridge connecting two garden sections, balanced minimalist composition, 16:9, 2K, Japanese tranquility |
+| 7 | Wardens | Robotic sentinels guarding document vault entrance, each sentinel bears glowing session ID badge, mechanical arms holding version history tablets, translucent data streams flowing between guards, fortified portal with real identification scanners, 16:9, 2K, futuristic security visualization |
+| 8 | Blueprint | Technical HUD display with document version schematic, layered blueprint showing file relationships, session ID data blocks in corner overlays, navigation pathway highlighted in circuit lines, version table grid structure, engineering diagrams, 16:9, 2K, professional technical interface |
+| 9 | Neural | Brain-like neural network where each synapse is a document version, glowing pathways showing version connections, neuron clusters representing unified history, real session IDs floating as electrical impulses, two network lobes connected by bridge, 16:9, 2K, sci-fi biological visualization |
+| 10 | Alchemical | Transmutation circle with document versions at cardinal points, golden elixir flowing between version nodes, alchemist's notebook showing real session formulas, crystalline structures emerging from transformation, unified vessel containing complete history, 16:9, 2K, mystical laboratory scene |
+
+---
+
+## Rule: strict-file-hygiene
+**Core Concept:** Single Source of Truth. AI must not create non-functional files unless user explicitly asks. No versioned copies (file-v2, _final, plan-2026). No proactive docs without asking. Git handles history, NOT filename suffixes.
+**Context File:** strict-file-hygiene.md
+
+| # | Style | Prompt |
+|---|-------|--------|
+| 1 | Citadel | Single pristine tower rising from fortress ruins, surrounding broken walls represent discarded duplicate versions, forbidden gates barred with warning runes, golden beam of truth illuminating central structure, clean pathway to main entrance, 16:9, 2K, medieval fortress purity |
+| 2 | World Tree | One magnificent ancient tree standing alone, surrounded by withered saplings representing rejected copies, roots deeply anchored in single truth soil, dead branches falling away naturally, birds nesting only in main canopy, 16:9, 2K, forest clearing scene |
+| 3 | Orrery | Single perfect clockwork sphere rotating at center, scattered broken gears littering the floor representing failed copies, main mechanism runs with precise accuracy, tangled redundant springs discarded below, elegant simplicity of truth, 16:9, 2K, mechanical precision |
+| 4 | Geometric | One perfect monolith triangle standing tall, surrounding shadow shapes of rejected duplicates fade away, clean edges representing single source, base anchored firmly, light beams from apex, minimalist purity, 16:9, 2K, abstract truth monument |
+| 5 | Constellation | One brilliant supernova outshining surrounding fading stars, dark void where duplicate stars collapsed, singular beacon of truth, cosmic debris of rejected versions drifting away, pure light energy, 16:9, 2K, space superiority |
+| 6 | Zen Garden | Single perfectly placed rock in center, rake marks showing only one true path, scattered extra stones removed to edges, water basin reflecting single truth, sand smoothed around main element, 16:9, 2K, minimalist Japanese garden |
+| 7 | Wardens | Singular robotic guardian protecting single vault door, rejected duplicate files dissolved behind, sentinel's scanner verifies only authorized documents, energy shield around central repository, piles of refused versions disintegrating, 16:9, 2K, AI guardian visualization |
+| 8 | Blueprint | Technical schematic showing single file architecture, ghosted outlines of rejected versions fading, clean circuit paths to sole document, warning labels prohibiting duplicates, Git flow diagram overlaying main structure, 16:9, 2K, engineering blueprint purity |
+| 9 | Neural | One dominant neural pathway glowing brightly, surrounding faded synapses representing discarded alternatives, electrical signals flowing through single true route, redundant connections withering away, brain focus on essential file, 16:9, 2K, biological efficiency |
+| 10 | Alchemical | Single pure crystal emerging from crucible, rejected impurities dissolving in flames, golden transformation affecting only one vessel, failed experiments crumbling away, philosopher's stone of truth, 16:9, 2K, mystical purification scene |
+
+---
+
+## Rule: document-design-control
+**Core Concept:** Design document structure standards. `.design.md` suffix for design files. Location: `./design/` subdirectory. Document Control section with version and session. Required sections structure. Navigator format for changelog integration.
+**Context File:** document-design-control.md
+
+| # | Style | Prompt |
+|---|-------|--------|
+| 1 | Citadel | Blueprints fortress with standardized tower architecture, each tower bears `.design.md` crest, fortified gate leads to `./design/` courtyard, Document Control keep at center, Navigator bridge connecting to outer Changelog citadel, uniform structural standards, 16:9, 2K, architectural consistency |
+| 2 | World Tree | Sacred grove where each tree follows same growth pattern, `.design.md` leaves on every branch, all trees rooted in `./design/` forest soil, central Document Control trunk, canopy Navigator pathway to history grove, organic standardized architecture, 16:9, 2K, mystical forest order |
+| 3 | Orrery | Precision clockwork with standardized gear sizes, each gear stamped with `.design.md` insignia, main mechanism housed in `./design/` chassis, central Document Control spring drives system, Navigator dial linking to changelog orrery, uniform mechanical standards, 16:9, 2K, engineering precision |
+| 4 | Geometric | Grid of identical hexagonal cells, each cell labeled with `.design.md` tag, entire structure organized in `./design/` pattern, central Document Control hexagon, Navigator arrow pointing to external changelog grid, crystalline geometric order, 16:9, 2K, structured minimalism |
+| 5 | Constellation | Uniform star cluster where each star is a design document, `.design.md` glow on every celestial body, constellation located in `./design/` sector, Document Control nebula at center, Navigator constellation trail connecting to changelog galaxy, organized cosmic pattern, 16:9, 2K, stellar organization |
+| 6 | Zen Garden | Carefully raked garden with standardized rock placements, each stone marked with `.design.md` symbol, entire garden contained in `./design/` enclosure, Document Control basin at center, path Navigator leading to changelog garden, balanced structured tranquility, 16:9, 2K, organized zen |
+| 7 | Wardens | Row of identical robotic sentinels, each guardian bears `.design.md` badge, stationed in `./design/` corridor, central command unit with Document Control display, Navigator interface linking to changelog guards, uniform protection standards, 16:9, 2K, robotic order |
+| 8 | Blueprint | Technical blueprint with standardized document modules, each component labeled `.design.md`, all modules located in `./design/` section, Document Control panel at header, Navigator arrow pointing to changelog schematic, engineering consistency, 16:9, 2K, professional diagram |
+| 9 | Neural | Uniform neural network where each node follows same pattern, `.design.md` markers on every neuron, network housed in `./design/` brain region, Document Control ganglion at center, Navigator synapse connecting to changelog network, standardized biological structure, 16:9, 2K, organized mind |
+| 10 | Alchemical | Laboratory with standardized alchemical vessels, each flask marked `.design.md`, all equipment arranged in `./design/` workshop, Document Control tome at center, Navigator portal leading to changelog laboratory, structured magical workspace, 16:9, 2K, mystical order |
 
 > 🛡️ A-PIRO Verified | Score: 10.0 | Logic: Prompt Optimization Engine | [STOP]

@@ -245,6 +245,16 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 <sub>Intent validation</sub>
 </td>
 </tr>
+<tr>
+<td align="center" width="25%">
+<img src="img/document-changelog-control.png" width="200"><br>
+<b>Document Changelog Control</b><br>
+<sub>Version tracking system</sub>
+</td>
+<td align="center" width="25%"></td>
+<td align="center" width="25%"></td>
+<td align="center" width="25%"></td>
+</tr>
 </table>
 
 ### Best Practices
@@ -284,7 +294,6 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 </tr>
 </table>
 
-> Note: Image placeholder for strict-file-hygiene.png will be generated later.
 
 ---
 
@@ -414,8 +423,8 @@ Personal rule set and configuration framework for Claude Code CLI. Inspired by:
 ---
 
 <p align="center">
-  <b>Version</b>: 1.2.0 |
-  <b>Last Updated</b>: 2026-01-20 |
+  <b>Version</b>: 1.3.0 |
+  <b>Last Updated</b>: 2026-01-21 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
