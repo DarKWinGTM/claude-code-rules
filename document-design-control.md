@@ -1,6 +1,6 @@
 # Document Design Control
 
-> **Current Version:** 1.1
+> **Current Version:** 1.3
 
 ## Rule Statement
 
@@ -34,7 +34,34 @@ This rule ensures all design documents (`*.design.md`) maintain uniform format, 
 
 ### 2. Location Standards
 
-**Directory Structure:**
+**Two patterns available - choose based on project complexity:**
+
+---
+
+#### Pattern 1: Simple Project (Single Design)
+
+**Use when:** Project has only ONE design document and NO `./design/` or `./changelog/` subdirectories
+
+```
+./
+├── README.md
+├── design.md                 ← Design at ROOT (no suffix needed)
+├── changelog.md              ← Changelog at ROOT
+├── patch.md                  ← Other docs at ROOT
+└── src/
+```
+
+**Rules for Pattern 1:**
+- `design.md` at root (NO `.design.md` suffix needed)
+- `changelog.md` at root
+- NO subdirectories required
+- Simpler structure for single-purpose projects
+
+---
+
+#### Pattern 2: Complex Project (Multiple Designs)
+
+**Use when:** Project has multiple design documents OR uses `./design/` and `./changelog/` subdirectories
 
 ```
 ./
@@ -47,11 +74,33 @@ This rule ensures all design documents (`*.design.md`) maintain uniform format, 
 └── README.md
 ```
 
-**Rules:**
+**Rules for Pattern 2:**
 - ALL design documents go in `./design/` subdirectory
 - ALL changelog files go in `./changelog/` subdirectory
+- MUST use `.design.md` suffix for design files
+- MUST use `.changelog.md` suffix for changelog files
 - Rules files stay at project root
-- NO design documents at root level
+
+---
+
+#### Decision Tree
+
+```
+How many design documents?
+├─ ONE design only → Pattern 1 (Simple)
+│   → design.md, changelog.md at ROOT
+│   → NO subdirectories needed
+│   → NO .design.md suffix needed
+│
+└─ MULTIPLE designs → Pattern 2 (Complex)
+    → ./design/*.design.md
+    → ./changelog/*.changelog.md
+    → MUST use suffixes
+```
+
+**IMPORTANT: Never mix patterns**
+- If using Pattern 2 (subdirectories exist), ALL design docs must be in `./design/`
+- If using Pattern 1 (no subdirectories), keep everything at root
 
 ### 3. Document Control Section (MANDATORY)
 
@@ -84,10 +133,10 @@ This rule ensures all design documents (`*.design.md`) maintain uniform format, 
 | Element | Requirement | Format |
 |---------|-------------|--------|
 | **Document Control Section** | Required at top | `## 0) Document Control` with Parent Scope, Version, Session |
-| **Changelog Link** | Required at end | `> Full history: [file.changelog.md](changelog/file.changelog.md)` |
+| **Changelog Link** | Required at end | `> Full history: [changelog.md](changelog.md)` |
 | **Session ID** | Must be real UUID | 36 characters, NO placeholders |
-| **File Location** | Must be in `./design/` | Subdirectory, not root |
-| **File Suffix** | Must be `.design.md` | No exceptions |
+| **File Location** | Pattern 1: Root, Pattern 2: `./design/` | See Section 2 |
+| **File Suffix** | Pattern 1: `.md`, Pattern 2: `.design.md` | See Section 2 |
 
 **PROHIBITED (Must NOT Have):**
 
@@ -269,8 +318,9 @@ When BOTH design.md AND changelog.md exist:
 
 | Metric | Target | Measurement |
 |--------|--------|-------------|
-| Design file suffix | 100% `.design.md` | Check all design files |
-| Design location | 100% in `./design/` | No design files at root |
+| Pattern consistency | 100% | All docs follow same pattern (1 or 2) |
+| Design file suffix | Pattern 2: `.design.md` | Check design files in `./design/` |
+| Design location | Pattern 1: Root, Pattern 2: `./design/` | Per chosen pattern |
 | Document Control section | 100% present | Verify version + session |
 | Changelog link | 100% present | At design end (Navigator) |
 | NO Version History table | 100% | Design docs only have link |
@@ -324,13 +374,27 @@ strict-file-hygiene.md
 
 Before creating a new design document:
 
+**Step 1: Choose Pattern**
+- [ ] Determine: Pattern 1 (Simple) or Pattern 2 (Complex)?
+- [ ] Pattern 1: Single design → `design.md` at root
+- [ ] Pattern 2: Multiple designs → `./design/*.design.md`
+
+**Step 2: File Setup (depends on pattern)**
+
+Pattern 1 (Simple):
+- [ ] File named `design.md` (at root, no suffix)
+- [ ] Changelog named `changelog.md` (at root)
+
+Pattern 2 (Complex):
 - [ ] File named `<name>.design.md` (correct suffix)
-- [ ] Located in `./design/` directory (not at root)
+- [ ] Located in `./design/` directory
+- [ ] Changelog in `./changelog/<name>.changelog.md`
+
+**Step 3: Content Requirements (both patterns)**
 - [ ] Has Document Control section (Section 0)
 - [ ] Session ID is real UUID (36 characters, no placeholders)
 - [ ] Version matches changelog (if exists)
 - [ ] Has changelog link at end (ONLY link, NO Version History table)
-- [ ] Links to changelog file (if changelog exists)
 - [ ] NO Version History table in design document
 - [ ] All cross-references verified (test links)
 
@@ -462,7 +526,9 @@ Design API gateway
 
 | Version | Date | Notes |
 |---------|------|-------|
-| 1.1 | 2026-01-21 | Fixed terminology - "Primary Reference" → "Related Reference" |
+| 1.3 | 2026-01-26 | Added Pattern 1 (Simple) for single-design projects |
+| 1.2 | 2026-01-21 | Fixed terminology - "Primary Reference" → "Related Reference" |
+| 1.1 | 2026-01-21 | Aligned with document-changelog-control.md v4.3 |
 | 1.0 | 2026-01-21 | Initial version |
 
 ---

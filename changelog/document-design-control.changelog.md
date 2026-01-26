@@ -1,8 +1,8 @@
 # Changelog - Document Design Control
 
 > **Parent Document:** [document-design-control.design.md](../design/document-design-control.design.md)
-> **Current Version:** 1.2
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Current Version:** 1.3
+> **Session:** (2026-01-26)
 
 ---
 
@@ -10,6 +10,14 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-01-26 | **[Added Pattern 1 (Simple) for single-design projects](#version-13)** | - |
+| | | - Added Pattern 1: Simple Project (single design at root) | |
+| | | - Added Pattern 2: Complex Project (multiple designs in ./design/) | |
+| | | - Added Decision Tree for choosing pattern | |
+| | | - Updated MANDATORY table: File location/suffix now depend on pattern | |
+| | | - Updated Quality Metrics: Added pattern consistency metric | |
+| | | - Updated Compliance Checklist: Step-by-step by pattern | |
+| | | Summary: Added Pattern 1 to support simple single-design projects | |
 | 1.2 | 2026-01-21 | **[Changed terminology to neutral relationship](#version-12)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Changed "Primary Reference" to "Related Reference" (rules file) | |
 | | | - Changed "PRIMARY REFERENCE" to "Related Reference" (design.spec) | |
@@ -39,6 +47,28 @@
 | | | - Created quality metrics and compliance checklists | |
 | | | - Added complete examples for design document structure | |
 | | | Summary: Initial version with comprehensive design standards | |
+
+---
+
+## Version 1.3: Added Pattern 1 (Simple) for single-design projects
+
+**Date:** 2026-01-26
+
+### Changes
+- Added Pattern 1: Simple Project (single design at root level)
+  - `design.md` at root (no `.design.md` suffix needed)
+  - `changelog.md` at root
+  - NO subdirectories required
+- Added Pattern 2: Complex Project (multiple designs)
+  - Kept existing `./design/*.design.md` structure
+  - Kept existing `./changelog/*.changelog.md` structure
+- Added Decision Tree for choosing pattern based on number of designs
+- Updated MANDATORY table: File location/suffix now depend on chosen pattern
+- Updated Quality Metrics: Added pattern consistency metric
+- Updated Compliance Checklist: Step-by-step checklist by pattern
+
+### Summary
+Added Pattern 1 to support simple single-design projects (consistent with document-changelog-control.md)
 
 ---
 
