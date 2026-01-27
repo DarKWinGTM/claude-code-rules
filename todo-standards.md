@@ -2,7 +2,7 @@
 
 > **Current Version:** 2.0
 > **Based on:** [todo-standards.design.md](design/todo-standards.design.md) v2.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Session:** (use current session ID from <env>)
 
 > **Full history:** [changelog/changelog.md](changelog/changelog.md)
 

@@ -5,9 +5,9 @@
 
 <!-- Hero Title -->
 <h1>
-  <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3db/32.svg" width="32">
+  🏛️
   Claude Code Rules & Framework
-  <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3db/32.svg" width="32">
+  🏛️
 </h1>
 
 <p>
@@ -28,7 +28,7 @@
   <b>82%</b><br><sub>Token Savings</sub>
 </td>
 <td align="center" width="200">
-  <img src="https://img.shields.io/badge/Speed-+30--50%25-yellow?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdBoxZyI2LjAzNi02LjAzNiAwIDAgMS04LjQ4NSAwbC0uNzA3LjcwN0E2IDAgMCAxIDEyIDEyYTYgNiAwIDAgMS0xMiAweiIvPjwvc3ZnPg==">
+  <img src="https://img.shields.io/badge/Speed-+30--50%25-yellow?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5QkIxMCIgZD0iTTcgMnYxMWgzbC03IDd2LTZoLTNMNyAyem02IDIydjExaC0zbDctN3Y2aDNsLTctMjJ6Ii8+PC9zdmc+">
   <br><br>
   <b>50%</b><br><sub>Faster Response</sub>
 </td>
@@ -239,6 +239,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
+| [`todo-standards.md`](todo-standards.md) | Task management | Focused work |
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects |
 
 ---
@@ -254,7 +255,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Total: 16 Rules = Complete Professional Framework**
+**📊 Total: 17 Rules = Complete Professional Framework**
 
 </div>
 

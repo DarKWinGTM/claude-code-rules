@@ -123,7 +123,8 @@ How many design documents?
 | Session ID | ✅ Yes | UUID (36 chars) | Real UUID, NO placeholders |
 
 **Session ID Rules:**
-- ✅ Valid: `a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7`
+- ✅ Valid: `00000000-0000-0000-0000-000000000000` (Example UUID format)
+- ✅ Current Claude Code session: use Session ID from `<env>` (e.g., `Session ID: <current>`)
 - ❌ Invalid: `<Session ID>`, `TBD`, `pending`, `xxx-xxx-xxx`
 
 ### 4. Design Document Structure (Comprehensive Rules)
@@ -411,7 +412,7 @@ Pattern 2 (Complex):
 
 > **Parent Scope:** E-Commerce Platform Architecture
 > **Current Version:** 1.2
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-21)
+> **Session:** (use current session ID from <env>) (2026-01-21)
 
 ---
 
@@ -475,7 +476,7 @@ Design API gateway for rate limiting and authentication
 ## Version 1.2: Added caching
 
 **Date:** 2026-01-21
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+**Session:** (use current session ID from <env>)
 
 ### Changes
 - Added response caching layer
@@ -489,7 +490,7 @@ Added response caching layer
 ## Version 1.1: Initial release
 
 **Date:** 2026-01-15
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+**Session:** (use current session ID from <env>)
 
 ### Changes
 - Basic gateway setup

@@ -2,7 +2,7 @@
 
 > **Current Version:** 4.3
 > **Based on:** document-changelog-control.design.md v4.3
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Session:** (use current session ID from <env>)
 
 > **Full history:** [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)
 
@@ -37,7 +37,7 @@ This rule ensures all documentation maintains proper version control using the *
 **Session ID Location:**
 ```xml
 <env>
-Session ID: a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+Session ID: (use current session ID from <env>)
 Time: [timestamp]
 </env>
 ```
@@ -109,7 +109,7 @@ Time: [timestamp]
 
 > **Parent Document:** [design.md](design.md)
 > **Current Version:** 3.9
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Session:** (use current session ID from <env>)
 
 ---
 
@@ -120,7 +120,7 @@ Time: [timestamp]
 ## Version 3.9: Added design.md <> changelog.md Relationship Rule
 
 **Date:** 2026-01-20
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+**Session:** (use current session ID from <env>)
 
 ### Changes
 - Added Section 5.2.1: Mandatory design.md <> changelog.md relationship
@@ -140,7 +140,7 @@ Enforced clear separation between design (navigator) and changelog (full)
 ## Version 3.8: Clarified changelog.md Location Patterns
 
 **Date:** 2026-01-20
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+**Session:** (use current session ID from <env>)
 
 ### Changes
 - Added location pattern to Reserved Terms: root vs changelog/ subdirectory
