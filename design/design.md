@@ -21,6 +21,7 @@
 
 | Version | Date | Summary | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-02-01 | Added document-patch-control to rules inventory and hierarchy | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.6 | 2026-01-21 | Removed Session ID from TODO standard - TODO.md should not have Session ID header | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.5 | 2026-01-21 | Added todo-standards and project-documentation-standards to rule hierarchy, updated rule count to 16 | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.4 | 2026-01-21 | Removed Session ID from Rules File Standard Template (not required for rules files) | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
@@ -49,7 +50,7 @@
 | **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | ข้อมูลถูกต้อง |
 | **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | ป้องกัน flooding |
 | **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification | รักษา user authority |
-| **Quality** | document-consistency, document-changelog-control, document-design-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
+| **Quality** | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
 
 ### II.3 Scope
 
@@ -83,6 +84,7 @@ Claude Code Rules System
   │   ├─ document-consistency
   │   ├─ document-changelog-control (v4.3)
   │   ├─ document-design-control (v1.2)
+  │   ├─ document-patch-control (v1.0)
   │   ├─ todo-standards (v2.0)
   │   ├─ project-documentation-standards
   │   ├─ anti-mockup
@@ -113,7 +115,7 @@ emergency-protocol + functional-intent-verification (Execution)
 
 ## IV. Sub-Rule Index
 
-### IV.1 Current Rules (16 Rules)
+### IV.1 Current Rules (17 Rules)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
@@ -123,16 +125,17 @@ emergency-protocol + functional-intent-verification (Execution)
 | 4 | document-consistency.md | document-consistency.design.md | Cross-reference validation |
 | 5 | document-changelog-control.md | document-changelog-control.design.md v4.3 | Version tracking standard |
 | 6 | document-design-control.md | document-design-control.design.md v1.2 | Design document standards |
-| 7 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
-| 8 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
-| 9 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
-| 10 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
-| 11 | project-documentation-standards.md | project-documentation-standards.design.md | Project documentation standards |
-| 12 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
-| 13 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
-| 14 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
-| 15 | todo-standards.md | todo-standards.design.md v2.0 | Simple TODO lists |
-| 16 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
+| 7 | document-patch-control.md | document-patch-control.design.md v1.0 | Tactical implementation plans |
+| 8 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
+| 9 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
+| 10 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
+| 11 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
+| 12 | project-documentation-standards.md | project-documentation-standards.design.md | Project documentation standards |
+| 13 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
+| 14 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
+| 15 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
+| 16 | todo-standards.md | todo-standards.design.md v2.0 | Simple TODO lists |
+| 17 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
 
 ### IV.2 Reserved for Future Rules
 

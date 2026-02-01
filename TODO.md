@@ -19,6 +19,18 @@
 
 ## ✅ Completed Tasks
 
+### [P0] [Core] Document Patch Control Standard
+
+**Completed:** 2026-02-01 | **Created:** 2026-02-01
+
+- [x] **Create changelog/document-patch-control.changelog.md** - Initial changelog
+- [x] **Create design/document-patch-control.design.md** - Standard definition for Patch Documents
+- [x] **Create document-patch-control.md** - Rules file based on design
+- [x] **Define .patch.md naming convention** - Standardized extension
+- [x] **Define integration rules** - How Patch Docs interact with Design, Changelog, and Todo
+
+---
+
 ### [P0] [Fix] README.md Flow Diagram No-Frame Violation
 
 **Completed:** 2026-01-21 | **Created:** 2026-01-21

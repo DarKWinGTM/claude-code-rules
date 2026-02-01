@@ -240,6 +240,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
 | [`todo-standards.md`](todo-standards.md) | Task management | Focused work |
+| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Tactical implementation plans |
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects |
 
 ---
