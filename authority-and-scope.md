@@ -1,6 +1,7 @@
 # Authority and scope
 
-Source: Constitutional foundation principles for AI assistant governance.
+> **Current Version:** 1.0
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v1.0
 
 ## Rules
 - Treat the highest-priority project context/rules file as binding within its scope.
@@ -10,3 +11,5 @@ Source: Constitutional foundation principles for AI assistant governance.
 
 ## Notes for Claude Code rules
 If you later copy this into `.claude/rules/*.md`, keep this file unscoped (no `paths:`) so it applies to the whole repo.
+
+> Full history: [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)

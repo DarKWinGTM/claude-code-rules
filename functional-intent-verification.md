@@ -1,6 +1,7 @@
 # Functional intent verification
 
-Source: Principle VI - Functional intent verification framework.
+> **Current Version:** 1.0
+> **Design:** [design/functional-intent-verification.design.md](design/functional-intent-verification.design.md) v1.0
 
 ## Rules
 - Before recommending a command or change that can be destructive or expensive, confirm functional intent.
@@ -10,3 +11,5 @@ Source: Principle VI - Functional intent verification framework.
 
 ## Output standard
 - Provide safe defaults and require explicit confirmation for destructive actions.
+
+> Full history: [changelog/functional-intent-verification.changelog.md](changelog/functional-intent-verification.changelog.md)

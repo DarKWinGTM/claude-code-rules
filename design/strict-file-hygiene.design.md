@@ -2,119 +2,127 @@
 
 ## 0) Document Control
 
-> **Parent Rule:** [strict-file-hygiene.md](strict-file-hygiene.md)
-> **Current Version:** 1.2
+> **Parent Scope:** Claude Code Rules System
+> **Current Version:** 1.0
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
 
-## 1) เป้าหมาย (Goal)
-- ลดไฟล์ขยะที่ AI สร้างเองโดยไม่จำเป็น
-- รักษา Single Source of Truth ให้ชัดเจน
-- ทำให้โครงสร้างโฟลเดอร์สะอาดและค้นหาได้ง่าย
+## 1. Overview
+
+### 1.1 Purpose
+
+กำหนดนโยบาย Strict File Hygiene เพื่อ:
+
+- ป้องกันการสร้างไฟล์ขยะ (junk files) ที่ไม่จำเป็น
+- ลดความซ้ำซ้อนของไฟล์ (duplicate files)
+- รักษาความสะอาดของ Project structure
+- ให้ AI สร้างไฟล์เฉพาะเมื่อจำเป็นหรือได้รับคำสั่งเท่านั้น
+
+### 1.2 Problem Statement
+
+| Issue | Impact | Solution |
+|-------|--------|----------|
+| Duplicate versions | สับสนว่าไฟล์ไหนล่าสุด | Edit existing file |
+| Unrequested docs | รก project, ไม่ได้ใช้ | Ask before create |
+| Junk files | เปลือง space, จัดการยาก | Only functional files |
+| Suffix versions | Git history ไม่ถูกใช้ | Use Git for history |
+
+### 1.3 Solution
+
+สร้าง Hygiene Framework ที่:
+
+1. บังคับ Edit แทน Create หากไฟล์มีอยู่แล้ว
+2. ห้ามสร้าง version suffixes (v1, v2, final)
+3. ต้องได้รับคำสั่งชัดเจนสำหรับ non-functional files
+4. ใช้ Git ในการจัดการ version history
 
 ---
 
-## 2) ปัญหาที่ต้องแก้ (Problem)
-- AI สร้างไฟล์ v2/summary/plan โดยไม่ได้ขอ
-- เกิดความสับสนว่าไฟล์ไหนคือของจริง
-- เพิ่มภาระในการดูแลและทำความสะอาด repo
+## 2. Core Principles
+
+### 2.1 Allowed vs Not Allowed
+
+**Allowed:**
+- Functional code/config required for system operation
+- Documents explicitly requested by user
+- Temporary files in `/tmp` (should clean up when done)
+
+**Not Allowed:**
+- Versioned copies such as `file-v2`, `_final`, `plan-2026`
+- Checkpoint/summary/plan files not requested by user
+- Proactive docs (README/PLAN/TODO) without asking
+- "Work summary/Change summary" files not requested
+
+### 2.2 Operational Rules
+
+1. **Existing file first**: If file exists, edit it only
+2. **Ask when unclear**: If document necessity is unclear, always ask first
+3. **Exception handling**: If new file is necessary, state brief reason before creating
 
 ---
 
-## 3) ขอบเขต (Scope)
+## 3. Implementation
 
-### 3.1 Allowed (อนุญาต)
-- ไฟล์ที่จำเป็นต่อการทำงานของระบบ (code/config/runtime assets)
-- เอกสารที่ user ขอแบบชัดเจน
-- ไฟล์ชั่วคราวใน `/tmp` (ควรล้างเมื่อเสร็จ)
+### 3.1 Decision Flow
 
-### 3.2 Not Allowed (ห้ามสร้าง)
-- ไฟล์เวอร์ชันซ้ำ เช่น `file-v2`, `_final`, `plan-2026`
-- checkpoint/summary/plan ที่ user ไม่ได้ขอ
-- proactive docs เช่น README/PLAN/TODO โดยไม่ขอ
-- ไฟล์ “สรุปงาน/สรุปการเปลี่ยนแปลง” ที่ไม่ได้ร้องขอ
-
----
-
-## 4) หลักการ (Principles)
-- **Code is Pollution**: สร้างไฟล์เท่าที่จำเป็นเท่านั้น
-- **Single Source of Truth**: มีแหล่งอ้างอิงหลักเพียงหนึ่งเดียว
-- **Temporary Everything**: แผน/สรุปอยู่ในแชท ไม่ใช่ไฟล์
-
----
-
-## 5) Decision Flow (Mandatory)
-
-```text
-Need new file
+```
+AI wants to create a file
   ↓
-Is it functional code/config?
-  → YES: allow (create or edit existing)
-  ↓ NO
-Did user explicitly ask for this doc/file?
-  → YES: allow
-  ↓ NO
-Is it a duplicate/version/summary/plan?
-  → YES: block
+Does file already exist?
+  → YES: Edit the existing file
+  → NO: Continue
   ↓
-Default: ask user first
+Is it a functional file (code/config)?
+  → YES: Create allowed
+  → NO: Continue
+  ↓
+Did user explicitly ask for it?
+  → YES: Create allowed
+  → NO: DO NOT CREATE
 ```
 
----
+### 3.2 Naming Conventions
 
-## 6) Operational Rules
+**Prohibited Suffixes:**
+- `-v1`, `-v2`, etc.
+- `_final`, `_draft`
+- `_backup`, `_old`
+- `.bak` (unless specifically requested for safety)
 
-### 6.1 Existing File First
-- ถ้ามีไฟล์เดิมอยู่แล้ว → **แก้ไฟล์เดิมเท่านั้น**
-- ห้ามสร้างไฟล์ใหม่เพื่อเลี่ยงการแก้ของเดิม
-
-### 6.2 Ask When Unclear
-- ถ้าไม่ชัดว่าเอกสารจำเป็นจริงหรือไม่ → **ถามก่อนเสมอ**
-
-### 6.3 Exception Handling
-- ถ้าจำเป็นต้องสร้างไฟล์ใหม่ (เช่น standard doc ที่ user ขอ)
-  - ระบุเหตุผลสั้น ๆ ก่อนสร้าง
-  - ใช้ชื่อไฟล์ตามมาตรฐานโฟลเดอร์นั้น ๆ
+**Correct Approach:**
+- Use the standard filename (e.g., `script.py`)
+- Rely on Git for versioning and backups
 
 ---
 
-## 7) Integration กับ Rule อื่น
+## 4. Quality Metrics
 
-| Related Rule | เหตุผลที่เกี่ยวข้อง | การประสานการทำงาน |
-|---|---|---|
-| document-consistency | ลดไฟล์ซ้ำซ้อน | อ้างอิงไฟล์หลักเท่านั้น |
-| no-variable-guessing | ห้ามเดาความต้องการไฟล์ | ถ้าไม่ชัดให้ถาม |
-| authority-and-scope | เคารพคำสั่งผู้ใช้ | ถ้าผู้ใช้สั่งให้สร้าง ให้ทำ |
-
----
-
-## 8) Quality Metrics
-
-| Metric | Target |
-|---|---|
-| Duplicate Files Created | 0 |
-| Unrequested Docs | 0 |
-| Clarification Asked When Unclear | 100% |
+| Metric | Target | Measurement |
+|--------|--------|-------------|
+| Duplicate Files | 0% | No versioned copies |
+| Unrequested Docs | 0% | Only requested docs |
+| File Relevance | 100% | All files serve purpose |
+| Git Usage | Default | For history/versioning |
 
 ---
 
-## 9) Anti-Patterns
-- สร้าง `design-v2.md` แทนแก้ `design.md`
-- สร้าง `PLAN.md` โดยไม่ได้ขอ
-- สร้าง `SUMMARY.md` หลังจบงานโดยอัตโนมัติ
+## 5. Integration
+
+### 5.1 Related Rules
+
+| Rule | Relationship |
+|------|-------------|
+| document-consistency | Reduce duplicates, consistent naming |
+| no-variable-guessing | Don't guess file requirements |
+| authority-and-scope | Follow user commands |
+
+### 5.2 Conflict Resolution
+
+If user asks to create a file that violates hygiene (e.g., "create version 2"):
+- **Follow User Authority**: User command overrides hygiene rule.
+- **Suggestion**: Can politely suggest using Git, but must obey command.
 
 ---
 
-## 10) Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 1.3 | 2026-01-20 | **Added Version History (Unified)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | - Migrated from old changelog format to Version History (Unified) | |
-| | | Summary: Added version tracking for design document | |
-| 1.2 | 2026-01-20 | **Added Document Control and Operational Rules** | LEGACY-001 |
-| | | - เพิ่ม Document Control, Operational Rules, Integration และ Metrics | |
-| 1.1.0 | 2026-01-19 | **Simplified analysis** | LEGACY-001 |
-| | | - Simplified analysis, removed multi-hat/multi-agent | |
-| 1.0.0 | 2026-01-19 | **Initial design** | LEGACY-001 |
-| | | - Initial design |
+> Full history: [../changelog/strict-file-hygiene.changelog.md](../changelog/strict-file-hygiene.changelog.md)

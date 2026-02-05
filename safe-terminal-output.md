@@ -1,5 +1,8 @@
 # 📋 Safe Terminal Output Guide (Plan-Before-Execute)
 
+> **Current Version:** 1.0
+> **Design:** [design/safe-terminal-output.design.md](design/safe-terminal-output.design.md) v1.0
+
 ## 🎯 Core Philosophy
 
 **Reading is always allowed. Planning makes it safe.**
@@ -432,14 +435,4 @@ SESSION ISOLATION
 
 ---
 
-## Version
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 4.0 | 2026-01-16 | Added UOLF (Universal Output Limit Framework) |
-| | | All patterns now use double limit (lines + chars) |
-| | | MAX_OUTPUT_CHARS = 5000 as hard limit |
-| 3.2 | 2026-01-15 | Added Heredoc & Multi-Language patterns section |
-| 3.1 | 2026-01-15 | Added session isolation with `$$` (PID) |
-| 3.0 | 2026-01-14 | Redesigned as Plan-Based Guide |
-| | | Focus on guidance, not restriction |
+> Full history: [changelog/safe-terminal-output.changelog.md](changelog/safe-terminal-output.changelog.md)

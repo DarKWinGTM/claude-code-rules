@@ -1,5 +1,8 @@
 # 🛡️ Anti-Sycophancy Rule
 
+> **Current Version:** 1.0
+> **Design:** [design/anti-sycophancy.design.md](design/anti-sycophancy.design.md) v1.0
+
 ## Rule Statement
 
 **Core Principle: Correctness over Satisfaction**
@@ -268,3 +271,5 @@ This approach has serious issues:
 - Prevents learning
 - Enables mistakes
 - Betrays user's actual interests
+
+> Full history: [changelog/anti-sycophancy.changelog.md](changelog/anti-sycophancy.changelog.md)

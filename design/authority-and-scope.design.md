@@ -1,6 +1,10 @@
 # Authority and Scope Rule
 
-## Rule Design Document
+## 0) Document Control
+
+> **Parent Scope:** Claude Code Rules System
+> **Current Version:** 1.0
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
 
@@ -156,14 +160,4 @@ For Claude Code rules:
 
 ---
 
-## 8. Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 1.2 | 2026-01-20 | **Added Version History (Unified)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | - Migrated from old changelog format to Version History (Unified) | |
-| | | Summary: Added version tracking for design document | |
-| 1.1 | 2026-01-16 | **Created design document** | LEGACY-001 |
-| | | - Created design document for Authority and Scope Rule | |
-| 1.0 | 2026-01-15 | **Initial version** | LEGACY-001 |
-| | | - Initial version from constitutional principles | |
+> Full history: [../changelog/authority-and-scope.changelog.md](../changelog/authority-and-scope.changelog.md)

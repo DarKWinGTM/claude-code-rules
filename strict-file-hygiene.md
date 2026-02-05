@@ -1,5 +1,8 @@
 # Strict File Hygiene Rule
 
+> **Current Version:** 1.0
+> **Design:** [design/strict-file-hygiene.design.md](design/strict-file-hygiene.design.md) v1.0
+
 ## Rule Statement
 
 AI must not create non-functional files unless the user explicitly asks.
@@ -54,10 +57,4 @@ AI must not create non-functional files unless the user explicitly asks.
 
 ---
 
-## Version
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.2 | 2026-01-20 | Converted to English-only (was mixed Thai/English) |
-| 1.1 | 2026-01-20 | Added Operational Rules and Integration with other rules |
-| 1.0 | 2026-01-19 | Initial rule |
+> Full history: [changelog/strict-file-hygiene.changelog.md](changelog/strict-file-hygiene.changelog.md)

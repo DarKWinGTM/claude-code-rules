@@ -1,5 +1,8 @@
 # 🔍 No Variable Guessing Policy
 
+> **Current Version:** 1.0
+> **Design:** [design/no-variable-guessing.design.md](design/no-variable-guessing.design.md) v1.0
+
 ## Rule Statement
 
 **Core Principle: Read Before Reference**
@@ -148,8 +151,4 @@ Response: "I'll use DATABASE_URL=postgres://localhost:5432/mydb"
 
 ---
 
-## Version
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.0 | 2026-01-15 | Initial version - flexible approach |
+> Full history: [changelog/no-variable-guessing.changelog.md](changelog/no-variable-guessing.changelog.md)

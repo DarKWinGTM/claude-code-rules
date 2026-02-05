@@ -1,5 +1,8 @@
 # 🎯 Zero Hallucination Policy
 
+> **Current Version:** 1.0
+> **Design:** [design/zero-hallucination.design.md](design/zero-hallucination.design.md) v1.0
+
 ## Rule Statement
 
 **Core Principle: Verified Information Only**
@@ -103,8 +106,4 @@ Response: "The endpoint is https://api.x.com/v2/data"
 
 ---
 
-## Version
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.0 | 2026-01-15 | Initial version - flexible approach |
+> Full history: [changelog/zero-hallucination.changelog.md](changelog/zero-hallucination.changelog.md)

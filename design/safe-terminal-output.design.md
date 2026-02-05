@@ -1,6 +1,10 @@
 # Safe Terminal Output Guide
 
-## Rule Design Document
+## 0) Document Control
+
+> **Parent Scope:** Claude Code Rules System
+> **Current Version:** 1.0
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
 
@@ -264,18 +268,4 @@ SESSION ISOLATION
 
 ---
 
-## 12. Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 4.1 | 2026-01-20 | **Added Version History (Unified)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | - Migrated from old changelog format to Version History (Unified) | |
-| | | Summary: Added version tracking for design document | |
-| 4.0 | 2026-01-16 | **Added UOLF framework** | LEGACY-001 |
-| | | - Added UOLF (Universal Output Limit Framework) | |
-| 3.2 | 2026-01-15 | **Added Heredoc & Multi-Language patterns** | LEGACY-001 |
-| | | - Added Heredoc & Multi-Language patterns | |
-| 3.1 | 2026-01-15 | **Added session isolation** | LEGACY-001 |
-| | | - Added session isolation with `$$` (PID) | |
-| 3.0 | 2026-01-14 | **Redesigned as Plan-Based Guide** | LEGACY-001 |
-| | | - Redesigned as Plan-Based Guide | |
+> Full history: [../changelog/safe-terminal-output.changelog.md](../changelog/safe-terminal-output.changelog.md)

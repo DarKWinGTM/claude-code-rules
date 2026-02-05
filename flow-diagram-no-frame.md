@@ -1,5 +1,8 @@
 # 🧭 Flow Diagram Rule: No Frame / No Box (Strict)
 
+> **Current Version:** 1.0
+> **Design:** [design/flow-diagram-no-frame.design.md](design/flow-diagram-no-frame.design.md) v1.0
+
 ## Rule Statement
 
 When writing Flow Diagrams (ASCII diagrams inside markdown/code blocks), **NEVER draw frames, boxes, or rectangles** around content. Unicode box-drawing characters render inconsistently across terminals and viewers.
@@ -186,3 +189,5 @@ Database
 2. **Wide diagram?** → Split into multiple smaller diagrams
 3. **Need grouping?** → Use headers and indentation, NOT boxes
 4. **Need emphasis?** → Use **bold text** or CAPS, NOT frames
+
+> Full history: [changelog/flow-diagram-no-frame.changelog.md](changelog/flow-diagram-no-frame.changelog.md)

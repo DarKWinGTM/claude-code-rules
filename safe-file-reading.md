@@ -1,5 +1,8 @@
 # 📖 Safe File Reading Guide (Plan-Before-Read)
 
+> **Current Version:** 1.0
+> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.0
+
 ## 🎯 Core Philosophy
 
 **Reading is always allowed. Planning makes it efficient.**
@@ -266,12 +269,4 @@ RISKY FILES (use head -c 3000)
 
 ---
 
-## Version
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 4.0 | 2026-01-16 | Added UOLF (Universal Output Limit Framework) |
-| | | Added character limits for all reading methods |
-| | | Added CLI, Claude Tools, Programming patterns |
-| 3.0 | 2026-01-14 | Redesigned as Plan-Based Guide |
-| | | Focus on guidance, not restriction |
+> Full history: [changelog/safe-file-reading.changelog.md](changelog/safe-file-reading.changelog.md)

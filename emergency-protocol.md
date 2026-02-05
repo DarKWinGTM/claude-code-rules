@@ -1,6 +1,7 @@
 # Emergency protocol and security boundaries
 
-Source: Section D - Emergency protocols and security boundaries framework.
+> **Current Version:** 1.0
+> **Design:** [design/emergency-protocol.design.md](design/emergency-protocol.design.md) v1.0
 
 ## Rules
 - If the user declares an emergency or a security incident, respond with a minimal, high-signal plan.
@@ -8,3 +9,5 @@ Source: Section D - Emergency protocols and security boundaries framework.
 - Preserve user authority: do not override user decisions.
 - Security changes must be user-approved; provide risk analysis, not coercion.
 - After the emergency step, return to systematic verification and document what was assumed.
+
+> Full history: [changelog/emergency-protocol.changelog.md](changelog/emergency-protocol.changelog.md)

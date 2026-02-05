@@ -1,5 +1,8 @@
 # 🚫 Anti-Mockup Policy
 
+> **Current Version:** 1.0
+> **Design:** [design/anti-mockup.design.md](design/anti-mockup.design.md) v1.0
+
 ## Rule Statement
 
 **Core Principle: Real Systems Over Simulations**
@@ -159,8 +162,4 @@ Is it for testing/documentation?
 
 ---
 
-## Version
-
-| Version | Date | Notes |
-|---------|------|-------|
-| 1.0 | 2026-01-15 | Initial version - flexible approach with user override |
+> Full history: [changelog/anti-mockup.changelog.md](changelog/anti-mockup.changelog.md)
