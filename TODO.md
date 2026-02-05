@@ -6,18 +6,39 @@
 
 | Metric | Value | Target |
 |--------|-------|--------|
-| Overall Progress | 48/67 tasks (72%) | 100% |
+| Overall Progress | 49/67 tasks (73%) | 100% |
 | Total Tasks | 67 | - |
-| Completed | 48 | - |
+| Completed | 49 | - |
 | In Progress | 0 | - |
 | Pending | 19 | - |
 
 **Active Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-**Last Updated:** 2026-01-21
+**Last Updated:** 2026-02-01
 
 ---
 
 ## ✅ Completed Tasks
+
+### [P0] [Core] Legacy Rules Migration (Navigator Enforcement)
+
+**Completed:** 2026-02-01 | **Created:** 2026-02-01
+
+- [x] **Enforce Navigator format** - Truncated design document histories to 2-3 versions
+- [x] **Fix document-changelog-control.design.md** - Removed full history table
+- [x] **Fix project-documentation-standards.design.md** - Updated to Navigator format
+- [x] **Verify all 12 rules** - Confirmed compliance with v1.4/v4.3 standards
+
+---
+
+### [P1] [Core] Project Documentation Standards v1.2 Update
+
+**Completed:** 2026-02-01 | **Created:** 2026-02-01
+
+- [x] **Update design to v1.2** - Add ./patches/ directory support to structure and checklist
+- [x] **Update changelog** - Document v1.2 changes
+- [x] **Update rules file** - Sync with design v1.2
+
+---
 
 ### [P0] [Core] Document Patch Control Standard
 
@@ -28,6 +49,7 @@
 - [x] **Create document-patch-control.md** - Rules file based on design
 - [x] **Define .patch.md naming convention** - Standardized extension
 - [x] **Define integration rules** - How Patch Docs interact with Design, Changelog, and Todo
+- [x] **Update README** - Add to Quality & Safety list
 
 ---
 
@@ -366,7 +388,7 @@ Architect Agent   ───┘
 |------|---------|
 | 2026-01-21 | **Completed P0 task:** Fixed README.md Flow Diagram No-Frame Violation - TUMIX diagram converted from Unicode box-drawing to text-based flow format |
 | 2026-01-21 | Updated changelog/changelog.md to v2.0 with flow diagram fix details |
-| 2026-01-21 | Updated progress dashboard: 48/67 tasks (72%) |
+| 2026-01-21 | Updated progress dashboard: 49/67 tasks (73%) |
 | 2026-01-21 | **Completed P1 task:** Created project-documentation-standards.md rules file (both design + rules files) |
 | 2026-01-21 | **Created design file:** design/project-documentation-standards.design.md (287 lines) |
 | 2026-01-21 | **Completed P1 task:** Designed project-documentation-standards.md structure (design phase complete) |
@@ -397,4 +419,4 @@ Architect Agent   ───┘
 ---
 
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-> **Last Updated:** 2026-01-21
+> **Last Updated:** 2026-02-01

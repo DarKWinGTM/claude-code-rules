@@ -1,6 +1,6 @@
 # Project Documentation Standards
 
-> **Current Version:** 1.0
+> **Current Version:** 1.3
 
 ## Rule Statement
 
@@ -8,7 +8,7 @@
 
 This rule ensures all projects have proper documentation structure from the start, integrating document-design-control.md, document-changelog-control.md, and todo-standards.design.md requirements.
 
-**Design:** [project-documentation-standards.design.md](design/project-documentation-standards.design.md) v1.0
+**Design:** [project-documentation-standards.design.md](design/project-documentation-standards.design.md) v1.3
 
 ---
 
@@ -24,6 +24,7 @@ Every project MUST have these documents based on project needs:
 | **design.md** | Project has design specifications | Architecture, standards, specifications | [document-design-control.md](document-design-control.md) v1.1 |
 | **changelog.md** | Project needs version tracking | Version history, changes tracking | [document-changelog-control.md](document-changelog-control.md) v4.3 |
 | **TODO.md** | Project has tasks | Task tracking, progress management | [todo-standards.design.md](design/todo-standards.design.md) v1.0 |
+| **patch.md** | Monkey Patch/Migration | Transition plan, complex state changes | [document-patch-control.md](document-patch-control.md) v1.0 |
 
 **Required Actions:**
 - Use the decision tree (Section 2) to determine which documents are needed
@@ -46,6 +47,9 @@ Needs version tracking?
 Has tasks to track?
   ↓ YES → Create TODO.md (follow todo-standards.design.md)
   ↓ NO
+Need Monkey Patch or Complex Migration?
+  ↓ YES → Create *.patch.md (follow document-patch-control.md)
+  ↓ NO
 Project ready
 ```
 
@@ -58,20 +62,32 @@ When creating documentation, follow these rules:
 | **design.md** | document-design-control.md | `.design.md` suffix, `./design/` location, Navigator format |
 | **changelog.md** | document-changelog-control.md | Version History (Unified) table, real Session IDs |
 | **TODO.md** | todo-standards.design.md | P0-P3 priorities, timestamps, status sections |
+| **patch.md** | document-patch-control.md | Format `.patch.md`, 5 sections, lifecycle states |
 
-### 4. Project Start Checklist
+### 4. Versioning Authority (New v1.3)
+
+- **Single Source of Truth:** `changelog.md` determines the Version Number.
+- **Synchronization Rule:**
+  - Design updates MUST update Changelog.
+  - Header Version Number MUST match Changelog latest version.
+  - No updates to Design without corresponding Changelog update.
+
+### 5. Project Start Checklist
 
 **Before Starting:**
 - [ ] Determine project type (Simple vs Complex vs Design-heavy)
 - [ ] Identify required documents using decision tree
 - [ ] Plan documentation structure
-- [ ] Set up directory structure (`./design/`, `./changelog/` if needed)
+- [ ] Set up directory structure (`./design/`, `./changelog/`, `./patches/` if needed)
 
 **During Setup:**
 - [ ] Create README.md with project overview and quick start
 - [ ] If design needed: Create design.md following document-design-control.md
 - [ ] If version tracking needed: Create changelog.md following document-changelog-control.md
 - [ ] If tasks needed: Create TODO.md following todo-standards.design.md
+- [ ] If patch needed: Create `*.patch.md` following document-patch-control.md
+  - [ ] Extension `.patch.md`
+  - [ ] 5 mandatory sections (Context, Analysis, Plan, etc.)
 
 **Verification:**
 - [ ] All Session IDs are real UUIDs (no placeholders like `<Session ID>`, `TBD`)
@@ -125,6 +141,8 @@ complex-project/
 ├── changelog/
 │   ├── changelog.md    # Master changelog
 │   └── api.changelog.md    # API changelog
+├── patches/            # (Optional) Patch docs
+│   └── db-migration.patch.md
 ├── TODO.md
 └── src/
 ```
@@ -154,6 +172,7 @@ This rule integrates with:
 | **document-design-control.md** v1.1 | Defines design document format standards |
 | **document-changelog-control.md** v4.3 | Defines version tracking format |
 | **todo-standards.design.md** v1.0 | Defines TODO/task format |
+| **document-patch-control.md** v1.0 | Defines patch/migration format |
 | **strict-file-hygiene.md** v1.2 | Prevents unrequested file creation |
 
 ---

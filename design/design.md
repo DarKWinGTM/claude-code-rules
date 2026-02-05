@@ -255,46 +255,75 @@ You are a code reviewer...
 
 ---
 
-## VI. Rules File Standard Template
+## VI. Standard File Templates
 
-### VI.1 Purpose
-
-กำหนดรูปแบบมาตรฐาน (standard template) สำหรับ rules files (`.md`) เพื่อให้ทุกไฟล์มีความสม่ำเสมอกัน
-
-### VI.2 Mandatory Structure
-
-**All rules files MUST follow this template:**
-
+### VI.1 Rules File Template (`.md`)
+**Location:** Project Root (e.g., `anti-mockup.md`)
+**Mandatory Structure:**
 ```markdown
 # [Rule Name]
 
-> **Current Version:** X.X
+> **Current Version:** X.Y
+> **Design:** [file.design.md](design/file.design.md) vX.Y
 
 ## Rule Statement
-
 **Core Principle:** [One-line summary]
 
-**Design:** [rule-name.design.md](design/rule-name.design.md) vX.X
-
-This rule ensures...
+[Content...]
 
 ---
 
-[Content sections...]
-
----
-
-> Full history: [changelog/rule-name.changelog.md](changelog/rule-name.changelog.md)
+> Full history: [changelog/file.changelog.md](changelog/file.changelog.md)
 ```
 
-### VI.3 Header Requirements (MANDATORY)
+### VI.2 Design Document Template (`.design.md`)
+**Location:** `design/` directory (e.g., `design/anti-mockup.design.md`)
+**Mandatory Structure:**
+```markdown
+# [Design Name]
+
+## 0) Document Control
+> **Parent Scope:** [System/Project Name]
+> **Current Version:** X.Y
+> **Session:** [UUID] (YYYY-MM-DD)
+
+---
+
+[Design Content Sections...]
+
+---
+
+> Full history: [changelog/file.changelog.md](../changelog/file.changelog.md)
+```
+
+### VI.3 Changelog File Template (`.changelog.md`)
+**Location:** `changelog/` directory (e.g., `changelog/anti-mockup.changelog.md`)
+**Mandatory Structure:**
+```markdown
+# Changelog - [Rule Name]
+
+> **Parent Document:** [file.design.md](../design/file.design.md)
+
+---
+
+## Version History (Unified)
+
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| X.Y | YYYY-MM-DD | **[Headline](#Lx)** | [UUID] |
+| | | Summary: ... | |
+
+[Detailed Version Sections...]
+```
+
+### VI.4 Header Requirements (MANDATORY)
 
 | Element | Required | Format |
 |---------|----------|--------|
 | **Current Version** | ✅ Yes | `> **Current Version:** X.X` |
 | **Design Link** | Optional | `**Design:** [file.design.md](design/file.design.md) vX.X` |
 
-### VI.4 Content Sections
+### VI.5 Content Sections
 
 **Rules files should include:**
 
@@ -304,7 +333,7 @@ This rule ensures...
 4. **Quality Metrics** - Measurable targets
 5. **Integration** - Related rules
 
-### VI.5 PROHIBITED Elements
+### VI.6 PROHIBITED Elements
 
 | Element | Why Prohibited | Correct Alternative |
 |---------|----------------|---------------------|
@@ -312,7 +341,7 @@ This rule ensures...
 | **Placeholders** | Violates changelog rules | Use real data or omit |
 | **Mixed Formats** | Breaks consistency | Follow this template |
 
-### VI.6 Changelog Integration
+### VI.7 Changelog Integration
 
 **Rules files MUST:**
 

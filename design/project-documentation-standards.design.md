@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-21)
+> **Current Version:** 1.3
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
 
@@ -44,6 +44,7 @@
 | **design.md** | เมื่อมี design specs | Architecture, standards, specifications | [document-design-control.md](../document-design-control.md) v1.1 |
 | **changelog.md** | เมื่อต้อง version tracking | Version history, changes tracking | [document-changelog-control.md](../document-changelog-control.md) v4.3 |
 | **TODO.md** | เมื่อมี tasks | Task tracking, progress management | [todo-standards.design.md](todo-standards.design.md) v1.0 |
+| **patch.md** | เมื่อต้องทำ Monkey Patch | Transition plan, complex state changes | [document-patch-control.md](../document-patch-control.md) v1.0 |
 
 ### 3.2 Decision Tree (ต้นไม้ตัดสินใจ)
 
@@ -61,6 +62,9 @@ Project เริ่มต้น?
 มี tasks ที่ต้องทำ?
   ↓ YES → สร้าง TODO.md (ตาม todo-standards.design.md)
   ↓ NO
+ต้องทำ Monkey Patch หรือ Complex Migration?
+  ↓ YES → สร้าง *.patch.md (ตาม document-patch-control.md)
+  ↓ NO
 Project พร้อมใช้งาน
 ```
 
@@ -77,6 +81,7 @@ Project พร้อมใช้งาน
 | **document-design-control.md** | สร้าง .design.md files | - ใช้ suffix `.design.md`<br>- อยู่ใน `./design/`<br>- Navigator format |
 | **document-changelog-control.md** | สร้าง version tracking | - Version History (Unified) table<br>- Real Session IDs<br>- ไม่ใช้ placeholders |
 | **todo-standards.design.md** | สร้าง TODO.md | - P0-P3 priorities<br>- timestamps (Created/Started/Completed)<br>- Completed/In Progress/Pending sections |
+| **document-patch-control.md** | สร้าง .patch.md files | - Format `.patch.md`<br>- Structure (5 sections)<br>- Lifecycle states |
 
 ### 4.2 Cross-Reference Standards
 
@@ -94,7 +99,19 @@ document-changelog-control.md
 
 todo-standards.design.md
   ↓ กำหนดรูปแบบ TODO/tasks
+
+document-patch-control.md
+  ↓ กำหนดรูปแบบ Patch/Migration
 ```
+
+### 4.3 Versioning Authority (อำนาจการกำหนดเวอร์ชัน)
+
+- **Single Source of Truth:** `changelog.md` คือแหล่งอ้างอิงเดียวของ Version Number
+- **Synchronization Rule:**
+  - เมื่อแก้ไข Design document → ต้องอัพเดท Changelog เสมอ
+  - เลข Version ใน Header ของเอกสาร (Design/Rule) ต้องตรงกับ Changelog ล่าสุด
+  - ห้ามอัพเดท Design โดยไม่อัพเดท Changelog
+  - ห้ามใช้ Version Number ที่ไม่ตรงกับ Changelog
 
 ---
 
@@ -105,7 +122,7 @@ todo-standards.design.md
 - [ ] **Determine project type** - Simple vs Complex vs Design-heavy
 - [ ] **Identify required documents** - ใช้ decision tree ใน Section 3.2
 - [ ] **Plan documentation structure** - จำเป็นไฟล์เดียว หรือหลายไฟล์
-- [ ] **Set up directory structure** - `./design/`, `./changelog/` ถ้าจำเป็น
+- [ ] **Set up directory structure** - `./design/`, `./changelog/`, `./patches/` ถ้าจำเป็น
 
 ### 5.2 During Setup (ระหว่าง setup)
 
@@ -123,6 +140,9 @@ todo-standards.design.md
   - [ ] Priority levels (P0-P3)
   - [ ] Timestamps (Created/Started/Completed)
   - [ ] Status sections (Completed/In Progress/Pending)
+- [ ] **If patch needed:** Create `*.patch.md` following document-patch-control.md
+  - [ ] Extension `.patch.md`
+  - [ ] 5 mandatory sections (Context, Analysis, Plan, etc.)
 
 ### 5.3 Verification (ตรวจสอบ)
 
@@ -231,6 +251,8 @@ complex-project/
 ├── changelog/
 │   ├── changelog.md    # Master changelog
 │   └── api.changelog.md    # API changelog
+├── patches/            # (Optional) Patch docs
+│   └── db-migration.patch.md
 ├── TODO.md
 └── src/
 ```
@@ -246,6 +268,7 @@ complex-project/
 | **document-design-control.md** | Design document standards | [../document-design-control.md](../document-design-control.md) v1.1 |
 | **document-changelog-control.md** | Version tracking system | [../document-changelog-control.md](../document-changelog-control.md) v4.3 |
 | **todo-standards.design.md** | TODO/task standards | [todo-standards.design.md](todo-standards.design.md) v1.0 |
+| **document-patch-control.md** | Patch document standards | [../document-patch-control.md](../document-patch-control.md) v1.0 |
 | **strict-file-hygiene.md** | No unrequested files | [../strict-file-hygiene.md](../strict-file-hygiene.md) v1.2 |
 
 ---
@@ -276,12 +299,11 @@ complex-project/
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 1.0 | 2026-01-21 | **[Initial Version](#L1) - Project Documentation Standards** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | - Created comprehensive design for project documentation standards | |
-| | | - Defined required documents (README.md, design.md, changelog.md, TODO.md) | |
-| | | - Specified rule integration (document-design-control.md, document-changelog-control.md, todo-standards.design.md) | |
-| | | - Created project start checklist with compliance verification | |
-| | | - Designed onboarding integration for new projects | |
-| | | Summary: Initial design for project-wide documentation standards | |
+| 1.2 | 2026-02-01 | **[Added Patches Directory Support](changelog/project-documentation-standards.changelog.md#version-12)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Added ./patches/ directory support for complex projects | |
+| 1.1 | 2026-02-01 | **[Added Document Patch Control Integration](changelog/project-documentation-standards.changelog.md#version-11)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Integrated Document Patch Control standards | |
+| 1.0 | 2026-01-21 | **[Initial Version](changelog/project-documentation-standards.changelog.md#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Initial release of Project Documentation Standards | |
 
 > Full history: [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)

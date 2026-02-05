@@ -226,7 +226,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 
 ---
 
-### 🟡 Quality & Safety (9 rules)
+### 🟡 Quality & Safety (11 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
@@ -236,11 +236,11 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
+| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Tactical implementation plans |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
 | [`todo-standards.md`](todo-standards.md) | Task management | Focused work |
-| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Tactical implementation plans |
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects |
 
 ---
