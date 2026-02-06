@@ -49,7 +49,7 @@
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
   </a>
   <a href="#-visual-guide">
-    <img src="https://img.shields.io/badge/🖼️_Rules-15_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/🖼️_Rules-18_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
 </p>
 
@@ -226,12 +226,13 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 
 ---
 
-### 🟡 Quality & Safety (11 rules)
+### 🟡 Quality & Safety (12 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
@@ -256,7 +257,7 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Total: 17 Rules = Complete Professional Framework**
+**📊 Total: 18 Rules = Complete Professional Framework**
 
 </div>
 

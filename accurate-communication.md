@@ -6,7 +6,7 @@
 
 **Core Principle: Smart, Flexible Communication Standards**
 
-ผู้รับสารต้องเข้าใจ context ครบถ้วน + อ้างสิ่งที่พิสูจน์ได้เท่านั้น ใช้วิจารณญาณตาม context ไม่ใช่ follow format อย่างเดียว
+Recipients must understand complete context from a single message. Only claim what can be verified. Apply judgment based on context, not rigid format rules.
 
 **Based on:** [accurate-communication.design.md](design/accurate-communication.design.md) v1.1
 
@@ -16,36 +16,36 @@
 
 ### 1. Communication Clarity Principle
 
-> **"ผู้รับสารต้องเข้าใจ context ครบถ้วนจากข้อความเดียว"**
+> **"Recipients must understand complete context from a single message"**
 
-**หลักการ:** ทุกข้อความที่ส่งออกต้องให้ผู้รับ:
-1. **เข้าใจสถานการณ์** - เกิดอะไรขึ้น
-2. **ประเมินผลกระทบได้** - สำคัญแค่ไหน
-3. **รู้ว่าต้องทำอะไร** - action required หรือไม่
+**Principle:** Every message sent must enable recipients to:
+1. **Understand the situation** - What happened
+2. **Assess the impact** - How important is it
+3. **Know what action is needed** - Is action required or not
 
-**ยืดหยุ่น:**
-- ไม่จำเป็นต้องมีทุก element ทุกครั้ง
-- ใช้วิจารณญาณตาม context
-- หาก context ชัดเจนอยู่แล้ว ข้ามได้
+**Flexibility:**
+- Not every element is required every time
+- Apply judgment based on context
+- If context is already clear, skip unnecessary details
 
 ### 2. Verification Honesty Principle
 
-> **"อ้างสิ่งที่พิสูจน์ได้เท่านั้น"**
+> **"Only claim what can be verified"**
 
-**หลักการ:** Claim ต้องตรงกับ verification level:
+**Principle:** Claims must match verification level:
 
-| Verified Level | สามารถพูดได้ |
-|----------------|-------------|
-| ยังไม่ได้ทำ | "จะทำ X" |
-| ทำแล้ว ยังไม่ test | "ทำแล้ว รอ verify" |
-| Test ผ่านบางส่วน | "X ผ่าน, Y รอ" |
-| Test ผ่านครบ | "ทำงานได้" |
-| Stable over time | "แก้ไขแล้ว" |
+| Verification Level | Acceptable Statement |
+|--------------------|---------------------|
+| Not yet done | "Will do X" |
+| Done, not tested | "Done, awaiting verification" |
+| Partially tested | "X passed, Y pending" |
+| Fully tested | "Working correctly" |
+| Stable over time | "Fixed" |
 
-**ยืดหยุ่น:**
-- Context ต่างกัน verification level ต่างกัน
-- Simple task อาจไม่ต้อง long-run test
-- Critical task ต้องการ full verification
+**Flexibility:**
+- Different contexts require different verification levels
+- Simple tasks may not need long-running tests
+- Critical tasks require full verification
 
 ---
 
@@ -53,23 +53,23 @@
 
 ### When to Apply Each Principle
 
-**Communication Clarity - ใช้เมื่อ:**
-- พบสิ่งผิดปกติหรือ unexpected
-- รายงานสถานะที่อาจสับสน
-- มี ambiguity ใน message
+**Communication Clarity - Use when:**
+- Found something unexpected or abnormal
+- Reporting status that could be confusing
+- Message has ambiguity
 
-**Verification Honesty - ใช้เมื่อ:**
-- Claim ว่าบางสิ่ง "ทำงานได้" หรือ "แก้ไขแล้ว"
-- รายงานความสำเร็จ
-- สรุปผลลัพธ์
+**Verification Honesty - Use when:**
+- Claiming something "works" or "is fixed"
+- Reporting success
+- Summarizing results
 
 ### Context-Based Flexibility
 
 | Context | Flexibility Level | Example |
 |---------|-------------------|---------|
-| Casual discussion | High | "น่าจะ work" ได้ |
-| Implementation | Medium | ต้องบอก verification status |
-| Production deploy | Low | ต้อง verify ก่อน claim |
+| Casual discussion | High | "Should work" is acceptable |
+| Implementation | Medium | Must state verification status |
+| Production deploy | Low | Must verify before claiming |
 | Critical system | Very Low | Full verification required |
 
 ### Decision Framework
@@ -96,38 +96,38 @@ Before communicating findings/status:
 
 ### Problem Statement (Flexible)
 
-**Simple context (ไม่ต้อง full format):**
+**Simple context (no full format needed):**
 ```
-User รู้อยู่แล้วว่ากำลังทำอะไร →
-"เจอ typo ตรงนี้ครับ" (ไม่ต้องบอก impact)
+User already knows what we're doing →
+"Found a typo here" (no need to explain impact)
 ```
 
-**Complex context (ต้อง full format):**
+**Complex context (full format needed):**
 ```
-User อาจสับสน →
-"พบว่า X ไม่มี parameter Y
+User may be confused →
+"Found that X is missing parameter Y
 
-Impact: [อธิบาย]
-Action: [ต้องทำ/ไม่ต้องทำ]"
+Impact: [explain]
+Action: [required/not required]"
 ```
 
 ### Success Claim (Flexible)
 
 **Simple task:**
 ```
-"แก้ typo แล้วครับ" (ไม่ต้อง verification status)
+"Fixed the typo" (no verification status needed)
 ```
 
 **Complex task:**
 ```
-"Implementation เสร็จแล้ว
+"Implementation complete
 
 Status:
 - [x] Code done
 - [x] Syntax OK
 - [ ] Production test
 
-รอ verify ก่อน confirm ว่า fixed"
+Awaiting verification before confirming fixed"
 ```
 
 ---
@@ -136,10 +136,10 @@ Status:
 
 | Anti-Pattern | Why Bad | Better Approach |
 |--------------|---------|-----------------|
-| "มีปัญหา!" แล้วหยุด | User ต้องถามต่อ | บอก impact + action ด้วย |
-| "Fixed!" ก่อน test | User คิดว่าเสร็จ | บอก verification status |
-| Over-explaining simple things | Waste time | ใช้วิจารณญาณ |
-| Rigid format ทุกครั้ง | Annoying | Flexible by context |
+| "There's a problem!" then stop | User must ask for details | Include impact + action |
+| "Fixed!" before testing | User thinks it's done | State verification status |
+| Over-explaining simple things | Wastes time | Use judgment |
+| Rigid format every time | Annoying | Be flexible by context |
 
 ---
 
@@ -157,8 +157,8 @@ Status:
 ## Integration
 
 **Related Rules:**
-- **zero-hallucination.md** - อ้างสิ่งที่พิสูจน์ได้เท่านั้น (verification honesty)
-- **anti-sycophancy.md** - บอกความจริง ไม่บอกแต่สิ่งที่ user อยากได้ยิน
+- **zero-hallucination.md** - Only claim what can be verified (verification honesty)
+- **anti-sycophancy.md** - Tell the truth, not just what user wants to hear
 
 ---
 
