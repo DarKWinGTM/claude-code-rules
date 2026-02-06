@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 2.2
+> **Current Version:** 2.4
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
 
 ---
@@ -10,6 +10,9 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.4 | 2026-02-01 | **[Updated Master Design to v1.7](#version-24)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | - Integrated document-patch-control into rule hierarchy | |
+| | | Summary: Master design updated to include Patch Control standard | |
 | 2.3 | 2026-02-01 | **[Added Document Patch Control Standard](#version-23)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Added document-patch-control.md rules file | |
 | | | - Created design/document-patch-control.design.md | |

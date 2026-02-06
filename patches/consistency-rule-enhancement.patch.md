@@ -2,7 +2,7 @@
 
 ## 0) Document Control
 
-> **Status:** Draft
+> **Status:** Completed
 > **Target Design:** design/document-consistency.design.md v1.0
 > **Target Rule:** document-consistency.md
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7

@@ -3,8 +3,8 @@
 ## Master Design Document
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.6
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-21)
+> **Current Version:** 1.7
+> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,16 +13,16 @@
 
 ### I.1 Version Information
 
-**Current Version:** 1.4
-**Last Updated:** 2026-01-21
+**Current Version:** 1.7
+**Last Updated:** 2026-02-01
 **Status:** Active
 
 ### I.2 Change Summary
 
 | Version | Date | Summary | Session ID |
 |---------|------|---------|------------|
-| 1.7 | 2026-02-01 | Added document-patch-control to rules inventory and hierarchy | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| 1.6 | 2026-01-21 | Removed Session ID from TODO standard - TODO.md should not have Session ID header | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 1.7 | 2026-02-01 | **Integrated Document Patch Control** - Added to rule hierarchy and inventory | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 1.6 | 2026-01-21 | Removed Session ID from TODO standard | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.5 | 2026-01-21 | Added todo-standards and project-documentation-standards to rule hierarchy, updated rule count to 16 | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.4 | 2026-01-21 | Removed Session ID from Rules File Standard Template (not required for rules files) | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.3 | 2026-01-21 | Restructured to systematic format (Sections I-VIII), added Rules File Standard Template | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
@@ -519,6 +519,50 @@ Related Rules:
 - [ ] Update README.md
 - [ ] Test rule with real scenarios
 - [ ] Document examples
+
+---
+
+## IX. Integration Examples
+
+### IX.1 Rule Enhancement Workflow
+
+This example demonstrates the lifecycle of enhancing a rule from Draft to Completed.
+
+**Scenario:** Updating `document-consistency.md` to v1.1.
+
+1.  **Drafting (Patch):**
+    *   Create `patches/consistency-rule-enhancement.patch.md`.
+    *   Define Context, Analysis, and Implementation Plan.
+    *   Status: `Draft`.
+
+2.  **Implementation:**
+    *   Update `document-consistency.md` (add content).
+    *   Update `changelog/document-consistency.changelog.md` (add version entry).
+    *   Mark Patch as `Status: In Progress` in TODO.md.
+
+3.  **Verification:**
+    *   Verify `document-consistency.md` matches design.
+    *   Verify changelog link works.
+
+4.  **Completion:**
+    *   Update Patch status to `Completed` in the file.
+    *   Move Patch to `patches/` if not already there.
+    *   Update TODO.md to mark task as completed.
+
+### IX.2 File Relationship Diagram
+
+```
+[Design Layer]              [Rules Layer]               [History Layer]
+design/*.design.md   ---->  *.md                 ---->  changelog/*.changelog.md
+(Specifications)            (Active Rules)              (Version Tracking)
+      ^                           ^                           ^
+      |                           |                           |
+      +---------------------------+---------------------------+
+                                  |
+                          [Tactical Layer]
+                          patches/*.patch.md
+                          (Transition Plans)
+```
 
 ---
 

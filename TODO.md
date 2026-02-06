@@ -6,18 +6,32 @@
 
 | Metric | Value | Target |
 |--------|-------|--------|
-| Overall Progress | 49/67 tasks (73%) | 100% |
-| Total Tasks | 67 | - |
-| Completed | 49 | - |
+| Overall Progress | 50/68 tasks (74%) | 100% |
+| Total Tasks | 68 | - |
+| Completed | 50 | - |
 | In Progress | 0 | - |
-| Pending | 19 | - |
+| Pending | 18 | - |
 
-**Active Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-**Last Updated:** 2026-02-01
+**Active Session:** (current session)
+**Last Updated:** 2026-02-06
 
 ---
 
 ## ✅ Completed Tasks
+
+### [P1] [Core] Accurate Communication Standard
+
+**Completed:** 2026-02-06 | **Created:** 2026-02-06
+
+- [x] **Created design/accurate-communication.design.md v1.1** - Smart, flexible principles
+- [x] **Created changelog/accurate-communication.changelog.md** - Version history
+- [x] **Created accurate-communication.md rules file** - Based on design v1.1
+- [x] **Two core principles** - Communication Clarity + Verification Honesty
+- [x] **Context-based flexibility** - Not rigid format rules
+
+**Origin:** User feedback about premature "Fixed!" claims and unclear "มีปัญหา!" statements
+
+---
 
 ### [P0] [Core] Legacy Rules Migration (Navigator Enforcement)
 
@@ -386,6 +400,9 @@ Architect Agent   ───┘
 
 | Date | Changes |
 |------|---------|
+| 2026-02-06 | **Created accurate-communication.md** - New rule with flexible principles (v1.1) |
+| 2026-02-06 | Created design/accurate-communication.design.md, changelog, and rules file |
+| 2026-02-06 | Updated dashboard: 50/68 tasks (74%) |
 | 2026-01-21 | **Completed P0 task:** Fixed README.md Flow Diagram No-Frame Violation - TUMIX diagram converted from Unicode box-drawing to text-based flow format |
 | 2026-01-21 | Updated changelog/changelog.md to v2.0 with flow diagram fix details |
 | 2026-01-21 | Updated progress dashboard: 49/67 tasks (73%) |
