@@ -12,12 +12,12 @@
 
 ### 1.1 Purpose
 
-กำหนดมาตรฐานการอ่านไฟล์อย่างปลอดภัย เพื่อ:
+Set standards for secure file reading to:
 
-- ป้องกัน terminal flooding จาก large output
-- ให้ session ทำงานได้ราบรื่น
-- ใช้ UOLF framework ครอบคลุมทุกวิธีอ่าน
-- วางแผนก่อนอ่านเสมอ
+- Prevents terminal flooding from large output
+- Make the session work smoothly
+- Use the UOLF framework to cover all reading methods.
+- Always plan before reading.
 
 ### 1.2 Problem Statement
 
@@ -30,12 +30,12 @@
 
 ### 1.3 Solution
 
-สร้าง UOLF (Universal Output Limit Framework) ที่:
+Create a UOLF (Universal Output Limit Framework) that:
 
-1. กำหนด output limits ที่ชัดเจน
-2. ครอบคลุมทุกวิธีอ่าน (CLI, Tools, Languages)
-3. ใช้ Double Limit Pattern
-4. วางแผนก่อนอ่าน (Evaluate → Plan → Read)
+1. Set clear output limits
+2. Covers all reading methods (CLI, Tools, Languages)
+3. Use Double Limit Pattern
+4. Plan before reading (Evaluate → Plan → Read)
 
 ---
 
@@ -45,8 +45,8 @@
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| MAX_OUTPUT_CHARS | 5000 | Hard limit ทุกกรณี |
-| MAX_OUTPUT_LINES | 100 | Soft limit (ถ้า chars OK) |
+| MAX_OUTPUT_CHARS | 5000 | Hard limit in all cases |
+| MAX_OUTPUT_LINES | 100 | Soft limit (if chars OK) |
 | RISKY_FILE_CHARS | 3000 | .min.js, .html, .json, .svg |
 | PREVIEW_CHARS | 2000 | Quick preview / unknown files |
 
@@ -81,7 +81,7 @@ head -c 3000 <file>
 | head | `head -100` | `head -100 \| head -c 5000` |
 | tail | `tail -100` | `tail -100 \| head -c 5000` |
 | grep | `grep pattern` | `grep pattern \| head -c 5000` |
-| cat | `cat file` | ❌ ห้ามใช้ → `head -c 5000` แทน |
+| cat | `cat file` | ❌ Do not use → `head -c 5000` instead |
 
 ### 3.3 Programming Languages
 
@@ -198,7 +198,7 @@ grep -n "search_term" <file> | head -20
 ```text
 UOLF - UNIVERSAL OUTPUT LIMIT FRAMEWORK
 
-ทุกวิธีอ่าน → output ≤ 5000 chars
+All reading methods → output ≤ 5000 chars
 
 CONSTANTS
   MAX_OUTPUT_CHARS = 5000 (hard limit)

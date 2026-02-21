@@ -12,30 +12,30 @@
 
 ### 1.1 Purpose
 
-กำหนดมาตรฐานการวาด Flow Diagrams เพื่อ:
+Standardize the drawing of Flow Diagrams to:
 
-- ป้องกันปัญหา rendering ของ Unicode box characters
-- ให้ diagrams แสดงผลถูกต้องทุก terminal/viewer
-- ใช้ text-based approach ที่ reliable
-- รักษา readability และ accuracy
+- Prevent rendering problems with Unicode box characters.
+- Make diagrams display correctly every time terminal/viewer
+- Use a reliable text-based approach
+- Maintain readability and accuracy
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Font misalignment | Box ไม่ตรงกัน | No boxes |
-| Copy/paste breaks | Format เสียหาย | Use arrows only |
-| Terminal wrapping | Line ตัดผิดที่ | Max 80 chars |
-| Inconsistent render | ดูต่างกันในแต่ละ viewer | Text-based only |
+| Font misalignment | Box mismatch | No boxes |
+| Copy/paste breaks | Format damaged | Use arrows only |
+| Terminal wrapping | Line cut in wrong place | Max 80 chars |
+| Inconsistent render | Views differently for each viewer | Text-based only |
 
 ### 1.3 Solution
 
-สร้าง Diagram Standard ที่:
+Create a Standard Diagram that:
 
-1. ห้ามใช้ box-drawing characters ทุกชนิด
-2. ใช้ arrows และ indentation แทน
-3. จำกัด line width ไม่เกิน 80 characters
-4. ใช้ text labels แทน boxes
+1. Do not use box-drawing characters of any kind.
+2. Use arrows and indentations instead.
+3. Limit line width to no more than 80 characters.
+4. Use text labels instead of boxes
 
 ---
 

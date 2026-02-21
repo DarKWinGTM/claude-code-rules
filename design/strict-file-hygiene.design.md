@@ -12,30 +12,30 @@
 
 ### 1.1 Purpose
 
-กำหนดนโยบาย Strict File Hygiene เพื่อ:
+Set the Strict File Hygiene policy to:
 
-- ป้องกันการสร้างไฟล์ขยะ (junk files) ที่ไม่จำเป็น
-- ลดความซ้ำซ้อนของไฟล์ (duplicate files)
-- รักษาความสะอาดของ Project structure
-- ให้ AI สร้างไฟล์เฉพาะเมื่อจำเป็นหรือได้รับคำสั่งเท่านั้น
+- Prevents the creation of unnecessary junk files.
+- Reduce file duplication (duplicate files)
+- Maintain cleanliness of project structure
+- Let the AI ​​create files only when needed or ordered.
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Duplicate versions | สับสนว่าไฟล์ไหนล่าสุด | Edit existing file |
-| Unrequested docs | รก project, ไม่ได้ใช้ | Ask before create |
-| Junk files | เปลือง space, จัดการยาก | Only functional files |
-| Suffix versions | Git history ไม่ถูกใช้ | Use Git for history |
+| Duplicate versions | Confused about which file is the most recent | Edit existing file |
+| Unrequested docs | Overgrown project, not used | Ask before create |
+| Junk files | Wastes space, difficult to manage | Only functional files |
+| Suffix versions | Git history is not used | Use Git for history |
 
 ### 1.3 Solution
 
-สร้าง Hygiene Framework ที่:
+Create a Hygiene Framework that:
 
-1. บังคับ Edit แทน Create หากไฟล์มีอยู่แล้ว
-2. ห้ามสร้าง version suffixes (v1, v2, final)
-3. ต้องได้รับคำสั่งชัดเจนสำหรับ non-functional files
-4. ใช้ Git ในการจัดการ version history
+1. Force Edit instead of Create if the file already exists.
+2. Do not create version suffixes (v1, v2, final).
+3. Must receive clear instructions for non-functional files
+4. Use Git to manage version history.
 
 ---
 

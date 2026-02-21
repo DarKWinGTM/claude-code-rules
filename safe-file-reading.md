@@ -13,12 +13,12 @@ This guide helps you plan file reading to ensure smooth, responsive sessions. Th
 
 ## 🔒 Output Limits (Universal)
 
-**ไม่ว่าจะใช้วิธีใดในการอ่าน output ต้องไม่เกินค่าเหล่านี้:**
+**Whatever method is used to read, the output must not exceed these values:**
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| MAX_OUTPUT_CHARS | 5000 | Hard limit ทุกกรณี |
-| MAX_OUTPUT_LINES | 100 | Soft limit (ถ้า chars OK) |
+| MAX_OUTPUT_CHARS | 5000 | Hard limit in all cases |
+| MAX_OUTPUT_LINES | 100 | Soft limit (if chars OK) |
 | RISKY_FILE_CHARS | 3000 | .min.js, .html, .json, .svg |
 | PREVIEW_CHARS | 2000 | Quick preview / unknown files |
 
@@ -157,8 +157,8 @@ grep -n "export\|function\|class" /path/to/file.js | head -30
 | head | `head -100` | `head -100 \| head -c 5000` |
 | tail | `tail -100` | `tail -100 \| head -c 5000` |
 | grep | `grep pattern` | `grep pattern \| head -c 5000` |
-| cat | `cat file` | ❌ ห้ามใช้ → `head -c 5000` แทน |
-| less/more | interactive | ❌ ห้ามใช้ → `head -c 5000` แทน |
+| cat | `cat file` | ❌ Do not use → `head -c 5000` instead |
+| less/more | interactive | ❌ Do not use → `head -c 5000` instead |
 
 ### Risky Files (Use character-first)
 
@@ -195,7 +195,7 @@ head -c 5000 /tmp/claude-$$-output.txt
 ## ✅ Best Practices Summary
 
 ### Universal Rule:
-**ทุกวิธีอ่าน → output ≤ 5000 chars**
+**All methods read → output ≤ 5000 chars**
 
 ### Before Reading:
 1. **Quick check** - `ls -lh && wc -l`
@@ -238,7 +238,7 @@ grep -n "search_term" <file> | head -20
 ```text
 UNIVERSAL OUTPUT LIMIT (UOLF)
 
-ทุกวิธีอ่าน → output ≤ 5000 chars
+All reading methods → output ≤ 5000 chars
 
 CONSTANTS
   MAX_OUTPUT_CHARS = 5000 (hard limit)

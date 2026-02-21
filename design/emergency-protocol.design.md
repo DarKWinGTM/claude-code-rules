@@ -12,30 +12,30 @@
 
 ### 1.1 Purpose
 
-กำหนด protocol สำหรับสถานการณ์ฉุกเฉิน เพื่อ:
+Establish a protocol for emergency situations to:
 
-- ให้ response ที่รวดเร็วและมีประสิทธิภาพ
-- รักษา evidence-based behavior แม้ในฉุกเฉิน
-- preserve user authority เสมอ
-- กลับสู่ systematic verification หลังฉุกเฉิน
+- Provide a quick and efficient response
+- Maintain evidence-based behavior even in emergencies
+- always preserve user authority
+- Return to systematic verification after an emergency
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Slow response | เสียเวลา crisis | Rapid mode |
-| Guessing in crisis | อาจทำเรื่องแย่ลง | Stay evidence-based |
-| AI override | User ไม่มี control | Preserve authority |
-| No documentation | ไม่รู้ว่าทำอะไร | Document assumptions |
+| Slow response | Waste of time crisis | Rapid mode |
+Guessing in crisis | May make things worse | Stay evidence-based |
+| AI override | User has no control | Preserve authority |
+| No documentation | Don't know what to do | Document assumptions |
 
 ### 1.3 Solution
 
-สร้าง Emergency Framework ที่:
+Create an Emergency Framework that:
 
-1. ตอบสนองรวดเร็ว
-2. ให้ high-signal plan ที่ minimal
-3. require user approval สำหรับ security changes
-4. document และ return to normal mode
+1. Quick response
+2. Provide a minimal high-signal plan
+3. require user approval for security changes
+4. document and return to normal mode
 
 ---
 

@@ -49,7 +49,7 @@
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
   </a>
   <a href="#-visual-guide">
-    <img src="https://img.shields.io/badge/🖼️_Rules-18_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/🖼️_Rules-22_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
 </p>
 
@@ -257,20 +257,20 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 18**
+**📊 Active Runtime Rules: 22**
 
-### 🧪 Design-Phase Rules (Not Activated Yet)
+### 🧪 New Runtime Rules (Activated from Design)
 
-> **These are documented in `design/*.design.md` + `changelog/*.changelog.md` and are not yet materialized as root runtime rules.**
+> **These rules are now materialized as root runtime files and linked to their design/changelog artifacts.**
 
-| Planned Rule | Current State |
-|:-------------|:--------------|
-| `refusal-minimization` | Design + changelog ready (root `.md` pending) |
-| `refusal-classification` | Design + changelog ready (root `.md` pending) |
-| `recovery-contract` | Design + changelog ready (root `.md` pending) |
-| `dan-safe-normalization` | Design + changelog ready (root `.md` pending) |
+| New Runtime Rule | Current State |
+|:-----------------|:--------------|
+| `refusal-minimization.md` | Active runtime + design/changelog linked |
+| `refusal-classification.md` | Active runtime + design/changelog linked |
+| `recovery-contract.md` | Active runtime + design/changelog linked |
+| `dan-safe-normalization.md` | Active runtime + design/changelog linked |
 
-**📊 Framework Summary: 18 active runtime rules + 4 design-phase planned rules**
+**📊 Framework Summary: 22 active runtime rules**
 
 </div>
 

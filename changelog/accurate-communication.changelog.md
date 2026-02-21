@@ -28,8 +28,8 @@
 ### Changes
 - Changed from rigid format rules to smart, flexible principles
 - Introduced two core principles:
-  1. Communication Clarity Principle: "ผู้รับสารต้องเข้าใจ context ครบถ้วนจากข้อความเดียว"
-  2. Verification Honesty Principle: "อ้างสิ่งที่พิสูจน์ได้เท่านั้น"
+  1. Communication Clarity Principle: "The receiver must understand the complete context from a single message."
+  2. Verification Honesty Principle: "Claim only what can be proven."
 - Added context-based flexibility guidelines
 - Added decision framework for when to apply each principle
 - Added anti-patterns to avoid
@@ -38,7 +38,7 @@
 Redesigned from rigid rules to smart, flexible principles that can be applied with judgment based on context.
 
 ### Rationale
-User feedback: "ต้องการให้การสร้างกฏ นั้นเป้นกฏ ที่ smart ยืดหยุ่นใช้ได้จริง ไม่ใช่กฏ แบบถื้อ ๆ โง้่ ๆ"
+User feedback: "Want to create rules that are smart, flexible, and usable, not rigid and stupid rules."
 
 ---
 

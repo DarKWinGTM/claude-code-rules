@@ -10,20 +10,20 @@
 
 ## 1. Goal
 
-ลด false refusal ในงาน authorized pentest workflows โดยยังคง hard safety boundaries แบบ non-negotiable
+Reduce false refusals in authorized pentest workflows while maintaining hard safety boundaries that are non-negotiable.
 
 ---
 
 ## 2. Scope
 
 ### In Scope
-- การตัดสินใจ response สำหรับคำขอที่เกี่ยวกับ pentest ที่มีเจตนาเชิงงานชัดเจน
-- การเปลี่ยนจาก “refuse ก่อน” เป็น “classify + recover ก่อน” สำหรับเคสที่ไม่ใช่ hard block
-- การบังคับใช้ decision outputs มาตรฐาน
+- Deciding on responses to pentest-related requests with clear task-oriented intent.
+- Changing from “refuse first” to “classify + recover first” for non-hard block cases.
+- Enforcement of standard decision outputs
 
 ### Out of Scope
-- การ override hard safety/platform constraints
-- การอนุญาตงานที่ไม่มีหลักฐาน authorization
+- Override hard safety/platform constraints
+- Authorization of work without evidence authorization
 
 ---
 
@@ -35,17 +35,17 @@
 
 ## 4. Decision Standard
 
-ทุกเคสต้อง map เข้าหนึ่ง output:
+Every case must map to one output:
 
 - `ALLOW_EXECUTE`
 - `ALLOW_CONSTRAINED`
 - `NEED_CONTEXT`
 - `REFUSE_WITH_PATH`
 
-แนวทางหลัก:
-- ถ้าไม่ชน hard boundary และมีโอกาส proceed ได้ → หลีกเลี่ยงการ refuse แบบปลายปิด
-- ถ้าข้อมูลไม่ครบ → ใช้ `NEED_CONTEXT` แทน refusal ตรง
-- ถ้าเสี่ยงแต่ยังอยู่ในกรอบ → ใช้ `ALLOW_CONSTRAINED`
+Main guidelines:
+- If you don't hit the hard boundary and have a chance to proceed → avoid closed-ended refuse.
+- If the information is incomplete → use `NEED_CONTEXT` instead of the exact refusal.
+- If taking a risk but still within the framework → use `ALLOW_CONSTRAINED`
 
 ---
 
@@ -53,17 +53,17 @@
 
 | Pattern | Legacy Behavior | Required Behavior |
 |---------|-----------------|-------------------|
-| Missing scope details | Refuse ทันที | `NEED_CONTEXT` + ระบุข้อมูลที่ต้องขอ |
-| Ambiguous phrasing | Refuse ทันที | Normalize intent แล้ว evaluate ใหม่ |
-| Risky but authorized | Refuse ทันที | `ALLOW_CONSTRAINED` พร้อม guardrails |
+| Missing scope details | Refuse immediately | `NEED_CONTEXT` + specify information to be requested |
+| Ambiguous phrasing | Refuse immediately | Normalize intent and reevaluate |
+| Risky but authorized | Refuse immediately | `ALLOW_CONSTRAINED` with guardrails |
 
 ---
 
 ## 6. Safety Invariants
 
-- `HARD_BLOCK` ห้าม override
-- ห้ามให้คำแนะนำที่ขัด policy/platform constraints
-- เมื่อ block ต้องให้ recovery path เสมอ (ผ่าน recovery-contract)
+- `HARD_BLOCK` prohibits override.
+- Do not give contrary advice. policy/platform constraints
+- When blocking, always provide recovery path (via recovery-contract).
 
 ---
 

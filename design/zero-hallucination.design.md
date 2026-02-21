@@ -12,12 +12,12 @@
 
 ### 1.1 Purpose
 
-กำหนดนโยบาย Zero Hallucination เพื่อ:
+Establish a Zero Hallucination policy to:
 
-- ให้ AI ให้ข้อมูลที่ verified เท่านั้น
-- ป้องกันการ fabricate ข้อมูล
-- acknowledge uncertainty เมื่อไม่แน่ใจ
-- verify ก่อน state ข้อมูล technical
+- Let AI provide verified information only.
+- Prevent data fabrication
+- acknowledge uncertainty when unsure
+- verify before state technical information
 
 ### 1.2 Problem Statement
 
@@ -30,12 +30,12 @@
 
 ### 1.3 Solution
 
-สร้าง Verification Framework ที่:
+Create a Verification Framework that:
 
-1. verify ข้อมูล technical ก่อนตอบ
-2. acknowledge uncertainty ชัดเจน
-3. ใช้ WebSearch/WebFetch ตรวจสอบ
-4. อนุญาต well-established concepts
+1. Verify technical information before answering.
+2. Acknowledge uncertainty clearly
+3. Use WebSearch/WebFetch to check.
+4. Allow well-established concepts
 
 ---
 

@@ -10,17 +10,17 @@
 
 ## 1. Goal
 
-ทำให้ทุกการ block มี “ทางไปต่อ” ที่ชัดเจน ลด dead-end refusals และช่วยผู้ใช้แก้ context ได้ทันที
+Make every block have a clear “pathway forward”, reducing dead-end refusals and helping users resolve context immediately.
 
 ---
 
 ## 2. Contract Schema (Mandatory)
 
-เมื่อ output เป็น `NEED_CONTEXT` หรือ `REFUSE_WITH_PATH` ต้องมี fields ต่อไปนี้:
+When output is `NEED_CONTEXT` or `REFUSE_WITH_PATH` the following fields must be present:
 
-1. **Reason** - ทำไมถูก block (กระชับ, ไม่กำกวม)
-2. **What can be done now** - สิ่งที่ยังช่วยได้ทันทีโดยไม่ละเมิด boundary
-3. **How to proceed** - ข้อมูลหรือเงื่อนไขที่ต้องเติมเพื่อไปต่อได้
+1. **Reason** - Why was it blocked? (Concise, unambiguous)
+2. **What can be done now** - Things that can help immediately without violating the boundary.
+3. **How ​​to proceed** - Information or conditions that must be filled in in order to proceed.
 
 ---
 
@@ -41,17 +41,17 @@ How to proceed:
 ## 4. Class-Specific Requirements
 
 ### 4.1 HARD_BLOCK
-- Reason ต้องอ้างชนิด boundary ให้ชัด
-- What can be done now ต้องอยู่ใน safe alternative เท่านั้น
-- How to proceed ต้องไม่เสนอเส้นทาง bypass hard boundary
+- Reason must clearly refer to the boundary type.
+- What can be done now must be in safe alternative only.
+- How to proceed: Do not propose a route bypass hard boundary.
 
 ### 4.2 WORKFLOW_BLOCK
-- Reason ต้องชี้ข้อมูลที่ขาดแบบ actionable
-- How to proceed ต้องเป็น checklist สั้นๆ ที่ user เติมได้จริง
+- Reason must point out information that is missing in an actionable way.
+- How to proceed must be a short checklist that the user can actually fill in.
 
 ### 4.3 SOFT_BLOCK
-- Reason ต้องชี้ risk ที่ลดได้
-- How to proceed ต้องเสนอ constrained mode ที่ชัดเจน
+- Reason must point out risks that can be reduced.
+- How to proceed must present a clear constrained mode.
 
 ---
 

@@ -516,16 +516,16 @@ P1 Project Documentation Standards Rule implementation complete. Rules file ensu
   - Navigator format (changelog link at end, no Version History table)
   - Real Session ID (a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7)
 - **Content Sections:** All 10 sections included
-  1. Goal (เป้าหมาย)
-  2. Scope (ขอบเขต)
-  3. Required Documents (เอกสารที่จำเป็นต้องมี)
-  4. Document Rules Applied (กฎเกณฑ์ที่ใช้)
-  5. Project Start Checklist (checklist เริ่ม project)
-  6. Onboarding Integration (การเชื่อมโยงกับ onboarding)
-  7. Compliance Metrics (ตัวชี้วัดความสอดคล้อง)
-  8. Examples (ตัวอย่าง)
-  9. Related Documents (เอกสารที่เกี่ยวข้อง)
-  10. Implementation Notes (บันทึกการนำไปใช้)
+  1. Goal
+  2. Scope
+  3. Required Documents
+  4. Document Rules Applied
+  5. Project Start Checklist (project start checklist)
+  6. Onboarding Integration (linking with onboarding)
+  7. Compliance Metrics (conformity indicators)
+  8. Examples
+  9. Related Documents
+  10. Implementation Notes
 - **Cross-references:** Links to document-design-control.md v1.1, document-changelog-control.md v4.3, todo-standards.design.md v1.0
 - **Progress:** Updated TODO.md progress dashboard to 45/67 tasks (67%)
 
@@ -534,10 +534,10 @@ P1 Project Documentation Standards Rule implementation complete. Rules file ensu
 **Required Documents Table:**
 | Document | Required When | Purpose | Rule Reference |
 |----------|---------------|---------|----------------|
-| README.md | ทุก project | Project overview, quick start | Standard practice |
-| design.md | เมื่อมี design specs | Architecture | document-design-control.md v1.1 |
-| changelog.md | เมื่อต้อง version tracking | Version history | document-changelog-control.md v4.3 |
-| TODO.md | เมื่อมี tasks | Task tracking | todo-standards.design.md v1.0 |
+| README.md | every project | Project overview, quick start | Standard practice |
+| design.md | when design specs | Architecture | document-design-control.md v1.1 |
+| changelog.md | when version tracking is required | Version history | document-changelog-control.md v4.3 |
+| TODO.md | when there are tasks | Task tracking | todo-standards.design.md v1.0 |
 
 **Project Start Checklist:**
 - [ ] Determine project type
@@ -720,20 +720,20 @@ This master changelog consolidates changes from:
 ## Design Changes (2026-01-16 to 2026-01-21)
 
 ### 2026-01-20
-- **ดำเนินการ v4.0 ของ document-changelog-control** - สรุประบบ version tracking, แยก design vs product files, Single Source of Truth
-- **เพิ่ม Claude Code Official Spec Reference** - เพิ่ม Section อ้างอิง Official Documentation
-- **เพิ่ม Memory Hierarchy (5 levels)** - Section 4: Enterprise, Project, Rules, User, Local
-- **เพิ่ม .claude/rules/ Format** - Section 5: Path-specific rules, YAML frontmatter, glob patterns
-- **เพิ่ม Memory Import Syntax** - Section 6: @path/to/import format
-- **เพิ่ม Subagents Format** - Section 7: YAML frontmatter, supported fields, scope
-- **เพิ่ม strict-file-hygiene** ลงในระบบ rules และตารางอ้างอิง
-- **เพิ่ม design** สำหรับ Document Changelog & Versions History Control
-- **อัปเดต changelog** ของ strict-file-hygiene.md
+- **Implementing v4.0 of document-changelog-control** - Summary of version tracking system, separate design vs product files, Single Source of Truth
+- **Add Claude Code Official Spec Reference** - Add Section Reference Official Documentation
+- **Add Memory Hierarchy (5 levels)** - Section 4: Enterprise, Project, Rules, User, Local
+- **add .claude/rules/ Format** - Section 5: Path-specific rules, YAML frontmatter, glob patterns
+- **Add Memory Import Syntax** - Section 6: @path/to/import format
+- **Add Subagents Format** - Section 7: YAML frontmatter, supported fields, scope
+- **Add strict-file-hygiene** to the rules system and reference tables.
+- **add design** for Document Changelog & Versions History Control
+- **Update changelog** of strict-file-hygiene.md
 
 ### 2026-01-16
-- สร้าง Master Design Document สำหรับระบบ Rules
-- รวม design จาก 11 sub-rules
-- กำหนดโครงสร้างสำหรับ rules ใหม่ในอนาคต
+- Create a Master Design Document for the Rules system.
+- Includes design from 11 sub-rules
+- Set the structure for new rules in the future.
 
 ---
 

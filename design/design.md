@@ -38,22 +38,23 @@
 
 ### II.1 Purpose
 
-**Claude Code Rules System** คือชุด rules ที่ควบคุมพฤติกรรมของ AI ใน Claude Code เพื่อ:
+**Claude Code Rules System** is a rule set that governs AI behavior in Claude Code to:
 
-- รักษาความถูกต้องและความน่าเชื่อถือ
-- ป้องกันปัญหาที่พบบ่อย (hallucination, terminal flooding, etc.)
-- ให้ user มี control เหนือ AI
-- รักษามาตรฐานคุณภาพสูง
+- Maintain accuracy and reliability
+- Prevent common failures (hallucination, terminal flooding, etc.)
+- Preserve user control over AI behavior
+- Enforce high-quality operating standards
 
 ### II.2 Rule Categories
 
 | Category | Rules | Purpose |
 |----------|-------|---------|
-| **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | ข้อมูลถูกต้อง |
-| **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | ป้องกัน flooding |
-| **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification, refusal-classification, recovery-contract | รักษา user authority + refusal recovery path |
-| **Adversarial Workflow** | refusal-minimization, dan-safe-normalization | ลด false refusal สำหรับ authorized pentest workflows |
-| **Quality** | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
+| **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | Verified and reliable information |
+| **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | Output flood prevention |
+| **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification, refusal-classification, recovery-contract | Preserve user authority and recovery paths |
+| **Adversarial Workflow** | refusal-minimization, dan-safe-normalization | Reduce false refusals in authorized pentest workflows |
+| **Quality** | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, strict-file-hygiene | Output quality and governance |
+
 
 ### II.3 Scope
 
@@ -63,6 +64,13 @@ This design document covers:
 - Version tracking and changelog integration
 - Quality metrics and compliance
 - Usage guidelines
+
+### II.4 Language Governance (Mandatory)
+
+- All design documents under `design/*.md` must be English-only.
+- All changelog documents under `changelog/*.md` must be English-only.
+- All runtime rule files at the repository root (`*.md` rules excluding `README.md` and `TODO.md`) must be English-only.
+- Language normalization must preserve document structure, links, versions, and original meaning.
 
 ---
 
@@ -124,7 +132,7 @@ emergency-protocol + functional-intent-verification (Execution)
 
 ### III.3 Authorized Adversarial Workflow Decision Model
 
-**Design Goal:** ลด false refusal ในงาน authorized pentest โดยไม่ลดทอน hard safety boundaries
+**Design Goal:** Reduce false refusal in authorized pentest workflows without weakening hard safety boundaries.
 
 **Decision Output Contract:**
 
@@ -686,8 +694,8 @@ design/*.design.md   ---->  *.md                 ---->  changelog/*.changelog.md
 
 ### A.1 Purpose
 
-Framework สำหรับสร้างภาพประกอบของ Claude Code Rules System
-ออกแบบโดย A-PIRO (Automatic Prompt Intent Recognition Optimization)
+Framework for generating visual assets for the Claude Code Rules System.
+Designed with A-PIRO (Automatic Prompt Intent Recognition Optimization).
 
 ### A.2 File Structure
 

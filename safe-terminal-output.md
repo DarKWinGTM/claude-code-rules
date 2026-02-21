@@ -13,12 +13,12 @@ This guide helps you plan output handling BEFORE executing commands to prevent t
 
 ## 🔒 Output Limits (UOLF - Universal Output Limit Framework)
 
-**ทุกคำสั่งที่มี output ต้องจำกัดไม่เกินค่าเหล่านี้:**
+**All commands with output must be limited to no more than these values:**
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| MAX_OUTPUT_CHARS | 5000 | Hard limit ทุกกรณี |
-| MAX_OUTPUT_LINES | 100 | Soft limit (ถ้า chars OK) |
+| MAX_OUTPUT_CHARS | 5000 | Hard limit in all cases |
+| MAX_OUTPUT_LINES | 100 | Soft limit (if chars OK) |
 | RISKY_FILE_CHARS | 3000 | .min.js, .html, .json, .svg |
 
 **Universal Pattern:**
@@ -358,7 +358,7 @@ After redirecting output, choose your reading method based on file size:
 ## ✅ Best Practices Summary
 
 ### Universal Rule (UOLF):
-**ทุก output → ≤ 5000 chars (ใช้ double limit)**
+**Every output → ≤ 5000 chars (use double limit)**
 
 ### When Executing Commands:
 1. **Plan first** - Decide where output goes
@@ -401,7 +401,7 @@ rm -f /tmp/claude-*-*.txt /tmp/claude-*-*.log /tmp/claude-*-*.json
 ```text
 UOLF - UNIVERSAL OUTPUT LIMIT FRAMEWORK
 
-ทุก output → ≤ 5000 chars
+Every output → ≤ 5000 chars
 
 CONSTANTS
   MAX_OUTPUT_CHARS = 5000 (hard limit)

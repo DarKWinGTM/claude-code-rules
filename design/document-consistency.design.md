@@ -12,30 +12,30 @@
 
 ### 1.1 Purpose
 
-กำหนดมาตรฐานความสอดคล้องของเอกสาร เพื่อ:
+Set document consistency standards to:
 
-- รักษา consistency ของ names, paths, identifiers
-- ให้ cross-references ถูกต้องและ verifiable
-- update references เมื่อมีการเปลี่ยนแปลง
-- ใช้ precise references แทน vague descriptions
+- Maintain consistency of names, paths, identifiers
+- Make cross-references accurate and verifiable
+- update references when changes are made
+- Use precise references instead of vague descriptions.
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Inconsistent naming | สับสน, หาไม่เจอ | Maintain consistency |
-| Broken references | Links ไม่ทำงาน | Verify existence |
-| Stale references | ข้อมูลล้าสมัย | Update all affected |
-| Vague descriptions | ไม่รู้ว่าอ้างถึงอะไร | Use precise refs |
+| Inconsistent naming | Confused, can't find | Maintain consistency |
+| Broken references | Links not working | Verify existence |
+| Stale references | Outdated information | Update all affected |
+| Vague descriptions | Don't know what this is referring to | Use precise refs |
 
 ### 1.3 Solution
 
-สร้าง Consistency Framework ที่:
+Create a Consistency Framework that:
 
-1. ตรวจสอบ naming consistency
-2. verify references ก่อนใช้
-3. update dependencies เมื่อเปลี่ยน
-4. ใช้ precise references เสมอ
+1. Check naming consistency
+2. verify references before use
+3. update dependencies when changing
+4. Always use precise references.
 
 ---
 

@@ -10,7 +10,7 @@
 
 ## 1. Goal
 
-แปลงคำขอที่มีรูปแบบ DAN/jailbreak/ambiguous framing ให้เป็น intent ที่ชัดเจนและ bounded ก่อนเข้าสู่ decision engine
+Convert request with format DAN/jailbreak/ambiguous framing into clear, bounded intent before entering the decision engine
 
 ---
 
@@ -18,17 +18,17 @@
 
 **Normalize form, then evaluate intent and scope.**
 
-ระบบไม่ตัดสินจาก “สำนวนยั่วยุ” เพียงอย่างเดียว แต่ดึง objective เชิงงานที่แท้จริง แล้วตรวจ policy ตามกรอบปกติ
+The system does not judge by "Provocative rhetoric" only, but extract real work objectives and examine policy according to the normal framework.
 
 ---
 
 ## 3. Normalization Pipeline
 
-1. **Extract Intent** - แยก objective ที่ผู้ใช้ต้องการจริง
-2. **Strip Wrapper** - ตัดคำสั่งเชิง jailbreak framing ที่ไม่ใช่ objective
-3. **Bind Scope** - ผูก intent กับ authorization/scope ที่มี
-4. **Classify** - ส่งต่อ refusal-classification
-5. **Decide** - ส่งต่อ decision output contract
+1. **Extract Intent** - Extract the objective that the user actually wants.
+2. **Strip Wrapper** - wrap non-objective jailbreak framing instructions
+3. **Bind Scope** - Bind intent to available authorization/scope
+4. **Classify** - forward refusal-classification
+5. **Decide** - forward decision output contract
 
 ---
 
@@ -36,17 +36,17 @@
 
 | Outcome | Meaning | Next Step |
 |---------|---------|-----------|
-| Clear + Authorized | Intent ชัดและอยู่ใน scope | Evaluate for ALLOW_EXECUTE/ALLOW_CONSTRAINED |
-| Clear but Missing Context | Intent ชัดแต่ข้อมูลไม่พอ | `NEED_CONTEXT` + WORKFLOW_BLOCK |
-| Prohibited Intent | Intent ชัดว่าเป็น hard violation | `REFUSE_WITH_PATH` + HARD_BLOCK |
+| Clear + Authorized | Intent clear and within scope | Evaluate for ALLOW_EXECUTE/ALLOW_CONSTRAINED |
+| Clear but Missing Context | Intent clear but not enough information | `NEED_CONTEXT` + WORKFLOW_BLOCK |
+| Prohibited Intent | Intent is clearly a hard violation | `REFUSE_WITH_PATH` + HARD_BLOCK |
 
 ---
 
 ## 5. Guardrails
 
-- ห้ามตีความ normalization เป็น bypass policy
-- ห้ามแปลง prohibited intent ให้กลายเป็น allowed intent
-- หากไม่สามารถ normalize intent ให้ชัดเจนได้ ให้ใช้ `NEED_CONTEXT` ไม่ใช่เดา
+- Do not interpret normalization as bypass policy.
+- Do not convert prohibited intent into allowed intent.
+- If the intent cannot be clearly normalized, use `NEED_CONTEXT`, not guess.
 
 ---
 

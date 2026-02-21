@@ -12,12 +12,12 @@
 
 ### 1.1 Purpose
 
-กำหนดมาตรฐานการจัดการ terminal output เพื่อ:
+Standardize terminal output management to:
 
-- ป้องกัน terminal flooding จาก command output
-- ใช้ session isolation ด้วย `$$` (PID)
-- ใช้ UOLF framework ครอบคลุมทุกคำสั่ง
-- วางแผนก่อน execute เสมอ
+- Prevent terminal flooding from command output
+- Use session isolation with `$$` (PID).
+- Use UOLF framework to cover all commands.
+- Always plan before executing.
 
 ### 1.2 Problem Statement
 
@@ -30,12 +30,12 @@
 
 ### 1.3 Solution
 
-สร้าง UOLF + Session Isolation Framework ที่:
+Create a UOLF + Session Isolation Framework that:
 
-1. กำหนด output limits ที่ชัดเจน
-2. ใช้ `$$` (PID) สำหรับ unique filenames
-3. ใช้ Double Limit Pattern
-4. รองรับ Heredoc และ Multi-Language
+1. Set clear output limits
+2. Use `$$` (PID) for unique filenames.
+3. Use Double Limit Pattern
+4. Supports Heredoc and Multi-Language.
 
 ---
 
@@ -45,8 +45,8 @@
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| MAX_OUTPUT_CHARS | 5000 | Hard limit ทุกกรณี |
-| MAX_OUTPUT_LINES | 100 | Soft limit (ถ้า chars OK) |
+| MAX_OUTPUT_CHARS | 5000 | Hard limit in all cases |
+| MAX_OUTPUT_LINES | 100 | Soft limit (if chars OK) |
 | RISKY_FILE_CHARS | 3000 | .min.js, .html, .json, .svg |
 
 ### 2.2 Universal Pattern
@@ -234,7 +234,7 @@ rm -f /tmp/claude-*-*.txt /tmp/claude-*-*.log /tmp/claude-*-*.json
 ```text
 UOLF - UNIVERSAL OUTPUT LIMIT FRAMEWORK
 
-ทุก output → ≤ 5000 chars
+Every output → ≤ 5000 chars
 
 CONSTANTS
   MAX_OUTPUT_CHARS = 5000 (hard limit)

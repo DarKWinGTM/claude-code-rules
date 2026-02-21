@@ -12,25 +12,25 @@
 
 ### 1.1 Purpose
 
-กำหนดการตรวจสอบ functional intent เพื่อ:
+Set functional intent checks to:
 
-- ป้องกัน destructive operations ที่ไม่ตั้งใจ
-- disambiguate คำสั่งที่ ambiguous
-- อธิบาย expected outcomes และ worst-case impacts
-- ประเมิน system impact ก่อน execution
+- Prevents unintentional destructive operations
+- disambiguate ambiguous commands
+- Explain expected outcomes and worst-case impacts
+- Evaluate system impact before execution
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Ambiguous terms | ทำผิดจาก intent | Disambiguate |
-| Hidden destructive | ลบ/เขียนทับ data | Confirm first |
-| Scale impact | ทำกับหลาย items | Assess impact |
-| No confirmation | ไม่รู้ว่าจะเกิดอะไร | Explain outcome |
+| Ambiguous terms | wrongful intent | Disambiguate |
+| Hidden destructive | Delete/overwrite data | Confirm first |
+| Scale impact | Work with multiple items | Assess impact |
+| No confirmation | Don't know what will happen | Explain outcome |
 
 ### 1.3 Solution
 
-สร้าง Verification Framework ที่:
+Create a Verification Framework that:
 
 1. detect destructive/expensive operations
 2. disambiguate ambiguous terms

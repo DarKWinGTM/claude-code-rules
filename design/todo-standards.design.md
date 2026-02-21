@@ -9,31 +9,31 @@
 
 ---
 
-## 1) Goal (เป้าหมาย)
+## 1) Goal (goal)
 
-สร้างมาตรฐานเดียวกันสำหรับ TODO.md ที่ง่าย และใช้งานได้จริง
+Create a common standard for easy, usable TODO.md.
 
 ---
 
-## 2) Scope (ขอบเขต)
+## 2) Scope
 
 ### 2.1 Documents Covered
 
-- TODO.md หลักของ project
-- TODO สำหรับ sub-projects หรือ modules
+- TODO.md main project
+- TODO for sub-projects or modules
 
 ### 2.2 Standards Defined
 
-- โครงสร้างเอกสารแบบง่าย
-- Task format และ checkbox
-- Completed / Tasks To Do แยกส่วน
-- History tracking อย่างง่าย
+- Simple document structure
+- Task format and checkbox
+- Completed / Tasks To Do separated
+- History tracking easily
 
 ---
 
-## 3) Standards (มาตรฐาน)
+## 3) Standards
 
-### 3.1 Document Structure (โครงสร้างเอกสาร)
+### 3.1 Document Structure
 
 ```markdown
 # [Project Name] - TODO
@@ -64,7 +64,7 @@
 | YYYY-MM-DD | Description |
 ```
 
-### 3.2 Task Format (รูปแบบ Task)
+### 3.2 Task Format
 
 **Simple checkbox format:**
 ```markdown
@@ -73,7 +73,7 @@
 
 **No timestamps required** (keep it simple)
 
-### 3.3 Categories (หมวดหมู่)
+### 3.3 Categories (categories)
 
 **Optional categories** - Use only if helpful:
 
@@ -93,7 +93,7 @@
 
 ---
 
-## 4) Examples (ตัวอย่าง)
+## 4) Examples
 
 ### Example 1: Simple TODO
 
@@ -155,21 +155,21 @@
 
 ---
 
-## 5) Compliance Checklist (checklist ความสอดคล้อง)
+## 5) Compliance Checklist (checklist compliance)
 
-เมื่อสร้าง/อัปเดต TODO.md:
+When creating/updating TODO.md:
 
-- [ ] มี Last Updated date
-- [ ] มี Completed section (สิ่งที่ทำเสร็จ)
-- [ ] มี Tasks To Do section (สิ่งที่ต้องทำ)
-- [ ] มี History table (track การเปลี่ยนแปลง)
-- [ ] ใช้ checkbox format `- [ ]` สำหรับ tasks
-- [ ] ไม่มี priorities (P0-P3) - keep simple
-- [ ] ไม่มี deadlines - keep flexible
+- [ ] has Last Updated date
+- [ ] There is a Completed section (things that have been completed)
+- [ ] There is a Tasks To Do section (things that need to be done)
+- [ ] There is a History table (track changes)
+- [ ] Use checkbox format `- [ ]` for tasks.
+- [ ] No priorities (P0-P3) - keep simple
+- [ ] No deadlines - keep flexible
 
 ---
 
-## 6) Integration (การเชื่อมโยงงาน)
+## 6) Integration (linking tasks)
 
 ### Related Rules
 
@@ -178,7 +178,7 @@
 
 ---
 
-## 7) Notes (บันทึก)
+## 7) Notes
 
 ### Key Changes from v1.0
 

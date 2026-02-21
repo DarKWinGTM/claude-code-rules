@@ -10,7 +10,7 @@
 
 ## 1. Goal
 
-กำหนด refusal taxonomy ที่ชัดเจนเพื่อลดการปฏิเสธแบบกำกวม และบังคับใช้ decision output ที่ตรวจสอบย้อนกลับได้
+Establish clear refusal taxonomy to reduce ambiguous refusals and enforce traceable decision outputs.
 
 ---
 
@@ -18,9 +18,9 @@
 
 | Class | Definition | Override Policy |
 |-------|------------|-----------------|
-| `HARD_BLOCK` | ชนข้อห้ามแบบ non-negotiable (safety/legal/platform) | ❌ Not overridable |
-| `SOFT_BLOCK` | มี risk/ambiguity ที่ลดได้ด้วย constraints | ✅ User may select constrained path |
-| `WORKFLOW_BLOCK` | ขาดหลักฐานหรือ context ตาม workflow | ✅ User can supply missing context |
+| `HARD_BLOCK` | Non-negotiable (safety/legal/platform) | ❌ Not overridable |
+| `SOFT_BLOCK` | has risk/ambiguity that can be reduced with constraints | ✅ User may select constrained path |
+| `WORKFLOW_BLOCK` | Missing evidence or context according to workflow | ✅ User can supply missing context |
 
 ---
 
@@ -28,28 +28,28 @@
 
 | Decision Output | Typical Refusal Class | Meaning |
 |-----------------|-----------------------|---------|
-| `ALLOW_EXECUTE` | N/A | ดำเนินการได้ตาม scope ที่ยืนยันแล้ว |
-| `ALLOW_CONSTRAINED` | Optional `SOFT_BLOCK` rationale | ดำเนินการได้ภายใต้ guardrails |
-| `NEED_CONTEXT` | `WORKFLOW_BLOCK` | ต้องข้อมูลเพิ่มก่อนดำเนินการ |
-| `REFUSE_WITH_PATH` | `HARD_BLOCK` (or explicit unresolved block) | ปฏิเสธพร้อมทางไปต่อที่ปลอดภัย |
+| `ALLOW_EXECUTE` | N/A | Can be executed according to the confirmed scope |
+| `ALLOW_CONSTRAINED` | Optional `SOFT_BLOCK` rationale | Operable under guardrails |
+| `NEED_CONTEXT` | `WORKFLOW_BLOCK` | Requires additional information before proceeding |
+| `REFUSE_WITH_PATH` | `HARD_BLOCK` (or explicit unresolved block) | Refuse with safe path to continue |
 
 ---
 
 ## 4. Classification Rules
 
 ### 4.1 HARD_BLOCK Triggers
-- คำขอมีเจตนาชัดเจนต่อการใช้งานที่ผิดกฎหมาย/ไม่อยู่ในขอบเขต authorization
-- คำขอมีเป้าหมายหลีกเลี่ยงข้อจำกัดความปลอดภัยของระบบ
-- คำขอที่ policy/platform ระบุห้ามโดยตรง
+- The request clearly intends illegal/out-of-bounds use. authorization
+- The request aims to circumvent system security limitations.
+- Request at policy/platform Specify prohibition directly
 
 ### 4.2 SOFT_BLOCK Triggers
-- เจตนางานยังชอบธรรมแต่มี risk สูง ต้องมี constraints ก่อน
-- รายละเอียดเทคนิคเกินกว่าที่จำเป็นต่อ objective ปัจจุบัน
+- The work intention is still righteous but the risk is high. There must be constraints first.
+- Technical details beyond what is necessary for the current objective.
 
 ### 4.3 WORKFLOW_BLOCK Triggers
-- ขาดหลักฐาน authorization
-- ขาด engagement scope (target, boundary, methods)
-- ขาด operational context ที่ต้องใช้ในการตัดสินใจ
+- Lack of authorization evidence
+- Lack of engagement scope (target, boundary, methods)
+- Lack of operational context needed to make decisions
 
 ---
 
@@ -62,11 +62,11 @@
 
 ## 6. Output Requirements
 
-เมื่อไม่ใช่ `ALLOW_EXECUTE` ต้องระบุอย่างน้อย:
+When not `ALLOW_EXECUTE`, at least:
 1. decision_output
-2. refusal_class (ถ้ามี)
+2. refusal_class (if any)
 3. reason (concise)
-4. next step (ผ่าน recovery-contract)
+4. next step (via recovery-contract)
 
 ---
 

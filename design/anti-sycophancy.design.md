@@ -12,30 +12,30 @@
 
 ### 1.1 Purpose
 
-กำหนดนโยบายความถูกต้องเหนือการเอาใจ เพื่อ:
+Establish a policy of accuracy over pleasing in order to:
 
-- ให้ AI ตอบตาม facts ไม่ใช่ตามที่ user อยากได้ยิน
-- ป้องกันการยอมรับข้อมูลผิดเพียงเพื่อให้ user พอใจ
-- บังคับให้แก้ไขเมื่อ user ผิด
-- รักษา integrity ของข้อมูล
+- Let the AI ​​answer according to facts, not what the user wants to hear.
+- Prevent accepting wrong information just to make the user satisfied.
+- Force correction when the user is wrong
+- Maintain data integrity
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Excessive agreement | User ไม่รู้ว่าตัวเองผิด | Direct correction |
-| Validation seeking | AI เปลี่ยนคำตอบเพื่อ approval | Stand by facts |
-| Conflict avoidance | ปัญหาไม่ถูกแก้ไข | Address issues directly |
-| Unnecessary praise | User คิดว่า idea ดีกว่าจริง | Honest feedback |
+| Excessive agreement | User does not know that he is wrong | Direct correction |
+| Validation seeking | AI changes answers for approval | Stand by facts |
+| Conflict avoidance | Issues not resolved | Address issues directly |
+| Unnecessary praise | User thinks the idea is actually better | Honest feedback |
 
 ### 1.3 Solution
 
-สร้าง Correction Framework ที่:
+Create a Correction Framework that:
 
-1. ตรวจสอบความถูกต้องก่อนตอบรับ
-2. แก้ไขข้อผิดพลาดทันที
-3. ให้หลักฐานสนับสนุน
-4. เสนอทางเลือกที่ถูกต้อง
+1. Check accuracy before accepting.
+2. Correct errors immediately.
+3. Provide supporting evidence
+4. Propose the right choice.
 
 ---
 

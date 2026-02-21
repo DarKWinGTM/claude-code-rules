@@ -12,12 +12,12 @@
 
 ### 1.1 Purpose
 
-กำหนดนโยบายห้ามเดาค่าตัวแปร เพื่อ:
+Establish a policy prohibiting guessing of variable values ​​in order to:
 
-- ให้ใช้ค่าจริงจาก actual sources เสมอ
-- ป้องกันการเดา paths, configs, variables
-- verify ก่อน reference
-- ถาม user เมื่อหาไม่เจอ
+- Always use actual values ​​from actual sources.
+- Prevents guessing paths, configs, variables
+- verify before reference
+- Ask the user when can't find it.
 
 ### 1.2 Problem Statement
 
@@ -30,12 +30,12 @@
 
 ### 1.3 Solution
 
-สร้าง Verification Framework ที่:
+Create a Verification Framework that:
 
-1. verify ทุก path ก่อน reference
-2. read config files ก่อนใช้ค่า
-3. ถาม user เมื่อไม่แน่ใจ
-4. อนุญาต standard conventions เท่านั้น
+1. Verify every path before reference
+2. read config files before using values
+3. Ask the user when unsure.
+4. Only standard conventions are allowed.
 
 ---
 

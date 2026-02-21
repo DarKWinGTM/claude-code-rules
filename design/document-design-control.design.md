@@ -8,16 +8,16 @@
 
 ---
 
-## 1) Goal (เป้าหมาย)
+## 1) Goal (goal)
 
-- สร้างมาตรฐานเดียวกันสำหรับ design documents ทั้งหมด
-- ควบคุมคุณภาพและความสอดคล้องของ design documents
-- ทำให้การทำงานร่วมกันระหว่าง design, changelog และ TODO เป็นไปอย่างง่าย
-- รักษา Single Source of Truth principle
+- Create a single standard for all design documents.
+- Control the quality and consistency of design documents
+- Makes collaboration between design, changelog and TODO easy.
+- Maintain the Single Source of Truth principle.
 
 ---
 
-## 2) Scope (ขอบเขต)
+## 2) Scope
 
 ### 2.1 Documents Covered
 
@@ -37,7 +37,7 @@
 
 ---
 
-## 3) Standards (มาตรฐาน)
+## 3) Standards
 
 ### 3.1 File Naming Standards
 
@@ -130,7 +130,7 @@
 
 ---
 
-## 4) Changelog Integration (การผนวกรวม Changelog)
+## 4) Changelog Integration
 
 > **Based on:** [document-changelog-control.md](../document-changelog-control.md) v4.4
 
@@ -180,7 +180,7 @@
 
 ---
 
-## 5) TODO/Task Integration (การผนวก TODO)
+## 5) TODO/Task Integration
 
 ### 5.1 TODO.md Format
 
@@ -220,7 +220,7 @@
 
 ---
 
-## 6) Cross-reference Standards (มาตรฐานการอ้างอิง)
+## 6) Cross-reference Standards
 
 ### 6.1 Link Formats
 
@@ -240,7 +240,7 @@
 
 ---
 
-## 7) Examples (ตัวอย่าง)
+## 7) Examples
 
 ### 7.1 Complete Design Document
 
@@ -343,7 +343,7 @@ Enhanced with new features
 
 ---
 
-## 8) Quality Metrics (ตัวชี้วัด)
+## 8) Quality Metrics (indicators)
 
 | Metric | Target | Notes |
 |--------|--------|-------|
@@ -358,7 +358,7 @@ Enhanced with new features
 
 ---
 
-## 9) Related Documents (เอกสารที่เกี่ยวข้อง)
+## 9) Related Documents
 
 | Document | Relationship | Purpose |
 |----------|--------------|---------|

@@ -12,30 +12,30 @@
 
 ### 1.1 Purpose
 
-กำหนดนโยบายการใช้ real system แทน mock/stub implementations เพื่อ:
+Set a policy for using real systems instead of mock/stub implementations to:
 
-- ให้ AI ใช้ระบบจริงเมื่อมีให้ใช้งาน
-- ป้องกันการสร้าง fake implementations ที่หลอกลวง user
-- อนุญาต mockups เมื่อ user ร้องขอชัดเจน
-- รักษา transparency ในทุกกรณี
+- Let the AI ​​actually use the system when it is available.
+- Prevents the creation of fake implementations that deceive users.
+- Allow mockups when the user explicitly requests them.
+- Maintain transparency in all cases
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Hidden mocks | User เข้าใจผิดว่าระบบทำงานจริง | ต้องเปิดเผยเสมอ |
-| Fake API responses | User ไม่รู้ว่าข้อมูลไม่ใช่ของจริง | ใช้ real API เมื่อมี |
-| Stub implementations | Code ไม่ทำงานจริง production | Implement จริง |
-| Placeholder functions | Function ไม่ทำอะไร | Require real logic |
+| Hidden mocks | User misunderstands that the system actually works | Must always be disclosed |
+| Fake API responses | User doesn't know the data isn't real | Use real API when available |
+| Stub implementations | Code does not actually work production | Real Implement |
+| Placeholder functions | Function does nothing | Require real logic |
 
 ### 1.3 Solution
 
-สร้าง Decision Framework ที่:
+Create a Decision Framework that:
 
-1. ตรวจสอบว่ามี real implementation หรือไม่
-2. ถ้ามี → ใช้ real implementation
-3. ถ้าไม่มี → ถาม user หรือ label ชัดเจน
-4. ถ้า user ขอ mockup → สร้างพร้อม label
+1. Check whether there is real implementation or not.
+2. If available → use real implementation
+3. If there is none → Ask the user or label clearly.
+4. If user requests mockup → create with label
 
 ---
 

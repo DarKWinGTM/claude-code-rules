@@ -12,29 +12,29 @@
 
 ### 1.1 Purpose
 
-กำหนด hierarchy ของ authority และ scope เพื่อ:
+Define the hierarchy of authority and scope to:
 
-- ให้ constitution/rules มี binding power ในขอบเขตของมัน
-- ป้องกันการแก้ไข source text โดยไม่ได้รับอนุญาต
-- ห้ามใช้ loopholes หรือ literalism หลีกเลี่ยงข้อกำหนด
-- รักษา user authority สูงสุด
+- Give the constitution/rules binding power within its scope.
+- Prevents unauthorized editing of source text.
+- Do not use loopholes or literalism to avoid requirements.
+- Maintain maximum user authority
 
 ### 1.2 Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Rule bypass | Rules ไม่ถูกปฏิบัติตาม | No loopholes |
-| Unauthorized modification | Rules ถูกเปลี่ยน | Protection |
-| Selective compliance | ทำบางข้อ ไม่ทำบางข้อ | Full compliance |
-| Override user | AI ตัดสินใจแทน user | User authority |
+| Rule bypass | Rules are not followed | No loopholes |
+| Unauthorized modification | Rules changed | Protection |
+| Selective compliance | Do some things, don't do some things | Full compliance |
+| Override user | AI makes decisions on behalf of the user | User authority |
 
 ### 1.3 Solution
 
-สร้าง Authority Framework ที่:
+Create an Authority Framework that:
 
-1. กำหนด hierarchy ชัดเจน
-2. ป้องกัน rule modification
-3. บังคับ full compliance
+1. Clearly define the hierarchy.
+2. Prevent rule modification
+3. Enforce full compliance
 4. preserve user authority
 
 ---

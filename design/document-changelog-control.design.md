@@ -8,93 +8,93 @@
 
 ---
 
-## 1) Goal (เป้าหมาย)
+## 1) Goal (goal)
 
-- กำหนดมาตรฐาน version tracking ที่ใช้งานได้จริงและตรวจสอบย้อนหลังได้
-- แก้ความขัดแย้งระหว่าง “ทุกไฟล์ต้องมีตาราง” กับแนวทาง Navigator ของ design docs
-- กำหนดกติกาเดียวสำหรับกรณีทั่วไป (OR compliance) และกรณีมีไฟล์คู่ design/changelog
-- บังคับใช้ Session ID จริงเพื่อ trace กลับไปที่ session ได้
+- Set version tracking standards that are actually usable and traceable.
+- Resolve conflicts between “Every file must have a table” with the Navigator guidelines of design docs
+- Establish a single rule for general cases (OR compliance) and cases with double files. design/changelog
+- Enforce the actual Session ID to trace back to the session.
 
 ---
 
-## 2) Scope (ขอบเขต)
+## 2) Scope
 
 ### 2.1 Documents Covered
 
 - Rules documents (`*.md`)
-- Design documents (`*.design.md` หรือ `design.md`)
-- Changelog documents (`*.changelog.md` หรือ `changelog.md`)
+- Design documents (`*.design.md` or `design.md`)
+- Changelog documents (`*.changelog.md` or `changelog.md`)
 
 ### 2.2 Problem This Design Resolves
 
-- ความซ้ำซ้อนของประวัติระหว่าง design และ changelog
-- ข้อกำหนดที่ตีกันเองระหว่าง table-only กับ navigator-only
-- การใช้ Session ID แบบ placeholder ที่ตรวจสอบย้อนกลับไม่ได้
+- History duplication between design and changelog.
+- Requirements between table-only and navigator-only
+- Using a placeholder Session ID that cannot be traced
 
 ---
 
-## 3) Core Principles (หลักการ)
+## 3) Core Principles
 
 1. **Traceability First**
-   - ทุกเอกสารต้องมีเส้นทาง trace เวอร์ชันที่ชัดเจนเสมอ
+   - Every document must always have a clear version trace path.
 
 2. **Flexible Compliance (OR)**
-   - เอกสารผ่านเกณฑ์เมื่อมีอย่างน้อยหนึ่งข้อ:
-     - (A) มี `Version History (Unified)` table ในไฟล์
-     - (B) มีลิงก์ไปยัง authoritative changelog
+   - Documents meet the criteria when at least one of the following criteria is met:
+     - (A) There is a `Version History (Unified)` table in the file.
+     - (B) Contains a link to the authoritative changelog.
 
 3. **Pair Behavior is Explicit**
-   - เมื่อมีทั้ง `design.md` และ `changelog.md` ในขอบเขตเดียวกัน ต้องใช้ separation แบบชัดเจน
+   - When having both `design.md` and `changelog.md` in the same scope, explicit separation must be used.
 
 4. **No Mock Session IDs**
-   - ห้ามใช้ `<Session ID>`, `TBD`, หรือค่าจำลอง
+   - Do not use `<Session ID>`, `TBD`, or any dummy values.
 
 5. **History Preservation**
-   - ห้ามลบ/ทับ history เดิมโดยไม่บันทึกการเปลี่ยนแปลงใหม่
+   - Do not delete/overwrite the old history without saving the new changes.
 
 ---
 
-## 4) Core Requirements (ข้อกำหนดหลัก)
+## 4) Core Requirements
 
 ### 4.1 Traceable Version Path (Mandatory)
 
-ทุกเอกสารต้องมี traceable version path แบบ OR:
+Every document must have a traceable version path like OR:
 
-- **Option A:** มี `Version History (Unified)` table ในเอกสารนั้น
-- **Option B:** มี `> Full history: ...` ที่ชี้ไป changelog หลัก
+- **Option A:** There is a `Version History (Unified)` table in that document.
+- **Option B:** has `> Full history: ...` pointing to the main changelog.
 
 ### 4.2 Session ID Integrity
 
-- Session ID ต้องเป็นค่าจริงจาก environment/session ปัจจุบัน
-- รองรับรูปแบบ UUID (`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) หรือ `SXXXX`
-- ข้อมูล legacy ให้ใช้ `LEGACY-XXX` เฉพาะ entry ย้อนหลังเท่านั้น
+- Session ID must be a true value from current environment/session
+- Supports UUID format (`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) or `SXXXX`.
+- For legacy data, use `LEGACY-XXX` only for historical entries.
 
 ### 4.3 History Preservation
 
-- ห้ามลบ history เดิม
-- หากแก้ความผิดพลาดของ history เดิม ให้เพิ่ม entry ใหม่เพื่ออธิบาย correction
-- ทุก entry ต้องมี Date + Session ID
+- Do not delete the old history.
+- If correcting errors in the original history, add a new entry to describe the correction.
+- Every entry must have Date + Session ID.
 
 ### 4.4 design.md <> changelog.md Pair Rule (Mandatory)
 
-เมื่อมีทั้ง design/changelog คู่กันในขอบเขตเดียวกัน:
+When there is both design/changelog Coupled in the same scope:
 
 | File | MUST use | MUST NOT use |
 |------|----------|--------------|
-| **design.md** / `*.design.md` | Navigator link-only (`> Full history: ...`) | Full changelog sections, version table/entries ในไฟล์เดียวกัน |
-| **changelog.md** / `*.changelog.md` | Detailed sections (UPPER) + `Version History (Unified)` table (LOWER) | มีแค่ detailed sections หรือมีแค่ table อย่างเดียว |
+| **design.md** / `*.design.md` | Navigator link-only (`> Full history: ...`) | Full changelog sections, version table/entries In the same file |
+| **changelog.md** / `*.changelog.md` | Detailed sections (UPPER) + `Version History (Unified)` table (LOWER) | There are only detailed sections or only a table |
 
 ### 4.5 Navigator Definition
 
-Navigator หมายถึง:
+Navigator means:
 
-- ✅ มีเฉพาะลิงก์ไป authoritative changelog
-- ❌ ไม่มีตาราง version history ในไฟล์ design
-- ❌ ไม่มี version entries ในไฟล์ design
+- ✅ Only links to authoritative changelog
+- ❌ There is no version history table in the design file.
+- ❌ There are no version entries in the design file.
 
 ---
 
-## 5) Format Standards (รูปแบบมาตรฐาน)
+## 5) Format Standards
 
 ### 5.1 Full Changelog Format
 
@@ -139,10 +139,10 @@ Navigator หมายถึง:
 
 ### 5.3 Non-Pair Documents (OR Compliance)
 
-หากไม่มีไฟล์คู่ design/changelog:
+If there is no pair file design/changelog:
 
-- จะใช้ table-in-file หรือ link-only อย่างใดอย่างหนึ่งก็ได้
-- แนะนำให้ใช้ table-in-file เมื่อเอกสารยังสั้นและแก้น้อย
+- You can use either table-in-file or link-only.
+- It is recommended to use table-in-file. When the document is still short and there are few changes
 
 ---
 
@@ -181,12 +181,12 @@ Has design/ or changelog/ directory?
 
 ## 7) Compliance Checklist
 
-- [ ] เอกสารมี traceable path แบบ OR แล้ว
-- [ ] Session IDs เป็นค่าจริง (ไม่ placeholder)
-- [ ] หากเป็น design/changelog pair ใช้ separation ถูกต้อง
-- [ ] changelog file มีทั้ง detailed sections + summary table
-- [ ] ไม่มีการลบ history เดิม
-- [ ] ลิงก์อ้างอิงทั้งหมดใช้งานได้จริง
+- [ ] The document now has a traceable path of OR type.
+- [ ] Session IDs are true (not placeholder)
+- [ ] If it is a design/changelog pair, use separation correctly.
+- [ ] changelog file contains both detailed sections + summary table
+- [ ] No deletion of the original history.
+- [ ] All referral links are working.
 
 ---
 
@@ -216,15 +216,15 @@ Has design/ or changelog/ directory?
 
 ### 10.1 Common Pitfalls
 
-- ใส่ตาราง version ใน design doc ทั้งที่มี changelog คู่แล้ว
-- เขียน changelog แบบมีแค่ detailed sections โดยไม่มี summary table
-- ใช้ placeholder Session ID
-- แก้ history เก่าโดยไม่เพิ่ม correction entry ใหม่
+- Insert the version table in the design doc even though it already has a changelog.
+- Write a changelog with only detailed sections, without a summary table.
+- Use placeholder Session ID
+- Correct old history without adding new correction entries.
 
 ### 10.2 Migration Guidance
 
-- ถ้าไฟล์เดิมมี table ใน design doc และมี changelog คู่แล้ว → ย้าย full history ไป changelog แล้วเหลือ navigator link ใน design
-- ถ้า changelog เดิมมีแค่รูปแบบเดียว (table หรือ detailed อย่างเดียว) → เติมอีกส่วนให้ครบทั้งสองส่วน
+- If the original file has a table in the design doc and has a pair of changelogs → move the full history to changelog and leave the navigator link in design
+- If the original changelog only had one format (only table or detailed) → add another section to complete both sections.
 
 ---
 
