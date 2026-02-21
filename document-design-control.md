@@ -1,6 +1,6 @@
 # Document Design Control
 
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 
 ## Rule Statement
 
@@ -8,9 +8,9 @@
 
 This rule ensures all design documents (`*.design.md`) maintain uniform format, proper version tracking, and correct integration with changelog files.
 
-**Based on:** [document-design-control.design.md](design/document-design-control.design.md) v1.2
+**Based on:** [document-design-control.design.md](design/document-design-control.design.md) v1.3
 
-**Related Reference:** [document-changelog-control.md](document-changelog-control.md) v4.3 - Defines Version History (Unified) format
+**Related Reference:** [document-changelog-control.md](document-changelog-control.md) v4.4 - Defines Version History (Unified) format
 
 ---
 
@@ -236,7 +236,7 @@ Need to reference another design?
 **IMPORTANT:**
 - Design documents have ONLY the link to changelog (NO Version History table)
 - Version History (Unified) table is ONLY in changelog.md file
-- This follows document-changelog-control.md v4.3: Navigator format for design docs
+- This follows document-changelog-control.md v4.4: Navigator format for design docs
 
 ### 5. Changelog Integration (Critical)
 
@@ -289,7 +289,7 @@ Changelog files contain the Version History (Unified) table:
 | Complex changes need details | ✅ Yes | Need detailed change tracking |
 | Design doc has > 5 versions | ✅ Yes | Navigator + Full changelog pattern |
 
-**Mandatory Pattern (per document-changelog-control.md v4.3):**
+**Mandatory Pattern (per document-changelog-control.md v4.4):**
 
 When BOTH design.md AND changelog.md exist:
 - design.md = ONLY link to changelog (NO table, NO entries)
@@ -326,7 +326,7 @@ When BOTH design.md AND changelog.md exist:
 | Changelog link | 100% present | At design end (Navigator) |
 | NO Version History table | 100% | Design docs only have link |
 | Session ID accuracy | 100% real UUID | No placeholders |
-| Changelog integration | Per document-changelog-control.md v4.3 | Navigator for design, Full for changelog |
+| Changelog integration | Per document-changelog-control.md v4.4 | Navigator for design, Full for changelog |
 | Cross-reference validity | 100% working | Test all links |
 
 ---
@@ -336,7 +336,7 @@ When BOTH design.md AND changelog.md exist:
 ### Related Reference
 
 **Works together with:**
-- **[document-changelog-control.md](document-changelog-control.md) v4.3**
+- **[document-changelog-control.md](document-changelog-control.md) v4.4**
   - Defines Version History (Unified) format
   - Establishes design.md <> changelog.md relationship
   - Specifies Navigator format for design documents
@@ -353,7 +353,7 @@ When BOTH design.md AND changelog.md exist:
 ### How They Work Together
 
 ```
-document-changelog-control.md (v4.3)
+document-changelog-control.md (v4.4)
   ↓ Defines Version History (Unified) format
   ↓ Specifies Navigator format: design.md = ONLY link
 
@@ -527,9 +527,10 @@ Design API gateway
 
 | Version | Date | Notes |
 |---------|------|-------|
+| 1.4 | 2026-02-21 | Synced references to document-changelog-control v4.4 |
 | 1.3 | 2026-01-26 | Added Pattern 1 (Simple) for single-design projects |
 | 1.2 | 2026-01-21 | Fixed terminology - "Primary Reference" → "Related Reference" |
-| 1.1 | 2026-01-21 | Aligned with document-changelog-control.md v4.3 |
+| 1.1 | 2026-01-21 | Aligned with document-changelog-control.md v4.4 |
 | 1.0 | 2026-01-21 | Initial version |
 
 ---

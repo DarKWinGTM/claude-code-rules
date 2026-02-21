@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-21)
 
 ---
@@ -83,7 +83,7 @@
    - `> Full history: [<doc>.changelog.md](changelog/<doc>.changelog.md)`
 
 **CRITICAL:**
-- NO Version History table in design documents (per document-changelog-control.md v4.3)
+- NO Version History table in design documents (per document-changelog-control.md v4.4)
 - Design documents contain ONLY the link to changelog
 - Content sections (Goal, Scope, etc.) are flexible and optional
 
@@ -99,7 +99,7 @@
 
 ### 3.5 Version History (Unified) Format
 
-**CRITICAL: Follows document-changelog-control.md v4.3**
+**CRITICAL: Follows document-changelog-control.md v4.4**
 
 **For Design Documents (Navigator format):**
 ```markdown
@@ -132,7 +132,7 @@
 
 ## 4) Changelog Integration (การผนวกรวม Changelog)
 
-> **Based on:** [document-changelog-control.md](../document-changelog-control.md) v4.3
+> **Based on:** [document-changelog-control.md](../document-changelog-control.md) v4.4
 
 ### 4.1 Design Documents (Navigator Format)
 
@@ -279,7 +279,7 @@
 **NOTE:**
 - NO Version History table in design document
 - ONLY the link to changelog
-- Follows document-changelog-control.md v4.3 rules
+- Follows document-changelog-control.md v4.4 rules
 
 ### 7.2 Design with Changelog
 
@@ -353,7 +353,7 @@ Enhanced with new features
 | NO Version History table | 100% | Design docs only have link |
 | Session ID accuracy | 100% real UUID | No placeholders |
 | Cross-reference validity | 100% working | All links verify |
-| Changelog file exists | When needed | Per document-changelog-control.md v4.3 |
+| Changelog file exists | When needed | Per document-changelog-control.md v4.4 |
 | TODO tracking | Major tasks | In TODO.md |
 
 ---
@@ -367,7 +367,7 @@ Enhanced with new features
 | [document-design-control.md](../document-design-control.md) | Rules implementation | Enforces these design standards |
 | [../TODO.md](../TODO.md) | Task tracking | TODO/task tracking integration |
 
-**NOTE:** This design.spec is based on and must comply with [document-changelog-control.md](../document-changelog-control.md) v4.3
+**NOTE:** This design.spec is based on and must comply with [document-changelog-control.md](../document-changelog-control.md) v4.4
 
 ---
 

@@ -257,7 +257,20 @@ cat ~/.claude/rules/anti-sycophancy.md | head -20
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Total: 18 Rules = Complete Professional Framework**
+**📊 Active Runtime Rules: 18**
+
+### 🧪 Design-Phase Rules (Not Activated Yet)
+
+> **These are documented in `design/*.design.md` + `changelog/*.changelog.md` and are not yet materialized as root runtime rules.**
+
+| Planned Rule | Current State |
+|:-------------|:--------------|
+| `refusal-minimization` | Design + changelog ready (root `.md` pending) |
+| `refusal-classification` | Design + changelog ready (root `.md` pending) |
+| `recovery-contract` | Design + changelog ready (root `.md` pending) |
+| `dan-safe-normalization` | Design + changelog ready (root `.md` pending) |
+
+**📊 Framework Summary: 18 active runtime rules + 4 design-phase planned rules**
 
 </div>
 

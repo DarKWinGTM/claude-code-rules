@@ -6,18 +6,88 @@
 
 | Metric | Value | Target |
 |--------|-------|--------|
-| Overall Progress | 50/68 tasks (74%) | 100% |
-| Total Tasks | 68 | - |
-| Completed | 50 | - |
+| Overall Progress | 142/158 tasks (90%) | 100% |
+| Total Tasks | 158 | - |
+| Completed | 142 | - |
 | In Progress | 0 | - |
-| Pending | 18 | - |
+| Pending | 16 | - |
 
-**Active Session:** (current session)
-**Last Updated:** 2026-02-06
+**Active Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+**Last Updated:** 2026-02-21
 
 ---
 
 ## ✅ Completed Tasks
+
+### [P0] [Governance] Conflict #1 TODO Authority Alignment (Documentation Sync)
+
+**Completed:** 2026-02-21 | **Created:** 2026-02-21
+
+- [x] **Synced project documentation references** - Ensured active TODO authority is `todo-standards.md` v2.0
+- [x] **Updated project-documentation changelog to v1.4** - Added explicit synchronization entry for design/TODO authority
+- [x] **Preserved changelog as version authority** - Maintained header/version governance alignment
+
+---
+
+### [P0] [Governance] Conflict #2 Version Policy OR Compliance (Design/TODO/Changelog Phase)
+
+**Completed:** 2026-02-21 | **Created:** 2026-02-21
+
+- [x] **Rewrote design spec to v4.4** - `design/document-changelog-control.design.md` now defines OR compliance + explicit pair behavior
+- [x] **Created changelog v4.4 entry** - `changelog/document-changelog-control.changelog.md` updated and malformed legacy v4.1 block normalized
+- [x] **Recorded traceability policy** - OR path (`table OR full-history link`) is now documented in design/changelog layer
+- [x] **Prepared rule-layer alignment as next step** - Rule file update intentionally deferred per user-required execution order
+
+---
+
+### [P0] [Safety] Conflict #3 Strict No-Cat Policy (Design/TODO/Changelog Phase)
+
+**Completed:** 2026-02-21 | **Created:** 2026-02-21
+
+- [x] **Updated rule/design to v1.1** - `safe-terminal-output.md` and `design/safe-terminal-output.design.md`
+- [x] **Removed cat-style recommendation from matrix path** - Standardized to `head -100 | head -c 5000` in key low-size/high-line matrix row
+- [x] **Added changelog v1.1 entry** - `changelog/safe-terminal-output.changelog.md` documents strict no-cat enforcement
+
+---
+
+### [P0] [Consistency] Final Metadata Sync Pass (Line-Level Patch Closure)
+
+**Completed:** 2026-02-21 | **Created:** 2026-02-21
+
+- [x] **Updated document-design-control changelog to v1.4** - Synchronized parent path, version marker, session metadata, and unified heading format
+- [x] **Updated safe-file-reading rule/design to v1.1** - Clarified capped-read matrix guidance with explicit `limit: 200` pattern
+- [x] **Added safe-file-reading changelog v1.1 entry** - Recorded matrix clarification and metadata synchronization
+- [x] **Updated master changelog to v2.6** - Consolidated final sync-wave completion records
+- [x] **Refreshed TODO dashboard/history** - Recorded completion of final consistency patch closure
+
+---
+
+### [P0] [Design] Authorized Adversarial Workflow Suite (Master Design Phase)
+
+**Completed:** 2026-02-21 | **Created:** 2026-02-21
+
+- [x] **Updated `design/design.md` to v1.8** - Added principle-first architecture for minimizing false refusals in authorized pentest workflows
+- [x] **Added decision-output contract to master design** - `ALLOW_EXECUTE`, `ALLOW_CONSTRAINED`, `NEED_CONTEXT`, `REFUSE_WITH_PATH`
+- [x] **Added refusal-class contract and authority split** - `HARD_BLOCK`, `SOFT_BLOCK`, `WORKFLOW_BLOCK` with non-overridable hard boundary policy
+- [x] **Registered 4 new rules in master index** - `refusal-minimization`, `refusal-classification`, `recovery-contract`, `dan-safe-normalization`
+- [x] **Updated master changelog to v2.7** - Recorded design-phase completion for the new suite
+
+---
+
+### [P0] [Core] New Rules Suite Implementation (Principle-First)
+
+**Completed:** 2026-02-21 | **Created:** 2026-02-21
+
+- [x] **Create `design/refusal-minimization.design.md`** - False refusal minimization for authorized workflows
+- [x] **Create `design/refusal-classification.design.md`** - HARD/SOFT/WORKFLOW taxonomy and output mapping
+- [x] **Create `design/recovery-contract.design.md`** - Mandatory blocked-response contract (reason/what-now/how-to-proceed)
+- [x] **Create `design/dan-safe-normalization.design.md`** - Normalize DAN-style ambiguous prompts into bounded authorized intents
+- [x] **Create `changelog/refusal-minimization.changelog.md`** - Rule-specific history
+- [x] **Create `changelog/refusal-classification.changelog.md`** - Rule-specific history
+- [x] **Create `changelog/recovery-contract.changelog.md`** - Rule-specific history
+- [x] **Create `changelog/dan-safe-normalization.changelog.md`** - Rule-specific history
+
+---
 
 ### [P1] [Core] Accurate Communication Standard
 
@@ -355,6 +425,17 @@ Architect Agent   ───┘
 **Note:** design.md (master design document) does not require image - only rules files have images
 **Image Update:** Final image (3.1 MB) with text overlay verified via MCP analyze_image (Rating 9/10)
 
+### [P0] [Audit] Documentation Integrity Improvement Candidates (Review Gate)
+
+**Status:** [PENDING] | **Created:** 2026-02-21
+
+- [ ] **Reconcile rule inventory vs phase scope** - Align `design/design.md` indexed active rules with current design-only phase (no premature root-rule activation)
+- [ ] **Normalize changelog anchors/coverage** - Resolve `#version-XX` jump-target behavior and add/resolve missing detailed section coverage (including v2.4 row mapping)
+- [ ] **Fix TODO reporting drift** - Align pending counts with actual pending items and remove completed blocks from pending area
+- [ ] **Remove duplicate TODO heading** - Consolidate duplicated `Future Enhancements` heading
+- [ ] **Replace placeholder session metadata** - Update placeholder/non-real session markers in rule/changelog files with approved session handling
+- [ ] **Normalize section numbering/order drift** - Fix duplicate subsection numbering in `design/design.md` and keep ordering coherent with master history structure
+
 ### [P2] [Docs] Documentation Updates
 
 **Status:** [PENDING] | **Created:** 2026-01-21
@@ -400,6 +481,15 @@ Architect Agent   ───┘
 
 | Date | Changes |
 |------|---------|
+| 2026-02-21 | **Added documentation integrity improvement candidates** - Logged pending remediation candidates in design main and created TODO review-gate task list for post-approval adjustments |
+| 2026-02-21 | **Completed P0 new rules suite implementation (principle-first)** - Created 4 design docs + 4 changelog docs (`refusal-minimization`, `refusal-classification`, `recovery-contract`, `dan-safe-normalization`) and synchronized TODO status |
+| 2026-02-21 | **Completed P0 master design phase for authorized adversarial workflow suite** - design/design.md v1.8 + master changelog v2.7 + TODO updates for new rule rollout |
+| 2026-02-21 | **Completed P0 final metadata sync pass** - document-design-control changelog v1.4, safe-file-reading v1.1 (rule/design/changelog), master changelog v2.6, and TODO metadata alignment |
+| 2026-02-21 | **Completed P0 conflict sync batch** - Design/TODO/changelog updates for Conflict #1 (TODO authority), #2 (version OR compliance), #3 (strict no-cat) |
+| 2026-02-21 | Updated changelog/project-documentation-standards.changelog.md to v1.4 with synchronization entry |
+| 2026-02-21 | Updated changelog/document-changelog-control.changelog.md to v4.4 and normalized malformed legacy v4.1 block |
+| 2026-02-21 | Updated changelog/safe-terminal-output.changelog.md to v1.1 with strict no-cat enforcement entry |
+| 2026-02-21 | Updated TODO dashboard/session metadata and recorded governance/safety completion tasks |
 | 2026-02-06 | **Created accurate-communication.md** - New rule with flexible principles (v1.1) |
 | 2026-02-06 | Created design/accurate-communication.design.md, changelog, and rules file |
 | 2026-02-06 | Updated dashboard: 50/68 tasks (74%) |
@@ -435,5 +525,5 @@ Architect Agent   ───┘
 
 ---
 
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-> **Last Updated:** 2026-02-01
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Last Updated:** 2026-02-21

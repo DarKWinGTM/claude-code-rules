@@ -249,7 +249,7 @@ This document contains 140 optimized image generation prompts for the Claude Cod
 ---
 
 ## Rule: project-documentation-standards
-**Core Concept:** Every project must maintain standardized documentation following defined rules. Required Documents table (README.md, design.md, changelog.md, TODO.md) based on project needs. Decision Tree for document creation. Rule Compliance (document-design-control.md, document-changelog-control.md, todo-standards.design.md). Project Start Checklist.
+**Core Concept:** Every project must maintain standardized documentation following defined rules. Required Documents table (README.md, design.md, changelog.md, TODO.md) based on project needs. Decision Tree for document creation. Rule Compliance (document-design-control.md, document-changelog-control.md, todo-standards.md). Project Start Checklist.
 **Context File:** project-documentation-standards.md
 
 | # | Style | Prompt |

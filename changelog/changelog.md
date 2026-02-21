@@ -1,15 +1,38 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 2.4
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Current Version:** 2.8
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
-## Version History
+## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.8 | 2026-02-21 | **[Logged Documentation Integrity Audit Findings (Review Gate)](#version-28)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Logged verified defects in master docs for review-first remediation (no TODO split yet) | |
+| | | - Updated `design/design.md` to v1.9 and added audit findings section | |
+| | | - Recorded broken links, metadata placeholders, and status/count drift findings | |
+| | | Summary: Captured repository documentation integrity issues for user review before remediation tasks | |
+| 2.7 | 2026-02-21 | **[Designed Authorized Adversarial Workflow Rule Suite](#version-27)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Updated `design/design.md` to v1.8 with principle-first pentest workflow architecture | |
+| | | - Added decision model (`ALLOW_EXECUTE`, `ALLOW_CONSTRAINED`, `NEED_CONTEXT`, `REFUSE_WITH_PATH`) | |
+| | | - Added refusal class contract (`HARD_BLOCK`, `SOFT_BLOCK`, `WORKFLOW_BLOCK`) and authority split | |
+| | | - Registered 4 new principle-first rules in master index (`refusal-minimization`, `refusal-classification`, `recovery-contract`, `dan-safe-normalization`) | |
+| | | Summary: Established master design baseline for false-refusal minimization in authorized pentest workflows | |
+| 2.6 | 2026-02-21 | **[Finalized Consistency Patch Set and Metadata Sync](#version-26)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Added `document-design-control` changelog v1.4 metadata synchronization entry | |
+| | | - Added `safe-file-reading` changelog v1.1 with explicit capped-read matrix clarification | |
+| | | - Synchronized `safe-file-reading.md` and `design/safe-file-reading.design.md` to v1.1 (including design session metadata) | |
+| | | - Updated TODO dashboard metrics/history for latest consistency patch wave | |
+| | | Summary: Completed line-level consistency updates and aligned changelog/TODO metadata in final sync pass | |
+| 2.5 | 2026-02-21 | **[Completed Conflict Sync Batch (Design/TODO/Changelog-first)](#version-25)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Added `project-documentation-standards` changelog v1.4 synchronization entry | |
+| | | - Upgraded `document-changelog-control` changelog to v4.4 (OR compliance, pair behavior) | |
+| | | - Upgraded `safe-terminal-output` changelog to v1.1 (strict no-cat) | |
+| | | - Updated TODO records for three conflict resolutions | |
+| | | Summary: Design/TODO/changelog phase completed for all three conflicts before rule-layer finalization | |
 | 2.4 | 2026-02-01 | **[Updated Master Design to v1.7](#version-24)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Integrated document-patch-control into rule hierarchy | |
 | | | Summary: Master design updated to include Patch Control standard | |
@@ -105,6 +128,123 @@
 | | | Summary: Begin rules files standardization project | |
 | 1.0 | 2026-01-21 | **[Initial Master Changelog](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Created master changelog for entire project | |
+
+---
+
+## Version 2.8: Logged Documentation Integrity Audit Findings (Review Gate)
+
+**Date:** 2026-02-21
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Updated `design/design.md` from v1.8 to v1.9 and added `Documentation Integrity Audit Findings (Review Gate)` section
+- Logged critical/major/minor documentation defects discovered by full integrity audit without applying broad remediation yet
+- Applied minimal coherence fixes required for valid audit logging package:
+  - Added missing `2.8` row + detailed section alignment
+  - Corrected master design bottom history link path
+  - Corrected selected broken legacy design links in this master changelog
+- Explicitly preserved phase boundary: design/changelog audit logging only, no root-rule materialization and no remediation TODO breakdown before review
+- Recorded verified defect groups:
+  - Broken relative links in master and legacy changelog/design references
+  - Potential anchor-target mismatch (`#version-XX` table links vs actual heading slugs)
+  - Missing detailed section coverage for declared version rows (e.g., `2.4`)
+  - Placeholder/non-real session metadata markers in selected rule/changelog documents
+  - TODO status/count/reporting inconsistencies
+  - Inventory drift between indexed rule set and currently materialized root rule files
+  - Section ordering/numbering drift in design/changelog template areas
+
+### Summary
+Captured a review-first integrity baseline in master documentation so remediation can be planned after user approval, while preserving design-phase scope boundaries
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| design/design.md | Updated to v1.9 and added audit findings section for review gate |
+| changelog/changelog.md | Updated to v2.8 and added review-gate audit log entry |
+
+---
+
+## Version 2.7: Designed Authorized Adversarial Workflow Rule Suite
+
+**Date:** 2026-02-21
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Updated `design/design.md` from v1.7 to v1.8 and synchronized master design session metadata
+- Added new category and architecture coverage for authorized adversarial workflows focused on minimizing false refusals
+- Added explicit decision-output contract in master design:
+  - `ALLOW_EXECUTE`
+  - `ALLOW_CONSTRAINED`
+  - `NEED_CONTEXT`
+  - `REFUSE_WITH_PATH`
+- Added refusal-class contract and authority split:
+  - `HARD_BLOCK` (non-overridable)
+  - `SOFT_BLOCK` (user may choose constrained path)
+  - `WORKFLOW_BLOCK` (user can provide context to proceed)
+- Registered new principle-first rules in master design sub-rule index:
+  - `refusal-minimization`
+  - `refusal-classification`
+  - `recovery-contract`
+  - `dan-safe-normalization`
+- Updated system-wide quality metrics to include false-refusal minimization and decision-contract coverage
+
+### Summary
+Established the master-design baseline for the new pentest-focused refusal architecture, preserving hard safety boundaries while reducing unnecessary refusals in authorized workflows
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| design/design.md | Upgraded to v1.8 with new rule suite architecture, decision model, and index entries |
+
+---
+
+## Version 2.6: Finalized Consistency Patch Set and Metadata Sync
+
+**Date:** 2026-02-21
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Added `document-design-control` changelog v1.4 entry to align parent document path, current version marker, session metadata, and `Version History (Unified)` heading
+- Added `safe-file-reading` changelog v1.1 to document explicit capped-read matrix clarification and rule/design version synchronization
+- Updated `safe-file-reading.md` to v1.1 and synchronized design reference to v1.1
+- Updated `design/safe-file-reading.design.md` to v1.1 with matrix clarification note and synchronized Document Control session metadata
+- Updated `TODO.md` dashboard and history to reflect latest patch-wave completion records
+
+### Summary
+Completed final consistency patch wave by synchronizing residual changelog and TODO metadata with the latest line-level rule/design updates
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| changelog/document-design-control.changelog.md | Added v1.4 sync entry and standardized history heading |
+| changelog/safe-file-reading.changelog.md | Added v1.1 section + updated unified table |
+| safe-file-reading.md | Updated to v1.1 and design link sync |
+| design/safe-file-reading.design.md | Updated to v1.1 and matrix clarification text |
+| TODO.md | Updated dashboard progress and history records |
+
+---
+
+## Version 2.5: Completed Conflict Sync Batch (Design/TODO/Changelog-first)
+
+**Date:** 2026-02-21
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- **Conflict #1 (TODO authority):** Added `project-documentation-standards` changelog v1.4 synchronization entry, confirming TODO authority alignment to `todo-standards.md` v2.0
+- **Conflict #2 (version policy):** Updated `document-changelog-control` changelog to v4.4 with OR compliance and explicit design/changelog pair behavior
+- **Conflict #3 (safe read overlap):** Updated `safe-terminal-output` changelog to v1.1 to enforce strict no-cat guidance with capped output pattern
+- Updated `TODO.md` with completed governance/safety conflict records and refreshed dashboard/session metadata
+
+### Summary
+Completed required design/TODO/changelog-first synchronization across all three conflict tracks before final rule-layer update
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| changelog/project-documentation-standards.changelog.md | Added v1.4 entry and synchronized session metadata |
+| changelog/document-changelog-control.changelog.md | Upgraded to v4.4 and normalized malformed legacy section |
+| changelog/safe-terminal-output.changelog.md | Added v1.1 strict no-cat entry |
+| TODO.md | Added three completed conflict tasks + history updates |
 
 ---
 
@@ -359,7 +499,7 @@ P1 Project Documentation Standards Rule implementation complete. Rules file ensu
 
 ### Links
 - Rules File: [project-documentation-standards.md](../project-documentation-standards.md)
-- Design File: [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md)
+- Design File: [design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md)
 - TODO.md: [../TODO.md](../TODO.md)
 
 ---
@@ -426,8 +566,8 @@ P1 Project Documentation Standards Rule implementation complete. Rules file ensu
 P1 design file created following document-design-control.md format. Rules file creation pending user approval.
 
 ### Links
-- Design File: [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md)
-- Related Rules: [document-design-control.md](../document-design-control.md) v1.1, [document-changelog-control.md](../document-changelog-control.md) v4.3, [todo-standards.design.md](todo-standards.design.md) v1.0
+- Design File: [design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md)
+- Related Rules: [document-design-control.md](../document-design-control.md) v1.1, [document-changelog-control.md](../document-changelog-control.md) v4.3, [todo-standards.design.md](../design/todo-standards.design.md) v1.0
 - TODO.md: [../TODO.md](../TODO.md)
 
 ---
@@ -476,7 +616,7 @@ P1 design file created following document-design-control.md format. Rules file c
 P1 task design phase complete. Rules file creation pending user approval.
 
 ### Links
-- Design: [../design/design.md](../design.md) (v1.4)
+- Design: [../design/design.md](../design/design.md) (v1.4)
 - TODO.md: [../TODO.md](../TODO.md)
 
 ---
@@ -509,7 +649,7 @@ P1 task design phase complete. Rules file creation pending user approval.
 Completed P0/P1 priority tasks including image generation, README updates, cross-reference fixes, and flow diagram violations
 
 ### Links
-- Design: [../design/design.md](../design.md) (v1.4)
+- Design: [../design/design.md](../design/design.md) (v1.4)
 
 ---
 

@@ -1,7 +1,7 @@
 # 📋 Safe Terminal Output Guide (Plan-Before-Execute)
 
-> **Current Version:** 1.0
-> **Design:** [design/safe-terminal-output.design.md](design/safe-terminal-output.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/safe-terminal-output.design.md](design/safe-terminal-output.design.md) v1.1
 
 ## 🎯 Core Philosophy
 
@@ -229,7 +229,7 @@ ls -lh /tmp/claude-$$-output.txt && wc -lwc /tmp/claude-$$-output.txt
 ls -lh /tmp/claude-$$-output.txt && wc -lwc /tmp/claude-$$-output.txt
 
 # Read based on evaluation
-head -100 /tmp/claude-$$-output.txt
+head -100 /tmp/claude-$$-output.txt | head -c 5000
 ```
 
 ---
@@ -331,11 +331,11 @@ After redirecting output, choose your reading method based on file size:
 
 | Output File Size | Lines | Recommended Read Method |
 |------------------|-------|------------------------|
-| < 10KB | > 50 | `head -100` or `cat` |
+| < 10KB | > 50 | `head -100 \| head -c 5000` |
 | < 10KB | < 10 | `head -c 2000` |
-| 10-50KB | > 100 | `head -100` |
+| 10-50KB | > 100 | `head -100 \| head -c 5000` |
 | 10-50KB | < 10 | `head -c 2000` |
-| > 50KB | Any | `head -100` or `head -c 2000` |
+| > 50KB | Any | `head -100 \| head -c 5000` or `head -c 2000` |
 | > 256KB | Any | `head -c 2000` |
 
 ---

@@ -3,8 +3,8 @@
 ## Master Design Document
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.7
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
+> **Current Version:** 1.9
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-21)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,14 +13,16 @@
 
 ### I.1 Version Information
 
-**Current Version:** 1.7
-**Last Updated:** 2026-02-01
+**Current Version:** 1.9
+**Last Updated:** 2026-02-21
 **Status:** Active
 
 ### I.2 Change Summary
 
 | Version | Date | Summary | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-02-21 | **Recorded Documentation Integrity Audit Findings (Review Gate)** - Logged verified defects in master docs for review-first remediation (no root-rule activation in this phase) | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| 1.8 | 2026-02-21 | **Designed False-Refusal Minimization Suite** - Added principle-first architecture for authorized pentest workflows (`refusal-minimization`, `refusal-classification`, `recovery-contract`, `dan-safe-normalization`) | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 1.7 | 2026-02-01 | **Integrated Document Patch Control** - Added to rule hierarchy and inventory | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.6 | 2026-01-21 | Removed Session ID from TODO standard | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | 1.5 | 2026-01-21 | Added todo-standards and project-documentation-standards to rule hierarchy, updated rule count to 16 | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
@@ -49,7 +51,8 @@
 |----------|-------|---------|
 | **Accuracy & Truth** | zero-hallucination, anti-sycophancy, no-variable-guessing | ข้อมูลถูกต้อง |
 | **Output Safety** | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | ป้องกัน flooding |
-| **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification | รักษา user authority |
+| **User Control** | authority-and-scope, emergency-protocol, functional-intent-verification, refusal-classification, recovery-contract | รักษา user authority + refusal recovery path |
+| **Adversarial Workflow** | refusal-minimization, dan-safe-normalization | ลด false refusal สำหรับ authorized pentest workflows |
 | **Quality** | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, strict-file-hygiene | คุณภาพ output |
 
 ### II.3 Scope
@@ -80,9 +83,15 @@ Claude Code Rules System
   │   ├─ emergency-protocol
   │   └─ functional-intent-verification
   │
+  ├─ Adversarial Workflow Rules (Authorized Pentest)
+  │   ├─ refusal-minimization
+  │   ├─ refusal-classification
+  │   ├─ recovery-contract
+  │   └─ dan-safe-normalization
+  │
   ├─ Quality Rules (Improve Output)
   │   ├─ document-consistency
-  │   ├─ document-changelog-control (v4.3)
+  │   ├─ document-changelog-control (v4.4)
   │   ├─ document-design-control (v1.2)
   │   ├─ document-patch-control (v1.0)
   │   ├─ todo-standards (v2.0)
@@ -106,36 +115,85 @@ no-variable-guessing + document-consistency (Verification)
   ↓
 safe-file-reading + safe-terminal-output (Safety)
   ↓
-flow-diagram-no-frame + anti-mockup (Output Quality)
+refusal-minimization + dan-safe-normalization (Authorized Adversarial Workflow)
+  ↓
+refusal-classification + recovery-contract (Decision + Recovery Contract)
   ↓
 emergency-protocol + functional-intent-verification (Execution)
 ```
+
+### III.3 Authorized Adversarial Workflow Decision Model
+
+**Design Goal:** ลด false refusal ในงาน authorized pentest โดยไม่ลดทอน hard safety boundaries
+
+**Decision Output Contract:**
+
+| Output | Meaning | Typical Action |
+|--------|---------|----------------|
+| `ALLOW_EXECUTE` | Request authorized and sufficiently scoped | Execute normally |
+| `ALLOW_CONSTRAINED` | Request allowed with safety constraints | Execute in bounded mode |
+| `NEED_CONTEXT` | Missing authorization/scope context | Ask for required context |
+| `REFUSE_WITH_PATH` | Hard boundary violated or clearly prohibited | Refuse + provide recovery path |
+
+**Refusal Class Contract:**
+
+| Class | Meaning | User Override |
+|-------|---------|---------------|
+| `HARD_BLOCK` | Non-negotiable safety/legal/platform boundary | ❌ Not overridable |
+| `SOFT_BLOCK` | Risk/ambiguity that can be reduced with constraints | ✅ User may choose constrained path |
+| `WORKFLOW_BLOCK` | Missing process artifacts (scope/proof/context) | ✅ User can provide context to proceed |
+
+**Execution Flow:**
+
+```text
+User Request
+  ↓
+Hard boundary check
+  → Violation: REFUSE_WITH_PATH + HARD_BLOCK
+  ↓
+Authorization & scope completeness check
+  → Missing artifacts: NEED_CONTEXT + WORKFLOW_BLOCK
+  ↓
+DAN-safe normalization (convert ambiguous/jailbreak framing → bounded authorized intent)
+  ↓
+Risk/constraint evaluation
+  → Bounded execution needed: ALLOW_CONSTRAINED (+ optional SOFT_BLOCK rationale)
+  → Fully authorized and bounded: ALLOW_EXECUTE
+```
+
+**Authority Rule:**
+- User has decision priority for `SOFT_BLOCK` and `WORKFLOW_BLOCK` resolution paths
+- AI enforces `HARD_BLOCK` without override
 
 ---
 
 ## IV. Sub-Rule Index
 
-### IV.1 Current Rules (17 Rules)
+### IV.1 Current Rules (21 Rules)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
 | 1 | anti-mockup.md | anti-mockup.design.md | Real systems over mocks |
 | 2 | anti-sycophancy.md | anti-sycophancy.design.md | Truth over pleasing |
 | 3 | authority-and-scope.md | authority-and-scope.design.md | User authority |
-| 4 | document-consistency.md | document-consistency.design.md | Cross-reference validation |
-| 5 | document-changelog-control.md | document-changelog-control.design.md v4.3 | Version tracking standard |
-| 6 | document-design-control.md | document-design-control.design.md v1.2 | Design document standards |
-| 7 | document-patch-control.md | document-patch-control.design.md v1.0 | Tactical implementation plans |
-| 8 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
-| 9 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
-| 10 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
-| 11 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
-| 12 | project-documentation-standards.md | project-documentation-standards.design.md | Project documentation standards |
-| 13 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
-| 14 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
-| 15 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
-| 16 | todo-standards.md | todo-standards.design.md v2.0 | Simple TODO lists |
-| 17 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
+| 4 | dan-safe-normalization.md | dan-safe-normalization.design.md | Normalize DAN-style prompts into authorized bounded tasks |
+| 5 | document-consistency.md | document-consistency.design.md | Cross-reference validation |
+| 6 | document-changelog-control.md | document-changelog-control.design.md v4.4 | Version tracking standard |
+| 7 | document-design-control.md | document-design-control.design.md v1.2 | Design document standards |
+| 8 | document-patch-control.md | document-patch-control.design.md v1.0 | Tactical implementation plans |
+| 9 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
+| 10 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
+| 11 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
+| 12 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
+| 13 | project-documentation-standards.md | project-documentation-standards.design.md | Project documentation standards |
+| 14 | recovery-contract.md | recovery-contract.design.md | Standard recovery contract for blocked decisions |
+| 15 | refusal-classification.md | refusal-classification.design.md | HARD/SOFT/WORKFLOW refusal taxonomy |
+| 16 | refusal-minimization.md | refusal-minimization.design.md | Reduce false refusals while preserving hard boundaries |
+| 17 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
+| 18 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
+| 19 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
+| 20 | todo-standards.md | todo-standards.design.md v2.0 | Simple TODO lists |
+| 21 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
 
 ### IV.2 Reserved for Future Rules
 
@@ -404,10 +462,12 @@ Core Principle: Every document must have traceable version history with real ses
 | Metric | Target | Rules Involved |
 |--------|--------|----------------|
 | Accuracy | 100% | zero-hallucination, anti-sycophancy |
-| User Authority | Preserved | authority-and-scope, emergency-protocol |
+| User Authority | Preserved | authority-and-scope, emergency-protocol, refusal-classification, recovery-contract |
 | Output Safety | ≤ 5000 chars | safe-file-reading, safe-terminal-output |
 | Verification | Default | no-variable-guessing, document-consistency |
 | Transparency | 100% | anti-mockup |
+| False Refusal Rate (Authorized Pentest) | Minimized with hard-boundary preservation | refusal-minimization, dan-safe-normalization |
+| Decision Contract Coverage | 100% decision mapped to output class | refusal-classification, recovery-contract |
 | Document Consistency | 100% | document-*, flow-diagram-no-frame |
 
 ### VII.2 Compliance Rate
@@ -522,9 +582,65 @@ Related Rules:
 
 ---
 
-## IX. Integration Examples
+## IX. Documentation Integrity Audit Findings (Review Gate)
 
-### IX.1 Rule Enhancement Workflow
+### IX.1 Phase Scope Decision (Design-Only)
+
+- Current phase is **design/changelog governance hardening**
+- **Root rule materialization is intentionally deferred**
+- This section records verified defects as **potential improvement defects** pending review before any remediation TODO breakdown
+
+### IX.2 Verified Findings (Audit Snapshot, then Log-Phase Status)
+
+Snapshot basis: full integrity audits executed in this session before master-doc log updates.
+
+**Critical (Snapshot)**
+- `design/design.md:705` had broken history link path (`changelog/changelog.md` from within `design/` should use `../changelog/changelog.md`)
+  - **Log-phase status:** Fixed in this pass (`../changelog/changelog.md`)
+
+**Major (Snapshot)**
+- `design/design.md:171-195` indexes 21 active rules including 4 root rules not materialized in current phase (`refusal-minimization.md`, `refusal-classification.md`, `recovery-contract.md`, `dan-safe-normalization.md`)
+  - **Log-phase status:** Open (phase decision pending review)
+- `changelog/changelog.md:464,531,532,581,614` had broken relative links in legacy version sections
+  - **Log-phase status:** Normalized in this pass; re-audit still required before closure
+- `changelog/changelog.md:13,18,24,30,36,39,45,53,61,67,74,84,93,100,108,115,122,126,129` uses `#version-XX` jump targets that may not resolve against actual heading slugs
+  - **Log-phase status:** Open (anchor policy decision pending)
+- `changelog/changelog.md:36` has a `2.4` row in unified table without a corresponding detailed `## Version 2.4` section
+  - **Log-phase status:** Open
+- `TODO.md:13` pending count does not match current pending checkbox totals in body sections
+  - **Log-phase status:** Open
+- `TODO.md:414-427,439-452` completed blocks appear under pending area, causing status ambiguity
+  - **Log-phase status:** Open
+
+**Minor (Snapshot)**
+- `TODO.md:455,459` duplicate heading `Future Enhancements`
+  - **Log-phase status:** Open
+- `design/design.md:402,419` duplicate subsection numbering (`### VI.7`) in template area
+  - **Log-phase status:** Open
+- `changelog/changelog.md:432,464,504,572,621,653,687` detailed version sections are out of descending order compared to unified table
+  - **Log-phase status:** Open
+- `document-changelog-control.md:5` and `todo-standards.md:5` still use placeholder-style session metadata text
+  - **Log-phase status:** Open
+- `changelog/accurate-communication.changelog.md:5,13,17,26,48` uses placeholder/non-real session markers (`(current session)`, `(current)`)
+  - **Log-phase status:** Open
+
+### IX.3 Improvement Candidate Statement
+
+All findings in Section IX.2 are currently tracked as **candidate defects awaiting adjustment**.
+They are intentionally recorded in design/main changelog first, then promoted into implementation TODO items after review approval.
+
+### IX.4 Next-Step Contract (Post-Review)
+
+1. Review and approve findings in master docs
+2. Create explicit remediation TODO items from approved findings
+3. Apply fixes in dependency order (metadata integrity -> links -> inventory/totals)
+4. Re-run integrity audit and log closure in changelog
+
+---
+
+## X. Integration Examples
+
+### X.1 Rule Enhancement Workflow
 
 This example demonstrates the lifecycle of enhancing a rule from Draft to Completed.
 
@@ -549,7 +665,7 @@ This example demonstrates the lifecycle of enhancing a rule from Draft to Comple
     *   Move Patch to `patches/` if not already there.
     *   Update TODO.md to mark task as completed.
 
-### IX.2 File Relationship Diagram
+### X.2 File Relationship Diagram
 
 ```
 [Design Layer]              [Rules Layer]               [History Layer]
@@ -609,4 +725,4 @@ python image_gen.py "<prompt>" --doc <rule-name>.md --aspect-ratio 16:9 --image-
 
 ---
 
-> Full history: [changelog/changelog.md](changelog/changelog.md)
+> Full history: [changelog/changelog.md](../changelog/changelog.md)

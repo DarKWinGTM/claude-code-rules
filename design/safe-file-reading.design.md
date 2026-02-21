@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
+> **Current Version:** 1.1
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-21)
 
 ---
 
@@ -99,7 +99,7 @@ head -c 3000 <file>
 
 | File Size | Lines | Recommended Method |
 |-----------|-------|-------------------|
-| < 50KB | > 100 | Read tool (full file) |
+| < 50KB | > 100 | Read tool with limit (`limit: 200`) (replaces ambiguous full-read wording) |
 | < 50KB | < 10 | `head -c 2000` first |
 | 50-256KB | > 100 | Read tool with offset/limit |
 | 50-256KB | < 10 | `head -c 2000` (likely minified) |

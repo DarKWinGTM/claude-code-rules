@@ -1,8 +1,8 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 1.3
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Current Version:** 1.4
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
@@ -10,6 +10,11 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-02-21 | **[Synced Design Reference to v1.4 and TODO Authority](#version-14)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Updated design link reference to `project-documentation-standards.design.md` v1.4 in parent rule | |
+| | | - Confirmed TODO authority is `todo-standards.md` v2.0 (no `todo-standards.design.md`) | |
+| | | - Maintained changelog as version authority source for synchronization | |
+| | | Summary: Added v1.4 synchronization entry for design/TODO version governance | |
 | 1.3 | 2026-02-01 | **[Added Versioning Authority Rules](#version-13)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Added Section 4.3 Versioning Authority | |
 | | | - Defined Changelog as Single Source of Truth for versions | |
@@ -24,6 +29,21 @@
 | | | Summary: Integrated Document Patch Control standards | |
 | 1.0 | 2026-01-21 | **[Initial Version](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | - Initial release | |
+
+---
+
+## Version 1.4: Synced Design Reference to v1.4 and TODO Authority
+
+**Date:** 2026-02-21
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Updated design reference in `project-documentation-standards.md` to `project-documentation-standards.design.md` v1.4
+- Confirmed TODO authority reference remains `todo-standards.md` v2.0 (deprecated `todo-standards.design.md` not used)
+- Preserved changelog-driven version authority alignment
+
+### Summary
+Added v1.4 synchronization entry to keep design/rule/TODO references consistent
 
 ---
 

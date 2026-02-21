@@ -1,15 +1,21 @@
 # Changelog - Document Design Control
 
-> **Parent Document:** [document-design-control.design.md](../design/document-design-control.design.md)
-> **Current Version:** 1.3
-> **Session:** (2026-01-26)
+> **Parent Document:** [../document-design-control.md](../document-design-control.md)
+> **Current Version:** 1.4
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
-## Version History
+## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-02-21 | **[Synchronized to Rule v1.4 + Changelog Policy v4.4](#version-14)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Updated parent document reference to rules file path (`../document-design-control.md`) | |
+| | | - Updated changelog current version marker to `1.4` | |
+| | | - Updated active session metadata to current session UUID | |
+| | | - Standardized heading to `Version History (Unified)` for policy consistency | |
+| | | Summary: Metadata and policy-format synchronization for latest consistency patch set | |
 | 1.3 | 2026-01-26 | **[Added Pattern 1 (Simple) for single-design projects](#version-13)** | - |
 | | | - Added Pattern 1: Simple Project (single design at root) | |
 | | | - Added Pattern 2: Complex Project (multiple designs in ./design/) | |
@@ -47,6 +53,22 @@
 | | | - Created quality metrics and compliance checklists | |
 | | | - Added complete examples for design document structure | |
 | | | Summary: Initial version with comprehensive design standards | |
+
+---
+
+## Version 1.4: Synchronized to Rule v1.4 + Changelog Policy v4.4
+
+**Date:** 2026-02-21
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Updated parent document reference to rules file path (`../document-design-control.md`)
+- Updated changelog current version marker to `1.4`
+- Updated active session metadata to current session UUID
+- Standardized heading to `Version History (Unified)` for policy consistency
+
+### Summary
+Metadata and policy-format synchronization for latest consistency patch set
 
 ---
 

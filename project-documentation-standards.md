@@ -1,14 +1,14 @@
 # Project Documentation Standards
 
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 
 ## Rule Statement
 
 **Core Principle: Every project must maintain standardized documentation following defined rules**
 
-This rule ensures all projects have proper documentation structure from the start, integrating document-design-control.md, document-changelog-control.md, and todo-standards.design.md requirements.
+This rule ensures all projects have proper documentation structure from the start, integrating document-design-control.md, document-changelog-control.md, and todo-standards.md requirements.
 
-**Design:** [project-documentation-standards.design.md](design/project-documentation-standards.design.md) v1.3
+**Design:** [project-documentation-standards.design.md](design/project-documentation-standards.design.md) v1.4
 
 ---
 
@@ -22,8 +22,8 @@ Every project MUST have these documents based on project needs:
 |----------|---------------|---------|----------------|
 | **README.md** | Every project | Project overview, quick start, installation | Standard practice |
 | **design.md** | Project has design specifications | Architecture, standards, specifications | [document-design-control.md](document-design-control.md) v1.1 |
-| **changelog.md** | Project needs version tracking | Version history, changes tracking | [document-changelog-control.md](document-changelog-control.md) v4.3 |
-| **TODO.md** | Project has tasks | Task tracking, progress management | [todo-standards.design.md](design/todo-standards.design.md) v1.0 |
+| **changelog.md** | Project needs version tracking | Version history, changes tracking | [document-changelog-control.md](document-changelog-control.md) v4.4 |
+| **TODO.md** | Project has tasks | Task tracking, progress management | [todo-standards.md](todo-standards.md) v2.0 |
 | **patch.md** | Monkey Patch/Migration | Transition plan, complex state changes | [document-patch-control.md](document-patch-control.md) v1.0 |
 
 **Required Actions:**
@@ -45,7 +45,7 @@ Needs version tracking?
   ↓ YES → Create changelog.md (follow document-changelog-control.md)
   ↓ NO
 Has tasks to track?
-  ↓ YES → Create TODO.md (follow todo-standards.design.md)
+  ↓ YES → Create TODO.md (follow todo-standards.md)
   ↓ NO
 Need Monkey Patch or Complex Migration?
   ↓ YES → Create *.patch.md (follow document-patch-control.md)
@@ -61,7 +61,7 @@ When creating documentation, follow these rules:
 |---------------|------------------|-------------------|
 | **design.md** | document-design-control.md | `.design.md` suffix, `./design/` location, Navigator format |
 | **changelog.md** | document-changelog-control.md | Version History (Unified) table, real Session IDs |
-| **TODO.md** | todo-standards.design.md | P0-P3 priorities, timestamps, status sections |
+| **TODO.md** | todo-standards.md | Simple checkbox format, no priorities, no per-task timestamps |
 | **patch.md** | document-patch-control.md | Format `.patch.md`, 5 sections, lifecycle states |
 
 ### 4. Versioning Authority (New v1.3)
@@ -84,7 +84,7 @@ When creating documentation, follow these rules:
 - [ ] Create README.md with project overview and quick start
 - [ ] If design needed: Create design.md following document-design-control.md
 - [ ] If version tracking needed: Create changelog.md following document-changelog-control.md
-- [ ] If tasks needed: Create TODO.md following todo-standards.design.md
+- [ ] If tasks needed: Create TODO.md following todo-standards.md
 - [ ] If patch needed: Create `*.patch.md` following document-patch-control.md
   - [ ] Extension `.patch.md`
   - [ ] 5 mandatory sections (Context, Analysis, Plan, etc.)
@@ -170,8 +170,8 @@ This rule integrates with:
 | Rule | Relationship |
 |------|-------------|
 | **document-design-control.md** v1.1 | Defines design document format standards |
-| **document-changelog-control.md** v4.3 | Defines version tracking format |
-| **todo-standards.design.md** v1.0 | Defines TODO/task format |
+| **document-changelog-control.md** v4.4 | Defines version tracking format |
+| **todo-standards.md** v2.0 | Defines TODO/task format |
 | **document-patch-control.md** v1.0 | Defines patch/migration format |
 | **strict-file-hygiene.md** v1.2 | Prevents unrequested file creation |
 

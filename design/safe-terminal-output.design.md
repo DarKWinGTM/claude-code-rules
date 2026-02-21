@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
@@ -181,10 +181,10 @@ head -100 /tmp/claude-$$-output.txt | head -c 5000
 
 | Output File Size | Lines | Recommended Read Method |
 |------------------|-------|------------------------|
-| < 10KB | > 50 | `head -100` or `cat` |
+| < 10KB | > 50 | `head -100 \| head -c 5000` |
 | < 10KB | < 10 | `head -c 2000` |
-| 10-50KB | > 100 | `head -100` |
-| > 50KB | Any | `head -c 2000` |
+| 10-50KB | > 100 | `head -100 \| head -c 5000` |
+| > 50KB | Any | `head -100 \| head -c 5000` or `head -c 2000` |
 
 ---
 

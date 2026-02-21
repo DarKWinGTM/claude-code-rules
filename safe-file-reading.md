@@ -1,7 +1,7 @@
 # 📖 Safe File Reading Guide (Plan-Before-Read)
 
-> **Current Version:** 1.0
-> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.1
 
 ## 🎯 Core Philosophy
 
@@ -65,7 +65,7 @@ Based on file size, choose the most efficient reading approach:
 
 | File Size | Lines | Recommended Method |
 |-----------|-------|-------------------|
-| < 50KB | > 100 | Read tool (full file) |
+| < 50KB | > 100 | Read tool with limit (`limit: 200`) |
 | < 50KB | < 10 | `head -c 2000` first (may be minified) |
 | 50-256KB | > 100 | Read tool with offset/limit |
 | 50-256KB | < 10 | `head -c 2000` (likely minified) |
