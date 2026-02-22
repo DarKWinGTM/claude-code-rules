@@ -6,14 +6,14 @@
 
 | Metric | Value | Target |
 |--------|-------|--------|
-| Overall Progress | 142/158 tasks (90%) | 100% |
-| Total Tasks | 158 | - |
-| Completed | 142 | - |
+| Overall Progress | 151/153 tasks (99%) | 100% |
+| Total Tasks | 153 | - |
+| Completed | 151 | - |
 | In Progress | 0 | - |
-| Pending | 16 | - |
+| Pending | 2 | - |
 
 **Active Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
-**Last Updated:** 2026-02-21
+**Last Updated:** 2026-02-22
 
 ---
 
@@ -395,85 +395,32 @@ Architect Agent   ───┘
 
 ---
 
+### [P0] [Audit] Cross-Rule Determinism and Performance Hardening Program (Design-First)
+
+**Completed:** 2026-02-22 | **Created:** 2026-02-22
+
+- [x] **WS-1 Deterministic precedence contract** - Applied deterministic refusal-output contract hardening in runtime rules (`refusal-minimization.md`, `recovery-contract.md`) and synchronized design/changelog artifacts
+- [x] **WS-2 Metadata integrity normalization** - Replaced stale metadata/path drift for document-design-control v1.6 synchronization set (rule/design/changelog + TODO trace)
+- [x] **WS-3 Master changelog coherence repair** - Normalized anchor strategy, completed row-to-section coverage (including v2.4/v1.9/v1.8 detailed sections), and enforced one descending section ordering policy
+- [x] **WS-4 Documentation policy coherence** - Synchronized runtime/design/changelog references for project-documentation and patch-control artifacts (`document-changelog-control` v4.5, `document-patch-control` v1.1)
+- [x] **WS-5 Verification/performance consolidation (runtime+design+changelog sync)** - Consolidated shared verification trigger model + deterministic compact blocked-response/output-cap schemas across synchronized runtime/design/changelog artifacts
+- [x] **WS-6 TODO governance alignment** - Kept pending section pending-only, removed duplicate headings, and aligned TODO structure to selected governance baseline
+
+---
+
 ## 🔄 In Progress
 
 ---
 
 ## 📋 Pending Tasks
 
-### [P2] [Design] Design Framework Enhancement
-
-**Status:** [PENDING] | **Created:** 2026-01-21
-
-- [ ] **Create design templates** - Template files for new design documents
-- [ ] **Design document checklist** - Comprehensive checklist before creating design
-- [ ] **Update design.md** - Add systematic structure framework
-- [ ] **Create integration examples** - Show how design.md + changelog.md work together
-- [ ] **Document best practices** - Writing guide for design documents
-
-### [P2] [Visual] Image Generation
-
-**Status:** ✅ **COMPLETED** | **Created:** 2026-01-21 | **Completed:** 2026-01-21
-
-- [x] **Generate strict-file-hygiene.png** - ✅ Completed 2026-01-21
-- [x] **Generate document-changelog-control.png** - ✅ Completed 2026-01-21
-- [x] **Generate document-design-control.png** - ✅ Completed 2026-01-21
-- [x] **Generate project-documentation-standards.png** - ✅ Completed 2026-01-21 (9 styles generated, selected Orrery style 9/10)
-- [x] **Update image with text overlay** - ✅ Updated 2026-01-21 (replaced "Rule Compliance Nebula" with "project-documentation-standards" text, 36px elegant font, cosmic-style image)
-- [x] **Update README with all images** - ✅ Completed 2026-01-21
-
-**Note:** design.md (master design document) does not require image - only rules files have images
-**Image Update:** Final image (3.1 MB) with text overlay verified via MCP analyze_image (Rating 9/10)
-
-### [P0] [Audit] Documentation Integrity Improvement Candidates (Review Gate)
-
-**Status:** [PENDING] | **Created:** 2026-02-21
-
-- [ ] **Reconcile rule inventory vs phase scope** - Align `design/design.md` indexed active rules with current design-only phase (no premature root-rule activation)
-- [ ] **Normalize changelog anchors/coverage** - Resolve `#version-XX` jump-target behavior and add/resolve missing detailed section coverage (including v2.4 row mapping)
-- [ ] **Fix TODO reporting drift** - Align pending counts with actual pending items and remove completed blocks from pending area
-- [ ] **Remove duplicate TODO heading** - Consolidate duplicated `Future Enhancements` heading
-- [ ] **Replace placeholder session metadata** - Update placeholder/non-real session markers in rule/changelog files with approved session handling
-- [ ] **Normalize section numbering/order drift** - Fix duplicate subsection numbering in `design/design.md` and keep ordering coherent with master history structure
-
-### [P2] [Docs] Documentation Updates
-
-**Status:** [PENDING] | **Created:** 2026-01-21
-
-- [x] **Update design/design.md** - ✅ Fixed cross-references and updated examples ✅
-- [x] **Update README.md** - ✅ Added document-design-control to rules list ✅
-- [ ] **Create integration guide** - How design/changelog/rules files work together
-- [ ] **Add examples section** - Real examples from current project
-
----
-
-### [P1] [Core] Project Documentation Standards Rule
-
-**Status:** ✅ **COMPLETED** | **Created:** 2026-01-21 | **Completed:** 2026-01-21
-
-- [x] **Design project-documentation-standards.md structure** - ✅ Complete
-- [x] **Create design/project-documentation-standards.design.md** - ✅ Design file created (287 lines)
-- [x] **Create project-documentation-standards.md** - ✅ Rules file created
-- [x] **Define required document rules** - ✅ All required rules identified
-- [x] **Specify when to apply** - ✅ Application timing defined
-- [x] **Design compliance checklist** - ✅ Project start checklist created
-- [x] **Design onboarding integration** - ✅ Onboarding requirements defined
-
-**Task Complete:** ✅ Both design file and rules file created following master design template
-
----
-
-### [P3] [Enhancement] Future Enhancements
-
----
-
 ### [P3] [Enhancement] Future Enhancements
 
 **Status:** [PENDING] | **Created:** 2026-01-16
+**Execution Note:** Prioritized order is captured and intentionally deferred for now.
 
-- [ ] **Create design templates** - Template files for new design documents
-- [ ] **Automated validation** - Script to verify design document compliance
-- [ ] **Integration testing** - Test changelog integration across project types
+- [ ] **[Priority 1] Automated validation** - Script to verify design document compliance (next implementation item, deferred)
+- [ ] **[Priority 2] Integration testing** - Test changelog integration across project types (follow-up item after validation, deferred)
 
 ---
 
@@ -481,6 +428,17 @@ Architect Agent   ───┘
 
 | Date | Changes |
 |------|---------|
+| 2026-02-22 | **Recorded deferred execution priority for remaining P3 work** - Captured explicit implementation order (`[Priority 1] Automated validation` → `[Priority 2] Integration testing`) as deferred items while keeping pending scope unchanged |
+| 2026-02-22 | **Completed P2 Design Framework best-practices closure** - Added consolidated `Section VIII.4` best-practices baseline in `design/design.md`, closed the last remaining P2 design gap, and synchronized dashboard totals to reflect 2 pending P3 items |
+| 2026-02-22 | **Completed P2 TODO cleanup pass (Design Framework re-scope)** - Re-scoped P2 Design Framework Enhancement to keep only real gap (`Document best practices`), marked already-implemented items as completed with references, removed duplicated `Create design templates` from P3, and normalized dashboard totals to current pending set |
+| 2026-02-22 | **Completed P2 docs examples section** - Added repository-grounded examples under `README.md` integration guide for WS-1 (recovery-contract sync), WS-5 (verification/output-cap consolidation), and WS-6 (TODO governance alignment) |
+| 2026-02-22 | **Completed P2 docs integration guide** - Added `README.md` integration guide covering document roles, update flow, verification checklist, and repo-aligned integration example for design/changelog/runtime/TODO synchronization |
+| 2026-02-22 | **Completed WS-6 TODO governance alignment** - Aligned pending section to pending-only scope, removed duplicate pending headings, and synchronized WS-1..WS-6 program closure into completed records |
+| 2026-02-22 | **Completed WS-5 verification/performance consolidation (runtime+design+changelog sync)** - Synchronized shared verification-trigger model across `zero-hallucination`, `anti-sycophancy`, `no-variable-guessing`, `document-consistency`; normalized deterministic non-ALLOW/response schema updates in `recovery-contract`; and aligned deterministic output-cap wording across `safe-file-reading` + `safe-terminal-output` with corresponding changelog/version updates |
+| 2026-02-22 | **Completed WS-3 master changelog coherence repair** - Normalized deterministic `#version-XY` anchor coverage for all unified-table rows, added missing detailed sections for v2.4/v1.9/v1.8, and enforced descending section ordering policy in `changelog/changelog.md` |
+| 2026-02-22 | **Completed WS-1 + WS-4 execution slice (runtime-first sync)** - Hardened deterministic refusal output contracts and synchronized project-documentation/patch-control runtime+design+changelog references to active baselines (`document-changelog-control` v4.5, `document-patch-control` v1.1) |
+| 2026-02-22 | **Completed WS-2 metadata sync slice for document-design-control v1.6** - Synchronized rule/design/changelog versions, corrected design history-link path, and removed runtime rules-file version-table contradiction |
+| 2026-02-22 | **Rebased pending audit track into WS-1..WS-6 hardening program** - Synced TODO with master design v2.0 and changelog v2.9 using design-first execution gate (implementation deferred) |
 | 2026-02-21 | **Added documentation integrity improvement candidates** - Logged pending remediation candidates in design main and created TODO review-gate task list for post-approval adjustments |
 | 2026-02-21 | **Completed P0 new rules suite implementation (principle-first)** - Created 4 design docs + 4 changelog docs (`refusal-minimization`, `refusal-classification`, `recovery-contract`, `dan-safe-normalization`) and synchronized TODO status |
 | 2026-02-21 | **Completed P0 master design phase for authorized adversarial workflow suite** - design/design.md v1.8 + master changelog v2.7 + TODO updates for new rule rollout |
@@ -526,4 +484,4 @@ Architect Agent   ───┘
 ---
 
 > **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
-> **Last Updated:** 2026-02-21
+> **Last Updated:** 2026-02-22

@@ -3,8 +3,8 @@
 ## Master Design Document
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.9
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-21)
+> **Current Version:** 2.3
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-22)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,14 +13,18 @@
 
 ### I.1 Version Information
 
-**Current Version:** 1.9
-**Last Updated:** 2026-02-21
+**Current Version:** 2.3
+**Last Updated:** 2026-02-22
 **Status:** Active
 
 ### I.2 Change Summary
 
 | Version | Date | Summary | Session ID |
 |---------|------|---------|------------|
+| 2.3 | 2026-02-22 | **Added consolidated best-practices section (P2 closure)** - Introduced unified operational best practices to reduce guidance fragmentation and standardized cross-document execution behavior | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| 2.2 | 2026-02-22 | **Completed WS-1 + WS-4 runtime/design/changelog/TODO synchronization batch** - Harmonized deterministic precedence, policy coherence, and governance structure across active runtime rules and master docs | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| 2.1 | 2026-02-22 | **Synchronized metadata and fixed runtime/design version drift** - Raised master design header/session baseline to 2.1 for the active synchronization phase | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| 2.0 | 2026-02-22 | **Logged Cross-Rule Determinism and Performance Hardening Survey** - Added repository-wide issue themes, workstreams, and design-first execution gate (design/changelog/TODO before implementation) | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 1.9 | 2026-02-21 | **Recorded Documentation Integrity Audit Findings (Review Gate)** - Logged verified defects in master docs for review-first remediation (no root-rule activation in this phase) | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 1.8 | 2026-02-21 | **Designed False-Refusal Minimization Suite** - Added principle-first architecture for authorized pentest workflows (`refusal-minimization`, `refusal-classification`, `recovery-contract`, `dan-safe-normalization`) | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 1.7 | 2026-02-01 | **Integrated Document Patch Control** - Added to rule hierarchy and inventory | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
@@ -100,7 +104,7 @@ Claude Code Rules System
   ├─ Quality Rules (Improve Output)
   │   ├─ document-consistency
   │   ├─ document-changelog-control (v4.4)
-  │   ├─ document-design-control (v1.2)
+  │   ├─ document-design-control (v1.6)
   │   ├─ document-patch-control (v1.0)
   │   ├─ todo-standards (v2.0)
   │   ├─ project-documentation-standards
@@ -187,7 +191,7 @@ Risk/constraint evaluation
 | 4 | dan-safe-normalization.md | dan-safe-normalization.design.md | Normalize DAN-style prompts into authorized bounded tasks |
 | 5 | document-consistency.md | document-consistency.design.md | Cross-reference validation |
 | 6 | document-changelog-control.md | document-changelog-control.design.md v4.4 | Version tracking standard |
-| 7 | document-design-control.md | document-design-control.design.md v1.2 | Design document standards |
+| 7 | document-design-control.md | document-design-control.design.md v1.6 | Design document standards |
 | 8 | document-patch-control.md | document-patch-control.design.md v1.0 | Tactical implementation plans |
 | 9 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
 | 10 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
@@ -424,7 +428,7 @@ You are a code reviewer...
    - changelog/rule-name.changelog.md = Full history with detailed sections
    - changelog/changelog.md = Master changelog (for entire project)
 
-### VI.7 Examples
+### VI.8 Examples
 
 **✅ Correct Rules File:**
 
@@ -588,6 +592,44 @@ Related Rules:
 - [ ] Test rule with real scenarios
 - [ ] Document examples
 
+### VIII.4 Consolidated Best Practices (Operational Baseline)
+
+To reduce guidance fragmentation, use this single baseline across design, runtime rules, changelog, and TODO workflows.
+
+1. **Design-first synchronization path**
+   - Apply updates in this order:
+     - `design` target state
+     - runtime rule wording
+     - changelog traceability
+     - TODO status/history
+     - final verification pass
+
+2. **Verification-first claims policy**
+   - Do not claim completion/fix status without verified evidence.
+   - Match statement confidence to validation depth (implemented, partially verified, fully verified).
+
+3. **Deterministic blocked-response contract**
+   - For blocked/non-execute outcomes, keep response schema explicit and stable:
+     - `decision_output`
+     - `refusal_class` (if applicable)
+     - `reason`
+     - actionable `next_step` / recovery path
+
+4. **Cross-document integrity discipline**
+   - Keep version references and links synchronized across `design`, runtime rules, and `changelog`.
+   - Avoid duplicate or conflicting authority statements across related documents.
+
+5. **TODO governance discipline**
+   - Keep pending section pending-only.
+   - Move completed work out of pending and record closure in history with clear scope.
+
+6. **Closure verification checklist**
+   - Before closing any documentation task, verify:
+     - changed sections are synchronized,
+     - links resolve,
+     - version markers match authoritative changelog,
+     - TODO dashboard totals reflect real pending state.
+
 ---
 
 ## IX. Documentation Integrity Audit Findings (Review Gate)
@@ -615,8 +657,8 @@ Snapshot basis: full integrity audits executed in this session before master-doc
   - **Log-phase status:** Open (anchor policy decision pending)
 - `changelog/changelog.md:36` has a `2.4` row in unified table without a corresponding detailed `## Version 2.4` section
   - **Log-phase status:** Open
-- `TODO.md:13` pending count does not match current pending checkbox totals in body sections
-  - **Log-phase status:** Open
+- `TODO.md:13` pending-count mismatch was previously flagged during snapshot pass
+  - **Log-phase status:** Revalidated on 2026-02-22: counts are consistent (`142/158`, pending `16`); item reclassified to structure-only drift
 - `TODO.md:414-427,439-452` completed blocks appear under pending area, causing status ambiguity
   - **Log-phase status:** Open
 
@@ -687,6 +729,103 @@ design/*.design.md   ---->  *.md                 ---->  changelog/*.changelog.md
                           patches/*.patch.md
                           (Transition Plans)
 ```
+
+---
+
+## XI. Cross-Rule Determinism and Performance Hardening Program (Design-First Gate)
+
+### XI.1 Program Scope and Boundary
+
+**Scope:**
+- Runtime rules at repository root (`*.md`, excluding `README.md` and `TODO.md`)
+- Design documents under `design/*.md`
+- Changelog documents under `changelog/*.md`
+- Governance tracker at `TODO.md`
+
+**Boundary for this phase:**
+- This phase records issues, defines workstreams, and sets execution order
+- Runtime behavior implementation is intentionally deferred until design approval
+
+### XI.2 Verified Issue Themes (Survey Consolidation)
+
+| Theme ID | Theme | Verified Signals | Primary Risk |
+|----------|-------|------------------|--------------|
+| TH-1 | Deterministic precedence and terminology conflicts | Priority/tie-break ambiguity across authority, documentation, and refusal contracts | Non-deterministic policy decisions under overlap |
+| TH-2 | Session metadata and version-reference integrity drift | Placeholder/non-real session markers and stale cross-rule version references | Reduced auditability and trust in governance lineage |
+| TH-3 | Master documentation integrity defects | Anchor target mismatch, missing detailed section coverage, ordering/numbering drift, duplicate headings | Navigation breakage and weak traceability |
+| TH-4 | Verification policy overlap and performance overhead | Parallel “verify-first” requirements across multiple rules with no shared trigger model | Repeated tool calls, latency increase, response bloat |
+| TH-5 | Blocked-response contract overlap | Multiple rules require similar blocked output fields without a compact unified schema | Token expansion and inconsistent blocked-mode formatting |
+| TH-6 | TODO governance drift | Pending section includes completed blocks; duplicate heading structure | Planning ambiguity and operational noise |
+
+### XI.3 Workstream Model (Design/Changelog/TODO before Runtime Implementation)
+
+#### WS-1: Deterministic Precedence and Terms Contract
+- **Objective:** Define an explicit conflict-resolution matrix and normalize ambiguous terms.
+- **Scope Files:** `authority-and-scope.md`, `design/design.md`, `refusal-minimization.md`, `refusal-classification.md`, `recovery-contract.md`.
+- **Acceptance Criteria:**
+  - A single precedence matrix exists and is referenced by dependent rules.
+  - Terms such as “higher-level safety policies” and blocked class/output coupling are explicitly defined.
+  - No unresolved tie-break ambiguity remains in authoritative docs.
+- **Dependencies:** None (foundational).
+
+#### WS-2: Metadata and Version Integrity Normalization
+- **Objective:** Remove placeholder session metadata and align cross-rule version references.
+- **Scope Files:** `document-changelog-control.md`, `todo-standards.md`, `changelog/accurate-communication.changelog.md`, and all files with stale related-rule version pointers.
+- **Acceptance Criteria:**
+  - No placeholder/non-real session markers in active governance docs.
+  - Referenced current versions match actual target documents.
+  - Session metadata policy is applied consistently.
+- **Dependencies:** WS-1 recommended first.
+
+#### WS-3: Master Changelog Structural Integrity Repair
+- **Objective:** Ensure unified table and detailed sections are fully coherent.
+- **Scope Files:** `changelog/changelog.md`.
+- **Acceptance Criteria:**
+  - Every unified-table version row has resolvable detailed section coverage.
+  - Anchor strategy is consistent and link-valid.
+  - Detailed sections follow one ordering policy.
+- **Dependencies:** WS-2.
+
+#### WS-4: Documentation Policy Coherence (Design/Changelog/TODO/Patch)
+- **Objective:** Resolve cross-rule contradictions on document structure, pair behavior, language policy, and patch naming.
+- **Scope Files:** `document-design-control.md`, `document-changelog-control.md`, `project-documentation-standards.md`, `document-patch-control.md`, `design/design.md`.
+- **Acceptance Criteria:**
+  - Design/changelog pair behavior is internally consistent.
+  - Patch naming standard is singular (`*.patch.md`) across all references.
+  - Language governance has one authoritative rule path without contradiction.
+- **Dependencies:** WS-1, WS-2.
+
+#### WS-5: Verification and Output Overhead Consolidation
+- **Objective:** Keep safety guarantees while reducing duplicated verification/output obligations.
+- **Scope Files:** `zero-hallucination.md`, `anti-sycophancy.md`, `no-variable-guessing.md`, `document-consistency.md`, `safe-file-reading.md`, `safe-terminal-output.md`, refusal suite.
+- **Acceptance Criteria:**
+  - A shared verification trigger model is defined (not duplicated as parallel mandates).
+  - Blocked-response schema is compact and non-redundant.
+  - Response-length control guidance is deterministic across safety rules.
+- **Dependencies:** WS-1, WS-4.
+
+#### WS-6: TODO Governance Alignment
+- **Objective:** Align `TODO.md` structure with selected TODO standard behavior.
+- **Scope Files:** `TODO.md`, `todo-standards.md`.
+- **Acceptance Criteria:**
+  - Pending area contains pending tasks only.
+  - Duplicate heading drift is removed.
+  - Chosen TODO format policy (simple or extended) is explicitly codified and consistently applied.
+- **Dependencies:** WS-4.
+
+### XI.4 Execution Order (Phase Contract)
+
+1. **Design hardening first:** WS-1 and WS-4
+2. **Changelog integrity next:** WS-2 and WS-3
+3. **TODO normalization after standards lock:** WS-6
+4. **Performance consolidation specification:** WS-5 design only in this phase
+5. **Runtime implementation:** deferred until design/changelog/TODO approval is complete
+
+### XI.5 Status Note (Count Revalidation)
+
+- Prior snapshot flagged pending-count mismatch in `TODO.md`.
+- Revalidation on 2026-02-22 confirms numeric dashboard consistency (`142/158`, pending `16`).
+- Remaining TODO defects are structural (placement/heading/format coherence), not numeric totals.
 
 ---
 
