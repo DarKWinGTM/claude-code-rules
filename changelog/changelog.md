@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 3.5
+> **Current Version:** 3.8
 > **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
@@ -10,6 +10,23 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 3.8 | 2026-02-24 | **[Activated unified-version-control-system runtime rule and closed rollout queue](#version-38)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Created runtime `unified-version-control-system.md` v1.1 | |
+| | | - Updated `changelog/unified-version-control-system.changelog.md` to v1.1 with runtime-activation closure entry | |
+| | | - Updated `design/design.md` to v2.7 and switched Sub-Rule Index status from pending activation to active | |
+| | | - Updated `TODO.md` to mark runtime materialization/alignment task complete and logged closure history | |
+| | | Summary: Completed design→runtime→changelog→TODO synchronization for unified-controller rollout and removed pending activation state | |
+| 3.7 | 2026-02-24 | **[Created unified-version-control-system design/changelog chain and queued runtime activation](#version-37)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Added `design/unified-version-control-system.design.md` v1.0 | |
+| | | - Added `changelog/unified-version-control-system.changelog.md` v1.0 | |
+| | | - Updated main design index with pending activation state for runtime `unified-version-control-system.md` | |
+| | | - Updated TODO to keep runtime activation explicitly pending | |
+| | | Summary: Completed design/changelog-first phase for unified version controller and deferred runtime rule materialization by request | |
+| 3.6 | 2026-02-24 | **[Reconfirmed single-system version governance scope (UDVC-1) in master docs](#version-36)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | - Updated master design to explicitly define UDVC-1 as the single mechanism for design/changelog/TODO/patch governance | |
+| | | - Confirmed rollout model is based on updating existing governance rules (not creating a separate new control rule) | |
+| | | - Updated TODO execution record to reflect this analysis/design update request | |
+| | | Summary: Reaffirmed one non-complex version-control standard and synchronized master docs to that scope | |
 | 3.5 | 2026-02-23 | **[Completed final UDVC-1 consistency audit and patch-chain closure](#version-35)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Aligned patch documents to UDVC-1 metadata contract and created missing patch authority changelog | |
 | | | - Closed active session-placeholder drift in `design/accurate-communication.design.md` | |
@@ -162,6 +179,93 @@
 | | | Summary: Begin rules files standardization project | |
 | 1.0 | 2026-01-21 | **[Initial Master Changelog](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Created master changelog for entire project | |
+
+---
+
+<a id="version-38"></a>
+## Version 3.8: Activated unified-version-control-system runtime rule and closed rollout queue
+
+**Date:** 2026-02-24
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Created runtime `unified-version-control-system.md` as active governance controller file.
+- Updated `changelog/unified-version-control-system.changelog.md` from v1.0 to v1.1:
+  - Set runtime `Parent Document` authority path.
+  - Added runtime-activation closure section and unified-table v1.1 row.
+- Updated `design/design.md` from v2.6 to v2.7:
+  - Changed sub-rule inventory label from `21 Active + 1 Pending Activation` to `22 Active`.
+  - Converted unified-controller index entry from pending to active and aligned design-version reference to v1.1.
+  - Replaced activation-queue wording with active unified-controller state wording.
+- Updated `TODO.md` to close rollout execution task and record activation closure in history.
+
+### Summary
+Unified version-controller rollout is now fully materialized in runtime and synchronized across master design/changelog/TODO governance layers.
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| unified-version-control-system.md | Runtime unified controller active (v1.1) |
+| changelog/unified-version-control-system.changelog.md | Bumped to v1.1 and recorded runtime activation closure |
+| design/design.md | Bumped to v2.7 and removed pending activation state |
+| changelog/changelog.md | Bumped to v3.8 and recorded rollout completion |
+| TODO.md | Marked runtime rollout task complete and added closure history |
+
+---
+
+<a id="version-37"></a>
+## Version 3.7: Created unified-version-control-system design/changelog chain and queued runtime activation
+
+**Date:** 2026-02-24
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Created `design/unified-version-control-system.design.md` v1.0.
+- Created `changelog/unified-version-control-system.changelog.md` v1.0.
+- Updated `design/design.md` from v2.5 to v2.6 for index synchronization:
+  - Added `unified-version-control-system.md` as pending activation in Sub-Rule Index.
+  - Added explicit activation-queue note to keep runtime authority unambiguous.
+- Updated `TODO.md` to record this design/changelog creation and keep runtime rule creation pending as requested.
+
+### Summary
+Completed design/changelog-first rollout for unified version controller and deferred runtime `unified-version-control-system.md` materialization to pending execution state.
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| design/unified-version-control-system.design.md | New design specification for unified version controller |
+| changelog/unified-version-control-system.changelog.md | New authoritative changelog for unified controller chain |
+| design/design.md | Updated main index and activation-queue status for pending runtime activation |
+| changelog/changelog.md | Updated to v3.7 and added rollout record |
+| TODO.md | Added pending runtime activation task and history entry |
+
+---
+
+<a id="version-36"></a>
+## Version 3.6: Reconfirmed single-system version governance scope (UDVC-1) in master docs
+
+**Date:** 2026-02-24
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Updated `design/design.md` from v2.4 to v2.5.
+- Added explicit `Unified Version-Control System (UDVC-1)` section in main design to cover one deterministic mechanism across:
+  - design documents,
+  - changelog documents,
+  - TODO execution tracking,
+  - patch documents.
+- Clarified in main design that this scope is implemented by updating existing governance rules and synchronized documents, not by introducing an additional standalone control rule.
+- Updated `TODO.md` history to record analysis/design/changelog/TODO synchronization requested for single-standard reaffirmation.
+
+### Summary
+Reconfirmed and documented that UDVC-1 is the sole version-control governance mechanism for design/changelog/TODO/patch flows and synchronized master design/changelog/TODO accordingly.
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| design/design.md | Bumped to v2.5 and added explicit UDVC-1 unified governance section |
+| changelog/changelog.md | Bumped to v3.6 and added detailed record for single-standard reaffirmation |
+| TODO.md | Added history entry for this analysis/design/changelog/TODO synchronization request |
 
 ---
 

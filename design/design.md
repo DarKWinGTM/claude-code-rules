@@ -3,8 +3,8 @@
 ## Master Design Document
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.4
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
+> **Current Version:** 2.7
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-24)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,14 +13,17 @@
 
 ### I.1 Version Information
 
-**Current Version:** 2.4
-**Last Updated:** 2026-02-23
+**Current Version:** 2.7
+**Last Updated:** 2026-02-24
 **Status:** Active
 
 ### I.2 Change Summary
 
 | Version | Date | Summary | Session ID |
 |---------|------|---------|------------|
+| 2.7 | 2026-02-24 | **Activated unified-version-control-system runtime rule and closed pending rollout state** - Materialized runtime controller, removed activation-queue status, and completed master design/TODO/changelog synchronization | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| 2.6 | 2026-02-24 | **Registered unified-version-control-system design/changelog chain with pending runtime activation** - Added unified controller into master index as queued activation while preserving existing runtime authority until rollout completion | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| 2.5 | 2026-02-24 | **Reaffirmed single version-control mechanism scope across design/changelog/TODO/patch** - Clarified that UDVC-1 is the only governance mechanism and that rollout uses existing rules updates rather than creating a separate new control rule | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 2.4 | 2026-02-23 | **Adopted UDVC-1 baseline in design layer** - Synchronized governance-design contracts for changelog control, design control, TODO standards, patch control, and project documentation standards | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 2.3 | 2026-02-22 | **Added consolidated best-practices section (P2 closure)** - Introduced unified operational best practices to reduce guidance fragmentation and standardized cross-document execution behavior | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 2.2 | 2026-02-22 | **Completed WS-1 + WS-4 runtime/design/changelog/TODO synchronization batch** - Harmonized deterministic precedence, policy coherence, and governance structure across active runtime rules and master docs | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -182,7 +185,7 @@ Risk/constraint evaluation
 
 ## IV. Sub-Rule Index
 
-### IV.1 Current Rules (21 Rules)
+### IV.1 Current Rules (22 Active)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
@@ -207,8 +210,14 @@ Risk/constraint evaluation
 | 19 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
 | 20 | todo-standards.md | todo-standards.design.md v2.1 | Simple TODO lists |
 | 21 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
+| 22 | unified-version-control-system.md | unified-version-control-system.design.md v1.1 | Unified controller for deterministic version-governance enforcement across design/runtime/changelog/TODO/patch chains |
 
-### IV.2 Reserved for Future Rules
+### IV.2 Unified Governance Controller State
+
+- `unified-version-control-system.md` is now active runtime governance controller for UDVC-1 execution consistency.
+- `document-changelog-control.md` remains normative authority for changelog-contract details and metadata semantics under the unified governance model.
+
+### IV.3 Reserved for Future Rules
 
 | Category | Potential Rules | Purpose |
 |----------|-----------------|---------|
@@ -653,15 +662,33 @@ To reduce guidance fragmentation, use this single baseline across design, runtim
      - version markers match authoritative changelog,
      - TODO dashboard totals reflect real pending state.
 
+### VIII.5 Unified Version-Control System (UDVC-1) for Design/Changelog/TODO/Patch
+
+This repository uses one version-control governance mechanism only: **UDVC-1**.
+
+| Document Type | Governance Role | Mandatory Control |
+|---------------|-----------------|-------------------|
+| `design/*.design.md` | Navigator design state | `Current Version`, `Session`, `Full history` link to authoritative changelog |
+| `changelog/*.changelog.md` | Chain version authority | `Parent Document`, `Current Version`, `Session`, detailed sections + unified table |
+| `patches/*.patch.md` | Transition execution plan | `Current Version`, `Session`, `Status`, `Target Design`, `Full history` |
+| `TODO.md` | Execution tracking only | Must not act as version authority; update after synchronization cycle |
+
+**Deterministic update cycle (single standard):**
+1. design
+2. runtime rule
+3. changelog
+4. TODO
+5. patch metadata final sync (when affected)
+
 ---
 
 ## IX. Documentation Integrity Audit Findings (Review Gate)
 
 ### IX.1 Phase Scope Decision (Design-Only)
 
-- Current phase is **design/changelog governance hardening**
-- **Root rule materialization is intentionally deferred**
-- This section records verified defects as **potential improvement defects** pending review before any remediation TODO breakdown
+- This section is a **historical audit snapshot** from a prior design/changelog governance-hardening phase.
+- Deferred root-rule materialization statements in this section are **historical only** and are superseded by completed runtime activation.
+- Findings remain preserved for traceability, while active governance state is defined by current runtime/design/changelog/TODO artifacts.
 
 ### IX.2 Verified Findings (Audit Snapshot, then Log-Phase Status)
 
@@ -765,9 +792,9 @@ design/*.design.md   ---->  *.md                 ---->  changelog/*.changelog.md
 - Changelog documents under `changelog/*.md`
 - Governance tracker at `TODO.md`
 
-**Boundary for this phase:**
-- This phase records issues, defines workstreams, and sets execution order
-- Runtime behavior implementation is intentionally deferred until design approval
+**Boundary for this historical phase snapshot:**
+- This section records the previous hardening-phase issue model, workstreams, and execution order.
+- Runtime implementation deferral statements here are historical and have been superseded by completed rollout execution.
 
 ### XI.2 Verified Issue Themes (Survey Consolidation)
 
@@ -836,13 +863,13 @@ design/*.design.md   ---->  *.md                 ---->  changelog/*.changelog.md
   - Chosen TODO format policy (simple or extended) is explicitly codified and consistently applied.
 - **Dependencies:** WS-4.
 
-### XI.4 Execution Order (Phase Contract)
+### XI.4 Execution Order (Historical Phase Contract)
 
 1. **Design hardening first:** WS-1 and WS-4
 2. **Changelog integrity next:** WS-2 and WS-3
 3. **TODO normalization after standards lock:** WS-6
 4. **Performance consolidation specification:** WS-5 design only in this phase
-5. **Runtime implementation:** deferred until design/changelog/TODO approval is complete
+5. **Runtime implementation:** previously deferred in this historical phase; now completed in active governance state
 
 ### XI.5 Status Note (Count Revalidation)
 

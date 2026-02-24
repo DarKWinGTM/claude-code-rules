@@ -49,7 +49,7 @@
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
   </a>
   <a href="#-visual-guide">
-    <img src="https://img.shields.io/badge/🖼️_Rules-22_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/🖼️_Rules-23_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
 </p>
 
@@ -78,6 +78,7 @@
 ```bash
 # 🚀 One-line installation - Clone and install
 git clone https://github.com/DarKWinGTM/claude-code-rules.git && \
+mkdir -p ~/.claude/rules && \
 cp claude-code-rules/*.md ~/.claude/rules/
 ```
 
@@ -106,6 +107,9 @@ cp *.md ~/.claude/rules/
 
 # Step 4: Verify installation
 ls ~/.claude/rules/
+
+# Step 5 (optional): Verify unified controller rule exists
+ls ~/.claude/rules/unified-version-control-system.md
 ```
 
 ### 🎯 Method 2: Pick Your Rules
@@ -305,7 +309,7 @@ TODO.md pending section audit
 
 ---
 
-### 🟡 Quality & Safety (12 rules)
+### 🟡 Quality & Safety (13 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
@@ -322,6 +326,7 @@ TODO.md pending section audit
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
 | [`todo-standards.md`](todo-standards.md) | Task management | Focused work |
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects |
+| [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
 
@@ -336,7 +341,7 @@ TODO.md pending section audit
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 22**
+**📊 Active Runtime Rules: 23**
 
 ### 🧪 New Runtime Rules (Activated from Design)
 
@@ -348,8 +353,9 @@ TODO.md pending section audit
 | `refusal-classification.md` | Active runtime + design/changelog linked |
 | `recovery-contract.md` | Active runtime + design/changelog linked |
 | `dan-safe-normalization.md` | Active runtime + design/changelog linked |
+| `unified-version-control-system.md` | Active runtime + design/changelog linked |
 
-**📊 Framework Summary: 22 active runtime rules**
+**📊 Framework Summary: 23 active runtime rules**
 
 </div>
 
@@ -665,8 +671,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 2.0.0 |
-  <b>Last Updated</b>: 2026-01-21 |
+  <b>Version</b>: 2.1.0 |
+  <b>Last Updated</b>: 2026-02-24 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
