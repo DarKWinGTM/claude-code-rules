@@ -347,29 +347,6 @@ TODO.md pending section audit
 
 **📊 Active Runtime Rules: 23**
 
-### 🧪 New Runtime Rules (Activated from Design)
-
-> **Categorized using the same taxonomy as Rule Files.**
-> **All rules below link directly to runtime rule files.**
-
-#### 🔴 Core Policies (0 rules)
-
-- _(No newly activated rules in this category)_
-
-#### 🟡 Quality & Safety (5 rules)
-
-| Rule | Purpose | Key Benefit |
-|:-----|:--------|:------------|
-| [`refusal-minimization.md`](refusal-minimization.md) | Minimize false refusals in authorized workflows by preferring constrained/context-completion paths. | Fewer unnecessary refusals with hard boundaries preserved |
-| [`refusal-classification.md`](refusal-classification.md) | Classify blocked outcomes deterministically as `HARD_BLOCK`, `SOFT_BLOCK`, or `WORKFLOW_BLOCK`. | Clear and consistent refusal decisions |
-| [`recovery-contract.md`](recovery-contract.md) | Require non-dead-end blocked responses with `reason`, `what_can_be_done_now`, and `how_to_proceed`. | Actionable next steps in every constrained/refused path |
-| [`dan-safe-normalization.md`](dan-safe-normalization.md) | Normalize DAN/jailbreak prompt wrappers into bounded intent before policy evaluation. | Lower prompt-form bias with safer intent evaluation |
-| [`unified-version-control-system.md`](unified-version-control-system.md) | Enforce one UDVC-1 version-governance mechanism across design/rule/changelog/TODO/patch chains. | Deterministic version synchronization and zero parallel governance drift |
-
-#### 🟢 Best Practices (0 rules)
-
-- _(No newly activated rules in this category)_
-
 **📊 Framework Summary: 23 active runtime rules**
 
 </div>
