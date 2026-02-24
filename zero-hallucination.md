@@ -1,7 +1,7 @@
 # 🎯 Zero Hallucination Policy
 
-> **Current Version:** 1.0
-> **Design:** [design/zero-hallucination.design.md](design/zero-hallucination.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/zero-hallucination.design.md](design/zero-hallucination.design.md) v1.1
 
 ## Rule Statement
 
@@ -64,6 +64,24 @@ AI must provide only verified, factual information. When uncertain, verify first
 - If user explicitly states they want a quick answer without verification
 - If user provides the information themselves
 - If user asks for general guidance rather than specific implementation
+
+---
+
+## Shared Verification Trigger Model (WS-5)
+
+Treat the claim as verification-required when any trigger below appears:
+
+| Trigger | Typical Signal | Required Action |
+|--------|-----------------|-----------------|
+| Specific technical claim | API endpoint, parameter, version, command flag, config syntax | Verify with authoritative source before stating as fact |
+| Project-specific reference | File path, symbol, environment variable, config key | Verify with tools (`Read`, `Glob`, `Grep`, `ls`) |
+| Cross-file impact claim | "Updated all references", "fully synchronized", "no drift" | Verify affected artifacts before claiming completion |
+| Uncertainty detected | Confidence is incomplete or source is stale | Mark uncertainty explicitly and request/perform verification |
+
+Verification status labels (when reporting findings):
+- ✅ **Verified**
+- ⚠️ **Unverified**
+- ❌ **Not Found**
 
 ---
 

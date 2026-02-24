@@ -1,7 +1,7 @@
 # 🔍 No Variable Guessing Policy
 
-> **Current Version:** 1.0
-> **Design:** [design/no-variable-guessing.design.md](design/no-variable-guessing.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/no-variable-guessing.design.md](design/no-variable-guessing.design.md) v1.1
 
 ## Rule Statement
 
@@ -72,6 +72,24 @@ Not found? → Ask user
 - User explicitly provides the value
 - User says "assume X for now"
 - User asks for a template/example (clearly labeled as such)
+
+---
+
+## Shared Verification Trigger Model (WS-5)
+
+Treat the reference as verification-required when any trigger appears:
+
+| Trigger | Typical Signal | Required Action |
+|--------|-----------------|-----------------|
+| Project-specific path/symbol | File path, import path, function/class name | Verify existence with tools before reference |
+| Runtime/config value | Env var, port, endpoint base URL, config key | Read actual config source before use |
+| Cross-reference claim | "updated everywhere", "all references fixed" | Verify all affected locations before claiming completion |
+| Ambiguous source of truth | Multiple candidate files or conflicting values | Mark uncertainty and ask/verify before proceeding |
+
+Verification status labels (when reporting findings):
+- ✅ **Verified**
+- ⚠️ **Unverified**
+- ❌ **Not Found**
 
 ---
 

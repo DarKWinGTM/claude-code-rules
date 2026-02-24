@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-21)
 
 ---
@@ -50,14 +50,14 @@ Create a UOLF (Universal Output Limit Framework) that:
 | RISKY_FILE_CHARS | 3000 | .min.js, .html, .json, .svg |
 | PREVIEW_CHARS | 2000 | Quick preview / unknown files |
 
-### 2.2 Double Limit Pattern
+### 2.2 Double Limit Pattern (Deterministic Default)
 
 ```bash
-# ALWAYS use BOTH line AND character limits
+# ALWAYS enforce deterministic capped output (line + character)
 <command> | head -100 | head -c 5000
 
-# For risky files, character-first
-head -c 3000 <file>
+# Character-first variant for risky/unknown long-line files
+<command> | head -c 3000
 ```
 
 **Why?** `head -100` alone is NOT safe - one line can contain 500KB+
@@ -144,7 +144,7 @@ Execute read with chosen method
 | Small files (< 50KB, many lines) | Read tool with limit |
 | Large files (> 256KB) | `head -c 3000` |
 | Minified files (few lines, large) | `head -c 3000` |
-| Searching specific content | `grep \| head -c 5000` |
+| Searching specific content | `grep \| head -100 \| head -c 5000` |
 | Log files | `tail -100 \| head -c 5000` |
 | Unknown files | `head -c 2000` (preview first) |
 
@@ -170,7 +170,7 @@ Execute read with chosen method
 head -c 2000 <file>
 
 # Or search for specific content
-grep -n "search_term" <file> | head -20
+grep -n "search_term" <file> | head -100 | head -c 5000
 ```
 
 ---
@@ -211,7 +211,7 @@ SAFE PATTERNS
 CLI Commands:
   head -100 file | head -c 5000    # Double limit
   tail -100 file | head -c 5000    # Double limit
-  grep pattern file | head -c 5000 # Search + limit
+  grep pattern file | head -100 | head -c 5000 # Search + limit
   head -c 3000 file                # Risky files
 
 Claude Tools:

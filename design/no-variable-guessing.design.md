@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
@@ -78,6 +78,22 @@ Not found? → Ask user
 - Search documentation before recommending
 - Verify endpoint structure from official sources
 - Check actual API responses when possible
+
+### 2.4 Shared Verification Trigger Model (WS-5)
+
+Treat references as verification-required when any trigger appears:
+
+| Trigger | Typical Signal | Required Action |
+|---------|----------------|-----------------|
+| Project-specific path/symbol | File path, import path, function/class name | Verify existence with tools before reference |
+| Runtime/config value | Env var, port, endpoint base URL, config key | Read actual config source before use |
+| Cross-reference claim | "updated everywhere", "all references fixed" | Verify all affected locations before completion claim |
+| Ambiguous source of truth | Multiple candidate files or conflicting values | Mark uncertainty and ask/verify before proceeding |
+
+Verification status labels (when reporting findings):
+- ✅ **Verified**
+- ⚠️ **Unverified**
+- ❌ **Not Found**
 
 ---
 

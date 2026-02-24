@@ -1,7 +1,7 @@
 # 📋 Safe Terminal Output Guide (Plan-Before-Execute)
 
-> **Current Version:** 1.1
-> **Design:** [design/safe-terminal-output.design.md](design/safe-terminal-output.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/safe-terminal-output.design.md](design/safe-terminal-output.design.md) v1.2
 
 ## 🎯 Core Philosophy
 
@@ -358,13 +358,13 @@ After redirecting output, choose your reading method based on file size:
 ## ✅ Best Practices Summary
 
 ### Universal Rule (UOLF):
-**Every output → ≤ 5000 chars (use double limit)**
+**Every output → ≤ 5000 chars with deterministic default `head -100 | head -c 5000`**
 
 ### When Executing Commands:
 1. **Plan first** - Decide where output goes
 2. **Redirect** - Send output to `/tmp/claude-$$-*.txt` (session-isolated)
 3. **Check size** - `ls -lh && wc -l`
-4. **Read safely** - Use double limit: `head -100 | head -c 5000`
+4. **Read safely** - Use deterministic default: `head -100 | head -c 5000`
 
 ### Recommended Reading Methods (with character limit):
 - `head -100 <file> | head -c 5000` - Double limit (default)

@@ -1,110 +1,8 @@
 # Changelog - Document Changelog Control
 
 > **Parent Document:** [../document-changelog-control.md](../document-changelog-control.md)
-> **Current Version:** 4.4
+> **Current Version:** 4.6
 > **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
-
----
-
-<a id="version-44"></a>
-## Version 4.4: Introduced OR Compliance and Explicit Pair Behavior
-
-**Date:** 2026-02-21
-**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
-
-### Changes
-- Synchronized changelog policy with `design/document-changelog-control.design.md` v4.4
-- Clarified **traceable version path** rule as OR compliance:
-  - (A) local `Version History (Unified)` table, OR
-  - (B) authoritative changelog link (`> Full history: ...`)
-- Made pair behavior explicit when design/changelog documents coexist:
-  - `design.md` / `*.design.md` = Navigator link-only
-  - `changelog.md` / `*.changelog.md` = Detailed sections (UPPER) + Unified table (LOWER)
-- Normalized malformed legacy v4.1 block into proper changelog section structure while preserving historical intent
-
-### Summary
-Added v4.4 governance update for OR compliance and strict design/changelog pair separation
-
-### Links
-- Design: [../design/document-changelog-control.design.md](../design/document-changelog-control.design.md)
-
----
-
-<a id="version-43"></a>
-## Version 4.3: Clarify changelog.md MUST have BOTH detailed sections and Unified table
-
-**Date:** 2026-01-20
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-
-### Changes
-- Clarified changelog format as two mandatory parts:
-  - UPPER: Detailed version sections
-  - LOWER: `Version History (Unified)` summary table
-- Updated examples and format comparison to enforce BOTH parts
-- Reinforced that rules files use changelog links rather than embedded full history tables
-
-### Summary
-Established two-part changelog format (detailed sections + unified summary table)
-
-### Links
-- Design: [../design/document-changelog-control.design.md](../design/document-changelog-control.design.md)
-
----
-
-<a id="version-42"></a>
-## Version 4.2: Clarify changelog.md can include "Version History" header
-
-**Date:** 2026-01-20
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-
-### Changes
-- Clarified that a `## Version History` section header is allowed in changelog files
-- Clarified distinction between section header and summary table usage
-- Refined examples to reduce confusion between header naming and data format
-
-### Summary
-Clarified header naming versus data format in changelog files
-
-### Links
-- Design: [../design/document-changelog-control.design.md](../design/document-changelog-control.design.md)
-
----
-
-<a id="version-41"></a>
-## Version 4.1: Clarify design.md Navigator behavior (link-only)
-
-**Date:** 2026-01-20
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-
-### Changes
-- Clarified design documents should act as Navigator (link to full changelog)
-- Emphasized design documents are specification documents, not full changelog containers
-- Added explanation to prevent duplicate version history across design/changelog pairs
-
-### Summary
-Clarified design docs should provide navigation link, not duplicated full history tables
-
-### Links
-- Design: [../design/document-changelog-control.design.md](../design/document-changelog-control.design.md)
-
----
-
-<a id="version-40"></a>
-## Version 4.0: Design vs Product distinction and Single Source of Truth
-
-**Date:** 2026-01-20
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-
-### Changes
-- Introduced structured version-control model across rules/design/changelog documents
-- Established Single Source of Truth concept for version authority
-- Defined foundational integration behavior for changelog governance
-
-### Summary
-Established baseline architecture for documentation version governance
-
-### Links
-- Design: [../design/document-changelog-control.design.md](../design/document-changelog-control.design.md)
 
 ---
 
@@ -112,13 +10,124 @@ Established baseline architecture for documentation version governance
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 4.4 | 2026-02-21 | **[Introduced OR Compliance and Explicit Pair Behavior](#version-44)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| 4.6 | 2026-02-23 | **[Adopted UDVC-1 deterministic contract baseline](#version-46)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Synchronized design/runtime/changelog to v4.6 with triad alignment, mandatory metadata, canonical anchors, and fixed execution order | |
+| 4.5 | 2026-02-22 | **[Synchronized runtime session metadata to real active session value](#version-45)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Replaced runtime placeholder session text with active-session UUID | |
+| 4.4 | 2026-02-21 | **[Introduced OR compliance and explicit pair behavior](#version-44)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | Summary: Added OR compliance and strict design/changelog pair separation | |
-| 4.3 | 2026-01-20 | **[Clarify changelog.md MUST have BOTH detailed sections and Unified table](#version-43)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| 4.3 | 2026-01-20 | **[Required detailed sections plus unified table in changelog](#version-43)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Established two-part changelog format | |
-| 4.2 | 2026-01-20 | **[Clarify changelog.md can include "Version History" header](#version-42)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | Summary: Clarified header naming versus table format | |
-| 4.1 | 2026-01-20 | **[Clarify design.md Navigator behavior (link-only)](#version-41)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | Summary: Clarified design docs as navigator link-only | |
-| 4.0 | 2026-01-20 | **[Design vs Product distinction and Single Source of Truth](#version-40)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | Summary: Established baseline governance architecture | |
+| 4.2 | 2026-01-20 | **[Clarified changelog header and section naming](#version-42)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Clarified header naming versus table format in changelog files | |
+| 4.1 | 2026-01-20 | **[Clarified design navigator behavior](#version-41)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Design docs provide navigation link rather than duplicated full history | |
+| 4.0 | 2026-01-20 | **[Established baseline version-governance architecture](#version-40)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Introduced foundational documentation version-governance model | |
+
+---
+
+<a id="version-46"></a>
+## Version 4.6: Adopted UDVC-1 deterministic contract baseline
+
+**Date:** 2026-02-23
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Updated runtime `document-changelog-control.md` from v4.5 to v4.6.
+- Aligned runtime contract to `design/document-changelog-control.design.md` v4.6.
+- Formalized mandatory rule-chain triad alignment requirements in runtime policy text.
+- Formalized mandatory metadata contract for rule/design/patch/changelog layers.
+- Standardized canonical version-anchor policy to `#version-xy`.
+- Enforced fixed synchronization order: `design → runtime rule → changelog → TODO`.
+
+### Summary
+Established UDVC-1 as the active deterministic governance contract and synchronized rule/design/changelog references to v4.6.
+
+---
+
+<a id="version-45"></a>
+## Version 4.5: Synchronized runtime session metadata to real active session value
+
+**Date:** 2026-02-22
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Replaced placeholder session text in runtime `document-changelog-control.md` with active-session UUID.
+- Preserved v4.4 semantics (OR compliance and pair behavior).
+
+### Summary
+Closed runtime session-metadata contradiction by replacing placeholder session text with real session value.
+
+---
+
+<a id="version-44"></a>
+## Version 4.4: Introduced OR compliance and explicit pair behavior
+
+**Date:** 2026-02-21
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Clarified traceable version path as OR compliance (`local table` OR `full-history link`).
+- Made pair behavior explicit when design/changelog documents coexist.
+- Normalized malformed legacy changelog structure while preserving historical intent.
+
+### Summary
+Added OR compliance and explicit design/changelog pair behavior.
+
+---
+
+<a id="version-43"></a>
+## Version 4.3: Required detailed sections plus unified table in changelog
+
+**Date:** 2026-01-20
+**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+
+### Changes
+- Clarified changelog as two mandatory parts: detailed sections and `Version History (Unified)` table.
+
+### Summary
+Established two-part changelog format as mandatory.
+
+---
+
+<a id="version-42"></a>
+## Version 4.2: Clarified changelog header and section naming
+
+**Date:** 2026-01-20
+**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+
+### Changes
+- Clarified usage of `Version History` section header and distinction from data format.
+
+### Summary
+Reduced ambiguity between header naming and table format.
+
+---
+
+<a id="version-41"></a>
+## Version 4.1: Clarified design navigator behavior
+
+**Date:** 2026-01-20
+**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+
+### Changes
+- Clarified design documents as navigator/link-only for version history in pair model.
+
+### Summary
+Prevented duplicated full-history blocks across design/changelog pair.
+
+---
+
+<a id="version-40"></a>
+## Version 4.0: Established baseline version-governance architecture
+
+**Date:** 2026-01-20
+**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+
+### Changes
+- Introduced structured documentation version-governance model.
+- Established changelog-centered authority concept.
+
+### Summary
+Baseline architecture for documentation version governance.

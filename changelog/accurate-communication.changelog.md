@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
-> **Parent Document:** [accurate-communication.design.md](../design/accurate-communication.design.md)
+> **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
 > **Current Version:** 1.1
-> **Session:** (current session)
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
@@ -10,20 +10,21 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 1.1 | 2026-02-06 | **[Redesign as Flexible Principles](#version-11)** | (current) |
+| 1.1 | 2026-02-06 | **[Redesign as Flexible Principles](#version-11)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Changed from rigid rules to smart principles | |
 | | | - Added context-based flexibility guidelines | |
 | | | Summary: Redesigned for practical, flexible use | |
-| 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | (current) |
+| 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
 
 ---
 
+<a id="version-11"></a>
 ## Version 1.1: Redesign as Flexible Principles
 
 **Date:** 2026-02-06
-**Session:** (current session)
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ### Changes
 - Changed from rigid format rules to smart, flexible principles
@@ -42,10 +43,11 @@ User feedback: "Want to create rules that are smart, flexible, and usable, not r
 
 ---
 
+<a id="version-10"></a>
 ## Version 1.0: Initial Design
 
 **Date:** 2026-02-06
-**Session:** (current session)
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ### Changes
 - Created initial design with rigid format requirements

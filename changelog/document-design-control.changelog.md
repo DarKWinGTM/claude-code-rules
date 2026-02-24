@@ -1,7 +1,7 @@
 # Changelog - Document Design Control
 
 > **Parent Document:** [../document-design-control.md](../document-design-control.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.7
 > **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
@@ -10,151 +10,141 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 1.4 | 2026-02-21 | **[Synchronized to Rule v1.4 + Changelog Policy v4.4](#version-14)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | - Updated parent document reference to rules file path (`../document-design-control.md`) | |
-| | | - Updated changelog current version marker to `1.4` | |
-| | | - Updated active session metadata to current session UUID | |
-| | | - Standardized heading to `Version History (Unified)` for policy consistency | |
-| | | Summary: Metadata and policy-format synchronization for latest consistency patch set | |
-| 1.3 | 2026-01-26 | **[Added Pattern 1 (Simple) for single-design projects](#version-13)** | - |
-| | | - Added Pattern 1: Simple Project (single design at root) | |
-| | | - Added Pattern 2: Complex Project (multiple designs in ./design/) | |
-| | | - Added Decision Tree for choosing pattern | |
-| | | - Updated MANDATORY table: File location/suffix now depend on pattern | |
-| | | - Updated Quality Metrics: Added pattern consistency metric | |
-| | | - Updated Compliance Checklist: Step-by-step by pattern | |
-| | | Summary: Added Pattern 1 to support simple single-design projects | |
+| 1.7 | 2026-02-23 | **[Synchronized design-control runtime contract to UDVC-1 baseline](#version-17)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Aligned runtime rule/design/changelog to v1.7 with triad checks, canonical anchor policy, and fixed execution order | |
+| 1.6 | 2026-02-22 | **[Removed runtime version-table contradiction and synchronized references](#version-16)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Closed v1.6 rule/design/changelog drift and removed runtime self-contradiction | |
+| 1.5 | 2026-02-22 | **[Clarified pair-model language governance references](#version-15)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Closed version/reference/language drift for the v1.5 cycle | |
+| 1.4 | 2026-02-21 | **[Synchronized metadata to latest consistency patch set](#version-14)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Parent path, version marker, session metadata, and heading normalization | |
+| 1.3 | 2026-01-26 | **[Added simple/complex pattern decision model](#version-13)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Added Pattern 1 for single-design projects and Pattern 2 for multi-design projects | |
 | 1.2 | 2026-01-21 | **[Changed terminology to neutral relationship](#version-12)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | - Changed "Primary Reference" to "Related Reference" (rules file) | |
-| | | - Changed "PRIMARY REFERENCE" to "Related Reference" (design.spec) | |
-| | | - Updated Section: "Integration with Other Rules" to show equal partnership | |
-| | | - Fixed flow diagram: Removed hierarchical "PRIMARY" labeling | |
-| | | Summary: Fixed terminology to show related but equal rules | |
-| 1.1 | 2026-01-21 | **[Aligned with document-changelog-control.md v4.3](#L45)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | - **CRITICAL FIX:** Removed Version History table from design documents | |
-| | | - Updated Section 3.3: Removed Version History from required sections list | |
-| | | - Updated Section 3.5: Changed to Navigator format (ONLY link) | |
-| | | - Updated Section 4.1: Clarified Navigator = NO version entries | |
-| | | - Added reference to document-changelog-control.md as PRIMARY REFERENCE | |
-| | | - Fixed all examples (7.1, 7.2) to remove Version History tables | |
-| | | - Updated Section 8 Quality Metrics to require NO Version History table | |
-| | | - Removed Version History table from this design.spec (follows own rules) | |
-| | | - Added note: "This design.spec is based on document-changelog-control.md v4.3" | |
-| | | Summary: Fixed design.spec to comply with document-changelog-control.md v4.3 | |
-| 1.0 | 2026-01-20 | **[Initial version](#L90)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | - Created initial design control standards for design documents | |
-| | | - Defined file naming convention: `.design.md` suffix | |
-| | | - Established location standards: `./design/` subdirectory | |
-| | | - Specified Document Control section format (version, session, parent scope) | |
-| | | - Created design structure standards with required sections | |
-| | | - Integrated changelog system following Version History (Unified) standards | |
-| | | - Added TODO/task tracking integration with checkbox format | |
-| | | - Defined cross-reference standards: `[file.md#section]` and `[file.md#Lxx]` | |
-| | | - Created quality metrics and compliance checklists | |
-| | | - Added complete examples for design document structure | |
-| | | Summary: Initial version with comprehensive design standards | |
+| | | Summary: Replaced hierarchical wording with related-reference wording | |
+| 1.1 | 2026-01-21 | **[Aligned design docs to navigator behavior](#version-11)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Removed local version-table expectation from design docs | |
+| 1.0 | 2026-01-20 | **[Initial design-control standard](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Established baseline naming/location/structure standards for design docs | |
 
 ---
 
-## Version 1.4: Synchronized to Rule v1.4 + Changelog Policy v4.4
+<a id="version-17"></a>
+## Version 1.7: Synchronized design-control runtime contract to UDVC-1 baseline
+
+**Date:** 2026-02-23
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Updated runtime `document-design-control.md` from v1.6 to v1.7.
+- Synchronized runtime `Based on` reference to `design/document-design-control.design.md` v1.7.
+- Added explicit rule-chain triad alignment requirements.
+- Added canonical anchor policy (`#version-xy`) in runtime contract.
+- Added non-negotiable synchronization order (`design → runtime rule → changelog → TODO`).
+- Preserved navigator-only behavior for design documents in pair model.
+
+### Summary
+Aligned the design-control runtime rule with UDVC-1 deterministic governance while keeping design/changelog pair behavior explicit.
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Removed runtime version-table contradiction and synchronized references
+
+**Date:** 2026-02-22
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Removed embedded runtime `## Version` table from `document-design-control.md`.
+- Updated design and runtime references to v1.6.
+- Corrected design-layer full-history link path.
+
+### Summary
+Closed v1.6 synchronization drift and eliminated runtime self-contradiction.
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Clarified pair-model language governance references
+
+**Date:** 2026-02-22
+**Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+
+### Changes
+- Aligned changelog with rule/design v1.5.
+- Clarified pair-model requirements and language-governance references.
+
+### Summary
+Closed remaining v1.5 reference and language drift.
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Synchronized metadata to latest consistency patch set
 
 **Date:** 2026-02-21
 **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ### Changes
-- Updated parent document reference to rules file path (`../document-design-control.md`)
-- Updated changelog current version marker to `1.4`
-- Updated active session metadata to current session UUID
-- Standardized heading to `Version History (Unified)` for policy consistency
+- Updated parent reference path, current version marker, and active session metadata.
+- Standardized heading style to `Version History (Unified)`.
 
 ### Summary
-Metadata and policy-format synchronization for latest consistency patch set
+Metadata synchronization for consistency patch cycle.
 
 ---
 
-## Version 1.3: Added Pattern 1 (Simple) for single-design projects
+<a id="version-13"></a>
+## Version 1.3: Added simple/complex pattern decision model
 
 **Date:** 2026-01-26
+**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
 
 ### Changes
-- Added Pattern 1: Simple Project (single design at root level)
-  - `design.md` at root (no `.design.md` suffix needed)
-  - `changelog.md` at root
-  - NO subdirectories required
-- Added Pattern 2: Complex Project (multiple designs)
-  - Kept existing `./design/*.design.md` structure
-  - Kept existing `./changelog/*.changelog.md` structure
-- Added Decision Tree for choosing pattern based on number of designs
-- Updated MANDATORY table: File location/suffix now depend on chosen pattern
-- Updated Quality Metrics: Added pattern consistency metric
-- Updated Compliance Checklist: Step-by-step checklist by pattern
+- Added Pattern 1 (single-design root layout) and Pattern 2 (multi-design directory layout).
 
 ### Summary
-Added Pattern 1 to support simple single-design projects (consistent with document-changelog-control.md)
+Added location/suffix decision model for design docs.
 
 ---
 
+<a id="version-12"></a>
 ## Version 1.2: Changed terminology to neutral relationship
 
 **Date:** 2026-01-21
 **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
 
 ### Changes
-- Changed "Primary Reference" to "Related Reference" in rules file header
-- Changed "PRIMARY REFERENCE" to "Related Reference" in design.spec Section 9
-- Updated Section "Integration with Other Rules" header to "Related Reference"
-- Changed section description from "This rule is based on and must comply with" to "Works together with"
-- Updated Related Rules table: Changed "PRIMARY REFERENCE" to "Related"
-- Fixed flow diagram: Removed "PRIMARY - v4.3" label, changed to simple "v4.3"
-- Updated flow diagram: Changed "References document-changelog-control.md as PRIMARY" to "Works with document-changelog-control.md format"
+- Replaced hierarchical "primary" terminology with neutral related-reference terminology.
 
 ### Summary
-Fixed terminology to show related but equal rules (not hierarchical)
-
-### Links
-- Design: [document-design-control.design.md#version-12](../design/document-design-control.design.md#version-12)
-- Rules: [document-design-control.md](../document-design-control.md)
+Normalized wording to non-hierarchical relationship language.
 
 ---
 
-## Version 1.1: Aligned with document-changelog-control.md v4.3
+<a id="version-11"></a>
+## Version 1.1: Aligned design docs to navigator behavior
 
 **Date:** 2026-01-21
 **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
 
 ### Changes
-- **CRITICAL FIX:** Removed Version History table from design documents (was violating own rules)
-- Updated Section 3.3: Removed Version History from required sections list, added Changelog Link
-- Updated Section 3.5: Changed to show Navigator format (ONLY link to changelog)
-- Added reference to document-changelog-control.md as PRIMARY REFERENCE
-- Updated Section 4.1: Clarified Navigator format = NO version entries in design docs
-- Fixed Section 7.1 example: Removed Version History table, kept only link
-- Fixed Section 7.2 example: Updated to show correct format (design = link, changelog = table)
-- Updated Section 8 Quality Metrics: Added "NO Version History table" requirement
-- Updated Section 9: Strengthened reference to document-changelog-control.md
-- Removed Version History table from this design.spec's end (now follows own rules)
+- Removed version-table expectation from design docs.
+- Synchronized with changelog-control navigator behavior.
 
 ### Summary
-Fixed design.spec to comply with document-changelog-control.md v4.3 Navigator format
+Design docs are navigator/link-only in pair model.
 
 ---
 
-## Version 1.0: Initial version
+<a id="version-10"></a>
+## Version 1.0: Initial design-control standard
 
 **Date:** 2026-01-20
 **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
 
 ### Changes
-- Created initial design control standards for design documents
-- Defined file naming convention: `.design.md` suffix
-- Established location standards: `./design/` subdirectory
-- Specified Document Control section format (version, session, parent scope)
-- Created design structure standards with required sections
-- Integrated changelog system following Version History (Unified) standards
-- Added TODO/task tracking integration with checkbox format
-- Defined cross-reference standards: `[file.md#section]` and `[file.md#Lxx]`
-- Created quality metrics and compliance checklists
-- Added complete examples for design document structure
+- Established baseline standards for design naming, location, structure, and changelog integration.
 
 ### Summary
-Initial version with comprehensive design standards
+Initial release of document-design-control standards.

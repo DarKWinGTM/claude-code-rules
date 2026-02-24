@@ -3,89 +3,107 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 1.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
+> **Current Version:** 1.2
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
 
 ---
 
 ## 1) Goal
 
-Standardize the creation, structure, and lifecycle of **Patch Documents** (`.patch.md`) to manage tactical implementation plans and complex state transitions.
+Standardize patch-document governance under the same UDVC-1 metadata and version-trace contract used by rule/design/changelog documents.
 
 ---
 
-## 2) Concept & Scope
+## 2) Scope
 
-### What is a Patch Document?
-A **Patch Document** describes the **process** of moving from State A to State B.
-- **Design Document (`.design.md`)**: Describes the *Target State* (State B).
-- **Changelog (`.changelog.md`)**: Records the *History* of changes.
-- **Patch Document (`.patch.md`)**: Describes the *Transition Plan* (How to get from A to B).
+Applies to:
 
-### When to use?
-- Complex refactoring
-- Migrations (Database, API, Dependencies)
-- Multi-step bug fixes involving multiple systems
-- "Monkey Patches" or temporary fixes that need documentation
+- `*.patch.md`
+- patch lifecycle documentation
+- patch metadata traceability and history references
 
 ---
 
-## 3) Naming & Location
+## 3) Naming and Location
 
-**File Extension:** `.patch.md` (replaces ad-hoc `-patch.md`)
-
-**Naming Format:**
-- `<context>.patch.md`
-- Example: `database-migration.patch.md`, `auth-refactor.patch.md`
-
-**Location:**
-- **Project Root**: For simple/single patches.
-- **`./patches/` directory**: For complex projects with multiple active patches.
+- Patch document filename: `<context>.patch.md`
+- Preferred location: `patches/`
 
 ---
 
-## 4) Document Structure
+## 4) Mandatory Metadata
 
-Every Patch Document MUST include:
+Each patch document must include:
 
-### 4.1 Header (Document Control)
-```markdown
-# [Patch Name]
+- `Current Version`
+- `Session`
+- `Status`
+- `Target Design`
+- `Full history` link
 
-> **Status:** [Draft/In Progress/Completed]
-> **Target Design:** [Link to .design.md]
-> **Related Issue:** [Issue ID]
-```
+Patch changelog files must include:
 
-### 4.2 Context
-- **Why** is this patch needed?
-- **Current State (A):** What is broken or needs changing?
-- **Target State (B):** What is the expected outcome?
-
-### 4.3 Analysis
-- Gap Analysis
-- Risks & Impact
-- Dependencies
-
-### 4.4 Implementation Plan (Phased)
-- Phase 1: Preparation
-- Phase 2: Execution
-- Phase 3: Cleanup
-
-### 4.5 Verification
-- How do we know it worked?
-- Rollback plan
+- `Parent Document`
+- `Current Version`
+- `Session`
 
 ---
 
-## 5) Integration Rules
+## 5) Structure Requirements
 
-| Component | Interaction |
-|-----------|-------------|
-| **Design Doc** | Patch implements the requirements defined in a Design Doc. |
-| **TODO.md** | Action items from the Patch Plan are tracked in `TODO.md`. |
-| **Changelog** | Completion of a Patch generates a Changelog entry. |
+Patch documents must include:
+
+1. Context (state A vs state B)
+2. Analysis (risk/dependencies)
+3. Implementation Plan (phased)
+4. Verification and rollback
 
 ---
 
-> Full history: [document-patch-control.changelog.md](../changelog/document-patch-control.changelog.md)
+## 6) Version and Session Integrity
+
+- Patch active metadata must not contain placeholder sessions.
+- If patch version is updated, corresponding changelog metadata must be synchronized.
+- Target design version references must be resolvable and current.
+
+---
+
+## 7) Integration Contract
+
+- Design defines desired target state
+- Patch defines transition process
+- Changelog records released history
+- TODO tracks execution tasks
+
+Update order remains:
+
+1. design
+2. runtime
+3. changelog
+4. TODO
+5. patch metadata final sync (if affected)
+
+---
+
+## 8) Quality Metrics
+
+| Metric | Target |
+|--------|--------|
+| Patch metadata completeness | 100% |
+| Active placeholder session markers in patch docs | 0 |
+| Patch ↔ design version reference validity | 100% |
+| Patch history link validity | 100% |
+
+---
+
+## 9) Related Documents
+
+| Document | Relationship |
+|----------|--------------|
+| [document-changelog-control.design.md](document-changelog-control.design.md) | UDVC-1 version authority contract |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Project-level documentation policy |
+| [../document-patch-control.md](../document-patch-control.md) | Runtime implementation |
+
+---
+
+> Full history: [../changelog/document-patch-control.changelog.md](../changelog/document-patch-control.changelog.md)

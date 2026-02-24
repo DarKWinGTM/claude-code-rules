@@ -1,42 +1,42 @@
 # TODO Standards
 
-> **Current Version:** 2.0
-> **Based on:** [todo-standards.design.md](design/todo-standards.design.md) v2.0
-> **Session:** (use current session ID from <env>)
-
+> **Current Version:** 2.1
+> **Based on:** [todo-standards.design.md](design/todo-standards.design.md) v2.1
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+>
 > **Full history:** [changelog/changelog.md](changelog/changelog.md)
 
 ---
 
 ## Rule Statement
 
-**Core Principle: Simple, maintainable TODO lists**
+**Core Principle: Keep TODO simple, maintainable, and synchronized after governance updates.**
 
-TODO.md should be simple and focused on actual work. Avoid complex systems that become stale and unmaintained.
+TODO reflects execution state, not version authority.
 
 ---
 
 ## Core Requirements
 
-### 1. Document Structure
+### 1) Required Structure
 
-Every TODO.md must have these sections:
+Every `TODO.md` must use this structure:
 
 ```markdown
-# [Project Name] - TODO
+# <Project Name> - TODO
 
 > **Last Updated:** YYYY-MM-DD
 
 ---
 
 ## ✅ Completed
-[Summary of completed work - what's done]
+<summary or completed checklist>
 
 ---
 
 ## 📋 Tasks To Do
-### [Category Name]
-- [ ] Task description
+### <Optional Category>
+- [ ] <task>
 
 ---
 
@@ -45,134 +45,50 @@ Every TODO.md must have these sections:
 |------|---------|
 ```
 
-### 2. Task Format
+### 2) Task Format
 
-**Simple checkbox format:**
-```markdown
-- [ ] Task description here
-```
+- Use checkbox format only: `- [ ]` and `- [x]`
+- Keep tasks concise and actionable
+- Categories are optional
 
-**No timestamps required** (keep it simple)
+### 3) Governance Constraints
 
-### 3. Categories
+- Pending area must contain pending tasks only
+- Completed content belongs only in `Completed` and `History`
+- If deferred items exist, keep them as pending tasks with clear labels (for example: `Deferred`)
 
-**Optional categories** - Use only if helpful:
+### 4) Simplicity Contract
 
-```markdown
-### Documentation
-- [ ] Create user guide
-- [ ] Update API docs
+The following are not part of TODO standard mode:
 
-### Features
-- [ ] Add new authentication
-- [ ] Implement caching
-```
+- Priority levels (P0/P1/P2/P3)
+- Dashboard counters/metrics blocks
+- Per-task timestamps
+- Deadline fields
 
-**No priorities** (P0, P1, P2, P3) - keep simple
+### 5) Integration Contract
 
-**No deadlines** - tasks get done when they get done
+- TODO updates occur after design/runtime/changelog synchronization
+- Changelog remains version authority for governed document chains
+- TODO tracks execution state only
 
----
+### 6) Synchronization Order
 
-## What Was Removed (v2.0 Simplification)
-
-### Removed Items:
-- ❌ Priority levels (P0, P1, P2, P3)
-- ❌ Created/Started/Completed timestamps per task
-- ❌ Status badges ([IN PROGRESS], [BLOCKED], etc.)
-- ❌ Progress dashboard with metrics
-- ❌ Task categorization by priority
-
-### Why Removed:
-- Complex TODO systems often become stale and unmaintained
-- Simple lists are easier to keep current
-- Priorities shift over time, making fixed labels inaccurate
-- Deadlines are often arbitrary and missed
-- Keep TODO.md focused on actual work, not overhead
+1. design
+2. runtime rule
+3. changelog
+4. TODO
 
 ---
 
 ## Compliance Checklist
 
-When creating/updating TODO.md:
-
-- [ ] Have Last Updated date
-- [ ] Have Completed section (what's done)
-- [ ] Have Tasks To Do section (what needs doing)
-- [ ] Have History table (track changes)
-- [ ] Use checkbox format `- [ ]` for tasks
-- [ ] No priorities (P0-P3) - keep simple
-- [ ] No deadlines - keep flexible
-
----
-
-## Examples
-
-### Example 1: Simple TODO
-
-```markdown
-# My Project - TODO
-
-> **Last Updated:** 2026-01-21
-
----
-
-## ✅ Completed
-
-- Project setup
-- Database schema designed
-
----
-
-## 📋 Tasks To Do
-
-### Features
-- [ ] User authentication
-- [ ] Data export functionality
-- [ ] Admin dashboard
-
-### Bug Fixes
-- [ ] Fix login redirect issue
-- [ ] Resolve memory leak
-
----
-
-## 📜 History
-
-| Date | Changes |
-|------|---------|
-| 2026-01-21 | Initial TODO |
-```
-
-### Example 2: Minimal TODO
-
-```markdown
-# TODO
-
----
-
-## 📋 Tasks To Do
-
-- [ ] Review PR #42
-- [ ] Update dependencies
-- [ ] Write unit tests
-
----
-
-## 📜 History
-
-| Date | Changes |
-|------|---------|
-| 2026-01-21 | Created TODO |
-```
-
----
-
-## Integration
-
-### Related Rules
-- [`document-design-control.md`](document-design-control.md) - Design document standards
-- [`document-changelog-control.md`](document-changelog-control.md) - Changelog format (for History section)
+- [ ] Required TODO sections are present
+- [ ] Task list uses checkbox format
+- [ ] Pending section has pending tasks only
+- [ ] Completed items are not mixed into pending section
+- [ ] No dashboard/priority/deadline overhead artifacts
+- [ ] TODO updated after design/runtime/changelog sync
 
 ---
 
@@ -180,12 +96,21 @@ When creating/updating TODO.md:
 
 | Metric | Target |
 |--------|--------|
-| Simplicity | Maximum - focus on work |
-| Maintainability | Easy to keep current |
-| Flexibility | No artificial constraints |
-| Completeness | All sections present |
+| Structural compliance with required sections | 100% |
+| Pending-section contamination with completed tasks | 0 |
+| Priority/deadline/dashboard overhead artifacts | 0 |
+| Readability and maintainability | High |
 
 ---
 
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.0
+## Integration
+
+| Document | Relationship |
+|----------|--------------|
+| [document-changelog-control.md](document-changelog-control.md) v4.6 | Synchronization order and authority model |
+| [project-documentation-standards.md](project-documentation-standards.md) v1.7 | Project-level doc governance |
+
+---
+
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.1
 > **Full history:** [changelog/changelog.md](changelog/changelog.md)

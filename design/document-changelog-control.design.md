@@ -3,228 +3,126 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.4
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-21)
+> **Current Version:** 4.6
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
 
 ---
 
-## 1) Goal (goal)
+## 1) Goal
 
-- Set version tracking standards that are actually usable and traceable.
-- Resolve conflicts between “Every file must have a table” with the Navigator guidelines of design docs
-- Establish a single rule for general cases (OR compliance) and cases with double files. design/changelog
-- Enforce the actual Session ID to trace back to the session.
+Define one deterministic documentation-version contract (UDVC-1) across rule, design, changelog, TODO, and patch layers.
 
 ---
 
-## 2) Scope
+## 2) UDVC-1 (Unified Documentation Version Contract)
 
-### 2.1 Documents Covered
+### 2.1 Single Authority Per Document Chain
 
-- Rules documents (`*.md`)
-- Design documents (`*.design.md` or `design.md`)
-- Changelog documents (`*.changelog.md` or `changelog.md`)
+- Each governed document chain has one authoritative changelog file.
+- The authoritative changelog controls latest version state.
+- Runtime and design documents reference this authority via `Full history` links.
 
-### 2.2 Problem This Design Resolves
+### 2.2 Triad Alignment (Rule Chains)
 
-- History duplication between design and changelog.
-- Requirements between table-only and navigator-only
-- Using a placeholder Session ID that cannot be traced
+For rule-governed chains:
 
----
+- `Rule Current Version`
+- `Rule referenced Design version`
+- `Design Current Version`
+- `Changelog Current Version`
 
-## 3) Core Principles
+must be equal.
 
-1. **Traceability First**
-   - Every document must always have a clear version trace path.
+### 2.3 Session Integrity
 
-2. **Flexible Compliance (OR)**
-   - Documents meet the criteria when at least one of the following criteria is met:
-     - (A) There is a `Version History (Unified)` table in the file.
-     - (B) Contains a link to the authoritative changelog.
-
-3. **Pair Behavior is Explicit**
-   - When having both `design.md` and `changelog.md` in the same scope, explicit separation must be used.
-
-4. **No Mock Session IDs**
-   - Do not use `<Session ID>`, `TBD`, or any dummy values.
-
-5. **History Preservation**
-   - Do not delete/overwrite the old history without saving the new changes.
+- Active metadata must use a real session identifier from the active environment.
+- Placeholder values are not allowed in active metadata fields.
+- `LEGACY-*` markers are allowed only for historical entries where original session data is unavailable.
 
 ---
 
-## 4) Core Requirements
+## 3) Mandatory Metadata Contract
 
-### 4.1 Traceable Version Path (Mandatory)
+### 3.1 Rule / Design / Patch Documents
 
-Every document must have a traceable version path like OR:
+Required header fields:
 
-- **Option A:** There is a `Version History (Unified)` table in that document.
-- **Option B:** has `> Full history: ...` pointing to the main changelog.
+- `Current Version`
+- `Session`
+- `Full history` link
 
-### 4.2 Session ID Integrity
+### 3.2 Changelog Documents
 
-- Session ID must be a true value from current environment/session
-- Supports UUID format (`xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) or `SXXXX`.
-- For legacy data, use `LEGACY-XXX` only for historical entries.
+Required header fields:
 
-### 4.3 History Preservation
+- `Parent Document`
+- `Current Version`
+- `Session`
 
-- Do not delete the old history.
-- If correcting errors in the original history, add a new entry to describe the correction.
-- Every entry must have Date + Session ID.
+### 3.3 Pair Behavior
 
-### 4.4 design.md <> changelog.md Pair Rule (Mandatory)
+When a design/changelog pair exists:
 
-When there is both design/changelog Coupled in the same scope:
-
-| File | MUST use | MUST NOT use |
-|------|----------|--------------|
-| **design.md** / `*.design.md` | Navigator link-only (`> Full history: ...`) | Full changelog sections, version table/entries In the same file |
-| **changelog.md** / `*.changelog.md` | Detailed sections (UPPER) + `Version History (Unified)` table (LOWER) | There are only detailed sections or only a table |
-
-### 4.5 Navigator Definition
-
-Navigator means:
-
-- ✅ Only links to authoritative changelog
-- ❌ There is no version history table in the design file.
-- ❌ There are no version entries in the design file.
+- Design document: navigator behavior only (no local version table)
+- Changelog document: detailed version sections + `Version History (Unified)` table
 
 ---
 
-## 5) Format Standards
+## 4) Canonical Anchor Policy
 
-### 5.1 Full Changelog Format
+Version table links must use only:
 
-```markdown
-# Changelog - <Document Name>
+- `#version-xy` style anchors
 
-> **Parent Document:** [<doc>.md](../<doc>.md)
-> **Current Version:** X.Y
-> **Session:** <Real Session ID>
+Do not use line-number anchors for version navigation examples.
 
 ---
 
-## Version X.Y: <Headline>
+## 5) Execution Order Contract
 
-**Date:** YYYY-MM-DD
-**Session:** <Real Session ID>
+When synchronizing governed documentation, update in this fixed order:
 
-### Changes
-- <Detailed change 1>
-- <Detailed change 2>
+1. design
+2. runtime rule
+3. changelog
+4. TODO
 
-### Summary
-<One-line summary>
-
----
-
-## Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| X.Y | YYYY-MM-DD | **[<Headline>](#version-xy)** | <Real Session ID> |
-| | | Summary: <One-line summary> | |
-```
-
-### 5.2 Design Navigator Format
-
-```markdown
----
-
-> Full history: [changelog/<doc>.changelog.md](../changelog/<doc>.changelog.md)
-```
-
-### 5.3 Non-Pair Documents (OR Compliance)
-
-If there is no pair file design/changelog:
-
-- You can use either table-in-file or link-only.
-- It is recommended to use table-in-file. When the document is still short and there are few changes
+Patch updates follow the same synchronization cycle after policy alignment.
 
 ---
 
-## 6) File Organization Patterns
+## 6) Compliance Checklist
 
-### Pattern 1: Simple (No subdirectories)
-
-```text
-./
-├── design.md
-├── changelog.md
-└── src/
-```
-
-### Pattern 2: Mixed/Complete
-
-```text
-./
-├── design/
-│   └── *.design.md
-├── changelog/
-│   ├── changelog.md
-│   └── *.changelog.md
-└── src/
-```
-
-### Decision Rule
-
-```text
-Has design/ or changelog/ directory?
-├─ YES → Pattern 2
-└─ NO  → Pattern 1
-```
+- [ ] Chain has one authoritative changelog
+- [ ] Rule-chain triad versions are equal
+- [ ] Required metadata headers are complete
+- [ ] Active metadata has no placeholders
+- [ ] Version links use canonical `#version-xy` style
+- [ ] Design/changelog pair behavior is respected
+- [ ] Updates followed required execution order
 
 ---
 
-## 7) Compliance Checklist
-
-- [ ] The document now has a traceable path of OR type.
-- [ ] Session IDs are true (not placeholder)
-- [ ] If it is a design/changelog pair, use separation correctly.
-- [ ] changelog file contains both detailed sections + summary table
-- [ ] No deletion of the original history.
-- [ ] All referral links are working.
-
----
-
-## 8) Quality Metrics
+## 7) Quality Metrics
 
 | Metric | Target |
 |--------|--------|
-| Traceable version path coverage | 100% |
-| Session ID integrity | 100% real values |
-| Pair-rule compliance | 100% when pair exists |
-| History preservation | 100% |
-| Cross-reference validity | 100% |
+| Triad alignment accuracy | 100% |
+| Metadata completeness | 100% |
+| Active placeholder session markers | 0 |
+| Canonical anchor compliance | 100% |
+| Cross-file synchronization drift | 0 unresolved |
 
 ---
 
-## 9) Related Documents
+## 8) Related Documents
 
-| Document | Purpose |
-|----------|---------|
-| [../document-changelog-control.md](../document-changelog-control.md) | Rule definition from this design |
-| [../document-design-control.md](../document-design-control.md) | Design document format constraints |
-| [../document-consistency.md](../document-consistency.md) | Cross-reference and consistency checks |
-
----
-
-## 10) Implementation Notes
-
-### 10.1 Common Pitfalls
-
-- Insert the version table in the design doc even though it already has a changelog.
-- Write a changelog with only detailed sections, without a summary table.
-- Use placeholder Session ID
-- Correct old history without adding new correction entries.
-
-### 10.2 Migration Guidance
-
-- If the original file has a table in the design doc and has a pair of changelogs → move the full history to changelog and leave the navigator link in design
-- If the original changelog only had one format (only table or detailed) → add another section to complete both sections.
+| Document | Relationship |
+|----------|--------------|
+| [../document-changelog-control.md](../document-changelog-control.md) | Runtime implementation |
+| [document-design-control.design.md](document-design-control.design.md) | Design-format contract |
+| [document-patch-control.design.md](document-patch-control.design.md) | Patch metadata alignment |
+| [todo-standards.design.md](todo-standards.design.md) | TODO governance format |
 
 ---
 

@@ -1,6 +1,8 @@
 # Changelog - Flow Diagram No Frame
 
-> **Parent Document:** [../design/flow-diagram-no-frame.design.md](../design/flow-diagram-no-frame.design.md)
+> **Parent Document:** [../flow-diagram-no-frame.md](../flow-diagram-no-frame.md)
+> **Current Version:** 1.0
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
@@ -13,6 +15,7 @@
 
 ---
 
+<a id="version-10"></a>
 ## Version 1.0: Standardization
 
 **Date:** 2026-02-01

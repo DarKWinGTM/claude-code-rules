@@ -3,372 +3,120 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-21)
-
----
-
-## 1) Goal (goal)
-
-- Create a single standard for all design documents.
-- Control the quality and consistency of design documents
-- Makes collaboration between design, changelog and TODO easy.
-- Maintain the Single Source of Truth principle.
-
----
-
-## 2) Scope
-
-### 2.1 Documents Covered
-
-- Design documents (`.design.md`)
-- Rules files created from design
-- Changelog files
-- TODO/task tracking
-
-### 2.2 Standards Defined
-
-- File naming conventions
-- File location standards
-- Document structure requirements
-- Changelog integration patterns
-- TODO tracking integration
-- Cross-reference methods
-
----
-
-## 3) Standards
-
-### 3.1 File Naming Standards
-
-| File Type | Format | Example |
-|-----------|--------|---------|
-| Design Document | `<name>.design.md` | `document-design-control.design.md` |
-| Changelog File | `<name>.changelog.md` | `document-design-control.changelog.md` |
-| Rules File | `<name>.md` | `document-design-control.md` |
-
-### 3.2 Location Standards
-
-```
-./
-├── design/
-│   ├── <name>.design.md      ← Design documents
-│   └── ...
-├── changelog/
-│   ├── changelog.md          ← Master changelog (optional)
-│   └── <name>.changelog.md   ← Specific changelogs
-├── <name>.md                 ← Rules files (from design)
-└── README.md
-```
-
-### 3.3 Design Document Structure
-
-**Required Sections:**
-
-1. **Document Control** (Section 0) - MANDATORY
-   - Parent Scope
-   - Current Version
-   - Session ID (real UUID)
-
-2. **Goal** (Section 1)
-   - Purpose statement
-
-3. **Scope** (Section 2)
-   - What is covered
-
-4. **[Other Sections]** (Sections 3+)
-   - Main content (FLEXIBLE - any structure)
-
-5. **Changelog Link** (Last line) - MANDATORY
-   - `> Full history: [<doc>.changelog.md](changelog/<doc>.changelog.md)`
-
-**CRITICAL:**
-- NO Version History table in design documents (per document-changelog-control.md v4.4)
-- Design documents contain ONLY the link to changelog
-- Content sections (Goal, Scope, etc.) are flexible and optional
-
-### 3.4 Document Control Section Format
-
-```markdown
-## 0) Document Control
-
-> **Parent Scope:** [Parent project/system]
-> **Current Version:** X.Y
-> **Session:** [UUID] (YYYY-MM-DD)
-```
-
-### 3.5 Version History (Unified) Format
-
-**CRITICAL: Follows document-changelog-control.md v4.4**
-
-**For Design Documents (Navigator format):**
-```markdown
-> Full history: [<doc>.changelog.md](changelog/<doc>.changelog.md)
-```
-
-**Key Points:**
-- Design documents contain ONLY the link to changelog
-- NO Version History table in design documents
-- NO version entries in design documents
-- This is called "Navigator" format per document-changelog-control.md
-
-**For Changelog Files (Full format):**
-```markdown
-## Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| X.Y | YYYY-MM-DD | **[Headline](#L1)** | <UUID> |
-| | | - Change 1 | |
-| | | - Change 2 | |
-| | | Summary: <One-line summary> | |
-
-> Parent Document: [<doc>.design.md](../design/<doc>.design.md)
-```
-
-**Reference:** See [document-changelog-control.md](../document-changelog-control.md) for complete rules
-
----
-
-## 4) Changelog Integration
-
-> **Based on:** [document-changelog-control.md](../document-changelog-control.md) v4.4
-
-### 4.1 Design Documents (Navigator Format)
-
-**Design documents contain ONLY the link to changelog:**
-```markdown
-> Full history: [<doc>.changelog.md](changelog/<doc>.changelog.md)
-```
-
-**Key Rules:**
-- NO Version History table in design documents
-- NO version entries in design documents
-- ONLY the link to changelog
-- All version details go in changelog file
-
-**Why?**
-- Design documents are specifications (current state)
-- Changelog files track history (all changes)
-- Prevents duplication
-- Single Source of Truth
-
-### 4.2 Full Changelog Files
-
-**When to create:**
-- Design doc updates frequently
-- Complex changes need detailed tracking
-- Design doc has > 5 versions
-
-**Format: Detailed Sections**
-- Each version = separate section
-- Full change details with bullet points
-- Link back to design document
-
-### 4.3 Linking Format
-
-```markdown
-# Design doc → Full changelog
-> Full history: [<doc>.changelog.md](changelog/<doc>.changelog.md)
-
-# Design doc → Specific version
-**[Headline](<doc>.changelog.md#L42)**
-
-# Full changelog → Design doc
-> Parent Document: [<doc>.design.md](../design/<doc>.design.md)
-```
-
----
-
-## 5) TODO/Task Integration
-
-### 5.1 TODO.md Format
-
-**Organize by status:**
-- ✅ Completed Tasks
-- 🔄 In Progress
-- 📋 Pending Tasks
-
-**Checkbox format:**
-```markdown
-- [x] Completed task
-- [ ] Pending task
-```
-
-### 5.2 Task Detail Format
-
-```markdown
-### [Category]
-- [x] **Task name** - Brief description of what was done
-- [ ] **Task name** - Description (Started: YYYY-MM-DD)
-```
-
-### 5.3 Design Document References
-
-**In TODO.md:**
-```markdown
-### [Category]
-- [ ] **Task for <design-name>.design.md** - Description
-```
-
-**In design document:**
-```markdown
-## Implementation Status
-
-**Related Tasks:** See [TODO.md](../TODO.md)
-```
-
----
-
-## 6) Cross-reference Standards
-
-### 6.1 Link Formats
-
-| Purpose | Format | Example |
-|---------|--------|---------|
-| Section link | `[file.md#section]` | `[design.md#requirements]` |
-| Line number | `[file.md#Lxx]` | `[design.md#L42]` |
-| Header link | `[file.md#<slug>]` | `[design.md#version-control]` |
-| External | `[text](url)` | `[GitHub](https://github.com/...)` |
-
-### 6.2 Cross-reference Verification
-
-**Before committing:**
-- Check all links are valid
-- Update references when files move
-- Use relative paths for internal links
-
----
-
-## 7) Examples
-
-### 7.1 Complete Design Document
-
-```markdown
-# [Document Name]
-
-## 0) Document Control
-
-> **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-20)
+> **Current Version:** 1.7
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
 
 ---
 
 ## 1) Goal
 
-[Purpose]
+Define one consistent structure for design documents that is fully compatible with UDVC-1 governance.
 
 ---
 
 ## 2) Scope
 
-[Coverage]
+Applies to:
+
+- `design/*.design.md`
+- design-to-changelog pair behavior
+- cross-reference style used by design governance docs
 
 ---
 
-## 3) Requirements
+## 3) Core Standards
 
-[Details]
+### 3.1 Naming and Location
+
+- Design documents use `<name>.design.md`
+- Design documents are stored under `design/`
+- Their authoritative changelog is under `changelog/<name>.changelog.md`
+
+### 3.2 Mandatory Header Metadata
+
+Each design document must include:
+
+- `Parent Scope`
+- `Current Version`
+- `Session` (real value)
+
+### 3.3 Navigator Rule
+
+When a paired changelog exists, design documents must:
+
+- include only a `Full history` link for version history navigation
+- not embed local version-history tables
+- not embed detailed changelog sections
+
+### 3.4 Version Alignment Rule
+
+For rule-governed chains, design version must align with:
+
+- runtime rule current version
+- runtime rule design reference version
+- changelog current version
 
 ---
 
-> Full history: [doc.changelog.md](changelog/doc.changelog.md)
-```
+## 4) Reference and Anchor Policy
 
-**NOTE:**
-- NO Version History table in design document
-- ONLY the link to changelog
-- Follows document-changelog-control.md v4.4 rules
+### 4.1 Canonical Version Anchors
 
-### 7.2 Design with Changelog
+Version-navigation examples in governance documents must use:
 
-**design/doc.design.md:**
+- `#version-xy`
+
+Line-number anchors must not be used as the primary version-navigation standard.
+
+### 4.2 Internal Link Requirements
+
+- Use resolvable relative paths
+- Keep design → changelog and changelog → design references consistent
+
+---
+
+## 5) Required Design Template
+
 ```markdown
-# [Document Name]
+# <Document Name>
 
 ## 0) Document Control
 
-> **Parent Scope:** [Project]
-> **Current Version:** 2.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-01-20)
+> **Parent Scope:** <scope>
+> **Current Version:** X.Y
+> **Session:** <real-session-id> (YYYY-MM-DD)
 
 ---
 
-[Content sections...]
+<design content>
 
 ---
 
-> Full history: [doc.changelog.md](changelog/doc.changelog.md)
+> Full history: [../changelog/<name>.changelog.md](../changelog/<name>.changelog.md)
 ```
 
-**changelog/doc.changelog.md:**
-```markdown
-# Changelog - Doc
+---
 
-> **Parent:** [doc.design.md](../design/doc.design.md)
+## 6) Quality Metrics
+
+| Metric | Target |
+|--------|--------|
+| Design metadata completeness | 100% |
+| Navigator compliance in paired docs | 100% |
+| Triad version alignment | 100% |
+| Broken design/changelog links | 0 |
+| Mixed version-anchor style in governance docs | 0 |
 
 ---
 
-## Version History
+## 7) Related Documents
 
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 2.0 | 2026-01-20 | **[Added Section 5](#L50)** | a77b77ae... |
-| | | - Added Section 5: New features | |
-| | | - Updated examples | |
-| | | Summary: Enhanced with new features | |
-| 1.0 | 2026-01-15 | **[Initial version](#L1)** | a77b77ae... |
-| | | - Initial release | |
-| | | Summary: Created design document | |
+| Document | Relationship |
+|----------|--------------|
+| [document-changelog-control.design.md](document-changelog-control.design.md) | UDVC-1 authority contract |
+| [../document-design-control.md](../document-design-control.md) | Runtime implementation |
+| [document-consistency.design.md](document-consistency.design.md) | Verification trigger alignment |
 
 ---
 
-## Version 2.0: Added Section 5
-
-**Date:** 2026-01-20
-**Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
-
-### Changes
-- Added Section 5: New features
-- Updated examples
-
-### Summary
-Enhanced with new features
-```
-
-**Key Pattern:**
-- design.md = ONLY the link (NO table)
-- changelog.md = Version History (Unified) table + detailed sections
-
----
-
-## 8) Quality Metrics (indicators)
-
-| Metric | Target | Notes |
-|--------|--------|-------|
-| Design file suffix | 100% `.design.md` | All in `./design/` |
-| Document Control section | 100% present | Version + Session |
-| Changelog link | 100% present | At design end (Navigator) |
-| NO Version History table | 100% | Design docs only have link |
-| Session ID accuracy | 100% real UUID | No placeholders |
-| Cross-reference validity | 100% working | All links verify |
-| Changelog file exists | When needed | Per document-changelog-control.md v4.4 |
-| TODO tracking | Major tasks | In TODO.md |
-
----
-
-## 9) Related Documents
-
-| Document | Relationship | Purpose |
-|----------|--------------|---------|
-| **[document-changelog-control.md](../document-changelog-control.md)** | Related Reference | Defines Version History (Unified) format and design.md <> changelog.md relationship |
-| [document-changelog-control.changelog.md](../changelog/document-changelog-control.changelog.md) | Example | Full changelog with detailed sections |
-| [document-design-control.md](../document-design-control.md) | Rules implementation | Enforces these design standards |
-| [../TODO.md](../TODO.md) | Task tracking | TODO/task tracking integration |
-
-**NOTE:** This design.spec is based on and must comply with [document-changelog-control.md](../document-changelog-control.md) v4.4
-
----
-
-> Full history: [document-design-control.changelog.md](changelog/document-design-control.changelog.md)
+> Full history: [../changelog/document-design-control.changelog.md](../changelog/document-design-control.changelog.md)

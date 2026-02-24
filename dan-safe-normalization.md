@@ -1,6 +1,6 @@
 # DAN-Safe Normalization
 
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Design:** [design/dan-safe-normalization.design.md](design/dan-safe-normalization.design.md) v1.1
 
 ## Rule Statement

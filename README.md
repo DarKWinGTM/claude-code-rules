@@ -61,6 +61,7 @@
 
 - [⚡ Quick Start](#-quick-start)
 - [📦 Installation](#-installation)
+- [🔗 Integration Guide](#-integration-guide)
 - [✨ Features](#-features)
 - [📁 Rule Files](#-rule-files)
 - [🖼️ Visual Guide](#️-visual-guide)
@@ -154,6 +155,84 @@ cp /path/to/claude-code-rules/*.md .claude/rules/
 claude --version
 cat ~/.claude/rules/anti-sycophancy.md | head -20
 ```
+
+---
+
+## 🔗 Integration Guide
+
+This section defines how `design`, `changelog`, `runtime rules`, and `TODO` should be updated together.
+
+### Document Roles
+
+| Document | Role | Update Trigger |
+|----------|------|----------------|
+| `design/*.design.md` | Target behavior/specification | Requirement or policy change |
+| `*.md` (root runtime rules) | Active runtime behavior | Approved design change requires runtime sync |
+| `changelog/*.changelog.md` | Authoritative version history | Any rule/design update with version impact |
+| `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
+
+### Recommended Update Flow
+
+```text
+Change request received
+  → Update design target state
+  → Synchronize runtime rule wording
+  → Record changelog version + summary
+  → Update TODO pending/completed/history
+  → Verify links, versions, and consistency
+```
+
+### Verification Checklist
+
+- Design file links to the correct changelog file
+- Changelog unified row maps to an existing detailed section
+- Runtime rule version/header aligns with changelog current version
+- TODO pending section contains pending-only items (`- [ ]`)
+- TODO history has a dated entry for completed milestone work
+
+### Real Examples (This Repository)
+
+#### Example 1: Deterministic Recovery Contract Synchronization (WS-1)
+
+```text
+design/recovery-contract.design.md
+  → recovery-contract.md
+  → changelog/recovery-contract.changelog.md
+  → TODO.md (history/progress)
+```
+
+**What was synchronized:**
+- Deterministic response keys were aligned across design and runtime (`decision_output`, `refusal_class`, `reason`, `what_can_be_done_now`, `how_to_proceed`)
+- Changelog recorded the runtime/design version sync event
+- TODO recorded completion in the hardening program history
+
+#### Example 2: Verification + Output-Cap Consolidation (WS-5)
+
+```text
+design/safe-file-reading.design.md + design/safe-terminal-output.design.md
+  → safe-file-reading.md + safe-terminal-output.md
+  → changelog/safe-file-reading.changelog.md + changelog/safe-terminal-output.changelog.md
+  → TODO.md (WS-5 completion)
+```
+
+**What was synchronized:**
+- Shared verification-trigger model applied across related rules
+- Deterministic output-cap wording standardized (`head -100 | head -c 5000`, risky-file variant)
+- Changelog and TODO were updated to preserve traceability
+
+#### Example 3: TODO Governance Alignment (WS-6)
+
+```text
+TODO.md pending section audit
+  → remove completed items from pending block
+  → remove duplicate pending headings
+  → add closure row in TODO history
+```
+
+**What was synchronized:**
+- Pending section kept pending-only (`- [ ]`)
+- Duplicate heading drift removed
+- Program closure logged in dated history row
 
 ---
 

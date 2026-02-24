@@ -2,9 +2,11 @@
 
 ## 0) Document Control
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
-> **Target Design:** design/design.md v1.5
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Current Version:** 1.2
+> **Status:** Completed
+> **Target Design:** [../design/design.md](../design/design.md) v1.5
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Full history:** [../changelog/legacy-rules-migration.changelog.md](../changelog/legacy-rules-migration.changelog.md)
 
 ---
 
@@ -43,9 +45,9 @@
 - [x] Update all 12 root `*.md` files.
 - [x] Add Standard Header:
   `> **Current Version:** X.X`
-  `> **Design:** [file.design.md](design/file.design.md) vX.X`
+  `> **Design:** file.design.md vX.X`
 - [x] Add Standard Footer:
-  `> Full history: [changelog/file.changelog.md](changelog/file.changelog.md)`
+  `> Full history: changelog/file.changelog.md`
 - [x] Remove any embedded version tables.
 
 ## 4. Verification
@@ -55,4 +57,4 @@
 
 ---
 
-> Full history: [changelog/legacy-rules-migration.changelog.md](changelog/legacy-rules-migration.changelog.md)
+> Full history: [../changelog/legacy-rules-migration.changelog.md](../changelog/legacy-rules-migration.changelog.md)

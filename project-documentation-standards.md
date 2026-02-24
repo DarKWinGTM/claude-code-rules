@@ -1,195 +1,112 @@
 # Project Documentation Standards
 
-> **Current Version:** 1.4
+> **Current Version:** 1.7
+> **Based on:** [project-documentation-standards.design.md](design/project-documentation-standards.design.md) v1.7
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+>
+> **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
+
+---
 
 ## Rule Statement
 
-**Core Principle: Every project must maintain standardized documentation following defined rules**
-
-This rule ensures all projects have proper documentation structure from the start, integrating document-design-control.md, document-changelog-control.md, and todo-standards.md requirements.
-
-**Design:** [project-documentation-standards.design.md](design/project-documentation-standards.design.md) v1.4
+**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, and patch documents.**
 
 ---
 
 ## Core Requirements
 
-### 1. Required Documents
+### 1) Required Document Set
 
-Every project MUST have these documents based on project needs:
-
-| Document | Required When | Purpose | Rule Reference |
+| Document | Required When | Purpose | Governing Rule |
 |----------|---------------|---------|----------------|
-| **README.md** | Every project | Project overview, quick start, installation | Standard practice |
-| **design.md** | Project has design specifications | Architecture, standards, specifications | [document-design-control.md](document-design-control.md) v1.1 |
-| **changelog.md** | Project needs version tracking | Version history, changes tracking | [document-changelog-control.md](document-changelog-control.md) v4.4 |
-| **TODO.md** | Project has tasks | Task tracking, progress management | [todo-standards.md](todo-standards.md) v2.0 |
-| **patch.md** | Monkey Patch/Migration | Transition plan, complex state changes | [document-patch-control.md](document-patch-control.md) v1.0 |
+| `README.md` | Always | Project overview and onboarding | Standard practice |
+| `design/*.design.md` | Design/specification is required | Define target behavior/contract | `document-design-control` |
+| `changelog/*.changelog.md` | Version traceability is required | Authoritative version history | `document-changelog-control` |
+| `TODO.md` | Work tracking is required | Track execution state | `todo-standards` |
+| `patches/*.patch.md` | Transition/migration work is required | Tactical transition plan | `document-patch-control` |
 
-**Required Actions:**
-- Use the decision tree (Section 2) to determine which documents are needed
-- Create documents following their respective rule formats
-- Ensure all Session IDs are real UUIDs (no placeholders)
+### 2) UDVC-1 Integration
 
-### 2. Decision Tree for Document Creation
+#### 2.1 Version Authority
 
-```
-Project starting?
-  ↓ YES
-Create README.md (overview + quick start)
+- Changelog is the single version authority per governed chain
+- Design/rule/patch metadata must align with authoritative changelog state
+
+#### 2.2 Synchronization Order
+
+For governance updates, apply in this order:
+
+1. design
+2. runtime rule
+3. changelog
+4. TODO
+
+#### 2.3 Session Integrity
+
+- Active metadata must use real session identifiers
+- Placeholder session values are not allowed in active metadata
+
+### 3) Decision Model for Document Creation
+
+```text
+Project start
   ↓
-Has design/specifications?
-  ↓ YES → Create design.md (follow document-design-control.md)
-  ↓ NO
-Needs version tracking?
-  ↓ YES → Create changelog.md (follow document-changelog-control.md)
-  ↓ NO
-Has tasks to track?
-  ↓ YES → Create TODO.md (follow todo-standards.md)
-  ↓ NO
-Need Monkey Patch or Complex Migration?
-  ↓ YES → Create *.patch.md (follow document-patch-control.md)
-  ↓ NO
-Project ready
+Create README
+  ↓
+Need design specification?
+  → YES: create design doc(s)
+  ↓
+Need version traceability?
+  → YES: create changelog doc(s)
+  ↓
+Need tracked execution items?
+  → YES: create TODO.md
+  ↓
+Need migration/transition plan?
+  → YES: create patch doc(s)
 ```
 
-### 3. Document Rule Compliance
+### 4) Cross-Document Alignment Requirements
 
-When creating documentation, follow these rules:
-
-| Document Type | Follow This Rule | Key Requirements |
-|---------------|------------------|-------------------|
-| **design.md** | document-design-control.md | `.design.md` suffix, `./design/` location, Navigator format |
-| **changelog.md** | document-changelog-control.md | Version History (Unified) table, real Session IDs |
-| **TODO.md** | todo-standards.md | Simple checkbox format, no priorities, no per-task timestamps |
-| **patch.md** | document-patch-control.md | Format `.patch.md`, 5 sections, lifecycle states |
-
-### 4. Versioning Authority (New v1.3)
-
-- **Single Source of Truth:** `changelog.md` determines the Version Number.
-- **Synchronization Rule:**
-  - Design updates MUST update Changelog.
-  - Header Version Number MUST match Changelog latest version.
-  - No updates to Design without corresponding Changelog update.
-
-### 5. Project Start Checklist
-
-**Before Starting:**
-- [ ] Determine project type (Simple vs Complex vs Design-heavy)
-- [ ] Identify required documents using decision tree
-- [ ] Plan documentation structure
-- [ ] Set up directory structure (`./design/`, `./changelog/`, `./patches/` if needed)
-
-**During Setup:**
-- [ ] Create README.md with project overview and quick start
-- [ ] If design needed: Create design.md following document-design-control.md
-- [ ] If version tracking needed: Create changelog.md following document-changelog-control.md
-- [ ] If tasks needed: Create TODO.md following todo-standards.md
-- [ ] If patch needed: Create `*.patch.md` following document-patch-control.md
-  - [ ] Extension `.patch.md`
-  - [ ] 5 mandatory sections (Context, Analysis, Plan, etc.)
-
-**Verification:**
-- [ ] All Session IDs are real UUIDs (no placeholders like `<Session ID>`, `TBD`)
-- [ ] All cross-references work (test links)
-- [ ] All documents follow their respective rule formats
-- [ ] No duplicate/unnecessary files (follow strict-file-hygiene.md)
-
-### 5. Onboarding Requirements
-
-New projects MUST acknowledge documentation standards:
-
-1. **Read Standards** - Understand project-documentation-standards.md
-2. **Know Rules** - Understand which rules apply when
-3. **Follow Format** - Follow proper document formats
+- Required document set must match project scope
+- Full-history and parent-document links must resolve
+- Active metadata across governed docs must not contain placeholder sessions
 
 ---
 
-## Examples
+## Verification Checklist
 
-### ✅ Correct: Simple Project
-
-```
-simple-project/
-├── README.md           # Project overview, quick start
-└── src/
-```
-
-**Documents:** README.md only
-
-### ✅ Correct: Standard Project
-
-```
-standard-project/
-├── README.md           # Project overview, quick start
-├── design.md           # Architecture, specifications
-├── TODO.md             # Task tracking
-└── src/
-```
-
-**Documents:** README.md + design.md + TODO.md
-
-### ✅ Correct: Complex Project
-
-```
-complex-project/
-├── README.md
-├── design/
-│   ├── design.md       # Master design
-│   ├── api.design.md   # API design
-│   └── database.design.md  # Database design
-├── changelog/
-│   ├── changelog.md    # Master changelog
-│   └── api.changelog.md    # API changelog
-├── patches/            # (Optional) Patch docs
-│   └── db-migration.patch.md
-├── TODO.md
-└── src/
-```
-
-**Documents:** README.md + multiple design.md + changelog.md + TODO.md
+- [ ] Required document set matches project scope
+- [ ] Changelog exists for each governed chain
+- [ ] Version references align across chain metadata
+- [ ] Active session metadata has no placeholders
+- [ ] Full-history links resolve
+- [ ] TODO follows simplified standard mode
 
 ---
 
 ## Quality Metrics
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Required documents presence | 100% | Checklist in Section 4 |
-| Rule compliance | 100% | Follow respective rules |
-| Session ID accuracy | 100% | Real UUIDs only, no placeholders |
-| Cross-reference validity | 100% | All links working |
-| Format consistency | 100% | Follow document-design-control.md |
+| Metric | Target |
+|--------|--------|
+| Required document coverage | 100% |
+| Version-reference correctness | 100% |
+| Active metadata session integrity | 100% |
+| Cross-link validity | 100% |
+| TODO simplification compliance | 100% |
 
 ---
 
 ## Integration
 
-This rule integrates with:
-
 | Rule | Relationship |
 |------|-------------|
-| **document-design-control.md** v1.1 | Defines design document format standards |
-| **document-changelog-control.md** v4.4 | Defines version tracking format |
-| **todo-standards.md** v2.0 | Defines TODO/task format |
-| **document-patch-control.md** v1.0 | Defines patch/migration format |
-| **strict-file-hygiene.md** v1.2 | Prevents unrequested file creation |
+| [document-changelog-control.md](document-changelog-control.md) v4.6 | Version authority contract |
+| [document-design-control.md](document-design-control.md) v1.7 | Design structure standards |
+| [todo-standards.md](todo-standards.md) v2.1 | TODO structure standards |
+| [document-patch-control.md](document-patch-control.md) v1.2 | Patch structure standards |
 
 ---
 
-## Enforcement
-
-**Mandatory for:**
-- All new projects starting from now
-- Projects requiring documentation updates
-- Projects with multiple documents
-
-**Verification:**
-- Use Project Start Checklist before beginning
-- Test all cross-references
-- Verify Session IDs are real UUIDs
-- Ensure format compliance with respective rules
-
----
-
-> Full history: [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
+> **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)

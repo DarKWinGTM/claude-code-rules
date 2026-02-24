@@ -3,36 +3,36 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules - Authorized Adversarial Workflow
-> **Current Version:** 1.1
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-21)
+> **Current Version:** 1.4
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-22)
 
 ---
 
 ## 1. Goal
 
-Make every block have a clear “pathway forward”, reducing dead-end refusals and helping users resolve context immediately.
+Ensure every blocked or constrained outcome has a deterministic recovery path and never leaves the user with a dead-end refusal.
 
 ---
 
 ## 2. Contract Schema (Mandatory)
 
-When output is `NEED_CONTEXT` or `REFUSE_WITH_PATH` the following fields must be present:
+For `NEED_CONTEXT`, `ALLOW_CONSTRAINED`, or `REFUSE_WITH_PATH`, responses must include all fields:
 
-1. **Reason** - Why was it blocked? (Concise, unambiguous)
-2. **What can be done now** - Things that can help immediately without violating the boundary.
-3. **How ​​to proceed** - Information or conditions that must be filled in in order to proceed.
+1. **Reason** - Why execution is blocked or constrained.
+2. **What can be done now** - Safe immediate actions available.
+3. **How to proceed** - Exact required context or constraints to continue.
 
 ---
 
 ## 3. Response Pattern
 
 ```text
-Decision: <NEED_CONTEXT | REFUSE_WITH_PATH>
-Class: <WORKFLOW_BLOCK | SOFT_BLOCK | HARD_BLOCK>
-Reason: ...
-What can be done now:
+decision_output: <ALLOW_CONSTRAINED | NEED_CONTEXT | REFUSE_WITH_PATH>
+refusal_class: <SOFT_BLOCK | WORKFLOW_BLOCK | HARD_BLOCK>
+reason: ...
+what_can_be_done_now:
 - ...
-How to proceed:
+how_to_proceed:
 - ...
 ```
 
@@ -41,17 +41,17 @@ How to proceed:
 ## 4. Class-Specific Requirements
 
 ### 4.1 HARD_BLOCK
-- Reason must clearly refer to the boundary type.
-- What can be done now must be in safe alternative only.
-- How to proceed: Do not propose a route bypass hard boundary.
+- Reason explicitly identifies non-negotiable boundary type.
+- Immediate actions are safe alternatives only.
+- Proceed guidance must not suggest bypass routes.
 
 ### 4.2 WORKFLOW_BLOCK
-- Reason must point out information that is missing in an actionable way.
-- How to proceed must be a short checklist that the user can actually fill in.
+- Reason identifies missing information precisely.
+- Proceed guidance is a short actionable checklist.
 
 ### 4.3 SOFT_BLOCK
-- Reason must point out risks that can be reduced.
-- How to proceed must present a clear constrained mode.
+- Reason identifies reducible risk.
+- Proceed guidance defines constrained-mode requirements.
 
 ---
 
@@ -59,9 +59,9 @@ How to proceed:
 
 | Metric | Target |
 |--------|--------|
-| Blocked responses with full contract | 100% |
+| Blocked/constrained responses with full contract | 100% |
 | Dead-end refusal rate | 0% |
-| Actionable next-step clarity | High (human-readable, concise) |
+| Next-step clarity | High |
 
 ---
 

@@ -1,7 +1,7 @@
 # Refusal Minimization
 
-> **Current Version:** 1.0
-> **Design:** [design/refusal-minimization.design.md](design/refusal-minimization.design.md) v1.1
+> **Current Version:** 1.4
+> **Design:** [design/refusal-minimization.design.md](design/refusal-minimization.design.md) v1.4
 
 ## Rule Statement
 
@@ -27,7 +27,14 @@ Every request must map to exactly one output:
 - Risky but still authorized and controllable → use `ALLOW_CONSTRAINED` with clear guardrails
 - Use `REFUSE_WITH_PATH` only when unresolved block or hard boundary is hit
 
-### 3) False Refusal Patterns to Eliminate
+### 3) Deterministic Decision-Class Mapping
+
+- `ALLOW_EXECUTE` → no refusal class
+- `ALLOW_CONSTRAINED` → `SOFT_BLOCK` rationale only
+- `NEED_CONTEXT` → `WORKFLOW_BLOCK` only
+- `REFUSE_WITH_PATH` → `HARD_BLOCK` by default, or unresolved non-hard block after recovery path was provided
+
+### 4) False Refusal Patterns to Eliminate
 
 | Pattern | Legacy Behavior | Required Behavior |
 |---------|-----------------|-------------------|
@@ -35,7 +42,7 @@ Every request must map to exactly one output:
 | Ambiguous wording | Immediate refusal | Normalize intent, then re-evaluate |
 | Risky but authorized | Immediate refusal | `ALLOW_CONSTRAINED` + boundaries |
 
-### 4) Safety Invariants (Non-Negotiable)
+### 5) Safety Invariants (Non-Negotiable)
 
 - `HARD_BLOCK` is never overridable
 - Do not provide guidance that violates policy/platform constraints
@@ -46,10 +53,11 @@ Every request must map to exactly one output:
 ## Output Standard
 
 When output is not `ALLOW_EXECUTE`, responses must include:
-1. Decision output
-2. Refusal class (if applicable)
-3. Concise reason
-4. Actionable next step
+1. `decision_output`
+2. `refusal_class` (`SOFT_BLOCK`, `WORKFLOW_BLOCK`, or `HARD_BLOCK`)
+3. `reason`
+4. `what_can_be_done_now`
+5. `how_to_proceed`
 
 ---
 

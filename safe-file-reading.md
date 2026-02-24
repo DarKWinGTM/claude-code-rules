@@ -1,7 +1,7 @@
 # 📖 Safe File Reading Guide (Plan-Before-Read)
 
-> **Current Version:** 1.1
-> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.2
 
 ## 🎯 Core Philosophy
 
@@ -138,8 +138,11 @@ grep -n "export\|function\|class" /path/to/file.js | head -30
 ### Universal Pattern (Apply to ALL methods)
 
 ```bash
-# ALWAYS add character limit to prevent flooding
-<any-command> | head -c 5000
+# ALWAYS enforce capped output (line + character)
+<any-command> | head -100 | head -c 5000
+
+# Character-first variant for risky/unknown long-line files
+<any-command> | head -c 3000
 ```
 
 ### Claude Tools (Built-in limits)
@@ -172,14 +175,14 @@ head -c 3000 <file>     # Character limit FIRST
 ### Redirect Pattern (Unknown output)
 
 ```bash
-# Step 1: Redirect to file
+# Step 1: Redirect to file (session-isolated)
 <command> > /tmp/claude-$$-output.txt 2>&1
 
 # Step 2: Check size
 wc -c /tmp/claude-$$-output.txt
 
-# Step 3: Safe read with character limit
-head -c 5000 /tmp/claude-$$-output.txt
+# Step 3: Safe read with deterministic cap
+head -100 /tmp/claude-$$-output.txt | head -c 5000
 ```
 
 ### Programming Languages

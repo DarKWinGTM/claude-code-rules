@@ -3,27 +3,27 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules - Authorized Adversarial Workflow
-> **Current Version:** 1.1
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-21)
+> **Current Version:** 1.4
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-22)
 
 ---
 
 ## 1. Goal
 
-Reduce false refusals in authorized pentest workflows while maintaining hard safety boundaries that are non-negotiable.
+Reduce false refusals in authorized security workflows while preserving hard safety boundaries that are never overridable.
 
 ---
 
 ## 2. Scope
 
 ### In Scope
-- Deciding on responses to pentest-related requests with clear task-oriented intent.
-- Changing from “refuse first” to “classify + recover first” for non-hard block cases.
-- Enforcement of standard decision outputs
+- Decision behavior for authorized adversarial and defensive security requests.
+- Preference for recoverable outcomes (`NEED_CONTEXT`, `ALLOW_CONSTRAINED`) over premature refusal.
+- Deterministic mapping from request condition to decision output.
 
 ### Out of Scope
-- Override hard safety/platform constraints
-- Authorization of work without evidence authorization
+- Any override of `HARD_BLOCK` boundaries.
+- Execution without minimum authorization/scope context.
 
 ---
 
@@ -33,37 +33,43 @@ Reduce false refusals in authorized pentest workflows while maintaining hard saf
 
 ---
 
-## 4. Decision Standard
+## 4. Decision Output Standard
 
-Every case must map to one output:
-
+Every request must map to exactly one output:
 - `ALLOW_EXECUTE`
 - `ALLOW_CONSTRAINED`
 - `NEED_CONTEXT`
 - `REFUSE_WITH_PATH`
 
-Main guidelines:
-- If you don't hit the hard boundary and have a chance to proceed → avoid closed-ended refuse.
-- If the information is incomplete → use `NEED_CONTEXT` instead of the exact refusal.
-- If taking a risk but still within the framework → use `ALLOW_CONSTRAINED`
+Required behavior:
+- Missing workflow context -> `NEED_CONTEXT` with explicit required inputs.
+- Risky but authorized and controllable -> `ALLOW_CONSTRAINED` with explicit guardrails.
+- Hard-boundary violation or unresolved block after recovery path -> `REFUSE_WITH_PATH`.
+
+For non-`ALLOW_EXECUTE` outputs, include explicit schema fields:
+1. `decision_output`
+2. `refusal_class`
+3. `reason`
+4. `what_can_be_done_now`
+5. `how_to_proceed`
 
 ---
 
-## 5. False Refusal Patterns to Eliminate
+## 5. False-Refusal Patterns to Eliminate
 
 | Pattern | Legacy Behavior | Required Behavior |
 |---------|-----------------|-------------------|
-| Missing scope details | Refuse immediately | `NEED_CONTEXT` + specify information to be requested |
-| Ambiguous phrasing | Refuse immediately | Normalize intent and reevaluate |
-| Risky but authorized | Refuse immediately | `ALLOW_CONSTRAINED` with guardrails |
+| Missing scope details | Immediate refusal | `NEED_CONTEXT` + actionable checklist |
+| Ambiguous wording | Immediate refusal | Normalize intent, then re-evaluate |
+| Risky but authorized | Immediate refusal | `ALLOW_CONSTRAINED` + bounded mode |
 
 ---
 
 ## 6. Safety Invariants
 
-- `HARD_BLOCK` prohibits override.
-- Do not give contrary advice. policy/platform constraints
-- When blocking, always provide recovery path (via recovery-contract).
+- `HARD_BLOCK` is non-overridable.
+- Do not provide guidance that violates policy or platform boundaries.
+- Any blocked path must provide recovery guidance (via `recovery-contract`).
 
 ---
 
@@ -71,9 +77,9 @@ Main guidelines:
 
 | Metric | Target |
 |--------|--------|
-| False Refusal Rate (authorized context) | Decrease trend, no hard-boundary regression |
-| Hard Boundary Integrity | 100% preserved |
-| Recovery Path Coverage on blocked/non-exec | 100% |
+| False refusal rate in authorized context | Decreasing trend |
+| Hard-boundary integrity | 100% |
+| Recovery-path coverage on blocked outcomes | 100% |
 
 ---
 

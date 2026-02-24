@@ -2,10 +2,12 @@
 
 ## 0) Document Control
 
+> **Current Version:** 1.0
 > **Status:** Completed
-> **Target Design:** design/document-consistency.design.md v1.0
-> **Target Rule:** document-consistency.md
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7
+> **Target Design:** [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.2
+> **Target Rule:** [../document-consistency.md](../document-consistency.md)
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Full history:** [../changelog/consistency-rule-enhancement.changelog.md](../changelog/consistency-rule-enhancement.changelog.md)
 
 ---
 

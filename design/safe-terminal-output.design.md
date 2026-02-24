@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
@@ -234,7 +234,7 @@ rm -f /tmp/claude-*-*.txt /tmp/claude-*-*.log /tmp/claude-*-*.json
 ```text
 UOLF - UNIVERSAL OUTPUT LIMIT FRAMEWORK
 
-Every output → ≤ 5000 chars
+Every output → ≤ 5000 chars with deterministic default `head -100 | head -c 5000`
 
 CONSTANTS
   MAX_OUTPUT_CHARS = 5000 (hard limit)

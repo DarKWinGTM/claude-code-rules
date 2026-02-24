@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
+> **Current Version:** 1.2
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
 
 ---
 
@@ -55,6 +55,17 @@ Create a Consistency Framework that:
 | Symbols | `getUserById` | Grep |
 | Commands | `npm run build` | Test execution |
 | Config | `DATABASE_URL` | Read .env |
+
+### 2.3 Shared Verification Trigger Model (WS-5)
+
+Apply verification before finalizing references or consistency claims when triggers are present:
+
+| Trigger | Typical Signal | Required Action |
+|---------|----------------|-----------------|
+| Concrete reference | File path, symbol, command, config key/value | Verify existence/validity with tools before asserting |
+| Cross-file consistency claim | "fully synchronized", "all references updated", "no drift" | Verify all impacted files/sections before confirming |
+| Rename/move/update impact | Path or identifier changed in one place | Trace and update dependent references deterministically |
+| Ambiguous or unresolved reference | Missing file/symbol or uncertain mapping | Mark status explicitly and avoid unstated assumptions |
 
 ---
 

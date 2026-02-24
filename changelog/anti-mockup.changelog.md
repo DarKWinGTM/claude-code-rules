@@ -1,6 +1,8 @@
 # Changelog - Anti Mockup
 
-> **Parent Document:** [../design/anti-mockup.design.md](../design/anti-mockup.design.md)
+> **Parent Document:** [../anti-mockup.md](../anti-mockup.md)
+> **Current Version:** 1.0
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
@@ -13,6 +15,7 @@
 
 ---
 
+<a id="version-10"></a>
 ## Version 1.0: Standardization
 
 **Date:** 2026-02-01

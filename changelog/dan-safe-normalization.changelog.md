@@ -6,6 +6,7 @@
 
 ---
 
+<a id="version-10"></a>
 ## Version 1.0: Initial DAN-Style Intent Normalization Design
 
 **Date:** 2026-02-21
@@ -23,6 +24,7 @@ Established normalization-first design that evaluates true bounded intent withou
 
 ---
 
+<a id="version-11"></a>
 ## Version 1.1: Fixed integration links for design-only phase
 
 **Date:** 2026-02-21

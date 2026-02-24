@@ -1,7 +1,7 @@
 # Refusal Classification
 
-> **Current Version:** 1.0
-> **Design:** [design/refusal-classification.design.md](design/refusal-classification.design.md) v1.1
+> **Current Version:** 1.3
+> **Design:** [design/refusal-classification.design.md](design/refusal-classification.design.md) v1.3
 
 ## Rule Statement
 
@@ -28,7 +28,7 @@ All blocked or constrained outcomes must be traceable to a clear refusal class.
 | `ALLOW_EXECUTE` | N/A | Proceed in confirmed scope |
 | `ALLOW_CONSTRAINED` | `SOFT_BLOCK` rationale | Proceed with explicit guardrails |
 | `NEED_CONTEXT` | `WORKFLOW_BLOCK` | Require specific missing context |
-| `REFUSE_WITH_PATH` | `HARD_BLOCK` (or unresolved block) | Refuse with safe alternative path |
+| `REFUSE_WITH_PATH` | `HARD_BLOCK` (default) or unresolved non-hard block | Refuse with safe alternative path |
 
 ---
 
@@ -54,6 +54,7 @@ All blocked or constrained outcomes must be traceable to a clear refusal class.
 
 - User authority resolves `SOFT_BLOCK` and `WORKFLOW_BLOCK`
 - User authority does not override `HARD_BLOCK`
+- If recovery requirements are not satisfied, response may escalate to `REFUSE_WITH_PATH` with unresolved-block rationale
 
 ---
 
@@ -63,7 +64,8 @@ For non-`ALLOW_EXECUTE` responses, include at minimum:
 1. `decision_output`
 2. `refusal_class` (if applicable)
 3. `reason`
-4. `next_step`
+4. `what_can_be_done_now`
+5. `how_to_proceed`
 
 ---
 

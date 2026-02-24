@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
@@ -71,6 +71,22 @@ Create a Verification Framework that:
 ❌ Guessing configuration values
 ❌ Fabricating error messages or outputs
 ```
+
+### 2.3 Shared Verification Trigger Model (WS-5)
+
+Treat claims as verification-required when any trigger appears:
+
+| Trigger | Typical Signal | Required Action |
+|---------|----------------|-----------------|
+| Specific technical claim | API endpoint, parameter, version, command flag, config syntax | Verify with authoritative source before stating as fact |
+| Project-specific reference | File path, symbol, environment variable, config key | Verify with project tools (`Read`, `Glob`, `Grep`, `ls`) |
+| Cross-file impact claim | "updated all references", "fully synchronized", "no drift" | Verify affected artifacts before claiming completion |
+| Uncertainty detected | Confidence is incomplete or source may be stale | Mark uncertainty explicitly and verify before final response |
+
+Verification status labels (when reporting findings):
+- ✅ **Verified**
+- ⚠️ **Unverified**
+- ❌ **Not Found**
 
 ---
 

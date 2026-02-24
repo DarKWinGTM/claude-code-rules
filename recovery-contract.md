@@ -1,21 +1,21 @@
 # Recovery Contract
 
-> **Current Version:** 1.0
-> **Design:** [design/recovery-contract.design.md](design/recovery-contract.design.md) v1.1
+> **Current Version:** 1.4
+> **Design:** [design/recovery-contract.design.md](design/recovery-contract.design.md) v1.4
 
 ## Rule Statement
 
 **Core Principle: No dead-end refusals.**
 
-When execution is blocked or paused, the response must always provide a clear path forward.
+When output is constrained, blocked, or refused, the response must always provide a clear path forward.
 
 ---
 
 ## Mandatory Contract Fields
 
-For `NEED_CONTEXT` or `REFUSE_WITH_PATH`, include all fields below:
+For `NEED_CONTEXT`, `ALLOW_CONSTRAINED`, or `REFUSE_WITH_PATH`, include all fields below:
 
-1. **Reason** - Why the request is blocked
+1. **Reason** - Why the request is constrained, blocked, or refused
 2. **What can be done now** - Safe/helpful actions available immediately
 3. **How to proceed** - Exact context/constraints needed to continue
 
@@ -24,12 +24,12 @@ For `NEED_CONTEXT` or `REFUSE_WITH_PATH`, include all fields below:
 ## Response Pattern
 
 ```text
-Decision: <NEED_CONTEXT | REFUSE_WITH_PATH>
-Class: <WORKFLOW_BLOCK | SOFT_BLOCK | HARD_BLOCK>
-Reason: ...
-What can be done now:
+decision_output: <ALLOW_CONSTRAINED | NEED_CONTEXT | REFUSE_WITH_PATH>
+refusal_class: <SOFT_BLOCK | WORKFLOW_BLOCK | HARD_BLOCK>
+reason: ...
+what_can_be_done_now:
 - ...
-How to proceed:
+how_to_proceed:
 - ...
 ```
 
@@ -64,7 +64,7 @@ How to proceed:
 
 | Metric | Target |
 |--------|--------|
-| Blocked responses with full contract fields | 100% |
+| Constrained/blocked/refused responses with full contract fields | 100% |
 | Dead-end refusal rate | 0% |
 | Next-step clarity | High |
 

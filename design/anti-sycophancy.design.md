@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
 
 ---
@@ -68,6 +68,22 @@ Create a Correction Framework that:
 1. Direct Correction - State what is incorrect
 2. Evidence Presentation - Show sources
 3. Alternative Solutions - Offer correct approaches
+
+### 2.4 Shared Verification Trigger Model (WS-5)
+
+Before agreeing with or endorsing technical claims, apply these triggers:
+
+| Trigger | Typical Signal | Required Action |
+|---------|----------------|-----------------|
+| Specific technical assertion | Endpoint, version, syntax, command behavior, security claim | Verify with authoritative source or project evidence first |
+| Project-specific detail | File path, symbol, config key/value, runtime status | Verify with project tools (`Read`, `Glob`, `Grep`, `ls`) |
+| Completion/synchronization claim | "done", "fixed", "all updated", "fully synced" | Verify impacted artifacts before confirmation |
+| Incomplete confidence | Ambiguous source, conflicting evidence, stale memory | State uncertainty and verify before agreement |
+
+Verification status labels (when reporting findings):
+- ✅ **Verified**
+- ⚠️ **Unverified**
+- ❌ **Not Found**
 
 ---
 

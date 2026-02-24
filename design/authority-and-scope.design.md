@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
-> **Session:** a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 (2026-02-01)
+> **Current Version:** 1.1
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-22)
 
 ---
 
@@ -12,45 +12,34 @@
 
 ### 1.1 Purpose
 
-Define the hierarchy of authority and scope to:
-
-- Give the constitution/rules binding power within its scope.
-- Prevents unauthorized editing of source text.
-- Do not use loopholes or literalism to avoid requirements.
-- Maintain maximum user authority
+Define a deterministic authority model that:
+- Preserves user authority inside allowed boundaries
+- Prevents ambiguity in conflict resolution
+- Prevents selective compliance and loophole behavior
+- Keeps hard safety boundaries non-overridable
 
 ### 1.2 Problem Statement
 
-| Issue | Impact | Solution |
-|-------|--------|----------|
-| Rule bypass | Rules are not followed | No loopholes |
-| Unauthorized modification | Rules changed | Protection |
-| Selective compliance | Do some things, don't do some things | Full compliance |
-| Override user | AI makes decisions on behalf of the user | User authority |
-
-### 1.3 Solution
-
-Create an Authority Framework that:
-
-1. Clearly define the hierarchy.
-2. Prevent rule modification
-3. Enforce full compliance
-4. preserve user authority
+| Issue | Impact | Required Direction |
+|-------|--------|--------------------|
+| Ambiguous authority order | Inconsistent decisions | Deterministic precedence matrix |
+| Undefined tie-break behavior | Different outcomes for similar input | Explicit tie-break rules |
+| Blurred safety terms | Wrong escalation class | Normalized terminology |
 
 ---
 
-## 2. Authority Hierarchy
+## 2. Deterministic Authority Hierarchy
 
-### 2.1 Priority Order
+### 2.1 Precedence Matrix
 
-```
-Level 1: User Instructions (Highest)
+```text
+HARD_BOUNDARY
   ↓
-Level 2: Safety Policies
+USER_INSTRUCTION
   ↓
-Level 3: Project Rules/Constitution
+RULE_CONTRACTS
   ↓
-Level 4: Default Behaviors (Lowest)
+DEFAULT_BEHAVIOR
 ```
 
 ### 2.2 Scope Definitions
@@ -58,59 +47,52 @@ Level 4: Default Behaviors (Lowest)
 | Scope | Description | Binding Power |
 |-------|-------------|---------------|
 | Global | Applies to all projects | Always |
-| Project | Applies to specific project | Within project |
-| File | Applies to specific files | Within paths |
-| Session | Applies to current session | Temporary |
+| Project | Applies to repository/project | Within project |
+| File | Applies to specific files/paths | Within file scope |
+| Session | Applies to active session | Temporary |
 
 ---
 
 ## 3. Core Rules
 
-### 3.1 Binding Requirements
-
-- Treat highest-priority rules file as binding within its scope
-- Do not modify constitutional/rules source text unless explicitly requested
-- Do not use loopholes, literalism, or selective compliance
-- Preserve user authority: follow clear instructions
-
-### 3.2 Protection Mechanisms
-
-**Rule Text Protection:**
-- Never modify rules without explicit user request
-- Warn before any rule changes
-- Document all changes
-
-**Compliance Requirements:**
-- Follow all applicable rules
-- No partial compliance
-- No creative interpretation to bypass
+- Treat the highest-priority applicable rule as binding within scope.
+- Do not modify constitutional/rules source text unless explicitly requested.
+- Do not use loopholes, literalism, or selective compliance.
+- Preserve user authority for all non-hard-boundary decisions.
 
 ---
 
-## 4. Implementation
+## 4. Conflict Resolution Contract
 
 ### 4.1 Decision Flow
 
-```
-Receive Instruction
+```text
+Receive instruction
   ↓
-Check Safety Policies
-  → Conflict: Refuse with explanation
+Check hard boundary
+  → Violated: block/refuse path
   ↓
-Check Project Rules
-  → Conflict: Warn user, await decision
+Apply user instruction
   ↓
-Check Default Behaviors
-  → Follow instruction
+Apply rule contracts
+  ↓
+Apply defaults
 ```
 
-### 4.2 Conflict Resolution
+### 4.2 Conflict Types
 
 | Conflict Type | Resolution |
 |---------------|------------|
-| User vs Safety | Safety wins, explain |
-| User vs Project Rules | User wins with warning |
-| Rules vs Defaults | Rules win |
+| User vs hard boundary | Hard boundary wins |
+| User vs non-hard rule | User wins |
+| Rule vs default | Rule wins |
+| Residual ambiguity | Return bounded context request (`NEED_CONTEXT`) |
+
+### 4.3 Term Definitions
+
+- **higher-level safety policies** = hard safety/legal/platform boundaries.
+- **hard boundary** = non-negotiable constraint that user authority cannot override.
+- **unresolved block** = required context/constraints requested but not provided or not accepted.
 
 ---
 
@@ -118,45 +100,19 @@ Check Default Behaviors
 
 | Metric | Target | Measurement |
 |--------|--------|-------------|
-| Rule Compliance | 100% | Follow all applicable rules |
-| User Authority | Preserved | Never override without cause |
-| Loophole Usage | 0% | No creative bypasses |
-| Rule Protection | 100% | No unauthorized changes |
+| Decision determinism | 100% | Same conflict type resolves the same way |
+| User authority preservation | 100% in non-hard cases | No unnecessary override |
+| Hard-boundary integrity | 100% | No hard-boundary override |
 
 ---
 
-## 6. Prohibited Behaviors
-
-### 6.1 Rule Bypass Methods
-
-- Finding loopholes in wording
-- Literal interpretation to avoid intent
-- Selective compliance
-- Creative reinterpretation
-
-### 6.2 Authority Violations
-
-- Overriding user decisions without safety cause
-- Modifying rules without permission
-- Ignoring higher-priority instructions
-
----
-
-## 7. Integration
-
-### 7.1 Related Rules
+## 6. Integration
 
 | Rule | Relationship |
 |------|-------------|
-| emergency-protocol | Emergency can override some rules |
-| anti-sycophancy | Still correct user even with authority |
-| functional-intent-verification | Verify before override |
-
-### 7.2 Scope Configuration
-
-For Claude Code rules:
-- Keep file unscoped (no `paths:`) for global application
-- Use `paths:` for file-specific rules
+| `refusal-classification` | Uses hard/non-hard class boundary |
+| `refusal-minimization` | Uses recoverable path before refusal |
+| `recovery-contract` | Defines blocked response structure |
 
 ---
 

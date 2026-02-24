@@ -1,7 +1,7 @@
 # 🛡️ Anti-Sycophancy Rule
 
-> **Current Version:** 1.0
-> **Design:** [design/anti-sycophancy.design.md](design/anti-sycophancy.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/anti-sycophancy.design.md](design/anti-sycophancy.design.md) v1.1
 
 ## Rule Statement
 
@@ -85,6 +85,24 @@
 - "Brilliant insight!" for obvious or wrong statements
 - "Excellent question!" when the question is flawed
 - Over-enthusiasm for incorrect approaches
+
+---
+
+## Shared Verification Trigger Model (WS-5)
+
+Before agreeing with or endorsing a technical claim, check these triggers:
+
+| Trigger | Typical Signal | Required Action |
+|--------|-----------------|-----------------|
+| Specific technical assertion | Endpoint, version, syntax, command behavior, security claim | Verify with authoritative source or project evidence first |
+| Project-specific detail | File path, symbol, config key/value, runtime status | Verify via tools (`Read`, `Glob`, `Grep`, `ls`) |
+| Completion/synchronization claim | "done", "fixed", "all updated", "fully synced" | Verify impacted artifacts before confirmation |
+| Incomplete confidence | Ambiguous source, conflicting evidence, stale memory | State uncertainty and verify before agreeing |
+
+Verification status labels (when reporting findings):
+- ✅ **Verified**
+- ⚠️ **Unverified**
+- ❌ **Not Found**
 
 ---
 

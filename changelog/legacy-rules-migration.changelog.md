@@ -1,6 +1,8 @@
 # Changelog - Legacy Rules Migration
 
-> **Parent Document:** [patches/legacy-rules-migration.patch.md](../patches/legacy-rules-migration.patch.md)
+> **Parent Document:** [../patches/legacy-rules-migration.patch.md](../patches/legacy-rules-migration.patch.md)
+> **Current Version:** 1.2
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
@@ -19,6 +21,7 @@
 
 ---
 
+<a id="version-11"></a>
 ## Version 1.1: Completion of Migration
 
 **Date:** 2026-02-01
@@ -36,6 +39,7 @@ Completed migration of all 12 legacy rules to standard template
 
 ---
 
+<a id="version-10"></a>
 ## Version 1.0: Initial Plan
 
 **Date:** 2026-02-01
@@ -49,6 +53,7 @@ Completed migration of all 12 legacy rules to standard template
 ### Summary
 Plan to migrate 12 legacy rules to standard template
 
+<a id="version-12"></a>
 ## Version 1.2: Fixed Navigator Format Compliance
 
 **Date:** 2026-02-01

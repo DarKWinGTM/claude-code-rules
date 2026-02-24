@@ -1,6 +1,8 @@
 # Changelog - Strict File Hygiene
 
-> **Parent Document:** [../design/strict-file-hygiene.design.md](../design/strict-file-hygiene.design.md)
+> **Parent Document:** [../strict-file-hygiene.md](../strict-file-hygiene.md)
+> **Current Version:** 1.0
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ---
 
@@ -13,6 +15,7 @@
 
 ---
 
+<a id="version-10"></a>
 ## Version 1.0: Standardization
 
 **Date:** 2026-02-01
