@@ -345,15 +345,15 @@ TODO.md pending section audit
 
 ### 🧪 New Runtime Rules (Activated from Design)
 
-> **These rules are now materialized as root runtime files and linked to their design/changelog artifacts.**
+> **These rules are now materialized as root runtime files, linked to design/changelog artifacts, and scoped to clear responsibilities.**
 
-| New Runtime Rule | Current State |
-|:-----------------|:--------------|
-| `refusal-minimization.md` | Active runtime + design/changelog linked |
-| `refusal-classification.md` | Active runtime + design/changelog linked |
-| `recovery-contract.md` | Active runtime + design/changelog linked |
-| `dan-safe-normalization.md` | Active runtime + design/changelog linked |
-| `unified-version-control-system.md` | Active runtime + design/changelog linked |
+| Rule | Purpose | Key Benefit |
+|:-----|:--------|:------------|
+| `refusal-minimization.md` | Minimize false refusals in authorized workflows by preferring constrained/context-completion paths. | Fewer unnecessary refusals with hard boundaries preserved |
+| `refusal-classification.md` | Classify blocked outcomes deterministically as `HARD_BLOCK`, `SOFT_BLOCK`, or `WORKFLOW_BLOCK`. | Clear and consistent refusal decisions |
+| `recovery-contract.md` | Require non-dead-end blocked responses with `reason`, `what_can_be_done_now`, and `how_to_proceed`. | Actionable next steps in every constrained/refused path |
+| `dan-safe-normalization.md` | Normalize DAN/jailbreak prompt wrappers into bounded intent before policy evaluation. | Lower prompt-form bias with safer intent evaluation |
+| `unified-version-control-system.md` | Enforce one UDVC-1 version-governance mechanism across design/rule/changelog/TODO/patch chains. | Deterministic version synchronization and zero parallel governance drift |
 
 **📊 Framework Summary: 23 active runtime rules**
 
