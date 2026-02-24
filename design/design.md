@@ -3,8 +3,8 @@
 ## Master Design Document
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.3
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-22)
+> **Current Version:** 2.4
+> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,14 +13,15 @@
 
 ### I.1 Version Information
 
-**Current Version:** 2.3
-**Last Updated:** 2026-02-22
+**Current Version:** 2.4
+**Last Updated:** 2026-02-23
 **Status:** Active
 
 ### I.2 Change Summary
 
 | Version | Date | Summary | Session ID |
 |---------|------|---------|------------|
+| 2.4 | 2026-02-23 | **Adopted UDVC-1 baseline in design layer** - Synchronized governance-design contracts for changelog control, design control, TODO standards, patch control, and project documentation standards | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 2.3 | 2026-02-22 | **Added consolidated best-practices section (P2 closure)** - Introduced unified operational best practices to reduce guidance fragmentation and standardized cross-document execution behavior | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 2.2 | 2026-02-22 | **Completed WS-1 + WS-4 runtime/design/changelog/TODO synchronization batch** - Harmonized deterministic precedence, policy coherence, and governance structure across active runtime rules and master docs | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | 2.1 | 2026-02-22 | **Synchronized metadata and fixed runtime/design version drift** - Raised master design header/session baseline to 2.1 for the active synchronization phase | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -103,10 +104,10 @@ Claude Code Rules System
   │
   ├─ Quality Rules (Improve Output)
   │   ├─ document-consistency
-  │   ├─ document-changelog-control (v4.4)
-  │   ├─ document-design-control (v1.6)
-  │   ├─ document-patch-control (v1.0)
-  │   ├─ todo-standards (v2.0)
+  │   ├─ document-changelog-control (v4.6)
+  │   ├─ document-design-control (v1.7)
+  │   ├─ document-patch-control (v1.2)
+  │   ├─ todo-standards (v2.1)
   │   ├─ project-documentation-standards
   │   ├─ anti-mockup
   │   ├─ no-variable-guessing
@@ -189,22 +190,22 @@ Risk/constraint evaluation
 | 2 | anti-sycophancy.md | anti-sycophancy.design.md | Truth over pleasing |
 | 3 | authority-and-scope.md | authority-and-scope.design.md | User authority |
 | 4 | dan-safe-normalization.md | dan-safe-normalization.design.md | Normalize DAN-style prompts into authorized bounded tasks |
-| 5 | document-consistency.md | document-consistency.design.md | Cross-reference validation |
-| 6 | document-changelog-control.md | document-changelog-control.design.md v4.4 | Version tracking standard |
-| 7 | document-design-control.md | document-design-control.design.md v1.6 | Design document standards |
-| 8 | document-patch-control.md | document-patch-control.design.md v1.0 | Tactical implementation plans |
+| 5 | document-consistency.md | document-consistency.design.md v1.2 | Cross-reference validation |
+| 6 | document-changelog-control.md | document-changelog-control.design.md v4.6 | Version tracking standard |
+| 7 | document-design-control.md | document-design-control.design.md v1.7 | Design document standards |
+| 8 | document-patch-control.md | document-patch-control.design.md v1.2 | Tactical implementation plans |
 | 9 | emergency-protocol.md | emergency-protocol.design.md | Emergency response |
 | 10 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md | No box diagrams |
 | 11 | functional-intent-verification.md | functional-intent-verification.design.md | Verify before destructive |
 | 12 | no-variable-guessing.md | no-variable-guessing.design.md | Read before reference |
-| 13 | project-documentation-standards.md | project-documentation-standards.design.md | Project documentation standards |
+| 13 | project-documentation-standards.md | project-documentation-standards.design.md v1.7 | Project documentation standards |
 | 14 | recovery-contract.md | recovery-contract.design.md | Standard recovery contract for blocked decisions |
 | 15 | refusal-classification.md | refusal-classification.design.md | HARD/SOFT/WORKFLOW refusal taxonomy |
 | 16 | refusal-minimization.md | refusal-minimization.design.md | Reduce false refusals while preserving hard boundaries |
 | 17 | safe-file-reading.md | safe-file-reading.design.md | UOLF for file reading |
 | 18 | safe-terminal-output.md | safe-terminal-output.design.md | UOLF for terminal output |
 | 19 | strict-file-hygiene.md | strict-file-hygiene.design.md | Prevent non-functional files |
-| 20 | todo-standards.md | todo-standards.design.md v2.0 | Simple TODO lists |
+| 20 | todo-standards.md | todo-standards.design.md v2.1 | Simple TODO lists |
 | 21 | zero-hallucination.md | zero-hallucination.design.md | Verified information only |
 
 ### IV.2 Reserved for Future Rules
@@ -373,6 +374,22 @@ You are a code reviewer...
 # Changelog - [Rule Name]
 
 > **Parent Document:** [file.design.md](../design/file.design.md)
+> **Current Version:** X.Y
+> **Session:** <Real Session ID>
+
+---
+
+## Version X.Y: [Headline]
+
+**Date:** YYYY-MM-DD
+**Session:** <Real Session ID>
+
+### Changes
+- [Detailed change 1]
+- [Detailed change 2]
+
+### Summary
+[One-line summary]
 
 ---
 
@@ -380,10 +397,8 @@ You are a code reviewer...
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| X.Y | YYYY-MM-DD | **[Headline](#Lx)** | [UUID] |
-| | | Summary: ... | |
-
-[Detailed Version Sections...]
+| X.Y | YYYY-MM-DD | **[Headline](#version-xy)** | <Real Session ID> |
+| | | Summary: [One-line summary] | |
 ```
 
 ### VI.4 Header Requirements (MANDATORY)
@@ -391,7 +406,7 @@ You are a code reviewer...
 | Element | Required | Format |
 |---------|----------|--------|
 | **Current Version** | ✅ Yes | `> **Current Version:** X.X` |
-| **Design Link** | Optional | `**Design:** [file.design.md](design/file.design.md) vX.X` |
+| **Design Link** | Required | `**Design:** [file.design.md](design/file.design.md) vX.Y` |
 
 ### VI.5 Content Sections
 
@@ -428,7 +443,16 @@ You are a code reviewer...
    - changelog/rule-name.changelog.md = Full history with detailed sections
    - changelog/changelog.md = Master changelog (for entire project)
 
-### VI.8 Examples
+### VI.8 Execution Order Contract
+
+For governed documentation synchronization, apply updates in this order:
+
+1. design
+2. runtime rule
+3. changelog
+4. TODO
+
+### VI.9 Examples
 
 **✅ Correct Rules File:**
 
@@ -525,14 +549,12 @@ touch changelog/[rule-name].changelog.md
 ```markdown
 # [Rule Name]
 
-> **Current Version:** 1.0
-> **Session:** [UUID] (YYYY-MM-DD)
+> **Current Version:** X.Y
+> **Design:** [rule-name.design.md](design/rule-name.design.md) vX.Y
 
 ## Rule Statement
 
 **Core Principle:** [One-line principle]
-
-**Design:** [rule-name.design.md](design/rule-name.design.md) v1.0
 
 This rule ensures...
 
@@ -584,6 +606,7 @@ Related Rules:
 - [ ] Create `[rule-name].md` following standard template
 - [ ] Create `[rule-name].design.md` with design details
 - [ ] Create `changelog/[rule-name].changelog.md` for version tracking
+- [ ] Keep rule/design/changelog versions aligned
 - [ ] Add to master design (Section IV: Sub-Rule Index)
 - [ ] Update rule hierarchy if needed
 - [ ] Define quality metrics
