@@ -3,126 +3,182 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.6
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
+> **Current Version:** 4.7
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic documentation-version contract (UDVC-1) across rule, design, changelog, TODO, and patch layers.
+Define one deterministic documentation-version contract (UDVC-1) across runtime rules, design documents, changelog files, TODO trackers, and patch artifacts.
 
 ---
 
-## 2) UDVC-1 (Unified Documentation Version Contract)
+## 2) Scope
 
-### 2.1 Single Authority Per Document Chain
+Applies to governed documentation artifacts in this repository:
 
-- Each governed document chain has one authoritative changelog file.
-- The authoritative changelog controls latest version state.
-- Runtime and design documents reference this authority via `Full history` links.
-
-### 2.2 Triad Alignment (Rule Chains)
-
-For rule-governed chains:
-
-- `Rule Current Version`
-- `Rule referenced Design version`
-- `Design Current Version`
-- `Changelog Current Version`
-
-must be equal.
-
-### 2.3 Session Integrity
-
-- Active metadata must use a real session identifier from the active environment.
-- Placeholder values are not allowed in active metadata fields.
-- `LEGACY-*` markers are allowed only for historical entries where original session data is unavailable.
+- root runtime rules (`*.md`, excluding overview-only/support documents)
+- `design/*.design.md`
+- `changelog/*.changelog.md`
+- `TODO.md`
+- `patches/*.patch.md`
 
 ---
 
-## 3) Mandatory Metadata Contract
+## 3) UDVC-1 Core Contract
 
-### 3.1 Rule / Design / Patch Documents
+### 3.1 Single Authority Per Chain
 
-Required header fields:
+- Each governed chain has one authoritative changelog.
+- The authoritative changelog controls latest version state for that chain.
+- Runtime, design, and patch artifacts reference that authority through `Full history` links.
+
+### 3.2 Rule-Chain Alignment
+
+For rule-governed chains, these values must match:
+
+- runtime rule `Current Version`
+- runtime rule `Design` reference version
+- design `Current Version`
+- changelog `Current Version`
+
+### 3.3 Session Integrity
+
+- Active metadata uses real session identifiers from the active environment.
+- Placeholder values are not allowed in active metadata.
+- `LEGACY-*` markers are allowed only for preserved historical records where the original active session is unavailable.
+
+---
+
+## 4) Mandatory Metadata Contract
+
+### 4.1 Runtime Rule Header Contract
+
+Root runtime rules use this canonical header contract:
+
+- `Current Version`
+- `Design`
+- `Session`
+- `Full history`
+
+`Design:` is the only allowed label for root runtime design references.
+`Based on:` is retired for root runtime rule metadata.
+
+### 4.2 Design / Patch Metadata
+
+Required active metadata:
 
 - `Current Version`
 - `Session`
-- `Full history` link
+- `Full history`
 
-### 3.2 Changelog Documents
+### 4.3 Changelog Metadata
 
-Required header fields:
+Required active metadata:
 
 - `Parent Document`
 - `Current Version`
 - `Session`
 
-### 3.3 Pair Behavior
+---
 
-When a design/changelog pair exists:
+## 5) Pair Behavior
 
-- Design document: navigator behavior only (no local version table)
-- Changelog document: detailed version sections + `Version History (Unified)` table
+When a design/changelog pair exists for one governed chain:
+
+| File | MUST use | MUST NOT use |
+|------|----------|--------------|
+| `*.design.md` | Active-state design body + `Full history` navigation | Embedded version tables, detailed changelog sections, historical rollout logs |
+| `*.changelog.md` | Detailed version sections + `Version History (Unified)` | Table-only history or design-state guidance |
+
+Historical detail belongs in changelog files, not in the active design body.
 
 ---
 
-## 4) Canonical Anchor Policy
+## 6) Canonical Anchor Policy
 
-Version table links must use only:
-
-- `#version-xy` style anchors
-
-Do not use line-number anchors for version navigation examples.
+- Version-table links use canonical `#version-xy` anchors.
+- Line-number anchors are not the version-navigation standard.
 
 ---
 
-## 5) Execution Order Contract
+## 7) Execution Order Contract
 
-When synchronizing governed documentation, update in this fixed order:
+When synchronizing governed documentation:
 
 1. design
 2. runtime rule
 3. changelog
 4. TODO
-
-Patch updates follow the same synchronization cycle after policy alignment.
-
----
-
-## 6) Compliance Checklist
-
-- [ ] Chain has one authoritative changelog
-- [ ] Rule-chain triad versions are equal
-- [ ] Required metadata headers are complete
-- [ ] Active metadata has no placeholders
-- [ ] Version links use canonical `#version-xy` style
-- [ ] Design/changelog pair behavior is respected
-- [ ] Updates followed required execution order
+5. patch metadata final sync (when affected)
 
 ---
 
-## 7) Quality Metrics
+## 8) Required Patterns
+
+### 8.1 Runtime Rule Header
+
+```markdown
+# <Rule Name>
+
+> **Current Version:** X.Y
+> **Design:** [design/<rule>.design.md](design/<rule>.design.md) vX.Y
+> **Session:** <real-session-id>
+> **Full history:** [changelog/<rule>.changelog.md](changelog/<rule>.changelog.md)
+```
+
+### 8.2 Changelog Header
+
+```markdown
+# Changelog - <Document>
+
+> **Parent Document:** [../<doc>.md](../<doc>.md)
+> **Current Version:** X.Y
+> **Session:** <real-session-id>
+```
+
+### 8.3 Design Footer
+
+```markdown
+> Full history: [../changelog/<doc>.changelog.md](../changelog/<doc>.changelog.md)
+```
+
+---
+
+## 9) Verification Checklist
+
+- [ ] Each governed chain has one authoritative changelog
+- [ ] Runtime-rule header uses `Design`, not `Based on`
+- [ ] Active runtime headers include `Session`
+- [ ] Rule/design/changelog versions are aligned for governed rule chains
+- [ ] Design files keep active guidance only
+- [ ] Changelog files hold historical detail
+- [ ] Version links use canonical `#version-xy` anchors
+- [ ] Synchronization order was followed
+
+---
+
+## 10) Quality Metrics
 
 | Metric | Target |
 |--------|--------|
-| Triad alignment accuracy | 100% |
-| Metadata completeness | 100% |
+| Rule-chain alignment accuracy | 100% |
+| Runtime header contract consistency | 100% |
 | Active placeholder session markers | 0 |
-| Canonical anchor compliance | 100% |
-| Cross-file synchronization drift | 0 unresolved |
+| Historical detail left in active design bodies | 0 critical cases |
+| Broken `Full history` links | 0 |
 
 ---
 
-## 8) Related Documents
+## 11) Related Documents
 
 | Document | Relationship |
 |----------|--------------|
-| [../document-changelog-control.md](../document-changelog-control.md) | Runtime implementation |
-| [document-design-control.design.md](document-design-control.design.md) | Design-format contract |
-| [document-patch-control.design.md](document-patch-control.design.md) | Patch metadata alignment |
-| [todo-standards.design.md](todo-standards.design.md) | TODO governance format |
+| [document-design-control.design.md](document-design-control.design.md) | Active-state design-body contract |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository-wide document-role boundary model |
+| [todo-standards.design.md](todo-standards.design.md) | Execution-tracker boundary |
+| [unified-version-control-system.design.md](unified-version-control-system.design.md) | UDVC-1 controller view |
 
 ---
 

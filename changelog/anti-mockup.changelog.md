@@ -1,8 +1,8 @@
 # Changelog - Anti Mockup
 
 > **Parent Document:** [../anti-mockup.md](../anti-mockup.md)
-> **Current Version:** 1.0
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Current Version:** 1.1
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
 
 ---
 
@@ -10,8 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-11)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Added canonical `Design + Session + Full history` runtime header metadata without changing substantive anti-mockup behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-11"></a>
+## Version 1.1: Normalized runtime metadata header to canonical cleanup-wave contract
+
+**Date:** 2026-03-08
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `anti-mockup.md` from v1.0 to v1.1.
+- Updated `design/anti-mockup.design.md` from v1.0 to v1.1.
+- Added canonical root runtime header fields in active metadata order:
+  - `Current Version`
+  - `Design`
+  - `Session`
+  - `Full history`
+- Preserved the existing anti-mockup behavioral contract.
+
+### Summary
+Normalized runtime/design metadata to the cleanup-wave header standard without changing the substantive anti-mockup policy.
 
 ---
 

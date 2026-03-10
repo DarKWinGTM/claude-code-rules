@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.2
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
+> **Current Version:** 1.3
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
 
 ---
 

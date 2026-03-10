@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.7
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-23)
+> **Current Version:** 1.8
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
 
 ---
 
 ## 1) Goal
 
-Define one consistent structure for design documents that is fully compatible with UDVC-1 governance.
+Define one deterministic structure for design documents that stays aligned with UDVC-1 governance and keeps active design state separate from historical records.
 
 ---
 
@@ -19,8 +19,9 @@ Define one consistent structure for design documents that is fully compatible wi
 Applies to:
 
 - `design/*.design.md`
+- master design documents maintained in `design/`
 - design-to-changelog pair behavior
-- cross-reference style used by design governance docs
+- support-artifact boundaries when content should not behave like a governed design doc
 
 ---
 
@@ -28,54 +29,74 @@ Applies to:
 
 ### 3.1 Naming and Location
 
-- Design documents use `<name>.design.md`
-- Design documents are stored under `design/`
-- Their authoritative changelog is under `changelog/<name>.changelog.md`
+- Governed design documents use `<name>.design.md`.
+- Governed design documents live under `design/`.
+- Their authoritative changelog lives at `changelog/<name>.changelog.md` when the chain has a dedicated changelog.
 
-### 3.2 Mandatory Header Metadata
+### 3.2 Mandatory Metadata
 
-Each design document must include:
+Each governed design document includes:
 
 - `Parent Scope`
 - `Current Version`
-- `Session` (real value)
+- `Session`
+- `Full history`
 
-### 3.3 Navigator Rule
+### 3.3 Active-State Body Rule
 
-When a paired changelog exists, design documents must:
+Design documents describe the current active target state.
+They must not embed:
 
-- include only a `Full history` link for version history navigation
-- not embed local version-history tables
-- not embed detailed changelog sections
+- detailed version-history tables
+- audit snapshots
+- remediation logs
+- rollout-completion journals
+- obsolete pending/activation instructions
 
-### 3.4 Version Alignment Rule
+Historical detail belongs in changelog files.
+
+### 3.4 Navigator Rule
+
+When a paired changelog exists, design documents:
+
+- keep version-history navigation limited to `Full history`
+- do not embed detailed changelog sections
+- do not duplicate historical summaries inside the active body
+
+### 3.5 Rule-Chain Alignment
 
 For rule-governed chains, design version must align with:
 
-- runtime rule current version
-- runtime rule design reference version
-- changelog current version
+- runtime rule `Current Version`
+- runtime rule `Design` reference version
+- changelog `Current Version`
 
 ---
 
-## 4) Reference and Anchor Policy
+## 4) Support-Artifact Boundary
 
-### 4.1 Canonical Version Anchors
+Not every reference artifact belongs in governed design space.
+If a file is reference-only, prompt-only, media-only, or support-only, it should not remain in an ambiguous `.design.md` state unless it is fully normalized as a governed design document.
 
-Version-navigation examples in governance documents must use:
-
-- `#version-xy`
-
-Line-number anchors must not be used as the primary version-navigation standard.
-
-### 4.2 Internal Link Requirements
-
-- Use resolvable relative paths
-- Keep design → changelog and changelog → design references consistent
+Use clearly non-governed placement or naming for support-only artifacts.
 
 ---
 
-## 5) Required Design Template
+## 5) Reference and Anchor Policy
+
+### 5.1 Canonical Version Anchors
+
+Governance documents use canonical `#version-xy` anchors for version navigation.
+
+### 5.2 Link Discipline
+
+- Use resolvable relative paths.
+- Keep design → changelog and changelog → design references consistent.
+- Keep active design docs free of stale line-reference audit notes.
+
+---
+
+## 6) Required Design Template
 
 ```markdown
 # <Document Name>
@@ -88,7 +109,7 @@ Line-number anchors must not be used as the primary version-navigation standard.
 
 ---
 
-<design content>
+<active design content>
 
 ---
 
@@ -97,25 +118,37 @@ Line-number anchors must not be used as the primary version-navigation standard.
 
 ---
 
-## 6) Quality Metrics
+## 7) Verification Checklist
 
-| Metric | Target |
-|--------|--------|
-| Design metadata completeness | 100% |
-| Navigator compliance in paired docs | 100% |
-| Triad version alignment | 100% |
-| Broken design/changelog links | 0 |
-| Mixed version-anchor style in governance docs | 0 |
+- [ ] File uses governed design naming only when it is truly a governed design document
+- [ ] Required metadata fields are complete
+- [ ] Design body is active-state only
+- [ ] Historical detail is delegated to changelog
+- [ ] Runtime rule references use `Design`, not `Based on`
+- [ ] Rule/design/changelog versions are aligned where applicable
+- [ ] Links resolve correctly
 
 ---
 
-## 7) Related Documents
+## 8) Quality Metrics
+
+| Metric | Target |
+|--------|--------|
+| Active-state-only design-body compliance | 100% |
+| Navigator compliance in paired design docs | 100% |
+| Ambiguous governed-looking support artifacts | 0 |
+| Broken design/changelog links | 0 |
+| Stale historical guidance inside active design bodies | 0 critical cases |
+
+---
+
+## 9) Related Documents
 
 | Document | Relationship |
 |----------|--------------|
-| [document-changelog-control.design.md](document-changelog-control.design.md) | UDVC-1 authority contract |
-| [../document-design-control.md](../document-design-control.md) | Runtime implementation |
-| [document-consistency.design.md](document-consistency.design.md) | Verification trigger alignment |
+| [document-changelog-control.design.md](document-changelog-control.design.md) | Version authority and metadata contract |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role boundaries |
+| [unified-version-control-system.design.md](unified-version-control-system.design.md) | Controller-level governance view |
 
 ---
 

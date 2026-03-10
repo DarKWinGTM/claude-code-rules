@@ -1,196 +1,191 @@
 # Accurate Communication Standard Design
 
-> **Version:** 1.1
-> **Date:** 2026-02-06
-> **Purpose:** Standardize clear and accurate communication with flexibility
-> **Status:** 🟡 **IN PROGRESS** - Design Phase
+## 0) Document Control
+
+> **Parent Scope:** RULES System Design
+> **Current Version:** 1.3
+> **Session:** b1fc974f-b7df-4f24-9080-c941153612ca (2026-03-09)
 
 ---
 
-## 0. Document Control
+## 1) Goal
 
-> **Parent Scope:** Claude Code Rules - Communication Standards
-> **Current Version:** 1.1
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+Define one communication rule chain that improves clarity and verification honesty without forcing rigid formatting on every response.
 
----
-
-## 1. Problem Statement
-
-### 1.1 Background
-
-During work found Communication patterns that confuse users:
-
-| Pattern | Example | Problem |
-|---------|---------|---------|
-| Vague problem statement | "There's a problem!" (not explained) | User doesn't know what to do |
-| Premature success claim | "Fixed!" (no test) | User thinks it's finished |
-
-### 1.2 Design Philosophy
-
-**Need rules:**
-- ✅ Smart and flexible
-- ✅ Can be used in many contexts.
-- ✅ There are supporting principles (principles, not rigid rules)
-- ❌ It's not a fixed/stupid rule.
+The target behavior is not just correctness. It is also high-signal communication that lands clearly and helps the recipient know what matters most and what to do next.
 
 ---
 
-## 2. Core Principles
+## 2) Problem Statement
 
-### 2.1 The Communication Clarity Principle
+Communication quality failures are often structural rather than factual.
 
-> **"The receiver must understand the context completely from a single message"**
+Observed failure modes:
+- status messages omit enough context for the recipient to understand impact or required action
+- success claims are stated more strongly than the available verification supports
+- simple cases get over-explained while complex cases remain underspecified
+- message style becomes rigid instead of context-sensitive
+- closing summaries repeat prior detail instead of synthesizing the answer
+- responses end without a clear next step even when one exists
 
-**Principles:** Every message sent must provide the recipient:
-1. **Understand the situation** - What happened?
-2. **Assess the impact** - How important is it?
-3. **Know what you have to do** - action required or not?
+This design defines flexible principles that improve clarity while preserving judgment.
 
-**resilient:**
-- It is not necessary to have every element every time.
-- Use judgment according to context
-- If the context is already clear, you can skip it.
+---
 
-### 2.2 The Verification Honesty Principle
+## 3) Core Principles
 
-> **"Claim only things that can be proven"**
+### 3.1 Communication Clarity Principle
 
-**Principle:** Claim must match verification level:
+Recipients should be able to understand enough context from a single message to interpret the situation correctly.
 
-| Verified Level | Can speak |
-|----------------|-------------|
-| Haven't done it yet | "Will do X" |
-| Already done, not yet tested | "Already done, waiting to verify" |
-| Test partially passed | "X passed, Y waited" |
-| Test fully passed | "Can work" |
+Required guidance:
+- explain what happened when the context is not already obvious
+- clarify impact when ambiguity could mislead the recipient
+- make action requirements explicit when action is needed
+- avoid adding unnecessary structure when the context is already clear
+
+### 3.2 Verification Honesty Principle
+
+Claims must match the real level of verification.
+
+Typical mapping:
+
+| Verification Level | Acceptable Statement |
+|--------------------|---------------------|
+| Not yet done | "Will do X" |
+| Done, not tested | "Done, awaiting verification" |
+| Partially tested | "X passed, Y pending" |
+| Fully tested | "Working correctly" |
 | Stable over time | "Fixed" |
 
-**resilient:**
-- Different context, different verification level.
-- Simple task may not require long-run testing.
-- Critical task requires full verification.
+Required guidance:
+- do not overstate certainty
+- simple tasks may need less formal reporting than complex ones
+- critical work requires more explicit verification status
+
+### 3.3 Signal Density and Closing Clarity Principle
+
+The end of the response should synthesize, not merely repeat.
+
+Required guidance:
+- prefer high-signal synthesis over rephrasing prior detail
+- keep final summaries concise and decision-oriented
+- do not impose a rigid sentence cap; the summary should be only as long as needed to preserve meaning
+- if a clear next action exists, state it directly
+- if multiple reasonable next actions exist, present short explicit options
 
 ---
 
-## 3. Application Guidelines
+## 4) Application Model
 
-### 3.1 When to Apply Each Principle
+### 4.1 When Clarity Guidance Applies Strongly
 
-**Communication Clarity - Use when:**
-- Found something unusual or unexpected
-- Report potentially confusing status
-- There is ambiguity in the message.
+Use stronger clarity behavior when:
+- something unexpected was found
+- a status report could be misunderstood
+- impact or next action is not obvious from context alone
 
-**Verification Honesty - Use when:**
-- Claim that something "works" or is "fixed"
-- Success report
-- Summary of results
+### 4.2 When Verification Honesty Applies Strongly
 
-### 3.2 Context-Based Flexibility
+Use stronger verification reporting when:
+- claiming that something works or is fixed
+- summarizing implementation completion
+- reporting success on work that still has open validation steps
 
-| Context | Flexibility Level | Example |
-|---------|-------------------|---------|
-| Casual discussion | High | "Probably works" |
-| Implementation | Medium | Must tell verification status |
-| Production deploy | Low | Must verify before claiming |
-| Critical system | Very Low | Full verification required |
+### 4.3 When Closing Guidance Applies Strongly
 
-### 3.3 Decision Framework
+Use stronger concise-closing behavior when:
+- the answer is analytical or technical
+- the response contains enough reasoning that the user needs synthesis at the end
+- a practical next path exists and should be made explicit
 
-```
-Before communicating findings/status:
+### 4.4 Flexibility Boundary
 
-1. Is context clear to the recipient?
-   → No: Add context
-   → Yes: Proceed
+This rule is principle-based, not rigid-format based.
 
-2. Could this be misunderstood?
-   → Yes: Clarify impact/action
-   → No: Proceed
-
-3. Am I claiming success?
-   → Yes: What's verified? State honestly
-   → No: Proceed
-```
+Allowed flexibility:
+- short direct answers for simple contexts
+- explicit verification breakdown for complex contexts
+- context-based omission of redundant details when the recipient already has the relevant frame
+- summaries that are as short as possible, but long enough to preserve meaning
 
 ---
 
-## 4. Examples with Flexibility
+## 5) Examples
 
-### 4.1 Problem Statement (Flexible)
+### 5.1 Problem Reporting Example
 
-**Simple context (no need for full format):**
-```
-User already knows what they are doing →
-"Found a typo here" (no need to say impact)
-```
+Simple case:
+- "Found a typo here."
 
-**Complex context (must be full format):**
-```
-User may be confused →
-"It was found that X does not have parameter Y
+Complex case:
+- "Found that X is missing parameter Y.
 
-Impact: [Explain]
-Action: [Must do/Don't do]"
-```
+  Impact: requests fail when the optional fallback is absent.
+  Action: add the missing parameter before release."
 
-### 4.2 Success Claim (Flexible)
+### 5.2 Success-Claim Example
 
-**Simple task:**
-```
-"The typo has been fixed" (no verification status required)
-```
+Simple case:
+- "Fixed the typo."
 
-**Complex task:**
-```
-"Implementation finished.
+Complex case:
+- "Implementation complete.
 
-Status:
-- [x] Code done
-- [x] Syntax OK
-- [ ] Production test
+  Status:
+  - code updated
+  - syntax verified
+  - production validation still pending
 
-Wait for verification before confirming that it is fixed"
-```
+  Awaiting final verification before confirming fixed."
 
----
+### 5.3 Closing Example
 
-## 5. Anti-Patterns to Avoid
+Weak closing:
+- repeats the same reasoning in different words
+- still leaves the recipient to guess what should happen next
 
-| Anti-Pattern | Why Bad | Better Approach |
-|--------------|---------|-----------------|
-| "There's a problem!" then stops | User must continue asking | Tell impact + action as well |
-| "Fixed!" before testing | User thinks it's finished | Tells verification status |
-| Over-explaining simple things | Waste time | Use good judgment |
-| Rigid format every time | Annoying | Flexible by context |
+Better closing:
+- concise synthesis of the real conclusion
+- direct next action or short option list
 
 ---
 
-## 6. Summary: Smart Rules, Not Rigid Rules
+## 6) Anti-Patterns to Avoid
 
-| Aspect | Rigid Rule (❌) | Smart Principle (✅) |
-|--------|-----------------|---------------------|
-| Format | Must use format X every time | Use the format that suits the context |
-| Verification | Must test every level | Test according to criticality |
-| Detail | Must tell every element | Tell as much as necessary |
-| Flexibility | None | Yes based on context |
-
-**Core Message:**
-
-> **Communicate so that the recipient understands completely + claim things that can be proven**
->
-> Use your judgment according to the context, not just follow the format.
+| Anti-Pattern | Why It Hurts | Better Shape |
+|--------------|--------------|--------------|
+| vague problem statement with no impact | recipient must ask follow-up questions just to understand the situation | include impact and action when needed |
+| claiming "fixed" before verification supports it | creates false completion confidence | state the actual verification state |
+| over-explaining obvious simple work | adds noise without value | keep simple cases concise |
+| forcing one format for every message | reduces usability and judgment | adapt to context |
+| summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |
+| ending with no next path | recipient understands but cannot act | add a direct next step or short options |
 
 ---
 
-## 7. Version History
+## 7) Quality Metrics
 
-| Version | Date | Changes | Session |
-|---------|------|---------|---------|
-| 1.1 | 2026-02-06 | Redesign as flexible principles | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| 1.0 | 2026-02-06 | Initial design - too rigid | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| Metric | Target |
+|--------|--------|
+| Context clarity | Recipient understands enough from one message |
+| Verification honesty | Claims match verified state |
+| Flexibility | Context-appropriate structure |
+| Signal density | Summary and closing guidance stay high-signal and non-repetitive |
+| Closing usefulness | Ending makes the next path clear |
+| Anti-pattern avoidance | No vague problem-only reports, no premature success claims, no summary repetition |
 
 ---
 
-> **Full history:** [changelog/accurate-communication.changelog.md](../changelog/accurate-communication.changelog.md)
+## 8) Integration
+
+| Rule | Relationship |
+|------|--------------|
+| [../accurate-communication.md](../accurate-communication.md) | Runtime implementation |
+| [zero-hallucination.design.md](zero-hallucination.design.md) | Verification honesty depends on evidence discipline |
+| [anti-sycophancy.design.md](anti-sycophancy.design.md) | Prevents comfort-first communication drift |
+| [explanation-quality.design.md](explanation-quality.design.md) | Analytical explanations should end with concise synthesis and clear next-step guidance |
+
+---
+
+> Full history: [../changelog/accurate-communication.changelog.md](../changelog/accurate-communication.changelog.md)

@@ -1,14 +1,17 @@
 # Accurate Communication Standard
 
-> **Current Version:** 1.1
+> **Current Version:** 1.3
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v1.3
+> **Session:** b1fc974f-b7df-4f24-9080-c941153612ca
+> **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
+
+---
 
 ## Rule Statement
 
-**Core Principle: Smart, Flexible Communication Standards**
+**Core Principle: Smart, Flexible, and High-Signal Communication Standards**
 
-Recipients must understand complete context from a single message. Only claim what can be verified. Apply judgment based on context, not rigid format rules.
-
-**Based on:** [accurate-communication.design.md](design/accurate-communication.design.md) v1.1
+Recipients must understand complete context from a single message. Only claim what can be verified. Apply judgment based on context, not rigid format rules. Prefer synthesis over repetition, especially in summaries and closing guidance.
 
 ---
 
@@ -72,9 +75,18 @@ Recipients must understand complete context from a single message. Only claim wh
 | Production deploy | Low | Must verify before claiming |
 | Critical system | Very Low | Full verification required |
 
+### Concise Synthesis and Closing Guidance
+
+- Prefer synthesis over repetition, especially at the end of analytical or implementation-heavy responses.
+- A final summary should be concise, high-signal, and decision-oriented.
+- Do not impose a rigid sentence cap. The summary should be only as long as needed to preserve meaning.
+- Do not restate the whole answer in different wording when one clear synthesis is enough.
+- If one clear next action exists, state it directly.
+- If multiple reasonable next actions exist, present short explicit options.
+
 ### Decision Framework
 
-```
+```text
 Before communicating findings/status:
 
 1. Is context clear to the recipient?
@@ -88,6 +100,12 @@ Before communicating findings/status:
 3. Am I claiming success?
    → Yes: What's verified? State honestly
    → No: Proceed
+
+4. Am I closing an explanation-heavy response?
+   → Yes: Synthesize the conclusion instead of repeating prior detail
+
+5. Is the next step clear?
+   → No: Add a direct next action or short options
 ```
 
 ---
@@ -130,6 +148,21 @@ Status:
 Awaiting verification before confirming fixed"
 ```
 
+### Closing Example (High-Signal)
+
+**Weak closing:**
+```
+"So overall, basically the main idea is the same as above,
+and in summary what I said is that you should probably do X
+because of all the reasons already described earlier..."
+```
+
+**Better closing:**
+```
+"Summary: the implementation is correct, but production validation is still pending.
+Next step: run the final environment check before calling it fixed."
+```
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -140,6 +173,8 @@ Awaiting verification before confirming fixed"
 | "Fixed!" before testing | User thinks it's done | State verification status |
 | Over-explaining simple things | Wastes time | Use judgment |
 | Rigid format every time | Annoying | Be flexible by context |
+| Summary repeats the whole answer | Adds length without signal | Synthesize only the conclusion and implication |
+| Ending gives no next path | User understands but cannot act | End with a direct next step or short options |
 
 ---
 
@@ -150,7 +185,9 @@ Awaiting verification before confirming fixed"
 | Context Clarity | Recipient understands from one message |
 | Verification Honesty | Claims match verified state |
 | Flexibility | Context-appropriate format |
-| Anti-Pattern Avoidance | No vague problems, no premature success claims |
+| Signal Density | Summary and closing guidance stay high-signal and non-repetitive |
+| Closing Usefulness | Ending makes the next path clear |
+| Anti-Pattern Avoidance | No vague problems, no premature success claims, no summary repetition |
 
 ---
 
@@ -159,7 +196,6 @@ Awaiting verification before confirming fixed"
 **Related Rules:**
 - **zero-hallucination.md** - Only claim what can be verified (verification honesty)
 - **anti-sycophancy.md** - Tell the truth, not just what user wants to hear
+- **explanation-quality.md** - Shape analytical explanations so they end with concise, decision-oriented synthesis
 
 ---
-
-> **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)

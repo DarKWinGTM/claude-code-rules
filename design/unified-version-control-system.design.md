@@ -3,16 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8 (2026-02-24)
+> **Current Version:** 1.2
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
 
 ---
 
 ## 1) Goal
 
-Define one non-duplicated controller rule for documentation version governance across design, changelog, TODO, and patch workflows.
-
-This controller does not introduce a second mechanism. It centralizes and enforces the existing UDVC-1 contract.
+Define one controller-level governance view for UDVC-1 so the repository teaches a single deterministic model across runtime rules, design docs, changelogs, TODO, patches, and support artifacts.
 
 ---
 
@@ -20,45 +18,51 @@ This controller does not introduce a second mechanism. It centralizes and enforc
 
 Applies to:
 
+- runtime governance rules
 - `design/*.design.md`
 - `changelog/*.changelog.md`
 - `TODO.md`
 - `patches/*.patch.md`
-- related runtime governance rules
+- repository-level role boundaries that prevent governed/support-layer confusion
 
 ---
 
-## 3) Core Governance Contract
+## 3) Controller Contract
 
 ### 3.1 Single Mechanism
 
 - UDVC-1 is the only version-governance mechanism.
-- No parallel or competing version-control model is allowed.
+- No parallel or competing governance model is allowed.
 
 ### 3.2 Single Authority Per Chain
 
 - Each governed chain has one authoritative changelog.
-- Runtime/design/patch documents must link to that authority with `Full history`.
+- Runtime, design, and patch artifacts link to that authority through `Full history`.
 
-### 3.3 Alignment Rules
+### 3.3 Runtime Header Contract
 
-For rule-governed chains, these values must match:
+Root runtime rules use this canonical metadata contract:
 
-- Rule `Current Version`
-- Rule `Design` reference version
-- Design `Current Version`
-- Changelog `Current Version`
+- `Current Version`
+- `Design`
+- `Session`
+- `Full history`
 
-### 3.4 Mandatory Metadata
+`Design:` is the canonical label.
+`Based on:` is retired in root runtime rule metadata.
 
-- Rule / Design / Patch: `Current Version`, `Session`, `Full history`
-- Changelog: `Parent Document`, `Current Version`, `Session`
+### 3.4 Active-State Design Contract
 
-### 3.5 Canonical Version Anchors
+- Design documents hold current active target-state guidance.
+- Historical audit, rollout, and remediation detail lives in changelog files.
 
-- Version navigation uses canonical `#version-xy` anchors only.
+### 3.5 Layer Boundary Contract
 
-### 3.6 Execution Order
+- README is overview-only.
+- TODO is execution-only.
+- Support artifacts must not remain in ambiguous governed `.design.md` form unless intentionally normalized into a governed chain.
+
+### 3.6 Synchronization Order
 
 1. design
 2. runtime rule
@@ -68,55 +72,37 @@ For rule-governed chains, these values must match:
 
 ---
 
-## 4) Relationship With Existing Governance Rules
+## 4) Verification Checklist
 
-| Rule | Relationship |
-|------|--------------|
-| `document-changelog-control.md` | Core UDVC-1 authority and metadata contract |
-| `document-design-control.md` | Design-structure and navigator behavior |
-| `document-patch-control.md` | Patch metadata and patch-chain authority consistency |
-| `todo-standards.md` | TODO execution-tracking mode and synchronization order |
-| `project-documentation-standards.md` | Project-level adoption and compliance framing |
-
----
-
-## 5) Rollout Plan (Design-First)
-
-### Phase A (Completed)
-
-- Create design + changelog chain for `unified-version-control-system`.
-- Register rollout in master design/changelog.
-- Add pending TODO items for runtime materialization.
-
-### Phase B (Completed)
-
-- Created runtime `unified-version-control-system.md`.
-- Repointed related governance references to active unified-controller state in master docs.
-- Re-ran consistency closure updates and completed TODO rollout task.
+- [ ] UDVC-1 is the only active governance mechanism
+- [ ] Runtime rules use the canonical `Design` header label
+- [ ] Active runtime headers include `Session`
+- [ ] Design docs keep active guidance only
+- [ ] README/TODO/support artifacts stay inside their proper role boundaries
+- [ ] Synchronization order is enforced
 
 ---
 
-## 6) Compliance Checklist
-
-- [ ] Single mechanism (UDVC-1) explicitly declared
-- [ ] No competing governance mechanism introduced
-- [ ] Single-authority-per-chain model applied
-- [ ] Triad alignment enforced for rule chains
-- [ ] Mandatory metadata completeness enforced
-- [ ] Canonical anchor policy enforced
-- [ ] Synchronization order enforced
-
----
-
-## 7) Quality Metrics
+## 5) Quality Metrics
 
 | Metric | Target |
 |--------|--------|
-| Parallel governance mechanisms | 0 |
-| Triad alignment mismatches | 0 |
-| Missing mandatory metadata | 0 |
-| Broken `Full history` links | 0 |
-| Non-canonical version anchor usage | 0 |
+| Competing governance mechanisms | 0 |
+| Mixed runtime header labels | 0 |
+| Historical detail embedded in active design bodies | 0 critical cases |
+| Ambiguous governed-looking support artifacts | 0 |
+| Broken authority links | 0 |
+
+---
+
+## 6) Related Documents
+
+| Document | Relationship |
+|----------|--------------|
+| [document-changelog-control.design.md](document-changelog-control.design.md) | Chain authority and metadata contract |
+| [document-design-control.design.md](document-design-control.design.md) | Active-state design-body contract |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model |
+| [todo-standards.design.md](todo-standards.design.md) | Execution-tracker boundary |
 
 ---
 

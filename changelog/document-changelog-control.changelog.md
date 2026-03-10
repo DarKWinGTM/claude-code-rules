@@ -1,8 +1,8 @@
 # Changelog - Document Changelog Control
 
 > **Parent Document:** [../document-changelog-control.md](../document-changelog-control.md)
-> **Current Version:** 4.6
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Current Version:** 4.7
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 4.7 | 2026-03-08 | **[Normalized runtime header contract and active-state design separation](#version-47)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Updated the chain to require canonical root runtime `Design + Session + Full history` headers and active-state-only design bodies | |
 | 4.6 | 2026-02-23 | **[Adopted UDVC-1 deterministic contract baseline](#version-46)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | Summary: Synchronized design/runtime/changelog to v4.6 with triad alignment, mandatory metadata, canonical anchors, and fixed execution order | |
 | 4.5 | 2026-02-22 | **[Synchronized runtime session metadata to real active session value](#version-45)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -24,6 +26,29 @@
 | | | Summary: Design docs provide navigation link rather than duplicated full history | |
 | 4.0 | 2026-01-20 | **[Established baseline version-governance architecture](#version-40)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Introduced foundational documentation version-governance model | |
+
+---
+
+<a id="version-47"></a>
+## Version 4.7: Normalized runtime header contract and active-state design separation
+
+**Date:** 2026-03-08
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `design/document-changelog-control.design.md` from v4.6 to v4.7.
+- Updated runtime `document-changelog-control.md` from v4.6 to v4.7.
+- Formalized the canonical root runtime header contract:
+  - `Current Version`
+  - `Design`
+  - `Session`
+  - `Full history`
+- Retired `Based on:` from active root runtime rule metadata policy.
+- Clarified that active design bodies hold current guidance only while historical detail lives in changelog files.
+- Preserved chain-authority, alignment, anchor, and synchronization-order requirements under the updated anti-poisoning cleanup model.
+
+### Summary
+Updated the chain to enforce a single active header contract and a clearer separation between active design state and historical changelog detail.
 
 ---
 

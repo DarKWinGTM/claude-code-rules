@@ -1,8 +1,48 @@
 # Changelog - Recovery Contract
 
-> **Parent Document:** [../design/recovery-contract.design.md](../design/recovery-contract.design.md)
-> **Current Version:** 1.4
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Parent Document:** [../recovery-contract.md](../recovery-contract.md)
+> **Current Version:** 1.5
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+---
+
+## Version History (Unified)
+
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 1.5 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-15)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Added canonical runtime header metadata and aligned the recovery-contract chain to the cleanup-wave version state | |
+| 1.4 | 2026-02-22 | **[Aligned response pattern keys to deterministic WS-5 schema](#version-14)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Synchronized recovery-contract runtime/design response pattern to WS-5 deterministic snake_case output schema keys | |
+| 1.3 | 2026-02-22 | **[Synchronized constrained/blocked/refused contract language to runtime v1.3](#version-13)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Unified constrained/blocked/refused terminology across runtime, design, and changelog contract language for deterministic WS-1 behavior | |
+| 1.2 | 2026-02-22 | **[Synchronized blocked-response schema to runtime v1.2](#version-12)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Synchronized recovery-contract design and runtime behavior to a shared v1.2 blocked/constrained response schema | |
+| 1.1 | 2026-02-21 | **[Fixed integration links for design-only phase](#version-11)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Fixed cross-reference validity for recovery-contract design without introducing root rule files | |
+| 1.0 | 2026-02-21 | **[Initial Blocked-Response Recovery Contract](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Established the initial deterministic recovery contract for blocked outcomes | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Normalized runtime metadata header to canonical cleanup-wave contract
+
+**Date:** 2026-03-08
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `recovery-contract.md` from v1.4 to v1.5.
+- Updated `design/recovery-contract.design.md` from v1.4 to v1.5.
+- Added canonical root runtime header fields in active metadata order:
+  - `Current Version`
+  - `Design`
+  - `Session`
+  - `Full history`
+- Preserved the existing recovery-contract behavioral contract.
+
+### Summary
+Normalized the recovery-contract chain to the canonical cleanup-wave runtime header format while preserving substantive recovery behavior.
 
 ---
 
@@ -82,29 +122,7 @@ Fixed cross-reference validity for recovery-contract design without introducing 
 
 ### Changes
 - Created `design/recovery-contract.design.md` v1.0.
-- Standardized mandatory contract fields for blocked outcomes:
-  - Reason
-  - What can be done now
-  - How to proceed
-- Added class-specific requirements for HARD/SOFT/WORKFLOW blocks.
-- Added output pattern and quality metrics to eliminate dead-end refusals.
+- Established an initial deterministic recovery contract for blocked outcomes.
 
 ### Summary
-Created a standard recovery contract so blocked responses always provide actionable next steps.
-
----
-
-## Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 1.4 | 2026-02-22 | **[Aligned response pattern keys to deterministic WS-5 schema](#version-14-aligned-response-pattern-keys-to-deterministic-ws-5-schema)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Normalized response pattern to deterministic snake_case schema keys across runtime and design | |
-| 1.3 | 2026-02-22 | **[Synchronized constrained/blocked/refused contract language to runtime v1.3](#version-13-synchronized-constrainedblockedrefused-contract-language-to-runtime-v13)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Unified constrained/blocked/refused terminology and contract-field scope across runtime and design | |
-| 1.2 | 2026-02-22 | **[Synchronized blocked-response schema to runtime v1.2](#version-12-synchronized-blocked-response-schema-to-runtime-v12)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Aligned recovery schema for blocked and constrained decisions with runtime contract | |
-| 1.1 | 2026-02-21 | **[Fixed integration links for design-only phase](#version-11-fixed-integration-links-for-design-only-phase)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Repointed integration links to design artifacts while preserving active-rule references | |
-| 1.0 | 2026-02-21 | **[Initial Blocked-Response Recovery Contract](#version-10-initial-blocked-response-recovery-contract)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Introduced mandatory recovery structure for all blocked decisions | |
+Established the initial deterministic recovery contract for blocked outcomes.

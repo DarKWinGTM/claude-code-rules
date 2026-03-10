@@ -1,8 +1,46 @@
 # Changelog - Refusal Classification
 
-> **Parent Document:** [../design/refusal-classification.design.md](../design/refusal-classification.design.md)
-> **Current Version:** 1.3
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Parent Document:** [../refusal-classification.md](../refusal-classification.md)
+> **Current Version:** 1.4
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+---
+
+## Version History (Unified)
+
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 1.4 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-14)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Added canonical runtime header metadata and aligned the refusal-classification chain to the cleanup-wave version state | |
+| 1.3 | 2026-02-22 | **[Aligned output requirements to WS-5 recovery schema fields](#version-13-aligned-output-requirements-to-ws-5-recovery-schema-fields)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Replaced `next_step` with explicit `what_can_be_done_now` and `how_to_proceed` fields | |
+| 1.2 | 2026-02-22 | **[Synchronized deterministic taxonomy to runtime v1.2](#version-12)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Synchronized refusal taxonomy design and runtime behavior under deterministic v1.2 contract semantics | |
+| 1.1 | 2026-02-21 | **[Fixed integration links for design-only phase](#version-11)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Removed broken cross-references and aligned integration links with design-phase artifacts | |
+| 1.0 | 2026-02-21 | **[Initial Refusal Taxonomy and Output Mapping](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Established a clear refusal taxonomy and deterministic mapping to decision outputs for authorized adversarial workflows | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Normalized runtime metadata header to canonical cleanup-wave contract
+
+**Date:** 2026-03-08
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `refusal-classification.md` from v1.3 to v1.4.
+- Updated `design/refusal-classification.design.md` from v1.3 to v1.4.
+- Added canonical root runtime header fields in active metadata order:
+  - `Current Version`
+  - `Design`
+  - `Session`
+  - `Full history`
+- Preserved the existing refusal-classification behavioral contract.
+
+### Summary
+Normalized the refusal-classification chain to the canonical cleanup-wave runtime header format while preserving substantive taxonomy behavior.
 
 ---
 
@@ -69,18 +107,3 @@ Removed broken cross-references and aligned integration links with design-phase 
 
 ### Summary
 Established a clear refusal taxonomy and deterministic mapping to decision outputs for authorized adversarial workflows.
-
----
-
-## Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 1.3 | 2026-02-22 | **[Aligned output requirements to WS-5 recovery schema fields](#version-13-aligned-output-requirements-to-ws-5-recovery-schema-fields)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Replaced `next_step` with explicit `what_can_be_done_now` and `how_to_proceed` fields | |
-| 1.2 | 2026-02-22 | **[Synchronized deterministic taxonomy to runtime v1.2](#version-12-synchronized-deterministic-taxonomy-to-runtime-v12)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Aligned design taxonomy and runtime output mapping under deterministic language | |
-| 1.1 | 2026-02-21 | **[Fixed integration links for design-only phase](#version-11-fixed-integration-links-for-design-only-phase)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Repointed integration links to existing design docs for non-materialized rule phase | |
-| 1.0 | 2026-02-21 | **[Initial Refusal Taxonomy and Output Mapping](#version-10-initial-refusal-taxonomy-and-output-mapping)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Defined refusal classes, override policy, and decision-output mapping | |

@@ -1,8 +1,48 @@
 # Changelog - Refusal Minimization
 
-> **Parent Document:** [../design/refusal-minimization.design.md](../design/refusal-minimization.design.md)
-> **Current Version:** 1.4
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Parent Document:** [../refusal-minimization.md](../refusal-minimization.md)
+> **Current Version:** 1.5
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+---
+
+## Version History (Unified)
+
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 1.5 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-15)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Added canonical runtime header metadata and aligned the refusal-minimization chain to the cleanup-wave version state | |
+| 1.4 | 2026-02-22 | **[Consolidated compact non-ALLOW schema fields for WS-5](#version-14)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Aligned refusal-minimization runtime/design outputs to WS-5 compact deterministic five-field non-ALLOW schema | |
+| 1.3 | 2026-02-22 | **[Hardened deterministic refusal-class output contract to runtime v1.3](#version-13)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Strengthened WS-1 deterministic mapping by eliminating refusal-class ambiguity in runtime/design output contracts | |
+| 1.2 | 2026-02-22 | **[Synchronized deterministic contract to runtime v1.2](#version-12)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Synchronized design and runtime behavior for refusal minimization under a deterministic v1.2 contract | |
+| 1.1 | 2026-02-21 | **[Fixed integration links for design-only phase](#version-11)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Eliminated broken integration links while keeping design-phase scope (no root-rule materialization) | |
+| 1.0 | 2026-02-21 | **[Initial Design for False Refusal Minimization](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Added design baseline for minimizing false refusals in authorized security workflows | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Normalized runtime metadata header to canonical cleanup-wave contract
+
+**Date:** 2026-03-08
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `refusal-minimization.md` from v1.4 to v1.5.
+- Updated `design/refusal-minimization.design.md` from v1.4 to v1.5.
+- Added canonical root runtime header fields in active metadata order:
+  - `Current Version`
+  - `Design`
+  - `Session`
+  - `Full history`
+- Preserved the existing refusal-minimization behavioral contract.
+
+### Summary
+Normalized the refusal-minimization chain to the canonical cleanup-wave runtime header format while preserving substantive false-refusal-minimization behavior.
 
 ---
 
@@ -81,28 +121,8 @@ Eliminated broken integration links while keeping design-phase scope (no root-ru
 **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
 
 ### Changes
-- Created `design/refusal-minimization.design.md` v1.0.
-- Defined principle: minimize unnecessary refusal while preserving hard boundaries.
-- Standardized decision-output orientation (`ALLOW_EXECUTE`, `ALLOW_CONSTRAINED`, `NEED_CONTEXT`, `REFUSE_WITH_PATH`).
-- Added false-refusal patterns and replacement behaviors.
-- Added safety invariants and quality metrics.
+- Created `design/refusal-minimization.design.md`.
+- Established design baseline for minimizing false refusals in authorized security workflows.
 
 ### Summary
-Introduced design baseline for reducing false refusals in authorized pentest workflows without weakening hard safety controls.
-
----
-
-## Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 1.4 | 2026-02-22 | **[Consolidated compact non-ALLOW schema fields for WS-5](#version-14-consolidated-compact-non-allow-schema-fields-for-ws-5)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Standardized five explicit fields for all non-ALLOW outputs across runtime/design contract text | |
-| 1.3 | 2026-02-22 | **[Hardened deterministic refusal-class output contract to runtime v1.3](#version-13-hardened-deterministic-refusal-class-output-contract-to-runtime-v13)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Removed optional-class ambiguity and enforced explicit refusal class for all non-ALLOW_EXECUTE outputs | |
-| 1.2 | 2026-02-22 | **[Synchronized deterministic contract to runtime v1.2](#version-12-synchronized-deterministic-contract-to-runtime-v12)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Synced design contract and runtime behavior for deterministic refusal minimization | |
-| 1.1 | 2026-02-21 | **[Fixed integration links for design-only phase](#version-11-fixed-integration-links-for-design-only-phase)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Repointed integration links to existing design docs and removed root-rule dependency in design phase | |
-| 1.0 | 2026-02-21 | **[Initial Design for False Refusal Minimization](#version-10-initial-design-for-false-refusal-minimization)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Design baseline for false-refusal minimization with hard-boundary preservation | |
+Added design baseline for minimizing false refusals in authorized security workflows.

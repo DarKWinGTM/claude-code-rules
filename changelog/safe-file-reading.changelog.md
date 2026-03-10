@@ -1,8 +1,44 @@
 # Changelog - Safe File Reading
 
 > **Parent Document:** [../safe-file-reading.md](../safe-file-reading.md)
-> **Current Version:** 1.2
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Current Version:** 1.3
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+---
+
+## Version History (Unified)
+
+| Version | Date | Changes | Session ID |
+|---------|------|---------|------------|
+| 1.3 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Added canonical runtime header metadata and aligned the safe-file-reading chain to the cleanup-wave version state | |
+| 1.2 | 2026-02-22 | **[Enforced deterministic capped read patterns for WS-5](#version-12-enforced-deterministic-capped-read-patterns-for-ws-5)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Standardized deterministic default and risky-file capped patterns across runtime/design guidance | |
+| 1.1 | 2026-02-21 | **[Clarified Decision Matrix to Enforce Capped Read Pattern](#version-11-clarified-decision-matrix-to-enforce-capped-read-pattern)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
+| | | Summary: Standardized explicit capped read pattern and synchronized metadata | |
+| 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
+| | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Normalized runtime metadata header to canonical cleanup-wave contract
+
+**Date:** 2026-03-08
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `safe-file-reading.md` from v1.2 to v1.3.
+- Updated `design/safe-file-reading.design.md` from v1.2 to v1.3.
+- Added canonical root runtime header fields in active metadata order:
+  - `Current Version`
+  - `Design`
+  - `Session`
+  - `Full history`
+- Preserved the existing safe-file-reading behavioral contract.
+
+### Summary
+Normalized the safe-file-reading chain to the canonical cleanup-wave runtime header format while preserving substantive file-reading safety behavior.
 
 ---
 
@@ -54,16 +90,3 @@ Standardized safe-file-reading guidance around explicit capped read pattern and 
 
 ### Summary
 Migrated to standard template
-
----
-
-## Version History (Unified)
-
-| Version | Date | Changes | Session ID |
-|---------|------|---------|------------|
-| 1.2 | 2026-02-22 | **[Enforced deterministic capped read patterns for WS-5](#version-12-enforced-deterministic-capped-read-patterns-for-ws-5)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Standardized deterministic default and risky-file capped patterns across runtime/design guidance | |
-| 1.1 | 2026-02-21 | **[Clarified Decision Matrix to Enforce Capped Read Pattern](#version-11-clarified-decision-matrix-to-enforce-capped-read-pattern)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
-| | | Summary: Standardized explicit capped read pattern and synchronized metadata | |
-| 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
-| | | Summary: Migrated to standard template | |

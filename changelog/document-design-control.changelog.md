@@ -1,8 +1,8 @@
 # Changelog - Document Design Control
 
 > **Parent Document:** [../document-design-control.md](../document-design-control.md)
-> **Current Version:** 1.7
-> **Session:** f19e8a67-d3c2-4c85-aa11-4db6949e61f8
+> **Current Version:** 1.8
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-03-08 | **[Enforced active-state-only design bodies and support-artifact boundary](#version-18)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Updated the chain to prohibit historical audit content in active design docs and to clarify that support-only artifacts should not remain in ambiguous `.design.md` form | |
 | 1.7 | 2026-02-23 | **[Synchronized design-control runtime contract to UDVC-1 baseline](#version-17)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | Summary: Aligned runtime rule/design/changelog to v1.7 with triad checks, canonical anchor policy, and fixed execution order | |
 | 1.6 | 2026-02-22 | **[Removed runtime version-table contradiction and synchronized references](#version-16)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -26,6 +28,24 @@
 | | | Summary: Removed local version-table expectation from design docs | |
 | 1.0 | 2026-01-20 | **[Initial design-control standard](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Established baseline naming/location/structure standards for design docs | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Enforced active-state-only design bodies and support-artifact boundary
+
+**Date:** 2026-03-08
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `design/document-design-control.design.md` from v1.7 to v1.8.
+- Updated runtime `document-design-control.md` from v1.7 to v1.8.
+- Clarified that active design bodies must not embed audit logs, remediation history, rollout journals, or obsolete pending instructions.
+- Added an explicit support-artifact boundary so reference-only materials do not remain in ambiguous governed `.design.md` form.
+- Preserved canonical-anchor and synchronization-order requirements while tightening active-state design-body behavior.
+
+### Summary
+Updated the chain so design docs now explicitly represent current active state only, while support-only artifacts are kept out of ambiguous governed design semantics.
 
 ---
 

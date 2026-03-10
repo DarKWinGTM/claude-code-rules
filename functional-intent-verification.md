@@ -1,15 +1,5 @@
 # Functional intent verification
 
-> **Current Version:** 1.0
-> **Design:** [design/functional-intent-verification.design.md](design/functional-intent-verification.design.md) v1.0
-
-## Rules
-- Before recommending a command or change that can be destructive or expensive, confirm functional intent.
-- Disambiguate terms like “copy into” vs “replace”, “merge” vs “overwrite”, “delete” vs “archive”.
-- Explain expected outcome and worst-case impact.
-- If the action could run in loops or at scale, assess system impact (disk, CPU, network, data loss risk).
-
-## Output standard
-- Provide safe defaults and require explicit confirmation for destructive actions.
-
-> Full history: [changelog/functional-intent-verification.changelog.md](changelog/functional-intent-verification.changelog.md)
+> **Current Version:** 1.1
+> **Design:** [design/functional-intent-verification.design.md](design/functional-intent-verification.design.md) v1.1
+> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
