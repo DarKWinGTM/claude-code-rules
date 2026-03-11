@@ -1,3 +1,4 @@
+<a id="top"></a>
 <div align="center">
 
 <!-- Hero Banner -->
@@ -45,11 +46,11 @@
   <a href="#-quick-start">
     <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
   </a>
+  <a href="#-rule-files">
+    <img src="https://img.shields.io/badge/📁_Rules-26_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+  </a>
   <a href="#-installation">
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
-  </a>
-  <a href="#-visual-guide">
-    <img src="https://img.shields.io/badge/🖼️_Rules-26_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
 </p>
 
@@ -60,14 +61,19 @@
 ## 📑 Table of Contents
 
 - [⚡ Quick Start](#-quick-start)
-- [📦 Installation](#-installation)
-- [🔗 Integration Guide](#-integration-guide)
 - [✨ Features](#-features)
 - [📁 Rule Files](#-rule-files)
-- [🖼️ Visual Guide](#️-visual-guide)
+- [📦 Installation](#-installation)
+- [📂 Design Documentation Structure](#-design-documentation-structure)
+- [🔗 Integration Guide](#-integration-guide)
 - [🎓 Framework Highlights](#-framework-highlights)
+- [🖼️ Visual Guide](#️-visual-guide)
 - [📊 Before & After](#-before--after)
+- [📊 Performance Metrics](#-performance-metrics)
+- [🔒 Safety Guarantees](#-safety-guarantees)
 - [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
 
 ---
 
@@ -76,295 +82,27 @@
 <div align="center">
 
 ```bash
-# 🚀 One-line runtime-only installation - Clone and install active rules
-git clone https://github.com/DarKWinGTM/claude-code-rules.git && \
-mkdir -p ~/.claude/rules && \
-for f in \
-  accurate-communication.md \
-  answer-presentation.md \
-  anti-mockup.md \
-  anti-sycophancy.md \
-  authority-and-scope.md \
-  dan-safe-normalization.md \
-  document-consistency.md \
-  document-changelog-control.md \
-  document-design-control.md \
-  document-patch-control.md \
-  emergency-protocol.md \
-  explanation-quality.md \
-  flow-diagram-no-frame.md \
-  functional-intent-verification.md \
-  no-variable-guessing.md \
-  phase-implementation.md \
-  project-documentation-standards.md \
-  recovery-contract.md \
-  refusal-classification.md \
-  refusal-minimization.md \
-  safe-file-reading.md \
-  safe-terminal-output.md \
-  strict-file-hygiene.md \
-  todo-standards.md \
-  unified-version-control-system.md \
-  zero-hallucination.md; do \
-  cp "claude-code-rules/$f" ~/.claude/rules/; \
-done
+# Step 1: Clone once
+git clone https://github.com/DarKWinGTM/claude-code-rules.git
+cd claude-code-rules
+
+# Step 2: Reusable active runtime file set (run from repo root)
+RULE_FILES="accurate-communication.md answer-presentation.md anti-mockup.md anti-sycophancy.md authority-and-scope.md dan-safe-normalization.md document-consistency.md document-changelog-control.md document-design-control.md document-patch-control.md emergency-protocol.md explanation-quality.md flow-diagram-no-frame.md functional-intent-verification.md no-variable-guessing.md phase-implementation.md project-documentation-standards.md recovery-contract.md refusal-classification.md refusal-minimization.md safe-file-reading.md safe-terminal-output.md strict-file-hygiene.md todo-standards.md unified-version-control-system.md zero-hallucination.md"
+
+# Step 3: Install globally
+mkdir -p ~/.claude/rules
+for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 ```
 
 ✨ **That's it!** This installs the 26 active runtime rules only.
 
+> Already cloned the repo? Skip Step 1 and run only Step 2 + Step 3 from the repository root.
+>
+> Need project-specific install instead? Reuse the same `RULE_FILES` line, but change the destination from `~/.claude/rules/` to `./.claude/rules/`.
+>
+> Note: this runtime-only install copies the active rule files. Governed design/changelog/TODO artifacts plus the root `phase-implementation-template.md` helper remain in the repository for maintenance, documentation, and synchronized updates.
+
 </div>
-
----
-
-## 📦 Installation
-
-### 🎯 Method 1: Full Installation (Recommended)
-
-Complete setup with all rules:
-
-```bash
-# Step 1: Clone the repository
-git clone https://github.com/DarKWinGTM/claude-code-rules.git
-cd claude-code-rules
-
-# Step 2: Create rules directory (if not exists)
-mkdir -p ~/.claude/rules
-
-# Step 3: Copy only active runtime rule files
-for f in \
-  accurate-communication.md \
-  answer-presentation.md \
-  anti-mockup.md \
-  anti-sycophancy.md \
-  authority-and-scope.md \
-  dan-safe-normalization.md \
-  document-consistency.md \
-  document-changelog-control.md \
-  document-design-control.md \
-  document-patch-control.md \
-  emergency-protocol.md \
-  explanation-quality.md \
-  flow-diagram-no-frame.md \
-  functional-intent-verification.md \
-  no-variable-guessing.md \
-  phase-implementation.md \
-  project-documentation-standards.md \
-  recovery-contract.md \
-  refusal-classification.md \
-  refusal-minimization.md \
-  safe-file-reading.md \
-  safe-terminal-output.md \
-  strict-file-hygiene.md \
-  todo-standards.md \
-  unified-version-control-system.md \
-  zero-hallucination.md; do \
-  cp "$f" ~/.claude/rules/; \
-done
-
-# Step 4: Verify installation
-ls ~/.claude/rules/
-
-# Step 5 (optional): Verify new governed rules exist
-ls ~/.claude/rules/answer-presentation.md
-ls ~/.claude/rules/phase-implementation.md
-```
-
-### 🎯 Method 2: Pick Your Rules
-
-Install only what you need:
-
-```bash
-# Example: Install just the anti-sycophancy rule
-curl -o ~/.claude/rules/anti-sycophancy.md \
-  https://raw.githubusercontent.com/DarKWinGTM/claude-code-rules/master/anti-sycophancy.md
-```
-
-### 🎯 Method 3: Project-Specific
-
-Add rules to a single project:
-
-```bash
-# In your project directory
-mkdir -p .claude/rules
-for f in \
-  accurate-communication.md \
-  answer-presentation.md \
-  anti-mockup.md \
-  anti-sycophancy.md \
-  authority-and-scope.md \
-  dan-safe-normalization.md \
-  document-consistency.md \
-  document-changelog-control.md \
-  document-design-control.md \
-  document-patch-control.md \
-  emergency-protocol.md \
-  explanation-quality.md \
-  flow-diagram-no-frame.md \
-  functional-intent-verification.md \
-  no-variable-guessing.md \
-  phase-implementation.md \
-  project-documentation-standards.md \
-  recovery-contract.md \
-  refusal-classification.md \
-  refusal-minimization.md \
-  safe-file-reading.md \
-  safe-terminal-output.md \
-  strict-file-hygiene.md \
-  todo-standards.md \
-  unified-version-control-system.md \
-  zero-hallucination.md; do \
-  cp "/path/to/claude-code-rules/$f" .claude/rules/; \
-done
-```
-
-### 📍 Installation Paths
-
-| Location | Scope | Path | Use Case |
-|----------|-------|------|----------|
-| **Global** | All projects | `~/.claude/rules/*.md` | Default recommendation |
-| **Project** | Current project only | `./.claude/rules/*.md` | Project-specific needs |
-
-### 📂 Design Documentation Structure
-
-| Location | Purpose | File Type |
-|----------|---------|-----------|
-| `./design/*.design.md` | Design specifications | Design docs |
-| `*.md` (root) | Active runtime rules | Rules files |
-| `./changelog/changelog.md` | Master repository-wide history | Master changelog |
-| `./changelog/*.changelog.md` | Per-chain authoritative history | Changelogs |
-| `./phase/SUMMARY.md` | Governed summary/index for live phase planning, design rollup, and review rollup | Phase summary doc |
-| `./phase/phase-010-<phase-name>.md` | Governed child per-phase execution detail with design extraction and review state | Child phase docs |
-| `./patches/*.patch.md` | Governed patch/review artifacts outside live phase planning | Patch docs |
-| `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
-
-> **💡 Single Source of Truth Principle:**
-> - Design files (`.design.md`) define active target state
-> - Per-chain changelogs (`*.changelog.md`) are the authority for governed chain history
-> - `changelog/changelog.md` records repository-level synchronization history
-> - `README.md` remains overview-only, not chain authority
-
-### ✅ Verify Installation
-
-```bash
-# Check if rules are loaded
-claude --version
-head -20 ~/.claude/rules/anti-sycophancy.md
-ls ~/.claude/rules/answer-presentation.md
-ls ~/.claude/rules/phase-implementation.md
-```
-
----
-
-## 🔗 Integration Guide
-
-This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and governed phase-planning artifacts should be updated together.
-
-### Document Roles
-
-| Document | Role | Update Trigger |
-|----------|------|----------------|
-| `design/*.design.md` | Target behavior/specification | Requirement or policy change |
-| `*.md` (root runtime rules) | Active runtime behavior | Approved design change requires runtime sync |
-| `changelog/changelog.md` | Master repository-wide synchronization history | Repository-level governed sync events |
-| `changelog/*.changelog.md` | Authoritative per-chain version history | Any rule/design update with version impact |
-| `phase/SUMMARY.md` | Governed summary/index for live phased execution | Phased implementation work requires one summary file that carries design extraction summary, overview flow, review summary, phase map, and global coordination |
-| `phase/phase-010-<phase-name>.md` and peers | Governed child phase-detail layer | Multi-phase execution detail under the summary/index, including design extraction, review flow, reviewer checklist, review outcome, and execution detail |
-| `patches/*.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning |
-| `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters |
-| `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
-
-### Recommended Update Flow
-
-```text
-Change request received
-  → Update design target state
-  → Synchronize runtime rule wording
-  → Record per-chain changelog version + summary
-  → Record repository-level sync in changelog/changelog.md when applicable
-  → Update TODO pending/completed/history
-  → Verify links, versions, and consistency
-```
-
-### Verification Checklist
-
-- Design file links to the correct changelog file
-- Changelog unified row maps to an existing detailed section
-- Runtime rule version/header aligns with changelog current version
-- `phase/SUMMARY.md` exists when phased execution is used
-- `phase/SUMMARY.md` includes:
-  - design extraction summary table
-  - overview flow diagram
-  - review summary table
-- child phase files include:
-  - design extraction
-  - review flow diagram
-  - reviewer checklist
-  - standardized review outcome fields
-- TODO pending section contains pending-only items (`- [ ]`)
-- TODO history has a dated entry for completed milestone work
-
-### Real Examples (This Repository)
-
-#### Example 1: Deterministic Recovery Contract Synchronization (WS-1)
-
-```text
-design/recovery-contract.design.md
-  → recovery-contract.md
-  → changelog/recovery-contract.changelog.md
-  → TODO.md (history/progress)
-```
-
-**What was synchronized:**
-- Deterministic response keys were aligned across design and runtime (`decision_output`, `refusal_class`, `reason`, `what_can_be_done_now`, `how_to_proceed`)
-- Changelog recorded the runtime/design version sync event
-- TODO recorded completion in the hardening program history
-
-#### Example 2: Verification + Output-Cap Consolidation (WS-5)
-
-```text
-design/safe-file-reading.design.md + design/safe-terminal-output.design.md
-  → safe-file-reading.md + safe-terminal-output.md
-  → changelog/safe-file-reading.changelog.md + changelog/safe-terminal-output.changelog.md
-  → TODO.md (WS-5 completion)
-```
-
-**What was synchronized:**
-- Shared verification-trigger model applied across related rules
-- Deterministic output-cap wording standardized (`head -100 | head -c 5000`, risky-file variant)
-- Changelog and TODO were updated to preserve traceability
-
-#### Example 3: TODO Governance Alignment (WS-6)
-
-```text
-TODO.md pending section audit
-  → remove completed items from pending block
-  → remove duplicate pending headings
-  → add closure row in TODO history
-```
-
-**What was synchronized:**
-- Pending section kept pending-only (`- [ ]`)
-- Duplicate heading drift removed
-- Program closure logged in dated history row
-
-#### Example 4: Final `/phase` Review Model Rollout
-
-```text
-phase/SUMMARY.md
-  → design extraction summary table
-  → overview flow diagram
-  → review summary table
-  → phase/phase-010-*.md
-  → TODO.md history
-```
-
-**What was synchronized:**
-- `/phase` became the live phase-planning namespace
-- `SUMMARY.md` became the required summary/index for live phased execution
-- child phase files were required to carry design extraction, review flow, reviewer checklist, and standardized review outcomes
-- `SUMMARY.md` was extended to carry design rollup and review rollup views for faster approval
-- the model gained an explicit Definition of Done and stop rule so governance expansion does not continue by default after completion
-- communication rules were narrowed so next-step options are suggested only when genuinely useful rather than treated as a mandatory ending pattern
 
 ---
 
@@ -443,16 +181,16 @@ phase/SUMMARY.md
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims and no forced extra options after completed work |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims and next-step guidance only when genuinely useful |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
-| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Tactical implementation plans |
+| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
-| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with design rollups, review rollups, standardized review outcomes, and explicit completion boundary |
+| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with design rollups, review rollups, standardized review outcomes, and an explicit completion boundary/stop rule |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
 | [`refusal-classification.md`](refusal-classification.md) | Deterministic refusal taxonomy | Consistent block decisions and traceable output modes |
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
@@ -470,7 +208,7 @@ phase/SUMMARY.md
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Better reasoning flow and useful endings without forced extra options |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Better reasoning flow and usefulness-based endings without forced extra options |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -487,7 +225,295 @@ phase/SUMMARY.md
 
 **📊 Active Runtime Rules: 26**
 
-**📊 Framework Summary: 26 active runtime rules**
+</div>
+
+---
+
+## 📦 Installation
+
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 26-rule set, but describe when to use each path without repeating the long file list.
+
+### 🎯 Method 1: Full Installation (Recommended)
+
+**Use this when:** you want the full active runtime set installed globally.
+
+Fastest path:
+1. Clone the repository.
+2. Run the Quick Start block exactly as shown above.
+3. Run the verification commands below.
+
+If you already cloned the repo earlier, you do **not** need to repeat the clone step. Just return to the repo root, keep the same `RULE_FILES="..."` definition from Quick Start, and rerun only the install portion against `~/.claude/rules/`.
+
+### 🎯 Method 2: Pick Your Rules
+
+**Use this when:** you only want a small subset of the runtime rules.
+
+```bash
+# Example: Install just the anti-sycophancy rule
+curl -o ~/.claude/rules/anti-sycophancy.md \
+  https://raw.githubusercontent.com/DarKWinGTM/claude-code-rules/master/anti-sycophancy.md
+```
+
+### 🎯 Method 3: Project-Specific
+
+**Use this when:** you want the same active runtime set, but only inside the current project.
+
+1. Create `./.claude/rules/` in the project root.
+2. Reuse the same Quick Start command pattern.
+3. Change only the destination path from `~/.claude/rules/` to `./.claude/rules/`.
+
+This keeps the install set identical while scoping the rules to one repository.
+
+### 📍 Installation Paths
+
+| Location | Scope | Path | Use Case |
+|----------|-------|------|----------|
+| **Global** | All projects | `~/.claude/rules/*.md` | Default recommendation |
+| **Project** | Current project only | `./.claude/rules/*.md` | Project-specific needs |
+
+### ✅ Verify Installation
+
+> Global install: verify under `~/.claude/rules/`.
+> Project-specific install: verify under `./.claude/rules/` instead.
+
+```bash
+# Global install check
+claude --version
+head -20 ~/.claude/rules/anti-sycophancy.md
+ls ~/.claude/rules/answer-presentation.md
+ls ~/.claude/rules/phase-implementation.md
+
+# Project-specific install check (run from project root)
+head -20 ./.claude/rules/anti-sycophancy.md
+ls ./.claude/rules/answer-presentation.md
+ls ./.claude/rules/phase-implementation.md
+```
+
+---
+
+## 📂 Design Documentation Structure
+
+| Location | Purpose | File Type |
+|----------|---------|-----------|
+| `./design/*.design.md` | Design specifications | Design docs |
+| `*.md` (root) | Active runtime rules | Rules files |
+| `./changelog/changelog.md` | Master repository-wide history | Master changelog |
+| `./changelog/*.changelog.md` | Per-chain authoritative history | Changelogs |
+| `./phase/SUMMARY.md` | Governed summary/index for live phase planning, design rollup, and review rollup | Phase summary doc |
+| `./phase/phase-010-<phase-name>.md` | Governed child per-phase execution detail with design extraction and review state | Child phase docs |
+| `./patches/*.patch.md` | Governed patch/review artifacts outside live phase planning | Patch docs |
+| `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
+
+> **💡 Single Source of Truth Principle:**
+> - Design files (`.design.md`) define active target state
+> - Per-chain changelogs (`*.changelog.md`) are the authority for governed chain history
+> - `changelog/changelog.md` records repository-level synchronization history
+> - `README.md` remains overview-only, not chain authority
+
+---
+
+## 🔗 Integration Guide
+
+This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and governed phase-planning artifacts should be updated together.
+
+### Document Roles
+
+| Document | Role | Update Trigger |
+|----------|------|----------------|
+| `design/*.design.md` | Target behavior/specification | Requirement or policy change |
+| `*.md` (root runtime rules) | Active runtime behavior | Approved design change requires runtime sync |
+| `changelog/changelog.md` | Master repository-wide synchronization history | Repository-level governed sync events |
+| `changelog/*.changelog.md` | Authoritative per-chain version history | Any rule/design update with version impact |
+| `phase/SUMMARY.md` | Governed summary/index for live phased execution | Phased implementation work needs one summary file with a phase map, design extraction rollup, review rollup, and global coordination |
+| `phase/phase-010-<phase-name>.md` and peers | Governed child phase-detail layer | Multi-phase execution detail under `/phase`, including design references, design extraction, review flow, reviewer checklist, review outcome, and execution detail |
+| `patches/*.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning |
+| `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters |
+| `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
+
+### Recommended Update Flow
+
+```text
+Change request received
+  → Update design target state
+  → Synchronize runtime rule wording
+  → Record per-chain changelog version + summary
+  → Record repository-level sync in changelog/changelog.md when applicable
+  → Update TODO pending/completed/history
+  → Verify links, versions, and consistency
+```
+
+### Verification Checklist
+
+- Design file links to the correct changelog file
+- Changelog unified row maps to an existing detailed section
+- Runtime rule version/header aligns with changelog current version
+- `phase/SUMMARY.md` exists when phased execution is used
+- `phase/SUMMARY.md` includes:
+  - design extraction summary table
+  - overview flow diagram
+  - review summary table
+  - phase map
+- child phase files include:
+  - design references
+  - design extraction
+  - review flow diagram
+  - reviewer checklist
+  - standardized review outcome fields
+- TODO pending section contains pending-only items (`- [ ]`)
+- TODO history has a dated entry for completed milestone work
+
+### Real Examples (This Repository)
+
+#### Example 1: Deterministic Recovery Contract Synchronization (WS-1)
+
+```text
+design/recovery-contract.design.md
+  → recovery-contract.md
+  → changelog/recovery-contract.changelog.md
+  → TODO.md (history/progress)
+```
+
+**What was synchronized:**
+- Deterministic response keys were aligned across design and runtime (`decision_output`, `refusal_class`, `reason`, `what_can_be_done_now`, `how_to_proceed`)
+- Changelog recorded the runtime/design version sync event
+- TODO recorded completion in the hardening program history
+
+#### Example 2: Verification + Output-Cap Consolidation (WS-5)
+
+```text
+design/safe-file-reading.design.md + design/safe-terminal-output.design.md
+  → safe-file-reading.md + safe-terminal-output.md
+  → changelog/safe-file-reading.changelog.md + changelog/safe-terminal-output.changelog.md
+  → TODO.md (WS-5 completion)
+```
+
+**What was synchronized:**
+- Shared verification-trigger model applied across related rules
+- Deterministic output-cap wording standardized (`head -100 | head -c 5000`, risky-file variant)
+- Changelog and TODO were updated to preserve traceability
+
+#### Example 3: TODO Governance Alignment (WS-6)
+
+```text
+TODO.md pending section audit
+  → remove completed items from pending block
+  → remove duplicate pending headings
+  → add closure row in TODO history
+```
+
+**What was synchronized:**
+- Pending section kept pending-only (`- [ ]`)
+- Duplicate heading drift removed
+- Program closure logged in dated history row
+
+#### Example 4: Final `/phase` Review Model Rollout
+
+```text
+phase/SUMMARY.md
+  → design extraction summary table
+  → overview flow diagram
+  → review summary table
+  → phase/phase-010-*.md
+  → TODO.md history
+```
+
+**What was synchronized:**
+- `/phase` became the live phase-planning namespace
+- `SUMMARY.md` became the required summary/index for live phased execution
+- child phase files were required to carry design extraction, review flow, reviewer checklist, and standardized review outcomes
+- `SUMMARY.md` was extended to carry design rollup and review rollup views for faster approval
+- the model gained an explicit Definition of Done and stop rule so governance expansion does not continue by default after completion
+- communication rules were narrowed so next-step options are suggested only when genuinely useful rather than treated as a mandatory ending pattern
+
+---
+
+## 🎓 Framework Highlights
+
+### 🧭 Finalized Phase Review Model
+
+**The current phased execution model is now explicitly finalized and bounded.**
+
+```text
+phase/
+  SUMMARY.md
+    → design extraction summary table
+    → overview flow diagram
+    → review summary table
+    → phase map
+  phase-010-<phase-name>.md
+    → design references
+    → design extraction
+    → review flow diagram
+    → reviewer checklist
+    → review outcome
+```
+
+**What this gives you:**
+- reviewers can inspect the whole rollout from `SUMMARY.md`
+- reviewers can inspect one phase deeply from the child phase file
+- approvers can see sign-off status, severity, disposition, and blocker/follow-up state in one place
+- the model now has an explicit completion boundary and stop rule, so governance expansion does not continue by default after it is operationally complete
+- communication rules now treat next-step options as usefulness-based guidance, not as a mandatory ending pattern after already-complete work
+
+---
+
+### 🧠 TRAAC (Task Runtime Adaptive AI Compression)
+
+<div align="center">
+
+**Dynamic complexity adjustment based on task requirements**
+
+```text
+Simple Tasks (Level 0-2)     → Minimal Processing
+     ↓
+Standard Tasks (Level 3-5)   → Balanced Approach
+     ↓
+Complex Tasks (Level 6-7)    → Deep Analysis
+```
+
+| Metric | Improvement | Impact |
+|--------|-------------|--------|
+| Response Speed | +30-50% | Faster answers |
+| Token Efficiency | +40-82% | Lower costs |
+| Cost Reduction | -25-35% | Budget-friendly |
+
+</div>
+
+---
+
+### 👥 TUMIX Multi-Agent System
+
+**Three expert perspectives analyzing every complex problem**
+
+```text
+Developer  ──┐
+Security   ──┼──→ Unified Recommendation
+Architect  ──┘
+```
+
+**How It Works:**
+1. **Developer Agent** → Technical feasibility analysis
+2. **Security Agent** → Security & privacy evaluation
+3. **Architect Agent** → System design considerations
+4. **Synthesis** → All perspectives merge into unified recommendation
+
+**Result:** Comprehensive analysis from multiple angles
+
+---
+
+### 📚 RoT (Retrieval of Thoughts)
+
+<div align="center">
+
+**Cache and reuse verified reasoning patterns**
+
+| Action | Benefit |
+|--------|---------|
+| **Cache** verified patterns | Store successful approaches |
+| **Reuse** for similar tasks | 40% speed improvement |
+| **Validate** before use | Ensure accuracy maintained |
+
+**Performance:** 82% cache hit rate for recurring patterns
 
 </div>
 
@@ -615,96 +641,6 @@ phase/SUMMARY.md
 </td>
 </tr>
 </table>
-
-</div>
-
----
-
-## 🎓 Framework Highlights
-
-### 🧭 Finalized Phase Review Model
-
-**The current phased execution model is now explicitly finalized and bounded.**
-
-```text
-phase/
-  SUMMARY.md
-    → design extraction summary table
-    → overview flow diagram
-    → review summary table
-    → phase map
-  phase-010-<phase-name>.md
-    → design extraction
-    → review flow diagram
-    → reviewer checklist
-    → review outcome
-```
-
-**What this gives you:**
-- reviewers can inspect the whole rollout from `SUMMARY.md`
-- reviewers can inspect one phase deeply from the child phase file
-- approvers can see sign-off status, severity, disposition, and blocker/follow-up state in one place
-- the model now has an explicit completion boundary and stop rule, so governance expansion does not continue by default after it is operationally complete
-
----
-
-### 🧠 TRAAC (Task Runtime Adaptive AI Compression)
-
-<div align="center">
-
-**Dynamic complexity adjustment based on task requirements**
-
-```text
-Simple Tasks (Level 0-2)     → Minimal Processing
-     ↓
-Standard Tasks (Level 3-5)   → Balanced Approach
-     ↓
-Complex Tasks (Level 6-7)    → Deep Analysis
-```
-
-| Metric | Improvement | Impact |
-|--------|-------------|--------|
-| Response Speed | +30-50% | Faster answers |
-| Token Efficiency | +40-82% | Lower costs |
-| Cost Reduction | -25-35% | Budget-friendly |
-
-</div>
-
----
-
-### 👥 TUMIX Multi-Agent System
-
-**Three expert perspectives analyzing every complex problem**
-
-```text
-Developer  ──┐
-Security   ──┼──→ Unified Recommendation
-Architect  ──┘
-```
-
-**How It Works:**
-1. **Developer Agent** → Technical feasibility analysis
-2. **Security Agent** → Security & privacy evaluation
-3. **Architect Agent** → System design considerations
-4. **Synthesis** → All perspectives merge into unified recommendation
-
-**Result:** Comprehensive analysis from multiple angles
-
----
-
-### 📚 RoT (Retrieval of Thoughts)
-
-<div align="center">
-
-**Cache and reuse verified reasoning patterns**
-
-| Action | Benefit |
-|--------|---------|
-| **Cache** verified patterns | Store successful approaches |
-| **Reuse** for similar tasks | 40% speed improvement |
-| **Validate** before use | Ensure accuracy maintained |
-
-**Performance:** 82% cache hit rate for recurring patterns
 
 </div>
 
@@ -848,12 +784,12 @@ Personal rule set and configuration framework for Claude Code CLI.
 
 <p>
   <b>Version</b>: 2.2.0 |
-  <b>Last Updated</b>: 2026-03-11 |
+  <b>Last Updated</b>: 2026-03-12 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
 <p>
-  <a href="#️-claude-code-rules--framework">⬆️ Back to Top</a>
+  <a href="#top">⬆️ Back to Top</a>
 </p>
 
 ---
