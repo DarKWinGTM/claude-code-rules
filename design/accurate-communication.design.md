@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** b1fc974f-b7df-4f24-9080-c941153612ca (2026-03-09)
 
 ---
@@ -71,8 +71,10 @@ Required guidance:
 - prefer high-signal synthesis over rephrasing prior detail
 - keep final summaries concise and decision-oriented
 - do not impose a rigid sentence cap; the summary should be only as long as needed to preserve meaning
-- if a clear next action exists, state it directly
-- if multiple reasonable next actions exist, present short explicit options
+- if a clear next action exists and it would genuinely help, state it directly
+- if multiple reasonable next actions exist and presenting them would materially help the user, present short explicit options
+- if the task is already complete and no real next action is needed, do not invent extra options
+- offering options is guidance, not a mandatory ending pattern
 
 ---
 

@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 1.4
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v1.4
+> **Current Version:** 1.6
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v1.6
 > **Session:** b1fc974f-b7df-4f24-9080-c941153612ca
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -108,8 +108,10 @@ Summary quality rules:
 - keep the closing only as long as needed to preserve meaning
 - do not restate earlier detail unless it is necessary for the final decision
 
-If there is one clear next path, state it directly.
-If there are multiple reasonable next paths, present short explicit options.
+If there is one clear next path and it would genuinely help the user act, state it directly.
+If there are multiple reasonable next paths and presenting them would materially help the user, present short explicit options.
+If the task is already complete and there is no real continuation needed, do not invent artificial next-step options.
+Offering continuation paths is guidance, not a mandatory pattern when no real continuation value exists.
 
 ### 9) Decision Usefulness Check
 

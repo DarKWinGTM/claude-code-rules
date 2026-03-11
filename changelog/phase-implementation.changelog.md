@@ -1,8 +1,8 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 1.1
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402
+> **Current Version:** 2.0
+> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
 
 ---
 
@@ -10,10 +10,227 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.0 | 2026-03-11 | **[Added explicit Definition of Done and stop rule for the phase-planning model](#version-20)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Finalized the phase-planning model by adding a completion boundary and explicit stop rule so the model no longer expands by default after reaching the intended operational state | |
+| 1.9 | 2026-03-11 | **[Required a review summary table in `SUMMARY.md`](#version-19)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Added a summary-level review aggregate so approvers can see per-phase sign-off status, severity, disposition, and blocker/follow-up state in one place | |
+| 1.8 | 2026-03-11 | **[Standardized sign-off status, reviewer severity, and reviewer disposition values](#version-18)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Standardized child-phase review outcomes with one shared sign-off vocabulary plus severity and disposition fields aligned to approval behavior | |
+| 1.7 | 2026-03-11 | **[Required a reviewer checklist block in each child phase file](#version-17)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Strengthened child-phase review readiness by requiring a dedicated reviewer checklist block for source correctness, flow clarity, phase boundaries, dependencies, and evidence readiness | |
+| 1.6 | 2026-03-11 | **[Required a design extraction summary table in `SUMMARY.md`](#version-16)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Strengthened summary-level reviewability again by requiring a design extraction summary table that maps design sources to phase files, derived execution work, and target outcomes | |
+| 1.5 | 2026-03-11 | **[Required overview flow diagrams in `SUMMARY.md` and expanded the canonical child-phase example](#version-15)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Strengthened summary-level reviewability by requiring a full phase-set overview flow diagram in `phase/SUMMARY.md` and expanded the helper with a fuller canonical child-phase example | |
+| 1.4 | 2026-03-11 | **[Required explicit design-to-phase extraction mapping and review flow diagrams in child phase files](#version-14)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Strengthened child phase reviewability by requiring explicit design source → derived execution mapping plus a small flow diagram showing source, phase action, and target outcome | |
+| 1.3 | 2026-03-11 | **[Moved live phased execution to `/phase`, made `SUMMARY.md` mandatory, and removed `/patches` as the phase-plan namespace](#version-13)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Replaced the patch-based phase model with a dedicated `/phase` workspace using mandatory `SUMMARY.md` plus child phase files, and made `/patches` explicitly separate from live phased execution | |
+| 1.2 | 2026-03-11 | **[Made per-phase child files mandatory for multi-phase work and prohibited combined live all-phases execution files](#version-12)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Changed the phase model to require one parent patch/index plus separate child phase files for multi-phase work, defined the default `.phases/phase-010-*` layout, and rejected one combined live all-phases execution body | |
 | 1.1 | 2026-03-10 | **[Added role-specific phase validation checklist and clarified checklist boundary versus patch-control](#version-11)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Added a dedicated phase-quality checklist for execution planning, clarified that phase checklists validate planning quality rather than patch-governance quality, and made the boundary versus `document-patch-control` explicit | |
 | 1.0 | 2026-03-10 | **[Created first-class phase-implementation rule chain and moved phase semantics out of helper-only status](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created the new design/runtime/changelog chain for phase semantics, kept patch docs as the live governed execution artifacts, and established the root template as a non-governed helper only | |
+
+---
+
+<a id="version-20"></a>
+## Version 2.0: Added explicit Definition of Done and stop rule for the phase-planning model
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated runtime `phase-implementation.md` from v1.9 to v2.0.
+- Updated `design/phase-implementation.design.md` from v1.9 to v2.0.
+- Added an explicit Definition of Done for the phase-planning model.
+- Added a stop rule that prevents continued capability expansion by default after the model is operationally complete.
+- Updated `phase-implementation-template.md` with the same completion boundary and stop rule.
+- Synchronized TODO history with the finalization decision.
+
+### Summary
+Finalized the phase-planning model by defining when it is complete and by preventing endless default expansion after completion.
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Required a review summary table in `SUMMARY.md`
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated runtime `phase-implementation.md` from v1.8 to v1.9.
+- Updated `phase-implementation-template.md` so `phase/SUMMARY.md` now requires a review summary table.
+- Defined the recommended review-summary columns as:
+  - Phase
+  - Phase File
+  - Sign-Off Status
+  - Reviewer Severity
+  - Reviewer Disposition
+  - Blocker / Follow-Up State
+- Expanded the summary example so approvers can see the aggregate review state of all phases before opening child phase files.
+- Updated TODO history to record the summary-level review aggregation enhancement.
+
+### Summary
+Improved approval speed by requiring `phase/SUMMARY.md` to show an aggregate review summary table for the whole phase set.
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Standardized sign-off status, reviewer severity, and reviewer disposition values
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated runtime `phase-implementation.md` from v1.7 to v1.8.
+- Updated `phase-implementation-template.md` so child phases now use one standardized sign-off status vocabulary.
+- Added standard reviewer severity values and reviewer disposition values for review outcomes.
+- Updated the child-phase template and canonical example so sign-off records and review outcomes use the same normalized fields.
+- Updated TODO history to record the review-outcome standardization.
+
+### Summary
+Improved review consistency by standardizing sign-off status, reviewer severity, and reviewer disposition values across child phase review outcomes.
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Required a reviewer checklist block in each child phase file
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated runtime `phase-implementation.md` from v1.6 to v1.7.
+- Updated `phase-implementation-template.md` so each child phase file now requires a reviewer checklist block.
+- Defined the reviewer checklist focus areas as:
+  - design-source correctness
+  - derived-work justification
+  - source → phase action → target outcome flow clarity
+  - phase-boundary correctness
+  - dependency / handoff clarity
+  - evidence readiness for review or sign-off
+- Expanded the canonical child-phase example with the reviewer checklist block.
+- Updated TODO history to record the child-phase review-readiness enhancement.
+
+### Summary
+Improved child-phase review readiness by requiring a dedicated reviewer checklist block that helps reviewers quickly validate correctness, clarity, boundaries, dependencies, and evidence before sign-off.
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Required a design extraction summary table in `SUMMARY.md`
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated runtime `phase-implementation.md` from v1.5 to v1.6.
+- Updated `phase-implementation-template.md` so `phase/SUMMARY.md` now requires a design extraction summary table.
+- Defined the recommended summary-table columns as:
+  - Phase
+  - Phase File
+  - Design Source
+  - Derived Execution Work
+  - Target Outcome
+- Expanded the helper example so reviewers can see the summary-level design-to-phase mapping before reading the overview flow or child files.
+- Updated TODO history to record the summary-table enhancement.
+
+### Summary
+Improved review speed and traceability at the summary level by requiring `phase/SUMMARY.md` to show design source → phase file → derived work → target outcome mapping in one table.
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Required overview flow diagrams in `SUMMARY.md` and expanded the canonical child-phase example
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated runtime `phase-implementation.md` from v1.4 to v1.5.
+- Updated `phase-implementation-template.md` so `phase/SUMMARY.md` now requires an overview flow diagram for the full phase set.
+- Expanded the helper with a fuller canonical child-phase example that shows the full review-ready structure rather than only a short excerpt.
+- Updated TODO history to record the summary-level review enhancement.
+- Preserved the child-phase design extraction and per-phase flow-diagram requirements from v1.4.
+
+### Summary
+Improved phase-plan reviewability at the summary level by requiring `SUMMARY.md` to visualize the whole phase story and by expanding the canonical child-phase example for direct reuse.
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Required explicit design-to-phase extraction mapping and review flow diagrams in child phase files
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `design/phase-implementation.design.md` from v1.3 to v1.4.
+- Updated runtime `phase-implementation.md` from v1.3 to v1.4.
+- Added a design-to-phase extraction contract so each child phase must explicitly show:
+  - the source design requirement
+  - the derived execution work
+  - what part is being enhanced, developed, migrated, validated, or replaced
+  - the expected target outcome
+- Added a required review-oriented flow diagram to each child phase file.
+- Required the flow diagram to follow `flow-diagram-no-frame.md`.
+- Updated the checklist, good patterns, anti-patterns, and template expectations so reviewability is built into each child phase file.
+
+### Summary
+Strengthened `phase-implementation` so reviewers can see exactly what execution work is derived from design and inspect the source → phase action → target outcome flow in each child phase file.
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Moved live phased execution to `/phase`, made `SUMMARY.md` mandatory, and removed `/patches` as the phase-plan namespace
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `design/phase-implementation.design.md` from v1.2 to v1.3.
+- Updated runtime `phase-implementation.md` from v1.2 to v1.3.
+- Replaced the patch-based live phase-plan model with a dedicated `/phase` workspace.
+- Required the phased execution structure to use:
+  - `phase/SUMMARY.md`
+  - `phase/phase-010-<phase-name>.md` and peer files
+- Made `SUMMARY.md` mandatory as the governed summary/index for live phased execution.
+- Explicitly prohibited storing live phase planning under `/patches`.
+- Clarified that `SUMMARY.md` owns global control, cross-phase coordination, end-to-end verification, and overall rollback.
+- Clarified that child phase files own phase-local checklist detail, design traceability, TODO/changelog coordination, verification, and rollback notes.
+- Updated the checklist, trigger model, good patterns, anti-patterns, and quality metrics to enforce the `/phase` + `SUMMARY.md` structure.
+
+### Summary
+Reworked `phase-implementation` so phased execution now lives in `/phase` with mandatory `SUMMARY.md` and child phase files, while `/patches` is no longer the live phase-plan namespace.
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Made per-phase child files mandatory for multi-phase work and prohibited combined live all-phases execution files
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `design/phase-implementation.design.md` from v1.1 to v1.2.
+- Updated runtime `phase-implementation.md` from v1.1 to v1.2.
+- Required the phased execution model to use:
+  - one parent patch/index file
+  - one separate child file per live phase for multi-phase work
+- Added the canonical default path pattern:
+  - `patches/<context>.patch.md`
+  - `patches/<context>.phases/phase-010-<phase-name>.md`
+- Explicitly prohibited one combined live all-phases execution body for multi-phase work.
+- Clarified the parent-versus-child responsibility split so:
+  - the parent patch/index carries global control, cross-phase coordination, end-to-end verification, and overall rollback
+  - child phase files carry phase-local checklist detail, design traceability, TODO/changelog coordination, verification, and rollback notes
+- Updated the checklist, trigger model, good patterns, anti-patterns, and quality metrics to enforce the parent-plus-child phase structure.
+
+### Summary
+Reworked `phase-implementation` so multi-phase planning now requires a parent patch/index plus separate child phase files, preventing oversized one-file execution plans while keeping a clear governing entry point.
 
 ---
 

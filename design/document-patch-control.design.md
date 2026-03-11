@@ -3,16 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 1.7
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402 (2026-03-10)
+> **Current Version:** 1.9
+> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32 (2026-03-11)
 
 ---
 
 ## 1) Goal
 
-Standardize patch-document governance under the same UDVC-1 metadata and version-trace contract used by other governed document chains, while keeping patch docs as the live governed execution-plan artifacts.
+Standardize patch-document governance under the same UDVC-1 metadata and version-trace contract used by other governed document chains, while making the boundary explicit that live phased execution planning belongs in `/phase`, not in `/patches`.
 
-When phased execution planning is used inside a patch, semantic phase behavior should come from `phase-implementation.md` rather than being redefined here.
+When phased execution planning is used, semantic phase behavior should come from `phase-implementation.md`, while this chain keeps `/patches` limited to patch-document governance outside the live phase-plan namespace.
 
 ---
 
@@ -22,7 +22,7 @@ Applies to:
 - `patches/*.patch.md`
 - patch lifecycle documentation
 - patch metadata traceability and history references
-- governed execution-plan instances, whether linear or phase-based
+- governed patch execution/review artifacts that are not the live `/phase` plan workspace
 
 The root helper `phase-implementation-template.md` may help authors draft a plan, but it is not itself a governed chain.
 
@@ -30,9 +30,26 @@ The root helper `phase-implementation-template.md` may help authors draft a plan
 
 ## 3) Naming and Location
 
+### 3.1 Patch naming
+
 - Patch document filename: `<context>.patch.md`
 - Preferred location: `patches/`
 - Do not use version suffixes in filenames
+
+### 3.2 `/phase` separation
+
+Live phased execution planning does not belong in `/patches`.
+The dedicated live phase-plan workspace is:
+
+```text
+phase/
+  SUMMARY.md
+  phase-010-<phase-name>.md
+  phase-020-<phase-name>.md
+```
+
+### 3.3 Helper placement
+
 - The canonical reusable helper for this repository is the root-level `phase-implementation-template.md`
 - Root-level helper placement improves discoverability, but helper placement does not change chain authority
 
@@ -40,12 +57,16 @@ The root helper `phase-implementation-template.md` may help authors draft a plan
 
 ## 4) Mandatory Metadata
 
+### 4.1 Patch metadata
+
 Each patch document must include:
 - `Current Version`
 - `Session`
 - `Status`
 - `Target Design`
 - `Full history` link
+
+### 4.2 Patch changelog metadata
 
 Patch changelog files must include:
 - `Parent Document`
@@ -63,45 +84,64 @@ Every governed patch document must include, at minimum:
 4. Verification
 5. Rollback approach
 
-The implementation-plan section may be linear for simple work or phase-based for staged work.
+Patch documents may reference phased execution work, but the live phase summary/index and per-phase execution detail must remain in `/phase`.
 
 ---
 
-## 6) Phase-Planning Boundary
+## 6) Patch-versus-Phase Boundary
 
-### 6.1 Live instance role
+### 6.1 Patch role
 
-If a project needs a phased execution plan, the live governed instance belongs in the patch document.
+`/patches` owns governed patch artifacts.
+It remains appropriate for:
+- tactical migration/review plans
+- governed change artifacts
+- patch-specific transition analysis
+- metadata-governed execution/review documents that are not the live phase workspace
 
-### 6.2 Semantic authority
+### 6.2 Phase role
 
-If a patch uses phases, the patch should follow `phase-implementation.md` for:
+`/phase` owns live phased execution planning.
+It contains:
+- `phase/SUMMARY.md` as the governed summary/index
+- `phase/phase-010-*.md` and peers as child phase-detail files
+
+### 6.3 Prohibited blending
+
+The following are not allowed:
+- using `/patches` as the live phase-plan namespace
+- storing the active phase summary/index in a patch file instead of `phase/SUMMARY.md`
+- storing live per-phase execution files under `/patches`
+
+### 6.4 Semantic authority
+
+If phased execution exists, it should follow `phase-implementation.md` for:
 - when phase planning is appropriate
-- flexible phase ordering
+- the required `/phase` structure
 - stable per-phase fields
 - design traceability
 - status and action-point expectations
-- TODO and changelog coordination inside the plan
+- TODO/changelog coordination inside the plan
 - cross-phase handoffs
 - verification and rollback boundaries
 
-### 6.3 What this chain owns
+### 6.5 What this chain owns
 
 `document-patch-control` owns:
 - patch metadata rules
 - patch filename and location rules
 - patch lifecycle and synchronization behavior
-- patch role as the governed execution-plan layer
 - patch checklist expectations for governed review/change artifacts
+- the boundary that keeps live phased execution out of `/patches`
 
-It does **not** serve as the primary semantic authority for phase behavior.
+It does **not** serve as the primary semantic authority for phased execution behavior.
 
 ---
 
 ## 7) Version and Session Integrity
 
 - Patch active metadata must not contain placeholder sessions.
-- If patch version is updated, corresponding changelog metadata must be synchronized.
+- If patch version is updated, corresponding patch changelog metadata must be synchronized.
 - Target design version references must be resolvable and current.
 
 ---
@@ -115,14 +155,16 @@ Validate here:
 - target-design and history-link integrity
 - patch structure and reviewability
 - synchronization behavior
+- patch-versus-phase namespace separation
 
 Do not validate here:
 - phase necessity
 - phase sequencing quality
-- per-phase design-traceability and execution quality
+- per-phase design-traceability quality
 - per-phase execution-step quality
+- `SUMMARY.md` content quality
 
-Those remain the responsibility of `phase-implementation` when phase planning is used.
+Those remain the responsibility of `phase-implementation` when phased planning is used.
 
 ---
 
@@ -139,19 +181,20 @@ Use this checklist to validate the patch as a governed artifact.
 
 ### 9.2 Patch Authority Integrity
 - [ ] Patch version aligns with its patch changelog version when a patch changelog exists
-- [ ] Patch remains identifiable as the governed execution-plan artifact
-- [ ] Patch does not rely on the helper template as an authority source
-- [ ] Patch does not drift into acting like changelog or TODO authority
+- [ ] Patch remains identifiable as a governed patch artifact
+- [ ] The patch does not rely on the helper template as an authority source
+- [ ] The patch does not drift into acting like changelog or TODO authority
+- [ ] The patch does not masquerade as the live `/phase` summary/index or phase-detail layer
 
 ### 9.3 Structure and Reviewability
 - [ ] Patch includes context, analysis, implementation plan, verification, and rollback coverage
 - [ ] A reviewer can identify what is changing and why this patch exists
 - [ ] A reviewer can identify the intended target design or target state
-- [ ] The patch remains readable as a change/review artifact even when it includes phases
+- [ ] The patch remains readable as a change/review artifact because live phase detail is kept outside `/patches`
 
 ### 9.4 Synchronization Behavior
 - [ ] Governance update order remains consistent when the patch participates in synchronized work
-- [ ] Related design, runtime, changelog, and TODO references are not obviously stale
+- [ ] Related design, runtime, changelog, TODO, and `/phase` references are not obviously stale
 - [ ] Patch history references remain valid after synchronization
 
 ---
@@ -159,11 +202,12 @@ Use this checklist to validate the patch as a governed artifact.
 ## 10) Integration Contract
 
 - Design defines the target state.
-- Patch defines the governed transition process and, when needed, the live phase-plan instance.
+- Patch defines governed patch/review behavior outside the live phase workspace.
+- `/phase` defines the live phased execution workspace.
 - `phase-implementation.md` defines phase semantics.
 - Changelog records shipped or synchronized history.
 - TODO tracks actionable execution items only.
-- `phase-implementation-template.md` is a non-governed helper that may assist authoring but never replaces the patch as the authority instance.
+- `phase-implementation-template.md` is a non-governed helper that may assist authoring but never replaces the live `/phase` workspace.
 
 Update order remains:
 1. design
@@ -179,11 +223,12 @@ Update order remains:
 | Metric | Target |
 |--------|--------|
 | Patch metadata completeness | 100% |
+| Patch-role clarity | 100% |
+| Patch-versus-phase namespace separation clarity | 100% |
 | Active placeholder session markers in patch docs | 0 |
 | Patch ↔ design version reference validity | 100% |
-| Patch-role clarity | 100% |
 | Patch-governance checklist boundary clarity vs phase-implementation | 100% |
-| Phase semantic duplication in patch-control | 0 |
+| Live phased execution files under `/patches` | 0 |
 | Patch history link validity | 100% |
 
 ---
@@ -194,7 +239,7 @@ Update order remains:
 |----------|--------------|
 | [document-changelog-control.design.md](document-changelog-control.design.md) | UDVC-1 version authority contract |
 | [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository-level document and helper role model |
-| [phase-implementation.design.md](phase-implementation.design.md) | Semantic authority for phased execution planning |
+| [phase-implementation.design.md](phase-implementation.design.md) | Semantic authority for phased execution under `/phase` |
 | [../document-patch-control.md](../document-patch-control.md) | Runtime implementation |
 | [../phase-implementation-template.md](../phase-implementation-template.md) | Non-governed root helper for authoring |
 

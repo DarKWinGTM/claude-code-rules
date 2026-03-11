@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.5
 > **Session:** b1fc974f-b7df-4f24-9080-c941153612ca
 
 ---
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-03-11 | **[Made next-step options context-beneficial rather than default](#version-15)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Refined accurate-communication so next-step options are offered only when genuinely helpful and not as a mandatory ending pattern | |
+| 1.4 | 2026-03-11 | **[Prevented artificial next-step options after completed work](#version-14)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Narrowed accurate-communication so completed tasks do not trigger invented extra options when no real next action is needed | |
 | 1.3 | 2026-03-09 | **[Added high-signal summary and clear-next-step communication guidance](#version-13)** | b1fc974f-b7df-4f24-9080-c941153612ca |
 | | | Summary: Strengthened accurate-communication so explanation-heavy answers end with concise synthesis and explicit next-step guidance without rigid sentence caps | |
 | 1.2 | 2026-03-08 | **[Normalized accurate-communication design to active-state navigator behavior](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -21,6 +25,41 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Made next-step options context-beneficial rather than default
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `accurate-communication.md` from v1.4 to v1.5.
+- Updated `design/accurate-communication.design.md` from v1.4 to v1.5.
+- Clarified that direct next actions or option lists should be offered only when they genuinely help the user.
+- Clarified that multiple explicit options are for materially useful continuation paths, not a required ending style.
+- Preserved the rule that completed work with no real next action should not invent extra options.
+
+### Summary
+Refined accurate-communication so next-step options are helpful when useful, but not mandatory or artificially generated when the response can end cleanly.
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Prevented artificial next-step options after completed work
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `accurate-communication.md` from v1.3 to v1.4.
+- Updated `design/accurate-communication.design.md` from v1.3 to v1.4.
+- Clarified that when work is already complete and no real next action is needed, the response should not invent extra options.
+- Preserved the ability to present direct next actions or short options only when there is a real continuation path.
+
+### Summary
+Refined accurate-communication so completed work can end cleanly without artificial extra options, reducing endless follow-up expansion.
 
 ---
 

@@ -3,37 +3,37 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402 (2026-03-10)
+> **Current Version:** 2.0
+> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32 (2026-03-11)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain for phased implementation planning so phase semantics are explicit, reusable, and easy to read while live governed execution plans still live in `patches/*.patch.md`.
+Define one first-class rule chain for phased implementation planning so phased work uses a dedicated `/phase` workspace with a mandatory `SUMMARY.md` file and separate per-phase files rather than storing live phase plans under `/patches`.
 
-The target state separates four concerns cleanly:
+The target state separates these concerns clearly:
 - `phase-implementation.md` defines phase-planning semantics
-- `patches/*.patch.md` holds the live governed phase-plan instances
-- `document-patch-control.md` governs patch metadata, reviewability, and lifecycle behavior
+- `phase/SUMMARY.md` is the governed summary/index for the active phased execution plan
+- `phase/phase-010-<phase-name>.md` is the default child phase-file pattern
+- `patches/*.patch.md` remains outside the live phase-plan namespace
 - `phase-implementation-template.md` remains a non-governed root helper for drafting and readability
 
 ---
 
 ## 2) Problem Statement
 
-Before this chain, phased execution guidance lived only indirectly through `document-patch-control`, while the root helper still resembled a pseudo-governed document.
+The previous patch-based phase model still tied live phased execution too closely to `/patches`, even when the actual need was a dedicated phase workspace.
 
 Observed failure modes:
-- phase semantics and patch-governance metadata were blended together
-- the helper template looked more authoritative than it should
-- projects could misread phases as a fake repository-wide `Phase 1 → N` requirement
-- plans could omit stable phase fields, handoff boundaries, verification gates, or rollback expectations
-- plans often lacked explicit traceability back to the governing design details
-- TODO and changelog coordination could be implied rather than planned explicitly inside the phase file
-- review quality checks for patch artifacts could drift into phase-planning checks, or vice versa
+- phased execution and patch governance remained conceptually entangled
+- the live phase plan could still be framed as part of patch artifacts instead of a dedicated phase area
+- a separate summary/index file was not mandatory
+- phase-local execution detail could still be mixed into the wrong namespace
+- operators had no single required `SUMMARY.md` control surface for the active phase workspace
+- repository role boundaries became harder to explain because phase planning looked like a subtype of patch planning
 
-This design creates one semantic authority for phase planning without replacing patches as the live governed execution artifacts.
+The repository needs a rule that makes `/phase` first-class, requires `SUMMARY.md`, and keeps phase planning out of `/patches`.
 
 ---
 
@@ -49,7 +49,7 @@ Use phases when one or more of these conditions exist:
 - outputs from one stage are required by a later stage
 - rollback or containment boundaries matter between stages
 - multiple systems, documents, services, or owners participate in the same change
-- the user needs a live governed plan in `patches/*.patch.md`
+- the user needs a governed plan that shows how design, TODO, and changelog move together during execution
 
 ### 3.2 Do not use phased planning when
 
@@ -62,65 +62,152 @@ Do not add phases when:
 
 Phase planning is for execution clarity, not ceremony.
 
+### 3.3 Mandatory `/phase` structure
+
+When phased planning is used, the repository must use a dedicated `/phase` workspace.
+
+Required structure:
+
+```text
+phase/
+  SUMMARY.md
+  phase-010-<phase-name>.md
+  phase-020-<phase-name>.md
+  phase-030-<phase-name>.md
+```
+
+`SUMMARY.md` is mandatory.
+Live phased execution files must not be stored under `/patches`.
+
 ---
 
-## 4) Core Phase Model
+## 4) Summary-and-Child Phase Model
 
-### 4.1 One semantic standard, many valid phase shapes
+### 4.1 `phase/SUMMARY.md` role
 
-`phase-implementation` defines the semantic meaning of phase planning.
+`phase/SUMMARY.md` is the governed summary/index file for the active phased execution plan.
 
-It does **not** require every project to use the same labels, count, or sequence. The active governed instance remains the patch document for that project.
+It should keep:
+- overall context and target state
+- analysis of risk, constraints, and dependencies
+- a phase map or phase index
+- references to child phase files
+- cross-phase handoffs and dependency rules
+- overall TODO/changelog coordination when the concern is global
+- end-to-end verification requirements
+- overall rollback or containment behavior
+- an overview flow diagram for the full phase set
 
-### 4.2 Flexible order rules
+### 4.2 Child phase-file role
 
-The standard must explicitly allow:
-- phases to be merged
-- phases to be split
-- phases to be skipped
-- phases to be repeated
-- phases to be reordered
+Each child phase file owns the execution detail for exactly one phase.
 
-These are first-class allowed behaviors, not exceptions.
+A child phase file should keep:
+- phase identity and status
+- summary-file reference
+- design references specific to that phase
+- phase objective and rationale
+- prerequisites and entry conditions
+- action points and execution checklist
+- out-of-scope boundary
+- affected artifacts
+- phase-local TODO/changelog coordination
+- verification evidence and exit criteria
+- risks, rollback notes, and next possible phases
 
-### 4.3 Common patterns are suggestive only
+### 4.3 Canonical default path pattern
 
-Common patterns may be helpful, but they are examples rather than mandatory repository stages.
+The default phased layout is:
 
-Typical examples:
-- discovery / alignment
-- design / decision lock
-- implementation / change
-- migration
-- verification / test
-- rollout / deploy
-- cleanup / optimization
+```text
+phase/
+  SUMMARY.md
+  phase-010-<phase-name>.md
+  phase-020-<phase-name>.md
+  phase-030-<phase-name>.md
+```
 
-A project may use none, some, or renamed versions of these.
+Sparse numbering (`010`, `020`, `030`) is preferred so new phases can be inserted later without widespread rename churn.
+
+### 4.4 `/patches` boundary
+
+`/patches` is not the live phase-plan namespace.
+When phased execution is used, live phase planning belongs in `/phase`.
 
 ---
 
 ## 5) Required Phase Semantics
 
-### 5.1 Phase-map expectations
+### 5.1 Summary-file expectations
 
-When a plan uses more than one phase, it should expose the selected phase strategy clearly.
+`phase/SUMMARY.md` should expose the selected phase strategy clearly.
 
-Recommended phase-map signals:
+Recommended summary signals:
 - phase identifier or name
 - status
+- child file path
 - objective
-- design references
+- design reference
 - dependencies or prerequisites
 - outputs or handoff artifacts
 - TODO companion signals when active execution tracking matters
-- changelog impact when a phase is expected to create a synchronized or shipped history event
+- changelog impact when a phase is expected to create synchronized or shipped history
 
 A compact phase map or table is recommended when it improves scanability.
 
-### 5.2 Stable per-phase field set
+### 5.1.1 Summary design-extraction table rule
 
-Each chosen phase should define, or clearly map to, the same semantic field set:
+`phase/SUMMARY.md` should include a design extraction summary table for the whole phase set.
+
+The table should let a reviewer quickly see:
+- which design source or section feeds which phase
+- what execution work is derived from that source
+- what target outcome each phase is expected to produce
+- which phase file owns that execution detail
+
+Recommended columns:
+- Phase
+- Phase File
+- Design Source
+- Derived Execution Work
+- Target Outcome
+
+### 5.1.2 Summary flow-diagram rule
+
+`phase/SUMMARY.md` should include a small overview flow diagram for the whole phase set.
+
+The summary diagram should show, as applicable:
+- the relevant design source or current-state baseline
+- the major phase sequence or branching path
+- what major capability, workflow, or governed state each phase changes
+- the final target state produced by the combined phased execution
+
+This diagram exists to improve review speed and make the full phase story visible before reviewers open the child phase files.
+It must follow `flow-diagram-no-frame.md`.
+
+### 5.1.3 Summary review-aggregate rule
+
+`phase/SUMMARY.md` should include a review summary table for the whole phase set.
+
+The review summary should let a reviewer or approver quickly see, per phase:
+- sign-off status
+- reviewer severity
+- reviewer disposition
+- current blocker or follow-up state
+
+Recommended columns:
+- Phase
+- Phase File
+- Sign-Off Status
+- Reviewer Severity
+- Reviewer Disposition
+- Blocker / Follow-Up State
+
+### 5.2 Stable child phase-file field set
+
+Each child phase file should define, or clearly map to, this semantic field set:
+- Summary File reference
+- Phase ID / phase name
 - Status
 - Design references
 - Objective
@@ -142,7 +229,7 @@ Fields may be marked not applicable when truly unnecessary, but they should not 
 
 ### 5.3 Design traceability rule
 
-Every phase should make clear which design details it is implementing, validating, or synchronizing.
+Every child phase file should make clear which design details it is implementing, validating, or synchronizing.
 
 Good traceability signals:
 - exact design file reference
@@ -151,20 +238,99 @@ Good traceability signals:
 
 Vague references such as "follow the design" are insufficient when the design contains multiple requirements.
 
+### 5.4 Design-to-phase extraction rule
+
+Every child phase file should explicitly show what was **pulled from the design** and transformed into phase execution work.
+
+Required extraction signals:
+- the source design section or requirement
+- the behavior, contract, workflow, component, or governance rule derived from that source
+- what this phase is enhancing, extending, migrating, validating, or replacing
+- the target execution artifact or operational outcome expected from that design input
+
+A reviewer should be able to see the design-to-execution mapping without inferring it from scattered notes.
+
+### 5.5 Review flow-diagram rule
+
+Every child phase file should include a small review-oriented flow diagram.
+
+The diagram should show, as applicable:
+- the source design element or current-state component
+- the phase action applied in this phase
+- the resulting target component, workflow, or operational state
+- the dependency or handoff into the next state when relevant
+
+This diagram exists to improve review speed and clarity.
+It must follow `flow-diagram-no-frame.md`:
+- no boxes
+- no frames
+- arrows and indentation only
+
+### 5.6 Reviewer-checklist block rule
+
+Every child phase file should include a small reviewer-oriented checklist block.
+
+The reviewer checklist should make it easy to confirm:
+- the cited design source is the correct source for this phase
+- the derived execution work is justified by that design source
+- the source → phase action → target outcome flow is clear
+- the phase boundary is correct and the work belongs in this phase
+- dependencies and handoffs are explicit enough for safe progression
+- verification evidence is sufficient for review or sign-off
+
+This block exists for review readiness and should remain distinct from the execution checklist.
+
+### 5.7 Standard review-outcome vocabulary rule
+
+Every child phase file should use one standardized review-outcome vocabulary.
+
+#### Sign-off status values
+Use these values for the sign-off decision field:
+- `Pending Review`
+- `Needs Revision`
+- `Approved`
+- `Approved With Follow-up`
+- `Not Required`
+
+#### Reviewer severity values
+Use these values when review issues must be categorized:
+- `Blocking`
+- `Non-Blocking`
+- `Follow-Up`
+- `None`
+
+#### Reviewer disposition values
+Use these values when the reviewer records the disposition of findings:
+- `Must Fix Before Approval`
+- `May Proceed With Follow-Up`
+- `Approved As-Is`
+- `No Review Required`
+
+These values should align so review outcomes are easy to compare across phases and easy to read during approval.
+
 ---
 
 ## 6) Companion Tracking Model
 
 Phased plans should not treat TODO and changelog as afterthoughts.
 
-Required expectations:
-- the phase file should show how active TODO work maps to the current phase
-- the phase file should show what changelog entry or changelog impact is expected when the phase completes or when synchronization occurs
-- TODO remains execution tracking only
-- changelog remains history only
-- the patch remains the live governed plan that explains how those companions relate to execution
+### 6.1 Summary-level coordination
 
-The goal is visibility, not role confusion.
+`phase/SUMMARY.md` should show:
+- global TODO coordination when multiple phases affect the same execution slice
+- global changelog coordination when one synchronized history event depends on multiple phases
+- the checkpoint rules for when companion artifacts are allowed to change
+
+### 6.2 Child-level coordination
+
+Each child phase file should show:
+- what TODO work is active for that phase
+- what TODO transition happens when the phase exits
+- what changelog impact should be recorded later when the phase completes or when synchronized rollout closes
+
+TODO remains execution tracking only.
+Changelog remains history only.
+`phase/SUMMARY.md` plus the child phase files remain the live phase plan.
 
 ---
 
@@ -189,13 +355,13 @@ The plan should make it obvious how completion of one phase changes what becomes
 Phased planning must preserve both local and global safety.
 
 Required boundary behavior:
-- each phase should define phase-level verification
-- each phase should define local rollback or containment notes
-- the full plan must still define end-to-end verification
-- the full plan must still define overall rollback or containment behavior
+- each child phase file defines phase-level verification
+- each child phase file defines local rollback or containment notes
+- `phase/SUMMARY.md` defines end-to-end verification
+- `phase/SUMMARY.md` defines overall rollback or containment behavior
 - passing one phase does not imply overall completion
 
-`TODO.md` may track current actionable items derived from active phases, but it does not replace the phase definitions themselves.
+`TODO.md` may track current actionable items derived from active phases, but it does not replace the summary file or child phase definitions themselves.
 
 ---
 
@@ -205,7 +371,7 @@ The `phase-implementation` checklist validates **phased execution-plan quality**
 
 Validate here:
 - phase necessity
-- phase definition quality
+- summary-versus-child structure quality
 - design traceability
 - TODO/changelog companion coordination
 - execution control quality
@@ -216,40 +382,50 @@ Do not validate here:
 - patch history-link integrity
 - patch review-artifact governance requirements
 
-Those remain the responsibility of `document-patch-control`.
+Those remain outside this rule and belong to patch governance when patch docs exist.
 
 ---
 
 ## 10) Phase Validation Checklist
 
-A strong phased plan should pass the following checks when phases are used:
+A strong phased plan should pass the following checks when phases are used.
 
 ### 10.1 Planning Appropriateness
 - [ ] Phased planning is justified by real staged execution needs
 - [ ] The plan does not invent filler phases for symmetry only
 - [ ] Phase order reflects project reality rather than a fake global sequence
 
-### 10.2 Phase Definition Quality
-- [ ] The phase map is visible when more than one phase exists
-- [ ] Each phase has a clear status
-- [ ] Each phase has a clear objective
-- [ ] Each phase has actionable execution points
-- [ ] Each phase has explicit exit criteria when phase completion matters
+### 10.2 Summary/Child Structure Quality
+- [ ] The repository uses `/phase/` for live phased execution
+- [ ] `phase/SUMMARY.md` exists and acts as the governing summary/index
+- [ ] `SUMMARY.md` includes a design extraction summary table for the whole phase set
+- [ ] `SUMMARY.md` includes an overview flow diagram for the full phase set
+- [ ] `SUMMARY.md` includes a review summary table for the whole phase set
+- [ ] Each live phase has its own child phase file
+- [ ] `SUMMARY.md` exposes a readable phase map or phase index
+- [ ] Child files own phase-local execution detail
+- [ ] Live phase planning is not stored under `/patches`
 
 ### 10.3 Design Traceability
-- [ ] Each phase cites the relevant design file or section
+- [ ] Each child phase file cites the relevant design file or section
 - [ ] Design references are specific enough to show what requirement is being executed
-- [ ] No phase relies on a vague "follow the design" statement alone
+- [ ] No child phase file relies on a vague "follow the design" statement alone
+- [ ] Each child phase explicitly maps design source → derived execution work
+- [ ] Each child phase makes clear what part is being enhanced, developed, migrated, validated, or replaced
+- [ ] Each child phase includes a review-oriented flow diagram showing source → phase action → target outcome
+- [ ] Each child phase includes a reviewer checklist block for source correctness, flow clarity, boundary correctness, dependency clarity, and evidence readiness
+- [ ] Each child phase uses standardized sign-off status values and aligned severity/disposition fields when review outcomes are recorded
 
 ### 10.4 Companion Coordination
-- [ ] TODO coordination is explicit when execution tracking is relevant
-- [ ] Changelog coordination is explicit when synchronization or release history is relevant
-- [ ] TODO and changelog are treated as companion layers, not as replacements for the phase plan
+- [ ] Summary-level TODO/changelog coordination is explicit when global coordination matters
+- [ ] Child-level TODO/changelog coordination is explicit when phase-local execution tracking matters
+- [ ] TODO and changelog are treated as companion layers, not as replacements for the plan
 
 ### 10.5 Execution Control Quality
 - [ ] Dependencies and handoffs are explicit when later phases rely on earlier outputs
-- [ ] Verification expectations are explicit
-- [ ] Rollback or containment notes exist where phase failure would matter
+- [ ] Phase-level verification expectations are explicit in child files
+- [ ] Phase-level rollback or containment notes exist where failure boundaries matter
+- [ ] End-to-end verification and overall rollback remain explicit in `SUMMARY.md`
 - [ ] The next possible phase or next execution path is clear
 
 ---
@@ -259,41 +435,69 @@ A strong phased plan should pass the following checks when phases are used:
 | Anti-Pattern | Why It Hurts | Better Shape |
 |--------------|--------------|--------------|
 | fake global `Phase 1 → N` requirement | forces artificial structure onto unrelated projects | choose phases according to project reality |
-| helper template presented as authority | creates governance ambiguity | keep semantic authority in `phase-implementation.md` and live authority in the patch |
-| TODO or changelog used as the main phase spec | loses stable phase semantics and handoff detail | keep TODO as execution tracking and changelog as history only |
-| phases without design references | breaks traceability back to intended behavior | cite the design file and the exact relevant section |
-| phase blocks without status or action points | makes execution tracking weak and hard to follow | show clear status plus an action checklist |
-| phases without exit criteria | handoffs become ambiguous | define what must be true before progressing |
-| verification only at the very end | hides phase-level failure boundaries | define verification gates inside each phase |
-| phase checklist used to validate patch metadata or patch-link integrity | blurs patch and phase roles | keep patch-governance checks in `document-patch-control` |
+| no `SUMMARY.md` file | removes the required high-signal control surface | always create `phase/SUMMARY.md` when phased planning is used |
+| storing live phase plans under `/patches` | keeps phase planning entangled with patch governance | keep live phased execution under `/phase/` |
+| putting all phase-local detail only in `SUMMARY.md` | makes the summary heavy and hard to operate | keep global control in `SUMMARY.md` and per-phase detail in child files |
+| child phase files without design references | breaks traceability back to intended behavior | cite the design file and the exact relevant section |
+| child phase blocks without status or action points | makes execution tracking weak and hard to follow | show clear status plus an action checklist |
+| verification only at the very end | hides phase-level failure boundaries | define verification gates inside each child phase file and keep end-to-end checks in `SUMMARY.md` |
 | phases added only for symmetry | adds ceremony without decision value | keep the plan linear unless real staged execution exists |
 
 ---
 
-## 12) Quality Metrics
+## 12) Completion Boundary and Stop Rule
+
+### 12.1 Definition of Done
+
+Treat the phase-planning model as complete when all of the following are true:
+- `/phase` is the live namespace
+- `phase/SUMMARY.md` contains the required summary-level structures
+- child phase files contain the required design, review, and execution structures
+- review outcome vocabulary is standardized across child phases
+- rule/design/changelog/template/TODO synchronization is complete
+
+### 12.2 Stop rule after completion
+
+After the model reaches the definition of done above:
+- do not keep adding new mandatory capability blocks by default
+- do not keep expanding the model unless the user explicitly requests a new capability
+- further changes should be limited to:
+  - bug fixes
+  - wording clarifications
+  - inconsistency corrections
+  - broken reference/version repairs
+  - explicit user-requested scope changes
+
+This stop rule exists to prevent endless governance expansion after the phase-planning model is already operationally complete.
+
+---
+
+## 13) Quality Metrics
 
 | Metric | Target |
 |--------|--------|
 | Phase-use appropriateness | High |
-| Flexible order support | 100% |
+| `/phase` workspace compliance | 100% |
+| `SUMMARY.md` presence when phased planning is used | 100% |
 | Stable per-phase field coverage | High |
 | Design traceability coverage | 100% when phases are used |
 | TODO/changelog companion visibility | High |
 | Cross-phase handoff clarity | High |
 | Phase-level verification visibility | 100% when phases are used |
 | Checklist boundary clarity vs patch-control | 100% |
-| Fake global sequence requirements | 0 |
+| Live phased execution files under `/patches` | 0 |
 | Helper-authority confusion | 0 |
+| Unrequested post-completion capability expansion | 0 |
 
 ---
 
-## 13) Integration
+## 14) Integration
 
 | Document | Relationship |
 |----------|--------------|
 | [../phase-implementation.md](../phase-implementation.md) | Runtime implementation of this design |
-| [document-patch-control.design.md](document-patch-control.design.md) | Patch governance and metadata contract |
-| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model for rule, patch, helper, TODO, and changelog boundaries |
+| [document-patch-control.design.md](document-patch-control.design.md) | Patch governance boundary outside `/phase` |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model for `/phase`, helper, TODO, changelog, and patch separation |
 | [todo-standards.design.md](todo-standards.design.md) | Execution-tracking boundary |
 | [../phase-implementation-template.md](../phase-implementation-template.md) | Non-governed root helper for authoring |
 

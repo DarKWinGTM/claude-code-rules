@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
+> **Current Version:** 1.6
 > **Session:** b1fc974f-b7df-4f24-9080-c941153612ca (2026-03-09)
 
 ---
@@ -211,8 +211,10 @@ Summary quality rules:
 - do not restate earlier detail unless it is necessary for the final decision
 
 Default expectation:
-- if there is one clear next path, state it directly
-- if there are multiple reasonable next paths, present short explicit options the user can choose from
+- if there is one clear next path and it would genuinely help the user act, state it directly
+- if there are multiple reasonable next paths and presenting them would materially help the user, present short explicit options the user can choose from
+- if the task is already complete and no real continuation is needed, do not invent artificial next-step options
+- offering continuation paths is guidance, not a mandatory pattern when no real continuation value exists
 
 Example closing shape:
 - final takeaway summary

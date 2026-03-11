@@ -232,7 +232,9 @@ done
 | `*.md` (root) | Active runtime rules | Rules files |
 | `./changelog/changelog.md` | Master repository-wide history | Master changelog |
 | `./changelog/*.changelog.md` | Per-chain authoritative history | Changelogs |
-| `./patches/*.patch.md` | Governed execution plans | Patch docs |
+| `./phase/SUMMARY.md` | Governed summary/index for live phase planning, design rollup, and review rollup | Phase summary doc |
+| `./phase/phase-010-<phase-name>.md` | Governed child per-phase execution detail with design extraction and review state | Child phase docs |
+| `./patches/*.patch.md` | Governed patch/review artifacts outside live phase planning | Patch docs |
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
 
 > **💡 Single Source of Truth Principle:**
@@ -265,7 +267,9 @@ This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and gov
 | `*.md` (root runtime rules) | Active runtime behavior | Approved design change requires runtime sync |
 | `changelog/changelog.md` | Master repository-wide synchronization history | Repository-level governed sync events |
 | `changelog/*.changelog.md` | Authoritative per-chain version history | Any rule/design update with version impact |
-| `patches/*.patch.md` | Governed execution-plan layer | Migration, transition, or phased implementation work |
+| `phase/SUMMARY.md` | Governed summary/index for live phased execution | Phased implementation work requires one summary file that carries design extraction summary, overview flow, review summary, phase map, and global coordination |
+| `phase/phase-010-<phase-name>.md` and peers | Governed child phase-detail layer | Multi-phase execution detail under the summary/index, including design extraction, review flow, reviewer checklist, review outcome, and execution detail |
+| `patches/*.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning |
 | `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters |
 | `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
 
@@ -286,6 +290,16 @@ Change request received
 - Design file links to the correct changelog file
 - Changelog unified row maps to an existing detailed section
 - Runtime rule version/header aligns with changelog current version
+- `phase/SUMMARY.md` exists when phased execution is used
+- `phase/SUMMARY.md` includes:
+  - design extraction summary table
+  - overview flow diagram
+  - review summary table
+- child phase files include:
+  - design extraction
+  - review flow diagram
+  - reviewer checklist
+  - standardized review outcome fields
 - TODO pending section contains pending-only items (`- [ ]`)
 - TODO history has a dated entry for completed milestone work
 
@@ -332,6 +346,25 @@ TODO.md pending section audit
 - Pending section kept pending-only (`- [ ]`)
 - Duplicate heading drift removed
 - Program closure logged in dated history row
+
+#### Example 4: Final `/phase` Review Model Rollout
+
+```text
+phase/SUMMARY.md
+  → design extraction summary table
+  → overview flow diagram
+  → review summary table
+  → phase/phase-010-*.md
+  → TODO.md history
+```
+
+**What was synchronized:**
+- `/phase` became the live phase-planning namespace
+- `SUMMARY.md` became the required summary/index for live phased execution
+- child phase files were required to carry design extraction, review flow, reviewer checklist, and standardized review outcomes
+- `SUMMARY.md` was extended to carry design rollup and review rollup views for faster approval
+- the model gained an explicit Definition of Done and stop rule so governance expansion does not continue by default after completion
+- communication rules were narrowed so next-step options are suggested only when genuinely useful rather than treated as a mandatory ending pattern
 
 ---
 
@@ -410,7 +443,7 @@ TODO.md pending section audit
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims and no forced extra options after completed work |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
@@ -419,7 +452,7 @@ TODO.md pending section audit
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Tactical implementation plans |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
-| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class phased execution planning standard |
+| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with design rollups, review rollups, standardized review outcomes, and explicit completion boundary |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
 | [`refusal-classification.md`](refusal-classification.md) | Deterministic refusal taxonomy | Consistent block decisions and traceable output modes |
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
@@ -437,7 +470,7 @@ TODO.md pending section audit
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Better reasoning flow and actionable endings |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Better reasoning flow and useful endings without forced extra options |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -588,6 +621,32 @@ TODO.md pending section audit
 ---
 
 ## 🎓 Framework Highlights
+
+### 🧭 Finalized Phase Review Model
+
+**The current phased execution model is now explicitly finalized and bounded.**
+
+```text
+phase/
+  SUMMARY.md
+    → design extraction summary table
+    → overview flow diagram
+    → review summary table
+    → phase map
+  phase-010-<phase-name>.md
+    → design extraction
+    → review flow diagram
+    → reviewer checklist
+    → review outcome
+```
+
+**What this gives you:**
+- reviewers can inspect the whole rollout from `SUMMARY.md`
+- reviewers can inspect one phase deeply from the child phase file
+- approvers can see sign-off status, severity, disposition, and blocker/follow-up state in one place
+- the model now has an explicit completion boundary and stop rule, so governance expansion does not continue by default after it is operationally complete
+
+---
 
 ### 🧠 TRAAC (Task Runtime Adaptive AI Compression)
 
@@ -745,8 +804,9 @@ These rules evolve based on real-world usage:
 2. Include clear documentation
 3. Add visual assets if applicable
 4. Update changelog
+5. Respect completion boundaries — do not add new mandatory capability blocks to a completed governance model unless the change is explicitly justified and intentionally approved
 
-**We value:** Quality over quantity, clarity over complexity
+**We value:** Quality over quantity, clarity over complexity, and bounded governance over endless expansion
 
 </div>
 

@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 1.3
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v1.3
+> **Current Version:** 1.5
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v1.5
 > **Session:** b1fc974f-b7df-4f24-9080-c941153612ca
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -81,8 +81,10 @@ Recipients must understand complete context from a single message. Only claim wh
 - A final summary should be concise, high-signal, and decision-oriented.
 - Do not impose a rigid sentence cap. The summary should be only as long as needed to preserve meaning.
 - Do not restate the whole answer in different wording when one clear synthesis is enough.
-- If one clear next action exists, state it directly.
-- If multiple reasonable next actions exist, present short explicit options.
+- If one clear next action exists and it would genuinely help, state it directly.
+- If multiple reasonable next actions exist and presenting them would materially help the user, present short explicit options.
+- Do not invent optional next-step choices when the task is already complete and no real action is needed.
+- Offering options is guidance, not a mandatory ending pattern.
 
 ### Decision Framework
 

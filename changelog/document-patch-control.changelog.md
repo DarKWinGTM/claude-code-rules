@@ -1,8 +1,8 @@
 # Changelog - Document Patch Control
 
 > **Parent Document:** [../document-patch-control.md](../document-patch-control.md)
-> **Current Version:** 1.7
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402
+> **Current Version:** 1.9
+> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
 
 ---
 
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-03-11 | **[Removed `/patches` from the live phase-plan model and clarified patch governance as separate from `/phase`](#version-19)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Redefined `/patches` as a separate patch/review artifact layer, moved live phased execution fully into `/phase`, and made patch-versus-phase namespace separation explicit | |
+| 1.8 | 2026-03-11 | **[Changed patch governance to parent patch/index plus mandatory child phase files for multi-phase work](#version-18)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Kept one parent patch/index as the governed entry point, required child phase files under `.phases/` for multi-phase work, and prohibited collapsing all live phase detail back into the parent patch body | |
 | 1.7 | 2026-03-10 | **[Added role-specific patch-governance checklist and clarified checklist boundary versus phase-implementation](#version-17)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Added a dedicated patch-governance checklist for governed review/change artifacts, clarified that patch-control validates patch quality rather than phase-planning quality, and made the checklist boundary versus `phase-implementation` explicit | |
 | 1.6 | 2026-03-10 | **[Refocused patch control on governance while moving phase semantics to the new rule chain](#version-16)** | 468e053d-9953-496e-8e83-910e2ae67402 |
@@ -26,6 +30,53 @@
 | | | Summary: Closed patch-reference/version drift across runtime/design/changelog artifacts | |
 | 1.0 | 2026-02-01 | **[Initial design](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Initial release of patch-control standards | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Removed `/patches` from the live phase-plan model and clarified patch governance as separate from `/phase`
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `design/document-patch-control.design.md` from v1.8 to v1.9.
+- Updated runtime `document-patch-control.md` from v1.8 to v1.9.
+- Reframed `/patches` as a governed patch/review artifact layer rather than the live phase-plan namespace.
+- Explicitly moved live phased execution planning into `/phase`.
+- Clarified that the live phase workspace now uses:
+  - `phase/SUMMARY.md`
+  - `phase/phase-010-<phase-name>.md` and peer files
+- Prohibited using patch files as the active phase summary/index or per-phase execution files.
+- Updated the checklist, integration contract, and quality metrics to validate patch-versus-phase namespace separation.
+
+### Summary
+Updated `document-patch-control` so `/patches` is now clearly separate from live phased execution, which must live under `/phase` with `SUMMARY.md` and child phase files.
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Changed patch governance to parent patch/index plus mandatory child phase files for multi-phase work
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `design/document-patch-control.design.md` from v1.7 to v1.8.
+- Updated runtime `document-patch-control.md` from v1.7 to v1.8.
+- Reframed patch governance around:
+  - one parent patch/index file as the governed execution entry point
+  - one child phase file per live phase for multi-phase work
+- Added the canonical child phase-file path model under `patches/<context>.phases/`.
+- Defined the parent-versus-child ownership split so:
+  - the parent patch/index owns global control, phase index, cross-phase coordination, end-to-end verification, and overall rollback
+  - child phase files own phase-local checklist detail, design traceability, verification, exit criteria, and rollback notes
+- Added child phase-file metadata expectations (`Parent Patch`, `Phase ID`, `Status`, `Session`).
+- Explicitly prohibited collapsing all live multi-phase detail back into one parent patch execution body.
+- Updated the governance checklist and quality metrics to validate parent/child topology for multi-phase work.
+
+### Summary
+Updated `document-patch-control` so multi-phase work now uses a parent patch/index plus child phase files, preserving one governing entry point while preventing oversized one-file execution plans.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.6
 > **Session:** b1fc974f-b7df-4f24-9080-c941153612ca
 
 ---
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-03-11 | **[Made continuation options usefulness-driven rather than default](#version-16)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Refined explanation-quality so continuation options appear only when genuinely helpful and not as a mandatory ending pattern | |
+| 1.5 | 2026-03-11 | **[Prevented artificial next-step options after completed analytical work](#version-15)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Narrowed explanation-quality so completed analytical answers do not invent continuation options when no real next action is needed | |
 | 1.4 | 2026-03-09 | **[Balanced concise-summary patch with high-signal closing rules](#version-14)** | b1fc974f-b7df-4f24-9080-c941153612ca |
 | | | Summary: Strengthened explanation-quality so analytical answers still explain well but end with concise synthesis and clear next-step guidance without rigid sentence caps | |
 | 1.3 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -20,6 +24,41 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Made continuation options usefulness-driven rather than default
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `explanation-quality.md` from v1.5 to v1.6.
+- Updated `design/explanation-quality.design.md` from v1.5 to v1.6.
+- Clarified that direct next-step paths or option lists should be offered only when they genuinely help the user.
+- Clarified that multiple continuation options are appropriate only when they materially improve the user's ability to continue the work.
+- Preserved the rule that completed analytical work with no real continuation should not invent extra options.
+
+### Summary
+Refined explanation-quality so continuation options are offered when useful, but not treated as a mandatory ending pattern when the response can end cleanly.
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Prevented artificial next-step options after completed analytical work
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `explanation-quality.md` from v1.4 to v1.5.
+- Updated `design/explanation-quality.design.md` from v1.4 to v1.5.
+- Clarified that when the task is already complete and no real continuation is needed, the answer should not invent extra next-step options.
+- Preserved direct next-step guidance for cases where a real continuation path still exists.
+
+### Summary
+Refined explanation-quality so completed analytical work can end cleanly without artificial extra options, reducing endless expansion pressure.
 
 ---
 

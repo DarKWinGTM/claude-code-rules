@@ -1,8 +1,8 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.1
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402
+> **Current Version:** 2.3
+> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
 
 ---
 
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.3 | 2026-03-11 | **[Changed repository role model so live phased execution uses `/phase` with mandatory `SUMMARY.md`](#version-23)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Replaced the patch-based live phase model with `/phase/SUMMARY.md` plus child phase files, and kept `/patches` as a separate patch/review artifact layer | |
+| 2.2 | 2026-03-11 | **[Changed repository role model to parent patch/index plus mandatory child phase files for multi-phase work](#version-22)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
+| | | Summary: Updated the repository model so multi-phase execution uses one parent patch entry point plus child phase files under `.phases/`, while README and the root helper stay non-authority artifacts | |
 | 2.1 | 2026-03-10 | **[Added first-class phase-rule role and clarified helper-versus-patch authority model](#version-21)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Added `phase-implementation.md` as the semantic phase-planning rule, kept patches as the governed plan instances, and clarified how TODO and changelog remain companion layers rather than phase authorities | |
 | 2.0 | 2026-03-10 | **[Corrected root-level helper placement for phase implementation template](#version-20)** | b1fc974f-b7df-4f24-9080-c941153612ca |
@@ -34,6 +38,51 @@
 | | | Summary: Integrated patch governance into document standards | |
 | 1.0 | 2026-01-21 | **[Initial version](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Initial release of project documentation standards | |
+
+---
+
+<a id="version-23"></a>
+## Version 2.3: Changed repository role model so live phased execution uses `/phase` with mandatory `SUMMARY.md`
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.2 to v2.3.
+- Updated runtime `project-documentation-standards.md` from v2.2 to v2.3.
+- Replaced the patch-based live phase model with:
+  - `phase/SUMMARY.md` as the governed summary/index
+  - `phase/phase-010-<phase-name>.md` and peer files as child execution detail
+- Made `SUMMARY.md` a required document whenever phased execution planning is used.
+- Clarified that `/patches` is now a separate governed patch/review artifact layer outside the live phase workspace.
+- Updated the repository role model, required-document set, decision model, checklist, metrics, and integration references to match the `/phase` structure.
+- Preserved `phase-implementation.md` as the semantic authority, `phase-implementation-template.md` as a non-governed helper, `README.md` as overview-only, and TODO/changelog as companion layers.
+
+### Summary
+Updated the repository role model so live phased execution now uses `/phase/SUMMARY.md` plus child phase files, while `/patches` remains separate from the active phase workspace.
+
+---
+
+<a id="version-22"></a>
+## Version 2.2: Changed repository role model to parent patch/index plus mandatory child phase files for multi-phase work
+
+**Date:** 2026-03-11
+**Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.1 to v2.2.
+- Updated runtime `project-documentation-standards.md` from v2.1 to v2.2.
+- Reframed the repository role model so multi-phase execution now uses:
+  - `patches/<context>.patch.md` as the parent governed phase-plan entry point
+  - `patches/<context>.phases/*.md` as the child per-phase execution-detail layer
+- Added the child phase-file layer to the required-document model for multi-phase work.
+- Updated the decision model so parent patch creation is followed by child phase-file creation whenever the plan has multiple live phases.
+- Clarified that multi-phase work must not collapse back into one live all-phases execution file.
+- Preserved `phase-implementation.md` as the semantic authority, `phase-implementation-template.md` as a non-governed helper, `README.md` as overview-only, and TODO/changelog as companion layers.
+- Updated the checklist, metrics, and integration references to match the parent-plus-child repository model.
+
+### Summary
+Updated the repository role model so multi-phase planning now uses one parent patch entry point plus governed child phase files, preserving authority clarity while preventing oversized one-file execution plans.
 
 ---
 
