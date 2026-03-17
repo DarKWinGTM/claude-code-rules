@@ -1,8 +1,8 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.0
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402
+> **Current Version:** 1.5
+> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 
 ---
 
@@ -10,8 +10,114 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-03-17 | **[Added full-set-first and next-stage layout guidance to answer-presentation](#version-15)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended answer-presentation so responses can show the full relevant set before drilling down and can surface a clearer next-stage block when the current scope is already sufficiently explained | |
+| 1.4 | 2026-03-15 | **[Extended grouped presentation patterns for easier scope and product-truth explanations](#version-14)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended answer-presentation so scope-heavy answers now have clearer grouped section patterns and canonical examples for what-is-now, what-is-not, what-stays-later, and user-visible impact explanations | |
+| 1.3 | 2026-03-15 | **[Added scope-boundary layout guidance for easier-to-scan explanations](#version-13)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended answer-presentation with grouped layout guidance for what-it-is, what-it-is-not, what-happens-now, what-stays-later, and user-visible-result sections so scope-heavy answers scan more clearly | |
+| 1.2 | 2026-03-15 | **[Added canonical compact snapshot examples for more recognizable technical status notes](#version-12)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended answer-presentation with reusable sectioned-snapshot and small fact-table house-style examples so technical status notes become more recognizable without turning the rule rigid | |
+| 1.1 | 2026-03-14 | **[Refined answer presentation for compact technical snapshots and sectioned status notes](#version-11)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added full-set-first and next-stage layout guidance to answer-presentation
+
+**Date:** 2026-03-17
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `answer-presentation.md` from v1.4 to v1.5.
+- Updated `design/answer-presentation.design.md` from v1.4 to v1.5.
+- Added explicit presentation triggers and patterns for full-set-first explanations.
+- Added explicit presentation triggers and grouped layout guidance for `What happens next` / `Next stage` / `Next state` blocks.
+- Added anti-pattern coverage for drilling down before the whole set is visible and for repeating deeper same-scope options when the answer should move forward.
+
+### Summary
+Extended answer-presentation so responses can show the full relevant set before drilling down and can surface a clearer next-stage block when the current scope is already sufficiently explained.
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Extended grouped presentation patterns for easier scope and product-truth explanations
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `answer-presentation.md` from v1.3 to v1.4.
+- Updated `design/answer-presentation.design.md` from v1.3 to v1.4.
+- Added grouped scope-boundary presentation as a stronger first-class presentation pattern.
+- Added a `scope clarification` trigger for current-versus-later and what-it-is-versus-what-it-is-not explanations.
+- Added canonical grouped layout examples for `What this is`, `What this is not`, `What happens now`, `What stays later`, and `What the user will notice`.
+- Extended anti-pattern and quality guidance so burying active-versus-deferred scope inside long prose is now explicitly discouraged.
+
+### Summary
+Extended answer-presentation so scope-heavy explanations now have clearer grouped section patterns and canonical examples for what-is-now, what-is-not, what-stays-later, and user-visible impact explanations.
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added scope-boundary layout guidance for easier-to-scan explanations
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `answer-presentation.md` from v1.2 to v1.3.
+- Updated `design/answer-presentation.design.md` from v1.2 to v1.3.
+- Added a `scope clarification` trigger for grouped explanation layouts where current scope must be separated from deferred scope.
+- Added preferred grouped section labels such as `What this is`, `What this is not`, `What happens now`, `What stays later`, and `What the user will notice`.
+- Added anti-pattern coverage for burying scope boundaries inside long prose.
+- Clarified that these grouped blocks are especially useful for roadmap, phase, rollout, and product-truth explanation responses.
+
+### Summary
+Extended answer-presentation so scope-heavy explanations now have clearer grouped layout guidance, making what-is-now versus what-stays-later easier to scan.
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Added canonical compact snapshot examples for more recognizable technical status notes
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `answer-presentation.md` from v1.1 to v1.2.
+- Updated `design/answer-presentation.design.md` from v1.1 to v1.2.
+- Added canonical compact snapshot shapes so the rule now shows recognizable house-style examples for sectioned status notes and small fact-table technical notes.
+- Added one sectioned snapshot example with `Current Status`, `Checked Scope`, `What This Means`, and `Next Action`.
+- Added one small fact-table snapshot example with a short implication line to reinforce the table-plus-meaning pattern.
+- Clarified that these examples are preferred house-style shapes, not rigid mandatory templates.
+
+### Summary
+Extended answer-presentation with reusable compact snapshot examples so technical status notes now have a more recognizable house style without losing trigger-based flexibility.
+
+---
+
+<a id="version-11"></a>
+## Version 1.1: Refined answer presentation for compact technical snapshots and sectioned status notes
+
+**Date:** 2026-03-14
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `answer-presentation.md` from v1.0 to v1.1.
+- Updated `design/answer-presentation.design.md` from v1.0 to v1.1.
+- Added a dedicated diagnostic-snapshot principle so technical status is presented as a compact structured note instead of a raw evidence dump.
+- Added a `diagnostic snapshot` trigger for troubleshooting, progress, verification, and environment-style status updates.
+- Added a preferred diagnostic snapshot pattern with short titled sections such as `Current Status`, `Request Information`, `Environment`, `Checked Scope`, and `What This Means`.
+- Clarified that small fact tables are allowed only for stable checked facts and must remain scoped, narrow, and subordinate to explanation.
+- Added anti-pattern coverage for raw evidence dumps, oversized tables for small issues, and table-only status notes with no implication.
+- Updated quality metrics and integration text to reflect the new compact technical snapshot layout behavior.
+
+### Summary
+Strengthened answer-presentation so status-heavy responses are easier to scan by combining short titled snapshot sections, small fact tables, and short implication lines before deeper narrative detail.
 
 ---
 

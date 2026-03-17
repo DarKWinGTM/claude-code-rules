@@ -3,21 +3,24 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.6
-> **Session:** b1fc974f-b7df-4f24-9080-c941153612ca (2026-03-09)
+> **Current Version:** 2.1
+> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12 (2026-03-17)
 
 ---
 
 ## 1) Goal
 
-Define one rule chain that improves the structure of analytical and technical explanations so answers stay easy to scan without losing causal reasoning depth.
+Define one rule chain that improves the structure of analytical and technical explanations so answers stay easy to follow, feel natural step by step, and preserve causal reasoning depth.
 
-The target behavior is a hybrid default:
+The target behavior is a layered natural explanation style:
 - short answer first
-- causal flow when process or state change matters
-- comparison table when options or trade-offs exist
-- recommendation after the reasoning, not instead of it
-- concise, high-signal ending that makes the next path clear
+- simple explanation before deep protocol detail
+- compact technical snapshot when status or checked scope matters
+- step-by-step implication or fix path when walkthrough value exists
+- explicit clarification of what the thing is, what it is not, what happens now, and what stays deferred when scope management matters
+- whole-set framing when the user benefits from seeing the full actionable set before drilling down
+- a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
+- concise, high-signal ending with a real next move only when one genuinely exists
 
 ---
 
@@ -30,9 +33,11 @@ Observed failure modes:
 - bullets present conclusions without enough mechanism or causal flow
 - trade-off discussions appear without side-by-side comparison structure
 - recommendations arrive before the reasoning that justifies them
-- abstract analytical claims appear without a concrete example
+- abstract analytical claims appear without a concrete example or clarifying model
+- changes are described as one blob instead of before/after or patch-by-patch progression
 - endings repeat prior detail instead of synthesizing the real conclusion
-- responses stop after explanation without making the next action clear
+- responses stop after explanation without making the next action or completion state clear
+- progress or troubleshooting updates bury current state and checked scope inside long narrative blocks
 
 This design addresses explanation shape while preserving existing verification and accuracy requirements.
 
@@ -48,45 +53,73 @@ Typical triggers:
 - process, sequence, or state-transition explanation
 - technical comparison between options
 - recommendation requests where the user needs to understand why
-- abstract analytical answers that would be clearer with one concrete example
+- implementation progress, troubleshooting state, or verification checkpoints where a compact status snapshot improves clarity
+- change walkthroughs where before/after or patch-by-patch framing helps
+- scope clarification where the user needs to understand what is included now versus what stays deferred
+- abstract analytical answers that would be clearer with one concrete example, a small analogy, or a direct human-language paraphrase
 
 This rule is not meant to force long-form structure onto simple factual or low-complexity questions.
 
 ---
 
-## 4) Hybrid Default Answer Structure
+## 4) Plain-Language-First and Layered Default Structure
 
 When the task is analytical, the preferred default order is:
 
 Short answer
   ↓
-Causal flow or mechanism
+Simple explanation
   ↓
-Comparison table when options exist
+Compact technical snapshot when needed
   ↓
-Recommendation with reasoning
+Step-by-step implication or fix
   ↓
-Concise synthesis and next-step path
+Concise synthesis and next move when genuinely useful
 
-### 4.1 Short Answer First
+### 4.1 Plain-Language-First Principle
 
-Start with a brief direct answer so the user can orient quickly.
+Start with the simplest truthful framing that helps the user understand the situation quickly.
 
-### 4.2 Causal Flow When Process Exists
+Required guidance:
+- explain what the issue means before diving into lower-level protocol detail when the topic is complex
+- prefer a human-readable opening model before dense implementation detail
+- when useful, explicitly separate a simple version from a technical version
 
-If the topic involves sequence, dependency, state transition, or mechanism, explain the chain in order rather than jumping from premise to conclusion.
+### 4.2 Layered Natural Explanation Pattern
 
-### 4.3 Comparison Table When Options Exist
+Use layered explanation so the reader can stop early if the simple model is enough, but still go deeper when needed.
 
-If the user is choosing between meaningful alternatives, present trade-offs in a compact comparison table before recommending one path.
+Required guidance:
+- begin with a short answer
+- follow with a simple explanation
+- add a compact technical snapshot when status or checked scope matters
+- then explain the deeper mechanism, implication, or fix path step by step
 
-### 4.4 Recommendation Last
+### 4.3 Simple Version First, Technical Version Second
 
-A recommendation should close the reasoning phase after the causal reasoning or comparison is visible.
+When both accessibility and technical precision matter:
+- present the simple version first
+- then present the technical version second
+- do not bury the simple model inside the technical explanation
 
-### 4.5 Concise Synthesis Last
+### 4.3.1 Human-Language Paraphrase Guidance
 
-When explanation depth matters, the answer should still land with a concise, high-signal synthesis and a clear next-step path.
+When the topic includes internal product, runtime, architectural, or workflow terminology, provide a plain-language paraphrase when it materially improves understanding.
+
+Required guidance:
+- translate internal or technical phrases into user-facing language when the literal term alone would be hard to follow
+- prefer phrasing such as `พูดง่าย ๆ`, `ถ้าพูดแบบภาษาคน`, or the English equivalent when the explanation benefits from a direct human-language gloss
+- use the paraphrase to clarify the term, not to replace the underlying technical truth
+
+### 4.4 Diagnostic Snapshot First for Status-Heavy Updates
+
+When the response is a troubleshooting, implementation-progress, or verification-state update, place a compact diagnostic snapshot before deep reasoning.
+
+Required guidance:
+- show what was checked
+- show what is currently true versus still pending
+- show the immediate next decision or action
+- keep the snapshot concise and scoped to material evidence
 
 ---
 
@@ -109,34 +142,108 @@ For explanation-heavy answers, stopping at the claim is insufficient when the me
 
 ---
 
-## 6) Anti-Fragmentation Guidance
+## 6) Stepwise Natural Explanation Guidance
 
-The rule should reduce readability loss caused by over-fragmentation.
+The rule should reduce readability loss caused by over-fragmentation and out-of-order deep detail.
 
 Required guidance:
 - avoid splitting one causal idea into many one-line bullets when a coherent paragraph would read better
 - keep related reasoning steps together unless separation clearly improves scanning
-- use bullets for genuine sets, branches, or checklists, not as a substitute for connective prose
-- prefer one complete paragraph per idea when the thought needs continuity
+- move from simple framing to deeper detail in a clear order
+- explain one patch, one transition, or one causal jump at a time when the user needs a walkthrough
+- when the answer is about a change, explain what changed before discussing its side effects
 
 The goal is not verbosity. The goal is cohesion.
 
 ---
 
-## 7) Example Requirement
+## 7) Example, Before/After, Patch-by-Patch, and Analogy Guidance
 
-When an explanation is abstract, analytical, or recommendation-heavy, include at least one concrete example unless the task is too simple to need one.
+### 7.1 Example Requirement
 
-Acceptable example forms:
+When an explanation is abstract, analytical, or recommendation-heavy, include at least one concrete clarifier unless the task is too simple to need one.
+
+Acceptable clarifier forms:
 - request/response lifecycle
 - state transition
 - architecture decision scenario
 - user-visible failure case
 - small code or configuration example when relevant
+- before/after explanation
+- patch-by-patch explanation
 
-Example:
-- Weak explanation: "Redis is better here because it is fast."
-- Better explanation: "Redis is better here because this data is shared operational state that multiple services must read and update quickly; for example, a rate-limit counter or transient job status benefits from low-latency shared access, while durable billing records should stay in PostgreSQL."
+### 7.2 Before/After Explanation Pattern
+
+Use before/after framing when the reader needs to understand a change in behavior, structure, ownership, or execution order.
+
+Required guidance:
+- identify the prior state
+- identify the new state
+- explain why the change matters
+
+### 7.2.1 What-It-Is / What-It-Is-Not Pattern
+
+When scope clarity matters, explicitly separate what the thing is from what it is not.
+
+Required guidance:
+- state what the current phase, feature, response, or proposal actually covers
+- state what it does not cover when omission clarity matters
+- use this especially when users may otherwise confuse current scope with future scope
+
+### 7.2.2 Now / Later Pattern
+
+When work is intentionally staged, make the timing boundary explicit.
+
+Required guidance:
+- identify what is being done now
+- identify what is deferred to later
+- avoid mixing active scope with future scope in one undifferentiated explanation block
+
+### 7.2.3 User-Visible Outcome Pattern
+
+When explaining product or workflow changes, include what the user will actually see, feel, or be able to do.
+
+Required guidance:
+- surface the user-facing outcome, not only the internal implementation
+- explain what becomes easier, clearer, or intentionally hidden from the user
+- use this especially when internal architecture detail is not the main point the user needs
+
+### 7.2.4 Stage/State Progression Pattern
+
+When the current stage is already sufficiently explained, the response should prefer the next meaningful stage, state, milestone, or decision boundary instead of continuing to deepen the same scope by default.
+
+Required guidance:
+- if the current state is already clear enough for the user's decision, move the explanation forward
+- distinguish between `clarify more` and `progress next` rather than treating deeper elaboration as the default continuation
+- prefer the next meaningful stage when more depth in the current stage would add little new value
+
+### 7.2.5 Whole-Set Framing Pattern
+
+When the checked scope shows that the user should reason about a larger complete set, present that full set before narrowing into sub-items.
+
+Required guidance:
+- present the full relevant set when that is the real decision surface
+- avoid defaulting to only 2-3 items when the response should establish a larger whole first
+- use narrowing only after the whole set is visible or when the user explicitly asked for incremental slicing
+
+### 7.3 Patch-by-Patch Explanation Pattern
+
+Use patch-by-patch framing when multiple edits or stages would otherwise blur together.
+
+Required guidance:
+- explain one patch or one phase at a time
+- make order meaningful when order affects reasoning
+- show how earlier changes enable later ones when that dependency matters
+
+### 7.4 Analogy or Metaphor Guidance
+
+Analogy is allowed when it materially clarifies an abstract mechanism.
+
+Required guidance:
+- use analogy only when it reduces confusion
+- keep it short and purpose-driven
+- return to the literal technical explanation after the analogy does its job
+- do not let the analogy replace the real mechanism
 
 ---
 
@@ -187,7 +294,7 @@ Boundaries:
 - simple factual questions may use a short direct answer only
 - if no process exists, skip causal-flow structure
 - if no real alternatives exist, skip comparison tables
-- if one short example is enough, do not expand into unnecessary depth
+- if one short clarifier is enough, do not expand into unnecessary depth
 - if one concise final synthesis is enough, do not restate the conclusion in multiple phrasings
 - this rule shapes explanation quality; it does not weaken verification, safety, or user-authority rules
 
@@ -200,9 +307,9 @@ This design is intentionally compatible with `accurate-communication.md`, which 
 Analytical and technical answers should land clearly, not just stop after explanation.
 
 Required closing behavior when explanation depth matters:
-- the ending must summarize the core conclusion in plain terms
-- the ending must make the practical implication explicit
-- the response must provide forward motion rather than a dead end
+- summarize the core conclusion in plain terms
+- make the practical implication explicit
+- provide forward motion when a real continuation path exists
 
 Summary quality rules:
 - prefer high-signal synthesis over repetition
@@ -214,11 +321,18 @@ Default expectation:
 - if there is one clear next path and it would genuinely help the user act, state it directly
 - if there are multiple reasonable next paths and presenting them would materially help the user, present short explicit options the user can choose from
 - if the task is already complete and no real continuation is needed, do not invent artificial next-step options
-- offering continuation paths is guidance, not a mandatory pattern when no real continuation value exists
+- when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
+- when the real decision surface is a larger complete set, show that full set before narrowing into sub-items
 
-Example closing shape:
-- final takeaway summary
-- then one or more clear next-step options
+### 11.1 Short Recap Pattern
+
+When an explanation is long, layered, or has multiple boundaries, a second-pass short recap is encouraged.
+
+Required guidance:
+- compress the explanation into one short recap after the deeper explanation if that recap materially improves retention
+- use this especially after long scope clarifications, staged-plan explanations, or multi-part comparisons
+- keep the recap clearly shorter and simpler than the main explanation
+- do not repeat the whole answer verbatim
 
 This contract is about response landing quality, not forced verbosity.
 
@@ -230,29 +344,156 @@ Before finishing an explanation-heavy answer, it should be possible for the user
 - what the main point is
 - why it is true
 - what trade-off matters most, if options exist
-- what they can do next
+- what they can do next, if a real next move exists
+- whether the response should now move to the next stage/state instead of continuing to deepen the current one
+- whether the full relevant set is visible before any optional narrowing begins
+- or that the task is complete, if no real continuation is needed
 
-If the answer explains the topic well but leaves the user without a clear next move, the response is incomplete.
+If the answer explains the topic well but leaves the user unable to tell either the next move or the completion state, the response is incomplete.
 
 ---
 
-## 13) Next-Step Option Requirement
+## 13) Good Patterns
 
-When a response closes with next actions, it should preserve user choice.
+### Pattern 1: Simple version first, technical version second
 
-Required behavior:
-- the final paragraph or final short closing block must contain a concise, decision-oriented summary of the answer's main conclusion
-- after that summary, provide at least one explicit next-step path
-- when multiple reasonable continuations exist, present them as short selectable options
-- if there is one clear path, state it directly instead of padding with artificial alternatives
-- do not end an analytical answer in a way that leaves no obvious continuation path
+```markdown
+Short answer: the failure is in environment handoff, not app boot.
 
-Example pattern:
-- "Summary: X is the right path here. Next step: do Y."
-- "Summary: the implementation is sound, but final verification is still pending. Next step: run the production check."
-- "We can continue in 2 ways: A or B."
+Simple explanation: the app starts, but when it reaches the database step it does not have the value it needs.
 
-This requirement complements the closing contract by ensuring the answer always offers a clear continuation path.
+Technical version: startup succeeds, the first DB call fails, and the checked scope currently points to missing or misrouted `DATABASE_URL` propagation rather than a syntax or boot-time crash.
+```
+
+### Pattern 2: Before/after explanation
+
+```markdown
+Before: each route handled auth and policy checks inline.
+After: the policy check moved into shared middleware.
+
+Why this matters: transport-specific handlers now stay thinner, while the same rule logic can be reused across routes and background jobs.
+```
+
+### Pattern 3: Patch-by-patch explanation
+
+```markdown
+Patch 1 removes the duplicate state source.
+Patch 2 rewires reads to the remaining authority.
+Patch 3 updates verification so success is measured against the new path.
+```
+
+### Pattern 4: Analogy-assisted explanation
+
+```markdown
+Think of it like moving the circuit breaker out of each room and into one shared panel.
+
+In technical terms, the auth rule moved out of each route handler into shared middleware, so one policy change no longer requires editing every handler separately.
+```
+
+### Pattern 5: Layered walkthrough with snapshot in the middle
+
+```markdown
+Short answer: the bug is in environment handoff, not app boot.
+
+Simple explanation: the service starts normally, but it reaches the database step without the value it needs.
+
+Diagnostic snapshot:
+- Checked: `backend/.env`, `docker-compose.yml`, startup log
+- Current state: app boots, database connection fails
+- Pending: verify `DATABASE_URL` injection path
+- Next action: confirm runtime env source for the failing container
+
+Reasoning path:
+1. Process startup succeeds, so boot-time syntax/config parsing is not the first failure.
+2. The first database call fails, which narrows the problem to configuration handoff or runtime environment state.
+3. The next useful check is the actual runtime environment seen by the failing container.
+
+What this means: fix the env propagation path before spending time on unrelated boot logic.
+```
+
+### Pattern 6: What it is / what it is not / now vs later
+
+```markdown
+What this is:
+- Phase 12 is the provider-pool-first user path.
+
+What this is not:
+- It is not customer-supplied runtime orchestration.
+- It is not Docker account management.
+
+What happens now:
+- Access Key flow
+- AI API Gateway path
+- Provider Pool-first routing UI
+
+What stays later:
+- customer-supplied runtime flow
+- runtime attach/detach orchestration
+- callback-driven runtime lifecycle work
+```
+
+### Pattern 7: User-visible outcome summary
+
+```markdown
+What the user will notice after this work:
+- creating an Access Key feels straightforward
+- the routing path is explained clearly
+- the user sees that the system uses Provider Pool first
+- the user does not need to understand Docker internals to use the feature
+```
+
+### Pattern 8: Patch-by-patch rollout with why each step exists
+
+```markdown
+Patch 1 removes the duplicate state source.
+- Why: until there is one authority, later fixes can still read stale state.
+
+Patch 2 rewires reads to the remaining authority.
+- Why: now every consumer reads from the same source of truth.
+
+Patch 3 updates verification against the new path.
+- Why: success should be measured against the authority that now owns the flow.
+
+This order matters because patch 2 would still be ambiguous if patch 1 had not already removed the duplicate authority.
+```
+
+### Pattern 9: Full-set framing before narrowing
+
+```markdown
+There are 10 areas we should review in this state:
+1. access-key path
+2. gateway routing summary
+3. provider-pool behavior
+4. compatibility wording
+5. routing mode visibility
+6. status surface
+7. error surface
+8. disabled future-mode handling
+9. user-visible guidance
+10. verification checkpoints
+
+If you want, we can then go item by item — but the important thing is that the full set is visible first.
+```
+
+### Pattern 10: Move to the next stage when current scope is sufficient
+
+```markdown
+Short answer: Phase 12 is clear enough now.
+
+What happens next:
+- stop deepening the same Phase 12 explanation
+- move to the implementation checklist for Phase 12
+- keep Phase 18 as deferred scope
+```
+
+### Pattern 11: Short recap after a long explanation
+
+```markdown
+Short recap:
+- Phase 12 = what we are really doing now
+- Phase 18 = the future runtime-management path
+- the current goal is a simpler Provider Pool-first user flow
+```
 
 ---
 
@@ -260,26 +501,11 @@ This requirement complements the closing contract by ensuring the answer always 
 
 | Rule | Relationship |
 |------|--------------|
-| `accurate-communication.md` | Keeps explanation structure flexible while requiring concise, high-signal endings |
+| `accurate-communication.md` | Keeps explanation structure flexible while requiring concise, high-signal endings and honest snapshot wording |
+| `answer-presentation.md` | Owns the layout of snapshot sections, headings, and small fact tables |
 | `flow-diagram-no-frame.md` | Governs any text flow diagram used by this rule |
 | `zero-hallucination.md` | Preserves verification requirements for technical claims inside explanations |
 | `anti-sycophancy.md` | Prevents recommendation quality from drifting into agreement without reasoning |
-
----
-
-## 15) Rollout State
-
-### Phase A (Completed)
-
-- Created `design/explanation-quality.design.md`.
-- Created `changelog/explanation-quality.changelog.md`.
-- Registered the chain in master design/changelog/TODO as pending activation.
-
-### Phase B (Completed)
-
-- Materialized runtime `explanation-quality.md` at v1.1.
-- Promoted the chain from pending activation to active runtime state.
-- Aligned master design/changelog/TODO and README active-rule inventory after activation.
 
 ---
 

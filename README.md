@@ -47,7 +47,7 @@
     <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
   </a>
   <a href="#-rule-files">
-    <img src="https://img.shields.io/badge/📁_Rules-26_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/📁_Rules-29_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
   <a href="#-installation">
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
@@ -87,14 +87,14 @@ git clone https://github.com/DarKWinGTM/claude-code-rules.git
 cd claude-code-rules
 
 # Step 2: Reusable active runtime file set (run from repo root)
-RULE_FILES="accurate-communication.md answer-presentation.md anti-mockup.md anti-sycophancy.md authority-and-scope.md dan-safe-normalization.md document-consistency.md document-changelog-control.md document-design-control.md document-patch-control.md emergency-protocol.md explanation-quality.md flow-diagram-no-frame.md functional-intent-verification.md no-variable-guessing.md phase-implementation.md project-documentation-standards.md recovery-contract.md refusal-classification.md refusal-minimization.md safe-file-reading.md safe-terminal-output.md strict-file-hygiene.md todo-standards.md unified-version-control-system.md zero-hallucination.md"
+RULE_FILES="accurate-communication.md answer-presentation.md anti-mockup.md anti-sycophancy.md authority-and-scope.md dan-safe-normalization.md document-consistency.md document-changelog-control.md document-design-control.md document-patch-control.md emergency-protocol.md evidence-grounded-burden-of-proof.md explanation-quality.md flow-diagram-no-frame.md functional-intent-verification.md no-variable-guessing.md operational-failure-handling.md phase-implementation.md project-documentation-standards.md recovery-contract.md refusal-classification.md refusal-minimization.md runtime-topology-control.md safe-file-reading.md safe-terminal-output.md strict-file-hygiene.md todo-standards.md unified-version-control-system.md zero-hallucination.md"
 
 # Step 3: Install globally
 mkdir -p ~/.claude/rules
 for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 ```
 
-✨ **That's it!** This installs the 26 active runtime rules only.
+✨ **That's it!** This installs the 29 active runtime rules only.
 
 > Already cloned the repo? Skip Step 1 and run only Step 2 + Step 3 from the repository root.
 >
@@ -175,28 +175,31 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 ---
 
-### 🟡 Quality & Safety (17 rules)
+### 🟡 Quality & Safety (20 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims and next-step guidance only when genuinely useful |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger direct human-language glosses, and clearer wording when the answer should move to the next stage or show the full set first |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
-| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace |
+| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, required to show concrete current-vs-proposed change representation, and refined with path-aware patch naming guidance so `patch.md` and `<context>.patch.md` are both valid when used for the right namespace model |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
+| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, and scoped negative-evidence semantics |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
-| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with design rollups, review rollups, standardized review outcomes, and an explicit completion boundary/stop rule |
+| [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures |
+| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with one-way design/patch source synthesis, review rollups, standardized review outcomes, and an explicit completion boundary/stop rule |
+| [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
 | [`refusal-classification.md`](refusal-classification.md) | Deterministic refusal taxonomy | Consistent block decisions and traceable output modes |
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | No unrequested docs |
 | [`todo-standards.md`](todo-standards.md) | Task management | Focused work |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects, including directory-as-namespace naming guidance for governed workspaces |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
@@ -207,8 +210,8 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Better reasoning flow and usefulness-based endings without forced extra options |
+| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, and clearer full-set-first / next-stage presentation when the answer should move forward |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, and stage-progression explanation patterns plus no forced extra options after already-complete work |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -223,7 +226,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 26**
+**📊 Active Runtime Rules: 29**
 
 </div>
 
@@ -231,7 +234,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 26-rule set, but describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 29-rule set, but describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 
@@ -299,9 +302,9 @@ ls ./.claude/rules/phase-implementation.md
 | `*.md` (root) | Active runtime rules | Rules files |
 | `./changelog/changelog.md` | Master repository-wide history | Master changelog |
 | `./changelog/*.changelog.md` | Per-chain authoritative history | Changelogs |
-| `./phase/SUMMARY.md` | Governed summary/index for live phase planning, design rollup, and review rollup | Phase summary doc |
-| `./phase/phase-010-<phase-name>.md` | Governed child per-phase execution detail with design extraction and review state | Child phase docs |
-| `./patches/*.patch.md` | Governed patch/review artifacts outside live phase planning | Patch docs |
+| `./phase/SUMMARY.md` | Governed summary/index for live phase planning, one-way source-input rollup, and review rollup | Phase summary doc |
+| `./phase/phase-010-<phase-name>.md` | Governed child per-phase execution detail with design extraction, optional patch extraction, and review state | Child phase docs |
+| `./patches/*.patch.md` | Governed patch/review artifacts outside live phase planning that may feed phase one-way when relevant | Patch docs |
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
 
 > **💡 Single Source of Truth Principle:**
@@ -324,9 +327,9 @@ This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and gov
 | `*.md` (root runtime rules) | Active runtime behavior | Approved design change requires runtime sync |
 | `changelog/changelog.md` | Master repository-wide synchronization history | Repository-level governed sync events |
 | `changelog/*.changelog.md` | Authoritative per-chain version history | Any rule/design update with version impact |
-| `phase/SUMMARY.md` | Governed summary/index for live phased execution | Phased implementation work needs one summary file with a phase map, design extraction rollup, review rollup, and global coordination |
-| `phase/phase-010-<phase-name>.md` and peers | Governed child phase-detail layer | Multi-phase execution detail under `/phase`, including design references, design extraction, review flow, reviewer checklist, review outcome, and execution detail |
-| `patches/*.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning |
+| `phase/SUMMARY.md` | Governed summary/index for live phased execution | Phased implementation work needs one summary file with a phase map, source-input extraction rollup, review rollup, and global coordination |
+| `phase/phase-010-<phase-name>.md` and peers | Governed child phase-detail layer | Multi-phase execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
+| `patches/*.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
 | `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters |
 | `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
 
@@ -349,13 +352,15 @@ Change request received
 - Runtime rule version/header aligns with changelog current version
 - `phase/SUMMARY.md` exists when phased execution is used
 - `phase/SUMMARY.md` includes:
-  - design extraction summary table
+  - source-input extraction summary table
   - overview flow diagram
   - review summary table
   - phase map
 - child phase files include:
   - design references
+  - patch references when patch-derived work exists
   - design extraction
+  - patch-to-phase extraction when patch-derived work exists
   - review flow diagram
   - reviewer checklist
   - standardized review outcome fields
@@ -410,7 +415,7 @@ TODO.md pending section audit
 
 ```text
 phase/SUMMARY.md
-  → design extraction summary table
+  → source-input extraction summary table
   → overview flow diagram
   → review summary table
   → phase/phase-010-*.md
@@ -421,9 +426,25 @@ phase/SUMMARY.md
 - `/phase` became the live phase-planning namespace
 - `SUMMARY.md` became the required summary/index for live phased execution
 - child phase files were required to carry design extraction, review flow, reviewer checklist, and standardized review outcomes
-- `SUMMARY.md` was extended to carry design rollup and review rollup views for faster approval
+- `SUMMARY.md` was extended to carry source-input rollup and review rollup views for faster approval
 - the model gained an explicit Definition of Done and stop rule so governance expansion does not continue by default after completion
 - communication rules were narrowed so next-step options are suggested only when genuinely useful rather than treated as a mandatory ending pattern
+
+#### Example 5: One-Way Design + Patch Phase Synthesis
+
+```text
+design/*.design.md + patches/*.patch.md
+  → phase/SUMMARY.md
+  → phase/phase-010-*.md
+  → TODO.md history
+```
+
+**What was synchronized:**
+- `phase-implementation` was extended from design-only extraction into one-way source synthesis
+- `phase/SUMMARY.md` can now show both design inputs and patch inputs when patch-derived work matters
+- child phase files can now carry optional patch references and patch-to-phase extraction alongside design traceability
+- `/patches` remained outside the live phase workspace
+- design and patch documents did not gain a reverse-link requirement back to phase
 
 ---
 
@@ -431,18 +452,20 @@ phase/SUMMARY.md
 
 ### 🧭 Finalized Phase Review Model
 
-**The current phased execution model is now explicitly finalized and bounded.**
+**The current phased execution model is now explicitly finalized, bounded, and able to synthesize design plus relevant patch inputs one-way.**
 
 ```text
 phase/
   SUMMARY.md
-    → design extraction summary table
+    → source-input extraction summary table
     → overview flow diagram
     → review summary table
     → phase map
   phase-010-<phase-name>.md
     → design references
+    → optional patch references
     → design extraction
+    → optional patch-to-phase extraction
     → review flow diagram
     → reviewer checklist
     → review outcome
@@ -452,6 +475,7 @@ phase/
 - reviewers can inspect the whole rollout from `SUMMARY.md`
 - reviewers can inspect one phase deeply from the child phase file
 - approvers can see sign-off status, severity, disposition, and blocker/follow-up state in one place
+- the model can now synthesize target-state design inputs and relevant governed patch inputs without collapsing role boundaries
 - the model now has an explicit completion boundary and stop rule, so governance expansion does not continue by default after it is operationally complete
 - communication rules now treat next-step options as usefulness-based guidance, not as a mandatory ending pattern after already-complete work
 
@@ -784,7 +808,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 
 <p>
   <b>Version</b>: 2.2.0 |
-  <b>Last Updated</b>: 2026-03-12 |
+  <b>Last Updated</b>: 2026-03-15 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

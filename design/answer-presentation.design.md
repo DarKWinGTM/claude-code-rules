@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402 (2026-03-10)
+> **Current Version:** 1.5
+> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12 (2026-03-17)
 
 ---
 
@@ -16,6 +16,10 @@ The target behavior is principle-first and trigger-driven:
 - lead with the main point when helpful
 - structure by user need and answer type
 - use headings, lists, tables, and spacing as semantic tools
+- make compact diagnostic snapshots explicit when technical status or checked scope matters
+- make scope-boundary explanations easy to scan when the answer needs to separate now vs later or what-it-is vs what-it-is-not
+- help the reader see the full relevant set before optional drill-down when that is the real decision surface
+- make stage progression visible when the answer should move forward rather than deepen the same scope again
 - keep presentation readable without decorative noise
 - preserve flexibility for simple answers
 
@@ -31,6 +35,8 @@ Observed failure modes:
 - bullets are used for everything, including ideas that need prose continuity
 - sequences are presented as unordered lists
 - tables are used where no real comparison exists
+- technical updates arrive as raw evidence dumps instead of bounded status notes
+- small troubleshooting issues are presented with oversized tables or overbuilt formatting
 - answers contain the right reasoning but remain hard to scan quickly
 - layout becomes decorative instead of functional
 - simple answers are over-structured while complex answers remain under-structured
@@ -47,7 +53,7 @@ When user orientation matters, place the main point early.
 
 Required guidance:
 - use a short answer or short orienting statement near the start when it helps the user understand the response faster
-- do not bury the conclusion deep inside the answer unless suspense or chronology is required
+- do not bury the conclusion deep inside the answer unless chronology truly matters
 
 ### 3.2 Structure-Follows-Intent Principle
 
@@ -58,6 +64,7 @@ Required guidance:
 - analytical answers should use clearer sectional structure
 - comparisons should use comparison-oriented layouts
 - procedures should use sequence-oriented layouts
+- technical status notes should use compact snapshot-oriented layouts
 
 ### 3.3 Scannability-Over-Density Principle
 
@@ -66,7 +73,7 @@ When answers become longer or more complex, scanability should improve rather th
 Required guidance:
 - use headings to separate different purposes
 - use whitespace to separate conceptual blocks
-- avoid dense, uninterrupted text when structure would improve reading speed
+- avoid dense uninterrupted text when structure would improve reading speed
 
 ### 3.4 Semantic Formatting Principle
 
@@ -79,7 +86,18 @@ Required guidance:
 - use diagrams only when sequence or branching is central
 - ensure headings are short, functional, and content-representative
 
-### 3.5 One-Block-One-Purpose Principle
+### 3.5 Diagnostic Snapshot Principle
+
+When reporting technical status, present the snapshot as a compact structured note rather than as a raw dump.
+
+Required guidance:
+- start with one orienting line before the snapshot when context is needed
+- use short titled sections such as `Current Status`, `Request Information`, `Environment`, `Checked Scope`, or `What This Means` only when they materially improve scanability
+- use small fact tables only for stable checked facts that are easier to scan side by side than in prose
+- keep snapshot tables narrow, scoped, and fact-oriented
+- do not let the table replace the explanation or implication
+
+### 3.6 One-Block-One-Purpose Principle
 
 Each paragraph, list, table, or section should have a clear job.
 
@@ -88,7 +106,7 @@ Required guidance:
 - introduce lists and tables with a short context-setting line when needed
 - do not mix multiple unrelated purposes into one section
 
-### 3.6 Readability-Over-Decoration Principle
+### 3.7 Readability-Over-Decoration Principle
 
 Readable structure matters more than visual flourish.
 
@@ -110,6 +128,10 @@ Use stronger presentation structure when one or more of these triggers are prese
 | comparison | choose between options, pros/cons, alternatives | comparison table or clearly grouped comparison blocks |
 | sequence | steps, procedure, rollout order, checklist flow | numbered steps or ordered blocks |
 | branching flow | conditions, paths, decision trees, handoffs | text flow diagram or clearly branched list |
+| diagnostic snapshot | troubleshooting status, implementation progress report, verification note, environment summary | short orienting line + compact titled snapshot sections + small scoped fact table when helpful |
+| scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
+| full-set framing | many relevant areas, complete checklist, multiple review axes that should be visible together | complete set first, then optional narrowing |
+| stage progression | current explanation is already sufficient and the real need is the next state or milestone | one short progression block such as `What happens next` or `Next stage` |
 | long/complex answer | many concepts, many dependencies, high cognitive load | headings, grouped blocks, whitespace, concise summary |
 
 This model should guide structure without turning every answer into a forced template.
@@ -151,7 +173,90 @@ When branching or handoff order matters:
 - use a small text flow diagram or clearly indented decision structure
 - defer diagram formatting constraints to `flow-diagram-no-frame.md`
 
-### 5.6 Intro-Before-Structure Pattern
+### 5.6 Diagnostic Snapshot Pattern
+
+When reporting troubleshooting or implementation status:
+- begin with one short orienting line or short answer
+- then surface the stable checked facts in compact titled sections
+- use a small fact table only when it improves scanability for stable facts such as request details, current state, checked scope, or environment
+- follow the snapshot with one short implication line or next-action line when the reader needs to know what the snapshot means
+
+Typical section labels, when helpful:
+- `Current Status`
+- `Request Information`
+- `Environment`
+- `Checked Scope`
+- `What This Means`
+
+### 5.7 Scope-Boundary Pattern
+
+When the answer needs to separate active scope from deferred scope, preferred grouped section labels include:
+- `What this is`
+- `What this is not`
+- `What happens now`
+- `What stays later`
+- `What the user will notice`
+
+These blocks are especially useful for roadmap, phase, rollout, and product-scope clarification responses.
+
+### 5.7.1 Full-Set-First Pattern
+
+When the reader should reason about a larger complete set, show that full set before narrowing into sub-items.
+
+Preferred shapes:
+- `There are 10 areas to review:` followed by the full list
+- `Full checklist:` followed by the complete set
+- `Complete scope:` followed by the full set and then optional drill-down
+
+### 5.7.2 Next-Stage Pattern
+
+When the current explanation is already sufficient, prefer a short grouped block that moves the reader forward.
+
+Preferred labels:
+- `What happens next`
+- `Next stage`
+- `Next state`
+- `Next milestone`
+
+### 5.8 Canonical Snapshot Shapes
+
+When a compact technical status note would help, preferred house-style examples include:
+
+#### Example shape A: Sectioned snapshot
+
+```markdown
+Current Status
+- App boots successfully
+- Database connection still fails
+
+Checked Scope
+- `backend/.env`
+- `docker-compose.yml`
+- startup log
+
+What This Means
+- Failure is likely in env propagation, not initial boot
+
+Next Action
+- Inspect the failing container runtime environment
+```
+
+#### Example shape B: Small fact table + implication
+
+```markdown
+| Field | Value |
+|------|-------|
+| Status | Failing at DB handoff |
+| Checked | `.env`, compose, startup log |
+| Pending | Runtime env injection |
+| Next | Inspect container env source |
+
+What this means: startup is succeeding, so the likely issue is between configuration handoff and the first database call.
+```
+
+These are canonical examples for recognizable presentation style, not rigid templates that override judgment.
+
+### 5.9 Intro-Before-Structure Pattern
 
 When using a list or table:
 - add a short lead-in line if the reader needs context for why the structure is being shown
@@ -169,6 +274,12 @@ When using a list or table:
 | unordered list for ordered process | hides sequence and dependencies | use numbered steps |
 | forced comparison table | adds visual weight without informational value | use normal prose or grouped bullets |
 | missing framing before table/list | reader has to infer the purpose of the structure | add a short context-setting line |
+| raw evidence dump with no orienting line | checked facts appear but meaning stays unclear | start with a short orientation, then present the snapshot |
+| scope boundaries buried in long prose | the reader cannot tell what is included now versus later | use grouped scope-boundary sections such as `What this is` / `What this is not` / `What happens now` / `What stays later` |
+| drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first, then narrow |
+| repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
+| oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
+| table-only technical note with no implication | facts are visible but the reader cannot tell what they mean | add one short implication or next-action line |
 | over-structuring simple answers | makes a small answer feel heavy | keep simple cases compact |
 | inconsistent emphasis or heading style | weakens visual order | maintain consistent markdown hierarchy |
 
@@ -183,12 +294,14 @@ Allowed flexibility:
 - headings are not required when the answer is naturally compact
 - tables are optional unless comparison structure clearly helps
 - lists may be skipped when prose is more coherent
+- snapshot sections are optional unless they materially improve technical scanability
 - the structure may vary as long as readability, scanability, and semantic formatting remain strong
 
 Not allowed:
 - using flexibility as a reason to keep complex answers visually disorganized
 - using decoration instead of structure
 - using formatting patterns that obscure sequence, comparison, or section purpose
+- using snapshot tables as a substitute for orientation or explanation
 
 ---
 
@@ -200,6 +313,7 @@ Not allowed:
 | Section-purpose clarity | High |
 | Scanability of complex answers | High |
 | Semantic formatting correctness | High |
+| Diagnostic snapshot usefulness | High when technical status reporting is used |
 | Decorative formatting without function | 0 critical cases |
 | Over-structuring simple answers | Low |
 | Wall-of-text incidence in complex answers | Low |
@@ -211,8 +325,8 @@ Not allowed:
 | Document | Relationship |
 |----------|--------------|
 | [../answer-presentation.md](../answer-presentation.md) | Runtime implementation of this design |
-| [accurate-communication.design.md](accurate-communication.design.md) | Clear summaries, signal density, and next-step endings |
-| [explanation-quality.design.md](explanation-quality.design.md) | Reasoning structure and analytical explanation quality |
+| [accurate-communication.design.md](accurate-communication.design.md) | Clear summaries, bounded technical snapshot wording, and next-step endings |
+| [explanation-quality.design.md](explanation-quality.design.md) | Reasoning structure and layered analytical explanation quality |
 | [flow-diagram-no-frame.design.md](flow-diagram-no-frame.design.md) | Text-diagram formatting constraints |
 | [document-consistency.design.md](document-consistency.design.md) | Consistency in terminology, references, and labeling |
 

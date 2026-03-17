@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 1.5
-> **Session:** b1fc974f-b7df-4f24-9080-c941153612ca
+> **Current Version:** 2.1
+> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 
 ---
 
@@ -10,6 +10,18 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.1 | 2026-03-17 | **[Added stage-progression and whole-set wording guidance to accurate-communication](#version-21)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended accurate-communication so answers can state when the next useful move is the next stage and can explain that the full relevant set should be shown before narrowing into a smaller slice | |
+| 2.0 | 2026-03-15 | **[Extended accurate-communication for easier reader-facing terminology glosses](#version-20)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended accurate-communication with stronger guidance and examples for directly glossing internal or technical terminology in plain language when that materially improves reader understanding | |
+| 1.9 | 2026-03-15 | **[Added human-language glossary guidance for easier explanatory communication](#version-19)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended accurate-communication with guidance and examples for directly glossing internal or technical terminology in plain language when that materially improves reader understanding | |
+| 1.8 | 2026-03-15 | **[Added richer partial-evidence wording examples for technical status reporting](#version-18)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended accurate-communication with richer example coverage for mixed exact/partial facts and scoped environment summaries so technical status wording is easier to apply without overclaiming | |
+| 1.7 | 2026-03-14 | **[Added bounded technical snapshot wording for partial-evidence status reporting](#version-17)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended accurate-communication so technical snapshots now separate exact captured facts, partial checked facts, and inferred implications without pretending incomplete evidence is exact capture | |
+| 1.6 | 2026-03-12 | **[Added evidence-threshold communication guidance and contradiction-wording guardrails](#version-16)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Strengthened accurate-communication so verified fact, inference, hypothesis, unresolved uncertainty, and scoped non-findings now have explicit wording guidance, and the rule now directly forbids saying the user is wrong/mistaken/confused without cited contrary evidence | |
 | 1.5 | 2026-03-11 | **[Made next-step options context-beneficial rather than default](#version-15)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
 | | | Summary: Refined accurate-communication so next-step options are offered only when genuinely helpful and not as a mandatory ending pattern | |
 | 1.4 | 2026-03-11 | **[Prevented artificial next-step options after completed work](#version-14)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
@@ -25,6 +37,124 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-21"></a>
+## Version 2.1: Added stage-progression and whole-set wording guidance to accurate-communication
+
+**Date:** 2026-03-17
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `accurate-communication.md` from v2.0 to v2.1.
+- Updated `design/accurate-communication.design.md` from v2.0 to v2.1.
+- Added wording guidance so responses can state clearly when the next useful move is the next stage/state rather than deeper explanation in the same scope.
+- Added wording guidance so the full relevant set can be presented before narrowing into smaller sub-items.
+- Added examples for moving to the next state and showing the whole set first.
+
+### Summary
+Extended accurate-communication so answers can state when the next useful move is the next stage and can explain that the full relevant set should be shown before narrowing into a smaller slice.
+
+---
+
+<a id="version-20"></a>
+## Version 2.0: Extended accurate-communication for easier reader-facing terminology glosses
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `accurate-communication.md` from v1.9 to v2.0.
+- Updated `design/accurate-communication.design.md` from v1.9 to v2.0.
+- Strengthened wording guidance for directly glossing internal or technical terms in plain language when that materially improves understanding.
+- Added explicit runtime examples for user-facing paraphrases around routing-mode and customer-supplied-runtime terminology.
+- Preserved the evidence-honesty boundary so these glosses clarify terminology without weakening technical truth or claim-state discipline.
+
+### Summary
+Extended accurate-communication with stronger human-language gloss guidance so answers can explain internal or technical terms more clearly without weakening evidence or claim-state discipline.
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added human-language glossary guidance for easier explanatory communication
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `accurate-communication.md` from v1.8 to v1.9.
+- Updated `design/accurate-communication.design.md` from v1.8 to v1.9.
+- Added wording guidance for directly glossing internal or technical terms in plain language when that materially improves understanding.
+- Added explicit example coverage for human-language paraphrases such as explaining routing-mode and runtime-orchestration terms in user-facing language.
+- Preserved the existing evidence-honesty boundary so these glosses clarify terminology without replacing technical truth.
+
+### Summary
+Extended accurate-communication with human-language gloss guidance so answers can explain internal or technical terms more clearly without weakening evidence or claim-state discipline.
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added richer partial-evidence wording examples for technical status reporting
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `accurate-communication.md` from v1.7 to v1.8.
+- Updated `design/accurate-communication.design.md` from v1.7 to v1.8.
+- Added richer example coverage for mixed exact and partial facts inside one bounded technical snapshot.
+- Added a scoped environment-summary example for technical status reports where the full runtime state is not fully captured.
+- Strengthened the practical example bank so partial-evidence wording is easier to apply in real troubleshooting and verification updates without implying exact capture.
+
+### Summary
+Extended accurate-communication with richer example coverage for mixed exact/partial facts and scoped environment summaries so technical status wording is easier to apply without overclaiming.
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added bounded technical snapshot wording for partial-evidence status reporting
+
+**Date:** 2026-03-14
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `accurate-communication.md` from v1.6 to v1.7.
+- Updated `design/accurate-communication.design.md` from v1.6 to v1.7.
+- Added a bounded technical snapshot wording principle for compact diagnostic and technical status reporting.
+- Defined explicit wording separation between exact captured facts, partial checked facts, and inferred implications.
+- Added preferred wording patterns such as `From the checked scope, ...` and `I could not capture the exact request, but ...` for partial-but-verified reporting.
+- Extended the application model and decision framework so troubleshooting, progress, and verification updates keep evidence boundaries visible inside compact snapshots.
+- Added anti-pattern coverage for pretending exact capture from partial evidence.
+- Updated examples and quality metrics to reinforce honest partial-evidence status reporting.
+
+### Summary
+Extended accurate-communication so technical snapshots now separate exact captured facts, partial checked facts, and inferred implications without pretending incomplete evidence is exact capture.
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added evidence-threshold communication guidance and contradiction-wording guardrails
+
+**Date:** 2026-03-12
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `accurate-communication.md` from v1.5 to v1.6.
+- Updated `design/accurate-communication.design.md` from v1.4 to v1.6 and corrected the prior runtime/design metadata drift.
+- Added explicit evidence-threshold wording guidance for:
+  - verified fact
+  - observed local fact
+  - evidence-backed inference
+  - working hypothesis
+  - unresolved uncertainty
+  - scoped non-findings
+- Added a contradiction-wording guardrail that forbids saying the user is wrong, mistaken, or confused without cited contrary evidence.
+- Clarified that contradiction wording should stay claim-focused by default rather than person-focused.
+- Added scoped negative-result honesty language so limited non-findings are not phrased as global absence.
+
+### Summary
+Strengthened accurate-communication so the wording layer now exposes evidence strength honestly and no longer permits person-directed contradiction language without contrary evidence.
 
 ---
 

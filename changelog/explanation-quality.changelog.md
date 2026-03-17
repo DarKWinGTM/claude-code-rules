@@ -1,8 +1,8 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 1.6
-> **Session:** b1fc974f-b7df-4f24-9080-c941153612ca
+> **Current Version:** 2.1
+> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 
 ---
 
@@ -10,6 +10,16 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.1 | 2026-03-17 | **[Added stage-progression and whole-set framing guidance to explanation-quality](#version-21)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended explanation-quality so responses can move to the next meaningful stage when current scope is sufficient and can present the full relevant set before narrowing into sub-items | |
+| 2.0 | 2026-03-15 | **[Extended explanation-quality for easier scope, timing, and user-visible communication](#version-20)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended explanation-quality with stronger what-it-is/what-it-is-not, now-versus-later, user-visible outcome, human-language paraphrase, and short-recap patterns so long explanations land more clearly for non-internal readers | |
+| 1.9 | 2026-03-15 | **[Added easier-to-understand scope-clarification patterns for explanation-heavy responses](#version-19)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended explanation-quality with what-it-is/what-it-is-not, now-versus-later, user-visible outcome, human-language paraphrase, and short-recap guidance so long explanations land more clearly for non-internal readers | |
+| 1.8 | 2026-03-15 | **[Added richer canonical walkthrough examples for layered explanation responses](#version-18)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended explanation-quality with fuller layered walkthrough and patch-by-patch examples so the preferred natural-response style is easier to recognize and reuse in practice | |
+| 1.7 | 2026-03-14 | **[Refined layered natural explanation style for plain-language-first walkthroughs](#version-17)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | Summary: Extended explanation-quality so answers now start with simpler framing, support before/after and patch-by-patch walkthroughs, allow analogy-assisted clarification, use diagnostic snapshots for status-heavy updates, and end without artificial forced options | |
 | 1.6 | 2026-03-11 | **[Made continuation options usefulness-driven rather than default](#version-16)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
 | | | Summary: Refined explanation-quality so continuation options appear only when genuinely helpful and not as a mandatory ending pattern | |
 | 1.5 | 2026-03-11 | **[Prevented artificial next-step options after completed analytical work](#version-15)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
@@ -24,6 +34,106 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-21"></a>
+## Version 2.1: Added stage-progression and whole-set framing guidance to explanation-quality
+
+**Date:** 2026-03-17
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `explanation-quality.md` from v2.0 to v2.1.
+- Updated `design/explanation-quality.design.md` from v2.0 to v2.1.
+- Added an explicit stage/state progression pattern so responses prefer the next meaningful milestone when the current scope is already sufficiently clear.
+- Added a whole-set framing pattern so the full relevant set is shown before optional narrowing when that is the real decision surface.
+- Extended closing/decision guidance so deeper same-scope continuation is no longer the default when progression would be more useful.
+- Expanded the example bank with full-set-first and move-to-next-stage patterns.
+
+### Summary
+Extended explanation-quality so responses can move to the next meaningful stage when current scope is sufficient and can present the full relevant set before narrowing into sub-items.
+
+---
+
+<a id="version-20"></a>
+## Version 2.0: Extended explanation-quality for easier scope, timing, and user-visible communication
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `explanation-quality.md` from v1.9 to v2.0.
+- Updated `design/explanation-quality.design.md` from v1.9 to v2.0.
+- Added stronger support for `what this is`, `what this is not`, `what happens now`, and `what stays later` explanatory patterns.
+- Added user-visible outcome framing so explanations surface what the user will actually notice, not only internal implementation detail.
+- Added human-language paraphrase guidance for internal or product-specific terminology.
+- Added a short-recap pattern for long layered explanations.
+- Extended the runtime example bank to better match easier product-truth and staged-scope reporting.
+
+### Summary
+Extended explanation-quality so long explanatory responses can separate current scope, deferred scope, user-visible outcomes, and internal terminology more clearly without losing technical truth.
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added easier-to-understand scope-clarification patterns for explanation-heavy responses
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `explanation-quality.md` from v1.8 to v1.9.
+- Updated `design/explanation-quality.design.md` from v1.8 to v1.9.
+- Added explicit support for `what this is / what this is not` explanation structure when scope clarity matters.
+- Added `now / later` guidance for staged work and deferred scope explanation.
+- Added `user-visible outcome` guidance so explanations surface what the user will actually notice, not only internal implementation detail.
+- Added human-language paraphrase guidance for internal or product-specific terminology.
+- Added a short-recap pattern for long layered explanations.
+- Extended the example bank to better match easier-to-understand scope and product-truth reporting.
+
+### Summary
+Extended explanation-quality so long explanatory responses can separate current scope, deferred scope, user-visible outcomes, and human-language paraphrases more clearly without losing technical truth.
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added richer canonical walkthrough examples for layered explanation responses
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `explanation-quality.md` from v1.7 to v1.8.
+- Updated `design/explanation-quality.design.md` from v1.7 to v1.8.
+- Added a fuller layered walkthrough example that explicitly shows short answer → simple explanation → diagnostic snapshot → reasoning path → practical implication.
+- Added a richer patch-by-patch rollout example that explains why each step exists, not just what each step changes.
+- Strengthened the chain’s example bank so the natural-response style is easier to recognize and reuse during real implementation, migration, and debugging explanations.
+
+### Summary
+Extended explanation-quality with fuller canonical walkthrough examples so the preferred layered natural explanation style is more recognizable in practice without changing the core rule contract.
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Refined layered natural explanation style for plain-language-first walkthroughs
+
+**Date:** 2026-03-14
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `explanation-quality.md` from v1.6 to v1.7.
+- Updated `design/explanation-quality.design.md` from v1.6 to v1.7.
+- Reframed the rule around a plain-language-first, layered natural explanation pattern.
+- Added explicit `simple version first, technical version second` guidance for complex topics.
+- Added stepwise explanation guidance so walkthroughs progress one understandable step at a time.
+- Added explicit support for before/after explanation, patch-by-patch explanation, and analogy-assisted clarification when they materially improve understanding.
+- Kept the compact diagnostic snapshot requirement for status-heavy updates and integrated it into the new layered explanation flow.
+- Harmonized the ending guidance so explanations end cleanly after synthesis when no real continuation path exists, while still giving clear next-step direction when it is genuinely useful.
+- Added new good-pattern examples and anti-pattern coverage aligned to the more natural explanation style.
+
+### Summary
+Extended explanation-quality so answers now start with simpler framing, support before/after and patch-by-patch walkthroughs, allow analogy-assisted clarification, use diagnostic snapshots for status-heavy updates, and end without artificial forced options.
 
 ---
 

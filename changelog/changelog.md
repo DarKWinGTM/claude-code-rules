@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 4.9
-> **Session:** 468e053d-9953-496e-8e83-910e2ae67402
+> **Current Version:** 6.1
+> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 
 ---
 
@@ -10,6 +10,92 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 6.1 | 2026-03-17 | **[Added stage-progression and whole-set explanation governance across explanation-quality, answer-presentation, and accurate-communication](#version-61)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | - Updated `explanation-quality` design/runtime/changelog to v2.1 with stage/state progression preference and whole-set-first framing guidance | |
+| | | - Updated `answer-presentation` design/runtime/changelog to v1.5 with full-set-first and next-stage presentation patterns | |
+| | | - Updated `accurate-communication` design/runtime/changelog to v2.1 with wording guidance for moving to the next state and stating the full relevant set before narrowing | |
+| | | - Updated `design/design.md` runtime inventory references to `accurate-communication.design.md v2.1`, `answer-presentation.design.md v1.5`, and `explanation-quality.design.md v2.1` | |
+| | | - Updated `README.md` rule descriptions for the three touched chains to reflect the stage-progression and whole-set refinement | |
+| | | - Updated `TODO.md` completion/history tracking for the stage-progression patch wave and re-synced installed runtime copies for the touched rules | |
+| | | Summary: Completed a communication-style refinement wave so responses can move to the next meaningful stage when current scope is sufficient and can present the full relevant set before drilling into a narrower slice | |
+| 6.0 | 2026-03-15 | **[Completed easier-to-understand explanation refinement across explanation-quality, answer-presentation, and accurate-communication](#version-60)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | - Updated `explanation-quality` design/runtime/changelog to v2.0 with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, human-language-paraphrase, and short-recap explanation patterns | |
+| | | - Updated `answer-presentation` design/runtime/changelog to v1.4 with stronger grouped scope-boundary layout guidance and canonical examples for easier explanatory scanning | |
+| | | - Updated `accurate-communication` design/runtime/changelog to v2.0 with stronger human-language gloss guidance and runtime examples for internal or technical terminology | |
+| | | - Updated `design/design.md` runtime inventory references to `accurate-communication.design.md v2.0`, `answer-presentation.design.md v1.4`, and `explanation-quality.design.md v2.0` | |
+| | | - Updated `README.md` rule descriptions for the three touched chains to reflect the easier-to-understand explanation refinements | |
+| | | - Updated `TODO.md` completion/history tracking for the explanation-clarity patch wave and re-synced installed runtime copies for the touched rules | |
+| | | Summary: Completed a communication-style refinement wave so answers and progress reports can explain current scope, deferred scope, user-visible results, and internal terminology more clearly without creating a new rule chain | |
+| 5.9 | 2026-03-15 | **[Refined easier-to-understand explanation governance across explanation-quality, answer-presentation, and accurate-communication](#version-59)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | - Updated `explanation-quality` design/runtime/changelog to v1.9 with what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, and short-recap explanation patterns | |
+| | | - Updated `answer-presentation` design/runtime/changelog to v1.3 with grouped scope-boundary layout guidance for easier explanatory scanning | |
+| | | - Updated `accurate-communication` design/runtime/changelog to v1.9 with human-language gloss guidance for internal or technical terminology | |
+| | | - Updated `design/design.md` runtime inventory references to `accurate-communication.design.md v1.9`, `answer-presentation.design.md v1.3`, and `explanation-quality.design.md v1.9` | |
+| | | - Updated `README.md` rule descriptions for the three touched chains to reflect the easier-to-understand explanation refinements | |
+| | | - Updated `TODO.md` completion/history tracking for the explanation-clarity patch wave and re-synced installed runtime copies for the touched rules | |
+| | | Summary: Completed a communication-style refinement wave so answers and progress reports can explain current scope, deferred scope, user-visible results, and internal terminology more clearly without creating a new rule chain | |
+| 5.8 | 2026-03-15 | **[Added path-aware naming refinement for governed patch and document workspaces](#version-58)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | - Updated `document-patch-control` design/runtime/changelog to v2.2 with filename-authoritative versus path-authoritative patch naming guidance | |
+| | | - Updated `project-documentation-standards` design/runtime/changelog to v2.5 with directory-as-namespace naming guidance for governed workspaces | |
+| | | - Updated `design/design.md` inventory references to `document-patch-control.design.md v2.2` and `project-documentation-standards.design.md v2.5` | |
+| | | - Updated `README.md` descriptions for the two touched chains to reflect the naming-policy refinement | |
+| | | - Updated `TODO.md` completion/history tracking for the path-aware naming patch wave and re-synced installed runtime copies for the touched rules | |
+| | | Summary: Completed a naming-policy refinement wave so governed workspaces can intentionally choose either context-bearing filenames or role-based filenames according to whether the filename or the parent path is the real namespace authority | |
+| 5.7 | 2026-03-15 | **[Applied micro-polish natural-response patch across presentation, explanation, and wording examples](#version-57)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | - Updated `answer-presentation` design/runtime/changelog to v1.2 with canonical compact snapshot examples for sectioned status notes and small fact-table notes | |
+| | | - Updated `explanation-quality` design/runtime/changelog to v1.8 with richer layered walkthrough and patch-by-patch examples that better demonstrate the preferred natural-response style | |
+| | | - Updated `accurate-communication` design/runtime/changelog to v1.8 with richer partial-evidence wording examples for mixed exact/partial facts and scoped environment summaries | |
+| | | - Updated `design/design.md` runtime inventory references to `accurate-communication.design.md v1.8`, `answer-presentation.design.md v1.2`, and `explanation-quality.design.md v1.8` | |
+| | | - Updated `README.md` rule descriptions for the three touched chains to reflect the micro-polish example-focused refinements | |
+| | | - Updated `TODO.md` completion/history tracking for the micro-polish patch wave and re-synced installed runtime copies for the touched rules | |
+| | | Summary: Completed a small refinement wave that makes the natural-response style more recognizable in practice through stronger canonical examples while preserving the existing owner split and trigger-based flexibility | |
+| 5.6 | 2026-03-14 | **[Synchronized diagnostic-snapshot governance patch across answer-presentation, explanation-quality, and accurate-communication](#version-56)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | - Updated `answer-presentation` design/runtime/changelog to v1.1 with compact diagnostic snapshot trigger/pattern/anti-pattern/metric guidance for status-heavy updates | |
+| | | - Updated `explanation-quality` design/runtime/changelog to v1.7 with a diagnostic-snapshot-first requirement for troubleshooting/progress/verification updates | |
+| | | - Updated `accurate-communication` design/runtime/changelog to v1.7 with compact diagnostic-snapshot communication guidance and decision-framework integration | |
+| | | - Updated `design/design.md` runtime inventory references to `accurate-communication.design.md v1.7`, `answer-presentation.design.md v1.1`, and `explanation-quality.design.md v1.7` | |
+| | | - Updated `TODO.md` completion/history tracking for the synchronized diagnostic-snapshot patch wave | |
+| | | Summary: Completed one governed patch wave that aligns communication wording, explanation structure, and answer presentation around compact diagnostic snapshots for status-heavy responses | |
+| 5.5 | 2026-03-14 | **[Created first-class runtime-topology-control chain and synchronized master inventory](#version-55)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | - Created `design/runtime-topology-control.design.md`, `runtime-topology-control.md`, and `changelog/runtime-topology-control.changelog.md` as a new narrow rule chain for bounded runtime mutation posture and topology discipline | |
+| | | - Updated `design/design.md` from 28 to 29 active runtime rules and placed the new chain in the User Control category | |
+| | | - Updated `README.md` inventory, `RULE_FILES` install set, total rule counts, and Quality & Safety category count to include `runtime-topology-control.md` | |
+| | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/runtime-topology-control.md` | |
+| | | Summary: Added a first-class runtime-topology-control rule so bounded inspect-first, approval-gated anti-debug-by-expansion discipline now exists as a dedicated governed chain without duplicating adjacent rule ownership | |
+| 5.4 | 2026-03-13 | **[Upgraded phase-planning governance to one-way design+patch source synthesis](#version-54)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | - Updated `phase-implementation` design/runtime/changelog/template from v2.0 to v2.1 so `/phase` remains the live execution layer while `SUMMARY.md` and child phases may synthesize design target-state inputs plus optional patch/review inputs | |
+| | | - Updated `document-patch-control` design/runtime/changelog from v2.0 to v2.1 with an explicit one-way patch-to-phase synthesis clarification that does not create reverse-link requirements | |
+| | | - Updated `project-documentation-standards` design/runtime/changelog from v2.3 to v2.4 and repaired the stale `phase-implementation.md v1.3` runtime reference | |
+| | | - Updated `design/design.md`, `README.md`, and `TODO.md` to reflect the refined source-synthesis phase model | |
+| | | - Reinstalled touched runtime rules into `~/.claude/rules/phase-implementation.md`, `~/.claude/rules/document-patch-control.md`, and `~/.claude/rules/project-documentation-standards.md` | |
+| | | Summary: Refined the governed phase model so live phased execution can synthesize design and patch inputs one-way while keeping design, patch, and phase roles distinct | |
+| 5.3 | 2026-03-12 | **[Created first-class evidence-grounded-burden-of-proof chain and rolled burden-of-proof semantics into primary runtime rules](#version-53)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | - Created `design/evidence-grounded-burden-of-proof.design.md`, `evidence-grounded-burden-of-proof.md`, and `changelog/evidence-grounded-burden-of-proof.changelog.md` | |
+| | | - Updated `accurate-communication` to v1.6 with evidence-threshold wording guidance and a direct rule against saying the user is wrong/mistaken/confused without cited contrary evidence | |
+| | | - Updated `zero-hallucination`, `anti-sycophancy`, and `no-variable-guessing` to v1.3 and replaced their header-only runtime stubs with full runtime rule bodies | |
+| | | - Updated `design/design.md` and `README.md` from 27 to 28 active runtime rules and extended the canonical `RULE_FILES` install set | |
+| | | - Updated `TODO.md` and installed the new/touched runtime rules into `~/.claude/rules/` | |
+| | | Summary: Added one durable semantic owner for evidence-grounded contradiction and absence semantics while immediately improving installed runtime behavior across the four primary adjacent chains | |
+| 5.2 | 2026-03-12 | **[Strengthened document-patch-control so governed patches must show concrete change representation](#version-52)** | 451fb64e-f2a5-43a5-bf98-47f01244f15c |
+| | | - Updated `design/document-patch-control.design.md` and `document-patch-control.md` from v1.9 to v2.0 | |
+| | | - Added explicit change-representation requirements for target locations and current-vs-proposed comparison in `.patch.md` documents | |
+| | | - Clarified that non-code patches must declare themselves as conceptual/non-snippet patches while still providing structured current-state vs target-state comparison | |
+| | | - Updated `changelog/document-patch-control.changelog.md`, `design/design.md`, `README.md`, `project-documentation-standards.md`, and `TODO.md` to reflect the strengthened patch rule | |
+| | | Summary: Closed the rule gap that allowed vague `.patch.md` documents by requiring comparison-friendly patch content rather than prose-only plans | |
+| 5.1 | 2026-03-12 | **[Upgraded operational-failure-handling to explicit case-profile semantics and reinstalled runtime rule](#version-51)** | 451fb64e-f2a5-43a5-bf98-47f01244f15c |
+| | | - Updated `design/operational-failure-handling.design.md` and `operational-failure-handling.md` from v1.0 to v1.1 | |
+| | | - Added seeded case-specific profiles for Web Search, WebFetch, local-path, permission, and tool-approval failures | |
+| | | - Clarified immediate-retry rules, profile precedence, and future case-extension contract | |
+| | | - Updated `design/design.md` to v3.7 so the active inventory points to `operational-failure-handling.design.md` v1.1 | |
+| | | - Updated `TODO.md` to record the case-profile upgrade and runtime reinstall | |
+| | | - Reinstalled updated runtime file to `~/.claude/rules/operational-failure-handling.md` | |
+| | | Summary: Refined operational-failure-handling from a generic retry policy into a profile-driven rule with explicit case-by-case handling and future case extensibility | |
+| 5.0 | 2026-03-12 | **[Created first-class operational-failure-handling rule chain for generalized technical failure handling](#version-50)** | 451fb64e-f2a5-43a5-bf98-47f01244f15c |
+| | | - Created `operational-failure-handling` design/runtime/changelog chain as a new operational-failure authority for retry classification, cooldown guidance, and stop/escalation behavior | |
+| | | - Updated `design/design.md` to v3.6 and increased the active runtime inventory from 26 to 27 | |
+| | | - Updated `README.md` inventory/category wording and canonical `RULE_FILES` install set to include `operational-failure-handling.md` | |
+| | | - Updated `TODO.md` to record the new rule-chain rollout | |
+| | | Summary: Added a first-class operational-failure-handling rule so ordinary technical failures now have explicit governed policy without redefining refusal or emergency semantics | |
 | 4.9 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and orderly output](#version-49)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | - Created `answer-presentation` design/runtime/changelog chain as a new presentation-layer authority for readable, scannable output | |
 | | | - Updated `design/design.md` to v3.5 and increased the active runtime inventory from 25 to 26 | |
@@ -126,6 +212,296 @@
 | | | - Added missing `document-patch-control.changelog.md` v1.1 entry aligned with runtime/design updates | |
 | | | - Updated TODO hardening tracker state to mark WS-1 and WS-4 complete in the active execution slice | |
 | | | Summary: Closed outstanding WS-1+WS-4 runtime-first synchronization tasks and aligned rule/design/changelog/TODO artifacts | |
+
+---
+
+<a id="version-61"></a>
+## Version 6.1: Added stage-progression and whole-set explanation governance across explanation-quality, answer-presentation, and accurate-communication
+
+**Date:** 2026-03-17
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `design/explanation-quality.design.md`, `explanation-quality.md`, and `changelog/explanation-quality.changelog.md` from v2.0 to v2.1.
+- Updated `design/answer-presentation.design.md`, `answer-presentation.md`, and `changelog/answer-presentation.changelog.md` from v1.4 to v1.5.
+- Updated `design/accurate-communication.design.md`, `accurate-communication.md`, and `changelog/accurate-communication.changelog.md` from v2.0 to v2.1.
+- Added explicit guidance so responses prefer the next meaningful stage/state when the current scope is already sufficiently clear.
+- Added explicit whole-set-first guidance so the full relevant set is shown before optional narrowing when that is the true decision surface.
+- Added supporting presentation and wording patterns for `What happens next`, `Next stage`, and full-set-first summary blocks.
+- Updated `design/design.md` inventory references and purpose text for the three touched chains.
+- Updated `README.md` descriptions for the three touched chains to reflect the stage-progression and whole-set refinements.
+- Updated `TODO.md` completion/history tracking for this patch wave.
+- Re-synchronized installed runtime copies for `explanation-quality.md`, `answer-presentation.md`, and `accurate-communication.md`.
+
+### Summary
+Completed a communication-style refinement wave so responses can move to the next meaningful stage when current scope is sufficient and can present the full relevant set before drilling into a narrower slice.
+
+---
+
+<a id="version-60"></a>
+## Version 6.0: Completed easier-to-understand explanation refinement across explanation-quality, answer-presentation, and accurate-communication
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `design/explanation-quality.design.md`, `explanation-quality.md`, and `changelog/explanation-quality.changelog.md` from v1.9 to v2.0.
+- Updated `design/answer-presentation.design.md`, `answer-presentation.md`, and `changelog/answer-presentation.changelog.md` from v1.3 to v1.4.
+- Updated `design/accurate-communication.design.md`, `accurate-communication.md`, and `changelog/accurate-communication.changelog.md` from v1.9 to v2.0.
+- Added explicit explanation patterns for `what this is`, `what this is not`, `what happens now`, `what stays later`, `what the user will notice`, and short recap after long explanations.
+- Added stronger grouped layout guidance and canonical examples for easier scope-heavy explanation scanning.
+- Added stronger human-language gloss guidance and runtime examples so internal or technical terms can be translated into simpler reader-facing language when that materially improves understanding.
+- Updated `design/design.md` inventory references and purpose text for the three touched chains.
+- Updated `README.md` descriptions for the three touched chains to reflect the easier-to-understand explanation refinements.
+- Updated `TODO.md` completion/history tracking for this patch wave.
+- Re-synchronized installed runtime copies for `explanation-quality.md`, `answer-presentation.md`, and `accurate-communication.md`.
+
+### Summary
+Completed a communication-style refinement wave so answers and progress reports can explain current scope, deferred scope, user-visible results, and internal terminology more clearly without creating a new rule chain.
+
+---
+
+<a id="version-59"></a>
+## Version 5.9: Refined easier-to-understand explanation governance across explanation-quality, answer-presentation, and accurate-communication
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `design/explanation-quality.design.md`, `explanation-quality.md`, and `changelog/explanation-quality.changelog.md` from v1.8 to v1.9.
+- Updated `design/answer-presentation.design.md`, `answer-presentation.md`, and `changelog/answer-presentation.changelog.md` from v1.2 to v1.3.
+- Updated `design/accurate-communication.design.md`, `accurate-communication.md`, and `changelog/accurate-communication.changelog.md` from v1.8 to v1.9.
+- Added explicit explanation patterns for `what this is`, `what this is not`, `what happens now`, `what stays later`, and `what the user will notice`.
+- Added human-language paraphrase/gloss guidance so internal or technical terminology can be translated into simpler user-facing language when that materially improves understanding.
+- Added a short-recap pattern for long layered explanations.
+- Updated `design/design.md` inventory references and purpose text for the three touched chains.
+- Updated `README.md` descriptions for the three touched chains to reflect the easier-to-understand explanation refinements.
+- Updated `TODO.md` completion/history tracking for this patch wave.
+- Re-synchronized installed runtime copies for `explanation-quality.md`, `answer-presentation.md`, and `accurate-communication.md`.
+
+### Summary
+Completed a communication-style refinement wave so answers and progress reports can explain current scope, deferred scope, user-visible results, and internal terminology more clearly without creating a new rule chain.
+
+---
+
+<a id="version-58"></a>
+## Version 5.8: Added path-aware naming refinement for governed patch and document workspaces
+
+**Date:** 2026-03-15
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/document-patch-control.design.md`, `document-patch-control.md`, and `changelog/document-patch-control.changelog.md` from v2.1 to v2.2.
+- Updated `design/project-documentation-standards.design.md`, `project-documentation-standards.md`, and `changelog/project-documentation-standards.changelog.md` from v2.4 to v2.5.
+- Added filename-authoritative versus path-authoritative naming guidance so governed patch workspaces can intentionally choose either `<context>.patch.md` or `patch.md` according to where the stable namespace actually lives.
+- Added repository-level directory-as-namespace guidance so governed workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context.
+- Added anti-redundancy guidance so repeated path-plus-filename context is avoided unless it has a real portability, coexistence, or search benefit.
+- Updated `design/design.md` inventory references and purpose text for the two touched chains.
+- Updated `README.md` descriptions for the two touched chains to reflect the naming-policy refinement.
+- Updated `TODO.md` completion/history tracking for this patch wave.
+- Re-synchronized installed runtime copies for `document-patch-control.md` and `project-documentation-standards.md`.
+
+### Summary
+Completed a naming-policy refinement wave so governed workspaces can intentionally choose either context-bearing filenames or role-based filenames according to whether the filename or the parent path is the real namespace authority.
+
+---
+
+<a id="version-57"></a>
+## Version 5.7: Applied micro-polish natural-response patch across presentation, explanation, and wording examples
+
+**Date:** 2026-03-15
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `design/answer-presentation.design.md`, `answer-presentation.md`, and `changelog/answer-presentation.changelog.md` from v1.1 to v1.2.
+- Updated `design/explanation-quality.design.md`, `explanation-quality.md`, and `changelog/explanation-quality.changelog.md` from v1.7 to v1.8.
+- Updated `design/accurate-communication.design.md`, `accurate-communication.md`, and `changelog/accurate-communication.changelog.md` from v1.7 to v1.8.
+- Added canonical compact snapshot examples so `answer-presentation` now shows reusable sectioned status-note and small fact-table house-style shapes.
+- Added richer layered walkthrough and patch-by-patch examples so `explanation-quality` better demonstrates the preferred short answer → simple explanation → technical snapshot → reasoning path pattern.
+- Added richer mixed exact/partial and scoped environment wording examples so `accurate-communication` is easier to apply during partial-evidence technical reporting without overclaiming.
+- Updated `design/design.md` inventory references and purpose text for the three touched chains.
+- Updated `README.md` descriptions for the three touched chains to reflect the example-focused micro-polish refinements.
+- Updated `TODO.md` completion/history tracking for this patch wave.
+- Re-synchronized installed runtime copies for `answer-presentation.md`, `explanation-quality.md`, and `accurate-communication.md`.
+
+### Summary
+Completed a small refinement wave that makes the natural-response style more recognizable in practice through stronger canonical examples while preserving the existing semantic owner split and trigger-based flexibility.
+
+---
+
+<a id="version-56"></a>
+## Version 5.6: Synchronized diagnostic-snapshot governance patch across answer-presentation, explanation-quality, and accurate-communication
+
+**Date:** 2026-03-14
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Updated `design/answer-presentation.design.md`, `answer-presentation.md`, and `changelog/answer-presentation.changelog.md` from v1.0 to v1.1.
+- Updated `design/explanation-quality.design.md`, `explanation-quality.md`, and `changelog/explanation-quality.changelog.md` from v1.6 to v1.7.
+- Updated `design/accurate-communication.design.md`, `accurate-communication.md`, and `changelog/accurate-communication.changelog.md` from v1.6 to v1.7.
+- Standardized compact diagnostic snapshot coverage across the three chains for status-heavy responses (troubleshooting, implementation progress, and verification checkpoints).
+- Updated `design/design.md` from v4.0 to v4.1 to synchronize active runtime inventory version references and purpose text for the three touched chains.
+- Updated `TODO.md` completed/history records to reflect closure of this synchronized patch wave.
+
+### Summary
+Completed a single governed synchronization wave so communication wording, explanation structure, and presentation-layer guidance now align on compact diagnostic snapshots that expose checked scope, current state, pending items, and immediate next action.
+
+---
+
+<a id="version-55"></a>
+## Version 5.5: Created first-class runtime-topology-control chain and synchronized master inventory
+
+**Date:** 2026-03-14
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Created `design/runtime-topology-control.design.md` v1.0.
+- Created runtime `runtime-topology-control.md` v1.0.
+- Created `changelog/runtime-topology-control.changelog.md` v1.0.
+- Updated `design/design.md` from v3.9 to v4.0:
+  - added `runtime-topology-control.md` to the active runtime inventory
+  - increased the active runtime rule count from 28 to 29
+  - placed the new chain in the User Control category for approval-sensitive runtime-topology discipline
+- Updated `README.md`:
+  - added `runtime-topology-control.md` to the active runtime inventory
+  - updated the canonical `RULE_FILES` install set to include `runtime-topology-control.md`
+  - updated visible active runtime counts from 28 to 29
+  - updated the Quality & Safety category count from 19 to 20
+- Updated `TODO.md` to record rollout completion.
+- Installed updated runtime file into `~/.claude/rules/runtime-topology-control.md`.
+
+### Summary
+Created a first-class `runtime-topology-control` rule chain so bounded runtime mutation posture now has explicit inspect-first, approval-gated anti-debug-by-expansion governance without duplicating adjacent rule authority.
+
+---
+
+<a id="version-54"></a>
+## Version 5.4: Upgraded phase-planning governance to one-way design+patch source synthesis
+
+**Date:** 2026-03-13
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/phase-implementation.design.md`, `phase-implementation.md`, and `changelog/phase-implementation.changelog.md` from v2.0 to v2.1.
+- Updated `phase-implementation-template.md` so the helper now supports the same one-way source-synthesis model as the runtime phase rule.
+- Extended the phase model from design-only extraction into one-way source synthesis so live phased execution may combine:
+  - design target-state inputs
+  - relevant governed patch/review inputs when patch-derived work exists
+- Preserved the role boundary that keeps `/patches` outside the live `/phase` workspace.
+- Updated `design/document-patch-control.design.md`, `document-patch-control.md`, and `changelog/document-patch-control.changelog.md` from v2.0 to v2.1 with an explicit one-way patch-to-phase synthesis clarification that does not create reverse-link requirements.
+- Updated `design/project-documentation-standards.design.md`, `project-documentation-standards.md`, and `changelog/project-documentation-standards.changelog.md` from v2.3 to v2.4 to reflect the repository-level one-way source-synthesis role model.
+- Repaired the stale runtime reference that still pointed to `phase-implementation.md` v1.3.
+- Updated `design/design.md` from v3.8 to v3.9 and refreshed the active repository model plus runtime inventory descriptions.
+- Updated `README.md` to describe the refined phase-planning model, source-input rollups, and one-way design+patch synthesis behavior.
+- Updated `TODO.md` to record the rollout completion.
+- Reinstalled touched runtime files into:
+  - `~/.claude/rules/phase-implementation.md`
+  - `~/.claude/rules/document-patch-control.md`
+  - `~/.claude/rules/project-documentation-standards.md`
+
+### Summary
+Refined the governed phase model so live phased execution can synthesize design and patch inputs one-way while keeping design, patch, and phase roles distinct and leaving `/patches` outside the live execution workspace.
+
+---
+
+<a id="version-53"></a>
+## Version 5.3: Created first-class evidence-grounded-burden-of-proof chain and rolled burden-of-proof semantics into primary runtime rules
+
+**Date:** 2026-03-12
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Created `design/evidence-grounded-burden-of-proof.design.md` v1.0.
+- Created runtime `evidence-grounded-burden-of-proof.md` v1.0.
+- Created `changelog/evidence-grounded-burden-of-proof.changelog.md` v1.0.
+- Updated `accurate-communication` from v1.5 to v1.6 and added explicit evidence-threshold wording guidance plus a direct rule against unsupported user-directed contradiction.
+- Updated `zero-hallucination`, `anti-sycophancy`, and `no-variable-guessing` from v1.2 to v1.3 and replaced their header-only runtime stubs with full runtime rule bodies.
+- Updated `design/design.md` from v3.7 to v3.8:
+  - added `evidence-grounded-burden-of-proof.md` to the active runtime inventory
+  - increased the active runtime rule count from 27 to 28
+  - updated the Accuracy & Truth category to include the new burden-of-proof owner
+  - refreshed touched design-version references for `accurate-communication`, `anti-sycophancy`, `no-variable-guessing`, and `zero-hallucination`
+- Updated `README.md`:
+  - added `evidence-grounded-burden-of-proof.md` to the active runtime inventory
+  - updated the canonical `RULE_FILES` install set to include `evidence-grounded-burden-of-proof.md`
+  - updated visible active runtime counts from 27 to 28
+  - updated the Quality & Safety category count from 18 to 19
+- Updated `TODO.md` to record rollout completion.
+- Installed updated runtime files into `~/.claude/rules/` for:
+  - `accurate-communication.md`
+  - `anti-sycophancy.md`
+  - `evidence-grounded-burden-of-proof.md`
+  - `no-variable-guessing.md`
+  - `zero-hallucination.md`
+
+### Summary
+Created one durable semantic owner for evidence-grounded contradiction and absence semantics, then rolled the new burden-of-proof model into the installed runtime behavior of the four primary adjacent chains.
+
+---
+
+<a id="version-52"></a>
+## Version 5.2: Strengthened document-patch-control so governed patches must show concrete change representation
+
+**Date:** 2026-03-12
+**Session:** 451fb64e-f2a5-43a5-bf98-47f01244f15c
+
+### Changes
+- Updated `design/document-patch-control.design.md` from v1.9 to v2.0.
+- Updated runtime `document-patch-control.md` from v1.9 to v2.0.
+- Added explicit patch change-representation requirements so governed `.patch.md` documents must identify target locations and show current-vs-proposed state in a comparison-friendly form when they concern code/config/command/schema or other structured text changes.
+- Added a non-code patch allowance so conceptual/governance patches may omit code snippets only if they explicitly declare themselves non-code and still provide structured current-state vs target-state comparison.
+- Updated `changelog/document-patch-control.changelog.md` to v2.0.
+- Updated `design/design.md`, `README.md`, `project-documentation-standards.md`, and `TODO.md` to reflect the strengthened patch contract.
+
+### Summary
+Closed the `.patch.md` rule gap by requiring governed patches to show concrete change surfaces for review instead of allowing vague prose-only patch plans.
+
+---
+
+<a id="version-51"></a>
+## Version 5.1: Upgraded operational-failure-handling to explicit case-profile semantics and reinstalled runtime rule
+
+**Date:** 2026-03-12
+**Session:** 451fb64e-f2a5-43a5-bf98-47f01244f15c
+
+### Changes
+- Updated `design/operational-failure-handling.design.md` and `operational-failure-handling.md` from v1.0 to v1.1.
+- Added seeded case-specific profiles for Web Search, WebFetch, local-path, permission, and tool-approval failures.
+- Clarified immediate-retry rules, profile precedence, and future case-extension contract.
+- Updated `design/design.md` to v3.7 so the active inventory points to `operational-failure-handling.design.md` v1.1.
+- Updated `TODO.md` to record the case-profile upgrade and runtime reinstall.
+- Reinstalled updated runtime file to `~/.claude/rules/operational-failure-handling.md`.
+
+### Summary
+Refined operational-failure-handling from a generic retry policy into a profile-driven rule with explicit case-by-case handling and future case extensibility.
+
+---
+
+<a id="version-50"></a>
+## Version 5.0: Created first-class operational-failure-handling rule chain for generalized technical failure handling
+
+**Date:** 2026-03-12
+**Session:** 451fb64e-f2a5-43a5-bf98-47f01244f15c
+
+### Changes
+- Created `design/operational-failure-handling.design.md` v1.0.
+- Created runtime `operational-failure-handling.md` v1.0.
+- Created `changelog/operational-failure-handling.changelog.md` v1.0.
+- Updated `design/design.md` from v3.5 to v3.6:
+  - added `operational-failure-handling.md` to the active runtime inventory
+  - increased the active runtime rule count from 26 to 27
+  - placed the new chain in the User Control category for bounded operational failure handling
+  - realigned the master active-state repository model and phase-planning contract wording so `phase/` remains the live phased execution workspace and patch docs remain separate patch/review artifacts
+  - refreshed stale design-version references in the active runtime inventory where the master index had drifted from current governed design versions
+- Updated `README.md`:
+  - added `operational-failure-handling.md` to the active runtime inventory
+  - updated the canonical `RULE_FILES` install set to include `operational-failure-handling.md`
+  - updated active runtime count from 26 to 27
+  - updated the visible category count for Quality & Safety from 17 to 18
+- Updated `TODO.md` to record creation and rollout of the new operational-failure-handling chain.
+
+### Summary
+Created a first-class `operational-failure-handling` rule chain so ordinary technical failures now have explicit governed policy for retry classification, cooldown honesty, and stop/escalation behavior without redefining refusal or emergency semantics.
 
 ---
 
