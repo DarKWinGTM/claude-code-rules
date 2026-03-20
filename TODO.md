@@ -1,6 +1,6 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-03-15
+> **Last Updated:** 2026-03-17
 
 ---
 
@@ -41,6 +41,7 @@
 - [x] Refine path-aware naming rules across `document-patch-control` and `project-documentation-standards`, then synchronize master governance docs and installed runtime copies.
 - [x] Refine easier-to-understand explanation/reporting guidance across `explanation-quality`, `answer-presentation`, and `accurate-communication`, then synchronize governance docs and installed runtime rules.
 - [x] Refine stage-progression and whole-set-first guidance across `explanation-quality`, `answer-presentation`, and `accurate-communication`, then synchronize governance docs and installed runtime rules.
+- [x] Refine latest-user-directive override behavior so fresh user instructions supersede previously offered assistant options, then synchronize governance docs and installed runtime rules.
 
 ---
 
@@ -59,6 +60,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-03-17 | Refined latest-user-directive override behavior in `authority-and-scope` (v1.3): added explicit advisory-only status for assistant-generated options, made fresh user directives override prior option framing unless the user explicitly selects one, aligned `design/design.md` and `README.md`, refreshed `changelog/changelog.md` to v6.2, updated TODO tracking, and synchronized the installed runtime copy. |
 | 2026-03-17 | Refined stage-progression and whole-set-first guidance across `explanation-quality` (v2.1), `answer-presentation` (v1.5), and `accurate-communication` (v2.1): added next-stage preference and full-set-first framing rules, aligned `design/design.md` inventory references and `README.md` rule descriptions, refreshed `changelog/changelog.md` to v6.1, and re-synchronized the installed runtime copies for the three touched rules. |
 | 2026-03-15 | Refined easier-to-understand explanation/reporting guidance across `explanation-quality` (v2.0), `answer-presentation` (v1.4), and `accurate-communication` (v2.0): added stronger what-it-is/what-it-is-not, now-versus-later, user-visible outcome, human-language gloss, and short-recap guidance; aligned `design/design.md` inventory references and `README.md` rule descriptions; refreshed `changelog/changelog.md` to v6.0; and re-synchronized the installed runtime copies for the three touched rules. |
 | 2026-03-15 | Added path-aware naming refinement across `document-patch-control` (v2.2) and `project-documentation-standards` (v2.5): defined filename-authoritative versus path-authoritative naming, added directory-as-namespace guidance for governed workspaces, aligned `design/design.md` inventory references and `README.md` rule descriptions, refreshed `changelog/changelog.md` to v5.8, and re-synchronized the installed runtime copies for the two touched rules. |

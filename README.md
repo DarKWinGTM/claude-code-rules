@@ -182,7 +182,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger direct human-language glosses, and clearer wording when the answer should move to the next stage or show the full set first |
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected |
+| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, and fresh user directives override previously offered assistant options unless the user explicitly selects one |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
@@ -633,11 +633,11 @@ Architect  ──┘
 </td>
 <td align="center" width="33%">
 <b>Answer Presentation</b><br>
-<sub>Active presentation-layer rule for readable, orderly response layout</sub>
+<sub>Active presentation-layer rule for compact snapshots, grouped scope boundaries, and full-set-first / next-stage layouts</sub>
 </td>
 <td align="center" width="33%">
 <b>Explanation Quality</b><br>
-<sub>Active explanation-layer rule for clearer reasoning and actionable endings</sub>
+<sub>Active explanation-layer rule for what-it-is/what-it-is-not, now-vs-later, user-visible outcomes, and next-stage progression</sub>
 </td>
 </tr>
 </table>
@@ -808,7 +808,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 
 <p>
   <b>Version</b>: 2.2.0 |
-  <b>Last Updated</b>: 2026-03-15 |
+  <b>Last Updated</b>: 2026-03-17 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

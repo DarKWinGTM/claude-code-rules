@@ -1,7 +1,7 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-03-17 | **[Added fresh-user-directive override over previously offered assistant options](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | Summary: Refined authority-and-scope so assistant-generated options remain advisory only and a fresh user directive overrides prior option framing unless the user explicitly selected one | |
 | 1.2 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Added canonical runtime header metadata and aligned the authority-and-scope chain to the cleanup-wave version state | |
 | 1.1 | 2026-02-22 | **[Added deterministic precedence contract and tie-break semantics](#version-11-added-deterministic-precedence-contract-and-tie-break-semantics)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -18,6 +20,24 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added fresh-user-directive override over previously offered assistant options
+
+**Date:** 2026-03-17
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `authority-and-scope.md` from v1.2 to v1.3.
+- Updated `design/authority-and-scope.design.md` from v1.2 to v1.3.
+- Added an explicit rule that assistant-generated options are advisory only unless the user explicitly selects one.
+- Added an explicit precedence rule that a fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
+- Extended the conflict-resolution contract and quality metrics to cover fresh-directive override behavior.
+
+### Summary
+Refined authority-and-scope so a new user instruction cannot get trapped behind previously offered assistant options unless the user explicitly chooses one of them.
 
 ---
 

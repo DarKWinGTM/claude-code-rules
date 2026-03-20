@@ -57,7 +57,7 @@ This repository uses one deterministic governance model:
 | 2 | answer-presentation.md | answer-presentation.design.md v1.5 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including compact titled snapshots, small fact tables, canonical house-style snapshot examples, stronger grouped scope-boundary layouts, and full-set-first / next-stage presentation guidance |
 | 3 | anti-mockup.md | anti-mockup.design.md v1.1 | Real systems over mocks |
 | 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.3 | Truth over pleasing with evidence-grounded, claim-focused disagreement |
-| 5 | authority-and-scope.md | authority-and-scope.design.md v1.2 | User authority and deterministic precedence |
+| 5 | authority-and-scope.md | authority-and-scope.design.md v1.3 | User authority, deterministic precedence, and explicit fresh-directive override over previously offered assistant options |
 | 6 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
 | 7 | document-consistency.md | document-consistency.design.md v1.3 | Cross-reference validation |
 | 8 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |

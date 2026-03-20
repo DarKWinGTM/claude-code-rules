@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 6.1
+> **Current Version:** 6.2
 > **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 
 ---
@@ -10,6 +10,12 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 6.2 | 2026-03-17 | **[Added fresh-user-directive override governance to authority-and-scope](#version-62)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
+| | | - Updated `authority-and-scope` design/runtime/changelog to v1.3 with explicit latest-user-directive override over previously offered assistant options | |
+| | | - Updated `design/design.md` runtime inventory reference to `authority-and-scope.design.md v1.3` | |
+| | | - Updated `README.md` rule description for `authority-and-scope.md` to reflect the new advisory-options override behavior | |
+| | | - Updated `TODO.md` completion/history tracking for the latest-intent override patch wave and synced the installed runtime copy | |
+| | | Summary: Completed an authority refinement so assistant-generated options remain advisory and a fresh user directive overrides prior option framing unless the user explicitly selects one | |
 | 6.1 | 2026-03-17 | **[Added stage-progression and whole-set explanation governance across explanation-quality, answer-presentation, and accurate-communication](#version-61)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 | | | - Updated `explanation-quality` design/runtime/changelog to v2.1 with stage/state progression preference and whole-set-first framing guidance | |
 | | | - Updated `answer-presentation` design/runtime/changelog to v1.5 with full-set-first and next-stage presentation patterns | |
@@ -212,6 +218,26 @@
 | | | - Added missing `document-patch-control.changelog.md` v1.1 entry aligned with runtime/design updates | |
 | | | - Updated TODO hardening tracker state to mark WS-1 and WS-4 complete in the active execution slice | |
 | | | Summary: Closed outstanding WS-1+WS-4 runtime-first synchronization tasks and aligned rule/design/changelog/TODO artifacts | |
+
+---
+
+<a id="version-62"></a>
+## Version 6.2: Added fresh-user-directive override governance to authority-and-scope
+
+**Date:** 2026-03-17
+**Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+
+### Changes
+- Updated `design/authority-and-scope.design.md`, `authority-and-scope.md`, and `changelog/authority-and-scope.changelog.md` from v1.2 to v1.3.
+- Added an explicit rule that assistant-generated options are advisory only unless the user explicitly selects one.
+- Added an explicit precedence rule that a fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
+- Updated `design/design.md` inventory reference and purpose text for `authority-and-scope`.
+- Updated `README.md` rule description for `authority-and-scope.md`.
+- Updated `TODO.md` completion/history tracking for this patch wave.
+- Synced the installed runtime copy for `authority-and-scope.md`.
+
+### Summary
+Completed an authority refinement so assistant-generated options remain advisory and a fresh user directive overrides prior option framing unless the user explicitly selects one.
 
 ---
 
