@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 6.2
+> **Current Version:** 6.4
 > **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 
 ---
@@ -10,6 +10,18 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | - Updated `phase-implementation` design/runtime/changelog to v2.2 with zero-padded contiguous child-phase numbering (`001/002/003`) instead of sparse `010/020/030` | |
+| | | - Updated `phase-implementation-template.md` examples and helper guidance to the new numbering scheme | |
+| | | - Updated `design/design.md` and `README.md` wording to reflect the new default numbering policy | |
+| | | - Updated `TODO.md` completion/history tracking for the phase-numbering patch wave and synced the installed runtime copy | |
+| | | Summary: Refined the phase-planning model so default phase numbering is now human-readable and naturally sequential (`001/002/003`) rather than sparse by default | |
+| 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+| | | - Created `design/tactical-strategic-programming.design.md`, `tactical-strategic-programming.md`, and `changelog/tactical-strategic-programming.changelog.md` as a new first-class doctrine chain | |
+| | | - Created `phase/SUMMARY.md` and `phase/phase-001-*` to `phase/phase-003-*` execution artifacts for the RULES development rollout of the new chain | |
+| | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
+| | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
+| | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
 | 6.2 | 2026-03-17 | **[Added fresh-user-directive override governance to authority-and-scope](#version-62)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | - Updated `authority-and-scope` design/runtime/changelog to v1.3 with explicit latest-user-directive override over previously offered assistant options | |
 | | | - Updated `design/design.md` runtime inventory reference to `authority-and-scope.design.md v1.3` | |
@@ -218,6 +230,44 @@
 | | | - Added missing `document-patch-control.changelog.md` v1.1 entry aligned with runtime/design updates | |
 | | | - Updated TODO hardening tracker state to mark WS-1 and WS-4 complete in the active execution slice | |
 | | | Summary: Closed outstanding WS-1+WS-4 runtime-first synchronization tasks and aligned rule/design/changelog/TODO artifacts | |
+
+---
+
+<a id="version-64"></a>
+## Version 6.4: Changed default phase numbering to 001/002/003 across phase-implementation governance
+
+**Date:** 2026-03-17
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/phase-implementation.design.md`, `phase-implementation.md`, and `changelog/phase-implementation.changelog.md` from v2.1 to v2.2.
+- Updated `phase-implementation-template.md` so helper examples and recommended paths use `phase-001-*`, `phase-002-*`, and `phase-003-*`.
+- Replaced sparse default numbering (`010/020/030`) with zero-padded contiguous numbering (`001/002/003`).
+- Updated `design/design.md` and `README.md` to reflect the new default numbering policy.
+- Updated `TODO.md` completion/history tracking for this patch wave.
+- Synced the installed runtime copy for `phase-implementation.md`.
+
+### Summary
+Refined the phase-planning model so default phase numbering is now human-readable and naturally sequential (`001/002/003`) rather than sparse by default.
+
+---
+
+<a id="version-63"></a>
+## Version 6.3: Created first-class tactical-strategic-programming rule chain and synchronized master governance
+
+**Date:** 2026-03-17
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Created `design/tactical-strategic-programming.design.md`, `tactical-strategic-programming.md`, and `changelog/tactical-strategic-programming.changelog.md` as a new first-class doctrine rule chain.
+- Created `phase/SUMMARY.md`, `phase/phase-001-create-tactical-strategic-rule.md`, `phase/phase-002-integrate-related-rules.md`, and `phase/phase-003-install-and-verify.md` as the governed phased execution record for developing the new RULES chain.
+- Updated `design/design.md` from 29 to 30 active runtime rules and added the new doctrine to the Quality & Governance category.
+- Updated `README.md` inventory, category count, and total active-rule count to include `tactical-strategic-programming.md`.
+- Updated `TODO.md` to record the rollout completion and phase-backed execution of the new doctrine chain.
+- Installed the new runtime rule into `~/.claude/rules/tactical-strategic-programming.md`.
+
+### Summary
+Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift.
 
 ---
 

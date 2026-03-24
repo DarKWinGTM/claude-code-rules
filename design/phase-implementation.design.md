@@ -3,20 +3,21 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.0
-> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32 (2026-03-11)
+> **Current Version:** 2.2
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-17)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain for phased implementation planning so phased work uses a dedicated `/phase` workspace with a mandatory `SUMMARY.md` file and separate per-phase files rather than storing live phase plans under `/patches`.
+Define one first-class rule chain for phased implementation planning so phased work uses a dedicated `/phase` workspace with a mandatory `SUMMARY.md` file and separate per-phase files, while treating phase as the live execution synthesis layer that may pull from design target-state inputs and relevant patch/review inputs without storing live phase plans under `/patches`.
 
 The target state separates these concerns clearly:
-- `phase-implementation.md` defines phase-planning semantics
+- `phase-implementation.md` defines phase-planning semantics and one-way source-input synthesis
 - `phase/SUMMARY.md` is the governed summary/index for the active phased execution plan
 - `phase/phase-010-<phase-name>.md` is the default child phase-file pattern
-- `patches/*.patch.md` remains outside the live phase-plan namespace
+- `design/*.design.md` remains target-state authority
+- `patches/*.patch.md` remains governed patch/review/change-surface authority outside the live phase-plan namespace
 - `phase-implementation-template.md` remains a non-governed root helper for drafting and readability
 
 ---
@@ -32,8 +33,10 @@ Observed failure modes:
 - phase-local execution detail could still be mixed into the wrong namespace
 - operators had no single required `SUMMARY.md` control surface for the active phase workspace
 - repository role boundaries became harder to explain because phase planning looked like a subtype of patch planning
+- the model was strong for design-driven extraction, but it did not clearly define how patch-derived work should be pulled into live phased execution
+- phase planning lacked an explicit one-way synthesis rule, so design/patch inputs and live execution orchestration could still be read as mutually coupled
 
-The repository needs a rule that makes `/phase` first-class, requires `SUMMARY.md`, and keeps phase planning out of `/patches`.
+The repository needs a rule that makes `/phase` first-class, requires `SUMMARY.md`, and lets live phased execution synthesize relevant design and patch inputs without collapsing those source layers into one another.
 
 ---
 
@@ -71,13 +74,27 @@ Required structure:
 ```text
 phase/
   SUMMARY.md
-  phase-010-<phase-name>.md
-  phase-020-<phase-name>.md
-  phase-030-<phase-name>.md
+  phase-001-<phase-name>.md
+  phase-002-<phase-name>.md
+  phase-003-<phase-name>.md
 ```
 
 `SUMMARY.md` is mandatory.
 Live phased execution files must not be stored under `/patches`.
+
+### 3.4 Source-input synthesis boundary
+
+`/phase` is the live execution synthesis layer, not a new source-of-truth layer.
+
+It may consume:
+- `design/*.design.md` as target-state inputs
+- `patches/*.patch.md` as optional governed change/review inputs when patch-derived work matters
+
+This direction is one-way:
+- phase artifacts may cite and synthesize design and patch inputs
+- design and patch artifacts are not required to point back to phase
+- using patch input does not move live execution planning into `/patches`
+- using design input does not turn phase into target-state authority
 
 ---
 
@@ -92,6 +109,7 @@ It should keep:
 - analysis of risk, constraints, and dependencies
 - a phase map or phase index
 - references to child phase files
+- summary-level source inputs from design and patch artifacts when relevant
 - cross-phase handoffs and dependency rules
 - overall TODO/changelog coordination when the concern is global
 - end-to-end verification requirements
@@ -106,6 +124,7 @@ A child phase file should keep:
 - phase identity and status
 - summary-file reference
 - design references specific to that phase
+- optional patch references specific to that phase when patch-derived work exists
 - phase objective and rationale
 - prerequisites and entry conditions
 - action points and execution checklist
@@ -122,12 +141,12 @@ The default phased layout is:
 ```text
 phase/
   SUMMARY.md
-  phase-010-<phase-name>.md
-  phase-020-<phase-name>.md
-  phase-030-<phase-name>.md
+  phase-001-<phase-name>.md
+  phase-002-<phase-name>.md
+  phase-003-<phase-name>.md
 ```
 
-Sparse numbering (`010`, `020`, `030`) is preferred so new phases can be inserted later without widespread rename churn.
+Zero-padded contiguous numbering (`001`, `002`, `003`) is preferred so phase order stays human-readable and naturally sequential.
 
 ### 4.4 `/patches` boundary
 
@@ -148,6 +167,7 @@ Recommended summary signals:
 - child file path
 - objective
 - design reference
+- patch reference when patch-derived work exists
 - dependencies or prerequisites
 - outputs or handoff artifacts
 - TODO companion signals when active execution tracking matters
@@ -155,13 +175,14 @@ Recommended summary signals:
 
 A compact phase map or table is recommended when it improves scanability.
 
-### 5.1.1 Summary design-extraction table rule
+### 5.1.1 Summary source-input extraction table rule
 
-`phase/SUMMARY.md` should include a design extraction summary table for the whole phase set.
+`phase/SUMMARY.md` should include a source-input extraction summary table for the whole phase set.
 
 The table should let a reviewer quickly see:
 - which design source or section feeds which phase
-- what execution work is derived from that source
+- which patch source, if any, also feeds that phase
+- what execution work is derived from those source inputs
 - what target outcome each phase is expected to produce
 - which phase file owns that execution detail
 
@@ -169,6 +190,7 @@ Recommended columns:
 - Phase
 - Phase File
 - Design Source
+- Patch Source
 - Derived Execution Work
 - Target Outcome
 
@@ -177,7 +199,7 @@ Recommended columns:
 `phase/SUMMARY.md` should include a small overview flow diagram for the whole phase set.
 
 The summary diagram should show, as applicable:
-- the relevant design source or current-state baseline
+- the relevant design source, patch source, or current-state baseline
 - the major phase sequence or branching path
 - what major capability, workflow, or governed state each phase changes
 - the final target state produced by the combined phased execution
@@ -210,6 +232,7 @@ Each child phase file should define, or clearly map to, this semantic field set:
 - Phase ID / phase name
 - Status
 - Design references
+- Patch references (optional when patch-derived work exists)
 - Objective
 - Why this phase exists
 - Entry conditions / prerequisites
@@ -227,14 +250,22 @@ Equivalent headings are acceptable if the meaning stays explicit.
 
 Fields may be marked not applicable when truly unnecessary, but they should not disappear in a way that hides execution meaning.
 
-### 5.3 Design traceability rule
+### 5.3 Source traceability rule
 
-Every child phase file should make clear which design details it is implementing, validating, or synchronizing.
+Every child phase file should make clear which source details it is implementing, validating, or synchronizing.
+
+Required source-input behavior:
+- design references remain the primary target-state traceability input when relevant
+- patch references may be added when patch-derived work materially affects the phase
+- phase may synthesize both source types in the same child file when that improves execution clarity
+- source references remain one-way inputs into phase rather than back-link obligations on design or patch documents
 
 Good traceability signals:
 - exact design file reference
-- specific section heading or anchor
-- short summary of the design contract being executed in that phase
+- specific design section heading or anchor
+- exact patch file reference when patch-derived work exists
+- patch section heading, anchor, or change block locator when relevant
+- short summary of the source contract being executed in that phase
 
 Vague references such as "follow the design" are insufficient when the design contains multiple requirements.
 
@@ -250,12 +281,25 @@ Required extraction signals:
 
 A reviewer should be able to see the design-to-execution mapping without inferring it from scattered notes.
 
-### 5.5 Review flow-diagram rule
+### 5.5 Patch-to-phase extraction rule
+
+When patch-derived work exists, each child phase file should also show what was **pulled from the patch** and transformed into phase execution work.
+
+Required extraction signals:
+- the source patch file and the relevant section, anchor, or change-surface locator
+- the patch-defined change, review constraint, migration step, or implementation surface being operationalized in the phase
+- what this phase is applying, validating, sequencing, or rolling out from that patch input
+- the target execution artifact or operational outcome expected from that patch input
+
+This patch-to-phase mapping exists alongside the design-to-phase mapping.
+It does not replace design traceability, and it does not turn the patch into the source of truth for the overall target state.
+
+### 5.6 Review flow-diagram rule
 
 Every child phase file should include a small review-oriented flow diagram.
 
 The diagram should show, as applicable:
-- the source design element or current-state component
+- the source design element, source patch element, or current-state component
 - the phase action applied in this phase
 - the resulting target component, workflow, or operational state
 - the dependency or handoff into the next state when relevant
@@ -266,13 +310,14 @@ It must follow `flow-diagram-no-frame.md`:
 - no frames
 - arrows and indentation only
 
-### 5.6 Reviewer-checklist block rule
+### 5.7 Reviewer-checklist block rule
 
 Every child phase file should include a small reviewer-oriented checklist block.
 
 The reviewer checklist should make it easy to confirm:
-- the cited design source is the correct source for this phase
-- the derived execution work is justified by that design source
+- the cited design source is correct for this phase when design input is used
+- the cited patch source is correct for this phase when patch input is used
+- the derived execution work is justified by the cited source inputs
 - the source → phase action → target outcome flow is clear
 - the phase boundary is correct and the work belongs in this phase
 - dependencies and handoffs are explicit enough for safe progression
@@ -280,7 +325,7 @@ The reviewer checklist should make it easy to confirm:
 
 This block exists for review readiness and should remain distinct from the execution checklist.
 
-### 5.7 Standard review-outcome vocabulary rule
+### 5.8 Standard review-outcome vocabulary rule
 
 Every child phase file should use one standardized review-outcome vocabulary.
 
@@ -341,6 +386,7 @@ When multiple phases exist, the plan should make cross-phase relationships expli
 Required coordination guidance:
 - identify what later phases depend on
 - identify what outputs must exist before handoff
+- identify what source inputs are design-derived, patch-derived, or synthesized from both when that distinction affects sequencing
 - state what verification gate must pass before moving forward
 - identify work that can proceed in parallel versus work that must wait
 - preserve rollback or containment boundaries around phase transitions
@@ -372,7 +418,7 @@ The `phase-implementation` checklist validates **phased execution-plan quality**
 Validate here:
 - phase necessity
 - summary-versus-child structure quality
-- design traceability
+- source-input traceability across design and patch inputs when applicable
 - TODO/changelog companion coordination
 - execution control quality
 
@@ -398,7 +444,8 @@ A strong phased plan should pass the following checks when phases are used.
 ### 10.2 Summary/Child Structure Quality
 - [ ] The repository uses `/phase/` for live phased execution
 - [ ] `phase/SUMMARY.md` exists and acts as the governing summary/index
-- [ ] `SUMMARY.md` includes a design extraction summary table for the whole phase set
+- [ ] `SUMMARY.md` includes a source-input extraction summary table for the whole phase set
+- [ ] `SUMMARY.md` can show design and patch inputs separately when both matter
 - [ ] `SUMMARY.md` includes an overview flow diagram for the full phase set
 - [ ] `SUMMARY.md` includes a review summary table for the whole phase set
 - [ ] Each live phase has its own child phase file
@@ -406,12 +453,14 @@ A strong phased plan should pass the following checks when phases are used.
 - [ ] Child files own phase-local execution detail
 - [ ] Live phase planning is not stored under `/patches`
 
-### 10.3 Design Traceability
-- [ ] Each child phase file cites the relevant design file or section
-- [ ] Design references are specific enough to show what requirement is being executed
+### 10.3 Source Traceability
+- [ ] Each child phase file cites the relevant design file or section when design input exists
+- [ ] Each child phase file cites the relevant patch file or section when patch-derived work exists
+- [ ] Source references are specific enough to show what requirement or change surface is being executed
 - [ ] No child phase file relies on a vague "follow the design" statement alone
-- [ ] Each child phase explicitly maps design source → derived execution work
-- [ ] Each child phase makes clear what part is being enhanced, developed, migrated, validated, or replaced
+- [ ] Each child phase explicitly maps design source → derived execution work when design input exists
+- [ ] Each child phase explicitly maps patch source → derived execution work when patch-derived work exists
+- [ ] Each child phase makes clear what part is being enhanced, developed, migrated, validated, applied, or replaced
 - [ ] Each child phase includes a review-oriented flow diagram showing source → phase action → target outcome
 - [ ] Each child phase includes a reviewer checklist block for source correctness, flow clarity, boundary correctness, dependency clarity, and evidence readiness
 - [ ] Each child phase uses standardized sign-off status values and aligned severity/disposition fields when review outcomes are recorded
@@ -438,7 +487,8 @@ A strong phased plan should pass the following checks when phases are used.
 | no `SUMMARY.md` file | removes the required high-signal control surface | always create `phase/SUMMARY.md` when phased planning is used |
 | storing live phase plans under `/patches` | keeps phase planning entangled with patch governance | keep live phased execution under `/phase/` |
 | putting all phase-local detail only in `SUMMARY.md` | makes the summary heavy and hard to operate | keep global control in `SUMMARY.md` and per-phase detail in child files |
-| child phase files without design references | breaks traceability back to intended behavior | cite the design file and the exact relevant section |
+| child phase files without design references when design input exists | breaks traceability back to intended behavior | cite the design file and the exact relevant section |
+| child phase files using patch-derived work without patch references | hides the governed change surface being operationalized | cite the relevant patch file and precise section or change locator |
 | child phase blocks without status or action points | makes execution tracking weak and hard to follow | show clear status plus an action checklist |
 | verification only at the very end | hides phase-level failure boundaries | define verification gates inside each child phase file and keep end-to-end checks in `SUMMARY.md` |
 | phases added only for symmetry | adds ceremony without decision value | keep the plan linear unless real staged execution exists |
@@ -480,7 +530,9 @@ This stop rule exists to prevent endless governance expansion after the phase-pl
 | `/phase` workspace compliance | 100% |
 | `SUMMARY.md` presence when phased planning is used | 100% |
 | Stable per-phase field coverage | High |
-| Design traceability coverage | 100% when phases are used |
+| Design traceability coverage | 100% when design input is used |
+| Patch traceability coverage | 100% when patch-derived work is used |
+| One-way source-input boundary clarity | 100% |
 | TODO/changelog companion visibility | High |
 | Cross-phase handoff clarity | High |
 | Phase-level verification visibility | 100% when phases are used |
@@ -496,8 +548,8 @@ This stop rule exists to prevent endless governance expansion after the phase-pl
 | Document | Relationship |
 |----------|--------------|
 | [../phase-implementation.md](../phase-implementation.md) | Runtime implementation of this design |
-| [document-patch-control.design.md](document-patch-control.design.md) | Patch governance boundary outside `/phase` |
-| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model for `/phase`, helper, TODO, changelog, and patch separation |
+| [document-patch-control.design.md](document-patch-control.design.md) | Patch governance boundary outside `/phase` and one-way synthesis clarification for patch inputs |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model for `/phase`, helper, TODO, changelog, and one-way design/patch source synthesis |
 | [todo-standards.design.md](todo-standards.design.md) | Execution-tracking boundary |
 | [../phase-implementation-template.md](../phase-implementation-template.md) | Non-governed root helper for authoring |
 

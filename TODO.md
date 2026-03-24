@@ -42,6 +42,8 @@
 - [x] Refine easier-to-understand explanation/reporting guidance across `explanation-quality`, `answer-presentation`, and `accurate-communication`, then synchronize governance docs and installed runtime rules.
 - [x] Refine stage-progression and whole-set-first guidance across `explanation-quality`, `answer-presentation`, and `accurate-communication`, then synchronize governance docs and installed runtime rules.
 - [x] Refine latest-user-directive override behavior so fresh user instructions supersede previously offered assistant options, then synchronize governance docs and installed runtime rules.
+- [x] Create first-class `tactical-strategic-programming` rule chain with governed design/runtime/changelog artifacts, phase-backed RULES execution records, master-doc synchronization, and installed runtime copy.
+- [x] Change default phase numbering in `phase-implementation` and its helper/template from `010/020/030` to `001/002/003`, then synchronize governance docs and installed runtime rules.
 
 ---
 
@@ -60,6 +62,8 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-03-17 | Changed default phase numbering across `phase-implementation` (v2.2): replaced sparse `010/020/030` numbering with zero-padded contiguous `001/002/003` numbering in the design/runtime/changelog chain and `phase-implementation-template.md`, aligned `design/design.md` and `README.md`, refreshed `changelog/changelog.md` to v6.4, updated TODO rollout tracking, and synchronized the installed runtime copy for `phase-implementation.md`. |
+| 2026-03-17 | Created first-class `tactical-strategic-programming` rule chain: added `design/tactical-strategic-programming.design.md`, `tactical-strategic-programming.md`, and `changelog/tactical-strategic-programming.changelog.md`; created governed phase execution records in `phase/SUMMARY.md` plus `phase/phase-001-*` to `phase/phase-003-*`; updated `design/design.md` and `README.md` to 30 active runtime rules; refreshed `changelog/changelog.md` to v6.3; updated TODO rollout tracking; and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md`. |
 | 2026-03-17 | Refined latest-user-directive override behavior in `authority-and-scope` (v1.3): added explicit advisory-only status for assistant-generated options, made fresh user directives override prior option framing unless the user explicitly selects one, aligned `design/design.md` and `README.md`, refreshed `changelog/changelog.md` to v6.2, updated TODO tracking, and synchronized the installed runtime copy. |
 | 2026-03-17 | Refined stage-progression and whole-set-first guidance across `explanation-quality` (v2.1), `answer-presentation` (v1.5), and `accurate-communication` (v2.1): added next-stage preference and full-set-first framing rules, aligned `design/design.md` inventory references and `README.md` rule descriptions, refreshed `changelog/changelog.md` to v6.1, and re-synchronized the installed runtime copies for the three touched rules. |
 | 2026-03-15 | Refined easier-to-understand explanation/reporting guidance across `explanation-quality` (v2.0), `answer-presentation` (v1.4), and `accurate-communication` (v2.0): added stronger what-it-is/what-it-is-not, now-versus-later, user-visible outcome, human-language gloss, and short-recap guidance; aligned `design/design.md` inventory references and `README.md` rule descriptions; refreshed `changelog/changelog.md` to v6.0; and re-synchronized the installed runtime copies for the three touched rules. |

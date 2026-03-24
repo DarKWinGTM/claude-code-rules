@@ -1,8 +1,8 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.0
-> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+> **Current Version:** 2.2
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
 
 ---
 
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+| 2.1 | 2026-03-13 | **[Upgraded phase-implementation into a one-way design+patch source-synthesis layer](#version-21)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Extended phase planning so `/phase` remains the live execution layer while `SUMMARY.md` and child phases may synthesize design target-state inputs plus optional patch/review inputs without creating reverse-link requirements or collapsing the patch boundary | |
 | 2.0 | 2026-03-11 | **[Added explicit Definition of Done and stop rule for the phase-planning model](#version-20)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
 | | | Summary: Finalized the phase-planning model by adding a completion boundary and explicit stop rule so the model no longer expands by default after reaching the intended operational state | |
 | 1.9 | 2026-03-11 | **[Required a review summary table in `SUMMARY.md`](#version-19)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
@@ -32,6 +36,50 @@
 | | | Summary: Added a dedicated phase-quality checklist for execution planning, clarified that phase checklists validate planning quality rather than patch-governance quality, and made the boundary versus `document-patch-control` explicit | |
 | 1.0 | 2026-03-10 | **[Created first-class phase-implementation rule chain and moved phase semantics out of helper-only status](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created the new design/runtime/changelog chain for phase semantics, kept patch docs as the live governed execution artifacts, and established the root template as a non-governed helper only | |
+
+---
+
+<a id="version-22"></a>
+## Version 2.2: Changed default phase numbering from 010/020/030 to 001/002/003
+
+**Date:** 2026-03-17
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/phase-implementation.design.md` from v2.1 to v2.2.
+- Updated runtime `phase-implementation.md` from v2.1 to v2.2.
+- Updated `phase-implementation-template.md` so helper examples and recommended paths use `phase-001-*`, `phase-002-*`, and `phase-003-*`.
+- Replaced sparse default numbering (`010`, `020`, `030`) with zero-padded contiguous numbering (`001`, `002`, `003`).
+- Clarified that the preferred default now emphasizes human-readable sequential ordering.
+
+### Summary
+Refined `phase-implementation` so default phase numbering now uses zero-padded contiguous numbering for clearer and more natural sequential ordering.
+
+---
+
+<a id="version-21"></a>
+## Version 2.1: Upgraded phase-implementation into a one-way design+patch source-synthesis layer
+
+**Date:** 2026-03-13
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/phase-implementation.design.md` from v2.0 to v2.1.
+- Updated runtime `phase-implementation.md` from v2.0 to v2.1.
+- Updated `phase-implementation-template.md` so the helper supports the same source-synthesis model as the runtime rule.
+- Expanded summary semantics from design-only extraction into one-way source-input extraction.
+- Allowed `phase/SUMMARY.md` to show both:
+  - design source inputs
+  - patch source inputs when patch-derived work exists
+- Added optional patch references to the stable child phase field model.
+- Added explicit patch-to-phase extraction semantics alongside the existing design-to-phase extraction model.
+- Clarified that phase is the live execution synthesis layer, not a new source-of-truth layer.
+- Clarified that design and patch artifacts do not gain a reverse-link requirement back to phase.
+- Preserved `/patches` as a separate governed patch/review namespace outside the live `/phase` workspace.
+- Narrowly updated adjacent boundary chains so the one-way synthesis model is explicit without weakening patch governance or repository role separation.
+
+### Summary
+Upgraded `phase-implementation` from design-only phased extraction into a one-way synthesis model where live phase planning may combine design target-state inputs and relevant patch/review inputs while keeping design, patch, and phase roles distinct.
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.3
+> **Current Version:** 4.4
 > **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12 (2026-03-17)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -49,7 +49,7 @@ This repository uses one deterministic governance model:
 
 ## 3) Rule Architecture
 
-### 3.1 Active Runtime Inventory (29 Rules)
+### 3.1 Active Runtime Inventory (30 Rules)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
@@ -70,7 +70,7 @@ This repository uses one deterministic governance model:
 | 15 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |
 | 16 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
 | 17 | operational-failure-handling.md | operational-failure-handling.design.md v1.1 | Profile-driven operational failure classification, bounded retry policy, explicit case handling, and honest cooldown/escalation behavior |
-| 18 | phase-implementation.md | phase-implementation.design.md v2.1 | First-class semantic standard for phased execution planning, `phase/SUMMARY.md`, child phase files, reviewability, bounded completion behavior, and one-way design/patch source synthesis |
+| 18 | phase-implementation.md | phase-implementation.design.md v2.2 | First-class semantic standard for phased execution planning, `phase/SUMMARY.md`, child phase files with zero-padded contiguous numbering (`001/002/003`), reviewability, bounded completion behavior, and one-way design/patch source synthesis |
 | 19 | project-documentation-standards.md | project-documentation-standards.design.md v2.5 | Repository-level document-role model, governed-vs-helper boundary, one-way phase synthesis role clarification, and directory-as-namespace naming guidance for governed workspaces |
 | 20 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
 | 21 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
@@ -81,7 +81,8 @@ This repository uses one deterministic governance model:
 | 26 | todo-standards.md | todo-standards.design.md v2.2 | Simple TODO governance |
 | 27 | runtime-topology-control.md | runtime-topology-control.design.md v1.1 | Bounded runtime mutation posture with inspect-before-mutate, authority-baseline locking, replace-over-accumulate discipline, approval-gated topology changes, and explicit multi-authority exceptions |
 | 28 | unified-version-control-system.md | unified-version-control-system.design.md v1.2 | UDVC-1 controller-level governance view |
-| 29 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
+| 29 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.0 | Core doctrine for tactical entry, strategic target, convergence path, and strategic closure so fast local execution does not drift into hidden long-term authority |
+| 30 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
 
 ### 3.2 Category View
 
@@ -92,7 +93,7 @@ This repository uses one deterministic governance model:
 | Output Safety | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | Output flood prevention and safe text presentation |
 | User Control | authority-and-scope, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control | Preserve user authority, safe recovery paths, bounded operational failure handling, and approval-sensitive runtime-topology discipline |
 | Adversarial Workflow | refusal-minimization, dan-safe-normalization | Reduce false refusals in authorized adversarial/security workflows |
-| Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, strict-file-hygiene, explanation-quality, phase-implementation, project-documentation-standards, todo-standards, unified-version-control-system | Documentation determinism, phased execution semantics, and output quality |
+| Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, strict-file-hygiene, explanation-quality, phase-implementation, project-documentation-standards, tactical-strategic-programming, todo-standards, unified-version-control-system | Documentation determinism, phased execution semantics, tactical-versus-strategic convergence doctrine, and output quality |
 
 ---
 
