@@ -3,226 +3,153 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.2
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Current Version:** 1.3
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-12)
 
 ---
 
-## 1. Overview
+## 1) Goal
 
-### 1.1 Purpose
+Define one local-evidence rule chain that prohibits guessing project-specific values and requires inspected-scope-aware reporting for paths, variables, configuration, and local references.
 
-Establish a policy prohibiting guessing of variable values ​​in order to:
-
-- Always use actual values ​​from actual sources.
-- Prevents guessing paths, configs, variables
-- verify before reference
-- Ask the user when can't find it.
-
-### 1.2 Problem Statement
-
-| Issue | Impact | Solution |
-|-------|--------|----------|
-| Guessed paths | File not found errors | Verify with LS/Glob |
-| Assumed config | Wrong configuration | Read config files |
-| Made-up values | Code doesn't work | Ask user |
-| Default assumptions | Environment mismatch | Check actual values |
-
-### 1.3 Solution
-
-Create a Verification Framework that:
-
-1. Verify every path before reference
-2. read config files before using values
-3. Ask the user when unsure.
-4. Only standard conventions are allowed.
+This chain owns:
+- local lookup discipline
+- project-specific anti-guessing behavior
+- inspected-scope declaration behavior
+- local non-finding semantics
+- local burden-of-proof wording for contradiction and absence inside checked project scope
 
 ---
 
-## 2. Verification Requirements
+## 2) Problem Statement
 
-### 2.1 File Paths & Variables
+The original no-variable-guessing rule correctly prohibited guessed values, but it still left one important communication gap under-specified: local non-findings were not strongly tied to inspected-scope reporting and could still be overstated.
 
-**Required Actions:**
-- Use Read tool to check actual file contents
-- Use LS/Glob to verify paths exist
-- Check .env, config files for actual values
+Observed failure modes:
+- guessed paths or config values are used without checking the project
+- a partial local search is reported as if it covered the whole project
+- "not found" is phrased like non-existence
+- limited local non-findings are used as if they disproved the user
+- multiple possible sources of truth are collapsed into one guessed answer
 
-**Verification Flow:**
-```
-Need to reference a path/variable?
-  ↓
-Use Read/LS/Glob to verify
-  ↓
-Found? → Use actual value
-  ↓
-Not found? → Ask user
-```
+This design strengthens local evidence semantics without taking over broader factual-verification or disagreement ownership.
 
-### 2.2 Configuration Values
+---
 
-**Required Actions:**
-- Read config files directly
-- Don't assume default values
-- Verify environment-specific settings
+## 3) Core Principles
 
-**Common Files to Check:**
+### 3.1 Read-Before-Reference Principle
+Project-specific values should come from checked local sources, not assumptions.
+
+Required guidance:
+- read actual files before quoting values
+- verify paths and symbols before referencing them as if known
+- ask the user when the local source of truth cannot be identified from the checked scope
+
+### 3.2 Local-Scope Declaration Principle
+Local findings should say what was inspected.
+
+Required guidance:
+- identify the checked files, directories, or search scope when material
+- distinguish between a checked subset and the whole repository/environment
+- keep local claims anchored to observed local evidence
+
+### 3.3 Scoped Non-Finding Principle
+A local non-finding is weaker than project-wide absence.
+
+Required guidance:
+- report "not found in checked scope" when the search boundary matters
+- do not upgrade a local non-finding into strong absence unless the checked scope is sufficient
+- do not treat a limited non-finding as contradiction against the user by default
+
+### 3.4 Local Burden-of-Proof Principle
+Project-specific contradiction requires project-specific contrary evidence.
+
+Required guidance:
+- if the claim concerns a file, path, config value, or local symbol, gather the corresponding local evidence before contradicting it
+- if only a partial local scope was checked, preserve that boundary in the communication
+- do not fill missing local evidence with guessed defaults
+
+---
+
+## 4) Verification Model
+
+### 4.1 Common local sources
 - `.env`, `.env.local`, `.env.production`
 - `package.json`, `tsconfig.json`
 - `config.yaml`, `config.json`
-- Docker/Kubernetes configs
+- Docker / Compose configs
+- source files and project search results
 
-### 2.3 API Endpoints & Parameters
-
-**Required Actions:**
-- Search documentation before recommending
-- Verify endpoint structure from official sources
-- Check actual API responses when possible
-
-### 2.4 Shared Verification Trigger Model (WS-5)
-
-Treat references as verification-required when any trigger appears:
+### 4.2 Trigger model
+Treat local references as verification-required when these signals appear:
 
 | Trigger | Typical Signal | Required Action |
 |---------|----------------|-----------------|
-| Project-specific path/symbol | File path, import path, function/class name | Verify existence with tools before reference |
-| Runtime/config value | Env var, port, endpoint base URL, config key | Read actual config source before use |
-| Cross-reference claim | "updated everywhere", "all references fixed" | Verify all affected locations before completion claim |
-| Ambiguous source of truth | Multiple candidate files or conflicting values | Mark uncertainty and ask/verify before proceeding |
+| project-specific path or symbol | file path, import path, class/function name | verify with project tools before reference |
+| runtime/config value | env var, port, base URL, config key | read the actual local source before use |
+| cross-reference claim | "updated everywhere", "all references fixed" | verify the affected locations |
+| ambiguous source of truth | multiple candidate files or conflicting values | preserve uncertainty and ask/verify |
+| negative local claim | "there is no X", "X does not exist" | determine whether scoped non-finding or strong absence is justified |
 
-Verification status labels (when reporting findings):
-- ✅ **Verified**
-- ⚠️ **Unverified**
-- ❌ **Not Found**
-
----
-
-## 3. Flexibility Guidelines
-
-### 3.1 Acceptable Assumptions
-
-| Type | Example | Reason |
-|------|---------|--------|
-| Language defaults | Python indentation | Standard |
-| Framework conventions | React component structure | Documented |
-| Library behaviors | Well-documented APIs | Official docs |
-| User-provided | Values in conversation | User said it |
-
-### 3.2 Requires Verification
-
-| Type | Example | Action |
-|------|---------|--------|
-| Project configs | Custom .env values | Read file |
-| Environment vars | DATABASE_URL | Check .env |
-| API keys/secrets | Never guess | Always ask |
-| DB connections | Connection strings | Verify config |
-| File paths | Project-specific | LS/Glob |
-
-### 3.3 User Override
-
-- User explicitly provides the value
-- User says "assume X for now"
-- User asks for template/example (labeled as such)
+### 4.3 Reporting labels
+- `Verified`
+- `Unverified`
+- `Not Found In Checked Scope`
 
 ---
 
-## 4. Quick Reference
+## 5) Inspected-Scope Communication Contract
 
-| Item Type | Action Required |
-|-----------|-----------------|
-| File paths | LS/Glob to verify existence |
-| Environment variables | Read .env files |
-| Config values | Read config files |
-| API endpoints | Search docs or ask user |
-| Credentials | Always ask user |
-| Port numbers | Check config or ask |
+Required guidance:
+- report what was checked when a local non-finding matters
+- say when the scope remains partial
+- distinguish between:
+  - observed local fact
+  - scoped non-finding
+  - strong absence
+- avoid implying repo-wide certainty from a narrow local check
 
----
-
-## 5. Exception Handling
-
-### 5.1 File Not Found
-
-```markdown
-I couldn't find .env file. Could you tell me where
-your environment configuration is located?
-```
-
-### 5.2 Multiple Possibilities
-
-```markdown
-I found both config.json and config.yaml.
-Which one should I use?
-```
-
-### 5.3 Partial Information
-
-```markdown
-You mentioned the API is at /api/users.
-What's the base URL? (e.g., http://localhost:3000)
-```
+Preferred examples:
+- "I checked `backend/.env` and `docker-compose.yml` and found ..."
+- "I checked `src/config/**` and did not find `DATABASE_URL` there."
+- "I found multiple candidate config files, so I cannot yet tell which one is authoritative."
 
 ---
 
-## 6. Quality Metrics
+## 6) Anti-Patterns to Avoid
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Path Verification | High | For project-specific paths |
-| Config Reading | 100% | Before modification |
-| Guessing Incidents | Minimize | Avoid assumptions |
-
----
-
-## 7. Tool Usage
-
-### 7.1 Verification Tools
-
-| Tool | Use For |
-|------|---------|
-| Read | Check file contents |
-| Glob | Find files by pattern |
-| LS (Bash) | Check directory contents |
-| Grep | Search for values |
-| WebFetch | Verify API endpoints |
-
-### 7.2 Verification Flow
-
-```
-Before Using Value
-  ↓
-Is it user-provided? → Use it
-  ↓
-Is it standard convention? → Use it
-  ↓
-Can I verify with tools? → Verify
-  ↓
-Can't verify? → Ask user
-```
+| Anti-Pattern | Why It Hurts | Better Shape |
+|--------------|--------------|--------------|
+| guessed path or value | creates environment mismatch | verify from local source |
+| partial local search presented as project-wide truth | exaggerates certainty | identify the inspected scope |
+| "not found" presented as non-existence | overstates the evidence | use scoped non-finding wording |
+| scoped non-finding used as user contradiction | turns partial evidence into verdict | gather stronger local evidence first |
+| guessed authoritative source among multiple candidates | hides uncertainty | surface the ambiguity |
 
 ---
 
-## 8. Integration
+## 7) Quality Metrics
 
-### 8.1 Related Rules
+| Metric | Target |
+|--------|--------|
+| Local verification discipline | High |
+| Inspected-scope clarity | High |
+| Unsupported local absence claims | 0 critical cases |
+| Guessing incidents | 0 critical cases |
+| Scoped non-finding honesty | High |
+
+---
+
+## 8) Integration
 
 | Rule | Relationship |
-|------|-------------|
-| zero-hallucination | Don't make up values |
-| document-consistency | Use verified references |
-| anti-mockup | Use real values |
-
-### 8.2 Combined Verification
-
-```
-Verify exists (Glob/LS)
-  +
-Verify content (Read)
-  +
-Verify format (check syntax)
-  =
-Fully verified value
-```
+|------|--------------|
+| [../no-variable-guessing.md](../no-variable-guessing.md) | Runtime implementation |
+| [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns burden-of-proof thresholds and scoped non-finding vs strong-absence distinction |
+| [zero-hallucination.design.md](zero-hallucination.design.md) | Owns broader factual verify-first discipline |
+| [accurate-communication.design.md](accurate-communication.design.md) | Owns wording shape for scoped evidence communication |
+| [anti-sycophancy.design.md](anti-sycophancy.design.md) | Owns disagreement posture when local evidence conflicts with a claim |
 
 ---
 

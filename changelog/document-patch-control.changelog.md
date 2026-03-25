@@ -1,8 +1,8 @@
 # Changelog - Document Patch Control
 
 > **Parent Document:** [../document-patch-control.md](../document-patch-control.md)
-> **Current Version:** 1.9
-> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+> **Current Version:** 2.2
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
 
 ---
 
@@ -10,6 +10,12 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.2 | 2026-03-15 | **[Added path-aware patch naming guidance for filename-authoritative versus path-authoritative workspaces](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Refined patch-control so `<context>.patch.md` remains valid when filenames must carry context, while `patch.md` is also valid when the parent workspace path already provides the stable namespace | |
+| 2.1 | 2026-03-13 | **[Clarified one-way patch-to-phase synthesis without creating reverse-link requirements](#version-21)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Preserved patch governance and `/patches` separation while explicitly allowing `phase-implementation` to consume relevant patch inputs one-way without requiring patch documents to point back to phase | |
+| 2.0 | 2026-03-12 | **[Required comparison-friendly change representation for governed patch documents](#version-20)** | 451fb64e-f2a5-43a5-bf98-47f01244f15c |
+| | | Summary: Strengthened patch-control so `.patch.md` documents must show target locations and current-vs-proposed change representation clearly enough for review, while preserving the `/phase` boundary | |
 | 1.9 | 2026-03-11 | **[Removed `/patches` from the live phase-plan model and clarified patch governance as separate from `/phase`](#version-19)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
 | | | Summary: Redefined `/patches` as a separate patch/review artifact layer, moved live phased execution fully into `/phase`, and made patch-versus-phase namespace separation explicit | |
 | 1.8 | 2026-03-11 | **[Changed patch governance to parent patch/index plus mandatory child phase files for multi-phase work](#version-18)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
@@ -30,6 +36,70 @@
 | | | Summary: Closed patch-reference/version drift across runtime/design/changelog artifacts | |
 | 1.0 | 2026-02-01 | **[Initial design](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Initial release of patch-control standards | |
+
+---
+
+<a id="version-22"></a>
+## Version 2.2: Added path-aware patch naming guidance for filename-authoritative versus path-authoritative workspaces
+
+**Date:** 2026-03-15
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/document-patch-control.design.md` from v2.1 to v2.2.
+- Updated runtime `document-patch-control.md` from v2.1 to v2.2.
+- Refined patch naming so the chain now distinguishes between filename-authoritative naming and path-authoritative naming.
+- Preserved `<context>.patch.md` when the filename must carry the stable identifying context.
+- Added explicit allowance for `patch.md` when the parent workspace path already acts as the stable namespace and only one same-role patch artifact exists in the directory.
+- Added an anti-redundancy rule against repeating the same context in both path and filename without a real portability, review, or search benefit.
+- Expanded checklist and quality-metric coverage for naming-mode clarity.
+
+### Summary
+Refined `document-patch-control` so patch naming now supports both context-bearing filenames and path-authoritative `patch.md` naming, while discouraging redundant path-plus-filename repetition.
+
+---
+
+<a id="version-21"></a>
+## Version 2.1: Clarified one-way patch-to-phase synthesis without creating reverse-link requirements
+
+**Date:** 2026-03-13
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/document-patch-control.design.md` from v2.0 to v2.1.
+- Updated runtime `document-patch-control.md` from v2.0 to v2.1.
+- Preserved patch metadata, change-representation, and patch-versus-phase namespace requirements.
+- Added an explicit one-way synthesis clarification so `phase-implementation.md` may consume relevant governed patch inputs inside live phased execution planning.
+- Clarified that this does not create a reverse-link requirement from patch documents back to phase.
+- Preserved the rule that `/patches` remains outside the live `/phase` workspace even when patch inputs are synthesized into the live phase plan.
+
+### Summary
+Clarified that patch artifacts may feed phased execution planning one-way without weakening patch governance or turning patch documents into the live phase workspace.
+
+---
+
+<a id="version-20"></a>
+## Version 2.0: Required comparison-friendly change representation for governed patch documents
+
+**Date:** 2026-03-12
+**Session:** 451fb64e-f2a5-43a5-bf98-47f01244f15c
+
+### Changes
+- Updated `design/document-patch-control.design.md` from v1.9 to v2.0.
+- Updated runtime `document-patch-control.md` from v1.9 to v2.0.
+- Added an explicit change-representation requirement so governed `.patch.md` files must show the intended change concretely enough for review instead of relying on prose-only plan descriptions.
+- Required patches that concern code, configuration, commands, queries, schemas, or structured text to show:
+  - target artifact or stable target location
+  - current state
+  - proposed state
+  - enough comparison detail for reviewer evaluation
+- Added preferred comparison forms including before/after snippets, current/target tables, unified diff style blocks, patch hunk sections, and clearly scoped replacement blocks.
+- Added a target-location requirement for each concrete patch item.
+- Added a non-code patch allowance so governance-only or conceptual patches may omit code snippets only if they explicitly declare themselves non-code/conceptual and still provide structured current-state vs target-state comparison.
+- Expanded the patch checklist and quality metrics to validate change-representation clarity and target-location clarity.
+
+### Summary
+Strengthened `document-patch-control` so governed `.patch.md` files must now present the actual intended change surface in a comparison-friendly way rather than remaining vague prose-only review artifacts.
 
 ---
 

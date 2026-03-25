@@ -1,8 +1,8 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.3
-> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32
+> **Current Version:** 2.5
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
 
 ---
 
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+| 2.4 | 2026-03-13 | **[Clarified one-way design+patch source synthesis in the repository role model](#version-24)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Kept the `/phase` versus `/patches` role split intact while explicitly allowing phase to synthesize relevant design and patch inputs without creating reverse-link requirements | |
 | 2.3 | 2026-03-11 | **[Changed repository role model so live phased execution uses `/phase` with mandatory `SUMMARY.md`](#version-23)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
 | | | Summary: Replaced the patch-based live phase model with `/phase/SUMMARY.md` plus child phase files, and kept `/patches` as a separate patch/review artifact layer | |
 | 2.2 | 2026-03-11 | **[Changed repository role model to parent patch/index plus mandatory child phase files for multi-phase work](#version-22)** | 92fed037-8ba9-48a6-95c4-e1085f28bb32 |
@@ -38,6 +42,43 @@
 | | | Summary: Integrated patch governance into document standards | |
 | 1.0 | 2026-01-21 | **[Initial version](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Initial release of project documentation standards | |
+
+---
+
+<a id="version-25"></a>
+## Version 2.5: Added directory-as-namespace naming guidance for governed document workspaces
+
+**Date:** 2026-03-15
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.4 to v2.5.
+- Updated runtime `project-documentation-standards.md` from v2.4 to v2.5.
+- Added directory-as-namespace naming guidance so namespaced workspaces may use role-based filenames when the parent path already provides stable unique context.
+- Added explicit exception guidance for context-bearing filenames when self-identification outside the directory, same-role coexistence, or search/review portability materially matters.
+- Updated the decision model, checklist, and quality metrics to validate low-confusion path-aware naming behavior.
+
+### Summary
+Refined the repository document-role model so governed workspaces can use either role-based filenames or context-bearing filenames according to whether the directory or the filename is the true namespace authority.
+
+---
+
+<a id="version-24"></a>
+## Version 2.4: Clarified one-way design+patch source synthesis in the repository role model
+
+**Date:** 2026-03-13
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.3 to v2.4.
+- Updated runtime `project-documentation-standards.md` from v2.3 to v2.4.
+- Preserved the existing `/phase` versus `/patches` role split.
+- Added explicit repository-role wording that phase may synthesize relevant design and patch inputs as one-way source inputs into live execution planning.
+- Clarified that design and patch artifacts do not gain a reverse-link requirement back to phase.
+- Updated the runtime integration reference so `phase-implementation.md` no longer points to stale v1.3 metadata.
+
+### Summary
+Refined the repository role model so phased execution can synthesize design and patch inputs one-way while keeping patch, phase, design, TODO, and changelog roles intact.
 
 ---
 

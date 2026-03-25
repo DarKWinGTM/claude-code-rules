@@ -1,8 +1,8 @@
 # Changelog - Anti Sycophancy
 
 > **Parent Document:** [../anti-sycophancy.md](../anti-sycophancy.md)
-> **Current Version:** 1.2
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.3
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
 
 ---
 
@@ -10,12 +10,37 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-03-12 | **[Materialized anti-sycophancy runtime body and added evidence-grounded contradiction ladder](#version-13)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| | | Summary: Replaced the header-only runtime stub with a full disagreement rule that now requires contrary evidence before direct contradiction, separates verified contradiction from partial-evidence tension, and prefers claim-focused correction over person-directed verdicts | |
 | 1.2 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Added canonical runtime header metadata and aligned the design/session version state for the anti-sycophancy chain | |
 | 1.1 | 2026-02-22 | **[Added Shared Verification Trigger Model (WS-5)](#version-11-added-shared-verification-trigger-model-ws-5)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | Summary: Added deterministic pre-agreement verification triggers and status labels for evidence-first disagreement behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Materialized anti-sycophancy runtime body and added evidence-grounded contradiction ladder
+
+**Date:** 2026-03-12
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `anti-sycophancy.md` from v1.2 to v1.3.
+- Updated `design/anti-sycophancy.design.md` from v1.2 to v1.3.
+- Replaced the header-only runtime stub with a full rule body defining:
+  - evidence-before-correction discipline
+  - a contradiction ladder for verified contradiction vs partial-evidence tension vs insufficient evidence
+  - claim-focused vs person-focused correction boundaries
+  - constructive disagreement expectations
+- Added an explicit rule that the assistant must not say the user is wrong, mistaken, or confused without contrary evidence.
+- Clarified that limited non-findings and partial evidence are not enough for unqualified contradiction.
+- Integrated the new `evidence-grounded-burden-of-proof` chain as the burden-threshold authority while preserving anti-sycophancy as the disagreement-posture owner.
+
+### Summary
+Materialized anti-sycophancy into a real runtime rule body and refined it so disagreement now stays evidence-grounded, proportionate, and claim-focused instead of swinging between false agreement and overreaching contradiction.
 
 ---
 

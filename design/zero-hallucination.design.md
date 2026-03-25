@@ -3,272 +3,182 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.2
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Current Version:** 1.3
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-12)
 
 ---
 
-## 1. Overview
+## 1) Goal
 
-### 1.1 Purpose
+Define one runtime rule chain for verify-first factual discipline so the assistant states as fact only what the relevant evidence supports, keeps inference and hypothesis visibly separate, and avoids overstating absence from limited search results.
 
-Establish a Zero Hallucination policy to:
-
-- Let AI provide verified information only.
-- Prevent data fabrication
-- acknowledge uncertainty when unsure
-- verify before state technical information
-
-### 1.2 Problem Statement
-
-| Issue | Impact | Solution |
-|-------|--------|----------|
-| Made-up API endpoints | Code doesn't work | Verify first |
-| Guessed config values | Wrong configuration | Check docs |
-| Fabricated outputs | User confused | State uncertainty |
-| Outdated info | Information incorrect | Search current |
-
-### 1.3 Solution
-
-Create a Verification Framework that:
-
-1. Verify technical information before answering.
-2. Acknowledge uncertainty clearly
-3. Use WebSearch/WebFetch to check.
-4. Allow well-established concepts
+This chain is the factual-claim owner for:
+- verify-first factual discipline
+- source-priority behavior
+- fact vs inference vs hypothesis separation for technical claims
+- negative-claim / absence discipline
+- uncertainty honesty when evidence is incomplete
 
 ---
 
-## 2. Verification Requirements
+## 2) Problem Statement
 
-### 2.1 Before Response
+The original zero-hallucination rule correctly rejected fabrication, but it still left several important gaps under-specified:
+- it did not clearly separate fact, inference, and hypothesis in one deterministic model
+- it did not define a stronger evidence contract for negative claims and absence wording
+- it did not clearly distinguish between authoritative external evidence and observed local evidence
+- it did not explicitly guard against treating limited non-findings as contradiction or non-existence
 
-**Required Actions:**
-- Use WebSearch/WebFetch to verify technical claims
-- Check official documentation before recommending APIs
-- Confirm file existence before referencing paths
-- Validate configuration values from actual sources
+Observed failure modes:
+- a likely conclusion is stated as fact
+- a limited repo search is treated as proof of absence
+- lack of evidence is used like contrary evidence
+- a local fact and a broader platform fact are discussed as though they had the same proof burden
 
-**When to Verify:**
-- API endpoints and parameters
-- Library/package versions and features
-- Configuration syntax and options
-- System commands and flags
+This design clarifies those boundaries while leaving communication-shape and contradiction-tone ownership to adjacent chains.
 
-### 2.2 Uncertainty Acknowledgment
+---
 
-**When Uncertain:**
-```
-✅ "I'm not certain about this. Let me verify..."
-✅ "Based on my knowledge (may be outdated), but please verify..."
-✅ "I don't have current information on this. Would you like me to search?"
-```
+## 3) Core Principles
 
-**Prohibited:**
-```
-❌ Stating uncertain information as fact
-❌ Making up API endpoints or parameters
-❌ Guessing configuration values
-❌ Fabricating error messages or outputs
-```
+### 3.1 Verify-First Principle
+Technical and project-specific claims should be verified before being stated as fact.
 
-### 2.3 Shared Verification Trigger Model (WS-5)
+Required guidance:
+- verify external claims with relevant authoritative sources when possible
+- verify local claims with observed local evidence when possible
+- if verification is incomplete, do not promote the claim to fact status
 
-Treat claims as verification-required when any trigger appears:
+### 3.2 Source-Priority Principle
+Evidence should be weighted by relevance and directness.
+
+| Source Class | Typical Use | Default Priority |
+|--------------|-------------|------------------|
+| `AUTHORITATIVE_EXTERNAL` | API docs, specifications, provider behavior | Highest for external/product facts |
+| `OBSERVED_LOCAL` | files, grep output, command output, tests | Highest for local/project facts within the checked scope |
+| `USER_PROVIDED` | user-stated constraints and environment details | High as input evidence |
+| `EVIDENCE_BACKED_INFERENCE` | reasoned conclusion from observed facts | Medium |
+| `WORKING_HYPOTHESIS` | plausible but unproven explanation | Low |
+
+Required guidance:
+- do not let inference outrank direct evidence
+- do not let memory outrank a checked source
+- do not let limited search failure behave like strong absence proof
+
+### 3.3 Claim-State Separation Principle
+Fact, inference, hypothesis, unresolved uncertainty, and scoped non-findings should not share the same wording strength.
+
+Required guidance:
+- keep verified fact direct
+- keep inference explicitly inferential
+- keep hypothesis explicitly tentative
+- keep non-findings scoped
+- keep unresolved questions visibly unresolved
+
+### 3.4 Negative-Claim Discipline Principle
+Absence claims require their own threshold.
+
+Required guidance:
+- use scoped non-finding wording when the search boundary matters
+- use stronger absence wording only when the source or search is sufficient to justify it
+- do not treat "not found" as equivalent to "does not exist"
+- do not treat lack of support as contrary evidence by default
+
+### 3.5 Uncertainty-Honesty Principle
+When evidence is incomplete or conflicting, the rule should preserve uncertainty rather than replacing it with invented certainty.
+
+---
+
+## 4) Verification Trigger Model
+
+Treat claims as verification-required when any of the following signals appear:
 
 | Trigger | Typical Signal | Required Action |
 |---------|----------------|-----------------|
-| Specific technical claim | API endpoint, parameter, version, command flag, config syntax | Verify with authoritative source before stating as fact |
-| Project-specific reference | File path, symbol, environment variable, config key | Verify with project tools (`Read`, `Glob`, `Grep`, `ls`) |
-| Cross-file impact claim | "updated all references", "fully synchronized", "no drift" | Verify affected artifacts before claiming completion |
-| Uncertainty detected | Confidence is incomplete or source may be stale | Mark uncertainty explicitly and verify before final response |
+| specific technical claim | endpoint, version, flag, syntax, config option | verify with authoritative or relevant direct evidence before stating as fact |
+| project-specific reference | file path, symbol, config key, environment variable | verify with project tools before reference |
+| cross-artifact completion claim | "all updated", "fully synchronized", "no drift" | verify the affected artifacts before claiming completion |
+| negative claim | "does not exist", "is absent", "there is no X" | determine whether the evidence supports scoped non-finding or strong absence |
+| conflicting or partial evidence | mixed signals, stale memory, incomplete search | mark uncertainty explicitly |
 
-Verification status labels (when reporting findings):
-- ✅ **Verified**
-- ⚠️ **Unverified**
-- ❌ **Not Found**
-
----
-
-## 3. Flexibility Guidelines
-
-### 3.1 Acceptable Without Verification
-
-| Type | Example | Reason |
-|------|---------|--------|
-| Programming concepts | OOP principles | Well-established |
-| Language syntax | Python basics | Standardized |
-| Design patterns | MVC pattern | Documented widely |
-| General best practices | Code organization | Industry standard |
-
-### 3.2 Requires Verification
-
-| Type | Example | Action |
-|------|---------|--------|
-| Specific API endpoints | OpenAI API v4 | WebFetch docs |
-| Library versions | React latest | WebSearch |
-| Platform behaviors | AWS specific | Check docs |
-| Recent changes | New features | Search current |
-
-### 3.3 User Override
-
-- User explicitly wants quick answer
-- User provides the information themselves
-- User asks for general guidance
+Verification status labels:
+- ✅ `Verified`
+- ⚠️ `Unverified`
+- ❌ `Not Found In Checked Scope`
 
 ---
 
-## 4. Verification Flow
+## 5) Negative-Evidence / Absence Model
 
-### 4.1 Before Stating Claim
+### 5.1 Required Distinction
+`Not found in checked scope` is weaker than `absent` or `does not exist`.
 
-```
-Technical Claim to Make
-  ↓
-Is it well-established knowledge?
-  → YES: State with confidence
-  ↓
-Can I verify with tools?
-  → YES: Use WebSearch/WebFetch
-  → Verified: State with source
-  ↓
-Uncertain?
-  → Acknowledge uncertainty
-  → Offer to search
-```
+### 5.2 Stronger Absence Threshold
+Stronger absence wording is justified only when one of these is true:
+- an authoritative source explicitly rules the item out
+- the checked scope is sufficiently exhaustive for the claim being made
+- the relevant system contract or schema directly excludes the item
 
-### 4.2 Source Priority
-
-| Source | Reliability | Use Case |
-|--------|-------------|----------|
-| Official docs | Highest | API, config |
-| Project files | High | Local config |
-| User input | High | User provided |
-| General knowledge | Medium | Concepts |
-| Inference | Low | Must acknowledge |
+### 5.3 Prohibited Overreach
+Do not:
+- turn a limited search into global non-existence
+- turn lack of evidence into user contradiction
+- turn unresolved scope into a strong absence claim
 
 ---
 
-## 5. Quality Metrics
+## 6) Application Model
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Verification Rate | High | For technical claims |
-| Uncertainty Acknowledgment | 100% | When not confident |
-| Fabrication Incidents | 0% | Never make up info |
-| Source Citation | Default | When making claims |
+### 6.1 External factual claims
+Prefer authoritative external evidence.
 
----
+### 6.2 Local/project factual claims
+Prefer observed local evidence and name the checked scope when material.
 
-## 6. Practical Examples
+### 6.3 Analytical/debugging claims
+Inference is allowed, but it must remain clearly inferential until directly supported.
 
-### 6.1 Good Practice
-
-```
-User: "How do I use the OpenAI API?"
-
-Response: "Let me check the current OpenAI API documentation..."
-[Uses WebFetch to verify]
-"According to the official docs, the endpoint is..."
-```
-
-### 6.2 Acceptable Uncertainty
-
-```
-User: "What's the latest version of React?"
-
-Response: "Based on my knowledge, React 18 is the major version,
-but let me verify the exact latest version for you..."
-```
-
-### 6.3 Avoid
-
-```
-User: "What's the API endpoint for X service?"
-
-Response: "The endpoint is https://api.x.com/v2/data"
-(without verification - could be fabricated)
-```
+### 6.4 Absence claims
+Choose between:
+- scoped non-finding
+- strong absence
+based on the actual evidence threshold met.
 
 ---
 
-## 7. Tool Usage
+## 7) Anti-Patterns to Avoid
 
-### 7.1 Verification Tools
-
-| Tool | Use For |
-|------|---------|
-| WebSearch | Find current information |
-| WebFetch | Read specific documentation |
-| Read | Check local files |
-| Glob/Grep | Verify existence |
-
-### 7.2 When to Use Each
-
-| Situation | Tool |
-|-----------|------|
-| API documentation | WebFetch official docs |
-| Library versions | WebSearch current info |
-| Local config | Read tool |
-| File existence | Glob/LS |
+| Anti-Pattern | Why It Hurts | Better Shape |
+|--------------|--------------|--------------|
+| fabricated technical detail | creates false facts | verify first |
+| inference phrased as fact | hides uncertainty | label inference explicitly |
+| hypothesis phrased as verified cause | creates false confidence | keep it tentative |
+| scoped non-finding phrased as non-existence | exaggerates the evidence | state the checked scope |
+| lack of support treated as contradiction | turns uncertainty into verdict | gather contrary evidence or remain unresolved |
 
 ---
 
-## 8. Integration
+## 8) Quality Metrics
 
-### 8.1 Related Rules
+| Metric | Target |
+|--------|--------|
+| Verification rate for technical claims | High |
+| Claim-state separation | High |
+| Unsupported absence claims | 0 critical cases |
+| Unsupported contradiction from non-finding alone | 0 critical cases |
+| Uncertainty acknowledgment | 100% when evidence is incomplete |
+
+---
+
+## 9) Integration
 
 | Rule | Relationship |
-|------|-------------|
-| no-variable-guessing | Verify values |
-| anti-sycophancy | Don't confirm without evidence |
-| document-consistency | Use verified references |
-| anti-mockup | Use real information |
-
-### 8.2 Combined Approach
-
-```
-anti-sycophancy: Don't agree without evidence
-  +
-zero-hallucination: Don't fabricate
-  +
-no-variable-guessing: Verify values
-  =
-Evidence-based, truthful responses
-```
-
----
-
-## 9. Response Templates
-
-### 9.1 Verification Needed
-
-```markdown
-I want to verify this before answering.
-Let me check the official documentation...
-
-[Use WebSearch/WebFetch]
-
-According to [source]: [verified information]
-```
-
-### 9.2 Uncertainty Statement
-
-```markdown
-I'm not certain about [topic]. My knowledge may be outdated.
-
-Would you like me to search for the current information?
-```
-
-### 9.3 After Verification
-
-```markdown
-Based on [official source]:
-
-[Verified information]
-
-Source: [URL or document reference]
-```
+|------|--------------|
+| [../zero-hallucination.md](../zero-hallucination.md) | Runtime implementation |
+| [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns evidence taxonomy, burden-of-proof thresholds, contradiction protocol, and scoped negative-evidence semantics |
+| [accurate-communication.design.md](accurate-communication.design.md) | Owns the communication shape for evidence-threshold wording |
+| [anti-sycophancy.design.md](anti-sycophancy.design.md) | Owns disagreement posture and correction ladder behavior |
+| [no-variable-guessing.design.md](no-variable-guessing.design.md) | Owns local lookup discipline and inspected-scope reporting |
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.3
-> **Session:** 92fed037-8ba9-48a6-95c4-e1085f28bb32 (2026-03-11)
+> **Current Version:** 2.5
+> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-15)
 
 ---
 
@@ -74,6 +74,27 @@ Each child file owns the execution detail for one phase while staying subordinat
 
 `patches/*.patch.md` is a governed patch/review artifact layer.
 It is not the live phase-plan namespace.
+
+### 3.8.1 Directory-as-namespace naming guidance
+
+When a workspace directory already provides the stable unique context, prefer role-based filenames rather than repeating the same context in every filename.
+
+Preferred examples in namespaced workspaces:
+- `issue/276/design.md`
+- `issue/276/changelog.md`
+- `issue/276/patch.md`
+- `issue/276/TODO.md`
+
+Use context-bearing filenames when one or more of these are true:
+- the file must remain self-identifying outside its directory context
+- multiple same-role artifacts may coexist in one directory
+- search, review, or portability needs materially benefit from repeating the context in the filename
+
+Examples:
+- `patches/issue-276.patch.md`
+- `patches/runtime-routing-hardening.patch.md`
+
+The goal is low-confusion naming, not mandatory generic filenames.
 
 ### 3.9 Phase Rule Role
 
@@ -147,17 +168,19 @@ Required boundary rules:
 - `phase/phase-010-<phase-name>.md` and peers are the governed child phase-detail files
 - `patches/*.patch.md` is outside the live phase-plan namespace
 - `phase-implementation-template.md` is the readable root helper for authoring
+- phase may synthesize design and patch inputs as one-way source inputs into live execution planning when relevant
+- design and patch artifacts are not required to point back to phase
 - TODO tracks actionable execution work only
 - changelog records synchronized or shipped history only
 - `SUMMARY.md` should explicitly show how child phase files, TODO work, and changelog companion work relate to the active execution state
 
 Example boundary:
-- `phase-implementation.md` defines what a valid phase should contain
+- `phase-implementation.md` defines what a valid phase should contain and may synthesize relevant design/patch inputs into execution planning
 - `phase-implementation-template.md` offers a readable reusable structure
 - `phase/SUMMARY.md` becomes the real governed summary/index for that project
 - `phase/phase-010-<name>.md` becomes the child execution detail for a specific phase
 - `TODO.md` tracks active execution state derived from that structure
-- `patches/*.patch.md` remains separate from the live phase workspace
+- `patches/*.patch.md` remains separate from the live phase workspace and does not need to point back to phase
 - `changelog/*.changelog.md` records the resulting synchronized or released changes
 
 ---
@@ -185,7 +208,9 @@ Does the governed plan have multiple live phases?
   → YES: create child phase files under `phase/`
   ↓
 Need patch/review artifacts separate from the live phase workspace?
-  → YES: create `patches/*.patch.md`
+  → YES: create a governed patch artifact
+        - use `patches/<context>.patch.md` when filename context must travel with the file
+        - use `<namespace>/patch.md` when the parent workspace already acts as the namespace
   ↓
 Need standardized phase semantics?
   → YES: use `phase-implementation.md`
@@ -210,6 +235,8 @@ Need additional support/reference-only material?
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Multi-phase work uses child phase files under `phase/`
 - [ ] Patch docs remain outside the live phase workspace
+- [ ] Namespaced workspaces may use role-based filenames when the parent path already supplies stable context
+- [ ] Redundant path + filename repetition is avoided unless it has a clear portability, coexistence, or search benefit
 - [ ] Root-level helper artifacts do not masquerade as governed docs
 - [ ] Support artifacts do not masquerade as governed design docs
 - [ ] Active metadata uses real session IDs
@@ -227,6 +254,7 @@ Need additional support/reference-only material?
 | `SUMMARY.md` role clarity | 100% |
 | Child-phase-file role clarity | 100% |
 | Patch-role separation clarity | 100% |
+| Namespaced-workspace naming clarity | 100% |
 | Root-helper boundary clarity | 100% |
 | Broken cross-layer links | 0 |
 
