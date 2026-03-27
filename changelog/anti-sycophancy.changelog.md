@@ -1,8 +1,8 @@
 # Changelog - Anti Sycophancy
 
 > **Parent Document:** [../anti-sycophancy.md](../anti-sycophancy.md)
-> **Current Version:** 1.3
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+> **Current Version:** 1.4
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-03-27 | **[Added calm constructive correction tone guidance to anti-sycophancy](#version-14)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
+| | | Summary: Extended anti-sycophancy so disagreement now avoids both praise-heavy softening and rhetorical sharpness, keeping correction calm, useful, and claim-focused | |
 | 1.3 | 2026-03-12 | **[Materialized anti-sycophancy runtime body and added evidence-grounded contradiction ladder](#version-13)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Replaced the header-only runtime stub with a full disagreement rule that now requires contrary evidence before direct contradiction, separates verified contradiction from partial-evidence tension, and prefers claim-focused correction over person-directed verdicts | |
 | 1.2 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -18,6 +20,24 @@
 | | | Summary: Added deterministic pre-agreement verification triggers and status labels for evidence-first disagreement behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added calm constructive correction tone guidance to anti-sycophancy
+
+**Date:** 2026-03-27
+**Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+
+### Changes
+- Updated `anti-sycophancy.md` from v1.3 to v1.4.
+- Updated `design/anti-sycophancy.design.md` from v1.3 to v1.4.
+- Added constructive-disagreement guidance against flattery-heavy softening that weakens the actual correction.
+- Added guidance against rhetorical sharpness when calmer claim-focused correction is sufficient.
+- Added forbidden-behavior and anti-pattern coverage for praise-heavy correction framing and unnecessary rhetorical edge.
+
+### Summary
+Extended anti-sycophancy so disagreement now avoids both praise-heavy softening and rhetorical sharpness, keeping correction calm, useful, and claim-focused.
 
 ---
 

@@ -1,8 +1,8 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 2.2
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.2 | 2026-03-27 | **[Added good-operator explanation and stop-before-overexplaining guidance](#version-22)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
+| | | Summary: Extended explanation-quality so explanations now sound more like a capable professional collaborator and stop earlier when the decision surface is already clear | |
 | 2.1 | 2026-03-17 | **[Added stage-progression and whole-set framing guidance to explanation-quality](#version-21)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 | | | Summary: Extended explanation-quality so responses can move to the next meaningful stage when current scope is sufficient and can present the full relevant set before narrowing into sub-items | |
 | 2.0 | 2026-03-15 | **[Extended explanation-quality for easier scope, timing, and user-visible communication](#version-20)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
@@ -34,6 +36,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-22"></a>
+## Version 2.2: Added good-operator explanation and stop-before-overexplaining guidance
+
+**Date:** 2026-03-27
+**Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+
+### Changes
+- Updated `explanation-quality.md` from v2.1 to v2.2.
+- Updated `design/explanation-quality.design.md` from v2.1 to v2.2.
+- Added a good-operator explanation principle so explanations should read like they came from a capable professional collaborator rather than a scripted narrator.
+- Added a stop-before-overexplaining boundary so explanations stop earlier when the practical decision surface is already clear.
+- Extended anti-pattern guidance against scripted over-signposting and over-produced continuation after the real point is already understood.
+
+### Summary
+Extended explanation-quality so explanations now sound more like a capable professional collaborator and stop earlier when the decision surface is already clear.
 
 ---
 

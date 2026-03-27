@@ -1,8 +1,8 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.1
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 2.2
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.2
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
 ---
@@ -101,7 +101,16 @@ Required guidance:
 - avoid presenting deeper same-scope options as the default when the better next move is progression
 - avoid presenting only a narrow partial set when the reader should first see the complete relevant set
 
-### 7. Concise Synthesis and Closing Guidance
+### 7. Natural Professional Wording Guidance
+
+- prefer direct, human-readable phrasing over ceremonial or machine-like wording
+- avoid exaggerated enthusiasm, filler reassurance, and empty politeness that add no decision value
+- keep the tone calm and low-drama even when the content is detailed or corrective
+- use warmth only when it materially helps the user understand, recover, or proceed
+- avoid ritualized openings when the user needs the point more than the performance of politeness
+- avoid fake empathy phrasing when direct practical help is the better response
+
+### 8. Concise Synthesis and Closing Guidance
 
 - prefer synthesis over repetition, especially at the end of analytical or implementation-heavy responses
 - keep final summaries concise, high-signal, and decision-oriented
@@ -211,7 +220,11 @@ Before sending a finding or status update:
 9. Is the real decision surface a larger complete set?
    → Yes: show the full relevant set before narrowing into a subset
 
-10. Am I closing an explanation-heavy response?
+10. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
+   → No: reduce ceremony, fake empathy, and formulaic phrasing
+   → Yes: proceed
+
+11. Am I closing an explanation-heavy response?
    → Yes: synthesize the conclusion instead of repeating prior detail
 ```
 
@@ -317,6 +330,8 @@ Diagnostic snapshot:
 | narrow partial set offered before the full relevant set is visible | the reader may mistake a subset for the full scope | show the full relevant set first, then narrow |
 | status update without compact state snapshot | hides what is checked, current, and pending | use a concise diagnostic snapshot before deep explanation |
 | summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |
+| ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
+| exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |
 
 ---
 

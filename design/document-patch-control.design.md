@@ -77,7 +77,7 @@ The dedicated live phase-plan workspace is:
 ```text
 phase/
   SUMMARY.md
-  phase-010-<phase-name>.md
+  phase-001-<phase-name>.md
   phase-020-<phase-name>.md
 ```
 
@@ -188,7 +188,7 @@ It remains appropriate for:
 `/phase` owns live phased execution planning.
 It contains:
 - `phase/SUMMARY.md` as the governed summary/index
-- `phase/phase-010-*.md` and peers as child phase-detail files
+- `phase/phase-001-*.md` and peers as child phase-detail files
 
 ### 6.3 Prohibited blending
 The following are not allowed:

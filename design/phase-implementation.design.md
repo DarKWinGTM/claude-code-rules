@@ -15,7 +15,7 @@ Define one first-class rule chain for phased implementation planning so phased w
 The target state separates these concerns clearly:
 - `phase-implementation.md` defines phase-planning semantics and one-way source-input synthesis
 - `phase/SUMMARY.md` is the governed summary/index for the active phased execution plan
-- `phase/phase-010-<phase-name>.md` is the default child phase-file pattern
+- `phase/phase-001-<phase-name>.md` is the default child phase-file pattern
 - `design/*.design.md` remains target-state authority
 - `patches/*.patch.md` remains governed patch/review/change-surface authority outside the live phase-plan namespace
 - `phase-implementation-template.md` remains a non-governed root helper for drafting and readability

@@ -1,8 +1,8 @@
 # Answer Presentation
 
-> **Current Version:** 1.5
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.5
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 1.6
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.6
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
 ---
@@ -39,7 +39,16 @@ Required guidance:
 - full-set reasoning should use complete-set-first presentation before optional drill-down
 - stage progression should use a short explicit forward-moving block when the answer should move on
 
-### 3) Scannability-Over-Density Principle
+### 3) Natural-Flow Formatting Principle
+
+Structure should help the answer read like a strong human response, not like a rigid template.
+
+Required guidance:
+- use structure only when it helps the reader understand faster
+- keep simple answers compact rather than forcing section blocks
+- prefer prose continuity when one idea reads better as a short human paragraph than as fragmented bullets
+
+### 4) Scannability-Over-Density Principle
 
 As answers grow in complexity, scanability should improve rather than collapse.
 
@@ -48,7 +57,7 @@ Required guidance:
 - separate conceptual blocks with whitespace
 - do not allow long complex answers to degrade into walls of text
 
-### 4) Semantic Formatting Principle
+### 5) Semantic Formatting Principle
 
 Formatting should carry meaning, not decoration.
 
@@ -59,7 +68,7 @@ Required guidance:
 - use diagrams only when sequence or branching is central
 - use headings that describe section purpose, not just visual styling
 
-### 5) Diagnostic Snapshot Principle
+### 6) Diagnostic Snapshot Principle
 
 When reporting technical status, use a compact snapshot shape instead of a raw evidence dump.
 
@@ -70,7 +79,7 @@ Required guidance:
 - keep tables small, scoped, and fact-oriented
 - do not let the table replace the explanation or implication
 
-### 6) Scope-Boundary Grouping Principle
+### 7) Scope-Boundary Grouping Principle
 
 When the answer needs to separate current scope from deferred scope, or clarify what something is versus what it is not, use grouped sections that make those boundaries easy to scan.
 
@@ -80,7 +89,7 @@ Required guidance:
 - surface `what the user will notice` when user-facing meaning matters more than internal implementation detail
 - do not bury active-versus-deferred scope boundaries inside one undifferentiated paragraph when sectioning would materially help
 
-### 7) Full-Set-First Principle
+### 8) Full-Set-First Principle
 
 When the real decision surface is a larger complete set, show that full set before narrowing into a smaller slice.
 
@@ -89,7 +98,7 @@ Required guidance:
 - avoid defaulting to only 2-3 items when a larger full set is the correct scope
 - use narrowing only after the whole set is visible or when the user explicitly asks for incremental slicing
 
-### 8) Next-Stage Visibility Principle
+### 9) Next-Stage Visibility Principle
 
 When the current explanation is already sufficient, make the next stage or next state visible instead of circling deeper inside the same scope.
 
@@ -97,7 +106,7 @@ Required guidance:
 - use a short grouped block such as `What happens next`, `Next stage`, or `Next state` when forward movement is the useful next step
 - prefer progression over repeated deepening when the current state is already clear enough
 
-### 9) One-Block-One-Purpose Principle
+### 10) One-Block-One-Purpose Principle
 
 Each paragraph, list, table, or section should do one clear job.
 
@@ -106,7 +115,7 @@ Required guidance:
 - introduce lists and tables when framing helps readability
 - avoid mixing multiple unrelated purposes into one block
 
-### 10) Readability-Over-Decoration Principle
+### 11) Readability-Over-Decoration Principle
 
 Readable markdown structure matters more than ornamental formatting.
 

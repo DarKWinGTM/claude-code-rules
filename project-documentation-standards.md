@@ -24,7 +24,7 @@
 | `changelog/*.changelog.md` | Version traceability is required | Authoritative version history | `document-changelog-control` |
 | `TODO.md` | Work tracking is required | Track execution state | `todo-standards` |
 | `phase/SUMMARY.md` | Phased implementation work is required | Governed summary/index for live phase planning | `phase-implementation` |
-| `phase/phase-010-<phase-name>.md` and peers | Multi-phase execution detail is required | Child per-phase execution detail | `phase-implementation` |
+| `phase/phase-001-<phase-name>.md` and peers | Multi-phase execution detail is required | Child per-phase execution detail | `phase-implementation` |
 | `patches/*.patch.md` | Patch/review or transition artifact is required | Governed patch/review artifact outside the live phase workspace | `document-patch-control` |
 | `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
 | `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template for phased execution planning | Non-governed helper artifact |
@@ -56,7 +56,7 @@ For governance updates, apply in this order:
 
 - `phase-implementation.md` defines the semantic standard for phased execution planning
 - `phase/SUMMARY.md` is the governed summary/index for live phased execution
-- `phase/phase-010-<phase-name>.md` and peers are the governed per-phase execution files
+- `phase/phase-001-<phase-name>.md` and peers are the governed per-phase execution files
 - `patches/*.patch.md` is a governed patch/review artifact layer outside the live phase workspace
 - Namespaced workspaces may use role-based filenames such as `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies the stable unique context
 - Context-bearing filenames remain valid when the file must stay self-identifying outside its directory context, when multiple same-role files may coexist in one directory, or when search/review portability materially benefits from repeated context
@@ -74,7 +74,7 @@ Example boundary:
 - `phase-implementation.md` is the rule/standard and may synthesize relevant design/patch inputs into execution planning
 - `phase-implementation-template.md` is a reusable helper
 - `phase/SUMMARY.md` is the live governed summary/index for that project or change
-- `phase/phase-010-<name>.md` is the live governed child phase detail
+- `phase/phase-001-<name>.md` is the live governed child phase detail
 - `TODO.md` tracks current execution state derived from that structure
 - `patches/*.patch.md` stays separate from the live phase workspace and does not need to point back to phase
 - changelog records the synchronized or released result

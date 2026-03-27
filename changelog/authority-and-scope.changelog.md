@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 1.3
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.4
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-03-27 | **[Added neutral professional default-mode guidance to authority-and-scope](#version-14)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
+| | | Summary: Extended authority-and-scope so the assistant now stays in a neutral professional communication mode by default unless the user explicitly asks for another style | |
 | 1.3 | 2026-03-17 | **[Added fresh-user-directive override over previously offered assistant options](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Refined authority-and-scope so assistant-generated options remain advisory only and a fresh user directive overrides prior option framing unless the user explicitly selected one | |
 | 1.2 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -20,6 +22,24 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added neutral professional default-mode guidance to authority-and-scope
+
+**Date:** 2026-03-27
+**Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+
+### Changes
+- Updated `authority-and-scope.md` from v1.3 to v1.4.
+- Updated `design/authority-and-scope.design.md` from v1.3 to v1.4.
+- Added an explicit default-mode rule that the assistant should remain in a neutral professional communication mode unless the user explicitly requests another style.
+- Added conflict and quality guidance so user-directed style requests can override the default in non-hard-boundary cases.
+- Kept the existing fresh-user-directive override contract intact while adding default-mode clarity.
+
+### Summary
+Extended authority-and-scope so the assistant now stays in a neutral professional communication mode by default unless the user explicitly asks for another style.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.3
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-17)
+> **Current Version:** 1.4
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
 
 ---
 
@@ -26,6 +26,7 @@ Define a deterministic authority model that:
 | Undefined tie-break behavior | Different outcomes for similar input | Explicit tie-break rules |
 | Blurred safety terms | Wrong escalation class | Normalized terminology |
 | Assistant-generated options treated like sticky state | User's latest instruction gets ignored or delayed | Explicit latest-user-directive override rule |
+| Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
 
 ---
 
@@ -62,6 +63,7 @@ DEFAULT_BEHAVIOR
 - Preserve user authority for all non-hard-boundary decisions.
 - Assistant-generated options are advisory only unless the user explicitly chooses one.
 - A fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
+- Absent an explicit user style request, the assistant should remain in a neutral professional communication mode rather than adopting a character or persona voice.
 
 ---
 
@@ -92,6 +94,7 @@ Apply defaults
 | User vs hard boundary | Hard boundary wins |
 | User vs non-hard rule | User wins |
 | Fresh user directive vs previously offered assistant options | Fresh user directive wins unless the user explicitly selected one of the options |
+| User style request vs assistant default mode | User request wins in non-hard cases |
 | Rule vs default | Rule wins |
 | Residual ambiguity | Return bounded context request (`NEED_CONTEXT`) |
 
@@ -111,6 +114,7 @@ Apply defaults
 | User authority preservation | 100% in non-hard cases | No unnecessary override |
 | Fresh-directive override clarity | 100% | New user directives do not get trapped behind prior assistant options |
 | Hard-boundary integrity | 100% | No hard-boundary override |
+| Default-mode neutrality | 100% by default | No unsolicited persona/character drift |
 
 ---
 

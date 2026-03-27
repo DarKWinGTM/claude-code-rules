@@ -1,8 +1,8 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.5
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 1.6
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-03-27 | **[Added natural-flow formatting guidance to answer-presentation](#version-16)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
+| | | Summary: Extended answer-presentation so structure now supports natural professional communication without making small answers feel templated or stiff | |
 | 1.5 | 2026-03-17 | **[Added full-set-first and next-stage layout guidance to answer-presentation](#version-15)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 | | | Summary: Extended answer-presentation so responses can show the full relevant set before drilling down and can surface a clearer next-stage block when the current scope is already sufficiently explained | |
 | 1.4 | 2026-03-15 | **[Extended grouped presentation patterns for easier scope and product-truth explanations](#version-14)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
@@ -22,6 +24,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added natural-flow formatting guidance to answer-presentation
+
+**Date:** 2026-03-27
+**Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+
+### Changes
+- Updated `answer-presentation.md` from v1.5 to v1.6.
+- Updated `design/answer-presentation.design.md` from v1.5 to v1.6.
+- Added a natural-flow formatting principle so structure helps answers read like strong human responses rather than rigid templates.
+- Added trigger and anti-pattern guidance for reducing unnecessary structure when technically organized output still feels stiff or overbuilt.
+- Preserved the existing snapshot, grouped-boundary, full-set-first, and next-stage behaviors while tightening the flexibility boundary for simple answers.
+
+### Summary
+Extended answer-presentation so structure now supports natural professional communication without making small answers feel templated or stiff.
 
 ---
 

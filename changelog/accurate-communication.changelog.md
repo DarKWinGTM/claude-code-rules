@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 2.2
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.2 | 2026-03-27 | **[Added natural-professional wording calibration to accurate-communication](#version-22)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
+| | | Summary: Extended accurate-communication with natural-professional, anti-robotic, signal-over-ceremony wording guidance so technically correct answers also read more like calm human professional communication | |
 | 2.1 | 2026-03-17 | **[Added stage-progression and whole-set wording guidance to accurate-communication](#version-21)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 | | | Summary: Extended accurate-communication so answers can state when the next useful move is the next stage and can explain that the full relevant set should be shown before narrowing into a smaller slice | |
 | 2.0 | 2026-03-15 | **[Extended accurate-communication for easier reader-facing terminology glosses](#version-20)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
@@ -37,6 +39,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-22"></a>
+## Version 2.2: Added natural-professional wording calibration to accurate-communication
+
+**Date:** 2026-03-27
+**Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+
+### Changes
+- Updated `accurate-communication.md` from v2.1 to v2.2.
+- Updated `design/accurate-communication.design.md` from v2.1 to v2.2.
+- Added explicit natural-professional wording guidance so technically correct answers also avoid robotic, ceremonial, or over-produced phrasing.
+- Added direct guidance against exaggerated enthusiasm, fake empathy, and ritualized openings when they do not help the user.
+- Added new examples and anti-patterns for calm, human-readable professional wording.
+
+### Summary
+Extended accurate-communication with natural-professional, anti-robotic, signal-over-ceremony wording guidance so technically correct answers also read more like calm human professional communication.
 
 ---
 

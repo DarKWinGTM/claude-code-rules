@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 6.4
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 6.5
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
 
@@ -10,6 +10,13 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
+| | | - Created `design/natural-professional-communication.design.md`, `natural-professional-communication.md`, and `changelog/natural-professional-communication.changelog.md` as a new first-class communication-style doctrine chain | |
+| | | - Created `phase/SUMMARY.md` and `phase/phase-001-*` to `phase/phase-004-*` execution artifacts for the RULES development rollout of the new chain and related refinement wave | |
+| | | - Updated `accurate-communication` to v2.2, `explanation-quality` to v2.2, `answer-presentation` to v1.6, `authority-and-scope` to v1.4, and `anti-sycophancy` to v1.4 with calmer, more natural, non-robotic, non-character-driven professional communication guidance | |
+| | | - Updated `design/design.md` and `README.md` from 30 to 31 active runtime rules, corrected the canonical install set from the stale 29-rule wording, and normalized lingering `phase-010-*` README references to `phase-001-*` | |
+| | | - Updated `TODO.md` to record rollout completion and re-synchronized touched runtime rules into `~/.claude/rules/` with parity verification | |
+| | | Summary: Added one explicit semantic authority for natural professional communication and aligned the wording, explanation, presentation, authority, and disagreement chains so the system now defaults to calmer, more human-readable, non-robotic professional communication | |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | - Updated `phase-implementation` design/runtime/changelog to v2.2 with zero-padded contiguous child-phase numbering (`001/002/003`) instead of sparse `010/020/030` | |
 | | | - Updated `phase-implementation-template.md` examples and helper guidance to the new numbering scheme | |
@@ -234,6 +241,29 @@
 ---
 
 <a id="version-64"></a>
+## Version 6.5: Created natural-professional-communication rule chain and synchronized communication-owner refinements
+
+**Date:** 2026-03-27
+**Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+
+### Changes
+- Created `design/natural-professional-communication.design.md`, `natural-professional-communication.md`, and `changelog/natural-professional-communication.changelog.md` as a first-class communication-style doctrine chain.
+- Created governed phase rollout artifacts in `phase/SUMMARY.md` plus `phase/phase-001-create-natural-professional-rule.md` through `phase/phase-004-sync-master-docs-install-and-verify.md`.
+- Updated `accurate-communication` from v2.1 to v2.2 with natural-professional, anti-robotic, signal-over-ceremony wording guidance.
+- Updated `explanation-quality` from v2.1 to v2.2 with good-operator explanation and stop-before-overexplaining guidance.
+- Updated `answer-presentation` from v1.5 to v1.6 with natural-flow formatting guidance that reduces stiff template feel.
+- Updated `authority-and-scope` from v1.3 to v1.4 so the assistant now stays in a neutral professional communication mode by default unless the user explicitly requests another style.
+- Updated `anti-sycophancy` from v1.3 to v1.4 so disagreement avoids praise-heavy softening and unnecessary rhetorical sharpness.
+- Updated `design/design.md` and `README.md` from 30 to 31 active runtime rules.
+- Corrected stale README install wording from 29 active runtime rules to the current active set and normalized lingering `phase-010-*` examples to `phase-001-*`.
+- Updated `TODO.md` to record rollout completion and history.
+- Re-synchronized touched runtime rules into `~/.claude/rules/` and verified source/install parity for all touched files.
+
+### Summary
+Added one explicit semantic authority for natural professional communication and aligned the wording, explanation, presentation, authority, and disagreement chains so the system now defaults to calmer, more human-readable, non-robotic professional communication.
+
+---
+
 ## Version 6.4: Changed default phase numbering to 001/002/003 across phase-implementation governance
 
 **Date:** 2026-03-17

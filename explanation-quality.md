@@ -1,8 +1,8 @@
 # Explanation Quality
 
-> **Current Version:** 2.1
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 2.2
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.2
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
 ---
@@ -76,7 +76,17 @@ Additional guidance:
 - use patch-by-patch framing when multiple edits or phases would otherwise blur together
 - use analogy sparingly and return to the literal technical explanation after the analogy has done its job
 
-### 6) Diagnostic Snapshot Requirement
+### 6) Good-Operator Explanation Principle
+
+The explanation should feel like it came from a strong professional collaborator, not from a scripted narrator.
+
+Required behavior:
+- prefer practical explanatory flow over performance language
+- keep transitions short and functional
+- use plain language without sounding patronizing or over-simplified
+- explain enough for action, not enough to display intelligence for its own sake
+
+### 7) Diagnostic Snapshot Requirement
 
 When reporting implementation progress, troubleshooting state, or verification status, include a compact diagnostic snapshot before deep explanation.
 
@@ -86,7 +96,7 @@ Required behavior:
 - show the immediate next decision or action
 - keep the snapshot concise and scoped to material evidence
 
-### 7) Scope-Clarification Patterns
+### 8) Scope-Clarification Patterns
 
 When the user may confuse current scope with future scope, internal implementation with user-facing meaning, or the active plan with deferred work, make those boundaries explicit.
 
@@ -96,7 +106,7 @@ Required behavior:
 - include what the user will actually notice when product or workflow changes are being explained
 - translate internal terms into plain human-language phrasing when that materially improves understanding
 
-### 8) Stage/State Progression Pattern
+### 9) Stage/State Progression Pattern
 
 When the current stage is already sufficiently explained, prefer the next meaningful stage, state, milestone, or decision boundary instead of continuing to deepen the same scope by default.
 
@@ -105,7 +115,7 @@ Required behavior:
 - distinguish between `clarify more` and `progress next` rather than treating deeper elaboration as the default continuation
 - prefer the next meaningful stage when more depth in the current stage would add little new value
 
-### 9) Whole-Set Framing Pattern
+### 10) Whole-Set Framing Pattern
 
 When the checked scope shows that the user should reason about a larger complete set, present that full set before narrowing into sub-items.
 
@@ -114,14 +124,14 @@ Required behavior:
 - avoid defaulting to only 2-3 items when the response should establish a larger whole first
 - use narrowing only after the whole set is visible or when the user explicitly asked for incremental slicing
 
-### 10) Flow-Diagram Trigger
+### 11) Flow-Diagram Trigger
 
 Use a small text flow diagram when sequence, branching, or handoff order is central and prose alone would make the explanation harder to follow.
 
 This rule defers diagram formatting constraints to `flow-diagram-no-frame.md`.
 Do not use framed or boxed diagrams.
 
-### 11) Comparison-Table Trigger
+### 12) Comparison-Table Trigger
 
 Use a comparison table when:
 - two or more realistic options are being evaluated
@@ -130,7 +140,7 @@ Use a comparison table when:
 
 Do not force a table when only one realistic path exists.
 
-### 12) Negative Triggers and Flexibility Boundary
+### 13) Negative Triggers and Flexibility Boundary
 
 This rule is structure guidance, not a mandatory long-form template.
 
@@ -147,8 +157,9 @@ Allowed simplifications:
 - if no meaningful alternatives exist, skip comparison tables
 - if one small example is enough, stop there
 - if one concise final synthesis is enough, do not restate the conclusion in multiple phrasings
+- if the decision surface is already clear, do not keep explaining just to make the answer feel richer
 
-### 13) Closing Contract
+### 14) Closing Contract
 
 Analytical and technical answers should land clearly.
 
@@ -170,7 +181,7 @@ Next-step guidance rules:
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items
 
-### 14) Short Recap Pattern
+### 14.1) Short Recap Pattern
 
 When an explanation is long, layered, or has multiple scope boundaries, a second-pass short recap is encouraged.
 
@@ -390,6 +401,8 @@ Short recap:
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
 | long repeated conclusion at the end | adds length without helping the decision | synthesize the conclusion once and move on |
+| explanation sounds scripted or over-signposted | reduces naturalness and trust | keep transitions functional and explanation colleague-like |
+| explanation keeps going after the decision is already clear | feels over-produced | stop, synthesize, or move forward |
 
 ---
 

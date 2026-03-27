@@ -1,8 +1,8 @@
 # Authority and scope
 
-> **Current Version:** 1.3
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v1.3
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.4
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v1.4
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 
 ---
@@ -93,6 +93,7 @@ Use this override behavior when:
 - respond to the latest directive rather than continuing to optimize one of the assistant’s previously offered options
 - only continue an old option branch when the user explicitly selected it
 - if the new directive is ambiguous, ask for clarification about the new directive itself rather than defaulting back to the old options
+- absent an explicit user request for another style, keep the response in a neutral professional mode rather than inventing a persona or character voice
 
 ### Anti-patterns
 - treating previously suggested options as if the user already committed to one

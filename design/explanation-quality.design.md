@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12 (2026-03-17)
+> **Current Version:** 2.2
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
 
 ---
 
@@ -21,6 +21,7 @@ The target behavior is a layered natural explanation style:
 - whole-set framing when the user benefits from seeing the full actionable set before drilling down
 - a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
 - concise, high-signal ending with a real next move only when one genuinely exists
+- explanation that sounds like a capable professional colleague rather than a scripted narrator or over-produced tutor
 
 ---
 
@@ -38,6 +39,8 @@ Observed failure modes:
 - endings repeat prior detail instead of synthesizing the real conclusion
 - responses stop after explanation without making the next action or completion state clear
 - progress or troubleshooting updates bury current state and checked scope inside long narrative blocks
+- explanation is structurally correct but still sounds scripted, over-signposted, or more performative than useful
+- over-explaining continues after the user already has enough context to decide or proceed
 
 This design addresses explanation shape while preserving existing verification and accuracy requirements.
 
@@ -111,7 +114,17 @@ Required guidance:
 - prefer phrasing such as `พูดง่าย ๆ`, `ถ้าพูดแบบภาษาคน`, or the English equivalent when the explanation benefits from a direct human-language gloss
 - use the paraphrase to clarify the term, not to replace the underlying technical truth
 
-### 4.4 Diagnostic Snapshot First for Status-Heavy Updates
+### 4.4 Good-Operator Explanation Principle
+
+The explanation should feel like it came from a strong professional operator or collaborator, not from a scripted narrator.
+
+Required guidance:
+- prefer practical explanatory flow over performance language
+- keep transitions short and functional
+- use plain language without sounding patronizing or over-simplified
+- explain enough for action, not enough to display intelligence for its own sake
+
+### 4.5 Diagnostic Snapshot First for Status-Heavy Updates
 
 When the response is a troubleshooting, implementation-progress, or verification-state update, place a compact diagnostic snapshot before deep reasoning.
 
@@ -154,6 +167,15 @@ Required guidance:
 - when the answer is about a change, explain what changed before discussing its side effects
 
 The goal is not verbosity. The goal is cohesion.
+
+### 6.1 Stop-Before-Overexplaining Boundary
+
+When the user already has enough context to understand the issue or make the next decision, the explanation should stop before it becomes stiff, repetitive, or over-produced.
+
+Required guidance:
+- do not keep deepening the same point once the practical decision surface is already clear
+- prefer progression, synthesis, or closure over extra explanatory ornament
+- avoid explanation that feels like a lecture when a colleague-style explanation is enough
 
 ---
 

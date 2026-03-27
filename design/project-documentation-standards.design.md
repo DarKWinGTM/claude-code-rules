@@ -15,7 +15,7 @@ Provide one deterministic, low-confusion repository model across README, runtime
 This model must preserve one authority system while clearly separating:
 - `phase-implementation.md` as the first-class rule for phase semantics
 - `phase/SUMMARY.md` as the governed summary/index for the active phase plan
-- `phase/phase-010-<phase-name>.md` and peers as the governed child phase-detail layer
+- `phase/phase-001-<phase-name>.md` and peers as the governed child phase-detail layer
 - `patches/*.patch.md` as patch-governance artifacts outside the live phase workspace
 - `phase-implementation-template.md` as the readable root-level helper
 - `TODO.md` and changelog as required companions, but not as replacements for the phase plan itself
@@ -67,7 +67,7 @@ It is the required top-level control surface when phased planning is used.
 
 ### 3.7 Child Phase-File Role
 
-`phase/phase-010-<phase-name>.md` and peers are the governed child per-phase execution files.
+`phase/phase-001-<phase-name>.md` and peers are the governed child per-phase execution files.
 Each child file owns the execution detail for one phase while staying subordinate to `SUMMARY.md`.
 
 ### 3.8 Patch Role
@@ -129,7 +129,7 @@ Other reference-only artifacts should live outside ambiguous governed `.design.m
 | `changelog/*.changelog.md` | Chain history needed | Authoritative version history | Governed authority layer |
 | `TODO.md` | Work tracking needed | Execution tracking | Execution layer |
 | `phase/SUMMARY.md` | Phased execution planning is required | Governed summary/index for live phase planning | Governed phase summary layer |
-| `phase/phase-010-<phase-name>.md` and peers | Multi-phase execution detail exists | Child per-phase execution detail | Governed phase-detail layer |
+| `phase/phase-001-<phase-name>.md` and peers | Multi-phase execution detail exists | Child per-phase execution detail | Governed phase-detail layer |
 | `patches/*.patch.md` | Patch/review or transition artifact is required | Governed patch/review artifact outside the live phase workspace | Governed patch layer |
 | `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
 | `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template | Non-governed helper artifact |
@@ -165,7 +165,7 @@ Other reference-only artifacts should live outside ambiguous governed `.design.m
 Required boundary rules:
 - `phase-implementation.md` is the rule/standard for phase semantics
 - `phase/SUMMARY.md` is the governed summary/index for live phased execution
-- `phase/phase-010-<phase-name>.md` and peers are the governed child phase-detail files
+- `phase/phase-001-<phase-name>.md` and peers are the governed child phase-detail files
 - `patches/*.patch.md` is outside the live phase-plan namespace
 - `phase-implementation-template.md` is the readable root helper for authoring
 - phase may synthesize design and patch inputs as one-way source inputs into live execution planning when relevant
@@ -178,7 +178,7 @@ Example boundary:
 - `phase-implementation.md` defines what a valid phase should contain and may synthesize relevant design/patch inputs into execution planning
 - `phase-implementation-template.md` offers a readable reusable structure
 - `phase/SUMMARY.md` becomes the real governed summary/index for that project
-- `phase/phase-010-<name>.md` becomes the child execution detail for a specific phase
+- `phase/phase-001-<name>.md` becomes the child execution detail for a specific phase
 - `TODO.md` tracks active execution state derived from that structure
 - `patches/*.patch.md` remains separate from the live phase workspace and does not need to point back to phase
 - `changelog/*.changelog.md` records the resulting synchronized or released changes

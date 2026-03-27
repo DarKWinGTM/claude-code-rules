@@ -370,7 +370,7 @@ This rule is the semantic authority for phase-planning behavior.
 
 When a project needs an authoritative phased execution plan, the governed instance belongs in:
 - `phase/SUMMARY.md` as the summary/index file
-- `phase/phase-010-<phase-name>.md` and peers as child per-phase files
+- `phase/phase-001-<phase-name>.md` and peers as child per-phase files
 
 ### 3) Helper guidance lives in the root template
 
@@ -473,7 +473,7 @@ It validates the quality of the phased execution plan itself.
 ```text
 phase/
   SUMMARY.md
-  phase-010-create-rule.md
+  phase-001-create-rule.md
   phase-020-realign-docs.md
   phase-030-verify-rollout.md
 ```
@@ -485,7 +485,7 @@ phase/
 
 | Phase | Status | File | Objective | Depends On |
 |------|--------|------|-----------|------------|
-| P1 | Completed | `phase/phase-010-<name>.md` | <objective> | none |
+| P1 | Completed | `phase/phase-001-<name>.md` | <objective> | none |
 | P2 | In Progress | `phase/phase-020-<name>.md` | <objective> | P1 |
 ```
 

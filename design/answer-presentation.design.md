@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.5
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12 (2026-03-17)
+> **Current Version:** 1.6
+> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
 
 ---
 
@@ -40,8 +40,10 @@ Observed failure modes:
 - answers contain the right reasoning but remain hard to scan quickly
 - layout becomes decorative instead of functional
 - simple answers are over-structured while complex answers remain under-structured
+- formatting is technically organized but still feels stiff, overbuilt, or obviously templated
 
 This design defines presentation-layer guidance that improves readability and scanability while staying compatible with existing explanation and communication rules.
+It should support natural professional communication by making structure useful without making answers feel templated or stiff.
 
 ---
 
@@ -66,7 +68,16 @@ Required guidance:
 - procedures should use sequence-oriented layouts
 - technical status notes should use compact snapshot-oriented layouts
 
-### 3.3 Scannability-Over-Density Principle
+### 3.3 Natural-Flow Formatting Principle
+
+Structure should help the answer read like a strong human response, not like a rigid template.
+
+Required guidance:
+- use structure only when it helps the reader understand faster
+- keep simple answers compact rather than forcing section blocks
+- prefer prose continuity when one idea reads better as a short human paragraph than as fragmented bullets
+
+### 3.4 Scannability-Over-Density Principle
 
 When answers become longer or more complex, scanability should improve rather than degrade.
 
@@ -75,7 +86,7 @@ Required guidance:
 - use whitespace to separate conceptual blocks
 - avoid dense uninterrupted text when structure would improve reading speed
 
-### 3.4 Semantic Formatting Principle
+### 3.5 Semantic Formatting Principle
 
 Formatting should communicate meaning, not decoration.
 
@@ -86,7 +97,7 @@ Required guidance:
 - use diagrams only when sequence or branching is central
 - ensure headings are short, functional, and content-representative
 
-### 3.5 Diagnostic Snapshot Principle
+### 3.6 Diagnostic Snapshot Principle
 
 When reporting technical status, present the snapshot as a compact structured note rather than as a raw dump.
 
@@ -97,7 +108,7 @@ Required guidance:
 - keep snapshot tables narrow, scoped, and fact-oriented
 - do not let the table replace the explanation or implication
 
-### 3.6 One-Block-One-Purpose Principle
+### 3.7 One-Block-One-Purpose Principle
 
 Each paragraph, list, table, or section should have a clear job.
 
@@ -106,7 +117,7 @@ Required guidance:
 - introduce lists and tables with a short context-setting line when needed
 - do not mix multiple unrelated purposes into one section
 
-### 3.7 Readability-Over-Decoration Principle
+### 3.8 Readability-Over-Decoration Principle
 
 Readable structure matters more than visual flourish.
 
@@ -133,6 +144,7 @@ Use stronger presentation structure when one or more of these triggers are prese
 | full-set framing | many relevant areas, complete checklist, multiple review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | one short progression block such as `What happens next` or `Next stage` |
 | long/complex answer | many concepts, many dependencies, high cognitive load | headings, grouped blocks, whitespace, concise summary |
+| rigid template feel | answer is technically structured but does not read naturally | reduce unnecessary headings/blocks and restore a more human flow |
 
 This model should guide structure without turning every answer into a forced template.
 
@@ -281,6 +293,7 @@ When using a list or table:
 | oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
 | table-only technical note with no implication | facts are visible but the reader cannot tell what they mean | add one short implication or next-action line |
 | over-structuring simple answers | makes a small answer feel heavy | keep simple cases compact |
+| structure feels templated rather than useful | reader notices the format more than the content | use only the smallest structure that improves scanability |
 | inconsistent emphasis or heading style | weakens visual order | maintain consistent markdown hierarchy |
 
 ---
