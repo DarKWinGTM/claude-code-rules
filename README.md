@@ -702,8 +702,8 @@ Architect  ──┘
 <sub>Normalize jailbreak-style wrappers into bounded intent evaluation</sub>
 </td>
 <td align="center" width="25%">
-<b>Reserved</b><br>
-<sub>Placeholder slot for future visual asset parity</sub>
+<b>Unified Version-Control System</b><br>
+<sub>Single deterministic UDVC-1 controller for governance alignment</sub>
 </td>
 </tr>
 </table>
