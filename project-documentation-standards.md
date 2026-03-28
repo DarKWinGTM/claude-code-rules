@@ -1,15 +1,15 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.5
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.5
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+> **Current Version:** 2.9
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.9
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
 ---
 
 ## Rule Statement
 
-**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase` planning artifacts, `/patches` artifacts, and non-governed helper/support artifacts.**
+**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase` planning artifacts, `/patch` artifacts, and non-governed helper/support artifacts, and resolve required startup artifact posture before meaningful governed work drifts.**
 
 ---
 
@@ -24,8 +24,8 @@
 | `changelog/*.changelog.md` | Version traceability is required | Authoritative version history | `document-changelog-control` |
 | `TODO.md` | Work tracking is required | Track execution state | `todo-standards` |
 | `phase/SUMMARY.md` | Phased implementation work is required | Governed summary/index for live phase planning | `phase-implementation` |
-| `phase/phase-001-<phase-name>.md` and peers | Multi-phase execution detail is required | Child per-phase execution detail | `phase-implementation` |
-| `patches/*.patch.md` | Patch/review or transition artifact is required | Governed patch/review artifact outside the live phase workspace | `document-patch-control` |
+| `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail is required | Major/subphase execution detail | `phase-implementation` |
+| `patch/<context>.patch.md` or root `<context>.patch.md` | Patch/review artifact is required | Governed patch/review artifact outside the live phase workspace | `document-patch-control` |
 | `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
 | `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template for phased execution planning | Non-governed helper artifact |
 | `support/**/*.md` or equivalent support path | Additional reference-only content is needed | Support/reference artifacts | Non-governed support layer |
@@ -52,14 +52,13 @@ For governance updates, apply in this order:
 - Active metadata must use real session identifiers
 - Placeholder session values are not allowed in active metadata
 
-### 3) Role Boundary for Phase Rule, `/phase`, `/patches`, and Helper Templates
+### 3) Role Boundary for Phase Rule, `/phase`, `/patch`, and Helper Templates
 
 - `phase-implementation.md` defines the semantic standard for phased execution planning
 - `phase/SUMMARY.md` is the governed summary/index for live phased execution
-- `phase/phase-001-<phase-name>.md` and peers are the governed per-phase execution files
-- `patches/*.patch.md` is a governed patch/review artifact layer outside the live phase workspace
-- Namespaced workspaces may use role-based filenames such as `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies the stable unique context
-- Context-bearing filenames remain valid when the file must stay self-identifying outside its directory context, when multiple same-role files may coexist in one directory, or when search/review portability materially benefits from repeated context
+- `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` are the governed per-phase execution files
+- `patch/<context>.patch.md` or root `<context>.patch.md` is a governed patch/review artifact layer outside the live phase workspace
+- Patch artifacts are self-identifying before/after change artifacts; they are not prose-only recaps or live phase summaries
 - The canonical readable helper for this repository lives at root as `phase-implementation-template.md`
 - Root-level helper templates are not governed chains and do not require their own rule/design/changelog triad
 - Additional support materials may still live in `support/`
@@ -67,64 +66,60 @@ For governance updates, apply in this order:
 - design and patch artifacts are not required to point back to phase
 - TODO tracks actionable work only; it does not become the primary place for phase definitions
 - Changelog records shipped or synchronized changes only; it does not become the primary place for phase definitions
-- Live phased execution must not be stored under `/patches`
+- Live phased execution must not be stored under patch artifacts
 - `SUMMARY.md` should explicitly show how child phase files, TODO work, and changelog impact relate when that coordination matters
 
-Example boundary:
-- `phase-implementation.md` is the rule/standard and may synthesize relevant design/patch inputs into execution planning
-- `phase-implementation-template.md` is a reusable helper
-- `phase/SUMMARY.md` is the live governed summary/index for that project or change
-- `phase/phase-001-<name>.md` is the live governed child phase detail
-- `TODO.md` tracks current execution state derived from that structure
-- `patches/*.patch.md` stays separate from the live phase workspace and does not need to point back to phase
-- changelog records the synchronized or released result
+### 4) Startup Artifact Gate
 
-### 4) Decision Model for Document Creation
+Before meaningful governed work continues, startup artifact posture must be resolved through `artifact-initiation-control`.
+
+That means each relevant startup artifact must be explicitly resolved as one of:
+- use existing
+- create now
+- ask now
+- not required
+
+This startup gate happens before substantial drift.
+It is separate from the later synchronization order in section 2.2.
+
+### 5) Decision Model for Document Creation
 
 ```text
-Project start
+Meaningful governed work begins
   ↓
-Create README
+Resolve startup artifact posture through artifact-initiation-control
   ↓
 Need design specification?
-  → YES: create design doc(s)
+  → YES: use existing / create now / ask now
   ↓
 Need version traceability?
-  → YES: create changelog doc(s)
+  → YES: use existing / create now / ask now
   ↓
 Need tracked execution items?
-  → YES: create TODO.md
+  → YES: use existing / create now / ask now
   ↓
 Need phased implementation planning?
-  → YES: create `phase/SUMMARY.md`
-  ↓
-Does the governed plan have multiple live phases?
-  → YES: create child phase files under `phase/`
+  → YES: establish `phase/SUMMARY.md` and child phase files now or ask now
   ↓
 Need patch/review artifacts separate from the live phase workspace?
-  → YES: create a governed patch artifact
-        - use `patches/<context>.patch.md` when filename context must travel with the file
-        - use `<namespace>/patch.md` when the parent workspace already acts as the namespace
+  → YES: use existing / create now / ask now
+        - use `patch/<context>.patch.md` as the default shared patch path
+        - use root `<context>.patch.md` when direct top-level placement is clearer
   ↓
-Need standardized phase semantics?
-  → YES: use `phase-implementation.md`
-  ↓
-Need the reusable root-level phase helper?
-  → YES: use `phase-implementation-template.md`
-  ↓
-Need additional support/reference-only material?
-  → YES: create support artifact outside governed design semantics
+After startup posture is resolved
+  → continue with substantive planning / implementation
 ```
 
-### 5) Cross-Document Alignment Requirements
+### 6) Cross-Document Alignment Requirements
 
 - Required document set must match project scope
 - Full-history and parent-document links must resolve
 - Active metadata across governed docs must not contain placeholder sessions
 - `phase/SUMMARY.md` remains the governed summary/index when staged execution planning is needed
 - Child phase files remain the governed execution detail layer for multi-phase work
-- `patches/*.patch.md` remains outside the live phase namespace
+- Patch artifacts remain outside the live phase namespace
 - `phase-implementation.md` remains the semantic authority for phased execution behavior
+- `artifact-initiation-control.md` remains the startup artifact-resolution owner
 - Root-level helper artifacts and support artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
 
 ---
@@ -136,12 +131,12 @@ Need additional support/reference-only material?
 - [ ] Version references align across chain metadata
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
-- [ ] TODO follows simplified standard mode
+- [ ] Meaningful governed work resolves startup artifact posture before drift
 - [ ] `phase-implementation.md` is used as the semantic phase rule when applicable
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Multi-phase work uses child phase files under `phase/`
-- [ ] Namespaced workspaces may use role-based filenames when the parent path already supplies stable context
-- [ ] Redundant path + filename repetition is avoided unless it has a clear portability, coexistence, or search benefit
+- [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md`
+- [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] `phase-implementation-template.md` remains a non-governed helper artifact
 
 ---
@@ -158,7 +153,8 @@ Need additional support/reference-only material?
 | `SUMMARY.md` role clarity | 100% |
 | Child-phase-file role clarity | 100% |
 | Patch-role separation clarity | 100% |
-| Namespaced-workspace naming clarity | 100% |
+| Patch placement clarity | 100% |
+| Startup artifact posture resolved before drift | 100% |
 | Root-helper placement clarity | 100% |
 | TODO simplification compliance | 100% |
 
@@ -168,11 +164,12 @@ Need additional support/reference-only material?
 
 | Rule | Relationship |
 |------|-------------|
+| [artifact-initiation-control.md](artifact-initiation-control.md) v1.0 | Startup artifact-resolution owner |
 | [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
 | [document-design-control.md](document-design-control.md) v1.8 | Design structure standards |
-| [document-patch-control.md](document-patch-control.md) v2.1 | Patch-governance boundary and concrete change-representation contract outside live phase planning |
-| [phase-implementation.md](phase-implementation.md) v2.1 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
-| [todo-standards.md](todo-standards.md) v2.2 | TODO structure standards |
+| [document-patch-control.md](document-patch-control.md) v2.4 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
+| [phase-implementation.md](phase-implementation.md) v2.5 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
+| [todo-standards.md](todo-standards.md) v2.3 | TODO structure standards plus startup-establishment bridge |
 
 ---
 

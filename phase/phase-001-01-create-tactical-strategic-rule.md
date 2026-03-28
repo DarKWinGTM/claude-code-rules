@@ -1,7 +1,7 @@
-# Phase 001 - Create Tactical Strategic Rule
+# Phase 001-01 - Create Tactical Strategic Rule
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
-> **Phase ID:** P1
+> **Phase ID:** 001-01
 > **Status:** Completed
 > **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 > **Design References:** [../design/tactical-strategic-programming.design.md](../design/tactical-strategic-programming.design.md)

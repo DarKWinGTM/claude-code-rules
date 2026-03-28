@@ -2,126 +2,129 @@
 
 ## 0) Document Control
 
-> **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.1
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Parent Scope:** RULES System Design
+> **Current Version:** 1.2
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
 
 ---
 
-## 1. Overview
+## 1) Goal
 
-### 1.1 Purpose
+Prevent unnecessary junk files, duplicate authorities, and version-suffixed file drift, while explicitly allowing required governed startup artifacts when startup governance determines they must exist now.
 
-Set the Strict File Hygiene policy to:
+---
 
-- Prevents the creation of unnecessary junk files.
-- Reduce file duplication (duplicate files)
-- Maintain cleanliness of project structure
-- Let the AI ​​create files only when needed or ordered.
-
-### 1.2 Problem Statement
+## 2) Problem Statement
 
 | Issue | Impact | Solution |
 |-------|--------|----------|
-| Duplicate versions | Confused about which file is the most recent | Edit existing file |
-| Unrequested docs | Overgrown project, not used | Ask before create |
-| Junk files | Wastes space, difficult to manage | Only functional files |
-| Suffix versions | Git history is not used | Use Git for history |
-
-### 1.3 Solution
-
-Create a Hygiene Framework that:
-
-1. Force Edit instead of Create if the file already exists.
-2. Do not create version suffixes (v1, v2, final).
-3. Must receive clear instructions for non-functional files
-4. Use Git to manage version history.
+| duplicate versions | confusion about which file is authoritative | edit existing authority file |
+| unrequested junk docs | overgrown project and noise | do not create non-required summaries |
+| startup governance blocked by hygiene | meaningful governed work drifts without structure | allow governed startup artifacts when required |
+| suffix versions | Git history is bypassed | keep standard filenames |
 
 ---
 
-## 2. Core Principles
+## 3) Core Contract
 
-### 2.1 Allowed vs Not Allowed
+### 3.1 Existing Authority First
+If the correct authority file already exists, edit it instead of creating a duplicate.
 
-**Allowed:**
-- Functional code/config required for system operation
-- Documents explicitly requested by user
-- Temporary files in `/tmp` (should clean up when done)
+### 3.2 No-Junk-Artifact Rule
+Do not create speculative summaries, checkpoint files, duplicate plans, or version-suffixed copies.
 
-**Not Allowed:**
-- Versioned copies such as `file-v2`, `_final`, `plan-2026`
-- Checkpoint/summary/plan files not requested by user
-- Proactive docs (README/PLAN/TODO) without asking
-- "Work summary/Change summary" files not requested
+### 3.3 Ask-When-Unclear Rule
+If artifact necessity is unclear, ask instead of creating speculative documentation.
 
-### 2.2 Operational Rules
+### 3.4 Governed-Startup Exception
+Required governed startup artifacts resolved through `artifact-initiation-control` are allowed and are not treated as junk files.
 
-1. **Existing file first**: If file exists, edit it only
-2. **Ask when unclear**: If document necessity is unclear, always ask first
-3. **Exception handling**: If new file is necessary, state brief reason before creating
+This exception applies to required startup instances of:
+- design
+- changelog
+- TODO
+- phase
+- patch
 
----
+It does not authorize arbitrary summary docs or duplicate artifacts.
 
-## 3. Implementation
-
-### 3.1 Decision Flow
-
-```
-AI wants to create a file
-  ↓
-Does file already exist?
-  → YES: Edit the existing file
-  → NO: Continue
-  ↓
-Is it a functional file (code/config)?
-  → YES: Create allowed
-  → NO: Continue
-  ↓
-Did user explicitly ask for it?
-  → YES: Create allowed
-  → NO: DO NOT CREATE
-```
-
-### 3.2 Naming Conventions
-
-**Prohibited Suffixes:**
-- `-v1`, `-v2`, etc.
+### 3.5 Naming Hygiene Rule
+Do not create versioned filenames such as:
+- `-v1`, `-v2`
 - `_final`, `_draft`
 - `_backup`, `_old`
-- `.bak` (unless specifically requested for safety)
-
-**Correct Approach:**
-- Use the standard filename (e.g., `script.py`)
-- Rely on Git for versioning and backups
+- `.bak` unless explicitly requested for safety
 
 ---
 
-## 4. Quality Metrics
+## 4) Allowed vs Not Allowed
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Duplicate Files | 0% | No versioned copies |
-| Unrequested Docs | 0% | Only requested docs |
-| File Relevance | 100% | All files serve purpose |
-| Git Usage | Default | For history/versioning |
+### Allowed
+- functional code/config required for system operation
+- documents explicitly requested by the user
+- required governed startup artifacts resolved through `artifact-initiation-control`
+- temporary files in `/tmp` when intentionally short-lived
+
+### Not Allowed
+- versioned copies such as `file-v2`, `_final`, `_draft`, `_backup`, `_old`
+- checkpoint/summary/plan files not requested and not required by startup governance
+- work-summary/change-summary files that are neither requested nor required
+- duplicate authority artifacts when an existing file already serves the role
 
 ---
 
-## 5. Integration
+## 5) Decision Flow
 
-### 5.1 Related Rules
+```text
+AI wants to create a file
+  ↓
+Does the correct authority file already exist?
+  → YES: edit the existing file
+  → NO: continue
+  ↓
+Is it functional code/config?
+  → YES: create allowed
+  → NO: continue
+  ↓
+Is it a governed startup artifact required now by artifact-initiation-control?
+  → YES: create allowed
+  → NO: continue
+  ↓
+Did the user explicitly ask for it?
+  → YES: create allowed
+  → NO: do not create
+```
+
+---
+
+## 6) Verification Checklist
+
+- [ ] Existing authority files are reused instead of duplicated
+- [ ] No junk summary/checkpoint/version-copy files are introduced
+- [ ] Required governed startup artifacts are not blocked by hygiene
+- [ ] Ambiguous artifact need is handled by asking, not by drifting
+
+---
+
+## 7) Quality Metrics
+
+| Metric | Target |
+|--------|--------|
+| Duplicate files | 0% |
+| Unrequested junk docs | 0% |
+| File relevance | 100% |
+| Governed startup artifact false blocks | 0 critical cases |
+
+---
+
+## 8) Integration
 
 | Rule | Relationship |
 |------|-------------|
-| document-consistency | Reduce duplicates, consistent naming |
-| no-variable-guessing | Don't guess file requirements |
-| authority-and-scope | Follow user commands |
-
-### 5.2 Conflict Resolution
-
-If user asks to create a file that violates hygiene (e.g., "create version 2"):
-- **Follow User Authority**: User command overrides hygiene rule.
-- **Suggestion**: Can politely suggest using Git, but must obey command.
+| [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup artifact posture owner |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository document-role model |
+| [no-variable-guessing.design.md](no-variable-guessing.design.md) | Do not guess required file identities |
+| [authority-and-scope.design.md](authority-and-scope.design.md) | User authority remains decisive |
 
 ---
 

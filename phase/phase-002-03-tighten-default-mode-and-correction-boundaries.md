@@ -1,7 +1,7 @@
-# Phase 003 - Tighten Default Mode and Correction Boundaries
+# Phase 002-03 - Tighten Default Mode and Correction Boundaries
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
-> **Phase ID:** P3
+> **Phase ID:** 002-03
 > **Status:** Completed
 > **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 > **Design References:** [../design/natural-professional-communication.design.md](../design/natural-professional-communication.design.md)

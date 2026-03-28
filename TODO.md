@@ -1,17 +1,20 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-03-27
+> **Last Updated:** 2026-03-28
 
 ---
 
 ## ✅ Completed
+
+- [x] Create first-class `artifact-initiation-control` rule chain, patch startup-governance owners (`project-documentation-standards`, `phase-implementation`, `todo-standards`, `strict-file-hygiene`), open `phase-004` from the start, and synchronize master docs/history.
+- [x] Normalize `todo-standards` into a fully tracked governed chain with runtime body + dedicated changelog authority as part of the startup-governance rollout.
 
 - [x] UDVC-1 design/runtime/changelog synchronization baseline applied across governance chains.
 - [x] Changelog-layer metadata normalization completed (mandatory headers + active-session integrity).
 - [x] WS-1 to WS-6 hardening execution slices completed and synchronized in master governance docs.
 - [x] Authorized adversarial workflow rule suite completed (`refusal-minimization`, `refusal-classification`, `recovery-contract`, `dan-safe-normalization`).
 - [x] Core documentation-control standards implemented and maintained (`document-changelog-control`, `document-design-control`, `document-patch-control`, `project-documentation-standards`, `todo-standards`).
-- [x] Align patch documents to UDVC-1 metadata contract (`patches/consistency-rule-enhancement.patch.md`, `patches/legacy-rules-migration.patch.md`).
+- [x] Align patch documents to UDVC-1 metadata contract (`patch/consistency-rule-enhancement.patch.md`, `patch/legacy-rules-migration.patch.md`).
 - [x] Run final consistency audit across design/rule/changelog/TODO/patch layers (triad, links, anchors, sessions, TODO compliance).
 - [x] Create runtime `unified-version-control-system.md` and align related governance references after design/changelog-first rollout.
 - [x] Create runtime `explanation-quality.md` and align master rule inventory after design/changelog-first rollout.
@@ -44,6 +47,7 @@
 - [x] Refine latest-user-directive override behavior so fresh user instructions supersede previously offered assistant options, then synchronize governance docs and installed runtime rules.
 - [x] Create first-class `tactical-strategic-programming` rule chain with governed design/runtime/changelog artifacts, phase-backed RULES execution records, master-doc synchronization, and installed runtime copy.
 - [x] Change default phase numbering in `phase-implementation` and its helper/template from `010/020/030` to `001/002/003`, then synchronize governance docs and installed runtime rules.
+- [x] Standardize active phase identities across RULES to `NNN` majors and `NNN-NN` subphases, migrate live `phase/` artifacts, and synchronize helper/master governance docs.
 
 ---
 
@@ -62,7 +66,9 @@
 
 | Date | Changes |
 |------|---------|
-| 2026-03-27 | Created first-class `natural-professional-communication` rule chain; created governed phase rollout files in `phase/SUMMARY.md` plus `phase/phase-001-*` to `phase/phase-004-*`; refined `accurate-communication` (v2.2), `explanation-quality` (v2.2), `answer-presentation` (v1.6), `authority-and-scope` (v1.4), and `anti-sycophancy` (v1.4) for calmer, more natural, non-robotic, non-character-driven professional communication; synchronized `design/design.md`, `README.md`, and `changelog/changelog.md`; corrected active runtime/install counts and lingering `phase-010-*` README references; and re-synchronized installed runtime copies. |
+| 2026-03-28 | Created first-class `artifact-initiation-control` and completed the startup-governance rollout: added the new design/runtime/changelog triad; updated `project-documentation-standards` (v2.9), `phase-implementation` (v2.6), `todo-standards` (v2.3), and `strict-file-hygiene` (v1.2) so startup artifact posture is resolved before meaningful governed work drifts; opened `phase-004` from the start; normalized `todo-standards` into a fully tracked chain with its own changelog authority; and synchronized master docs/history so the new artifact-first startup model is visible repo-wide. |
+| 2026-03-28 | Corrected the RULES patch model: redefined patch as an explicit before/after change artifact, changed active placement to `patch/<context>.patch.md` or root `<context>.patch.md`, updated `document-patch-control` (v2.4), `project-documentation-standards` (v2.8), `phase-implementation` (v2.5), and `tactical-strategic-programming` (v1.1), rewrote the two in-repo historical patch examples under `patch/`, synchronized README/master design/changelogs, and updated patch-path references in TODO/history. |
+| 2026-03-28 | Standardized active phase identities across RULES to `NNN` majors and `NNN-NN` subphases: updated the active phase-owner chains, rewrote the helper/master docs to the deterministic hierarchy, renamed live `phase/*.md` artifacts into grouped subphases (`001-01` to `001-03`, `002-01` to `002-04`), rewrote `phase/SUMMARY.md` with explicit major/subphase grouping, and preserved older `010/020/030` and flat `001/002/003` references as historical records rather than rewriting them. |
 | 2026-03-17 | Changed default phase numbering across `phase-implementation` (v2.2): replaced sparse `010/020/030` numbering with zero-padded contiguous `001/002/003` numbering in the design/runtime/changelog chain and `phase-implementation-template.md`, aligned `design/design.md` and `README.md`, refreshed `changelog/changelog.md` to v6.4, updated TODO rollout tracking, and synchronized the installed runtime copy for `phase-implementation.md`. |
 | 2026-03-17 | Created first-class `tactical-strategic-programming` rule chain: added `design/tactical-strategic-programming.design.md`, `tactical-strategic-programming.md`, and `changelog/tactical-strategic-programming.changelog.md`; created governed phase execution records in `phase/SUMMARY.md` plus `phase/phase-001-*` to `phase/phase-003-*`; updated `design/design.md` and `README.md` to 30 active runtime rules; refreshed `changelog/changelog.md` to v6.3; updated TODO rollout tracking; and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md`. |
 | 2026-03-17 | Refined latest-user-directive override behavior in `authority-and-scope` (v1.3): added explicit advisory-only status for assistant-generated options, made fresh user directives override prior option framing unless the user explicitly selects one, aligned `design/design.md` and `README.md`, refreshed `changelog/changelog.md` to v6.2, updated TODO tracking, and synchronized the installed runtime copy. |
@@ -100,7 +106,7 @@
 | 2026-02-24 | Created `design/unified-version-control-system.design.md` + `changelog/unified-version-control-system.changelog.md` (v1.0) and queued runtime `unified-version-control-system.md` creation as pending by request. |
 | 2026-02-24 | Reconfirmed single-standard version governance scope in master docs: updated `design/design.md` (UDVC-1 unified mechanism across design/changelog/TODO/patch), `changelog/changelog.md` v3.6, and synchronized TODO execution history. |
 | 2026-02-23 | Completed final consistency audit across design/rule/changelog/TODO/patch layers: patch metadata contract closure, active-session placeholder removal (`design/accurate-communication.design.md`), and legacy changelog `#version-*` anchor normalization. |
-| 2026-02-23 | Aligned `patches/consistency-rule-enhancement.patch.md` and `patches/legacy-rules-migration.patch.md` to UDVC-1 metadata contract (mandatory fields, version/session/history-link alignment) and created `changelog/consistency-rule-enhancement.changelog.md` authority file. |
+| 2026-02-23 | Aligned `patch/consistency-rule-enhancement.patch.md` and `patch/legacy-rules-migration.patch.md` to UDVC-1 metadata contract (mandatory fields, version/session/history-link alignment) and created `changelog/consistency-rule-enhancement.changelog.md` authority file. |
 | 2026-02-23 | Simplified `TODO.md` to canonical `todo-standards` structure (`Completed`, `Tasks To Do`, `History`) and removed dashboard/priority overhead artifacts. |
 | 2026-02-23 | Completed changelog metadata normalization sweep: mandatory header completion, parent-reference normalization, and active-session placeholder removal in changelog layer. |
 | 2026-02-22 | Completed WS-1..WS-6 hardening synchronization slices and aligned governance references across design/runtime/changelog artifacts. |

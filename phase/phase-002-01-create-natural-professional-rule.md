@@ -1,7 +1,7 @@
-# Phase 001 - Create Natural Professional Rule
+# Phase 002-01 - Create Natural Professional Rule
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
-> **Phase ID:** P1
+> **Phase ID:** 002-01
 > **Status:** Completed
 > **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 > **Design References:** [../design/natural-professional-communication.design.md](../design/natural-professional-communication.design.md)

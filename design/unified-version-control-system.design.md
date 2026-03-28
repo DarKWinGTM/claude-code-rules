@@ -22,7 +22,7 @@ Applies to:
 - `design/*.design.md`
 - `changelog/*.changelog.md`
 - `TODO.md`
-- `patches/*.patch.md`
+- `patch/<context>.patch.md` or root `<context>.patch.md`
 - repository-level role boundaries that prevent governed/support-layer confusion
 
 ---

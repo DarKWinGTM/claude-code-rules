@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 6.5
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 6.8
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
 
@@ -10,6 +10,24 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 6.8 | 2026-03-28 | **[Created startup artifact-initiation governance and synchronized the repository to artifact-first work startup](#version-68)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Created `design/artifact-initiation-control.design.md`, `artifact-initiation-control.md`, and `changelog/artifact-initiation-control.changelog.md` as a new first-class startup-governance owner chain | |
+| | | - Updated `project-documentation-standards` design/runtime to v2.9 so meaningful governed work now resolves startup artifact posture before drift | |
+| | | - Updated `phase-implementation` design/runtime to v2.6 so `/phase` is established early when startup governance already shows phased work is required | |
+| | | - Updated `todo-standards` design/runtime to v2.3 and created `changelog/todo-standards.changelog.md` so TODO presence is resolved early while TODO content still syncs later | |
+| | | - Updated `strict-file-hygiene` design/runtime/changelog to v1.2 so required governed startup artifacts are no longer blocked as junk docs | |
+| | | - Opened `phase-004` from the start with `phase/phase-004-01-*` through `phase/phase-004-03-*` and updated `phase/SUMMARY.md` to track the rollout family | |
+| | | - Updated `README.md`, `design/design.md`, `TODO.md`, and `phase/SUMMARY.md` so the new startup-governance model is visible across the active repository surfaces | |
+| | | Summary: Completed the startup-governance rollout so design/changelog/TODO/phase/patch posture is now resolved before meaningful governed work drifts instead of being backfilled later | |
+| 6.7 | 2026-03-28 | **[Corrected the repository-wide patch model to explicit before/after artifacts in `patch/` or at root](#version-67)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Updated `document-patch-control` design/runtime/changelog from v2.3 to v2.4 to explicitly define patch as a governed before/after artifact, remove generic `patch.md` allowance, and standardize active placement to `patch/<context>.patch.md` or root `<context>.patch.md` | |
+| | | - Updated `project-documentation-standards` design/runtime/changelog from v2.7 to v2.8 so the repository role model now teaches the same corrected patch placement and patch meaning everywhere | |
+| | | - Updated `phase-implementation` runtime/changelog to v2.5 and aligned `design/phase-implementation.design.md` to the same active patch-artifact boundary model while preserving the one-way synthesis boundary | |
+| | | - Updated `tactical-strategic-programming` design/runtime/changelog from v1.0 to v1.1 so tactical artifact examples now point to the corrected patch model | |
+| | | - Updated `README.md`, `design/design.md`, `phase-implementation-template.md`, `design/document-changelog-control.design.md`, and `design/unified-version-control-system.design.md` to remove active `patches/` teaching and align wording to the corrected patch concept | |
+| | | - Moved the in-repo example patches into `patch/` and rewrote them as explicit before/after artifacts: `patch/consistency-rule-enhancement.patch.md` and `patch/legacy-rules-migration.patch.md` | |
+| | | - Updated patch changelogs, TODO tracking, and parent-document references to match the moved patch paths and normalized patch examples | |
+| | | Summary: Completed the patch-concept correction so the active RULES repository now teaches one deterministic patch model: self-identifying before/after artifacts in `patch/` or at repository root, never prose-only patch summaries | |
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | - Created `design/natural-professional-communication.design.md`, `natural-professional-communication.md`, and `changelog/natural-professional-communication.changelog.md` as a new first-class communication-style doctrine chain | |
 | | | - Created `phase/SUMMARY.md` and `phase/phase-001-*` to `phase/phase-004-*` execution artifacts for the RULES development rollout of the new chain and related refinement wave | |

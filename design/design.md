@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.5
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
+> **Current Version:** 4.8
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,7 +13,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-This active-state model must preserve UDVC-1 while supporting first-class phased execution planning through a dedicated rule chain, governed patch-plan instances, a readable root helper, and one-way source synthesis from design and relevant patch inputs into the live phase layer.
+This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, and first-class startup artifact initiation control.
 
 ---
 
@@ -26,11 +26,11 @@ This active-state model must preserve UDVC-1 while supporting first-class phased
 | Overview | `README.md` | Repository overview and usage guidance only |
 | Runtime | root `*.md` rules | Active runtime behavior |
 | Design | `design/*.design.md` | Active target-state guidance |
-| Phase | `phase/SUMMARY.md`, `phase/phase-001-<phase-name>.md`, or equivalent child phase files | Governed live phase-planning summary/index and child execution detail |
-| Patch | `patches/*.patch.md` | Governed patch/review artifacts outside live phase planning |
+| Phase | `phase/SUMMARY.md`, `phase/phase-NNN-<phase-name>.md`, `phase/phase-NNN-NN-<subphase-name>.md` | Governed live phase-planning summary/index and execution detail |
+| Patch | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed patch/review artifacts outside live phase planning |
 | History | `changelog/*.changelog.md` | Authoritative chain history and latest chain version state |
 | Execution | `TODO.md` | Execution tracking only |
-| Support | `phase-implementation-template.md`, `support/**/*.md`, or equivalent helper/support paths | Root-level helper templates plus reference-only/support materials outside governed chain authority |
+| Support | `phase-implementation-template.md`, `support/**/*.md` | Root-level helper templates plus reference-only/support materials outside governed chain authority |
 
 ### 2.2 Governance Principle
 
@@ -39,51 +39,53 @@ This repository uses one deterministic governance model:
 - runtime rules are the active rule layer
 - design docs hold active target-state guidance
 - `phase/` is the live phased execution layer when staged planning is used
-- phase may synthesize design and relevant patch inputs one-way into live phased execution planning when applicable
+- phase IDs use `NNN` for major phases and `NNN-NN` for subphases
 - patch docs are the governed patch/review layer outside live phase planning
 - changelog files are the authority for governed chain history
 - TODO tracks execution state only
+- startup artifact posture is resolved before meaningful governed work drifts
 - support artifacts help authoring or reference reuse but do not masquerade as governed design, phase, or patch authorities
 
 ---
 
 ## 3) Rule Architecture
 
-### 3.1 Active Runtime Inventory (31 Rules)
+### 3.1 Active Runtime Inventory (32 Rules)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
-| 1 | accurate-communication.md | accurate-communication.design.md v2.2 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, and natural-professional wording guidance that reduces robotic, ceremonial, and fake-empathy phrasing |
-| 2 | answer-presentation.md | answer-presentation.design.md v1.6 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, now refined with natural-flow formatting so structure helps without making answers feel templated or stiff |
+| 1 | accurate-communication.md | accurate-communication.design.md v2.2 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, and natural-professional wording guidance |
+| 2 | answer-presentation.md | answer-presentation.design.md v1.6 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output |
 | 3 | anti-mockup.md | anti-mockup.design.md v1.1 | Real systems over mocks |
-| 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.4 | Truth over pleasing with evidence-grounded, claim-focused disagreement that now stays calm and constructive without praise-heavy softening or rhetorical sharpness |
-| 5 | authority-and-scope.md | authority-and-scope.design.md v1.4 | User authority, deterministic precedence, fresh-directive override over previously offered assistant options, and a neutral professional default communication mode unless the user explicitly requests another style |
-| 6 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
-| 7 | document-consistency.md | document-consistency.design.md v1.3 | Cross-reference validation |
-| 8 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |
-| 9 | document-design-control.md | document-design-control.design.md v1.8 | Active-state design-body standards |
-| 10 | document-patch-control.md | document-patch-control.design.md v2.2 | Patch governance, metadata, lifecycle, comparison-friendly governed patch/review representation, one-way patch-input clarification outside live phase planning, and path-aware patch naming guidance |
-| 11 | emergency-protocol.md | emergency-protocol.design.md v1.1 | High-signal emergency response |
-| 12 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.0 | First-class owner for evidence taxonomy, burden-of-proof thresholds, contradiction protocol, and scoped negative-evidence semantics |
-| 13 | explanation-quality.md | explanation-quality.design.md v2.2 | Plain-language-first, layered analytical and technical explanation structure with good-operator explanation guidance, stop-before-overexplaining boundaries, richer before/after and patch-by-patch walkthroughs, stronger scope patterns, and progression-focused closing behavior |
-| 14 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.1 | Text diagrams without frames or boxes |
-| 15 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |
-| 16 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
-| 17 | operational-failure-handling.md | operational-failure-handling.design.md v1.1 | Profile-driven operational failure classification, bounded retry policy, explicit case handling, and honest cooldown/escalation behavior |
-| 18 | phase-implementation.md | phase-implementation.design.md v2.2 | First-class semantic standard for phased execution planning, `phase/SUMMARY.md`, child phase files with zero-padded contiguous numbering (`001/002/003`), reviewability, bounded completion behavior, and one-way design/patch source synthesis |
-| 19 | project-documentation-standards.md | project-documentation-standards.design.md v2.5 | Repository-level document-role model, governed-vs-helper boundary, one-way phase synthesis role clarification, and directory-as-namespace naming guidance for governed workspaces |
-| 20 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
-| 21 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
-| 22 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |
-| 23 | safe-file-reading.md | safe-file-reading.design.md v1.3 | Plan-before-read file safety |
-| 24 | safe-terminal-output.md | safe-terminal-output.design.md v1.3 | Plan-before-execute output safety |
-| 25 | strict-file-hygiene.md | strict-file-hygiene.design.md v1.1 | No unnecessary non-functional files |
-| 26 | todo-standards.md | todo-standards.design.md v2.2 | Simple TODO governance |
-| 27 | runtime-topology-control.md | runtime-topology-control.design.md v1.1 | Bounded runtime mutation posture with inspect-before-mutate, authority-baseline locking, replace-over-accumulate discipline, approval-gated topology changes, and explicit multi-authority exceptions |
-| 28 | unified-version-control-system.md | unified-version-control-system.design.md v1.2 | UDVC-1 controller-level governance view |
-| 29 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.0 | Core doctrine for tactical entry, strategic target, convergence path, and strategic closure so fast local execution does not drift into hidden long-term authority |
-| 30 | natural-professional-communication.md | natural-professional-communication.design.md v1.0 | First-class doctrine for natural professional communication so the assistant defaults to calm, human-readable, non-robotic, non-character-driven communication without weakening evidence discipline |
-| 31 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
+| 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.4 | Truth over pleasing with evidence-grounded, claim-focused disagreement |
+| 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.0 | Startup-governance owner that resolves design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
+| 6 | authority-and-scope.md | authority-and-scope.design.md v1.4 | User authority, deterministic precedence, and fresh-directive override behavior |
+| 7 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
+| 8 | document-consistency.md | document-consistency.design.md v1.3 | Cross-reference validation |
+| 9 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |
+| 10 | document-design-control.md | document-design-control.design.md v1.8 | Active-state design-body standards |
+| 11 | document-patch-control.md | document-patch-control.design.md v2.4 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, and comparison-friendly patch representation |
+| 12 | emergency-protocol.md | emergency-protocol.design.md v1.1 | High-signal emergency response |
+| 13 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.0 | First-class owner for evidence taxonomy, burden-of-proof thresholds, contradiction protocol, and scoped negative-evidence semantics |
+| 14 | explanation-quality.md | explanation-quality.design.md v2.2 | Plain-language-first, layered analytical and technical explanation structure |
+| 15 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.1 | Text diagrams without frames or boxes |
+| 16 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |
+| 17 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
+| 18 | operational-failure-handling.md | operational-failure-handling.design.md v1.1 | Profile-driven operational failure classification, bounded retry policy, and honest cooldown/escalation behavior |
+| 19 | phase-implementation.md | phase-implementation.design.md v2.6 | First-class semantic standard for phased execution planning with early phase-establishment bridge |
+| 20 | project-documentation-standards.md | project-documentation-standards.design.md v2.9 | Repository-level document-role model plus startup artifact gate |
+| 21 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
+| 22 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
+| 23 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |
+| 24 | safe-file-reading.md | safe-file-reading.design.md v1.3 | Plan-before-read file safety |
+| 25 | safe-terminal-output.md | safe-terminal-output.design.md v1.3 | Plan-before-execute output safety |
+| 26 | strict-file-hygiene.md | strict-file-hygiene.design.md v1.2 | Prevent junk files and duplicates while deferring to required governed startup artifacts |
+| 27 | todo-standards.md | todo-standards.design.md v2.3 | Simple TODO governance with startup-establishment bridge |
+| 28 | runtime-topology-control.md | runtime-topology-control.design.md v1.1 | Bounded runtime mutation posture with inspect-before-mutate discipline |
+| 29 | unified-version-control-system.md | unified-version-control-system.design.md v1.2 | UDVC-1 controller-level governance view |
+| 30 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.1 | Tactical entry, strategic target, convergence path, and strategic closure doctrine |
+| 31 | natural-professional-communication.md | natural-professional-communication.design.md v1.0 | First-class doctrine for natural professional communication |
+| 32 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
 
 ### 3.2 Category View
 
@@ -91,48 +93,24 @@ This repository uses one deterministic governance model:
 |----------|-------|---------|
 | Accuracy & Truth | accurate-communication, evidence-grounded-burden-of-proof, zero-hallucination, anti-sycophancy, no-variable-guessing | Evidence-grounded, verified, and honest output |
 | Presentation & Readability | answer-presentation, explanation-quality, flow-diagram-no-frame, natural-professional-communication | Readable, orderly, scannable, and naturally professional output presentation |
-| Output Safety | safe-file-reading, safe-terminal-output, flow-diagram-no-frame | Output flood prevention and safe text presentation |
-| User Control | authority-and-scope, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control | Preserve user authority, safe recovery paths, bounded operational failure handling, and approval-sensitive runtime-topology discipline |
+| Output Safety | safe-file-reading, safe-terminal-output, flow-diagram-no-frame, strict-file-hygiene | Output flood prevention, safe text presentation, and file hygiene |
+| Startup Governance | artifact-initiation-control, project-documentation-standards, todo-standards, phase-implementation | Resolve artifact posture before meaningful governed work drifts |
+| User Control | authority-and-scope, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control | Preserve user authority and safe operational posture |
 | Adversarial Workflow | refusal-minimization, dan-safe-normalization | Reduce false refusals in authorized adversarial/security workflows |
-| Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, strict-file-hygiene, explanation-quality, phase-implementation, project-documentation-standards, tactical-strategic-programming, todo-standards, unified-version-control-system | Documentation determinism, phased execution semantics, tactical-versus-strategic convergence doctrine, and output quality |
+| Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, unified-version-control-system, tactical-strategic-programming | Documentation determinism, patch semantics, and governance quality |
 
 ---
 
 ## 4) Active Governance Contracts
 
 ### 4.1 Runtime Rule Metadata Contract
-
 Root runtime rules use this canonical header in this order:
 - `Current Version`
 - `Design`
 - `Session`
 - `Full history`
 
-`Design:` is the canonical label.
-`Based on:` is retired for root runtime rule metadata.
-
-### 4.2 Blocked-Response Contract
-
-The active blocked-response schema is:
-
-```text
-decision_output: <ALLOW_CONSTRAINED | NEED_CONTEXT | REFUSE_WITH_PATH>
-refusal_class: <SOFT_BLOCK | WORKFLOW_BLOCK | HARD_BLOCK>
-reason: ...
-what_can_be_done_now:
-- ...
-how_to_proceed:
-- ...
-```
-
-### 4.3 Design / Changelog Pair Contract
-
-- Design docs hold active target-state guidance only.
-- Changelog files hold detailed historical records.
-- Active design bodies do not embed historical audit or rollout logs.
-
-### 4.4 Synchronization Order
-
+### 4.2 Synchronization Order
 For governed updates:
 1. design
 2. runtime rule
@@ -140,28 +118,26 @@ For governed updates:
 4. TODO
 5. patch metadata final sync (when affected)
 
-### 4.5 Phase Planning Contract
+### 4.3 Startup Artifact Contract
+The active startup contract is:
+- `artifact-initiation-control.md` is the semantic owner for startup artifact posture
+- meaningful governed work must resolve artifact posture before drift
+- required artifacts may be reused, created now, asked about now, or marked not required
+- startup establishment is distinct from later content synchronization order
 
+### 4.4 Phase Planning Contract
 The active phase-planning contract is:
 - `phase-implementation.md` is the semantic authority for phased execution planning
+- `artifact-initiation-control.md` decides whether `/phase` must be established before drift
 - `phase/SUMMARY.md` is the governed summary/index for live phased execution
-- child phase files under `phase/` are the governed execution-detail layer when multiple phases exist
+- executable phase files under `phase/` use `NNN` for major phases and `NNN-NN` for subphases
 - patch docs remain separate governed patch/review artifacts outside the live phase workspace
-- phase may synthesize design and relevant patch inputs one-way into live execution planning when applicable
-- design and patch artifacts do not gain a reverse-link requirement back to phase
-- phase order is project-defined rather than repository-defined
-- phases may be merged, split, skipped, repeated, or reordered
-- phases should explicitly reference the relevant design details they implement or validate
-- phases should make TODO coordination and changelog impact visible when relevant
-- `phase-implementation-template.md` is a reusable root-level helper, not a governed chain
-- TODO and changelog do not become the primary place for phase definitions
 
 ---
 
 ## 5) Standard Templates
 
 ### 5.1 Runtime Rule Template
-
 ```markdown
 # <Rule Name>
 
@@ -169,16 +145,9 @@ The active phase-planning contract is:
 > **Design:** [design/<rule>.design.md](design/<rule>.design.md) vX.Y
 > **Session:** <real-session-id>
 > **Full history:** [changelog/<rule>.changelog.md](changelog/<rule>.changelog.md)
-
----
-
-## Rule Statement
-
-**Core Principle:** <one-line principle>
 ```
 
 ### 5.2 Design Template
-
 ```markdown
 # <Document Name>
 
@@ -187,83 +156,44 @@ The active phase-planning contract is:
 > **Parent Scope:** <scope>
 > **Current Version:** X.Y
 > **Session:** <real-session-id> (YYYY-MM-DD)
-
----
-
-<active design content>
-
----
-
-> Full history: [../changelog/<name>.changelog.md](../changelog/<name>.changelog.md)
 ```
 
 ### 5.3 Changelog Template
-
 ```markdown
 # Changelog - <Document>
 
 > **Parent Document:** [../<doc>.md](../<doc>.md)
 > **Current Version:** X.Y
 > **Session:** <real-session-id>
-
----
-
-## Version X.Y: <Headline>
-
-**Date:** YYYY-MM-DD
-**Session:** <real-session-id>
-
-### Changes
-- ...
-
-### Summary
-...
 ```
 
-### 5.4 Patch Planning Support Boundary
+---
 
-`phase-implementation-template.md` is the reusable root-level authoring aid for flexible phase planning.
+## 6) Verification Checklist
 
-Use it to draft or standardize phase structure, then materialize the real governed live plan in `phase/SUMMARY.md` plus child phase files under `phase/` when applicable.
-Patch docs remain separate governed patch/review artifacts outside the live phase workspace, even when their change surfaces are synthesized one-way into the live phase plan.
-The helper may be detailed and readable, but the governed phase files remain the authoritative live phase-planning instance.
+- [ ] README remains overview-only
+- [ ] Runtime rules remain the active rule layer
+- [ ] Design docs remain active target-state guidance only
+- [ ] Changelog remains version authority per chain
+- [ ] TODO remains execution-only
+- [ ] Startup artifact posture is resolved before meaningful governed work drifts
+- [ ] Phase docs remain in `/phase` and use the active `NNN` / `NNN-NN` identity model
+- [ ] Patch docs remain outside live phase planning
+- [ ] Root helper and support artifacts remain non-governed
 
 ---
 
-## 6) Support-Artifact Boundary
+## 7) Integration
 
-Reference-only materials must not remain in ambiguous governed `.design.md` form unless intentionally normalized as governed design docs.
-
-Current support examples:
-- `support/image-prompts.md` is a support artifact, not a governed design document.
-- `phase-implementation-template.md` is a root-level helper artifact, not a governed patch or rule chain.
-
----
-
-## 7) Quality Gates
-
-- keep one authority model per governed chain
-- keep active design bodies free of historical logs
-- keep runtime headers structurally identical across root rules
-- keep phase semantics in `phase-implementation.md`
-- keep live phased execution plans in the `/phase` workspace rather than patch artifacts
-- keep README, TODO, patch, and support artifacts inside their own role boundaries
-- keep links and version references synchronized
-
----
-
-## 8) Related Documents
-
-| Document | Relationship |
-|----------|--------------|
-| [document-changelog-control.design.md](document-changelog-control.design.md) | Chain authority and metadata contract |
-| [document-design-control.design.md](document-design-control.design.md) | Active-state design-body contract |
-| [document-patch-control.design.md](document-patch-control.design.md) | Governed patch planning and metadata contract |
-| [phase-implementation.design.md](phase-implementation.design.md) | Semantic standard for phased execution planning |
-| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model |
-| [todo-standards.design.md](todo-standards.design.md) | Execution-tracker boundary |
-| [unified-version-control-system.design.md](unified-version-control-system.design.md) | Controller-level governance view |
-| [../phase-implementation-template.md](../phase-implementation-template.md) | Non-governed reusable root-level phase-planning aid |
+Related chains:
+- `artifact-initiation-control.md`
+- `document-changelog-control.md`
+- `document-design-control.md`
+- `phase-implementation.md`
+- `project-documentation-standards.md`
+- `document-patch-control.md`
+- `todo-standards.md`
+- `strict-file-hygiene.md`
 
 ---
 

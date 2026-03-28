@@ -1,7 +1,7 @@
-# Phase 004 - Sync Master Docs, Install, and Verify
+# Phase 002-04 - Sync Master Docs, Install, and Verify
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
-> **Phase ID:** P4
+> **Phase ID:** 002-04
 > **Status:** Completed
 > **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 > **Design References:** [../design/natural-professional-communication.design.md](../design/natural-professional-communication.design.md)

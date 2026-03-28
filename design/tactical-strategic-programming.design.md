@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12 (2026-03-17)
+> **Current Version:** 1.1
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
 
 ---
 
@@ -168,7 +168,7 @@ If 2–5 cannot be answered, the work is not ready for tactical execution withou
 |--------------|--------------|
 | `design/*.design.md` | strategic target-state authority |
 | `phase/SUMMARY.md` + child phase files | strategic execution program |
-| `patches/*.patch.md` or namespaced `patch.md` | tactical artifact |
+| `patch/<context>.patch.md` or root `<context>.patch.md` | tactical artifact |
 | `TODO.md` | tactical execution tracking |
 | runtime temporary workaround | tactical implementation device |
 | stable architecture authority | strategic end-state |

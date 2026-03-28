@@ -1,7 +1,7 @@
-# Phase 002 - Integrate Related Rules
+# Phase 001-02 - Integrate Related Rules
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
-> **Phase ID:** P2
+> **Phase ID:** 001-02
 > **Status:** Completed
 > **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 > **Design References:** [../design/tactical-strategic-programming.design.md](../design/tactical-strategic-programming.design.md)

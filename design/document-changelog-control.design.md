@@ -22,7 +22,7 @@ Applies to governed documentation artifacts in this repository:
 - `design/*.design.md`
 - `changelog/*.changelog.md`
 - `TODO.md`
-- `patches/*.patch.md`
+- `patch/<context>.patch.md` or root `<context>.patch.md`
 
 ---
 

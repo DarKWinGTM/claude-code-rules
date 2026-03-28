@@ -3,25 +3,24 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 2.2
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-15)
+> **Current Version:** 2.4
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
 
 ---
 
 ## 1) Goal
 
-Standardize patch-document governance under the same UDVC-1 metadata and version-trace contract used by other governed document chains, while making the boundary explicit that live phased execution planning belongs in `/phase`, not in `/patches`.
+Standardize governed patch-document behavior under the same UDVC-1 metadata and version-trace contract used by other governed document chains, while making the patch concept explicit: a patch exists to show the exact intended before/after change surface for review.
 
-When phased execution planning is used, semantic phase behavior should come from `phase-implementation.md`, while this chain keeps `/patches` limited to governed patch/review artifacts outside the live phase-plan namespace.
-
-This chain also defines what makes a patch **reviewable as a patch** rather than a vague plan: a governed patch should let a reviewer see what artifact is changing, where it changes, what the current state is, what the target state is, and how the change is intended to be applied.
+This chain must keep live phased execution planning in `/phase`, not in patch artifacts.
 
 ---
 
 ## 2) Scope
 
 Applies to:
-- `patches/*.patch.md`
+- `patch/<context>.patch.md`
+- root-level `<context>.patch.md`
 - patch lifecycle documentation
 - patch metadata traceability and history references
 - governed patch execution/review artifacts that are not the live `/phase` plan workspace
@@ -31,57 +30,48 @@ The root helper `phase-implementation-template.md` may help authors draft a plan
 
 ---
 
-## 3) Naming and Location
+## 3) Patch Meaning and Location
 
-### 3.1 Patch naming
+### 3.1 Patch definition
+A patch is a governed change artifact whose purpose is to show **what will be changed** clearly enough for review before or during controlled execution.
 
-Patch naming should distinguish between **filename-authoritative naming** and **path-authoritative naming**.
+A valid patch must make it easy for a reviewer to answer:
+- what artifact changes
+- where it changes
+- what exists now
+- what it should become after the change
+- whether the change is additive, replacement, deletion, or restructuring
 
-#### Filename-authoritative naming
-Use `<context>.patch.md` when the filename itself needs to carry the stable identifying context.
+The chain must explicitly reject these misreadings:
+- patch as retrospective summary
+- patch as phase summary/index
+- patch as prose-only recap with no explicit change surface
+- patch as generic plan text that leaves before/after state implicit
 
-Typical cases:
-- the file may be reviewed outside its parent directory context
-- multiple patch artifacts may coexist in the same directory
-- search/discovery ergonomics materially benefit from a self-identifying filename
+### 3.2 Allowed locations
+Governed patch files must use a self-identifying `<context>.patch.md` filename and may live in one of these places:
+- shared patch directory: `patch/<context>.patch.md`
+- repository root: `<context>.patch.md`
 
-Examples:
-- `patches/issue-276.patch.md`
-- `patches/runtime-routing-hardening.patch.md`
+Required location rules:
+- `patch/` is the default shared patch directory for this repository
+- root-level placement is allowed when the patch should live directly at repository top level
+- generic `patch.md` is not allowed
+- version suffixes in patch filenames are not allowed
 
-#### Path-authoritative naming
-Use `patch.md` when the parent workspace path already provides the stable unique context and only one patch artifact of that role exists in the directory.
+### 3.3 `/phase` separation
+Live phased execution planning does not belong in `/patch` or in root-level patch files.
 
-Typical cases:
-- issue-local workspaces such as `issue/276/`
-- feature-local workspaces such as `feature/tool-routing/`
-- migration-local workspaces where the directory itself is the namespace
-
-Examples:
-- `issue/276/patch.md`
-- `feature/tool-routing/patch.md`
-
-#### Anti-redundancy principle
-Avoid repeating the same context in both parent path and filename unless the repetition provides a real portability, review, or search benefit.
-
-Additional naming rules:
-- Preferred shared patch directory remains `patches/`
-- Do not use version suffixes in filenames
-- If generic `patch.md` naming is used, the parent path should clearly act as the namespace
-
-### 3.2 `/phase` separation
-
-Live phased execution planning does not belong in `/patches`.
 The dedicated live phase-plan workspace is:
 
 ```text
 phase/
   SUMMARY.md
   phase-001-<phase-name>.md
-  phase-020-<phase-name>.md
+  phase-001-01-<subphase-name>.md
 ```
 
-### 3.3 Helper placement
+### 3.4 Helper placement
 - The canonical reusable helper for this repository is the root-level `phase-implementation-template.md`
 - Root-level helper placement improves discoverability, but helper placement does not change chain authority
 
@@ -108,26 +98,23 @@ Patch changelog files must include:
 ## 5) Patch Structure Baseline
 
 Every governed patch document must include, at minimum:
-1. Context (current state vs target state)
-2. Analysis (risk, constraints, dependencies)
-3. Implementation plan
+1. Context
+2. Analysis
+3. Change items
 4. Verification
 5. Rollback approach
 
-Patch documents may reference phased execution work, but the live phase summary/index and per-phase execution detail must remain in `/phase`.
+Optional implementation order is allowed when sequencing matters, but it does not replace the required change items.
 
-### 5.1 Change-Representation Requirement
-A governed patch must be reviewable as an actual intended change, not only as prose.
-
-When the patch concerns code, configuration, command, query, schema, or other structured text changes, the patch should include a concrete change representation that lets a reviewer compare current state to target state.
-
-Required review signals:
-- target artifact or target location
-- what currently exists there
-- what is intended to replace, augment, or remove it
+### 5.1 Change-item requirement
+For each concrete change item, the patch must show:
+- target artifact or stable target location
+- change type (`additive`, `replacement`, `deletion`, or `restructuring`)
+- current/before state
+- target/after state
 - enough comparison detail for a reviewer to understand the exact change surface
 
-### 5.2 Preferred Comparison Forms
+### 5.2 Preferred comparison forms
 Use one or more of these forms when applicable:
 - before/after snippets
 - current/target comparison tables
@@ -137,7 +124,7 @@ Use one or more of these forms when applicable:
 
 The rule is semantic, not tied to one markdown shape. The comparison must be concrete enough for review.
 
-### 5.3 Target-Location Requirement
+### 5.3 Target-location requirement
 For each concrete change item, the patch should identify where the change applies.
 
 Examples:
@@ -151,24 +138,22 @@ Examples:
 
 If exact line numbers are not stable or not yet known, the patch should still use the most precise stable locator available.
 
-### 5.4 Non-Code Patch Allowance
+### 5.4 Non-code patch allowance
 Not every patch is a code diff.
-When a patch is conceptual, governance-only, or architecture-only, it may use structured current-state vs target-state comparison without code snippets.
+When a patch is conceptual, governance-only, or architecture-only, it may use structured before/after comparison without code snippets.
 
 In that case the patch must say clearly that:
 - it is a non-code patch or non-snippet patch
 - the change surface is conceptual / governance / structural
 - concrete runtime edits are intentionally out of scope for that patch
 
-A non-code patch must still provide comparison-friendly current-state vs target-state detail.
-
-### 5.5 Patch Specificity Principle
+### 5.5 Patch specificity principle
 A patch should be specific enough that a reviewer can answer:
 - what artifact changes
 - where it changes
 - what the current state is
 - what the proposed state is
-- whether the patch is additive, replacement, deletion, or restructuring
+- how the before/after comparison maps to the intended modification
 
 If the reviewer cannot answer those questions, the patch is under-specified.
 
@@ -177,12 +162,19 @@ If the reviewer cannot answer those questions, the patch is under-specified.
 ## 6) Patch-versus-Phase Boundary
 
 ### 6.1 Patch role
-`/patches` owns governed patch artifacts.
-It remains appropriate for:
-- tactical migration/review plans
-- governed change artifacts
+Patch artifacts exist to hold governed change/review information outside live phase planning.
+
+They remain appropriate for:
+- tactical change artifacts
+- governed review artifacts
 - patch-specific transition analysis
-- metadata-governed execution/review documents that are not the live phase workspace
+- reviewable current→target documentation that is outside the live phase workspace
+
+They are not appropriate for:
+- retrospective summary documents
+- general progress recaps
+- the active phase summary/index
+- live per-phase execution files
 
 ### 6.2 Phase role
 `/phase` owns live phased execution planning.
@@ -192,9 +184,9 @@ It contains:
 
 ### 6.3 Prohibited blending
 The following are not allowed:
-- using `/patches` as the live phase-plan namespace
+- using `/patch` as the live phase-plan namespace
 - storing the active phase summary/index in a patch file instead of `phase/SUMMARY.md`
-- storing live per-phase execution files under `/patches`
+- storing live per-phase execution files in patch artifacts
 
 ### 6.4 Semantic authority
 If phased execution exists, it should follow `phase-implementation.md` for:
@@ -214,16 +206,17 @@ If phased execution exists, it should follow `phase-implementation.md` for:
 This does not create a reverse-link requirement:
 - patch documents may remain complete patch artifacts without pointing back to phase
 - design documents may remain target-state artifacts without pointing back to phase
-- patch usage inside phase does not move live execution planning into `/patches`
+- patch usage inside phase does not move live execution planning into patch artifacts
 
 ### 6.5 What this chain owns
 `document-patch-control` owns:
 - patch metadata rules
 - patch filename and location rules
+- the definition of patch as a before/after change artifact
 - patch lifecycle and synchronization behavior
 - patch checklist expectations for governed review/change artifacts
 - patch change-representation and reviewability expectations
-- the boundary that keeps live phased execution out of `/patches`
+- the boundary that keeps live phased execution out of patch artifacts
 
 It does **not** serve as the primary semantic authority for phased execution behavior.
 
@@ -245,107 +238,90 @@ Validate here:
 - patch identity and metadata
 - target-design and history-link integrity
 - patch structure and reviewability
-- change-representation quality
+- patch change-representation quality
 - synchronization behavior
 - patch-versus-phase namespace separation
 
 Do not validate here:
 - phase necessity
 - phase sequencing quality
-- per-phase design-traceability quality
+- per-phase design-traceability and execution quality
 - per-phase execution-step quality
 - `SUMMARY.md` content quality
 
-Those remain the responsibility of `phase-implementation` when phased planning is used.
+Those belong to `phase-implementation.md` when phases are used.
 
 ---
 
-## 9) Patch Governance Checklist
+## Compliance Checklist
 
 Use this checklist to validate the patch as a governed artifact.
 
-### 9.1 Identity and Metadata
-- [ ] Patch filename uses `.patch.md`
-- [ ] Chosen naming mode is justified (`<context>.patch.md` when filename must carry context, `patch.md` when parent path is the namespace)
+### 1) Identity and Metadata
+- [ ] Patch path uses an allowed location model (`patch/<context>.patch.md` or root `<context>.patch.md`)
+- [ ] Patch filename is self-identifying and uses `<context>.patch.md`
 - [ ] Patch metadata fields are complete
-- [ ] Session metadata is real and not placeholder-based
-- [ ] `Target Design` resolves to an existing design document or agreed target reference
-- [ ] `Full history` link resolves correctly
+- [ ] Session metadata is real (no placeholders)
+- [ ] `Target Design` reference resolves correctly
+- [ ] `Full history` links resolve correctly
 
-### 9.2 Patch Authority Integrity
-- [ ] Patch version aligns with its patch changelog version when a patch changelog exists
+### 2) Patch Authority Integrity
+- [ ] Patch version aligns with patch changelog version when applicable
 - [ ] Patch remains identifiable as a governed patch artifact
-- [ ] The patch does not rely on the helper template as an authority source
-- [ ] The patch does not drift into acting like changelog or TODO authority
-- [ ] The patch does not masquerade as the live `/phase` summary/index or phase-detail layer
+- [ ] `phase-implementation.md` is referenced for phase semantics when applicable
+- [ ] Root-level `phase-implementation-template.md` remains non-governed
+- [ ] The patch does not act like TODO authority or changelog authority
+- [ ] The patch does not masquerade as the live `/phase` summary/index or per-phase detail layer
 
-### 9.3 Structure and Reviewability
-- [ ] Patch includes context, analysis, implementation plan, verification, and rollback coverage
+### 3) Structure and Reviewability
+- [ ] Patch includes context, analysis, change items, verification, and rollback approach
 - [ ] A reviewer can identify what is changing and why this patch exists
 - [ ] A reviewer can identify the intended target design or target state
-- [ ] The patch remains readable as a change/review artifact because live phase detail is kept outside `/patches`
+- [ ] The patch remains readable as a governed change/review artifact because live phase detail is kept outside patch artifacts
 
-### 9.4 Change Representation
+### 4) Change Representation
 - [ ] Patch identifies the target artifact or stable target location for each concrete change item
-- [ ] Patch shows current state vs proposed state in a comparison-friendly form when the patch concerns structured text/code/config changes
+- [ ] Patch shows before/current state and after/target state in a comparison-friendly form for each structured change item
 - [ ] Patch makes clear whether each change is additive, replacement, deletion, or restructuring
-- [ ] If exact code/snippet comparison is intentionally not present, the patch explicitly declares itself non-code/conceptual and still provides structured current-state vs target-state comparison
+- [ ] If exact code/snippet comparison is intentionally not present, the patch explicitly declares itself non-code/conceptual and still provides structured before/after comparison
 - [ ] A reviewer can understand how the change would be applied without having to guess the change surface
 
-### 9.5 Synchronization Behavior
+### 5) Synchronization Behavior
 - [ ] Governance update order remains consistent when the patch participates in synchronized work
 - [ ] Related design, runtime, changelog, TODO, and `/phase` references are not obviously stale
 - [ ] Patch history references remain valid after synchronization
-- [ ] Redundant path + filename repetition is avoided unless it has a clear portability or review benefit
+- [ ] The patch remains self-identifying outside its directory context
 
 ---
 
-## 10) Integration Contract
-
-- Design defines the target state.
-- Patch defines governed patch/review behavior outside the live phase workspace.
-- `/phase` defines the live phased execution workspace.
-- `phase-implementation.md` defines phase semantics.
-- Changelog records shipped or synchronized history.
-- TODO tracks actionable execution items only.
-- `phase-implementation-template.md` is a non-governed helper that may assist authoring but never replaces the live `/phase` workspace.
-
-Update order remains:
-1. design
-2. runtime
-3. changelog
-4. TODO
-5. patch metadata final sync (if affected)
-
----
-
-## 11) Quality Metrics
+## Quality Metrics
 
 | Metric | Target |
 |--------|--------|
 | Patch metadata completeness | 100% |
-| Patch naming-mode clarity | 100% |
+| Patch placement clarity | 100% |
+| Patch concept clarity | 100% |
+| Active placeholder session markers | 0 |
+| Patch ↔ changelog version alignment | 100% |
+| Patch ↔ target design reference validity | 100% |
 | Patch-role clarity | 100% |
 | Patch change-representation clarity | 100% |
 | Patch target-location clarity | 100% |
 | Patch-versus-phase namespace separation clarity | 100% |
-| Active placeholder session markers in patch docs | 0 |
-| Patch ↔ design version reference validity | 100% |
 | Patch-governance checklist boundary clarity vs phase-implementation | 100% |
-| Live phased execution files under `/patches` | 0 |
-| Patch history link validity | 100% |
+| Live phased execution files under patch artifacts | 0 |
+| Broken patch history links | 0 |
 
 ---
 
-## 12) Related Documents
+## Integration
 
-| Document | Relationship |
-|----------|--------------|
-| [document-changelog-control.design.md](document-changelog-control.design.md) | UDVC-1 version authority contract |
-| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository-level document and helper role model |
-| [phase-implementation.design.md](phase-implementation.design.md) | Semantic authority for phased execution under `/phase` |
-| [../document-patch-control.md](../document-patch-control.md) | Runtime implementation |
-| [../phase-implementation-template.md](../phase-implementation-template.md) | Non-governed root helper for authoring |
+| Rule | Relationship |
+|------|-------------|
+| [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
+| [project-documentation-standards.md](project-documentation-standards.md) v2.8 | Project-level documentation role model |
+| [phase-implementation.md](phase-implementation.md) v2.5 | Semantic authority for phased execution planning |
+| [todo-standards.md](todo-standards.md) v2.2 | TODO structure standards |
 
 ---
 

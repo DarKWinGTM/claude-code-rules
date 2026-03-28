@@ -1,8 +1,8 @@
 # Tactical Strategic Programming
 
-> **Current Version:** 1.0
-> **Design:** [design/tactical-strategic-programming.design.md](design/tactical-strategic-programming.design.md) v1.0
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 1.1
+> **Design:** [design/tactical-strategic-programming.design.md](design/tactical-strategic-programming.design.md) v1.1
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/tactical-strategic-programming.changelog.md](changelog/tactical-strategic-programming.changelog.md)
 
 ---
@@ -73,7 +73,7 @@ Required guidance:
 
 | Mode | Meaning | Typical Use |
 |------|---------|-------------|
-| `TACTICAL` | Local bounded execution slice | patch, focused fix, immediate unblock |
+| `TACTICAL` | Local bounded execution slice | patch artifact, focused fix, immediate unblock |
 | `STRATEGIC` | Directional or architectural planning layer | design, roadmap, phased execution, boundary setting |
 | `TACTICAL_WITH_STRATEGIC_TRACK` | Tactical execution that already has a declared strategic target and convergence path | fast-start implementation under strategic control |
 
@@ -99,7 +99,7 @@ If 2–5 cannot be answered, the work is not ready for tactical execution withou
 |--------------|--------------|
 | `design/*.design.md` | strategic target-state authority |
 | `phase/SUMMARY.md` + child phase files | strategic execution program |
-| `patches/*.patch.md` or namespaced `patch.md` | tactical artifact |
+| `patch/<context>.patch.md` or root `<context>.patch.md` | tactical artifact |
 | `TODO.md` | tactical execution tracking |
 | runtime temporary workaround | tactical implementation device |
 | stable architecture authority | strategic end-state |
@@ -138,7 +138,7 @@ Apply this rule more strongly when one or more of these signals are present:
 
 | Anti-Pattern | Why It Hurts | Better Behavior |
 |--------------|--------------|-----------------|
-| tactical patch treated as final architecture | hidden long-term drift | declare strategic target and convergence path |
+| tactical patch artifact treated as final architecture | hidden long-term drift | declare strategic target and convergence path |
 | strategy-only paralysis before any local progress | slows discovery and learning | allow bounded tactical entry |
 | workaround with no retirement path | temporary local logic becomes permanent by accident | require retirement, absorption, or promotion plan |
 | design says one thing, tactical implementation drifts elsewhere | authority split and inconsistency | keep tactical work aligned to strategic target |

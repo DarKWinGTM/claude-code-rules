@@ -1,7 +1,7 @@
-# Phase 003 - Install and Verify Tactical Strategic Rule
+# Phase 001-03 - Install and Verify Tactical Strategic Rule
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
-> **Phase ID:** P3
+> **Phase ID:** 001-03
 > **Status:** Completed
 > **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
 > **Design References:** [../design/tactical-strategic-programming.design.md](../design/tactical-strategic-programming.design.md)
