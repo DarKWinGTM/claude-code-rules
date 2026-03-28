@@ -34,7 +34,7 @@
   <b>50%</b><br><sub>Faster Response</sub>
 </td>
 <td align="center" width="200">
-  <img src="https://img.shields.io/badge/Safety-100%25-red?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0QzMzI1RiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+  <img src="https://img.shields.io/badge/Safety-100%25-red?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0QzMzI1RiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   <br><br>
   <b>100%</b><br><sub>Constitutional</sub>
 </td>
@@ -44,7 +44,7 @@
 <!-- CTA Buttons -->
 <p>
   <a href="#-quick-start">
-    <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
   </a>
   <a href="#-rule-files">
     <img src="https://img.shields.io/badge/📁_Rules-32_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
@@ -463,7 +463,6 @@ design/*.design.md + patch/<context>.patch.md or root <context>.patch.md
 - patch artifacts remained outside the live phase workspace
 - design and patch documents did not gain a reverse-link requirement back to phase
 
-
 #### Example 6: Startup Artifact Governance Rollout
 
 ```text
@@ -653,6 +652,60 @@ Architect  ──┘
 <sub>Standardized docs and startup artifact gate</sub>
 </td>
 </tr>
+<tr>
+<td align="center" width="25%">
+<b>Artifact Initiation Control</b><br>
+<sub>Resolve startup artifact posture before meaningful governed work drifts</sub>
+</td>
+<td align="center" width="25%">
+<b>Document Patch Control</b><br>
+<sub>Before/after patch artifacts with explicit change surfaces</sub>
+</td>
+<td align="center" width="25%">
+<b>Evidence-Grounded Burden of Proof</b><br>
+<sub>Fact, inference, and contradiction thresholds stay explicit</sub>
+</td>
+<td align="center" width="25%">
+<b>Operational Failure Handling</b><br>
+<sub>Bounded retries, honest cooldowns, and stop/escalation behavior</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="25%">
+<b>Phase Implementation</b><br>
+<sub>Major/subphase execution model with early `/phase` establishment bridge</sub>
+</td>
+<td align="center" width="25%">
+<b>Recovery Contract</b><br>
+<sub>No dead-end blocked paths; always provide a usable next step</sub>
+</td>
+<td align="center" width="25%">
+<b>Refusal Classification</b><br>
+<sub>Deterministic refusal classes and output modes</sub>
+</td>
+<td align="center" width="25%">
+<b>Refusal Minimization</b><br>
+<sub>Prefer recoverable constrained/context paths over premature refusal</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="25%">
+<b>Runtime Topology Control</b><br>
+<sub>Inspect-first, one-authority-at-a-time runtime mutation discipline</sub>
+</td>
+<td align="center" width="25%">
+<b>TODO Standards</b><br>
+<sub>Simple execution tracking with early TODO establishment when needed</sub>
+</td>
+<td align="center" width="25%">
+<b>Dan-Safe Normalization</b><br>
+<sub>Normalize jailbreak-style wrappers into bounded intent evaluation</sub>
+</td>
+<td align="center" width="25%">
+<b>Reserved</b><br>
+<sub>Placeholder slot for future visual asset parity</sub>
+</td>
+</tr>
 </table>
 
 ---
@@ -673,6 +726,20 @@ Architect  ──┘
 <td align="center" width="33%">
 <b>Explanation Quality</b><br>
 <sub>Active explanation-layer rule for what-it-is/what-it-is-not, now-vs-later, user-visible outcomes, and next-stage progression</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<b>Accurate Communication</b><br>
+<sub>Evidence-honest wording, bounded technical snapshots, and claim-strength discipline</sub>
+</td>
+<td align="center" width="33%">
+<b>Natural Professional Communication</b><br>
+<sub>Calm, human-readable, non-robotic, non-character-driven default communication</sub>
+</td>
+<td align="center" width="33%">
+<b>Reserved</b><br>
+<sub>Placeholder slot for future visual asset parity</sub>
 </td>
 </tr>
 </table>
@@ -697,6 +764,20 @@ Architect  ──┘
 <img src="img/safe-terminal-output.png" width="280"><br>
 <b>Safe Terminal</b><br>
 <sub>Output management</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<b>Tactical Strategic Programming</b><br>
+<sub>Tactical speed with mandatory strategic target and convergence path</sub>
+</td>
+<td align="center" width="33%">
+<b>Reserved</b><br>
+<sub>Placeholder slot for future visual asset parity</sub>
+</td>
+<td align="center" width="33%">
+<b>Reserved</b><br>
+<sub>Placeholder slot for future visual asset parity</sub>
 </td>
 </tr>
 </table>
