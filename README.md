@@ -435,7 +435,7 @@ phase/SUMMARY.md
   → source-input extraction summary table
   → overview flow diagram
   → review summary table
-  → phase/phase-001-*.md
+  → phase/phase-NNN-*.md / phase/phase-NNN-NN-*.md
   → TODO.md history
 ```
 
@@ -460,7 +460,7 @@ design/*.design.md + patch/<context>.patch.md or root <context>.patch.md
 - `phase-implementation` was extended from design-only extraction into one-way source synthesis
 - `phase/SUMMARY.md` can now show both design inputs and patch inputs when patch-derived work matters
 - child phase files can now carry optional patch references and patch-to-phase extraction alongside design traceability
-- `/patches` remained outside the live phase workspace
+- patch artifacts remained outside the live phase workspace
 - design and patch documents did not gain a reverse-link requirement back to phase
 
 
