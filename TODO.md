@@ -1,6 +1,6 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-03-28
+> **Last Updated:** 2026-03-30
 
 ---
 
@@ -8,6 +8,7 @@
 
 - [x] Create first-class `artifact-initiation-control` rule chain, patch startup-governance owners (`project-documentation-standards`, `phase-implementation`, `todo-standards`, `strict-file-hygiene`), open `phase-004` from the start, and synchronize master docs/history.
 - [x] Normalize `todo-standards` into a fully tracked governed chain with runtime body + dedicated changelog authority as part of the startup-governance rollout.
+- [x] Harden explicit phase-to-patch linkage in phased work by updating `phase-implementation`, `project-documentation-standards`, and the root helper so `phase/SUMMARY.md` plus relevant child phase files must declare governed patch participation explicitly when patch is in scope.
 
 - [x] UDVC-1 design/runtime/changelog synchronization baseline applied across governance chains.
 - [x] Changelog-layer metadata normalization completed (mandatory headers + active-session integrity).
@@ -48,13 +49,14 @@
 - [x] Create first-class `tactical-strategic-programming` rule chain with governed design/runtime/changelog artifacts, phase-backed RULES execution records, master-doc synchronization, and installed runtime copy.
 - [x] Change default phase numbering in `phase-implementation` and its helper/template from `010/020/030` to `001/002/003`, then synchronize governance docs and installed runtime rules.
 - [x] Standardize active phase identities across RULES to `NNN` majors and `NNN-NN` subphases, migrate live `phase/` artifacts, and synchronize helper/master governance docs.
+- [x] Create first-class `natural-professional-communication` rule chain, refine related communication-owner chains, synchronize phase/master governance docs, and re-sync installed runtime copies.
 
 ---
 
 ## 📋 Tasks To Do
 
 ### Current Governance Execution
-- [x] Create first-class `natural-professional-communication` rule chain, refine related communication-owner chains, synchronize phase/master governance docs, and re-sync installed runtime copies.
+- [ ] (none)
 
 ### Deferred Enhancements
 - [ ] Automated validation script for documentation compliance (deferred by user).
@@ -66,6 +68,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-03-30 | Applied a narrow central RULES refinement for explicit phase-to-patch linkage: updated `phase-implementation` plus its design/helper so phased work with governed patch artifacts must declare that linkage explicitly in `phase/SUMMARY.md` and relevant child phase files, reinforced `project-documentation-standards` and its design with the same verification expectation, added `patch/phase-linkage-hardening.patch.md`, opened `phase-005-01` and `phase-005-02`, and synchronized master phase/TODO/history surfaces. |
 | 2026-03-28 | Created first-class `artifact-initiation-control` and completed the startup-governance rollout: added the new design/runtime/changelog triad; updated `project-documentation-standards` (v2.9), `phase-implementation` (v2.6), `todo-standards` (v2.3), and `strict-file-hygiene` (v1.2) so startup artifact posture is resolved before meaningful governed work drifts; opened `phase-004` from the start; normalized `todo-standards` into a fully tracked chain with its own changelog authority; and synchronized master docs/history so the new artifact-first startup model is visible repo-wide. |
 | 2026-03-28 | Corrected the RULES patch model: redefined patch as an explicit before/after change artifact, changed active placement to `patch/<context>.patch.md` or root `<context>.patch.md`, updated `document-patch-control` (v2.4), `project-documentation-standards` (v2.8), `phase-implementation` (v2.5), and `tactical-strategic-programming` (v1.1), rewrote the two in-repo historical patch examples under `patch/`, synchronized README/master design/changelogs, and updated patch-path references in TODO/history. |
 | 2026-03-28 | Standardized active phase identities across RULES to `NNN` majors and `NNN-NN` subphases: updated the active phase-owner chains, rewrote the helper/master docs to the deterministic hierarchy, renamed live `phase/*.md` artifacts into grouped subphases (`001-01` to `001-03`, `002-01` to `002-04`), rewrote `phase/SUMMARY.md` with explicit major/subphase grouping, and preserved older `010/020/030` and flat `001/002/003` references as historical records rather than rewriting them. |
@@ -94,22 +97,3 @@
 | 2026-03-11 | Moved live phased execution to `/phase`: updated `phase-implementation` to require `phase/SUMMARY.md` plus child phase files under `phase/`, updated `document-patch-control` and `project-documentation-standards` so `/patches` is no longer the live phase namespace, rewrote `phase-implementation-template.md` to demonstrate the new `/phase` structure, refreshed `README.md`, and recorded the rollout in TODO history. |
 | 2026-03-10 | Created first-class `answer-presentation` rule chain: added `design/answer-presentation.design.md`, `answer-presentation.md`, and `changelog/answer-presentation.changelog.md`; updated `design/design.md` and `README.md` to 26 active runtime rules; and installed the new presentation-layer runtime rule into `~/.claude/rules/answer-presentation.md`. |
 | 2026-03-10 | Refined role-specific checklist boundaries: updated `phase-implementation` to v1.1 with a dedicated execution-planning validation checklist, updated `document-patch-control` to v1.7 with a dedicated patch-governance checklist, clarified that the two checklists serve different roles, and preserved the patch ≠ phase boundary. |
-| 2026-03-10 | Created first-class `phase-implementation` rule chain: added `design/phase-implementation.design.md`, `phase-implementation.md`, and `changelog/phase-implementation.changelog.md`; refocused `document-patch-control` to governance/metadata role only; updated `project-documentation-standards` to distinguish phase rule vs patch instance vs root helper; rewrote `phase-implementation-template.md` into readable practical markdown with richer phase status, action points, design references, and TODO/changelog companion guidance; updated `design/design.md` + `README.md` to 25 active runtime rules; and installed updated runtime rules into `~/.claude/rules/`. |
-| 2026-03-10 | Corrected flexible phase template placement to the RULES root: updated `document-patch-control` to v1.5, updated `project-documentation-standards` to v2.0, created `phase-implementation-template.md` at root, refreshed `design/design.md`, and reinstalled the updated runtime rules into `~/.claude/rules/`. |
-| 2026-03-10 | Extended the patch workflow for flexible phased implementation planning: updated `document-patch-control` to v1.4, updated `project-documentation-standards` to v1.9, and at that time introduced a non-governed reusable phase template under the temporary historical path `support/phase-implementation-template.md`; this was later corrected to the root `phase-implementation-template.md` location. |
-| 2026-03-09 | Applied balanced concise-summary patch to `accurate-communication` and `explanation-quality`: updated both design/runtime/changelog chains, refreshed `design/design.md` inventory references, and installed the updated runtime rules into `~/.claude/rules/`. |
-| 2026-03-08 | Completed anti-poisoning cleanup wave: rewrote `README.md` to overview-only scope, refactored `design/design.md` to active-state-only guidance, normalized governance design/runtime docs to the canonical `Design + Session + Full history` model, converted `design/accurate-communication.design.md` to navigator-style active design content, and reclassified `design/image.prompt.design.md` into support-only `support/image-prompts.md`. |
-| 2026-03-07 | Upgraded active `explanation-quality` chain to v1.2: updated `design/explanation-quality.design.md`, `explanation-quality.md`, and `changelog/explanation-quality.changelog.md` with negative triggers, closing-summary behavior, decision usefulness checks, and required next-step option endings; synchronized `design/design.md` and `changelog/changelog.md`. |
-| 2026-03-07 | Completed runtime rollout for `explanation-quality`: created `explanation-quality.md` (v1.1), synchronized `design/explanation-quality.design.md` + `changelog/explanation-quality.changelog.md` (v1.1), updated `design/design.md` and `README.md` to active-state inventory, and closed the pending TODO rollout task. |
-| 2026-03-07 | Created `design/explanation-quality.design.md` + `changelog/explanation-quality.changelog.md` (v1.0), updated `design/design.md` to register pending activation state, and queued runtime `explanation-quality.md` materialization for later approval. |
-| 2026-02-24 | Completed runtime rollout closure for unified version controller: created `unified-version-control-system.md` (v1.1), synchronized `changelog/unified-version-control-system.changelog.md` (v1.1), updated `design/design.md` to active-state indexing, and closed pending TODO rollout task. |
-| 2026-02-24 | Created `design/unified-version-control-system.design.md` + `changelog/unified-version-control-system.changelog.md` (v1.0) and queued runtime `unified-version-control-system.md` creation as pending by request. |
-| 2026-02-24 | Reconfirmed single-standard version governance scope in master docs: updated `design/design.md` (UDVC-1 unified mechanism across design/changelog/TODO/patch), `changelog/changelog.md` v3.6, and synchronized TODO execution history. |
-| 2026-02-23 | Completed final consistency audit across design/rule/changelog/TODO/patch layers: patch metadata contract closure, active-session placeholder removal (`design/accurate-communication.design.md`), and legacy changelog `#version-*` anchor normalization. |
-| 2026-02-23 | Aligned `patch/consistency-rule-enhancement.patch.md` and `patch/legacy-rules-migration.patch.md` to UDVC-1 metadata contract (mandatory fields, version/session/history-link alignment) and created `changelog/consistency-rule-enhancement.changelog.md` authority file. |
-| 2026-02-23 | Simplified `TODO.md` to canonical `todo-standards` structure (`Completed`, `Tasks To Do`, `History`) and removed dashboard/priority overhead artifacts. |
-| 2026-02-23 | Completed changelog metadata normalization sweep: mandatory header completion, parent-reference normalization, and active-session placeholder removal in changelog layer. |
-| 2026-02-22 | Completed WS-1..WS-6 hardening synchronization slices and aligned governance references across design/runtime/changelog artifacts. |
-| 2026-02-21 | Completed authorized adversarial workflow suite design+rules+changelog chain rollout. |
-| 2026-02-01 | Completed legacy rule migration and patch-control standard integration baseline. |
-| 2026-01-21 | Completed master design/changelog restructuring and rules-template standardization baseline. |

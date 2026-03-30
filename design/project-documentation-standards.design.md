@@ -164,6 +164,9 @@ After startup posture is resolved
   → continue with substantive planning / implementation
 ```
 
+When phased work also uses governed patch artifacts, the phase workspace should declare that linkage explicitly in `phase/SUMMARY.md` and the relevant child phase files instead of leaving patch participation implicit.
+
+
 ---
 
 ## 8) Verification Checklist
@@ -177,6 +180,7 @@ After startup posture is resolved
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` phase files under `phase/`
+- [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md`
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] Root-level helper artifacts do not masquerade as governed docs
@@ -196,6 +200,7 @@ After startup posture is resolved
 | Phase-file role clarity | 100% |
 | Patch-role separation clarity | 100% |
 | Patch placement clarity | 100% |
+| Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
 | Root-helper placement clarity | 100% |
 | TODO simplification compliance | 100% |

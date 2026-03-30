@@ -73,6 +73,7 @@ Use the repository roles like this:
 - `patch/<context>.patch.md` or root `<context>.patch.md`
   - separate governed patch/review artifacts
   - may act as optional source inputs for phase planning when patch-derived work matters
+  - when patch is in scope, `phase/SUMMARY.md` and the relevant child phase files should name the applicable patch explicitly
   - not the live phase-plan namespace
   - do not need to point back to phase
 

@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.6
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.6
+> **Current Version:** 2.7
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use phased planning only when staged execution meaningfully improves clarity, require phased work to use a dedicated `/phase` workspace with mandatory `SUMMARY.md` plus deterministic major/subphase IDs, and establish `/phase` early when startup artifact governance already shows phased work is required.**
+**Core Principle: Use phased planning only when staged execution meaningfully improves clarity, require phased work to use a dedicated `/phase` workspace with mandatory `SUMMARY.md` plus deterministic major/subphase IDs, establish `/phase` early when startup artifact governance already shows phased work is required, and declare governed patch participation explicitly when patch is in scope.**
 
 This rule defines the semantic standard for phase planning. The governed summary/index lives in `/phase/SUMMARY.md`, executable phase detail lives in `/phase/phase-NNN-*.md` or `/phase/phase-NNN-NN-*.md`, design remains target-state authority, patch remains governed change/review authority as explicit before/after change artifacts, and the root helper remains a non-governed drafting aid.
 
@@ -26,7 +26,7 @@ This rule defines the semantic standard for phase planning. The governed summary
 - the active phase-identity grammar
 - what semantic fields a child phase file should contain
 - how design references should be mapped into each phase
-- how optional patch references may also be mapped into each phase when patch-derived work matters
+- how governed patch references should be mapped into each phase when patch-derived work matters
 - how cross-phase handoffs, verification, TODO coordination, changelog coordination, and rollback boundaries should be expressed
 - how live phase planning may synthesize one-way source inputs from design and relevant patch artifacts without becoming a source-of-truth layer
 
@@ -108,13 +108,23 @@ Live phased execution files inside patch artifacts are **not allowed**.
 
 Phase planning may consume:
 - `design/*.design.md` as target-state inputs
-- `patch/<context>.patch.md` or root `<context>.patch.md` as optional governed change/review inputs when patch-derived work matters
+- `patch/<context>.patch.md` or root `<context>.patch.md` as governed change/review inputs when patch-derived work matters
 
 This direction is one-way:
 - phase artifacts may cite and synthesize design and patch inputs
 - design and patch artifacts are not required to point back to phase
 - using patch input does not move live execution planning into patch artifacts
 - using design input does not turn phase into target-state authority
+
+### 7.1 Explicit phase-to-patch linkage rule
+
+When phased work uses a governed patch artifact, the live phase workspace must declare that linkage explicitly.
+
+Required guidance:
+- `phase/SUMMARY.md` must name the governing patch artifact(s) for the relevant phase, or explicitly state that no governed patch artifact is available yet
+- each child phase file that uses patch-derived work must include a `Patch References` field naming the applicable patch artifact(s), or explicit `none`
+- use `none` only when patch is truly not required for that phase, not as a placeholder for an unresolved decision
+- this requirement does not create a reverse-link requirement from patch back to phase, though projects may still add such links if helpful
 
 ### 8) `SUMMARY.md` Responsibilities
 `phase/SUMMARY.md` should keep the global execution picture, including:
@@ -123,6 +133,7 @@ This direction is one-way:
 - a phase map or phase index
 - references to live major/subphase files
 - summary-level source inputs from design and patch artifacts when relevant
+- explicit governing patch artifact references for phases where patch is in scope, or explicit `none` when patch is genuinely not required
 - cross-phase handoffs and dependency rules
 - overall TODO/changelog coordination when the concern is global
 - end-to-end verification requirements
@@ -134,7 +145,7 @@ Each executable child phase file should define, or clearly map to:
 - Phase ID
 - Status
 - Design references
-- Patch references (optional when patch-derived work exists)
+- Patch references (required when patch-derived work exists; otherwise explicit `none`)
 - Objective
 - Why this phase exists
 - Entry conditions / prerequisites
@@ -170,6 +181,7 @@ If patch documents exist, they remain patch artifacts and must not be used as th
 - [ ] `/phase` examples show either a valid major-phase file, a valid subphase file, or both
 - [ ] `SUMMARY.md` guidance makes parent-child grouping visible when subphases exist
 - [ ] child phase-file guidance uses canonical IDs in dependencies and examples
+- [ ] phased work with governed patch artifacts shows explicit patch linkage in `phase/SUMMARY.md` and relevant child phase files
 - [ ] patch artifacts remain outside the live phase workspace
 
 ---
@@ -183,6 +195,7 @@ If patch documents exist, they remain patch artifacts and must not be used as th
 | `SUMMARY.md` presence when phased planning is used | 100% |
 | Design traceability coverage | 100% when design input is used |
 | Patch traceability coverage | 100% when patch-derived work is used |
+| Explicit phase-to-patch linkage coverage | 100% when patch is in scope |
 | Startup phase posture resolved before drift when phase is required | 100% |
 | Live phased execution files inside patch artifacts | 0 |
 

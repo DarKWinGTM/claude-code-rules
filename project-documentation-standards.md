@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.9
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.9
+> **Current Version:** 2.10
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.10
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase` planning artifacts, `/patch` artifacts, and non-governed helper/support artifacts, and resolve required startup artifact posture before meaningful governed work drifts.**
+**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase` planning artifacts, `/patch` artifacts, and non-governed helper/support artifacts, resolve required startup artifact posture before meaningful governed work drifts, and make governed patch participation explicit in the live phase workspace when patch is in scope.**
 
 ---
 
@@ -119,6 +119,7 @@ After startup posture is resolved
 - Child phase files remain the governed execution detail layer for multi-phase work
 - Patch artifacts remain outside the live phase namespace
 - `phase-implementation.md` remains the semantic authority for phased execution behavior
+- phased work with governed patch artifacts must show explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - `artifact-initiation-control.md` remains the startup artifact-resolution owner
 - Root-level helper artifacts and support artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
 
@@ -135,6 +136,7 @@ After startup posture is resolved
 - [ ] `phase-implementation.md` is used as the semantic phase rule when applicable
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Multi-phase work uses child phase files under `phase/`
+- [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md`
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] `phase-implementation-template.md` remains a non-governed helper artifact
@@ -154,6 +156,7 @@ After startup posture is resolved
 | Child-phase-file role clarity | 100% |
 | Patch-role separation clarity | 100% |
 | Patch placement clarity | 100% |
+| Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
 | Root-helper placement clarity | 100% |
 | TODO simplification compliance | 100% |
@@ -168,7 +171,7 @@ After startup posture is resolved
 | [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
 | [document-design-control.md](document-design-control.md) v1.8 | Design structure standards |
 | [document-patch-control.md](document-patch-control.md) v2.4 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
-| [phase-implementation.md](phase-implementation.md) v2.5 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
+| [phase-implementation.md](phase-implementation.md) v2.7 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [todo-standards.md](todo-standards.md) v2.3 | TODO structure standards plus startup-establishment bridge |
 
 ---

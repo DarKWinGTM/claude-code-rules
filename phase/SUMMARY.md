@@ -1,7 +1,7 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.2
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.6
+> **Current Version:** 1.3
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Status:** Completed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -14,13 +14,14 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains four rollout families:
+The current workspace contains five rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
 - major phase `004` = artifact-initiation-control rollout
+- major phase `005` = explicit phase-to-patch linkage hardening rollout
 
-The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4` or flat child numbering that hides parent-child relationships.
+The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
 ---
 
@@ -41,6 +42,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 004 | 004-01 | `phase/phase-004-01-create-artifact-initiation-rule.md` | `design/project-documentation-standards.design.md` + `design/phase-implementation.design.md` + `design/todo-standards.design.md` | n/a | Create the first-class `artifact-initiation-control` rule chain | Startup artifact posture has one semantic owner |
 | 004 | 004-02 | `phase/phase-004-02-realign-startup-governance.md` | `design/project-documentation-standards.design.md` + `design/phase-implementation.design.md` + `design/todo-standards.design.md` + `design/strict-file-hygiene.design.md` | n/a | Realign startup-governance owner chains to the new rule | Existing owners stop weakening startup artifact-first behavior |
 | 004 | 004-03 | `phase/phase-004-03-sync-master-docs-and-history.md` | `design/design.md` + `design/project-documentation-standards.design.md` | n/a | Sync master docs, TODO, changelog, and phase summary for the new startup-governance wave | Repo-level governance reflects the new startup rule |
+| 005 | 005-01 | `phase/phase-005-01-harden-phase-patch-linkage.md` | `design/phase-implementation.design.md` + `design/project-documentation-standards.design.md` | `patch/phase-linkage-hardening.patch.md` | Harden the explicit phase-to-patch linkage rule in the live phase workspace | Phased work with governed patch artifacts must declare that linkage explicitly |
+| 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | `design/design.md` + `design/project-documentation-standards.design.md` | `patch/phase-linkage-hardening.patch.md` | Sync master docs, TODO, changelog, and phase summary for the narrow linkage-hardening wave | Repo-level governance reflects the explicit linkage refinement |
 
 ---
 
@@ -60,7 +63,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 004-01: create artifact-initiation startup owner
   → 004-02: realign startup-governance owner chains
   → 004-03: sync master docs and history for the startup-governance wave
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, and artifact-first startup governance
+  → 005-01: harden explicit phase-to-patch linkage in the live phase workspace
+  → 005-02: sync master docs and history for the linkage-hardening wave
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, and explicit phase-to-patch linkage when patch is in scope
 
 ---
 
@@ -81,6 +86,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 004 | 004-01 | `phase/phase-004-01-create-artifact-initiation-rule.md` | Approved | None | Approved As-Is | none |
 | 004 | 004-02 | `phase/phase-004-02-realign-startup-governance.md` | Approved | None | Approved As-Is | none |
 | 004 | 004-03 | `phase/phase-004-03-sync-master-docs-and-history.md` | Approved | None | Approved As-Is | none |
+| 005 | 005-01 | `phase/phase-005-01-harden-phase-patch-linkage.md` | Implemented - Pending Review | Review Pending | Awaiting Review | narrow linkage refinement applied |
+| 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs/history synchronized |
 
 ---
 
@@ -101,33 +108,35 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 004 | 004-01 | Completed | `phase/phase-004-01-create-artifact-initiation-rule.md` | Create the first-class `artifact-initiation-control` rule chain | none |
 | 004 | 004-02 | Completed | `phase/phase-004-02-realign-startup-governance.md` | Realign startup-governance owner chains to the new rule | `004-01` |
 | 004 | 004-03 | Completed | `phase/phase-004-03-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new startup-governance wave | `004-02` |
+| 005 | 005-01 | Implemented - Pending Review | `phase/phase-005-01-harden-phase-patch-linkage.md` | Harden explicit phase-to-patch linkage in the live phase workspace | none |
+| 005 | 005-02 | Implemented - Pending Review | `phase/phase-005-02-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new linkage-hardening wave | `005-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the patch-model correction and the artifact-initiation rollout as new history entries while preserving earlier history as context.
-- `changelog/changelog.md` should record the repository-level startup-governance wave after the owner chains are aligned.
-- touched chain changelogs should preserve prior startup-behavior assumptions while appending the new artifact-initiation control wave as a fresh dated event.
+- `TODO.md` should record the phase-to-patch linkage hardening wave as a new completed history item while preserving earlier rollout history.
+- `changelog/changelog.md` should record the repository-level explicit-linkage refinement after the touched chains are aligned.
+- touched chain changelogs should record the refinement as a narrow follow-up to the earlier patch-model and startup-governance waves rather than as a new broad governance rewrite.
 
 ---
 
 ## Final Verification
 
 - active phase workspace uses `NNN` for majors and `NNN-NN` for subphases
-- no symbolic `P1/P2/P3/P4` identifiers remain in the active `phase/` workspace
-- summary tables reference real renamed phase files
+- no symbolic `P1/P2/P3/P4/P5` identifiers remain in the active `phase/` workspace
+- summary tables reference real phase files
 - parent-child grouping is visible in the summary
 - historical records remain in changelog/TODO rather than being rewritten here
+- phased work with governed patch artifacts is now expected to show explicit linkage from `phase/SUMMARY.md` and relevant child phase files
 
 ---
 
 ## Overall Rollback / Containment
 
-If this workspace-level migration proved incorrect, rollback would require:
-- reverting active phase filenames to their prior names
-- restoring prior `SUMMARY.md` references and table shapes
-- restoring any reverted runtime/design/helper wording that depends on the new phase identity model
-- preserving the appended history entries that record the migration event
+If this narrow linkage refinement proved incorrect, rollback would require:
+- narrowing the explicit linkage wording in the touched phase/documentation owner chains
+- restoring prior helper wording if needed
+- preserving the recorded history of the refinement wave rather than silently erasing it
 
 ---

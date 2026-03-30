@@ -193,7 +193,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, and scoped negative-evidence semantics |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures |
-| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities and early phase-establishment bridge when startup governance requires it |
+| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, and explicit phase-to-patch linkage when patch is in scope |
 | [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
 | [`tactical-strategic-programming.md`](tactical-strategic-programming.md) | Tactical vs strategic doctrine | Tactical entry stays fast, but every tactical move must point toward a declared strategic target and convergence path |
@@ -348,6 +348,8 @@ That means design / changelog / TODO / phase / patch should be explicitly resolv
 - create now
 - ask now
 - not required
+
+When phased work also uses governed patch artifacts, the live phase workspace should now declare that linkage explicitly in `phase/SUMMARY.md` and the relevant child phase files.
 
 ### Recommended Update Flow
 

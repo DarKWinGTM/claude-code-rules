@@ -72,8 +72,8 @@ This repository uses one deterministic governance model:
 | 16 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |
 | 17 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
 | 18 | operational-failure-handling.md | operational-failure-handling.design.md v1.1 | Profile-driven operational failure classification, bounded retry policy, and honest cooldown/escalation behavior |
-| 19 | phase-implementation.md | phase-implementation.design.md v2.6 | First-class semantic standard for phased execution planning with early phase-establishment bridge |
-| 20 | project-documentation-standards.md | project-documentation-standards.design.md v2.9 | Repository-level document-role model plus startup artifact gate |
+| 19 | phase-implementation.md | phase-implementation.design.md v2.7 | First-class semantic standard for phased execution planning with early phase-establishment bridge and explicit phase-to-patch linkage when patch is in scope |
+| 20 | project-documentation-standards.md | project-documentation-standards.design.md v2.10 | Repository-level document-role model plus startup artifact gate and explicit patch-linkage verification for phased work |
 | 21 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
 | 22 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
 | 23 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |
@@ -132,6 +132,7 @@ The active phase-planning contract is:
 - `phase/SUMMARY.md` is the governed summary/index for live phased execution
 - executable phase files under `phase/` use `NNN` for major phases and `NNN-NN` for subphases
 - patch docs remain separate governed patch/review artifacts outside the live phase workspace
+- phased work with governed patch artifacts must declare that linkage explicitly in `phase/SUMMARY.md` and relevant child phase files
 
 ---
 

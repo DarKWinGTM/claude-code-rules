@@ -101,6 +101,8 @@ Patch artifacts remain outside the live phase-plan namespace.
 ### 5.2 Child phase role
 Each executable phase file should own one bounded execution slice and make its design/patch inputs reviewable enough for safe progression.
 
+When governed patch artifacts are in scope, the live phase workspace must declare that linkage explicitly rather than leaving patch participation implicit.
+
 ---
 
 ## 6) Child Phase Field Contract
