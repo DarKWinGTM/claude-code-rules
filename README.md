@@ -175,7 +175,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 ---
 
-### 🟡 Quality & Safety (23 rules)
+### 🟡 Quality & Safety (24 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
@@ -191,6 +191,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, and required to show explicit change surfaces |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, and scoped negative-evidence semantics |
+| [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures |
 | [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, and explicit phase-to-patch linkage when patch is in scope |
@@ -229,7 +230,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 32**
+**📊 Active Runtime Rules: 33**
 
 </div>
 
@@ -237,7 +238,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 32-rule set, but describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 33-rule set, but describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 

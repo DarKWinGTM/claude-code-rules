@@ -14,12 +14,13 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains five rollout families:
+The current workspace contains six rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
 - major phase `004` = artifact-initiation-control rollout
 - major phase `005` = explicit phase-to-patch linkage hardening rollout
+- major phase `006` = external-verification-and-source-trust rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -44,6 +45,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 004 | 004-03 | `phase/phase-004-03-sync-master-docs-and-history.md` | `design/design.md` + `design/project-documentation-standards.design.md` | n/a | Sync master docs, TODO, changelog, and phase summary for the new startup-governance wave | Repo-level governance reflects the new startup rule |
 | 005 | 005-01 | `phase/phase-005-01-harden-phase-patch-linkage.md` | `design/phase-implementation.design.md` + `design/project-documentation-standards.design.md` | `patch/phase-linkage-hardening.patch.md` | Harden the explicit phase-to-patch linkage rule in the live phase workspace | Phased work with governed patch artifacts must declare that linkage explicitly |
 | 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | `design/design.md` + `design/project-documentation-standards.design.md` | `patch/phase-linkage-hardening.patch.md` | Sync master docs, TODO, changelog, and phase summary for the narrow linkage-hardening wave | Repo-level governance reflects the explicit linkage refinement |
+| 006 | 006-01 | `phase/phase-006-01-create-external-verification-rule.md` | `design/external-verification-and-source-trust.design.md` | `patch/external-verification-and-source-trust.patch.md` | Create the first-class external-verification-and-source-trust rule chain | One semantic owner exists for proactive web verification and source trust |
+| 006 | 006-02 | `phase/phase-006-02-integrate-source-trust-governance.md` | `design/external-verification-and-source-trust.design.md` + `design/design.md` + adjacent owner designs | `patch/external-verification-and-source-trust.patch.md` | Sync master docs, TODO, changelog, and phase summary for the new source-trust wave | Repo-level governance reflects the new external-verification owner |
 
 ---
 
@@ -65,7 +68,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 004-03: sync master docs and history for the startup-governance wave
   → 005-01: harden explicit phase-to-patch linkage in the live phase workspace
   → 005-02: sync master docs and history for the linkage-hardening wave
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, and explicit phase-to-patch linkage when patch is in scope
+  → 006-01: create external-verification-and-source-trust rule chain
+  → 006-02: sync master docs and history for the source-trust wave
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, and a first-class external source-trust verification owner
 
 ---
 
@@ -88,6 +93,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 004 | 004-03 | `phase/phase-004-03-sync-master-docs-and-history.md` | Approved | None | Approved As-Is | none |
 | 005 | 005-01 | `phase/phase-005-01-harden-phase-patch-linkage.md` | Implemented - Pending Review | Review Pending | Awaiting Review | narrow linkage refinement applied |
 | 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs/history synchronized |
+| 006 | 006-01 | `phase/phase-006-01-create-external-verification-rule.md` | In Progress | Review Pending | Awaiting Review | new external verification owner created |
+| 006 | 006-02 | `phase/phase-006-02-integrate-source-trust-governance.md` | In Progress | Review Pending | Awaiting Review | master integration wave underway |
 
 ---
 
@@ -110,14 +117,16 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 004 | 004-03 | Completed | `phase/phase-004-03-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new startup-governance wave | `004-02` |
 | 005 | 005-01 | Implemented - Pending Review | `phase/phase-005-01-harden-phase-patch-linkage.md` | Harden explicit phase-to-patch linkage in the live phase workspace | none |
 | 005 | 005-02 | Implemented - Pending Review | `phase/phase-005-02-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new linkage-hardening wave | `005-01` |
+| 006 | 006-01 | In Progress | `phase/phase-006-01-create-external-verification-rule.md` | Create the first-class external-verification-and-source-trust rule chain | none |
+| 006 | 006-02 | In Progress | `phase/phase-006-02-integrate-source-trust-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new source-trust wave | `006-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the phase-to-patch linkage hardening wave as a new completed history item while preserving earlier rollout history.
-- `changelog/changelog.md` should record the repository-level explicit-linkage refinement after the touched chains are aligned.
-- touched chain changelogs should record the refinement as a narrow follow-up to the earlier patch-model and startup-governance waves rather than as a new broad governance rewrite.
+- `TODO.md` should record the phase-to-patch linkage hardening wave as a completed history item and track the new source-trust rollout while it is active.
+- `changelog/changelog.md` should record the repository-level source-trust rollout after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification chain plus any narrow adjacent-chain integration without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -129,6 +138,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - parent-child grouping is visible in the summary
 - historical records remain in changelog/TODO rather than being rewritten here
 - phased work with governed patch artifacts is now expected to show explicit linkage from `phase/SUMMARY.md` and relevant child phase files
+- the new external-verification chain exists as a governed triad with visible rollout indexing in the phase workspace
 
 ---
 

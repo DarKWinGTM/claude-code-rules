@@ -10,6 +10,11 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 7.0 | 2026-03-31 | **[Created first-class external-verification-and-source-trust rule chain and synchronized source-trust governance](#version-70)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Created `design/external-verification-and-source-trust.design.md`, `external-verification-and-source-trust.md`, and `changelog/external-verification-and-source-trust.changelog.md` as a new first-class chain | |
+| | | - Added `patch/external-verification-and-source-trust.patch.md` plus `phase/phase-006-01-*` and `phase/phase-006-02-*` to record the rollout family | |
+| | | - Updated master design, README, TODO, and `phase/SUMMARY.md` so the new source-trust owner is visible across the active repository model | |
+| | | Summary: Added one explicit semantic owner for proactive external verification, source-trust ranking, corroboration, and source-conflict handling so the RULES system becomes more accurate through better external evidence workflow, not just more cautious phrasing | |
 | 6.9 | 2026-03-30 | **[Hardened explicit phase-to-patch linkage in phased work](#version-69)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Updated `phase-implementation` design/runtime/helper to require explicit patch linkage in `phase/SUMMARY.md` and relevant child phase files when patch is in scope | |
 | | | - Updated `project-documentation-standards` design/runtime to verify the same live workspace behavior | |
@@ -52,6 +57,25 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-70"></a>
+## Version 7.0: Created first-class external-verification-and-source-trust rule chain and synchronized source-trust governance
+
+**Date:** 2026-03-31
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Created `design/external-verification-and-source-trust.design.md`, `external-verification-and-source-trust.md`, and `changelog/external-verification-and-source-trust.changelog.md` as a new first-class rule chain.
+- Added `patch/external-verification-and-source-trust.patch.md` as the governed before/after artifact for the rollout.
+- Added `phase/phase-006-01-create-external-verification-rule.md` and `phase/phase-006-02-integrate-source-trust-governance.md` as the rollout family for the new chain.
+- Updated `design/design.md` from 32 to 33 active runtime rules and placed the new chain in the Accuracy & Truth category.
+- Updated `README.md` so the public inventory now includes the new chain and describes its source-trust role more explicitly.
+- Updated `TODO.md` and `phase/SUMMARY.md` so the rollout is visible in execution tracking and phase indexing.
+
+### Summary
+Added one explicit semantic owner for proactive external verification, source-trust ranking, corroboration, and source-conflict handling so the RULES system can improve accuracy through stronger external-evidence workflow rather than only through cautious wording.
 
 ---
 
