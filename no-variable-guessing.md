@@ -1,8 +1,8 @@
 # No Variable Guessing Policy
 
-> **Current Version:** 1.3
-> **Design:** [design/no-variable-guessing.design.md](design/no-variable-guessing.design.md) v1.3
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+> **Current Version:** 1.4
+> **Design:** [design/no-variable-guessing.design.md](design/no-variable-guessing.design.md) v1.4
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/no-variable-guessing.changelog.md](changelog/no-variable-guessing.changelog.md)
 
 ---
@@ -16,6 +16,15 @@ This rule owns local lookup mechanics, inspected-scope declaration discipline, p
 ---
 
 ## Core Principles
+
+### 0) Portable-Contract Boundary Principle
+A checked local path/value is not automatically the right reusable default for shared artifacts.
+
+Required guidance:
+- keep exact local values scoped to the checked local context
+- do not let local observations silently become shared portable contracts
+- defer broader portability and anti-hardcoding defaults to `portable-implementation-and-hardcoding-control.md`
+
 
 ### 1) Read-Before-Reference Principle
 Use actual values from actual local sources before referring to them as if they were known.
@@ -147,5 +156,6 @@ Related rules:
 - [accurate-communication.md](accurate-communication.md) - owns the communication shape for scoped evidence reporting |
 - [anti-sycophancy.md](anti-sycophancy.md) - owns disagreement posture when local evidence conflicts with a claim |
 - [document-consistency.md](document-consistency.md) - keeps references and names aligned |
+- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - owns portable shared defaults and anti-hardcoding discipline beyond local checked-scope lookup |
 
 ---

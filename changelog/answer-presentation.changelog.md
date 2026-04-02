@@ -1,8 +1,8 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.6
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 1.7
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-04-02 | **[Scoped machine-specific values inside presentation patterns](#version-17)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | Summary: Extended answer-presentation so exact local paths, ports, and hosts in snapshots are presented as scoped local facts rather than as reusable defaults | |
 | 1.6 | 2026-03-27 | **[Added natural-flow formatting guidance to answer-presentation](#version-16)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Extended answer-presentation so structure now supports natural professional communication without making small answers feel templated or stiff | |
 | 1.5 | 2026-03-17 | **[Added full-set-first and next-stage layout guidance to answer-presentation](#version-15)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
@@ -24,6 +26,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Scoped machine-specific values inside presentation patterns
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `answer-presentation.md` from v1.6 to v1.7.
+- Updated `design/answer-presentation.design.md` from v1.6 to v1.7.
+- Added presentation guidance so exact local paths, ports, and hosts in technical snapshots are presented as scoped local facts rather than as portable defaults.
+- Added an anti-pattern example for machine-specific values presented like reusable defaults.
+- Added explicit deferral to `portable-implementation-and-hardcoding-control.md` for broader anti-hardcoding ownership.
+
+### Summary
+Extended answer-presentation so presentation-layer structure does not accidentally normalize machine-specific environment values as portable defaults.
 
 ---
 

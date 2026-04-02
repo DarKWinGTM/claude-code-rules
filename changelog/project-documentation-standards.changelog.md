@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.10
+> **Current Version:** 2.11
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.11 | 2026-04-02 | **[Integrated portable-default documentation guidance](#version-211)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | Summary: Extended project-documentation-standards so shared governed docs/templates stay portable by default and now defer anti-hardcoding discipline to `portable-implementation-and-hardcoding-control` | |
 | 2.10 | 2026-03-30 | **[Added explicit phase-to-patch linkage verification for phased work](#version-210)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Refined the repository role model so phased work with governed patch artifacts must show explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files | |
 | 2.9 | 2026-03-28 | **[Added startup artifact gate and routed repository startup behavior to artifact-initiation-control](#version-29)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -18,6 +20,23 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-211"></a>
+## Version 2.11: Integrated portable-default documentation guidance
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.10 to v2.11.
+- Updated `design/project-documentation-standards.design.md` from v2.10 to v2.11.
+- Added cross-document guidance that shared governed docs/templates should remain portable by default rather than embedding machine-specific environment assumptions.
+- Added explicit integration to `portable-implementation-and-hardcoding-control.md`.
+
+### Summary
+Extended project-documentation-standards so shared governed docs and templates stay portable by default while broader anti-hardcoding ownership is delegated to the new first-class chain.
 
 ---
 

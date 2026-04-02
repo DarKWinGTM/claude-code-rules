@@ -1,8 +1,8 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.3
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.4
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-02 | **[Added portable-reference consistency guidance](#version-14)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | Summary: Extended document-consistency so portable shared references stay distinct from checked local facts or machine-scoped examples and now defer broader ownership to `portable-implementation-and-hardcoding-control` | |
 | 1.3 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Replaced legacy `Based on` runtime metadata with canonical `Design + Session + Full history` header structure and aligned the chain version state | |
 | 1.2 | 2026-02-22 | **[Added shared verification trigger model (WS-5)](#version-12)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -18,6 +20,24 @@
 | | | Summary: Enforced visual verification standards from design | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added portable-reference consistency guidance
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `document-consistency.md` from v1.3 to v1.4.
+- Updated `design/document-consistency.design.md` from v1.3 to v1.4.
+- Added guidance so portable shared references remain distinct from checked local facts and machine-scoped examples.
+- Replaced a machine-specific path example with a portable placeholder example.
+- Added explicit deferral to `portable-implementation-and-hardcoding-control.md` for broader ownership.
+
+### Summary
+Extended document-consistency so portable references, local observations, and machine-scoped examples are kept distinct instead of silently blending into one reference model.
 
 ---
 

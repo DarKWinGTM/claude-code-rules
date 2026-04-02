@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.6
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
+> **Current Version:** 1.7
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
 
@@ -107,6 +107,8 @@ Required guidance:
 - use small fact tables only for stable checked facts that are easier to scan side by side than in prose
 - keep snapshot tables narrow, scoped, and fact-oriented
 - do not let the table replace the explanation or implication
+- when exact local paths, ports, or hosts appear, present them as scoped local facts rather than as portable defaults
+- defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 3.7 One-Block-One-Purpose Principle
 

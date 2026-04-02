@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 6.9
+> **Current Version:** 7.2
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,21 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 7.3 | 2026-04-02 | **[Deepened portability-rule integration across adjacent chains](#version-73)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Updated `no-variable-guessing`, `accurate-communication`, `project-documentation-standards`, and `strict-file-hygiene` to defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control` | |
+| | | - Deepened the next integration slice into `tactical-strategic-programming`, `document-consistency`, and `answer-presentation` so machine-specific defaults are less likely to leak through tactical behavior, reference examples, or presentation patterns | |
+| | | - Opened and completed `phase-008-03-deepen-portability-integration.md` as the bounded second integration slice | |
+| | | Summary: The portable-implementation owner now has meaningful adjacent-chain integration rather than existing only as a standalone chain | |
+| 7.2 | 2026-04-02 | **[Created first-class portable-implementation-and-hardcoding-control rule chain and synchronized hardcoding governance](#version-72)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Created `design/portable-implementation-and-hardcoding-control.design.md`, `portable-implementation-and-hardcoding-control.md`, and `changelog/portable-implementation-and-hardcoding-control.changelog.md` as a new first-class chain | |
+| | | - Added `patch/portable-implementation-and-hardcoding-control.patch.md` plus `phase/phase-008-01-*` and `phase/phase-008-02-*` to record the rollout family | |
+| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md` so the new portable-implementation owner is visible across the active repository model | |
+| | | Summary: Added one explicit semantic owner for portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline so machine-specific assumptions do not silently become shared defaults | |
+| 7.1 | 2026-03-31 | **[Created first-class custom-agent-selection-priority rule chain and synchronized agent-selection governance](#version-71)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Created `design/custom-agent-selection-priority.design.md`, `custom-agent-selection-priority.md`, and `changelog/custom-agent-selection-priority.changelog.md` as a new first-class chain | |
+| | | - Added `patch/custom-agent-selection-priority.patch.md` plus `phase/phase-007-01-*` and `phase/phase-007-02-*` to record the rollout family | |
+| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md` so the new agent-selection owner is visible across the active repository model | |
+| | | Summary: Added one explicit semantic owner for preferring visible user custom agents as the primary specialist pool when task fit is clear, without pretending that prompt rules control runtime discovery | |
 | 7.0 | 2026-03-31 | **[Created first-class external-verification-and-source-trust rule chain and synchronized source-trust governance](#version-70)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Created `design/external-verification-and-source-trust.design.md`, `external-verification-and-source-trust.md`, and `changelog/external-verification-and-source-trust.changelog.md` as a new first-class chain | |
 | | | - Added `patch/external-verification-and-source-trust.patch.md` plus `phase/phase-006-01-*` and `phase/phase-006-02-*` to record the rollout family | |
@@ -57,6 +72,63 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-73"></a>
+## Version 7.3: Deepened portability-rule integration across adjacent chains
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `no-variable-guessing` to v1.4 so checked local values now explicitly stay scoped local facts and defer broader portable-default ownership to the new chain.
+- Updated `accurate-communication` to v2.3 so machine-specific values in technical snapshots now stay presentation-scoped as local facts rather than reading like portable defaults.
+- Updated `project-documentation-standards` to v2.11 so shared governed docs/templates now explicitly stay portable by default.
+- Updated `strict-file-hygiene` to v1.3 so reusable artifacts now avoid machine-local hardcoded defaults by default.
+- Updated `tactical-strategic-programming` to v1.2, `document-consistency` to v1.4, and `answer-presentation` to v1.7 as the next bounded adjacent integration slice.
+- Added and completed `phase/phase-008-03-deepen-portability-integration.md` as the bounded second integration slice for the new owner.
+
+### Summary
+Deepened the new portability owner’s influence across adjacent chains so hardcoding-control now affects tactical execution, document consistency, and presentation behavior more concretely instead of remaining a standalone chain only.
+
+---
+
+<a id="version-72"></a>
+## Version 7.2: Created first-class portable-implementation-and-hardcoding-control rule chain and synchronized hardcoding governance
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Created `design/portable-implementation-and-hardcoding-control.design.md`, `portable-implementation-and-hardcoding-control.md`, and `changelog/portable-implementation-and-hardcoding-control.changelog.md` as a new first-class rule chain.
+- Added `patch/portable-implementation-and-hardcoding-control.patch.md` as the governed before/after artifact for the rollout.
+- Added `phase/phase-008-01-create-portable-implementation-rule.md` and `phase/phase-008-02-integrate-hardcoding-governance.md` as the rollout family for the new chain.
+- Updated `design/design.md` from 34 to 35 active runtime rules and registered the new chain as the owner for portable defaults and anti-hardcoding discipline.
+- Updated `README.md` so the public inventory now includes the new chain and describes its portable-implementation role explicitly.
+- Updated `TODO.md` and `phase/SUMMARY.md` so the rollout is visible in execution tracking and phase indexing.
+
+### Summary
+Added one explicit semantic owner for portable implementation defaults, late-bound environment resolution, observed-local-fact separation, and anti-hardcoding discipline so machine-specific assumptions do not silently become shared defaults.
+
+---
+
+<a id="version-71"></a>
+## Version 7.1: Created first-class custom-agent-selection-priority rule chain and synchronized agent-selection governance
+
+**Date:** 2026-03-31
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Created `design/custom-agent-selection-priority.design.md`, `custom-agent-selection-priority.md`, and `changelog/custom-agent-selection-priority.changelog.md` as a new first-class rule chain.
+- Added `patch/custom-agent-selection-priority.patch.md` as the governed before/after artifact for the rollout.
+- Added `phase/phase-007-01-create-custom-agent-selection-rule.md` and `phase/phase-007-02-integrate-agent-selection-governance.md` as the rollout family for the new chain.
+- Updated `design/design.md` from 33 to 34 active runtime rules and placed the new chain in the User Control category.
+- Updated `README.md` so the public inventory now includes the new chain and describes its custom-agent priority role more explicitly.
+- Updated `TODO.md` and `phase/SUMMARY.md` so the rollout is visible in execution tracking and phase indexing.
+
+### Summary
+Added one explicit semantic owner for preferring visible user custom agents as the primary specialist pool when task fit is clear, while keeping runtime discovery/loading as a separate concern.
 
 ---
 

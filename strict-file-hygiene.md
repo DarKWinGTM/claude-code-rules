@@ -1,7 +1,7 @@
 # Strict File Hygiene Rule
 
-> **Current Version:** 1.2
-> **Design:** [design/strict-file-hygiene.design.md](design/strict-file-hygiene.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/strict-file-hygiene.design.md](design/strict-file-hygiene.design.md) v1.3
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/strict-file-hygiene.changelog.md](changelog/strict-file-hygiene.changelog.md)
 
@@ -34,6 +34,14 @@ Required guidance:
 
 ### 5) Version-Suffix Hygiene Principle
 Do not create versioned filename copies such as `-v2`, `_final`, `_backup`, or similar unless the user explicitly requests them.
+
+### 6) Portable-Artifact Hygiene Principle
+Do not create reusable artifacts that embed machine-local environment defaults when a portable placeholder or late-bound resolution model should be used instead.
+
+Required guidance:
+- shared helper/support artifacts should avoid machine-specific hardcoded defaults by default
+- exact local values in reusable artifacts need an explicit machine-scoped reason
+- defer broader anti-hardcoding and portability expectations to `portable-implementation-and-hardcoding-control.md`
 
 ---
 
@@ -112,6 +120,7 @@ Related rules:
 - [artifact-initiation-control.md](artifact-initiation-control.md) - startup artifact posture owner
 - [project-documentation-standards.md](project-documentation-standards.md) - repository document-role model
 - [no-variable-guessing.md](no-variable-guessing.md) - do not guess required file identities
+- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - portable shared-artifact defaults and anti-hardcoding discipline
 - [authority-and-scope.md](authority-and-scope.md) - user authority remains decisive
 
 ---

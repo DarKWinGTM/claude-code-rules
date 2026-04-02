@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
+> **Current Version:** 1.2
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
 
@@ -119,6 +119,8 @@ Required guidance:
 - prefer local, reversible, low-blast-radius tactical moves
 - do not let tactical entry silently expand into broad unplanned architecture
 - keep tactical artifacts narrow enough that they can still converge cleanly
+- do not let machine-local paths, hosts, or install assumptions become tactical defaults unless a machine-scoped contract is explicitly intended
+- defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 4.5 No Permanent Tactical Drift Principle
 Temporary tactical solutions must not become hidden long-term authority.

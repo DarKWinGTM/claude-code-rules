@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.3
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-12)
+> **Current Version:** 1.4
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
 
@@ -37,6 +37,14 @@ This design strengthens local evidence semantics without taking over broader fac
 ---
 
 ## 3) Core Principles
+
+### 3.0 Portable-Contract Boundary Principle
+Checked local values should not silently become shared portable defaults.
+
+Required guidance:
+- keep exact local paths/values scoped to checked local context
+- treat local observations as evidence, not as reusable environment defaults
+- defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 3.1 Read-Before-Reference Principle
 Project-specific values should come from checked local sources, not assumptions.

@@ -1,8 +1,8 @@
 # Answer Presentation
 
-> **Current Version:** 1.6
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.6
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 1.7
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.7
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
 ---
@@ -78,6 +78,8 @@ Required guidance:
 - use a small fact table only for stable checked facts that are easier to scan side by side than in prose
 - keep tables small, scoped, and fact-oriented
 - do not let the table replace the explanation or implication
+- when exact local paths, ports, or hosts appear, present them as scoped local facts rather than as portable defaults
+- defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 7) Scope-Boundary Grouping Principle
 
@@ -335,6 +337,7 @@ Before a large list or table:
 | forced table without true comparison | adds weight without value | use prose or grouped bullets |
 | list or table with no framing | reader must infer its purpose | add a short context-setting line |
 | raw evidence dump with no orienting line | facts appear, but the reader cannot tell why they matter | start with a short orientation, then present the snapshot |
+| machine-specific value presented like a reusable default | local fact is mistaken for a portable contract | label it as a checked local fact or switch to a portable placeholder |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use grouped scope-boundary sections |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |

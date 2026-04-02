@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
+> **Current Version:** 1.3
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
 
@@ -54,6 +54,14 @@ Do not create versioned filenames such as:
 - `_final`, `_draft`
 - `_backup`, `_old`
 - `.bak` unless explicitly requested for safety
+
+### 3.6 Portable-Artifact Hygiene Rule
+Reusable helper/support artifacts should avoid machine-local hardcoded defaults when a portable placeholder or late-bound resolution model should be used instead.
+
+Required guidance:
+- shared artifacts should not normalize one machine as the default environment
+- machine-local exact values need an explicit machine-scoped reason when they appear in reusable artifacts
+- broader anti-hardcoding ownership belongs to `portable-implementation-and-hardcoding-control.md`
 
 ---
 

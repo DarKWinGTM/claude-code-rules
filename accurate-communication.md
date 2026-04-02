@@ -1,8 +1,8 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.2
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.2
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 2.3
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.3
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
 ---
@@ -62,6 +62,14 @@ Required guidance:
 - when evidence is partial, describe the tension or uncertainty instead of issuing a verdict
 
 ### 4. Bounded Technical Snapshot Wording Principle
+
+When exact local paths, ports, hosts, or similar environment-specific values appear in a snapshot, the wording must keep them scoped as checked local facts rather than letting them read like portable defaults.
+
+Required guidance:
+- label exact environment values as observed local facts when that distinction matters
+- avoid presenting machine-specific values as if they were shared system contracts
+- defer portable-default and anti-hardcoding expectations to `portable-implementation-and-hardcoding-control.md`
+
 
 When a response includes a compact technical or diagnostic snapshot, the wording must stay honest about exactly what was captured, what was only partially checked, and what is inferred from those facts.
 
@@ -362,5 +370,6 @@ Related rules:
 - [no-variable-guessing.md](no-variable-guessing.md) - owns local lookup, inspected-scope reporting, and non-guessing behavior
 - [answer-presentation.md](answer-presentation.md) - owns the layout of snapshot sections, grouped scope-boundary blocks, full-set-first lists, and next-stage blocks
 - [explanation-quality.md](explanation-quality.md) - shapes analytical explanations so they land with clearer scope meaning, user-visible outcomes, stage progression, and concise synthesis
+- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - owns portable-default versus local-observation discipline for environment-specific values in shared artifacts
 
 ---

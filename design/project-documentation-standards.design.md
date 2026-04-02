@@ -3,14 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.9
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
+> **Current Version:** 2.11
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
 
 ## 1) Goal
 
 Provide one deterministic, low-confusion repository model across README, runtime rules, design documents, changelog files, TODO trackers, phase-planning artifacts, patch documents, and support artifacts.
+
+Shared governed docs and templates should remain portable by default rather than embedding machine-specific environment assumptions as if they were universal repository truth.
 
 This model must preserve one authority system while clearly separating:
 - `phase-implementation.md` as the first-class rule for phase semantics

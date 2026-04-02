@@ -14,13 +14,15 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains six rollout families:
+The current workspace contains eight rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
 - major phase `004` = artifact-initiation-control rollout
 - major phase `005` = explicit phase-to-patch linkage hardening rollout
 - major phase `006` = external-verification-and-source-trust rollout
+- major phase `007` = custom-agent-selection-priority rollout
+- major phase `008` = portable-implementation-and-hardcoding-control rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -47,6 +49,11 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | `design/design.md` + `design/project-documentation-standards.design.md` | `patch/phase-linkage-hardening.patch.md` | Sync master docs, TODO, changelog, and phase summary for the narrow linkage-hardening wave | Repo-level governance reflects the explicit linkage refinement |
 | 006 | 006-01 | `phase/phase-006-01-create-external-verification-rule.md` | `design/external-verification-and-source-trust.design.md` | `patch/external-verification-and-source-trust.patch.md` | Create the first-class external-verification-and-source-trust rule chain | One semantic owner exists for proactive web verification and source trust |
 | 006 | 006-02 | `phase/phase-006-02-integrate-source-trust-governance.md` | `design/external-verification-and-source-trust.design.md` + `design/design.md` + adjacent owner designs | `patch/external-verification-and-source-trust.patch.md` | Sync master docs, TODO, changelog, and phase summary for the new source-trust wave | Repo-level governance reflects the new external-verification owner |
+| 007 | 007-01 | `phase/phase-007-01-create-custom-agent-selection-rule.md` | `design/custom-agent-selection-priority.design.md` | `patch/custom-agent-selection-priority.patch.md` | Create the first-class custom-agent-selection-priority rule chain | One semantic owner exists for custom user agent selection preference |
+| 007 | 007-02 | `phase/phase-007-02-integrate-agent-selection-governance.md` | `design/custom-agent-selection-priority.design.md` + `design/design.md` + adjacent owner designs | `patch/custom-agent-selection-priority.patch.md` | Sync master docs, TODO, changelog, and phase summary for the new custom-agent selection wave | Repo-level governance reflects the new agent-selection owner |
+| 008 | 008-01 | `phase/phase-008-01-create-portable-implementation-rule.md` | `design/portable-implementation-and-hardcoding-control.design.md` | `patch/portable-implementation-and-hardcoding-control.patch.md` | Create the first-class portable-implementation-and-hardcoding-control rule chain | One semantic owner exists for portable defaults and anti-hardcoding discipline |
+| 008 | 008-02 | `phase/phase-008-02-integrate-hardcoding-governance.md` | `design/portable-implementation-and-hardcoding-control.design.md` + `design/design.md` | `patch/portable-implementation-and-hardcoding-control.patch.md` | Sync master docs, TODO, changelog, and phase summary for the new hardcoding-control wave | Repo-level governance reflects the new portable-implementation owner |
+| 008 | 008-03 | `phase/phase-008-03-deepen-portability-integration.md` | `design/portable-implementation-and-hardcoding-control.design.md` + touched adjacent designs | `patch/portable-implementation-and-hardcoding-control.patch.md` | Deepen the adjacent-chain integration slice so portability ownership affects strategy, consistency, and presentation behavior more concretely | Portability owner becomes more operationally real across adjacent chains |
 
 ---
 
@@ -70,7 +77,12 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 005-02: sync master docs and history for the linkage-hardening wave
   → 006-01: create external-verification-and-source-trust rule chain
   → 006-02: sync master docs and history for the source-trust wave
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, and a first-class external source-trust verification owner
+  → 007-01: create custom-agent-selection-priority rule chain
+  → 007-02: sync master docs and history for the agent-selection wave
+  → 008-01: create portable-implementation-and-hardcoding-control rule chain
+  → 008-02: sync master docs and history for the hardcoding-control wave
+  → 008-03: deepen adjacent-chain integration for the hardcoding-control wave
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, and a first-class portable-implementation owner
 
 ---
 
@@ -95,6 +107,11 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs/history synchronized |
 | 006 | 006-01 | `phase/phase-006-01-create-external-verification-rule.md` | In Progress | Review Pending | Awaiting Review | new external verification owner created |
 | 006 | 006-02 | `phase/phase-006-02-integrate-source-trust-governance.md` | In Progress | Review Pending | Awaiting Review | master integration wave underway |
+| 007 | 007-01 | `phase/phase-007-01-create-custom-agent-selection-rule.md` | In Progress | Review Pending | Awaiting Review | new custom-agent selection owner created |
+| 007 | 007-02 | `phase/phase-007-02-integrate-agent-selection-governance.md` | In Progress | Review Pending | Awaiting Review | master integration wave underway |
+| 008 | 008-01 | `phase/phase-008-01-create-portable-implementation-rule.md` | Implemented - Pending Review | Review Pending | Awaiting Review | new portable-implementation owner created |
+| 008 | 008-02 | `phase/phase-008-02-integrate-hardcoding-governance.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master integration wave underway |
+| 008 | 008-03 | `phase/phase-008-03-deepen-portability-integration.md` | Implemented - Pending Review | Review Pending | Awaiting Review | deeper adjacent integration wave underway |
 
 ---
 
@@ -119,14 +136,19 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 005 | 005-02 | Implemented - Pending Review | `phase/phase-005-02-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new linkage-hardening wave | `005-01` |
 | 006 | 006-01 | In Progress | `phase/phase-006-01-create-external-verification-rule.md` | Create the first-class external-verification-and-source-trust rule chain | none |
 | 006 | 006-02 | In Progress | `phase/phase-006-02-integrate-source-trust-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new source-trust wave | `006-01` |
+| 007 | 007-01 | In Progress | `phase/phase-007-01-create-custom-agent-selection-rule.md` | Create the first-class custom-agent-selection-priority rule chain | none |
+| 007 | 007-02 | In Progress | `phase/phase-007-02-integrate-agent-selection-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new custom-agent selection wave | `007-01` |
+| 008 | 008-01 | Implemented - Pending Review | `phase/phase-008-01-create-portable-implementation-rule.md` | Create the first-class portable-implementation-and-hardcoding-control rule chain | none |
+| 008 | 008-02 | Implemented - Pending Review | `phase/phase-008-02-integrate-hardcoding-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new hardcoding-control wave | `008-01` |
+| 008 | 008-03 | Implemented - Pending Review | `phase/phase-008-03-deepen-portability-integration.md` | Deepen the adjacent-chain integration slice for the new hardcoding-control owner | `008-02` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the phase-to-patch linkage hardening wave as a completed history item and track the new source-trust rollout while it is active.
-- `changelog/changelog.md` should record the repository-level source-trust rollout after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification chain plus any narrow adjacent-chain integration without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, and the portable-implementation rollout while they are active.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, and the portable-implementation rollout after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, and portable-implementation chains plus any narrow adjacent-chain integration without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -139,6 +161,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - historical records remain in changelog/TODO rather than being rewritten here
 - phased work with governed patch artifacts is now expected to show explicit linkage from `phase/SUMMARY.md` and relevant child phase files
 - the new external-verification chain exists as a governed triad with visible rollout indexing in the phase workspace
+- the new custom-agent-selection chain exists as a governed triad with visible rollout indexing in the phase workspace
+- the new portable-implementation-and-hardcoding-control chain exists as a governed triad with visible rollout indexing in the phase workspace
 
 ---
 

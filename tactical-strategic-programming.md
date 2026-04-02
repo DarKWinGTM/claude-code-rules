@@ -1,7 +1,7 @@
 # Tactical Strategic Programming
 
-> **Current Version:** 1.1
-> **Design:** [design/tactical-strategic-programming.design.md](design/tactical-strategic-programming.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/tactical-strategic-programming.design.md](design/tactical-strategic-programming.design.md) v1.2
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/tactical-strategic-programming.changelog.md](changelog/tactical-strategic-programming.changelog.md)
 
@@ -50,6 +50,8 @@ Required guidance:
 - prefer local, reversible, low-blast-radius tactical moves
 - do not let tactical entry silently expand into broad unplanned architecture
 - keep tactical artifacts narrow enough that they can still converge cleanly
+- do not let machine-local hardcoded paths, hosts, or install assumptions become part of the tactical default unless a machine-scoped contract is explicitly intended
+- defer portable-default and anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 5) No Permanent Tactical Drift Principle
 Temporary tactical solutions must not become hidden long-term authority.

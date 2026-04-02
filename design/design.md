@@ -13,7 +13,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, first-class startup artifact initiation control, and a first-class owner for proactive external verification and source trust.
+This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, first-class startup artifact initiation control, a first-class owner for proactive external verification and source trust, and a first-class owner for portable implementation defaults plus anti-hardcoding discipline.
 
 ---
 
@@ -50,18 +50,18 @@ This repository uses one deterministic governance model:
 
 ## 3) Rule Architecture
 
-### 3.1 Active Runtime Inventory (33 Rules)
+### 3.1 Active Runtime Inventory (35 Rules)
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
-| 1 | accurate-communication.md | accurate-communication.design.md v2.2 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, and natural-professional wording guidance |
-| 2 | answer-presentation.md | answer-presentation.design.md v1.6 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output |
+| 1 | accurate-communication.md | accurate-communication.design.md v2.3 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, natural-professional wording guidance, and scoped local-fact treatment for exact environment values in snapshots |
+| 2 | answer-presentation.md | answer-presentation.design.md v1.7 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots |
 | 3 | anti-mockup.md | anti-mockup.design.md v1.1 | Real systems over mocks |
 | 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.4 | Truth over pleasing with evidence-grounded, claim-focused disagreement |
 | 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.0 | Startup-governance owner that resolves design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
 | 6 | authority-and-scope.md | authority-and-scope.design.md v1.4 | User authority, deterministic precedence, and fresh-directive override behavior |
 | 7 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
-| 8 | document-consistency.md | document-consistency.design.md v1.3 | Cross-reference validation |
+| 8 | document-consistency.md | document-consistency.design.md v1.4 | Cross-reference validation with portable shared references kept distinct from local or machine-scoped values |
 | 9 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |
 | 10 | document-design-control.md | document-design-control.design.md v1.8 | Active-state design-body standards |
 | 11 | document-patch-control.md | document-patch-control.design.md v2.4 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, and comparison-friendly patch representation |
@@ -74,29 +74,32 @@ This repository uses one deterministic governance model:
 | 18 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
 | 19 | operational-failure-handling.md | operational-failure-handling.design.md v1.1 | Profile-driven operational failure classification, bounded retry policy, and honest cooldown/escalation behavior |
 | 20 | phase-implementation.md | phase-implementation.design.md v2.7 | First-class semantic standard for phased execution planning with early phase-establishment bridge and explicit phase-to-patch linkage when patch is in scope |
-| 21 | project-documentation-standards.md | project-documentation-standards.design.md v2.10 | Repository-level document-role model plus startup artifact gate and explicit patch-linkage verification for phased work |
+| 21 | project-documentation-standards.md | project-documentation-standards.design.md v2.11 | Repository-level document-role model plus startup artifact gate, explicit patch-linkage verification for phased work, and portable shared-doc defaults |
 | 22 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
 | 23 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
 | 24 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |
 | 25 | safe-file-reading.md | safe-file-reading.design.md v1.3 | Plan-before-read file safety |
 | 26 | safe-terminal-output.md | safe-terminal-output.design.md v1.3 | Plan-before-execute output safety |
-| 27 | strict-file-hygiene.md | strict-file-hygiene.design.md v1.2 | Prevent junk files and duplicates while deferring to required governed startup artifacts |
+| 27 | strict-file-hygiene.md | strict-file-hygiene.design.md v1.3 | Prevent junk files and duplicates while deferring to required governed startup artifacts and avoiding machine-local hardcoded defaults in reusable artifacts |
 | 28 | todo-standards.md | todo-standards.design.md v2.3 | Simple TODO governance with startup-establishment bridge |
 | 29 | runtime-topology-control.md | runtime-topology-control.design.md v1.1 | Bounded runtime mutation posture with inspect-before-mutate discipline |
 | 30 | unified-version-control-system.md | unified-version-control-system.design.md v1.2 | UDVC-1 controller-level governance view |
-| 31 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.1 | Tactical entry, strategic target, convergence path, and strategic closure doctrine |
+| 31 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.2 | Tactical entry, strategic target, convergence path, strategic closure doctrine, and anti-hardcoding tactical-boundary discipline |
 | 32 | natural-professional-communication.md | natural-professional-communication.design.md v1.0 | First-class doctrine for natural professional communication |
-| 33 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
+| 33 | custom-agent-selection-priority.md | custom-agent-selection-priority.design.md v1.0 | First-class owner for preferring visible user custom agents as the primary specialist pool when task fit is clear |
+| 34 | portable-implementation-and-hardcoding-control.md | portable-implementation-and-hardcoding-control.design.md v1.0 | First-class owner for portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline |
+| 35 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
 
 ### 3.2 Category View
 
 | Category | Rules | Purpose |
 |----------|-------|---------|
 | Accuracy & Truth | accurate-communication, evidence-grounded-burden-of-proof, external-verification-and-source-trust, zero-hallucination, anti-sycophancy, no-variable-guessing | Evidence-grounded, verified, source-aware, and honest output |
+| Portable Implementation | portable-implementation-and-hardcoding-control, no-variable-guessing, project-documentation-standards, tactical-strategic-programming | Portable defaults, late-bound environment resolution, and anti-hardcoding discipline for shared artifacts |
 | Presentation & Readability | answer-presentation, explanation-quality, flow-diagram-no-frame, natural-professional-communication | Readable, orderly, scannable, and naturally professional output presentation |
 | Output Safety | safe-file-reading, safe-terminal-output, flow-diagram-no-frame, strict-file-hygiene | Output flood prevention, safe text presentation, and file hygiene |
 | Startup Governance | artifact-initiation-control, project-documentation-standards, todo-standards, phase-implementation | Resolve artifact posture before meaningful governed work drifts |
-| User Control | authority-and-scope, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control | Preserve user authority and safe operational posture |
+| User Control | authority-and-scope, custom-agent-selection-priority, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control | Preserve user authority, custom specialist preference, and safe operational posture |
 | Adversarial Workflow | refusal-minimization, dan-safe-normalization | Reduce false refusals in authorized adversarial/security workflows |
 | Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, unified-version-control-system, tactical-strategic-programming | Documentation determinism, patch semantics, and governance quality |
 

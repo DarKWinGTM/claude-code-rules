@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.10
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.10
+> **Current Version:** 2.11
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.11
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -112,6 +112,11 @@ After startup posture is resolved
 
 ### 6) Cross-Document Alignment Requirements
 
+- Shared governed docs and templates should remain portable by default rather than embedding machine-specific environment assumptions
+- Exact local values may appear only when they are explicitly being recorded as local observations or machine-scoped contracts
+- Portable-default and anti-hardcoding discipline should follow `portable-implementation-and-hardcoding-control.md`
+
+
 - Required document set must match project scope
 - Full-history and parent-document links must resolve
 - Active metadata across governed docs must not contain placeholder sessions
@@ -172,6 +177,7 @@ After startup posture is resolved
 | [document-design-control.md](document-design-control.md) v1.8 | Design structure standards |
 | [document-patch-control.md](document-patch-control.md) v2.4 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
 | [phase-implementation.md](phase-implementation.md) v2.7 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
+| [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.0 | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [todo-standards.md](todo-standards.md) v2.3 | TODO structure standards plus startup-establishment bridge |
 
 ---

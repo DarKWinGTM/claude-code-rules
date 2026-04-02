@@ -1,8 +1,8 @@
 # Changelog - No Variable Guessing
 
 > **Parent Document:** [../no-variable-guessing.md](../no-variable-guessing.md)
-> **Current Version:** 1.3
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+> **Current Version:** 1.4
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-02 | **[Integrated portable-default boundary guidance into no-variable-guessing](#version-14)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | Summary: Clarified that checked local values must stay scoped local facts and now explicitly defer broader portability and anti-hardcoding defaults to `portable-implementation-and-hardcoding-control` | |
 | 1.3 | 2026-03-12 | **[Materialized no-variable-guessing runtime body and added inspected-scope non-finding discipline](#version-13)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Replaced the header-only runtime stub with a full local-evidence rule that now requires inspected-scope reporting, separates scoped non-findings from stronger absence claims, and forbids using limited local non-findings as contradiction against the user | |
 | 1.2 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -18,6 +20,23 @@
 | | | Summary: Added deterministic verification triggers and status labels for reference/value validation paths | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Integrated portable-default boundary guidance into no-variable-guessing
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `no-variable-guessing.md` from v1.3 to v1.4.
+- Updated `design/no-variable-guessing.design.md` from v1.3 to v1.4.
+- Added a portable-contract boundary principle so checked local paths/values are not silently reused as shared defaults.
+- Added explicit integration to `portable-implementation-and-hardcoding-control.md`.
+
+### Summary
+Clarified that no-variable-guessing owns local checked-scope lookup, while broader portable-default and anti-hardcoding discipline now defers to the new first-class owner.
 
 ---
 

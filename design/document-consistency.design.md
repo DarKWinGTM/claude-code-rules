@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.3
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Current Version:** 1.4
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
 
@@ -46,6 +46,8 @@ Create a Consistency Framework that:
 - Keep names, paths, identifiers consistent across the whole response
 - When referencing, ensure it exists or mark as unknown/unverified
 - If change impacts multiple sections/files, describe dependencies
+- Keep portable shared references distinct from checked local facts or machine-scoped examples
+- Defer broader portable-default and anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 2.2 Reference Types
 
@@ -106,7 +108,7 @@ Verify consistency
 ### 4.1 Precise References
 
 **Preferred:**
-- File paths: `/home/user/project/src/config.js`
+- File paths: `<workspace-root>/src/config.js` for portable examples, or an exact path only when explicitly scoped as a checked local fact
 - Line numbers: `config.js:42`
 - Symbols: `getUserById()` function in `user.service.ts`
 

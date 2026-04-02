@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.2
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
+> **Current Version:** 2.3
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
 
@@ -87,6 +87,9 @@ This chain owns wording discipline for compact technical snapshots.
 
 Required guidance:
 - separate exact captured facts from partial checked facts from inferred implications
+- keep exact local paths, ports, hosts, and similar environment-specific values scoped as observed local facts when they appear in snapshots
+- avoid letting machine-specific values read like portable defaults in shared communication
+- defer broader portable-default and anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 - if the exact request, payload, or runtime state was not captured, say so explicitly
 - use wording such as `From the checked scope, ...` or `I could not capture the exact request, but ...` when only partial evidence exists
 - keep snapshot wording scoped to what was actually observed
