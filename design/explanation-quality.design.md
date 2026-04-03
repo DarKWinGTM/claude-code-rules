@@ -345,6 +345,7 @@ Default expectation:
 - if there is one clear next path and it would genuinely help the user act, state it directly
 - if there are multiple reasonable next paths and presenting them would materially help the user, present short explicit options the user can choose from
 - when one option is better-supported, make the recommendation explicit and explain briefly why it should happen first
+- when multiple reasonable next paths genuinely remain open, preserve at least one alternative instead of collapsing the visible decision surface into the recommended path only
 - if the task is already complete and no real continuation is needed, do not invent artificial next-step options
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items

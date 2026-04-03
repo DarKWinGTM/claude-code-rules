@@ -41,6 +41,7 @@
 - Updated `answer-presentation.md` from v1.8 to v1.9.
 - Updated `design/answer-presentation.design.md` from v1.8 to v1.9.
 - Added presentation guidance so comparison and next-stage blocks can surface `Recommended`, `Why this first`, and `Other options` labels when one path is clearly preferred.
+- Added an explicit layout boundary that when multiple reasonable options genuinely exist, at least one visible alternative should remain under `Other options`.
 - Added a canonical next-stage shape using the new labels.
 - Preserved the boundary that these are optional presentation tools rather than a reason to interrupt active execution.
 

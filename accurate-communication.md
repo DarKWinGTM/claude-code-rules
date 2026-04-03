@@ -141,6 +141,7 @@ Required guidance:
 - if multiple reasonable next actions exist and user choice would materially affect the path, present short explicit options
 - when presenting multiple reasonable next actions, identify the recommended option first when one path is better-supported than the others
 - after the recommended option, include a short plain-language reason explaining why it should happen first
+- when multiple reasonable next actions genuinely remain open, preserve at least one alternative instead of collapsing the decision surface into the recommended path only
 - if the task is already complete and no real next action is needed, do not invent extra options
 - offering options is guidance, not a mandatory ending pattern and not a default mid-process pause
 - recommendation wording should remain evidence-backed rather than preference-shaped or arbitrary
@@ -369,6 +370,7 @@ Diagnostic snapshot:
 | status update without compact state snapshot | hides what is checked, current, and pending | use a concise diagnostic snapshot before deep explanation |
 | summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |
 | options listed with no recommendation when one path is clearly better-supported | user must infer the preferred move unnecessarily | name the recommended option first and explain briefly why it should happen first |
+| multi-path state collapsed into one recommended path with no remaining alternative shown | a real decision surface is hidden and user agency becomes harder to exercise | keep at least one visible alternative when multiple reasonable next actions still exist |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |
 

@@ -57,6 +57,7 @@
 - Updated `design/accurate-communication.design.md` from v2.4 to v2.5.
 - Added wording guidance so when multiple reasonable next actions are shown, the better-supported option is named first as the recommendation.
 - Added a requirement to include one short plain-language `Why this first` reason after the recommendation.
+- Added an explicit boundary that when multiple reasonable next actions genuinely remain open, at least one alternative should remain visible rather than disappearing behind the recommendation.
 - Added example and anti-pattern coverage so option lists no longer omit the preferred path when the checked reasoning already supports one.
 
 ### Summary

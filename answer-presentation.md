@@ -173,6 +173,7 @@ When real alternatives exist:
 - use a comparison table if side-by-side evaluation helps
 - recommend after the comparison is visible
 - when one path is clearly preferred, surface `Recommended` before the remaining options and add one short `Why this first` reason
+- when multiple reasonable options genuinely exist, keep at least one visible alternative under `Other options` instead of reducing the block to the recommendation only
 
 ### 4) Sequence Pattern
 

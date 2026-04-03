@@ -132,6 +132,7 @@ Required guidance:
 - if the assistant can safely continue that next action inside the active objective, continue instead of pausing to announce it
 - if multiple reasonable next actions exist and user choice would materially affect the path, present short explicit options
 - when one of those options is better-supported than the others, name the recommended option first and explain briefly why it should happen first
+- when multiple reasonable next actions genuinely remain open, preserve at least one alternative instead of collapsing the decision surface into the recommended path only
 - if the task is already complete and no real next action is needed, do not invent extra options
 - when a technical or product term may be hard to follow, provide a direct human-language gloss if it materially improves understanding
 - when the current state is already sufficiently explained, prefer the next meaningful stage/state rather than defaulting to deeper options in the same scope

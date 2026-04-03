@@ -188,6 +188,7 @@ Next-step guidance rules:
 - if the assistant can safely continue that path inside the same active objective, continue instead of pausing only to narrate it
 - if multiple reasonable next paths exist and presenting them would materially help because user choice is actually required, present short explicit options
 - when one option is clearly better-supported, make the recommendation explicit and explain briefly why it should happen first
+- when multiple reasonable next paths genuinely remain open, preserve at least one alternative rather than letting the recommendation collapse the visible decision surface into one path only
 - if the task is already complete and there is no real continuation needed, end cleanly after the synthesis instead of inventing extra options
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items

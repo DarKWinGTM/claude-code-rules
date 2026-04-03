@@ -175,6 +175,7 @@ When real alternatives exist:
 - use a comparison table when side-by-side evaluation improves decision quality
 - recommend after comparison, not before it
 - when one path is clearly preferred, surface `Recommended` first and add one short `Why this first` reason before listing the remaining options
+- when multiple reasonable options genuinely exist, keep at least one visible alternative instead of reducing the block to the recommendation only
 
 ### 5.4 Sequence Pattern
 

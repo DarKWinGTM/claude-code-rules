@@ -51,6 +51,7 @@
 - Updated `explanation-quality.md` from v2.3 to v2.4.
 - Updated `design/explanation-quality.design.md` from v2.3 to v2.4.
 - Clarified that when multiple next paths are shown and one is better-supported, the explanation should make the recommendation explicit and explain briefly why it should happen first.
+- Added an explicit boundary that when multiple reasonable next paths genuinely remain open, at least one alternative should remain visible rather than disappearing behind the recommendation.
 - Added a clearer stage-progression example that uses `Recommended`, `Why this first`, and `Other options` wording.
 - Preserved ownership boundaries by keeping the default continuation-vs-option policy under `accurate-communication.md`.
 

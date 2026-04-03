@@ -15,7 +15,7 @@
 | | | - Updated `explanation-quality` to v2.4 and `answer-presentation` to v1.9 so explanation endings and layouts now reinforce the same recommendation-plus-reason pattern without reintroducing option-first interruption | |
 | | | - Added `patch/recommended-option-and-why-this-first.patch.md` plus `phase/phase-011-01-*` and `phase/phase-011-02-*` to record the bounded refinement wave | |
 | | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md`, then reinstalled the touched runtime rules into `~/.claude/rules/` | |
-| | | Summary: When multiple next actions are genuinely shown, the RULES system now makes the preferred path easier to act on by pairing `Recommended` with a short `Why this first` reason | |
+| | | Summary: When multiple next actions are genuinely shown, the RULES system now makes the preferred path easier to act on by pairing `Recommended` with a short `Why this first` reason while still keeping at least one visible alternative when the decision surface is truly multi-path | |
 | 7.5 | 2026-04-03 | **[Refined public install portability and source-vs-destination notation across hardcoding-governance owners](#version-75)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Updated `portable-implementation-and-hardcoding-control` to v1.1 so public onboarding/install docs, source-side versus destination/runtime notation, and internal umbrella workspace roots as public defaults are now first-class portability concerns | |
 | | | - Updated `project-documentation-standards` to v2.12 and `document-consistency` to v1.5 so README/install docs now enforce portable repo-root guidance and keep source-side references distinct from destination/runtime references | |
@@ -116,7 +116,7 @@
   - `answer-presentation.md`
 
 ### Summary
-The RULES system now keeps multi-option next-step guidance easier to act on by making the preferred path and its reason visible instead of leaving the user to infer both.
+The RULES system now keeps multi-option next-step guidance easier to act on by making the preferred path and its reason visible, while still preserving at least one visible alternative when the real decision surface is genuinely multi-path.
 
 ---
 
