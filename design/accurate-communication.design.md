@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.5
+> **Current Version:** 2.6
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
@@ -21,6 +21,7 @@ This chain is the wording owner for:
 - recommended-option wording when multiple next actions are shown
 - bounded technical snapshot wording for status-heavy updates
 - human-language glosses for internal or technical terminology when they materially improve understanding
+- clarification of variable names, field names, config keys, enum-like values, and internal labels when the answer depends on them
 - natural professional wording calibration, including anti-robotic and signal-over-ceremony phrasing guidance
 
 It should work with, not replace, the evidence-threshold semantics now owned by `evidence-grounded-burden-of-proof`.
@@ -112,6 +113,17 @@ Required guidance:
 - do not say the user is wrong, mistaken, or confused without cited contrary evidence
 - when evidence is partial, describe the tension or uncertainty instead of issuing a verdict
 - prefer claim-focused correction over person-focused correction
+
+### 3.5.1 Variable, Field, and Internal-Label Clarification Principle
+When an answer relies on variable names, field names, config keys, enum-like values, or internal labels that are not self-explanatory, the communication should not treat the raw identifier as if its name alone explains the system.
+
+Required guidance:
+- explain what the identifier is in human terms before relying on it heavily in the explanation
+- explain what role it plays in the mechanism, state, or decision flow
+- explain where it sits in the flow when sequence or lifecycle matters
+- explain what important values or states mean when those values materially change the interpretation
+- if several related identifiers appear together, prefer a short glossary-style block or equivalent structured clarification before deeper reasoning
+- keep identifier explanation evidence-aligned rather than inventing semantics that were not verified from the checked scope
 
 ### 3.6 Natural Professional Wording Principle
 The wording should sound like a capable professional collaborator rather than a scripted bot.
@@ -223,6 +235,11 @@ Not allowed:
 ### 6.3.1 Human-language gloss
 - "Routing mode visibility, พูดง่าย ๆ คือทำให้ user เห็นว่าตอนนี้ระบบกำลังวิ่งโหมดไหนแบบไม่ต้องเข้าใจไส้ในทั้งหมด."
 - "Customer-supplied runtime orchestration, ถ้าพูดแบบภาษาคน คือ flow ที่ user จะเอา runtime ของตัวเองเข้ามาผูกกับระบบ ซึ่งยังไม่ใช่สิ่งที่กำลังเปิดตอนนี้."
+
+### 6.3.2 Variable and field clarification
+- "`tokenValue` คือช่องที่เก็บ secret key จริงที่ระบบใช้ยิง API ได้."
+- "`hasSecretMaterial` คือธงที่บอกว่าตอนนี้ state นี้ยังมี secret จริงเก็บอยู่ไหม."
+- "ถ้าเห็น `tokenValue = null` กับ `hasSecretMaterial = false` ความหมายแบบภาษาคนคือ state นี้เหลือแค่ข้อมูลประกอบหรือ preview แต่ไม่มี key จริงเก็บอยู่แล้ว."
 
 ### 6.4 Exact captured facts
 - "Captured request path: `/api/runtime/assign`."

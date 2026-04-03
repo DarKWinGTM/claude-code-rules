@@ -1,6 +1,6 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Status:** Implemented - Pending Review
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains eleven rollout families:
+The current workspace contains twelve rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -26,6 +26,7 @@ The current workspace contains eleven rollout families:
 - major phase `009` = continuation-priority and option-offering refinement rollout
 - major phase `010` = install-doc portability and source-destination notation refinement rollout
 - major phase `011` = recommended-option and why-this-first refinement rollout
+- major phase `012` = variable, field, config, and internal-term explanation refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -63,6 +64,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 010 | 010-02 | `phase/phase-010-02-sync-master-governance-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/install-doc-portability-and-source-destination-notation.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the new refinement wave | Repo-level governance and installed runtime state reflect the install-doc portability refinement |
 | 011 | 011-01 | `phase/phase-011-01-refine-recommended-option-wording.md` | `design/accurate-communication.design.md` + `design/explanation-quality.design.md` + `design/answer-presentation.design.md` | `patch/recommended-option-and-why-this-first.patch.md` | Refine multi-option next-step wording so the preferred path is named first, explained briefly, and does not hide real alternatives | Recommendation-heavy next-step guidance becomes easier to act on without collapsing genuine multi-path states |
 | 011 | 011-02 | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/recommended-option-and-why-this-first.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the recommendation-format refinement | Repo-level governance and installed runtime state reflect the recommendation-format refinement |
+| 012 | 012-01 | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | `design/accurate-communication.design.md` + `design/explanation-quality.design.md` + `design/answer-presentation.design.md` | `patch/variable-field-config-and-term-explanation.patch.md` | Refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are unpacked before the deeper reasoning depends on them | Identifier-heavy technical explanations become easier to follow without creating a new first-class doctrine chain |
+| 012 | 012-02 | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/variable-field-config-and-term-explanation.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the identifier-explanation refinement | Repo-level governance and installed runtime state reflect the identifier-explanation refinement |
 
 ---
 
@@ -97,7 +100,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 010-02: sync master governance surfaces and installed runtime copies for the install-doc portability wave
   → 011-01: refine recommended-option wording so multi-path next steps name the preferred path first without collapsing real alternatives
   → 011-02: sync master governance surfaces and installed runtime copies for the recommendation-format wave
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, and a clearer recommendation-plus-reason format when multiple next steps are shown
+  → 012-01: refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are explained before deeper reasoning depends on them
+  → 012-02: sync master governance surfaces and installed runtime copies for the identifier-explanation wave
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, and a clearer identifier-explanation model for variable-heavy technical answers
 
 ---
 
@@ -132,7 +137,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 010 | 010-01 | `phase/phase-010-01-refine-install-doc-portability-owners.md` | Implemented - Pending Review | Review Pending | Awaiting Review | owner/enforcement refinement applied for install-doc portability |
 | 010 | 010-02 | `phase/phase-010-02-sync-master-governance-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and installed runtime copies synchronized |
 | 011 | 011-01 | `phase/phase-011-01-refine-recommended-option-wording.md` | Implemented - Pending Review | Review Pending | Awaiting Review | recommendation-plus-reason wording applied across touched owner chains |
-| 011 | 011-02 | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | In Progress | Review Pending | Awaiting Review | master docs/runtime-install sync underway for the recommendation-format refinement |
+| 011 | 011-02 | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the recommendation-format refinement |
+| 012 | 012-01 | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Implemented - Pending Review | Review Pending | Awaiting Review | identifier-explanation refinement applied across the communication-owner trio |
+| 012 | 012-02 | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the identifier-explanation refinement |
 
 ---
 
@@ -166,14 +173,18 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 009 | 009-02 | Implemented - Pending Review | `phase/phase-009-02-implement-continuation-priority.md` | Implement continuation-first behavior across the communication-owner chains | `009-01` |
 | 010 | 010-01 | Implemented - Pending Review | `phase/phase-010-01-refine-install-doc-portability-owners.md` | Refine install-doc portability ownership and source-destination notation governance | none |
 | 010 | 010-02 | Implemented - Pending Review | `phase/phase-010-02-sync-master-governance-and-runtime-install.md` | Sync master governance surfaces and runtime install parity for the new refinement wave | `010-01` |
+| 011 | 011-01 | Implemented - Pending Review | `phase/phase-011-01-refine-recommended-option-wording.md` | Refine multi-option next-step wording so the preferred path is explicit and briefly justified | none |
+| 011 | 011-02 | Implemented - Pending Review | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the recommendation-format refinement | `011-01` |
+| 012 | 012-01 | Implemented - Pending Review | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are explained before deeper reasoning depends on them | none |
+| 012 | 012-02 | Implemented - Pending Review | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the identifier-explanation refinement | `012-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, and the install-doc portability refinement in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, and the install-doc portability refinement after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, and install-doc portability changes without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, and the identifier-explanation refinement in dated history until final review is complete.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, and the identifier-explanation refinement after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, and identifier-explanation changes without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -189,14 +200,15 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the custom-agent-selection chain exists as a governed triad with visible rollout indexing in the phase workspace
 - the portable-implementation-and-hardcoding-control chain exists as a governed triad with visible rollout indexing in the phase workspace
 - the install-doc portability refinement wave exists as a bounded `010` family with explicit patch linkage and master-governance synchronization
+- the identifier-explanation refinement wave exists as a bounded `012` family with explicit patch linkage and master-governance synchronization
 
 ---
 
 ## Overall Rollback / Containment
 
-If the install-doc portability refinement proved incorrect, rollback would require:
-- narrowing the public-install portability wording in the touched owner chains
-- restoring prior master-governance wording where needed while preserving clearer source-versus-destination separation where still valid
+If the identifier-explanation refinement proved incorrect, rollback would require:
+- narrowing the identifier-heavy explanation wording in the touched owner chains
+- restoring prior master-governance wording where needed while preserving the stronger human-language identifier clarification where still valid
 - preserving the recorded history of the refinement wave rather than silently erasing it
 
 ---

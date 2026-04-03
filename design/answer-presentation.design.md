@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
@@ -17,6 +17,7 @@ The target behavior is principle-first and trigger-driven:
 - structure by user need and answer type
 - use headings, lists, tables, and spacing as semantic tools
 - make compact diagnostic snapshots explicit when technical status or checked scope matters
+- make variable-heavy explanations easier to scan by allowing short glossary blocks or small variable-role tables before deeper reasoning
 - make scope-boundary explanations easy to scan when the answer needs to separate now vs later or what-it-is vs what-it-is-not
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
@@ -145,6 +146,7 @@ Use stronger presentation structure when one or more of these triggers are prese
 | scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
 | full-set framing | many relevant areas, complete checklist, multiple review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | one short progression block such as `What happens next` or `Next stage` |
+| variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |
 | long/complex answer | many concepts, many dependencies, high cognitive load | headings, grouped blocks, whitespace, concise summary |
 | rigid template feel | answer is technically structured but does not read naturally | reduce unnecessary headings/blocks and restore a more human flow |
 
@@ -215,7 +217,15 @@ When the answer needs to separate active scope from deferred scope, preferred gr
 
 These blocks are especially useful for roadmap, phase, rollout, and product-scope clarification responses.
 
-### 5.7.1 Full-Set-First Pattern
+### 5.7.1 Variable-Role Pattern
+
+When multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation:
+- add one short lead-in line so the reader knows why the identifier block is being shown
+- use a small glossary-style block, variable-role table, or grouped bullets before the deeper reasoning
+- explain what each identifier is, what role it plays, and what important values mean
+- keep the structure compact; this pattern should reduce decoding effort rather than create a giant glossary for simple answers
+
+### 5.7.2 Full-Set-First Pattern
 
 When the reader should reason about a larger complete set, show that full set before narrowing into sub-items.
 
@@ -224,7 +234,7 @@ Preferred shapes:
 - `Full checklist:` followed by the complete set
 - `Complete scope:` followed by the full set and then optional drill-down
 
-### 5.7.2 Next-Stage Pattern
+### 5.7.3 Next-Stage Pattern
 
 When the current explanation is already sufficient, prefer a short grouped block that moves the reader forward.
 
@@ -285,6 +295,20 @@ These are canonical examples for recognizable presentation style, not rigid temp
 When using a list or table:
 - add a short lead-in line if the reader needs context for why the structure is being shown
 - avoid dropping large tables or lists into the answer without framing
+
+### 5.10 Canonical Variable-Role Shape
+
+```markdown
+Before the deeper reasoning, here is what the key identifiers mean:
+
+| Identifier | What it is | Role in the flow | Important values mean |
+|-----------|------------|------------------|-----------------------|
+| `tokenValue` | the real secret value | used when the system actually calls the API | `null` = no usable secret is stored |
+| `hasSecretMaterial` | secret-present flag | tells whether the current state still has the real secret | `false` = metadata only |
+| `secretMaterialSource` | origin of the current state | tells whether the state came from discovery or reveal | `inventory_or_search` = discovered state, `reveal_endpoint` = revealed state |
+
+What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
+```
 
 ---
 

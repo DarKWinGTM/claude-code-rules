@@ -1,6 +1,6 @@
 # Explanation Quality
 
-> **Current Version:** 2.4
+> **Current Version:** 2.5
 > **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.4
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
@@ -105,6 +105,7 @@ Required behavior:
 - use `what happens now` and `what stays later` when the work is intentionally staged
 - include what the user will actually notice when product or workflow changes are being explained
 - translate internal terms into plain human-language phrasing when that materially improves understanding
+- when the explanation depends on variables, fields, config keys, enum-like values, or internal labels, explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before expecting the user to follow deeper reasoning
 
 ### 9) Stage/State Progression Pattern
 
@@ -396,6 +397,27 @@ Short recap:
 - the current goal is a simpler Provider Pool-first user flow
 ```
 
+### Pattern 13: Variable and field explanation before deep reasoning
+
+```markdown
+Short answer: the current state is not holding a usable secret anymore.
+
+Before the deeper reasoning, clarify the identifiers:
+- `tokenValue` = the real secret value the system can use to call the API
+- `hasSecretMaterial` = whether the current state still has that real secret stored
+- `secretMaterialSource` = where the current state came from, such as inventory/search or a reveal step
+
+What the values mean here:
+- `tokenValue = null` = no usable secret is stored in this state
+- `hasSecretMaterial = false` = the state has metadata only, not the real key
+- `secretMaterialSource = inventory_or_search` = this state came from discovery, not from a successful reveal
+
+Reasoning path:
+1. the lane previously passed proof, so it had a usable secret earlier
+2. the current state now shows metadata-only values
+3. that means the current state was likely overwritten or downgraded after the earlier usable state existed
+```
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -406,6 +428,7 @@ Short recap:
 | protocol detail before simple framing | user sees internals before having a usable mental model | give the simple version first |
 | one-line-per-thought fragmentation | breaks continuity and causal flow | use a cohesive paragraph for one idea |
 | abstract recommendation without example | hard to transfer into action | add one concrete scenario, before/after view, analogy, or direct human-language gloss |
+| raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
 | comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
 | many edits explained as one blob | change reasoning becomes hard to follow | explain before/after or patch-by-patch |
 | analogy with no return to literal mechanism | the reader remembers the metaphor but not the actual system | follow the analogy with the real technical explanation |

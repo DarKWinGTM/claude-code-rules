@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 7.6
+> **Current Version:** 7.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 7.7 | 2026-04-04 | **[Added identifier-explanation guidance across the communication-owner trio](#version-77)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.6 | 2026-04-03 | **[Added recommendation-plus-reason guidance for multi-option next steps](#version-76)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Updated `accurate-communication` to v2.5 so multi-path next-step guidance now names the recommended option first and explains briefly why it should happen first | |
 | | | - Updated `explanation-quality` to v2.4 and `answer-presentation` to v1.9 so explanation endings and layouts now reinforce the same recommendation-plus-reason pattern without reintroducing option-first interruption | |
@@ -85,6 +86,35 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-77"></a>
+## Version 7.7: Added identifier-explanation guidance across the communication-owner trio
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/accurate-communication.design.md` from v2.5 to v2.6.
+- Updated runtime `accurate-communication.md` from v2.5 to v2.6.
+- Added wording guidance so variable names, field names, config keys, enum-like values, and internal labels are no longer treated as self-explanatory when the answer depends on them.
+- Updated `design/explanation-quality.design.md` from v2.4 to v2.5.
+- Updated runtime `explanation-quality.md` from v2.4 to v2.5.
+- Added explanation-flow support so identifier-heavy walkthroughs explain what the identifier is, what it does, where it sits in the flow, and what important values mean before the deeper reasoning relies on it.
+- Updated `design/answer-presentation.design.md` from v1.9 to v1.10.
+- Updated runtime `answer-presentation.md` from v1.9 to v1.10.
+- Added a variable-role presentation pattern and a canonical compact variable-role table shape for identifier-heavy explanations.
+- Added `patch/variable-field-config-and-term-explanation.patch.md` as the governed before/after artifact for the refinement wave.
+- Added `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` and `phase/phase-012-02-sync-master-docs-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the identifier-explanation refinement is visible in master governance surfaces.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `accurate-communication.md`
+  - `explanation-quality.md`
+  - `answer-presentation.md`
+
+### Summary
+The RULES system now makes identifier-heavy explanations easier to understand by requiring key variables, fields, config keys, and internal labels to be unpacked in human terms before the deeper reasoning depends on them.
 
 ---
 

@@ -1,11 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-03
+> **Last Updated:** 2026-04-04
 
 ---
 
 ## ✅ Completed
 
+- [x] Refine identifier-heavy explanations so answers now unpack variables, fields, config keys, enum-like values, and internal labels in human terms before the deeper reasoning depends on them, synchronize master RULES artifacts, and reinstall the touched runtime rules.
 - [x] Refine recommendation formatting so multi-option next-step guidance now shows a recommended path first with a short plain-language reason for doing it first while still preserving at least one visible alternative when multiple paths genuinely remain open, synchronize master RULES artifacts, and reinstall the touched runtime rules.
 - [x] Refine install-doc portability governance so public onboarding/install docs now default to portable repo-root guidance, keep source-side and destination/runtime notation distinct, synchronize master RULES artifacts, and reinstall the touched runtime rules.
 - [x] Create first-class `artifact-initiation-control` rule chain, patch startup-governance owners (`project-documentation-standards`, `phase-implementation`, `todo-standards`, `strict-file-hygiene`), open `phase-004` from the start, and synchronize master docs/history.
@@ -70,6 +71,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-04 | Refined identifier-heavy explanation governance: updated `accurate-communication` so variables, fields, config keys, enum-like values, and internal labels must be explained in human terms when the answer depends on them; updated `explanation-quality` and `answer-presentation` to add identifier-role walkthrough patterns and compact variable-role presentation support; added `patch/variable-field-config-and-term-explanation.patch.md` plus `phase-012-01` and `phase-012-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-03 | Refined recommendation-format governance: updated `accurate-communication` so multi-option next-step guidance now names the recommended path first and explains briefly why it should happen first while still preserving at least one visible alternative when multiple paths genuinely remain open; updated `explanation-quality` and `answer-presentation` to reinforce the same pattern at explanation and layout layers; added `patch/recommended-option-and-why-this-first.patch.md` plus `phase-011-01` and `phase-011-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-03 | Refined install-doc portability governance: updated `portable-implementation-and-hardcoding-control` so public onboarding/install docs and source-vs-destination notation are first-class portability concerns; updated `project-documentation-standards` and `document-consistency` to enforce portable repo-root guidance and reference-role separation; added `patch/install-doc-portability-and-source-destination-notation.patch.md` plus `phase-010-01` and `phase-010-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-03 | Completed the continuation-priority refinement wave: audited overlap across `accurate-communication`, `answer-presentation`, `explanation-quality`, and `authority-and-scope`; opened `patch/continuation-priority-and-option-offering.patch.md` plus `phase-009-01` and `phase-009-02`; made `accurate-communication` the explicit primary owner for continuation-vs-option policy; narrowed next-stage/default-option drift in adjacent owner chains; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |

@@ -13,11 +13,11 @@
 Implement a continuation-first behavior model so active work proceeds by default and options are shown only when user choice, approval, or clarification is genuinely required.
 
 ## Action points / execution checklist
-- [ ] update `accurate-communication` as primary owner
-- [ ] narrow `answer-presentation` next-stage usage
-- [ ] narrow `explanation-quality` next-step defaults and defer owner semantics
-- [ ] add anti-unnecessary-option guidance to `authority-and-scope`
-- [ ] sync changelog/TODO/master docs and install touched runtime rules
+- [x] update `accurate-communication` as primary owner
+- [x] narrow `answer-presentation` next-stage usage
+- [x] narrow `explanation-quality` next-step defaults and defer owner semantics
+- [x] add anti-unnecessary-option guidance to `authority-and-scope`
+- [x] sync changelog/TODO/master docs and install touched runtime rules
 
 ## Verification
 - continuation-first behavior is explicit

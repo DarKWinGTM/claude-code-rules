@@ -1,6 +1,6 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.5
+> **Current Version:** 2.6
 > **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
@@ -99,6 +99,18 @@ Required guidance:
 - use the gloss to clarify the term, not to replace the technical truth
 - keep the gloss honest and scope-matched rather than oversimplifying into a false statement
 
+### 5.1 Variable, Field, and Internal-Label Clarification Principle
+
+When an answer relies on variable names, field names, config keys, enum-like values, or internal labels that are not self-explanatory, do not treat the raw identifier as if its name alone explains the system.
+
+Required guidance:
+- explain what the identifier is in human terms before relying on it heavily in the explanation
+- explain what role it plays in the mechanism, state, or decision flow
+- explain where it sits in the flow when sequence or lifecycle matters
+- explain what important values or states mean when those values materially change the interpretation
+- if several related identifiers appear together, prefer a short glossary-style block or equivalent structured explanation before deeper reasoning
+- keep the identifier explanation evidence-aligned; do not invent semantics that were not verified from the checked scope
+
 ### 6. Stage-Progression and Whole-Set Guidance
 
 When deciding what to propose next, the wording should help the reader move forward rather than circle indefinitely inside the same scope.
@@ -173,6 +185,7 @@ Use bounded snapshot wording when:
 ### When human-language glosses apply strongly
 Use direct glossary-style paraphrases when:
 - the answer includes internal product or runtime terminology
+- the answer depends on variable names, field names, config keys, enum-like values, or internal labels whose meaning is not obvious from the name alone
 - the user is asking for an easier explanation
 - the literal term is technically correct but not user-friendly enough on its own
 - scope clarification depends on translating internal architecture language into user-facing meaning
@@ -236,8 +249,8 @@ Before sending a finding or status update:
    → Yes: keep them clearly separated
    → No: rewrite so the evidence boundary is visible
 
-7. Does the response include internal terminology that would be easier to understand with a direct gloss?
-   → Yes: add a short human-language paraphrase
+7. Does the response include internal terminology, variable names, field names, config keys, enum-like values, or internal labels that would be easier to understand with a direct gloss?
+   → Yes: add a short human-language paraphrase and explain what the identifier is doing in the flow when that meaning matters
 
 8. Can I safely continue the user’s active requested work without clarification, approval, or a stronger rule-owned gate?
    → Yes: continue instead of pausing to offer optional next steps
@@ -318,6 +331,13 @@ Routing mode visibility, พูดง่าย ๆ คือทำให้ user
 Customer-supplied runtime orchestration, ถ้าพูดแบบภาษาคน คือ flow ที่ user จะเอา runtime ของตัวเองเข้ามาผูกกับระบบ ซึ่งยังไม่ใช่สิ่งที่กำลังเปิดตอนนี้.
 ```
 
+### Variable and field clarification
+```text
+'tokenValue` คือช่องที่เก็บ secret key จริงที่ระบบใช้ยิง API ได้.
+`hasSecretMaterial` คือธงที่บอกว่าตอนนี้ state นี้ยังมี secret จริงเก็บอยู่ไหม.
+ดังนั้นถ้าเห็น `tokenValue = null` และ `hasSecretMaterial = false` ความหมายแบบภาษาคนคือ ตอนนี้ระบบมีแค่ข้อมูลประกอบหรือ preview แต่ไม่มี key จริงเก็บอยู่ใน state นี้แล้ว.
+```
+
 ### Move to the next state
 ```text
 Phase 12 is already clear enough now. The next useful move is to switch from scope clarification to the implementation checklist.
@@ -364,6 +384,7 @@ Diagnostic snapshot:
 | user-directed verdict without evidence | turns partial evidence into overclaim | correct the claim and cite contrary evidence |
 | pretending exact capture from partial evidence | makes the snapshot sound more certain than it is | say what was exact, what was partial, and what is inferred |
 | internal jargon with no gloss in an easy-explanation context | the reader must decode internal terminology before understanding the point | add a direct human-language paraphrase |
+| raw variable or field names presented like self-explanatory evidence | the reader sees identifiers but not their job, flow position, or value meaning | explain what the identifier is, what role it plays, and what important values mean |
 | deeper same-scope options offered by default after the stage is already clear | the response stays stuck in the same scope | say directly that the next useful move is the next stage/state |
 | mid-process option prompting when active work could safely continue | execution stalls and the user gets unnecessary checkpoints instead of progress | continue the active objective and report only when blocked, complete, or materially changed |
 | narrow partial set offered before the full relevant set is visible | the reader may mistake a subset for the full scope | show the full relevant set first, then narrow |

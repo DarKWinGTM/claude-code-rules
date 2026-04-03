@@ -1,6 +1,6 @@
 # Answer Presentation
 
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
@@ -144,6 +144,7 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
 | full-set framing | many relevant areas, complete checklist, several review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
+| variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |
 | long answer | multiple concepts or dependencies | headings, grouped blocks, concise summary |
 
 Do not use this trigger model to force sectioning into answers that are naturally simple.
@@ -207,6 +208,14 @@ When explaining roadmap, phase scope, staged rollout, or product truth:
 - group `What the user will notice` when user-facing impact matters
 
 Use these blocks when they materially improve scanability, not as a rigid mandatory template.
+
+### 7.1 Variable-Role Pattern
+
+When multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation:
+- add one short lead-in line so the reader knows why the identifier block is being shown
+- use a small glossary-style block, variable-role table, or grouped bullets before the deeper reasoning
+- explain what each identifier is, what role it plays, and what important values mean
+- keep the structure compact; this pattern should reduce decoding effort, not create a giant glossary for simple answers
 
 ### 8) Full-Set-First Pattern
 
@@ -335,6 +344,20 @@ Before a large list or table:
 - provide one short context-setting sentence when the reader needs orientation
 - do not drop structure into the response without purpose framing
 
+### 15) Canonical Variable-Role Shape
+
+```markdown
+Before the deeper reasoning, here is what the key identifiers mean:
+
+| Identifier | What it is | Role in the flow | Important values mean |
+|-----------|------------|------------------|-----------------------|
+| `tokenValue` | the real secret value | used when the system actually calls the API | `null` = no usable secret is stored |
+| `hasSecretMaterial` | secret-present flag | tells whether the current state still has the real secret | `false` = metadata only |
+| `secretMaterialSource` | origin of the current state | tells whether the state came from discovery or reveal | `inventory_or_search` = discovered state, `reveal_endpoint` = revealed state |
+
+What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
+```
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -354,6 +377,7 @@ Before a large list or table:
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `Recommended` / `Why this first` / `Other options` block or a short `What happens next` block |
 | oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
 | table-only status report with no implication | facts are visible, but meaning stays unclear | add one short implication or next-action line |
+| raw variables/fields dumped with no role explanation | the reader sees identifiers but must decode them alone | add a short glossary block, grouped bullets, or a small variable-role table before deeper reasoning |
 | over-structuring simple answers | makes a short answer feel heavy | keep simple answers compact |
 | inconsistent heading or emphasis style | weakens visual order | keep presentation consistent |
 

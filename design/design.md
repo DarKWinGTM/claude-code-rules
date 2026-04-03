@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 5.0
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
+> **Current Version:** 5.1
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -54,8 +54,8 @@ This repository uses one deterministic governance model:
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
-| 1 | accurate-communication.md | accurate-communication.design.md v2.5 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, natural-professional wording guidance, scoped local-fact treatment for exact environment values in snapshots, continuation-first execution guidance, and explicit recommendation-plus-reason wording that preserves alternatives when multiple next paths genuinely remain open |
-| 2 | answer-presentation.md | answer-presentation.design.md v1.9 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots, narrower next-stage blocks that do not interrupt active execution, and clearer `Recommended` / `Why this first` / `Other options` layout support that keeps real alternatives visible |
+| 1 | accurate-communication.md | accurate-communication.design.md v2.6 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, explicit clarification of variables/fields/config keys/internal labels when answers depend on them, natural-professional wording guidance, scoped local-fact treatment for exact environment values in snapshots, continuation-first execution guidance, and explicit recommendation-plus-reason wording that preserves alternatives when multiple next paths genuinely remain open |
+| 2 | answer-presentation.md | answer-presentation.design.md v1.10 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots, narrower next-stage blocks that do not interrupt active execution, compact variable-role structures for identifier-heavy explanations, and clearer `Recommended` / `Why this first` / `Other options` layout support that keeps real alternatives visible |
 | 3 | anti-mockup.md | anti-mockup.design.md v1.1 | Real systems over mocks |
 | 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.4 | Truth over pleasing with evidence-grounded, claim-focused disagreement |
 | 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.0 | Startup-governance owner that resolves design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
@@ -67,7 +67,7 @@ This repository uses one deterministic governance model:
 | 11 | document-patch-control.md | document-patch-control.design.md v2.4 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, and comparison-friendly patch representation |
 | 12 | emergency-protocol.md | emergency-protocol.design.md v1.1 | High-signal emergency response |
 | 13 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.0 | First-class owner for evidence taxonomy, burden-of-proof thresholds, contradiction protocol, and scoped negative-evidence semantics |
-| 14 | explanation-quality.md | explanation-quality.design.md v2.4 | Plain-language-first, layered analytical and technical explanation structure with explicit deferral of continuation-vs-option policy to accurate-communication and clearer recommendation-plus-reason endings that preserve visible alternatives when multiple next paths are real |
+| 14 | explanation-quality.md | explanation-quality.design.md v2.5 | Plain-language-first, layered analytical and technical explanation structure with explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning depends on them, explicit deferral of continuation-vs-option policy to accurate-communication, and clearer recommendation-plus-reason endings that preserve visible alternatives when multiple next paths are real |
 | 15 | external-verification-and-source-trust.md | external-verification-and-source-trust.design.md v1.0 | First-class owner for proactive external verification, source-trust ranking, corroboration, and source-conflict handling |
 | 16 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.1 | Text diagrams without frames or boxes |
 | 17 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |

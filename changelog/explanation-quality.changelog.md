@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.4
+> **Current Version:** 2.5
 > **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.5 | 2026-04-04 | **[Added variable and field role explanation support for identifier-heavy walkthroughs](#version-25)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.4 | 2026-04-03 | **[Added explicit recommendation wording for multi-path explanation endings](#version-24)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.3 | 2026-04-03 | **[Deferred continuation-vs-option policy to accurate-communication](#version-23)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.2 | 2026-03-27 | **[Added good-operator explanation and stop-before-overexplaining guidance](#version-22)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
@@ -38,6 +39,25 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-25"></a>
+## Version 2.5: Added variable and field role explanation support for identifier-heavy walkthroughs
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `explanation-quality.md` from v2.4 to v2.5.
+- Updated `design/explanation-quality.design.md` from v2.4 to v2.5.
+- Added explicit support for identifier-heavy explanations so variable names, field names, config keys, enum-like values, and internal labels are explained before they are used heavily in the reasoning.
+- Added a reusable explanation pattern covering what the identifier is, what job it does, where it sits in the flow, and what important values mean.
+- Added a canonical variable/field walkthrough example that clarifies identifiers before the deeper reasoning path begins.
+- Added an anti-pattern entry against relying on raw identifiers as if their names already explained the mechanism.
+
+### Summary
+Explanation-quality now helps technical walkthroughs land more clearly by requiring important identifiers to be unpacked in human terms before the deeper reasoning depends on them.
 
 ---
 

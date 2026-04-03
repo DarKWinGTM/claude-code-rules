@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-04-04 | **[Added variable-role presentation support for identifier-heavy explanations](#version-110)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.9 | 2026-04-03 | **[Added recommended-option labels for option-rich next-stage layouts](#version-19)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.8 | 2026-04-03 | **[Narrowed next-stage blocks so they do not interrupt active execution](#version-18)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.7 | 2026-04-02 | **[Scoped machine-specific values inside presentation patterns](#version-17)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -28,6 +29,25 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-110"></a>
+## Version 1.10: Added variable-role presentation support for identifier-heavy explanations
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `answer-presentation.md` from v1.9 to v1.10.
+- Updated `design/answer-presentation.design.md` from v1.9 to v1.10.
+- Added a new trigger for variable-heavy explanations where multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation.
+- Added a `Variable-Role Pattern` so presentation can use a small glossary block, grouped bullets, or a compact variable-role table before deeper reasoning.
+- Added a canonical variable-role shape that shows how to explain identifiers, roles, and value meaning in a compact table.
+- Added an anti-pattern entry against dumping raw variables or fields with no role explanation.
+
+### Summary
+Answer-presentation now gives identifier-heavy answers a clearer layout shape so users can understand what the key fields mean before reading the deeper reasoning.
 
 ---
 

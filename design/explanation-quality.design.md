@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.4
+> **Current Version:** 2.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
@@ -18,6 +18,7 @@ The target behavior is a layered natural explanation style:
 - compact technical snapshot when status or checked scope matters
 - step-by-step implication or fix path when walkthrough value exists
 - explicit clarification of what the thing is, what it is not, what happens now, and what stays deferred when scope management matters
+- explicit clarification of what variable names, field names, config keys, enum-like values, and internal labels mean when the explanation depends on them
 - whole-set framing when the user benefits from seeing the full actionable set before drilling down
 - a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
 - concise, high-signal ending with a real next move only when one genuinely exists
@@ -113,6 +114,17 @@ Required guidance:
 - translate internal or technical phrases into user-facing language when the literal term alone would be hard to follow
 - prefer phrasing such as `พูดง่าย ๆ`, `ถ้าพูดแบบภาษาคน`, or the English equivalent when the explanation benefits from a direct human-language gloss
 - use the paraphrase to clarify the term, not to replace the underlying technical truth
+
+### 4.3.2 Variable and Field Role Explanation Pattern
+
+When an explanation depends on variable names, field names, config keys, enum-like values, or internal labels, the explanation should not assume the identifier name is enough.
+
+Required guidance:
+- explain what the identifier is in plain language
+- explain what job it does in the mechanism, state, or decision flow
+- explain where it sits in the flow when sequence matters
+- explain what important values or states mean when they change the practical interpretation
+- if several identifiers are central to the same explanation, group them before deep reasoning so the user is not forced to decode them one by one mid-argument
 
 ### 4.4 Good-Operator Explanation Principle
 
@@ -519,6 +531,27 @@ Short recap:
 - Phase 12 = what we are really doing now
 - Phase 18 = the future runtime-management path
 - the current goal is a simpler Provider Pool-first user flow
+```
+
+### Pattern 12: Variable and field explanation before deep reasoning
+
+```markdown
+Short answer: the current state is not holding a usable secret anymore.
+
+Before the deeper reasoning, clarify the identifiers:
+- `tokenValue` = the real secret value the system can use to call the API
+- `hasSecretMaterial` = whether the current state still has that real secret stored
+- `secretMaterialSource` = where the current state came from, such as inventory/search or a reveal step
+
+What the values mean here:
+- `tokenValue = null` = no usable secret is stored in this state
+- `hasSecretMaterial = false` = the state has metadata only, not the real key
+- `secretMaterialSource = inventory_or_search` = this state came from discovery, not from a successful reveal
+
+Reasoning path:
+1. the lane previously passed proof, so it had a usable secret earlier
+2. the current state now shows metadata-only values
+3. that means the current state was likely overwritten or downgraded after the earlier usable state existed
 ```
 
 ---
