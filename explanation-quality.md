@@ -1,7 +1,7 @@
 # Explanation Quality
 
 > **Current Version:** 2.5
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.4
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 

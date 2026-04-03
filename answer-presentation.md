@@ -1,7 +1,7 @@
 # Answer Presentation
 
 > **Current Version:** 1.10
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.9
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.10
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 

@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
 > **Current Version:** 2.6
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.5
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.6
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
