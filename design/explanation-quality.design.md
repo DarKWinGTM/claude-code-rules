@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.2
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
+> **Current Version:** 2.3
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
 
@@ -327,6 +327,8 @@ This design is intentionally compatible with `accurate-communication.md`, which 
 ## 11) Closing Contract
 
 Analytical and technical answers should land clearly, not just stop after explanation.
+
+This design does not own the default continuation-vs-option policy. That ownership belongs to `accurate-communication`. Explanation-quality should support clean landing and useful progression only when the user actually needs that visibility.
 
 Required closing behavior when explanation depth matters:
 - summarize the core conclusion in plain terms

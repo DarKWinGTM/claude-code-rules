@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.3
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.3
+> **Current Version:** 2.4
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.4
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -109,6 +109,17 @@ Required guidance:
 - avoid presenting deeper same-scope options as the default when the better next move is progression
 - avoid presenting only a narrow partial set when the reader should first see the complete relevant set
 
+### 6.1 Continuation-First Execution Guidance
+
+When the assistant is still inside the user’s active requested work and can safely continue without clarification, approval, or a stronger rule-owned gate, it should continue execution rather than pause just to narrate progress, expose optional next steps, or ask the user to choose among continuations that are not materially different.
+
+Required guidance:
+- default to continuing the active objective when one safe clear path is already implied
+- do not interrupt active work merely to report the next obvious step
+- do not present user-choice branches when no real user decision is required
+- surface options only when the next move is genuinely preference-sensitive, approval-sensitive, blocked, or materially divergent
+- if work is complete, blocked, or newly changed in a way the user must know, report that state directly
+
 ### 7. Natural Professional Wording Guidance
 
 - prefer direct, human-readable phrasing over ceremonial or machine-like wording
@@ -125,10 +136,11 @@ Required guidance:
 - for troubleshooting, implementation-progress, or verification updates, lead with a compact diagnostic snapshot before deeper explanation
 - in a diagnostic snapshot, show what was checked, what is currently true, what remains pending, and the immediate next action
 - do not impose a rigid sentence cap; the summary should be only as long as needed to preserve meaning
-- if one clear next action exists and it would genuinely help, state it directly
-- if multiple reasonable next actions exist and presenting them would materially help the user, present short explicit options
+- if one clear next action exists and the user genuinely needs to know it, state it directly
+- if the assistant can safely continue that next action inside the active objective, continue instead of pausing to announce it
+- if multiple reasonable next actions exist and user choice would materially affect the path, present short explicit options
 - if the task is already complete and no real next action is needed, do not invent extra options
-- offering options is guidance, not a mandatory ending pattern
+- offering options is guidance, not a mandatory ending pattern and not a default mid-process pause
 
 ---
 
@@ -166,6 +178,7 @@ Use explicit forward-progress wording when:
 - the current scope is already sufficiently clarified
 - the user should move to the next stage/state rather than continue deepening the same topic
 - the response should establish a full relevant set before discussing any smaller subset
+- the assistant cannot or should not continue the next step autonomously inside the same active objective
 
 ### Contradiction wording guidance
 Prefer claim-focused correction over person-focused correction.
@@ -222,17 +235,21 @@ Before sending a finding or status update:
 7. Does the response include internal terminology that would be easier to understand with a direct gloss?
    → Yes: add a short human-language paraphrase
 
-8. Is the current state already sufficiently explained?
+8. Can I safely continue the user’s active requested work without clarification, approval, or a stronger rule-owned gate?
+   → Yes: continue instead of pausing to offer optional next steps
+   → No: communicate the blocker, completion state, or required decision clearly
+
+9. Is the current state already sufficiently explained?
    → Yes: consider moving to the next stage/state rather than offering deeper same-scope options
 
-9. Is the real decision surface a larger complete set?
+10. Is the real decision surface a larger complete set?
    → Yes: show the full relevant set before narrowing into a subset
 
-10. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
+11. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
    → No: reduce ceremony, fake empathy, and formulaic phrasing
    → Yes: proceed
 
-11. Am I closing an explanation-heavy response?
+12. Am I closing an explanation-heavy response?
    → Yes: synthesize the conclusion instead of repeating prior detail
 ```
 
@@ -335,6 +352,7 @@ Diagnostic snapshot:
 | pretending exact capture from partial evidence | makes the snapshot sound more certain than it is | say what was exact, what was partial, and what is inferred |
 | internal jargon with no gloss in an easy-explanation context | the reader must decode internal terminology before understanding the point | add a direct human-language paraphrase |
 | deeper same-scope options offered by default after the stage is already clear | the response stays stuck in the same scope | say directly that the next useful move is the next stage/state |
+| mid-process option prompting when active work could safely continue | execution stalls and the user gets unnecessary checkpoints instead of progress | continue the active objective and report only when blocked, complete, or materially changed |
 | narrow partial set offered before the full relevant set is visible | the reader may mistake a subset for the full scope | show the full relevant set first, then narrow |
 | status update without compact state snapshot | hides what is checked, current, and pending | use a concise diagnostic snapshot before deep explanation |
 | summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |

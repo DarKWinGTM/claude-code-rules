@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 7.4 | 2026-04-03 | **[Opened continuation-priority refinement across communication-owner chains](#version-74)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.3 | 2026-04-02 | **[Deepened portability-rule integration across adjacent chains](#version-73)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Updated `no-variable-guessing`, `accurate-communication`, `project-documentation-standards`, and `strict-file-hygiene` to defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control` | |
 | | | - Deepened the next integration slice into `tactical-strategic-programming`, `document-consistency`, and `answer-presentation` so machine-specific defaults are less likely to leak through tactical behavior, reference examples, or presentation patterns | |
@@ -72,6 +73,23 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-74"></a>
+## Version 7.4: Opened continuation-priority refinement across communication-owner chains
+
+**Date:** 2026-04-03
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Opened `patch/continuation-priority-and-option-offering.patch.md` as the governed before/after artifact for the new refinement wave.
+- Added `phase/phase-009-01-audit-continuation-vs-interruption.md` and `phase/phase-009-02-implement-continuation-priority.md` to track the bounded rollout.
+- Updated `phase/SUMMARY.md` and `TODO.md` so the new refinement wave is visible in active execution tracking.
+- Identified `accurate-communication` as the primary semantic owner for continuation-vs-option behavior, with `answer-presentation`, `explanation-quality`, and `authority-and-scope` as the adjacent overlap set.
+
+### Summary
+Opened a bounded RULES refinement wave that aims to make active work continue by default and narrow unnecessary mid-process option prompting across the communication-owner chains.
 
 ---
 

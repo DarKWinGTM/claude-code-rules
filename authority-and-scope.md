@@ -1,8 +1,8 @@
 # Authority and scope
 
-> **Current Version:** 1.4
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v1.4
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 1.5
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v1.5
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 
 ---
@@ -21,6 +21,7 @@ This rule defines precedence, tie-break behavior, and override handling so new u
 - Hard-boundary constraints remain non-overridable.
 - Preserve user authority for all non-hard-boundary decisions.
 - Assistant-generated options are advisory only unless the user explicitly selects one.
+- Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - If the user issues a fresh directive that changes scope, task, or action, that fresh directive overrides previously offered assistant options immediately.
 - Do not treat previously suggested options as sticky state, implied commitment, or an active execution branch unless the user explicitly chose one.
 
@@ -100,6 +101,7 @@ Use this override behavior when:
 - continuing to elaborate option A/B after the user issues a new command C
 - using assistant continuity as a reason to ignore a fresh user instruction
 - asking the user to choose among old options when the new directive already supersedes them
+- generating option branches when the current requested work already has one safe clear continuation path
 
 ---
 
@@ -118,7 +120,7 @@ Use this override behavior when:
 ## Integration
 
 Related rules:
-- [accurate-communication.md](accurate-communication.md) - response wording should visibly re-anchor to the latest user instruction
+- [accurate-communication.md](accurate-communication.md) - response wording should visibly re-anchor to the latest user instruction and owns the default continuation-vs-option policy
 - [explanation-quality.md](explanation-quality.md) - explanations should not keep deepening an old assistant-proposed branch after a new directive arrives
 - [refusal-classification.md](refusal-classification.md) - hard-boundary outcomes remain authoritative when applicable
 - [recovery-contract.md](recovery-contract.md) - blocked responses still need a usable recovery path

@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.3 | 2026-04-03 | **[Deferred continuation-vs-option policy to accurate-communication](#version-23)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.2 | 2026-03-27 | **[Added good-operator explanation and stop-before-overexplaining guidance](#version-22)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Extended explanation-quality so explanations now sound more like a capable professional collaborator and stop earlier when the decision surface is already clear | |
 | 2.1 | 2026-03-17 | **[Added stage-progression and whole-set framing guidance to explanation-quality](#version-21)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
@@ -36,6 +37,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-23"></a>
+## Version 2.3: Deferred continuation-vs-option policy to accurate-communication
+
+**Date:** 2026-04-03
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `explanation-quality.md` from v2.2 to v2.3.
+- Updated `design/explanation-quality.design.md` from v2.2 to v2.3.
+- Added explicit deferral so explanation-quality no longer acts like the primary owner for continuation-vs-option policy.
+- Clarified that next-step guidance should not interrupt active execution when the assistant can safely continue the same objective.
+- Tightened the decision-usefulness check so completion/blocker/required-decision visibility matters more than always surfacing a next-step prompt.
+
+### Summary
+Explanation-quality now shapes explanation flow while deferring the main continue-vs-offer-options decision to accurate-communication.
 
 ---
 

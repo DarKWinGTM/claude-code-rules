@@ -54,12 +54,12 @@ This repository uses one deterministic governance model:
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
-| 1 | accurate-communication.md | accurate-communication.design.md v2.3 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, natural-professional wording guidance, and scoped local-fact treatment for exact environment values in snapshots |
-| 2 | answer-presentation.md | answer-presentation.design.md v1.7 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots |
+| 1 | accurate-communication.md | accurate-communication.design.md v2.4 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, natural-professional wording guidance, scoped local-fact treatment for exact environment values in snapshots, and continuation-first execution guidance that prefers active progress over unnecessary option prompting |
+| 2 | answer-presentation.md | answer-presentation.design.md v1.8 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots and narrower next-stage blocks that do not interrupt active execution |
 | 3 | anti-mockup.md | anti-mockup.design.md v1.1 | Real systems over mocks |
 | 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.4 | Truth over pleasing with evidence-grounded, claim-focused disagreement |
 | 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.0 | Startup-governance owner that resolves design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
-| 6 | authority-and-scope.md | authority-and-scope.design.md v1.4 | User authority, deterministic precedence, and fresh-directive override behavior |
+| 6 | authority-and-scope.md | authority-and-scope.design.md v1.5 | User authority, deterministic precedence, fresh-directive override behavior, and a rule against unnecessary option branching when one safe continuation path already exists |
 | 7 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
 | 8 | document-consistency.md | document-consistency.design.md v1.4 | Cross-reference validation with portable shared references kept distinct from local or machine-scoped values |
 | 9 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |
@@ -67,7 +67,7 @@ This repository uses one deterministic governance model:
 | 11 | document-patch-control.md | document-patch-control.design.md v2.4 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, and comparison-friendly patch representation |
 | 12 | emergency-protocol.md | emergency-protocol.design.md v1.1 | High-signal emergency response |
 | 13 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.0 | First-class owner for evidence taxonomy, burden-of-proof thresholds, contradiction protocol, and scoped negative-evidence semantics |
-| 14 | explanation-quality.md | explanation-quality.design.md v2.2 | Plain-language-first, layered analytical and technical explanation structure |
+| 14 | explanation-quality.md | explanation-quality.design.md v2.3 | Plain-language-first, layered analytical and technical explanation structure with explicit deferral of continuation-vs-option policy to accurate-communication |
 | 15 | external-verification-and-source-trust.md | external-verification-and-source-trust.design.md v1.0 | First-class owner for proactive external verification, source-trust ranking, corroboration, and source-conflict handling |
 | 16 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.1 | Text diagrams without frames or boxes |
 | 17 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |

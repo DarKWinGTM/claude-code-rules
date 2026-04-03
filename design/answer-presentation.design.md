@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.7
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
+> **Current Version:** 1.8
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
 
@@ -231,6 +231,11 @@ Preferred labels:
 - `Next stage`
 - `Next state`
 - `Next milestone`
+
+Boundary guidance:
+- next-stage blocks are optional presentation tools
+- they should not interrupt active execution when the assistant can continue the requested work directly
+- use them when the user genuinely needs stage visibility or a real boundary has been reached
 
 ### 5.8 Canonical Snapshot Shapes
 

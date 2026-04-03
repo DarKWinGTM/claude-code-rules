@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains eight rollout families:
+The current workspace contains nine rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -23,6 +23,7 @@ The current workspace contains eight rollout families:
 - major phase `006` = external-verification-and-source-trust rollout
 - major phase `007` = custom-agent-selection-priority rollout
 - major phase `008` = portable-implementation-and-hardcoding-control rollout
+- major phase `009` = continuation-priority and option-offering refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -54,6 +55,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 008 | 008-01 | `phase/phase-008-01-create-portable-implementation-rule.md` | `design/portable-implementation-and-hardcoding-control.design.md` | `patch/portable-implementation-and-hardcoding-control.patch.md` | Create the first-class portable-implementation-and-hardcoding-control rule chain | One semantic owner exists for portable defaults and anti-hardcoding discipline |
 | 008 | 008-02 | `phase/phase-008-02-integrate-hardcoding-governance.md` | `design/portable-implementation-and-hardcoding-control.design.md` + `design/design.md` | `patch/portable-implementation-and-hardcoding-control.patch.md` | Sync master docs, TODO, changelog, and phase summary for the new hardcoding-control wave | Repo-level governance reflects the new portable-implementation owner |
 | 008 | 008-03 | `phase/phase-008-03-deepen-portability-integration.md` | `design/portable-implementation-and-hardcoding-control.design.md` + touched adjacent designs | `patch/portable-implementation-and-hardcoding-control.patch.md` | Deepen the adjacent-chain integration slice so portability ownership affects strategy, consistency, and presentation behavior more concretely | Portability owner becomes more operationally real across adjacent chains |
+| 009 | 009-01 | `phase/phase-009-01-audit-continuation-vs-interruption.md` | `design/accurate-communication.design.md` + `design/answer-presentation.design.md` + `design/explanation-quality.design.md` + `design/authority-and-scope.design.md` | `patch/continuation-priority-and-option-offering.patch.md` | Audit the current option-offering and next-stage drift across communication/presentation/explanation owners | Primary owner and overlap set are explicit |
+| 009 | 009-02 | `phase/phase-009-02-implement-continuation-priority.md` | `design/accurate-communication.design.md` + touched adjacent designs | `patch/continuation-priority-and-option-offering.patch.md` | Implement continuation-first behavior so active work proceeds by default and options appear only when genuinely necessary | Communication-layer behavior prioritizes execution over interruption |
 
 ---
 
@@ -82,7 +85,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 008-01: create portable-implementation-and-hardcoding-control rule chain
   → 008-02: sync master docs and history for the hardcoding-control wave
   → 008-03: deepen adjacent-chain integration for the hardcoding-control wave
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, and a first-class portable-implementation owner
+  → 009-01: audit continuation-vs-interruption behavior across communication/presentation/explanation owners
+  → 009-02: implement continuation-first behavior and narrow unnecessary option prompting
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, and continuation-first communication behavior that prefers execution over unnecessary interruption
 
 ---
 
@@ -112,6 +117,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 008 | 008-01 | `phase/phase-008-01-create-portable-implementation-rule.md` | Implemented - Pending Review | Review Pending | Awaiting Review | new portable-implementation owner created |
 | 008 | 008-02 | `phase/phase-008-02-integrate-hardcoding-governance.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master integration wave underway |
 | 008 | 008-03 | `phase/phase-008-03-deepen-portability-integration.md` | Implemented - Pending Review | Review Pending | Awaiting Review | deeper adjacent integration wave underway |
+| 009 | 009-01 | `phase/phase-009-01-audit-continuation-vs-interruption.md` | Completed | None | Approved As-Is | owner/overlap diagnosis completed |
+| 009 | 009-02 | `phase/phase-009-02-implement-continuation-priority.md` | Implemented - Pending Review | Review Pending | Awaiting Review | continuation-first refinement applied across touched owner chains |
 
 ---
 
@@ -141,14 +148,16 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 008 | 008-01 | Implemented - Pending Review | `phase/phase-008-01-create-portable-implementation-rule.md` | Create the first-class portable-implementation-and-hardcoding-control rule chain | none |
 | 008 | 008-02 | Implemented - Pending Review | `phase/phase-008-02-integrate-hardcoding-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new hardcoding-control wave | `008-01` |
 | 008 | 008-03 | Implemented - Pending Review | `phase/phase-008-03-deepen-portability-integration.md` | Deepen the adjacent-chain integration slice for the new hardcoding-control owner | `008-02` |
+| 009 | 009-01 | Completed | `phase/phase-009-01-audit-continuation-vs-interruption.md` | Audit overlap that encourages unnecessary mid-process option prompting | none |
+| 009 | 009-02 | Implemented - Pending Review | `phase/phase-009-02-implement-continuation-priority.md` | Implement continuation-first behavior across the communication-owner chains | `009-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, and the portable-implementation rollout while they are active.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, and the portable-implementation rollout after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, and portable-implementation chains plus any narrow adjacent-chain integration without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, and the continuation-priority refinement while they are active.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, and the continuation-priority refinement after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, and continuation-priority changes without broadening ownership boundaries unnecessarily.
 
 ---
 

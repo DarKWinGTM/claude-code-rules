@@ -1,8 +1,8 @@
 # Explanation Quality
 
-> **Current Version:** 2.2
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.2
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 2.3
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.3
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
 ---
@@ -115,6 +115,15 @@ Required behavior:
 - distinguish between `clarify more` and `progress next` rather than treating deeper elaboration as the default continuation
 - prefer the next meaningful stage when more depth in the current stage would add little new value
 
+### 9.1 Continuation-First Deferral
+
+This rule shapes explanation flow and closure quality. It does not make option-offering or next-step prompting the default reason to interrupt active work.
+
+Required behavior:
+- defer continuation-vs-option policy to `accurate-communication.md`
+- when the assistant can safely continue the active requested work, do not treat user-facing next-step guidance as mandatory mid-objective
+- use next-step or next-stage explanation only when the user genuinely needs that visibility, the task is complete, or a blocker/decision boundary has been reached
+
 ### 10) Whole-Set Framing Pattern
 
 When the checked scope shows that the user should reason about a larger complete set, present that full set before narrowing into sub-items.
@@ -176,7 +185,8 @@ Summary quality rules:
 
 Next-step guidance rules:
 - if one clear next path exists and it would genuinely help the user act, state it directly
-- if multiple reasonable next paths exist and presenting them would materially help, present short explicit options
+- if the assistant can safely continue that path inside the same active objective, continue instead of pausing only to narrate it
+- if multiple reasonable next paths exist and presenting them would materially help because user choice is actually required, present short explicit options
 - if the task is already complete and there is no real continuation needed, end cleanly after the synthesis instead of inventing extra options
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items
@@ -198,6 +208,7 @@ Before finishing an explanation-heavy answer, it should be possible for the user
 - why it is true
 - the most important trade-off, if options exist
 - what they can do next, if a real next move exists
+- whether the assistant should continue the active objective directly instead of pausing to expose optional next steps
 - whether the response should now move to the next stage/state instead of continuing to deepen the current one
 - whether the full relevant set is visible before any optional narrowing begins
 - or that the task is complete, if no real continuation is needed

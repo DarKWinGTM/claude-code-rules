@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.7
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.8
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -107,6 +107,7 @@ When the current explanation is already sufficient, make the next stage or next 
 Required guidance:
 - use a short grouped block such as `What happens next`, `Next stage`, or `Next state` when forward movement is the useful next step
 - prefer progression over repeated deepening when the current state is already clear enough
+- do not use next-stage blocks as a reason to interrupt active execution when the assistant can continue the requested work directly
 
 ### 10) One-Block-One-Purpose Principle
 
@@ -219,7 +220,7 @@ Preferred phrasing:
 ### 9) Next-Stage Pattern
 
 When the current explanation is already sufficient:
-- use a short grouped forward-moving block
+- use a short grouped forward-moving block only when the user genuinely needs that visibility or the assistant has reached a real boundary
 
 Preferred labels:
 - `What happens next`
@@ -360,7 +361,7 @@ Allowed flexibility:
 - snapshot sections are optional unless they materially improve technical scanability
 - grouped scope-boundary sections are optional unless they materially improve understanding
 - full-set-first sections are optional unless the full set is the real decision surface
-- next-stage sections are optional unless forward movement is the useful next step
+- next-stage sections are optional unless forward movement is the useful next step and the assistant is not simply able to continue the active objective directly
 - structure may vary as long as readability, scanability, and semantic formatting remain strong
 
 Not allowed:
@@ -394,7 +395,7 @@ Not allowed:
 ## Integration
 
 Related rules:
-- [accurate-communication.md](accurate-communication.md) - keeps summaries, signal density, bounded technical snapshot wording, human-language glosses, and next-stage wording useful
+- [accurate-communication.md](accurate-communication.md) - keeps summaries, signal density, bounded technical snapshot wording, human-language glosses, and continuation-vs-option policy useful
 - [explanation-quality.md](explanation-quality.md) - shapes analytical reasoning, layered explanation flow, full-set-first framing, and stage progression logic
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - governs text diagrams used for branching or sequence
 - [document-consistency.md](document-consistency.md) - keeps labels, references, and terminology consistent

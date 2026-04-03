@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-03 | **[Discouraged unnecessary option branching when one safe continuation exists](#version-15)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.4 | 2026-03-27 | **[Added neutral professional default-mode guidance to authority-and-scope](#version-14)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Extended authority-and-scope so the assistant now stays in a neutral professional communication mode by default unless the user explicitly asks for another style | |
 | 1.3 | 2026-03-17 | **[Added fresh-user-directive override over previously offered assistant options](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -22,6 +23,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Discouraged unnecessary option branching when one safe continuation exists
+
+**Date:** 2026-04-03
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `authority-and-scope.md` from v1.4 to v1.5.
+- Updated `design/authority-and-scope.design.md` from v1.4 to v1.5.
+- Added a rule against generating unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
+- Added matching anti-pattern and integration guidance so stale-option override logic no longer normalizes option generation as a default behavior.
+
+### Summary
+Authority-and-scope now keeps assistant-generated options advisory while also discouraging unnecessary option branching when one safe continuation path already exists.
 
 ---
 
