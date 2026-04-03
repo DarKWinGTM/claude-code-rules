@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.11
+> **Current Version:** 2.12
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
@@ -14,6 +14,8 @@ Provide one deterministic, low-confusion repository model across README, runtime
 
 Shared governed docs and templates should remain portable by default rather than embedding machine-specific environment assumptions as if they were universal repository truth.
 
+Public onboarding/install docs should also stay portable by default so cloneable or self-contained repositories do not teach one workstation's absolute path or an internal umbrella workspace root as the default way to install or use the project.
+
 This model must preserve one authority system while clearly separating:
 - `phase-implementation.md` as the first-class rule for phase semantics
 - `phase/SUMMARY.md` as the governed summary/index for the active phase plan
@@ -22,12 +24,20 @@ This model must preserve one authority system while clearly separating:
 - `phase-implementation-template.md` as the readable root-level helper
 - `TODO.md` and changelog as required companions, but not as replacements for the phase plan itself
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
+- `portable-implementation-and-hardcoding-control.md` as the semantic owner of portable-default and anti-hardcoding behavior
+- `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
 
 ---
 
 ## 2) Scope
 
 Applies to projects that keep governed documentation artifacts and support/reference materials in the same repository.
+
+This includes:
+- repository role boundaries across README, design, changelog, TODO, phase, and patch artifacts
+- startup artifact posture before meaningful governed work
+- public onboarding/install guidance in README or adjacent install docs
+- source-side versus destination/runtime notation clarity when install docs name both
 
 ---
 
@@ -168,10 +178,34 @@ After startup posture is resolved
 
 When phased work also uses governed patch artifacts, the phase workspace should declare that linkage explicitly in `phase/SUMMARY.md` and the relevant child phase files instead of leaving patch participation implicit.
 
+---
+
+## 8) Public Onboarding and Install Guidance
+
+### 8.1 Portable public default
+For cloneable or self-contained repositories, public onboarding/install docs should default to repo-root-relative or otherwise portable source guidance.
+
+### 8.2 Workstation-literal failure mode
+One workstation absolute path or an internal umbrella workspace root should not be taught as the public default install source path.
+
+### 8.3 Source-vs-destination notation split
+If onboarding/install docs mention both where the artifact comes from and where it installs or runs, those two roles should stay visually and semantically distinct.
+
+Preferred examples:
+- source-side: `<repo-root>`, `./`
+- destination/runtime-side: `<install-root>`, `<user-runtime-rules>`, `<user-runtime-skills>`, `<user-runtime-agents>`
+
+### 8.4 Local-example exception
+Exact local absolute paths are allowed only when they are explicitly framed as:
+- checked local facts
+- local workflow examples
+- machine-scoped runtime contracts
+
+This design delegates broader anti-hardcoding semantics to `portable-implementation-and-hardcoding-control.md` and notation consistency enforcement to `document-consistency.md`.
 
 ---
 
-## 8) Verification Checklist
+## 9) Verification Checklist
 
 - [ ] Required document set matches project scope
 - [ ] Changelog exists for each governed chain
@@ -185,11 +219,14 @@ When phased work also uses governed patch artifacts, the phase workspace should 
 - [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md`
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
+- [ ] Public onboarding/install docs avoid workstation-specific absolute paths as public defaults
+- [ ] Source-side and destination/runtime notation are clearly distinguished when both appear
+- [ ] Exact local install examples are explicitly scoped
 - [ ] Root-level helper artifacts do not masquerade as governed docs
 
 ---
 
-## 9) Quality Metrics
+## 10) Quality Metrics
 
 | Metric | Target |
 |--------|--------|
@@ -204,12 +241,15 @@ When phased work also uses governed patch artifacts, the phase workspace should 
 | Patch placement clarity | 100% |
 | Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
+| Public onboarding/install portability | High |
+| Workstation-specific absolute paths as public defaults | 0 critical cases |
+| Source-vs-destination notation clarity | High |
 | Root-helper placement clarity | 100% |
 | TODO simplification compliance | 100% |
 
 ---
 
-## 10) Integration
+## 11) Integration
 
 | Rule | Relationship |
 |------|-------------|
@@ -218,6 +258,8 @@ When phased work also uses governed patch artifacts, the phase workspace should 
 | [document-design-control.md](../document-design-control.md) | Design structure standards |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
 | [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning and one-way design/patch source synthesis |
+| [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
+| [document-consistency.md](../document-consistency.md) | Source-side and destination/runtime reference consistency |
 | [todo-standards.md](../todo-standards.md) | TODO structure standards plus startup-establishment bridge |
 
 ---

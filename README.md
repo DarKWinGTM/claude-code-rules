@@ -181,12 +181,12 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, natural-professional wording, and continuation-first guidance that prefers active progress over unnecessary option prompting during active work |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording when multiple paths are shown |
 | [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, and unnecessary option branching is discouraged when one safe continuation path already exists |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
-| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | No contradictions |
+| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, destination/runtime, and local references from drifting into each other |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, and required to show explicit change surfaces |
@@ -204,8 +204,8 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts |
 | [`todo-standards.md`](todo-standards.md) | Task management | Focused work with early TODO establishment when meaningful governed work requires tracking |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate before governed work drift |
-| [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate and portable public onboarding/install guidance |
+| [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
@@ -216,8 +216,8 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, and natural-flow formatting that avoids stiff template feel without interrupting active execution unnecessarily |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, and explicit deferral of continuation-vs-option policy to accurate-communication |
+| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, and clearer `Recommended` / `Why this first` / `Other options` layout support when options are genuinely needed |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, explicit deferral of continuation-vs-option policy to accurate-communication, and clearer recommendation-plus-reason endings |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -272,6 +272,9 @@ curl -o ~/.claude/rules/anti-sycophancy.md \
 3. Change only the destination path from `~/.claude/rules/` to `./.claude/rules/`.
 
 This keeps the install set identical while scoping the rules to one repository.
+
+> Source-side note: public commands in this README are expressed from the repo root.
+> Destination/runtime note: installation targets are shown separately as `~/.claude/rules/` or `./.claude/rules/`.
 
 ### 📍 Installation Paths
 
@@ -928,8 +931,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 2.3.0 |
-  <b>Last Updated</b>: 2026-03-28 |
+  <b>Version</b>: 2.5.0 |
+  <b>Last Updated</b>: 2026-04-03 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

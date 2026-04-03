@@ -1,11 +1,13 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-03-30
+> **Last Updated:** 2026-04-03
 
 ---
 
 ## ✅ Completed
 
+- [x] Refine recommendation formatting so multi-option next-step guidance now shows a recommended path first with a short plain-language reason for doing it first, synchronize master RULES artifacts, and reinstall the touched runtime rules.
+- [x] Refine install-doc portability governance so public onboarding/install docs now default to portable repo-root guidance, keep source-side and destination/runtime notation distinct, synchronize master RULES artifacts, and reinstall the touched runtime rules.
 - [x] Create first-class `artifact-initiation-control` rule chain, patch startup-governance owners (`project-documentation-standards`, `phase-implementation`, `todo-standards`, `strict-file-hygiene`), open `phase-004` from the start, and synchronize master docs/history.
 - [x] Normalize `todo-standards` into a fully tracked governed chain with runtime body + dedicated changelog authority as part of the startup-governance rollout.
 - [x] Harden explicit phase-to-patch linkage in phased work by updating `phase-implementation`, `project-documentation-standards`, and the root helper so `phase/SUMMARY.md` plus relevant child phase files must declare governed patch participation explicitly when patch is in scope.
@@ -68,6 +70,8 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-03 | Refined recommendation-format governance: updated `accurate-communication` so multi-option next-step guidance now names the recommended path first and explains briefly why it should happen first; updated `explanation-quality` and `answer-presentation` to reinforce the same pattern at explanation and layout layers; added `patch/recommended-option-and-why-this-first.patch.md` plus `phase-011-01` and `phase-011-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
+| 2026-04-03 | Refined install-doc portability governance: updated `portable-implementation-and-hardcoding-control` so public onboarding/install docs and source-vs-destination notation are first-class portability concerns; updated `project-documentation-standards` and `document-consistency` to enforce portable repo-root guidance and reference-role separation; added `patch/install-doc-portability-and-source-destination-notation.patch.md` plus `phase-010-01` and `phase-010-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-03 | Completed the continuation-priority refinement wave: audited overlap across `accurate-communication`, `answer-presentation`, `explanation-quality`, and `authority-and-scope`; opened `patch/continuation-priority-and-option-offering.patch.md` plus `phase-009-01` and `phase-009-02`; made `accurate-communication` the explicit primary owner for continuation-vs-option policy; narrowed next-stage/default-option drift in adjacent owner chains; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-02 | Deepened `portable-implementation-and-hardcoding-control` integration across adjacent chains: patched `no-variable-guessing`, `accurate-communication`, `project-documentation-standards`, and `strict-file-hygiene` to defer broader anti-hardcoding ownership to the new chain; extended the next bounded slice into `tactical-strategic-programming`, `document-consistency`, and `answer-presentation`; opened/completed `phase-008-03`; and synchronized master changelog history for the deeper integration wave. |
 | 2026-04-02 | Created first-class `portable-implementation-and-hardcoding-control` as the semantic owner for portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline; added the new design/runtime/changelog triad plus `patch/portable-implementation-and-hardcoding-control.patch.md`, opened `phase-008-01` and `phase-008-02`, and synchronized master design/README/changelog/TODO/phase surfaces to the new hardcoding-control rule owner. |

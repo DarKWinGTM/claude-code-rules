@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
@@ -174,6 +174,7 @@ When real alternatives exist:
 - give a brief orienting statement
 - use a comparison table when side-by-side evaluation improves decision quality
 - recommend after comparison, not before it
+- when one path is clearly preferred, surface `Recommended` first and add one short `Why this first` reason before listing the remaining options
 
 ### 5.4 Sequence Pattern
 
@@ -227,6 +228,9 @@ Preferred shapes:
 When the current explanation is already sufficient, prefer a short grouped block that moves the reader forward.
 
 Preferred labels:
+- `Recommended`
+- `Why this first`
+- `Other options`
 - `What happens next`
 - `Next stage`
 - `Next state`

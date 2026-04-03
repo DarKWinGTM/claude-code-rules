@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.3
+> **Current Version:** 2.4
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
@@ -344,6 +344,7 @@ Summary quality rules:
 Default expectation:
 - if there is one clear next path and it would genuinely help the user act, state it directly
 - if there are multiple reasonable next paths and presenting them would materially help the user, present short explicit options the user can choose from
+- when one option is better-supported, make the recommendation explicit and explain briefly why it should happen first
 - if the task is already complete and no real continuation is needed, do not invent artificial next-step options
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items

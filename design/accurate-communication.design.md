@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.4
+> **Current Version:** 2.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 
 ---
@@ -18,6 +18,7 @@ This chain is the wording owner for:
 - claim-state communication shape
 - contradiction wording guardrails
 - concise high-signal synthesis and next-step endings
+- recommended-option wording when multiple next actions are shown
 - bounded technical snapshot wording for status-heavy updates
 - human-language glosses for internal or technical terminology when they materially improve understanding
 - natural professional wording calibration, including anti-robotic and signal-over-ceremony phrasing guidance
@@ -130,6 +131,7 @@ Required guidance:
 - if a clear next action exists and the user genuinely needs to know it, state it directly
 - if the assistant can safely continue that next action inside the active objective, continue instead of pausing to announce it
 - if multiple reasonable next actions exist and user choice would materially affect the path, present short explicit options
+- when one of those options is better-supported than the others, name the recommended option first and explain briefly why it should happen first
 - if the task is already complete and no real next action is needed, do not invent extra options
 - when a technical or product term may be hard to follow, provide a direct human-language gloss if it materially improves understanding
 - when the current state is already sufficiently explained, prefer the next meaningful stage/state rather than defaulting to deeper options in the same scope
@@ -202,6 +204,7 @@ Not allowed:
 - using partial evidence to imply exact capture
 - defaulting to deeper same-scope options when the real useful move is the next stage/state
 - offering a narrow partial set when the full relevant set should be visible first
+- listing multiple next options with no recommended path when the checked reasoning already supports one better default
 
 ---
 

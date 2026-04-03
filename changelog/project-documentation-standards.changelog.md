@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.11
+> **Current Version:** 2.12
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.12 | 2026-04-02 | **[Added portable public onboarding/install guidance](#version-212)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | Summary: Extended project-documentation-standards so README and install/onboarding docs now avoid workstation-specific absolute paths as public defaults and explicitly separate source-side guidance from destination/runtime notation | |
 | 2.11 | 2026-04-02 | **[Integrated portable-default documentation guidance](#version-211)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended project-documentation-standards so shared governed docs/templates stay portable by default and now defer anti-hardcoding discipline to `portable-implementation-and-hardcoding-control` | |
 | 2.10 | 2026-03-30 | **[Added explicit phase-to-patch linkage verification for phased work](#version-210)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -20,6 +22,29 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-212"></a>
+## Version 2.12: Added portable public onboarding/install guidance
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.11 to v2.12.
+- Updated runtime `project-documentation-standards.md` from v2.11 to v2.12.
+- Added a first-class public onboarding/install guidance section to the repository role model.
+- Added explicit requirements so public README/install docs:
+  - default to repo-root-relative or other portable source guidance when possible
+  - avoid workstation-specific absolute paths and internal umbrella workspace roots as public defaults
+  - distinguish source-side guidance from destination/runtime notation
+  - scope exact local absolute paths as local examples or machine-scoped contracts when they appear
+- Added verification and quality-metric coverage for portable onboarding/install guidance.
+- Added explicit integration to `document-consistency.md` for source-vs-destination notation clarity.
+
+### Summary
+Strengthened the repository documentation model so public onboarding/install docs are now governed as portable documentation surfaces rather than being left to ad hoc README wording.
 
 ---
 

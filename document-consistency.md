@@ -1,7 +1,7 @@
 # Document Consistency and Cross-Reference Validation
 
-> **Current Version:** 1.4
-> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/document-consistency.changelog.md](changelog/document-consistency.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Keep names, paths, identifiers, and cross-references consistent across the checked scope, while clearly separating portable shared references from checked local facts and machine-scoped examples.**
+**Core Principle: Keep names, paths, identifiers, and cross-references consistent across the checked scope, while clearly separating portable shared references, source-side references, destination/runtime references, checked local facts, and machine-scoped examples.**
 
 This rule governs cross-reference consistency, change-propagation discipline, and reference verification across files, sections, symbols, commands, and configuration values.
 
@@ -22,6 +22,7 @@ This rule governs cross-reference consistency, change-propagation discipline, an
 - when referencing, ensure it exists or mark it as unknown or unverified
 - if a change impacts multiple sections/files, describe or update the dependencies
 - keep portable shared references distinct from checked local facts or machine-scoped examples
+- keep source-side references distinct from destination/runtime references when both appear in install or onboarding guidance
 - defer broader portable-default and anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 2) Reference Types
@@ -29,6 +30,8 @@ This rule governs cross-reference consistency, change-propagation discipline, an
 | Type | Example | Verification Method |
 |------|---------|---------------------|
 | File paths | `<workspace-root>/src/config.js` for portable examples, or exact path only when scoped as a checked local fact | Glob / LS / Read |
+| Source-side install path | `<repo-root>` or `./` when a command is run from the repo root | Read / command-context verification |
+| Destination/runtime path | `<install-root>/skills` or `<user-runtime-rules>` | Read config/source contract when applicable |
 | Symbols | `getUserById` | Grep |
 | Commands | `npm run build` | Test execution when needed |
 | Config | `DATABASE_URL` | Read config source |
@@ -42,6 +45,7 @@ Apply verification before finalizing references or consistency claims when trigg
 | Cross-file consistency claim | "fully synchronized", "all references updated", "no drift" | verify all impacted files/sections before confirming |
 | Rename/move/update impact | path or identifier changed in one place | trace and update dependent references deterministically |
 | Ambiguous or unresolved reference | missing file/symbol or uncertain mapping | mark status explicitly and avoid unstated assumptions |
+| Mixed source/destination wording | install docs blur clone/source path with installed/runtime path | separate the reference roles explicitly and normalize wording |
 
 ---
 
@@ -51,9 +55,16 @@ Apply verification before finalizing references or consistency claims when trigg
 ```text
 Create reference
   ↓
-Does it exist?
+Does it exist or resolve?
   → YES: use precise reference
   → NO: mark as unknown/unverified
+  ↓
+What reference role is it?
+  → portable shared reference
+  → source-side reference
+  → destination/runtime reference
+  → checked local fact
+  → machine-scoped example
   ↓
 Is it consistent with related references?
   → YES: continue
@@ -79,6 +90,8 @@ Verify consistency
 
 ### Preferred references
 - file paths: `<workspace-root>/src/config.js` for portable examples, or an exact path only when explicitly scoped as a checked local fact
+- source-side install guidance: `<repo-root>` or `./` when the command is explicitly intended for the repo root
+- destination/runtime guidance: `<install-root>`, `<user-runtime-rules>`, `<user-runtime-skills>`, `<user-runtime-agents>`
 - line numbers: `config.js:42`
 - symbols: `getUserById()` function in `user.service.ts`
 
@@ -86,6 +99,7 @@ Verify consistency
 - "The config file"
 - "That function we created earlier"
 - "The variable somewhere in the code"
+- one exact workstation path acting as both the source path and the destination/runtime path without explanation
 
 ### Verification labels
 ```markdown
@@ -110,6 +124,7 @@ When modifying:
 | Move file | update all paths |
 | Rename symbol | update all usages |
 | Change config | update all references |
+| Normalize install docs | update source-side references and destination/runtime references separately |
 
 ---
 
@@ -122,6 +137,7 @@ When modifying:
 | Dependency updates | 100% |
 | Reference precision | 100% |
 | Portable-vs-local reference separation | High |
+| Source-vs-destination reference separation | High |
 
 ---
 
@@ -131,6 +147,6 @@ Related rules:
 - [no-variable-guessing.md](no-variable-guessing.md) - verify values, not just existence
 - [zero-hallucination.md](zero-hallucination.md) - do not fabricate references
 - [functional-intent-verification.md](functional-intent-verification.md) - verify intent of references when execution matters
-- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - keep portable references distinct from local or machine-scoped values
+- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - keep portable references distinct from local or machine-scoped values and keep source-side versus destination/runtime notation legible
 
 ---

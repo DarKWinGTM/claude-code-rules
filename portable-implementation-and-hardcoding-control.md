@@ -1,7 +1,7 @@
 # Portable Implementation and Hardcoding Control
 
-> **Current Version:** 1.0
-> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.1
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/portable-implementation-and-hardcoding-control.changelog.md](changelog/portable-implementation-and-hardcoding-control.changelog.md)
 
@@ -9,9 +9,9 @@
 
 ## Rule Statement
 
-**Core Principle: Keep shared implementation artifacts portable by default, bind environment-specific values late, and treat exact local values as scoped observations rather than reusable defaults.**
+**Core Principle: Keep shared implementation artifacts and public onboarding/install guidance portable by default, bind environment-specific values late, and treat exact local values as scoped observations rather than reusable defaults.**
 
-This rule owns environment-binding discipline for shared implementation artifacts, including path assumptions, install locations, hostnames, ports, and similar machine- or environment-specific defaults that should not be hardcoded into portable system behavior.
+This rule owns environment-binding discipline for shared implementation artifacts and public install/onboarding examples, including path assumptions, install locations, hostnames, ports, and similar machine- or environment-specific defaults that should not be hardcoded into portable system behavior.
 
 ---
 
@@ -57,7 +57,16 @@ Required guidance:
 - use env/config notation in executable configuration
 - avoid mixing many placeholder dialects without a clear contract
 
-### 6) Example-Portability Principle
+### 6) Public-Onboarding-and-Install-Guidance Principle
+Public onboarding/install guidance should default to portable source guidance and clearly separated destination/runtime notation.
+
+Required guidance:
+- use repo-root-relative or other portable source guidance when the artifact can be cloned or installed from the repo root
+- use placeholders or explicit contract labels for destination/runtime paths
+- do not present one workstation absolute path or an internal umbrella workspace root as the public default install path
+- if an exact local absolute path is shown for a local workflow example, mark it explicitly as a local example rather than a portable default
+
+### 7) Example-Portability Principle
 Examples should be portable by default unless the point of the example is specifically machine-scoped behavior.
 
 Required guidance:
@@ -96,7 +105,27 @@ Preferred forms:
 - `<install-root>`
 - `<user-runtime-agents>`
 - `<user-runtime-skills>`
+- `<user-runtime-rules>`
 - `<service-base-url>`
+
+### Public onboarding/install guidance
+Use portable source-side notation for where the artifact comes from, and separate destination/runtime notation for where it will live or execute.
+
+Preferred source-side forms:
+- `<repo-root>`
+- `<workspace-root>` when the workspace itself is the portable contract
+- `./` when the command is explicitly run from the repo root
+
+Preferred destination/runtime forms:
+- `<install-root>`
+- `<user-runtime-agents>`
+- `<user-runtime-skills>`
+- `<user-runtime-rules>`
+
+Required guidance:
+- source-side guidance should answer where the user clones from or which repo-root context the command uses
+- destination/runtime guidance should answer where the installed/runtime artifact belongs
+- one exact workstation path should not silently play both roles at once
 
 ### Executable configuration and runtime contracts
 Use env/config-style resolution in:
@@ -111,6 +140,7 @@ Preferred forms:
 - `${INSTALL_ROOT}`
 - `${USER_RUNTIME_AGENTS}`
 - `${USER_RUNTIME_SKILLS}`
+- `${USER_RUNTIME_RULES}`
 - `${SERVICE_BASE_URL}`
 
 ### Local inspection and debugging
@@ -151,6 +181,7 @@ Apply this rule strongly when one or more of these appear:
 | machine-local path in shared artifact | `/home/...`, `/Users/...`, drive-letter paths | replace with placeholder or env/config resolution unless explicitly machine-scoped |
 | environment default in shared logic | host, port, install dir, temp dir, username | move to config/env/adapter unless it is true domain data |
 | reusable template/example | docs, templates, README examples, phase/patch examples | make the example portable by default |
+| public onboarding/install example | README quickstart, clone-and-install steps, marketplace add/install examples | use repo-root-relative or other portable source guidance, and separate destination/runtime notation |
 | checked local value | tool output or runtime observation | keep it scoped as local fact |
 | mixed notation drift | placeholders, literals, and env syntax mixed without contract | normalize to the canonical model |
 
@@ -166,6 +197,8 @@ Apply this rule strongly when one or more of these appear:
 | temp-dir-as-authority | temporary paths become durable defaults | bind temp paths late and keep them non-authoritative |
 | localhost-default-for-shared-system | local host/port assumptions leak into shared behavior | move host/port to config/env |
 | single-machine install assumption | reusable logic depends on one workstation layout | use install-root or runtime-resolved paths |
+| internal-umbrella-root-as-public-default | one shared internal workspace root leaks into public onboarding | use repo-root-relative or other portable source guidance |
+| source-destination-blur | readers cannot tell where an artifact comes from versus where it installs/runs | separate source-side notation from destination/runtime notation |
 | mixed resolution model drift | inconsistent notation makes systems fragile | use one canonical placeholder/env model |
 | silent machine-scoped example | a local-only example looks like a universal default | mark machine-scoped examples explicitly |
 
@@ -177,6 +210,8 @@ Apply this rule strongly when one or more of these appear:
 - [ ] If shared, does it avoid machine-specific literals by default?
 - [ ] If executable, does it resolve through env/config or an adapter?
 - [ ] If exact local values appear, are they explicitly scoped?
+- [ ] Does public onboarding/install guidance separate source path from destination/runtime path?
+- [ ] If the source is repo-local, can it be expressed as `<repo-root>` or `./` instead of a workstation literal?
 - [ ] Would this still work after moving machines, users, or workspace locations?
 - [ ] Is the notation model consistent across the artifact?
 
@@ -187,8 +222,11 @@ Apply this rule strongly when one or more of these appear:
 | Metric | Target |
 |--------|--------|
 | Shared-artifact portability | High |
+| Public onboarding/install portability | High |
 | Hardcoded environment assumptions in shared artifacts | 0 critical cases |
+| Workstation-specific absolute paths as public defaults | 0 critical cases |
 | Local fact vs portable contract separation | High |
+| Source-vs-destination notation clarity | High |
 | Canonical notation consistency | High |
 | Machine-scoped exception labeling | High |
 
@@ -199,7 +237,8 @@ Apply this rule strongly when one or more of these appear:
 Related rules:
 - [no-variable-guessing.md](no-variable-guessing.md) - local values still need checked-scope verification
 - [accurate-communication.md](accurate-communication.md) - exact local values must be communicated with correct evidence strength and scope
-- [project-documentation-standards.md](project-documentation-standards.md) - shared documents and templates should remain portable
+- [project-documentation-standards.md](project-documentation-standards.md) - shared documents and onboarding/install docs should remain portable
+- [document-consistency.md](document-consistency.md) - source-side and destination/runtime references should stay distinct and consistent
 - [strict-file-hygiene.md](strict-file-hygiene.md) - reusable artifacts should not accumulate machine-local junk assumptions
 - [tactical-strategic-programming.md](tactical-strategic-programming.md) - tactical convenience should not become hidden long-term authority
 

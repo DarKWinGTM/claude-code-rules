@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 7.2
+> **Current Version:** 7.6
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,18 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 7.6 | 2026-04-03 | **[Added recommendation-plus-reason guidance for multi-option next steps](#version-76)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Updated `accurate-communication` to v2.5 so multi-path next-step guidance now names the recommended option first and explains briefly why it should happen first | |
+| | | - Updated `explanation-quality` to v2.4 and `answer-presentation` to v1.9 so explanation endings and layouts now reinforce the same recommendation-plus-reason pattern without reintroducing option-first interruption | |
+| | | - Added `patch/recommended-option-and-why-this-first.patch.md` plus `phase/phase-011-01-*` and `phase/phase-011-02-*` to record the bounded refinement wave | |
+| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md`, then reinstalled the touched runtime rules into `~/.claude/rules/` | |
+| | | Summary: When multiple next actions are genuinely shown, the RULES system now makes the preferred path easier to act on by pairing `Recommended` with a short `Why this first` reason | |
+| 7.5 | 2026-04-03 | **[Refined public install portability and source-vs-destination notation across hardcoding-governance owners](#version-75)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | - Updated `portable-implementation-and-hardcoding-control` to v1.1 so public onboarding/install docs, source-side versus destination/runtime notation, and internal umbrella workspace roots as public defaults are now first-class portability concerns | |
+| | | - Updated `project-documentation-standards` to v2.12 and `document-consistency` to v1.5 so README/install docs now enforce portable repo-root guidance and keep source-side references distinct from destination/runtime references | |
+| | | - Added `patch/install-doc-portability-and-source-destination-notation.patch.md` plus `phase/phase-010-01-*` and `phase/phase-010-02-*` to record the bounded refinement wave | |
+| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md`, then reinstalled the touched runtime rules into `~/.claude/rules/` | |
+| | | Summary: The hardcoding-governance model now explicitly treats public install/onboarding path posture as a portability concern and stops one workstation path from silently acting as both source and destination/runtime truth | |
 | 7.4 | 2026-04-03 | **[Opened continuation-priority refinement across communication-owner chains](#version-74)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.3 | 2026-04-02 | **[Deepened portability-rule integration across adjacent chains](#version-73)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Updated `no-variable-guessing`, `accurate-communication`, `project-documentation-standards`, and `strict-file-hygiene` to defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control` | |
@@ -73,6 +85,70 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-76"></a>
+## Version 7.6: Added recommendation-plus-reason guidance for multi-option next steps
+
+**Date:** 2026-04-03
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/accurate-communication.design.md` from v2.4 to v2.5.
+- Updated runtime `accurate-communication.md` from v2.4 to v2.5.
+- Added wording guidance so when multiple reasonable next actions are shown and one path is better-supported, the response names that path first as the recommendation and follows it with a short plain-language why-first reason.
+- Updated `design/explanation-quality.design.md` from v2.3 to v2.4.
+- Updated runtime `explanation-quality.md` from v2.3 to v2.4.
+- Added explanation-ending support so recommendation-heavy endings now make the preferred next path explicit and explain briefly why it should happen first.
+- Updated `design/answer-presentation.design.md` from v1.8 to v1.9.
+- Updated runtime `answer-presentation.md` from v1.8 to v1.9.
+- Added layout guidance and canonical label support for:
+  - `Recommended`
+  - `Why this first`
+  - `Other options`
+- Added `patch/recommended-option-and-why-this-first.patch.md` as the governed before/after artifact for the refinement wave.
+- Added `phase/phase-011-01-refine-recommended-option-wording.md` and `phase/phase-011-02-sync-master-docs-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the recommendation-format refinement is visible in master governance surfaces.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `accurate-communication.md`
+  - `explanation-quality.md`
+  - `answer-presentation.md`
+
+### Summary
+The RULES system now keeps multi-option next-step guidance easier to act on by making the preferred path and its reason visible instead of leaving the user to infer both.
+
+---
+
+<a id="version-75"></a>
+## Version 7.5: Refined public install portability and source-vs-destination notation across hardcoding-governance owners
+
+**Date:** 2026-04-03
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/portable-implementation-and-hardcoding-control.design.md` from v1.0 to v1.1.
+- Updated runtime `portable-implementation-and-hardcoding-control.md` from v1.0 to v1.1.
+- Expanded the portability owner so public onboarding/install docs, repo-root source guidance, source-vs-destination notation, and internal umbrella workspace roots as public defaults are now first-class governed concerns.
+- Updated `design/project-documentation-standards.design.md` from v2.11 to v2.12.
+- Updated runtime `project-documentation-standards.md` from v2.11 to v2.12.
+- Added repository-level enforcement so public README/install docs now:
+  - default to portable repo-root or equivalent source guidance when possible
+  - avoid workstation-specific absolute paths as public defaults
+  - distinguish source-side references from destination/runtime references
+- Updated `design/document-consistency.design.md` from v1.4 to v1.5.
+- Updated runtime `document-consistency.md` from v1.4 to v1.5.
+- Added reference-role separation for portable shared references, source-side install references, destination/runtime references, checked local facts, and machine-scoped examples.
+- Added `patch/install-doc-portability-and-source-destination-notation.patch.md` as the governed before/after artifact for the refinement wave.
+- Added `phase/phase-010-01-refine-install-doc-portability-owners.md` and `phase/phase-010-02-sync-master-governance-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the public-install portability refinement is visible in master governance surfaces.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `portable-implementation-and-hardcoding-control.md`
+  - `project-documentation-standards.md`
+  - `document-consistency.md`
+
+### Summary
+Strengthened the hardcoding-governance model so public install/onboarding docs now stay portable by default and keep source-side versus destination/runtime path roles explicit instead of letting one workstation path silently represent both.
 
 ---
 

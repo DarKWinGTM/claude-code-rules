@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.8
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
+> **Current Version:** 5.0
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,7 +13,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, first-class startup artifact initiation control, a first-class owner for proactive external verification and source trust, and a first-class owner for portable implementation defaults plus anti-hardcoding discipline.
+This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, first-class startup artifact initiation control, a first-class owner for proactive external verification and source trust, and a first-class owner for portable implementation defaults, public onboarding/install portability, and anti-hardcoding discipline.
 
 ---
 
@@ -54,27 +54,27 @@ This repository uses one deterministic governance model:
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
-| 1 | accurate-communication.md | accurate-communication.design.md v2.4 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, natural-professional wording guidance, scoped local-fact treatment for exact environment values in snapshots, and continuation-first execution guidance that prefers active progress over unnecessary option prompting |
-| 2 | answer-presentation.md | answer-presentation.design.md v1.8 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots and narrower next-stage blocks that do not interrupt active execution |
+| 1 | accurate-communication.md | accurate-communication.design.md v2.5 | Clear, context-complete, verification-honest, and evidence-threshold-aligned communication with concise synthesis, claim-focused contradiction guardrails, bounded technical snapshot wording, stronger human-language glosses, natural-professional wording guidance, scoped local-fact treatment for exact environment values in snapshots, continuation-first execution guidance, and explicit recommendation-plus-reason wording when multiple next paths are shown |
+| 2 | answer-presentation.md | answer-presentation.design.md v1.9 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots, narrower next-stage blocks that do not interrupt active execution, and clearer `Recommended` / `Why this first` / `Other options` layout support |
 | 3 | anti-mockup.md | anti-mockup.design.md v1.1 | Real systems over mocks |
 | 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.4 | Truth over pleasing with evidence-grounded, claim-focused disagreement |
 | 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.0 | Startup-governance owner that resolves design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
 | 6 | authority-and-scope.md | authority-and-scope.design.md v1.5 | User authority, deterministic precedence, fresh-directive override behavior, and a rule against unnecessary option branching when one safe continuation path already exists |
 | 7 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
-| 8 | document-consistency.md | document-consistency.design.md v1.4 | Cross-reference validation with portable shared references kept distinct from local or machine-scoped values |
+| 8 | document-consistency.md | document-consistency.design.md v1.5 | Cross-reference validation with portable shared references, source-side references, destination/runtime references, and local or machine-scoped values kept distinct |
 | 9 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |
 | 10 | document-design-control.md | document-design-control.design.md v1.8 | Active-state design-body standards |
 | 11 | document-patch-control.md | document-patch-control.design.md v2.4 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, and comparison-friendly patch representation |
 | 12 | emergency-protocol.md | emergency-protocol.design.md v1.1 | High-signal emergency response |
 | 13 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.0 | First-class owner for evidence taxonomy, burden-of-proof thresholds, contradiction protocol, and scoped negative-evidence semantics |
-| 14 | explanation-quality.md | explanation-quality.design.md v2.3 | Plain-language-first, layered analytical and technical explanation structure with explicit deferral of continuation-vs-option policy to accurate-communication |
+| 14 | explanation-quality.md | explanation-quality.design.md v2.4 | Plain-language-first, layered analytical and technical explanation structure with explicit deferral of continuation-vs-option policy to accurate-communication and clearer recommendation-plus-reason endings when multiple next paths are shown |
 | 15 | external-verification-and-source-trust.md | external-verification-and-source-trust.design.md v1.0 | First-class owner for proactive external verification, source-trust ranking, corroboration, and source-conflict handling |
 | 16 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.1 | Text diagrams without frames or boxes |
 | 17 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |
 | 18 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
 | 19 | operational-failure-handling.md | operational-failure-handling.design.md v1.1 | Profile-driven operational failure classification, bounded retry policy, and honest cooldown/escalation behavior |
 | 20 | phase-implementation.md | phase-implementation.design.md v2.7 | First-class semantic standard for phased execution planning with early phase-establishment bridge and explicit phase-to-patch linkage when patch is in scope |
-| 21 | project-documentation-standards.md | project-documentation-standards.design.md v2.11 | Repository-level document-role model plus startup artifact gate, explicit patch-linkage verification for phased work, and portable shared-doc defaults |
+| 21 | project-documentation-standards.md | project-documentation-standards.design.md v2.12 | Repository-level document-role model plus startup artifact gate, explicit patch-linkage verification for phased work, and portable public onboarding/install guidance by default |
 | 22 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
 | 23 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
 | 24 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |
@@ -87,7 +87,7 @@ This repository uses one deterministic governance model:
 | 31 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.2 | Tactical entry, strategic target, convergence path, strategic closure doctrine, and anti-hardcoding tactical-boundary discipline |
 | 32 | natural-professional-communication.md | natural-professional-communication.design.md v1.0 | First-class doctrine for natural professional communication |
 | 33 | custom-agent-selection-priority.md | custom-agent-selection-priority.design.md v1.0 | First-class owner for preferring visible user custom agents as the primary specialist pool when task fit is clear |
-| 34 | portable-implementation-and-hardcoding-control.md | portable-implementation-and-hardcoding-control.design.md v1.0 | First-class owner for portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline |
+| 34 | portable-implementation-and-hardcoding-control.md | portable-implementation-and-hardcoding-control.design.md v1.1 | First-class owner for portable implementation defaults, public onboarding/install portability, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline |
 | 35 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
 
 ### 3.2 Category View
@@ -95,13 +95,13 @@ This repository uses one deterministic governance model:
 | Category | Rules | Purpose |
 |----------|-------|---------|
 | Accuracy & Truth | accurate-communication, evidence-grounded-burden-of-proof, external-verification-and-source-trust, zero-hallucination, anti-sycophancy, no-variable-guessing | Evidence-grounded, verified, source-aware, and honest output |
-| Portable Implementation | portable-implementation-and-hardcoding-control, no-variable-guessing, project-documentation-standards, tactical-strategic-programming | Portable defaults, late-bound environment resolution, and anti-hardcoding discipline for shared artifacts |
+| Portable Implementation | portable-implementation-and-hardcoding-control, no-variable-guessing, project-documentation-standards, tactical-strategic-programming | Portable defaults, public onboarding/install portability, late-bound environment resolution, and anti-hardcoding discipline for shared artifacts |
 | Presentation & Readability | answer-presentation, explanation-quality, flow-diagram-no-frame, natural-professional-communication | Readable, orderly, scannable, and naturally professional output presentation |
 | Output Safety | safe-file-reading, safe-terminal-output, flow-diagram-no-frame, strict-file-hygiene | Output flood prevention, safe text presentation, and file hygiene |
 | Startup Governance | artifact-initiation-control, project-documentation-standards, todo-standards, phase-implementation | Resolve artifact posture before meaningful governed work drifts |
 | User Control | authority-and-scope, custom-agent-selection-priority, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control | Preserve user authority, custom specialist preference, and safe operational posture |
 | Adversarial Workflow | refusal-minimization, dan-safe-normalization | Reduce false refusals in authorized adversarial/security workflows |
-| Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, unified-version-control-system, tactical-strategic-programming | Documentation determinism, patch semantics, and governance quality |
+| Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, unified-version-control-system, tactical-strategic-programming | Documentation determinism, reference-role clarity, patch semantics, and governance quality |
 
 ---
 

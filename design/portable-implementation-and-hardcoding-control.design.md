@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
 
 ---
@@ -14,6 +14,7 @@ Define one first-class rule chain for preventing non-portable implementation beh
 
 The chain should ensure that:
 - shared implementation artifacts stay portable by default
+- public onboarding/install docs stay portable by default
 - environment-specific values are bound late rather than embedded early
 - local exact values remain scoped observations rather than portable defaults
 - path hardcoding is treated as one case inside a broader hardcoding-control model rather than as the whole problem
@@ -22,24 +23,26 @@ The chain should ensure that:
 
 ## 2) Problem Statement
 
-The system currently has strong guidance for:
+The system already has strong adjacent guidance for:
 - local verification before reference
 - evidence-honest communication
 - document-role separation
 - startup artifact governance
 
-However, those adjacent rules do not yet give one explicit owner to the broader implementation-quality problem of hardcoded environment assumptions.
+However, those adjacent rules do not by themselves give one explicit owner to the broader implementation-quality problem of hardcoded environment assumptions in shared artifacts and public onboarding/install docs.
 
 Observed failure modes this design intends to close:
 - absolute machine-local paths in shared docs/templates
 - install locations treated as universal defaults
+- public install examples centered on one workstation path or an internal umbrella workspace root
 - localhost/port assumptions embedded into reusable examples
 - local observations drifting into architecture truth
+- source-path and destination/runtime-path notation being blurred together
 - code and docs mixing portable and machine-scoped values without an explicit contract
 - tactical convenience producing brittle long-term defaults
 
 This is not only a path problem.
-It is an environment-binding problem.
+It is an environment-binding and public-portability problem.
 
 ---
 
@@ -47,8 +50,10 @@ It is an environment-binding problem.
 
 ### 3.1 In Scope
 - hardcoded path/location assumptions in shared artifacts
+- public onboarding/install guidance that teaches non-portable defaults
 - hardcoded host/port/install/runtime-target assumptions in shared artifacts
 - separation between portable contract and observed local fact
+- source-side versus destination/runtime-side notation expectations
 - placeholder vocabulary and env/config resolution expectations
 - machine-scoped exception handling
 - validation/checklist expectations for detecting portability violations
@@ -60,7 +65,7 @@ It is an environment-binding problem.
 - generic code-style questions unrelated to portability or environment binding
 
 ### 3.3 Boundary Principle
-This chain owns **portable implementation defaults and environment-binding discipline** for shared artifacts.
+This chain owns **portable implementation defaults and environment-binding discipline** for shared artifacts, including public onboarding/install examples.
 It does not replace adjacent owners for local lookup, communication wording, or runtime failure handling.
 
 ---
@@ -120,9 +125,31 @@ Preferred examples:
 - `<install-root>`
 - `<user-runtime-agents>`
 - `<user-runtime-skills>`
+- `<user-runtime-rules>`
 - `<service-base-url>`
 
-### 5.2 Late-bound execution model
+### 5.2 Public onboarding/install notation
+Public onboarding/install docs should distinguish:
+- where the source artifact comes from
+- where the installed/runtime artifact lives
+
+Preferred source-side forms:
+- `<repo-root>`
+- `<workspace-root>` when that workspace is itself the portable contract
+- `./` when the command is explicitly run from the repo root
+
+Preferred destination/runtime forms:
+- `<install-root>`
+- `<user-runtime-agents>`
+- `<user-runtime-skills>`
+- `<user-runtime-rules>`
+
+Required guidance:
+- public docs should not normalize one workstation absolute path or an internal umbrella workspace root as the default source path
+- source-side and destination/runtime-side notation should not be collapsed into one exact local absolute path
+- if an exact local path is intentionally shown, it must be framed as a local example or a machine-scoped contract
+
+### 5.3 Late-bound execution model
 By default, executable runtime assumptions should be resolved through:
 - env vars
 - config files
@@ -132,11 +159,14 @@ By default, executable runtime assumptions should be resolved through:
 
 Preferred examples:
 - `${WORKSPACE_ROOT}`
+- `${REPO_ROOT}`
 - `${INSTALL_ROOT}`
 - `${USER_RUNTIME_AGENTS}`
+- `${USER_RUNTIME_SKILLS}`
+- `${USER_RUNTIME_RULES}`
 - `${SERVICE_BASE_URL}`
 
-### 5.3 Local observation contract
+### 5.4 Local observation contract
 Exact local values may appear in:
 - tool execution
 - debug output
@@ -155,7 +185,10 @@ Shared documentation should use semantic placeholders.
 ### 6.2 Executable notation
 Executable configuration should use env/config placeholders.
 
-### 6.3 Consistency rule
+### 6.3 Source-vs-destination notation split
+Public onboarding/install docs should keep source-side notation and destination/runtime notation legible as separate layers.
+
+### 6.4 Consistency rule
 One artifact or one document chain should not drift across many incompatible notation styles without a clear reason.
 
 ---
@@ -175,6 +208,7 @@ When an exception is used, the artifact should make clear whether the value is:
 - observed local fact
 - machine-scoped contract
 - user-requested exact value
+- explicitly local example rather than public default guidance
 
 ---
 
@@ -185,6 +219,7 @@ When an exception is used, the artifact should make clear whether the value is:
 - If it is shared, why is this not a placeholder or env/config binding?
 - If it is executable, why is this not resolved through config/env?
 - If it is exact, is the exception class explicit?
+- Does the onboarding/install wording separate source-side notation from destination/runtime notation?
 - Would this still work after moving machines, users, or workspace locations?
 
 ### 8.2 Detection triggers
@@ -194,6 +229,7 @@ The system should treat these as high-suspicion patterns in shared artifacts:
 - drive-letter absolute paths
 - temp-directory defaults
 - localhost/port defaults presented as universal system truth
+- internal umbrella workspace roots shown as public install defaults
 
 ### 8.3 Failure classes to catch
 - developer-machine-as-default
@@ -201,6 +237,8 @@ The system should treat these as high-suspicion patterns in shared artifacts:
 - home-directory-as-architecture
 - temp-dir-as-authority
 - localhost-default-for-shared-system
+- internal-umbrella-root-as-public-default
+- source-destination-blur
 - mixed resolution model drift
 
 ---
@@ -211,16 +249,12 @@ The system should treat these as high-suspicion patterns in shared artifacts:
 Create the first-class design/runtime/changelog triad for the new chain.
 
 ### Phase 2
-Integrate master repository docs so the new owner is visible in README, master design, changelog, TODO, and phase summary.
+Integrate adjacent document-governance chains so public onboarding/install guidance is also enforced at the README/install-doc layer and the reference-consistency layer.
 
 ### Phase 3
-Later, patch adjacent chains where needed:
-- `no-variable-guessing`
-- `accurate-communication`
-- `project-documentation-standards`
-- optional template/helper artifacts
+Normalize affected shared/public docs that still teach workstation-specific absolute paths as defaults.
 
-This keeps the first rollout bounded while still creating the new authority now.
+This keeps the semantic owner clear while still leaving application work available as a follow-on execution wave.
 
 ---
 
@@ -230,6 +264,7 @@ Related chains:
 - [../no-variable-guessing.md](../no-variable-guessing.md)
 - [../accurate-communication.md](../accurate-communication.md)
 - [../project-documentation-standards.md](../project-documentation-standards.md)
+- [../document-consistency.md](../document-consistency.md)
 - [../strict-file-hygiene.md](../strict-file-hygiene.md)
 - [../tactical-strategic-programming.md](../tactical-strategic-programming.md)
 

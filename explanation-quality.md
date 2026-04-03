@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.3
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.3
+> **Current Version:** 2.4
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.4
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -187,6 +187,7 @@ Next-step guidance rules:
 - if one clear next path exists and it would genuinely help the user act, state it directly
 - if the assistant can safely continue that path inside the same active objective, continue instead of pausing only to narrate it
 - if multiple reasonable next paths exist and presenting them would materially help because user choice is actually required, present short explicit options
+- when one option is clearly better-supported, make the recommendation explicit and explain briefly why it should happen first
 - if the task is already complete and there is no real continuation needed, end cleanly after the synthesis instead of inventing extra options
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items

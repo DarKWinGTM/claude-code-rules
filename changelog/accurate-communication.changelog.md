@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.3
+> **Current Version:** 2.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.5 | 2026-04-03 | **[Added recommended-option wording for multi-path next actions](#version-25)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.4 | 2026-04-03 | **[Added continuation-first execution guidance to accurate-communication](#version-24)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.3 | 2026-04-02 | **[Scoped exact environment values as local facts in technical snapshots](#version-23)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended accurate-communication so exact paths, ports, hosts, and similar environment-specific values in snapshots must remain scoped local facts rather than reading like portable defaults | |
@@ -42,6 +43,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-25"></a>
+## Version 2.5: Added recommended-option wording for multi-path next actions
+
+**Date:** 2026-04-03
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `accurate-communication.md` from v2.4 to v2.5.
+- Updated `design/accurate-communication.design.md` from v2.4 to v2.5.
+- Added wording guidance so when multiple reasonable next actions are shown, the better-supported option is named first as the recommendation.
+- Added a requirement to include one short plain-language `Why this first` reason after the recommendation.
+- Added example and anti-pattern coverage so option lists no longer omit the preferred path when the checked reasoning already supports one.
+
+### Summary
+Accurate-communication now keeps multi-option next-step guidance easier to act on by explicitly naming the recommended path and the reason it should happen first.
 
 ---
 

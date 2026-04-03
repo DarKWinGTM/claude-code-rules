@@ -1,7 +1,7 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-02 | **[Added source-vs-destination reference guidance](#version-15)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| | | Summary: Extended document-consistency so onboarding/install docs now keep source-side references distinct from destination/runtime references instead of silently letting one workstation path represent both roles | |
 | 1.4 | 2026-04-02 | **[Added portable-reference consistency guidance](#version-14)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended document-consistency so portable shared references stay distinct from checked local facts or machine-scoped examples and now defer broader ownership to `portable-implementation-and-hardcoding-control` | |
 | 1.3 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -20,6 +22,30 @@
 | | | Summary: Enforced visual verification standards from design | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added source-vs-destination reference guidance
+
+**Date:** 2026-04-02
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `document-consistency.md` from v1.4 to v1.5.
+- Updated `design/document-consistency.design.md` from v1.4 to v1.5.
+- Added explicit reference-role separation for:
+  - portable shared references
+  - source-side install references
+  - destination/runtime references
+  - checked local facts
+  - machine-scoped examples
+- Added a new verification trigger for mixed source/destination wording in onboarding/install docs.
+- Added normalization guidance so install-doc updates now propagate source-side references and destination/runtime references separately.
+- Updated examples, quality metrics, and related-rule integration to align with the portability owner chain.
+
+### Summary
+Strengthened document-consistency so install/onboarding docs no longer silently let one local path play multiple roles at once.
 
 ---
 

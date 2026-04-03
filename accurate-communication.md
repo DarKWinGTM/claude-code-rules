@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.4
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.4
+> **Current Version:** 2.5
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.5
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -139,8 +139,11 @@ Required guidance:
 - if one clear next action exists and the user genuinely needs to know it, state it directly
 - if the assistant can safely continue that next action inside the active objective, continue instead of pausing to announce it
 - if multiple reasonable next actions exist and user choice would materially affect the path, present short explicit options
+- when presenting multiple reasonable next actions, identify the recommended option first when one path is better-supported than the others
+- after the recommended option, include a short plain-language reason explaining why it should happen first
 - if the task is already complete and no real next action is needed, do not invent extra options
 - offering options is guidance, not a mandatory ending pattern and not a default mid-process pause
+- recommendation wording should remain evidence-backed rather than preference-shaped or arbitrary
 
 ---
 
@@ -324,6 +327,15 @@ Phase 12 is already clear enough now. The next useful move is to switch from sco
 There are 10 areas we should review in this state. I’ll show the full set first, then we can decide which subset to drill into.
 ```
 
+### Recommended next action with reason
+```text
+Recommended: do the design/phase sync first.
+Why this first: the current cutover phases still describe older shared-workspace authority, so cleaning those artifacts first reduces confusion before the authority-retirement wave.
+Other options:
+- go straight to cutover retirement now
+- pause after README-only normalization
+```
+
 ### Inferred implication
 ```text
 Based on those checked facts, the likely implication is that the failure sits between request routing and runtime-target resolution, not in initial client boot.
@@ -356,6 +368,7 @@ Diagnostic snapshot:
 | narrow partial set offered before the full relevant set is visible | the reader may mistake a subset for the full scope | show the full relevant set first, then narrow |
 | status update without compact state snapshot | hides what is checked, current, and pending | use a concise diagnostic snapshot before deep explanation |
 | summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |
+| options listed with no recommendation when one path is clearly better-supported | user must infer the preferred move unnecessarily | name the recommended option first and explain briefly why it should happen first |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |
 

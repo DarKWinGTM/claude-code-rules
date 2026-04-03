@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.8
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.8
+> **Current Version:** 1.9
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -172,6 +172,7 @@ When real alternatives exist:
 - frame the comparison briefly
 - use a comparison table if side-by-side evaluation helps
 - recommend after the comparison is visible
+- when one path is clearly preferred, surface `Recommended` before the remaining options and add one short `Why this first` reason
 
 ### 4) Sequence Pattern
 
@@ -223,6 +224,9 @@ When the current explanation is already sufficient:
 - use a short grouped forward-moving block only when the user genuinely needs that visibility or the assistant has reached a real boundary
 
 Preferred labels:
+- `Recommended`
+- `Why this first`
+- `Other options`
 - `What happens next`
 - `Next stage`
 - `Next state`
@@ -313,10 +317,15 @@ If you want, we can then go item by item — but the important thing is that the
 ### 13) Canonical Next-Stage Shape
 
 ```markdown
-What happens next
-- stop deepening the same scope
+Recommended
 - move to the implementation checklist
-- keep deferred areas explicitly staged for later
+
+Why this first
+- the current scope is already clear, so execution now adds more value than further same-scope explanation
+
+Other options
+- deepen the same scope further
+- jump ahead into deferred work
 ```
 
 ### 14) Framed-Structure Pattern
@@ -341,7 +350,7 @@ Before a large list or table:
 | machine-specific value presented like a reusable default | local fact is mistaken for a portable contract | label it as a checked local fact or switch to a portable placeholder |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use grouped scope-boundary sections |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
-| repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
+| repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `Recommended` / `Why this first` / `Other options` block or a short `What happens next` block |
 | oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
 | table-only status report with no implication | facts are visible, but meaning stays unclear | add one short implication or next-action line |
 | over-structuring simple answers | makes a short answer feel heavy | keep simple answers compact |

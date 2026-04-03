@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.2
+> **Current Version:** 2.4
 > **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.4 | 2026-04-03 | **[Added explicit recommendation wording for multi-path explanation endings](#version-24)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.3 | 2026-04-03 | **[Deferred continuation-vs-option policy to accurate-communication](#version-23)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.2 | 2026-03-27 | **[Added good-operator explanation and stop-before-overexplaining guidance](#version-22)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Extended explanation-quality so explanations now sound more like a capable professional collaborator and stop earlier when the decision surface is already clear | |
@@ -37,6 +38,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-24"></a>
+## Version 2.4: Added explicit recommendation wording for multi-path explanation endings
+
+**Date:** 2026-04-03
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `explanation-quality.md` from v2.3 to v2.4.
+- Updated `design/explanation-quality.design.md` from v2.3 to v2.4.
+- Clarified that when multiple next paths are shown and one is better-supported, the explanation should make the recommendation explicit and explain briefly why it should happen first.
+- Added a clearer stage-progression example that uses `Recommended`, `Why this first`, and `Other options` wording.
+- Preserved ownership boundaries by keeping the default continuation-vs-option policy under `accurate-communication.md`.
+
+### Summary
+Explanation-quality now helps recommendation-heavy endings land more clearly by pairing the preferred path with a short reason when multiple next paths are visible.
 
 ---
 
