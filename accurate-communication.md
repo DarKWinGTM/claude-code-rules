@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.7
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.7
+> **Current Version:** 2.8
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.8
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -225,6 +225,15 @@ Preferred:
 - "I checked the current config and it shows `3001`, not `3000`."
 - "I checked the scopes above and did not find that variable there so far."
 
+### Duplicate-looking team-agent reporting guidance
+When reporting duplicate-looking team-agent state, separate what was observed from what is inferred.
+
+Required guidance:
+- say what was actually observed in the UI, team directory, or checked state
+- distinguish between a real active duplicate and a stale or partially cleaned-up presence when the evidence is not yet decisive
+- avoid promising that UI noise will disappear until shutdown/cleanup is actually verified
+- if the checked scope shows missing live team state, say so directly instead of implying that the duplicate is definitely still active
+
 Avoid by default:
 - "You are wrong."
 - "You are mistaken."
@@ -390,6 +399,14 @@ Expected output: a machine-readable QA summary with per-device verdicts and conc
 Success condition: a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only.
 ```
 
+### Duplicate-looking team-agent report
+```text
+Observed: the UI showed `@pricing-reviewer` twice.
+Checked scope: the local team directory no longer had a live `config.json` for that team.
+Current reading: this may be stale or partially cleaned-up presence rather than two still-active useful teammates.
+Next safe move: inspect current team state / cleanup status before spawning or assuming another reviewer is needed.
+```
+
 ### Inferred implication
 ```text
 Based on those checked facts, the likely implication is that the failure sits between request routing and runtime-target resolution, not in initial client boot.
@@ -427,6 +444,7 @@ Diagnostic snapshot:
 | multi-path state collapsed into one recommended path with no remaining alternative shown | a real decision surface is hidden and user agency becomes harder to exercise | keep at least one visible alternative when multiple reasonable next actions still exist |
 | future work suggested with no concrete goal or output | the user sees momentum but not a real concept they can evaluate | frame it as a goal-qualified proposal with a clear goal, improvement, and output/result |
 | proposal phrased like implied queued execution | the assistant sounds as if it already committed the user to the next wave | mark the proposal as advisory and avoid continuation-shaped wording unless the user selected that target |
+| duplicate-looking team-agent state reported as definite active overlap without verification | the user may get the wrong recovery action or false confidence about cleanup | separate observed duplicate-looking state from inference about whether it is real overlap or stale presence |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |
 

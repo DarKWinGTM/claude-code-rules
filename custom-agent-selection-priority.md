@@ -1,7 +1,7 @@
 # Custom Agent Selection Priority
 
-> **Current Version:** 1.0
-> **Design:** [design/custom-agent-selection-priority.design.md](design/custom-agent-selection-priority.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/custom-agent-selection-priority.design.md](design/custom-agent-selection-priority.design.md) v1.1
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/custom-agent-selection-priority.changelog.md](changelog/custom-agent-selection-priority.changelog.md)
 
@@ -31,6 +31,15 @@ Use delegation only when:
 - domain fit is strong
 - the specialist adds real value
 - no stronger boundary says otherwise
+
+### 3.1 Reuse-Before-Spawn Principle
+When a matching teammate or active specialist already covers the same role and objective, reuse that agent before spawning another one.
+
+Required guidance:
+- check whether an active or recently spawned teammate already owns materially the same role
+- prefer steering or reusing that teammate over creating a duplicate-looking teammate
+- only add another teammate when the work is explicitly partitioned and the new role is meaningfully distinct
+- use role names that let the user tell why each teammate exists
 
 ### 4) Discovery Boundary Principle
 This rule does not pretend undiscovered agents are available.
@@ -70,6 +79,7 @@ Do not prefer a custom user agent when:
 - the task falls into an explicit deferral/not-for boundary
 - the runtime has not discovered the agent in the current session
 - the user explicitly asks for another path
+- an already-active teammate can cover the same role without creating overlapping team noise
 
 ---
 
@@ -94,6 +104,7 @@ Specialist handling is preferred when:
 |--------------|--------------|-----------------|
 | ignoring a clear custom specialist and answering generically | wastes the user’s specialist setup | prefer the best-fit custom agent |
 | delegating to any custom agent without strong fit | creates arbitrary routing | require clear domain fit |
+| spawning a second teammate for the same role with no distinct partition | creates duplicate-looking team noise and overlap | reuse the existing teammate or define clearly different roles before spawning |
 | treating built-ins/plugins as automatically superior to user custom agents | ignores the user’s installed specialist pool | use custom agents first when fit is clear |
 | pretending an undiscovered agent is available | hides real discovery problems | distinguish discovery from selection |
 | over-delegating trivial work | adds churn without benefit | keep direct handling for simple tasks |

@@ -1,8 +1,8 @@
 # Changelog - Operational Failure Handling
 
 > **Parent Document:** [../operational-failure-handling.md](../operational-failure-handling.md)
-> **Current Version:** 1.1
-> **Session:** 451fb64e-f2a5-43a5-bf98-47f01244f15c
+> **Current Version:** 1.2
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
 
@@ -10,10 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-04-04 | **[Added team-agent duplicate and stale-presence handling profile](#version-12)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.1 | 2026-03-12 | **[Upgraded operational-failure-handling to explicit case-profile semantics](#version-11)** | 451fb64e-f2a5-43a5-bf98-47f01244f15c |
 | | | Summary: Refined the chain from generic retry policy into a profile-driven operational-failure model with seeded Web Search, WebFetch, local-path, permission, and approval-denial cases plus a future-extension contract | |
 | 1.0 | 2026-03-12 | **[Created first-class operational-failure-handling rule chain for generalized technical failure handling](#version-10)** | 451fb64e-f2a5-43a5-bf98-47f01244f15c |
 | | | Summary: Created a new design/runtime/changelog chain that governs operational failure classification, retry ceilings, cooldown honesty, and stop/escalation behavior without redefining refusal or emergency authority | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Added team-agent duplicate and stale-presence handling profile
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `operational-failure-handling.md` from v1.1 to v1.2.
+- Updated `design/operational-failure-handling.design.md` from v1.1 to v1.2.
+- Added a new case profile: `TEAM_AGENT_DUPLICATE_OR_STALE_PRESENCE`.
+- Classified duplicate-looking or stale team-agent presence as an inspect-first case rather than a respawn-first case.
+- Added recovery guidance so assistant behavior now prefers verifying team state, cleanup, and distinct-role need before spawning another same-role teammate.
+
+### Summary
+Operational-failure-handling now treats duplicate-looking or stale team-agent presence as a first-class inspect-before-respawn case instead of letting overlapping teammate churn count as progress.
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
 
 ---
@@ -27,6 +27,7 @@ Define a deterministic authority model that:
 | Blurred safety terms | Wrong escalation class | Normalized terminology |
 | Assistant-generated options treated like sticky state | User's latest instruction gets ignored or delayed | Explicit latest-user-directive override rule |
 | Assistant-generated proposals treated like implied queued work | Future ideas blur into active execution without user selection | Explicit proposal-is-advisory rule |
+| Assistant-created team expansion treated like the default answer | Duplicate-looking or overlapping teammates get spawned even when the role is already covered | Explicit reuse-before-expand boundary |
 | Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
 
 ---
@@ -64,6 +65,7 @@ DEFAULT_BEHAVIOR
 - Preserve user authority for all non-hard-boundary decisions.
 - Assistant-generated options are advisory only unless the user explicitly chooses one.
 - Assistant-generated proposals for future work are advisory only and do not create an active branch, implied commitment, or pending continuation unless the user explicitly selects them.
+- Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - A fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
 - Absent an explicit user style request, the assistant should remain in a neutral professional communication mode rather than adopting a character or persona voice.
@@ -97,6 +99,7 @@ Apply defaults
 | User vs hard boundary | Hard boundary wins |
 | User vs non-hard rule | User wins |
 | Fresh user directive vs previously offered assistant options | Fresh user directive wins unless the user explicitly selected one of the options |
+| Assistant-created team expansion vs an already-covered role | Reuse the existing teammate unless the new teammate has a clearly distinct partitioned job or the user explicitly wants expansion |
 | User style request vs assistant default mode | User request wins in non-hard cases |
 | Rule vs default | Rule wins |
 | Residual ambiguity | Return bounded context request (`NEED_CONTEXT`) |
@@ -114,6 +117,7 @@ Apply defaults
 
 - treating previously suggested options as if the user already committed to one
 - treating a future-work proposal as if it were already queued for execution
+- treating team expansion as the default answer when an existing teammate already covers the role
 - continuing to elaborate option A/B after the user issues a new command C
 - using assistant continuity as a reason to ignore a fresh user instruction
 - asking the user to choose among old options when the new directive already supersedes them

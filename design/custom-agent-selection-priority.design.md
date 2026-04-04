@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-31)
+> **Current Version:** 1.1
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
 
 ---
 
@@ -14,6 +14,7 @@ Define one first-class rule chain for custom agent selection priority so the ass
 - treats user custom agents in `~/.claude/agents/` as the primary specialist pool when they are available
 - prefers the best-fit custom specialist before generic handling when a task clearly matches a specialist domain
 - keeps delegation selective and justified rather than forcing agents into every task
+- prefers reuse-before-spawn when an existing teammate already covers the same role
 - separates discovery/loading concerns from selection/invocation concerns
 
 This chain should improve real custom-agent usage without pretending that runtime discovery itself is controlled by prompt rules.
@@ -80,6 +81,15 @@ Delegation should still require:
 - a meaningful advantage over direct handling
 - no stronger reason to stay local/generic
 
+### 4.3.1 Reuse-before-spawn principle
+When a matching teammate or active specialist already covers the same role and objective, reuse that agent before spawning another one.
+
+Required guidance:
+- check whether an active or recently spawned teammate already owns materially the same role
+- prefer steering or reusing that teammate over creating a duplicate-looking teammate
+- only add another teammate when the work is explicitly partitioned and the new role is meaningfully distinct
+- use role names that let the user tell why each teammate exists
+
 ### 4.4 Discovery boundary principle
 If the runtime has not discovered a custom agent in the current session, this chain does not pretend that the agent is available.
 The chain governs selection among visible/available candidates, not loader behavior.
@@ -123,6 +133,7 @@ Do not prefer a custom user agent when:
 - the task spans a domain that the specialist explicitly defers
 - the runtime has not discovered the agent in the current session
 - the user explicitly wants a different path
+- an already-active teammate can cover the same role without creating overlapping team noise
 
 ---
 
@@ -147,6 +158,7 @@ Do not prefer a custom user agent when:
 |--------------|--------------|-----------------|
 | ignoring a clear custom specialist and answering generically | wastes the user’s specialist setup | prefer the best-fit custom agent |
 | delegating to any custom agent without strong fit | creates noisy, arbitrary routing | require clear domain fit |
+| spawning a second teammate for the same role with no distinct partition | creates duplicate-looking team noise and overlap | reuse the existing teammate or define clearly different roles before spawning |
 | treating built-ins/plugins as automatically superior to user custom agents | ignores the user’s installed specialist pool | use custom agents first when fit is clear |
 | pretending an undiscovered agent is available | hides real discovery problems | distinguish discovery from selection |
 | over-delegating trivial work | adds latency/churn without benefit | keep direct handling for simple tasks |

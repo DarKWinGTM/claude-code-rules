@@ -1,7 +1,7 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-04-04 | **[Added team-expansion boundary for overlapping teammate roles](#version-17)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.6 | 2026-04-04 | **[Kept future-work proposals advisory until explicitly selected](#version-16)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.5 | 2026-04-03 | **[Discouraged unnecessary option branching when one safe continuation exists](#version-15)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.4 | 2026-03-27 | **[Added neutral professional default-mode guidance to authority-and-scope](#version-14)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
@@ -24,6 +25,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added team-expansion boundary for overlapping teammate roles
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `authority-and-scope.md` from v1.6 to v1.7.
+- Updated `design/authority-and-scope.design.md` from v1.6 to v1.7.
+- Added a boundary so assistant-created team expansion is not treated as a default move when an existing teammate already covers the role or the new teammate has no clearly distinct job.
+- Added anti-pattern coverage against treating team expansion as the automatic answer when the role is already covered.
+
+### Summary
+Authority-and-scope now keeps overlapping teammate expansion advisory and bounded instead of letting it become an implicit default branch.
 
 ---
 

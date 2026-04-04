@@ -1,7 +1,7 @@
 # Authority and scope
 
-> **Current Version:** 1.6
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v1.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 
@@ -22,6 +22,7 @@ This rule defines precedence, tie-break behavior, and override handling so new u
 - Preserve user authority for all non-hard-boundary decisions.
 - Assistant-generated options are advisory only unless the user explicitly selects one.
 - Assistant-generated proposals for future work are advisory only and do not create an active branch, implied commitment, or pending continuation unless the user explicitly selects them.
+- Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - If the user issues a fresh directive that changes scope, task, or action, that fresh directive overrides previously offered assistant options immediately.
 - Do not treat previously suggested options as sticky state, implied commitment, or an active execution branch unless the user explicitly chose one.
@@ -102,6 +103,7 @@ Use this override behavior when:
 ### Anti-patterns
 - treating previously suggested options as if the user already committed to one
 - treating a future-work proposal as if it were already queued for execution
+- treating team expansion as the default answer when an existing teammate already covers the role
 - continuing to elaborate option A/B after the user issues a new command C
 - using assistant continuity as a reason to ignore a fresh user instruction
 - asking the user to choose among old options when the new directive already supersedes them

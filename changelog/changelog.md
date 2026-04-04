@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 7.8
+> **Current Version:** 7.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 7.9 | 2026-04-04 | **[Added team-agent dedup and stale-presence boundaries](#version-79)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.8 | 2026-04-04 | **[Added goal-qualified proposal boundaries across the communication-owner set](#version-78)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.7 | 2026-04-04 | **[Added identifier-explanation guidance across the communication-owner trio](#version-77)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.6 | 2026-04-03 | **[Added recommendation-plus-reason guidance for multi-option next steps](#version-76)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -87,6 +88,39 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-79"></a>
+## Version 7.9: Added team-agent dedup and stale-presence boundaries
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/custom-agent-selection-priority.design.md` from v1.0 to v1.1.
+- Updated runtime `custom-agent-selection-priority.md` from v1.0 to v1.1.
+- Added reuse-before-spawn guidance so an existing matching teammate should be reused before another overlapping same-role teammate is created.
+- Updated `design/authority-and-scope.design.md` from v1.6 to v1.7.
+- Updated runtime `authority-and-scope.md` from v1.6 to v1.7.
+- Added a team-expansion boundary so assistant-created team growth is no longer justified when an existing teammate already covers the role or the new teammate has no clearly distinct job.
+- Updated `design/operational-failure-handling.design.md` from v1.1 to v1.2.
+- Updated runtime `operational-failure-handling.md` from v1.1 to v1.2.
+- Added a `TEAM_AGENT_DUPLICATE_OR_STALE_PRESENCE` case profile so duplicate-looking team-agent state is inspected before any same-role respawn.
+- Updated `design/accurate-communication.design.md` from v2.7 to v2.8.
+- Updated runtime `accurate-communication.md` from v2.7 to v2.8.
+- Added evidence-honest reporting guidance for duplicate-looking team-agent state so observed UI duplication is separated from inference about real overlap versus stale cleanup.
+- Added `patch/team-agent-dedup-and-stale-presence-boundary.patch.md` as the governed before/after artifact for the refinement wave.
+- Added `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` and `phase/phase-014-02-sync-master-docs-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the team-agent dedup/stale-presence refinement is visible in master governance surfaces.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `custom-agent-selection-priority.md`
+  - `authority-and-scope.md`
+  - `operational-failure-handling.md`
+  - `accurate-communication.md`
+
+### Summary
+The RULES system now prefers reusing existing matching teammates, blocks overlapping team expansion without distinct purpose, and treats duplicate-looking team-agent presence as an inspect-first cleanup problem instead of a respawn-first workflow.
 
 ---
 

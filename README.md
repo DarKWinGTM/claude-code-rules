@@ -181,10 +181,10 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real |
 | [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, and future-work proposals stay advisory until explicitly selected |
-| [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them |
+| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
+| [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, destination/runtime, and local references from drifting into each other |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
@@ -194,7 +194,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, and scoped negative-evidence semantics |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
-| [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures |
+| [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
 | [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, and explicit phase-to-patch linkage when patch is in scope |
 | [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
@@ -931,8 +931,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 2.5.0 |
-  <b>Last Updated</b>: 2026-04-03 |
+  <b>Version</b>: 7.9 |
+  <b>Last Updated</b>: 2026-04-04 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

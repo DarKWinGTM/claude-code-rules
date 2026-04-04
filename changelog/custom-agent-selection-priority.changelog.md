@@ -1,7 +1,7 @@
 # Changelog - Custom Agent Selection Priority
 
 > **Parent Document:** [../custom-agent-selection-priority.md](../custom-agent-selection-priority.md)
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,8 +10,27 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-04-04 | **[Added reuse-before-spawn guidance for overlapping team-agent roles](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-31 | **[Created first-class custom-agent-selection-priority rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new design/runtime/changelog triad that governs selection priority for user custom agents, clear-best-fit specialist preference, and the distinction between discovery failures and selection behavior | |
+
+---
+
+<a id="version-11"></a>
+## Version 1.1: Added reuse-before-spawn guidance for overlapping team-agent roles
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `custom-agent-selection-priority.md` from v1.0 to v1.1.
+- Updated `design/custom-agent-selection-priority.design.md` from v1.0 to v1.1.
+- Added a reuse-before-spawn rule so an already-active teammate covering the same role should be reused before another same-role teammate is spawned.
+- Added distinct-role justification guidance so parallel teammates must have clearly partitioned work rather than duplicate-looking overlap.
+- Added anti-pattern coverage for spawning a second teammate with the same role and no distinct partition.
+
+### Summary
+Custom-agent-selection-priority now prefers reusing an existing matching teammate before adding another overlapping role to the same team.
 
 ---
 
