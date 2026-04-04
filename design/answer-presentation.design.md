@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.10
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
+> **Current Version:** 1.11
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
 
 ---
 
@@ -179,6 +179,16 @@ When real alternatives exist:
 - when one path is clearly preferred, surface `Recommended` first and add one short `Why this first` reason before listing the remaining options
 - when multiple reasonable options genuinely exist, keep at least one visible alternative instead of reducing the block to the recommendation only
 
+### 5.3.1 Proposal Pattern
+
+When the answer is surfacing a future-work idea rather than an active next step:
+- label it clearly as a proposal, idea, or future wave
+- show the goal
+- show what it would improve
+- show the expected output or result
+- optionally show the success condition when it materially helps the reader evaluate the idea
+- do not format a proposal block like implied queued execution
+
 ### 5.4 Sequence Pattern
 
 When order matters:
@@ -308,6 +318,25 @@ Before the deeper reasoning, here is what the key identifiers mean:
 | `secretMaterialSource` | origin of the current state | tells whether the state came from discovery or reveal | `inventory_or_search` = discovered state, `reveal_endpoint` = revealed state |
 
 What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
+```
+
+### 5.11 Canonical Goal-Qualified Proposal Shape
+
+```markdown
+Proposal
+- build an automated visual QA verdict layer
+
+Goal
+- turn screenshot capture/compare output into a review result that is easier to act on
+
+Improvement
+- reduce the manual work needed to interpret raw compare artifacts
+
+Output
+- a machine-readable QA summary with per-device verdicts and concise regression notes
+
+Success condition
+- a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
 ---

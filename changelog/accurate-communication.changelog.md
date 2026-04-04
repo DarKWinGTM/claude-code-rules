@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.6
+> **Current Version:** 2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.7 | 2026-04-04 | **[Added goal-qualified proposal wording for future-work ideas](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.6 | 2026-04-04 | **[Added variable and internal-label clarification guidance for explanation-heavy answers](#version-26)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.5 | 2026-04-03 | **[Added recommended-option wording for multi-path next actions](#version-25)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.4 | 2026-04-03 | **[Added continuation-first execution guidance to accurate-communication](#version-24)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -44,6 +45,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-27"></a>
+## Version 2.7: Added goal-qualified proposal wording for future-work ideas
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `accurate-communication.md` from v2.6 to v2.7.
+- Updated `design/accurate-communication.design.md` from v2.6 to v2.7.
+- Added explicit goal-qualified proposal guidance so future-work ideas remain clearly advisory and do not read like implied queued execution.
+- Required future-work proposals to state the goal, the improvement/change they would produce, and the expected output/result, with optional success condition when useful.
+- Added examples and anti-pattern coverage so continuation-shaped wording is no longer used for proposals the user has not selected.
+
+### Summary
+Accurate-communication now allows future-work proposals while making them easier to evaluate as concepts instead of letting them read like automatic continuation.
 
 ---
 

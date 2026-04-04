@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 1.4
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 1.6
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-04-04 | **[Kept future-work proposals advisory until explicitly selected](#version-16)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.5 | 2026-04-03 | **[Discouraged unnecessary option branching when one safe continuation exists](#version-15)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.4 | 2026-03-27 | **[Added neutral professional default-mode guidance to authority-and-scope](#version-14)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Extended authority-and-scope so the assistant now stays in a neutral professional communication mode by default unless the user explicitly asks for another style | |
@@ -23,6 +24,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Kept future-work proposals advisory until explicitly selected
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `authority-and-scope.md` from v1.5 to v1.6.
+- Updated `design/authority-and-scope.design.md` from v1.5 to v1.6.
+- Added an explicit rule that assistant-generated future-work proposals remain advisory only and do not create an active branch, implied commitment, or pending continuation unless the user explicitly selects them.
+- Extended term-definition and anti-pattern coverage so future-wave suggestions no longer blur into active execution state.
+
+### Summary
+Authority-and-scope now keeps future-work proposals visibly advisory until the user explicitly chooses them as the next target.
 
 ---
 

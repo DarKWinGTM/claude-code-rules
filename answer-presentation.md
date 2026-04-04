@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.10
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.11
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -175,6 +175,16 @@ When real alternatives exist:
 - recommend after the comparison is visible
 - when one path is clearly preferred, surface `Recommended` before the remaining options and add one short `Why this first` reason
 - when multiple reasonable options genuinely exist, keep at least one visible alternative under `Other options` instead of reducing the block to the recommendation only
+
+### 3.1 Proposal Pattern
+
+When the answer is surfacing a future-work idea rather than an active next step:
+- label it clearly as a proposal, idea, or future wave
+- show the goal
+- show what it would improve
+- show the expected output or result
+- optionally show the success condition when it materially helps the reader evaluate the idea
+- do not format a proposal block like implied queued execution
 
 ### 4) Sequence Pattern
 
@@ -358,6 +368,25 @@ Before the deeper reasoning, here is what the key identifiers mean:
 What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
 ```
 
+### 16) Canonical Goal-Qualified Proposal Shape
+
+```markdown
+Proposal
+- build an automated visual QA verdict layer
+
+Goal
+- turn screenshot capture/compare output into a review result that is easier to act on
+
+Improvement
+- reduce the manual work needed to interpret raw compare artifacts
+
+Output
+- a machine-readable QA summary with per-device verdicts and concise regression notes
+
+Success condition
+- a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
+```
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -378,6 +407,7 @@ What this means: the user can understand the later reasoning without having to d
 | oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
 | table-only status report with no implication | facts are visible, but meaning stays unclear | add one short implication or next-action line |
 | raw variables/fields dumped with no role explanation | the reader sees identifiers but must decode them alone | add a short glossary block, grouped bullets, or a small variable-role table before deeper reasoning |
+| future work presented like the next automatic step | the reader cannot tell whether the assistant is proposing an idea or already queueing execution | label it as a proposal and show goal, improvement, output, and optional success condition |
 | over-structuring simple answers | makes a short answer feel heavy | keep simple answers compact |
 | inconsistent heading or emphasis style | weakens visual order | keep presentation consistent |
 

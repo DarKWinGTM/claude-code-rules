@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 7.7
+> **Current Version:** 7.8
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 7.8 | 2026-04-04 | **[Added goal-qualified proposal boundaries across the communication-owner set](#version-78)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.7 | 2026-04-04 | **[Added identifier-explanation guidance across the communication-owner trio](#version-77)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.6 | 2026-04-03 | **[Added recommendation-plus-reason guidance for multi-option next steps](#version-76)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Updated `accurate-communication` to v2.5 so multi-path next-step guidance now names the recommended option first and explains briefly why it should happen first | |
@@ -86,6 +87,39 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-78"></a>
+## Version 7.8: Added goal-qualified proposal boundaries across the communication-owner set
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/accurate-communication.design.md` from v2.6 to v2.7.
+- Updated runtime `accurate-communication.md` from v2.6 to v2.7.
+- Added wording guidance so future-work ideas remain clearly advisory and must be goal-qualified rather than reading like queued execution.
+- Updated `design/authority-and-scope.design.md` from v1.5 to v1.6.
+- Updated runtime `authority-and-scope.md` from v1.5 to v1.6.
+- Added an explicit boundary so assistant-generated future-work proposals do not create an active branch, implied commitment, or pending continuation until the user selects them.
+- Updated `design/explanation-quality.design.md` from v2.5 to v2.6.
+- Updated runtime `explanation-quality.md` from v2.5 to v2.6.
+- Added proposal framing support so future ideas after bounded completion state goal, improvement, and expected output/result rather than sounding like automatic continuation.
+- Updated `design/answer-presentation.design.md` from v1.10 to v1.11.
+- Updated runtime `answer-presentation.md` from v1.10 to v1.11.
+- Added a compact proposal pattern and canonical proposal block shape using `Proposal`, `Goal`, `Improvement`, `Output`, and optional `Success condition`.
+- Added `patch/goal-qualified-proposal-boundary.patch.md` as the governed before/after artifact for the refinement wave.
+- Added `phase/phase-013-01-refine-goal-qualified-proposals.md` and `phase/phase-013-02-sync-master-docs-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the proposal-boundary refinement is visible in master governance surfaces.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `accurate-communication.md`
+  - `authority-and-scope.md`
+  - `explanation-quality.md`
+  - `answer-presentation.md`
+
+### Summary
+The RULES system now preserves useful future-work proposals while requiring them to stay advisory, goal-qualified, and visibly separate from active execution continuation.
 
 ---
 

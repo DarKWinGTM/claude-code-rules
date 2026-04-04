@@ -1,6 +1,6 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Status:** Implemented - Pending Review
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains twelve rollout families:
+The current workspace contains thirteen rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -27,6 +27,7 @@ The current workspace contains twelve rollout families:
 - major phase `010` = install-doc portability and source-destination notation refinement rollout
 - major phase `011` = recommended-option and why-this-first refinement rollout
 - major phase `012` = variable, field, config, and internal-term explanation refinement rollout
+- major phase `013` = goal-qualified proposal boundary refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -66,6 +67,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 011 | 011-02 | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/recommended-option-and-why-this-first.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the recommendation-format refinement | Repo-level governance and installed runtime state reflect the recommendation-format refinement |
 | 012 | 012-01 | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | `design/accurate-communication.design.md` + `design/explanation-quality.design.md` + `design/answer-presentation.design.md` | `patch/variable-field-config-and-term-explanation.patch.md` | Refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are unpacked before the deeper reasoning depends on them | Identifier-heavy technical explanations become easier to follow without creating a new first-class doctrine chain |
 | 012 | 012-02 | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/variable-field-config-and-term-explanation.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the identifier-explanation refinement | Repo-level governance and installed runtime state reflect the identifier-explanation refinement |
+| 013 | 013-01 | `phase/phase-013-01-refine-goal-qualified-proposals.md` | `design/accurate-communication.design.md` + `design/authority-and-scope.design.md` + `design/explanation-quality.design.md` + `design/answer-presentation.design.md` | `patch/goal-qualified-proposal-boundary.patch.md` | Refine future-work proposal behavior so ideas stay advisory, goal-qualified, and visibly separate from active execution | Future-wave concepts become easier to evaluate without sounding like queued continuation |
+| 013 | 013-02 | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/goal-qualified-proposal-boundary.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the proposal-boundary refinement | Repo-level governance and installed runtime state reflect the proposal-boundary refinement |
 
 ---
 
@@ -102,7 +105,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 011-02: sync master governance surfaces and installed runtime copies for the recommendation-format wave
   → 012-01: refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are explained before deeper reasoning depends on them
   → 012-02: sync master governance surfaces and installed runtime copies for the identifier-explanation wave
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, and a clearer identifier-explanation model for variable-heavy technical answers
+  → 013-01: refine future-work proposals so they stay advisory, goal-qualified, and visibly separate from active execution
+  → 013-02: sync master governance surfaces and installed runtime copies for the proposal-boundary wave
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, and a goal-qualified proposal model for future-wave suggestions
 
 ---
 
@@ -140,6 +145,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 011 | 011-02 | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the recommendation-format refinement |
 | 012 | 012-01 | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Implemented - Pending Review | Review Pending | Awaiting Review | identifier-explanation refinement applied across the communication-owner trio |
 | 012 | 012-02 | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the identifier-explanation refinement |
+| 013 | 013-01 | `phase/phase-013-01-refine-goal-qualified-proposals.md` | Implemented - Pending Review | Review Pending | Awaiting Review | goal-qualified proposal refinement applied across the communication-owner set |
+| 013 | 013-02 | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the proposal-boundary refinement |
 
 ---
 
@@ -177,14 +184,16 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 011 | 011-02 | Implemented - Pending Review | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the recommendation-format refinement | `011-01` |
 | 012 | 012-01 | Implemented - Pending Review | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are explained before deeper reasoning depends on them | none |
 | 012 | 012-02 | Implemented - Pending Review | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the identifier-explanation refinement | `012-01` |
+| 013 | 013-01 | Implemented - Pending Review | `phase/phase-013-01-refine-goal-qualified-proposals.md` | Refine future-work proposals so they stay advisory, goal-qualified, and visibly separate from active execution | none |
+| 013 | 013-02 | Implemented - Pending Review | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the proposal-boundary refinement | `013-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, and the identifier-explanation refinement in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, and the identifier-explanation refinement after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, and identifier-explanation changes without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, and the proposal-boundary refinement in dated history until final review is complete.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, and the proposal-boundary refinement after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, and proposal-boundary changes without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -201,14 +210,15 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the portable-implementation-and-hardcoding-control chain exists as a governed triad with visible rollout indexing in the phase workspace
 - the install-doc portability refinement wave exists as a bounded `010` family with explicit patch linkage and master-governance synchronization
 - the identifier-explanation refinement wave exists as a bounded `012` family with explicit patch linkage and master-governance synchronization
+- the goal-qualified proposal refinement wave exists as a bounded `013` family with explicit patch linkage and master-governance synchronization
 
 ---
 
 ## Overall Rollback / Containment
 
-If the identifier-explanation refinement proved incorrect, rollback would require:
-- narrowing the identifier-heavy explanation wording in the touched owner chains
-- restoring prior master-governance wording where needed while preserving the stronger human-language identifier clarification where still valid
+If the goal-qualified proposal refinement proved incorrect, rollback would require:
+- narrowing the proposal-boundary wording in the touched owner chains
+- restoring prior master-governance wording where needed while preserving any still-useful advisory/proposal separation that remains valid
 - preserving the recorded history of the refinement wave rather than silently erasing it
 
 ---

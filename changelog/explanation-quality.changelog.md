@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.5
+> **Current Version:** 2.6
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.6 | 2026-04-04 | **[Added goal-qualified proposal framing after bounded completion](#version-26)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.5 | 2026-04-04 | **[Added variable and field role explanation support for identifier-heavy walkthroughs](#version-25)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.4 | 2026-04-03 | **[Added explicit recommendation wording for multi-path explanation endings](#version-24)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.3 | 2026-04-03 | **[Deferred continuation-vs-option policy to accurate-communication](#version-23)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -39,6 +40,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-26"></a>
+## Version 2.6: Added goal-qualified proposal framing after bounded completion
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `explanation-quality.md` from v2.5 to v2.6.
+- Updated `design/explanation-quality.design.md` from v2.5 to v2.6.
+- Added closing guidance so future-work ideas offered after bounded completion are framed as proposals instead of automatic continuation.
+- Added proposal-shape support covering goal, improvement, expected output/result, and optional success condition.
+- Added a canonical goal-qualified proposal example and anti-pattern coverage for future ideas phrased like automatic continuation.
+
+### Summary
+Explanation-quality now helps future-work ideas land as clear proposals instead of letting them blur into implied queued execution after the active objective is done.
 
 ---
 

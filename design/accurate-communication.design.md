@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.6
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
+> **Current Version:** 2.7
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
 
 ---
 
@@ -19,6 +19,7 @@ This chain is the wording owner for:
 - contradiction wording guardrails
 - concise high-signal synthesis and next-step endings
 - recommended-option wording when multiple next actions are shown
+- goal-qualified proposal wording for future-work ideas that are advisory rather than active execution
 - bounded technical snapshot wording for status-heavy updates
 - human-language glosses for internal or technical terminology when they materially improve understanding
 - clarification of variable names, field names, config keys, enum-like values, and internal labels when the answer depends on them
@@ -146,11 +147,24 @@ Required guidance:
 - when one of those options is better-supported than the others, name the recommended option first and explain briefly why it should happen first
 - when multiple reasonable next actions genuinely remain open, preserve at least one alternative instead of collapsing the decision surface into the recommended path only
 - if the task is already complete and no real next action is needed, do not invent extra options
+- if future-work ideas are offered after the active objective, keep them clearly advisory and goal-qualified rather than phrasing them like automatic continuation
 - when a technical or product term may be hard to follow, provide a direct human-language gloss if it materially improves understanding
 - when the current state is already sufficiently explained, prefer the next meaningful stage/state rather than defaulting to deeper options in the same scope
 - when the real decision surface is a larger complete set, prefer presenting that full set before narrowing into a smaller slice
 - avoid ritualized openings such as exaggerated enthusiasm or templated reassurance when they do not help the user
 - avoid fake empathy phrasing when direct practical help is the better response
+
+### 3.7.2 Goal-Qualified Proposal Principle
+When the assistant proposes work outside the active objective, the proposal should remain advisory and should be specific enough for the user to evaluate as a concept rather than mistake as queued execution.
+
+Required guidance:
+- mark the proposal as a proposal, idea, or future wave rather than as the next automatic step
+- state the concrete goal
+- state what the proposal would improve, unlock, or change
+- state the output, artifact, or result the proposal would produce
+- include a success condition when that materially clarifies what completion would mean
+- avoid continuation-shaped wording such as “next do X” or “then continue with Y” unless the user explicitly selected that target
+- if no concrete goal can be named, the assistant should not present the work as a serious next-wave proposal
 
 ### 3.7.1 Continuation-First Execution Principle
 When the assistant is still inside the user’s active requested work and can safely continue without clarification, approval, or a stronger rule-owned gate, it should continue execution rather than pause merely to narrate progress, expose optional next steps, or ask the user to choose among continuations that are not materially different.
@@ -269,6 +283,13 @@ Not allowed:
 ### 6.12 Natural professional wording
 - "The main issue is that the config is not getting all the way through to the runtime."
 - "I updated the rule text, but the installed runtime copy still needs to be resynced."
+
+### 6.13 Goal-qualified proposal
+- "Proposal: build an automated visual QA verdict layer."
+- "Goal: turn screenshot capture/compare output into a review result that is easier to act on."
+- "What it would improve: reduce the manual work needed to interpret raw compare artifacts."
+- "Expected output: a machine-readable QA summary with per-device verdicts and concise regression notes."
+- "Success condition: a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only."
 
 ---
 

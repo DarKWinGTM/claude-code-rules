@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.5
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
+> **Current Version:** 2.6
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
 
 ---
 
@@ -22,6 +22,7 @@ The target behavior is a layered natural explanation style:
 - whole-set framing when the user benefits from seeing the full actionable set before drilling down
 - a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
 - concise, high-signal ending with a real next move only when one genuinely exists
+- goal-qualified proposal framing when future ideas are useful after bounded completion
 - explanation that sounds like a capable professional colleague rather than a scripted narrator or over-produced tutor
 
 ---
@@ -346,6 +347,7 @@ Required closing behavior when explanation depth matters:
 - summarize the core conclusion in plain terms
 - make the practical implication explicit
 - provide forward motion when a real continuation path exists
+- if future ideas are offered after the active work is complete or intentionally bounded, frame them as proposals rather than as implied execution continuation
 
 Summary quality rules:
 - prefer high-signal synthesis over repetition
@@ -359,6 +361,7 @@ Default expectation:
 - when one option is better-supported, make the recommendation explicit and explain briefly why it should happen first
 - when multiple reasonable next paths genuinely remain open, preserve at least one alternative instead of collapsing the visible decision surface into the recommended path only
 - if the task is already complete and no real continuation is needed, do not invent artificial next-step options
+- if future ideas are offered after bounded completion, make the proposal clearly advisory and state the goal plus the expected improvement/result
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items
 
@@ -552,6 +555,27 @@ Reasoning path:
 1. the lane previously passed proof, so it had a usable secret earlier
 2. the current state now shows metadata-only values
 3. that means the current state was likely overwritten or downgraded after the earlier usable state existed
+```
+
+### Pattern 13: Goal-qualified proposal after bounded completion
+
+```markdown
+The active cleanup wave is done.
+
+Proposal
+- build an automated visual QA verdict layer
+
+Goal
+- turn screenshot capture/compare output into a review result that is easier to act on
+
+Improvement
+- reduce the manual work needed to interpret raw compare artifacts
+
+Output
+- a machine-readable QA summary with per-device verdicts and concise regression notes
+
+Success condition
+- a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
 ---

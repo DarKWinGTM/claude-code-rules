@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-04-04 | **[Added compact proposal layout support for future-work ideas](#version-111)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.10 | 2026-04-04 | **[Added variable-role presentation support for identifier-heavy explanations](#version-110)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.9 | 2026-04-03 | **[Added recommended-option labels for option-rich next-stage layouts](#version-19)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.8 | 2026-04-03 | **[Narrowed next-stage blocks so they do not interrupt active execution](#version-18)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -29,6 +30,23 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Added compact proposal layout support for future-work ideas
+
+**Date:** 2026-04-04
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `answer-presentation.md` from v1.10 to v1.11.
+- Updated `design/answer-presentation.design.md` from v1.10 to v1.11.
+- Added a proposal pattern for future-work ideas so proposal blocks can show `Goal`, `Improvement`, `Output`, and optional `Success condition`.
+- Added a canonical compact proposal shape and an anti-pattern entry against formatting future work like the next automatic step.
+
+### Summary
+Answer-presentation now gives future-work ideas a clearer layout shape so users can evaluate them as proposals instead of mistaking them for queued execution.
 
 ---
 

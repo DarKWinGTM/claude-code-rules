@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.5
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.5
+> **Current Version:** 2.6
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.6
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -177,6 +177,7 @@ When explanation depth matters, the ending should:
 - summarize the core conclusion in plain terms
 - make the practical implication explicit
 - provide forward motion when a real continuation path exists
+- if future ideas are offered after the active work is complete or intentionally bounded, frame them as proposals rather than as implied execution continuation
 
 Summary quality rules:
 - prefer high-signal synthesis over repetition
@@ -191,6 +192,7 @@ Next-step guidance rules:
 - when one option is clearly better-supported, make the recommendation explicit and explain briefly why it should happen first
 - when multiple reasonable next paths genuinely remain open, preserve at least one alternative rather than letting the recommendation collapse the visible decision surface into one path only
 - if the task is already complete and there is no real continuation needed, end cleanly after the synthesis instead of inventing extra options
+- if the assistant offers a future-work idea after the active objective, make the proposal clearly advisory and state the goal plus the expected improvement/result
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items
 
@@ -234,6 +236,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | Scope clarification | what this is vs what it is not, what happens now vs later, current phase vs deferred phase | explicit grouped scope-boundary explanation |
 | Whole-set reasoning | many relevant areas, complete checklist, multiple review axes that should be visible together | full set first, then optional narrowing |
 | Stage progression | current explanation is already sufficient and the real need is the next state or milestone | short answer + clear `What happens next` / `Next stage` progression |
+| Goal-qualified proposal | active work is complete or intentionally bounded, but future ideas could still help | short answer + explicit proposal framing + goal + improvement/result |
 | Abstract reasoning | concept is too general or conclusion-heavy | add one concrete example, a small clarifying analogy, or a direct human-language gloss |
 
 ---
@@ -418,6 +421,27 @@ Reasoning path:
 3. that means the current state was likely overwritten or downgraded after the earlier usable state existed
 ```
 
+### Pattern 14: Goal-qualified proposal after bounded completion
+
+```markdown
+The active cleanup wave is done.
+
+Proposal
+- build an automated visual QA verdict layer
+
+Goal
+- turn screenshot capture/compare output into a review result that is easier to act on
+
+Improvement
+- reduce the manual work needed to interpret raw compare artifacts
+
+Output
+- a machine-readable QA summary with per-device verdicts and concise regression notes
+
+Success condition
+- a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
+```
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -438,6 +462,7 @@ Reasoning path:
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
 | long repeated conclusion at the end | adds length without helping the decision | synthesize the conclusion once and move on |
 | explanation sounds scripted or over-signposted | reduces naturalness and trust | keep transitions functional and explanation colleague-like |
+| future idea phrased like automatic continuation | the reader cannot tell whether this is a proposal or already-selected execution | frame it explicitly as a proposal and state the goal plus expected improvement/result |
 | explanation keeps going after the decision is already clear | feels over-produced | stop, synthesize, or move forward |
 
 ---

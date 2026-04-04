@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.6
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.6
+> **Current Version:** 2.7
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -158,6 +158,19 @@ Required guidance:
 - offering options is guidance, not a mandatory ending pattern and not a default mid-process pause
 - recommendation wording should remain evidence-backed rather than preference-shaped or arbitrary
 
+### 8.1 Goal-Qualified Proposal Guidance
+
+Proposals for future work are allowed when they are genuinely helpful, but they must remain clearly advisory and must not read like implied queued execution.
+
+Required guidance:
+- if proposing work outside the active objective, frame it explicitly as a proposal, idea, or future wave rather than as the next automatic step
+- a proposal should state the concrete goal
+- a proposal should state what it would improve, unlock, or change
+- a proposal should state what output, artifact, or user-visible result it would produce
+- include a success condition when that materially clarifies what “done” would mean
+- do not use continuation-shaped wording such as “next do X” or “then continue with Y” when the user has not selected that target
+- if no concrete goal can be stated, do not propose the work as a serious next-wave concept
+
 ---
 
 ## Application Guidelines
@@ -196,6 +209,13 @@ Use explicit forward-progress wording when:
 - the user should move to the next stage/state rather than continue deepening the same topic
 - the response should establish a full relevant set before discussing any smaller subset
 - the assistant cannot or should not continue the next step autonomously inside the same active objective
+
+### When goal-qualified proposals apply strongly
+Use explicit proposal framing when:
+- the active objective is complete or intentionally bounded
+- the user would benefit from future ideas, but has not selected a new target yet
+- the assistant is surfacing a possible future wave rather than an active next step
+- the proposal can be stated with a concrete goal, improvement, and output/result
 
 ### Contradiction wording guidance
 Prefer claim-focused correction over person-focused correction.
@@ -262,11 +282,15 @@ Before sending a finding or status update:
 10. Is the real decision surface a larger complete set?
    → Yes: show the full relevant set before narrowing into a subset
 
-11. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
+11. Am I proposing work outside the active objective?
+   → Yes: make it explicitly advisory and goal-qualified (goal, improvement, output/result, and success condition when useful)
+   → No: proceed
+
+12. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
    → No: reduce ceremony, fake empathy, and formulaic phrasing
    → Yes: proceed
 
-12. Am I closing an explanation-heavy response?
+13. Am I closing an explanation-heavy response?
    → Yes: synthesize the conclusion instead of repeating prior detail
 ```
 
@@ -357,6 +381,15 @@ Other options:
 - pause after README-only normalization
 ```
 
+### Goal-qualified proposal
+```text
+Proposal: build an automated visual QA verdict layer.
+Goal: turn screenshot capture/compare output into a review result that is easier to act on.
+What it would improve: reduce the manual work needed to interpret raw compare artifacts.
+Expected output: a machine-readable QA summary with per-device verdicts and concise regression notes.
+Success condition: a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only.
+```
+
 ### Inferred implication
 ```text
 Based on those checked facts, the likely implication is that the failure sits between request routing and runtime-target resolution, not in initial client boot.
@@ -392,6 +425,8 @@ Diagnostic snapshot:
 | summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |
 | options listed with no recommendation when one path is clearly better-supported | user must infer the preferred move unnecessarily | name the recommended option first and explain briefly why it should happen first |
 | multi-path state collapsed into one recommended path with no remaining alternative shown | a real decision surface is hidden and user agency becomes harder to exercise | keep at least one visible alternative when multiple reasonable next actions still exist |
+| future work suggested with no concrete goal or output | the user sees momentum but not a real concept they can evaluate | frame it as a goal-qualified proposal with a clear goal, improvement, and output/result |
+| proposal phrased like implied queued execution | the assistant sounds as if it already committed the user to the next wave | mark the proposal as advisory and avoid continuation-shaped wording unless the user selected that target |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |
 

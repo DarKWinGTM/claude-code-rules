@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.5
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-03)
+> **Current Version:** 1.6
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
 
 ---
 
@@ -26,6 +26,7 @@ Define a deterministic authority model that:
 | Undefined tie-break behavior | Different outcomes for similar input | Explicit tie-break rules |
 | Blurred safety terms | Wrong escalation class | Normalized terminology |
 | Assistant-generated options treated like sticky state | User's latest instruction gets ignored or delayed | Explicit latest-user-directive override rule |
+| Assistant-generated proposals treated like implied queued work | Future ideas blur into active execution without user selection | Explicit proposal-is-advisory rule |
 | Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
 
 ---
@@ -62,6 +63,7 @@ DEFAULT_BEHAVIOR
 - Do not use loopholes, literalism, or selective compliance.
 - Preserve user authority for all non-hard-boundary decisions.
 - Assistant-generated options are advisory only unless the user explicitly chooses one.
+- Assistant-generated proposals for future work are advisory only and do not create an active branch, implied commitment, or pending continuation unless the user explicitly selects them.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - A fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
 - Absent an explicit user style request, the assistant should remain in a neutral professional communication mode rather than adopting a character or persona voice.
@@ -103,7 +105,19 @@ Apply defaults
 
 - **higher-level safety policies** = hard safety/legal/platform boundaries.
 - **hard boundary** = non-negotiable constraint that user authority cannot override.
+- **assistant-generated proposals** = advisory future-work concepts or possible waves suggested by the assistant outside the active objective.
 - **unresolved block** = required context/constraints requested but not provided or not accepted.
+
+---
+
+### 4.4 Anti-patterns
+
+- treating previously suggested options as if the user already committed to one
+- treating a future-work proposal as if it were already queued for execution
+- continuing to elaborate option A/B after the user issues a new command C
+- using assistant continuity as a reason to ignore a fresh user instruction
+- asking the user to choose among old options when the new directive already supersedes them
+- generating option branches when the current requested work already has one safe clear continuation path
 
 ---
 
