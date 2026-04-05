@@ -1,6 +1,6 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Status:** Implemented - Pending Review
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains fourteen rollout families:
+The current workspace contains fifteen rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -29,6 +29,7 @@ The current workspace contains fourteen rollout families:
 - major phase `012` = variable, field, config, and internal-term explanation refinement rollout
 - major phase `013` = goal-qualified proposal boundary refinement rollout
 - major phase `014` = team-agent dedup and stale-presence refinement rollout
+- major phase `015` = governing-basis clarification before deep branch analysis refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -72,6 +73,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 013 | 013-02 | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/goal-qualified-proposal-boundary.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the proposal-boundary refinement | Repo-level governance and installed runtime state reflect the proposal-boundary refinement |
 | 014 | 014-01 | `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` | `design/custom-agent-selection-priority.design.md` + `design/authority-and-scope.design.md` + `design/operational-failure-handling.design.md` + `design/accurate-communication.design.md` | `patch/team-agent-dedup-and-stale-presence-boundary.patch.md` | Refine team-agent behavior so matching teammates are reused before spawn and duplicate-looking team state is inspected before respawn | Team-agent duplication and stale-presence handling become governed instead of ad hoc |
 | 014 | 014-02 | `phase/phase-014-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/team-agent-dedup-and-stale-presence-boundary.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the team-agent dedup/stale-presence refinement | Repo-level governance and installed runtime state reflect the team-agent dedup/stale-presence refinement |
+| 015 | 015-01 | `phase/phase-015-01-refine-governing-basis-clarification.md` | `design/accurate-communication.design.md` + `design/authority-and-scope.design.md` + `design/evidence-grounded-burden-of-proof.design.md` + `design/explanation-quality.design.md` + `design/answer-presentation.design.md` | `patch/governing-basis-clarification-before-branching.patch.md` | Refine ambiguity handling so materially different governing bases are clarified first through a compact structured question instead of unnecessary deep branch analysis | Governing-basis ambiguity becomes ask-first rather than branch-first |
+| 015 | 015-02 | `phase/phase-015-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/governing-basis-clarification-before-branching.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the governing-basis clarification refinement | Repo-level governance and installed runtime state reflect the governing-basis clarification refinement |
 
 ---
 
@@ -112,6 +115,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 013-02: sync master governance surfaces and installed runtime copies for the proposal-boundary wave
   → 014-01: refine team-agent behavior so matching teammates are reused before spawn and duplicate-looking team state is inspected before respawn
   → 014-02: sync master governance surfaces and installed runtime copies for the team-agent dedup/stale-presence wave
+  → 015-01: refine ambiguity handling so materially different governing bases are clarified first instead of explored through deep branch analysis
+  → 015-02: sync master governance surfaces and installed runtime copies for the governing-basis clarification wave
   → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, and explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state
 
 ---
@@ -154,6 +159,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 013 | 013-02 | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the proposal-boundary refinement |
 | 014 | 014-01 | `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` | Implemented - Pending Review | Review Pending | Awaiting Review | team-agent dedup refinement applied across selection, authority, operations, and reporting owners |
 | 014 | 014-02 | `phase/phase-014-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the team-agent dedup/stale-presence refinement |
+| 015 | 015-01 | `phase/phase-015-01-refine-governing-basis-clarification.md` | Completed | None | Approved As-Is | governing-basis clarification refinement applied across wording, authority, burden-of-proof, explanation, and presentation owners |
+| 015 | 015-02 | `phase/phase-015-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs and runtime-install sync completed for the governing-basis clarification refinement |
 
 ---
 
@@ -195,14 +202,16 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 013 | 013-02 | Implemented - Pending Review | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the proposal-boundary refinement | `013-01` |
 | 014 | 014-01 | Implemented - Pending Review | `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` | Refine team-agent behavior so matching teammates are reused before spawn and duplicate-looking team state is inspected before respawn | none |
 | 014 | 014-02 | Implemented - Pending Review | `phase/phase-014-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the team-agent dedup/stale-presence refinement | `014-01` |
+| 015 | 015-01 | Completed | `phase/phase-015-01-refine-governing-basis-clarification.md` | Refine ambiguity handling so materially different governing bases are clarified first instead of explored through deep branch analysis | none |
+| 015 | 015-02 | Completed | `phase/phase-015-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the governing-basis clarification refinement | `015-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, and the team-agent dedup/stale-presence refinement in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, and the team-agent dedup/stale-presence refinement after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, and team-agent dedup/stale-presence changes without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, and the governing-basis clarification refinement in dated history until final review is complete.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, and the governing-basis clarification refinement after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, and governing-basis clarification changes without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -221,14 +230,15 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the identifier-explanation refinement wave exists as a bounded `012` family with explicit patch linkage and master-governance synchronization
 - the goal-qualified proposal refinement wave exists as a bounded `013` family with explicit patch linkage and master-governance synchronization
 - the team-agent dedup/stale-presence refinement wave exists as a bounded `014` family with explicit patch linkage and master-governance synchronization
+- the governing-basis clarification refinement wave exists as a bounded `015` family with explicit patch linkage and master-governance synchronization
 
 ---
 
 ## Overall Rollback / Containment
 
-If the team-agent dedup/stale-presence refinement proved incorrect, rollback would require:
-- narrowing the team-agent dedup/stale-presence wording in the touched owner chains
-- restoring prior master-governance wording where needed while preserving any still-useful reuse-before-spawn or inspect-first guidance that remains valid
+If the governing-basis clarification refinement proved incorrect, rollback would require:
+- narrowing the governing-basis clarification wording in the touched owner chains
+- restoring prior master-governance wording where needed while preserving any still-useful ask-first ambiguity handling that remains valid
 - preserving the recorded history of the refinement wave rather than silently erasing it
 
 ---

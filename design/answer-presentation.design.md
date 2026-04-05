@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.11
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
+> **Current Version:** 1.12
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-05)
 
 ---
 
@@ -21,6 +21,7 @@ The target behavior is principle-first and trigger-driven:
 - make scope-boundary explanations easy to scan when the answer needs to separate now vs later or what-it-is vs what-it-is-not
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
+- make materially outcome-changing governing-basis ambiguity easy to present as a short structured clarification instead of a long branch-comparison essay
 - keep presentation readable without decorative noise
 - preserve flexibility for simple answers
 
@@ -42,6 +43,7 @@ Observed failure modes:
 - layout becomes decorative instead of functional
 - simple answers are over-structured while complex answers remain under-structured
 - formatting is technically organized but still feels stiff, overbuilt, or obviously templated
+- materially different governing-basis options are explained through long comparison prose when the real need is one short structured clarification block
 
 This design defines presentation-layer guidance that improves readability and scanability while staying compatible with existing explanation and communication rules.
 It should support natural professional communication by making structure useful without making answers feel templated or stiff.
@@ -189,6 +191,15 @@ When the answer is surfacing a future-work idea rather than an active next step:
 - optionally show the success condition when it materially helps the reader evaluate the idea
 - do not format a proposal block like implied queued execution
 
+### 5.3.2 Governing-Basis Clarification Pattern
+
+When multiple materially different governing bases or policies remain live and the answer would change depending on which one is chosen:
+- label the block clearly as a clarification request
+- show the governing basis choices compactly
+- show one short `Why it matters` line
+- keep the options mutually exclusive when possible
+- prefer a short form-like block over a long comparison essay
+
 ### 5.4 Sequence Pattern
 
 When order matters:
@@ -226,6 +237,15 @@ When the answer needs to separate active scope from deferred scope, preferred gr
 - `What the user will notice`
 
 These blocks are especially useful for roadmap, phase, rollout, and product-scope clarification responses.
+
+### 5.7.0 Governing-Basis Clarification Pattern
+
+When multiple materially different governing bases or policies remain live and the answer would change depending on which one is chosen:
+- label the block clearly as a clarification request
+- show the governing basis choices compactly
+- show one short `Why it matters` line
+- keep the options mutually exclusive when possible
+- prefer a short form-like block over a long comparison essay
 
 ### 5.7.1 Variable-Role Pattern
 
@@ -306,7 +326,25 @@ When using a list or table:
 - add a short lead-in line if the reader needs context for why the structure is being shown
 - avoid dropping large tables or lists into the answer without framing
 
-### 5.10 Canonical Variable-Role Shape
+### 5.10 Canonical Governing-Basis Clarification Shape
+
+```markdown
+Clarification needed
+- Governing basis: which policy/frame should control the answer?
+
+Why it matters
+- the downstream answer changes depending on which basis we use
+
+Choose one
+1. official semantic truth
+2. full comparison of possible interpretations
+3. conservative operational policy
+
+Other
+- tell me the policy/basis you want me to use
+```
+
+### 5.11 Canonical Variable-Role Shape
 
 ```markdown
 Before the deeper reasoning, here is what the key identifiers mean:
@@ -320,7 +358,7 @@ Before the deeper reasoning, here is what the key identifiers mean:
 What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
 ```
 
-### 5.11 Canonical Goal-Qualified Proposal Shape
+### 5.12 Canonical Goal-Qualified Proposal Shape
 
 ```markdown
 Proposal
@@ -357,6 +395,7 @@ Success condition
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
 | oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
 | table-only technical note with no implication | facts are visible but the reader cannot tell what they mean | add one short implication or next-action line |
+| governing-basis ambiguity answered with a long branch-comparison essay before the user chooses a basis | the clarification is buried inside unnecessary structure | use a short compact clarification block with basis choices and one `Why it matters` line |
 | over-structuring simple answers | makes a small answer feel heavy | keep simple cases compact |
 | structure feels templated rather than useful | reader notices the format more than the content | use only the smallest structure that improves scanability |
 | inconsistent emphasis or heading style | weakens visual order | maintain consistent markdown hierarchy |

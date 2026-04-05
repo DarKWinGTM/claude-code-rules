@@ -1,7 +1,7 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-04-05 | **[Added user-owned governing-basis selection boundary](#version-18)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.7 | 2026-04-04 | **[Added team-expansion boundary for overlapping teammate roles](#version-17)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.6 | 2026-04-04 | **[Kept future-work proposals advisory until explicitly selected](#version-16)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.5 | 2026-04-03 | **[Discouraged unnecessary option branching when one safe continuation exists](#version-15)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -25,6 +26,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added user-owned governing-basis selection boundary
+
+**Date:** 2026-04-05
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `authority-and-scope.md` from v1.7 to v1.8.
+- Updated `design/authority-and-scope.design.md` from v1.7 to v1.8.
+- Added an explicit boundary that when multiple materially different governing bases remain unresolved, basis selection belongs to the user unless checked authority or evidence already settles it.
+- Added conflict-type, term-definition, required-behavior, and anti-pattern coverage so exploratory framing no longer silently becomes the active basis.
+
+### Summary
+Authority-and-scope now keeps governing-basis selection user-owned when materially different policy/frame choices remain unresolved.
 
 ---
 

@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.11
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.11
+> **Current Version:** 1.12
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.12
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -144,6 +144,7 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
 | full-set framing | many relevant areas, complete checklist, several review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
+| governing-basis ambiguity | multiple plausible policies/frames remain live and the answer changes depending on which one is chosen | short clarification block with compact basis options and one `Why it matters` line |
 | variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |
 | long answer | multiple concepts or dependencies | headings, grouped blocks, concise summary |
 
@@ -185,6 +186,15 @@ When the answer is surfacing a future-work idea rather than an active next step:
 - show the expected output or result
 - optionally show the success condition when it materially helps the reader evaluate the idea
 - do not format a proposal block like implied queued execution
+
+### 3.2 Governing-Basis Clarification Pattern
+
+When multiple materially different governing bases or policies remain live and the answer would change depending on which one is chosen:
+- label the block clearly as a clarification request
+- show the governing basis choices compactly
+- show one short `Why it matters` line
+- keep the options mutually exclusive when possible
+- prefer a short form-like block over a long comparison essay
 
 ### 4) Sequence Pattern
 
@@ -368,7 +378,25 @@ Before the deeper reasoning, here is what the key identifiers mean:
 What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
 ```
 
-### 16) Canonical Goal-Qualified Proposal Shape
+### 16) Canonical Governing-Basis Clarification Shape
+
+```markdown
+Clarification needed
+- Governing basis: which policy/frame should control the answer?
+
+Why it matters
+- the downstream answer changes depending on which basis we use
+
+Choose one
+1. official semantic truth
+2. full comparison of possible interpretations
+3. conservative operational policy
+
+Other
+- tell me the policy/basis you want me to use
+```
+
+### 17) Canonical Goal-Qualified Proposal Shape
 
 ```markdown
 Proposal
@@ -408,6 +436,7 @@ Success condition
 | table-only status report with no implication | facts are visible, but meaning stays unclear | add one short implication or next-action line |
 | raw variables/fields dumped with no role explanation | the reader sees identifiers but must decode them alone | add a short glossary block, grouped bullets, or a small variable-role table before deeper reasoning |
 | future work presented like the next automatic step | the reader cannot tell whether the assistant is proposing an idea or already queueing execution | label it as a proposal and show goal, improvement, output, and optional success condition |
+| governing-basis ambiguity answered with a long branch-comparison essay before the user chooses a basis | the clarification is buried inside unnecessary structure | use a short compact clarification block with basis choices and one `Why it matters` line |
 | over-structuring simple answers | makes a short answer feel heavy | keep simple answers compact |
 | inconsistent heading or emphasis style | weakens visual order | keep presentation consistent |
 

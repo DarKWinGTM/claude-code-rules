@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.6
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.6
+> **Current Version:** 2.7
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -150,6 +150,14 @@ Use a comparison table when:
 
 Do not force a table when only one realistic path exists.
 
+### 12.1 Governing-Basis Clarification Boundary
+When multiple materially different governing bases remain live and the answer would change depending on which one is chosen, prefer one short clarification gate over a long explanation that explores every branch.
+
+Required behavior:
+- if the governing basis is unresolved, avoid deepening several mutually exclusive downstream branches before the user chooses the active frame
+- once the user chooses a basis, explain the selected branch cleanly instead of continuing to carry all branches forward
+- treat unresolved basis selection as a reason to reduce complexity, not as a reason to display more analysis
+
 ### 13) Negative Triggers and Flexibility Boundary
 
 This rule is structure guidance, not a mandatory long-form template.
@@ -236,6 +244,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | Scope clarification | what this is vs what it is not, what happens now vs later, current phase vs deferred phase | explicit grouped scope-boundary explanation |
 | Whole-set reasoning | many relevant areas, complete checklist, multiple review axes that should be visible together | full set first, then optional narrowing |
 | Stage progression | current explanation is already sufficient and the real need is the next state or milestone | short answer + clear `What happens next` / `Next stage` progression |
+| Governing-basis ambiguity | multiple plausible policies/frames remain live and the answer changes depending on which one is chosen | short answer + compact clarification gate before deep branch analysis |
 | Goal-qualified proposal | active work is complete or intentionally bounded, but future ideas could still help | short answer + explicit proposal framing + goal + improvement/result |
 | Abstract reasoning | concept is too general or conclusion-heavy | add one concrete example, a small clarifying analogy, or a direct human-language gloss |
 
@@ -421,7 +430,22 @@ Reasoning path:
 3. that means the current state was likely overwritten or downgraded after the earlier usable state existed
 ```
 
-### Pattern 14: Goal-qualified proposal after bounded completion
+### Pattern 14: Governing-basis clarification before deep analysis
+
+```markdown
+Short answer: the answer changes depending on which policy/frame we use.
+
+Clarification needed:
+- Basis A = official semantic truth
+- Basis B = full comparison of possible interpretations
+- Basis C = conservative operational policy
+
+Why this matters: each basis leads to a different downstream answer.
+
+Choose one and I’ll continue on that basis.
+```
+
+### Pattern 15: Goal-qualified proposal after bounded completion
 
 ```markdown
 The active cleanup wave is done.
@@ -459,6 +483,7 @@ Success condition
 | diagnostic status buried in long narrative | current state and next action become hard to identify | lead with a compact diagnostic snapshot |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use explicit grouped scope-boundary blocks |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
+| explaining several mutually exclusive policy/frame branches before the governing basis is chosen | the answer becomes complex in ways that may become irrelevant once the user picks the basis | ask one short clarification first, then deepen only the selected branch |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
 | long repeated conclusion at the end | adds length without helping the decision | synthesize the conclusion once and move on |
 | explanation sounds scripted or over-signposted | reduces naturalness and trust | keep transitions functional and explanation colleague-like |

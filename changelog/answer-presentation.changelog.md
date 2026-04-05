@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-04-05 | **[Added compact governing-basis clarification layout support](#version-112)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.11 | 2026-04-04 | **[Added compact proposal layout support for future-work ideas](#version-111)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.10 | 2026-04-04 | **[Added variable-role presentation support for identifier-heavy explanations](#version-110)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.9 | 2026-04-03 | **[Added recommended-option labels for option-rich next-stage layouts](#version-19)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -30,6 +31,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Added compact governing-basis clarification layout support
+
+**Date:** 2026-04-05
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `answer-presentation.md` from v1.11 to v1.12.
+- Updated `design/answer-presentation.design.md` from v1.11 to v1.12.
+- Added a governing-basis clarification pattern for compact form-like clarification blocks.
+- Added a trigger and canonical shape so materially outcome-changing basis ambiguity can be presented as a short structured question instead of a long branch-comparison essay.
+- Added anti-pattern coverage against burying basis clarification inside unnecessary structure.
+
+### Summary
+Answer-presentation now gives governing-basis ambiguity a compact clarification layout so users can choose the active policy/frame quickly before deeper analysis continues.
 
 ---
 

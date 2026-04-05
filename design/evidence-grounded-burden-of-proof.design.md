@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-12)
+> **Current Version:** 1.1
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-05)
 
 ---
 
@@ -24,6 +24,7 @@ This chain is the semantic owner of:
 - contradiction protocol
 - negative-evidence semantics
 - burden-of-proof communication
+- unresolved governing-basis uncertainty handling when materially different policies/frames would change the answer
 - work-mode application across planning, debugging, coding, and review
 
 ---
@@ -39,6 +40,7 @@ Adjacent chains already cover important parts of the problem:
 But the repository still lacked one first-class authority for several connected gaps:
 - what proof is required before saying the user is wrong, mistaken, or confused
 - how to separate fact, inference, and hypothesis in one deterministic model
+- how to handle unresolved governing-basis ambiguity without silently selecting one active frame
 - how to state non-findings without turning them into stronger absence claims
 - how to communicate scoped evidence honestly during coding, debugging, and review
 - how to keep contradiction behavior evidence-grounded instead of personality-directed
@@ -112,6 +114,7 @@ Use these claim states so wording matches the actual evidence level.
 | `EVIDENCE_BACKED_INFERENCE` | The claim is a reasoned conclusion from verified facts | at least one relevant observed fact plus clear reasoning | say “based on X and Y, it likely…” or equivalent |
 | `WORKING_HYPOTHESIS` | The claim is plausible but unproven | partial or suggestive evidence only | say “one possibility is…” or equivalent |
 | `UNRESOLVED_UNCERTAINTY` | The evidence is insufficient or conflicting | no stable conclusion yet | say what is still unknown and what would verify it |
+| `UNRESOLVED_GOVERNING_BASIS` | Multiple materially different policies/frames remain plausible and current evidence does not settle which one should govern the answer | unresolved basis ambiguity with outcome-changing consequences | ask the user to choose the governing basis before deep branch analysis |
 | `NOT_FOUND_IN_CHECKED_SCOPE` | The assistant did not find the target within the explicitly checked scope | scoped search/read/check without decisive global exhaustiveness | say what was checked and avoid stronger absence language |
 | `STRONG_ABSENCE_CLAIM` | The assistant can justify saying the thing is absent/non-existent in the relevant scope | authoritative source or sufficiently exhaustive relevant search | state absence only if the stronger threshold was actually met |
 
@@ -126,6 +129,7 @@ Use these claim states so wording matches the actual evidence level.
 | Say the user is wrong/mistaken/confused | same contradiction threshold **plus** clear need for person-directed wording | avoid person labels by default; prefer claim-focused correction |
 | Say something is likely/probable | evidence-backed inference from observed facts | mark it as inference, not fact |
 | Say something may be happening | partial or suggestive evidence only | mark it as hypothesis |
+| Select one governing basis/policy as the active frame | direct authority, explicit user instruction, or evidence strong enough to settle the basis | otherwise keep the basis unresolved and ask first |
 | Say “I did not find X” | scoped search/read/check actually performed | name the checked scope |
 | Say “X does not exist / is absent” | authoritative evidence or sufficiently exhaustive relevant search | do not use this stronger wording on limited search alone |
 
@@ -160,7 +164,15 @@ Claim to assess
 | Partial but suggestive contradiction | state tension, caveat the conclusion, and avoid verdict language |
 | Insufficient evidence | verify first or ask for clarification; do not contradict as fact |
 
-### 7.3 Challenge the Claim, Not the Person
+### 7.3 Governing-Basis Selection Protocol
+When the answer depends on a governing basis or policy choice:
+- identify whether multiple plausible bases remain live
+- identify whether the answer materially changes depending on the basis used
+- check whether authoritative evidence or explicit user instruction already settles one basis
+- if not settled, keep the basis unresolved and ask the user to choose before deep branch analysis
+- once the basis is selected or settled, continue on that basis and stop carrying forward unchosen branches as if they remain equally active
+
+### 7.4 Challenge the Claim, Not the Person
 When disagreement is needed:
 - correct the proposition or factual statement
 - explain what evidence conflicts with it
@@ -208,6 +220,7 @@ The communication layer should make the claim state legible.
 | `EVIDENCE_BACKED_INFERENCE` | “Based on X and Y, it likely …” |
 | `WORKING_HYPOTHESIS` | “One possibility is …” |
 | `UNRESOLVED_UNCERTAINTY` | “I cannot confirm yet because …” |
+| `UNRESOLVED_GOVERNING_BASIS` | “The answer changes depending on which policy/frame we use, and current evidence has not settled that yet — choose the governing basis first.” |
 | `NOT_FOUND_IN_CHECKED_SCOPE` | “I checked A/B/C and did not find …” |
 
 ### 9.2 Required Honesty Rules
@@ -225,6 +238,7 @@ The communication layer should make the claim state legible.
 - Separate verified constraints from assumptions.
 - Mark open questions explicitly.
 - Do not treat inferred architecture trade-offs as already-proven facts.
+- If multiple materially different governing bases remain plausible, ask the user to choose the basis before optimizing deeply inside one branch.
 
 ### 10.2 Debugging
 - Separate observed symptoms from inferred root causes.
@@ -263,6 +277,7 @@ The communication layer should make the claim state legible.
 | Claim-state alignment | High |
 | Unsupported direct contradiction | 0 critical cases |
 | Scoped non-finding honesty | High |
+| Governing-basis uncertainty handling | High |
 | Person-directed verdicts without evidence | 0 critical cases |
 | Fact vs inference vs hypothesis separation | High |
 

@@ -1,11 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-04
+> **Last Updated:** 2026-04-05
 
 ---
 
 ## ✅ Completed
 
+- [x] Refine governing-basis clarification so materially different policies/frames now trigger a compact ask-first clarification instead of unnecessary deep branch analysis; keep basis selection user-owned unless authority/evidence already settles it; add unresolved governing-basis handling to burden-of-proof, explanation, and presentation owners; synchronize master RULES artifacts; and reinstall the touched runtime rules.
 - [x] Refine team-agent dedup and stale-presence handling so same-role teammates are reused before spawn, overlapping team expansion requires distinct purpose, duplicate-looking team-agent presence is treated as inspect-first state, synchronize master RULES artifacts, and reinstall the touched runtime rules.
 - [x] Refine goal-qualified proposal boundaries so future-work ideas stay advisory, state a concrete goal, expected improvement, and expected output/result, synchronize master RULES artifacts, and reinstall the touched runtime rules.
 - [x] Refine identifier-heavy explanations so answers now unpack variables, fields, config keys, enum-like values, and internal labels in human terms before the deeper reasoning depends on them, synchronize master RULES artifacts, and reinstall the touched runtime rules.
@@ -73,6 +74,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-05 | Refined governing-basis clarification governance: updated `accurate-communication` so materially outcome-changing policy/frame ambiguity now triggers a compact ask-first clarification before deep branch analysis; updated `authority-and-scope` so unresolved governing-basis selection stays user-owned unless checked authority/evidence already settles it; updated `evidence-grounded-burden-of-proof` with `UNRESOLVED_GOVERNING_BASIS` handling; updated `explanation-quality` and `answer-presentation` so explanations/layout now prefer a short governing-basis clarification gate over long branch-comparison analysis; added `patch/governing-basis-clarification-before-branching.patch.md` plus `phase-015-01` and `phase-015-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-04 | Refined team-agent dedup and stale-presence governance: updated `custom-agent-selection-priority` so matching teammates are reused before another overlapping same-role teammate is spawned; updated `authority-and-scope` so assistant-created team expansion now requires a clearly distinct job; updated `operational-failure-handling` with a `TEAM_AGENT_DUPLICATE_OR_STALE_PRESENCE` inspect-first profile; updated `accurate-communication` so duplicate-looking team-agent state is reported as observed fact vs inferred real overlap/stale presence; added `patch/team-agent-dedup-and-stale-presence-boundary.patch.md` plus `phase-014-01` and `phase-014-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-04 | Refined goal-qualified proposal governance: updated `accurate-communication` so future-work ideas remain advisory and must state a concrete goal, improvement, and output/result; updated `authority-and-scope` so proposals do not create implied queued execution until selected; updated `explanation-quality` and `answer-presentation` to support proposal framing and compact proposal blocks; added `patch/goal-qualified-proposal-boundary.patch.md` plus `phase-013-01` and `phase-013-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |
 | 2026-04-04 | Refined identifier-heavy explanation governance: updated `accurate-communication` so variables, fields, config keys, enum-like values, and internal labels must be explained in human terms when the answer depends on them; updated `explanation-quality` and `answer-presentation` to add identifier-role walkthrough patterns and compact variable-role presentation support; added `patch/variable-field-config-and-term-explanation.patch.md` plus `phase-012-01` and `phase-012-02`; synchronized master design/README/changelog/TODO/phase artifacts; and reinstalled the touched runtime rules into `~/.claude/rules/`. |

@@ -181,9 +181,9 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, governing-basis clarification before deep branch analysis, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real |
 | [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
+| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, destination/runtime, and local references from drifting into each other |
@@ -191,7 +191,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, and required to show explicit change surfaces |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
-| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, and scoped negative-evidence semantics |
+| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, and unresolved governing-basis uncertainty handling |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
@@ -216,8 +216,8 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact variable-role structures for identifier-heavy explanations, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
+| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact variable-role structures for identifier-heavy explanations, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, a governing-basis clarification boundary before deep multi-branch explanation, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -931,8 +931,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 7.9 |
-  <b>Last Updated</b>: 2026-04-04 |
+  <b>Version</b>: 8.0 |
+  <b>Last Updated</b>: 2026-04-05 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

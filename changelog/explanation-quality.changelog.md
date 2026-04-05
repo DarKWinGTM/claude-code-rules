@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.6
+> **Current Version:** 2.7
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.7 | 2026-04-05 | **[Added governing-basis clarification boundary before deep multi-branch explanation](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.6 | 2026-04-04 | **[Added goal-qualified proposal framing after bounded completion](#version-26)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.5 | 2026-04-04 | **[Added variable and field role explanation support for identifier-heavy walkthroughs](#version-25)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.4 | 2026-04-03 | **[Added explicit recommendation wording for multi-path explanation endings](#version-24)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -40,6 +41,23 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-27"></a>
+## Version 2.7: Added governing-basis clarification boundary before deep multi-branch explanation
+
+**Date:** 2026-04-05
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `explanation-quality.md` from v2.6 to v2.7.
+- Updated `design/explanation-quality.design.md` from v2.6 to v2.7.
+- Added a governing-basis clarification boundary so one short clarification gate is preferred over a long explanation that deepens several mutually exclusive branches.
+- Added trigger, pattern, and anti-pattern coverage so explanations now reduce complexity until the active basis is chosen.
+
+### Summary
+Explanation-quality now prefers a short governing-basis clarification over deep multi-branch explanation when materially different policy/frame choices remain unresolved.
 
 ---
 

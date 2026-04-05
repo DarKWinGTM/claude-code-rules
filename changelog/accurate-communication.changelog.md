@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.8
+> **Current Version:** 2.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.9 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-29)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.8 | 2026-04-04 | **[Added duplicate-looking team-agent reporting honesty](#version-28)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.7 | 2026-04-04 | **[Added goal-qualified proposal wording for future-work ideas](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.6 | 2026-04-04 | **[Added variable and internal-label clarification guidance for explanation-heavy answers](#version-26)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -46,6 +47,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-29"></a>
+## Version 2.9: Added governing-basis clarification before deep branch analysis
+
+**Date:** 2026-04-05
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `accurate-communication.md` from v2.8 to v2.9.
+- Updated `design/accurate-communication.design.md` from v2.8 to v2.9.
+- Added governing-basis clarification guidance so the assistant now asks for basis selection before deep multi-branch analysis when multiple materially different policies/frames remain live.
+- Added trigger and decision-framework coverage for basis-selection ambiguity.
+- Added example and anti-pattern coverage against exploring several materially different interpretive branches before the active frame is chosen.
+
+### Summary
+Accurate-communication now asks for governing-basis selection before deep branch analysis when the answer would materially change depending on the policy/frame used.
 
 ---
 

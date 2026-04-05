@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.8
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.8
+> **Current Version:** 2.9
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -52,6 +52,7 @@ Wording should reveal the actual claim strength.
 | Evidence-backed inference | "Based on X and Y, it likely ..." |
 | Working hypothesis | "One possibility is ..." |
 | Unresolved uncertainty | "I cannot confirm yet because ..." |
+| Unresolved governing basis | "The answer changes depending on which policy/frame we use, so I need you to choose the governing basis first." |
 | Not found in checked scope | "I checked A/B/C and did not find ..." |
 
 Required guidance:
@@ -132,6 +133,18 @@ Required guidance:
 - surface options only when the next move is genuinely preference-sensitive, approval-sensitive, blocked, or materially divergent
 - if work is complete, blocked, or newly changed in a way the user must know, report that state directly
 
+### 6.2 Governing-Basis Clarification Guidance
+
+When two or more plausible governing bases, policies, or decision frames remain live and the answer would materially differ depending on which one is chosen, do not branch into deep analysis yet.
+
+Required guidance:
+- ask the user to choose the governing basis first when the current evidence or instruction set does not already settle it
+- keep the clarification compact and structured rather than expanding into an essay or parallel deep-dive
+- explain briefly why the choice matters to the downstream answer
+- once the user selects a basis, continue on the selected basis instead of carrying forward the unchosen branches
+- do not ask when the governing basis is already explicit from the user’s instruction or already fixed by checked authority/evidence
+- do not dump several materially different interpretive branches “just in case” when the real next move is basis selection
+
 ### 7. Natural Professional Wording Guidance
 
 - prefer direct, human-readable phrasing over ceremonial or machine-like wording
@@ -209,6 +222,13 @@ Use explicit forward-progress wording when:
 - the user should move to the next stage/state rather than continue deepening the same topic
 - the response should establish a full relevant set before discussing any smaller subset
 - the assistant cannot or should not continue the next step autonomously inside the same active objective
+
+### When governing-basis clarification applies strongly
+Use explicit clarification before branching when:
+- two or more plausible governing bases or policies remain live
+- the downstream answer would materially differ depending on which basis is chosen
+- current checked evidence does not settle one basis safely enough
+- the user’s instruction does not already tell you which basis to use
 
 ### When goal-qualified proposals apply strongly
 Use explicit proposal framing when:
@@ -291,15 +311,19 @@ Before sending a finding or status update:
 10. Is the real decision surface a larger complete set?
    → Yes: show the full relevant set before narrowing into a subset
 
-11. Am I proposing work outside the active objective?
+11. Does the answer depend on a still-unselected governing basis or policy?
+   → Yes: ask the user to choose the basis first with a compact structured clarification and avoid deep branch analysis until it is chosen
+   → No: proceed
+
+12. Am I proposing work outside the active objective?
    → Yes: make it explicitly advisory and goal-qualified (goal, improvement, output/result, and success condition when useful)
    → No: proceed
 
-12. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
+13. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
    → No: reduce ceremony, fake empathy, and formulaic phrasing
    → Yes: proceed
 
-13. Am I closing an explanation-heavy response?
+14. Am I closing an explanation-heavy response?
    → Yes: synthesize the conclusion instead of repeating prior detail
 ```
 
@@ -390,6 +414,17 @@ Other options:
 - pause after README-only normalization
 ```
 
+### Governing-basis clarification
+```text
+Clarification needed
+- Governing basis: which policy/frame should control the answer?
+- Why it matters: the result changes depending on the basis used.
+- Choose one:
+  1. official semantic truth
+  2. full comparison of possible bases
+  3. conservative operational policy
+```
+
 ### Goal-qualified proposal
 ```text
 Proposal: build an automated visual QA verdict layer.
@@ -443,6 +478,7 @@ Diagnostic snapshot:
 | options listed with no recommendation when one path is clearly better-supported | user must infer the preferred move unnecessarily | name the recommended option first and explain briefly why it should happen first |
 | multi-path state collapsed into one recommended path with no remaining alternative shown | a real decision surface is hidden and user agency becomes harder to exercise | keep at least one visible alternative when multiple reasonable next actions still exist |
 | future work suggested with no concrete goal or output | the user sees momentum but not a real concept they can evaluate | frame it as a goal-qualified proposal with a clear goal, improvement, and output/result |
+| governing-basis ambiguity answered with deep multi-branch analysis before the user chooses a policy/frame | the assistant explores complexity that may become irrelevant once the user picks the basis | ask a compact governing-basis clarification first, then continue on the selected frame |
 | proposal phrased like implied queued execution | the assistant sounds as if it already committed the user to the next wave | mark the proposal as advisory and avoid continuation-shaped wording unless the user selected that target |
 | duplicate-looking team-agent state reported as definite active overlap without verification | the user may get the wrong recovery action or false confidence about cleanup | separate observed duplicate-looking state from inference about whether it is real overlap or stale presence |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
@@ -459,6 +495,7 @@ Diagnostic snapshot:
 | Claim-state alignment | High |
 | Scoped negative-result honesty | High |
 | Bounded snapshot wording honesty | High |
+| Governing-basis clarification usefulness | High when materially different policies/frames would change the answer |
 | Human-language gloss usefulness | High when internal terminology appears in easy-explanation contexts |
 | Stage-progression wording usefulness | High when the current scope is already sufficiently clarified |
 | Whole-set framing usefulness | High when the full relevant set should be visible before narrowing |

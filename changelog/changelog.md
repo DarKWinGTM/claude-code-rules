@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 7.9
+> **Current Version:** 8.0
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 8.0 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-80)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.9 | 2026-04-04 | **[Added team-agent dedup and stale-presence boundaries](#version-79)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.8 | 2026-04-04 | **[Added goal-qualified proposal boundaries across the communication-owner set](#version-78)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.7 | 2026-04-04 | **[Added identifier-explanation guidance across the communication-owner trio](#version-77)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -88,6 +89,43 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-80"></a>
+## Version 8.0: Added governing-basis clarification before deep branch analysis
+
+**Date:** 2026-04-05
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/accurate-communication.design.md` from v2.8 to v2.9.
+- Updated runtime `accurate-communication.md` from v2.8 to v2.9.
+- Added ask-first governing-basis clarification so the assistant now pauses deep branch analysis when materially different policy/frame choices remain live.
+- Updated `design/authority-and-scope.design.md` from v1.7 to v1.8.
+- Updated runtime `authority-and-scope.md` from v1.7 to v1.8.
+- Added an explicit user-owned governing-basis selection boundary unless checked authority or evidence already settles the active frame.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.0 to v1.1.
+- Updated runtime `evidence-grounded-burden-of-proof.md` from v1.0 to v1.1.
+- Added `UNRESOLVED_GOVERNING_BASIS` handling so materially outcome-changing basis ambiguity is treated as uncertainty that should trigger clarification rather than silent branch selection.
+- Updated `design/explanation-quality.design.md` from v2.6 to v2.7.
+- Updated runtime `explanation-quality.md` from v2.6 to v2.7.
+- Added a governing-basis clarification boundary so one short clarification gate is preferred over deep multi-branch explanation.
+- Updated `design/answer-presentation.design.md` from v1.11 to v1.12.
+- Updated runtime `answer-presentation.md` from v1.11 to v1.12.
+- Added compact governing-basis clarification layout support so materially outcome-changing basis ambiguity can be presented as a short structured question.
+- Added `patch/governing-basis-clarification-before-branching.patch.md` as the governed before/after artifact for the refinement wave.
+- Added `phase/phase-015-01-refine-governing-basis-clarification.md` and `phase/phase-015-02-sync-master-docs-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the governing-basis clarification refinement is visible in master governance surfaces.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `accurate-communication.md`
+  - `authority-and-scope.md`
+  - `evidence-grounded-burden-of-proof.md`
+  - `explanation-quality.md`
+  - `answer-presentation.md`
+
+### Summary
+The RULES system now asks for governing-basis selection before deep branch analysis when materially different policy/frame choices remain live, instead of silently exploring complexity that may become irrelevant once the active basis is chosen.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.6
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
+> **Current Version:** 2.7
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-05)
 
 ---
 
@@ -23,6 +23,7 @@ The target behavior is a layered natural explanation style:
 - a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
 - concise, high-signal ending with a real next move only when one genuinely exists
 - goal-qualified proposal framing when future ideas are useful after bounded completion
+- governing-basis clarification before deepening several materially different branches
 - explanation that sounds like a capable professional colleague rather than a scripted narrator or over-produced tutor
 
 ---
@@ -43,6 +44,7 @@ Observed failure modes:
 - progress or troubleshooting updates bury current state and checked scope inside long narrative blocks
 - explanation is structurally correct but still sounds scripted, over-signposted, or more performative than useful
 - over-explaining continues after the user already has enough context to decide or proceed
+- multiple materially different policy/frame branches are explained in depth before the active governing basis is chosen
 
 This design addresses explanation shape while preserving existing verification and accuracy requirements.
 
@@ -190,6 +192,14 @@ Required guidance:
 - prefer progression, synthesis, or closure over extra explanatory ornament
 - avoid explanation that feels like a lecture when a colleague-style explanation is enough
 
+### 6.2 Governing-Basis Clarification Boundary
+When multiple materially different governing bases remain live and the answer would change depending on which one is chosen, prefer one short clarification gate over a long explanation that explores every branch.
+
+Required guidance:
+- if the governing basis is unresolved, avoid deepening several mutually exclusive downstream branches before the user chooses the active frame
+- once the user chooses a basis, explain the selected branch cleanly instead of continuing to carry all branches forward
+- treat unresolved basis selection as a reason to reduce complexity, not as a reason to display more analysis
+
 ---
 
 ## 7) Example, Before/After, Patch-by-Patch, and Analogy Guidance
@@ -260,6 +270,16 @@ Required guidance:
 - present the full relevant set when that is the real decision surface
 - avoid defaulting to only 2-3 items when the response should establish a larger whole first
 - use narrowing only after the whole set is visible or when the user explicitly asked for incremental slicing
+
+### 7.2.6 Governing-Basis Clarification Pattern
+
+When multiple materially different governing bases remain live and the answer would change depending on which one is chosen, the explanation should stop and clarify the active frame before deepening the downstream analysis.
+
+Required guidance:
+- prefer one short clarification gate over explaining several mutually exclusive branches in depth
+- if the governing basis is unresolved, avoid carrying all branches forward as if they were equally active
+- once the user chooses a basis, deepen only the selected branch unless a real follow-up comparison is still needed
+- treat unresolved basis selection as a reason to reduce complexity rather than expand it
 
 ### 7.3 Patch-by-Patch Explanation Pattern
 
@@ -424,6 +444,29 @@ Patch 3 updates verification so success is measured against the new path.
 ```
 
 ### Pattern 4: Analogy-assisted explanation
+
+```markdown
+Think of it like moving the circuit breaker out of each room and into one shared panel.
+
+In technical terms, the auth rule moved out of each route handler into shared middleware, so one policy change no longer requires editing every handler separately.
+```
+
+### Pattern 5: Governing-basis clarification before deep analysis
+
+```markdown
+Short answer: the answer changes depending on which policy/frame we use.
+
+Clarification needed:
+- Basis A = official semantic truth
+- Basis B = full comparison of possible interpretations
+- Basis C = conservative operational policy
+
+Why this matters: each basis leads to a different downstream answer.
+
+Choose one and I’ll continue on that basis.
+```
+
+### Pattern 6: Layered walkthrough with snapshot in the middle
 
 ```markdown
 Think of it like moving the circuit breaker out of each room and into one shared panel.
