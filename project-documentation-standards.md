@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.12
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.12
+> **Current Version:** 2.13
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.13
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase` planning artifacts, `/patch` artifacts, and non-governed helper/support artifacts, resolve required startup artifact posture before meaningful governed work drifts, make governed patch participation explicit in the live phase workspace when patch is in scope, and keep public onboarding/install guidance portable by default.**
+**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase` planning artifacts, `/patch` artifacts, and non-governed helper/support or extension-package artifacts, resolve required startup artifact posture before meaningful governed work drifts, make governed patch participation explicit in the live phase workspace when patch is in scope, and keep public onboarding/install guidance portable by default.**
 
 ---
 
@@ -28,7 +28,7 @@
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Patch/review artifact is required | Governed patch/review artifact outside the live phase workspace | `document-patch-control` |
 | `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
 | `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template for phased execution planning | Non-governed helper artifact |
-| `support/**/*.md` or equivalent support path | Additional reference-only content is needed | Support/reference artifacts | Non-governed support layer |
+| `support/**/*.md`, `plugin/**`, or equivalent support/extension path | Additional reference-only content or optional extension-package content is needed | Support/reference or extension-package artifacts | Non-governed support / extension layer |
 
 ### 2) UDVC-1 Integration
 
@@ -36,7 +36,7 @@
 
 - Changelog is the single version authority per governed chain
 - Design/rule/phase/patch metadata must align with authoritative changelog state where applicable
-- Root-level helper artifacts and support artifacts do not become chain authority unless intentionally normalized into a governed document chain
+- Root-level helper artifacts, support artifacts, and optional extension-package artifacts do not become chain authority unless intentionally normalized into a governed document chain
 
 #### 2.2 Synchronization Order
 
@@ -61,8 +61,9 @@ For governance updates, apply in this order:
 - Patch artifacts are self-identifying before/after change artifacts; they are not prose-only recaps or live phase summaries
 - The canonical readable helper for this repository lives at root as `phase-implementation-template.md`
 - Root-level helper templates are not governed chains and do not require their own rule/design/changelog triad
-- Additional support materials may still live in `support/`
-- phase may synthesize design and patch inputs as one-way source inputs into live execution planning when relevant
+- Additional support materials or optional extension packages may still live in `support/` or `plugin/`
+- package-local plugin assets may use a package scaffold such as `README.md`, `.claude-plugin/`, `hooks/`, `scripts/`, optional `skills/`, and optional `agents/`
+- those package-local assets remain implementation/support surfaces, not root governance authority
 - design and patch artifacts are not required to point back to phase
 - TODO tracks actionable work only; it does not become the primary place for phase definitions
 - Changelog records shipped or synchronized changes only; it does not become the primary place for phase definitions
@@ -138,7 +139,7 @@ Required guidance:
 - `phase-implementation.md` remains the semantic authority for phased execution behavior
 - phased work with governed patch artifacts must show explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - `artifact-initiation-control.md` remains the startup artifact-resolution owner
-- Root-level helper artifacts and support artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
+- Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
 
 ---
 
@@ -159,7 +160,8 @@ Required guidance:
 - [ ] Public onboarding/install guidance avoids workstation-specific absolute paths as public defaults
 - [ ] Source-side guidance and destination/runtime guidance are clearly distinguished when both appear
 - [ ] Exact local install examples are explicitly scoped when present
-- [ ] `phase-implementation-template.md` remains a non-governed helper artifact
+- [ ] Root-level helper artifacts remain non-governed
+- [ ] Support or extension-package artifacts such as `plugin/**` do not masquerade as a second governance stack
 
 ---
 

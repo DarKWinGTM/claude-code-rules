@@ -1,7 +1,7 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-04-06 | **[Added post-compact re-anchor boundary for stale-frame recovery](#version-19)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.8 | 2026-04-05 | **[Added user-owned governing-basis selection boundary](#version-18)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.7 | 2026-04-04 | **[Added team-expansion boundary for overlapping teammate roles](#version-17)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.6 | 2026-04-04 | **[Kept future-work proposals advisory until explicitly selected](#version-16)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -29,7 +30,23 @@
 
 ---
 
-<a id="version-18"></a>
+<a id="version-19"></a>
+## Version 1.9: Added post-compact re-anchor boundary for stale-frame recovery
+
+**Date:** 2026-04-06
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `authority-and-scope.md` from v1.8 to v1.9.
+- Updated `design/authority-and-scope.design.md` from v1.8 to v1.9.
+- Added an explicit post-compact re-anchor boundary so compacted-session continuation now preserves the latest active user directive and active governing basis.
+- Added conflict-type, term-definition, required-behavior, and anti-pattern coverage so stale assistant framing does not quietly revive after compact.
+
+### Summary
+Authority-and-scope now requires post-compact continuation to re-anchor to the latest active user directive and active frame instead of resuming from stale assistant framing.
+
+---
+
 ## Version 1.8: Added user-owned governing-basis selection boundary
 
 **Date:** 2026-04-05

@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.12
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.12
+> **Current Version:** 1.13
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.13
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -145,6 +145,7 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | full-set framing | many relevant areas, complete checklist, several review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
 | governing-basis ambiguity | multiple plausible policies/frames remain live and the answer changes depending on which one is chosen | short clarification block with compact basis options and one `Why it matters` line |
+| post-compact continuation | the answer is resuming after compaction and exact prior state may have been compressed | short re-anchor block with current objective, carried-forward facts, needs-recheck details, and next action |
 | variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |
 | long answer | multiple concepts or dependencies | headings, grouped blocks, concise summary |
 
@@ -195,6 +196,17 @@ When multiple materially different governing bases or policies remain live and t
 - show one short `Why it matters` line
 - keep the options mutually exclusive when possible
 - prefer a short form-like block over a long comparison essay
+
+### 3.3 Post-Compact Re-Anchor Pattern
+
+When the answer is resuming after compact, present a short re-anchor block before deeper continuation when exact context may have been compressed.
+
+Required guidance:
+- label the block clearly as a post-compact re-anchor or equivalent compact state-reset note
+- show the current objective compactly
+- distinguish carried-forward facts from needs-recheck details when exact prior evidence may no longer be fully preserved
+- show one short next-action line
+- prefer one short recap block over a long conversation replay
 
 ### 4) Sequence Pattern
 
@@ -378,7 +390,24 @@ Before the deeper reasoning, here is what the key identifiers mean:
 What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
 ```
 
-### 16) Canonical Governing-Basis Clarification Shape
+### 16) Canonical Post-Compact Re-Anchor Shape
+
+```markdown
+Post-compact re-anchor
+- Current objective: continue the active work already selected by the user
+
+Carried-forward facts
+- the governing basis is already chosen
+- the active touched scope is unchanged
+
+Needs recheck
+- exact payload wording or exact previously checked evidence that may have been compressed away
+
+Next action
+- continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact
+```
+
+### 17) Canonical Governing-Basis Clarification Shape
 
 ```markdown
 Clarification needed
@@ -396,7 +425,7 @@ Other
 - tell me the policy/basis you want me to use
 ```
 
-### 17) Canonical Goal-Qualified Proposal Shape
+### 18) Canonical Goal-Qualified Proposal Shape
 
 ```markdown
 Proposal
@@ -437,6 +466,7 @@ Success condition
 | raw variables/fields dumped with no role explanation | the reader sees identifiers but must decode them alone | add a short glossary block, grouped bullets, or a small variable-role table before deeper reasoning |
 | future work presented like the next automatic step | the reader cannot tell whether the assistant is proposing an idea or already queueing execution | label it as a proposal and show goal, improvement, output, and optional success condition |
 | governing-basis ambiguity answered with a long branch-comparison essay before the user chooses a basis | the clarification is buried inside unnecessary structure | use a short compact clarification block with basis choices and one `Why it matters` line |
+| post-compact continuation presented as a long conversation replay | the user has to reread stale history instead of seeing the active state quickly | use one short post-compact re-anchor block with current objective, carried-forward facts, needs-recheck detail, and next action |
 | over-structuring simple answers | makes a short answer feel heavy | keep simple answers compact |
 | inconsistent heading or emphasis style | weakens visual order | keep presentation consistent |
 

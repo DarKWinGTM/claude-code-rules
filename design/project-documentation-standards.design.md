@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.12
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
+> **Current Version:** 2.13
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
 
 ---
 
 ## 1) Goal
 
-Provide one deterministic, low-confusion repository model across README, runtime rules, design documents, changelog files, TODO trackers, phase-planning artifacts, patch documents, and support artifacts.
+Provide one deterministic, low-confusion repository model across README, runtime rules, design documents, changelog files, TODO trackers, phase-planning artifacts, patch documents, and support or extension-package artifacts.
 
 Shared governed docs and templates should remain portable by default rather than embedding machine-specific environment assumptions as if they were universal repository truth.
 
@@ -26,6 +26,7 @@ This model must preserve one authority system while clearly separating:
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
 - `portable-implementation-and-hardcoding-control.md` as the semantic owner of portable-default and anti-hardcoding behavior
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
+- `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
 
 ---
 
@@ -93,6 +94,19 @@ It owns phase semantics after `/phase` is required.
 `phase-implementation-template.md` is a non-governed root helper.
 It exists for readability, drafting, and reuse.
 
+### 3.12 Extension-Package Role
+`plugin/**` may exist as an optional extension-package area.
+It may contain package-local implementation assets such as:
+- `README.md`
+- `.claude-plugin/`
+- `hooks/`
+- `scripts/`
+- optional `skills/`
+- optional `agents/`
+
+Those package-local assets remain support/implementation surfaces.
+They do not create a second design/changelog/phase/TODO authority stack under `plugin/`.
+
 ---
 
 ## 4) Required Document Set
@@ -109,7 +123,7 @@ It exists for readability, drafting, and reuse.
 | `artifact-initiation-control.md` | Startup artifact posture must be standardized | First-class startup-governance behavior | Governed runtime rule |
 | `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
 | `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template | Non-governed helper artifact |
-| `support/**/*.md` or equivalent support path | Reference-only content exists | Support/reference artifacts | Non-governed support layer |
+| `support/**/*.md`, `plugin/**`, or equivalent support/extension path | Reference-only content or optional extension-package content exists | Support/reference or extension-package artifacts | Non-governed support / extension layer |
 
 ---
 
@@ -118,7 +132,7 @@ It exists for readability, drafting, and reuse.
 ### 5.1 Single Authority Per Chain
 - Changelog is the authority for each governed chain.
 - Runtime, design, phase, and patch metadata align to that chain authority where applicable.
-- Root-level helper artifacts and support artifacts do not create parallel version authority.
+- Root-level helper artifacts, support artifacts, and optional extension-package artifacts do not create parallel version authority.
 
 ### 5.2 Synchronization Order
 1. design

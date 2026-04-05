@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 8.0
+> **Current Version:** 8.1
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 8.1 | 2026-04-06 | **[Added compact/post-compact re-anchor governance and an optional plugin companion extension](#version-81)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 8.0 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-80)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.9 | 2026-04-04 | **[Added team-agent dedup and stale-presence boundaries](#version-79)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.8 | 2026-04-04 | **[Added goal-qualified proposal boundaries across the communication-owner set](#version-78)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -89,6 +90,47 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-81"></a>
+## Version 8.1: Added compact/post-compact re-anchor governance and an optional plugin companion extension
+
+**Date:** 2026-04-06
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/accurate-communication.design.md` from v2.9 to v2.10.
+- Updated runtime `accurate-communication.md` from v2.9 to v2.10.
+- Added post-compact re-anchor wording so compacted-session continuation now re-anchors to the active objective and separates carried-forward facts from needs-recheck detail.
+- Updated `design/authority-and-scope.design.md` from v1.8 to v1.9.
+- Updated runtime `authority-and-scope.md` from v1.8 to v1.9.
+- Added an explicit post-compact re-anchor boundary so stale assistant framing does not revive after compact.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.1 to v1.2.
+- Updated runtime `evidence-grounded-burden-of-proof.md` from v1.1 to v1.2.
+- Added `POST_COMPACT_NEEDS_RECHECK` handling so compacted carry-forward exact detail is treated as a recheck-needed state unless enough surviving evidence still preserves its exactness.
+- Updated `design/explanation-quality.design.md` from v2.7 to v2.8.
+- Updated runtime `explanation-quality.md` from v2.7 to v2.8.
+- Added a compact post-compact re-anchor boundary so explanations resume from active state rather than replaying stale history.
+- Updated `design/answer-presentation.design.md` from v1.12 to v1.13.
+- Updated runtime `answer-presentation.md` from v1.12 to v1.13.
+- Added compact post-compact re-anchor layout support with a canonical block shape for `Current objective`, `Carried-forward facts`, `Needs recheck`, and `Next action`.
+- Created `design/rules-plugin-extension.design.md` and `changelog/rules-plugin-extension.changelog.md` as the root design/history authority for the optional plugin companion area.
+- Created `plugin/README.md`, `plugin/.claude-plugin/plugin.json`, `plugin/.claude-plugin/marketplace.json`, `plugin/hooks/hooks.json`, and compact lifecycle scripts under `plugin/scripts/`.
+- Added `patch/compact-post-compact-governance-refinement.patch.md` and `patch/rules-plugin-extension-companion.patch.md` as the governed before/after artifacts for Waves 016 and 017.
+- Added `phase/phase-016-01-refine-compact-and-post-compact-governance.md`, `phase/phase-016-02-sync-master-docs-and-runtime-install.md`, `phase/phase-017-01-create-rules-plugin-extension-area.md`, and `phase/phase-017-02-sync-root-docs-and-verify-plugin-companion.md` as the bounded rollout families for the new refinement and extension waves.
+- Updated `project-documentation-standards` design/runtime/changelog from v2.12 to v2.13 so `plugin/**` is modeled as a support / extension-only area rather than a second governance stack.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the compact/post-compact refinement and the optional plugin companion are visible in master governance surfaces.
+- Expanded plugin install/use docs so the repository now explains package-root installation, compact hook flow, witness outputs, and duplicate-hook-path troubleshooting more explicitly.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `accurate-communication.md`
+  - `authority-and-scope.md`
+  - `evidence-grounded-burden-of-proof.md`
+  - `explanation-quality.md`
+  - `answer-presentation.md`
+
+### Summary
+The RULES system now re-anchors explicitly after compact before continuing, and the repository also has an optional plugin companion package that reinforces compact lifecycle behavior through hooks without weakening root rules authority. The install and hook-flow docs are now detailed enough for package-root use and future git push/update review.
 
 ---
 

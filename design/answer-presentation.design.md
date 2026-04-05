@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.12
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-05)
+> **Current Version:** 1.13
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
 
 ---
 
@@ -22,6 +22,7 @@ The target behavior is principle-first and trigger-driven:
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
 - make materially outcome-changing governing-basis ambiguity easy to present as a short structured clarification instead of a long branch-comparison essay
+- make post-compact continuation easy to present as one short re-anchor block instead of a long replay
 - keep presentation readable without decorative noise
 - preserve flexibility for simple answers
 
@@ -44,6 +45,7 @@ Observed failure modes:
 - simple answers are over-structured while complex answers remain under-structured
 - formatting is technically organized but still feels stiff, overbuilt, or obviously templated
 - materially different governing-basis options are explained through long comparison prose when the real need is one short structured clarification block
+- post-compact continuation is presented as a long replay of the prior conversation instead of a short active-state re-anchor
 
 This design defines presentation-layer guidance that improves readability and scanability while staying compatible with existing explanation and communication rules.
 It should support natural professional communication by making structure useful without making answers feel templated or stiff.
@@ -200,6 +202,17 @@ When multiple materially different governing bases or policies remain live and t
 - keep the options mutually exclusive when possible
 - prefer a short form-like block over a long comparison essay
 
+### 5.3.3 Post-Compact Re-Anchor Pattern
+
+When the answer is resuming after compact, present a short re-anchor block before deeper continuation when exact context may have been compressed.
+
+Required guidance:
+- label the block clearly as a post-compact re-anchor or equivalent compact state-reset note
+- show the current objective compactly
+- distinguish carried-forward facts from needs-recheck details when exact prior evidence may no longer be fully preserved
+- show one short next-action line
+- prefer one short recap block over a long conversation replay
+
 ### 5.4 Sequence Pattern
 
 When order matters:
@@ -344,7 +357,24 @@ Other
 - tell me the policy/basis you want me to use
 ```
 
-### 5.11 Canonical Variable-Role Shape
+### 5.11 Canonical Post-Compact Re-Anchor Shape
+
+```markdown
+Post-compact re-anchor
+- Current objective: continue the active work already selected by the user
+
+Carried-forward facts
+- the governing basis is already chosen
+- the active touched scope is unchanged
+
+Needs recheck
+- exact payload wording or exact previously checked evidence that may have been compressed away
+
+Next action
+- continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact
+```
+
+### 5.12 Canonical Variable-Role Shape
 
 ```markdown
 Before the deeper reasoning, here is what the key identifiers mean:
@@ -358,7 +388,7 @@ Before the deeper reasoning, here is what the key identifiers mean:
 What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
 ```
 
-### 5.12 Canonical Goal-Qualified Proposal Shape
+### 5.13 Canonical Goal-Qualified Proposal Shape
 
 ```markdown
 Proposal
@@ -396,6 +426,7 @@ Success condition
 | oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
 | table-only technical note with no implication | facts are visible but the reader cannot tell what they mean | add one short implication or next-action line |
 | governing-basis ambiguity answered with a long branch-comparison essay before the user chooses a basis | the clarification is buried inside unnecessary structure | use a short compact clarification block with basis choices and one `Why it matters` line |
+| post-compact continuation presented as a long conversation replay | the reader has to reread stale history instead of seeing the active state quickly | use one short post-compact re-anchor block with current objective, carried-forward facts, needs-recheck detail, and next action |
 | over-structuring simple answers | makes a small answer feel heavy | keep simple cases compact |
 | structure feels templated rather than useful | reader notices the format more than the content | use only the smallest structure that improves scanability |
 | inconsistent emphasis or heading style | weakens visual order | maintain consistent markdown hierarchy |

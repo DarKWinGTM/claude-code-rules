@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.7
+> **Current Version:** 2.8
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.8 | 2026-04-06 | **[Added compact post-compact re-anchor boundary for explanation flow](#version-28)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.7 | 2026-04-05 | **[Added governing-basis clarification boundary before deep multi-branch explanation](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.6 | 2026-04-04 | **[Added goal-qualified proposal framing after bounded completion](#version-26)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.5 | 2026-04-04 | **[Added variable and field role explanation support for identifier-heavy walkthroughs](#version-25)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -44,7 +45,23 @@
 
 ---
 
-<a id="version-27"></a>
+<a id="version-28"></a>
+## Version 2.8: Added compact post-compact re-anchor boundary for explanation flow
+
+**Date:** 2026-04-06
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `explanation-quality.md` from v2.7 to v2.8.
+- Updated `design/explanation-quality.design.md` from v2.7 to v2.8.
+- Added a post-compact re-anchor boundary so explanations now resume by re-anchoring the active objective instead of replaying stale history.
+- Added trigger, pattern, example, and anti-pattern coverage so compacted-session continuation stays compact, preserves the selected frame, and separates carried-forward facts from needs-recheck detail.
+
+### Summary
+Explanation-quality now tells the assistant to use one short post-compact re-anchor before continuing the selected active path instead of rebuilding old explanation branches from compressed context.
+
+---
+
 ## Version 2.7: Added governing-basis clarification boundary before deep multi-branch explanation
 
 **Date:** 2026-04-05

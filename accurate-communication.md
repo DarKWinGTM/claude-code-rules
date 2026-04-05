@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.9
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.9
+> **Current Version:** 2.10
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.10
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -145,6 +145,18 @@ Required guidance:
 - do not ask when the governing basis is already explicit from the user’s instruction or already fixed by checked authority/evidence
 - do not dump several materially different interpretive branches “just in case” when the real next move is basis selection
 
+### 6.3 Post-Compact Re-Anchor Guidance
+
+When context has just been compacted or the assistant is resuming from a compacted state, re-anchor to the active objective before continuing.
+
+Required guidance:
+- use a short post-compact re-anchor instead of assuming the compressed carry-forward state still preserves every exact detail
+- separate carried-forward facts from needs-recheck details when compaction may have compressed away exact wording, exact payloads, or exact checked scope
+- preserve the latest user-selected governing basis, active frame, and active objective instead of reviving stale assistant branches from before compact
+- say explicitly when an exact detail is no longer confirmed strongly enough after compact and needs recheck before being treated as verified fact
+- keep the post-compact recap compact and forward-moving rather than replaying the whole prior conversation
+- if safe continuation is still clear after re-anchor, continue directly instead of pausing for ceremonial restatement
+
 ### 7. Natural Professional Wording Guidance
 
 - prefer direct, human-readable phrasing over ceremonial or machine-like wording
@@ -230,6 +242,13 @@ Use explicit clarification before branching when:
 - current checked evidence does not settle one basis safely enough
 - the user’s instruction does not already tell you which basis to use
 
+### When post-compact re-anchor applies strongly
+Use explicit post-compact re-anchor behavior when:
+- the session has just resumed from context compaction
+- the next answer depends on exact checked scope, exact payload details, or exact user-selected framing that may have been compressed into a shorter carry-forward state
+- stale assistant branches or stale option framing could otherwise revive after compact
+- the assistant needs to distinguish what remains verified from what now needs recheck before continuing
+
 ### When goal-qualified proposals apply strongly
 Use explicit proposal framing when:
 - the active objective is complete or intentionally bounded
@@ -311,19 +330,23 @@ Before sending a finding or status update:
 10. Is the real decision surface a larger complete set?
    → Yes: show the full relevant set before narrowing into a subset
 
-11. Does the answer depend on a still-unselected governing basis or policy?
+11. Has context just been compacted or resumed from a compacted state?
+   → Yes: re-anchor to the active objective, preserve the latest user-selected frame, and separate carried-forward facts from needs-recheck details before continuing
+   → No: proceed
+
+12. Does the answer depend on a still-unselected governing basis or policy?
    → Yes: ask the user to choose the basis first with a compact structured clarification and avoid deep branch analysis until it is chosen
    → No: proceed
 
-12. Am I proposing work outside the active objective?
+13. Am I proposing work outside the active objective?
    → Yes: make it explicitly advisory and goal-qualified (goal, improvement, output/result, and success condition when useful)
    → No: proceed
 
-13. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
+14. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
    → No: reduce ceremony, fake empathy, and formulaic phrasing
    → Yes: proceed
 
-14. Am I closing an explanation-heavy response?
+15. Am I closing an explanation-heavy response?
    → Yes: synthesize the conclusion instead of repeating prior detail
 ```
 
@@ -434,6 +457,15 @@ Expected output: a machine-readable QA summary with per-device verdicts and conc
 Success condition: a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only.
 ```
 
+### Post-compact re-anchor
+```text
+Post-compact re-anchor:
+- Current objective: continue the active implementation task already selected by the user.
+- Carried-forward facts: the user already chose the governing basis and the touched scope is the same owner set as before compact.
+- Needs recheck: exact payload text or exact previously checked line-level evidence that was compressed away.
+- Next action: continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact.
+```
+
 ### Duplicate-looking team-agent report
 ```text
 Observed: the UI showed `@pricing-reviewer` twice.
@@ -480,6 +512,7 @@ Diagnostic snapshot:
 | future work suggested with no concrete goal or output | the user sees momentum but not a real concept they can evaluate | frame it as a goal-qualified proposal with a clear goal, improvement, and output/result |
 | governing-basis ambiguity answered with deep multi-branch analysis before the user chooses a policy/frame | the assistant explores complexity that may become irrelevant once the user picks the basis | ask a compact governing-basis clarification first, then continue on the selected frame |
 | proposal phrased like implied queued execution | the assistant sounds as if it already committed the user to the next wave | mark the proposal as advisory and avoid continuation-shaped wording unless the user selected that target |
+| post-compact continuation assumes every compressed-away detail is still exact | the assistant may resume from stale or over-compressed memory as if it were fresh verified state | re-anchor first, separate carried-forward facts from needs-recheck details, and recheck exact details when they matter |
 | duplicate-looking team-agent state reported as definite active overlap without verification | the user may get the wrong recovery action or false confidence about cleanup | separate observed duplicate-looking state from inference about whether it is real overlap or stale presence |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |

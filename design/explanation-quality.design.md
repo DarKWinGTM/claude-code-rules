@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.7
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-05)
+> **Current Version:** 2.8
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
 
 ---
 
@@ -24,6 +24,7 @@ The target behavior is a layered natural explanation style:
 - concise, high-signal ending with a real next move only when one genuinely exists
 - goal-qualified proposal framing when future ideas are useful after bounded completion
 - governing-basis clarification before deepening several materially different branches
+- compact post-compact re-anchor before explanation resumes after compaction may have compressed exact context
 - explanation that sounds like a capable professional colleague rather than a scripted narrator or over-produced tutor
 
 ---
@@ -45,6 +46,7 @@ Observed failure modes:
 - explanation is structurally correct but still sounds scripted, over-signposted, or more performative than useful
 - over-explaining continues after the user already has enough context to decide or proceed
 - multiple materially different policy/frame branches are explained in depth before the active governing basis is chosen
+- post-compact explanation restarts by replaying stale history instead of re-anchoring the active objective and checked state first
 
 This design addresses explanation shape while preserving existing verification and accuracy requirements.
 
@@ -280,6 +282,17 @@ Required guidance:
 - if the governing basis is unresolved, avoid carrying all branches forward as if they were equally active
 - once the user chooses a basis, deepen only the selected branch unless a real follow-up comparison is still needed
 - treat unresolved basis selection as a reason to reduce complexity rather than expand it
+
+### 7.2.7 Post-Compact Re-Anchor Pattern
+
+When explanation resumes after compact, the explanation should re-anchor the active objective before deepening the next step.
+
+Required guidance:
+- prefer one short post-compact re-anchor over retelling the full prior conversation
+- separate carried-forward facts from needs-recheck details when exact wording, exact payloads, or exact checked scope may no longer be fully preserved
+- preserve the latest user-selected frame instead of reopening stale assistant branches from before compact
+- continue the active selected path after re-anchor rather than rebuilding several old branches
+- treat post-compact continuation as a reason to reduce replay, not a reason to expand historical narration
 
 ### 7.3 Patch-by-Patch Explanation Pattern
 
@@ -600,7 +613,19 @@ Reasoning path:
 3. that means the current state was likely overwritten or downgraded after the earlier usable state existed
 ```
 
-### Pattern 13: Goal-qualified proposal after bounded completion
+### Pattern 13: Post-compact re-anchor before continued explanation
+
+```markdown
+Short answer: we can continue, but first I need to re-anchor the active state after compact.
+
+Post-compact re-anchor:
+- Current objective: continue the active implementation slice already chosen by the user
+- Carried-forward facts: the governing basis is already selected and the touched owner set is unchanged
+- Needs recheck: any exact payload wording or exact previously checked evidence that may have been compressed away
+- Next action: continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact
+```
+
+### Pattern 14: Goal-qualified proposal after bounded completion
 
 ```markdown
 The active cleanup wave is done.

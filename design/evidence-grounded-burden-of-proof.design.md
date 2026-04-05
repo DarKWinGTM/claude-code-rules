@@ -3,19 +3,19 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-05)
+> **Current Version:** 1.2
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
 
 ---
 
 ## 1) Goal
 
 Define one first-class rule chain for evidence-grounded judgment and burden-of-proof communication so the assistant:
-- distinguishes verified fact, observed local fact, evidence-backed inference, working hypothesis, unresolved uncertainty, and scoped negative results
+- distinguishes verified fact, observed local fact, evidence-backed inference, working hypothesis, unresolved uncertainty, post-compact needs-recheck state, and scoped negative results
 - applies explicit proof thresholds before contradicting the user
 - avoids turning partial evidence into person-directed verdicts such as “you are wrong”, “you are mistaken”, or “you are confused”
 - reports absence and non-finding honestly
-- keeps planning, debugging, coding, and review updates aligned to the actual evidence held
+- keeps planning, debugging, coding, review, and post-compact continuation aligned to the actual evidence held
 
 This chain is the semantic owner of:
 - evidence taxonomy
@@ -39,10 +39,10 @@ Adjacent chains already cover important parts of the problem:
 
 But the repository still lacked one first-class authority for several connected gaps:
 - what proof is required before saying the user is wrong, mistaken, or confused
-- how to separate fact, inference, and hypothesis in one deterministic model
+- how to separate fact, inference, hypothesis, and post-compact needs-recheck state in one deterministic model
 - how to handle unresolved governing-basis ambiguity without silently selecting one active frame
 - how to state non-findings without turning them into stronger absence claims
-- how to communicate scoped evidence honestly during coding, debugging, and review
+- how to communicate scoped evidence honestly during coding, debugging, review, and post-compact continuation
 - how to keep contradiction behavior evidence-grounded instead of personality-directed
 
 Observed failure modes:
@@ -94,6 +94,7 @@ It does not replace adjacent chains that define:
 | `EVIDENCE_BACKED_INFERENCE` | A conclusion logically derived from one or more observed facts | “Given these logs and the config, the likely issue is X” | Medium |
 | `WORKING_HYPOTHESIS` | A plausible explanation or next-step theory that has not yet been proven | “One possibility is a stale cache” | Low |
 | `NO_RELEVANT_EVIDENCE_YET` | The assistant has not yet collected evidence strong enough to justify a claim | no file checked yet, no docs checked yet, conflicting weak signals | No proof threshold met |
+| `POST_COMPACT_NEEDS_RECHECK` | A detail survived compact only as compressed carry-forward summary and is no longer exact enough to remain a verified fact without recheck | exact payload wording, exact checked scope, or exact prior evidence preserved only indirectly after compact | Between unresolved uncertainty and verified fact; requires recheck when material |
 
 ### 4.1 Evidence Priority Notes
 - For external/product/API facts, `AUTHORITATIVE_EXTERNAL` normally outranks inference or memory.
@@ -114,6 +115,7 @@ Use these claim states so wording matches the actual evidence level.
 | `EVIDENCE_BACKED_INFERENCE` | The claim is a reasoned conclusion from verified facts | at least one relevant observed fact plus clear reasoning | say “based on X and Y, it likely…” or equivalent |
 | `WORKING_HYPOTHESIS` | The claim is plausible but unproven | partial or suggestive evidence only | say “one possibility is…” or equivalent |
 | `UNRESOLVED_UNCERTAINTY` | The evidence is insufficient or conflicting | no stable conclusion yet | say what is still unknown and what would verify it |
+| `POST_COMPACT_NEEDS_RECHECK` | The detail survived compact only as carry-forward summary and is no longer exact enough to remain verified without recheck | compressed carry-forward state without enough surviving exact evidence | say it was carried forward from the compacted state and needs recheck before it can be treated as verified fact |
 | `UNRESOLVED_GOVERNING_BASIS` | Multiple materially different policies/frames remain plausible and current evidence does not settle which one should govern the answer | unresolved basis ambiguity with outcome-changing consequences | ask the user to choose the governing basis before deep branch analysis |
 | `NOT_FOUND_IN_CHECKED_SCOPE` | The assistant did not find the target within the explicitly checked scope | scoped search/read/check without decisive global exhaustiveness | say what was checked and avoid stronger absence language |
 | `STRONG_ABSENCE_CLAIM` | The assistant can justify saying the thing is absent/non-existent in the relevant scope | authoritative source or sufficiently exhaustive relevant search | state absence only if the stronger threshold was actually met |
@@ -129,6 +131,7 @@ Use these claim states so wording matches the actual evidence level.
 | Say the user is wrong/mistaken/confused | same contradiction threshold **plus** clear need for person-directed wording | avoid person labels by default; prefer claim-focused correction |
 | Say something is likely/probable | evidence-backed inference from observed facts | mark it as inference, not fact |
 | Say something may be happening | partial or suggestive evidence only | mark it as hypothesis |
+| Treat a compacted carry-forward detail as still exact verified fact | surviving direct evidence or a still-exact checked contract that preserves that exactness after compact | otherwise downgrade it to post-compact needs-recheck state until reverified |
 | Select one governing basis/policy as the active frame | direct authority, explicit user instruction, or evidence strong enough to settle the basis | otherwise keep the basis unresolved and ask first |
 | Say “I did not find X” | scoped search/read/check actually performed | name the checked scope |
 | Say “X does not exist / is absent” | authoritative evidence or sufficiently exhaustive relevant search | do not use this stronger wording on limited search alone |
@@ -171,6 +174,14 @@ When the answer depends on a governing basis or policy choice:
 - check whether authoritative evidence or explicit user instruction already settles one basis
 - if not settled, keep the basis unresolved and ask the user to choose before deep branch analysis
 - once the basis is selected or settled, continue on that basis and stop carrying forward unchosen branches as if they remain equally active
+
+### 7.3.1 Post-Compact Evidence Protocol
+When continuation happens after compact:
+- identify which details remain directly supported by surviving checked evidence
+- identify which details were only carried forward through summary/compressed context
+- keep summary-carried exact details in a post-compact needs-recheck state unless enough surviving evidence still preserves their exactness
+- recheck exact wording, exact payload details, or exact checked-scope claims before treating them as verified fact when those details materially affect the next move
+- do not let compacted carry-forward state silently upgrade unresolved detail into active truth
 
 ### 7.4 Challenge the Claim, Not the Person
 When disagreement is needed:
@@ -220,6 +231,7 @@ The communication layer should make the claim state legible.
 | `EVIDENCE_BACKED_INFERENCE` | “Based on X and Y, it likely …” |
 | `WORKING_HYPOTHESIS` | “One possibility is …” |
 | `UNRESOLVED_UNCERTAINTY` | “I cannot confirm yet because …” |
+| `POST_COMPACT_NEEDS_RECHECK` | “This detail was carried forward from the compacted state, but I need to recheck the exact evidence before treating it as verified fact.” |
 | `UNRESOLVED_GOVERNING_BASIS` | “The answer changes depending on which policy/frame we use, and current evidence has not settled that yet — choose the governing basis first.” |
 | `NOT_FOUND_IN_CHECKED_SCOPE` | “I checked A/B/C and did not find …” |
 
@@ -239,6 +251,11 @@ The communication layer should make the claim state legible.
 - Mark open questions explicitly.
 - Do not treat inferred architecture trade-offs as already-proven facts.
 - If multiple materially different governing bases remain plausible, ask the user to choose the basis before optimizing deeply inside one branch.
+
+### 10.1.1 Post-Compact Continuation
+- Separate what survived compact as checked fact from what survived only as compressed summary.
+- Recheck exact detail before relying on it as verified fact when that exactness affects the next move.
+- Preserve the active user-selected frame without letting stale assistant framing become active truth.
 
 ### 10.2 Debugging
 - Separate observed symptoms from inferred root causes.

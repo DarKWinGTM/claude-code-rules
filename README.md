@@ -181,9 +181,9 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, governing-basis clarification before deep branch analysis, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real |
 | [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
+| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, destination/runtime, and local references from drifting into each other |
@@ -191,7 +191,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, and required to show explicit change surfaces |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
-| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, and unresolved governing-basis uncertainty handling |
+| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, and post-compact needs-recheck handling for compacted carry-forward exact detail |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
@@ -216,8 +216,8 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact variable-role structures for identifier-heavy explanations, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, a governing-basis clarification boundary before deep multi-branch explanation, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
+| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact variable-role structures for identifier-heavy explanations, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -318,6 +318,7 @@ ls ./.claude/rules/artifact-initiation-control.md
 | `./phase/phase-NNN-NN-<subphase-name>.md` | Governed subphase execution detail with design extraction, optional patch extraction, and review state | Subphase docs |
 | `./patch/<context>.patch.md` or `./<context>.patch.md` | Governed patch/review artifacts outside live phase planning that may feed phase one-way when relevant | Patch docs |
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
+| `./plugin/**` | Optional hook-based extension package for runtime reinforcement that remains subordinate to root RULES authority | Support / extension package |
 
 > **💡 Single Source of Truth Principle:**
 > - Design files (`.design.md`) define active target state
@@ -343,6 +344,7 @@ This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and gov
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Governed phase-detail layer | Multi-stage execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
 | `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters |
+| `plugin/**` | Optional compact-hook companion package | Package-local implementation assets such as `README.md`, `.claude-plugin/`, `hooks/`, and scripts that reinforce root RULES behavior without becoming a second governance stack |
 | `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
 
 ### Startup Artifact Gate
@@ -369,6 +371,51 @@ Change request received
   → Update TODO pending/completed/history
   → Verify links, versions, and consistency
 ```
+
+### Optional compact hook companion
+
+The repository can now also carry an optional plugin companion under:
+- `./plugin/`
+
+Its role is narrow:
+- reinforce compact/post-compact behavior through supported Claude Code hooks
+- remain subordinate to root RULES authority
+- avoid creating a second governance stack under `plugin/`
+
+Run package-local plugin install from `./plugin` when you want the compact hook companion:
+
+```bash
+cd plugin
+claude plugins marketplace add ./ --scope local
+claude plugins install rules-compact-extension@rules-compact-extension --scope local
+```
+
+Detailed meaning:
+1. `cd plugin` moves into the package root so the package-local marketplace manifest is the active source.
+2. `claude plugins marketplace add ./ --scope local` adds the package-local marketplace declared by `plugin/.claude-plugin/marketplace.json`.
+3. `claude plugins install rules-compact-extension@rules-compact-extension --scope local` installs the plugin from that package-local marketplace in local scope.
+4. `/reload-plugins` can then be used to refresh plugin discovery inside the current Claude Code session.
+
+Recommended checks after install:
+
+```bash
+claude plugins list
+```
+
+Optional interactive checks:
+- `/reload-plugins`
+- `/hooks`
+
+Current hook behavior in this package:
+- `SessionStart` with matcher `compact` injects a short re-anchor reminder into the resumed compacted session
+- `PreCompact` stores a raw compact witness file into `${CLAUDE_PLUGIN_DATA}/compact/last-precompact.json`
+- `PostCompact` stores a raw compact witness file into `${CLAUDE_PLUGIN_DATA}/compact/last-postcompact.json`
+
+Boundary reminder:
+- root runtime rules still define compact/post-compact semantics
+- the plugin only reinforces those semantics through hook mechanics
+- plugin installation does not replace the normal `~/.claude/rules/` install path
+- the standard `hooks/hooks.json` is auto-discovered, so `plugin.json` should not duplicate that same path under a `hooks` field unless extra hook files are being layered in
 
 ### Verification Checklist
 
@@ -931,8 +978,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 8.0 |
-  <b>Last Updated</b>: 2026-04-05 |
+  <b>Version</b>: 8.1 |
+  <b>Last Updated</b>: 2026-04-06 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

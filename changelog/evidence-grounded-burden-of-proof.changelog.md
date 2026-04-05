@@ -1,7 +1,7 @@
 # Changelog - Evidence-Grounded Burden of Proof
 
 > **Parent Document:** [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,13 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-04-06 | **[Added post-compact needs-recheck handling to the burden-of-proof model](#version-12)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.1 | 2026-04-05 | **[Added unresolved governing-basis handling to burden-of-proof model](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-12 | **[Created first-class evidence-grounded-burden-of-proof rule chain](#version-10)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Created a new design/runtime/changelog triad that governs evidence taxonomy, claim-state taxonomy, burden-of-proof thresholds, contradiction protocol, scoped negative-evidence semantics, and evidence-grounded communication across planning, debugging, coding, and review | |
 
 ---
 
-<a id="version-11"></a>
+<a id="version-12"></a>
+## Version 1.2: Added post-compact needs-recheck handling to the burden-of-proof model
+
+**Date:** 2026-04-06
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `evidence-grounded-burden-of-proof.md` from v1.1 to v1.2.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.1 to v1.2.
+- Added `POST_COMPACT_NEEDS_RECHECK` as an explicit claim-state for compacted carry-forward details that are no longer exact enough to remain verified without recheck.
+- Added threshold, protocol, and work-mode guidance so compacted summary state no longer silently upgrades compressed-away detail into active truth.
+
+### Summary
+Evidence-grounded-burden-of-proof now treats compacted carry-forward exact detail as a recheck-needed state unless enough surviving evidence still preserves its exactness.
+
+---
+
 ## Version 1.1: Added unresolved governing-basis handling to burden-of-proof model
 
 **Date:** 2026-04-05

@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-04-06 | **[Added compact post-compact re-anchor layout support](#version-113)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.12 | 2026-04-05 | **[Added compact governing-basis clarification layout support](#version-112)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.11 | 2026-04-04 | **[Added compact proposal layout support for future-work ideas](#version-111)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.10 | 2026-04-04 | **[Added variable-role presentation support for identifier-heavy explanations](#version-110)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -34,7 +35,23 @@
 
 ---
 
-<a id="version-112"></a>
+<a id="version-113"></a>
+## Version 1.13: Added compact post-compact re-anchor layout support
+
+**Date:** 2026-04-06
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `answer-presentation.md` from v1.12 to v1.13.
+- Updated `design/answer-presentation.design.md` from v1.12 to v1.13.
+- Added a post-compact re-anchor pattern for compact state-reset presentation.
+- Added a trigger, canonical shape, and anti-pattern coverage so compacted-session continuation can present current objective, carried-forward facts, needs-recheck detail, and next action without replaying long stale history.
+
+### Summary
+Answer-presentation now gives compacted-session continuation a short re-anchor layout so the active state is visible quickly before deeper continuation resumes.
+
+---
+
 ## Version 1.12: Added compact governing-basis clarification layout support
 
 **Date:** 2026-04-05

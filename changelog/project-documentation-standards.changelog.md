@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.12
+> **Current Version:** 2.13
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.13 | 2026-04-06 | **[Added support-layer modeling for the optional RULES plugin extension area](#version-213)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.12 | 2026-04-02 | **[Added portable public onboarding/install guidance](#version-212)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended project-documentation-standards so README and install/onboarding docs now avoid workstation-specific absolute paths as public defaults and explicitly separate source-side guidance from destination/runtime notation | |
 | 2.11 | 2026-04-02 | **[Integrated portable-default documentation guidance](#version-211)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -25,7 +26,24 @@
 
 ---
 
-<a id="version-212"></a>
+<a id="version-213"></a>
+## Version 2.13: Added support-layer modeling for the optional RULES plugin extension area
+
+**Date:** 2026-04-06
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.12 to v2.13.
+- Updated runtime `project-documentation-standards.md` from v2.12 to v2.13.
+- Added `plugin/**` as an optional support / extension-package area in the repository model.
+- Added explicit wording that package-local plugin assets may use `README.md`, `.claude-plugin/`, `hooks/`, `scripts/`, and optional `skills/` or `agents/` without creating a second governance stack.
+- Extended checklist and authority wording so support/extension-package artifacts remain clearly subordinate to the root governance surfaces.
+
+### Summary
+Extended the repository role model so the RULES plugin companion can exist as a clean support / extension package without weakening the rules-first authority system.
+
+---
+
 ## Version 2.12: Added portable public onboarding/install guidance
 
 **Date:** 2026-04-02

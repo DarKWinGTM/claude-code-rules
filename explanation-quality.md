@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.7
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.7
+> **Current Version:** 2.8
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.8
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -158,6 +158,16 @@ Required behavior:
 - once the user chooses a basis, explain the selected branch cleanly instead of continuing to carry all branches forward
 - treat unresolved basis selection as a reason to reduce complexity, not as a reason to display more analysis
 
+### 12.2 Post-Compact Re-Anchor Boundary
+When explanation continues after compact, prefer one short re-anchor over a long replay of the prior conversation.
+
+Required behavior:
+- restate the active objective compactly before deepening the explanation again when compact may have compressed away exact context
+- separate carried-forward facts from needs-recheck details when exact wording, exact payloads, or exact checked scope may no longer be fully preserved
+- preserve the latest user-selected frame instead of reopening stale assistant branches from before compact
+- continue the active selected path after re-anchor rather than rebuilding several old branches
+- treat post-compact continuation as a reason to reduce replay, not a reason to retell the entire history
+
 ### 13) Negative Triggers and Flexibility Boundary
 
 This rule is structure guidance, not a mandatory long-form template.
@@ -245,6 +255,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | Whole-set reasoning | many relevant areas, complete checklist, multiple review axes that should be visible together | full set first, then optional narrowing |
 | Stage progression | current explanation is already sufficient and the real need is the next state or milestone | short answer + clear `What happens next` / `Next stage` progression |
 | Governing-basis ambiguity | multiple plausible policies/frames remain live and the answer changes depending on which one is chosen | short answer + compact clarification gate before deep branch analysis |
+| Post-compact continuation | the session resumed after compaction and the explanation depends on state that may have been compressed | short answer + compact re-anchor + selected-path continuation |
 | Goal-qualified proposal | active work is complete or intentionally bounded, but future ideas could still help | short answer + explicit proposal framing + goal + improvement/result |
 | Abstract reasoning | concept is too general or conclusion-heavy | add one concrete example, a small clarifying analogy, or a direct human-language gloss |
 
@@ -445,7 +456,19 @@ Why this matters: each basis leads to a different downstream answer.
 Choose one and I’ll continue on that basis.
 ```
 
-### Pattern 15: Goal-qualified proposal after bounded completion
+### Pattern 15: Post-compact re-anchor before continued explanation
+
+```markdown
+Short answer: we can continue, but first I need to re-anchor the active state after compact.
+
+Post-compact re-anchor:
+- Current objective: continue the active implementation slice already chosen by the user
+- Carried-forward facts: the governing basis is already selected and the touched owner set is unchanged
+- Needs recheck: any exact payload wording or exact previously checked evidence that may have been compressed away
+- Next action: continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact
+```
+
+### Pattern 16: Goal-qualified proposal after bounded completion
 
 ```markdown
 The active cleanup wave is done.
@@ -484,6 +507,7 @@ Success condition
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use explicit grouped scope-boundary blocks |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
 | explaining several mutually exclusive policy/frame branches before the governing basis is chosen | the answer becomes complex in ways that may become irrelevant once the user picks the basis | ask one short clarification first, then deepen only the selected branch |
+| post-compact explanation replays the whole prior conversation before re-anchoring | the answer becomes long, stale, and may revive compressed-away detail as if it were still exact | use one short re-anchor, separate carried-forward facts from needs-recheck detail, then continue the selected active path |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
 | long repeated conclusion at the end | adds length without helping the decision | synthesize the conclusion once and move on |
 | explanation sounds scripted or over-signposted | reduces naturalness and trust | keep transitions functional and explanation colleague-like |

@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.9
+> **Current Version:** 2.10
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.10 | 2026-04-06 | **[Added post-compact re-anchor wording for compacted-session continuation](#version-210)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.9 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-29)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.8 | 2026-04-04 | **[Added duplicate-looking team-agent reporting honesty](#version-28)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.7 | 2026-04-04 | **[Added goal-qualified proposal wording for future-work ideas](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -50,7 +51,23 @@
 
 ---
 
-<a id="version-29"></a>
+<a id="version-210"></a>
+## Version 2.10: Added post-compact re-anchor wording for compacted-session continuation
+
+**Date:** 2026-04-06
+**Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+
+### Changes
+- Updated `accurate-communication.md` from v2.9 to v2.10.
+- Updated `design/accurate-communication.design.md` from v2.9 to v2.10.
+- Added post-compact re-anchor guidance so compacted sessions now re-anchor to the active objective before continuing.
+- Added decision-model, trigger, example, and anti-pattern coverage so compressed-away details are no longer treated like exact remembered truth by default.
+
+### Summary
+Accurate-communication now tells the assistant to re-anchor after compact, preserve the active frame, and separate carried-forward facts from details that need recheck before continuing.
+
+---
+
 ## Version 2.9: Added governing-basis clarification before deep branch analysis
 
 **Date:** 2026-04-05
