@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 8.9
+> **Current Version:** 9.0
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,12 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.0 | 2026-04-08 | **[Added closed-topic presentation guidance and narrowed startup patch posture](#version-90)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 8.9 | 2026-04-08 | **[Narrowed startup patch posture for greenfield baseline formation](#version-89)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
-| | | - Updated `design/artifact-initiation-control.design.md` from v1.0 to v1.1 and runtime `artifact-initiation-control.md` from v1.0 to v1.1 so startup patch gating now defaults to `not required` during greenfield / baseline-formation work unless a real existing review surface or explicit user request exists | |
-| | | - Updated `design/project-documentation-standards.design.md` from v2.13 to v2.14 and runtime `project-documentation-standards.md` from v2.13 to v2.14 so the repository role model and startup decision flow now treat patch as conditional on an existing governed surface rather than a default startup peer | |
-| | | - Updated `design/document-patch-control.design.md` from v2.4 to v2.5 and runtime `document-patch-control.md` from v2.4 to v2.5 so patch semantics now explicitly assume an identifiable current/before surface and reject patch as the default startup artifact for baseline formation | |
-| | | - Updated master design, README, TODO, and per-chain changelogs to reflect the narrower startup patch posture, while keeping patch fully valid for real before/after review artifacts | |
-| | | Summary: The RULES repo now distinguishes startup baseline formation from true reviewable deltas more cleanly, so new-project formation defaults to design/changelog/TODO/phase posture first and patch only enters when a real existing before/after surface or explicit user request justifies it | |
 | 8.8 | 2026-04-08 | **[Tightened compact review to reference-first directive form](#version-88)** | 4e792d4b-8876-439b-8c07-2c5d4b04af3a |
 | 8.7 | 2026-04-08 | **[Turned compact SessionStart into an active review trigger](#version-87)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 8.6 | 2026-04-07 | **[Added reviewRoot pointers to compact navigator messages](#version-86)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -27,6 +23,43 @@
 | 8.0 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-80)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.9 | 2026-04-04 | **[Added team-agent dedup and stale-presence boundaries](#version-79)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.8 | 2026-04-04 | **[Added goal-qualified proposal boundaries across the communication-owner set](#version-78)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+
+---
+
+<a id="version-90"></a>
+## Version 9.0: Added closed-topic presentation guidance and narrowed startup patch posture
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication.md` from v2.10 to v2.11 and `design/accurate-communication.design.md` from v2.10 to v2.11 so resolved topics may remain available as reasoning context without being repeated in active summaries by default.
+- Updated `artifact-initiation-control` from v1.0 to v1.1 so patch is non-default during greenfield / baseline-formation startup unless a real existing review surface or explicit user request exists.
+- Updated `project-documentation-standards` from v2.13 to v2.14 so repository startup decisioning now treats patch as conditional on an existing governed surface rather than a default startup peer.
+- Updated `document-patch-control` from v2.4 to v2.5 so patch explicitly assumes an identifiable current/before surface and rejects patch as the default startup artifact for baseline formation.
+- Updated `design/design.md`, `README.md`, and `TODO.md`, then reinstalled the touched runtime rules into `~/.claude/rules/`.
+
+### Summary
+The RULES repository now keeps active summaries focused on current issues while also keeping patch non-default during greenfield baseline formation.
+
+---
+
+<a id="version-89"></a>
+## Version 8.9: Narrowed startup patch posture for greenfield baseline formation
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/artifact-initiation-control.design.md` from v1.0 to v1.1 and runtime `artifact-initiation-control.md` from v1.0 to v1.1 so startup patch gating now defaults to `not required` during greenfield / baseline-formation work unless a real existing review surface or explicit user request exists.
+- Updated `design/project-documentation-standards.design.md` from v2.13 to v2.14 and runtime `project-documentation-standards.md` from v2.13 to v2.14 so the repository role model and startup decision flow now treat patch as conditional on an existing governed surface rather than a default startup peer.
+- Updated `design/document-patch-control.design.md` from v2.4 to v2.5 and runtime `document-patch-control.md` from v2.4 to v2.5 so patch semantics now explicitly assume an identifiable current/before surface and reject patch as the default startup artifact for baseline formation.
+- Updated master design, README, TODO, and per-chain changelogs to reflect the narrower startup patch posture, while keeping patch fully valid for real before/after review artifacts.
+
+### Summary
+The RULES repo now distinguishes startup baseline formation from true reviewable deltas more cleanly, so new-project formation defaults to design/changelog/TODO/phase posture first and patch only enters when a real existing before/after surface or explicit user request justifies it.
+
+---
 | 7.7 | 2026-04-04 | **[Added identifier-explanation guidance across the communication-owner trio](#version-77)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.6 | 2026-04-03 | **[Added recommendation-plus-reason guidance for multi-option next steps](#version-76)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | - Updated `accurate-communication` to v2.5 so multi-path next-step guidance now names the recommended option first and explains briefly why it should happen first | |
@@ -106,7 +139,7 @@
 
 ---
 
-<a id="version-86"></a>
+<a id="version-88"></a>
 ## Version 8.8: Tightened compact review to reference-first directive form
 
 **Date:** 2026-04-08
@@ -126,6 +159,7 @@ The RULES compact plugin now behaves more safely after compact by keeping review
 
 ---
 
+<a id="version-87"></a>
 ## Version 8.7: Turned compact SessionStart into an active review trigger
 
 **Date:** 2026-04-08
@@ -147,6 +181,7 @@ The RULES compact plugin now behaves like an active review trigger at compact re
 
 ---
 
+<a id="version-86"></a>
 ## Version 8.6: Added reviewRoot pointers to compact navigator messages
 
 **Date:** 2026-04-07
@@ -646,3 +681,55 @@ Completed the startup-governance rollout so meaningful governed work now resolve
 
 ### Summary
 Completed the repository-level patch-role correction so the active RULES model now teaches one explicit patch concept: governed before/after artifacts in `patch/` or at repository root.
+
+---
+
+<a id="version-65"></a>
+## Version 6.5: Created natural-professional-communication rule chain and synchronized communication-owner refinements
+
+**Date:** 2026-03-27
+**Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+
+### Changes
+- Created `design/natural-professional-communication.design.md`, `natural-professional-communication.md`, and `changelog/natural-professional-communication.changelog.md` as a new first-class communication-style doctrine chain.
+- Created `phase/SUMMARY.md` and `phase/phase-001-*` to `phase/phase-004-*` execution artifacts for the RULES development rollout of the new chain and related refinement wave.
+- Updated `accurate-communication` to v2.2, `explanation-quality` to v2.2, `answer-presentation` to v1.6, `authority-and-scope` to v1.4, and `anti-sycophancy` to v1.4 with calmer, more natural, non-robotic, non-character-driven professional communication guidance.
+- Updated `design/design.md` and `README.md` from 30 to 31 active runtime rules, corrected the canonical install set from the stale 29-rule wording, and normalized lingering `phase-010-*` README references to `phase-001-*`.
+- Updated `TODO.md` to record rollout completion and re-synchronized touched runtime rules into `~/.claude/rules/` with parity verification.
+
+### Summary
+Added one explicit semantic authority for natural professional communication and aligned the wording, explanation, presentation, authority, and disagreement chains so the system now defaults to calmer, more human-readable, non-robotic professional communication.
+
+---
+
+<a id="version-64"></a>
+## Version 6.4: Changed default phase numbering to 001/002/003 across phase-implementation governance
+
+**Date:** 2026-03-17
+**Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+
+### Changes
+- Updated `phase-implementation` design/runtime/changelog to v2.2 with zero-padded contiguous child-phase numbering (`001/002/003`) instead of sparse `010/020/030`.
+- Updated `phase-implementation-template.md` examples and helper guidance to the new numbering scheme.
+- Updated `design/design.md` and `README.md` wording to reflect the new default numbering policy.
+- Updated `TODO.md` completion/history tracking for the phase-numbering patch wave and synced the installed runtime copy.
+
+### Summary
+Refined the phase-planning model so default phase numbering is now human-readable and naturally sequential (`001/002/003`) rather than sparse by default.
+
+---
+
+<a id="version-63"></a>
+## Version 6.3: Created first-class tactical-strategic-programming rule chain and synchronized master governance
+
+**Date:** 2026-03-17
+**Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+
+### Changes
+- Created `design/tactical-strategic-programming.design.md`, `tactical-strategic-programming.md`, and `changelog/tactical-strategic-programming.changelog.md` as a new first-class doctrine chain.
+- Created `phase/SUMMARY.md` and `phase/phase-001-*` to `phase/phase-003-*` execution artifacts for the RULES development rollout of the new chain.
+- Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model.
+- Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md`.
+
+### Summary
+Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift.

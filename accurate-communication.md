@@ -1,8 +1,8 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.10
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.10
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.11
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.11
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
 ---
@@ -170,6 +170,8 @@ Required guidance:
 
 - prefer synthesis over repetition, especially at the end of analytical or implementation-heavy responses
 - keep final summaries concise, high-signal, and decision-oriented
+- keep already-resolved topics available as reasoning context when they still help explain the active issue, but do not resurface them in the active summary unless they materially affect the current decision, blocker, or contrast
+- when older fixed work is mentioned for context, label it clearly as historical or previously resolved rather than presenting it like an active current issue
 - for troubleshooting, implementation-progress, or verification updates, lead with a compact diagnostic snapshot before deeper explanation
 - in a diagnostic snapshot, show what was checked, what is currently true, what remains pending, and the immediate next action
 - do not impose a rigid sentence cap; the summary should be only as long as needed to preserve meaning
@@ -182,6 +184,17 @@ Required guidance:
 - if the task is already complete and no real next action is needed, do not invent extra options
 - offering options is guidance, not a mandatory ending pattern and not a default mid-process pause
 - recommendation wording should remain evidence-backed rather than preference-shaped or arbitrary
+
+### 8.0 Closed-Topic Presentation Guidance
+
+Previously resolved or already-fixed topics may still remain relevant inside the assistant’s reasoning context, but they should not dominate the visible response once the active issue has moved on.
+
+Required guidance:
+- keep resolved topics available for reasoning when they still materially inform the current issue
+- do not pull resolved topics back into the active summary unless they materially affect the current decision surface, blocker state, or historical contrast
+- default the visible summary to the still-active/open issues rather than mixing active and already-closed items together
+- if historical context is necessary, label it explicitly as historical / previously resolved rather than current
+- avoid repeating the same already-closed issue across later summaries just because it is related to the new issue
 
 ### 8.1 Goal-Qualified Proposal Guidance
 

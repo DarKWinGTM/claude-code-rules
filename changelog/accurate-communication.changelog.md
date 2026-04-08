@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.10
+> **Current Version:** 2.11
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.11 | 2026-04-08 | **[Added closed-topic presentation guidance for active summaries](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-06 | **[Added post-compact re-anchor wording for compacted-session continuation](#version-210)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.9 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-29)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.8 | 2026-04-04 | **[Added duplicate-looking team-agent reporting honesty](#version-28)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -48,6 +49,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-211"></a>
+## Version 2.11: Added closed-topic presentation guidance for active summaries
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication.md` from v2.10 to v2.11.
+- Updated `design/accurate-communication.design.md` from v2.10 to v2.11.
+- Added a closed-topic presentation rule so resolved issues may remain available as reasoning context without being repeated in active summaries by default.
+- Added wording guidance that historical/resolved items should be labeled explicitly when they are still needed for bounded contrast or causal explanation.
+- Tightened summary behavior so current visible summaries focus on still-active issues instead of mixing active and already-closed topics together.
+
+### Summary
+Accurate-communication now lets resolved topics remain in reasoning context while keeping visible summaries focused on the current active issue set.
 
 ---
 

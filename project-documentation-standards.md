@@ -159,8 +159,6 @@ Required guidance:
 - [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md` when patch is actually required
 - [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
-- [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
-- [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] Public onboarding/install guidance avoids workstation-specific absolute paths as public defaults
 - [ ] Source-side guidance and destination/runtime guidance are clearly distinguished when both appear
