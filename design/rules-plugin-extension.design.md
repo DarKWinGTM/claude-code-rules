@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
+> **Current Version:** 1.8
+> **Session:** 4e792d4b-8876-439b-8c07-2c5d4b04af3a (2026-04-08)
 
 ---
 
@@ -26,11 +26,13 @@ The RULES repository now needs two things at once:
 - stronger post-compact behavior in the root rule owners
 - a reusable hook package that can reinforce that behavior in runtime
 
-Without an explicit model, the repository risks two opposite failures:
+Without an explicit model, the repository risks several failures:
 - plugin-first drift, where the plugin starts to look like the new authority instead of an extension
 - duplicate governance drift, where `plugin/` grows its own design/phase/changelog/TODO stack and competes with the root repository authority
+- singleton-state drift, where one compact file or one proof file quietly mixes several sessions together
+- file-bloat drift, where carrying too much context into one file becomes the new hidden failure mode
 
-This design closes that gap by making the plugin package explicit while keeping its authority boundaries narrow.
+This design closes those gaps by keeping the package narrow, session-scoped, and bounded.
 
 ---
 
@@ -58,14 +60,14 @@ Optional surfaces only when truly needed:
 - `plugin/skills/` = operator-facing helper front door
 - `plugin/agents/` = companion runtime agent surface
 
-### 3.3 Current first-pass scope
+### 3.3 Current active scope
 
-The first slice should stay hook-first and narrow:
-- `SessionStart` with matcher `compact` for post-compact re-anchor context injection
-- `PreCompact` for compact-event witness recording
-- `PostCompact` for compact-event witness recording
+The active slice stays hook-first and narrow:
+- `SessionStart` with matcher `compact` for post-compact re-anchor injection plus one short compact-resume signal
+- `PreCompact` for session-scoped handoff/context extraction
+- `PostCompact` for prune-only cleanup
 
-This first slice should not create a broad agent fleet or unrelated plugin capability surface.
+This slice should not create a broad agent fleet or unrelated plugin capability surface.
 
 ---
 
@@ -86,20 +88,27 @@ Root RULES authority remains in:
 The plugin may:
 - reinforce compact/post-compact behavior through supported hooks
 - inject bounded post-compact reminder context where Claude Code supports it
-- record compact lifecycle witness files into `${CLAUDE_PLUGIN_DATA}`
+- emit one short compact-resume signal through the user-visible `systemMessage` SessionStart hook output field
+- keep per-session compact state in `${CLAUDE_PLUGIN_DATA}`
+- keep bounded SessionStart proof files so real compact-resume execution can be verified without turning the package into a history store
+- prune expired, malformed, consumed, or legacy compact-state leftovers opportunistically
 
 The plugin may not:
 - redefine compact semantics independently of root rules
 - replace root rules installation
 - create a second design/changelog/phase/TODO authority tree under `plugin/`
+- act like a compact witness or audit store
+- merge multiple sessions’ carry-forward content into one giant active file
 
 ### 4.3 Non-goals
 
-This first extension design does not aim to:
+This extension design does not aim to:
 - convert the RULES system into a plugin-first architecture
 - create a new runtime rule chain for plugin packaging itself
 - make managed-policy assumptions that plugin hooks always run
 - bundle unrelated agents/skills just because the package format allows them
+- preserve raw compact payload history as part of the active runtime contract
+- store a full transcript copy per session in plugin state
 
 ---
 
@@ -114,7 +123,7 @@ Package-local install commands should run from:
 
 Preferred package-local activation:
 - `claude plugins marketplace add ./ --scope local`
-- `claude plugins install rules-compact-extension@rules-compact-extension --scope local`
+- `claude plugins install rules-compact-extension@darkwingtm --scope local`
 
 ### 5.4 Detailed package-local install / runtime notes
 
@@ -122,20 +131,73 @@ The public install path should be documented from `<repo-root>/plugin`.
 
 Required guidance:
 - package-local install commands should show `claude plugins marketplace add ./ --scope local`
-- install commands should use the explicit installed identifier form `rules-compact-extension@rules-compact-extension`
+- install commands should use the explicit installed identifier form `rules-compact-extension@darkwingtm`
 - docs should explain that `hooks/hooks.json` is auto-discovered by Claude Code when the plugin is enabled
 - docs should explain that `plugin.json` must not duplicate that same default hook path under a `hooks` field unless additional non-default hook files are being layered in
 - docs should show the practical runtime behavior of `SessionStart` / `PreCompact` / `PostCompact`
-- docs should identify the expected witness files under `${CLAUDE_PLUGIN_DATA}/compact/`
+- docs should identify the active session-scoped compact state layout
+- docs should explain that the package no longer uses singleton `last-*.json` witness files as the active contract
 
-### 5.5 Current first-pass hook mechanics
+### 5.5 Current active hook mechanics
 
-The current first-pass mechanics are:
-- `SessionStart` with matcher `compact` injects a short post-compact re-anchor reminder into the resumed session
-- `PreCompact` records the raw event payload to `${CLAUDE_PLUGIN_DATA}/compact/last-precompact.json`
-- `PostCompact` records the raw event payload to `${CLAUDE_PLUGIN_DATA}/compact/last-postcompact.json`
+The current active mechanics are:
+- `PreCompact` prunes stale state and creates/refreshes one session-scoped compact state directory keyed by source `session_id`
+- `SessionStart` with matcher `compact` emits one short navigator-style compact-resume summary through `systemMessage`, now explicitly marked as `review-required`, including `reviewRoot=` plus `review=` pointers into stored session state
+- success-path `hookSpecificOutput.additionalContext` stays reference-first and bounded: one short review-required instruction, the exact review directory plus `precompact-context.json`, `carry-forward-selected.json`, and `sessionstart-proof.json`, one short objective-status line, and one short discipline reminder against replay-based continuation
+- fallback SessionStart behavior remains fail-closed, marks review as required, points Claude to `index.json`, and re-anchors from verified local context when exact session routing does not resolve
+- `PostCompact` is prune-only and no longer records raw witness payloads
+- pending state and proof state both expire after 1 hour and are pruned opportunistically by later hook runs
+- memsearch remains a later assist-layer boundary rather than an active runtime dependency in this wave
 
-This keeps the package small and directly aligned with the compact lifecycle instead of widening into unrelated automation.
+The active layout under `${CLAUDE_PLUGIN_DATA}/compact/` is:
+
+```text
+index.json
+sessions/
+  <source-session-id>/
+    pending.json
+    precompact-context.json
+    carry-forward-selected.json
+    sessionstart-proof.json
+```
+
+### 5.6 Carry-forward data model
+
+The plugin should treat pre-compact source state as the real source of carry-forward selection.
+
+That means:
+- `precompact-context.json` is the bounded extracted source-of-truth file
+- `carry-forward-selected.json` is the derived selected injection payload
+- `index.json` is routing/cleanup metadata only
+- `sessionstart-proof.json` is proof-only
+- `sessionstart-directive.json` is bounded directive proof for what review instruction was emitted at SessionStart
+
+Do not store:
+- one giant all-session JSON blob
+- full transcript copies inside plugin state
+- raw compact summary as the primary source of carry-forward truth
+
+Current bounded limitation:
+- transcript extraction may still be noisy when the latest user-visible transcript entries are dominated by tool/skill payload text rather than a clean natural-language objective
+- in that case the plugin now fails closed on objective extraction and keeps a `needsRecheck` marker instead of injecting a guessed objective
+
+### 5.7 SessionStart routing rule
+
+The plugin should route conservatively:
+1. read only `index.json`
+2. require exact `session_id` equality between the compact `SessionStart` event and one pending source session
+3. if that exact match exists, inject only that session’s `carry-forward-selected.json`
+4. if no exact match exists, inject only a bounded reference-first review directive pointing to `index.json` and record a non-success proof state
+5. never merge multiple sessions together
+6. do not use `additionalContext` as a hidden context-restore channel; keep it instruction + locator + bounded status only
+
+The strongest currently verified key is:
+- `session_id`
+
+Transcript location is derivable from that key as:
+- `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/<session-id>.jsonl`
+
+---
 
 ## 6) Verification Targets
 
@@ -145,6 +207,9 @@ The extension design is successful when:
 - no root docs imply plugin authority replaces root runtime rules
 - plugin README install/use guidance is expressed from `<repo-root>/plugin`
 - plugin metadata and hook config are coherent
+- the active runtime contract uses a small live index plus per-session compact state directories rather than singleton mixed files
+- SessionStart emits a bounded reference-first review directive for only one resolved session and does not replay old context text aggressively
+- ambiguous multi-session routing fails closed instead of guessing
 - plugin files stay implementation-only while root docs remain governance-only
 
 ---

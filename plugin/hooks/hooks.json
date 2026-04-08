@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/sessionstart-compact-reanchor.sh",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/sessionstart-compact-consume-handoff.sh",
             "timeout": 30
           }
         ]
@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/precompact-record.sh",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/precompact-create-handoff.sh",
             "timeout": 30
           }
         ]
@@ -31,7 +31,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/postcompact-record.sh",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/postcompact-prune-handoff.sh",
             "timeout": 30
           }
         ]

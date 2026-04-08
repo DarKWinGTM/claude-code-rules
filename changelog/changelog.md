@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 8.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 8.9
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 
@@ -10,6 +10,19 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 8.9 | 2026-04-08 | **[Narrowed startup patch posture for greenfield baseline formation](#version-89)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| | | - Updated `design/artifact-initiation-control.design.md` from v1.0 to v1.1 and runtime `artifact-initiation-control.md` from v1.0 to v1.1 so startup patch gating now defaults to `not required` during greenfield / baseline-formation work unless a real existing review surface or explicit user request exists | |
+| | | - Updated `design/project-documentation-standards.design.md` from v2.13 to v2.14 and runtime `project-documentation-standards.md` from v2.13 to v2.14 so the repository role model and startup decision flow now treat patch as conditional on an existing governed surface rather than a default startup peer | |
+| | | - Updated `design/document-patch-control.design.md` from v2.4 to v2.5 and runtime `document-patch-control.md` from v2.4 to v2.5 so patch semantics now explicitly assume an identifiable current/before surface and reject patch as the default startup artifact for baseline formation | |
+| | | - Updated master design, README, TODO, and per-chain changelogs to reflect the narrower startup patch posture, while keeping patch fully valid for real before/after review artifacts | |
+| | | Summary: The RULES repo now distinguishes startup baseline formation from true reviewable deltas more cleanly, so new-project formation defaults to design/changelog/TODO/phase posture first and patch only enters when a real existing before/after surface or explicit user request justifies it | |
+| 8.8 | 2026-04-08 | **[Tightened compact review to reference-first directive form](#version-88)** | 4e792d4b-8876-439b-8c07-2c5d4b04af3a |
+| 8.7 | 2026-04-08 | **[Turned compact SessionStart into an active review trigger](#version-87)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 8.6 | 2026-04-07 | **[Added reviewRoot pointers to compact navigator messages](#version-86)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 8.5 | 2026-04-07 | **[Tightened compact SessionStart to exact session-id routing](#version-85)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 8.4 | 2026-04-07 | **[Added navigator review pointers to compact trigger messages](#version-84)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 8.3 | 2026-04-06 | **[Replaced singleton compact files with session-scoped carry-forward state](#version-83)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 8.2 | 2026-04-06 | **[Replaced compact witness files with an ephemeral handoff lifecycle](#version-82)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 8.1 | 2026-04-06 | **[Added compact/post-compact re-anchor governance and an optional plugin companion extension](#version-81)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 8.0 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-80)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.9 | 2026-04-04 | **[Added team-agent dedup and stale-presence boundaries](#version-79)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -90,6 +103,148 @@
 | | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
 | | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
 | | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+---
+
+<a id="version-86"></a>
+## Version 8.8: Tightened compact review to reference-first directive form
+
+**Date:** 2026-04-08
+**Session:** 4e792d4b-8876-439b-8c07-2c5d4b04af3a
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.7 to v1.8.
+- Updated source/bridge package metadata/docs from v1.2.5 to v1.2.6.
+- Tightened compact `SessionStart` so `systemMessage` now says `review-required` explicitly.
+- Reduced `hookSpecificOutput.additionalContext` to bounded instruction + locator + status only, removing aggressive carried-forward summary replay.
+- Added `sessionstart-directive.json` as bounded directive proof and exposed `hasDirective` in the compact index.
+- Added `patch/compact-reference-first-review-trigger-refinement.patch.md` plus `phase/phase-021-01-*` through `phase/phase-021-03-*` for the bounded Wave 021 rollout.
+- Updated `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the new reference-first compact review model is visible in master governance surfaces.
+
+### Summary
+The RULES compact plugin now behaves more safely after compact by keeping review guidance reference-first rather than replaying old context back into Claude.
+
+---
+
+## Version 8.7: Turned compact SessionStart into an active review trigger
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.6 to v1.7.
+- Updated `plugin/README.md` from v1.2.3 to v1.2.5.
+- Updated `changelog/rules-plugin-extension.changelog.md` from v1.7 to v1.8.
+- Upgraded compact `SessionStart` behavior so `hookSpecificOutput.additionalContext` now explicitly tells Claude to review stored session data before continuing.
+- Success-path additionalContext now names the exact per-session review directory plus `precompact-context.json`, `carry-forward-selected.json`, and `sessionstart-proof.json`.
+- Fallback additionalContext now points Claude to `index.json` and tells it to re-anchor from verified local context before continuing.
+- Added `patch/compact-active-review-trigger-and-memsearch-assist-refinement.patch.md` plus `phase/phase-020-01-*` through `phase/phase-020-03-*` for the bounded Wave 020 rollout.
+- Updated source and shared-bridge package metadata/docs to v1.2.5 so the installed runtime can pick up the active review-trigger refinement cleanly.
+- Updated `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the Wave 020 review-trigger refinement is visible in master governance surfaces.
+
+### Summary
+The RULES compact plugin now behaves like an active review trigger at compact resume by explicitly directing Claude to review the stored exact-session files before continuing, while preserving the short visible navigator line.
+
+---
+
+## Version 8.6: Added reviewRoot pointers to compact navigator messages
+
+**Date:** 2026-04-07
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.5 to v1.6.
+- Updated source/bridge package metadata and docs from v1.2.2 to v1.2.3 so the installed runtime can pick up the reviewRoot navigator refinement cleanly.
+- Extended compact `SessionStart` trigger messages so success-path summaries now include `reviewRoot=<compact-root>` in addition to `review=sessions/<source-session-id>/`.
+- Extended fallback trigger messages so they now include `reviewRoot=<compact-root>` in addition to `review=index.json`.
+- Updated package docs so the operator can reconstruct the full stored review location directly from the hook message.
+
+### Summary
+The RULES compact plugin now shows both the compact data root and the relative review target in the visible navigator line, so the stored review location is easier to follow directly from the hook message.
+
+---
+
+<a id="version-85"></a>
+## Version 8.5: Tightened compact SessionStart to exact session-id routing
+
+**Date:** 2026-04-07
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.4 to v1.5.
+- Updated `plugin/README.md` from v1.2.1 to v1.2.2.
+- Updated `changelog/rules-plugin-extension.changelog.md` from v1.5 to v1.6.
+- Tightened compact `SessionStart` routing so it now requires exact `session_id` equality with one pending source session instead of consuming by looser pending-set heuristics.
+- Updated success-path proof reasoning to `exact_session_id_match`.
+- Updated fallback trigger wording to `no exact pending session match`.
+- Updated source and shared-bridge plugin package metadata from v1.2.1 to v1.2.2.
+
+### Summary
+The RULES compact plugin now uses exact compact-session id matching as the SessionStart routing rule, which aligns the resumed session with its own stored state more deterministically.
+
+---
+
+<a id="version-84"></a>
+## Version 8.4: Added navigator review pointers to compact trigger messages
+
+**Date:** 2026-04-07
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `plugin/README.md` from v1.2.0 to v1.2.1.
+- Updated source and shared-bridge plugin package metadata from v1.2.0 to v1.2.1.
+- Upgraded compact `SessionStart` trigger messages so success-path summaries now include `review=sessions/<source-session-id>/`.
+- Upgraded ambiguous fallback trigger messages so they now include `review=index.json`.
+- Kept the session-scoped carry-forward model unchanged while making stored review locations easier to discover directly from the hook message.
+
+### Summary
+The RULES compact plugin now surfaces a clearer navigator line in the hook trigger message so the operator can jump directly from the visible compact message to the stored session review state.
+
+---
+
+<a id="version-83"></a>
+## Version 8.3: Replaced singleton compact files with session-scoped carry-forward state
+
+**Date:** 2026-04-06
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.3 to v1.4.
+- Updated `plugin/README.md` from v1.1.1 to v1.2.0.
+- Updated `changelog/rules-plugin-extension.changelog.md` from v1.3 to v1.4.
+- Replaced singleton compact plugin files with a session-scoped state layout using `index.json` plus per-session directories for `pending.json`, `precompact-context.json`, `carry-forward-selected.json`, and `sessionstart-proof.json`.
+- Changed `PreCompact` behavior so it now extracts bounded pre-compact session context and derives selected carry-forward payloads per source session.
+- Recorded the current bounded limitation that transcript-based objective extraction is still heuristic/noisy when recent transcript entries are dominated by tool/skill payload text, but now fails closed instead of injecting a guessed objective.
+- Changed compact `SessionStart` behavior so it now resolves exactly one pending source session, injects only that session’s selected carry-forward content, emits a navigator-style trigger message through `systemMessage` with a short review pointer, and fails closed on ambiguity instead of consuming singleton mixed state.
+- Changed cleanup behavior so expired session directories are pruned and the live compact index is rewritten after cleanup.
+- Updated the shared `rules-compact-extension@darkwingtm` bridge package so the maintained runtime install path matches the RULES source package behavior.
+- Added `patch/compact-session-scoped-carry-forward-state-refinement.patch.md` plus `phase/phase-019-01-replace-single-slot-compact-state-with-session-scoped-layout.md` and `phase/phase-019-02-sync-docs-and-verify-session-scoped-compact-carry-forward.md` for the bounded Wave 019 rollout.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the new session-scoped compact carry-forward model is visible in master governance surfaces.
+
+### Summary
+The optional RULES plugin companion now stores compact carry-forward state per source session instead of in singleton global files, which removes cross-session collision as the default active model and keeps injection bounded to one resolved session at a time.
+
+---
+
+<a id="version-82"></a>
+## Version 8.2: Replaced compact witness files with an ephemeral handoff lifecycle
+
+**Date:** 2026-04-06
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.1 to v1.3.
+- Updated `plugin/README.md` from v1.0.1 to v1.1.1.
+- Updated `changelog/rules-plugin-extension.changelog.md` from v1.1 to v1.3.
+- Replaced the plugin’s latest-only witness model with one ephemeral handoff file under `${CLAUDE_PLUGIN_DATA}/compact/active-handoff.json`.
+- Added `plugin/scripts/compact-handoff-common.sh` plus renamed lifecycle scripts so `PreCompact` now creates handoff state, compact `SessionStart` consumes/deletes it, emits the compact-resume line through user-visible `systemMessage` with a `[rules-compact-extension]` prefix, keeps the re-anchor reminder in `hookSpecificOutput.additionalContext` without duplicating the signal line there, writes one bounded `last-sessionstart-consumed.json` proof file, and `PostCompact` is prune-only.
+- Updated `plugin/hooks/hooks.json` so the active package behavior now uses the handoff lifecycle instead of `last-*.json` witness recording.
+- Updated plugin package metadata in `plugin/.claude-plugin/plugin.json` and `plugin/.claude-plugin/marketplace.json` to v1.1.1 and renamed the package-local marketplace to `darkwingtm`.
+- Added `patch/compact-ephemeral-handoff-lifecycle-refinement.patch.md` plus `phase/phase-018-01-replace-latest-witness-model-with-ephemeral-handoff.md` and `phase/phase-018-02-sync-plugin-docs-and-verify-compact-handoff-lifecycle.md` for the bounded Wave 018 rollout.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the new ephemeral handoff lifecycle is visible in master governance surfaces.
+
+### Summary
+The optional RULES plugin companion now behaves like a short-lived compact handoff cache instead of a latest-witness store, which reduces stale compact-state drift while keeping the rules-first post-compact re-anchor model unchanged.
 
 ---
 

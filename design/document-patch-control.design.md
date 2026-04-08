@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 2.4
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
+> **Current Version:** 2.5
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
 
@@ -47,6 +47,10 @@ The chain must explicitly reject these misreadings:
 - patch as phase summary/index
 - patch as prose-only recap with no explicit change surface
 - patch as generic plan text that leaves before/after state implicit
+- patch as the default startup artifact for greenfield / baseline-formation work when no stable before-state exists yet
+
+A patch normally assumes an identifiable current/before surface.
+For greenfield startup, first-time scaffolding, baseline formation, or first-pass terminology/contract establishment, patch is usually not the default governing artifact unless the user explicitly asks for it or a real pre-existing review surface already exists.
 
 ### 3.2 Allowed locations
 Governed patch files must use a self-identifying `<context>.patch.md` filename and may live in one of these places:

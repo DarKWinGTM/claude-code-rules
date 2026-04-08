@@ -1,6 +1,6 @@
 {
   "name": "rules-compact-extension",
-  "version": "1.0.1",
+  "version": "1.2.6",
   "description": "Optional hook-based compact companion for the Claude Code RULES system.",
   "author": {
     "name": "DarKWinGTM"

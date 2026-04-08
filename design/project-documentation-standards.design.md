@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.13
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
+> **Current Version:** 2.14
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
 
@@ -81,6 +81,7 @@ The active phase identity model uses:
 `patch/<context>.patch.md` or root `<context>.patch.md` is a governed patch/review artifact layer.
 It is not the live phase-plan namespace.
 A patch is a self-identifying before/after artifact whose job is to show what will change.
+It is not the default startup artifact for greenfield / baseline-formation work when no stable before-state exists yet.
 
 ### 3.9 Startup Artifact-Initiation Role
 `artifact-initiation-control.md` is the semantic owner of startup artifact posture.
@@ -119,7 +120,7 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 | `TODO.md` | Work tracking needed | Execution tracking | Execution layer |
 | `phase/SUMMARY.md` | Phased execution planning is required | Governed summary/index for live phase planning | Governed phase summary layer |
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail exists | Major/subphase execution detail | Governed phase-detail layer |
-| `patch/<context>.patch.md` or root `<context>.patch.md` | Patch/review artifact is required | Governed patch/review artifact outside the live phase workspace | Governed patch layer |
+| `patch/<context>.patch.md` or root `<context>.patch.md` | A separate before/after review artifact for an existing governed surface is required | Governed patch/review artifact outside the live phase workspace | Governed patch layer |
 | `artifact-initiation-control.md` | Startup artifact posture must be standardized | First-class startup-governance behavior | Governed runtime rule |
 | `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
 | `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template | Non-governed helper artifact |
@@ -182,9 +183,11 @@ Need phased implementation planning?
   → YES: establish `phase/SUMMARY.md` and child phase files now or ask now
   ↓
 Need patch/review artifacts separate from the live phase workspace?
-  → YES: use existing / create now / ask now
+  → YES: only when a real existing governed surface needs separate before/after review packaging, or the user explicitly requests patch packaging
+        - use existing / create now / ask now
         - use `patch/<context>.patch.md` as the default shared patch path
         - use root `<context>.patch.md` when direct top-level placement is clearer
+  → For greenfield startup / baseline formation by itself: default to `patch: not required`
   ↓
 After startup posture is resolved
   → continue with substantive planning / implementation

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 5.5
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
+> **Current Version:** 5.8
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-06)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -30,7 +30,7 @@ This active-state model must preserve UDVC-1 while supporting first-class phased
 | Patch | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed patch/review artifacts outside live phase planning |
 | History | `changelog/*.changelog.md` | Authoritative chain history and latest chain version state |
 | Execution | `TODO.md` | Execution tracking only |
-| Support | `phase-implementation-template.md`, `support/**/*.md`, `plugin/**` | Root-level helper templates, reference-only/support materials, and optional extension-package assets outside governed chain authority |
+| Support | `phase-implementation-template.md`, `support/**/*.md`, `plugin/**` | Root-level helper templates, reference-only/support materials, and optional extension-package assets such as compact-handoff reinforcement outside governed chain authority |
 
 ### 2.2 Governance Principle
 
@@ -58,14 +58,14 @@ This repository uses one deterministic governance model:
 | 2 | answer-presentation.md | answer-presentation.design.md v1.13 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including scoped local-fact presentation for machine-specific values in snapshots, compact governing-basis clarification blocks for materially outcome-changing basis ambiguity, compact post-compact re-anchor blocks for compacted-session continuation, narrower next-stage blocks that do not interrupt active execution, compact variable-role structures for identifier-heavy explanations, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
 | 3 | anti-mockup.md | anti-mockup.design.md v1.1 | Real systems over mocks |
 | 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.4 | Truth over pleasing with evidence-grounded, claim-focused disagreement |
-| 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.0 | Startup-governance owner that resolves design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
+| 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.1 | Startup-governance owner that resolves design/changelog/TODO/phase/patch posture before meaningful governed work drifts while keeping patch non-default during greenfield startup unless a real before/after review surface exists |
 | 6 | authority-and-scope.md | authority-and-scope.design.md v1.9 | User authority, deterministic precedence, fresh-directive override behavior, a rule against unnecessary option branching when one safe continuation path already exists, an explicit boundary that future-work proposals remain advisory until selected, a user-owned governing-basis selection boundary when materially different policies/frames remain unresolved, a post-compact re-anchor boundary that preserves the active objective and active frame after compact, and a team-expansion boundary for overlapping teammate roles |
 | 7 | custom-agent-selection-priority.md | custom-agent-selection-priority.design.md v1.1 | First-class owner for preferring visible user custom agents as the primary specialist pool when task fit is clear, while reusing an existing matching teammate before spawning another overlapping role |
 | 8 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
 | 9 | document-consistency.md | document-consistency.design.md v1.5 | Cross-reference validation with portable shared references, source-side references, destination/runtime references, and local or machine-scoped values kept distinct |
 | 10 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |
 | 11 | document-design-control.md | document-design-control.design.md v1.8 | Active-state design-body standards |
-| 12 | document-patch-control.md | document-patch-control.design.md v2.4 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, and comparison-friendly patch representation |
+| 12 | document-patch-control.md | document-patch-control.design.md v2.5 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, comparison-friendly patch representation, and the boundary that patch is normally downstream of an established before-state rather than the default startup artifact |
 | 13 | emergency-protocol.md | emergency-protocol.design.md v1.1 | High-signal emergency response |
 | 14 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.2 | First-class owner for evidence taxonomy, burden-of-proof thresholds, contradiction protocol, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling when materially different policies/frames would change the answer, and post-compact needs-recheck handling for compacted carry-forward exact detail |
 | 15 | explanation-quality.md | explanation-quality.design.md v2.8 | Plain-language-first, layered analytical and technical explanation structure with explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning depends on them, explicit deferral of continuation-vs-option policy to accurate-communication, a governing-basis clarification boundary before deepening several materially different branches, a compact post-compact re-anchor boundary before explanation resumes after compaction, and clearer goal-qualified proposal framing when future ideas are offered after bounded completion |
@@ -75,7 +75,7 @@ This repository uses one deterministic governance model:
 | 19 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
 | 20 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and an inspect-first case for duplicate-looking or stale team-agent presence |
 | 21 | phase-implementation.md | phase-implementation.design.md v2.7 | First-class semantic standard for phased execution planning with early phase-establishment bridge and explicit phase-to-patch linkage when patch is in scope |
-| 22 | project-documentation-standards.md | project-documentation-standards.design.md v2.13 | Repository-level document-role model plus startup artifact gate, explicit patch-linkage verification for phased work, portable public onboarding/install guidance by default, and support-layer modeling for the optional `plugin/**` extension package area |
+| 22 | project-documentation-standards.md | project-documentation-standards.design.md v2.14 | Repository-level document-role model plus startup artifact gate, explicit patch-linkage verification for phased work, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance by default, and support-layer modeling for the optional `plugin/**` extension package area |
 | 23 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
 | 24 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
 | 25 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |

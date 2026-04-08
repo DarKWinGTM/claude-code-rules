@@ -182,14 +182,14 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, natural-professional wording, continuation-first guidance, and clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real |
-| [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts |
+| [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts, while keeping patch non-default during greenfield startup unless a real before/after review surface exists |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, destination/runtime, and local references from drifting into each other |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
-| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, and required to show explicit change surfaces |
+| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, required to show explicit change surfaces, and not treated as the default startup artifact for greenfield baseline formation |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, and post-compact needs-recheck handling for compacted carry-forward exact detail |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
@@ -204,7 +204,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts |
 | [`todo-standards.md`](todo-standards.md) | Task management | Focused work with early TODO establishment when meaningful governed work requires tracking |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate and portable public onboarding/install guidance |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, non-default startup patch posture for greenfield baseline formation, and portable public onboarding/install guidance |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
@@ -387,14 +387,14 @@ Run package-local plugin install from `./plugin` when you want the compact hook 
 ```bash
 cd plugin
 claude plugins marketplace add ./ --scope local
-claude plugins install rules-compact-extension@rules-compact-extension --scope local
+claude plugins install rules-compact-extension@darkwingtm --scope local
 ```
 
 Detailed meaning:
 1. `cd plugin` moves into the package root so the package-local marketplace manifest is the active source.
 2. `claude plugins marketplace add ./ --scope local` adds the package-local marketplace declared by `plugin/.claude-plugin/marketplace.json`.
-3. `claude plugins install rules-compact-extension@rules-compact-extension --scope local` installs the plugin from that package-local marketplace in local scope.
-4. `/reload-plugins` can then be used to refresh plugin discovery inside the current Claude Code session.
+3. `claude plugins install rules-compact-extension@darkwingtm --scope local` installs the plugin from that package-local marketplace in local scope.
+4. the compact companion remains an optional runtime support layer; it does not replace root RULES authority.
 
 Recommended checks after install:
 
@@ -407,9 +407,10 @@ Optional interactive checks:
 - `/hooks`
 
 Current hook behavior in this package:
-- `SessionStart` with matcher `compact` injects a short re-anchor reminder into the resumed compacted session
-- `PreCompact` stores a raw compact witness file into `${CLAUDE_PLUGIN_DATA}/compact/last-precompact.json`
-- `PostCompact` stores a raw compact witness file into `${CLAUDE_PLUGIN_DATA}/compact/last-postcompact.json`
+- `PreCompact` creates or refreshes session-scoped compact state under `${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/`
+- `SessionStart` with matcher `compact` emits one short compact-resume signal, injects an explicit review-before-continuation directive that names the exact resolved session review files plus the re-anchor reminder, removes that session’s pending state after successful use, and writes one bounded per-session proof file
+- `PostCompact` is prune-only and opportunistically removes expired or legacy compact-state leftovers
+- the package no longer treats singleton files like `active-handoff.json` or `last-sessionstart-consumed.json` as the active contract
 
 Boundary reminder:
 - root runtime rules still define compact/post-compact semantics
@@ -978,8 +979,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 8.1 |
-  <b>Last Updated</b>: 2026-04-06 |
+  <b>Version</b>: 8.9 |
+  <b>Last Updated</b>: 2026-04-08 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

@@ -1,8 +1,8 @@
 # Artifact Initiation Control
 
-> **Current Version:** 1.0
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.0
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.1
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.1
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 
 ---
@@ -78,7 +78,7 @@ Apply this rule strongly when one or more of these are present:
 | new governed chain | “create a first-class rule”, “add a new policy chain” | resolve design + changelog + TODO immediately; evaluate phase/patch now |
 | multi-file governed change | several governed docs or chains will change together | resolve TODO and likely phase before drift |
 | staged work | sequencing, rollout, or rollback boundaries matter | establish `/phase` now or ask now |
-| reviewable before/after work | explicit change-surface review matters | establish a patch artifact now or ask now |
+| reviewable before/after work | explicit change-surface review matters | establish a patch artifact now or ask now, but only when an existing governed surface actually provides a stable before-state |
 | explicit artifact-first request | user wants stronger governance startup behavior | apply the startup gate immediately |
 | trivial isolated task | one obvious low-risk change | lightweight bypass allowed |
 
@@ -103,7 +103,7 @@ Meaningful governed work begins when the assistant moves beyond lightweight expl
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
-| Patch | explicit before/after review packaging outside live phase planning is materially useful |
+| Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
 ### Resolution order
 Resolve startup artifact posture in this practical order:
@@ -149,6 +149,7 @@ Communication requirements:
 | work starts first and artifacts appear later | direction and rationale drift before authority exists | resolve startup artifact posture first |
 | no artifacts are opened because the user did not list them manually | governance remains reactive | evaluate and resolve the required set proactively |
 | all artifacts are forced every time | creates unnecessary ceremony | resolve only the required subset |
+| create patch by default during greenfield startup or baseline formation | startup work is mislabeled as a review delta before a stable before-state exists | default patch to `not required` unless a real existing surface or explicit user request justifies it |
 | hygiene blocks required startup artifacts | startup contract loses force | let startup control decide, then let hygiene police non-required files |
 | artifact decision is deferred until after planning | the plan is already acting as if authority existed | ask or create immediately |
 

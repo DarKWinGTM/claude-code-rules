@@ -1,8 +1,8 @@
 # Document Patch Control
 
-> **Current Version:** 2.4
-> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.4
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.5
+> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.5
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/document-patch-control.changelog.md](changelog/document-patch-control.changelog.md)
 
 ---
@@ -299,9 +299,9 @@ Use this checklist to validate the patch as a governed artifact.
 | Document | Relationship |
 |----------|--------------|
 | [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority and metadata contract |
-| [project-documentation-standards.md](project-documentation-standards.md) v2.8 | Project-level document governance and role boundary model |
-| [phase-implementation.md](phase-implementation.md) v2.5 | Semantic authority for phased execution planning |
-| [todo-standards.md](todo-standards.md) v2.2 | Execution tracking alignment |
+| [project-documentation-standards.md](project-documentation-standards.md) v2.14 | Project-level document governance and role boundary model |
+| [phase-implementation.md](phase-implementation.md) v2.7 | Semantic authority for phased execution planning |
+| [todo-standards.md](todo-standards.md) v2.3 | Execution tracking alignment |
 | [phase-implementation-template.md](phase-implementation-template.md) | Non-governed root helper for authoring |
 
 ---

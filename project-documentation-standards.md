@@ -1,8 +1,8 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.13
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.13
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.14
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.14
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
 ---
@@ -103,9 +103,11 @@ Need phased implementation planning?
   → YES: establish `phase/SUMMARY.md` and child phase files now or ask now
   ↓
 Need patch/review artifacts separate from the live phase workspace?
-  → YES: use existing / create now / ask now
+  → YES: only when a real existing governed surface needs separate before/after review packaging, or the user explicitly requests patch packaging
+        - use existing / create now / ask now
         - use `patch/<context>.patch.md` as the default shared patch path
         - use root `<context>.patch.md` when direct top-level placement is clearer
+  → For greenfield startup / baseline formation by itself: default to `patch: not required`
   ↓
 After startup posture is resolved
   → continue with substantive planning / implementation
@@ -155,7 +157,10 @@ Required guidance:
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Multi-phase work uses child phase files under `phase/`
 - [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
-- [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md`
+- [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md` when patch is actually required
+- [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
+- [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
+- [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] Public onboarding/install guidance avoids workstation-specific absolute paths as public defaults
 - [ ] Source-side guidance and destination/runtime guidance are clearly distinguished when both appear
@@ -192,10 +197,10 @@ Required guidance:
 
 | Rule | Relationship |
 |------|-------------|
-| [artifact-initiation-control.md](artifact-initiation-control.md) v1.0 | Startup artifact-resolution owner |
+| [artifact-initiation-control.md](artifact-initiation-control.md) v1.1 | Startup artifact-resolution owner |
 | [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
 | [document-design-control.md](document-design-control.md) v1.8 | Design structure standards |
-| [document-patch-control.md](document-patch-control.md) v2.4 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
+| [document-patch-control.md](document-patch-control.md) v2.5 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
 | [phase-implementation.md](phase-implementation.md) v2.7 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.1 | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](document-consistency.md) v1.5 | Source-side and destination/runtime reference consistency |

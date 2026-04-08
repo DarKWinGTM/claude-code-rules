@@ -1,11 +1,11 @@
 {
-  "name": "rules-compact-extension",
+  "name": "darkwingtm",
   "owner": {
     "name": "DarKWinGTM"
   },
   "metadata": {
     "description": "Local marketplace manifest for the RULES compact hook companion.",
-    "version": "1.0.1"
+    "version": "1.2.6"
   },
   "plugins": [
     {

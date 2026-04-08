@@ -1,8 +1,8 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.13
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.14
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.14 | 2026-04-08 | **[Narrowed repository startup patch posture for greenfield baseline formation](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-06 | **[Added support-layer modeling for the optional RULES plugin extension area](#version-213)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.12 | 2026-04-02 | **[Added portable public onboarding/install guidance](#version-212)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended project-documentation-standards so README and install/onboarding docs now avoid workstation-specific absolute paths as public defaults and explicitly separate source-side guidance from destination/runtime notation | |
@@ -23,6 +24,24 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-214"></a>
+## Version 2.14: Narrowed repository startup patch posture for greenfield baseline formation
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.13 to v2.14.
+- Updated runtime `project-documentation-standards.md` from v2.13 to v2.14.
+- Refined the repository role model so patch is explicitly non-default during greenfield / baseline-formation startup when no stable before-state exists yet.
+- Updated the required-document wording so patch is described as a separate before/after review artifact for an existing governed surface.
+- Narrowed the startup decision model and verification checklist so startup work does not create patch by default unless a real existing review surface or explicit user request justifies it.
+
+### Summary
+Refined the repository-level startup model so new-project baseline formation now defaults to design/changelog/TODO/phase posture first, while patch remains conditional on a real existing before/after review surface.
 
 ---
 

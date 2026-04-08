@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
+> **Current Version:** 1.1
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
 
@@ -26,6 +26,7 @@ The repository already defines artifact roles well, but startup behavior remains
 
 Observed failure modes:
 - design, changelog, TODO, phase, or patch are often created late instead of being established at startup
+- patch can also be over-created too early during greenfield startup or baseline formation when no stable before-state exists yet
 - the assistant may start meaningful governed work before deciding which artifacts are required
 - `strict-file-hygiene` suppresses proactive document creation unless a stronger startup contract exists
 - governance artifacts become retrospective backfill instead of direction-setting scaffolding
@@ -102,7 +103,8 @@ Apply this chain strongly when one or more are true:
 - multiple governed chains will be touched
 - staged rollout, sequencing, or rollback boundaries matter
 - work spans design/runtime/changelog/TODO together
-- before/after review packaging may be useful
+- before/after review packaging for an existing governed surface may be useful
+- the work is not merely greenfield startup / baseline formation with no stable before-state yet
 - the user explicitly requests stronger artifact-first behavior
 
 ### 5.2 Artifact-specific triggers
@@ -113,7 +115,7 @@ Apply this chain strongly when one or more are true:
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
-| Patch | explicit before/after review packaging outside live phase planning is materially useful |
+| Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
 ### 5.3 Low-strength / bypass triggers
 A lightweight bypass is allowed when:
@@ -137,11 +139,14 @@ Create the required artifact immediately when:
 Ask immediately when:
 - multiple plausible scopes exist
 - a patch artifact may be useful but is not clearly required
+- the work is greenfield startup / baseline formation and it is unclear whether any real before/after review surface exists yet
 - the user may reasonably want to choose between light and heavy governance paths
 - artifact creation would materially change the workflow shape and intent is not yet explicit
 
 ### 6.3 Not required
 Mark an artifact not required only when that conclusion is actually justified by the current task shape.
+
+For patch specifically, `not required` is the preferred default when the work is still creating a new project baseline, first-time scaffold, or initial terminology/contract model rather than changing an established governed surface.
 
 ---
 
@@ -164,6 +169,7 @@ Equivalent headings are acceptable if the meaning remains explicit.
 | start work first, backfill artifacts later | direction and rationale drift before authority exists | resolve startup artifact posture first |
 | create no artifacts because the user did not explicitly list them | meaningful work loses structure and traceability | evaluate required artifact set proactively |
 | force every artifact every time | creates unnecessary ceremony | resolve only the required subset |
+| create patch by default during greenfield startup or baseline formation | startup work is mislabeled as a review delta before a stable before-state exists | default patch to `not required` unless a real existing surface or explicit user request justifies it |
 | let hygiene rules suppress required startup artifacts | makes governance reactive and late | let startup artifact control decide, then apply hygiene to non-required files |
 | ask too late | work already drifts before the user sees the artifact decision | ask immediately when startup posture is unclear |
 

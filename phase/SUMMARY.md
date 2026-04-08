@@ -1,8 +1,8 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.8
+> **Current Version:** 1.10
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.7
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Status:** Completed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains seventeen rollout families:
+The current workspace contains twenty-one rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -32,6 +32,10 @@ The current workspace contains seventeen rollout families:
 - major phase `015` = governing-basis clarification before deep branch analysis refinement rollout
 - major phase `016` = compact and post-compact re-anchor refinement rollout
 - major phase `017` = RULES plugin extension companion rollout
+- major phase `018` = compact ephemeral handoff lifecycle refinement rollout
+- major phase `019` = session-scoped compact carry-forward state refinement rollout
+- major phase `020` = active review-trigger compact refinement rollout
+- major phase `021` = reference-first compact review refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -81,6 +85,16 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 016 | 016-02 | `phase/phase-016-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/compact-post-compact-governance-refinement.patch.md` | Sync master docs, phase indexing, TODO/changelog history, and installed runtime copies for the compact/post-compact refinement | Repo-level governance and installed runtime state reflect the compact/post-compact refinement |
 | 017 | 017-01 | `phase/phase-017-01-create-rules-plugin-extension-area.md` | `design/rules-plugin-extension.design.md` + `design/project-documentation-standards.design.md` | `patch/rules-plugin-extension-companion.patch.md` | Create the optional `plugin/` companion area for hook-based compact handling while keeping root RULES as the only semantic authority | A clean optional plugin companion exists without duplicate governance drift |
 | 017 | 017-02 | `phase/phase-017-02-sync-root-docs-and-verify-plugin-companion.md` | `design/design.md` + `design/project-documentation-standards.design.md` + `design/rules-plugin-extension.design.md` | `patch/rules-plugin-extension-companion.patch.md` | Sync root docs and verify that the plugin companion remains support/extension-only | Root governance and plugin package boundaries are aligned and reviewable |
+| 018 | 018-01 | `phase/phase-018-01-replace-latest-witness-model-with-ephemeral-handoff.md` | `design/rules-plugin-extension.design.md` | `patch/compact-ephemeral-handoff-lifecycle-refinement.patch.md` | Replace the plugin’s latest-only compact witness model with a one-shot ephemeral handoff lifecycle | The optional plugin companion behaves like a short-lived handoff cache instead of a witness store |
+| 018 | 018-02 | `phase/phase-018-02-sync-plugin-docs-and-verify-compact-handoff-lifecycle.md` | `design/design.md` + `design/rules-plugin-extension.design.md` | `patch/compact-ephemeral-handoff-lifecycle-refinement.patch.md` | Sync package/root docs and verify the new compact handoff lifecycle with real runtime checks | Root governance, package docs, and runtime verification align on the ephemeral handoff model |
+| 019 | 019-01 | `phase/phase-019-01-replace-single-slot-compact-state-with-session-scoped-layout.md` | `design/rules-plugin-extension.design.md` | `patch/compact-session-scoped-carry-forward-state-refinement.patch.md` | Replace singleton compact state with a small index and per-session carry-forward directories | Compact runtime state becomes session-scoped instead of singleton-scoped |
+| 019 | 019-02 | `phase/phase-019-02-sync-docs-and-verify-session-scoped-compact-carry-forward.md` | `design/design.md` + `design/rules-plugin-extension.design.md` | `patch/compact-session-scoped-carry-forward-state-refinement.patch.md` | Sync docs and verify session-scoped compact carry-forward behavior | Root governance, docs, and runtime verification align on the session-scoped model |
+| 020 | 020-01 | `phase/phase-020-01-tighten-active-review-trigger.md` | `design/rules-plugin-extension.design.md` | `patch/compact-active-review-trigger-and-memsearch-assist-refinement.patch.md` | Turn SessionStart into an active review trigger that names exact-session review files before continuation | Compact resume becomes explicitly review-oriented instead of passive carry-forward-only |
+| 020 | 020-02 | `phase/phase-020-02-add-optional-memsearch-assist-boundary.md` | `design/rules-plugin-extension.design.md` | `patch/compact-active-review-trigger-and-memsearch-assist-refinement.patch.md` | Record memsearch as a later assist-layer boundary while keeping the current runtime local-review-first | Active runtime behavior stays local-review-first and memsearch remains deferred |
+| 020 | 020-03 | `phase/phase-020-03-sync-docs-and-verify-active-review-behavior.md` | `design/design.md` + `design/rules-plugin-extension.design.md` | `patch/compact-active-review-trigger-and-memsearch-assist-refinement.patch.md` | Sync docs/versions and verify the new active review-trigger behavior | Root governance, docs, and runtime verification align on the Wave 020 review-trigger refinement |
+| 021 | 021-01 | `phase/phase-021-01-tighten-systemmessage-review-required.md` | `design/rules-plugin-extension.design.md` | `patch/compact-reference-first-review-trigger-refinement.patch.md` | Make the visible compact navigator line explicitly say review is required before continuation | User-visible compact resume becomes clearly review-required instead of path-only |
+| 021 | 021-02 | `phase/phase-021-02-tighten-additionalcontext-reference-first.md` | `design/rules-plugin-extension.design.md` | `patch/compact-reference-first-review-trigger-refinement.patch.md` | Reduce additionalContext to instruction + locator + bounded status only | Compact resume stays reference-first instead of becoming a hidden context-restore channel |
+| 021 | 021-03 | `phase/phase-021-03-add-bounded-directive-proof-and-sync.md` | `design/design.md` + `design/rules-plugin-extension.design.md` | `patch/compact-reference-first-review-trigger-refinement.patch.md` | Add bounded directive proof and sync docs/version surfaces | Root governance, docs, and runtime verification align on the Wave 021 reference-first refinement |
 
 ---
 
@@ -127,7 +141,17 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 016-02: sync master governance surfaces and installed runtime copies for the compact/post-compact refinement wave
   → 017-01: create the optional RULES plugin companion area for hook-based compact handling
   → 017-02: sync root governance surfaces and verify the plugin companion stays support-only
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, and an optional plugin companion area that reinforces compact handling without weakening root rules authority
+  → 018-01: replace the plugin’s latest-only compact witness model with one ephemeral handoff lifecycle
+  → 018-02: sync package/root docs and verify create → consume/delete → prune behavior for the new compact handoff model
+  → 019-01: replace singleton compact files with a small live index and per-session carry-forward directories
+  → 019-02: sync docs and verify session-scoped carry-forward injection plus fail-closed ambiguous routing
+  → 020-01: turn compact SessionStart into an active review trigger that names the exact-session review files before continuation
+  → 020-02: keep memsearch as a later assist boundary while the active runtime remains local-review-first
+  → 020-03: sync docs and verify the active review-trigger behavior across source, bridge, and master governance surfaces
+  → 021-01: make the visible compact navigator line explicitly say review is required before continuation
+  → 021-02: reduce additionalContext to instruction + locator + bounded status only
+  → 021-03: add bounded directive proof and sync docs/version surfaces to the reference-first compact review model
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
 
@@ -175,6 +199,10 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 016 | 016-02 | `phase/phase-016-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs and runtime-install sync completed for the compact/post-compact refinement |
 | 017 | 017-01 | `phase/phase-017-01-create-rules-plugin-extension-area.md` | Completed | None | Approved As-Is | optional plugin companion created under `plugin/` without duplicate governance drift |
 | 017 | 017-02 | `phase/phase-017-02-sync-root-docs-and-verify-plugin-companion.md` | Completed | None | Approved As-Is | root docs and plugin-package boundaries synchronized and verified |
+| 018 | 018-01 | `phase/phase-018-01-replace-latest-witness-model-with-ephemeral-handoff.md` | Completed | None | Approved As-Is | latest-witness compact storage replaced with one ephemeral handoff lifecycle |
+| 018 | 018-02 | `phase/phase-018-02-sync-plugin-docs-and-verify-compact-handoff-lifecycle.md` | Completed | None | Approved As-Is | package/root docs synchronized and runtime verification confirmed create → consume/delete → prune behavior |
+| 019 | 019-01 | `phase/phase-019-01-replace-single-slot-compact-state-with-session-scoped-layout.md` | Completed | None | Approved As-Is | singleton compact files replaced with session-scoped state directories and live index |
+| 019 | 019-02 | `phase/phase-019-02-sync-docs-and-verify-session-scoped-compact-carry-forward.md` | Completed | None | Approved As-Is | docs synchronized and session-scoped verification confirmed create → consume/proof → fail-closed ambiguity behavior |
 
 ---
 
@@ -222,14 +250,24 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 016 | 016-02 | Completed | `phase/phase-016-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the compact/post-compact refinement | `016-01` |
 | 017 | 017-01 | Completed | `phase/phase-017-01-create-rules-plugin-extension-area.md` | Create the optional `plugin/` companion area for hook-based compact handling while keeping root RULES as the only semantic authority | `016-02` |
 | 017 | 017-02 | Completed | `phase/phase-017-02-sync-root-docs-and-verify-plugin-companion.md` | Synchronize root governance surfaces and verify that the plugin companion remains support / extension-only | `017-01` |
+| 018 | 018-01 | Completed | `phase/phase-018-01-replace-latest-witness-model-with-ephemeral-handoff.md` | Replace the plugin’s latest-only compact witness model with a one-shot ephemeral handoff lifecycle | `017-02` |
+| 018 | 018-02 | Completed | `phase/phase-018-02-sync-plugin-docs-and-verify-compact-handoff-lifecycle.md` | Synchronize package/root docs and verify the new compact handoff lifecycle with real runtime checks | `018-01` |
+| 019 | 019-01 | Completed | `phase/phase-019-01-replace-single-slot-compact-state-with-session-scoped-layout.md` | Replace singleton compact state with a small index and per-session carry-forward directories | `018-02` |
+| 019 | 019-02 | Completed | `phase/phase-019-02-sync-docs-and-verify-session-scoped-compact-carry-forward.md` | Synchronize docs and verify session-scoped compact carry-forward behavior | `019-01` |
+| 020 | 020-01 | Completed | `phase/phase-020-01-tighten-active-review-trigger.md` | Turn compact SessionStart into an active review trigger that names exact-session review files before continuation | `019-02` |
+| 020 | 020-02 | Completed | `phase/phase-020-02-add-optional-memsearch-assist-boundary.md` | Record memsearch as a later assist-layer boundary while keeping the active runtime local-review-first | `020-01` |
+| 020 | 020-03 | Completed | `phase/phase-020-03-sync-docs-and-verify-active-review-behavior.md` | Synchronize docs/versions and verify the active review-trigger behavior | `020-02` |
+| 021 | 021-01 | Completed | `phase/phase-021-01-tighten-systemmessage-review-required.md` | Make the visible compact navigator line explicitly say review is required before continuation | `020-03` |
+| 021 | 021-02 | Completed | `phase/phase-021-02-tighten-additionalcontext-reference-first.md` | Reduce additionalContext to instruction + locator + bounded status only | `021-01` |
+| 021 | 021-03 | Completed | `phase/phase-021-03-add-bounded-directive-proof-and-sync.md` | Add bounded directive proof and synchronize docs/version surfaces | `021-02` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, and the plugin extension companion rollout in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, and the plugin extension companion rollout after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, and plugin extension support-layer changes without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, and the active review-trigger compact refinement in dated history until final review is complete.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, and the active review-trigger compact refinement after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, and active review-trigger changes without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -251,6 +289,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the governing-basis clarification refinement wave exists as a bounded `015` family with explicit patch linkage and master-governance synchronization
 - the compact/post-compact refinement wave exists as a bounded `016` family with explicit patch linkage and master-governance synchronization
 - the plugin extension companion rollout exists as a bounded `017` family with explicit patch linkage and support-layer boundary visibility
+- the compact handoff lifecycle refinement exists as a bounded `018` family with explicit patch linkage, package/root doc synchronization, and runtime verification of the ephemeral handoff model
+- the session-scoped compact carry-forward refinement exists as a bounded `019` family with explicit patch linkage, per-session storage layout, fail-closed ambiguous routing, and runtime verification of the session-scoped injection model
 
 ---
 
