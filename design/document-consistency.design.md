@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.5
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
+> **Current Version:** 1.6
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
 
@@ -19,6 +19,7 @@ Set document consistency standards to:
 - update references when changes are made
 - use precise references instead of vague descriptions
 - keep source-side references distinct from destination/runtime references in onboarding/install docs
+- keep local execution paths distinct from reusable source-artifact references so tool-local paths do not silently become source contracts
 
 ### 1.2 Problem Statement
 

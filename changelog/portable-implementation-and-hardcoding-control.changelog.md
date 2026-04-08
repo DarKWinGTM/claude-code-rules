@@ -10,10 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-04-09 | **[Extended portability rules to reusable support/package source artifacts](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-02 | **[Added public onboarding/install portability and source-vs-destination guidance](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended the chain so public install/onboarding docs now treat workstation-specific absolute paths and internal umbrella workspace roots as portability failures by default, while adding explicit source-side versus destination/runtime notation guidance | |
 | 1.0 | 2026-04-02 | **[Created first-class portable-implementation-and-hardcoding-control rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new design/runtime/changelog triad that governs portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline for shared artifacts | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Extended portability rules to reusable support/package source artifacts
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `portable-implementation-and-hardcoding-control.md` from v1.1 to v1.2.
+- Updated `design/portable-implementation-and-hardcoding-control.design.md` from v1.1 to v1.2.
+- Extended the chain so reusable support/package source artifacts such as plugin-owned docs, scripts, skills, and agents are explicitly portable-by-default when they are maintained as reusable source content.
+- Added a distinct failure class for workstation-specific absolute paths embedded into such reusable support/package source artifacts.
+
+### Summary
+Portable-implementation-and-hardcoding-control now treats reusable support/package source artifacts as portable-by-default and no longer lets workstation paths hide inside them as if they were shared contracts.
 
 ---
 

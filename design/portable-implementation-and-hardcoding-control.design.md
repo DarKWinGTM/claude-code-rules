@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
+> **Current Version:** 1.2
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
 
@@ -14,6 +14,7 @@ Define one first-class rule chain for preventing non-portable implementation beh
 
 The chain should ensure that:
 - shared implementation artifacts stay portable by default
+- support/package source artifacts such as plugin-owned docs, scripts, skills, and agents stay portable by default when they are maintained as reusable source artifacts
 - public onboarding/install docs stay portable by default
 - environment-specific values are bound late rather than embedded early
 - local exact values remain scoped observations rather than portable defaults
@@ -50,6 +51,7 @@ It is an environment-binding and public-portability problem.
 
 ### 3.1 In Scope
 - hardcoded path/location assumptions in shared artifacts
+- workstation-specific absolute paths embedded into package-local skills, agents, scripts, or plugin-owned source artifacts that are intended to remain reusable source content
 - public onboarding/install guidance that teaches non-portable defaults
 - hardcoded host/port/install/runtime-target assumptions in shared artifacts
 - separation between portable contract and observed local fact

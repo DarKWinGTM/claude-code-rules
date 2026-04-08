@@ -1,8 +1,8 @@
 # Explanation Quality
 
-> **Current Version:** 2.8
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.8
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.9
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.9
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
 ---
@@ -105,6 +105,7 @@ Required behavior:
 - use `what happens now` and `what stays later` when the work is intentionally staged
 - include what the user will actually notice when product or workflow changes are being explained
 - translate internal terms into plain human-language phrasing when that materially improves understanding
+- when wording is architecture-first, metaphor-heavy, or uses internal shorthand, translate it into direct human-readable action/result language before relying on it for the explanation
 - when the explanation depends on variables, fields, config keys, enum-like values, or internal labels, explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before expecting the user to follow deeper reasoning
 
 ### 9) Stage/State Progression Pattern
@@ -499,6 +500,7 @@ Success condition
 | protocol detail before simple framing | user sees internals before having a usable mental model | give the simple version first |
 | one-line-per-thought fragmentation | breaks continuity and causal flow | use a cohesive paragraph for one idea |
 | abstract recommendation without example | hard to transfer into action | add one concrete scenario, before/after view, analogy, or direct human-language gloss |
+| architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
 | raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
 | comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
 | many edits explained as one blob | change reasoning becomes hard to follow | explain before/after or patch-by-patch |

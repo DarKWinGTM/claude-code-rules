@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.9 | 2026-04-08 | **[Added direct human-readable translation guidance for metaphor-heavy explanations](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-06 | **[Added compact post-compact re-anchor boundary for explanation flow](#version-28)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.7 | 2026-04-05 | **[Added governing-basis clarification boundary before deep multi-branch explanation](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.6 | 2026-04-04 | **[Added goal-qualified proposal framing after bounded completion](#version-26)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -42,6 +43,23 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-29"></a>
+## Version 2.9: Added direct human-readable translation guidance for metaphor-heavy explanations
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.8 to v2.9.
+- Updated `design/explanation-quality.design.md` from v2.8 to v2.9.
+- Added explanation guidance so architecture-first, metaphor-heavy, or internal-shorthand wording is translated into direct human-readable action/result language before deeper reasoning depends on it.
+- Added anti-pattern coverage against explanations that leave the reader decoding internal system wording before they can understand the practical meaning.
+
+### Summary
+Explanation-quality now pushes abstract system wording through a direct human-readable translation step before deeper explanation relies on it.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.13
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
+> **Current Version:** 1.14
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
 
@@ -18,6 +18,7 @@ The target behavior is principle-first and trigger-driven:
 - use headings, lists, tables, and spacing as semantic tools
 - make compact diagnostic snapshots explicit when technical status or checked scope matters
 - make variable-heavy explanations easier to scan by allowing short glossary blocks or small variable-role tables before deeper reasoning
+- keep metaphor-heavy or abstract internal phrases from being left visually unexplained when a short gloss or implication line would make the practical meaning clear
 - make scope-boundary explanations easy to scan when the answer needs to separate now vs later or what-it-is vs what-it-is-not
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
@@ -40,6 +41,7 @@ Observed failure modes:
 - tables are used where no real comparison exists
 - technical updates arrive as raw evidence dumps instead of bounded status notes
 - small troubleshooting issues are presented with oversized tables or overbuilt formatting
+- an answer can look well-structured while still leaving metaphor-heavy or abstract internal wording unexplained
 - answers contain the right reasoning but remain hard to scan quickly
 - layout becomes decorative instead of functional
 - simple answers are over-structured while complex answers remain under-structured
@@ -109,6 +111,7 @@ When reporting technical status, present the snapshot as a compact structured no
 Required guidance:
 - start with one orienting line before the snapshot when context is needed
 - use short titled sections such as `Current Status`, `Request Information`, `Environment`, `Checked Scope`, or `What This Means` only when they materially improve scanability
+- when an internal shorthand or abstract phrase must still appear, place a short human-language gloss or direct implication near it instead of leaving the term unexplained
 - use small fact tables only for stable checked facts that are easier to scan side by side than in prose
 - keep snapshot tables narrow, scoped, and fact-oriented
 - do not let the table replace the explanation or implication

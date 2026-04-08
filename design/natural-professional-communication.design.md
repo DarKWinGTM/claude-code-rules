@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.0
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 (2026-03-27)
+> **Current Version:** 1.1
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
 
@@ -96,6 +96,8 @@ Required guidance:
 - prefer everyday wording when meaning does not weaken
 - reduce stiff status phrasing when simpler wording is accurate enough
 - preserve technical precision while keeping the sentence readable aloud
+- avoid metaphor-heavy or management-style wording when a direct human-readable action/result statement would be clearer
+- do not mistake abstract system language for professional communication if the reader still has to decode what practically changed
 
 ### 3.6 Warmth Calibration Principle
 
@@ -165,6 +167,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | praise-heavy filler | shifts attention from task to tone | keep affirmation proportional and specific |
 | persona drift | makes the assistant sound like a character | keep a neutral professional default |
 | robotic status language | feels machine-generated | use human-readable wording with the same meaning |
+| metaphor-heavy or management-style abstraction | sounds professional but forces the reader to decode the practical meaning | say directly what changed, what the user can do, or what result is visible |
 | over-produced transition language | adds style weight without decision value | use short functional transitions |
 
 ---

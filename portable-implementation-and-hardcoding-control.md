@@ -1,8 +1,8 @@
 # Portable Implementation and Hardcoding Control
 
-> **Current Version:** 1.1
-> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.2
+> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.2
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/portable-implementation-and-hardcoding-control.changelog.md](changelog/portable-implementation-and-hardcoding-control.changelog.md)
 
 ---
@@ -18,7 +18,7 @@ This rule owns environment-binding discipline for shared implementation artifact
 ## Core Principles
 
 ### 1) Portable-Core Principle
-Shared rules, design docs, templates, reusable code, and generalized examples should describe portable behavior first, not one machine's local environment.
+Shared rules, design docs, templates, reusable code, support-layer package content, and generalized examples should describe portable behavior first, not one machine's local environment.
 
 Required guidance:
 - prefer portable contracts over workstation literals
@@ -98,6 +98,7 @@ Use semantic placeholders in:
 - phase docs
 - patch docs
 - reusable examples
+- shared support/package artifacts such as plugin-owned docs, scripts, skills, and agents when they are intended to remain portable source artifacts
 
 Preferred forms:
 - `<workspace-root>`
@@ -181,6 +182,7 @@ Apply this rule strongly when one or more of these appear:
 | machine-local path in shared artifact | `/home/...`, `/Users/...`, drive-letter paths | replace with placeholder or env/config resolution unless explicitly machine-scoped |
 | environment default in shared logic | host, port, install dir, temp dir, username | move to config/env/adapter unless it is true domain data |
 | reusable template/example | docs, templates, README examples, phase/patch examples | make the example portable by default |
+| support/package source artifact | plugin-owned docs, scripts, skills, agents, or similar source artifacts | keep the source artifact portable by default; do not bake workstation-specific absolute paths into reusable package content |
 | public onboarding/install example | README quickstart, clone-and-install steps, marketplace add/install examples | use repo-root-relative or other portable source guidance, and separate destination/runtime notation |
 | checked local value | tool output or runtime observation | keep it scoped as local fact |
 | mixed notation drift | placeholders, literals, and env syntax mixed without contract | normalize to the canonical model |
@@ -198,6 +200,7 @@ Apply this rule strongly when one or more of these appear:
 | localhost-default-for-shared-system | local host/port assumptions leak into shared behavior | move host/port to config/env |
 | single-machine install assumption | reusable logic depends on one workstation layout | use install-root or runtime-resolved paths |
 | internal-umbrella-root-as-public-default | one shared internal workspace root leaks into public onboarding | use repo-root-relative or other portable source guidance |
+| support-source-hardcodes-workstation-path | plugin/skill/agent/support source artifacts become tied to one machine layout | use placeholders, plugin-context variables, or late-bound config instead of baking workstation paths into reusable source artifacts |
 | source-destination-blur | readers cannot tell where an artifact comes from versus where it installs/runs | separate source-side notation from destination/runtime notation |
 | mixed resolution model drift | inconsistent notation makes systems fragile | use one canonical placeholder/env model |
 | silent machine-scoped example | a local-only example looks like a universal default | mark machine-scoped examples explicitly |

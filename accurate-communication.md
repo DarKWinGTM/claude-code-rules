@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.11
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.11
+> **Current Version:** 2.12
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -111,6 +111,28 @@ Required guidance:
 - explain what important values or states mean when those values materially change the interpretation
 - if several related identifiers appear together, prefer a short glossary-style block or equivalent structured explanation before deeper reasoning
 - keep the identifier explanation evidence-aligned; do not invent semantics that were not verified from the checked scope
+
+### 5.2 Direct Human-Readable Wording Principle
+
+When a sentence can be expressed either as internal system shorthand or as a direct human-readable action/result statement, prefer the wording that tells the reader plainly what can now be done, what changed, or what result is visible.
+
+Required guidance:
+- prefer wording that states user action, system action, or visible outcome directly
+- avoid metaphor-heavy internal shorthand when a plain statement would be clearer
+- avoid architecture-first phrasing that forces the reader to infer the practical meaning
+- if a shorthand term is still materially useful, explain it immediately in human language
+- if the sentence cannot be restated as `what the user can now do`, `what changed`, or `what the result is`, rewrite it until the practical meaning is explicit
+
+Common risk shapes include wording such as:
+- `surface`
+- `elevate`
+- `expose`
+- `unlock`
+- `bring this to the package layer`
+- similar metaphor-first system phrasing when the real meaning is a direct capability, command, flow, or visible behavior change
+
+The problem is not the presence of technical detail itself.
+The problem is wording that makes the reader decode internal metaphors before they can understand the practical meaning.
 
 ### 6. Stage-Progression and Whole-Set Guidance
 
@@ -240,6 +262,7 @@ Use direct glossary-style paraphrases when:
 - the user is asking for an easier explanation
 - the literal term is technically correct but not user-friendly enough on its own
 - scope clarification depends on translating internal architecture language into user-facing meaning
+- the current wording uses internal shorthand, architecture-first phrasing, or metaphor-heavy terms that would be clearer as direct human-readable action/result language
 
 ### When stage progression and whole-set wording apply strongly
 Use explicit forward-progress wording when:
@@ -424,6 +447,18 @@ Routing mode visibility, พูดง่าย ๆ คือทำให้ user
 Customer-supplied runtime orchestration, ถ้าพูดแบบภาษาคน คือ flow ที่ user จะเอา runtime ของตัวเองเข้ามาผูกกับระบบ ซึ่งยังไม่ใช่สิ่งที่กำลังเปิดตอนนี้.
 ```
 
+### Direct human-readable rewrite
+```text
+Instead of: "bring this capability to the package surface"
+Prefer: "make this capability available directly through the package".
+```
+
+### Direct human-readable rewrite with user-visible result
+```text
+Instead of: "surface source-query behavior"
+Prefer: "add a flow so the user can list, search, and open indexed source entries directly".
+```
+
 ### Variable and field clarification
 ```text
 'tokenValue` คือช่องที่เก็บ secret key จริงที่ระบบใช้ยิง API ได้.
@@ -514,6 +549,8 @@ Diagnostic snapshot:
 | user-directed verdict without evidence | turns partial evidence into overclaim | correct the claim and cite contrary evidence |
 | pretending exact capture from partial evidence | makes the snapshot sound more certain than it is | say what was exact, what was partial, and what is inferred |
 | internal jargon with no gloss in an easy-explanation context | the reader must decode internal terminology before understanding the point | add a direct human-language paraphrase |
+| metaphor-heavy internal shorthand where a direct action/result statement exists | the reader has to decode system metaphors before understanding the practical meaning | rewrite the sentence to state what the user can do, what changed, or what result is visible |
+| metaphor-heavy internal shorthand where a direct action/result statement exists | the reader has to decode system metaphors before understanding the practical meaning | rewrite the sentence to state what the user can do, what changed, or what result is visible |
 | raw variable or field names presented like self-explanatory evidence | the reader sees identifiers but not their job, flow position, or value meaning | explain what the identifier is, what role it plays, and what important values mean |
 | deeper same-scope options offered by default after the stage is already clear | the response stays stuck in the same scope | say directly that the next useful move is the next stage/state |
 | mid-process option prompting when active work could safely continue | execution stalls and the user gets unnecessary checkpoints instead of progress | continue the active objective and report only when blocked, complete, or materially changed |

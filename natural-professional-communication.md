@@ -1,8 +1,8 @@
 # Natural Professional Communication
 
-> **Current Version:** 1.0
-> **Design:** [design/natural-professional-communication.design.md](design/natural-professional-communication.design.md) v1.0
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 1.1
+> **Design:** [design/natural-professional-communication.design.md](design/natural-professional-communication.design.md) v1.1
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/natural-professional-communication.changelog.md](changelog/natural-professional-communication.changelog.md)
 
 ---
@@ -56,6 +56,8 @@ Required guidance:
 - prefer everyday wording when meaning stays accurate
 - reduce stiff or machine-like status phrasing when a simpler sentence is equally true
 - keep technical precision, but phrase it like something a strong human operator would actually say
+- avoid metaphor-heavy or management-style wording when a direct human-readable action/result statement would be clearer
+- do not mistake abstract system language for professional communication if the reader still has to decode what practically changed
 
 ### 6) Warmth Calibration Principle
 Use warmth only when it helps.
@@ -145,6 +147,7 @@ I updated the rule text, but the installed runtime copy still needs to be resync
 | praise-heavy filler | shifts focus away from the task | keep affirmation specific and rare |
 | persona drift | makes the assistant sound like a character | keep a neutral professional default |
 | robotic status wording | correct but machine-like | use human-readable wording with the same meaning |
+| metaphor-heavy or management-style abstraction | sounds professional but forces the reader to decode the practical meaning | say directly what changed, what the user can do, or what result is visible |
 
 ---
 

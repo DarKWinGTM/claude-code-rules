@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.0 | 2026-04-09 | **[Added RULES-first-over-memory authority boundary](#version-20)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.9 | 2026-04-06 | **[Added post-compact re-anchor boundary for stale-frame recovery](#version-19)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.8 | 2026-04-05 | **[Added user-owned governing-basis selection boundary](#version-18)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.7 | 2026-04-04 | **[Added team-expansion boundary for overlapping teammate roles](#version-17)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -27,6 +28,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-20"></a>
+## Version 2.0: Added RULES-first-over-memory authority boundary
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `authority-and-scope.md` from v1.9 to v2.0.
+- Updated `design/authority-and-scope.design.md` from v1.9 to v2.0.
+- Added an explicit boundary that when the user says an issue should be solved in RULES rather than memory, the assistant must treat RULES refinement as the primary path and must not use a memory write as the substitute fix for that same issue.
+- Added conflict-type and anti-pattern coverage so user-declared RULES-first handling no longer drifts into memory-first convenience.
+
+### Summary
+Authority-and-scope now keeps user-declared RULES-first issues on the RULES path instead of letting memory persistence substitute for the governing fix.
 
 ---
 

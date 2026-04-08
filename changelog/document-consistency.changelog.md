@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-04-09 | **[Separated local execution paths from reusable source-artifact references](#version-16)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.5 | 2026-04-02 | **[Added source-vs-destination reference guidance](#version-15)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended document-consistency so onboarding/install docs now keep source-side references distinct from destination/runtime references instead of silently letting one workstation path represent both roles | |
 | 1.4 | 2026-04-02 | **[Added portable-reference consistency guidance](#version-14)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -22,6 +23,23 @@
 | | | Summary: Enforced visual verification standards from design | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Separated local execution paths from reusable source-artifact references
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `document-consistency.md` from v1.5 to v1.6.
+- Updated `design/document-consistency.design.md` from v1.5 to v1.6.
+- Added explicit separation between local execution paths used only for the current machine/harness turn and reusable source-artifact references.
+- Added a trigger for tool-path leakage into reusable source content so local tool/runtime paths are no longer allowed to drift silently into skill/plugin/source contracts.
+
+### Summary
+Document-consistency now keeps local execution paths distinct from reusable source-artifact references so tool-local paths do not silently become portable source contracts.
 
 ---
 

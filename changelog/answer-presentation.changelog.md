@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-04-08 | **[Added gloss-near-term layout support for abstract internal phrasing](#version-114)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.13 | 2026-04-06 | **[Added compact post-compact re-anchor layout support](#version-113)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.12 | 2026-04-05 | **[Added compact governing-basis clarification layout support](#version-112)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.11 | 2026-04-04 | **[Added compact proposal layout support for future-work ideas](#version-111)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -32,6 +33,23 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Added gloss-near-term layout support for abstract internal phrasing
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.13 to v1.14.
+- Updated `design/answer-presentation.design.md` from v1.13 to v1.14.
+- Added presentation guidance so if an internal shorthand or abstract phrase must still appear, a short human-language gloss or direct implication should sit near the term instead of leaving it unexplained.
+- Added anti-pattern coverage against structured answers that still leave metaphor-heavy internal wording visually unexplained.
+
+### Summary
+Answer-presentation now helps structured answers keep abstract internal phrasing understandable by placing a short gloss or direct implication near the term when needed.
 
 ---
 

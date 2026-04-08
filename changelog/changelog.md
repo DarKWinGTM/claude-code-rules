@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.0
+> **Current Version:** 9.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.2 | 2026-04-09 | **[Kept user-declared RULES-first issues out of memory-first fixes and hardened portable support artifacts](#version-92)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.1 | 2026-04-08 | **[Preferred direct human-readable wording over metaphor-heavy internal shorthand](#version-91)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.0 | 2026-04-08 | **[Added closed-topic presentation guidance and narrowed startup patch posture](#version-90)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 8.9 | 2026-04-08 | **[Narrowed startup patch posture for greenfield baseline formation](#version-89)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 8.8 | 2026-04-08 | **[Tightened compact review to reference-first directive form](#version-88)** | 4e792d4b-8876-439b-8c07-2c5d4b04af3a |
@@ -23,6 +25,58 @@
 | 8.0 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-80)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.9 | 2026-04-04 | **[Added team-agent dedup and stale-presence boundaries](#version-79)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 7.8 | 2026-04-04 | **[Added goal-qualified proposal boundaries across the communication-owner set](#version-78)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.7 | 2026-04-04 | **[Added identifier-explanation guidance across the communication-owner trio](#version-77)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.6 | 2026-04-03 | **[Added recommendation-plus-reason guidance for multi-option next steps](#version-76)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.5 | 2026-04-03 | **[Refined public install portability and source-vs-destination notation across hardcoding-governance owners](#version-75)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.4 | 2026-04-03 | **[Opened continuation-priority refinement across communication-owner chains](#version-74)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.3 | 2026-04-02 | **[Deepened portability-rule integration across adjacent chains](#version-73)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.2 | 2026-04-02 | **[Created first-class portable-implementation-and-hardcoding-control rule chain and synchronized hardcoding governance](#version-72)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.1 | 2026-03-31 | **[Created first-class custom-agent-selection-priority rule chain and synchronized agent-selection governance](#version-71)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 7.0 | 2026-03-31 | **[Created first-class external-verification-and-source-trust rule chain and synchronized source-trust governance](#version-70)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 6.9 | 2026-03-30 | **[Hardened explicit phase-to-patch linkage in phased work](#version-69)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 6.8 | 2026-03-28 | **[Created startup artifact-initiation governance and synchronized the repository to artifact-first work startup](#version-68)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 6.7 | 2026-03-28 | **[Corrected the repository-wide patch model to explicit before/after artifacts in `patch/` or at root](#version-67)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+| 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
+| 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
+| 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-92"></a>
+## Version 9.2: Kept user-declared RULES-first issues out of memory-first fixes and hardened portable support artifacts
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `authority-and-scope` from v1.9 to v2.0 so user-declared RULES-first issues now stay on the RULES path instead of drifting into memory-first convenience.
+- Updated `portable-implementation-and-hardcoding-control` from v1.1 to v1.2 so reusable support/package source artifacts such as plugin-owned docs, scripts, skills, and agents are now explicitly portable-by-default.
+- Updated `project-documentation-standards` from v2.14 to v2.15 so package-local support assets are now explicitly governed as portable source artifacts when maintained for reuse.
+- Updated `document-consistency` from v1.5 to v1.6 so local execution paths are now explicitly kept distinct from reusable source-artifact references.
+- Added `patch/rules-first-over-memory-and-portable-support-artifacts.patch.md` plus `phase/phase-023-01-*` and `phase/phase-023-02-*` for the bounded refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md`, then reinstalled the touched runtime rules into `~/.claude/rules/`.
+
+### Summary
+The RULES repository now keeps user-declared RULES-first issues on the RULES path and treats reusable support/package source artifacts as portable-by-default instead of letting memory-first fixes or workstation paths substitute for the real governance contract.
+
+---
+
+<a id="version-91"></a>
+## Version 9.1: Preferred direct human-readable wording over metaphor-heavy internal shorthand
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication` from v2.11 to v2.12 so direct human-readable action/result wording is now preferred over metaphor-heavy internal shorthand.
+- Updated `explanation-quality` from v2.8 to v2.9 so architecture-first or metaphor-heavy wording is translated into direct human-readable action/result language before deeper explanation depends on it.
+- Updated `natural-professional-communication` from v1.0 to v1.1 so abstract system language is no longer treated as automatically professional when the reader still has to decode the practical meaning.
+- Updated `answer-presentation` from v1.13 to v1.14 so abstract internal phrasing can be paired with a short gloss or direct implication near the term when it still appears.
+- Added `patch/direct-human-readable-wording-over-metaphor-heavy-shorthand.patch.md` plus `phase/phase-022-01-*` and `phase/phase-022-02-*` for the bounded refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md`, then reinstalled the touched runtime rules into `~/.claude/rules/`.
+
+### Summary
+The RULES repository now prefers direct human-readable wording over metaphor-heavy internal shorthand when a plain action/result statement would make the practical meaning clearer immediately.
 
 ---
 
@@ -60,82 +114,32 @@ The RULES repository now keeps active summaries focused on current issues while 
 The RULES repo now distinguishes startup baseline formation from true reviewable deltas more cleanly, so new-project formation defaults to design/changelog/TODO/phase posture first and patch only enters when a real existing before/after surface or explicit user request justifies it.
 
 ---
-| 7.7 | 2026-04-04 | **[Added identifier-explanation guidance across the communication-owner trio](#version-77)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| 7.6 | 2026-04-03 | **[Added recommendation-plus-reason guidance for multi-option next steps](#version-76)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Updated `accurate-communication` to v2.5 so multi-path next-step guidance now names the recommended option first and explains briefly why it should happen first | |
-| | | - Updated `explanation-quality` to v2.4 and `answer-presentation` to v1.9 so explanation endings and layouts now reinforce the same recommendation-plus-reason pattern without reintroducing option-first interruption | |
-| | | - Added `patch/recommended-option-and-why-this-first.patch.md` plus `phase/phase-011-01-*` and `phase/phase-011-02-*` to record the bounded refinement wave | |
-| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md`, then reinstalled the touched runtime rules into `~/.claude/rules/` | |
-| | | Summary: When multiple next actions are genuinely shown, the RULES system now makes the preferred path easier to act on by pairing `Recommended` with a short `Why this first` reason while still keeping at least one visible alternative when the decision surface is truly multi-path | |
-| 7.5 | 2026-04-03 | **[Refined public install portability and source-vs-destination notation across hardcoding-governance owners](#version-75)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Updated `portable-implementation-and-hardcoding-control` to v1.1 so public onboarding/install docs, source-side versus destination/runtime notation, and internal umbrella workspace roots as public defaults are now first-class portability concerns | |
-| | | - Updated `project-documentation-standards` to v2.12 and `document-consistency` to v1.5 so README/install docs now enforce portable repo-root guidance and keep source-side references distinct from destination/runtime references | |
-| | | - Added `patch/install-doc-portability-and-source-destination-notation.patch.md` plus `phase/phase-010-01-*` and `phase/phase-010-02-*` to record the bounded refinement wave | |
-| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md`, then reinstalled the touched runtime rules into `~/.claude/rules/` | |
-| | | Summary: The hardcoding-governance model now explicitly treats public install/onboarding path posture as a portability concern and stops one workstation path from silently acting as both source and destination/runtime truth | |
-| 7.4 | 2026-04-03 | **[Opened continuation-priority refinement across communication-owner chains](#version-74)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| 7.3 | 2026-04-02 | **[Deepened portability-rule integration across adjacent chains](#version-73)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Updated `no-variable-guessing`, `accurate-communication`, `project-documentation-standards`, and `strict-file-hygiene` to defer broader anti-hardcoding ownership to `portable-implementation-and-hardcoding-control` | |
-| | | - Deepened the next integration slice into `tactical-strategic-programming`, `document-consistency`, and `answer-presentation` so machine-specific defaults are less likely to leak through tactical behavior, reference examples, or presentation patterns | |
-| | | - Opened and completed `phase-008-03-deepen-portability-integration.md` as the bounded second integration slice | |
-| | | Summary: The portable-implementation owner now has meaningful adjacent-chain integration rather than existing only as a standalone chain | |
-| 7.2 | 2026-04-02 | **[Created first-class portable-implementation-and-hardcoding-control rule chain and synchronized hardcoding governance](#version-72)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Created `design/portable-implementation-and-hardcoding-control.design.md`, `portable-implementation-and-hardcoding-control.md`, and `changelog/portable-implementation-and-hardcoding-control.changelog.md` as a new first-class chain | |
-| | | - Added `patch/portable-implementation-and-hardcoding-control.patch.md` plus `phase/phase-008-01-*` and `phase/phase-008-02-*` to record the rollout family | |
-| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md` so the new portable-implementation owner is visible across the active repository model | |
-| | | Summary: Added one explicit semantic owner for portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline so machine-specific assumptions do not silently become shared defaults | |
-| 7.1 | 2026-03-31 | **[Created first-class custom-agent-selection-priority rule chain and synchronized agent-selection governance](#version-71)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Created `design/custom-agent-selection-priority.design.md`, `custom-agent-selection-priority.md`, and `changelog/custom-agent-selection-priority.changelog.md` as a new first-class chain | |
-| | | - Added `patch/custom-agent-selection-priority.patch.md` plus `phase/phase-007-01-*` and `phase/phase-007-02-*` to record the rollout family | |
-| | | - Updated master design, README, TODO, changelog, and `phase/SUMMARY.md` so the new agent-selection owner is visible across the active repository model | |
-| | | Summary: Added one explicit semantic owner for preferring visible user custom agents as the primary specialist pool when task fit is clear, without pretending that prompt rules control runtime discovery | |
-| 7.0 | 2026-03-31 | **[Created first-class external-verification-and-source-trust rule chain and synchronized source-trust governance](#version-70)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Created `design/external-verification-and-source-trust.design.md`, `external-verification-and-source-trust.md`, and `changelog/external-verification-and-source-trust.changelog.md` as a new first-class chain | |
-| | | - Added `patch/external-verification-and-source-trust.patch.md` plus `phase/phase-006-01-*` and `phase/phase-006-02-*` to record the rollout family | |
-| | | - Updated master design, README, TODO, and `phase/SUMMARY.md` so the new source-trust owner is visible across the active repository model | |
-| | | Summary: Added one explicit semantic owner for proactive external verification, source-trust ranking, corroboration, and source-conflict handling so the RULES system becomes more accurate through better external evidence workflow, not just more cautious phrasing | |
-| 6.9 | 2026-03-30 | **[Hardened explicit phase-to-patch linkage in phased work](#version-69)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Updated `phase-implementation` design/runtime/helper to require explicit patch linkage in `phase/SUMMARY.md` and relevant child phase files when patch is in scope | |
-| | | - Updated `project-documentation-standards` design/runtime to verify the same live workspace behavior | |
-| | | - Added `patch/phase-linkage-hardening.patch.md` plus `phase/phase-005-01-*` and `phase/phase-005-02-*` to record the narrow rollout | |
-| | | Summary: Completed a narrow follow-up that keeps phase and patch separate but now requires their relationship to be explicit in the live phase workspace when governed patch artifacts are active | |
-| 6.8 | 2026-03-28 | **[Created startup artifact-initiation governance and synchronized the repository to artifact-first work startup](#version-68)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Created `design/artifact-initiation-control.design.md`, `artifact-initiation-control.md`, and `changelog/artifact-initiation-control.changelog.md` as a new first-class startup-governance owner chain | |
-| | | - Updated `project-documentation-standards` design/runtime to v2.9 so meaningful governed work now resolves startup artifact posture before drift | |
-| | | - Updated `phase-implementation` design/runtime to v2.6 so `/phase` is established early when startup governance already shows phased work is required | |
-| | | - Updated `todo-standards` design/runtime to v2.3 and created `changelog/todo-standards.changelog.md` so TODO presence is resolved early while TODO content still syncs later | |
-| | | - Updated `strict-file-hygiene` design/runtime/changelog to v1.2 so required governed startup artifacts are no longer blocked as junk docs | |
-| | | - Opened `phase-004` from the start with `phase/phase-004-01-*` through `phase/phase-004-03-*` and updated `phase/SUMMARY.md` to track the rollout family | |
-| | | - Updated `README.md`, `design/design.md`, `TODO.md`, and `phase/SUMMARY.md` so the new startup-governance model is visible across the active repository surfaces | |
-| | | Summary: Completed the startup-governance rollout so design/changelog/TODO/phase/patch posture is now resolved before meaningful governed work drifts instead of being backfilled later | |
-| 6.7 | 2026-03-28 | **[Corrected the repository-wide patch model to explicit before/after artifacts in `patch/` or at root](#version-67)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
-| | | - Updated `document-patch-control` design/runtime/changelog from v2.3 to v2.4 to explicitly define patch as a governed before/after artifact, remove generic `patch.md` allowance, and standardize active placement to `patch/<context>.patch.md` or root `<context>.patch.md` | |
-| | | - Updated `project-documentation-standards` design/runtime/changelog from v2.7 to v2.8 so the repository role model now teaches the same corrected patch placement and patch meaning everywhere | |
-| | | - Updated `phase-implementation` runtime/changelog to v2.5 and aligned `design/phase-implementation.design.md` to the same active patch-artifact boundary model while preserving the one-way synthesis boundary | |
-| | | - Updated `tactical-strategic-programming` design/runtime/changelog from v1.0 to v1.1 so tactical artifact examples now point to the corrected patch model | |
-| | | - Updated `README.md`, `design/design.md`, `phase-implementation-template.md`, `design/document-changelog-control.design.md`, and `design/unified-version-control-system.design.md` to remove active `patches/` teaching and align wording to the corrected patch concept | |
-| | | - Moved the in-repo example patches into `patch/` and rewrote them as explicit before/after artifacts: `patch/consistency-rule-enhancement.patch.md` and `patch/legacy-rules-migration.patch.md` | |
-| | | - Updated patch changelogs, TODO tracking, and parent-document references to match the moved patch paths and normalized patch examples | |
-| | | Summary: Completed the patch-concept correction so the active RULES repository now teaches one deterministic patch model: self-identifying before/after artifacts in `patch/` or at repository root, never prose-only patch summaries | |
-| 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
-| | | - Created `design/natural-professional-communication.design.md`, `natural-professional-communication.md`, and `changelog/natural-professional-communication.changelog.md` as a new first-class communication-style doctrine chain | |
-| | | - Created `phase/SUMMARY.md` and `phase/phase-001-*` to `phase/phase-004-*` execution artifacts for the RULES development rollout of the new chain and related refinement wave | |
-| | | - Updated `accurate-communication` to v2.2, `explanation-quality` to v2.2, `answer-presentation` to v1.6, `authority-and-scope` to v1.4, and `anti-sycophancy` to v1.4 with calmer, more natural, non-robotic, non-character-driven professional communication guidance | |
-| | | - Updated `design/design.md` and `README.md` from 30 to 31 active runtime rules, corrected the canonical install set from the stale 29-rule wording, and normalized lingering `phase-010-*` README references to `phase-001-*` | |
-| | | - Updated `TODO.md` to record rollout completion and re-synchronized touched runtime rules into `~/.claude/rules/` with parity verification | |
-| | | Summary: Added one explicit semantic authority for natural professional communication and aligned the wording, explanation, presentation, authority, and disagreement chains so the system now defaults to calmer, more human-readable, non-robotic professional communication | |
-| 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
-| | | - Updated `phase-implementation` design/runtime/changelog to v2.2 with zero-padded contiguous child-phase numbering (`001/002/003`) instead of sparse `010/020/030` | |
-| | | - Updated `phase-implementation-template.md` examples and helper guidance to the new numbering scheme | |
-| | | - Updated `design/design.md` and `README.md` wording to reflect the new default numbering policy | |
-| | | - Updated `TODO.md` completion/history tracking for the phase-numbering patch wave and synced the installed runtime copy | |
-| | | Summary: Refined the phase-planning model so default phase numbering is now human-readable and naturally sequential (`001/002/003`) rather than sparse by default | |
-| 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
-| | | - Created `design/tactical-strategic-programming.design.md`, `tactical-strategic-programming.md`, and `changelog/tactical-strategic-programming.changelog.md` as a new first-class doctrine chain | |
-| | | - Created `phase/SUMMARY.md` and `phase/phase-001-*` to `phase/phase-003-*` execution artifacts for the RULES development rollout of the new chain | |
-| | | - Updated `design/design.md` and `README.md` from 29 to 30 active runtime rules and registered the new doctrine in the Quality & Governance model | |
-| | | - Updated `TODO.md` to record rollout completion and installed the runtime rule into `~/.claude/rules/tactical-strategic-programming.md` | |
-| | | Summary: Added one explicit semantic authority for tactical entry, strategic target, convergence path, and strategic closure so fast local execution can be governed without strategic drift | |
+
+en materially different policy/frame choices remain live.
+- Updated `design/authority-and-scope.design.md` from v1.7 to v1.8.
+- Updated runtime `authority-and-scope.md` from v1.7 to v1.8.
+- Added an explicit user-owned governing-basis selection boundary unless checked authority or evidence already settles the active frame.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.0 to v1.1.
+- Updated runtime `evidence-grounded-burden-of-proof.md` from v1.0 to v1.1.
+- Added `UNRESOLVED_GOVERNING_BASIS` handling so materially outcome-changing basis ambiguity is treated as uncertainty that should trigger clarification rather than silent branch selection.
+- Updated `design/explanation-quality.design.md` from v2.6 to v2.7.
+- Updated runtime `explanation-quality.md` from v2.6 to v2.7.
+- Added a governing-basis clarification boundary so one short clarification gate is preferred over deep multi-branch explanation.
+- Updated `design/answer-presentation.design.md` from v1.11 to v1.12.
+- Updated runtime `answer-presentation.md` from v1.11 to v1.12.
+- Added compact governing-basis clarification layout support so materially outcome-changing basis ambiguity can be presented as a short structured question.
+- Added `patch/governing-basis-clarification-before-branching.patch.md` as the governed before/after artifact for the refinement wave.
+- Added `phase/phase-015-01-refine-governing-basis-clarification.md` and `phase/phase-015-02-sync-master-docs-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
+- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the governing-basis clarification refinement is visible in master governance surfaces.
+- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
+  - `accurate-communication.md`
+  - `authority-and-scope.md`
+  - `evidence-grounded-burden-of-proof.md`
+  - `explanation-quality.md`
+  - `answer-presentation.md`
+
+### Summary
+The RULES system now asks for governing-basis selection before deep branch analysis when materially different policy/frame choices remain live, instead of silently exploring complexity that may become irrelevant once the active basis is chosen.
 
 ---
 

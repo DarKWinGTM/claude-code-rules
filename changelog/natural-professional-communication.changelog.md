@@ -10,8 +10,26 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-04-08 | **[Rejected metaphor-heavy abstraction as a default professional style](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-03-27 | **[Created first-class natural-professional-communication rule chain](#version-10)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Created a new communication-style doctrine rule so the assistant now has one explicit semantic owner for natural professional, non-robotic, non-character-driven default communication | |
+
+---
+
+<a id="version-11"></a>
+## Version 1.1: Rejected metaphor-heavy abstraction as a default professional style
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `natural-professional-communication.md` from v1.0 to v1.1.
+- Updated `design/natural-professional-communication.design.md` from v1.0 to v1.1.
+- Added guidance that professional wording should not drift into metaphor-heavy or management-style abstraction when a direct human-readable action/result statement would be clearer.
+- Added anti-pattern coverage against abstract wording that sounds professional but still makes the reader decode what practically changed.
+
+### Summary
+Natural-professional-communication now treats direct human-readable wording as the professional default and rejects metaphor-heavy abstraction as a default style.
 
 ---
 

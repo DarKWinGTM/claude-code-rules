@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.8
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
+> **Current Version:** 2.9
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
 
@@ -21,6 +21,7 @@ The target behavior is a layered natural explanation style:
 - explicit clarification of what variable names, field names, config keys, enum-like values, and internal labels mean when the explanation depends on them
 - whole-set framing when the user benefits from seeing the full actionable set before drilling down
 - a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
+- direct human-readable translation of metaphor-heavy or architecture-first wording before deeper explanation depends on it
 - concise, high-signal ending with a real next move only when one genuinely exists
 - goal-qualified proposal framing when future ideas are useful after bounded completion
 - governing-basis clarification before deepening several materially different branches
@@ -45,6 +46,7 @@ Observed failure modes:
 - progress or troubleshooting updates bury current state and checked scope inside long narrative blocks
 - explanation is structurally correct but still sounds scripted, over-signposted, or more performative than useful
 - over-explaining continues after the user already has enough context to decide or proceed
+- metaphor-heavy or architecture-first wording is left unexplained, forcing the reader to decode internal shorthand before they can understand the practical meaning
 - multiple materially different policy/frame branches are explained in depth before the active governing basis is chosen
 - post-compact explanation restarts by replaying stale history instead of re-anchoring the active objective and checked state first
 

@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.12 | 2026-04-08 | **[Preferred direct human-readable wording over metaphor-heavy internal shorthand](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-08 | **[Added closed-topic presentation guidance for active summaries](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-06 | **[Added post-compact re-anchor wording for compacted-session continuation](#version-210)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.9 | 2026-04-05 | **[Added governing-basis clarification before deep branch analysis](#version-29)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -49,6 +50,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-212"></a>
+## Version 2.12: Preferred direct human-readable wording over metaphor-heavy internal shorthand
+
+**Date:** 2026-04-08
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication.md` from v2.11 to v2.12.
+- Updated `design/accurate-communication.design.md` from v2.11 to v2.12.
+- Added a direct human-readable wording principle so action/result language is preferred over metaphor-heavy internal shorthand when both would say the same thing.
+- Added application guidance and examples for rewriting architecture-first wording into direct user-visible or action-visible language.
+- Added anti-pattern coverage against metaphor-heavy internal shorthand that forces the reader to decode practical meaning.
+
+### Summary
+Accurate-communication now prefers direct human-readable action/result wording over metaphor-heavy internal shorthand when that makes the practical meaning easier to understand immediately.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.14
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
+> **Current Version:** 2.15
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
 
@@ -27,6 +27,7 @@ This model must preserve one authority system while clearly separating:
 - `portable-implementation-and-hardcoding-control.md` as the semantic owner of portable-default and anti-hardcoding behavior
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
 - `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
+- package-local support assets such as optional `skills/`, optional `agents/`, scripts, and plugin-owned docs remaining portable by default when they are maintained as reusable source artifacts
 
 ---
 

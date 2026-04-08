@@ -1,8 +1,8 @@
 # Answer Presentation
 
-> **Current Version:** 1.13
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.13
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.14
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.14
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
 ---
@@ -75,6 +75,7 @@ When reporting technical status, use a compact snapshot shape instead of a raw e
 Required guidance:
 - start with one short orienting line when the reader needs context
 - use short titled sections such as `Current Status`, `Request Information`, `Environment`, `Checked Scope`, or `What This Means` only when they materially improve scanability
+- when an internal shorthand or abstract phrase must still appear, place a short human-language gloss or direct implication near it instead of leaving the term unexplained
 - use a small fact table only for stable checked facts that are easier to scan side by side than in prose
 - keep tables small, scoped, and fact-oriented
 - do not let the table replace the explanation or implication
@@ -226,6 +227,7 @@ When reporting troubleshooting or implementation status:
 - use a compact snapshot shape that surfaces what was checked, what is currently true, and what action follows
 - start with one short orienting line before the snapshot when context is needed
 - use short titled sections such as `Current Status`, `Request Information`, `Environment`, `Checked Scope`, or `What This Means` only when they materially improve scanability
+- when an internal shorthand or abstract phrase must still appear, place a short human-language gloss or direct implication near it instead of leaving the term unexplained
 - use a small fact table only for stable checked facts that benefit from side-by-side display
 - keep the table small, scoped, and fact-oriented rather than turning it into a general explanation block
 - follow the snapshot with one short implication line or next-action line when the reader needs to know what the snapshot means
@@ -464,6 +466,7 @@ Success condition
 | oversized table for a small issue | increases visual weight without helping the decision | keep tables small and scoped or use prose |
 | table-only status report with no implication | facts are visible, but meaning stays unclear | add one short implication or next-action line |
 | raw variables/fields dumped with no role explanation | the reader sees identifiers but must decode them alone | add a short glossary block, grouped bullets, or a small variable-role table before deeper reasoning |
+| metaphor-heavy or abstract internal phrase left unglossed in a structured answer | the layout looks organized but the reader still has to decode the meaning alone | add a short gloss, implication line, or direct rewrite near the term |
 | future work presented like the next automatic step | the reader cannot tell whether the assistant is proposing an idea or already queueing execution | label it as a proposal and show goal, improvement, output, and optional success condition |
 | governing-basis ambiguity answered with a long branch-comparison essay before the user chooses a basis | the clarification is buried inside unnecessary structure | use a short compact clarification block with basis choices and one `Why it matters` line |
 | post-compact continuation presented as a long conversation replay | the user has to reread stale history instead of seeing the active state quickly | use one short post-compact re-anchor block with current objective, carried-forward facts, needs-recheck detail, and next action |

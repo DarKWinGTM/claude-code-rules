@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.11
+> **Current Version:** 2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
@@ -27,6 +27,7 @@ This chain is the wording owner for:
 - governing-basis clarification before deep branch analysis when multiple materially different policies/frames remain live
 - post-compact re-anchor wording so compacted sessions resume from the active objective without upgrading compressed-away details into exact remembered truth
 - natural professional wording calibration, including anti-robotic and signal-over-ceremony phrasing guidance
+- direct human-readable wording preference so action/result language is preferred over metaphor-heavy internal shorthand
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
 - closed-topic presentation guidance so resolved issues may remain in reasoning context without being repeated in active summaries by default
 
@@ -52,6 +53,7 @@ Observed failure modes:
 - duplicate-looking team-agent state is reported as if the overlap is definitely real and still active when the checked evidence only shows UI noise or partial cleanup state
 - closing summaries repeat prior detail instead of synthesizing the decision and implication
 - wording is technically correct but still sounds robotic, ceremonial, or over-produced
+- metaphor-heavy or architecture-first phrasing makes the reader decode internal shorthand before they can understand the practical meaning
 - fake empathy or exaggerated enthusiasm appears where direct help would be clearer
 
 This design keeps communication flexible while enforcing evidence-aligned wording.
@@ -174,6 +176,9 @@ Required guidance:
 - avoid exaggerated enthusiasm, filler reassurance, and empty politeness that add no decision value
 - keep the tone calm and low-drama even when the content is detailed or corrective
 - use warmth only when it helps the user understand, recover, or proceed
+- prefer direct action/result wording over metaphor-heavy internal shorthand when both would say the same thing
+- avoid architecture-first wording that forces the reader to decode practical meaning from system metaphors
+- if a shorthand phrase remains materially useful, explain it immediately in plain human language
 
 ### 3.7 Signal Density and Closing Clarity Principle
 The end of the response should synthesize, not merely repeat.
@@ -309,6 +314,12 @@ Not allowed:
 
 ### 6.3 Hypothesis wording
 - "One possibility is a stale cache layer, but I have not verified that yet."
+
+### 6.3.0 Direct human-readable rewrite
+- "Instead of: bring this capability to the package surface"
+- "Prefer: make this capability available directly through the package."
+- "Instead of: surface source-query behavior"
+- "Prefer: add a flow so the user can list, search, and open indexed source entries directly."
 
 ### 6.3.1 Human-language gloss
 - "Routing mode visibility, พูดง่าย ๆ คือทำให้ user เห็นว่าตอนนี้ระบบกำลังวิ่งโหมดไหนแบบไม่ต้องเข้าใจไส้ในทั้งหมด."

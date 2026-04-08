@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.15 | 2026-04-09 | **[Kept reusable package-local support assets portable by default](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-08 | **[Narrowed repository startup patch posture for greenfield baseline formation](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-06 | **[Added support-layer modeling for the optional RULES plugin extension area](#version-213)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.12 | 2026-04-02 | **[Added portable public onboarding/install guidance](#version-212)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -24,6 +25,23 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-215"></a>
+## Version 2.15: Kept reusable package-local support assets portable by default
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.14 to v2.15.
+- Updated runtime `project-documentation-standards.md` from v2.14 to v2.15.
+- Added explicit repository-level wording that package-local support assets such as plugin-owned docs, scripts, optional skills, and optional agents should stay portable by default when they are maintained as reusable source artifacts.
+- Extended checklist wording so support/extension package content is not allowed to bake workstation-specific absolute paths into reusable source content by default.
+
+### Summary
+Project-documentation-standards now keeps reusable package-local support assets portable by default instead of treating them like a loophole outside the normal shared-artifact portability contract.
 
 ---
 

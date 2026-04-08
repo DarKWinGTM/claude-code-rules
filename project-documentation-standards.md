@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.14
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.14
+> **Current Version:** 2.15
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -64,6 +64,7 @@ For governance updates, apply in this order:
 - Additional support materials or optional extension packages may still live in `support/` or `plugin/`
 - package-local plugin assets may use a package scaffold such as `README.md`, `.claude-plugin/`, `hooks/`, `scripts/`, optional `skills/`, and optional `agents/`
 - those package-local assets remain implementation/support surfaces, not root governance authority
+- when package-local skills, agents, scripts, or docs are intended to remain reusable source artifacts, they should stay portable by default rather than embedding workstation-specific absolute paths as if those were shared contracts
 - design and patch artifacts are not required to point back to phase
 - TODO tracks actionable work only; it does not become the primary place for phase definitions
 - Changelog records shipped or synchronized changes only; it does not become the primary place for phase definitions
@@ -128,6 +129,7 @@ Required guidance:
 ### 7) Cross-Document Alignment Requirements
 
 - Shared governed docs and templates should remain portable by default rather than embedding machine-specific environment assumptions
+- Package-local support/extension source artifacts such as `plugin/**`, optional `skills/`, optional `agents/`, and reusable support scripts should also remain portable by default when they are acting as maintained source artifacts rather than ephemeral local test output
 - Exact local values may appear only when they are explicitly being recorded as local observations or machine-scoped contracts
 - Public onboarding/install docs should use portable source guidance and clearly labeled destination/runtime notation by default
 - Portable-default and anti-hardcoding discipline should follow `portable-implementation-and-hardcoding-control.md`
@@ -161,6 +163,7 @@ Required guidance:
 - [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] Public onboarding/install guidance avoids workstation-specific absolute paths as public defaults
+- [ ] Package-local support/extension source artifacts do not bake workstation-specific absolute paths into reusable source content by default
 - [ ] Source-side guidance and destination/runtime guidance are clearly distinguished when both appear
 - [ ] Exact local install examples are explicitly scoped when present
 - [ ] Root-level helper artifacts remain non-governed

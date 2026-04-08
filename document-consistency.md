@@ -1,8 +1,8 @@
 # Document Consistency and Cross-Reference Validation
 
-> **Current Version:** 1.5
-> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.5
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.6
+> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.6
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/document-consistency.changelog.md](changelog/document-consistency.changelog.md)
 
 ---
@@ -23,6 +23,7 @@ This rule governs cross-reference consistency, change-propagation discipline, an
 - if a change impacts multiple sections/files, describe or update the dependencies
 - keep portable shared references distinct from checked local facts or machine-scoped examples
 - keep source-side references distinct from destination/runtime references when both appear in install or onboarding guidance
+- keep local execution paths used only for tool/runtime operation distinct from reusable source-artifact references so tool-local paths do not silently become skill/plugin/source contracts
 - defer broader portable-default and anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 2) Reference Types
@@ -32,6 +33,7 @@ This rule governs cross-reference consistency, change-propagation discipline, an
 | File paths | `<workspace-root>/src/config.js` for portable examples, or exact path only when scoped as a checked local fact | Glob / LS / Read |
 | Source-side install path | `<repo-root>` or `./` when a command is run from the repo root | Read / command-context verification |
 | Destination/runtime path | `<install-root>/skills` or `<user-runtime-rules>` | Read config/source contract when applicable |
+| Local execution path | exact tool/runtime path used only for the current machine or harness turn | Read / execution context |
 | Symbols | `getUserById` | Grep |
 | Commands | `npm run build` | Test execution when needed |
 | Config | `DATABASE_URL` | Read config source |
@@ -46,6 +48,7 @@ Apply verification before finalizing references or consistency claims when trigg
 | Rename/move/update impact | path or identifier changed in one place | trace and update dependent references deterministically |
 | Ambiguous or unresolved reference | missing file/symbol or uncertain mapping | mark status explicitly and avoid unstated assumptions |
 | Mixed source/destination wording | install docs blur clone/source path with installed/runtime path | separate the reference roles explicitly and normalize wording |
+| Tool-path leakage into reusable source | a local tool/runtime path is copied into skill/plugin/source content as if it were a shared contract | relabel it as local execution context or replace it with a portable placeholder / runtime variable |
 
 ---
 
