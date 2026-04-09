@@ -216,8 +216,8 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact variable-role structures for identifier-heavy explanations, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
+| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, compact markdown tables as the default table form when tables are genuinely useful, list-first alternatives for sequence and simple status pairs, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact variable-role structures for identifier-heavy explanations, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, explicit compact-table choice and list-first alternatives for sequence/simple-status content, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -234,7 +234,7 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 **📊 Active Runtime Rules: 35**
 
-Latest refinement: purpose-first communication framing now makes diagnosis, test, recommendation, proposal, and implementation-update answers say what they are doing earlier instead of burying that point in later detail.
+Latest refinement: compact table defaults now prefer lighter markdown tables when a table is genuinely useful, while sequence and simple status content should stay list-first instead of drifting into heavier boxed table layouts.
 
 </div>
 
@@ -983,7 +983,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.3 |
+  <b>Version</b>: 9.4 |
   <b>Last Updated</b>: 2026-04-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

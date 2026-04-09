@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-04-09 | **[Standardized compact table defaults and list-first alternatives](#version-116)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.15 | 2026-04-09 | **[Added purpose-first framing layout support](#version-115)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.14 | 2026-04-08 | **[Added gloss-near-term layout support for abstract internal phrasing](#version-114)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.13 | 2026-04-06 | **[Added compact post-compact re-anchor layout support](#version-113)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -34,6 +35,25 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-116"></a>
+## Version 1.16: Standardized compact table defaults and list-first alternatives
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.15 to v1.16.
+- Updated `design/answer-presentation.design.md` from v1.15 to v1.16.
+- Added explicit guidance that when a table is genuinely useful, the default table form should be a compact markdown table.
+- Added a boundary against defaulting to full-frame ASCII or boxed tables for ordinary answer tables.
+- Added stronger list-versus-table guidance so sequence prefers numbered lists and simple status pairs prefer bullets/grouped blocks unless side-by-side scan materially helps.
+- Added compact-table and list-instead-of-table canonical examples plus anti-pattern coverage against heavier boxed table defaults.
+
+### Summary
+Answer-presentation now standardizes lighter compact markdown tables as the default table form and makes list-first alternatives more explicit when the content is not meaningfully tabular.
 
 ---
 

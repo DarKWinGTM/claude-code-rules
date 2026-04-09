@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.15
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.15
+> **Current Version:** 1.16
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -74,6 +74,8 @@ Required guidance:
 - use bullets for grouped items
 - use numbered lists for sequence or order
 - use tables only for genuine comparison or structured facts
+- when a table is materially useful, prefer a compact markdown table by default
+- do not default to full-frame ASCII or boxed tables for ordinary answer tables
 - use diagrams only when sequence or branching is central
 - use headings that describe section purpose, not just visual styling
 
@@ -148,8 +150,9 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | simple answer | factual lookup, low complexity, direct request | compact paragraph or short list |
 | analytical answer | explanation, diagnosis, architectural reasoning | short orienting answer + sections |
 | purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
-| comparison | options, trade-offs, choose between X and Y | comparison table or grouped comparison blocks |
+| comparison | options, trade-offs, choose between X and Y | compact markdown table or grouped comparison blocks |
 | sequence | steps, rollout order, process | numbered steps or ordered subsections |
+| simple status pairs | short state labels with short values | bullets, grouped blocks, or compact markdown table only if side-by-side scan clearly helps |
 | branching | conditions, paths, handoffs | text flow diagram or clearly indented branch structure |
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
@@ -198,10 +201,28 @@ Preferred phrasing:
 
 When real alternatives exist:
 - frame the comparison briefly
-- use a comparison table if side-by-side evaluation helps
+- use a compact markdown table if side-by-side evaluation helps
 - recommend after the comparison is visible
 - when one path is clearly preferred, surface `Recommended` before the remaining options and add one short `Why this first` reason
 - when multiple reasonable options genuinely exist, keep at least one visible alternative under `Other options` instead of reducing the block to the recommendation only
+
+### 3.0 Compact Table Pattern
+
+When a table is genuinely useful:
+- prefer a compact markdown pipe table by default
+- keep the number of columns low unless the comparison really needs more
+- keep cell content short and scanable
+- avoid turning multiline explanation into table cells when bullets or prose would be easier to read
+- do not use full-frame ASCII or boxed tables as the default answer shape
+
+### 3.0.1 List-Versus-Table Pattern
+
+Before using a table, decide whether the content is really tabular.
+
+Prefer:
+- numbered lists for sequence, rollout order, and stepwise work
+- bullets or grouped blocks for simple status pairs
+- tables only when side-by-side scanning materially improves comparison or structured-fact reading
 
 ### 3.1 Proposal Pattern
 
@@ -486,6 +507,26 @@ What This Means
 - if behavior does not change, the setting is not taking effect
 ```
 
+### 20) Canonical Compact Table Shape
+
+```markdown
+| เรื่อง | สถานะ |
+| --- | --- |
+| phase owner | locked |
+| rename map | locked |
+| governance targets | defined |
+```
+
+### 21) Canonical List-Instead-of-Table Shape
+
+```markdown
+Current work order:
+1. phase/design/TODO/changelog sync
+2. schema/model migration
+3. store/query rewrite
+4. tests and verification
+```
+
 
 ---
 
@@ -501,6 +542,7 @@ What This Means
 | list or table with no framing | reader must infer its purpose | add a short context-setting line |
 | raw evidence dump with no orienting line | facts appear, but the reader cannot tell why they matter | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
+| full-frame ASCII or boxed table used for ordinary structured facts | visual weight increases without adding real semantic value | use a compact markdown table or switch to a list/grouped block |
 | machine-specific value presented like a reusable default | local fact is mistaken for a portable contract | label it as a checked local fact or switch to a portable placeholder |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use grouped scope-boundary sections |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
@@ -555,6 +597,8 @@ Not allowed:
 | Scope-boundary scanability | High when current-vs-later explanation is used |
 | Full-set-first scanability | High when the real decision surface is a larger whole |
 | Next-stage visibility | High when the current scope is already sufficient |
+| Compact-table efficiency | High when a table is genuinely useful |
+| Unnecessary boxed-table incidence | 0 critical cases |
 | Decorative formatting without function | 0 critical cases |
 | Over-structuring simple answers | Low |
 | Wall-of-text incidence in complex answers | Low |

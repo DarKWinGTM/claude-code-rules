@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.10
+> **Current Version:** 2.11
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.11 | 2026-04-09 | **[Clarified compact-table choice and list-first alternatives in explanation flow](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-09 | **[Added purpose-first explanation framing for operational answers](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-08 | **[Added direct human-readable translation guidance for metaphor-heavy explanations](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-06 | **[Added compact post-compact re-anchor boundary for explanation flow](#version-28)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -44,6 +45,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-211"></a>
+## Version 2.11: Clarified compact-table choice and list-first alternatives in explanation flow
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.10 to v2.11.
+- Updated `design/explanation-quality.design.md` from v2.10 to v2.11.
+- Added explicit guidance that when a table is justified, the default table form should be a compact markdown table.
+- Added stronger list-first choice guidance so one-path sequence and simple status content do not get forced into heavier tables.
+- Added list-instead-of-table and bullets-instead-of-table examples plus anti-pattern coverage against boxed ASCII tables, sequence-in-table drift, and simple status-pair table overuse.
+
+### Summary
+Explanation-quality now makes compact-table choice and list-first alternatives explicit, so table use stays tied to real comparison value instead of becoming a heavier default explanation shape.
 
 ---
 

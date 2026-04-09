@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.10
+> **Current Version:** 2.11
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -69,6 +69,7 @@ Typical triggers:
 - implementation progress, troubleshooting state, or verification checkpoints where a compact status snapshot improves clarity
 - change walkthroughs where before/after or patch-by-patch framing helps
 - scope clarification where the user needs to understand what is included now versus what stays deferred
+- sequence/status explanations where list-vs-table choice affects scanability and answer weight
 - abstract analytical answers that would be clearer with one concrete example, a small analogy, or a direct human-language paraphrase
 
 This rule is not meant to force long-form structure onto simple factual or low-complexity questions.
@@ -368,7 +369,11 @@ Preferred columns depend on context, but common dimensions include:
 - weakness
 - best fit
 
-Do not force a table when there is only one realistic path or when the comparison would be artificial.
+Required guidance:
+- when a table is justified, prefer a compact markdown table by default
+- do not force a table when there is only one realistic path or when the comparison would be artificial
+- do not force a table when the content is really a sequence, checklist, or simple status snapshot
+- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension
 
 ---
 
@@ -387,6 +392,7 @@ Boundaries:
 - simple factual questions may use a short direct answer only
 - if no process exists, skip causal-flow structure
 - if no real alternatives exist, skip comparison tables
+- if the content is really a sequence or a short status list, prefer numbered lists or bullets over a table
 - if one short clarifier is enough, do not expand into unnecessary depth
 - if one concise final synthesis is enough, do not restate the conclusion in multiple phrasings
 - this rule shapes explanation quality; it does not weaken verification, safety, or user-authority rules
@@ -473,6 +479,26 @@ Before: each route handled auth and policy checks inline.
 After: the policy check moved into shared middleware.
 
 Why this matters: transport-specific handlers now stay thinner, while the same rule logic can be reused across routes and background jobs.
+```
+
+### Pattern 2.1: List instead of table for sequence
+
+```markdown
+Current work order:
+1. phase/design/TODO/changelog sync
+2. schema/model migration
+3. store/query rewrite
+4. tests and verification
+```
+
+### Pattern 2.2: Bullets instead of table for simple status
+
+```markdown
+Current status:
+- phase owner — locked
+- rename map — locked
+- governance targets — defined
+- implementation — not started in this wave
 ```
 
 ### Pattern 3: Patch-by-patch explanation
@@ -666,6 +692,18 @@ Output
 Success condition
 - a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
+
+## 13.1 Anti-Patterns to Avoid
+
+| Anti-Pattern | Why It Hurts | Better Shape |
+|--------------|--------------|--------------|
+| architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
+| the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
+| raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
+| comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
+| sequence forced into a table | the reader gets a heavier layout than the information needs | use a numbered list instead |
+| simple status pairs forced into a table | visual structure becomes heavier than the content | use bullets or grouped blocks unless side-by-side scan materially helps |
+| boxed ASCII table used where a compact markdown table would do | source becomes bulky and harder to maintain without adding semantic value | prefer a compact markdown table by default |
 
 ---
 

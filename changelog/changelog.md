@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.3
+> **Current Version:** 9.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.4 | 2026-04-09 | **[Standardized compact markdown tables and list-first alternatives for lighter answer formatting](#version-94)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.3 | 2026-04-09 | **[Added purpose-first communication framing across wording, explanation, presentation, and style owners](#version-93)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.2 | 2026-04-09 | **[Kept user-declared RULES-first issues out of memory-first fixes and hardened portable support artifacts](#version-92)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.1 | 2026-04-08 | **[Preferred direct human-readable wording over metaphor-heavy internal shorthand](#version-91)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -40,6 +41,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-94"></a>
+## Version 9.4: Standardized compact markdown tables and list-first alternatives for lighter answer formatting
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation` from v1.15 to v1.16 so compact markdown tables are now the default table form when a table is genuinely useful, full-frame ASCII/boxed tables are no longer the ordinary default, and list-first alternatives for sequence/simple status are explicit.
+- Updated `explanation-quality` from v2.10 to v2.11 so explanation flow now explicitly prefers compact markdown tables only when they add real comparison value and prefers lists/bullets for sequence and simple status content.
+- Added `patch/compact-markdown-table-default-and-minimal-table-usage.patch.md` plus `phase/phase-025-01-*` and `phase/phase-025-02-*` for the bounded refinement wave.
+- Synchronized the touched design/changelog chains, master-governance surfaces, reinstalled the touched runtime rules into `~/.claude/rules/`, and verified runtime-copy parity for the new bounded refinement wave.
+
+### Summary
+The RULES repository now standardizes lighter compact markdown tables and makes list-first alternatives explicit, so ordinary answer formatting stays more economical and less box-heavy.
 
 ---
 

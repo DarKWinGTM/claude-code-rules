@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.10
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.10
+> **Current Version:** 2.11
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.11
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -169,7 +169,11 @@ Use a comparison table when:
 - trade-offs matter to the decision
 - the user benefits from side-by-side comparison
 
-Do not force a table when only one realistic path exists.
+Required behavior:
+- when a table is justified, prefer a compact markdown table by default
+- do not force a table when only one realistic path exists
+- do not force a table when the content is really a sequence, checklist, or simple status snapshot
+- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension
 
 ### 12.1 Governing-Basis Clarification Boundary
 When multiple materially different governing bases remain live and the answer would change depending on which one is chosen, prefer one short clarification gate over a long explanation that explores every branch.
@@ -204,6 +208,7 @@ Allowed simplifications:
 - short factual answers can stay short
 - if no process exists, skip causal-flow structure
 - if no meaningful alternatives exist, skip comparison tables
+- if the content is really a sequence or a short status list, prefer numbered lists or bullets over a table
 - if one small example is enough, stop there
 - if one concise final synthesis is enough, do not restate the conclusion in multiple phrasings
 - if the decision surface is already clear, do not keep explaining just to make the answer feel richer
@@ -304,11 +309,31 @@ Short answer: use Redis for shared hot state and PostgreSQL for durable business
 Simple explanation: one store is optimized for fast shared operational data, while the other is optimized for durable business truth.
 
 | Option | Strength | Weakness | Best Fit |
-|--------|----------|----------|----------|
+| --- | --- | --- | --- |
 | Redis | Fast shared access | Not ideal as durable source of truth | Counters, ephemeral state |
 | PostgreSQL | Durable and queryable | Higher latency for hot transient state | Billing, users, audit data |
 
 Recommendation: keep Redis for operational state and PostgreSQL for durable records because the split matches access pattern and failure semantics.
+```
+
+### Pattern 2.1: List instead of table for sequence
+
+```markdown
+Current work order:
+1. phase/design/TODO/changelog sync
+2. schema/model migration
+3. store/query rewrite
+4. tests and verification
+```
+
+### Pattern 2.2: Bullets instead of table for simple status
+
+```markdown
+Current status:
+- phase owner — locked
+- rename map — locked
+- governance targets — defined
+- implementation — not started in this wave
 ```
 
 ### Pattern 3: Before/after explanation
@@ -528,6 +553,9 @@ Success condition
 | the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
 | raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
 | comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
+| sequence forced into a table | the reader gets a heavier layout than the information needs | use a numbered list instead |
+| simple status pairs forced into a table | visual structure becomes heavier than the content | use bullets or grouped blocks unless side-by-side scan materially helps |
+| boxed ASCII table used where a compact markdown table would do | source becomes bulky and harder to maintain without adding semantic value | prefer a compact markdown table by default |
 | many edits explained as one blob | change reasoning becomes hard to follow | explain before/after or patch-by-patch |
 | analogy with no return to literal mechanism | the reader remembers the metaphor but not the actual system | follow the analogy with the real technical explanation |
 | diagnostic status buried in long narrative | current state and next action become hard to identify | lead with a compact diagnostic snapshot |
