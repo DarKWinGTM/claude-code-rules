@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.14
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
+> **Current Version:** 1.15
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
 
@@ -14,6 +14,7 @@ Define one first-class rule chain for answer presentation so responses are order
 
 The target behavior is principle-first and trigger-driven:
 - lead with the main point when helpful
+- show the purpose early when the answer is doing diagnosis, testing, recommendation, proposal, or implementation reporting
 - structure by user need and answer type
 - use headings, lists, tables, and spacing as semantic tools
 - make compact diagnostic snapshots explicit when technical status or checked scope matters
@@ -43,6 +44,7 @@ Observed failure modes:
 - small troubleshooting issues are presented with oversized tables or overbuilt formatting
 - an answer can look well-structured while still leaving metaphor-heavy or abstract internal wording unexplained
 - answers contain the right reasoning but remain hard to scan quickly
+- the structure begins with setup detail while the answer purpose stays implicit until later
 - layout becomes decorative instead of functional
 - simple answers are over-structured while complex answers remain under-structured
 - formatting is technically organized but still feels stiff, overbuilt, or obviously templated
@@ -63,6 +65,15 @@ When user orientation matters, place the main point early.
 Required guidance:
 - use a short answer or short orienting statement near the start when it helps the user understand the response faster
 - do not bury the conclusion deep inside the answer unless chronology truly matters
+
+### 3.1.1 Purpose-First Framing Principle
+
+When the answer is doing diagnosis, testing, recommendation, proposal, or implementation reporting, the layout should make that purpose visible near the start rather than letting the structure begin with setup detail only.
+
+Required guidance:
+- place one short purpose-first line near the start when the reader needs to know what the answer is doing before reading deeper sections
+- use direct operational phrasing such as `This test checks whether ...`, `The main issue is ...`, `Recommended: ...`, or `This update confirms ...` when that improves orientation
+- do not force a dedicated purpose block into naturally simple answers whose first sentence already states the point clearly
 
 ### 3.2 Structure-Follows-Intent Principle
 
@@ -146,10 +157,11 @@ Use stronger presentation structure when one or more of these triggers are prese
 |--------|-----------------|-----------------------------|
 | simple answer | factual lookup, one-step response, low complexity | compact paragraphs or short list only |
 | analytical answer | explanation, trade-off, diagnosis, architecture reasoning | short orienting answer + sections |
+| purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
 | comparison | choose between options, pros/cons, alternatives | comparison table or clearly grouped comparison blocks |
 | sequence | steps, procedure, rollout order, checklist flow | numbered steps or ordered blocks |
 | branching flow | conditions, paths, decision trees, handoffs | text flow diagram or clearly branched list |
-| diagnostic snapshot | troubleshooting status, implementation progress report, verification note, environment summary | short orienting line + compact titled snapshot sections + small scoped fact table when helpful |
+| diagnostic snapshot | troubleshooting status, implementation progress report, verification note, environment summary | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
 | full-set framing | many relevant areas, complete checklist, multiple review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | one short progression block such as `What happens next` or `Next stage` |
@@ -173,9 +185,23 @@ For simple answers:
 
 For reasoning-heavy answers, the preferred pattern is:
 - short answer or orienting summary
+- purpose-first line when the reader needs to know what the answer is doing before the sections begin
 - key points or sections
 - details under meaningful headings
 - concise closing or next step when applicable
+
+### 5.2.1 Purpose-First Pattern
+
+When the answer is doing diagnosis, testing, recommendation, proposal, or implementation reporting:
+- place one short purpose-first line near the start if the first sentence does not already make that purpose clear
+- keep the line direct and operational rather than decorative
+- treat it as orientation, not as a long summary block
+
+Preferred phrasing:
+- `This test checks whether ...`
+- `The main issue is ...`
+- `Recommended: ...`
+- `This update confirms ...`
 
 ### 5.3 Comparison Pattern
 
@@ -305,6 +331,8 @@ When a compact technical status note would help, preferred house-style examples 
 #### Example shape A: Sectioned snapshot
 
 ```markdown
+The main issue is that startup succeeds but the database handoff still fails.
+
 Current Status
 - App boots successfully
 - Database connection still fails
@@ -410,6 +438,20 @@ Success condition
 - a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
+### 5.14 Canonical Purpose-First Shape
+
+```markdown
+This test checks whether the setting actually changes Claude Code behavior.
+
+Checked Scope
+- current config
+- runtime behavior after the setting change
+
+What This Means
+- if behavior changes, the setting is live
+- if behavior does not change, the setting is not taking effect
+```
+
 ---
 
 ## 6) Anti-Patterns to Avoid
@@ -423,6 +465,7 @@ Success condition
 | forced comparison table | adds visual weight without informational value | use normal prose or grouped bullets |
 | missing framing before table/list | reader has to infer the purpose of the structure | add a short context-setting line |
 | raw evidence dump with no orienting line | checked facts appear but meaning stays unclear | start with a short orientation, then present the snapshot |
+| structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
 | scope boundaries buried in long prose | the reader cannot tell what is included now versus later | use grouped scope-boundary sections such as `What this is` / `What this is not` / `What happens now` / `What stays later` |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first, then narrow |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
@@ -461,6 +504,7 @@ Not allowed:
 | Metric | Target |
 |--------|--------|
 | Main-point visibility | High |
+| Purpose-first visibility | High when diagnosis/test/recommendation/proposal answers need fast orientation |
 | Section-purpose clarity | High |
 | Scanability of complex answers | High |
 | Semantic formatting correctness | High |

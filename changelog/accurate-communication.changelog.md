@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.11
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.13
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.13 | 2026-04-09 | **[Added main-point-first operational framing for diagnosis, tests, and recommendations](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-08 | **[Preferred direct human-readable wording over metaphor-heavy internal shorthand](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-08 | **[Added closed-topic presentation guidance for active summaries](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-06 | **[Added post-compact re-anchor wording for compacted-session continuation](#version-210)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -50,6 +51,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-213"></a>
+## Version 2.13: Added main-point-first operational framing for diagnosis, tests, and recommendations
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication.md` from v2.12 to v2.13.
+- Updated `design/accurate-communication.design.md` from v2.12 to v2.13.
+- Added a main-point-first operational framing principle so diagnosis, test, recommendation, proposal, and implementation-update answers now open with one direct sentence saying what the message is doing when that orientation materially helps the reader.
+- Added trigger, decision-framework, example, anti-pattern, and quality-metric coverage so setup/detail no longer buries the head of the matter by default.
+
+### Summary
+Accurate-communication now makes operational answers state the point up front, so the reader can understand what is being tested, diagnosed, recommended, or proposed before reading the supporting detail.
 
 ---
 

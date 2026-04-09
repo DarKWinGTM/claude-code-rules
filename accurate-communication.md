@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.12
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.12
+> **Current Version:** 2.13
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -26,6 +26,17 @@ Required guidance:
 - clarify impact when ambiguity could mislead the recipient
 - make action requirements explicit when action is needed
 - avoid redundant framing when the context is already clear
+
+### 1.1 Main-Point-First Operational Framing Principle
+
+When the answer is reporting a test, diagnosis, recommendation, proposal, implementation update, or next action, open with one direct sentence that says what the message is doing or what the main conclusion is before the supporting detail begins.
+
+Required guidance:
+- say up front what is being tested, diagnosed, proposed, recommended, or concluded when that orientation would materially help the reader
+- prefer a direct opening such as `The main issue is ...`, `This test checks whether ...`, `Recommended: ...`, or `The next step is ...` when the message would otherwise make the reader reconstruct the point from later detail
+- do not make the reader parse background, evidence, or setup text before they can tell the head of the matter
+- keep the opening sentence claim-strength aligned to the actual evidence already held
+- if the answer is simple enough that the first sentence already does this naturally, do not add a second synthetic framing line
 
 ### 2. Verification Honesty Principle
 
@@ -264,6 +275,13 @@ Use direct glossary-style paraphrases when:
 - scope clarification depends on translating internal architecture language into user-facing meaning
 - the current wording uses internal shorthand, architecture-first phrasing, or metaphor-heavy terms that would be clearer as direct human-readable action/result language
 
+### When main-point-first framing applies strongly
+Use explicit main-point-first framing when:
+- the answer is reporting a diagnosis, test, recommendation, proposal, or implementation update
+- the user would otherwise need to read several sentences before understanding what the answer is doing
+- the response includes evidence or setup detail that could bury the practical point
+- the user needs to know the head of the matter before evaluating the supporting detail
+
 ### When stage progression and whole-set wording apply strongly
 Use explicit forward-progress wording when:
 - the current scope is already sufficiently clarified
@@ -356,33 +374,37 @@ Before sending a finding or status update:
 7. Does the response include internal terminology, variable names, field names, config keys, enum-like values, or internal labels that would be easier to understand with a direct gloss?
    → Yes: add a short human-language paraphrase and explain what the identifier is doing in the flow when that meaning matters
 
-8. Can I safely continue the user’s active requested work without clarification, approval, or a stronger rule-owned gate?
+8. If the answer is a diagnosis, test, recommendation, proposal, or implementation update, does the first sentence already say what the message is doing or what the main conclusion is?
+   → No: rewrite the opening so the head of the matter appears before the supporting detail
+   → Yes: proceed
+
+9. Can I safely continue the user’s active requested work without clarification, approval, or a stronger rule-owned gate?
    → Yes: continue instead of pausing to offer optional next steps
    → No: communicate the blocker, completion state, or required decision clearly
 
-9. Is the current state already sufficiently explained?
+10. Is the current state already sufficiently explained?
    → Yes: consider moving to the next stage/state rather than offering deeper same-scope options
 
-10. Is the real decision surface a larger complete set?
+11. Is the real decision surface a larger complete set?
    → Yes: show the full relevant set before narrowing into a subset
 
-11. Has context just been compacted or resumed from a compacted state?
+12. Has context just been compacted or resumed from a compacted state?
    → Yes: re-anchor to the active objective, preserve the latest user-selected frame, and separate carried-forward facts from needs-recheck details before continuing
    → No: proceed
 
-12. Does the answer depend on a still-unselected governing basis or policy?
+13. Does the answer depend on a still-unselected governing basis or policy?
    → Yes: ask the user to choose the basis first with a compact structured clarification and avoid deep branch analysis until it is chosen
    → No: proceed
 
-13. Am I proposing work outside the active objective?
+14. Am I proposing work outside the active objective?
    → Yes: make it explicitly advisory and goal-qualified (goal, improvement, output/result, and success condition when useful)
    → No: proceed
 
-14. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
+15. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
    → No: reduce ceremony, fake empathy, and formulaic phrasing
    → Yes: proceed
 
-15. Am I closing an explanation-heavy response?
+16. Am I closing an explanation-heavy response?
    → Yes: synthesize the conclusion instead of repeating prior detail
 ```
 
@@ -457,6 +479,18 @@ Prefer: "make this capability available directly through the package".
 ```text
 Instead of: "surface source-query behavior"
 Prefer: "add a flow so the user can list, search, and open indexed source entries directly".
+```
+
+### Main-point-first diagnosis
+```text
+The test is checking whether this setting actually changes Claude Code behavior.
+The detailed observations come after that main point, not before it.
+```
+
+### Main-point-first recommendation
+```text
+Recommended: sync the wording-owner rules first.
+Why this first: until the owners agree on the opening pattern, later examples and layout guidance can still drift.
 ```
 
 ### Variable and field clarification
@@ -550,7 +584,7 @@ Diagnostic snapshot:
 | pretending exact capture from partial evidence | makes the snapshot sound more certain than it is | say what was exact, what was partial, and what is inferred |
 | internal jargon with no gloss in an easy-explanation context | the reader must decode internal terminology before understanding the point | add a direct human-language paraphrase |
 | metaphor-heavy internal shorthand where a direct action/result statement exists | the reader has to decode system metaphors before understanding the practical meaning | rewrite the sentence to state what the user can do, what changed, or what result is visible |
-| metaphor-heavy internal shorthand where a direct action/result statement exists | the reader has to decode system metaphors before understanding the practical meaning | rewrite the sentence to state what the user can do, what changed, or what result is visible |
+| the opening makes the reader infer the point from later paragraphs | the main conclusion arrives too late to orient the reader | open with one direct sentence saying what is being tested, diagnosed, proposed, recommended, or concluded |
 | raw variable or field names presented like self-explanatory evidence | the reader sees identifiers but not their job, flow position, or value meaning | explain what the identifier is, what role it plays, and what important values mean |
 | deeper same-scope options offered by default after the stage is already clear | the response stays stuck in the same scope | say directly that the next useful move is the next stage/state |
 | mid-process option prompting when active work could safely continue | execution stalls and the user gets unnecessary checkpoints instead of progress | continue the active objective and report only when blocked, complete, or materially changed |
@@ -580,6 +614,7 @@ Diagnostic snapshot:
 | Bounded snapshot wording honesty | High |
 | Governing-basis clarification usefulness | High when materially different policies/frames would change the answer |
 | Human-language gloss usefulness | High when internal terminology appears in easy-explanation contexts |
+| Main-point-first usefulness | High when diagnosis/test/recommendation/proposal answers need fast orientation |
 | Stage-progression wording usefulness | High when the current scope is already sufficiently clarified |
 | Whole-set framing usefulness | High when the full relevant set should be visible before narrowing |
 | Diagnostic snapshot clarity for status-heavy updates | High |

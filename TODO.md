@@ -1,11 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-08
+> **Last Updated:** 2026-04-09
 
 ---
 
 ## ✅ Completed
 
+- [x] Refine purpose-first communication rules across wording, explanation, presentation, and style owners so diagnosis, test, recommendation, proposal, and implementation-update answers now expose what they are doing earlier; synchronize design/changelog/master surfaces; resync installed runtime copies; and complete a final consistency audit.
 - [x] Refine compact/post-compact governance so compacted-session continuation now re-anchors to the active objective, preserves the active frame, treats compressed-away exact detail as needs-recheck rather than silently verified truth, synchronizes master RULES artifacts, and reinstalls the touched runtime rules.
 - [x] Tighten the compact SessionStart hook into a reference-first review trigger so `systemMessage` now carries explicit `review-required` wording, `hookSpecificOutput.additionalContext` is reduced to instruction + file pointers + objective status only, `sessionstart-directive.json` records bounded directive proof, memsearch remains a later assist boundary, and patch/phase/changelog/master docs are synchronized for the completed Wave 021 refinement.
 - [x] Replace singleton compact plugin files with a session-scoped carry-forward model so `PreCompact` creates per-session `pending.json`, `precompact-context.json`, and `carry-forward-selected.json`, compact `SessionStart` injects only one resolved session’s selected carry-forward payload plus the re-anchor reminder, writes one per-session proof file, fails closed on ambiguity, and `PostCompact` prunes expired session directories plus rewrites the live index.
@@ -67,7 +68,7 @@
 ## 📋 Tasks To Do
 
 ### Current Governance Execution
-- [ ] (none)
+- [ ] Reconcile legacy phase review-state drift: `phase/SUMMARY.md` still carries historical `Implemented - Pending Review` entries for older rollout families, so repo-level execution tracking should either complete those reviews or explicitly retire the pending markers.
 
 ### Deferred Enhancements
 - [ ] Automated validation script for documentation compliance (deferred by user).
@@ -79,6 +80,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-09 | Added purpose-first communication guidance so diagnosis, test, recommendation, proposal, and implementation-update answers now state what they are doing earlier across `accurate-communication`, `explanation-quality`, `answer-presentation`, and `natural-professional-communication`; synchronized design/changelog/master surfaces; and opened the bounded `phase-024` / `patch/purpose-first-communication-framing.patch.md` refinement wave. |
 | 2026-04-09 | Added rules-first-over-memory guidance so user-declared governance issues are fixed in RULES rather than being treated as memory-first problems, and extended portability guidance so reusable support/package source artifacts such as plugin-owned docs, scripts, skills, and agents stay portable by default; opened `phase-023` / `patch/rules-first-over-memory-and-portable-support-artifacts.patch.md` for the bounded refinement wave. |
 | 2026-04-08 | Added direct human-readable wording guidance so metaphor-heavy internal shorthand is no longer a good default explanation style when a direct action/result statement would be clearer; updated communication, explanation, style, and presentation owners plus opened `phase-022` / `patch/direct-human-readable-wording-over-metaphor-heavy-shorthand.patch.md` for the bounded refinement wave. |
 | 2026-04-08 | Added active-summary guidance so resolved topics may remain available for reasoning without being repeated in visible summaries by default, and narrowed startup patch posture so greenfield baseline formation now defaults to design/changelog/TODO/phase posture first unless a real existing before/after review surface or explicit user request justifies patch. |

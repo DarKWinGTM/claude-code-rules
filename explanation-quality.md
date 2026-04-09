@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.9
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.9
+> **Current Version:** 2.10
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.10
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -26,15 +26,26 @@ Required behavior:
 - explain what the issue means before explaining every low-level mechanism
 - when useful, separate a simple version from a technical version instead of mixing both at once
 
+### 1.1 Purpose-First Explanation Step
+
+When an explanation reports a test, diagnosis, recommendation, proposal, or implementation update, the opening should first say what the explanation is doing before it starts unpacking the mechanism.
+
+Required behavior:
+- open with one direct sentence that states what is being tested, diagnosed, proposed, recommended, or concluded when that orientation would materially help the reader
+- make the purpose legible before background, mechanism, or supporting evidence expands the answer
+- if the explanation uses a labeled structure, let the first line or first short block carry the purpose-first statement
+- do not add a redundant purpose line when the first sentence already states the head of the matter clearly
+
 ### 2) Layered Natural Explanation Pattern
 
 For analytical or technical explanations, prefer this default order:
 
 1. short answer
-2. simple explanation
-3. compact technical snapshot when needed
-4. step-by-step implication, fix, or reasoning path
-5. concise synthesis and next move when genuinely useful
+2. purpose-first framing when needed
+3. simple explanation
+4. compact technical snapshot when needed
+5. step-by-step implication, fix, or reasoning path
+6. concise synthesis and next move when genuinely useful
 
 Do not force every layer when the answer is naturally simpler. Use only the layers that materially improve understanding.
 
@@ -95,6 +106,15 @@ Required behavior:
 - show what is currently true versus still pending
 - show the immediate next decision or action
 - keep the snapshot concise and scoped to material evidence
+
+### 7.1 Main-Point-First Status Framing
+
+For status-heavy updates, the opening line should tell the reader what the update means before the snapshot details begin.
+
+Required behavior:
+- use a short opening such as `The main issue is ...`, `This update confirms ...`, or `This test checks whether ...` when the status note would otherwise begin with raw detail
+- do not make the reader infer the update purpose from the middle of the snapshot
+- keep the opening claim-strength aligned to what was actually checked
 
 ### 8) Scope-Clarification Patterns
 
@@ -247,11 +267,11 @@ Apply this rule more strongly when one or more of these signals are present:
 
 | Trigger | Typical Signal | Expected Shape |
 |--------|-----------------|----------------|
-| Process explanation | lifecycle, sequence, state transition, pipeline | short answer + simple explanation + causal flow |
-| Option comparison | best approach, pros/cons, trade-offs, choose between X and Y | short answer + simple framing + comparison table + recommendation |
-| Root-cause analysis | why did this happen, what's causing this | short answer + simple explanation + claim/mechanism/implication |
-| Diagnostic update | implementation status, troubleshooting progress, verification checkpoint | compact diagnostic snapshot + scoped implication + next action |
-| Change walkthrough | refactor, migration, multi-part patch, staged rollout | before/after or patch-by-patch explanation |
+| Process explanation | lifecycle, sequence, state transition, pipeline | short answer + purpose-first framing when needed + simple explanation + causal flow |
+| Option comparison | best approach, pros/cons, trade-offs, choose between X and Y | short answer + purpose-first framing when needed + simple framing + comparison table + recommendation |
+| Root-cause analysis | why did this happen, what's causing this | short answer + purpose-first framing when needed + simple explanation + claim/mechanism/implication |
+| Diagnostic update | implementation status, troubleshooting progress, verification checkpoint | main-point-first status line + compact diagnostic snapshot + scoped implication + next action |
+| Change walkthrough | refactor, migration, multi-part patch, staged rollout | purpose-first framing + before/after or patch-by-patch explanation |
 | Scope clarification | what this is vs what it is not, what happens now vs later, current phase vs deferred phase | explicit grouped scope-boundary explanation |
 | Whole-set reasoning | many relevant areas, complete checklist, multiple review axes that should be visible together | full set first, then optional narrowing |
 | Stage progression | current explanation is already sufficient and the real need is the next state or milestone | short answer + clear `What happens next` / `Next stage` progression |
@@ -268,6 +288,8 @@ Apply this rule more strongly when one or more of these signals are present:
 
 ```markdown
 Short answer: the failure is in environment handoff, not in app boot.
+
+Purpose: this explanation is diagnosing where the failure sits before we talk about the lower-level mechanism.
 
 Simple explanation: the app starts, but when it reaches the database step it does not have the value it needs.
 
@@ -320,6 +342,8 @@ In technical terms, the auth rule moved out of each route handler into shared mi
 
 ```markdown
 Short answer: the bug is in environment handoff, not in app boot.
+
+Purpose: this update is diagnosing whether the failure happens during startup or later during database handoff.
 
 Simple explanation: the service starts normally, but it reaches the database step without the value it needs.
 
@@ -501,6 +525,7 @@ Success condition
 | one-line-per-thought fragmentation | breaks continuity and causal flow | use a cohesive paragraph for one idea |
 | abstract recommendation without example | hard to transfer into action | add one concrete scenario, before/after view, analogy, or direct human-language gloss |
 | architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
+| the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
 | raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
 | comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
 | many edits explained as one blob | change reasoning becomes hard to follow | explain before/after or patch-by-patch |

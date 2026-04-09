@@ -1,8 +1,8 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.13
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.15
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-04-09 | **[Added purpose-first framing layout support](#version-115)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.14 | 2026-04-08 | **[Added gloss-near-term layout support for abstract internal phrasing](#version-114)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.13 | 2026-04-06 | **[Added compact post-compact re-anchor layout support](#version-113)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.12 | 2026-04-05 | **[Added compact governing-basis clarification layout support](#version-112)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -33,6 +34,23 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-115"></a>
+## Version 1.15: Added purpose-first framing layout support
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.14 to v1.15.
+- Updated `design/answer-presentation.design.md` from v1.14 to v1.15.
+- Added a purpose-first framing principle, trigger, and pattern so diagnosis, test, recommendation, proposal, and implementation-update answers can show what they are doing before the deeper structure begins.
+- Added canonical purpose-first and snapshot examples plus anti-pattern coverage against structure that begins with setup while leaving the real purpose implicit until later.
+
+### Summary
+Answer-presentation now gives operational answers a compact purpose-first layout shape so readers can see what the answer is doing before the detail blocks expand.
 
 ---
 

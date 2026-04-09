@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.14
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.14
+> **Current Version:** 1.15
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -24,6 +24,15 @@ When user orientation matters, put the main point early.
 Required guidance:
 - give a short answer or orienting statement near the start when it helps the user understand faster
 - do not bury the key conclusion inside avoidable detail
+
+### 1.1 Purpose-First Framing Principle
+
+When the answer is doing a diagnosis, test, recommendation, proposal, or implementation update, make that purpose visible at the start instead of letting the structure begin with setup detail only.
+
+Required guidance:
+- place one short purpose-first line near the start when the reader needs to know what the answer is doing before reading the details
+- use framing such as `This test checks whether ...`, `Recommended: ...`, `The main issue is ...`, or `This update confirms ...` when that improves orientation
+- do not force a dedicated purpose block into naturally simple answers whose first line already states the point clearly
 
 ### 2) Structure-Follows-Intent Principle
 
@@ -138,10 +147,11 @@ Apply stronger presentation structure when one or more of these triggers are pre
 |--------|-----------------|------------------------|
 | simple answer | factual lookup, low complexity, direct request | compact paragraph or short list |
 | analytical answer | explanation, diagnosis, architectural reasoning | short orienting answer + sections |
+| purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
 | comparison | options, trade-offs, choose between X and Y | comparison table or grouped comparison blocks |
 | sequence | steps, rollout order, process | numbered steps or ordered subsections |
 | branching | conditions, paths, handoffs | text flow diagram or clearly indented branch structure |
-| diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + compact titled snapshot sections + small scoped fact table when helpful |
+| diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
 | full-set framing | many relevant areas, complete checklist, several review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
@@ -166,9 +176,23 @@ For simple questions:
 
 For reasoning-heavy answers, prefer:
 - short answer or orienting line
+- purpose-first line when the reader needs to know what the answer is doing before the sections begin
 - key points or meaningful sections
 - details under the correct heading
 - concise closing or next step when applicable
+
+### 2.1 Purpose-First Pattern
+
+When the answer is doing a diagnosis, test, recommendation, proposal, or implementation update:
+- place one short purpose-first line near the start if the first sentence does not already make that purpose clear
+- keep the line direct and operational rather than decorative
+- treat it as orientation, not as a long summary block
+
+Preferred phrasing:
+- `This test checks whether ...`
+- `The main issue is ...`
+- `Recommended: ...`
+- `This update confirms ...`
 
 ### 3) Comparison Pattern
 
@@ -283,6 +307,8 @@ When a compact technical status note would help, the following snapshot shapes a
 #### Example shape A: Sectioned snapshot
 
 ```markdown
+The main issue is that startup succeeds but the database handoff still fails.
+
 Current Status
 - App boots successfully
 - Database connection still fails
@@ -446,6 +472,21 @@ Success condition
 - a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
+### 19) Canonical Purpose-First Shape
+
+```markdown
+This test checks whether the setting actually changes Claude Code behavior.
+
+Checked Scope
+- current config
+- runtime behavior after the setting change
+
+What This Means
+- if behavior changes, the setting is live
+- if behavior does not change, the setting is not taking effect
+```
+
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -459,6 +500,7 @@ Success condition
 | forced table without true comparison | adds weight without value | use prose or grouped bullets |
 | list or table with no framing | reader must infer its purpose | add a short context-setting line |
 | raw evidence dump with no orienting line | facts appear, but the reader cannot tell why they matter | start with a short orientation, then present the snapshot |
+| structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
 | machine-specific value presented like a reusable default | local fact is mistaken for a portable contract | label it as a checked local fact or switch to a portable placeholder |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use grouped scope-boundary sections |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
@@ -505,6 +547,7 @@ Not allowed:
 | Metric | Target |
 |--------|--------|
 | Main-point visibility | High |
+| Purpose-first visibility | High when diagnosis/test/recommendation/proposal answers need fast orientation |
 | Section-purpose clarity | High |
 | Scanability of complex answers | High |
 | Semantic formatting correctness | High |

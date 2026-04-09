@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.12
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
+> **Current Version:** 2.13
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
 
@@ -28,6 +28,7 @@ This chain is the wording owner for:
 - post-compact re-anchor wording so compacted sessions resume from the active objective without upgrading compressed-away details into exact remembered truth
 - natural professional wording calibration, including anti-robotic and signal-over-ceremony phrasing guidance
 - direct human-readable wording preference so action/result language is preferred over metaphor-heavy internal shorthand
+- main-point-first operational framing so diagnosis/test/recommendation/proposal/update answers state what they are doing before the supporting detail expands
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
 - closed-topic presentation guidance so resolved issues may remain in reasoning context without being repeated in active summaries by default
 
@@ -54,6 +55,7 @@ Observed failure modes:
 - closing summaries repeat prior detail instead of synthesizing the decision and implication
 - wording is technically correct but still sounds robotic, ceremonial, or over-produced
 - metaphor-heavy or architecture-first phrasing makes the reader decode internal shorthand before they can understand the practical meaning
+- the main point arrives too late because the wording starts with setup instead of what the message is doing
 - fake empathy or exaggerated enthusiasm appears where direct help would be clearer
 
 This design keeps communication flexible while enforcing evidence-aligned wording.
@@ -70,6 +72,15 @@ Required guidance:
 - clarify impact when ambiguity could mislead the recipient
 - make action requirements explicit when action is needed
 - avoid adding unnecessary structure when the context is already clear
+
+### 3.1.1 Main-Point-First Operational Framing Principle
+When the answer is doing operational work such as diagnosing, testing, recommending, proposing, or reporting implementation state, the communication should make that purpose visible before the supporting detail expands.
+
+Required guidance:
+- open with one direct sentence that says what is being tested, diagnosed, proposed, recommended, or concluded when that orientation materially improves understanding
+- do not make the reader reconstruct the head of the matter from later evidence or setup paragraphs
+- keep the opening sentence claim-strength aligned to the evidence already held
+- if the first sentence already states the purpose naturally, do not force a second redundant framing line
 
 ### 3.2 Verification Honesty Principle
 Claims must match the real level of verification.
@@ -200,6 +211,7 @@ Required guidance:
 - when the real decision surface is a larger complete set, prefer presenting that full set before narrowing into a smaller slice
 - avoid ritualized openings such as exaggerated enthusiasm or templated reassurance when they do not help the user
 - avoid fake empathy phrasing when direct practical help is the better response
+- front-load one direct purpose/conclusion sentence when the answer would otherwise make the reader wait to learn what the message is doing
 
 ### 3.7.1 Closed-Topic Presentation Principle
 Previously resolved or already-fixed topics may still remain relevant inside the assistant’s reasoning context, but they should not dominate the visible response once the active issue has moved on.
@@ -268,6 +280,7 @@ Use stronger wording discipline when:
 - describing duplicate-looking team-agent state where the evidence may only support observed overlap or stale-presence uncertainty
 - determining whether a governing basis is settled strongly enough to proceed without clarification
 - deciding whether compacted carry-forward detail is still strong enough to count as verified fact without recheck
+- shaping diagnosis/test/recommendation/proposal/update answers where the opening could otherwise bury the practical point
 
 ### 5.3 When Bounded Technical Snapshot Wording Applies Strongly
 Use bounded snapshot wording when:
@@ -308,6 +321,11 @@ Not allowed:
 
 ### 6.1 Claim-focused correction
 - "The checked evidence conflicts with that claim: the config currently sets `PORT=3001`."
+
+### 6.1.1 Main-point-first operational framing
+- "This test checks whether the setting actually changes Claude Code behavior."
+- "Recommended: sync the wording-owner rules first."
+- "The main issue is that the answer makes the reader wait too long to learn what it is doing."
 
 ### 6.2 Scoped non-finding
 - "I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did not find `DATABASE_URL` there."

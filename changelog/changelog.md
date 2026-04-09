@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.2
+> **Current Version:** 9.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.3 | 2026-04-09 | **[Added purpose-first communication framing across wording, explanation, presentation, and style owners](#version-93)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.2 | 2026-04-09 | **[Kept user-declared RULES-first issues out of memory-first fixes and hardened portable support artifacts](#version-92)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.1 | 2026-04-08 | **[Preferred direct human-readable wording over metaphor-heavy internal shorthand](#version-91)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.0 | 2026-04-08 | **[Added closed-topic presentation guidance and narrowed startup patch posture](#version-90)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -39,6 +40,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-93"></a>
+## Version 9.3: Added purpose-first communication framing across wording, explanation, presentation, and style owners
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication` from v2.12 to v2.13 so diagnosis, test, recommendation, proposal, and implementation-update answers now open with one direct sentence saying what the message is doing when that orientation materially helps the reader.
+- Updated `explanation-quality` from v2.9 to v2.10 so operational explanations now use a purpose-first explanation step before deeper mechanism detail expands.
+- Updated `answer-presentation` from v1.14 to v1.15 so operational answers now have a compact purpose-first framing layout pattern and snapshot examples that expose the purpose earlier.
+- Updated `natural-professional-communication` from v1.1 to v1.2 so sounding natural and professional now explicitly includes purpose-before-detail wording for operational answers.
+- Synchronized the touched design/changelog chains, updated the master-governance surfaces, reinstalled the touched runtime rules into `~/.claude/rules/`, and verified runtime-copy parity for the new bounded refinement wave.
+
+### Summary
+The RULES repository now makes operational answers state their purpose earlier, so the user can understand what is being tested, diagnosed, recommended, or proposed before the supporting detail unfolds.
 
 ---
 
@@ -112,34 +131,6 @@ The RULES repository now keeps active summaries focused on current issues while 
 
 ### Summary
 The RULES repo now distinguishes startup baseline formation from true reviewable deltas more cleanly, so new-project formation defaults to design/changelog/TODO/phase posture first and patch only enters when a real existing before/after surface or explicit user request justifies it.
-
----
-
-en materially different policy/frame choices remain live.
-- Updated `design/authority-and-scope.design.md` from v1.7 to v1.8.
-- Updated runtime `authority-and-scope.md` from v1.7 to v1.8.
-- Added an explicit user-owned governing-basis selection boundary unless checked authority or evidence already settles the active frame.
-- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.0 to v1.1.
-- Updated runtime `evidence-grounded-burden-of-proof.md` from v1.0 to v1.1.
-- Added `UNRESOLVED_GOVERNING_BASIS` handling so materially outcome-changing basis ambiguity is treated as uncertainty that should trigger clarification rather than silent branch selection.
-- Updated `design/explanation-quality.design.md` from v2.6 to v2.7.
-- Updated runtime `explanation-quality.md` from v2.6 to v2.7.
-- Added a governing-basis clarification boundary so one short clarification gate is preferred over deep multi-branch explanation.
-- Updated `design/answer-presentation.design.md` from v1.11 to v1.12.
-- Updated runtime `answer-presentation.md` from v1.11 to v1.12.
-- Added compact governing-basis clarification layout support so materially outcome-changing basis ambiguity can be presented as a short structured question.
-- Added `patch/governing-basis-clarification-before-branching.patch.md` as the governed before/after artifact for the refinement wave.
-- Added `phase/phase-015-01-refine-governing-basis-clarification.md` and `phase/phase-015-02-sync-master-docs-and-runtime-install.md` as the bounded rollout family for the new refinement wave.
-- Updated `design/design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the governing-basis clarification refinement is visible in master governance surfaces.
-- Reinstalled the touched runtime rules into `~/.claude/rules/` and verified parity for:
-  - `accurate-communication.md`
-  - `authority-and-scope.md`
-  - `evidence-grounded-burden-of-proof.md`
-  - `explanation-quality.md`
-  - `answer-presentation.md`
-
-### Summary
-The RULES system now asks for governing-basis selection before deep branch analysis when materially different policy/frame choices remain live, instead of silently exploring complexity that may become irrelevant once the active basis is chosen.
 
 ---
 

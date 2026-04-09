@@ -1,8 +1,8 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.8
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.10
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.10 | 2026-04-09 | **[Added purpose-first explanation framing for operational answers](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-08 | **[Added direct human-readable translation guidance for metaphor-heavy explanations](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-06 | **[Added compact post-compact re-anchor boundary for explanation flow](#version-28)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 2.7 | 2026-04-05 | **[Added governing-basis clarification boundary before deep multi-branch explanation](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -43,6 +44,23 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-210"></a>
+## Version 2.10: Added purpose-first explanation framing for operational answers
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.9 to v2.10.
+- Updated `design/explanation-quality.design.md` from v2.9 to v2.10.
+- Added a purpose-first explanation step so diagnosis, test, recommendation, proposal, and implementation-update answers now say what the explanation is doing before the mechanism expands.
+- Extended the layered explanation model, trigger model, diagnostic-update framing, examples, and anti-pattern coverage so setup detail no longer hides the explanation purpose by default.
+
+### Summary
+Explanation-quality now makes operational explanations state their purpose earlier, so the user can understand what the explanation is doing before the deeper reasoning unfolds.
 
 ---
 

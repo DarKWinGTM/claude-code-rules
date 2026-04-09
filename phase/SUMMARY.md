@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.11
+> **Current Version:** 1.13
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.7
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
-> **Status:** Completed
+> **Status:** Mixed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains twenty-three rollout families:
+The current workspace contains twenty-four rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -38,6 +38,7 @@ The current workspace contains twenty-three rollout families:
 - major phase `021` = reference-first compact review refinement rollout
 - major phase `022` = direct human-readable wording refinement rollout
 - major phase `023` = rules-first over memory and portable support artifact refinement rollout
+- major phase `024` = purpose-first communication framing refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -101,6 +102,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 022 | 022-02 | `phase/phase-022-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/direct-human-readable-wording-over-metaphor-heavy-shorthand.patch.md` | Sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the new refinement wave | Repo-level governance and installed runtime state reflect the direct human-readable wording refinement |
 | 023 | 023-01 | `phase/phase-023-01-rules-first-over-memory-boundary.md` | `design/authority-and-scope.design.md` + `design/portable-implementation-and-hardcoding-control.design.md` + `design/project-documentation-standards.design.md` + `design/document-consistency.design.md` | `patch/rules-first-over-memory-and-portable-support-artifacts.patch.md` | Refine authority and portability owners so user-declared RULES-first issues are fixed in RULES rather than memory and reusable support/package source artifacts stay portable by default | Memory no longer acts as the substitute remedy for a user-declared RULES-first issue, and support/package source artifacts are explicitly governed as portable-by-default source content |
 | 023 | 023-02 | `phase/phase-023-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/rules-first-over-memory-and-portable-support-artifacts.patch.md` | Sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the new refinement wave | Repo-level governance and installed runtime state reflect the rules-first-over-memory and portable-support-artifact refinement |
+| 024 | 024-01 | `phase/phase-024-01-refine-purpose-first-communication.md` | `design/accurate-communication.design.md` + `design/explanation-quality.design.md` + `design/answer-presentation.design.md` + `design/natural-professional-communication.design.md` | `patch/purpose-first-communication-framing.patch.md` | Refine the communication-owner set so diagnosis, test, recommendation, proposal, and implementation-update answers state what they are doing before the supporting detail expands | Operational answers expose their purpose earlier instead of making the reader infer it from later detail |
+| 024 | 024-02 | `phase/phase-024-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/purpose-first-communication-framing.patch.md` | Sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the new refinement wave | Repo-level governance and installed runtime state reflect the purpose-first communication refinement |
 
 ---
 
@@ -161,7 +164,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 022-02: sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the direct human-readable wording refinement
   → 023-01: refine authority and portability owners so user-declared RULES-first issues are fixed in RULES rather than memory and support/package source artifacts remain portable by default
   → 023-02: sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the rules-first-over-memory and portable-support-artifact refinement
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
+  → 024-01: refine the communication-owner set so diagnosis, test, recommendation, proposal, and implementation-update answers state what they are doing before the supporting detail expands
+  → 024-02: sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the purpose-first communication refinement
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
 
@@ -213,6 +218,18 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 018 | 018-02 | `phase/phase-018-02-sync-plugin-docs-and-verify-compact-handoff-lifecycle.md` | Completed | None | Approved As-Is | package/root docs synchronized and runtime verification confirmed create → consume/delete → prune behavior |
 | 019 | 019-01 | `phase/phase-019-01-replace-single-slot-compact-state-with-session-scoped-layout.md` | Completed | None | Approved As-Is | singleton compact files replaced with session-scoped state directories and live index |
 | 019 | 019-02 | `phase/phase-019-02-sync-docs-and-verify-session-scoped-compact-carry-forward.md` | Completed | None | Approved As-Is | docs synchronized and session-scoped verification confirmed create → consume/proof → fail-closed ambiguity behavior |
+| 020 | 020-01 | `phase/phase-020-01-tighten-active-review-trigger.md` | Completed | None | Approved As-Is | active review-trigger refinement applied and exact-session review pointers are now part of compact resume behavior |
+| 020 | 020-02 | `phase/phase-020-02-add-optional-memsearch-assist-boundary.md` | Completed | None | Approved As-Is | memsearch remains deferred while local-review-first behavior stays active |
+| 020 | 020-03 | `phase/phase-020-03-sync-docs-and-verify-active-review-behavior.md` | Completed | None | Approved As-Is | root docs synchronized and active review-trigger behavior verified |
+| 021 | 021-01 | `phase/phase-021-01-tighten-systemmessage-review-required.md` | Completed | None | Approved As-Is | user-visible compact resume now explicitly says review is required before continuation |
+| 021 | 021-02 | `phase/phase-021-02-tighten-additionalcontext-reference-first.md` | Completed | None | Approved As-Is | compact additionalContext now stays reference-first instead of replaying old context |
+| 021 | 021-03 | `phase/phase-021-03-add-bounded-directive-proof-and-sync.md` | Completed | None | Approved As-Is | bounded directive proof added and sync surfaces aligned for the reference-first compact review model |
+| 022 | 022-01 | `phase/phase-022-01-refine-direct-human-readable-wording.md` | Completed | None | Approved As-Is | direct human-readable wording refinement applied across wording, explanation, presentation, and style owners |
+| 022 | 022-02 | `phase/phase-022-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs synchronized and runtime-install parity restored for the direct human-readable wording refinement |
+| 023 | 023-01 | `phase/phase-023-01-rules-first-over-memory-boundary.md` | Completed | None | Approved As-Is | rules-first-over-memory boundary applied and support/package artifact portability clarified |
+| 023 | 023-02 | `phase/phase-023-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs synchronized and runtime-install parity restored for the rules-first-over-memory refinement |
+| 024 | 024-01 | `phase/phase-024-01-refine-purpose-first-communication.md` | Completed | None | Approved As-Is | purpose-first refinement applied across wording, explanation, presentation, and style owners |
+| 024 | 024-02 | `phase/phase-024-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs synchronized and runtime-copy parity restored |
 
 ---
 
@@ -272,16 +289,18 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 021 | 021-03 | Completed | `phase/phase-021-03-add-bounded-directive-proof-and-sync.md` | Add bounded directive proof and synchronize docs/version surfaces | `021-02` |
 | 022 | 022-01 | Completed | `phase/phase-022-01-refine-direct-human-readable-wording.md` | Refine the communication-owner set so direct human-readable action/result wording is preferred over metaphor-heavy internal shorthand | none |
 | 022 | 022-02 | Completed | `phase/phase-022-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the direct human-readable wording refinement | `022-01` |
-| 023 | 023-01 | Implemented - Pending Review | `phase/phase-023-01-rules-first-over-memory-boundary.md` | Refine authority and portability owners so user-declared RULES-first issues are fixed in RULES rather than memory and support/package source artifacts remain portable by default | none |
-| 023 | 023-02 | Implemented - Pending Review | `phase/phase-023-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the rules-first-over-memory and portable-support-artifact refinement | `023-01` |
+| 023 | 023-01 | Completed | `phase/phase-023-01-rules-first-over-memory-boundary.md` | Refine authority and portability owners so user-declared RULES-first issues are fixed in RULES rather than memory and support/package source artifacts remain portable by default | none |
+| 023 | 023-02 | Completed | `phase/phase-023-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the rules-first-over-memory and portable-support-artifact refinement | `023-01` |
+| 024 | 024-01 | Completed | `phase/phase-024-01-refine-purpose-first-communication.md` | Refine the communication-owner set so diagnosis, test, recommendation, proposal, and implementation-update answers state what they are doing before the supporting detail expands | none |
+| 024 | 024-02 | Completed | `phase/phase-024-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the purpose-first communication refinement | `024-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, and the direct human-readable wording refinement in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, and the direct human-readable wording refinement after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, and direct human-readable wording changes without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, and the purpose-first communication refinement in dated history until final review is complete.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, and the purpose-first communication refinement after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, reference-first compact review, direct human-readable wording, rules-first-over-memory, and purpose-first communication changes without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -305,7 +324,11 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the plugin extension companion rollout exists as a bounded `017` family with explicit patch linkage and support-layer boundary visibility
 - the compact handoff lifecycle refinement exists as a bounded `018` family with explicit patch linkage, package/root doc synchronization, and runtime verification of the ephemeral handoff model
 - the session-scoped compact carry-forward refinement exists as a bounded `019` family with explicit patch linkage, per-session storage layout, fail-closed ambiguous routing, and runtime verification of the session-scoped injection model
+- the active review-trigger compact refinement exists as a bounded `020` family with explicit patch linkage, review-trigger behavior, and synchronized master-governance surfaces
+- the reference-first compact review refinement exists as a bounded `021` family with explicit patch linkage, reference-first additionalContext behavior, and synchronized master-governance surfaces
 - the direct human-readable wording refinement exists as a bounded `022` family with explicit patch linkage, owner-set wording/explanation/style/presentation integration, and synchronized master-governance surfaces
+- the rules-first-over-memory refinement exists as a bounded `023` family with explicit patch linkage, authority/portability integration, and synchronized master-governance surfaces
+- the purpose-first communication refinement exists as a bounded `024` family with explicit patch linkage, owner-set wording/explanation/presentation/style integration, and synchronized master-governance surfaces
 
 ---
 

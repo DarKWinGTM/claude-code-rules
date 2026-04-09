@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.9
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
+> **Current Version:** 2.10
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
 
@@ -14,6 +14,7 @@ Define one rule chain that improves the structure of analytical and technical ex
 
 The target behavior is a layered natural explanation style:
 - short answer first
+- purpose-first framing when the reader needs to know what the explanation is doing before the detail starts
 - simple explanation before deep protocol detail
 - compact technical snapshot when status or checked scope matters
 - step-by-step implication or fix path when walkthrough value exists
@@ -39,6 +40,7 @@ Observed failure modes:
 - bullets present conclusions without enough mechanism or causal flow
 - trade-off discussions appear without side-by-side comparison structure
 - recommendations arrive before the reasoning that justifies them
+- the explanation starts with setup detail and only reveals its purpose later
 - abstract analytical claims appear without a concrete example or clarifying model
 - changes are described as one blob instead of before/after or patch-by-patch progression
 - endings repeat prior detail instead of synthesizing the real conclusion
@@ -79,6 +81,8 @@ When the task is analytical, the preferred default order is:
 
 Short answer
   ↓
+Purpose-first framing when needed
+  ↓
 Simple explanation
   ↓
 Compact technical snapshot when needed
@@ -95,6 +99,16 @@ Required guidance:
 - explain what the issue means before diving into lower-level protocol detail when the topic is complex
 - prefer a human-readable opening model before dense implementation detail
 - when useful, explicitly separate a simple version from a technical version
+
+### 4.1.1 Purpose-First Explanation Step
+
+When an explanation is doing operational work such as diagnosing, testing, recommending, proposing, or reporting implementation state, the opening should first say what the explanation is doing before it starts unpacking the mechanism.
+
+Required guidance:
+- open with one direct sentence that states what is being tested, diagnosed, proposed, recommended, or concluded when that orientation materially improves understanding
+- make the explanation purpose legible before background, mechanism, or supporting evidence expands the answer
+- if a labeled structure is used, let the first line or first short block carry the purpose-first statement
+- if the first sentence already states the purpose clearly, do not force a second redundant framing line
 
 ### 4.2 Layered Natural Explanation Pattern
 
@@ -152,6 +166,15 @@ Required guidance:
 - show what is currently true versus still pending
 - show the immediate next decision or action
 - keep the snapshot concise and scoped to material evidence
+
+### 4.5.1 Main-Point-First Status Framing
+
+For status-heavy updates, the opening line should tell the reader what the update means before the snapshot details begin.
+
+Required guidance:
+- use a short opening such as `The main issue is ...`, `This update confirms ...`, or `This test checks whether ...` when the status note would otherwise begin with raw detail
+- do not make the reader infer the update purpose from the middle of the snapshot
+- keep the opening claim-strength aligned to what was actually checked
 
 ---
 
@@ -436,6 +459,8 @@ If the answer explains the topic well but leaves the user unable to tell either 
 ```markdown
 Short answer: the failure is in environment handoff, not app boot.
 
+Purpose: this explanation is diagnosing where the failure sits before we talk about the lower-level mechanism.
+
 Simple explanation: the app starts, but when it reaches the database step it does not have the value it needs.
 
 Technical version: startup succeeds, the first DB call fails, and the checked scope currently points to missing or misrouted `DATABASE_URL` propagation rather than a syntax or boot-time crash.
@@ -484,15 +509,9 @@ Choose one and I’ll continue on that basis.
 ### Pattern 6: Layered walkthrough with snapshot in the middle
 
 ```markdown
-Think of it like moving the circuit breaker out of each room and into one shared panel.
-
-In technical terms, the auth rule moved out of each route handler into shared middleware, so one policy change no longer requires editing every handler separately.
-```
-
-### Pattern 5: Layered walkthrough with snapshot in the middle
-
-```markdown
 Short answer: the bug is in environment handoff, not app boot.
+
+Purpose: this update is diagnosing whether the failure happens during startup or later during database handoff.
 
 Simple explanation: the service starts normally, but it reaches the database step without the value it needs.
 
