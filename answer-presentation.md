@@ -74,8 +74,8 @@ Required guidance:
 - use bullets for grouped items
 - use numbered lists for sequence or order
 - use tables only for genuine comparison or structured facts
-- when a table is materially useful, prefer a light plain aligned no-frame table by default
-- do not default to full-frame ASCII or boxed tables for ordinary answer tables
+- when a table is materially useful, the default ordinary answer-table style must be a light plain aligned no-frame table
+- do not default to full-frame ASCII, boxed tables, or generic markdown pipe-table framing for ordinary answer tables
 - use diagrams only when sequence or branching is central
 - use headings that describe section purpose, not just visual styling
 
@@ -150,9 +150,9 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | simple answer | factual lookup, low complexity, direct request | compact paragraph or short list |
 | analytical answer | explanation, diagnosis, architectural reasoning | short orienting answer + sections |
 | purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
-| comparison | options, trade-offs, choose between X and Y | compact markdown table or grouped comparison blocks |
+| comparison | options, trade-offs, choose between X and Y | selected plain aligned no-frame table or grouped comparison blocks |
 | sequence | steps, rollout order, process | numbered steps or ordered subsections |
-| simple status pairs | short state labels with short values | bullets, grouped blocks, or compact markdown table only if side-by-side scan clearly helps |
+| simple status pairs | short state labels with short values | bullets, grouped blocks, or selected plain aligned no-frame table only if side-by-side scan clearly helps |
 | branching | conditions, paths, handoffs | text flow diagram or clearly indented branch structure |
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
@@ -202,7 +202,7 @@ Preferred phrasing:
 
 When real alternatives exist:
 - frame the comparison briefly
-- use a light plain aligned no-frame table if side-by-side evaluation helps
+- use the selected light plain aligned no-frame table style if side-by-side evaluation helps
 - recommend after the comparison is visible
 - when one path is clearly preferred, surface `Recommended` before the remaining options and add one short `Why this first` reason
 - when multiple reasonable options genuinely exist, keep at least one visible alternative under `Other options` instead of reducing the block to the recommendation only
@@ -210,10 +210,11 @@ When real alternatives exist:
 ### 3.0 Plain Aligned Table Pattern
 
 When a table is genuinely useful:
-- prefer a light plain aligned no-frame table by default
+- the default ordinary answer-table style must be the selected light plain aligned no-frame form
 - keep the number of columns low unless the comparison really needs more
 - keep cell content short and scanable
 - allow simple alignment spacing when it improves readability in plain-text rendering
+- do not silently fall back to a generic markdown pipe-table default when the selected house style is more specific
 - avoid turning multiline explanation into table cells when bullets or prose would be easier to read
 - do not use full-frame ASCII or boxed tables as the default answer shape
 
@@ -565,7 +566,8 @@ Current work order:
 | list or table with no framing | reader must infer its purpose | add a short context-setting line |
 | raw evidence dump with no orienting line | facts appear, but the reader cannot tell why they matter | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
-| full-frame ASCII or boxed table used for ordinary structured facts | visual weight increases without adding real semantic value | use a light plain aligned no-frame table or switch to a list/grouped block |
+| full-frame ASCII or boxed table used for ordinary structured facts | visual weight increases without adding real semantic value | use the selected light plain aligned no-frame table or switch to a list/grouped block |
+| generic markdown pipe-table framing used as the ordinary default after a more specific house style is already selected | the output drifts back to a generic format and ignores the chosen presentation contract | use the selected plain aligned no-frame table style instead |
 | machine-specific value presented like a reusable default | local fact is mistaken for a portable contract | label it as a checked local fact or switch to a portable placeholder |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use grouped scope-boundary sections |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |

@@ -116,8 +116,8 @@ Required guidance:
 - use bullets for grouped items
 - use numbered lists for ordered steps or sequences
 - use tables for real comparison or structured facts only
-- when a table is materially useful, prefer a light plain aligned no-frame table by default
-- do not default to full-frame ASCII or boxed tables for ordinary answer tables
+- when a table is materially useful, the default ordinary answer-table style must be a light plain aligned no-frame table
+- do not default to full-frame ASCII, boxed tables, or generic markdown pipe-table framing for ordinary answer tables
 - use diagrams only when sequence or branching is central
 - ensure headings are short, functional, and content-representative
 
@@ -164,9 +164,9 @@ Use stronger presentation structure when one or more of these triggers are prese
 | simple answer | factual lookup, one-step response, low complexity | compact paragraphs or short list only |
 | analytical answer | explanation, trade-off, diagnosis, architecture reasoning | short orienting answer + sections |
 | purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
-| comparison | choose between options, pros/cons, alternatives | compact markdown table or clearly grouped comparison blocks |
+| comparison | choose between options, pros/cons, alternatives | selected plain aligned no-frame table or clearly grouped comparison blocks |
 | sequence | steps, procedure, rollout order, checklist flow | numbered steps or ordered blocks |
-| simple status pairs | short state labels with short values | bullets, grouped blocks, or compact markdown table only if side-by-side scan clearly helps |
+| simple status pairs | short state labels with short values | bullets, grouped blocks, or selected plain aligned no-frame table only if side-by-side scan clearly helps |
 | branching flow | conditions, paths, decision trees, handoffs | text flow diagram or clearly branched list |
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification note, environment summary | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
@@ -214,7 +214,7 @@ Preferred phrasing:
 
 When real alternatives exist:
 - give a brief orienting statement
-- use a light plain aligned no-frame table when side-by-side evaluation improves decision quality
+- use the selected light plain aligned no-frame table style when side-by-side evaluation improves decision quality
 - recommend after comparison, not before it
 - when one path is clearly preferred, surface `Recommended` first and add one short `Why this first` reason before listing the remaining options
 - when multiple reasonable options genuinely exist, keep at least one visible alternative instead of reducing the block to the recommendation only
@@ -222,10 +222,11 @@ When real alternatives exist:
 ### 5.3.0 Plain Aligned Table Pattern
 
 When a table is genuinely useful:
-- prefer a light plain aligned no-frame table by default
+- the default ordinary answer-table style must be the selected light plain aligned no-frame form
 - keep the number of columns low unless the comparison truly needs more
 - keep cell content short and scanable
 - allow simple alignment spacing when it improves readability in plain-text rendering
+- do not silently fall back to a generic markdown pipe-table default when the selected house style is more specific
 - avoid turning multiline explanation into table cells when bullets or prose would be easier to read
 - do not use full-frame ASCII or boxed tables as the default answer shape
 
@@ -543,7 +544,8 @@ What This Means
 | missing framing before table/list | reader has to infer the purpose of the structure | add a short context-setting line |
 | raw evidence dump with no orienting line | checked facts appear but meaning stays unclear | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
-| ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | use a light plain aligned no-frame table or switch to a list/grouped block |
+| ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | use the selected light plain aligned no-frame table or switch to a list/grouped block |
+| generic markdown pipe-table framing used as the ordinary default after a more specific house style is already selected | the output drifts back to a generic format and ignores the chosen presentation contract | use the selected plain aligned no-frame table style instead |
 | scope boundaries buried in long prose | the reader cannot tell what is included now versus later | use grouped scope-boundary sections such as `What this is` / `What this is not` / `What happens now` / `What stays later` |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first, then narrow |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |

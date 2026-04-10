@@ -170,7 +170,7 @@ Use a comparison table when:
 - the user benefits from side-by-side comparison
 
 Required behavior:
-- when a table is justified, prefer a light plain aligned no-frame table by default
+- when a table is justified, the default explanation-side table style must be the selected light plain aligned no-frame form
 - do not force a table when only one realistic path exists
 - do not force a table when the content is really a sequence, checklist, or simple status snapshot
 - prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension
