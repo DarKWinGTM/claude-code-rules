@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.13
+> **Current Version:** 2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.14 | 2026-04-09 | **[Added memory-derived-context disclosure wording](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-09 | **[Added main-point-first operational framing for diagnosis, tests, and recommendations](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-08 | **[Preferred direct human-readable wording over metaphor-heavy internal shorthand](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-08 | **[Added closed-topic presentation guidance for active summaries](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -51,6 +52,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-214"></a>
+## Version 2.14: Added memory-derived-context disclosure wording
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication.md` from v2.13 to v2.14.
+- Updated `design/accurate-communication.design.md` from v2.13 to v2.14.
+- Added explicit wording guidance for memory-derived context so applicable path-scoped remembered context can be disclosed without being confused with freshly verified repo state.
+- Added communication-shape coverage for remembered context that still needs current-state recheck.
+- Added example, decision-framework, anti-pattern, and integration updates so remembered context is no longer phrased like automatically current truth.
+
+### Summary
+Accurate-communication now distinguishes applicable remembered context from freshly checked repo truth and makes recheck-needed remembered context easier to communicate honestly.
 
 ---
 

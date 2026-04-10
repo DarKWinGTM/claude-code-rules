@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.18
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.18 | 2026-04-10 | **[Changed the default answer-table style to a light plain aligned no-frame form](#version-118)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 1.17 | 2026-04-09 | **[Added compact memory-status presentation support](#version-117)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.16 | 2026-04-09 | **[Standardized compact table defaults and list-first alternatives](#version-116)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.15 | 2026-04-09 | **[Added purpose-first framing layout support](#version-115)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.14 | 2026-04-08 | **[Added gloss-near-term layout support for abstract internal phrasing](#version-114)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -35,6 +37,42 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-118"></a>
+## Version 1.18: Changed the default answer-table style to a light plain aligned no-frame form
+
+**Date:** 2026-04-10
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.17 to v1.18.
+- Updated `design/answer-presentation.design.md` from v1.17 to v1.18.
+- Replaced the previous compact markdown pipe-table default wording with an explicit light plain aligned no-frame default style.
+- Added a canonical plain aligned table example matching the selected house style.
+- Preserved the existing table-vs-list decision logic and the anti-pattern against full-frame or boxed tables.
+
+### Summary
+Answer-presentation now keeps tables available when useful, but the default answer-table style is the chosen light plain aligned no-frame form rather than a generic compact pipe-table default.
+
+---
+
+<a id="version-117"></a>
+## Version 1.17: Added compact memory-status presentation support
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.16 to v1.17.
+- Updated `design/answer-presentation.design.md` from v1.16 to v1.17.
+- Added a `memory-derived context` trigger so answers can present remembered path-scoped context distinctly when the reader needs to see what is remembered versus what is freshly checked.
+- Added a `Memory-Status Pattern` and canonical compact memory-status example showing matched path scope, provenance when relevant, and needs-recheck detail.
+- Added anti-pattern and integration updates so remembered context is no longer presented with the same visual posture as freshly revalidated current-state facts.
+
+### Summary
+Answer-presentation now provides a compact memory-status layout so remembered path-scoped context can be shown clearly without being confused with freshly checked current-state truth.
 
 ---
 

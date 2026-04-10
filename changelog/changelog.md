@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.4
+> **Current Version:** 9.7
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,9 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.7 | 2026-04-10 | **[Corrected the default table style to the selected light plain aligned no-frame form](#version-97)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.6 | 2026-04-10 | **[Made task-list-first tracking explicit for non-trivial work across tracking/startup/documentation owners](#version-96)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.5 | 2026-04-09 | **[Created first-class memory-governance rule chain and synchronized memory-boundary companions](#version-95)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.4 | 2026-04-09 | **[Standardized compact markdown tables and list-first alternatives for lighter answer formatting](#version-94)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.3 | 2026-04-09 | **[Added purpose-first communication framing across wording, explanation, presentation, and style owners](#version-93)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.2 | 2026-04-09 | **[Kept user-declared RULES-first issues out of memory-first fixes and hardened portable support artifacts](#version-92)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -41,6 +44,62 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-97"></a>
+## Version 9.7: Corrected the default table style to the selected light plain aligned no-frame form
+
+**Date:** 2026-04-10
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation` from v1.17 to v1.18 so the previous compact markdown pipe-table default is replaced with the selected light plain aligned no-frame style.
+- Updated `explanation-quality` from v2.11 to v2.12 so explanation-side comparison-table guidance now aligns to the same selected default style.
+- Added `patch/plain-aligned-no-frame-table-style-refinement.patch.md` plus `phase/phase-028-01-*` and `phase/phase-028-02-*` for the bounded refinement wave.
+- Narrowed the overreaching remembered comparison-table preference so it no longer acts like the owner of table style and instead defers to the active RULES contract.
+- Synchronized the touched design/changelog chains, master-governance surfaces, and runtime install set for the table-style correction wave.
+
+### Summary
+The RULES repository now keeps tables available when useful, but the default ordinary answer-table style is explicitly the selected light plain aligned no-frame form instead of a generic compact pipe-table default.
+
+---
+
+<a id="version-96"></a>
+## Version 9.6: Made task-list-first tracking explicit for non-trivial work across tracking/startup/documentation owners
+
+**Date:** 2026-04-10
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards` from v2.3 to v2.4 so Claude Code's built-in task list is now explicitly the live execution-tracking surface for non-trivial active work, while `TODO.md` remains the durable repository/project execution-tracking artifact.
+- Updated `artifact-initiation-control` from v1.1 to v1.2 so startup posture now includes early live task-list initialization when non-trivial tracked work would materially benefit from visible pending / in_progress / completed state.
+- Updated `project-documentation-standards` from v2.15 to v2.16 so the repository role model now explicitly distinguishes live built-in task tracking from durable `TODO.md` governance without turning the task list into a governed document artifact.
+- Added `patch/task-list-first-execution-tracking.patch.md` plus `phase/phase-027-01-*` and `phase/phase-027-02-*` for the bounded refinement wave.
+- Synchronized the touched design/changelog chains, master-governance surfaces, and runtime install set for the task-list-first refinement wave.
+
+### Summary
+The RULES repository now makes built-in task tracking explicit for non-trivial active work, so execution state is more visible while durable repository tracking remains in `TODO.md`.
+
+---
+
+<a id="version-95"></a>
+## Version 9.5: Created first-class memory-governance rule chain and synchronized memory-boundary companions
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Created the new first-class `memory-governance-and-session-boundary` chain from v1.0 design/runtime/changelog so memory governance and session-boundary behavior now have one semantic owner.
+- Updated `authority-and-scope` from v2.0 to v2.1 so memory applicability now defers to the new chain and non-matching path-scoped remembered context cannot override the current repo/objective.
+- Updated `accurate-communication` from v2.13 to v2.14 so remembered path-scoped context is now disclosed explicitly instead of being phrased like freshly verified repo truth.
+- Updated `evidence-grounded-burden-of-proof` from v1.2 to v1.3 so applicable path-scoped remembered context is now a distinct evidence/claim state rather than being conflated with current observed local fact.
+- Updated `answer-presentation` from v1.16 to v1.17 so remembered path-scoped context can now be shown through a compact memory-status block rather than blending visually into current-state facts.
+- Added `patch/memory-governance-and-session-boundary.patch.md` plus `phase/phase-026-01-*` through `phase/phase-026-04-*` for the bounded governance wave.
+- Synchronized the touched design/changelog chains, master-governance surfaces, and runtime install set for the new memory-governance owner wave.
+
+### Summary
+The RULES repository now defines memory governance before live memory migration, keeps root `MEMORY.md` index-only, makes path the primary applicability key, keeps session IDs as provenance only, and integrates that contract into adjacent authority, communication, burden-of-proof, and presentation owners.
 
 ---
 

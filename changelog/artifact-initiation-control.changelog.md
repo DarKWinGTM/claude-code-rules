@@ -1,7 +1,7 @@
 # Changelog - Artifact Initiation Control
 
 > **Parent Document:** [../artifact-initiation-control.md](../artifact-initiation-control.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,10 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-04-10 | **[Added early live task-tracking posture for non-trivial work](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-08 | **[Narrowed startup patch posture for greenfield baseline formation](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Refined startup-governance so patch is no longer treated as the default startup artifact during greenfield / baseline-formation work unless a real existing before/after review surface or explicit user request justifies it | |
 | 1.0 | 2026-03-28 | **[Created first-class artifact-initiation-control rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new startup-governance owner chain so design, changelog, TODO, phase, and patch posture must be resolved before meaningful governed work drifts | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Added early live task-tracking posture for non-trivial work
+
+**Date:** 2026-04-10
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/artifact-initiation-control.design.md` from v1.1 to v1.2.
+- Updated runtime `artifact-initiation-control.md` from v1.1 to v1.2.
+- Extended startup-governance so non-trivial tracked work now resolves early live task-list posture instead of leaving execution visibility implicit.
+- Added a live task-list row to the startup artifact requirement matrix.
+- Extended the startup communication contract so live task-list initialization can be made explicit alongside normal artifact posture.
+- Added an anti-pattern against non-trivial tracked work beginning with no live task tracking.
+
+### Summary
+Artifact-initiation-control now treats early live task-list tracking as part of startup posture when non-trivial work needs visible execution state.
 
 ---
 

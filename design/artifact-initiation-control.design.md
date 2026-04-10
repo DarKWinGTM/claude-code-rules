@@ -3,19 +3,20 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
 
 ---
 
 ## 1) Goal
 
-Define one first-class startup-governance rule that resolves artifact posture before meaningful governed work drifts.
+Define one first-class startup-governance rule that resolves tracking and artifact posture before meaningful governed work drifts.
 
 The target behavior is:
 - artifact posture is resolved early
 - the assistant does not drift into non-trivial governed work while required artifacts remain implicit
 - required startup artifacts are either reused, created now, asked about now, or explicitly marked not required
+- live task tracking is initialized early when non-trivial work needs it
 - trivial work keeps a lightweight bypass
 
 ---
@@ -28,6 +29,7 @@ Observed failure modes:
 - design, changelog, TODO, phase, or patch are often created late instead of being established at startup
 - patch can also be over-created too early during greenfield startup or baseline formation when no stable before-state exists yet
 - the assistant may start meaningful governed work before deciding which artifacts are required
+- non-trivial tracked work can also begin with no live task tracking, leaving the user unable to see what is planned, in progress, or completed while execution is underway
 - `strict-file-hygiene` suppresses proactive document creation unless a stronger startup contract exists
 - governance artifacts become retrospective backfill instead of direction-setting scaffolding
 
@@ -58,7 +60,7 @@ Before meaningful governed work continues, the assistant must resolve startup po
 - not required
 
 The important requirement is not “create everything.”
-The requirement is “leave nothing required unresolved.”
+The requirement is “leave nothing required unresolved,” including the live tracking surface when non-trivial work needs it.
 
 ### 4.2 Meaningful-work boundary
 Meaningful governed work begins when the assistant moves beyond lightweight exploration and starts doing one or more of these:
@@ -114,6 +116,7 @@ Apply this chain strongly when one or more are true:
 | Design | target behavior, policy, contract, or architecture is new or materially changing |
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
+| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
@@ -155,7 +158,8 @@ For patch specifically, `not required` is the preferred default when the work is
 When this rule is materially relevant, the startup snapshot should make these fields visible:
 - **Meaningful work state** - whether the task has crossed the startup boundary
 - **Artifact posture** - existing / create now / ask now / not required
-- **Why this artifact is or is not needed**
+- **Live task-list posture** - initialize now / not required
+- **Why this artifact or live tracking surface is or is not needed**
 - **What must happen before substantive work continues**
 
 Equivalent headings are acceptable if the meaning remains explicit.
@@ -168,6 +172,7 @@ Equivalent headings are acceptable if the meaning remains explicit.
 |--------------|--------------|-----------------|
 | start work first, backfill artifacts later | direction and rationale drift before authority exists | resolve startup artifact posture first |
 | create no artifacts because the user did not explicitly list them | meaningful work loses structure and traceability | evaluate required artifact set proactively |
+| non-trivial tracked work begins with no live task tracking | the user cannot see planned / active / completed state while the work is underway | initialize the built-in task list early when live tracking materially helps |
 | force every artifact every time | creates unnecessary ceremony | resolve only the required subset |
 | create patch by default during greenfield startup or baseline formation | startup work is mislabeled as a review delta before a stable before-state exists | default patch to `not required` unless a real existing surface or explicit user request justifies it |
 | let hygiene rules suppress required startup artifacts | makes governance reactive and late | let startup artifact control decide, then apply hygiene to non-required files |

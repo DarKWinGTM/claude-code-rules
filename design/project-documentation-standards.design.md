@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.15
+> **Current Version:** 2.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -22,7 +22,8 @@ This model must preserve one authority system while clearly separating:
 - `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` as governed execution files
 - `patch/<context>.patch.md` or root `<context>.patch.md` as patch-governance artifacts outside the live phase workspace
 - `phase-implementation-template.md` as the readable root-level helper
-- `TODO.md` and changelog as required companions, but not as replacements for the phase plan itself
+- Claude Code's built-in task list as the live in-session execution surface for non-trivial work
+- `TODO.md` and changelog as required durable companions, but not as replacements for the phase plan itself
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
 - `portable-implementation-and-hardcoding-control.md` as the semantic owner of portable-default and anti-hardcoding behavior
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
@@ -66,8 +67,11 @@ Each governed chain uses one authoritative changelog.
 Changelog files hold detailed history and latest chain version state.
 
 ### 3.5 TODO Role
-`TODO.md` tracks execution state only.
+`TODO.md` tracks durable repository/project execution state only.
 It is not a version-authority document.
+
+Claude Code's built-in task list is the live in-session execution surface for active non-trivial work.
+It does not replace `TODO.md`, and `TODO.md` does not replace live task visibility during active work.
 
 ### 3.6 Phase Summary Role
 `phase/SUMMARY.md` is the governed summary/index for live phased execution planning.
@@ -118,7 +122,7 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 | `README.md` | Always | Overview, onboarding, repository map | Overview only |
 | `design/*.design.md` | Design/specification needed | Active target-state guidance | Governed design layer |
 | `changelog/*.changelog.md` | Chain history needed | Authoritative version history | Governed authority layer |
-| `TODO.md` | Work tracking needed | Execution tracking | Execution layer |
+| `TODO.md` | Work tracking needed | Durable repository/project execution tracking | Execution layer |
 | `phase/SUMMARY.md` | Phased execution planning is required | Governed summary/index for live phase planning | Governed phase summary layer |
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail exists | Major/subphase execution detail | Governed phase-detail layer |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | A separate before/after review artifact for an existing governed surface is required | Governed patch/review artifact outside the live phase workspace | Governed patch layer |
@@ -180,6 +184,9 @@ Need version traceability?
 Need tracked execution items?
   → YES: use existing / create now / ask now
   ↓
+Need live execution visibility for non-trivial active work?
+  → YES: initialize the built-in task list early
+  ↓
 Need phased implementation planning?
   → YES: establish `phase/SUMMARY.md` and child phase files now or ask now
   ↓
@@ -231,6 +238,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
 - [ ] Meaningful governed work resolves startup artifact posture before drift
+- [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` phase files under `phase/`
@@ -259,6 +267,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Patch placement clarity | 100% |
 | Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
+| Live task-vs-durable TODO distinction clarity | High |
 | Public onboarding/install portability | High |
 | Workstation-specific absolute paths as public defaults | 0 critical cases |
 | Source-vs-destination notation clarity | High |
@@ -271,14 +280,14 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 
 | Rule | Relationship |
 |------|-------------|
-| [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup artifact-resolution owner |
+| [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup artifact-resolution owner and early live task-tracking bridge |
 | [document-changelog-control.md](../document-changelog-control.md) | Version authority contract |
 | [document-design-control.md](../document-design-control.md) | Design structure standards |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
 | [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side and destination/runtime reference consistency |
-| [todo-standards.md](../todo-standards.md) | TODO structure standards plus startup-establishment bridge |
+| [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking for non-trivial work |
 
 ---
 

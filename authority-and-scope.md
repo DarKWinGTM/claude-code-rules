@@ -1,7 +1,7 @@
 # Authority and scope
 
-> **Current Version:** 2.0
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.0
+> **Current Version:** 2.1
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 
@@ -24,6 +24,8 @@ This rule defines precedence, tie-break behavior, and override handling so new u
 - Assistant-generated proposals for future work are advisory only and do not create an active branch, implied commitment, or pending continuation unless the user explicitly selects them.
 - When multiple materially different governing bases or policies remain unresolved, basis selection belongs to the user unless checked authority or evidence already settles it.
 - When the user explicitly says an issue should be solved in RULES rather than memory, the assistant must treat RULES refinement as the primary path and must not use a memory write as the substitute fix for that same issue.
+- Memory applicability and memory organization semantics are owned by `memory-governance-and-session-boundary.md` rather than being inferred ad hoc from session continuity alone.
+- Path-scoped remembered context must not override the current repo/objective when the scope does not match, even if the memory came from the same or a recent session.
 - Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - If the user issues a fresh directive that changes scope, task, or action, that fresh directive overrides previously offered assistant options immediately.
@@ -77,6 +79,7 @@ Apply defaults
 | User explicitly requires RULES-first handling vs assistant memory-first convenience | User directive wins; fix the governing rule/system behavior first and do not treat memory persistence as the substitute remedy for that same issue |
 | User-selected governing basis vs assistant exploratory framing | User-selected basis wins and becomes the active frame |
 | Post-compact active objective vs stale assistant framing | Re-anchor to the latest active user directive and preserve the active frame |
+| Path-scoped memory vs current repo/objective mismatch | Current repo/objective wins; non-matching remembered context must not become active truth |
 | Rule vs default | Rule wins |
 | Residual ambiguity | Return bounded context request when needed |
 
@@ -111,6 +114,8 @@ Use this override behavior when:
 - treat compressed-away exact detail as unresolved until rechecked when that exactness materially affects the next move
 - if the assistant surfaces a future-work proposal, keep it clearly advisory until the user selects it
 - if the user explicitly says the issue belongs in RULES rather than memory, route the work to the governing rule/document path first instead of persisting a memory entry for that same issue as the main fix
+- if remembered context exists, apply the memory-governance chain rather than inferring applicability ad hoc from session continuity alone
+- if path-scoped remembered context does not match the current repo/objective, keep current repo/objective authority and do not let the remembered context revive a stale branch as active truth
 - if the new directive is ambiguous, ask for clarification about the new directive itself rather than defaulting back to the old options
 - absent an explicit user request for another style, keep the response in a neutral professional mode rather than inventing a persona or character voice
 
@@ -119,6 +124,7 @@ Use this override behavior when:
 - treating a future-work proposal as if it were already queued for execution
 - treating one possible governing basis as active truth before the user selected it or the checked authority settled it
 - treating a user-declared RULES-first problem as if a memory write were the main remedy
+- treating remembered context as applicable just because it came from the same or a recent session
 - treating compacted carry-forward state as permission to revive stale assistant framing
 - treating team expansion as the default answer when an existing teammate already covers the role
 - continuing to elaborate option A/B after the user issues a new command C

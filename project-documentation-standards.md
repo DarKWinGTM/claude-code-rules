@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.15
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.15
+> **Current Version:** 2.16
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -22,7 +22,7 @@
 | `README.md` | Always | Project overview and onboarding | Standard practice |
 | `design/*.design.md` | Design/specification is required | Define target behavior/contract | `document-design-control` |
 | `changelog/*.changelog.md` | Version traceability is required | Authoritative version history | `document-changelog-control` |
-| `TODO.md` | Work tracking is required | Track execution state | `todo-standards` |
+| `TODO.md` | Work tracking is required | Durable repository/project execution tracking | `todo-standards` |
 | `phase/SUMMARY.md` | Phased implementation work is required | Governed summary/index for live phase planning | `phase-implementation` |
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail is required | Major/subphase execution detail | `phase-implementation` |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Patch/review artifact is required | Governed patch/review artifact outside the live phase workspace | `document-patch-control` |
@@ -66,7 +66,8 @@ For governance updates, apply in this order:
 - those package-local assets remain implementation/support surfaces, not root governance authority
 - when package-local skills, agents, scripts, or docs are intended to remain reusable source artifacts, they should stay portable by default rather than embedding workstation-specific absolute paths as if those were shared contracts
 - design and patch artifacts are not required to point back to phase
-- TODO tracks actionable work only; it does not become the primary place for phase definitions
+- Claude Code's built-in task list is the live in-session execution surface for active non-trivial work
+- `TODO.md` remains the durable repository/project execution-tracking document; it does not become the primary place for phase definitions and does not replace live task-list visibility during active work
 - Changelog records shipped or synchronized changes only; it does not become the primary place for phase definitions
 - Live phased execution must not be stored under patch artifacts
 - `SUMMARY.md` should explicitly show how child phase files, TODO work, and changelog impact relate when that coordination matters
@@ -99,6 +100,9 @@ Need version traceability?
   ↓
 Need tracked execution items?
   → YES: use existing / create now / ask now
+  ↓
+Need live execution visibility for non-trivial active work?
+  → YES: initialize the built-in task list early
   ↓
 Need phased implementation planning?
   → YES: establish `phase/SUMMARY.md` and child phase files now or ask now
@@ -143,6 +147,7 @@ Required guidance:
 - `phase-implementation.md` remains the semantic authority for phased execution behavior
 - phased work with governed patch artifacts must show explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - `artifact-initiation-control.md` remains the startup artifact-resolution owner
+- built-in task-list usage remains a live execution surface rather than becoming a governed repository document type
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
 
 ---
@@ -155,6 +160,7 @@ Required guidance:
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
 - [ ] Meaningful governed work resolves startup artifact posture before drift
+- [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is used as the semantic phase rule when applicable
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Multi-phase work uses child phase files under `phase/`

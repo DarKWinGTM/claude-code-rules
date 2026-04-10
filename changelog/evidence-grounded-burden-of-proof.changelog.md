@@ -1,7 +1,7 @@
 # Changelog - Evidence-Grounded Burden of Proof
 
 > **Parent Document:** [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,10 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-04-09 | **[Added remembered path-matched context handling to the burden-of-proof model](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-06 | **[Added post-compact needs-recheck handling to the burden-of-proof model](#version-12)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.1 | 2026-04-05 | **[Added unresolved governing-basis handling to burden-of-proof model](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-12 | **[Created first-class evidence-grounded-burden-of-proof rule chain](#version-10)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Created a new design/runtime/changelog triad that governs evidence taxonomy, claim-state taxonomy, burden-of-proof thresholds, contradiction protocol, scoped negative-evidence semantics, and evidence-grounded communication across planning, debugging, coding, and review | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added remembered path-matched context handling to the burden-of-proof model
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `evidence-grounded-burden-of-proof.md` from v1.2 to v1.3.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.2 to v1.3.
+- Added `RECALLED_PATH_MATCHED_CONTEXT` so applicable path-scoped memory is explicitly distinguished from current observed local fact.
+- Added threshold, protocol, and wording support so remembered path-matched context may aid continuity without being overstated as current verified repo truth.
+- Added integration links to the new `memory-governance-and-session-boundary` owner chain.
+
+### Summary
+Evidence-grounded-burden-of-proof now treats applicable path-scoped remembered context as a distinct evidence/claim state that still needs recheck before exact current-state repo facts are presented as verified truth.
 
 ---
 

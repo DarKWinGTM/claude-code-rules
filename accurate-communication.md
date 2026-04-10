@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.13
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.13
+> **Current Version:** 2.14
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -64,6 +64,8 @@ Wording should reveal the actual claim strength.
 | Working hypothesis | "One possibility is ..." |
 | Unresolved uncertainty | "I cannot confirm yet because ..." |
 | Unresolved governing basis | "The answer changes depending on which policy/frame we use, so I need you to choose the governing basis first." |
+| Recalled path-matched context | "From applicable path-scoped memory, ..." / "The remembered path-scoped context says ..." |
+| Memory needs recheck | "The remembered context suggests ..., but I need to recheck the current repo state before treating it as verified fact." |
 | Not found in checked scope | "I checked A/B/C and did not find ..." |
 
 Required guidance:
@@ -189,6 +191,16 @@ Required guidance:
 - say explicitly when an exact detail is no longer confirmed strongly enough after compact and needs recheck before being treated as verified fact
 - keep the post-compact recap compact and forward-moving rather than replaying the whole prior conversation
 - if safe continuation is still clear after re-anchor, continue directly instead of pausing for ceremonial restatement
+
+### 6.4 Memory-Derived Context Disclosure Guidance
+
+When remembered context is being used, the wording should make the memory basis visible enough that the reader can tell whether the statement comes from applicable remembered context or from freshly checked current evidence.
+
+Required guidance:
+- if a statement materially relies on path-scoped remembered context, say so explicitly when that distinction matters
+- distinguish applicable path-scoped memory from current verified repo state
+- if the remembered context has not yet been rechecked against the current repo state, say that recheck is still needed before treating it as verified fact
+- do not imply that remembered context applies just because it came from the same or a recent session; if scope is material, frame it by matching path scope rather than by session continuity
 
 ### 7. Natural Professional Wording Guidance
 
@@ -392,19 +404,23 @@ Before sending a finding or status update:
    → Yes: re-anchor to the active objective, preserve the latest user-selected frame, and separate carried-forward facts from needs-recheck details before continuing
    → No: proceed
 
-13. Does the answer depend on a still-unselected governing basis or policy?
+13. Am I relying materially on remembered context?
+   → Yes: identify whether it is applicable path-scoped memory or broader remembered context, and disclose when recheck is still needed before treating it as verified fact
+   → No: proceed
+
+14. Does the answer depend on a still-unselected governing basis or policy?
    → Yes: ask the user to choose the basis first with a compact structured clarification and avoid deep branch analysis until it is chosen
    → No: proceed
 
-14. Am I proposing work outside the active objective?
+15. Am I proposing work outside the active objective?
    → Yes: make it explicitly advisory and goal-qualified (goal, improvement, output/result, and success condition when useful)
    → No: proceed
 
-15. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
+16. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
    → No: reduce ceremony, fake empathy, and formulaic phrasing
    → Yes: proceed
 
-16. Am I closing an explanation-heavy response?
+17. Am I closing an explanation-heavy response?
    → Yes: synthesize the conclusion instead of repeating prior detail
 ```
 
@@ -548,6 +564,12 @@ Post-compact re-anchor:
 - Next action: continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact.
 ```
 
+### Memory-derived context disclosure
+```text
+From applicable path-scoped memory, this repo prefers PostgreSQL as the durable backend.
+I have not rechecked the current code yet, so treat that as remembered context rather than a freshly verified current-state fact.
+```
+
 ### Duplicate-looking team-agent report
 ```text
 Observed: the UI showed `@pricing-reviewer` twice.
@@ -597,6 +619,7 @@ Diagnostic snapshot:
 | governing-basis ambiguity answered with deep multi-branch analysis before the user chooses a policy/frame | the assistant explores complexity that may become irrelevant once the user picks the basis | ask a compact governing-basis clarification first, then continue on the selected frame |
 | proposal phrased like implied queued execution | the assistant sounds as if it already committed the user to the next wave | mark the proposal as advisory and avoid continuation-shaped wording unless the user selected that target |
 | post-compact continuation assumes every compressed-away detail is still exact | the assistant may resume from stale or over-compressed memory as if it were fresh verified state | re-anchor first, separate carried-forward facts from needs-recheck details, and recheck exact details when they matter |
+| remembered context is presented like freshly verified repo truth | the reader cannot tell whether the statement came from current evidence or only from memory | disclose path-matched remembered context and say when recheck is still needed |
 | duplicate-looking team-agent state reported as definite active overlap without verification | the user may get the wrong recovery action or false confidence about cleanup | separate observed duplicate-looking state from inference about whether it is real overlap or stale presence |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |
@@ -630,8 +653,9 @@ Related rules:
 - [zero-hallucination.md](zero-hallucination.md) - owns verify-first factual discipline and source-priority behavior
 - [anti-sycophancy.md](anti-sycophancy.md) - owns disagreement posture and contradiction ladder behavior
 - [no-variable-guessing.md](no-variable-guessing.md) - owns local lookup, inspected-scope reporting, and non-guessing behavior
-- [answer-presentation.md](answer-presentation.md) - owns the layout of snapshot sections, grouped scope-boundary blocks, full-set-first lists, and next-stage blocks
+- [answer-presentation.md](answer-presentation.md) - owns the layout of snapshot sections, grouped scope-boundary blocks, full-set-first lists, next-stage blocks, and compact memory-status presentation blocks
 - [explanation-quality.md](explanation-quality.md) - shapes analytical explanations so they land with clearer scope meaning, user-visible outcomes, stage progression, and concise synthesis
+- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics
 - [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - owns portable-default versus local-observation discipline for environment-specific values in shared artifacts
 
 ---

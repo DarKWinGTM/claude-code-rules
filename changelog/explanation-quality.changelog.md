@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.11
+> **Current Version:** 2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.12 | 2026-04-10 | **[Aligned explanation-side table style to the light plain aligned no-frame default](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-09 | **[Clarified compact-table choice and list-first alternatives in explanation flow](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-09 | **[Added purpose-first explanation framing for operational answers](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-08 | **[Added direct human-readable translation guidance for metaphor-heavy explanations](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -45,6 +46,23 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-212"></a>
+## Version 2.12: Aligned explanation-side table style to the light plain aligned no-frame default
+
+**Date:** 2026-04-10
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.11 to v2.12.
+- Updated `design/explanation-quality.design.md` from v2.11 to v2.12.
+- Replaced the previous compact-markdown-table default wording in the comparison-table trigger with the selected light plain aligned no-frame default style.
+- Preserved the existing rule that tables remain appropriate for real comparison while sequence and simple status content stay list-first.
+
+### Summary
+Explanation-quality now aligns its explanation-side table default to the chosen light plain aligned no-frame style without turning the wave into a table-frequency reduction rule.
 
 ---
 

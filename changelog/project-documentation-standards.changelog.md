@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.14
+> **Current Version:** 2.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.16 | 2026-04-10 | **[Clarified live built-in task tracking versus durable TODO tracking](#version-216)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.15 | 2026-04-09 | **[Kept reusable package-local support assets portable by default](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-08 | **[Narrowed repository startup patch posture for greenfield baseline formation](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-06 | **[Added support-layer modeling for the optional RULES plugin extension area](#version-213)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -25,6 +26,25 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-216"></a>
+## Version 2.16: Clarified live built-in task tracking versus durable TODO tracking
+
+**Date:** 2026-04-10
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.15 to v2.16.
+- Updated runtime `project-documentation-standards.md` from v2.15 to v2.16.
+- Clarified that Claude Code's built-in task list is the live in-session execution surface for active non-trivial work.
+- Clarified that `TODO.md` remains the durable repository/project execution-tracking document and does not replace live task visibility.
+- Updated the decision model, checklist, quality metrics, and integration wording so live task tracking is recognized without turning the task list into a governed document artifact.
+- Corrected the changelog header so `Current Version` now matches the latest recorded version.
+
+### Summary
+Project-documentation-standards now distinguishes live built-in task tracking from durable `TODO.md` tracking, keeping the repository role model clearer during active non-trivial work.
 
 ---
 

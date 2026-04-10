@@ -1,7 +1,7 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 1.9
+> **Current Version:** 2.1
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.1 | 2026-04-09 | **[Added path-scoped memory applicability boundary and current-scope-wins protection](#version-21)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.0 | 2026-04-09 | **[Added RULES-first-over-memory authority boundary](#version-20)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.9 | 2026-04-06 | **[Added post-compact re-anchor boundary for stale-frame recovery](#version-19)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.8 | 2026-04-05 | **[Added user-owned governing-basis selection boundary](#version-18)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -28,6 +29,24 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-21"></a>
+## Version 2.1: Added path-scoped memory applicability boundary and current-scope-wins protection
+
+**Date:** 2026-04-09
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `authority-and-scope.md` from v2.0 to v2.1.
+- Updated `design/authority-and-scope.design.md` from v2.0 to v2.1.
+- Added an explicit deferral to `memory-governance-and-session-boundary.md` for memory applicability and memory organization semantics.
+- Added a current-scope-wins boundary so path-scoped remembered context cannot override the current repo/objective when the scope does not match, even if the memory came from the same or a recent session.
+- Added conflict-type, required-behavior, and anti-pattern coverage so same-session continuity no longer acts like proof that remembered context still applies.
+
+### Summary
+Authority-and-scope now keeps current repo/objective authority above non-matching path-scoped remembered context and defers memory applicability semantics to the new memory-governance owner.
 
 ---
 

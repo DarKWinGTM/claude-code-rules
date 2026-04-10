@@ -3,41 +3,49 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.3
+> **Current Version:** 2.4
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-28)
 
 ---
 
 ## 1) Goal
 
-Define a simple TODO governance format that stays aligned with UDVC-1, preserves TODO as an execution-only layer, and resolves TODO presence early when meaningful governed work genuinely needs tracking.
+Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, and resolves tracking posture early when meaningful governed work genuinely needs visibility.
 
 ---
 
 ## 2) Scope
 
-Applies to `TODO.md` files used for project work tracking.
+Applies to the durable `TODO.md` layer plus Claude Code's built-in live task list when active non-trivial work needs execution visibility.
 
 ---
 
 ## 3) Core Contract
 
-### 3.1 Execution-Only Role
-`TODO.md` reflects execution state only.
+### 3.1 Durable-vs-Live Tracking Role
+`TODO.md` is the durable/project execution-tracking artifact.
 It is not a version-authority document.
 
+Claude Code's built-in task list is the live execution-tracking surface for active non-trivial work.
+
+Required guidance:
+- use the built-in task list to show what is planned, in progress, and completed during active non-trivial work
+- keep `TODO.md` for durable repository/project tracking when persistence/history is needed
+- do not treat the built-in task list as a governed repository document
+- do not treat `TODO.md` as a replacement for live task visibility during active non-trivial work
+
 ### 3.2 Startup Establishment Rule
-When meaningful governed work requires tracking, startup TODO posture must be resolved early through `artifact-initiation-control` as one of:
-- use existing
-- create now
-- ask now
-- not required
+When meaningful governed work requires tracking, startup tracking posture must be resolved early through `artifact-initiation-control`.
+
+That resolution may include:
+- `TODO.md` posture (`use existing`, `create now`, `ask now`, `not required`)
+- early initialization of the built-in task list when the work is non-trivial and live execution visibility materially helps
 
 This rule distinguishes:
-- early TODO establishment when tracking is needed
+- early tracking establishment when visibility is needed
 - later TODO content synchronization after design/runtime/changelog changes
 
-TODO should not be treated as retrospective backfill by default.
+Tracking should not be treated as retrospective backfill by default.
 
 ### 3.3 Required Structure
 
@@ -69,13 +77,36 @@ TODO should not be treated as retrospective backfill by default.
 - Completed content belongs only in `Completed` and `History`.
 - Deferred work remains pending with clear text labels.
 
-### 3.5 Simplicity Discipline
+### 3.5 Live Task-List Trigger Model
+Prefer proactive built-in task-list usage when one or more are true:
+- the work is non-trivial
+- the work has 3 or more distinct steps
+- the work spans multiple files or multiple execution stages
+- the work is likely to continue across multiple execution slices
+- the user would materially benefit from seeing pending / in_progress / completed state live
+
+Do not force built-in task-list overhead when:
+- the task is trivial and isolated
+- the work is a one-step lookup or one-step fix
+- the task list would add more ceremony than clarity
+
+### 3.6 Live Task-List Update Contract
+When the built-in task list is in use:
+- create the task list early rather than after the work is already underway
+- mark a task `in_progress` when real work on that slice begins
+- mark a task `completed` as soon as that slice is actually done
+- add new tasks when newly discovered work is real and non-trivial
+- keep task entries outcome-sized rather than command-sized
+- do not let the task list drift into stale or vague bookkeeping
+
+### 3.7 Simplicity Discipline
 Do not require:
 - dashboard counters
 - priority grids
 - per-task timestamps
 - deadline fields
 - execution telemetry blocks
+- one task per command or tool call
 
 ---
 
@@ -88,7 +119,7 @@ When governance work changes governed artifacts, update in this order:
 4. TODO
 
 TODO content updates still occur last among the primary active layers.
-That later content-sync order does not weaken the early startup-establishment rule.
+That later content-sync order does not weaken the early startup-establishment rule or the expectation that live task tracking starts early when the work is non-trivial.
 
 ---
 
@@ -98,7 +129,9 @@ That later content-sync order does not weaken the early startup-establishment ru
 - [ ] Pending area contains pending tasks only
 - [ ] Completed items are not mixed into pending sections
 - [ ] No dashboard or priority overhead is present
-- [ ] TODO startup posture is resolved early when meaningful tracking is required
+- [ ] Tracking posture is resolved early when meaningful tracking is required
+- [ ] Built-in task list is used proactively for non-trivial work when live execution visibility materially helps
+- [ ] Task entries remain outcome-sized rather than command-sized
 - [ ] TODO content update occurs after design/runtime/changelog synchronization
 
 ---
@@ -110,8 +143,10 @@ That later content-sync order does not weaken the early startup-establishment ru
 | Structural compliance with required sections | 100% |
 | Pending-section contamination with completed tasks | 0 |
 | Dashboard-style overhead artifacts | 0 |
-| Execution-only role clarity | 100% |
-| Startup TODO posture resolved before drift when needed | 100% |
+| Durable-vs-live tracking role clarity | 100% |
+| Startup tracking posture resolved before drift when needed | 100% |
+| Proactive task-list usage on non-trivial work | High |
+| Stale or vague live task lists during non-trivial work | Low |
 
 ---
 
@@ -119,9 +154,9 @@ That later content-sync order does not weaken the early startup-establishment ru
 
 | Document | Relationship |
 |----------|--------------|
-| [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup TODO posture resolution |
+| [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup tracking posture resolution |
 | [document-changelog-control.design.md](document-changelog-control.design.md) | Synchronization order and authority boundary |
-| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model and durable-vs-live tracking distinction |
 | [../todo-standards.md](../todo-standards.md) | Runtime implementation |
 
 ---

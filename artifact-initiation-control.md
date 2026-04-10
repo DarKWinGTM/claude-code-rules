@@ -1,7 +1,7 @@
 # Artifact Initiation Control
 
-> **Current Version:** 1.1
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Resolve startup artifact posture before meaningful governed work drifts, so required design, changelog, TODO, phase, and patch artifacts are either reused, created now, asked about now, or explicitly marked not required.**
+**Core Principle: Resolve startup tracking and artifact posture before meaningful governed work drifts, so required design, changelog, TODO, phase, and patch artifacts are either reused, created now, asked about now, or explicitly marked not required, and live task tracking is initialized early when non-trivial work needs it.**
 
 This rule owns the startup decision only. It does not replace the semantic owners of design, changelog, TODO, phase, or patch artifacts.
 
@@ -34,7 +34,8 @@ Required guidance:
   - create now
   - ask now
   - not required
-- do not silently skip artifacts that appear required
+- when the work is non-trivial and tracking is materially useful, initialize the built-in task list early as the live execution surface instead of leaving work state implicit
+- do not silently skip artifacts or live tracking surfaces that appear required
 
 ### 3) Existing-Authority-First Principle
 Reuse valid authority artifacts instead of creating duplicates.
@@ -102,6 +103,7 @@ Meaningful governed work begins when the assistant moves beyond lightweight expl
 | Design | target behavior, policy, contract, or architecture is new or materially changing |
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
+| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
@@ -128,6 +130,7 @@ artifact_posture:
 - design: <use existing | create now | ask now | not required>
 - changelog: <use existing | create now | ask now | not required>
 - TODO: <use existing | create now | ask now | not required>
+- live task list: <initialize now | not required>
 - phase: <use existing | create now | ask now | not required>
 - patch: <use existing | create now | ask now | not required>
 reason: ...
@@ -148,6 +151,7 @@ Communication requirements:
 |--------------|--------------|-----------------|
 | work starts first and artifacts appear later | direction and rationale drift before authority exists | resolve startup artifact posture first |
 | no artifacts are opened because the user did not list them manually | governance remains reactive | evaluate and resolve the required set proactively |
+| non-trivial tracked work begins with no live task tracking | the user cannot see planned / active / completed state while the work is underway | initialize the built-in task list early when live tracking materially helps |
 | all artifacts are forced every time | creates unnecessary ceremony | resolve only the required subset |
 | create patch by default during greenfield startup or baseline formation | startup work is mislabeled as a review delta before a stable before-state exists | default patch to `not required` unless a real existing surface or explicit user request justifies it |
 | hygiene blocks required startup artifacts | startup contract loses force | let startup control decide, then let hygiene police non-required files |

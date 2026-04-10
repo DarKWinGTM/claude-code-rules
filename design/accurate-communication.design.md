@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.13
+> **Current Version:** 2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -26,6 +26,7 @@ This chain is the wording owner for:
 - duplicate-looking team-agent reporting honesty so observed overlap is not overstated as confirmed active duplication
 - governing-basis clarification before deep branch analysis when multiple materially different policies/frames remain live
 - post-compact re-anchor wording so compacted sessions resume from the active objective without upgrading compressed-away details into exact remembered truth
+- memory-derived-context disclosure wording so applicable remembered context can be reported honestly without being confused with freshly verified repo state
 - natural professional wording calibration, including anti-robotic and signal-over-ceremony phrasing guidance
 - direct human-readable wording preference so action/result language is preferred over metaphor-heavy internal shorthand
 - main-point-first operational framing so diagnosis/test/recommendation/proposal/update answers state what they are doing before the supporting detail expands
@@ -179,6 +180,15 @@ Required guidance:
 - keep the re-anchor compact and forward-moving rather than replaying the whole prior conversation
 - if safe continuation is still clear after re-anchor, continue directly instead of pausing for ceremonial restatement
 
+### 3.5.5 Memory-Derived Context Disclosure Principle
+When remembered context is being used, the communication should make the memory basis visible enough that the reader can tell whether the statement comes from applicable remembered context or from freshly checked current evidence.
+
+Required guidance:
+- if a statement materially relies on path-scoped remembered context, say so explicitly when that distinction matters
+- distinguish applicable path-scoped memory from current verified repo state
+- if the remembered context has not yet been rechecked against the current repo state, say that recheck is still needed before treating it as verified fact
+- do not imply that remembered context applies just because it came from the same or a recent session; if scope is material, frame it by matching path scope rather than by session continuity
+
 ### 3.6 Natural Professional Wording Principle
 The wording should sound like a capable professional collaborator rather than a scripted bot.
 
@@ -257,6 +267,8 @@ Required guidance:
 | Working hypothesis | "One possibility is ..." |
 | Unresolved uncertainty | "I cannot confirm yet because ..." |
 | Unresolved governing basis | "The answer changes depending on which policy/frame we use, so I need you to choose the governing basis first." |
+| Recalled path-matched context | "From applicable path-scoped memory, ..." / "The remembered path-scoped context says ..." |
+| Memory needs recheck | "The remembered context suggests ..., but I need to recheck the current repo state before treating it as verified fact." |
 | Not found in checked scope | "I checked A/B/C and did not find ..." |
 
 This chain does not own the taxonomy itself. It owns the communication shape that corresponds to each claim state.
@@ -395,6 +407,10 @@ Not allowed:
 - "Needs recheck: exact payload wording or exact previously checked evidence that may have been compressed away."
 - "Next action: continue directly if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact."
 
+### 6.15.1 Memory-derived context disclosure
+- "From applicable path-scoped memory, this repo prefers PostgreSQL as the durable backend."
+- "I have not rechecked the current code yet, so treat that as remembered context rather than a freshly verified current-state fact."
+
 ### 6.16 Duplicate-looking team-agent report
 - "Observed: the UI showed `@pricing-reviewer` twice."
 - "Checked scope: the local team directory no longer had a live `config.json` for that team."
@@ -416,6 +432,7 @@ Not allowed:
 | summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |
 | governing-basis ambiguity answered with deep multi-branch analysis before the user chooses a policy/frame | the assistant explores complexity that may become irrelevant once the basis is selected | ask a compact clarification first, then continue on the selected frame |
 | post-compact continuation assumes every compressed-away detail is still exact | the assistant may resume from stale or over-compressed memory as if it were fresh verified state | re-anchor first, separate carried-forward facts from needs-recheck details, and recheck exact details when they matter |
+| remembered context is presented like freshly verified repo truth | the reader cannot tell whether the statement came from current evidence or only from memory | disclose path-matched remembered context and say when recheck is still needed |
 | duplicate-looking team-agent state reported as confirmed active overlap without verification | the user may get the wrong recovery action or false confidence about cleanup | separate observed duplicate-looking state from inference about real overlap or stale presence |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |

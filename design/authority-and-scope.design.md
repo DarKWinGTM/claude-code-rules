@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.0
+> **Current Version:** 2.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -28,6 +28,7 @@ Define a deterministic authority model that:
 | Assistant-generated options treated like sticky state | User's latest instruction gets ignored or delayed | Explicit latest-user-directive override rule |
 | Assistant-generated proposals treated like implied queued work | Future ideas blur into active execution without user selection | Explicit proposal-is-advisory rule |
 | Assistant treats a user-declared RULES-first issue as a memory-first problem | The durable system fix is skipped and memory becomes a substitute for governance refinement | Explicit RULES-first-vs-memory-first authority boundary |
+| Assistant treats remembered context as applicable just because it came from the same or a recent session | Path-scoped or stale memory can override the real current repo/objective | Explicit memory-governance deferral plus current-scope-wins boundary |
 | Assistant selects one governing basis before the user or checked authority settles it | Analysis drifts into the wrong frame and deepens unnecessary complexity | Explicit user-owned basis-selection boundary |
 | Assistant resumes after compact from stale framing or stale option state | Compacted sessions continue from the wrong branch instead of the active objective | Explicit post-compact re-anchor boundary |
 | Assistant-created team expansion treated like the default answer | Duplicate-looking or overlapping teammates get spawned even when the role is already covered | Explicit reuse-before-expand boundary |
@@ -70,6 +71,8 @@ DEFAULT_BEHAVIOR
 - Assistant-generated proposals for future work are advisory only and do not create an active branch, implied commitment, or pending continuation unless the user explicitly selects them.
 - When multiple materially different governing bases remain unresolved, basis selection belongs to the user unless checked authority or evidence already settles it.
 - When the user explicitly says an issue should be solved in RULES rather than memory, the assistant must treat RULES refinement as the primary path and must not use a memory write as the substitute fix for that same issue.
+- Memory applicability and memory organization semantics are owned by `memory-governance-and-session-boundary.md` rather than being inferred ad hoc from session continuity alone.
+- Path-scoped remembered context must not override the current repo/objective when the scope does not match, even if the remembered context came from the same or a recent session.
 - Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - A fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
@@ -108,6 +111,7 @@ Apply defaults
 | Fresh user directive vs previously offered assistant options | Fresh user directive wins unless the user explicitly selected one of the options |
 | User-selected governing basis vs assistant exploratory framing | User-selected basis wins and becomes the active frame |
 | Post-compact active objective vs stale assistant framing | Re-anchor to the latest active user directive and preserve the active frame |
+| Path-scoped memory vs current repo/objective mismatch | Current repo/objective wins; non-matching remembered context must not become active truth |
 | Assistant-created team expansion vs an already-covered role | Reuse the existing teammate unless the new teammate has a clearly distinct partitioned job or the user explicitly wants expansion |
 | User style request vs assistant default mode | User request wins in non-hard cases |
 | Rule vs default | Rule wins |

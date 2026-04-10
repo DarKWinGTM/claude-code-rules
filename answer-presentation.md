@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.16
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.16
+> **Current Version:** 1.18
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.18
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -74,7 +74,7 @@ Required guidance:
 - use bullets for grouped items
 - use numbered lists for sequence or order
 - use tables only for genuine comparison or structured facts
-- when a table is materially useful, prefer a compact markdown table by default
+- when a table is materially useful, prefer a light plain aligned no-frame table by default
 - do not default to full-frame ASCII or boxed tables for ordinary answer tables
 - use diagrams only when sequence or branching is central
 - use headings that describe section purpose, not just visual styling
@@ -160,6 +160,7 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
 | governing-basis ambiguity | multiple plausible policies/frames remain live and the answer changes depending on which one is chosen | short clarification block with compact basis options and one `Why it matters` line |
 | post-compact continuation | the answer is resuming after compaction and exact prior state may have been compressed | short re-anchor block with current objective, carried-forward facts, needs-recheck details, and next action |
+| memory-derived context | the answer materially relies on remembered path-scoped context and the reader needs to see what is remembered versus what is freshly rechecked | short memory-status block with matched path scope, provenance when relevant, and needs-recheck detail |
 | variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |
 | long answer | multiple concepts or dependencies | headings, grouped blocks, concise summary |
 
@@ -201,17 +202,18 @@ Preferred phrasing:
 
 When real alternatives exist:
 - frame the comparison briefly
-- use a compact markdown table if side-by-side evaluation helps
+- use a light plain aligned no-frame table if side-by-side evaluation helps
 - recommend after the comparison is visible
 - when one path is clearly preferred, surface `Recommended` before the remaining options and add one short `Why this first` reason
 - when multiple reasonable options genuinely exist, keep at least one visible alternative under `Other options` instead of reducing the block to the recommendation only
 
-### 3.0 Compact Table Pattern
+### 3.0 Plain Aligned Table Pattern
 
 When a table is genuinely useful:
-- prefer a compact markdown pipe table by default
+- prefer a light plain aligned no-frame table by default
 - keep the number of columns low unless the comparison really needs more
 - keep cell content short and scanable
+- allow simple alignment spacing when it improves readability in plain-text rendering
 - avoid turning multiline explanation into table cells when bullets or prose would be easier to read
 - do not use full-frame ASCII or boxed tables as the default answer shape
 
@@ -253,6 +255,15 @@ Required guidance:
 - distinguish carried-forward facts from needs-recheck details when exact prior evidence may no longer be fully preserved
 - show one short next-action line
 - prefer one short recap block over a long conversation replay
+
+### 3.4 Memory-Status Pattern
+
+When the answer materially relies on remembered context:
+- show the matched path scope compactly when that distinction matters
+- show remembered-context status separately from freshly checked current-state facts
+- show provenance session only when it materially helps trace the memory source
+- show one short needs-recheck line when remembered context has not yet been revalidated against the current repo state
+- keep the block compact; it should clarify the evidence source, not become a large history replay
 
 ### 4) Sequence Pattern
 
@@ -456,6 +467,16 @@ Next action
 - continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact
 ```
 
+### 16.1) Canonical Memory-Status Shape
+
+```markdown
+Memory status
+- Matched path scope: `/home/node/workplace/AWCLOUD/CLAUDE/NodeClaw-platform/`
+- Provenance: remembered from applicable path-scoped memory
+- Freshly checked now: current repo state not yet revalidated
+- Needs recheck: confirm the current code/config still matches the remembered context before treating it as verified fact
+```
+
 ### 17) Canonical Governing-Basis Clarification Shape
 
 ```markdown
@@ -507,14 +528,16 @@ What This Means
 - if behavior does not change, the setting is not taking effect
 ```
 
-### 20) Canonical Compact Table Shape
+### 20) Canonical Plain Aligned Table Shape
 
-```markdown
-| เรื่อง | สถานะ |
-| --- | --- |
-| phase owner | locked |
-| rename map | locked |
-| governance targets | defined |
+```text
+Sample table
+ Name  | Age | Eye color
+-------|-----|-----------
+ John  |  23 |   green
+ Mary  |  16 |   brown
+ Rita  |  47 |   blue
+ Peter |   8 |   brown
 ```
 
 ### 21) Canonical List-Instead-of-Table Shape
@@ -542,7 +565,7 @@ Current work order:
 | list or table with no framing | reader must infer its purpose | add a short context-setting line |
 | raw evidence dump with no orienting line | facts appear, but the reader cannot tell why they matter | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
-| full-frame ASCII or boxed table used for ordinary structured facts | visual weight increases without adding real semantic value | use a compact markdown table or switch to a list/grouped block |
+| full-frame ASCII or boxed table used for ordinary structured facts | visual weight increases without adding real semantic value | use a light plain aligned no-frame table or switch to a list/grouped block |
 | machine-specific value presented like a reusable default | local fact is mistaken for a portable contract | label it as a checked local fact or switch to a portable placeholder |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use grouped scope-boundary sections |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
@@ -554,6 +577,7 @@ Current work order:
 | future work presented like the next automatic step | the reader cannot tell whether the assistant is proposing an idea or already queueing execution | label it as a proposal and show goal, improvement, output, and optional success condition |
 | governing-basis ambiguity answered with a long branch-comparison essay before the user chooses a basis | the clarification is buried inside unnecessary structure | use a short compact clarification block with basis choices and one `Why it matters` line |
 | post-compact continuation presented as a long conversation replay | the user has to reread stale history instead of seeing the active state quickly | use one short post-compact re-anchor block with current objective, carried-forward facts, needs-recheck detail, and next action |
+| remembered context shown like freshly checked current truth | the reader cannot tell what is recalled versus what is revalidated now | use one short memory-status block that separates matched scope, provenance when relevant, and needs-recheck detail |
 | over-structuring simple answers | makes a short answer feel heavy | keep simple answers compact |
 | inconsistent heading or emphasis style | weakens visual order | keep presentation consistent |
 
@@ -608,8 +632,9 @@ Not allowed:
 ## Integration
 
 Related rules:
-- [accurate-communication.md](accurate-communication.md) - keeps summaries, signal density, bounded technical snapshot wording, human-language glosses, and continuation-vs-option policy useful
+- [accurate-communication.md](accurate-communication.md) - keeps summaries, signal density, bounded technical snapshot wording, human-language glosses, memory-derived-context disclosure wording, and continuation-vs-option policy useful
 - [explanation-quality.md](explanation-quality.md) - shapes analytical reasoning, layered explanation flow, full-set-first framing, and stage progression logic
+- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - governs text diagrams used for branching or sequence
 - [document-consistency.md](document-consistency.md) - keeps labels, references, and terminology consistent
 

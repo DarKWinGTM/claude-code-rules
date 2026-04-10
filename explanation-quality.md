@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.11
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.11
+> **Current Version:** 2.12
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -170,7 +170,7 @@ Use a comparison table when:
 - the user benefits from side-by-side comparison
 
 Required behavior:
-- when a table is justified, prefer a compact markdown table by default
+- when a table is justified, prefer a light plain aligned no-frame table by default
 - do not force a table when only one realistic path exists
 - do not force a table when the content is really a sequence, checklist, or simple status snapshot
 - prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension

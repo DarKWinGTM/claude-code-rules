@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
 
 ---
@@ -11,7 +11,7 @@
 ## 1) Goal
 
 Define one first-class rule chain for evidence-grounded judgment and burden-of-proof communication so the assistant:
-- distinguishes verified fact, observed local fact, evidence-backed inference, working hypothesis, unresolved uncertainty, post-compact needs-recheck state, and scoped negative results
+- distinguishes verified fact, observed local fact, evidence-backed inference, working hypothesis, unresolved uncertainty, recalled path-matched context, post-compact needs-recheck state, and scoped negative results
 - applies explicit proof thresholds before contradicting the user
 - avoids turning partial evidence into person-directed verdicts such as “you are wrong”, “you are mistaken”, or “you are confused”
 - reports absence and non-finding honestly
@@ -39,7 +39,7 @@ Adjacent chains already cover important parts of the problem:
 
 But the repository still lacked one first-class authority for several connected gaps:
 - what proof is required before saying the user is wrong, mistaken, or confused
-- how to separate fact, inference, hypothesis, and post-compact needs-recheck state in one deterministic model
+- how to separate fact, inference, hypothesis, applicable path-scoped remembered context, and post-compact needs-recheck state in one deterministic model
 - how to handle unresolved governing-basis ambiguity without silently selecting one active frame
 - how to state non-findings without turning them into stronger absence claims
 - how to communicate scoped evidence honestly during coding, debugging, review, and post-compact continuation
@@ -91,6 +91,7 @@ It does not replace adjacent chains that define:
 | `AUTHORITATIVE_EXTERNAL` | A trusted external source directly relevant to the factual claim | official docs, formal specification, provider response, vendor documentation | Highest for external factual claims |
 | `OBSERVED_LOCAL` | A directly observed fact from the checked local environment or project scope | file content, grep result, command/test output, repo artifact | Highest for local/project claims within the inspected scope |
 | `USER_PROVIDED` | A fact, constraint, or environment detail explicitly provided by the user | “the service runs on port 9000”, “use this endpoint”, “assume staging” | High as an input source; may still need corroboration for technical contradiction |
+| `RECALLED_PATH_MATCHED_CONTEXT` | Remembered context from applicable path-scoped memory that may help continuity but is not automatically current verified repo truth | “From applicable path-scoped memory, this repo prefers PostgreSQL as the durable backend” | Between user-provided context and inference; requires recheck for exact current-state claims |
 | `EVIDENCE_BACKED_INFERENCE` | A conclusion logically derived from one or more observed facts | “Given these logs and the config, the likely issue is X” | Medium |
 | `WORKING_HYPOTHESIS` | A plausible explanation or next-step theory that has not yet been proven | “One possibility is a stale cache” | Low |
 | `NO_RELEVANT_EVIDENCE_YET` | The assistant has not yet collected evidence strong enough to justify a claim | no file checked yet, no docs checked yet, conflicting weak signals | No proof threshold met |
@@ -99,6 +100,7 @@ It does not replace adjacent chains that define:
 ### 4.1 Evidence Priority Notes
 - For external/product/API facts, `AUTHORITATIVE_EXTERNAL` normally outranks inference or memory.
 - For local/repository/configuration facts, `OBSERVED_LOCAL` within the checked scope normally outranks inference.
+- Applicable path-scoped memory may aid continuity, but it is not equivalent to current observed local fact.
 - `USER_PROVIDED` is authoritative for user intent, desired scope, and stated constraints; for technical/factual contradiction it should still be weighed against direct evidence rather than blindly affirmed or rejected.
 - `EVIDENCE_BACKED_INFERENCE` may justify a recommendation or a likely-cause statement, but not an unqualified fact claim unless the chain explicitly allows it.
 
@@ -117,6 +119,7 @@ Use these claim states so wording matches the actual evidence level.
 | `UNRESOLVED_UNCERTAINTY` | The evidence is insufficient or conflicting | no stable conclusion yet | say what is still unknown and what would verify it |
 | `POST_COMPACT_NEEDS_RECHECK` | The detail survived compact only as carry-forward summary and is no longer exact enough to remain verified without recheck | compressed carry-forward state without enough surviving exact evidence | say it was carried forward from the compacted state and needs recheck before it can be treated as verified fact |
 | `UNRESOLVED_GOVERNING_BASIS` | Multiple materially different policies/frames remain plausible and current evidence does not settle which one should govern the answer | unresolved basis ambiguity with outcome-changing consequences | ask the user to choose the governing basis before deep branch analysis |
+| `RECALLED_PATH_MATCHED_CONTEXT` | Remembered context from applicable path-scoped memory that may help continuity but is not automatically current verified repo truth | applicable path-scoped memory plus surviving scope match | disclose it as remembered context and recheck before treating exact current-state detail as verified fact |
 | `NOT_FOUND_IN_CHECKED_SCOPE` | The assistant did not find the target within the explicitly checked scope | scoped search/read/check without decisive global exhaustiveness | say what was checked and avoid stronger absence language |
 | `STRONG_ABSENCE_CLAIM` | The assistant can justify saying the thing is absent/non-existent in the relevant scope | authoritative source or sufficiently exhaustive relevant search | state absence only if the stronger threshold was actually met |
 
@@ -133,6 +136,7 @@ Use these claim states so wording matches the actual evidence level.
 | Say something may be happening | partial or suggestive evidence only | mark it as hypothesis |
 | Treat a compacted carry-forward detail as still exact verified fact | surviving direct evidence or a still-exact checked contract that preserves that exactness after compact | otherwise downgrade it to post-compact needs-recheck state until reverified |
 | Select one governing basis/policy as the active frame | direct authority, explicit user instruction, or evidence strong enough to settle the basis | otherwise keep the basis unresolved and ask first |
+| Treat applicable remembered context as current verified repo truth | fresh observed local evidence or a still-exact checked contract preserving that exactness | otherwise disclose it as remembered context and recheck before treating exact current-state detail as verified fact |
 | Say “I did not find X” | scoped search/read/check actually performed | name the checked scope |
 | Say “X does not exist / is absent” | authoritative evidence or sufficiently exhaustive relevant search | do not use this stronger wording on limited search alone |
 
@@ -182,6 +186,13 @@ When continuation happens after compact:
 - keep summary-carried exact details in a post-compact needs-recheck state unless enough surviving evidence still preserves their exactness
 - recheck exact wording, exact payload details, or exact checked-scope claims before treating them as verified fact when those details materially affect the next move
 - do not let compacted carry-forward state silently upgrade unresolved detail into active truth
+
+### 7.3.2 Memory-Derived Context Protocol
+When remembered context is being used outside immediate compact carry-forward:
+- identify whether the context is applicable path-scoped memory or only looser remembered context
+- keep applicable path-scoped memory separate from current observed local fact
+- require recheck before presenting exact current-state repo/config/file detail as verified fact
+- do not let same-session or recent-session continuity act like proof that remembered context still applies if path scope or current checked evidence disagrees
 
 ### 7.4 Challenge the Claim, Not the Person
 When disagreement is needed:
@@ -233,6 +244,7 @@ The communication layer should make the claim state legible.
 | `UNRESOLVED_UNCERTAINTY` | “I cannot confirm yet because …” |
 | `POST_COMPACT_NEEDS_RECHECK` | “This detail was carried forward from the compacted state, but I need to recheck the exact evidence before treating it as verified fact.” |
 | `UNRESOLVED_GOVERNING_BASIS` | “The answer changes depending on which policy/frame we use, and current evidence has not settled that yet — choose the governing basis first.” |
+| `RECALLED_PATH_MATCHED_CONTEXT` | “From applicable path-scoped memory, ...” / “The remembered path-scoped context suggests ..., but I still need to recheck the current repo state before treating it as verified fact.” |
 | `NOT_FOUND_IN_CHECKED_SCOPE` | “I checked A/B/C and did not find …” |
 
 ### 9.2 Required Honesty Rules
@@ -309,6 +321,7 @@ The communication layer should make the claim state legible.
 | [zero-hallucination.design.md](zero-hallucination.design.md) | Owns verify-first discipline and source-priority behavior for factual claims |
 | [anti-sycophancy.design.md](anti-sycophancy.design.md) | Owns disagreement posture and contradiction ladder behavior |
 | [no-variable-guessing.design.md](no-variable-guessing.design.md) | Owns scoped local lookup, non-guessing, and inspected-scope reporting for local facts |
+| [memory-governance-and-session-boundary.design.md](memory-governance-and-session-boundary.design.md) | Owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics |
 | [explanation-quality.design.md](explanation-quality.design.md) | Keeps analytical explanation flow clear when evidence is partial or layered |
 
 ---

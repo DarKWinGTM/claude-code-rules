@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.16
+> **Current Version:** 1.18
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -17,7 +17,7 @@ The target behavior is principle-first and trigger-driven:
 - show the purpose early when the answer is doing diagnosis, testing, recommendation, proposal, or implementation reporting
 - structure by user need and answer type
 - use headings, lists, tables, and spacing as semantic tools
-- prefer compact markdown tables when a table is genuinely useful
+- prefer light plain aligned no-frame tables when a table is genuinely useful
 - avoid full-frame ASCII / boxed tables as the default answer-table shape
 - make compact diagnostic snapshots explicit when technical status or checked scope matters
 - make variable-heavy explanations easier to scan by allowing short glossary blocks or small variable-role tables before deeper reasoning
@@ -27,6 +27,7 @@ The target behavior is principle-first and trigger-driven:
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
 - make materially outcome-changing governing-basis ambiguity easy to present as a short structured clarification instead of a long branch-comparison essay
 - make post-compact continuation easy to present as one short re-anchor block instead of a long replay
+- make memory-derived context easy to present as one short block that separates matched path scope, provenance when relevant, and needs-recheck detail from freshly checked current-state facts
 - keep presentation readable without decorative noise
 - preserve flexibility for simple answers
 
@@ -42,7 +43,7 @@ Observed failure modes:
 - bullets are used for everything, including ideas that need prose continuity
 - sequences are presented as unordered lists
 - tables are used where no real comparison exists
-- ordinary structured facts are presented with full-frame ASCII / boxed tables even though a lighter form would do
+- ordinary structured facts are presented with full-frame ASCII / boxed tables or generic dense pipe-table styling even though the chosen lighter plain aligned no-frame form would do
 - technical updates arrive as raw evidence dumps instead of bounded status notes
 - small troubleshooting issues are presented with oversized tables or overbuilt formatting
 - an answer can look well-structured while still leaving metaphor-heavy or abstract internal wording unexplained
@@ -115,7 +116,7 @@ Required guidance:
 - use bullets for grouped items
 - use numbered lists for ordered steps or sequences
 - use tables for real comparison or structured facts only
-- when a table is materially useful, prefer a compact markdown table by default
+- when a table is materially useful, prefer a light plain aligned no-frame table by default
 - do not default to full-frame ASCII or boxed tables for ordinary answer tables
 - use diagrams only when sequence or branching is central
 - ensure headings are short, functional, and content-representative
@@ -213,17 +214,18 @@ Preferred phrasing:
 
 When real alternatives exist:
 - give a brief orienting statement
-- use a compact markdown table when side-by-side evaluation improves decision quality
+- use a light plain aligned no-frame table when side-by-side evaluation improves decision quality
 - recommend after comparison, not before it
 - when one path is clearly preferred, surface `Recommended` first and add one short `Why this first` reason before listing the remaining options
 - when multiple reasonable options genuinely exist, keep at least one visible alternative instead of reducing the block to the recommendation only
 
-### 5.3.0 Compact Table Pattern
+### 5.3.0 Plain Aligned Table Pattern
 
 When a table is genuinely useful:
-- prefer a compact markdown pipe table by default
+- prefer a light plain aligned no-frame table by default
 - keep the number of columns low unless the comparison truly needs more
 - keep cell content short and scanable
+- allow simple alignment spacing when it improves readability in plain-text rendering
 - avoid turning multiline explanation into table cells when bullets or prose would be easier to read
 - do not use full-frame ASCII or boxed tables as the default answer shape
 
@@ -265,6 +267,15 @@ Required guidance:
 - distinguish carried-forward facts from needs-recheck details when exact prior evidence may no longer be fully preserved
 - show one short next-action line
 - prefer one short recap block over a long conversation replay
+
+### 5.3.4 Memory-Status Pattern
+
+When the answer materially relies on remembered context:
+- show the matched path scope compactly when that distinction matters
+- show remembered-context status separately from freshly checked current-state facts
+- show provenance session only when it materially helps trace the memory source
+- show one short needs-recheck line when remembered context has not yet been revalidated against the current repo state
+- keep the block compact; it should clarify the evidence source, not become a large history replay
 
 ### 5.4 Sequence Pattern
 
@@ -429,6 +440,28 @@ Next action
 - continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact
 ```
 
+### 5.11.1 Canonical Memory-Status Shape
+
+```markdown
+Memory status
+- Matched path scope: `/home/node/workplace/AWCLOUD/CLAUDE/NodeClaw-platform/`
+- Provenance: remembered from applicable path-scoped memory
+- Freshly checked now: current repo state not yet revalidated
+- Needs recheck: confirm the current code/config still matches the remembered context before treating it as verified fact
+```
+
+### 5.11.2 Canonical Plain Aligned Table Shape
+
+```text
+Sample table
+ Name  | Age | Eye color
+-------|-----|-----------
+ John  |  23 |   green
+ Mary  |  16 |   brown
+ Rita  |  47 |   blue
+ Peter |   8 |   brown
+```
+
 ### 5.12 Canonical Variable-Role Shape
 
 ```markdown
@@ -510,7 +543,7 @@ What This Means
 | missing framing before table/list | reader has to infer the purpose of the structure | add a short context-setting line |
 | raw evidence dump with no orienting line | checked facts appear but meaning stays unclear | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
-| ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | use a compact markdown table or switch to a list/grouped block |
+| ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | use a light plain aligned no-frame table or switch to a list/grouped block |
 | scope boundaries buried in long prose | the reader cannot tell what is included now versus later | use grouped scope-boundary sections such as `What this is` / `What this is not` / `What happens now` / `What stays later` |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first, then narrow |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |
@@ -518,6 +551,7 @@ What This Means
 | table-only technical note with no implication | facts are visible but the reader cannot tell what they mean | add one short implication or next-action line |
 | governing-basis ambiguity answered with a long branch-comparison essay before the user chooses a basis | the clarification is buried inside unnecessary structure | use a short compact clarification block with basis choices and one `Why it matters` line |
 | post-compact continuation presented as a long conversation replay | the reader has to reread stale history instead of seeing the active state quickly | use one short post-compact re-anchor block with current objective, carried-forward facts, needs-recheck detail, and next action |
+| remembered context shown like freshly checked current truth | the reader cannot tell what is recalled versus what is revalidated now | use one short memory-status block that separates matched scope, provenance when relevant, and needs-recheck detail |
 | over-structuring simple answers | makes a small answer feel heavy | keep simple cases compact |
 | structure feels templated rather than useful | reader notices the format more than the content | use only the smallest structure that improves scanability |
 | inconsistent emphasis or heading style | weakens visual order | maintain consistent markdown hierarchy |
@@ -567,8 +601,9 @@ Not allowed:
 | Document | Relationship |
 |----------|--------------|
 | [../answer-presentation.md](../answer-presentation.md) | Runtime implementation of this design |
-| [accurate-communication.design.md](accurate-communication.design.md) | Clear summaries, bounded technical snapshot wording, and next-step endings |
+| [accurate-communication.design.md](accurate-communication.design.md) | Clear summaries, bounded technical snapshot wording, memory-derived-context disclosure wording, and next-step endings |
 | [explanation-quality.design.md](explanation-quality.design.md) | Reasoning structure and layered analytical explanation quality |
+| [memory-governance-and-session-boundary.design.md](memory-governance-and-session-boundary.design.md) | Owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics |
 | [flow-diagram-no-frame.design.md](flow-diagram-no-frame.design.md) | Text-diagram formatting constraints |
 | [document-consistency.design.md](document-consistency.design.md) | Consistency in terminology, references, and labeling |
 
