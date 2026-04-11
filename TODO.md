@@ -6,6 +6,7 @@
 
 ## ✅ Completed
 
+- [x] Improve the README Quick Start install scripts so they use cleaner Bash and PowerShell examples, remove centered code presentation for the Quick Start install block, and support both Linux/macOS and Windows users clearly.
 - [x] Add README AI-assisted install prompts so users can ask Claude Code, Codex CLI, or Gemini CLI to install or adapt the active rule set directly from this repository while preserving the active-vs-non-active boundary.
 - [x] Add easy-to-picture concise phase/progress explanation guidance so phase and next-step answers start from plain-language framing the user can picture quickly before denser governance/execution detail; synchronize design/changelog/master surfaces and runtime rule copies.
 - [x] Link live task-list behavior explicitly to the current active phase so non-trivial phase-backed work now expects a built-in task list early, one phase may contain multiple execution tasks, and future-phase draft tasks do not replace current-phase execution visibility; synchronize design/changelog/master surfaces and runtime rule copies.
@@ -88,6 +89,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-12 | Improved the README Quick Start install scripts with cleaner Bash and PowerShell examples, removed centered code presentation from the install block, and made the Quick Start clearer for both Linux/macOS and Windows users. |
 | 2026-04-12 | Added README AI-assisted install prompts for Claude Code, Codex CLI, and Gemini CLI so users can ask AI to install or adapt the active rule set directly from this repository while preserving the active-vs-non-active boundary. |
 | 2026-04-11 | Added easy-to-picture concise phase/progress explanation guidance so phase and next-step answers now start from plain-language framing the user can picture quickly before denser governance/execution detail. |
 | 2026-04-11 | Linked live task-list behavior explicitly to the current active phase so non-trivial phase-backed work now expects a built-in task list early, one phase may contain multiple execution tasks, and future-phase draft tasks do not replace current-phase execution visibility. |

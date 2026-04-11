@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.16
+> **Current Version:** 9.17
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.17 | 2026-04-12 | **[Improved README Quick Start install scripts for Bash and PowerShell](#version-917)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.16 | 2026-04-12 | **[Added AI-assisted install prompts to the README](#version-916)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-915)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.14 | 2026-04-11 | **[Linked live task-list behavior explicitly to the current active phase](#version-914)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -52,6 +53,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-917"></a>
+## Version 9.17: Improved README Quick Start install scripts for Bash and PowerShell
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Replaced the old Quick Start install block with cleaner Bash and PowerShell scripts.
+- Removed centered presentation around the Quick Start code block so the install commands read more naturally.
+- Kept the same active 36-rule runtime install set while making the script structure easier to reuse and edit.
+- Added a dedicated Windows PowerShell install path alongside the Bash install path for Linux/macOS users.
+- Updated `TODO.md` and the master changelog to record the Quick Start install-script refinement.
+
+### Summary
+The README now gives cleaner install scripts for both Bash and PowerShell so Quick Start is easier to follow across Linux/macOS and Windows.
 
 ---
 

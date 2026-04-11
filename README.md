@@ -79,30 +79,128 @@
 
 ## ⚡ Quick Start
 
-<div align="center">
+Use the script for your platform. Both install the same 36 active runtime rules only.
+
+### Bash — Linux / macOS
 
 ```bash
-# Step 1: Clone once
-git clone https://github.com/DarKWinGTM/claude-code-rules.git
-cd claude-code-rules
+# Clone once
+if [ ! -d "claude-code-rules" ]; then
+  git clone https://github.com/DarKWinGTM/claude-code-rules.git
+fi
 
-# Step 2: Reusable active runtime file set (run from repo root)
-RULE_FILES="accurate-communication.md answer-presentation.md anti-mockup.md anti-sycophancy.md artifact-initiation-control.md authority-and-scope.md custom-agent-selection-priority.md dan-safe-normalization.md document-consistency.md document-changelog-control.md document-design-control.md document-patch-control.md emergency-protocol.md evidence-grounded-burden-of-proof.md explanation-quality.md external-verification-and-source-trust.md flow-diagram-no-frame.md functional-intent-verification.md memory-governance-and-session-boundary.md natural-professional-communication.md no-variable-guessing.md operational-failure-handling.md phase-implementation.md portable-implementation-and-hardcoding-control.md project-documentation-standards.md recovery-contract.md refusal-classification.md refusal-minimization.md runtime-topology-control.md safe-file-reading.md safe-terminal-output.md strict-file-hygiene.md tactical-strategic-programming.md todo-standards.md unified-version-control-system.md zero-hallucination.md"
+cd claude-code-rules || exit 1
 
-# Step 3: Install globally
-mkdir -p ~/.claude/rules
-for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
+# Install active runtime rules into ~/.claude/rules/
+mkdir -p "$HOME/.claude/rules"
+
+rule_files=(
+  accurate-communication.md
+  answer-presentation.md
+  anti-mockup.md
+  anti-sycophancy.md
+  artifact-initiation-control.md
+  authority-and-scope.md
+  custom-agent-selection-priority.md
+  dan-safe-normalization.md
+  document-consistency.md
+  document-changelog-control.md
+  document-design-control.md
+  document-patch-control.md
+  emergency-protocol.md
+  evidence-grounded-burden-of-proof.md
+  explanation-quality.md
+  external-verification-and-source-trust.md
+  flow-diagram-no-frame.md
+  functional-intent-verification.md
+  memory-governance-and-session-boundary.md
+  natural-professional-communication.md
+  no-variable-guessing.md
+  operational-failure-handling.md
+  phase-implementation.md
+  portable-implementation-and-hardcoding-control.md
+  project-documentation-standards.md
+  recovery-contract.md
+  refusal-classification.md
+  refusal-minimization.md
+  runtime-topology-control.md
+  safe-file-reading.md
+  safe-terminal-output.md
+  strict-file-hygiene.md
+  tactical-strategic-programming.md
+  todo-standards.md
+  unified-version-control-system.md
+  zero-hallucination.md
+)
+
+for file in "${rule_files[@]}"; do
+  cp "$file" "$HOME/.claude/rules/$file"
+done
 ```
 
-✨ **That's it!** This installs the 36 active runtime rules only.
+### PowerShell — Windows
 
-> Already cloned the repo? Skip Step 1 and run only Step 2 + Step 3 from the repository root.
->
-> Need project-specific install instead? Reuse the same `RULE_FILES` line, but change the destination from `~/.claude/rules/` to `./.claude/rules/`.
->
-> Note: this runtime-only install copies the active rule files. Governed design/changelog/TODO artifacts plus the root `phase-implementation-template.md` helper remain in the repository for maintenance, documentation, and synchronized updates.
+```powershell
+# Clone once
+if (-not (Test-Path "claude-code-rules")) {
+  git clone https://github.com/DarKWinGTM/claude-code-rules.git
+}
 
-</div>
+Set-Location claude-code-rules
+
+# Install active runtime rules into ~/.claude/rules/
+$target = Join-Path $HOME ".claude/rules"
+New-Item -ItemType Directory -Force -Path $target | Out-Null
+
+$ruleFiles = @(
+  "accurate-communication.md",
+  "answer-presentation.md",
+  "anti-mockup.md",
+  "anti-sycophancy.md",
+  "artifact-initiation-control.md",
+  "authority-and-scope.md",
+  "custom-agent-selection-priority.md",
+  "dan-safe-normalization.md",
+  "document-consistency.md",
+  "document-changelog-control.md",
+  "document-design-control.md",
+  "document-patch-control.md",
+  "emergency-protocol.md",
+  "evidence-grounded-burden-of-proof.md",
+  "explanation-quality.md",
+  "external-verification-and-source-trust.md",
+  "flow-diagram-no-frame.md",
+  "functional-intent-verification.md",
+  "memory-governance-and-session-boundary.md",
+  "natural-professional-communication.md",
+  "no-variable-guessing.md",
+  "operational-failure-handling.md",
+  "phase-implementation.md",
+  "portable-implementation-and-hardcoding-control.md",
+  "project-documentation-standards.md",
+  "recovery-contract.md",
+  "refusal-classification.md",
+  "refusal-minimization.md",
+  "runtime-topology-control.md",
+  "safe-file-reading.md",
+  "safe-terminal-output.md",
+  "strict-file-hygiene.md",
+  "tactical-strategic-programming.md",
+  "todo-standards.md",
+  "unified-version-control-system.md",
+  "zero-hallucination.md"
+)
+
+foreach ($file in $ruleFiles) {
+  Copy-Item $file (Join-Path $target $file) -Force
+}
+```
+
+### Notes
+
+- Already cloned the repo? Skip the clone step and run the install block only.
+- Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/`.
+- This runtime-only install copies active rule files only. Governed design/changelog/TODO artifacts plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates.
 
 ### 🤖 AI-Assisted Install Prompts
 
