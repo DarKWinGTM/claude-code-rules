@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.7
+> **Current Version:** 9.9
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.9 | 2026-04-11 | **[Created a first-class table owner and centralized ordinary answer-table semantics](#version-99)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.7 | 2026-04-10 | **[Corrected the default table style to the selected light plain aligned no-frame form](#version-97)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.6 | 2026-04-10 | **[Made task-list-first tracking explicit for non-trivial work across tracking/startup/documentation owners](#version-96)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.5 | 2026-04-09 | **[Created first-class memory-governance rule chain and synchronized memory-boundary companions](#version-95)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -44,6 +45,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-99"></a>
+## Version 9.9: Created a first-class table owner and centralized ordinary answer-table semantics
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Created the new first-class `table-format-and-usage` chain from v1.0 design/runtime/changelog so ordinary answer-table usage, default style, list-versus-table boundary, bounded markdown-table exceptions, and table anti-pattern semantics now have one semantic owner.
+- Updated `answer-presentation` from v1.18 to v1.19 so broader layout/scanability ownership remains there while ordinary answer-table doctrine now defers to `table-format-and-usage`.
+- Updated `explanation-quality` from v2.12 to v2.13 so explanation-flow ownership remains there while explanation-side table semantics now defer to `table-format-and-usage`.
+- Added `patch/table-format-and-usage-centralization.patch.md` plus `phase/phase-029-01-*` and `phase/phase-029-02-*` for the bounded ownership-transfer wave.
+- Synchronized the touched design/changelog chains, master-governance surfaces, and runtime install set for the centralized table-owner wave.
+
+### Summary
+The RULES repository now gives ordinary answer-table semantics one first-class owner, so table behavior is clearer, more enforceable, and less likely to drift across adjacent chains.
 
 ---
 

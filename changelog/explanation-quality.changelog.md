@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.12
+> **Current Version:** 2.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.13 | 2026-04-11 | **[Narrowed explanation-quality to defer table semantics to the central table owner](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-10 | **[Aligned explanation-side table style to the light plain aligned no-frame default](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-09 | **[Clarified compact-table choice and list-first alternatives in explanation flow](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-09 | **[Added purpose-first explanation framing for operational answers](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -46,6 +47,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-213"></a>
+## Version 2.13: Narrowed explanation-quality to defer table semantics to the central table owner
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.12 to v2.13.
+- Updated `design/explanation-quality.design.md` from v2.12 to v2.13.
+- Replaced direct explanation-side table semantics with defer/reference wording to `table-format-and-usage.md`.
+- Kept explanation-quality focused on explanation flow, true-comparison triggers, and lighter non-table alternatives when tabular structure is not justified.
+- Preserved the selected plain aligned no-frame contract while moving the detailed table doctrine into the new central owner.
+
+### Summary
+Explanation-quality now keeps explanation-flow ownership, while explanation-side table semantics defer to the first-class `table-format-and-usage` rule chain.
 
 ---
 

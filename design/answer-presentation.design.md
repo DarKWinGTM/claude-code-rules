@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.18
+> **Current Version:** 1.19
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -17,8 +17,8 @@ The target behavior is principle-first and trigger-driven:
 - show the purpose early when the answer is doing diagnosis, testing, recommendation, proposal, or implementation reporting
 - structure by user need and answer type
 - use headings, lists, tables, and spacing as semantic tools
-- prefer light plain aligned no-frame tables when a table is genuinely useful
-- avoid full-frame ASCII / boxed tables as the default answer-table shape
+- defer ordinary answer-table usage and style semantics to a dedicated central owner when table governance becomes first-class
+- keep broader presentation structure responsible for framing and scanability around the chosen table/list shape
 - make compact diagnostic snapshots explicit when technical status or checked scope matters
 - make variable-heavy explanations easier to scan by allowing short glossary blocks or small variable-role tables before deeper reasoning
 - keep metaphor-heavy or abstract internal phrases from being left visually unexplained when a short gloss or implication line would make the practical meaning clear
@@ -43,7 +43,7 @@ Observed failure modes:
 - bullets are used for everything, including ideas that need prose continuity
 - sequences are presented as unordered lists
 - tables are used where no real comparison exists
-- ordinary structured facts are presented with full-frame ASCII / boxed tables or generic dense pipe-table styling even though the chosen lighter plain aligned no-frame form would do
+- ordinary structured facts are presented with full-frame ASCII / boxed tables or generic dense pipe-table styling because table semantics are not yet centralized enough
 - technical updates arrive as raw evidence dumps instead of bounded status notes
 - small troubleshooting issues are presented with oversized tables or overbuilt formatting
 - an answer can look well-structured while still leaving metaphor-heavy or abstract internal wording unexplained
@@ -115,9 +115,9 @@ Formatting should communicate meaning, not decoration.
 Required guidance:
 - use bullets for grouped items
 - use numbered lists for ordered steps or sequences
-- use tables for real comparison or structured facts only
-- when a table is materially useful, the default ordinary answer-table style must be a light plain aligned no-frame table
-- do not default to full-frame ASCII, boxed tables, or generic markdown pipe-table framing for ordinary answer tables
+- use tables only when tabular structure genuinely improves scanability
+- defer ordinary answer-table usage, default style, list-versus-table boundary, and table anti-pattern semantics to `table-format-and-usage.md`
+- keep this chain focused on broader layout, framing, and scanability around the chosen structure
 - use diagrams only when sequence or branching is central
 - ensure headings are short, functional, and content-representative
 
@@ -164,9 +164,9 @@ Use stronger presentation structure when one or more of these triggers are prese
 | simple answer | factual lookup, one-step response, low complexity | compact paragraphs or short list only |
 | analytical answer | explanation, trade-off, diagnosis, architecture reasoning | short orienting answer + sections |
 | purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
-| comparison | choose between options, pros/cons, alternatives | selected plain aligned no-frame table or clearly grouped comparison blocks |
+| comparison | choose between options, pros/cons, alternatives | table semantics defer to `table-format-and-usage.md`; grouped comparison blocks remain allowed |
 | sequence | steps, procedure, rollout order, checklist flow | numbered steps or ordered blocks |
-| simple status pairs | short state labels with short values | bullets, grouped blocks, or selected plain aligned no-frame table only if side-by-side scan clearly helps |
+| simple status pairs | short state labels with short values | bullets, grouped blocks, or a table only if `table-format-and-usage.md` says side-by-side scan is genuinely useful |
 | branching flow | conditions, paths, decision trees, handoffs | text flow diagram or clearly branched list |
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification note, environment summary | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
@@ -214,30 +214,17 @@ Preferred phrasing:
 
 When real alternatives exist:
 - give a brief orienting statement
-- use the selected light plain aligned no-frame table style when side-by-side evaluation improves decision quality
+- if side-by-side evaluation improves decision quality, use the table semantics from `table-format-and-usage.md`
 - recommend after comparison, not before it
 - when one path is clearly preferred, surface `Recommended` first and add one short `Why this first` reason before listing the remaining options
 - when multiple reasonable options genuinely exist, keep at least one visible alternative instead of reducing the block to the recommendation only
 
-### 5.3.0 Plain Aligned Table Pattern
+### 5.3.0 Table-Semantics Defer Pattern
 
-When a table is genuinely useful:
-- the default ordinary answer-table style must be the selected light plain aligned no-frame form
-- keep the number of columns low unless the comparison truly needs more
-- keep cell content short and scanable
-- allow simple alignment spacing when it improves readability in plain-text rendering
-- do not silently fall back to a generic markdown pipe-table default when the selected house style is more specific
-- avoid turning multiline explanation into table cells when bullets or prose would be easier to read
-- do not use full-frame ASCII or boxed tables as the default answer shape
-
-### 5.3.0.1 List-Versus-Table Pattern
-
-Before using a table, decide whether the content is really tabular.
-
-Prefer:
-- numbered lists for sequence, rollout order, and stepwise work
-- bullets or grouped blocks for simple status pairs
-- tables only when side-by-side scanning materially improves comparison or structured-fact reading
+For ordinary answer tables:
+- defer table usage, default style, list-versus-table boundary, and table anti-pattern semantics to `table-format-and-usage.md`
+- keep `answer-presentation` focused on broader layout, framing, and scanability around the chosen structure
+- do not let this chain remain the full owner of ordinary answer-table doctrine after centralization
 
 ### 5.3.1 Proposal Pattern
 
@@ -451,17 +438,9 @@ Memory status
 - Needs recheck: confirm the current code/config still matches the remembered context before treating it as verified fact
 ```
 
-### 5.11.2 Canonical Plain Aligned Table Shape
+### 5.11.2 Canonical Table-Semantics Reference Shape
 
-```text
-Sample table
- Name  | Age | Eye color
--------|-----|-----------
- John  |  23 |   green
- Mary  |  16 |   brown
- Rita  |  47 |   blue
- Peter |   8 |   brown
-```
+For ordinary answer-table examples and exceptions, use `table-format-and-usage.md` as the semantic owner.
 
 ### 5.12 Canonical Variable-Role Shape
 
@@ -496,7 +475,9 @@ Success condition
 - a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
-### 5.13.1 Canonical Compact Table Shape
+### 5.13.1 Canonical Markdown-Table Exception Shape
+
+Use literal markdown-table syntax only when the user explicitly asks for it or when the target artifact is markdown source.
 
 ```markdown
 | เรื่อง | สถานะ |
@@ -544,8 +525,8 @@ What This Means
 | missing framing before table/list | reader has to infer the purpose of the structure | add a short context-setting line |
 | raw evidence dump with no orienting line | checked facts appear but meaning stays unclear | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
-| ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | use the selected light plain aligned no-frame table or switch to a list/grouped block |
-| generic markdown pipe-table framing used as the ordinary default after a more specific house style is already selected | the output drifts back to a generic format and ignores the chosen presentation contract | use the selected plain aligned no-frame table style instead |
+| ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | follow `table-format-and-usage.md` and use its ordinary answer-table default or switch to a list/grouped block |
+| generic markdown pipe-table framing used as the ordinary default after a more specific house style is already selected | the output drifts back to a generic format and ignores the chosen presentation contract | follow `table-format-and-usage.md` instead of treating generic pipe syntax as the ordinary default |
 | scope boundaries buried in long prose | the reader cannot tell what is included now versus later | use grouped scope-boundary sections such as `What this is` / `What this is not` / `What happens now` / `What stays later` |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first, then narrow |
 | repeating deeper options when the current stage is already sufficient | the answer feels stuck in the same scope instead of moving forward | add a short `What happens next` or `Next stage` block |

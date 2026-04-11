@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains twenty-eight rollout families:
+The current workspace contains twenty-nine rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -43,6 +43,7 @@ The current workspace contains twenty-eight rollout families:
 - major phase `026` = memory-governance and session-boundary refinement rollout
 - major phase `027` = task-list-first execution-tracking refinement rollout
 - major phase `028` = plain aligned no-frame table-style refinement rollout
+- major phase `029` = centralized table-format-and-usage ownership transfer rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -118,6 +119,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 027 | 027-02 | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/task-list-first-execution-tracking.patch.md` | Sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the task-list-first refinement | Repo-level governance and installed runtime state reflect the task-list-first refinement |
 | 028 | 028-01 | `phase/phase-028-01-refine-plain-aligned-table-style.md` | `design/answer-presentation.design.md` + `design/explanation-quality.design.md` | `patch/plain-aligned-no-frame-table-style-refinement.patch.md` | Refine the owner set so ordinary answer tables use the selected light plain aligned no-frame form while table usage remains available when genuinely useful | Table style becomes correct without turning the wave into a reduce-table-frequency doctrine |
 | 028 | 028-02 | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | `design/design.md` + touched adjacent designs | `patch/plain-aligned-no-frame-table-style-refinement.patch.md` | Sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the table-style refinement | Repo-level governance and installed runtime state reflect the selected plain aligned no-frame table style |
+| 029 | 029-01 | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | `design/table-format-and-usage.design.md` | `patch/table-format-and-usage-centralization.patch.md` | Create the first-class rule chain that owns ordinary answer-table semantics | One semantic owner exists for ordinary answer-table usage, style, boundary, and anti-patterns |
+| 029 | 029-02 | `phase/phase-029-02-transfer-table-ownership-from-adjacent-chains.md` | `design/table-format-and-usage.design.md` + `design/answer-presentation.design.md` + `design/explanation-quality.design.md` | `patch/table-format-and-usage-centralization.patch.md` | Narrow adjacent owner chains so table doctrine now defers to the new central owner | Centralization becomes a real ownership transfer rather than a merely additive rule |
 
 ---
 
@@ -190,7 +193,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 027-02: sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the task-list-first refinement
   → 028-01: refine the table-style owners so ordinary answer tables use the selected light plain aligned no-frame form while table usage remains available when genuinely useful
   → 028-02: sync master docs, TODO/changelog history, phase indexing, and installed runtime copies for the table-style refinement
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
+  → 029-01: create the first-class `table-format-and-usage` owner for ordinary answer-table semantics
+  → 029-02: narrow adjacent presentation and explanation owners so table doctrine now defers to the new central owner
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, one first-class central owner for ordinary answer-table semantics, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
 
@@ -264,6 +269,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 027 | 027-02 | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | In Progress | Review Pending | Awaiting Review | master-surface sync and runtime-install parity are in progress for the task-list-first refinement |
 | 028 | 028-01 | `phase/phase-028-01-refine-plain-aligned-table-style.md` | In Progress | Review Pending | Awaiting Review | plain aligned no-frame table-style correction is being applied across presentation/explanation owners |
 | 028 | 028-02 | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | In Progress | Review Pending | Awaiting Review | master-surface sync and runtime-install parity are in progress for the table-style refinement |
+| 029 | 029-01 | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | Completed | None | Approved As-Is | first-class ordinary answer-table owner chain created |
+| 029 | 029-02 | `phase/phase-029-02-transfer-table-ownership-from-adjacent-chains.md` | Completed | None | Approved As-Is | adjacent presentation/explanation chains narrowed to defer table doctrine to the new central owner |
 
 ---
 

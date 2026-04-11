@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.18
+> **Current Version:** 1.19
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-04-11 | **[Narrowed answer-presentation to defer ordinary table semantics to the central table owner](#version-119)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.18 | 2026-04-10 | **[Changed the default answer-table style to a light plain aligned no-frame form](#version-118)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.17 | 2026-04-09 | **[Added compact memory-status presentation support](#version-117)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.16 | 2026-04-09 | **[Standardized compact table defaults and list-first alternatives](#version-116)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -37,6 +38,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-119"></a>
+## Version 1.19: Narrowed answer-presentation to defer ordinary table semantics to the central table owner
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.18 to v1.19.
+- Updated `design/answer-presentation.design.md` from v1.18 to v1.19.
+- Replaced direct ordinary answer-table ownership wording with defer/reference wording to `table-format-and-usage.md`.
+- Kept broader presentation ownership for layout, framing, scanability, snapshots, grouped boundaries, and structure around the chosen table/list shape.
+- Preserved the selected plain aligned no-frame table contract while moving that doctrine out of this chain and into the new central owner.
+
+### Summary
+Answer-presentation now keeps broader answer layout ownership, while ordinary answer-table semantics defer to the first-class `table-format-and-usage` rule chain.
 
 ---
 
