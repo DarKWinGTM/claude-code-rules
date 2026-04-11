@@ -104,6 +104,62 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 </div>
 
+### 🤖 AI-Assisted Install Prompts
+
+If you want an AI CLI to install or adapt this repo for you, paste one of these prompts directly into that tool.
+
+**Claude Code — native install into `~/.claude/rules/`**
+
+```text
+Install this rules repo for me from:
+https://github.com/DarKWinGTM/claude-code-rules
+
+Requirements:
+- clone the repo if needed
+- read the README Quick Start section first
+- install only the active runtime rule set into ~/.claude/rules/
+- do not install files from suspend/, support/, plugin/, design/, changelog/, phase/, patch/, or TODO.md
+- verify the installed files after copying
+- report exactly what was installed
+```
+
+**Codex CLI — adapt active rules into `AGENTS.md`**
+
+```text
+Use this repo as the source of truth:
+https://github.com/DarKWinGTM/claude-code-rules
+
+Please:
+- clone or inspect the repo
+- read the README Quick Start and active root rule set
+- create/update AGENTS.md for this project so Codex follows the same active rule intent
+- adapt the rules into Codex-native instructions instead of copying Claude-specific runtime structure blindly
+- ignore files under suspend/, support/, plugin/, design/, changelog/, phase/, patch/, and TODO.md unless explicitly needed as reference
+- keep the result concise but faithful to the active rules
+- summarize which source rules were mapped into AGENTS.md
+```
+
+**Gemini CLI — adapt active rules into `GEMINI.md`**
+
+```text
+Use this repo as the source of truth:
+https://github.com/DarKWinGTM/claude-code-rules
+
+Please:
+- clone or inspect the repo
+- read the README Quick Start and active root rule set
+- create/update GEMINI.md for this project so Gemini CLI follows the same active rule intent
+- adapt the rules into Gemini-native instructions instead of copying Claude-specific runtime structure blindly
+- ignore files under suspend/, support/, plugin/, design/, changelog/, phase/, patch/, and TODO.md unless explicitly needed as reference
+- keep the result concise but faithful to the active rules
+- summarize which source rules were mapped into GEMINI.md
+```
+
+**When to use which prompt**
+- Use the **Claude Code** prompt when you want direct runtime installation into `~/.claude/rules/`
+- Use the **Codex CLI** prompt when you want equivalent behavior through `AGENTS.md`
+- Use the **Gemini CLI** prompt when you want equivalent behavior through `GEMINI.md`
+
 ---
 
 ## ✨ Features

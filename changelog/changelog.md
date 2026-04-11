@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.15
+> **Current Version:** 9.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.16 | 2026-04-12 | **[Added AI-assisted install prompts to the README](#version-916)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-915)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.14 | 2026-04-11 | **[Linked live task-list behavior explicitly to the current active phase](#version-914)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.13 | 2026-04-11 | **[Cleaned stale custom-table detail out of active rules after suspension](#version-913)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -51,6 +52,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-916"></a>
+## Version 9.16: Added AI-assisted install prompts to the README
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `README.md` with ready-to-send AI install/adaptation prompts for Claude Code, Codex CLI, and Gemini CLI.
+- Kept the prompts aligned to the active-vs-non-active rule boundary so AI installers are told to ignore `suspend/`, `support/`, `plugin/`, `design/`, `changelog/`, `phase/`, `patch/`, and `TODO.md` for runtime installation unless reference is explicitly needed.
+- Added a short chooser block so users can quickly tell when to use the Claude Code prompt versus the Codex CLI or Gemini CLI adaptation prompts.
+- Updated `TODO.md` and the master changelog to record the README install-prompt refinement.
+
+### Summary
+The README now includes copy-ready prompts users can paste into Claude Code, Codex CLI, or Gemini CLI to install or adapt the active rule set directly from this repository.
 
 ---
 
