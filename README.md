@@ -87,14 +87,14 @@ git clone https://github.com/DarKWinGTM/claude-code-rules.git
 cd claude-code-rules
 
 # Step 2: Reusable active runtime file set (run from repo root)
-RULE_FILES="accurate-communication.md answer-presentation.md anti-mockup.md anti-sycophancy.md artifact-initiation-control.md authority-and-scope.md custom-agent-selection-priority.md dan-safe-normalization.md document-consistency.md document-changelog-control.md document-design-control.md document-patch-control.md emergency-protocol.md evidence-grounded-burden-of-proof.md explanation-quality.md external-verification-and-source-trust.md flow-diagram-no-frame.md functional-intent-verification.md memory-governance-and-session-boundary.md natural-professional-communication.md no-variable-guessing.md operational-failure-handling.md phase-implementation.md portable-implementation-and-hardcoding-control.md project-documentation-standards.md recovery-contract.md refusal-classification.md refusal-minimization.md runtime-topology-control.md safe-file-reading.md safe-terminal-output.md strict-file-hygiene.md table-format-and-usage.md tactical-strategic-programming.md todo-standards.md unified-version-control-system.md zero-hallucination.md"
+RULE_FILES="accurate-communication.md answer-presentation.md anti-mockup.md anti-sycophancy.md artifact-initiation-control.md authority-and-scope.md custom-agent-selection-priority.md dan-safe-normalization.md document-consistency.md document-changelog-control.md document-design-control.md document-patch-control.md emergency-protocol.md evidence-grounded-burden-of-proof.md explanation-quality.md external-verification-and-source-trust.md flow-diagram-no-frame.md functional-intent-verification.md memory-governance-and-session-boundary.md natural-professional-communication.md no-variable-guessing.md operational-failure-handling.md phase-implementation.md portable-implementation-and-hardcoding-control.md project-documentation-standards.md recovery-contract.md refusal-classification.md refusal-minimization.md runtime-topology-control.md safe-file-reading.md safe-terminal-output.md strict-file-hygiene.md tactical-strategic-programming.md todo-standards.md unified-version-control-system.md zero-hallucination.md"
 
 # Step 3: Install globally
 mkdir -p ~/.claude/rules
 for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 ```
 
-✨ **That's it!** This installs the 37 active runtime rules only.
+✨ **That's it!** This installs the 36 active runtime rules only.
 
 > Already cloned the repo? Skip Step 1 and run only Step 2 + Step 3 from the repository root.
 >
@@ -196,7 +196,6 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, and keep archived memory inactive by default |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
-| [`table-format-and-usage.md`](table-format-and-usage.md) | Table semantics owner | First-class owner for ordinary answer-table usage, the selected light plain aligned no-frame default style, list-versus-table boundary, bounded markdown-table exceptions, and table anti-pattern semantics |
 | [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, and explicit phase-to-patch linkage when patch is in scope |
 | [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
@@ -212,15 +211,14 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 
 ---
 
-### 🔵 Presentation & Readability (4 rules)
+### 🔵 Presentation & Readability (3 rules)
 
 > **Improve answer structure, clarity, and visual scanability**
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, broader layout/scanability ownership around the chosen structure, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact memory-status blocks for remembered path-scoped context, compact variable-role structures for identifier-heavy explanations, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution while ordinary answer-table semantics now defer to `table-format-and-usage.md` |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, true-comparison explanation flow plus defer to `table-format-and-usage.md` for explanation-side table semantics, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
-| [`table-format-and-usage.md`](table-format-and-usage.md) | Central table semantics | One first-class owner for ordinary answer-table usage, the selected light plain aligned no-frame default style, list-versus-table boundary, bounded markdown-table exceptions, and table anti-pattern semantics |
+| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, support for using light readable tables when helpful without an active custom table-format rule, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact memory-status blocks for remembered path-scoped context, compact variable-role structures for identifier-heavy explanations, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, continued support for comparison tables and list-first alternatives when they genuinely help explanation, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 
 ---
@@ -235,9 +233,9 @@ for f in $RULE_FILES; do cp "$f" ~/.claude/rules/; done
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 37**
+**📊 Active Runtime Rules: 36**
 
-Latest refinement: ordinary answer-table semantics now have one first-class owner in `table-format-and-usage.md`, while `answer-presentation` and `explanation-quality` defer there for table doctrine and keep their broader layout/explanation responsibilities.
+Latest refinement: the custom table-format experiment has been moved out of the root active rule area into `suspend/`, while general support for using tables when they genuinely help remains in the presentation and explanation owners.
 
 </div>
 
@@ -245,7 +243,7 @@ Latest refinement: ordinary answer-table semantics now have one first-class owne
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 36-rule set, but describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 36-rule set and describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 

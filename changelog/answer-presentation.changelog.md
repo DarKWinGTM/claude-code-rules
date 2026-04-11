@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.20 | 2026-04-11 | **[Removed active dependency on the suspended custom table-format owner](#version-120)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.19 | 2026-04-11 | **[Narrowed answer-presentation to defer ordinary table semantics to the central table owner](#version-119)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.18 | 2026-04-10 | **[Changed the default answer-table style to a light plain aligned no-frame form](#version-118)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.17 | 2026-04-09 | **[Added compact memory-status presentation support](#version-117)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -38,6 +39,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-120"></a>
+## Version 1.20: Removed active dependency on the suspended custom table-format owner
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.19 to v1.20.
+- Updated `design/answer-presentation.design.md` from v1.19 to v1.20.
+- Removed the active defer/reference dependency on `table-format-and-usage.md`.
+- Restored lighter general table support so tables may still be used when genuinely helpful without enforcing the suspended custom table-format doctrine.
+- Kept broader layout, framing, scanability, snapshot, and grouped-boundary ownership unchanged.
+
+### Summary
+Answer-presentation now keeps general support for using tables when helpful, but no longer depends on the suspended custom table-format owner.
 
 ---
 

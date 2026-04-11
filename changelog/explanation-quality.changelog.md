@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.13
+> **Current Version:** 2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.14 | 2026-04-11 | **[Removed stale custom-table dependency after suspension](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-11 | **[Narrowed explanation-quality to defer table semantics to the central table owner](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-10 | **[Aligned explanation-side table style to the light plain aligned no-frame default](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-09 | **[Clarified compact-table choice and list-first alternatives in explanation flow](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -47,6 +48,23 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-214"></a>
+## Version 2.14: Removed stale custom-table dependency after suspension
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.13 to v2.14.
+- Updated `design/explanation-quality.design.md` from v2.13 to v2.14.
+- Removed stale active dependency wording tied to the suspended custom table-format experiment.
+- Preserved general support for comparison tables and list-first alternatives without carrying suspended custom-format detail forward.
+
+### Summary
+Explanation-quality now supports using tables when helpful without carrying stale dependency detail from the suspended custom table experiment.
 
 ---
 

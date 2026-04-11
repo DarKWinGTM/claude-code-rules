@@ -1,9 +1,9 @@
 # Table Format and Usage
 
-> **Current Version:** 1.0
-> **Design:** [design/table-format-and-usage.design.md](design/table-format-and-usage.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [../design/table-format-and-usage.design.md](../design/table-format-and-usage.design.md) v1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
-> **Full history:** [changelog/table-format-and-usage.changelog.md](changelog/table-format-and-usage.changelog.md)
+> **Full history:** [../changelog/table-format-and-usage.changelog.md](../changelog/table-format-and-usage.changelog.md)
 
 ---
 
@@ -54,25 +54,57 @@ Required guidance:
 - allow simple alignment spacing when it improves plain-text readability
 - keep cell content short and scanable when possible
 
-### 5) No Boxed or Full-Frame Default Principle
+### 5) Hard No-Boxed-Table Principle
 
-Do not default to visually heavy table framing for ordinary answers.
-
-Required guidance:
-- do not default to full-frame ASCII tables
-- do not default to boxed tables
-- do not use visual framing weight that adds noise without adding meaning
-
-### 6) No Generic Markdown Pipe-Table Default Principle
-
-Generic markdown pipe-table framing is not the ordinary default answer shape.
+Boxed, full-frame, and Unicode box-drawing tables are forbidden for ordinary assistant answers.
 
 Required guidance:
-- do not silently fall back to a generic markdown pipe-table as the ordinary answer-table default
-- keep the selected no-frame house style as the ordinary answer default unless a stronger reason applies
-- if a markdown pipe table is used for a special reason, that reason should be explicit in the task or artifact context
+- do not use full-frame ASCII tables for ordinary assistant answers
+- do not use boxed tables for ordinary assistant answers
+- do not use Unicode box-drawing tables for ordinary assistant answers
+- do not let a generic request for "a table" weaken this prohibition
+- when an ordinary assistant answer uses a table, it must use the canonical plain aligned no-frame style from this chain unless the user explicitly overrides it or the target artifact syntax requires something else
+- if the user asks for a table without specifying style, treat this chain's canonical no-frame format as mandatory rather than optional
 
-### 7) Small-and-Readable Table Principle
+### 5.1 Character-Level No-Box Enforcement Principle
+
+For ordinary assistant answers, the assistant should treat box-drawing frame characters as a non-compliant table shape.
+
+Required guidance:
+- if the table contains frame characters such as `┌`, `┐`, `└`, `┘`, `├`, `┤`, `┬`, `┴`, `┼`, or `│`, treat that output as non-compliant for an ordinary assistant answer
+- do not label a boxed table as "plain no-frame" or equivalent
+- if a table draft contains those frame characters for an ordinary assistant answer, rewrite it into the canonical no-frame format before sending
+- the prohibition targets framed table output itself, not unrelated code snippets, diagrams, or quoted user content
+
+### 5.2 Send-Time Table Self-Check Principle
+
+Before sending an ordinary assistant answer that includes a table, perform one last shape check.
+
+Required guidance:
+- check whether the outgoing table is using the canonical no-frame style from this chain
+- if it is boxed/full-frame/Unicode box-drawing, rewrite it before sending
+- if the content is not genuinely tabular, switch to a non-table form instead of forcing a framed table
+- do not rely on the assistant's internal label for the table shape; verify the visible output shape itself
+
+### 6) Pipe Character Is Allowed Principle
+
+The canonical no-frame table may still use `|` separators and `-` separator lines.
+
+Required guidance:
+- do not confuse the selected no-frame house style with boxed/full-frame table framing
+- do not treat the presence of `|` characters by itself as a formatting problem
+- the problem is frame weight, not the mere use of pipe separators
+
+### 7) Markdown-Source Exception Principle
+
+Literal markdown-table syntax remains a bounded syntax/artifact exception, not the ordinary answer default.
+
+Required guidance:
+- allow markdown-table syntax when the user explicitly asks for markdown table output
+- allow markdown-table syntax when editing a markdown source artifact whose native representation is a markdown table
+- do not use this exception to weaken the ordinary-answer no-frame default
+
+### 8) Small-and-Readable Table Principle
 
 A good answer table should stay easy to read.
 
@@ -80,15 +112,6 @@ Required guidance:
 - keep the number of columns low unless the comparison genuinely needs more
 - avoid turning long multiline explanation into table cells when bullets or prose would read better
 - keep the table scoped to one clear purpose
-
-### 8) Markdown-Source and Explicit-Request Exception Principle
-
-There are bounded cases where literal markdown-table syntax is still appropriate.
-
-Required guidance:
-- if the user explicitly asks for a markdown table, follow that instruction
-- if the target artifact is a markdown source file whose native syntax is a markdown table, match the artifact need instead of forcing the ordinary answer-table style into the file content
-- treat these as explicit exceptions, not as the ordinary answer default
 
 ### 9) User-Override Principle
 
@@ -194,7 +217,8 @@ This is an explicit syntax/artifact exception, not the ordinary answer default.
 |--------------|--------------|--------------|
 | full-frame ASCII table as the ordinary answer default | visual weight increases without adding meaning | plain aligned no-frame table |
 | boxed table as the ordinary answer default | answer becomes heavier than the information needs | plain aligned no-frame table |
-| generic markdown pipe-table used as the ordinary answer default | drifts away from the selected house style | plain aligned no-frame table |
+| Unicode box-drawing table as the ordinary answer default | visually heavy framing overrides the selected house style | plain aligned no-frame table |
+| calling a boxed table "plain no-frame" | the wording says one thing while the visible output does another | verify the visible output shape and rewrite to the canonical no-frame format before sending |
 | sequence forced into a table | hides order behind heavier structure | numbered list |
 | simple status forced into a table | adds structure heavier than the content | bullets or grouped blocks |
 | one-path recommendation forced into a comparison table | creates fake comparison weight | prose or list |
@@ -209,8 +233,8 @@ This is an explicit syntax/artifact exception, not the ordinary answer default.
 |--------|--------|
 | Table used only when tabular value is real | High |
 | Ordinary answer tables follow the selected no-frame style | High |
-| Boxed/full-frame default incidence | 0 critical cases |
-| Generic markdown pipe-table default incidence in ordinary answers | 0 critical cases |
+| Boxed/full-frame/Unicode box-drawing default incidence | 0 critical cases |
+| Canonical no-frame style use for ordinary answer tables | High |
 | Sequence forced into tables | Low |
 | Simple status forced into tables | Low |
 | Table ownership drift into memory or adjacent chains | 0 critical cases |
@@ -220,8 +244,8 @@ This is an explicit syntax/artifact exception, not the ordinary answer default.
 ## Integration
 
 Related rules:
-- [answer-presentation.md](answer-presentation.md) - owns broader layout and scanability, but defers ordinary answer-table ownership here
-- [explanation-quality.md](explanation-quality.md) - owns explanation flow, but defers explanation-side table choice/style semantics here
-- [authority-and-scope.md](authority-and-scope.md) - user instruction still overrides default table style when explicitly selected
-- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - memory does not become table-policy authority
-- [accurate-communication.md](accurate-communication.md) - communication shape still determines how the chosen table/list result is presented in context
+- [answer-presentation.md](../answer-presentation.md) - owns broader layout and scanability, but defers ordinary answer-table ownership here
+- [explanation-quality.md](../explanation-quality.md) - owns explanation flow, but defers explanation-side table choice/style semantics here
+- [authority-and-scope.md](../authority-and-scope.md) - user instruction still overrides default table style when explicitly selected
+- [memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md) - memory does not become table-policy authority
+- [accurate-communication.md](../accurate-communication.md) - communication shape still determines how the chosen table/list result is presented in context

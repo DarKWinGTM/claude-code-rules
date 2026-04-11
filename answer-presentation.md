@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.19
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.19
+> **Current Version:** 1.20
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.20
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -73,9 +73,9 @@ Formatting should carry meaning, not decoration.
 Required guidance:
 - use bullets for grouped items
 - use numbered lists for sequence or order
-- use tables only when tabular structure genuinely improves scanability
-- ordinary answer-table usage, default style, list-versus-table boundary, and table anti-patterns are owned by `table-format-and-usage.md`
-- when a table is materially useful, follow the selected light plain aligned no-frame default defined there
+- use tables only for genuine comparison or structured facts
+- when a table is materially useful, keep the table light and readable rather than heavy or overbuilt
+- prefer bullets or lists when the content is not genuinely tabular
 - use diagrams only when sequence or branching is central
 - use headings that describe section purpose, not just visual styling
 
@@ -150,9 +150,9 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | simple answer | factual lookup, low complexity, direct request | compact paragraph or short list |
 | analytical answer | explanation, diagnosis, architectural reasoning | short orienting answer + sections |
 | purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
-| comparison | options, trade-offs, choose between X and Y | table semantics defer to `table-format-and-usage.md`; grouped comparison blocks remain allowed |
+| comparison | options, trade-offs, choose between X and Y | grouped comparison blocks or a light readable table when side-by-side scan helps |
 | sequence | steps, rollout order, process | numbered steps or ordered subsections |
-| simple status pairs | short state labels with short values | bullets, grouped blocks, or a table only if `table-format-and-usage.md` says side-by-side scan is genuinely useful |
+| simple status pairs | short state labels with short values | bullets, grouped blocks, or a small table only if side-by-side scan clearly helps |
 | branching | conditions, paths, handoffs | text flow diagram or clearly indented branch structure |
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
@@ -202,17 +202,17 @@ Preferred phrasing:
 
 When real alternatives exist:
 - frame the comparison briefly
-- if side-by-side evaluation helps, use the ordinary answer-table semantics from `table-format-and-usage.md`
+- if side-by-side evaluation helps, use a light readable table or grouped comparison blocks
 - recommend after the comparison is visible
 - when one path is clearly preferred, surface `Recommended` before the remaining options and add one short `Why this first` reason
 - when multiple reasonable options genuinely exist, keep at least one visible alternative under `Other options` instead of reducing the block to the recommendation only
 
-### 3.0 Table Semantics Defer Pattern
+### 3.0 Light Table Pattern
 
 For ordinary answer tables:
-- defer table usage, default style, list-versus-table boundary, and table anti-pattern semantics to `table-format-and-usage.md`
-- keep `answer-presentation.md` focused on broader layout, framing, and scanability around the chosen structure
-- do not re-treat this chain as the primary owner of ordinary answer-table doctrine in full
+- keep the table visually light and easy to scan
+- avoid visually heavy framing for ordinary structured facts
+- prefer lists or grouped blocks when the content is not genuinely tabular
 
 ### 3.1 Proposal Pattern
 
@@ -516,9 +516,9 @@ What This Means
 - if behavior does not change, the setting is not taking effect
 ```
 
-### 20) Canonical Table-Semantics Reference Shape
+### 20) Canonical Light Table Shape
 
-For ordinary answer-table examples and exceptions, use `table-format-and-usage.md` as the semantic owner.
+For ordinary answer tables, prefer a light readable shape rather than a visually heavy one.
 
 ### 21) Canonical List-Instead-of-Table Shape
 
@@ -545,8 +545,8 @@ Current work order:
 | list or table with no framing | reader must infer its purpose | add a short context-setting line |
 | raw evidence dump with no orienting line | facts appear, but the reader cannot tell why they matter | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
-| full-frame ASCII or boxed table used for ordinary structured facts | visual weight increases without adding real semantic value | follow `table-format-and-usage.md` and use its ordinary answer-table default or switch to a list/grouped block |
-| generic markdown pipe-table framing used as the ordinary default after a more specific house style is already selected | the output drifts back to a generic format and ignores the chosen presentation contract | follow `table-format-and-usage.md` instead of treating generic pipe syntax as the ordinary default |
+| full-frame ASCII or boxed table used for ordinary structured facts | visual weight increases without adding real semantic value | use a lighter readable table or switch to a list/grouped block |
+| oversized or overbuilt table used as the ordinary default | the output becomes heavier than the information needs | keep the table light or switch to a list/grouped block |
 | machine-specific value presented like a reusable default | local fact is mistaken for a portable contract | label it as a checked local fact or switch to a portable placeholder |
 | scope boundaries buried in long prose | the reader cannot tell what is active now versus deferred | use grouped scope-boundary sections |
 | drilling down before the full set is visible | the reader sees only a narrow slice and may miss the real overall scope | show the full relevant set first |
@@ -615,7 +615,6 @@ Not allowed:
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - keeps summaries, signal density, bounded technical snapshot wording, human-language glosses, memory-derived-context disclosure wording, and continuation-vs-option policy useful
 - [explanation-quality.md](explanation-quality.md) - shapes analytical reasoning, layered explanation flow, full-set-first framing, and stage progression logic
-- [table-format-and-usage.md](table-format-and-usage.md) - owns ordinary answer-table usage, default style, list-versus-table boundary, and table anti-pattern semantics
 - [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - governs text diagrams used for branching or sequence
 - [document-consistency.md](document-consistency.md) - keeps labels, references, and terminology consistent

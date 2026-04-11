@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.13
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.13
+> **Current Version:** 2.14
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -170,10 +170,10 @@ Use a comparison table when:
 - the user benefits from side-by-side comparison
 
 Required behavior:
-- when comparison-side tabular structure is justified, defer table usage/style semantics to `table-format-and-usage.md`
+- when comparison-side tabular structure is justified, a table is still appropriate when it materially helps side-by-side understanding
 - do not force a table when only one realistic path exists
 - do not force a table when the content is really a sequence, checklist, or simple status snapshot
-- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless `table-format-and-usage.md` says side-by-side scan materially improves comprehension
+- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension
 
 ### 12.1 Governing-Basis Clarification Boundary
 When multiple materially different governing bases remain live and the answer would change depending on which one is chosen, prefer one short clarification gate over a long explanation that explores every branch.
@@ -273,7 +273,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | Trigger | Typical Signal | Expected Shape |
 |--------|-----------------|----------------|
 | Process explanation | lifecycle, sequence, state transition, pipeline | short answer + purpose-first framing when needed + simple explanation + causal flow |
-| Option comparison | best approach, pros/cons, trade-offs, choose between X and Y | short answer + purpose-first framing when needed + simple framing + comparison table guided by `table-format-and-usage.md` + recommendation |
+| Option comparison | best approach, pros/cons, trade-offs, choose between X and Y | short answer + purpose-first framing when needed + simple framing + comparison table + recommendation |
 | Root-cause analysis | why did this happen, what's causing this | short answer + purpose-first framing when needed + simple explanation + claim/mechanism/implication |
 | Diagnostic update | implementation status, troubleshooting progress, verification checkpoint | main-point-first status line + compact diagnostic snapshot + scoped implication + next action |
 | Change walkthrough | refactor, migration, multi-part patch, staged rollout | purpose-first framing + before/after or patch-by-patch explanation |
@@ -308,7 +308,7 @@ Short answer: use Redis for shared hot state and PostgreSQL for durable business
 
 Simple explanation: one store is optimized for fast shared operational data, while the other is optimized for durable business truth.
 
-Use the comparison-table semantics and default style from `table-format-and-usage.md` when side-by-side evaluation materially helps here.
+Use a comparison table when side-by-side evaluation materially helps here.
 
 Recommendation: keep Redis for operational state and PostgreSQL for durable records because the split matches access pattern and failure semantics.
 ```
@@ -549,10 +549,10 @@ Success condition
 | architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
 | the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
 | raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
-| comparison in scattered bullets | trade-offs become harder to evaluate | use the comparison-table semantics from `table-format-and-usage.md` |
+| comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
 | sequence forced into a table | the reader gets a heavier layout than the information needs | use a numbered list instead |
-| simple status pairs forced into a table | visual structure becomes heavier than the content | use bullets or grouped blocks unless `table-format-and-usage.md` says side-by-side scan materially helps |
-| boxed ASCII table used as the ordinary explanation-side default | source becomes bulky and harder to maintain without adding semantic value | follow `table-format-and-usage.md` instead |
+| simple status pairs forced into a table | visual structure becomes heavier than the content | use bullets or grouped blocks unless side-by-side scan materially helps |
+| boxed ASCII table used as the ordinary explanation-side default | source becomes bulky and harder to maintain without adding semantic value | prefer a lighter table or a non-table form instead |
 | many edits explained as one blob | change reasoning becomes hard to follow | explain before/after or patch-by-patch |
 | analogy with no return to literal mechanism | the reader remembers the metaphor but not the actual system | follow the analogy with the real technical explanation |
 | diagnostic status buried in long narrative | current state and next action become hard to identify | lead with a compact diagnostic snapshot |
@@ -591,7 +591,6 @@ Success condition
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - keeps explanation structure flexible and context-appropriate while maintaining high-signal endings, honest snapshot wording, and user-friendly glosses for internal terms
 - [answer-presentation.md](answer-presentation.md) - shapes the layout of snapshot sections, grouped scope-boundary blocks, full-set-first lists, and next-stage blocks
-- [table-format-and-usage.md](table-format-and-usage.md) - owns explanation-side table usage/style semantics, list-versus-table boundary, and table anti-patterns
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - governs any text diagrams used by this rule
 - [zero-hallucination.md](zero-hallucination.md) - technical claims inside explanations must still be verified
 - [anti-sycophancy.md](anti-sycophancy.md) - recommendations must stay evidence-based rather than agreement-driven

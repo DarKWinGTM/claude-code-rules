@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.13
+> **Current Version:** 2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -371,10 +371,10 @@ Preferred columns depend on context, but common dimensions include:
 - best fit
 
 Required guidance:
-- when comparison-side tabular structure is justified, defer table usage/style semantics to `table-format-and-usage.md`
+- when comparison-side tabular structure is justified, a table is still appropriate when it materially helps side-by-side understanding
 - do not force a table when there is only one realistic path or when the comparison would be artificial
 - do not force a table when the content is really a sequence, checklist, or simple status snapshot
-- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless `table-format-and-usage.md` says side-by-side scan materially improves comprehension
+- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension
 
 ---
 
@@ -701,10 +701,10 @@ Success condition
 | architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
 | the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
 | raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
-| comparison in scattered bullets | trade-offs become harder to evaluate | use the comparison-table semantics from `table-format-and-usage.md` |
+| comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
 | sequence forced into a table | the reader gets a heavier layout than the information needs | use a numbered list instead |
-| simple status pairs forced into a table | visual structure becomes heavier than the content | use bullets or grouped blocks unless `table-format-and-usage.md` says side-by-side scan materially helps |
-| boxed ASCII table used as the ordinary explanation-side default | source becomes bulky and harder to maintain without adding semantic value | follow `table-format-and-usage.md` instead |
+| simple status pairs forced into a table | visual structure becomes heavier than the content | use bullets or grouped blocks unless side-by-side scan materially helps |
+| boxed ASCII table used as the ordinary explanation-side default | source becomes bulky and harder to maintain without adding semantic value | prefer a lighter table or a non-table form instead |
 
 ---
 
@@ -714,7 +714,6 @@ Success condition
 |------|--------------|
 | `accurate-communication.md` | Keeps explanation structure flexible while requiring concise, high-signal endings and honest snapshot wording |
 | `answer-presentation.md` | Owns the layout of snapshot sections, headings, and small fact tables |
-| `table-format-and-usage.md` | Owns explanation-side table usage/style semantics, list-versus-table boundary, and table anti-patterns |
 | `flow-diagram-no-frame.md` | Governs any text flow diagram used by this rule |
 | `zero-hallucination.md` | Preserves verification requirements for technical claims inside explanations |
 | `anti-sycophancy.md` | Prevents recommendation quality from drifting into agreement without reasoning |

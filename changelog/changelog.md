@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.9
+> **Current Version:** 9.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.13 | 2026-04-11 | **[Cleaned stale custom-table detail out of active rules after suspension](#version-913)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.12 | 2026-04-11 | **[Suspended the custom table-format experiment from the active RULES system](#version-912)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.11 | 2026-04-11 | **[Hardened no-box enforcement with character-level checks and send-time self-check](#version-911)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.10 | 2026-04-11 | **[Made the no-boxed-table rule explicit for ordinary assistant answers](#version-910)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.9 | 2026-04-11 | **[Created a first-class table owner and centralized ordinary answer-table semantics](#version-99)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.7 | 2026-04-10 | **[Corrected the default table style to the selected light plain aligned no-frame form](#version-97)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.6 | 2026-04-10 | **[Made task-list-first tracking explicit for non-trivial work across tracking/startup/documentation owners](#version-96)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -45,6 +49,77 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-913"></a>
+## Version 9.13: Cleaned stale custom-table detail out of active rules after suspension
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation` from v1.19 to v1.20 and `explanation-quality` from v2.13 to v2.14 so stale custom-table owner detail is no longer carried inside active rule text.
+- Updated the two touched design companions to remove stale dependency wording and custom-format owner residue.
+- Rewrote the retained `table-format-and-usage` file/design pair as suspended reference material only, so the preserved file no longer reads like an active owner.
+- Moved `table-format-and-usage.md` out of the root active rule area into `suspend/table-format-and-usage.md`.
+- Synchronized master docs/history/runtime state so the suspended custom-table experiment is no longer referenced as active behavior from the current rule layer.
+
+### Summary
+The active RULES system now keeps general table support without carrying stale custom-table detail forward, while the suspended experiment remains preserved separately for later redesign.
+
+---
+
+<a id="version-912"></a>
+## Version 9.12: Suspended the custom table-format experiment from the active RULES system
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Removed active dependency on `table-format-and-usage.md` from `answer-presentation` and `explanation-quality`.
+- Restored general support for using tables when they genuinely help explanation or comparison, without enforcing the suspended custom table-format doctrine.
+- Removed `table-format-and-usage.md` from the active README install set and restored the active runtime inventory count from 37 to 36.
+- Reframed `table-format-and-usage.md` itself as a retained-but-suspended future design candidate instead of an active enforcement owner.
+- Updated the touched design/changelog/master/TODO/phase surfaces and runtime install state so the custom table-format experiment is preserved in-repo but no longer active in the RULES system.
+
+### Summary
+The custom table-format experiment is now preserved for later redesign, but it has been removed from the active RULES enforcement path while general support for using tables when helpful remains intact.
+
+---
+
+<a id="version-911"></a>
+## Version 9.11: Hardened no-box enforcement with character-level checks and send-time self-check
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `table-format-and-usage` from v1.1 to v1.2 so generic table requests still require the canonical no-frame format and box-drawing frame characters are treated as non-compliant in ordinary assistant answers.
+- Added a send-time visible-shape self-check requirement so framed table output should be rewritten before send instead of being mislabeled as plain no-frame.
+- Added `phase/phase-029-03-harden-no-box-enforcement.md` for the bounded hardening slice.
+- Updated the central design/changelog chain, master design inventory, README wording, TODO tracking, and runtime install copy to reflect the stronger enforcement posture.
+- Deliberately kept user-driven real-world validation outside this implementation slice, per the user's instruction.
+
+### Summary
+The RULES repository now hardens no-box enforcement by checking visible framed characters directly and by requiring a final visible-shape self-check before ordinary assistant tables are sent.
+
+---
+
+<a id="version-910"></a>
+## Version 9.10: Made the no-boxed-table rule explicit for ordinary assistant answers
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `table-format-and-usage` from v1.0 to v1.1 so ordinary assistant answers now explicitly forbid boxed, full-frame, and Unicode box-drawing tables.
+- Clarified inside the central table owner that the canonical no-frame style may still use `|` separators and `-` separator lines, so the prohibition is about frame weight rather than pipe characters.
+- Updated the central table-owner design, per-chain changelog, master design inventory, README wording, and runtime install copy to reflect the stricter no-box contract.
+- Deliberately skipped behavioral test prompting in this wave because the user wants to validate real-world table behavior themselves rather than through direct style-prompted test commands.
+
+### Summary
+The RULES repository now makes the no-box contract explicit for ordinary assistant answers while preserving the selected plain aligned no-frame format as the required default.
 
 ---
 
