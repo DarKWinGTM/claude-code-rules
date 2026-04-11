@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.14
+> **Current Version:** 2.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.15 | 2026-04-11 | **[Added easy-to-picture phase/progress framing guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-09 | **[Added memory-derived-context disclosure wording](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-09 | **[Added main-point-first operational framing for diagnosis, tests, and recommendations](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-08 | **[Preferred direct human-readable wording over metaphor-heavy internal shorthand](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -52,6 +53,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-215"></a>
+## Version 2.15: Added easy-to-picture phase/progress framing guidance
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `accurate-communication.md` from v2.14 to v2.15.
+- Updated `design/accurate-communication.design.md` from v2.14 to v2.15.
+- Added explicit wording guidance that phase/progress reporting should start with a short plain-language framing that helps the reader picture what the work is doing before denser execution or governance detail appears.
+- Preserved existing main-point-first, direct human-readable wording, and concise synthesis behavior.
+
+### Summary
+Accurate-communication now makes phase/progress reporting easier to picture by front-loading a short plain-language framing before denser operational detail.
 
 ---
 

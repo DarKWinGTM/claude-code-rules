@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Add easy-to-picture concise phase/progress explanation guidance so phase and next-step answers start from plain-language framing the user can picture quickly before denser governance/execution detail; synchronize design/changelog/master surfaces and runtime rule copies.
+- [x] Link live task-list behavior explicitly to the current active phase so non-trivial phase-backed work now expects a built-in task list early, one phase may contain multiple execution tasks, and future-phase draft tasks do not replace current-phase execution visibility; synchronize design/changelog/master surfaces and runtime rule copies.
 - [x] Suspend the custom table-format experiment from the active RULES system, keep the file for future redesign without deleting it, remove its active enforcement role from related owner chains, synchronize design/changelog/master surfaces, and update installed runtime copies so general support for using tables when helpful remains active without the custom format doctrine.
 - [x] Correct the default table style so tables remain available when useful, but ordinary answer tables now use the selected light plain aligned no-frame form instead of the previous compact pipe-table default; synchronize design/changelog/master surfaces; resync installed runtime copies; narrow the overreaching remembered table preference; and complete a final consistency audit.
 - [x] Refine task-list-first execution tracking so Claude Code's built-in task list is now explicitly the live execution surface for non-trivial active work, while `TODO.md` remains the durable repository/project tracking artifact; synchronize design/changelog/master surfaces; resync installed runtime copies; and complete a final consistency audit.
@@ -85,6 +87,8 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-11 | Added easy-to-picture concise phase/progress explanation guidance so phase and next-step answers now start from plain-language framing the user can picture quickly before denser governance/execution detail. |
+| 2026-04-11 | Linked live task-list behavior explicitly to the current active phase so non-trivial phase-backed work now expects a built-in task list early, one phase may contain multiple execution tasks, and future-phase draft tasks do not replace current-phase execution visibility. |
 | 2026-04-11 | Suspended the custom `table-format-and-usage` experiment from the active RULES system, moved the file out of the root active rule area into `suspend/`, removed its active enforcement role from related owner chains, and restored general support for using tables when helpful without the custom format doctrine. |
 | 2026-04-10 | Corrected the default table style so ordinary answer tables now use the selected light plain aligned no-frame form instead of the previous compact pipe-table default; updated `answer-presentation` and `explanation-quality`; narrowed the overreaching remembered comparison-table preference so it defers to RULES for style; and opened the bounded `phase-028` / `patch/plain-aligned-no-frame-table-style-refinement.patch.md` refinement wave. |
 | 2026-04-10 | Refined task-list-first execution tracking so Claude Code's built-in task list is now explicitly treated as the live execution surface for non-trivial work, while `TODO.md` remains the durable repository/project tracking artifact; updated `todo-standards`, `artifact-initiation-control`, and `project-documentation-standards`; and opened the bounded `phase-027` / `patch/task-list-first-execution-tracking.patch.md` refinement wave. |

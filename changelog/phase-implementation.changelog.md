@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.7
+> **Current Version:** 2.8
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.8 | 2026-04-11 | **[Added current-phase-first live task-list linkage](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| | | Summary: Refined phase-implementation so active phases now expect a live task list that mirrors the current phase execution surface before any future-phase planning is opened | |
 | 2.7 | 2026-03-30 | **[Hardened explicit phase-to-patch linkage in the live phase workspace](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Refined phase-implementation so phased work with governed patch artifacts must declare that linkage explicitly in `phase/SUMMARY.md` and relevant child phase files instead of leaving patch participation implicit | |
 | 2.6 | 2026-03-28 | **[Added early phase-establishment bridge under startup artifact governance](#version-26)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -18,6 +20,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-28"></a>
+## Version 2.8: Added current-phase-first live task-list linkage
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/phase-implementation.design.md` from v2.7 to v2.8.
+- Updated runtime `phase-implementation.md` from v2.7 to v2.8.
+- Added a live task-list linkage contract so active non-trivial phases now expect a built-in task list that mirrors the current phase execution slices.
+- Clarified that one phase may contain several live tasks and that future-phase tasks should not be opened as active execution work unless that later phase has actually been opened or selected.
+- Preserved existing phase authority boundaries, patch linkage semantics, and `/phase` structure.
+
+### Summary
+Phase-implementation now links active phased work to the current built-in task list so execution visibility stays tied to the current phase instead of drifting into speculative next-phase planning.
 
 ---
 

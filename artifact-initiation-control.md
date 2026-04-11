@@ -35,6 +35,7 @@ Required guidance:
   - ask now
   - not required
 - when the work is non-trivial and tracking is materially useful, initialize the built-in task list early as the live execution surface instead of leaving work state implicit
+- when an active phase already exists for the work, treat live task-list initialization as expected rather than optional unless a narrow justified reason clearly blocks it
 - do not silently skip artifacts or live tracking surfaces that appear required
 
 ### 3) Existing-Authority-First Principle
@@ -103,7 +104,7 @@ Meaningful governed work begins when the assistant moves beyond lightweight expl
 | Design | target behavior, policy, contract, or architecture is new or materially changing |
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
-| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution |
+| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed work strengthens this from preferred to expected |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
@@ -181,6 +182,7 @@ Not allowed:
 |--------|--------|
 | Startup artifact posture resolved before meaningful drift | 100% |
 | Required artifacts silently omitted at startup | 0 critical cases |
+| Phase-backed live task tracking omitted at startup | 0 critical cases |
 | Retrospective artifact backfill | Low |
 | Trivial-work over-ceremony | Low |
 | Existing-authority reuse | High |

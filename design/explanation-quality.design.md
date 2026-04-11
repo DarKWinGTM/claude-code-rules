@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.14
+> **Current Version:** 2.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -23,6 +23,7 @@ The target behavior is a layered natural explanation style:
 - whole-set framing when the user benefits from seeing the full actionable set before drilling down
 - a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
 - direct human-readable translation of metaphor-heavy or architecture-first wording before deeper explanation depends on it
+- easy-to-picture phase/progress explanation before denser governance or mechanism detail when the user is trying to understand what a phase is doing
 - concise, high-signal ending with a real next move only when one genuinely exists
 - goal-qualified proposal framing when future ideas are useful after bounded completion
 - governing-basis clarification before deepening several materially different branches

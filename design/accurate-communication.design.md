@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.14
+> **Current Version:** 2.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -22,6 +22,7 @@ This chain is the wording owner for:
 - goal-qualified proposal wording for future-work ideas that are advisory rather than active execution
 - bounded technical snapshot wording for status-heavy updates
 - human-language glosses for internal or technical terminology when they materially improve understanding
+- easy-to-picture short phase/progress framing before denser execution or governance detail when the reader is trying to understand what the work is doing
 - clarification of variable names, field names, config keys, enum-like values, and internal labels when the answer depends on them
 - duplicate-looking team-agent reporting honesty so observed overlap is not overstated as confirmed active duplication
 - governing-basis clarification before deep branch analysis when multiple materially different policies/frames remain live

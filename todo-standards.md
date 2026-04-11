@@ -67,17 +67,46 @@ Durable TODO establishment at startup is different from later TODO content updat
 - Deferred work remains pending with clear text labels.
 
 ### 5) Live Task-List Trigger Model
-Prefer proactive built-in task-list usage when one or more are true:
+Built-in task-list usage is expected by default when one or more are true:
 - the work is non-trivial
 - the work has 3 or more distinct steps
 - the work spans multiple files or multiple execution stages
 - the work is likely to continue across multiple execution slices
 - the user would materially benefit from seeing pending / in_progress / completed state live
+- an active phase already exists for the work
+
+Do not skip the built-in task list in those cases unless there is a narrow justified reason.
 
 Do not force built-in task-list overhead when:
 - the task is trivial and isolated
 - the work is a one-step lookup or one-step fix
 - the task list would add more ceremony than clarity
+
+### 5.1 Current-Phase-First Task-List Rule
+When an active phase already exists, the task list should mirror that current phase before proposing future-phase work.
+
+Required guidance:
+- create the built-in task list for the active phase rather than waiting for the user to ask explicitly
+- default the task list to the current active phase before opening tasks for any later phase
+- do not let the task list drift into next-wave planning while the current phase still defines the active execution surface
+- if the current phase is already complete, say that directly before creating any draft next-wave tasks
+
+### 5.2 One-Phase-Many-Tasks Rule
+One phase may legitimately contain several live tasks.
+
+Required guidance:
+- allow multiple task entries inside the same phase when the phase contains several execution slices
+- prefer task subjects that include the phase ID when a phase is active
+- keep tasks as execution slices inside the phase rather than forcing one whole phase into one oversized task
+- do not require every phase to have only one task
+
+### 5.3 Future-Phase Task Boundary
+Do not create task-list entries for a future phase as if they are active execution work unless that future phase has actually been opened or selected.
+
+Required guidance:
+- treat future-phase tasks as draft/proposal work only until the user selects or opens that later phase
+- do not let a request to "show the task list" silently become permission to populate the task list with speculative future-wave tasks
+- if draft future-phase tasks are shown, make that draft status explicit
 
 ### 6) Live Task-List Update Contract
 When the built-in task list is in use:
@@ -86,6 +115,7 @@ When the built-in task list is in use:
 - mark a task `completed` as soon as that slice is actually done
 - add new tasks when newly discovered work is real and non-trivial
 - keep task entries outcome-sized rather than command-sized
+- keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad
 - do not let the task list drift into stale or vague bookkeeping
 
 ### 7) Simplicity Discipline
@@ -135,6 +165,8 @@ That later sync order does not weaken the early startup-establishment rule or th
 | Durable-vs-live tracking role clarity | 100% |
 | Startup tracking posture resolved before drift when needed | 100% |
 | Proactive task-list usage on non-trivial work | High |
+| Current-phase-first task-list alignment | High when a phase is active |
+| Future-phase task drift before explicit phase opening | 0 critical cases |
 | Stale or vague live task lists during non-trivial work | Low |
 
 ---

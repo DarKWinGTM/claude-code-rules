@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.14
+> **Current Version:** 2.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-11 | **[Removed stale custom-table dependency after suspension](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-11 | **[Narrowed explanation-quality to defer table semantics to the central table owner](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-10 | **[Aligned explanation-side table style to the light plain aligned no-frame default](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -48,6 +49,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-215"></a>
+## Version 2.15: Added easy-to-picture concise phase/progress explanation guidance
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.14 to v2.15.
+- Updated `design/explanation-quality.design.md` from v2.14 to v2.15.
+- Added explicit guidance that phase/progress explanations should start with a short easy-to-picture plain-language framing before deeper governance or mechanism detail expands.
+- Added a dedicated trigger for phase/progress explanation so that this simpler explanation shape is easier to activate consistently.
+- Preserved the broader layered explanation model and concise explanation boundary.
+
+### Summary
+Explanation-quality now pushes phase/progress explanations toward a shorter, easier-to-picture explanation style before denser detail appears.
 
 ---
 

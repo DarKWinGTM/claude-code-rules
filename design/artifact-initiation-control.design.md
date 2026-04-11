@@ -62,6 +62,8 @@ Before meaningful governed work continues, the assistant must resolve startup po
 The important requirement is not “create everything.”
 The requirement is “leave nothing required unresolved,” including the live tracking surface when non-trivial work needs it.
 
+When an active phase already exists for the work, live task-list initialization should be treated as expected rather than optional unless a narrow justified reason clearly blocks it.
+
 ### 4.2 Meaningful-work boundary
 Meaningful governed work begins when the assistant moves beyond lightweight exploration and starts doing one or more of these:
 - target-state design planning
@@ -116,7 +118,7 @@ Apply this chain strongly when one or more are true:
 | Design | target behavior, policy, contract, or architecture is new or materially changing |
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
-| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution |
+| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed work strengthens this from preferred to expected |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 

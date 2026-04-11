@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.20
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.20
+> **Current Version:** 1.21
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.21
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -156,6 +156,7 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | branching | conditions, paths, handoffs | text flow diagram or clearly indented branch structure |
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
+| phase / progress explanation | what this phase is for, what this phase got, what this prepares next | short plain-language opening + concise grouped explanation |
 | full-set framing | many relevant areas, complete checklist, several review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
 | governing-basis ambiguity | multiple plausible policies/frames remain live and the answer changes depending on which one is chosen | short clarification block with compact basis options and one `Why it matters` line |
@@ -286,6 +287,13 @@ When explaining roadmap, phase scope, staged rollout, or product truth:
 - group `What the user will notice` when user-facing impact matters
 
 Use these blocks when they materially improve scanability, not as a rigid mandatory template.
+
+### 7.1 Easy-to-Picture Phase/Progress Pattern
+
+When answering what a phase is doing, what it got, or what it prepares next:
+- start with one short plain-language line that helps the reader picture the work quickly
+- then use one small grouped explanation if needed
+- keep the whole explanation concise rather than expanding into a long governance-first block
 
 ### 7.1 Variable-Role Pattern
 

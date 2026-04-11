@@ -126,6 +126,16 @@ Each executable child phase file should define or clearly map to:
 - Risks / rollback notes
 - Next possible phases
 
+### 6.1 Live Task-List Linkage Contract
+When a phase is active and the work is non-trivial, the built-in task list should mirror the current phase's execution slices.
+
+Required guidance:
+- use the current active phase as the default source for live task-list entries
+- allow one phase to contain multiple task-list entries when the execution checklist has several real slices
+- prefer task subjects that include the current phase ID when that improves clarity
+- do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
+- if the current phase is already complete, say so directly before opening any draft future-phase tasks
+
 ---
 
 ## 7) Verification Checklist
@@ -147,6 +157,7 @@ Each executable child phase file should define or clearly map to:
 | Appropriate use of phase planning | High |
 | `/phase` workspace compliance | 100% |
 | `SUMMARY.md` presence when phased planning is used | 100% |
+| Current-phase-first task-list linkage when a phase is active | High |
 | Startup phase posture resolved before drift when phase is required | 100% |
 | Live phased execution files under patch artifacts | 0 |
 

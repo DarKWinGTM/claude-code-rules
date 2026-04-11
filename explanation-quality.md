@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.14
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.14
+> **Current Version:** 2.15
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -127,6 +127,16 @@ Required behavior:
 - translate internal terms into plain human-language phrasing when that materially improves understanding
 - when wording is architecture-first, metaphor-heavy, or uses internal shorthand, translate it into direct human-readable action/result language before relying on it for the explanation
 - when the explanation depends on variables, fields, config keys, enum-like values, or internal labels, explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before expecting the user to follow deeper reasoning
+
+### 8.1 Easy-to-Picture Phase and Progress Explanation Pattern
+
+When explaining a phase, progress checkpoint, or next-step reasoning, start with a short plain-language explanation that helps the user picture what the work is doing before deeper governance or mechanism detail expands.
+
+Required behavior:
+- answer first in human terms what the phase or progress item is about
+- say what part of the work it is preparing, locking, checking, or moving forward
+- prefer an easy-to-picture explanation before denser scope/contract detail
+- keep this explanation concise rather than turning it into a long essay
 
 ### 9) Stage/State Progression Pattern
 
@@ -276,6 +286,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | Option comparison | best approach, pros/cons, trade-offs, choose between X and Y | short answer + purpose-first framing when needed + simple framing + comparison table + recommendation |
 | Root-cause analysis | why did this happen, what's causing this | short answer + purpose-first framing when needed + simple explanation + claim/mechanism/implication |
 | Diagnostic update | implementation status, troubleshooting progress, verification checkpoint | main-point-first status line + compact diagnostic snapshot + scoped implication + next action |
+| Phase / progress explanation | what did this phase do, what is this phase for, what happens next | short answer + easy-to-picture plain-language framing + concise grouped explanation |
 | Change walkthrough | refactor, migration, multi-part patch, staged rollout | purpose-first framing + before/after or patch-by-patch explanation |
 | Scope clarification | what this is vs what it is not, what happens now vs later, current phase vs deferred phase | explicit grouped scope-boundary explanation |
 | Whole-set reasoning | many relevant areas, complete checklist, multiple review axes that should be visible together | full set first, then optional narrowing |

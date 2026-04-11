@@ -1,7 +1,7 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.14
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.14
+> **Current Version:** 2.15
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
@@ -112,6 +112,16 @@ Required guidance:
 - use phrasing such as `พูดง่าย ๆ`, `ถ้าพูดแบบภาษาคน`, or a clear English equivalent when that helps the reader faster
 - use the gloss to clarify the term, not to replace the technical truth
 - keep the gloss honest and scope-matched rather than oversimplifying into a false statement
+
+### 5.0 Easy-to-Picture Phase/Progress Framing Principle
+
+When reporting phase progress, phase meaning, or next-step reasoning, start with a short plain-language framing that helps the reader picture what the work is doing before denser execution or governance detail appears.
+
+Required guidance:
+- say in simple human terms what the phase or progress item is doing
+- say briefly why it matters or what part of the work it prepares, locks, or moves forward
+- keep this framing concise and easy to follow
+- do not begin with dense scope/governance detail if one short plain-language framing line would help the reader orient faster
 
 ### 5.1 Variable, Field, and Internal-Label Clarification Principle
 

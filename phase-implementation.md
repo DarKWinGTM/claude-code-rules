@@ -159,6 +159,16 @@ Each executable child phase file should define, or clearly map to:
 - Risks / rollback notes
 - Next possible phases
 
+### 9.1 Live Task-List Linkage Contract
+When a phase is active and the work is non-trivial, the built-in task list should mirror the current phase's execution slices.
+
+Required guidance:
+- use the current active phase as the default source for live task-list entries
+- allow one phase to contain multiple task-list entries when the execution checklist has several real slices
+- prefer task subjects that include the current phase ID when that improves clarity
+- do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
+- if the current phase is already complete, say so directly before opening any draft future-phase tasks
+
 ### 10) Verification and Rollback Contract
 Phased planning must preserve both local and global safety:
 - each executable child phase file should define phase-level verification
@@ -196,6 +206,7 @@ If patch documents exist, they remain patch artifacts and must not be used as th
 | Design traceability coverage | 100% when design input is used |
 | Patch traceability coverage | 100% when patch-derived work is used |
 | Explicit phase-to-patch linkage coverage | 100% when patch is in scope |
+| Current-phase-first task-list linkage when a phase is active | High |
 | Startup phase posture resolved before drift when phase is required | 100% |
 | Live phased execution files inside patch artifacts | 0 |
 

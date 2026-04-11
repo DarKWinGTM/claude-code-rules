@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -25,6 +25,7 @@ The target behavior is principle-first and trigger-driven:
 - make scope-boundary explanations easy to scan when the answer needs to separate now vs later or what-it-is vs what-it-is-not
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
+- make easy-to-picture phase/progress explanations easy to present through one short plain-language opening plus a concise grouped explanation
 - make materially outcome-changing governing-basis ambiguity easy to present as a short structured clarification instead of a long branch-comparison essay
 - make post-compact continuation easy to present as one short re-anchor block instead of a long replay
 - make memory-derived context easy to present as one short block that separates matched path scope, provenance when relevant, and needs-recheck detail from freshly checked current-state facts

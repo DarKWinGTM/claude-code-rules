@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.21 | 2026-04-11 | **[Added easy-to-picture phase/progress presentation support](#version-121)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.20 | 2026-04-11 | **[Removed active dependency on the suspended custom table-format owner](#version-120)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.19 | 2026-04-11 | **[Narrowed answer-presentation to defer ordinary table semantics to the central table owner](#version-119)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.18 | 2026-04-10 | **[Changed the default answer-table style to a light plain aligned no-frame form](#version-118)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -39,6 +40,23 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-121"></a>
+## Version 1.21: Added easy-to-picture phase/progress presentation support
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.20 to v1.21.
+- Updated `design/answer-presentation.design.md` from v1.20 to v1.21.
+- Added a dedicated phase/progress trigger and compact pattern so phase-heavy explanations can start with a short easy-to-picture line before grouped detail.
+- Preserved broader layout, scanability, and natural-flow behavior.
+
+### Summary
+Answer-presentation now makes phase/progress explanations easier to scan by supporting a short easy-to-picture opening plus a concise grouped explanation.
 
 ---
 

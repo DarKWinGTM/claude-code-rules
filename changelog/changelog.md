@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.13
+> **Current Version:** 9.15
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-915)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.14 | 2026-04-11 | **[Linked live task-list behavior explicitly to the current active phase](#version-914)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.13 | 2026-04-11 | **[Cleaned stale custom-table detail out of active rules after suspension](#version-913)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.12 | 2026-04-11 | **[Suspended the custom table-format experiment from the active RULES system](#version-912)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.11 | 2026-04-11 | **[Hardened no-box enforcement with character-level checks and send-time self-check](#version-911)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -49,6 +51,40 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-915"></a>
+## Version 9.15: Added easy-to-picture concise phase/progress explanation guidance
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality` so phase/progress/next-step explanations now explicitly favor easy-to-picture plain-language framing before deeper mechanism detail.
+- Updated `accurate-communication` so phase/progress communication now emphasizes short human-readable framing that helps the reader understand what the phase is doing and why it matters before the denser execution/result detail appears.
+- Updated `answer-presentation` so phase-heavy explanations now have stronger support for concise easy-to-picture grouped presentation without becoming overlong.
+- Synchronized the touched design/changelog chains plus master design/README/changelog surfaces and installed runtime copies for the explanation-style refinement.
+
+### Summary
+The RULES repository now pushes phase/progress explanations toward a shorter, easier-to-picture explanation style that helps the user see what the work is doing before the denser governance detail begins.
+
+---
+
+<a id="version-914"></a>
+## Version 9.14: Linked live task-list behavior explicitly to the current active phase
+
+**Date:** 2026-04-11
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards` from v2.4 to v2.5 so built-in task-list usage is now expected by default for non-trivial active work, especially when an active phase already exists.
+- Updated `phase-implementation` from v2.7 to v2.8 so active phases now expect a built-in task list that mirrors the current phase execution slices instead of drifting into future-phase planning.
+- Updated `artifact-initiation-control` from v1.2 to v1.3 so phase-backed live task tracking is now treated as expected startup behavior rather than optional.
+- Updated the touched design/changelog chains plus master design/README/changelog surfaces so current-phase-first live task tracking is explicit across the governance stack.
+
+### Summary
+The RULES repository now links live task-list behavior directly to the current active phase so execution visibility starts earlier and stays tied to the work that is actually in progress.
 
 ---
 
