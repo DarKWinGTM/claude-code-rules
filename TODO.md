@@ -1,10 +1,13 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-11
+> **Last Updated:** 2026-04-12
 
 ---
 
 ## ✅ Completed
+
+- [x] Create first-class `execution-continuity-and-mode-selection` and `goal-set-review-and-priority-balance` rule chains, integrate bounded companion updates without expanding `accurate-communication.md`, add the bounded `phase-033` / `patch/continuous-execution-and-goal-set-review.patch.md` wave artifacts, and update master inventory/install surfaces from 37 to 39 active runtime rules.
+- [x] Promote `high-signal-communication.md` from standalone experimental framing into the active runtime rule set, synchronize its design/changelog chain, add the bounded `phase-032` / `patch/high-signal-communication-active-rule-sync.patch.md` wave artifacts, update master inventory/install surfaces from 36 to 37 active runtime rules, and close the touched metadata drift for `todo-standards`, `phase-implementation`, and `artifact-initiation-control`.
 
 - [x] Improve the README Quick Start install scripts so they use cleaner Bash and PowerShell examples, remove centered code presentation for the Quick Start install block, and support both Linux/macOS and Windows users clearly.
 - [x] Add README AI-assisted install prompts so users can ask Claude Code, Codex CLI, or Gemini CLI to install or adapt the active rule set directly from this repository while preserving the active-vs-non-active boundary.
@@ -89,6 +92,8 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-12 | Created first-class `execution-continuity-and-mode-selection` and `goal-set-review-and-priority-balance` owner chains, added bounded `phase-033` / `patch/continuous-execution-and-goal-set-review.patch.md` artifacts, integrated bounded companion updates without expanding `accurate-communication.md`, and updated the active runtime inventory/install set from 37 to 39 rules. |
+| 2026-04-12 | Promoted `high-signal-communication.md` into the active runtime rule set, synchronized its design/changelog/master surfaces, opened bounded `phase-032` / `patch/high-signal-communication-active-rule-sync.patch.md` artifacts, updated the active runtime inventory/install set from 36 to 37 rules, and closed touched metadata drift for `todo-standards`, `phase-implementation`, and `artifact-initiation-control`. |
 | 2026-04-12 | Improved the README Quick Start install scripts with cleaner Bash and PowerShell examples, removed centered code presentation from the install block, and made the Quick Start clearer for both Linux/macOS and Windows users. |
 | 2026-04-12 | Added README AI-assisted install prompts for Claude Code, Codex CLI, and Gemini CLI so users can ask AI to install or adapt the active rule set directly from this repository while preserving the active-vs-non-active boundary. |
 | 2026-04-11 | Added easy-to-picture concise phase/progress explanation guidance so phase and next-step answers now start from plain-language framing the user can picture quickly before denser governance/execution detail. |

@@ -1,7 +1,7 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.15
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.7
+> **Current Version:** 1.17
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.9
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Status:** Mixed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains twenty-nine rollout families:
+The current workspace contains thirty-three rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -44,6 +44,10 @@ The current workspace contains twenty-nine rollout families:
 - major phase `027` = task-list-first execution-tracking refinement rollout
 - major phase `028` = plain aligned no-frame table-style refinement rollout
 - major phase `029` = centralized table-format-and-usage ownership transfer rollout
+- major phase `030` = current-phase-first live task-list linkage refinement rollout
+- major phase `031` = easy-to-picture concise phase/progress explanation refinement rollout
+- major phase `032` = high-signal communication promotion and sync rollout
+- major phase `033` = execution continuity and goal-set review rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -122,9 +126,14 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 029 | 029-01 | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | `design/table-format-and-usage.design.md` | `patch/table-format-and-usage-centralization.patch.md` | Create the first-class rule chain that owns ordinary answer-table semantics | One semantic owner exists for ordinary answer-table usage, style, boundary, and anti-patterns |
 | 029 | 029-02 | `phase/phase-029-02-transfer-table-ownership-from-adjacent-chains.md` | `design/table-format-and-usage.design.md` + `design/answer-presentation.design.md` + `design/explanation-quality.design.md` | `patch/table-format-and-usage-centralization.patch.md` | Narrow adjacent owner chains so table doctrine now defers to the new central owner | Centralization becomes a real ownership transfer rather than a merely additive rule |
 | 029 | 029-03 | `phase/phase-029-03-harden-no-box-enforcement.md` | `design/table-format-and-usage.design.md` | `patch/table-format-and-usage-centralization.patch.md` | Harden the central table owner so generic table requests still require the canonical no-frame format and framed box-drawing output is treated as non-compliant | Visible-shape no-box enforcement becomes explicit and reviewable |
-| 029 | 029-04 | suspended custom table-format experiment and restore general table support | `design/table-format-and-usage.design.md` + touched adjacent designs | `patch/table-format-and-usage-centralization.patch.md` | Remove the custom table-format experiment from the active RULES system without deleting the file | The experiment remains preserved for later redesign, but active RULES behavior no longer depends on it |
-| 030 | 030-01 | current-phase-first live task-list linkage refinement | `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/artifact-initiation-control.design.md` | none | Link built-in task lists explicitly to the current active phase and raise phase-backed task tracking from optional to expected | Live execution visibility stays tied to the current phase instead of drifting into future-phase planning |
-| 031 | 031-01 | easy-to-picture concise phase/progress explanation refinement | `design/explanation-quality.design.md` + `design/accurate-communication.design.md` + `design/answer-presentation.design.md` | none | Make phase/progress explanations easier to picture and easier to read before denser execution detail | Users understand the shape of the work faster without needing several follow-up clarifications |
+| 029 | 029-04 | `phase/phase-029-04-suspend-custom-table-format-and-restore-general-table-support.md` | `design/table-format-and-usage.design.md` + touched adjacent designs | `patch/table-format-and-usage-centralization.patch.md` | Remove the custom table-format experiment from the active RULES system without deleting the file | The experiment remains preserved for later redesign, but active RULES behavior no longer depends on it |
+| 030 | 030-01 | `phase/phase-030-01-current-phase-first-live-task-list-linkage-refinement.md` | `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/artifact-initiation-control.design.md` | none | Link built-in task lists explicitly to the current active phase and raise phase-backed task tracking from optional to expected | Live execution visibility stays tied to the current phase instead of drifting into future-phase planning |
+| 031 | 031-01 | `phase/phase-031-01-easy-to-picture-concise-phase-progress-explanation-refinement.md` | `design/explanation-quality.design.md` + `design/accurate-communication.design.md` + `design/answer-presentation.design.md` | none | Make phase/progress explanations easier to picture and easier to read before denser execution detail | Users understand the shape of the work faster without needing several follow-up clarifications |
+| 032 | 032-01 | `phase/phase-032-01-promote-high-signal-communication.md` | `design/high-signal-communication.design.md` | `patch/high-signal-communication-active-rule-sync.patch.md` | Promote `high-signal-communication.md` from standalone experimental framing into an active bounded supplementary rule | The high-signal chain becomes internally coherent as an active bounded runtime rule |
+| 032 | 032-02 | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | `design/design.md` + `design/high-signal-communication.design.md` | `patch/high-signal-communication-active-rule-sync.patch.md` | Sync master docs, TODO/changelog history, phase indexing, and runtime install parity for the high-signal promotion wave | Repo-level governance and installed runtime state reflect the high-signal promotion coherently |
+| 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | `design/execution-continuity-and-mode-selection.design.md` | `patch/continuous-execution-and-goal-set-review.patch.md` | Create the first-class execution-continuity owner | One semantic owner exists for discussion-vs-execution mode selection and continuous execution defaults |
+| 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | `design/goal-set-review-and-priority-balance.design.md` | `patch/continuous-execution-and-goal-set-review.patch.md` | Create the first-class goal-review owner | One semantic owner exists for continuous goal-set review and priority balance |
+| 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | `design/execution-continuity-and-mode-selection.design.md` + `design/goal-set-review-and-priority-balance.design.md` + `design/design.md` | `patch/continuous-execution-and-goal-set-review.patch.md` | Integrate companion rules and sync master docs/install | Repo-level governance and installed runtime state reflect the new continuity and goal-review owners coherently |
 
 ---
 
@@ -203,7 +212,12 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 029-04: suspend the custom table-format experiment from the active RULES system while preserving it for later redesign
   → 030-01: link built-in task lists explicitly to the current active phase and raise phase-backed task tracking from optional to expected
   → 031-01: make phase/progress explanations easier to picture and easier to read before denser execution detail
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
+  → 032-01: promote high-signal-communication from standalone experimental framing into an active bounded supplementary rule
+  → 032-02: sync master docs, TODO/changelog history, phase indexing, and runtime install parity for the high-signal promotion wave
+  → 033-01: create the first-class execution-continuity owner for discussion-vs-execution mode selection and continuous execution defaults
+  → 033-02: create the first-class goal-review owner for continuous goal-set visibility and priority balance
+  → 033-03: integrate companion rules and sync master docs/install for the new continuity and goal-review owners
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
 
@@ -273,14 +287,21 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 026 | 026-02 | `phase/phase-026-02-integrate-memory-governance-companions.md` | Completed | None | Approved As-Is | companion authority/writing/burden-of-proof/presentation integrations applied |
 | 026 | 026-03 | `phase/phase-026-03-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync and runtime-install parity completed |
 | 026 | 026-04 | `phase/phase-026-04-run-postflight-memory-governance-audit.md` | Completed | None | Approved As-Is | governance-only boundary and source/install parity verified |
-| 027 | 027-01 | `phase/phase-027-01-refine-task-list-first-execution-tracking.md` | In Progress | Review Pending | Awaiting Review | task-list-first refinement is being applied across tracking/startup/documentation owners |
-| 027 | 027-02 | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | In Progress | Review Pending | Awaiting Review | master-surface sync and runtime-install parity are in progress for the task-list-first refinement |
-| 028 | 028-01 | `phase/phase-028-01-refine-plain-aligned-table-style.md` | In Progress | Review Pending | Awaiting Review | plain aligned no-frame table-style correction is being applied across presentation/explanation owners |
-| 028 | 028-02 | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | In Progress | Review Pending | Awaiting Review | master-surface sync and runtime-install parity are in progress for the table-style refinement |
+| 027 | 027-01 | `phase/phase-027-01-refine-task-list-first-execution-tracking.md` | Completed | None | Approved As-Is | task-list-first refinement applied across tracking/startup/documentation owners |
+| 027 | 027-02 | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the task-list-first refinement |
+| 028 | 028-01 | `phase/phase-028-01-refine-plain-aligned-table-style.md` | Completed | None | Approved As-Is | plain aligned no-frame table-style correction applied across presentation/explanation owners |
+| 028 | 028-02 | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the table-style refinement |
 | 029 | 029-01 | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | Completed | None | Approved As-Is | first-class ordinary answer-table owner chain created |
 | 029 | 029-02 | `phase/phase-029-02-transfer-table-ownership-from-adjacent-chains.md` | Completed | None | Approved As-Is | adjacent presentation/explanation chains narrowed to defer table doctrine to the new central owner |
 | 029 | 029-03 | `phase/phase-029-03-harden-no-box-enforcement.md` | Completed | None | Approved As-Is | central table owner hardened with character-level no-box enforcement and send-time visible-shape self-check |
-| 029 | 029-04 | suspended custom table-format experiment and restore general table support | Completed | None | Approved As-Is | custom table-format experiment removed from active RULES behavior while preserved for later redesign |
+| 029 | 029-04 | `phase/phase-029-04-suspend-custom-table-format-and-restore-general-table-support.md` | Completed | None | Approved As-Is | custom table-format experiment removed from active RULES behavior while preserved for later redesign |
+| 030 | 030-01 | `phase/phase-030-01-current-phase-first-live-task-list-linkage-refinement.md` | Completed | None | Approved As-Is | built-in task-list behavior is now explicitly linked to the current active phase |
+| 031 | 031-01 | `phase/phase-031-01-easy-to-picture-concise-phase-progress-explanation-refinement.md` | Completed | None | Approved As-Is | phase/progress explanations now lead with easier-to-picture plain-language framing |
+| 032 | 032-01 | `phase/phase-032-01-promote-high-signal-communication.md` | Completed | None | Approved As-Is | high-signal communication chain promoted from standalone experimental framing into an active bounded supplementary rule |
+| 032 | 032-02 | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the high-signal promotion wave |
+| 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Completed | None | Approved As-Is | first-class execution-continuity owner created |
+| 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Completed | None | Approved As-Is | first-class goal-review owner created |
+| 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Completed | None | Approved As-Is | companion-rule integration, master-surface sync, and runtime-install parity completed for the new continuity and goal-review owners |
 
 ---
 
@@ -352,8 +373,18 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 026 | 026-04 | Completed | `phase/phase-026-04-run-postflight-memory-governance-audit.md` | Run the final consistency and parity sweep for the memory-governance refinement | `026-03` |
 | 027 | 027-01 | In Progress | `phase/phase-027-01-refine-task-list-first-execution-tracking.md` | Refine the owner set so the built-in task list becomes the live execution surface for non-trivial active work while `TODO.md` remains the durable tracking artifact | none |
 | 027 | 027-02 | In Progress | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the task-list-first refinement | `027-01` |
-| 028 | 028-01 | In Progress | `phase/phase-028-01-refine-plain-aligned-table-style.md` | Refine the owner set so ordinary answer tables use the selected light plain aligned no-frame form while table usage remains available when genuinely useful | none |
-| 028 | 028-02 | In Progress | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the table-style refinement | `028-01` |
+| 028 | 028-01 | Completed | `phase/phase-028-01-refine-plain-aligned-table-style.md` | Refine the owner set so ordinary answer tables use the selected light plain aligned no-frame form while table usage remains available when genuinely useful | none |
+| 028 | 028-02 | Completed | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the table-style refinement | `028-01` |
+| 029 | 029-01 | Completed | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | Create the first-class `table-format-and-usage` owner for ordinary answer-table semantics | none |
+| 029 | 029-02 | Completed | `phase/phase-029-02-transfer-table-ownership-from-adjacent-chains.md` | Narrow adjacent presentation and explanation owners so table doctrine now defers to the new central owner | `029-01` |
+| 029 | 029-03 | Completed | `phase/phase-029-03-harden-no-box-enforcement.md` | Harden the central table owner so generic table requests still require the canonical no-frame format and framed box-drawing output is treated as non-compliant | `029-02` |
+| 030 | 030-01 | Completed | `phase/phase-030-01-current-phase-first-live-task-list-linkage-refinement.md` | Link built-in task lists explicitly to the current active phase and raise phase-backed task tracking from optional to expected | none |
+| 031 | 031-01 | Completed | `phase/phase-031-01-easy-to-picture-concise-phase-progress-explanation-refinement.md` | Make phase/progress explanations easier to picture and easier to read before denser execution detail | none |
+| 032 | 032-01 | Completed | `phase/phase-032-01-promote-high-signal-communication.md` | Promote `high-signal-communication.md` from standalone experimental framing into an active bounded supplementary rule | none |
+| 032 | 032-02 | Completed | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the high-signal promotion wave | `032-01` |
+| 033 | 033-01 | Completed | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Create the first-class execution-continuity owner for discussion-vs-execution mode selection and continuous execution defaults | none |
+| 033 | 033-02 | Completed | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Create the first-class goal-review owner for continuous goal-set visibility and priority balance | `033-01` |
+| 033 | 033-03 | Completed | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Integrate companion rules and sync master docs/install for the new continuity and goal-review owners | `033-02` |
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 028-02
-> **Status:** In Progress
+> **Status:** Completed
 > **Design References:** [../design/design.md](../design/design.md), [../design/answer-presentation.design.md](../design/answer-presentation.design.md), [../design/explanation-quality.design.md](../design/explanation-quality.design.md)
 > **Patch References:** [../patch/plain-aligned-no-frame-table-style-refinement.patch.md](../patch/plain-aligned-no-frame-table-style-refinement.patch.md)
 
@@ -24,13 +24,13 @@ The owner-chain refinement only becomes operationally real when the repository-l
 
 ## Action points / execution checklist
 
-- [ ] update `design/design.md`
-- [ ] update `README.md`
-- [ ] update `changelog/changelog.md`
-- [ ] update `TODO.md`
-- [ ] update `phase/SUMMARY.md`
-- [ ] reinstall touched runtime rules into `~/.claude/rules/`
-- [ ] parity-check installed runtime copies against source
+- [x] update `design/design.md`
+- [x] update `README.md`
+- [x] update `changelog/changelog.md`
+- [x] update `TODO.md`
+- [x] update `phase/SUMMARY.md`
+- [x] reinstall touched runtime rules into `~/.claude/rules/`
+- [x] parity-check installed runtime copies against source
 
 ## Out of scope
 
@@ -59,11 +59,11 @@ The owner-chain refinement only becomes operationally real when the repository-l
 
 ## Verification
 
-- [ ] master design inventory shows the updated touched-chain versions and role descriptions
-- [ ] README teaches the plain aligned no-frame table-style refinement at a high level
-- [ ] master changelog and TODO record the bounded refinement wave
-- [ ] phase summary indexes the new `028` rollout family
-- [ ] installed runtime files match the updated source copies for the touched rules
+- [x] master design inventory shows the updated touched-chain versions and role descriptions
+- [x] README teaches the plain aligned no-frame table-style refinement at a high level
+- [x] master changelog and TODO record the bounded refinement wave
+- [x] phase summary indexes the new `028` rollout family
+- [x] installed runtime files match the updated source copies for the touched rules
 
 ## Risks / rollback notes
 
@@ -78,6 +78,6 @@ The owner-chain refinement only becomes operationally real when the repository-l
 
 ## Exit criteria
 
-- [ ] repository-level governance reflects the plain aligned no-frame table-style refinement coherently
-- [ ] runtime install parity is restored for all touched rules
-- [ ] the `028` phase family is visible and reviewable from `phase/SUMMARY.md`
+- [x] repository-level governance reflects the plain aligned no-frame table-style refinement coherently
+- [x] runtime install parity is restored for all touched rules
+- [x] the `028` phase family is visible and reviewable from `phase/SUMMARY.md`

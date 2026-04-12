@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 028-01
-> **Status:** In Progress
+> **Status:** Completed
 > **Design References:** [../design/answer-presentation.design.md](../design/answer-presentation.design.md), [../design/explanation-quality.design.md](../design/explanation-quality.design.md)
 > **Patch References:** [../patch/plain-aligned-no-frame-table-style-refinement.patch.md](../patch/plain-aligned-no-frame-table-style-refinement.patch.md)
 
@@ -24,11 +24,11 @@ The user clarified that the real issue is not table frequency. The issue is tabl
 
 ## Action points / execution checklist
 
-- [ ] update `answer-presentation` as the primary table-style owner
-- [ ] update `explanation-quality` as the supporting explanation-flow owner
-- [ ] update touched design/changelog artifacts for the two owner chains
-- [ ] create a bounded governed patch artifact for this refinement wave
-- [ ] keep the refinement bounded and avoid creating a new standalone rule chain
+- [x] update `answer-presentation` as the primary table-style owner
+- [x] update `explanation-quality` as the supporting explanation-flow owner
+- [x] update touched design/changelog artifacts for the two owner chains
+- [x] create a bounded governed patch artifact for this refinement wave
+- [x] keep the refinement bounded and avoid creating a new standalone rule chain
 
 ## Out of scope
 
@@ -56,10 +56,10 @@ The user clarified that the real issue is not table frequency. The issue is tabl
 
 ## Verification
 
-- [ ] the chosen light plain aligned no-frame table style is now explicitly represented in the owner set
-- [ ] boxed/full-frame table defaults are still disallowed
-- [ ] sequence content still prefers numbered lists
-- [ ] simple status pairs still prefer bullets/grouped blocks unless side-by-side scan materially helps
+- [x] the chosen light plain aligned no-frame table style is now explicitly represented in the owner set
+- [x] boxed/full-frame table defaults are still disallowed
+- [x] sequence content still prefers numbered lists
+- [x] simple status pairs still prefer bullets/grouped blocks unless side-by-side scan materially helps
 
 ## Risks / rollback notes
 
@@ -74,6 +74,6 @@ The user clarified that the real issue is not table frequency. The issue is tabl
 
 ## Exit criteria
 
-- [ ] the chosen table style is clearly split across presentation and explanation ownership
-- [ ] the implementation remains a bounded refinement wave rather than a new doctrine chain
-- [ ] the touched owner set expresses one coherent plain aligned no-frame table style
+- [x] the chosen table style is clearly split across presentation and explanation ownership
+- [x] the implementation remains a bounded refinement wave rather than a new doctrine chain
+- [x] the touched owner set expresses one coherent plain aligned no-frame table style

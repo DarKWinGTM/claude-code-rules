@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 027-01
-> **Status:** In Progress
+> **Status:** Completed
 > **Design References:** [../design/todo-standards.design.md](../design/todo-standards.design.md), [../design/artifact-initiation-control.design.md](../design/artifact-initiation-control.design.md), [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md)
 > **Patch References:** [../patch/task-list-first-execution-tracking.patch.md](../patch/task-list-first-execution-tracking.patch.md)
 
@@ -24,12 +24,12 @@ The user sees the built-in task list as a useful live surface for showing what w
 
 ## Action points / execution checklist
 
-- [ ] update `todo-standards` as the primary live-vs-durable tracking owner
-- [ ] update `artifact-initiation-control` as the startup companion for early task-list posture
-- [ ] update `project-documentation-standards` as the repository-model companion
-- [ ] update touched design/changelog artifacts for the three owner chains
-- [ ] create a bounded governed patch artifact for this refinement wave
-- [ ] keep the refinement bounded and avoid creating a new standalone rule chain
+- [x] update `todo-standards` as the primary live-vs-durable tracking owner
+- [x] update `artifact-initiation-control` as the startup companion for early task-list posture
+- [x] update `project-documentation-standards` as the repository-model companion
+- [x] update touched design/changelog artifacts for the three owner chains
+- [x] create a bounded governed patch artifact for this refinement wave
+- [x] keep the refinement bounded and avoid creating a new standalone rule chain
 
 ## Out of scope
 
@@ -58,10 +58,10 @@ The user sees the built-in task list as a useful live surface for showing what w
 
 ## Verification
 
-- [ ] built-in task list is now explicitly treated as the live execution surface for non-trivial work
-- [ ] `TODO.md` remains explicitly the durable/project execution-tracking artifact
-- [ ] trivial work is not forced into task-list overhead
-- [ ] task entries are expected to be created early, outcome-sized, and updated through completion
+- [x] built-in task list is now explicitly treated as the live execution surface for non-trivial work
+- [x] `TODO.md` remains explicitly the durable/project execution-tracking artifact
+- [x] trivial work is not forced into task-list overhead
+- [x] task entries are expected to be created early, outcome-sized, and updated through completion
 
 ## Risks / rollback notes
 
@@ -76,6 +76,6 @@ The user sees the built-in task list as a useful live surface for showing what w
 
 ## Exit criteria
 
-- [ ] task-list-first behavior is clearly split across primary tracking, startup posture, and repository-model ownership
-- [ ] the implementation remains a bounded refinement wave rather than a new first-class doctrine chain
-- [ ] the touched owner set expresses one coherent live-vs-durable tracking behavior
+- [x] task-list-first behavior is clearly split across primary tracking, startup posture, and repository-model ownership
+- [x] the implementation remains a bounded refinement wave rather than a new first-class doctrine chain
+- [x] the touched owner set expresses one coherent live-vs-durable tracking behavior

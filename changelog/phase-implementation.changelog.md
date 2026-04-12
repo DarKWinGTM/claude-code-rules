@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.8
+> **Current Version:** 2.9
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.9 | 2026-04-12 | **[Allowed direct phase-boundary continuation when the next path is already active](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-11 | **[Added current-phase-first live task-list linkage](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Refined phase-implementation so active phases now expect a live task list that mirrors the current phase execution surface before any future-phase planning is opened | |
 | 2.7 | 2026-03-30 | **[Hardened explicit phase-to-patch linkage in the live phase workspace](#version-27)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -20,6 +21,23 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-29"></a>
+## Version 2.9: Allowed direct phase-boundary continuation when the next path is already active
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `phase-implementation.md` from v2.8 to v2.9.
+- Updated `design/phase-implementation.design.md` from v2.8 to v2.9.
+- Added bounded guidance that if the current phase completes and the next phase is already the implied active path, phase-boundary continuity may continue directly instead of turning completion into a report-only stop.
+- Preserved phase identity, `/phase` structure, and current-phase-first task-list linkage.
+
+### Summary
+Phase-implementation now allows direct continuation across phase boundaries when the next execution slice is already the active implied path.
 
 ---
 

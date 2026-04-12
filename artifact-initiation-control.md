@@ -1,7 +1,7 @@
 # Artifact Initiation Control
 
-> **Current Version:** 1.2
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 

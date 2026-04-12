@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.15
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.15
+> **Current Version:** 2.16
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -141,6 +141,8 @@ Required behavior:
 ### 9) Stage/State Progression Pattern
 
 When the current stage is already sufficiently explained, prefer the next meaningful stage, state, milestone, or decision boundary instead of continuing to deepen the same scope by default.
+
+Goal-set review and priority-balance semantics defer to `goal-set-review-and-priority-balance.md` when the issue is whether the current subtask is crowding out the remaining primary goals.
 
 Required behavior:
 - if the current state is already clear enough for the user's decision, move the explanation forward

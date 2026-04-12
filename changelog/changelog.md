@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.17
+> **Current Version:** 9.19
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.19 | 2026-04-12 | **[Added first-class execution continuity and goal-set review owners](#version-919)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
+| 9.18 | 2026-04-12 | **[Promoted high-signal communication into the active runtime rule set](#version-918)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.17 | 2026-04-12 | **[Improved README Quick Start install scripts for Bash and PowerShell](#version-917)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.16 | 2026-04-12 | **[Added AI-assisted install prompts to the README](#version-916)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-915)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -53,6 +55,40 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-919"></a>
+## Version 9.19: Added first-class execution continuity and goal-set review owners
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Created `execution-continuity-and-mode-selection` as a first-class runtime/design/changelog chain for discussion-vs-execution mode selection, continuous-execution defaults, legitimate stop gates, and phase-boundary continuity.
+- Created `goal-set-review-and-priority-balance` as a first-class runtime/design/changelog chain for continuous goal-set review, structure-first priority balance, and protection against single-subtask fixation.
+- Updated bounded companion rules so continuity and goal-review semantics now defer to the new owners without expanding `accurate-communication.md`.
+- Updated master design/README/TODO/phase surfaces and expanded the active runtime install set from 37 to 39 rules.
+
+### Summary
+The RULES repository now has explicit owners for continuous execution and full-goal-set review, so active work can keep moving without losing discussion protection or neglecting sibling goals.
+
+---
+
+<a id="version-918"></a>
+## Version 9.18: Promoted high-signal communication into the active runtime rule set
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `high-signal-communication` from v1.0 to v1.1 and aligned its design/changelog chain so it no longer reads like a standalone experiment.
+- Added `high-signal-communication.md` to the active runtime inventory and README install set, increasing the active runtime count from 36 to 37.
+- Added bounded patch/phase artifacts for the promotion wave and synchronized master design/README/TODO/phase surfaces to the new active status.
+- Closed metadata drift by aligning touched runtime/design headers with already-authoritative changelog versions for `todo-standards`, `phase-implementation`, and `artifact-initiation-control`.
+
+### Summary
+The RULES repository now treats high-signal communication as an active bounded supplementary runtime rule, and the related source/master metadata is synchronized around that status.
 
 ---
 

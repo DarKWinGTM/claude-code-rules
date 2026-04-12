@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.15
+> **Current Version:** 2.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.16 | 2026-04-12 | **[Deferred goal-review semantics to the new goal-set owner](#version-216)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-11 | **[Removed stale custom-table dependency after suspension](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-11 | **[Narrowed explanation-quality to defer table semantics to the central table owner](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -49,6 +50,23 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-216"></a>
+## Version 2.16: Deferred goal-review semantics to the new goal-set owner
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `explanation-quality.md` from v2.15 to v2.16.
+- Updated `design/explanation-quality.design.md` from v2.15 to v2.16.
+- Added an explicit deferral so goal-set review and priority-balance semantics now live in `goal-set-review-and-priority-balance.md` instead of remaining only implicit in stage-progression behavior.
+- Preserved explanation flow, stage progression, and concise ending behavior.
+
+### Summary
+Explanation-quality now keeps its explanation-flow role while deferring goal-review semantics to the new first-class goal-set owner.
 
 ---
 

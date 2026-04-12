@@ -1,23 +1,23 @@
 # High Signal Communication
 
-> **Current Version:** 1.0
-> **Design:** [../design/high-signal-communication.design.md](../design/high-signal-communication.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/high-signal-communication.design.md](design/high-signal-communication.design.md) v1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
-> **Full history:** [../changelog/high-signal-communication.changelog.md](../changelog/high-signal-communication.changelog.md)
+> **Full history:** [changelog/high-signal-communication.changelog.md](changelog/high-signal-communication.changelog.md)
 
 ---
 
 ## Rule Statement
 
-**Core Principle: Add a lightweight high-signal response filter that removes low-value extra content, trims repeated wording, and bounds unnecessary expansion without replacing, weakening, or overriding the existing communication, explanation, or presentation owners.**
+**Core Principle: Add a high-signal response layer that removes low-value extra content, trims repeated wording, and bounds unnecessary expansion without reducing the meaning the user still needs.**
 
-This file is an experimental standalone rule. It is intentionally separated from the active RULES system so its effect can be evaluated without changing the current owner graph.
+This file defines its own communication-focused rule layer and is no longer labeled as a standalone experiment.
 
 ---
 
-## Experimental Scope
+## Scope
 
-This experiment is limited to supplementary mechanisms that are not already owned directly by the active communication rules.
+This rule focuses on high-signal filtering and response tightening where that improves clarity.
 
 It does **not** replace:
 - main-point-first framing
@@ -28,15 +28,12 @@ It does **not** replace:
 
 Those behaviors remain owned by the active rules already in the system.
 
-## Owner Boundary
-
-This file is a supplementary filter layer only.
+## Boundary
 
 Required guidance:
-- apply this rule after the existing active communication/explanation/presentation owners have already determined what content is required
-- never use this file to delete, weaken, or override content that an existing active owner requires
-- if this file conflicts with an existing active owner, the existing active owner wins
-- treat this file as a non-destructive pruning aid, not as a replacement owner
+- do not use this rule to reduce answers below the level needed for understanding
+- use it to tighten responses where excess wording, repetition, or unnecessary expansion is the real problem
+- keep the rule practical rather than turning it into a blanket pressure toward ultra-short answers
 
 ---
 
@@ -56,44 +53,26 @@ If a block does none of the above, remove it.
 
 This gate applies to surplus content only. It must not be used to strip content that an existing active owner still requires.
 
-### 2) Post-Draft Pruning Pass
+### 2) Repetition Pruning Pass
 
 Before finalizing the response:
-- remove ceremonial openings or closings that add no decision value
-- remove repeated restatement of the user's question unless it materially helps clarity
+- remove repeated restatement when it does not materially help clarity
 - remove repeated conclusion text when one clear synthesis is enough
-- remove duplicated options or duplicated next-step wording
-- remove extra explanation layers only when the current answer is already sufficient and no active owner still requires that layer
+- remove duplicated next-step wording when the same point is already present once
 
-This pruning pass removes surplus only. It must not remove required explanation, required options, or required next-step content.
-
-### 3) Expansion Budget Gate
-
-After the core answer is already clear:
-- add at most the smallest next useful extension
-- do not keep stacking extra examples, extra alternatives, and extra future ideas by default
-- if options are useful or required, keep them short and bounded rather than suppressing them
-- if one explanation layer is enough for the user's current decision, stop there
-- expand further only when the user asks for the deeper breakdown or an active owner still requires the additional layer
-
-This gate limits runaway expansion. It does not forbid useful options or required next-step guidance.
+This pruning pass removes repetition only. It must not remove required explanation or required next-step content.
 
 ---
 
 ## Never Remove Required Content
 
-Do not remove content that is still required by the active rules, including:
-- one necessary main conclusion
-- one necessary explanation layer
-- one necessary next-step block
-- one necessary option block when the decision is still genuinely open
-- one necessary scope or boundary clarification block
+Do not remove content that is still required by the active rules.
 
 If there is a conflict about whether content is still required, the existing active owner wins.
 
 ## Non-Goals
 
-This experiment is not trying to:
+This rule is not trying to:
 - make the assistant as short as possible
 - suppress useful options entirely
 - replace natural communication with terse machine language
@@ -101,22 +80,19 @@ This experiment is not trying to:
 
 ---
 
-## How To Evaluate
+## What This Rule Is Trying To Improve
 
-When observing this experimental context, check whether responses become:
+This rule should help answers become:
 - less repetitive
 - less fluffy
-- less likely to over-expand
 - still natural and understandable
-- still willing to give useful options when genuinely helpful
 
-If the experiment causes answers to become too dry, too compressed, or too reluctant to offer helpful next moves, it should be revised or retired rather than merged.
+If it causes answers to become too dry, too compressed, or harder to understand, it should be revised.
 
 ---
 
 ## Status
 
-- status: experimental
-- integration mode: standalone only
-- active install status: not part of the active runtime rule set
-- merge posture: evaluate first, integrate later only if the effect is clearly positive
+- status: active
+- install status: installed in the active runtime rule set
+- merge posture: can be refined further without requiring it to be treated as a separate standalone experiment

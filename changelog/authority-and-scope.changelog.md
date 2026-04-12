@@ -1,7 +1,7 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.1
+> **Current Version:** 2.2
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.2 | 2026-04-12 | **[Deferred mode-selection semantics to the new execution-continuity owner](#version-22)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.1 | 2026-04-09 | **[Added path-scoped memory applicability boundary and current-scope-wins protection](#version-21)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.0 | 2026-04-09 | **[Added RULES-first-over-memory authority boundary](#version-20)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.9 | 2026-04-06 | **[Added post-compact re-anchor boundary for stale-frame recovery](#version-19)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -29,6 +30,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-22"></a>
+## Version 2.2: Deferred mode-selection semantics to the new execution-continuity owner
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `authority-and-scope.md` from v2.1 to v2.2.
+- Updated `design/authority-and-scope.design.md` from v2.1 to v2.2.
+- Added an explicit deferral so discussion-vs-execution mode selection and continuous-execution defaults now live in `execution-continuity-and-mode-selection.md` instead of remaining implicit here.
+- Preserved user authority, governing-basis ownership, and fresh-directive override behavior.
+
+### Summary
+Authority-and-scope now keeps its precedence role while deferring execution-mode selection semantics to the new first-class execution-continuity owner.
 
 ---
 

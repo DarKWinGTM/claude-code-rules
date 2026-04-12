@@ -1,8 +1,8 @@
 # Phase Implementation
 
-> **Current Version:** 2.7
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.7
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.9
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.9
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
 ---
@@ -167,6 +167,7 @@ Required guidance:
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
 - do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
+- if the current phase is already complete and the next phase is already the implied active path, phase-boundary continuity may continue directly instead of turning completion into a report-only stop
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks
 
 ### 10) Verification and Rollback Contract

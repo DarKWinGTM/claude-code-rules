@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.21
+> **Current Version:** 1.22
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.22 | 2026-04-12 | **[Added compact goal-review presentation support](#version-122)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.21 | 2026-04-11 | **[Added easy-to-picture phase/progress presentation support](#version-121)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.20 | 2026-04-11 | **[Removed active dependency on the suspended custom table-format owner](#version-120)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.19 | 2026-04-11 | **[Narrowed answer-presentation to defer ordinary table semantics to the central table owner](#version-119)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -40,6 +41,23 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-122"></a>
+## Version 1.22: Added compact goal-review presentation support
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `answer-presentation.md` from v1.21 to v1.22.
+- Updated `design/answer-presentation.design.md` from v1.21 to v1.22.
+- Added a compact goal-set-review trigger so the answer can briefly restore visibility of the main goal set when the current subtask is absorbing too much attention.
+- Preserved broader presentation, scanability, and compact-block behavior.
+
+### Summary
+Answer-presentation now supports a compact visible goal-review block when the reader needs the main objective set brought back into view.
 
 ---
 

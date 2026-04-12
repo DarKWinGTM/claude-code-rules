@@ -47,7 +47,7 @@
     <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
   </a>
   <a href="#-rule-files">
-    <img src="https://img.shields.io/badge/📁_Rules-36_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/📁_Rules-39_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
   <a href="#-installation">
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
@@ -79,7 +79,7 @@
 
 ## ⚡ Quick Start
 
-Use the script for your platform. Both install the same 36 active runtime rules only.
+Use the script for your platform. Both install the same 39 active runtime rules only.
 
 ### Bash — Linux / macOS
 
@@ -131,6 +131,9 @@ rule_files=(
   todo-standards.md
   unified-version-control-system.md
   zero-hallucination.md
+  high-signal-communication.md
+  execution-continuity-and-mode-selection.md
+  goal-set-review-and-priority-balance.md
 )
 
 for file in "${rule_files[@]}"; do
@@ -188,7 +191,10 @@ $ruleFiles = @(
   "tactical-strategic-programming.md",
   "todo-standards.md",
   "unified-version-control-system.md",
-  "zero-hallucination.md"
+  "zero-hallucination.md",
+  "high-signal-communication.md",
+  "execution-continuity-and-mode-selection.md",
+  "goal-set-review-and-priority-balance.md"
 )
 
 foreach ($file in $ruleFiles) {
@@ -329,7 +335,7 @@ Please:
 
 ---
 
-### 🟡 Quality & Safety (27 rules)
+### 🟡 Quality & Safety (28 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
@@ -361,11 +367,12 @@ Please:
 | [`todo-standards.md`](todo-standards.md) | Task management | Durable TODO tracking plus current-phase-first built-in task-list usage for non-trivial live execution visibility |
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, explicit live-task-list-vs-durable-TODO distinction, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, and portable-by-default package-local support assets when they are reusable source content |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
+| [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode and keeps work moving when the next path is already clear |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
 
-### 🔵 Presentation & Readability (3 rules)
+### 🔵 Presentation & Readability (5 rules)
 
 > **Improve answer structure, clarity, and visual scanability**
 
@@ -374,6 +381,8 @@ Please:
 | [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, support for using light readable tables when helpful without an active custom table-format rule, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact memory-status blocks for remembered path-scoped context, compact variable-role structures for identifier-heavy explanations, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
 | [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, continued support for comparison tables and list-first alternatives when they genuinely help explanation, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
+| [`high-signal-communication.md`](high-signal-communication.md) | High-signal response tightening | Removes low-value extra content and repeated wording without replacing the main communication-owner chains |
+| [`goal-set-review-and-priority-balance.md`](goal-set-review-and-priority-balance.md) | Goal review and priority balance | Keeps the full active goal set visible so work on A does not crowd out B and C |
 
 ---
 
@@ -387,9 +396,9 @@ Please:
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 36**
+**📊 Active Runtime Rules: 39**
 
-Latest refinement: the custom table-format experiment has been moved out of the root active rule area into `suspend/`, while general support for using tables when they genuinely help remains in the presentation and explanation owners.
+Latest refinement: the active runtime set now includes first-class owners for execution continuity/mode selection and for goal-set review/priority balance, while the custom table-format experiment remains suspended under `suspend/`.
 
 </div>
 
@@ -397,7 +406,7 @@ Latest refinement: the custom table-format experiment has been moved out of the 
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 36-rule set and describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 39-rule set and describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 
@@ -408,7 +417,7 @@ Fastest path:
 2. Run the Quick Start block exactly as shown above.
 3. Run the verification commands below.
 
-If you already cloned the repo earlier, you do **not** need to repeat the clone step. Just return to the repo root, keep the same `RULE_FILES="..."` definition from Quick Start, and rerun only the install portion against `~/.claude/rules/`.
+If you already cloned the repo earlier, you do **not** need to repeat the clone step. Just return to the repo root, keep the same Quick Start file list, and rerun only the install portion against `~/.claude/rules/`.
 
 ### 🎯 Method 2: Pick Your Rules
 
@@ -1138,8 +1147,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.4 |
-  <b>Last Updated</b>: 2026-04-09 |
+  <b>Version</b>: 9.19 |
+  <b>Last Updated</b>: 2026-04-12 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

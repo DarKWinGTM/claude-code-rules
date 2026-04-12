@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.21
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.21
+> **Current Version:** 1.22
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.22
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -159,6 +159,7 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | phase / progress explanation | what this phase is for, what this phase got, what this prepares next | short plain-language opening + concise grouped explanation |
 | full-set framing | many relevant areas, complete checklist, several review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
+| goal-set review | current subtask is absorbing too much attention and the reader needs the main goal set visible again | short `Main goals now` / `Current focus` / `Why rebalance` style block |
 | governing-basis ambiguity | multiple plausible policies/frames remain live and the answer changes depending on which one is chosen | short clarification block with compact basis options and one `Why it matters` line |
 | post-compact continuation | the answer is resuming after compaction and exact prior state may have been compressed | short re-anchor block with current objective, carried-forward facts, needs-recheck details, and next action |
 | memory-derived context | the answer materially relies on remembered path-scoped context and the reader needs to see what is remembered versus what is freshly rechecked | short memory-status block with matched path scope, provenance when relevant, and needs-recheck detail |

@@ -1,8 +1,8 @@
 # TODO Standards
 
-> **Current Version:** 2.4
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.4
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.6
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.6
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 
 ---
@@ -116,6 +116,7 @@ When the built-in task list is in use:
 - add new tasks when newly discovered work is real and non-trivial
 - keep task entries outcome-sized rather than command-sized
 - keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad
+- when execution mode remains active and no real stop gate exists, let the task list support continued execution rather than milestone-only pause/report behavior
 - do not let the task list drift into stale or vague bookkeeping
 
 ### 7) Simplicity Discipline
