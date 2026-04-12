@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.18
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 2.19
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
 
 ---
 
@@ -24,6 +24,7 @@ This model must preserve one authority system while clearly separating:
 - `phase-implementation-template.md` as the readable root-level helper
 - Claude Code's built-in task list as the live in-session execution surface for non-trivial work
 - `TODO.md` and changelog as required durable companions, but not as replacements for the phase plan itself
+- design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
 - `portable-implementation-and-hardcoding-control.md` as the semantic owner of portable-default and anti-hardcoding behavior
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
@@ -268,6 +269,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
 | Live task-vs-durable TODO distinction clarity | High |
+| Execution-discovery surface clarity during active execution | High |
 | Public onboarding/install portability | High |
 | Workstation-specific absolute paths as public defaults | 0 critical cases |
 | Source-vs-destination notation clarity | High |

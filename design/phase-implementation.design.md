@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.10
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-11)
+> **Current Version:** 2.11
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
 
 ---
 
@@ -133,6 +133,8 @@ Required guidance:
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
+- treat the current phase and `phase/SUMMARY.md` as execution-discovery surfaces when the task list alone is not enough to reveal the next unfinished slice
+- use checked implementation state alongside the phase workspace when that combination clarifies the next unfinished work more accurately
 - do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks
 

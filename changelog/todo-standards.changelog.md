@@ -1,8 +1,8 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.7
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.8
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.8 | 2026-04-12 | **[Used execution surfaces to discover next unfinished work](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.7 | 2026-04-12 | **[Kept the same task list across one active objective](#version-27)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.6 | 2026-04-12 | **[Aligned live task-list behavior to continuous execution mode](#version-26)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.5 | 2026-04-11 | **[Linked active task lists explicitly to the current phase](#version-25)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -18,6 +19,23 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-28"></a>
+## Version 2.8: Used execution surfaces to discover next unfinished work
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards.md` from v2.7 to v2.8.
+- Updated `design/todo-standards.design.md` from v2.7 to v2.8.
+- Added guidance that the current task list is the first active discovery surface for the next unfinished work within the same objective.
+- Added bounded fallback guidance that if the task list alone is insufficient, the assistant should inspect the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state before waiting for a restated user prompt.
+
+### Summary
+TODO standards now treat the task list as the first next-work discovery surface and explicitly allow bounded fallback to the broader execution surfaces when the task list alone is not enough.
 
 ---
 

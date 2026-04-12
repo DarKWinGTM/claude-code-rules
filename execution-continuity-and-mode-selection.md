@@ -1,7 +1,7 @@
 # Execution Continuity and Mode Selection
 
-> **Current Version:** 1.0
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Distinguish discussion mode from execution mode explicitly, and once work is execution-ready, continue by default instead of ending turns only to narrate progress or obvious next steps.**
+**Core Principle: Distinguish discussion mode from execution mode explicitly, and once work is execution-ready, continue by default and discover the next unfinished slice from active execution surfaces instead of ending turns only to narrate progress or obvious next steps.**
 
 This rule owns mode selection for active work and the stop/continue boundary for continuous execution. It does not replace user authority, hard-boundary safety, or wording/evidence owners.
 
@@ -38,10 +38,20 @@ Required guidance:
 Once execution mode is active and no real stop gate is present, continue the active objective by default.
 
 Required guidance:
-- continue the current objective when the next step is already implied by the active goal, phase, or task list
+- continue the current objective when the next step is already implied by the active goal, phase, task list, TODO, or checked implementation state
 - do not end a turn only to report that a milestone was reached if safe continuation still exists
 - do not pause merely to expose the next obvious task when the assistant can perform it directly
 - reporting may happen during execution, but reporting alone must not become the reason execution stops
+
+### 3.1) Active Next-Work Discovery Principle
+When execution mode remains active, the assistant should actively inspect the current execution surfaces to discover the next unfinished work instead of waiting for the user to restate it.
+
+Required guidance:
+- use the current task list first when it already expresses the active objective clearly
+- if the task list alone is insufficient, inspect the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice
+- prefer the next unfinished work that belongs to the same active objective or phase family before opening a fresh objective
+- treat design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once the work is already in execution mode
+- do not wait for a repeated `continue`/`เดินต่อ` style prompt when the same active objective still has a clear next unfinished slice and no stop gate exists
 
 ### 4) Legitimate Stop-Gate Principle
 Stop only when a real gate exists.
@@ -87,6 +97,7 @@ Apply this rule strongly when one or more of these appear:
 |--------|-----------------|-------------------|
 | explicit continue intent | user says continue, loop, keep going, proceed until done | enter or preserve execution mode unless a real stop gate exists |
 | clear active phase/task path | next task or next phase is already implied and unblocked | continue rather than ending on narration |
+| discoverable unfinished work | phase/TODO/task/checked state already reveals the next unfinished slice | discover it and continue if safe |
 | milestone-only pause drift | response reports completion and names the next task but does not execute it | continue if safe |
 | open concept/design work | user is still shaping architecture, concept, or preference | stay in discussion mode |
 | unresolved basis | multiple governing bases remain live | stop for basis selection instead of continuing blindly |
@@ -103,6 +114,7 @@ Apply this rule strongly when one or more of these appear:
 | execution inside open design discussion | implementation begins before the target is locked | keep discussion mode until the path is clear |
 | discussion-mode inertia after the path is already clear | the assistant keeps re-asking or re-narrating instead of working | switch to execution mode and continue |
 | treating obvious next work as user-choice theater | unnecessary branches stall the active objective | do the next implied step directly |
+| waiting for the user to restate the next unfinished slice even though current execution surfaces already reveal it | repeated prompts replace autonomous progress | inspect the active execution surfaces and continue directly |
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.18
+> **Current Version:** 2.19
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.19 | 2026-04-12 | **[Recognized active execution-discovery surfaces at the repository model layer](#version-219)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.18 | 2026-04-12 | **[Added same-objective live task-list continuity at the repository model layer](#version-218)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.17 | 2026-04-12 | **[Added execution-surface deferral to the new continuity and goal-review owners](#version-217)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.16 | 2026-04-10 | **[Clarified live built-in task tracking versus durable TODO tracking](#version-216)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -28,6 +29,23 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-219"></a>
+## Version 2.19: Recognized active execution-discovery surfaces at the repository model layer
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.18 to v2.19.
+- Updated `design/project-documentation-standards.design.md` from v2.18 to v2.19.
+- Added explicit repository-level wording that design, phase, TODO, task-list, and checked implementation state may all act as execution-discovery surfaces once work is already in execution mode.
+- Added a quality metric for execution-discovery surface clarity while preserving the broader repository role model.
+
+### Summary
+Project-documentation-standards now recognizes the active execution surfaces that can reveal the next unfinished work once execution mode is already underway.
 
 ---
 

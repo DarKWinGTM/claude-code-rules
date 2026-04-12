@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, and that keeps execution flowing once the target and next path are already sufficiently clear.
+Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, and that keeps execution flowing by default while also discovering the next unfinished slice when the active execution surfaces already make that path clear.
 
 ---
 
@@ -19,6 +19,7 @@ Define one first-class rule chain that decides when the assistant should remain 
 Observed failure modes:
 - the assistant reports that one milestone or phase is complete, names the next obvious task, and then stops instead of continuing
 - users must repeatedly send prompts like `เดินต่อ` or `ถ้าไม่เจอปัญหาอะไรให้ loop ต่อ` even when the next path is already clear
+- execution-ready work may still stall because the assistant waits for the user to restate the next unfinished slice even though phase/TODO/task/design/checked implementation surfaces already reveal it
 - open design discussion and execution-ready work are not separated sharply enough, so the assistant either executes too early or hesitates too long
 - phase boundaries become reporting pauses even when no real blocker or approval gate exists
 
@@ -37,16 +38,19 @@ Discussion mode protects open concept/design work from premature execution.
 ### 3.3 Continuous-Execution Default Principle
 Execution mode should continue by default when no real stop gate exists.
 
-### 3.4 Legitimate Stop-Gate Principle
+### 3.4 Active Next-Work Discovery Principle
+Execution mode should actively inspect the current execution surfaces to discover the next unfinished slice when the task list alone does not already make it obvious.
+
+### 3.5 Legitimate Stop-Gate Principle
 Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, or actual completion.
 
-### 3.5 Phase-Boundary Continuity Principle
+### 3.6 Phase-Boundary Continuity Principle
 Closing one slice should not force a pause if the next slice is already the implied active path.
 
-### 3.6 Reporting-In-Flow Principle
+### 3.7 Reporting-In-Flow Principle
 Progress reporting should accompany execution rather than replacing it.
 
-### 3.7 Mode-Recheck Principle
+### 3.8 Mode-Recheck Principle
 The system should re-check mode when the decision surface materially changes, but not let ceremony or milestone narration reset execution mode by default.
 
 ---
@@ -76,6 +80,7 @@ Is a real stop gate active?
 This chain owns:
 - discussion-mode versus execution-mode selection
 - continuous-execution default behavior
+- active next-work discovery from current execution surfaces once execution mode is already active
 - legitimate stop-gate classification at the execution-flow level
 - the rule that milestone reporting does not itself force a pause
 
@@ -92,6 +97,7 @@ It does not replace:
 
 This chain succeeds when:
 - explicit continue intent no longer requires repeated re-prompting in execution-ready work
+- execution-ready work can discover the next unfinished slice from task/phase/TODO/design/checked-state surfaces when that path is already visible
 - open concept/design discussion remains protected from premature execution
 - phase/milestone completion does not create unnecessary stop/report turns
 - real blockers still pause execution correctly

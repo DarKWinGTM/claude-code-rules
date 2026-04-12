@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 6.3
+> **Current Version:** 6.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -75,15 +75,15 @@ This repository uses one deterministic governance model:
 | 19 | memory-governance-and-session-boundary.md | memory-governance-and-session-boundary.design.md v1.0 | First-class owner for memory role boundaries, root `MEMORY.md` index-only behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive-inactive lifecycle semantics |
 | 20 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
 | 21 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and an inspect-first case for duplicate-looking or stale team-agent presence |
-| 22 | phase-implementation.md | phase-implementation.design.md v2.10 | First-class semantic standard for phased execution planning with early phase-establishment bridge, current-phase-first live task-list linkage, explicit phase-to-patch linkage when patch is in scope, direct phase-boundary continuation when the next path is already active, and same-objective task-list continuity across repeated slices |
-| 23 | project-documentation-standards.md | project-documentation-standards.design.md v2.18 | Repository-level document-role model plus startup artifact gate, explicit patch-linkage verification for phased work, a clarified live-task-list-vs-durable-TODO tracking split, same-objective live task-list continuity at the repository-model layer, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance by default, portable-by-default package-local support assets when they are reusable source content, support-layer modeling for the optional `plugin/**` extension package area, and execution-surface deferral to the new continuity and goal-review owners |
+| 22 | phase-implementation.md | phase-implementation.design.md v2.11 | First-class semantic standard for phased execution planning with early phase-establishment bridge, current-phase-first live task-list linkage, explicit phase-to-patch linkage when patch is in scope, same-objective task-list continuity across repeated slices, and bounded next-work discovery from the active phase workspace when the task list alone is insufficient |
+| 23 | project-documentation-standards.md | project-documentation-standards.design.md v2.19 | Repository-level document-role model plus startup artifact gate, explicit patch-linkage verification for phased work, a clarified live-task-list-vs-durable-TODO tracking split, same-objective live task-list continuity at the repository-model layer, explicit execution-discovery surface recognition during active execution, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance by default, portable-by-default package-local support assets when they are reusable source content, and support-layer modeling for the optional `plugin/**` extension package area |
 | 24 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
 | 25 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
 | 26 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |
 | 27 | safe-file-reading.md | safe-file-reading.design.md v1.3 | Plan-before-read file safety |
 | 28 | safe-terminal-output.md | safe-terminal-output.design.md v1.3 | Plan-before-execute output safety |
 | 29 | strict-file-hygiene.md | strict-file-hygiene.design.md v1.3 | Prevent junk files and duplicates while deferring to required governed startup artifacts and avoiding machine-local hardcoded defaults in reusable artifacts |
-| 30 | todo-standards.md | todo-standards.design.md v2.7 | Durable TODO governance with startup-establishment bridge, current-phase-first built-in task-list usage for non-trivial live execution tracking, same-objective reuse/append retention, completed-task visibility until closure, and support for continued execution when the active path remains clear |
+| 30 | todo-standards.md | todo-standards.design.md v2.8 | Durable TODO governance with startup-establishment bridge, current-phase-first built-in task-list usage for non-trivial live execution tracking, same-objective reuse/append retention, completed-task visibility until closure, and task-list-first next-work discovery with bounded fallback to broader execution surfaces |
 | 31 | runtime-topology-control.md | runtime-topology-control.design.md v1.1 | Bounded runtime mutation posture with inspect-before-mutate discipline |
 | 32 | unified-version-control-system.md | unified-version-control-system.design.md v1.2 | UDVC-1 controller-level governance view |
 | 33 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.2 | Tactical entry, strategic target, convergence path, strategic closure doctrine, and anti-hardcoding tactical-boundary discipline |
@@ -91,7 +91,7 @@ This repository uses one deterministic governance model:
 | 35 | portable-implementation-and-hardcoding-control.md | portable-implementation-and-hardcoding-control.design.md v1.2 | First-class owner for portable implementation defaults, portable-by-default support/package source artifacts, public onboarding/install portability, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline |
 | 36 | zero-hallucination.md | zero-hallucination.design.md v1.3 | Verified information only with fact/inference/hypothesis separation and scoped non-finding discipline |
 | 37 | high-signal-communication.md | high-signal-communication.design.md v1.1 | Bounded supplementary high-signal filtering that trims low-value extra content and repeated wording while deferring required-content ownership to the existing communication, explanation, and presentation chains |
-| 38 | execution-continuity-and-mode-selection.md | execution-continuity-and-mode-selection.design.md v1.0 | First-class owner for discussion-vs-execution mode selection, continuous-execution defaults, legitimate stop gates, and the boundary that milestone reporting must not replace continued execution |
+| 38 | execution-continuity-and-mode-selection.md | execution-continuity-and-mode-selection.design.md v1.1 | First-class owner for discussion-vs-execution mode selection, continuous-execution defaults, active next-work discovery from execution surfaces, legitimate stop gates, and the boundary that milestone reporting must not replace continued execution |
 | 39 | goal-set-review-and-priority-balance.md | goal-set-review-and-priority-balance.design.md v1.0 | First-class owner for continuous goal-set review, structure-first priority balance, and protection against single-subtask fixation so work on A does not crowd out B and C |
 
 ### 3.2 Category View

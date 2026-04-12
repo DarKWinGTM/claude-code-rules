@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.7
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-11)
+> **Current Version:** 2.8
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
 
 ---
 
@@ -126,6 +126,8 @@ When the built-in task list is in use:
 - mark a task `completed` as soon as that slice is actually done
 - add new tasks when newly discovered work is real and non-trivial
 - keep task entries outcome-sized rather than command-sized
+- treat the task list as the first active source for discovering the next unfinished work within the same objective
+- if the task list alone is insufficient, use the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
 - keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad
 - do not let the task list drift into stale or vague bookkeeping
 

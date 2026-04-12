@@ -1,7 +1,7 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.18
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.10
+> **Current Version:** 1.19
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.11
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Status:** Mixed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains thirty-four rollout families:
+The current workspace contains thirty-five rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -49,6 +49,7 @@ The current workspace contains thirty-four rollout families:
 - major phase `032` = high-signal communication promotion and sync rollout
 - major phase `033` = execution continuity and goal-set review rollout
 - major phase `034` = task-list continuity and objective-boundary retention rollout
+- major phase `035` = next-work discovery from execution surfaces rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -137,6 +138,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | `design/execution-continuity-and-mode-selection.design.md` + `design/goal-set-review-and-priority-balance.design.md` + `design/design.md` | `patch/continuous-execution-and-goal-set-review.patch.md` | Integrate companion rules and sync master docs/install | Repo-level governance and installed runtime state reflect the new continuity and goal-review owners coherently |
 | 034 | 034-01 | `phase/phase-034-01-refine-task-list-continuity.md` | `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/artifact-initiation-control.design.md` + `design/project-documentation-standards.design.md` | `patch/task-list-continuity-and-objective-boundary-retention.patch.md` | Refine task-list continuity so same-objective work reuses the current task-list surface | One semantic owner set now keeps the same task list across one active objective |
 | 034 | 034-02 | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | `design/design.md` + touched companion designs | `patch/task-list-continuity-and-objective-boundary-retention.patch.md` | Sync master docs/install for the task-list continuity wave | Repo-level governance and installed runtime state reflect the new same-objective task-list retention model |
+| 035 | 035-01 | `phase/phase-035-01-refine-next-work-discovery-from-execution-surfaces.md` | `design/execution-continuity-and-mode-selection.design.md` + `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/project-documentation-standards.design.md` | `patch/next-work-discovery-from-execution-surfaces.patch.md` | Refine next-work discovery so execution-ready work can derive the next unfinished slice from active execution surfaces | One bounded owner set now makes next-work discovery part of execution continuity instead of repeated user prompting |
+| 035 | 035-02 | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | `design/design.md` + touched companion designs | `patch/next-work-discovery-from-execution-surfaces.patch.md` | Sync master docs/install for the next-work discovery wave | Repo-level governance and installed runtime state reflect the bounded next-work discovery model |
 
 ---
 
@@ -222,6 +225,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 033-03: integrate companion rules and sync master docs/install for the new continuity and goal-review owners
   → 034-01: refine task-list continuity so same-objective work reuses the current task-list surface instead of replacing it
   → 034-02: sync master docs/install for the same-objective task-list retention wave
+  → 035-01: refine next-work discovery so execution-ready work can derive the next unfinished slice from active execution surfaces
+  → 035-02: sync master docs/install for the next-work discovery wave
   → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, same-objective task-list continuity and retention semantics, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
@@ -309,6 +314,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Completed | None | Approved As-Is | companion-rule integration, master-surface sync, and runtime-install parity completed for the new continuity and goal-review owners |
 | 034 | 034-01 | `phase/phase-034-01-refine-task-list-continuity.md` | Completed | None | Approved As-Is | same-objective task-list continuity semantics added across the task-list owner set |
 | 034 | 034-02 | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the task-list continuity wave |
+| 035 | 035-01 | `phase/phase-035-01-refine-next-work-discovery-from-execution-surfaces.md` | Completed | None | Approved As-Is | next-work discovery semantics added across the bounded owner set |
+| 035 | 035-02 | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the next-work discovery wave |
 
 ---
 
@@ -394,7 +401,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 033 | 033-03 | Completed | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Integrate companion rules and sync master docs/install for the new continuity and goal-review owners | `033-02` |
 | 034 | 034-01 | Completed | `phase/phase-034-01-refine-task-list-continuity.md` | Refine task-list continuity so same-objective work reuses the current task-list surface | none |
 | 034 | 034-02 | Completed | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | Sync master docs/install for the same-objective task-list retention wave | `034-01` |
-| 033 | 033-01 | Completed | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Create the first-class execution-continuity owner for discussion-vs-execution mode selection and continuous execution defaults | none |
+| 035 | 035-01 | Completed | `phase/phase-035-01-refine-next-work-discovery-from-execution-surfaces.md` | Refine next-work discovery so execution-ready work can derive the next unfinished slice from active execution surfaces | none |
+| 035 | 035-02 | Completed | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | Sync master docs/install for the next-work discovery wave | `035-01` |
 | 033 | 033-02 | Completed | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Create the first-class goal-review owner for continuous goal-set visibility and priority balance | `033-01` |
 | 033 | 033-03 | Completed | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Integrate companion rules and sync master docs/install for the new continuity and goal-review owners | `033-02` |
 
@@ -402,9 +410,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, and the plain aligned no-frame table-style refinement in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, and the plain aligned no-frame table-style refinement after the touched chains are aligned.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, reference-first compact review, direct human-readable wording, rules-first-over-memory, purpose-first communication, compact-table / list-first, memory-governance / session-boundary, task-list-first execution-tracking, and plain aligned no-frame table-style changes without broadening ownership boundaries unnecessarily.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, and the next-work discovery refinement in dated history until final review is complete.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, and the next-work discovery refinement after the touched chains are aligned.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, reference-first compact review, direct human-readable wording, rules-first-over-memory, purpose-first communication, compact-table / list-first, memory-governance / session-boundary, task-list-first execution-tracking, plain aligned no-frame table-style, and next-work discovery changes without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -437,6 +445,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the memory-governance / session-boundary refinement exists as a bounded `026` family with explicit patch linkage, a new first-class memory-governance owner, narrow companion-owner integration, synchronized master-governance surfaces, and an explicit governance-first / migration-later boundary
 - the task-list-first execution-tracking refinement exists as a bounded `027` family with explicit patch linkage, owner-set refinement across tracking/startup/documentation surfaces, synchronized master-governance surfaces, and preserved distinction between live built-in task tracking and durable `TODO.md` tracking
 - the plain aligned no-frame table-style refinement exists as a bounded `028` family with explicit patch linkage, owner-set refinement across presentation/explanation surfaces, synchronized master-governance surfaces, and preserved distinction between table style correction and table-frequency reduction
+- the next-work discovery refinement exists as a bounded `035` family with explicit patch linkage, owner-set refinement across continuity/task-list/phase/repository-model surfaces, synchronized master-governance surfaces, and preserved stop-gate / same-objective boundaries
 
 ---
 

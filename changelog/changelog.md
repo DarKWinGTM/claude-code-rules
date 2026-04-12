@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.20
+> **Current Version:** 9.21
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.21 | 2026-04-12 | **[Added next-work discovery from execution surfaces](#version-921)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.20 | 2026-04-12 | **[Added same-objective task-list continuity and retention](#version-920)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.19 | 2026-04-12 | **[Added first-class execution continuity and goal-set review owners](#version-919)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.18 | 2026-04-12 | **[Promoted high-signal communication into the active runtime rule set](#version-918)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -56,6 +57,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-921"></a>
+## Version 9.21: Added next-work discovery from execution surfaces
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `execution-continuity-and-mode-selection` from v1.0 to v1.1 so execution continuity now includes active next-work discovery from execution surfaces.
+- Updated `todo-standards` from v2.7 to v2.8 so the task list is now explicitly the first next-work discovery surface with bounded fallback to active phase / `phase/SUMMARY.md` / `TODO.md` / checked implementation state.
+- Updated `phase-implementation` from v2.10 to v2.11 so the active phase workspace now acts as a bounded discovery surface when the task list alone is insufficient.
+- Updated `project-documentation-standards` from v2.18 to v2.19 so the repository model now explicitly recognizes execution-discovery surfaces during active execution.
+- Added bounded `patch/next-work-discovery-from-execution-surfaces.patch.md` plus `phase-035-01` and `phase-035-02` artifacts.
+- Updated master design/README/TODO/changelog/phase surfaces and kept the active runtime rule count unchanged at 39.
+
+### Summary
+The RULES repository now lets execution-ready work discover the next unfinished slice from the active execution surfaces instead of waiting for the user to restate it.
 
 ---
 

@@ -1,8 +1,8 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.10
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.11
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.11 | 2026-04-12 | **[Used phase surfaces as bounded next-work discovery inputs](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-12 | **[Kept same-objective phase slices on one task-list surface](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-12 | **[Allowed direct phase-boundary continuation when the next path is already active](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-11 | **[Added current-phase-first live task-list linkage](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -22,6 +23,23 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-211"></a>
+## Version 2.11: Used phase surfaces as bounded next-work discovery inputs
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `phase-implementation.md` from v2.10 to v2.11.
+- Updated `design/phase-implementation.design.md` from v2.10 to v2.11.
+- Added bounded guidance that the current phase and `phase/SUMMARY.md` act as execution-discovery surfaces when the task list alone does not reveal the next unfinished slice clearly enough.
+- Added bounded guidance that checked implementation state may be used alongside the phase workspace when that combination clarifies the next unfinished work more accurately.
+
+### Summary
+Phase-implementation now helps discover the next unfinished slice from the active phase workspace instead of treating the task list as the only live discovery surface.
 
 ---
 
