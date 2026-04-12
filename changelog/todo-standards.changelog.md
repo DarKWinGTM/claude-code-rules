@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.10
+> **Current Version:** 2.11
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.11 | 2026-04-13 | **[Made session-held task visibility more explicit in live task updates](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-13 | **[Clarified request-style handoff naming in the shared task board](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-13 | **[Deferred multi-session shared-board coordination to the new coordination owner](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-12 | **[Used execution surfaces to discover next unfinished work](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -21,6 +22,23 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-211"></a>
+## Version 2.11: Made session-held task visibility more explicit in live task updates
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards.md` from v2.10 to v2.11.
+- Updated `design/todo-standards.design.md` from v2.10 to v2.11.
+- Added explicit guidance that session-held, handoff, and blocked-on-session tasks should identify the relevant session visibly enough for fast scanability.
+- Preserved request-style handoff naming and receiving-side remap behavior.
+
+### Summary
+TODO standards now make session-held work easier to identify in the live task board instead of leaving that visibility too implicit.
 
 ---
 

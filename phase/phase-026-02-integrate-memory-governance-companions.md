@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 026-02
-> **Status:** In Progress
+> **Status:** Completed
 > **Design References:** [../design/memory-governance-and-session-boundary.design.md](../design/memory-governance-and-session-boundary.design.md), [../design/authority-and-scope.design.md](../design/authority-and-scope.design.md), [../design/accurate-communication.design.md](../design/accurate-communication.design.md), [../design/evidence-grounded-burden-of-proof.design.md](../design/evidence-grounded-burden-of-proof.design.md), [../design/answer-presentation.design.md](../design/answer-presentation.design.md)
 > **Patch References:** [../patch/memory-governance-and-session-boundary.patch.md](../patch/memory-governance-and-session-boundary.patch.md)
 
@@ -24,12 +24,12 @@ A new first-class memory-governance chain is not sufficient by itself. The adjac
 
 ## Action points / execution checklist
 
-- [ ] update `authority-and-scope` with narrow memory-applicability / stale-branch boundaries
-- [ ] update `accurate-communication` with memory-derived-context disclosure wording
-- [ ] update `evidence-grounded-burden-of-proof` with memory-aware evidence/recheck handling
-- [ ] update `answer-presentation` with a compact memory-status / scope-re-anchor presentation shape
-- [ ] update touched design/changelog artifacts for the companion owner chains
-- [ ] keep the integration narrow and defer deeper ownership to `memory-governance-and-session-boundary`
+- [x] update `authority-and-scope` with narrow memory-applicability / stale-branch boundaries
+- [x] update `accurate-communication` with memory-derived-context disclosure wording
+- [x] update `evidence-grounded-burden-of-proof` with memory-aware evidence/recheck handling
+- [x] update `answer-presentation` with a compact memory-status / scope-re-anchor presentation shape
+- [x] update touched design/changelog artifacts for the companion owner chains
+- [x] keep the integration narrow and defer deeper ownership to `memory-governance-and-session-boundary`
 
 ## Out of scope
 
@@ -57,11 +57,11 @@ A new first-class memory-governance chain is not sufficient by itself. The adjac
 
 ## Verification
 
-- [ ] `authority-and-scope` defers memory applicability semantics to the new chain while preserving RULES-first and stale-branch boundaries
-- [ ] `accurate-communication` distinguishes memory-derived historical context from current verified fact
-- [ ] `evidence-grounded-burden-of-proof` treats memory-derived context as different from observed local fact
-- [ ] `answer-presentation` gains one compact visible pattern for memory status / matched scope / needs-recheck detail
-- [ ] companion chains remain narrow integrations rather than duplicate owners
+- [x] `authority-and-scope` defers memory applicability semantics to the new chain while preserving RULES-first and stale-branch boundaries
+- [x] `accurate-communication` distinguishes memory-derived historical context from current verified fact
+- [x] `evidence-grounded-burden-of-proof` treats memory-derived context as different from observed local fact
+- [x] `answer-presentation` gains one compact visible pattern for memory status / matched scope / needs-recheck detail
+- [x] companion chains remain narrow integrations rather than duplicate owners
 
 ## Risks / rollback notes
 
@@ -76,6 +76,6 @@ A new first-class memory-governance chain is not sufficient by itself. The adjac
 
 ## Exit criteria
 
-- [ ] adjacent owners acknowledge the new memory-governance contract coherently
-- [ ] no companion owner re-owns the memory taxonomy unnecessarily
-- [ ] the touched companion chains remain aligned with the new first-class owner
+- [x] adjacent owners acknowledge the new memory-governance contract coherently
+- [x] no companion owner re-owns the memory taxonomy unnecessarily
+- [x] the touched companion chains remain aligned with the new first-class owner

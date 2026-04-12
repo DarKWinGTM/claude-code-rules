@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.21
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
+> **Current Version:** 2.22
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
 
@@ -292,6 +292,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side and destination/runtime reference consistency |
 | [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking for non-trivial work |
+| [shared-execution-coordination.md](../shared-execution-coordination.md) | Shared-board multi-session coordination semantics, visible session identity, lifecycle/retention behavior, request-layer naming, and receiving-side phase ownership boundary |
 
 ---
 

@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.23
+> **Current Version:** 9.24
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.24 | 2026-04-13 | **[Refined shared-board visibility, lifecycle, retention, and optional memsearch guidance](#version-924)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.23 | 2026-04-13 | **[Separated handoff request naming from receiving-side phase ownership](#version-923)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.22 | 2026-04-13 | **[Created shared execution coordination as a first-class rule chain](#version-922)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.21 | 2026-04-12 | **[Added next-work discovery from execution surfaces](#version-921)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -59,6 +60,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-924"></a>
+## Version 9.24: Refined shared-board visibility, lifecycle, retention, and optional memsearch guidance
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `shared-execution-coordination` from v1.1 to v1.2 so session-held work is more visibly distinguishable, handoff lifecycle states are more explicit, retention depends more clearly on task class/state, and optional memsearch use is explained after stronger execution surfaces identify the continuation target.
+- Updated `todo-standards` from v2.10 to v2.11 so session-held, handoff, and blocked-on-session tasks now have clearer visible-session guidance in the live task board.
+- Updated `memory-governance-and-session-boundary` from v1.1 to v1.2 so optional recall extensions are now explicitly positioned after stronger checked execution surfaces rather than beside or above them.
+- Added bounded `patch/shared-board-visibility-retention-and-memsearch-refinement.patch.md` plus `phase-038-01` and `phase-038-02` artifacts.
+- Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
+
+### Summary
+The RULES repository now gives shared execution boards clearer visible session identity, more explicit handoff lifecycle and retention behavior, and a more concrete optional memsearch operating model without making optional tooling authoritative or required.
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 014-01
-> **Status:** Implemented - Pending Review
+> **Status:** Completed
 > **Design References:** [../design/custom-agent-selection-priority.design.md](../design/custom-agent-selection-priority.design.md), [../design/authority-and-scope.design.md](../design/authority-and-scope.design.md), [../design/operational-failure-handling.design.md](../design/operational-failure-handling.design.md), [../design/accurate-communication.design.md](../design/accurate-communication.design.md)
 > **Patch References:** [../patch/team-agent-dedup-and-stale-presence-boundary.patch.md](../patch/team-agent-dedup-and-stale-presence-boundary.patch.md)
 

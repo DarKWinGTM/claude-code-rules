@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 026-04
-> **Status:** In Progress
+> **Status:** Completed
 > **Design References:** [../design/memory-governance-and-session-boundary.design.md](../design/memory-governance-and-session-boundary.design.md), [../design/authority-and-scope.design.md](../design/authority-and-scope.design.md), [../design/accurate-communication.design.md](../design/accurate-communication.design.md), [../design/evidence-grounded-burden-of-proof.design.md](../design/evidence-grounded-burden-of-proof.design.md), [../design/answer-presentation.design.md](../design/answer-presentation.design.md), [../design/design.md](../design/design.md)
 > **Patch References:** [../patch/memory-governance-and-session-boundary.patch.md](../patch/memory-governance-and-session-boundary.patch.md)
 
@@ -24,12 +24,12 @@ This wave changes a sensitive governance area that affects memory scope, authori
 
 ## Action points / execution checklist
 
-- [ ] run a final consistency sweep across the new chain, companion chains, master docs, phase files, patch artifact, and installed runtime copies
-- [ ] confirm root `MEMORY.md` active-index-only semantics are expressed coherently across the touched owner set
-- [ ] confirm path-primary / session-provenance-only semantics are expressed coherently across the touched owner set
-- [ ] confirm archive-inactive semantics are expressed coherently across the touched owner set
-- [ ] confirm the wave is explicitly governance-only and does not claim actual live-memory migration already happened
-- [ ] record any remaining follow-up as a later wave instead of hiding it inside the completion claim
+- [x] run a final consistency sweep across the new chain, companion chains, master docs, phase files, patch artifact, and installed runtime copies
+- [x] confirm root `MEMORY.md` active-index-only semantics are expressed coherently across the touched owner set
+- [x] confirm path-primary / session-provenance-only semantics are expressed coherently across the touched owner set
+- [x] confirm archive-inactive semantics are expressed coherently across the touched owner set
+- [x] confirm the wave is explicitly governance-only and does not claim actual live-memory migration already happened
+- [x] record any remaining follow-up as a later wave instead of hiding it inside the completion claim
 
 ## Out of scope
 
@@ -59,10 +59,10 @@ This wave changes a sensitive governance area that affects memory scope, authori
 
 ## Verification
 
-- [ ] new chain, companion owners, patch, phase, README, TODO, design inventory, and master changelog all describe the same bounded wave
-- [ ] source/install parity is confirmed for the touched runtime rules
-- [ ] no touched surface claims actual `/memory` migration occurred in wave `026`
-- [ ] follow-up migration work is clearly left for a later wave if still needed
+- [x] new chain, companion owners, patch, phase, README, TODO, design inventory, and master changelog all describe the same bounded wave
+- [x] source/install parity is confirmed for the touched runtime rules
+- [x] no touched surface claims actual `/memory` migration occurred in wave `026`
+- [x] follow-up migration work is clearly left for a later wave if still needed
 
 ## Risks / rollback notes
 
@@ -77,6 +77,6 @@ This wave changes a sensitive governance area that affects memory scope, authori
 
 ## Exit criteria
 
-- [ ] wave `026` passes a final consistency and parity sweep
-- [ ] the repository is explicit that the governance contract now exists
-- [ ] the repository is equally explicit that live-memory migration is still a later step
+- [x] wave `026` passes a final consistency and parity sweep
+- [x] the repository is explicit that the governance contract now exists
+- [x] the repository is equally explicit that live-memory migration is still a later step

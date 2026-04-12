@@ -1,7 +1,7 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,9 +10,27 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-04-13 | **[Clarified how optional recall extensions should be used after stronger execution surfaces](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-13 | **[Added optional extension recall boundary for memsearch-style layers](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-09 | **[Created first-class memory-governance-and-session-boundary rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Clarified how optional recall extensions should be used after stronger execution surfaces
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `memory-governance-and-session-boundary.md` from v1.1 to v1.2.
+- Updated `design/memory-governance-and-session-boundary.design.md` from v1.1 to v1.2.
+- Added explicit guidance that optional recall extensions may accelerate recall after the relevant execution target is identified from stronger coordination surfaces.
+- Added explicit guidance that optional recall output must not outrank checked task/phase/design/implementation evidence when those stronger surfaces already settle the active meaning.
+
+### Summary
+Memory-governance now explains how optional recall extensions such as memsearch should be used after stronger execution surfaces have already identified the relevant continuation target.
 
 ---
 

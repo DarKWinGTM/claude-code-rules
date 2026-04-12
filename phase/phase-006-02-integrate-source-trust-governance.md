@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 006-02
-> **Status:** Implemented - Pending Review
+> **Status:** Completed
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Design References:** [../design/external-verification-and-source-trust.design.md](../design/external-verification-and-source-trust.design.md), [../design/zero-hallucination.design.md](../design/zero-hallucination.design.md), [../design/evidence-grounded-burden-of-proof.design.md](../design/evidence-grounded-burden-of-proof.design.md)
 > **Patch References:** [../patch/external-verification-and-source-trust.patch.md](../patch/external-verification-and-source-trust.patch.md)
@@ -25,12 +25,12 @@ A new first-class rule is not sufficient by itself. The surrounding repository m
 
 ## Reviewer Checklist
 
-- [ ] master design inventory includes the new chain
-- [ ] README inventory and explanation include the new chain
-- [ ] master changelog records the rollout
-- [ ] TODO tracks the rollout cleanly
-- [ ] phase summary records the new 006 family
-- [ ] adjacent chains are only integrated narrowly rather than rewritten broadly
+- [x] master design inventory includes the new chain
+- [x] README inventory and explanation include the new chain
+- [x] master changelog records the rollout
+- [x] TODO tracks the rollout cleanly
+- [x] phase summary records the new 006 family
+- [x] adjacent chains are only integrated narrowly rather than rewritten broadly
 
 ## Verification
 

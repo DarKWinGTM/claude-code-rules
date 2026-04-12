@@ -1,7 +1,7 @@
 # Changelog - Shared Execution Coordination
 
 > **Parent Document:** [../shared-execution-coordination.md](../shared-execution-coordination.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,9 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-04-13 | **[Added visible session identity, handoff lifecycle, retention matrix, and memsearch operating guidance](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-13 | **[Separated handoff request naming from receiving-side phase ownership](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-13 | **[Created first-class shared execution coordination rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new coordination owner for multi-session shared execution boards, session lease/handoff semantics, retention/aging policy, and optional memsearch / future optional peer-messaging boundaries | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Added visible session identity, handoff lifecycle, retention matrix, and memsearch operating guidance
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `shared-execution-coordination.md` from v1.1 to v1.2.
+- Updated `design/shared-execution-coordination.design.md` from v1.1 to v1.2.
+- Added a visible session identity principle so session-held work is distinguishable from shared/open tasks at scan time.
+- Added a handoff lifecycle principle covering requested / accepted / remapped / in_progress / completed / blocked / returned semantics.
+- Added a retention matrix principle so cleanup behavior is driven by task class and coordination state rather than one blanket clear policy.
+- Added deeper memsearch operating guidance so optional recall is used as a recall accelerator after stronger execution surfaces identify the continuation target.
+
+### Summary
+Shared execution coordination now has clearer visible session-id policy, handoff lifecycle semantics, retention policy, and optional memsearch operating guidance for real multi-session execution boards.
 
 ---
 

@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.21
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.21
+> **Current Version:** 2.22
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.22
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -216,7 +216,8 @@ Required guidance:
 | [phase-implementation.md](phase-implementation.md) v2.13 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](document-consistency.md) v1.6 | Source-side and destination/runtime reference consistency |
-| [todo-standards.md](todo-standards.md) v2.10 | TODO structure standards plus startup-establishment bridge |
+| [todo-standards.md](todo-standards.md) v2.11 | TODO structure standards plus startup-establishment bridge |
+| [shared-execution-coordination.md](shared-execution-coordination.md) v1.2 | Shared-board multi-session coordination semantics, visible session identity, lifecycle/retention behavior, request-layer naming, and receiving-side phase ownership boundary |
 
 ---
 

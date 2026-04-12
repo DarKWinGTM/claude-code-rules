@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 1.2
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
 
@@ -61,6 +61,16 @@ Observed failure modes this design intends to close:
 - changing the existing live memory directory layout in the same wave that creates the governance contract
 - low-level Claude Code internals or undocumented recursive loader behavior
 - general communication, evidence, or layout rules except where those adjacent chains need narrow integration updates
+
+### 3.2.1 Optional Extension Recall Boundary
+Optional recall extensions such as memsearch may improve continuity when available, but they do not become required infrastructure or authority by existing.
+
+Required behavior:
+- treat optional recall extensions as supplemental context bridges rather than semantic truth
+- when available, they may accelerate recall after the relevant execution target has already been identified from stronger coordination surfaces
+- optional recall output must not outrank checked task/phase/design/implementation evidence when those stronger surfaces already settle the active meaning
+- if an optional recall extension is unavailable, fall back to native memory plus checked execution surfaces
+- coordination ownership for when/how optional recall bridges are used should defer to `shared-execution-coordination.md`
 
 ### 3.3 Boundary Principle
 This chain owns **what memory means, how memory scope applies, and how memory should be organized semantically**.

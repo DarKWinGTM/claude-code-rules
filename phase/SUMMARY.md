@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
-> **Status:** Mixed historical review state
+> **Status:** Completed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains thirty-seven rollout families:
+The current workspace contains thirty-eight rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -52,6 +52,7 @@ The current workspace contains thirty-seven rollout families:
 - major phase `035` = next-work discovery from execution surfaces rollout
 - major phase `036` = shared execution coordination rollout
 - major phase `037` = handoff request-vs-receiving-phase boundary rollout
+- major phase `038` = shared-board visibility, retention, and memsearch operating-detail rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -146,6 +147,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 036 | 036-02 | `phase/phase-036-02-integrate-coordination-companions-and-sync.md` | `design/design.md` + touched companion designs | `patch/shared-execution-coordination.patch.md` | Integrate companion deferrals, sync master docs, and restore runtime parity for the new coordination owner | Repo-level governance and installed runtime state reflect the new coordination-owner model |
 | 037 | 037-01 | `phase/phase-037-01-refine-handoff-request-vs-execution-layer.md` | `design/shared-execution-coordination.design.md` + `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/project-documentation-standards.design.md` | `patch/handoff-request-vs-receiving-phase-boundary.patch.md` | Refine handoff naming so request-layer titles stay distinct from receiving-side execution phase ownership | Shared task boards stop leaking sender phase labels into receiving-side execution identity by default |
 | 037 | 037-02 | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | `design/design.md` + touched companion designs | `patch/handoff-request-vs-receiving-phase-boundary.patch.md` | Sync master docs/install for the handoff layer refinement wave | Repo-level governance and installed runtime state reflect the request-layer vs receiving-phase boundary |
+| 038 | 038-01 | `phase/phase-038-01-refine-shared-board-visibility-retention-and-memsearch.md` | `design/shared-execution-coordination.design.md` + `design/todo-standards.design.md` + `design/memory-governance-and-session-boundary.design.md` | `patch/shared-board-visibility-retention-and-memsearch-refinement.patch.md` | Refine visible session identity, lifecycle, retention matrix, and optional memsearch operating detail for shared boards | Shared execution boards become easier to scan, more lifecycle-explicit, and more explicit about optional recall-layer behavior |
+| 038 | 038-02 | `phase/phase-038-02-sync-shared-board-operating-detail-surfaces.md` | `design/design.md` + touched companion designs | `patch/shared-board-visibility-retention-and-memsearch-refinement.patch.md` | Sync master docs/install for the shared-board operating-detail refinement wave | Repo-level governance and installed runtime state reflect the refined visible-session / lifecycle / retention / memsearch model |
 
 ---
 
@@ -237,6 +240,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 036-02: integrate companion deferrals, sync master docs/install, and restore runtime parity for the coordination-owner wave
   → 037-01: refine handoff naming so request-layer titles stay distinct from receiving-side execution phase ownership
   → 037-02: sync master docs/install for the handoff layer refinement wave
+  → 038-01: refine visible session identity, lifecycle, retention matrix, and optional memsearch operating detail for shared boards
+  → 038-02: sync master docs/install for the shared-board operating-detail refinement wave
   → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, same-objective task-list continuity and retention semantics, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
@@ -258,78 +263,80 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 004 | 004-01 | `phase/phase-004-01-create-artifact-initiation-rule.md` | Approved | None | Approved As-Is | none |
 | 004 | 004-02 | `phase/phase-004-02-realign-startup-governance.md` | Approved | None | Approved As-Is | none |
 | 004 | 004-03 | `phase/phase-004-03-sync-master-docs-and-history.md` | Approved | None | Approved As-Is | none |
-| 005 | 005-01 | `phase/phase-005-01-harden-phase-patch-linkage.md` | Implemented - Pending Review | Review Pending | Awaiting Review | narrow linkage refinement applied |
-| 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs/history synchronized |
-| 006 | 006-01 | `phase/phase-006-01-create-external-verification-rule.md` | Implemented - Pending Review | Review Pending | Awaiting Review | new external verification owner created |
-| 006 | 006-02 | `phase/phase-006-02-integrate-source-trust-governance.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master source-trust integration completed |
-| 007 | 007-01 | `phase/phase-007-01-create-custom-agent-selection-rule.md` | Implemented - Pending Review | Review Pending | Awaiting Review | new custom-agent selection owner created |
-| 007 | 007-02 | `phase/phase-007-02-integrate-agent-selection-governance.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master agent-selection integration completed |
-| 008 | 008-01 | `phase/phase-008-01-create-portable-implementation-rule.md` | Implemented - Pending Review | Review Pending | Awaiting Review | new portable-implementation owner created |
-| 008 | 008-02 | `phase/phase-008-02-integrate-hardcoding-governance.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master integration wave underway |
-| 008 | 008-03 | `phase/phase-008-03-deepen-portability-integration.md` | Implemented - Pending Review | Review Pending | Awaiting Review | deeper adjacent integration wave underway |
-| 009 | 009-01 | `phase/phase-009-01-audit-continuation-vs-interruption.md` | Completed | None | Approved As-Is | owner/overlap diagnosis completed |
-| 009 | 009-02 | `phase/phase-009-02-implement-continuation-priority.md` | Implemented - Pending Review | Review Pending | Awaiting Review | continuation-first refinement applied across touched owner chains |
-| 010 | 010-01 | `phase/phase-010-01-refine-install-doc-portability-owners.md` | Implemented - Pending Review | Review Pending | Awaiting Review | owner/enforcement refinement applied for install-doc portability |
-| 010 | 010-02 | `phase/phase-010-02-sync-master-governance-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and installed runtime copies synchronized |
-| 011 | 011-01 | `phase/phase-011-01-refine-recommended-option-wording.md` | Implemented - Pending Review | Review Pending | Awaiting Review | recommendation-plus-reason wording applied across touched owner chains |
-| 011 | 011-02 | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the recommendation-format refinement |
-| 012 | 012-01 | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Implemented - Pending Review | Review Pending | Awaiting Review | identifier-explanation refinement applied across the communication-owner trio |
-| 012 | 012-02 | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the identifier-explanation refinement |
-| 013 | 013-01 | `phase/phase-013-01-refine-goal-qualified-proposals.md` | Implemented - Pending Review | Review Pending | Awaiting Review | goal-qualified proposal refinement applied across the communication-owner set |
-| 013 | 013-02 | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the proposal-boundary refinement |
-| 014 | 014-01 | `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` | Implemented - Pending Review | Review Pending | Awaiting Review | team-agent dedup refinement applied across selection, authority, operations, and reporting owners |
-| 014 | 014-02 | `phase/phase-014-02-sync-master-docs-and-runtime-install.md` | Implemented - Pending Review | Review Pending | Awaiting Review | master docs and runtime-install sync completed for the team-agent dedup/stale-presence refinement |
-| 015 | 015-01 | `phase/phase-015-01-refine-governing-basis-clarification.md` | Completed | None | Approved As-Is | governing-basis clarification refinement applied across wording, authority, burden-of-proof, explanation, and presentation owners |
-| 015 | 015-02 | `phase/phase-015-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs and runtime-install sync completed for the governing-basis clarification refinement |
-| 016 | 016-01 | `phase/phase-016-01-refine-compact-and-post-compact-governance.md` | Completed | None | Approved As-Is | compact/post-compact refinement applied across wording, authority, burden-of-proof, explanation, and presentation owners |
-| 016 | 016-02 | `phase/phase-016-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs and runtime-install sync completed for the compact/post-compact refinement |
-| 017 | 017-01 | `phase/phase-017-01-create-rules-plugin-extension-area.md` | Completed | None | Approved As-Is | optional plugin companion created under `plugin/` without duplicate governance drift |
-| 017 | 017-02 | `phase/phase-017-02-sync-root-docs-and-verify-plugin-companion.md` | Completed | None | Approved As-Is | root docs and plugin-package boundaries synchronized and verified |
-| 018 | 018-01 | `phase/phase-018-01-replace-latest-witness-model-with-ephemeral-handoff.md` | Completed | None | Approved As-Is | latest-witness compact storage replaced with one ephemeral handoff lifecycle |
-| 018 | 018-02 | `phase/phase-018-02-sync-plugin-docs-and-verify-compact-handoff-lifecycle.md` | Completed | None | Approved As-Is | package/root docs synchronized and runtime verification confirmed create → consume/delete → prune behavior |
-| 019 | 019-01 | `phase/phase-019-01-replace-single-slot-compact-state-with-session-scoped-layout.md` | Completed | None | Approved As-Is | singleton compact files replaced with session-scoped state directories and live index |
-| 019 | 019-02 | `phase/phase-019-02-sync-docs-and-verify-session-scoped-compact-carry-forward.md` | Completed | None | Approved As-Is | docs synchronized and session-scoped verification confirmed create → consume/proof → fail-closed ambiguity behavior |
-| 020 | 020-01 | `phase/phase-020-01-tighten-active-review-trigger.md` | Completed | None | Approved As-Is | active review-trigger refinement applied and exact-session review pointers are now part of compact resume behavior |
-| 020 | 020-02 | `phase/phase-020-02-add-optional-memsearch-assist-boundary.md` | Completed | None | Approved As-Is | memsearch remains deferred while local-review-first behavior stays active |
-| 020 | 020-03 | `phase/phase-020-03-sync-docs-and-verify-active-review-behavior.md` | Completed | None | Approved As-Is | root docs synchronized and active review-trigger behavior verified |
-| 021 | 021-01 | `phase/phase-021-01-tighten-systemmessage-review-required.md` | Completed | None | Approved As-Is | user-visible compact resume now explicitly says review is required before continuation |
-| 021 | 021-02 | `phase/phase-021-02-tighten-additionalcontext-reference-first.md` | Completed | None | Approved As-Is | compact additionalContext now stays reference-first instead of replaying old context |
-| 021 | 021-03 | `phase/phase-021-03-add-bounded-directive-proof-and-sync.md` | Completed | None | Approved As-Is | bounded directive proof added and sync surfaces aligned for the reference-first compact review model |
-| 022 | 022-01 | `phase/phase-022-01-refine-direct-human-readable-wording.md` | Completed | None | Approved As-Is | direct human-readable wording refinement applied across wording, explanation, presentation, and style owners |
-| 022 | 022-02 | `phase/phase-022-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs synchronized and runtime-install parity restored for the direct human-readable wording refinement |
-| 023 | 023-01 | `phase/phase-023-01-rules-first-over-memory-boundary.md` | Completed | None | Approved As-Is | rules-first-over-memory boundary applied and support/package artifact portability clarified |
-| 023 | 023-02 | `phase/phase-023-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs synchronized and runtime-install parity restored for the rules-first-over-memory refinement |
-| 024 | 024-01 | `phase/phase-024-01-refine-purpose-first-communication.md` | Completed | None | Approved As-Is | purpose-first refinement applied across wording, explanation, presentation, and style owners |
-| 024 | 024-02 | `phase/phase-024-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master docs synchronized and runtime-copy parity restored |
-| 025 | 025-01 | `phase/phase-025-01-refine-compact-table-defaults.md` | Completed | None | Approved As-Is | compact-table / list-first refinement applied across presentation and explanation owners |
-| 025 | 025-02 | `phase/phase-025-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync completed and runtime-copy parity restored |
-| 026 | 026-01 | `phase/phase-026-01-create-memory-governance-rule-chain.md` | Completed | None | Approved As-Is | new memory-governance owner chain created |
-| 026 | 026-02 | `phase/phase-026-02-integrate-memory-governance-companions.md` | Completed | None | Approved As-Is | companion authority/writing/burden-of-proof/presentation integrations applied |
-| 026 | 026-03 | `phase/phase-026-03-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync and runtime-install parity completed |
-| 026 | 026-04 | `phase/phase-026-04-run-postflight-memory-governance-audit.md` | Completed | None | Approved As-Is | governance-only boundary and source/install parity verified |
-| 027 | 027-01 | `phase/phase-027-01-refine-task-list-first-execution-tracking.md` | Completed | None | Approved As-Is | task-list-first refinement applied across tracking/startup/documentation owners |
-| 027 | 027-02 | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the task-list-first refinement |
-| 028 | 028-01 | `phase/phase-028-01-refine-plain-aligned-table-style.md` | Completed | None | Approved As-Is | plain aligned no-frame table-style correction applied across presentation/explanation owners |
-| 028 | 028-02 | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the table-style refinement |
-| 029 | 029-01 | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | Completed | None | Approved As-Is | first-class ordinary answer-table owner chain created |
-| 029 | 029-02 | `phase/phase-029-02-transfer-table-ownership-from-adjacent-chains.md` | Completed | None | Approved As-Is | adjacent presentation/explanation chains narrowed to defer table doctrine to the new central owner |
-| 029 | 029-03 | `phase/phase-029-03-harden-no-box-enforcement.md` | Completed | None | Approved As-Is | central table owner hardened with character-level no-box enforcement and send-time visible-shape self-check |
-| 029 | 029-04 | `phase/phase-029-04-suspend-custom-table-format-and-restore-general-table-support.md` | Completed | None | Approved As-Is | custom table-format experiment removed from active RULES behavior while preserved for later redesign |
-| 030 | 030-01 | `phase/phase-030-01-current-phase-first-live-task-list-linkage-refinement.md` | Completed | None | Approved As-Is | built-in task-list behavior is now explicitly linked to the current active phase |
-| 031 | 031-01 | `phase/phase-031-01-easy-to-picture-concise-phase-progress-explanation-refinement.md` | Completed | None | Approved As-Is | phase/progress explanations now lead with easier-to-picture plain-language framing |
-| 032 | 032-01 | `phase/phase-032-01-promote-high-signal-communication.md` | Completed | None | Approved As-Is | high-signal communication chain promoted from standalone experimental framing into an active bounded supplementary rule |
-| 032 | 032-02 | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | Completed | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the high-signal promotion wave |
-| 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Completed | None | Approved As-Is | first-class execution-continuity owner created |
-| 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Completed | None | Approved As-Is | first-class goal-review owner created |
-| 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Completed | None | Approved As-Is | companion-rule integration, master-surface sync, and runtime-install parity completed for the new continuity and goal-review owners |
-| 034 | 034-01 | `phase/phase-034-01-refine-task-list-continuity.md` | Completed | None | Approved As-Is | same-objective task-list continuity semantics added across the task-list owner set |
-| 034 | 034-02 | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the task-list continuity wave |
-| 035 | 035-01 | `phase/phase-035-01-refine-next-work-discovery-from-execution-surfaces.md` | Completed | None | Approved As-Is | next-work discovery semantics added across the bounded owner set |
-| 035 | 035-02 | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the next-work discovery wave |
-| 036 | 036-01 | `phase/phase-036-01-create-shared-execution-coordination-rule-chain.md` | Completed | None | Approved As-Is | first-class coordination owner created for multi-session shared boards |
-| 036 | 036-02 | `phase/phase-036-02-integrate-coordination-companions-and-sync.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the coordination-owner wave |
-| 037 | 037-01 | `phase/phase-037-01-refine-handoff-request-vs-execution-layer.md` | Completed | None | Approved As-Is | request-layer vs receiving-side phase ownership refinement applied across the bounded owner set |
-| 037 | 037-02 | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the handoff layer refinement wave |
+| 005 | 005-01 | `phase/phase-005-01-harden-phase-patch-linkage.md` | Approved | None | Approved As-Is | narrow linkage refinement applied |
+| 005 | 005-02 | `phase/phase-005-02-sync-master-docs-and-history.md` | Approved | None | Approved As-Is | master docs/history synchronized |
+| 006 | 006-01 | `phase/phase-006-01-create-external-verification-rule.md` | Approved | None | Approved As-Is | new external verification owner created |
+| 006 | 006-02 | `phase/phase-006-02-integrate-source-trust-governance.md` | Approved | None | Approved As-Is | master source-trust integration completed |
+| 007 | 007-01 | `phase/phase-007-01-create-custom-agent-selection-rule.md` | Approved | None | Approved As-Is | new custom-agent selection owner created |
+| 007 | 007-02 | `phase/phase-007-02-integrate-agent-selection-governance.md` | Approved | None | Approved As-Is | master agent-selection integration completed |
+| 008 | 008-01 | `phase/phase-008-01-create-portable-implementation-rule.md` | Approved | None | Approved As-Is | new portable-implementation owner created |
+| 008 | 008-02 | `phase/phase-008-02-integrate-hardcoding-governance.md` | Approved | None | Approved As-Is | master hardcoding-governance integration completed |
+| 008 | 008-03 | `phase/phase-008-03-deepen-portability-integration.md` | Approved | None | Approved As-Is | deeper adjacent portability integration completed |
+| 009 | 009-01 | `phase/phase-009-01-audit-continuation-vs-interruption.md` | Approved | None | Approved As-Is | owner/overlap diagnosis completed |
+| 009 | 009-02 | `phase/phase-009-02-implement-continuation-priority.md` | Approved | None | Approved As-Is | continuation-first refinement applied across touched owner chains |
+| 010 | 010-01 | `phase/phase-010-01-refine-install-doc-portability-owners.md` | Approved | None | Approved As-Is | owner/enforcement refinement applied for install-doc portability |
+| 010 | 010-02 | `phase/phase-010-02-sync-master-governance-and-runtime-install.md` | Approved | None | Approved As-Is | master docs and installed runtime copies synchronized |
+| 011 | 011-01 | `phase/phase-011-01-refine-recommended-option-wording.md` | Approved | None | Approved As-Is | recommendation-plus-reason wording applied across touched owner chains |
+| 011 | 011-02 | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs and runtime-install sync completed for the recommendation-format refinement |
+| 012 | 012-01 | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Approved | None | Approved As-Is | identifier-explanation refinement applied across the communication-owner trio |
+| 012 | 012-02 | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs and runtime-install sync completed for the identifier-explanation refinement |
+| 013 | 013-01 | `phase/phase-013-01-refine-goal-qualified-proposals.md` | Approved | None | Approved As-Is | goal-qualified proposal refinement applied across the communication-owner set |
+| 013 | 013-02 | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs and runtime-install sync completed for the proposal-boundary refinement |
+| 014 | 014-01 | `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` | Approved | None | Approved As-Is | team-agent dedup refinement applied across selection, authority, operations, and reporting owners |
+| 014 | 014-02 | `phase/phase-014-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs and runtime-install sync completed for the team-agent dedup/stale-presence refinement |
+| 015 | 015-01 | `phase/phase-015-01-refine-governing-basis-clarification.md` | Approved | None | Approved As-Is | governing-basis clarification refinement applied across wording, authority, burden-of-proof, explanation, and presentation owners |
+| 015 | 015-02 | `phase/phase-015-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs and runtime-install sync completed for the governing-basis clarification refinement |
+| 016 | 016-01 | `phase/phase-016-01-refine-compact-and-post-compact-governance.md` | Approved | None | Approved As-Is | compact/post-compact refinement applied across wording, authority, burden-of-proof, explanation, and presentation owners |
+| 016 | 016-02 | `phase/phase-016-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs and runtime-install sync completed for the compact/post-compact refinement |
+| 017 | 017-01 | `phase/phase-017-01-create-rules-plugin-extension-area.md` | Approved | None | Approved As-Is | optional plugin companion created under `plugin/` without duplicate governance drift |
+| 017 | 017-02 | `phase/phase-017-02-sync-root-docs-and-verify-plugin-companion.md` | Approved | None | Approved As-Is | root docs and plugin-package boundaries synchronized and verified |
+| 018 | 018-01 | `phase/phase-018-01-replace-latest-witness-model-with-ephemeral-handoff.md` | Approved | None | Approved As-Is | latest-witness compact storage replaced with one ephemeral handoff lifecycle |
+| 018 | 018-02 | `phase/phase-018-02-sync-plugin-docs-and-verify-compact-handoff-lifecycle.md` | Approved | None | Approved As-Is | package/root docs synchronized and runtime verification confirmed create → consume/delete → prune behavior |
+| 019 | 019-01 | `phase/phase-019-01-replace-single-slot-compact-state-with-session-scoped-layout.md` | Approved | None | Approved As-Is | singleton compact files replaced with session-scoped state directories and live index |
+| 019 | 019-02 | `phase/phase-019-02-sync-docs-and-verify-session-scoped-compact-carry-forward.md` | Approved | None | Approved As-Is | docs synchronized and session-scoped verification confirmed create → consume/proof → fail-closed ambiguity behavior |
+| 020 | 020-01 | `phase/phase-020-01-tighten-active-review-trigger.md` | Approved | None | Approved As-Is | active review-trigger refinement applied and exact-session review pointers are now part of compact resume behavior |
+| 020 | 020-02 | `phase/phase-020-02-add-optional-memsearch-assist-boundary.md` | Approved | None | Approved As-Is | memsearch remains deferred while local-review-first behavior stays active |
+| 020 | 020-03 | `phase/phase-020-03-sync-docs-and-verify-active-review-behavior.md` | Approved | None | Approved As-Is | root docs synchronized and active review-trigger behavior verified |
+| 021 | 021-01 | `phase/phase-021-01-tighten-systemmessage-review-required.md` | Approved | None | Approved As-Is | user-visible compact resume now explicitly says review is required before continuation |
+| 021 | 021-02 | `phase/phase-021-02-tighten-additionalcontext-reference-first.md` | Approved | None | Approved As-Is | compact additionalContext now stays reference-first instead of replaying old context |
+| 021 | 021-03 | `phase/phase-021-03-add-bounded-directive-proof-and-sync.md` | Approved | None | Approved As-Is | bounded directive proof added and sync surfaces aligned for the reference-first compact review model |
+| 022 | 022-01 | `phase/phase-022-01-refine-direct-human-readable-wording.md` | Approved | None | Approved As-Is | direct human-readable wording refinement applied across wording, explanation, presentation, and style owners |
+| 022 | 022-02 | `phase/phase-022-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs synchronized and runtime-install parity restored for the direct human-readable wording refinement |
+| 023 | 023-01 | `phase/phase-023-01-rules-first-over-memory-boundary.md` | Approved | None | Approved As-Is | rules-first-over-memory boundary applied and support/package artifact portability clarified |
+| 023 | 023-02 | `phase/phase-023-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs synchronized and runtime-install parity restored for the rules-first-over-memory refinement |
+| 024 | 024-01 | `phase/phase-024-01-refine-purpose-first-communication.md` | Approved | None | Approved As-Is | purpose-first refinement applied across wording, explanation, presentation, and style owners |
+| 024 | 024-02 | `phase/phase-024-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master docs synchronized and runtime-copy parity restored |
+| 025 | 025-01 | `phase/phase-025-01-refine-compact-table-defaults.md` | Approved | None | Approved As-Is | compact-table / list-first refinement applied across presentation and explanation owners |
+| 025 | 025-02 | `phase/phase-025-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master-surface sync completed and runtime-copy parity restored |
+| 026 | 026-01 | `phase/phase-026-01-create-memory-governance-rule-chain.md` | Approved | None | Approved As-Is | new memory-governance owner chain created |
+| 026 | 026-02 | `phase/phase-026-02-integrate-memory-governance-companions.md` | Approved | None | Approved As-Is | companion authority/writing/burden-of-proof/presentation integrations applied |
+| 026 | 026-03 | `phase/phase-026-03-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master-surface sync and runtime-install parity completed |
+| 026 | 026-04 | `phase/phase-026-04-run-postflight-memory-governance-audit.md` | Approved | None | Approved As-Is | governance-only boundary and source/install parity verified |
+| 027 | 027-01 | `phase/phase-027-01-refine-task-list-first-execution-tracking.md` | Approved | None | Approved As-Is | task-list-first refinement applied across tracking/startup/documentation owners |
+| 027 | 027-02 | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the task-list-first refinement |
+| 028 | 028-01 | `phase/phase-028-01-refine-plain-aligned-table-style.md` | Approved | None | Approved As-Is | plain aligned no-frame table-style correction applied across presentation/explanation owners |
+| 028 | 028-02 | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the table-style refinement |
+| 029 | 029-01 | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | Approved | None | Approved As-Is | first-class ordinary answer-table owner chain created |
+| 029 | 029-02 | `phase/phase-029-02-transfer-table-ownership-from-adjacent-chains.md` | Approved | None | Approved As-Is | adjacent presentation/explanation chains narrowed to defer table doctrine to the new central owner |
+| 029 | 029-03 | `phase/phase-029-03-harden-no-box-enforcement.md` | Approved | None | Approved As-Is | central table owner hardened with character-level no-box enforcement and send-time visible-shape self-check |
+| 029 | 029-04 | `phase/phase-029-04-suspend-custom-table-format-and-restore-general-table-support.md` | Approved | None | Approved As-Is | custom table-format experiment removed from active RULES behavior while preserved for later redesign |
+| 030 | 030-01 | `phase/phase-030-01-current-phase-first-live-task-list-linkage-refinement.md` | Approved | None | Approved As-Is | built-in task-list behavior is now explicitly linked to the current active phase |
+| 031 | 031-01 | `phase/phase-031-01-easy-to-picture-concise-phase-progress-explanation-refinement.md` | Approved | None | Approved As-Is | phase/progress explanations now lead with easier-to-picture plain-language framing |
+| 032 | 032-01 | `phase/phase-032-01-promote-high-signal-communication.md` | Approved | None | Approved As-Is | high-signal communication chain promoted from standalone experimental framing into an active bounded supplementary rule |
+| 032 | 032-02 | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the high-signal promotion wave |
+| 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Approved | None | Approved As-Is | first-class execution-continuity owner created |
+| 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Approved | None | Approved As-Is | first-class goal-review owner created |
+| 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Approved | None | Approved As-Is | companion-rule integration, master-surface sync, and runtime-install parity completed for the new continuity and goal-review owners |
+| 034 | 034-01 | `phase/phase-034-01-refine-task-list-continuity.md` | Approved | None | Approved As-Is | same-objective task-list continuity semantics added across the task-list owner set |
+| 034 | 034-02 | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the task-list continuity wave |
+| 035 | 035-01 | `phase/phase-035-01-refine-next-work-discovery-from-execution-surfaces.md` | Approved | None | Approved As-Is | next-work discovery semantics added across the bounded owner set |
+| 035 | 035-02 | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the next-work discovery wave |
+| 036 | 036-01 | `phase/phase-036-01-create-shared-execution-coordination-rule-chain.md` | Approved | None | Approved As-Is | first-class coordination owner created for multi-session shared boards |
+| 036 | 036-02 | `phase/phase-036-02-integrate-coordination-companions-and-sync.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the coordination-owner wave |
+| 037 | 037-01 | `phase/phase-037-01-refine-handoff-request-vs-execution-layer.md` | Approved | None | Approved As-Is | request-layer vs receiving-side phase ownership refinement applied across the bounded owner set |
+| 037 | 037-02 | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the handoff layer refinement wave |
+| 038 | 038-01 | `phase/phase-038-01-refine-shared-board-visibility-retention-and-memsearch.md` | Approved | None | Approved As-Is | visible session identity, lifecycle, retention, and optional memsearch detail refined across the bounded owner set |
+| 038 | 038-02 | `phase/phase-038-02-sync-shared-board-operating-detail-surfaces.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the operating-detail refinement wave |
 
 ---
 
@@ -350,27 +357,27 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 004 | 004-01 | Completed | `phase/phase-004-01-create-artifact-initiation-rule.md` | Create the first-class `artifact-initiation-control` rule chain | none |
 | 004 | 004-02 | Completed | `phase/phase-004-02-realign-startup-governance.md` | Realign startup-governance owner chains to the new rule | `004-01` |
 | 004 | 004-03 | Completed | `phase/phase-004-03-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new startup-governance wave | `004-02` |
-| 005 | 005-01 | Implemented - Pending Review | `phase/phase-005-01-harden-phase-patch-linkage.md` | Harden explicit phase-to-patch linkage in the live phase workspace | none |
-| 005 | 005-02 | Implemented - Pending Review | `phase/phase-005-02-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new linkage-hardening wave | `005-01` |
-| 006 | 006-01 | Implemented - Pending Review | `phase/phase-006-01-create-external-verification-rule.md` | Create the first-class external-verification-and-source-trust rule chain | none |
-| 006 | 006-02 | Implemented - Pending Review | `phase/phase-006-02-integrate-source-trust-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new source-trust wave | `006-01` |
-| 007 | 007-01 | Implemented - Pending Review | `phase/phase-007-01-create-custom-agent-selection-rule.md` | Create the first-class custom-agent-selection-priority rule chain | none |
-| 007 | 007-02 | Implemented - Pending Review | `phase/phase-007-02-integrate-agent-selection-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new custom-agent selection wave | `007-01` |
-| 008 | 008-01 | Implemented - Pending Review | `phase/phase-008-01-create-portable-implementation-rule.md` | Create the first-class portable-implementation-and-hardcoding-control rule chain | none |
-| 008 | 008-02 | Implemented - Pending Review | `phase/phase-008-02-integrate-hardcoding-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new hardcoding-control wave | `008-01` |
-| 008 | 008-03 | Implemented - Pending Review | `phase/phase-008-03-deepen-portability-integration.md` | Deepen the adjacent-chain integration slice for the new hardcoding-control owner | `008-02` |
+| 005 | 005-01 | Completed | `phase/phase-005-01-harden-phase-patch-linkage.md` | Harden explicit phase-to-patch linkage in the live phase workspace | none |
+| 005 | 005-02 | Completed | `phase/phase-005-02-sync-master-docs-and-history.md` | Sync master docs, TODO, changelog, and phase summary for the new linkage-hardening wave | `005-01` |
+| 006 | 006-01 | Completed | `phase/phase-006-01-create-external-verification-rule.md` | Create the first-class external-verification-and-source-trust rule chain | none |
+| 006 | 006-02 | Completed | `phase/phase-006-02-integrate-source-trust-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new source-trust wave | `006-01` |
+| 007 | 007-01 | Completed | `phase/phase-007-01-create-custom-agent-selection-rule.md` | Create the first-class custom-agent-selection-priority rule chain | none |
+| 007 | 007-02 | Completed | `phase/phase-007-02-integrate-agent-selection-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new custom-agent selection wave | `007-01` |
+| 008 | 008-01 | Completed | `phase/phase-008-01-create-portable-implementation-rule.md` | Create the first-class portable-implementation-and-hardcoding-control rule chain | none |
+| 008 | 008-02 | Completed | `phase/phase-008-02-integrate-hardcoding-governance.md` | Sync master docs, TODO, changelog, and phase summary for the new hardcoding-control wave | `008-01` |
+| 008 | 008-03 | Completed | `phase/phase-008-03-deepen-portability-integration.md` | Deepen the adjacent-chain integration slice for the new hardcoding-control owner | `008-02` |
 | 009 | 009-01 | Completed | `phase/phase-009-01-audit-continuation-vs-interruption.md` | Audit overlap that encourages unnecessary mid-process option prompting | none |
-| 009 | 009-02 | Implemented - Pending Review | `phase/phase-009-02-implement-continuation-priority.md` | Implement continuation-first behavior across the communication-owner chains | `009-01` |
-| 010 | 010-01 | Implemented - Pending Review | `phase/phase-010-01-refine-install-doc-portability-owners.md` | Refine install-doc portability ownership and source-destination notation governance | none |
-| 010 | 010-02 | Implemented - Pending Review | `phase/phase-010-02-sync-master-governance-and-runtime-install.md` | Sync master governance surfaces and runtime install parity for the new refinement wave | `010-01` |
-| 011 | 011-01 | Implemented - Pending Review | `phase/phase-011-01-refine-recommended-option-wording.md` | Refine multi-option next-step wording so the preferred path is explicit and briefly justified | none |
-| 011 | 011-02 | Implemented - Pending Review | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the recommendation-format refinement | `011-01` |
-| 012 | 012-01 | Implemented - Pending Review | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are explained before deeper reasoning depends on them | none |
-| 012 | 012-02 | Implemented - Pending Review | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the identifier-explanation refinement | `012-01` |
-| 013 | 013-01 | Implemented - Pending Review | `phase/phase-013-01-refine-goal-qualified-proposals.md` | Refine future-work proposals so they stay advisory, goal-qualified, and visibly separate from active execution | none |
-| 013 | 013-02 | Implemented - Pending Review | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the proposal-boundary refinement | `013-01` |
-| 014 | 014-01 | Implemented - Pending Review | `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` | Refine team-agent behavior so matching teammates are reused before spawn and duplicate-looking team state is inspected before respawn | none |
-| 014 | 014-02 | Implemented - Pending Review | `phase/phase-014-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the team-agent dedup/stale-presence refinement | `014-01` |
+| 009 | 009-02 | Completed | `phase/phase-009-02-implement-continuation-priority.md` | Implement continuation-first behavior across the communication-owner chains | `009-01` |
+| 010 | 010-01 | Completed | `phase/phase-010-01-refine-install-doc-portability-owners.md` | Refine install-doc portability ownership and source-destination notation governance | none |
+| 010 | 010-02 | Completed | `phase/phase-010-02-sync-master-governance-and-runtime-install.md` | Sync master governance surfaces and runtime install parity for the new refinement wave | `010-01` |
+| 011 | 011-01 | Completed | `phase/phase-011-01-refine-recommended-option-wording.md` | Refine multi-option next-step wording so the preferred path is explicit and briefly justified | none |
+| 011 | 011-02 | Completed | `phase/phase-011-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the recommendation-format refinement | `011-01` |
+| 012 | 012-01 | Completed | `phase/phase-012-01-refine-variable-field-config-and-term-explanations.md` | Refine identifier-heavy explanations so variables, fields, config keys, enum-like values, and internal labels are explained before deeper reasoning depends on them | none |
+| 012 | 012-02 | Completed | `phase/phase-012-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the identifier-explanation refinement | `012-01` |
+| 013 | 013-01 | Completed | `phase/phase-013-01-refine-goal-qualified-proposals.md` | Refine future-work proposals so they stay advisory, goal-qualified, and visibly separate from active execution | none |
+| 013 | 013-02 | Completed | `phase/phase-013-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the proposal-boundary refinement | `013-01` |
+| 014 | 014-01 | Completed | `phase/phase-014-01-refine-team-agent-dedup-boundaries.md` | Refine team-agent behavior so matching teammates are reused before spawn and duplicate-looking team state is inspected before respawn | none |
+| 014 | 014-02 | Completed | `phase/phase-014-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the team-agent dedup/stale-presence refinement | `014-01` |
 | 015 | 015-01 | Completed | `phase/phase-015-01-refine-governing-basis-clarification.md` | Refine ambiguity handling so materially different governing bases are clarified first instead of explored through deep branch analysis | none |
 | 015 | 015-02 | Completed | `phase/phase-015-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the governing-basis clarification refinement | `015-01` |
 | 016 | 016-01 | Completed | `phase/phase-016-01-refine-compact-and-post-compact-governance.md` | Refine compacted-session continuation so the assistant re-anchors to the active objective and active frame before resuming | none |
@@ -399,8 +406,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 026 | 026-02 | Completed | `phase/phase-026-02-integrate-memory-governance-companions.md` | Integrate adjacent authority, wording, burden-of-proof, and presentation owners with the new chain | `026-01` |
 | 026 | 026-03 | Completed | `phase/phase-026-03-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the memory-governance refinement | `026-02` |
 | 026 | 026-04 | Completed | `phase/phase-026-04-run-postflight-memory-governance-audit.md` | Run the final consistency and parity sweep for the memory-governance refinement | `026-03` |
-| 027 | 027-01 | In Progress | `phase/phase-027-01-refine-task-list-first-execution-tracking.md` | Refine the owner set so the built-in task list becomes the live execution surface for non-trivial active work while `TODO.md` remains the durable tracking artifact | none |
-| 027 | 027-02 | In Progress | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the task-list-first refinement | `027-01` |
+| 027 | 027-01 | Completed | `phase/phase-027-01-refine-task-list-first-execution-tracking.md` | Refine the owner set so the built-in task list becomes the live execution surface for non-trivial active work while `TODO.md` remains the durable tracking artifact | none |
+| 027 | 027-02 | Completed | `phase/phase-027-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the task-list-first refinement | `027-01` |
 | 028 | 028-01 | Completed | `phase/phase-028-01-refine-plain-aligned-table-style.md` | Refine the owner set so ordinary answer tables use the selected light plain aligned no-frame form while table usage remains available when genuinely useful | none |
 | 028 | 028-02 | Completed | `phase/phase-028-02-sync-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the table-style refinement | `028-01` |
 | 029 | 029-01 | Completed | `phase/phase-029-01-create-table-format-and-usage-rule-chain.md` | Create the first-class `table-format-and-usage` owner for ordinary answer-table semantics | none |
@@ -421,14 +428,15 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 036 | 036-02 | Completed | `phase/phase-036-02-integrate-coordination-companions-and-sync.md` | Integrate companion deferrals, sync master docs/install, and restore runtime parity for the coordination-owner wave | `036-01` |
 | 037 | 037-01 | Completed | `phase/phase-037-01-refine-handoff-request-vs-execution-layer.md` | Refine handoff naming so request-layer titles stay distinct from receiving-side execution phase ownership | none |
 | 037 | 037-02 | Completed | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | Sync master docs/install for the handoff layer refinement wave | `037-01` |
-| 033 | 033-03 | Completed | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Integrate companion rules and sync master docs/install for the new continuity and goal-review owners | `033-02` |
+| 038 | 038-01 | Completed | `phase/phase-038-01-refine-shared-board-visibility-retention-and-memsearch.md` | Refine visible session identity, lifecycle, retention matrix, and optional memsearch operating detail for shared boards | none |
+| 038 | 038-02 | Completed | `phase/phase-038-02-sync-shared-board-operating-detail-surfaces.md` | Sync master docs/install for the shared-board operating-detail refinement wave | `038-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, and the handoff request-vs-receiving-phase refinement in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, and the handoff request-vs-receiving-phase refinement after the touched chains are aligned.
+- `TODO.md` records the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, the handoff request-vs-receiving-phase refinement, and the shared-board visibility / retention / memsearch operating-detail refinement in dated history.
+- `changelog/changelog.md` records the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, the handoff request-vs-receiving-phase refinement, and the shared-board visibility / retention / memsearch operating-detail refinement.
 - touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, reference-first compact review, direct human-readable wording, rules-first-over-memory, purpose-first communication, compact-table / list-first, memory-governance / session-boundary, task-list-first execution-tracking, plain aligned no-frame table-style, and next-work discovery changes without broadening ownership boundaries unnecessarily.
 
 ---
@@ -464,14 +472,17 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the plain aligned no-frame table-style refinement exists as a bounded `028` family with explicit patch linkage, owner-set refinement across presentation/explanation surfaces, synchronized master-governance surfaces, and preserved distinction between table style correction and table-frequency reduction
 - the next-work discovery refinement exists as a bounded `035` family with explicit patch linkage, owner-set refinement across continuity/task-list/phase/repository-model surfaces, synchronized master-governance surfaces, and preserved stop-gate / same-objective boundaries
 - the shared execution coordination refinement exists as a bounded `036` family with explicit patch linkage, a new first-class coordination owner, bounded companion deferrals across existing owners, synchronized master-governance surfaces, optional memsearch support that remains non-required, and future-optional `claude-peers-mcp` boundaries that remain outside active RULES behavior
+- the handoff request-vs-receiving-phase refinement exists as a bounded `037` family with explicit patch linkage, request-layer vs execution-layer separation, receiving-side phase ownership clarity, synchronized master-governance surfaces, and preserved phase-neutral handoff naming by default
+- the shared-board visibility / retention / memsearch operating-detail refinement exists as a bounded `038` family with explicit patch linkage, visible session identity guidance, explicit lifecycle and retention behavior, synchronized master-governance surfaces, and optional recall-layer guidance that remains subordinate to stronger checked execution evidence
 
 ---
 
 ## Overall Rollback / Containment
 
-If the compact/post-compact refinement or plugin companion rollout proved incorrect, rollback would require:
-- narrowing the post-compact re-anchor wording in the touched owner chains
-- restoring prior master-governance wording where needed while preserving any still-useful compact-state caution that remains valid
-- keeping `plugin/` clearly subordinate or removing the optional package while preserving the recorded design/phase/patch/changelog history instead of silently erasing the rollout evidence
+If the shared execution coordination, handoff-boundary, or shared-board operating-detail refinements proved incorrect, rollback would require:
+- narrowing the visible-session / lifecycle / retention / optional-recall wording in the touched owner chains before removing the refinement entirely
+- narrowing the request-layer vs receiving-phase boundary wording before removing it entirely
+- restoring prior master-governance wording where needed while preserving any still-useful shared-board continuity and handoff-history protections that remain valid
+- preserving the recorded design/phase/patch/changelog history instead of silently erasing the rollout evidence
 
 ---

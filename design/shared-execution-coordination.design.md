@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
@@ -73,6 +73,14 @@ A shared task list is the execution board, not the semantic truth.
 ### 4.2 Session-Lease Principle
 Active session ownership should behave like a lease rather than permanent ownership.
 
+### 4.2.1 Visible Session Identity Principle
+Session-held, handed-off, or blocked-on-session work should be visibly distinguishable from shared/open board work.
+
+Required meaning:
+- scan-time session identity should be strong enough that another session can tell which work is actively held versus generally available
+- visible session identity belongs in the compact board-facing representation, not only in long description text
+- comparable session-held work should use a stable visible session-id pattern rather than several ad hoc title styles
+
 ### 4.3 Handoff Principle
 Cross-session work transfer should be explicit enough that the receiving session can continue without guessing.
 
@@ -91,6 +99,14 @@ Source session, upstream context, dependency notes, and optional source phase sh
 ### 4.3.5 Accept-and-Remap Principle
 Receiving-side remap into phase/objective/task-family should happen after acceptance and belong to the receiver's execution structure.
 
+### 4.3.6 Handoff Lifecycle Principle
+Shared-board handoff should move through explicit coordination states rather than jumping directly from request to forgotten history.
+
+Required meaning:
+- a useful lifecycle includes requested, accepted, remapped, in_progress, completed, blocked, and returned states
+- acceptance and remap should be distinguishable so request-layer history does not masquerade as receiving-side execution structure
+- blocked or returned outcomes should remain visible enough that another session can understand why the handoff did not simply disappear
+
 ### 4.4 Context-Bridge Principle
 Continuation should use the strongest available context bridge while keeping optional tools optional.
 
@@ -99,6 +115,14 @@ Shared execution boards should be preserved by default within the same active ob
 
 ### 4.6 Partial Cleanup Principle
 Cleanup should retire eligible stale subsets rather than wiping the board.
+
+### 4.6.1 Retention Matrix Principle
+Retention should depend on task class and coordination state rather than one global cleanup reflex.
+
+Required meaning:
+- in-progress, blocked, pending-handoff, accepted-handoff, verification, and objective-anchor work should remain visible while it still matters
+- fully completed and dependency-clear coordination history may become retirement candidates sooner than active execution records
+- session-lease expiry should trigger reopen or reassign evaluation before retirement is considered
 
 ### 4.7 Optional-Extension Principle
 memsearch and future peer-messaging layers may strengthen coordination, but the baseline coordination model must still function without them.
@@ -120,6 +144,7 @@ memsearch should be modeled as an optional extension/plugin layer.
 
 Required meaning:
 - if available, it may improve cross-session recall and handoff accuracy
+- it should be used as a recall accelerator after stronger execution surfaces identify the relevant continuation target
 - if unavailable, the coordination model must still function through the baseline surfaces
 - it is a supplemental context bridge, not semantic truth or required infrastructure
 

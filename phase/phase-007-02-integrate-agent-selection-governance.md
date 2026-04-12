@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 007-02
-> **Status:** Implemented - Pending Review
+> **Status:** Completed
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 > **Design References:** [../design/custom-agent-selection-priority.design.md](../design/custom-agent-selection-priority.design.md), [../design/design.md](../design/design.md), [../design/authority-and-scope.design.md](../design/authority-and-scope.design.md)
 > **Patch References:** [../patch/custom-agent-selection-priority.patch.md](../patch/custom-agent-selection-priority.patch.md)
@@ -25,12 +25,12 @@ A new chain is not enough by itself. The repository model, README, TODO, changel
 
 ## Reviewer Checklist
 
-- [ ] master design inventory includes the new chain
-- [ ] README inventory and explanation include the new chain
-- [ ] master changelog records the rollout
-- [ ] TODO tracks the rollout cleanly
-- [ ] phase summary records the new 007 family
-- [ ] adjacent chains are integrated narrowly rather than rewritten broadly
+- [x] master design inventory includes the new chain
+- [x] README inventory and explanation include the new chain
+- [x] master changelog records the rollout
+- [x] TODO tracks the rollout cleanly
+- [x] phase summary records the new 007 family
+- [x] adjacent chains are integrated narrowly rather than rewritten broadly
 
 ## Verification
 

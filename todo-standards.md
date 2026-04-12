@@ -1,7 +1,7 @@
 # TODO Standards
 
-> **Current Version:** 2.10
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.10
+> **Current Version:** 2.11
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.11
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 
@@ -130,6 +130,7 @@ When the built-in task list is in use:
 - keep completed tasks visible until the active objective is truly closed or explicitly reset
 - treat the task list as the first active source for discovering the next unfinished work within the same objective
 - if the task list alone is insufficient, use the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
+- session-held, handoff, and blocked-on-session tasks should identify the relevant session visibly enough for fast scanability rather than hiding that meaning only in long description text
 - cross-session request tasks should use request/handoff naming rather than carrying the sender's phase as the default visible title label
 - if accepted work later needs phase/objective tracking, the receiving session should remap it into its own execution structure
 - source trace should remain in description/handoff notes rather than default title prefixes when that distinction matters

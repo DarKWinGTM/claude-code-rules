@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 026-03
-> **Status:** In Progress
+> **Status:** Completed
 > **Design References:** [../design/design.md](../design/design.md), [../design/memory-governance-and-session-boundary.design.md](../design/memory-governance-and-session-boundary.design.md), [../design/authority-and-scope.design.md](../design/authority-and-scope.design.md), [../design/accurate-communication.design.md](../design/accurate-communication.design.md), [../design/evidence-grounded-burden-of-proof.design.md](../design/evidence-grounded-burden-of-proof.design.md), [../design/answer-presentation.design.md](../design/answer-presentation.design.md)
 > **Patch References:** [../patch/memory-governance-and-session-boundary.patch.md](../patch/memory-governance-and-session-boundary.patch.md)
 
@@ -24,13 +24,13 @@ The new chain only becomes operationally real when the repository-level inventor
 
 ## Action points / execution checklist
 
-- [ ] update `design/design.md`
-- [ ] update `README.md`
-- [ ] update `changelog/changelog.md`
-- [ ] update `TODO.md`
-- [ ] update `phase/SUMMARY.md`
-- [ ] reinstall touched runtime rules into `~/.claude/rules/`
-- [ ] parity-check installed runtime copies against source
+- [x] update `design/design.md`
+- [x] update `README.md`
+- [x] update `changelog/changelog.md`
+- [x] update `TODO.md`
+- [x] update `phase/SUMMARY.md`
+- [x] reinstall touched runtime rules into `~/.claude/rules/`
+- [x] parity-check installed runtime copies against source
 
 ## Out of scope
 
@@ -60,11 +60,11 @@ The new chain only becomes operationally real when the repository-level inventor
 
 ## Verification
 
-- [ ] master design inventory shows the new chain and the updated active runtime count
-- [ ] README teaches the memory-governance refinement at a high level
-- [ ] master changelog and TODO record the bounded governance wave
-- [ ] phase summary indexes the new `026` rollout family
-- [ ] installed runtime files match the updated source copies for the touched rules
+- [x] master design inventory shows the new chain and the updated active runtime count
+- [x] README teaches the memory-governance refinement at a high level
+- [x] master changelog and TODO record the bounded governance wave
+- [x] phase summary indexes the new `026` rollout family
+- [x] installed runtime files match the updated source copies for the touched rules
 
 ## Risks / rollback notes
 
@@ -79,6 +79,6 @@ The new chain only becomes operationally real when the repository-level inventor
 
 ## Exit criteria
 
-- [ ] repository-level governance reflects the new memory-governance owner coherently
-- [ ] runtime install parity is restored for all touched rules
-- [ ] the `026` phase family is visible and reviewable from `phase/SUMMARY.md`
+- [x] repository-level governance reflects the new memory-governance owner coherently
+- [x] runtime install parity is restored for all touched rules
+- [x] the `026` phase family is visible and reviewable from `phase/SUMMARY.md`

@@ -6,6 +6,7 @@
 
 ## ✅ Completed
 
+- [x] Refine shared-board visible session identity, handoff lifecycle, retention matrix behavior, and optional memsearch operating guidance by updating `shared-execution-coordination`, `todo-standards`, and `memory-governance-and-session-boundary`; add bounded `phase-038` / `patch/shared-board-visibility-retention-and-memsearch-refinement.patch.md` artifacts; update master surfaces; and resync installed runtime copies.
 - [x] Separate cross-session handoff request naming from receiving-side execution phase ownership by refining `shared-execution-coordination`, `todo-standards`, `phase-implementation`, and `project-documentation-standards`; add bounded `phase-037` / `patch/handoff-request-vs-receiving-phase-boundary.patch.md` artifacts; update master surfaces; and resync installed runtime copies.
 - [x] Create first-class `shared-execution-coordination` so multi-session shared execution boards now have one semantic owner for shared-board semantics, session lease/handoff behavior, continuity-first retention, anti-overclear policy, optional memsearch support, and future-optional peer-messaging boundaries; integrate bounded companion deferrals across task/phase/execution/memory/repository owners; update master surfaces; and resync installed runtime copies.
 - [x] Make execution-ready work discover the next unfinished slice from active execution surfaces by updating `execution-continuity-and-mode-selection`, `todo-standards`, `phase-implementation`, and `project-documentation-standards`; add bounded `phase-035` / `patch/next-work-discovery-from-execution-surfaces.patch.md` artifacts; update master surfaces; and resync installed runtime copies.
@@ -83,9 +84,6 @@
 
 ## 📋 Tasks To Do
 
-### Current Governance Execution
-- [ ] Reconcile legacy phase review-state drift: `phase/SUMMARY.md` still carries historical `Implemented - Pending Review` entries for older rollout families, so repo-level execution tracking should either complete those reviews or explicitly retire the pending markers.
-
 ### Deferred Enhancements
 - [ ] Automated validation script for documentation compliance (deferred by user).
 - [ ] Integration testing for design/changelog/rule/TODO integration paths (deferred by user).
@@ -96,6 +94,8 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-13 | Refined shared-board visible session identity, handoff lifecycle, retention matrix behavior, and optional memsearch operating guidance across `shared-execution-coordination`, `todo-standards`, and `memory-governance-and-session-boundary`; added bounded `phase-038` / `patch/shared-board-visibility-retention-and-memsearch-refinement.patch.md` artifacts; synchronized master surfaces; and resynced installed runtime copies. |
+| 2026-04-13 | Reconciled legacy phase review-state drift by completing older pending-review phase records so `phase/SUMMARY.md` no longer blocks release-clean postflight state with stale review markers. |
 | 2026-04-13 | Separated cross-session handoff request naming from receiving-side phase ownership across `shared-execution-coordination`, `todo-standards`, `phase-implementation`, and `project-documentation-standards`; added bounded `phase-037` / `patch/handoff-request-vs-receiving-phase-boundary.patch.md` artifacts; synchronized master surfaces; and resynced installed runtime copies. |
 | 2026-04-13 | Created first-class `shared-execution-coordination`, added bounded companion deferrals across `todo-standards`, `phase-implementation`, `execution-continuity-and-mode-selection`, `project-documentation-standards`, `memory-governance-and-session-boundary`, and `authority-and-scope`, then synchronized master surfaces and resynced installed runtime copies. |
 | 2026-04-12 | Added next-work discovery from execution surfaces across `execution-continuity-and-mode-selection`, `todo-standards`, `phase-implementation`, and `project-documentation-standards`; added bounded `phase-035` / `patch/next-work-discovery-from-execution-surfaces.patch.md` artifacts; synchronized master surfaces; and resynced the touched runtime rules. |

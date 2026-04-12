@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.21
+> **Current Version:** 2.22
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.22 | 2026-04-13 | **[Resynced coordination-companion integration references after wave 038](#version-222)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.21 | 2026-04-13 | **[Separated shared-board request naming from receiving-side execution phase structure](#version-221)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.20 | 2026-04-13 | **[Deferred shared-board multi-session coordination semantics to the new coordination owner](#version-220)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.19 | 2026-04-12 | **[Recognized active execution-discovery surfaces at the repository model layer](#version-219)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -31,6 +32,23 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-222"></a>
+## Version 2.22: Resynced coordination-companion integration references after wave 038
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.21 to v2.22.
+- Updated `design/project-documentation-standards.design.md` from v2.21 to v2.22.
+- Refreshed integration references so `todo-standards` now points to v2.11 and `shared-execution-coordination` now points to v1.2.
+- Preserved the existing repository role model and wave-037 semantics while keeping companion references aligned with the current coordination-owner set.
+
+### Summary
+Project-documentation-standards now keeps its coordination-companion references aligned with the current shared-board/runtime owner versions after wave 038.
 
 ---
 

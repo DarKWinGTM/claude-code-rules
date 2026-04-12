@@ -1,7 +1,7 @@
 # Memory Governance and Session Boundary
 
-> **Current Version:** 1.1
-> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/memory-governance-and-session-boundary.changelog.md](changelog/memory-governance-and-session-boundary.changelog.md)
 
@@ -77,6 +77,8 @@ memsearch or similar extension/plugin recall layers may improve cross-session co
 
 Required guidance:
 - treat optional recall extensions as supplemental context bridges rather than semantic truth
+- when such an extension is available, it may accelerate recall after the relevant execution target has been identified from stronger coordination surfaces
+- do not let optional recall output outrank checked task/phase/design/implementation evidence when those stronger surfaces already settle the active meaning
 - do not design coordination assumptions so active work fails when an optional recall extension is absent
 - if such an extension is unavailable, fall back to native memory plus checked execution surfaces
 - coordination ownership for when/how optional recall bridges are used should defer to `shared-execution-coordination.md`

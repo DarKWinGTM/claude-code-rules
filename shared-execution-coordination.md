@@ -1,7 +1,7 @@
 # Shared Execution Coordination
 
-> **Current Version:** 1.1
-> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/shared-execution-coordination.changelog.md](changelog/shared-execution-coordination.changelog.md)
 
@@ -29,6 +29,8 @@ Required guidance:
 ### 2) Coordination Record Principle
 When multi-session work is materially active, each coordination task should make the execution state explicit enough for another session to continue safely.
 
+Visible session identity should be strong enough that another session can tell at a glance which work is shared/open versus actively held by a specific session.
+
 A coordination task should define, or clearly map to:
 - logical owner or lane
 - active session lease when relevant
@@ -51,6 +53,15 @@ When task classification helps scanability, prefer one of these coordination typ
 - `Coordination`
 
 This is a recommended classification aid, not a requirement that every task title use a rigid prefix.
+
+### 2.2) Visible Session Identity Principle
+Session-specific work should be visibly distinguishable from shared/open board work.
+
+Required guidance:
+- if a task is actively held by one session, handed off to one session, or blocked on one session, the visible task title should identify that session clearly enough for fast scanability
+- shared/open tasks that are not yet session-held do not need a session id in the title by default
+- do not hide session-held meaning only inside long description text when the compact board view is where coordination actually happens
+- use a stable visible session-id pattern rather than mixing several ad hoc title styles for the same kind of session-held work
 
 ### 3) Session-Lease Principle
 A task may be actively held by one session at a time without becoming that session's permanent property.
@@ -91,6 +102,7 @@ Cross-session request titles should prioritize the receiving session and the req
 
 Required guidance:
 - prefer visible handoff/request naming such as `For <session-short-id> owner: <work request>`
+- use the same visible session-id style for comparable handoff/request tasks instead of mixing unrelated title patterns
 - do not attach the sender's phase as the default visible request prefix when the work is being handed off to another session
 - if source trace matters, store it in the description / handoff note instead of treating it like the receiving session's visible execution label
 
@@ -112,6 +124,24 @@ Required guidance:
 - the receiving session may create or update its own execution-layer task/phase/objective mapping after acceptance
 - do not assume that the sender's phase naming should survive as the receiving session's execution identity
 
+### 4.6) Handoff Lifecycle Principle
+A shared-board handoff should move through explicit coordination states rather than jumping directly from request to forgotten history.
+
+A useful lifecycle is:
+- requested
+- accepted
+- remapped
+- in_progress
+- completed
+- blocked
+- returned
+
+Required guidance:
+- the exact storage shape may vary with tool limits, but the semantic state should still be legible
+- acceptance should be visible before the work is treated as fully received
+- remap should be visible when the work moves from shared request layer into the receiving session's execution structure
+- blocked or returned states should remain visible enough that another session can understand why the handoff did not simply disappear
+
 ### 5) Context-Bridge Principle
 Cross-session continuation should use the strongest available context bridge without making optional tooling mandatory.
 
@@ -130,6 +160,8 @@ Future optional stronger live coordination layer:
 
 Required guidance:
 - if memsearch is available, it may be used to improve cross-session recall and handoff accuracy
+- when memsearch is available, prefer it as a recall accelerator after the shared board and active execution surfaces have identified the relevant continuation target
+- do not let memsearch override checked task/phase/design/implementation evidence when those stronger surfaces already settle the active execution meaning
 - if memsearch is unavailable, the coordination model must still function through the baseline surfaces
 - treat memsearch as a supplemental context bridge, not as semantic truth or required infrastructure
 - treat `claude-peers-mcp` as optional future live coordination infrastructure unless and until the active rule layer explicitly adopts it
@@ -172,6 +204,15 @@ Required guidance:
 - aging should move tasks toward retirement eligibility, not justify immediate blanket clearing
 - time age alone should not override active dependency, blocker, handoff, or objective-anchor significance
 
+### 6.3) Retention Matrix Principle
+Retention should depend on task class and coordination state rather than one global cleanup reflex.
+
+Required guidance:
+- keep in-progress, blocked, pending-handoff, accepted-handoff, verification, and objective-anchor tasks visible while they still matter to the active objective
+- allow fully completed, dependency-clear, and no-longer-relevant coordination tasks to become retirement candidates sooner than active execution records
+- session-lease expiry should trigger reopen/reassign evaluation before retirement is considered
+- if cleanup is performed, preserve enough visible history that another session can still reconstruct the recent execution path and handoff trail
+
 ### 7) Reset-Boundary Principle
 Full reset is a special case, not the default maintenance action.
 
@@ -202,9 +243,11 @@ Required guidance:
 - [ ] Shared task list is treated as execution coordination rather than semantic truth
 - [ ] Multi-session lease and provenance behavior is explicit enough for continuation
 - [ ] Handoff behavior is explicit enough for cross-session continuation
+- [ ] Session-held work is visibly distinguishable from shared/open board work
 - [ ] Request-layer naming is distinct from receiving-side execution-layer naming
 - [ ] Source phase is not used as the default visible handoff title label
 - [ ] Receiving session remap behavior is explicit when accepted work needs phase/objective tracking
+- [ ] Handoff lifecycle states are explicit enough to follow request -> accept -> remap -> execute / return / block outcomes
 - [ ] Baseline coordination works without memsearch
 - [ ] memsearch is treated as optional supplemental context bridge when available
 - [ ] `claude-peers-mcp` is kept future-optional unless explicitly activated by later rule work
@@ -221,9 +264,11 @@ Required guidance:
 |--------|--------|
 | Shared-board vs semantic-truth clarity | 100% |
 | Multi-session handoff clarity | High |
+| Visible session-held task clarity | High |
 | Request-vs-execution layer clarity | High |
 | Receiving-side phase ownership clarity | High |
 | Session-lease clarity | High |
+| Handoff lifecycle clarity | High |
 | Framework usefulness without memsearch | High |
 | memsearch optionality clarity | 100% |
 | `claude-peers-mcp` future-optional boundary clarity | 100% |

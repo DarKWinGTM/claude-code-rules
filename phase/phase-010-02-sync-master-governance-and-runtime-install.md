@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 010-02
-> **Status:** Implemented - Pending Review
+> **Status:** Completed
 > **Design References:** [../design/design.md](../design/design.md), [../design/portable-implementation-and-hardcoding-control.design.md](../design/portable-implementation-and-hardcoding-control.design.md), [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md), [../design/document-consistency.design.md](../design/document-consistency.design.md)
 > **Patch References:** [../patch/install-doc-portability-and-source-destination-notation.patch.md](../patch/install-doc-portability-and-source-destination-notation.patch.md)
 
