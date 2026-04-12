@@ -1,7 +1,7 @@
 # TODO Standards
 
-> **Current Version:** 2.6
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.6
+> **Current Version:** 2.7
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.7
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 
@@ -100,6 +100,15 @@ Required guidance:
 - keep tasks as execution slices inside the phase rather than forcing one whole phase into one oversized task
 - do not require every phase to have only one task
 
+### 5.2.1 Same-Objective Retention Rule
+Within the same active objective, reuse the current task list by default instead of replacing it with a fresh set.
+
+Required guidance:
+- append new real work to the current task list when it belongs to the same active objective
+- keep already-completed tasks visible until the current objective is genuinely closed
+- do not recreate the task list merely because a new slice, subtask, or cleanup pass was discovered inside the same active objective
+- start a fresh task list only when the user opens a genuinely new objective, the prior objective is fully closed, or the user explicitly requests a reset
+
 ### 5.3 Future-Phase Task Boundary
 Do not create task-list entries for a future phase as if they are active execution work unless that future phase has actually been opened or selected.
 
@@ -115,6 +124,8 @@ When the built-in task list is in use:
 - mark a task `completed` as soon as that slice is actually done
 - add new tasks when newly discovered work is real and non-trivial
 - keep task entries outcome-sized rather than command-sized
+- extend the current task list within the same active objective instead of replacing it with a fresh set
+- keep completed tasks visible until the active objective is truly closed or explicitly reset
 - keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad
 - when execution mode remains active and no real stop gate exists, let the task list support continued execution rather than milestone-only pause/report behavior
 - do not let the task list drift into stale or vague bookkeeping

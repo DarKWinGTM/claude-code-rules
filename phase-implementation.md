@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.9
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.9
+> **Current Version:** 2.10
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.10
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -166,6 +166,7 @@ Required guidance:
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
+- when repeated slices still belong to the same active objective/phase family, extend the current task-list surface instead of recreating it
 - do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
 - if the current phase is already complete and the next phase is already the implied active path, phase-boundary continuity may continue directly instead of turning completion into a report-only stop
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks

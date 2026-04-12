@@ -1,7 +1,7 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.17
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.9
+> **Current Version:** 1.18
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.10
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Status:** Mixed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains thirty-three rollout families:
+The current workspace contains thirty-four rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -48,6 +48,7 @@ The current workspace contains thirty-three rollout families:
 - major phase `031` = easy-to-picture concise phase/progress explanation refinement rollout
 - major phase `032` = high-signal communication promotion and sync rollout
 - major phase `033` = execution continuity and goal-set review rollout
+- major phase `034` = task-list continuity and objective-boundary retention rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -134,6 +135,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | `design/execution-continuity-and-mode-selection.design.md` | `patch/continuous-execution-and-goal-set-review.patch.md` | Create the first-class execution-continuity owner | One semantic owner exists for discussion-vs-execution mode selection and continuous execution defaults |
 | 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | `design/goal-set-review-and-priority-balance.design.md` | `patch/continuous-execution-and-goal-set-review.patch.md` | Create the first-class goal-review owner | One semantic owner exists for continuous goal-set review and priority balance |
 | 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | `design/execution-continuity-and-mode-selection.design.md` + `design/goal-set-review-and-priority-balance.design.md` + `design/design.md` | `patch/continuous-execution-and-goal-set-review.patch.md` | Integrate companion rules and sync master docs/install | Repo-level governance and installed runtime state reflect the new continuity and goal-review owners coherently |
+| 034 | 034-01 | `phase/phase-034-01-refine-task-list-continuity.md` | `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/artifact-initiation-control.design.md` + `design/project-documentation-standards.design.md` | `patch/task-list-continuity-and-objective-boundary-retention.patch.md` | Refine task-list continuity so same-objective work reuses the current task-list surface | One semantic owner set now keeps the same task list across one active objective |
+| 034 | 034-02 | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | `design/design.md` + touched companion designs | `patch/task-list-continuity-and-objective-boundary-retention.patch.md` | Sync master docs/install for the task-list continuity wave | Repo-level governance and installed runtime state reflect the new same-objective task-list retention model |
 
 ---
 
@@ -217,7 +220,9 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 033-01: create the first-class execution-continuity owner for discussion-vs-execution mode selection and continuous execution defaults
   → 033-02: create the first-class goal-review owner for continuous goal-set visibility and priority balance
   → 033-03: integrate companion rules and sync master docs/install for the new continuity and goal-review owners
-  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
+  → 034-01: refine task-list continuity so same-objective work reuses the current task-list surface instead of replacing it
+  → 034-02: sync master docs/install for the same-objective task-list retention wave
+  → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, same-objective task-list continuity and retention semantics, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
 
@@ -302,6 +307,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Completed | None | Approved As-Is | first-class execution-continuity owner created |
 | 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Completed | None | Approved As-Is | first-class goal-review owner created |
 | 033 | 033-03 | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Completed | None | Approved As-Is | companion-rule integration, master-surface sync, and runtime-install parity completed for the new continuity and goal-review owners |
+| 034 | 034-01 | `phase/phase-034-01-refine-task-list-continuity.md` | Completed | None | Approved As-Is | same-objective task-list continuity semantics added across the task-list owner set |
+| 034 | 034-02 | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the task-list continuity wave |
 
 ---
 
@@ -382,6 +389,11 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 031 | 031-01 | Completed | `phase/phase-031-01-easy-to-picture-concise-phase-progress-explanation-refinement.md` | Make phase/progress explanations easier to picture and easier to read before denser execution detail | none |
 | 032 | 032-01 | Completed | `phase/phase-032-01-promote-high-signal-communication.md` | Promote `high-signal-communication.md` from standalone experimental framing into an active bounded supplementary rule | none |
 | 032 | 032-02 | Completed | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | Synchronize master governance surfaces and runtime install parity for the high-signal promotion wave | `032-01` |
+| 033 | 033-01 | Completed | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Create the first-class execution-continuity owner for discussion-vs-execution mode selection and continuous execution defaults | none |
+| 033 | 033-02 | Completed | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Create the first-class goal-review owner for continuous goal-set visibility and priority balance | `033-01` |
+| 033 | 033-03 | Completed | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Integrate companion rules and sync master docs/install for the new continuity and goal-review owners | `033-02` |
+| 034 | 034-01 | Completed | `phase/phase-034-01-refine-task-list-continuity.md` | Refine task-list continuity so same-objective work reuses the current task-list surface | none |
+| 034 | 034-02 | Completed | `phase/phase-034-02-sync-task-list-continuity-surfaces.md` | Sync master docs/install for the same-objective task-list retention wave | `034-01` |
 | 033 | 033-01 | Completed | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Create the first-class execution-continuity owner for discussion-vs-execution mode selection and continuous execution defaults | none |
 | 033 | 033-02 | Completed | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Create the first-class goal-review owner for continuous goal-set visibility and priority balance | `033-01` |
 | 033 | 033-03 | Completed | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Integrate companion rules and sync master docs/install for the new continuity and goal-review owners | `033-02` |

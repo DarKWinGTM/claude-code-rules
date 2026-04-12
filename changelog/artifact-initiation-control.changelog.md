@@ -1,7 +1,7 @@
 # Changelog - Artifact Initiation Control
 
 > **Parent Document:** [../artifact-initiation-control.md](../artifact-initiation-control.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,12 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-12 | **[Kept initialized live task lists as the active objective surface](#version-14)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.3 | 2026-04-11 | **[Made phase-backed live task-list startup expected](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-10 | **[Added early live task-tracking posture for non-trivial work](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-08 | **[Narrowed startup patch posture for greenfield baseline formation](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Refined startup-governance so patch is no longer treated as the default startup artifact during greenfield / baseline-formation work unless a real existing before/after review surface or explicit user request justifies it | |
 | 1.0 | 2026-03-28 | **[Created first-class artifact-initiation-control rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new startup-governance owner chain so design, changelog, TODO, phase, and patch posture must be resolved before meaningful governed work drifts | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Kept initialized live task lists as the active objective surface
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `artifact-initiation-control.md` from v1.3 to v1.4.
+- Updated `design/artifact-initiation-control.design.md` from v1.3 to v1.4.
+- Added explicit guidance that once the live task list is initialized for the active objective, it should normally be reused rather than recreated unless a true objective-boundary reset or explicit user reset applies.
+- Preserved the startup artifact-resolution order and existing task-list initialization triggers.
+
+### Summary
+Artifact-initiation-control now treats the initialized live task list as the continuing surface for the active objective instead of leaving continuity implicit.
 
 ---
 

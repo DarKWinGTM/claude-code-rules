@@ -1,7 +1,7 @@
 # Artifact Initiation Control
 
-> **Current Version:** 1.3
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 
@@ -36,6 +36,7 @@ Required guidance:
   - not required
 - when the work is non-trivial and tracking is materially useful, initialize the built-in task list early as the live execution surface instead of leaving work state implicit
 - when an active phase already exists for the work, treat live task-list initialization as expected rather than optional unless a narrow justified reason clearly blocks it
+- once initialized for the active objective, reuse that live task-list surface by default unless a true objective-boundary reset or explicit user reset applies
 - do not silently skip artifacts or live tracking surfaces that appear required
 
 ### 3) Existing-Authority-First Principle

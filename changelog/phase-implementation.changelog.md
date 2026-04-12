@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.9
+> **Current Version:** 2.10
 > **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.10 | 2026-04-12 | **[Kept same-objective phase slices on one task-list surface](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-12 | **[Allowed direct phase-boundary continuation when the next path is already active](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-11 | **[Added current-phase-first live task-list linkage](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Refined phase-implementation so active phases now expect a live task list that mirrors the current phase execution surface before any future-phase planning is opened | |
@@ -21,6 +22,23 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-210"></a>
+## Version 2.10: Kept same-objective phase slices on one task-list surface
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `phase-implementation.md` from v2.9 to v2.10.
+- Updated `design/phase-implementation.design.md` from v2.9 to v2.10.
+- Added bounded guidance that repeated slices inside the same active objective/phase family should extend the current task-list surface instead of recreating it.
+- Preserved current-phase-first linkage and phase-boundary continuation semantics.
+
+### Summary
+Phase-implementation now keeps same-objective phase slices on one live task-list surface instead of implying a fresh list for every new slice.
 
 ---
 

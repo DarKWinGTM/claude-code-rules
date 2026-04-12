@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.17
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.17
+> **Current Version:** 2.18
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.18
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -148,6 +148,7 @@ Required guidance:
 - phased work with governed patch artifacts must show explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - `artifact-initiation-control.md` remains the startup artifact-resolution owner
 - built-in task-list usage remains a live execution surface rather than becoming a governed repository document type
+- within the same active objective, the live task-list surface should normally be reused and extended rather than replaced, while durable history still belongs in TODO/phase/changelog surfaces
 - execution-continuity and goal-review owners may shape how active work keeps moving and how the full objective set stays visible, while tasks, phases, and docs remain the execution surfaces rather than the owner of that behavior
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
 

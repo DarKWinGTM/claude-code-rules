@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.19
+> **Current Version:** 9.20
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.20 | 2026-04-12 | **[Added same-objective task-list continuity and retention](#version-920)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.19 | 2026-04-12 | **[Added first-class execution continuity and goal-set review owners](#version-919)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.18 | 2026-04-12 | **[Promoted high-signal communication into the active runtime rule set](#version-918)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.17 | 2026-04-12 | **[Improved README Quick Start install scripts for Bash and PowerShell](#version-917)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -55,6 +56,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-920"></a>
+## Version 9.20: Added same-objective task-list continuity and retention
+
+**Date:** 2026-04-12
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards`, `phase-implementation`, `artifact-initiation-control`, and `project-documentation-standards` so the built-in task list is reused within the same active objective instead of being repeatedly replaced.
+- Added explicit same-objective reuse/append behavior, completed-task visibility until closure, and objective-boundary reset language.
+- Added bounded `phase-034` plus `patch/task-list-continuity-and-objective-boundary-retention.patch.md` artifacts for the refinement wave.
+- Bundled the already-open `accurate-communication.md` micro-compression maintenance so the installed runtime copy is now below the 40.0k warning threshold.
+
+### Summary
+The RULES repository now keeps one live task-list surface per active objective instead of repeatedly replacing it, while still allowing a fresh list when a truly new objective begins.
 
 ---
 
