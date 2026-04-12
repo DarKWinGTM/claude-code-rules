@@ -1,7 +1,7 @@
 # Authority and scope
 
-> **Current Version:** 2.2
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.2
+> **Current Version:** 2.3
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 
@@ -29,6 +29,7 @@ This rule defines precedence, tie-break behavior, and override handling so new u
 - Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - Mode selection and continuous-execution defaults defer to `execution-continuity-and-mode-selection.md` when the question is whether work should keep going versus remain in discussion mode.
+- Shared-board multi-session coordination semantics such as session lease, handoff, retention/aging, and optional-extension support defer to `shared-execution-coordination.md` when the question is how several sessions coordinate work on one active execution board.
 - If the user issues a fresh directive that changes scope, task, or action, that fresh directive overrides previously offered assistant options immediately.
 - After compact or compacted-session resume, re-anchor to the latest active user directive and active governing basis before continuing.
 - Do not let stale assistant framing, stale option branches, or compressed-away detail become active truth after compact unless the surviving evidence still justifies it.

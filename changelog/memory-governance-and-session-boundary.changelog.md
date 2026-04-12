@@ -1,7 +1,7 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,8 +10,26 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-04-13 | **[Added optional extension recall boundary for memsearch-style layers](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-09 | **[Created first-class memory-governance-and-session-boundary rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
+
+---
+
+<a id="version-11"></a>
+## Version 1.1: Added optional extension recall boundary for memsearch-style layers
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `memory-governance-and-session-boundary.md` from v1.0 to v1.1.
+- Updated `design/memory-governance-and-session-boundary.design.md` from v1.0 to v1.1.
+- Added an explicit optional-extension recall boundary so memsearch-like extension/plugin layers are treated as supplemental context bridges rather than required infrastructure or semantic truth.
+- Added explicit deferral that coordination ownership for optional recall-layer usage lives in `shared-execution-coordination.md`.
+
+### Summary
+Memory-governance now keeps native memory authority boundaries explicit while modeling memsearch-style recall layers as optional supplemental context bridges rather than required core behavior.
 
 ---
 

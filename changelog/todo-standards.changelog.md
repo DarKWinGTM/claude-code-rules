@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.8
+> **Current Version:** 2.9
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.9 | 2026-04-13 | **[Deferred multi-session shared-board coordination to the new coordination owner](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-12 | **[Used execution surfaces to discover next unfinished work](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.7 | 2026-04-12 | **[Kept the same task list across one active objective](#version-27)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.6 | 2026-04-12 | **[Aligned live task-list behavior to continuous execution mode](#version-26)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -19,6 +20,23 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-29"></a>
+## Version 2.9: Deferred multi-session shared-board coordination to the new coordination owner
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards.md` from v2.8 to v2.9.
+- Updated `design/todo-standards.design.md` from v2.8 to v2.9.
+- Added explicit deferral that multi-session shared-board semantics such as session lease, handoff, retention/aging, anti-overclear behavior, and optional memsearch support now live in `shared-execution-coordination.md`.
+- Preserved durable-vs-live tracking, current-phase-first behavior, same-objective retention, and task-list-first next-work discovery.
+
+### Summary
+TODO standards now keep their tracking role while deferring multi-session shared-board coordination protocol details to the new coordination owner.
 
 ---
 

@@ -1,7 +1,7 @@
 # Execution Continuity and Mode Selection
 
-> **Current Version:** 1.1
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 
@@ -11,7 +11,7 @@
 
 **Core Principle: Distinguish discussion mode from execution mode explicitly, and once work is execution-ready, continue by default and discover the next unfinished slice from active execution surfaces instead of ending turns only to narrate progress or obvious next steps.**
 
-This rule owns mode selection for active work and the stop/continue boundary for continuous execution. It does not replace user authority, hard-boundary safety, or wording/evidence owners.
+This rule owns mode selection for active work and the stop/continue boundary for continuous execution. It does not replace user authority, hard-boundary safety, wording/evidence owners, or shared-board coordination ownership.
 
 ---
 
@@ -48,6 +48,7 @@ When execution mode remains active, the assistant should actively inspect the cu
 
 Required guidance:
 - use the current task list first when it already expresses the active objective clearly
+- defer session-lease, handoff, retention/aging, anti-overclear, and optional-extension coordination semantics to `shared-execution-coordination.md`
 - if the task list alone is insufficient, inspect the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice
 - prefer the next unfinished work that belongs to the same active objective or phase family before opening a fresh objective
 - treat design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once the work is already in execution mode

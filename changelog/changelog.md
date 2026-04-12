@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.21
+> **Current Version:** 9.22
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.22 | 2026-04-13 | **[Created shared execution coordination as a first-class rule chain](#version-922)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.21 | 2026-04-12 | **[Added next-work discovery from execution surfaces](#version-921)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.20 | 2026-04-12 | **[Added same-objective task-list continuity and retention](#version-920)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.19 | 2026-04-12 | **[Added first-class execution continuity and goal-set review owners](#version-919)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -57,6 +58,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-922"></a>
+## Version 9.22: Created shared execution coordination as a first-class rule chain
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Created `shared-execution-coordination` as a new first-class runtime/design/changelog chain for multi-session shared execution boards, session lease/handoff behavior, continuity-first retention, anti-overclear policy, optional memsearch support, and future-optional peer-messaging boundaries.
+- Updated `todo-standards`, `phase-implementation`, `execution-continuity-and-mode-selection`, `project-documentation-standards`, `memory-governance-and-session-boundary`, and `authority-and-scope` with bounded deferrals to the new coordination owner.
+- Updated master design/README/TODO/phase surfaces and expanded the active runtime install set from 39 to 40 rules.
+- Preserved the existing phase, tracking, memory, and execution-continuity owners rather than replacing them with one super-rule.
+
+### Summary
+The RULES repository now has one explicit coordination owner for multi-session shared execution boards, while the existing task, phase, memory, and execution owners keep their narrower roles.
 
 ---
 

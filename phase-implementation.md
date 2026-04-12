@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.11
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.11
+> **Current Version:** 2.12
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -12,6 +12,8 @@
 **Core Principle: Use phased planning only when staged execution meaningfully improves clarity, require phased work to use a dedicated `/phase` workspace with mandatory `SUMMARY.md` plus deterministic major/subphase IDs, establish `/phase` early when startup artifact governance already shows phased work is required, and declare governed patch participation explicitly when patch is in scope.**
 
 This rule defines the semantic standard for phase planning. The governed summary/index lives in `/phase/SUMMARY.md`, executable phase detail lives in `/phase/phase-NNN-*.md` or `/phase/phase-NNN-NN-*.md`, design remains target-state authority, patch remains governed change/review authority as explicit before/after change artifacts, and the root helper remains a non-governed drafting aid.
+
+Multi-session shared-board coordination semantics such as session lease, handoff, retention/aging, anti-overclear behavior, and optional memsearch support defer to `shared-execution-coordination.md`.
 
 ---
 

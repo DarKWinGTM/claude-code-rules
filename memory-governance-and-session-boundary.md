@@ -1,7 +1,7 @@
 # Memory Governance and Session Boundary
 
-> **Current Version:** 1.0
-> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/memory-governance-and-session-boundary.changelog.md](changelog/memory-governance-and-session-boundary.changelog.md)
 
@@ -71,6 +71,15 @@ Required guidance:
 - `SCOPE.md` should declare the canonical scope key for the path
 - folder names are readable locators only; canonical scope meaning lives in `SCOPE.md`
 - do not let folder-name drift silently change scope meaning
+
+### 6.1) Optional Extension Recall Boundary
+memsearch or similar extension/plugin recall layers may improve cross-session continuity when available, but they do not become required infrastructure or authority by existing.
+
+Required guidance:
+- treat optional recall extensions as supplemental context bridges rather than semantic truth
+- do not design coordination assumptions so active work fails when an optional recall extension is absent
+- if such an extension is unavailable, fall back to native memory plus checked execution surfaces
+- coordination ownership for when/how optional recall bridges are used should defer to `shared-execution-coordination.md`
 
 ### 7) Archive-Inactive Principle
 Archive is not active memory.

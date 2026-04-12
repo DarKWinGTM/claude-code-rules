@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.11
+> **Current Version:** 2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.12 | 2026-04-13 | **[Deferred shared-board coordination semantics to the new coordination owner](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-12 | **[Used phase surfaces as bounded next-work discovery inputs](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-12 | **[Kept same-objective phase slices on one task-list surface](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-12 | **[Allowed direct phase-boundary continuation when the next path is already active](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -23,6 +24,23 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-212"></a>
+## Version 2.12: Deferred shared-board coordination semantics to the new coordination owner
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `phase-implementation.md` from v2.11 to v2.12.
+- Updated `design/phase-implementation.design.md` from v2.11 to v2.12.
+- Added explicit deferral that session lease, handoff, retention/aging, anti-overclear behavior, and optional memsearch support now live in `shared-execution-coordination.md` instead of being implied ad hoc inside phase semantics.
+- Preserved phase identity, phase/task linkage, and bounded next-work discovery from the active phase workspace.
+
+### Summary
+Phase-implementation now keeps phase semantics and phase-work discovery while deferring shared-board coordination protocol details to the new coordination owner.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,9 +10,27 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-04-13 | **[Deferred shared-board coordination semantics to the new coordination owner](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Deferred shared-board coordination semantics to the new coordination owner
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.1 to v1.2.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.1 to v1.2.
+- Clarified that session-lease, handoff, retention/aging, anti-overclear, and optional-extension coordination semantics defer to `shared-execution-coordination.md`.
+- Preserved execution-mode selection, stop-gate logic, and next-work discovery ownership.
+
+### Summary
+Execution continuity now keeps its continue/stop/discover role while deferring shared-board coordination protocol details to the new first-class coordination owner.
 
 ---
 

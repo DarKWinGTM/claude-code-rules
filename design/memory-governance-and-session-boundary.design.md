@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -57,6 +57,7 @@ Observed failure modes this design intends to close:
 
 ### 3.2 Out of Scope
 - actual migration of live memory files under `~/.claude/projects/.../memory/`
+- treating optional extension/plugin recall layers such as memsearch as required infrastructure
 - changing the existing live memory directory layout in the same wave that creates the governance contract
 - low-level Claude Code internals or undocumented recursive loader behavior
 - general communication, evidence, or layout rules except where those adjacent chains need narrow integration updates

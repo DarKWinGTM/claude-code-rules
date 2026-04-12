@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.2
+> **Current Version:** 2.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -33,6 +33,7 @@ Define a deterministic authority model that:
 | Assistant resumes after compact from stale framing or stale option state | Compacted sessions continue from the wrong branch instead of the active objective | Explicit post-compact re-anchor boundary |
 | Assistant-created team expansion treated like the default answer | Duplicate-looking or overlapping teammates get spawned even when the role is already covered | Explicit reuse-before-expand boundary |
 | Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
+| Shared-board multi-session coordination is improvised separately in several chains | Ownership, handoff, and retention semantics drift and conflict | Explicit deferral to a first-class shared execution coordination owner |
 
 ---
 

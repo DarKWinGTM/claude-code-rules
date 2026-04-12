@@ -47,7 +47,7 @@
     <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
   </a>
   <a href="#-rule-files">
-    <img src="https://img.shields.io/badge/📁_Rules-39_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/📁_Rules-40_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
   <a href="#-installation">
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
@@ -79,7 +79,7 @@
 
 ## ⚡ Quick Start
 
-Use the script for your platform. Both install the same 39 active runtime rules only.
+Use the script for your platform. Both install the same 40 active runtime rules only.
 
 ### Bash — Linux / macOS
 
@@ -134,6 +134,7 @@ rule_files=(
   high-signal-communication.md
   execution-continuity-and-mode-selection.md
   goal-set-review-and-priority-balance.md
+  shared-execution-coordination.md
 )
 
 for file in "${rule_files[@]}"; do
@@ -194,7 +195,8 @@ $ruleFiles = @(
   "zero-hallucination.md",
   "high-signal-communication.md",
   "execution-continuity-and-mode-selection.md",
-  "goal-set-review-and-priority-balance.md"
+  "goal-set-review-and-priority-balance.md",
+  "shared-execution-coordination.md"
 )
 
 foreach ($file in $ruleFiles) {
@@ -335,7 +337,7 @@ Please:
 
 ---
 
-### 🟡 Quality & Safety (28 rules)
+### 🟡 Quality & Safety (29 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
@@ -368,6 +370,7 @@ Please:
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, explicit live-task-list-vs-durable-TODO distinction, same-objective live task-list continuity, explicit execution-discovery surfaces during active execution, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, and portable-by-default package-local support assets when they are reusable source content |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, keeps work moving when execution mode is active, and discovers the next unfinished slice from execution surfaces when that path is already visible |
+| [`shared-execution-coordination.md`](shared-execution-coordination.md) | Shared execution coordination | Makes the shared task list a first-class execution-coordination layer with session lease/handoff semantics, continuity-first retention, anti-overclear policy, optional memsearch support, and future-optional peer-messaging boundaries |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
@@ -396,9 +399,9 @@ Please:
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 39**
+**📊 Active Runtime Rules: 40**
 
-Latest refinement: the active runtime set now includes bounded next-work discovery from execution surfaces across the continuity, task-list, phase, and repository-model owner set, while the active runtime count remains 39.
+Latest refinement: the active runtime set now includes a first-class shared execution coordination owner for multi-session shared boards, session lease/handoff behavior, continuity-first retention, anti-overclear policy, and optional memsearch / future optional peer-messaging boundaries.
 
 </div>
 
@@ -406,7 +409,7 @@ Latest refinement: the active runtime set now includes bounded next-work discove
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 39-rule set and describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 40-rule set and describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 
@@ -1147,8 +1150,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.21 |
-  <b>Last Updated</b>: 2026-04-12 |
+  <b>Version</b>: 9.22 |
+  <b>Last Updated</b>: 2026-04-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
