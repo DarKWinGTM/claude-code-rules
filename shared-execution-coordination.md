@@ -1,7 +1,7 @@
 # Shared Execution Coordination
 
-> **Current Version:** 1.0
-> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/shared-execution-coordination.changelog.md](changelog/shared-execution-coordination.changelog.md)
 
@@ -69,6 +69,48 @@ Required guidance:
 - a handoff should identify the target continuation task or context reference when that is materially useful
 - receiving a handoff is not the same thing as proving the task is done
 - acceptance, completion, return, or blocked follow-up should be visible in the shared execution board rather than left only in transient chat
+
+### 4.1) Request-Layer vs Execution-Layer Principle
+A shared execution board may contain request-layer items and execution-layer items, but those two layers should not be conflated.
+
+Required guidance:
+- use the shared board request layer for cross-session requests, handoffs, and coordination prompts
+- use the receiving session's own execution layer for phase/objective/task-family organization after the work is accepted
+- do not let a request-layer title masquerade as if it were already the receiving session's execution phase structure
+
+### 4.2) Receiving-Side Phase Ownership Principle
+Phase ownership belongs to the execution owner / receiving session.
+
+Required guidance:
+- phase labels should not be carried across sessions as the default visible handoff title label
+- the sender may reference upstream phase context when useful, but that upstream phase should stay in handoff notes or description context by default rather than becoming the visible owner label
+- if phase tracking is needed after acceptance, the receiving session should remap the work into its own phase, objective, or task family
+
+### 4.3) Canonical Handoff Naming Principle
+Cross-session request titles should prioritize the receiving session and the requested work, not the sender's phase label.
+
+Required guidance:
+- prefer visible handoff/request naming such as `For <session-short-id> owner: <work request>`
+- do not attach the sender's phase as the default visible request prefix when the work is being handed off to another session
+- if source trace matters, store it in the description / handoff note instead of treating it like the receiving session's visible execution label
+
+### 4.4) Handoff Note Principle
+When cross-session context needs to travel with the task, keep that context in handoff notes rather than in overloaded visible title labels.
+
+Useful handoff-note fields include:
+- source session
+- upstream context
+- dependency note
+- optional source phase reference
+- receiving-session remap note
+
+### 4.5) Accept-and-Remap Principle
+Accepting a request-layer task and mapping it into the receiving session's execution structure are related but not identical actions.
+
+Required guidance:
+- a request-layer task may remain as coordination history even after acceptance
+- the receiving session may create or update its own execution-layer task/phase/objective mapping after acceptance
+- do not assume that the sender's phase naming should survive as the receiving session's execution identity
 
 ### 5) Context-Bridge Principle
 Cross-session continuation should use the strongest available context bridge without making optional tooling mandatory.
@@ -160,6 +202,9 @@ Required guidance:
 - [ ] Shared task list is treated as execution coordination rather than semantic truth
 - [ ] Multi-session lease and provenance behavior is explicit enough for continuation
 - [ ] Handoff behavior is explicit enough for cross-session continuation
+- [ ] Request-layer naming is distinct from receiving-side execution-layer naming
+- [ ] Source phase is not used as the default visible handoff title label
+- [ ] Receiving session remap behavior is explicit when accepted work needs phase/objective tracking
 - [ ] Baseline coordination works without memsearch
 - [ ] memsearch is treated as optional supplemental context bridge when available
 - [ ] `claude-peers-mcp` is kept future-optional unless explicitly activated by later rule work
@@ -176,6 +221,8 @@ Required guidance:
 |--------|--------|
 | Shared-board vs semantic-truth clarity | 100% |
 | Multi-session handoff clarity | High |
+| Request-vs-execution layer clarity | High |
+| Receiving-side phase ownership clarity | High |
 | Session-lease clarity | High |
 | Framework usefulness without memsearch | High |
 | memsearch optionality clarity | 100% |

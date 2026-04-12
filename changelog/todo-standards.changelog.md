@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.9
+> **Current Version:** 2.10
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.10 | 2026-04-13 | **[Clarified request-style handoff naming in the shared task board](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-13 | **[Deferred multi-session shared-board coordination to the new coordination owner](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.8 | 2026-04-12 | **[Used execution surfaces to discover next unfinished work](#version-28)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.7 | 2026-04-12 | **[Kept the same task list across one active objective](#version-27)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -20,6 +21,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-210"></a>
+## Version 2.10: Clarified request-style handoff naming in the shared task board
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards.md` from v2.9 to v2.10.
+- Updated `design/todo-standards.design.md` from v2.9 to v2.10.
+- Added explicit guidance that cross-session request tasks should use request/handoff naming rather than carrying the sender's phase as the default visible title label.
+- Added explicit guidance that accepted work needing phase/objective tracking should be remapped by the receiving session into its own execution structure.
+- Added explicit guidance that source trace should remain in description / handoff notes when that distinction matters.
+
+### Summary
+TODO standards now keep shared task-board naming aligned to request/handoff semantics instead of leaking sender phase labels into receiving-side work titles.
 
 ---
 

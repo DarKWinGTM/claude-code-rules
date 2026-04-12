@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.22
+> **Current Version:** 9.23
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.23 | 2026-04-13 | **[Separated handoff request naming from receiving-side phase ownership](#version-923)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.22 | 2026-04-13 | **[Created shared execution coordination as a first-class rule chain](#version-922)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.21 | 2026-04-12 | **[Added next-work discovery from execution surfaces](#version-921)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.20 | 2026-04-12 | **[Added same-objective task-list continuity and retention](#version-920)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -58,6 +59,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-923"></a>
+## Version 9.23: Separated handoff request naming from receiving-side phase ownership
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `shared-execution-coordination` from v1.0 to v1.1 so cross-session request naming is now explicitly separated from receiving-side execution phase ownership.
+- Updated `todo-standards` from v2.9 to v2.10 so cross-session request tasks now favor request/handoff naming over sender-phase title leakage.
+- Updated `phase-implementation` from v2.12 to v2.13 so accepted cross-session work is now explicitly remapped by the receiving session into its own phase/objective structure when needed.
+- Updated `project-documentation-standards` from v2.20 to v2.21 so the repository model now distinguishes shared-board request naming from receiving-side execution phase structure.
+- Added bounded `patch/handoff-request-vs-receiving-phase-boundary.patch.md` plus `phase-037-01` and `phase-037-02` artifacts.
+- Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
+
+### Summary
+The RULES repository now keeps cross-session handoff naming request-oriented and leaves execution-phase ownership with the receiving session, which reduces phase-owner ambiguity on shared task boards.
 
 ---
 

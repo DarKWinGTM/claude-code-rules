@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
@@ -75,6 +75,21 @@ Active session ownership should behave like a lease rather than permanent owners
 
 ### 4.3 Handoff Principle
 Cross-session work transfer should be explicit enough that the receiving session can continue without guessing.
+
+### 4.3.1 Request-Layer vs Execution-Layer Principle
+The shared board request layer and the receiving-side execution layer should remain distinct rather than collapsing into one title format.
+
+### 4.3.2 Receiving-Side Phase Ownership Principle
+Phase identity belongs to the execution owner / receiving session rather than the sender's visible request title.
+
+### 4.3.3 Canonical Handoff Naming Principle
+Cross-session requests should prioritize target-session visibility and requested work rather than carrying the sender's phase label as the default visible title prefix.
+
+### 4.3.4 Handoff Note Principle
+Source session, upstream context, dependency notes, and optional source phase should live in handoff notes/description rather than overloaded visible title labels.
+
+### 4.3.5 Accept-and-Remap Principle
+Receiving-side remap into phase/objective/task-family should happen after acceptance and belong to the receiver's execution structure.
 
 ### 4.4 Context-Bridge Principle
 Continuation should use the strongest available context bridge while keeping optional tools optional.

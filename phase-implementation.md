@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.12
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.12
+> **Current Version:** 2.13
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -171,6 +171,8 @@ Required guidance:
 - when repeated slices still belong to the same active objective/phase family, extend the current task-list surface instead of recreating it
 - treat the current phase and `phase/SUMMARY.md` as execution-discovery surfaces when the next unfinished slice is not fully obvious from the task list alone
 - use checked implementation state alongside the phase workspace when phase text and current repo state together reveal the next unfinished work more clearly than either one alone
+- shared handoff/request titles should not be mistaken for the receiving session's phase identity by default
+- if accepted cross-session work needs phase tracking, the receiving session should remap it into its own phase/objective structure instead of inheriting the sender's phase label as the visible task title
 - do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
 - if the current phase is already complete and the next phase is already the implied active path, phase-boundary continuity may continue directly instead of turning completion into a report-only stop
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks

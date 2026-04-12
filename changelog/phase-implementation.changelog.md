@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.12
+> **Current Version:** 2.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.13 | 2026-04-13 | **[Clarified receiving-side phase remap during cross-session handoff](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-13 | **[Deferred shared-board coordination semantics to the new coordination owner](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-12 | **[Used phase surfaces as bounded next-work discovery inputs](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-12 | **[Kept same-objective phase slices on one task-list surface](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -24,6 +25,23 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-213"></a>
+## Version 2.13: Clarified receiving-side phase remap during cross-session handoff
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `phase-implementation.md` from v2.12 to v2.13.
+- Updated `design/phase-implementation.design.md` from v2.12 to v2.13.
+- Added explicit guidance that shared handoff/request titles should not be mistaken for the receiving session's phase identity by default.
+- Added explicit guidance that accepted cross-session work needing phase tracking should be remapped by the receiving session into its own phase/objective structure.
+
+### Summary
+Phase-implementation now makes receiving-side phase ownership clearer during cross-session handoff instead of letting sender phase labels leak into receiving-side execution identity.
 
 ---
 

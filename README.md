@@ -358,7 +358,7 @@ Please:
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, and keep archived memory inactive by default |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
-| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, current-phase-first live task-list linkage, explicit phase-to-patch linkage when patch is in scope, same-objective task-list continuity across repeated phase slices, and bounded next-work discovery from the active phase workspace |
+| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, current-phase-first live task-list linkage, explicit phase-to-patch linkage when patch is in scope, same-objective task-list continuity across repeated phase slices, bounded next-work discovery from the active phase workspace, and explicit receiving-side phase remap during cross-session handoff |
 | [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
 | [`tactical-strategic-programming.md`](tactical-strategic-programming.md) | Tactical vs strategic doctrine | Tactical entry stays fast, but every tactical move must point toward a declared strategic target and convergence path |
@@ -366,11 +366,11 @@ Please:
 | [`refusal-classification.md`](refusal-classification.md) | Deterministic refusal taxonomy | Consistent block decisions and traceable output modes |
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts |
-| [`todo-standards.md`](todo-standards.md) | Task management | Durable TODO tracking plus same-objective built-in task-list reuse, append-not-replace behavior, completed-task visibility, current-phase-first live execution visibility, and task-list-first next-work discovery with bounded fallback |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, explicit live-task-list-vs-durable-TODO distinction, same-objective live task-list continuity, explicit execution-discovery surfaces during active execution, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, and portable-by-default package-local support assets when they are reusable source content |
+| [`todo-standards.md`](todo-standards.md) | Task management | Durable TODO tracking plus same-objective built-in task-list reuse, append-not-replace behavior, completed-task visibility, current-phase-first live execution visibility, task-list-first next-work discovery with bounded fallback, and request-style handoff naming that keeps sender phase out of default visible request titles |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, explicit live-task-list-vs-durable-TODO distinction, same-objective live task-list continuity, explicit execution-discovery surfaces during active execution, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, portable-by-default package-local support assets when they are reusable source content, and explicit separation between shared-board request naming and receiving-side execution phase structure |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, keeps work moving when execution mode is active, and discovers the next unfinished slice from execution surfaces when that path is already visible |
-| [`shared-execution-coordination.md`](shared-execution-coordination.md) | Shared execution coordination | Makes the shared task list a first-class execution-coordination layer with session lease/handoff semantics, continuity-first retention, anti-overclear policy, optional memsearch support, and future-optional peer-messaging boundaries |
+| [`shared-execution-coordination.md`](shared-execution-coordination.md) | Shared execution coordination | Makes the shared task list a first-class execution-coordination layer with session lease/handoff semantics, explicit request-layer vs execution-layer separation, receiving-side phase ownership, continuity-first retention, anti-overclear policy, optional memsearch support, and future-optional peer-messaging boundaries |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
@@ -401,7 +401,7 @@ Please:
 
 **📊 Active Runtime Rules: 40**
 
-Latest refinement: the active runtime set now includes a first-class shared execution coordination owner for multi-session shared boards, session lease/handoff behavior, continuity-first retention, anti-overclear policy, and optional memsearch / future optional peer-messaging boundaries.
+Latest refinement: the active runtime set now explicitly separates cross-session request naming from receiving-side execution phase ownership, while keeping that behavior under the first-class shared execution coordination owner.
 
 </div>
 
@@ -1150,7 +1150,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.22 |
+  <b>Version</b>: 9.23 |
   <b>Last Updated</b>: 2026-04-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

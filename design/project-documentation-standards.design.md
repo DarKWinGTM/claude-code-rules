@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.20
+> **Current Version:** 2.21
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
 
 ---
@@ -31,6 +31,7 @@ This model must preserve one authority system while clearly separating:
 - `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
 - package-local support assets such as optional `skills/`, optional `agents/`, scripts, and plugin-owned docs remaining portable by default when they are maintained as reusable source artifacts
 - shared-board multi-session coordination semantics deferring to `shared-execution-coordination.md` rather than being redefined ad hoc in the repository role model
+- request-layer naming remaining distinct from receiving-side execution-layer phase structure so sender phase labels do not become the default visible handoff title
 
 ---
 

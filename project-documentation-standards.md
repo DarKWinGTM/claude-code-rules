@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.20
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.20
+> **Current Version:** 2.21
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.21
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -152,6 +152,7 @@ Required guidance:
 - design, phase, TODO, task-list, and checked implementation state may all act as execution-discovery surfaces once work is already in execution mode
 - execution-continuity and goal-review owners may shape how active work keeps moving and how the full objective set stays visible, while tasks, phases, and docs remain the execution surfaces rather than the owner of that behavior
 - shared-board multi-session coordination semantics such as session lease, handoff, retention/aging, anti-overclear behavior, and optional-extension support should defer to `shared-execution-coordination.md` rather than being reinvented ad hoc across task/phase/doc layers
+- shared board request-layer naming should remain distinct from receiving-side execution-layer phase structure so sender phase labels do not become the default visible title for accepted receiving-side work
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
 
 ---
@@ -212,10 +213,10 @@ Required guidance:
 | [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
 | [document-design-control.md](document-design-control.md) v1.8 | Design structure standards |
 | [document-patch-control.md](document-patch-control.md) v2.5 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
-| [phase-implementation.md](phase-implementation.md) v2.12 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
+| [phase-implementation.md](phase-implementation.md) v2.13 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](document-consistency.md) v1.6 | Source-side and destination/runtime reference consistency |
-| [todo-standards.md](todo-standards.md) v2.9 | TODO structure standards plus startup-establishment bridge |
+| [todo-standards.md](todo-standards.md) v2.10 | TODO structure standards plus startup-establishment bridge |
 
 ---
 

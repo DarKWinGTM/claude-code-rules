@@ -1,7 +1,7 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.19
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.12
+> **Current Version:** 1.20
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Status:** Mixed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains thirty-six rollout families:
+The current workspace contains thirty-seven rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -51,6 +51,7 @@ The current workspace contains thirty-six rollout families:
 - major phase `034` = task-list continuity and objective-boundary retention rollout
 - major phase `035` = next-work discovery from execution surfaces rollout
 - major phase `036` = shared execution coordination rollout
+- major phase `037` = handoff request-vs-receiving-phase boundary rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -143,6 +144,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 035 | 035-02 | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | `design/design.md` + touched companion designs | `patch/next-work-discovery-from-execution-surfaces.patch.md` | Sync master docs/install for the next-work discovery wave | Repo-level governance and installed runtime state reflect the bounded next-work discovery model |
 | 036 | 036-01 | `phase/phase-036-01-create-shared-execution-coordination-rule-chain.md` | `design/shared-execution-coordination.design.md` | `patch/shared-execution-coordination.patch.md` | Create the first-class coordination owner for multi-session shared execution boards | One explicit owner now exists for shared-board coordination protocol semantics |
 | 036 | 036-02 | `phase/phase-036-02-integrate-coordination-companions-and-sync.md` | `design/design.md` + touched companion designs | `patch/shared-execution-coordination.patch.md` | Integrate companion deferrals, sync master docs, and restore runtime parity for the new coordination owner | Repo-level governance and installed runtime state reflect the new coordination-owner model |
+| 037 | 037-01 | `phase/phase-037-01-refine-handoff-request-vs-execution-layer.md` | `design/shared-execution-coordination.design.md` + `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/project-documentation-standards.design.md` | `patch/handoff-request-vs-receiving-phase-boundary.patch.md` | Refine handoff naming so request-layer titles stay distinct from receiving-side execution phase ownership | Shared task boards stop leaking sender phase labels into receiving-side execution identity by default |
+| 037 | 037-02 | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | `design/design.md` + touched companion designs | `patch/handoff-request-vs-receiving-phase-boundary.patch.md` | Sync master docs/install for the handoff layer refinement wave | Repo-level governance and installed runtime state reflect the request-layer vs receiving-phase boundary |
 
 ---
 
@@ -232,6 +235,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 035-02: sync master docs/install for the next-work discovery wave
   → 036-01: create the first-class shared execution coordination owner for multi-session shared boards
   → 036-02: integrate companion deferrals, sync master docs/install, and restore runtime parity for the coordination-owner wave
+  → 037-01: refine handoff naming so request-layer titles stay distinct from receiving-side execution phase ownership
+  → 037-02: sync master docs/install for the handoff layer refinement wave
   → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, same-objective task-list continuity and retention semantics, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
@@ -323,6 +328,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 035 | 035-02 | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the next-work discovery wave |
 | 036 | 036-01 | `phase/phase-036-01-create-shared-execution-coordination-rule-chain.md` | Completed | None | Approved As-Is | first-class coordination owner created for multi-session shared boards |
 | 036 | 036-02 | `phase/phase-036-02-integrate-coordination-companions-and-sync.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the coordination-owner wave |
+| 037 | 037-01 | `phase/phase-037-01-refine-handoff-request-vs-execution-layer.md` | Completed | None | Approved As-Is | request-layer vs receiving-side phase ownership refinement applied across the bounded owner set |
+| 037 | 037-02 | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | Completed | None | Approved As-Is | master/install sync and release update completed for the handoff layer refinement wave |
 
 ---
 
@@ -412,14 +419,16 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 035 | 035-02 | Completed | `phase/phase-035-02-sync-next-work-discovery-surfaces.md` | Sync master docs/install for the next-work discovery wave | `035-01` |
 | 036 | 036-01 | Completed | `phase/phase-036-01-create-shared-execution-coordination-rule-chain.md` | Create the first-class shared execution coordination owner for multi-session shared boards | none |
 | 036 | 036-02 | Completed | `phase/phase-036-02-integrate-coordination-companions-and-sync.md` | Integrate companion deferrals, sync master docs/install, and restore runtime parity for the coordination-owner wave | `036-01` |
+| 037 | 037-01 | Completed | `phase/phase-037-01-refine-handoff-request-vs-execution-layer.md` | Refine handoff naming so request-layer titles stay distinct from receiving-side execution phase ownership | none |
+| 037 | 037-02 | Completed | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | Sync master docs/install for the handoff layer refinement wave | `037-01` |
 | 033 | 033-03 | Completed | `phase/phase-033-03-integrate-execution-continuity-and-goal-review.md` | Integrate companion rules and sync master docs/install for the new continuity and goal-review owners | `033-02` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, and the shared execution coordination refinement in dated history until final review is complete.
-- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, and the shared execution coordination refinement after the touched chains are aligned.
+- `TODO.md` should record the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, and the handoff request-vs-receiving-phase refinement in dated history until final review is complete.
+- `changelog/changelog.md` should record the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, and the handoff request-vs-receiving-phase refinement after the touched chains are aligned.
 - touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, reference-first compact review, direct human-readable wording, rules-first-over-memory, purpose-first communication, compact-table / list-first, memory-governance / session-boundary, task-list-first execution-tracking, plain aligned no-frame table-style, and next-work discovery changes without broadening ownership boundaries unnecessarily.
 
 ---
