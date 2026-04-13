@@ -125,7 +125,7 @@ When extending this skill:
 - root RULES docs = semantic authority
 - `plugin/` = optional extension package
 - `plugin/skills/session-coordination-bridge/` = operator bridge and support docs
-- hook scripts = compact lifecycle reinforcement, not coordination truth
+- `rules-compact-extension` = separate compact helper package
 
 ---
 

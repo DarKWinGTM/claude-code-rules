@@ -1,7 +1,7 @@
 # Changelog - RULES Plugin Extension
 
 > **Parent Document:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-04-13 | **[Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper](#version-111)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.10 | 2026-04-13 | **[Added the session coordination bridge skill and renamed the plugin package to claude-code-rules](#version-110)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.9 | 2026-04-08 | **[Tightened compact review to reference-first directive form](#version-19)** | 4e792d4b-8876-439b-8c07-2c5d4b04af3a |
 | 1.8 | 2026-04-08 | **[Turned SessionStart carry-forward into an active review trigger](#version-18)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -24,7 +25,24 @@
 
 ---
 
-<a id="version-110"></a>
+<a id="version-111"></a>
+## Version 1.11: Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Corrected the plugin topology so `claude-code-rules` is now the session-coordination skill package only, while `rules-compact-extension` remains the active compact/context helper.
+- Updated `plugin/README.md` and `design/rules-plugin-extension.design.md` so they no longer claim compact lifecycle hook ownership for `claude-code-rules`.
+- Updated the RULES-side package metadata to v1.4.0 with skill-only wording.
+- Updated install guidance so the intended user-facing install target is now `claude-code-rules@darkwingtm`, with package-local `@claude-code-rules` retained only for local development/testing.
+- Preserved the compact-helper boundary explicitly so the new skill package does not overlap the active compact helper.
+
+### Summary
+The RULES plugin topology is now corrected: `claude-code-rules` is the session-coordination skill plugin, and `rules-compact-extension` remains the separate active compact helper.
+
+---
+
 ## Version 1.10: Added the session coordination bridge skill and renamed the plugin package to claude-code-rules
 
 **Date:** 2026-04-13

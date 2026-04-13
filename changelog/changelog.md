@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.27
+> **Current Version:** 9.28
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.28 | 2026-04-13 | **[Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper](#version-928)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.27 | 2026-04-13 | **[Added the session coordination bridge skill to the optional plugin companion](#version-927)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.26 | 2026-04-13 | **[Added memsearch availability detection and fallback intake guidance](#version-926)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.25 | 2026-04-13 | **[Standardized visible session ownership for session-owned task work](#version-925)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -66,7 +67,24 @@
 
 ---
 
-<a id="version-927"></a>
+<a id="version-928"></a>
+## Version 9.28: Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Corrected the plugin topology so `rules-compact-extension@darkwingtm` remains the active compact/context helper while `claude-code-rules` becomes the session-coordination skill plugin only.
+- Updated `design/rules-plugin-extension.design.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so they no longer describe `claude-code-rules` as the compact helper.
+- Updated the RULES-side package metadata to v1.4.0 with skill-only wording.
+- Restored the shared `darkwingtm` marketplace and reinstalled the plugin family so `frontend-design-pattern-navigator`, `general-expert`, `multi-hat-system`, `supervisor-audit-agent-system`, `webview-screenshort`, and `rules-compact-extension` all resolve again.
+- Mirrored the RULES skill plugin into the shared marketplace source so the intended user-facing install path is now `claude-code-rules@darkwingtm`.
+
+### Summary
+The RULES plugin rollout is now topology-correct: compact helper behavior stays in `rules-compact-extension`, while `claude-code-rules` becomes the separate session-coordination skill plugin exposed through `@darkwingtm`.
+
+---
+
 ## Version 9.27: Added the session coordination bridge skill to the optional plugin companion
 
 **Date:** 2026-04-13

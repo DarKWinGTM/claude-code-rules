@@ -4,15 +4,15 @@
     "name": "DarKWinGTM"
   },
   "metadata": {
-    "description": "Local marketplace manifest for the Claude Code RULES plugin companion.",
-    "version": "1.3.1"
+    "description": "Local development marketplace manifest for the Claude Code RULES session-coordination skill plugin.",
+    "version": "1.4.0"
   },
   "plugins": [
     {
       "name": "claude-code-rules",
       "source": "./",
-      "description": "Optional RULES plugin companion with compact lifecycle hooks and a session coordination skill.",
-      "tags": ["rules", "compact", "hooks", "coordination", "skills"]
+      "description": "Session-coordination skill plugin for the Claude Code RULES system.",
+      "tags": ["rules", "coordination", "skills", "sessions"]
     }
   ]
 }
