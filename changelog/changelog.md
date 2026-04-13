@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.24
+> **Current Version:** 9.25
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.25 | 2026-04-13 | **[Standardized visible session ownership for session-owned task work](#version-925)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.24 | 2026-04-13 | **[Refined shared-board visibility, lifecycle, retention, and optional memsearch guidance](#version-924)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.23 | 2026-04-13 | **[Separated handoff request naming from receiving-side phase ownership](#version-923)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.22 | 2026-04-13 | **[Created shared execution coordination as a first-class rule chain](#version-922)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -60,6 +61,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-925"></a>
+## Version 9.25: Standardized visible session ownership for session-owned task work
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `shared-execution-coordination` from v1.2 to v1.3 so visible session ownership is now the default board-facing standard for session-owned work and request / held / blocked title forms remain distinct.
+- Updated `todo-standards` from v2.11 to v2.12 so task-list guidance now treats visible session ownership as a general standard rather than a shared-path-only convention.
+- Updated `phase-implementation` from v2.13 to v2.14 so phase-linked execution slices now prefer held-owner title forms once the work is already locally owned.
+- Updated `project-documentation-standards` from v2.22 to v2.23 so the repository model now treats visible session ownership as a default task-list standard and defers session-state title grammar to the coordination owner.
+- Added bounded `patch/universal-session-owned-task-title-grammar.patch.md` plus `phase-039-01` and `phase-039-02` artifacts.
+- Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
+
+### Summary
+The RULES repository now treats visible session ownership as a default task-list standard for session-owned work across usage modes, while preserving distinct request, held, and blocked title forms.
 
 ---
 

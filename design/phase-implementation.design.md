@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.13
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
+> **Current Version:** 2.14
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
 
@@ -135,8 +135,12 @@ Required guidance:
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
+- visible session-state grammar should remain the default board-facing standard for session-owned task-list work even when the current task list is not being shared across several sessions
 - treat the current phase and `phase/SUMMARY.md` as execution-discovery surfaces when the task list alone is not enough to reveal the next unfinished slice
 - use checked implementation state alongside the phase workspace when that combination clarifies the next unfinished work more accurately
+- shared handoff/request titles should not be mistaken for the receiving session's phase identity by default
+- if accepted cross-session work needs phase tracking, the receiving session should remap it into its own phase/objective structure instead of inheriting the sender's phase label as the visible task title
+- request-layer titles such as `For <session-short-id> owner: ...` should remain distinct from held-owner execution titles such as `<session-short-id> owner: ...` so execution-layer phase work does not masquerade as a handoff request
 - do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks
 

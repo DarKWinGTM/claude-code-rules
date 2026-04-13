@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.11
+> **Current Version:** 2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.12 | 2026-04-13 | **[Made visible session ownership a default task-list standard for session-owned work](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-13 | **[Made session-held task visibility more explicit in live task updates](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-13 | **[Clarified request-style handoff naming in the shared task board](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.9 | 2026-04-13 | **[Deferred multi-session shared-board coordination to the new coordination owner](#version-29)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -22,6 +23,23 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-212"></a>
+## Version 2.12: Made visible session ownership a default task-list standard for session-owned work
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `todo-standards.md` from v2.11 to v2.12.
+- Updated `design/todo-standards.design.md` from v2.11 to v2.12.
+- Added explicit guidance that visible session ownership is a default board-facing standard for session-owned work even when the current task list is not shared across several sessions.
+- Added explicit held-owner and blocked-on-session title forms while preserving request/handoff naming for request-layer work.
+
+### Summary
+TODO standards now treat visible session ownership as a general task-list standard instead of a mode-specific convention, while keeping request, held, and blocked states distinct.
 
 ---
 

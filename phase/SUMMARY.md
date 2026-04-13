@@ -1,7 +1,7 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.21
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.13
+> **Current Version:** 1.22
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Status:** Completed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains thirty-eight rollout families:
+The current workspace contains thirty-nine rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -53,6 +53,7 @@ The current workspace contains thirty-eight rollout families:
 - major phase `036` = shared execution coordination rollout
 - major phase `037` = handoff request-vs-receiving-phase boundary rollout
 - major phase `038` = shared-board visibility, retention, and memsearch operating-detail rollout
+- major phase `039` = universal session-owned task title grammar rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -149,6 +150,8 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 037 | 037-02 | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | `design/design.md` + touched companion designs | `patch/handoff-request-vs-receiving-phase-boundary.patch.md` | Sync master docs/install for the handoff layer refinement wave | Repo-level governance and installed runtime state reflect the request-layer vs receiving-phase boundary |
 | 038 | 038-01 | `phase/phase-038-01-refine-shared-board-visibility-retention-and-memsearch.md` | `design/shared-execution-coordination.design.md` + `design/todo-standards.design.md` + `design/memory-governance-and-session-boundary.design.md` | `patch/shared-board-visibility-retention-and-memsearch-refinement.patch.md` | Refine visible session identity, lifecycle, retention matrix, and optional memsearch operating detail for shared boards | Shared execution boards become easier to scan, more lifecycle-explicit, and more explicit about optional recall-layer behavior |
 | 038 | 038-02 | `phase/phase-038-02-sync-shared-board-operating-detail-surfaces.md` | `design/design.md` + touched companion designs | `patch/shared-board-visibility-retention-and-memsearch-refinement.patch.md` | Sync master docs/install for the shared-board operating-detail refinement wave | Repo-level governance and installed runtime state reflect the refined visible-session / lifecycle / retention / memsearch model |
+| 039 | 039-01 | `phase/phase-039-01-refine-universal-session-owned-task-title-grammar.md` | `design/shared-execution-coordination.design.md` + `design/todo-standards.design.md` + `design/phase-implementation.design.md` + `design/project-documentation-standards.design.md` | `patch/universal-session-owned-task-title-grammar.patch.md` | Refine visible session ownership into a default task-list standard while preserving request, held, and blocked title distinctions | Session-owned task work becomes visibly owned by default across usage modes without collapsing state meaning |
+| 039 | 039-02 | `phase/phase-039-02-sync-universal-task-ownership-surfaces.md` | `design/design.md` + touched companion designs | `patch/universal-session-owned-task-title-grammar.patch.md` | Sync master docs/install for the universal task-ownership refinement wave | Repo-level governance and installed runtime state reflect the universal visible-ownership model |
 
 ---
 
@@ -242,6 +245,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 037-02: sync master docs/install for the handoff layer refinement wave
   → 038-01: refine visible session identity, lifecycle, retention matrix, and optional memsearch operating detail for shared boards
   → 038-02: sync master docs/install for the shared-board operating-detail refinement wave
+  → 039-01: make visible session ownership the default task-list standard for session-owned work while keeping request, held, and blocked title forms distinct
+  → 039-02: sync master docs/install for the universal task-ownership refinement wave
   → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, same-objective task-list continuity and retention semantics, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, and an optional plugin companion area that reinforces compact handling without weakening root rules authority while now using session-scoped compact carry-forward state, an active review-trigger SessionStart model, and a tighter reference-first review contract instead of passive carry-forward-only behavior or hidden context replay
 
 ---
@@ -337,6 +342,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 037 | 037-02 | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the handoff layer refinement wave |
 | 038 | 038-01 | `phase/phase-038-01-refine-shared-board-visibility-retention-and-memsearch.md` | Approved | None | Approved As-Is | visible session identity, lifecycle, retention, and optional memsearch detail refined across the bounded owner set |
 | 038 | 038-02 | `phase/phase-038-02-sync-shared-board-operating-detail-surfaces.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the operating-detail refinement wave |
+| 039 | 039-01 | `phase/phase-039-01-refine-universal-session-owned-task-title-grammar.md` | Approved | None | Approved As-Is | visible session ownership is now a default task-list standard while request, held, and blocked title forms remain distinct |
+| 039 | 039-02 | `phase/phase-039-02-sync-universal-task-ownership-surfaces.md` | Approved | None | Approved As-Is | master/install sync and release update completed for the universal task-ownership refinement wave |
 
 ---
 
@@ -430,14 +437,16 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 037 | 037-02 | Completed | `phase/phase-037-02-sync-handoff-layer-surfaces.md` | Sync master docs/install for the handoff layer refinement wave | `037-01` |
 | 038 | 038-01 | Completed | `phase/phase-038-01-refine-shared-board-visibility-retention-and-memsearch.md` | Refine visible session identity, lifecycle, retention matrix, and optional memsearch operating detail for shared boards | none |
 | 038 | 038-02 | Completed | `phase/phase-038-02-sync-shared-board-operating-detail-surfaces.md` | Sync master docs/install for the shared-board operating-detail refinement wave | `038-01` |
+| 039 | 039-01 | Completed | `phase/phase-039-01-refine-universal-session-owned-task-title-grammar.md` | Refine visible session ownership into a default task-list standard while preserving request, held, and blocked title distinctions | none |
+| 039 | 039-02 | Completed | `phase/phase-039-02-sync-universal-task-ownership-surfaces.md` | Sync master docs/install for the universal task-ownership refinement wave | `039-01` |
 
 ---
 
 ## Global TODO / Changelog Coordination
 
-- `TODO.md` records the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, the handoff request-vs-receiving-phase refinement, and the shared-board visibility / retention / memsearch operating-detail refinement in dated history.
-- `changelog/changelog.md` records the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, the handoff request-vs-receiving-phase refinement, and the shared-board visibility / retention / memsearch operating-detail refinement.
-- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, reference-first compact review, direct human-readable wording, rules-first-over-memory, purpose-first communication, compact-table / list-first, memory-governance / session-boundary, task-list-first execution-tracking, plain aligned no-frame table-style, and next-work discovery changes without broadening ownership boundaries unnecessarily.
+- `TODO.md` records the source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, the handoff request-vs-receiving-phase refinement, the shared-board visibility / retention / memsearch operating-detail refinement, and the universal session-owned task title grammar refinement in dated history.
+- `changelog/changelog.md` records the repository-level source-trust rollout, the custom-agent-selection rollout, the portable-implementation rollout, the continuation-priority refinement, the install-doc portability refinement, the identifier-explanation refinement, the proposal-boundary refinement, the team-agent dedup/stale-presence refinement, the governing-basis clarification refinement, the compact/post-compact refinement, the plugin extension companion rollout, the compact handoff lifecycle refinement, the session-scoped compact carry-forward refinement, the active review-trigger compact refinement, the reference-first compact review refinement, the direct human-readable wording refinement, the rules-first-over-memory refinement, the purpose-first communication refinement, the compact-table / list-first refinement, the memory-governance / session-boundary refinement, the task-list-first execution-tracking refinement, the plain aligned no-frame table-style refinement, the next-work discovery refinement, the shared execution coordination refinement, the handoff request-vs-receiving-phase refinement, the shared-board visibility / retention / memsearch operating-detail refinement, and the universal session-owned task title grammar refinement.
+- touched chain changelogs should record the new external-verification, custom-agent-selection, portable-implementation, continuation-priority, install-doc portability, identifier-explanation, proposal-boundary, team-agent dedup/stale-presence, governing-basis clarification, compact/post-compact, plugin extension support-layer, compact handoff lifecycle, session-scoped compact carry-forward, active review-trigger, reference-first compact review, direct human-readable wording, rules-first-over-memory, purpose-first communication, compact-table / list-first, memory-governance / session-boundary, task-list-first execution-tracking, plain aligned no-frame table-style, next-work discovery, shared execution coordination, project-documentation companion resync, and universal session-owned task title grammar changes without broadening ownership boundaries unnecessarily.
 
 ---
 
@@ -474,13 +483,16 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the shared execution coordination refinement exists as a bounded `036` family with explicit patch linkage, a new first-class coordination owner, bounded companion deferrals across existing owners, synchronized master-governance surfaces, optional memsearch support that remains non-required, and future-optional `claude-peers-mcp` boundaries that remain outside active RULES behavior
 - the handoff request-vs-receiving-phase refinement exists as a bounded `037` family with explicit patch linkage, request-layer vs execution-layer separation, receiving-side phase ownership clarity, synchronized master-governance surfaces, and preserved phase-neutral handoff naming by default
 - the shared-board visibility / retention / memsearch operating-detail refinement exists as a bounded `038` family with explicit patch linkage, visible session identity guidance, explicit lifecycle and retention behavior, synchronized master-governance surfaces, and optional recall-layer guidance that remains subordinate to stronger checked execution evidence
+- the universal session-owned task title grammar refinement exists as a bounded `039` family with explicit patch linkage, default visible session ownership across usage modes, distinct request / held / blocked title forms, synchronized master-governance surfaces, and preserved request-layer vs execution-layer clarity
+- the current owner set keeps `For <session-short-id> owner: ...` as the request-layer form rather than forcing it onto every task state, while making visible session ownership standard across usage modes
 
 ---
 
 ## Overall Rollback / Containment
 
-If the shared execution coordination, handoff-boundary, or shared-board operating-detail refinements proved incorrect, rollback would require:
+If the shared execution coordination, handoff-boundary, shared-board operating-detail, or universal task-ownership refinements proved incorrect, rollback would require:
 - narrowing the visible-session / lifecycle / retention / optional-recall wording in the touched owner chains before removing the refinement entirely
+- narrowing the universal visible-ownership wording before weakening the underlying request / held / blocked state distinctions
 - narrowing the request-layer vs receiving-phase boundary wording before removing it entirely
 - restoring prior master-governance wording where needed while preserving any still-useful shared-board continuity and handoff-history protections that remain valid
 - preserving the recorded design/phase/patch/changelog history instead of silently erasing the rollout evidence

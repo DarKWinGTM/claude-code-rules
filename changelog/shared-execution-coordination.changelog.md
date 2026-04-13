@@ -1,7 +1,7 @@
 # Changelog - Shared Execution Coordination
 
 > **Parent Document:** [../shared-execution-coordination.md](../shared-execution-coordination.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,10 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-04-13 | **[Made visible session ownership the default standard for session-owned task work](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-13 | **[Added visible session identity, handoff lifecycle, retention matrix, and memsearch operating guidance](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-13 | **[Separated handoff request naming from receiving-side phase ownership](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-13 | **[Created first-class shared execution coordination rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new coordination owner for multi-session shared execution boards, session lease/handoff semantics, retention/aging policy, and optional memsearch / future optional peer-messaging boundaries | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Made visible session ownership the default standard for session-owned task work
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `shared-execution-coordination.md` from v1.2 to v1.3.
+- Updated `design/shared-execution-coordination.design.md` from v1.2 to v1.3.
+- Added explicit guidance that visible session ownership is the default board-facing standard for session-owned work whether the current task list is used by one session or several sessions.
+- Added a small session-state grammar that keeps request, held, and blocked task-title forms semantically distinct.
+- Preserved request-layer vs execution-layer separation instead of collapsing all session-owned work into one universal ambiguous title prefix.
+
+### Summary
+Shared execution coordination now treats visible session ownership as a default task-list standard and defines a clearer state-specific ownership grammar for request, held, and blocked work.
 
 ---
 

@@ -1,7 +1,7 @@
 # Shared Execution Coordination
 
-> **Current Version:** 1.2
-> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/shared-execution-coordination.changelog.md](changelog/shared-execution-coordination.changelog.md)
 
@@ -11,7 +11,7 @@
 
 **Core Principle: Treat a shared task list as an execution-coordination layer rather than semantic truth, make multi-session lease and handoff state explicit enough for real collaboration, preserve task continuity by default, and support optional context/communication extensions without requiring them.**
 
-This rule owns multi-session shared execution coordination. It does not replace design, phase, TODO, execution-continuity, or memory-governance owners.
+This rule owns shared execution coordination and the task-list session-state grammar used for session-owned work. It does not replace design, phase, TODO, execution-continuity, or memory-governance owners.
 
 ---
 
@@ -54,12 +54,24 @@ When task classification helps scanability, prefer one of these coordination typ
 
 This is a recommended classification aid, not a requirement that every task title use a rigid prefix.
 
+### 2.1.1) Session-State Grammar Principle
+Visible session identity should use a small stable grammar that preserves state meaning rather than one universal ambiguous prefix.
+
+Required guidance:
+- request / handoff tasks should use `For <session-short-id> owner: <work request>` as the standard request-layer form
+- actively held execution tasks should use `<session-short-id> owner: <execution task>` as the standard held-owner form
+- blocked ownership-dependent tasks should use `Blocked on <session-short-id>: <task>` or an equivalently clear blocked-on-session pattern
+- open / unclaimed tasks may remain sessionless or use an explicit open marker when that improves scanability
+- do not force one exact title phrase such as `For <session-short-id> owner:` onto every task state when doing so would collapse request, held, and blocked semantics together
+
 ### 2.2) Visible Session Identity Principle
 Session-specific work should be visibly distinguishable from shared/open board work.
 
 Required guidance:
-- if a task is actively held by one session, handed off to one session, or blocked on one session, the visible task title should identify that session clearly enough for fast scanability
-- shared/open tasks that are not yet session-held do not need a session id in the title by default
+- task ownership or session relationship should use visible session identity as the default board-facing standard rather than a sharing-path-only convention
+- apply visible session identity whether the current work is using a shared task-list path or a single-session task-list path
+- if a task is actively held by one session, handed off to one session, blocked on one session, or otherwise session-owned, the visible task title should identify that session clearly enough for fast scanability
+- only clearly open/unclaimed work may omit a session id in the title by default
 - do not hide session-held meaning only inside long description text when the compact board view is where coordination actually happens
 - use a stable visible session-id pattern rather than mixing several ad hoc title styles for the same kind of session-held work
 
@@ -105,6 +117,7 @@ Required guidance:
 - use the same visible session-id style for comparable handoff/request tasks instead of mixing unrelated title patterns
 - do not attach the sender's phase as the default visible request prefix when the work is being handed off to another session
 - if source trace matters, store it in the description / handoff note instead of treating it like the receiving session's visible execution label
+- keep this request/handoff form distinct from held-owner and blocked-owner task-title forms so board readers can tell the state, not just the session
 
 ### 4.4) Handoff Note Principle
 When cross-session context needs to travel with the task, keep that context in handoff notes rather than in overloaded visible title labels.

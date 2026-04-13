@@ -1,7 +1,7 @@
 # TODO Standards
 
-> **Current Version:** 2.11
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.11
+> **Current Version:** 2.12
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 
@@ -130,8 +130,12 @@ When the built-in task list is in use:
 - keep completed tasks visible until the active objective is truly closed or explicitly reset
 - treat the task list as the first active source for discovering the next unfinished work within the same objective
 - if the task list alone is insufficient, use the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
+- visible session ownership should be treated as the default board-facing standard for session-owned work rather than a convention that only matters when a shared task-list path is active
+- apply visible session-state grammar whether the current task list is being used by one session or several sessions
 - session-held, handoff, and blocked-on-session tasks should identify the relevant session visibly enough for fast scanability rather than hiding that meaning only in long description text
-- cross-session request tasks should use request/handoff naming rather than carrying the sender's phase as the default visible title label
+- cross-session request tasks should use request/handoff naming such as `For <session-short-id> owner: <work request>` rather than carrying the sender's phase as the default visible title label
+- actively held execution tasks should use a held-owner form such as `<session-short-id> owner: <execution task>` when that makes the ownership state clearer than a request-layer title
+- blocked ownership-dependent tasks should use `Blocked on <session-short-id>: <task>` or an equivalently clear blocked-on-session form
 - if accepted work later needs phase/objective tracking, the receiving session should remap it into its own execution structure
 - source trace should remain in description/handoff notes rather than default title prefixes when that distinction matters
 - keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad

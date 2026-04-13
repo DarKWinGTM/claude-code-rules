@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.22
+> **Current Version:** 2.23
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.23 | 2026-04-13 | **[Raised visible session ownership into a default task-list standard](#version-223)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.22 | 2026-04-13 | **[Resynced coordination-companion integration references after wave 038](#version-222)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.21 | 2026-04-13 | **[Separated shared-board request naming from receiving-side execution phase structure](#version-221)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.20 | 2026-04-13 | **[Deferred shared-board multi-session coordination semantics to the new coordination owner](#version-220)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -32,6 +33,23 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-223"></a>
+## Version 2.23: Raised visible session ownership into a default task-list standard
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.22 to v2.23.
+- Updated `design/project-documentation-standards.design.md` from v2.22 to v2.23.
+- Added explicit repository-level wording that visible session ownership remains a default task-list standard for session-owned work rather than a convention that only applies when several sessions share one task-list path.
+- Added explicit wording that request-layer, held-owner, and blocked-owner title forms stay distinct through the central coordination owner.
+
+### Summary
+Project-documentation-standards now treats visible session ownership as a general task-list standard at the repository-model layer instead of a multi-session-only convention.
 
 ---
 

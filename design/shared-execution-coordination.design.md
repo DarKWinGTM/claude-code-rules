@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
@@ -77,9 +77,21 @@ Active session ownership should behave like a lease rather than permanent owners
 Session-held, handed-off, or blocked-on-session work should be visibly distinguishable from shared/open board work.
 
 Required meaning:
+- visible session ownership should be the default board-facing standard for session-owned work, not a convention that only appears when a shared task-list path is active
+- the same visible ownership discipline should apply whether the current task list is being used by one session or several sessions
 - scan-time session identity should be strong enough that another session can tell which work is actively held versus generally available
 - visible session identity belongs in the compact board-facing representation, not only in long description text
 - comparable session-held work should use a stable visible session-id pattern rather than several ad hoc title styles
+
+### 4.2.2 Session-State Grammar Principle
+Visible session identity should use a small stable grammar that preserves state meaning rather than one universal ambiguous prefix.
+
+Required meaning:
+- request/handoff tasks may use `For <session-short-id> owner: <work request>`
+- actively held execution tasks may use `<session-short-id> owner: <execution task>`
+- blocked ownership-dependent tasks may use `Blocked on <session-short-id>: <task>` or an equivalently clear blocked-on-session pattern
+- open/unclaimed tasks may remain sessionless or use an explicit open marker when helpful
+- one exact phrase should not be forced across request, held, and blocked states if it collapses those meanings together
 
 ### 4.3 Handoff Principle
 Cross-session work transfer should be explicit enough that the receiving session can continue without guessing.
