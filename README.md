@@ -401,7 +401,7 @@ Please:
 
 **📊 Active Runtime Rules: 40**
 
-Latest refinement: the active runtime set now makes optional recall intake availability-first, so memsearch is checked before use and missing plugin state falls back immediately to native memory plus checked execution surfaces.
+Latest refinement: the optional plugin companion now adds a `claude-code-rules:session-coordination-bridge` support skill and uses one coherent `claude-code-rules` plugin identity across install flow, runtime signals, and persisted compact state.
 
 </div>
 
@@ -487,7 +487,7 @@ ls ./.claude/rules/artifact-initiation-control.md
 | `./phase/phase-NNN-NN-<subphase-name>.md` | Governed subphase execution detail with design extraction, optional patch extraction, and review state | Subphase docs |
 | `./patch/<context>.patch.md` or `./<context>.patch.md` | Governed patch/review artifacts outside live phase planning that may feed phase one-way when relevant | Patch docs |
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
-| `./plugin/**` | Optional hook-based extension package for runtime reinforcement that remains subordinate to root RULES authority | Support / extension package |
+| `./plugin/**` | Optional extension package for runtime reinforcement and operator-facing support skills that remains subordinate to root RULES authority | Support / extension package |
 
 > **💡 Single Source of Truth Principle:**
 > - Design files (`.design.md`) define active target state
@@ -513,7 +513,7 @@ This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and gov
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Governed phase-detail layer | Multi-stage execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
 | `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters |
-| `plugin/**` | Optional compact-hook companion package | Package-local implementation assets such as `README.md`, `.claude-plugin/`, `hooks/`, and scripts that reinforce root RULES behavior without becoming a second governance stack |
+| `plugin/**` | Optional RULES plugin companion package | Package-local implementation assets such as `README.md`, `.claude-plugin/`, `hooks/`, `skills/`, and scripts that reinforce root RULES behavior without becoming a second governance stack |
 | `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
 
 ### Startup Artifact Gate
@@ -543,29 +543,37 @@ Change request received
   → Verify links, versions, and consistency
 ```
 
-### Optional compact hook companion
+### Optional plugin companion
 
 The repository can now also carry an optional plugin companion under:
 - `./plugin/`
 
-Its role is narrow:
+Its role is still bounded:
 - reinforce compact/post-compact behavior through supported Claude Code hooks
+- expose one operator-facing support skill for session-coordination workflow
 - remain subordinate to root RULES authority
 - avoid creating a second governance stack under `plugin/`
 
-Run package-local plugin install from `./plugin` when you want the compact hook companion:
+Run package-local plugin install from `./plugin` when you want the plugin companion:
 
 ```bash
 cd plugin
 claude plugins marketplace add ./ --scope local
-claude plugins install rules-compact-extension@darkwingtm --scope local
+claude plugins install claude-code-rules@claude-code-rules --scope local
 ```
 
 Detailed meaning:
 1. `cd plugin` moves into the package root so the package-local marketplace manifest is the active source.
 2. `claude plugins marketplace add ./ --scope local` adds the package-local marketplace declared by `plugin/.claude-plugin/marketplace.json`.
-3. `claude plugins install rules-compact-extension@darkwingtm --scope local` installs the plugin from that package-local marketplace in local scope.
-4. the compact companion remains an optional runtime support layer; it does not replace root RULES authority.
+3. `claude plugins install claude-code-rules@claude-code-rules --scope local` installs the plugin from that package-local marketplace in local scope.
+4. the plugin companion remains an optional runtime support layer; it does not replace root RULES authority.
+
+Migration note if the older compact-only package id is still installed:
+
+```bash
+claude plugins uninstall rules-compact-extension@darkwingtm --scope local
+claude plugins install claude-code-rules@claude-code-rules --scope local
+```
 
 Recommended checks after install:
 
@@ -576,16 +584,18 @@ claude plugins list
 Optional interactive checks:
 - `/reload-plugins`
 - `/hooks`
+- `/claude-code-rules:session-coordination-bridge`
 
-Current hook behavior in this package:
+Current package behavior:
 - `PreCompact` creates or refreshes session-scoped compact state under `${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/`
 - `SessionStart` with matcher `compact` emits one short compact-resume signal, injects an explicit review-before-continuation directive that names the exact resolved session review files plus the re-anchor reminder, removes that session’s pending state after successful use, and writes one bounded per-session proof file
 - `PostCompact` is prune-only and opportunistically removes expired or legacy compact-state leftovers
+- `skills/session-coordination-bridge/` provides an operator-facing support surface for shared-board coordination workflow, optional recall detection, request-vs-execution remap, and sync-back discipline
 - the package no longer treats singleton files like `active-handoff.json` or `last-sessionstart-consumed.json` as the active contract
 
 Boundary reminder:
-- root runtime rules still define compact/post-compact semantics
-- the plugin only reinforces those semantics through hook mechanics
+- root runtime rules still define compact/post-compact semantics and shared execution coordination semantics
+- the plugin only reinforces those semantics through hook mechanics plus one support skill front door
 - plugin installation does not replace the normal `~/.claude/rules/` install path
 - the standard `hooks/hooks.json` is auto-discovered, so `plugin.json` should not duplicate that same path under a `hooks` field unless extra hook files are being layered in
 
@@ -1150,7 +1160,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.26 |
+  <b>Version</b>: 9.27 |
   <b>Last Updated</b>: 2026-04-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

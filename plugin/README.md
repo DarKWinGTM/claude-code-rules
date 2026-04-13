@@ -1,16 +1,17 @@
-# RULES Compact Extension
+# Claude Code Rules Plugin Companion
 
-> **Current Version:** 1.2.6
+> **Current Version:** 1.3.1
 
-An optional hook-based plugin companion for `/home/node/workplace/AWCLOUD/TEMPLATE/RULES` that reinforces post-compact re-anchor behavior.
+An optional plugin companion for `/home/node/workplace/AWCLOUD/TEMPLATE/RULES` that keeps the compact lifecycle hooks and adds a session coordination support skill.
 
 ---
 
 ## Purpose
 
-This package exists to help Claude Code handle `/compact` more consistently.
+This package exists to help Claude Code handle two optional support jobs more consistently.
 
 It is meant to:
+- keep the compact lifecycle hooks that reinforce RULES post-compact re-anchor behavior
 - create one short-lived session-scoped compact handoff before compaction
 - extract bounded pre-compact session context as the real carry-forward source
 - keep extraction conservative when transcript structure is noisy, rather than pretending objective extraction is perfect
@@ -18,13 +19,14 @@ It is meant to:
 - add a short post-compact reminder when the session resumes from `compact`
 - emit one short compact-resume signal when that session’s own handoff is applied
 - keep one short-lived per-session SessionStart proof file so real compact-resume execution can be verified without turning the package into a history store
-- reinforce the RULES contract that compacted carry-forward state must re-anchor to the active objective before continuing
+- expose `/claude-code-rules:session-coordination-bridge` as an operator-facing support skill for cross-session coordination workflow
 
 It is **not** meant to:
 - replace root RULES authority
 - install or manage `~/.claude/rules/`
 - act like a second governance stack
 - act like a history or audit store for compact payloads
+- replace the shared task board, phase, TODO, or checked implementation state as coordination truth
 - merge many sessions into one large carry-forward file
 
 ---
@@ -44,15 +46,15 @@ Run from `<plugin-root>`.
 ### Recommended first-time install
 
 ```bash
-cd /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin
+cd <plugin-root>
 claude plugins marketplace add ./ --scope local
-claude plugins install rules-compact-extension@darkwingtm --scope local
+claude plugins install claude-code-rules@claude-code-rules --scope local
 ```
 
 Detailed meaning:
 1. `cd .../plugin` moves to the package root so the local marketplace manifest resolves correctly.
 2. `claude plugins marketplace add ./ --scope local` adds the package-local marketplace declared by `.claude-plugin/marketplace.json`.
-3. `claude plugins install rules-compact-extension@darkwingtm --scope local` installs the plugin from that package-local marketplace into local scope.
+3. `claude plugins install claude-code-rules@claude-code-rules --scope local` installs the plugin from that package-local marketplace into local scope.
 
 ### Reload and verification
 
@@ -65,12 +67,13 @@ Optional reload:
 Check installed state:
 
 ```bash
-claude plugins list
+claude plugins list --json
 ```
 
 Practical verification after reload:
-- confirm `rules-compact-extension@darkwingtm` is `enabled`
+- confirm `claude-code-rules@claude-code-rules` is `enabled`
 - inspect `/hooks` if you want to confirm the compact lifecycle hooks are visible from the plugin source
+- run `/claude-code-rules:session-coordination-bridge` to confirm the skill is visible
 - trigger `/compact` later to observe the session-scoped handoff lifecycle in practice
 
 ### Update an installed plugin
@@ -78,13 +81,29 @@ Practical verification after reload:
 Use the installed identifier shape:
 
 ```bash
-claude plugins update rules-compact-extension@darkwingtm --scope local
+claude plugins update claude-code-rules@claude-code-rules --scope local
+```
+
+Migration note if you still have the old compact-only package installed:
+- check the installed scope first with `claude plugins list --json`
+- uninstall from the same reported scope before installing the renamed package
+
+Examples:
+
+```bash
+claude plugins uninstall rules-compact-extension@darkwingtm --scope user
+claude plugins install claude-code-rules@claude-code-rules --scope user
+```
+
+```bash
+claude plugins uninstall rules-compact-extension@darkwingtm --scope local
+claude plugins install claude-code-rules@claude-code-rules --scope local
 ```
 
 Why this exact shape matters:
 - Claude Code tracks installed plugins by `plugin@marketplace`
 - the explicit installed identifier avoids ambiguity when updating
-- this package now uses the shared `darkwingtm` marketplace as the maintained runtime label
+- this package now uses the package-local `claude-code-rules` marketplace with the `claude-code-rules` plugin id
 
 ---
 
@@ -96,6 +115,7 @@ Why this exact shape matters:
 - `scripts/precompact-create-handoff.sh` = creates session-scoped pending/context/carry-forward state before compaction
 - `scripts/sessionstart-compact-consume-handoff.sh` = resolves exactly one source session, injects only that session’s carry-forward payload, emits one short compact-resume signal, and records session-scoped proof
 - `scripts/postcompact-prune-handoff.sh` = opportunistically prunes stale/orphaned session state
+- `skills/session-coordination-bridge/SKILL.md` = operator-facing support skill for shared-board and optional-tool coordination workflow
 
 ### Active state layout
 
@@ -108,6 +128,7 @@ ${CLAUDE_PLUGIN_DATA}/compact/
       precompact-context.json
       carry-forward-selected.json
       sessionstart-proof.json
+      sessionstart-directive.json
 ```
 
 ### What each file means
@@ -185,6 +206,7 @@ The semantic authority remains at `<rules-root>`:
 | `hooks/hooks.json` | plugin hook configuration |
 | `scripts/compact-handoff-common.sh` | shared session-state helper |
 | `scripts/*.sh` | compact lifecycle hook scripts |
+| `skills/session-coordination-bridge/` | operator-facing session coordination support skill |
 | `README.md` | package-local install and boundary guide |
 
 ---
@@ -250,6 +272,7 @@ ${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/pending.json
 ${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/precompact-context.json
 ${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/carry-forward-selected.json
 ${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/sessionstart-proof.json
+${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/sessionstart-directive.json
 ```
 
 These files are:

@@ -283,7 +283,7 @@ PY
 import json,os
 payload=json.loads(os.environ.get('SESSION_STATE_JSON', '{}'))
 out={
-  'schema': 'rules-compact-extension/pending@1',
+  'schema': 'claude-code-rules/pending@1',
   'sourceSessionId': payload.get('sourceSessionId'),
   'createdAt': payload.get('createdAt'),
   'pendingUntil': payload.get('expiresAt'),
@@ -304,7 +304,7 @@ session_id=sys.argv[1]
 transcript_path=sys.argv[2]
 ctx=json.loads(os.environ.get('PRECOMPACT_CONTEXT_JSON', '{}'))
 out={
-  'schema': 'rules-compact-extension/precompact-context@1',
+  'schema': 'claude-code-rules/precompact-context@1',
   'sourceSessionId': session_id,
   'transcriptPath': transcript_path,
   'activeObjective': ctx.get('activeObjective'),
@@ -322,7 +322,7 @@ PY
 import json,os
 ctx=json.loads(os.environ.get('PRECOMPACT_JSON', '{}'))
 out={
-  'schema': 'rules-compact-extension/carry-forward-selected@1',
+  'schema': 'claude-code-rules/carry-forward-selected@1',
   'sourceSessionId': ctx.get('sourceSessionId'),
   'derivedFrom': 'precompact-context.json',
   'inject': {
@@ -414,7 +414,7 @@ except Exception:
     sessionstart_event = {}
 
 proof = {
-    'schema': 'rules-compact-extension/sessionstart-proof@1',
+    'schema': 'claude-code-rules/sessionstart-proof@1',
     'sourceSessionId': source_session_id,
     'consumedAt': now.isoformat().replace('+00:00', 'Z'),
     'expiresAt': expires.isoformat().replace('+00:00', 'Z'),
@@ -481,7 +481,7 @@ status_line = os.environ.get('STATUS_LINE', '')
 review_files = [item for item in (precompact_file, carry_forward_file, proof_file) if item]
 
 directive = {
-    'schema': 'rules-compact-extension/sessionstart-directive@1',
+    'schema': 'claude-code-rules/sessionstart-directive@1',
     'sourceSessionId': source_session_id,
     'resumeSessionId': resume_session_id,
     'generatedAt': now.isoformat().replace('+00:00', 'Z'),

@@ -1,5 +1,5 @@
 {
-  "description": "Compact lifecycle reinforcement for the RULES system.",
+  "description": "Compact lifecycle reinforcement for the Claude Code RULES plugin companion.",
   "hooks": {
     "SessionStart": [
       {

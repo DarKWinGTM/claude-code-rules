@@ -1,18 +1,18 @@
 {
-  "name": "darkwingtm",
+  "name": "claude-code-rules",
   "owner": {
     "name": "DarKWinGTM"
   },
   "metadata": {
-    "description": "Local marketplace manifest for the RULES compact hook companion.",
-    "version": "1.2.6"
+    "description": "Local marketplace manifest for the Claude Code RULES plugin companion.",
+    "version": "1.3.1"
   },
   "plugins": [
     {
-      "name": "rules-compact-extension",
+      "name": "claude-code-rules",
       "source": "./",
-      "description": "Optional hook-based compact companion that reinforces RULES post-compact re-anchor behavior.",
-      "tags": ["rules", "compact", "hooks"]
+      "description": "Optional RULES plugin companion with compact lifecycle hooks and a session coordination skill.",
+      "tags": ["rules", "compact", "hooks", "coordination", "skills"]
     }
   ]
 }

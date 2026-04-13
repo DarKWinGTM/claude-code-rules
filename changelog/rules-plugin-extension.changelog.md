@@ -1,7 +1,7 @@
 # Changelog - RULES Plugin Extension
 
 > **Parent Document:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-04-13 | **[Added the session coordination bridge skill and renamed the plugin package to claude-code-rules](#version-110)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.9 | 2026-04-08 | **[Tightened compact review to reference-first directive form](#version-19)** | 4e792d4b-8876-439b-8c07-2c5d4b04af3a |
 | 1.8 | 2026-04-08 | **[Turned SessionStart carry-forward into an active review trigger](#version-18)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.7 | 2026-04-07 | **[Added reviewRoot pointers to compact navigator messages](#version-17)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -23,7 +24,25 @@
 
 ---
 
-<a id="version-17"></a>
+<a id="version-110"></a>
+## Version 1.10: Added the session coordination bridge skill and renamed the plugin package to claude-code-rules
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.8 to v1.10 so the optional plugin companion now explicitly includes one operator-facing session coordination support skill while keeping root RULES as semantic authority.
+- Renamed the plugin package identity from `rules-compact-extension` to `claude-code-rules` and updated package metadata plus marketplace manifest to v1.3.1.
+- Added `plugin/skills/session-coordination-bridge/` with `SKILL.md` plus focused support docs for overview, capability detection, coordination flow, request contract, and examples.
+- Updated `plugin/README.md` so install/update flow now uses `claude-code-rules@claude-code-rules`, includes migration guidance for older `rules-compact-extension@darkwingtm` installs, and documents the new support skill.
+- Updated compact visible runtime signal wording from `[rules-compact-extension]` to `[claude-code-rules]`.
+- Updated compact session-state schema prefixes from `rules-compact-extension/*` to `claude-code-rules/*` so persisted runtime state matches the new plugin identity.
+
+### Summary
+The RULES plugin companion now exposes an operator-facing session coordination support skill under the `claude-code-rules` namespace and uses one coherent plugin identity across install flow, runtime signals, and persisted compact state.
+
+---
+
 ## Version 1.9: Tightened compact review to reference-first directive form
 
 **Date:** 2026-04-08

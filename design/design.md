@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 9.26
+> **Current Version:** 9.27
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -30,7 +30,7 @@ This active-state model must preserve UDVC-1 while supporting first-class phased
 | Patch | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed patch/review artifacts outside live phase planning |
 | History | `changelog/*.changelog.md` | Authoritative chain history and latest chain version state |
 | Execution | `TODO.md` | Execution tracking only |
-| Support | `phase-implementation-template.md`, `support/**/*.md`, `plugin/**` | Root-level helper templates, reference-only/support materials, and optional extension-package assets such as compact-handoff reinforcement outside governed chain authority |
+| Support | `phase-implementation-template.md`, `support/**/*.md`, `plugin/**` | Root-level helper templates, reference-only/support materials, and optional extension-package assets such as compact-handoff reinforcement plus operator-facing support skills outside governed chain authority |
 
 ### 2.2 Governance Principle
 

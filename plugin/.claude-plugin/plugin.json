@@ -1,9 +1,9 @@
 {
-  "name": "rules-compact-extension",
-  "version": "1.2.6",
-  "description": "Optional hook-based compact companion for the Claude Code RULES system.",
+  "name": "claude-code-rules",
+  "version": "1.3.1",
+  "description": "Optional plugin companion for the Claude Code RULES system with compact hooks and a session coordination skill.",
   "author": {
     "name": "DarKWinGTM"
   },
-  "keywords": ["rules", "compact", "hooks", "context"]
+  "keywords": ["rules", "compact", "hooks", "coordination", "skills"]
 }

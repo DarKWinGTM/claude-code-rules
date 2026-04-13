@@ -78,7 +78,7 @@ print(json.loads(os.environ['PARSED_STATE_JSON']).get('recheckCount', 0))
 PY
 )"
 
-    status_line="[rules-compact-extension] review-required session=${source_session_id} objective=${objective_status} carry=${carry_count} recheck=${recheck_count} reviewRoot=${compact_root} review=${review_target}"
+    status_line="[claude-code-rules] review-required session=${source_session_id} objective=${objective_status} carry=${carry_count} recheck=${recheck_count} reviewRoot=${compact_root} review=${review_target}"
     directive_mode="exact-session-review-required"
 
     directive_text="$(SOURCE_SESSION_ID="$source_session_id" REVIEW_DIR="$review_dir" PRECOMPACT_FILE="$precompact_file" CARRY_FORWARD_FILE="$carry_forward_file" PROOF_FILE="$proof_file" OBJECTIVE_STATUS="$objective_status" python3 - <<'PY'
@@ -107,7 +107,7 @@ PY
 fi
 
 if [ -z "$status_line" ]; then
-  status_line="[rules-compact-extension] review-required no-exact-session-match objective=needs-recheck carry=0 recheck=0 reviewRoot=${compact_root} review=index.json"
+  status_line="[claude-code-rules] review-required no-exact-session-match objective=needs-recheck carry=0 recheck=0 reviewRoot=${compact_root} review=index.json"
   directive_text="$(COMPACT_ROOT="$compact_root" REVIEW_INDEX_PATH="$review_index_path" python3 - <<'PY'
 import os
 compact_root=os.environ.get('COMPACT_ROOT', '')

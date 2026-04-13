@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.26
+> **Current Version:** 9.27
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.27 | 2026-04-13 | **[Added the session coordination bridge skill to the optional plugin companion](#version-927)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.26 | 2026-04-13 | **[Added memsearch availability detection and fallback intake guidance](#version-926)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.25 | 2026-04-13 | **[Standardized visible session ownership for session-owned task work](#version-925)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.24 | 2026-04-13 | **[Refined shared-board visibility, lifecycle, retention, and optional memsearch guidance](#version-924)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -65,7 +66,26 @@
 
 ---
 
-<a id="version-926"></a>
+<a id="version-927"></a>
+## Version 9.27: Added the session coordination bridge skill to the optional plugin companion
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `design/rules-plugin-extension.design.md` from v1.8 to v1.10 so the optional plugin companion now includes one operator-facing session coordination support skill while keeping root RULES as semantic authority.
+- Updated `changelog/rules-plugin-extension.changelog.md` to v1.10 for the plugin companion skill rollout.
+- Renamed the plugin package identity from `rules-compact-extension` to `claude-code-rules` and updated `plugin/.claude-plugin/plugin.json` plus `plugin/.claude-plugin/marketplace.json` to v1.3.1.
+- Added `plugin/skills/session-coordination-bridge/` with `SKILL.md` plus focused support docs for overview, capability detection, coordination flow, request contract, and examples.
+- Updated `plugin/README.md`, `README.md`, `TODO.md`, and `phase/SUMMARY.md` so the optional extension layer now documents both compact lifecycle hooks and the new support skill, including migration guidance for older `rules-compact-extension@darkwingtm` installs.
+- Updated compact visible runtime signal wording and persisted compact-state schema prefixes from `rules-compact-extension/*` to `claude-code-rules/*` so runtime behavior stays aligned with the new plugin identity.
+- Added bounded `patch/session-coordination-bridge-skill-rollout.patch.md` plus `phase-041-01` and `phase-041-02` artifacts for the skill rollout wave.
+
+### Summary
+The optional RULES plugin companion now exposes `claude-code-rules:session-coordination-bridge` as a bounded support skill and uses one coherent `claude-code-rules` plugin identity across install flow, runtime signals, and persisted compact state.
+
+---
+
 ## Version 9.26: Added memsearch availability detection and fallback intake guidance
 
 **Date:** 2026-04-13
