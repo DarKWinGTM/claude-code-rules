@@ -123,9 +123,9 @@ When extending this skill:
 
 ### Artifact taxonomy
 - root RULES docs = semantic authority
-- `plugin/` = optional extension package
-- `plugin/skills/session-coordination-bridge/` = operator bridge and support docs
-- `rules-compact-extension` = separate compact helper package
+- `plugin/` = unified Rules-owned plugin package
+- `plugin/skills/session-coordination-bridge/` = operator bridge and support docs inside that package
+- `plugin/hooks/` + `plugin/scripts/` = compact lifecycle reinforcement inside the same package
 
 ---
 

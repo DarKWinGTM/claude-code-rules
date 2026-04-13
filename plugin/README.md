@@ -1,27 +1,28 @@
 # Claude Code Rules Plugin Companion
 
-> **Current Version:** 1.4.1
+> **Current Version:** 1.5.0
 
-An optional plugin companion for `<rules-root>` that exposes the session coordination support skill while leaving compact lifecycle hooks to `rules-compact-extension`.
+A unified plugin companion for `<rules-root>` that combines the compact/context helper and the session coordination support skill in one Rules-owned package.
 
 ---
 
 ## Purpose
 
-This package exists to expose one optional support job cleanly.
+This package exists to keep the RULES plugin surface unified.
 
 It is meant to:
+- reinforce RULES compact/post-compact behavior through supported Claude Code hooks
+- create one short-lived session-scoped compact handoff before compaction
+- extract bounded pre-compact session context as the real carry-forward source
+- emit review-required compact-resume signals and bounded re-anchor context on resume
 - expose `/claude-code-rules:session-coordination-bridge` as an operator-facing support skill for cross-session coordination workflow
-- help operators use the shared board, phase/TODO/design/code, memory, optional recall, and optional peer signaling together safely
-- stay small enough that the compact-helper role remains owned separately by `rules-compact-extension`
 
 It is **not** meant to:
 - replace root RULES authority
 - install or manage `~/.claude/rules/`
 - act like a second governance stack
-- own compact lifecycle hooks
-- own compact persistence state
 - replace the shared task board, phase, TODO, or checked implementation state as coordination truth
+- turn optional recall or peer signaling into required infrastructure
 
 ---
 
@@ -30,6 +31,7 @@ It is **not** meant to:
 - `<rules-root>` = the RULES repository root
 - `<plugin-root>` = `<rules-root>/plugin`
 - `<plugin-marketplace-root>` = the shared plugin marketplace root that contains the `darkwingtm` aggregate marketplace
+- `<plugin-data>` = `${CLAUDE_PLUGIN_DATA}` persistent plugin data directory
 
 ---
 
@@ -37,16 +39,12 @@ It is **not** meant to:
 
 ### Recommended public install
 
-Install through the shared `darkwingtm` marketplace:
-
 ```bash
 claude plugins marketplace add "<plugin-marketplace-root>" --scope user
 claude plugins install claude-code-rules@darkwingtm --scope user
 ```
 
 ### Local development install
-
-Use this only when testing directly from the RULES repo source:
 
 ```bash
 cd <plugin-root>
@@ -56,7 +54,7 @@ claude plugins install claude-code-rules@claude-code-rules --scope local
 
 ### Update
 
-Public install update:
+Public update:
 
 ```bash
 claude plugins update claude-code-rules@darkwingtm --scope user
@@ -68,11 +66,14 @@ Local development update:
 claude plugins update claude-code-rules@claude-code-rules --scope local
 ```
 
-### Important boundary
+### Migration note
 
-- `claude-code-rules@darkwingtm` = session-coordination skill plugin
-- `rules-compact-extension@darkwingtm` = compact/context helper
-- do **not** uninstall `rules-compact-extension` just to install `claude-code-rules`
+If an older `rules-compact-extension@darkwingtm` install is still active, migrate to the unified package:
+
+```bash
+claude plugins uninstall rules-compact-extension@darkwingtm --scope user
+claude plugins install claude-code-rules@darkwingtm --scope user
+```
 
 ---
 
@@ -87,11 +88,11 @@ claude plugins list --json
 Optional interactive checks:
 - `/reload-plugins`
 - `/claude-code-rules:session-coordination-bridge`
-- `/hooks` to confirm compact hooks still come from `rules-compact-extension`
+- `/hooks`
 
 What you should see:
 - `claude-code-rules@darkwingtm` enabled for the public install path
-- `rules-compact-extension@darkwingtm` still enabled if you use compact helper behavior
+- compact lifecycle hooks visible through the plugin hook surface
 - the skill `/claude-code-rules:session-coordination-bridge` available
 
 ---
@@ -99,17 +100,63 @@ What you should see:
 ## Runtime contract
 
 ### Public runtime surface
+- `hooks/hooks.json` = compact lifecycle hook configuration
+- `scripts/compact-handoff-common.sh` = shared session-state path builders, TTL, extraction, and prune logic
+- `scripts/precompact-create-handoff.sh` = creates session-scoped pending/context/carry-forward state before compaction
+- `scripts/sessionstart-compact-consume-handoff.sh` = resolves exactly one source session, injects only that session’s carry-forward payload, emits one short compact-resume signal, and records session-scoped proof
+- `scripts/postcompact-prune-handoff.sh` = opportunistically prunes stale/orphaned session state
 - `skills/session-coordination-bridge/SKILL.md` = operator-facing support skill for shared-board and optional-tool coordination workflow
 - `skills/session-coordination-bridge/*.md` = focused support docs for coordination model, capability detection, flow, request contract, and examples
-- `.claude-plugin/plugin.json` = skill-plugin metadata
-- `.claude-plugin/marketplace.json` = local development marketplace metadata for the skill package
 
 ### Current behavior
-- this package exposes the `session-coordination-bridge` skill only
-- it does not own compact hooks, compact runtime signals, compact state, or compact proof files
-- compact helper behavior remains in `rules-compact-extension@darkwingtm`
+- this package owns the compact helper again
+- this package also exposes the `session-coordination-bridge` skill
+- compact behavior and coordination skill now ship from the same Rules-owned plugin source
 - the intended user-facing install path is `claude-code-rules@darkwingtm`
-- the package-local `@claude-code-rules` path is for local development/testing only
+- the package-local `claude-code-rules@claude-code-rules` path is for local development/testing only
+
+### Active state layout
+
+```text
+${CLAUDE_PLUGIN_DATA}/compact/
+  index.json
+  sessions/
+    <source-session-id>/
+      pending.json
+      precompact-context.json
+      carry-forward-selected.json
+      sessionstart-proof.json
+      sessionstart-directive.json
+```
+
+### What each file means
+- `index.json`
+  - small live routing/cleanup metadata only
+  - one entry per live/recent source session
+  - no large carry-forward text payloads
+- `pending.json`
+  - pending-only marker that this source session is waiting for a compact resume
+- `precompact-context.json`
+  - bounded extracted source context from before compact
+- `carry-forward-selected.json`
+  - selected carry-forward payload ready for SessionStart injection
+- `sessionstart-proof.json`
+  - proof-only file for what SessionStart did for that source session
+- `sessionstart-directive.json`
+  - bounded proof file for the emitted review-required directive and review targets
+
+### Current compact behavior
+- `PreCompact` creates or refreshes per-session state under `${CLAUDE_PLUGIN_DATA}/compact/sessions/<source-session-id>/`
+- `SessionStart` with matcher `compact` reads only `index.json`, requires exact `session_id` match against one pending source session, emits a navigator-style compact-resume summary through `systemMessage`, injects a bounded reference-first review directive through `hookSpecificOutput.additionalContext`, and records proof/directive files
+- `PostCompact` is prune-only and rewrites the live index after cleanup
+- current carry-forward extraction stays conservative and fails closed when objective extraction is too noisy
+
+### Coordination skill behavior
+- `skills/session-coordination-bridge/` provides an operator-facing support surface for shared-board coordination workflow, optional recall detection, request-vs-execution remap, and sync-back discipline
+- task list remains the coordination board
+- phase/TODO/design/code remain semantic truth
+- memsearch remains optional recall support
+- `claude-peers-mcp` remains optional live signaling
 
 ### Current structure
 
@@ -117,25 +164,16 @@ What you should see:
 |------|------|
 | `.claude-plugin/plugin.json` | package metadata |
 | `.claude-plugin/marketplace.json` | package-local development marketplace manifest |
+| `hooks/hooks.json` | compact lifecycle hook configuration |
+| `scripts/*.sh` | compact lifecycle helper scripts |
 | `skills/session-coordination-bridge/` | operator-facing session coordination support skill |
 | `README.md` | package-local install and boundary guide |
 
 ---
 
-## Relationship to compact helper
-
-Compact lifecycle behavior is intentionally out of this package.
-
-That responsibility remains with:
-- `rules-compact-extension@darkwingtm`
-
-พูดง่าย ๆ คือ package นี้ดูแล skill ด้าน session coordination ส่วน compact helper ยังอยู่อีก plugin หนึ่ง ไม่ได้รวมอยู่ที่นี่แล้ว
-
----
-
-## Boundary reminder
+## Important boundary
 
 The semantic authority remains at `<rules-root>`:
+- root runtime rules define compact/post-compact semantics
 - root runtime rules define coordination semantics and the meaning of the shared execution model
-- this plugin only provides an operator-facing coordination skill surface
-- compact helper behavior is intentionally owned by `rules-compact-extension`, not by this plugin
+- this plugin reinforces those semantics through compact hooks plus one support skill front door

@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.29
+> **Current Version:** 9.30
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.30 | 2026-04-13 | **[Re-unified the Rules plugin under RULES/plugin](#version-930)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.29 | 2026-04-13 | **[Finalized topology-correction docs and install guidance](#version-929)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.28 | 2026-04-13 | **[Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper](#version-928)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.27 | 2026-04-13 | **[Added the session coordination bridge skill to the optional plugin companion](#version-927)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -65,6 +66,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-930"></a>
+## Version 9.30: Re-unified the Rules plugin under RULES/plugin
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Re-unified the Rules plugin under `RULES/plugin` so compact helper hooks/scripts and the `session-coordination-bridge` skill ship from the same Rules-owned package again.
+- Updated the shared `darkwingtm` marketplace to expose the unified Rules plugin and removed duplicate maintained package copies from the shared plugin workspace.
+- Updated the RULES-side package metadata to `1.5.0` and synchronized README/design/TODO/changelog/phase surfaces to the unified package model.
+- Kept the public install target as `claude-code-rules@darkwingtm` while leaving package-local `@claude-code-rules` for local development/testing only.
+
+### Summary
+The Rules plugin is unified again at the source and install topology layers, while the public install path remains stable through `@darkwingtm`.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - RULES Plugin Extension
 
 > **Parent Document:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-04-13 | **[Re-unified the Rules plugin under RULES/plugin](#version-113)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.12 | 2026-04-13 | **[Finalized topology-correction docs and portable install wording](#version-112)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.11 | 2026-04-13 | **[Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper](#version-111)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.10 | 2026-04-13 | **[Added the session coordination bridge skill and renamed the plugin package to claude-code-rules](#version-110)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -23,6 +24,24 @@
 | 1.2 | 2026-04-06 | **[Replaced latest witness files with ephemeral compact handoff lifecycle](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-06 | **[Expanded plugin install and hook-behavior documentation](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-04-06 | **[Created design authority for the RULES plugin extension area](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+
+---
+
+<a id="version-113"></a>
+## Version 1.13: Re-unified the Rules plugin under RULES/plugin
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Re-unified the Rules plugin so compact helper hooks/scripts and the `session-coordination-bridge` skill now ship again from `<rules-root>/plugin`.
+- Updated the RULES-side package metadata and local development marketplace metadata to `1.5.0`.
+- Rewrote `plugin/README.md` to describe the unified package model instead of the split skill-only model.
+- Updated the shared `darkwingtm` marketplace so `claude-code-rules` points at the unified Rules-owned package again.
+- Removed duplicate maintained package copies from the shared marketplace workspace.
+
+### Summary
+The Rules plugin is unified again under `<rules-root>/plugin`, while the public install target remains `claude-code-rules@darkwingtm`.
 
 ---
 

@@ -401,7 +401,7 @@ Please:
 
 **📊 Active Runtime Rules: 40**
 
-Latest refinement: the plugin topology is now corrected so `rules-compact-extension` stays the compact helper while `claude-code-rules` becomes the separate session-coordination skill plugin exposed through `@darkwingtm`.
+Latest refinement: the Rules plugin is unified again under `claude-code-rules@darkwingtm`, so compact helper behavior and the session-coordination skill now ship from the same Rules-owned package.
 
 </div>
 
@@ -487,7 +487,7 @@ ls ./.claude/rules/artifact-initiation-control.md
 | `./phase/phase-NNN-NN-<subphase-name>.md` | Governed subphase execution detail with design extraction, optional patch extraction, and review state | Subphase docs |
 | `./patch/<context>.patch.md` or `./<context>.patch.md` | Governed patch/review artifacts outside live phase planning that may feed phase one-way when relevant | Patch docs |
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
-| `./plugin/**` | Optional extension package for operator-facing support skills that remains subordinate to root RULES authority, while compact helper runtime reinforcement remains separate | Support / extension package |
+| `./plugin/**` | Optional unified Rules-owned plugin companion package that remains subordinate to root RULES authority while combining compact helper runtime reinforcement and operator-facing support skills | Support / extension package |
 
 > **💡 Single Source of Truth Principle:**
 > - Design files (`.design.md`) define active target state
@@ -545,17 +545,15 @@ Change request received
 
 ### Optional plugin companion
 
-The repository now treats the optional plugin layer as two bounded packages with different roles:
-- `rules-compact-extension@darkwingtm` = compact/context helper
-- `claude-code-rules@darkwingtm` = session-coordination skill plugin
+The repository now treats the optional plugin layer as one unified Rules-owned package:
+- `claude-code-rules@darkwingtm` = unified Rules plugin
 
-The RULES repo package under `./plugin/` is now the skill plugin source.
+This unified package includes both:
+- compact/context helper behavior
+- `session-coordination-bridge` support skill behavior
 
-Its role is bounded:
-- expose one operator-facing support skill for session-coordination workflow
-- remain subordinate to root RULES authority
-- avoid creating a second governance stack under `plugin/`
-- leave compact/post-compact helper ownership to `rules-compact-extension`
+The canonical source is:
+- `<rules-root>/plugin`
 
 Public install goes through the shared `darkwingtm` marketplace:
 
@@ -573,10 +571,10 @@ claude plugins install claude-code-rules@claude-code-rules --scope local
 ```
 
 Detailed meaning:
-1. the shared `darkwingtm` marketplace at `<plugin-marketplace-root>` is the intended user-facing install surface.
-2. `claude-code-rules@darkwingtm` is the real install target for this skill package.
+1. the shared `darkwingtm` marketplace is the intended user-facing install surface.
+2. `claude-code-rules@darkwingtm` is the real install target for the unified Rules plugin.
 3. the package-local `@claude-code-rules` path is only for local development/testing from the RULES repo.
-4. compact helper behavior remains in `rules-compact-extension@darkwingtm`, not in this skill plugin.
+4. duplicate maintained package copies are no longer the intended model.
 
 Recommended checks after install:
 
@@ -587,17 +585,16 @@ claude plugins list --json
 Optional interactive checks:
 - `/reload-plugins`
 - `/claude-code-rules:session-coordination-bridge`
-- `/hooks` to confirm compact hooks still come from `rules-compact-extension`
+- `/hooks`
 
 Current package behavior:
-- `skills/session-coordination-bridge/` provides an operator-facing support surface for shared-board coordination workflow, optional recall detection, request-vs-execution remap, and sync-back discipline
-- this package does not own compact lifecycle hooks or compact persistence state
-- compact helper behavior remains in `rules-compact-extension@darkwingtm`
+- compact helper hooks and session-scoped compact state live in the same package
+- `skills/session-coordination-bridge/` provides the operator-facing coordination support surface
+- the plugin remains subordinate to root RULES authority
 
 Boundary reminder:
-- root runtime rules still define shared execution coordination semantics
-- this plugin provides the coordination skill front door only
-- compact helper behavior remains a separate plugin concern
+- root runtime rules still define compact/post-compact semantics and shared execution coordination semantics
+- this plugin reinforces those semantics through compact hooks plus one support skill front door
 - plugin installation does not replace the normal `~/.claude/rules/` install path
 
 ### Verification Checklist
@@ -1161,7 +1158,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.29 |
+  <b>Version</b>: 9.30 |
   <b>Last Updated</b>: 2026-04-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

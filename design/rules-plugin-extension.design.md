@@ -3,37 +3,39 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
 
 ## 1) Goal
 
-Define the optional `plugin/` companion area for `<rules-root>` so one session-coordination support skill can be packaged cleanly without weakening root RULES authority or overlapping the real compact helper.
+Define the optional `plugin/` companion area for `<rules-root>` so the RULES plugin remains one unified Rules-owned package that combines compact lifecycle reinforcement and the session-coordination support skill without weakening root RULES authority.
 
 The target behavior is:
 - root RULES remain the semantic owner for compact / post-compact behavior and cross-session coordination semantics
-- `plugin/` remains an optional extension package that exposes one operator-facing support skill only
-- compact lifecycle helper ownership remains with `rules-compact-extension`
-- plugin implementation files live under `plugin/`
-- root design / changelog / TODO / phase / patch artifacts remain the only governance stack
+- `plugin/` remains the single canonical source for the Rules plugin package
+- the unified plugin package exposes both:
+  - compact lifecycle hooks
+  - one operator-facing session coordination support skill
+- the public install target is `claude-code-rules@darkwingtm`
+- duplicate maintained package copies under the shared marketplace workspace are no longer the intended model
 
 ---
 
 ## 2) Problem Statement
 
-The RULES repository now needs one bounded extension outcome in this slice:
-- an optional operator-facing skill front door for session-coordination workflow that does not turn the plugin into a second authority stack and does not duplicate the already-active compact helper
+The RULES plugin surface must solve two jobs together:
+- reinforce compact/post-compact behavior in runtime
+- provide a bounded operator-facing coordination skill
 
-Without an explicit model, the repository risks several failures:
-- plugin-first drift, where the plugin starts to look like the new authority instead of an extension
-- duplicate governance drift, where `plugin/` grows its own design/phase/changelog/TODO stack and competes with the root repository authority
-- skill-front-door drift, where the support skill starts to masquerade as semantic truth instead of an operator bridge
-- optional-tool assumption drift, where memsearch or peer signaling is treated like guaranteed infrastructure instead of optional capability
-- compact-helper overlap drift, where the skill package duplicates the already-active `rules-compact-extension` helper role instead of staying narrowly focused
+Without an explicit unified model, the system risks:
+- plugin-first drift, where the plugin starts to look like authority instead of extension
+- duplicate-source drift, where the same plugin is maintained in several places
+- compact-helper split drift, where hook behavior and coordination skill behavior live in different package sources and confuse installation or ownership
+- marketplace confusion, where users cannot tell which plugin id is the real Rules plugin
 
-This design closes those gaps by keeping the package narrow, session-scoped, and bounded.
+This design closes those gaps by keeping one canonical Rules-owned plugin source while still exposing the package through the shared `darkwingtm` marketplace.
 
 ---
 
@@ -48,12 +50,15 @@ It is not a second governed workspace.
 
 ### 3.2 Package model
 
-The package should follow the package-local plugin pattern already used under the shared plugin marketplace workspace `<plugin-marketplace-root>`.
+The unified Rules plugin package lives at:
+- `<rules-root>/plugin`
 
 Active package surface:
 - `plugin/README.md` = package-local install / usage / boundary guide
 - `plugin/.claude-plugin/plugin.json` = package metadata
 - `plugin/.claude-plugin/marketplace.json` = package-local development marketplace manifest
+- `plugin/hooks/hooks.json` = compact lifecycle hook configuration
+- `plugin/scripts/*.sh` = compact lifecycle scripts called by the plugin hooks
 - `plugin/skills/session-coordination-bridge/` = operator-facing support skill for session coordination workflow
 
 Optional surfaces only when truly needed:
@@ -62,10 +67,13 @@ Optional surfaces only when truly needed:
 
 ### 3.3 Current active scope
 
-The active slice stays bounded:
+The active slice is intentionally unified but bounded:
+- `SessionStart` with matcher `compact` for post-compact re-anchor injection plus one short compact-resume signal
+- `PreCompact` for session-scoped handoff/context extraction
+- `PostCompact` for prune-only cleanup
 - `skills/session-coordination-bridge/` for operator-facing shared-board and optional-tool coordination guidance
 
-This slice should not create a broad agent fleet, unrelated plugin capability surface, a second semantic coordination authority, or a duplicate compact-helper package.
+This slice should not create a broad agent fleet, unrelated plugin capability surface, or a second semantic coordination authority.
 
 ---
 
@@ -83,17 +91,22 @@ Root RULES authority remains in:
 
 ### 4.2 Plugin role
 
-The plugin may:
+The unified plugin may:
+- reinforce compact/post-compact behavior through supported hooks
+- inject bounded post-compact reminder context where Claude Code supports it
+- emit one short compact-resume signal through the user-visible `systemMessage` SessionStart hook output field
+- keep per-session compact state in `${CLAUDE_PLUGIN_DATA}`
+- keep bounded SessionStart proof files so real compact-resume execution can be verified without turning the package into a history store
 - expose one operator-facing session coordination support skill under the plugin namespace
-- provide bounded support docs for shared-board workflow, optional recall detection, request-vs-execution remap, and sync-back discipline
+- prune expired, malformed, consumed, or legacy compact-state leftovers opportunistically
 
-The plugin may not:
+The unified plugin may not:
 - redefine compact semantics independently of root rules
 - replace root rules installation
 - create a second design/changelog/phase/TODO authority tree under `plugin/`
 - act like a compact witness or audit store
 - act like the semantic owner of shared-board coordination behavior
-- own compact lifecycle hooks or compact persistence state while `rules-compact-extension` remains the active helper
+- merge many sessions’ carry-forward content into one giant active file
 
 ### 4.3 Non-goals
 
@@ -104,6 +117,7 @@ This extension design does not aim to:
 - bundle unrelated agents/skills just because the package format allows them
 - preserve raw compact payload history as part of the active runtime contract
 - store a full transcript copy per session in plugin state
+- maintain duplicate package copies as co-equal sources of truth
 
 ---
 
@@ -114,16 +128,20 @@ This extension design does not aim to:
 - `<rules-root>` = the RULES repository root
 - `<plugin-marketplace-root>` = the shared plugin marketplace root that contains the `darkwingtm` aggregate marketplace
 
-### 5.1 Source-side path
+### 5.1 Canonical source path
 
-Package-local install commands should run from:
+The canonical plugin source is:
 - `<rules-root>/plugin`
 
-### 5.2 Package-local install model
+### 5.2 Public install model
 
 Preferred public activation:
 - `claude plugins marketplace add "<plugin-marketplace-root>" --scope user`
 - `claude plugins install claude-code-rules@darkwingtm --scope user`
+
+The shared marketplace may expose the plugin by pointing its `claude-code-rules` entry back to `<rules-root>/plugin`.
+
+### 5.3 Local development model
 
 Local development activation remains:
 - `claude plugins marketplace add ./ --scope local`
@@ -131,36 +149,67 @@ Local development activation remains:
 
 ### 5.4 Detailed package-local install / runtime notes
 
-The public install path should be documented from `<rules-root>/plugin`.
-
 Required guidance:
-- public install docs should show the shared `darkwingtm` marketplace path
+- public install docs should show the shared `darkwingtm` marketplace path through `<plugin-marketplace-root>`
 - the intended user-facing installed identifier should be `claude-code-rules@darkwingtm`
 - package-local `@claude-code-rules` docs should be framed as local development/testing only
-- docs should explain that `rules-compact-extension@darkwingtm` remains the active compact helper
 - docs should identify the operator-facing skill path under `skills/session-coordination-bridge/`
-- docs should not claim that this package owns `SessionStart` / `PreCompact` / `PostCompact`
+- docs should show the practical runtime behavior of `SessionStart` / `PreCompact` / `PostCompact`
+- docs should identify the active session-scoped compact state layout
+- docs should explain that the package no longer uses singleton `last-*.json` witness files as the active contract
+- docs should not imply a second maintained package source is needed for the same plugin
 
-### 5.5 Current active skill mechanics
+### 5.5 Current active mechanics
 
 The current active mechanics are:
+- `PreCompact` prunes stale state and creates/refreshes one session-scoped compact state directory keyed by source `session_id`
+- `SessionStart` with matcher `compact` emits one short navigator-style compact-resume summary through `systemMessage`, now explicitly marked as `review-required`, including `reviewRoot=` plus `review=` pointers into stored session state
+- success-path `hookSpecificOutput.additionalContext` stays reference-first and bounded: one short review-required instruction, the exact review directory plus `precompact-context.json`, `carry-forward-selected.json`, and `sessionstart-proof.json`, one short objective-status line, and one short discipline reminder against replay-based continuation
+- fallback SessionStart behavior remains fail-closed, marks review as required, points Claude to `index.json`, and re-anchors from verified local context when exact session routing does not resolve
+- `PostCompact` is prune-only and no longer records raw witness payloads
 - `skills/session-coordination-bridge/` provides an operator-facing support surface for shared-board workflow, optional recall detection, request-vs-execution remap boundaries, and sync-back discipline
+- pending state and proof state both expire after 1 hour and are pruned opportunistically by later hook runs
 - memsearch remains a later assist-layer boundary rather than an active runtime dependency in this wave
 - `claude-peers-mcp` remains an optional later signaling layer rather than an active package dependency in this wave
-- compact helper behavior, compact runtime signals, and compact persistence layout remain with `rules-compact-extension`
 
-### 5.6 Compact-helper boundary
+The active layout under `${CLAUDE_PLUGIN_DATA}/compact/` is:
 
-Compact carry-forward state, routing rules, and persisted compact schema are intentionally out of this package.
+```text
+index.json
+sessions/
+  <source-session-id>/
+    pending.json
+    precompact-context.json
+    carry-forward-selected.json
+    sessionstart-proof.json
+    sessionstart-directive.json
+```
 
-That responsibility remains with:
-- `rules-compact-extension`
+### 5.6 Carry-forward data model
 
-This package should therefore not be treated as the owner of:
-- compact state layout
-- compact routing rules
-- compact proof files
-- compact witness/prune behavior
+The plugin should treat pre-compact source state as the real source of carry-forward selection.
+
+That means:
+- `precompact-context.json` is the bounded extracted source-of-truth file
+- `carry-forward-selected.json` is the derived selected injection payload
+- `index.json` is routing/cleanup metadata only
+- `sessionstart-proof.json` is proof-only
+- `sessionstart-directive.json` is bounded directive proof for what review instruction was emitted at SessionStart
+
+Do not store:
+- one giant all-session JSON blob
+- full transcript copies inside plugin state
+- raw compact summary as the primary source of carry-forward truth
+
+### 5.7 SessionStart routing rule
+
+The plugin should route conservatively:
+1. read only `index.json`
+2. require exact `session_id` equality between the compact `SessionStart` event and one pending source session
+3. if that exact match exists, inject only that session’s `carry-forward-selected.json`
+4. if no exact match exists, inject only a bounded reference-first review directive pointing to `index.json` and record a non-success proof state
+5. never merge multiple sessions together
+6. do not use `additionalContext` as a hidden context-restore channel; keep it instruction + locator + bounded status only
 
 ---
 
@@ -171,9 +220,13 @@ The extension design is successful when:
 - root RULES docs continue to teach rules-first, plugin-second behavior
 - no root docs imply plugin authority replaces root runtime rules
 - public install guidance points users to `claude-code-rules@darkwingtm`
-- plugin metadata and skill surface are coherent
+- the package-local install path remains clearly development-only
+- plugin metadata, hook surface, skill surface, and docs are coherent together
 - the coordination skill remains an operator bridge and does not masquerade as semantic truth
-- compact-helper ownership stays visibly separate in `rules-compact-extension`
+- the active runtime contract uses a small live index plus per-session compact state directories rather than singleton mixed files
+- SessionStart emits a bounded reference-first review directive for only one resolved session and does not replay old context text aggressively
+- ambiguous multi-session routing fails closed instead of guessing
+- duplicate maintained package copies are not required for the public install model
 - plugin files stay implementation-only while root docs remain governance-only
 
 ---
