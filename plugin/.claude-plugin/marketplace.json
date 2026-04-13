@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Local development marketplace manifest for the Claude Code RULES session-coordination skill plugin.",
-    "version": "1.4.0"
+    "version": "1.4.1"
   },
   "plugins": [
     {

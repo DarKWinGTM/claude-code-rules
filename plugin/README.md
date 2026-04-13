@@ -1,6 +1,6 @@
 # Claude Code Rules Plugin Companion
 
-> **Current Version:** 1.4.0
+> **Current Version:** 1.4.1
 
 An optional plugin companion for `<rules-root>` that exposes the session coordination support skill while leaving compact lifecycle hooks to `rules-compact-extension`.
 

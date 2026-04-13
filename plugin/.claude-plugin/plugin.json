@@ -1,6 +1,6 @@
 {
   "name": "claude-code-rules",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Session-coordination skill plugin companion for the Claude Code RULES system.",
   "author": {
     "name": "DarKWinGTM"

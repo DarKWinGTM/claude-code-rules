@@ -1161,7 +1161,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.28 |
+  <b>Version</b>: 9.29 |
   <b>Last Updated</b>: 2026-04-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

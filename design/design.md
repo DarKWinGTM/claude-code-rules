@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 9.28
+> **Current Version:** 9.29
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 

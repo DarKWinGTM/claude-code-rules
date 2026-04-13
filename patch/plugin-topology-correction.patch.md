@@ -4,7 +4,7 @@
 
 > **Current Version:** 1.0
 > **Status:** Completed
-> **Target Design:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md) v1.11
+> **Target Design:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md) v1.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -100,6 +100,7 @@ The plugin design and README now describe `claude-code-rules` as the coordinatio
 - [x] the plugin family resolves again through `@darkwingtm`
 - [x] docs now point users to `claude-code-rules@darkwingtm` as the intended public install path
 - [x] package-local `@claude-code-rules` remains clearly bounded as local development/testing only
+- [x] the final portable install-wording cleanup is reflected in the active target design version
 
 ---
 

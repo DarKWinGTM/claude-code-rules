@@ -1,7 +1,7 @@
 # Changelog - RULES Plugin Extension
 
 > **Parent Document:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-04-13 | **[Finalized topology-correction docs and portable install wording](#version-112)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.11 | 2026-04-13 | **[Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper](#version-111)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.10 | 2026-04-13 | **[Added the session coordination bridge skill and renamed the plugin package to claude-code-rules](#version-110)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.9 | 2026-04-08 | **[Tightened compact review to reference-first directive form](#version-19)** | 4e792d4b-8876-439b-8c07-2c5d4b04af3a |
@@ -22,6 +23,23 @@
 | 1.2 | 2026-04-06 | **[Replaced latest witness files with ephemeral compact handoff lifecycle](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-06 | **[Expanded plugin install and hook-behavior documentation](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-04-06 | **[Created design authority for the RULES plugin extension area](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Finalized topology-correction docs and portable install wording
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Tightened `plugin/README.md` into a skill-only package guide so it no longer carries stale compact-hook/state sections.
+- Tightened `design/rules-plugin-extension.design.md` so public install wording is portable and the compact-helper boundary stays explicit.
+- Updated RULES-side plugin package metadata and local-development marketplace metadata from `1.4.0` to `1.4.1`.
+- Extended `phase/SUMMARY.md` review/coordination coverage for wave `042` and removed remaining topology-sync drift.
+
+### Summary
+The RULES plugin-extension chain now describes the corrected two-plugin topology cleanly, with portable install wording and no leftover compact-helper claims in the skill plugin package.
 
 ---
 

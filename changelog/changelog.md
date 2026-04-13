@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.28
+> **Current Version:** 9.29
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.29 | 2026-04-13 | **[Finalized topology-correction docs and install guidance](#version-929)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.28 | 2026-04-13 | **[Corrected plugin topology so claude-code-rules is the skill plugin and rules-compact-extension remains the compact helper](#version-928)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.27 | 2026-04-13 | **[Added the session coordination bridge skill to the optional plugin companion](#version-927)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.26 | 2026-04-13 | **[Added memsearch availability detection and fallback intake guidance](#version-926)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -64,6 +65,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-929"></a>
+## Version 9.29: Finalized topology-correction docs and install guidance
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Finalized the RULES-side topology-correction docs so `claude-code-rules` is described consistently as the session-coordination skill plugin and `rules-compact-extension` as the active compact helper.
+- Tightened public install wording to use portable placeholders instead of workstation-specific absolute paths in shared docs.
+- Updated the RULES-side skill-plugin package metadata from `1.4.0` to `1.4.1`.
+- Completed remaining phase-summary sync for wave `042` and refreshed the mirrored shared-marketplace skill package after the doc cleanup.
+
+### Summary
+The RULES repository now ships the corrected two-plugin model with cleaner portable install guidance and a fully synchronized wave `042` summary surface.
 
 ---
 
