@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.25
+> **Current Version:** 9.26
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.26 | 2026-04-13 | **[Added memsearch availability detection and fallback intake guidance](#version-926)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.25 | 2026-04-13 | **[Standardized visible session ownership for session-owned task work](#version-925)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.24 | 2026-04-13 | **[Refined shared-board visibility, lifecycle, retention, and optional memsearch guidance](#version-924)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 9.23 | 2026-04-13 | **[Separated handoff request naming from receiving-side phase ownership](#version-923)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -61,6 +62,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-926"></a>
+## Version 9.26: Added memsearch availability detection and fallback intake guidance
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `shared-execution-coordination` from v1.3 to v1.4 so receive-side continuation now checks memsearch availability before relying on the optional recall extension.
+- Updated `memory-governance-and-session-boundary` from v1.2 to v1.3 so optional recall availability is now checked explicitly and falls back immediately when absent or probe fails.
+- Added bounded `patch/memsearch-availability-detection-and-fallback-intake.patch.md` plus `phase-040-01` and `phase-040-02` artifacts.
+- Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
+
+### Summary
+The RULES repository now makes optional recall intake availability-first and immediate-fallback-aware, so missing memsearch does not have to block receive-side task continuation.
 
 ---
 

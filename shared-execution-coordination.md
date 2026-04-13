@@ -1,7 +1,7 @@
 # Shared Execution Coordination
 
-> **Current Version:** 1.3
-> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/shared-execution-coordination.changelog.md](changelog/shared-execution-coordination.changelog.md)
 
@@ -173,7 +173,9 @@ Future optional stronger live coordination layer:
 
 Required guidance:
 - if memsearch is available, it may be used to improve cross-session recall and handoff accuracy
+- when receive-side continuation would benefit from optional recall detail, check whether memsearch is actually available instead of assuming the extension exists
 - when memsearch is available, prefer it as a recall accelerator after the shared board and active execution surfaces have identified the relevant continuation target
+- if memsearch is unavailable or the availability/probe step fails, fall back immediately to native memory plus checked execution surfaces instead of blocking intake on the optional extension
 - do not let memsearch override checked task/phase/design/implementation evidence when those stronger surfaces already settle the active execution meaning
 - if memsearch is unavailable, the coordination model must still function through the baseline surfaces
 - treat memsearch as a supplemental context bridge, not as semantic truth or required infrastructure

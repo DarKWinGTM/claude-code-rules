@@ -1,7 +1,7 @@
 # Changelog - Shared Execution Coordination
 
 > **Parent Document:** [../shared-execution-coordination.md](../shared-execution-coordination.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,11 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-13 | **[Added memsearch availability detection and immediate fallback intake guidance](#version-14)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.3 | 2026-04-13 | **[Made visible session ownership the default standard for session-owned task work](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-13 | **[Added visible session identity, handoff lifecycle, retention matrix, and memsearch operating guidance](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-13 | **[Separated handoff request naming from receiving-side phase ownership](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-13 | **[Created first-class shared execution coordination rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new coordination owner for multi-session shared execution boards, session lease/handoff semantics, retention/aging policy, and optional memsearch / future optional peer-messaging boundaries | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added memsearch availability detection and immediate fallback intake guidance
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `shared-execution-coordination.md` from v1.3 to v1.4.
+- Updated `design/shared-execution-coordination.design.md` from v1.3 to v1.4.
+- Added explicit guidance that receive-side continuation should check whether memsearch is actually available before relying on the optional extension.
+- Added explicit guidance that absent or failed availability/probe steps should fall back immediately to native memory plus checked execution surfaces.
+
+### Summary
+Shared execution coordination now makes optional recall intake availability-first instead of assumption-first, while keeping fallback immediate and non-blocking.
 
 ---
 

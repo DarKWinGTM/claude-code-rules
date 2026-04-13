@@ -356,7 +356,7 @@ Please:
 | [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, and post-compact needs-recheck handling for compacted carry-forward exact detail |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
-| [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep memsearch-style recall supplemental to stronger checked execution surfaces |
+| [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep memsearch-style recall supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
 | [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, current-phase-first live task-list linkage, explicit phase-to-patch linkage when patch is in scope, same-objective task-list continuity across repeated phase slices, bounded next-work discovery from the active phase workspace, default visible session-state grammar for session-owned task work, distinct request-layer vs held-owner title forms for phase-linked execution slices, and explicit receiving-side phase remap during cross-session handoff |
 | [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
@@ -370,7 +370,7 @@ Please:
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, explicit live-task-list-vs-durable-TODO distinction, same-objective live task-list continuity, explicit execution-discovery surfaces during active execution, default visible session ownership for session-owned task work, explicit deferral of shared-board coordination semantics and session-state title grammar to the coordination owner, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, portable-by-default package-local support assets when they are reusable source content, and explicit separation between shared-board request naming and receiving-side execution phase structure |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, keeps work moving when execution mode is active, and discovers the next unfinished slice from execution surfaces when that path is already visible |
-| [`shared-execution-coordination.md`](shared-execution-coordination.md) | Shared execution coordination | Makes the shared task list a first-class execution-coordination layer with default visible session ownership across usage modes, explicit request / held / blocked title forms, session lease/handoff lifecycle, explicit request-layer vs execution-layer separation, receiving-side phase ownership, continuity-first retention, retention matrix semantics, optional memsearch operating guidance, and future-optional peer-messaging boundaries |
+| [`shared-execution-coordination.md`](shared-execution-coordination.md) | Shared execution coordination | Makes the shared task list a first-class execution-coordination layer with default visible session ownership across usage modes, explicit request / held / blocked title forms, session lease/handoff lifecycle, explicit request-layer vs execution-layer separation, receiving-side phase ownership, continuity-first retention, retention matrix semantics, availability-first memsearch intake with immediate fallback, and future-optional peer-messaging boundaries |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
@@ -401,7 +401,7 @@ Please:
 
 **📊 Active Runtime Rules: 40**
 
-Latest refinement: the active runtime set now makes visible session ownership a default task-list standard for session-owned work, while keeping request, held, and blocked task-title forms distinct under the first-class shared execution coordination owner.
+Latest refinement: the active runtime set now makes optional recall intake availability-first, so memsearch is checked before use and missing plugin state falls back immediately to native memory plus checked execution surfaces.
 
 </div>
 
@@ -1150,7 +1150,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.25 |
+  <b>Version</b>: 9.26 |
   <b>Last Updated</b>: 2026-04-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

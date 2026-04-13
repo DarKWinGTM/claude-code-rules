@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
@@ -156,8 +156,9 @@ memsearch should be modeled as an optional extension/plugin layer.
 
 Required meaning:
 - if available, it may improve cross-session recall and handoff accuracy
+- receive-side continuation should explicitly check whether memsearch is available before assuming the extension exists
 - it should be used as a recall accelerator after stronger execution surfaces identify the relevant continuation target
-- if unavailable, the coordination model must still function through the baseline surfaces
+- if unavailable or the availability/probe step fails, the coordination model should fall back immediately to native memory plus the checked baseline surfaces
 - it is a supplemental context bridge, not semantic truth or required infrastructure
 
 ### 5.3 Future optional live coordination layer

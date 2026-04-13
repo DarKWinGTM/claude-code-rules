@@ -1,7 +1,7 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,10 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-04-13 | **[Added optional-recall availability check and immediate fallback guidance](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-13 | **[Clarified how optional recall extensions should be used after stronger execution surfaces](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-13 | **[Added optional extension recall boundary for memsearch-style layers](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-09 | **[Created first-class memory-governance-and-session-boundary rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added optional-recall availability check and immediate fallback guidance
+
+**Date:** 2026-04-13
+**Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+
+### Changes
+- Updated `memory-governance-and-session-boundary.md` from v1.2 to v1.3.
+- Updated `design/memory-governance-and-session-boundary.design.md` from v1.2 to v1.3.
+- Added explicit guidance that receive-side optional recall should check extension availability instead of assuming plugin presence from prior sessions or prior machines.
+- Added explicit guidance that unavailable or failed availability/probe steps should fall back immediately to native memory plus checked execution surfaces.
+
+### Summary
+Memory-governance now makes optional recall intake availability-first and immediate-fallback-aware without turning optional extensions into required infrastructure.
 
 ---
 

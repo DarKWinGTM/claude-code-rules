@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 9.25
+> **Current Version:** 9.26
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -72,7 +72,7 @@ This repository uses one deterministic governance model:
 | 16 | external-verification-and-source-trust.md | external-verification-and-source-trust.design.md v1.0 | First-class owner for proactive external verification, source-trust ranking, corroboration, and source-conflict handling |
 | 17 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.1 | Text diagrams without frames or boxes |
 | 18 | functional-intent-verification.md | functional-intent-verification.design.md v1.1 | Clarify destructive/expensive intent before execution |
-| 19 | memory-governance-and-session-boundary.md | memory-governance-and-session-boundary.design.md v1.2 | First-class owner for memory role boundaries, root `MEMORY.md` index-only behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, archive-inactive lifecycle semantics, and optional-extension recall guidance that keeps memsearch-style layers supplemental and subordinate to stronger execution evidence |
+| 19 | memory-governance-and-session-boundary.md | memory-governance-and-session-boundary.design.md v1.3 | First-class owner for memory role boundaries, root `MEMORY.md` index-only behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, archive-inactive lifecycle semantics, and optional-extension recall guidance that keeps memsearch-style layers supplemental, availability-checked, and subordinate to stronger execution evidence |
 | 20 | no-variable-guessing.md | no-variable-guessing.design.md v1.3 | Read before reference with inspected-scope local evidence discipline |
 | 21 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and an inspect-first case for duplicate-looking or stale team-agent presence |
 | 22 | phase-implementation.md | phase-implementation.design.md v2.14 | First-class semantic standard for phased execution planning with early phase-establishment bridge, current-phase-first live task-list linkage, explicit phase-to-patch linkage when patch is in scope, same-objective task-list continuity across repeated slices, bounded next-work discovery from the active phase workspace when the task list alone is insufficient, default visible session-state grammar for session-owned task-list work, distinct request-layer vs held-owner title forms for phase-linked execution work, deferral of shared-board coordination protocol details to the first-class coordination owner, and explicit receiving-side phase remap during cross-session handoff |
@@ -93,7 +93,7 @@ This repository uses one deterministic governance model:
 | 37 | high-signal-communication.md | high-signal-communication.design.md v1.1 | Bounded supplementary high-signal filtering that trims low-value extra content and repeated wording while deferring required-content ownership to the existing communication, explanation, and presentation chains |
 | 38 | execution-continuity-and-mode-selection.md | execution-continuity-and-mode-selection.design.md v1.2 | First-class owner for discussion-vs-execution mode selection, continuous-execution defaults, active next-work discovery from execution surfaces, legitimate stop gates, the boundary that milestone reporting must not replace continued execution, and bounded deferral of shared-board coordination protocol details to the first-class coordination owner |
 | 39 | goal-set-review-and-priority-balance.md | goal-set-review-and-priority-balance.design.md v1.0 | First-class owner for continuous goal-set review, structure-first priority balance, and protection against single-subtask fixation so work on A does not crowd out B and C |
-| 40 | shared-execution-coordination.md | shared-execution-coordination.design.md v1.3 | First-class owner for shared execution coordination and the default session-state title grammar for session-owned task-list work, including visible session ownership across usage modes, request vs held vs blocked title forms, session lease/handoff lifecycle, request-layer vs execution-layer separation, receiving-side phase ownership, continuity-first retention, retention matrix semantics, optional memsearch operating guidance, and future-optional peer-messaging boundaries |
+| 40 | shared-execution-coordination.md | shared-execution-coordination.design.md v1.4 | First-class owner for shared execution coordination and the default session-state title grammar for session-owned task-list work, including visible session ownership across usage modes, request vs held vs blocked title forms, session lease/handoff lifecycle, request-layer vs execution-layer separation, receiving-side phase ownership, continuity-first retention, retention matrix semantics, availability-first memsearch intake with immediate fallback, and future-optional peer-messaging boundaries |
 
 ### 3.2 Category View
 
