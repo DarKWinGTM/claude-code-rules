@@ -10,10 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-04-16 | **[Added easy-explanation register support for plain Thai answers](#version-13)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.2 | 2026-04-09 | **[Added purpose-before-detail guidance for operational answers](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-08 | **[Rejected metaphor-heavy abstraction as a default professional style](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-03-27 | **[Created first-class natural-professional-communication rule chain](#version-10)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Created a new communication-style doctrine rule so the assistant now has one explicit semantic owner for natural professional, non-robotic, non-character-driven default communication | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added easy-explanation register support for plain Thai answers
+
+**Date:** 2026-04-16
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Updated `natural-professional-communication.md` from v1.2 to v1.3.
+- Updated `design/natural-professional-communication.design.md` from v1.2 to v1.3.
+- Added an easy-explanation register principle so answers that were explicitly requested in plain Thai or less jargon now keep everyday Thai wording as the visible default register instead of drifting back into internal English or abstract system wording.
+- Preserved the existing calm, low-drama, human-readable professional baseline.
+
+### Summary
+Natural-professional-communication now keeps easy explanations in an everyday Thai register instead of sounding simple only at the start and abstract again later.
 
 ---
 

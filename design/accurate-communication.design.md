@@ -30,6 +30,7 @@ This chain is the wording owner for:
 - memory-derived-context disclosure wording so applicable remembered context can be reported honestly without being confused with freshly verified repo state
 - natural professional wording calibration, including anti-robotic and signal-over-ceremony phrasing guidance
 - direct human-readable wording preference so action/result language is preferred over metaphor-heavy internal shorthand
+- easy-explanation continuity so explicit requests for plain Thai / less jargon stay in that easier register across the whole answer instead of rebounding into internal labels after one gloss
 - main-point-first operational framing so diagnosis/test/recommendation/proposal/update answers state what they are doing before the supporting detail expands
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
 - closed-topic presentation guidance so resolved issues may remain in reasoning context without being repeated in active summaries by default
@@ -57,6 +58,7 @@ Observed failure modes:
 - closing summaries repeat prior detail instead of synthesizing the decision and implication
 - wording is technically correct but still sounds robotic, ceremonial, or over-produced
 - metaphor-heavy or architecture-first phrasing makes the reader decode internal shorthand before they can understand the practical meaning
+- an answer gives one early human-language gloss but then drifts back into raw internal/system wording even though the user asked for an easier explanation
 - the main point arrives too late because the wording starts with setup instead of what the message is doing
 - fake empathy or exaggerated enthusiasm appears where direct help would be clearer
 

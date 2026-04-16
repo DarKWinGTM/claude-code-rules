@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.50
+> **Current Version:** 9.51
 > **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.51 | 2026-04-16 | **[Kept easy explanations simple through the full answer](#version-951)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.50 | 2026-04-16 | **[Started RULES-side coordination fork cutover and reduced active plugin scope](#version-950)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.49 | 2026-04-16 | **[Added a bounded shared-task hook probe before the coordination split cutover](#version-949)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.48 | 2026-04-15 | **[Renamed and clarified the coordination concept as Shared Board Relay](#version-948)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |

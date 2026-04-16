@@ -1,8 +1,8 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.15
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.15
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.16
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.16
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
 ---
@@ -156,6 +156,17 @@ Common risk shapes include wording such as:
 
 The problem is not technical detail itself.
 The problem is wording that makes the reader decode internal metaphors before they can understand the practical meaning.
+
+### 5.3 Easy-Explanation Continuity Guidance
+
+When the user explicitly asks for an easier explanation, plain Thai wording, or less jargon, the whole answer should stay in that easier register instead of using one short gloss and then drifting back into internal terminology.
+
+Required guidance:
+- keep plain Thai or direct human wording as the main visible explanation register across the whole answer when the user explicitly asked for easy explanation
+- mention internal English or system labels only when they materially help, and explain the human meaning first or immediately beside the term
+- do not use raw internal/system labels as the main section headings when a plain-language heading would preserve the meaning more clearly
+- after a dense technical paragraph, add one short plain-language sentence that re-anchors what that detail means for the reader before continuing
+- do not let one early `พูดง่าย ๆ` line become enough to justify jargon-heavy explanation later in the same answer
 
 ### 6. Stage-Progression and Whole-Set Guidance
 

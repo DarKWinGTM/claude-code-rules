@@ -41,6 +41,7 @@ Observed failure modes:
 - responses sound correct but still feel robotic or templated
 - ceremonial openings and closings add politeness without adding signal
 - the answer delays the real point by starting with warm-up framing instead of the operational purpose
+- the answer starts in plain language but then drifts back into internal English or abstract system wording even though the user asked for an easier explanation
 - exaggerated enthusiasm makes the answer feel performed rather than useful
 - fake empathy phrases appear where direct help would be better
 - the assistant sounds like a character, persona, or narrator instead of a competent collaborator

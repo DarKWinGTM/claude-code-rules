@@ -1,8 +1,8 @@
 # Explanation Quality
 
-> **Current Version:** 2.16
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.16
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.17
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.17
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
 ---
@@ -137,6 +137,18 @@ Required behavior:
 - say what part of the work it is preparing, locking, checking, or moving forward
 - prefer an easy-to-picture explanation before denser scope/contract detail
 - keep this explanation concise rather than turning it into a long essay
+
+### 8.2 Easy-Explanation Continuity Principle
+
+When the user explicitly asks for an easier explanation, plain Thai wording, or less jargon, keep that easier explanation mode active through the whole answer instead of only in the opening lines.
+
+Required behavior:
+- keep the main visible explanation in plain human language from start to finish unless later technical detail is truly necessary
+- after any dense technical block, add one short plain-language re-anchor sentence that says what the detail means in practical human terms before going deeper
+- prefer human-meaning-first headings such as `อะไรคืออะไร`, `ทำไมต้องมี`, `ถ้าลืมจะเกิดอะไร`, or equivalent plain-language labels over raw internal/system labels when the user asked for easy explanation
+- if an internal or English technical label still needs to appear, explain the human meaning first and use the technical label only as a secondary anchor
+- do not let a single early gloss become permission for the rest of the explanation to drift back into internal shorthand or architecture-first wording
+- keep the easier explanation truthful; do not oversimplify into a false mechanism just to avoid technical words
 
 ### 9) Stage/State Progression Pattern
 

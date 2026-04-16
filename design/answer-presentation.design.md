@@ -22,6 +22,7 @@ The target behavior is principle-first and trigger-driven:
 - make compact diagnostic snapshots explicit when technical status or checked scope matters
 - make variable-heavy explanations easier to scan by allowing short glossary blocks or small variable-role tables before deeper reasoning
 - keep metaphor-heavy or abstract internal phrases from being left visually unexplained when a short gloss or implication line would make the practical meaning clear
+- support easy-explanation layouts where plain-language headings stay visually primary when the user explicitly asked for simpler wording
 - make scope-boundary explanations easy to scan when the answer needs to separate now vs later or what-it-is vs what-it-is-not
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again

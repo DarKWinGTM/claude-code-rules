@@ -24,6 +24,7 @@ The target behavior is a layered natural explanation style:
 - a tendency to move to the next meaningful stage/state when the current one is already sufficiently clarified
 - direct human-readable translation of metaphor-heavy or architecture-first wording before deeper explanation depends on it
 - easy-to-picture phase/progress explanation before denser governance or mechanism detail when the user is trying to understand what a phase is doing
+- easy-explanation continuity so answers that were explicitly requested in simple Thai do not drift back into jargon-heavy or internal-label-heavy wording after the opening
 - concise, high-signal ending with a real next move only when one genuinely exists
 - goal-qualified proposal framing when future ideas are useful after bounded completion
 - governing-basis clarification before deepening several materially different branches
@@ -51,6 +52,7 @@ Observed failure modes:
 - explanation is structurally correct but still sounds scripted, over-signposted, or more performative than useful
 - over-explaining continues after the user already has enough context to decide or proceed
 - metaphor-heavy or architecture-first wording is left unexplained, forcing the reader to decode internal shorthand before they can understand the practical meaning
+- explanations start simple but then rebound into internal English labels, abstract system wording, or jargon-heavy blocks after the first easy sentence
 - multiple materially different policy/frame branches are explained in depth before the active governing basis is chosen
 - post-compact explanation restarts by replaying stale history instead of re-anchoring the active objective and checked state first
 

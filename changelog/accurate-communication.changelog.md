@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.15
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.16
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.16 | 2026-04-16 | **[Kept easy explanations in plain Thai across the full answer](#version-216)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.15 | 2026-04-11 | **[Added easy-to-picture phase/progress framing guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-09 | **[Added memory-derived-context disclosure wording](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-09 | **[Added main-point-first operational framing for diagnosis, tests, and recommendations](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -53,6 +54,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-216"></a>
+## Version 2.16: Kept easy explanations in plain Thai across the full answer
+
+**Date:** 2026-04-16
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.15 to v2.16.
+- Updated `design/accurate-communication.design.md` from v2.15 to v2.16.
+- Added easy-explanation continuity guidance so explicit requests for plain Thai or less jargon now stay in that easier register across the whole answer instead of using one short gloss and then drifting back into internal terminology.
+- Added explicit guidance to keep human-meaning-first headings and plain-language re-anchors after dense technical blocks.
+
+### Summary
+Accurate-communication now keeps easy explanations readable all the way through instead of allowing a plain opening to rebound into jargon-heavy wording later.
 
 ---
 

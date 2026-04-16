@@ -1,8 +1,8 @@
 # Answer Presentation
 
-> **Current Version:** 1.22
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.22
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.23
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.23
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
 ---
@@ -295,6 +295,16 @@ When answering what a phase is doing, what it got, or what it prepares next:
 - start with one short plain-language line that helps the reader picture the work quickly
 - then use one small grouped explanation if needed
 - keep the whole explanation concise rather than expanding into a long governance-first block
+
+### 7.1.1 Easy Explanation Pattern
+
+When the user explicitly asks for an easier explanation, less jargon, or plain Thai wording:
+- start with one short plain-language line that says what the answer is about
+- prefer grouped explanation blocks with human-readable headings over raw internal/system headings
+- keep the same simple wording level across later sections instead of starting simple and then switching back to jargon-heavy blocks
+- if several items are being explained, prefer a repeated simple shape such as `คืออะไร`, `ทำไมสำคัญ`, `ถ้าลืมจะเกิดอะไร`, or equivalent plain-language groupings when that improves readability
+- if a technical label still needs to appear, keep the plain-language explanation visually first and place the technical label as a secondary anchor
+- use this pattern only when it materially improves understanding; do not force it into naturally simple one-line answers
 
 ### 7.1 Variable-Role Pattern
 

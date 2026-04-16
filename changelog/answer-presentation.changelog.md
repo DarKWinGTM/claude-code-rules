@@ -1,8 +1,8 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.22
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.23
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.23 | 2026-04-16 | **[Added easy-explanation layout support for plain-language headings](#version-123)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.22 | 2026-04-12 | **[Added compact goal-review presentation support](#version-122)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.21 | 2026-04-11 | **[Added easy-to-picture phase/progress presentation support](#version-121)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.20 | 2026-04-11 | **[Removed active dependency on the suspended custom table-format owner](#version-120)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -41,6 +42,23 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-123"></a>
+## Version 1.23: Added easy-explanation layout support for plain-language headings
+
+**Date:** 2026-04-16
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Updated `answer-presentation.md` from v1.22 to v1.23.
+- Updated `design/answer-presentation.design.md` from v1.22 to v1.23.
+- Added an easy-explanation presentation pattern so answers can keep plain-language headings visually primary when the user explicitly asks for simpler wording.
+- Added guidance to keep technical labels secondary and nearby instead of making raw internal/system headings the main visible structure.
+
+### Summary
+Answer-presentation now supports an easier-to-read layout for plain-language explanations so structure does not pull the answer back into jargon-heavy headings.
 
 ---
 

@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.17 | 2026-04-16 | **[Added easy-explanation continuity after simple openings](#version-217)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.16 | 2026-04-12 | **[Deferred goal-review semantics to the new goal-set owner](#version-216)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-11 | **[Removed stale custom-table dependency after suspension](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -50,6 +51,23 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-217"></a>
+## Version 2.17: Added easy-explanation continuity after simple openings
+
+**Date:** 2026-04-16
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Updated `explanation-quality.md` from v2.16 to v2.17.
+- Updated `design/explanation-quality.design.md` from v2.16 to v2.17.
+- Added an easy-explanation continuity principle so answers that were explicitly requested in plain Thai or less jargon now stay in that easier register through the full explanation instead of drifting back into internal labels after the opening.
+- Added explicit guidance to re-anchor dense technical blocks with one short plain-language sentence before going deeper again.
+
+### Summary
+Explanation-quality now keeps easy explanations easy all the way through instead of allowing a simple opening to rebound into jargon-heavy explanation later.
 
 ---
 
