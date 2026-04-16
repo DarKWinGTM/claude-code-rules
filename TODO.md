@@ -1,6 +1,6 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-13
+> **Last Updated:** 2026-04-16
 
 ---
 
@@ -93,13 +93,37 @@
 - [ ] Automated validation script for documentation compliance (deferred by user).
 - [ ] Integration testing for design/changelog/rule/TODO integration paths (deferred by user).
 
+### Active Verification
+- [ ] Verify the active coordination runtime and `TaskCreated` validator in `claude-session-coordination@darkwingtm` under real shared-task-list conditions, including both clearly open/shared tasks and session-owned task titles, and tune the creation rules only after observing retry behavior in practice.
+- [x] Complete the final RULES-side cleanup pass so git update/release can happen without stale unified-package ownership claims or stray non-release artifacts.
+
 ---
 
 ## 📜 History
 
 | Date | Changes |
 |------|---------|
+| 2026-04-16 | Completed the RULES-side split cleanup pass: reduced `claude-code-rules@darkwingtm` to a migration/reference package with no active plugin hooks, rewrote root/plugin/design/checkpoint surfaces to the active split model, moved coordination runtime history ownership into `TEMPLATE/PLUGIN/claude-session-coordination/`, and validated both plugin packages plus the active shared-task validator script syntax. |
 | 2026-04-13 | Re-unified the Rules plugin under `RULES/plugin`: restored compact helper hooks/scripts into the Rules-owned package, removed duplicate maintained package copies from the shared marketplace topology, updated the shared `darkwingtm` marketplace to expose the unified package, and kept the public install target as `claude-code-rules@darkwingtm`. |
+| 2026-04-14 | Probed `FileChanged` as a possible replacement trigger for paused `claude-peers-mcp` communication: plugin scaffolding, hook loading, and observer handler verification worked, but repeated runtime tests did not produce actual usable `FileChanged` trigger behavior; cleaned temporary probe artifacts and recorded the path as `not yet usable` in coordination design/support docs. |
+| 2026-04-14 | Added a lean group-local tmux bridge coordination model: shared task-list path now acts as the communication group boundary, direct peer-to-peer requests inside the same group are allowed without a permanent leader, and tmux is explicitly framed as a low-aggression richer request-delivery path that stays anchored to the shared board rather than becoming hidden truth or takeover control. |
+| 2026-04-14 | Implemented tmux bridge slice 1 in the RULES plugin/support layer: added bounded `SessionStart`-time same-group session-introduction emission, added the new `session-group-introduce.sh` runtime helper, updated plugin metadata/runtime docs/support docs, and kept the result machine-readable only so the shared board remains the visible coordination truth. |
+| 2026-04-14 | Implemented tmux bridge slice 2 in the RULES plugin/support layer: added shared tmux bridge helper paths, same-group session listing, resolved tmux request delivery, and pane-capture transport acknowledgement helpers; verified plugin validation and a smoke-test transport send/ack path; and documented that slice 2 currently proves transport reach more strongly than workflow acceptance. |
+| 2026-04-14 | Implemented tmux bridge slice 3 in the RULES plugin/support layer: added machine-readable board-anchored request creation, made `board_ref` a required transport precondition for live send, and updated protocol/support/package docs so richer live delivery is now explicitly tied to a shared coordination anchor before transport occurs. |
+| 2026-04-14 | Implemented tmux bridge slice 4 in the RULES plugin/support layer: added a minimal readiness gate that checks same-group membership, tmux capability, input policy, and `ready_idle` state before live send; updated the send path to fall back to `board_only` when readiness is weak; verified ready-vs-busy smoke cases; and documented that the default live path now prefers low-aggression delivery over transport eagerness. |
+| 2026-04-14 | Implemented tmux bridge slice 5 in the RULES plugin/support layer: added machine-readable report-back emission tied to existing request records, so acceptance/progress/block/completion can be staged for later shared-board synchronization; verified plugin validation and report-back smoke behavior; and documented that report-back remains authoritative only when later reflected into the shared coordination surfaces. |
+| 2026-04-14 | Added an operator-facing tmux dispatch wrapper that composes request creation, readiness check, live send, and transport-level acknowledgement capture in one bounded flow; verified plugin validation and a dispatch smoke path; and documented that this wrapper is workflow glue only rather than truth/board replacement. |
+| 2026-04-15 | Added bounded tmux bridge board reflection for anchored tasks: request records now carry board-sync metadata, report-back normalizes to the shared coordination lifecycle, a new sync helper reflects request/report state into the existing anchored board task when safe, dispatch/report flows now return sync results, and docs/history/package surfaces describe the wave as bounded board reflection rather than broker-style orchestration. |
+| 2026-04-15 | Expanded `plugin/README.md` so the tmux bridge `*.sh` scripts, current shared-board-path scope boundary, and next likely extension directions are explained in simpler operator-facing language. |
+| 2026-04-15 | Standardized the tmux bridge onto `CLAUDE_CODE_TASK_LIST_ID`: runtime scripts now use Claude Code's standard task-list identity as the same-group basis, session/request records carry `task_list_id`, local board paths are derived internally, and docs/history now describe the same-task-list boundary through the standard variable instead of the old custom group variable. |
+| 2026-04-15 | Broadened bounded `board_ref` support so the tmux bridge now handles `task-<id>`, raw numeric ids, and exact `subject:<full task subject>` anchors, while no-match and multi-match subject cases still fail closed instead of mutating the wrong task. |
+| 2026-04-15 | Added richer request/held/blocked board automation so one tmux bridge request id can now drive bounded request-layer, held-owner, and blocked-owner companion tasks on the shared board while the original anchored task remains the main board anchor. |
+| 2026-04-15 | Added bounded workflow-acceptance proof so the tmux bridge now evaluates stronger shared-work evidence from `report-back + reflected board state`, while dispatch still labels pane acknowledgement as transport-only rather than workflow acceptance. |
+| 2026-04-15 | Added anti-spam and correlation hardening so equivalent still-open requests are blocked before resend, dispatch waits a short bounded delay before capture, and the live tmux message now carries `request_id` for stronger later correlation without pretending tmux is a callback protocol. |
+| 2026-04-15 | Added a reusable tmux-bridge review checklist and explicitly framed the next very small wave as cleanup / retention discipline so future reviews can catch drift more systematically without reopening the architecture. |
+| 2026-04-15 | Added a bounded retention helper so stale completed companion tasks can now be retired after the aging window while active and anchored tasks remain untouched. |
+| 2026-04-16 | Added a bounded shared-task hook probe inside the unified `claude-code-rules@darkwingtm` package: the plugin now wires `TaskCreated` and `TaskCompleted` into an observation-only hook script gated on `CLAUDE_CODE_TASK_LIST_ID`, updates docs/governance surfaces to keep the feature explicitly probe-only, and leaves cross-session behavior as something to verify rather than assume. |
+| 2026-04-15 | Renamed and clarified the bounded coordination concept as **Shared Board Relay** in the root/plugin README surfaces and expanded the plugin README so the runtime concept and boundaries are easier to understand in one place. |
 | 2026-04-13 | Finalized topology-correction docs and install guidance: tightened the skill-only package docs, removed remaining compact-helper drift from the RULES plugin package, refreshed mirrored shared-marketplace skill files, and completed the remaining wave `042` sync details. |
 | 2026-04-13 | Corrected the plugin topology so `claude-code-rules` becomes the session-coordination skill plugin while `rules-compact-extension` remains the active compact helper; added bounded `phase-042` / `patch/plugin-topology-correction.patch.md` artifacts; synchronized master surfaces; restored shared marketplace/plugin resolution; and aligned public plugin install/update guidance to the shared `darkwingtm` marketplace. |
 | 2026-04-13 | Added the optional `claude-code-rules:session-coordination-bridge` support skill to the RULES plugin companion, renamed the plugin package identity from `rules-compact-extension` to `claude-code-rules`, added bounded `phase-041` / `patch/session-coordination-bridge-skill-rollout.patch.md` artifacts, synchronized master surfaces, and aligned plugin install/update/migration guidance. |

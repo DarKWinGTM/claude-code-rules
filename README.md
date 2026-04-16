@@ -401,7 +401,7 @@ Please:
 
 **📊 Active Runtime Rules: 40**
 
-Latest refinement: the Rules plugin is unified again under `claude-code-rules@darkwingtm`, so compact helper behavior and the session-coordination skill now ship from the same Rules-owned package.
+Latest refinement: the runtime split is now active, so `claude-code-rules@darkwingtm` stays as the reduced Rules migration/reference package while `claude-session-coordination@darkwingtm` owns the active compact and coordination plugin runtime.
 
 </div>
 
@@ -545,24 +545,37 @@ Change request received
 
 ### Optional plugin companion
 
-The repository now treats the optional plugin layer as one unified Rules-owned package:
-- `claude-code-rules@darkwingtm` = unified Rules plugin
+The repository now splits plugin ownership into two packages:
+- `claude-code-rules@darkwingtm` = reduced Rules-owned migration/reference package
+- `claude-session-coordination@darkwingtm` = active compact + session-coordination runtime package
 
-This unified package includes both:
-- compact/context helper behavior
-- `session-coordination-bridge` support skill behavior
+The moved coordination package is where the current cross-session coordination concept lives:
+- **Shared Board Relay**
 
-The canonical source is:
-- `<rules-root>/plugin`
+พูดง่าย ๆ:
+- shared board = visible coordination / history
+- phase/TODO/design/code = semantic truth
+- tmux = request transport
+- report-back = callback substitute
+- acceptance evaluation = stronger evidence check
 
-Public install goes through the shared `darkwingtm` marketplace:
+If you want the full runtime concept and script-layer explanation, read:
+- [`plugin/README.md`](plugin/README.md)
+- [`../PLUGIN/claude-session-coordination/README.md`](../PLUGIN/claude-session-coordination/README.md)
+
+Current sources during the split:
+- reduced Rules plugin source: `<rules-root>/plugin`
+- coordination fork source: `<plugin-marketplace-root>/claude-session-coordination`
+
+Public install is being realigned through the shared `darkwingtm` marketplace:
 
 ```bash
 claude plugins marketplace add "<plugin-marketplace-root>" --scope user
 claude plugins install claude-code-rules@darkwingtm --scope user
+claude plugins install claude-session-coordination@darkwingtm --scope user
 ```
 
-Local development from `./plugin` remains optional:
+Local development remains optional per package:
 
 ```bash
 cd plugin
@@ -572,9 +585,10 @@ claude plugins install claude-code-rules@claude-code-rules --scope local
 
 Detailed meaning:
 1. the shared `darkwingtm` marketplace is the intended user-facing install surface.
-2. `claude-code-rules@darkwingtm` is the real install target for the unified Rules plugin.
-3. the package-local `@claude-code-rules` path is only for local development/testing from the RULES repo.
-4. duplicate maintained package copies are no longer the intended model.
+2. `claude-code-rules@darkwingtm` is being reduced to a Rules-owned migration/reference package.
+3. `claude-session-coordination@darkwingtm` is the active home of both compact lifecycle runtime and coordination runtime as the split progresses.
+4. the package-local `@claude-code-rules` path is only for local development/testing from the RULES repo.
+5. duplicate maintained active owners for the same coordination runtime are not the intended model.
 
 Recommended checks after install:
 
@@ -587,14 +601,16 @@ Optional interactive checks:
 - `/claude-code-rules:session-coordination-bridge`
 - `/hooks`
 
-Current package behavior:
-- compact helper hooks and session-scoped compact state live in the same package
-- `skills/session-coordination-bridge/` provides the operator-facing coordination support surface
-- the plugin remains subordinate to root RULES authority
+Current package behavior during the split:
+- active compact hooks and session-scoped compact state ownership now live in `claude-session-coordination@darkwingtm`
+- active coordination runtime ownership now lives in `claude-session-coordination@darkwingtm`
+- the reduced Rules package keeps no active plugin hooks
+- root runtime rules remain the semantic authority
 
 Boundary reminder:
 - root runtime rules still define compact/post-compact semantics and shared execution coordination semantics
-- this plugin reinforces those semantics through compact hooks plus one support skill front door
+- the reduced Rules plugin should reinforce Rules-owned runtime support only
+- the coordination plugin should own active Shared Board Relay runtime behavior
 - plugin installation does not replace the normal `~/.claude/rules/` install path
 
 ### Verification Checklist

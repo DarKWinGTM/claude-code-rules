@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
+> **Current Version:** 1.10
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-15)
 
 ---
 
@@ -119,16 +119,60 @@ Required meaning:
 - acceptance and remap should be distinguishable so request-layer history does not masquerade as receiving-side execution structure
 - blocked or returned outcomes should remain visible enough that another session can understand why the handoff did not simply disappear
 
-### 4.4 Context-Bridge Principle
+### 4.4 Group-Local Communication Principle
+Live session-to-session communication should be scoped to sessions that already share the same task list / execution board group.
+
+Required meaning:
+- `CLAUDE_CODE_TASK_LIST_ID` should act as the standard upstream identity for the shared task-list boundary
+- local board paths may still be derived internally from that id for runtime access, but should not replace the task-list id as the main public contract
+- sessions outside that shared board group should not be treated as default live peers
+- group membership should be derived from already-working shared execution surfaces rather than a new standalone broker
+
+### 4.5 Peer-Request-Not-Takeover Principle
+The live bridge should default to delivering additional work requests between peer sessions, not taking control of another session.
+
+Required meaning:
+- one session may request additional work or information from another session already working in that area
+- the default interaction should not hard-interrupt or replace the target session's current execution context
+- direct peer-to-peer requests inside the same group are allowed and do not need to route through one permanent leader session
+- a session may temporarily act as an orchestrator without becoming the only central controller for the whole group
+
+### 4.6 Board-Anchored Visibility Principle
+Live bridge requests should remain visibly anchored to the shared task board rather than becoming hidden side-channel communication.
+
+Required meaning:
+- live requests should reference a shared task / request / objective anchor whenever practical
+- sessions may communicate directly, but the existence and outcome of meaningful requests should still be visible in shared coordination history
+- the board remains the shared visible execution record even when tmux transport is used to carry richer context
+
+### 4.7 Low-Aggression Delivery Principle
+The default live request style should be low-aggression and safe for parallel work.
+
+Required meaning:
+- the target session should be asked to finish its current safe slice first before switching to the additional request
+- the live bridge should be optimized for richer request delivery, not for forceful interruption
+- prompt wording and transport policy should avoid derailing the target session's current work unless a later explicitly selected urgent mode is introduced
+
+### 4.7.1 Anchored-Task Board Reflection Principle
+When bridge-side request/report state is reflected back into shared coordination surfaces, the first reflection step should prefer the existing anchored task.
+
+Required meaning:
+- if `board_ref` resolves safely to an existing shared-board task, that anchored task should be updated first
+- reflection may use coarse native task fields plus clearly visible note text when task storage cannot represent the full lifecycle nuance directly
+- reflection should fail closed when the anchor is ambiguous, missing, or unsupported
+- bridge-side machine-readable request/report files must not become a second hidden authority or hidden history stack
+- the first reflection wave should not auto-create a second hidden request/held/blocked task family by default
+
+### 4.8 Context-Bridge Principle
 Continuation should use the strongest available context bridge while keeping optional tools optional.
 
-### 4.5 Continuity-First Retention Principle
+### 4.9 Continuity-First Retention Principle
 Shared execution boards should be preserved by default within the same active objective.
 
-### 4.6 Partial Cleanup Principle
+### 4.10 Partial Cleanup Principle
 Cleanup should retire eligible stale subsets rather than wiping the board.
 
-### 4.6.1 Retention Matrix Principle
+### 4.10.1 Retention Matrix Principle
 Retention should depend on task class and coordination state rather than one global cleanup reflex.
 
 Required meaning:
@@ -136,7 +180,7 @@ Required meaning:
 - fully completed and dependency-clear coordination history may become retirement candidates sooner than active execution records
 - session-lease expiry should trigger reopen or reassign evaluation before retirement is considered
 
-### 4.7 Optional-Extension Principle
+### 4.11 Optional-Extension Principle
 memsearch and future peer-messaging layers may strengthen coordination, but the baseline coordination model must still function without them.
 
 ---
@@ -167,6 +211,10 @@ Required meaning:
 Required meaning:
 - it may later strengthen peer discovery, direct handoff, and live blocker resolution
 - it should not be described as active RULES behavior until the rule layer explicitly adopts it
+- if current-environment testing shows the required delivery path is blocked or non-operational, the mechanism should remain concept-only rather than being described as a viable current option
+- if a candidate replacement such as `FileChanged` hook probing is documented but repeated runtime tests do not produce actual usable trigger behavior, that path should also remain `not yet usable` rather than being described as a viable current option
+- a bounded `TaskCreated` validator may be added inside `claude-session-coordination@darkwingtm` for shared-task-list creation control when `CLAUDE_CODE_TASK_LIST_ID` is set
+- such a validator should reject malformed session-state creation attempts with retryable feedback, still allow clearly open/shared task titles, and stay limited to creation until later waves explicitly widen the lifecycle coverage
 
 ---
 

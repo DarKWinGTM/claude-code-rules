@@ -4,15 +4,15 @@
     "name": "DarKWinGTM"
   },
   "metadata": {
-    "description": "Local development marketplace manifest for the unified Claude Code RULES plugin companion.",
-    "version": "1.5.0"
+    "description": "Local development marketplace manifest for the reduced Claude Code RULES plugin companion with compact/runtime support only.",
+    "version": "1.8.6"
   },
   "plugins": [
     {
       "name": "claude-code-rules",
       "source": "./",
-      "description": "Unified RULES plugin companion with compact lifecycle hooks and session-coordination skill support.",
-      "tags": ["rules", "compact", "hooks", "coordination", "skills", "sessions"]
+      "description": "Reduced RULES plugin migration/reference package after active compact and coordination runtime ownership moved out.",
+      "tags": ["rules", "migration", "reference", "compact", "coordination-split"]
     }
   ]
 }

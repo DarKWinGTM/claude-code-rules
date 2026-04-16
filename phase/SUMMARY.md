@@ -1,8 +1,8 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.24
+> **Current Version:** 1.28
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.14
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 > **Status:** Completed historical review state
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains forty-three rollout families:
+The current workspace contains fifty-eight rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -58,6 +58,21 @@ The current workspace contains forty-three rollout families:
 - major phase `041` = session coordination bridge skill rollout
 - major phase `042` = plugin topology correction rollout
 - major phase `043` = unified Rules plugin rollout
+- major phase `044` = lean group-local tmux bridge coordination design rollout
+- major phase `045` = tmux bridge anchored-task board reflection rollout
+- major phase `046` = tmux bridge task-list-id standardization rollout
+- major phase `047` = tmux bridge broader board-ref resolution rollout
+- major phase `048` = tmux bridge richer board automation rollout
+- major phase `049` = tmux bridge workflow-acceptance proof rollout
+- major phase `050` = tmux bridge anti-spam and correlation hardening rollout
+- major phase `051` = tmux bridge review-checklist and retention-wave framing rollout
+- major phase `052` = tmux bridge retention-discipline helper rollout
+- major phase `053` = Shared Board Relay concept clarification rollout
+- major phase `054` = bounded shared-task hook probe rollout
+- major phase `055` = session coordination ownership split rollout
+- major phase `056` = RULES plugin active-scope reduction rollout
+- major phase `057` = session coordination history/archive alignment rollout
+- major phase `058` = dual-owner-overlap verification rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -164,6 +179,29 @@ The goal of this summary is to index those rollout families without ambiguity, s
 | 042 | 042-02 | `phase/phase-042-02-sync-plugin-topology-surfaces.md` | `design/design.md` + `design/rules-plugin-extension.design.md` | `patch/plugin-topology-correction.patch.md` | Sync governance/install/release surfaces for the topology correction wave | Repo-level governance and install guidance reflect the corrected two-plugin model coherently |
 | 043 | 043-01 | `phase/phase-043-01-reunify-rules-plugin-source.md` | `design/rules-plugin-extension.design.md` | `patch/unified-rules-plugin-rollout.patch.md` | Re-unify the Rules plugin source so compact helper behavior and the coordination skill live together again under `RULES/plugin` | The Rules-owned plugin source is unified again |
 | 043 | 043-02 | `phase/phase-043-02-sync-unified-plugin-surfaces.md` | `design/design.md` + `design/rules-plugin-extension.design.md` | `patch/unified-rules-plugin-rollout.patch.md` | Sync governance/install/release surfaces for the unified plugin wave | Repo-level governance and install topology reflect the unified Rules plugin coherently |
+| 044 | 044-02 | `../PLUGIN/claude-session-coordination/phase/phase-044-02-define-session-introduction-and-group-membership.md` | `design/shared-execution-coordination.design.md` | none | Define the lean session-introduction and same-group membership model from shared task-list paths | Group membership is explicit without a new broker |
+| 044 | 044-03 | `../PLUGIN/claude-session-coordination/phase/phase-044-03-define-minimal-tmux-transport-contract.md` | `design/shared-execution-coordination.design.md` | none | Define tmux as minimal live transport rather than semantic truth | tmux transport boundary is explicit |
+| 044 | 044-04 | `../PLUGIN/claude-session-coordination/phase/phase-044-04-define-work-request-protocol-and-modes.md` | `design/shared-execution-coordination.design.md` | none | Define the lean request protocol and communication modes | Live requests are richer than task text while still board-anchored |
+| 044 | 044-05 | `../PLUGIN/claude-session-coordination/phase/phase-044-05-run-safety-and-simplification-review.md` | `design/shared-execution-coordination.design.md` | none | Remove overdesign and lock the active candidate set | Final design is lean enough to proceed |
+| 044 | 044-06 | `../PLUGIN/claude-session-coordination/phase/phase-044-06-prepare-implementation-entry-plan.md` | `design/shared-execution-coordination.design.md` | none | Define the smallest viable implementation order after design closure | Implementation can start later without architectural ambiguity |
+| 045 | 045-01 | `../PLUGIN/claude-session-coordination/phase/phase-045-01-implement-tmux-bridge-board-sync-reflection.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | `patch/tmux-bridge-board-sync-reflection.patch.md` | Add bounded board reflection so request/report state can update the existing anchored board task directly when safe | Shared-board visibility closes the main remaining coordination gap without creating a second authority layer |
+| 045 | 045-02 | `../PLUGIN/claude-session-coordination/phase/phase-045-02-sync-board-sync-wave-surfaces.md` | `design/design.md` + touched companion designs | `patch/tmux-bridge-board-sync-reflection.patch.md` | Sync governance/history/version surfaces and verification after the bounded reflection slice | Repo-level governance and package history reflect the bounded board-reflection wave coherently |
+| 046 | 046-01 | `../PLUGIN/claude-session-coordination/phase/phase-046-01-standardize-tmux-bridge-on-task-list-id.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | `patch/tmux-bridge-task-list-id-standardization.patch.md` | Replace the custom same-group basis with standard `CLAUDE_CODE_TASK_LIST_ID` while keeping the bridge bounded to shared task-list scope | The bridge aligns to Claude Code standard task-list identity without widening the coordination model |
+| 046 | 046-02 | `../PLUGIN/claude-session-coordination/phase/phase-046-02-sync-task-list-id-standardization-surfaces.md` | `design/design.md` + touched companion designs | `patch/tmux-bridge-task-list-id-standardization.patch.md` | Sync governance/history/version surfaces and verification after task-list-id standardization | Repo-level governance and package history reflect the task-list-id standardization wave coherently |
+| 047 | 047-01 | `../PLUGIN/claude-session-coordination/phase/phase-047-01-broaden-board-ref-resolution.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | `patch/tmux-bridge-broader-board-ref.patch.md` | Broaden `board_ref` handling so the bridge can resolve exact-subject anchors in addition to task-id forms | The bridge gains more flexible but still deterministic anchor resolution without fuzzy board discovery |
+| 047 | 047-02 | `../PLUGIN/claude-session-coordination/phase/phase-047-02-sync-broader-board-ref-surfaces.md` | `design/design.md` + touched companion designs | `patch/tmux-bridge-broader-board-ref.patch.md` | Sync governance/history/version surfaces and verification after the broader-anchor slice | Repo-level governance and package history reflect the broadened-anchor wave coherently |
+| 048 | 048-01 | `../PLUGIN/claude-session-coordination/phase/phase-048-01-implement-richer-board-automation.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | `patch/tmux-bridge-richer-board-automation.patch.md` | Add bounded request-layer / held-owner / blocked-owner companion-task automation while keeping the anchored task as the main board anchor | Shared-board state becomes easier to scan without replacing the anchored task or widening scope |
+| 048 | 048-02 | `../PLUGIN/claude-session-coordination/phase/phase-048-02-sync-richer-board-automation-surfaces.md` | `design/design.md` + touched companion designs | `patch/tmux-bridge-richer-board-automation.patch.md` | Sync governance/history/version surfaces and verification after the richer-board-automation slice | Repo-level governance and package history reflect the richer board-automation wave coherently |
+| 049 | 049-01 | `../PLUGIN/claude-session-coordination/phase/phase-049-01-add-workflow-acceptance-proof.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | `patch/tmux-bridge-workflow-acceptance-proof.patch.md` | Add a bounded workflow-acceptance proof layer from report-back plus reflected board state | The bridge can now distinguish transport reach from stronger shared-work evidence more clearly |
+| 049 | 049-02 | `../PLUGIN/claude-session-coordination/phase/phase-049-02-sync-workflow-proof-surfaces.md` | `design/design.md` + touched companion designs | `patch/tmux-bridge-workflow-acceptance-proof.patch.md` | Sync governance/history/version surfaces and verification after the workflow-proof slice | Repo-level governance and package history reflect the workflow-proof wave coherently |
+| 050 | 050-01 | `../PLUGIN/claude-session-coordination/phase/phase-050-01-add-anti-spam-and-correlation-hardening.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | `patch/tmux-bridge-anti-spam-and-correlation-hardening.patch.md` | Add a bounded duplicate-send guard, capture delay, and stronger request-id correlation in the tmux path | The bridge becomes harder to spam and easier to correlate without pretending tmux is a true callback protocol |
+| 050 | 050-02 | `../PLUGIN/claude-session-coordination/phase/phase-050-02-sync-anti-spam-and-correlation-surfaces.md` | `design/design.md` + touched companion designs | `patch/tmux-bridge-anti-spam-and-correlation-hardening.patch.md` | Sync governance/history/version surfaces and verification after the anti-spam/correlation slice | Repo-level governance and package history reflect the anti-spam/correlation wave coherently |
+| 051 | 051-01 | `../PLUGIN/claude-session-coordination/phase/phase-051-01-add-review-checklist-and-retention-wave.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | none | Add a reusable review checklist and define the next very small retention-focused wave | Future reviews gain a stable drift-check tool and the next cleanup/retention step is framed without reopening architecture |
+| 052 | 052-01 | `../PLUGIN/claude-session-coordination/phase/phase-052-01-add-retention-discipline-helper.md` | `design/shared-execution-coordination.design.md` + `design/rules-plugin-extension.design.md` | `patch/tmux-bridge-retention-discipline.patch.md` | Add a bounded retention helper that retires only eligible stale completed companion tasks | Shared-board hygiene improves without touching active or anchored work |
+| 053 | 053-01 | `../PLUGIN/claude-session-coordination/phase/phase-053-01-clarify-shared-board-relay-concept.md` | `design/rules-plugin-extension.design.md` | none | Clarify the bounded coordination concept under the more natural language name Shared Board Relay | Readers can understand the concept more easily from the root/plugin README surfaces |
+| 054 | 054-01 | `../PLUGIN/claude-session-coordination/phase/phase-054-01-add-bounded-shared-task-hook-probe.md` | `design/rules-plugin-extension.design.md` + `design/shared-execution-coordination.design.md` | `../PLUGIN/claude-session-coordination/patch/shared-task-hook-probe-observation.patch.md` | Add a bounded `TaskCreated` validator inside the coordination runtime package | Historical record of the initial shared-task creation validator wave before coordination runtime ownership moved out |
+| 054 | 054-02 | `../PLUGIN/claude-session-coordination/phase/phase-054-02-sync-task-hook-probe-surfaces.md` | `design/rules-plugin-extension.design.md` + `design/shared-execution-coordination.design.md` | `../PLUGIN/claude-session-coordination/patch/shared-task-hook-probe-observation.patch.md` | Sync package/governance surfaces for the bounded TaskCreated validator wave | Historical sync record for the validator wave before the coordination fork split active ownership |
+| 054 | 054-03 | `../PLUGIN/claude-session-coordination/phase/phase-054-03-verify-shared-task-hook-probe.md` | `design/rules-plugin-extension.design.md` + `design/shared-execution-coordination.design.md` | `../PLUGIN/claude-session-coordination/patch/shared-task-hook-probe-observation.patch.md` | Verify the bounded TaskCreated validator statically and at runtime | Historical verification record retained in archive while active coordination ownership moved out |
 
 ---
 
@@ -372,6 +410,26 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 042 | 042-02 | `phase/phase-042-02-sync-plugin-topology-surfaces.md` | Approved | None | Approved As-Is | governance/install/release wording now reflects the corrected two-plugin model plus restored `darkwingtm` resolution |
 | 043 | 043-01 | `phase/phase-043-01-reunify-rules-plugin-source.md` | Approved | None | Approved As-Is | the Rules-owned plugin source is unified again so compact helper behavior and the coordination skill ship from the same package |
 | 043 | 043-02 | `phase/phase-043-02-sync-unified-plugin-surfaces.md` | Approved | None | Approved As-Is | governance/install/release wording now reflects the unified package model plus stable `@darkwingtm` exposure |
+| 045 | 045-01 | `../PLUGIN/claude-session-coordination/phase/phase-045-01-implement-tmux-bridge-board-sync-reflection.md` | Approved | None | Approved As-Is | bounded anchored-task board reflection implemented without introducing a second authority layer |
+| 045 | 045-02 | `../PLUGIN/claude-session-coordination/phase/phase-045-02-sync-board-sync-wave-surfaces.md` | Approved | None | Approved As-Is | governance/history/version surfaces synchronized for the bounded board-reflection wave |
+| 046 | 046-01 | `../PLUGIN/claude-session-coordination/phase/phase-046-01-standardize-tmux-bridge-on-task-list-id.md` | Approved | None | Approved As-Is | the bridge is standardized onto `CLAUDE_CODE_TASK_LIST_ID` without widening scope beyond the shared task list |
+| 046 | 046-02 | `../PLUGIN/claude-session-coordination/phase/phase-046-02-sync-task-list-id-standardization-surfaces.md` | Approved | None | Approved As-Is | governance/history/version surfaces synchronized for the task-list-id standardization wave |
+| 047 | 047-01 | `../PLUGIN/claude-session-coordination/phase/phase-047-01-broaden-board-ref-resolution.md` | Approved | None | Approved As-Is | broader exact-subject anchor support added without relaxing deterministic fail-closed behavior |
+| 047 | 047-02 | `../PLUGIN/claude-session-coordination/phase/phase-047-02-sync-broader-board-ref-surfaces.md` | Approved | None | Approved As-Is | governance/history/version surfaces synchronized for the broadened-anchor wave |
+| 048 | 048-01 | `../PLUGIN/claude-session-coordination/phase/phase-048-01-implement-richer-board-automation.md` | Approved | None | Approved As-Is | bounded richer request / held / blocked companion-task automation added while anchored-task-first behavior remains intact |
+| 048 | 048-02 | `../PLUGIN/claude-session-coordination/phase/phase-048-02-sync-richer-board-automation-surfaces.md` | Approved | None | Approved As-Is | governance/history/version surfaces synchronized for the richer board-automation wave |
+| 049 | 049-01 | `../PLUGIN/claude-session-coordination/phase/phase-049-01-add-workflow-acceptance-proof.md` | Approved | None | Approved As-Is | bounded workflow-acceptance proof added from report-back plus reflected board state without turning transport ack into truth |
+| 049 | 049-02 | `../PLUGIN/claude-session-coordination/phase/phase-049-02-sync-workflow-proof-surfaces.md` | Approved | None | Approved As-Is | governance/history/version surfaces synchronized for the workflow-proof wave |
+| 050 | 050-01 | `../PLUGIN/claude-session-coordination/phase/phase-050-01-add-anti-spam-and-correlation-hardening.md` | Approved | None | Approved As-Is | bounded duplicate-send guard, capture delay, and stronger request-id correlation added without overclaiming callback behavior |
+| 050 | 050-02 | `../PLUGIN/claude-session-coordination/phase/phase-050-02-sync-anti-spam-and-correlation-surfaces.md` | Approved | None | Approved As-Is | governance/history/version surfaces synchronized for the anti-spam/correlation wave |
+| 051 | 051-01 | `../PLUGIN/claude-session-coordination/phase/phase-051-01-add-review-checklist-and-retention-wave.md` | Approved | None | Approved As-Is | reusable drift-review checklist added and the next very small retention-focused wave framed without reopening architecture |
+| 052 | 052-01 | `../PLUGIN/claude-session-coordination/phase/phase-052-01-add-retention-discipline-helper.md` | Approved | None | Approved As-Is | bounded retention helper added for stale completed companion tasks while active and anchored tasks remain untouched |
+| 053 | 053-01 | `../PLUGIN/claude-session-coordination/phase/phase-053-01-clarify-shared-board-relay-concept.md` | Approved | None | Approved As-Is | Shared Board Relay concept clarified across root/plugin entry surfaces |
+| 055 | 055-01 | `phase/phase-055-01-freeze-session-coordination-ownership-split.md` | Approved | None | Approved As-Is | ownership split between RULES and claude-session-coordination is frozen clearly enough for later cutover work |
+| 055 | 055-02 | `phase/phase-055-02-sync-rules-side-fork-boundaries.md` | Approved | None | Approved As-Is | RULES-side root/plugin wording now reflects the split package direction rather than the old unified model |
+| 054 | 054-01 | `../PLUGIN/claude-session-coordination/phase/phase-054-01-add-bounded-shared-task-hook-probe.md` | Approved | None | Approved As-Is | historical TaskCreated validator wave retained in archive after coordination runtime ownership moved out |
+| 054 | 054-02 | `../PLUGIN/claude-session-coordination/phase/phase-054-02-sync-task-hook-probe-surfaces.md` | Approved | None | Approved As-Is | historical validator sync surfaces retained in archive after the ownership split |
+| 054 | 054-03 | `../PLUGIN/claude-session-coordination/phase/phase-054-03-verify-shared-task-hook-probe.md` | Pending Review | None | Pending Evidence | historical verification slice retained in archive; real shared-mode verification still remains open in the new ownership model |
 
 ---
 
@@ -475,6 +533,30 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 042 | 042-02 | Completed | `phase/phase-042-02-sync-plugin-topology-surfaces.md` | Sync governance/install/release surfaces for the topology correction wave | `042-01` |
 | 043 | 043-01 | Completed | `phase/phase-043-01-reunify-rules-plugin-source.md` | Re-unify the Rules plugin source so compact helper behavior and the coordination skill live together again under `RULES/plugin` | none |
 | 043 | 043-02 | Completed | `phase/phase-043-02-sync-unified-plugin-surfaces.md` | Sync governance/install/release surfaces for the unified plugin wave | `043-01` |
+| 045 | 045-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-045-01-implement-tmux-bridge-board-sync-reflection.md` | Add the first bounded board-reflection step so request/report state can update the existing anchored shared-board task directly when safe | none |
+| 045 | 045-02 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-045-02-sync-board-sync-wave-surfaces.md` | Synchronize governance/history/version surfaces after the bounded board-reflection slice is implemented | `045-01` |
+| 046 | 046-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-046-01-standardize-tmux-bridge-on-task-list-id.md` | Replace the custom same-group basis with standard `CLAUDE_CODE_TASK_LIST_ID` while keeping the bridge bounded to shared task-list scope | none |
+| 046 | 046-02 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-046-02-sync-task-list-id-standardization-surfaces.md` | Synchronize governance/history/version surfaces after the task-list-id standardization slice is implemented | `046-01` |
+| 047 | 047-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-047-01-broaden-board-ref-resolution.md` | Broaden `board_ref` handling so the bridge can resolve exact-subject anchors in addition to task-id forms | none |
+| 047 | 047-02 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-047-02-sync-broader-board-ref-surfaces.md` | Synchronize governance/history/version surfaces after the broader-anchor slice is implemented | `047-01` |
+| 048 | 048-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-048-01-implement-richer-board-automation.md` | Add bounded request-layer / held-owner / blocked-owner companion-task automation while keeping the anchored task as the main board anchor | none |
+| 048 | 048-02 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-048-02-sync-richer-board-automation-surfaces.md` | Synchronize governance/history/version surfaces after the richer-board-automation slice is implemented | `048-01` |
+| 049 | 049-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-049-01-add-workflow-acceptance-proof.md` | Add a bounded workflow-acceptance proof layer from report-back plus reflected board state | none |
+| 049 | 049-02 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-049-02-sync-workflow-proof-surfaces.md` | Synchronize governance/history/version surfaces after the workflow-proof slice is implemented | `049-01` |
+| 050 | 050-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-050-01-add-anti-spam-and-correlation-hardening.md` | Add a bounded duplicate-send guard, capture delay, and stronger request-id correlation in the tmux path | none |
+| 050 | 050-02 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-050-02-sync-anti-spam-and-correlation-surfaces.md` | Synchronize governance/history/version surfaces after the anti-spam/correlation slice is implemented | `050-01` |
+| 051 | 051-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-051-01-add-review-checklist-and-retention-wave.md` | Add a reusable review checklist and define the next very small retention-focused wave | none |
+| 052 | 052-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-052-01-add-retention-discipline-helper.md` | Add a bounded retention helper that retires only eligible stale completed companion tasks | none |
+| 053 | 053-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-053-01-clarify-shared-board-relay-concept.md` | Clarify the bounded coordination concept under the more natural language name Shared Board Relay | none |
+| 054 | 054-01 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-054-01-add-bounded-shared-task-hook-probe.md` | Add a bounded `TaskCreated` validator inside the coordination runtime package | none |
+| 054 | 054-02 | Completed | `../PLUGIN/claude-session-coordination/phase/phase-054-02-sync-task-hook-probe-surfaces.md` | Sync plugin/governance surfaces for the bounded TaskCreated validator wave | `054-01` |
+| 054 | 054-03 | Historical | `../PLUGIN/claude-session-coordination/phase/phase-054-03-verify-shared-task-hook-probe.md` | Verify the bounded TaskCreated validator statically and at runtime | `054-02` |
+| 055 | 055-01 | Completed | `phase/phase-055-01-freeze-session-coordination-ownership-split.md` | Freeze the ownership split between RULES and claude-session-coordination@darkwingtm | `054-03` |
+| 055 | 055-02 | Completed | `phase/phase-055-02-sync-rules-side-fork-boundaries.md` | Sync RULES-side docs around the new fork boundary | `055-01` |
+| 056 | 056-01 | Completed | `phase/phase-056-01-reduce-rules-plugin-active-scope.md` | Reduce active RULES plugin scope so it no longer claims full coordination runtime ownership | `055-02` |
+| 056 | 056-02 | Completed | `phase/phase-056-02-sync-rules-plugin-fork-surfaces.md` | Sync RULES plugin docs/manifests/hooks after scope reduction | `056-01` |
+| 057 | 057-01 | Completed | `phase/phase-057-01-define-history-preservation-and-archive-alignment.md` | Define how moved coordination artifacts are preserved as history/archive without erasing RULES history | `056-02` |
+| 058 | 058-01 | Completed | `phase/phase-058-01-verify-no-dual-owner-overlap.md` | Verify that RULES and the new coordination package no longer claim overlapping active ownership | `057-01` |
 
 ---
 
@@ -524,7 +606,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the memsearch availability-detection / fallback-intake refinement exists as a bounded `040` family with explicit patch linkage, explicit availability-first optional recall intake, immediate fallback when the optional extension is absent or probe fails, synchronized master-governance surfaces, and preserved stronger-surface-first evidence boundaries
 - the session coordination bridge skill rollout exists as a bounded `041` family with explicit patch linkage, one optional support skill under the `claude-code-rules` plugin namespace, synchronized master-governance surfaces, coherent plugin rename and migration wording, and preserved root-RULES semantic authority over shared execution coordination behavior
 - the plugin topology correction exists as a bounded `042` family with explicit patch linkage, corrected split ownership between `rules-compact-extension` and `claude-code-rules`, synchronized master-governance surfaces, restored `darkwingtm` marketplace resolution, and a clear boundary that the new skill plugin does not own compact-helper behavior
-- the unified Rules plugin rollout exists as a bounded `043` family with explicit patch linkage, restored compact helper hooks/scripts into the canonical Rules-owned plugin source, preserved `claude-code-rules@darkwingtm` as the public install target, removed duplicate maintained package copies, and synchronized governance/install/release surfaces to the unified package model
+- the unified Rules plugin rollout exists as a bounded `043` family with explicit patch linkage, restored compact helper hooks/scripts into the canonical Rules-owned plugin source at that time, preserved `claude-code-rules@darkwingtm` as the public install target, removed duplicate maintained package copies, and synchronized governance/install/release surfaces to the then-active unified package model before the later coordination split
+- the tmux bridge anchored-task board-reflection rollout exists as a bounded `045` family with explicit patch linkage, reflects request/report state into the existing anchored board task when safe, fails closed on unsafe anchors, avoids hidden broker/history drift, and synchronizes governance/history/package surfaces to the bounded reflection model
 
 ---
 

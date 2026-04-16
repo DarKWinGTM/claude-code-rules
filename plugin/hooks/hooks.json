@@ -1,41 +1,4 @@
 {
-  "description": "Compact lifecycle reinforcement for the RULES system.",
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "compact",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/sessionstart-compact-consume-handoff.sh",
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "PreCompact": [
-      {
-        "matcher": "manual|auto",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/precompact-create-handoff.sh",
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "PostCompact": [
-      {
-        "matcher": "manual|auto",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/postcompact-prune-handoff.sh",
-            "timeout": 30
-          }
-        ]
-      }
-    ]
-  }
+  "description": "No active plugin hooks remain in the reduced RULES package after coordination runtime ownership moved out.",
+  "hooks": {}
 }

@@ -1,8 +1,8 @@
 # Shared Execution Coordination
 
-> **Current Version:** 1.4
-> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.10
+> **Design:** [design/shared-execution-coordination.design.md](design/shared-execution-coordination.design.md) v1.10
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 > **Full history:** [changelog/shared-execution-coordination.changelog.md](changelog/shared-execution-coordination.changelog.md)
 
 ---
@@ -155,7 +155,51 @@ Required guidance:
 - remap should be visible when the work moves from shared request layer into the receiving session's execution structure
 - blocked or returned states should remain visible enough that another session can understand why the handoff did not simply disappear
 
-### 5) Context-Bridge Principle
+### 5) Group-Local Communication Principle
+Live session-to-session communication should be scoped to sessions that already share the same task list / execution board group.
+
+Required guidance:
+- use `CLAUDE_CODE_TASK_LIST_ID` as the standard upstream identity for the shared task-list scope
+- local board paths may be derived internally from that id for runtime access, but should not replace the task-list id as the main public contract
+- do not treat sessions outside that shared board group as default live peers
+- prefer already-working shared execution surfaces over creating a new standalone broker or central membership service
+
+### 5.1) Peer-Request-Not-Takeover Principle
+The live bridge should default to delivering additional work requests between peer sessions, not taking control of another session.
+
+Required guidance:
+- one session may request additional work or information from another session already working in that area
+- default live requests should not hard-interrupt or replace the target session's current execution context
+- direct peer-to-peer requests inside the same group are allowed and do not require one permanent leader session
+- a session may temporarily orchestrate work without becoming the only central controller for the whole group
+
+### 5.2) Board-Anchored Visibility Principle
+Live bridge requests should remain visibly anchored to the shared task board rather than becoming hidden side-channel communication.
+
+Required guidance:
+- live requests should reference a shared task / request / objective anchor whenever practical
+- sessions may communicate directly, but the existence and outcome of meaningful requests should still be visible in shared coordination history
+- the board remains the shared visible execution record even when tmux transport is used to carry richer context
+
+### 5.3) Low-Aggression Delivery Principle
+The default live request style should be low-aggression and safe for parallel work.
+
+Required guidance:
+- ask the target session to finish its current safe slice first before switching to the additional request
+- optimize the live bridge for richer request delivery, not forceful interruption
+- keep prompt wording and transport policy from derailing the target session's current work unless a later explicitly selected urgent mode is introduced
+
+### 5.3.1) Anchored-Task Board Reflection Principle
+When the live bridge reflects request/report state back into shared coordination surfaces, it should prefer the existing anchored task before creating new board structures.
+
+Required guidance:
+- if `board_ref` resolves safely to an existing shared-board task, update that anchored task first
+- keep the reflection bounded to coarse native task fields plus clearly visible note text when the task schema cannot express the full coordination nuance directly
+- fail closed when the anchor is ambiguous, missing, or unsupported instead of forcing unsafe board mutation
+- do not let bridge-side report files become a second hidden authority or hidden history stack
+- do not auto-create a second hidden request/held/blocked task family by default in the first reflection wave
+
+### 5.4) Context-Bridge Principle
 Cross-session continuation should use the strongest available context bridge without making optional tooling mandatory.
 
 Baseline continuation surfaces:
@@ -180,6 +224,11 @@ Required guidance:
 - if memsearch is unavailable, the coordination model must still function through the baseline surfaces
 - treat memsearch as a supplemental context bridge, not as semantic truth or required infrastructure
 - treat `claude-peers-mcp` as optional future live coordination infrastructure unless and until the active rule layer explicitly adopts it
+- if current-environment testing shows the required delivery path is blocked or non-operational, keep `claude-peers-mcp` concept-only rather than presenting it like a viable current option
+- if a candidate replacement such as `FileChanged` hook probing is documented but repeated runtime tests do not produce actual usable trigger behavior, keep that path in a `not yet usable` state rather than presenting it like a viable current option
+- a bounded `TaskCreated` validator may be used inside `claude-session-coordination@darkwingtm` when `CLAUDE_CODE_TASK_LIST_ID` is set, so malformed shared-board session-state titles can be rejected and retried correctly while clearly open/shared task titles are still allowed
+- this validator currently applies only to task creation, not task completion
+- tmux-based transport may be used as a live request delivery path only after group membership and target readiness are clear
 - do not design the core coordination model so it fails when optional extensions are absent
 
 ### 6) Continuity-First Retention Principle

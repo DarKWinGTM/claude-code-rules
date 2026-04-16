@@ -1,9 +1,9 @@
 {
   "name": "claude-code-rules",
-  "version": "1.5.0",
-  "description": "Unified plugin companion for the Claude Code RULES system with compact hooks and session-coordination skill support.",
+  "version": "1.8.6",
+  "description": "Reduced RULES plugin migration/reference package after active compact and coordination runtime ownership moved to claude-session-coordination.",
   "author": {
     "name": "DarKWinGTM"
   },
-  "keywords": ["rules", "compact", "hooks", "coordination", "skills", "sessions"]
+  "keywords": ["rules", "migration", "reference", "compact", "coordination-split"]
 }
