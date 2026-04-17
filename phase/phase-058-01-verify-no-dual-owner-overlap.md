@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 058-01
 > **Status:** Completed
-> **Design References:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md), [../design/shared-execution-coordination.design.md](../design/shared-execution-coordination.design.md)
+> **Design References:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md)
 > **Patch References:** [../patch/rules-plugin-coordination-scope-reduction.patch.md](../patch/rules-plugin-coordination-scope-reduction.patch.md)
 
 ---

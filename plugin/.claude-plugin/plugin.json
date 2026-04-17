@@ -1,9 +1,0 @@
-{
-  "name": "claude-code-rules",
-  "version": "1.8.6",
-  "description": "Reduced RULES plugin migration/reference package after active compact and coordination runtime ownership moved to claude-session-coordination.",
-  "author": {
-    "name": "DarKWinGTM"
-  },
-  "keywords": ["rules", "migration", "reference", "compact", "coordination-split"]
-}

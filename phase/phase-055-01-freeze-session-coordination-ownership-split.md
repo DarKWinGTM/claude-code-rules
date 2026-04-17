@@ -3,14 +3,14 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 055-01
 > **Status:** Completed
-> **Design References:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md), [../design/shared-execution-coordination.design.md](../design/shared-execution-coordination.design.md)
+> **Design References:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md)
 > **Patch References:** [../patch/session-coordination-fork-authority-split.patch.md](../patch/session-coordination-fork-authority-split.patch.md)
 
 ---
 
 ## Objective
 
-Freeze the post-fork ownership split so RULES keeps semantic coordination doctrine while `claude-session-coordination@darkwingtm` becomes the active owner of coordination runtime/package surfaces.
+Historical record of the post-fork ownership split where active coordination runtime/package work moved out of Main RULES.
 
 ## Why this phase exists
 
@@ -32,8 +32,7 @@ The current plugin layer has become runtime-heavy enough that the old unified Ru
 ## Affected artifacts
 
 - `design/rules-plugin-extension.design.md`
-- `design/shared-execution-coordination.design.md`
-- `shared-execution-coordination.md`
+- `design/rules-plugin-extension.design.md`
 - `README.md`
 
 ## Verification

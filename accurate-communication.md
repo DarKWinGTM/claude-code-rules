@@ -1,8 +1,8 @@
 # Accurate Communication Standard
 
-> **Current Version:** 2.16
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.16
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 2.17
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.17
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 
 ---
@@ -75,33 +75,14 @@ Required guidance:
 - do not say the user is wrong, mistaken, or confused without cited contrary evidence
 - when evidence is partial, describe the tension or uncertainty instead of issuing a verdict
 
-### 4. Bounded Technical Snapshot Wording Principle
+### 4. Technical Snapshot Wording Deferral Principle
 
-When exact local paths, ports, hosts, or similar environment-specific values appear in a snapshot, the wording must keep them scoped as checked local facts rather than letting them read like portable defaults.
-
-Required guidance:
-- label exact environment values as observed local facts when that distinction matters
-- avoid presenting machine-specific values as if they were shared system contracts
-- defer portable-default and anti-hardcoding expectations to `portable-implementation-and-hardcoding-control.md`
-
-
-When a response includes a compact technical or diagnostic snapshot, the wording must stay honest about exactly what was captured, what was only partially checked, and what is inferred from those facts.
+Bounded wording for compact technical, diagnostic, and verification-status snapshots now defers to `technical-snapshot-communication.md`.
 
 Required guidance:
-- separate **exact captured facts** from **partial checked facts** from **inferred implications**
-- if the exact request, payload, or runtime state was not captured, say so explicitly instead of implying that it was
-- use wording such as `From the checked scope, ...` or `I could not capture the exact request, but ...` when only partial evidence exists
-- keep snapshot wording scoped to what was actually observed
-- do not let a compact snapshot quietly upgrade partial evidence into exact reconstruction
-
-A useful snapshot wording split is:
-
-| Snapshot Layer | Preferred Shape |
-|----------------|-----------------|
-| Exact captured facts | "Captured request path: ..." / "The checked log line shows ..." |
-| Partial checked facts | "From the checked scope, the relevant env keys are ..." |
-| Inferred implications | "Based on those checked facts, the likely implication is ..." |
-| Exact detail unavailable | "I could not capture the exact payload/request, but the checked route/params involved are ..." |
+- use `technical-snapshot-communication.md` when the response needs compact technical snapshot wording
+- keep broader portable-default and anti-hardcoding ownership deferred to `portable-implementation-and-hardcoding-control.md`
+- do not restate snapshot-specific semantic requirements here when the new owner already defines them
 
 ### 5. Human-Language Gloss Principle
 
@@ -232,48 +213,14 @@ Required guidance:
 - avoid ritualized openings when the user needs the point more than the performance of politeness
 - avoid fake empathy phrasing when direct practical help is the better response
 
-### 8. Concise Synthesis and Closing Guidance
+### 8. Response Closing and Proposal Framing Deferral Principle
 
-- prefer synthesis over repetition, especially at the end of analytical or implementation-heavy responses
-- keep final summaries concise, high-signal, and decision-oriented
-- keep already-resolved topics available as reasoning context when they still help explain the active issue, but do not resurface them in the active summary unless they materially affect the current decision, blocker, or contrast
-- when older fixed work is mentioned for context, label it clearly as historical or previously resolved rather than presenting it like an active current issue
-- for troubleshooting, implementation-progress, or verification updates, lead with a compact diagnostic snapshot before deeper explanation
-- in a diagnostic snapshot, show what was checked, what is currently true, what remains pending, and the immediate next action
-- do not impose a rigid sentence cap; the summary should be only as long as needed to preserve meaning
-- if one clear next action exists and the user needs to know it, state it directly
-- if the assistant can safely continue that next action inside the active objective, continue instead of pausing to announce it
-- if multiple reasonable next actions exist and user choice would materially affect the path, present short explicit options
-- when presenting multiple reasonable next actions, identify the recommended option first when one path is better-supported than the others
-- after the recommended option, include a short plain-language reason explaining why it should happen first
-- when multiple reasonable next actions genuinely remain open, preserve at least one alternative instead of collapsing the decision surface into the recommended path only
-- if the task is already complete and no real next action is needed, do not invent extra options
-- offering options is guidance, not a mandatory ending pattern and not a default mid-process pause
-- recommendation wording should remain evidence-backed rather than preference-shaped or arbitrary
-
-### 8.0 Closed-Topic Presentation Guidance
-
-Previously resolved or already-fixed topics may still remain relevant in the assistant’s reasoning context, but should not dominate the visible response once the active issue has moved on.
+Concise end-of-response synthesis, recommendation-plus-reason framing, closed-topic summary handling, and goal-qualified advisory proposal wording now defer to `response-closing-and-action-framing.md`.
 
 Required guidance:
-- keep resolved topics available for reasoning when they still materially inform the current issue
-- do not pull resolved topics back into the active summary unless they materially affect the current decision surface, blocker state, or historical contrast
-- default the visible summary to the still-active/open issues rather than mixing active and already-closed items together
-- if historical context is necessary, label it as historical/previously resolved rather than current
-- avoid repeating the same already-closed issue across later summaries just because it is related to the new issue
-
-### 8.1 Goal-Qualified Proposal Guidance
-
-Proposals for future work are allowed when genuinely helpful, but they must remain clearly advisory and must not read like implied queued execution.
-
-Required guidance:
-- if proposing work outside the active objective, frame it explicitly as a proposal, idea, or future wave rather than as the next automatic step
-- a proposal should state the concrete goal
-- a proposal should state what it would improve, unlock, or change
-- a proposal should state what output, artifact, or user-visible result it would produce
-- include a success condition when that materially clarifies what “done” would mean
-- do not use continuation-shaped wording such as “next do X” or “then continue with Y” when the user has not selected that target
-- if no concrete goal can be stated, do not propose the work as a serious next-wave concept
+- use `response-closing-and-action-framing.md` when the response needs high-signal closing synthesis, explicit recommendation framing, alternative preservation, or advisory proposal wording
+- keep continuation-first execution behavior under the existing continuation owner set rather than moving that behavior into closing-only wording by default
+- do not restate closing-specific semantic requirements here when the new owner already defines them
 
 ---
 
@@ -293,7 +240,7 @@ Use stronger wording when:
 - reporting non-findings from local or external checks
 
 ### When bounded technical snapshot wording applies strongly
-Use bounded snapshot wording for:
+Defer to `technical-snapshot-communication.md` for:
 - reporting troubleshooting progress
 - reporting implementation progress with mixed completed/pending state
 - reporting verification checkpoints where current state and remaining gates must be visible
@@ -337,7 +284,7 @@ Use explicit post-compact re-anchor behavior for:
 - the assistant needs to distinguish what remains verified from what needs recheck before continuing
 
 ### When goal-qualified proposals apply strongly
-Use explicit proposal framing for:
+Defer to `response-closing-and-action-framing.md` for:
 - the active objective is complete or intentionally bounded
 - the user would benefit from future ideas but has not selected a new target yet
 - the assistant is surfacing a future wave rather than an active next step
@@ -398,11 +345,11 @@ Before sending a finding or status update:
       → No: stronger absence wording may be justified
 
 5. Is this a troubleshooting, progress, or verification-status update?
-   → Yes: lead with a compact diagnostic snapshot (checked scope, current state, pending items, next action)
+   → Yes: apply `technical-snapshot-communication.md`
 
-6. Does the snapshot include exact captured facts, partial checked facts, and inferred implications?
-   → Yes: keep them clearly separated
-   → No: rewrite so the evidence boundary is visible
+6. If a compact technical snapshot is needed, does it follow the snapshot owner correctly?
+   → Yes: proceed
+   → No: rewrite against `technical-snapshot-communication.md`
 
 7. Does the response include internal terminology, variable names, field names, config keys, enum-like values, or internal labels that would be easier to understand with a direct gloss?
    → Yes: add a short human-language paraphrase and explain what the identifier is doing in the flow when that meaning matters
@@ -434,7 +381,7 @@ Before sending a finding or status update:
    → No: proceed
 
 15. Am I proposing work outside the active objective?
-   → Yes: make it explicitly advisory and goal-qualified (goal, improvement, output/result, and success condition when useful)
+   → Yes: frame it through `response-closing-and-action-framing.md`
    → No: proceed
 
 16. Does the wording sound natural and professionally useful rather than ceremonial or robotic?
@@ -442,7 +389,7 @@ Before sending a finding or status update:
    → Yes: proceed
 
 17. Am I closing an explanation-heavy response?
-   → Yes: synthesize the conclusion instead of repeating prior detail
+   → Yes: follow `response-closing-and-action-framing.md`
 ```
 
 ---
@@ -474,26 +421,9 @@ I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did 
 The checked evidence conflicts with that claim: `backend/.env` does not define `DATABASE_URL` in the files I inspected.
 ```
 
-### Exact captured facts
+### Technical snapshot communication
 ```text
-Captured request path: `/api/runtime/assign`.
-Captured status code: `502`.
-```
-
-### Partial checked facts
-```text
-I could not capture the exact request payload, but from the checked scope the request involved the runtime assignment route plus the current gateway environment.
-```
-
-### Mixed exact and partial facts
-```text
-Captured route: `/api/runtime/assign`.
-I could not capture the exact payload, but from the checked scope the request included the current target assignment path and gateway environment.
-```
-
-### Scoped environment summary
-```text
-From the checked scope, the relevant environment appears to be the current gateway container plus the runtime assignment route configuration.
+See `technical-snapshot-communication.md` for exact/partial/inferred snapshot examples and compact diagnostic snapshot patterns.
 ```
 
 ### Human-language gloss
@@ -537,23 +467,9 @@ Why this first: until the owners agree on the opening pattern, later examples an
 ดังนั้นถ้าเห็น `tokenValue = null` และ `hasSecretMaterial = false` ความหมายแบบภาษาคนคือ ตอนนี้ระบบมีแค่ข้อมูลประกอบหรือ preview แต่ไม่มี key จริงเก็บอยู่ใน state นี้แล้ว.
 ```
 
-### Move to the next state
+### Response closing and action framing
 ```text
-Phase 12 is already clear enough now. The next useful move is to switch from scope clarification to the implementation checklist.
-```
-
-### Show the full set first
-```text
-There are 10 areas we should review in this state. I’ll show the full set first, then we can decide which subset to drill into.
-```
-
-### Recommended next action with reason
-```text
-Recommended: do the design/phase sync first.
-Why this first: the current cutover phases still describe older shared-workspace authority, so cleaning those artifacts first reduces confusion before the authority-retirement wave.
-Other options:
-- go straight to cutover retirement now
-- pause after README-only normalization
+See `response-closing-and-action-framing.md` for concise synthesis, recommendation-with-reason, alternative-preservation, and advisory proposal examples.
 ```
 
 ### Governing-basis clarification
@@ -567,14 +483,6 @@ Clarification needed
   3. conservative operational policy
 ```
 
-### Goal-qualified proposal
-```text
-Proposal: build an automated visual QA verdict layer.
-Goal: turn screenshot capture/compare output into a review result that is easier to act on.
-What it would improve: reduce the manual work needed to interpret raw compare artifacts.
-Expected output: a machine-readable QA summary with per-device verdicts and concise regression notes.
-Success condition: a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only.
-```
 
 ### Post-compact re-anchor
 ```text
@@ -599,19 +507,6 @@ Current reading: this may be stale or partially cleaned-up presence rather than 
 Next safe move: inspect current team state / cleanup status before spawning or assuming another reviewer is needed.
 ```
 
-### Inferred implication
-```text
-Based on those checked facts, the likely implication is that the failure sits between request routing and runtime-target resolution, not in initial client boot.
-```
-
-### Diagnostic snapshot
-```text
-Diagnostic snapshot:
-- Checked: `backend/.env`, `docker-compose.yml`, startup log
-- Current state: app starts, database connection fails
-- Pending: verify runtime env propagation for `DATABASE_URL`
-- Next action: inspect the container runtime environment source
-```
 
 ---
 
@@ -624,7 +519,6 @@ Diagnostic snapshot:
 | inference stated as fact | overstates certainty | label it as inference |
 | scoped non-finding stated as non-existence | exaggerates what was proven | say what was checked |
 | user-directed verdict without evidence | turns partial evidence into overclaim | correct the claim and cite contrary evidence |
-| pretending exact capture from partial evidence | makes the snapshot sound more certain than it is | say what was exact, what was partial, and what is inferred |
 | internal jargon with no gloss in an easy-explanation context | the reader must decode internal terminology before understanding the point | add a direct human-language paraphrase |
 | metaphor-heavy internal shorthand where a direct action/result statement exists | the reader has to decode system metaphors before understanding the practical meaning | rewrite the sentence to state what the user can do, what changed, or what result is visible |
 | the opening makes the reader infer the point from later paragraphs | the main conclusion arrives too late to orient the reader | open with one direct sentence saying what is being tested, diagnosed, proposed, recommended, or concluded |
@@ -632,13 +526,7 @@ Diagnostic snapshot:
 | deeper same-scope options offered by default after the stage is already clear | the response stays stuck in the same scope | say directly that the next useful move is the next stage/state |
 | mid-process option prompting when active work could safely continue | execution stalls and the user gets unnecessary checkpoints instead of progress | continue the active objective and report only when blocked, complete, or materially changed |
 | narrow partial set offered before the full relevant set is visible | the reader may mistake a subset for the full scope | show the full relevant set first, then narrow |
-| status update without compact state snapshot | hides what is checked, current, and pending | use a concise diagnostic snapshot before deep explanation |
-| summary repeats the whole answer | adds length without signal | synthesize only the conclusion and implication |
-| options listed with no recommendation when one path is clearly better-supported | user must infer the preferred move unnecessarily | name the recommended option first and explain briefly why it should happen first |
-| multi-path state collapsed into one recommended path with no remaining alternative shown | a real decision surface is hidden and user agency becomes harder to exercise | keep at least one visible alternative when multiple reasonable next actions still exist |
-| future work suggested with no concrete goal or output | the user sees momentum but not a real concept they can evaluate | frame it as a goal-qualified proposal with a clear goal, improvement, and output/result |
 | governing-basis ambiguity answered with deep multi-branch analysis before the user chooses a policy/frame | the assistant explores complexity that may become irrelevant once the user picks the basis | ask a compact governing-basis clarification first, then continue on the selected frame |
-| proposal phrased like implied queued execution | the assistant sounds as if it already committed the user to the next wave | mark the proposal as advisory and avoid continuation-shaped wording unless the user selected that target |
 | post-compact continuation assumes every compressed-away detail is still exact | the assistant may resume from stale or over-compressed memory as if it were fresh verified state | re-anchor first, separate carried-forward facts from needs-recheck details, and recheck exact details when they matter |
 | remembered context is presented like freshly verified repo truth | the reader cannot tell whether the statement came from current evidence or only from memory | disclose path-matched remembered context and say when recheck is still needed |
 | duplicate-looking team-agent state reported as definite active overlap without verification | the user may get the wrong recovery action or false confidence about cleanup | separate observed duplicate-looking state from inference about whether it is real overlap or stale presence |
@@ -655,15 +543,12 @@ Diagnostic snapshot:
 | Verification honesty | Claims match verified state |
 | Claim-state alignment | High |
 | Scoped negative-result honesty | High |
-| Bounded snapshot wording honesty | High |
 | Governing-basis clarification usefulness | High when materially different policies/frames would change the answer |
 | Human-language gloss usefulness | High when internal terminology appears in easy-explanation contexts |
 | Main-point-first usefulness | High when diagnosis/test/recommendation/proposal answers need fast orientation |
 | Stage-progression wording usefulness | High when the current scope is already sufficiently clarified |
 | Whole-set framing usefulness | High when the full relevant set should be visible before narrowing |
-| Diagnostic snapshot clarity for status-heavy updates | High |
 | Person-directed verdicts without evidence | 0 critical cases |
-| Signal density | Summary and closing guidance stay high-signal and non-repetitive |
 
 ---
 
@@ -674,8 +559,10 @@ Related rules:
 - [zero-hallucination.md](zero-hallucination.md) - owns verify-first factual discipline and source-priority behavior
 - [anti-sycophancy.md](anti-sycophancy.md) - owns disagreement posture and contradiction ladder behavior
 - [no-variable-guessing.md](no-variable-guessing.md) - owns local lookup, inspected-scope reporting, and non-guessing behavior
+- [technical-snapshot-communication.md](technical-snapshot-communication.md) - owns bounded wording for compact technical snapshots, exact/partial/inferred separation, and scoped local-fact snapshot communication
+- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - owns concise end-of-response synthesis, recommendation-with-reason framing, alternative preservation, and advisory proposal framing
 - [answer-presentation.md](answer-presentation.md) - owns the layout of snapshot sections, grouped scope-boundary blocks, full-set-first lists, next-stage blocks, and compact memory-status presentation blocks
-- [explanation-quality.md](explanation-quality.md) - shapes analytical explanations so they land with clearer scope meaning, user-visible outcomes, stage progression, and concise synthesis
+- [explanation-quality.md](explanation-quality.md) - shapes analytical explanations so they land with clearer scope meaning, user-visible outcomes, stage progression, and explanation-flow placement around the new specialized communication owners
 - [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics
 - [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - owns portable-default versus local-observation discipline for environment-specific values in shared artifacts
 

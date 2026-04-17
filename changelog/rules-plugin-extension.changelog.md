@@ -1,7 +1,7 @@
 # Changelog - RULES Plugin Extension
 
 > **Parent Document:** [../design/rules-plugin-extension.design.md](../design/rules-plugin-extension.design.md)
-> **Current Version:** 1.30
+> **Current Version:** 1.31
 > **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.31 | 2026-04-17 | **[Reframed the former RULES plugin-extension chain as history after shell removal](#version-131)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.30 | 2026-04-16 | **[Reduced RULES plugin scope after coordination runtime split](#version-130)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.29 | 2026-04-16 | **[Added a bounded shared-task hook probe before the coordination split cutover](#version-129)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.28 | 2026-04-15 | **[Renamed and clarified the coordination concept as Shared Board Relay](#version-128)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -41,6 +42,22 @@
 | 1.2 | 2026-04-06 | **[Replaced latest witness files with ephemeral compact handoff lifecycle](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-06 | **[Expanded plugin install and hook-behavior documentation](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-04-06 | **[Created design authority for the RULES plugin extension area](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
+
+---
+
+<a id="version-131"></a>
+## Version 1.31: Reframed the former RULES plugin-extension chain as history after shell removal
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Rewrote `design/rules-plugin-extension.design.md` so it now documents the former RULES plugin-extension line as historical context only.
+- Removed current-state assumptions that `plugin/README.md`, local plugin metadata, hooks, or scripts still exist under `TEMPLATE/RULES/`.
+- Clarified that active coordination runtime/package ownership now lives in `claude-session-coordination` while this chain remains only as historical design/changelog context.
+
+### Summary
+The former RULES plugin-extension chain is now preserved as history without implying that a local active plugin shell still exists under RULES.
 
 ---
 

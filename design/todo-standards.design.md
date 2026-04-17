@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.12
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
+> **Current Version:** 2.14
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-17)
 
 ---
 
@@ -18,7 +18,7 @@ Define a simple execution-tracking governance model that stays aligned with UDVC
 
 Applies to the durable `TODO.md` layer plus Claude Code's built-in live task list when active non-trivial work needs execution visibility.
 
-Multi-session shared-board coordination semantics such as session lease, handoff, retention/aging, anti-overclear behavior, optional memsearch support, and request-layer vs execution-layer naming boundaries defer to `shared-execution-coordination.md`.
+Multi-session shared-board coordination semantics are outside Main RULES scope.
 
 ---
 

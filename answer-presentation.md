@@ -1,8 +1,8 @@
 # Answer Presentation
 
-> **Current Version:** 1.23
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.23
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 1.24
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.24
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
 ---
@@ -632,7 +632,9 @@ Not allowed:
 ## Integration
 
 Related rules:
-- [accurate-communication.md](accurate-communication.md) - keeps summaries, signal density, bounded technical snapshot wording, human-language glosses, memory-derived-context disclosure wording, and continuation-vs-option policy useful
+- [accurate-communication.md](accurate-communication.md) - keeps broader communication honesty, human-language glosses, memory-derived-context disclosure wording, and continuation-vs-option policy useful
+- [technical-snapshot-communication.md](technical-snapshot-communication.md) - owns bounded technical snapshot wording semantics while this rule keeps snapshot layout/presentation patterns
+- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - owns concise synthesis, recommendation-with-reason framing, and advisory proposal framing while this rule keeps layout/pattern shape
 - [explanation-quality.md](explanation-quality.md) - shapes analytical reasoning, layered explanation flow, full-set-first framing, and stage progression logic
 - [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - governs text diagrams used for branching or sequence

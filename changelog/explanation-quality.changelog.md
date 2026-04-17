@@ -1,8 +1,8 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.16
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.18
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.18 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-16 | **[Added easy-explanation continuity after simple openings](#version-217)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.16 | 2026-04-12 | **[Deferred goal-review semantics to the new goal-set owner](#version-216)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.15 | 2026-04-11 | **[Added easy-to-picture concise phase/progress explanation guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |

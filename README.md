@@ -44,10 +44,10 @@
 <!-- CTA Buttons -->
 <p>
   <a href="#-quick-start">
-    <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/⚡_Quick_Start-5_seconds-brightgreen?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTEzIDJoLTh2MmMwIC4zNS4wNy42OS4xOCAxLjAzLjM1IDEuMDguOTkgMS44MyAxLjgzLjk5LjM0LjM1LjY5LjQyIDEuMDMuMTIuNDkuMDUuOTguMjIgMS40Ni40OWwtMS44My0uMzVjLS4zNS0uMDctLjY5LS4xNC0xLjAzLS4xOC0uMzUtLjA1LS42OS0uMTItMS4wMy0uMzUtMS4wOC0uOTktMS44My0xLjgzLS45OS0uMzQtLjM1LS42OS0uNDItMS4wMy0uMTItLjQ5LS4wNS0uOTgtLjIyLTEuNDYtLjQ5bDEuODMuMzV6Ii8+PC9zdmc+">
   </a>
   <a href="#-rule-files">
-    <img src="https://img.shields.io/badge/📁_Rules-40_Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
+    <img src="https://img.shields.io/badge/📁_Rules-Policies-orange?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5NzgxNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
   </a>
   <a href="#-installation">
     <img src="https://img.shields.io/badge/📦_Install-Copy_&_Paste-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
@@ -79,7 +79,7 @@
 
 ## ⚡ Quick Start
 
-Use the script for your platform. Both install the same 40 active runtime rules only.
+Use the script for your platform. Both install the current active runtime rules only.
 
 ### Bash — Linux / macOS
 
@@ -96,6 +96,8 @@ mkdir -p "$HOME/.claude/rules"
 
 rule_files=(
   accurate-communication.md
+  technical-snapshot-communication.md
+  response-closing-and-action-framing.md
   answer-presentation.md
   anti-mockup.md
   anti-sycophancy.md
@@ -134,7 +136,6 @@ rule_files=(
   high-signal-communication.md
   execution-continuity-and-mode-selection.md
   goal-set-review-and-priority-balance.md
-  shared-execution-coordination.md
 )
 
 for file in "${rule_files[@]}"; do
@@ -153,11 +154,13 @@ if (-not (Test-Path "claude-code-rules")) {
 Set-Location claude-code-rules
 
 # Install active runtime rules into ~/.claude/rules/
-$target = Join-Path $HOME ".claude/rules"
-New-Item -ItemType Directory -Force -Path $target | Out-Null
+$rulesDir = Join-Path $HOME ".claude/rules"
+New-Item -ItemType Directory -Force -Path $rulesDir | Out-Null
 
 $ruleFiles = @(
   "accurate-communication.md",
+  "technical-snapshot-communication.md",
+  "response-closing-and-action-framing.md",
   "answer-presentation.md",
   "anti-mockup.md",
   "anti-sycophancy.md",
@@ -195,284 +198,39 @@ $ruleFiles = @(
   "zero-hallucination.md",
   "high-signal-communication.md",
   "execution-continuity-and-mode-selection.md",
-  "goal-set-review-and-priority-balance.md",
-  "shared-execution-coordination.md"
+  "goal-set-review-and-priority-balance.md"
 )
 
 foreach ($file in $ruleFiles) {
-  Copy-Item $file (Join-Path $target $file) -Force
+  Copy-Item $file (Join-Path $rulesDir $file) -Force
 }
 ```
 
-### Notes
-
-- Already cloned the repo? Skip the clone step and run the install block only.
-- Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/`.
-- This runtime-only install copies active rule files only. Governed design/changelog/TODO artifacts plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates.
-
-### 🤖 AI-Assisted Install Prompts
-
-If you want an AI CLI to install or adapt this repo for you, paste one of these prompts directly into that tool.
-
-**Claude Code — native install into `~/.claude/rules/`**
-
-```text
-Install this rules repo for me from:
-https://github.com/DarKWinGTM/claude-code-rules
-
-Requirements:
-- clone the repo if needed
-- read the README Quick Start section first
-- install only the active runtime rule set into ~/.claude/rules/
-- do not install files from suspend/, support/, plugin/, design/, changelog/, phase/, patch/, or TODO.md
-- verify the installed files after copying
-- report exactly what was installed
-```
-
-**Codex CLI — adapt active rules into `AGENTS.md`**
-
-```text
-Use this repo as the source of truth:
-https://github.com/DarKWinGTM/claude-code-rules
-
-Please:
-- clone or inspect the repo
-- read the README Quick Start and active root rule set
-- create/update AGENTS.md for this project so Codex follows the same active rule intent
-- adapt the rules into Codex-native instructions instead of copying Claude-specific runtime structure blindly
-- ignore files under suspend/, support/, plugin/, design/, changelog/, phase/, patch/, and TODO.md unless explicitly needed as reference
-- keep the result concise but faithful to the active rules
-- summarize which source rules were mapped into AGENTS.md
-```
-
-**Gemini CLI — adapt active rules into `GEMINI.md`**
-
-```text
-Use this repo as the source of truth:
-https://github.com/DarKWinGTM/claude-code-rules
-
-Please:
-- clone or inspect the repo
-- read the README Quick Start and active root rule set
-- create/update GEMINI.md for this project so Gemini CLI follows the same active rule intent
-- adapt the rules into Gemini-native instructions instead of copying Claude-specific runtime structure blindly
-- ignore files under suspend/, support/, plugin/, design/, changelog/, phase/, patch/, and TODO.md unless explicitly needed as reference
-- keep the result concise but faithful to the active rules
-- summarize which source rules were mapped into GEMINI.md
-```
-
-**When to use which prompt**
-- Use the **Claude Code** prompt when you want direct runtime installation into `~/.claude/rules/`
-- Use the **Codex CLI** prompt when you want equivalent behavior through `AGENTS.md`
-- Use the **Gemini CLI** prompt when you want equivalent behavior through `GEMINI.md`
-
----
-
 ## ✨ Features
 
-<div align="center">
-
-### 🎯 Core Capabilities
-
-<table>
-<tr>
-<td width="50%">
-
-#### 🔍 Zero Hallucination
-- 100% verified information only
-- Evidence-based responses
-- No guessing or assumptions
-- Source citations always included
-
-</td>
-<td width="50%">
-
-#### 🛡️ Anti-Sycophancy
-- Truth over agreement
-- Direct corrections when needed
-- No false praise
-- Honest feedback, always
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-#### 🔒 Security First
-- Real systems over simulations
-- No mock implementations by default
-- Verified configurations only
-- Production-ready patterns
-
-</td>
-<td width="50%">
-
-#### ⚡ Performance Optimized
-- 30-50% faster responses
-- 40-82% token reduction
-- Adaptive complexity (TRAAC)
-- Cost-efficient operations
-
-</td>
-</tr>
-</table>
-
-</div>
-
----
+- active runtime rules with explicit governance boundaries
+- phased execution planning model with deterministic IDs
+- durable TODO versus live task-list split
+- stronger evidence and contradiction discipline
+- first-class technical snapshot and response-closing communication owners
+- portable onboarding/install guidance by default
+- memory governance with path-first applicability
+- continuous-execution and next-work discovery behavior
 
 ## 📁 Rule Files
 
-<div align="center">
-
-### 🔴 Core Policies (3 rules)
-
-> **Fundamental principles that govern all AI behavior**
-
-| Rule | Purpose | Key Benefit |
-|:-----|:--------|:------------|
-| [`anti-mockup.md`](anti-mockup.md) | Real systems over simulations | No fake implementations |
-| [`anti-sycophancy.md`](anti-sycophancy.md) | Truth over agreement | Honest feedback that stays calm, claim-focused, and free of praise-heavy softening |
-| [`zero-hallucination.md`](zero-hallucination.md) | Verified information only | 100% accuracy |
-
----
-
-### 🟡 Quality & Safety (29 rules)
-
-> **Ensure consistent, safe, and well-documented outputs**
-
-| Rule | Purpose | Key Benefit |
-|:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, easy-explanation continuity so plain Thai explanations stay simple through the full answer, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, explicit memory-derived-context disclosure wording for path-matched remembered context, natural-professional wording, direct human-readable action/result wording preferred over metaphor-heavy internal shorthand, main-point-first framing for diagnosis/test/recommendation/proposal/update answers, continuation-first guidance, clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real, and active summaries that keep resolved topics available for reasoning without repeating them as current issues by default |
-| [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts, initialize live task tracking early when non-trivial work needs visible execution state, treat phase-backed live task tracking as expected startup behavior, keep initialized live task lists as the continuing surface for the active objective, and keep patch non-default during greenfield startup unless a real before/after review surface exists |
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, user-declared RULES-first issues stay RULES-first instead of being diverted into memory-first fixes, memory applicability now defers to the dedicated memory-governance owner, non-matching path-scoped remembered context cannot override the current repo/objective, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
-| [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
-| [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
-| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, destination/runtime, local execution, and reusable source-artifact references from drifting into each other so tool-local paths do not silently become skill/plugin/source contracts |
-| [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
-| [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure |
-| [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, required to show explicit change surfaces, and not treated as the default startup artifact for greenfield baseline formation |
-| [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
-| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, and post-compact needs-recheck handling for compacted carry-forward exact detail |
-| [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
-| [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run |
-| [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep memsearch-style recall supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
-| [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
-| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, current-phase-first live task-list linkage, explicit phase-to-patch linkage when patch is in scope, same-objective task-list continuity across repeated phase slices, bounded next-work discovery from the active phase workspace, default visible session-state grammar for session-owned task work, distinct request-layer vs held-owner title forms for phase-linked execution slices, and explicit receiving-side phase remap during cross-session handoff |
-| [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
-| [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
-| [`tactical-strategic-programming.md`](tactical-strategic-programming.md) | Tactical vs strategic doctrine | Tactical entry stays fast, but every tactical move must point toward a declared strategic target and convergence path |
-| [`natural-professional-communication.md`](natural-professional-communication.md) | Communication style doctrine | Default to calm, human-readable, non-robotic, non-character-driven professional communication, keep easy explanations in an everyday Thai register when the user asks for simpler wording, reject metaphor-heavy or management-style abstraction when direct wording would be clearer, and front-load the operational purpose when the answer would otherwise bury it behind warm-up framing |
-| [`refusal-classification.md`](refusal-classification.md) | Deterministic refusal taxonomy | Consistent block decisions and traceable output modes |
-| [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
-| [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts |
-| [`todo-standards.md`](todo-standards.md) | Task management | Durable TODO tracking plus same-objective built-in task-list reuse, append-not-replace behavior, completed-task visibility, current-phase-first live execution visibility, task-list-first next-work discovery with bounded fallback, default visible session ownership for session-owned work, explicit request-style / held-owner / blocked-owner title forms, and deferral of broader session-state grammar ownership to the coordination owner |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, explicit live-task-list-vs-durable-TODO distinction, same-objective live task-list continuity, explicit execution-discovery surfaces during active execution, default visible session ownership for session-owned task work, explicit deferral of shared-board coordination semantics and session-state title grammar to the coordination owner, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, portable-by-default package-local support assets when they are reusable source content, and explicit separation between shared-board request naming and receiving-side execution phase structure |
-| [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
-| [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, keeps work moving when execution mode is active, and discovers the next unfinished slice from execution surfaces when that path is already visible |
-| [`shared-execution-coordination.md`](shared-execution-coordination.md) | Shared execution coordination | Makes the shared task list a first-class execution-coordination layer with default visible session ownership across usage modes, explicit request / held / blocked title forms, session lease/handoff lifecycle, explicit request-layer vs execution-layer separation, receiving-side phase ownership, continuity-first retention, retention matrix semantics, availability-first memsearch intake with immediate fallback, and future-optional peer-messaging boundaries |
-| [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
-
----
-
-### 🔵 Presentation & Readability (5 rules)
-
-> **Improve answer structure, clarity, and visual scanability**
-
-| Rule | Purpose | Key Benefit |
-|:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, support for using light readable tables when helpful without an active custom table-format rule, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact memory-status blocks for remembered path-scoped context, compact variable-role structures for identifier-heavy explanations, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, continued support for comparison tables and list-first alternatives when they genuinely help explanation, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
-| [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
-| [`high-signal-communication.md`](high-signal-communication.md) | High-signal response tightening | Removes low-value extra content and repeated wording without replacing the main communication-owner chains |
-| [`goal-set-review-and-priority-balance.md`](goal-set-review-and-priority-balance.md) | Goal review and priority balance | Keeps the full active goal set visible so work on A does not crowd out B and C |
-
----
-
-### 🟢 Best Practices (3 rules)
-
-> **Optimize your daily workflow efficiency**
-
-| Rule | Purpose | Key Benefit |
-|:-----|:--------|:------------|
-| [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions |
-| [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
-| [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
-
-**📊 Active Runtime Rules: 40**
-
-Latest refinement: easy explanations now stay in plain Thai / human wording through the full answer instead of becoming harder to read again after the opening.
-
-</div>
-
----
+See the runtime inventory below.
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 40-rule set and describe when to use each path without repeating the long file list.
+This repository installs the root runtime rules only.
+It does not install external coordination packages automatically.
 
-### 🎯 Method 1: Full Installation (Recommended)
+Repository URL:
+- https://github.com/DarKWinGTM/claude-code-rules
 
-**Use this when:** you want the full active runtime set installed globally.
-
-Fastest path:
-1. Clone the repository.
-2. Run the Quick Start block exactly as shown above.
-3. Run the verification commands below.
-
-If you already cloned the repo earlier, you do **not** need to repeat the clone step. Just return to the repo root, keep the same Quick Start file list, and rerun only the install portion against `~/.claude/rules/`.
-
-### 🎯 Method 2: Pick Your Rules
-
-**Use this when:** you only want a small subset of the runtime rules.
-
-```bash
-# Example: Install just the anti-sycophancy rule
-curl -o ~/.claude/rules/anti-sycophancy.md \
-  https://raw.githubusercontent.com/DarKWinGTM/claude-code-rules/master/anti-sycophancy.md
-```
-
-### 🎯 Method 3: Project-Specific
-
-**Use this when:** you want the same active runtime set, but only inside the current project.
-
-1. Create `./.claude/rules/` in the project root.
-2. Reuse the same Quick Start command pattern.
-3. Change only the destination path from `~/.claude/rules/` to `./.claude/rules/`.
-
-This keeps the install set identical while scoping the rules to one repository.
-
-> Source-side note: public commands in this README are expressed from the repo root.
-> Destination/runtime note: installation targets are shown separately as `~/.claude/rules/` or `./.claude/rules/`.
-
-### 📍 Installation Paths
-
-| Location | Scope | Path | Use Case |
-|----------|-------|------|----------|
-| **Global** | All projects | `~/.claude/rules/*.md` | Default recommendation |
-| **Project** | Current project only | `./.claude/rules/*.md` | Project-specific needs |
-
-### ✅ Verify Installation
-
-> Global install: verify under `~/.claude/rules/`.
-> Project-specific install: verify under `./.claude/rules/` instead.
-
-```bash
-# Global install check
-claude --version
-head -20 ~/.claude/rules/anti-sycophancy.md
-ls ~/.claude/rules/answer-presentation.md
-ls ~/.claude/rules/phase-implementation.md
-ls ~/.claude/rules/artifact-initiation-control.md
-
-# Project-specific install check (run from project root)
-head -20 ./.claude/rules/anti-sycophancy.md
-ls ./.claude/rules/answer-presentation.md
-ls ./.claude/rules/phase-implementation.md
-ls ./.claude/rules/artifact-initiation-control.md
-```
-
----
+Raw example:
+- https://raw.githubusercontent.com/DarKWinGTM/claude-code-rules/master/anti-sycophancy.md
 
 ## 📂 Design Documentation Structure
 
@@ -487,7 +245,7 @@ ls ./.claude/rules/artifact-initiation-control.md
 | `./phase/phase-NNN-NN-<subphase-name>.md` | Governed subphase execution detail with design extraction, optional patch extraction, and review state | Subphase docs |
 | `./patch/<context>.patch.md` or `./<context>.patch.md` | Governed patch/review artifacts outside live phase planning that may feed phase one-way when relevant | Patch docs |
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact |
-| `./plugin/**` | Optional unified Rules-owned plugin companion package that remains subordinate to root RULES authority while combining compact helper runtime reinforcement and operator-facing support skills | Support / extension package |
+| `./support/**` | Support/reference material inside RULES only | Support / extension package |
 
 > **💡 Single Source of Truth Principle:**
 > - Design files (`.design.md`) define active target state
@@ -513,7 +271,7 @@ This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and gov
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Governed phase-detail layer | Multi-stage execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
 | `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters |
-| `plugin/**` | Optional RULES plugin companion package | Package-local implementation assets such as `README.md`, `.claude-plugin/`, `skills/`, and related support files that reinforce root RULES behavior without becoming a second governance stack |
+| `support/**` | Support/reference material | Non-governed support/reference content that must not be mistaken for root governance authority |
 | `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
 
 ### Startup Artifact Gate
@@ -543,75 +301,21 @@ Change request received
   → Verify links, versions, and consistency
 ```
 
-### Optional plugin companion
+### Coordination boundary
 
-The repository now splits plugin ownership into two packages:
-- `claude-code-rules@darkwingtm` = reduced Rules-owned migration/reference package
-- `claude-session-coordination@darkwingtm` = active compact + session-coordination runtime package
-
-The moved coordination package is where the current cross-session coordination concept lives:
-- **Shared Board Relay**
+Main RULES keeps this split explicit:
+- root RULES = generic communication/evidence/governance rules plus global task-list doctrine
+- shared-board-specific coordination semantics are outside Main RULES active doctrine
 
 พูดง่าย ๆ:
 - shared board = visible coordination / history
 - phase/TODO/design/code = semantic truth
-- tmux = request transport
-- report-back = callback substitute
-- acceptance evaluation = stronger evidence check
+- tmux/report-back/bridge behavior = not described as Main RULES doctrine here
 
-If you want the full runtime concept and script-layer explanation, read:
-- [`plugin/README.md`](plugin/README.md)
-- [`../PLUGIN/claude-session-coordination/README.md`](../PLUGIN/claude-session-coordination/README.md)
-
-Current sources during the split:
-- reduced Rules plugin source: `<rules-root>/plugin`
-- coordination fork source: `<plugin-marketplace-root>/claude-session-coordination`
-
-Public install is being realigned through the shared `darkwingtm` marketplace:
-
-```bash
-claude plugins marketplace add "<plugin-marketplace-root>" --scope user
-claude plugins install claude-code-rules@darkwingtm --scope user
-claude plugins install claude-session-coordination@darkwingtm --scope user
-```
-
-Local development remains optional per package:
-
-```bash
-cd plugin
-claude plugins marketplace add ./ --scope local
-claude plugins install claude-code-rules@claude-code-rules --scope local
-```
-
-Detailed meaning:
-1. the shared `darkwingtm` marketplace is the intended user-facing install surface.
-2. `claude-code-rules@darkwingtm` is being reduced to a Rules-owned migration/reference package.
-3. `claude-session-coordination@darkwingtm` is the active home of both compact lifecycle runtime and coordination runtime as the split progresses.
-4. the package-local `@claude-code-rules` path is only for local development/testing from the RULES repo.
-5. duplicate maintained active owners for the same coordination runtime are not the intended model.
-
-Recommended checks after install:
-
-```bash
-claude plugins list --json
-```
-
-Optional interactive checks:
-- `/reload-plugins`
-- `/claude-code-rules:session-coordination-bridge`
-- `/hooks`
-
-Current package behavior during the split:
-- active compact hooks and session-scoped compact state ownership now live in `claude-session-coordination@darkwingtm`
-- active coordination runtime ownership now lives in `claude-session-coordination@darkwingtm`
-- the reduced Rules package keeps no active plugin hooks
-- root runtime rules remain the semantic authority
-
-Boundary reminder:
-- root runtime rules still define compact/post-compact semantics and shared execution coordination semantics
-- the reduced Rules plugin should reinforce Rules-owned runtime support only
-- the coordination plugin should own active Shared Board Relay runtime behavior
-- plugin installation does not replace the normal `~/.claude/rules/` install path
+Current behavior:
+- Main RULES does not keep an active plugin shell under this repo
+- root runtime rules remain the semantic authority for generic governance and the remaining global task-list doctrine
+- shared-task-list-path-specific semantics stay outside Main RULES active doctrine
 
 ### Verification Checklist
 
@@ -635,558 +339,40 @@ Boundary reminder:
 - TODO pending section contains pending-only items (`- [ ]`)
 - TODO history has a dated entry for completed milestone work
 
-### Real Examples (This Repository)
-
-#### Example 1: Deterministic Recovery Contract Synchronization (WS-1)
-
-```text
-design/recovery-contract.design.md
-  → recovery-contract.md
-  → changelog/recovery-contract.changelog.md
-  → TODO.md (history/progress)
-```
-
-**What was synchronized:**
-- Deterministic response keys were aligned across design and runtime (`decision_output`, `refusal_class`, `reason`, `what_can_be_done_now`, `how_to_proceed`)
-- Changelog recorded the runtime/design version sync event
-- TODO recorded completion in the hardening program history
-
-#### Example 2: Verification + Output-Cap Consolidation (WS-5)
-
-```text
-design/safe-file-reading.design.md + design/safe-terminal-output.design.md
-  → safe-file-reading.md + safe-terminal-output.md
-  → changelog/safe-file-reading.changelog.md + changelog/safe-terminal-output.changelog.md
-  → TODO.md (WS-5 completion)
-```
-
-**What was synchronized:**
-- Shared verification-trigger model applied across related rules
-- Deterministic output-cap wording standardized (`head -100 | head -c 5000`, risky-file variant)
-- Changelog and TODO were updated to preserve traceability
-
-#### Example 3: TODO Governance Alignment (WS-6)
-
-```text
-TODO.md pending section audit
-  → remove completed items from pending block
-  → remove duplicate pending headings
-  → add closure row in TODO history
-```
-
-**What was synchronized:**
-- Pending section kept pending-only (`- [ ]`)
-- Duplicate heading drift removed
-- Program closure logged in dated history row
-
-#### Example 4: Final `/phase` Review Model Rollout
-
-```text
-phase/SUMMARY.md
-  → source-input extraction summary table
-  → overview flow diagram
-  → review summary table
-  → phase/phase-NNN-*.md / phase/phase-NNN-NN-*.md
-  → TODO.md history
-```
-
-**What was synchronized:**
-- `/phase` became the live phase-planning namespace
-- `SUMMARY.md` became the required summary/index for live phased execution
-- child phase files were required to carry design extraction, review flow, reviewer checklist, and standardized review outcomes
-- `SUMMARY.md` was extended to carry source-input rollup and review rollup views for faster approval
-- the model gained an explicit Definition of Done and stop rule so governance expansion does not continue by default after completion
-- communication rules were narrowed so next-step options are suggested only when genuinely useful rather than treated as a mandatory ending pattern
-
-#### Example 5: One-Way Design + Patch Phase Synthesis
-
-```text
-design/*.design.md + patch/<context>.patch.md or root <context>.patch.md
-  → phase/SUMMARY.md
-  → phase/phase-NNN-*.md / phase/phase-NNN-NN-*.md
-  → TODO.md history
-```
-
-**What was synchronized:**
-- `phase-implementation` was extended from design-only extraction into one-way source synthesis
-- `phase/SUMMARY.md` can now show both design inputs and patch inputs when patch-derived work matters
-- child phase files can now carry optional patch references and patch-to-phase extraction alongside design traceability
-- patch artifacts remained outside the live phase workspace
-- design and patch documents did not gain a reverse-link requirement back to phase
-
-#### Example 6: Startup Artifact Governance Rollout
-
-```text
-artifact-initiation-control.design.md
-  → artifact-initiation-control.md
-  → changelog/artifact-initiation-control.changelog.md
-  → phase/SUMMARY.md + phase/phase-004-*.md
-  → TODO.md history
-```
-
-**What was synchronized:**
-- a new first-class startup-governance owner was created
-- startup artifact posture now resolves before meaningful governed work drifts
-- `project-documentation-standards`, `phase-implementation`, `todo-standards`, and `strict-file-hygiene` were aligned to the new startup contract
-- the rollout itself opened `phase-004` from the start instead of being backfilled later
-
----
-
 ## 🎓 Framework Highlights
 
-### 🧭 Finalized Phase Review Model
-
-**The current phased execution model is now explicitly finalized, bounded, and able to synthesize design plus relevant patch inputs one-way.**
-
-```text
-phase/
-  SUMMARY.md
-    → source-input extraction summary table
-    → overview flow diagram
-    → review summary table
-    → phase map
-  phase-001-<phase-name>.md
-    → design references
-    → optional patch references
-    → design extraction
-    → optional patch-to-phase extraction
-    → review flow diagram
-    → reviewer checklist
-    → review outcome
-```
-
-**What this gives you:**
-- reviewers can inspect the whole rollout from `SUMMARY.md`
-- reviewers can inspect one phase deeply from the child phase file
-- approvers can see sign-off status, severity, disposition, and blocker/follow-up state in one place
-- the model can now synthesize target-state design inputs and relevant governed patch inputs without collapsing role boundaries
-- the model now has an explicit completion boundary and stop rule, so governance expansion does not continue by default after it is operationally complete
-- startup artifact posture can now be resolved before meaningful governed work drifts instead of being backfilled later
-- communication rules now treat next-step options as usefulness-based guidance, not as a mandatory ending pattern after already-complete work
-
----
-
-### 🧠 TRAAC (Task Runtime Adaptive AI Compression)
-
-<div align="center">
-
-**Dynamic complexity adjustment based on task requirements**
-
-```text
-Simple Tasks (Level 0-2)     → Minimal Processing
-     ↓
-Standard Tasks (Level 3-5)   → Balanced Approach
-     ↓
-Complex Tasks (Level 6-7)    → Deep Analysis
-```
-
-| Metric | Improvement | Impact |
-|--------|-------------|--------|
-| Response Speed | +30-50% | Faster answers |
-| Token Efficiency | +40-82% | Lower costs |
-| Cost Reduction | -25-35% | Budget-friendly |
-
-</div>
-
----
-
-### 👥 TUMIX Multi-Agent System
-
-**Three expert perspectives analyzing every complex problem**
-
-```text
-Developer  ──┐
-Security   ──┼──→ Unified Recommendation
-Architect  ──┘
-```
-
-**How It Works:**
-1. **Developer Agent** → Technical feasibility analysis
-2. **Security Agent** → Security & privacy evaluation
-3. **Architect Agent** → System design considerations
-4. **Synthesis** → All perspectives merge into unified recommendation
-
-**Result:** Comprehensive analysis from multiple angles
-
----
-
-### 📚 RoT (Retrieval of Thoughts)
-
-<div align="center">
-
-**Cache and reuse verified reasoning patterns**
-
-| Action | Benefit |
-|--------|---------|
-| **Cache** verified patterns | Store successful approaches |
-| **Reuse** for similar tasks | 40% speed improvement |
-| **Validate** before use | Ensure accuracy maintained |
-
-**Performance:** 82% cache hit rate for recurring patterns
-
-</div>
-
----
+- TRAAC for complexity scaling
+- TUMIX for multi-perspective analysis
+- RoT for reusable validated patterns
 
 ## 🖼️ Visual Guide
 
-<div align="center">
-
-### 🔴 Core Policies Visual
-
-<table>
-<tr>
-<td align="center" width="33%">
-<img src="img/anti-sycophancy.png" width="280"><br>
-<b>Anti-Sycophancy</b><br>
-<sub>Truth over pleasing</sub>
-</td>
-<td align="center" width="33%">
-<img src="img/anti-mockup.png" width="280"><br>
-<b>Anti-Mockup</b><br>
-<sub>Real systems only</sub>
-</td>
-<td align="center" width="33%">
-<img src="img/zero-hallucination.png" width="280"><br>
-<b>Zero Hallucination</b><br>
-<sub>Verified info only</sub>
-</td>
-</tr>
-</table>
-
----
-
-### 🟡 Quality & Safety Visual
-
-<table>
-<tr>
-<td align="center" width="25%">
-<img src="img/authority-and-scope.png" width="200"><br>
-<b>Authority & Scope</b><br>
-<sub>User authority supreme</sub>
-</td>
-<td align="center" width="25%">
-<img src="img/emergency-protocol.png" width="200"><br>
-<b>Emergency Protocol</b><br>
-<sub>Rapid response</sub>
-</td>
-<td align="center" width="25%">
-<img src="img/document-consistency.png" width="200"><br>
-<b>Document Consistency</b><br>
-<sub>Cross-reference check</sub>
-</td>
-<td align="center" width="25%">
-<img src="img/functional-intent-verification.png" width="200"><br>
-<b>Functional Intent</b><br>
-<sub>Intent validation</sub>
-</td>
-</tr>
-<tr>
-<td align="center" width="25%">
-<img src="img/document-changelog-control.png" width="200"><br>
-<b>Document Changelog Control</b><br>
-<sub>Version tracking system</sub>
-</td>
-<td align="center" width="25%">
-<img src="img/document-design-control.png" width="200"><br>
-<b>Document Design Control</b><br>
-<sub>Design standards</sub>
-</td>
-<td align="center" width="25%">
-<img src="img/strict-file-hygiene.png" width="200"><br>
-<b>Strict File Hygiene</b><br>
-<sub>Prevent junk files while allowing required governed startup artifacts</sub>
-</td>
-<td align="center" width="25%">
-<img src="img/project-documentation-standards.png" width="200"><br>
-<b>Project Documentation Standards</b><br>
-<sub>Standardized docs and startup artifact gate</sub>
-</td>
-</tr>
-<tr>
-<td align="center" width="25%">
-<b>Artifact Initiation Control</b><br>
-<sub>Resolve startup artifact posture before meaningful governed work drifts</sub>
-</td>
-<td align="center" width="25%">
-<b>Document Patch Control</b><br>
-<sub>Before/after patch artifacts with explicit change surfaces</sub>
-</td>
-<td align="center" width="25%">
-<b>Evidence-Grounded Burden of Proof</b><br>
-<sub>Fact, inference, and contradiction thresholds stay explicit</sub>
-</td>
-<td align="center" width="25%">
-<b>Operational Failure Handling</b><br>
-<sub>Bounded retries, honest cooldowns, and stop/escalation behavior</sub>
-</td>
-</tr>
-<tr>
-<td align="center" width="25%">
-<b>Phase Implementation</b><br>
-<sub>Major/subphase execution model with early `/phase` establishment bridge</sub>
-</td>
-<td align="center" width="25%">
-<b>Recovery Contract</b><br>
-<sub>No dead-end blocked paths; always provide a usable next step</sub>
-</td>
-<td align="center" width="25%">
-<b>Refusal Classification</b><br>
-<sub>Deterministic refusal classes and output modes</sub>
-</td>
-<td align="center" width="25%">
-<b>Refusal Minimization</b><br>
-<sub>Prefer recoverable constrained/context paths over premature refusal</sub>
-</td>
-</tr>
-<tr>
-<td align="center" width="25%">
-<b>Runtime Topology Control</b><br>
-<sub>Inspect-first, one-authority-at-a-time runtime mutation discipline</sub>
-</td>
-<td align="center" width="25%">
-<b>TODO Standards</b><br>
-<sub>Simple execution tracking with early TODO establishment when needed</sub>
-</td>
-<td align="center" width="25%">
-<b>Dan-Safe Normalization</b><br>
-<sub>Normalize jailbreak-style wrappers into bounded intent evaluation</sub>
-</td>
-<td align="center" width="25%">
-<b>Unified Version-Control System</b><br>
-<sub>Single deterministic UDVC-1 controller for governance alignment</sub>
-</td>
-</tr>
-</table>
-
----
-
-### 🔵 Presentation & Readability Visual
-
-<table>
-<tr>
-<td align="center" width="33%">
-<img src="img/flow-diagram-no-frame.png" width="280"><br>
-<b>Flow Diagram</b><br>
-<sub>No frames, clean arrows</sub>
-</td>
-<td align="center" width="33%">
-<b>Answer Presentation</b><br>
-<sub>Active presentation-layer rule for compact snapshots, grouped scope boundaries, and full-set-first / next-stage layouts</sub>
-</td>
-<td align="center" width="33%">
-<b>Explanation Quality</b><br>
-<sub>Active explanation-layer rule for what-it-is/what-it-is-not, now-vs-later, user-visible outcomes, and next-stage progression</sub>
-</td>
-</tr>
-<tr>
-<td align="center" width="33%">
-<b>Accurate Communication</b><br>
-<sub>Evidence-honest wording, bounded technical snapshots, and claim-strength discipline</sub>
-</td>
-<td align="center" width="33%">
-<b>Natural Professional Communication</b><br>
-<sub>Calm, human-readable, non-robotic, non-character-driven default communication</sub>
-</td>
-<td align="center" width="33%">
-<b>Reserved</b><br>
-<sub>Placeholder slot for future visual asset parity</sub>
-</td>
-</tr>
-</table>
-
----
-
-### 🟢 Best Practices Visual
-
-<table>
-<tr>
-<td align="center" width="33%">
-<img src="img/no-variable-guessing.png" width="280"><br>
-<b>No Guessing</b><br>
-<sub>Read before reference</sub>
-</td>
-<td align="center" width="33%">
-<img src="img/safe-file-reading.png" width="280"><br>
-<b>Safe File Reading</b><br>
-<sub>Plan before read</sub>
-</td>
-<td align="center" width="33%">
-<img src="img/safe-terminal-output.png" width="280"><br>
-<b>Safe Terminal</b><br>
-<sub>Output management</sub>
-</td>
-</tr>
-<tr>
-<td align="center" width="33%">
-<b>Tactical Strategic Programming</b><br>
-<sub>Tactical speed with mandatory strategic target and convergence path</sub>
-</td>
-<td align="center" width="33%">
-<b>Reserved</b><br>
-<sub>Placeholder slot for future visual asset parity</sub>
-</td>
-<td align="center" width="33%">
-<b>Reserved</b><br>
-<sub>Placeholder slot for future visual asset parity</sub>
-</td>
-</tr>
-</table>
-
-</div>
-
----
+Use the repo banner and design docs as the visual guide.
 
 ## 📊 Before & After
 
-### ❌ Without Rules
-
-```text
-User: "Set up database connection"
-       ↓
-AI: "Here's the connection string:
-     DATABASE_URL=postgres://localhost:5432/mydb"
-
-Result: ❌ Guessed values
-        ❌ No verification
-        ❌ Potentially wrong
-        ❌ User frustrated
-```
-
----
-
-### ✅ With Rules
-
-```text
-User: "Set up database connection"
-       ↓
-AI: "Let me check your .env file first..."
-     [Reading configuration...]
-     "Found your existing config:
-      DATABASE_URL=postgres://prod-server:5432/app_db
-
-      Should I use this, or do you want to change it?"
-
-Result: ✅ Verified from actual files
-        ✅ No guessing
-        ✅ User confirmation
-        ✅ Professional interaction
-```
-
-**The difference?** Professional AI behavior that respects your existing configuration.
-
----
+- before: ad hoc rule mixing
+- after: deterministic governed rule set
 
 ## 📊 Performance Metrics
 
-<div align="center">
-
-| Metric | Target | Status | Impact |
-|--------|:------:|:------:|--------|
-| Factual Accuracy | 100% | ✅ | Zero hallucinations |
-| Constitutional Compliance | 100% | ✅ | User sovereignty maintained |
-| Token Efficiency | +40-82% | ✅ | Cost reduction |
-| Response Speed | +30-50% | ✅ | Faster delivery |
-| User Sovereignty | Absolute | ✅ | User always in control |
-
-</div>
-
----
+- factual discipline emphasized
+- response quality and portability emphasized
 
 ## 🔒 Safety Guarantees
 
-<div align="center">
-
-### ✅ Our Commitment to You
-
-| Guarantee | Description |
-|-----------|-------------|
-| **No Mock/Stub** | Real implementations unless explicitly requested |
-| **No Guessing** | Always verify from actual sources |
-| **No Hallucinations** | 100% fact-based responses |
-| **No Sycophancy** | Truth over agreement, always |
-| **Constitutional** | Principles override everything |
-
-**Your safety and accuracy are non-negotiable.**
-
-</div>
-
----
+- verify-first factual discipline
+- bounded contradiction behavior
+- portable-default documentation guidance
 
 ## 🤝 Contributing
 
-<div align="center">
-
-These rules evolve based on real-world usage:
-
-- 🔄 **Real-world usage patterns** → What actually works
-- 💬 **User feedback** → Your experience matters
-- 🔐 **Safety considerations** → Always improving
-- ⚡ **Performance optimization** → Getting faster
-
-### 📝 Contribution Guidelines
-
-**Pull requests welcome!** Please ensure:
-1. New rules follow existing format
-2. Include clear documentation
-3. Add visual assets if applicable
-4. Update changelog
-5. Respect completion boundaries — do not add new mandatory capability blocks to a completed governance model unless the change is explicitly justified and intentionally approved
-
-**We value:** Quality over quantity, clarity over complexity, and bounded governance over endless expansion
-
-</div>
-
----
+Contributions should preserve governance boundaries and version synchronization.
 
 ## 📜 License
 
-<div align="center">
-
-**MIT License** - Feel free to adapt for your own use case.
-
-> Attribution appreciated but not required.
-
-</div>
-
----
+Use the repository license.
 
 ## 🙏 Acknowledgments
 
-<div align="center">
-
-Personal rule set and configuration framework for Claude Code CLI.
-
-**Inspired by:**
-- Constitutional AI principles (Anthropic)
-- Best practices for AI assistant development
-- Real-world production experience
-- Community feedback and contributions
-
-**Built with ❤️ for the Claude Code community**
-
-</div>
-
----
-
-<div align="center">
-
----
-
-<p>
-  <b>Version</b>: 9.30 |
-  <b>Last Updated</b>: 2026-04-13 |
-  <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
-</p>
-
-<p>
-  <a href="#top">⬆️ Back to Top</a>
-</p>
-
----
-
-<p>
-  <sub>Made with 💙 by developers who care about AI quality</sub>
-</p>
-
-</div>
+Thanks to the Claude Code and wider tooling ecosystem.

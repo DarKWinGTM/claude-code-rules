@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
 
 ---
@@ -67,11 +67,10 @@ Optional recall extensions such as memsearch may improve continuity when availab
 
 Required behavior:
 - treat optional recall extensions as supplemental context bridges rather than semantic truth
-- when receive-side continuation wants optional recall detail, explicitly check whether the extension is available instead of assuming plugin presence from prior sessions or prior machines
-- when available, they may accelerate recall after the relevant execution target has already been identified from stronger coordination surfaces
+- when available, they may accelerate recall after the relevant continuation target has already been identified from stronger surfaces
 - optional recall output must not outrank checked task/phase/design/implementation evidence when those stronger surfaces already settle the active meaning
-- if an optional recall extension is unavailable or the availability/probe step fails, fall back to native memory plus checked execution surfaces
-- coordination ownership for when/how optional recall bridges are used should defer to `shared-execution-coordination.md`
+- if an optional recall extension is unavailable, the general memory model must still function without it
+- shared-board / shared-task-list-specific intake, handoff, and cross-session continuation semantics stay outside Main RULES scope
 
 ### 3.3 Boundary Principle
 This chain owns **what memory means, how memory scope applies, and how memory should be organized semantically**.

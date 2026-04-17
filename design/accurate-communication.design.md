@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.15
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 2.17
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -17,10 +17,6 @@ This chain is the wording owner for:
 - verification-status phrasing
 - claim-state communication shape
 - contradiction wording guardrails
-- concise high-signal synthesis and next-step endings
-- recommended-option wording when multiple next actions are shown
-- goal-qualified proposal wording for future-work ideas that are advisory rather than active execution
-- bounded technical snapshot wording for status-heavy updates
 - human-language glosses for internal or technical terminology when they materially improve understanding
 - easy-to-picture short phase/progress framing before denser execution or governance detail when the reader is trying to understand what the work is doing
 - clarification of variable names, field names, config keys, enum-like values, and internal labels when the answer depends on them
@@ -33,7 +29,8 @@ This chain is the wording owner for:
 - easy-explanation continuity so explicit requests for plain Thai / less jargon stay in that easier register across the whole answer instead of rebounding into internal labels after one gloss
 - main-point-first operational framing so diagnosis/test/recommendation/proposal/update answers state what they are doing before the supporting detail expands
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
-- closed-topic presentation guidance so resolved issues may remain in reasoning context without being repeated in active summaries by default
+
+This chain now defers bounded technical snapshot wording to `technical-snapshot-communication` and end-of-response closing / action / proposal framing to `response-closing-and-action-framing`.
 
 It should work with, not replace, the evidence-threshold semantics now owned by `evidence-grounded-burden-of-proof`.
 
@@ -111,27 +108,13 @@ Required guidance:
 - non-findings should identify the inspected scope rather than implying stronger absence
 - person-directed contradiction wording should not outrun the available evidence
 
-### 3.4 Bounded Technical Snapshot Wording Principle
-This chain owns wording discipline for compact technical snapshots.
+### 3.4 Technical Snapshot Wording Deferral Principle
+This chain no longer owns bounded wording for compact technical snapshots.
 
 Required guidance:
-- separate exact captured facts from partial checked facts from inferred implications
-- keep exact local paths, ports, hosts, and similar environment-specific values scoped as observed local facts when they appear in snapshots
-- avoid letting machine-specific values read like portable defaults in shared communication
-- defer broader portable-default and anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
-- if the exact request, payload, or runtime state was not captured, say so explicitly
-- use wording such as `From the checked scope, ...` or `I could not capture the exact request, but ...` when only partial evidence exists
-- keep snapshot wording scoped to what was actually observed
-- do not let a compact snapshot imply exact reconstruction when only partial evidence exists
-
-A useful snapshot wording split is:
-
-| Snapshot Layer | Preferred Communication Shape |
-|---------------|-------------------------------|
-| Exact captured facts | "Captured request path: ..." / "The checked log line shows ..." |
-| Partial checked facts | "From the checked scope, the relevant env keys are ..." |
-| Inferred implications | "Based on those checked facts, the likely implication is ..." |
-| Exact detail unavailable | "I could not capture the exact payload/request, but the checked route/params involved are ..." |
+- defer snapshot-specific wording semantics to `technical-snapshot-communication.md`
+- keep broader portable-default and anti-hardcoding ownership deferred to `portable-implementation-and-hardcoding-control.md`
+- avoid leaving duplicate snapshot-semantic ownership active here once the specialized snapshot owner exists
 
 ### 3.5 Contradiction Wording Guardrail
 This chain owns phrasing discipline for contradiction.
@@ -204,51 +187,15 @@ Required guidance:
 - avoid architecture-first wording that forces the reader to decode practical meaning from system metaphors
 - if a shorthand phrase remains materially useful, explain it immediately in plain human language
 
-### 3.7 Signal Density and Closing Clarity Principle
-The end of the response should synthesize, not merely repeat.
+### 3.7 Response Closing and Proposal Framing Deferral Principle
+This chain no longer owns end-of-response synthesis, recommendation-with-reason framing, closed-topic summary handling, or goal-qualified advisory proposal wording.
 
 Required guidance:
-- prefer high-signal synthesis over rephrasing prior detail
-- keep final summaries concise and decision-oriented
-- keep already-resolved topics available inside reasoning context when they still help interpret the active issue, but do not resurface them in the active summary unless they materially affect the current decision, blocker, or historical contrast
-- when older fixed work is mentioned for context, label it explicitly as historical / previously resolved rather than letting it read like a current active issue
-- if a clear next action exists and the user genuinely needs to know it, state it directly
-- if the assistant can safely continue that next action inside the active objective, continue instead of pausing to announce it
-- if multiple reasonable next actions exist and user choice would materially affect the path, present short explicit options
-- when one of those options is better-supported than the others, name the recommended option first and explain briefly why it should happen first
-- when multiple reasonable next actions genuinely remain open, preserve at least one alternative instead of collapsing the decision surface into the recommended path only
-- if the task is already complete and no real next action is needed, do not invent extra options
-- if future-work ideas are offered after the active objective, keep them clearly advisory and goal-qualified rather than phrasing them like automatic continuation
-- when a technical or product term may be hard to follow, provide a direct human-language gloss if it materially improves understanding
-- when the current state is already sufficiently explained, prefer the next meaningful stage/state rather than defaulting to deeper options in the same scope
-- when the real decision surface is a larger complete set, prefer presenting that full set before narrowing into a smaller slice
-- avoid ritualized openings such as exaggerated enthusiasm or templated reassurance when they do not help the user
-- avoid fake empathy phrasing when direct practical help is the better response
-- front-load one direct purpose/conclusion sentence when the answer would otherwise make the reader wait to learn what the message is doing
+- defer those ending/action/proposal semantics to `response-closing-and-action-framing.md`
+- avoid leaving duplicate active authority for summary signal density, recommendation framing, alternative preservation, or advisory proposal wording in this chain
+- keep continuation-first execution wording here only as long as it remains part of the broader communication-owner set rather than the specialized closing owner
 
-### 3.7.1 Closed-Topic Presentation Principle
-Previously resolved or already-fixed topics may still remain relevant inside the assistant’s reasoning context, but they should not dominate the visible response once the active issue has moved on.
-
-Required guidance:
-- keep resolved topics available for reasoning when they still materially inform the current issue
-- do not pull resolved topics back into the active summary unless they materially affect the current decision surface, blocker state, or historical contrast
-- default visible summaries to the still-active/open issues rather than mixing active and already-closed items together
-- if historical context is necessary, label it explicitly as historical / previously resolved rather than current
-- avoid repeating the same already-closed issue across later summaries just because it is related to the new issue
-
-### 3.7.2 Goal-Qualified Proposal Principle
-When the assistant proposes work outside the active objective, the proposal should remain advisory and should be specific enough for the user to evaluate as a concept rather than mistake as queued execution.
-
-Required guidance:
-- mark the proposal as a proposal, idea, or future wave rather than as the next automatic step
-- state the concrete goal
-- state what the proposal would improve, unlock, or change
-- state the output, artifact, or result the proposal would produce
-- include a success condition when that materially clarifies what completion would mean
-- avoid continuation-shaped wording such as “next do X” or “then continue with Y” unless the user explicitly selected that target
-- if no concrete goal can be named, the assistant should not present the work as a serious next-wave proposal
-
-### 3.7.3 Continuation-First Execution Principle
+### 3.7.1 Continuation-First Execution Principle
 When the assistant is still inside the user’s active requested work and can safely continue without clarification, approval, or a stronger rule-owned gate, it should continue execution rather than pause merely to narrate progress, expose optional next steps, or ask the user to choose among continuations that are not materially different.
 
 Required guidance:

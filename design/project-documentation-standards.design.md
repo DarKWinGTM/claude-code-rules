@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.23
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
+> **Current Version:** 2.25
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-17)
 
 ---
 
@@ -30,7 +30,7 @@ This model must preserve one authority system while clearly separating:
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
 - `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
 - package-local support assets such as optional `skills/`, optional `agents/`, scripts, and plugin-owned docs remaining portable by default when they are maintained as reusable source artifacts
-- shared-board multi-session coordination semantics deferring to `shared-execution-coordination.md` rather than being redefined ad hoc in the repository role model
+- shared-board multi-session coordination semantics, including shared-board-specific memsearch handling, staying outside Main RULES scope rather than being redefined ad hoc in the repository role model
 - visible session ownership remaining a default task-list standard for session-owned work rather than a convention that only turns on when several sessions share one task-list path
 - request-layer naming remaining distinct from receiving-side execution-layer phase structure so sender phase labels do not become the default visible handoff title
 

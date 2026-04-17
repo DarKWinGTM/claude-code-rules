@@ -1,4 +1,0 @@
-{
-  "description": "No active plugin hooks remain in the reduced RULES package after coordination runtime ownership moved out.",
-  "hooks": {}
-}

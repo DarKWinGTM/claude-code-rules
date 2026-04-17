@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.14
+> **Current Version:** 2.16
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.16 | 2026-04-17 | **[Reduced phase-implementation memsearch wording to shared-board defer only](#version-216)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
+| 2.15 | 2026-04-17 | **[Reduced phase-implementation to global phase↔task-list doctrine](#version-215)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.14 | 2026-04-13 | **[Clarified held-owner task forms inside phase-linked execution work](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.13 | 2026-04-13 | **[Clarified receiving-side phase remap during cross-session handoff](#version-213)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.12 | 2026-04-13 | **[Deferred shared-board coordination semantics to the new coordination owner](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -26,6 +28,36 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-216"></a>
+## Version 2.16: Reduced phase-implementation memsearch wording to shared-board defer only
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Replaced the old optional memsearch support wording with a narrower boundary line so shared-board-specific memsearch handling no longer remains in Main RULES active doctrine.
+- Kept phase-implementation focused on the global phase↔task-list doctrine and receiving-side remap boundary only through shared-board defer references.
+
+### Summary
+Phase-implementation now keeps no active memsearch doctrine of its own beyond a narrow shared-board defer boundary.
+
+---
+
+<a id="version-215"></a>
+## Version 2.15: Reduced phase-implementation to global phase↔task-list doctrine only
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Reduced `phase-implementation.md` so shared-board-specific session grammar, request-vs-held-owner distinctions, and receiving-side remap semantics now defer to `claude-session-coordination`.
+- Preserved the global current-phase-first task-list linkage and next-slice discovery behavior inside RULES.
+
+### Summary
+Phase-implementation now keeps only the global phase↔task-list doctrine, while shared-task-list-path naming and remap semantics move to the plugin-owned coordination rule source.
 
 ---
 
@@ -72,7 +104,7 @@ Phase-implementation now makes receiving-side phase ownership clearer during cro
 ### Changes
 - Updated `phase-implementation.md` from v2.11 to v2.12.
 - Updated `design/phase-implementation.design.md` from v2.11 to v2.12.
-- Added explicit deferral that session lease, handoff, retention/aging, anti-overclear behavior, and optional memsearch support now live in `shared-execution-coordination.md` instead of being implied ad hoc inside phase semantics.
+- Added explicit deferral that shared-board coordination semantics stay outside Main RULES scope instead of being implied ad hoc inside phase semantics.
 - Preserved phase identity, phase/task linkage, and bounded next-work discovery from the active phase workspace.
 
 ### Summary

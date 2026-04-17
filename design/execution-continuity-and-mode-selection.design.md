@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-12)
+> **Current Version:** 1.4
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-17)
 
 ---
 
@@ -90,7 +90,7 @@ It does not replace:
 - presentation wording
 - task-list mechanics
 - approval/confirmation mechanics
-- shared-board coordination ownership, which now lives in `shared-execution-coordination.md`
+- shared-board coordination semantics, including shared-board-specific memsearch handling, which stay outside Main RULES scope
 
 ---
 

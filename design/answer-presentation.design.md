@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.22
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 1.24
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -586,7 +586,9 @@ Not allowed:
 | Document | Relationship |
 |----------|--------------|
 | [../answer-presentation.md](../answer-presentation.md) | Runtime implementation of this design |
-| [accurate-communication.design.md](accurate-communication.design.md) | Clear summaries, bounded technical snapshot wording, memory-derived-context disclosure wording, and next-step endings |
+| [accurate-communication.design.md](accurate-communication.design.md) | Broader communication honesty, human-language glosses, memory-derived-context disclosure wording, and continuation-vs-option policy |
+| [technical-snapshot-communication.design.md](technical-snapshot-communication.design.md) | Owns bounded technical snapshot wording semantics while answer-presentation keeps snapshot layout patterns |
+| [response-closing-and-action-framing.design.md](response-closing-and-action-framing.design.md) | Owns concise synthesis, recommendation-with-reason framing, and advisory proposal framing while answer-presentation keeps closing-block layout patterns |
 | [explanation-quality.design.md](explanation-quality.design.md) | Reasoning structure and layered analytical explanation quality |
 | [memory-governance-and-session-boundary.design.md](memory-governance-and-session-boundary.design.md) | Owns memory applicability, root `MEMORY.md` index behavior, path scope, session provenance, and archive semantics |
 | [flow-diagram-no-frame.design.md](flow-diagram-no-frame.design.md) | Text-diagram formatting constraints |

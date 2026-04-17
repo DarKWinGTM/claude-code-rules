@@ -10,11 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-17 | **[Reduced memory-governance memsearch wording to global optional-recall doctrine only](#version-14)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.3 | 2026-04-13 | **[Added optional-recall availability check and immediate fallback guidance](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-13 | **[Clarified how optional recall extensions should be used after stronger execution surfaces](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-13 | **[Added optional extension recall boundary for memsearch-style layers](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-09 | **[Created first-class memory-governance-and-session-boundary rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Reduced memory-governance memsearch wording to global optional-recall doctrine only
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Removed shared-board-specific memsearch intake/fallback wording from `memory-governance-and-session-boundary.md`.
+- Kept only the global optional-recall boundary where memsearch-style layers remain supplemental and subordinate to stronger checked execution evidence.
+- Removed shared-board-specific memsearch semantics from Main RULES memory-governance active doctrine.
+
+### Summary
+Memory-governance now keeps only the global/general optional-recall doctrine, while shared-board-specific memsearch semantics move to the coordination package source rule.
 
 ---
 
@@ -62,7 +79,7 @@ Memory-governance now explains how optional recall extensions such as memsearch 
 - Updated `memory-governance-and-session-boundary.md` from v1.0 to v1.1.
 - Updated `design/memory-governance-and-session-boundary.design.md` from v1.0 to v1.1.
 - Added an explicit optional-extension recall boundary so memsearch-like extension/plugin layers are treated as supplemental context bridges rather than required infrastructure or semantic truth.
-- Added explicit deferral that coordination ownership for optional recall-layer usage lives in `shared-execution-coordination.md`.
+- Added explicit deferral that shared-board-specific optional recall usage stays outside Main RULES scope.
 
 ### Summary
 Memory-governance now keeps native memory authority boundaries explicit while modeling memsearch-style recall layers as optional supplemental context bridges rather than required core behavior.

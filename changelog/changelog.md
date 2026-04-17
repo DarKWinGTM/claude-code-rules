@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.51
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 9.55
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.55 | 2026-04-17 | **[Extracted two first-class communication owners out of accurate-communication](#version-955)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
+| 9.54 | 2026-04-17 | **[Retired shared-execution-coordination from the active RULES runtime set](#version-954)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
+| 9.53 | 2026-04-17 | **[Finished active-surface RULES plugin-shell cleanup after the coordination split](#version-953)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
+| 9.52 | 2026-04-17 | **[Started extracting shared-task-list-path semantic ownership out of Main RULES](#version-952)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.51 | 2026-04-16 | **[Kept easy explanations simple through the full answer](#version-951)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.50 | 2026-04-16 | **[Started RULES-side coordination fork cutover and reduced active plugin scope](#version-950)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.49 | 2026-04-16 | **[Added a bounded shared-task hook probe before the coordination split cutover](#version-949)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -89,6 +93,75 @@
 
 ---
 
+<a id="version-955"></a>
+## Version 9.55: Extracted two first-class communication owners out of accurate-communication
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Created `technical-snapshot-communication` as a new first-class rule chain with design/runtime/changelog artifacts.
+- Created `response-closing-and-action-framing` as a new first-class rule chain with design/runtime/changelog artifacts.
+- Narrowed `accurate-communication` so bounded technical snapshot wording and response-closing/action/proposal framing now defer to the new specialist owners.
+- Retargeted touched companion integrations in `answer-presentation` and `explanation-quality` so the extracted domains no longer sit under `accurate-communication` by default.
+- Updated master design/README/TODO/phase surfaces and expanded the active runtime install set from 39 to 41 rules.
+
+### Summary
+The active RULES set now has two new first-class specialist communication owners, while `accurate-communication` keeps the broader communication-honesty role instead of directly owning those narrower domains.
+
+---
+
+<a id="version-954"></a>
+## Version 9.54: Retired shared-execution-coordination from the active RULES runtime set
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Removed `shared-execution-coordination.md` from the active RULES runtime inventory and install-facing surfaces.
+- Removed `design/shared-execution-coordination.design.md` from the active RULES design inventory.
+- Tightened phase summary active-looking sections so externalized coordination rows no longer sit in active indexes.
+- Kept coordination/tmux/task-share details only as historical records rather than active RULES doctrine.
+
+### Summary
+The active RULES runtime set now contains only RULES-owned doctrine; the old shared-execution coordination chain is no longer treated as an active runtime rule.
+
+---
+
+<a id="version-953"></a>
+## Version 9.53: Finished active-surface RULES plugin-shell cleanup after the coordination split
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Removed active `RULES/plugin` assumptions from current root README, design inventory, checkpoint, TODO, and phase-summary surfaces.
+- Reframed the old RULES plugin-extension design chain as historical context only after local shell removal.
+- Marked the final Main RULES sync as completed so the current active surfaces now keep only global doctrine while shared-path semantics defer to the plugin-owned rule source.
+- Kept older plugin-topology waves readable as history without teaching them as the current runtime/install topology.
+
+### Summary
+The current RULES active surfaces no longer imply that a live plugin shell or active shared-board coordination rule layer still exists under this repo; root RULES now reads as governance/global doctrine only.
+
+---
+
+<a id="version-952"></a>
+## Version 9.52: Started extracting shared-task-list-path semantic ownership out of Main RULES
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Added a new externalized rule/design/changelog chain for shared-task-list-path coordination semantics.
+- Reduced Main RULES task-list companion files so shared-board/session-state grammar specifics no longer remain duplicated as active source text.
+- Updated active-facing wording so Main RULES keeps only global doctrine.
+- Began retiring the old shared-execution coordination chain from Main RULES active surfaces.
+
+### Summary
+Historical note: this was the start of the extraction wave that removed shared-task-list-path semantics from Main RULES while keeping generic task-list doctrine in RULES.
+
+---
+
 <a id="version-950"></a>
 ## Version 9.50: Started RULES-side coordination fork cutover and reduced active plugin scope
 
@@ -96,13 +169,13 @@
 **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 
 ### Changes
-- Added the initial `claude-session-coordination` package scaffold under `TEMPLATE/PLUGIN/` and copied the active coordination runtime hooks/scripts/skill docs there.
+- Added the initial externalized coordination package scaffold and copied the active coordination runtime hooks/scripts/skill docs there.
 - Reduced the active RULES plugin hooks to no active plugin hooks after the runtime ownership cutover.
-- Reframed root/plugin/design surfaces so `claude-code-rules@darkwingtm` is the reduced Rules package and `claude-session-coordination@darkwingtm` is the active coordination runtime package.
-- Moved coordination-specific scripts, skill docs, phases, and patch history into `TEMPLATE/PLUGIN/claude-session-coordination/` so the forked package owns its own development history while RULES keeps only root-level history.
+- Reframed root/plugin/design surfaces so the old RULES plugin package was reduced while active coordination runtime/package work moved out of Main RULES.
+- Began moving coordination-specific scripts, skill docs, phases, and patch history out of the active RULES plugin path so that subsystem history would no longer sit in Main RULES active doctrine.
 
 ### Summary
-The repository has now started the real coordination fork cutover: active coordination runtime ownership is moving to `claude-session-coordination@darkwingtm`, while RULES is being reduced back toward policy/governance plus compact/runtime support only.
+Historical note: this was the cutover wave that began removing active coordination runtime ownership from Main RULES.
 
 ---
 
@@ -115,7 +188,7 @@ The repository has now started the real coordination fork cutover: active coordi
 ### Changes
 - Updated `plugin/scripts/shared-task-hook-probe.sh` into a bounded shared-task creation validator for `TaskCreated`, allowing clearly open/shared task titles while rejecting malformed session-state titles.
 - Updated the active plugin hook surface at that time so `TaskCreated` was wired and `TaskCompleted` stayed inactive before the later runtime ownership cutover.
-- Updated plugin/package/governance/phase/TODO/changelog surfaces so the hook path is described consistently as active shared-task creation validation gated on `CLAUDE_CODE_TASK_LIST_ID`.
+- Updated governance/history surfaces so the shared-task creation validator wave is recorded consistently as a historical shared-task-list identity change.
 - Kept the feature bounded: retryable `exit 2` feedback for malformed creation only, no task mutation, and no cross-session propagation claim.
 
 ### Summary
@@ -246,7 +319,7 @@ The RULES repository now supports a broader but still bounded `board_ref` set fo
 **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 
 ### Changes
-- Updated tmux bridge runtime scripts so `CLAUDE_CODE_TASK_LIST_ID` becomes the upstream same-group basis and local board paths are derived internally when needed.
+- Updated tmux bridge runtime scripts so the standard task-list identity becomes the upstream same-group basis and local board paths are derived internally when needed.
 - Updated session introduction, same-group listing, readiness checks, send flow, dispatch flow, request metadata, and board-sync behavior to use `task_list_id` as the primary shared-board identity.
 - Updated shared coordination docs, plugin design/docs, phase records, patch docs, TODO, and changelog wording so the standard Claude task-list identity is now the explicit basis of the bounded same-group model.
 - Preserved the same shared-task-list-only boundary and fail-closed behavior without widening the bridge into broader machine-global discovery.
@@ -266,7 +339,7 @@ The RULES repository now standardizes the tmux bridge onto Claude Code's task-li
 - Expanded `plugin/README.md` so the tmux bridge `*.sh` scripts are explained more directly as the runtime execution layer rather than only being listed as generic helpers.
 - Added a plain-language explanation of how the scripts fit together across request creation, board reflection, readiness, live send, acknowledgement, and report-back.
 - Added explicit next-extension notes for broader `board_ref` support, richer request/held/blocked automation, and stronger workflow acceptance proof.
-- Added explicit scope wording that current same-group coordination remains bounded to sessions sharing the same task-list / execution board group, and the README now describes `CLAUDE_CODE_TASK_LIST_ID` as the standard upstream basis for that shared scope.
+- Added explicit scope wording that current same-group coordination remains bounded to sessions sharing the same task-list / execution board group, with the standard task-list identity used as the upstream basis for that shared scope.
 
 ### Summary
 The RULES repository README surfaces now explain the plugin script layer and the shared-board scope boundary more clearly, making the current tmux bridge behavior easier to evaluate without widening the architecture.
@@ -496,7 +569,7 @@ The optional RULES plugin companion now exposes `claude-code-rules:session-coord
 - Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
 
 ### Summary
-The RULES repository now makes optional recall intake availability-first and immediate-fallback-aware, so missing memsearch does not have to block receive-side task continuation.
+Historical note: this wave originally lived in Main RULES. The active shared-board-specific memsearch semantics from this wave no longer remain in Main RULES, while global/general optional-recall doctrine remains in `memory-governance-and-session-boundary`. 
 
 ---
 
@@ -533,7 +606,7 @@ The RULES repository now treats visible session ownership as a default task-list
 - Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
 
 ### Summary
-The RULES repository now gives shared execution boards clearer visible session identity, more explicit handoff lifecycle and retention behavior, and a more concrete optional memsearch operating model without making optional tooling authoritative or required.
+Historical note: the active memsearch semantics from this refinement are now split cleanly — shared-board-specific doctrine no longer remains in Main RULES, while global/general optional-recall doctrine remains in Main RULES.
 
 ---
 

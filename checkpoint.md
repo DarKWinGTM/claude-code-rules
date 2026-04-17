@@ -1,64 +1,48 @@
 # RULES Checkpoint
 
 > **Created:** 2026-04-14
-> **Last Updated:** 2026-04-16
-> **Purpose:** continuation checkpoint for the current RULES repo state during the coordination fork split
-> **Scope:** current RULES repo state + current split status between `claude-code-rules@darkwingtm` and `claude-session-coordination@darkwingtm`
+> **Last Updated:** 2026-04-17
+> **Purpose:** continuation checkpoint for the current RULES repo state after the shared-task-list-path split
+> **Scope:** current RULES repo state only
 > **Status:** handoff-ready reference artifact, not a new semantic authority layer
 
 ---
 
 ## 0) Short resume first
 
-The active model is now the split model.
+The active model is now the RULES-only local model.
 
 Current reality:
-- `claude-code-rules@darkwingtm` = reduced Rules migration/reference package
-- `claude-session-coordination@darkwingtm` = active compact + coordination runtime package
-- root RULES = semantic authority for policy / semantics / governance
+- root RULES = semantic authority for generic communication/evidence/governance rules plus global task-list doctrine
+- shared-board-specific coordination runtime/source stays outside Main RULES
+- RULES no longer keeps an active plugin shell under this repo
 
 What is already done:
-- the new coordination package exists under `TEMPLATE/PLUGIN/claude-session-coordination/`
-- active compact hooks and active coordination hooks/scripts/skills have been cut over to the coordination package
-- the reduced RULES package now keeps no active plugin hooks
-- moved coordination scripts / skill docs / phase history from waves `044`–`054` now live under `TEMPLATE/PLUGIN/claude-session-coordination/` as package-owned history
-- root RULES still keep semantic authority for shared execution coordination doctrine and the broader governance model
+- Main RULES current rule/doc surfaces now keep only local/global doctrine
+- shared-board-specific semantics have been removed from active Main RULES doctrine
+- the old local plugin shell has been removed
+- historical plugin/topology waves remain preserved as history only
 
 What is still open:
-- final cleanup/verification of the split packet
-- real shared-task-list runtime verification for the active `TaskCreated` validator inside `claude-session-coordination@darkwingtm`
-- final git-packet audit before any git update/push
+- final RULES-side consistency audit for stale historical wording/reference drift
+- final git-packet shaping when requested
 
 ---
 
-## 1) Current package roles
+## 1) Current RULES role
 
-### Reduced Rules package
-From the checked package files:
-- package name = `claude-code-rules`
-- package version = `1.8.6`
-- package role = reduced Rules migration/reference package
-- active plugin hooks = none
-
-### Active coordination package
-From the checked package files:
-- package name = `claude-session-coordination`
-- package version = `0.1.0`
-- package role = active compact + coordination runtime package
-- active plugin hooks = compact lifecycle hooks + bounded `TaskCreated` validator
+Current checked RULES role:
+- root runtime rules remain the semantic authority for generic governance and the remaining global task-list doctrine
+- shared-task-list-path and multi-session coordination semantics are outside Main RULES scope
+- historical plugin-extension waves remain preserved as history only
 
 ---
 
 ## 2) What the next session must not lose
 
-### A. Do not revive the older topology as current truth
-Do not treat either:
-- the old phase-042 split correction
-- or the later phase-043 unified package model
-as the current active topology.
-
-Both are now historical context.
-The active target is the current split model.
+### A. Do not revive older plugin-topology waves as current truth
+Do not treat older two-plugin, unified-plugin, or reduced-shell stages as the current active model.
+Those are historical records only.
 
 ### B. Board vs truth boundary still holds
 Keep treating:
@@ -70,12 +54,11 @@ Keep treating:
 - memsearch = optional recall helper
 - `claude-peers-mcp` = optional/future live signaling layer, not required semantic infrastructure
 
-### D. Current remaining work is cleanup + verification
-The open work is no longer broad topology design.
-The remaining work is mainly:
-- cleanup of split wording/history/package-local references
-- verification of active runtime behavior
-- git-packet shaping
+### D. Current remaining RULES work is audit-only
+The open RULES-side work is no longer topology design.
+The remaining repo-facing work is mainly:
+- consistency verification for stale wording/history references
+- final git-packet shaping when requested
 
 ---
 
@@ -83,11 +66,10 @@ The remaining work is mainly:
 
 ### Repo status
 Current checked repo status is effectively:
-- recent fork-cutover waves are documented and synchronized
-- master changelog is at **v9.50**
-- `phase/SUMMARY.md` includes rollout families through **058**
-- `TODO.md` keeps the cleanup/verification follow-up items visible
-- the repo-level docs now point at the active split model
+- master changelog is at **v9.54**
+- `phase/SUMMARY.md` keeps the shared-task-list-path extraction visible as historical/externalized work without an active local plugin shell
+- `TODO.md` keeps only RULES-facing work visible in active sections
+- root docs now teach the RULES-only local model directly
 
 ### Coordination-model status
 Current checked RULES position is:
@@ -96,16 +78,11 @@ Current checked RULES position is:
 - memory = continuity support only
 - memsearch = optional
 - `claude-peers-mcp` = optional/future only
+- shared-task-list-path semantics are outside Main RULES doctrine
 
 ### Current operational open thread in this repo
-The still-open repo-facing thread is:
-- final cleanup/verification before git update readiness
-
-This includes:
-1. package-local reference cleanup in `claude-session-coordination`
-2. RULES-side history/summary wording cleanup
-3. runtime verification for the active shared-task validator
-4. final git packet audit
+The still-open RULES-facing thread is:
+- final consistency audit before git update / release readiness
 
 ---
 
@@ -115,59 +92,40 @@ This includes:
 Read these first:
 1. `checkpoint.md`
 2. `README.md`
-3. `plugin/README.md`
-4. `shared-execution-coordination.md`
-5. `design/rules-plugin-extension.design.md`
-6. `TODO.md`
-7. `phase/SUMMARY.md`
-8. `phase/phase-055-01-freeze-session-coordination-ownership-split.md`
-9. `phase/phase-056-01-reduce-rules-plugin-active-scope.md`
-10. `../PLUGIN/claude-session-coordination/README.md`
+3. `phase/SUMMARY.md`
+4. `phase/phase-055-01-freeze-session-coordination-ownership-split.md`
+5. `phase/phase-058-01-verify-no-dual-owner-overlap.md`
+6. `phase/phase-055-01-freeze-session-coordination-ownership-split.md`
+7. `phase/phase-058-01-verify-no-dual-owner-overlap.md`
 
 ### Step 2 — preserve the active basis
 Use this as the active basis:
-- current intended model = reduced Rules package + active coordination runtime split
-- current public install targets = `claude-code-rules@darkwingtm` and `claude-session-coordination@darkwingtm`
-- current coordination stack = board first, truth surfaces second, optional tools later
+- RULES owns generic governance + global task-list doctrine
+- shared-board-specific coordination semantics stay outside Main RULES
+- RULES has no active local plugin shell to keep aligned
 
-### Step 3 — finish the remaining repo work in order
-1. package-local cleanup in `TEMPLATE/PLUGIN/claude-session-coordination/`
-2. RULES-side summary/history wording cleanup
-3. shared-task validator verification under a real `CLAUDE_CODE_TASK_LIST_ID`
-4. final git-packet audit
+### Step 3 — finish remaining work in order
+1. audit RULES docs/history for stale ownership wording
+2. verify cross-document consistency after cleanup
+3. shape the final git packet when requested
 
-### Step 4 — do not push early
-The user explicitly asked to avoid git update until the packet is actually ready.
-So the next session should audit first, then report readiness, and only then move to git actions if requested again.
+### Step 4 — do not reopen external ownership drift
+Work outside Main RULES may still continue later, but that should not be described inside RULES as if it were local RULES ownership.
 
 ---
 
 ## 5) Checked file pointers for continuation
 
-### RULES repo
 - `README.md`
 - `TODO.md`
 - `phase/SUMMARY.md`
 - `phase/phase-055-01-freeze-session-coordination-ownership-split.md`
-- `phase/phase-056-01-reduce-rules-plugin-active-scope.md`
-- `design/rules-plugin-extension.design.md`
-- `shared-execution-coordination.md`
-- `plugin/README.md`
-- `plugin/.claude-plugin/plugin.json`
-- `plugin/.claude-plugin/marketplace.json`
-- `plugin/hooks/hooks.json`
+- `phase/phase-058-01-verify-no-dual-owner-overlap.md`
+- `design/design.md`
 - `changelog/changelog.md`
-
-### Coordination package
-- `../PLUGIN/claude-session-coordination/README.md`
-- `../PLUGIN/claude-session-coordination/hooks/hooks.json`
-- `../PLUGIN/claude-session-coordination/scripts/shared-task-hook-probe.sh`
-- `../PLUGIN/claude-session-coordination/skills/session-coordination-bridge/SKILL.md`
-- `../PLUGIN/claude-session-coordination/phase/SUMMARY.md`
-- `../PLUGIN/claude-session-coordination/TODO.md`
 
 ---
 
 ## 6) Final handoff sentence
 
-> The active target is now the split package model where `claude-code-rules@darkwingtm` is reduced and `claude-session-coordination@darkwingtm` owns the plugin runtime; continue from cleanup/runtime-verification/git-packet audit work, not by reopening the older unified-plugin topology as if it were still current.
+> The active target is now a RULES-only local model where Main RULES keeps generic governance and global task-list doctrine, while shared-board-specific coordination semantics stay outside Main RULES and should not be reintroduced into current local surfaces.

@@ -1,8 +1,8 @@
 # Explanation Quality
 
-> **Current Version:** 2.17
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.17
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 2.18
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.18
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
 ---
@@ -614,7 +614,9 @@ Success condition
 ## Integration
 
 Related rules:
-- [accurate-communication.md](accurate-communication.md) - keeps explanation structure flexible and context-appropriate while maintaining high-signal endings, honest snapshot wording, and user-friendly glosses for internal terms
+- [accurate-communication.md](accurate-communication.md) - keeps explanation structure flexible and context-appropriate while maintaining broader communication honesty and user-friendly glosses for internal terms
+- [technical-snapshot-communication.md](technical-snapshot-communication.md) - owns snapshot wording honesty while explanation-quality keeps explanation-flow placement for snapshots
+- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - owns high-signal closing synthesis and advisory proposal framing while explanation-quality keeps explanation-flow and landing quality
 - [answer-presentation.md](answer-presentation.md) - shapes the layout of snapshot sections, grouped scope-boundary blocks, full-set-first lists, and next-stage blocks
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - governs any text diagrams used by this rule
 - [zero-hallucination.md](zero-hallucination.md) - technical claims inside explanations must still be verified

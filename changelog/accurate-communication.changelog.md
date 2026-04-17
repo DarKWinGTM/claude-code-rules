@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.16
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 2.17
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.17 | 2026-04-17 | **[Extracted technical snapshot and response-closing ownership into new first-class chains](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.16 | 2026-04-16 | **[Kept easy explanations in plain Thai across the full answer](#version-216)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.15 | 2026-04-11 | **[Added easy-to-picture phase/progress framing guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.14 | 2026-04-09 | **[Added memory-derived-context disclosure wording](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |

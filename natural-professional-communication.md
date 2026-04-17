@@ -1,8 +1,8 @@
 # Natural Professional Communication
 
-> **Current Version:** 1.3
-> **Design:** [design/natural-professional-communication.design.md](design/natural-professional-communication.design.md) v1.3
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 1.2
+> **Design:** [design/natural-professional-communication.design.md](design/natural-professional-communication.design.md) v1.2
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/natural-professional-communication.changelog.md](changelog/natural-professional-communication.changelog.md)
 
 ---

@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.23
+> **Current Version:** 2.25
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.25 | 2026-04-17 | **[Reduced memsearch wording to shared-board defer only](#version-225)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
+| 2.24 | 2026-04-17 | **[Reduced repository task-list documentation to global role-model guidance](#version-224)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.23 | 2026-04-13 | **[Raised visible session ownership into a default task-list standard](#version-223)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.22 | 2026-04-13 | **[Resynced coordination-companion integration references after wave 038](#version-222)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.21 | 2026-04-13 | **[Separated shared-board request naming from receiving-side execution phase structure](#version-221)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -33,6 +35,37 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-225"></a>
+## Version 2.25: Reduced memsearch wording to shared-board defer only
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Added explicit repository-level boundary wording so shared-board-specific memsearch handling no longer remains in Main RULES active doctrine.
+- Updated integration references to the current touched chain versions after the memsearch ownership split.
+- Kept project-documentation-standards focused on repository role boundaries rather than active shared-board memsearch doctrine.
+
+### Summary
+Project-documentation-standards now keeps no active memsearch doctrine of its own beyond a shared-board defer boundary, and its integration block now matches the touched-chain versions from this ownership split.
+
+---
+
+<a id="version-224"></a>
+## Version 2.24: Reduced repository task-list documentation to global role-model guidance
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Reduced `project-documentation-standards.md` so shared-task-list-path naming, lease, handoff, retention, and visible session grammar now defer to `claude-session-coordination` instead of remaining embedded in the repository role model.
+- Preserved the repository-level distinction between built-in task list as the live execution surface and `TODO.md` as the durable tracking surface.
+
+### Summary
+Project-documentation-standards now keeps only the global repository role model for task tracking, while shared-task-list-path-specific semantics move to the plugin-owned coordination rule source.
 
 ---
 
@@ -96,7 +129,7 @@ Project-documentation-standards now keeps the repository model clearer by separa
 ### Changes
 - Updated `project-documentation-standards.md` from v2.19 to v2.20.
 - Updated `design/project-documentation-standards.design.md` from v2.19 to v2.20.
-- Added explicit repository-level wording that shared-board multi-session coordination semantics such as session lease, handoff, retention/aging, anti-overclear behavior, and optional-extension support defer to `shared-execution-coordination.md`.
+- Added explicit repository-level wording that shared-board multi-session coordination semantics stay outside Main RULES scope.
 - Preserved the existing repository role model and execution-surface boundaries.
 
 ### Summary

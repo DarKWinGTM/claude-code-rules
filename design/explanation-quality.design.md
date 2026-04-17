@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.16
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 2.18
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -715,7 +715,9 @@ Success condition
 
 | Rule | Relationship |
 |------|--------------|
-| `accurate-communication.md` | Keeps explanation structure flexible while requiring concise, high-signal endings and honest snapshot wording |
+| `accurate-communication.md` | Keeps broader communication honesty, user-friendly glosses, and continuation-vs-option wording outside explanation-flow ownership |
+| `technical-snapshot-communication.md` | Owns bounded technical snapshot wording semantics |
+| `response-closing-and-action-framing.md` | Owns concise synthesis, recommendation-with-reason framing, and advisory proposal framing |
 | `answer-presentation.md` | Owns the layout of snapshot sections, headings, and small fact tables |
 | `flow-diagram-no-frame.md` | Governs any text flow diagram used by this rule |
 | `zero-hallucination.md` | Preserves verification requirements for technical claims inside explanations |

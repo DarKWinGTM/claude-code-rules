@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.12
+> **Current Version:** 2.14
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.14 | 2026-04-17 | **[Reduced TODO memsearch wording to shared-board defer only](#version-214)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
+| 2.13 | 2026-04-17 | **[Reduced TODO standards to global task-list doctrine only](#version-213)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.12 | 2026-04-13 | **[Made visible session ownership a default task-list standard for session-owned work](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.11 | 2026-04-13 | **[Made session-held task visibility more explicit in live task updates](#version-211)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.10 | 2026-04-13 | **[Clarified request-style handoff naming in the shared task board](#version-210)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -23,6 +25,36 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-214"></a>
+## Version 2.14: Reduced TODO memsearch wording to shared-board defer only
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Replaced the old optional memsearch support wording with a narrower boundary line so shared-board-specific memsearch handling no longer remains in Main RULES active doctrine.
+- Kept TODO standards focused on the global live-task-list trigger model, same-objective retention, and generic update contract.
+
+### Summary
+TODO standards now keep no active memsearch doctrine of their own beyond a narrow shared-board defer boundary.
+
+---
+
+<a id="version-213"></a>
+## Version 2.13: Reduced TODO standards to global task-list doctrine only
+
+**Date:** 2026-04-17
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Reduced `todo-standards.md` so shared-board-specific session grammar, request/held/blocked title specifics, and receiving-side remap semantics now defer to `claude-session-coordination`.
+- Preserved the global live-task-list trigger model, startup bridge, same-objective retention, and generic live update contract inside RULES.
+
+### Summary
+TODO standards now keep only the global task-list doctrine, while shared-task-list-path naming and remap semantics move to the plugin-owned coordination rule source.
 
 ---
 
@@ -87,7 +119,7 @@ TODO standards now keep shared task-board naming aligned to request/handoff sema
 ### Changes
 - Updated `todo-standards.md` from v2.8 to v2.9.
 - Updated `design/todo-standards.design.md` from v2.8 to v2.9.
-- Added explicit deferral that multi-session shared-board semantics such as session lease, handoff, retention/aging, anti-overclear behavior, and optional memsearch support now live in `shared-execution-coordination.md`.
+- Added explicit deferral that multi-session shared-board semantics stay outside Main RULES scope.
 - Preserved durable-vs-live tracking, current-phase-first behavior, same-objective retention, and task-list-first next-work discovery.
 
 ### Summary

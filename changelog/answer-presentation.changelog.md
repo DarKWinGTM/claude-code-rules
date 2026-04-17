@@ -1,8 +1,8 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.23
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 1.24
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.24 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-124)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.23 | 2026-04-16 | **[Added easy-explanation layout support for plain-language headings](#version-123)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.22 | 2026-04-12 | **[Added compact goal-review presentation support](#version-122)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.21 | 2026-04-11 | **[Added easy-to-picture phase/progress presentation support](#version-121)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
