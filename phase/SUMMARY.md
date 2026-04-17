@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.30
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.14
+> **Current Version:** 1.31
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.16
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
-> **Status:** Completed historical review state
+> **Status:** Active summary synchronized through phase 063
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains sixty-two rollout families:
+The current workspace contains sixty-three rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -65,6 +65,7 @@ The current workspace contains sixty-two rollout families:
 - major phase `059` = easy-explanation continuity refinement rollout
 - major phase `061` = Main RULES shared-task extraction cleanup rollout
 - major phase `062` = accurate-communication owner extraction rollout
+- major phase `063` = file-disposal authority and delete-guard refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -273,6 +274,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 062 | 062-02 | `phase/phase-062-02-create-response-closing-rule-chain.md` | `design/response-closing-and-action-framing.design.md` | `patch/accurate-communication-owner-extraction.patch.md` | Create the first-class response-closing/action owner by extracting concise synthesis, recommendation framing, and advisory proposal wording out of `accurate-communication` | One semantic owner exists for concise end-of-response synthesis, clear action framing, and advisory goal-qualified proposal wording |
 | 062 | 062-03 | `phase/phase-062-03-integrate-communication-owner-split.md` | `design/technical-snapshot-communication.design.md` + `design/response-closing-and-action-framing.design.md` + `design/accurate-communication.design.md` + `design/design.md` | `patch/accurate-communication-owner-extraction.patch.md` | Integrate the communication owner split across touched companion chains and master governance surfaces | Repo-level governance reflects the two new specialist communication owners coherently |
 | 062 | 062-04 | `phase/phase-062-04-run-postflight-overlap-audit.md` | `design/technical-snapshot-communication.design.md` + `design/response-closing-and-action-framing.design.md` + touched adjacent designs | `patch/accurate-communication-owner-extraction.patch.md` | Run the final overlap/parity sweep so the extracted domains no longer sit under duplicate active authority | Wave `062` completes with coherent specialist ownership and verified source/install parity |
+| 063 | 063-01 | `phase/phase-063-01-refine-file-disposal-authority-and-delete-guard.md` | `design/authority-and-scope.design.md` + `design/project-documentation-standards.design.md` + `design/strict-file-hygiene.design.md` + `design/artifact-initiation-control.design.md` + `design/functional-intent-verification.design.md` + `design/evidence-grounded-burden-of-proof.design.md` + `design/no-variable-guessing.design.md` + `design/document-consistency.design.md` + `design/zero-hallucination.design.md` | `patch/file-disposal-authority-and-delete-guard-refinement.patch.md` | Refine the existing owner set so newly encountered or untracked files cannot be treated as disposable by cleanup instinct, git-state overreach, or isolation rationale | Existing owners now close the file-disposal governance gap without creating a new first-class doctrine chain |
+| 063 | 063-02 | `phase/phase-063-02-sync-master-surfaces-and-verify-delete-guard.md` | `design/design.md` + `design/project-documentation-standards.design.md` + `design/authority-and-scope.design.md` + `design/functional-intent-verification.design.md` | `patch/file-disposal-authority-and-delete-guard-refinement.patch.md` | Synchronize the master RULES surfaces and verify that the new file-disposal-authority and delete-guard contract is coherent across the repo | Repo-level governance and history surfaces reflect the new delete-guard refinement coherently |
 
 ---
 
@@ -360,6 +363,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 062 | 062-02 | `phase/phase-062-02-create-response-closing-rule-chain.md` | Approved | None | Approved As-Is | first-class response-closing/action owner created |
 | 062 | 062-03 | `phase/phase-062-03-integrate-communication-owner-split.md` | Approved | None | Approved As-Is | companion-rule integration and master-surface sync completed for the communication owner split |
 | 062 | 062-04 | `phase/phase-062-04-run-postflight-overlap-audit.md` | Approved | None | Approved As-Is | overlap/parity sweep confirmed the extracted domains now defer to their new specialist owners |
+| 063 | 063-01 | `phase/phase-063-01-refine-file-disposal-authority-and-delete-guard.md` | Approved | None | Approved As-Is | existing owners now close the file-disposal governance gap without creating a new first-class doctrine chain |
+| 063 | 063-02 | `phase/phase-063-02-sync-master-surfaces-and-verify-delete-guard.md` | Approved | None | Approved As-Is | master surfaces synchronized and postflight verification completed |
 | 032 | 032-02 | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the high-signal promotion wave |
 | 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Approved | None | Approved As-Is | first-class execution-continuity owner created |
 | 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Approved | None | Approved As-Is | first-class goal-review owner created |
@@ -472,6 +477,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 062 | 062-02 | Completed | `phase/phase-062-02-create-response-closing-rule-chain.md` | Create the first-class response-closing owner for concise synthesis, action framing, and advisory proposals | `062-01` |
 | 062 | 062-03 | Completed | `phase/phase-062-03-integrate-communication-owner-split.md` | Integrate the communication owner split across touched companions and master surfaces | `062-02` |
 | 062 | 062-04 | Completed | `phase/phase-062-04-run-postflight-overlap-audit.md` | Run the final overlap and parity sweep for the communication owner extraction wave | `062-03` |
+| 063 | 063-01 | Completed | `phase/phase-063-01-refine-file-disposal-authority-and-delete-guard.md` | Refine the existing owner set so newly encountered or untracked files cannot be treated as disposable by cleanup instinct, git-state overreach, or isolation rationale | none |
+| 063 | 063-02 | Completed | `phase/phase-063-02-sync-master-surfaces-and-verify-delete-guard.md` | Synchronize the master RULES surfaces and verify that the new file-disposal-authority and delete-guard contract is coherent across the repo | `063-01` |
 
 ---
 

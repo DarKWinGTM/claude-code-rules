@@ -1,8 +1,8 @@
 # Changelog - Strict File Hygiene
 
 > **Parent Document:** [../strict-file-hygiene.md](../strict-file-hygiene.md)
-> **Current Version:** 1.3
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-17 | **[Blocked cleanup/hygiene from acting as deletion authority](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
+| | | Summary: Refined strict-file-hygiene so junk-file wording stays creation-side only, newly encountered files are not disposable by cleanup instinct alone, and hygiene/isolation rationale no longer reads like delete permission | |
 | 1.3 | 2026-04-02 | **[Added portable-artifact hygiene guidance](#version-13)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended strict-file-hygiene so reusable artifacts should avoid machine-local hardcoded defaults by default and now defer broader portability expectations to `portable-implementation-and-hardcoding-control` | |
 | 1.2 | 2026-03-28 | **[Added startup-governance deference for required governed artifacts](#version-12)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -18,6 +20,24 @@
 | | | Summary: Added canonical `Design + Session + Full history` runtime header metadata without changing substantive strict-file-hygiene behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Blocked cleanup/hygiene from acting as deletion authority
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `strict-file-hygiene.md` from v1.3 to v1.4.
+- Updated `design/strict-file-hygiene.design.md` from v1.3 to v1.4.
+- Clarified that junk-file hygiene remains a creation/duplication rule rather than deletion authority.
+- Added explicit anti-pattern coverage so untracked/newly seen files are not treated as disposable by cleanup instinct alone.
+- Added a decision-flow boundary that routes delete/remove behavior to stronger semantic-authority and destructive-confirmation owners.
+
+### Summary
+Strict-file-hygiene now blocks cleanup and hygiene wording from being overread as deletion authority, especially for newly encountered or untracked repo files.
 
 ---
 

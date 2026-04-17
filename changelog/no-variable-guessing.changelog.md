@@ -1,8 +1,8 @@
 # Changelog - No Variable Guessing
 
 > **Parent Document:** [../no-variable-guessing.md](../no-variable-guessing.md)
-> **Current Version:** 1.4
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-17 | **[Added git-state checked-scope guidance for file classification](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
+| | | Summary: Extended no-variable-guessing so git working-state observations now stay explicitly scoped local evidence and do not settle file meaning before governed repo surfaces are checked | |
 | 1.4 | 2026-04-02 | **[Integrated portable-default boundary guidance into no-variable-guessing](#version-14)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Clarified that checked local values must stay scoped local facts and now explicitly defer broader portability and anti-hardcoding defaults to `portable-implementation-and-hardcoding-control` | |
 | 1.3 | 2026-03-12 | **[Materialized no-variable-guessing runtime body and added inspected-scope non-finding discipline](#version-13)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
@@ -20,6 +22,23 @@
 | | | Summary: Added deterministic verification triggers and status labels for reference/value validation paths | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added git-state checked-scope guidance for file classification
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `no-variable-guessing.md` from v1.4 to v1.5.
+- Updated `design/no-variable-guessing.design.md` from v1.4 to v1.5.
+- Added a verification trigger for git-state file-classification signals such as untracked/new/clean/dirty status.
+- Added inspected-scope examples clarifying that git working-state remains a local observation and does not settle file meaning before governed repo surfaces are checked.
+
+### Summary
+No-variable-guessing now treats git-state file-classification signals as scoped local evidence only, reducing the chance that weak local observations are overread as semantic truth.
 
 ---
 

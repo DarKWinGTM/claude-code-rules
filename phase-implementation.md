@@ -1,8 +1,8 @@
 # Phase Implementation
 
-> **Current Version:** 2.14
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.14
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.16
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.16
+> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
 ---

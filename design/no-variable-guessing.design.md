@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.4
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -99,6 +99,7 @@ Treat local references as verification-required when these signals appear:
 | cross-reference claim | "updated everywhere", "all references fixed" | verify the affected locations |
 | ambiguous source of truth | multiple candidate files or conflicting values | preserve uncertainty and ask/verify |
 | negative local claim | "there is no X", "X does not exist" | determine whether scoped non-finding or strong absence is justified |
+| git-state file classification | "untracked", "new file", "working tree is clean/dirty" | keep git state scoped as local evidence only and check governed repo surfaces before classifying file meaning |
 
 ### 4.3 Reporting labels
 - `Verified`
@@ -122,6 +123,7 @@ Preferred examples:
 - "I checked `backend/.env` and `docker-compose.yml` and found ..."
 - "I checked `src/config/**` and did not find `DATABASE_URL` there."
 - "I found multiple candidate config files, so I cannot yet tell which one is authoritative."
+- "I checked git working state and saw the file is untracked, but that is only a local observation; I still need to check the governed repo surfaces before I can classify what the file means."
 
 ---
 

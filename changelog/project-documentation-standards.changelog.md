@@ -1,8 +1,8 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.25
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.26
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.26 | 2026-04-17 | **[Added master-surface consultation before junk/disposal classification](#version-226)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.25 | 2026-04-17 | **[Reduced memsearch wording to shared-board defer only](#version-225)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.24 | 2026-04-17 | **[Reduced repository task-list documentation to global role-model guidance](#version-224)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.23 | 2026-04-13 | **[Raised visible session ownership into a default task-list standard](#version-223)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -35,6 +36,23 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-226"></a>
+## Version 2.26: Added master-surface consultation before junk/disposal classification
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.25 to v2.26.
+- Updated `design/project-documentation-standards.design.md` from v2.25 to v2.26.
+- Added a master-surface consultation boundary so newly encountered files must be checked against README/design/changelog/TODO/relevant phase/relevant patch surfaces before they are treated as junk, disposable, or non-governed.
+- Clarified that startup artifact posture and `not required` classification do not by themselves authorize removal of an already-present or newly encountered file.
+
+### Summary
+Project-documentation-standards now requires master-surface consultation before cleanup/disposal classification, reducing the chance that git-state noise is mistaken for semantic truth.
 
 ---
 

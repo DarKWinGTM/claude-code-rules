@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.6
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 1.7
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -30,6 +30,7 @@ Set document consistency standards to:
 | Stale references | Outdated information | Update all affected |
 | Vague descriptions | Don't know what this is referring to | Use precise refs |
 | Source/destination blur | Readers cannot tell where an artifact comes from versus where it installs/runs | Separate reference roles explicitly |
+| File looks untracked/new so it gets treated as cleanup noise before reference checks | Governed references/history can be destroyed before the repo meaning is checked | Require master-surface and cross-reference checks before disposal classification |
 
 ### 1.3 Solution
 
@@ -76,6 +77,7 @@ Apply verification before finalizing references or consistency claims when trigg
 | Rename/move/update impact | path or identifier changed in one place | trace and update dependent references deterministically |
 | Ambiguous or unresolved reference | missing file/symbol or uncertain mapping | mark status explicitly and avoid unstated assumptions |
 | Mixed source/destination wording | install docs blur clone/source path with installed/runtime path | separate the reference roles explicitly and normalize wording |
+| Disposal or junk classification | file may still be referenced by governed repo surfaces | check master surfaces and dependent references before classifying the file as cleanup noise |
 
 ---
 
@@ -167,6 +169,12 @@ When modifying:
 2. identify all cross-section dependencies
 3. update affected sections
 4. verify consistency throughout
+
+When classifying a newly encountered file as junk/disposable/non-governed:
+1. scan the master repo surfaces that could assign governed meaning
+2. identify whether dependent references or history entries already explain the file
+3. keep the classification unresolved if the checked scope is still incomplete
+4. do not treat missing immediate recognition as disposal proof
 
 ### 6.2 Change Propagation
 

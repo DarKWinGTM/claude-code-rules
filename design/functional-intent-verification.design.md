@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.1
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Current Version:** 1.2
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -151,18 +151,25 @@ Confirm if above threshold
 
 | Operation | Safe Default | Explanation |
 |-----------|--------------|-------------|
-| Delete | Move to trash | Not permanent delete |
-| Overwrite | Create backup | .bak file first |
+| Delete | Ask first | Do not assume removal intent |
+| Overwrite | Ask first | Confirm replacement scope |
 | Modify | Check first | Read before write |
 | Execute | Dry run | --dry-run if available |
 
-### 6.2 Explicit Override
+### 6.2 Repo-file delete guard
+When the target is a repository file and the justification is cleanup, hygiene, isolation, worktree, sandbox, or convenience:
+- do not treat that rationale as delete authorization
+- require stronger semantic authority than git state alone before removal can even be proposed
+- require explicit confirmation of the delete action itself before execution
+
+### 6.3 Explicit Override
 
 User must explicitly request:
 - Permanent deletion
 - No backup
 - Force overwrite
 - Skip confirmation
+- repository-file deletion when the only visible rationale is cleanup/isolation rather than an explicit user deletion request
 
 ---
 

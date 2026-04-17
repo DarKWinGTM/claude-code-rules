@@ -1,8 +1,8 @@
 # Strict File Hygiene Rule
 
-> **Current Version:** 1.3
-> **Design:** [design/strict-file-hygiene.design.md](design/strict-file-hygiene.design.md) v1.3
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.4
+> **Design:** [design/strict-file-hygiene.design.md](design/strict-file-hygiene.design.md) v1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/strict-file-hygiene.changelog.md](changelog/strict-file-hygiene.changelog.md)
 
 ---
@@ -21,6 +21,9 @@ If a file already exists and remains the right authority, edit it instead of cre
 ### 2) No-Junk-Docs Principle
 Do not create unnecessary summaries, duplicate plans, checkpoint files, or version-suffixed copies.
 
+This is a creation/duplication hygiene rule.
+It does not by itself authorize deletion of existing, newly encountered, or untracked repository files.
+
 ### 3) Ask-When-Unclear Principle
 If document necessity is unclear, ask instead of creating speculative files.
 
@@ -31,6 +34,7 @@ Required guidance:
 - governed design / changelog / TODO / phase / patch artifacts may be created proactively when the startup contract clearly requires them
 - if startup artifact need is still ambiguous, ask immediately rather than silently skipping or drifting
 - this exception applies only to required governed startup artifacts, not to arbitrary summaries or duplicate docs
+- it also does not authorize deletion of newly encountered files merely because they do not match the assistant's current expected artifact set
 
 ### 5) Version-Suffix Hygiene Principle
 Do not create versioned filename copies such as `-v2`, `_final`, `_backup`, or similar unless the user explicitly requests them.
@@ -58,6 +62,8 @@ Required guidance:
 - checkpoint/summary/plan files not requested and not required by startup governance
 - work-summary / change-summary files that are neither requested nor required
 - duplicate authority artifacts when an existing file already serves the role
+- treating untracked/newly seen files as junk or disposable by cleanup instinct alone
+- using hygiene, cleanup, isolation, worktree, or sandbox rationale as deletion authority by themselves
 
 ---
 
@@ -90,6 +96,16 @@ Is it a governed startup artifact required now by artifact-initiation-control?
 Did the user explicitly ask for it?
   → YES: create allowed
   → NO: do not create
+
+AI wants to classify or remove a newly encountered file
+  ↓
+Has the file been checked against master surfaces / governed history?
+  → NO: check first
+  → YES: continue
+  ↓
+Is there stronger delete authorization than hygiene/cleanup rationale?
+  → NO: do not delete
+  → YES: follow the destructive-confirmation owner
 ```
 
 ---
@@ -100,6 +116,8 @@ Did the user explicitly ask for it?
 - [ ] No junk summary/checkpoint/version-copy files are introduced
 - [ ] Required governed startup artifacts are not blocked by hygiene
 - [ ] Ambiguous artifact need is handled by asking, not by drifting
+- [ ] Newly encountered files are not treated as disposable before master-surface / governed-history checks
+- [ ] Hygiene wording is not usable as standalone deletion authority
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.25
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-17)
+> **Current Version:** 2.26
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -97,6 +97,22 @@ It is not the default startup artifact for greenfield / baseline-formation work 
 `artifact-initiation-control.md` is the semantic owner of startup artifact posture.
 It decides whether design, changelog, TODO, phase, and patch should be reused, created now, asked about now, or marked not required before meaningful work drifts.
 
+### 3.9.1 Master-Surface Consultation Boundary
+Before a newly encountered file is classified as junk, disposable, non-governed, or safe to remove, the assistant should consult the repository's checked master surfaces first.
+
+Minimum lookup set when applicable:
+- `README.md`
+- `design/design.md`
+- `changelog/changelog.md`
+- `TODO.md`
+- relevant `phase/` surfaces
+- relevant `patch/` surfaces
+
+Required guidance:
+- git working state may show a local observation such as untracked/new/dirty status, but it does not by itself settle whether the file has governed meaning
+- if a master surface or governed history could plausibly explain the file, check that surface before treating the file as cleanup noise
+- `not required` does not mean `safe to remove` unless stronger authority and stronger destructive-execution permission also exist
+
 ### 3.10 Phase Rule Role
 `phase-implementation.md` is the semantic rule for phased execution planning.
 It owns phase semantics after `/phase` is required.
@@ -171,6 +187,12 @@ Required startup artifact states:
 This startup gate happens before substantial drift.
 It is distinct from the later synchronization order under UDVC-1.
 
+When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
+Instead, the assistant should:
+- treat the file as unresolved until checked master surfaces and relevant governed owner chains are consulted
+- keep git working state as observed local evidence only
+- avoid disposal conclusions unless stronger semantic authority and stronger deletion authorization both exist
+
 ---
 
 ## 7) Decision Model for Document Creation
@@ -243,6 +265,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
 - [ ] Meaningful governed work resolves startup artifact posture before drift
+- [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
 - [ ] Phased work uses `phase/SUMMARY.md`

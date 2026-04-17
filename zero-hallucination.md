@@ -1,8 +1,8 @@
 # Zero Hallucination Policy
 
-> **Current Version:** 1.3
-> **Design:** [design/zero-hallucination.design.md](design/zero-hallucination.design.md) v1.3
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+> **Current Version:** 1.4
+> **Design:** [design/zero-hallucination.design.md](design/zero-hallucination.design.md) v1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/zero-hallucination.changelog.md](changelog/zero-hallucination.changelog.md)
 
 ---
@@ -104,6 +104,7 @@ Verification status labels:
 ### Avoid
 - "`X` does not exist" when only one partial scope was checked
 - "You are mistaken" when the only evidence is a limited non-finding
+- treating git untracked/new/dirty status as semantic authority for whether a file is governed, irrelevant, or disposable
 
 ---
 
@@ -134,6 +135,11 @@ One possibility is a stale cache layer, but I have not verified that yet.
 I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did not find `DATABASE_URL` there.
 ```
 
+### Git-state only local observation
+```text
+I checked git working state and saw the file is untracked, but that is only a local observation; I still need to check the governed repo surfaces before I can classify what the file means.
+```
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -144,6 +150,7 @@ I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did 
 | inference stated as fact | overstates certainty | mark it as inference |
 | hypothesis stated as cause | creates false confidence | keep it tentative |
 | scoped non-finding treated as absence | exaggerates the evidence | say what was checked |
+| git-state signal phrased as file disposability | promotes weak local evidence into a destructive conclusion | keep git state scoped and check governed surfaces first |
 | lack of evidence treated as contradiction | turns uncertainty into verdict | gather contrary evidence or remain unresolved |
 
 ---

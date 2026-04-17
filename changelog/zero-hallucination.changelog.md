@@ -1,8 +1,8 @@
 # Changelog - Zero Hallucination
 
 > **Parent Document:** [../zero-hallucination.md](../zero-hallucination.md)
-> **Current Version:** 1.3
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c
+> **Current Version:** 1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-17 | **[Added git-state negative-claim limits for file disposability](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
+| | | Summary: Extended zero-hallucination so git-state signals remain local observations only and do not justify claims that a file is irrelevant, non-governed, or disposable | |
 | 1.3 | 2026-03-12 | **[Materialized zero-hallucination runtime body and added evidence-state / negative-claim discipline](#version-13)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Replaced the header-only runtime stub with a full rule body that now distinguishes fact, inference, hypothesis, and scoped non-findings, adds source-priority behavior, and forbids turning limited non-findings into stronger contradiction or absence claims | |
 | 1.2 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -18,6 +20,23 @@
 | | | Summary: Added deterministic verification triggers and status labels across runtime/design contract text | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added git-state negative-claim limits for file disposability
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `zero-hallucination.md` from v1.3 to v1.4.
+- Updated `design/zero-hallucination.design.md` from v1.3 to v1.4.
+- Added negative-claim guidance and examples clarifying that git untracked/new/dirty status is only a local observation.
+- Added anti-pattern coverage so git-state signals no longer read like proof that a file is irrelevant, non-governed, or disposable.
+
+### Summary
+Zero-hallucination now blocks git-state observations from being overread as disposal truth, keeping file-meaning claims aligned to stronger checked evidence.
 
 ---
 

@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.3
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 2.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.4 | 2026-04-17 | **[Added repo-governed semantic-authority precedence over git-state cleanup heuristics](#version-24)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.3 | 2026-04-13 | **[Deferred shared-board multi-session coordination semantics to the new coordination owner](#version-23)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.2 | 2026-04-12 | **[Deferred mode-selection semantics to the new execution-continuity owner](#version-22)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.1 | 2026-04-09 | **[Added path-scoped memory applicability boundary and current-scope-wins protection](#version-21)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -31,6 +32,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-24"></a>
+## Version 2.4: Added repo-governed semantic-authority precedence over git-state cleanup heuristics
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `authority-and-scope.md` from v2.3 to v2.4.
+- Updated `design/authority-and-scope.design.md` from v2.3 to v2.4.
+- Added a repository-governed semantic-authority bridge so checked master surfaces and checked governed owner chains now outrank git working state when classifying file meaning.
+- Added explicit conflict, required-behavior, and anti-pattern wording so git cleanliness, untracked status, and cleanup/isolation heuristics no longer read like semantic authority or deletion permission.
+
+### Summary
+Authority-and-scope now explicitly keeps repo-governed semantic surfaces above git-state and cleanup heuristics, closing a key precedence gap behind cleanup-driven disposal misreads.
 
 ---
 

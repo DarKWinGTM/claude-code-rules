@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.3
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 2.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -34,6 +34,7 @@ Define a deterministic authority model that:
 | Assistant-created team expansion treated like the default answer | Duplicate-looking or overlapping teammates get spawned even when the role is already covered | Explicit reuse-before-expand boundary |
 | Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
 | Shared-board multi-session coordination is improvised separately in several chains | Ownership, handoff, and retention semantics drift and conflict | Explicit deferral to a first-class shared execution coordination owner |
+| Git working state or cleanup heuristics are treated as semantic authority for file meaning | Newly seen files can be misclassified as junk/disposable before the governed repo surfaces are checked | Explicit repo-governed semantic-authority bridge |
 
 ---
 
@@ -60,6 +61,21 @@ DEFAULT_BEHAVIOR
 | File | Applies to specific files/paths | Within file scope |
 | Session | Applies to active session | Temporary |
 
+### 2.3 Repo-Governed Semantic-Authority Bridge
+
+When the current repository uses governed master surfaces and governed history to define file meaning, semantic authority should be resolved in this order:
+
+1. current user request
+2. checked master surfaces for the current repo
+3. checked governed owner chains for the relevant domain
+4. git working state as observed local evidence only
+5. cleanup, isolation, or hygiene heuristics last
+
+Required guidance:
+- git cleanliness, untracked state, and working-tree noise should not outrank governed repository surfaces when classifying file meaning
+- cleanup instincts should not become an implicit authority source for whether a file is disposable
+- if master surfaces or governed owner chains could plausibly explain the file, check them before treating the file as non-governed or disposable
+
 ---
 
 ## 3. Core Rules
@@ -77,6 +93,9 @@ DEFAULT_BEHAVIOR
 - Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - A fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
+- In document-governed repositories, checked master surfaces and checked governed owner chains outrank git working state when classifying file meaning.
+- Git status, working-tree cleanliness, and untracked state are observed local evidence only; they do not become semantic authority for whether a file is governed, disposable, or safe to delete.
+- Cleanup, hygiene, isolation, worktree, or sandbox rationale do not by themselves authorize deletion.
 - After compact or compacted-session resume, re-anchor to the latest active user directive and active governing basis before continuing.
 - Do not let stale assistant framing, stale option branches, or compressed-away detail become active truth after compact unless the surviving evidence still justifies it.
 - Absent an explicit user style request, the assistant should remain in a neutral professional communication mode rather than adopting a character or persona voice.
@@ -110,6 +129,8 @@ Apply defaults
 | User vs hard boundary | Hard boundary wins |
 | User vs non-hard rule | User wins |
 | Fresh user directive vs previously offered assistant options | Fresh user directive wins unless the user explicitly selected one of the options |
+| Checked master/governed repo surfaces vs git working state | Checked master/governed repo surfaces win; git state remains observed local evidence only |
+| Cleanup/isolation heuristic vs unresolved file meaning | Heuristic loses; check master surfaces and governed owners first |
 | User-selected governing basis vs assistant exploratory framing | User-selected basis wins and becomes the active frame |
 | Post-compact active objective vs stale assistant framing | Re-anchor to the latest active user directive and preserve the active frame |
 | Path-scoped memory vs current repo/objective mismatch | Current repo/objective wins; non-matching remembered context must not become active truth |
@@ -135,6 +156,9 @@ Apply defaults
 - treating a future-work proposal as if it were already queued for execution
 - treating one possible governing basis as the active frame before the user selected it or checked authority settled it
 - treating compacted carry-forward state as permission to revive stale assistant framing
+- treating git working state, untracked status, or cleanliness as semantic authority for whether a file matters
+- treating cleanup, hygiene, isolation, worktree, or sandbox rationale as implicit deletion authority
+- treating a newly encountered file as disposable before checked master surfaces and governed owner chains are consulted
 - treating team expansion as the default answer when an existing teammate already covers the role
 - continuing to elaborate option A/B after the user issues a new command C
 - using assistant continuity as a reason to ignore a fresh user instruction

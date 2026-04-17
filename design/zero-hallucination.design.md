@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.3
-> **Session:** 9b6e3a46-d4f0-4968-9f5a-be083de4304c (2026-03-12)
+> **Current Version:** 1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -144,6 +144,12 @@ Choose between:
 - strong absence
 based on the actual evidence threshold met.
 
+### 6.5 Git-state and disposal claims
+When the local signal is git working-state only:
+- treat untracked/new/dirty/clean status as observed local evidence only
+- do not treat that signal as semantic authority for what the file means
+- do not let cleanup, hygiene, or isolation rationale upgrade that signal into a disposal claim
+
 ---
 
 ## 7) Anti-Patterns to Avoid
@@ -154,6 +160,7 @@ based on the actual evidence threshold met.
 | inference phrased as fact | hides uncertainty | label inference explicitly |
 | hypothesis phrased as verified cause | creates false confidence | keep it tentative |
 | scoped non-finding phrased as non-existence | exaggerates the evidence | state the checked scope |
+| git-state signal phrased as file disposability | promotes weak local evidence into a destructive conclusion | keep git state scoped and check governed surfaces first |
 | lack of support treated as contradiction | turns uncertainty into verdict | gather contrary evidence or remain unresolved |
 
 ---

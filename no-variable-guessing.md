@@ -1,8 +1,8 @@
 # No Variable Guessing Policy
 
-> **Current Version:** 1.4
-> **Design:** [design/no-variable-guessing.design.md](design/no-variable-guessing.design.md) v1.4
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.5
+> **Design:** [design/no-variable-guessing.design.md](design/no-variable-guessing.design.md) v1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/no-variable-guessing.changelog.md](changelog/no-variable-guessing.changelog.md)
 
 ---
@@ -95,6 +95,7 @@ Treat references as verification-required when any trigger appears:
 | cross-reference claim | "updated everywhere", "all references fixed" | verify all affected locations before claiming completion |
 | ambiguous source of truth | multiple candidate files or conflicting values | preserve uncertainty and ask/verify before proceeding |
 | negative local claim | "there is no X", "X does not exist" | determine whether only scoped non-finding or strong absence is justified |
+| git-state file classification | "untracked", "new file", "working tree is clean/dirty" | keep git state scoped as local evidence only and check governed repo surfaces before classifying file meaning |
 
 Verification status labels:
 - ✅ **Verified**
@@ -109,6 +110,7 @@ Verification status labels:
 - "I checked `backend/.env` and `docker-compose.yml` and found ..."
 - "I checked `src/config/**` and did not find `DATABASE_URL` there."
 - "I found both `config.json` and `config.yaml`; I cannot yet tell which one is authoritative."
+- "I checked git working state and saw the file is untracked, but that is only a local observation; I still need to check the governed repo surfaces before I can classify what the file means."
 
 ### Avoid
 - "The project uses X" when only one limited file was checked

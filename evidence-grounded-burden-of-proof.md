@@ -1,8 +1,8 @@
 # Evidence-Grounded Burden of Proof
 
-> **Current Version:** 1.3
-> **Design:** [design/evidence-grounded-burden-of-proof.design.md](design/evidence-grounded-burden-of-proof.design.md) v1.3
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.4
+> **Design:** [design/evidence-grounded-burden-of-proof.design.md](design/evidence-grounded-burden-of-proof.design.md) v1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/evidence-grounded-burden-of-proof.changelog.md](changelog/evidence-grounded-burden-of-proof.changelog.md)
 
 ---
@@ -60,7 +60,7 @@ Required guidance:
 | Evidence Class | Meaning | Typical Example | Default Strength |
 |---------------|---------|-----------------|------------------|
 | `AUTHORITATIVE_EXTERNAL` | Trusted external source directly relevant to the factual claim | official docs, formal specification, provider response | Highest for external factual claims |
-| `OBSERVED_LOCAL` | Directly observed local/project evidence inside the checked scope | file content, grep result, command output, test result | Highest for local/project claims inside the inspected scope |
+| `OBSERVED_LOCAL` | Directly observed local/project evidence inside the checked scope | file content, grep result, command output, test result, git working-state observation | Highest for local/project claims inside the inspected scope, but still weaker than repo-governed semantic authority when the question is what a file means |
 | `USER_PROVIDED` | Fact, constraint, or environment detail explicitly provided by the user | “use staging”, “the service is behind nginx”, “assume port 9000” | High as input evidence; may still need corroboration for contradiction |
 | `RECALLED_PATH_MATCHED_CONTEXT` | Remembered context from applicable path-scoped memory that may help continuity but is not automatically current verified repo truth | “From applicable path-scoped memory, this repo prefers PostgreSQL as the durable backend” | Between user-provided context and inference; requires recheck for exact current-state claims |
 | `EVIDENCE_BACKED_INFERENCE` | Reasoned conclusion derived from one or more observed facts | “Based on these logs and this config, the likely issue is X” | Medium |
@@ -105,6 +105,7 @@ Required guidance:
 | Select one governing basis/policy as the active frame | authoritative evidence, explicit user instruction, or a previously established checked contract that settles the basis | otherwise keep the basis unresolved and ask first |
 | Treat applicable remembered context as current verified repo truth | fresh observed local evidence or a still-exact checked contract preserving that exactness | otherwise disclose it as remembered context and recheck before treating exact current-state detail as verified fact |
 | Say “I did not find X” | scoped search/check performed | name the checked scope |
+| Say “this new/untracked file is junk, disposable, or safe to remove” | stronger semantic authority than git state alone, plus checked master/governed repo surfaces | do not treat git cleanliness, untracked state, or cleanup heuristics as sufficient by themselves |
 | Say “X does not exist / is absent” | authoritative evidence or sufficiently exhaustive relevant search | do not use this on limited search alone |
 
 ---
@@ -162,6 +163,8 @@ when the evidence only supports a narrower claim-focused correction.
 - keep limited search results scoped
 - use stronger absence wording only when the checked scope is actually sufficient or an authoritative source settles the question
 - if the scope is partial, say what remains unchecked
+- treat git working-state evidence such as untracked/new/dirty status as scoped local evidence only
+- do not let working-tree cleanliness, cleanup instincts, or isolation rationale upgrade a weak local observation into a disposal conclusion
 
 Example:
 - Good: “I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did not find `DATABASE_URL` there.”

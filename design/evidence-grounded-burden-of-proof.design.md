@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-06)
+> **Current Version:** 1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -89,7 +89,7 @@ It does not replace adjacent chains that define:
 | Evidence Class | Meaning | Typical Example | Default Strength |
 |---------------|---------|-----------------|------------------|
 | `AUTHORITATIVE_EXTERNAL` | A trusted external source directly relevant to the factual claim | official docs, formal specification, provider response, vendor documentation | Highest for external factual claims |
-| `OBSERVED_LOCAL` | A directly observed fact from the checked local environment or project scope | file content, grep result, command/test output, repo artifact | Highest for local/project claims within the inspected scope |
+| `OBSERVED_LOCAL` | A directly observed fact from the checked local environment or project scope | file content, grep result, command/test output, repo artifact, git working-state observation | Highest for local/project claims within the inspected scope, but still weaker than repo-governed semantic authority when the question is what a file means |
 | `USER_PROVIDED` | A fact, constraint, or environment detail explicitly provided by the user | “the service runs on port 9000”, “use this endpoint”, “assume staging” | High as an input source; may still need corroboration for technical contradiction |
 | `RECALLED_PATH_MATCHED_CONTEXT` | Remembered context from applicable path-scoped memory that may help continuity but is not automatically current verified repo truth | “From applicable path-scoped memory, this repo prefers PostgreSQL as the durable backend” | Between user-provided context and inference; requires recheck for exact current-state claims |
 | `EVIDENCE_BACKED_INFERENCE` | A conclusion logically derived from one or more observed facts | “Given these logs and the config, the likely issue is X” | Medium |
@@ -138,6 +138,7 @@ Use these claim states so wording matches the actual evidence level.
 | Select one governing basis/policy as the active frame | direct authority, explicit user instruction, or evidence strong enough to settle the basis | otherwise keep the basis unresolved and ask first |
 | Treat applicable remembered context as current verified repo truth | fresh observed local evidence or a still-exact checked contract preserving that exactness | otherwise disclose it as remembered context and recheck before treating exact current-state detail as verified fact |
 | Say “I did not find X” | scoped search/read/check actually performed | name the checked scope |
+| Say “this new/untracked file is junk, disposable, or safe to remove” | stronger semantic authority than git state alone, plus checked master/governed repo surfaces | do not treat git cleanliness, untracked state, or cleanup heuristics as sufficient by themselves |
 | Say “X does not exist / is absent” | authoritative evidence or sufficiently exhaustive relevant search | do not use this stronger wording on limited search alone |
 
 ### 6.1 Person-Directed Burden Principle
@@ -222,6 +223,8 @@ when the evidence only supports a narrower statement about the claim or current 
 - Do not convert limited search results into stronger absence claims.
 - Use stronger absence wording only when the checked scope is actually sufficient or an authoritative source settles the question.
 - If the scope is partial, say what remains unchecked.
+- Treat git working-state evidence such as untracked/new/dirty status as scoped local evidence only.
+- Do not let working-tree cleanliness, cleanup instincts, or isolation rationale upgrade a weak local observation into a disposal conclusion.
 
 ### 8.3 Example Distinctions
 - Good: “I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did not find `DATABASE_URL` there.”

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-11)
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -90,6 +90,9 @@ It does not replace the later synchronization order owned by `project-documentat
 ### 4.4 Existing-authority reuse
 If a valid governing artifact already exists for the current scope, reuse it rather than creating a duplicate.
 
+The same authority-first posture applies when a newly encountered file appears during governed work.
+If its role is unclear, the assistant should first check whether existing governed surfaces or governed history already explain it before treating it as unnecessary.
+
 ### 4.5 Ask-now rule
 If an artifact appears required but scope, authority, or user intent is still unclear, ask immediately instead of drifting into detailed work.
 
@@ -151,6 +154,11 @@ Ask immediately when:
 ### 6.3 Not required
 Mark an artifact not required only when that conclusion is actually justified by the current task shape.
 
+`not required` means the artifact does not need to be created or adopted for the current governed work.
+It does not by itself mean an already-present or newly encountered file is safe to remove.
+
+For newly encountered files whose role is unclear, the assistant should keep the file in an unresolved classification state until checked master surfaces and relevant governed owner chains have been consulted.
+
 For patch specifically, `not required` is the preferred default when the work is still creating a new project baseline, first-time scaffold, or initial terminology/contract model rather than changing an established governed surface.
 
 ---
@@ -177,6 +185,7 @@ Equivalent headings are acceptable if the meaning remains explicit.
 | non-trivial tracked work begins with no live task tracking | the user cannot see planned / active / completed state while the work is underway | initialize the built-in task list early when live tracking materially helps |
 | force every artifact every time | creates unnecessary ceremony | resolve only the required subset |
 | create patch by default during greenfield startup or baseline formation | startup work is mislabeled as a review delta before a stable before-state exists | default patch to `not required` unless a real existing surface or explicit user request justifies it |
+| collapse `not required` into deletion authority for an already-present or newly encountered file | artifact posture gets misread as disposal permission | keep file classification unresolved until stronger authority is checked |
 | let hygiene rules suppress required startup artifacts | makes governance reactive and late | let startup artifact control decide, then apply hygiene to non-required files |
 | ask too late | work already drifts before the user sees the artifact decision | ask immediately when startup posture is unclear |
 

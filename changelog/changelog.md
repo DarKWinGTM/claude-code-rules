@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.55
+> **Current Version:** 9.56
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.56 | 2026-04-17 | **[Strengthened file-disposal authority and delete-guard behavior across existing RULES owners](#version-956)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.55 | 2026-04-17 | **[Extracted two first-class communication owners out of accurate-communication](#version-955)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.54 | 2026-04-17 | **[Retired shared-execution-coordination from the active RULES runtime set](#version-954)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.53 | 2026-04-17 | **[Finished active-surface RULES plugin-shell cleanup after the coordination split](#version-953)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -90,6 +91,27 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-956"></a>
+## Version 9.56: Strengthened file-disposal authority and delete-guard behavior across existing RULES owners
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `authority-and-scope` so repo-governed semantic surfaces now explicitly outrank git-state cleanup heuristics when classifying file meaning.
+- Updated `project-documentation-standards` so master surfaces must be consulted before a newly encountered file is treated as junk, disposable, or non-governed.
+- Updated `strict-file-hygiene` so hygiene/cleanup wording remains creation-side only and no longer reads like deletion authority.
+- Updated `artifact-initiation-control` so unresolved new-file classification remains separate from disposal conclusions.
+- Materialized the runtime body of `functional-intent-verification` and added explicit destructive delete confirmation plus cleanup/isolation limits.
+- Updated `evidence-grounded-burden-of-proof`, `no-variable-guessing`, `document-consistency`, and `zero-hallucination` so git-state observations stay in the weak local-evidence lane.
+- Added bounded `phase-063` and `patch/file-disposal-authority-and-delete-guard-refinement.patch.md` artifacts.
+- Synchronized touched design/runtime/changelog/TODO/master surfaces for the refinement wave.
+
+### Summary
+The RULES repository now keeps git-state observations, cleanup instincts, and isolation rationale below checked master/governed semantic authority, while destructive file removal is explicitly gated behind stronger confirmation and stronger evidence.
 
 ---
 

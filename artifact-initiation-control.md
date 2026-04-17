@@ -1,8 +1,8 @@
 # Artifact Initiation Control
 
-> **Current Version:** 1.4
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.5
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 
 ---
@@ -38,6 +38,7 @@ Required guidance:
 - when an active phase already exists for the work, treat live task-list initialization as expected rather than optional unless a narrow justified reason clearly blocks it
 - once initialized for the active objective, reuse that live task-list surface by default unless a true objective-boundary reset or explicit user reset applies
 - do not silently skip artifacts or live tracking surfaces that appear required
+- do not collapse `not required` into `safe to remove` for an already-present or newly encountered file without stronger semantic authority and stronger deletion authorization
 
 ### 3) Existing-Authority-First Principle
 Reuse valid authority artifacts instead of creating duplicates.
@@ -46,6 +47,7 @@ Required guidance:
 - prefer existing governed artifacts when they already fit the current scope
 - avoid duplicate design/TODO/phase/patch scaffolding
 - create new artifacts only when the existing set does not cover the work cleanly
+- when a newly encountered file appears during governed work and its role is unclear, first check whether existing governed surfaces or governed history already explain it before treating it as unnecessary
 
 ### 4) Ask-Now Principle
 If startup posture is unclear, ask immediately instead of drifting.
@@ -69,6 +71,7 @@ Required guidance:
 - keep the bypass narrow
 - do not use “trivial” as an excuse for multi-step governed work
 - if the task expands beyond triviality, re-run startup artifact resolution
+- do not use trivial/cleanup framing to bypass unresolved classification of a newly encountered file during governed work
 
 ---
 

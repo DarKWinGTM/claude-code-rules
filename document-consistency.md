@@ -1,8 +1,8 @@
 # Document Consistency and Cross-Reference Validation
 
-> **Current Version:** 1.6
-> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.6
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.7
+> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.7
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/document-consistency.changelog.md](changelog/document-consistency.changelog.md)
 
 ---
@@ -49,6 +49,7 @@ Apply verification before finalizing references or consistency claims when trigg
 | Ambiguous or unresolved reference | missing file/symbol or uncertain mapping | mark status explicitly and avoid unstated assumptions |
 | Mixed source/destination wording | install docs blur clone/source path with installed/runtime path | separate the reference roles explicitly and normalize wording |
 | Tool-path leakage into reusable source | a local tool/runtime path is copied into skill/plugin/source content as if it were a shared contract | relabel it as local execution context or replace it with a portable placeholder / runtime variable |
+| Disposal or junk classification | file may still be referenced by governed repo surfaces | check master surfaces and dependent references before classifying the file as cleanup noise |
 
 ---
 
@@ -120,6 +121,12 @@ When modifying:
 2. identify all cross-section or cross-file dependencies
 3. update affected sections deterministically
 4. verify consistency throughout
+
+When classifying a newly encountered file as junk/disposable/non-governed:
+1. scan the master repo surfaces that could assign governed meaning
+2. identify whether dependent references or history entries already explain the file
+3. keep the classification unresolved if the checked scope is still incomplete
+4. do not treat missing immediate recognition as disposal proof
 
 | Change Type | Required Actions |
 |-------------|------------------|

@@ -1,8 +1,8 @@
 # Changelog - Evidence-Grounded Burden of Proof
 
 > **Parent Document:** [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md)
-> **Current Version:** 1.3
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,11 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-04-17 | **[Added git-state evidence limits for disposal conclusions](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.3 | 2026-04-09 | **[Added remembered path-matched context handling to the burden-of-proof model](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-06 | **[Added post-compact needs-recheck handling to the burden-of-proof model](#version-12)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.1 | 2026-04-05 | **[Added unresolved governing-basis handling to burden-of-proof model](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-12 | **[Created first-class evidence-grounded-burden-of-proof rule chain](#version-10)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Created a new design/runtime/changelog triad that governs evidence taxonomy, claim-state taxonomy, burden-of-proof thresholds, contradiction protocol, scoped negative-evidence semantics, and evidence-grounded communication across planning, debugging, coding, and review | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added git-state evidence limits for disposal conclusions
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `evidence-grounded-burden-of-proof.md` from v1.3 to v1.4.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.3 to v1.4.
+- Added git working-state observations to the scoped local evidence model.
+- Added a burden threshold that blocks claims such as junk/disposable/safe-to-remove when the evidence is only git cleanliness, untracked status, or cleanup heuristics.
+- Extended negative-evidence guidance so weak local observations no longer drift into disposal conclusions.
+
+### Summary
+Evidence-grounded-burden-of-proof now keeps git-state signals in the weak local-evidence lane and blocks them from justifying disposal conclusions on their own.
 
 ---
 

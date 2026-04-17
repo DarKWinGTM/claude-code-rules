@@ -1,8 +1,8 @@
 # Authority and scope
 
-> **Current Version:** 2.3
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.3
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.4
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.4
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 
 ---
@@ -49,6 +49,19 @@ RULE_CONTRACTS
 DEFAULT_BEHAVIOR
 ```
 
+### Repository-governed semantic-authority bridge
+When the current repository uses governed master surfaces and governed history to define file meaning, semantic authority should be resolved in this order:
+1. current user request
+2. checked master surfaces for the current repo
+3. checked governed owner chains for the relevant domain
+4. git working state as observed local evidence only
+5. cleanup, isolation, or hygiene heuristics last
+
+Required guidance:
+- git cleanliness, untracked state, and working-tree noise should not outrank governed repository surfaces when classifying file meaning
+- cleanup instincts should not become an implicit authority source for whether a file is disposable
+- if master surfaces or governed owner chains could plausibly explain the file, check them before treating the file as non-governed or disposable
+
 ---
 
 ## Conflict Resolution Contract
@@ -79,6 +92,8 @@ Apply defaults
 | User vs non-hard rule | User wins |
 | Fresh user directive vs previously offered assistant options | Fresh user directive wins unless the user explicitly selected one of the options |
 | User explicitly requires RULES-first handling vs assistant memory-first convenience | User directive wins; fix the governing rule/system behavior first and do not treat memory persistence as the substitute remedy for that same issue |
+| Checked master/governed repo surfaces vs git working state | Checked master/governed repo surfaces win; git state remains observed local evidence only |
+| Cleanup/isolation heuristic vs unresolved file meaning | Heuristic loses; check master surfaces and governed owners first |
 | User-selected governing basis vs assistant exploratory framing | User-selected basis wins and becomes the active frame |
 | Post-compact active objective vs stale assistant framing | Re-anchor to the latest active user directive and preserve the active frame |
 | Path-scoped memory vs current repo/objective mismatch | Current repo/objective wins; non-matching remembered context must not become active truth |
@@ -111,6 +126,9 @@ Use this override behavior when:
 - respond to the latest directive rather than continuing to optimize one of the assistant’s previously offered options
 - when multiple materially different governing bases remain live, ask the user to choose the basis unless checked authority/evidence already settles it
 - only continue an old option, proposal branch, or governing basis when the user explicitly selected it or the checked authority already fixes it
+- in document-governed repositories, treat checked master surfaces and checked governed owner chains as stronger semantic authority than git working state when classifying file meaning
+- keep git status, working-tree cleanliness, and untracked state as observed local evidence only rather than semantic authority for whether a file is governed, disposable, or safe to delete
+- do not let cleanup, hygiene, isolation, worktree, or sandbox rationale become implicit deletion authorization
 - after compact, re-anchor to the latest active user directive before resuming
 - after compact, preserve the user-selected governing basis or active frame rather than reviving stale exploratory framing
 - treat compressed-away exact detail as unresolved until rechecked when that exactness materially affects the next move
@@ -127,6 +145,9 @@ Use this override behavior when:
 - treating one possible governing basis as active truth before the user selected it or the checked authority settled it
 - treating a user-declared RULES-first problem as if a memory write were the main remedy
 - treating remembered context as applicable just because it came from the same or a recent session
+- treating git working state, untracked status, or cleanliness as semantic authority for whether a file matters
+- treating cleanup, hygiene, isolation, worktree, or sandbox rationale as implicit deletion authority
+- treating a newly encountered file as disposable before checked master surfaces and governed owner chains are consulted
 - treating compacted carry-forward state as permission to revive stale assistant framing
 - treating team expansion as the default answer when an existing teammate already covers the role
 - continuing to elaborate option A/B after the user issues a new command C

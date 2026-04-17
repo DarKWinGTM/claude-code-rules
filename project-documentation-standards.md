@@ -1,8 +1,8 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.23
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.23
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.26
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.26
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
 ---
@@ -84,6 +84,28 @@ That means each relevant startup artifact must be explicitly resolved as one of:
 
 This startup gate happens before substantial drift.
 It is separate from the later synchronization order in section 2.2.
+
+When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
+Instead, the assistant should:
+- treat the file as unresolved until checked master surfaces and relevant governed owner chains are consulted
+- keep git working state as observed local evidence only
+- avoid disposal conclusions unless stronger semantic authority and stronger deletion authorization both exist
+
+### 4.1) Master-Surface Consultation Boundary
+Before a newly encountered file is classified as junk, disposable, non-governed, or safe to remove, the assistant should consult the repository's checked master surfaces first.
+
+Minimum lookup set when applicable:
+- `README.md`
+- `design/design.md`
+- `changelog/changelog.md`
+- `TODO.md`
+- relevant `phase/` surfaces
+- relevant `patch/` surfaces
+
+Required guidance:
+- git working state may show a local observation such as untracked/new/dirty status, but it does not by itself settle whether the file has governed meaning
+- if a master surface or governed history could plausibly explain the file, check that surface before treating the file as cleanup noise
+- `not required` does not mean `safe to remove` unless stronger authority and stronger destructive-execution permission also exist
 
 ### 5) Decision Model for Document Creation
 
@@ -167,6 +189,7 @@ Required guidance:
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
 - [ ] Meaningful governed work resolves startup artifact posture before drift
+- [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is used as the semantic phase rule when applicable
 - [ ] Phased work uses `phase/SUMMARY.md`

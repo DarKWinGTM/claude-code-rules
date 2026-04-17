@@ -1,8 +1,8 @@
 # Changelog - Artifact Initiation Control
 
 > **Parent Document:** [../artifact-initiation-control.md](../artifact-initiation-control.md)
-> **Current Version:** 1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-17 | **[Kept newly encountered file classification separate from disposal conclusions](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.4 | 2026-04-12 | **[Kept initialized live task lists as the active objective surface](#version-14)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.3 | 2026-04-11 | **[Made phase-backed live task-list startup expected](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-10 | **[Added early live task-tracking posture for non-trivial work](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -17,6 +18,24 @@
 | | | Summary: Refined startup-governance so patch is no longer treated as the default startup artifact during greenfield / baseline-formation work unless a real existing before/after review surface or explicit user request justifies it | |
 | 1.0 | 2026-03-28 | **[Created first-class artifact-initiation-control rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new startup-governance owner chain so design, changelog, TODO, phase, and patch posture must be resolved before meaningful governed work drifts | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Kept newly encountered file classification separate from disposal conclusions
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `artifact-initiation-control.md` from v1.4 to v1.5.
+- Updated `design/artifact-initiation-control.design.md` from v1.4 to v1.5.
+- Extended existing-authority and startup-resolution guidance so newly encountered unclear files must be checked against governed surfaces before they are treated as unnecessary.
+- Clarified that `not required` does not by itself mean `safe to remove` for an already-present or newly encountered file.
+- Added anti-pattern coverage against collapsing unresolved classification into cleanup/disposal logic.
+
+### Summary
+Artifact-initiation-control now keeps startup classification separate from disposal conclusions, reducing the chance that unresolved new files are overread as safe cleanup targets.
 
 ---
 
