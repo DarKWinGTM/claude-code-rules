@@ -1,7 +1,7 @@
 # TODO Standards
 
-> **Current Version:** 2.15
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.15
+> **Current Version:** 2.16
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.16
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 
@@ -164,6 +164,12 @@ When governance work changes governed artifacts, update in this order:
 TODO content updates still happen last among the primary active layers.
 That later sync order does not weaken the early startup-establishment rule or the expectation that live task tracking starts early when the work is non-trivial.
 
+When `TODO.md` is required for the governed work, TODO synchronization is required companion work rather than optional bookkeeping.
+That means:
+- TODO may be updated later than design/runtime/changelog in the sync order
+- but it should still be completed before the governed wave is treated as fully synchronized
+- the built-in task list does not replace this durable TODO sync when the task actually requires repository-level tracked execution history
+
 ---
 
 ## Verification Checklist
@@ -175,6 +181,7 @@ That later sync order does not weaken the early startup-establishment rule or th
 - [ ] Tracking posture was resolved early when meaningful tracking was required
 - [ ] Built-in task list was used proactively for non-trivial work when live execution visibility materially helped
 - [ ] Task entries remained outcome-sized rather than command-sized
+- [ ] Required TODO synchronization was not downgraded into optional bookkeeping
 - [ ] TODO content update occurred after design/runtime/changelog synchronization
 
 ---

@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.57
+> **Current Version:** 9.58
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.58 | 2026-04-18 | **[Tightened startup-governance versus execution-continuity boundaries across existing owners](#version-958)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.57 | 2026-04-17 | **[Retired custom memsearch and bridge doctrine from Main RULES active teaching](#version-957)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.56 | 2026-04-17 | **[Strengthened file-disposal authority and delete-guard behavior across existing RULES owners](#version-956)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.55 | 2026-04-17 | **[Extracted two first-class communication owners out of accurate-communication](#version-955)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -92,6 +93,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-958"></a>
+## Version 9.58: Tightened startup-governance versus execution-continuity boundaries across existing owners
+
+**Date:** 2026-04-18
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `execution-continuity-and-mode-selection` so execution readiness no longer reads like permission to bypass unresolved startup artifact posture.
+- Updated `project-documentation-standards` so required design/changelog/TODO/phase/patch surfaces remain visible as governed companions even when live execution surfaces are also in use.
+- Updated `todo-standards` so required TODO synchronization is framed as companion work rather than optional bookkeeping.
+- Updated `phase-implementation` so clearly staged/governed work now treats phase establishment as an early default posture decision instead of a late backfill path.
+- Updated the touched design companions and synchronized the affected governance history surfaces.
+
+### Summary
+The RULES repository now says more clearly that startup artifact posture must be resolved first, but once that gate is settled the work should keep moving without re-pausing over the same governance boundary.
 
 ---
 

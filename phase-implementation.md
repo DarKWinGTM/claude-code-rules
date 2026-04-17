@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.17
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.17
+> **Current Version:** 2.18
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.18
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -51,6 +51,8 @@ Use phased planning when one or more of these are true:
 - the change spans multiple systems, files, or owners and benefits from staged coordination
 - the project needs a governed plan that shows how design, TODO, and changelog move together during execution
 
+When those signals make phased work clearly implied rather than merely optional, default phase posture should be treated as `use existing`, `create now`, or `ask now` through startup governance rather than being left implicit until later backfill.
+
 ### 3) Startup Bridge for Phase Establishment
 
 If `artifact-initiation-control` resolves phase posture as:
@@ -62,6 +64,7 @@ then phase posture must be handled before substantial work drifts.
 
 Required guidance:
 - if phase is clearly required, establish `/phase` early rather than backfilling it later
+- when staged or governed execution is already clearly implied by the checked work shape, do not treat phase establishment as an optional afterthought
 - if phase need is still ambiguous, ask immediately before detailed work continues
 - retrospective phase creation is a repair path, not the preferred operating path
 
@@ -197,6 +200,7 @@ If patch documents exist, they remain patch artifacts and must not be used as th
 
 - [ ] `phase-implementation` explicitly defines `NNN` and `NNN-NN`
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
+- [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs such as `P1/P2/P3` are not used as active canonical phase identifiers
 - [ ] `/phase` examples show either a valid major-phase file, a valid subphase file, or both

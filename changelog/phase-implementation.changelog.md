@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.17
+> **Current Version:** 2.18
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.18 | 2026-04-18 | **[Made default phase establishment explicit when staged work is clearly implied](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-17 | **[Retired stale coordination defer line in favor of explicit out-of-scope wording](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.16 | 2026-04-17 | **[Reduced phase-implementation memsearch wording to shared-board defer only](#version-216)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.15 | 2026-04-17 | **[Reduced phase-implementation to global phase↔task-list doctrine](#version-215)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -29,6 +30,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-218"></a>
+## Version 2.18: Made default phase establishment explicit when staged work is clearly implied
+
+**Date:** 2026-04-18
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `phase-implementation.md` from v2.17 to v2.18.
+- Updated `design/phase-implementation.design.md` from v2.17 to v2.18.
+- Clarified that when staged/governed execution is already clearly implied by the checked work shape, phase posture should not be left implicit until later backfill.
+- Strengthened the startup bridge so phase establishment is treated as an early governed companion decision instead of an optional afterthought.
+- Added verification coverage against late phase backfill when the work shape already made phased execution obvious.
+
+### Summary
+Phase-implementation now states more directly that clearly staged governed work should open or resolve `/phase` early instead of discovering phase structure only after the work is already underway.
 
 ---
 

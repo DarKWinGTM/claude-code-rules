@@ -1,7 +1,7 @@
 # Execution Continuity and Mode Selection
 
-> **Current Version:** 1.5
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.6
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 
@@ -11,7 +11,7 @@
 
 **Core Principle: Distinguish discussion mode from execution mode explicitly, and once work is execution-ready, continue by default and discover the next unfinished slice from active execution surfaces instead of ending turns only to narrate progress or obvious next steps.**
 
-This rule owns mode selection for active work and the stop/continue boundary for continuous execution. It does not replace user authority, hard-boundary safety, wording/evidence owners, or shared-board coordination ownership.
+This rule owns mode selection for active work and the stop/continue boundary for continuous execution. It does not replace startup artifact governance, user authority, hard-boundary safety, wording/evidence owners, or shared-board coordination ownership.
 
 ---
 
@@ -34,8 +34,17 @@ Required guidance:
 - do not auto-execute while the user is still iterating on concept, shape, or design direction
 - when multiple materially different paths remain live, keep the interaction in clarification/comparison form until the active path is clear enough
 
+### 2.1) Startup-Gate-First Boundary
+Execution readiness does not cancel startup artifact governance.
+
+Required guidance:
+- do not use execution continuity to bypass `artifact-initiation-control` when meaningful governed work has crossed the startup boundary and required artifact posture is still unresolved
+- resolve startup artifact posture first when design/changelog/TODO/phase/patch or live task-list establishment is still materially pending for the active governed work
+- once startup posture is resolved and the active path is clear enough, execution continuity should keep the work moving instead of re-pausing over the already-resolved artifact gate
+- treat startup artifact resolution as an early gate, not a repeated stop ritual on every later execution slice
+
 ### 3) Continuous-Execution Default Principle
-Once execution mode is active and no real stop gate is present, continue the active objective by default.
+Once execution mode is active, startup posture is already resolved enough for the active slice, and no real stop gate is present, continue the active objective by default.
 
 Required guidance:
 - continue the current objective when the next step is already implied by the active goal, phase, task list, TODO, or checked implementation state
@@ -97,6 +106,7 @@ Apply this rule strongly when one or more of these appear:
 | Trigger | Typical Signal | Required Behavior |
 |--------|-----------------|-------------------|
 | explicit continue intent | user says continue, loop, keep going, proceed until done | enter or preserve execution mode unless a real stop gate exists |
+| startup gate still unresolved | meaningful governed work crossed the startup boundary but required artifact posture is still implicit | resolve startup artifact posture before continuing execution |
 | clear active phase/task path | next task or next phase is already implied and unblocked | continue rather than ending on narration |
 | discoverable unfinished work | phase/TODO/task/checked state already reveals the next unfinished slice | discover it and continue if safe |
 | milestone-only pause drift | response reports completion and names the next task but does not execute it | continue if safe |
@@ -112,6 +122,7 @@ Apply this rule strongly when one or more of these appear:
 |--------------|--------------|-----------------|
 | report-then-stop drift | the user must re-prompt for already-implied work | continue after the report when safe |
 | phase-closure pause ritual | every completed slice creates unnecessary turn breaks | treat completion as transition, not automatic stop |
+| execution continuity used to jump past unresolved startup posture | execution starts acting as if governed artifact posture is already settled | resolve the startup gate first, then continue |
 | execution inside open design discussion | implementation begins before the target is locked | keep discussion mode until the path is clear |
 | discussion-mode inertia after the path is already clear | the assistant keeps re-asking or re-narrating instead of working | switch to execution mode and continue |
 | treating obvious next work as user-choice theater | unnecessary branches stall the active objective | do the next implied step directly |

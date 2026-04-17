@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.26
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 2.27
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-18)
 
 ---
 
@@ -23,7 +23,7 @@ This model must preserve one authority system while clearly separating:
 - `patch/<context>.patch.md` or root `<context>.patch.md` as patch-governance artifacts outside the live phase workspace
 - `phase-implementation-template.md` as the readable root-level helper
 - Claude Code's built-in task list as the live in-session execution surface for non-trivial work
-- `TODO.md` and changelog as required durable companions, but not as replacements for the phase plan itself
+- `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
 - design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
 - `portable-implementation-and-hardcoding-control.md` as the semantic owner of portable-default and anti-hardcoding behavior
@@ -187,6 +187,9 @@ Required startup artifact states:
 This startup gate happens before substantial drift.
 It is distinct from the later synchronization order under UDVC-1.
 
+Required governed surfaces should remain visible as governed companions rather than being reinterpreted as optional execution aids just because the assistant also has live execution surfaces.
+The built-in task list may help execute the work live, but it does not replace required design/changelog/TODO/phase/patch artifacts when the checked work shape still requires those governed surfaces.
+
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
 - treat the file as unresolved until checked master surfaces and relevant governed owner chains are consulted
@@ -265,6 +268,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
 - [ ] Meaningful governed work resolves startup artifact posture before drift
+- [ ] Required governed surfaces remain visible as governed companions instead of being reduced to optional execution aids
 - [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule

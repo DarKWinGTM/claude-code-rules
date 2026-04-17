@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.15
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 2.16
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-18)
 
 ---
 
@@ -163,6 +163,9 @@ When governance work changes governed artifacts, update in this order:
 TODO content updates still occur last among the primary active layers.
 That later content-sync order does not weaken the early startup-establishment rule or the expectation that live task tracking starts early when the work is non-trivial.
 
+When `TODO.md` is required for the governed work, TODO synchronization is required companion work rather than optional bookkeeping.
+That means TODO may sync later in the order, but it still needs to be completed before the governed wave is treated as fully synchronized.
+
 ---
 
 ## 5) Verification Checklist
@@ -174,6 +177,7 @@ That later content-sync order does not weaken the early startup-establishment ru
 - [ ] Tracking posture is resolved early when meaningful tracking is required
 - [ ] Built-in task list is used proactively for non-trivial work when live execution visibility materially helps
 - [ ] Task entries remain outcome-sized rather than command-sized
+- [ ] Required TODO synchronization is not downgraded into optional bookkeeping
 - [ ] TODO content update occurs after design/runtime/changelog synchronization
 
 ---

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.17
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 2.18
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-18)
 
 ---
 
@@ -29,6 +29,8 @@ Use phases when one or more of these are true:
 - multiple systems, files, or owners participate in the same change
 - the user needs a governed plan that shows how design, TODO, and changelog move together during execution
 
+When those signals make phased work clearly implied rather than merely optional, default phase posture should be treated as `use existing`, `create now`, or `ask now` through startup governance rather than being left implicit until later backfill.
+
 ### 2.2 Do not use phased planning when
 Do not add phases when:
 - the work is a single obvious change
@@ -46,6 +48,7 @@ When `artifact-initiation-control` determines phase posture is:
 that phase posture must be resolved before substantial work drifts.
 
 The preferred path is early phase establishment, not retrospective phase backfill.
+When staged or governed execution is already clearly implied by the checked work shape, phase establishment should not be treated as an optional afterthought.
 
 ---
 
@@ -150,6 +153,7 @@ Required guidance:
 
 - [ ] `phase-implementation` explicitly defines `NNN` and `NNN-NN`
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
+- [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs are not used as active canonical phase identifiers
 - [ ] `/phase` examples show a valid major/subphase model

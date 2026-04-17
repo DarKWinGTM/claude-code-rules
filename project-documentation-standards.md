@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.26
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.26
+> **Current Version:** 2.27
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.27
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -84,6 +84,15 @@ That means each relevant startup artifact must be explicitly resolved as one of:
 
 This startup gate happens before substantial drift.
 It is separate from the later synchronization order in section 2.2.
+
+Required governed surfaces should remain visible as governed companions, not be reduced to optional execution aids.
+That means:
+- design remains the target-state authority when behavior/contract/policy changes materially
+- changelog remains the version/history authority for governed chains
+- `TODO.md` remains the durable execution-tracking companion when tracked work is required
+- `/phase` remains the governed staged-execution companion when phased work is required
+- `/patch` remains the governed before/after review companion when patch is actually in scope
+- Claude Code's built-in task list may help execute the work live, but it does not replace those governed surfaces when they are required for the change
 
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
@@ -170,6 +179,7 @@ Required guidance:
 - phased work with governed patch artifacts must show explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - `artifact-initiation-control.md` remains the startup artifact-resolution owner
 - built-in task-list usage remains a live execution surface rather than becoming a governed repository document type
+- the presence of a live execution surface does not downgrade design/changelog/TODO/phase/patch from governed companion status when those surfaces are actually required for the work
 - within the same active objective, the live task-list surface should normally be reused and extended rather than replaced, while durable history still belongs in TODO/phase/changelog surfaces
 - design, phase, TODO, task-list, and checked implementation state may all act as execution-discovery surfaces once work is already in execution mode
 - execution-continuity and goal-review owners may shape how active work keeps moving and how the full objective set stays visible, while tasks, phases, and docs remain the execution surfaces rather than the owner of that behavior
@@ -189,6 +199,7 @@ Required guidance:
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
 - [ ] Meaningful governed work resolves startup artifact posture before drift
+- [ ] Required governed surfaces remain visible as governed companions instead of being reduced to optional execution aids
 - [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is used as the semantic phase rule when applicable
@@ -234,14 +245,14 @@ Required guidance:
 
 | Rule | Relationship |
 |------|-------------|
-| [artifact-initiation-control.md](artifact-initiation-control.md) v1.4 | Startup artifact-resolution owner |
+| [artifact-initiation-control.md](artifact-initiation-control.md) v1.5 | Startup artifact-resolution owner |
 | [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
 | [document-design-control.md](document-design-control.md) v1.8 | Design structure standards |
 | [document-patch-control.md](document-patch-control.md) v2.5 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
-| [phase-implementation.md](phase-implementation.md) v2.14 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
+| [phase-implementation.md](phase-implementation.md) v2.18 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](document-consistency.md) v1.6 | Source-side and destination/runtime reference consistency |
-| [todo-standards.md](todo-standards.md) v2.12 | TODO structure standards plus startup-establishment bridge |
+| [todo-standards.md](todo-standards.md) v2.16 | TODO structure standards plus startup-establishment bridge |
 | [design/rules-plugin-extension.design.md](design/rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active plugin/runtime coordination does not remain part of Main RULES current doctrine |
 
 ---

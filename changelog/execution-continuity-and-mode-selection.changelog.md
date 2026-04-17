@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-04-18 | **[Made startup artifact governance an explicit precondition for execution continuity](#version-16)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.5 | 2026-04-17 | **[Retired stale shared-execution deferral in favor of explicit out-of-scope wording](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.4 | 2026-04-17 | **[Reduced memsearch wording to shared-board defer only](#version-14)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.3 | 2026-04-17 | **[Deferred shared-path task-list coordination to plugin-owned rule source](#version-13)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -17,6 +18,24 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Made startup artifact governance an explicit precondition for execution continuity
+
+**Date:** 2026-04-18
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.5 to v1.6.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.5 to v1.6.
+- Added an explicit startup-gate-first boundary so execution continuity cannot be used to bypass unresolved startup artifact posture once meaningful governed work has crossed the startup boundary.
+- Clarified that continuous execution applies after startup posture is already resolved enough for the active governed slice.
+- Extended triggers and anti-patterns so unresolved startup posture is treated as a real stop gate rather than an execution-continuity exception.
+
+### Summary
+Execution continuity now keeps work moving after startup governance is settled, instead of reading like permission to outrun the startup artifact gate.
 
 ---
 

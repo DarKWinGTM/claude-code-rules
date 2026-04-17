@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.15
+> **Current Version:** 2.16
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.16 | 2026-04-18 | **[Made required TODO sync explicit as companion work](#version-216)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.15 | 2026-04-17 | **[Retired stale shared-execution deferral in TODO standards](#version-215)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.14 | 2026-04-17 | **[Reduced TODO memsearch wording to shared-board defer only](#version-214)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.13 | 2026-04-17 | **[Reduced TODO standards to global task-list doctrine only](#version-213)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -26,6 +27,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-216"></a>
+## Version 2.16: Made required TODO sync explicit as companion work
+
+**Date:** 2026-04-18
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards.md` from v2.15 to v2.16.
+- Updated `design/todo-standards.design.md` from v2.15 to v2.16.
+- Clarified that when `TODO.md` is required for governed work, TODO synchronization is required companion work rather than optional bookkeeping.
+- Added verification coverage so required TODO sync is checked explicitly instead of being left implicit behind the live task-list surface.
+- Preserved the TODO-last synchronization order while tightening the rule that the later sync still has to happen before the governed wave is treated as fully synchronized.
+
+### Summary
+TODO standards now states more directly that durable TODO sync remains required companion work when the governed change actually needs `TODO.md`.
 
 ---
 

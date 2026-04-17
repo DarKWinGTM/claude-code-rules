@@ -1,10 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-17
+> **Last Updated:** 2026-04-18
 
 ---
 
 ## ✅ Completed
+
+- [x] Tighten startup-governance versus execution-continuity boundaries across the existing owner set: `execution-continuity-and-mode-selection` now treats unresolved startup artifact posture as a real precondition, `project-documentation-standards` now keeps required design/changelog/TODO/phase/patch surfaces visible as governed companions alongside live execution surfaces, `todo-standards` now makes required TODO sync explicit companion work, `phase-implementation` now treats clearly staged/governed work as requiring early phase posture, and bounded `phase-065` / `patch/startup-governance-vs-execution-continuity-tightening.patch.md` artifacts plus master/history sync record the wave.
 
 - [x] Extract `technical-snapshot-communication` and `response-closing-and-action-framing` out of `accurate-communication`, create both governed design/runtime/changelog triads, narrow `accurate-communication` to the broader communication-owner role, retarget touched integrations, add bounded `phase-062` / `patch/accurate-communication-owner-extraction.patch.md` artifacts, update master surfaces, and resync installed runtime copies.
 
@@ -98,6 +100,7 @@
 
 ### Active Verification
 - [ ] Run a final RULES-side consistency audit for stale historical wording/reference drift.
+- [ ] Run a final RULES-side consistency audit for the startup-governance versus execution-continuity tightening wave.
 - [ ] Run a final RULES-side consistency audit for the retired memsearch/bridge cleanup wave.
 - [x] Complete the shared-task-list-path extraction cleanup so Main RULES keeps only global task-list doctrine and shared-board-specific semantics stay outside Main RULES scope.
 - [x] Complete the final RULES-side cleanup pass so git update/release can happen without stale unified-package ownership claims or stray non-release artifacts.
@@ -108,6 +111,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-18 | Tightened startup-governance versus execution-continuity boundaries across the existing owner set: `execution-continuity-and-mode-selection` now treats unresolved startup artifact posture as a real precondition, `project-documentation-standards` now reasserts design/changelog/TODO/phase/patch as governed companions rather than optional execution aids, `todo-standards` now states that required TODO sync is companion work rather than optional bookkeeping, and `phase-implementation` now treats clearly staged/governed work as requiring early phase posture instead of late backfill. |
 | 2026-04-17 | Retired discontinued memsearch custom-skill doctrine and the former `session-coordination-bridge` path from Main RULES active teaching: active doctrine now uses only generic optional external recall wording, stale deferrals to removed in-repo coordination owners were replaced with direct out-of-scope boundaries, bounded `phase-064` / `patch/retire-memsearch-custom-skill-and-bridge-doctrine.patch.md` artifacts record the wave, and historical bridge/memsearch references are being reframed as retired history only rather than current usable capability. |
 | 2026-04-17 | Refined file-disposal authority and delete-guard behavior across existing RULES owners: `authority-and-scope` now keeps checked master/governed repo surfaces above git-state cleanup heuristics, `project-documentation-standards` now requires master-surface consultation before junk/disposal classification, `strict-file-hygiene` now blocks cleanup/hygiene wording from acting as deletion authority, `artifact-initiation-control` now keeps unresolved new-file classification separate from disposal conclusions, `functional-intent-verification` now has a real runtime body with destructive delete confirmation, companion evidence/reference owners now keep git-state signals in the weak local-evidence lane, and bounded `phase-063` / `patch/file-disposal-authority-and-delete-guard-refinement.patch.md` artifacts record the wave. |
 | 2026-04-17 | Extracted two first-class specialist communication owners out of `accurate-communication`: `technical-snapshot-communication` now owns bounded technical snapshot wording, and `response-closing-and-action-framing` now owns concise synthesis / recommendation / advisory proposal framing; synchronized touched companion/master surfaces and opened the bounded `phase-062` / `patch/accurate-communication-owner-extraction.patch.md` wave. |
