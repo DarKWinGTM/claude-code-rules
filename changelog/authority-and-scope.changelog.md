@@ -61,7 +61,7 @@ Authority-and-scope now explicitly keeps repo-governed semantic surfaces above g
 ### Changes
 - Updated `authority-and-scope.md` from v2.2 to v2.3.
 - Updated `design/authority-and-scope.design.md` from v2.2 to v2.3.
-- Added explicit deferral that shared-board multi-session coordination semantics such as session lease, handoff, retention/aging, and optional-extension support now live in `shared-execution-coordination.md`.
+- Historical note: that wave originally deferred shared-board multi-session coordination semantics to `shared-execution-coordination.md` before Main RULES later retired that in-repo coordination owner from active doctrine.
 - Preserved overall precedence, user authority, and fresh-directive override behavior.
 
 ### Summary

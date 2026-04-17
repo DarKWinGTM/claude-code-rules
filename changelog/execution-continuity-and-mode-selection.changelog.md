@@ -1,8 +1,8 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,12 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-17 | **[Retired stale shared-execution deferral in favor of explicit out-of-scope wording](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.4 | 2026-04-17 | **[Reduced memsearch wording to shared-board defer only](#version-14)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.3 | 2026-04-17 | **[Deferred shared-path task-list coordination to plugin-owned rule source](#version-13)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.2 | 2026-04-13 | **[Deferred shared-board coordination semantics to the new coordination owner](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Retired stale shared-execution deferral in favor of explicit out-of-scope wording
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.4 to v1.5.
+- Replaced the old defer line that still pointed to `shared-execution-coordination.md` with explicit wording that shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES current doctrine.
+- Kept execution-continuity focused on mode selection, next-work discovery, and generic stop/continue behavior.
+
+### Summary
+Execution-continuity no longer points readers to a stale in-repo coordination owner and now states the out-of-scope boundary directly.
 
 ---
 
@@ -30,7 +47,7 @@
 - Kept execution-continuity focused on mode selection, next-work discovery, and generic stop/continue behavior.
 
 ### Summary
-Execution-continuity now keeps no active memsearch doctrine of its own beyond a narrow shared-board defer boundary.
+Execution-continuity now keeps no active memsearch doctrine of its own beyond a narrow shared-board/out-of-scope boundary.
 
 ---
 

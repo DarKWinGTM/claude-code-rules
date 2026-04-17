@@ -1,8 +1,8 @@
 # Execution Continuity and Mode Selection
 
-> **Current Version:** 1.2
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.2
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.5
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 
 ---
@@ -48,7 +48,7 @@ When execution mode remains active, the assistant should actively inspect the cu
 
 Required guidance:
 - use the current task list first when it already expresses the active objective clearly
-- defer session-lease, handoff, retention/aging, anti-overclear, and optional-extension coordination semantics to `shared-execution-coordination.md`
+- shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES current doctrine
 - if the task list alone is insufficient, inspect the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice
 - prefer the next unfinished work that belongs to the same active objective or phase family before opening a fresh objective
 - treat design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once the work is already in execution mode

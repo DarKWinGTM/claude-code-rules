@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.14
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-17)
+> **Current Version:** 2.15
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -18,7 +18,7 @@ Define a simple execution-tracking governance model that stays aligned with UDVC
 
 Applies to the durable `TODO.md` layer plus Claude Code's built-in live task list when active non-trivial work needs execution visibility.
 
-Multi-session shared-board coordination semantics are outside Main RULES scope.
+Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.16
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-17)
+> **Current Version:** 2.17
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -12,7 +12,7 @@
 
 Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable `/phase` structure and establishes `/phase` early when startup artifact governance already shows phased work is required.
 
-Multi-session shared-board coordination semantics are outside Main RULES scope.
+Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
 ---
 

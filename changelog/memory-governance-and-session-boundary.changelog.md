@@ -1,8 +1,8 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 1.3
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,12 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-17 | **[Retired memsearch-specific naming in favor of generic optional external recall wording](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.4 | 2026-04-17 | **[Reduced memory-governance memsearch wording to global optional-recall doctrine only](#version-14)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.3 | 2026-04-13 | **[Added optional-recall availability check and immediate fallback guidance](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-13 | **[Clarified how optional recall extensions should be used after stronger execution surfaces](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-13 | **[Added optional extension recall boundary for memsearch-style layers](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-09 | **[Created first-class memory-governance-and-session-boundary rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Retired memsearch-specific naming in favor of generic optional external recall wording
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `memory-governance-and-session-boundary.md` from v1.4 to v1.5.
+- Updated `design/memory-governance-and-session-boundary.design.md` from v1.4 to v1.5.
+- Replaced remaining memsearch-specific naming with generic optional external recall wording.
+- Removed the last defer line that still pointed active memory-governance recall behavior at `shared-execution-coordination.md`.
+- Preserved the fallback-safe, supplemental-only recall boundary without implying a Main RULES-managed custom-skill path.
+
+### Summary
+Memory-governance now describes optional external recall generically, without teaching memsearch-specific custom-skill doctrine inside Main RULES.
 
 ---
 

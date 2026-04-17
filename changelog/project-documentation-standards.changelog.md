@@ -68,7 +68,7 @@ Project-documentation-standards now requires master-surface consultation before 
 - Kept project-documentation-standards focused on repository role boundaries rather than active shared-board memsearch doctrine.
 
 ### Summary
-Project-documentation-standards now keeps no active memsearch doctrine of its own beyond a shared-board defer boundary, and its integration block now matches the touched-chain versions from this ownership split.
+Project-documentation-standards now keeps no active memsearch doctrine of its own beyond a shared-board/out-of-scope boundary, and its integration block now matches the touched-chain versions from this ownership split.
 
 ---
 

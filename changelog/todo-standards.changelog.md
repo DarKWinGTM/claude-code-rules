@@ -1,8 +1,8 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.14
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.15
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.15 | 2026-04-17 | **[Retired stale shared-execution deferral in TODO standards](#version-215)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.14 | 2026-04-17 | **[Reduced TODO memsearch wording to shared-board defer only](#version-214)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.13 | 2026-04-17 | **[Reduced TODO standards to global task-list doctrine only](#version-213)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.12 | 2026-04-13 | **[Made visible session ownership a default task-list standard for session-owned work](#version-212)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -28,6 +29,22 @@
 
 ---
 
+<a id="version-215"></a>
+## Version 2.15: Retired stale shared-execution deferral in TODO standards
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards.md` from v2.14 to v2.15.
+- Replaced the old defer line that still pointed to `shared-execution-coordination.md` with explicit wording that shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine.
+- Kept TODO standards focused on durable-vs-live tracking roles and the generic task-list update contract.
+
+### Summary
+TODO standards no longer point to a stale in-repo coordination owner and now state the out-of-scope boundary directly.
+
+---
+
 <a id="version-214"></a>
 ## Version 2.14: Reduced TODO memsearch wording to shared-board defer only
 
@@ -39,7 +56,7 @@
 - Kept TODO standards focused on the global live-task-list trigger model, same-objective retention, and generic update contract.
 
 ### Summary
-TODO standards now keep no active memsearch doctrine of their own beyond a narrow shared-board defer boundary.
+TODO standards now keep no active memsearch doctrine of their own beyond a narrow shared-board/out-of-scope boundary.
 
 ---
 

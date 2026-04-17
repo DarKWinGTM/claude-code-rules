@@ -19,6 +19,7 @@ Preserve the historical design context for the former RULES plugin-extension lin
 The active model is now:
 - root RULES = generic communication/evidence/governance rules plus global task-list doctrine
 - shared-board-specific coordination semantics stay outside Main RULES active doctrine
+- discontinued custom memsearch and `session-coordination-bridge` skill paths are retired history only
 - no active `plugin/` package remains under `TEMPLATE/RULES/`
 
 พูดง่าย ๆ:
@@ -44,6 +45,8 @@ It is **not** meant to:
 - describe an active plugin shell under `TEMPLATE/RULES/`
 - claim active compact lifecycle hook ownership
 - claim active shared-task coordination runtime ownership
+- claim an active `session-coordination-bridge` skill path under RULES
+- claim active custom memsearch skill support under RULES
 - act like a second semantic authority stack
 
 ---

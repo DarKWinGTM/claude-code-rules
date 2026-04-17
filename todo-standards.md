@@ -1,8 +1,8 @@
 # TODO Standards
 
-> **Current Version:** 2.12
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.12
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.15
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.15
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 **Core Principle: Keep `TODO.md` as the durable execution-tracking layer, use Claude Code's built-in task list as the live execution-tracking surface for non-trivial active work, and resolve tracking posture early instead of treating it as retrospective cleanup.**
 
-Multi-session shared-board coordination semantics such as session lease, handoff, retention/aging, anti-overclear behavior, and optional memsearch support defer to `shared-execution-coordination.md`.
+Multi-session shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine.
 
 ---
 

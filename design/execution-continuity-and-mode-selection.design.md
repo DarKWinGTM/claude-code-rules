@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd (2026-04-17)
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 
@@ -90,7 +90,7 @@ It does not replace:
 - presentation wording
 - task-list mechanics
 - approval/confirmation mechanics
-- shared-board coordination semantics, including shared-board-specific memsearch handling, which stay outside Main RULES scope
+- shared-board, plugin, and external coordination/runtime mechanics, including any discontinued custom recall/skill paths, which stay outside Main RULES scope
 
 ---
 

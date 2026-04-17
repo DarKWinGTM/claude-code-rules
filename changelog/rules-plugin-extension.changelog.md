@@ -424,7 +424,7 @@ The RULES plugin topology is now corrected: `claude-code-rules` is the session-c
 - Updated compact session-state schema prefixes from `rules-compact-extension/*` to `claude-code-rules/*` so persisted runtime state matches the new plugin identity.
 
 ### Summary
-The RULES plugin companion now exposes an operator-facing session coordination support skill under the `claude-code-rules` namespace and uses one coherent plugin identity across install flow, runtime signals, and persisted compact state.
+Historical note: this wave added an operator-facing session coordination support skill under the `claude-code-rules` namespace during the old plugin-extension stage. It is preserved as history only and does not imply a current usable skill path inside Main RULES.
 
 ---
 

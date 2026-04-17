@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.56
+> **Current Version:** 9.57
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.57 | 2026-04-17 | **[Retired custom memsearch and bridge doctrine from Main RULES active teaching](#version-957)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.56 | 2026-04-17 | **[Strengthened file-disposal authority and delete-guard behavior across existing RULES owners](#version-956)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.55 | 2026-04-17 | **[Extracted two first-class communication owners out of accurate-communication](#version-955)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.54 | 2026-04-17 | **[Retired shared-execution-coordination from the active RULES runtime set](#version-954)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -91,6 +92,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-957"></a>
+## Version 9.57: Retired custom memsearch and bridge doctrine from Main RULES active teaching
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `memory-governance-and-session-boundary` so Main RULES now uses generic optional external recall wording instead of memsearch-specific custom-skill naming.
+- Updated `execution-continuity-and-mode-selection`, `phase-implementation`, and `todo-standards` so stale deferrals to in-repo coordination owners are replaced with direct out-of-scope wording.
+- Updated `project-documentation-standards` so integration and role-boundary wording no longer points to removed in-repo coordination doctrine.
+- Updated `README.md` and `design/design.md` so active summaries no longer imply a Main RULES-managed memsearch/bridge capability.
+- Reframed historical bridge/memsearch records so they read as retired history only rather than current usable capability.
+- Added bounded `phase-064` and `patch/retire-memsearch-custom-skill-and-bridge-doctrine.patch.md` artifacts for the retirement wave.
+
+### Summary
+Main RULES no longer teaches discontinued memsearch custom-skill or `session-coordination-bridge` paths as current capability; only generic optional external recall boundaries remain, and the old mechanisms are preserved as retired history.
 
 ---
 
@@ -575,7 +595,7 @@ The RULES plugin rollout is now topology-correct: compact helper behavior stays 
 - Added bounded `patch/session-coordination-bridge-skill-rollout.patch.md` plus `phase-041-01` and `phase-041-02` artifacts for the skill rollout wave.
 
 ### Summary
-The optional RULES plugin companion now exposes `claude-code-rules:session-coordination-bridge` as a bounded support skill and uses one coherent `claude-code-rules` plugin identity across install flow, runtime signals, and persisted compact state.
+Historical note: this wave added the former `claude-code-rules:session-coordination-bridge` support skill during the old plugin-extension stage. It is preserved as retired history only and does not imply a current usable skill path inside Main RULES.
 
 ---
 
@@ -591,7 +611,7 @@ The optional RULES plugin companion now exposes `claude-code-rules:session-coord
 - Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
 
 ### Summary
-Historical note: this wave originally lived in Main RULES. The active shared-board-specific memsearch semantics from this wave no longer remain in Main RULES, while global/general optional-recall doctrine remains in `memory-governance-and-session-boundary`. 
+Historical note: this wave originally lived in Main RULES. The former memsearch availability-detection / fallback-intake behavior is preserved as retired history only; current Main RULES keeps only generic optional external recall doctrine in `memory-governance-and-session-boundary`.
 
 ---
 
@@ -628,7 +648,7 @@ The RULES repository now treats visible session ownership as a default task-list
 - Updated master design/README/TODO/phase surfaces while keeping the active runtime rule count unchanged at 40.
 
 ### Summary
-Historical note: the active memsearch semantics from this refinement are now split cleanly — shared-board-specific doctrine no longer remains in Main RULES, while global/general optional-recall doctrine remains in Main RULES.
+Historical note: the former memsearch semantics from this refinement are now preserved as retired history — shared-board-specific doctrine no longer remains in Main RULES, while only generic optional external recall wording remains in Main RULES.
 
 ---
 

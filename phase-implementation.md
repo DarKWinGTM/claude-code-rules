@@ -1,8 +1,8 @@
 # Phase Implementation
 
-> **Current Version:** 2.16
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.16
-> **Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+> **Current Version:** 2.17
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.17
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
 ---
@@ -13,7 +13,7 @@
 
 This rule defines the semantic standard for phase planning. The governed summary/index lives in `/phase/SUMMARY.md`, executable phase detail lives in `/phase/phase-NNN-*.md` or `/phase/phase-NNN-NN-*.md`, design remains target-state authority, patch remains governed change/review authority as explicit before/after change artifacts, and the root helper remains a non-governed drafting aid.
 
-Multi-session shared-board coordination semantics such as session lease, handoff, retention/aging, anti-overclear behavior, and optional memsearch support defer to `shared-execution-coordination.md`.
+Multi-session shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine.
 
 ---
 

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.31
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.16
+> **Current Version:** 1.32
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.17
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
-> **Status:** Active summary synchronized through phase 063
+> **Status:** Active summary synchronized through phase 064
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace contains sixty-three rollout families:
+The current workspace contains sixty-four rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -66,6 +66,7 @@ The current workspace contains sixty-three rollout families:
 - major phase `061` = Main RULES shared-task extraction cleanup rollout
 - major phase `062` = accurate-communication owner extraction rollout
 - major phase `063` = file-disposal authority and delete-guard refinement rollout
+- major phase `064` = retired memsearch custom-skill and bridge doctrine cleanup rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -276,6 +277,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 062 | 062-04 | `phase/phase-062-04-run-postflight-overlap-audit.md` | `design/technical-snapshot-communication.design.md` + `design/response-closing-and-action-framing.design.md` + touched adjacent designs | `patch/accurate-communication-owner-extraction.patch.md` | Run the final overlap/parity sweep so the extracted domains no longer sit under duplicate active authority | Wave `062` completes with coherent specialist ownership and verified source/install parity |
 | 063 | 063-01 | `phase/phase-063-01-refine-file-disposal-authority-and-delete-guard.md` | `design/authority-and-scope.design.md` + `design/project-documentation-standards.design.md` + `design/strict-file-hygiene.design.md` + `design/artifact-initiation-control.design.md` + `design/functional-intent-verification.design.md` + `design/evidence-grounded-burden-of-proof.design.md` + `design/no-variable-guessing.design.md` + `design/document-consistency.design.md` + `design/zero-hallucination.design.md` | `patch/file-disposal-authority-and-delete-guard-refinement.patch.md` | Refine the existing owner set so newly encountered or untracked files cannot be treated as disposable by cleanup instinct, git-state overreach, or isolation rationale | Existing owners now close the file-disposal governance gap without creating a new first-class doctrine chain |
 | 063 | 063-02 | `phase/phase-063-02-sync-master-surfaces-and-verify-delete-guard.md` | `design/design.md` + `design/project-documentation-standards.design.md` + `design/authority-and-scope.design.md` + `design/functional-intent-verification.design.md` | `patch/file-disposal-authority-and-delete-guard-refinement.patch.md` | Synchronize the master RULES surfaces and verify that the new file-disposal-authority and delete-guard contract is coherent across the repo | Repo-level governance and history surfaces reflect the new delete-guard refinement coherently |
+| 064 | 064-01 | `phase/phase-064-01-retire-memsearch-custom-skill-and-bridge-doctrine.md` | `design/memory-governance-and-session-boundary.design.md` + `design/design.md` + `design/rules-plugin-extension.design.md` | `patch/retire-memsearch-custom-skill-and-bridge-doctrine.patch.md` | Retire discontinued memsearch custom-skill doctrine and the former `session-coordination-bridge` path from Main RULES active teaching while preserving bounded historical records | Main RULES no longer teaches retired custom recall/bridge capability as current doctrine |
+| 064 | 064-02 | `phase/phase-064-02-sync-master-surfaces-and-verify-retirement.md` | `design/design.md` + `design/memory-governance-and-session-boundary.design.md` + `design/rules-plugin-extension.design.md` | `patch/retire-memsearch-custom-skill-and-bridge-doctrine.patch.md` | Synchronize the master RULES surfaces and verify that retired memsearch/bridge doctrine no longer reads like current capability in Main RULES | Repo-level governance/history surfaces reflect the retired-state outcome coherently |
 
 ---
 
@@ -365,6 +368,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 062 | 062-04 | `phase/phase-062-04-run-postflight-overlap-audit.md` | Approved | None | Approved As-Is | overlap/parity sweep confirmed the extracted domains now defer to their new specialist owners |
 | 063 | 063-01 | `phase/phase-063-01-refine-file-disposal-authority-and-delete-guard.md` | Approved | None | Approved As-Is | existing owners now close the file-disposal governance gap without creating a new first-class doctrine chain |
 | 063 | 063-02 | `phase/phase-063-02-sync-master-surfaces-and-verify-delete-guard.md` | Approved | None | Approved As-Is | master surfaces synchronized and postflight verification completed |
+| 064 | 064-01 | `phase/phase-064-01-retire-memsearch-custom-skill-and-bridge-doctrine.md` | Approved | None | Approved As-Is | active Main RULES doctrine no longer teaches retired custom memsearch or bridge mechanics as current capability |
+| 064 | 064-02 | `phase/phase-064-02-sync-master-surfaces-and-verify-retirement.md` | Approved | None | Approved As-Is | master/history surfaces now frame the old memsearch/bridge mechanics as retired history only and no longer read like current capability |
 | 032 | 032-02 | `phase/phase-032-02-sync-high-signal-master-docs-and-runtime-install.md` | Approved | None | Approved As-Is | master-surface sync completed and runtime-install parity restored for the high-signal promotion wave |
 | 033 | 033-01 | `phase/phase-033-01-create-execution-continuity-rule-chain.md` | Approved | None | Approved As-Is | first-class execution-continuity owner created |
 | 033 | 033-02 | `phase/phase-033-02-create-goal-set-review-rule-chain.md` | Approved | None | Approved As-Is | first-class goal-review owner created |
@@ -479,6 +484,8 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 062 | 062-04 | Completed | `phase/phase-062-04-run-postflight-overlap-audit.md` | Run the final overlap and parity sweep for the communication owner extraction wave | `062-03` |
 | 063 | 063-01 | Completed | `phase/phase-063-01-refine-file-disposal-authority-and-delete-guard.md` | Refine the existing owner set so newly encountered or untracked files cannot be treated as disposable by cleanup instinct, git-state overreach, or isolation rationale | none |
 | 063 | 063-02 | Completed | `phase/phase-063-02-sync-master-surfaces-and-verify-delete-guard.md` | Synchronize the master RULES surfaces and verify that the new file-disposal-authority and delete-guard contract is coherent across the repo | `063-01` |
+| 064 | 064-01 | Completed | `phase/phase-064-01-retire-memsearch-custom-skill-and-bridge-doctrine.md` | Retire discontinued memsearch custom-skill doctrine and the former `session-coordination-bridge` path from Main RULES active teaching while preserving bounded historical records | none |
+| 064 | 064-02 | Completed | `phase/phase-064-02-sync-master-surfaces-and-verify-retirement.md` | Synchronize the master RULES surfaces and verify that retired memsearch/bridge doctrine no longer reads like current capability in Main RULES | `064-01` |
 
 ---
 
@@ -521,11 +528,11 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the plain aligned no-frame table-style refinement exists as a bounded `028` family with explicit patch linkage, owner-set refinement across presentation/explanation surfaces, synchronized master-governance surfaces, and preserved distinction between table style correction and table-frequency reduction
 - the next-work discovery refinement exists as a bounded `035` family with explicit patch linkage, owner-set refinement across continuity/task-list/phase/repository-model surfaces, synchronized master-governance surfaces, and preserved stop-gate / same-objective boundaries
 - the handoff request-vs-receiving-phase refinement exists as a bounded `037` family with explicit patch linkage, request-layer vs execution-layer separation, receiving-side phase ownership clarity, synchronized master-governance surfaces, and preserved phase-neutral handoff naming by default
-- the shared-board visibility / retention / memsearch operating-detail refinement exists as a bounded `038` family with explicit patch linkage, visible session identity guidance, explicit lifecycle and retention behavior, synchronized master-governance surfaces, and optional recall-layer guidance that remains subordinate to stronger checked execution evidence
-- the universal session-owned task title grammar refinement exists as a bounded `039` family with explicit patch linkage, default visible session ownership across usage modes, distinct request / held / blocked title forms, synchronized master-governance surfaces, and preserved request-layer vs execution-layer clarity
+- the shared-board visibility / retention / memsearch operating-detail refinement exists as a bounded `038` family with explicit patch linkage, preserved as retired history after coordination/package ownership moved out of Main RULES
+- the universal session-owned task title grammar refinement exists as a bounded `039` family with explicit patch linkage, preserved as retired history after coordination/package ownership moved out of Main RULES
 - the current owner set keeps `For <session-short-id> owner: ...` as the request-layer form rather than forcing it onto every task state, while making visible session ownership standard across usage modes
-- the memsearch availability-detection / fallback-intake refinement exists as a bounded `040` family with explicit patch linkage, explicit availability-first optional recall intake, immediate fallback when the optional extension is absent or probe fails, synchronized master-governance surfaces, and preserved stronger-surface-first evidence boundaries
-- the session coordination bridge skill rollout exists as a bounded historical `041` family with explicit patch linkage, preserving the former plugin-extension skill wave without implying that a local RULES plugin shell is still active
+- the memsearch availability-detection / fallback-intake refinement exists as a bounded `040` family with explicit patch linkage, preserved as retired history after custom memsearch skill development was discontinued in Main RULES
+- the session coordination bridge skill rollout exists as a bounded historical `041` family with explicit patch linkage, preserving the former plugin-extension skill wave as retired history only without implying that a local RULES plugin shell or usable skill path still exists
 - the plugin topology correction exists as a bounded historical `042` family with explicit patch linkage, preserving the former split-topology record without treating it as the current install/runtime model
 - the unified Rules plugin rollout exists as a bounded historical `043` family with explicit patch linkage, preserving the old unified-plugin stage before the later split and shell removal
 - the final Main RULES sync is recorded as bounded `061-01`, closing the local shell-removal cleanup so current root/doc surfaces no longer imply an active `RULES/plugin` package

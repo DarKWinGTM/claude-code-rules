@@ -174,7 +174,7 @@ Required guidance:
 - design, phase, TODO, task-list, and checked implementation state may all act as execution-discovery surfaces once work is already in execution mode
 - execution-continuity and goal-review owners may shape how active work keeps moving and how the full objective set stays visible, while tasks, phases, and docs remain the execution surfaces rather than the owner of that behavior
 - visible session ownership should remain a default task-list standard for session-owned work rather than a convention that only turns on when several sessions happen to share one task-list path
-- shared-board multi-session coordination semantics such as session lease, handoff, retention/aging, anti-overclear behavior, optional-extension support, and session-state title grammar should defer to `shared-execution-coordination.md` rather than being reinvented ad hoc across task/phase/doc layers
+- shared-board, plugin, and external coordination/runtime mechanics should stay outside Main RULES scope rather than being reinvented ad hoc across task/phase/doc layers
 - request-layer titles such as `For <session-short-id> owner: ...` should remain distinct from held-owner and blocked-owner title forms so board readers can identify session state consistently across usage modes
 - shared board request-layer naming should remain distinct from receiving-side execution-layer phase structure so sender phase labels do not become the default visible title for accepted receiving-side work
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
@@ -242,7 +242,7 @@ Required guidance:
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](document-consistency.md) v1.6 | Source-side and destination/runtime reference consistency |
 | [todo-standards.md](todo-standards.md) v2.12 | TODO structure standards plus startup-establishment bridge |
-| [shared-execution-coordination.md](shared-execution-coordination.md) v1.3 | Shared-board multi-session coordination semantics, default session-state title grammar, visible session identity, lifecycle/retention behavior, request-layer naming, and receiving-side phase ownership boundary |
+| [design/rules-plugin-extension.design.md](design/rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active plugin/runtime coordination does not remain part of Main RULES current doctrine |
 
 ---
 

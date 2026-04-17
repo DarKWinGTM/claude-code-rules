@@ -57,19 +57,19 @@ Observed failure modes this design intends to close:
 
 ### 3.2 Out of Scope
 - actual migration of live memory files under `~/.claude/projects/.../memory/`
-- treating optional extension/plugin recall layers such as memsearch as required infrastructure
+- treating optional external recall tooling as required infrastructure
 - changing the existing live memory directory layout in the same wave that creates the governance contract
 - low-level Claude Code internals or undocumented recursive loader behavior
 - general communication, evidence, or layout rules except where those adjacent chains need narrow integration updates
 
-### 3.2.1 Optional Extension Recall Boundary
-Optional recall extensions such as memsearch may improve continuity when available, but they do not become required infrastructure or authority by existing.
+### 3.2.1 Optional External Recall Boundary
+Optional external recall tooling may improve continuity when available, but it does not become required infrastructure or authority by existing.
 
 Required behavior:
-- treat optional recall extensions as supplemental context bridges rather than semantic truth
-- when available, they may accelerate recall after the relevant continuation target has already been identified from stronger surfaces
+- treat optional external recall as a supplemental context bridge rather than semantic truth
+- when available, it may accelerate recall after the relevant continuation target has already been identified from stronger surfaces
 - optional recall output must not outrank checked task/phase/design/implementation evidence when those stronger surfaces already settle the active meaning
-- if an optional recall extension is unavailable, the general memory model must still function without it
+- if optional external recall is unavailable, the general memory model must still function without it
 - shared-board / shared-task-list-specific intake, handoff, and cross-session continuation semantics stay outside Main RULES scope
 
 ### 3.3 Boundary Principle

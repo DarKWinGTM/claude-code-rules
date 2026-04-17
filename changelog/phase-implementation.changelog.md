@@ -1,8 +1,8 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.16
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.17
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.17 | 2026-04-17 | **[Retired stale coordination defer line in favor of explicit out-of-scope wording](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.16 | 2026-04-17 | **[Reduced phase-implementation memsearch wording to shared-board defer only](#version-216)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.15 | 2026-04-17 | **[Reduced phase-implementation to global phase↔task-list doctrine](#version-215)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.14 | 2026-04-13 | **[Clarified held-owner task forms inside phase-linked execution work](#version-214)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -31,6 +32,22 @@
 
 ---
 
+<a id="version-217"></a>
+## Version 2.17: Retired stale coordination defer line in favor of explicit out-of-scope wording
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `phase-implementation.md` from v2.16 to v2.17.
+- Replaced the old defer line that still pointed to `shared-execution-coordination.md` with explicit wording that shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine.
+- Kept phase-implementation focused on phase semantics and phase↔task-list behavior.
+
+### Summary
+Phase-implementation no longer points to a stale in-repo coordination owner and now states the out-of-scope boundary directly.
+
+---
+
 <a id="version-216"></a>
 ## Version 2.16: Reduced phase-implementation memsearch wording to shared-board defer only
 
@@ -42,7 +59,7 @@
 - Kept phase-implementation focused on the global phase↔task-list doctrine and receiving-side remap boundary only through shared-board defer references.
 
 ### Summary
-Phase-implementation now keeps no active memsearch doctrine of its own beyond a narrow shared-board defer boundary.
+Phase-implementation now keeps no active memsearch doctrine of its own beyond a narrow shared-board/out-of-scope boundary.
 
 ---
 

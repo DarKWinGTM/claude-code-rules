@@ -30,7 +30,7 @@ This model must preserve one authority system while clearly separating:
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
 - `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
 - package-local support assets such as optional `skills/`, optional `agents/`, scripts, and plugin-owned docs remaining portable by default when they are maintained as reusable source artifacts
-- shared-board multi-session coordination semantics, including shared-board-specific memsearch handling, staying outside Main RULES scope rather than being redefined ad hoc in the repository role model
+- shared-board multi-session coordination semantics and any discontinued custom recall/skill mechanics staying outside Main RULES scope rather than being redefined ad hoc in the repository role model
 - visible session ownership remaining a default task-list standard for session-owned work rather than a convention that only turns on when several sessions share one task-list path
 - request-layer naming remaining distinct from receiving-side execution-layer phase structure so sender phase labels do not become the default visible handoff title
 
@@ -317,7 +317,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side and destination/runtime reference consistency |
 | [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking and default visible session ownership for session-owned work |
-| [shared-execution-coordination.md](../shared-execution-coordination.md) | Shared-board coordination semantics, default session-state title grammar, visible session identity, lifecycle/retention behavior, request-layer naming, and receiving-side phase ownership boundary |
+| [rules-plugin-extension.design.md](rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active shared-board/plugin/runtime coordination does not remain part of Main RULES current doctrine |
 
 ---
 
