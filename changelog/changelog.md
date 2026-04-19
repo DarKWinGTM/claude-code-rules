@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.58
+> **Current Version:** 9.60
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.60 | 2026-04-19 | **[Clarified legacy history authority boundaries after the ownership split](#version-960)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
+| 9.59 | 2026-04-19 | **[Aligned task creation more strongly to phase context and session language](#version-959)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.58 | 2026-04-18 | **[Tightened startup-governance versus execution-continuity boundaries across existing owners](#version-958)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.57 | 2026-04-17 | **[Retired custom memsearch and bridge doctrine from Main RULES active teaching](#version-957)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.56 | 2026-04-17 | **[Strengthened file-disposal authority and delete-guard behavior across existing RULES owners](#version-956)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -93,6 +95,40 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-960"></a>
+## Version 9.60: Clarified legacy history authority boundaries after the ownership split
+
+**Date:** 2026-04-19
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `design/design.md` so the active repository model now states directly that older coordination-flavored rollout records in master/history surfaces remain historical context only after the ownership split.
+- Updated `README.md` so the overview layer now states directly that older coordination-flavored rollout records in `TODO.md`, `phase/SUMMARY.md`, and `changelog/changelog.md` remain historical context only while active authority stays with the active runtime/design surfaces.
+- Updated `TODO.md` and `phase/SUMMARY.md` so the bounded clarification wave is visible in master/history surfaces without rewriting the older historical record.
+- Added bounded `phase-067` and `patch/legacy-history-authority-boundary-clarification.patch.md` artifacts for the clarification wave.
+
+### Summary
+The RULES repository now makes it clearer that older shared-board/session-title rollout records remain historical context only after the ownership split, while current active authority stays with the active runtime and design surfaces.
+
+---
+
+<a id="version-959"></a>
+## Version 9.59: Aligned task creation more strongly to phase context and session language
+
+**Date:** 2026-04-19
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards` so task creation now aligns more strongly to active phase or clearly implied staged/phase context and follows the active session language/register more naturally.
+- Updated `phase-implementation` so phase-linked task creation can still follow clearly implied staged context before the exact next phase file exists.
+- Updated `project-documentation-standards` so the repository model reinforces phase-shaped task creation instead of detached standalone task wording.
+- Added bounded `phase-066` and `patch/task-list-phase-context-and-session-language-refinement.patch.md` artifacts for the refinement wave.
+
+### Summary
+The RULES system now says more clearly that task creation should follow current phase structure when visible, clearly implied staged context when not yet formalized, and current session language when wording the human-facing task body.
 
 ---
 

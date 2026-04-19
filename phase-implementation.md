@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.18
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.18
+> **Current Version:** 2.19
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.19
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -52,6 +52,7 @@ Use phased planning when one or more of these are true:
 - the project needs a governed plan that shows how design, TODO, and changelog move together during execution
 
 When those signals make phased work clearly implied rather than merely optional, default phase posture should be treated as `use existing`, `create now`, or `ask now` through startup governance rather than being left implicit until later backfill.
+When that staged/phase-shaped context is already clear, live task-list creation should also follow that execution structure provisionally rather than waiting for the exact next phase file to exist first.
 
 ### 3) Startup Bridge for Phase Establishment
 
@@ -167,19 +168,17 @@ Each executable child phase file should define, or clearly map to:
 ### 9.1 Live Task-List Linkage Contract
 When a phase is active and the work is non-trivial, the built-in task list should mirror the current phase's execution slices.
 
+If the exact next phase file does not yet exist, but the checked project/workstream context already makes the current staged or phase family clear, task creation should still follow that implied phase structure provisionally instead of reverting to detached generic standalone task shaping.
+
 Required guidance:
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
 - when repeated slices still belong to the same active objective/phase family, extend the current task-list surface instead of recreating it
+- task wording created from phase-linked work should still align naturally with the active session language/register rather than reverting to detached generic phrasing
 - treat the current phase and `phase/SUMMARY.md` as execution-discovery surfaces when the next unfinished slice is not fully obvious from the task list alone
 - use checked implementation state alongside the phase workspace when phase text and current repo state together reveal the next unfinished work more clearly than either one alone
-- visible session-state grammar should remain the default board-facing standard for session-owned task-list work even when the current task list is not being shared across several sessions
-- shared handoff/request titles should not be mistaken for the receiving session's phase identity by default
-- if accepted cross-session work needs phase tracking, the receiving session should remap it into its own phase/objective structure instead of inheriting the sender's phase label as the visible task title
-- request-layer titles such as `For <session-short-id> owner: ...` should remain distinct from held-owner execution titles such as `<session-short-id> owner: ...` so execution-layer phase work does not masquerade as a handoff request
-- phase-linked task slices should prefer the held-owner execution form over the request-layer form once the work is already owned locally by the executing session
-- do not jump ahead into future-phase task creation while the current phase still defines the active execution surface, unless the user explicitly opens that next phase
+- do not jump ahead into future-phase task creation while the current phase or clearly implied current staged context still defines the active execution surface, unless the user explicitly opens that next phase
 - if the current phase is already complete and the next phase is already the implied active path, phase-boundary continuity may continue directly instead of turning completion into a report-only stop
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks
 
@@ -201,6 +200,7 @@ If patch documents exist, they remain patch artifacts and must not be used as th
 - [ ] `phase-implementation` explicitly defines `NNN` and `NNN-NN`
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
+- [ ] task creation can still align to clearly implied staged/phase context even before the exact next phase file exists
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs such as `P1/P2/P3` are not used as active canonical phase identifiers
 - [ ] `/phase` examples show either a valid major-phase file, a valid subphase file, or both

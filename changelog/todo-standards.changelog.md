@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.16
+> **Current Version:** 2.17
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.17 | 2026-04-18 | **[Aligned task-list creation more strongly to phase-shaped context and session language](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.16 | 2026-04-18 | **[Made required TODO sync explicit as companion work](#version-216)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.15 | 2026-04-17 | **[Retired stale shared-execution deferral in TODO standards](#version-215)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.14 | 2026-04-17 | **[Reduced TODO memsearch wording to shared-board defer only](#version-214)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -27,6 +28,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-217"></a>
+## Version 2.17: Aligned task-list creation more strongly to phase-shaped context and session language
+
+**Date:** 2026-04-18
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards.md` from v2.16 to v2.17.
+- Updated `design/todo-standards.design.md` from v2.16 to v2.17.
+- Added trigger and creation guidance so task-list creation aligns not only to an already-active exact phase, but also to clearly phase-shaped or staged project/workstream context.
+- Added wording that task subjects and descriptions should align naturally with the active session language/register rather than defaulting to detached generic wording.
+- Added verification coverage for both phase-shaped task creation alignment and session-language-aligned task wording.
+
+### Summary
+TODO standards now says more clearly that live task creation should follow the current phase structure when visible, the clearly implied stage/family when not yet formalized, and the current session language when wording the task itself.
 
 ---
 

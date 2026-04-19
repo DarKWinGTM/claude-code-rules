@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.27
+> **Current Version:** 2.28
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.28 | 2026-04-18 | **[Reinforced phase-shaped task creation alignment at the repository model layer](#version-228)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.27 | 2026-04-18 | **[Reasserted governed companion surfaces alongside live execution surfaces](#version-227)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.26 | 2026-04-17 | **[Added master-surface consultation before junk/disposal classification](#version-226)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.25 | 2026-04-17 | **[Reduced memsearch wording to shared-board defer only](#version-225)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -37,6 +38,23 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-228"></a>
+## Version 2.28: Reinforced phase-shaped task creation alignment at the repository model layer
+
+**Date:** 2026-04-18
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.27 to v2.28.
+- Updated `design/project-documentation-standards.design.md` from v2.27 to v2.28.
+- Added repository-level wording that where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should remain aligned to that phase-shaped execution model.
+- Extended cross-document alignment wording so live task creation is less likely to flatten phase-shaped work into detached standalone tasks.
+
+### Summary
+Project-documentation-standards now reinforces at the repository-model layer that phased repositories should produce phase-shaped task creation, not just phase-shaped documents.
 
 ---
 

@@ -121,7 +121,7 @@ Apply this chain strongly when one or more are true:
 | Design | target behavior, policy, contract, or architecture is new or materially changing |
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
-| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed work strengthens this from preferred to expected |
+| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed or clearly phase-shaped work strengthens this from preferred to expected |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 

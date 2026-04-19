@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.27
+> **Current Version:** 2.28
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-18)
 
 ---
@@ -31,8 +31,6 @@ This model must preserve one authority system while clearly separating:
 - `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
 - package-local support assets such as optional `skills/`, optional `agents/`, scripts, and plugin-owned docs remaining portable by default when they are maintained as reusable source artifacts
 - shared-board multi-session coordination semantics and any discontinued custom recall/skill mechanics staying outside Main RULES scope rather than being redefined ad hoc in the repository role model
-- visible session ownership remaining a default task-list standard for session-owned work rather than a convention that only turns on when several sessions share one task-list path
-- request-layer naming remaining distinct from receiving-side execution-layer phase structure so sender phase labels do not become the default visible handoff title
 
 ---
 
@@ -189,6 +187,7 @@ It is distinct from the later synchronization order under UDVC-1.
 
 Required governed surfaces should remain visible as governed companions rather than being reinterpreted as optional execution aids just because the assistant also has live execution surfaces.
 The built-in task list may help execute the work live, but it does not replace required design/changelog/TODO/phase/patch artifacts when the checked work shape still requires those governed surfaces.
+Where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should remain aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording.
 
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
@@ -320,7 +319,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side and destination/runtime reference consistency |
-| [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking and default visible session ownership for session-owned work |
+| [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, and same-objective continuity |
 | [rules-plugin-extension.design.md](rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active shared-board/plugin/runtime coordination does not remain part of Main RULES current doctrine |
 
 ---

@@ -1,7 +1,7 @@
 # Project Documentation Standards
 
-> **Current Version:** 2.27
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.27
+> **Current Version:** 2.28
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.28
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 
@@ -93,6 +93,7 @@ That means:
 - `/phase` remains the governed staged-execution companion when phased work is required
 - `/patch` remains the governed before/after review companion when patch is actually in scope
 - Claude Code's built-in task list may help execute the work live, but it does not replace those governed surfaces when they are required for the change
+- where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should stay aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording
 
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
@@ -180,13 +181,11 @@ Required guidance:
 - `artifact-initiation-control.md` remains the startup artifact-resolution owner
 - built-in task-list usage remains a live execution surface rather than becoming a governed repository document type
 - the presence of a live execution surface does not downgrade design/changelog/TODO/phase/patch from governed companion status when those surfaces are actually required for the work
+- where the checked repository/workstream is already phase-shaped, live task creation should remain aligned to that staged structure rather than flattening into detached standalone tasks
 - within the same active objective, the live task-list surface should normally be reused and extended rather than replaced, while durable history still belongs in TODO/phase/changelog surfaces
 - design, phase, TODO, task-list, and checked implementation state may all act as execution-discovery surfaces once work is already in execution mode
 - execution-continuity and goal-review owners may shape how active work keeps moving and how the full objective set stays visible, while tasks, phases, and docs remain the execution surfaces rather than the owner of that behavior
-- visible session ownership should remain a default task-list standard for session-owned work rather than a convention that only turns on when several sessions happen to share one task-list path
 - shared-board, plugin, and external coordination/runtime mechanics should stay outside Main RULES scope rather than being reinvented ad hoc across task/phase/doc layers
-- request-layer titles such as `For <session-short-id> owner: ...` should remain distinct from held-owner and blocked-owner title forms so board readers can identify session state consistently across usage modes
-- shared board request-layer naming should remain distinct from receiving-side execution-layer phase structure so sender phase labels do not become the default visible title for accepted receiving-side work
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
 
 ---

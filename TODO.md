@@ -1,10 +1,14 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-18
+> **Last Updated:** 2026-04-19
 
 ---
 
 ## ✅ Completed
+
+- [x] Clarify legacy history authority boundaries across the master RULES surfaces so older coordination-flavored rollout records now read as historical context only and no longer blur the current active RULES authority boundary; add bounded `phase-067` / `patch/legacy-history-authority-boundary-clarification.patch.md` artifacts and keep the wave RULES-side only.
+
+- [x] Refine Task List and Phase linkage plus session-language alignment across the existing owner set: `todo-standards` now allows task creation to align with active phase or clearly implied staged/phase context and follow the active session language/register, `phase-implementation` now lets phase-linked task creation follow clearly implied staged context before the exact next phase file exists, `project-documentation-standards` now reinforces phase-shaped task creation at the repository-model layer, and bounded `phase-066` / patch artifacts plus master/history sync record the wave.
 
 - [x] Tighten startup-governance versus execution-continuity boundaries across the existing owner set: `execution-continuity-and-mode-selection` now treats unresolved startup artifact posture as a real precondition, `project-documentation-standards` now keeps required design/changelog/TODO/phase/patch surfaces visible as governed companions alongside live execution surfaces, `todo-standards` now makes required TODO sync explicit companion work, `phase-implementation` now treats clearly staged/governed work as requiring early phase posture, and bounded `phase-065` / `patch/startup-governance-vs-execution-continuity-tightening.patch.md` artifacts plus master/history sync record the wave.
 
@@ -99,8 +103,9 @@
 - [ ] Integration testing for design/changelog/rule/TODO integration paths (deferred by user).
 
 ### Active Verification
-- [ ] Run a final RULES-side consistency audit for stale historical wording/reference drift.
+- [x] Run a final RULES-side consistency audit for stale historical wording/reference drift.
 - [ ] Run a final RULES-side consistency audit for the startup-governance versus execution-continuity tightening wave.
+- [ ] Run a final RULES-side consistency audit for the task-list/phase/session-language refinement wave.
 - [ ] Run a final RULES-side consistency audit for the retired memsearch/bridge cleanup wave.
 - [x] Complete the shared-task-list-path extraction cleanup so Main RULES keeps only global task-list doctrine and shared-board-specific semantics stay outside Main RULES scope.
 - [x] Complete the final RULES-side cleanup pass so git update/release can happen without stale unified-package ownership claims or stray non-release artifacts.
@@ -111,6 +116,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-19 | Clarified legacy history authority boundaries across the master RULES surfaces so older coordination-flavored rollout records now read as historical context only after the later ownership split, while current active authority stays with the active runtime/design surfaces; added bounded `phase-067` / `patch/legacy-history-authority-boundary-clarification.patch.md` artifacts and kept the wave RULES-side only. |
 | 2026-04-18 | Tightened startup-governance versus execution-continuity boundaries across the existing owner set: `execution-continuity-and-mode-selection` now treats unresolved startup artifact posture as a real precondition, `project-documentation-standards` now reasserts design/changelog/TODO/phase/patch as governed companions rather than optional execution aids, `todo-standards` now states that required TODO sync is companion work rather than optional bookkeeping, and `phase-implementation` now treats clearly staged/governed work as requiring early phase posture instead of late backfill. |
 | 2026-04-17 | Retired discontinued memsearch custom-skill doctrine and the former `session-coordination-bridge` path from Main RULES active teaching: active doctrine now uses only generic optional external recall wording, stale deferrals to removed in-repo coordination owners were replaced with direct out-of-scope boundaries, bounded `phase-064` / `patch/retire-memsearch-custom-skill-and-bridge-doctrine.patch.md` artifacts record the wave, and historical bridge/memsearch references are being reframed as retired history only rather than current usable capability. |
 | 2026-04-17 | Refined file-disposal authority and delete-guard behavior across existing RULES owners: `authority-and-scope` now keeps checked master/governed repo surfaces above git-state cleanup heuristics, `project-documentation-standards` now requires master-surface consultation before junk/disposal classification, `strict-file-hygiene` now blocks cleanup/hygiene wording from acting as deletion authority, `artifact-initiation-control` now keeps unresolved new-file classification separate from disposal conclusions, `functional-intent-verification` now has a real runtime body with destructive delete confirmation, companion evidence/reference owners now keep git-state signals in the weak local-evidence lane, and bounded `phase-063` / `patch/file-disposal-authority-and-delete-guard-refinement.patch.md` artifacts record the wave. |

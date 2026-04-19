@@ -1,7 +1,7 @@
 # TODO Standards
 
-> **Current Version:** 2.16
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.16
+> **Current Version:** 2.17
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.17
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 
@@ -76,6 +76,7 @@ Built-in task-list usage is expected by default when one or more are true:
 - the work is likely to continue across multiple execution slices
 - the user would materially benefit from seeing pending / in_progress / completed state live
 - an active phase already exists for the work
+- the checked project/workstream context already shows a clearly phase-shaped or staged execution pattern even if the exact next phase file has not been opened yet
 
 Do not skip the built-in task list in those cases unless there is a narrow justified reason.
 
@@ -87,10 +88,13 @@ Do not force built-in task-list overhead when:
 ### 5.1 Current-Phase-First Task-List Rule
 When an active phase already exists, the task list should mirror that current phase before proposing future-phase work.
 
+If the exact next phase file does not yet exist but the checked project/workstream context already makes the current phase family or staged execution lane clear, task-list creation should still align to that implied current phase/stage instead of falling back to detached generic standalone tasks.
+
 Required guidance:
 - create the built-in task list for the active phase rather than waiting for the user to ask explicitly
 - default the task list to the current active phase before opening tasks for any later phase
-- do not let the task list drift into next-wave planning while the current phase still defines the active execution surface
+- when no exact new phase file is open yet, but the current staged/phase family is already clear from checked context, create task entries that still reflect that phase-shaped execution structure
+- do not let the task list drift into next-wave planning while the current phase or clearly implied current stage still defines the active execution surface
 - if the current phase is already complete, say that directly before creating any draft next-wave tasks
 
 ### 5.2 One-Phase-Many-Tasks Rule
@@ -128,16 +132,12 @@ When the built-in task list is in use:
 - keep task entries outcome-sized rather than command-sized
 - extend the current task list within the same active objective instead of replacing it with a fresh set
 - keep completed tasks visible until the active objective is truly closed or explicitly reset
+- when the checked project/workstream context is already phase-shaped, keep task creation aligned to the current active phase or clearly implied current stage/family even if the exact next phase file is still pending
+- do not default task creation to detached generic standalone wording when stronger checked phase/stage context already exists
+- task subjects and descriptions should align naturally with the active session language/register rather than defaulting to detached generic system wording
+- this rule does not impose a fixed language ratio; it should follow the active session communication context and higher-priority runtime language preferences
 - treat the task list as the first active source for discovering the next unfinished work within the same objective
 - if the task list alone is insufficient, use the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
-- visible session ownership should be treated as the default board-facing standard for session-owned work rather than a convention that only matters when a shared task-list path is active
-- apply visible session-state grammar whether the current task list is being used by one session or several sessions
-- session-held, handoff, and blocked-on-session tasks should identify the relevant session visibly enough for fast scanability rather than hiding that meaning only in long description text
-- cross-session request tasks should use request/handoff naming such as `For <session-short-id> owner: <work request>` rather than carrying the sender's phase as the default visible title label
-- actively held execution tasks should use a held-owner form such as `<session-short-id> owner: <execution task>` when that makes the ownership state clearer than a request-layer title
-- blocked ownership-dependent tasks should use `Blocked on <session-short-id>: <task>` or an equivalently clear blocked-on-session form
-- if accepted work later needs phase/objective tracking, the receiving session should remap it into its own execution structure
-- source trace should remain in description/handoff notes rather than default title prefixes when that distinction matters
 - keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad
 - when execution mode remains active and no real stop gate exists, let the task list support continued execution rather than milestone-only pause/report behavior
 - do not let the task list drift into stale or vague bookkeeping
@@ -180,6 +180,8 @@ That means:
 - [ ] No dashboard or priority overhead is present
 - [ ] Tracking posture was resolved early when meaningful tracking was required
 - [ ] Built-in task list was used proactively for non-trivial work when live execution visibility materially helped
+- [ ] Task creation stayed aligned to active phase or clearly implied staged/phase context when that context was already visible
+- [ ] Task wording stayed aligned to the active session language/register instead of defaulting to detached generic wording
 - [ ] Task entries remained outcome-sized rather than command-sized
 - [ ] Required TODO synchronization was not downgraded into optional bookkeeping
 - [ ] TODO content update occurred after design/runtime/changelog synchronization
