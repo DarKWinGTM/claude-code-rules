@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.17
+> **Current Version:** 2.18
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.18 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-18 | **[Aligned task-list creation more strongly to phase-shaped context and session language](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.16 | 2026-04-18 | **[Made required TODO sync explicit as companion work](#version-216)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.15 | 2026-04-17 | **[Retired stale shared-execution deferral in TODO standards](#version-215)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -28,6 +29,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-218"></a>
+## Version 2.18: Made task discovery current-phase-first but phase-context-aware
+
+**Date:** 2026-04-20
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards.md` from v2.17 to v2.18.
+- Updated `design/todo-standards.design.md` from v2.17 to v2.18.
+- Clarified that when `/phase` already contains relevant planning context, task behavior should consult current phase, phase family, phase ordering/dependencies, and already-authored next planned phases instead of relying only on the currently open phase file.
+- Clarified that already-authored next-phase context may guide continuity and draft next-work visibility without silently becoming active execution work.
+- Extended next-work discovery wording so bounded `/phase` planning data is part of the discovery path when relevant.
+
+### Summary
+TODO standards now keeps task behavior current-phase-first while making relevant `/phase` planning context more actively usable for continuity and draft next-work discovery, without weakening future-phase draft boundaries.
 
 ---
 

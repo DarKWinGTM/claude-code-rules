@@ -251,7 +251,10 @@ Copy this block into the real summary file and replace the placeholders.
 - Overall status: <Pending / In Progress / Blocked / Completed / Deferred>
 - Plan health: <On Track / At Risk / Off Track>
 - Current active phase: <phase id>
+- Active phase family / staged lane: <phase family or n/a>
 - Current blocker: <none / blocker summary>
+- Planned next phase(s): <phase id(s) or n/a>
+- Activation boundary for next phase(s): <opened / selected / implied active path / still draft>
 - Next checkpoint: <what should happen next>
 - Summary path: `phase/SUMMARY.md`
 - Phase directory: `phase/`
@@ -492,6 +495,10 @@ Copy this block into each real executable phase file and replace the placeholder
 
 - <next phase>
 - <optional alternate next phase>
+
+Note:
+- already-authored next possible phases are bounded planning input for continuity and sequencing
+- they do not become active execution automatically until that next phase is explicitly opened, selected, or otherwise made active by the governing phase context
 ```
 
 ---

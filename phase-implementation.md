@@ -170,15 +170,23 @@ When a phase is active and the work is non-trivial, the built-in task list shoul
 
 If the exact next phase file does not yet exist, but the checked project/workstream context already makes the current staged or phase family clear, task creation should still follow that implied phase structure provisionally instead of reverting to detached generic standalone task shaping.
 
+If `/phase` already contains additional authored planning context, task behavior should use a bounded phase-context hierarchy rather than relying only on the currently open phase file.
+That hierarchy is:
+1. current active phase
+2. current phase family or staged execution lane
+3. already-authored bounded next-phase context from `phase/SUMMARY.md`, phase ordering/dependency structure, and the relevant child files' `Next possible phases`
+
 Required guidance:
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
 - when repeated slices still belong to the same active objective/phase family, extend the current task-list surface instead of recreating it
 - task wording created from phase-linked work should still align naturally with the active session language/register rather than reverting to detached generic phrasing
-- treat the current phase and `phase/SUMMARY.md` as execution-discovery surfaces when the next unfinished slice is not fully obvious from the task list alone
+- treat the current phase, the current phase family, and `phase/SUMMARY.md` as execution-discovery surfaces when the next unfinished slice is not fully obvious from the task list alone
+- use already-authored `Next possible phases` as bounded planning input when they help clarify continuity, sequencing, or draft next-work visibility
 - use checked implementation state alongside the phase workspace when phase text and current repo state together reveal the next unfinished work more clearly than either one alone
 - do not jump ahead into future-phase task creation while the current phase or clearly implied current staged context still defines the active execution surface, unless the user explicitly opens that next phase
+- already-authored future-phase context may inform continuity, sequencing, and draft next-work discovery, but it does not become active execution work until that phase is explicitly opened, selected, or otherwise made active by the governing phase context
 - if the current phase is already complete and the next phase is already the implied active path, phase-boundary continuity may continue directly instead of turning completion into a report-only stop
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks
 
@@ -201,6 +209,7 @@ If patch documents exist, they remain patch artifacts and must not be used as th
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
 - [ ] task creation can still align to clearly implied staged/phase context even before the exact next phase file exists
+- [ ] already-authored next-phase context can inform continuity and draft next-work discovery without being silently promoted into active execution
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs such as `P1/P2/P3` are not used as active canonical phase identifiers
 - [ ] `/phase` examples show either a valid major-phase file, a valid subphase file, or both

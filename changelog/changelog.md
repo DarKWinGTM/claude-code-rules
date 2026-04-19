@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.60
+> **Current Version:** 9.61
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.61 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-961)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.60 | 2026-04-19 | **[Clarified legacy history authority boundaries after the ownership split](#version-960)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.59 | 2026-04-19 | **[Aligned task creation more strongly to phase context and session language](#version-959)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.58 | 2026-04-18 | **[Tightened startup-governance versus execution-continuity boundaries across existing owners](#version-958)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -95,6 +96,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-961"></a>
+## Version 9.61: Made task discovery current-phase-first but phase-context-aware
+
+**Date:** 2026-04-20
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards` so task behavior now stays current-phase-first while consulting relevant `/phase` planning context such as active phase family, phase ordering/dependencies, and already-authored next planned phases when that context already exists.
+- Updated `phase-implementation` so phase-linked task behavior now defines a bounded phase-context hierarchy and allows already-authored next-phase context to guide continuity and draft next-work discovery without silently activating future work.
+- Updated `project-documentation-standards` so the repository model now treats `/phase` as both current execution structure and bounded already-authored next planned structure during task discovery.
+- Updated `phase-implementation-template.md` so future `/phase` authoring exposes active phase family, planned next phase(s), activation boundary, and next checkpoint guidance more explicitly.
+- Added bounded `phase-068` and `patch/phase-context-aware-task-discovery.patch.md` artifacts for the refinement wave.
+
+### Summary
+The RULES repository now keeps task discovery current-phase-first while making relevant `/phase` planning context more actively usable for continuity and draft next-work visibility, without weakening future-phase draft boundaries.
 
 ---
 

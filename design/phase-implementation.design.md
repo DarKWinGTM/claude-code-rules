@@ -137,14 +137,22 @@ When a phase is active and the work is non-trivial, the built-in task list shoul
 
 If the exact next phase file does not yet exist, but the checked project/workstream context already makes the current staged or phase family clear, task creation should still follow that implied phase structure provisionally instead of reverting to detached generic standalone task shaping.
 
+If `/phase` already contains additional authored planning context, task behavior should use a bounded phase-context hierarchy rather than relying only on the currently open phase file.
+That hierarchy is:
+1. current active phase
+2. current phase family or staged execution lane
+3. already-authored bounded next-phase context from `phase/SUMMARY.md`, phase ordering/dependency structure, and the relevant child files' `Next possible phases`
+
 Required guidance:
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
 - task wording created from phase-linked work should still align naturally with the active session language/register rather than reverting to detached generic phrasing
-- treat the current phase and `phase/SUMMARY.md` as execution-discovery surfaces when the task list alone is not enough to reveal the next unfinished slice
-- use checked implementation state alongside the phase workspace when that combination clarifies the next unfinished work more accurately
+- treat the current phase, the current phase family, and `phase/SUMMARY.md` as execution-discovery surfaces when the next unfinished slice is not fully obvious from the task list alone
+- use already-authored `Next possible phases` as bounded planning input when they help clarify continuity, sequencing, or draft next-work visibility
+- use checked implementation state alongside the phase workspace when phase text and current repo state together reveal the next unfinished work more clearly than either one alone
 - do not jump ahead into future-phase task creation while the current phase or clearly implied current staged context still defines the active execution surface, unless the user explicitly opens that next phase
+- already-authored future-phase context may inform continuity, sequencing, and draft next-work discovery, but it does not become active execution work until that phase is explicitly opened, selected, or otherwise made active by the governing phase context
 - if the current phase is already complete, say so directly before opening any draft future-phase tasks
 
 ---

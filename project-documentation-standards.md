@@ -94,6 +94,8 @@ That means:
 - `/patch` remains the governed before/after review companion when patch is actually in scope
 - Claude Code's built-in task list may help execute the work live, but it does not replace those governed surfaces when they are required for the change
 - where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should stay aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording
+- when `/phase` already contains relevant planning data, the assistant should not ignore that governed phase context: current phase, active phase family, phase ordering/dependencies, and already-authored next planned phases may all guide bounded task discovery and draft next-work visibility
+- that planning context does not by itself silently activate unopened future-phase execution
 
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
@@ -184,6 +186,7 @@ Required guidance:
 - where the checked repository/workstream is already phase-shaped, live task creation should remain aligned to that staged structure rather than flattening into detached standalone tasks
 - within the same active objective, the live task-list surface should normally be reused and extended rather than replaced, while durable history still belongs in TODO/phase/changelog surfaces
 - design, phase, TODO, task-list, and checked implementation state may all act as execution-discovery surfaces once work is already in execution mode
+- within that discovery model, `/phase` may contribute both current execution structure and already-authored next planned structure, but unopened future phases still remain bounded planning input until explicitly opened or otherwise made active
 - execution-continuity and goal-review owners may shape how active work keeps moving and how the full objective set stays visible, while tasks, phases, and docs remain the execution surfaces rather than the owner of that behavior
 - shared-board, plugin, and external coordination/runtime mechanics should stay outside Main RULES scope rather than being reinvented ad hoc across task/phase/doc layers
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain

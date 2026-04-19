@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Refine phase-context-aware task discovery across the existing owner set so Task List behavior stays current-phase-first but also consults relevant `/phase` planning context more actively when that context already exists; preserve draft-only future-phase boundaries; add bounded `phase-068` / `patch/phase-context-aware-task-discovery.patch.md` artifacts; and keep the wave RULES-side only.
+
 - [x] Clarify legacy history authority boundaries across the master RULES surfaces so older coordination-flavored rollout records now read as historical context only and no longer blur the current active RULES authority boundary; add bounded `phase-067` / `patch/legacy-history-authority-boundary-clarification.patch.md` artifacts and keep the wave RULES-side only.
 
 - [x] Refine Task List and Phase linkage plus session-language alignment across the existing owner set: `todo-standards` now allows task creation to align with active phase or clearly implied staged/phase context and follow the active session language/register, `phase-implementation` now lets phase-linked task creation follow clearly implied staged context before the exact next phase file exists, `project-documentation-standards` now reinforces phase-shaped task creation at the repository-model layer, and bounded `phase-066` / patch artifacts plus master/history sync record the wave.

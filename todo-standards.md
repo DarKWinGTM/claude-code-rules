@@ -85,17 +85,25 @@ Do not force built-in task-list overhead when:
 - the work is a one-step lookup or one-step fix
 - the task list would add more ceremony than clarity
 
-### 5.1 Current-Phase-First Task-List Rule
+### 5.1 Current-Phase-First but Phase-Context-Aware Task-List Rule
 When an active phase already exists, the task list should mirror that current phase before proposing future-phase work.
 
 If the exact next phase file does not yet exist but the checked project/workstream context already makes the current phase family or staged execution lane clear, task-list creation should still align to that implied current phase/stage instead of falling back to detached generic standalone tasks.
+
+If `/phase` already contains additional relevant planning context, task behavior should not stop at the currently open phase file alone. It should also consult bounded phase context that already exists in the governed phase workspace, such as:
+- the current active phase
+- the current phase family or staged execution lane
+- the phase order and dependency structure visible in `phase/SUMMARY.md`
+- already-authored `Next possible phases` in the relevant child phase files
 
 Required guidance:
 - create the built-in task list for the active phase rather than waiting for the user to ask explicitly
 - default the task list to the current active phase before opening tasks for any later phase
 - when no exact new phase file is open yet, but the current staged/phase family is already clear from checked context, create task entries that still reflect that phase-shaped execution structure
+- when `/phase` already contains relevant next planned phase information, use that information to improve continuity, sequencing, and draft next-work visibility rather than ignoring it
 - do not let the task list drift into next-wave planning while the current phase or clearly implied current stage still defines the active execution surface
 - if the current phase is already complete, say that directly before creating any draft next-wave tasks
+- already-authored future-phase context may inform discovery and draft planning, but it does not become active execution work until that phase is explicitly opened, selected, or otherwise made active by the governing phase context
 
 ### 5.2 One-Phase-Many-Tasks Rule
 One phase may legitimately contain several live tasks.
@@ -121,7 +129,9 @@ Do not create task-list entries for a future phase as if they are active executi
 Required guidance:
 - treat future-phase tasks as draft/proposal work only until the user selects or opens that later phase
 - do not let a request to "show the task list" silently become permission to populate the task list with speculative future-wave tasks
+- if `/phase` already records likely next phases, that information may still be surfaced as bounded planning context or draft next-work context
 - if draft future-phase tasks are shown, make that draft status explicit
+- do not let already-authored next planned phase information be ignored when it is relevant to understanding the current execution path, but do not silently upgrade it into active execution either
 
 ### 6) Live Task-List Update Contract
 When the built-in task list is in use:
@@ -137,7 +147,7 @@ When the built-in task list is in use:
 - task subjects and descriptions should align naturally with the active session language/register rather than defaulting to detached generic system wording
 - this rule does not impose a fixed language ratio; it should follow the active session communication context and higher-priority runtime language preferences
 - treat the task list as the first active source for discovering the next unfinished work within the same objective
-- if the task list alone is insufficient, use the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
+- if the task list alone is insufficient, use the active phase, the current phase family, `phase/SUMMARY.md`, already-authored `Next possible phases` in the relevant phase files, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
 - keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad
 - when execution mode remains active and no real stop gate exists, let the task list support continued execution rather than milestone-only pause/report behavior
 - do not let the task list drift into stale or vague bookkeeping
@@ -180,7 +190,7 @@ That means:
 - [ ] No dashboard or priority overhead is present
 - [ ] Tracking posture was resolved early when meaningful tracking was required
 - [ ] Built-in task list was used proactively for non-trivial work when live execution visibility materially helped
-- [ ] Task creation stayed aligned to active phase or clearly implied staged/phase context when that context was already visible
+- [ ] Task creation stayed aligned to active phase, clearly implied staged/phase context, and already-authored bounded phase-planning context from `/phase` when that context was already visible and relevant
 - [ ] Task wording stayed aligned to the active session language/register instead of defaulting to detached generic wording
 - [ ] Task entries remained outcome-sized rather than command-sized
 - [ ] Required TODO synchronization was not downgraded into optional bookkeeping

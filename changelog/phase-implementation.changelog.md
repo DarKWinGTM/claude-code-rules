@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.19
+> **Current Version:** 2.20
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.20 | 2026-04-20 | **[Made phase-linked task discovery current-phase-first but phase-context-aware](#version-220)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.19 | 2026-04-18 | **[Extended phase-linked task behavior to clearly implied staged context and session-aligned wording](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-18 | **[Made default phase establishment explicit when staged work is clearly implied](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-17 | **[Retired stale coordination defer line in favor of explicit out-of-scope wording](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -31,6 +32,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-220"></a>
+## Version 2.20: Made phase-linked task discovery current-phase-first but phase-context-aware
+
+**Date:** 2026-04-20
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `phase-implementation.md` from v2.19 to v2.20.
+- Updated `design/phase-implementation.design.md` from v2.19 to v2.20.
+- Added an explicit phase-context hierarchy for task behavior: current active phase, current phase family, and already-authored bounded next-phase context from `/phase`.
+- Clarified that `phase/SUMMARY.md`, phase ordering/dependencies, and `Next possible phases` may all guide continuity, sequencing, and draft next-work discovery when relevant.
+- Preserved the boundary that already-authored future-phase context does not silently become active execution work until the governing phase context makes it active.
+
+### Summary
+Phase-implementation now keeps task behavior current-phase-first while using relevant `/phase` planning context more actively for continuity and draft next-work discovery, without weakening the future-phase draft boundary.
 
 ---
 

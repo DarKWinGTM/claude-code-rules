@@ -25,6 +25,7 @@ This model must preserve one authority system while clearly separating:
 - Claude Code's built-in task list as the live in-session execution surface for non-trivial work
 - `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
 - design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
+- `/phase` as both the governed current execution structure and a bounded source of already-authored next planned structure that may guide continuity without silently activating unopened future work
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
 - `portable-implementation-and-hardcoding-control.md` as the semantic owner of portable-default and anti-hardcoding behavior
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
@@ -188,6 +189,8 @@ It is distinct from the later synchronization order under UDVC-1.
 Required governed surfaces should remain visible as governed companions rather than being reinterpreted as optional execution aids just because the assistant also has live execution surfaces.
 The built-in task list may help execute the work live, but it does not replace required design/changelog/TODO/phase/patch artifacts when the checked work shape still requires those governed surfaces.
 Where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should remain aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording.
+When `/phase` already contains relevant planning data, the assistant should not ignore that governed phase context: current phase, active phase family, phase ordering/dependencies, and already-authored next planned phases may all guide bounded task discovery and draft next-work visibility.
+That planning context does not by itself silently activate unopened future-phase execution.
 
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
