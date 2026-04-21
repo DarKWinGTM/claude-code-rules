@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.18
+> **Current Version:** 2.19
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
@@ -360,24 +360,30 @@ It must not duplicate that rule's box-drawing prohibitions or connector standard
 
 ---
 
-## 9) Comparison-Table Trigger
+## 9) Side-by-Side Table Trigger
 
-Use a comparison table when:
+Use a light table when:
 - two or more realistic options are being evaluated
-- trade-offs matter to the decision
-- the user needs dimension-by-dimension comparison rather than isolated bullets
+- several stable facts, fields, states, or conditions need clarification together
+- trade-offs, distinctions, or repeated dimensions matter to the explanation
+- the user benefits from dimension-by-dimension side-by-side scanability
 
 Preferred columns depend on context, but common dimensions include:
 - option
+- field
+- checked state
+- what it means
+- recommended handling
 - strength
 - weakness
 - best fit
 
 Required guidance:
-- when comparison-side tabular structure is justified, a table is still appropriate when it materially helps side-by-side understanding
-- do not force a table when there is only one realistic path or when the comparison would be artificial
-- do not force a table when the content is really a sequence, checklist, or simple status snapshot
-- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension
+- when side-by-side tabular structure is justified, a table is appropriate when it materially helps understanding faster than prose alone
+- do not force a table when there is only one realistic path and there are not several meaningful repeated dimensions to clarify
+- do not force a table when the content is really a sequence, checklist, or a very small simple status snapshot
+- prefer numbered lists for sequence and bullets/grouped blocks for very small simple status unless side-by-side scan materially improves comprehension
+- keep mechanism, causality, and implications in prose around the table when that reasoning would become harder to follow inside cells
 
 ---
 
@@ -395,8 +401,8 @@ Do not expand unnecessarily when:
 Boundaries:
 - simple factual questions may use a short direct answer only
 - if no process exists, skip causal-flow structure
-- if no real alternatives exist, skip comparison tables
-- if the content is really a sequence or a short status list, prefer numbered lists or bullets over a table
+- if no meaningful alternatives or repeated clarification dimensions exist, skip tables
+- if the content is really a sequence or a very small short status list, prefer numbered lists or bullets over a table
 - if one short clarifier is enough, do not expand into unnecessary depth
 - if one concise final synthesis is enough, do not restate the conclusion in multiple phrasings
 - this rule shapes explanation quality; it does not weaken verification, safety, or user-authority rules

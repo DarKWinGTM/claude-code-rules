@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.24
+> **Current Version:** 1.25
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
@@ -117,9 +117,9 @@ Formatting should communicate meaning, not decoration.
 Required guidance:
 - use bullets for grouped items
 - use numbered lists for ordered steps or sequences
-- use tables only for genuine comparison or structured facts
+- use a light table when side-by-side structure materially improves comprehension for comparison, stable structured facts, analytical clarification, diagnostic fact sets, or multi-field explanation
 - keep ordinary tables light and readable rather than heavy or overbuilt
-- prefer lists or grouped blocks when the content is not genuinely tabular
+- prefer lists or grouped blocks when the content is not genuinely tabular or when a table would add more weight than scanability
 - use diagrams only when sequence or branching is central
 - ensure headings are short, functional, and content-representative
 
@@ -131,7 +131,7 @@ Required guidance:
 - start with one orienting line before the snapshot when context is needed
 - use short titled sections such as `Current Status`, `Request Information`, `Environment`, `Checked Scope`, or `What This Means` only when they materially improve scanability
 - when an internal shorthand or abstract phrase must still appear, place a short human-language gloss or direct implication near it instead of leaving the term unexplained
-- use small fact tables only for stable checked facts that are easier to scan side by side than in prose
+- proactively prefer a small fact table when several stable checked facts, dimensions, or status fields are easier to scan side by side than in prose
 - keep snapshot tables narrow, scoped, and fact-oriented
 - do not let the table replace the explanation or implication
 - when exact local paths, ports, or hosts appear, present them as scoped local facts rather than as portable defaults

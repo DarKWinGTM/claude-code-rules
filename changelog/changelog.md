@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.61
+> **Current Version:** 9.62
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.62 | 2026-04-22 | **[Made light tables more proactive in active explanation owners](#version-962)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.61 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-961)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.60 | 2026-04-19 | **[Clarified legacy history authority boundaries after the ownership split](#version-960)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.59 | 2026-04-19 | **[Aligned task creation more strongly to phase context and session language](#version-959)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -96,6 +97,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-962"></a>
+## Version 9.62: Made light tables more proactive in active explanation owners
+
+**Date:** 2026-04-22
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `answer-presentation` so light tables are now encouraged more proactively when side-by-side structure materially improves analytical clarity, diagnostic scanability, structured distinctions, or multi-field explanation.
+- Updated `explanation-quality` so table use is no longer framed as mostly comparison-only and now explicitly supports diagnostic and multi-field clarification tables when they improve understanding.
+- Preserved the active boundaries that numbered lists remain preferred for sequence/process and prose remains preferred for mechanism, causality, and implications when cells would reduce readability.
+- Added bounded `phase-069` and `patch/proactive-light-table-use-refinement.patch.md` artifacts for the refinement wave.
+
+### Summary
+The RULES repository now makes light tables more proactively available in the active explanation owners when side-by-side scanability materially improves understanding, without turning tables into a rigid everywhere-default format.
 
 ---
 

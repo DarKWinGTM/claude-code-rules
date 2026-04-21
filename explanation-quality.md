@@ -1,7 +1,7 @@
 # Explanation Quality
 
-> **Current Version:** 2.18
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.18
+> **Current Version:** 2.19
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.19
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 
@@ -186,18 +186,20 @@ Use a small text flow diagram when sequence, branching, or handoff order is cent
 This rule defers diagram formatting constraints to `flow-diagram-no-frame.md`.
 Do not use framed or boxed diagrams.
 
-### 12) Comparison-Table Trigger
+### 12) Side-by-Side Table Trigger
 
-Use a comparison table when:
+Use a light table when:
 - two or more realistic options are being evaluated
-- trade-offs matter to the decision
-- the user benefits from side-by-side comparison
+- several stable facts, fields, states, or conditions need clarification together
+- trade-offs, distinctions, or repeated dimensions matter to the explanation
+- the user benefits from side-by-side scanability
 
 Required behavior:
-- when comparison-side tabular structure is justified, a table is still appropriate when it materially helps side-by-side understanding
-- do not force a table when only one realistic path exists
-- do not force a table when the content is really a sequence, checklist, or simple status snapshot
-- prefer numbered lists for sequence and bullets/grouped blocks for simple status pairs unless side-by-side scan materially improves comprehension
+- when side-by-side tabular structure is justified, a table is appropriate when it materially helps understanding faster than prose alone
+- do not force a table when only one realistic path exists and there are not several meaningful repeated dimensions to clarify
+- do not force a table when the content is really a sequence, checklist, or a very small simple status snapshot
+- prefer numbered lists for sequence and bullets/grouped blocks for very small simple status unless side-by-side scan materially improves comprehension
+- keep mechanism, causality, and implications in prose around the table when that reasoning would become harder to follow inside cells
 
 ### 12.1 Governing-Basis Clarification Boundary
 When multiple materially different governing bases remain live and the answer would change depending on which one is chosen, prefer one short clarification gate over a long explanation that explores every branch.
@@ -231,8 +233,8 @@ Do not expand unnecessarily when:
 Allowed simplifications:
 - short factual answers can stay short
 - if no process exists, skip causal-flow structure
-- if no meaningful alternatives exist, skip comparison tables
-- if the content is really a sequence or a short status list, prefer numbered lists or bullets over a table
+- if no meaningful alternatives or repeated clarification dimensions exist, skip tables
+- if the content is really a sequence or a very small short status list, prefer numbered lists or bullets over a table
 - if one small example is enough, stop there
 - if one concise final synthesis is enough, do not restate the conclusion in multiple phrasings
 - if the decision surface is already clear, do not keep explaining just to make the answer feel richer
@@ -298,8 +300,8 @@ Apply this rule more strongly when one or more of these signals are present:
 |--------|-----------------|----------------|
 | Process explanation | lifecycle, sequence, state transition, pipeline | short answer + purpose-first framing when needed + simple explanation + causal flow |
 | Option comparison | best approach, pros/cons, trade-offs, choose between X and Y | short answer + purpose-first framing when needed + simple framing + comparison table + recommendation |
-| Root-cause analysis | why did this happen, what's causing this | short answer + purpose-first framing when needed + simple explanation + claim/mechanism/implication |
-| Diagnostic update | implementation status, troubleshooting progress, verification checkpoint | main-point-first status line + compact diagnostic snapshot + scoped implication + next action |
+| Root-cause analysis | why did this happen, what's causing this | short answer + purpose-first framing when needed + simple explanation + claim/mechanism/implication, with a light clarification table when several checked factors or distinctions scan better side by side |
+| Diagnostic update | implementation status, troubleshooting progress, verification checkpoint | main-point-first status line + compact diagnostic snapshot + small fact table when several checked facts or fields scan better side by side + scoped implication + next action |
 | Phase / progress explanation | what did this phase do, what is this phase for, what happens next | short answer + easy-to-picture plain-language framing + concise grouped explanation |
 | Change walkthrough | refactor, migration, multi-part patch, staged rollout | purpose-first framing + before/after or patch-by-patch explanation |
 | Scope clarification | what this is vs what it is not, what happens now vs later, current phase vs deferred phase | explicit grouped scope-boundary explanation |
@@ -356,6 +358,20 @@ Current status:
 - rename map — locked
 - governance targets — defined
 - implementation — not started in this wave
+```
+
+### Pattern 2.3: Light table for multi-field clarification
+
+```markdown
+Short answer: the failure is not in one field alone; several checked factors point to a mismatch between metadata and actual result.
+
+| Field | Checked state | What it means | Recommended handling |
+|------|---------------|---------------|----------------------|
+| `cacheReadTokens` | `0` | no cache read happened in this sample | ignore cache-read price drift for this comparison |
+| `groupRatio` | precision drift only | not a semantic mismatch by itself | compare with rounding or tolerance |
+| `currency` | missing in observed witness | metadata incomplete, not necessarily wrong economics | do not hard-fail if normalized money result still matches |
+
+What this means: the explanation becomes easier to scan because the reader does not have to reconstruct each field's role from separate paragraphs.
 ```
 
 ### Pattern 3: Before/after explanation

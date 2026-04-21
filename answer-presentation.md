@@ -1,7 +1,7 @@
 # Answer Presentation
 
-> **Current Version:** 1.24
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.24
+> **Current Version:** 1.25
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.25
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 
@@ -73,9 +73,9 @@ Formatting should carry meaning, not decoration.
 Required guidance:
 - use bullets for grouped items
 - use numbered lists for sequence or order
-- use tables only for genuine comparison or structured facts
+- use a light table when side-by-side structure materially improves comprehension for comparison, stable structured facts, analytical clarification, diagnostic fact sets, or multi-field explanation
 - when a table is materially useful, keep the table light and readable rather than heavy or overbuilt
-- prefer bullets or lists when the content is not genuinely tabular
+- prefer bullets or lists when the content is not genuinely tabular or when a table would add more weight than scanability
 - use diagrams only when sequence or branching is central
 - use headings that describe section purpose, not just visual styling
 
@@ -87,7 +87,7 @@ Required guidance:
 - start with one short orienting line when the reader needs context
 - use short titled sections such as `Current Status`, `Request Information`, `Environment`, `Checked Scope`, or `What This Means` only when they materially improve scanability
 - when an internal shorthand or abstract phrase must still appear, place a short human-language gloss or direct implication near it instead of leaving the term unexplained
-- use a small fact table only for stable checked facts that are easier to scan side by side than in prose
+- proactively prefer a small fact table when several stable checked facts, dimensions, or status fields are easier to scan side by side than in prose
 - keep tables small, scoped, and fact-oriented
 - do not let the table replace the explanation or implication
 - when exact local paths, ports, or hosts appear, present them as scoped local facts rather than as portable defaults
@@ -148,14 +148,14 @@ Apply stronger presentation structure when one or more of these triggers are pre
 | Trigger | Typical Signal | Preferred Presentation |
 |--------|-----------------|------------------------|
 | simple answer | factual lookup, low complexity, direct request | compact paragraph or short list |
-| analytical answer | explanation, diagnosis, architectural reasoning | short orienting answer + sections |
+| analytical answer | explanation, diagnosis, architectural reasoning | short orienting answer + sections, with a light clarification table when several dimensions scan better side by side |
 | purpose-first framing | diagnosis, test, recommendation, proposal, implementation update | short purpose-first line before the deeper structure when needed |
 | comparison | options, trade-offs, choose between X and Y | grouped comparison blocks or a light readable table when side-by-side scan helps |
 | sequence | steps, rollout order, process | numbered steps or ordered subsections |
-| simple status pairs | short state labels with short values | bullets, grouped blocks, or a small table only if side-by-side scan clearly helps |
+| simple status pairs | short state labels with short values | bullets, grouped blocks, or a small table when side-by-side scan clearly helps |
 | branching | conditions, paths, handoffs | text flow diagram or clearly indented branch structure |
-| diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
-| scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections such as `What this is`, `What this is not`, `What happens now`, `What stays later`, `What the user will notice` |
+| diagnostic snapshot | troubleshooting status, implementation progress report, verification snapshot, environment note | short orienting line + purpose-first line when needed + compact titled snapshot sections + a small scoped fact table when several checked facts or fields scan better side by side |
+| scope clarification | what this is vs what it is not, what happens now vs later, current scope vs deferred scope | grouped sections, or a light distinction table when several parallel differences are easier to scan side by side |
 | phase / progress explanation | what this phase is for, what this phase got, what this prepares next | short plain-language opening + concise grouped explanation |
 | full-set framing | many relevant areas, complete checklist, several review axes that should be visible together | complete set first, then optional narrowing |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | short explicit `What happens next` / `Next stage` / `Next state` block |
@@ -213,8 +213,10 @@ When real alternatives exist:
 
 For ordinary answer tables:
 - keep the table visually light and easy to scan
+- proactively use a light table when several repeated dimensions, fields, states, or conditions are easier to compare side by side than through prose alone
 - avoid visually heavy framing for ordinary structured facts
 - prefer lists or grouped blocks when the content is not genuinely tabular
+- keep mechanism, implication, and longer narrative reasoning in prose around the table rather than stuffing them into dense cells
 
 ### 3.1 Proposal Pattern
 
@@ -560,7 +562,7 @@ Current work order:
 | decorative headings | visual noise without navigational value | use headings only for real section purpose |
 | bullet fragmentation | breaks one idea into disconnected fragments | use prose for one continuous idea |
 | unordered list for ordered process | hides sequence and dependencies | use numbered steps |
-| forced table without true comparison | adds weight without value | use prose or grouped bullets |
+| forced table without true scanability gain | adds weight without value | use prose, grouped blocks, or lists when side-by-side structure is not actually helping |
 | list or table with no framing | reader must infer its purpose | add a short context-setting line |
 | raw evidence dump with no orienting line | facts appear, but the reader cannot tell why they matter | start with a short orientation, then present the snapshot |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
@@ -590,7 +592,7 @@ This rule is principle-first, not template-first.
 Allowed flexibility:
 - short answers may stay short
 - headings are optional when the response is naturally compact
-- tables are optional unless comparison structure clearly helps
+- tables are optional unless side-by-side structure materially improves scanability or comprehension
 - lists may be skipped when prose is more coherent
 - snapshot sections are optional unless they materially improve technical scanability
 - grouped scope-boundary sections are optional unless they materially improve understanding

@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.24
+> **Current Version:** 1.25
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.25 | 2026-04-22 | **[Made light tables more proactive for analytical and diagnostic clarity](#version-125)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.24 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-124)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.23 | 2026-04-16 | **[Added easy-explanation layout support for plain-language headings](#version-123)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 1.22 | 2026-04-12 | **[Added compact goal-review presentation support](#version-122)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -43,6 +44,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-125"></a>
+## Version 1.25: Made light tables more proactive for analytical and diagnostic clarity
+
+**Date:** 2026-04-22
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `answer-presentation.md` from v1.24 to v1.25.
+- Updated `design/answer-presentation.design.md` from v1.24 to v1.25.
+- Broadened semantic-formatting guidance so light tables are now encouraged more proactively when side-by-side structure materially improves comprehension for analytical clarification, diagnostic fact sets, structured distinctions, or multi-field explanation.
+- Broadened diagnostic snapshot guidance so small fact tables are preferred more proactively when several checked facts or fields scan better side by side.
+- Preserved the active boundaries that tables should remain light, sequence should remain numbered-list-first, and heavy or forced tables should still be avoided.
+
+### Summary
+Answer-presentation now encourages light tables more proactively when side-by-side scanability materially improves understanding, while still keeping sequence and overly heavy table use bounded.
 
 ---
 

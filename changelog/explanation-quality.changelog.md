@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.18
+> **Current Version:** 2.19
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.19 | 2026-04-22 | **[Made table use more proactive for diagnostic and multi-field explanation](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-16 | **[Added easy-explanation continuity after simple openings](#version-217)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.16 | 2026-04-12 | **[Deferred goal-review semantics to the new goal-set owner](#version-216)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -52,6 +53,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-219"></a>
+## Version 2.19: Made table use more proactive for diagnostic and multi-field explanation
+
+**Date:** 2026-04-22
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `explanation-quality.md` from v2.18 to v2.19.
+- Updated `design/explanation-quality.design.md` from v2.18 to v2.19.
+- Replaced the narrow comparison-table trigger with a broader side-by-side table trigger that also covers several stable facts, fields, states, or conditions that are easier to clarify together.
+- Added explanation-flow guidance that keeps mechanism, causality, and implications in prose when that reasoning would become harder to follow inside cells.
+- Added a canonical light-table example for multi-field clarification while preserving list-first sequence behavior and bullets/grouped blocks for very small simple status.
+
+### Summary
+Explanation-quality now supports light tables more proactively for diagnostic and multi-field clarification when side-by-side scanability improves understanding, without weakening prose-first reasoning where tables would make the explanation harder to follow.
 
 ---
 

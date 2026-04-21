@@ -1,10 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-19
+> **Last Updated:** 2026-04-22
 
 ---
 
 ## ✅ Completed
+
+- [x] Refine explanation structure and presentation so light tables are used more proactively when side-by-side structure materially improves analytical clarity, diagnostic scanability, or multi-field understanding; preserve list-first sequence behavior, prose for mechanism/implication, and anti-overuse boundaries; add bounded `phase-069` / `patch/proactive-light-table-use-refinement.patch.md` artifacts; and keep the wave RULES-side only.
 
 - [x] Refine phase-context-aware task discovery across the existing owner set so Task List behavior stays current-phase-first but also consults relevant `/phase` planning context more actively when that context already exists; preserve draft-only future-phase boundaries; add bounded `phase-068` / `patch/phase-context-aware-task-discovery.patch.md` artifacts; and keep the wave RULES-side only.
 
