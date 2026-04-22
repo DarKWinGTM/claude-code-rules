@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.18
+> **Current Version:** 2.19
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.19 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-18 | **[Aligned task-list creation more strongly to phase-shaped context and session language](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.16 | 2026-04-18 | **[Made required TODO sync explicit as companion work](#version-216)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -29,6 +30,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-219"></a>
+## Version 2.19: Made task wording follow the actual active session language pattern
+
+**Date:** 2026-04-22
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards.md` from v2.18 to v2.19.
+- Updated `design/todo-standards.design.md` from v2.18 to v2.19.
+- Replaced the looser `align naturally` wording with a clearer rule that task subjects and descriptions should follow the actual active session language pattern.
+- Added explicit guidance that Thai-led session usage should produce Thai-led task wording by default, while naturally mixed Thai+English sessions should keep that mix instead of being forced into one language.
+- Added explicit guidance that technical labels may remain in technical form when forced translation would reduce clarity or make the wording less natural.
+
+### Summary
+TODO standards now says more clearly that task wording should follow the actual language pattern used in the session, without forcing a monolingual output or a fixed Thai/English ratio.
 
 ---
 

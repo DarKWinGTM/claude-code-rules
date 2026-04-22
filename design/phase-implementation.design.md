@@ -147,7 +147,10 @@ Required guidance:
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
 - prefer task subjects that include the current phase ID when that improves clarity
-- task wording created from phase-linked work should still align naturally with the active session language/register rather than reverting to detached generic phrasing
+- task wording created from phase-linked work should still follow the actual active session language pattern rather than reverting to detached generic phrasing
+- if the session is primarily Thai, phase-linked task wording should be Thai-led by default
+- if the session naturally uses mixed Thai+English wording, phase-linked task wording should follow that mix rather than being forced into one language
+- technical labels may remain in their technical form when forced translation would reduce clarity or make the wording read less naturally
 - treat the current phase, the current phase family, and `phase/SUMMARY.md` as execution-discovery surfaces when the next unfinished slice is not fully obvious from the task list alone
 - use already-authored `Next possible phases` as bounded planning input when they help clarify continuity, sequencing, or draft next-work visibility
 - use checked implementation state alongside the phase workspace when phase text and current repo state together reveal the next unfinished work more clearly than either one alone

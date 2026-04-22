@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.62
+> **Current Version:** 9.63
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.63 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-963)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.62 | 2026-04-22 | **[Made light tables more proactive in active explanation owners](#version-962)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.61 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-961)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.60 | 2026-04-19 | **[Clarified legacy history authority boundaries after the ownership split](#version-960)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -97,6 +98,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-963"></a>
+## Version 9.63: Made task wording follow the actual active session language pattern
+
+**Date:** 2026-04-22
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards` so task wording now follows the actual active session language pattern more explicitly instead of relying on the looser `align naturally` wording alone.
+- Updated `phase-implementation` so phase-linked task wording now follows the actual active session language pattern more explicitly as well.
+- Added explicit guidance that Thai-led sessions should produce Thai-led task wording by default, naturally mixed Thai+English sessions should keep that mix, and technical labels may remain in technical form when forced translation would reduce clarity.
+- Added bounded `phase-070` and `patch/task-language-pattern-refinement.patch.md` artifacts for the refinement wave.
+
+### Summary
+The RULES repository now says more clearly that task wording should follow the actual language pattern used in the session, without forcing Thai-only output, a fixed Thai/English ratio, or unnatural translation of technical labels.
 
 ---
 

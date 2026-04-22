@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.20
+> **Current Version:** 2.21
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.21 | 2026-04-22 | **[Made phase-linked task wording follow the actual active session language pattern](#version-221)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.20 | 2026-04-20 | **[Made phase-linked task discovery current-phase-first but phase-context-aware](#version-220)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.19 | 2026-04-18 | **[Extended phase-linked task behavior to clearly implied staged context and session-aligned wording](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-18 | **[Made default phase establishment explicit when staged work is clearly implied](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -32,6 +33,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-221"></a>
+## Version 2.21: Made phase-linked task wording follow the actual active session language pattern
+
+**Date:** 2026-04-22
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `phase-implementation.md` from v2.20 to v2.21.
+- Updated `design/phase-implementation.design.md` from v2.20 to v2.21.
+- Replaced the looser phase-linked task wording guidance with a clearer rule that phase-linked task wording should follow the actual active session language pattern.
+- Added explicit guidance that Thai-led session usage should produce Thai-led phase-linked task wording by default, while naturally mixed Thai+English sessions should keep that mix instead of being forced into one language.
+- Added explicit guidance that technical labels may remain in technical form when forced translation would reduce clarity or make the wording less natural.
+
+### Summary
+Phase-implementation now says more clearly that phase-linked task wording should follow the actual language pattern used in the session, without forcing a monolingual output or a fixed Thai/English ratio.
 
 ---
 

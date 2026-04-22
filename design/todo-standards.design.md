@@ -144,7 +144,10 @@ When the built-in task list is in use:
 - keep task entries outcome-sized rather than command-sized
 - when the checked project/workstream context is already phase-shaped, keep task creation aligned to the current active phase or clearly implied current stage/family even if the exact next phase file is still pending
 - do not default task creation to detached generic standalone wording when stronger checked phase/stage context already exists
-- task subjects and descriptions should align naturally with the active session language/register rather than defaulting to detached generic system wording
+- task subjects and descriptions should follow the actual active session language pattern rather than defaulting to detached generic system wording
+- if the session is primarily Thai, task wording should be Thai-led by default
+- if the session naturally uses mixed Thai+English wording, task wording should follow that mix rather than being forced into one language
+- technical labels may remain in their technical form when forced translation would reduce clarity or make the wording read less naturally
 - this rule does not impose a fixed language ratio; it should follow the active session communication context and higher-priority runtime language preferences
 - treat the task list as the first active source for discovering the next unfinished work within the same objective
 - if the task list alone is insufficient, use the active phase, the current phase family, `phase/SUMMARY.md`, already-authored `Next possible phases` in the relevant phase files, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
