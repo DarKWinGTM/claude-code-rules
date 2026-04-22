@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Make phase-first task shaping explicit across the existing owner set so when `/phase` exists and relevant governed phase context is available, Task List shaping must inspect that phase context first and detached generic task shaping counts as drift rather than an acceptable fallback; add bounded `phase-071` / `patch/phase-first-task-shaping-refinement.patch.md` artifacts and keep the wave RULES-side only.
+
 - [x] Make task wording follow the actual active session language pattern across the existing owner set so Thai-led sessions produce Thai-led task wording by default, naturally mixed Thai+English sessions keep that mix, technical labels may remain in technical form when that reads better, and bounded `phase-070` / `patch/task-language-pattern-refinement.patch.md` artifacts plus master/history sync keep the wave RULES-side only.
 
 - [x] Refine explanation structure and presentation so light tables are used more proactively when side-by-side structure materially improves analytical clarity, diagnostic scanability, or multi-field understanding; preserve list-first sequence behavior, prose for mechanism/implication, and anti-overuse boundaries; add bounded `phase-069` / `patch/proactive-light-table-use-refinement.patch.md` artifacts; and keep the wave RULES-side only.

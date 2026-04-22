@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.19
+> **Current Version:** 2.20
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.20 | 2026-04-23 | **[Made relevant governed `/phase` context a required task-shaping input](#version-220a)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.19 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-18 | **[Aligned task-list creation more strongly to phase-shaped context and session language](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -30,6 +31,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-220a"></a>
+## Version 2.20: Made relevant governed `/phase` context a required task-shaping input
+
+**Date:** 2026-04-23
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards.md` from v2.19 to v2.20.
+- Updated `design/todo-standards.design.md` from v2.19 to v2.20.
+- Added explicit guidance that when `/phase` exists and relevant governed phase context is available, task creation must inspect that phase context before shaping the live task list.
+- Added explicit guidance that detached generic task shaping in the presence of relevant governed phase context should be treated as task-shaping drift rather than as an acceptable fallback.
+- Preserved the current-phase-first baseline and the future-phase draft boundary while making phase context a stronger shaping requirement.
+
+### Summary
+TODO standards now says more clearly that relevant governed `/phase` context is a required task-shaping input when available, instead of a soft advisory source that can be ignored without consequence.
 
 ---
 

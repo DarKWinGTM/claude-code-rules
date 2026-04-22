@@ -88,6 +88,9 @@ Do not force built-in task-list overhead when:
 ### 5.1 Current-Phase-First but Phase-Context-Aware Task-List Rule
 When an active phase already exists, the task list should mirror that current phase before proposing future-phase work.
 
+If `/phase` exists and relevant governed phase context is already available, task creation must inspect that phase context before shaping the live task list.
+Detached generic task shaping in the presence of relevant governed phase context should be treated as execution drift rather than as an acceptable fallback.
+
 If the exact next phase file does not yet exist but the checked project/workstream context already makes the current phase family or staged execution lane clear, task-list creation should still align to that implied current phase/stage instead of falling back to detached generic standalone tasks.
 
 If `/phase` already contains additional relevant planning context, task behavior should not stop at the currently open phase file alone. It should also consult bounded phase context that already exists in the governed phase workspace, such as:
@@ -98,6 +101,7 @@ If `/phase` already contains additional relevant planning context, task behavior
 
 Required guidance:
 - create the built-in task list for the active phase rather than waiting for the user to ask explicitly
+- when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping or extending the live task list
 - default the task list to the current active phase before opening tasks for any later phase
 - when no exact new phase file is open yet, but the current staged/phase family is already clear from checked context, create task entries that still reflect that phase-shaped execution structure
 - when `/phase` already contains relevant next planned phase information, use that information to improve continuity, sequencing, and draft next-work visibility rather than ignoring it
@@ -143,7 +147,9 @@ When the built-in task list is in use:
 - extend the current task list within the same active objective instead of replacing it with a fresh set
 - keep completed tasks visible until the active objective is truly closed or explicitly reset
 - when the checked project/workstream context is already phase-shaped, keep task creation aligned to the current active phase or clearly implied current stage/family even if the exact next phase file is still pending
+- when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping new task entries or extending existing ones
 - do not default task creation to detached generic standalone wording when stronger checked phase/stage context already exists
+- when relevant governed phase context exists but task shaping does not follow it, treat that outcome as task-shaping drift rather than as an acceptable generic fallback
 - task subjects and descriptions should follow the actual active session language pattern rather than defaulting to detached generic system wording
 - if the session is primarily Thai, task wording should be Thai-led by default
 - if the session naturally uses mixed Thai+English wording, task wording should follow that mix rather than being forced into one language

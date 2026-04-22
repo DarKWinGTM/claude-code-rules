@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.21
+> **Current Version:** 2.22
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.22 | 2026-04-23 | **[Made relevant governed `/phase` context a required phase-linked task-shaping input](#version-222)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.21 | 2026-04-22 | **[Made phase-linked task wording follow the actual active session language pattern](#version-221)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.20 | 2026-04-20 | **[Made phase-linked task discovery current-phase-first but phase-context-aware](#version-220)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.19 | 2026-04-18 | **[Extended phase-linked task behavior to clearly implied staged context and session-aligned wording](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -33,6 +34,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-222"></a>
+## Version 2.22: Made relevant governed `/phase` context a required phase-linked task-shaping input
+
+**Date:** 2026-04-23
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `phase-implementation.md` from v2.21 to v2.22.
+- Updated `design/phase-implementation.design.md` from v2.21 to v2.22.
+- Added explicit guidance that when `/phase` exists and relevant governed phase context is available, phase-linked task creation must inspect that phase context before shaping the live task list.
+- Added explicit guidance that task shaping which ignores relevant governed phase context and falls back to detached generic structure should be treated as execution drift rather than as an acceptable default path.
+- Preserved current-phase-first behavior and future-phase boundaries while making governed phase context a stronger shaping requirement.
+
+### Summary
+Phase-implementation now says more clearly that relevant governed `/phase` context is a required phase-linked task-shaping input when available, instead of a soft advisory source that can be ignored without consequence.
 
 ---
 

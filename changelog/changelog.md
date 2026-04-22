@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.63
+> **Current Version:** 9.64
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.64 | 2026-04-23 | **[Made relevant governed `/phase` context a required task-shaping input](#version-964)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.63 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-963)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.62 | 2026-04-22 | **[Made light tables more proactive in active explanation owners](#version-962)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.61 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-961)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -98,6 +99,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-964"></a>
+## Version 9.64: Made relevant governed `/phase` context a required task-shaping input
+
+**Date:** 2026-04-23
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `todo-standards` so when `/phase` exists and relevant governed phase context is available, task creation must inspect that phase context before shaping the live task list.
+- Updated `phase-implementation` so phase-linked task behavior now treats relevant governed `/phase` context as a required shaping input rather than a soft advisory source.
+- Added explicit guidance that detached generic task shaping in the presence of relevant governed phase context should be treated as drift rather than as an acceptable fallback.
+- Preserved current-phase-first behavior, implied-current-stage alignment, and unopened-future-phase draft boundaries.
+- Added bounded `phase-071` and `patch/phase-first-task-shaping-refinement.patch.md` artifacts for the refinement wave.
+
+### Summary
+The RULES repository now says more clearly that relevant governed `/phase` context is a required task-shaping input when available, so Task List behavior should not casually drift away from the active phase structure.
 
 ---
 
