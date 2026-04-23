@@ -145,6 +145,9 @@ Required guidance:
 - end-to-end verification requirements
 - overall rollback or containment behavior
 
+When phased work materially depends on external docs/specs/provider references, the live phase workspace should reuse normalized design truth rather than depending on transient reading memory alone.
+If the current wave still depends on implementation-relevant knowledge extracted from those sources, the relevant phase summary and/or child phase files should point clearly enough to that design truth that later execution slices do not need to rediscover the same contract details from scratch after compact or handoff.
+
 ### 9) Stable Child Phase Field Contract
 Each executable child phase file should define, or clearly map to:
 - Summary File reference
@@ -154,6 +157,7 @@ Each executable child phase file should define, or clearly map to:
 - Patch references (required when patch-derived work exists; otherwise explicit `none`)
 - Objective
 - Why this phase exists
+- implementation-relevant doc/spec-derived constraints when external references materially constrain the phase
 - Entry conditions / prerequisites
 - Action points / execution checklist
 - Out of scope
