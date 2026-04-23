@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.8
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Current Version:** 1.9
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-23)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic structure for design documents that stays aligned with UDVC-1 governance and keeps active design state separate from historical records.
+Define one deterministic structure for design documents that stays aligned with UDVC-1 governance, keeps active design state separate from historical records, and preserves implementation-relevant knowledge extracted from external docs/specs when later work still depends on it.
 
 ---
 
@@ -71,6 +71,26 @@ For rule-governed chains, design version must align with:
 - runtime rule `Design` reference version
 - changelog `Current Version`
 
+### 3.6 Doc-Derived Knowledge Capture Rule
+
+When external documentation, API specifications, provider references, or comparable implementation authorities materially constrain the implementation, the implementation-relevant extracted knowledge must be normalized into the governed design layer before or alongside continued multi-step work that relies on it.
+
+Required guidance:
+- do not rely on transient reading memory alone for contract-critical external requirements
+- capture the implementation-relevant truth in design before treating it as stable working context for later execution slices
+- capture extracted knowledge rather than copied source prose
+- if the external source materially determines request parameters, authentication requirements, callback expectations, field semantics, state transitions, acceptance criteria, or integration constraints, those constraints should be made visible in design
+- compact/session continuity limits are part of the reason this capture is required; the governed design layer should preserve reusable implementation truth so later execution does not depend on re-reading the same source unnecessarily
+
+### 3.7 Extraction Specificity Rule
+
+A design capture derived from docs/specs should be specific enough that later implementation can answer:
+- what the external source requires
+- which part of the implementation is constrained by that requirement
+- what values/fields/parameters/flows matter
+- what should be sent, accepted, stored, validated, or rejected because of that requirement
+- which details are active implementation truth versus source-side background detail that does not need to be carried forward
+
 ---
 
 ## 4) Support-Artifact Boundary
@@ -124,6 +144,8 @@ Governance documents use canonical `#version-xy` anchors for version navigation.
 - [ ] Required metadata fields are complete
 - [ ] Design body is active-state only
 - [ ] Historical detail is delegated to changelog
+- [ ] External-doc/spec-derived implementation truth is captured in design when later work still depends on it
+- [ ] Captured knowledge is normalized and implementation-relevant rather than copied source prose
 - [ ] Runtime rule references use `Design`, not `Based on`
 - [ ] Rule/design/changelog versions are aligned where applicable
 - [ ] Links resolve correctly
@@ -136,6 +158,7 @@ Governance documents use canonical `#version-xy` anchors for version navigation.
 |--------|--------|
 | Active-state-only design-body compliance | 100% |
 | Navigator compliance in paired design docs | 100% |
+| External-doc-derived implementation truth captured when material | High |
 | Ambiguous governed-looking support artifacts | 0 |
 | Broken design/changelog links | 0 |
 | Stale historical guidance inside active design bodies | 0 critical cases |

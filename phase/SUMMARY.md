@@ -74,6 +74,7 @@ The current workspace contains sixty-seven rollout families:
 - major phase `069` = proactive light-table use refinement rollout
 - major phase `070` = task-language pattern refinement rollout
 - major phase `071` = phase-first task-shaping refinement rollout
+- major phase `072` = doc-derived knowledge-capture refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -505,6 +506,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 069 | 069-01 | Completed | `phase/phase-069-01-refine-proactive-light-table-use.md` | Refine explanation structure and presentation so light tables are used more proactively when side-by-side structure materially improves understanding | none |
 | 070 | 070-01 | Completed | `phase/phase-070-01-refine-task-language-pattern.md` | Refine Task List wording so it follows the actual active session language pattern more explicitly | none |
 | 071 | 071-01 | Completed | `phase/phase-071-01-refine-phase-first-task-shaping.md` | Refine Task List behavior so relevant governed `/phase` context becomes a required inspection step before task shaping when available | none |
+| 072 | 072-01 | Completed | `phase/phase-072-01-refine-doc-derived-knowledge-capture.md` | Refine the document system so implementation-critical knowledge learned from docs/specs/provider references is captured in governed artifacts before later multi-step work depends on it | none |
 
 ---
 
@@ -561,13 +563,14 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the proactive light-table use refinement exists as a bounded `069` family with explicit patch linkage, makes light tables more proactively available when side-by-side structure materially improves understanding, and preserves list-first sequence behavior plus prose-first mechanism/implication boundaries
 - the task-language pattern refinement exists as a bounded `070` family with explicit patch linkage, makes task wording follow the actual active session language pattern more explicitly, keeps Thai-led wording as the default when sessions are primarily Thai, preserves natural Thai+English mix when that is the real session pattern, and keeps technical labels in technical form when forced translation would reduce clarity
 - the phase-first task-shaping refinement exists as a bounded `071` family with explicit patch linkage, makes relevant governed `/phase` context a required inspection step before task shaping when available, and treats detached generic task shaping in the presence of that context as drift rather than as an acceptable fallback
+- the doc-derived knowledge-capture refinement exists as a bounded `072` family with explicit patch linkage, makes implementation-critical knowledge learned from docs/specs/provider references flow into governed design/phase/patch surfaces before later multi-step work depends on it, and adds a capture-before-continue boundary so execution does not keep relying on transient doc-reading memory alone
 - the tmux bridge anchored-task board-reflection rollout exists as a bounded `045` family with explicit patch linkage, reflects request/report state into the existing anchored board task when safe, fails closed on unsafe anchors, avoids hidden broker/history drift, and synchronizes governance/history/package surfaces to the bounded reflection model
 
 ---
 
 ## Overall Rollback / Containment
 
-If the shared execution coordination, handoff-boundary, shared-board operating-detail, universal task-ownership, memsearch availability-intake, legacy-history authority-boundary clarification, phase-context-aware task discovery, proactive light-table use, task-language pattern, or phase-first task-shaping refinements proved incorrect, rollback would require:
+If the shared execution coordination, handoff-boundary, shared-board operating-detail, universal task-ownership, memsearch availability-intake, legacy-history authority-boundary clarification, phase-context-aware task discovery, proactive light-table use, task-language pattern, phase-first task-shaping, or doc-derived knowledge-capture refinements proved incorrect, rollback would require:
 - narrowing the visible-session / lifecycle / retention / optional-recall wording in the touched owner chains before removing the refinement entirely
 - narrowing the universal visible-ownership wording before weakening the underlying request / held / blocked state distinctions
 - narrowing the availability-first optional-recall wording before weakening the immediate fallback protection for absent optional extensions
@@ -578,6 +581,7 @@ If the shared execution coordination, handoff-boundary, shared-board operating-d
 - narrowing the proactive light-table wording before drifting into heavy or forced table use by default
 - narrowing the task-language pattern wording before drifting into a rigid monolingual or fixed-ratio language rule
 - narrowing the phase-first task-shaping wording before turning every phase hint into premature hard failure or weakening the future-phase boundary
+- narrowing the doc-derived knowledge-capture wording before turning governed artifacts into copied source-document dumps or slowing work with unnecessary capture of non-material details
 - preserving the recorded design/phase/patch/changelog history instead of silently erasing the rollout evidence
 
 ---

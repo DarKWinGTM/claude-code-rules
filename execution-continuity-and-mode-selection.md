@@ -63,6 +63,15 @@ Required guidance:
 - treat design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once the work is already in execution mode
 - do not wait for a repeated `continue`/`เดินต่อ` style prompt when the same active objective still has a clear next unfinished slice and no stop gate exists
 
+### 3.2) Capture-Before-Continue Boundary
+When external docs/specs/provider references have just produced implementation-critical knowledge that later execution still depends on, continuous execution should not outrun required knowledge capture.
+
+Required guidance:
+- if implementation-critical external knowledge has not yet been normalized into the appropriate governed artifact, treat that gap as a stop-for-capture boundary before continued multi-step execution relies on it
+- prefer the governed design layer as the primary owner of extracted implementation truth
+- use the active phase workspace and/or patch artifact to carry forward the execution consequence of that knowledge when phase or patch are already materially in scope
+- do not keep relying on transient reading memory alone for later governed execution slices when compact/handoff could remove that context
+
 ### 4) Legitimate Stop-Gate Principle
 Stop only when a real gate exists.
 

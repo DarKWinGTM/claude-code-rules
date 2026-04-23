@@ -161,6 +161,15 @@ A patch should be specific enough that a reviewer can answer:
 
 If the reviewer cannot answer those questions, the patch is under-specified.
 
+### 5.6 External-requirement basis rule
+When a change is materially constrained by external documentation, API specifications, provider references, or comparable external implementation authorities, the patch should make the implementation-relevant basis visible clearly enough that a reviewer can tell why the change surface exists.
+
+Required guidance:
+- patch should point to the normalized design truth when design already owns the extracted external requirement
+- patch may summarize the change-driving external requirement, but it should not replace design as the target-state truth layer
+- when external requirements materially determine request parameters, authentication behavior, callback handling, acceptance criteria, field semantics, or comparable integration constraints, the patch context/analysis should make that basis legible enough for review
+- do not rely on transient doc-reading memory alone to explain a later change-driving external constraint in review
+
 ---
 
 ## 6) Patch-versus-Phase Boundary

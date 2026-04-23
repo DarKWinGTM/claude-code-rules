@@ -1,7 +1,7 @@
 # Changelog - Document Patch Control
 
 > **Parent Document:** [../document-patch-control.md](../document-patch-control.md)
-> **Current Version:** 2.5
+> **Current Version:** 2.6
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.6 | 2026-04-23 | **[Added external-requirement basis visibility for patch review](#version-26)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.5 | 2026-04-08 | **[Narrowed patch semantics so startup baseline formation no longer implies patch by default](#version-25)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Clarified that patch normally assumes an existing before-state and is not the default governing artifact for greenfield / baseline-formation startup unless a real review surface or explicit user request exists | |
 | 2.2 | 2026-03-15 | **[Added path-aware patch naming guidance for filename-authoritative versus path-authoritative workspaces](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
@@ -38,6 +39,24 @@
 | | | Summary: Closed patch-reference/version drift across runtime/design/changelog artifacts | |
 | 1.0 | 2026-02-01 | **[Initial design](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Initial release of patch-control standards | |
+
+---
+
+<a id="version-26"></a>
+## Version 2.6: Added external-requirement basis visibility for patch review
+
+**Date:** 2026-04-23
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated runtime `document-patch-control.md` from v2.5 to v2.6.
+- Updated `design/document-patch-control.design.md` from v2.5 to v2.6.
+- Added an explicit external-requirement basis rule so patch context/analysis can show the implementation-relevant basis when a change is materially constrained by docs/specs/provider references.
+- Clarified that patch should point to normalized design truth when design already owns the extracted external requirement.
+- Preserved the boundary that patch does not replace design as the target-state truth layer.
+
+### Summary
+Document-patch-control now makes it easier for later review to understand which external requirement materially drove a change, without turning patch into a duplicate design layer.
 
 ---
 

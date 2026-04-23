@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-04-23 | **[Added capture-before-continue for implementation-critical doc-derived knowledge](#version-17)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.6 | 2026-04-18 | **[Made startup artifact governance an explicit precondition for execution continuity](#version-16)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.5 | 2026-04-17 | **[Retired stale shared-execution deferral in favor of explicit out-of-scope wording](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.4 | 2026-04-17 | **[Reduced memsearch wording to shared-board defer only](#version-14)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -18,6 +19,24 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added capture-before-continue for implementation-critical doc-derived knowledge
+
+**Date:** 2026-04-23
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.6 to v1.7.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.6 to v1.7.
+- Added a capture-before-continue boundary so execution does not keep relying on transient doc-reading memory when implementation-critical external knowledge has not yet been normalized into governed artifacts.
+- Clarified that required knowledge capture is a legitimate stop gate before later multi-step work depends on that knowledge.
+- Preserved the existing startup-gate-first and next-work-discovery behavior while adding the new capture gate.
+
+### Summary
+Execution continuity now keeps work moving after startup is settled, but it no longer treats freshly learned implementation-critical doc/spec knowledge as safe to carry only in transient reading memory.
 
 ---
 

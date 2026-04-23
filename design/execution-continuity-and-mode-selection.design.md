@@ -45,8 +45,11 @@ Execution mode should continue by default when no real stop gate exists and star
 ### 3.5 Active Next-Work Discovery Principle
 Execution mode should actively inspect the current execution surfaces to discover the next unfinished slice when the task list alone does not already make it obvious.
 
-### 3.6 Legitimate Stop-Gate Principle
-Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, or actual completion.
+### 3.6 Capture-Before-Continue Boundary
+Execution continuity should not outrun required knowledge capture when external docs/specs/provider references have just produced implementation-critical knowledge that later governed execution still depends on.
+
+### 3.7 Legitimate Stop-Gate Principle
+Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, actual completion, or a required knowledge-capture gate.
 
 ### 3.7 Phase-Boundary Continuity Principle
 Closing one slice should not force a pause if the next slice is already the implied active path.

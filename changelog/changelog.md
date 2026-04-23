@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.64
+> **Current Version:** 9.65
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.65 | 2026-04-23 | **[Made doc-derived implementation truth a governed capture requirement](#version-965)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.64 | 2026-04-23 | **[Made relevant governed `/phase` context a required task-shaping input](#version-964)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.63 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-963)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.62 | 2026-04-22 | **[Made light tables more proactive in active explanation owners](#version-962)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -99,6 +100,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-965"></a>
+## Version 9.65: Made doc-derived implementation truth a governed capture requirement
+
+**Date:** 2026-04-23
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `document-design-control` so implementation-critical knowledge learned from external docs/specs/provider references must be normalized into the governed design layer before or alongside later multi-step work that relies on it.
+- Updated `phase-implementation` so phased execution now reuses normalized design truth instead of depending on transient doc-reading memory after compact or handoff.
+- Updated `document-patch-control` so reviewable patch context can surface the external-requirement basis when that basis materially explains the change surface.
+- Updated `execution-continuity-and-mode-selection` so execution stops for required capture before later multi-step work continues to rely on newly learned implementation-critical external knowledge.
+- Added bounded `phase-072` and `patch/doc-derived-knowledge-capture-refinement.patch.md` artifacts for the refinement wave.
+
+### Summary
+The RULES repository now says more clearly that implementation-critical truth learned from docs/specs must be captured into the governed document system before later multi-step work depends on it, reducing needless re-reading after compact or handoff.
 
 ---
 

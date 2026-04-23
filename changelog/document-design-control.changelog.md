@@ -1,7 +1,7 @@
 # Changelog - Document Design Control
 
 > **Parent Document:** [../document-design-control.md](../document-design-control.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-04-23 | **[Added doc-derived knowledge capture to the governed design layer](#version-19)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.8 | 2026-03-08 | **[Enforced active-state-only design bodies and support-artifact boundary](#version-18)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Updated the chain to prohibit historical audit content in active design docs and to clarify that support-only artifacts should not remain in ambiguous `.design.md` form | |
 | 1.7 | 2026-02-23 | **[Synchronized design-control runtime contract to UDVC-1 baseline](#version-17)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -28,6 +29,24 @@
 | | | Summary: Removed local version-table expectation from design docs | |
 | 1.0 | 2026-01-20 | **[Initial design-control standard](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Established baseline naming/location/structure standards for design docs | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added doc-derived knowledge capture to the governed design layer
+
+**Date:** 2026-04-23
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated runtime `document-design-control.md` from v1.8 to v1.9.
+- Updated `design/document-design-control.design.md` from v1.8 to v1.9.
+- Added an explicit rule that implementation-critical knowledge learned from external docs/specs/provider references must be normalized into the governed design layer before or alongside continued multi-step work that relies on it.
+- Added extraction-specificity guidance so design captures preserve implementation-relevant truth rather than copied source prose.
+- Added verification/quality checks for external-doc-derived implementation truth capture.
+
+### Summary
+Document-design-control now makes governed design the required durable home for implementation-relevant knowledge extracted from external docs/specs when later work still depends on it.
 
 ---
 
