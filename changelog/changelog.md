@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.75
+> **Current Version:** 9.76
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.76 | 2026-04-29 | **[Added completed documentation surface governance](#version-976)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.75 | 2026-04-27 | **[Added design-to-phase execution synthesis](#version-975)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.74 | 2026-04-25 | **[Added phase closeout feature and impact reporting](#version-974)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.73 | 2026-04-25 | **[Synchronized runtime destination boundary across adjacent owners](#version-973)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -109,6 +110,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-976"></a>
+## Version 9.76: Added completed documentation surface governance
+
+**Date:** 2026-04-29
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `project-documentation-standards.md` and `design/project-documentation-standards.design.md` to define completed documentation surface governance.
+- Updated `document-design-control.md` and `design/document-design-control.design.md` to clarify that `design/` remains active blueprint and target-state authority with no default `design/done/` pattern.
+- Updated `document-changelog-control.md` and `design/document-changelog-control.design.md` to allow inactive-by-default `changelog/done/` completed or older detailed history.
+- Updated `document-patch-control.md` and `design/document-patch-control.design.md` to allow inactive-by-default `patch/done/` completed patch history and close the prior patch-control version drift through v2.7.
+- Updated `phase-implementation.md` and `design/phase-implementation.design.md` to allow inactive-by-default `phase/done/` completed phase history without replacing the live phase workspace.
+- Synchronized README, TODO, phase summary, the P077 phase record, and the P077 patch artifact for the source governance release.
+
+### Summary
+Completed documentation surface governance now lets large projects reduce active scan bloat by moving completed phase, patch, and changelog detail into inactive `done/` history surfaces while preserving active design as blueprint truth and preserving the rule that completed history is not junk or deletion authority.
 
 ---
 

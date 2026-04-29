@@ -1,8 +1,8 @@
 # Changelog - Document Changelog Control
 
 > **Parent Document:** [../document-changelog-control.md](../document-changelog-control.md)
-> **Current Version:** 4.7
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 4.8
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 4.8 | 2026-04-29 | **[Added completed changelog history surface](#version-48)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 4.7 | 2026-03-08 | **[Normalized runtime header contract and active-state design separation](#version-47)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Updated the chain to require canonical root runtime `Design + Session + Full history` headers and active-state-only design bodies | |
 | 4.6 | 2026-02-23 | **[Adopted UDVC-1 deterministic contract baseline](#version-46)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -26,6 +27,25 @@
 | | | Summary: Design docs provide navigation link rather than duplicated full history | |
 | 4.0 | 2026-01-20 | **[Established baseline version-governance architecture](#version-40)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Introduced foundational documentation version-governance model | |
+
+---
+
+<a id="version-48"></a>
+## Version 4.8: Added completed changelog history surface
+
+**Date:** 2026-04-29
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated runtime `document-changelog-control.md` from v4.7 to v4.8.
+- Updated `design/document-changelog-control.design.md` from v4.7 to v4.8.
+- Added `changelog/done/` as inactive-by-default completed or older changelog history.
+- Clarified that active changelogs remain current version authority, current index, and navigation surfaces.
+- Clarified that `changelog/done/` is consulted only for history, audit, rollback, provenance, or trace reconstruction.
+- Preserved the boundary that completed history is not junk, not deletion authority, and design-specific history stays under changelog governance rather than `design/done/`.
+
+### Summary
+Document-changelog-control now lets large projects move completed history out of active scans while keeping active changelogs authoritative and traceable.
 
 ---
 

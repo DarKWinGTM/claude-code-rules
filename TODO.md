@@ -1,10 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-27
+> **Last Updated:** 2026-04-29
 
 ---
 
 ## ✅ Completed
+
+- [x] Complete P077 completed documentation surface governance: update `project-documentation-standards`, `document-design-control`, `document-changelog-control`, `document-patch-control`, and `phase-implementation` so completed phase, patch, and changelog history can move to inactive `done/` surfaces while active design remains blueprint/target-state authority with no default `design/done/`; synchronize README, master design/changelog, TODO, phase, and patch records; keep source runtime install scope unchanged; and prepare the governed source update for git publish/release.
 
 - [x] Complete P076 design-to-phase execution synthesis: update `phase-implementation` and `artifact-initiation-control` so sufficiently clear governed design can drive phase posture, phase execution order, current child phase files, and current-phase live tasks when staged execution is warranted; synchronize companion design/changelog/README/TODO/phase/patch records; install only the 41 active runtime rule files; verify parity; and keep other-owner runtime destination files out of Main RULES cleanup/ownership scope.
 
@@ -146,6 +148,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-29 | Completed P077 completed documentation surface governance: added inactive-by-default `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces; preserved design as active blueprint authority with no default `design/done/`; synchronized README/master governance records; and kept completed history distinct from junk/deletion authority. |
 | 2026-04-27 | Completed P076 design-to-phase execution synthesis: updated `phase-implementation` and `artifact-initiation-control`; synchronized companion design/changelog/README/TODO/phase/patch records; installed the 41 active runtime rule files; verified source/runtime parity; and preserved other-owner runtime destination files as out of scope unless selected or verified. |
 | 2026-04-25 | Completed P075 phase closeout feature impact reporting: updated `response-closing-and-action-framing`, `phase-implementation`, `answer-presentation`, `accurate-communication`, and `explanation-quality`; synchronized companion design/changelog/README/TODO/phase/patch records; installed the 41 active runtime rule files; verified source/runtime parity; and preserved other-owner runtime destination files as out of scope unless selected or verified. |
 | 2026-04-25 | Completed P074-02 adjacent runtime destination boundary sync: updated `project-documentation-standards`, `strict-file-hygiene`, and `document-consistency`; synchronized companion design/changelog/README/TODO/phase/patch records; installed the 41 active runtime rule files; verified source/runtime parity; and preserved other-owner runtime destination files as out of scope unless selected or verified. |

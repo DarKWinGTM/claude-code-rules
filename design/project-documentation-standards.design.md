@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.30
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
+> **Current Version:** 2.31
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
 
 ## 1) Goal
 
-Provide one deterministic, low-confusion repository model across README, runtime rules, design documents, changelog files, TODO trackers, phase-planning artifacts, patch documents, and support or extension-package artifacts.
+Provide one deterministic, low-confusion repository model across README, runtime rules, design documents, changelog files, completed history surfaces, TODO trackers, phase-planning artifacts, patch documents, and support or extension-package artifacts.
 
 Shared governed docs and templates should remain portable by default rather than embedding machine-specific environment assumptions as if they were universal repository truth.
 
@@ -19,11 +19,15 @@ Public onboarding/install docs should also stay portable by default so cloneable
 This model must preserve one authority system while clearly separating:
 - `phase-implementation.md` as the first-class rule for phase semantics
 - `phase/SUMMARY.md` as the governed summary/index for the active phase plan
-- `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` as governed execution files
-- `patch/<context>.patch.md` or root `<context>.patch.md` as patch-governance artifacts outside the live phase workspace
+- `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` as governed active execution files
+- `phase/done/` as inactive-by-default completed phase history
+- `patch/<context>.patch.md` or root `<context>.patch.md` as active patch-governance artifacts outside the live phase workspace
+- `patch/done/` as inactive-by-default completed patch history
 - `phase-implementation-template.md` as the readable root-level helper
 - Claude Code's built-in task list as the live in-session execution surface for non-trivial work
 - `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
+- `changelog/done/` as inactive-by-default completed/older changelog history while active changelogs keep version authority and navigation
+- design as active blueprint/target-state authority with no default `design/done/` pattern
 - design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
 - `/phase` as both the governed current execution structure and a bounded source of already-authored next planned structure that may guide continuity without silently activating unopened future work
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
@@ -46,6 +50,7 @@ This includes:
 - startup artifact posture before meaningful governed work
 - public onboarding/install guidance in README or adjacent install docs
 - source-side versus destination/runtime notation clarity when install docs name both
+- active-scan versus completed-history boundaries for `phase/done/`, `patch/done/`, and `changelog/done/`
 
 ---
 
@@ -68,10 +73,12 @@ They use the canonical runtime header contract:
 ### 3.3 Design Role
 `design/*.design.md` documents hold active target-state guidance.
 Historical detail lives in changelog files, not in active design bodies.
+Design remains blueprint authority and does not use a default `design/done/` pattern.
 
 ### 3.4 Changelog Role
-Each governed chain uses one authoritative changelog.
-Changelog files hold detailed history and latest chain version state.
+Each governed chain uses one authoritative active changelog.
+Active changelog files hold latest version state, current index, and navigation.
+Older or completed detailed history may live under `changelog/done/` when inactive history separation reduces active scan bloat.
 
 ### 3.5 TODO Role
 `TODO.md` tracks durable repository/project execution state only.
@@ -90,11 +97,14 @@ The active phase identity model uses:
 - major phase files: `phase/phase-NNN-<phase-name>.md`
 - subphase files: `phase/phase-NNN-NN-<subphase-name>.md`
 
+Completed phase files may move under `phase/done/` when they are no longer active execution inputs and only history/audit/rollback/trace needs remain.
+
 ### 3.8 Patch Role
-`patch/<context>.patch.md` or root `<context>.patch.md` is a governed patch/review artifact layer.
+`patch/<context>.patch.md` or root `<context>.patch.md` is a governed active patch/review artifact layer.
 It is not the live phase-plan namespace.
 A patch is a self-identifying before/after artifact whose job is to show what will change.
 It is not the default startup artifact for greenfield / baseline-formation work when no stable before-state exists yet.
+Completed patch artifacts may move under `patch/done/` when they are no longer active review inputs and only history/audit/rollback/trace needs remain.
 
 ### 3.9 Startup Artifact-Initiation Role
 `artifact-initiation-control.md` is the semantic owner of startup artifact posture.
@@ -146,11 +156,14 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 |----------|---------------|---------|-----------------|
 | `README.md` | Always | Overview, onboarding, repository map | Overview only |
 | `design/*.design.md` | Design/specification needed | Active target-state guidance | Governed design layer |
-| `changelog/*.changelog.md` | Chain history needed | Authoritative version history | Governed authority layer |
+| `changelog/*.changelog.md` | Chain history needed | Authoritative version history, current index, and navigation | Governed authority layer |
+| `changelog/done/*.changelog.md` | Older or completed detailed history should leave the active scan surface | Inactive-by-default history for audit/rollback/provenance/trace | Completed changelog history layer |
 | `TODO.md` | Work tracking needed | Durable repository/project execution tracking | Execution layer |
 | `phase/SUMMARY.md` | Phased execution planning is required | Governed summary/index for live phase planning | Governed phase summary layer |
-| `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail exists | Major/subphase execution detail | Governed phase-detail layer |
-| `patch/<context>.patch.md` or root `<context>.patch.md` | A separate before/after review artifact for an existing governed surface is required | Governed patch/review artifact outside the live phase workspace | Governed patch layer |
+| `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail exists | Active major/subphase execution detail | Governed phase-detail layer |
+| `phase/done/phase-NNN-*.md` and `phase/done/phase-NNN-NN-*.md` | Completed phase detail is retained outside active scans | Inactive-by-default completed phase history | Completed phase history layer |
+| `patch/<context>.patch.md` or root `<context>.patch.md` | A separate before/after review artifact for an existing governed surface is required | Active governed patch/review artifact outside the live phase workspace | Governed patch layer |
+| `patch/done/<context>.patch.md` | Completed patch artifact is retained outside active scans | Inactive-by-default completed patch history | Completed patch history layer |
 | `artifact-initiation-control.md` | Startup artifact posture must be standardized | First-class startup-governance behavior | Governed runtime rule |
 | `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
 | `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template | Non-governed helper artifact |
@@ -205,7 +218,28 @@ Instead, the assistant should:
 
 ---
 
-## 7) Decision Model for Document Creation
+## 7) Completed Documentation Surface Model
+
+Completed documentation surfaces reduce active scan bloat without deleting governed history.
+
+Allowed completed-history surfaces:
+- `phase/done/` for completed phase execution detail
+- `patch/done/` for completed patch/review artifacts
+- `changelog/done/` for older or completed detailed version history
+
+Not a default completed-history surface:
+- `design/done/` because design remains active blueprint and target-state authority
+
+Required guidance:
+- current-state scans start with active design, active changelog, `phase/SUMMARY.md`, active phase files, active patch files, `TODO.md`, and checked implementation state
+- `done/` surfaces are inactive by default and should be opened only for history, audit, rollback, provenance, or trace reconstruction
+- files in `done/` are not junk and completed status is not deletion authorization
+- active surfaces must keep enough pointer/index context that completed history can be found when needed
+- broad scans should avoid `done/` and archive surfaces unless the task explicitly needs historical evidence
+
+---
+
+## 8) Decision Model for Document Creation
 
 ```text
 Meaningful governed work begins
@@ -242,7 +276,7 @@ When phased work also uses governed patch artifacts, the phase workspace should 
 
 ---
 
-## 8) Public Onboarding and Install Guidance
+## 9) Public Onboarding and Install Guidance
 
 ### 8.1 Portable public default
 For cloneable or self-contained repositories, public onboarding/install docs should default to repo-root-relative or otherwise portable source guidance.
@@ -270,7 +304,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 
 ---
 
-## 9) Verification Checklist
+## 10) Verification Checklist
 
 - [ ] Required document set matches project scope
 - [ ] Changelog exists for each governed chain
@@ -283,9 +317,11 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
 - [ ] Phased work uses `phase/SUMMARY.md`
-- [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` phase files under `phase/`
+- [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` active phase files under `phase/`
+- [ ] Completed phase, patch, and changelog history uses `phase/done/`, `patch/done/`, and `changelog/done/` only as inactive-by-default history
+- [ ] No default `design/done/` pattern is introduced for governed blueprint docs
 - [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
-- [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md`
+- [ ] Patch artifacts use `patch/<context>.patch.md`, `patch/done/<context>.patch.md`, or root `<context>.patch.md`
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] Public onboarding/install docs avoid workstation-specific absolute paths as public defaults
 - [ ] Source-side and destination/runtime notation are clearly distinguished when both appear
@@ -296,7 +332,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 
 ---
 
-## 10) Quality Metrics
+## 11) Quality Metrics
 
 | Metric | Target |
 |--------|--------|
@@ -309,6 +345,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Phase-file role clarity | 100% |
 | Patch-role separation clarity | 100% |
 | Patch placement clarity | 100% |
+| Completed-history inactive-surface boundary clarity | 100% |
 | Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
 | Live task-vs-durable TODO distinction clarity | High |
@@ -322,15 +359,15 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 
 ---
 
-## 11) Integration
+## 12) Integration
 
 | Rule | Relationship |
 |------|-------------|
 | [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup artifact-resolution owner and early live task-tracking bridge |
-| [document-changelog-control.md](../document-changelog-control.md) | Version authority contract |
-| [document-design-control.md](../document-design-control.md) | Design structure standards |
-| [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
-| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning and one-way design/patch source synthesis |
+| [document-changelog-control.md](../document-changelog-control.md) | Version authority contract and `changelog/done/` completed history boundary |
+| [document-design-control.md](../document-design-control.md) | Design structure standards and no-default-`design/done/` boundary |
+| [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary, explicit before/after patch contract, and `patch/done/` history boundary outside live phase planning |
+| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, `phase/done/` history boundary, and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, source-owned install scope, shared destination, and other-owner runtime reference consistency |
 | [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, and same-objective continuity |

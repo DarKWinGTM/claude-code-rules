@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.24
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.24
+> **Current Version:** 2.25
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.25
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -9,9 +9,9 @@
 
 ## Rule Statement
 
-**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order, establish a dedicated `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
+**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order, establish a dedicated active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, allow completed phase details to move to inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
 
-This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed summary/index; child phase files hold phase-local execution detail; design is target-state authority; patch is governed before/after review authority; root phase helpers are non-governed. Multi-session shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
+This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed summary/index; active child phase files hold phase-local execution detail; `phase/done/` may hold inactive completed phase history; design is target-state authority; patch is governed before/after review authority; root phase helpers are non-governed. Multi-session shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
 
 ---
 
@@ -21,6 +21,7 @@ This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed sum
 - when phase planning should be used or skipped
 - `/phase` structure, phase ID grammar, and child phase field expectations
 - how design and governed patch references map into phases
+- how completed phase history may move to `phase/done/` without becoming active execution input by default
 - cross-phase handoffs, TODO/changelog coordination, verification, rollback boundaries, and closeout reporting expectations
 - how phase may synthesize sufficiently clear design and patch inputs one-way into execution order without becoming source of truth
 
@@ -51,9 +52,19 @@ If staged work is clearly implied, startup governance must resolve phase posture
 ### Required files
 When phased planning is used:
 - `phase/SUMMARY.md` is mandatory
-- executable files live under `phase/`
-- valid paths are `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md`
+- active executable files live under `phase/`
+- valid active paths are `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md`
+- completed phase-detail history may live under `phase/done/` with the same filename grammar
 - live phased execution files inside patch artifacts are **not allowed**
+
+### Completed phase history
+`phase/done/` is inactive-by-default completed phase history.
+
+Required guidance:
+- active execution scans start with `phase/SUMMARY.md` and active child phase files in `phase/`
+- consult `phase/done/` only for history, audit, rollback, provenance, or trace reconstruction
+- do not treat files in `phase/done/` as junk or deletion-authorized by their completed status alone
+- `phase/done/` must not replace `phase/SUMMARY.md` or become the live phase-plan namespace
 
 ### Source-input synthesis
 `/phase` is a live execution synthesis layer, not source of truth. It may consume design target-state input and governed patch review input when relevant. This is one-way: design/patch do not need to point back to phase, and phase usage does not move planning into patch or turn phase into design authority.
@@ -81,7 +92,8 @@ When phased work uses a governed patch artifact:
 
 `phase/SUMMARY.md` should keep the global execution picture:
 - context, target state, risk, constraints, dependencies
-- phase map/index and child phase references
+- phase map/index and active child phase references
+- completed `phase/done/` references only when history/audit/rollback/trace continuity requires them
 - summary-level design/patch source inputs and governing patch references
 - cross-phase handoffs and dependency rules
 - TODO/changelog coordination
@@ -148,7 +160,8 @@ Phase-backed closeout should report what the phase delivered in practical terms,
 - [ ] `NNN` and `NNN-NN` are the active phase grammar
 - [ ] startup governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work is not left without explicit phase posture until late backfill
-- [ ] `phase/SUMMARY.md` and valid child phase paths are used
+- [ ] `phase/SUMMARY.md` and valid active child phase paths are used
+- [ ] completed phase history under `phase/done/` remains inactive by default and is not treated as junk/deletion authority
 - [ ] sufficiently clear governed design for staged execution is synthesized into phase summary, current child phase files, and current-phase live tasks without replacing design authority
 - [ ] patch-derived phase work shows explicit phase-to-patch linkage
 - [ ] child phases include required source references and execution fields

@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.9
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-23)
+> **Current Version:** 1.10
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic structure for design documents that stays aligned with UDVC-1 governance, keeps active design state separate from historical records, and preserves implementation-relevant knowledge extracted from external docs/specs when later work still depends on it.
+Define one deterministic structure for design documents that stays aligned with UDVC-1 governance, keeps active design state separate from historical records, preserves implementation-relevant knowledge extracted from external docs/specs when later work still depends on it, and keeps design as active blueprint authority rather than a completed-work `done/` surface.
 
 ---
 
@@ -22,6 +22,7 @@ Applies to:
 - master design documents maintained in `design/`
 - design-to-changelog pair behavior
 - support-artifact boundaries when content should not behave like a governed design doc
+- the boundary that `design/` remains active target-state space and does not use `design/done/` by default
 
 ---
 
@@ -53,7 +54,17 @@ They must not embed:
 - rollout-completion journals
 - obsolete pending/activation instructions
 
-Historical detail belongs in changelog files.
+Historical detail belongs in changelog files or, when volume needs inactive history separation, in `changelog/done/` under changelog governance.
+
+### 3.3.1 No Default Design Done Surface
+
+`design/` is active blueprint and target-state authority, not a completed-work archive.
+
+Required guidance:
+- do not create or normalize a default `design/done/` pattern
+- keep implementation-relevant target truth in active design files until superseded or removed from the active target state
+- move historical explanation to changelog surfaces instead of parking old blueprint state under `design/done/`
+- if a legacy design snapshot must be retained, label it as historical/reference-only and keep it outside active design authority
 
 ### 3.4 Navigator Rule
 
@@ -143,7 +154,8 @@ Governance documents use canonical `#version-xy` anchors for version navigation.
 - [ ] File uses governed design naming only when it is truly a governed design document
 - [ ] Required metadata fields are complete
 - [ ] Design body is active-state only
-- [ ] Historical detail is delegated to changelog
+- [ ] Historical detail is delegated to changelog or `changelog/done/` when inactive history separation is needed
+- [ ] No default `design/done/` pattern is introduced for active blueprint governance
 - [ ] External-doc/spec-derived implementation truth is captured in design when later work still depends on it
 - [ ] Captured knowledge is normalized and implementation-relevant rather than copied source prose
 - [ ] Runtime rule references use `Design`, not `Based on`
@@ -162,6 +174,7 @@ Governance documents use canonical `#version-xy` anchors for version navigation.
 | Ambiguous governed-looking support artifacts | 0 |
 | Broken design/changelog links | 0 |
 | Stale historical guidance inside active design bodies | 0 critical cases |
+| Default `design/done/` usage for governed blueprint docs | 0 critical cases |
 
 ---
 
@@ -170,7 +183,7 @@ Governance documents use canonical `#version-xy` anchors for version navigation.
 | Document | Relationship |
 |----------|--------------|
 | [document-changelog-control.design.md](document-changelog-control.design.md) | Version authority and metadata contract |
-| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role boundaries |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role boundaries and completed documentation surface model |
 | [unified-version-control-system.design.md](unified-version-control-system.design.md) | Controller-level governance view |
 
 ---

@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.24
+> **Current Version:** 2.25
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.25 | 2026-04-29 | **[Added completed phase history surface](#version-225)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.24 | 2026-04-27 | **[Added design-to-phase execution synthesis bridge](#version-224)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.23 | 2026-04-25 | **[Added phase-backed closeout delivery and impact expectations](#version-223)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.22 | 2026-04-23 | **[Made relevant governed `/phase` context a required phase-linked task-shaping input](#version-222)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -36,6 +37,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-225"></a>
+## Version 2.25: Added completed phase history surface
+
+**Date:** 2026-04-29
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.24 to v2.25.
+- Updated `design/phase-implementation.design.md` from v2.24 to v2.25.
+- Added `phase/done/` as inactive-by-default completed phase history for completed phase-detail files.
+- Clarified that active execution scans start with `phase/SUMMARY.md` and active child phase files before opening completed history.
+- Preserved the boundary that `phase/done/` is not a live phase workspace, not junk, and not deletion authority.
+
+### Summary
+Phase-implementation now supports moving completed phase details out of the active scan path while keeping rollback/audit/provenance history available when needed.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 2.5
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-08)
+> **Current Version:** 2.7
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
 
@@ -12,7 +12,7 @@
 
 Standardize governed patch-document behavior under the same UDVC-1 metadata and version-trace contract used by other governed document chains, while making the patch concept explicit: a patch exists to show the exact intended before/after change surface for review.
 
-This chain must keep live phased execution planning in `/phase`, not in patch artifacts.
+This chain must keep live phased execution planning in `/phase`, not in patch artifacts, and may move completed patch review artifacts into inactive `patch/done/` history when they are no longer active review inputs.
 
 ---
 
@@ -20,6 +20,7 @@ This chain must keep live phased execution planning in `/phase`, not in patch ar
 
 Applies to:
 - `patch/<context>.patch.md`
+- `patch/done/<context>.patch.md` for inactive completed patch history
 - root-level `<context>.patch.md`
 - patch lifecycle documentation
 - patch metadata traceability and history references
@@ -54,14 +55,17 @@ For greenfield startup, first-time scaffolding, baseline formation, or first-pas
 
 ### 3.2 Allowed locations
 Governed patch files must use a self-identifying `<context>.patch.md` filename and may live in one of these places:
-- shared patch directory: `patch/<context>.patch.md`
+- active shared patch directory: `patch/<context>.patch.md`
+- inactive completed patch history: `patch/done/<context>.patch.md`
 - repository root: `<context>.patch.md`
 
 Required location rules:
-- `patch/` is the default shared patch directory for this repository
+- `patch/` is the default shared patch directory for active patch/review artifacts in this repository
+- `patch/done/` is inactive-by-default completed patch history
 - root-level placement is allowed when the patch should live directly at repository top level
 - generic `patch.md` is not allowed
 - version suffixes in patch filenames are not allowed
+- moving a patch to `patch/done/` does not make it junk and does not authorize deletion
 
 ### 3.3 `/phase` separation
 Live phased execution planning does not belong in `/patch` or in root-level patch files.
@@ -182,6 +186,7 @@ They remain appropriate for:
 - governed review artifacts
 - patch-specific transition analysis
 - reviewable current→target documentation that is outside the live phase workspace
+- inactive completed patch history under `patch/done/` when history/audit/rollback/trace needs may remain
 
 They are not appropriate for:
 - retrospective summary documents
@@ -233,6 +238,15 @@ This does not create a reverse-link requirement:
 
 It does **not** serve as the primary semantic authority for phased execution behavior.
 
+### 6.6 Completed patch history surface
+`patch/done/` is inactive-by-default patch history.
+
+Required guidance:
+- active review scans start with active `patch/<context>.patch.md` and root `<context>.patch.md` surfaces
+- consult `patch/done/` only for history, audit, rollback, provenance, or trace reconstruction
+- do not treat completed patch artifacts as active phase inputs by default
+- do not treat files in `patch/done/` as junk or deletion-authorized by their completed status alone
+
 ---
 
 ## 7) Version and Session Integrity
@@ -271,7 +285,7 @@ Those belong to `phase-implementation.md` when phases are used.
 Use this checklist to validate the patch as a governed artifact.
 
 ### 1) Identity and Metadata
-- [ ] Patch path uses an allowed location model (`patch/<context>.patch.md` or root `<context>.patch.md`)
+- [ ] Patch path uses an allowed location model (`patch/<context>.patch.md`, `patch/done/<context>.patch.md`, or root `<context>.patch.md`)
 - [ ] Patch filename is self-identifying and uses `<context>.patch.md`
 - [ ] Patch metadata fields are complete
 - [ ] Session metadata is real (no placeholders)
@@ -281,6 +295,7 @@ Use this checklist to validate the patch as a governed artifact.
 ### 2) Patch Authority Integrity
 - [ ] Patch version aligns with patch changelog version when applicable
 - [ ] Patch remains identifiable as a governed patch artifact
+- [ ] `patch/done/` artifacts remain inactive-by-default history, not junk or deletion authority
 - [ ] `phase-implementation.md` is referenced for phase semantics when applicable
 - [ ] Root-level `phase-implementation-template.md` remains non-governed
 - [ ] The patch does not act like TODO authority or changelog authority
@@ -313,6 +328,7 @@ Use this checklist to validate the patch as a governed artifact.
 |--------|--------|
 | Patch metadata completeness | 100% |
 | Patch placement clarity | 100% |
+| `patch/done/` inactive-history boundary clarity | 100% |
 | Patch concept clarity | 100% |
 | Active placeholder session markers | 0 |
 | Patch ↔ changelog version alignment | 100% |
@@ -331,10 +347,10 @@ Use this checklist to validate the patch as a governed artifact.
 
 | Rule | Relationship |
 |------|-------------|
-| [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
-| [project-documentation-standards.md](project-documentation-standards.md) v2.8 | Project-level documentation role model |
-| [phase-implementation.md](phase-implementation.md) v2.5 | Semantic authority for phased execution planning |
-| [todo-standards.md](todo-standards.md) v2.2 | TODO structure standards |
+| [document-changelog-control.md](document-changelog-control.md) v4.8 | Version authority and completed changelog history contract |
+| [project-documentation-standards.md](project-documentation-standards.md) v2.31 | Project-level documentation role and completed-surface model |
+| [phase-implementation.md](phase-implementation.md) v2.25 | Semantic authority for phased execution planning and `phase/done/` history boundary |
+| [todo-standards.md](todo-standards.md) v2.17 | TODO structure standards |
 
 ---
 

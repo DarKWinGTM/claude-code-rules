@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.24
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
+> **Current Version:** 2.25
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable `/phase` structure, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -87,6 +87,17 @@ The active path patterns are:
 - major-phase file: `phase/phase-NNN-<phase-name>.md`
 - subphase file: `phase/phase-NNN-NN-<subphase-name>.md`
 
+Completed phase-detail files may be retained under `phase/done/` using the same phase filename grammar when they are no longer part of the active execution scan surface.
+
+### 4.2.1 Completed phase history surface
+`phase/done/` is inactive-by-default phase history.
+
+Required guidance:
+- active execution scans start with `phase/SUMMARY.md` and active child phase files in `phase/`
+- completed phase files in `phase/done/` are consulted only for history, audit, rollback, provenance, or trace reconstruction
+- moving a phase file to `phase/done/` does not make it junk and does not authorize deletion
+- `phase/done/` must not become the live phase workspace or a replacement for `phase/SUMMARY.md`
+
 ### 4.3 Patch-artifact boundary
 Live phased execution files must not be stored under patch artifacts.
 Patch artifacts remain outside the live phase-plan namespace.
@@ -101,6 +112,7 @@ Patch artifacts remain outside the live phase-plan namespace.
 - risk, constraints, and dependency framing
 - major-phase grouping when multiple major phases exist
 - references to live major/subphase files
+- references to completed `phase/done/` files only when history/audit/rollback/trace continuity requires them
 - summary-level design and patch source inputs when relevant
 - TODO/changelog companion coordination when the concern is global
 - end-to-end verification requirements
@@ -194,6 +206,8 @@ This shape should remain concise and should not be forced onto trivial non-phase
 - [ ] symbolic IDs are not used as active canonical phase identifiers
 - [ ] `/phase` examples show a valid major/subphase model
 - [ ] `SUMMARY.md` guidance makes grouping visible when subphases exist
+- [ ] active phase scans start with `phase/SUMMARY.md` and active child files before `phase/done/`
+- [ ] `phase/done/` is inactive-by-default history, not junk or deletion authority
 - [ ] patch artifacts remain outside the live phase workspace
 - [ ] phase-backed closeout reports delivered work, feature/improvement, impact, verification basis, and next phase state when relevant
 
@@ -209,6 +223,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 | Current-phase-first task-list linkage when a phase is active | High |
 | Startup phase posture resolved before drift when phase is required | 100% |
 | Live phased execution files under patch artifacts | 0 |
+| Active phase scan bloat from completed phase history | Low |
 | Phase closeout delivery/impact clarity | High |
 
 ---

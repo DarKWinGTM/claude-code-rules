@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 9.75
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
+> **Current Version:** 9.76
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -13,7 +13,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, first-class startup artifact initiation control, a first-class owner for proactive external verification and source trust, a first-class owner for portable implementation defaults, public onboarding/install portability, anti-hardcoding discipline, a first-class owner for memory governance and session-boundary behavior, source-only semantic-preserving runtime rule compression with complete patch inventory coverage before execution, explicit runtime install/parity verification when installation is separately requested, a runtime destination ownership boundary that keeps co-located plugin/project runtime files outside Main RULES ownership unless scope is selected or verified while adjacent documentation, hygiene, and reference owners preserve the same source-owned/shared-destination/other-owner distinction, phase-backed closeout reporting that states delivered work, feature/improvement, impact, verification basis, and next phase state before audit-only detail dominates completion reports, and design-to-phase execution synthesis so sufficiently clear governed design can become phase execution order and current-phase live tasks when staged execution is warranted.
+This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, completed documentation history surfaces for phase/patch/changelog scan-bloat control, first-class startup artifact initiation control, proactive external verification and source trust, portable implementation defaults, public onboarding/install portability, anti-hardcoding discipline, memory governance and session-boundary behavior, source-only semantic-preserving runtime rule compression with complete patch inventory coverage before execution, explicit runtime install/parity verification when installation is separately requested, a runtime destination ownership boundary for co-located other-owner runtime files, phase-backed closeout reporting that states delivered work and impact before audit-only detail dominates, and design-to-phase execution synthesis so sufficiently clear governed design can become phase execution order and current-phase live tasks when staged execution is warranted.
 
 ---
 
@@ -25,10 +25,10 @@ This active-state model must preserve UDVC-1 while supporting first-class phased
 |------|--------------------|-------------|
 | Overview | `README.md` | Repository overview and usage guidance only |
 | Runtime | root `*.md` rules | Active runtime behavior |
-| Design | `design/*.design.md` | Active target-state guidance |
-| Phase | `phase/SUMMARY.md`, `phase/phase-NNN-<phase-name>.md`, `phase/phase-NNN-NN-<subphase-name>.md` | Governed live phase-planning summary/index and execution detail |
-| Patch | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed patch/review artifacts outside live phase planning |
-| History | `changelog/*.changelog.md` | Authoritative chain history and latest chain version state |
+| Design | `design/*.design.md` | Active target-state guidance; no default `design/done/` surface |
+| Phase | `phase/SUMMARY.md`, `phase/phase-NNN-<phase-name>.md`, `phase/phase-NNN-NN-<subphase-name>.md`, `phase/done/phase-NNN-*.md` | Governed live phase-planning summary/index and execution detail, with inactive completed phase history under `phase/done/` |
+| Patch | `patch/<context>.patch.md`, `patch/done/<context>.patch.md`, or root `<context>.patch.md` | Governed active patch/review artifacts plus inactive completed patch history outside live phase planning |
+| History | `changelog/*.changelog.md`, `changelog/done/*.changelog.md` | Authoritative active chain history/version state plus inactive completed or older history when needed |
 | Execution | `TODO.md` | Execution tracking only |
 | Support | `phase-implementation-template.md`, `support/**/*.md` | Root-level helper templates and reference-only/support materials inside RULES only |
 
@@ -40,11 +40,14 @@ This repository uses one deterministic governance model:
 - active runtime rule compression must preserve semantic parity and should start from a complete patch inventory/baseline before any rule-body rewrite begins
 - repository-level compression record sync should describe completed runtime slices without turning governed planning surfaces into compression targets, without mass-bumping per-rule chains automatically, without claiming runtime install before that separate gate passes, and with runtime install/parity recorded only after that explicit gate is executed
 - shared runtime destination co-location is not ownership authority; destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification, cleanup, or deletion is considered, and adjacent documentation/hygiene/reference owners preserve that boundary without turning shared-destination co-location into ownership
-- design docs hold active target-state guidance
+- design docs hold active target-state guidance and do not use a default `design/done/` pattern
 - `phase/` is the live phased execution layer when staged planning is used
+- `phase/done/` is inactive-by-default completed phase history
 - phase IDs use `NNN` for major phases and `NNN-NN` for subphases
-- patch docs are the governed patch/review layer outside live phase planning
-- changelog files are the authority for governed chain history
+- active patch docs are the governed patch/review layer outside live phase planning
+- `patch/done/` is inactive-by-default completed patch history
+- active changelog files are the authority for governed chain history and current version state
+- `changelog/done/` may hold older/completed detailed history outside the active scan surface
 - TODO tracks execution state only
 - startup artifact posture is resolved before meaningful governed work drifts
 - support and optional extension-package artifacts help authoring, reference reuse, or runtime reinforcement but do not masquerade as governed design, phase, or patch authorities
@@ -67,9 +70,9 @@ This repository uses one deterministic governance model:
 | 7 | custom-agent-selection-priority.md | custom-agent-selection-priority.design.md v1.1 | First-class owner for preferring visible user custom agents as the primary specialist pool when task fit is clear and reusing an existing matching teammate before spawning another overlapping role |
 | 8 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.2 | Normalize jailbreak-style wrappers into bounded intent evaluation |
 | 9 | document-consistency.md | document-consistency.design.md v1.8 | Cross-reference validation with portable shared references, source-side references, source-owned active runtime files, shared runtime destinations, other-owner runtime files, destination/runtime references, local execution paths, and local or machine-scoped values kept distinct so parity/install wording does not turn shared-destination co-location into ownership, while governed reference/history checks remain required before junk/disposal classification |
-| 10 | document-changelog-control.md | document-changelog-control.design.md v4.7 | Chain authority, metadata, and synchronization contract |
-| 11 | document-design-control.md | document-design-control.design.md v1.9 | Active-state design-body standards plus doc-derived knowledge capture so implementation-relevant truth extracted from external docs/specs/provider references is normalized into governed design before later multi-step work depends on it |
-| 12 | document-patch-control.md | document-patch-control.design.md v2.6 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, comparison-friendly patch representation, external-requirement basis visibility for review, and the boundary that patch is normally downstream of an established before-state rather than the default startup artifact |
+| 10 | document-changelog-control.md | document-changelog-control.design.md v4.8 | Chain authority, metadata, synchronization contract, and inactive `changelog/done/` completed-history surface |
+| 11 | document-design-control.md | document-design-control.design.md v1.10 | Active-state design-body standards, no-default-`design/done/` blueprint boundary, and doc-derived knowledge capture so implementation-relevant truth from external docs/specs/provider references is normalized into governed design before later multi-step work depends on it |
+| 12 | document-patch-control.md | document-patch-control.design.md v2.7 | Patch governance, metadata, lifecycle, explicit before/after patch meaning, comparison-friendly patch representation, external-requirement basis visibility for review, inactive `patch/done/` completed-history surface, and the boundary that patch is normally downstream of an established before-state rather than the default startup artifact |
 | 13 | emergency-protocol.md | emergency-protocol.design.md v1.1 | High-signal emergency response |
 | 14 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.4 | First-class owner for evidence taxonomy, burden-of-proof thresholds, contradiction protocol, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling when materially different policies/frames would change the answer, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
 | 15 | explanation-quality.md | explanation-quality.design.md v2.20 | Plain-language-first, layered analytical and technical explanation structure with variable/field clarification, direct human-readable translation of architecture-first wording, easy-explanation continuity after simple openings, phase-backed closeout explanation that starts with practical delivered feature/improvement and user/system meaning before governance detail, a purpose-first explanation step, continued comparison/list-first support, explicit deferral of continuation-vs-option policy to accurate-communication, a governing-basis clarification boundary, a compact post-compact re-anchor boundary, goal-qualified proposal framing, and explicit deferral of goal-review semantics to the first-class goal-set owner |
@@ -79,8 +82,8 @@ This repository uses one deterministic governance model:
 | 19 | memory-governance-and-session-boundary.md | memory-governance-and-session-boundary.design.md v1.5 | First-class owner for memory role boundaries, root `MEMORY.md` index-only behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, archive-inactive lifecycle semantics, and generic optional external recall guidance that stays supplemental and subordinate to stronger execution evidence without implying a Main RULES-managed custom skill path or retired bridge mechanism |
 | 20 | no-variable-guessing.md | no-variable-guessing.design.md v1.5 | Read before reference with inspected-scope local evidence discipline, including git-state observations kept in the weak local-evidence lane until governed repo surfaces are checked |
 | 21 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and a Team Agent duplicate/stale-presence profile that treats duplicate-looking or stale team-agent presence as inspect-before-respawn rather than respawn-first churn |
-| 22 | phase-implementation.md | phase-implementation.design.md v2.24 | First-class semantic standard for phased execution planning with early phase-establishment bridge, explicit design-to-phase synthesis when sufficiently clear governed design warrants staged execution, explicit default phase posture when clearly staged/governed work is already implied, provisional task alignment to clearly implied staged/phase context even before the exact next phase file exists, current-phase-first but phase-context-aware live task-list linkage, required inspection of relevant governed `/phase` context before task shaping when that context exists, bounded use of already-authored next-phase context from `/phase` for continuity and draft next-work discovery, explicit phase-to-patch linkage when patch is in scope, phase-backed closeout reporting that states delivered feature/improvement, impact, verification basis, and next phase state when relevant, same-objective task-list continuity across repeated slices, bounded next-work discovery from the active phase workspace when the task list alone is insufficient, task wording that follows the actual active session language pattern for phase-linked entries, and an explicit boundary that shared-board/plugin/external coordination mechanics stay outside Main RULES current doctrine |
-| 23 | project-documentation-standards.md | project-documentation-standards.design.md v2.30 | Repository-level document-role model plus startup artifact gate, reasserted governed companion status for required design/changelog/TODO/phase/patch surfaces alongside live execution surfaces, explicit patch-linkage verification for phased work, a clarified live-task-list-vs-durable-TODO tracking split, same-objective live task-list continuity at the repository-model layer, explicit phase-shaped task creation alignment when staged repository context is already visible, explicit execution-discovery surface recognition during active execution, bounded use of `/phase` as both current execution structure and already-authored next planned structure, master-surface consultation before junk/disposal classification, runtime installs scoped to the current project/source-owned active runtime rule set rather than the whole shared destination, other project/plugin-owned runtime destination files kept out of scope unless owner/project is selected or verified, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance by default, portable-by-default package-local support assets when they are reusable source content, support-layer modeling for support artifacts inside RULES, and the boundary that shared-board-specific coordination semantics stay outside Main RULES scope |
+| 22 | phase-implementation.md | phase-implementation.design.md v2.25 | First-class semantic standard for phased execution planning with early phase-establishment bridge, explicit design-to-phase synthesis when sufficiently clear governed design warrants staged execution, inactive `phase/done/` completed-history behavior, current-phase-first but phase-context-aware live task-list linkage, explicit phase-to-patch linkage when patch is in scope, phase-backed closeout reporting that states delivered feature/improvement, impact, verification basis, and next phase state when relevant, bounded next-work discovery from the active phase workspace, session-language-aware phase-linked task wording, and an explicit boundary that shared-board/plugin/external coordination mechanics stay outside Main RULES current doctrine |
+| 23 | project-documentation-standards.md | project-documentation-standards.design.md v2.31 | Repository-level document-role model plus startup artifact gate, completed documentation surface governance for `phase/done/`, `patch/done/`, and `changelog/done/`, no-default-`design/done/` blueprint boundary, governed companion status for required design/changelog/TODO/phase/patch surfaces, explicit patch-linkage verification for phased work, live-task-list-vs-durable-TODO split, phase-shaped task creation alignment, execution-discovery surface recognition, runtime installs scoped to the current project/source-owned active runtime rule set, other-owner runtime file boundary, non-default startup patch posture, portable public onboarding/install guidance, portable support assets, and the boundary that shared-board-specific coordination semantics stay outside Main RULES scope |
 | 24 | recovery-contract.md | recovery-contract.design.md v1.5 | No dead-end constrained/refused responses |
 | 25 | refusal-classification.md | refusal-classification.design.md v1.4 | Deterministic refusal taxonomy |
 | 26 | refusal-minimization.md | refusal-minimization.design.md v1.5 | Prefer recoverable paths over premature refusal |
@@ -155,7 +158,16 @@ The active phase-planning contract is:
 - patch docs remain separate governed patch/review artifacts outside the live phase workspace
 - phased work with governed patch artifacts must declare that linkage explicitly in `phase/SUMMARY.md` and relevant child phase files
 
-### 4.5 Memory Governance Contract
+### 4.5 Completed Documentation Surface Contract
+The active completed-history contract is:
+- `phase/done/` may hold completed phase execution detail outside the active scan surface
+- `patch/done/` may hold completed patch/review artifacts outside the active scan surface
+- `changelog/done/` may hold older or completed detailed history outside the active scan surface
+- `design/done/` is not a default governed design pattern because design remains active blueprint and target-state authority
+- `done/` surfaces are inactive by default and are consulted for history, audit, rollback, provenance, or trace reconstruction only
+- files in `done/` are not junk and completed status is not deletion authorization
+
+### 4.6 Memory Governance Contract
 The active memory-governance contract is:
 - `memory-governance-and-session-boundary.md` is the semantic authority for memory role boundary and session/path applicability behavior
 - root `MEMORY.md` remains present and acts as an active index only
@@ -204,12 +216,12 @@ The active memory-governance contract is:
 
 - [ ] README remains overview-only
 - [ ] Runtime rules remain the active rule layer
-- [ ] Design docs remain active target-state guidance only
-- [ ] Changelog remains version authority per chain
+- [ ] Design docs remain active target-state guidance only and do not use a default `design/done/` surface
+- [ ] Active changelogs remain version authority per chain while `changelog/done/` stays inactive history
 - [ ] TODO remains execution-only
 - [ ] Startup artifact posture is resolved before meaningful governed work drifts
-- [ ] Phase docs remain in `/phase` and use the active `NNN` / `NNN-NN` identity model
-- [ ] Patch docs remain outside live phase planning
+- [ ] Active phase docs remain in `/phase`, use the active `NNN` / `NNN-NN` identity model, and move completed detail to `phase/done/` only as inactive history
+- [ ] Active patch docs remain outside live phase planning while `patch/done/` stays inactive completed patch history
 - [ ] Root helper and support artifacts remain non-governed
 
 ---

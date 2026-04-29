@@ -1,8 +1,8 @@
 # Changelog - Document Patch Control
 
 > **Parent Document:** [../document-patch-control.md](../document-patch-control.md)
-> **Current Version:** 2.6
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.7
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.7 | 2026-04-29 | **[Added completed patch history surface](#version-27)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.6 | 2026-04-23 | **[Added external-requirement basis visibility for patch review](#version-26)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.5 | 2026-04-08 | **[Narrowed patch semantics so startup baseline formation no longer implies patch by default](#version-25)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Clarified that patch normally assumes an existing before-state and is not the default governing artifact for greenfield / baseline-formation startup unless a real review surface or explicit user request exists | |
@@ -39,6 +40,25 @@
 | | | Summary: Closed patch-reference/version drift across runtime/design/changelog artifacts | |
 | 1.0 | 2026-02-01 | **[Initial design](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Initial release of patch-control standards | |
+
+---
+
+<a id="version-27"></a>
+## Version 2.7: Added completed patch history surface
+
+**Date:** 2026-04-29
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated runtime `document-patch-control.md` from v2.5/v2.6 drift to v2.7.
+- Updated `design/document-patch-control.design.md` from v2.5/v2.6 drift to v2.7.
+- Preserved the v2.6 external-requirement basis rule while aligning runtime/design metadata with changelog authority.
+- Added `patch/done/` as inactive-by-default completed patch history.
+- Clarified that active review scans start with active patch artifacts and consult `patch/done/` only for history, audit, rollback, provenance, or trace reconstruction.
+- Preserved the boundary that completed patch artifacts are not live phase inputs by default, not junk, and not deletion authority.
+
+### Summary
+Document-patch-control now closes the prior metadata drift and supports completed patch history outside the active review scan path without weakening patch governance or phase separation.
 
 ---
 

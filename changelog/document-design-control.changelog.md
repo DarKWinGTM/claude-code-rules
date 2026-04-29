@@ -1,8 +1,8 @@
 # Changelog - Document Design Control
 
 > **Parent Document:** [../document-design-control.md](../document-design-control.md)
-> **Current Version:** 1.9
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.10
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-04-29 | **[Clarified design is not a completed-work done surface](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.9 | 2026-04-23 | **[Added doc-derived knowledge capture to the governed design layer](#version-19)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.8 | 2026-03-08 | **[Enforced active-state-only design bodies and support-artifact boundary](#version-18)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Updated the chain to prohibit historical audit content in active design docs and to clarify that support-only artifacts should not remain in ambiguous `.design.md` form | |
@@ -29,6 +30,25 @@
 | | | Summary: Removed local version-table expectation from design docs | |
 | 1.0 | 2026-01-20 | **[Initial design-control standard](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Established baseline naming/location/structure standards for design docs | |
+
+---
+
+<a id="version-110"></a>
+## Version 1.10: Clarified design is not a completed-work done surface
+
+**Date:** 2026-04-29
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated runtime `document-design-control.md` from v1.9 to v1.10.
+- Updated `design/document-design-control.design.md` from v1.9 to v1.10.
+- Clarified that governed design documents remain active blueprint and target-state authority.
+- Added an explicit no-default-`design/done/` boundary.
+- Clarified that historical design explanation belongs in changelog surfaces, including `changelog/done/` when inactive history separation is needed.
+- Preserved doc-derived knowledge capture and active-state design body requirements.
+
+### Summary
+Document-design-control now prevents completed-work folder patterns from being applied to governed design by default, keeping design as the active target-state surface while history stays in changelog governance.
 
 ---
 

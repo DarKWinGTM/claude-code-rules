@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.7
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Current Version:** 4.8
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic documentation-version contract (UDVC-1) across runtime rules, design documents, changelog files, TODO trackers, and patch artifacts.
+Define one deterministic documentation-version contract (UDVC-1) across runtime rules, design documents, changelog files, completed changelog history surfaces, TODO trackers, and patch artifacts.
 
 ---
 
@@ -21,6 +21,7 @@ Applies to governed documentation artifacts in this repository:
 - root runtime rules (`*.md`, excluding overview-only/support documents)
 - `design/*.design.md`
 - `changelog/*.changelog.md`
+- `changelog/done/*.changelog.md` when older or completed detailed history is retained outside the active scan surface
 - `TODO.md`
 - `patch/<context>.patch.md` or root `<context>.patch.md`
 
@@ -30,9 +31,10 @@ Applies to governed documentation artifacts in this repository:
 
 ### 3.1 Single Authority Per Chain
 
-- Each governed chain has one authoritative changelog.
-- The authoritative changelog controls latest version state for that chain.
+- Each governed chain has one authoritative active changelog.
+- The active changelog controls latest version state, current index, and forward navigation for that chain.
 - Runtime, design, and patch artifacts reference that authority through `Full history` links.
+- Completed or older detailed history may move under `changelog/done/`, but only as inactive-by-default history that the active changelog still points to when navigation or audit continuity requires it.
 
 ### 3.2 Rule-Chain Alignment
 
@@ -94,6 +96,17 @@ When a design/changelog pair exists for one governed chain:
 
 Historical detail belongs in changelog files, not in the active design body.
 
+### 5.1 Completed History Surface
+
+`changelog/done/` may hold completed or older detailed changelog history when keeping all historical detail in the active scan surface would create avoidable context bloat.
+
+Required guidance:
+- the active changelog remains the current version authority and primary navigation surface
+- `changelog/done/` is inactive by default for ordinary current-state scans
+- consult `changelog/done/` only when history, audit, rollback, provenance, or trace reconstruction needs it
+- moving history into `changelog/done/` does not make it junk and does not authorize deletion
+- design-specific history should move through changelog governance, not `design/done/`
+
 ---
 
 ## 6) Canonical Anchor Policy
@@ -154,6 +167,8 @@ When synchronizing governed documentation:
 - [ ] Rule/design/changelog versions are aligned for governed rule chains
 - [ ] Design files keep active guidance only
 - [ ] Changelog files hold historical detail
+- [ ] Active changelogs retain current version authority when older detail moves to `changelog/done/`
+- [ ] `changelog/done/` is treated as inactive-by-default history, not junk or deletion authority
 - [ ] Version links use canonical `#version-xy` anchors
 - [ ] Synchronization order was followed
 
@@ -167,6 +182,7 @@ When synchronizing governed documentation:
 | Runtime header contract consistency | 100% |
 | Active placeholder session markers | 0 |
 | Historical detail left in active design bodies | 0 critical cases |
+| Active changelog authority lost to `changelog/done/` | 0 critical cases |
 | Broken `Full history` links | 0 |
 
 ---
@@ -176,7 +192,7 @@ When synchronizing governed documentation:
 | Document | Relationship |
 |----------|--------------|
 | [document-design-control.design.md](document-design-control.design.md) | Active-state design-body contract |
-| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository-wide document-role boundary model |
+| [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository-wide document-role boundary and completed documentation surface model |
 | [todo-standards.design.md](todo-standards.design.md) | Execution-tracker boundary |
 | [unified-version-control-system.design.md](unified-version-control-system.design.md) | UDVC-1 controller view |
 

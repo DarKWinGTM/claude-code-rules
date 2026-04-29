@@ -1,11 +1,11 @@
 # Document Patch Control
-> **Current Version:** 2.5
-> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.5
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 2.7
+> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.7
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-patch-control.changelog.md](changelog/document-patch-control.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Patch documents are governed patch/review artifacts outside the live `/phase` workspace, and a patch means a self-identifying before/after change artifact that shows the exact intended modification surface clearly enough for review.**
+**Core Principle: Patch documents are governed patch/review artifacts outside the live `/phase` workspace, a patch means a self-identifying before/after change artifact clear enough for review, and completed patch artifacts may move to inactive `patch/done/` history without becoming junk or active inputs by default.**
 Patch docs are governed patch artifacts. Changelog remains version authority; TODO remains execution tracking.
 ---
 ## Patch Meaning and Location
@@ -18,14 +18,17 @@ A valid patch must let a reviewer answer:
 - whether the change is additive, replacement, deletion, or restructuring
 A patch is **not** a retrospective summary, phase summary, rollout dashboard, prose-only recap, or generic plan with unclear before/after delta.
 Allowed governed patch locations:
-- `patch/<context>.patch.md`
+- active patch artifact: `patch/<context>.patch.md`
+- inactive completed patch history: `patch/done/<context>.patch.md`
 - root `<context>.patch.md`
 Required guidance:
 - filename must be self-identifying and version-suffix-free
-- `patch/` is the default shared patch directory
+- `patch/` is the default shared patch directory for active patch/review artifacts
+- `patch/done/` is inactive-by-default completed patch history
 - root placement is allowed when top-level placement is clearer
 - generic `patch.md` is **not allowed**
-- live phased execution planning does not belong in `/patch` or root `*.patch.md`
+- live phased execution planning does not belong in `/patch`, `patch/done/`, or root `*.patch.md`
+- completed status does not make a patch artifact junk and does not authorize deletion
 - `phase-implementation-template.md` at RULES root is a reusable non-governed helper; discoverability does not make it authority
 ---
 ## Metadata and Alignment
@@ -71,7 +74,8 @@ Patch role:
 - governed review artifact
 - patch-specific transition analysis
 - reviewable current→target documentation outside live phase workspace
-Patch is not retrospective summary, general progress recap, active phase summary/index, or live per-phase execution file.
+- inactive completed patch history under `patch/done/` when history/audit/rollback/trace may be needed
+Patch is not retrospective summary, general progress recap, active phase summary/index, live per-phase execution file, or deletion authority.
 Phase role:
 - `/phase` is the live phased execution workspace
 - `phase/SUMMARY.md` is the governed summary/index
@@ -82,19 +86,28 @@ Prohibited blending:
 - storing live per-phase execution files in patch artifacts
 If phased execution exists, phase semantics defer to `phase-implementation.md`: use conditions, required structure, stable fields, design references, patch-input synthesis, status/action points, TODO/changelog coordination, handoffs, verification, and rollback.
 `phase-implementation.md` may synthesize patch inputs into live phase planning. This creates no reverse-link requirement from patch/design to phase and does not move live planning into patch artifacts.
-`document-patch-control.md` owns patch governance, metadata, before/after representation, filename/location rules, and the boundary keeping live phase planning out of patch artifacts. It does **not** own full phase-planning semantics.
+`document-patch-control.md` owns patch governance, metadata, before/after representation, filename/location rules, completed patch history semantics, and the boundary keeping live phase planning out of patch artifacts. It does **not** own full phase-planning semantics.
+---
+## Completed Patch History Surface
+`patch/done/` is inactive-by-default completed patch history.
+Required guidance:
+- active review scans start with active `patch/<context>.patch.md` and root `<context>.patch.md` surfaces
+- consult `patch/done/` only for history, audit, rollback, provenance, or trace reconstruction
+- do not treat completed patch artifacts as active phase inputs by default
+- do not treat files in `patch/done/` as junk or deletion-authorized by completed status alone
 ---
 ## Patch Checklist Boundary
 Validate here: patch identity/metadata, target-design and history links, structure/reviewability, change representation, synchronization behavior, and patch-versus-phase namespace separation.
 Do not validate here: phase necessity, phase sequencing quality, per-phase design traceability, per-phase execution-step quality, or `SUMMARY.md` content quality. Those belong to `phase-implementation.md`.
 ---
 ## Compliance Checklist
-- [ ] Patch path uses `patch/<context>.patch.md` or root `<context>.patch.md`
+- [ ] Patch path uses `patch/<context>.patch.md`, `patch/done/<context>.patch.md`, or root `<context>.patch.md`
 - [ ] Patch filename is self-identifying and version-suffix-free
 - [ ] Patch metadata fields are complete and session metadata is real
 - [ ] `Target Design` and `Full history` links resolve
 - [ ] Patch version aligns with patch changelog when applicable
 - [ ] Patch remains identifiable as a governed patch artifact
+- [ ] `patch/done/` artifacts remain inactive-by-default history, not junk or deletion authority
 - [ ] Patch does not act like TODO, changelog, phase summary, or phase detail authority
 - [ ] Root `phase-implementation-template.md` remains non-governed
 - [ ] Patch includes context, analysis, change items, verification, and rollback approach
@@ -109,6 +122,7 @@ Do not validate here: phase necessity, phase sequencing quality, per-phase desig
 | Metric | Target |
 |---|---|
 | Patch metadata completeness and placement clarity | 100% |
+| `patch/done/` inactive-history boundary clarity | 100% |
 | Active placeholder session markers | 0 |
 | Patch ↔ changelog version and target-design alignment | 100% |
 | Patch role, change representation, target location, and phase namespace separation | 100% |
@@ -119,10 +133,10 @@ Do not validate here: phase necessity, phase sequencing quality, per-phase desig
 ## Integration
 | Document | Relationship |
 |---|---|
-| [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority and metadata contract |
-| [project-documentation-standards.md](project-documentation-standards.md) v2.14 | Project document governance and role boundaries |
-| [phase-implementation.md](phase-implementation.md) v2.7 | Semantic authority for phased execution planning |
-| [todo-standards.md](todo-standards.md) v2.3 | Execution tracking alignment |
+| [document-changelog-control.md](document-changelog-control.md) v4.8 | Version authority, metadata, and completed changelog history contract |
+| [project-documentation-standards.md](project-documentation-standards.md) v2.31 | Project document governance, role boundaries, and completed-surface model |
+| [phase-implementation.md](phase-implementation.md) v2.25 | Semantic authority for phased execution planning and `phase/done/` boundary |
+| [todo-standards.md](todo-standards.md) v2.17 | Execution tracking alignment |
 | [phase-implementation-template.md](phase-implementation-template.md) | Non-governed root helper |
 ---
 > **Full history:** [changelog/document-patch-control.changelog.md](changelog/document-patch-control.changelog.md)
