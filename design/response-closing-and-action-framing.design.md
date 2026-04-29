@@ -3,16 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 1.1
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that owns how responses end: concise synthesis, clear next-action wording, recommendation-with-reason framing, alternative preservation, closed-topic summary handling, and advisory goal-qualified proposal framing.
+Define one first-class rule chain that owns how responses end: concise synthesis, clear next-action wording, recommendation-with-reason framing, alternative preservation, phase-backed delivery/impact closeout synthesis, closed-topic summary handling, and advisory goal-qualified proposal framing.
 
-This chain should make endings easier to act on without replacing execution-mode ownership, authority ownership, or explanation-flow ownership.
+This chain should make endings easier to act on and make phase-backed closeouts show what the phase delivered, what improved, and why it matters before or alongside audit status, without replacing execution-mode ownership, authority ownership, evidence wording, or explanation-flow ownership.
 
 ---
 
@@ -23,9 +23,10 @@ Observed failure modes:
 - the user must infer the preferred next move because several options are listed with no recommendation
 - a real decision surface is hidden because one recommended option collapses all alternatives
 - future-work ideas read like queued continuation instead of advisory proposals
+- phase closeouts list checked files, task IDs, and audit status without explaining the delivered feature/improvement or practical impact
 - already-closed topics keep returning in active summaries and blur the current issue
 
-The repository needs one explicit owner for closing/action/proposal framing so these ending behaviors stop being scattered across broader communication rules.
+The repository needs one explicit owner for closing/action/proposal framing and phase-backed delivery/impact closeout synthesis so these ending behaviors stop being scattered across broader communication rules.
 
 ---
 
@@ -43,14 +44,18 @@ When one option is better-supported than the others, the response should make th
 ### 3.4 Closed-Topic Presentation Principle
 Resolved topics may remain in reasoning context, but should not dominate the visible summary once the active issue has moved on.
 
-### 3.5 Goal-Qualified Proposal Principle
+### 3.5 Phase-Backed Closeout Principle
+When closing phase-backed work, the ending should state the delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant before or alongside audit/checklist status.
+
+### 3.6 Goal-Qualified Proposal Principle
 Future-work ideas outside the active objective should remain clearly advisory and specific enough to evaluate as proposals.
 
-### 3.6 Boundary Principle
-This chain owns **end-of-response action/proposal framing** only.
+### 3.7 Boundary Principle
+This chain owns **end-of-response action/proposal framing and phase-backed closeout synthesis** only.
 It should not replace:
 - execution-mode decision ownership
 - user-authority/branch-choice ownership
+- evidence-strength wording ownership
 - explanation-flow ownership
 - closing-block layout ownership
 
@@ -62,6 +67,7 @@ Use this chain when:
 - the response ends with synthesis, recommendation, or next-step guidance
 - multiple next paths remain live and the user needs a visible preferred path plus alternatives
 - a future-wave idea is being proposed outside the active objective
+- phase-backed work is being closed and the user needs to see what changed in practical terms
 - resolved topics risk dominating the active summary
 
 ---
@@ -69,6 +75,7 @@ Use this chain when:
 ## 5) Examples
 
 - "Recommended: do the design/phase sync first. Why this first: ... Other options: ..."
+- "What this phase delivered: closeout reporting now explains the feature/improvement and impact before audit detail."
 - "Proposal: build an automated visual QA verdict layer. Goal: ... Improvement: ... Output: ... Success condition: ..."
 - "Phase 12 is already clear enough now. The next useful move is to switch from scope clarification to the implementation checklist."
 - "There are 10 areas we should review in this state. I’ll show the full set first, then we can decide which subset to drill into."
@@ -81,6 +88,7 @@ Use this chain when:
 - recommendation omitted when one option is clearly better-supported
 - alternatives hidden after recommendation
 - future-wave idea phrased like implied queued execution
+- phase-backed closeout reduced to file/task/audit status only
 - already-closed topics brought back into active summary by default
 
 ---
@@ -92,6 +100,7 @@ This chain succeeds when:
 - recommendation-plus-reason behavior is explicit and consistent
 - alternative paths remain visible when they still matter
 - future-work ideas are clearly advisory
+- phase closeouts explain delivered feature/improvement and impact before audit-only detail
 - resolved topics stop dominating active summaries by default
 
 ---

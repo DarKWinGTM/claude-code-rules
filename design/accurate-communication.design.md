@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.17
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 2.18
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
 
 ---
 
@@ -18,7 +18,8 @@ This chain is the wording owner for:
 - claim-state communication shape
 - contradiction wording guardrails
 - human-language glosses for internal or technical terminology when they materially improve understanding
-- easy-to-picture short phase/progress framing before denser execution or governance detail when the reader is trying to understand what the work is doing
+- easy-to-picture short phase/progress and phase-backed closeout framing before denser execution or governance detail when the reader is trying to understand what the work is doing or delivered
+- evidence-honest phase-backed closeout wording so delivered work, feature/improvement, and impact are visible without upgrading edited or partially verified work into fixed/stable claims
 - clarification of variable names, field names, config keys, enum-like values, and internal labels when the answer depends on them
 - duplicate-looking team-agent reporting honesty so observed overlap is not overstated as confirmed active duplication
 - governing-basis clarification before deep branch analysis when multiple materially different policies/frames remain live
@@ -57,6 +58,7 @@ Observed failure modes:
 - metaphor-heavy or architecture-first phrasing makes the reader decode internal shorthand before they can understand the practical meaning
 - an answer gives one early human-language gloss but then drifts back into raw internal/system wording even though the user asked for an easier explanation
 - the main point arrives too late because the wording starts with setup instead of what the message is doing
+- phase closeout wording reports governance status but not the practical delivery/impact, or describes impact more strongly than the checked evidence supports
 - fake empathy or exaggerated enthusiasm appears where direct help would be clearer
 
 This design keeps communication flexible while enforcing evidence-aligned wording.
@@ -187,6 +189,15 @@ Required guidance:
 - avoid architecture-first wording that forces the reader to decode practical meaning from system metaphors
 - if a shorthand phrase remains materially useful, explain it immediately in plain human language
 
+### 3.6.1 Phase/Progress and Closeout Framing Principle
+When reporting phase progress, phase meaning, next-step reasoning, or phase-backed closeout, the wording should make the practical delivery visible before denser governance detail.
+
+Required guidance:
+- start with a short plain-language line that helps the reader picture what the phase is doing or delivered
+- for phase-backed closeout, explain delivered work, feature/improvement, and user/system impact before or alongside checked-scope, task, or audit status
+- keep delivery, testing, fixed/stable, and impact claims aligned to the verification actually performed
+- keep governance detail after the orientation, not before it
+
 ### 3.7 Response Closing and Proposal Framing Deferral Principle
 This chain no longer owns end-of-response synthesis, recommendation-with-reason framing, closed-topic summary handling, or goal-qualified advisory proposal wording.
 
@@ -239,6 +250,7 @@ Use stronger wording discipline when:
 - summarizing debugging conclusions
 - contradicting a claim
 - reporting absence or non-findings
+- closing phase-backed work where delivery, impact, and verification-strength could be confused
 - describing duplicate-looking team-agent state where the evidence may only support observed overlap or stale-presence uncertainty
 - determining whether a governing basis is settled strongly enough to proceed without clarification
 - deciding whether compacted carry-forward detail is still strong enough to count as verified fact without recheck
@@ -344,24 +356,28 @@ Not allowed:
 - "Why it matters: the downstream answer changes depending on which policy/frame we use."
 - "Choose one: official semantic truth / full comparison of possible interpretations / conservative operational policy."
 
-### 6.14 Goal-qualified proposal
+### 6.14 Phase-backed closeout evidence wording
+- "What this phase delivered: it changed closeout reporting so phase completion explains the delivered improvement before audit details."
+- "Verification: source wording updated and scoped consistency checks passed; live runtime behavior still needs install/parity verification before stronger completion wording."
+
+### 6.15 Goal-qualified proposal
 - "Proposal: build an automated visual QA verdict layer."
 - "Goal: turn screenshot capture/compare output into a review result that is easier to act on."
 - "What it would improve: reduce the manual work needed to interpret raw compare artifacts."
 - "Expected output: a machine-readable QA summary with per-device verdicts and concise regression notes."
 - "Success condition: a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only."
 
-### 6.15 Post-compact re-anchor
+### 6.16 Post-compact re-anchor
 - "Post-compact re-anchor: continue the active implementation objective already selected by the user."
 - "Carried-forward facts: the governing basis is already chosen and the touched owner set is still the same."
 - "Needs recheck: exact payload wording or exact previously checked evidence that may have been compressed away."
 - "Next action: continue directly if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact."
 
-### 6.15.1 Memory-derived context disclosure
+### 6.16.1 Memory-derived context disclosure
 - "From applicable path-scoped memory, this repo prefers PostgreSQL as the durable backend."
 - "I have not rechecked the current code yet, so treat that as remembered context rather than a freshly verified current-state fact."
 
-### 6.16 Duplicate-looking team-agent report
+### 6.17 Duplicate-looking team-agent report
 - "Observed: the UI showed `@pricing-reviewer` twice."
 - "Checked scope: the local team directory no longer had a live `config.json` for that team."
 - "Current reading: this may be stale or partially cleaned-up presence rather than two still-active useful teammates."
@@ -384,6 +400,8 @@ Not allowed:
 | post-compact continuation assumes every compressed-away detail is still exact | the assistant may resume from stale or over-compressed memory as if it were fresh verified state | re-anchor first, separate carried-forward facts from needs-recheck details, and recheck exact details when they matter |
 | remembered context is presented like freshly verified repo truth | the reader cannot tell whether the statement came from current evidence or only from memory | disclose path-matched remembered context and say when recheck is still needed |
 | duplicate-looking team-agent state reported as confirmed active overlap without verification | the user may get the wrong recovery action or false confidence about cleanup | separate observed duplicate-looking state from inference about real overlap or stale presence |
+| phase closeout reduced to file/task/audit status only | user cannot tell what the phase improved or enabled | state practical delivery, feature/improvement, impact, and verification basis |
+| phase closeout impact phrased stronger than checked evidence | creates false confidence about fixed/stable behavior | keep impact and fixed/stable wording evidence-aligned |
 | ceremonial opening adds no useful context | creates template feel before the real answer starts | lead with the point |
 | exaggerated enthusiasm or fake empathy | sounds performed instead of helpful | use calm direct wording |
 
@@ -400,6 +418,7 @@ Not allowed:
 | Bounded snapshot wording honesty | High |
 | Governing-basis clarification usefulness | High |
 | Duplicate-looking team-agent reporting honesty | High |
+| Phase closeout evidence-aligned delivery/impact wording | High |
 | Unsupported person-directed contradiction | 0 critical cases |
 | Closing usefulness | Ending makes the next path clear when one exists |
 

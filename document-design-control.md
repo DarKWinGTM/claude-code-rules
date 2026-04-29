@@ -15,14 +15,12 @@
 
 ## Core Requirements
 
-### 1) Design-Layer Role
+### 1) Design-layer role
+Governed design documents define active target behavior, contract, and implementation-relevant truth. They are not changelog/history dumps, but they are the right governed place for external-contract knowledge that later execution still depends on.
 
-Governed design documents define the active target behavior, contract, and implementation-relevant truth for the project.
-They are not changelog/history dumps, but they are the correct governed place to preserve external-contract knowledge that later execution still depends on.
-
-### 2) Active-State Body Rule
-
+### 2) Active-state body rule
 Design documents describe the current active target state.
+
 They must not embed:
 - detailed version-history tables
 - audit snapshots
@@ -32,42 +30,36 @@ They must not embed:
 
 Historical detail belongs in changelog files.
 
-### 3) Doc-Derived Knowledge Capture Rule
-
-When external documentation, API specifications, provider references, or comparable implementation authorities materially constrain the implementation, the implementation-relevant extracted knowledge must be normalized into the governed design layer before or alongside continued multi-step work that relies on it.
+### 3) Doc-derived knowledge capture
+When external documentation, API specifications, provider references, or comparable implementation authorities materially constrain implementation, the extracted implementation-relevant knowledge must be normalized into the governed design layer before or alongside continued multi-step work that relies on it.
 
 Required guidance:
 - do not rely on transient reading memory alone for contract-critical external requirements
-- capture the implementation-relevant truth in design before treating it as stable working context for later execution slices
+- capture implementation-relevant truth in design before treating it as stable context for later execution slices
 - capture extracted knowledge, not a copied prose dump of the source document
-- if the external source materially determines request parameters, authentication requirements, callback expectations, field semantics, state transitions, acceptance criteria, or integration constraints, those constraints should be made visible in design
-- compact/session continuity limits are part of the reason this capture is required; the governed design layer should preserve reusable implementation truth so later execution does not depend on re-reading the same source unnecessarily
+- if the source determines request parameters, authentication requirements, callback expectations, field semantics, state transitions, acceptance criteria, or integration constraints, make those constraints visible in design
+- compact/session continuity limits are part of the reason this capture is required
 
-### 4) Extraction Specificity Rule
-
+### 4) Extraction specificity
 A design capture derived from docs/specs should be specific enough that later implementation can answer:
 - what the external source requires
-- which part of the implementation is constrained by that requirement
-- what values/fields/parameters/flows matter
-- what should be sent, accepted, stored, validated, or rejected because of that requirement
-- which details are active implementation truth versus source-side background detail that does not need to be carried forward
+- which implementation part is constrained
+- what values, fields, parameters, flows, states, or acceptance criteria matter
+- what should be sent, accepted, stored, validated, or rejected
+- which details are active implementation truth versus source-side background that should not be carried forward
 
-### 5) Design-Changelog Alignment Rule
-
+### 5) Design-changelog alignment
 For governed chains, design version must align with:
 - runtime rule `Current Version`
 - runtime rule `Design` reference version
 - changelog `Current Version`
 
-### 6) Support-Artifact Boundary
-
-Not every reference artifact belongs in governed design space.
-If a file is reference-only, prompt-only, media-only, or support-only, it should not remain in an ambiguous `.design.md` state unless it is fully normalized as a governed design document.
+### 6) Support-artifact boundary
+Not every reference artifact belongs in governed design space. If a file is reference-only, prompt-only, media-only, or support-only, it should not remain in ambiguous `.design.md` form unless fully normalized as a governed design document.
 
 Use clearly non-governed placement or naming for support-only artifacts.
 
-### 7) Navigator Rule
-
+### 7) Navigator rule
 When a paired changelog exists, design documents:
 - keep version-history navigation limited to `Full history`
 - do not embed detailed changelog sections
@@ -91,7 +83,7 @@ When a paired changelog exists, design documents:
 ## Quality Metrics
 
 | Metric | Target |
-|--------|--------|
+|---|---|
 | Active-state-only design-body compliance | 100% |
 | Navigator compliance in paired design docs | 100% |
 | External-doc-derived implementation truth captured when material | High |
@@ -107,8 +99,8 @@ Related documents:
 - [document-changelog-control.md](document-changelog-control.md) - version authority and metadata contract
 - [project-documentation-standards.md](project-documentation-standards.md) - repository role boundaries and governed document set
 - [phase-implementation.md](phase-implementation.md) - phased execution should reuse normalized design truth rather than transient doc-reading memory
-- [document-patch-control.md](document-patch-control.md) - patch artifacts may record change-surface consequences of external requirements but do not replace design as the target-state truth layer
-- [execution-continuity-and-mode-selection.md](execution-continuity-and-mode-selection.md) - continued execution should not outrun required external-knowledge capture when later work still depends on that knowledge
+- [document-patch-control.md](document-patch-control.md) - patch may record change-surface consequences but does not replace design as target-state truth
+- [execution-continuity-and-mode-selection.md](execution-continuity-and-mode-selection.md) - continued execution should not outrun required external-knowledge capture
 
 ---
 

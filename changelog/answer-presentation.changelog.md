@@ -1,8 +1,8 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.25
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.26
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.26 | 2026-04-25 | **[Added compact phase-backed closeout presentation support](#version-126)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.25 | 2026-04-22 | **[Made light tables more proactive for analytical and diagnostic clarity](#version-125)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.24 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-124)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.23 | 2026-04-16 | **[Added easy-explanation layout support for plain-language headings](#version-123)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -44,6 +45,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-126"></a>
+## Version 1.26: Added compact phase-backed closeout presentation support
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `answer-presentation.md` from v1.25 to v1.26.
+- Updated `design/answer-presentation.design.md` from v1.25 to v1.26.
+- Added a compact phase-backed closeout presentation pattern covering delivered work, feature/improvement, impact, verification, and next phase state.
+- Added trigger and anti-pattern coverage so phase closeouts avoid checked-scope-only reporting when practical delivery and impact matter.
+- Preserved the boundary that this pattern should be used only when it improves clarity and should not become a rigid template for trivial non-phase completions.
+
+### Summary
+Answer-presentation now gives phase-backed closeouts a concise layout so the user can see what the phase delivered and why it matters before audit-style details dominate the ending.
 
 ---
 

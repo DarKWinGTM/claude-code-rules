@@ -1,8 +1,8 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.22
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.24
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.24 | 2026-04-27 | **[Added design-to-phase execution synthesis bridge](#version-224)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 2.23 | 2026-04-25 | **[Added phase-backed closeout delivery and impact expectations](#version-223)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.22 | 2026-04-23 | **[Made relevant governed `/phase` context a required phase-linked task-shaping input](#version-222)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.21 | 2026-04-22 | **[Made phase-linked task wording follow the actual active session language pattern](#version-221)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.20 | 2026-04-20 | **[Made phase-linked task discovery current-phase-first but phase-context-aware](#version-220)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -34,6 +36,42 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-224"></a>
+## Version 2.24: Added design-to-phase execution synthesis bridge
+
+**Date:** 2026-04-27
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.23 to v2.24.
+- Updated `design/phase-implementation.design.md` from v2.23 to v2.24.
+- Added a design-to-phase synthesis bridge so sufficiently clear governed design for staged execution can derive or update `phase/SUMMARY.md`, child phase files, and current-phase live tasks.
+- Preserved one-way synthesis: phase executes design and does not replace design as target-state authority.
+- Preserved stop gates for design ambiguity, materially different rollout choices, missing access, destructive/high-impact action, and approval-sensitive scope changes.
+
+### Summary
+Phase-implementation now states that clear governed design can proactively become phase execution order when staged execution is warranted, reducing the need for a separate user prompt to convert design into phases.
+
+---
+
+<a id="version-223"></a>
+## Version 2.23: Added phase-backed closeout delivery and impact expectations
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.19 to v2.23 to catch runtime metadata up with existing changelog drift and add P075 closeout semantics.
+- Updated `design/phase-implementation.design.md` from v2.19 to v2.23.
+- Added child phase closeout summary expectations for delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant.
+- Added a verification/closeout contract so phase-backed completion reports describe practical delivery before or alongside checked files, task IDs, or audit status.
+- Preserved phase identity, `/phase` workspace, patch linkage, live task-list linkage, and future-phase boundary behavior.
+
+### Summary
+Phase-implementation now makes phase closeout content part of the phase contract so completing a phase explains what the phase developed or improved and why it matters, not just which governance surfaces were checked.
 
 ---
 

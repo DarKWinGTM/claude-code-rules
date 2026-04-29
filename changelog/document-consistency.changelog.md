@@ -1,8 +1,8 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.7
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.8
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-04-25 | **[Added source-owned/shared-destination runtime vocabulary](#version-18)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.7 | 2026-04-17 | **[Added governed reference checks before junk/disposal classification](#version-17)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.6 | 2026-04-09 | **[Separated local execution paths from reusable source-artifact references](#version-16)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.5 | 2026-04-02 | **[Added source-vs-destination reference guidance](#version-15)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -24,6 +25,24 @@
 | | | Summary: Enforced visual verification standards from design | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added source-owned/shared-destination runtime vocabulary
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `document-consistency.md` from v1.7 to v1.8.
+- Updated `design/document-consistency.design.md` from v1.7 to v1.8.
+- Added vocabulary for source-owned active runtime files, shared runtime destinations, and other-owner runtime files.
+- Added a verification trigger for parity scope blurred with destination ownership.
+- Updated cross-section validation so shared runtime destination files outside the current source-owned install set require owner/project scope resolution before cleanup classification.
+
+### Summary
+Document-consistency now keeps source-owned install scope, shared runtime destinations, and other-owner runtime files distinct so reference wording does not turn co-location into ownership.
 
 ---
 

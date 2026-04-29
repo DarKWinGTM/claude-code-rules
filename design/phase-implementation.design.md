@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.19
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-18)
+> **Current Version:** 2.24
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable `/phase` structure and establishes `/phase` early when startup artifact governance already shows phased work is required.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable `/phase` structure, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -50,6 +50,8 @@ that phase posture must be resolved before substantial work drifts.
 
 The preferred path is early phase establishment, not retrospective phase backfill.
 When staged or governed execution is already clearly implied by the checked work shape, phase establishment should not be treated as an optional afterthought.
+
+When governed design is sufficiently clear for staged execution, phase should actively derive or update execution order from that normalized design truth. The phase workspace should split design target state into outcome-sized phases by dependency, risk, rollout boundary, and verification gate; create or update `phase/SUMMARY.md` and current child phase files; initialize or extend live tasks for the current phase when non-trivial work begins; and proceed phase-by-phase unless a real stop gate exists. This synthesis remains one-way: phase executes design and does not replace design as target-state authority.
 
 ---
 
@@ -102,6 +104,7 @@ Patch artifacts remain outside the live phase-plan namespace.
 - summary-level design and patch source inputs when relevant
 - TODO/changelog companion coordination when the concern is global
 - end-to-end verification requirements
+- phase closeout expectations for delivered work, feature/improvement, impact, verification basis, and next phase state when relevant
 - overall rollback or containment behavior
 
 ### 5.2 Child phase role
@@ -128,6 +131,7 @@ Each executable child phase file should define or clearly map to:
 - TODO coordination
 - Changelog coordination
 - Verification / evidence
+- Closeout summary: delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant
 - Exit criteria
 - Risks / rollback notes
 - Next possible phases
@@ -165,21 +169,37 @@ Required guidance:
 
 ---
 
-## 7) Verification Checklist
+## 7) Verification, Closeout, and Rollback Model
+
+Each child phase should define phase-level verification, closeout summary expectations, and local rollback/containment notes. `phase/SUMMARY.md` should keep end-to-end verification and overall rollback or containment behavior visible.
+
+Phase-backed closeout should report what the phase delivered in practical terms before or alongside governance/audit status:
+- delivered feature, capability, behavior, governance improvement, or verification gate
+- user/system impact or why the change matters
+- verification basis at the evidence strength actually checked
+- next phase state when relevant: not started, draft/planned, selected, active, or none opened
+
+This shape should remain concise and should not be forced onto trivial non-phase work.
+
+---
+
+## 8) Verification Checklist
 
 - [ ] `phase-implementation` explicitly defines `NNN` and `NNN-NN`
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
 - [ ] task creation can still align to clearly implied staged/phase context even before the exact next phase file exists
+- [ ] sufficiently clear governed design can be synthesized into phase execution order without replacing design authority
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs are not used as active canonical phase identifiers
 - [ ] `/phase` examples show a valid major/subphase model
 - [ ] `SUMMARY.md` guidance makes grouping visible when subphases exist
 - [ ] patch artifacts remain outside the live phase workspace
+- [ ] phase-backed closeout reports delivered work, feature/improvement, impact, verification basis, and next phase state when relevant
 
 ---
 
-## 8) Quality Metrics
+## 9) Quality Metrics
 
 | Metric | Target |
 |--------|--------|
@@ -189,10 +209,11 @@ Required guidance:
 | Current-phase-first task-list linkage when a phase is active | High |
 | Startup phase posture resolved before drift when phase is required | 100% |
 | Live phased execution files under patch artifacts | 0 |
+| Phase closeout delivery/impact clarity | High |
 
 ---
 
-## 9) Integration
+## 10) Integration
 
 | Rule | Relationship |
 |------|--------------|

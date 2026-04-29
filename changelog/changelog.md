@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.65
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 9.75
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,15 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.75 | 2026-04-27 | **[Added design-to-phase execution synthesis](#version-975)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 9.74 | 2026-04-25 | **[Added phase closeout feature and impact reporting](#version-974)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 9.73 | 2026-04-25 | **[Synchronized runtime destination boundary across adjacent owners](#version-973)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 9.72 | 2026-04-25 | **[Clarified runtime destination ownership boundary](#version-972)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 9.71 | 2026-04-25 | **[Completed P073 runtime install parity gate](#version-971)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 9.70 | 2026-04-24 | **[Completed P073 final source-only runtime audit](#version-970)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 9.69 | 2026-04-24 | **[Synchronized P073 source-only governed compression records](#version-969)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| 9.68 | 2026-04-24 | **[Completed source-only high-risk runtime rule compression slice](#version-968)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
+| 9.66 | 2026-04-24 | **[Opened source-only runtime rule semantic compression inventory](#version-966)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 9.65 | 2026-04-23 | **[Made doc-derived implementation truth a governed capture requirement](#version-965)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.64 | 2026-04-23 | **[Made relevant governed `/phase` context a required task-shaping input](#version-964)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 9.63 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-963)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -100,6 +109,179 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-975"></a>
+## Version 9.75: Added design-to-phase execution synthesis
+
+**Date:** 2026-04-27
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened and completed `phase/phase-076-01-design-to-phase-execution-synthesis.md` as the bounded P076 refinement.
+- Added `patch/design-to-phase-execution-synthesis.patch.md` as the governed before/after review artifact.
+- Updated active runtime owners `phase-implementation.md` and `artifact-initiation-control.md` so sufficiently clear governed design can drive phase posture, phase execution order, current child phase files, and current-phase live tasks when staged execution is warranted.
+- Synchronized the paired design/changelog chains for the two touched owners and synchronized `design/design.md`, `README.md`, `TODO.md`, `phase/SUMMARY.md`, this changelog, the P076 phase file, and the P076 patch file as governed companion records.
+- Installed only the 41 README-listed active runtime rule files and verified source/runtime parity, while keeping destination files outside the active install set untouched and out of Main RULES cleanup scope.
+- Kept the refinement narrow: no new first-class rule chain, no TODO/live task-list rewrite, no execution-continuity rewrite, no communication-rule rewrite, no active runtime install-list change, no destination cleanup, no release, and no push.
+
+### Summary
+P076 makes clear governed design usable as the starting point for phase execution synthesis: when staged execution is warranted, AI can derive phase order, update phase artifacts, initialize current-phase tasks, and continue phase-by-phase without waiting for a separate retrospective planning prompt.
+
+---
+
+<a id="version-974"></a>
+## Version 9.74: Added phase closeout feature and impact reporting
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Completed `phase/phase-075-01-phase-closeout-feature-impact-reporting.md` as the bounded P075 closeout-reporting refinement.
+- Added `patch/phase-closeout-feature-impact-reporting.patch.md` as the governed before/after review artifact for the narrow change surface.
+- Updated active runtime owners `response-closing-and-action-framing.md`, `phase-implementation.md`, `answer-presentation.md`, `accurate-communication.md`, and `explanation-quality.md` so phase-backed closeouts report delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant.
+- Synchronized the paired design/changelog chains for the five touched owners and synchronized `design/design.md`, `README.md`, `TODO.md`, `phase/SUMMARY.md`, this changelog, the P075 phase file, and the P075 patch file as governed companion records.
+- Installed only the 41 README-listed active runtime rule files and verified source/runtime parity, while keeping destination files outside the active install set untouched and out of Main RULES cleanup scope.
+- Kept the refinement narrow: no active runtime install-list change, no broad communication rewrite, no plugin/project-owned runtime file management, no release, and no push.
+
+### Summary
+P075 makes phase closeout reports explain what the phase delivered and why it matters before audit details dominate, while preserving evidence-honest wording and the 41-file active runtime install boundary.
+
+---
+
+<a id="version-973"></a>
+## Version 9.73: Synchronized runtime destination boundary across adjacent owners
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Completed `phase/phase-074-02-sync-runtime-destination-boundary-adjacent-owners.md` as the adjacent-owner sync for the P074 runtime destination ownership boundary.
+- Added `patch/runtime-destination-adjacent-owner-boundary.patch.md` as the review artifact for the bounded current-to-target change surface.
+- Updated the active runtime owner files `project-documentation-standards.md`, `strict-file-hygiene.md`, and `document-consistency.md` so repository docs, hygiene classification, and reference wording distinguish current project/source-owned install scope from shared runtime destinations and other-owner runtime files.
+- Synchronized paired design/changelog chains: `project-documentation-standards` to v2.30, `strict-file-hygiene` to v1.5, and `document-consistency` to v1.8.
+- Synchronized `README.md`, `TODO.md`, `design/design.md`, `phase/SUMMARY.md`, and `patch/runtime-rules-semantic-compression-inventory.patch.md` as companion governed records only, not runtime rule targets.
+- Kept `authority-and-scope.md` unchanged in this phase because P074-01 already completed the core authority boundary.
+- Installed only the 41 README-listed active runtime rule files and verified source/runtime parity, while preserving other project/plugin-owned runtime destination files as out of scope and untouched.
+- Kept the boundary narrow: no active runtime install-list change, no governed planning/support surface installation, no destination cleanup, no release, and no push.
+
+### Summary
+P074-02 reinforces the P074 shared runtime destination boundary across adjacent active runtime owners: Main RULES install/parity remains scoped to the 41 source-owned active runtime files, and co-located other-owner runtime files remain outside cleanup/ownership scope unless their owner/project is selected or verified.
+
+---
+
+<a id="version-972"></a>
+## Version 9.72: Clarified runtime destination ownership boundary
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened and completed `phase/phase-074-01-clarify-runtime-destination-ownership-boundary.md` for the narrow `authority-and-scope.md` runtime co-location boundary.
+- Added `patch/runtime-destination-ownership-boundary.patch.md` as the review artifact for the current-to-target change surface.
+- Updated `authority-and-scope.md`, `design/authority-and-scope.design.md`, and `changelog/authority-and-scope.changelog.md` to v2.5.
+- Clarified that runtime co-location is not ownership authority and that destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification, cleanup, or deletion is considered.
+- Synchronized `README.md`, `TODO.md`, `design/design.md`, and `phase/SUMMARY.md` for the bounded P074-01 record.
+- Kept the boundary narrow: no plugin-owned runtime rule edits, no deletion cleanup, no active runtime install-list change, no release, and no push.
+
+### Summary
+P074-01 closes the shared runtime destination interpretation gap: Main RULES install/parity remains scoped to the 41 source-owned active runtime files, while files outside that source-owned set remain out of scope until owner/project scope is selected or verified.
+
+---
+
+<a id="version-971"></a>
+## Version 9.71: Completed P073 runtime install parity gate
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Created and completed `phase/phase-073-08-install-runtime-rules-and-verify-parity.md` as the explicit runtime install/parity gate after the P073 source-only compression audit.
+- Installed the 41 README-installed active runtime rule files into `~/.claude/rules/`.
+- Verified active source/runtime parity: 41 active source files, 41 active destination copies, no missing files, no hash mismatches, and `PARITY_PASS True`.
+- Recorded destination markdown files outside the active install set as observed-only and untouched: `checkpoint.md` and `shared-task-list-path-coordination.md`.
+- Synchronized `README.md`, `TODO.md`, `design/design.md`, `phase/SUMMARY.md`, and `patch/runtime-rules-semantic-compression-inventory.patch.md` for the P073-08 install/parity state.
+- Kept the boundary narrow: no `CLAUDE.md` edits, no plugin/hook/custom-agent edits, no deletion cleanup, no release, and no push.
+
+### Summary
+P073 has now moved from source-only audit completion to installed runtime parity for the 41 active runtime rules, while destination files outside the active install set and any release/push work remain outside this phase.
+
+---
+
+<a id="version-970"></a>
+## Version 9.70: Completed P073 final source-only runtime audit
+
+**Date:** 2026-04-24
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Completed `phase/phase-073-07-final-runtime-semantic-parity-and-aggregate-reduction-audit.md` as the final source-only audit for the P073 active runtime compression program.
+- Verified the README-installed active runtime inventory remains 41 root rule files with no missing source files.
+- Recorded the final active-runtime source state at 4,051 lines, 31,316 words, and 231,675 bytes.
+- Confirmed aggregate reductions stayed inside the selected 35-45% Conservative/Balanced target band: 44.82% / 41.60% / 38.95% from the P073-02 patch baseline and 43.27% / 37.54% / 35.00% from the P073-03 runtime-only re-anchor baseline.
+- Verified semantic anchors, checked wording-compression false negatives in `project-documentation-standards.md`, `operational-failure-handling.md`, and `accurate-communication.md`, and found no semantic gap in the checked scope.
+- Synchronized `README.md`, `TODO.md`, `design/design.md`, `phase/SUMMARY.md`, and `patch/runtime-rules-semantic-compression-inventory.patch.md` to record P073-07 completion while keeping runtime install deferred.
+- Kept the wave source-only: no install into `~/.claude/rules/`, no `CLAUDE.md` edits, no plugin/hook/custom-agent edits, and no release or push.
+
+### Summary
+P073 source-only runtime rule semantic compression is now fully audited and source-record synchronized, with aggregate reduction targets met and runtime install still gated as a separate later decision.
+
+---
+
+<a id="version-969"></a>
+## Version 9.69: Synchronized P073 source-only governed compression records
+
+**Date:** 2026-04-24
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened and completed `phase/phase-073-06-sync-source-only-governed-records.md` as the repository-level governed record sync slice for the phase-073 runtime compression program.
+- Synchronized master source records so P073 now reflects completed source-only runtime compression through P073-05: high-risk owners, evidence/safety/operations owners, and communication/presentation/strategy/support owners.
+- Updated `design/design.md`, `README.md`, `TODO.md`, `phase/SUMMARY.md`, and `patch/runtime-rules-semantic-compression-inventory.patch.md` to keep the source-only boundary explicit.
+- Preserved the active-runtime-only compression scope: governed planning surfaces remain sync/audit/planning records and are not compression targets.
+- Kept per-rule changelog/version mass bumps out of this repository-level sync and left P073-07 pending for final semantic parity plus aggregate reduction audit.
+- Kept runtime install deferred: no install into `~/.claude/rules/`, no `CLAUDE.md` edits, and no plugin/hook/custom-agent source edits.
+
+### Summary
+The RULES repository now has synchronized source records for completed P073 runtime compression slices through P073-05, while final aggregate audit and runtime install remain gated behind later work.
+
+---
+
+<a id="version-968"></a>
+## Version 9.68: Completed source-only high-risk runtime rule compression slice
+
+**Date:** 2026-04-24
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Completed `phase/phase-073-02-compress-high-risk-contract-owners-conservatively.md` for the high-risk contract-owner subset of the phase-073 semantic compression program.
+- Compressed 10 high-risk runtime owner files source-only: evidence, destructive-intent, file-hygiene, authority, phase/task, design/patch, memory, and project-documentation owners.
+- Recorded touched-set post-compression metrics: 1,987 lines, 12,856 words, 93,145 bytes; reductions are 9.9% lines, 23.1% words, and 21.7% bytes.
+- Verified semantic parity against the high-risk contract registry, force-word preservation, and source-only boundaries for P073-02.
+- Updated `phase/SUMMARY.md`, `TODO.md`, and `patch/runtime-rules-semantic-compression-inventory.patch.md` so P073-02 is complete without treating later P073 compression phases or the final 35-45% aggregate target as complete.
+- Kept the wave source-only: no runtime install into `~/.claude/rules/`, no `CLAUDE.md` edits, and no plugin/package surface edits.
+
+### Summary
+The RULES repository now has the high-risk owner subset compressed and verified under the master semantic-compression inventory, while later compression phases and final aggregate audit remain deferred behind their own gates.
+
+---
+
+<a id="version-966"></a>
+## Version 9.66: Opened source-only runtime rule semantic compression inventory
+
+**Date:** 2026-04-24
+**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+
+### Changes
+- Created `patch/runtime-rules-semantic-compression-inventory.patch.md` as the single master review surface for the semantic-preserving compression wave across the README-installed active root runtime rule set.
+- Verified exact 41/41 patch coverage against the README install list and recorded the pre-compression baseline: 7,298 lines, 53,088 words, and 375,828 bytes.
+- Opened `phase/phase-073-01-verify-patch-coverage-and-repair-master-drift.md` to repair master-surface drift before any runtime rule body compression begins.
+- Synchronized `phase/SUMMARY.md`, `design/design.md`, `TODO.md`, and patch metadata to the phase-073 opening state.
+- Preserved the source-only boundary: no runtime rule body compression has started in this opening gate, and runtime install into `~/.claude/rules/` remains deferred to a separate later gate.
+
+### Summary
+The RULES repository now has a source-only master compression inventory gate for all 41 active runtime rule files, so later compression can proceed from a reviewable baseline without weakening runtime contracts or installing runtime copies prematurely.
 
 ---
 

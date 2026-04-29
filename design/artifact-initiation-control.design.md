@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
@@ -16,6 +16,7 @@ The target behavior is:
 - artifact posture is resolved early
 - the assistant does not drift into non-trivial governed work while required artifacts remain implicit
 - required startup artifacts are either reused, created now, asked about now, or explicitly marked not required
+- sufficiently clear governed design that warrants staged execution resolves phase posture to `use existing` or `create now` instead of lingering as implicit planning
 - live task tracking is initialized early when non-trivial work needs it
 - trivial work keeps a lightweight bypass
 
@@ -122,7 +123,7 @@ Apply this chain strongly when one or more are true:
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
 | Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed or clearly phase-shaped work strengthens this from preferred to expected |
-| Phase | staged execution, gates, sequencing, rollback boundaries, or explicit user request make `/phase` materially useful |
+| Phase | staged execution, gates, sequencing, rollback boundaries, explicit user request, or sufficiently clear governed design requiring staged execution make `/phase` materially useful |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
 ### 5.3 Low-strength / bypass triggers

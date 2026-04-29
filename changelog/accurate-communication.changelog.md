@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.17
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.18
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.18 | 2026-04-25 | **[Added evidence-honest phase closeout delivery and impact wording](#version-218)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.17 | 2026-04-17 | **[Extracted technical snapshot and response-closing ownership into new first-class chains](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.16 | 2026-04-16 | **[Kept easy explanations in plain Thai across the full answer](#version-216)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
 | 2.15 | 2026-04-11 | **[Added easy-to-picture phase/progress framing guidance](#version-215)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -55,6 +56,42 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-218"></a>
+## Version 2.18: Added evidence-honest phase closeout delivery and impact wording
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `accurate-communication.md` from v2.17 to v2.18.
+- Updated `design/accurate-communication.design.md` from v2.17 to v2.18.
+- Added phase/progress and closeout framing guidance so phase-backed closeouts explain delivered work, feature/improvement, and user/system impact before or alongside audit status.
+- Added evidence-strength wording guidance so delivery, testing, fixed/stable, and impact claims remain aligned to what was actually verified.
+- Added anti-pattern coverage against file/task/audit-only phase closeouts and impact wording that overclaims checked evidence.
+
+### Summary
+Accurate-communication now makes phase closeout wording practical and evidence-honest: the user should see what the phase changed and why it matters without mistaking edited or partially verified work for stable fixed behavior.
+
+---
+
+<a id="version-217"></a>
+## Version 2.17: Extracted technical snapshot and response-closing ownership into new first-class chains
+
+**Date:** 2026-04-17
+**Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+
+### Changes
+- Updated `accurate-communication.md` from v2.16 to v2.17.
+- Updated `design/accurate-communication.design.md` from v2.16 to v2.17.
+- Extracted bounded technical snapshot wording into `technical-snapshot-communication.md` and `design/technical-snapshot-communication.design.md`.
+- Extracted response closing, recommendation framing, alternative preservation, closed-topic summary behavior, and goal-qualified advisory proposal wording into `response-closing-and-action-framing.md` and `design/response-closing-and-action-framing.design.md`.
+- Kept broader communication honesty, evidence-threshold wording, human-language glosses, duplicate-looking team-agent reporting, main-point-first framing, and continuation-first guidance in accurate-communication while deferring specialized ownership to the new first-class chains.
+
+### Summary
+Accurate-communication now delegates technical snapshot and closing/action-framing details to dedicated rule chains while preserving the broader communication-honesty layer.
 
 ---
 

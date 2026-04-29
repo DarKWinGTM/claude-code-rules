@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.25
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 1.26
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
 
 ---
 
@@ -27,6 +27,7 @@ The target behavior is principle-first and trigger-driven:
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
 - make easy-to-picture phase/progress explanations easy to present through one short plain-language opening plus a concise grouped explanation
+- make phase-backed closeouts easy to present through compact delivery, feature/improvement, impact, verification, and next-state grouping
 - make materially outcome-changing governing-basis ambiguity easy to present as a short structured clarification instead of a long branch-comparison essay
 - make post-compact continuation easy to present as one short re-anchor block instead of a long replay
 - make memory-derived context easy to present as one short block that separates matched path scope, provenance when relevant, and needs-recheck detail from freshly checked current-state facts
@@ -50,6 +51,7 @@ Observed failure modes:
 - small troubleshooting issues are presented with oversized tables or overbuilt formatting
 - an answer can look well-structured while still leaving metaphor-heavy or abstract internal wording unexplained
 - answers contain the right reasoning but remain hard to scan quickly
+- phase-backed closeouts show checked files and task status without a clear delivered-feature/impact grouping
 - the structure begins with setup detail while the answer purpose stays implicit until later
 - layout becomes decorative instead of functional
 - simple answers are over-structured while complex answers remain under-structured
@@ -173,6 +175,7 @@ Use stronger presentation structure when one or more of these triggers are prese
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification note, environment summary | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
 | full-set framing | many relevant areas, complete checklist, multiple review axes that should be visible together | complete set first, then optional narrowing |
+| phase-backed closeout | closing phase-backed work | compact delivered work, feature/improvement, impact, verification, and next-state grouping |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | one short progression block such as `What happens next` or `Next stage` |
 | variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |
 | long/complex answer | many concepts, many dependencies, high cognitive load | headings, grouped blocks, whitespace, concise summary |
@@ -228,7 +231,17 @@ For ordinary answer tables:
 - avoid visually heavy framing for ordinary structured facts
 - prefer lists or grouped blocks when the content is not genuinely tabular
 
-### 5.3.1 Proposal Pattern
+### 5.3.1 Phase-Backed Closeout Pattern
+
+When closing phase-backed work:
+- show what the phase delivered in practical terms
+- name the feature, capability, behavior, or governance improvement that changed
+- state the user/system impact or why the change matters
+- state the verification basis and remaining limits without overclaiming
+- state next phase state when relevant
+- keep the block compact and do not force it onto simple non-phase completions
+
+### 5.3.2 Proposal Pattern
 
 When the answer is surfacing a future-work idea rather than an active next step:
 - label it clearly as a proposal, idea, or future wave
@@ -238,7 +251,7 @@ When the answer is surfacing a future-work idea rather than an active next step:
 - optionally show the success condition when it materially helps the reader evaluate the idea
 - do not format a proposal block like implied queued execution
 
-### 5.3.2 Governing-Basis Clarification Pattern
+### 5.3.3 Governing-Basis Clarification Pattern
 
 When multiple materially different governing bases or policies remain live and the answer would change depending on which one is chosen:
 - label the block clearly as a clarification request
@@ -247,7 +260,7 @@ When multiple materially different governing bases or policies remain live and t
 - keep the options mutually exclusive when possible
 - prefer a short form-like block over a long comparison essay
 
-### 5.3.3 Post-Compact Re-Anchor Pattern
+### 5.3.4 Post-Compact Re-Anchor Pattern
 
 When the answer is resuming after compact, present a short re-anchor block before deeper continuation when exact context may have been compressed.
 
@@ -258,7 +271,7 @@ Required guidance:
 - show one short next-action line
 - prefer one short recap block over a long conversation replay
 
-### 5.3.4 Memory-Status Pattern
+### 5.3.5 Memory-Status Pattern
 
 When the answer materially relies on remembered context:
 - show the matched path scope compactly when that distinction matters
@@ -395,7 +408,28 @@ When using a list or table:
 - add a short lead-in line if the reader needs context for why the structure is being shown
 - avoid dropping large tables or lists into the answer without framing
 
-### 5.10 Canonical Governing-Basis Clarification Shape
+### 5.10 Canonical Phase-Backed Closeout Shape
+
+```markdown
+What this phase delivered
+- <what changed in practical terms>
+
+Feature / Improvement
+- <feature, capability, behavior, or governance improvement>
+
+Impact
+- <user/system result or why it matters>
+
+Verification
+- <checked evidence and remaining limits>
+
+Next phase state
+- <not started | draft/planned | selected | active | none opened>
+```
+
+Use only the fields that improve clarity; do not turn simple non-phase completions into a rigid report.
+
+### 5.11 Canonical Governing-Basis Clarification Shape
 
 ```markdown
 Clarification needed
@@ -413,7 +447,7 @@ Other
 - tell me the policy/basis you want me to use
 ```
 
-### 5.11 Canonical Post-Compact Re-Anchor Shape
+### 5.12 Canonical Post-Compact Re-Anchor Shape
 
 ```markdown
 Post-compact re-anchor
@@ -430,7 +464,7 @@ Next action
 - continue the active path if the remaining state is still clear; otherwise recheck the exact missing detail before treating it as verified fact
 ```
 
-### 5.11.1 Canonical Memory-Status Shape
+### 5.12.1 Canonical Memory-Status Shape
 
 ```markdown
 Memory status
@@ -440,11 +474,11 @@ Memory status
 - Needs recheck: confirm the current code/config still matches the remembered context before treating it as verified fact
 ```
 
-### 5.11.2 Canonical Light Table Shape
+### 5.12.2 Canonical Light Table Shape
 
 For ordinary answer tables, prefer a light readable shape rather than a visually heavy one.
 
-### 5.12 Canonical Variable-Role Shape
+### 5.13 Canonical Variable-Role Shape
 
 ```markdown
 Before the deeper reasoning, here is what the key identifiers mean:
@@ -458,7 +492,7 @@ Before the deeper reasoning, here is what the key identifiers mean:
 What this means: the user can understand the later reasoning without having to decode raw identifiers on the fly.
 ```
 
-### 5.13 Canonical Goal-Qualified Proposal Shape
+### 5.14 Canonical Goal-Qualified Proposal Shape
 
 ```markdown
 Proposal
@@ -477,7 +511,7 @@ Success condition
 - a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
-### 5.13.1 Canonical Markdown-Table Exception Shape
+### 5.14.1 Canonical Markdown-Table Exception Shape
 
 Use literal markdown-table syntax only when the user explicitly asks for it or when the target artifact is markdown source.
 
@@ -489,7 +523,7 @@ Use literal markdown-table syntax only when the user explicitly asks for it or w
 | governance targets | defined |
 ```
 
-### 5.13.2 Canonical List-Instead-of-Table Shape
+### 5.14.2 Canonical List-Instead-of-Table Shape
 
 ```markdown
 Current work order:
@@ -499,7 +533,7 @@ Current work order:
 4. tests and verification
 ```
 
-### 5.14 Canonical Purpose-First Shape
+### 5.15 Canonical Purpose-First Shape
 
 ```markdown
 This test checks whether the setting actually changes Claude Code behavior.
@@ -526,6 +560,7 @@ What This Means
 | forced comparison table | adds visual weight without informational value | use normal prose or grouped bullets |
 | missing framing before table/list | reader has to infer the purpose of the structure | add a short context-setting line |
 | raw evidence dump with no orienting line | checked facts appear but meaning stays unclear | start with a short orientation, then present the snapshot |
+| phase-backed closeout as checked-scope-only list | user cannot see what feature/improvement was delivered or why it matters | show delivered work, feature/improvement, impact, verification, and next phase state when useful |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
 | ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | use a lighter readable table or switch to a list/grouped block |
 | oversized or overbuilt table used as the ordinary default | the output becomes heavier than the information needs | keep the table light or switch to a list/grouped block |
@@ -573,6 +608,7 @@ Not allowed:
 | Scanability of complex answers | High |
 | Semantic formatting correctness | High |
 | Diagnostic snapshot usefulness | High when technical status reporting is used |
+| Phase-backed closeout layout usefulness | High when phase-backed work is closed |
 | Compact-table efficiency | High when a table is genuinely useful |
 | Unnecessary boxed-table incidence | 0 critical cases |
 | Decorative formatting without function | 0 critical cases |

@@ -1,8 +1,8 @@
 # Changelog - Strict File Hygiene
 
 > **Parent Document:** [../strict-file-hygiene.md](../strict-file-hygiene.md)
-> **Current Version:** 1.4
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-25 | **[Added shared runtime destination non-member boundary](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.4 | 2026-04-17 | **[Blocked cleanup/hygiene from acting as deletion authority](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | | | Summary: Refined strict-file-hygiene so junk-file wording stays creation-side only, newly encountered files are not disposable by cleanup instinct alone, and hygiene/isolation rationale no longer reads like delete permission | |
 | 1.3 | 2026-04-02 | **[Added portable-artifact hygiene guidance](#version-13)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
@@ -20,6 +21,24 @@
 | | | Summary: Added canonical `Design + Session + Full history` runtime header metadata without changing substantive strict-file-hygiene behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added shared runtime destination non-member boundary
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `strict-file-hygiene.md` from v1.4 to v1.5.
+- Updated `design/strict-file-hygiene.design.md` from v1.4 to v1.5.
+- Added explicit shared-destination non-member wording so destination/runtime files outside the current source-owned active runtime install set are not junk by default.
+- Updated the classify/remove decision flow to resolve owner/project scope before hygiene classification when files are co-located in a shared runtime destination.
+- Preserved the rule that hygiene, cleanup, isolation, worktree, sandbox, and runtime co-location are not deletion authority.
+
+### Summary
+Strict-file-hygiene now blocks runtime-destination co-location from becoming a junk-file classification shortcut for other-owner runtime files.
 
 ---
 

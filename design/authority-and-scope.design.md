@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.4
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 2.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
 
 ---
 
@@ -34,7 +34,7 @@ Define a deterministic authority model that:
 | Assistant-created team expansion treated like the default answer | Duplicate-looking or overlapping teammates get spawned even when the role is already covered | Explicit reuse-before-expand boundary |
 | Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
 | Shared-board multi-session coordination is improvised separately in several chains | Ownership, handoff, and retention semantics drift and conflict | Explicit deferral to a first-class shared execution coordination owner |
-| Git working state or cleanup heuristics are treated as semantic authority for file meaning | Newly seen files can be misclassified as junk/disposable before the governed repo surfaces are checked | Explicit repo-governed semantic-authority bridge |
+| Git working state, runtime co-location, or cleanup heuristics are treated as semantic authority for file meaning | Newly seen or shared-destination files can be misclassified as current-project-owned, junk, or disposable before governed repo/owner surfaces are checked | Explicit repo-governed semantic-authority and runtime destination ownership bridge |
 
 ---
 
@@ -63,7 +63,7 @@ DEFAULT_BEHAVIOR
 
 ### 2.3 Repo-Governed Semantic-Authority Bridge
 
-When the current repository uses governed master surfaces and governed history to define file meaning, semantic authority should be resolved in this order:
+When the current repository uses governed master surfaces and governed history to define file meaning, or when a shared runtime destination contains files that may come from multiple projects/plugins, semantic authority should be resolved in this order:
 
 1. current user request
 2. checked master surfaces for the current repo
@@ -74,6 +74,8 @@ When the current repository uses governed master surfaces and governed history t
 Required guidance:
 - git cleanliness, untracked state, and working-tree noise should not outrank governed repository surfaces when classifying file meaning
 - cleanup instincts should not become an implicit authority source for whether a file is disposable
+- runtime co-location should not outrank source/project ownership for file meaning
+- for destination/runtime files outside the current source-owned install set, owner/project scope should be resolved before classification, cleanup, or deletion is considered
 - if master surfaces or governed owner chains could plausibly explain the file, check them before treating the file as non-governed or disposable
 
 ---

@@ -9,9 +9,9 @@
 
 ## Rule Statement
 
-**Core Principle: Report technical snapshots honestly by separating exact captured facts, partial checked facts, inferred implications, and scoped local environment facts so the snapshot does not read as more exact than the evidence supports.**
+**Core Principle: Report technical snapshots by separating exact captured facts, partial checked facts, inferred implications, and scoped local facts so compact status wording does not overclaim.**
 
-This chain owns bounded wording for compact technical, diagnostic, and verification-status snapshots. It does not replace evidence-taxonomy ownership, snapshot layout ownership, or explanation-flow ownership.
+This chain owns bounded wording for compact technical, diagnostic, and verification-status snapshots. Evidence taxonomy, snapshot layout, explanation flow, and portability remain owned by their specialist rules.
 
 ---
 
@@ -19,106 +19,58 @@ This chain owns bounded wording for compact technical, diagnostic, and verificat
 
 ### 1) Snapshot-Layer Separation Principle
 
-When a response includes a compact technical or diagnostic snapshot, the wording must separate exact captured facts from partial checked facts from inferred implications.
+When a response includes a compact technical or diagnostic snapshot, separate:
+- **exact captured facts**
+- **partial checked facts**
+- **inferred implications**
+- **exact detail unavailable**
 
 Required guidance:
-- separate **exact captured facts** from **partial checked facts** from **inferred implications**
-- if the exact request, payload, or runtime state was not captured, say so explicitly instead of implying that it was
-- use wording such as `From the checked scope, ...` or `I could not capture the exact request, but ...` when only partial evidence exists
+- if the exact request, payload, or runtime state was not captured, say so
+- use wording such as `From the checked scope, ...` or `I could not capture the exact request, but ...` when evidence is partial
 - keep snapshot wording scoped to what was actually observed
-- do not let a compact snapshot quietly upgrade partial evidence into exact reconstruction
+- do not let a compact snapshot upgrade partial evidence into exact reconstruction
 
 ### 2) Scoped Local-Fact Principle
 
-When exact local paths, ports, hosts, or similar environment-specific values appear in a snapshot, the wording must keep them scoped as checked local facts rather than letting them read like portable defaults.
+Exact local paths, ports, hosts, and environment values in a snapshot must read as checked local facts, not portable defaults.
 
 Required guidance:
-- label exact environment values as observed local facts when that distinction matters
-- avoid presenting machine-specific values as if they were shared system contracts
-- defer broader portable-default and anti-hardcoding expectations to `portable-implementation-and-hardcoding-control.md`
+- label environment-specific values as observed local facts when the distinction matters
+- avoid presenting machine-specific values as shared contracts
+- defer broader portable-default discipline to `portable-implementation-and-hardcoding-control.md`
 
 ### 3) Diagnostic Snapshot Content Principle
 
-When a diagnostic or verification-status update uses a compact snapshot, the snapshot should show the facts the reader needs to understand the current operational state quickly.
+A diagnostic or verification-status snapshot should show only the facts needed to understand the current operational state quickly:
+- what was checked
+- what is currently true
+- what remains pending
+- the immediate next action when one exists
 
-Required guidance:
-- show what was checked
-- show what is currently true
-- show what remains pending when something is still open
-- show the immediate next action when one exists
-- keep the snapshot concise instead of turning it into a full evidence dump
+Keep snapshots concise; do not turn them into evidence dumps.
 
-### 4) Snapshot-Layer Communication Model
+### 4) Boundary Principle
 
-A useful snapshot wording split is:
-
-| Snapshot Layer | Preferred Shape |
-|----------------|-----------------|
-| Exact captured facts | "Captured request path: ..." / "The checked log line shows ..." |
-| Partial checked facts | "From the checked scope, the relevant env keys are ..." |
-| Inferred implications | "Based on those checked facts, the likely implication is ..." |
-| Exact detail unavailable | "I could not capture the exact payload/request, but the checked route/params involved are ..." |
-
-### 5) Boundary Principle
-
-This chain owns **what a technical snapshot must communicate**.
-
-It does not replace:
+This chain owns what a technical snapshot must communicate. It does not replace:
 - `evidence-grounded-burden-of-proof.md` for evidence taxonomy and burden thresholds
-- `answer-presentation.md` for snapshot layout/pattern shape
-- `explanation-quality.md` for where snapshots sit inside explanation flow
+- `answer-presentation.md` for snapshot layout and fact-table shape
+- `explanation-quality.md` for snapshot placement inside explanation flow
 - `portable-implementation-and-hardcoding-control.md` for broader portability ownership
 
 ---
 
-## Application Guidelines
+## Snapshot Wording Model
 
-### When technical snapshot wording applies strongly
-Use this rule strongly when:
-- reporting troubleshooting progress
-- reporting implementation progress with mixed completed/pending state
-- reporting verification checkpoints where current state and remaining gates must be visible
-- summarizing request, environment, or runtime details from incomplete checked scope
-- the reader needs a compact technical state snapshot instead of loose prose
+| Snapshot layer | Preferred wording shape |
+|---|---|
+| Exact captured facts | `Captured request path: ...` / `The checked log line shows ...` |
+| Partial checked facts | `From the checked scope, ...` |
+| Inferred implication | `Based on those checked facts, the likely implication is ...` |
+| Exact detail unavailable | `I could not capture the exact payload/request, but ...` |
 
-### When scoped local-fact wording applies strongly
-Use explicit scoped local-fact wording when:
-- exact paths, ports, hosts, or env values appear in a snapshot
-- the reader might mistake a local observation for a reusable default
-- a machine-specific value appears in shared reporting or documentation-adjacent communication
+Example:
 
----
-
-## Examples
-
-### Exact captured facts
-```text
-Captured request path: `/api/runtime/assign`.
-Captured status code: `502`.
-```
-
-### Partial checked facts
-```text
-I could not capture the exact request payload, but from the checked scope the request involved the runtime assignment route plus the current gateway environment.
-```
-
-### Mixed exact and partial facts
-```text
-Captured route: `/api/runtime/assign`.
-I could not capture the exact payload, but from the checked scope the request included the current target assignment path and gateway environment.
-```
-
-### Scoped environment summary
-```text
-From the checked scope, the relevant environment appears to be the current gateway container plus the runtime assignment route configuration.
-```
-
-### Inferred implication
-```text
-Based on those checked facts, the likely implication is that the failure sits between request routing and runtime-target resolution, not in initial client boot.
-```
-
-### Diagnostic snapshot
 ```text
 Diagnostic snapshot:
 - Checked: `backend/.env`, `docker-compose.yml`, startup log
@@ -129,24 +81,35 @@ Diagnostic snapshot:
 
 ---
 
+## Application Guidelines
+
+Use this rule strongly when reporting:
+- troubleshooting progress
+- implementation progress with mixed done/pending state
+- verification checkpoints
+- request, environment, or runtime details from incomplete checked scope
+- exact local values that could be mistaken for portable defaults
+
+---
+
 ## Anti-Patterns to Avoid
 
-| Anti-Pattern | Why It Hurts | Better Approach |
-|--------------|--------------|-----------------|
-| pretending exact capture from partial evidence | makes the snapshot sound more certain than it is | say what was exact, what was partial, and what is inferred |
-| status update without compact state snapshot | hides what was checked, what is current, and what remains pending | use a concise diagnostic snapshot before deeper explanation |
-| machine-scoped path/port/host presented like a shared default | local observation is mistaken for a reusable contract | label it as a checked local fact |
-| inferred implication presented like captured fact | the reader cannot tell what was observed versus concluded | keep exact facts, partial facts, and implications visibly separated |
+| Anti-pattern | Better approach |
+|---|---|
+| pretending exact capture from partial evidence | say what was exact, partial, and inferred |
+| status update without compact state | show checked/current/pending/next |
+| machine-scoped path/port/host as shared default | label it as checked local fact |
+| inferred implication presented as captured fact | keep observation and conclusion separate |
 
 ---
 
 ## Quality Metrics
 
 | Metric | Target |
-|--------|--------|
+|---|---|
 | Exact vs partial vs inferred separation | High |
-| Scoped local-fact honesty in snapshots | High |
-| Snapshot usefulness for troubleshooting/progress updates | High |
+| Scoped local-fact honesty | High |
+| Snapshot usefulness | High |
 | Exact-capture overclaim incidents | 0 critical cases |
 | Snapshot-state clarity | High |
 
@@ -155,10 +118,10 @@ Diagnostic snapshot:
 ## Integration
 
 Related rules:
-- [accurate-communication.md](accurate-communication.md) - keeps the broader communication honesty layer and claim-strength wording outside snapshot-specific ownership
-- [evidence-grounded-burden-of-proof.md](evidence-grounded-burden-of-proof.md) - owns evidence taxonomy and burden thresholds
-- [answer-presentation.md](answer-presentation.md) - owns the layout of snapshot sections and fact-table presentation
-- [explanation-quality.md](explanation-quality.md) - owns when snapshots appear inside explanation flow
-- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - owns broader portable-default versus local-observation discipline
+- [accurate-communication.md](accurate-communication.md) - broader evidence-honest wording
+- [evidence-grounded-burden-of-proof.md](evidence-grounded-burden-of-proof.md) - evidence taxonomy and burden thresholds
+- [answer-presentation.md](answer-presentation.md) - snapshot layout and fact-table presentation
+- [explanation-quality.md](explanation-quality.md) - snapshot placement inside explanation flow
+- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - portable-default versus local-observation discipline
 
 ---

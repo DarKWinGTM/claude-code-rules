@@ -11,7 +11,7 @@
 ## 1) Goal
 
 Define one first-class rule chain for custom agent selection priority so the assistant:
-- treats user custom agents in `~/.claude/agents/` as the primary specialist pool when they are available
+- treats visible user custom agents in `~/.claude/agents/` as the primary specialist pool when they are available
 - prefers the best-fit custom specialist before generic handling when a task clearly matches a specialist domain
 - keeps delegation selective and justified rather than forcing agents into every task
 - prefers reuse-before-spawn when an existing teammate already covers the same role
@@ -23,22 +23,21 @@ This chain should improve real custom-agent usage without pretending that runtim
 
 ## 2) Problem Statement
 
-The current system already has:
-- custom agents defined in `~/.claude/agents/`
-- built-in agents always available
-- plugin agents available when installed
-- runtime descriptions and specialist boundaries for user agents
+The system can have several candidate handling paths:
+- user custom agents in `~/.claude/agents/`
+- project-visible agents
+- built-in agents
+- plugin agents when installed
+- direct main-session handling
 
-But there is still no first-class semantic owner for this policy question:
-- when a user custom agent exists and the task fits, should it be considered before generic handling or plugin/built-in fallbacks?
+Without a first-class selection-priority owner, the assistant may answer directly or choose a broader fallback even when a visible user custom specialist clearly fits the task.
 
 Observed failure modes this design intends to close:
 - the assistant answers directly even when a clear custom specialist exists
 - custom user agents are treated like optional edge tools rather than the user’s preferred specialist pool
-- built-in/plugin paths absorb specialist tasks too easily
-- delegation becomes inconsistent even when discovery is working correctly
-
-This design should make the assistant more likely to use the user’s custom specialist ecosystem when appropriate, while avoiding over-delegation.
+- built-in or plugin paths absorb specialist tasks too easily
+- overlapping teammates are spawned when an existing teammate already covers the same role
+- discovery/loading problems are confused with selection behavior among already-visible candidates
 
 ---
 
@@ -47,16 +46,19 @@ This design should make the assistant more likely to use the user’s custom spe
 ### 3.1 In Scope
 - Selection priority between user custom agents, built-ins, plugins, and direct handling
 - Best-fit specialist preference when domain fit is clear
+- Reuse-before-spawn guidance when an existing teammate already covers the same role
 - Delegation boundaries so custom agents are preferred but not forced
 - Distinction between discovery success and selection behavior
 - Guidance for when generic handling remains acceptable
 
 ### 3.2 Out of Scope
+- `CLAUDE.md` edits
 - Runtime discovery/loading mechanics for `~/.claude/agents/`
 - YAML/frontmatter parsing rules
 - Session-start loading behavior
-- Hook/settings-based startup health checks
+- Hook/settings-based startup health checks or deterministic hook enforcement
 - Agent file content design itself beyond what is needed for selection policy
+- Plugin implementation, runtime install, or sync into `~/.claude/rules/`
 
 ### 3.3 Boundary Principle
 This chain owns **how the assistant should prioritize already-available custom agents during task selection**.
@@ -103,7 +105,7 @@ When a task arrives, the assistant should reason in this order:
 1. Is there a clear best-fit user custom agent in `~/.claude/agents/`?
 2. If yes, prefer that agent unless a stronger boundary says otherwise.
 3. If not, is there a better-fit project agent, built-in agent, or plugin agent?
-4. If no strong specialist fit exists, use direct handling.
+4. If no strong specialist advantage exists, use direct handling.
 
 ### 5.1 Preferred order when candidates are available
 | Candidate Type | Default Priority |
@@ -128,12 +130,13 @@ Prefer a custom user agent when all of these are true:
 - the task would materially benefit from specialist handling
 - direct handling would be broader, weaker, or more generic than the specialist path
 
-Do not prefer a custom user agent when:
+Do not prefer a custom user agent or new teammate when:
 - the task is trivial and delegation adds no real value
+- the task is simple, local, and cheaper to handle directly
 - the task spans a domain that the specialist explicitly defers
 - the runtime has not discovered the agent in the current session
 - the user explicitly wants a different path
-- an already-active teammate can cover the same role without creating overlapping team noise
+- an already-active or recently inspected teammate can cover the same role/objective without creating overlapping team noise
 
 ---
 

@@ -1,262 +1,158 @@
 # Project Documentation Standards
-
-> **Current Version:** 2.28
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.28
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.30
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.30
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
-
 ---
-
 ## Rule Statement
-
-**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase` planning artifacts, `/patch` artifacts, and non-governed helper/support or extension-package artifacts, resolve required startup artifact posture before meaningful governed work drifts, make governed patch participation explicit in the live phase workspace when patch is in scope, and keep public onboarding/install guidance portable by default.**
-
+**Core Principle: Use one deterministic documentation baseline across README, design, runtime rules, changelog, TODO, `/phase`, `/patch`, and non-governed helper/support or extension-package artifacts; resolve startup posture before governed work drifts; declare patch participation in live phase when patch is in scope; keep public onboarding/install guidance portable.**
 ---
-
-## Core Requirements
-
-### 1) Required Document Set
-
-| Document | Required When | Purpose | Governing Rule |
-|----------|---------------|---------|----------------|
-| `README.md` | Always | Project overview and onboarding | Standard practice |
-| `design/*.design.md` | Design/specification is required | Define target behavior/contract | `document-design-control` |
-| `changelog/*.changelog.md` | Version traceability is required | Authoritative version history | `document-changelog-control` |
-| `TODO.md` | Work tracking is required | Durable repository/project execution tracking | `todo-standards` |
-| `phase/SUMMARY.md` | Phased implementation work is required | Governed summary/index for live phase planning | `phase-implementation` |
-| `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail is required | Major/subphase execution detail | `phase-implementation` |
-| `patch/<context>.patch.md` or root `<context>.patch.md` | Patch/review artifact is required | Governed patch/review artifact outside the live phase workspace | `document-patch-control` |
-| `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
-| `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template for phased execution planning | Non-governed helper artifact |
-| `support/**/*.md`, `plugin/**`, or equivalent support/extension path | Additional reference-only content or optional extension-package content is needed | Support/reference or extension-package artifacts | Non-governed support / extension layer |
-
-### 2) UDVC-1 Integration
-
-#### 2.1 Version Authority
-
-- Changelog is the single version authority per governed chain
-- Design/rule/phase/patch metadata must align with authoritative changelog state where applicable
-- Root-level helper artifacts, support artifacts, and optional extension-package artifacts do not become chain authority unless intentionally normalized into a governed document chain
-
-#### 2.2 Synchronization Order
-
-For governance updates, apply in this order:
-1. design
-2. runtime rule
-3. changelog
-4. TODO
-5. patch metadata final sync (when affected)
-
-#### 2.3 Session Integrity
-
-- Active metadata must use real session identifiers
-- Placeholder session values are not allowed in active metadata
-
-### 3) Role Boundary for Phase Rule, `/phase`, `/patch`, and Helper Templates
-
-- `phase-implementation.md` defines the semantic standard for phased execution planning
-- `phase/SUMMARY.md` is the governed summary/index for live phased execution
-- `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` are the governed per-phase execution files
-- `patch/<context>.patch.md` or root `<context>.patch.md` is a governed patch/review artifact layer outside the live phase workspace
-- Patch artifacts are self-identifying before/after change artifacts; they are not prose-only recaps or live phase summaries
-- The canonical readable helper for this repository lives at root as `phase-implementation-template.md`
-- Root-level helper templates are not governed chains and do not require their own rule/design/changelog triad
-- Additional support materials or optional extension packages may still live in `support/` or `plugin/`
-- package-local plugin assets may use a package scaffold such as `README.md`, `.claude-plugin/`, `hooks/`, `scripts/`, optional `skills/`, and optional `agents/`
-- those package-local assets remain implementation/support surfaces, not root governance authority
-- when package-local skills, agents, scripts, or docs are intended to remain reusable source artifacts, they should stay portable by default rather than embedding workstation-specific absolute paths as if those were shared contracts
-- design and patch artifacts are not required to point back to phase
-- Claude Code's built-in task list is the live in-session execution surface for active non-trivial work
-- `TODO.md` remains the durable repository/project execution-tracking document; it does not become the primary place for phase definitions and does not replace live task-list visibility during active work
-- Changelog records shipped or synchronized changes only; it does not become the primary place for phase definitions
-- Live phased execution must not be stored under patch artifacts
-- `SUMMARY.md` should explicitly show how child phase files, TODO work, and changelog impact relate when that coordination matters
-
-### 4) Startup Artifact Gate
-
-Before meaningful governed work continues, startup artifact posture must be resolved through `artifact-initiation-control`.
-
-That means each relevant startup artifact must be explicitly resolved as one of:
-- use existing
-- create now
-- ask now
-- not required
-
-This startup gate happens before substantial drift.
-It is separate from the later synchronization order in section 2.2.
-
-Required governed surfaces should remain visible as governed companions, not be reduced to optional execution aids.
-That means:
-- design remains the target-state authority when behavior/contract/policy changes materially
-- changelog remains the version/history authority for governed chains
-- `TODO.md` remains the durable execution-tracking companion when tracked work is required
-- `/phase` remains the governed staged-execution companion when phased work is required
-- `/patch` remains the governed before/after review companion when patch is actually in scope
-- Claude Code's built-in task list may help execute the work live, but it does not replace those governed surfaces when they are required for the change
-- where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should stay aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording
-- when `/phase` already contains relevant planning data, the assistant should not ignore that governed phase context: current phase, active phase family, phase ordering/dependencies, and already-authored next planned phases may all guide bounded task discovery and draft next-work visibility
-- that planning context does not by itself silently activate unopened future-phase execution
-
-When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
-Instead, the assistant should:
-- treat the file as unresolved until checked master surfaces and relevant governed owner chains are consulted
-- keep git working state as observed local evidence only
-- avoid disposal conclusions unless stronger semantic authority and stronger deletion authorization both exist
-
-### 4.1) Master-Surface Consultation Boundary
-Before a newly encountered file is classified as junk, disposable, non-governed, or safe to remove, the assistant should consult the repository's checked master surfaces first.
-
-Minimum lookup set when applicable:
-- `README.md`
-- `design/design.md`
-- `changelog/changelog.md`
-- `TODO.md`
-- relevant `phase/` surfaces
-- relevant `patch/` surfaces
-
+## Required Document Set
+| Document | Required when | Purpose | Owner |
+|---|---|---|---|
+| `README.md` | always | overview/onboarding | standard practice |
+| `design/*.design.md` | design/spec required | target behavior/contract | `document-design-control` |
+| `changelog/*.changelog.md` | version trace required | version history | `document-changelog-control` |
+| `TODO.md` | tracking required | durable execution tracking | `todo-standards` |
+| `phase/SUMMARY.md` | phased work required | live phase summary/index | `phase-implementation` |
+| `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md` | multi-stage detail required | execution detail | `phase-implementation` |
+| `patch/<context>.patch.md` or root `<context>.patch.md` | patch/review required | review artifact outside phase | `document-patch-control` |
+| `phase-implementation-template.md` | reusable authoring aid needed | readable helper | non-governed helper |
+| `support/**/*.md`, `plugin/**`, equivalent | optional reference/extension needed | support/extension content | non-governed support |
+---
+## Authority and Sync
+- Changelog is the single version authority per governed chain.
+- Design/rule/phase/patch metadata align with authoritative changelog state where applicable.
+- Root helpers, support artifacts, and extension-package assets do not become chain authority unless intentionally normalized into a governed chain.
+- Governance update order: design → runtime rule → changelog → TODO → patch metadata final sync when affected.
+- Active metadata must use real session identifiers; placeholders are not allowed in active metadata.
+---
+## Role Boundaries
+- `phase-implementation.md` defines phase-planning semantics.
+- `phase/SUMMARY.md` is the governed live phase summary/index.
+- `phase/phase-NNN-*.md` and `phase/phase-NNN-NN-*.md` are governed phase detail files.
+- Patch artifacts are self-identifying before/after review artifacts outside live phase planning, not recaps or phase summaries.
+- `phase-implementation-template.md` is a non-governed root helper.
+- Support/package assets may include docs, scripts, hooks, optional skills/agents, or plugin scaffolds, but stay implementation/support surfaces, not root governance authority.
+- Reusable support/package assets should stay portable and avoid workstation absolute paths unless explicitly machine-scoped.
+- Design and patch artifacts need not point back to phase.
+- Claude Code's built-in task list is live in-session tracking; `TODO.md` is durable tracking and does not replace live visibility or define phases.
+- Runtime installs target the current project/source-owned active runtime rule files only; design, changelog, TODO, phase, patch, support, helper, and extension-package surfaces are not runtime-rule install targets unless a later explicit gate says otherwise.
+- Shared runtime destinations may contain other project/plugin-owned runtime rules that remain out of scope unless their owner/project is explicitly selected or verified.
+- Changelog records shipped/synchronized changes; it is not phase-definition storage.
+- Live phase execution must not be stored under patch artifacts.
+---
+## Startup Artifact Gate
+Before meaningful governed work continues, `artifact-initiation-control` must resolve each relevant artifact as `use existing`, `create now`, `ask now`, or `not required`; this is earlier than later sync order.
+Required governed surfaces remain companions, not optional aids:
+- design = target-state authority for material behavior/contract/policy changes
+- changelog = governed version/history authority
+- `TODO.md` = durable execution-tracking companion when tracked work is required
+- `/phase` = staged-execution companion when phased work is required
+- `/patch` = before/after review companion when patch is in scope
+- built-in task list = live execution surface, not a replacement for required governed artifacts
+When a checked repo/workstream is phased or staged, live task creation should align to that execution model. Current phase, phase family, order/dependencies, and authored next phases may guide bounded discovery and draft visibility, but unopened future phases do not become active automatically.
+---
+## New or Unclear File Classification
+When a newly encountered file appears during governed work and its role is unclear, keep it unresolved rather than collapsing uncertainty into cleanup/disposal logic.
+A destination/runtime file outside the current source-owned active runtime install set is not unmanaged project junk merely because it is co-located in a shared runtime destination.
 Required guidance:
-- git working state may show a local observation such as untracked/new/dirty status, but it does not by itself settle whether the file has governed meaning
-- if a master surface or governed history could plausibly explain the file, check that surface before treating the file as cleanup noise
-- `not required` does not mean `safe to remove` unless stronger authority and stronger destructive-execution permission also exist
-
-### 5) Decision Model for Document Creation
-
+- check master surfaces and relevant governed owner chains first
+- resolve owner/project scope before classifying destination/runtime files outside the current source-owned install set
+- keep git state and runtime co-location as observed local evidence only
+- avoid disposal conclusions unless stronger semantic authority and stronger deletion authorization both exist
+Minimum lookup set when applicable: `README.md`, `design/design.md`, `changelog/changelog.md`, `TODO.md`, relevant `phase/`, relevant `patch/`.
+`not required` does not mean `safe to remove` without stronger authority and destructive-execution permission.
+---
+## Document Creation Model
 ```text
 Meaningful governed work begins
   ↓
-Resolve startup artifact posture through artifact-initiation-control
+Resolve startup posture
   ↓
-Need design specification?
-  → YES: use existing / create now / ask now
+Need design? use existing / create now / ask now
+Need version trace? use existing / create now / ask now
+Need durable tracking? use existing / create now / ask now
+Need live non-trivial visibility? initialize built-in task list early
+Need phased planning? establish phase/SUMMARY.md + child files now or ask now
+Need patch/review? use patch/<context>.patch.md only for real before/after surface or explicit request
+Greenfield baseline alone: patch not required by default
   ↓
-Need version traceability?
-  → YES: use existing / create now / ask now
-  ↓
-Need tracked execution items?
-  → YES: use existing / create now / ask now
-  ↓
-Need live execution visibility for non-trivial active work?
-  → YES: initialize the built-in task list early
-  ↓
-Need phased implementation planning?
-  → YES: establish `phase/SUMMARY.md` and child phase files now or ask now
-  ↓
-Need patch/review artifacts separate from the live phase workspace?
-  → YES: only when a real existing governed surface needs separate before/after review packaging, or the user explicitly requests patch packaging
-        - use existing / create now / ask now
-        - use `patch/<context>.patch.md` as the default shared patch path
-        - use root `<context>.patch.md` when direct top-level placement is clearer
-  → For greenfield startup / baseline formation by itself: default to `patch: not required`
-  ↓
-After startup posture is resolved
-  → continue with substantive planning / implementation
+Continue substantive work after posture is resolved
 ```
-
-### 6) Public Onboarding and Install Guidance
-
-README and other onboarding/install docs should keep public guidance portable by default.
-
+---
+## Public Onboarding and Install Guidance
+README/onboarding/install docs stay portable by default.
 Required guidance:
-- for cloneable or self-contained repositories, default to repo-root-relative source guidance when possible
-- do not normalize workstation-specific absolute source paths or internal umbrella workspace roots as public install defaults
-- distinguish source-side notation from destination/runtime notation when both appear
-- use placeholders or explicit contract labels for destination/runtime paths
-- exact local absolute paths may appear only when they are explicitly scoped as checked local facts, local workflow examples, or machine-scoped contracts
-- if a command is intended to be run from the repo root, `./` or `<repo-root>` is preferred over one checked workstation path
-
-### 7) Cross-Document Alignment Requirements
-
-- Shared governed docs and templates should remain portable by default rather than embedding machine-specific environment assumptions
-- Package-local support/extension source artifacts such as `plugin/**`, optional `skills/`, optional `agents/`, and reusable support scripts should also remain portable by default when they are acting as maintained source artifacts rather than ephemeral local test output
-- Exact local values may appear only when they are explicitly being recorded as local observations or machine-scoped contracts
-- Public onboarding/install docs should use portable source guidance and clearly labeled destination/runtime notation by default
-- Portable-default and anti-hardcoding discipline should follow `portable-implementation-and-hardcoding-control.md`
-- Source-versus-destination notation consistency should follow `document-consistency.md`
-- Required document set must match project scope
-- Full-history and parent-document links must resolve
-- Active metadata across governed docs must not contain placeholder sessions
-- `phase/SUMMARY.md` remains the governed summary/index when staged execution planning is needed
-- Child phase files remain the governed execution detail layer for multi-phase work
-- Patch artifacts remain outside the live phase namespace
-- `phase-implementation.md` remains the semantic authority for phased execution behavior
-- phased work with governed patch artifacts must show explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
-- `artifact-initiation-control.md` remains the startup artifact-resolution owner
-- built-in task-list usage remains a live execution surface rather than becoming a governed repository document type
-- the presence of a live execution surface does not downgrade design/changelog/TODO/phase/patch from governed companion status when those surfaces are actually required for the work
-- where the checked repository/workstream is already phase-shaped, live task creation should remain aligned to that staged structure rather than flattening into detached standalone tasks
-- within the same active objective, the live task-list surface should normally be reused and extended rather than replaced, while durable history still belongs in TODO/phase/changelog surfaces
-- design, phase, TODO, task-list, and checked implementation state may all act as execution-discovery surfaces once work is already in execution mode
-- within that discovery model, `/phase` may contribute both current execution structure and already-authored next planned structure, but unopened future phases still remain bounded planning input until explicitly opened or otherwise made active
-- execution-continuity and goal-review owners may shape how active work keeps moving and how the full objective set stays visible, while tasks, phases, and docs remain the execution surfaces rather than the owner of that behavior
-- shared-board, plugin, and external coordination/runtime mechanics should stay outside Main RULES scope rather than being reinvented ad hoc across task/phase/doc layers
-- Root-level helper artifacts, support artifacts, and optional extension-package artifacts must stay clearly outside governed authority semantics unless intentionally promoted into a governed chain
-
+- prefer repo-root-relative source guidance for cloneable/self-contained repos
+- do not present workstation absolute paths or internal umbrella roots as public defaults
+- distinguish source-side notation from destination/runtime notation
+- use placeholders or contract labels for destination/runtime paths
+- when naming runtime install scope, identify the current project/source-owned active runtime rule set rather than the whole shared destination directory
+- exact local paths may appear only as checked local facts, local examples, or machine-scoped contracts
+- for repo-root commands, prefer `./` or `<repo-root>` over a workstation path
 ---
-
+## Cross-Document Alignment
+- Shared governed docs/templates stay portable by default.
+- Support/extension source artifacts avoid workstation defaults in reusable content.
+- Exact local values appear only as local observations or machine-scoped contracts.
+- Public onboarding uses portable source guidance and labeled destination/runtime notation.
+- Portable defaults defer to `portable-implementation-and-hardcoding-control.md`; source/destination consistency defers to `document-consistency.md`.
+- Required document set matches project scope; full-history/parent links resolve; active metadata has no placeholder sessions.
+- `phase/SUMMARY.md` + child phase files remain the governed phase workspace when staged planning is required.
+- Patch artifacts stay outside live phase namespace and phased work with governed patches shows phase-to-patch linkage.
+- Built-in task list is live tracking, not a governed repository document.
+- Live task list does not downgrade required design/changelog/TODO/phase/patch surfaces.
+- Within one active objective, normally reuse/extend the live task list rather than replacing it.
+- Design, phase, TODO, task list, and checked implementation state may guide execution discovery once work is in execution mode.
+- `/phase` may contribute current and authored next structure; unopened future phases remain bounded planning input until explicitly active.
+- Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES scope.
+- Root helpers, support artifacts, and optional extension packages remain outside governed authority unless intentionally promoted.
+---
 ## Verification Checklist
-
-- [ ] Required document set matches project scope
-- [ ] Changelog exists for each governed chain
-- [ ] Version references align across chain metadata
+- [ ] Required document set matches scope
+- [ ] Changelog/version references align where applicable
 - [ ] Active session metadata has no placeholders
-- [ ] Full-history links resolve
-- [ ] Meaningful governed work resolves startup artifact posture before drift
-- [ ] Required governed surfaces remain visible as governed companions instead of being reduced to optional execution aids
-- [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
-- [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
-- [ ] `phase-implementation.md` is used as the semantic phase rule when applicable
-- [ ] Phased work uses `phase/SUMMARY.md`
-- [ ] Multi-phase work uses child phase files under `phase/`
-- [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
-- [ ] Patch artifacts use `patch/<context>.patch.md` or root `<context>.patch.md` when patch is actually required
-- [ ] Greenfield startup / baseline formation does not create patch by default unless a real existing before/after review surface or explicit user request justifies it
-- [ ] Patch artifacts stay self-identifying and comparison-oriented
-- [ ] Public onboarding/install guidance avoids workstation-specific absolute paths as public defaults
-- [ ] Package-local support/extension source artifacts do not bake workstation-specific absolute paths into reusable source content by default
-- [ ] Source-side guidance and destination/runtime guidance are clearly distinguished when both appear
-- [ ] Exact local install examples are explicitly scoped when present
-- [ ] Root-level helper artifacts remain non-governed
-- [ ] Support or extension-package artifacts such as `plugin/**` do not masquerade as a second governance stack
-
+- [ ] Full-history and parent links resolve
+- [ ] Startup posture is resolved before drift
+- [ ] Required governed surfaces remain companions, not optional aids
+- [ ] Unclear files are checked against master surfaces before junk/disposal classification
+- [ ] Built-in task list remains live execution surface, not governed document artifact
+- [ ] Phased work uses `phase/SUMMARY.md` and child files when required
+- [ ] Phased work with governed patches shows explicit patch linkage
+- [ ] Patch artifacts use allowed self-identifying paths and stay comparison-oriented outside live phase planning
+- [ ] Greenfield baseline does not create patch by default unless justified
+- [ ] Public onboarding avoids workstation paths as public defaults
+- [ ] Support/extension source avoids workstation reusable defaults
+- [ ] Source-side and destination/runtime guidance are distinct
+- [ ] Runtime install scope is limited to current project/source-owned active runtime rule files in shared destinations
+- [ ] Other project/plugin-owned runtime destination files are not classified, managed, or deleted by repository documentation wording alone
+- [ ] Root helpers remain non-governed
+- [ ] Support/extension packages do not masquerade as a second governance stack
 ---
-
 ## Quality Metrics
-
 | Metric | Target |
-|--------|--------|
-| Required document coverage | 100% |
-| Version-reference correctness | 100% |
-| Active metadata session integrity | 100% |
-| Cross-link validity | 100% |
-| Phase-rule role clarity | 100% |
-| `SUMMARY.md` role clarity | 100% |
-| Child-phase-file role clarity | 100% |
-| Patch-role separation clarity | 100% |
-| Patch placement clarity | 100% |
-| Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
-| Startup artifact posture resolved before drift | 100% |
-| Public onboarding/install portability | High |
-| Workstation-specific absolute paths as public defaults | 0 critical cases |
-| Source-vs-destination notation clarity | High |
-| Root-helper placement clarity | 100% |
-| TODO simplification compliance | 100% |
-
+|---|---|
+| Required document coverage and version-reference correctness | 100% |
+| Active metadata integrity and cross-link validity | 100% |
+| Phase/summary/child-phase/patch role clarity | 100% |
+| Explicit phase-to-patch linkage when patch is in scope | 100% |
+| Startup artifact posture before drift | 100% |
+| Public onboarding/install portability | high |
+| Workstation paths as public defaults | 0 critical cases |
+| Source-vs-destination clarity, shared-destination owner boundary, and TODO simplification | high / 100% |
 ---
-
 ## Integration
-
 | Rule | Relationship |
-|------|-------------|
-| [artifact-initiation-control.md](artifact-initiation-control.md) v1.5 | Startup artifact-resolution owner |
-| [document-changelog-control.md](document-changelog-control.md) v4.7 | Version authority contract |
-| [document-design-control.md](document-design-control.md) v1.8 | Design structure standards |
-| [document-patch-control.md](document-patch-control.md) v2.5 | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
-| [phase-implementation.md](phase-implementation.md) v2.18 | Semantic standard for phased execution planning and one-way design/patch source synthesis |
-| [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | Portable shared-artifact defaults and anti-hardcoding discipline |
-| [document-consistency.md](document-consistency.md) v1.6 | Source-side and destination/runtime reference consistency |
-| [todo-standards.md](todo-standards.md) v2.16 | TODO structure standards plus startup-establishment bridge |
-| [design/rules-plugin-extension.design.md](design/rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active plugin/runtime coordination does not remain part of Main RULES current doctrine |
-
+|---|---|
+| [artifact-initiation-control.md](artifact-initiation-control.md) v1.5 | startup artifact-resolution owner |
+| [document-changelog-control.md](document-changelog-control.md) v4.7 | version authority |
+| [document-design-control.md](document-design-control.md) v1.8 | design structure |
+| [document-patch-control.md](document-patch-control.md) v2.5 | patch boundary and before/after contract |
+| [phase-implementation.md](phase-implementation.md) v2.19 | phased execution semantics |
+| [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | portable shared-artifact defaults |
+| [document-consistency.md](document-consistency.md) v1.8 | source/destination and source-owned/shared-destination reference consistency |
+| [todo-standards.md](todo-standards.md) v2.17 | TODO structure and startup bridge |
+| [design/rules-plugin-extension.design.md](design/rules-plugin-extension.design.md) | historical plugin-extension boundary; active plugin/runtime coordination is not Main RULES doctrine |
 ---
-
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)

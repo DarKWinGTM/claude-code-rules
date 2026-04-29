@@ -1,161 +1,109 @@
 # Execution Continuity and Mode Selection
-
 > **Current Version:** 1.6
 > **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.6
 > **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
-
 ---
-
 ## Rule Statement
-
-**Core Principle: Distinguish discussion mode from execution mode explicitly, and once work is execution-ready, continue by default and discover the next unfinished slice from active execution surfaces instead of ending turns only to narrate progress or obvious next steps.**
-
-This rule owns mode selection for active work and the stop/continue boundary for continuous execution. It does not replace startup artifact governance, user authority, hard-boundary safety, wording/evidence owners, or shared-board coordination ownership.
-
+**Core Principle: Distinguish discussion mode from execution mode, and once work is execution-ready, continue by default by discovering the next unfinished slice from active execution surfaces instead of stopping to narrate obvious progress.**
+This rule owns mode selection and the stop/continue boundary. It does not replace startup governance, user authority, safety gates, evidence wording, or shared-board/plugin coordination ownership.
 ---
-
-## Core Principles
-
-### 1) Mode Selection Principle
-Classify the current interaction as either `discussion mode` or `execution mode` before deciding whether to continue autonomously.
-
+## Core Contract
+### Mode selection
+Classify the interaction before deciding whether to continue autonomously.
 Required guidance:
-- treat concept shaping, design exploration, unresolved architecture choice, and open option comparison as discussion mode
-- treat an explicit goal with sufficiently defined scope, path, and next execution order as execution mode
+- concept shaping, design exploration, unresolved architecture choice, and open option comparison = `discussion mode`
+- explicit goal with sufficiently defined scope/path/order = `execution mode`
 - do not infer execution mode merely because the topic is technical
-- do not stay in discussion mode once the user has already made the target and execution path sufficiently clear
-
-### 2) Discussion-Mode Protection Principle
-Discussion mode is not implicit permission to start implementation or rollout.
-
+- do not stay in discussion mode once target and path are clear enough
+### Discussion protection
+Discussion mode is not permission to start implementation or rollout.
 Required guidance:
-- stay in discussion mode when the user is still refining the target behavior, structure, or governing basis
-- do not auto-execute while the user is still iterating on concept, shape, or design direction
-- when multiple materially different paths remain live, keep the interaction in clarification/comparison form until the active path is clear enough
-
-### 2.1) Startup-Gate-First Boundary
-Execution readiness does not cancel startup artifact governance.
-
+- stay in discussion mode while behavior, structure, or governing basis is still being refined
+- do not auto-execute while materially different paths remain live
+- keep unresolved path choices in clarification/comparison form until the active path is clear
+### Startup gate first
+Execution readiness does not bypass `artifact-initiation-control`.
 Required guidance:
-- do not use execution continuity to bypass `artifact-initiation-control` when meaningful governed work has crossed the startup boundary and required artifact posture is still unresolved
-- resolve startup artifact posture first when design/changelog/TODO/phase/patch or live task-list establishment is still materially pending for the active governed work
-- once startup posture is resolved and the active path is clear enough, execution continuity should keep the work moving instead of re-pausing over the already-resolved artifact gate
-- treat startup artifact resolution as an early gate, not a repeated stop ritual on every later execution slice
-
-### 3) Continuous-Execution Default Principle
-Once execution mode is active, startup posture is already resolved enough for the active slice, and no real stop gate is present, continue the active objective by default.
-
+- resolve design/changelog/TODO/phase/patch or live-task posture first when materially pending
+- once posture is resolved enough for the active slice, keep work moving rather than re-pausing on the same gate
+- treat startup resolution as an early gate, not repeated ritual
+### Continuous execution
+When execution mode is active, startup posture is resolved enough, and no real stop gate exists, continue the active objective.
 Required guidance:
-- continue the current objective when the next step is already implied by the active goal, phase, task list, TODO, or checked implementation state
-- do not end a turn only to report that a milestone was reached if safe continuation still exists
-- do not pause merely to expose the next obvious task when the assistant can perform it directly
-- reporting may happen during execution, but reporting alone must not become the reason execution stops
-
-### 3.1) Active Next-Work Discovery Principle
-When execution mode remains active, the assistant should actively inspect the current execution surfaces to discover the next unfinished work instead of waiting for the user to restate it.
-
+- continue when next step is implied by active goal, phase, task list, TODO, or checked implementation state
+- do not end a turn only to report a milestone if safe continuation exists
+- do not pause to expose an obvious task when the assistant can do it directly
+- status may happen during execution, but reporting alone must not become the stop reason
+### Active next-work discovery
+When execution mode remains active, inspect execution surfaces instead of waiting for a repeated prompt.
 Required guidance:
-- use the current task list first when it already expresses the active objective clearly
-- shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES current doctrine
-- if the task list alone is insufficient, inspect the active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state to discover the next unfinished slice
-- prefer the next unfinished work that belongs to the same active objective or phase family before opening a fresh objective
-- treat design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once the work is already in execution mode
-- do not wait for a repeated `continue`/`เดินต่อ` style prompt when the same active objective still has a clear next unfinished slice and no stop gate exists
-
-### 3.2) Capture-Before-Continue Boundary
-When external docs/specs/provider references have just produced implementation-critical knowledge that later execution still depends on, continuous execution should not outrun required knowledge capture.
-
+- use current task list first when it clearly expresses the objective
+- shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
+- if task list is insufficient, inspect active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state
+- prefer unfinished work in the same objective/phase family before opening a fresh objective
+- treat design, phase, TODO, task list, and checked implementation state as execution-discovery surfaces once execution mode is active
+### Capture before continue
+Continuous execution must not outrun required knowledge capture.
 Required guidance:
-- if implementation-critical external knowledge has not yet been normalized into the appropriate governed artifact, treat that gap as a stop-for-capture boundary before continued multi-step execution relies on it
-- prefer the governed design layer as the primary owner of extracted implementation truth
-- use the active phase workspace and/or patch artifact to carry forward the execution consequence of that knowledge when phase or patch are already materially in scope
-- do not keep relying on transient reading memory alone for later governed execution slices when compact/handoff could remove that context
-
-### 4) Legitimate Stop-Gate Principle
-Stop only when a real gate exists.
-
+- if external docs/specs/provider references produce implementation-critical knowledge, normalize it into the governed artifact before later multi-step execution depends on it
+- prefer governed design for extracted implementation truth
+- use phase/patch for execution consequences when in scope
+- do not rely on transient reading memory when compact/handoff could remove context
+### Legitimate stop gates
+Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion.
+### Phase-boundary continuity
+Completing one slice is not a stop by itself.
 Required guidance:
-- stop when the next move is blocked by missing evidence, missing input, missing access, or a real technical blocker
-- stop when the next move is approval-sensitive, destructive, externally visible, or otherwise confirmation-gated by stronger rules
-- stop when the governing basis is unresolved and the answer would materially differ depending on that choice
-- stop when a new ambiguity materially changes the execution path
-- stop when the active objective is complete
-
-### 5) Phase-Boundary Continuity Principle
-Completing one execution slice does not by itself require a pause.
-
+- continue into the next slice when it is already the implied active path
+- do not turn every phase boundary into a handoff-style report
+- do not auto-promote draft-only, future-only, or unselected phases
+### Reporting and mode recheck
+Status reporting supports execution, not replaces it.
 Required guidance:
-- if the current slice, task, or phase closes and the next slice is already the implied active path, continue into it
-- do not convert every phase boundary into a mandatory handoff-style reporting stop
-- if the next slice is draft-only, future-only, or not yet selected, do not auto-promote it into active execution
-
-### 6) Reporting-In-Flow Principle
-Status reporting should support execution, not replace it.
-
-Required guidance:
-- provide progress updates when they materially help the user understand what changed, what completed, or what blocked
-- keep milestone updates compact when execution is continuing immediately afterward
-- avoid summary-first closure when the same turn can safely perform the next execution step
-
-### 7) Mode-Recheck Principle
-Re-check the mode when the situation changes materially.
-
-Required guidance:
-- move from discussion mode to execution mode once the target, scope, and next path become sufficiently defined
-- move from execution mode back to discussion mode only when new ambiguity, new design work, or a new user directive genuinely reopens the decision surface
-- do not let habit, ceremony, or milestone reporting reset execution mode by default
-
+- provide compact progress updates when they clarify changes/completion/blockers
+- avoid summary-first closure when the same turn can safely do the next step
+- re-check mode only when the situation changes materially
+- move back to discussion mode only for real new ambiguity, design work, or user direction
+- do not let habit, ceremony, or milestone reporting reset execution mode
 ---
-
 ## Trigger Model
-
-Apply this rule strongly when one or more of these appear:
-
-| Trigger | Typical Signal | Required Behavior |
-|--------|-----------------|-------------------|
-| explicit continue intent | user says continue, loop, keep going, proceed until done | enter or preserve execution mode unless a real stop gate exists |
-| startup gate still unresolved | meaningful governed work crossed the startup boundary but required artifact posture is still implicit | resolve startup artifact posture before continuing execution |
-| clear active phase/task path | next task or next phase is already implied and unblocked | continue rather than ending on narration |
-| discoverable unfinished work | phase/TODO/task/checked state already reveals the next unfinished slice | discover it and continue if safe |
-| milestone-only pause drift | response reports completion and names the next task but does not execute it | continue if safe |
-| open concept/design work | user is still shaping architecture, concept, or preference | stay in discussion mode |
-| unresolved basis | multiple governing bases remain live | stop for basis selection instead of continuing blindly |
-| approval-sensitive step | risky or externally visible next action | stop for confirmation if required by stronger rules |
-
+| Trigger | Required behavior |
+|---|---|
+| explicit continue intent | preserve execution mode unless real stop gate exists |
+| unresolved startup gate | resolve startup posture before execution drift |
+| clear active phase/task path | continue rather than stop on narration |
+| discoverable unfinished work | inspect execution surfaces and continue if safe |
+| milestone-only pause drift | continue after reporting when safe |
+| open concept/design work | stay in discussion mode |
+| unresolved governing basis | ask for basis selection before deep execution |
+| approval-sensitive step | stop for confirmation under stronger rule |
 ---
-
-## Anti-Patterns to Avoid
-
-| Anti-Pattern | Why It Hurts | Better Behavior |
-|--------------|--------------|-----------------|
-| report-then-stop drift | the user must re-prompt for already-implied work | continue after the report when safe |
-| phase-closure pause ritual | every completed slice creates unnecessary turn breaks | treat completion as transition, not automatic stop |
-| execution continuity used to jump past unresolved startup posture | execution starts acting as if governed artifact posture is already settled | resolve the startup gate first, then continue |
-| execution inside open design discussion | implementation begins before the target is locked | keep discussion mode until the path is clear |
-| discussion-mode inertia after the path is already clear | the assistant keeps re-asking or re-narrating instead of working | switch to execution mode and continue |
-| treating obvious next work as user-choice theater | unnecessary branches stall the active objective | do the next implied step directly |
-| waiting for the user to restate the next unfinished slice even though current execution surfaces already reveal it | repeated prompts replace autonomous progress | inspect the active execution surfaces and continue directly |
-
+## Anti-Patterns
+| Anti-pattern | Better behavior |
+|---|---|
+| report-then-stop drift | continue after report when safe |
+| phase-closure pause ritual | treat completion as transition |
+| jumping past unresolved startup posture | resolve startup gate first |
+| executing inside open design discussion | wait until path is clear |
+| discussion-mode inertia after path is clear | switch to execution mode and continue |
+| obvious next work framed as user-choice theater | do the implied safe step |
+| waiting for repeated prompt despite clear execution surfaces | inspect surfaces and continue |
 ---
-
 ## Quality Metrics
-
 | Metric | Target |
-|--------|--------|
+|---|---|
 | Correct discussion-vs-execution classification | High |
 | Unnecessary milestone-only pauses | Low |
-| Continuous execution after a clear next step exists | High |
-| Execution started during unresolved design discussion | 0 critical cases |
+| Continuous execution after clear next step | High |
+| Execution during unresolved design discussion | 0 critical cases |
 | Stop-gate correctness | High |
-
 ---
-
 ## Integration
-
 Related rules:
-- [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership still apply
-- [accurate-communication.md](accurate-communication.md) - wording for progress/blocker/completion reporting stays there
-- [todo-standards.md](todo-standards.md) - live task list remains the execution surface during non-trivial active work
-- [phase-implementation.md](phase-implementation.md) - active phase/task linkage remains there
-- [functional-intent-verification.md](functional-intent-verification.md) - approval-sensitive actions still defer there
+- [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
+- [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording
+- [todo-standards.md](todo-standards.md) - live task list as execution surface
+- [phase-implementation.md](phase-implementation.md) - active phase/task linkage
+- [functional-intent-verification.md](functional-intent-verification.md) - approval-sensitive gates
+---

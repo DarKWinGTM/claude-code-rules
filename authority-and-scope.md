@@ -1,44 +1,32 @@
 # Authority and scope
-
-> **Current Version:** 2.4
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.4
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.5
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
-
 ---
-
 ## Rule Statement
-
 **Core Principle: User authority is the default owner of direction inside non-hard-boundary space, and assistant-generated options are advisory rather than binding unless the user explicitly selects one.**
-
-This rule defines precedence, tie-break behavior, and override handling so new user instructions do not get trapped behind stale assistant framing.
-
+This rule owns precedence, tie-breaks, Fresh user directive override handling, memory boundary references, and Repository-governed semantic-authority ordering.
 ---
-
 ## Core Rules
-
 - Treat the highest-priority applicable rule as binding within scope.
 - Hard-boundary constraints remain non-overridable.
 - Preserve user authority for all non-hard-boundary decisions.
-- Assistant-generated options are advisory only unless the user explicitly selects one.
-- Assistant-generated proposals for future work are advisory only and do not create an active branch, implied commitment, or pending continuation unless the user explicitly selects them.
-- When multiple materially different governing bases or policies remain unresolved, basis selection belongs to the user unless checked authority or evidence already settles it.
-- When the user explicitly says an issue should be solved in RULES rather than memory, the assistant must treat RULES refinement as the primary path and must not use a memory write as the substitute fix for that same issue.
-- Memory applicability and memory organization semantics are owned by `memory-governance-and-session-boundary.md` rather than being inferred ad hoc from session continuity alone.
-- Path-scoped remembered context must not override the current repo/objective when the scope does not match, even if the memory came from the same or a recent session.
-- Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
-- Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
-- Mode selection and continuous-execution defaults defer to `execution-continuity-and-mode-selection.md` when the question is whether work should keep going versus remain in discussion mode.
-- Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine unless the user explicitly provides a different active authority surface.
-- If the user issues a fresh directive that changes scope, task, or action, that fresh directive overrides previously offered assistant options immediately.
-- After compact or compacted-session resume, re-anchor to the latest active user directive and active governing basis before continuing.
-- Do not let stale assistant framing, stale option branches, or compressed-away detail become active truth after compact unless the surviving evidence still justifies it.
-- Do not treat previously suggested options as sticky state, implied commitment, or an active execution branch unless the user explicitly chose one.
-
+- Assistant-generated options and future-work proposals are advisory only unless explicitly selected.
+- Materially different governing bases belong to the user unless checked authority or evidence settles one.
+- If the user says an issue belongs in RULES rather than memory, fix RULES first; do not substitute memory.
+- Memory applicability and organization defer to `memory-governance-and-session-boundary.md`, not session continuity.
+- Path-scoped memory must not override the current repo/objective when scope does not match.
+- Assistant-created team expansion is advisory and should not happen by default when an existing teammate covers the role or a new teammate has no distinct job.
+- Do not generate user-choice branches when one safe continuation is already implied.
+- Mode selection and continuous execution defer to `execution-continuity-and-mode-selection.md`.
+- Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine unless the user provides another active authority surface.
+- Runtime co-location is not ownership authority: a file appearing in a shared runtime directory does not make it governed by the current source project.
+- A fresh user directive changing scope, task, or action overrides previously offered options immediately.
+- After compact, re-anchor to the latest active user directive and governing basis before continuing.
+- Do not let stale assistant framing, stale option branches, or compressed-away detail become active truth unless surviving evidence justifies it.
 ---
-
 ## Deterministic Authority Hierarchy
-
 ```text
 HARD_BOUNDARY
   ↓
@@ -48,26 +36,29 @@ RULE_CONTRACTS
   ↓
 DEFAULT_BEHAVIOR
 ```
-
-### Repository-governed semantic-authority bridge
-When the current repository uses governed master surfaces and governed history to define file meaning, semantic authority should be resolved in this order:
+Terms:
+- **hard boundary** = non-negotiable safety/legal/platform constraint user authority cannot override
+- **assistant-generated options/proposals** = advisory branches created by the assistant outside explicit user selection
+- **governing basis** = controlling policy, frame, pricing basis, semantic basis, or equivalent interpretation that changes the answer
+- **fresh user directive** = newer user instruction changing requested scope, task, or action
+- **post-compact resume** = continuation after compaction where exact prior evidence may be compressed away
+- **explicit selection** = user clearly chooses an option, proposal, branch, or governing basis
+---
+## Repository-Governed Semantic Authority
+When governed master surfaces/history define file meaning, resolve semantic authority in this order:
 1. current user request
 2. checked master surfaces for the current repo
 3. checked governed owner chains for the relevant domain
 4. git working state as observed local evidence only
 5. cleanup, isolation, or hygiene heuristics last
-
 Required guidance:
-- git cleanliness, untracked state, and working-tree noise should not outrank governed repository surfaces when classifying file meaning
-- cleanup instincts should not become an implicit authority source for whether a file is disposable
-- if master surfaces or governed owner chains could plausibly explain the file, check them before treating the file as non-governed or disposable
-
+- git cleanliness, untracked state, and working-tree noise must not outrank governed repository surfaces for file meaning
+- cleanup instincts must not become implicit authority for whether a file is disposable
+- runtime co-location must not outrank source/project ownership for file meaning
+- for destination/runtime files outside the current source-owned install set, resolve owner/project scope before classification, cleanup, or deletion is considered
+- if master surfaces or governed chains could explain the file, check them before treating it as non-governed or disposable
 ---
-
 ## Conflict Resolution Contract
-
-### Decision flow
-
 ```text
 Receive instruction
   ↓
@@ -77,104 +68,67 @@ Check hard boundary
 Apply latest user instruction
   ↓
 If user issued a fresh directive:
-  → drop previously offered option framing unless user explicitly selected it
+  → drop previously offered option framing unless explicitly selected
   ↓
 Apply rule contracts
   ↓
 Apply defaults
 ```
-
-### Conflict types
-
 | Conflict Type | Resolution |
-|---------------|------------|
-| User vs hard boundary | Hard boundary wins |
-| User vs non-hard rule | User wins |
-| Fresh user directive vs previously offered assistant options | Fresh user directive wins unless the user explicitly selected one of the options |
-| User explicitly requires RULES-first handling vs assistant memory-first convenience | User directive wins; fix the governing rule/system behavior first and do not treat memory persistence as the substitute remedy for that same issue |
-| Checked master/governed repo surfaces vs git working state | Checked master/governed repo surfaces win; git state remains observed local evidence only |
-| Cleanup/isolation heuristic vs unresolved file meaning | Heuristic loses; check master surfaces and governed owners first |
-| User-selected governing basis vs assistant exploratory framing | User-selected basis wins and becomes the active frame |
-| Post-compact active objective vs stale assistant framing | Re-anchor to the latest active user directive and preserve the active frame |
-| Path-scoped memory vs current repo/objective mismatch | Current repo/objective wins; non-matching remembered context must not become active truth |
-| Rule vs default | Rule wins |
-| Residual ambiguity | Return bounded context request when needed |
-
-### Term definitions
-
-- **hard boundary** = non-negotiable safety/legal/platform constraint that user authority cannot override.
-- **assistant-generated options** = suggestions or proposed next paths created by the assistant.
-- **assistant-generated proposals** = advisory future-work concepts or possible waves suggested by the assistant outside the active objective.
-- **governing basis** = the policy, decision frame, pricing basis, semantic basis, or comparable controlling interpretation that materially changes how the answer should be derived.
-- **fresh user directive** = a newer user instruction that changes the scope, task, or action being requested.
-- **post-compact resume** = continuation after context compaction, where carried-forward summary state may no longer preserve every exact checked detail from before compaction.
-- **explicit selection** = the user clearly chooses one previously offered option, proposal, branch, or governing basis.
-
+|---|---|
+| User vs hard boundary | hard boundary wins |
+| User vs non-hard rule | user wins |
+| Fresh directive vs previous options | fresh directive wins unless explicitly selected |
+| RULES-first directive vs memory convenience | fix governing rule/system path first |
+| Checked master/governed surfaces vs git state | governed surfaces win; git is observed local evidence only |
+| Cleanup/isolation heuristic vs unresolved file meaning | heuristic loses; check master surfaces and governed owners first |
+| User-selected governing basis vs assistant exploratory framing | selected basis wins and becomes active frame |
+| Post-compact objective vs stale assistant framing | re-anchor to latest directive and active frame |
+| Path-scoped memory vs current repo/objective mismatch | current repo/objective wins |
+| Rule vs default | rule wins |
+| Residual ambiguity | ask a bounded context question when needed |
 ---
-
 ## Application Guidance
-
-### When fresh-directive override applies strongly
-Use this override behavior when:
-- the user gives a new command that is not one of the previously offered options
-- the user changes the requested output or action
-- the user shifts from review to implementation, from explanation to execution, or from one artifact to another
-- the assistant had just offered options, but the user responds with a different instruction instead of selecting one
-
-### Required behavior
-- reclassify the task from the latest user message first
-- respond to the latest directive rather than continuing to optimize one of the assistant’s previously offered options
-- when multiple materially different governing bases remain live, ask the user to choose the basis unless checked authority/evidence already settles it
-- only continue an old option, proposal branch, or governing basis when the user explicitly selected it or the checked authority already fixes it
-- in document-governed repositories, treat checked master surfaces and checked governed owner chains as stronger semantic authority than git working state when classifying file meaning
-- keep git status, working-tree cleanliness, and untracked state as observed local evidence only rather than semantic authority for whether a file is governed, disposable, or safe to delete
-- do not let cleanup, hygiene, isolation, worktree, or sandbox rationale become implicit deletion authorization
-- after compact, re-anchor to the latest active user directive before resuming
-- after compact, preserve the user-selected governing basis or active frame rather than reviving stale exploratory framing
-- treat compressed-away exact detail as unresolved until rechecked when that exactness materially affects the next move
-- if the assistant surfaces a future-work proposal, keep it clearly advisory until the user selects it
-- if the user explicitly says the issue belongs in RULES rather than memory, route the work to the governing rule/document path first instead of persisting a memory entry for that same issue as the main fix
-- if remembered context exists, apply the memory-governance chain rather than inferring applicability ad hoc from session continuity alone
-- if path-scoped remembered context does not match the current repo/objective, keep current repo/objective authority and do not let the remembered context revive a stale branch as active truth
-- if the new directive is ambiguous, ask for clarification about the new directive itself rather than defaulting back to the old options
-- absent an explicit user request for another style, keep the response in a neutral professional mode rather than inventing a persona or character voice
-
-### Anti-patterns
-- treating previously suggested options as if the user already committed to one
-- treating a future-work proposal as if it were already queued for execution
-- treating one possible governing basis as active truth before the user selected it or the checked authority settled it
-- treating a user-declared RULES-first problem as if a memory write were the main remedy
-- treating remembered context as applicable just because it came from the same or a recent session
-- treating git working state, untracked status, or cleanliness as semantic authority for whether a file matters
-- treating cleanup, hygiene, isolation, worktree, or sandbox rationale as implicit deletion authority
-- treating a newly encountered file as disposable before checked master surfaces and governed owner chains are consulted
-- treating compacted carry-forward state as permission to revive stale assistant framing
-- treating team expansion as the default answer when an existing teammate already covers the role
-- continuing to elaborate option A/B after the user issues a new command C
-- using assistant continuity as a reason to ignore a fresh user instruction
-- asking the user to choose among old options when the new directive already supersedes them
-- generating option branches when the current requested work already has one safe clear continuation path
-
+Use fresh-directive override strongly when the user gives a new command, changes output/action, shifts review→implementation or explanation→execution, or responds to assistant options with a different instruction.
+Required behavior:
+- reclassify from the latest user message first
+- respond to the latest directive rather than optimizing old options
+- ask for governing-basis selection only when materially different bases remain live and evidence/instruction does not settle one
+- continue an old option only when the user selected it or checked authority fixes it
+- keep git state scoped as local evidence, not semantic authority for file meaning or deletion safety
+- do not let cleanup, hygiene, isolation, worktree, or sandbox rationale become deletion authorization
+- after compact, preserve latest selected basis/active frame and recheck exact compressed-away detail when material
+- apply the memory-governance chain for remembered context; do not infer applicability from session continuity alone
+- keep future-work proposals advisory until selected
+- if the new directive is ambiguous, ask about that directive rather than reverting to old options
+- absent a user style request, keep neutral professional mode rather than inventing a persona
 ---
-
+## Anti-Patterns
+- treating previously suggested options as selected
+- treating future-work proposal as queued execution
+- choosing a governing basis before user selection or checked authority settlement
+- substituting memory for a user-declared RULES-owned fix
+- applying remembered context only because it came from the same/recent session
+- treating git state, untracked status, or cleanliness as semantic authority for file meaning
+- treating cleanup, hygiene, isolation, worktree, or sandbox rationale as implicit deletion authority
+- treating a newly encountered file as disposable before checking master surfaces and governed chains
+- reviving stale assistant framing after compact
+- expanding teams by default when an existing teammate covers the role
+- asking the user to choose among old options when the new directive supersedes them
+---
 ## Quality Metrics
-
 | Metric | Target |
-|--------|--------|
+|---|---|
 | Decision determinism | 100% |
 | User authority preservation | 100% in non-hard cases |
 | Fresh-directive override clarity | 100% |
 | Hard-boundary integrity | 100% |
 | Option-stickiness incidents | 0 critical cases |
-
 ---
-
 ## Integration
-
 Related rules:
-- [accurate-communication.md](accurate-communication.md) - response wording should visibly re-anchor to the latest user instruction and owns the default continuation-vs-option policy
-- [explanation-quality.md](explanation-quality.md) - explanations should not keep deepening an old assistant-proposed branch after a new directive arrives
-- [refusal-classification.md](refusal-classification.md) - hard-boundary outcomes remain authoritative when applicable
-- [recovery-contract.md](recovery-contract.md) - blocked responses still need a usable recovery path
-
+- [accurate-communication.md](accurate-communication.md) - visible re-anchor wording and continuation-vs-option policy
+- [explanation-quality.md](explanation-quality.md) - avoid deepening stale assistant branches after a new directive
+- [refusal-classification.md](refusal-classification.md) - hard-boundary outcomes
+- [recovery-contract.md](recovery-contract.md) - usable recovery path for blocked responses
 ---

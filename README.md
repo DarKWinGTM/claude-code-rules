@@ -15,28 +15,20 @@
   <i>Your Claude Code AI assistant, elevated to professional standards</i>
 </p>
 
-<!-- Quick Stats Cards -->
+<!-- Current State Cards -->
 <table>
 <tr>
 <td align="center" width="200">
-  <img src="https://img.shields.io/badge/Accuracy-100%25-success?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1RTEyNiIgZD0iTTkgMTYuMTdMNCAxMWwxLTUuODNMOSAwbDkgOS4xN00xNiAxNy4wM2wtOSA5LjE3IDktOS4xN04xNiA4LjE3TDcgMmw1LjgzLTUuODNNNyAyTDE1IDhsLTguMTcgOC4xN00xNyAxN2w5LjE3LTkuMTdMMTYgOC4xN3oiLz48L3N2Zz4=">
-  <br><br>
-  <b>100%</b><br><sub>Factual Accuracy</sub>
+  <b>v9.75</b><br><sub>Current Source State</sub>
 </td>
 <td align="center" width="200">
-  <img src="https://img.shields.io/badge/Efficiency-+40--82%25-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzI1ODFGNiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEydjJMMTQgN2g0bDItMnYtMmgybC0yIDJoLTRsLTItMnYtMmgybC0yIDJ2MmgybDItMnYtMmgybC0yIDJoLTRMNCAydjJ6Ii8+PC9zdmc+">
-  <br><br>
-  <b>82%</b><br><sub>Token Savings</sub>
+  <b>41</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <img src="https://img.shields.io/badge/Speed-+30--50%25-yellow?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0Y5QkIxMCIgZD0iTTcgMnYxMWgzbC03IDd2LTZoLTNMNyAyem02IDIydjExaC0zbDctN3Y2aDNsLTctMjJ6Ii8+PC9zdmc+">
-  <br><br>
-  <b>50%</b><br><sub>Faster Response</sub>
+  <b>Parity Verified</b><br><sub>Source-Owned Install Set</sub>
 </td>
 <td align="center" width="200">
-  <img src="https://img.shields.io/badge/Safety-100%25-red?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0QzMzI1RiIgZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyszQuNDggMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bS0yIDE1bC01IDUgNS01IDUtNS01IDV6Ii8+PC9zdmc+">
-  <br><br>
-  <b>100%</b><br><sub>Constitutional</sub>
+  <b>Evidence First</b><br><sub>Verify Before Strong Claims</sub>
 </td>
 </tr>
 </table>
@@ -69,8 +61,8 @@
 - [🎓 Framework Highlights](#-framework-highlights)
 - [🖼️ Visual Guide](#️-visual-guide)
 - [📊 Before & After](#-before--after)
-- [📊 Performance Metrics](#-performance-metrics)
-- [🔒 Safety Guarantees](#-safety-guarantees)
+- [📊 Current Quality Signals](#-current-quality-signals)
+- [🔒 Safety Commitments](#-safety-commitments)
 - [🤝 Contributing](#-contributing)
 - [📜 License](#-license)
 - [🙏 Acknowledgments](#-acknowledgments)
@@ -210,7 +202,7 @@ foreach ($file in $ruleFiles) {
 
 - Already cloned the repo? Skip the clone step and run the install block only.
 - Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/`.
-- This runtime-only install copies active rule files only. Governed design/changelog/TODO artifacts plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates.
+- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates, and files already present in a shared runtime destination but outside this 41-file source-owned set are not cleanup targets by default.
 
 ### 🤖 AI-Assisted Install Prompts
 
@@ -280,20 +272,20 @@ Please:
 <tr>
 <td width="50%">
 
-#### 🔍 Zero Hallucination
-- 100% verified information only
-- Evidence-based responses
-- No guessing or assumptions
-- Source citations always included
+#### 🔍 Evidence-First Accuracy
+- Verify before strong factual claims
+- Separate fact, inference, hypothesis, and scoped non-finding
+- No guessing local paths, values, symbols, or config
+- Cite checked scope when evidence boundaries matter
 
 </td>
 <td width="50%">
 
 #### 🛡️ Anti-Sycophancy
 - Truth over agreement
-- Direct corrections when needed
-- No false praise
-- Honest feedback, always
+- Claim-focused corrections when evidence supports them
+- No false praise or unsupported agreement
+- Partial evidence stays caveated
 
 </td>
 </tr>
@@ -303,17 +295,17 @@ Please:
 #### 🔒 Security First
 - Real systems over simulations
 - No mock implementations by default
-- Verified configurations only
-- Production-ready patterns
+- Verified configurations before strong claims
+- Destructive/high-impact actions require intent clarity
 
 </td>
 <td width="50%">
 
-#### ⚡ Performance Optimized
-- 30-50% faster responses
-- 40-82% token reduction
-- Adaptive complexity (TRAAC)
-- Cost-efficient operations
+#### Runtime Context Discipline
+- 41 active runtime rules only
+- P073 source compression completed and audited
+- Source/runtime install parity verified
+- Non-runtime governance artifacts stay out of runtime install
 
 </td>
 </tr>
@@ -335,7 +327,7 @@ Please:
 |:-----|:--------|:------------|
 | [`anti-mockup.md`](anti-mockup.md) | Real systems over simulations | No fake implementations |
 | [`anti-sycophancy.md`](anti-sycophancy.md) | Truth over agreement | Honest feedback that stays calm, claim-focused, and free of praise-heavy softening |
-| [`zero-hallucination.md`](zero-hallucination.md) | Verified information only | 100% accuracy |
+| [`zero-hallucination.md`](zero-hallucination.md) | Verify-first factual discipline | Fact, inference, hypothesis, uncertainty, and scoped non-findings stay separate |
 
 ---
 
@@ -345,33 +337,33 @@ Please:
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, easy-explanation continuity so plain Thai explanations stay simple through the full answer, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking team-agent reporting, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, explicit memory-derived-context disclosure wording for path-matched remembered context, natural-professional wording, direct human-readable action/result wording preferred over metaphor-heavy internal shorthand, main-point-first framing for diagnosis/test/recommendation/proposal/update answers, continuation-first guidance, clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real, and active summaries that keep resolved topics available for reasoning without repeating them as current issues by default |
-| [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts, initialize live task tracking early when non-trivial work needs visible execution state, treat phase-backed live task tracking as expected startup behavior, keep initialized live task lists as the continuing surface for the active objective, keep newly encountered unclear files in classification-first posture rather than disposal-first posture, and keep patch non-default during greenfield startup unless a real before/after review surface exists |
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, checked master/governed repo surfaces outrank git-state cleanup heuristics when classifying file meaning, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, user-declared RULES-first issues stay RULES-first instead of being diverted into memory-first fixes, memory applicability now defers to the dedicated memory-governance owner, non-matching path-scoped remembered context cannot override the current repo/objective, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, easy-explanation continuity so plain Thai explanations stay simple through the full answer, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking Team Agent reporting with observed-vs-inferred state separation, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, explicit memory-derived-context disclosure wording for path-matched remembered context, natural-professional wording, direct human-readable action/result wording preferred over metaphor-heavy internal shorthand, main-point-first framing for diagnosis/test/recommendation/proposal/update answers, evidence-honest phase closeout delivery/feature/impact wording, continuation-first guidance, clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real, and active summaries that keep resolved topics available for reasoning without repeating them as current issues by default |
+| [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts, resolve phase posture from sufficiently clear governed design when staged execution is warranted, initialize live task tracking early when non-trivial work needs visible execution state, treat phase-backed live task tracking as expected startup behavior, keep initialized live task lists as the continuing surface for the active objective, keep newly encountered unclear files in classification-first posture rather than disposal-first posture, and keep patch non-default during greenfield startup unless a real before/after review surface exists |
+| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, checked master/governed repo surfaces outrank git-state cleanup heuristics when classifying file meaning, runtime co-location is not ownership authority, destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification or cleanup, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, user-declared RULES-first issues stay RULES-first instead of being diverted into memory-first fixes, memory applicability now defers to the dedicated memory-governance owner, non-matching path-scoped remembered context cannot override the current repo/objective, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
-| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, destination/runtime, local execution, and reusable source-artifact references from drifting into each other so tool-local paths do not silently become skill/plugin/source contracts, and requires governed reference/history checks before junk/disposal classification |
+| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, source-owned active runtime, shared runtime destination, other-owner runtime, destination/runtime, local execution, and reusable source-artifact references from drifting into each other so parity/install wording does not turn shared-destination co-location into ownership, and requires governed reference/history checks before junk/disposal classification |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Single Source of Truth |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Standardized structure plus required capture of implementation-relevant truth extracted from external docs/specs/provider references when later work still depends on it |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed patch/review artifacts kept separate from the live `/phase` execution workspace, defined as before/after artifacts, required to show explicit change surfaces, able to surface the external-requirement basis when review depends on it, and not treated as the default startup artifact for greenfield baseline formation |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
 | [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
-| [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Commands verified before run, with a real destructive delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
+| [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Clarifies destructive, ambiguous, or high-impact intent before execution, with a real delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep any optional external recall generic, supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
-| [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including inspect-first handling for duplicate-looking or stale team-agent presence |
-| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, explicit default phase posture when staged/governed work is already clearly implied, provisional task alignment to clearly implied staged/phase context even before the exact next phase file exists, current-phase-first but phase-context-aware live task-list linkage, bounded use of already-authored next-phase context from `/phase` for continuity and draft next-work discovery, explicit phase-to-patch linkage when patch is in scope, same-objective task-list continuity across repeated phase slices, bounded next-work discovery from the active phase workspace, session-aligned wording for phase-linked task entries, and generic receiving-side phase remap guidance when accepted work needs local execution structure |
+| [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including duplicate-looking Team Agent handling that treats stale or duplicate-looking presence as inspect-before-respawn rather than respawn-first churn |
+| [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, early phase-establishment bridge, design-to-phase execution synthesis from sufficiently clear governed design when staged execution is warranted, explicit default phase posture when staged/governed work is already clearly implied, provisional task alignment to clearly implied staged/phase context even before the exact next phase file exists, current-phase-first but phase-context-aware live task-list linkage, bounded use of already-authored next-phase context from `/phase` for continuity and draft next-work discovery, explicit phase-to-patch linkage when patch is in scope, phase closeout reporting that states delivered work, feature/improvement, impact, verification basis, and next phase state when relevant, same-objective task-list continuity across repeated phase slices, bounded next-work discovery from the active phase workspace, session-aligned wording for phase-linked task entries, and generic receiving-side phase remap guidance when accepted work needs local execution structure |
 | [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
 | [`technical-snapshot-communication.md`](technical-snapshot-communication.md) | Technical snapshot communication | First-class owner for bounded technical snapshot wording, exact/partial/inferred separation, scoped local-fact snapshot communication, and concise diagnostic snapshot state reporting |
-| [`response-closing-and-action-framing.md`](response-closing-and-action-framing.md) | Response closing and action framing | First-class owner for concise end-of-response synthesis, clear action framing, recommendation-with-reason wording, alternative preservation, closed-topic summary handling, and advisory goal-qualified proposal framing |
+| [`response-closing-and-action-framing.md`](response-closing-and-action-framing.md) | Response closing and action framing | First-class owner for concise end-of-response synthesis, clear action framing, recommendation-with-reason wording, alternative preservation, closed-topic summary handling, phase-backed closeout synthesis for delivered work, feature/improvement, impact, verification basis, and next phase state, and advisory goal-qualified proposal framing |
 | [`recovery-contract.md`](recovery-contract.md) | Blocked-response contract | Every constrained/refused path has actionable next steps |
 | [`tactical-strategic-programming.md`](tactical-strategic-programming.md) | Tactical vs strategic doctrine | Tactical entry stays fast, but every tactical move must point toward a declared strategic target and convergence path |
 | [`natural-professional-communication.md`](natural-professional-communication.md) | Communication style doctrine | Default to calm, human-readable, non-robotic, non-character-driven professional communication, keep easy explanations in an everyday Thai register when the user asks for simpler wording, reject metaphor-heavy or management-style abstraction when direct wording would be clearer, and front-load the operational purpose when the answer would otherwise bury it behind warm-up framing |
 | [`refusal-classification.md`](refusal-classification.md) | Deterministic refusal taxonomy | Consistent block decisions and traceable output modes |
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
-| [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts, and keep hygiene/cleanup wording from acting as deletion authority |
+| [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts, keep hygiene/cleanup wording from acting as deletion authority, and prevent shared runtime destination co-location from making other-owner runtime files junk by default |
 | [`todo-standards.md`](todo-standards.md) | Task management | Durable TODO tracking plus same-objective built-in task-list reuse, append-not-replace behavior, completed-task visibility, current-phase-first but phase-context-aware live execution visibility, required inspection of relevant governed `/phase` context before shaping task entries when that context exists, task creation aligned to active phase or clearly implied staged context, bounded use of already-authored `/phase` planning data for continuity and draft next-work discovery, task wording that follows the actual active session language pattern with Thai-led default wording for Thai-led sessions, preserved natural Thai+English mix when that is the real session pattern, and technical labels left in technical form when forced translation would reduce clarity, task-list-first next-work discovery with bounded fallback, explicit required TODO sync as companion work when `TODO.md` is needed, and deferral of broader shared-board coordination semantics to the external coordination owner when applicable |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, reasserted governed companion status for required design/changelog/TODO/phase/patch surfaces alongside live execution surfaces, phase-shaped task creation alignment when staged repository context is already visible, explicit use of `/phase` as both current execution structure and bounded already-authored next planned structure, master-surface consultation before junk/disposal classification, explicit live-task-list-vs-durable-TODO distinction, same-objective live task-list continuity, explicit execution-discovery surfaces during active execution, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, portable-by-default package-local support assets when they are reusable source content, and the boundary that shared-board-specific coordination semantics stay outside Main RULES scope |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, reasserted governed companion status for required design/changelog/TODO/phase/patch surfaces alongside live execution surfaces, phase-shaped task creation alignment when staged repository context is already visible, explicit use of `/phase` as both current execution structure and bounded already-authored next planned structure, master-surface consultation before junk/disposal classification, runtime installs scoped to the current project/source-owned active runtime rule set rather than the whole shared destination, other-owner runtime destination files kept out of scope unless selected or verified, explicit live-task-list-vs-durable-TODO distinction, same-objective live task-list continuity, explicit execution-discovery surfaces during active execution, non-default startup patch posture for greenfield baseline formation, portable public onboarding/install guidance, portable-by-default package-local support assets when they are reusable source content, and the boundary that shared-board-specific coordination semantics stay outside Main RULES scope |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, keeps startup artifact governance as an explicit precondition before execution continuity takes over, keeps work moving when execution mode is active, discovers the next unfinished slice from execution surfaces when that path is already visible, and stops to capture implementation-critical external knowledge into governed artifacts before later multi-step work relies on it |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
@@ -384,8 +376,8 @@ Please:
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, more proactive support for light readable tables when side-by-side structure materially improves comprehension without reviving a custom table-format rule, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact memory-status blocks for remembered path-scoped context, compact variable-role structures for identifier-heavy explanations, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, more proactive support for light tables in diagnostic and multi-field clarification when side-by-side scanability materially improves understanding, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
+| [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, more proactive support for light readable tables when side-by-side structure materially improves comprehension without reviving a custom table-format rule, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact memory-status blocks for remembered path-scoped context, compact variable-role structures for identifier-heavy explanations, compact phase-backed closeout blocks for delivered work, feature/improvement, impact, verification, and next phase state, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, phase-backed closeout explanation that starts with practical delivered feature/improvement and user/system meaning before governance detail, more proactive support for light tables in diagnostic and multi-field clarification when side-by-side scanability materially improves understanding, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 | [`high-signal-communication.md`](high-signal-communication.md) | High-signal response tightening | Removes low-value extra content and repeated wording without replacing the main communication-owner chains |
 | [`goal-set-review-and-priority-balance.md`](goal-set-review-and-priority-balance.md) | Goal review and priority balance | Keeps the full active goal set visible so work on A does not crowd out B and C |
@@ -404,8 +396,7 @@ Please:
 
 **📊 Active Runtime Rules: 41**
 
-Latest refinement: repo-governed semantic surfaces now outrank git-state cleanup heuristics, and cleanup/isolation rationale no longer reads like deletion authorization for newly encountered files.
-
+Latest refinement: P076 added design-to-phase execution synthesis so sufficiently clear governed design can drive phase posture, phase execution order, current child phase files, and current-phase live tasks when staged execution is warranted; Main RULES install/parity remains scoped to the 41 source-owned active runtime files, while co-located destination files outside that source-owned set remain other-owner/out-of-scope until owner/project scope is selected or verified.
 </div>
 
 ---
@@ -530,6 +521,8 @@ That means design / changelog / TODO / phase / patch should be explicitly resolv
 
 Required governed companions should stay visible when the checked work shape still requires them; the live task list helps run the work, but it does not replace required design/changelog/TODO/phase/patch surfaces.
 
+When governed design is sufficiently clear and staged execution is warranted, phase posture should resolve to `use existing` or `create now`; the phase layer may derive execution order, current child phase files, and current-phase live tasks from that governed design instead of waiting for a separate retrospective planning prompt.
+
 For greenfield startup / baseline formation, patch should normally resolve to `not required` unless a real existing before/after review surface or explicit user request justifies patch packaging.
 
 Once startup posture is settled and the active path is clear, execution should keep moving without re-pausing over the same gate.
@@ -541,12 +534,15 @@ When phased work also uses governed patch artifacts, the live phase workspace sh
 ```text
 Change request received
   → resolve startup artifact posture first when the work is meaningfully governed
-  → Update design target state
-  → Synchronize runtime rule wording
-  → Record per-chain changelog version + summary
-  → Record repository-level sync in changelog/changelog.md when applicable
-  → Update TODO pending/completed/history
-  → Verify links, versions, and consistency
+  → if staged work is warranted, synthesize phase posture/order/tasks from clear governed design
+  → update design target state
+  → synchronize runtime rule wording
+  → record per-chain changelog version + summary
+  → record repository-level sync in changelog/changelog.md when applicable
+  → update TODO pending/completed/history
+  → update phase/patch companion records when in scope
+  → install only the 41 source-owned active runtime rules when an install gate is explicitly in scope
+  → verify links, versions, active install scope, and source/runtime parity without cleaning other-owner destination files
 ```
 
 
@@ -555,22 +551,15 @@ Change request received
 - Design file links to the correct changelog file
 - Changelog unified row maps to an existing detailed section
 - Runtime rule version/header aligns with changelog current version
-- `phase/SUMMARY.md` exists when phased execution is used
-- `phase/SUMMARY.md` includes:
-  - source-input extraction summary table
-  - overview flow diagram
-  - review summary table
-  - phase map
-- child phase files include:
-  - design references
-  - patch references when patch-derived work exists
-  - design extraction
-  - patch-to-phase extraction when patch-derived work exists
-  - review flow diagram
-  - reviewer checklist
-  - standardized review outcome fields
+- README active runtime install list still contains exactly the 41 source-owned root rule files
+- `phase/SUMMARY.md` exists when phased execution is used and names governing patch artifacts or explicit `none`
+- `phase/SUMMARY.md` keeps the phase map, source inputs, cross-phase handoffs, TODO/changelog coordination, verification, and rollback/containment picture current
+- child phase files include design references, patch references or explicit `none`, objective, entry conditions, action checklist, affected artifacts, TODO/changelog coordination, verification, closeout, exit criteria, risks/rollback notes, and next possible phases when relevant
+- phase-backed closeout explains delivered work, feature/improvement, user/system impact, verification basis, and next phase state when useful
+- sufficiently clear governed design can be synthesized into phase order and current-phase live tasks when staged execution is warranted
 - TODO pending section contains pending-only items (`- [ ]`)
 - TODO history has a dated entry for completed milestone work
+- runtime install/parity checks do not classify or clean other-owner files in shared runtime destinations
 
 ### Real Examples (This Repository)
 
@@ -667,39 +656,91 @@ artifact-initiation-control.design.md
 - `project-documentation-standards`, `phase-implementation`, `todo-standards`, and `strict-file-hygiene` were aligned to the new startup contract
 - the rollout itself opened `phase-004` from the start instead of being backfilled later
 
+#### Example 7: P073 Runtime Compression and Install Parity
+
+```text
+41 active runtime rules
+  → source-only semantic compression program
+  → final semantic parity and aggregate reduction audit
+  → explicit runtime install gate
+  → source/runtime hash parity verification
+```
+
+**What was synchronized:**
+- the active runtime scope stayed limited to the README-installed 41 root rule files
+- final source state was recorded at 4,051 lines / 31,316 words / 231,675 bytes
+- runtime install into `~/.claude/rules/` happened only after the separate install gate opened
+- parity passed with no missing active files or hash mismatches
+- co-located runtime files outside the source-owned install set remained observed-only and untouched
+
+#### Example 8: Runtime Destination Ownership Boundary
+
+```text
+authority-and-scope.md
+  → project-documentation-standards.md
+  → strict-file-hygiene.md
+  → document-consistency.md
+  → README / TODO / phase / patch records
+```
+
+**What was synchronized:**
+- runtime co-location was clarified as non-ownership authority
+- destination files outside the current source-owned install set require owner/project scope resolution before classification or cleanup
+- documentation, hygiene, and reference owners were aligned to preserve the source-owned/shared-destination/other-owner distinction
+
+#### Example 9: Phase Closeout Feature and Impact Reporting
+
+```text
+response-closing-and-action-framing.md
+  → phase-implementation.md
+  → answer-presentation.md
+  → accurate-communication.md
+  → explanation-quality.md
+```
+
+**What was synchronized:**
+- phase-backed closeouts now report delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant
+- closeout wording remains evidence-honest and does not turn edited or partially verified work into fixed/stable claims
+- audit/checklist detail no longer dominates the user-facing completion message
+
+#### Example 10: Design-to-Phase Execution Synthesis
+
+```text
+governed design target state
+  → artifact-initiation-control.md startup phase posture
+  → phase-implementation.md execution synthesis
+  → current child phase files and current-phase live tasks
+```
+
+**What was synchronized:**
+- sufficiently clear governed design can now drive phase posture and execution order when staged execution is warranted
+- `/phase` may derive current child phase files and current-phase live tasks from design truth without replacing design as target-state authority
+- real stop gates remain: design ambiguity, materially different rollout choices, missing access, destructive/high-impact action, and approval-sensitive scope change
+
 ---
 
 ## 🎓 Framework Highlights
 
-### 🧭 Finalized Phase Review Model
+### 🧭 Current Phase Execution Model
 
-**The current phased execution model is now explicitly finalized, bounded, and able to synthesize design plus relevant patch inputs one-way.**
+**The current phased execution model uses `phase/SUMMARY.md` plus child phase files as the live execution workspace, while design stays target-state authority and patch stays before/after review authority.**
 
 ```text
-phase/
-  SUMMARY.md
-    → source-input extraction summary table
-    → overview flow diagram
-    → review summary table
-    → phase map
-  phase-001-<phase-name>.md
-    → design references
-    → optional patch references
-    → design extraction
-    → optional patch-to-phase extraction
-    → review flow diagram
-    → reviewer checklist
-    → review outcome
+governed design target state
+  → startup artifact posture
+  → phase/SUMMARY.md phase map and source inputs
+  → phase-NNN / phase-NNN-NN child execution files
+  → current-phase live task list
+  → closeout with delivered work, impact, verification, and next phase state
 ```
 
 **What this gives you:**
-- reviewers can inspect the whole rollout from `SUMMARY.md`
-- reviewers can inspect one phase deeply from the child phase file
-- approvers can see sign-off status, severity, disposition, and blocker/follow-up state in one place
-- the model can now synthesize target-state design inputs and relevant governed patch inputs without collapsing role boundaries
-- the model now has an explicit completion boundary and stop rule, so governance expansion does not continue by default after it is operationally complete
-- startup artifact posture can now be resolved before meaningful governed work drifts instead of being backfilled later
-- communication rules now treat next-step options as usefulness-based guidance, not as a mandatory ending pattern after already-complete work
+- staged work gets a deterministic phase workspace instead of ad hoc planning drift
+- sufficiently clear governed design can become phase order and current-phase live tasks when staged execution is warranted
+- patch inputs can feed phase planning one-way without turning `/patch` into the live phase namespace
+- child phase files keep execution fields close to the actual phase: objective, entry conditions, actions, affected artifacts, verification, closeout, exit criteria, risks, and next possible phases
+- closeout wording explains what changed and why it matters before audit/checklist detail dominates the message
+- real stop gates remain intact for design ambiguity, materially different rollout choices, missing access, destructive/high-impact action, and approval-sensitive scope change
 
 ---
 
@@ -707,43 +748,43 @@ phase/
 
 <div align="center">
 
-**Dynamic complexity adjustment based on task requirements**
+**Complexity calibration so simple work stays direct and risky/system work gets deeper review**
 
 ```text
-Simple Tasks (Level 0-2)     → Minimal Processing
-     ↓
-Standard Tasks (Level 3-5)   → Balanced Approach
-     ↓
-Complex Tasks (Level 6-7)    → Deep Analysis
+Simple work      → direct answer or short implementation path
+Moderate work    → structured stepwise reasoning
+High-risk work   → deeper comparison, security, and integration review
+Critical work    → stronger verification, mitigation, and stop-gate handling
 ```
 
-| Metric | Improvement | Impact |
-|--------|-------------|--------|
-| Response Speed | +30-50% | Faster answers |
-| Token Efficiency | +40-82% | Lower costs |
-| Cost Reduction | -25-35% | Budget-friendly |
+| Input | What it changes | Result |
+|--------|-----------------|--------|
+| Manual action steps | How much sequencing is needed | Avoids under-planning multi-step work |
+| Decision points | Whether alternatives must be compared | Prevents premature path collapse |
+| Dependencies | How much integration risk exists | Keeps external systems visible |
+| Security requirements | How strict the review must be | Deepens auth/payment/data/destructive work |
 
 </div>
 
 ---
 
-### 👥 TUMIX Multi-Agent System
+### 👥 TUMIX Multi-Perspective Review
 
-**Three expert perspectives analyzing every complex problem**
+**Use Developer, Security, and Architect lenses when a task really spans implementation, risk, and architecture together.**
 
 ```text
-Developer  ──┐
-Security   ──┼──→ Unified Recommendation
-Architect  ──┘
+Developer lens  ──┐
+Security lens   ──┼──→ One evidence-backed recommendation
+Architect lens  ──┘
 ```
 
-**How It Works:**
-1. **Developer Agent** → Technical feasibility analysis
-2. **Security Agent** → Security & privacy evaluation
-3. **Architect Agent** → System design considerations
-4. **Synthesis** → All perspectives merge into unified recommendation
+**How it works:**
+1. **Developer lens** → feasibility, implementation shape, and maintainability
+2. **Security lens** → authorization, secrets, data, destructive-action, and abuse-risk boundaries
+3. **Architect lens** → system ownership, integration, rollout, and future changeability
+4. **Synthesis** → one practical recommendation with trade-offs when they matter
 
-**Result:** Comprehensive analysis from multiple angles
+**Boundary:** this is perspective coverage, not automatic teammate spawning for every task.
 
 ---
 
@@ -751,15 +792,15 @@ Architect  ──┘
 
 <div align="center">
 
-**Cache and reuse verified reasoning patterns**
+**Reuse previously validated reasoning patterns only after rechecking them against the current context**
 
 | Action | Benefit |
 |--------|---------|
-| **Cache** verified patterns | Store successful approaches |
-| **Reuse** for similar tasks | 40% speed improvement |
-| **Validate** before use | Ensure accuracy maintained |
+| **Recognize** recurring problem shapes | Avoids solving the same pattern from zero every time |
+| **Adapt** the candidate pattern | Keeps reuse tied to the current task, repo, and constraints |
+| **Validate** before relying on it | Prevents stale memory or old fixes from becoming false authority |
 
-**Performance:** 82% cache hit rate for recurring patterns
+**Boundary:** cached patterns accelerate reasoning, but checked current evidence still wins.
 
 </div>
 
@@ -781,12 +822,12 @@ Architect  ──┘
 <td align="center" width="33%">
 <img src="img/anti-mockup.png" width="280"><br>
 <b>Anti-Mockup</b><br>
-<sub>Real systems only</sub>
+<sub>Real systems over fake surfaces</sub>
 </td>
 <td align="center" width="33%">
 <img src="img/zero-hallucination.png" width="280"><br>
 <b>Zero Hallucination</b><br>
-<sub>Verified info only</sub>
+<sub>Verify before strong claims</sub>
 </td>
 </tr>
 </table>
@@ -800,7 +841,7 @@ Architect  ──┘
 <td align="center" width="25%">
 <img src="img/authority-and-scope.png" width="200"><br>
 <b>Authority & Scope</b><br>
-<sub>User authority supreme</sub>
+<sub>User authority inside safe boundaries</sub>
 </td>
 <td align="center" width="25%">
 <img src="img/emergency-protocol.png" width="200"><br>
@@ -865,7 +906,7 @@ Architect  ──┘
 </td>
 <td align="center" width="25%">
 <b>Recovery Contract</b><br>
-<sub>No dead-end blocked paths; always provide a usable next step</sub>
+<sub>Blocked paths should still provide a usable next step</sub>
 </td>
 <td align="center" width="25%">
 <b>Refusal Classification</b><br>
@@ -1014,37 +1055,37 @@ Result: ✅ Verified from actual files
 
 ---
 
-## 📊 Performance Metrics
+## 📊 Current Quality Signals
 
 <div align="center">
 
-| Metric | Target | Status | Impact |
-|--------|:------:|:------:|--------|
-| Factual Accuracy | 100% | ✅ | Zero hallucinations |
-| Constitutional Compliance | 100% | ✅ | User sovereignty maintained |
-| Token Efficiency | +40-82% | ✅ | Cost reduction |
-| Response Speed | +30-50% | ✅ | Faster delivery |
-| User Sovereignty | Absolute | ✅ | User always in control |
+| Signal | Current README Meaning | Impact |
+|--------|-------------------------|--------|
+| Active runtime scope | 41 source-owned root rule files | Keeps install scope explicit |
+| Runtime parity | P073 install gate verified no missing active files or hash mismatches | Confirms source/runtime copy alignment for the active set |
+| Evidence discipline | Fact, inference, hypothesis, uncertainty, memory, and scoped non-finding stay separate | Reduces overclaim and hallucination risk |
+| Phase execution | Clear governed design can drive phase posture, order, and current-phase tasks when staged work is warranted | Reduces retrospective phase backfill |
+| Shared destination boundary | Co-located runtime files outside the source-owned set are not cleanup targets by default | Prevents other-owner file damage |
 
 </div>
 
 ---
 
-## 🔒 Safety Guarantees
+## 🔒 Safety Commitments
 
 <div align="center">
 
-### ✅ Our Commitment to You
+### ✅ Operating Commitments
 
-| Guarantee | Description |
+| Commitment | Description |
 |-----------|-------------|
-| **No Mock/Stub** | Real implementations unless explicitly requested |
-| **No Guessing** | Always verify from actual sources |
-| **No Hallucinations** | 100% fact-based responses |
-| **No Sycophancy** | Truth over agreement, always |
-| **Constitutional** | Principles override everything |
+| **No Mock/Stub by Default** | Prefer real systems and clearly label or avoid fake implementations unless explicitly requested |
+| **No Guessing** | Verify local paths, values, symbols, and configuration before treating them as known |
+| **Evidence-Honest Claims** | Match wording strength to checked evidence and disclose scoped non-findings |
+| **No Sycophancy** | Prefer truth over agreement, with claim-focused corrections when evidence supports them |
+| **Destructive-Action Guard** | Cleanup, hygiene, isolation, or worktree rationale never authorizes deletion by itself |
 
-**Your safety and accuracy are non-negotiable.**
+**The practical goal is safe, evidence-grounded AI behavior that keeps user authority intact.**
 
 </div>
 
@@ -1058,8 +1099,8 @@ These rules evolve based on real-world usage:
 
 - 🔄 **Real-world usage patterns** → What actually works
 - 💬 **User feedback** → Your experience matters
-- 🔐 **Safety considerations** → Always improving
-- ⚡ **Performance optimization** → Getting faster
+- 🔐 **Safety considerations** → Stronger boundaries and safer defaults
+- ⚡ **Context discipline** → Keeping runtime guidance useful without unnecessary bloat
 
 ### 📝 Contribution Guidelines
 
@@ -1111,8 +1152,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.56 |
-  <b>Last Updated</b>: 2026-04-22 |
+  <b>Version</b>: 9.75 |
+  <b>Last Updated</b>: 2026-04-27 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

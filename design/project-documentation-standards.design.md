@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.28
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-18)
+> **Current Version:** 2.30
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
 
 ---
 
@@ -31,6 +31,8 @@ This model must preserve one authority system while clearly separating:
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
 - `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
 - package-local support assets such as optional `skills/`, optional `agents/`, scripts, and plugin-owned docs remaining portable by default when they are maintained as reusable source artifacts
+- runtime installs targeting the current project/source-owned active runtime rule set rather than every file that happens to exist in a shared runtime destination
+- other project/plugin-owned runtime destination files staying out of repository documentation, hygiene, and install scope unless their owner/project is explicitly selected or verified
 - shared-board multi-session coordination semantics and any discontinued custom recall/skill mechanics staying outside Main RULES scope rather than being redefined ad hoc in the repository role model
 
 ---
@@ -55,6 +57,8 @@ It is not version authority for governed chains.
 
 ### 3.2 Runtime Rule Role
 Root runtime rules are the active rule layer.
+Runtime installation scope is the current project/source-owned active runtime rule set, not the entire shared runtime destination directory.
+Shared runtime destinations may contain other project/plugin-owned runtime rules that remain out of scope unless their owner/project is explicitly selected or verified.
 They use the canonical runtime header contract:
 - `Current Version`
 - `Design`
@@ -111,6 +115,7 @@ Required guidance:
 - git working state may show a local observation such as untracked/new/dirty status, but it does not by itself settle whether the file has governed meaning
 - if a master surface or governed history could plausibly explain the file, check that surface before treating the file as cleanup noise
 - `not required` does not mean `safe to remove` unless stronger authority and stronger destructive-execution permission also exist
+- destination/runtime files outside the current source-owned active runtime install set are not project junk by default merely because they sit in the same runtime destination
 
 ### 3.10 Phase Rule Role
 `phase-implementation.md` is the semantic rule for phased execution planning.
@@ -247,10 +252,13 @@ One workstation absolute path or an internal umbrella workspace root should not 
 
 ### 8.3 Source-vs-destination notation split
 If onboarding/install docs mention both where the artifact comes from and where it installs or runs, those two roles should stay visually and semantically distinct.
+Runtime install wording should distinguish the checked source-owned active runtime rule set from the shared runtime destination that may contain other owners' runtime files.
 
 Preferred examples:
 - source-side: `<repo-root>`, `./`
+- source-owned runtime install scope: the checked README-listed active runtime rule set
 - destination/runtime-side: `<install-root>`, `<user-runtime-rules>`, `<user-runtime-skills>`, `<user-runtime-agents>`
+- other-owner runtime destination files: out of scope until their owner/project is explicitly selected or verified
 
 ### 8.4 Local-example exception
 Exact local absolute paths are allowed only when they are explicitly framed as:
@@ -281,6 +289,8 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
 - [ ] Public onboarding/install docs avoid workstation-specific absolute paths as public defaults
 - [ ] Source-side and destination/runtime notation are clearly distinguished when both appear
+- [ ] Runtime install guidance names the current source-owned active runtime set rather than the whole shared destination directory
+- [ ] Other project/plugin-owned runtime destination files are not described as repository-managed cleanup targets
 - [ ] Exact local install examples are explicitly scoped
 - [ ] Root-level helper artifacts do not masquerade as governed docs
 
@@ -306,6 +316,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Public onboarding/install portability | High |
 | Workstation-specific absolute paths as public defaults | 0 critical cases |
 | Source-vs-destination notation clarity | High |
+| Source-owned/shared-destination/other-owner boundary clarity | High |
 | Root-helper placement clarity | 100% |
 | TODO simplification compliance | 100% |
 
@@ -321,7 +332,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary and explicit before/after patch contract outside live phase planning |
 | [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
-| [document-consistency.md](../document-consistency.md) | Source-side and destination/runtime reference consistency |
+| [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, source-owned install scope, shared destination, and other-owner runtime reference consistency |
 | [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, and same-objective continuity |
 | [rules-plugin-extension.design.md](rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active shared-board/plugin/runtime coordination does not remain part of Main RULES current doctrine |
 

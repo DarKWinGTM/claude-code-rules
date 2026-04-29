@@ -4,7 +4,7 @@
 
 > **Parent Scope:** RULES System Design
 > **Current Version:** 1.2
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
+> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-24)
 
 ---
 
@@ -265,12 +265,12 @@ Every present or future case profile should define:
 - `recovery_direction`: explain the alternative non-denied path or ask whether the user wants a different method.
 
 #### `TEAM_AGENT_DUPLICATE_OR_STALE_PRESENCE`
-- `applies_to`: team-agent management, shutdown/cleanup follow-up, or teammate respawn decisions.
+- `applies_to`: team-agent management, shutdown/cleanup follow-up, teammate respawn decisions, or proposed Team Agent creation when a matching teammate may already exist.
 - `match_signals`: duplicate-looking teammate names, repeated role labels, stale-looking UI presence, missing live team config with lingering visual entries, or uncertainty about whether the old teammate is still active.
 - `initial_failure_class`: `LIKELY_SYSTEMIC` until current team state is inspected.
 - `immediate_retry_rule`: **no immediate respawn of a same-role teammate**.
 - `budget_or_override_rule`: do not consume autonomous retries by spawning overlapping teammates while duplicate-looking state remains unresolved.
-- `cooldown_policy`: none until state changes; inspect first rather than waiting blindly.
+- `cooldown_policy`: none until state changes; inspect current team membership/state rather than waiting blindly.
 - `promotion_rule`: repeated same-role respawn attempts without inspecting current team state remain systemic churn, not progress.
 - `stop_condition`: stop when the duplicate-looking agent may still be active, stale in UI/team state, or not yet cleanly removed.
 - `recovery_direction`: inspect current team membership/state, request shutdown or cleanup when needed, and only respawn if the role is truly absent or the new teammate has a clearly distinct partitioned job.

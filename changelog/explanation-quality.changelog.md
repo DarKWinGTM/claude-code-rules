@@ -1,8 +1,8 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.19
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.20
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.20 | 2026-04-25 | **[Added phase closeout delivery and impact explanation flow](#version-220)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.19 | 2026-04-22 | **[Made table use more proactive for diagnostic and multi-field explanation](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.17 | 2026-04-16 | **[Added easy-explanation continuity after simple openings](#version-217)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -53,6 +54,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-220"></a>
+## Version 2.20: Added phase closeout delivery and impact explanation flow
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `explanation-quality.md` from v2.19 to v2.20.
+- Updated `design/explanation-quality.design.md` from v2.19 to v2.20.
+- Added phase closeout explanation guidance so closeouts start with the delivered feature/improvement and practical user/system meaning before governance detail, file lists, or task IDs.
+- Added a preferred closeout example that shows delivered work, feature/improvement, impact, verification, and next phase state.
+- Added anti-pattern coverage against closeouts that start with governance/file/task detail only.
+
+### Summary
+Explanation-quality now makes phase closeouts easier to understand by requiring the practical delivery and impact to appear before dense governance or audit detail.
 
 ---
 

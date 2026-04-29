@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.4
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.5 | 2026-04-25 | **[Added runtime destination ownership boundary](#version-25)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.4 | 2026-04-17 | **[Added repo-governed semantic-authority precedence over git-state cleanup heuristics](#version-24)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.3 | 2026-04-13 | **[Deferred shared-board multi-session coordination semantics to the new coordination owner](#version-23)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 2.2 | 2026-04-12 | **[Deferred mode-selection semantics to the new execution-continuity owner](#version-22)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -32,6 +33,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-25"></a>
+## Version 2.5: Added runtime destination ownership boundary
+
+**Date:** 2026-04-25
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `authority-and-scope.md` from v2.4 to v2.5.
+- Updated `design/authority-and-scope.design.md` from v2.4 to v2.5.
+- Added explicit runtime co-location wording so a file appearing in a shared runtime directory does not become governed by the current source project.
+- Added destination/runtime owner-scope guidance so files outside the current source-owned install set require owner/project scope resolution before classification, cleanup, or deletion is considered.
+
+### Summary
+Authority-and-scope now treats shared runtime directory placement as observed co-location only, not ownership authority, and requires owner/project scope resolution before classifying or cleaning up destination files outside the current source-owned install set.
 
 ---
 
