@@ -3,19 +3,20 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.4
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 1.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-30)
 
 ---
 
 ## 1) Goal
 
-Define one runtime rule chain for verify-first factual discipline so the assistant states as fact only what the relevant evidence supports, keeps inference and hypothesis visibly separate, and avoids overstating absence from limited search results.
+Define one runtime rule chain for verify-first factual discipline so the assistant states or endorses as fact only what the relevant evidence supports, keeps preference/direction, inference, and hypothesis visibly separate, and avoids overstating absence from limited search results.
 
 This chain is the factual-claim owner for:
 - verify-first factual discipline
 - source-priority behavior
-- fact vs inference vs hypothesis separation for technical claims
+- fact vs preference/direction vs inference vs hypothesis separation for technical claims
+- unsupported factual-endorsement risk
 - negative-claim / absence discipline
 - uncertainty honesty when evidence is incomplete
 
@@ -24,13 +25,16 @@ This chain is the factual-claim owner for:
 ## 2) Problem Statement
 
 The original zero-hallucination rule correctly rejected fabrication, but it still left several important gaps under-specified:
-- it did not clearly separate fact, inference, and hypothesis in one deterministic model
+- it did not clearly separate fact, user-owned preference/direction, inference, and hypothesis in one deterministic model
+- it did not explicitly treat unsupported factual agreement as a hallucination risk
 - it did not define a stronger evidence contract for negative claims and absence wording
 - it did not clearly distinguish between authoritative external evidence and observed local evidence
 - it did not explicitly guard against treating limited non-findings as contradiction or non-existence
 
 Observed failure modes:
 - a likely conclusion is stated as fact
+- an unverified user assertion is endorsed as correct because agreement feels smoother
+- a user preference is worded like factual proof
 - a limited repo search is treated as proof of absence
 - lack of evidence is used like contrary evidence
 - a local fact and a broader platform fact are discussed as though they had the same proof burden
@@ -42,12 +46,13 @@ This design clarifies those boundaries while leaving communication-shape and con
 ## 3) Core Principles
 
 ### 3.1 Verify-First Principle
-Technical and project-specific claims should be verified before being stated as fact.
+Technical and project-specific claims should be verified before being stated or endorsed as fact.
 
 Required guidance:
 - verify external claims with relevant authoritative sources when possible
 - verify local claims with observed local evidence when possible
-- if verification is incomplete, do not promote the claim to fact status
+- if verification is incomplete, do not promote the claim to fact status through either direct statement or agreement
+- accept user preference/direction as user-owned input, not as factual proof
 
 ### 3.2 Source-Priority Principle
 Evidence should be weighted by relevance and directness.
@@ -56,20 +61,22 @@ Evidence should be weighted by relevance and directness.
 |--------------|-------------|------------------|
 | `AUTHORITATIVE_EXTERNAL` | API docs, specifications, provider behavior | Highest for external/product facts |
 | `OBSERVED_LOCAL` | files, grep output, command output, tests | Highest for local/project facts within the checked scope |
-| `USER_PROVIDED` | user-stated constraints and environment details | High as input evidence |
+| `USER_PROVIDED` | user-stated constraints, preferences, directions, and environment details | High as input and direction; factual endorsement still needs relevant evidence |
 | `EVIDENCE_BACKED_INFERENCE` | reasoned conclusion from observed facts | Medium |
 | `WORKING_HYPOTHESIS` | plausible but unproven explanation | Low |
 
 Required guidance:
 - do not let inference outrank direct evidence
 - do not let memory outrank a checked source
+- do not let user assertion alone become assistant-endorsed factual truth
 - do not let limited search failure behave like strong absence proof
 
 ### 3.3 Claim-State Separation Principle
-Fact, inference, hypothesis, unresolved uncertainty, and scoped non-findings should not share the same wording strength.
+Fact, preference/direction, inference, hypothesis, unresolved uncertainty, and scoped non-findings should not share the same wording strength.
 
 Required guidance:
 - keep verified fact direct
+- keep user preference/direction in the user-owned direction lane rather than the factual-proof lane
 - keep inference explicitly inferential
 - keep hypothesis explicitly tentative
 - keep non-findings scoped
@@ -95,7 +102,8 @@ Treat claims as verification-required when any of the following signals appear:
 
 | Trigger | Typical Signal | Required Action |
 |---------|----------------|-----------------|
-| specific technical claim | endpoint, version, flag, syntax, config option | verify with authoritative or relevant direct evidence before stating as fact |
+| user preference/direction | priority, style, scope, or selected approach | accept as direction without presenting it as factual proof |
+| specific technical claim | endpoint, version, flag, syntax, config option | verify with authoritative or relevant direct evidence before stating or agreeing as fact |
 | project-specific reference | file path, symbol, config key, environment variable | verify with project tools before reference |
 | cross-artifact completion claim | "all updated", "fully synchronized", "no drift" | verify the affected artifacts before claiming completion |
 | negative claim | "does not exist", "is absent", "there is no X" | determine whether the evidence supports scoped non-finding or strong absence |
@@ -157,6 +165,8 @@ When the local signal is git working-state only:
 | Anti-Pattern | Why It Hurts | Better Shape |
 |--------------|--------------|--------------|
 | fabricated technical detail | creates false facts | verify first |
+| unsupported factual endorsement | turns user assertion into assistant-endorsed fact | acknowledge or verify before agreeing as fact |
+| user preference treated as factual proof | confuses direction with evidence | accept direction separately from factual claims |
 | inference phrased as fact | hides uncertainty | label inference explicitly |
 | hypothesis phrased as verified cause | creates false confidence | keep it tentative |
 | scoped non-finding phrased as non-existence | exaggerates the evidence | state the checked scope |
@@ -171,6 +181,8 @@ When the local signal is git working-state only:
 |--------|--------|
 | Verification rate for technical claims | High |
 | Claim-state separation | High |
+| Unsupported factual endorsement | 0 critical cases |
+| Preference/fact separation | High |
 | Unsupported absence claims | 0 critical cases |
 | Unsupported contradiction from non-finding alone | 0 critical cases |
 | Uncertainty acknowledgment | 100% when evidence is incomplete |
@@ -182,9 +194,9 @@ When the local signal is git working-state only:
 | Rule | Relationship |
 |------|--------------|
 | [../zero-hallucination.md](../zero-hallucination.md) | Runtime implementation |
-| [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns evidence taxonomy, burden-of-proof thresholds, contradiction protocol, and scoped negative-evidence semantics |
-| [accurate-communication.design.md](accurate-communication.design.md) | Owns the communication shape for evidence-threshold wording |
-| [anti-sycophancy.design.md](anti-sycophancy.design.md) | Owns disagreement posture and correction ladder behavior |
+| [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns evidence taxonomy, burden-of-proof thresholds for factual endorsement and contradiction, and scoped negative-evidence semantics |
+| [accurate-communication.design.md](accurate-communication.design.md) | Owns the communication shape for evidence-threshold wording and acknowledgement without endorsement |
+| [anti-sycophancy.design.md](anti-sycophancy.design.md) | Owns evidence-calibrated agreement/disagreement posture and correction ladder behavior |
 | [no-variable-guessing.design.md](no-variable-guessing.design.md) | Owns local lookup discipline and inspected-scope reporting |
 
 ---

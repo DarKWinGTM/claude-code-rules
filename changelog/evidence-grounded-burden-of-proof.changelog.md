@@ -1,8 +1,8 @@
 # Changelog - Evidence-Grounded Burden of Proof
 
 > **Parent Document:** [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md)
-> **Current Version:** 1.4
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,12 +10,32 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-30 | **[Added factual-endorsement burden thresholds](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added burden-of-proof thresholds for agreeing with factual, technical, completion, synchronization, security, and root-cause claims while separating user-owned preference/direction from factual proof | |
 | 1.4 | 2026-04-17 | **[Added git-state evidence limits for disposal conclusions](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.3 | 2026-04-09 | **[Added remembered path-matched context handling to the burden-of-proof model](#version-13)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.2 | 2026-04-06 | **[Added post-compact needs-recheck handling to the burden-of-proof model](#version-12)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.1 | 2026-04-05 | **[Added unresolved governing-basis handling to burden-of-proof model](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-12 | **[Created first-class evidence-grounded-burden-of-proof rule chain](#version-10)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Created a new design/runtime/changelog triad that governs evidence taxonomy, claim-state taxonomy, burden-of-proof thresholds, contradiction protocol, scoped negative-evidence semantics, and evidence-grounded communication across planning, debugging, coding, and review | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added factual-endorsement burden thresholds
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `evidence-grounded-burden-of-proof.md` from v1.4 to v1.5.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.4 to v1.5.
+- Added factual-endorsement thresholds so agreement with factual, technical, completion, synchronization, security, or root-cause claims requires evidence strong enough to state the claim as fact.
+- Added `USER_OWNED_PREFERENCE_OR_DIRECTION` handling so user preferences and directions can be accepted without becoming factual proof.
+- Added agreement/contradiction protocol coverage for verified support, partial evidence, insufficient evidence, and verified contradiction.
+
+### Summary
+Evidence-grounded-burden-of-proof now governs both agreement and contradiction thresholds: user-owned direction remains accepted as direction, while factual endorsement requires checked evidence.
 
 ---
 

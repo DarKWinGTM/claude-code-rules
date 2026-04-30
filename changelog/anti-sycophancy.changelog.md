@@ -1,8 +1,8 @@
 # Changelog - Anti Sycophancy
 
 > **Parent Document:** [../anti-sycophancy.md](../anti-sycophancy.md)
-> **Current Version:** 1.4
-> **Session:** a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2
+> **Current Version:** 1.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-30 | **[Added evidence-calibrated agreement principle](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended anti-sycophancy from disagreement-only posture into evidence-calibrated agreement/disagreement so user preference can be accepted without factual endorsement and factual agreement requires evidence | |
 | 1.4 | 2026-03-27 | **[Added calm constructive correction tone guidance to anti-sycophancy](#version-14)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | | | Summary: Extended anti-sycophancy so disagreement now avoids both praise-heavy softening and rhetorical sharpness, keeping correction calm, useful, and claim-focused | |
 | 1.3 | 2026-03-12 | **[Materialized anti-sycophancy runtime body and added evidence-grounded contradiction ladder](#version-13)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
@@ -20,6 +22,24 @@
 | | | Summary: Added deterministic pre-agreement verification triggers and status labels for evidence-first disagreement behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added evidence-calibrated agreement principle
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `anti-sycophancy.md` from v1.4 to v1.5.
+- Updated `design/anti-sycophancy.design.md` from v1.4 to v1.5.
+- Added an evidence-calibrated agreement principle so the assistant can acknowledge concerns and accept user-owned preferences/directions without endorsing unverified factual claims.
+- Replaced a disagreement-only ladder with a calibration ladder covering user preference/direction, verified support, partial evidence, insufficient evidence, and verified contradiction.
+- Added trigger and forbidden-behavior coverage for root-cause/security claims, unsupported factual endorsement, and preference/fact conflation.
+
+### Summary
+Anti-sycophancy now prevents over-agreement without becoming a rigid "never agree" rule: agreement is allowed when evidence supports it, user direction remains accepted as direction, and contradictions stay claim-focused and evidence-grounded.
 
 ---
 

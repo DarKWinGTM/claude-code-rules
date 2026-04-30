@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.76
+> **Current Version:** 9.77
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.77 | 2026-04-30 | **[Added evidence-calibrated agreement refinement](#version-977)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.76 | 2026-04-29 | **[Added completed documentation surface governance](#version-976)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.75 | 2026-04-27 | **[Added design-to-phase execution synthesis](#version-975)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.74 | 2026-04-25 | **[Added phase closeout feature and impact reporting](#version-974)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -110,6 +111,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-977"></a>
+## Version 9.77: Added evidence-calibrated agreement refinement
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `anti-sycophancy.md` and `design/anti-sycophancy.design.md` from v1.4 to v1.5 so agreement/disagreement posture is evidence-calibrated instead of disagreement-only or pleasing-first.
+- Updated `evidence-grounded-burden-of-proof.md` and `design/evidence-grounded-burden-of-proof.design.md` from v1.4 to v1.5 so factual endorsement and contradiction share evidence thresholds while user-owned preference/direction remains separate from proof.
+- Updated `accurate-communication.md` and `design/accurate-communication.design.md` from v2.18 to v2.19 with wording for acknowledgement without endorsement, evidence-backed agreement, preference/direction acceptance, and claim-focused correction.
+- Updated `zero-hallucination.md` and `design/zero-hallucination.design.md` from v1.4 to v1.5 so unsupported factual agreement is treated as a hallucination risk.
+- Synchronized README, TODO, master design, master changelog, phase summary, the P078 phase record, and the P078 patch artifact for the source governance release.
+- Kept runtime install out of scope until a separate explicit runtime-install gate is requested.
+
+### Summary
+P078 adds evidence-calibrated agreement: the assistant can acknowledge concerns and accept user-owned direction, but factual agreement now requires evidence strong enough to state the claim as fact, and evidence-backed disagreement stays calm, claim-focused, and proportionate.
 
 ---
 

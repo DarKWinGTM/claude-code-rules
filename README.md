@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.76</b><br><sub>Current Source State</sub>
+  <b>v9.77</b><br><sub>Current Source State</sub>
 </td>
 <td align="center" width="200">
   <b>41</b><br><sub>Active Runtime Rules</sub>
@@ -282,10 +282,10 @@ Please:
 <td width="50%">
 
 #### 🛡️ Anti-Sycophancy
-- Truth over agreement
-- Claim-focused corrections when evidence supports them
-- No false praise or unsupported agreement
-- Partial evidence stays caveated
+- Evidence-calibrated agreement, not automatic agreement
+- User preference/direction stays separate from factual proof
+- Factual agreement requires checked evidence
+- Claim-focused corrections remain allowed when evidence conflicts
 
 </td>
 </tr>
@@ -304,7 +304,8 @@ Please:
 #### Runtime Context Discipline
 - 41 active runtime rules only
 - P073 source compression completed and audited
-- P073 source/runtime install parity verified; P077 runtime install is a separate gate
+- P073/P077 runtime install parity was verified only after explicit install gates
+- P078 is a source/release refinement until a separate runtime install request is made
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -327,8 +328,8 @@ Please:
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`anti-mockup.md`](anti-mockup.md) | Real systems over simulations | No fake implementations |
-| [`anti-sycophancy.md`](anti-sycophancy.md) | Truth over agreement | Honest feedback that stays calm, claim-focused, and free of praise-heavy softening |
-| [`zero-hallucination.md`](zero-hallucination.md) | Verify-first factual discipline | Fact, inference, hypothesis, uncertainty, and scoped non-findings stay separate |
+| [`anti-sycophancy.md`](anti-sycophancy.md) | Evidence-calibrated agreement/disagreement | Honest feedback that can accept user direction without factual endorsement and can correct claims when evidence conflicts |
+| [`zero-hallucination.md`](zero-hallucination.md) | Verify-first factual discipline | Fact, preference/direction, inference, hypothesis, uncertainty, scoped non-findings, and factual endorsement stay separate |
 
 ---
 
@@ -338,7 +339,7 @@ Please:
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, reusable partial-evidence technical snapshot wording, stronger human-language glosses, easy-explanation continuity so plain Thai explanations stay simple through the full answer, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking Team Agent reporting with observed-vs-inferred state separation, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, explicit memory-derived-context disclosure wording for path-matched remembered context, natural-professional wording, direct human-readable action/result wording preferred over metaphor-heavy internal shorthand, main-point-first framing for diagnosis/test/recommendation/proposal/update answers, evidence-honest phase closeout delivery/feature/impact wording, continuation-first guidance, clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real, and active summaries that keep resolved topics available for reasoning without repeating them as current issues by default |
+| [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, acknowledgement without factual endorsement, evidence-backed agreement, user-owned preference/direction separation, reusable partial-evidence technical snapshot wording, stronger human-language glosses, easy-explanation continuity so plain Thai explanations stay simple through the full answer, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking Team Agent reporting with observed-vs-inferred state separation, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, explicit memory-derived-context disclosure wording for path-matched remembered context, natural-professional wording, direct human-readable action/result wording preferred over metaphor-heavy internal shorthand, main-point-first framing for diagnosis/test/recommendation/proposal/update answers, evidence-honest phase closeout delivery/feature/impact wording, continuation-first guidance, clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real, and active summaries that keep resolved topics available for reasoning without repeating them as current issues by default |
 | [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts, resolve phase posture from sufficiently clear governed design when staged execution is warranted, initialize live task tracking early when non-trivial work needs visible execution state, treat phase-backed live task tracking as expected startup behavior, keep initialized live task lists as the continuing surface for the active objective, keep newly encountered unclear files in classification-first posture rather than disposal-first posture, and keep patch non-default during greenfield startup unless a real before/after review surface exists |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, checked master/governed repo surfaces outrank git-state cleanup heuristics when classifying file meaning, runtime co-location is not ownership authority, destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification or cleanup, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, user-declared RULES-first issues stay RULES-first instead of being diverted into memory-first fixes, memory applicability now defers to the dedicated memory-governance owner, non-matching path-scoped remembered context cannot override the current repo/objective, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
@@ -348,7 +349,7 @@ Please:
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Active blueprint/target-state structure, no default `design/done/`, and required capture of implementation-relevant truth extracted from external docs/specs/provider references when later work still depends on it |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed before/after patch/review artifacts outside the live `/phase` workspace, with `patch/done/` as inactive completed patch history rather than junk or active phase input by default |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
-| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds, contradiction protocol, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
+| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds for factual endorsement and contradiction, user-owned preference/direction separation, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Clarifies destructive, ambiguous, or high-impact intent before execution, with a real delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep any optional external recall generic, supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
@@ -397,7 +398,7 @@ Please:
 
 **📊 Active Runtime Rules: 41**
 
-Latest refinement: P077 added completed documentation surface governance so completed phase, patch, and changelog history can move to inactive `done/` surfaces, while active design remains blueprint/target-state authority with no default `design/done/`; Main RULES runtime install remains a separate explicit gate scoped to the 41 source-owned active runtime files, and co-located destination files outside that source-owned set remain other-owner/out-of-scope until owner/project scope is selected or verified.
+Latest refinement: P078 added evidence-calibrated agreement so the assistant can acknowledge concerns and accept user-owned preference/direction without endorsing unverified factual claims; factual agreement now requires evidence strong enough to state the claim as fact, and evidence-backed disagreement remains claim-focused when checked evidence conflicts.
 </div>
 
 ---
@@ -855,7 +856,7 @@ Architect lens  ──┘
 <td align="center" width="33%">
 <img src="img/anti-sycophancy.png" width="280"><br>
 <b>Anti-Sycophancy</b><br>
-<sub>Truth over pleasing</sub>
+<sub>Evidence-calibrated agreement</sub>
 </td>
 <td align="center" width="33%">
 <img src="img/anti-mockup.png" width="280"><br>
@@ -998,7 +999,7 @@ Architect lens  ──┘
 <tr>
 <td align="center" width="33%">
 <b>Accurate Communication</b><br>
-<sub>Evidence-honest wording, bounded technical snapshots, and claim-strength discipline</sub>
+<sub>Evidence-honest wording, bounded technical snapshots, claim-strength discipline, and acknowledgement without endorsement</sub>
 </td>
 <td align="center" width="33%">
 <b>Natural Professional Communication</b><br>
@@ -1100,8 +1101,8 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 41 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073 install parity was verified; P077 is a source-only governance release until a separate runtime install gate runs | Avoids overclaiming source/runtime parity for source-only updates |
-| Evidence discipline | Fact, inference, hypothesis, uncertainty, memory, and scoped non-finding stay separate | Reduces overclaim and hallucination risk |
+| Runtime install boundary | P073 and P077 install parity were verified after explicit install gates; P078 remains source/release-only until a separate runtime install request runs | Avoids overclaiming source/runtime parity for source-only updates |
+| Evidence discipline | Fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, and scoped non-finding stay separate | Reduces overclaim, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture, order, and current-phase tasks when staged work is warranted | Reduces retrospective phase backfill |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
 | Shared destination boundary | Co-located runtime files outside the source-owned set are not cleanup targets by default | Prevents other-owner file damage |
@@ -1121,7 +1122,7 @@ Result: ✅ Verified from actual files
 | **No Mock/Stub by Default** | Prefer real systems and clearly label or avoid fake implementations unless explicitly requested |
 | **No Guessing** | Verify local paths, values, symbols, and configuration before treating them as known |
 | **Evidence-Honest Claims** | Match wording strength to checked evidence and disclose scoped non-findings |
-| **No Sycophancy** | Prefer truth over agreement, with claim-focused corrections when evidence supports them |
+| **No Sycophancy** | Use evidence-calibrated agreement: accept user direction without factual endorsement, agree when evidence supports it, and correct claims when evidence conflicts |
 | **Destructive-Action Guard** | Cleanup, hygiene, isolation, or worktree rationale never authorizes deletion by itself |
 
 **The practical goal is safe, evidence-grounded AI behavior that keeps user authority intact.**
@@ -1191,8 +1192,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.76 |
-  <b>Last Updated</b>: 2026-04-29 |
+  <b>Version</b>: 9.77 |
+  <b>Last Updated</b>: 2026-04-30 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

@@ -1,10 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-29
+> **Last Updated:** 2026-04-30
 
 ---
 
 ## ✅ Completed
+
+- [x] Complete P078 evidence-calibrated agreement refinement: update `anti-sycophancy`, `evidence-grounded-burden-of-proof`, `accurate-communication`, and `zero-hallucination` so acknowledgement and user-owned preference/direction stay separate from factual endorsement, factual agreement requires evidence, and evidence-backed disagreement remains claim-focused; synchronize companion design/changelog files, README, master design/changelog, TODO, phase, and patch records; keep runtime install out of scope until separately requested; and prepare the governed source update for git publish/release.
 
 - [x] Complete P077 completed documentation surface governance: update `project-documentation-standards`, `document-design-control`, `document-changelog-control`, `document-patch-control`, and `phase-implementation` so completed phase, patch, and changelog history can move to inactive `done/` surfaces while active design remains blueprint/target-state authority with no default `design/done/`; synchronize README, master design/changelog, TODO, phase, and patch records; keep source runtime install scope unchanged; and prepare the governed source update for git publish/release.
 
@@ -148,6 +150,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-04-30 | Completed P078 evidence-calibrated agreement refinement: added principle-based agreement/disagreement calibration across anti-sycophancy, burden-of-proof, accurate communication, and zero-hallucination owners; separated acknowledgement and user-owned preference/direction from factual endorsement; required evidence for factual agreement; synchronized README/master governance records; and kept runtime install out of scope until separately requested. |
 | 2026-04-29 | Completed P077 completed documentation surface governance: added inactive-by-default `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces; preserved design as active blueprint authority with no default `design/done/`; synchronized README/master governance records; and kept completed history distinct from junk/deletion authority. |
 | 2026-04-27 | Completed P076 design-to-phase execution synthesis: updated `phase-implementation` and `artifact-initiation-control`; synchronized companion design/changelog/README/TODO/phase/patch records; installed the 41 active runtime rule files; verified source/runtime parity; and preserved other-owner runtime destination files as out of scope unless selected or verified. |
 | 2026-04-25 | Completed P075 phase closeout feature impact reporting: updated `response-closing-and-action-framing`, `phase-implementation`, `answer-presentation`, `accurate-communication`, and `explanation-quality`; synchronized companion design/changelog/README/TODO/phase/patch records; installed the 41 active runtime rule files; verified source/runtime parity; and preserved other-owner runtime destination files as out of scope unless selected or verified. |

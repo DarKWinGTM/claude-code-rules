@@ -1,8 +1,8 @@
 # Changelog - Zero Hallucination
 
 > **Parent Document:** [../zero-hallucination.md](../zero-hallucination.md)
-> **Current Version:** 1.4
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-04-30 | **[Added unsupported factual-endorsement hallucination risk](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended zero-hallucination so unsupported agreement with factual claims is treated as a hallucination risk, while user preference/direction remains separate from factual proof | |
 | 1.4 | 2026-04-17 | **[Added git-state negative-claim limits for file disposability](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | | | Summary: Extended zero-hallucination so git-state signals remain local observations only and do not justify claims that a file is irrelevant, non-governed, or disposable | |
 | 1.3 | 2026-03-12 | **[Materialized zero-hallucination runtime body and added evidence-state / negative-claim discipline](#version-13)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
@@ -20,6 +22,24 @@
 | | | Summary: Added deterministic verification triggers and status labels across runtime/design contract text | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added unsupported factual-endorsement hallucination risk
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `zero-hallucination.md` from v1.4 to v1.5.
+- Updated `design/zero-hallucination.design.md` from v1.4 to v1.5.
+- Added guidance that unsupported agreement with a factual claim is a hallucination risk when it turns a user assertion into assistant-endorsed fact.
+- Added user preference/direction separation so user-owned choices can be accepted without becoming factual proof.
+- Updated verification triggers, examples, anti-patterns, and quality metrics for factual endorsement.
+
+### Summary
+Zero-hallucination now treats factual agreement as a verification-sensitive claim path: the assistant may accept preferences as direction, but factual endorsement still needs evidence.
 
 ---
 
