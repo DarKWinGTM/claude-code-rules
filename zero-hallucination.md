@@ -1,12 +1,12 @@
 # Zero Hallucination Policy
-> **Current Version:** 1.5
-> **Design:** [design/zero-hallucination.design.md](design/zero-hallucination.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/zero-hallucination.design.md](design/zero-hallucination.design.md) v1.6
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/zero-hallucination.changelog.md](changelog/zero-hallucination.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: State or endorse as fact only what relevant evidence supports; keep fact, preference/direction, inference, hypothesis, unresolved uncertainty, and scoped non-finding separate.**
-This rule owns verify-first factual discipline, source priority, factual claim-state separation, unsupported factual-endorsement risk, and absence-reporting discipline.
+**Core Principle: State or endorse as fact only what relevant evidence supports, seek practical evidence for material factual premises, and never turn evidence-seeking into invented certainty.**
+Keep fact, preference/direction, inference, hypothesis, unresolved uncertainty, and scoped non-finding separate. This rule owns verify-first factual discipline, source priority, factual claim-state separation, unsupported factual-endorsement risk, proof-aware uncertainty, and absence-reporting discipline.
 ---
 ## Core Contract
 ### Verify first
@@ -14,8 +14,10 @@ Do not state or endorse technical or project-specific claims as fact until relev
 Required guidance:
 - verify external facts with authoritative external sources when possible
 - verify local/project facts with observed local evidence when possible
+- seek practical evidence for material factual premises before substantial analysis, design, recommendation, agreement, or disagreement
 - acknowledge uncertainty before making or agreeing with a strong factual claim when verification is incomplete
 - accept user preference/direction as user-owned input, not as factual proof
+- when evidence is unavailable or incomplete, label assumptions or hypotheses instead of inventing proof
 ### Source priority
 Not all evidence has equal weight.
 | Source Class | Typical Use | Default Priority |
@@ -29,6 +31,7 @@ Required guidance:
 - do not let inference outrank direct evidence
 - do not let memory outrank a checked source
 - do not let user assertion alone become assistant-endorsed factual truth
+- do not treat ordinary evidence as a rigid final decision lock unless it is a hard constraint, authoritative requirement, safety boundary, or verified contradiction
 - do not let failed search become a strong absence claim
 ### Claim-state separation
 | Claim State | Required Shape |
@@ -55,6 +58,7 @@ Verify before factual claims or factual endorsement when these appear:
 | Trigger | Required action |
 |---|---|
 | user preference/direction | accept as direction without presenting it as factual proof |
+| substantial analysis/design/recommendation | seek practical evidence for material factual premises; label assumptions when proof is incomplete |
 | specific technical claim | verify with authoritative or relevant direct evidence before stating or agreeing as fact |
 | project-specific reference | verify path/symbol/env/config with project tools |
 | cross-file impact claim | verify impacted artifacts before claiming sync/no drift |
@@ -78,6 +82,7 @@ Verified external fact: According to official documentation, the supported key i
 Observed local fact: In the checked `.env` file, `PORT=3001`.
 Evidence-backed agreement: The checked evidence supports that claim.
 Preference/direction: I can use that as the working preference, but it is not factual proof by itself.
+Proof-aware recommendation: The checked evidence grounds this recommendation, but it does not prove this is the only valid design.
 Evidence-backed inference: Based on the checked config and startup error, the likely issue is a missing database variable.
 Working hypothesis: One possibility is stale cache, but I have not verified it.
 Scoped non-finding: I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did not find `DATABASE_URL` there.
@@ -90,6 +95,8 @@ Git-state local observation: I saw the file is untracked, but that is only local
 | fabricated technical detail | verify first |
 | unsupported factual endorsement | acknowledge or verify before agreeing as fact |
 | user preference treated as factual proof | accept direction separately from factual claims |
+| proof-aware reasoning becomes invented proof | label assumptions or unresolved uncertainty instead |
+| ordinary evidence treated as a rigid final lock | bind only hard constraints, authoritative requirements, safety boundaries, or verified contradictions |
 | inference stated as fact | mark inference |
 | hypothesis stated as cause | keep tentative |
 | scoped non-finding treated as absence | say what was checked |
@@ -100,6 +107,7 @@ Git-state local observation: I saw the file is untracked, but that is only local
 | Metric | Target |
 |---|---|
 | Verification rate for technical claims | High |
+| Evidence-seeking without invented certainty | High |
 | Fact vs preference vs inference vs hypothesis separation | High |
 | Unsupported factual endorsement | 0 critical cases |
 | Unsupported absence claims | 0 critical cases |

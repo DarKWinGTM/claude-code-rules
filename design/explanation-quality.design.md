@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.20
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
+> **Current Version:** 2.21
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-30)
 
 ---
 
@@ -17,6 +17,7 @@ The target behavior is a layered natural explanation style:
 - purpose-first framing when the reader needs to know what the explanation is doing before the detail starts
 - simple explanation before deep protocol detail
 - compact technical snapshot when status or checked scope matters
+- proof-aware recommendation/design explanation that shows checked evidence, what it proves, what it does not prove, and the decision implication
 - step-by-step implication or fix path when walkthrough value exists
 - explicit clarification of what the thing is, what it is not, what happens now, and what stays deferred when scope management matters
 - explicit clarification of what variable names, field names, config keys, enum-like values, and internal labels mean when the explanation depends on them
@@ -46,6 +47,8 @@ Observed failure modes:
 - recommendations arrive before the reasoning that justifies them
 - the explanation starts with setup detail and only reveals its purpose later
 - abstract analytical claims appear without a concrete example or clarifying model
+- evidence is cited without explaining what it proves, what it does not prove, or how it affects the recommendation
+- ordinary evidence is explained as if it mandates one design path without showing the hard-constraint boundary
 - changes are described as one blob instead of before/after or patch-by-patch progression
 - endings repeat prior detail instead of synthesizing the real conclusion
 - responses stop after explanation without making the next action or completion state clear
@@ -72,6 +75,7 @@ Typical triggers:
 - process, sequence, or state-transition explanation
 - technical comparison between options
 - recommendation requests where the user needs to understand why
+- proof-aware design/recommendation where checked evidence materially shapes the decision but does not necessarily lock it
 - implementation progress, troubleshooting state, or verification checkpoints where a compact status snapshot improves clarity
 - change walkthroughs where before/after or patch-by-patch framing helps
 - phase-backed closeouts where the user needs to understand what was developed, improved, enabled, or locked
@@ -203,6 +207,18 @@ Meaning:
 
 For explanation-heavy answers, stopping at the claim is insufficient when the mechanism materially affects user understanding.
 
+### 5.1 Proof-Aware Explanation Pattern
+
+When evidence grounds analysis, design, recommendation, or disagreement, the explanation should preserve the evidence boundary:
+- checked evidence
+- what the evidence proves
+- what the evidence suggests
+- what the evidence does not prove
+- which parts are hard constraints versus ordinary grounding input
+- the resulting implication or bounded recommendation
+
+This keeps proof useful without turning incomplete evidence into false certainty or a rigid decision lock.
+
 ---
 
 ## 6) Stepwise Natural Explanation Guidance
@@ -241,7 +257,7 @@ Required guidance:
 
 ### 7.1 Example Requirement
 
-When an explanation is abstract, analytical, or recommendation-heavy, include at least one concrete clarifier unless the task is too simple to need one.
+When an explanation is abstract, analytical, proof-aware, or recommendation-heavy, include at least one concrete clarifier unless the task is too simple to need one.
 
 Acceptable clarifier forms:
 - request/response lifecycle
@@ -504,7 +520,23 @@ After: the policy check moved into shared middleware.
 Why this matters: transport-specific handlers now stay thinner, while the same rule logic can be reused across routes and background jobs.
 ```
 
-### Pattern 2.1: List instead of table for sequence
+### Pattern 2.1: Proof-aware recommendation
+
+```markdown
+Checked evidence:
+- Official API docs require signed callbacks.
+- The current repo already stores callback state in `payment_events`.
+
+What this proves:
+- signature validation is a hard integration requirement.
+
+What this does not prove:
+- it does not prove one internal module layout is the only valid design.
+
+Recommendation: validate signatures at the callback boundary, then choose the storage layout that best fits the existing event flow.
+```
+
+### Pattern 2.2: List instead of table for sequence
 
 ```markdown
 Current work order:
@@ -514,7 +546,7 @@ Current work order:
 4. tests and verification
 ```
 
-### Pattern 2.2: Bullets instead of table for simple status
+### Pattern 2.3: Bullets instead of table for simple status
 
 ```markdown
 Current status:
@@ -739,6 +771,8 @@ Success condition
 | architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
 | the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
 | phase closeout starts with governance/file/task detail only | the reader cannot see what the phase developed, improved, or enabled | start with delivered feature/improvement and practical impact before deeper governance detail |
+| proof cited without explaining what it proves or does not prove | the user cannot tell whether evidence is a hard constraint or only support | show evidence boundary and decision implication |
+| ordinary evidence treated as a rigid design lock | trade-offs disappear without proof | separate hard constraints from grounding input |
 | raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |
 | comparison in scattered bullets | trade-offs become harder to evaluate | use a compact comparison table |
 | sequence forced into a table | the reader gets a heavier layout than the information needs | use a numbered list instead |
@@ -751,13 +785,13 @@ Success condition
 
 | Rule | Relationship |
 |------|--------------|
-| `accurate-communication.md` | Keeps broader communication honesty, user-friendly glosses, and continuation-vs-option wording outside explanation-flow ownership |
+| `accurate-communication.md` | Keeps broader communication honesty, proof-aware wording, user-friendly glosses, and continuation-vs-option wording outside explanation-flow ownership |
 | `technical-snapshot-communication.md` | Owns bounded technical snapshot wording semantics |
 | `response-closing-and-action-framing.md` | Owns concise synthesis, recommendation-with-reason framing, and advisory proposal framing |
 | `answer-presentation.md` | Owns the layout of snapshot sections, headings, and small fact tables |
 | `flow-diagram-no-frame.md` | Governs any text flow diagram used by this rule |
-| `zero-hallucination.md` | Preserves verification requirements for technical claims inside explanations |
-| `anti-sycophancy.md` | Prevents recommendation quality from drifting into agreement without reasoning |
+| `zero-hallucination.md` | Preserves verification requirements for technical claims and prevents proof-aware explanations from inventing certainty |
+| `anti-sycophancy.md` | Prevents recommendation quality from drifting into agreement without evidence-grounded reasoning |
 
 ---
 

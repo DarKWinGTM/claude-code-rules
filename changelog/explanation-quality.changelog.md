@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.20
+> **Current Version:** 2.21
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.21 | 2026-04-30 | **[Added proof-aware recommendation and design explanation flow](#version-221)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added an explanation pattern that shows checked evidence, what it proves, what it does not prove, and whether it is a hard constraint or ordinary grounding input | |
 | 2.20 | 2026-04-25 | **[Added phase closeout delivery and impact explanation flow](#version-220)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.19 | 2026-04-22 | **[Made table use more proactive for diagnostic and multi-field explanation](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -54,6 +56,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-221"></a>
+## Version 2.21: Added proof-aware recommendation and design explanation flow
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `explanation-quality.md` from v2.20 to v2.21.
+- Updated `design/explanation-quality.design.md` from v2.20 to v2.21.
+- Added proof-aware explanation guidance for analysis, design, recommendation, and disagreement when factual evidence materially shapes judgment.
+- Added a pattern that separates checked evidence, what it proves, what it does not prove, and the decision implication.
+- Clarified that evidence can ground a recommendation without proving one design is the only valid path.
+
+### Summary
+Explanation-quality now explains evidence-grounded recommendations in a bounded way: the user can see the proof basis, the remaining assumptions or trade-offs, and the practical implication.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Evidence-Grounded Burden of Proof
 
 > **Parent Document:** [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-04-30 | **[Added evidence-seeking proof-aware reasoning thresholds](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added evidence-seeking / proof-aware reasoning so practical evidence grounds analysis, design, recommendation, agreement, and disagreement without becoming a rigid decision lock unless it is a hard constraint or verified contradiction | |
 | 1.5 | 2026-04-30 | **[Added factual-endorsement burden thresholds](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added burden-of-proof thresholds for agreeing with factual, technical, completion, synchronization, security, and root-cause claims while separating user-owned preference/direction from factual proof | |
 | 1.4 | 2026-04-17 | **[Added git-state evidence limits for disposal conclusions](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -18,6 +20,24 @@
 | 1.1 | 2026-04-05 | **[Added unresolved governing-basis handling to burden-of-proof model](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-12 | **[Created first-class evidence-grounded-burden-of-proof rule chain](#version-10)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Created a new design/runtime/changelog triad that governs evidence taxonomy, claim-state taxonomy, burden-of-proof thresholds, contradiction protocol, scoped negative-evidence semantics, and evidence-grounded communication across planning, debugging, coding, and review | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added evidence-seeking proof-aware reasoning thresholds
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `evidence-grounded-burden-of-proof.md` from v1.5 to v1.6.
+- Updated `design/evidence-grounded-burden-of-proof.design.md` from v1.5 to v1.6.
+- Added evidence-seeking guidance for substantial analysis, design, recommendation, agreement, and disagreement when factual grounding would materially improve judgment.
+- Added thresholds separating ordinary evidence as grounding input from hard constraints, authoritative requirements, safety boundaries, and verified contradictions.
+- Added protocol, operational application, anti-pattern, quality metric, and integration coverage for proof-aware reasoning.
+
+### Summary
+Evidence-grounded-burden-of-proof now makes proof useful without making it falsely deterministic: practical evidence should ground judgment, while only true constraints or verified contradictions lock the decision path.
 
 ---
 

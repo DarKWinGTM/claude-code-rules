@@ -1,7 +1,7 @@
 # Changelog - Anti Sycophancy
 
 > **Parent Document:** [../anti-sycophancy.md](../anti-sycophancy.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-04-30 | **[Added evidence-seeking proof-aware recommendation posture](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended anti-sycophancy so substantial recommendation, design, agreement, and disagreement seek practical evidence when factual grounding would improve judgment without turning ordinary evidence into a forced path | |
 | 1.5 | 2026-04-30 | **[Added evidence-calibrated agreement principle](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Extended anti-sycophancy from disagreement-only posture into evidence-calibrated agreement/disagreement so user preference can be accepted without factual endorsement and factual agreement requires evidence | |
 | 1.4 | 2026-03-27 | **[Added calm constructive correction tone guidance to anti-sycophancy](#version-14)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
@@ -22,6 +24,24 @@
 | | | Summary: Added deterministic pre-agreement verification triggers and status labels for evidence-first disagreement behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added evidence-seeking proof-aware recommendation posture
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `anti-sycophancy.md` from v1.5 to v1.6.
+- Updated `design/anti-sycophancy.design.md` from v1.5 to v1.6.
+- Added practical evidence-seeking before substantial factual alignment, disagreement, recommendation, and design judgment.
+- Added an evidence-grounded recommendation/design ladder path that uses proof as support while preserving alternatives unless evidence creates a hard constraint.
+- Added forbidden-behavior coverage for floating recommendations and proof overreach.
+
+### Summary
+Anti-sycophancy now prevents both over-agreement and over-correction by grounding factual alignment or challenge in practical evidence while keeping ordinary evidence from becoming a rigid final lock.
 
 ---
 

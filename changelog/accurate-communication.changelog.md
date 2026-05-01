@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.19
+> **Current Version:** 2.20
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.20 | 2026-04-30 | **[Added proof-aware recommendation and design wording](#version-220)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added wording that separates checked evidence, assumptions, hard constraints, and open trade-offs when evidence grounds analysis, recommendation, design, or disagreement | |
 | 2.19 | 2026-04-30 | **[Added evidence-calibrated agreement wording](#version-219)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.18 | 2026-04-25 | **[Added evidence-honest phase closeout delivery and impact wording](#version-218)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.17 | 2026-04-17 | **[Extracted technical snapshot and response-closing ownership into new first-class chains](#version-217)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -57,6 +59,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-220"></a>
+## Version 2.20: Added proof-aware recommendation and design wording
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `accurate-communication.md` from v2.19 to v2.20.
+- Updated `design/accurate-communication.design.md` from v2.19 to v2.20.
+- Added proof-aware recommendation/design wording that names checked evidence without overstating it as the only valid path.
+- Added guidance to separate what evidence proves, what it suggests, and what remains trade-off, judgment, preference, assumption, or hypothesis.
+- Added checklist and anti-pattern coverage against recommendations from unchecked assumptions and ordinary evidence phrased as a rigid final lock.
+
+### Summary
+Accurate-communication now gives wording for evidence-grounded recommendations and designs so proof improves the answer without becoming false certainty or a forced decision lock.
 
 ---
 

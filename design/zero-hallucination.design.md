@@ -3,20 +3,21 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-30)
 
 ---
 
 ## 1) Goal
 
-Define one runtime rule chain for verify-first factual discipline so the assistant states or endorses as fact only what the relevant evidence supports, keeps preference/direction, inference, and hypothesis visibly separate, and avoids overstating absence from limited search results.
+Define one runtime rule chain for verify-first factual discipline so the assistant states or endorses as fact only what the relevant evidence supports, seeks practical evidence for material factual premises, keeps preference/direction, inference, and hypothesis visibly separate, and avoids overstating absence from limited search results.
 
 This chain is the factual-claim owner for:
 - verify-first factual discipline
 - source-priority behavior
 - fact vs preference/direction vs inference vs hypothesis separation for technical claims
 - unsupported factual-endorsement risk
+- proof-aware uncertainty when evidence is used to ground analysis, design, or recommendation
 - negative-claim / absence discipline
 - uncertainty honesty when evidence is incomplete
 
@@ -30,11 +31,14 @@ The original zero-hallucination rule correctly rejected fabrication, but it stil
 - it did not define a stronger evidence contract for negative claims and absence wording
 - it did not clearly distinguish between authoritative external evidence and observed local evidence
 - it did not explicitly guard against treating limited non-findings as contradiction or non-existence
+- it did not make clear that proof-aware reasoning should seek evidence without inventing proof or forcing rigid certainty from incomplete evidence
 
 Observed failure modes:
 - a likely conclusion is stated as fact
 - an unverified user assertion is endorsed as correct because agreement feels smoother
 - a user preference is worded like factual proof
+- a design or recommendation is built from unchecked assumptions when practical evidence was available
+- ordinary evidence is treated as a rigid final lock even though it only grounds judgment
 - a limited repo search is treated as proof of absence
 - lack of evidence is used like contrary evidence
 - a local fact and a broader platform fact are discussed as though they had the same proof burden
@@ -51,8 +55,10 @@ Technical and project-specific claims should be verified before being stated or 
 Required guidance:
 - verify external claims with relevant authoritative sources when possible
 - verify local claims with observed local evidence when possible
+- seek practical evidence for material factual premises before substantial analysis, design, recommendation, agreement, or disagreement
 - if verification is incomplete, do not promote the claim to fact status through either direct statement or agreement
 - accept user preference/direction as user-owned input, not as factual proof
+- label assumptions or hypotheses when evidence remains incomplete instead of inventing proof
 
 ### 3.2 Source-Priority Principle
 Evidence should be weighted by relevance and directness.
@@ -69,6 +75,7 @@ Required guidance:
 - do not let inference outrank direct evidence
 - do not let memory outrank a checked source
 - do not let user assertion alone become assistant-endorsed factual truth
+- do not treat ordinary evidence as a rigid final decision lock unless it is a hard constraint, authoritative requirement, safety boundary, or verified contradiction
 - do not let limited search failure behave like strong absence proof
 
 ### 3.3 Claim-State Separation Principle
@@ -103,6 +110,7 @@ Treat claims as verification-required when any of the following signals appear:
 | Trigger | Typical Signal | Required Action |
 |---------|----------------|-----------------|
 | user preference/direction | priority, style, scope, or selected approach | accept as direction without presenting it as factual proof |
+| substantial analysis/design/recommendation | standard, architecture, implementation direction, trade-off claim | seek practical evidence for material factual premises; label assumptions when proof is incomplete |
 | specific technical claim | endpoint, version, flag, syntax, config option | verify with authoritative or relevant direct evidence before stating or agreeing as fact |
 | project-specific reference | file path, symbol, config key, environment variable | verify with project tools before reference |
 | cross-artifact completion claim | "all updated", "fully synchronized", "no drift" | verify the affected artifacts before claiming completion |
@@ -146,6 +154,9 @@ Prefer observed local evidence and name the checked scope when material.
 ### 6.3 Analytical/debugging claims
 Inference is allowed, but it must remain clearly inferential until directly supported.
 
+### 6.3.1 Proof-aware design/recommendation claims
+Evidence can ground analysis and recommendation, but incomplete evidence must not be presented as proof or as the only possible valid design. Hard-constraint wording requires a hard constraint, authoritative requirement, safety boundary, or verified contradiction.
+
 ### 6.4 Absence claims
 Choose between:
 - scoped non-finding
@@ -167,6 +178,8 @@ When the local signal is git working-state only:
 | fabricated technical detail | creates false facts | verify first |
 | unsupported factual endorsement | turns user assertion into assistant-endorsed fact | acknowledge or verify before agreeing as fact |
 | user preference treated as factual proof | confuses direction with evidence | accept direction separately from factual claims |
+| proof-aware reasoning becomes invented proof | creates false evidence | label assumptions or unresolved uncertainty instead |
+| ordinary evidence treated as rigid final lock | creates false determinism | bind only hard constraints, authoritative requirements, safety boundaries, or verified contradictions |
 | inference phrased as fact | hides uncertainty | label inference explicitly |
 | hypothesis phrased as verified cause | creates false confidence | keep it tentative |
 | scoped non-finding phrased as non-existence | exaggerates the evidence | state the checked scope |
@@ -180,6 +193,7 @@ When the local signal is git working-state only:
 | Metric | Target |
 |--------|--------|
 | Verification rate for technical claims | High |
+| Evidence-seeking without invented certainty | High |
 | Claim-state separation | High |
 | Unsupported factual endorsement | 0 critical cases |
 | Preference/fact separation | High |
@@ -194,7 +208,7 @@ When the local signal is git working-state only:
 | Rule | Relationship |
 |------|--------------|
 | [../zero-hallucination.md](../zero-hallucination.md) | Runtime implementation |
-| [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns evidence taxonomy, burden-of-proof thresholds for factual endorsement and contradiction, and scoped negative-evidence semantics |
+| [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns evidence taxonomy, proof-aware reasoning, burden-of-proof thresholds for factual endorsement and contradiction, and scoped negative-evidence semantics |
 | [accurate-communication.design.md](accurate-communication.design.md) | Owns the communication shape for evidence-threshold wording and acknowledgement without endorsement |
 | [anti-sycophancy.design.md](anti-sycophancy.design.md) | Owns evidence-calibrated agreement/disagreement posture and correction ladder behavior |
 | [no-variable-guessing.design.md](no-variable-guessing.design.md) | Owns local lookup discipline and inspected-scope reporting |

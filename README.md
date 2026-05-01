@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.77</b><br><sub>Current Source State</sub>
+  <b>v9.78</b><br><sub>Current Source State</sub>
 </td>
 <td align="center" width="200">
   <b>41</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Source-Only</b><br><sub>Runtime Install Deferred</sub>
+  <b>Installed</b><br><sub>Runtime Parity Verified</sub>
 </td>
 <td align="center" width="200">
   <b>Evidence First</b><br><sub>Verify Before Strong Claims</sub>
@@ -273,16 +273,16 @@ Please:
 <td width="50%">
 
 #### 🔍 Evidence-First Accuracy
-- Verify before strong factual claims
+- Seek practical proof before substantial reasoning when material
 - Separate fact, inference, hypothesis, and scoped non-finding
+- Use evidence as grounding, not an automatic decision lock
 - No guessing local paths, values, symbols, or config
-- Cite checked scope when evidence boundaries matter
 
 </td>
 <td width="50%">
 
 #### 🛡️ Anti-Sycophancy
-- Evidence-calibrated agreement, not automatic agreement
+- Evidence-seeking agreement, design, recommendation, and challenge
 - User preference/direction stays separate from factual proof
 - Factual agreement requires checked evidence
 - Claim-focused corrections remain allowed when evidence conflicts
@@ -304,8 +304,8 @@ Please:
 #### Runtime Context Discipline
 - 41 active runtime rules only
 - P073 source compression completed and audited
-- P073/P077 runtime install parity was verified only after explicit install gates
-- P078 is a source/release refinement until a separate runtime install request is made
+- P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
+- P079 source/runtime release artifacts are ready for git push and release
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -328,8 +328,8 @@ Please:
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`anti-mockup.md`](anti-mockup.md) | Real systems over simulations | No fake implementations |
-| [`anti-sycophancy.md`](anti-sycophancy.md) | Evidence-calibrated agreement/disagreement | Honest feedback that can accept user direction without factual endorsement and can correct claims when evidence conflicts |
-| [`zero-hallucination.md`](zero-hallucination.md) | Verify-first factual discipline | Fact, preference/direction, inference, hypothesis, uncertainty, scoped non-findings, and factual endorsement stay separate |
+| [`anti-sycophancy.md`](anti-sycophancy.md) | Evidence-seeking agreement/disagreement | Honest feedback that can accept user direction without factual endorsement, seek practical evidence before substantial alignment or challenge, and correct claims when evidence conflicts |
+| [`zero-hallucination.md`](zero-hallucination.md) | Verify-first factual discipline | Fact, preference/direction, inference, hypothesis, uncertainty, scoped non-findings, factual endorsement, and proof-aware assumptions stay separate |
 
 ---
 
@@ -349,8 +349,8 @@ Please:
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Active blueprint/target-state structure, no default `design/done/`, and required capture of implementation-relevant truth extracted from external docs/specs/provider references when later work still depends on it |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed before/after patch/review artifacts outside the live `/phase` workspace, with `patch/done/` as inactive completed patch history rather than junk or active phase input by default |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
-| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-threshold judgment | One first-class authority for burden-of-proof thresholds for factual endorsement and contradiction, user-owned preference/direction separation, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
-| [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, and honest source-conflict handling |
+| [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-seeking proof-aware judgment | One first-class authority for practical evidence-seeking before substantial reasoning, ordinary-evidence-versus-binding-constraint thresholds, burden-of-proof thresholds for factual endorsement and contradiction, user-owned preference/direction separation, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
+| [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, honest source-conflict handling, and external evidence grounding for recommendation/design judgments |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Clarifies destructive, ambiguous, or high-impact intent before execution, with a real delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep any optional external recall generic, supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including duplicate-looking Team Agent handling that treats stale or duplicate-looking presence as inspect-before-respawn rather than respawn-first churn |
@@ -379,7 +379,7 @@ Please:
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`answer-presentation.md`](answer-presentation.md) | Answer presentation standards | Readable and orderly responses with purpose-first framing near the start of diagnosis/test/recommendation/proposal/update answers, more proactive support for light readable tables when side-by-side structure materially improves comprehension without reviving a custom table-format rule, compact titled snapshots, small fact tables, stronger grouped scope-boundary sections, full-set-first / next-stage presentation, natural-flow formatting, compact governing-basis clarification blocks, compact post-compact re-anchor blocks for compacted-session continuation, compact memory-status blocks for remembered path-scoped context, compact variable-role structures for identifier-heavy explanations, compact phase-backed closeout blocks for delivered work, feature/improvement, impact, verification, and next phase state, compact near-term gloss support for abstract internal phrasing, and compact proposal layouts that distinguish advisory future-work ideas from queued execution |
-| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, step-by-step reasoning with a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, phase-backed closeout explanation that starts with practical delivered feature/improvement and user/system meaning before governance detail, more proactive support for light tables in diagnostic and multi-field clarification when side-by-side scanability materially improves understanding, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
+| [`explanation-quality.md`](explanation-quality.md) | Explanation structure quality | Plain-language-first, proof-aware, step-by-step reasoning that shows checked evidence, what it proves, what it suggests, what it does not prove, and whether it is a hard constraint or ordinary grounding input when that distinction matters; also includes a purpose-first explanation step for diagnosis/test/recommendation/proposal/update answers, phase-backed closeout explanation that starts with practical delivered feature/improvement and user/system meaning before governance detail, more proactive support for light tables in diagnostic and multi-field clarification when side-by-side scanability materially improves understanding, stronger what-it-is/what-it-is-not, now-versus-later, user-visible-outcome, short-recap, whole-set-first, stage-progression, good-operator explanation flow, stop-before-overexplaining boundaries, direct translation of architecture-first or metaphor-heavy wording into human-readable action/result language, a governing-basis clarification boundary before deep multi-branch explanation, a compact post-compact re-anchor boundary before explanation resumes after compaction, explicit support for unpacking variables/fields/config keys/internal labels before deeper reasoning, explicit deferral of continuation-vs-option policy to accurate-communication, and goal-qualified proposal framing when future ideas are offered after bounded completion |
 | [`flow-diagram-no-frame.md`](flow-diagram-no-frame.md) | Clean ASCII diagrams | Better readability |
 | [`high-signal-communication.md`](high-signal-communication.md) | High-signal response tightening | Removes low-value extra content and repeated wording without replacing the main communication-owner chains |
 | [`goal-set-review-and-priority-balance.md`](goal-set-review-and-priority-balance.md) | Goal review and priority balance | Keeps the full active goal set visible so work on A does not crowd out B and C |
@@ -398,7 +398,7 @@ Please:
 
 **📊 Active Runtime Rules: 41**
 
-Latest refinement: P078 added evidence-calibrated agreement so the assistant can acknowledge concerns and accept user-owned preference/direction without endorsing unverified factual claims; factual agreement now requires evidence strong enough to state the claim as fact, and evidence-backed disagreement remains claim-focused when checked evidence conflicts.
+Latest refinement: P079 adds evidence-seeking proof-aware reasoning so substantial analysis, design, recommendation, agreement, and disagreement seek practical checked evidence when it materially improves judgment, while ordinary evidence remains grounding input unless it is a hard constraint, authoritative requirement, safety boundary, or verified contradiction.
 </div>
 
 ---
@@ -1101,8 +1101,8 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 41 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073 and P077 install parity were verified after explicit install gates; P078 remains source/release-only until a separate runtime install request runs | Avoids overclaiming source/runtime parity for source-only updates |
-| Evidence discipline | Fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, and scoped non-finding stay separate | Reduces overclaim, sycophantic agreement, and hallucination risk |
+| Runtime install boundary | P073, P077, P078, and P079 install parity were verified after explicit install gates; P079 installed only the 41 source-owned active runtime rules and left other destination markdown files observed-only | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
+| Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture, order, and current-phase tasks when staged work is warranted | Reduces retrospective phase backfill |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
 | Shared destination boundary | Co-located runtime files outside the source-owned set are not cleanup targets by default | Prevents other-owner file damage |
@@ -1122,7 +1122,7 @@ Result: ✅ Verified from actual files
 | **No Mock/Stub by Default** | Prefer real systems and clearly label or avoid fake implementations unless explicitly requested |
 | **No Guessing** | Verify local paths, values, symbols, and configuration before treating them as known |
 | **Evidence-Honest Claims** | Match wording strength to checked evidence and disclose scoped non-findings |
-| **No Sycophancy** | Use evidence-calibrated agreement: accept user direction without factual endorsement, agree when evidence supports it, and correct claims when evidence conflicts |
+| **No Sycophancy** | Use evidence-seeking proof-aware agreement: accept user direction without factual endorsement, agree when evidence supports it, seek proof before substantial recommendations or challenges, and correct claims when evidence conflicts |
 | **Destructive-Action Guard** | Cleanup, hygiene, isolation, or worktree rationale never authorizes deletion by itself |
 
 **The practical goal is safe, evidence-grounded AI behavior that keeps user authority intact.**
@@ -1192,7 +1192,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.77 |
+  <b>Version</b>: 9.78 |
   <b>Last Updated</b>: 2026-04-30 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

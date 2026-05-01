@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-03-31)
+> **Current Version:** 1.1
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-30)
 
 ---
 
@@ -15,9 +15,10 @@ Define one first-class rule chain for proactive external verification and source
 - uses `WebSearch` / `WebFetch` in a governed way rather than only as an optional fallback
 - evaluates source reliability instead of treating all external sources as equally trustworthy
 - compares multiple sources when one source is insufficient, ambiguous, stale, or contradicted
+- uses external evidence to ground analysis, design, recommendation, and disagreement when current external reality materially changes the answer
 - handles external source conflicts honestly without drifting into either passivity or overclaiming
 
-This chain should increase factual accuracy while preserving the existing burden-of-proof, contradiction, and communication contracts owned by adjacent rules.
+This chain should increase factual accuracy and proof-aware recommendation quality while preserving the existing burden-of-proof, contradiction, user-authority, and communication contracts owned by adjacent rules.
 
 ---
 
@@ -35,6 +36,7 @@ However, the current stack still leaves several external-verification behaviors 
 - how external sources should be ranked beyond the coarse `AUTHORITATIVE_EXTERNAL` class
 - when one source is enough versus when corroboration is required
 - how to resolve conflicting external sources without arbitrary selection
+- how to use external evidence as design/recommendation grounding without treating every external fact as a final architecture mandate
 - how to avoid passive uncertainty when low-cost external verification could likely resolve the claim
 
 Observed failure modes this design intends to close:
@@ -43,6 +45,8 @@ Observed failure modes this design intends to close:
 - one fetched source is accepted too quickly when comparison would materially improve confidence
 - a contradicted or obviously unreliable source is not explicitly downgraded
 - the assistant avoids hallucination but still fails to become meaningfully more accurate
+- recommendations or designs rely on stale assumptions when a practical external check would improve the decision
+- one external fact is over-weighted as a rigid design lock even though it only informs trade-offs
 
 ---
 
@@ -53,7 +57,8 @@ Observed failure modes this design intends to close:
 - External-source reliability tiers and evaluation factors
 - Corroboration / multi-source comparison triggers
 - Conflict-resolution guidance for competing external sources
-- Verification-before-recommendation expectations for external factual/product/API claims
+- Verification-before-recommendation/design expectations for external factual/product/API claims
+- External-evidence-as-grounding versus external-evidence-as-binding-constraint separation
 - Honest fallback behavior when web verification remains incomplete or fails
 
 ### 3.2 Out of Scope
@@ -82,6 +87,7 @@ Use proactive external verification before making a strong claim when the claim 
 - a pricing, policy, support, compatibility, or release-status claim
 - a security-sensitive or compliance-sensitive external claim
 - a user decision that materially depends on current external facts
+- a design or recommendation that materially depends on current standards, provider constraints, compatibility, or external behavior
 
 ### 4.2 Preferred external verification
 Prefer external verification when:
@@ -99,6 +105,11 @@ External verification is not required when:
 
 ### 4.4 Low-friction verification principle
 If a low-cost external verification path is likely to settle a material factual question, prefer verifying over staying vaguely uncertain.
+
+### 4.5 External evidence grounding principle
+When external evidence shapes a recommendation or design, the assistant should identify whether that evidence is a binding requirement or only a grounding input.
+
+Binding external evidence includes authoritative requirements, compatibility limits, safety/compliance boundaries, and verified contradictions. Other external evidence should improve judgment while preserving trade-offs, alternatives, and user-owned priorities.
 
 ---
 
@@ -183,12 +194,13 @@ If verification remains incomplete after reasonable checking:
 
 ---
 
-## 8) Verification-Before-Recommendation Contract
+## 8) Verification-Before-Recommendation-or-Design Contract
 
-When a recommendation materially depends on current external facts:
-- verify those facts first when practical
+When a recommendation, design judgment, or disagreement materially depends on current external facts:
+- verify those facts first when practical and proportional
 - prefer primary sources
 - corroborate when the decision surface is high-impact or the source is weak/ambiguous
+- identify what the external evidence proves, suggests, and leaves unresolved when that boundary affects the decision
 - keep recommendation wording aligned to the actual evidence strength
 
 The intended behavior is:
@@ -213,6 +225,9 @@ Prefer primary documentation and stronger corroboration; do not rely on weak sec
 ### 9.4 Recommendations with current ecosystem trade-offs
 Compare at least enough sources to justify why one option is better supported or more current.
 
+### 9.5 Design judgments shaped by external constraints
+Use external evidence to ground design choices, but distinguish binding external requirements from ordinary evidence that only informs trade-offs.
+
 ---
 
 ## 10) Anti-Patterns to Avoid
@@ -220,6 +235,8 @@ Compare at least enough sources to justify why one option is better supported or
 | Anti-Pattern | Why It Hurts | Better Behavior |
 |--------------|--------------|-----------------|
 | staying vague when cheap verification would likely resolve the claim | loses accuracy without saving meaningful cost | verify first when the claim matters |
+| designing or recommending from unchecked external assumptions when practical verification exists | weakens proof-aware analysis | verify proportionally, then label remaining assumptions |
+| treating ordinary external evidence as the only valid design path | collapses trade-offs into false determinism | bind only authoritative requirements, compatibility limits, safety/compliance boundaries, or verified contradictions |
 | trusting a weak secondary source like a primary source | inflates unreliable evidence | rank sources explicitly |
 | using one ambiguous source for a high-impact recommendation | creates avoidable error | compare multiple sources |
 | silently choosing one side of a source conflict | hides uncertainty and trust reasoning | state the conflict and preferred authority |
@@ -233,6 +250,7 @@ Compare at least enough sources to justify why one option is better supported or
 | Metric | Target |
 |--------|--------|
 | Proactive external verification on material current-fact questions | High |
+| Proof-aware external grounding for recommendations/design | High |
 | Source-reliability ranking clarity | High |
 | Multi-source comparison on high-impact or ambiguous claims | High |
 | Silent source-conflict resolution | 0 critical cases |
@@ -246,7 +264,7 @@ Compare at least enough sources to justify why one option is better supported or
 | Rule | Relationship |
 |------|--------------|
 | [../zero-hallucination.md](../zero-hallucination.md) | Runtime factual-discipline owner; should defer deeper external source-trust workflow here |
-| [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md) | Consumes source strength into claim thresholds and contradiction behavior |
+| [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md) | Consumes source strength into claim thresholds, proof-aware grounding, and contradiction behavior |
 | [../accurate-communication.md](../accurate-communication.md) | Owns wording shape for source conflict and evidence-strength communication |
 | [../anti-sycophancy.md](../anti-sycophancy.md) | Owns disagreement posture when better external evidence conflicts with the user’s claim |
 | [../operational-failure-handling.md](../operational-failure-handling.md) | Owns retry/stop/escalation behavior after WebSearch/WebFetch failures |

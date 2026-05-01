@@ -1,12 +1,12 @@
 # Explanation Quality
-> **Current Version:** 2.20
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.20
+> **Current Version:** 2.21
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.21
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Prefer explanations that start in plain language, deepen only as needed, and land with concise practical clarity.**
-This rule shapes analytical and technical explanation flow. It does not force long answers, replace verification rules, or interrupt active execution just to narrate optional next steps.
+**Core Principle: Prefer explanations that start in plain language, use checked evidence as decision grounding when useful, deepen only as needed, and land with concise practical clarity.**
+This rule shapes analytical and technical explanation flow, including proof-aware recommendation/design explanation. It does not force long answers, replace verification rules, or interrupt active execution just to narrate optional next steps.
 ---
 ## Core Requirements
 ### 1) Plain-language and purpose first
@@ -26,6 +26,14 @@ Use only layers that materially improve understanding:
 5. step-by-step implication, fix, or reasoning path
 6. concise synthesis or next move when useful
 When depth matters, preserve **Claim** (what is true), **Mechanism** (why/how it is true), and **Implication** (what the user should conclude or do). If mechanism changes the decision, do not stop at the claim alone.
+### 2.1) Proof-aware explanation
+When analysis, design, recommendation, or disagreement depends on factual grounding, explain evidence in a way that supports judgment without overstating certainty.
+Required behavior:
+- show the checked evidence when it materially changes the answer
+- state what the evidence proves, what it suggests, and what it does not prove when that distinction matters
+- explain which parts are hard constraints versus ordinary grounding input
+- preserve meaningful alternatives when evidence supports one path but does not eliminate others
+- if evidence is incomplete, name the working assumption or hypothesis instead of presenting it as proof
 ### 3) Stepwise and concrete clarification
 Required behavior:
 - move from simple framing to deeper detail in order
@@ -110,6 +118,7 @@ Before finishing explanation-heavy work, the user should be able to identify the
 |---|---|
 | process explanation | short answer, simple explanation, causal flow |
 | option comparison | simple framing, light comparison table when useful, recommendation |
+| proof-aware recommendation/design | checked evidence, what it proves, what it does not prove, implication, and bounded alternative when useful |
 | root-cause analysis | claim/mechanism/implication with evidence-aligned wording |
 | diagnostic update | main-point-first status line, compact snapshot, scoped implication, next action |
 | phase/progress explanation | easy-to-picture plain-language line plus concise grouping |
@@ -138,6 +147,17 @@ Short answer: use Redis for shared hot state and PostgreSQL for durable business
 | Redis | fast operational state | low-latency shared reads/writes |
 | PostgreSQL | durable business truth | persistence and query integrity |
 Recommendation: keep the split because it matches access pattern and failure semantics.
+```
+### Proof-aware recommendation
+```markdown
+Checked evidence:
+- Official API docs require signed callbacks.
+- The current repo already stores callback state in `payment_events`.
+What this proves:
+- signature validation is a hard integration requirement.
+What this does not prove:
+- it does not prove one internal module layout is the only valid design.
+Recommendation: validate signatures at the callback boundary, then keep the storage layout that best fits the existing event flow.
 ```
 ### Patch-by-patch
 ```markdown
@@ -199,6 +219,8 @@ Post-compact re-anchor:
 | protocol detail before simple framing | give the simple version first |
 | one-line-per-thought fragmentation | use cohesive paragraphs for one idea |
 | abstract recommendation without clarifier | add concrete scenario, before/after, or example |
+| proof cited without saying what it proves or does not prove | show evidence boundary and decision implication |
+| ordinary evidence treated as a rigid design lock | separate hard constraints from grounding input |
 | architecture-first wording with no human result | restate what changed or what the user can do |
 | purpose hidden after setup detail | open with what is being diagnosed/tested/proposed |
 | raw identifiers used as self-explanatory evidence | explain role, flow position, and important values |
@@ -223,6 +245,7 @@ Post-compact re-anchor:
 |---|---|
 | Plain-language-first and purpose-first clarity | high |
 | Claim/mechanism/implication coverage | high when depth matters |
+| Proof-aware evidence boundary clarity | high when evidence grounds recommendations/design |
 | Structural cohesion and concrete clarifier support | high |
 | Change-walkthrough and scope-boundary clarity | high when relevant |
 | Full-set and stage-progression clarity | high when relevant |

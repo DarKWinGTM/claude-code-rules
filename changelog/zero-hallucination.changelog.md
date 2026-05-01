@@ -1,7 +1,7 @@
 # Changelog - Zero Hallucination
 
 > **Parent Document:** [../zero-hallucination.md](../zero-hallucination.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-04-30 | **[Added proof-aware evidence-seeking factual discipline](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended zero-hallucination so material factual premises should be practically checked before substantial reasoning while incomplete evidence must remain assumption, hypothesis, or uncertainty rather than invented proof | |
 | 1.5 | 2026-04-30 | **[Added unsupported factual-endorsement hallucination risk](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Extended zero-hallucination so unsupported agreement with factual claims is treated as a hallucination risk, while user preference/direction remains separate from factual proof | |
 | 1.4 | 2026-04-17 | **[Added git-state negative-claim limits for file disposability](#version-14)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -22,6 +24,24 @@
 | | | Summary: Added deterministic verification triggers and status labels across runtime/design contract text | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added proof-aware evidence-seeking factual discipline
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `zero-hallucination.md` from v1.5 to v1.6.
+- Updated `design/zero-hallucination.design.md` from v1.5 to v1.6.
+- Added practical evidence-seeking for material factual premises before substantial analysis, design, recommendation, agreement, or disagreement.
+- Clarified that proof-aware reasoning must not invent certainty when evidence is unavailable or incomplete.
+- Added trigger, example, anti-pattern, and quality metric coverage for ordinary evidence versus hard constraints.
+
+### Summary
+Zero-hallucination now makes evidence-seeking part of factual discipline while preserving uncertainty: checked proof can ground reasoning, but incomplete evidence must not become fabricated certainty.
 
 ---
 

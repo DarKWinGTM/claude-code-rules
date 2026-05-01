@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.77
+> **Current Version:** 9.78
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.78 | 2026-04-30 | **[Added evidence-seeking proof-aware reasoning refinement](#version-978)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.77 | 2026-04-30 | **[Added evidence-calibrated agreement refinement](#version-977)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.76 | 2026-04-29 | **[Added completed documentation surface governance](#version-976)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.75 | 2026-04-27 | **[Added design-to-phase execution synthesis](#version-975)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -111,6 +112,26 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-978"></a>
+## Version 9.78: Added evidence-seeking proof-aware reasoning refinement
+
+**Date:** 2026-04-30
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `evidence-grounded-burden-of-proof.md` and `design/evidence-grounded-burden-of-proof.design.md` from v1.5 to v1.6 so practical evidence-seeking grounds substantial analysis, design, recommendation, agreement, and disagreement without turning ordinary evidence into an automatic decision lock.
+- Updated `external-verification-and-source-trust.md` and `design/external-verification-and-source-trust.design.md` from v1.0 to v1.1 so current external facts can ground recommendation/design judgments while authoritative requirements, compatibility limits, safety/compliance boundaries, and verified contradictions remain the binding external-evidence cases.
+- Updated `accurate-communication.md` and `design/accurate-communication.design.md` from v2.19 to v2.20 with proof-aware wording that separates checked evidence, assumptions, hard constraints, and open trade-offs.
+- Updated `explanation-quality.md` and `design/explanation-quality.design.md` from v2.20 to v2.21 so explanations show what evidence proves, suggests, and leaves unresolved when that boundary materially affects the answer.
+- Updated `anti-sycophancy.md` and `design/anti-sycophancy.design.md` from v1.5 to v1.6 so substantial factual alignment, recommendation, design, and challenge seek practical evidence before endorsement or correction.
+- Updated `zero-hallucination.md` and `design/zero-hallucination.design.md` from v1.5 to v1.6 so proof-aware reasoning cannot become invented certainty when evidence is unavailable or incomplete.
+- Synchronized README, TODO, master design, master changelog, phase summary, the P079 phase record, and the P079 patch artifact; installed the 41 README-listed active runtime rule files into `~/.claude/rules/`; verified source/runtime hash parity with other destination markdown files observed-only; and prepared the governed source/runtime update for git push and release.
+
+### Summary
+P079 adds evidence-seeking proof-aware reasoning: substantial recommendations, designs, agreements, disagreements, and analyses should use practical checked evidence when it materially improves judgment, while only hard constraints, authoritative requirements, safety boundaries, and verified contradictions become binding locks.
 
 ---
 
