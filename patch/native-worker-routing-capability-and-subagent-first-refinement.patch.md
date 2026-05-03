@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.80
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -147,7 +147,7 @@ The active runtime install set still contains 42 source-owned runtime rule files
 - [x] README Bash and PowerShell install arrays include exactly 42 active runtime files.
 - [x] Golden scenarios pass: intent-first behavior, subagent-first broad work, capability-based routing, teammate/Agent Team restriction boundary, analyzed handoff, and leader verification.
 - [x] Runtime install parity is verified for the 42 active runtime rule files.
-- [ ] Source/runtime release artifacts are pushed and GitHub release `v9.80` is created.
+- [x] Source/runtime release artifacts are pushed and GitHub release `v9.80` is created.
 
 ---
 

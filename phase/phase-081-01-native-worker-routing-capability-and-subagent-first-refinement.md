@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 081-01
-> **Status:** In Progress
+> **Status:** Completed
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Design References:** [../design/design.md](../design/design.md), [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md), [../design/custom-agent-selection-priority.design.md](../design/custom-agent-selection-priority.design.md), [../design/execution-continuity-and-mode-selection.design.md](../design/execution-continuity-and-mode-selection.design.md)
 > **Patch References:** [../patch/native-worker-routing-capability-and-subagent-first-refinement.patch.md](../patch/native-worker-routing-capability-and-subagent-first-refinement.patch.md)
@@ -120,7 +120,7 @@ The user also clarified:
 
 ## TODO and Changelog Coordination
 
-- `TODO.md` should record P081 as active until git push and GitHub release pass.
+- `TODO.md` records P081 as completed after source sync, source audit, runtime install parity, git push, and GitHub release passed.
 - `changelog/changelog.md` should record v9.80 as the master version authority.
 - Per-chain changelogs should record v1.1, v1.3, and v1.9.
 - README should present current-state guidance and active install scope, not a detailed changelog dump.
@@ -143,16 +143,16 @@ The user also clarified:
 ## Closeout Summary
 
 What this phase delivers:
-- Pending final closeout after git push and GitHub release.
+- P081 refined the native worker-routing behavior and shipped the synchronized v9.80 source/runtime release.
 
 Feature / Improvement:
-- Pending final closeout.
+- Intent-first, capability-based, standalone-subagent-first routing refinement for broad independent work.
 
 Impact:
-- Pending final closeout.
+- The leader session should avoid unnecessary project exploration and context-heavy raw absorption when the user is asking about AI/RULES behavior or when a bounded standalone worker lane can filter broad evidence first.
 
 Verification:
-- Owner-chain source edits, v9.80 master records, source audit, and 42-file runtime install/parity are complete; git push and GitHub release remain pending.
+- Owner-chain source edits, v9.80 master records, source audit, 42-file runtime install/parity, git push, and GitHub release `v9.80` are complete.
 
 Next phase state:
 - No next phase selected.

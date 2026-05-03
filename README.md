@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.80</b><br><sub>Current Source State</sub>
+  <b>v9.80</b><br><sub>Current Release</sub>
 </td>
 <td align="center" width="200">
   <b>42</b><br><sub>Active Runtime Rules</sub>
@@ -308,7 +308,7 @@ Please:
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
-- P081 source governance is synchronized for v9.80; runtime install parity is verified for the 42 active rule set; git push and GitHub release remain pending until their explicit gates pass
+- P081 source governance is synchronized for v9.80; runtime install parity is verified for the 42 active rule set; git push completed and GitHub release `v9.80` is published
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
