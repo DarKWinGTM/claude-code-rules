@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.8
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-03)
+> **Current Version:** 1.9
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, keeps execution flowing by default once the active path is genuinely execution-ready, does not let execution continuity bypass startup artifact governance, and does not let broad continuation bypass native worker routing.
+Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, does not let execution continuity bypass startup artifact governance, and does not let broad continuation bypass native worker routing.
 
 ---
 
@@ -21,11 +21,12 @@ Observed failure modes:
 - users must repeatedly send prompts like `เดินต่อ` or `ถ้าไม่เจอปัญหาอะไรให้ loop ต่อ` even when the next path is already clear
 - execution-ready work may still stall because the assistant waits for the user to restate the next unfinished slice even though phase/TODO/task/design/checked implementation surfaces already reveal it
 - open design discussion and execution-ready work are not separated sharply enough, so the assistant either executes too early or hesitates too long
+- behavior/RULES analysis can be misclassified as project execution when the user pastes logs, file paths, or snippets from another session
 - phase boundaries become reporting pauses even when no real blocker or approval gate exists
 - execution-continuity wording can be overread as permission to keep moving even when startup artifact posture is still unresolved for meaningful governed work
-- execution momentum can push the leader session into broad raw search/read/log/test absorption without first applying worker routing
+- execution momentum can push the leader session into broad raw search/read/log/test absorption without first applying intent-first worker routing
 
-The repository needs one explicit owner for the discussion-mode / execution-mode boundary and for continuous execution defaults after the active path is already clear.
+The repository needs one explicit owner for the discussion-mode / execution-mode boundary, intent recheck on scope changes, and continuous execution defaults after the active path is already clear.
 
 ---
 
@@ -34,34 +35,37 @@ The repository needs one explicit owner for the discussion-mode / execution-mode
 ### 3.1 Mode Selection Principle
 The system should classify the current interaction as `discussion mode` or `execution mode` before deciding whether autonomous continuation is appropriate.
 
-### 3.2 Discussion-Mode Protection Principle
-Discussion mode protects open concept/design work from premature execution.
+### 3.2 Intent-Recheck Principle
+When the user provides technical evidence from another session, pasted logs, file paths, code snippets, or corrected scope, the system should re-check whether the active request is behavior/governance analysis or project execution before reading project files or continuing implementation.
 
-### 3.3 Startup-Gate-First Principle
+### 3.3 Discussion-Mode Protection Principle
+Discussion mode protects open concept/design/behavior work from premature execution.
+
+### 3.4 Startup-Gate-First Principle
 Execution readiness should not be treated as permission to bypass unresolved startup artifact posture.
 
-### 3.4 Continuous-Execution Default Principle
+### 3.5 Continuous-Execution Default Principle
 Execution mode should continue by default when no real stop gate exists and startup posture is already resolved enough for the active governed slice.
 
-### 3.5 Active Next-Work Discovery Principle
+### 3.6 Active Next-Work Discovery Principle
 Execution mode should actively inspect the current execution surfaces to discover the next unfinished slice when the task list alone does not already make it obvious.
 
-### 3.6 Capture-Before-Continue Boundary
+### 3.7 Capture-Before-Continue Boundary
 Execution continuity should not outrun required knowledge capture when external docs/specs/provider references have just produced implementation-critical knowledge that later governed execution still depends on.
 
-### 3.7 Worker-Routing-Before-Broad-Continue Principle
+### 3.8 Worker-Routing-Before-Broad-Continue Principle
 Execution continuity should not make broad, noisy, context-heavy, high-output, multi-surface, or naturally parallel next work default to leader-session raw absorption. Those slices should pass through `native-worker-agent-routing-and-context-control.md` unless direct handling has a narrow reason.
 
-### 3.8 Legitimate Stop-Gate Principle
+### 3.9 Legitimate Stop-Gate Principle
 Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, actual completion, or a required knowledge-capture gate.
 
-### 3.9 Phase-Boundary Continuity Principle
+### 3.10 Phase-Boundary Continuity Principle
 Closing one slice should not force a pause if the next slice is already the implied active path.
 
-### 3.10 Reporting-In-Flow Principle
+### 3.11 Reporting-In-Flow Principle
 Progress reporting should accompany execution rather than replacing it.
 
-### 3.11 Mode-Recheck Principle
+### 3.12 Mode-Recheck Principle
 The system should re-check mode when the decision surface materially changes, but not let ceremony or milestone narration reset execution mode by default.
 
 ---
@@ -71,8 +75,12 @@ The system should re-check mode when the decision surface materially changes, bu
 ```text
 Current interaction
   ↓
-Is the user still shaping concept/design/choice?
+Is the user shaping concept/design/behavior/RULES/choice?
   → Yes: discussion mode
+  → No: continue
+  ↓
+Do pasted logs/paths/snippets change the apparent project scope?
+  → Yes: re-check intent before project exploration
   → No: continue
   ↓
 Are goal, scope, and next execution order sufficiently clear?
@@ -94,6 +102,7 @@ Is the next slice broad/noisy/context-heavy/multi-surface/high-output/paralleliz
 
 This chain owns:
 - discussion-mode versus execution-mode selection
+- intent recheck before project exploration when user evidence could be misread
 - continuous-execution default behavior
 - active next-work discovery from current execution surfaces once execution mode is already active
 - legitimate stop-gate classification at the execution-flow level
@@ -115,8 +124,9 @@ It does not replace:
 
 This chain succeeds when:
 - explicit continue intent no longer requires repeated re-prompting in execution-ready work
+- behavior/RULES discussion is not misclassified as project exploration because the user provided technical evidence
 - execution-ready work can discover the next unfinished slice from task/phase/TODO/design/checked-state surfaces when that path is already visible
-- open concept/design discussion remains protected from premature execution
+- open concept/design/behavior discussion remains protected from premature execution
 - phase/milestone completion does not create unnecessary stop/report turns
-- broad or high-output continuation applies worker routing before leader raw absorption
+- broad or high-output continuation applies intent-first worker routing before leader raw absorption
 - real blockers still pause execution correctly

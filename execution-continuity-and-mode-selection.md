@@ -1,21 +1,28 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.8
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.8
+> **Current Version:** 1.9
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Distinguish discussion mode from execution mode, and once work is execution-ready, continue by default by discovering the next unfinished slice from active execution surfaces instead of stopping to narrate obvious progress.**
+**Core Principle: Distinguish discussion mode from execution mode, re-check user intent when the decision surface changes, and once work is execution-ready, continue by default by discovering the next unfinished slice from active execution surfaces instead of stopping to narrate obvious progress.**
 This rule owns mode selection and the stop/continue boundary. It does not replace startup governance, user authority, safety gates, evidence wording, native worker routing, or shared-board/plugin coordination ownership.
 ---
 ## Core Contract
 ### Mode selection
 Classify the interaction before deciding whether to continue autonomously.
 Required guidance:
-- concept shaping, design exploration, unresolved architecture choice, and open option comparison = `discussion mode`
+- concept shaping, design exploration, unresolved architecture choice, behavior/RULES analysis, and open option comparison = `discussion mode`
 - explicit goal with sufficiently defined scope/path/order = `execution mode`
-- do not infer execution mode merely because the topic is technical
+- do not infer execution mode merely because the topic is technical or because pasted logs include project paths
 - do not stay in discussion mode once target and path are clear enough
+### Intent recheck before project exploration
+When the user provides technical evidence, logs, snippets, paths, or another session’s output, re-check whether the active request is about behavior/governance or about the project itself.
+Required guidance:
+- if the user asks about AI behavior, RULES behavior, or workflow compliance, treat pasted technical material as evidence for that question first
+- do not continue into project file reading, project search, or implementation merely because the evidence contains file paths or code snippets
+- project exploration is appropriate only when the user asks for project facts/implementation/review, or when a bounded verification need is stated and aligned with the active question
+- if the user corrects the scope from project exploration back to AI/RULES behavior, drop the project path and continue in the corrected scope
 ### Discussion protection
 Discussion mode is not permission to start implementation or rollout.
 Required guidance:
@@ -54,7 +61,9 @@ Required guidance:
 Continuous execution must not turn the next broad slice into default leader-session raw absorption.
 Required guidance:
 - when the next implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, apply `native-worker-agent-routing-and-context-control.md` before broad direct reading/searching/testing/log review
-- if worker routing selects a subagent or Agent Team lane, dispatch or assign that lane before the leader absorbs raw broad evidence
+- apply the intent-first part of worker routing before project exploration when the next slice could be behavior/RULES analysis rather than project work
+- prefer standalone subagent / worker-lane handling for broad independent read/search/audit/review work before considering Agent Team workflow
+- if worker routing selects a standalone subagent, multiple subagents, or Agent Team lane, dispatch or assign that lane before the leader absorbs raw broad evidence
 - if the leader handles broad worker-fit work directly, state the narrow reason rather than treating execution momentum as authorization
 - trivial, low-output, tightly sequential, or exact interactive-control work may still continue directly
 ### Legitimate stop gates
@@ -70,20 +79,22 @@ Status reporting supports execution, not replaces it.
 Required guidance:
 - provide compact progress updates when they clarify changes/completion/blockers
 - avoid summary-first closure when the same turn can safely do the next step
-- re-check mode only when the situation changes materially
-- move back to discussion mode only for real new ambiguity, design work, or user direction
+- re-check mode when the user changes scope, corrects intent, provides evidence from another session, or shifts between behavior analysis and project execution
+- move back to discussion mode only for real new ambiguity, design work, behavior/RULES analysis, or user direction
 - do not let habit, ceremony, or milestone reporting reset execution mode
 ---
 ## Trigger Model
 | Trigger | Required behavior |
 |---|---|
 | explicit continue intent | preserve execution mode unless real stop gate exists |
+| user provides pasted logs/paths/snippets from another session | classify intent before project exploration |
+| user asks about AI/RULES behavior | stay discussion/governance unless project inspection is explicitly requested |
 | unresolved startup gate | resolve startup posture before execution drift |
 | clear active phase/task path | continue rather than stop on narration |
 | discoverable unfinished work | inspect execution surfaces and continue if safe |
 | broad/noisy next slice | apply worker routing before broad leader-session absorption |
 | milestone-only pause drift | continue after reporting when safe |
-| open concept/design work | stay in discussion mode |
+| open concept/design/behavior work | stay in discussion mode |
 | unresolved governing basis | ask for basis selection before deep execution |
 | approval-sensitive step | stop for confirmation under stronger rule |
 ---
@@ -93,25 +104,28 @@ Required guidance:
 | report-then-stop drift | continue after report when safe |
 | phase-closure pause ritual | treat completion as transition |
 | jumping past unresolved startup posture | resolve startup gate first |
-| executing inside open design discussion | wait until path is clear |
+| executing inside open design or behavior discussion | wait until path is clear |
+| treating pasted project paths as project-work authorization | re-check user intent first |
 | discussion-mode inertia after path is clear | switch to execution mode and continue |
 | obvious next work framed as user-choice theater | do the implied safe step |
 | waiting for repeated prompt despite clear execution surfaces | inspect surfaces and continue |
 | using execution momentum to skip worker routing | apply the worker-scale gate before broad/high-output next work |
+| treating teammate/Agent Team restriction as an all-subagent ban | let worker routing distinguish standalone subagents from coordinated team workflow |
 ---
 ## Quality Metrics
 | Metric | Target |
 |---|---|
 | Correct discussion-vs-execution classification | High |
+| Intent recheck before project exploration | High |
 | Unnecessary milestone-only pauses | Low |
 | Continuous execution after clear next step | High |
 | Worker-routing gate respected before broad continuation | High |
-| Execution during unresolved design discussion | 0 critical cases |
+| Execution during unresolved design/behavior discussion | 0 critical cases |
 | Stop-gate correctness | High |
 ---
 ## Integration
 Related rules:
-- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns worker-scale gating before broad leader-session absorption
+- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns intent-first worker routing, subagent-first scale gating, and leader-context control before broad leader-session absorption
 - [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
 - [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording
 - [todo-standards.md](todo-standards.md) - live task list as execution surface

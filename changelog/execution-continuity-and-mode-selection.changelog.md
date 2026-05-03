@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-05-04 | **[Added intent recheck before project exploration](#version-19)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.8 | 2026-05-03 | **[Added worker routing before broad continuation](#version-18)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.7 | 2026-04-23 | **[Added capture-before-continue for implementation-critical doc-derived knowledge](#version-17)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.6 | 2026-04-18 | **[Made startup artifact governance an explicit precondition for execution continuity](#version-16)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -20,6 +21,25 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added intent recheck before project exploration
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.8 to v1.9.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.8 to v1.9.
+- Added an intent-recheck boundary for pasted logs, paths, snippets, or another session’s output so behavior/RULES analysis is not misclassified as project exploration.
+- Clarified that execution mode should not be inferred merely because technical evidence contains project paths.
+- Integrated the subagent-first worker routing refinement by preferring standalone worker lanes for broad independent read/search/audit/review work before Agent Team workflow is considered.
+- Added anti-pattern coverage for treating teammate/Agent Team restrictions as all-subagent bans.
+
+### Summary
+Execution continuity now keeps work moving only after the active intent is correctly classified: technical evidence can support behavior/RULES discussion without automatically authorizing project exploration, and broad continuation still passes through subagent-first worker routing.
 
 ---
 

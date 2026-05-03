@@ -1,7 +1,7 @@
 # Changelog - Custom Agent Selection Priority
 
 > **Parent Document:** [../custom-agent-selection-priority.md](../custom-agent-selection-priority.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,10 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-04 | **[Added capability-fit specialist selection boundary](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.2 | 2026-05-03 | **[Clarified selection-after-routing boundary](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-04-04 | **[Added reuse-before-spawn guidance for overlapping team-agent roles](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-31 | **[Created first-class custom-agent-selection-priority rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new design/runtime/changelog triad that governs selection priority for user custom agents, clear-best-fit specialist preference, and the distinction between discovery failures and selection behavior | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added capability-fit specialist selection boundary
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `custom-agent-selection-priority.md` from v1.2 to v1.3.
+- Updated `design/custom-agent-selection-priority.design.md` from v1.2 to v1.3.
+- Clarified that this chain selects the best visible specialist for the required capability after native worker routing has already classified intent, worker need, and worker scale.
+- Added capability-fit wording so specialist selection is not hardcoded to tool names or candidate labels.
+- Added a boundary preventing custom-agent selection from escalating standalone subagent-fit work into Agent Team workflow.
+- Generalized reuse-before-spawn from teammate-only wording to worker/specialist reuse where applicable.
+
+### Summary
+Custom-agent-selection-priority now works as a downstream capability-fit selector: native worker routing decides whether and what kind of worker is needed, then this rule chooses the best visible specialist without turning agent availability into a routing decision.
 
 ---
 

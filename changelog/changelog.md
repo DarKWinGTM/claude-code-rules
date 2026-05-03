@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.79
+> **Current Version:** 9.80
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.80 | 2026-05-04 | **[Refined native worker routing for subagent-first capability and intent](#version-980)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.79 | 2026-05-03 | **[Added native worker agent routing and context control](#version-979)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.78 | 2026-04-30 | **[Added evidence-seeking proof-aware reasoning refinement](#version-978)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.77 | 2026-04-30 | **[Added evidence-calibrated agreement refinement](#version-977)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -113,6 +114,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-980"></a>
+## Version 9.80: Refined native worker routing for subagent-first capability and intent
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `native-worker-agent-routing-and-context-control.md`, `design/native-worker-agent-routing-and-context-control.design.md`, and `changelog/native-worker-agent-routing-and-context-control.changelog.md` to v1.1 so worker routing classifies user intent before project exploration, treats pasted technical evidence as evidence for the active question first, prefers standalone subagent lanes for broad independent work, routes by required capability, and keeps Agent Team workflow as an exceptional coordination escalation.
+- Updated `custom-agent-selection-priority.md`, `design/custom-agent-selection-priority.design.md`, and `changelog/custom-agent-selection-priority.changelog.md` to v1.3 so custom/specialist selection happens after native routing has selected the worker capability and path, without turning agent availability into a routing or Agent Team escalation decision.
+- Updated `execution-continuity-and-mode-selection.md`, `design/execution-continuity-and-mode-selection.design.md`, and `changelog/execution-continuity-and-mode-selection.changelog.md` to v1.9 so pasted logs, paths, snippets, or another session’s output trigger an intent recheck before project exploration and broad continuation remains routed through the subagent-first worker gate.
+- Created `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` and `patch/native-worker-routing-capability-and-subagent-first-refinement.patch.md` to track the governed P081 refinement and release gates.
+- Synchronized README, TODO, master design, master changelog, and phase summary for the v9.80 / 42-active-rule source state; installed only README-listed active runtime rules and verified 42-file source/runtime parity while keeping git push and GitHub release pending until their explicit gates pass.
+
+### Summary
+P081 refines the P080 worker-routing model after user testing: technical evidence no longer implies project exploration by itself, broad independent work is standalone-subagent-first, worker selection is capability-based rather than hardcoded by tool name, and Agent Team workflow remains exceptional rather than the normal worker path.
 
 ---
 

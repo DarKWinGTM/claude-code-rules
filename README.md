@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.79</b><br><sub>Current Source State</sub>
+  <b>v9.80</b><br><sub>Current Source State</sub>
 </td>
 <td align="center" width="200">
   <b>42</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Installed</b><br><sub>Runtime Parity Verified</sub>
+  <b>Verified</b><br><sub>Runtime Parity Gate</sub>
 </td>
 <td align="center" width="200">
-  <b>Worker Routing</b><br><sub>Delegate Broad Work</sub>
+  <b>Subagent-first</b><br><sub>Intent-first Routing</sub>
 </td>
 </tr>
 </table>
@@ -308,6 +308,7 @@ Please:
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
+- P081 source governance is synchronized for v9.80; runtime install parity is verified for the 42 active rule set; git push and GitHub release remain pending until their explicit gates pass
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -344,7 +345,7 @@ Please:
 | [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, acknowledgement without factual endorsement, evidence-backed agreement, user-owned preference/direction separation, reusable partial-evidence technical snapshot wording, stronger human-language glosses, easy-explanation continuity so plain Thai explanations stay simple through the full answer, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking Team Agent reporting with observed-vs-inferred state separation, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, explicit memory-derived-context disclosure wording for path-matched remembered context, natural-professional wording, direct human-readable action/result wording preferred over metaphor-heavy internal shorthand, main-point-first framing for diagnosis/test/recommendation/proposal/update answers, evidence-honest phase closeout delivery/feature/impact wording, continuation-first guidance, clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real, and active summaries that keep resolved topics available for reasoning without repeating them as current issues by default |
 | [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts, resolve phase posture from sufficiently clear governed design when staged execution is warranted, initialize live task tracking early when non-trivial work needs visible execution state, treat phase-backed live task tracking as expected startup behavior, keep initialized live task lists as the continuing surface for the active objective, keep newly encountered unclear files in classification-first posture rather than disposal-first posture, and keep patch non-default during greenfield startup unless a real before/after review surface exists |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, checked master/governed repo surfaces outrank git-state cleanup heuristics when classifying file meaning, runtime co-location is not ownership authority, destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification or cleanup, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, user-declared RULES-first issues stay RULES-first instead of being diverted into memory-first fixes, memory applicability now defers to the dedicated memory-governance owner, non-matching path-scoped remembered context cannot override the current repo/objective, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
-| [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer visible user custom agents as the primary specialist pool when a task clearly matches them, and reuse an existing matching teammate before spawning another overlapping team role |
+| [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer the best visible custom/specialist agent after native worker routing has already classified intent, selected the needed worker capability, and chosen a direct/subagent/multi-subagent/team scale; do not turn agent availability into a routing or Agent Team escalation decision |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, source-owned active runtime, shared runtime destination, other-owner runtime, destination/runtime, local execution, and reusable source-artifact references from drifting into each other so parity/install wording does not turn shared-destination co-location into ownership, and requires governed reference/history checks before junk/disposal classification |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Active changelogs stay version authority while `changelog/done/` can hold inactive completed/older history when active scans would become too large |
@@ -369,7 +370,7 @@ Please:
 | [`todo-standards.md`](todo-standards.md) | Task management | Durable TODO tracking plus same-objective built-in task-list reuse, append-not-replace behavior, completed-task visibility, current-phase-first but phase-context-aware live execution visibility, required inspection of relevant governed `/phase` context before shaping task entries when that context exists, task creation aligned to active phase or clearly implied staged context, bounded use of already-authored `/phase` planning data for continuity and draft next-work discovery, task wording that follows the actual active session language pattern with Thai-led default wording for Thai-led sessions, preserved natural Thai+English mix when that is the real session pattern, and technical labels left in technical form when forced translation would reduce clarity, task-list-first next-work discovery with bounded fallback, explicit required TODO sync as companion work when `TODO.md` is needed, and deferral of broader shared-board coordination semantics to the external coordination owner when applicable |
 | [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, completed documentation surface governance for `phase/done/`, `patch/done/`, and `changelog/done/`, no-default-`design/done/` blueprint boundary, governed companion status for required design/changelog/TODO/phase/patch surfaces, phase-shaped task creation alignment, runtime installs scoped to the current project/source-owned active runtime rule set, other-owner runtime destination file boundary, live-task-list-vs-durable-TODO distinction, non-default startup patch posture, and portable public onboarding/install guidance |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
-| [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, keeps startup artifact governance as an explicit precondition before execution continuity takes over, keeps work moving when execution mode is active, discovers the next unfinished slice from execution surfaces when that path is already visible, and stops to capture implementation-critical external knowledge into governed artifacts before later multi-step work relies on it |
+| [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, re-checks intent when pasted logs/paths/snippets could be behavior/RULES evidence rather than project authorization, keeps startup governance as an execution precondition, keeps work moving when execution mode is active, discovers the next unfinished slice from execution surfaces, and sends broad continuation through subagent-first worker routing before leader raw absorption |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
 
 ---
@@ -395,13 +396,13 @@ Please:
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions, including keeping git-state file signals as weak local evidence only |
-| [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Routes broad, noisy, high-context, multi-surface, or naturally parallel work to the smallest effective subagent or Agent Team structure while keeping the leader session responsible for synthesis and verification |
+| [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Classifies intent before project exploration, routes broad/noisy/high-context/multi-surface work by required capability, prefers standalone subagent lanes first, and keeps Agent Team workflow as an exceptional coordination escalation while the leader remains synthesis and verification owner |
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
 **📊 Active Runtime Rules: 42**
 
-Latest refinement: P080 adds native worker-agent routing and context control so broad, noisy, high-context, multi-surface, or naturally parallel work is proactively routed to the smallest effective worker structure while the leader session remains responsible for synthesis and verification.
+Latest refinement: P081 refines native worker routing so pasted technical evidence is classified by user intent before project exploration, broad independent work is standalone-subagent-first, worker selection is capability-based rather than hardcoded by tool name, and Agent Team workflow remains an exceptional coordination escalation.
 </div>
 
 ---
@@ -1104,7 +1105,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 42 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, and P080 install parity were verified after explicit install gates; P080 installed only the 42 source-owned active runtime rule files and left other destination markdown observed-only | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, and P081 install parity were verified after explicit install gates; P081 kept the 42-rule active set and left other-owner runtime files observed-only | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture, order, and current-phase tasks when staged work is warranted | Reduces retrospective phase backfill |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1195,8 +1196,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.79 |
-  <b>Last Updated</b>: 2026-05-03 |
+  <b>Version</b>: 9.80 |
+  <b>Last Updated</b>: 2026-05-04 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

@@ -1,6 +1,6 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-03
+> **Last Updated:** 2026-05-04
 
 ---
 
@@ -129,6 +129,7 @@
 ## 📋 Tasks To Do
 
 ### Active Work
+- [ ] Complete P081 native worker routing capability and subagent-first refinement: keep v9.80 master records synchronized for the 42 active runtime rule set; keep `native-worker-agent-routing-and-context-control` v1.1, `custom-agent-selection-priority` v1.3, and `execution-continuity-and-mode-selection` v1.9 aligned; source audit and 42-file runtime parity are verified; prepare git push and GitHub release `v9.80`.
 - [x] Close P073 runtime-compression scope drift: compression targets are active root runtime rule files only, while `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` remain sync/audit/planning surfaces and are not compression targets; current checked baseline is 41 files / 7,141 lines / 50,141 words / 356,403 bytes.
 - [x] Complete P073-04 evidence/safety/operations runtime-owner compression source-only: selected 7 active runtime rule files, reduced the touched set from 13,424 to 10,854 words, preserved semantic anchors, and kept `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` as sync/audit/planning surfaces only.
 - [x] Complete P073-05 remaining communication/presentation/strategy/support runtime-owner compression source-only: selected 11 active runtime rule files, reduced the touched set from 20,565 to 12,032 words, preserved semantic anchors, and kept governed planning surfaces as status/sync/audit records only.
@@ -154,6 +155,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-05-04 | Advanced P081 native worker routing capability and subagent-first refinement: updated the worker-routing, custom-agent-selection, and execution-continuity owner chains; created P081 phase/patch records; synchronized v9.80 master source records; verified source audit and 42-file runtime parity; and kept git push and GitHub release pending until their explicit gates pass. |
 | 2026-04-30 | Completed P079 evidence-seeking proof-aware reasoning refinement: added practical proof-seeking across burden-of-proof, external-verification, accurate communication, explanation quality, anti-sycophancy, and zero-hallucination owners; synchronized source governance records; installed the 41 active runtime rule files; verified source/runtime parity; and prepared the v9.78 source/runtime release artifacts for git push and release. |
 | 2026-04-30 | Completed P078 evidence-calibrated agreement refinement: added principle-based agreement/disagreement calibration across anti-sycophancy, burden-of-proof, accurate communication, and zero-hallucination owners; separated acknowledgement and user-owned preference/direction from factual endorsement; required evidence for factual agreement; synchronized README/master governance records; and kept runtime install out of scope until separately requested. |
 | 2026-04-29 | Completed P077 completed documentation surface governance: added inactive-by-default `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces; preserved design as active blueprint authority with no default `design/done/`; synchronized README/master governance records; and kept completed history distinct from junk/deletion authority. |
