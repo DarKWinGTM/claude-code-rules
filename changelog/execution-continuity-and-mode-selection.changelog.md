@@ -1,8 +1,8 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.7
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.8
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-05-03 | **[Added worker routing before broad continuation](#version-18)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.7 | 2026-04-23 | **[Added capture-before-continue for implementation-critical doc-derived knowledge](#version-17)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.6 | 2026-04-18 | **[Made startup artifact governance an explicit precondition for execution continuity](#version-16)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.5 | 2026-04-17 | **[Retired stale shared-execution deferral in favor of explicit out-of-scope wording](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -19,6 +20,24 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added worker routing before broad continuation
+
+**Date:** 2026-05-03
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.7 metadata state to v1.8.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.7 metadata state to v1.8.
+- Added a worker-routing-before-broad-continuation boundary so execution momentum does not make broad, noisy, context-heavy, high-output, multi-surface, or naturally parallel next work default to leader-session raw absorption.
+- Clarified that `native-worker-agent-routing-and-context-control.md` owns worker-scale routing and leader-context control.
+- Preserved direct continuation for trivial, low-output, tightly sequential, or exact interactive-control work.
+
+### Summary
+Execution continuity still keeps clear active work moving, but broad next slices now pass through native worker routing instead of bypassing context-control because execution mode is active.
 
 ---
 

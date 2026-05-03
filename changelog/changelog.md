@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.78
+> **Current Version:** 9.79
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.79 | 2026-05-03 | **[Added native worker agent routing and context control](#version-979)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.78 | 2026-04-30 | **[Added evidence-seeking proof-aware reasoning refinement](#version-978)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.77 | 2026-04-30 | **[Added evidence-calibrated agreement refinement](#version-977)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.76 | 2026-04-29 | **[Added completed documentation surface governance](#version-976)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -112,6 +113,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-979"></a>
+## Version 9.79: Added native worker agent routing and context control
+
+**Date:** 2026-05-03
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Created `native-worker-agent-routing-and-context-control.md`, `design/native-worker-agent-routing-and-context-control.design.md`, and `changelog/native-worker-agent-routing-and-context-control.changelog.md` as the P080 native worker-routing owner triad.
+- Updated `custom-agent-selection-priority.md`, `design/custom-agent-selection-priority.design.md`, and `changelog/custom-agent-selection-priority.changelog.md` to v1.2 so custom-agent selection happens after worker routing decides delegation or specialist handling is appropriate.
+- Updated `execution-continuity-and-mode-selection.md`, `design/execution-continuity-and-mode-selection.design.md`, and `changelog/execution-continuity-and-mode-selection.changelog.md` to v1.8 so broad continuation passes through native worker routing before leader-session raw absorption.
+- Synchronized README, TODO, master design, master changelog, phase summary, the P080 phase record, and the P080 patch artifact for the v9.79 / 42-active-rule source state.
+- Installed the 42 README-listed active runtime rule files into `~/.claude/rules/`, verified source/runtime hash parity with other destination markdown files observed-only, and prepared the governed source/runtime update for git push and release.
+
+### Summary
+P080 adds native worker-agent routing and context control: broad, noisy, high-context, multi-surface, high-output, or naturally parallel work should use the smallest effective worker structure before the leader session absorbs raw evidence, while worker handoffs remain analyzed/proportionate and the leader keeps synthesis and verification responsibility.
 
 ---
 

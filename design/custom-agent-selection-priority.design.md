@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-04)
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-03)
 
 ---
 
@@ -14,6 +14,7 @@ Define one first-class rule chain for custom agent selection priority so the ass
 - treats visible user custom agents in `~/.claude/agents/` as the primary specialist pool when they are available
 - prefers the best-fit custom specialist before generic handling when a task clearly matches a specialist domain
 - keeps delegation selective and justified rather than forcing agents into every task
+- uses this chain after worker routing determines delegation or specialist handling is appropriate
 - prefers reuse-before-spawn when an existing teammate already covers the same role
 - separates discovery/loading concerns from selection/invocation concerns
 
@@ -38,6 +39,7 @@ Observed failure modes this design intends to close:
 - built-in or plugin paths absorb specialist tasks too easily
 - overlapping teammates are spawned when an existing teammate already covers the same role
 - discovery/loading problems are confused with selection behavior among already-visible candidates
+- custom-agent availability is treated as the worker-routing decision instead of a downstream specialist-selection input
 
 ---
 
@@ -61,8 +63,8 @@ Observed failure modes this design intends to close:
 - Plugin implementation, runtime install, or sync into `~/.claude/rules/`
 
 ### 3.3 Boundary Principle
-This chain owns **how the assistant should prioritize already-available custom agents during task selection**.
-It does not claim to own whether the runtime has successfully discovered those agents in the first place.
+This chain owns **how the assistant should prioritize already-available custom agents during task selection after worker routing selects delegation or specialist handling**.
+It does not claim to own whether the runtime has successfully discovered those agents in the first place, and it does not own broad-work worker-scale routing or leader-context control.
 
 ---
 
@@ -83,7 +85,15 @@ Delegation should still require:
 - a meaningful advantage over direct handling
 - no stronger reason to stay local/generic
 
-### 4.3.1 Reuse-before-spawn principle
+### 4.3.1 Routing-before-selection principle
+Worker routing and custom-agent selection are separate layers.
+
+Required guidance:
+- `native-worker-agent-routing-and-context-control.md` decides direct leader, subagent, multi-subagent, or Agent Team scale
+- this chain chooses the best visible specialist/custom agent after that route is appropriate
+- custom-agent availability alone must not become proof that delegation is the correct worker scale
+
+### 4.3.2 Reuse-before-spawn principle
 When a matching teammate or active specialist already covers the same role and objective, reuse that agent before spawning another one.
 
 Required guidance:
@@ -100,12 +110,12 @@ The chain governs selection among visible/available candidates, not loader behav
 
 ## 5) Selection Order Contract
 
-When a task arrives, the assistant should reason in this order:
+After worker routing determines that delegation or specialist handling is appropriate, the assistant should reason in this order:
 
 1. Is there a clear best-fit user custom agent in `~/.claude/agents/`?
-2. If yes, prefer that agent unless a stronger boundary says otherwise.
+2. If yes, prefer that agent unless a stronger boundary selects another worker path.
 3. If not, is there a better-fit project agent, built-in agent, or plugin agent?
-4. If no strong specialist advantage exists, use direct handling.
+4. If no strong specialist advantage exists, return to direct handling or the non-specialist worker path selected by routing.
 
 ### 5.1 Preferred order when candidates are available
 | Candidate Type | Default Priority |
@@ -159,8 +169,9 @@ Do not prefer a custom user agent or new teammate when:
 
 | Anti-Pattern | Why It Hurts | Better Behavior |
 |--------------|--------------|-----------------|
-| ignoring a clear custom specialist and answering generically | wastes the user’s specialist setup | prefer the best-fit custom agent |
+| ignoring a clear custom specialist and answering generically after delegation is appropriate | wastes the user’s specialist setup | prefer the best-fit custom agent |
 | delegating to any custom agent without strong fit | creates noisy, arbitrary routing | require clear domain fit |
+| using custom-agent availability as the routing decision | confuses worker-scale routing with specialist selection | let `native-worker-agent-routing-and-context-control.md` decide worker scale first |
 | spawning a second teammate for the same role with no distinct partition | creates duplicate-looking team noise and overlap | reuse the existing teammate or define clearly different roles before spawning |
 | treating built-ins/plugins as automatically superior to user custom agents | ignores the user’s installed specialist pool | use custom agents first when fit is clear |
 | pretending an undiscovered agent is available | hides real discovery problems | distinguish discovery from selection |
@@ -173,8 +184,9 @@ Do not prefer a custom user agent or new teammate when:
 | Metric | Target |
 |--------|--------|
 | Clear-best-fit custom specialist preferred when available | High |
-| Generic direct handling despite strong visible custom fit | Low |
+| Generic direct handling despite strong visible custom fit after delegation is appropriate | Low |
 | Over-delegation of trivial work | Low |
+| Confusion between routing and specialist selection | 0 critical cases |
 | Confusion between discovery failure and selection choice | 0 critical cases |
 | Built-in/plugin overuse when user specialist is clearly better fit | Low |
 
@@ -184,6 +196,7 @@ Do not prefer a custom user agent or new teammate when:
 
 | Rule | Relationship |
 |------|--------------|
+| [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md) | Owns worker-scale routing and leader-context control before this chain selects a best-fit specialist |
 | [../authority-and-scope.md](../authority-and-scope.md) | User authority still overrides delegation preference when the user chooses another path |
 | [../functional-intent-verification.md](../functional-intent-verification.md) | Keeps destructive/expensive execution confirmation separate from delegation choice |
 | [../natural-professional-communication.md](../natural-professional-communication.md) | Selection behavior should remain calm and non-theatrical |

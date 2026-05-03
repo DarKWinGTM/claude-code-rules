@@ -1,10 +1,12 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-04-30
+> **Last Updated:** 2026-05-03
 
 ---
 
 ## ✅ Completed
+
+- [x] Complete P080 native worker agent routing and context control: create the `native-worker-agent-routing-and-context-control` rule/design/changelog triad; integrate `custom-agent-selection-priority` as selection-after-routing and `execution-continuity-and-mode-selection` as worker-routing-before-broad-continuation; synchronize README, master design/changelog, TODO, phase, and patch records for v9.79 / 42 active runtime rules; install only the 42 active runtime rule files; verify parity; and prepare the governed source/runtime update for git publish/release.
 
 - [x] Complete P079 evidence-seeking proof-aware reasoning refinement: update `evidence-grounded-burden-of-proof`, `external-verification-and-source-trust`, `accurate-communication`, `explanation-quality`, `anti-sycophancy`, and `zero-hallucination` so practical checked evidence grounds substantial analysis, design, recommendation, agreement, and disagreement without turning ordinary evidence into an automatic decision lock; synchronize companion design/changelog files, README, master design/changelog, TODO, phase, and patch records; install only the 41 active runtime rule files; verify parity; and prepare the governed source/runtime update for git publish/release.
 

@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.78</b><br><sub>Current Source State</sub>
+  <b>v9.79</b><br><sub>Current Source State</sub>
 </td>
 <td align="center" width="200">
-  <b>41</b><br><sub>Active Runtime Rules</sub>
+  <b>42</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
   <b>Installed</b><br><sub>Runtime Parity Verified</sub>
 </td>
 <td align="center" width="200">
-  <b>Evidence First</b><br><sub>Verify Before Strong Claims</sub>
+  <b>Worker Routing</b><br><sub>Delegate Broad Work</sub>
 </td>
 </tr>
 </table>
@@ -109,6 +109,7 @@ rule_files=(
   functional-intent-verification.md
   memory-governance-and-session-boundary.md
   natural-professional-communication.md
+  native-worker-agent-routing-and-context-control.md
   no-variable-guessing.md
   operational-failure-handling.md
   phase-implementation.md
@@ -172,6 +173,7 @@ $ruleFiles = @(
   "functional-intent-verification.md",
   "memory-governance-and-session-boundary.md",
   "natural-professional-communication.md",
+  "native-worker-agent-routing-and-context-control.md",
   "no-variable-guessing.md",
   "operational-failure-handling.md",
   "phase-implementation.md",
@@ -202,7 +204,7 @@ foreach ($file in $ruleFiles) {
 
 - Already cloned the repo? Skip the clone step and run the install block only.
 - Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/`.
-- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 41-file source-owned set are not cleanup targets by default.
+- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 42-file source-owned set are not cleanup targets by default.
 
 ### 🤖 AI-Assisted Install Prompts
 
@@ -302,10 +304,10 @@ Please:
 <td width="50%">
 
 #### Runtime Context Discipline
-- 41 active runtime rules only
+- 42 active runtime rules only
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
-- P079 source/runtime release artifacts are ready for git push and release
+- P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -386,26 +388,27 @@ Please:
 
 ---
 
-### 🟢 Best Practices (3 rules)
+### 🟢 Best Practices (4 rules)
 
 > **Optimize your daily workflow efficiency**
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions, including keeping git-state file signals as weak local evidence only |
+| [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Routes broad, noisy, high-context, multi-surface, or naturally parallel work to the smallest effective subagent or Agent Team structure while keeping the leader session responsible for synthesis and verification |
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 41**
+**📊 Active Runtime Rules: 42**
 
-Latest refinement: P079 adds evidence-seeking proof-aware reasoning so substantial analysis, design, recommendation, agreement, and disagreement seek practical checked evidence when it materially improves judgment, while ordinary evidence remains grounding input unless it is a hard constraint, authoritative requirement, safety boundary, or verified contradiction.
+Latest refinement: P080 adds native worker-agent routing and context control so broad, noisy, high-context, multi-surface, or naturally parallel work is proactively routed to the smallest effective worker structure while the leader session remains responsible for synthesis and verification.
 </div>
 
 ---
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 41-rule set and describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 42-rule set and describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 
@@ -562,7 +565,7 @@ Change request received
   → update TODO pending/completed/history
   → update phase/patch companion records when in scope
   → move completed phase/patch/changelog detail to `done/` only when active scan bloat justifies inactive history separation
-  → install only the 41 source-owned active runtime rules when an install gate is explicitly in scope
+  → install only the 42 source-owned active runtime rules when an install gate is explicitly in scope
   → verify links, versions, active install scope, and source/runtime parity only when a runtime install gate is in scope
 ```
 
@@ -572,7 +575,7 @@ Change request received
 - Design file links to the correct changelog file
 - Changelog unified row maps to an existing detailed section
 - Runtime rule version/header aligns with changelog current version
-- README active runtime install list still contains exactly the 41 source-owned root rule files
+- README active runtime install list still contains exactly the 42 source-owned root rule files
 - `phase/SUMMARY.md` exists when phased execution is used and names governing patch artifacts or explicit `none`
 - `phase/SUMMARY.md` keeps the phase map, source inputs, cross-phase handoffs, TODO/changelog coordination, verification, and rollback/containment picture current
 - child phase files include design references, patch references or explicit `none`, objective, entry conditions, action checklist, affected artifacts, TODO/changelog coordination, verification, closeout, exit criteria, risks/rollback notes, and next possible phases when relevant
@@ -691,7 +694,7 @@ artifact-initiation-control.design.md
 ```
 
 **What was synchronized:**
-- the active runtime scope stayed limited to the README-installed 41 root rule files
+- the active runtime scope stayed limited to the then-README-installed 41 root rule files
 - final source state was recorded at 4,051 lines / 31,316 words / 231,675 bytes
 - runtime install into `~/.claude/rules/` happened only after the separate install gate opened
 - parity passed with no missing active files or hash mismatches
@@ -1100,8 +1103,8 @@ Result: ✅ Verified from actual files
 
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
-| Active runtime scope | 41 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, and P079 install parity were verified after explicit install gates; P079 installed only the 41 source-owned active runtime rules and left other destination markdown files observed-only | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
+| Active runtime scope | 42 source-owned root rule files | Keeps install scope explicit |
+| Runtime install boundary | P073, P077, P078, P079, and P080 install parity were verified after explicit install gates; P080 installed only the 42 source-owned active runtime rule files and left other destination markdown observed-only | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture, order, and current-phase tasks when staged work is warranted | Reduces retrospective phase backfill |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1192,8 +1195,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.78 |
-  <b>Last Updated</b>: 2026-04-30 |
+  <b>Version</b>: 9.79 |
+  <b>Last Updated</b>: 2026-05-03 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

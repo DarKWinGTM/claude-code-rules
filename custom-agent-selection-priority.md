@@ -1,8 +1,8 @@
 # Custom Agent Selection Priority
 
-> **Current Version:** 1.1
-> **Design:** [design/custom-agent-selection-priority.design.md](design/custom-agent-selection-priority.design.md) v1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.2
+> **Design:** [design/custom-agent-selection-priority.design.md](design/custom-agent-selection-priority.design.md) v1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/custom-agent-selection-priority.changelog.md](changelog/custom-agent-selection-priority.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 **Core Principle: When a user custom agent in `~/.claude/agents/` is available and clearly fits the task, prefer it as the primary specialist path before generic handling or broader fallback agents.**
 
-This rule owns custom-agent selection priority, best-fit specialist preference, and the distinction between discovery problems and selection behavior.
+This rule owns custom-agent selection priority, best-fit specialist preference, and the distinction between discovery problems and selection behavior after worker routing has already determined that delegation or specialist handling is appropriate.
 
 ---
 
@@ -32,7 +32,16 @@ Use delegation only when:
 - the specialist adds real value
 - no stronger boundary says otherwise
 
-### 3.1 Reuse-Before-Spawn Principle
+### 3.1 Routing-Before-Selection Principle
+Worker routing and custom-agent selection are separate decisions.
+
+Required guidance:
+- use `native-worker-agent-routing-and-context-control.md` to decide whether the work should be handled directly, by one subagent, by multiple subagents, or by an Agent Team
+- use this rule after that routing decision to choose the best available specialist or custom agent for the selected worker path
+- do not use custom-agent availability alone as proof that delegation is appropriate
+- do not make this rule the owner of broad-work context-control or worker-scale decisions
+
+### 3.2 Reuse-Before-Spawn Principle
 When a matching teammate or active specialist already covers the same role and objective, reuse that agent before spawning another one.
 
 Required guidance:
@@ -49,11 +58,11 @@ It governs **selection among available candidates**, not runtime file-loading be
 
 ## Selection Order Contract
 
-When evaluating a task:
+After worker routing has determined that delegation or specialist handling is appropriate:
 1. check whether a clear best-fit user custom agent is available
-2. if yes, prefer it unless a stronger reason to avoid delegation exists
+2. if yes, prefer it unless a stronger reason selects another worker path
 3. if no clear custom fit exists, consider built-in or plugin specialists
-4. if no specialist adds meaningful value, use direct handling
+4. if no specialist adds meaningful value, return to direct handling or the non-specialist worker path selected by routing
 
 ### Preferred order when candidates are available
 | Candidate Type | Default Preference |
@@ -68,11 +77,11 @@ When evaluating a task:
 
 ## Delegation Trigger Model
 
-Prefer a custom user agent when all of these are true:
+Prefer a custom user agent when worker routing has selected a delegated or specialist path and all of these are true:
 - the task matches the agent’s documented domain strongly
 - the agent is visible/available in the current session
 - the task would materially benefit from specialist handling
-- direct handling would be broader or weaker than the specialist path
+- direct handling or a generic worker lane would be broader or weaker than the specialist path
 
 Do not prefer a custom user agent when:
 - the task is trivial and delegation adds no real value
@@ -108,6 +117,7 @@ Specialist handling is preferred when:
 | treating built-ins/plugins as automatically superior to user custom agents | ignores the user’s installed specialist pool | use custom agents first when fit is clear |
 | pretending an undiscovered agent is available | hides real discovery problems | distinguish discovery from selection |
 | over-delegating trivial work | adds churn without benefit | keep direct handling for simple tasks |
+| using custom-agent availability as the routing decision | confuses specialist selection with workload routing | let `native-worker-agent-routing-and-context-control.md` decide worker scale first |
 
 ---
 
@@ -116,8 +126,9 @@ Specialist handling is preferred when:
 | Metric | Target |
 |--------|--------|
 | Clear-best-fit custom specialist preferred when available | High |
-| Generic direct handling despite strong visible custom fit | Low |
+| Generic direct handling despite strong visible custom fit after delegation is appropriate | Low |
 | Over-delegation of trivial work | Low |
+| Confusion between routing and specialist selection | 0 critical cases |
 | Confusion between discovery failure and selection choice | 0 critical cases |
 | Built-in/plugin overuse when a user custom agent is clearly better fit | Low |
 
@@ -126,6 +137,7 @@ Specialist handling is preferred when:
 ## Integration
 
 Related rules:
+- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns worker-scale routing and leader-context control before this rule selects a best-fit specialist
 - [authority-and-scope.md](authority-and-scope.md) - user authority still overrides delegation preference when the user chooses another path
 - [functional-intent-verification.md](functional-intent-verification.md) - keeps execution confirmation separate from delegation choice
 - [natural-professional-communication.md](natural-professional-communication.md) - delegation behavior should remain calm and non-theatrical

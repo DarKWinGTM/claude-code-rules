@@ -1,8 +1,8 @@
 # Changelog - Custom Agent Selection Priority
 
 > **Parent Document:** [../custom-agent-selection-priority.md](../custom-agent-selection-priority.md)
-> **Current Version:** 1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,9 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-03 | **[Clarified selection-after-routing boundary](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-04-04 | **[Added reuse-before-spawn guidance for overlapping team-agent roles](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | 1.0 | 2026-03-31 | **[Created first-class custom-agent-selection-priority rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new design/runtime/changelog triad that governs selection priority for user custom agents, clear-best-fit specialist preference, and the distinction between discovery failures and selection behavior | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Clarified selection-after-routing boundary
+
+**Date:** 2026-05-03
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `custom-agent-selection-priority.md` from v1.1 to v1.2.
+- Updated `design/custom-agent-selection-priority.design.md` from v1.1 to v1.2.
+- Clarified that `native-worker-agent-routing-and-context-control.md` owns worker-scale routing and leader-context control before this chain selects a best-fit specialist.
+- Added routing-before-selection guidance so custom-agent availability is not treated as proof that delegation is appropriate.
+- Preserved custom-agent priority, discovery-boundary, and reuse-before-spawn semantics.
+
+### Summary
+Custom-agent-selection-priority now explicitly works downstream of native worker routing: it chooses the best available specialist once delegation or specialist handling is already the selected path.
 
 ---
 

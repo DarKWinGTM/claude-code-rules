@@ -1,12 +1,12 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.6
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.6
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.8
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.8
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
 ## Rule Statement
 **Core Principle: Distinguish discussion mode from execution mode, and once work is execution-ready, continue by default by discovering the next unfinished slice from active execution surfaces instead of stopping to narrate obvious progress.**
-This rule owns mode selection and the stop/continue boundary. It does not replace startup governance, user authority, safety gates, evidence wording, or shared-board/plugin coordination ownership.
+This rule owns mode selection and the stop/continue boundary. It does not replace startup governance, user authority, safety gates, evidence wording, native worker routing, or shared-board/plugin coordination ownership.
 ---
 ## Core Contract
 ### Mode selection
@@ -50,6 +50,13 @@ Required guidance:
 - prefer governed design for extracted implementation truth
 - use phase/patch for execution consequences when in scope
 - do not rely on transient reading memory when compact/handoff could remove context
+### Worker routing before broad continuation
+Continuous execution must not turn the next broad slice into default leader-session raw absorption.
+Required guidance:
+- when the next implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, apply `native-worker-agent-routing-and-context-control.md` before broad direct reading/searching/testing/log review
+- if worker routing selects a subagent or Agent Team lane, dispatch or assign that lane before the leader absorbs raw broad evidence
+- if the leader handles broad worker-fit work directly, state the narrow reason rather than treating execution momentum as authorization
+- trivial, low-output, tightly sequential, or exact interactive-control work may still continue directly
 ### Legitimate stop gates
 Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion.
 ### Phase-boundary continuity
@@ -74,6 +81,7 @@ Required guidance:
 | unresolved startup gate | resolve startup posture before execution drift |
 | clear active phase/task path | continue rather than stop on narration |
 | discoverable unfinished work | inspect execution surfaces and continue if safe |
+| broad/noisy next slice | apply worker routing before broad leader-session absorption |
 | milestone-only pause drift | continue after reporting when safe |
 | open concept/design work | stay in discussion mode |
 | unresolved governing basis | ask for basis selection before deep execution |
@@ -89,6 +97,7 @@ Required guidance:
 | discussion-mode inertia after path is clear | switch to execution mode and continue |
 | obvious next work framed as user-choice theater | do the implied safe step |
 | waiting for repeated prompt despite clear execution surfaces | inspect surfaces and continue |
+| using execution momentum to skip worker routing | apply the worker-scale gate before broad/high-output next work |
 ---
 ## Quality Metrics
 | Metric | Target |
@@ -96,11 +105,13 @@ Required guidance:
 | Correct discussion-vs-execution classification | High |
 | Unnecessary milestone-only pauses | Low |
 | Continuous execution after clear next step | High |
+| Worker-routing gate respected before broad continuation | High |
 | Execution during unresolved design discussion | 0 critical cases |
 | Stop-gate correctness | High |
 ---
 ## Integration
 Related rules:
+- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns worker-scale gating before broad leader-session absorption
 - [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
 - [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording
 - [todo-standards.md](todo-standards.md) - live task list as execution surface
