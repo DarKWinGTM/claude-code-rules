@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.52
+> **Current Version:** 1.53
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.25
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** Active summary synchronized through completed phase 082-01 maintainable code structure and decomposition
+> **Status:** Active summary synchronized through in-progress phase 083-01 maintainable helper and comment discipline refinement
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace currently indexes seventy visible rollout families:
+The current workspace currently indexes seventy-one visible rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -85,6 +85,7 @@ The current workspace currently indexes seventy visible rollout families:
 - major phase `080` = native worker agent routing and context control rollout
 - major phase `081` = native worker routing capability and subagent-first refinement rollout
 - major phase `082` = maintainable code structure and decomposition rollout
+- major phase `083` = maintainable helper and comment discipline refinement rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -304,6 +305,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
   → 079-01: add evidence-seeking proof-aware reasoning so substantial analysis, design, recommendation, agreement, and disagreement seek practical checked evidence without turning ordinary evidence into a rigid decision lock
   → 080-01: add native worker agent routing and context control so broad, noisy, high-context, high-output, multi-surface, or naturally parallel work uses the smallest effective worker structure before leader-session raw absorption
   → 082-01: add maintainable code structure and decomposition so AI coding work preserves responsibility boundaries, treats code smells as investigation triggers, avoids unnecessary God functions/files, and keeps tactical structure debt tied to convergence
+  → 083-01: refine maintainable code structure so helper functions earn their indirection cost and source-code comments explain useful hidden context without comment spam or stale source truth
   → active RULES workspace uses explicit major/subphase identities, one deterministic patch model, artifact-first startup governance, explicit phase-to-patch linkage when patch is in scope, a first-class external source-trust verification owner, a first-class custom-agent selection owner, a first-class portable-implementation owner, first-class execution continuity and mode-selection behavior, first-class goal-set review and priority-balance behavior, same-objective task-list continuity and retention semantics, continuation-first communication behavior, an explicit install-doc portability model that keeps source-side and destination/runtime path roles distinct, a clearer recommendation-plus-reason format when multiple next steps are shown, a clearer identifier-explanation model for variable-heavy technical answers, a goal-qualified proposal model for future-wave suggestions, explicit reuse-before-spawn / inspect-before-respawn handling for duplicate-looking team-agent state, explicit post-compact re-anchor behavior after context compression, a direct human-readable wording preference that rejects metaphor-heavy internal shorthand as a default explanation style, an explicit RULES-first-over-memory authority boundary for user-declared governance issues, portable-by-default support/package source artifact handling, a purpose-first communication model that exposes what diagnosis/test/recommendation/proposal/update answers are doing earlier, current-phase-first live task tracking when a phase is active, easy-to-picture concise phase/progress explanations, an active bounded high-signal response-tightening rule, completed source-only runtime compression slices for phase 073, completed P073 runtime install parity for the active 41-file runtime set, evidence-calibrated agreement across factual endorsement and user-owned direction, and evidence-seeking proof-aware reasoning that treats ordinary evidence as grounding input unless it is a hard constraint, authoritative requirement, safety boundary, or verified contradiction
 
 | 062 | 062-01 | `phase/phase-062-01-create-technical-snapshot-rule-chain.md` | `design/technical-snapshot-communication.design.md` | `patch/accurate-communication-owner-extraction.patch.md` | Create the first-class technical-snapshot owner by extracting bounded snapshot wording out of `accurate-communication` | One semantic owner exists for bounded technical snapshot wording, exact/partial/inferred separation, and scoped local-fact snapshot communication |
@@ -336,6 +338,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 080 | 080-01 | `phase/phase-080-01-native-worker-agent-routing-and-context-control.md` | `design/design.md` + `design/native-worker-agent-routing-and-context-control.design.md` + `design/custom-agent-selection-priority.design.md` + `design/execution-continuity-and-mode-selection.design.md` | `patch/native-worker-agent-routing-and-context-control.patch.md` | Add first-class native worker routing, integrate custom-agent selection after routing, and make execution continuity pass broad continuation through the worker gate | Broad/high-output/context-heavy work routes to the smallest effective worker structure before leader raw absorption while leader verification remains mandatory |
 | 081 | 081-01 | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | `design/design.md` + `design/native-worker-agent-routing-and-context-control.design.md` + `design/custom-agent-selection-priority.design.md` + `design/execution-continuity-and-mode-selection.design.md` | `patch/native-worker-routing-capability-and-subagent-first-refinement.patch.md` | Refine native worker routing so intent is classified before project exploration, broad independent work is standalone-subagent-first, and custom-agent selection stays capability-fit downstream of routing | P081/v9.80 shipped intent-first, capability-based, subagent-first broad work with 42-file runtime parity verified and GitHub release `v9.80` published |
 | 082 | 082-01 | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | `design/design.md` + `design/maintainable-code-structure-and-decomposition.design.md` + `design/tactical-strategic-programming.design.md` | `patch/maintainable-code-structure-and-decomposition.patch.md` | Create the first-class maintainable code structure owner, integrate tactical/strategic boundary, sync master records, install/verify the 43-rule runtime set, push, and release | P082/v9.81 shipped the 43rd active runtime rule with source audit, semantic anchor audit, runtime install/parity, git push, and GitHub release `v9.81` complete |
+| 083 | 083-01 | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | `design/design.md` + `design/maintainable-code-structure-and-decomposition.design.md` | `patch/maintainable-helper-comment-discipline-refinement.patch.md` | Refine the maintainable code structure owner with helper-function necessity and source-code comment discipline, sync master records, install/verify the 43-rule runtime set, push, and release | P083/v9.82 source sync is in progress; active runtime count remains 43 because this refines an existing rule |
 
 ---
 
@@ -460,6 +463,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 080 | 080-01 | `phase/phase-080-01-native-worker-agent-routing-and-context-control.md` | Approved | None | Approved As-Is | Source rule triad, adjacent-owner integration, master record sync, source audit, runtime install, and 42-file parity passed; source/runtime release artifacts are ready for git push and v9.79 release |
 | 081 | 081-01 | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | Approved | None | Approved As-Is | Owner-chain source/design/changelog updates, P081 phase/patch records, v9.80 master source sync, source audit, 42-file runtime install/parity, git push, and GitHub release `v9.80` are complete |
 | 082 | 082-01 | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | Approved | None | Approved As-Is | Source rule triad, tactical/strategic v1.3 integration, master source sync, source audit, semantic anchor audit, 43-file runtime install/parity, git push, and GitHub release `v9.81` are complete |
+| 083 | 083-01 | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | Pending | None | In Progress | Maintainable-code v1.1 triad audit passed; master source sync, runtime install/parity, git push, and GitHub release `v9.82` remain pending |
 
 ---
 
@@ -588,6 +592,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 080 | 080-01 | Completed | `phase/phase-080-01-native-worker-agent-routing-and-context-control.md` | Add native worker routing and context control so broad/high-output/context-heavy work uses the smallest effective worker structure before leader raw absorption | `079-01` |
 | 081 | 081-01 | Completed | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | Refine native worker routing so user intent is classified before project exploration, broad independent work is standalone-subagent-first, worker choice is capability-based, and Agent Team workflow remains exceptional | `080-01` |
 | 082 | 082-01 | Completed | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | Create a maintainable code structure owner so AI coding work handles responsibility boundaries, God function/file pressure, code smells, wrong abstractions, and behavior-preserving refactor guidance without rigid templates | `081-01` |
+| 083 | 083-01 | In Progress | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | Refine maintainable code structure so helpers are used only when they add semantic value and source-code comments explain useful hidden context without spam or stale claims | `082-01` |
 
 ---
 
@@ -599,6 +604,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - P080 touched chain changelogs record `native-worker-agent-routing-and-context-control` v1.0, `custom-agent-selection-priority` v1.2, and `execution-continuity-and-mode-selection` v1.8; TODO and master changelog record the source/runtime work as ready for git publish/release after runtime install/parity verification.
 - P081 touched chain changelogs record `native-worker-agent-routing-and-context-control` v1.1, `custom-agent-selection-priority` v1.3, and `execution-continuity-and-mode-selection` v1.9; TODO, master changelog, README, phase, and patch surfaces record v9.80 source governance, source audit, 42-file runtime install/parity, git push, and GitHub release `v9.80` as completed.
 - P082 touched chain changelogs record `maintainable-code-structure-and-decomposition` v1.0 and `tactical-strategic-programming` v1.3; TODO, master changelog, README, phase, and patch surfaces record v9.81 / 43-rule source governance, source audit, semantic anchor audit, runtime install/parity, git push, and GitHub release `v9.81` as completed.
+- P083 touched chain changelog records `maintainable-code-structure-and-decomposition` v1.1; TODO, master changelog, README, phase, and patch surfaces record v9.82 / 43-rule source governance, with runtime install/parity, git push, and GitHub release `v9.82` pending until those gates pass.
 
 ---
 
@@ -658,13 +664,14 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the native worker agent routing and context-control rollout exists as bounded completed `080-01` work with explicit patch linkage, creates the new worker-routing owner, keeps custom-agent selection as selection-after-routing, makes execution continuity defer broad continuation through the worker gate, has verified source sync and 42-rule runtime install parity, and prepares the governed source/runtime release artifacts for git publish/release
 - the native worker routing capability and subagent-first refinement exists as bounded completed `081-01` work with explicit patch linkage, keeps the active runtime rule count at 42, refines worker routing to classify user intent before project exploration, prefers standalone subagent lanes for broad independent work, keeps worker choice capability-based instead of hardcoded by tool name, has verified 42-file runtime install/parity, and has published GitHub release `v9.80`
 - the maintainable code structure and decomposition rollout exists as bounded completed `082-01` work with explicit patch linkage, adds the 43rd active runtime rule, creates a coding-time responsibility/decomposition owner, integrates tactical/strategic convergence boundaries, passed source audit, semantic anchor audit, and 43-file runtime install/parity, and published GitHub release `v9.81`
+- the maintainable helper and comment discipline refinement exists as bounded in-progress `083-01` work with explicit patch linkage, keeps the active runtime rule count at 43, refines the maintainable-code owner with helper-function necessity and source-code comment discipline, and still requires master sync, 43-file runtime install/parity, git push, and GitHub release `v9.82`
 - the tmux bridge anchored-task board-reflection rollout exists as a bounded `045` family with explicit patch linkage, reflects request/report state into the existing anchored board task when safe, fails closed on unsafe anchors, avoids hidden broker/history drift, and synchronizes governance/history/package surfaces to the bounded reflection model
 
 ---
 
 ## Overall Rollback / Containment
 
-If the shared execution coordination, handoff-boundary, shared-board operating-detail, universal task-ownership, memsearch availability-intake, legacy-history authority-boundary clarification, phase-context-aware task discovery, proactive light-table use, task-language pattern, phase-first task-shaping, doc-derived knowledge-capture refinement, phase-073 source-only semantic compression inventory gate, phase-074 runtime destination ownership boundary work, phase-075 closeout-reporting refinement, phase-076 design-to-phase synthesis refinement, phase-077 completed documentation surface governance, phase-078 evidence-calibrated agreement refinement, phase-079 evidence-seeking proof-aware reasoning refinement, phase-080 native worker agent routing and context-control refinement, phase-081 native worker routing capability and subagent-first refinement, or phase-082 maintainable code structure and decomposition refinement proved incorrect, rollback would require:
+If the shared execution coordination, handoff-boundary, shared-board operating-detail, universal task-ownership, memsearch availability-intake, legacy-history authority-boundary clarification, phase-context-aware task discovery, proactive light-table use, task-language pattern, phase-first task-shaping, doc-derived knowledge-capture refinement, phase-073 source-only semantic compression inventory gate, phase-074 runtime destination ownership boundary work, phase-075 closeout-reporting refinement, phase-076 design-to-phase synthesis refinement, phase-077 completed documentation surface governance, phase-078 evidence-calibrated agreement refinement, phase-079 evidence-seeking proof-aware reasoning refinement, phase-080 native worker agent routing and context-control refinement, phase-081 native worker routing capability and subagent-first refinement, phase-082 maintainable code structure and decomposition refinement, or phase-083 maintainable helper and comment discipline refinement proved incorrect, rollback would require:
 - narrowing the visible-session / lifecycle / retention / optional-recall wording in the touched owner chains before removing the refinement entirely
 - narrowing the universal visible-ownership wording before weakening the underlying request / held / blocked state distinctions
 - narrowing the availability-first optional-recall wording before weakening the immediate fallback protection for absent optional extensions

@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.81
+> **Current Version:** 9.82
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.82 | 2026-05-04 | **[Added helper-function necessity and source-code comment discipline](#version-982)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.81 | 2026-05-04 | **[Added maintainable code structure and decomposition owner](#version-981)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.80 | 2026-05-04 | **[Refined native worker routing for subagent-first capability and intent](#version-980)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.79 | 2026-05-03 | **[Added native worker agent routing and context control](#version-979)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -115,6 +116,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-982"></a>
+## Version 9.82: Added helper-function necessity and source-code comment discipline
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `maintainable-code-structure-and-decomposition.md`, `design/maintainable-code-structure-and-decomposition.design.md`, and `changelog/maintainable-code-structure-and-decomposition.changelog.md` to v1.1 so the existing owner now covers helper-function necessity and appropriate source-code comment discipline.
+- Added guardrails against helper-function inflation, helpers for obvious expressions or trivial assignments, pass-through helper chains, comment spam, stale comments, and unverified explanatory source comments.
+- Created `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` and `patch/maintainable-helper-comment-discipline-refinement.patch.md` to track the governed P083 source, runtime install, parity, publish, and release gates.
+- Synchronized README, TODO, master design, master changelog, and phase summary for the v9.82 / 43-active-rule source state; runtime install/parity, git push, and GitHub release remain pending.
+
+### Summary
+P083 refines the maintainable code structure owner so code quality avoids both God function/file drift and helper-function inflation, while source-code comments explain useful hidden purpose, process, constraints, side effects, and business rules without becoming comment spam or stale source truth.
 
 ---
 

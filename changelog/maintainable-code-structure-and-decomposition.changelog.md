@@ -1,7 +1,7 @@
 # Changelog - Maintainable Code Structure and Decomposition
 
 > **Parent Document:** [../maintainable-code-structure-and-decomposition.md](../maintainable-code-structure-and-decomposition.md)
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,8 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-05-04 | **[Added helper-function necessity and comment discipline](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Clarified that maintainable code structure avoids both God function/file drift and helper-function inflation, and added source-code comment guidance for purpose, process, constraints, side effects, and business rules without comment spam or stale comments | |
 | 1.0 | 2026-05-04 | **[Created maintainable code structure and decomposition owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class coding-structure rule that uses maintainability, responsibility, code-smell triggers, smallest-useful decomposition, wrong-abstraction avoidance, and behavior-preserving refactor guidance without rigid line-count or architecture-template doctrine | |
+
+---
+
+<a id="version-11"></a>
+## Version 1.1: Added helper-function necessity and comment discipline
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `maintainable-code-structure-and-decomposition.md` from v1.0 to v1.1.
+- Updated `design/maintainable-code-structure-and-decomposition.design.md` from v1.0 to v1.1.
+- Added helper-function necessity guidance so helpers must earn their indirection cost and should not be created for obvious expressions, trivial assignments, pass-through wrappers, or simple local flow that is clearer inline.
+- Added source-code comment discipline so comments explain purpose, why, process order, business rules, constraints, side effects, external contracts, workarounds, or operational caveats when code cannot express them clearly enough.
+- Added guardrails against comment spam, syntax-repeating comments, stale comments, and unverified explanatory comments.
+
+### Summary
+Refined the maintainable code structure owner so code quality does not mean splitting everything into helpers or commenting every line; helper extraction and comments should both improve real understanding, changeability, and verification.
 
 ---
 
