@@ -25,7 +25,7 @@
   <b>43</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Release pending</b><br><sub>Runtime Verified</sub>
+  <b>Released</b><br><sub>Runtime Verified</sub>
 </td>
 <td align="center" width="200">
   <b>Helper/comment</b><br><sub>Refinement</sub>
@@ -312,7 +312,7 @@ Please:
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
 - P081 source governance is synchronized for v9.80; runtime install parity is verified for the 42 active rule set; git push completed and GitHub release `v9.80` is published
 - P082 source governance is synchronized for v9.81 with a new maintainable code structure owner; source audit, semantic anchor audit, and 43-file runtime install/parity passed; git push completed and GitHub release `v9.81` is published
-- P083 source governance is synchronized for v9.82 with `maintainable-code-structure-and-decomposition` v1.1 helper-function necessity and source-code comment discipline; runtime install/parity passed, while git push and GitHub release remain pending
+- P083 source governance is synchronized for v9.82 with `maintainable-code-structure-and-decomposition` v1.1 helper-function necessity and source-code comment discipline; runtime install/parity passed, git push completed, and GitHub release `v9.82` is published
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -1110,7 +1110,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 43 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, and P082 install parity were verified after explicit install gates; P083 refines an existing source-owned runtime rule, keeps the active runtime scope at 43, and still requires the explicit install/parity gate before runtime-aligned wording | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, and P083 install parity were verified after explicit install gates; P083 refines an existing source-owned runtime rule, keeps the active runtime scope at 43, and GitHub release `v9.82` is published | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture, order, and current-phase tasks when staged work is warranted | Reduces retrospective phase backfill |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |

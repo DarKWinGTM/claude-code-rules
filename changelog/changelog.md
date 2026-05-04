@@ -129,7 +129,7 @@
 - Updated `maintainable-code-structure-and-decomposition.md`, `design/maintainable-code-structure-and-decomposition.design.md`, and `changelog/maintainable-code-structure-and-decomposition.changelog.md` to v1.1 so the existing owner now covers helper-function necessity and appropriate source-code comment discipline.
 - Added guardrails against helper-function inflation, helpers for obvious expressions or trivial assignments, pass-through helper chains, comment spam, stale comments, and unverified explanatory source comments.
 - Created `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` and `patch/maintainable-helper-comment-discipline-refinement.patch.md` to track the governed P083 source, runtime install, parity, publish, and release gates.
-- Synchronized README, TODO, master design, master changelog, and phase summary for the v9.82 / 43-active-rule source state; runtime install/parity, git push, and GitHub release remain pending.
+- Synchronized README, TODO, master design, master changelog, and phase summary for the v9.82 / 43-active-rule source state; runtime install/parity passed, master was pushed, and GitHub release `v9.82` was published.
 
 ### Summary
 P083 refines the maintainable code structure owner so code quality avoids both God function/file drift and helper-function inflation, while source-code comments explain useful hidden purpose, process, constraints, side effects, and business rules without becoming comment spam or stale source truth.

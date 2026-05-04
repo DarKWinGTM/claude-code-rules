@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.82
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -107,10 +107,10 @@ A P083 phase record tracks triad refinement, master governed sync, runtime insta
 
 - [x] Maintainable code structure runtime/design/changelog triad updated and audited at v1.1.
 - [x] Master records, README, TODO, phase, and patch describe P083/v9.82 consistently.
-- [ ] README Bash and PowerShell install arrays remain exactly 43 active runtime files.
-- [ ] Golden semantic anchors pass for God-function/file protection, no helper for trivial expression, helper extraction when concept/process/test/boundary value exists, comment usefulness, no comment spam, stale-comment cleanup, and source-code comment versus governed-doc boundary.
+- [x] README Bash and PowerShell install arrays remain exactly 43 active runtime files.
+- [x] Golden semantic anchors pass for God-function/file protection, no helper for trivial expression, helper extraction when concept/process/test/boundary value exists, comment usefulness, no comment spam, stale-comment cleanup, and source-code comment versus governed-doc boundary.
 - [x] Runtime install parity is verified for the 43 active runtime rule files.
-- [ ] Source/runtime release artifacts are pushed and GitHub release `v9.82` is created.
+- [x] Source/runtime release artifacts are pushed and GitHub release `v9.82` is created.
 
 ---
 
