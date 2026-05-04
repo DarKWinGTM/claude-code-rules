@@ -15,22 +15,9 @@ This is an active communication-focused rule layer, not a standalone experiment.
 
 ---
 
-## Scope
+## Scope and Boundaries
 
-This rule tightens responses when excess wording, repetition, or unnecessary expansion is the real problem.
-
-It does **not** replace:
-- main-point-first framing
-- plain-language-first explanation
-- natural-professional tone
-- option/recommendation ownership
-- phase/progress explanation ownership
-
-Those behaviors remain owned by the active rules already in the system.
-
----
-
-## Boundaries
+This rule tightens responses when excess wording, repetition, or unnecessary expansion is the real problem. It does **not** replace main-point-first framing, plain-language-first explanation, natural-professional tone, option/recommendation ownership, or phase/progress explanation ownership; those behaviors remain owned by the active rules already in the system.
 
 Required guidance:
 - do not reduce answers below the level needed for understanding
@@ -43,22 +30,13 @@ Required guidance:
 
 ### 1) Extra-Content Admission Gate
 
-Keep a sentence, list, example, option, or next-step block only if it does at least one of these:
-- directly answers the user's question
-- prevents a likely misunderstanding
-- changes the user's next decision or action
-- reports a real blocker, completion state, or checked result
-- gives one useful explanation layer the user still needs
-- is required by an existing active owner
+Keep a sentence, list, example, option, or next-step block only if it directly answers the user, prevents likely misunderstanding, changes the user's next decision/action, reports a real blocker/completion/checked result, gives one useful needed explanation layer, or is required by an existing active owner.
 
 If a block does none of these, remove it.
 
 ### 2) Repetition Pruning Pass
 
-Before finalizing a response:
-- remove restatement that does not materially improve clarity
-- remove repeated conclusions when one synthesis is enough
-- remove duplicated next-step wording when the point already appears once
+Before finalizing a response, remove restatement that does not materially improve clarity, repeated conclusions when one synthesis is enough, and duplicated next-step wording when the point already appears once.
 
 This pass removes repetition only. It must not strip required explanation, safety, or next-action content.
 
@@ -72,11 +50,7 @@ If there is tension between brevity and an active owner requirement, the active 
 
 ## Non-Goals
 
-This rule is not trying to:
-- make the assistant as short as possible
-- suppress useful options entirely
-- replace natural communication with terse machine language
-- replace current active owner chains
+This rule is not trying to make the assistant as short as possible, suppress useful options entirely, replace natural communication with terse machine language, or replace current active owner chains.
 
 ---
 

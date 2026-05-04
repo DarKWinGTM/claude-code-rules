@@ -9,49 +9,11 @@
 This rule owns environment-binding discipline for shared artifacts and public install/onboarding examples: paths, install locations, hostnames, ports, and other machine- or environment-specific values.
 ---
 ## Core Principles
-### 1) Portable core
-Shared rules, design docs, templates, reusable code, support/package content, and generalized examples should describe portable behavior first.
-Required guidance:
-- prefer portable contracts over workstation literals
-- keep core logic independent from machine-specific assumptions
-- treat local machine structure as one observed environment, not the default system model
-### 2) Late binding
-Environment-specific values should resolve at the edge through configuration, environment variables, CLI arguments, adapters, or runtime settings.
-Required guidance:
-- bind environment details at the edge, not in the portable core
-- prefer config/env resolution over literals embedded in shared logic
-- keep one explicit resolution model instead of many ad hoc overrides
-### 3) Observed-local-fact separation
-A checked local value is not a reusable implementation contract.
-Required guidance:
-- separate local observations from portable defaults
-- label exact local values as checked local facts when used in reports or audits
-- do not let observed machine state silently become architecture truth
-### 4) Adapter boundary
-Machine-scoped behavior belongs in adapters, launchers, bootstrap layers, or deployment-specific configuration.
-Required guidance:
-- keep host-specific details at the edge
-- keep reusable code and governance artifacts free of machine-local assumptions by default
-- isolate unavoidable machine-scoped contracts explicitly
-### 5) Canonical notation
-Portable path/location notation should use one small vocabulary.
-Required guidance:
-- use semantic placeholders in shared documentation
-- use env/config notation in executable configuration
-- avoid mixing placeholder dialects without a clear contract
-### 6) Public onboarding and install guidance
-Public onboarding/install guidance should default to portable source guidance and clearly separate destination/runtime notation.
-Required guidance:
-- use repo-root-relative or portable source guidance when an artifact can be cloned or installed from repo root
-- use placeholders or explicit labels for destination/runtime paths
-- do not present a workstation absolute path or internal umbrella workspace root as the public default
-- if exact local absolute paths appear as examples, mark them as local examples rather than portable defaults
-### 7) Example portability
-Examples should be portable by default unless their purpose is explicitly machine-scoped.
-Required guidance:
-- use placeholder examples in shared docs/templates
-- use exact absolute paths only for explicitly local or machine-scoped examples
-- do not teach bad defaults through convenient non-portable examples
+- **Portable core:** shared rules, design docs, templates, reusable code, support/package content, and generalized examples describe portable behavior first; workstation layout is one observed environment, not the system model.
+- **Late binding and adapters:** environment-specific paths, hosts, ports, and install locations resolve at the edge through config, env vars, CLI args, adapters, launchers, bootstrap layers, or deployment settings. Keep one explicit resolution model instead of ad hoc literals.
+- **Observed-local separation:** checked local values may appear in reports/audits/tool execution, but must be labeled as scoped local facts or explicit machine-scoped contracts, not reusable defaults.
+- **Canonical notation:** use semantic placeholders in shared docs and env/config notation in executable contracts; avoid mixed placeholder dialects without a clear contract. A small stable vocabulary is better than many equivalent local names because it keeps README, rules, templates, scripts, and support artifacts aligned.
+- **Public onboarding and examples:** default to repo-root-relative or portable source guidance, separate destination/runtime notation, avoid workstation/internal umbrella roots as public defaults, and use exact absolute paths only for explicitly local or machine-scoped examples.
 ---
 ## Classification Model
 | Class | Meaning | Preferred form |
@@ -62,68 +24,47 @@ Required guidance:
 | Machine-scoped contract | intentionally host-specific requirement | exact value with explicit machine scope |
 ---
 ## Default Contract
-Shared authority artifacts should use semantic placeholders in runtime rules, design docs, README guidance, templates, phase docs, patch docs, reusable examples, and support/package artifacts.
-Preferred semantic placeholders: `<workspace-root>`, `<repo-root>`, `<install-root>`, `<user-runtime-agents>`, `<user-runtime-skills>`, `<user-runtime-rules>`, `<service-base-url>`.
-Public onboarding/install guidance must separate where the artifact comes from from where it lives or executes.
-Preferred source-side forms: `<repo-root>`, `<workspace-root>` when the workspace is the portable contract, or `./` when the command is run from repo root.
-Preferred destination/runtime forms: `<install-root>`, `<user-runtime-agents>`, `<user-runtime-skills>`, `<user-runtime-rules>`.
-Required guidance:
-- source-side guidance answers where the user clones from or which repo-root context a command uses
-- destination/runtime guidance answers where the installed/runtime artifact belongs
-- one exact workstation path must not silently play both roles
-Executable configuration and runtime contracts should use env/config-style resolution in scripts, launchers, bootstrap code, runtime config, and reusable automation: `${WORKSPACE_ROOT}`, `${REPO_ROOT}`, `${INSTALL_ROOT}`, `${USER_RUNTIME_AGENTS}`, `${USER_RUNTIME_SKILLS}`, `${USER_RUNTIME_RULES}`, `${SERVICE_BASE_URL}`.
-Local inspection/debugging may use exact values in tool execution, debug snapshots, audits, and local verification notes, but they should be framed as checked local fact, observed current-machine value, or machine-scoped contract when intentionally host-specific.
+Shared authority artifacts should use semantic placeholders such as `<workspace-root>`, `<repo-root>`, `<install-root>`, `<user-runtime-agents>`, `<user-runtime-skills>`, `<user-runtime-rules>`, and `<service-base-url>`.
+Public onboarding/install guidance separates source-side forms (`<repo-root>`, `<workspace-root>` when it is the portable contract, or repo-root `./`) from destination/runtime forms (`<install-root>`, `<user-runtime-agents>`, `<user-runtime-skills>`, `<user-runtime-rules>`). Source-side guidance answers where the user clones from or which repo-root context a command uses; destination/runtime guidance answers where the installed or runtime artifact belongs. One exact workstation path must not silently play both roles.
+Executable configuration and runtime contracts should use env/config resolution in scripts, launchers, bootstrap code, runtime config, and reusable automation: `${WORKSPACE_ROOT}`, `${REPO_ROOT}`, `${INSTALL_ROOT}`, `${USER_RUNTIME_AGENTS}`, `${USER_RUNTIME_SKILLS}`, `${USER_RUNTIME_RULES}`, `${SERVICE_BASE_URL}`.
+Local inspection/debugging may use exact values in tool execution, debug snapshots, audits, and local verification notes when framed as checked local fact, observed current-machine value, or intentionally machine-scoped contract.
 ---
 ## Allowed Exceptions
 Exact environment-specific values are acceptable when a tool requires the exact local path/value now, the user explicitly asks for it, a debug/audit report needs the checked local fact, an operational contract is intentionally machine-scoped, or a forensic/incident record needs exact preservation.
-In those cases, keep scope explicit and do not silently upgrade the value into a portable default.
+In those cases, keep scope explicit and do not silently upgrade the value into a portable default. Exact local values may be used for current tool execution or local verification notes, but shared artifacts should still prefer placeholders, config, or late-bound resolution unless the artifact itself is deliberately machine-scoped.
 ---
-## Trigger Model
-| Trigger | Required action |
+## Trigger and Anti-Pattern Model
+Trigger this rule when shared artifacts, reusable templates/examples, support/package source, public onboarding/install examples, or executable reusable automation contain machine-local paths, hardcoded hosts/ports, environment defaults, internal umbrella roots, or mixed placeholder/env notation.
+Required response:
+- replace shared machine-local values with placeholders, env/config, adapters, launchers, or repo-root-relative source guidance unless explicitly machine-scoped
+- move environment defaults in shared logic to config/env/adapter unless the value is true domain data
+- keep checked local values scoped as local facts and normalize mixed notation to the canonical model
+Forbidden drift includes developer-machine-as-default, observed-value-becomes-contract, home-directory-as-architecture, temp-dir-as-authority, localhost-default-for-shared-system, single-machine install assumption, internal umbrella root as public default, support-source-hardcodes-workstation-path, source/destination blur, mixed resolution models, and silent machine-scoped examples.
+
+Common corrections:
+| Drift | Better behavior |
 |---|---|
-| machine-local path in shared artifact | replace with placeholder/env/config resolution unless explicitly machine-scoped |
-| environment default in shared logic | move to config/env/adapter unless true domain data |
-| reusable template/example | make portable by default |
-| support/package source artifact | avoid baked workstation paths in reusable content |
-| public onboarding/install example | use repo-root-relative source guidance and separate destination/runtime notation |
-| checked local value | keep scoped as local fact |
-| mixed notation drift | normalize to the canonical model |
----
-## Forbidden Anti-Patterns
-| Anti-pattern | Better behavior |
-|---|---|
-| developer-machine-as-default | use placeholders or env/config resolution |
-| observed-value-becomes-contract | label it as observed local fact only |
-| home-directory-as-architecture | use semantic placeholder or env binding |
-| temp-dir-as-authority | bind temp paths late and keep non-authoritative |
-| localhost-default-for-shared-system | move host/port to config/env |
-| single-machine install assumption | use install-root or runtime-resolved paths |
-| internal-umbrella-root-as-public-default | use repo-root-relative portable source guidance |
-| support-source-hardcodes-workstation-path | use placeholders, context variables, or late-bound config |
-| source-destination-blur | separate source-side and destination/runtime notation |
-| mixed resolution model drift | use one canonical model |
-| silent machine-scoped example | mark local-only examples explicitly |
+| workstation/home/tmp path as shared default | semantic placeholder or env/config binding |
+| hardcoded host/port in shared logic | config/env/adapter at the edge |
+| internal umbrella root as public install path | repo-root-relative source guidance |
+| exact local value in reusable example | mark local-only or replace with portable placeholder |
+| one path used as both source and destination | separate source-side and destination/runtime notation |
 ---
 ## Validation Checklist
-- [ ] Is this value a portable contract or only a local observation?
-- [ ] If shared, does it avoid machine-specific literals by default?
-- [ ] If executable, does it resolve through env/config or adapter?
-- [ ] If exact local values appear, are they explicitly scoped?
-- [ ] Does public onboarding/install guidance separate source path from destination/runtime path?
-- [ ] If source is repo-local, can it use `<repo-root>` or `./` instead of a workstation literal?
-- [ ] Would this still work after moving machines, users, or workspace locations?
-- [ ] Is the notation model consistent?
+- [ ] Values are classified as portable contract, executable config, observed local fact, or machine-scoped contract.
+- [ ] Shared artifacts avoid machine-specific literals by default; executable paths/hosts/ports resolve through env/config or adapters.
+- [ ] Exact local values are explicitly scoped and not upgraded into reusable defaults.
+- [ ] Public onboarding separates source path from destination/runtime path and prefers `<repo-root>` or repo-root `./` for repo-local commands.
+- [ ] The artifact would still work after moving machines, users, or workspace locations, and notation stays consistent.
+- [ ] Public examples do not teach bad defaults by presenting local-only paths, hosts, or ports as reusable setup guidance.
 ---
 ## Quality Metrics
 | Metric | Target |
 |---|---|
-| Shared-artifact portability | High |
-| Public onboarding/install portability | High |
-| Hardcoded environment assumptions in shared artifacts | 0 critical cases |
-| Workstation-specific absolute paths as public defaults | 0 critical cases |
+| Shared-artifact and public onboarding portability | High |
+| Hardcoded environment assumptions or workstation defaults in shared artifacts | 0 critical cases |
 | Local fact vs portable contract separation | High |
-| Source-vs-destination notation clarity | High |
-| Canonical notation consistency | High |
+| Source-vs-destination notation and canonical model consistency | High |
 | Machine-scoped exception labeling | High |
 ---
 ## Integration

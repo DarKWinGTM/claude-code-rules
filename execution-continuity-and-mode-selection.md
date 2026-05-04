@@ -9,93 +9,69 @@
 This rule owns mode selection and the stop/continue boundary. It does not replace startup governance, user authority, safety gates, evidence wording, native worker routing, or shared-board/plugin coordination ownership.
 ---
 ## Core Contract
-### Mode selection
-Classify the interaction before deciding whether to continue autonomously.
-Required guidance:
-- concept shaping, design exploration, unresolved architecture choice, behavior/RULES analysis, and open option comparison = `discussion mode`
-- explicit goal with sufficiently defined scope/path/order = `execution mode`
-- do not infer execution mode merely because the topic is technical or because pasted logs include project paths
-- do not stay in discussion mode once target and path are clear enough
+### Mode selection and discussion protection
+Classify the interaction before autonomous continuation.
+- `discussion mode`: concept shaping, design exploration, unresolved architecture choice, behavior/RULES analysis, and open option comparison
+- `execution mode`: explicit goal with sufficiently defined scope/path/order
+
+Do not infer execution mode merely because the topic is technical or pasted evidence includes project paths. Do not stay in discussion mode once target and path are clear enough. Discussion mode is not permission to implement: stay there while behavior, structure, governing basis, or materially different paths remain live.
+
 ### Intent recheck before project exploration
-When the user provides technical evidence, logs, snippets, paths, or another session’s output, re-check whether the active request is about behavior/governance or about the project itself.
-Required guidance:
+When the user provides technical evidence, logs, snippets, paths, or another session's output, re-check whether the active request is about behavior/governance or the project itself.
 - if the user asks about AI behavior, RULES behavior, or workflow compliance, treat pasted technical material as evidence for that question first
-- do not continue into project file reading, project search, or implementation merely because the evidence contains file paths or code snippets
-- project exploration is appropriate only when the user asks for project facts/implementation/review, or when a bounded verification need is stated and aligned with the active question
-- if the user corrects the scope from project exploration back to AI/RULES behavior, drop the project path and continue in the corrected scope
-### Discussion protection
-Discussion mode is not permission to start implementation or rollout.
-Required guidance:
-- stay in discussion mode while behavior, structure, or governing basis is still being refined
-- do not auto-execute while materially different paths remain live
-- keep unresolved path choices in clarification/comparison form until the active path is clear
+- do not start project file reading, search, or implementation merely because evidence contains paths or code snippets
+- project exploration is appropriate only when requested for project facts/implementation/review, or when a bounded verification need is stated and aligned with the active question
+- if the user corrects scope back to AI/RULES behavior, drop the project path and continue in the corrected scope
+
 ### Startup gate first
-Execution readiness does not bypass `artifact-initiation-control`.
-Required guidance:
-- resolve design/changelog/TODO/phase/patch or live-task posture first when materially pending
-- once posture is resolved enough for the active slice, keep work moving rather than re-pausing on the same gate
-- treat startup resolution as an early gate, not repeated ritual
+Execution readiness does not bypass `artifact-initiation-control.md`. Resolve materially pending design/changelog/TODO/phase/patch or live-task posture first, then keep work moving once the active slice is resolved enough. Startup resolution is an early gate, not a repeated ritual.
+
 ### Continuous execution
 When execution mode is active, startup posture is resolved enough, and no real stop gate exists, continue the active objective.
-Required guidance:
-- continue when next step is implied by active goal, phase, task list, TODO, or checked implementation state
+- continue when the next step is implied by active goal, phase, task list, TODO, or checked implementation state
 - do not end a turn only to report a milestone if safe continuation exists
 - do not pause to expose an obvious task when the assistant can do it directly
-- status may happen during execution, but reporting alone must not become the stop reason
-### Active next-work discovery
+- status may clarify changes/completion/blockers, but reporting alone must not become the stop reason
+---
+## Active Next-Work Discovery
 When execution mode remains active, inspect execution surfaces instead of waiting for a repeated prompt.
-Required guidance:
-- use current task list first when it clearly expresses the objective
-- shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
+- use the current task list first when it clearly expresses the objective
 - if task list is insufficient, inspect active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state
 - prefer unfinished work in the same objective/phase family before opening a fresh objective
-- when next work is phase-shaped but may belong to an existing family, use `phase-implementation.md` major-vs-subphase lineage handling before opening a new major phase
-- execution momentum must not allocate a new major phase when checked lineage points to current phase update, existing-family subphase, or unresolved lineage
 - treat design, phase, TODO, task list, and checked implementation state as execution-discovery surfaces once execution mode is active
-### Capture before continue
-Continuous execution must not outrun required knowledge capture.
-Required guidance:
-- if external docs/specs/provider references produce implementation-critical knowledge, normalize it into the governed artifact before later multi-step execution depends on it
-- prefer governed design for extracted implementation truth
-- use phase/patch for execution consequences when in scope
-- do not rely on transient reading memory when compact/handoff could remove context
-### Worker routing before broad continuation
+- shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
+
+Phase-shaped next work must not become a new major phase by momentum. If it may belong to an existing family, apply `phase-implementation.md` major-vs-subphase lineage handling before choosing current phase update, existing-family subphase, new major, or ask-now posture.
+---
+## Capture Before Continue
+Continuous execution must not outrun required knowledge capture. If external docs/specs/provider references produce implementation-critical knowledge, normalize the extracted truth into the governed artifact before later multi-step execution depends on it. Prefer governed design for implementation truth, use phase/patch for execution consequences when in scope, and do not rely on transient reading memory when compact/handoff could remove context.
+---
+## Worker Routing Before Broad Continuation
 Continuous execution must not turn the next broad slice into default leader-session raw absorption.
-Required guidance:
-- when the next implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, apply `native-worker-agent-routing-and-context-control.md` before broad direct reading/searching/testing/log review
-- apply the intent-first part of worker routing before project exploration when the next slice could be behavior/RULES analysis rather than project work
+- when implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, apply `native-worker-agent-routing-and-context-control.md` before broad direct reading/searching/testing/log review
+- apply intent-first worker routing before project exploration when the next slice could be behavior/RULES analysis rather than project work
 - prefer standalone subagent / worker-lane handling for broad independent read/search/audit/review work before considering Agent Team workflow
 - if worker routing selects a standalone subagent, multiple subagents, or Agent Team lane, dispatch or assign that lane before the leader absorbs raw broad evidence
 - if the leader handles broad worker-fit work directly, state the narrow reason rather than treating execution momentum as authorization
 - trivial, low-output, tightly sequential, or exact interactive-control work may still continue directly
-### Legitimate stop gates
+---
+## Legitimate Stop Gates
 Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion.
-### Phase-boundary continuity
-Completing one slice is not a stop by itself.
-Required guidance:
-- continue into the next slice when it is already the implied active path
-- if a completed slice reveals related follow-up work, treat completion as a lineage checkpoint rather than automatic new-major boundary
-- do not turn every phase boundary into a handoff-style report
-- do not auto-promote draft-only, future-only, or unselected phases
-### Reporting and mode recheck
-Status reporting supports execution, not replaces it.
-Required guidance:
-- provide compact progress updates when they clarify changes/completion/blockers
-- avoid summary-first closure when the same turn can safely do the next step
-- re-check mode when the user changes scope, corrects intent, provides evidence from another session, or shifts between behavior analysis and project execution
-- move back to discussion mode only for real new ambiguity, design work, behavior/RULES analysis, or user direction
-- do not let habit, ceremony, or milestone reporting reset execution mode
+
+Completing one slice is not a stop by itself. Continue into the next slice when it is already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff-style report; and do not auto-promote draft-only, future-only, or unselected phases.
+
+Re-check mode when the user changes scope, corrects intent, provides evidence from another session, or shifts between behavior analysis and project execution. Move back to discussion mode only for real new ambiguity, design work, behavior/RULES analysis, or user direction. Do not let habit, ceremony, or milestone reporting reset execution mode.
 ---
 ## Trigger Model
 | Trigger | Required behavior |
 |---|---|
 | explicit continue intent | preserve execution mode unless real stop gate exists |
-| user provides pasted logs/paths/snippets from another session | classify intent before project exploration |
-| user asks about AI/RULES behavior | stay discussion/governance unless project inspection is explicitly requested |
+| pasted logs/paths/snippets from another session | classify intent before project exploration |
+| AI/RULES behavior question | stay discussion/governance unless project inspection is explicitly requested |
 | unresolved startup gate | resolve startup posture before execution drift |
 | clear active phase/task path | continue rather than stop on narration |
 | discoverable unfinished work | inspect execution surfaces and continue if safe |
-| phase-shaped follow-up work | apply phase lineage handling before opening a new major phase |
+| phase-shaped follow-up | apply phase lineage handling before opening a new major phase |
 | broad/noisy next slice | apply worker routing before broad leader-session absorption |
 | milestone-only pause drift | continue after reporting when safe |
 | open concept/design/behavior work | stay in discussion mode |
@@ -103,19 +79,7 @@ Required guidance:
 | approval-sensitive step | stop for confirmation under stronger rule |
 ---
 ## Anti-Patterns
-| Anti-pattern | Better behavior |
-|---|---|
-| report-then-stop drift | continue after report when safe |
-| phase-closure pause ritual | treat completion as transition |
-| jumping past unresolved startup posture | resolve startup gate first |
-| executing inside open design or behavior discussion | wait until path is clear |
-| treating pasted project paths as project-work authorization | re-check user intent first |
-| discussion-mode inertia after path is clear | switch to execution mode and continue |
-| obvious next work framed as user-choice theater | do the implied safe step |
-| waiting for repeated prompt despite clear execution surfaces | inspect surfaces and continue |
-| using execution momentum to allocate a new major phase | apply `phase-implementation.md` lineage handling before choosing current phase, subphase, new major, or ask-now posture |
-| using execution momentum to skip worker routing | apply the worker-scale gate before broad/high-output next work |
-| treating teammate/Agent Team restriction as an all-subagent ban | let worker routing distinguish standalone subagents from coordinated team workflow |
+Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, new-major allocation by momentum, skipped worker routing, and treating teammate/Agent Team restriction as an all-subagent ban.
 ---
 ## Quality Metrics
 | Metric | Target |

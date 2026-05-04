@@ -17,13 +17,13 @@ This rule owns post-failure retry posture. It does not replace recovery, refusal
 
 ## Core Contract
 
-1. **Classify before retry.** Decide whether the failure is transient, systemic, or deterministic before spending attempts.
-2. **Profile first.** If a known case profile matches, use it before generic retry defaults.
-3. **Bound retries.** Same user-facing objective keeps one retry budget even if tools, wrappers, providers, or domains change.
-4. **Stop when deterministic.** Missing authorization/input, invalid path, unchanged approval denial, policy blocks, malformed requests, and absent dependencies require a real state/input/authorization change before retry.
-5. **Escalate cross-domain failure.** Similar failures across 2+ tools/domains or 3 total same-turn occurrences indicate systemic risk; switch to diagnosis or coordination.
-6. **Cooldown honesty.** Recommended cooldowns are policy guidance, not proof that Claude slept or will automatically retry later. Provider `Retry-After` wins.
-7. **Extensible profiles.** Add future cases as explicit profiles inside the same taxonomy and retry-posture vocabulary.
+1. **Classify before retry:** decide whether the failure is transient, systemic, or deterministic before spending attempts.
+2. **Profile first:** if a known case profile matches, use it before generic retry defaults.
+3. **Bound retries:** one same user-facing objective keeps one retry budget even if tools, wrappers, providers, or domains change.
+4. **Stop when deterministic:** missing authorization/input, invalid path, unchanged approval denial, policy blocks, malformed requests, and absent dependencies require real state/input/authorization change before retry.
+5. **Escalate cross-domain failure:** similar failures across 2+ tools/domains or 3 total same-turn occurrences indicate systemic risk; switch to diagnosis or coordination.
+6. **Cooldown honesty:** recommended cooldowns are policy guidance, not proof that Claude slept or will automatically retry later. Provider `Retry-After` wins.
+7. **Extensible profiles:** add future cases as explicit profiles inside the same taxonomy and retry-posture vocabulary.
 
 ---
 
@@ -31,19 +31,17 @@ This rule owns post-failure retry posture. It does not replace recovery, refusal
 
 | Failure Class | Meaning | Default Posture | Budget / Cooldown |
 |---|---|---|---|
-| `POTENTIALLY_TRANSIENT` | may clear without material input/policy change: timeout, temporary network, 429/502/503, short lock contention | `AUTONOMOUS_RETRY_ALLOWED` | up to 2 autonomous retry rounds; 2s then 10s recommended unless provider says otherwise |
-| `LIKELY_SYSTEMIC` | broader environment/provider/shared dependency issue: repeated failures, outage, DNS/connectivity class issue | `CONFIRMATION_RETRY_ONLY` or `STOP_AND_ESCALATE` | at most 1 confirmation retry; 30s or observed state change |
-| `DETERMINISTIC_NON_RETRIABLE` | same objective will fail until input/state/access/policy changes | `NO_RETRY_UNTIL_CHANGE` | 0 retries; no cooldown until relevant change |
+| `POTENTIALLY_TRANSIENT` | timeout, temporary network, 429/502/503, short lock contention; may clear without material change | `AUTONOMOUS_RETRY_ALLOWED` | up to 2 autonomous retry rounds; 2s then 10s recommended unless provider says otherwise |
+| `LIKELY_SYSTEMIC` | repeated failures, outage, DNS/connectivity, provider/shared dependency issue | `CONFIRMATION_RETRY_ONLY` or `STOP_AND_ESCALATE` | at most 1 confirmation retry; 30s or observed state change |
+| `DETERMINISTIC_NON_RETRIABLE` | same objective fails until input/state/access/policy changes | `NO_RETRY_UNTIL_CHANGE` | 0 retries; no cooldown until relevant change |
 
-Same-Objective aggregate cap: maximum **3 autonomous retry rounds total** per same user-facing objective in one turn, across all tools/domains. Stop earlier when more attempts increase cost, blast radius, or churn without improving certainty.
-
-Immediate retry is allowed only when: the class/profile permits it, no provider wait blocks it, the failure is not deterministic, the aggregate budget remains, and user/safety boundaries allow autonomous retry.
+Same-objective aggregate cap: maximum **3 autonomous retry rounds total** per user-facing objective in one turn, across all tools/domains. Stop earlier when more attempts increase cost, blast radius, or churn without improving certainty. Immediate retry is allowed only when the class/profile permits it, no provider wait blocks it, the failure is not deterministic, the aggregate budget remains, and user/safety boundaries allow autonomous retry.
 
 ---
 
 ## Case-Specific Profiles
 
-Every profile should define: `case_id`, scope/signals, initial class, retry posture, immediate retry rule, budget/cooldown rule, promotion rule, stop condition, recovery direction, and communication notes.
+Every profile should define `case_id`, signals, initial class, retry posture, immediate retry rule, budget/cooldown, promotion rule, stop condition, recovery direction, and communication notes.
 
 ### Web/search/fetch
 
@@ -51,7 +49,7 @@ Every profile should define: `case_id`, scope/signals, initial class, retry post
 |---|---|---|
 | `WEB_SEARCH_TIMEOUT` | `POTENTIALLY_TRANSIENT` / `AUTONOMOUS_RETRY_ALLOWED` | allow 1 low-blast-radius probe retry when no provider wait exists; identical repeat promotes to systemic; report real attempts used |
 | `WEB_SEARCH_429_WITH_RETRY_AFTER` | transient but provider-constrained / `STOP_AND_ESCALATE` | no immediate retry; surface provider wait; do not pretend waiting occurred |
-| `WEB_SEARCH_5XX_OR_PROVIDER_UNAVAILABLE` | transient first, systemic after repeat / retry then stop | allow 1 confirmation retry when safe; repeated provider-side signal escalates |
+| `WEB_SEARCH_5XX_OR_PROVIDER_UNAVAILABLE` | transient first, systemic after repeat | allow 1 safe confirmation retry; repeated provider-side signal escalates |
 | `WEB_FETCH_PRIVATE_OR_AUTH_REQUIRED` | `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE` | use authenticated/specialized access or ask for accessible source |
 | `WEB_FETCH_INVALID_URL_OR_BAD_INPUT` | `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE` | request corrected URL/input; do not repeat same bad fetch |
 
@@ -66,22 +64,13 @@ Every profile should define: `case_id`, scope/signals, initial class, retry post
 
 ---
 
-## Stop and Escalation Contract
+## Stop, Escalation, and Communication
 
-Stop autonomous retries when:
-- the class/profile is deterministic or blocks immediate retry
-- class-specific or aggregate same-objective budget is exhausted
-- similar failures appear across 2+ tools/domains or 3 total occurrences
-- retries add blast radius, cost, or churn without new evidence
+Stop autonomous retries when the class/profile is deterministic or blocks immediate retry, any class-specific or aggregate same-objective budget is exhausted, similar failures appear across 2+ tools/domains or 3 total occurrences, or retries add blast radius/cost/churn without new evidence.
 
 Escalate by switching to broader diagnosis, user coordination for missing state/access/context, an alternate safe recovery path, explicit wait-for-state-change guidance, or hooks/wrappers/orchestration when deterministic delayed retry behavior is required.
 
----
-
-## Communication Contract
-
 When failure handling materially matters, report:
-
 ```text
 failure_class: <POTENTIALLY_TRANSIENT | LIKELY_SYSTEMIC | DETERMINISTIC_NON_RETRIABLE>
 retry_posture: <AUTONOMOUS_RETRY_ALLOWED | CONFIRMATION_RETRY_ONLY | STOP_AND_ESCALATE | NO_RETRY_UNTIL_CHANGE>
@@ -93,28 +82,7 @@ what_can_be_done_now:
 how_to_proceed:
 - ...
 ```
-
-Required honesty:
-- `attempts_used` must reflect real attempts.
-- Cooldown is guidance unless an actual runtime wait occurred.
-- Provider `Retry-After` must not be replaced by guessed delay.
-- If a profile blocked retry or aggregate cap limits the objective, say so.
-- This schema is not a second refusal/emergency framework.
-
----
-
-## Anti-Patterns
-
-| Anti-pattern | Better behavior |
-|---|---|
-| blind retry loop | classify first and stop at ceilings |
-| switching tools to reset budget | keep one same-objective budget |
-| treating missing auth/input as transient | classify deterministic |
-| pretending cooldown elapsed | state real wait status honestly |
-| ignoring `Retry-After` | follow provider guidance |
-| generic retry language when profile matches | apply the profile |
-| dead-end failure report | give recovery path |
-| redefining refusal/emergency classes | defer to their owners |
+Required honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless an actual runtime wait occurred; provider `Retry-After` must not be replaced by guessed delay; blocked profiles and aggregate caps must be named; this schema is not a second refusal/emergency framework.
 
 ---
 
@@ -130,10 +98,4 @@ Required honesty:
 ---
 
 ## Integration
-
-Related rules:
-- [recovery-contract.md](recovery-contract.md) - compact recovery wording
-- [refusal-minimization.md](refusal-minimization.md) - recoverable alternatives
-- [functional-intent-verification.md](functional-intent-verification.md) - blast-radius/intent gates
-- [refusal-classification.md](refusal-classification.md), [emergency-protocol.md](emergency-protocol.md) - separate refusal/emergency authority
-- [authority-and-scope.md](authority-and-scope.md), [zero-hallucination.md](zero-hallucination.md), [no-variable-guessing.md](no-variable-guessing.md) - authority, factual honesty, and missing-input discipline
+Related rules: recovery/refusal/emergency chains own blocked-path and safety outcomes; `functional-intent-verification.md` owns blast-radius and confirmation gates; authority, zero-hallucination, and no-guessing chains keep failure causes, absence claims, and retry explanations evidence-bounded.

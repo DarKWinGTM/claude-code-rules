@@ -15,78 +15,35 @@
 
 ## Core Requirements
 
-### 1) Design-layer role
-Governed design documents define active target behavior, contract, and implementation-relevant truth. They are not changelog/history dumps or completed-work records, but they are the right governed place for external-contract knowledge that later execution still depends on.
+### Design-layer role and active body
+Governed design documents define current target behavior, contract, and implementation-relevant truth, including external-contract knowledge later execution still depends on. They are not changelog/history dumps, completed-work records, audit snapshots, remediation logs, rollout journals, obsolete activation notes, or detailed version-history tables.
+Active design bodies should describe what the system should be now or next target-state, not how every prior wave got there. If historical detail is still useful for audit, rollback, or provenance, keep it reachable through changelog governance rather than embedding it as active blueprint content.
 
-### 2) Active-state body rule
-Design documents describe the current active target state.
+Historical explanation belongs in changelog surfaces, including `changelog/done/` when inactive history separation is needed. `design/` remains active blueprint authority and has no default `design/done`; active target truth stays in current design files until superseded or removed from target state. Retained legacy snapshots must be labeled historical/reference-only and kept outside active design authority.
 
-They must not embed:
-- detailed version-history tables
-- audit snapshots
-- remediation logs
-- rollout-completion journals
-- obsolete pending/activation instructions
+### Doc-derived knowledge capture
+When external docs, API specs, provider references, or comparable authorities materially constrain implementation, normalize the extracted implementation truth into governed design before or alongside multi-step work that relies on it. Capture requirements, not copied prose, and do not rely on transient reading memory for contract-critical requirements.
 
-Historical detail belongs in changelog files or, when inactive history separation is needed, in `changelog/done/` under changelog governance.
+A useful capture should make later implementation able to answer:
+- what the external source requires and which implementation part is constrained
+- what values, fields, parameters, flows, states, auth/callback rules, or acceptance criteria matter
+- what should be sent, accepted, stored, validated, rejected, or kept out of active target truth
+- which details are source-side background rather than implementation truth to carry forward
 
-### 2.1) No default design done surface
-`design/` remains active blueprint and target-state authority.
-
-Required guidance:
-- do not introduce a default `design/done/` pattern
-- keep active target truth in current design files until it is superseded or removed from the target state
-- move historical explanation to changelog surfaces instead of parking obsolete blueprint state under `design/done/`
-- if a legacy design snapshot must be retained, label it historical/reference-only and keep it outside active design authority
-
-### 3) Doc-derived knowledge capture
-When external documentation, API specifications, provider references, or comparable implementation authorities materially constrain implementation, the extracted implementation-relevant knowledge must be normalized into the governed design layer before or alongside continued multi-step work that relies on it.
-
-Required guidance:
-- do not rely on transient reading memory alone for contract-critical external requirements
-- capture implementation-relevant truth in design before treating it as stable context for later execution slices
-- capture extracted knowledge, not a copied prose dump of the source document
-- if the source determines request parameters, authentication requirements, callback expectations, field semantics, state transitions, acceptance criteria, or integration constraints, make those constraints visible in design
-- compact/session continuity limits are part of the reason this capture is required
-
-### 4) Extraction specificity
-A design capture derived from docs/specs should be specific enough that later implementation can answer:
-- what the external source requires
-- which implementation part is constrained
-- what values, fields, parameters, flows, states, or acceptance criteria matter
-- what should be sent, accepted, stored, validated, or rejected
-- which details are active implementation truth versus source-side background that should not be carried forward
-
-### 5) Design-changelog alignment
-For governed chains, design version must align with:
-- runtime rule `Current Version`
-- runtime rule `Design` reference version
-- changelog `Current Version`
-
-### 6) Support-artifact boundary
-Not every reference artifact belongs in governed design space. If a file is reference-only, prompt-only, media-only, or support-only, it should not remain in ambiguous `.design.md` form unless fully normalized as a governed design document.
-
-Use clearly non-governed placement or naming for support-only artifacts.
-
-### 7) Navigator rule
-When a paired changelog exists, design documents:
-- keep version-history navigation limited to `Full history`
-- do not embed detailed changelog sections
-- do not duplicate historical summaries inside the active body
+### Alignment and support boundary
+For governed chains, design version must align with the runtime rule `Current Version`, runtime rule `Design` reference version, and changelog `Current Version`. Design alignment is target-state alignment, not permission to duplicate changelog history inside the design body.
+Reference-only, prompt-only, media-only, or support-only artifacts should not remain ambiguous `.design.md` files unless fully normalized as governed design; use clearly non-governed placement/naming instead. This prevents support artifacts from masquerading as active target-state authority.
+When a paired changelog exists, design navigation is limited to `Full history`; do not embed detailed changelog sections or duplicate historical summaries in the active body.
 
 ---
 
 ## Verification Checklist
 
-- [ ] File uses governed design naming only when it is truly a governed design document
-- [ ] Required metadata fields are complete
-- [ ] Design body is active-state only
-- [ ] Historical detail is delegated to changelog or `changelog/done/` when inactive history separation is needed
-- [ ] No default `design/done/` pattern is introduced for governed blueprint docs
-- [ ] External-doc/spec-derived implementation truth is captured in design when later work still depends on it
-- [ ] Captured knowledge is normalized and implementation-relevant rather than copied source prose
-- [ ] Rule/design/changelog versions are aligned where applicable
-- [ ] Links resolve correctly
+- [ ] Governed design naming is used only for true governed design documents, with complete metadata and resolving links.
+- [ ] Design body is active-state only; historical detail goes to changelog/`changelog/done`, not default `design/done`.
+- [ ] External-doc/spec-derived implementation truth is normalized into design when later work depends on it.
+- [ ] Rule/design/changelog versions align where applicable.
+- [ ] Support-only artifacts are not left in ambiguous governed-looking design form.
 
 ---
 
@@ -94,13 +51,10 @@ When a paired changelog exists, design documents:
 
 | Metric | Target |
 |---|---|
-| Active-state-only design-body compliance | 100% |
-| Navigator compliance in paired design docs | 100% |
+| Active-state design body, navigator, and version alignment | 100% |
 | External-doc-derived implementation truth captured when material | High |
-| Ambiguous governed-looking support artifacts | 0 |
-| Broken design/changelog links | 0 |
-| Stale historical guidance inside active design bodies | 0 critical cases |
-| Default `design/done/` usage for governed blueprint docs | 0 critical cases |
+| Ambiguous governed-looking support artifacts or broken links | 0 |
+| Stale history or default `design/done` usage in active blueprint docs | 0 critical cases |
 
 ---
 

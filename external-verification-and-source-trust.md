@@ -13,21 +13,19 @@ This rule owns WebSearch/WebFetch-backed external verification triggers, source 
 When a cheap external check resolves a material factual question:
 - verify current external facts when material
 - prefer checking over unsupported reassurance or passive hesitation
-- skip external checks for trivial/conceptual questions
+- skip external checks for trivial, conceptual, speculative, or local-source-of-truth questions
 ### Source trust
 Rank sources by authority, freshness, specificity, and relevance.
 Required guidance:
 - prefer `AUTHORITATIVE_EXTERNAL` primary technical authorities over secondary summaries
-- downgrade stale, vague, inconsistent, marketing-shaped, untraceable, or broken sources
+- downgrade stale, vague, inconsistent, marketing-shaped, untraceable, broken, or weak-accountability sources
 - do not average trust across unequal sources
-### Corroboration
-Use multiple sources for high-impact, ambiguous, contradictory, stale, non-primary, version/provider-dependent, or security/compliance-sensitive claims. Prefer stronger independent convergence.
-### Source conflicts
-If sources conflict, name the conflict, identify the stronger source and why, avoid silently picking convenience, and say what would settle unresolved conflict.
+### Corroboration and conflict
+Use multiple sources for high-impact, ambiguous, contradictory, stale, non-primary, version/provider-dependent, or security/compliance-sensitive claims. If sources conflict, name the conflict, identify the stronger source and why, avoid silently picking convenience, and say what would settle unresolved conflict.
 ### Recommendation and design integrity
-If a recommendation or design judgment depends on current external facts, verify first when practical, align wording to evidence strength, and give the best bounded answer when verification remains incomplete.
-### Evidence as grounding, not design lock
-External evidence grounds analysis and standards-based recommendations. It becomes binding only when it represents an authoritative requirement, compatibility limit, safety/compliance boundary, or verified contradiction; otherwise preserve trade-offs and user goals.
+If a recommendation, disagreement, or design judgment depends on current external facts, verify first when practical and proportional, prefer primary sources, corroborate when impact is high or source strength is weak, and align wording to gathered evidence. External evidence becomes binding only when it is an authoritative requirement, compatibility limit, safety/compliance boundary, or verified contradiction; otherwise preserve trade-offs and user goals.
+### Honest fallback
+If verification remains incomplete, separate verified from likely, state what remains unresolved, provide the best bounded recommendation still justified, and avoid false certainty or unnecessary blockage.
 ---
 ## External Verification Triggers
 Use proactive WebSearch/WebFetch-backed verification for:
@@ -37,8 +35,7 @@ Use proactive WebSearch/WebFetch-backed verification for:
 - security-sensitive or compliance-sensitive external fact
 - decision-critical external fact the user may act on
 - standards, provider constraints, or current behavior that materially shapes analysis, design, or recommendation
-Prefer verification when information drifts, depends on current vendor/runtime state, quick checking reduces material uncertainty, or the user prioritizes accuracy.
-Usually skip when the question is conceptual, local project evidence is source of truth, or the user asks for speculative discussion.
+Prefer verification when information drifts, depends on current vendor/runtime state, quick checking reduces material uncertainty, or the user prioritizes accuracy. Usually skip when the question is conceptual, local project evidence is source of truth, or the user asks for speculative discussion.
 ---
 ## Source Reliability Ladder
 | Tier | Source Type | Trust | Examples |
@@ -53,36 +50,18 @@ Before trusting strongly, check whether the source is primary, fresh, normative,
 ---
 ## Corroboration and Conflict Rules
 One source is enough only when it is strong primary authority, directly answers a routine low-risk claim, and no contradiction or ambiguity is visible.
-Multi-source comparison is required/preferred for high-impact, recommendation-critical, incomplete, ambiguous, stale, secondary-source-based, version/provider-dependent, conflicting, or security/compliance-sensitive claims.
+
+Multi-source comparison is required or preferred when the claim is high-impact, recommendation-critical, incomplete, ambiguous, stale, secondary-source-based, version/provider-dependent, conflicting, or security/compliance-sensitive.
+
 When comparing:
 - prefer stronger independent convergence
 - explain why one source is preferred when they disagree
 - do not treat sources as equal because they mention the same topic
-If conflict remains unresolved, give the best bounded reading and what would settle it. If a source is incoherent or contradicted by stronger evidence, treat it as unreliable rather than equal.
----
-## Verification-Before-Recommendation-or-Design
-When a recommendation, disagreement, or design judgment materially depends on current external facts:
-- verify first when practical and proportional
-- prefer primary sources
-- corroborate when impact is high or source is weak/ambiguous
-- identify what the external evidence proves, suggests, and leaves unresolved when that boundary affects the decision
-- align wording to gathered evidence
-The posture is fact-first, not sycophantic, not obstructive, and more accurate through better source handling without turning every external fact into a final architecture mandate.
----
-## Honest Fallback
-If verification remains incomplete, separate verified from likely, state what remains unresolved, provide the best bounded recommendation or design judgment still justified, and avoid false certainty or unnecessary blockage.
+- if conflict remains unresolved, give the best bounded reading and what would settle it
+- if a source is incoherent or contradicted by stronger evidence, treat it as unreliable rather than equal
 ---
 ## Anti-Patterns
-| Anti-pattern | Better behavior |
-|---|---|
-| staying vague when cheap verification would resolve the claim | verify first when it matters |
-| designing or recommending from unchecked external assumptions when practical verification exists | verify proportionally, then label remaining assumptions |
-| treating ordinary external evidence as the only valid design path | bind only authoritative requirements, compatibility limits, safety/compliance boundaries, or verified contradictions |
-| trusting weak secondary source like primary | rank sources explicitly |
-| one ambiguous source for high-impact recommendation | compare multiple sources |
-| silently choosing one side of conflict | state conflict and preferred authority |
-| treating broken source as credible | downgrade it explicitly |
-| using web search only after challenge | use proactive verification triggers |
+Avoid vague non-checking when cheap verification matters, unchecked external assumptions in recommendations, weak-source trust, one-source high-impact conclusions, silent source-conflict resolution, broken-source credibility, and treating ordinary external evidence as the only valid design path.
 ---
 ## Quality Metrics
 | Metric | Target |

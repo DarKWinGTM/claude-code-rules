@@ -19,11 +19,7 @@ This chain owns bounded wording for compact technical, diagnostic, and verificat
 
 ### 1) Snapshot-Layer Separation Principle
 
-When a response includes a compact technical or diagnostic snapshot, separate:
-- **exact captured facts**
-- **partial checked facts**
-- **inferred implications**
-- **exact detail unavailable**
+When a response includes a compact technical or diagnostic snapshot, separate **exact captured facts**, **partial checked facts**, **inferred implications**, and **exact detail unavailable**.
 
 Required guidance:
 - if the exact request, payload, or runtime state was not captured, say so
@@ -42,11 +38,7 @@ Required guidance:
 
 ### 3) Diagnostic Snapshot Content Principle
 
-A diagnostic or verification-status snapshot should show only the facts needed to understand the current operational state quickly:
-- what was checked
-- what is currently true
-- what remains pending
-- the immediate next action when one exists
+A diagnostic or verification-status snapshot should show only the facts needed to understand current operational state quickly: what was checked, what is currently true, what remains pending, and the immediate next action when one exists.
 
 Keep snapshots concise; do not turn them into evidence dumps.
 
@@ -70,7 +62,6 @@ This chain owns what a technical snapshot must communicate. It does not replace:
 | Exact detail unavailable | `I could not capture the exact payload/request, but ...` |
 
 Example:
-
 ```text
 Diagnostic snapshot:
 - Checked: `backend/.env`, `docker-compose.yml`, startup log
@@ -79,16 +70,7 @@ Diagnostic snapshot:
 - Next action: inspect the container runtime environment source
 ```
 
----
-
-## Application Guidelines
-
-Use this rule strongly when reporting:
-- troubleshooting progress
-- implementation progress with mixed done/pending state
-- verification checkpoints
-- request, environment, or runtime details from incomplete checked scope
-- exact local values that could be mistaken for portable defaults
+Use this rule strongly for troubleshooting progress, mixed done/pending implementation status, verification checkpoints, incomplete request/environment/runtime details, and exact local values that could be mistaken for portable defaults.
 
 ---
 
@@ -107,11 +89,8 @@ Use this rule strongly when reporting:
 
 | Metric | Target |
 |---|---|
-| Exact vs partial vs inferred separation | High |
-| Scoped local-fact honesty | High |
-| Snapshot usefulness | High |
+| Exact/partial/inferred separation, scoped local-fact honesty, and snapshot usefulness | High |
 | Exact-capture overclaim incidents | 0 critical cases |
-| Snapshot-state clarity | High |
 
 ---
 

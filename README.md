@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.83</b><br><sub>Current Release</sub>
+  <b>v9.84</b><br><sub>Current Release</sub>
 </td>
 <td align="center" width="200">
   <b>43</b><br><sub>Active Runtime Rules</sub>
@@ -28,7 +28,7 @@
   <b>Released</b><br><sub>Runtime Verified</sub>
 </td>
 <td align="center" width="200">
-  <b>Phase lineage</b><br><sub>Refinement</sub>
+  <b>Runtime compression</b><br><sub>P073-09 Refresh</sub>
 </td>
 </tr>
 </table>
@@ -314,6 +314,7 @@ Please:
 - P082 source governance is synchronized for v9.81 with a new maintainable code structure owner; source audit, semantic anchor audit, and 43-file runtime install/parity passed; git push completed and GitHub release `v9.81` is published
 - P083 source governance is synchronized for v9.82 with `maintainable-code-structure-and-decomposition` v1.1 helper-function necessity and source-code comment discipline; runtime install/parity passed, git push completed, and GitHub release `v9.82` is published
 - P076-02 source governance is synchronized for v9.83 with lineage-first current-phase/subphase/new-major phase identity selection; active runtime count remains 43; runtime install/parity passed, git push completed, and GitHub release `v9.83` is published
+- P073-09 refreshed active runtime compression is synchronized for v9.84: 43 source-owned runtime rules were reduced from 42,961 to 35,017 words, producing a 7,944-word reduction inside the accepted 7,580-7,944 range; behavior-anchor, golden-scenario, source-boundary, and 43/43 runtime parity audits passed, with destination extras observed-only
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -408,7 +409,7 @@ Please:
 
 **📊 Active Runtime Rules: 43**
 
-Latest refinement: P076-02 refines phase identity selection so phase-shaped follow-up work checks real lineage before opening a new major phase, chooses current-phase update / existing-family subphase / new major / ask-now posture by evidence, and keeps the active runtime count at 43.
+Latest refinement: P073-09 refreshes the active runtime compression record for the current 43-file rule set, preserves the P076-02 phase-lineage behavior, reduces runtime source text by 7,944 words without semantic-anchor loss, verifies source/runtime parity 43/43, and keeps destination extras observed-only rather than source-owned.
 </div>
 
 ---
@@ -1115,7 +1116,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 43 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, and P076-02 install parity were verified after explicit install gates; P076-02 keeps the active runtime scope at 43, and v9.83 master push plus GitHub release completed after parity | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, and P073-09 install parity were verified after explicit install gates; P073-09 keeps the active runtime scope at 43, verifies 43/43 source/runtime parity after the 7,944-word compression refresh, and v9.84 master push plus GitHub release complete from that verified state | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, and phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture | Reduces retrospective phase backfill and new-major bias |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1206,7 +1207,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.83 |
+  <b>Version</b>: 9.84 |
   <b>Last Updated</b>: 2026-05-04 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

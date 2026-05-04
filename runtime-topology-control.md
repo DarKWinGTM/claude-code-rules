@@ -18,33 +18,32 @@ This rule governs runtime mutation posture without replacing safety, authority, 
 7. **Explicit multi-authority exception:** scaling, HA, canary, compare, shadow, or user-requested parallel authorities are valid only with purpose, authority boundaries, and retirement/steady-state plan.
 ---
 ## Trigger Model
-| Trigger | Required action |
-|---|---|
-| unclear current topology | inspect current entities and authority baseline before mutating |
-| conflicting authorities | stop and clarify owner per role/path |
-| start another server/container/worker/target | classify as `ADDITIVE_EXPANSION`; justify and request approval |
-| restart/rebind/swap current owner | declare replacement delta and rollback direction first |
-| scaling/HA/canary/compare/shadow | enter explicit multi-authority mode with boundaries |
-| temporary debug runtime | define retirement plan before creation |
-| post-mutation success claim | verify topology and checked scope before claiming success |
+- Unclear topology: inspect current entities and authority baseline before mutating.
+- Conflicting authorities: stop and clarify owner per role/path.
+- Starting another server/container/worker/target: classify as `ADDITIVE_EXPANSION`, justify, and request approval.
+- Restarting/rebinding/swapping current owner: declare replacement delta and rollback direction first.
+- Scaling/HA/canary/compare/shadow: enter explicit multi-authority mode with boundaries.
+- Temporary debug runtime: define retirement plan before creation.
+- Post-mutation success claim: verify topology and checked scope before claiming success.
 ---
 ## Vocabulary and Delta Classes
-| Term | Meaning |
-|---|---|
-| `runtime entity` | runnable unit such as container, server process, target, worker, proxy, background job, assignment endpoint |
-| `runtime role` | logical job for a path/workflow/capability |
-| `runtime authority` | layer authoritative for what should run for a role/path |
-| `topology-changing action` | creates, removes, replaces, reassigns, duplicates, or reroutes runtime entities |
-| `repair-in-place` | corrects existing path/entity without parallel owner |
-| `replacement mutation` | swaps current owner in a controlled way |
-| `additive expansion` | adds entities or parallel paths beyond current topology |
-| `explicit multi-authority mode` | deliberate user-approved parallel authorities for scaling/HA/canary/compare/shadow |
+Key terms:
+- `runtime entity` = runnable unit such as container, server process, target, worker, proxy, background job, or assignment endpoint
+- `runtime role` = logical job for a path/workflow/capability
+- `runtime authority` = layer authoritative for what should run for a role/path
+- `topology-changing action` = creates, removes, replaces, reassigns, duplicates, or reroutes runtime entities
+- `repair-in-place` = corrects existing path/entity without parallel owner
+- `replacement mutation` = swaps current owner in a controlled way
+- `additive expansion` = adds entities or parallel paths beyond current topology
+- `explicit multi-authority mode` = deliberate user-approved parallel authorities for scaling/HA/canary/compare/shadow
+
 | Class | Meaning | Default posture |
 |---|---|---|
 | `OBSERVE_ONLY` | inspect/report without mutation | default until gates pass |
 | `REPAIR_IN_PLACE` | correct current topology without parallel owner | preferred when feasible |
 | `REPLACEMENT_MUTATION` | replace/swap current owner in bounded way | allowed when justified/safe |
 | `ADDITIVE_EXPANSION` | create additional entities/parallel paths | blocked until justified/approved |
+
 Mutation gate: before mutating, identify current entities, authority baseline, ambiguities, delta class, multi-authority state, authorization, and rollback/retirement direction. If any gate is missing, remain `OBSERVE_ONLY` and request evidence/input.
 ---
 ## Communication Contract
@@ -70,18 +69,12 @@ how_to_proceed:
 ```
 Separate observed topology facts from inferred causes, proposed from approved mutations, and scoped non-findings from absence claims. After mutation, state what was rechecked before success wording.
 ---
-## Anti-Patterns and Boundaries
-| Anti-pattern | Better behavior |
-|---|---|
-| debug-by-expansion | inspect/stabilize existing topology first |
-| accidental parallel authority | keep one baseline unless explicit |
-| implicit authority switch | declare baseline before mutation |
-| temporary runtime without retirement plan | define retirement/steady-state plan first |
-| silent delta escalation | state exact delta class |
-| unsupported “topology fixed” claim | verify post-mutation checked scope |
-Allowed: stay `OBSERVE_ONLY`, use bounded repair/replacement, or use explicit multi-authority mode when selected. Not allowed: unapproved additive expansion, implicit authority switch, temporary runtime without retirement plan, global absence from scoped non-finding, or success claims without verification.
----
-## Verification Checklist
+## Boundaries and Verification
+Allowed: stay `OBSERVE_ONLY`, use bounded repair/replacement, or use explicit multi-authority mode when selected.
+
+Not allowed: debug-by-expansion, accidental parallel authority, implicit authority switch, temporary runtime without retirement plan, silent delta escalation, unapproved additive expansion, global absence from scoped non-finding, or unsupported “topology fixed” claims.
+
+Verification checklist:
 - [ ] current runtime entities and authority baseline identified before mutation
 - [ ] topology delta classified
 - [ ] additive/authority-changing actions have explicit approval
@@ -89,10 +82,5 @@ Allowed: stay `OBSERVE_ONLY`, use bounded repair/replacement, or use explicit mu
 - [ ] post-mutation success claim cites checked scope
 ---
 ## Integration
-Related rules:
-- [functional-intent-verification.md](functional-intent-verification.md) - confirmation and blast radius
-- [authority-and-scope.md](authority-and-scope.md) - precedence and authority override
-- [no-variable-guessing.md](no-variable-guessing.md) - verified inspected-scope facts
-- [accurate-communication.md](accurate-communication.md) - claim strength
-- [operational-failure-handling.md](operational-failure-handling.md) - retry/cooldown/escalation after failures
+Related rules: `functional-intent-verification.md` owns confirmation/blast-radius gates; `authority-and-scope.md` owns precedence; `no-variable-guessing.md` owns inspected-scope facts; `accurate-communication.md` owns claim strength; `operational-failure-handling.md` owns retry/cooldown escalation.
 ---

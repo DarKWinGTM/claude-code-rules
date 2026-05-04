@@ -18,13 +18,8 @@ Required behavior:
 - for tests, diagnoses, recommendations, proposals, or implementation updates, state the purpose before background detail
 - do not add a redundant purpose line when the first sentence already states the point clearly
 ### 2) Layered natural explanation
-Use only layers that materially improve understanding:
-1. short answer
-2. purpose-first framing when needed
-3. simple explanation
-4. compact technical snapshot when needed
-5. step-by-step implication, fix, or reasoning path
-6. concise synthesis or next move when useful
+Use only layers that materially improve understanding: short answer, purpose-first framing when needed, simple explanation, compact technical snapshot when needed, step-by-step implication/fix/reasoning path, and concise synthesis or next move when useful.
+
 When depth matters, preserve **Claim** (what is true), **Mechanism** (why/how it is true), and **Implication** (what the user should conclude or do). If mechanism changes the decision, do not stop at the claim alone.
 ### 2.1) Proof-aware explanation
 When analysis, design, recommendation, or disagreement depends on factual grounding, explain evidence in a way that supports judgment without overstating certainty.
@@ -116,141 +111,52 @@ Before finishing explanation-heavy work, the user should be able to identify the
 ## Trigger Model
 | Trigger | Expected shape |
 |---|---|
-| process explanation | short answer, simple explanation, causal flow |
+| process/root-cause/change walkthrough | short answer, simple explanation, claim/mechanism/implication, causal flow or before/after |
 | option comparison | simple framing, light comparison table when useful, recommendation |
-| proof-aware recommendation/design | checked evidence, what it proves, what it does not prove, implication, and bounded alternative when useful |
-| root-cause analysis | claim/mechanism/implication with evidence-aligned wording |
+| proof-aware recommendation/design | checked evidence, what it proves/does not prove, implication, bounded alternative |
 | diagnostic update | main-point-first status line, compact snapshot, scoped implication, next action |
-| phase/progress explanation | easy-to-picture plain-language line plus concise grouping |
-| phase-backed closeout | delivered feature/improvement and practical impact before governance detail |
-| change walkthrough | before/after or patch-by-patch explanation |
-| scope clarification | explicit current/deferred and is/is-not grouping |
-| whole-set reasoning | full set first, then optional narrowing |
-| stage progression | next state or milestone when current scope is sufficient |
+| phase/progress or closeout | easy-to-picture line plus delivered feature/improvement, practical impact, concise grouping |
+| scope, full-set, or stage progression | explicit current/deferred grouping; full set first; next state when current scope is sufficient |
 | governing-basis ambiguity | compact clarification gate before deep analysis |
 | post-compact continuation | compact re-anchor plus selected-path continuation |
 | goal-qualified proposal | explicit proposal with goal and expected output/result |
 | abstract reasoning | one concrete example, analogy, or direct human-language gloss |
 ---
-## Preferred Example Shapes
-### Simple then technical
+## Compact Pattern Examples
 ```markdown
-Short answer: the failure is in environment handoff, not app boot.
-Simple explanation: the app starts, but it reaches the database step without the value it needs.
-Technical version: startup succeeds, the first DB call fails, and the checked scope points to missing or misrouted `DATABASE_URL` propagation rather than a boot-time crash.
-```
-### Light comparison
-```markdown
-Short answer: use Redis for shared hot state and PostgreSQL for durable business records.
-| Store | Best for | Why |
-|---|---|---|
-| Redis | fast operational state | low-latency shared reads/writes |
-| PostgreSQL | durable business truth | persistence and query integrity |
-Recommendation: keep the split because it matches access pattern and failure semantics.
-```
-### Proof-aware recommendation
-```markdown
-Checked evidence:
-- Official API docs require signed callbacks.
-- The current repo already stores callback state in `payment_events`.
-What this proves:
-- signature validation is a hard integration requirement.
-What this does not prove:
-- it does not prove one internal module layout is the only valid design.
-Recommendation: validate signatures at the callback boundary, then keep the storage layout that best fits the existing event flow.
-```
-### Patch-by-patch
-```markdown
-Patch 1 removes the duplicate state source.
-Patch 2 rewires reads to the remaining authority.
-Patch 3 updates verification against the new path.
-This order matters because patch 2 stays ambiguous until patch 1 establishes one authority.
-```
-### Diagnostic walkthrough
-```markdown
-Short answer: the bug is in environment handoff, not app boot.
-Diagnostic snapshot:
-- Checked: `backend/.env`, `docker-compose.yml`, startup log
-- Current state: app boots, database connection fails
-- Pending: verify `DATABASE_URL` injection path
-- Next action: confirm runtime env source for the failing container
-Reasoning path:
-1. Startup succeeds, so syntax/config parsing is not the first failure.
-2. The first database call fails, narrowing the issue to configuration handoff or runtime env state.
-3. The next useful check is the runtime environment seen by the failing container.
-```
-### Phase-backed closeout
-```markdown
-What this phase delivered
-- It changed closeout reporting so phase completion explains what was improved, not only which files were checked.
-Feature / Improvement
-- Phase-backed delivery/impact closeout guidance.
-Impact
-- The user can see what changed and why it matters before audit details.
-Verification
-- Source wording updated and scoped checks pending.
-Next phase state
-- Governed sync not started yet.
-```
-### Scope and variable examples
-```markdown
-What this is: Phase 12 is the Provider Pool-first user path.
-What this is not: customer-supplied runtime orchestration or Docker account management.
-Key identifiers:
-- `tokenValue` = real secret value used for API calls
-- `hasSecretMaterial` = whether real secret material is currently stored
-- `secretMaterialSource` = where the current state came from
-What this means: `tokenValue = null` plus `hasSecretMaterial = false` means metadata only, not a usable key.
-```
-### Governing basis and post-compact
-```markdown
-Clarification needed: choose the governing basis because official semantic truth, full comparison, and conservative operational policy lead to different downstream answers.
-Post-compact re-anchor:
-- Current objective: continue the selected implementation slice
-- Carried-forward facts: governing basis is selected and touched owner set is unchanged
-- Needs recheck: exact payload wording or exact checked evidence that may have been compressed away
-- Next action: continue if clear; otherwise recheck exact detail before treating it as verified fact
+Simple then technical: Short answer first; then explain the mechanism only as far as it changes action.
+Proof-aware: Checked evidence / what it proves / what it does not prove / recommendation.
+Patch-by-patch: Patch 1 establishes authority; Patch 2 rewires reads; Patch 3 verifies the new path.
+Diagnostic snapshot: Checked / Current / Pending / Next, followed by the reasoning path only when useful.
+Phase-backed closeout: delivered work / feature or improvement / impact / verification / next phase state.
+Scope and identifiers: What this is / is not, plus key identifiers with role and important values.
+Governing/post-compact: ask for governing basis when unsettled; after compact use current objective / carried-forward facts / needs-recheck / next action.
 ```
 ---
 ## Anti-Patterns
 | Anti-pattern | Better behavior |
 |---|---|
-| conclusion-only bullets | add mechanism and implication when process matters |
-| protocol detail before simple framing | give the simple version first |
+| conclusion-only bullets or protocol detail before simple framing | add plain meaning, mechanism, and implication when process matters |
 | one-line-per-thought fragmentation | use cohesive paragraphs for one idea |
 | abstract recommendation without clarifier | add concrete scenario, before/after, or example |
-| proof cited without saying what it proves or does not prove | show evidence boundary and decision implication |
-| ordinary evidence treated as a rigid design lock | separate hard constraints from grounding input |
-| architecture-first wording with no human result | restate what changed or what the user can do |
+| proof cited without boundary, or ordinary evidence as rigid lock | show what it proves, what remains open, and which constraints are binding |
+| architecture-first wording, raw identifiers, or metaphor-heavy shorthand | restate human result and identifier role |
 | purpose hidden after setup detail | open with what is being diagnosed/tested/proposed |
-| raw identifiers used as self-explanatory evidence | explain role, flow position, and important values |
-| scattered comparison bullets | use compact table or grouped comparison |
-| sequence forced into table | use numbered list |
-| simple status forced into table | use bullets unless table improves scanability |
-| boxed ASCII table as default | use light table or non-table form |
-| many edits explained as one blob | use before/after or patch-by-patch |
-| analogy with no literal return | follow analogy with real mechanism |
+| scattered comparison bullets or sequence forced into table | use light table for comparison; numbered list for sequence |
 | diagnostic status buried in narrative | lead with compact diagnostic snapshot |
 | phase closeout starts with governance/file/task detail only | start with delivered feature/improvement and practical impact |
-| scope boundaries buried in prose | use explicit grouped boundaries |
-| drilling down before full set is visible | show full relevant set first |
-| multiple basis branches before basis selection | ask compactly first |
-| post-compact replay | use short re-anchor and continue selected path |
-| repeated deeper options after stage is clear | move to next stage/state |
+| scope boundaries, full set, or stage progression hidden | group boundaries, show full set first, move next when ready |
+| multiple basis branches before selection or post-compact replay | ask compactly; use short re-anchor |
 | future idea phrased as automatic continuation | frame as advisory proposal |
 | explanation continues after decision is clear | stop, synthesize, or move forward |
 ---
 ## Quality Metrics
 | Metric | Target |
 |---|---|
-| Plain-language-first and purpose-first clarity | high |
-| Claim/mechanism/implication coverage | high when depth matters |
-| Proof-aware evidence boundary clarity | high when evidence grounds recommendations/design |
-| Structural cohesion and concrete clarifier support | high |
-| Change-walkthrough and scope-boundary clarity | high when relevant |
-| Full-set and stage-progression clarity | high when relevant |
-| Diagnostic snapshot and decision usefulness | high |
-| Closing signal | high |
+| Plain-language-first, purpose-first, and claim/mechanism/implication clarity | high |
+| Proof-aware evidence boundary and decision usefulness | high |
+| Structural cohesion, concrete clarifiers, change walkthrough, and scope boundaries | high when relevant |
+| Full-set, stage progression, diagnostic snapshot, and closing signal | high when relevant |
 ---
 ## Integration
 Related rules:

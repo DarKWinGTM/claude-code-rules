@@ -83,179 +83,47 @@ Required guidance:
 | Trigger | Preferred presentation |
 |---|---|
 | simple answer | compact paragraph or short list |
-| analytical answer | short orientation plus meaningful sections |
+| analytical / long answer | short orientation, meaningful headings, grouped details, concise synthesis |
 | purpose-first framing | one direct purpose line before supporting detail |
 | comparison | grouped comparison or light table, then recommendation when justified |
-| sequence | numbered steps or ordered subsections |
-| simple status pairs | bullets, grouped blocks, or a small table if scanability improves |
-| branching | small text flow or clearly indented branch structure |
+| sequence / branching | numbered steps, ordered subsections, or small text flow |
 | diagnostic snapshot | orienting line, checked facts, current state, implication, next action |
 | scope clarification | grouped current/deferred and is/is-not sections |
-| phase/progress explanation | short plain-language opening plus concise grouping |
-| phase-backed closeout | compact delivery/feature/impact/verification/next-state grouping |
-| full-set framing | complete set first, then optional narrowing |
-| stage progression | short next-state block only when useful |
+| phase/progress or closeout | plain-language opening plus delivery/feature/impact/verification/next-state grouping |
+| full-set or stage progression | complete set first; short next-state block when useful |
 | goal-set review | `Main goals now` / `Current focus` / `Why rebalance` style block |
 | governing-basis ambiguity | compact clarification block before deep branch analysis |
-| post-compact continuation | compact re-anchor before selected-path continuation |
-| memory-derived context | compact memory-status block when source distinction matters |
+| post-compact or memory-derived context | compact re-anchor/status before selected-path continuation |
 | variable-heavy explanation | short glossary, grouped identifiers, or variable-role table |
-| long answer | headings, grouped blocks, concise synthesis |
 Do not force sectioning into naturally simple answers.
 ---
 ## Preferred Output Shapes
-### Compact direct
-Use one or two short paragraphs, with a short list only if it improves scanability.
-### Structured analytical
-Use this order when reasoning is heavy:
-1. short answer or orienting line
-2. purpose-first line when needed
-3. meaningful sections
-4. details under the right section
-5. concise synthesis or next action when applicable
-### Comparison
-When real alternatives exist, frame the comparison briefly, use a light table only when side-by-side scan helps, show `Recommended` plus one `Why this first` reason when one path is stronger, and preserve a real alternative under `Other options` when several paths remain live.
-### Diagnostic snapshot
-```markdown
-The main issue is that startup succeeds but database handoff still fails.
-Current Status
-- App boots successfully
-- Database connection still fails
-Checked Scope
-- `backend/.env`
-- `docker-compose.yml`
-- startup log
-What This Means
-- Failure is likely in env propagation, not initial boot
-Next Action
-- Inspect the failing container runtime environment
-```
-Small fact table variant:
-```markdown
-| Field | Value |
-|---|---|
-| Status | Failing at DB handoff |
-| Checked | `.env`, compose, startup log |
-| Pending | Runtime env injection |
-| Next | Inspect container env source |
-What this means: startup is succeeding, so the likely issue sits between configuration handoff and the first database call.
-```
-### Scope-boundary
-```markdown
-What this is
-- Provider Pool-first user path
-What this is not
-- customer-supplied runtime orchestration
-- Docker account management
-What happens now
-- Access Key flow
-- AI API Gateway path
-- Provider Pool-first routing UI
-What stays later
-- customer-supplied runtime flow
-- runtime attach/detach orchestration
-What the user will notice
-- the access path feels simpler
-- internal runtime details stay hidden unless truly needed
-```
-### Phase-backed closeout
-```markdown
-What this phase delivered
-- <what changed in practical terms>
-Feature / Improvement
-- <feature, capability, behavior, or governance improvement>
-Impact
-- <user/system result or why it matters>
-Verification
-- <checked evidence and remaining limits>
-Next phase state
-- <not started | draft/planned | selected | active | none opened>
-```
-Use only the fields that improve clarity; do not turn simple non-phase completions into a rigid report.
-### Full-set-first
-```markdown
-There are 10 areas we should review: access-key path, gateway routing summary, provider-pool behavior, compatibility wording, routing mode visibility, status surface, error surface, disabled future-mode handling, user-visible guidance, and verification checkpoints.
-```
-### Next-stage / recommendation
-```markdown
-Recommended
-- move to the implementation checklist
-Why this first
-- the current scope is already clear, so execution adds more value than deeper same-scope explanation
-Other options
-- deepen the same scope further
-- jump ahead into deferred work
-```
-### Variable-role
-```markdown
-| Identifier | What it is | Role | Important values |
-|---|---|---|---|
-| `tokenValue` | real secret value | used for API calls | `null` = no usable secret |
-| `hasSecretMaterial` | secret-present flag | tells whether real secret exists | `false` = metadata only |
-| `secretMaterialSource` | state origin | shows discovery vs reveal source | `inventory_or_search` = discovered state |
-```
-### Post-compact re-anchor
-```markdown
-Post-compact re-anchor
-- Current objective: continue the active work already selected by the user
-- Carried-forward facts: governing basis is already chosen
-- Needs recheck: exact payload wording or exact previously checked evidence that may have been compressed away
-- Next action: continue if state is clear; otherwise recheck exact detail before treating it as verified fact
-```
-### Memory-status
-```markdown
-Memory status
-- Matched path scope: `<repo-scope>`
-- Remembered context: applicable path-scoped memory
-- Freshly checked now: current repo state not yet revalidated
-- Needs recheck: confirm current code/config before treating remembered context as verified fact
-```
-### Governing-basis clarification
-```markdown
-Clarification needed
-- Governing basis: which policy/frame should control the answer?
-Why it matters
-- the downstream answer changes depending on the basis used
-Choose one
-1. official semantic truth
-2. full comparison of possible interpretations
-3. conservative operational policy
-```
-### Goal-qualified proposal
-```markdown
-Proposal
-- build an automated visual QA verdict layer
-Goal
-- turn screenshot capture/compare output into a result that is easier to act on
-Improvement
-- reduce manual interpretation of raw compare artifacts
-Output
-- machine-readable QA summary with concise regression notes
-```
+- **Compact direct:** one or two short paragraphs, with a short list only if it improves scanability.
+- **Structured analytical:** short answer/orientation, optional purpose line, meaningful sections, details under the right section, concise synthesis or next action.
+- **Comparison:** brief framing, light table only when useful, `Recommended` plus `Why this first` when one path is stronger, and a real `Other options` alternative when paths remain live.
+- **Diagnostic snapshot:** orienting line plus `Current`, `Checked`, `Meaning`, and `Next`; use a fact table only when stable facts scan better, and add one implication or next-action line.
+- **Scope-boundary:** `What this is`, `What this is not`, `What happens now`, `What stays later`, and `What the user will notice` when those boundaries matter.
+- **Phase-backed closeout:** `What this phase delivered`, `Feature / Improvement`, `Impact`, `Verification`, and `Next phase state`; use only fields that improve clarity and do not force this onto trivial non-phase completions.
+- **Full-set / next-stage / recommendation:** show the complete relevant set first, then state the next stage or recommendation with one reason and preserve real alternatives.
+- **Variable-role / post-compact / memory / basis / proposal:** explain identifier roles; use current objective / carried-forward facts / needs-recheck / next action; separate remembered from freshly checked state; ask governing basis first; label future work as advisory with goal, improvement, output, and optional success condition.
 ---
 ## Anti-Patterns
 | Anti-pattern | Better shape |
 |---|---|
-| wall of text for complex content | split into real sections or shorter blocks |
-| decorative headings | use headings only for meaningful boundaries |
-| bullet fragmentation | use prose for one continuous idea |
+| wall of text, decorative headings, or bullet fragmentation | use meaningful sections or prose where each unit has one purpose |
 | unordered list for ordered process | use numbered steps |
-| forced table without scanability gain | use prose, grouped blocks, or list |
-| heavy boxed table for ordinary facts | use a light table |
-| list/table with no framing | add one context-setting sentence |
-| raw evidence dump with no implication | orient, snapshot, then explain meaning |
-| phase closeout as checked-scope-only list | show delivered work, feature/improvement, impact, verification, and next phase state when useful |
+| forced/heavy table without scanability gain | use prose, grouped blocks, or a light table only when useful |
+| list/table with no framing or implication | add context plus meaning or next action |
+| raw evidence dump or table-only status | orient, snapshot, then explain implication |
 | setup detail before purpose | place the purpose-first line early |
 | local value presented as portable default | label as scoped local fact or use placeholder |
 | scope boundaries buried in prose | group active/deferred and is/is-not sections |
 | drilling down before full set is visible | show complete relevant set first |
 | deeper same-scope options after stage is clear | move to next stage/state |
-| table-only status report | add one implication or next-action line |
 | raw identifiers with no role explanation | use variable-role pattern |
 | future work phrased like queued execution | label as proposal and show goal/output |
 | governing-basis ambiguity answered with long branches | ask compactly for the governing basis first |
-| post-compact replay of old conversation | use one compact re-anchor |
-| remembered context shown as fresh truth | separate memory from freshly checked state |
+| post-compact replay or remembered context as fresh truth | use compact re-anchor/status and separate recheck needs |
 | over-structuring simple answers | keep simple answers compact |
 ---
 ## Flexibility Boundary
@@ -266,8 +134,7 @@ Not allowed: using flexibility to keep complex answers disorganized; using forma
 | Metric | Target |
 |---|---|
 | Main-point and purpose visibility | high when needed |
-| Section-purpose clarity and complex-answer scanability | high |
-| Semantic formatting correctness | high |
+| Section-purpose clarity, scanability, and semantic formatting | high |
 | Diagnostic, scope, full-set, next-stage, and compact-table usefulness | high when relevant |
 | Unnecessary boxed table or decorative formatting | 0 critical cases |
 ---

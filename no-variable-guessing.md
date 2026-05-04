@@ -46,8 +46,8 @@ Required guidance:
 A local non-finding is not proven absence.
 
 Required guidance:
-- say "not found in checked scope" when the search boundary matters
-- avoid stronger wording like "does not exist" unless the checked scope is sufficient
+- say “not found in checked scope” when the search boundary matters
+- avoid stronger wording like “does not exist” unless the checked scope is sufficient
 - do not treat a limited local non-finding as proof that the user is wrong
 
 ### 4) Local Burden-of-Proof Principle
@@ -73,45 +73,37 @@ Required guidance:
 ## Verification Trigger Model
 
 Treat references as verification-required when any trigger appears:
+- project-specific path/symbol: file path, import path, class/function name
+- runtime/config value: env var, port, endpoint base URL, config key
+- cross-reference claim: “updated everywhere”, “all references fixed”
+- ambiguous source of truth: multiple candidate files or conflicting values
+- negative local claim: “there is no X”, “X does not exist”
+- git-state file classification: “untracked”, “new file”, “working tree is clean/dirty”
 
-| Trigger | Typical Signal | Required Action |
-|---------|----------------|-----------------|
-| project-specific path/symbol | file path, import path, class/function name | verify existence with tools before reference |
-| runtime/config value | env var, port, endpoint base URL, config key | read actual config source before use |
-| cross-reference claim | "updated everywhere", "all references fixed" | verify affected locations before claiming completion |
-| ambiguous source of truth | multiple candidate files or conflicting values | preserve uncertainty and ask/verify before proceeding |
-| negative local claim | "there is no X", "X does not exist" | determine whether only scoped non-finding or strong absence is justified |
-| git-state file classification | "untracked", "new file", "working tree is clean/dirty" | keep git state scoped as local evidence only and check governed repo surfaces before classifying file meaning |
-
-Verification status labels:
-- ✅ **Verified**
-- ⚠️ **Unverified**
-- ❌ **Not Found In Checked Scope**
+Required action is to verify through the relevant local source, preserve uncertainty when authority is ambiguous, and keep git state scoped as local evidence only while checking governed repo surfaces before classifying file meaning.
 
 ---
 
 ## Inspected-Scope Reporting
 
 Preferred shapes:
-- "I checked `backend/.env` and `docker-compose.yml` and found ..."
-- "I checked `src/config/**` and did not find `DATABASE_URL` there."
-- "I found both `config.json` and `config.yaml`; I cannot yet tell which one is authoritative."
-- "I checked git working state and saw the file is untracked, but that is only a local observation; I still need to check governed repo surfaces before classifying what the file means."
+- “I checked `backend/.env` and `docker-compose.yml` and found ...”
+- “I checked `src/config/**` and did not find `DATABASE_URL` there.”
+- “I found both `config.json` and `config.yaml`; I cannot yet tell which one is authoritative.”
+- “I checked git working state and saw the file is untracked, but that is only a local observation; I still need to check governed repo surfaces before classifying what the file means.”
 
 Avoid:
-- "The project uses X" when only one limited file was checked
-- "That variable does not exist" when only a partial scope was searched
-- "You are mistaken" when the only evidence is a limited local non-finding
+- “The project uses X” when only one limited file was checked
+- “That variable does not exist” when only a partial scope was searched
+- “You are mistaken” when the only evidence is a limited local non-finding
+
+Detailed claim-state thresholds and strong-absence rules are owned by `evidence-grounded-burden-of-proof.md`; this rule supplies the local lookup and scoped-reporting mechanics.
 
 ---
 
 ## Exception Handling
 
-```text
-File not found: I could not find that path in the checked scope. If you want, I can search a broader location or you can point me to the intended file.
-Multiple possibilities: I found multiple candidate config files. I need either a broader check or your guidance on which one is authoritative.
-Partial information: I found the route path, but not the base URL in the files checked so far.
-```
+When a path/value is unresolved, state the checked scope and either ask for the intended source, search a broader scope, or preserve the partial result without filling the gap by guesswork.
 
 ---
 

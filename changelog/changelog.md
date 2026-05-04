@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.83
+> **Current Version:** 9.84
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.84 | 2026-05-04 | **[Completed refreshed P073-09 active runtime semantic compression](#version-984)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.83 | 2026-05-04 | **[Added lineage-first major-vs-subphase phase selection](#version-983)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.82 | 2026-05-04 | **[Added helper-function necessity and source-code comment discipline](#version-982)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.81 | 2026-05-04 | **[Added maintainable code structure and decomposition owner](#version-981)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -117,6 +118,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-984"></a>
+## Version 9.84: Completed refreshed P073-09 active runtime semantic compression
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Completed the P073-09 refreshed active-runtime compression wave for the current 43 README-listed source-owned runtime rule files.
+- Reduced active runtime source text from 42,961 to 35,017 words, a 7,944-word reduction inside the accepted 7,580-7,944 range, while preserving safety, evidence, authority, phase-lineage, worker-routing, runtime-install, memory, topology, retry, and destructive-confirmation anchors.
+- Verified source behavior anchors, golden scenarios, source-boundary/inventory checks, and runtime install/parity for all 43 active runtime rules.
+- Synchronized README, master design, TODO, phase summary, P073-09 phase file, and the refreshed compression patch for the v9.84 release state.
+- Kept destination extras `shared-task-list-path-coordination.md` and `team-agent-coordination.md`, plus source root `checkpoint.md`, as observed-only outside the source-owned active runtime install set.
+
+### Summary
+P073-09 refreshes the runtime compression lineage for the expanded 43-file active runtime set. The release keeps the active runtime count at 43, proves source/runtime parity after semantic-preserving compression, and preserves the boundary that co-located runtime extras are observed facts rather than cleanup or source-ownership targets.
 
 ---
 

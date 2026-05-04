@@ -12,38 +12,22 @@ This rule owns cross-reference consistency, change propagation, and reference ve
 ### Consistency requirements
 Required guidance:
 - keep names, paths, identifiers, and references consistent across the response or checked artifact set
-- verify concrete references or mark them unknown/unverified
+- verify concrete references or mark them unknown/unverified, and verify impacted files/sections before sync/no-drift claims
 - update or describe dependencies when a change impacts multiple files/sections
-- keep portable shared references distinct from checked local facts and machine-scoped examples
-- keep source-side references distinct from destination/runtime references in install/onboarding guidance
-- keep current source-owned active runtime install scope distinct from the shared runtime destination directory
-- keep other-owner runtime files distinct from the current project's parity/install target set unless their owner/project is explicitly selected or verified
-- keep local execution paths for current tool/runtime operation distinct from reusable source-artifact references
+- separate portable shared references, checked local facts, machine-scoped examples, source-side install paths, destination/runtime paths, source-owned active runtime install scope, shared runtime destinations, other-owner runtime files, and local execution paths
+- keep other-owner runtime files outside the current project's parity/install target set unless owner/project scope is explicitly selected or verified
 - defer broader portability and anti-hardcoding to `portable-implementation-and-hardcoding-control.md`
-### Reference types
-| Type | Preferred example | Verification |
+### Reference roles and checks
+| Type | Preferred form | Check |
 |---|---|---|
-| File path | `<workspace-root>/src/config.js`, or exact path only as scoped local fact | Glob / Read |
-| Source-side install path | `<repo-root>` or `./` from repo root | Read / command-context check |
+| File/source path | `<workspace-root>/src/config.js`, `<repo-root>`, or repo-root `./`; exact path only as scoped local fact | Glob / Read / command context |
 | Destination/runtime path | `<install-root>/skills`, `<user-runtime-rules>` | config/source contract check |
-| Source-owned active runtime files | the current project install set such as a README-listed active rule set | checked source inventory |
-| Shared runtime destination | destination directory that may contain several owners' runtime files | source/destination contract check |
-| Other-owner runtime file | a runtime-destination file outside the current source-owned install set | owner/project scope resolution |
+| Source-owned active runtime files | checked current-project install set, not every shared-destination file | checked source inventory |
+| Shared destination / other-owner runtime file | destination may contain several owners; non-members need owner/project scope | source/destination contract + owner resolution |
 | Local execution path | exact current-machine/harness path only | execution context |
-| Symbol | `getUserById` | Grep |
-| Command | `npm run build` | test/run when needed |
-| Config | `DATABASE_URL` | read config source |
+| Symbol / command / config | `getUserById`, `npm run build`, `DATABASE_URL` | search, run when needed, or read config source |
 ### Verification triggers
-| Trigger | Required action |
-|---|---|
-| concrete reference | verify before asserting |
-| cross-file consistency claim | verify impacted files/sections before sync/no-drift claim |
-| rename/move/update impact | trace and update dependent references deterministically |
-| ambiguous reference | mark status; avoid unstated assumptions |
-| mixed source/destination wording | separate roles and normalize wording |
-| parity scope blurred with destination ownership | distinguish source-owned install set, shared destination, and other-owner runtime files |
-| tool-path leakage into reusable source | relabel local execution context or replace with placeholder/runtime variable |
-| disposal/junk classification | check master surfaces, dependent references, and owner/project scope before cleanup classification |
+Verify before asserting concrete references, cross-file sync/no-drift, rename/move/update impact, ambiguous references, mixed source/destination wording, parity scope vs shared-destination ownership, tool-path leakage into reusable source, or junk/disposal classification. If the checked scope is limited, report the non-finding as scoped rather than global absence.
 ---
 ## Verification Flow
 ```text
@@ -62,53 +46,29 @@ Consistent with related references?
 ```
 Change impact flow: identify affected references → list dependencies → update related references → verify consistency.
 ---
-## Output Standards
-Preferred references:
-- file paths: `<workspace-root>/src/config.js` for portable examples; exact paths only as checked local facts
-- source-side install guidance: `<repo-root>` or `./` when command is intended for repo root
-- destination/runtime guidance: `<install-root>`, `<user-runtime-rules>`, `<user-runtime-skills>`, `<user-runtime-agents>`
-- source-owned runtime install scope: the checked source inventory, not every file in the shared destination
-- other-owner runtime files: destination files outside the current source-owned install set until owner/project scope is explicitly selected or verified
-- line numbers: `config.js:42`
-- symbols: `getUserById()` in `user.service.ts`
-Avoid vague references such as “the config file”, “that function we created earlier”, “the variable somewhere”, or one workstation path acting as both source and destination/runtime path.
-Labels:
+## Output and Cross-Section Standards
+Use precise portable placeholders for shared examples (`<workspace-root>/src/config.js`, `<repo-root>`, `<install-root>`, `<user-runtime-rules>`), exact values only as checked local facts, stable line/symbol references when useful (`config.js:42`, `getUserById()`), and explicit labels:
 ```markdown
 ✅ Verified: `<workspace-root>/src/config.js`
 ⚠️ Unverified: `api.endpoint.url` (not checked)
 ❌ Not Found In Checked Scope: `/missing/file.js`
 ```
----
-## Cross-Section Validation
-When modifying:
-1. scan the document or checked scope for related references
-2. identify cross-section/file dependencies
-3. update affected sections deterministically
-4. verify consistency throughout
-When classifying a newly encountered file as junk, disposable, non-governed, or safe to remove:
-1. scan master repo surfaces that could assign governed meaning
-2. identify whether dependent references/history already explain the file
-3. if the file is in a shared runtime destination but outside the current source-owned install set, resolve owner/project scope first
-4. keep classification unresolved if checked scope is incomplete
-5. do not treat missing immediate recognition or destination co-location as disposal proof
-| Change type | Required action |
-|---|---|
-| Rename file | update imports/references |
-| Move file | update paths |
-| Rename symbol | update usages |
-| Change config | update references |
-| Normalize install docs | update source-side, source-owned install scope, shared destination, and other-owner runtime wording separately |
+Avoid vague references such as “the config file”, “that function”, “the variable somewhere”, or one workstation path acting as both source and destination/runtime path.
+When exact local values are useful in a report, label them as checked local facts; when writing reusable source artifacts, prefer placeholders or env/config resolution. Source-owned active runtime install scope should point to the checked source inventory, not every file already present in a shared runtime destination. Other-owner runtime files stay outside parity/install claims unless their owner/project scope is explicitly selected or verified.
+When modifying, scan related references, identify dependencies, update affected sections/imports/paths/symbols/config/install wording deterministically, and verify consistency.
+Change-impact expectations:
+- renaming or moving files updates imports, links, install examples, and dependent paths
+- renaming symbols updates usages and references where the checked scope supports a sync claim
+- changing config keys or commands updates related docs, examples, and verification instructions
+- normalizing install docs keeps source-side, destination/runtime, source-owned active runtime install scope, shared destination, and other-owner runtime wording separate
+When classifying a new file as junk/disposable/non-governed/safe-to-remove, first scan master surfaces and dependent history; resolve shared-destination owner scope; keep classification unresolved if checked scope is incomplete; and never treat missing recognition or co-location as disposal proof.
 ---
 ## Quality Metrics
 | Metric | Target |
 |---|---|
-| Naming consistency | 100% |
-| Reference verification | High |
-| Dependency updates | 100% |
-| Reference precision | 100% |
-| Portable-vs-local separation | High |
-| Source-vs-destination separation | High |
-| Source-owned/shared-destination/other-owner separation | High |
+| Naming/reference consistency, verification, and dependency updates | High / 100% when claiming sync |
+| Portable/local, source/destination, and source-owned/shared-destination/other-owner separation | High |
+| Scoped non-finding and unresolved owner wording | High |
 ---
 ## Integration
 Related rules:

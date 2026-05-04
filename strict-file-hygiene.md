@@ -9,39 +9,27 @@
 This is a creation/duplication hygiene rule. It does not by itself authorize deletion of existing, newly encountered, untracked repository files, or destination/runtime files outside the current source-owned install set.
 ---
 ## Core Contract
-### Existing-File-First
-If a file already exists and remains the right authority, edit it instead of creating a duplicate.
-### No-Junk-Docs
-Do not create unnecessary summaries, duplicate plans, checkpoint files, work summaries, or version-suffixed copies.
-### Ask when unclear
-If document necessity is unclear, ask instead of creating speculative files.
-### Shared-destination non-member boundary
-A destination/runtime file outside the current source-owned active runtime install set is not junk by default merely because it is co-located in a shared runtime destination.
-Resolve owner/project scope before any junk, cleanup, or deletion classification is considered.
-### Governed-startup exception
-Required startup artifacts resolved through `artifact-initiation-control` are not junk files.
-Required guidance:
-- governed design / changelog / TODO / phase / patch artifacts may be created proactively when startup clearly requires them
-- if startup artifact need is ambiguous, ask immediately rather than silently skipping or drifting
-- this exception applies only to required governed startup artifacts, not arbitrary summaries or duplicate docs
-- it does not authorize deletion of newly encountered files merely because they do not match the expected artifact set
-### Version-suffix hygiene
-Do not create filename copies such as `-v2`, `_final`, `_backup`, `_draft`, `_old`, or similar unless the user explicitly requests them.
-### Portable-artifact hygiene
-Do not create reusable artifacts that embed machine-local defaults when portable placeholder or late-bound resolution should be used.
-Required guidance:
-- shared helper/support artifacts should avoid machine-specific hardcoded defaults
-- exact local values in reusable artifacts need explicit machine scope
-- broader portability defers to `portable-implementation-and-hardcoding-control.md`
+- **Existing file first:** if the right authority file exists and still fits the role, edit it instead of creating a duplicate or parallel authority.
+- **No junk docs:** do not create unnecessary summaries, duplicate plans, checkpoint/work-summary files, or version-suffixed copies such as `-v2`, `_final`, `_backup`, `_draft`, or `_old` unless the user explicitly requests them.
+- **Ask when unclear:** unclear artifact necessity is a question, not permission to create speculative files or silently skip a required governed startup artifact.
+- **Governed-startup exception:** required design/changelog/TODO/phase/patch startup artifacts resolved through `artifact-initiation-control` may be created proactively and are not junk.
+  Required guidance:
+  - governed design, changelog, TODO, phase, and patch artifacts may be created proactively when startup clearly requires them
+  - ambiguous startup need still requires asking instead of silently skipping or drifting
+  - this exception applies only to required governed startup artifacts, not arbitrary summaries or duplicate docs
+  - it does not authorize deletion of newly encountered files merely because they do not match the expected artifact set
+- **Shared-destination boundary:** destination/runtime files outside the current source-owned active runtime install set are not junk merely because they share a runtime directory; resolve owner/project scope before classification.
+- **Portable-artifact hygiene:** reusable helpers/support artifacts avoid machine-local defaults unless explicitly machine-scoped; broader portability defers to `portable-implementation-and-hardcoding-control.md`.
+- **No deletion by hygiene:** hygiene, cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition is never standalone deletion authority; removal needs stronger semantic authority plus the destructive-confirmation owner.
 ---
 ## Allowed vs Not Allowed
-Allowed:
+Allowed creation:
 - functional code/config required for operation
 - documents explicitly requested by the user
 - required governed startup artifacts from `artifact-initiation-control`
 - intentionally short-lived temporary files in `/tmp`
 Not allowed:
-- versioned copies such as `file-v2`, `_final`, `_draft`, `_backup`, `_old`
+- versioned copies such as `file-v2`, `_final`, `_draft`, `_backup`, or `_old`
 - checkpoint/summary/plan/work-summary files not requested and not required by startup governance
 - duplicate authority artifacts when an existing file already serves the role
 - treating untracked/newly seen files as junk or disposable by cleanup instinct alone
@@ -50,11 +38,10 @@ Not allowed:
 ---
 ## Operational Rules
 1. **Existing file first:** if the right authority file already exists, edit it.
-2. **Ask when unclear:** if artifact necessity is unclear, ask first.
-3. **Startup-governance exception:** if `artifact-initiation-control` requires the artifact now, creation is allowed.
-4. **State brief reason:** if creating a governed startup artifact, keep the reason explicit.
-5. **Shared destination caution:** destination/runtime non-members need owner/project scope resolution before hygiene classification.
-6. **No deletion by hygiene:** file removal needs stronger semantic authority plus the destructive-confirmation owner; hygiene alone is not deletion authorization.
+2. **Ask when unclear:** if artifact necessity is unclear, ask before creating or skipping a required governed startup artifact.
+3. **Startup-governance exception:** if `artifact-initiation-control` requires the artifact now, creation is allowed and should include a brief reason.
+4. **Shared destination caution:** destination/runtime non-members need owner/project scope resolution before hygiene classification.
+5. **No deletion by hygiene:** file removal needs stronger semantic authority plus the destructive-confirmation owner; hygiene alone is not deletion authorization.
 ---
 ## Decision Flow
 ```text
@@ -62,51 +49,35 @@ AI wants to create a file
   ↓
 Correct authority file exists?
   → YES: edit existing file
-  → NO: continue
-  ↓
-Functional code/config?
-  → YES: create allowed
-  → NO: continue
-  ↓
-Governed startup artifact required now?
-  → YES: create allowed
-  → NO: continue
-  ↓
-User explicitly asked for it?
-  → YES: create allowed
-  → NO: do not create
+  → NO: create only if functional code/config, required governed startup artifact, user-requested document, or allowed short-lived /tmp file
+  → Otherwise: do not create
 
 AI wants to classify/remove a newly encountered file
   ↓
-Is it outside the current source-owned install set in a shared runtime destination?
-  → YES: resolve owner/project scope first; do not treat as junk by co-location
-  → NO/UNKNOWN: continue
+Shared runtime destination and outside current source-owned install set?
+  → YES: resolve owner/project scope first
   ↓
-Checked master surfaces / governed history?
-  → NO: check first
-  → YES: continue
+Master surfaces / governed history checked?
+  → NO: check first and keep classification unresolved
   ↓
-Stronger delete authorization than hygiene/cleanup?
+Stronger semantic authority plus destructive confirmation exists?
+  → YES: follow the destructive-confirmation owner
   → NO: do not delete
-  → YES: follow destructive-confirmation owner
 ```
+Cleanup, hygiene, isolation, sandbox, worktree, runtime co-location, and git state can explain why a file looks suspicious, but they do not decide whether it is disposable. If a file's semantic role is unclear, preserve it and resolve authority first; do not convert review/classification into removal automatically.
 ---
 ## Verification Checklist
-- [ ] Existing authority files are reused instead of duplicated
-- [ ] No junk summary/checkpoint/version-copy files are introduced
-- [ ] Required governed startup artifacts are not blocked by hygiene
-- [ ] Ambiguous artifact need is handled by asking, not drifting
-- [ ] Newly encountered files are not treated as disposable before master-surface / governed-history checks
-- [ ] Destination/runtime non-members are not treated as junk merely because they sit outside the current source-owned install set
-- [ ] Hygiene wording is not usable as standalone deletion authority
+- [ ] Existing authority files are reused and no duplicate/junk/version-copy files are introduced.
+- [ ] Required governed startup artifacts are not blocked by hygiene; ambiguous need is asked about early.
+- [ ] Newly encountered or shared-destination files are not treated as disposable before owner, master-surface, and governed-history checks.
+- [ ] Hygiene wording is not usable as standalone deletion authority.
 ---
 ## Quality Metrics
 | Metric | Target |
 |---|---|
-| Duplicate files | 0% |
-| Unrequested junk docs | 0% |
-| File relevance | 100% |
+| Duplicate or unrequested junk files | 0 critical cases |
 | Governed startup artifact false blocks | 0 critical cases |
+| Hygiene-as-deletion-authority incidents | 0 critical cases |
 ---
 ## Integration
 Related rules:

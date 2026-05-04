@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Complete P073-09 refreshed active runtime semantic compression: refresh the 43-file active runtime inventory, reduce source runtime rule text from 42,961 to 35,017 words for a 7,944-word accepted reduction, preserve semantic anchors, pass behavior/golden/source-boundary audits, install only README-listed active runtime rules, verify 43/43 source/runtime parity, synchronize governed records, push master, and publish release `v9.84`.
+
 - [x] Complete P076-02 major-vs-subphase lineage selection: refine phase identity selection in `phase-implementation` v2.26, sync adjacent startup/task/documentation/execution-continuity owners, synchronize v9.83 / 43-rule master records, install only README-listed active runtime rules, verify source/runtime parity, push master, and publish GitHub release `v9.83`.
 
 - [x] Complete P083 maintainable helper/comment discipline refinement: refine `maintainable-code-structure-and-decomposition` to v1.1, synchronize v9.82 / 43-rule master records, install only README-listed active runtime rules, verify source/runtime parity, push master, and publish GitHub release `v9.82`.
@@ -162,6 +164,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-05-04 | Completed P073-09 refreshed active runtime semantic compression: refreshed the current 43-file active runtime inventory, reduced active runtime source text from 42,961 to 35,017 words, preserved semantic anchors, verified behavior/golden/source-boundary audits and 43/43 runtime parity, synchronized v9.84 governed records, pushed master, and published release `v9.84`. |
 | 2026-05-04 | Completed P076-02 major-vs-subphase lineage selection: refined phase identity selection to use lineage-first current-phase/subphase/new-major/ask-now handling, synchronized v9.83 / 43-rule master records, installed and verified the README-listed runtime set, pushed master, and published GitHub release `v9.83`. |
 | 2026-05-04 | Completed P083 maintainable helper/comment discipline refinement: refined the maintainable-code owner to v1.1, synchronized v9.82 / 43-rule master records, installed and verified the README-listed runtime set, pushed master, and published GitHub release `v9.82`. |
 | 2026-05-04 | Completed P081 native worker routing capability and subagent-first refinement: updated the worker-routing, custom-agent-selection, and execution-continuity owner chains; created P081 phase/patch records; synchronized v9.80 master source records; verified source audit and 42-file runtime parity; pushed master; and published GitHub release `v9.80`. |

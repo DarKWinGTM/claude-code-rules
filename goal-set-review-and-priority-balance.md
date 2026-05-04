@@ -11,62 +11,19 @@
 
 **Core Principle: Keep the full active goal set visible during execution so the current subtask does not crowd out remaining primary goals or collapse the system into micro-detail obsession.**
 
-This rule owns continuous goal-set review and priority balance. It does not mean resetting the conversation; it means checking whether current work still serves the main objective set.
+This rule owns continuous goal-set review and priority balance. It is not a reset ritual; it checks whether current work still serves the active objective set.
 
 ---
 
-## Core Principles
+## Core Contract
 
-### 1) Goal-Set Visibility Principle
+When active work spans several primary goals, keep sibling goals visible enough that one subtask does not silently become the whole mission. Current focus must stay proportional: do not deepen one area merely because more detail is possible, and shift when progressing a neglected sibling goal has higher value.
 
-When active work spans several primary goals, keep the full goal set visible enough that one subtask does not silently become the whole mission.
+Prefer main structure before subordinate polish unless a stronger blocker or user directive says otherwise. Establish the major structure, pipeline, skeleton, or governing shape first; treat micro-cleanup as secondary while core structure remains under-developed; do not let detail refinement substitute for unresolved architecture or pipeline work.
 
-Required guidance:
-- preserve awareness of sibling goals when they remain part of the active objective set
-- do not let the current subtask erase other primary goals from practical attention
+Review the active goal set when work stays in one area for several slices, micro-fixes accumulate, summaries repeatedly mention only one subgoal, several major goals remain open, or the user says the work is getting too granular. If the current subtask no longer serves the main objective set strongly enough, rebalance toward neglected primary goals.
 
-### 2) Priority-Balance Principle
-
-Current focus must stay proportional to the whole objective set.
-
-Required guidance:
-- do not deepen one subtask merely because more detail is possible
-- compare the value of deeper local work against progressing neglected sibling goals
-- shift focus when the current depth is no longer the highest-value move
-
-### 3) Structure-First Principle
-
-Prefer main structure before subordinate polish unless a stronger blocker or user directive says otherwise.
-
-Required guidance:
-- establish the major structure, pipeline, skeleton, or governing shape first
-- treat micro-cleanup as secondary while core structure remains under-developed
-- do not let detail refinement substitute for unresolved core architecture or pipeline work
-
-### 4) Goal-Review Principle
-
-Review the active goal set when work stays in one area for several slices, micro-fixes accumulate, or the user signals that the work is getting too granular.
-
-Required guidance:
-- ask whether the current subtask still serves the main objective set strongly enough
-- if not, rebalance toward neglected primary goals
-
-### 5) Anti-Fixation Principle
-
-Do not let local obsession masquerade as real progress.
-
-Required guidance:
-- distinguish local progress from mission-wide progress
-- if updates repeatedly mention only one subgoal, check whether other primary goals are being neglected
-
-### 6) Non-Reset Boundary
-
-Goal review is not a restart ritual.
-
-Required guidance:
-- do not replay the whole project state every time
-- keep review compact and decision-oriented
-- use it to maintain balance, not to stop execution unnecessarily
+Goal review should stay compact and decision-oriented. Anti-fixation remains mandatory: do not replay the whole project state, stop execution unnecessarily, or let local progress masquerade as mission-wide progress.
 
 ---
 

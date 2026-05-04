@@ -15,36 +15,19 @@
 
 ## Core Contract
 
-### Active changelog authority
-Each governed chain keeps one active authoritative changelog.
+Each governed chain keeps one active authoritative changelog. It owns current version, current index, and forward navigation; runtime, design, phase, patch, and TODO sync align to its version state when applicable. Changelog records shipped/synchronized history and version authority; it should not become phase-definition storage or duplicate active design target-state truth.
 
-Required guidance:
-- the active changelog owns current version, current index, and forward navigation
-- runtime, design, phase, patch, and TODO sync must align to the active changelog version state when applicable
-- moving older detail elsewhere must not break the active changelog's ability to explain current authority
+`changelog/done/` may hold older/completed detailed history when active scans would otherwise bloat. It is inactive by default, used only for history/audit/rollback/provenance/trace reconstruction, and never deletion authority or junk classification. The active changelog must keep enough pointers/index entries for moved history to remain reachable and must still explain current authority after detail is moved out of the active scan surface.
 
-### Completed history surface
-`changelog/done/` may hold older or completed detailed history when keeping every historical slice in the active scan surface creates unnecessary context bloat.
-
-Required guidance:
-- treat `changelog/done/` as inactive-by-default history
-- consult `changelog/done/` only for history, audit, rollback, provenance, or trace reconstruction
-- keep active changelog pointers/index entries sufficient for navigation when history is moved
-- do not use `changelog/done/` as deletion authority or junk classification
-- design-specific history belongs under changelog governance, not `design/done/`
-
-### Design pair boundary
-Design documents remain active target-state truth. Detailed historical explanation belongs in changelog surfaces, including `changelog/done/` when inactive history separation is needed.
+Design documents remain active target-state truth. Detailed historical explanation, including design-specific history, belongs under changelog governance and may use `changelog/done/`; do not park it under a default `design/done/` pattern.
 
 ---
 
 ## Verification Checklist
 
-- [ ] Active changelog remains the current version authority
-- [ ] `changelog/done/` is inactive by default for current-state scans
-- [ ] History moved to `changelog/done/` remains reachable when audit/rollback/trace needs it
-- [ ] `changelog/done/` is not treated as junk or deletion authorization
-- [ ] Design history is not parked under a default `design/done/` pattern
+- [ ] Active changelog remains current version/index/navigation authority.
+- [ ] `changelog/done/` is inactive history, reachable when audit/rollback/trace needs it, and never junk/deletion authority.
+- [ ] Design history is kept under changelog governance, not default `design/done`.
 
 ---
 
