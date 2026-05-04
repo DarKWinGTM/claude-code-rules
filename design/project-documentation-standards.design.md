@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.31
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
+> **Current Version:** 2.32
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
@@ -17,8 +17,8 @@ Shared governed docs and templates should remain portable by default rather than
 Public onboarding/install docs should also stay portable by default so cloneable or self-contained repositories do not teach one workstation's absolute path or an internal umbrella workspace root as the default way to install or use the project.
 
 This model must preserve one authority system while clearly separating:
-- `phase-implementation.md` as the first-class rule for phase semantics
-- `phase/SUMMARY.md` as the governed summary/index for the active phase plan
+- `phase-implementation.md` as the first-class rule for phase semantics and major-vs-subphase lineage selection
+- `phase/SUMMARY.md` as the governed summary/index for the active phase plan and phase-family lineage context
 - `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` as governed active execution files
 - `phase/done/` as inactive-by-default completed phase history
 - `patch/<context>.patch.md` or root `<context>.patch.md` as active patch-governance artifacts outside the live phase workspace
@@ -91,11 +91,14 @@ Visible session ownership should remain a default board-facing standard for sess
 ### 3.6 Phase Summary Role
 `phase/SUMMARY.md` is the governed summary/index for live phased execution planning.
 It is the required top-level control surface when phased planning is used.
+It should preserve phase-family lineage when that context affects later major-vs-subphase decisions.
 
 ### 3.7 Phase Execution-File Role
 The active phase identity model uses:
 - major phase files: `phase/phase-NNN-<phase-name>.md`
 - subphase files: `phase/phase-NNN-NN-<subphase-name>.md`
+
+Phase execution-file creation and selection should defer to `phase-implementation.md` for current phase update, existing-family subphase, new major phase, or ask-now lineage handling.
 
 Completed phase files may move under `phase/done/` when they are no longer active execution inputs and only history/audit/rollback/trace needs remain.
 
@@ -207,8 +210,8 @@ It is distinct from the later synchronization order under UDVC-1.
 Required governed surfaces should remain visible as governed companions rather than being reinterpreted as optional execution aids just because the assistant also has live execution surfaces.
 The built-in task list may help execute the work live, but it does not replace required design/changelog/TODO/phase/patch artifacts when the checked work shape still requires those governed surfaces.
 Where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should remain aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording.
-When `/phase` already contains relevant planning data, the assistant should not ignore that governed phase context: current phase, active phase family, phase ordering/dependencies, and already-authored next planned phases may all guide bounded task discovery and draft next-work visibility.
-That planning context does not by itself silently activate unopened future-phase execution.
+When `/phase` already contains relevant planning data, the assistant should not ignore that governed phase context: current phase, active phase family, phase ordering/dependencies, checked lineage, and already-authored next planned phases may all guide bounded task discovery and draft next-work visibility.
+That planning context does not by itself silently activate unopened future-phase execution, and it does not by itself allocate a new major phase without the `phase-implementation.md` lineage gate.
 
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
@@ -259,7 +262,7 @@ Need live execution visibility for non-trivial active work?
   → YES: initialize the built-in task list early
   ↓
 Need phased implementation planning?
-  → YES: establish `phase/SUMMARY.md` and child phase files now or ask now
+  → YES: establish `phase/SUMMARY.md` and lineage-selected child phase files now or ask now
   ↓
 Need patch/review artifacts separate from the live phase workspace?
   → YES: only when a real existing governed surface needs separate before/after review packaging, or the user explicitly requests patch packaging
@@ -316,7 +319,9 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
+- [ ] Phase file creation/selection defers to `phase-implementation.md` major-vs-subphase lineage handling
 - [ ] Phased work uses `phase/SUMMARY.md`
+- [ ] Phase records preserve enough phase-family lineage for later identity decisions
 - [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` active phase files under `phase/`
 - [ ] Completed phase, patch, and changelog history uses `phase/done/`, `patch/done/`, and `changelog/done/` only as inactive-by-default history
 - [ ] No default `design/done/` pattern is introduced for governed blueprint docs
@@ -341,6 +346,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Active metadata session integrity | 100% |
 | Cross-link validity | 100% |
 | Phase-rule role clarity | 100% |
+| Phase lineage preservation for later identity decisions | High |
 | `SUMMARY.md` role clarity | 100% |
 | Phase-file role clarity | 100% |
 | Patch-role separation clarity | 100% |
@@ -367,7 +373,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [document-changelog-control.md](../document-changelog-control.md) | Version authority contract and `changelog/done/` completed history boundary |
 | [document-design-control.md](../document-design-control.md) | Design structure standards and no-default-`design/done/` boundary |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary, explicit before/after patch contract, and `patch/done/` history boundary outside live phase planning |
-| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, `phase/done/` history boundary, and one-way design/patch source synthesis |
+| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, `phase/done/` history boundary, and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, source-owned install scope, shared destination, and other-owner runtime reference consistency |
 | [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, and same-objective continuity |

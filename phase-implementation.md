@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.25
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.25
+> **Current Version:** 2.26
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.26
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order, establish a dedicated active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, allow completed phase details to move to inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
+**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order, establish a dedicated active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, select major phases versus subphases through lineage-first criteria, allow completed phase details to move to inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
 
 This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed summary/index; active child phase files hold phase-local execution detail; `phase/done/` may hold inactive completed phase history; design is target-state authority; patch is governed before/after review authority; root phase helpers are non-governed. Multi-session shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
 
@@ -19,7 +19,7 @@ This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed sum
 
 `phase-implementation.md` defines:
 - when phase planning should be used or skipped
-- `/phase` structure, phase ID grammar, and child phase field expectations
+- `/phase` structure, phase ID grammar, major-vs-subphase lineage selection, and child phase field expectations
 - how design and governed patch references map into phases
 - how completed phase history may move to `phase/done/` without becoming active execution input by default
 - cross-phase handoffs, TODO/changelog coordination, verification, rollback boundaries, and closeout reporting expectations
@@ -37,6 +37,8 @@ Do not force phases for a single obvious low-risk change, a normal checklist, or
 
 If staged work is clearly implied, startup governance must resolve phase posture as `use existing`, `create now`, or `ask now` before substantial drift. If phase need is ambiguous, ask immediately. Retrospective phase creation is a repair path, not the preferred path. If phase-shaped context is clear but the exact next phase file does not yet exist, live task shaping should still follow the implied current phase/stage provisionally.
 
+Resolving phase posture does not automatically mean opening a new major phase. When a phase file must be created or selected, run the lineage-first major-vs-subphase gate below before choosing a new `NNN` ID.
+
 ---
 
 ## Phase Workspace Contract
@@ -48,6 +50,28 @@ If staged work is clearly implied, startup governance must resolve phase posture
 - `NNN-NN` = child execution slice inside major phase `NNN`
 - hierarchy is expressed by the hyphen suffix, not prose alone
 - zero-padded lexical ordering is preferred; major phases may be split, merged, skipped, repeated, or reordered when reality requires it; subphases are optional
+
+### Major-vs-subphase lineage gate
+Before opening a new major phase, inspect the checked phase lineage and choose the smallest truthful identity:
+- update the current active phase when the work is still inside the same active execution slice
+- create a new `NNN-NN` subphase when the work continues an existing major phase family
+- create a new `NNN` major phase when the work starts a new top-level rollout family
+- ask or record the governing basis when multiple phase families plausibly fit and checked evidence does not settle the lineage
+
+Subphase-fit signals:
+- same user-facing objective, policy domain, rule owner chain, design target, patch surface, or rollback boundary
+- follow-up that refines, repairs, verifies, installs, releases, documents, or synchronizes the same governed target
+- dependency on a prior phase's output or a clear link from `Next possible phases`, closeout notes, `TODO.md`, changelog, or `phase/SUMMARY.md`
+- completed parent or sibling phases whose history still defines the same rollout family
+
+Major-phase-fit signals:
+- new first-class rule or policy domain
+- materially different user-facing objective, governing basis, design target, or rollback/containment boundary
+- independent rollout that does not need an existing family to be understandable or reviewable
+- nesting under an existing family would overload or mislead that family
+- explicit user direction to start a new phase family
+
+Completed status does not automatically break lineage, and new concern wording does not automatically justify a new major phase. Do not force subphases for unrelated work; if no real lineage exists, open a new major phase. If the lineage is real but ambiguous or overloaded, preserve the relationship through a note in `phase/SUMMARY.md` or the child phase record and choose the clearer identity.
 
 ### Required files
 When phased planning is used:
@@ -92,7 +116,7 @@ When phased work uses a governed patch artifact:
 
 `phase/SUMMARY.md` should keep the global execution picture:
 - context, target state, risk, constraints, dependencies
-- phase map/index and active child phase references
+- phase map/index, active child phase references, and phase-family lineage when major/subphase relationships matter
 - completed `phase/done/` references only when history/audit/rollback/trace continuity requires them
 - summary-level design/patch source inputs and governing patch references
 - cross-phase handoffs and dependency rules
@@ -132,6 +156,7 @@ Required guidance:
 - inspect relevant `/phase` context before shaping/extending tasks; detached generic task wording is execution drift
 - default tasks to the current active phase before future phases
 - if the exact next phase file is absent but the current phase family/stage is clear, align tasks to that implied structure
+- do not let task-list shaping silently allocate a new major phase; if a new phase file is needed, use the major-vs-subphase lineage gate first
 - one phase may have many outcome-sized tasks
 - prefer current phase ID in task subjects when useful
 - extend the current task list for the same objective/phase family instead of recreating it
@@ -158,6 +183,8 @@ Phase-backed closeout should report what the phase delivered in practical terms,
 ## Verification Checklist
 
 - [ ] `NNN` and `NNN-NN` are the active phase grammar
+- [ ] major-vs-subphase selection checks phase lineage before opening a new major phase
+- [ ] subphase use remains criteria-based and is not forced for unrelated rollout families
 - [ ] startup governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work is not left without explicit phase posture until late backfill
 - [ ] `phase/SUMMARY.md` and valid active child phase paths are used

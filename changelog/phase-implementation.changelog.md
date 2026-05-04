@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.25
+> **Current Version:** 2.26
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.26 | 2026-05-04 | **[Added lineage-first major-vs-subphase selection](#version-226)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added criteria for choosing current phase updates, existing-family subphases, or new major phases so related follow-up work does not default to a new major phase and unrelated rollout families are not forced into subphases | |
 | 2.25 | 2026-04-29 | **[Added completed phase history surface](#version-225)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.24 | 2026-04-27 | **[Added design-to-phase execution synthesis bridge](#version-224)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.23 | 2026-04-25 | **[Added phase-backed closeout delivery and impact expectations](#version-223)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -37,6 +39,25 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-226"></a>
+## Version 2.26: Added lineage-first major-vs-subphase selection
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.25 to v2.26.
+- Updated `design/phase-implementation.design.md` from v2.25 to v2.26.
+- Added a lineage-first gate for choosing whether new phase-shaped work should update the current active phase, create a subphase under an existing major family, open a new major rollout family, or ask when lineage is unresolved.
+- Added subphase-fit criteria for same objective, same governed target, same owner chain, same design/patch/rollback boundary, follow-up refinement/repair/verification/sync work, and clear dependency on prior phase output.
+- Added major-phase-fit criteria for new top-level rule/policy domains, materially different objectives or governing bases, independent rollouts, misleading nesting risk, and explicit user direction.
+- Preserved the boundary that subphases are not forced for unrelated work and completed status does not automatically break phase lineage.
+
+### Summary
+Phase-implementation now prevents new-major bias by requiring checked lineage before opening a new major phase, while still allowing new major phases when the work is genuinely a separate rollout family.
 
 ---
 

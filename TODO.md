@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Complete P076-02 major-vs-subphase lineage selection: refine phase identity selection in `phase-implementation` v2.26, sync adjacent startup/task/documentation/execution-continuity owners, synchronize v9.83 / 43-rule master records, install only README-listed active runtime rules, verify source/runtime parity, push master, and publish GitHub release `v9.83`.
+
 - [x] Complete P083 maintainable helper/comment discipline refinement: refine `maintainable-code-structure-and-decomposition` to v1.1, synchronize v9.82 / 43-rule master records, install only README-listed active runtime rules, verify source/runtime parity, push master, and publish GitHub release `v9.82`.
 
 - [x] Complete P082 maintainable code structure and decomposition: add the first-class maintainable code structure owner, integrate the tactical/strategic boundary, synchronize v9.81 / 43-rule master records, install only README-listed active runtime rules, verify source/runtime parity, push master, and publish GitHub release `v9.81`.
@@ -160,6 +162,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-05-04 | Completed P076-02 major-vs-subphase lineage selection: refined phase identity selection to use lineage-first current-phase/subphase/new-major/ask-now handling, synchronized v9.83 / 43-rule master records, installed and verified the README-listed runtime set, pushed master, and published GitHub release `v9.83`. |
 | 2026-05-04 | Completed P083 maintainable helper/comment discipline refinement: refined the maintainable-code owner to v1.1, synchronized v9.82 / 43-rule master records, installed and verified the README-listed runtime set, pushed master, and published GitHub release `v9.82`. |
 | 2026-05-04 | Completed P081 native worker routing capability and subagent-first refinement: updated the worker-routing, custom-agent-selection, and execution-continuity owner chains; created P081 phase/patch records; synchronized v9.80 master source records; verified source audit and 42-file runtime parity; pushed master; and published GitHub release `v9.80`. |
 | 2026-04-30 | Completed P079 evidence-seeking proof-aware reasoning refinement: added practical proof-seeking across burden-of-proof, external-verification, accurate communication, explanation quality, anti-sycophancy, and zero-hallucination owners; synchronized source governance records; installed the 41 active runtime rule files; verified source/runtime parity; and prepared the v9.78 source/runtime release artifacts for git push and release. |

@@ -1,8 +1,8 @@
 # Changelog - Artifact Initiation Control
 
 > **Parent Document:** [../artifact-initiation-control.md](../artifact-initiation-control.md)
-> **Current Version:** 1.6
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.7
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-04 | **[Delegated phase creation identity to lineage selection](#version-17)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.6 | 2026-04-27 | **[Added clear-design phase posture startup bridge](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.5 | 2026-04-17 | **[Kept newly encountered file classification separate from disposal conclusions](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.4 | 2026-04-12 | **[Kept initialized live task lists as the active objective surface](#version-14)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -19,6 +20,24 @@
 | | | Summary: Refined startup-governance so patch is no longer treated as the default startup artifact during greenfield / baseline-formation work unless a real existing before/after review surface or explicit user request justifies it | |
 | 1.0 | 2026-03-28 | **[Created first-class artifact-initiation-control rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new startup-governance owner chain so design, changelog, TODO, phase, and patch posture must be resolved before meaningful governed work drifts | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Delegated phase creation identity to lineage selection
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `artifact-initiation-control.md` from v1.6 to v1.7.
+- Updated `design/artifact-initiation-control.design.md` from v1.6 to v1.7.
+- Clarified that phase posture `create now` does not automatically mean opening a new major phase.
+- Delegated current-phase update versus subphase versus new-major identity selection to `phase-implementation.md`.
+- Preserved startup ownership: this rule decides whether phase posture is required early, while phase-implementation decides the phase lineage shape.
+
+### Summary
+Artifact-initiation-control now keeps startup phase establishment early without creating a new-major bias when the required phase work actually belongs under an existing phase family.
 
 ---
 

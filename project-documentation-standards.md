@@ -1,6 +1,6 @@
 # Project Documentation Standards
-> **Current Version:** 2.31
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.31
+> **Current Version:** 2.32
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
@@ -31,8 +31,8 @@
 - Active metadata must use real session identifiers; placeholders are not allowed in active metadata.
 ---
 ## Role Boundaries
-- `phase-implementation.md` defines phase-planning semantics.
-- `phase/SUMMARY.md` is the governed live phase summary/index.
+- `phase-implementation.md` defines phase-planning semantics, including major-vs-subphase lineage selection.
+- `phase/SUMMARY.md` is the governed live phase summary/index and should preserve phase-family lineage when that context affects future phase identity decisions.
 - `phase/phase-NNN-*.md` and `phase/phase-NNN-NN-*.md` are governed active phase detail files.
 - `phase/done/` is inactive-by-default completed phase history.
 - Patch artifacts are self-identifying before/after review artifacts outside live phase planning, not recaps or phase summaries.
@@ -73,7 +73,7 @@ Required governed surfaces remain companions, not optional aids:
 - `/phase` = staged-execution companion when phased work is required
 - `/patch` = before/after review companion when patch is in scope
 - built-in task list = live execution surface, not a replacement for required governed artifacts
-When a checked repo/workstream is phased or staged, live task creation should align to that execution model. Current phase, phase family, order/dependencies, and authored next phases may guide bounded discovery and draft visibility, but unopened future phases do not become active automatically.
+When a checked repo/workstream is phased or staged, live task creation should align to that execution model. Current phase, phase family, order/dependencies, authored next phases, and checked lineage may guide bounded discovery and draft visibility, but unopened future phases do not become active automatically. Creating or selecting a phase file should defer to `phase-implementation.md` for current phase versus subphase versus new-major selection.
 ---
 ## New or Unclear File Classification
 When a newly encountered file appears during governed work and its role is unclear, keep it unresolved rather than collapsing uncertainty into cleanup/disposal logic.
@@ -96,7 +96,7 @@ Need design? use existing / create now / ask now
 Need version trace? use existing / create now / ask now
 Need durable tracking? use existing / create now / ask now
 Need live non-trivial visibility? initialize built-in task list early
-Need phased planning? establish phase/SUMMARY.md + child files now or ask now
+Need phased planning? establish phase/SUMMARY.md + lineage-selected child files now or ask now
 Need patch/review? use patch/<context>.patch.md only for real before/after surface or explicit request
 Greenfield baseline alone: patch not required by default
   ↓
@@ -122,6 +122,7 @@ Required guidance:
 - Portable defaults defer to `portable-implementation-and-hardcoding-control.md`; source/destination consistency defers to `document-consistency.md`.
 - Required document set matches project scope; full-history/parent links resolve; active metadata has no placeholder sessions.
 - `phase/SUMMARY.md` + child phase files remain the governed phase workspace when staged planning is required.
+- `phase/SUMMARY.md` should preserve enough phase-family lineage to support later major-vs-subphase decisions.
 - Patch artifacts stay outside live phase namespace and phased work with governed patches shows phase-to-patch linkage.
 - Built-in task list is live tracking, not a governed repository document.
 - Live task list does not downgrade required design/changelog/TODO/phase/patch surfaces.
@@ -141,6 +142,8 @@ Required guidance:
 - [ ] Unclear files are checked against master surfaces before junk/disposal classification
 - [ ] Built-in task list remains live execution surface, not governed document artifact
 - [ ] Phased work uses `phase/SUMMARY.md` and active child files when required
+- [ ] Phase records preserve enough phase-family lineage for future major-vs-subphase decisions
+- [ ] Phase file creation/selection defers to `phase-implementation.md` instead of defaulting to a new major phase
 - [ ] Completed phase, patch, and changelog history uses `phase/done/`, `patch/done/`, and `changelog/done/` only as inactive-by-default history
 - [ ] No default `design/done/` pattern is introduced for governed blueprint docs
 - [ ] Phased work with governed patches shows explicit patch linkage
@@ -160,6 +163,7 @@ Required guidance:
 | Required document coverage and version-reference correctness | 100% |
 | Active metadata integrity and cross-link validity | 100% |
 | Phase/summary/child-phase/patch role clarity | 100% |
+| Phase lineage preservation for future phase identity decisions | High |
 | Completed-history inactive-surface boundary clarity | 100% |
 | Explicit phase-to-patch linkage when patch is in scope | 100% |
 | Startup artifact posture before drift | 100% |
@@ -170,11 +174,11 @@ Required guidance:
 ## Integration
 | Rule | Relationship |
 |---|---|
-| [artifact-initiation-control.md](artifact-initiation-control.md) v1.6 | startup artifact-resolution owner |
+| [artifact-initiation-control.md](artifact-initiation-control.md) v1.7 | startup artifact-resolution owner |
 | [document-changelog-control.md](document-changelog-control.md) v4.8 | version authority and `changelog/done/` completed history boundary |
 | [document-design-control.md](document-design-control.md) v1.10 | design structure and no-default-`design/done/` boundary |
 | [document-patch-control.md](document-patch-control.md) v2.7 | patch boundary, before/after contract, and `patch/done/` completed history boundary |
-| [phase-implementation.md](phase-implementation.md) v2.25 | phased execution semantics and `phase/done/` completed history boundary |
+| [phase-implementation.md](phase-implementation.md) v2.26 | phased execution semantics, major-vs-subphase lineage selection, and `phase/done/` completed history boundary |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | portable shared-artifact defaults |
 | [document-consistency.md](document-consistency.md) v1.8 | source/destination and source-owned/shared-destination reference consistency |
 | [todo-standards.md](todo-standards.md) v2.17 | TODO structure and startup bridge |

@@ -1,7 +1,7 @@
 # TODO Standards
-> **Current Version:** 2.17
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.17
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.21
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.21
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
 ## Rule Statement
@@ -52,6 +52,7 @@ Do not force task-list overhead for trivial isolated work, one-step lookup/fix w
 When an active phase exists, the task list should mirror that current phase before proposing future-phase work.
 If `/phase` exists and relevant governed phase context is available, task creation must inspect that phase context before shaping or extending the live task list. Detached generic wording in that situation is execution drift.
 If the exact next phase file does not exist yet but checked context makes the phase family or staged lane clear, task-list creation should still align to that implied current phase/stage.
+Task-list shaping may reveal that a phase file is needed, but it must not silently choose a new major phase; phase identity selection belongs to `phase-implementation.md` and its major-vs-subphase lineage gate.
 If `/phase` contains additional relevant planning context, task behavior should consult bounded context:
 - current active phase
 - current phase family or staged execution lane
@@ -61,6 +62,7 @@ Required guidance:
 - create the built-in task list for active phase work rather than waiting for the user to ask
 - default to the current active phase before opening tasks for later phases
 - use authored next-phase information for continuity and draft visibility, not silent activation
+- do not let task-list continuation become implicit new-major phase creation when the checked lineage points to an existing family or is unresolved
 - do not let the task list drift into next-wave planning while the current phase/stage still defines active execution
 - if the current phase is complete, say so before creating draft next-wave tasks
 - future-phase tasks remain draft/proposal until the phase is opened, selected, or otherwise made active by governing phase context
@@ -95,6 +97,7 @@ When the built-in task list is in use:
 - extend the current task list within the same active objective instead of replacing it
 - keep completed tasks visible until objective closure or explicit reset
 - align task creation to current active phase or clearly implied stage/family when checked context is phase-shaped
+- if task shaping shows a new phase file is needed, defer current phase vs subphase vs new-major selection to `phase-implementation.md`
 - inspect `/phase` context before shaping tasks when relevant governed phase context exists
 - do not default to detached generic wording when stronger phase/stage context exists
 - task subjects/descriptions should follow the actual active session language/register rather than detached generic system wording
@@ -125,6 +128,7 @@ When `TODO.md` is required for governed work, TODO synchronization is required c
 - [ ] Tracking posture was resolved early when meaningful tracking was required
 - [ ] Built-in task list was used proactively for non-trivial active work when live visibility helped
 - [ ] Task creation aligned to active phase, implied staged/phase context, and authored bounded phase context from `/phase`
+- [ ] Task creation did not silently allocate a new major phase when phase lineage needed `phase-implementation.md` handling
 - [ ] Task wording aligned to active session language/register
 - [ ] Task entries remained outcome-sized
 - [ ] Required TODO synchronization was not downgraded into optional bookkeeping
@@ -140,12 +144,14 @@ When `TODO.md` is required for governed work, TODO synchronization is required c
 | Startup tracking posture resolved before drift | 100% |
 | Proactive task-list usage on non-trivial work | High |
 | Current-phase-first task-list alignment | High when a phase is active |
+| Task-list-driven new-major phase drift | 0 critical cases |
 | Future-phase task drift before explicit phase opening | 0 critical cases |
 | Stale or vague live task lists during non-trivial work | Low |
 ---
 ## Integration
 Related documents:
 - [artifact-initiation-control.md](artifact-initiation-control.md) - startup tracking posture resolution
+- [phase-implementation.md](phase-implementation.md) - phase identity and major-vs-subphase lineage selection when task shaping reveals phase work
 - [document-changelog-control.md](document-changelog-control.md) - synchronization order and authority boundary
 - [project-documentation-standards.md](project-documentation-standards.md) - repository role model and durable-vs-live tracking distinction
 ---

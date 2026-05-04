@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.25
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
+> **Current Version:** 2.26
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, selects major phases versus subphases through lineage-first criteria, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -67,7 +67,41 @@ The active identity model is:
 - `NNN-NN` identifies a child execution slice inside major phase `NNN`
 - hierarchy is expressed by the hyphenated suffix, not by implication or prose alone
 
-### 3.3 Anti-confusion rules
+### 3.3 Lineage-first phase selection
+Before opening a new major phase, the phase owner should inspect checked phase lineage and decide whether the work is better represented as:
+- an update to the current active phase
+- a new subphase under an existing major family
+- a new major phase / rollout family
+- an unresolved lineage choice that needs user or evidence clarification
+
+The decision is principle-based rather than subphase-first or major-first. The goal is to preserve real execution lineage without hiding genuinely new rollout families inside an overloaded old phase.
+
+### 3.4 Subphase-fit criteria
+A new `NNN-NN` subphase is usually a better fit when the work continues the same rollout family by refining, repairing, verifying, documenting, installing, releasing, or synchronizing the same governed target.
+
+Strong subphase signals include:
+- same user-facing objective or policy domain
+- same rule owner chain, design target, patch surface, or rollback boundary
+- direct follow-up from an authored `Next possible phases`, closeout note, TODO item, or phase summary relationship
+- dependency on a prior phase's output or a need to preserve visible lineage for review
+- completed parent or sibling phases whose history still defines the same rollout family
+
+### 3.5 Major-phase-fit criteria
+A new `NNN` major phase is usually a better fit when the work starts a new top-level rollout family.
+
+Strong major-phase signals include:
+- new first-class rule or policy domain
+- materially different user-facing objective, governing basis, design target, or rollback boundary
+- independent rollout that does not depend on an existing phase family for reviewability
+- an existing major family would become misleading or overloaded if the new work were nested under it
+- explicit user direction to start a new program or separate phase family
+
+### 3.6 Ambiguity and no-forced-subphase boundary
+Completed status does not automatically break lineage, and new concern wording does not automatically justify a new major phase.
+
+If multiple existing phase families plausibly fit and checked lineage does not clearly choose one, the phase owner should preserve uncertainty and ask or record the selected basis instead of inventing a relationship. If no real lineage exists, opening a new major phase is correct. If the lineage is real but the old family would become unclear or overloaded, a new major may still be correct with a visible relation note.
+
+### 3.7 Anti-confusion rules
 The active model must not allow these ambiguities:
 - `002` must not be used to imply “child of `001`”
 - symbolic labels such as `P1/P2/P3` must not replace canonical IDs in active phase semantics
@@ -110,7 +144,7 @@ Patch artifacts remain outside the live phase-plan namespace.
 `phase/SUMMARY.md` should keep the global execution picture, including:
 - overall context and target state
 - risk, constraints, and dependency framing
-- major-phase grouping when multiple major phases exist
+- major-phase grouping and phase-family lineage when multiple major phases or related subphases exist
 - references to live major/subphase files
 - references to completed `phase/done/` files only when history/audit/rollback/trace continuity requires them
 - summary-level design and patch source inputs when relevant
@@ -198,6 +232,8 @@ This shape should remain concise and should not be forced onto trivial non-phase
 ## 8) Verification Checklist
 
 - [ ] `phase-implementation` explicitly defines `NNN` and `NNN-NN`
+- [ ] phase identity selection checks lineage before opening a new major phase
+- [ ] subphase use remains criteria-based rather than forced by default
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
 - [ ] task creation can still align to clearly implied staged/phase context even before the exact next phase file exists
@@ -218,6 +254,9 @@ This shape should remain concise and should not be forced onto trivial non-phase
 | Metric | Target |
 |--------|--------|
 | Appropriate use of phase planning | High |
+| Major-vs-subphase lineage selection quality | High |
+| New-major bias for related follow-up work | Low |
+| Forced subphase use for unrelated rollout families | Low |
 | `/phase` workspace compliance | 100% |
 | `SUMMARY.md` presence when phased planning is used | 100% |
 | Current-phase-first task-list linkage when a phase is active | High |

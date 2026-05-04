@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.17
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-18)
+> **Current Version:** 2.21
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
@@ -104,6 +104,8 @@ Detached generic task shaping in the presence of relevant governed phase context
 
 If the exact next phase file does not yet exist but the checked project/workstream context already makes the current phase family or staged execution lane clear, task-list creation should still align to that implied current phase/stage instead of falling back to detached generic standalone tasks.
 
+Task-list shaping may reveal that a phase file is needed, but it should not silently decide that the file must be a new major phase. Current phase update, existing-family subphase, new major, or ask-now lineage handling belongs to `phase-implementation.md`.
+
 If `/phase` already contains additional relevant planning context, task behavior should not stop at the currently open phase file alone. It should also consult bounded phase context that already exists in the governed phase workspace, such as:
 - the current active phase
 - the current phase family or staged execution lane
@@ -115,6 +117,7 @@ Required guidance:
 - when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping or extending the live task list
 - default the task list to the current active phase before opening tasks for any later phase
 - when no exact new phase file is open yet, but the current staged/phase family is already clear from checked context, create task entries that still reflect that phase-shaped execution structure
+- do not let task-list shaping become implicit new-major phase creation when phase lineage points to an existing family or is unresolved
 - when `/phase` already contains relevant next planned phase information, use that information to improve continuity, sequencing, and draft next-work visibility rather than ignoring it
 - do not let the task list drift into next-wave planning while the current phase or clearly implied current stage still defines the active execution surface
 - if the current phase is already complete, say that directly before creating any draft next-wave tasks
@@ -147,6 +150,7 @@ When the built-in task list is in use:
 - add new tasks when newly discovered work is real and non-trivial
 - keep task entries outcome-sized rather than command-sized
 - when the checked project/workstream context is already phase-shaped, keep task creation aligned to the current active phase or clearly implied current stage/family even if the exact next phase file is still pending
+- if task shaping shows a new phase file is needed, defer current phase vs subphase vs new-major selection to `phase-implementation.md`
 - when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping new task entries or extending existing ones
 - do not default task creation to detached generic standalone wording when stronger checked phase/stage context already exists
 - when relevant governed phase context exists but task shaping does not follow it, treat that outcome as task-shaping drift rather than as an acceptable generic fallback
@@ -196,6 +200,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 - [ ] Tracking posture is resolved early when meaningful tracking is required
 - [ ] Built-in task list is used proactively for non-trivial work when live execution visibility materially helps
 - [ ] Task creation stays aligned to active phase or clearly implied staged/phase context when that context is already visible
+- [ ] Task creation does not silently allocate a new major phase when `phase-implementation.md` lineage handling is needed
 - [ ] Task wording stays aligned to the active session language/register instead of defaulting to detached generic wording
 - [ ] Task entries remain outcome-sized rather than command-sized
 - [ ] Required TODO synchronization is not downgraded into optional bookkeeping
@@ -214,6 +219,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 | Startup tracking posture resolved before drift when needed | 100% |
 | Proactive task-list usage on non-trivial work | High |
 | Current-phase-first task-list alignment | High when a phase is active |
+| Task-list-driven new-major phase drift | 0 critical cases |
 | Future-phase task drift before explicit phase opening | 0 critical cases |
 | Stale or vague live task lists during non-trivial work | Low |
 
@@ -224,6 +230,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 | Document | Relationship |
 |----------|--------------|
 | [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup tracking posture resolution |
+| [phase-implementation.md](../phase-implementation.md) | Phase identity and major-vs-subphase lineage selection when task shaping reveals phase work |
 | [document-changelog-control.design.md](document-changelog-control.design.md) | Synchronization order and authority boundary |
 | [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model and durable-vs-live tracking distinction |
 | [../todo-standards.md](../todo-standards.md) | Runtime implementation |

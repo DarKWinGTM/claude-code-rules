@@ -1,8 +1,8 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.20
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 2.21
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.21 | 2026-05-04 | **[Prevented task-list shaping from allocating new major phases](#version-221a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.20 | 2026-04-23 | **[Made relevant governed `/phase` context a required task-shaping input](#version-220a)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.19 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.18 | 2026-04-20 | **[Made task discovery current-phase-first but phase-context-aware](#version-218)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -31,6 +32,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-221a"></a>
+## Version 2.21: Prevented task-list shaping from allocating new major phases
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `todo-standards.md` metadata and semantics to v2.21 after the active body already contained v2.20 phase-context behavior.
+- Updated `design/todo-standards.design.md` metadata and semantics to v2.21 after the active body already contained v2.20 phase-context behavior.
+- Clarified that task-list shaping may reveal phase-shaped work but must not silently decide that the work needs a new major phase.
+- Delegated current phase versus existing-family subphase versus new-major selection to `phase-implementation.md`.
+- Preserved current-phase-first task-list behavior, future-phase draft boundaries, and session-language-aware task wording.
+
+### Summary
+TODO standards now keeps live tasks aligned to phase context without letting the live task list become a hidden phase identity allocator.
 
 ---
 

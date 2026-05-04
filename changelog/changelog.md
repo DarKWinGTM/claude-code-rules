@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.82
+> **Current Version:** 9.83
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.83 | 2026-05-04 | **[Added lineage-first major-vs-subphase phase selection](#version-983)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.82 | 2026-05-04 | **[Added helper-function necessity and source-code comment discipline](#version-982)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.81 | 2026-05-04 | **[Added maintainable code structure and decomposition owner](#version-981)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.80 | 2026-05-04 | **[Refined native worker routing for subagent-first capability and intent](#version-980)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -116,6 +117,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-983"></a>
+## Version 9.83: Added lineage-first major-vs-subphase phase selection
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md`, `design/phase-implementation.design.md`, and `changelog/phase-implementation.changelog.md` to v2.26 with a lineage-first gate before opening a new major phase.
+- Updated `artifact-initiation-control` to v1.7 so phase `create now` delegates current-phase/subphase/new-major identity selection instead of implying a new major phase.
+- Updated `todo-standards` to v2.21, `project-documentation-standards` to v2.32, and `execution-continuity-and-mode-selection` to v1.10 so task shaping, governed documentation, and execution momentum cannot silently allocate a new major phase.
+- Created `phase/phase-076-02-major-vs-subphase-lineage-selection.md` and `patch/phase-lineage-and-subphase-selection-refinement.patch.md` to track the P076-02 governed refinement and release gates.
+- Synchronized README, TODO, master design, master changelog, and phase summary for the v9.83 / 43-active-rule source state; runtime install/parity passed for the 43 active runtime rules, master was pushed, and GitHub release `v9.83` was published with detailed improvement notes.
+
+### Summary
+P076-02 refines the design-to-phase execution synthesis family so phase-shaped follow-up work checks real lineage before opening a new major phase. The assistant should update the current phase, create an existing-family subphase, open a genuinely separate major rollout family, or ask/record the lineage basis when checked evidence does not settle the relationship.
 
 ---
 

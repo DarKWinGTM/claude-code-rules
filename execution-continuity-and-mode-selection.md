@@ -1,6 +1,6 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.9
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.9
+> **Current Version:** 1.10
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.10
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
@@ -49,6 +49,8 @@ Required guidance:
 - shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
 - if task list is insufficient, inspect active phase, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state
 - prefer unfinished work in the same objective/phase family before opening a fresh objective
+- when next work is phase-shaped but may belong to an existing family, use `phase-implementation.md` major-vs-subphase lineage handling before opening a new major phase
+- execution momentum must not allocate a new major phase when checked lineage points to current phase update, existing-family subphase, or unresolved lineage
 - treat design, phase, TODO, task list, and checked implementation state as execution-discovery surfaces once execution mode is active
 ### Capture before continue
 Continuous execution must not outrun required knowledge capture.
@@ -72,6 +74,7 @@ Stop only for missing evidence/input/access, real technical blocker, approval-se
 Completing one slice is not a stop by itself.
 Required guidance:
 - continue into the next slice when it is already the implied active path
+- if a completed slice reveals related follow-up work, treat completion as a lineage checkpoint rather than automatic new-major boundary
 - do not turn every phase boundary into a handoff-style report
 - do not auto-promote draft-only, future-only, or unselected phases
 ### Reporting and mode recheck
@@ -92,6 +95,7 @@ Required guidance:
 | unresolved startup gate | resolve startup posture before execution drift |
 | clear active phase/task path | continue rather than stop on narration |
 | discoverable unfinished work | inspect execution surfaces and continue if safe |
+| phase-shaped follow-up work | apply phase lineage handling before opening a new major phase |
 | broad/noisy next slice | apply worker routing before broad leader-session absorption |
 | milestone-only pause drift | continue after reporting when safe |
 | open concept/design/behavior work | stay in discussion mode |
@@ -109,6 +113,7 @@ Required guidance:
 | discussion-mode inertia after path is clear | switch to execution mode and continue |
 | obvious next work framed as user-choice theater | do the implied safe step |
 | waiting for repeated prompt despite clear execution surfaces | inspect surfaces and continue |
+| using execution momentum to allocate a new major phase | apply `phase-implementation.md` lineage handling before choosing current phase, subphase, new major, or ask-now posture |
 | using execution momentum to skip worker routing | apply the worker-scale gate before broad/high-output next work |
 | treating teammate/Agent Team restriction as an all-subagent ban | let worker routing distinguish standalone subagents from coordinated team workflow |
 ---

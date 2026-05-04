@@ -1,7 +1,7 @@
 # Artifact Initiation Control
-> **Current Version:** 1.6
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.6
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.7
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.7
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 ---
 ## Rule Statement
@@ -21,6 +21,7 @@ For each relevant artifact choose one explicit state: `use existing`, `create no
 Required guidance:
 - initialize the built-in task list early when work is non-trivial and live visibility materially helps
 - if governed design is already sufficiently clear and staged execution is warranted, resolve phase posture to `use existing` or `create now` instead of leaving phase planning implicit
+- when phase posture resolves to `create now`, defer phase identity selection to `phase-implementation.md` so creation may mean updating a current phase, creating a subphase under an existing family, opening a new major phase, or asking when lineage is unresolved
 - when an active phase already exists, live task-list initialization is expected unless a narrow justified reason blocks it
 - once initialized for the active objective, reuse the live task-list surface unless true objective-boundary reset or explicit user reset applies
 - do not silently skip artifacts or live tracking surfaces that appear required
@@ -53,8 +54,8 @@ Required guidance:
 |---|---|---|
 | new governed chain | create a first-class rule / policy chain | resolve design + changelog + TODO; evaluate phase/patch |
 | multi-file governed change | several governed docs/chains change together | resolve TODO and likely phase before drift |
-| staged work | sequencing, rollout, rollback boundaries | establish `/phase` now or ask now |
-| clear governed design for staged execution | target-state design already defines enough implementation order, dependency, risk, or verification gates | resolve phase posture to `use existing` or `create now` unless a real ambiguity requires `ask now` |
+| staged work | sequencing, rollout, rollback boundaries | establish `/phase` now through the phase lineage gate or ask now |
+| clear governed design for staged execution | target-state design already defines enough implementation order, dependency, risk, or verification gates | resolve phase posture to `use existing` or `create now`; if a phase file is created, select current phase vs subphase vs new major through `phase-implementation.md` |
 | reviewable before/after work | explicit change-surface review | establish patch only when an existing governed surface provides stable before-state, or ask now |
 | explicit artifact-first request | user wants stronger governance startup behavior | apply startup gate immediately |
 | trivial isolated task | one obvious low-risk change | lightweight bypass allowed |
@@ -67,7 +68,7 @@ Meaningful governed work begins when the assistant moves beyond lightweight expl
 | Changelog | governed chain is created or version-impacting behavior changes |
 | TODO | work is multi-step, tracked, persistent, or likely to span slices |
 | Live task list | non-trivial work benefits from live pending/in_progress/completed visibility; phase-backed work makes this expected |
-| Phase | staged execution, gates, sequencing, rollback boundaries, or explicit request make `/phase` useful |
+| Phase | staged execution, gates, sequencing, rollback boundaries, or explicit request make `/phase` useful; phase identity selection remains owned by `phase-implementation.md` |
 | Patch | before/after review packaging outside live phase is useful for an existing governed surface; greenfield/baseline formation defaults to `not required` unless requested |
 Startup resolution order: design → changelog → TODO → phase → patch. This does not replace later synchronization order.
 ---
@@ -99,6 +100,7 @@ Required guidance:
 | non-trivial tracked work begins with no live task tracking | initialize built-in task list when live visibility helps |
 | all artifacts forced every time | resolve only the required subset |
 | patch by default during greenfield/baseline formation | default patch to `not required` unless existing before-state or explicit request justifies it |
+| treating phase `create now` as automatic new-major creation | use `phase-implementation.md` to select current phase, existing-family subphase, new major, or ask-now lineage handling |
 | hygiene blocks required startup artifacts | let startup control decide, then let hygiene police non-required files |
 | artifact decision deferred until after planning | ask or create immediately |
 ---
