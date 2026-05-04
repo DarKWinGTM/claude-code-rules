@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.80
+> **Current Version:** 9.81
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.81 | 2026-05-04 | **[Added maintainable code structure and decomposition owner](#version-981)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.80 | 2026-05-04 | **[Refined native worker routing for subagent-first capability and intent](#version-980)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.79 | 2026-05-03 | **[Added native worker agent routing and context control](#version-979)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.78 | 2026-04-30 | **[Added evidence-seeking proof-aware reasoning refinement](#version-978)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -114,6 +115,23 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-981"></a>
+## Version 9.81: Added maintainable code structure and decomposition owner
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Created `maintainable-code-structure-and-decomposition.md`, `design/maintainable-code-structure-and-decomposition.design.md`, and `changelog/maintainable-code-structure-and-decomposition.changelog.md` at v1.0 as the first-class owner for coding-time responsibility boundaries, code-smell-triggered structure decisions, smallest useful decomposition, wrong-abstraction avoidance, behavior-preserving refactor posture, and God function/file pressure.
+- Updated `tactical-strategic-programming.md`, `design/tactical-strategic-programming.design.md`, and `changelog/tactical-strategic-programming.changelog.md` to v1.3 so tactical/strategic doctrine keeps convergence ownership while coding-time responsibility and decomposition quality defer to the new maintainable structure owner.
+- Created `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` and `patch/maintainable-code-structure-and-decomposition.patch.md` to track the governed P082 source, runtime install, parity, publish, and release gates.
+- Synchronized README, TODO, master design, master changelog, and phase summary for the v9.81 / 43-active-rule source state; source audit, semantic anchor audit, and 43-file runtime install/parity passed; git push and GitHub release `v9.81` remain pending until the explicit publish gates pass.
+
+### Summary
+P082 adds a principle-based maintainable code structure owner so AI coding work avoids unnecessary God functions, God files, hidden dependencies, and wrong abstractions while preserving tactical speed through explicit convergence instead of rigid line-count or architecture-template rules.
 
 ---
 

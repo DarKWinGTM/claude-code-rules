@@ -1,7 +1,7 @@
 # Tactical Strategic Programming
-> **Current Version:** 1.2
-> **Design:** [design/tactical-strategic-programming.design.md](design/tactical-strategic-programming.design.md) v1.2
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.3
+> **Design:** [design/tactical-strategic-programming.design.md](design/tactical-strategic-programming.design.md) v1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/tactical-strategic-programming.changelog.md](changelog/tactical-strategic-programming.changelog.md)
 ---
 ## Rule Statement
@@ -46,6 +46,13 @@ Required guidance:
 - strategic structure should own stable boundaries, roles, and sequencing
 - design and phase layers should absorb validated tactical learning
 - final authority should live in strategic artifacts, not leftover tactical fragments
+### Maintainable structure boundary
+Tactical and strategic programming must still preserve maintainable coding structure.
+Required guidance:
+- use `maintainable-code-structure-and-decomposition.md` for code responsibility, decomposition, God function/file, code-smell, wrong-abstraction, and behavior-preserving refactor decisions
+- tactical fixes may stay local and fast, but should not silently worsen God-function or God-file drift without a narrow reason
+- when a tactical slice leaves material structure debt, include a convergence path for absorbing, replacing, promoting, or retiring that structure
+- strategic work should let stable responsibility boundaries absorb validated tactical learning rather than accumulating tactical fragments
 ---
 ## Classification Model
 | Mode | Meaning | Typical use |
@@ -91,6 +98,7 @@ Equivalent headings are acceptable if the meaning stays explicit.
 | temporary runtime structure | require retirement or absorption path |
 | architecture still emerging | use tactical-with-strategic-track mode |
 | long-lived workaround | require promotion, retirement, or replacement |
+| tactical fix changes code structure | preserve responsibility clarity, avoid avoidable God function/file drift, and name convergence if material debt remains |
 ---
 ## Anti-Patterns
 | Anti-pattern | Better behavior |
@@ -100,6 +108,7 @@ Equivalent headings are acceptable if the meaning stays explicit.
 | workaround with no retirement path | require retirement, absorption, or promotion |
 | design and implementation drift apart | keep tactical work aligned to strategic target |
 | phase plan built from unstructured patches | let strategic program absorb learning explicitly |
+| tactical code patch grows God functions or God files with no convergence path | use maintainable structure guidance and keep material debt visible |
 ---
 ## Quality Metrics
 | Metric | Target |
@@ -110,6 +119,8 @@ Equivalent headings are acceptable if the meaning stays explicit.
 | Tactical drift detection | High |
 | Hidden permanent tactical authority | 0 critical cases |
 | Strategic closure clarity | High |
+| Tactical structure debt visibility | High |
+| Unnecessary God function/file drift from tactical slices | Low |
 ---
 ## Integration
 Related rules:
@@ -117,6 +128,7 @@ Related rules:
 - [document-patch-control.md](document-patch-control.md) - tactical artifact governance
 - [project-documentation-standards.md](project-documentation-standards.md) - tactical vs strategic document-role map
 - [runtime-topology-control.md](runtime-topology-control.md) - runtime convergence/retirement path
+- [maintainable-code-structure-and-decomposition.md](maintainable-code-structure-and-decomposition.md) - coding-time responsibility boundaries, decomposition, God function/file, wrong-abstraction, and behavior-preserving refactor quality inside tactical or strategic implementation
 - [explanation-quality.md](explanation-quality.md) - tactical/strategic explanation
 - [answer-presentation.md](answer-presentation.md) - target/tactical/convergence/end-state presentation
 ---

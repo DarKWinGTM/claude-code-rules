@@ -1,8 +1,8 @@
 # Changelog - Tactical Strategic Programming
 
 > **Parent Document:** [../tactical-strategic-programming.md](../tactical-strategic-programming.md)
-> **Current Version:** 1.2
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,12 +10,32 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-04 | **[Clarified maintainable structure boundary](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Clarified that tactical-strategic-programming owns tactical posture, strategic target, convergence path, and closure while `maintainable-code-structure-and-decomposition` owns coding-time responsibility boundaries, God function/file pressure, code-smell triggers, wrong-abstraction guardrails, and behavior-preserving refactor quality | |
 | 1.2 | 2026-04-02 | **[Added anti-hardcoding tactical-boundary guidance](#version-12)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended tactical-strategic-programming so tactical slices no longer normalize machine-local paths, hosts, or install assumptions as default implementation behavior and now defer broader ownership to `portable-implementation-and-hardcoding-control` | |
 | 1.1 | 2026-03-28 | **[Aligned tactical artifact examples to the corrected patch model](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Updated the tactical artifact map so tactical patch examples now point to `patch/<context>.patch.md` or root `<context>.patch.md` instead of the older `patches/` or `patch.md` wording | |
 | 1.0 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain](#version-10)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 | | | Summary: Created a new cross-cutting strategic doctrine rule so tactical programming is allowed for speed only under a declared strategic target, visible convergence path, and strategic end-state | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Clarified maintainable structure boundary
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `tactical-strategic-programming.md` from v1.2 to v1.3.
+- Updated `design/tactical-strategic-programming.design.md` from v1.2 to v1.3.
+- Added a maintainable-structure boundary so tactical/strategic doctrine keeps ownership of tactical entry, strategic target, convergence path, bounded scope, drift prevention, and strategic closure.
+- Deferred coding-time responsibility boundaries, God function/file pressure, code-smell triggers, smallest-useful decomposition, wrong-abstraction guardrails, and behavior-preserving refactor quality to `maintainable-code-structure-and-decomposition.md`.
+- Clarified that tactical fixes may stay local for speed, but material structure debt needs an absorption, replacement, promotion, or retirement path.
+
+### Summary
+Clarified the boundary between tactical/strategic convergence doctrine and the new maintainable code structure owner so tactical speed does not silently accumulate coding-structure debt as hidden architecture.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e (2026-04-02)
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
@@ -21,6 +21,7 @@ The target model is:
 - **strategic target is mandatory**
 - **convergence path is visible**
 - **strategic closure is the intended end-state**
+- **coding-time structure quality is delegated to `maintainable-code-structure-and-decomposition.md` while tactical/strategic keeps convergence ownership**
 
 ---
 
@@ -138,6 +139,14 @@ Required guidance:
 - design and phase layers should absorb validated tactical learning
 - the final authority should live in strategic artifacts, not in leftover tactical fragments
 
+### 4.7 Maintainable Structure Boundary Principle
+Tactical/strategic doctrine owns execution posture and convergence, not every coding-time decomposition decision.
+
+Required guidance:
+- delegate function/file/module responsibility, God function/file, code smell, smallest-useful decomposition, wrong-abstraction, and behavior-preserving refactor decisions to `maintainable-code-structure-and-decomposition.md`
+- tactical fixes may stay local for speed, but material structure debt should have an explicit convergence path
+- strategic programming should absorb validated tactical learning into stable responsibility boundaries instead of accumulating unrelated tactical fragments
+
 ---
 
 ## 5) Classification Model
@@ -202,6 +211,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | temporary runtime structure | temporary service, bridge, adapter, fallback | require retirement or absorption path |
 | architecture still emerging | goal is known but final structure is still forming | tactical-with-strategic-track mode |
 | long-lived local workaround | tactical artifact persists beyond immediate need | require explicit promotion, retirement, or replacement |
+| tactical code structure debt | tactical fix grows God function/file pressure or mixed responsibilities | keep the slice bounded and point structural cleanup/convergence to the maintainable code structure owner |
 
 ---
 
@@ -214,6 +224,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | workaround with no retirement path | temporary local logic becomes permanent by accident | require retirement, absorption, or promotion plan |
 | design says one thing, tactical implementation drifts elsewhere | authority split and inconsistency | keep tactical work aligned to strategic target |
 | phase plan built from accumulated tactical fragments with no structure | sequencing and ownership degrade | strategic program should absorb tactical learning into explicit structure |
+| tactical coding shortcut silently becomes God file or God function structure | maintainability debt becomes permanent by accident | keep material code-structure debt visible and converge through `maintainable-code-structure-and-decomposition.md` |
 
 ---
 
@@ -238,6 +249,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | `document-patch-control.md` | Tactical artifact governance |
 | `project-documentation-standards.md` | Tactical vs strategic document-role map |
 | `runtime-topology-control.md` | Tactical runtime changes require convergence/retirement path |
+| `maintainable-code-structure-and-decomposition.md` | Owns coding-time responsibility boundaries, decomposition, God function/file pressure, wrong-abstraction guardrails, and behavior-preserving refactor quality inside tactical or strategic implementation |
 | `explanation-quality.md` | Explains whether work is tactical or strategic and how it converges |
 | `answer-presentation.md` | Presents strategic target, tactical now, convergence path, and end-state clearly |
 

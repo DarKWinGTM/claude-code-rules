@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 9.80
+> **Current Version:** 9.81
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -13,7 +13,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, completed documentation history surfaces for phase/patch/changelog scan-bloat control, first-class startup artifact initiation control, proactive external verification and source trust, evidence-seeking proof-aware reasoning so substantial analysis, design, recommendation, agreement, and disagreement use practical checked evidence when material while ordinary evidence remains grounding input rather than an automatic decision lock, native worker-agent routing and context control refined so pasted technical evidence is classified by user intent before project exploration, broad independent work is standalone-subagent-first, worker selection is capability-based rather than hardcoded by tool name, and Agent Team workflow remains an exceptional coordination escalation, portable implementation defaults, public onboarding/install portability, anti-hardcoding discipline, memory governance and session-boundary behavior, source-only semantic-preserving runtime rule compression with complete patch inventory coverage before execution, explicit runtime install/parity verification when installation is separately requested, a runtime destination ownership boundary for co-located other-owner runtime files, phase-backed closeout reporting that states delivered work and impact before audit-only detail dominates, and design-to-phase execution synthesis so sufficiently clear governed design can become phase execution order and current-phase live tasks when staged execution is warranted.
+This active-state model must preserve UDVC-1 while supporting first-class phased execution planning, explicit patch/review artifacts, completed documentation history surfaces for phase/patch/changelog scan-bloat control, first-class startup artifact initiation control, proactive external verification and source trust, evidence-seeking proof-aware reasoning so substantial analysis, design, recommendation, agreement, and disagreement use practical checked evidence when material while ordinary evidence remains grounding input rather than an automatic decision lock, native worker-agent routing and context control refined so pasted technical evidence is classified by user intent before project exploration, broad independent work is standalone-subagent-first, worker selection is capability-based rather than hardcoded by tool name, and Agent Team workflow remains an exceptional coordination escalation, first-class maintainable code structure and decomposition guidance so coding-time work preserves responsibility clarity without rigid line-count or architecture-template doctrine, portable implementation defaults, public onboarding/install portability, anti-hardcoding discipline, memory governance and session-boundary behavior, source-only semantic-preserving runtime rule compression with complete patch inventory coverage before execution, explicit runtime install/parity verification when installation is separately requested, a runtime destination ownership boundary for co-located other-owner runtime files, phase-backed closeout reporting that states delivered work and impact before audit-only detail dominates, and design-to-phase execution synthesis so sufficiently clear governed design can become phase execution order and current-phase live tasks when staged execution is warranted.
 
 ---
 
@@ -39,6 +39,7 @@ This repository uses one deterministic governance model:
 - runtime rules are the active rule layer
 - evidence-seeking proof-aware reasoning grounds substantial analysis, design, recommendation, agreement, and disagreement in practical checked evidence when material, while ordinary evidence remains reasoning support unless it is a hard constraint, authoritative requirement, safety boundary, or verified contradiction
 - native worker-agent routing and context control keeps pasted technical evidence tied to the user’s active intent before project exploration, routes broad/noisy/high-context/multi-surface/high-output work by required worker capability, prefers standalone subagent lanes for broad independent work, keeps Agent Team workflow as an exceptional coordination escalation, and lets custom-agent selection choose the best available specialist only after routing decides the worker path
+- maintainable code structure and decomposition gives coding-time work a first-class owner for responsibility boundaries, future changeability, code-smell triggers, smallest useful decomposition, God function/file pressure, wrong-abstraction avoidance, behavior-preserving refactor posture, and tactical structure-debt convergence without rigid architecture templates
 - active runtime rule compression must preserve semantic parity and should start from a complete patch inventory/baseline before any rule-body rewrite begins
 - repository-level compression record sync should describe completed runtime slices without turning governed planning surfaces into compression targets, without mass-bumping per-rule chains automatically, without claiming runtime install before that separate gate passes, and with runtime install/parity recorded only after that explicit gate is executed
 - shared runtime destination co-location is not ownership authority; destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification, cleanup, or deletion is considered, and adjacent documentation/hygiene/reference owners preserve that boundary without turning shared-destination co-location into ownership
@@ -61,7 +62,7 @@ This repository uses one deterministic governance model:
 
 ### 3.1 Active Runtime Inventory
 
-The active runtime inventory contains 42 source-owned root rule files.
+The active runtime inventory contains 43 source-owned root rule files.
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
@@ -98,7 +99,7 @@ The active runtime inventory contains 42 source-owned root rule files.
 | 31 | todo-standards.md | todo-standards.design.md v2.20 | Durable TODO governance with startup-establishment bridge, current-phase-first but phase-context-aware built-in task-list usage for non-trivial live execution tracking, required inspection of relevant governed `/phase` context before task shaping when that context exists, task creation aligned to active phase or clearly implied staged/phase context, bounded use of already-authored `/phase` planning data for continuity and draft next-work discovery, task wording that follows the actual active session language pattern, same-objective reuse/append retention, completed-task visibility until closure, task-list-first next-work discovery with bounded fallback to broader execution surfaces, explicit required TODO synchronization as companion work rather than optional bookkeeping when `TODO.md` is needed, and an explicit boundary that shared-board/plugin/external coordination mechanics stay outside Main RULES current doctrine |
 | 32 | runtime-topology-control.md | runtime-topology-control.design.md v1.1 | Bounded runtime mutation posture with inspect-before-mutate discipline |
 | 33 | unified-version-control-system.md | unified-version-control-system.design.md v1.2 | UDVC-1 controller-level governance view |
-| 34 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.2 | Tactical entry, strategic target, convergence path, strategic closure doctrine, and anti-hardcoding tactical-boundary discipline |
+| 34 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.3 | Tactical entry, strategic target, convergence path, strategic closure doctrine, anti-hardcoding tactical-boundary discipline, and explicit deferral of coding-time responsibility/decomposition quality to the maintainable code structure owner |
 | 35 | natural-professional-communication.md | natural-professional-communication.design.md v1.3 | First-class doctrine for natural professional communication, including easy-explanation register support for plain Thai answers, rejection of metaphor-heavy or management-style abstraction when direct human-readable wording would be clearer, and explicit purpose-before-detail wording for operational answers |
 | 36 | portable-implementation-and-hardcoding-control.md | portable-implementation-and-hardcoding-control.design.md v1.2 | First-class owner for portable implementation defaults, portable-by-default support/package source artifacts, public onboarding/install portability, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline |
 | 37 | zero-hallucination.md | zero-hallucination.design.md v1.6 | Verified information only, including practical evidence-seeking for material factual premises and verified factual endorsement before agreement with factual claims, while keeping fact/preference-direction/inference/hypothesis/uncertainty separation, scoped non-finding discipline, unsupported factual-endorsement risk, proof-aware uncertainty, and explicit limits on using git-state observations as disposal truth |
@@ -107,6 +108,7 @@ The active runtime inventory contains 42 source-owned root rule files.
 | 40 | goal-set-review-and-priority-balance.md | goal-set-review-and-priority-balance.design.md v1.0 | First-class owner for continuous goal-set review, structure-first priority balance, and protection against single-subtask fixation so work on A does not crowd out B and C |
 | 41 | technical-snapshot-communication.md | technical-snapshot-communication.design.md v1.0 | First-class owner for bounded technical snapshot wording, exact/partial/inferred separation, scoped local-fact snapshot communication, and concise diagnostic snapshot state reporting |
 | 42 | response-closing-and-action-framing.md | response-closing-and-action-framing.design.md v1.1 | First-class owner for concise end-of-response synthesis, clear action framing, recommendation-with-reason wording, alternative preservation, closed-topic summary handling, phase-backed closeout synthesis for delivered work, feature/improvement, impact, verification basis, and next phase state, and advisory goal-qualified proposal framing |
+| 43 | maintainable-code-structure-and-decomposition.md | maintainable-code-structure-and-decomposition.design.md v1.0 | First-class owner for coding-time maintainability as future changeability, responsibility boundaries by reason to change, code-smell triggers rather than verdicts, smallest useful decomposition, God function/file pressure, wrong-abstraction guardrails, explicit dependency/state boundaries, behavior-preserving refactor posture, and tactical structure-debt convergence without rigid line-count or architecture-template doctrine |
 
 ### 3.2 Category View
 
@@ -118,7 +120,7 @@ The active runtime inventory contains 42 source-owned root rule files.
 | Output Safety | safe-file-reading, safe-terminal-output, flow-diagram-no-frame, strict-file-hygiene | Output flood prevention, safe text presentation, and file hygiene |
 | Startup Governance | artifact-initiation-control, project-documentation-standards, todo-standards, phase-implementation | Resolve artifact posture before meaningful governed work drifts |
 | User Control | authority-and-scope, custom-agent-selection-priority, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control, execution-continuity-and-mode-selection | Preserve user authority, correct mode selection, re-check intent before project exploration when technical evidence could be misread, prefer clear best-fit custom specialists after routing says delegation/specialist handling fits, and maintain safe operational posture |
-| Execution Strategy | native-worker-agent-routing-and-context-control, goal-set-review-and-priority-balance, tactical-strategic-programming | Route broad/high-context/high-output work through intent-first, capability-based, standalone-subagent-first worker lanes before leader-session raw absorption, keep Agent Team workflow exceptional, keep the full active goal set visible, preserve structure-first priority balance, and prevent local tactical work from crowding out the main objective set |
+| Execution Strategy | native-worker-agent-routing-and-context-control, goal-set-review-and-priority-balance, tactical-strategic-programming, maintainable-code-structure-and-decomposition | Route broad/high-context/high-output work through intent-first, capability-based, standalone-subagent-first worker lanes before leader-session raw absorption, keep Agent Team workflow exceptional, keep the full active goal set visible, preserve structure-first priority balance, prevent local tactical work from crowding out the main objective set, and keep coding-time structure maintainable without rigid templates |
 | Adversarial Workflow | refusal-minimization, dan-safe-normalization | Reduce false refusals in authorized adversarial/security workflows |
 | Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, anti-mockup, unified-version-control-system | Documentation determinism, reference-role clarity, patch semantics, and governance quality |
 
@@ -223,6 +225,7 @@ The active memory-governance contract is:
 - [ ] Runtime rules remain the active rule layer
 - [ ] Evidence-seeking proof-aware reasoning remains proportional, grounded in checked evidence when material, separated from unsupported factual endorsement and user-owned preference/direction, and prevented from turning ordinary evidence into a rigid decision lock
 - [ ] Native worker routing remains intent-first, capability-based, and standalone-subagent-first for broad independent work, keeps Agent Team workflow exceptional, and keeps custom-agent selection as candidate selection after routing rather than routing ownership
+- [ ] Maintainable code structure guidance remains principle-based: code smells trigger investigation, decomposition follows responsibility/changeability, wrong abstractions are avoided, and tactical structure debt has convergence
 - [ ] Design docs remain active target-state guidance only and do not use a default `design/done/` surface
 - [ ] Active changelogs remain version authority per chain while `changelog/done/` stays inactive history
 - [ ] TODO remains execution-only
@@ -246,6 +249,7 @@ Related chains:
 - `execution-continuity-and-mode-selection.md`
 - `native-worker-agent-routing-and-context-control.md`
 - `custom-agent-selection-priority.md`
+- `maintainable-code-structure-and-decomposition.md`
 - `strict-file-hygiene.md`
 
 ---

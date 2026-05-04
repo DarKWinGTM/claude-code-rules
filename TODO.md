@@ -131,6 +131,7 @@
 ## 📋 Tasks To Do
 
 ### Active Work
+- [ ] Complete P082 maintainable code structure and decomposition: add the first-class maintainable code structure owner, integrate the tactical/strategic boundary, synchronize v9.81 / 43-rule master records, install only README-listed active runtime rules, verify source/runtime parity, then push master and publish GitHub release `v9.81`.
 - [x] Close P073 runtime-compression scope drift: compression targets are active root runtime rule files only, while `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` remain sync/audit/planning surfaces and are not compression targets; current checked baseline is 41 files / 7,141 lines / 50,141 words / 356,403 bytes.
 - [x] Complete P073-04 evidence/safety/operations runtime-owner compression source-only: selected 7 active runtime rule files, reduced the touched set from 13,424 to 10,854 words, preserved semantic anchors, and kept `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` as sync/audit/planning surfaces only.
 - [x] Complete P073-05 remaining communication/presentation/strategy/support runtime-owner compression source-only: selected 11 active runtime rule files, reduced the touched set from 20,565 to 12,032 words, preserved semantic anchors, and kept governed planning surfaces as status/sync/audit records only.
