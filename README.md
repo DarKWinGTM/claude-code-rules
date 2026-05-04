@@ -25,7 +25,7 @@
   <b>43</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Runtime Parity</b><br><sub>Release Pending</sub>
+  <b>Released</b><br><sub>Runtime Verified</sub>
 </td>
 <td align="center" width="200">
   <b>Maintainable code</b><br><sub>Structure Owner</sub>
@@ -311,7 +311,7 @@ Please:
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
 - P081 source governance is synchronized for v9.80; runtime install parity is verified for the 42 active rule set; git push completed and GitHub release `v9.80` is published
-- P082 source governance is synchronized for v9.81 with a new maintainable code structure owner; source audit, semantic anchor audit, and 43-file runtime install/parity passed; git push and GitHub release `v9.81` remain pending
+- P082 source governance is synchronized for v9.81 with a new maintainable code structure owner; source audit, semantic anchor audit, and 43-file runtime install/parity passed; git push completed and GitHub release `v9.81` is published
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 

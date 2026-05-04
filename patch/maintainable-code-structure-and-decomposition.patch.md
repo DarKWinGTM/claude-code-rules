@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.81
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -129,7 +129,7 @@ The active runtime install set contains 43 source-owned runtime rule files after
 - [x] README Bash and PowerShell install arrays include exactly 43 active runtime files.
 - [x] Golden scenarios pass: God function/file trigger, cohesive long function no forced split, wrong-abstraction avoidance, tactical fix with convergence path, behavior-preserving refactor, and verification-honest reporting.
 - [x] Runtime install parity is verified for the 43 active runtime rule files.
-- [ ] Source/runtime release artifacts are pushed and GitHub release `v9.81` is created.
+- [x] Source/runtime release artifacts are pushed and GitHub release `v9.81` is created.
 
 ---
 
