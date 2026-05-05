@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 076-03
-> **Status:** In Progress
+> **Status:** Completed
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Design References:** [../design/design.md](../design/design.md), [../design/phase-implementation.design.md](../design/phase-implementation.design.md), [../design/artifact-initiation-control.design.md](../design/artifact-initiation-control.design.md), [../design/todo-standards.design.md](../design/todo-standards.design.md), [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md), [../design/execution-continuity-and-mode-selection.design.md](../design/execution-continuity-and-mode-selection.design.md)
 > **Patch References:** [../patch/phase-visible-task-linkage.patch.md](../patch/phase-visible-task-linkage.patch.md)
@@ -132,7 +132,7 @@ This is a subphase of `076` because it refines the same phase-to-live-execution 
 - [x] Master records describe v9.85 and active runtime count 43 consistently.
 - [x] README Bash and PowerShell install arrays still include exactly 43 active runtime rule files.
 - [x] Runtime install parity passes for 43 active runtime rule files.
-- [ ] Source/runtime release artifacts are pushed and released as `v9.85`.
+- [x] Source/runtime release artifacts are pushed and released as `v9.85`.
 
 ---
 

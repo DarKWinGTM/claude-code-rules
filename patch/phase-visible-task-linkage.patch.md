@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.85
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -144,7 +144,7 @@ A P076-03 phase record tracks owner-chain refinement, master governed sync, runt
 - [x] Master records, README, TODO, phase, and patch describe P076-03/v9.85 consistently.
 - [x] README Bash and PowerShell install arrays remain exactly 43 active runtime files.
 - [x] Runtime install parity is verified for the 43 active runtime rule files.
-- [ ] Source/runtime release artifacts are pushed and GitHub release `v9.85` is created.
+- [x] Source/runtime release artifacts are pushed and GitHub release `v9.85` is created.
 
 ---
 
