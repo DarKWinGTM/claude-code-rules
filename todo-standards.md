@@ -1,6 +1,6 @@
 # TODO Standards
-> **Current Version:** 2.21
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.21
+> **Current Version:** 2.22
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
@@ -47,7 +47,7 @@ Built-in task-list usage is expected by default when work is non-trivial, has 3+
 Do not skip the built-in task list in those cases unless there is a narrow justified reason. Do not force task-list overhead for trivial isolated work, one-step lookup/fix work, or cases where the task list adds more ceremony than clarity.
 ---
 ## Phase-Context-Aware Task Rules
-When active phase or staged context exists, the task list should mirror the current phase/stage before future-phase work. Inspect relevant `/phase` context before task shaping; detached generic wording is execution drift. If the exact next phase file is absent but checked context makes the phase family or staged lane clear, align to that implied current stage.
+When active phase or staged context exists, the task list should mirror the current phase/stage before future-phase work and visibly expose that phase or stage context. Inspect relevant `/phase` context before task shaping; detached generic wording is execution drift. If the exact next phase file is absent but checked context makes the phase family or staged lane clear, align to that implied current stage.
 
 Bounded phase context may include current active phase, current phase family/staged lane, phase order/dependencies in `phase/SUMMARY.md`, and authored `Next possible phases` in relevant child files.
 
@@ -61,7 +61,10 @@ Guidance:
 - if the current phase is complete, say so before creating draft next-wave tasks
 - future-phase tasks remain draft/proposal until the phase is opened, selected, or otherwise made active by governing phase context
 - one phase may have several outcome-sized tasks; do not force a whole phase into one oversized task
-- prefer task subjects that include the current phase ID when useful
+- each phase-backed or clearly phase-shaped live task should visibly expose phase ID, phase name, phase family, or implied-stage context in the subject or description
+- prefer compact subject linkage such as `P<phase-id>` when no stronger title grammar applies
+- when subject linkage would conflict with another title grammar, put `phase_ref`, phase file path, phase name, or equivalent visible linkage in the description instead
+- hidden internal phase alignment alone is not enough for non-trivial phase-backed task entries
 ---
 ## Live Task-List Update Contract
 When the built-in task list is in use:
@@ -75,6 +78,7 @@ When the built-in task list is in use:
 - start fresh only for a genuinely new objective, true closure, or explicit user reset
 - align task creation to current active phase or clearly implied stage/family when checked context is phase-shaped
 - inspect `/phase` context before shaping tasks when relevant governed phase context exists
+- verify phase-backed or clearly phase-shaped task entries visibly expose phase context after creation or extension, and update them immediately when they do not
 - task subjects/descriptions should follow the actual active session language/register; Thai-led or Thai/English mixed wording is acceptable when natural, and technical labels may remain technical
 - use the task list first for next unfinished work; if insufficient, use active phase, current phase family, `phase/SUMMARY.md`, authored `Next possible phases`, `TODO.md`, and checked implementation state
 - keep the task list tied to active execution, not stale bookkeeping or a future-wave scratchpad
@@ -100,6 +104,7 @@ TODO content updates still happen last among primary active layers. That later o
 - [ ] Tracking posture was resolved early when meaningful tracking was required
 - [ ] Built-in task list was used proactively for non-trivial active work when live visibility helped
 - [ ] Task creation aligned to active phase, implied staged context, and authored bounded phase context from `/phase`
+- [ ] Phase-backed or clearly phase-shaped task entries visibly exposed phase context in subject or description
 - [ ] Task creation did not silently allocate a new major phase when phase lineage needed `phase-implementation.md` handling
 - [ ] Task wording aligned to active session language/register
 - [ ] Task entries remained outcome-sized
@@ -116,6 +121,7 @@ TODO content updates still happen last among primary active layers. That later o
 | Startup tracking posture resolved before drift | 100% |
 | Proactive task-list usage on non-trivial work | High |
 | Current-phase-first task-list alignment | High when a phase is active |
+| Visible phase linkage for phase-backed task entries | High |
 | Task-list-driven new-major phase drift | 0 critical cases |
 | Future-phase task drift before explicit phase opening | 0 critical cases |
 | Stale or vague live task lists during non-trivial work | Low |

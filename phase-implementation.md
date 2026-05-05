@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.26
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.26
+> **Current Version:** 2.27
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order, maintain an active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
+**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order, maintain an active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria, visibly link non-trivial phase-backed live tasks to active or implied phase context, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
 
 This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed summary/index; active child files hold phase-local execution detail; `phase/done/` is inactive completed history; design remains target-state authority; patch remains governed before/after review authority. Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
 
@@ -114,14 +114,18 @@ Each executable child phase should define or map to:
 
 ## Live Task-List Linkage Contract
 
-When a phase is active and work is non-trivial, the built-in task list should mirror current phase execution slices.
+When a phase is active or clearly implied and work is non-trivial, the built-in task list should mirror current phase execution slices and visibly expose the active or implied phase context.
 
 Guidance:
 - inspect relevant `/phase` context before shaping/extending tasks; detached generic wording is execution drift
 - default tasks to the current active phase before future phases
 - if the exact next phase file is absent but phase family/stage is clear, align tasks to that implied structure
 - do not let task-list shaping silently allocate a new major phase; use the lineage gate when a phase file is needed
-- one phase may have many outcome-sized tasks; current phase ID in task subjects is useful when it improves clarity
+- one phase may have many outcome-sized tasks; each non-trivial phase-backed task should show phase ID, phase name, phase family, or clearly implied stage context in the subject or description
+- prefer compact subject linkage such as `P<phase-id>` when no stronger title grammar or shared-board rule blocks it
+- when another title grammar makes subject linkage awkward, put `phase_ref`, phase file path, phase name, or equivalent visible linkage in the description instead
+- hidden internal phase alignment alone is insufficient for non-trivial phase-backed live tasks
+- if a phase-backed task is created or extended without visible phase linkage, update it immediately rather than leaving it as a generic live-tracking item
 - extend the current task list for the same objective/phase family instead of recreating it
 - task wording should follow the active session language/register; technical labels may remain technical when clearer
 - use current phase, phase family, `phase/SUMMARY.md`, `TODO.md`, authored `Next possible phases`, and checked implementation state as bounded execution-discovery surfaces
@@ -148,7 +152,7 @@ Phase-backed closeout should report practical delivery, not only files/tasks/aud
 - [ ] patch-derived phase work shows explicit patch linkage and patch artifacts stay outside live phase workspace
 - [ ] child phases include required source references, execution fields, verification, rollback/risks, and closeout
 - [ ] closeout reports delivery, feature/improvement, impact, evidence-strength-aligned verification basis, and next phase state when relevant
-- [ ] task creation aligns to active/implied phase context while authored future-phase context remains non-active until opened/selected
+- [ ] task creation visibly links to active/implied phase context while authored future-phase context remains non-active until opened/selected
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
@@ -19,6 +19,7 @@ The target behavior is:
 - sufficiently clear governed design that warrants staged execution resolves phase posture to `use existing` or `create now` instead of lingering as implicit planning
 - phase `create now` delegates identity selection to `phase-implementation.md` so startup posture does not default to opening a new major phase
 - live task tracking is initialized early when non-trivial work needs it
+- phase-backed live task initialization creates visibly phase-linked entries from the start
 - trivial work keeps a lightweight bypass
 
 ---
@@ -64,7 +65,7 @@ Before meaningful governed work continues, the assistant must resolve startup po
 The important requirement is not “create everything.”
 The requirement is “leave nothing required unresolved,” including the live tracking surface when non-trivial work needs it.
 
-When an active phase already exists for the work, live task-list initialization should be treated as expected rather than optional unless a narrow justified reason clearly blocks it.
+When an active phase already exists for the work, live task-list initialization should be treated as expected rather than optional unless a narrow justified reason clearly blocks it. When initialization happens under active or clearly implied phase context, initial task entries should visibly link to that phase context in the subject or description instead of starting as generic tracking items.
 
 ### 4.2 Meaningful-work boundary
 Meaningful governed work begins when the assistant moves beyond lightweight exploration and starts doing one or more of these:
@@ -123,7 +124,7 @@ Apply this chain strongly when one or more are true:
 | Design | target behavior, policy, contract, or architecture is new or materially changing |
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
-| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed or clearly phase-shaped work strengthens this from preferred to expected |
+| Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed or clearly phase-shaped work strengthens this from preferred to expected and should initialize with visible phase linkage |
 | Phase | staged execution, gates, sequencing, rollback boundaries, explicit user request, or sufficiently clear governed design requiring staged execution make `/phase` materially useful; phase identity selection remains owned by `phase-implementation.md` |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
@@ -186,6 +187,7 @@ Equivalent headings are acceptable if the meaning remains explicit.
 | start work first, backfill artifacts later | direction and rationale drift before authority exists | resolve startup artifact posture first |
 | create no artifacts because the user did not explicitly list them | meaningful work loses structure and traceability | evaluate required artifact set proactively |
 | non-trivial tracked work begins with no live task tracking | the user cannot see planned / active / completed state while the work is underway | initialize the built-in task list early when live tracking materially helps |
+| phase-backed live task initialization creates generic entries | users can see tasks but cannot see which phase governs them | initialize phase-backed entries with visible phase linkage in subject or description |
 | force every artifact every time | creates unnecessary ceremony | resolve only the required subset |
 | create patch by default during greenfield startup or baseline formation | startup work is mislabeled as a review delta before a stable before-state exists | default patch to `not required` unless a real existing surface or explicit user request justifies it |
 | treat phase `create now` as automatic new-major creation | startup posture gets confused with phase lineage semantics | let `phase-implementation.md` choose current phase, existing-family subphase, new major, or ask-now lineage handling |
@@ -201,6 +203,7 @@ Equivalent headings are acceptable if the meaning remains explicit.
 |--------|--------|
 | Startup artifact posture resolved before meaningful drift | 100% |
 | Required artifacts silently omitted at startup | 0 critical cases |
+| Generic phase-hidden startup task entries | 0 critical cases |
 | Retrospective governance backfill | Low |
 | Trivial-work over-ceremony | Low |
 | Existing-authority reuse | High |

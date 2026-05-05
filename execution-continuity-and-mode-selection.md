@@ -1,6 +1,6 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.10
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.11
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
@@ -41,7 +41,7 @@ When execution mode remains active, inspect execution surfaces instead of waitin
 - treat design, phase, TODO, task list, and checked implementation state as execution-discovery surfaces once execution mode is active
 - shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
 
-Phase-shaped next work must not become a new major phase by momentum. If it may belong to an existing family, apply `phase-implementation.md` major-vs-subphase lineage handling before choosing current phase update, existing-family subphase, new major, or ask-now posture.
+Phase-shaped next work must not become a new major phase by momentum. If it may belong to an existing family, apply `phase-implementation.md` major-vs-subphase lineage handling before choosing current phase update, existing-family subphase, new major, or ask-now posture. Continuation-created or continuation-extended task entries for phase-backed work must preserve visible phase linkage in the subject or description instead of becoming generic next-work tasks.
 ---
 ## Capture Before Continue
 Continuous execution must not outrun required knowledge capture. If external docs/specs/provider references produce implementation-critical knowledge, normalize the extracted truth into the governed artifact before later multi-step execution depends on it. Prefer governed design for implementation truth, use phase/patch for execution consequences when in scope, and do not rely on transient reading memory when compact/handoff could remove context.
@@ -71,7 +71,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | unresolved startup gate | resolve startup posture before execution drift |
 | clear active phase/task path | continue rather than stop on narration |
 | discoverable unfinished work | inspect execution surfaces and continue if safe |
-| phase-shaped follow-up | apply phase lineage handling before opening a new major phase |
+| phase-shaped follow-up | apply phase lineage handling before opening a new major phase and preserve visible phase linkage in created/extended task entries |
 | broad/noisy next slice | apply worker routing before broad leader-session absorption |
 | milestone-only pause drift | continue after reporting when safe |
 | open concept/design/behavior work | stay in discussion mode |
@@ -79,7 +79,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | approval-sensitive step | stop for confirmation under stronger rule |
 ---
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, new-major allocation by momentum, skipped worker routing, and treating teammate/Agent Team restriction as an all-subagent ban.
+Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, new-major allocation by momentum, phase-shaped continuation tasks that hide their phase context, skipped worker routing, and treating teammate/Agent Team restriction as an all-subagent ban.
 ---
 ## Quality Metrics
 | Metric | Target |
@@ -89,6 +89,7 @@ Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, e
 | Unnecessary milestone-only pauses | Low |
 | Continuous execution after clear next step | High |
 | Worker-routing gate respected before broad continuation | High |
+| Visible phase linkage preserved during phase-shaped continuation | High |
 | Execution during unresolved design/behavior discussion | 0 critical cases |
 | Stop-gate correctness | High |
 ---
@@ -98,6 +99,6 @@ Related rules:
 - [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
 - [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording
 - [todo-standards.md](todo-standards.md) - live task list as execution surface
-- [phase-implementation.md](phase-implementation.md) - active phase/task linkage
+- [phase-implementation.md](phase-implementation.md) - active phase/task linkage and phase-visible continuation tasks
 - [functional-intent-verification.md](functional-intent-verification.md) - approval-sensitive gates
 ---

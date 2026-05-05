@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.32
+> **Current Version:** 2.33
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
@@ -24,7 +24,7 @@ This model must preserve one authority system while clearly separating:
 - `patch/<context>.patch.md` or root `<context>.patch.md` as active patch-governance artifacts outside the live phase workspace
 - `patch/done/` as inactive-by-default completed patch history
 - `phase-implementation-template.md` as the readable root-level helper
-- Claude Code's built-in task list as the live in-session execution surface for non-trivial work
+- Claude Code's built-in task list as the live in-session execution surface for non-trivial work, with visible phase pointers when the work is phase-backed
 - `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
 - `changelog/done/` as inactive-by-default completed/older changelog history while active changelogs keep version authority and navigation
 - design as active blueprint/target-state authority with no default `design/done/` pattern
@@ -86,6 +86,7 @@ It is not a version-authority document.
 
 Claude Code's built-in task list is the live in-session execution surface for active non-trivial work.
 It does not replace `TODO.md`, and `TODO.md` does not replace live task visibility during active work.
+For non-trivial phase-backed work, built-in task entries should visibly point to active or clearly implied phase context in the subject or description while remaining live execution pointers rather than phase authority.
 Visible session ownership should remain a default board-facing standard for session-owned task-list work whether the current task list is being used by one session or several.
 
 ### 3.6 Phase Summary Role
@@ -210,6 +211,7 @@ It is distinct from the later synchronization order under UDVC-1.
 Required governed surfaces should remain visible as governed companions rather than being reinterpreted as optional execution aids just because the assistant also has live execution surfaces.
 The built-in task list may help execute the work live, but it does not replace required design/changelog/TODO/phase/patch artifacts when the checked work shape still requires those governed surfaces.
 Where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should remain aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording.
+Phase-backed live task entries should visibly expose the active or implied phase context through subject or description linkage, while `phase/SUMMARY.md` and active phase files remain the phase authority.
 When `/phase` already contains relevant planning data, the assistant should not ignore that governed phase context: current phase, active phase family, phase ordering/dependencies, checked lineage, and already-authored next planned phases may all guide bounded task discovery and draft next-work visibility.
 That planning context does not by itself silently activate unopened future-phase execution, and it does not by itself allocate a new major phase without the `phase-implementation.md` lineage gate.
 
@@ -318,6 +320,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Required governed surfaces remain visible as governed companions instead of being reduced to optional execution aids
 - [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
+- [ ] Phase-backed built-in task entries visibly point to active or implied phase context without becoming phase authority
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
 - [ ] Phase file creation/selection defers to `phase-implementation.md` major-vs-subphase lineage handling
 - [ ] Phased work uses `phase/SUMMARY.md`
@@ -355,6 +358,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
 | Live task-vs-durable TODO distinction clarity | High |
+| visible phase linkage without task-list phase authority drift | High |
 | Execution-discovery surface clarity during active execution | High |
 | Public onboarding/install portability | High |
 | Workstation-specific absolute paths as public defaults | 0 critical cases |
@@ -369,14 +373,14 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 
 | Rule | Relationship |
 |------|-------------|
-| [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup artifact-resolution owner and early live task-tracking bridge |
+| [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup artifact-resolution owner, early live task-tracking bridge, and phase-linked initialization |
 | [document-changelog-control.md](../document-changelog-control.md) | Version authority contract and `changelog/done/` completed history boundary |
 | [document-design-control.md](../document-design-control.md) | Design structure standards and no-default-`design/done/` boundary |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary, explicit before/after patch contract, and `patch/done/` history boundary outside live phase planning |
-| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, `phase/done/` history boundary, and one-way design/patch source synthesis |
+| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, visible phase-linked live tasks, `phase/done/` history boundary, and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, source-owned install scope, shared destination, and other-owner runtime reference consistency |
-| [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, and same-objective continuity |
+| [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, visible phase context, and same-objective continuity |
 | [rules-plugin-extension.design.md](rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active shared-board/plugin/runtime coordination does not remain part of Main RULES current doctrine |
 
 ---

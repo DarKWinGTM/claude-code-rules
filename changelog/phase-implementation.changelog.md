@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.26
+> **Current Version:** 2.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.27 | 2026-05-04 | **[Required visible phase linkage in phase-backed live tasks](#version-227)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Strengthened the live task-list linkage contract so non-trivial phase-backed task entries visibly expose active or implied phase context in subject or description, with `phase_ref` or equivalent fallback when subject grammar conflicts | |
 | 2.26 | 2026-05-04 | **[Added lineage-first major-vs-subphase selection](#version-226)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added criteria for choosing current phase updates, existing-family subphases, or new major phases so related follow-up work does not default to a new major phase and unrelated rollout families are not forced into subphases | |
 | 2.25 | 2026-04-29 | **[Added completed phase history surface](#version-225)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -39,6 +41,26 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-227"></a>
+## Version 2.27: Required visible phase linkage in phase-backed live tasks
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.26 to v2.27.
+- Updated `design/phase-implementation.design.md` from v2.26 to v2.27.
+- Strengthened the live task-list linkage contract from internal phase alignment plus optional phase IDs to visible phase linkage for non-trivial phase-backed work.
+- Allowed the visible link to appear in the task subject or description, with compact subject tokens such as `P<phase-id>` preferred when no stronger title grammar applies.
+- Added the `phase_ref` or equivalent description-linkage fallback when subject linkage would conflict with another required title grammar.
+- Required immediate update when a created or extended phase-backed task lacks visible phase linkage.
+- Preserved the boundary that the built-in task list is live execution tracking and does not become phase authority.
+
+### Summary
+Phase-implementation now makes silent internal phase alignment insufficient for non-trivial phase-backed live tasks: each such task must visibly point to the active or clearly implied phase context while phase identity remains governed by `/phase`.
 
 ---
 

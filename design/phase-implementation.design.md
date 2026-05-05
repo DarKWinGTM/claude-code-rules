@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.26
+> **Current Version:** 2.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, selects major phases versus subphases through lineage-first criteria, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -183,12 +183,14 @@ Each executable child phase file should define or clearly map to:
 - Next possible phases
 
 ### 6.1 Live Task-List Linkage Contract
-When a phase is active and the work is non-trivial, the built-in task list should mirror the current phase's execution slices.
+When a phase is active or clearly implied and the work is non-trivial, the built-in task list should mirror the current phase's execution slices and visibly expose the active or implied phase context.
 
 If `/phase` exists and relevant governed phase context is already available, task creation must inspect that phase context before shaping the live task list.
 Task shaping that ignores relevant governed phase context and falls back to detached generic wording or structure should be treated as execution drift rather than as an acceptable default path.
 
 If the exact next phase file does not yet exist, but the checked project/workstream context already makes the current staged or phase family clear, task creation should still follow that implied phase structure provisionally instead of reverting to detached generic standalone task shaping.
+
+Visible linkage may live in the subject or description. The preferred compact form is a subject token such as `P<phase-id>` when no stronger title grammar blocks it. When another title grammar makes subject linkage awkward, use `phase_ref`, phase file path, phase name, phase family, or equivalent description linkage. Hidden internal alignment is not enough for non-trivial phase-backed live tasks.
 
 If `/phase` already contains additional authored planning context, task behavior should use a bounded phase-context hierarchy rather than relying only on the currently open phase file.
 That hierarchy is:
@@ -200,7 +202,10 @@ Required guidance:
 - when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping or extending the live task list
 - use the current active phase as the default source for live task-list entries
 - allow one phase to contain multiple task-list entries when the execution checklist has several real slices
-- prefer task subjects that include the current phase ID when that improves clarity
+- ensure each non-trivial phase-backed live task visibly carries phase ID, phase name, phase family, or clearly implied stage context in the subject or description
+- prefer compact subject linkage such as `P<phase-id>` when no stronger title grammar applies
+- use `phase_ref` or equivalent description linkage when subject linkage would conflict with another title grammar
+- update any created or extended phase-backed task immediately if it lacks visible phase linkage
 - task wording created from phase-linked work should still follow the actual active session language pattern rather than reverting to detached generic phrasing
 - if the session is primarily Thai, phase-linked task wording should be Thai-led by default
 - if the session naturally uses mixed Thai+English wording, phase-linked task wording should follow that mix rather than being forced into one language
@@ -237,6 +242,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
 - [ ] task creation can still align to clearly implied staged/phase context even before the exact next phase file exists
+- [ ] non-trivial phase-backed live tasks visibly expose phase ID/name/family/stage context in subject or description
 - [ ] sufficiently clear governed design can be synthesized into phase execution order without replacing design authority
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs are not used as active canonical phase identifiers
@@ -260,6 +266,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 | `/phase` workspace compliance | 100% |
 | `SUMMARY.md` presence when phased planning is used | 100% |
 | Current-phase-first task-list linkage when a phase is active | High |
+| Visible phase linkage in non-trivial phase-backed live tasks | High |
 | Startup phase posture resolved before drift when phase is required | 100% |
 | Live phased execution files under patch artifacts | 0 |
 | Active phase scan bloat from completed phase history | Low |

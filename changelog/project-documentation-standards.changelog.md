@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.32
+> **Current Version:** 2.33
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.33 | 2026-05-04 | **[Kept task lists non-authoritative but visibly phase-linked](#version-233)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Clarified that built-in task lists remain live tracking and never define phases, but non-trivial phase-backed entries should visibly point back to active or implied phase context | |
 | 2.32 | 2026-05-04 | **[Added phase lineage preservation at the documentation layer](#version-232)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.31 | 2026-04-29 | **[Added completed documentation surface governance](#version-231)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.30 | 2026-04-25 | **[Clarified source-owned runtime install scope in shared destinations](#version-230)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -42,6 +44,25 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-233"></a>
+## Version 2.33: Kept task lists non-authoritative but visibly phase-linked
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.32 to v2.33.
+- Updated `design/project-documentation-standards.design.md` from v2.32 to v2.33.
+- Clarified that Claude Code's built-in task list remains live in-session tracking and does not define phases.
+- Added the companion boundary that non-trivial phase-backed live task entries should visibly point to active or clearly implied phase context.
+- Updated integration references to the touched P076-03 owner versions.
+- Preserved runtime install scope, shared-destination owner boundaries, and governed document-role separation.
+
+### Summary
+Project-documentation-standards now preserves the task-list-as-pointer model: live task entries can visibly reference phase context without becoming the semantic authority for phases.
 
 ---
 

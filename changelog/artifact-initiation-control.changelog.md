@@ -1,7 +1,7 @@
 # Changelog - Artifact Initiation Control
 
 > **Parent Document:** [../artifact-initiation-control.md](../artifact-initiation-control.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-05-04 | **[Initialized phase-backed live tasks with visible linkage](#version-18)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.7 | 2026-05-04 | **[Delegated phase creation identity to lineage selection](#version-17)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.6 | 2026-04-27 | **[Added clear-design phase posture startup bridge](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.5 | 2026-04-17 | **[Kept newly encountered file classification separate from disposal conclusions](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -20,6 +21,24 @@
 | | | Summary: Refined startup-governance so patch is no longer treated as the default startup artifact during greenfield / baseline-formation work unless a real existing before/after review surface or explicit user request justifies it | |
 | 1.0 | 2026-03-28 | **[Created first-class artifact-initiation-control rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new startup-governance owner chain so design, changelog, TODO, phase, and patch posture must be resolved before meaningful governed work drifts | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Initialized phase-backed live tasks with visible linkage
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `artifact-initiation-control.md` from v1.7 to v1.8.
+- Updated `design/artifact-initiation-control.design.md` from v1.7 to v1.8.
+- Clarified that when built-in task-list initialization happens under active or clearly implied phase context, the initial entries should visibly link to that phase context in subject or description.
+- Added anti-pattern and metric coverage for generic phase-hidden startup task entries.
+- Preserved startup ownership: this rule initializes the live task posture, while phase identity and visible-link semantics defer to `phase-implementation.md` and live task mechanics defer to `todo-standards.md`.
+
+### Summary
+Artifact-initiation-control now prevents phase-backed live task tracking from starting as generic task entries when the active or implied phase context is already known.
 
 ---
 

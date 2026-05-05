@@ -1,6 +1,6 @@
 # Project Documentation Standards
-> **Current Version:** 2.32
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.32
+> **Current Version:** 2.33
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.33
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
@@ -35,7 +35,7 @@
 - Design owns active target-state truth and has no default `design/done/` surface.
 - Phase planning belongs to `phase-implementation.md`; `phase/SUMMARY.md` plus active `phase/phase-NNN-*.md` / `phase/phase-NNN-NN-*.md` files form the live phase workspace, while `phase/done/` is inactive completed history. `phase/SUMMARY.md` preserves phase-family lineage when it affects later major-vs-subphase decisions.
 - Patch artifacts are self-identifying before/after review artifacts outside live phase planning; `patch/done/` is inactive completed patch history, and live phase execution must not be stored in patch artifacts. Design and patch artifacts need not point back to phase.
-- `TODO.md` is durable tracking; Claude Code's built-in task list is live in-session tracking and does not replace durable/governed surfaces or define phases.
+- `TODO.md` is durable tracking; Claude Code's built-in task list is live in-session tracking and does not replace durable/governed surfaces or define phases. For non-trivial phase-backed work, built-in task entries should visibly point to the active or clearly implied phase context without becoming phase authority.
 - Runtime installs target only the current project/source-owned active runtime rule files. Design, changelog, TODO, phase, patch, support, helper, and extension-package surfaces are not runtime-rule install targets unless a later explicit gate selects them. Naming an install destination does not widen the current source-owned install set.
 - Shared runtime destinations may contain other project/plugin-owned runtime files; current repo docs must not classify, manage, or delete them unless owner/project scope is selected or verified. Runtime co-location is an observation, not ownership authority.
 - `phase-implementation-template.md`, support/package assets, optional skills/agents, plugin scaffolds, scripts, and hooks are helper/support surfaces, not root governance authority unless intentionally normalized. Reusable support assets stay portable unless explicitly machine-scoped.
@@ -52,7 +52,7 @@ Completed surfaces reduce active scan bloat without deleting governed history.
 ## Startup Artifact Gate
 Before meaningful governed work, `artifact-initiation-control` resolves relevant surfaces as `use existing`, `create now`, `ask now`, or `not required`; this happens before later sync order.
 Required companions remain non-optional when triggered: design for material target behavior/contract/policy, changelog for governed version/history, `TODO.md` for durable tracked work, `/phase` for staged execution, `/patch` for before/after review, and built-in tasks for live non-trivial visibility.
-For phased/staged repos, live tasks follow current phase, phase family, order/dependencies, authored next-phase context, and checked lineage; unopened future phases stay context only. Phase creation/selection defers to `phase-implementation.md`, and greenfield baseline alone does not require a patch.
+For phased/staged repos, live tasks follow current phase, phase family, order/dependencies, authored next-phase context, and checked lineage; non-trivial phase-backed entries visibly expose active or implied phase context in subject or description; unopened future phases stay context only. Phase creation/selection defers to `phase-implementation.md`, and greenfield baseline alone does not require a patch.
 
 Startup decision model:
 ```text
@@ -92,12 +92,13 @@ Required guidance:
 - Required document set, versions, metadata, full-history links, parent links, and active session IDs align with the governing chain. Active metadata must use real session identifiers; placeholders are not valid in active governed artifacts.
 - Phase records preserve live phase workspace boundaries, current/future phase distinction, and enough lineage for major-vs-subphase decisions.
 - Patch artifacts stay outside live phase namespace, remain before/after review surfaces, and show phase-to-patch linkage when patch participates.
-- Built-in task lists remain live tracking, normally reused/extended within one active objective, and never downgrade required design/changelog/TODO/phase/patch surfaces.
+- Built-in task lists remain live tracking, normally reused/extended within one active objective, visibly phase-linked for non-trivial phase-backed work, and never downgrade required design/changelog/TODO/phase/patch surfaces.
 - Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES scope; helper/support/extension artifacts stay non-governed unless intentionally promoted. If those mechanisms need authority later, promote them through an explicit governed chain rather than by side-effect reference.
 ---
 ## Verification Checklist
 - [ ] Required document set, versions, metadata, full-history/parent links, and active session IDs align.
 - [ ] Startup posture is resolved; required governed companions and live task tracking are not downgraded.
+- [ ] Phase-backed live task entries visibly point to active or implied phase context without becoming phase authority.
 - [ ] Active design/changelog, phase, patch, TODO, and completed-history boundaries remain distinct.
 - [ ] Phase lineage and phase file selection defer to `phase-implementation.md`.
 - [ ] Patch surfaces stay self-identifying, before/after-oriented, and outside live phase planning.
@@ -118,14 +119,14 @@ Required guidance:
 ## Integration
 | Rule | Relationship |
 |---|---|
-| [artifact-initiation-control.md](artifact-initiation-control.md) v1.7 | startup artifact-resolution owner |
+| [artifact-initiation-control.md](artifact-initiation-control.md) v1.8 | startup artifact-resolution owner and phase-linked live-task initialization |
 | [document-changelog-control.md](document-changelog-control.md) v4.8 | version authority and `changelog/done/` completed history boundary |
 | [document-design-control.md](document-design-control.md) v1.10 | design structure and no-default-`design/done/` boundary |
 | [document-patch-control.md](document-patch-control.md) v2.7 | patch boundary, before/after contract, and `patch/done/` completed history boundary |
-| [phase-implementation.md](phase-implementation.md) v2.26 | phased execution semantics, major-vs-subphase lineage selection, and `phase/done/` completed history boundary |
+| [phase-implementation.md](phase-implementation.md) v2.27 | phased execution semantics, major-vs-subphase lineage selection, visible phase-linked live tasks, and `phase/done/` completed history boundary |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | portable shared-artifact defaults |
 | [document-consistency.md](document-consistency.md) v1.8 | source/destination and source-owned/shared-destination reference consistency |
-| [todo-standards.md](todo-standards.md) v2.17 | TODO structure and startup bridge |
+| [todo-standards.md](todo-standards.md) v2.22 | TODO structure, startup bridge, and visible phase context in live task entries |
 | [design/rules-plugin-extension.design.md](design/rules-plugin-extension.design.md) | historical plugin-extension boundary; active plugin/runtime coordination is not Main RULES doctrine |
 ---
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)

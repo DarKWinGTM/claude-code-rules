@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.21
+> **Current Version:** 2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.22 | 2026-05-04 | **[Required visible phase context in phase-shaped task entries](#version-222a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Required phase-backed or clearly phase-shaped live task entries to expose phase ID/name/family or implied-stage context in subject or description and to be updated immediately if created without visible linkage | |
 | 2.21 | 2026-05-04 | **[Prevented task-list shaping from allocating new major phases](#version-221a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.20 | 2026-04-23 | **[Made relevant governed `/phase` context a required task-shaping input](#version-220a)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.19 | 2026-04-22 | **[Made task wording follow the actual active session language pattern](#version-219)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -32,6 +34,25 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-222a"></a>
+## Version 2.22: Required visible phase context in phase-shaped task entries
+
+**Date:** 2026-05-04
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `todo-standards.md` from v2.21 to v2.22.
+- Updated `design/todo-standards.design.md` from v2.21 to v2.22.
+- Required phase-backed or clearly phase-shaped live task entries to visibly expose phase ID, phase name, phase family, or implied-stage context in subject or description.
+- Added subject-or-description flexibility so compact phase tokens remain preferred without overriding stronger title grammars.
+- Added immediate post-create/post-extend correction when a phase-backed task lacks visible phase linkage.
+- Preserved durable `TODO.md` versus built-in live task-list role separation and the rule that task lists do not allocate new major phases.
+
+### Summary
+TODO standards now makes phase visibility a live task-list condition for phase-backed work instead of leaving phase references as a preference-only subject style.
 
 ---
 

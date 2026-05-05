@@ -1,6 +1,6 @@
 # Artifact Initiation Control
-> **Current Version:** 1.7
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 ---
@@ -18,6 +18,7 @@ Guidance:
 - treat retrospective artifact creation as repair, not the preferred path
 - keep trivial-work bypass narrow; if an isolated task expands into multi-step governed work, rerun startup resolution
 - initialize the built-in task list when non-trivial work benefits from live pending/in_progress/completed visibility; active phase work makes this expected unless a narrow reason blocks it
+- when initialization happens under active or clearly implied phase context, create initial task entries with visible phase linkage in the subject or description instead of generic live-tracking wording
 - once initialized for the active objective, reuse the live task-list surface unless true objective closure or explicit user reset applies
 - do not silently skip required artifacts or live tracking surfaces
 - do not use `trivial`, cleanup, or `not required` wording to classify an existing/newly encountered file as removable or `safe to remove`; file meaning and deletion authority require stronger owners
@@ -50,7 +51,7 @@ Meaningful governed work begins when the assistant moves beyond lightweight expl
 | Design | target behavior, policy, contract, or architecture is new/materially changing |
 | Changelog | a governed chain is created or version-impacting behavior changes |
 | TODO | work is multi-step, tracked, persistent, or likely to span slices |
-| Live task list | non-trivial active work benefits from live visibility; phase-backed work makes this expected |
+| Live task list | non-trivial active work benefits from live visibility; phase-backed work makes this expected, with visible phase linkage when initialized under active/implied phase context |
 | Phase | staged execution, gates, sequencing, rollback boundaries, or explicit request make `/phase` useful |
 | Patch | governed before/after review packaging is useful and patch criteria are met |
 
@@ -79,6 +80,7 @@ State the decision before substantial work continues, keep `not required` separa
 | work starts first and artifacts appear later | resolve startup posture first |
 | no artifacts opened because user did not list them | proactively evaluate the required set |
 | non-trivial tracked work begins with no live task tracking | initialize the built-in task list when live visibility helps |
+| phase-backed live task initialization creates generic tasks | create phase-linked initial entries that visibly expose active or implied phase context |
 | all artifacts forced every time | resolve only the required subset |
 | patch by default during greenfield/baseline formation | default patch to `not required` unless justified |
 | phase `create now` treated as new-major creation | use `phase-implementation.md` lineage handling |
@@ -94,6 +96,7 @@ Not allowed: substantial governed work while required posture is unresolved, sil
 | Startup artifact posture resolved before meaningful drift | 100% |
 | Required artifacts silently omitted at startup | 0 critical cases |
 | Phase-backed live task tracking omitted at startup | 0 critical cases |
+| Generic phase-hidden startup task entries | 0 critical cases |
 | Retrospective artifact backfill | Low |
 | Trivial-work over-ceremony | Low |
 | Existing-authority reuse | High |

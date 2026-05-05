@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, does not let execution continuity bypass startup artifact governance, does not let broad continuation bypass native worker routing, and does not let phase-shaped continuation allocate new major phases without phase lineage selection.
+Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, does not let execution continuity bypass startup artifact governance, does not let broad continuation bypass native worker routing, does not let phase-shaped continuation allocate new major phases without phase lineage selection, and preserves visible phase linkage when continuation creates or extends phase-backed task entries.
 
 ---
 
@@ -57,8 +57,8 @@ Execution continuity should not outrun required knowledge capture when external 
 ### 3.8 Worker-Routing-Before-Broad-Continue Principle
 Execution continuity should not make broad, noisy, context-heavy, high-output, multi-surface, or naturally parallel next work default to leader-session raw absorption. Those slices should pass through `native-worker-agent-routing-and-context-control.md` unless direct handling has a narrow reason.
 
-### 3.8.1 Phase-Lineage Continuity Boundary
-Execution continuity should not turn same-family phase-shaped follow-up work into a new major phase by momentum. When next work needs phase identity selection, `phase-implementation.md` should decide current phase update, existing-family subphase, new major phase, or ask-now lineage handling.
+### 3.8.1 Phase-Lineage and Visible-Linkage Continuity Boundary
+Execution continuity should not turn same-family phase-shaped follow-up work into a new major phase by momentum. When next work needs phase identity selection, `phase-implementation.md` should decide current phase update, existing-family subphase, new major phase, or ask-now lineage handling. When continuation creates or extends phase-backed task entries, those entries should preserve visible phase linkage in the subject or description rather than becoming generic next-work tasks.
 
 ### 3.9 Legitimate Stop-Gate Principle
 Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, actual completion, or a required knowledge-capture gate.
@@ -122,7 +122,7 @@ It does not replace:
 - evidence wording
 - presentation wording
 - task-list mechanics
-- phase identity semantics, including current phase versus subphase versus new-major selection, which defer to `phase-implementation.md`
+- phase identity semantics and visible phase-linkage rules, including current phase versus subphase versus new-major selection, which defer to `phase-implementation.md`
 - approval/confirmation mechanics
 - native worker routing and leader-context control, which defer to `native-worker-agent-routing-and-context-control.md`
 - shared-board, plugin, and external coordination/runtime mechanics, including any discontinued custom recall/skill paths, which stay outside Main RULES scope
@@ -138,5 +138,6 @@ This chain succeeds when:
 - open concept/design/behavior discussion remains protected from premature execution
 - phase/milestone completion does not create unnecessary stop/report turns
 - same-family phase-shaped continuation uses phase lineage handling before any new major phase is opened
+- continuation-created or continuation-extended phase-backed task entries preserve visible phase linkage
 - broad or high-output continuation applies intent-first worker routing before leader raw absorption
 - real blockers still pause execution correctly

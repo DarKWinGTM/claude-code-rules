@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.21
+> **Current Version:** 2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
 
 ---
 
 ## 1) Goal
 
-Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, and resolves tracking posture early when meaningful governed work genuinely needs visibility.
+Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, visibly links phase-backed live task entries to active or implied phase context, and resolves tracking posture early when meaningful governed work genuinely needs visibility.
 
 ---
 
@@ -124,11 +124,13 @@ Required guidance:
 - already-authored future-phase context may inform discovery and draft planning, but it does not become active execution work until that phase is explicitly opened, selected, or otherwise made active by the governing phase context
 
 ### 3.5.2 One-Phase-Many-Tasks Rule
-One phase may legitimately contain several live tasks.
+One phase may legitimately contain several live tasks, and each non-trivial phase-backed task should carry visible phase context.
 
 Required guidance:
 - allow multiple task entries inside the same phase when the phase contains several execution slices
-- prefer task subjects that include the phase ID when a phase is active
+- visibly expose phase ID, phase name, phase family, or implied-stage context in each phase-backed task subject or description
+- prefer compact subject linkage such as `P<phase-id>` when no stronger title grammar applies
+- use `phase_ref` or equivalent description linkage when subject linkage would conflict with another title grammar
 - keep tasks as execution slices inside the phase rather than forcing one whole phase into one oversized task
 - do not require every phase to have only one task
 
@@ -154,6 +156,7 @@ When the built-in task list is in use:
 - when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping new task entries or extending existing ones
 - do not default task creation to detached generic standalone wording when stronger checked phase/stage context already exists
 - when relevant governed phase context exists but task shaping does not follow it, treat that outcome as task-shaping drift rather than as an acceptable generic fallback
+- after creating or extending a phase-backed task, verify that the subject or description visibly exposes the phase context and update it immediately when missing
 - task subjects and descriptions should follow the actual active session language pattern rather than defaulting to detached generic system wording
 - if the session is primarily Thai, task wording should be Thai-led by default
 - if the session naturally uses mixed Thai+English wording, task wording should follow that mix rather than being forced into one language
@@ -200,6 +203,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 - [ ] Tracking posture is resolved early when meaningful tracking is required
 - [ ] Built-in task list is used proactively for non-trivial work when live execution visibility materially helps
 - [ ] Task creation stays aligned to active phase or clearly implied staged/phase context when that context is already visible
+- [ ] Phase-backed or clearly phase-shaped task entries visibly expose phase context in subject or description
 - [ ] Task creation does not silently allocate a new major phase when `phase-implementation.md` lineage handling is needed
 - [ ] Task wording stays aligned to the active session language/register instead of defaulting to detached generic wording
 - [ ] Task entries remain outcome-sized rather than command-sized
@@ -219,6 +223,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 | Startup tracking posture resolved before drift when needed | 100% |
 | Proactive task-list usage on non-trivial work | High |
 | Current-phase-first task-list alignment | High when a phase is active |
+| Visible phase linkage for phase-backed task entries | High |
 | Task-list-driven new-major phase drift | 0 critical cases |
 | Future-phase task drift before explicit phase opening | 0 critical cases |
 | Stale or vague live task lists during non-trivial work | Low |
