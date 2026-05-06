@@ -1,11 +1,11 @@
 # Native Worker Agent Routing and Context Control
-> **Current Version:** 1.2
-> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/native-worker-agent-routing-and-context-control.changelog.md](changelog/native-worker-agent-routing-and-context-control.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Use the smallest effective standalone worker lane first for broad, research-heavy, high-context, high-output, or naturally parallel work, so the leader session stays the controller and verifier instead of absorbing every raw search, read, source, log, test, or review surface itself.**
+**Core Principle: Use the smallest effective standalone worker lane first for broad, research-heavy, roadmap-analysis-heavy, high-context, high-output, or naturally parallel work, so the leader session stays the controller and verifier instead of absorbing every raw search, read, source, log, test, roadmap, or review surface itself.**
 This rule owns native worker routing, leader-context protection, research-lane decomposition, subagent-first worker-scale decisions, Agent Team escalation boundaries, worker handoff quality, and main-session verification boundaries. It does not replace custom-agent selection, task-list semantics, phase semantics, external source-trust ownership, evidence wording, safety gates, or plugin/shared-board/runtime coordination mechanics.
 ---
 ## Intent and Scope Boundary
@@ -18,7 +18,7 @@ Classify the user’s intent before treating technical material as project work:
 
 Pasted logs, snippets, paths, or another session’s worker notes are evidence for the current question, not automatic authorization to inspect the referenced project. If the user asks about assistant behavior or RULES behavior, stay in that scope unless project exploration is explicitly requested or a bounded verification need is stated.
 
-Use direct leader handling for trivial, one-step, tightly sequential, low-output, exact interactive-control work, high edit-overlap work, unavailable worker tooling, or explicit user direction. Otherwise run the worker gate before broad codebase searches, large file reads, symbol/path tracing, high-output tests/logs/builds, external docs/provider research, design-improvement research, source comparison, multi-surface governance sweeps, design/security/migration reviews, or safely partitionable implementation.
+Use direct leader handling for trivial, one-step, tightly sequential, low-output, exact interactive-control work, high edit-overlap work, unavailable worker tooling, or explicit user direction. Otherwise run the worker gate before broad codebase searches, large file reads, symbol/path tracing, high-output tests/logs/builds, external docs/provider research, roadmap/phase-matrix analysis, design-improvement research, source comparison, multi-surface governance sweeps, design/security/migration reviews, or safely partitionable implementation.
 
 พูดง่าย ๆ: ถ้างานกว้างจน main session ไม่จำเป็นต้องอ่าน raw ทุกอย่างเอง ให้ใช้ subagent หรือ worker lane ที่เล็กที่สุดไปกรองก่อน แต่ถ้าผู้ใช้ถามเรื่องพฤติกรรมของ AI ก็อย่าไหลไปสำรวจ project เพียงเพราะมี path/log แปะมา.
 ---
@@ -29,8 +29,8 @@ Behavior/RULES questions are answered from the behavior/rule layer first. Projec
 ### 2) Worker-scale gate
 Before broad main-session absorption, classify the smallest worker structure that preserves correctness and context efficiency.
 Required guidance:
-- run this gate before broad reads/searches, noisy command output, multi-surface audit, external research, design-improvement research, source comparison, or safely partitionable implementation
-- when the work is broad research, first map the research objective into topic lanes before deciding whether one or multiple subagents fit
+- run this gate before broad reads/searches, noisy command output, multi-surface audit, external research, roadmap/phase-matrix analysis, design-improvement research, source comparison, or safely partitionable implementation
+- when the work is broad research or multidimensional roadmap analysis, first map the objective into topic/phase/risk lanes before deciding whether one or multiple subagents fit
 - prefer one standalone subagent-style lane for a bounded independent broad/read/review/filter/research task before considering Agent Team workflow
 - if a worker lane is selected, dispatch/assign it before the leader absorbs raw broad output
 - if the leader handles broad worker-fit work directly, state the narrow reason before or alongside the direct action
@@ -49,11 +49,11 @@ Route by capability and workload shape, not rigid tool name. Evaluate user inten
 | shared ownership, dependencies, teammate messaging, implementation plus review/test/docs sync, or durable handoff | official Agent Team / teammates as exceptional escalation |
 
 ### 4.1) Research orchestration gate
-For broad external research, design-improvement research, provider/API comparison, or source-heavy recommendation work, the leader should define the research objective and split it into the smallest useful topic lanes before any raw source flood enters the leader context.
+For broad external research, roadmap/phase-matrix analysis, design-improvement research, provider/API comparison, or source-heavy recommendation work, the leader should define the decision objective and split it into the smallest useful topic lanes before any raw source or roadmap evidence flood enters the leader context.
 
 Required guidance:
-- identify the decision the research should improve, not only the search tool to run
-- decompose by independent topic, evidence type, provider, risk area, design axis, or competing approach when that lowers context load or improves coverage
+- identify the decision the research or roadmap analysis should improve, not only the search tool to run
+- decompose by independent topic, evidence type, provider, risk area, design axis, phase candidate, dependency, verification gate, or competing approach when that lowers context load or improves coverage
 - allow each research lane to refine search topics, query families, and source-selection strategy inside its assigned scope
 - prefer one research lane when the question has one coherent evidence axis; use multiple lanes only when topics are meaningfully independent
 - require each lane to return analyzed findings with checked scope, source quality, conflicts, implications, and leader verification needs
@@ -93,8 +93,8 @@ Broad, noisy, context-heavy, multi-surface, or parallelizable?
   → NO: leader handles directly
   → YES: continue
   ↓
-Is it broad research/source comparison/design-improvement evidence gathering?
-  → YES: map research lanes, then use one or more focused standalone subagents when lanes are independent
+Is it broad research/source comparison/roadmap-analysis/design-improvement evidence gathering?
+  → YES: map research or roadmap lanes, then use one or more focused standalone subagents when lanes are independent
   → NO: continue
   ↓
 One bounded independent lane can filter/research/review it?
@@ -115,6 +115,7 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 |---|---|
 | user asks about AI/RULES behavior while providing logs/snippets | classify as behavior/governance first; do not auto-explore project |
 | broad search/read or repository exploration | dispatch standalone worker or state narrow direct-handling reason before broad absorption |
+| broad roadmap/phase-matrix analysis | use a focused read-only planning/review lane when multiple design, TODO, phase, risk, or dependency surfaces need synthesis |
 | high-output test/log/build evidence | prefer worker filtering before leader reads raw noisy output |
 | multi-surface governance audit | use a focused audit worker or multiple standalone workers when scope is broad |
 | external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
@@ -126,7 +127,7 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 | high edit overlap | avoid parallel edit lanes; consider read-only investigation instead |
 
 ## Anti-Pattern Boundary
-Avoid: treating pasted project paths/logs as permission to inspect code; leader absorbing all broad raw search/read/log/test output by default; leader running broad design-improvement websearch directly when research lanes would filter it better; routing by tool name alone; saying agents could help without dispatching when worker-fit is present; treating teammate/Agent Team bans as standalone-subagent bans; escalating to Agent Team when one subagent would cover the work; fixed handoff caps; raw worker dumps; duplicate same-role worker spawn; overlapping parallel edits; treating worker summaries as proof; or importing plugin/shared-board grammar into Main RULES.
+Avoid: treating pasted project paths/logs as permission to inspect code; leader absorbing all broad raw search/read/log/test/roadmap evidence by default; leader running broad design-improvement websearch or phase-roadmap synthesis directly when research/planning lanes would filter it better; routing by tool name alone; saying agents could help without dispatching when worker-fit is present; treating teammate/Agent Team bans as standalone-subagent bans; escalating to Agent Team when one subagent would cover the work; fixed handoff caps; raw worker dumps; duplicate same-role worker spawn; overlapping parallel edits; treating worker summaries as proof; or importing plugin/shared-board grammar into Main RULES.
 
 Better behavior: classify intent and worker scale first, dispatch the smallest fitting lane or state the narrow direct-handling reason, keep Agent Team escalation for true shared coordination, and require leader verification before completion wording.
 ---
@@ -135,7 +136,7 @@ Better behavior: classify intent and worker scale first, dispatch the smallest f
 - [ ] Broad work used a standalone worker lane or had a narrow direct-handling reason
 - [ ] Routing used intent, required capability, and workload shape, not rigid tool-name rules
 - [ ] Smallest effective worker structure was selected
-- [ ] Broad research/design-improvement work was decomposed into research lanes when that improved coverage or protected leader context
+- [ ] Broad research/roadmap-analysis/design-improvement work was decomposed into lanes when that improved coverage or protected leader context
 - [ ] Research lanes returned analyzed source-quality-aware findings rather than raw search dumps
 - [ ] Agent Team / teammate workflow was used only when shared coordination was truly needed and allowed
 - [ ] A teammate/Agent Team ban was not treated as a standalone-subagent ban unless the user broadened it
@@ -151,7 +152,7 @@ Better behavior: classify intent and worker scale first, dispatch the smallest f
 | Intent-first classification before broad work | High |
 | Broad-work worker-gate application | High |
 | Subagent-first broad-work handling | High |
-| Research-lane decomposition for broad source/design research | High |
+| Research/roadmap-lane decomposition for broad source/design/phase analysis | High |
 | Agent Team over-escalation | Low |
 | Main-session raw search/source context overload | Low |
 | Delegation-by-capability clarity | High |

@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-05-06 | **[Added completion-to-roadmap recommendation bridge](#version-114)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added true-completion handling that continues selected successors, recommends meaningful unselected next work, asks on ambiguity, or reports no opened next phase without blocking safe continuation | |
 | 1.13 | 2026-05-06 | **[Routed broad research continuation through research lanes](#version-113)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.12 | 2026-05-06 | **[Continued implementation work into material verification when safe](#version-112)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.11 | 2026-05-04 | **[Preserved visible phase linkage during continuation](#version-111)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -25,6 +27,25 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Added completion-to-roadmap recommendation bridge
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.13 to v1.14.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.13 to v1.14.
+- Added a completion-to-roadmap bridge for true objective completion after active execution and verification are done.
+- Clarified that selected, unblocked successor work continues instead of being converted into a proposal.
+- Clarified that meaningful unselected successor work becomes a goal-qualified recommendation, ambiguous or approval-sensitive successor work becomes a narrow question, and no visible successor work is reported as no selected/opened next phase.
+- Extended broad continuation boundaries so roadmap/phase-matrix analysis passes through native worker routing when the evidence surface is broad.
+
+### Summary
+Execution continuity now keeps safe work moving first, then uses actual objective completion as the point to surface a useful next-phase recommendation when checked roadmap surfaces support one.
 
 ---
 

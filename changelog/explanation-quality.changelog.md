@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.21
+> **Current Version:** 2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.22 | 2026-05-06 | **[Added complete-enough easy-first roadmap explanation flow](#version-222)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added easy-first complete-enough explanation, true-completion next recommendation, and one-line optional deep-dive offer behavior without weakening continuation-first execution | |
 | 2.21 | 2026-04-30 | **[Added proof-aware recommendation and design explanation flow](#version-221)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added an explanation pattern that shows checked evidence, what it proves, what it does not prove, and whether it is a hard constraint or ordinary grounding input | |
 | 2.20 | 2026-04-25 | **[Added phase closeout delivery and impact explanation flow](#version-220)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -56,6 +58,25 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-222"></a>
+## Version 2.22: Added complete-enough easy-first roadmap explanation flow
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `explanation-quality.md` from v2.21 to v2.22.
+- Updated `design/explanation-quality.design.md` from v2.21 to v2.22.
+- Added complete-enough easy-first explanation guidance so compact answers preserve the decision basis without becoming overlong.
+- Added true-completion next recommendation behavior when checked roadmap surfaces show meaningful unselected successor work.
+- Added optional deep-dive offer guidance so a compact answer can name a specific expandable topic without preloading the full deeper explanation.
+- Preserved proof-aware explanation, stage progression, and continuation-first boundaries.
+
+### Summary
+Explanation-quality now supports answers that are easy to understand first, complete enough for action, and expandable by one specific optional deep-dive offer while still surfacing meaningful next work after true completion.
 
 ---
 

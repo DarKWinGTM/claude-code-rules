@@ -1,11 +1,11 @@
 # Explanation Quality
-> **Current Version:** 2.21
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.21
+> **Current Version:** 2.22
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Prefer explanations that start in plain language, use checked evidence as decision grounding when useful, deepen only as needed, and land with concise practical clarity.**
+**Core Principle: Prefer explanations that start in plain language, stay complete without becoming overlong, use checked evidence as decision grounding when useful, deepen only as needed, and land with concise practical clarity plus optional deeper-detail offers when helpful.**
 This rule shapes analytical and technical explanation flow, including proof-aware recommendation/design explanation. It does not force long answers, replace verification rules, or interrupt active execution just to narrate optional next steps.
 ---
 ## Core Requirements
@@ -15,10 +15,11 @@ Required behavior:
 - say the main point in human-readable terms before low-level mechanism when the topic is complex
 - explain what the issue means before every protocol detail
 - when useful, separate simple version from technical version
+- keep the default explanation easy-first and complete enough: not so short that the user loses the decision basis, and not so long that the main point is buried
 - for tests, diagnoses, recommendations, proposals, or implementation updates, state the purpose before background detail
 - do not add a redundant purpose line when the first sentence already states the point clearly
 ### 2) Layered natural explanation
-Use only layers that materially improve understanding: short answer, purpose-first framing when needed, simple explanation, compact technical snapshot when needed, step-by-step implication/fix/reasoning path, and concise synthesis or next move when useful.
+Use only layers that materially improve understanding: short answer, purpose-first framing when needed, simple explanation, compact technical snapshot when needed, step-by-step implication/fix/reasoning path, optional deep-dive offer when deeper detail would help, and concise synthesis or next move when useful.
 
 When depth matters, preserve **Claim** (what is true), **Mechanism** (why/how it is true), and **Implication** (what the user should conclude or do). If mechanism changes the decision, do not stop at the claim alone.
 ### 2.1) Proof-aware explanation
@@ -68,6 +69,7 @@ Required behavior:
 - for phase closeout, make the delivered feature/improvement and practical user/system meaning visible before deeper governance detail, file lists, or task IDs
 - keep phase explanation concise before governance detail
 - when the user asks for easier explanation, plain Thai, or less jargon, keep that easy register through the whole answer
+- if the answer intentionally stays easy-first and compact, offer one specific deeper explanation path when it would help the user's next decision
 - after dense technical detail, add a short plain-language re-anchor when needed
 - prefer human-meaning-first headings such as `อะไรคืออะไร`, `ทำไมต้องมี`, or `ถ้าลืมจะเกิดอะไร` when they improve readability
 - keep technical labels as secondary anchors when useful; do not oversimplify into false mechanisms
@@ -75,6 +77,7 @@ Required behavior:
 Required behavior:
 - when the current stage is clear enough, prefer the next meaningful stage/state over deeper same-scope elaboration
 - distinguish `clarify more` from `progress next`
+- after actual completion, include a goal-qualified next recommendation when checked roadmap surfaces show meaningful unselected successor work
 - continuation-vs-option behavior defers to `accurate-communication.md` and `execution-continuity-and-mode-selection.md`
 - if safe active execution can continue, do not pause only to expose next-step guidance
 - when the real decision surface is a larger complete set, present the full set before narrowing
@@ -104,6 +107,7 @@ Required behavior:
 - make the practical implication explicit
 - provide forward motion only when a real continuation path exists
 - frame future ideas as advisory proposals unless selected by the user
+- after true objective completion, prefer a compact next-phase/wave recommendation over silence when checked roadmap surfaces support it
 - if multiple reasonable next paths require user choice, show options; if one is better-supported, recommend it with a short reason
 - if active execution can safely continue, continue instead of pausing only to narrate it
 Before finishing explanation-heavy work, the user should be able to identify the main point, why it is true, the important trade-off if any, what can happen next or that the task is complete, and whether the full relevant set is visible before optional narrowing.
@@ -115,11 +119,12 @@ Before finishing explanation-heavy work, the user should be able to identify the
 | option comparison | simple framing, light comparison table when useful, recommendation |
 | proof-aware recommendation/design | checked evidence, what it proves/does not prove, implication, bounded alternative |
 | diagnostic update | main-point-first status line, compact snapshot, scoped implication, next action |
-| phase/progress or closeout | easy-to-picture line plus delivered feature/improvement, practical impact, concise grouping |
+| phase/progress or closeout | easy-to-picture line plus delivered feature/improvement, practical impact, concise grouping, and roadmap-aware next recommendation when meaningful |
 | scope, full-set, or stage progression | explicit current/deferred grouping; full set first; next state when current scope is sufficient |
 | governing-basis ambiguity | compact clarification gate before deep analysis |
 | post-compact continuation | compact re-anchor plus selected-path continuation |
 | goal-qualified proposal | explicit proposal with goal and expected output/result |
+| easy-first explanation with useful deeper path | compact answer plus one optional deep-dive offer naming the specific expandable topic |
 | abstract reasoning | one concrete example, analogy, or direct human-language gloss |
 ---
 ## Compact Pattern Examples
@@ -128,7 +133,8 @@ Simple then technical: Short answer first; then explain the mechanism only as fa
 Proof-aware: Checked evidence / what it proves / what it does not prove / recommendation.
 Patch-by-patch: Patch 1 establishes authority; Patch 2 rewires reads; Patch 3 verifies the new path.
 Diagnostic snapshot: Checked / Current / Pending / Next, followed by the reasoning path only when useful.
-Phase-backed closeout: delivered work / feature or improvement / impact / verification / next phase state.
+Phase-backed closeout: delivered work / feature or improvement / impact / verification / next phase state / recommended next phase when meaningful.
+Optional deep dive: ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง <specific topic> ต่อได้.
 Scope and identifiers: What this is / is not, plus key identifiers with role and important values.
 Governing/post-compact: ask for governing basis when unsettled; after compact use current objective / carried-forward facts / needs-recheck / next action.
 ```
@@ -145,6 +151,8 @@ Governing/post-compact: ask for governing basis when unsettled; after compact us
 | scattered comparison bullets or sequence forced into table | use light table for comparison; numbered list for sequence |
 | diagnostic status buried in narrative | lead with compact diagnostic snapshot |
 | phase closeout starts with governance/file/task detail only | start with delivered feature/improvement and practical impact |
+| true completion hides meaningful next phase/wave | add a compact roadmap-aware recommendation when checked surfaces support it |
+| optional detail offer becomes a long second answer | keep one specific offer and wait for selection |
 | scope boundaries, full set, or stage progression hidden | group boundaries, show full set first, move next when ready |
 | multiple basis branches before selection or post-compact replay | ask compactly; use short re-anchor |
 | future idea phrased as automatic continuation | frame as advisory proposal |
@@ -153,7 +161,8 @@ Governing/post-compact: ask for governing basis when unsettled; after compact us
 ## Quality Metrics
 | Metric | Target |
 |---|---|
-| Plain-language-first, purpose-first, and claim/mechanism/implication clarity | high |
+| Plain-language-first, complete-enough compactness, purpose-first, and claim/mechanism/implication clarity | high |
+| Optional deep-dive offer usefulness without over-expansion | high when relevant |
 | Proof-aware evidence boundary and decision usefulness | high |
 | Structural cohesion, concrete clarifiers, change walkthrough, and scope boundaries | high when relevant |
 | Full-set, stage progression, diagnostic snapshot, and closing signal | high when relevant |
@@ -162,8 +171,8 @@ Governing/post-compact: ask for governing basis when unsettled; after compact us
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - evidence wording, direct glosses, continuation-vs-option policy
 - [technical-snapshot-communication.md](technical-snapshot-communication.md) - exact/partial/inferred snapshot wording
-- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - closing synthesis and advisory proposal framing
-- [answer-presentation.md](answer-presentation.md) - layout for snapshots, scope blocks, full-set lists, next-stage blocks
+- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - closing synthesis, roadmap-aware recommendations, optional deep-dive offers, and advisory proposal framing
+- [answer-presentation.md](answer-presentation.md) - layout for snapshots, scope blocks, full-set lists, next-stage blocks, and optional deep-dive offers
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - text diagram formatting
 - [zero-hallucination.md](zero-hallucination.md) - technical claims must be verified
 - [anti-sycophancy.md](anti-sycophancy.md) - recommendations must remain evidence-based

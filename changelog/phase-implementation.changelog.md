@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.28
+> **Current Version:** 2.29
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.29 | 2026-05-06 | **[Added roadmap-aware phase matrix and next-phase recommendations](#version-229)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added bounded roadmap/phase-matrix synthesis and closeout next-phase recommendation behavior with goal/output/gate while preserving selected safe continuation | |
 | 2.28 | 2026-05-06 | **[Added material development verification coverage to phase-backed coding work](#version-228)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added Development Verification / TestKit Coverage expectations for phase-backed coding work when verification materially affects exit criteria, while keeping the detailed strategy with the new verification/debug owner | |
 | 2.27 | 2026-05-04 | **[Required visible phase linkage in phase-backed live tasks](#version-227)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -43,6 +45,25 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-229"></a>
+## Version 2.29: Added roadmap-aware phase matrix and next-phase recommendations
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.28 to v2.29.
+- Updated `design/phase-implementation.design.md` from v2.28 to v2.29.
+- Added bounded roadmap/phase-matrix synthesis when governed design, TODO, phase, and checked implementation surfaces show more than the current execution slice.
+- Added roadmap status language for active, selected, implied-unblocked, proposal, blocked, needs-approval, and none-opened successor states.
+- Extended phase-backed closeout expectations so meaningful successor work can be recommended with goal, expected output, and gate.
+- Preserved the boundary that selected safe continuation proceeds directly and proposal/draft entries do not auto-promote into active execution.
+
+### Summary
+Phase-implementation now supports fuller roadmap visibility and closeout next-phase recommendations without turning roadmap context into a blocker or automatic future-phase activation.
 
 ---
 

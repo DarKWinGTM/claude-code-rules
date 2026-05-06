@@ -3,19 +3,21 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-11)
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define a bounded high-signal communication rule that tightens response quality by removing low-value extra content and repeated wording without displacing the existing communication, explanation, and presentation owners.
+Define a bounded high-signal communication rule that tightens response quality by removing low-value extra content and repeated wording without displacing the existing communication, explanation, presentation, roadmap-aware completion, or optional deep-dive-offer owners.
 
 The purpose is to improve signal density while preserving:
 - natural tone
 - easy-to-follow explanation
 - useful options when they are still needed
+- roadmap-aware next recommendations when checked completion surfaces support them
+- optional deeper-detail offers when an easy-first answer should stay compact but expandable
 - the existing active owner boundaries
 
 ---
@@ -27,6 +29,8 @@ The active RULES system already has owners for:
 - explanation flow
 - presentation shape
 - natural professional tone
+- roadmap-aware completion recommendations
+- optional deep-dive offers
 
 So this rule should remain supplementary rather than turning into a replacement owner.
 
@@ -41,12 +45,15 @@ This rule may add only supplementary mechanisms that do not override the existin
 Allowed scope:
 - extra-content admission filtering
 - repetition pruning after the main answer is already present
+- protection against over-pruning content that an active owner still requires
 
 Out of scope:
 - tone ownership
 - main-point-first ownership
 - plain-language-first explanation ownership
 - option/recommendation ownership
+- roadmap-aware completion ownership
+- optional deep-dive-offer ownership
 - phase/progress explanation ownership
 
 ---
@@ -54,10 +61,10 @@ Out of scope:
 ## 4) Supplementary Mechanisms
 
 ### 4.1 Extra-Content Admission Gate
-Keep a sentence, list, example, option, or next-step block only when it directly answers the user, prevents likely misunderstanding, changes the next action/decision, reports a real checked result, or is still required by an active owner.
+Keep a sentence, list, example, option, roadmap recommendation, optional deep-dive offer, or next-step block only when it directly answers the user, prevents likely misunderstanding, changes the next action/decision, reports a real checked result, is supported by checked successor-work evidence, or is still required by an active owner.
 
 ### 4.2 Repetition Pruning Pass
-Before final output, remove repeated restatement, repeated conclusion wording, and duplicated next-step phrasing when one clear synthesis already covers the same meaning.
+Before final output, remove repeated restatement, repeated conclusion wording, and duplicated next-step phrasing when one clear synthesis already covers the same meaning. This pass removes repetition only; it must not strip a goal-qualified roadmap recommendation after true completion or a useful one-line optional deep-dive offer.
 
 ---
 
@@ -66,6 +73,8 @@ Before final output, remove repeated restatement, repeated conclusion wording, a
 This rule must not:
 - reduce an answer below the level needed for understanding
 - strip content that an existing active owner still requires
+- prune roadmap-aware next recommendations when checked completion surfaces make them materially useful
+- prune optional deep-dive offers when an easy-first answer should remain compact but expandable
 - turn into a blanket pressure toward ultra-short answers
 - replace the current owner graph
 
@@ -87,6 +96,8 @@ Failure signals:
 - answers become too dry or machine-like
 - answers become too compressed to understand
 - useful explanation or next-step content gets removed
+- roadmap-aware recommendations disappear after true completion despite checked successor work
+- optional deep-dive offers expand into a second full answer instead of staying compact
 - the rule starts duplicating existing owner behavior
 
 ---

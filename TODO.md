@@ -1,6 +1,6 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-06
+> **Last Updated:** 2026-05-07
 
 ---
 
@@ -166,14 +166,18 @@
 
 ### Active Work
 
+- [ ] Complete P075-02 roadmap-aware completion and next-phase proposal behavior: keep selected safe continuation first, add advisory next-phase recommendations at true closeout boundaries, synchronize master design/changelog/README/TODO/phase/patch records for v9.89, install only the 44 README-listed active runtime rules, verify source/runtime parity plus body sufficiency, push master, and publish GitHub release `v9.89`.
+
 ### Deferred Enhancements
 - [ ] Automated validation script for documentation compliance (deferred by user).
 - [ ] Integration testing for design/changelog/rule/TODO integration paths (deferred by user).
 
 ### Active Verification
-- [ ] Run a final RULES-side consistency audit for the startup-governance versus execution-continuity tightening wave.
-- [ ] Run a final RULES-side consistency audit for the task-list/phase/session-language refinement wave.
-- [ ] Run a final RULES-side consistency audit for the retired memsearch/bridge cleanup wave.
+- [x] Verify README Bash and PowerShell active runtime install arrays remain at exactly 44 files and contain the same filenames.
+- [x] Verify all 44 README-listed active runtime roots exist, include `Full history`, and contain substantive runtime bodies.
+- [x] Install only the README-listed 44 active runtime rules to `~/.claude/rules/` and verify source/runtime hash parity.
+- [x] Verify destination runtime extras remain observed-only and untouched.
+- [ ] Verify GitHub release `v9.89` exists after push/release.
 
 ---
 
@@ -181,6 +185,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-05-07 | Opened and synchronized P075-02 roadmap-aware completion and next-phase proposal behavior: seven active runtime owners and paired design/changelog chains now carry completion-to-roadmap, compact next recommendation, optional deep-dive, high-signal preservation, and roadmap/phase-matrix worker-routing guidance; v9.89 source audit plus 44/44 runtime install/parity/body-sufficiency verification passed, with git push and GitHub release pending. |
 | 2026-05-06 | Completed P073-10 active runtime body sufficiency corrective validation: re-materialized 10 metadata-only active runtime roots, synchronized body-sufficiency doctrine across controller/documentation/consistency owners, kept the active runtime count at 44, verified source and runtime body-sufficiency/parity gates 44/44 with destination extras observed-only, pushed master, and published GitHub release `v9.88`. |
 | 2026-05-06 | Completed P081-02 subagent research orchestration and leader context optimization: refined native-worker routing, external verification/source trust, execution continuity, and TODO tracking-friction recovery so broad research/design-improvement/source-heavy work uses focused research lanes before leader raw source absorption; synchronized v9.87 / unchanged 44-rule master records; installed only README-listed active runtime rules; verified 44/44 runtime parity; pushed master; and published GitHub release `v9.87`. |
 | 2026-05-06 | Completed P084-01 development verification and debug strategy: added the first-class coding verification/debug/TestKit strategy owner, synchronized adjacent owner chains and v9.86 / 44-rule master records, installed only README-listed active runtime rules, verified 44/44 runtime parity, pushed master, and published GitHub release `v9.86`. |

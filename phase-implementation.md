@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.28
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.28
+> **Current Version:** 2.29
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.29
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order, maintain an active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria, visibly link non-trivial phase-backed live tasks to active or implied phase context, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
+**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order and a bounded roadmap/phase matrix, maintain an active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria, visibly link non-trivial phase-backed live tasks to active or implied phase context, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
 
 This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed summary/index; active child files hold phase-local execution detail; `phase/done/` is inactive completed history; design remains target-state authority; patch remains governed before/after review authority. Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
 
@@ -17,7 +17,7 @@ This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed sum
 
 ## Authority Boundary
 
-`phase-implementation.md` defines when to use phases, `/phase` structure, phase ID grammar, lineage selection, child-phase field expectations, design/patch-to-phase synthesis, TODO/changelog coordination, verification, rollback, and closeout behavior. It does not replace `phase/SUMMARY.md`, child phase files, design docs, patch docs, `TODO.md`, changelogs, or startup governance.
+`phase-implementation.md` defines when to use phases, `/phase` structure, phase ID grammar, lineage selection, child-phase field expectations, design/patch-to-phase synthesis, roadmap/phase-matrix expectations, TODO/changelog coordination, verification, rollback, and closeout behavior. It does not replace `phase/SUMMARY.md`, child phase files, design docs, patch docs, `TODO.md`, changelogs, or startup governance.
 
 ---
 
@@ -82,6 +82,11 @@ When phased planning is used:
 ### Design-to-phase synthesis
 When governed design is sufficiently clear for staged execution, `/phase` should derive or update execution order from design truth instead of waiting for retrospective planning. Split target state into outcome-sized phases by dependency, risk, rollout boundary, and verification gate; create or update `phase/SUMMARY.md` and current child phase files when posture resolves to `create now` or `use existing`; initialize or extend current-phase live tasks for non-trivial work; then continue phase-by-phase unless a real stop gate exists. Ask only when design ambiguity, materially different rollout choices, missing access, destructive/high-impact action, or approval-sensitive scope changes the phase plan.
 
+### Roadmap and next-phase synthesis
+When a governed objective has enough design/TODO/phase/implementation evidence to forecast more than the current slice, `phase/SUMMARY.md` should carry a bounded roadmap or phase matrix instead of only the currently open phase. The roadmap should identify meaningful candidate phases, dependencies, gates, deliverables, and status such as `active`, `selected`, `implied-unblocked`, `proposal`, `blocked`, `needs-approval`, or `none opened`. Roadmap entries are planning context, not automatic execution authority: selected and unblocked follow-up can continue; implied but unselected work should be recommended as a goal-qualified proposal; ambiguous, approval-sensitive, or materially divergent work should trigger a narrow question.
+
+After a phase-backed objective closes, inspect the checked roadmap surfaces before ending the closeout. If future work is meaningful, name the best-supported next phase or wave with its goal, expected output, and gate; if no next phase is selected or meaningful, state that directly. Do not let this recommendation interrupt safe continuous execution through already selected phases, and do not auto-promote draft or proposal-only entries into active phases.
+
 ### Patch linkage
 When phased work uses a governed patch artifact:
 - `phase/SUMMARY.md` must name the governing patch artifact(s) or explicitly state `none`
@@ -94,7 +99,7 @@ When external docs/specs/provider references materially constrain execution, pha
 
 ## Phase File Responsibilities
 
-`phase/SUMMARY.md` keeps the global execution picture: context, target state, risk, constraints, dependencies, phase map/index, active child references, lineage context, needed `phase/done/` pointers, design/patch source inputs, governing patch references, cross-phase handoffs, TODO/changelog coordination, end-to-end verification, and rollback/containment behavior.
+`phase/SUMMARY.md` keeps the global execution picture: context, target state, risk, constraints, dependencies, roadmap/phase matrix, phase map/index, active child references, lineage context, needed `phase/done/` pointers, design/patch source inputs, governing patch references, cross-phase handoffs, TODO/changelog coordination, end-to-end verification, next-phase recommendation basis, and rollback/containment behavior.
 
 Each executable child phase should define or map to:
 - Summary File, Phase ID, Status
@@ -109,7 +114,7 @@ Each executable child phase should define or map to:
 - Development Verification / TestKit Coverage or equivalent when coding verification materially affects exit criteria
 - verification, exit criteria, and closeout summary
 - risks/rollback notes
-- next possible phases
+- next possible phases or roadmap recommendation, including goal/output/gate when future work is meaningful
 
 ---
 
@@ -141,7 +146,7 @@ Each child phase should define phase-level verification, closeout expectations, 
 
 For phase-backed coding work, child phases should show `Development Verification / TestKit Coverage` or equivalent when verification materially affects exit criteria. Verification depth, debug signal selection, and TestKit/scenario decisions defer to `development-verification-and-debug-strategy.md`.
 
-Phase-backed closeout should report practical delivery, not only files/tasks/audit status: delivered feature/capability/behavior/governance improvement or verification gate; user/system impact; evidence-strength-aligned verification basis; and next phase state when relevant (`not started`, `draft/planned`, `selected`, `active`, or `none opened`). Keep closeout concise and do not force it onto trivial non-phase work.
+Phase-backed closeout should report practical delivery, not only files/tasks/audit status: delivered feature/capability/behavior/governance improvement or verification gate; user/system impact; evidence-strength-aligned verification basis; and next phase state when relevant (`not started`, `draft/planned`, `selected`, `active`, `implied-unblocked`, `proposal`, `blocked`, `needs-approval`, or `none opened`). When checked roadmap surfaces show meaningful successor work and continuous execution is not already safely proceeding, closeout should include a compact next-phase recommendation with goal, expected output, and gate. Keep closeout concise and do not force it onto trivial non-phase work.
 
 ---
 
@@ -151,11 +156,12 @@ Phase-backed closeout should report practical delivery, not only files/tasks/aud
 - [ ] major-vs-subphase selection checks lineage before any new major phase
 - [ ] startup governance establishes or asks about `/phase` before staged/governed drift
 - [ ] `phase/done/` remains inactive history, never junk/deletion authority or live namespace
-- [ ] sufficiently clear governed design synthesizes into phase summary, current child files, and current-phase live tasks without replacing design authority
+- [ ] sufficiently clear governed design synthesizes into phase summary, bounded roadmap/phase matrix, current child files, and current-phase live tasks without replacing design authority
+- [ ] roadmap entries distinguish selected/active work from proposal, blocked, needs-approval, or none-opened states without auto-promoting future work
 - [ ] patch-derived phase work shows explicit patch linkage and patch artifacts stay outside live phase workspace
 - [ ] child phases include required source references, execution fields, verification, rollback/risks, and closeout
 - [ ] phase-backed coding work includes Development Verification / TestKit Coverage or equivalent when material
-- [ ] closeout reports delivery, feature/improvement, impact, evidence-strength-aligned verification basis, and next phase state when relevant
+- [ ] closeout reports delivery, feature/improvement, impact, evidence-strength-aligned verification basis, next phase state, and goal-qualified next recommendation when meaningful
 - [ ] task creation visibly links to active/implied phase context while authored future-phase context remains non-active until opened/selected
 
 ---

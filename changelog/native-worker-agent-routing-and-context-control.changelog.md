@@ -1,7 +1,7 @@
 # Changelog - Native Worker Agent Routing and Context Control
 
 > **Parent Document:** [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,10 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-06 | **[Added roadmap and phase-matrix worker-lane routing](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended worker routing so broad roadmap/phase-matrix analysis can use focused planning/review lanes before leader raw design/TODO/phase absorption | |
 | 1.2 | 2026-05-06 | **[Added subagent research orchestration and leader context optimization](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-05-04 | **[Refined subagent-first capability routing and intent gate](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-05-03 | **[Created native worker routing and context-control owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class rule chain for proactive workload-shaped worker routing, smallest-effective subagent/Agent Team selection, analyzed handoffs, parallel edit containment, and leader verification | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added roadmap and phase-matrix worker-lane routing
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `native-worker-agent-routing-and-context-control.md` from v1.2 to v1.3.
+- Updated `design/native-worker-agent-routing-and-context-control.design.md` from v1.2 to v1.3.
+- Added roadmap-analysis-heavy and phase-matrix work to the broad-work routing scope.
+- Clarified that broad roadmap analysis may decompose by phase candidate, dependency, risk area, design axis, or verification gate before the leader absorbs raw design/TODO/phase surfaces.
+- Preserved the subagent-first lane model and leader verification responsibility.
+
+### Summary
+Native worker routing now treats broad roadmap and phase-matrix analysis as worker-fit planning/review work when context volume or multidimensional synthesis would overload the leader session.
 
 ---
 

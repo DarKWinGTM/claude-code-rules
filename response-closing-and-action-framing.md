@@ -1,7 +1,7 @@
 # Response Closing and Action Framing
 
-> **Current Version:** 1.1
-> **Design:** [design/response-closing-and-action-framing.design.md](design/response-closing-and-action-framing.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/response-closing-and-action-framing.design.md](design/response-closing-and-action-framing.design.md) v1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/response-closing-and-action-framing.changelog.md](changelog/response-closing-and-action-framing.changelog.md)
 
@@ -9,9 +9,9 @@
 
 ## Rule Statement
 
-**Core Principle: Close responses with concise synthesis, clear action framing, preserved decision visibility, phase-backed delivery/impact closeouts, and explicitly advisory proposal wording.**
+**Core Principle: Close responses with concise synthesis, clear action framing, preserved decision visibility, phase-backed delivery/impact closeouts, roadmap-aware next recommendations when meaningful, optional deep-dive offers when useful, and explicitly advisory proposal wording.**
 
-This chain owns end-of-response synthesis, next-action framing, recommendation-with-reason wording, alternative preservation, phase-backed closeout synthesis, closed-topic summary behavior, and goal-qualified advisory proposal framing. It does not replace execution-mode, user-authority, explanation-flow, evidence wording, or layout ownership.
+This chain owns end-of-response synthesis, next-action framing, recommendation-with-reason wording, alternative preservation, phase-backed closeout synthesis, roadmap-aware next recommendation shape, optional deep-dive offer shape, closed-topic summary behavior, and goal-qualified advisory proposal framing. It does not replace execution-mode, user-authority, explanation-flow, evidence wording, phase roadmap semantics, or layout ownership.
 
 ---
 
@@ -40,6 +40,7 @@ Required guidance:
 - use `Recommended` / `Why this first` wording when it improves clarity
 - preserve at least one real alternative when multiple reasonable next actions remain open
 - do not collapse a real decision surface into one path without saying so
+- after actual completion, recommend meaningful unselected successor work only when checked roadmap surfaces support it
 
 ### 4) Closed-Topic Presentation Principle
 
@@ -68,13 +69,34 @@ Required guidance:
 - avoid continuation-shaped wording such as `next do X` when the user has not selected that target
 - do not present a proposal if no concrete goal or output can be stated
 
-### 7) Boundary Principle
+### 7) Roadmap-Aware Completion Principle
+
+When a phase-backed or governed objective is genuinely complete and checked surfaces show meaningful future work, the closeout should include a compact next recommendation unless selected safe continuation is already happening.
+Required guidance:
+- first close the completed work with delivery, impact, and verification scope
+- then recommend the next phase/wave only if it is supported by design, phase roadmap, TODO, or checked implementation state
+- include goal, expected output/result, and gate or success condition when material
+- keep the recommendation advisory when the user has not selected it
+- do not use the recommendation as a blocker or as a substitute for continuing selected unblocked phases
+- if no meaningful next work is visible, say no next phase/wave is currently selected or opened rather than inventing one
+
+### 8) Optional Deep-Dive Offer Principle
+
+When the main answer is intentionally easy-first and compact but deeper explanation may help, include one optional deep-dive offer.
+Required guidance:
+- phrase it as an offer, not an automatic task
+- name the specific topic that can be expanded
+- omit it when the answer is trivial, already detailed enough, or active execution should simply continue
+- keep it short so it does not dilute the main answer
+
+### 9) Boundary Principle
 
 This chain owns how a response closes and frames action/proposals. It does not replace:
-- `execution-continuity-and-mode-selection.md` for real continue-vs-stop behavior
+- `execution-continuity-and-mode-selection.md` for real continue-vs-stop behavior and completion-to-roadmap bridge
+- `phase-implementation.md` for roadmap/phase-matrix semantics and next-phase state
 - `authority-and-scope.md` for user authority and advisory-option boundaries
 - `accurate-communication.md` for evidence-strength and verification-state wording
-- `explanation-quality.md` for explanation flow, stage progression, and full-set logic
+- `explanation-quality.md` for explanation flow, easy-first depth, stage progression, and full-set logic
 - `answer-presentation.md` for layout/pattern shape
 
 ---
@@ -87,7 +109,14 @@ What this phase delivered: <plain-language delivery>
 Feature / Improvement: <feature, capability, behavior, or governance improvement>
 Impact: <user/system impact>
 Verification: <checked evidence; avoid stronger wording than verified>
-Next phase state: <not started | draft/planned | selected | active | none opened>
+Next phase state: <not started | draft/planned | selected | active | implied-unblocked | proposal | blocked | needs-approval | none opened>
+
+Roadmap-aware completion:
+Recommended next: <phase/wave name>
+Why this next: <one evidence-backed reason>
+Goal: <what the next phase should achieve>
+Output: <expected artifact, feature, behavior, or decision>
+Gate: <what must be true before execution or closeout>
 
 Recommendation:
 Recommended: do the design/phase sync first.
@@ -99,6 +128,9 @@ Proposal: build an automated visual QA verdict layer.
 Goal: turn screenshot compare output into an easier review result.
 Output: a machine-readable QA summary with concise regression notes.
 Success condition: compare runs end with a usable verdict artifact.
+
+Optional deep dive:
+ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง <specific topic> ต่อได้.
 ```
 
 ---
@@ -111,6 +143,8 @@ Success condition: compare runs end with a usable verdict artifact.
 | options listed with no recommendation when one path is clearly stronger | name the recommendation and why first |
 | real multi-path state hidden behind one recommendation | preserve a visible alternative |
 | future work with no concrete goal/output or phrased like queued execution | keep it advisory or do not present it |
+| completed objective ends silently despite checked meaningful successor work | add a compact roadmap-aware next recommendation |
+| next recommendation blocks selected safe continuation | continue selected work; reserve recommendation for true closeout or unselected successor work |
 | phase closeout lists only files/tasks/audit status | state delivered feature/improvement, impact, verification, and next phase state |
 | already-closed topics dominate the active summary | keep resolved items in context only |
 
@@ -121,6 +155,8 @@ Success condition: compare runs end with a usable verdict artifact.
 | Metric | Target |
 |---|---|
 | Closing signal density, recommendation clarity, and live-alternative visibility | High |
+| Roadmap-aware next recommendation after true completion | High when checked successor work exists |
+| Optional deep-dive offer usefulness without clutter | High when deeper explanation may help |
 | Proposal advisory clarity and phase-backed delivery/impact closeout clarity | High |
 | Closed-topic summary discipline | High |
 
@@ -130,9 +166,10 @@ Success condition: compare runs end with a usable verdict artifact.
 
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - broader evidence-threshold wording
-- [execution-continuity-and-mode-selection.md](execution-continuity-and-mode-selection.md) - real continue-vs-stop behavior
+- [execution-continuity-and-mode-selection.md](execution-continuity-and-mode-selection.md) - real continue-vs-stop behavior and completion-to-roadmap bridge
+- [phase-implementation.md](phase-implementation.md) - roadmap/phase-matrix semantics and next-phase state
 - [authority-and-scope.md](authority-and-scope.md) - user authority and advisory-option semantics
-- [explanation-quality.md](explanation-quality.md) - explanation flow and stage/full-set logic
+- [explanation-quality.md](explanation-quality.md) - explanation flow, easy-first depth, and stage/full-set logic
 - [answer-presentation.md](answer-presentation.md) - layout patterns for recommendations and proposals
 
 ---

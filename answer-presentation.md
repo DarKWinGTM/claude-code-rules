@@ -1,11 +1,11 @@
 # Answer Presentation
-> **Current Version:** 1.26
-> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.26
+> **Current Version:** 1.27
+> **Design:** [design/answer-presentation.design.md](design/answer-presentation.design.md) v1.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/answer-presentation.changelog.md](changelog/answer-presentation.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Present answers so they are orderly, readable, and easy to scan, while keeping structure flexible enough to match the user's actual need.**
+**Core Principle: Present answers so they are orderly, readable, easy to scan, and complete enough without over-expansion, while keeping structure flexible enough to match the user's actual need and show meaningful next recommendations at true completion boundaries.**
 This rule owns layout and scanability. It does not replace reasoning quality, truthfulness, verification, evidence wording, or execution-continuity ownership.
 ---
 ## Core Principles
@@ -21,6 +21,7 @@ Required guidance:
 Layout should match the answer type.
 Required guidance:
 - simple answers may stay compact
+- easy-first answers should stay complete enough to preserve the decision basis while avoiding unnecessary depth
 - analytical answers should use meaningful sections when complexity rises
 - comparisons should use comparison-friendly grouping or a light table
 - procedures should use ordered lists
@@ -76,7 +77,9 @@ Required guidance:
 | Post-compact re-anchor | compact may have compressed exact evidence | current objective, carried-forward facts, needs-recheck, next action |
 | Memory-status | remembered context materially affects the answer | matched path scope, remembered vs freshly checked status, needs-recheck |
 | Phase-backed closeout | closing phase-backed work | delivered work, feature/improvement, impact, verification, next phase state when relevant |
+| Roadmap-aware completion | active objective truly complete and checked successor work exists | recommended next phase/wave, why next, goal, output, gate |
 | Proposal | future work not yet selected | label as proposal/idea/future wave; show goal, improvement, output, optional success condition |
+| Optional deep dive | compact easy-first answer where more detail may help | one short offer naming the specific expandable topic |
 | Easy explanation | user asks for plain Thai, easier wording, or less jargon | human-meaning-first headings and technical labels second |
 ---
 ## Trigger Model
@@ -89,8 +92,9 @@ Required guidance:
 | sequence / branching | numbered steps, ordered subsections, or small text flow |
 | diagnostic snapshot | orienting line, checked facts, current state, implication, next action |
 | scope clarification | grouped current/deferred and is/is-not sections |
-| phase/progress or closeout | plain-language opening plus delivery/feature/impact/verification/next-state grouping |
+| phase/progress or closeout | plain-language opening plus delivery/feature/impact/verification/next-state grouping, with roadmap-aware recommendation when meaningful |
 | full-set or stage progression | complete set first; short next-state block when useful |
+| easy-first answer with optional expansion | compact complete answer plus one optional deep-dive offer when helpful |
 | goal-set review | `Main goals now` / `Current focus` / `Why rebalance` style block |
 | governing-basis ambiguity | compact clarification block before deep branch analysis |
 | post-compact or memory-derived context | compact re-anchor/status before selected-path continuation |
@@ -104,8 +108,9 @@ Do not force sectioning into naturally simple answers.
 - **Diagnostic snapshot:** orienting line plus `Current`, `Checked`, `Meaning`, and `Next`; use a fact table only when stable facts scan better, and add one implication or next-action line.
 - **Scope-boundary:** `What this is`, `What this is not`, `What happens now`, `What stays later`, and `What the user will notice` when those boundaries matter.
 - **Phase-backed closeout:** `What this phase delivered`, `Feature / Improvement`, `Impact`, `Verification`, and `Next phase state`; use only fields that improve clarity and do not force this onto trivial non-phase completions.
+- **Roadmap-aware completion:** after true objective completion, use `Recommended next`, `Why this next`, `Goal`, `Output`, and `Gate` when checked roadmap surfaces support successor work and selected safe continuation is not already underway.
 - **Full-set / next-stage / recommendation:** show the complete relevant set first, then state the next stage or recommendation with one reason and preserve real alternatives.
-- **Variable-role / post-compact / memory / basis / proposal:** explain identifier roles; use current objective / carried-forward facts / needs-recheck / next action; separate remembered from freshly checked state; ask governing basis first; label future work as advisory with goal, improvement, output, and optional success condition.
+- **Variable-role / post-compact / memory / basis / proposal / optional deep dive:** explain identifier roles; use current objective / carried-forward facts / needs-recheck / next action; separate remembered from freshly checked state; ask governing basis first; label future work as advisory with goal, improvement, output, and optional success condition; offer deeper explanation only as one specific optional next-detail path.
 ---
 ## Anti-Patterns
 | Anti-pattern | Better shape |
@@ -122,28 +127,30 @@ Do not force sectioning into naturally simple answers.
 | deeper same-scope options after stage is clear | move to next stage/state |
 | raw identifiers with no role explanation | use variable-role pattern |
 | future work phrased like queued execution | label as proposal and show goal/output |
+| completed phase hides meaningful next-phase recommendation | add a roadmap-aware completion block with goal/output/gate |
+| optional detail offer becomes a second full answer | keep one short optional deep-dive line |
 | governing-basis ambiguity answered with long branches | ask compactly for the governing basis first |
 | post-compact replay or remembered context as fresh truth | use compact re-anchor/status and separate recheck needs |
 | over-structuring simple answers | keep simple answers compact |
 ---
 ## Flexibility Boundary
-Allowed: short answers may stay short; headings, tables, snapshots, scope blocks, full-set blocks, and next-stage blocks are optional unless they improve comprehension; structure may vary as long as readability, scanability, and semantic formatting remain strong.
-Not allowed: using flexibility to keep complex answers disorganized; using formatting as decoration; obscuring sequence, comparison, scope, or section purpose; using snapshot tables as a substitute for orientation or implication; defaulting to a narrow slice when the full set should be visible; defaulting to deeper same-scope explanation when the answer should move forward.
+Allowed: short answers may stay short; headings, tables, snapshots, scope blocks, full-set blocks, optional deep-dive offers, and next-stage blocks are optional unless they improve comprehension; structure may vary as long as readability, scanability, and semantic formatting remain strong.
+Not allowed: using flexibility to keep complex answers disorganized; using formatting as decoration; obscuring sequence, comparison, scope, or section purpose; using snapshot tables as a substitute for orientation or implication; defaulting to a narrow slice when the full set should be visible; defaulting to deeper same-scope explanation when the answer should move forward; pruning a meaningful roadmap-aware recommendation after true completion.
 ---
 ## Quality Metrics
 | Metric | Target |
 |---|---|
 | Main-point and purpose visibility | high when needed |
 | Section-purpose clarity, scanability, and semantic formatting | high |
-| Diagnostic, scope, full-set, next-stage, and compact-table usefulness | high when relevant |
+| Diagnostic, scope, full-set, roadmap-aware completion, optional deep-dive, next-stage, and compact-table usefulness | high when relevant |
 | Unnecessary boxed table or decorative formatting | 0 critical cases |
 ---
 ## Integration
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - evidence-honest wording, human-language glosses, memory disclosure, continuation policy
 - [technical-snapshot-communication.md](technical-snapshot-communication.md) - bounded snapshot wording semantics
-- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - closing synthesis, recommendations, alternatives, advisory proposals
-- [explanation-quality.md](explanation-quality.md) - explanation flow, full-set-first logic, stage progression
+- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - closing synthesis, recommendations, alternatives, roadmap-aware completion, optional deep-dive offers, and advisory proposals
+- [explanation-quality.md](explanation-quality.md) - explanation flow, easy-first compactness, full-set-first logic, and stage progression
 - [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - memory applicability and path scope
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - text diagram formatting
 - [document-consistency.md](document-consistency.md) - labels, references, and terminology consistency

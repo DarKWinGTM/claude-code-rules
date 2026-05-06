@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.28
+> **Current Version:** 2.29
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, records material Development Verification / TestKit Coverage for phase-backed coding work, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order and a bounded roadmap/phase matrix, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, records material Development Verification / TestKit Coverage for phase-backed coding work, and closes phase-backed work with practical delivery/impact plus meaningful next-phase recommendation behavior rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -51,7 +51,7 @@ that phase posture must be resolved before substantial work drifts.
 The preferred path is early phase establishment, not retrospective phase backfill.
 When staged or governed execution is already clearly implied by the checked work shape, phase establishment should not be treated as an optional afterthought.
 
-When governed design is sufficiently clear for staged execution, phase should actively derive or update execution order from that normalized design truth. The phase workspace should split design target state into outcome-sized phases by dependency, risk, rollout boundary, and verification gate; create or update `phase/SUMMARY.md` and current child phase files; initialize or extend live tasks for the current phase when non-trivial work begins; and proceed phase-by-phase unless a real stop gate exists. This synthesis remains one-way: phase executes design and does not replace design as target-state authority.
+When governed design is sufficiently clear for staged execution, phase should actively derive or update execution order from that normalized design truth. The phase workspace should split design target state into outcome-sized phases by dependency, risk, rollout boundary, and verification gate; create or update `phase/SUMMARY.md`, a bounded roadmap/phase matrix, and current child phase files; initialize or extend live tasks for the current phase when non-trivial work begins; and proceed phase-by-phase unless a real stop gate exists. This synthesis remains one-way: phase executes design and does not replace design as target-state authority. Roadmap entries guide continuity and recommendation, but only selected/opened and safe work becomes active execution.
 
 ---
 
@@ -151,7 +151,8 @@ Patch artifacts remain outside the live phase-plan namespace.
 - TODO/changelog companion coordination when the concern is global
 - end-to-end verification requirements
 - Development Verification / TestKit Coverage expectations when phase-backed coding verification materially affects exit criteria
-- phase closeout expectations for delivered work, feature/improvement, impact, verification basis, and next phase state when relevant
+- phase closeout expectations for delivered work, feature/improvement, impact, verification basis, next phase state, and goal-qualified next recommendation when meaningful
+- roadmap/phase-matrix status such as active, selected, implied-unblocked, proposal, blocked, needs-approval, or none opened
 - overall rollback or containment behavior
 
 ### 5.2 Child phase role
@@ -182,7 +183,7 @@ Each executable child phase file should define or clearly map to:
 - Closeout summary: delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant
 - Exit criteria
 - Risks / rollback notes
-- Next possible phases
+- Next possible phases or roadmap recommendation with goal/output/gate when future work is meaningful
 
 ### 6.1 Live Task-List Linkage Contract
 When a phase is active or clearly implied and the work is non-trivial, the built-in task list should mirror the current phase's execution slices and visibly expose the active or implied phase context.
@@ -230,9 +231,10 @@ Phase-backed closeout should report what the phase delivered in practical terms 
 - delivered feature, capability, behavior, governance improvement, or verification gate
 - user/system impact or why the change matters
 - verification basis at the evidence strength actually checked
-- next phase state when relevant: not started, draft/planned, selected, active, or none opened
+- next phase state when relevant: not started, draft/planned, selected, active, implied-unblocked, proposal, blocked, needs-approval, or none opened
+- recommended next phase/wave with goal, expected output, and gate when checked roadmap surfaces show meaningful unselected successor work
 
-This shape should remain concise and should not be forced onto trivial non-phase work.
+This shape should remain concise, should not block safe continuation through already selected phases, and should not be forced onto trivial non-phase work.
 
 ---
 
@@ -245,7 +247,8 @@ This shape should remain concise and should not be forced onto trivial non-phase
 - [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
 - [ ] task creation can still align to clearly implied staged/phase context even before the exact next phase file exists
 - [ ] non-trivial phase-backed live tasks visibly expose phase ID/name/family/stage context in subject or description
-- [ ] sufficiently clear governed design can be synthesized into phase execution order without replacing design authority
+- [ ] sufficiently clear governed design can be synthesized into phase execution order and bounded roadmap/phase matrix without replacing design authority
+- [ ] roadmap entries distinguish selected/active work from proposal, blocked, needs-approval, and none-opened states without auto-promotion
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs are not used as active canonical phase identifiers
 - [ ] `/phase` examples show a valid major/subphase model
@@ -254,7 +257,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 - [ ] `phase/done/` is inactive-by-default history, not junk or deletion authority
 - [ ] patch artifacts remain outside the live phase workspace
 - [ ] phase-backed coding work includes Development Verification / TestKit Coverage or equivalent when verification materially affects exit criteria
-- [ ] phase-backed closeout reports delivered work, feature/improvement, impact, verification basis, and next phase state when relevant
+- [ ] phase-backed closeout reports delivered work, feature/improvement, impact, verification basis, next phase state, and next-phase recommendation when meaningful
 
 ---
 
@@ -274,6 +277,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 | Live phased execution files under patch artifacts | 0 |
 | Active phase scan bloat from completed phase history | Low |
 | Phase closeout delivery/impact clarity | High |
+| Roadmap-aware next-phase recommendation after true completion | High when meaningful successor work exists |
 | Development Verification / TestKit Coverage visibility in material coding phases | High |
 
 ---
@@ -287,6 +291,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary outside live phase planning |
 | [project-documentation-standards.md](../project-documentation-standards.md) | Repository role model and startup artifact gate |
 | [todo-standards.md](../todo-standards.md) | TODO coordination and early-establishment bridge |
+| [response-closing-and-action-framing.md](../response-closing-and-action-framing.md) | User-facing roadmap-aware next recommendation and phase-backed closeout framing |
 
 ---
 

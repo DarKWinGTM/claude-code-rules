@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.88
+> **Current Version:** 9.89
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.89 | 2026-05-07 | **[Added roadmap-aware completion and next-phase proposal behavior](#version-989)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.88 | 2026-05-06 | **[Added active runtime body sufficiency corrective validation](#version-988)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.87 | 2026-05-06 | **[Added subagent research orchestration and leader context optimization](#version-987)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.86 | 2026-05-06 | **[Added development verification and debug strategy owner](#version-986)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -122,6 +123,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-989"></a>
+## Version 9.89: Added roadmap-aware completion and next-phase proposal behavior
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P075-02 under the existing P075 closeout/reporting lineage to refine what happens after true governed objective completion.
+- Updated `phase-implementation` to v2.29 so phase summaries can carry bounded roadmaps or phase matrices and phase closeout can recommend supported successor phases without auto-promoting draft future work.
+- Updated `execution-continuity-and-mode-selection` to v1.14 and `response-closing-and-action-framing` to v1.2 so selected safe successor work continues, meaningful unselected successor work is recommended as advisory next work, ambiguous successor work asks narrowly, and no visible successor is reported honestly.
+- Updated `explanation-quality` to v2.22, `answer-presentation` to v1.27, and `high-signal-communication` to v1.2 so easy-first answers can stay compact while preserving required roadmap recommendations and one optional specific deep-dive offer when useful.
+- Updated `native-worker-agent-routing-and-context-control` to v1.3 so broad roadmap or phase-matrix analysis can use focused worker lanes by phase candidate, dependency, risk area, design axis, or verification gate before leader synthesis.
+- Created P075-02 phase and patch records, synchronized paired design/changelog chains, and synchronized master design, README, TODO, and phase summary for the v9.89 release target with active runtime count unchanged at 44; runtime install/parity and release gates remain pending until verification passes.
+
+### Summary
+P075-02 closes the gap where completed work could end silently even when checked roadmap surfaces show a meaningful next phase. The refinement keeps continue/execute/prune first, preserves selected safe continuation across phase chains, and adds compact advisory next-phase recommendations only at true closeout boundaries.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.26
+> **Current Version:** 1.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.27 | 2026-05-06 | **[Added roadmap-aware completion and deep-dive presentation patterns](#version-127)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added presentation patterns for recommended next phase/wave with goal/output/gate and one short optional deep-dive offer after complete-enough answers | |
 | 1.26 | 2026-04-25 | **[Added compact phase-backed closeout presentation support](#version-126)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.25 | 2026-04-22 | **[Made light tables more proactive for analytical and diagnostic clarity](#version-125)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.24 | 2026-04-17 | **[Retargeted integration references after communication-owner extraction](#version-124)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -45,6 +47,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-127"></a>
+## Version 1.27: Added roadmap-aware completion and deep-dive presentation patterns
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `answer-presentation.md` from v1.26 to v1.27.
+- Updated `design/answer-presentation.design.md` from v1.26 to v1.27.
+- Added presentation support for roadmap-aware completion blocks using recommended next, why next, goal, output, and gate.
+- Added presentation support for one short optional deep-dive offer after easy-first compact answers.
+- Extended phase-backed closeout presentation so meaningful successor work can be shown without forcing the pattern onto trivial completions.
+
+### Summary
+Answer-presentation now gives true completion boundaries a compact next-recommendation shape and gives easy-first answers a lightweight optional deeper-detail path.
 
 ---
 

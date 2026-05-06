@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.21
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-30)
+> **Current Version:** 2.22
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define one rule chain that improves the structure of analytical and technical explanations so answers stay easy to follow, feel natural step by step, and preserve causal reasoning depth.
+Define one rule chain that improves the structure of analytical and technical explanations so answers stay easy to follow, feel natural step by step, preserve causal reasoning depth, stay complete enough without over-expansion, and offer a specific deeper-detail path when an easy-first answer should remain compact but expandable.
 
 The target behavior is a layered natural explanation style:
 - short answer first
@@ -28,7 +28,9 @@ The target behavior is a layered natural explanation style:
 - phase closeout explanation that makes delivered feature/improvement and practical impact visible before file lists, task IDs, or audit detail
 - easy-explanation continuity so answers that were explicitly requested in simple Thai do not drift back into jargon-heavy or internal-label-heavy wording after the opening
 - concise, high-signal ending with a real next move only when one genuinely exists
+- roadmap-aware next recommendation after true objective completion when checked successor work is meaningful
 - goal-qualified proposal framing when future ideas are useful after bounded completion
+- one short optional deep-dive offer when the compact answer is intentionally easy-first and more detail may help
 - governing-basis clarification before deepening several materially different branches
 - compact post-compact re-anchor before explanation resumes after compaction may have compressed exact context
 - explanation-side table usage/style semantics defer to a central table owner while explanation flow still decides when true comparison exists
@@ -60,6 +62,8 @@ Observed failure modes:
 - multiple materially different policy/frame branches are explained in depth before the active governing basis is chosen
 - post-compact explanation restarts by replaying stale history instead of re-anchoring the active objective and checked state first
 - phase closeout starts with governance/file/task detail and never plainly explains what feature or improvement the phase delivered
+- true completion can end without a next-phase recommendation despite checked roadmap surfaces showing meaningful successor work
+- easy-first answers can omit a compact offer for deeper explanation even when the user may want the detailed reasoning after the short version
 
 This design addresses explanation shape while preserving existing verification and accuracy requirements.
 
@@ -79,6 +83,8 @@ Typical triggers:
 - implementation progress, troubleshooting state, or verification checkpoints where a compact status snapshot improves clarity
 - change walkthroughs where before/after or patch-by-patch framing helps
 - phase-backed closeouts where the user needs to understand what was developed, improved, enabled, or locked
+- true completion boundaries where checked design, phase roadmap, TODO, or implementation surfaces show meaningful successor work
+- easy-first explanation where one specific optional deeper path would help without bloating the initial answer
 - scope clarification where the user needs to understand what is included now versus what stays deferred
 - sequence/status explanations where list-vs-table choice affects scanability and answer weight
 - abstract analytical answers that would be clearer with one concrete example, a small analogy, or a direct human-language paraphrase
@@ -101,7 +107,7 @@ Compact technical snapshot when needed
   ↓
 Step-by-step implication or fix
   ↓
-Concise synthesis and next move when genuinely useful
+Concise synthesis, roadmap-aware next move when genuinely useful, and optional deep-dive offer when helpful
 
 ### 4.1 Plain-Language-First Principle
 
@@ -110,6 +116,7 @@ Start with the simplest truthful framing that helps the user understand the situ
 Required guidance:
 - explain what the issue means before diving into lower-level protocol detail when the topic is complex
 - prefer a human-readable opening model before dense implementation detail
+- keep the default answer complete enough to preserve the decision basis without becoming overlong
 - when useful, explicitly separate a simple version from a technical version
 
 ### 4.1.1 Purpose-First Explanation Step
@@ -131,6 +138,7 @@ Required guidance:
 - follow with a simple explanation
 - add a compact technical snapshot when status or checked scope matters
 - then explain the deeper mechanism, implication, or fix path step by step
+- when the answer intentionally stays compact, use one optional deep-dive offer instead of preloading the full second explanation
 
 ### 4.3 Simple Version First, Technical Version Second
 
@@ -311,6 +319,7 @@ When closing phase-backed work, start by explaining what the phase delivered in 
 Required guidance:
 - state what the phase developed, improved, enabled, checked, locked, or moved forward
 - make the delivered feature/improvement and practical user/system meaning visible before file lists, task IDs, or audit detail
+- when true completion has checked successor work, explain the next recommendation as a goal-qualified next phase/wave rather than ending silently
 - keep the explanation concise before moving into verification or governance detail
 - do not oversimplify into false mechanisms; verification strength still comes from the evidence owner
 
@@ -352,6 +361,27 @@ Required guidance:
 - preserve the latest user-selected frame instead of reopening stale assistant branches from before compact
 - continue the active selected path after re-anchor rather than rebuilding several old branches
 - treat post-compact continuation as a reason to reduce replay, not a reason to expand historical narration
+
+### 7.2.9 Roadmap-Aware Completion Pattern
+
+When the active objective is truly complete and checked surfaces show meaningful unselected successor work, the explanation should land with a compact next recommendation.
+
+Required guidance:
+- close the current work first with delivery, impact, and verification basis
+- name the recommended next phase or wave only when design, phase roadmap, TODO, or checked implementation state supports it
+- include goal, expected output or result, and gate when those details make the recommendation easier to evaluate
+- keep selected and unblocked successor work as continuation rather than converting it into a proposal
+- preserve advisory wording when the successor work has not been selected
+
+### 7.2.10 Optional Deep-Dive Offer Pattern
+
+When an answer intentionally stays easy-first and compact but a deeper explanation may help, offer one specific expansion path.
+
+Required guidance:
+- name the specific topic to expand
+- phrase the line as optional, not queued execution
+- do not expand into the detailed second answer until the user selects it
+- omit the offer when active execution should simply continue or the answer is already detailed enough
 
 ### 7.3 Patch-by-Patch Explanation Pattern
 
@@ -459,13 +489,15 @@ Summary quality rules:
 - do not restate earlier detail unless it is necessary for the final decision
 
 Default expectation:
-- if there is one clear next path and it would genuinely help the user act, state it directly
+- if there is one clear selected next path and it would genuinely help the user act, state it directly or continue when execution rules select continuation
 - if there are multiple reasonable next paths and presenting them would materially help the user, present short explicit options the user can choose from
 - when one option is better-supported, make the recommendation explicit and explain briefly why it should happen first
 - when multiple reasonable next paths genuinely remain open, preserve at least one alternative instead of collapsing the visible decision surface into the recommended path only
-- if the task is already complete and no real continuation is needed, do not invent artificial next-step options
+- if the active objective is truly complete and checked roadmap surfaces show meaningful unselected successor work, recommend the next phase/wave with goal, output, and gate
+- if the task is already complete and no real continuation or meaningful successor work is visible, do not invent artificial next-step options
 - if future ideas are offered after bounded completion, make the proposal clearly advisory and state the goal plus the expected improvement/result
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
+- when an easy-first answer is intentionally compact, use one optional deep-dive offer instead of preloading unnecessary depth
 - when the real decision surface is a larger complete set, show that full set before narrowing into sub-items
 
 ### 11.1 Short Recap Pattern
@@ -489,6 +521,8 @@ Before finishing an explanation-heavy answer, it should be possible for the user
 - why it is true
 - what trade-off matters most, if options exist
 - what they can do next, if a real next move exists
+- what next phase/wave is recommended when the active objective is truly complete and checked successor work exists
+- whether a deeper explanation is available and what specific topic it would cover when the answer intentionally stayed compact
 - whether the response should now move to the next stage/state instead of continuing to deepen the current one
 - whether the full relevant set is visible before any optional narrowing begins
 - or that the task is complete, if no real continuation is needed
@@ -764,6 +798,27 @@ Success condition
 - a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
+### Pattern 17: Roadmap-aware completion with optional deep dive
+
+```markdown
+What this phase delivered
+- the OpenAPI contract is now locked and verified enough for docs implementation planning.
+
+Recommended next
+- start the docs frontend implementation wave.
+
+Goal
+- render the locked API contract through the docs UI.
+
+Output
+- React/Vite/Scalar package path with build verification.
+
+Gate
+- package/build scope selected and verification route defined.
+
+ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง roadmap decision logic ต่อได้.
+```
+
 ## 13.1 Anti-Patterns to Avoid
 
 | Anti-Pattern | Why It Hurts | Better Shape |
@@ -771,6 +826,8 @@ Success condition
 | architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
 | the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
 | phase closeout starts with governance/file/task detail only | the reader cannot see what the phase developed, improved, or enabled | start with delivered feature/improvement and practical impact before deeper governance detail |
+| true completion hides meaningful next phase/wave | the user must ask what should happen next despite checked roadmap context | add a compact roadmap-aware recommendation when checked surfaces support it |
+| optional detail offer becomes a long second answer | the easy-first answer becomes overlong before the user asks for depth | keep one specific offer and wait for selection |
 | proof cited without explaining what it proves or does not prove | the user cannot tell whether evidence is a hard constraint or only support | show evidence boundary and decision implication |
 | ordinary evidence treated as a rigid design lock | trade-offs disappear without proof | separate hard constraints from grounding input |
 | raw identifiers used as if their names explain the mechanism | the reader sees variable names but not their job or value meaning | explain what the identifier is, what role it plays, where it sits in the flow, and what important values mean before deeper reasoning |

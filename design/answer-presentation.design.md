@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.26
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
+> **Current Version:** 1.27
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain for answer presentation so responses are orderly, readable, scannable, and visually disciplined without forcing one rigid template onto every answer.
+Define one first-class rule chain for answer presentation so responses are orderly, readable, scannable, complete enough without over-expansion, and visually disciplined without forcing one rigid template onto every answer.
 
 The target behavior is principle-first and trigger-driven:
 - lead with the main point when helpful
@@ -27,7 +27,9 @@ The target behavior is principle-first and trigger-driven:
 - help the reader see the full relevant set before optional drill-down when that is the real decision surface
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
 - make easy-to-picture phase/progress explanations easy to present through one short plain-language opening plus a concise grouped explanation
-- make phase-backed closeouts easy to present through compact delivery, feature/improvement, impact, verification, and next-state grouping
+- make phase-backed closeouts easy to present through compact delivery, feature/improvement, impact, verification, next-state, and meaningful next-recommendation grouping
+- make roadmap-aware completion easy to present with recommended next phase/wave, reason, goal, output, and gate when checked successor work exists
+- keep easy-first answers complete enough while allowing one short optional deep-dive offer when more detail may help
 - make materially outcome-changing governing-basis ambiguity easy to present as a short structured clarification instead of a long branch-comparison essay
 - make post-compact continuation easy to present as one short re-anchor block instead of a long replay
 - make memory-derived context easy to present as one short block that separates matched path scope, provenance when relevant, and needs-recheck detail from freshly checked current-state facts
@@ -58,6 +60,8 @@ Observed failure modes:
 - formatting is technically organized but still feels stiff, overbuilt, or obviously templated
 - materially different governing-basis options are explained through long comparison prose when the real need is one short structured clarification block
 - post-compact continuation is presented as a long replay of the prior conversation instead of a short active-state re-anchor
+- completed phase-backed or governed objectives end without a useful next-phase recommendation even when checked roadmap surfaces show meaningful successor work
+- optional deeper explanation offers either disappear entirely or expand into a second full answer before the user selects them
 
 This design defines presentation-layer guidance that improves readability and scanability while staying compatible with existing explanation and communication rules.
 It should support natural professional communication by making structure useful without making answers feel templated or stiff.
@@ -89,6 +93,7 @@ Presentation shape should reflect the kind of answer being given.
 
 Required guidance:
 - simple factual answers may stay compact
+- easy-first answers should still preserve the decision basis instead of becoming too short to act on
 - analytical answers should use clearer sectional structure
 - comparisons should use comparison-oriented layouts
 - procedures should use sequence-oriented layouts
@@ -175,7 +180,9 @@ Use stronger presentation structure when one or more of these triggers are prese
 | diagnostic snapshot | troubleshooting status, implementation progress report, verification note, environment summary | short orienting line + purpose-first line when needed + compact titled snapshot sections + small scoped fact table when helpful |
 | scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
 | full-set framing | many relevant areas, complete checklist, multiple review axes that should be visible together | complete set first, then optional narrowing |
-| phase-backed closeout | closing phase-backed work | compact delivered work, feature/improvement, impact, verification, and next-state grouping |
+| phase-backed closeout | closing phase-backed work | compact delivered work, feature/improvement, impact, verification, next-state, and next-recommendation grouping when meaningful |
+| roadmap-aware completion | active objective is truly complete and checked successor work exists | `Recommended next`, `Why this next`, `Goal`, `Output`, and `Gate` when selected safe continuation is not already underway |
+| optional deep dive | compact easy-first answer where more detail may help | one short offer naming the specific expandable topic |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | one short progression block such as `What happens next` or `Next stage` |
 | variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |
 | long/complex answer | many concepts, many dependencies, high cognitive load | headings, grouped blocks, whitespace, concise summary |
@@ -250,6 +257,22 @@ When the answer is surfacing a future-work idea rather than an active next step:
 - show the expected output or result
 - optionally show the success condition when it materially helps the reader evaluate the idea
 - do not format a proposal block like implied queued execution
+
+### 5.3.2.1 Roadmap-Aware Completion Pattern
+
+When a governed or phase-backed objective is truly complete and checked successor work exists:
+- show the recommended next phase or wave only after the completed work is clear
+- include one short reason for why this successor is best-supported
+- show the goal, expected output/result, and gate or success condition
+- keep the recommendation advisory unless the user or governing phase surface has selected it
+- do not show this block as a blocker between already selected safe phases
+
+### 5.3.2.2 Optional Deep-Dive Offer Pattern
+
+When an answer intentionally stays easy-first and compact but more detail may help:
+- add one short offer naming the specific topic that can be expanded
+- phrase it as optional, not as queued continuation
+- omit it when the answer is trivial, already detailed enough, or execution should simply continue
 
 ### 5.3.3 Governing-Basis Clarification Pattern
 
@@ -424,7 +447,7 @@ Verification
 - <checked evidence and remaining limits>
 
 Next phase state
-- <not started | draft/planned | selected | active | none opened>
+- <not started | draft/planned | selected | active | implied-unblocked | proposal | blocked | needs-approval | none opened>
 ```
 
 Use only the fields that improve clarity; do not turn simple non-phase completions into a rigid report.
@@ -511,6 +534,31 @@ Success condition
 - a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only
 ```
 
+### 5.14.0.1 Canonical Roadmap-Aware Completion Shape
+
+```markdown
+Recommended next
+- start P056 docs frontend implementation
+
+Why this next
+- the checked roadmap shows the OpenAPI contract is locked, but the docs UI is not opened yet
+
+Goal
+- render the locked API contract through the docs frontend
+
+Output
+- React/Vite/Scalar package path with build verification
+
+Gate
+- package/build scope selected and implementation verification route defined
+```
+
+### 5.14.0.2 Canonical Optional Deep-Dive Offer Shape
+
+```markdown
+ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง roadmap decision logic ต่อได้.
+```
+
 ### 5.14.1 Canonical Markdown-Table Exception Shape
 
 Use literal markdown-table syntax only when the user explicitly asks for it or when the target artifact is markdown source.
@@ -560,7 +608,9 @@ What This Means
 | forced comparison table | adds visual weight without informational value | use normal prose or grouped bullets |
 | missing framing before table/list | reader has to infer the purpose of the structure | add a short context-setting line |
 | raw evidence dump with no orienting line | checked facts appear but meaning stays unclear | start with a short orientation, then present the snapshot |
-| phase-backed closeout as checked-scope-only list | user cannot see what feature/improvement was delivered or why it matters | show delivered work, feature/improvement, impact, verification, and next phase state when useful |
+| phase-backed closeout as checked-scope-only list | user cannot see what feature/improvement was delivered or why it matters | show delivered work, feature/improvement, impact, verification, next phase state, and next recommendation when meaningful |
+| completed phase hides meaningful next-phase recommendation | user must ask what should happen next despite checked roadmap context | add a roadmap-aware completion block with goal/output/gate |
+| optional detail offer becomes a second full answer | the compact answer loses its easy-first shape | keep one short optional deep-dive line and wait for selection |
 | structure starts with setup but not the purpose | the reader has to infer what the answer is doing from later sections | place one short purpose-first line near the start when needed |
 | ordinary structured facts presented with full-frame ASCII / boxed tables | the layout becomes heavier than the information needs | use a lighter readable table or switch to a list/grouped block |
 | oversized or overbuilt table used as the ordinary default | the output becomes heavier than the information needs | keep the table light or switch to a list/grouped block |
@@ -595,6 +645,8 @@ Not allowed:
 - using decoration instead of structure
 - using formatting patterns that obscure sequence, comparison, or section purpose
 - using snapshot tables as a substitute for orientation or explanation
+- pruning a meaningful roadmap-aware recommendation after true completion
+- expanding an optional deep-dive offer into a full second explanation before the user selects it
 
 ---
 
@@ -609,6 +661,8 @@ Not allowed:
 | Semantic formatting correctness | High |
 | Diagnostic snapshot usefulness | High when technical status reporting is used |
 | Phase-backed closeout layout usefulness | High when phase-backed work is closed |
+| Roadmap-aware completion layout usefulness | High when checked successor work exists |
+| Optional deep-dive offer compactness | High when easy-first answers should remain expandable |
 | Compact-table efficiency | High when a table is genuinely useful |
 | Unnecessary boxed-table incidence | 0 critical cases |
 | Decorative formatting without function | 0 critical cases |
