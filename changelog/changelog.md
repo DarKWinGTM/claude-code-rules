@@ -134,7 +134,7 @@
 - Updated `maintainable-code-structure-and-decomposition` to v1.2 so code-structure/refactor discipline defers debug/testing/TestKit strategy to the new owner while preserving behavior-preserving refactor posture.
 - Updated `accurate-communication` to v2.21 so coding closeout wording separates edited, focused-tested, fake/local verified, live verified, fixed, and stable claims.
 - Updated `phase-implementation` to v2.28, `todo-standards` to v2.23, `project-documentation-standards` to v2.34, and `execution-continuity-and-mode-selection` to v1.12 so material Development Verification / TestKit Coverage stays visible and implementation can continue into verification when safe.
-- Updated master design, README install arrays, TODO, phase summary, and P084 patch/phase records for the v9.86 source state with 44 active runtime rules, then installed and verified 44/44 runtime parity with destination extras observed-only.
+- Updated master design, README install arrays, TODO, phase summary, and P084 patch/phase records for the v9.86 source state with 44 active runtime rules, installed and verified 44/44 runtime parity with destination extras observed-only, pushed `master`, and published GitHub release `v9.86`.
 
 ### Summary
 P084-01 adds a strategic, proportionate verification owner for coding work: AI should understand behavior risk, choose useful debug/test signals, use TestKit or scenario checks when the workflow warrants them, and report evidence limits honestly instead of treating code edits as proof of correctness.

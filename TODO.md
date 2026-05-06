@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Complete P084-01 development verification and debug strategy: create the first-class coding verification owner; synchronize adjacent coding, communication, phase, TODO, project-documentation, and execution-continuity chains; update v9.86 / 44-rule master records; install only README-listed active runtime rules; verify 44/44 runtime parity; push master; and publish GitHub release `v9.86`.
+
 - [x] Complete P076-03 phase-visible task linkage: refine the existing P076 design-to-phase execution family so non-trivial phase-backed built-in task entries visibly expose active or clearly implied phase context in subject or description; synchronize v9.85 governed records; install only README-listed active runtime rules; verify 43/43 source/runtime parity; push master; and publish GitHub release `v9.85`.
 
 - [x] Complete P073-09 refreshed active runtime semantic compression: refresh the 43-file active runtime inventory, reduce source runtime rule text from 42,961 to 35,017 words for a 7,944-word accepted reduction, preserve semantic anchors, pass behavior/golden/source-boundary audits, install only README-listed active runtime rules, verify 43/43 source/runtime parity, synchronize governed records, push master, and publish release `v9.84`.
@@ -141,7 +143,6 @@
 ## 📋 Tasks To Do
 
 ### Active Work
-- [ ] Complete P084-01 development verification and debug strategy: create the first-class coding verification owner; synchronize adjacent coding, communication, phase, TODO, project-documentation, and execution-continuity chains; update v9.86 / 44-rule master records; install only README-listed active runtime rules; verify 44/44 runtime parity; push master; and publish GitHub release `v9.86`.
 - [x] Close P073 runtime-compression scope drift: compression targets are active root runtime rule files only, while `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` remain sync/audit/planning surfaces and are not compression targets; current checked baseline is 41 files / 7,141 lines / 50,141 words / 356,403 bytes.
 - [x] Complete P073-04 evidence/safety/operations runtime-owner compression source-only: selected 7 active runtime rule files, reduced the touched set from 13,424 to 10,854 words, preserved semantic anchors, and kept `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` as sync/audit/planning surfaces only.
 - [x] Complete P073-05 remaining communication/presentation/strategy/support runtime-owner compression source-only: selected 11 active runtime rule files, reduced the touched set from 20,565 to 12,032 words, preserved semantic anchors, and kept governed planning surfaces as status/sync/audit records only.
@@ -167,6 +168,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-05-06 | Completed P084-01 development verification and debug strategy: added the first-class coding verification/debug/TestKit strategy owner, synchronized adjacent owner chains and v9.86 / 44-rule master records, installed only README-listed active runtime rules, verified 44/44 runtime parity, pushed master, and published GitHub release `v9.86`. |
 | 2026-05-04 | Completed P073-09 refreshed active runtime semantic compression: refreshed the current 43-file active runtime inventory, reduced active runtime source text from 42,961 to 35,017 words, preserved semantic anchors, verified behavior/golden/source-boundary audits and 43/43 runtime parity, synchronized v9.84 governed records, pushed master, and published release `v9.84`. |
 | 2026-05-04 | Completed P076-02 major-vs-subphase lineage selection: refined phase identity selection to use lineage-first current-phase/subphase/new-major/ask-now handling, synchronized v9.83 / 43-rule master records, installed and verified the README-listed runtime set, pushed master, and published GitHub release `v9.83`. |
 | 2026-05-04 | Completed P083 maintainable helper/comment discipline refinement: refined the maintainable-code owner to v1.1, synchronized v9.82 / 43-rule master records, installed and verified the README-listed runtime set, pushed master, and published GitHub release `v9.82`. |

@@ -3,7 +3,7 @@
 > **Current Version:** 1.58
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** Active summary synchronized through active phase 084-01 development verification and debug strategy release work
+> **Status:** Active summary synchronized through completed phase 084-01 development verification and debug strategy release work
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -475,7 +475,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 081 | 081-01 | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | Approved | None | Approved As-Is | Owner-chain source/design/changelog updates, P081 phase/patch records, v9.80 master source sync, source audit, 42-file runtime install/parity, git push, and GitHub release `v9.80` are complete |
 | 082 | 082-01 | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | Approved | None | Approved As-Is | Source rule triad, tactical/strategic v1.3 integration, master source sync, source audit, semantic anchor audit, 43-file runtime install/parity, git push, and GitHub release `v9.81` are complete |
 | 083 | 083-01 | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | Approved | None | Approved As-Is | Maintainable-code v1.1 triad audit, master sync, 43-file runtime install/parity, git push, and GitHub release `v9.82` are complete |
-| 084 | 084-01 | `phase/phase-084-01-development-verification-and-debug-strategy.md` | Pending | None | In Progress | New verification owner triad, adjacent owner sync, master sync, and 44-file runtime install/parity are complete; push and release remain active gates |
+| 084 | 084-01 | `phase/phase-084-01-development-verification-and-debug-strategy.md` | Passed | None | Completed | New verification owner triad, adjacent owner sync, master sync, 44-file runtime install/parity, master push, and GitHub release `v9.86` are complete |
 
 ---
 
@@ -608,7 +608,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 081 | 081-01 | Completed | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | Refine native worker routing so user intent is classified before project exploration, broad independent work is standalone-subagent-first, worker choice is capability-based, and Agent Team workflow remains exceptional | `080-01` |
 | 082 | 082-01 | Completed | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | Create a maintainable code structure owner so AI coding work handles responsibility boundaries, God function/file pressure, code smells, wrong abstractions, and behavior-preserving refactor guidance without rigid templates | `081-01` |
 | 083 | 083-01 | Completed | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | Refine maintainable code structure so helpers are used only when they add semantic value and source-code comments explain useful hidden context without spam or stale claims | `082-01` |
-| 084 | 084-01 | In Progress | `phase/phase-084-01-development-verification-and-debug-strategy.md` | Add a first-class development verification/debug/TestKit strategy owner and synchronize v9.86 / 44-rule source/runtime release records | `083-01` |
+| 084 | 084-01 | Completed | `phase/phase-084-01-development-verification-and-debug-strategy.md` | Add a first-class development verification/debug/TestKit strategy owner and synchronize v9.86 / 44-rule source/runtime release records | `083-01` |
 
 ---
 
@@ -624,7 +624,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - P076-02 touched chain changelogs record `phase-implementation` v2.26, `artifact-initiation-control` v1.7, `todo-standards` v2.21, `project-documentation-standards` v2.32, and `execution-continuity-and-mode-selection` v1.10; TODO, master changelog, README, phase, and patch surfaces record v9.83 / 43-rule source governance, runtime install/parity passed, git push completed, and GitHub release `v9.83` was published.
 - P073-09 master records describe the refreshed v9.84 active-runtime compression wave: 43 source-owned runtime rules, 42,961 → 35,017 source words, 7,944-word accepted reduction, behavior/golden/source-boundary audits passed, runtime install/parity passed 43/43, and destination extras preserved as observed-only.
 - P076-03 touched chain changelogs record `phase-implementation` v2.27, `todo-standards` v2.22, `artifact-initiation-control` v1.8, `project-documentation-standards` v2.33, and `execution-continuity-and-mode-selection` v1.11; TODO, master changelog, README, phase, and patch surfaces record v9.85 source governance, source audit, 43-file runtime install/parity, git push, and GitHub release `v9.85` as completed.
-- P084-01 touched chain changelogs record `development-verification-and-debug-strategy` v1.0, `maintainable-code-structure-and-decomposition` v1.2, `accurate-communication` v2.21, `phase-implementation` v2.28, `todo-standards` v2.23, `project-documentation-standards` v2.34, and `execution-continuity-and-mode-selection` v1.12; TODO, master changelog, README, phase, and patch surfaces record active v9.86 / 44-rule source governance and verified 44-file runtime install/parity before push and release gates close.
+- P084-01 touched chain changelogs record `development-verification-and-debug-strategy` v1.0, `maintainable-code-structure-and-decomposition` v1.2, `accurate-communication` v2.21, `phase-implementation` v2.28, `todo-standards` v2.23, `project-documentation-standards` v2.34, and `execution-continuity-and-mode-selection` v1.12; TODO, master changelog, README, phase, and patch surfaces record completed v9.86 / 44-rule source governance, verified 44-file runtime install/parity, pushed `master`, and GitHub release `v9.86`.
 
 ---
 

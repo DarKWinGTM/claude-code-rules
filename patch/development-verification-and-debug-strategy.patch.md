@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.86
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -128,7 +128,7 @@ Master records describe v9.86 with 44 active runtime rules, add the new owner to
 - [x] Master records describe v9.86 and active runtime count 44 consistently.
 - [x] README Bash and PowerShell install arrays include exactly 44 active runtime files.
 - [x] Runtime install parity is verified for the 44 active runtime rule files.
-- [ ] Source/runtime release artifacts are pushed and GitHub release `v9.86` is created.
+- [x] Source/runtime release artifacts are pushed and GitHub release `v9.86` is created.
 
 ---
 
