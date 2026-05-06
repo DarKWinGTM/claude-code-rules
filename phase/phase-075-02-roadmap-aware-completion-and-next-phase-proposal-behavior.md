@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 075-02
-> **Status:** In Progress
+> **Status:** Completed
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Design References:** [../design/design.md](../design/design.md), [../design/phase-implementation.design.md](../design/phase-implementation.design.md), [../design/execution-continuity-and-mode-selection.design.md](../design/execution-continuity-and-mode-selection.design.md), [../design/response-closing-and-action-framing.design.md](../design/response-closing-and-action-framing.design.md), [../design/explanation-quality.design.md](../design/explanation-quality.design.md), [../design/answer-presentation.design.md](../design/answer-presentation.design.md), [../design/high-signal-communication.design.md](../design/high-signal-communication.design.md), [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md)
 > **Patch References:** [../patch/roadmap-aware-completion-and-next-phase-proposal-behavior.patch.md](../patch/roadmap-aware-completion-and-next-phase-proposal-behavior.patch.md)
@@ -61,7 +61,7 @@ The improvement must remain principle-based:
 - [ ] Mark this phase and patch completed after source/runtime verification.
 - [x] Install only the 44 README-listed active runtime rule files.
 - [x] Verify source/runtime parity, body sufficiency, and destination extras as observed-only.
-- [ ] Push `master` and publish GitHub release `v9.89`.
+- [x] Push `master` and publish GitHub release `v9.89`.
 
 ---
 
@@ -136,7 +136,7 @@ Verification route:
 - [x] Runtime install copies only active runtime rules.
 - [x] Source/runtime parity and body-sufficiency checks pass for all 44 active runtime files.
 - [x] Other-owner runtime files in the destination remain observed-only and untouched.
-- [ ] Git push and GitHub release `v9.89` are verified.
+- [x] Git push and GitHub release `v9.89` are verified.
 
 ---
 
@@ -161,6 +161,12 @@ Risk: recommendations could overclaim future work as active execution.
 Risk: optional deep-dive offers could become low-signal boilerplate if overused.
 
 Rollback posture: narrow or revert only the P075-02 roadmap-aware completion, optional deep-dive, and roadmap-worker-routing wording while preserving P075-01 feature/impact closeout reporting, P076 design-to-phase synthesis, P081 worker routing, and the 44-file runtime install/body-sufficiency boundary.
+
+---
+
+## Closeout Summary
+
+P075-02 delivered roadmap-aware completion behavior for governed closeout: after selected work is truly complete, the assistant can recommend the best-supported next phase or wave from checked design/TODO/phase surfaces without blocking selected safe continuation. Source audit, 44/44 runtime install/parity/body-sufficiency verification, git push, and GitHub release `v9.89` passed.
 
 ---
 

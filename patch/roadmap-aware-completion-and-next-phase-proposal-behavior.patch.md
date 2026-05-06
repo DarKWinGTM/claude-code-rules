@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.89
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -242,7 +242,7 @@ Master records record v9.89 / P075-02 as a narrow continuation of the P075 close
 - [x] Runtime install copies only the 44 active runtime rule files.
 - [x] Source/runtime parity and body sufficiency pass for the active runtime install set.
 - [x] No plugin/project-owned runtime destination files are touched.
-- [ ] Git push and GitHub release `v9.89` are verified.
+- [x] Git push and GitHub release `v9.89` are verified.
 
 ---
 
