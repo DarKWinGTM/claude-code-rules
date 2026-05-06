@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.22
+> **Current Version:** 2.23
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.23 | 2026-05-06 | **[Preserved visible verification slices for non-trivial coding work](#version-223a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added live task-list guidance to preserve or add material verification slices when implementation and verification are distinct outcomes in non-trivial coding work | |
 | 2.22 | 2026-05-04 | **[Required visible phase context in phase-shaped task entries](#version-222a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Required phase-backed or clearly phase-shaped live task entries to expose phase ID/name/family or implied-stage context in subject or description and to be updated immediately if created without visible linkage | |
 | 2.21 | 2026-05-04 | **[Prevented task-list shaping from allocating new major phases](#version-221a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -34,6 +36,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-223a"></a>
+## Version 2.23: Preserved visible verification slices for non-trivial coding work
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `todo-standards.md` from v2.22 to v2.23.
+- Updated `design/todo-standards.design.md` from v2.22 to v2.23.
+- Added live task-list trigger coverage for non-trivial coding work where implementation and verification are distinct material outcomes.
+- Required preserving or adding a visible verification slice when coding implementation is complete but targeted verification remains material.
+- Deferred verification strategy and TestKit/scenario decisions to `development-verification-and-debug-strategy.md` while keeping TODO focused on visibility.
+
+### Summary
+TODO standards now keeps material coding verification work visible in the live task list without turning the task list into the owner of testing depth or TestKit strategy.
 
 ---
 

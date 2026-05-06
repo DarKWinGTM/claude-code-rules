@@ -1,6 +1,6 @@
 # TODO Standards
-> **Current Version:** 2.22
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.22
+> **Current Version:** 2.23
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.23
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
@@ -42,7 +42,7 @@ When meaningful governed work requires tracking, startup tracking posture must b
 Pending areas contain pending tasks only. Completed content belongs only in `Completed` and `History`. Deferred work remains pending with clear text labels.
 ---
 ## Live Task-List Trigger Model
-Built-in task-list usage is expected by default when work is non-trivial, has 3+ steps, spans multiple files/stages, may continue across slices, benefits from live pending/in_progress/completed visibility, has an active phase, or is clearly phase-shaped/staged even before the exact next phase file is opened.
+Built-in task-list usage is expected by default when work is non-trivial, has 3+ steps, spans multiple files/stages, may continue across slices, benefits from live pending/in_progress/completed visibility, has an active phase, has non-trivial coding work where implementation and verification are distinct outcomes, or is clearly phase-shaped/staged even before the exact next phase file is opened.
 
 Do not skip the built-in task list in those cases unless there is a narrow justified reason. Do not force task-list overhead for trivial isolated work, one-step lookup/fix work, or cases where the task list adds more ceremony than clarity.
 ---
@@ -71,6 +71,7 @@ When the built-in task list is in use:
 - create it early rather than after work is underway
 - mark a task `in_progress` when real work on that slice begins
 - mark a task `completed` as soon as that slice is actually done
+- preserve or add a visible verification slice when non-trivial coding implementation is done but targeted verification remains material
 - add new tasks when newly discovered work is real and non-trivial
 - keep entries outcome-sized rather than command-sized
 - extend the current task list within the same active objective instead of replacing it
@@ -103,6 +104,7 @@ TODO content updates still happen last among primary active layers. That later o
 - [ ] No dashboard or priority overhead is present
 - [ ] Tracking posture was resolved early when meaningful tracking was required
 - [ ] Built-in task list was used proactively for non-trivial active work when live visibility helped
+- [ ] Non-trivial coding work preserved a visible verification slice when implementation and verification were distinct material outcomes
 - [ ] Task creation aligned to active phase, implied staged context, and authored bounded phase context from `/phase`
 - [ ] Phase-backed or clearly phase-shaped task entries visibly exposed phase context in subject or description
 - [ ] Task creation did not silently allocate a new major phase when phase lineage needed `phase-implementation.md` handling
@@ -120,6 +122,7 @@ TODO content updates still happen last among primary active layers. That later o
 | Durable-vs-live tracking role clarity | 100% |
 | Startup tracking posture resolved before drift | 100% |
 | Proactive task-list usage on non-trivial work | High |
+| Visible verification slices for non-trivial coding work | High when implementation and verification are distinct material outcomes |
 | Current-phase-first task-list alignment | High when a phase is active |
 | Visible phase linkage for phase-backed task entries | High |
 | Task-list-driven new-major phase drift | 0 critical cases |
@@ -128,6 +131,7 @@ TODO content updates still happen last among primary active layers. That later o
 ---
 ## Integration
 Related documents:
+- [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) - owns coding-time verification strategy; TODO standards keeps material verification slices visible in live tracking
 - [artifact-initiation-control.md](artifact-initiation-control.md) - startup tracking posture resolution
 - [phase-implementation.md](phase-implementation.md) - phase identity and major-vs-subphase lineage selection when task shaping reveals phase work
 - [document-changelog-control.md](document-changelog-control.md) - synchronization order and authority boundary

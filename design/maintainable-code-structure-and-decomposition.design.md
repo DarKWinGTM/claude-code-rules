@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 > **Full history:** [../changelog/maintainable-code-structure-and-decomposition.changelog.md](../changelog/maintainable-code-structure-and-decomposition.changelog.md)
 
 ---
@@ -63,7 +63,7 @@ Do not merge code only because it looks similar. Shared abstraction needs a shar
 Names and structure should explain normal flow first. Comments should be concise and explain why, purpose, process order, business rules, constraints, side effects, external contracts, or workarounds when that information is not obvious from code. Comments that repeat syntax, narrate every line, or become stale should be removed or rewritten.
 
 ### 3.8 Refactor preserves behavior
-Refactoring should improve internal structure while preserving external behavior unless behavior change is explicitly part of the task. Verification limits must remain visible.
+Refactoring should improve internal structure while preserving external behavior unless behavior change is explicitly part of the task. Verification limits must remain visible, while verification depth, debug signals, and TestKit/scenario decisions defer to `development-verification-and-debug-strategy.md` when behavior risk is material.
 
 ---
 
@@ -77,7 +77,7 @@ When coding or refactoring, the assistant should:
 5. avoid helper-function inflation, speculative abstractions, template-first architecture, and line-count policing
 6. add or update source-code comments when they explain useful purpose, process, constraints, side effects, or business-rule context
 7. preserve behavior during refactors unless behavior change is explicit
-8. verify relevant behavior when available and report unverified limits honestly
+8. delegate behavior-risk verification strategy to `development-verification-and-debug-strategy.md` and report unverified limits honestly
 
 ---
 
@@ -134,6 +134,7 @@ Each signal should prompt bounded analysis and the smallest useful response, not
 
 | Adjacent rule | Boundary |
 |---|---|
+| `development-verification-and-debug-strategy.md` | owns coding-time verification strategy, debug/testing depth, TestKit/scenario decisions, and coding closeout evidence boundaries |
 | `tactical-strategic-programming.md` | owns tactical/strategic mode, target, convergence, and closure |
 | `maintainable-code-structure-and-decomposition.md` | owns code responsibility, decomposition, God function/file, and wrong-abstraction posture |
 | `goal-set-review-and-priority-balance.md` | prevents local structure polishing from crowding out the full active objective |
@@ -162,13 +163,13 @@ This design intentionally does not add:
 ## 9) Verification Expectations
 
 A compliant implementation should verify:
-- the runtime/design/changelog triad aligns at v1.1
-- README and master design stay at 43 active runtime rules because this is a refinement, not a new rule
+- the runtime/design/changelog triad aligns at v1.2
+- this chain remains the code-structure owner while `development-verification-and-debug-strategy.md` owns debug/testing/TestKit strategy
 - helper-function guidance avoids both God-function drift and helper-function inflation
 - comment guidance explains useful source-code context without comment spam or stale-comment drift
 - tactical-strategic integration remains a boundary and does not take over coding-time responsibility
 - source/runtime parity passes after runtime install
-- phase and patch records describe the refinement as principle-based code quality guidance, not a rigid template doctrine
+- phase and patch records describe the refinement as companion integration, not a rigid test-harness doctrine
 
 ---
 

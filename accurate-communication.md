@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.20
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.20
+> **Current Version:** 2.21
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.21
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -29,6 +29,7 @@ Required guidance:
 - separate edited, tested, confirmed working, and stable/fixed states
 - do not use “fixed” when only an edit or partial check happened
 - name the checked scope when the result is bounded
+- for coding work, align edited/tested/fake-local/live/stable wording to `development-verification-and-debug-strategy.md`; fake/local tests or TestKit scenarios do not prove live provider/runtime/deploy behavior
 ### 3) Evidence-threshold wording
 | Claim State | Preferred wording |
 |---|---|
@@ -53,6 +54,7 @@ Required guidance:
 - do not say the user is wrong, mistaken, or confused without cited contrary evidence
 - when evidence is partial, describe tension or uncertainty instead of issuing agreement or disagreement as a verdict
 ### 4) Specialized owner deferrals
+- coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions defer to `development-verification-and-debug-strategy.md`
 - compact technical, diagnostic, and verification-status snapshot wording defers to `technical-snapshot-communication.md`
 - concise closing synthesis, recommendation-plus-reason framing, alternatives, and advisory proposal wording defer to `response-closing-and-action-framing.md`
 - broader portable-default and anti-hardcoding ownership defers to `portable-implementation-and-hardcoding-control.md`
@@ -76,6 +78,7 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - start with a short plain-language line that helps the reader picture what the phase is doing or delivered
 - say briefly what part of the work it prepares, checks, locks, moves forward, develops, improves, or enables
 - for phase-backed closeout, explain delivered work, feature/improvement, and user/system impact before or alongside checked-scope, task, or audit status
+- for phase-backed coding closeout, state verification depth, checks/scenarios run, untested scope, and evidence limits when material
 - keep delivery, testing, fixed/stable, and impact claims aligned to the verification actually performed
 - keep governance detail after the orientation, not before it
 ### 8) Stage progression, whole set, and continuation
@@ -95,7 +98,7 @@ Required guidance:
 - keep tone calm, low-drama, and practical
 ---
 ## Application Rules
-Use stronger clarity when something unexpected was found, status could be misunderstood, or impact/next action is not obvious. Use stronger evidence wording when reporting findings/status, root cause or uncertainty, factual agreement/contradiction, non-findings, recommendation/design grounding, or phase-backed closeout.
+Use stronger clarity when something unexpected was found, status could be misunderstood, or impact/next action is not obvious. Use stronger evidence wording when reporting findings/status, root cause or uncertainty, coding verification/debug/TestKit closeout, factual agreement/contradiction, non-findings, recommendation/design grounding, or phase-backed closeout.
 
 For proof-aware analysis, separate checked evidence from assumptions, say when evidence is only grounding input, and identify hard constraints only when proof supports that status. For phase-backed closeout, state practical delivery and impact without upgrading edited/partially verified work into working, fixed, or stable claims. Use post-compact and memory disclosure when exact state may have been compressed or recalled rather than freshly checked.
 
@@ -135,6 +138,7 @@ Post-compact/memory: current objective / carried-forward facts / needs-recheck /
 | Anti-pattern | Better approach |
 |---|---|
 | “Fixed!” before verification supports it | state edited/tested/working/stable status precisely |
+| fake/local TestKit or focused tests reported as live/provider/runtime proof | state fake/local coverage and name the live/provider/runtime scope that remains unverified |
 | factual agreement, contradiction, or user-directed verdict without evidence | acknowledge, verify, cite contrary evidence, or preserve uncertainty |
 | user preference, inference, hypothesis, or scoped non-finding treated as fact/proof/absence | label claim state and checked scope |
 | unchecked recommendation or ordinary evidence as rigid lock | seek bounded evidence; label assumptions; bind only real constraints |
@@ -156,6 +160,7 @@ Post-compact/memory: current objective / carried-forward facts / needs-recheck /
 ---
 ## Integration
 Related rules:
+- [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) - supplies coding-time verification/debug/TestKit evidence boundaries for edited/tested/fake-local/live/fixed/stable wording
 - [evidence-grounded-burden-of-proof.md](evidence-grounded-burden-of-proof.md) - evidence taxonomy and burden thresholds for factual endorsement and contradiction
 - [zero-hallucination.md](zero-hallucination.md) - verify-first factual discipline and unsupported factual-endorsement hallucination risk
 - [anti-sycophancy.md](anti-sycophancy.md) - evidence-calibrated agreement/disagreement posture

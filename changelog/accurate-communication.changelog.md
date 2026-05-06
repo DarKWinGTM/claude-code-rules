@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.20
+> **Current Version:** 2.21
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.21 | 2026-05-06 | **[Aligned coding closeout wording to verification evidence strength](#version-221)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added coding verification/debug/TestKit closeout wording so edited, focused-tested, fake/local verified, smoke checked, live verified, fixed, stable, and not-tested claims do not outrun the evidence held | |
 | 2.20 | 2026-04-30 | **[Added proof-aware recommendation and design wording](#version-220)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added wording that separates checked evidence, assumptions, hard constraints, and open trade-offs when evidence grounds analysis, recommendation, design, or disagreement | |
 | 2.19 | 2026-04-30 | **[Added evidence-calibrated agreement wording](#version-219)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -59,6 +61,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-221"></a>
+## Version 2.21: Aligned coding closeout wording to verification evidence strength
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `accurate-communication.md` from v2.20 to v2.21.
+- Updated `design/accurate-communication.design.md` from v2.20 to v2.21.
+- Added coding closeout wording boundaries for edited, focused-tested, fake/local verified, smoke checked, live verified, fixed, stable, and not-tested states.
+- Clarified that fake/local TestKit or focused tests do not prove live provider/runtime/deploy behavior.
+- Deferred coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `development-verification-and-debug-strategy.md`.
+
+### Summary
+Accurate-communication now consumes the development verification owner’s evidence boundaries so coding progress reports do not turn edits, partial tests, or fake/local scenarios into stronger fixed, stable, or live-verified claims.
 
 ---
 

@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.22
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+> **Current Version:** 2.23
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, visibly links phase-backed live task entries to active or implied phase context, and resolves tracking posture early when meaningful governed work genuinely needs visibility.
+Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, keeps material coding verification slices visible when implementation and verification are distinct outcomes, visibly links phase-backed live task entries to active or implied phase context, and resolves tracking posture early when meaningful governed work genuinely needs visibility.
 
 ---
 
@@ -86,6 +86,7 @@ Built-in task-list usage is expected by default when one or more are true:
 - the work spans multiple files or multiple execution stages
 - the work is likely to continue across multiple execution slices
 - the user would materially benefit from seeing pending / in_progress / completed state live
+- implementation and verification are distinct material outcomes in non-trivial coding work
 - an active phase already exists for the work
 - the checked project/workstream context already shows a clearly phase-shaped or staged execution pattern even if the exact next phase file has not been opened yet
 
@@ -149,6 +150,7 @@ When the built-in task list is in use:
 - create the task list early rather than after the work is already underway
 - mark a task `in_progress` when real work on that slice begins
 - mark a task `completed` as soon as that slice is actually done
+- preserve or add a visible verification slice when non-trivial coding implementation is done but targeted verification remains material
 - add new tasks when newly discovered work is real and non-trivial
 - keep task entries outcome-sized rather than command-sized
 - when the checked project/workstream context is already phase-shaped, keep task creation aligned to the current active phase or clearly implied current stage/family even if the exact next phase file is still pending
@@ -202,6 +204,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 - [ ] No dashboard or priority overhead is present
 - [ ] Tracking posture is resolved early when meaningful tracking is required
 - [ ] Built-in task list is used proactively for non-trivial work when live execution visibility materially helps
+- [ ] Non-trivial coding work preserves a visible verification slice when implementation and verification are distinct material outcomes
 - [ ] Task creation stays aligned to active phase or clearly implied staged/phase context when that context is already visible
 - [ ] Phase-backed or clearly phase-shaped task entries visibly expose phase context in subject or description
 - [ ] Task creation does not silently allocate a new major phase when `phase-implementation.md` lineage handling is needed
@@ -222,6 +225,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 | Durable-vs-live tracking role clarity | 100% |
 | Startup tracking posture resolved before drift when needed | 100% |
 | Proactive task-list usage on non-trivial work | High |
+| Visible verification slices for non-trivial coding work | High when implementation and verification are distinct material outcomes |
 | Current-phase-first task-list alignment | High when a phase is active |
 | Visible phase linkage for phase-backed task entries | High |
 | Task-list-driven new-major phase drift | 0 critical cases |
@@ -234,6 +238,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 
 | Document | Relationship |
 |----------|--------------|
+| [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Owns coding-time verification strategy; this design keeps material verification work visible in live task tracking |
 | [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup tracking posture resolution |
 | [phase-implementation.md](../phase-implementation.md) | Phase identity and major-vs-subphase lineage selection when task shaping reveals phase work |
 | [document-changelog-control.design.md](document-changelog-control.design.md) | Synchronization order and authority boundary |

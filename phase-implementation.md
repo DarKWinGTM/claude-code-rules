@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.27
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.27
+> **Current Version:** 2.28
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -106,6 +106,7 @@ Each executable child phase should define or map to:
 - action checklist and out-of-scope boundaries
 - affected artifacts
 - TODO and changelog coordination
+- Development Verification / TestKit Coverage or equivalent when coding verification materially affects exit criteria
 - verification, exit criteria, and closeout summary
 - risks/rollback notes
 - next possible phases
@@ -138,6 +139,8 @@ Guidance:
 
 Each child phase should define phase-level verification, closeout expectations, and local rollback/containment notes. `phase/SUMMARY.md` still owns end-to-end verification and overall rollback/containment behavior. Patch artifacts must remain outside the live phase-plan namespace.
 
+For phase-backed coding work, child phases should show `Development Verification / TestKit Coverage` or equivalent when verification materially affects exit criteria. Verification depth, debug signal selection, and TestKit/scenario decisions defer to `development-verification-and-debug-strategy.md`.
+
 Phase-backed closeout should report practical delivery, not only files/tasks/audit status: delivered feature/capability/behavior/governance improvement or verification gate; user/system impact; evidence-strength-aligned verification basis; and next phase state when relevant (`not started`, `draft/planned`, `selected`, `active`, or `none opened`). Keep closeout concise and do not force it onto trivial non-phase work.
 
 ---
@@ -151,6 +154,7 @@ Phase-backed closeout should report practical delivery, not only files/tasks/aud
 - [ ] sufficiently clear governed design synthesizes into phase summary, current child files, and current-phase live tasks without replacing design authority
 - [ ] patch-derived phase work shows explicit patch linkage and patch artifacts stay outside live phase workspace
 - [ ] child phases include required source references, execution fields, verification, rollback/risks, and closeout
+- [ ] phase-backed coding work includes Development Verification / TestKit Coverage or equivalent when material
 - [ ] closeout reports delivery, feature/improvement, impact, evidence-strength-aligned verification basis, and next phase state when relevant
 - [ ] task creation visibly links to active/implied phase context while authored future-phase context remains non-active until opened/selected
 
@@ -159,6 +163,7 @@ Phase-backed closeout should report practical delivery, not only files/tasks/aud
 ## Integration
 
 Related rules:
+- [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) - owns phase-backed coding verification strategy, debug signal selection, and TestKit/scenario decisions when material
 - [artifact-initiation-control.md](artifact-initiation-control.md) - startup phase posture
 - [document-patch-control.md](document-patch-control.md) - patch governance boundary
 - [project-documentation-standards.md](project-documentation-standards.md) - repository document model

@@ -1,12 +1,12 @@
 # Maintainable Code Structure and Decomposition
-> **Current Version:** 1.1
-> **Design:** [design/maintainable-code-structure-and-decomposition.design.md](design/maintainable-code-structure-and-decomposition.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/maintainable-code-structure-and-decomposition.design.md](design/maintainable-code-structure-and-decomposition.design.md) v1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/maintainable-code-structure-and-decomposition.changelog.md](changelog/maintainable-code-structure-and-decomposition.changelog.md)
 ---
 ## Rule Statement
 **Core Principle: During coding and refactoring, preserve maintainable code structure by assigning responsibilities clearly, decomposing only when it lowers real change cost, avoiding helper-function inflation and wrong abstractions, making important dependencies visible, using source comments for non-obvious purpose or constraints, and preserving behavior unless behavior change is explicit.**
-This rule owns coding-time responsibility boundaries, smell-triggered decomposition, smallest-useful-structure decisions, helper-function necessity, source-code comment discipline, anti-overengineering guardrails, and behavior-preserving refactor posture. It does not replace tactical/strategic convergence, project-specific architecture, testing ownership, evidence wording, durable project documentation, or user-directed implementation choices.
+This rule owns coding-time responsibility boundaries, smell-triggered decomposition, smallest-useful-structure decisions, helper-function necessity, source-code comment discipline, anti-overengineering guardrails, and behavior-preserving refactor posture. It does not replace tactical/strategic convergence, project-specific architecture, development verification/debug/testing strategy, evidence wording, durable project documentation, or user-directed implementation choices.
 ---
 ## Scope Boundary
 Apply this rule when writing, modifying, reviewing, or refactoring code whose structure can affect future readability, testing, extension, repair, or blast radius.
@@ -99,6 +99,7 @@ Required guidance:
 - separate structural refactor from behavior change when practical
 - use small transformations rather than broad rewrites when behavior risk is high
 - run relevant tests, type checks, lint, or bounded verification when available
+- defer verification depth, debug signal selection, and TestKit/scenario decisions to `development-verification-and-debug-strategy.md` when behavior risk is material
 - if verification is incomplete, report the limit instead of claiming the code is fixed, clean, or stable
 
 ### 10) Tactical/strategic integration principle
@@ -169,7 +170,7 @@ When this rule materially applies:
 5. avoid helper inflation, speculative abstractions, and wrong DRY extractions
 6. add or update concise comments only for useful purpose/process/boundary information
 7. preserve behavior during refactor unless behavior change is explicit
-8. verify with relevant checks when available and report limits honestly
+8. use `development-verification-and-debug-strategy.md` to choose proportionate checks when behavior risk is material, then report verification limits honestly
 
 Verification checklist:
 - [ ] responsibilities and reasons to change are clear
@@ -179,6 +180,7 @@ Verification checklist:
 - [ ] helpers earn their indirection cost
 - [ ] dependencies, state flow, and useful source comments are clear enough to test/reason about
 - [ ] refactors preserve behavior unless behavior change is explicit
+- [ ] verification strategy/depth is delegated to the development verification owner when material
 - [ ] relevant checks, verification limits, and tactical convergence debt are reported
 ---
 ## Quality Metrics
@@ -186,6 +188,7 @@ Quality target: high responsibility clarity, smell-triggered judgment, smallest-
 ---
 ## Integration
 Related rules:
+- [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) - owns coding-time verification strategy, debug/testing depth, TestKit/scenario decisions, and evidence-calibrated coding closeout
 - [tactical-strategic-programming.md](tactical-strategic-programming.md) - owns tactical entry, strategic target, and convergence path
 - [goal-set-review-and-priority-balance.md](goal-set-review-and-priority-balance.md) - keeps structure-first work balanced against the full objective set
 - [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - owns portable/environment binding beyond local structure decisions

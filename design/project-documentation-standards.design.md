@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.33
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+> **Current Version:** 2.34
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
@@ -25,6 +25,7 @@ This model must preserve one authority system while clearly separating:
 - `patch/done/` as inactive-by-default completed patch history
 - `phase-implementation-template.md` as the readable root-level helper
 - Claude Code's built-in task list as the live in-session execution surface for non-trivial work, with visible phase pointers when the work is phase-backed
+- `development-verification-and-debug-strategy.md` as the coding-time verification strategy owner whose material coverage should stay aligned across governed phase, TODO, changelog, and closeout surfaces
 - `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
 - `changelog/done/` as inactive-by-default completed/older changelog history while active changelogs keep version authority and navigation
 - design as active blueprint/target-state authority with no default `design/done/` pattern
@@ -87,6 +88,7 @@ It is not a version-authority document.
 Claude Code's built-in task list is the live in-session execution surface for active non-trivial work.
 It does not replace `TODO.md`, and `TODO.md` does not replace live task visibility during active work.
 For non-trivial phase-backed work, built-in task entries should visibly point to active or clearly implied phase context in the subject or description while remaining live execution pointers rather than phase authority.
+For non-trivial coding work, live task entries should preserve material verification slices when implementation and verification are distinct outcomes.
 Visible session ownership should remain a default board-facing standard for session-owned task-list work whether the current task list is being used by one session or several.
 
 ### 3.6 Phase Summary Role
@@ -321,6 +323,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Newly encountered unclear files are checked against master surfaces before they are treated as junk/disposable/non-governed
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] Phase-backed built-in task entries visibly point to active or implied phase context without becoming phase authority
+- [ ] Governed coding phases keep material Development Verification / TestKit Coverage aligned across phase, TODO, changelog, and closeout surfaces
 - [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
 - [ ] Phase file creation/selection defers to `phase-implementation.md` major-vs-subphase lineage handling
 - [ ] Phased work uses `phase/SUMMARY.md`
@@ -359,6 +362,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Startup artifact posture resolved before drift | 100% |
 | Live task-vs-durable TODO distinction clarity | High |
 | visible phase linkage without task-list phase authority drift | High |
+| Development Verification / TestKit Coverage alignment across governed coding surfaces | High when material |
 | Execution-discovery surface clarity during active execution | High |
 | Public onboarding/install portability | High |
 | Workstation-specific absolute paths as public defaults | 0 critical cases |
@@ -377,10 +381,11 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [document-changelog-control.md](../document-changelog-control.md) | Version authority contract and `changelog/done/` completed history boundary |
 | [document-design-control.md](../document-design-control.md) | Design structure standards and no-default-`design/done/` boundary |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary, explicit before/after patch contract, and `patch/done/` history boundary outside live phase planning |
-| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, visible phase-linked live tasks, `phase/done/` history boundary, and one-way design/patch source synthesis |
+| [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Coding-time verification strategy owner; repository docs keep material verification coverage aligned across phase, TODO, changelog, and closeout surfaces |
+| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, visible phase-linked live tasks, Development Verification / TestKit Coverage, `phase/done/` history boundary, and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, source-owned install scope, shared destination, and other-owner runtime reference consistency |
-| [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, visible phase context, and same-objective continuity |
+| [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, visible phase context, material verification slices, and same-objective continuity |
 | [rules-plugin-extension.design.md](rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active shared-board/plugin/runtime coordination does not remain part of Main RULES current doctrine |
 
 ---

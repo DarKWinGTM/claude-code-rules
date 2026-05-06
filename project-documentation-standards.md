@@ -1,6 +1,6 @@
 # Project Documentation Standards
-> **Current Version:** 2.33
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.33
+> **Current Version:** 2.34
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.34
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
@@ -92,6 +92,7 @@ Required guidance:
 - Required document set, versions, metadata, full-history links, parent links, and active session IDs align with the governing chain. Active metadata must use real session identifiers; placeholders are not valid in active governed artifacts.
 - Phase records preserve live phase workspace boundaries, current/future phase distinction, and enough lineage for major-vs-subphase decisions.
 - Patch artifacts stay outside live phase namespace, remain before/after review surfaces, and show phase-to-patch linkage when patch participates.
+- Governed coding phases keep development verification/TestKit coverage expectations aligned across phase, TODO, changelog, and closeout surfaces when verification materially affects exit criteria; detailed strategy defers to `development-verification-and-debug-strategy.md`.
 - Built-in task lists remain live tracking, normally reused/extended within one active objective, visibly phase-linked for non-trivial phase-backed work, and never downgrade required design/changelog/TODO/phase/patch surfaces.
 - Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES scope; helper/support/extension artifacts stay non-governed unless intentionally promoted. If those mechanisms need authority later, promote them through an explicit governed chain rather than by side-effect reference.
 ---
@@ -99,6 +100,7 @@ Required guidance:
 - [ ] Required document set, versions, metadata, full-history/parent links, and active session IDs align.
 - [ ] Startup posture is resolved; required governed companions and live task tracking are not downgraded.
 - [ ] Phase-backed live task entries visibly point to active or implied phase context without becoming phase authority.
+- [ ] Governed coding phases keep material Development Verification / TestKit Coverage aligned across phase, TODO, changelog, and closeout surfaces.
 - [ ] Active design/changelog, phase, patch, TODO, and completed-history boundaries remain distinct.
 - [ ] Phase lineage and phase file selection defer to `phase-implementation.md`.
 - [ ] Patch surfaces stay self-identifying, before/after-oriented, and outside live phase planning.
@@ -123,10 +125,11 @@ Required guidance:
 | [document-changelog-control.md](document-changelog-control.md) v4.8 | version authority and `changelog/done/` completed history boundary |
 | [document-design-control.md](document-design-control.md) v1.10 | design structure and no-default-`design/done/` boundary |
 | [document-patch-control.md](document-patch-control.md) v2.7 | patch boundary, before/after contract, and `patch/done/` completed history boundary |
-| [phase-implementation.md](phase-implementation.md) v2.27 | phased execution semantics, major-vs-subphase lineage selection, visible phase-linked live tasks, and `phase/done/` completed history boundary |
+| [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) v1.0 | coding-time verification strategy, debug signal selection, testing depth, and TestKit/scenario decision owner |
+| [phase-implementation.md](phase-implementation.md) v2.28 | phased execution semantics, major-vs-subphase lineage selection, visible phase-linked live tasks, Development Verification / TestKit Coverage, and `phase/done/` completed history boundary |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | portable shared-artifact defaults |
 | [document-consistency.md](document-consistency.md) v1.8 | source/destination and source-owned/shared-destination reference consistency |
-| [todo-standards.md](todo-standards.md) v2.22 | TODO structure, startup bridge, and visible phase context in live task entries |
+| [todo-standards.md](todo-standards.md) v2.23 | TODO structure, startup bridge, visible phase context, and material verification slices in live task entries |
 | [design/rules-plugin-extension.design.md](design/rules-plugin-extension.design.md) | historical plugin-extension boundary; active plugin/runtime coordination is not Main RULES doctrine |
 ---
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)

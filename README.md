@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.85</b><br><sub>Current Release</sub>
+  <b>v9.86</b><br><sub>Current Release</sub>
 </td>
 <td align="center" width="200">
-  <b>43</b><br><sub>Active Runtime Rules</sub>
+  <b>44</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
   <b>Released</b><br><sub>Runtime Verified</sub>
 </td>
 <td align="center" width="200">
-  <b>Phase-visible tasks</b><br><sub>P076-03 Linkage</sub>
+  <b>Verification strategy</b><br><sub>P084-01 Coding Proof</sub>
 </td>
 </tr>
 </table>
@@ -109,6 +109,7 @@ rule_files=(
   functional-intent-verification.md
   memory-governance-and-session-boundary.md
   maintainable-code-structure-and-decomposition.md
+  development-verification-and-debug-strategy.md
   natural-professional-communication.md
   native-worker-agent-routing-and-context-control.md
   no-variable-guessing.md
@@ -174,6 +175,7 @@ $ruleFiles = @(
   "functional-intent-verification.md",
   "memory-governance-and-session-boundary.md",
   "maintainable-code-structure-and-decomposition.md",
+  "development-verification-and-debug-strategy.md",
   "natural-professional-communication.md",
   "native-worker-agent-routing-and-context-control.md",
   "no-variable-guessing.md",
@@ -206,7 +208,7 @@ foreach ($file in $ruleFiles) {
 
 - Already cloned the repo? Skip the clone step and run the install block only.
 - Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/`.
-- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 43-file source-owned set are not cleanup targets by default.
+- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 44-file source-owned set are not cleanup targets by default.
 
 ### 🤖 AI-Assisted Install Prompts
 
@@ -306,7 +308,7 @@ Please:
 <td width="50%">
 
 #### Runtime Context Discipline
-- 43 active runtime rules only
+- 44 active runtime rules only
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -316,6 +318,7 @@ Please:
 - P076-02 source governance is synchronized for v9.83 with lineage-first current-phase/subphase/new-major phase identity selection; active runtime count remains 43; runtime install/parity passed, git push completed, and GitHub release `v9.83` is published
 - P073-09 refreshed active runtime compression is synchronized for v9.84: 43 source-owned runtime rules were reduced from 42,961 to 35,017 words, producing a 7,944-word reduction inside the accepted 7,580-7,944 range; behavior-anchor, golden-scenario, source-boundary, and 43/43 runtime parity audits passed, with destination extras observed-only
 - P076-03 phase-visible task linkage is synchronized for v9.85: phase-backed live task entries must visibly expose active or clearly implied phase context in the subject or description; active runtime count remains 43 and 43/43 runtime install parity has passed
+- P084-01 development verification and debug strategy is synchronized for v9.86: non-trivial coding work now has a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout; active runtime count is 44 and 44/44 runtime install/parity has passed with destination extras observed-only
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -343,7 +346,7 @@ Please:
 
 ---
 
-### 🟡 Quality & Safety (31 rules)
+### 🟡 Quality & Safety (32 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
@@ -363,7 +366,8 @@ Please:
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, honest source-conflict handling, and external evidence grounding for recommendation/design judgments |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Clarifies destructive, ambiguous, or high-impact intent before execution, with a real delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep any optional external recall generic, supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
-| [`maintainable-code-structure-and-decomposition.md`](maintainable-code-structure-and-decomposition.md) | Maintainable code structure | Owns coding-time responsibility boundaries, maintainability as future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comment discipline, God function/file pressure, wrong-abstraction avoidance, explicit dependency/state boundaries, behavior-preserving refactor posture, and tactical structure-debt convergence without rigid line-count or architecture-template rules |
+| [`maintainable-code-structure-and-decomposition.md`](maintainable-code-structure-and-decomposition.md) | Maintainable code structure | Owns coding-time responsibility boundaries, maintainability as future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comment discipline, God function/file pressure, wrong-abstraction avoidance, explicit dependency/state boundaries, behavior-preserving refactor posture, verification-strategy deferral, and tactical structure-debt convergence without rigid line-count or architecture-template rules |
+| [`development-verification-and-debug-strategy.md`](development-verification-and-debug-strategy.md) | Development verification strategy | Owns proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and closeout wording that does not treat edits as proof |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including duplicate-looking Team Agent handling that treats stale or duplicate-looking presence as inspect-before-respawn rather than respawn-first churn |
 | [`phase-implementation.md`](phase-implementation.md) | Phase planning semantics | First-class `/phase` + `SUMMARY.md` model with major/subphase identities, lineage-first current-phase/subphase/new-major selection before opening a fresh major phase, design-to-phase execution synthesis when staged execution is warranted, current-phase-first, phase-context-aware, and phase-visible live task-list linkage, explicit phase-to-patch linkage when patch is in scope, `phase/done/` as inactive completed phase history, phase closeout reporting that states delivered work/impact/verification/next state, bounded next-work discovery from active phase surfaces, and session-aligned wording for phase-linked task entries |
 | [`runtime-topology-control.md`](runtime-topology-control.md) | Runtime topology discipline | Bounded inspect-first, one-authority-at-a-time runtime mutation posture that prevents debug-by-expansion and requires explicit approval for additive or authority-changing topology moves |
@@ -408,16 +412,16 @@ Please:
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 43**
+**📊 Active Runtime Rules: 44**
 
-Latest refinement: P076-03 makes phase-backed live task entries visibly carry active or clearly implied phase context in the subject or description. The active runtime set remains 43 files, and the v9.85 install/parity gate has verified 43/43 source-owned runtime rule copies with destination extras observed-only.
+Latest refinement: P084-01 adds the first-class development verification and debug strategy owner so non-trivial coding work carries proportionate debug/testing/TestKit verification planning and evidence-calibrated closeout. The active runtime set is 44 files, and the v9.86 install/parity gate verified 44/44 source-owned runtime rule copies with destination extras observed-only.
 </div>
 
 ---
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 43-rule set and describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 44-rule set and describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 
@@ -1117,10 +1121,10 @@ Result: ✅ Verified from actual files
 
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
-| Active runtime scope | 43 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, and P076-03 install parity were verified after explicit install gates; P076-03 keeps the active runtime count at 43 and verifies 43/43 source-owned runtime rule parity with destination extras observed-only | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
+| Active runtime scope | 44 source-owned root rule files | Keeps install scope explicit |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, and P076-03 install parity were verified after explicit install gates; P084-01 raises the active runtime count to 44 and has verified 44/44 source-owned runtime parity while keeping destination extras observed-only | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
-| Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, and non-trivial phase-backed task entries visibly carry phase context | Reduces retrospective phase backfill, new-major bias, and generic phase-hidden live tasks |
+| Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, and edit-only coding closeout |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
 | Shared destination boundary | Co-located runtime files outside the source-owned set are not cleanup targets by default | Prevents other-owner file damage |
 
@@ -1209,8 +1213,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.85 |
-  <b>Last Updated</b>: 2026-05-04 |
+  <b>Version</b>: 9.86 |
+  <b>Last Updated</b>: 2026-05-06 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

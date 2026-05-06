@@ -1,6 +1,6 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.11
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.11
+> **Current Version:** 1.12
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.12
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
@@ -29,6 +29,7 @@ Execution readiness does not bypass `artifact-initiation-control.md`. Resolve ma
 ### Continuous execution
 When execution mode is active, startup posture is resolved enough, and no real stop gate exists, continue the active objective.
 - continue when the next step is implied by active goal, phase, task list, TODO, or checked implementation state
+- when implementation is complete but material verification/debug/TestKit evidence remains pending, continue into the proportionate verification slice when safe
 - do not end a turn only to report a milestone if safe continuation exists
 - do not pause to expose an obvious task when the assistant can do it directly
 - status may clarify changes/completion/blockers, but reporting alone must not become the stop reason
@@ -58,7 +59,7 @@ Continuous execution must not turn the next broad slice into default leader-sess
 ## Legitimate Stop Gates
 Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion.
 
-Completing one slice is not a stop by itself. Continue into the next slice when it is already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff-style report; and do not auto-promote draft-only, future-only, or unselected phases.
+Completing one slice is not a stop by itself. Implementation complete but material verification pending is not active objective completion unless verification is blocked, not applicable with reason, approval-sensitive, or already satisfied by the evidence held. Continue into the next slice when it is already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff-style report; and do not auto-promote draft-only, future-only, or unselected phases.
 
 Re-check mode when the user changes scope, corrects intent, provides evidence from another session, or shifts between behavior analysis and project execution. Move back to discussion mode only for real new ambiguity, design work, behavior/RULES analysis, or user direction. Do not let habit, ceremony, or milestone reporting reset execution mode.
 ---
@@ -71,6 +72,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | unresolved startup gate | resolve startup posture before execution drift |
 | clear active phase/task path | continue rather than stop on narration |
 | discoverable unfinished work | inspect execution surfaces and continue if safe |
+| implementation completed but material verification remains | continue into the proportionate verification slice when safe, or state the blocker/not-applicable reason |
 | phase-shaped follow-up | apply phase lineage handling before opening a new major phase and preserve visible phase linkage in created/extended task entries |
 | broad/noisy next slice | apply worker routing before broad leader-session absorption |
 | milestone-only pause drift | continue after reporting when safe |
@@ -79,7 +81,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | approval-sensitive step | stop for confirmation under stronger rule |
 ---
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, new-major allocation by momentum, phase-shaped continuation tasks that hide their phase context, skipped worker routing, and treating teammate/Agent Team restriction as an all-subagent ban.
+Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when material verification remains safe, new-major allocation by momentum, phase-shaped continuation tasks that hide their phase context, skipped worker routing, and treating teammate/Agent Team restriction as an all-subagent ban.
 ---
 ## Quality Metrics
 | Metric | Target |
@@ -88,6 +90,7 @@ Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, e
 | Intent recheck before project exploration | High |
 | Unnecessary milestone-only pauses | Low |
 | Continuous execution after clear next step | High |
+| Continuation into material verification after implementation | High when safe and not blocked |
 | Worker-routing gate respected before broad continuation | High |
 | Visible phase linkage preserved during phase-shaped continuation | High |
 | Execution during unresolved design/behavior discussion | 0 critical cases |
@@ -95,6 +98,7 @@ Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, e
 ---
 ## Integration
 Related rules:
+- [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) - owns the proportionate verification/debug/TestKit strategy that execution continuity continues into when implementation is done but evidence remains pending
 - [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns intent-first worker routing, subagent-first scale gating, and leader-context control before broad leader-session absorption
 - [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
 - [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording

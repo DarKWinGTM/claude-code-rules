@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.27
+> **Current Version:** 2.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.28 | 2026-05-06 | **[Added material development verification coverage to phase-backed coding work](#version-228)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added Development Verification / TestKit Coverage expectations for phase-backed coding work when verification materially affects exit criteria, while keeping the detailed strategy with the new verification/debug owner | |
 | 2.27 | 2026-05-04 | **[Required visible phase linkage in phase-backed live tasks](#version-227)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Strengthened the live task-list linkage contract so non-trivial phase-backed task entries visibly expose active or implied phase context in subject or description, with `phase_ref` or equivalent fallback when subject grammar conflicts | |
 | 2.26 | 2026-05-04 | **[Added lineage-first major-vs-subphase selection](#version-226)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -41,6 +43,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-228"></a>
+## Version 2.28: Added material development verification coverage to phase-backed coding work
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.27 to v2.28.
+- Updated `design/phase-implementation.design.md` from v2.27 to v2.28.
+- Added `Development Verification / TestKit Coverage` or equivalent as material child-phase content for phase-backed coding work.
+- Clarified that phase records should preserve verification coverage when it affects exit criteria, while verification depth, debug signal selection, and TestKit/scenario decisions defer to `development-verification-and-debug-strategy.md`.
+- Preserved phase-visible live task linkage, lineage-first phase identity, and evidence-strength-aligned closeout behavior.
+
+### Summary
+Phase-implementation now makes material development verification visible in phase-backed coding phases without making every phase create TestKit artifacts or replacing the dedicated verification strategy owner.
 
 ---
 

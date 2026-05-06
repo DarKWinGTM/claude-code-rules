@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.20
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-30)
+> **Current Version:** 2.21
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
@@ -15,6 +15,7 @@ Define one communication rule chain that keeps responses clear, context-complete
 This chain is the wording owner for:
 - communication clarity
 - verification-status phrasing
+- coding closeout wording that separates edited, focused-tested, fake/local verified, smoke checked, live verified, fixed, stable, and not-tested states
 - claim-state communication shape
 - acknowledgement-without-endorsement and evidence-backed agreement wording
 - proof-aware recommendation/design wording that separates checked evidence, assumptions, hard constraints, and open trade-offs
@@ -33,7 +34,7 @@ This chain is the wording owner for:
 - main-point-first operational framing so diagnosis/test/recommendation/proposal/update answers state what they are doing before the supporting detail expands
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
 
-This chain now defers bounded technical snapshot wording to `technical-snapshot-communication` and end-of-response closing / action / proposal framing to `response-closing-and-action-framing`.
+This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `development-verification-and-debug-strategy`, bounded technical snapshot wording to `technical-snapshot-communication`, and end-of-response closing / action / proposal framing to `response-closing-and-action-framing`.
 
 It should work with, not replace, the evidence-threshold semantics now owned by `evidence-grounded-burden-of-proof`.
 
@@ -46,6 +47,7 @@ Communication failures are often not just factual failures. They are also wordin
 Observed failure modes:
 - status messages omit enough context for the recipient to understand impact or action
 - success claims are stated more strongly than the available verification supports
+- edited-only coding work is reported as fixed, or fake/local TestKit evidence is reported as live/provider/runtime proof
 - inference and hypothesis are phrased as fact
 - user preferences or directions are phrased as factual proof
 - unverified user assertions are endorsed as correct because agreement feels smoother
@@ -266,6 +268,7 @@ Use stronger clarity behavior when:
 Use stronger wording discipline when:
 - reporting technical findings or implementation status
 - summarizing debugging conclusions
+- reporting coding verification/debug/TestKit closeout where edited/tested/fake-local/live/stable scope could be confused
 - agreeing with or endorsing a factual claim
 - accepting a user preference or direction that could be confused with factual proof
 - grounding a recommendation or design in evidence
@@ -417,6 +420,7 @@ Not allowed:
 |--------------|--------------|--------------|
 | vague problem statement with no impact | recipient must ask follow-up questions just to understand the situation | include impact and action when needed |
 | claiming "fixed" before verification supports it | creates false completion confidence | state the actual verification state |
+| fake/local TestKit or focused tests presented as live provider/runtime/deploy proof | turns bounded local evidence into false operational proof | state what fake/local checks covered and what live/provider/runtime scope remains unverified |
 | factual agreement without evidence | turns user assertion into assistant-endorsed fact | acknowledge or verify before endorsement |
 | user preference treated as factual proof | confuses direction with evidence | accept direction separately from factual claims |
 | recommendation from unchecked assumption when practical evidence is available | weakens analysis and standards-based design | seek bounded evidence or label the assumption |
@@ -462,6 +466,7 @@ Not allowed:
 | Rule | Relationship |
 |------|--------------|
 | [../accurate-communication.md](../accurate-communication.md) | Runtime implementation |
+| [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Supplies coding-time verification/debug/TestKit evidence boundaries that this design turns into edited/tested/fake-local/live/fixed/stable wording |
 | [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns evidence taxonomy, proof-aware reasoning, burden-of-proof thresholds for factual endorsement and contradiction, and negative-evidence semantics |
 | [zero-hallucination.design.md](zero-hallucination.design.md) | Verification honesty depends on verify-first factual discipline and unsupported factual-endorsement risk handling |
 | [anti-sycophancy.design.md](anti-sycophancy.design.md) | Prevents comfort-first agreement drift and unsupported contradiction drift |

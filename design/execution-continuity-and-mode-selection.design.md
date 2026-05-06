@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.11
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+> **Current Version:** 1.12
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, does not let execution continuity bypass startup artifact governance, does not let broad continuation bypass native worker routing, does not let phase-shaped continuation allocate new major phases without phase lineage selection, and preserves visible phase linkage when continuation creates or extends phase-backed task entries.
+Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, continues from implementation into material verification when safe, does not let execution continuity bypass startup artifact governance, does not let broad continuation bypass native worker routing, does not let phase-shaped continuation allocate new major phases without phase lineage selection, and preserves visible phase linkage when continuation creates or extends phase-backed task entries.
 
 ---
 
@@ -20,6 +20,7 @@ Observed failure modes:
 - the assistant reports that one milestone or phase is complete, names the next obvious task, and then stops instead of continuing
 - users must repeatedly send prompts like `เดินต่อ` or `ถ้าไม่เจอปัญหาอะไรให้ loop ต่อ` even when the next path is already clear
 - execution-ready work may still stall because the assistant waits for the user to restate the next unfinished slice even though phase/TODO/task/design/checked implementation surfaces already reveal it
+- implementation can be reported as done while material verification/debug/TestKit evidence is still the implied safe next slice
 - open design discussion and execution-ready work are not separated sharply enough, so the assistant either executes too early or hesitates too long
 - behavior/RULES analysis can be misclassified as project execution when the user pastes logs, file paths, or snippets from another session
 - phase boundaries become reporting pauses even when no real blocker or approval gate exists
@@ -46,7 +47,7 @@ Discussion mode protects open concept/design/behavior work from premature execut
 Execution readiness should not be treated as permission to bypass unresolved startup artifact posture.
 
 ### 3.5 Continuous-Execution Default Principle
-Execution mode should continue by default when no real stop gate exists and startup posture is already resolved enough for the active governed slice.
+Execution mode should continue by default when no real stop gate exists and startup posture is already resolved enough for the active governed slice. If implementation is complete but material verification/debug/TestKit evidence remains pending, the next safe slice is verification rather than an edit-only stop.
 
 ### 3.6 Active Next-Work Discovery Principle
 Execution mode should actively inspect the current execution surfaces to discover the next unfinished slice when the task list alone does not already make it obvious.
@@ -61,7 +62,7 @@ Execution continuity should not make broad, noisy, context-heavy, high-output, m
 Execution continuity should not turn same-family phase-shaped follow-up work into a new major phase by momentum. When next work needs phase identity selection, `phase-implementation.md` should decide current phase update, existing-family subphase, new major phase, or ask-now lineage handling. When continuation creates or extends phase-backed task entries, those entries should preserve visible phase linkage in the subject or description rather than becoming generic next-work tasks.
 
 ### 3.9 Legitimate Stop-Gate Principle
-Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, actual completion, or a required knowledge-capture gate.
+Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, actual completion, or a required knowledge-capture gate. Implementation-only completion is not actual completion when material verification remains safe, relevant, and unresolved.
 
 ### 3.10 Phase-Boundary Continuity Principle
 Closing one slice should not force a pause if the next slice is already the implied active path.
@@ -95,6 +96,10 @@ Is a real stop gate active?
   → Yes: stop for blocker/approval/basis/ambiguity/completion
   → No: continue
   ↓
+Is implementation complete but material verification remains implied and safe?
+  → Yes: continue into verification via `development-verification-and-debug-strategy.md`
+  → No: continue
+  ↓
 Does the next slice require phase identity selection or a phase-shaped continuation decision?
   → Yes: apply `phase-implementation.md` current-phase/subphase/new-major lineage handling, then continue on selected path
   → No: continue
@@ -112,6 +117,7 @@ This chain owns:
 - discussion-mode versus execution-mode selection
 - intent recheck before project exploration when user evidence could be misread
 - continuous-execution default behavior
+- continuation from implementation into material verification when no real stop gate exists
 - active next-work discovery from current execution surfaces once execution mode is already active
 - legitimate stop-gate classification at the execution-flow level
 - the rule that milestone reporting does not itself force a pause
@@ -123,6 +129,7 @@ It does not replace:
 - presentation wording
 - task-list mechanics
 - phase identity semantics and visible phase-linkage rules, including current phase versus subphase versus new-major selection, which defer to `phase-implementation.md`
+- development verification strategy, debug signal selection, testing depth, and TestKit/scenario decisions, which defer to `development-verification-and-debug-strategy.md`
 - approval/confirmation mechanics
 - native worker routing and leader-context control, which defer to `native-worker-agent-routing-and-context-control.md`
 - shared-board, plugin, and external coordination/runtime mechanics, including any discontinued custom recall/skill paths, which stay outside Main RULES scope

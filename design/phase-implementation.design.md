@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.27
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+> **Current Version:** 2.28
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, records material Development Verification / TestKit Coverage for phase-backed coding work, and closes phase-backed work with practical delivery/impact reporting rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -150,6 +150,7 @@ Patch artifacts remain outside the live phase-plan namespace.
 - summary-level design and patch source inputs when relevant
 - TODO/changelog companion coordination when the concern is global
 - end-to-end verification requirements
+- Development Verification / TestKit Coverage expectations when phase-backed coding verification materially affects exit criteria
 - phase closeout expectations for delivered work, feature/improvement, impact, verification basis, and next phase state when relevant
 - overall rollback or containment behavior
 
@@ -176,6 +177,7 @@ Each executable child phase file should define or clearly map to:
 - Affected artifacts
 - TODO coordination
 - Changelog coordination
+- Development Verification / TestKit Coverage when coding verification materially affects exit criteria
 - Verification / evidence
 - Closeout summary: delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant
 - Exit criteria
@@ -251,6 +253,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 - [ ] active phase scans start with `phase/SUMMARY.md` and active child files before `phase/done/`
 - [ ] `phase/done/` is inactive-by-default history, not junk or deletion authority
 - [ ] patch artifacts remain outside the live phase workspace
+- [ ] phase-backed coding work includes Development Verification / TestKit Coverage or equivalent when verification materially affects exit criteria
 - [ ] phase-backed closeout reports delivered work, feature/improvement, impact, verification basis, and next phase state when relevant
 
 ---
@@ -271,6 +274,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 | Live phased execution files under patch artifacts | 0 |
 | Active phase scan bloat from completed phase history | Low |
 | Phase closeout delivery/impact clarity | High |
+| Development Verification / TestKit Coverage visibility in material coding phases | High |
 
 ---
 
@@ -278,6 +282,7 @@ This shape should remain concise and should not be forced onto trivial non-phase
 
 | Rule | Relationship |
 |------|--------------|
+| [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Owns coding-time verification strategy, debug signal selection, testing depth, and TestKit/scenario decisions that phase files record when material |
 | [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup owner for establishing or asking about `/phase` |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary outside live phase planning |
 | [project-documentation-standards.md](../project-documentation-standards.md) | Repository role model and startup artifact gate |

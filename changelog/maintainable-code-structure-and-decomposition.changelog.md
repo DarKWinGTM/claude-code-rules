@@ -1,7 +1,7 @@
 # Changelog - Maintainable Code Structure and Decomposition
 
 > **Parent Document:** [../maintainable-code-structure-and-decomposition.md](../maintainable-code-structure-and-decomposition.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,10 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-06 | **[Deferred coding verification strategy to the verification/debug owner](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Kept maintainable-code as the structure/refactor owner while delegating verification depth, debug signal selection, and TestKit/scenario decisions to the new development verification owner | |
 | 1.1 | 2026-05-04 | **[Added helper-function necessity and comment discipline](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Clarified that maintainable code structure avoids both God function/file drift and helper-function inflation, and added source-code comment guidance for purpose, process, constraints, side effects, and business rules without comment spam or stale comments | |
 | 1.0 | 2026-05-04 | **[Created maintainable code structure and decomposition owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class coding-structure rule that uses maintainability, responsibility, code-smell triggers, smallest-useful decomposition, wrong-abstraction avoidance, and behavior-preserving refactor guidance without rigid line-count or architecture-template doctrine | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Deferred coding verification strategy to the verification/debug owner
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `maintainable-code-structure-and-decomposition.md` from v1.1 to v1.2.
+- Updated `design/maintainable-code-structure-and-decomposition.design.md` from v1.1 to v1.2.
+- Clarified that this chain owns code responsibility, decomposition, helper necessity, source-code comment discipline, and behavior-preserving refactor posture.
+- Deferred verification depth, debug signal selection, and TestKit/scenario decisions to `development-verification-and-debug-strategy.md` when behavior risk is material.
+- Preserved evidence-honest reporting of unverified limits without turning maintainability guidance into a test-harness doctrine.
+
+### Summary
+Maintainable-code now keeps structural coding discipline separate from verification strategy: it preserves behavior and reports limits, while the new development verification owner decides proportionate debug/testing/TestKit coverage.
 
 ---
 

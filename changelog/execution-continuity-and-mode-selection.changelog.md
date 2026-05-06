@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-05-06 | **[Continued implementation work into material verification when safe](#version-112)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.11 | 2026-05-04 | **[Preserved visible phase linkage during continuation](#version-111)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.10 | 2026-05-04 | **[Added phase-lineage continuity boundary](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.9 | 2026-05-04 | **[Added intent recheck before project exploration](#version-19)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -23,6 +24,24 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Continued implementation work into material verification when safe
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.11 to v1.12.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.11 to v1.12.
+- Clarified that implementation complete but material verification pending is not actual completion when verification is safe, relevant, and unresolved.
+- Added a trigger to continue into the proportionate verification slice or state the blocker/not-applicable reason.
+- Deferred verification strategy, debug signal selection, testing depth, and TestKit/scenario decisions to `development-verification-and-debug-strategy.md`.
+
+### Summary
+Execution continuity now prevents edit-only stop drift by continuing from implementation into material verification when safe, while the development verification owner decides the proportionate debug/testing/TestKit strategy.
 
 ---
 

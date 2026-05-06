@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.57
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.27
+> **Current Version:** 1.58
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** Active summary synchronized through completed phase 076-03 phase-visible task linkage release
+> **Status:** Active summary synchronized through active phase 084-01 development verification and debug strategy release work
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -14,7 +14,7 @@ This phase workspace records governed RULES rollout programs using the active de
 - major phases use `NNN`
 - subphases use `NNN-NN`
 
-The current workspace currently indexes seventy-one visible rollout families:
+The current workspace currently indexes seventy-two visible rollout families:
 - major phase `001` = tactical-strategic-programming rollout
 - major phase `002` = natural-professional-communication rollout
 - major phase `003` = patch-model correction rollout
@@ -86,6 +86,7 @@ The current workspace currently indexes seventy-one visible rollout families:
 - major phase `081` = native worker routing capability and subagent-first refinement rollout
 - major phase `082` = maintainable code structure and decomposition rollout
 - major phase `083` = maintainable helper and comment discipline refinement rollout
+- major phase `084` = development verification and debug strategy rollout
 
 The goal of this summary is to index those rollout families without ambiguity, so the repository no longer relies on symbolic labels such as `P1/P2/P3/P4/P5` or flat child numbering that hides parent-child relationships.
 
@@ -345,6 +346,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 081 | 081-01 | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | `design/design.md` + `design/native-worker-agent-routing-and-context-control.design.md` + `design/custom-agent-selection-priority.design.md` + `design/execution-continuity-and-mode-selection.design.md` | `patch/native-worker-routing-capability-and-subagent-first-refinement.patch.md` | Refine native worker routing so intent is classified before project exploration, broad independent work is standalone-subagent-first, and custom-agent selection stays capability-fit downstream of routing | P081/v9.80 shipped intent-first, capability-based, subagent-first broad work with 42-file runtime parity verified and GitHub release `v9.80` published |
 | 082 | 082-01 | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | `design/design.md` + `design/maintainable-code-structure-and-decomposition.design.md` + `design/tactical-strategic-programming.design.md` | `patch/maintainable-code-structure-and-decomposition.patch.md` | Create the first-class maintainable code structure owner, integrate tactical/strategic boundary, sync master records, install/verify the 43-rule runtime set, push, and release | P082/v9.81 shipped the 43rd active runtime rule with source audit, semantic anchor audit, runtime install/parity, git push, and GitHub release `v9.81` complete |
 | 083 | 083-01 | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | `design/design.md` + `design/maintainable-code-structure-and-decomposition.design.md` | `patch/maintainable-helper-comment-discipline-refinement.patch.md` | Refine the maintainable code structure owner with helper-function necessity and source-code comment discipline, sync master records, install/verify the 43-rule runtime set, push, and release | P083/v9.82 shipped helper-function necessity and source-code comment discipline with 43-file runtime parity verified and GitHub release `v9.82` published |
+| 084 | 084-01 | `phase/phase-084-01-development-verification-and-debug-strategy.md` | `design/design.md` + `design/development-verification-and-debug-strategy.design.md` | `patch/development-verification-and-debug-strategy.patch.md` | Create the first-class coding verification strategy owner, sync adjacent owner chains, update v9.86 / 44-rule master records, install/verify runtime parity, push, and release | P084/v9.86 makes proportionate debug/testing/TestKit strategy and evidence-calibrated coding closeout a first-class RULES domain |
 
 ---
 
@@ -473,6 +475,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 081 | 081-01 | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | Approved | None | Approved As-Is | Owner-chain source/design/changelog updates, P081 phase/patch records, v9.80 master source sync, source audit, 42-file runtime install/parity, git push, and GitHub release `v9.80` are complete |
 | 082 | 082-01 | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | Approved | None | Approved As-Is | Source rule triad, tactical/strategic v1.3 integration, master source sync, source audit, semantic anchor audit, 43-file runtime install/parity, git push, and GitHub release `v9.81` are complete |
 | 083 | 083-01 | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | Approved | None | Approved As-Is | Maintainable-code v1.1 triad audit, master sync, 43-file runtime install/parity, git push, and GitHub release `v9.82` are complete |
+| 084 | 084-01 | `phase/phase-084-01-development-verification-and-debug-strategy.md` | Pending | None | In Progress | New verification owner triad, adjacent owner sync, master sync, and 44-file runtime install/parity are complete; push and release remain active gates |
 
 ---
 
@@ -605,6 +608,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 | 081 | 081-01 | Completed | `phase/phase-081-01-native-worker-routing-capability-and-subagent-first-refinement.md` | Refine native worker routing so user intent is classified before project exploration, broad independent work is standalone-subagent-first, worker choice is capability-based, and Agent Team workflow remains exceptional | `080-01` |
 | 082 | 082-01 | Completed | `phase/phase-082-01-maintainable-code-structure-and-decomposition.md` | Create a maintainable code structure owner so AI coding work handles responsibility boundaries, God function/file pressure, code smells, wrong abstractions, and behavior-preserving refactor guidance without rigid templates | `081-01` |
 | 083 | 083-01 | Completed | `phase/phase-083-01-maintainable-helper-comment-discipline-refinement.md` | Refine maintainable code structure so helpers are used only when they add semantic value and source-code comments explain useful hidden context without spam or stale claims | `082-01` |
+| 084 | 084-01 | In Progress | `phase/phase-084-01-development-verification-and-debug-strategy.md` | Add a first-class development verification/debug/TestKit strategy owner and synchronize v9.86 / 44-rule source/runtime release records | `083-01` |
 
 ---
 
@@ -620,6 +624,7 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - P076-02 touched chain changelogs record `phase-implementation` v2.26, `artifact-initiation-control` v1.7, `todo-standards` v2.21, `project-documentation-standards` v2.32, and `execution-continuity-and-mode-selection` v1.10; TODO, master changelog, README, phase, and patch surfaces record v9.83 / 43-rule source governance, runtime install/parity passed, git push completed, and GitHub release `v9.83` was published.
 - P073-09 master records describe the refreshed v9.84 active-runtime compression wave: 43 source-owned runtime rules, 42,961 → 35,017 source words, 7,944-word accepted reduction, behavior/golden/source-boundary audits passed, runtime install/parity passed 43/43, and destination extras preserved as observed-only.
 - P076-03 touched chain changelogs record `phase-implementation` v2.27, `todo-standards` v2.22, `artifact-initiation-control` v1.8, `project-documentation-standards` v2.33, and `execution-continuity-and-mode-selection` v1.11; TODO, master changelog, README, phase, and patch surfaces record v9.85 source governance, source audit, 43-file runtime install/parity, git push, and GitHub release `v9.85` as completed.
+- P084-01 touched chain changelogs record `development-verification-and-debug-strategy` v1.0, `maintainable-code-structure-and-decomposition` v1.2, `accurate-communication` v2.21, `phase-implementation` v2.28, `todo-standards` v2.23, `project-documentation-standards` v2.34, and `execution-continuity-and-mode-selection` v1.12; TODO, master changelog, README, phase, and patch surfaces record active v9.86 / 44-rule source governance and verified 44-file runtime install/parity before push and release gates close.
 
 ---
 
@@ -682,13 +687,14 @@ Need deterministic governed rollout identities across RULES phase artifacts
 - the maintainable helper and comment discipline refinement exists as bounded completed `083-01` work with explicit patch linkage, keeps the active runtime rule count at 43, refines the maintainable-code owner with helper-function necessity and source-code comment discipline, passed master sync and 43-file runtime install/parity, and published GitHub release `v9.82`
 - the major-vs-subphase lineage selection refinement exists as bounded completed `076-02` work with explicit patch linkage, keeps the active runtime rule count at 43, and refines phase/startup/task/documentation/execution-continuity owners so phase-shaped follow-up work checks lineage before opening a new major phase
 - the phase-visible task linkage refinement exists as bounded completed `076-03` work with explicit patch linkage, keeps the active runtime rule count at 43, and refines phase/task/startup/documentation/execution-continuity owners so non-trivial phase-backed live tasks visibly expose active or clearly implied phase context in the subject or description
+- the development verification and debug strategy rollout exists as bounded active `084-01` work with explicit patch linkage, raises the active runtime rule count to 44, creates a first-class coding verification strategy owner, and aligns coding structure, communication, phase, TODO, documentation, and execution-continuity owners around material Development Verification / TestKit Coverage and evidence-calibrated closeout
 - the tmux bridge anchored-task board-reflection rollout exists as a bounded `045` family with explicit patch linkage, reflects request/report state into the existing anchored board task when safe, fails closed on unsafe anchors, avoids hidden broker/history drift, and synchronizes governance/history/package surfaces to the bounded reflection model
 
 ---
 
 ## Overall Rollback / Containment
 
-If the shared execution coordination, handoff-boundary, shared-board operating-detail, universal task-ownership, memsearch availability-intake, legacy-history authority-boundary clarification, phase-context-aware task discovery, proactive light-table use, task-language pattern, phase-first task-shaping, doc-derived knowledge-capture refinement, phase-073 source-only semantic compression inventory gate, phase-074 runtime destination ownership boundary work, phase-075 closeout-reporting refinement, phase-076 design-to-phase synthesis refinement, phase-077 completed documentation surface governance, phase-078 evidence-calibrated agreement refinement, phase-079 evidence-seeking proof-aware reasoning refinement, phase-080 native worker agent routing and context-control refinement, phase-081 native worker routing capability and subagent-first refinement, phase-082 maintainable code structure and decomposition refinement, phase-083 maintainable helper and comment discipline refinement, phase-076-02 major-vs-subphase lineage selection refinement, or phase-076-03 phase-visible task linkage refinement proved incorrect, rollback would require:
+If the shared execution coordination, handoff-boundary, shared-board operating-detail, universal task-ownership, memsearch availability-intake, legacy-history authority-boundary clarification, phase-context-aware task discovery, proactive light-table use, task-language pattern, phase-first task-shaping, doc-derived knowledge-capture refinement, phase-073 source-only semantic compression inventory gate, phase-074 runtime destination ownership boundary work, phase-075 closeout-reporting refinement, phase-076 design-to-phase synthesis refinement, phase-077 completed documentation surface governance, phase-078 evidence-calibrated agreement refinement, phase-079 evidence-seeking proof-aware reasoning refinement, phase-080 native worker agent routing and context-control refinement, phase-081 native worker routing capability and subagent-first refinement, phase-082 maintainable code structure and decomposition refinement, phase-083 maintainable helper and comment discipline refinement, phase-084 development verification and debug strategy refinement, phase-076-02 major-vs-subphase lineage selection refinement, or phase-076-03 phase-visible task linkage refinement proved incorrect, rollback would require:
 - narrowing the visible-session / lifecycle / retention / optional-recall wording in the touched owner chains before removing the refinement entirely
 - narrowing the universal visible-ownership wording before weakening the underlying request / held / blocked state distinctions
 - narrowing the availability-first optional-recall wording before weakening the immediate fallback protection for absent optional extensions
@@ -705,6 +711,7 @@ If the shared execution coordination, handoff-boundary, shared-board operating-d
 - narrowing or reverting only the P076 design-to-phase synthesis bridge if it causes phase planning to trigger too broadly
 - narrowing the P076-02 lineage gate if it over-forces subphases, while preserving `phase-implementation.md` as the phase identity owner and preserving valid new-major creation for genuinely separate rollout families
 - narrowing the P076-03 visible phase linkage requirement if it over-constrains title wording, while preserving the requirement that non-trivial phase-backed live tasks expose phase context somewhere visible in subject or description
+- narrowing the P084 development verification triggers if they over-force TestKit or live checks, while preserving the evidence boundary that edits, fake/local tests, and one-off smoke checks do not prove live, fixed, or stable behavior
 - narrowing or reverting only the P077 completed-history surface wording if `done/` inactive-history handling proves too broad, while preserving design as active target-state authority and preserving the rule that completed history is not deletion authority
 - narrowing or reverting only the P078 evidence-calibrated agreement wording if it proves too broad, while preserving the separation between acknowledgement, user-owned direction, factual endorsement, and evidence-backed correction
 - narrowing or reverting only the P079 proof-aware evidence-seeking trigger wording if it proves too broad, while preserving practical evidence grounding, ordinary-evidence-versus-binding-constraint separation, and zero-hallucination protection against invented certainty
