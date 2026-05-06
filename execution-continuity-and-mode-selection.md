@@ -1,6 +1,6 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.12
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.12
+> **Current Version:** 1.13
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.13
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
@@ -50,6 +50,7 @@ Continuous execution must not outrun required knowledge capture. If external doc
 ## Worker Routing Before Broad Continuation
 Continuous execution must not turn the next broad slice into default leader-session raw absorption.
 - when implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, apply `native-worker-agent-routing-and-context-control.md` before broad direct reading/searching/testing/log review
+- when implied work is broad external research, design-improvement research, source comparison, or recommendation research, apply the native research orchestration gate before leader raw WebSearch/source absorption
 - apply intent-first worker routing before project exploration when the next slice could be behavior/RULES analysis rather than project work
 - prefer standalone subagent / worker-lane handling for broad independent read/search/audit/review work before considering Agent Team workflow
 - if worker routing selects a standalone subagent, multiple subagents, or Agent Team lane, dispatch or assign that lane before the leader absorbs raw broad evidence
@@ -75,13 +76,14 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | implementation completed but material verification remains | continue into the proportionate verification slice when safe, or state the blocker/not-applicable reason |
 | phase-shaped follow-up | apply phase lineage handling before opening a new major phase and preserve visible phase linkage in created/extended task entries |
 | broad/noisy next slice | apply worker routing before broad leader-session absorption |
+| broad research/design-improvement next slice | decompose into research lanes or state a narrow direct-handling reason before leader raw websearch/source absorption |
 | milestone-only pause drift | continue after reporting when safe |
 | open concept/design/behavior work | stay in discussion mode |
 | unresolved governing basis | ask for basis selection before deep execution |
 | approval-sensitive step | stop for confirmation under stronger rule |
 ---
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when material verification remains safe, new-major allocation by momentum, phase-shaped continuation tasks that hide their phase context, skipped worker routing, and treating teammate/Agent Team restriction as an all-subagent ban.
+Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when material verification remains safe, new-major allocation by momentum, phase-shaped continuation tasks that hide their phase context, skipped worker routing, continuing into broad research as leader raw websearch by momentum, and treating teammate/Agent Team restriction as an all-subagent ban.
 ---
 ## Quality Metrics
 | Metric | Target |
@@ -92,6 +94,7 @@ Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, e
 | Continuous execution after clear next step | High |
 | Continuation into material verification after implementation | High when safe and not blocked |
 | Worker-routing gate respected before broad continuation | High |
+| Research orchestration gate respected before broad research continuation | High |
 | Visible phase linkage preserved during phase-shaped continuation | High |
 | Execution during unresolved design/behavior discussion | 0 critical cases |
 | Stop-gate correctness | High |
@@ -99,7 +102,7 @@ Avoid report-then-stop drift, phase-closure pause ritual, startup-gate bypass, e
 ## Integration
 Related rules:
 - [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) - owns the proportionate verification/debug/TestKit strategy that execution continuity continues into when implementation is done but evidence remains pending
-- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns intent-first worker routing, subagent-first scale gating, and leader-context control before broad leader-session absorption
+- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns intent-first worker routing, subagent-first scale gating, research-lane orchestration, and leader-context control before broad leader-session absorption
 - [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
 - [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording
 - [todo-standards.md](todo-standards.md) - live task list as execution surface

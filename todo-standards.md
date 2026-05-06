@@ -1,6 +1,6 @@
 # TODO Standards
-> **Current Version:** 2.23
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.23
+> **Current Version:** 2.24
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.24
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
@@ -85,6 +85,16 @@ When the built-in task list is in use:
 - keep the task list tied to active execution, not stale bookkeeping or a future-wave scratchpad
 - when execution mode remains active and no real stop gate exists, let the task list support continued execution rather than milestone-only pause/report behavior
 ---
+## Live Tracking Friction Recovery
+If live task-list creation or update fails, is rejected, or is temporarily unavailable during worker dispatch or active execution, classify whether tracking is material to safe continuation.
+
+Required guidance:
+- when live tracking is material for non-trivial phase-backed, multi-step, or coordinated work, repair the task entry, title/scope, phase linkage, or tracking posture before treating the work as synchronized
+- when tracking friction is non-material to a bounded standalone research/review lane, continue the worker routing path and report the tracking limit rather than collapsing delegation into leader raw absorption
+- do not use task-list friction as a reason to skip required durable `TODO.md`, phase, patch, design, or changelog sync when those surfaces are in scope
+- do not import plugin/shared-board exact title grammar into Main RULES; keep exact external coordination grammar with the owning plugin or coordination surface
+- after friction is bypassed for a bounded lane, restore or update live tracking before broader continuation if the objective remains non-trivial
+---
 ## Simplicity Discipline
 Do not require dashboard counters, priority grids, per-task timestamps, deadline fields, execution telemetry blocks, or one task per command/tool call.
 ---
@@ -111,6 +121,7 @@ TODO content updates still happen last among primary active layers. That later o
 - [ ] Task wording aligned to active session language/register
 - [ ] Task entries remained outcome-sized
 - [ ] Required TODO synchronization was not downgraded into optional bookkeeping
+- [ ] Live tracking friction was repaired when material, or bounded and reported when non-material to a standalone worker lane
 - [ ] TODO content update occurred after design/runtime/changelog synchronization
 ---
 ## Quality Metrics
@@ -128,6 +139,7 @@ TODO content updates still happen last among primary active layers. That later o
 | Task-list-driven new-major phase drift | 0 critical cases |
 | Future-phase task drift before explicit phase opening | 0 critical cases |
 | Stale or vague live task lists during non-trivial work | Low |
+| Worker routing collapsed by non-material tracking friction | 0 critical cases |
 ---
 ## Integration
 Related documents:
@@ -136,5 +148,6 @@ Related documents:
 - [phase-implementation.md](phase-implementation.md) - phase identity and major-vs-subphase lineage selection when task shaping reveals phase work
 - [document-changelog-control.md](document-changelog-control.md) - synchronization order and authority boundary
 - [project-documentation-standards.md](project-documentation-standards.md) - repository role model and durable-vs-live tracking distinction
+- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - worker routing should not collapse from non-material live tracking friction
 ---
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)

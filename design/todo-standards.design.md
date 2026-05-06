@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.23
+> **Current Version:** 2.24
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, keeps material coding verification slices visible when implementation and verification are distinct outcomes, visibly links phase-backed live task entries to active or implied phase context, and resolves tracking posture early when meaningful governed work genuinely needs visibility.
+Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, keeps material coding verification slices visible when implementation and verification are distinct outcomes, visibly links phase-backed live task entries to active or implied phase context, resolves tracking posture early when meaningful governed work genuinely needs visibility, and prevents non-material live tracking friction from collapsing bounded worker routing.
 
 ---
 
@@ -168,6 +168,8 @@ When the built-in task list is in use:
 - if the task list alone is insufficient, use the active phase, the current phase family, `phase/SUMMARY.md`, already-authored `Next possible phases` in the relevant phase files, `TODO.md`, and checked implementation state to discover the next unfinished slice before waiting for a restated user prompt
 - keep the task list tied to the current active execution surface rather than using it mainly as a future-wave scratchpad
 - do not let the task list drift into stale or vague bookkeeping
+- if live task-list creation or update fails during bounded worker dispatch, classify whether tracking is material; repair material tracking before sync/completion claims, but do not collapse a non-material standalone research lane into leader raw absorption merely because live tracking had friction
+- keep plugin/shared-board exact title grammar outside Main RULES while still requiring phase/task visibility at this generic layer
 
 ### 3.7 Simplicity Discipline
 Do not require:
@@ -211,6 +213,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 - [ ] Task wording stays aligned to the active session language/register instead of defaulting to detached generic wording
 - [ ] Task entries remain outcome-sized rather than command-sized
 - [ ] Required TODO synchronization is not downgraded into optional bookkeeping
+- [ ] Live tracking friction is repaired when material and bounded/reported when non-material to standalone worker routing
 - [ ] TODO content update occurs after design/runtime/changelog synchronization
 
 ---
@@ -231,6 +234,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 | Task-list-driven new-major phase drift | 0 critical cases |
 | Future-phase task drift before explicit phase opening | 0 critical cases |
 | Stale or vague live task lists during non-trivial work | Low |
+| Non-material tracking friction derailing worker routing | 0 critical cases |
 
 ---
 

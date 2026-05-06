@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.86
+> **Current Version:** 9.87
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.87 | 2026-05-06 | **[Added subagent research orchestration and leader context optimization](#version-987)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.86 | 2026-05-06 | **[Added development verification and debug strategy owner](#version-986)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.85 | 2026-05-04 | **[Required visible phase linkage for phase-backed live tasks](#version-985)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.84 | 2026-05-04 | **[Completed refreshed P073-09 active runtime semantic compression](#version-984)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -120,6 +121,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-987"></a>
+## Version 9.87: Added subagent research orchestration and leader context optimization
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `native-worker-agent-routing-and-context-control` to v1.2 so broad external research, design-improvement research, provider/API comparison, source comparison, and source-heavy recommendation work are mapped into focused research lanes before leader raw source absorption.
+- Updated `external-verification-and-source-trust` to v1.2 so delegated research lanes preserve source authority, freshness, specificity, conflict reporting, and leader verification requirements instead of lowering evidence standards.
+- Updated `execution-continuity-and-mode-selection` to v1.13 so broad research/design-improvement continuation passes through native research orchestration or states a narrow direct-handling reason before leader raw WebSearch/source absorption.
+- Updated `todo-standards` to v2.24 so material live tracking friction is repaired, while non-material bounded research-lane tracking friction does not collapse worker routing into leader raw absorption.
+- Added P081-02 phase and patch records under the existing native-worker routing family and synchronized master design, README, TODO, and phase summary for v9.87 with the active runtime count unchanged at 44, installed only README-listed active runtime rules, verified 44/44 runtime parity with destination extras observed-only, pushed `master`, and published GitHub release `v9.87`.
+
+### Summary
+P081-02 makes research orchestration a first-class part of the native worker-routing family: leader maps the research decision and lanes, subagents gather analyzed scoped evidence, and leader synthesis verifies selected high-value evidence before final recommendations.
 
 ---
 

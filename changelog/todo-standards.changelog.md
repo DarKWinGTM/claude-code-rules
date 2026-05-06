@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.23
+> **Current Version:** 2.24
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.24 | 2026-05-06 | **[Added live tracking friction recovery for bounded worker lanes](#version-224a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.23 | 2026-05-06 | **[Preserved visible verification slices for non-trivial coding work](#version-223a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added live task-list guidance to preserve or add material verification slices when implementation and verification are distinct outcomes in non-trivial coding work | |
 | 2.22 | 2026-05-04 | **[Required visible phase context in phase-shaped task entries](#version-222a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -36,6 +37,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-224a"></a>
+## Version 2.24: Added live tracking friction recovery for bounded worker lanes
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `todo-standards.md` from v2.23 to v2.24.
+- Updated `design/todo-standards.design.md` from v2.23 to v2.24.
+- Added a live tracking friction recovery boundary for task-list creation/update failures, rejections, or temporary unavailability during worker dispatch.
+- Required material live tracking issues to be repaired before sync or completion claims while allowing bounded standalone research lanes to continue when tracking friction is non-material.
+- Preserved the boundary that plugin/shared-board exact title grammar remains outside Main RULES doctrine.
+
+### Summary
+TODO standards now keeps live tracking important without letting non-material tracking friction collapse bounded worker routing into leader raw context absorption.
 
 ---
 

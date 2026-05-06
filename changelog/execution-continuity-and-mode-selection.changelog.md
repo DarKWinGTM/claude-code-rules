@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-05-06 | **[Routed broad research continuation through research lanes](#version-113)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.12 | 2026-05-06 | **[Continued implementation work into material verification when safe](#version-112)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.11 | 2026-05-04 | **[Preserved visible phase linkage during continuation](#version-111)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.10 | 2026-05-04 | **[Added phase-lineage continuity boundary](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -24,6 +25,23 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-113"></a>
+## Version 1.13: Routed broad research continuation through research lanes
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.12 to v1.13.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.12 to v1.13.
+- Clarified that broad external research, design-improvement research, source comparison, or recommendation research must pass through native research orchestration before leader raw WebSearch/source absorption.
+- Added trigger and anti-pattern coverage so execution momentum does not turn broad research continuation into direct leader websearch when research lanes are the better fit.
+
+### Summary
+Execution continuity now keeps research work moving without bypassing leader-context control: broad research continuation decomposes into research lanes or states a narrow direct-handling reason before raw leader source absorption.
 
 ---
 

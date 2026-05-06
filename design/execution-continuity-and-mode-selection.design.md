@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, continues from implementation into material verification when safe, does not let execution continuity bypass startup artifact governance, does not let broad continuation bypass native worker routing, does not let phase-shaped continuation allocate new major phases without phase lineage selection, and preserves visible phase linkage when continuation creates or extends phase-backed task entries.
+Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, continues from implementation into material verification when safe, does not let execution continuity bypass startup artifact governance, does not let broad continuation or broad research continuation bypass native worker routing, does not let phase-shaped continuation allocate new major phases without phase lineage selection, and preserves visible phase linkage when continuation creates or extends phase-backed task entries.
 
 ---
 
@@ -56,7 +56,7 @@ Execution mode should actively inspect the current execution surfaces to discove
 Execution continuity should not outrun required knowledge capture when external docs/specs/provider references have just produced implementation-critical knowledge that later governed execution still depends on.
 
 ### 3.8 Worker-Routing-Before-Broad-Continue Principle
-Execution continuity should not make broad, noisy, context-heavy, high-output, multi-surface, or naturally parallel next work default to leader-session raw absorption. Those slices should pass through `native-worker-agent-routing-and-context-control.md` unless direct handling has a narrow reason.
+Execution continuity should not make broad, noisy, context-heavy, high-output, multi-surface, naturally parallel, or broad research next work default to leader-session raw absorption. Those slices should pass through `native-worker-agent-routing-and-context-control.md` unless direct handling has a narrow reason. Broad external research, design-improvement research, source comparison, and recommendation research should pass through the native research orchestration gate before leader raw WebSearch/source absorption.
 
 ### 3.8.1 Phase-Lineage and Visible-Linkage Continuity Boundary
 Execution continuity should not turn same-family phase-shaped follow-up work into a new major phase by momentum. When next work needs phase identity selection, `phase-implementation.md` should decide current phase update, existing-family subphase, new major phase, or ask-now lineage handling. When continuation creates or extends phase-backed task entries, those entries should preserve visible phase linkage in the subject or description rather than becoming generic next-work tasks.
@@ -105,7 +105,7 @@ Does the next slice require phase identity selection or a phase-shaped continuat
   → No: continue
   ↓
 Is the next slice broad/noisy/context-heavy/multi-surface/high-output/parallelizable?
-  → Yes: apply native worker routing, then continue on selected path
+  → Yes: apply native worker routing, including research-lane decomposition when the slice is broad research/source comparison/design-improvement work, then continue on selected path
   → No: execution mode → continue directly
 ```
 
@@ -147,4 +147,5 @@ This chain succeeds when:
 - same-family phase-shaped continuation uses phase lineage handling before any new major phase is opened
 - continuation-created or continuation-extended phase-backed task entries preserve visible phase linkage
 - broad or high-output continuation applies intent-first worker routing before leader raw absorption
+- broad research/design-improvement continuation applies research-lane decomposition before leader raw WebSearch/source absorption unless direct handling has a narrow reason
 - real blockers still pause execution correctly

@@ -6,11 +6,31 @@
 
 ## ✅ Completed
 
+- [x] Complete P081-02 subagent research orchestration and leader context optimization: refine native-worker routing, external verification/source trust, execution continuity, and TODO tracking-friction recovery so broad research/design-improvement/source-heavy work uses focused research lanes before leader raw source absorption; synchronize v9.87 / unchanged 44-rule master records; install only README-listed active runtime rules; verify 44/44 runtime parity; push master; and publish GitHub release `v9.87`.
+
 - [x] Complete P084-01 development verification and debug strategy: create the first-class coding verification owner; synchronize adjacent coding, communication, phase, TODO, project-documentation, and execution-continuity chains; update v9.86 / 44-rule master records; install only README-listed active runtime rules; verify 44/44 runtime parity; push master; and publish GitHub release `v9.86`.
 
 - [x] Complete P076-03 phase-visible task linkage: refine the existing P076 design-to-phase execution family so non-trivial phase-backed built-in task entries visibly expose active or clearly implied phase context in subject or description; synchronize v9.85 governed records; install only README-listed active runtime rules; verify 43/43 source/runtime parity; push master; and publish GitHub release `v9.85`.
 
 - [x] Complete P073-09 refreshed active runtime semantic compression: refresh the 43-file active runtime inventory, reduce source runtime rule text from 42,961 to 35,017 words for a 7,944-word accepted reduction, preserve semantic anchors, pass behavior/golden/source-boundary audits, install only README-listed active runtime rules, verify 43/43 source/runtime parity, synchronize governed records, push master, and publish release `v9.84`.
+
+- [x] Close P073 runtime-compression scope drift: compression targets are active root runtime rule files only, while `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` remain sync/audit/planning surfaces and are not compression targets; current checked baseline is 41 files / 7,141 lines / 50,141 words / 356,403 bytes.
+
+- [x] Complete P073-04 evidence/safety/operations runtime-owner compression source-only: selected 7 active runtime rule files, reduced the touched set from 13,424 to 10,854 words, preserved semantic anchors, and kept `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` as sync/audit/planning surfaces only.
+
+- [x] Complete P073-05 remaining communication/presentation/strategy/support runtime-owner compression source-only: selected 11 active runtime rule files, reduced the touched set from 20,565 to 12,032 words, preserved semantic anchors, and kept governed planning surfaces as status/sync/audit records only.
+
+- [x] Complete P073-06 source-only governed record sync for the completed runtime compression phases: synchronize README, master design/changelog, TODO, phase summary, phase record, and patch inventory without installing runtime copies or compressing governed planning surfaces.
+
+- [x] Complete P073-07 final runtime semantic parity and aggregate reduction audit for active runtime rule files only: verified 41 active runtime files, recorded final 4,051-line / 31,316-word / 231,675-byte source state, confirmed 44.82% / 41.60% / 38.95% reduction from the P073-02 patch baseline and 43.27% / 37.54% / 35.00% reduction from the P073-03 runtime-only re-anchor baseline, preserved semantic anchors, and kept runtime install deferred.
+
+- [x] Complete P073-08 runtime install and parity verification: installed the 41 README-installed active runtime rule files into `~/.claude/rules/`, verified active source/runtime hash parity with no missing files or mismatches, recorded destination markdown files outside the active install set as observed-only and untouched, and synchronized governed source records without push/release or deletion cleanup.
+
+- [x] Run a final RULES-side consistency audit for stale historical wording/reference drift.
+
+- [x] Complete the shared-task-list-path extraction cleanup so Main RULES keeps only global task-list doctrine and shared-board-specific semantics stay outside Main RULES scope.
+
+- [x] Complete the final RULES-side cleanup pass so git update/release can happen without stale unified-package ownership claims or stray non-release artifacts.
 
 - [x] Complete P076-02 major-vs-subphase lineage selection: refine phase identity selection in `phase-implementation` v2.26, sync adjacent startup/task/documentation/execution-continuity owners, synchronize v9.83 / 43-rule master records, install only README-listed active runtime rules, verify source/runtime parity, push master, and publish GitHub release `v9.83`.
 
@@ -143,24 +163,15 @@
 ## 📋 Tasks To Do
 
 ### Active Work
-- [x] Close P073 runtime-compression scope drift: compression targets are active root runtime rule files only, while `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` remain sync/audit/planning surfaces and are not compression targets; current checked baseline is 41 files / 7,141 lines / 50,141 words / 356,403 bytes.
-- [x] Complete P073-04 evidence/safety/operations runtime-owner compression source-only: selected 7 active runtime rule files, reduced the touched set from 13,424 to 10,854 words, preserved semantic anchors, and kept `design/`, `changelog/`, `TODO.md`, `phase/`, and `patch/` as sync/audit/planning surfaces only.
-- [x] Complete P073-05 remaining communication/presentation/strategy/support runtime-owner compression source-only: selected 11 active runtime rule files, reduced the touched set from 20,565 to 12,032 words, preserved semantic anchors, and kept governed planning surfaces as status/sync/audit records only.
-- [x] Complete P073-06 source-only governed record sync for the completed runtime compression phases: synchronize README, master design/changelog, TODO, phase summary, phase record, and patch inventory without installing runtime copies or compressing governed planning surfaces.
-- [x] Complete P073-07 final runtime semantic parity and aggregate reduction audit for active runtime rule files only: verified 41 active runtime files, recorded final 4,051-line / 31,316-word / 231,675-byte source state, confirmed 44.82% / 41.60% / 38.95% reduction from the P073-02 patch baseline and 43.27% / 37.54% / 35.00% reduction from the P073-03 runtime-only re-anchor baseline, preserved semantic anchors, and kept runtime install deferred.
-- [x] Complete P073-08 runtime install and parity verification: installed the 41 README-installed active runtime rule files into `~/.claude/rules/`, verified active source/runtime hash parity with no missing files or mismatches, recorded destination markdown files outside the active install set as observed-only and untouched, and synchronized governed source records without push/release or deletion cleanup.
 
 ### Deferred Enhancements
 - [ ] Automated validation script for documentation compliance (deferred by user).
 - [ ] Integration testing for design/changelog/rule/TODO integration paths (deferred by user).
 
 ### Active Verification
-- [x] Run a final RULES-side consistency audit for stale historical wording/reference drift.
 - [ ] Run a final RULES-side consistency audit for the startup-governance versus execution-continuity tightening wave.
 - [ ] Run a final RULES-side consistency audit for the task-list/phase/session-language refinement wave.
 - [ ] Run a final RULES-side consistency audit for the retired memsearch/bridge cleanup wave.
-- [x] Complete the shared-task-list-path extraction cleanup so Main RULES keeps only global task-list doctrine and shared-board-specific semantics stay outside Main RULES scope.
-- [x] Complete the final RULES-side cleanup pass so git update/release can happen without stale unified-package ownership claims or stray non-release artifacts.
 
 ---
 
@@ -168,6 +179,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-05-06 | Completed P081-02 subagent research orchestration and leader context optimization: refined native-worker routing, external verification/source trust, execution continuity, and TODO tracking-friction recovery so broad research/design-improvement/source-heavy work uses focused research lanes before leader raw source absorption; synchronized v9.87 / unchanged 44-rule master records; installed only README-listed active runtime rules; verified 44/44 runtime parity; pushed master; and published GitHub release `v9.87`. |
 | 2026-05-06 | Completed P084-01 development verification and debug strategy: added the first-class coding verification/debug/TestKit strategy owner, synchronized adjacent owner chains and v9.86 / 44-rule master records, installed only README-listed active runtime rules, verified 44/44 runtime parity, pushed master, and published GitHub release `v9.86`. |
 | 2026-05-04 | Completed P073-09 refreshed active runtime semantic compression: refreshed the current 43-file active runtime inventory, reduced active runtime source text from 42,961 to 35,017 words, preserved semantic anchors, verified behavior/golden/source-boundary audits and 43/43 runtime parity, synchronized v9.84 governed records, pushed master, and published release `v9.84`. |
 | 2026-05-04 | Completed P076-02 major-vs-subphase lineage selection: refined phase identity selection to use lineage-first current-phase/subphase/new-major/ask-now handling, synchronized v9.83 / 43-rule master records, installed and verified the README-listed runtime set, pushed master, and published GitHub release `v9.83`. |

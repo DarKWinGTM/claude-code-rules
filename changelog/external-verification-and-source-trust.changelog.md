@@ -1,7 +1,7 @@
 # Changelog - External Verification and Source Trust
 
 > **Parent Document:** [../external-verification-and-source-trust.md](../external-verification-and-source-trust.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,10 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-06 | **[Integrated source trust with delegated research lanes](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-04-30 | **[Added proof-aware external grounding for recommendations and design](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Extended external verification so current external facts can ground analysis, design, recommendation, and disagreement while only authoritative requirements, compatibility limits, safety/compliance boundaries, or verified contradictions become binding | |
 | 1.0 | 2026-03-31 | **[Created first-class external-verification-and-source-trust rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new design/runtime/changelog triad that governs proactive external verification, source-reliability ranking, corroboration expectations, and source-conflict handling for WebSearch/WebFetch-backed factual work | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Integrated source trust with delegated research lanes
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `external-verification-and-source-trust.md` from v1.1 to v1.2.
+- Updated `design/external-verification-and-source-trust.design.md` from v1.1 to v1.2.
+- Added an orchestrated external research boundary so broad, comparison-heavy, or source-volume-heavy verification can be gathered through native worker research lanes.
+- Required research lane assignments and handoffs to preserve source tier, freshness, specificity, conflict state, downgraded weak sources, and leader verification needs.
+- Clarified that delegated research lowers leader raw context load but does not lower external source-trust or evidence-calibration requirements.
+
+### Summary
+External verification now works cleanly with subagent research orchestration: workers can gather and compare broad source sets, while this chain still controls source trust, corroboration, conflict handling, and evidence-strength boundaries.
 
 ---
 

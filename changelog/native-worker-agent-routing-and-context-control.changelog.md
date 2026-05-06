@@ -1,7 +1,7 @@
 # Changelog - Native Worker Agent Routing and Context Control
 
 > **Parent Document:** [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,9 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-06 | **[Added subagent research orchestration and leader context optimization](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-05-04 | **[Refined subagent-first capability routing and intent gate](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-05-03 | **[Created native worker routing and context-control owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class rule chain for proactive workload-shaped worker routing, smallest-effective subagent/Agent Team selection, analyzed handoffs, parallel edit containment, and leader verification | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Added subagent research orchestration and leader context optimization
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `native-worker-agent-routing-and-context-control.md` from v1.1 to v1.2.
+- Updated `design/native-worker-agent-routing-and-context-control.design.md` from v1.1 to v1.2.
+- Added a research orchestration gate for broad external research, design-improvement research, provider/API comparison, and source-heavy recommendation work.
+- Required leaders to map research objectives into focused topic lanes before raw source absorption when decomposition improves coverage or context efficiency.
+- Clarified that research subagents may refine query/topic strategy inside assigned scope and must return source-quality-aware analyzed findings rather than raw search dumps.
+- Preserved standalone-subagent-first routing and kept Agent Team workflow as exceptional coordination escalation only.
+
+### Summary
+Native worker routing now makes broad research a first-class worker-fit pattern: the leader maps the research question, subagents gather and analyze scoped evidence, and the leader synthesizes and verifies selected high-value evidence before user-facing recommendations.
 
 ---
 

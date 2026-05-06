@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-30)
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 
@@ -16,6 +16,7 @@ Define one first-class rule chain for proactive external verification and source
 - evaluates source reliability instead of treating all external sources as equally trustworthy
 - compares multiple sources when one source is insufficient, ambiguous, stale, or contradicted
 - uses external evidence to ground analysis, design, recommendation, and disagreement when current external reality materially changes the answer
+- supports native worker research lanes for broad or comparison-heavy external verification while preserving source-trust duties
 - handles external source conflicts honestly without drifting into either passivity or overclaiming
 
 This chain should increase factual accuracy and proof-aware recommendation quality while preserving the existing burden-of-proof, contradiction, user-authority, and communication contracts owned by adjacent rules.
@@ -46,6 +47,8 @@ Observed failure modes this design intends to close:
 - a contradicted or obviously unreliable source is not explicitly downgraded
 - the assistant avoids hallucination but still fails to become meaningfully more accurate
 - recommendations or designs rely on stale assumptions when a practical external check would improve the decision
+- broad external research is gathered as raw leader context instead of delegated into focused research lanes when source volume or comparison cost is high
+- research-lane handoffs omit source trust, freshness, conflicts, or leader verification needs
 - one external fact is over-weighted as a rigid design lock even though it only informs trade-offs
 
 ---
@@ -60,6 +63,7 @@ Observed failure modes this design intends to close:
 - Verification-before-recommendation/design expectations for external factual/product/API claims
 - External-evidence-as-grounding versus external-evidence-as-binding-constraint separation
 - Honest fallback behavior when web verification remains incomplete or fails
+- Source-trust and conflict-reporting expectations for delegated research-lane outputs
 
 ### 3.2 Out of Scope
 - Local file/reference lookup mechanics (owned by `no-variable-guessing`)
@@ -67,6 +71,7 @@ Observed failure modes this design intends to close:
 - General communication shape (owned by `accurate-communication`)
 - WebSearch/WebFetch retry/cooldown/failure handling (owned by `operational-failure-handling`)
 - Pure presentation/layout concerns
+- Worker-scale routing and Agent Team escalation decisions, which are owned by `native-worker-agent-routing-and-context-control.md`
 
 ### 3.3 Boundary Principle
 This chain owns **how external evidence should be gathered, ranked, compared, and trusted**.
@@ -110,6 +115,11 @@ If a low-cost external verification path is likely to settle a material factual 
 When external evidence shapes a recommendation or design, the assistant should identify whether that evidence is a binding requirement or only a grounding input.
 
 Binding external evidence includes authoritative requirements, compatibility limits, safety/compliance boundaries, and verified contradictions. Other external evidence should improve judgment while preserving trade-offs, alternatives, and user-owned priorities.
+
+### 4.6 Orchestrated external research principle
+When external verification is broad, comparison-heavy, or source-volume-heavy, native worker routing may decompose the research into one or more focused lanes. This chain still owns what those lanes must preserve: source tier, freshness, specificity, conflict state, downgraded weak sources, and the evidence the leader should verify directly.
+
+Delegated research does not lower source-trust requirements. It should reduce raw context load while increasing evidence coverage and conflict visibility.
 
 ---
 
@@ -156,7 +166,7 @@ One source is normally enough when:
 - there is no sign of contradiction or ambiguity
 
 ### 6.2 Multi-source comparison required or preferred
-Use two or more sources when:
+Use two or more sources, or a focused research lane when source volume is high, when:
 - the claim is high-impact or user-decision-critical
 - the primary source is incomplete, ambiguous, or stale
 - the source type is secondary rather than primary
@@ -268,6 +278,7 @@ Use external evidence to ground design choices, but distinguish binding external
 | [../accurate-communication.md](../accurate-communication.md) | Owns wording shape for source conflict and evidence-strength communication |
 | [../anti-sycophancy.md](../anti-sycophancy.md) | Owns disagreement posture when better external evidence conflicts with the user’s claim |
 | [../operational-failure-handling.md](../operational-failure-handling.md) | Owns retry/stop/escalation behavior after WebSearch/WebFetch failures |
+| [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md) | Owns when broad external research should be delegated into research lanes before leader raw source absorption |
 
 ---
 
