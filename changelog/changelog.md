@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.87
+> **Current Version:** 9.88
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.88 | 2026-05-06 | **[Added active runtime body sufficiency corrective validation](#version-988)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.87 | 2026-05-06 | **[Added subagent research orchestration and leader context optimization](#version-987)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.86 | 2026-05-06 | **[Added development verification and debug strategy owner](#version-986)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.85 | 2026-05-04 | **[Required visible phase linkage for phase-backed live tasks](#version-985)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -121,6 +122,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-988"></a>
+## Version 9.88: Added active runtime body sufficiency corrective validation
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P073-10 as the active runtime body-sufficiency corrective validation wave under the existing phase-073 runtime-rule lineage, keeping the README-listed active runtime set at 44 files.
+- Re-materialized 10 README-listed metadata-only root runtime files into substantive active runtime behavior contracts and synchronized each restored rule/design/changelog chain.
+- Updated `unified-version-control-system` to v1.3 as the controller-level owner for active runtime body-sufficiency validation, including canonical metadata, `Full history`, and substantive root runtime bodies.
+- Updated `project-documentation-standards` to v2.35 and `document-consistency` to v1.9 so runtime install, source/runtime parity, no-drift, and release-readiness wording require body-sufficient active runtime roots rather than metadata-only stubs or hash equality alone.
+- Synchronized master design, README, TODO, phase, patch, and changelog surfaces for the v9.88 release, installed the unchanged 44-file active runtime set, and verified source/runtime parity plus body sufficiency 44/44 with destination extras observed-only.
+
+### Summary
+P073-10 corrects active runtime roots that had collapsed into metadata-only design pointers, restores the root runtime rule as the installed behavior contract, and adds validation so future parity/no-drift claims check substantive active runtime bodies as well as metadata, links, and hashes.
 
 ---
 

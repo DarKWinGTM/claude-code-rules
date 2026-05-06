@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Complete P073-10 active runtime body sufficiency corrective validation: re-materialize 10 metadata-only active runtime roots, synchronize body-sufficiency doctrine across controller/documentation/consistency owners, keep the active runtime count at 44, run source and runtime body-sufficiency/parity gates, push master, and publish GitHub release `v9.88`.
+
 - [x] Complete P081-02 subagent research orchestration and leader context optimization: refine native-worker routing, external verification/source trust, execution continuity, and TODO tracking-friction recovery so broad research/design-improvement/source-heavy work uses focused research lanes before leader raw source absorption; synchronize v9.87 / unchanged 44-rule master records; install only README-listed active runtime rules; verify 44/44 runtime parity; push master; and publish GitHub release `v9.87`.
 
 - [x] Complete P084-01 development verification and debug strategy: create the first-class coding verification owner; synchronize adjacent coding, communication, phase, TODO, project-documentation, and execution-continuity chains; update v9.86 / 44-rule master records; install only README-listed active runtime rules; verify 44/44 runtime parity; push master; and publish GitHub release `v9.86`.
@@ -179,6 +181,7 @@
 
 | Date | Changes |
 |------|---------|
+| 2026-05-06 | Completed P073-10 active runtime body sufficiency corrective validation: re-materialized 10 metadata-only active runtime roots, synchronized body-sufficiency doctrine across controller/documentation/consistency owners, kept the active runtime count at 44, verified source and runtime body-sufficiency/parity gates 44/44 with destination extras observed-only, pushed master, and published GitHub release `v9.88`. |
 | 2026-05-06 | Completed P081-02 subagent research orchestration and leader context optimization: refined native-worker routing, external verification/source trust, execution continuity, and TODO tracking-friction recovery so broad research/design-improvement/source-heavy work uses focused research lanes before leader raw source absorption; synchronized v9.87 / unchanged 44-rule master records; installed only README-listed active runtime rules; verified 44/44 runtime parity; pushed master; and published GitHub release `v9.87`. |
 | 2026-05-06 | Completed P084-01 development verification and debug strategy: added the first-class coding verification/debug/TestKit strategy owner, synchronized adjacent owner chains and v9.86 / 44-rule master records, installed only README-listed active runtime rules, verified 44/44 runtime parity, pushed master, and published GitHub release `v9.86`. |
 | 2026-05-04 | Completed P073-09 refreshed active runtime semantic compression: refreshed the current 43-file active runtime inventory, reduced active runtime source text from 42,961 to 35,017 words, preserved semantic anchors, verified behavior/golden/source-boundary audits and 43/43 runtime parity, synchronized v9.84 governed records, pushed master, and published release `v9.84`. |

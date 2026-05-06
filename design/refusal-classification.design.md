@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules - Authorized Adversarial Workflow
-> **Current Version:** 1.4
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2 (2026-03-08)
+> **Current Version:** 1.5
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
 

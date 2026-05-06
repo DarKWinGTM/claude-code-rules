@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-13)
+> **Current Version:** 1.5
+> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
 
 ---
 

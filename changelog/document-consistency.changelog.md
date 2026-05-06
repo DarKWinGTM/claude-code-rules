@@ -1,7 +1,7 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-05-06 | **[Added active runtime body-sufficiency parity checks](#version-19)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added cross-reference and parity guidance so active runtime no-drift claims must verify substantive root runtime bodies, not only metadata or hash equality | |
 | 1.8 | 2026-04-25 | **[Added source-owned/shared-destination runtime vocabulary](#version-18)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.7 | 2026-04-17 | **[Added governed reference checks before junk/disposal classification](#version-17)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.6 | 2026-04-09 | **[Separated local execution paths from reusable source-artifact references](#version-16)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -25,6 +27,24 @@
 | | | Summary: Enforced visual verification standards from design | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added active runtime body-sufficiency parity checks
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `document-consistency.md` from v1.8 to v1.9.
+- Updated `design/document-consistency.design.md` from v1.8 to v1.9.
+- Added active runtime body sufficiency to parity, no-drift, and release-readiness verification triggers.
+- Clarified that source/runtime parity requires substantive root runtime bodies as well as metadata, links, and hash equality.
+- Added integration with `unified-version-control-system.md` v1.3 as the controller-level body-sufficiency owner.
+
+### Summary
+Document-consistency now prevents metadata-only active runtime roots from passing no-drift or parity wording by requiring body-sufficiency checks in the verified reference set.
 
 ---
 

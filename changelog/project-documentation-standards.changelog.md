@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.34
+> **Current Version:** 2.35
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.35 | 2026-05-06 | **[Added active runtime body-sufficiency install boundary](#version-235)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added repository documentation guidance that source-owned active runtime install targets must carry substantive runtime bodies and cannot be satisfied by metadata-only design pointers | |
 | 2.34 | 2026-05-06 | **[Recorded repository-level verification coverage alignment for governed coding phases](#version-234)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added repository documentation alignment for material Development Verification / TestKit Coverage across phase, TODO, changelog, and closeout surfaces without duplicating the verification strategy owner | |
 | 2.33 | 2026-05-04 | **[Kept task lists non-authoritative but visibly phase-linked](#version-233)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -46,6 +48,24 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-235"></a>
+## Version 2.35: Added active runtime body-sufficiency install boundary
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.34 to v2.35.
+- Updated `design/project-documentation-standards.design.md` from v2.34 to v2.35.
+- Added repository documentation guidance that README-listed/source-owned active runtime files must contain substantive runtime behavior bodies, not metadata-only design pointers.
+- Clarified that runtime install/parity claims include body sufficiency in addition to source-owned scope and metadata alignment.
+- Added integration with `unified-version-control-system.md` v1.3 and `document-consistency.md` v1.9.
+
+### Summary
+Project-documentation-standards now treats active runtime body sufficiency as part of the repository install model, so design/changelog surfaces cannot stand in for installed runtime rule behavior.
 
 ---
 

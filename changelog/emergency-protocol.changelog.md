@@ -1,8 +1,8 @@
 # Changelog - Emergency Protocol
 
 > **Parent Document:** [../emergency-protocol.md](../emergency-protocol.md)
-> **Current Version:** 1.1
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,10 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-06 | **[Materialized active runtime body and closed metadata-only stub drift](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Re-materialized root `emergency-protocol.md` as a substantive active runtime rule with `Full history`, preserving current design target behavior while removing design-only runtime dependency | |
 | 1.1 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-11)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Added canonical `Design + Session + Full history` runtime header metadata without changing substantive emergency-protocol behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Materialized active runtime body and closed metadata-only stub drift
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `emergency-protocol.md` from v1.1 to v1.2.
+- Updated `design/emergency-protocol.design.md` from v1.1 to v1.2.
+- Added `Full history` to the active runtime metadata where the root stub had lost the field.
+- Re-materialized the root runtime file as a substantive active rule body with operational guidance, verification expectations, and integration boundaries.
+- Preserved the current design target behavior while correcting the abnormal design-only/runtime-stub split.
+
+### Summary
+Emergency protocol now has an installed active runtime body again, so the root rule can carry runtime behavior directly instead of relying on a design pointer as a substitute.
 
 ---
 

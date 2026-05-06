@@ -1,8 +1,8 @@
 # Changelog - DAN-Safe Normalization
 
 > **Parent Document:** [../dan-safe-normalization.md](../dan-safe-normalization.md)
-> **Current Version:** 1.2
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,12 +10,32 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-06 | **[Materialized active runtime body and closed metadata-only stub drift](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Re-materialized root `dan-safe-normalization.md` as a substantive active runtime rule with `Full history`, preserving current design target behavior while removing design-only runtime dependency | |
 | 1.2 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-12)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Added canonical runtime header metadata and aligned the DAN-safe normalization chain to the cleanup-wave version state | |
 | 1.1 | 2026-02-21 | **[Fixed integration links for design-only phase](#version-11)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | Summary: Repointed integration links to existing design docs, keeping active-rule references only where files exist | |
 | 1.0 | 2026-02-21 | **[Initial DAN-Style Intent Normalization Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | Summary: Added normalization pipeline and guardrails for ambiguous DAN-style prompts | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Materialized active runtime body and closed metadata-only stub drift
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `dan-safe-normalization.md` from v1.2 to v1.3.
+- Updated `design/dan-safe-normalization.design.md` from v1.2 to v1.3.
+- Added `Full history` to the active runtime metadata where the root stub had lost the field.
+- Re-materialized the root runtime file as a substantive active rule body with operational guidance, verification expectations, and integration boundaries.
+- Preserved the current design target behavior while correcting the abnormal design-only/runtime-stub split.
+
+### Summary
+DAN-safe normalization now has an installed active runtime body again, so the root rule can carry runtime behavior directly instead of relying on a design pointer as a substitute.
 
 ---
 

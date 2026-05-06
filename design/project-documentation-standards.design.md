@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.34
+> **Current Version:** 2.35
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
@@ -36,7 +36,7 @@ This model must preserve one authority system while clearly separating:
 - `document-consistency.md` as the supporting owner for source-side versus destination/runtime notation consistency
 - `plugin/` as an optional extension-package area whose implementation assets stay subordinate to the root governance stack
 - package-local support assets such as optional `skills/`, optional `agents/`, scripts, and plugin-owned docs remaining portable by default when they are maintained as reusable source artifacts
-- runtime installs targeting the current project/source-owned active runtime rule set rather than every file that happens to exist in a shared runtime destination
+- runtime installs targeting the current project/source-owned active runtime rule set and requiring those active runtime files to carry substantive runtime behavior bodies rather than metadata-only design pointers
 - other project/plugin-owned runtime destination files staying out of repository documentation, hygiene, and install scope unless their owner/project is explicitly selected or verified
 - shared-board multi-session coordination semantics and any discontinued custom recall/skill mechanics staying outside Main RULES scope rather than being redefined ad hoc in the repository role model
 
@@ -70,6 +70,8 @@ They use the canonical runtime header contract:
 - `Design`
 - `Session`
 - `Full history`
+
+Runtime rule role also requires body sufficiency: a root runtime rule listed for install must materialize its active behavior body rather than point only to design or changelog metadata.
 
 ### 3.3 Design Role
 `design/*.design.md` documents hold active target-state guidance.
@@ -182,6 +184,7 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 ### 5.1 Single Authority Per Chain
 - Changelog is the authority for each governed chain.
 - Runtime, design, phase, and patch metadata align to that chain authority where applicable.
+- Installed active runtime rules carry their own runtime behavior bodies; design remains target-state authority and changelog remains history authority.
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts do not create parallel version authority.
 
 ### 5.2 Synchronization Order
@@ -190,6 +193,8 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 3. changelog
 4. TODO
 5. patch metadata final sync (when affected)
+
+Runtime rule sync is incomplete while a source-owned active runtime root remains metadata-only, even if metadata versions and hashes align.
 
 ### 5.3 Session Integrity
 - Active metadata uses real session identifiers.
@@ -293,7 +298,7 @@ One workstation absolute path or an internal umbrella workspace root should not 
 
 ### 8.3 Source-vs-destination notation split
 If onboarding/install docs mention both where the artifact comes from and where it installs or runs, those two roles should stay visually and semantically distinct.
-Runtime install wording should distinguish the checked source-owned active runtime rule set from the shared runtime destination that may contain other owners' runtime files.
+Runtime install wording should distinguish the checked source-owned active runtime rule set from the shared runtime destination that may contain other owners' runtime files, and runtime parity wording should require body-sufficient active runtime roots rather than metadata-only stubs.
 
 Preferred examples:
 - source-side: `<repo-root>`, `./`
@@ -316,6 +321,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Required document set matches project scope
 - [ ] Changelog exists for each governed chain
 - [ ] Version references align across chain metadata
+- [ ] Active runtime install targets have canonical metadata and substantive runtime behavior bodies, not metadata-only stubs
 - [ ] Active session metadata has no placeholders
 - [ ] Full-history links resolve
 - [ ] Meaningful governed work resolves startup artifact posture before drift
@@ -368,6 +374,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Workstation-specific absolute paths as public defaults | 0 critical cases |
 | Source-vs-destination notation clarity | High |
 | Source-owned/shared-destination/other-owner boundary clarity | High |
+| Metadata-only active runtime install targets | 0 |
 | Root-helper placement clarity | 100% |
 | TODO simplification compliance | 100% |
 
@@ -384,7 +391,8 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Coding-time verification strategy owner; repository docs keep material verification coverage aligned across phase, TODO, changelog, and closeout surfaces |
 | [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, visible phase-linked live tasks, Development Verification / TestKit Coverage, `phase/done/` history boundary, and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
-| [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, source-owned install scope, shared destination, and other-owner runtime reference consistency |
+| [unified-version-control-system.md](../unified-version-control-system.md) | Controller-level active runtime body-sufficiency and version-governance validation |
+| [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, body-sufficiency, source-owned install scope, shared destination, and other-owner runtime reference consistency |
 | [todo-standards.md](../todo-standards.md) | Durable TODO structure standards plus live task-list execution tracking, current-phase-first alignment, visible phase context, material verification slices, and same-objective continuity |
 | [rules-plugin-extension.design.md](rules-plugin-extension.design.md) | Historical boundary for the former plugin-extension line after local shell removal; active shared-board/plugin/runtime coordination does not remain part of Main RULES current doctrine |
 

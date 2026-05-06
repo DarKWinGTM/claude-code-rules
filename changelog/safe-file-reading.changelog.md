@@ -1,8 +1,8 @@
 # Changelog - Safe File Reading
 
 > **Parent Document:** [../safe-file-reading.md](../safe-file-reading.md)
-> **Current Version:** 1.3
-> **Session:** 41261a5a-d60b-4f6c-b174-229df0a58ac2
+> **Current Version:** 1.4
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-06 | **[Materialized active runtime body and closed metadata-only stub drift](#version-14)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Re-materialized root `safe-file-reading.md` as a substantive active runtime rule with `Full history`, preserving current design target behavior while removing design-only runtime dependency | |
 | 1.3 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Added canonical runtime header metadata and aligned the safe-file-reading chain to the cleanup-wave version state | |
 | 1.2 | 2026-02-22 | **[Enforced deterministic capped read patterns for WS-5](#version-12-enforced-deterministic-capped-read-patterns-for-ws-5)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
@@ -18,6 +20,24 @@
 | | | Summary: Standardized explicit capped read pattern and synchronized metadata | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Materialized active runtime body and closed metadata-only stub drift
+
+**Date:** 2026-05-06
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `safe-file-reading.md` from v1.3 to v1.4.
+- Updated `design/safe-file-reading.design.md` from v1.3 to v1.4.
+- Added `Full history` to the active runtime metadata where the root stub had lost the field.
+- Re-materialized the root runtime file as a substantive active rule body with operational guidance, verification expectations, and integration boundaries.
+- Preserved the current design target behavior while correcting the abnormal design-only/runtime-stub split.
+
+### Summary
+Safe file reading now has an installed active runtime body again, so the root rule can carry runtime behavior directly instead of relying on a design pointer as a substitute.
 
 ---
 

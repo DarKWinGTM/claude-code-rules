@@ -1,8 +1,8 @@
 # Changelog - Portable Implementation and Hardcoding Control
 
 > **Parent Document:** [../portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md)
-> **Current Version:** 1.1
-> **Session:** dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e
+> **Current Version:** 1.2
+> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
 

@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.87</b><br><sub>Current Release</sub>
+  <b>v9.88</b><br><sub>Current Release</sub>
 </td>
 <td align="center" width="200">
   <b>44</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Runtime Verified</sub>
+  <b>Released</b><br><sub>Runtime + Body Verified</sub>
 </td>
 <td align="center" width="200">
-  <b>Research routing</b><br><sub>P081-02 Subagents</sub>
+  <b>Runtime bodies</b><br><sub>P073-10 Repair</sub>
 </td>
 </tr>
 </table>
@@ -320,6 +320,7 @@ Please:
 - P076-03 phase-visible task linkage is synchronized for v9.85: phase-backed live task entries must visibly expose active or clearly implied phase context in the subject or description; active runtime count remains 43 and 43/43 runtime install parity has passed
 - P084-01 development verification and debug strategy is synchronized for v9.86: non-trivial coding work now has a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout; active runtime count is 44 and 44/44 runtime install/parity has passed with destination extras observed-only
 - P081-02 subagent research orchestration is synchronized for v9.87: broad research/design-improvement/source-heavy work now maps into focused research lanes before leader raw source absorption, while active runtime count remains 44
+- P073-10 active runtime body sufficiency is synchronized for v9.88: 10 metadata-only root runtime files are re-materialized, active runtime count remains 44, source/runtime parity and body-sufficiency verification passed 44/44, and destination extras remain observed-only
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -358,7 +359,7 @@ Please:
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, checked master/governed repo surfaces outrank git-state cleanup heuristics when classifying file meaning, runtime co-location is not ownership authority, destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification or cleanup, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, user-declared RULES-first issues stay RULES-first instead of being diverted into memory-first fixes, memory applicability now defers to the dedicated memory-governance owner, non-matching path-scoped remembered context cannot override the current repo/objective, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer the best visible custom/specialist agent after native worker routing has already classified intent, selected the needed worker capability, and chosen a direct/subagent/multi-subagent/team scale; do not turn agent availability into a routing or Agent Team escalation decision |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
-| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, source-owned active runtime, shared runtime destination, other-owner runtime, destination/runtime, local execution, and reusable source-artifact references from drifting into each other so parity/install wording does not turn shared-destination co-location into ownership, and requires governed reference/history checks before junk/disposal classification |
+| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, source-owned active runtime, active runtime body-sufficiency, shared runtime destination, other-owner runtime, destination/runtime, local execution, and reusable source-artifact references distinct so parity/no-drift claims do not pass on shared-destination co-location, metadata-only roots, or cleanup-driven file classification |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Active changelogs stay version authority while `changelog/done/` can hold inactive completed/older history when active scans would become too large |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Active blueprint/target-state structure, no default `design/done/`, and required capture of implementation-relevant truth extracted from external docs/specs/provider references when later work still depends on it |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed before/after patch/review artifacts outside the live `/phase` workspace, with `patch/done/` as inactive completed patch history rather than junk or active phase input by default |
@@ -381,10 +382,10 @@ Please:
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts, keep hygiene/cleanup wording from acting as deletion authority, and prevent shared runtime destination co-location from making other-owner runtime files junk by default |
 | [`todo-standards.md`](todo-standards.md) | Task management | Durable TODO tracking plus same-objective built-in task-list reuse, append-not-replace behavior, completed-task visibility, current-phase-first, phase-context-aware, and phase-visible live execution visibility, required inspection of relevant governed `/phase` context before shaping task entries when that context exists, task creation aligned to active phase or clearly implied staged context with visible phase linkage in subject or description, bounded use of already-authored `/phase` planning data for continuity and draft next-work discovery, task wording that follows the actual active session language pattern with Thai-led default wording for Thai-led sessions, preserved natural Thai+English mix when that is the real session pattern, and technical labels left in technical form when forced translation would reduce clarity, task-list-first next-work discovery with bounded fallback, live tracking friction recovery for bounded worker lanes, explicit required TODO sync as companion work when `TODO.md` is needed, deferral of phase identity allocation to `phase-implementation.md`, and deferral of broader shared-board coordination semantics to the external coordination owner when applicable |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, completed documentation surface governance for `phase/done/`, `patch/done/`, and `changelog/done/`, no-default-`design/done/` blueprint boundary, governed companion status for required design/changelog/TODO/phase/patch surfaces, phase-family lineage visibility without taking over current-phase/subphase/new-major identity semantics, phase-shaped task creation alignment with visible phase pointers, runtime installs scoped to the current project/source-owned active runtime rule set, other-owner runtime destination file boundary, live-task-list-vs-durable-TODO distinction, non-default startup patch posture, and portable public onboarding/install guidance |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus startup artifact gate, completed documentation surface governance for `phase/done/`, `patch/done/`, and `changelog/done/`, no-default-`design/done/` blueprint boundary, governed companion status for required design/changelog/TODO/phase/patch surfaces, phase-family lineage visibility without taking over current-phase/subphase/new-major identity semantics, phase-shaped task creation alignment with visible phase pointers, runtime installs scoped to the current project/source-owned active runtime rule set, active runtime body-sufficiency install boundary, other-owner runtime destination file boundary, live-task-list-vs-durable-TODO distinction, non-default startup patch posture, and portable public onboarding/install guidance |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, re-checks intent when pasted logs/paths/snippets could be behavior/RULES evidence rather than project authorization, keeps startup governance as an execution precondition, keeps work moving when execution mode is active, discovers the next unfinished slice from execution surfaces, applies phase-lineage handling before opening a new major phase for phase-shaped follow-up work, preserves visible phase linkage in continuation-created or continuation-extended live tasks, and sends broad continuation, including research/design-improvement/source-comparison continuation, through subagent-first worker routing before leader raw absorption |
-| [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller |
+| [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller plus active runtime body-sufficiency validation |
 
 ---
 
@@ -415,7 +416,7 @@ Please:
 
 **📊 Active Runtime Rules: 44**
 
-Latest refinement: P081-02 adds subagent research orchestration inside the native worker-routing family so broad research, design-improvement, source comparison, and source-heavy recommendation work are mapped into focused research lanes before leader raw source absorption. The active runtime set remains 44 files; v9.87 runtime install/parity verified 44/44 README-listed active runtime rules, `master` was pushed, and GitHub release `v9.87` is published.
+Latest refinement: P073-10 repairs active runtime body sufficiency so README-listed root runtime rules must carry substantive runtime behavior bodies instead of metadata-only design pointers. The active runtime set remains 44 files; source/runtime parity and body-sufficiency verification passed 44/44, with destination extras observed-only for the v9.88 release.
 </div>
 
 ---
@@ -1123,7 +1124,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 44 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, and P076-03 install parity were verified after explicit install gates; P084-01 raises the active runtime count to 44 and has verified 44/44 source-owned runtime parity; P081-02 keeps the active runtime count at 44, refines existing owners, verifies 44/44 source-owned runtime parity, and publishes GitHub release `v9.87` | Avoids overclaiming source/runtime scope and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, and P076-03 install parity were verified after explicit install gates; P084-01 raises the active runtime count to 44 and P081-02 preserves 44/44 published parity; P073-10 keeps the active runtime count at 44, restores 10 metadata-only active runtime roots into substantive runtime bodies, and verifies source/runtime parity plus body sufficiency 44/44 | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, and edit-only coding closeout |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1214,7 +1215,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.87 |
+  <b>Version</b>: 9.88 |
   <b>Last Updated</b>: 2026-05-06 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
