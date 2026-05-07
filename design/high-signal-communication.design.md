@@ -3,20 +3,28 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## Current Target-State Refinement
+
+This design now protects useful goal/output/gate framing and supported next-goal recommendations from over-pruning. High-signal filtering should remove surplus wording, but it must not remove content that prevents non-trivial goal drift, clarifies expected output or completion gate, or gives a supported next-goal recommendation at true completion.
+
+Goal framing remains proportional: the pruning pass should also remove rigid or repeated goal blocks when they do not directly improve understanding, decision, verification, continuation, or closeout.
 
 ---
 
 ## 1) Goal
 
-Define a bounded high-signal communication rule that tightens response quality by removing low-value extra content and repeated wording without displacing the existing communication, explanation, presentation, roadmap-aware completion, or optional deep-dive-offer owners.
+Define a bounded high-signal communication rule that tightens response quality by removing low-value extra content and repeated wording without displacing existing communication, explanation, presentation, goal-aware framing, roadmap/next-goal recommendation, or optional deep-dive-offer owners.
 
 The purpose is to improve signal density while preserving:
 - natural tone
 - easy-to-follow explanation
 - useful options when they are still needed
-- roadmap-aware next recommendations when checked completion surfaces support them
+- useful goal/output/gate framing and roadmap-aware next-goal recommendations when checked completion surfaces support them
 - optional deeper-detail offers when an easy-first answer should stay compact but expandable
 - the existing active owner boundaries
 
@@ -52,7 +60,7 @@ Out of scope:
 - main-point-first ownership
 - plain-language-first explanation ownership
 - option/recommendation ownership
-- roadmap-aware completion ownership
+- roadmap-aware completion and next-goal recommendation ownership
 - optional deep-dive-offer ownership
 - phase/progress explanation ownership
 

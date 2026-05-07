@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-05-07 | **[Added goal-state continuity and next-goal bridge](#version-115)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added current goal/output/gate continuity during non-trivial execution and extended true-completion handling to supported next-goal recommendations without blocking selected safe continuation. | |
 | 1.14 | 2026-05-06 | **[Added completion-to-roadmap recommendation bridge](#version-114)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added true-completion handling that continues selected successors, recommends meaningful unselected next work, asks on ambiguity, or reports no opened next phase without blocking safe continuation | |
 | 1.13 | 2026-05-06 | **[Routed broad research continuation through research lanes](#version-113)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -27,6 +29,24 @@
 | 1.1 | 2026-04-12 | **[Added execution-surface-driven next-work discovery](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-12 | **[Created first-class execution continuity and mode-selection rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new rule chain that separates discussion mode from execution mode and keeps execution flowing once the active path is already sufficiently clear | |
+
+---
+
+<a id="version-115"></a>
+## Version 1.15: Added goal-state continuity and next-goal bridge
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.14 to v1.15.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.14 to v1.15.
+- Added goal-state continuity so non-trivial execution keeps the current goal, expected output, and completion gate clear enough to prevent drift.
+- Extended the completion bridge from next phases/waves to supported next goals.
+- Preserved selected safe continuation as the first path when successor work is already selected and unblocked.
+
+### Summary
+Added current goal/output/gate continuity during non-trivial execution and extended true-completion handling to supported next-goal recommendations without blocking selected safe continuation.
 
 ---
 

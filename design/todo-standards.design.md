@@ -3,14 +3,22 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.24
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 2.25
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## Current Target-State Refinement
+
+This design now requires non-trivial live task entries to stay outcome/goal-shaped rather than command-only when goal, expected output, or completion gate meaning prevents drift. The task list should still remain lightweight; goal/output/gate details belong in the subject or description only when they improve execution clarity.
+
+This applies especially to phase-backed or staged work, where tasks should expose phase context and the intended output/gate without turning every command or trivial lookup into a bulky template.
 
 ---
 
 ## 1) Goal
 
-Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, keeps material coding verification slices visible when implementation and verification are distinct outcomes, visibly links phase-backed live task entries to active or implied phase context, resolves tracking posture early when meaningful governed work genuinely needs visibility, and prevents non-material live tracking friction from collapsing bounded worker routing.
+Define a simple execution-tracking governance model that stays aligned with UDVC-1, preserves `TODO.md` as the durable/project tracking layer, uses Claude Code's built-in task list as the live execution surface for non-trivial active work, keeps non-trivial entries outcome/goal-shaped rather than command-only, keeps material coding verification slices visible when implementation and verification are distinct outcomes, visibly links phase-backed live task entries to active or implied phase context, resolves tracking posture early when meaningful governed work genuinely needs visibility, and prevents non-material live tracking friction from collapsing bounded worker routing.
 
 ---
 
@@ -152,7 +160,7 @@ When the built-in task list is in use:
 - mark a task `completed` as soon as that slice is actually done
 - preserve or add a visible verification slice when non-trivial coding implementation is done but targeted verification remains material
 - add new tasks when newly discovered work is real and non-trivial
-- keep task entries outcome-sized rather than command-sized
+- keep task entries outcome-sized rather than command-sized, and include expected output or completion gate meaning when material
 - when the checked project/workstream context is already phase-shaped, keep task creation aligned to the current active phase or clearly implied current stage/family even if the exact next phase file is still pending
 - if task shaping shows a new phase file is needed, defer current phase vs subphase vs new-major selection to `phase-implementation.md`
 - when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping new task entries or extending existing ones
@@ -211,7 +219,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 - [ ] Phase-backed or clearly phase-shaped task entries visibly expose phase context in subject or description
 - [ ] Task creation does not silently allocate a new major phase when `phase-implementation.md` lineage handling is needed
 - [ ] Task wording stays aligned to the active session language/register instead of defaulting to detached generic wording
-- [ ] Task entries remain outcome-sized rather than command-sized
+- [ ] Task entries remain outcome-sized rather than command-sized and include output/gate meaning when material
 - [ ] Required TODO synchronization is not downgraded into optional bookkeeping
 - [ ] Live tracking friction is repaired when material and bounded/reported when non-material to standalone worker routing
 - [ ] TODO content update occurs after design/runtime/changelog synchronization

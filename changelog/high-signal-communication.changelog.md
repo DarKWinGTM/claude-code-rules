@@ -1,8 +1,8 @@
 # Changelog - High Signal Communication
 
 > **Parent Document:** [../high-signal-communication.md](../high-signal-communication.md)
-> **Current Version:** 1.2
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,12 +10,32 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-07 | **[Preserved goal frames and next-goal recommendations during pruning](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Tightened high-signal pruning so it removes surplus wording without stripping useful goal/output/gate framing or supported next-goal recommendations. | |
 | 1.2 | 2026-05-06 | **[Protected useful roadmap recommendations and deep-dive offers from over-pruning](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Tightened high-signal pruning so it removes surplus wording without stripping required roadmap-aware recommendations or compact optional deep-dive offers | |
 | 1.1 | 2026-04-11 | **[Promoted high-signal communication into the active rule set](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Removed standalone experimental framing, narrowed the rule to supplementary high-signal filtering mechanisms, and aligned it with the active runtime install set | |
 | 1.0 | 2026-04-11 | **[Created standalone experimental high-signal communication rule](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a separate experimental rule that tests extra-content admission, post-draft pruning, and bounded expansion without integrating into the active rule graph | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Preserved goal frames and next-goal recommendations during pruning
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `high-signal-communication.md` from v1.2 to v1.3.
+- Updated `design/high-signal-communication.design.md` from v1.2 to v1.3.
+- Extended extra-content admission to preserve useful goal/output/gate framing when it prevents drift or clarifies verification.
+- Protected supported next-goal recommendations from repetition pruning at true completion boundaries.
+- Preserved the rule's supplementary role and anti-boilerplate boundary.
+
+### Summary
+Tightened high-signal pruning so it removes surplus wording without stripping useful goal/output/gate framing or supported next-goal recommendations.
 
 ---
 

@@ -3,14 +3,22 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.22
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 2.23
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## Current Target-State Refinement
+
+This design now includes proportional goal-aware explanation. When non-trivial work benefits from orientation, verification focus, or closeout clarity, explanation should make the goal, expected output, and completion gate understandable in human terms.
+
+The frame is triggered, not mandatory: simple answers may omit it, obvious safe continuation should not pause for it, and true closeout should use checked roadmap/design/TODO/phase/implementation evidence before recommending any next goal.
 
 ---
 
 ## 1) Goal
 
-Define one rule chain that improves the structure of analytical and technical explanations so answers stay easy to follow, feel natural step by step, preserve causal reasoning depth, stay complete enough without over-expansion, and offer a specific deeper-detail path when an easy-first answer should remain compact but expandable.
+Define one rule chain that improves the structure of analytical and technical explanations so answers stay easy to follow, feel natural step by step, preserve causal reasoning depth, keep proportional goal/output/gate framing when it improves non-trivial work, stay complete enough without over-expansion, and offer a specific deeper-detail path when an easy-first answer should remain compact but expandable.
 
 The target behavior is a layered natural explanation style:
 - short answer first
@@ -28,8 +36,8 @@ The target behavior is a layered natural explanation style:
 - phase closeout explanation that makes delivered feature/improvement and practical impact visible before file lists, task IDs, or audit detail
 - easy-explanation continuity so answers that were explicitly requested in simple Thai do not drift back into jargon-heavy or internal-label-heavy wording after the opening
 - concise, high-signal ending with a real next move only when one genuinely exists
-- roadmap-aware next recommendation after true objective completion when checked successor work is meaningful
-- goal-qualified proposal framing when future ideas are useful after bounded completion
+- roadmap-aware next phase/wave/goal recommendation after true objective completion when checked successor work is meaningful
+- goal-qualified proposal framing when future ideas are useful after bounded completion and are not already selected execution
 - one short optional deep-dive offer when the compact answer is intentionally easy-first and more detail may help
 - governing-basis clarification before deepening several materially different branches
 - compact post-compact re-anchor before explanation resumes after compaction may have compressed exact context
@@ -107,7 +115,7 @@ Compact technical snapshot when needed
   ↓
 Step-by-step implication or fix
   ↓
-Concise synthesis, roadmap-aware next move when genuinely useful, and optional deep-dive offer when helpful
+Concise synthesis, supported next phase/wave/goal recommendation when genuinely useful, and optional deep-dive offer when helpful
 
 ### 4.1 Plain-Language-First Principle
 
@@ -319,7 +327,7 @@ When closing phase-backed work, start by explaining what the phase delivered in 
 Required guidance:
 - state what the phase developed, improved, enabled, checked, locked, or moved forward
 - make the delivered feature/improvement and practical user/system meaning visible before file lists, task IDs, or audit detail
-- when true completion has checked successor work, explain the next recommendation as a goal-qualified next phase/wave rather than ending silently
+- when true completion has checked successor work, explain the next recommendation as a goal-qualified next phase/wave/goal rather than ending silently
 - keep the explanation concise before moving into verification or governance detail
 - do not oversimplify into false mechanisms; verification strength still comes from the evidence owner
 
@@ -493,7 +501,7 @@ Default expectation:
 - if there are multiple reasonable next paths and presenting them would materially help the user, present short explicit options the user can choose from
 - when one option is better-supported, make the recommendation explicit and explain briefly why it should happen first
 - when multiple reasonable next paths genuinely remain open, preserve at least one alternative instead of collapsing the visible decision surface into the recommended path only
-- if the active objective is truly complete and checked roadmap surfaces show meaningful unselected successor work, recommend the next phase/wave with goal, output, and gate
+- if the active objective is truly complete and checked roadmap surfaces show meaningful unselected successor work, recommend the next phase/wave/goal with goal, output, and gate
 - if the task is already complete and no real continuation or meaningful successor work is visible, do not invent artificial next-step options
 - if future ideas are offered after bounded completion, make the proposal clearly advisory and state the goal plus the expected improvement/result
 - when choosing between deeper explanation of the current stage and progression to the next stage, prefer progression if the current stage is already sufficiently clear
@@ -521,7 +529,7 @@ Before finishing an explanation-heavy answer, it should be possible for the user
 - why it is true
 - what trade-off matters most, if options exist
 - what they can do next, if a real next move exists
-- what next phase/wave is recommended when the active objective is truly complete and checked successor work exists
+- what next phase/wave/goal is recommended when the active objective is truly complete and checked successor work exists
 - whether a deeper explanation is available and what specific topic it would cover when the answer intentionally stayed compact
 - whether the response should now move to the next stage/state instead of continuing to deepen the current one
 - whether the full relevant set is visible before any optional narrowing begins
@@ -826,7 +834,7 @@ Gate
 | architecture-first or metaphor-heavy explanation with no direct human-action/result translation | the reader understands the system wording only after extra decoding | restate the explanation in direct terms that say what changed, what the user can do, or what result is visible |
 | the explanation starts with setup detail instead of what it is doing | the reader only discovers the point after reading several sentences | open with one purpose-first sentence that says what is being tested, diagnosed, proposed, recommended, or concluded |
 | phase closeout starts with governance/file/task detail only | the reader cannot see what the phase developed, improved, or enabled | start with delivered feature/improvement and practical impact before deeper governance detail |
-| true completion hides meaningful next phase/wave | the user must ask what should happen next despite checked roadmap context | add a compact roadmap-aware recommendation when checked surfaces support it |
+| true completion hides meaningful next phase/wave/goal | the user must ask what should happen next despite checked roadmap context | add a compact roadmap-aware recommendation when checked surfaces support it |
 | optional detail offer becomes a long second answer | the easy-first answer becomes overlong before the user asks for depth | keep one specific offer and wait for selection |
 | proof cited without explaining what it proves or does not prove | the user cannot tell whether evidence is a hard constraint or only support | show evidence boundary and decision implication |
 | ordinary evidence treated as a rigid design lock | trade-offs disappear without proof | separate hard constraints from grounding input |

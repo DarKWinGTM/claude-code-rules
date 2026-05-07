@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.24
+> **Current Version:** 2.25
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.25 | 2026-05-07 | **[Added outcome-goal-shaped live task entries](#version-225a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended live task-list doctrine so non-trivial entries stay outcome/goal-shaped and include expected output or completion gate meaning when material. | |
 | 2.24 | 2026-05-06 | **[Added live tracking friction recovery for bounded worker lanes](#version-224a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.23 | 2026-05-06 | **[Preserved visible verification slices for non-trivial coding work](#version-223a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added live task-list guidance to preserve or add material verification slices when implementation and verification are distinct outcomes in non-trivial coding work | |
@@ -37,6 +39,24 @@
 | | | Summary: Created authoritative changelog history for the TODO standards chain and added a startup bridge so TODO presence is resolved early when meaningful governed work requires tracking | |
 | 2.2 | 2026-03-08 | **[Existing simplified TODO standards baseline](#version-22)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Established the simplified TODO structure, pending-only discipline, and TODO-last synchronization order that the active chain already used | |
+
+---
+
+<a id="version-225a"></a>
+## Version 2.25: Added outcome-goal-shaped live task entries
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `todo-standards.md` from v2.24 to v2.25.
+- Updated `design/todo-standards.design.md` from v2.24 to v2.25.
+- Clarified that non-trivial live task entries should be outcome/goal-shaped rather than command-only.
+- Allowed output/gate meaning in task subject or description when it improves execution clarity.
+- Preserved lightweight task-list behavior and avoided forcing bulky templates into simple tasks.
+
+### Summary
+Extended live task-list doctrine so non-trivial entries stay outcome/goal-shaped and include expected output or completion gate meaning when material.
 
 ---
 

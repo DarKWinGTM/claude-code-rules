@@ -3,16 +3,24 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## Current Target-State Refinement
+
+This design now makes supported next-goal recommendations a first-class closeout shape, not only next-phase or next-wave recommendations. At true completion, the ending may name a recommended next phase, wave, or goal with a short evidence-backed reason, expected output, and completion gate.
+
+The recommendation remains advisory unless user direction or governed execution surfaces select it. It must not interrupt selected safe continuation, and it must not invent future work when checked design/TODO/phase/roadmap/implementation evidence does not support a successor.
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that owns how responses end: concise synthesis, clear next-action wording, recommendation-with-reason framing, alternative preservation, phase-backed delivery/impact closeout synthesis, roadmap-aware next recommendations at true completion boundaries, optional deep-dive offers, closed-topic summary handling, and advisory goal-qualified proposal framing.
+Define one first-class rule chain that owns how responses end: concise synthesis, clear next-action wording, recommendation-with-reason framing, alternative preservation, phase-backed delivery/impact closeout synthesis, roadmap-aware next recommendations and supported next-goal recommendations at true completion boundaries, optional deep-dive offers, closed-topic summary handling, and advisory proposal framing.
 
-This chain should make endings easier to act on and make phase-backed closeouts show what the phase delivered, what improved, why it matters, and what meaningful next phase/wave is recommended when checked roadmap surfaces support one, without replacing execution-mode ownership, authority ownership, evidence wording, phase roadmap ownership, or explanation-flow ownership.
+This chain should make endings easier to act on and make phase-backed closeouts show what the phase delivered, what improved, why it matters, and what meaningful next phase/wave/goal is recommended when checked roadmap surfaces support one, without replacing execution-mode ownership, authority ownership, evidence wording, phase roadmap ownership, or explanation-flow ownership.
 
 ---
 
@@ -50,7 +58,7 @@ Resolved topics may remain in reasoning context, but should not dominate the vis
 When closing phase-backed work, the ending should state the delivered work, feature/improvement, user/system impact, verification basis, and next phase state when relevant before or alongside audit/checklist status.
 
 ### 3.6 Roadmap-Aware Completion Principle
-When active work is genuinely complete and checked roadmap surfaces show meaningful unselected successor work, the ending should recommend the next phase/wave with a goal, expected output, and gate. This recommendation must not block selected safe continuation.
+When active work is genuinely complete and checked roadmap, design, TODO, phase, or implementation surfaces show meaningful unselected successor work, the ending should recommend the next phase, wave, or goal with why it is supported, expected output, and gate. This recommendation must not block selected safe continuation.
 
 ### 3.7 Goal-Qualified Proposal Principle
 Future-work ideas outside the active objective should remain clearly advisory and specific enough to evaluate as proposals.
@@ -116,7 +124,7 @@ This chain succeeds when:
 - recommendation-plus-reason behavior is explicit and consistent
 - alternative paths remain visible when they still matter
 - future-work ideas are clearly advisory
-- true completion includes roadmap-aware next recommendations when checked successor work is meaningful
+- true completion includes roadmap-aware next-phase/wave/goal recommendations when checked successor work is meaningful
 - optional deep-dive offers give a specific path to more detail without bloating the first answer
 - phase closeouts explain delivered feature/improvement and impact before audit-only detail
 - resolved topics stop dominating active summaries by default

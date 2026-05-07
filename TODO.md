@@ -168,7 +168,7 @@
 
 ### Active Work
 
-No active RULES release work is pending.
+- [ ] Complete P075-03 goal-first working frame and next-goal recommendations: v9.90 owner-chain/master sync and 44/44 source/runtime install parity plus body-sufficiency verification have passed with destination extras observed-only; push master and publish GitHub release `v9.90` remain pending.
 
 ### Deferred Enhancements
 - [ ] Automated validation script for documentation compliance (deferred by user).
@@ -179,7 +179,7 @@ No active RULES release work is pending.
 - [x] Verify all 44 README-listed active runtime roots exist, include `Full history`, and contain substantive runtime bodies.
 - [x] Install only the README-listed 44 active runtime rules to `~/.claude/rules/` and verify source/runtime hash parity.
 - [x] Verify destination runtime extras remain observed-only and untouched.
-- [x] Verify GitHub release `v9.89` exists after push/release.
+- [ ] Verify GitHub release `v9.90` exists after push/release.
 
 ---
 
@@ -187,6 +187,7 @@ No active RULES release work is pending.
 
 | Date | Changes |
 |------|---------|
+| 2026-05-07 | Advanced P075-03 goal-first working frame and next-goal recommendations: eight active runtime owners, paired design/changelog chains, and v9.90 master records now carry proportional goal/output/gate, triggered visibility, continuation-first, outcome-shaped task, and evidence-grounded next-goal behavior; 44/44 source/runtime install parity plus body-sufficiency verification passed with destination extras observed-only, while push/release gates remain active. |
 | 2026-05-07 | Completed P075-02 roadmap-aware completion and next-phase proposal behavior: seven active runtime owners and paired design/changelog chains now carry completion-to-roadmap, compact next recommendation, optional deep-dive, high-signal preservation, and roadmap/phase-matrix worker-routing guidance; v9.89 source audit plus 44/44 runtime install/parity/body-sufficiency verification passed, master was pushed, and GitHub release `v9.89` was published. |
 | 2026-05-06 | Completed P073-10 active runtime body sufficiency corrective validation: re-materialized 10 metadata-only active runtime roots, synchronized body-sufficiency doctrine across controller/documentation/consistency owners, kept the active runtime count at 44, verified source and runtime body-sufficiency/parity gates 44/44 with destination extras observed-only, pushed master, and published GitHub release `v9.88`. |
 | 2026-05-06 | Completed P081-02 subagent research orchestration and leader context optimization: refined native-worker routing, external verification/source trust, execution continuity, and TODO tracking-friction recovery so broad research/design-improvement/source-heavy work uses focused research lanes before leader raw source absorption; synchronized v9.87 / unchanged 44-rule master records; installed only README-listed active runtime rules; verified 44/44 runtime parity; pushed master; and published GitHub release `v9.87`. |

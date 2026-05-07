@@ -1,7 +1,7 @@
 # Changelog - Response Closing and Action Framing
 
 > **Parent Document:** [../response-closing-and-action-framing.md](../response-closing-and-action-framing.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,11 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-07 | **[Added supported next-goal recommendation closeouts](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended response closing so true completion can recommend a supported next phase, wave, or goal with why/output/gate while keeping unselected successors advisory. | |
 | 1.2 | 2026-05-06 | **[Added roadmap-aware completion and optional deep-dive offers](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added closeout behavior that recommends meaningful next phases with goal/output/gate and offers one optional deeper explanation path when easy-first answers should remain compact | |
 | 1.1 | 2026-04-25 | **[Added phase-backed delivery and impact closeout synthesis](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-04-17 | **[Created first-class response closing and action framing rule chain](#version-10)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | | | Summary: Created a new rule chain that owns concise synthesis, next-action framing, recommendation-plus-reason wording, alternative preservation, closed-topic summary discipline, and advisory goal-qualified proposal framing | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added supported next-goal recommendation closeouts
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `response-closing-and-action-framing.md` from v1.2 to v1.3.
+- Updated `design/response-closing-and-action-framing.design.md` from v1.2 to v1.3.
+- Extended roadmap-aware completion from next phase/wave to next phase/wave/goal recommendations.
+- Added anti-pattern coverage for unsupported next-goal recommendations and proposal wording that reads like selected execution.
+- Preserved the boundary that selected safe continuation must not be blocked by recommendation wording.
+
+### Summary
+Extended response closing so true completion can recommend a supported next phase, wave, or goal with why/output/gate while keeping unselected successors advisory.
 
 ---
 

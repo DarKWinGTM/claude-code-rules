@@ -3,14 +3,22 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.27
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 1.28
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## Current Target-State Refinement
+
+This design now adds compact goal-aware presentation patterns. `Goal`, `Output`, and `Gate` blocks are available when non-trivial work needs orientation, drift control, verification clarity, or closeout support, but they should stay internal or be omitted when the path is obvious.
+
+Roadmap-aware completion presentation now covers recommended next phase, wave, or goal. The visible shape should include why the next item is supported, expected output, and gate only when checked successor-work evidence exists and selected safe continuation is not already underway.
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain for answer presentation so responses are orderly, readable, scannable, complete enough without over-expansion, and visually disciplined without forcing one rigid template onto every answer.
+Define one first-class rule chain for answer presentation so responses are orderly, readable, scannable, complete enough without over-expansion, able to expose proportional goal/output/gate framing when useful, and visually disciplined without forcing one rigid template onto every answer.
 
 The target behavior is principle-first and trigger-driven:
 - lead with the main point when helpful
@@ -28,7 +36,7 @@ The target behavior is principle-first and trigger-driven:
 - make stage progression visible when the answer should move forward rather than deepen the same scope again
 - make easy-to-picture phase/progress explanations easy to present through one short plain-language opening plus a concise grouped explanation
 - make phase-backed closeouts easy to present through compact delivery, feature/improvement, impact, verification, next-state, and meaningful next-recommendation grouping
-- make roadmap-aware completion easy to present with recommended next phase/wave, reason, goal, output, and gate when checked successor work exists
+- make roadmap-aware completion easy to present with recommended next phase/wave/goal, reason, goal, output, and gate when checked successor work exists
 - keep easy-first answers complete enough while allowing one short optional deep-dive offer when more detail may help
 - make materially outcome-changing governing-basis ambiguity easy to present as a short structured clarification instead of a long branch-comparison essay
 - make post-compact continuation easy to present as one short re-anchor block instead of a long replay
@@ -181,7 +189,7 @@ Use stronger presentation structure when one or more of these triggers are prese
 | scope clarification | current scope vs future scope, what this is vs what this is not, staged rollout boundary | grouped section blocks such as `What this is`, `What this is not`, `What happens now`, `What stays later` |
 | full-set framing | many relevant areas, complete checklist, multiple review axes that should be visible together | complete set first, then optional narrowing |
 | phase-backed closeout | closing phase-backed work | compact delivered work, feature/improvement, impact, verification, next-state, and next-recommendation grouping when meaningful |
-| roadmap-aware completion | active objective is truly complete and checked successor work exists | `Recommended next`, `Why this next`, `Goal`, `Output`, and `Gate` when selected safe continuation is not already underway |
+| roadmap-aware completion | active objective is truly complete and checked successor work exists | `Recommended next`, `Why this next`, `Goal`, `Output`, and `Gate` for the next phase, wave, or goal when selected safe continuation is not already underway |
 | optional deep dive | compact easy-first answer where more detail may help | one short offer naming the specific expandable topic |
 | stage progression | current explanation is already sufficient and the real need is the next state or milestone | one short progression block such as `What happens next` or `Next stage` |
 | variable-heavy explanation | multiple variables, fields, config keys, enum-like values, or internal labels are central to the explanation | short glossary block, variable-role table, or grouped identifier explanation before deeper reasoning |

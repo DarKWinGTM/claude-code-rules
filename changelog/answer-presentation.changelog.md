@@ -1,7 +1,7 @@
 # Changelog - Answer Presentation
 
 > **Parent Document:** [../answer-presentation.md](../answer-presentation.md)
-> **Current Version:** 1.27
+> **Current Version:** 1.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.28 | 2026-05-07 | **[Added compact goal-aware presentation patterns](#version-128)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added presentation patterns for goal-aware working frames and next phase/wave/goal recommendations without forcing Goal/Output/Gate blocks into simple answers. | |
 | 1.27 | 2026-05-06 | **[Added roadmap-aware completion and deep-dive presentation patterns](#version-127)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added presentation patterns for recommended next phase/wave with goal/output/gate and one short optional deep-dive offer after complete-enough answers | |
 | 1.26 | 2026-04-25 | **[Added compact phase-backed closeout presentation support](#version-126)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -47,6 +49,24 @@
 | | | Summary: Extended answer-presentation so troubleshooting, progress, and verification updates now use compact titled snapshot sections, small fact tables, and short implication lines instead of loose prose or raw evidence dumps | |
 | 1.0 | 2026-03-10 | **[Created first-class answer-presentation rule chain for readable and scannable output](#version-10)** | 468e053d-9953-496e-8e83-910e2ae67402 |
 | | | Summary: Created a new design/runtime/changelog chain that governs answer presentation using principle-first, trigger-driven, and anti-pattern-bounded guidance for readable, orderly output | |
+
+---
+
+<a id="version-128"></a>
+## Version 1.28: Added compact goal-aware presentation patterns
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `answer-presentation.md` from v1.27 to v1.28.
+- Updated `design/answer-presentation.design.md` from v1.27 to v1.28.
+- Added compact goal-aware working frame presentation using Goal, Output, and Gate when useful.
+- Extended roadmap-aware completion presentation from next phase/wave to next phase/wave/goal.
+- Added anti-pattern coverage against forcing goal/output/gate blocks into every simple answer.
+
+### Summary
+Added presentation patterns for goal-aware working frames and next phase/wave/goal recommendations without forcing Goal/Output/Gate blocks into simple answers.
 
 ---
 

@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.89
+> **Current Version:** 9.90
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.90 | 2026-05-07 | **[Added goal-first working frame and next-goal recommendations](#version-990)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.89 | 2026-05-07 | **[Added roadmap-aware completion and next-phase proposal behavior](#version-989)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.88 | 2026-05-06 | **[Added active runtime body sufficiency corrective validation](#version-988)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.87 | 2026-05-06 | **[Added subagent research orchestration and leader context optimization](#version-987)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -123,6 +124,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-990"></a>
+## Version 9.90: Added goal-first working frame and next-goal recommendations
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P075-03 under the existing P075 closeout/reporting lineage to add proportional goal-first working-frame behavior after P075-02 roadmap-aware completion.
+- Updated `goal-set-review-and-priority-balance` to v1.1 as the primary owner for goal/output/gate, goal hierarchy, triggered visibility, anti-ritual boundaries, and evidence-grounded next-goal recommendations.
+- Updated `execution-continuity-and-mode-selection` to v1.15 and `response-closing-and-action-framing` to v1.3 so selected safe goal/phase continuation remains first-class while unselected successor goals stay advisory at true closeout.
+- Updated `explanation-quality` to v2.23, `answer-presentation` to v1.28, and `high-signal-communication` to v1.3 so goal-aware framing stays compact, useful, easy-first, and protected from over-pruning without becoming mandatory boilerplate.
+- Updated `phase-implementation` to v2.30 and `todo-standards` to v2.25 so phase roadmaps, phase matrices, and non-trivial live task entries can carry goal/output/gate meaning and remain outcome-shaped rather than command-only.
+- Created P075-03 phase and patch records, synchronized paired design/changelog chains, synchronized master README/design/changelog/TODO/phase records for v9.90 with active runtime count unchanged at 44, and verified source/runtime install parity plus body sufficiency 44/44 with destination extras observed-only; git push and GitHub release `v9.90` remain pending until executed.
+
+### Summary
+P075-03 adds goal-aware navigation to non-trivial RULES execution: goal/output/gate can guide work when it prevents drift or improves verification, selected safe continuation remains unblocked, and next-goal recommendations require checked design/TODO/phase/implementation evidence instead of being invented or forced as a ritual.
 
 ---
 

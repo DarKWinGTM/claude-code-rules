@@ -1,12 +1,12 @@
 # Explanation Quality
-> **Current Version:** 2.22
-> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.22
+> **Current Version:** 2.23
+> **Design:** [design/explanation-quality.design.md](design/explanation-quality.design.md) v2.23
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/explanation-quality.changelog.md](changelog/explanation-quality.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Prefer explanations that start in plain language, stay complete without becoming overlong, use checked evidence as decision grounding when useful, deepen only as needed, and land with concise practical clarity plus optional deeper-detail offers when helpful.**
-This rule shapes analytical and technical explanation flow, including proof-aware recommendation/design explanation. It does not force long answers, replace verification rules, or interrupt active execution just to narrate optional next steps.
+**Core Principle: Prefer explanations that start in plain language, stay complete without becoming overlong, use checked evidence as decision grounding when useful, preserve proportional goal/output/gate framing for non-trivial work, deepen only as needed, and land with concise practical clarity plus optional deeper-detail offers when helpful.**
+This rule shapes analytical and technical explanation flow, including proof-aware recommendation/design explanation and proportional goal-aware explanation. It does not force long answers, replace verification rules, or interrupt active execution just to narrate optional next steps.
 ---
 ## Core Requirements
 ### 1) Plain-language and purpose first
@@ -19,9 +19,9 @@ Required behavior:
 - for tests, diagnoses, recommendations, proposals, or implementation updates, state the purpose before background detail
 - do not add a redundant purpose line when the first sentence already states the point clearly
 ### 2) Layered natural explanation
-Use only layers that materially improve understanding: short answer, purpose-first framing when needed, simple explanation, compact technical snapshot when needed, step-by-step implication/fix/reasoning path, optional deep-dive offer when deeper detail would help, and concise synthesis or next move when useful.
+Use only layers that materially improve understanding: short answer, purpose-first framing when needed, simple explanation, compact technical snapshot when needed, goal/output/gate framing when it prevents drift, step-by-step implication/fix/reasoning path, optional deep-dive offer when deeper detail would help, and concise synthesis or next move when useful.
 
-When depth matters, preserve **Claim** (what is true), **Mechanism** (why/how it is true), and **Implication** (what the user should conclude or do). If mechanism changes the decision, do not stop at the claim alone.
+When depth matters, preserve **Claim** (what is true), **Mechanism** (why/how it is true), and **Implication** (what the user should conclude or do). If mechanism changes the decision, do not stop at the claim alone. When a goal frame is visible, explain it in human terms: what outcome is being pursued, what output should exist, and what gate proves it is complete enough.
 ### 2.1) Proof-aware explanation
 When analysis, design, recommendation, or disagreement depends on factual grounding, explain evidence in a way that supports judgment without overstating certainty.
 Required behavior:
@@ -77,7 +77,7 @@ Required behavior:
 Required behavior:
 - when the current stage is clear enough, prefer the next meaningful stage/state over deeper same-scope elaboration
 - distinguish `clarify more` from `progress next`
-- after actual completion, include a goal-qualified next recommendation when checked roadmap surfaces show meaningful unselected successor work
+- after actual completion, include a supported next-goal recommendation when checked roadmap, design, TODO, phase, or implementation surfaces show meaningful unselected successor work
 - continuation-vs-option behavior defers to `accurate-communication.md` and `execution-continuity-and-mode-selection.md`
 - if safe active execution can continue, do not pause only to expose next-step guidance
 - when the real decision surface is a larger complete set, present the full set before narrowing
@@ -107,7 +107,7 @@ Required behavior:
 - make the practical implication explicit
 - provide forward motion only when a real continuation path exists
 - frame future ideas as advisory proposals unless selected by the user
-- after true objective completion, prefer a compact next-phase/wave recommendation over silence when checked roadmap surfaces support it
+- after true objective completion, prefer a compact next-phase/wave/goal recommendation over silence when checked roadmap or goal surfaces support it
 - if multiple reasonable next paths require user choice, show options; if one is better-supported, recommend it with a short reason
 - if active execution can safely continue, continue instead of pausing only to narrate it
 Before finishing explanation-heavy work, the user should be able to identify the main point, why it is true, the important trade-off if any, what can happen next or that the task is complete, and whether the full relevant set is visible before optional narrowing.
@@ -119,7 +119,8 @@ Before finishing explanation-heavy work, the user should be able to identify the
 | option comparison | simple framing, light comparison table when useful, recommendation |
 | proof-aware recommendation/design | checked evidence, what it proves/does not prove, implication, bounded alternative |
 | diagnostic update | main-point-first status line, compact snapshot, scoped implication, next action |
-| phase/progress or closeout | easy-to-picture line plus delivered feature/improvement, practical impact, concise grouping, and roadmap-aware next recommendation when meaningful |
+| phase/progress or closeout | easy-to-picture line plus delivered feature/improvement, practical impact, concise grouping, and roadmap-aware next-goal recommendation when meaningful |
+| goal-aware working frame | plain goal, expected output, and completion gate only when this improves orientation, verification, or closeout |
 | scope, full-set, or stage progression | explicit current/deferred grouping; full set first; next state when current scope is sufficient |
 | governing-basis ambiguity | compact clarification gate before deep analysis |
 | post-compact continuation | compact re-anchor plus selected-path continuation |
@@ -133,7 +134,8 @@ Simple then technical: Short answer first; then explain the mechanism only as fa
 Proof-aware: Checked evidence / what it proves / what it does not prove / recommendation.
 Patch-by-patch: Patch 1 establishes authority; Patch 2 rewires reads; Patch 3 verifies the new path.
 Diagnostic snapshot: Checked / Current / Pending / Next, followed by the reasoning path only when useful.
-Phase-backed closeout: delivered work / feature or improvement / impact / verification / next phase state / recommended next phase when meaningful.
+Phase-backed closeout: delivered work / feature or improvement / impact / verification / next phase state / supported next phase, wave, or goal when meaningful.
+Goal-aware frame: Goal / Output / Gate, visible only when it helps the user track non-trivial work.
 Optional deep dive: ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง <specific topic> ต่อได้.
 Scope and identifiers: What this is / is not, plus key identifiers with role and important values.
 Governing/post-compact: ask for governing basis when unsettled; after compact use current objective / carried-forward facts / needs-recheck / next action.
@@ -151,7 +153,8 @@ Governing/post-compact: ask for governing basis when unsettled; after compact us
 | scattered comparison bullets or sequence forced into table | use light table for comparison; numbered list for sequence |
 | diagnostic status buried in narrative | lead with compact diagnostic snapshot |
 | phase closeout starts with governance/file/task detail only | start with delivered feature/improvement and practical impact |
-| true completion hides meaningful next phase/wave | add a compact roadmap-aware recommendation when checked surfaces support it |
+| true completion hides meaningful next phase/wave/goal | add a compact roadmap-aware next-goal recommendation when checked surfaces support it |
+| goal framing becomes a rigid visible ritual | keep it internal or compact unless it improves orientation, verification, or closeout |
 | optional detail offer becomes a long second answer | keep one specific offer and wait for selection |
 | scope boundaries, full set, or stage progression hidden | group boundaries, show full set first, move next when ready |
 | multiple basis branches before selection or post-compact replay | ask compactly; use short re-anchor |
@@ -162,6 +165,7 @@ Governing/post-compact: ask for governing basis when unsettled; after compact us
 | Metric | Target |
 |---|---|
 | Plain-language-first, complete-enough compactness, purpose-first, and claim/mechanism/implication clarity | high |
+| Proportional goal/output/gate explanation without rigid boilerplate | high when non-trivial work benefits from it |
 | Optional deep-dive offer usefulness without over-expansion | high when relevant |
 | Proof-aware evidence boundary and decision usefulness | high |
 | Structural cohesion, concrete clarifiers, change walkthrough, and scope boundaries | high when relevant |
@@ -171,8 +175,9 @@ Governing/post-compact: ask for governing basis when unsettled; after compact us
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - evidence wording, direct glosses, continuation-vs-option policy
 - [technical-snapshot-communication.md](technical-snapshot-communication.md) - exact/partial/inferred snapshot wording
-- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - closing synthesis, roadmap-aware recommendations, optional deep-dive offers, and advisory proposal framing
-- [answer-presentation.md](answer-presentation.md) - layout for snapshots, scope blocks, full-set lists, next-stage blocks, and optional deep-dive offers
+- [response-closing-and-action-framing.md](response-closing-and-action-framing.md) - closing synthesis, roadmap-aware next-goal recommendations, optional deep-dive offers, and advisory proposal framing
+- [goal-set-review-and-priority-balance.md](goal-set-review-and-priority-balance.md) - goal-first working frame, goal hierarchy, triggered visibility, and next-goal recommendation boundaries
+- [answer-presentation.md](answer-presentation.md) - layout for snapshots, scope blocks, goal-aware frames, full-set lists, next-stage blocks, and optional deep-dive offers
 - [flow-diagram-no-frame.md](flow-diagram-no-frame.md) - text diagram formatting
 - [zero-hallucination.md](zero-hallucination.md) - technical claims must be verified
 - [anti-sycophancy.md](anti-sycophancy.md) - recommendations must remain evidence-based

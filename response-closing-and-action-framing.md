@@ -1,7 +1,7 @@
 # Response Closing and Action Framing
 
-> **Current Version:** 1.2
-> **Design:** [design/response-closing-and-action-framing.design.md](design/response-closing-and-action-framing.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/response-closing-and-action-framing.design.md](design/response-closing-and-action-framing.design.md) v1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/response-closing-and-action-framing.changelog.md](changelog/response-closing-and-action-framing.changelog.md)
 
@@ -9,9 +9,9 @@
 
 ## Rule Statement
 
-**Core Principle: Close responses with concise synthesis, clear action framing, preserved decision visibility, phase-backed delivery/impact closeouts, roadmap-aware next recommendations when meaningful, optional deep-dive offers when useful, and explicitly advisory proposal wording.**
+**Core Principle: Close responses with concise synthesis, clear action framing, preserved decision visibility, phase-backed delivery/impact closeouts, roadmap-aware next recommendations and supported next-goal recommendations when meaningful, optional deep-dive offers when useful, and explicitly advisory proposal wording.**
 
-This chain owns end-of-response synthesis, next-action framing, recommendation-with-reason wording, alternative preservation, phase-backed closeout synthesis, roadmap-aware next recommendation shape, optional deep-dive offer shape, closed-topic summary behavior, and goal-qualified advisory proposal framing. It does not replace execution-mode, user-authority, explanation-flow, evidence wording, phase roadmap semantics, or layout ownership.
+This chain owns end-of-response synthesis, next-action framing, recommendation-with-reason wording, alternative preservation, phase-backed closeout synthesis, roadmap-aware next recommendation shape, supported next-goal recommendation shape, optional deep-dive offer shape, closed-topic summary behavior, and goal-qualified advisory proposal framing. It does not replace execution-mode, user-authority, explanation-flow, evidence wording, goal-set owner semantics, phase roadmap semantics, or layout ownership.
 
 ---
 
@@ -74,11 +74,11 @@ Required guidance:
 When a phase-backed or governed objective is genuinely complete and checked surfaces show meaningful future work, the closeout should include a compact next recommendation unless selected safe continuation is already happening.
 Required guidance:
 - first close the completed work with delivery, impact, and verification scope
-- then recommend the next phase/wave only if it is supported by design, phase roadmap, TODO, or checked implementation state
+- then recommend the next phase/wave/goal only if it is supported by design, phase roadmap, TODO, or checked implementation state
 - include goal, expected output/result, and gate or success condition when material
 - keep the recommendation advisory when the user has not selected it
 - do not use the recommendation as a blocker or as a substitute for continuing selected unblocked phases
-- if no meaningful next work is visible, say no next phase/wave is currently selected or opened rather than inventing one
+- if no meaningful next work is visible, say no next phase/wave/goal is currently selected or opened rather than inventing one
 
 ### 8) Optional Deep-Dive Offer Principle
 
@@ -112,10 +112,10 @@ Verification: <checked evidence; avoid stronger wording than verified>
 Next phase state: <not started | draft/planned | selected | active | implied-unblocked | proposal | blocked | needs-approval | none opened>
 
 Roadmap-aware completion:
-Recommended next: <phase/wave name>
+Recommended next: <phase/wave/goal name>
 Why this next: <one evidence-backed reason>
-Goal: <what the next phase should achieve>
-Output: <expected artifact, feature, behavior, or decision>
+Goal: <what the next phase, wave, or goal should achieve>
+Output: <expected artifact, feature, behavior, decision, or verified state>
 Gate: <what must be true before execution or closeout>
 
 Recommendation:
@@ -143,7 +143,9 @@ Optional deep dive:
 | options listed with no recommendation when one path is clearly stronger | name the recommendation and why first |
 | real multi-path state hidden behind one recommendation | preserve a visible alternative |
 | future work with no concrete goal/output or phrased like queued execution | keep it advisory or do not present it |
-| completed objective ends silently despite checked meaningful successor work | add a compact roadmap-aware next recommendation |
+| completed objective ends silently despite checked meaningful successor work | add a compact roadmap-aware next-goal recommendation |
+| unsupported next-goal recommendation | recommend only from checked design/TODO/phase/roadmap/implementation evidence or report no selected/opened next goal |
+| next-goal proposal treated as selected execution | keep it advisory until user selection or governed execution surfaces make it active |
 | next recommendation blocks selected safe continuation | continue selected work; reserve recommendation for true closeout or unselected successor work |
 | phase closeout lists only files/tasks/audit status | state delivered feature/improvement, impact, verification, and next phase state |
 | already-closed topics dominate the active summary | keep resolved items in context only |
@@ -166,7 +168,8 @@ Optional deep dive:
 
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - broader evidence-threshold wording
-- [execution-continuity-and-mode-selection.md](execution-continuity-and-mode-selection.md) - real continue-vs-stop behavior and completion-to-roadmap bridge
+- [execution-continuity-and-mode-selection.md](execution-continuity-and-mode-selection.md) - real continue-vs-stop behavior and completion-to-roadmap/next-goal bridge
+- [goal-set-review-and-priority-balance.md](goal-set-review-and-priority-balance.md) - goal/output/gate framing, goal hierarchy, and supported next-goal recommendation boundaries
 - [phase-implementation.md](phase-implementation.md) - roadmap/phase-matrix semantics and next-phase state
 - [authority-and-scope.md](authority-and-scope.md) - user authority and advisory-option semantics
 - [explanation-quality.md](explanation-quality.md) - explanation flow, easy-first depth, and stage/full-set logic

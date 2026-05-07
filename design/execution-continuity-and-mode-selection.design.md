@@ -3,14 +3,22 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.14
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 1.15
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## Current Target-State Refinement
+
+This design now carries goal-state continuity through execution mode. Non-trivial execution should keep the current goal, expected output, and completion gate clear enough to prevent drift while still continuing selected safe work without pause.
+
+The completion bridge now covers next goals as well as next phases or waves: selected and unblocked successor goals continue, meaningful unselected successor goals become advisory recommendations with why/output/gate, ambiguous or approval-sensitive successors trigger a narrow question, and unsupported successors are not invented.
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, continues from implementation into material verification when safe, uses true objective completion as the point to recommend meaningful unselected next-phase work, does not let execution continuity bypass startup artifact governance, does not let broad continuation or broad research/roadmap continuation bypass native worker routing, does not let phase-shaped continuation allocate new major phases without phase lineage selection, and preserves visible phase linkage when continuation creates or extends phase-backed task entries.
+Define one first-class rule chain that decides when the assistant should remain in discussion mode versus execution mode, re-checks user intent when the decision surface changes, keeps execution flowing by default once the active path is genuinely execution-ready, keeps current goal/output/gate state clear enough to prevent drift during non-trivial execution, continues from implementation into material verification when safe, and uses true objective completion as the point to recommend meaningful unselected next-phase, wave, or goal work without blocking selected safe continuation.
 
 ---
 
@@ -54,8 +62,8 @@ Execution mode should continue by default when no real stop gate exists and star
 ### 3.6 Active Next-Work Discovery Principle
 Execution mode should actively inspect the current execution surfaces to discover the next unfinished slice when the task list alone does not already make it obvious.
 
-### 3.6.1 Completion-to-Roadmap Principle
-When the active objective is actually complete, checked design, phase roadmap, TODO, and implementation surfaces should be inspected for meaningful successor work. Selected and unblocked successor work continues; meaningful unselected successor work becomes a goal-qualified recommendation; ambiguous or approval-sensitive successor work becomes a narrow question; no visible successor work is reported as no selected/opened next phase.
+### 3.6.1 Goal-State Continuity and Completion-to-Next-Goal Principle
+During non-trivial execution, the current goal, expected output, and completion gate should stay clear enough to guide work without becoming a visible stop ritual. When the active objective is actually complete, checked design, phase roadmap, TODO, and implementation surfaces should be inspected for meaningful successor work. Selected and unblocked successor work continues; meaningful unselected successor phase, wave, or goal work becomes an advisory recommendation with why/output/gate; ambiguous or approval-sensitive successor work becomes a narrow question; no visible successor work is reported as no selected/opened next phase, wave, or goal.
 
 ### 3.7 Capture-Before-Continue Boundary
 Execution continuity should not outrun required knowledge capture when external docs/specs/provider references have just produced implementation-critical knowledge that later governed execution still depends on.
@@ -110,7 +118,7 @@ Does the next slice require phase identity selection or a phase-shaped continuat
   → No: continue
   ↓
 Is the active objective complete while checked surfaces show meaningful unselected successor work?
-  → Yes: recommend next phase/wave with goal, output, and gate unless approval/ambiguity requires a narrow question
+  → Yes: recommend next phase/wave/goal with goal, output, and gate unless approval/ambiguity requires a narrow question
   → No: continue
   ↓
 Is the next slice broad/noisy/context-heavy/multi-surface/high-output/parallelizable?
@@ -156,7 +164,7 @@ This chain succeeds when:
 - phase/milestone completion does not create unnecessary stop/report turns
 - same-family phase-shaped continuation uses phase lineage handling before any new major phase is opened
 - continuation-created or continuation-extended phase-backed task entries preserve visible phase linkage
-- true objective completion produces a useful goal-qualified next recommendation when meaningful successor work exists and is not already selected for continuation
+- true objective completion produces a useful next-phase, wave, or goal recommendation when meaningful successor work exists and is not already selected for continuation
 - broad or high-output continuation applies intent-first worker routing before leader raw absorption
 - broad research/design-improvement continuation applies research-lane decomposition before leader raw WebSearch/source absorption unless direct handling has a narrow reason
 - real blockers still pause execution correctly

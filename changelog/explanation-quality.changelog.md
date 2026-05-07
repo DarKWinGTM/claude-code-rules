@@ -1,7 +1,7 @@
 # Changelog - Explanation Quality
 
 > **Parent Document:** [../explanation-quality.md](../explanation-quality.md)
-> **Current Version:** 2.22
+> **Current Version:** 2.23
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.23 | 2026-05-07 | **[Added proportional goal-aware explanation framing](#version-223)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added goal/output/gate explanation support for non-trivial work while preserving easy-first compactness, selected continuation, and evidence-grounded next-goal recommendations. | |
 | 2.22 | 2026-05-06 | **[Added complete-enough easy-first roadmap explanation flow](#version-222)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added easy-first complete-enough explanation, true-completion next recommendation, and one-line optional deep-dive offer behavior without weakening continuation-first execution | |
 | 2.21 | 2026-04-30 | **[Added proof-aware recommendation and design explanation flow](#version-221)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -58,6 +60,24 @@
 | | | Summary: Materialized `explanation-quality.md`, promoted the chain to active runtime state, and synchronized master inventory documents | |
 | 1.0 | 2026-03-07 | **[Initial explanation-quality design created](#version-10)** | f19e8a67-d3c2-4f24-9080-c941153612ca |
 | | | Summary: Created the design/changelog baseline for an explanation-structure rule chain and intentionally deferred runtime materialization | |
+
+---
+
+<a id="version-223"></a>
+## Version 2.23: Added proportional goal-aware explanation framing
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `explanation-quality.md` from v2.22 to v2.23.
+- Updated `design/explanation-quality.design.md` from v2.22 to v2.23.
+- Added proportional goal/output/gate framing to layered explanations when it prevents drift or clarifies verification.
+- Extended true-completion next recommendation wording from phase/wave successor work to supported next goals.
+- Added anti-ritual boundaries so visible goal framing does not become mandatory for simple answers.
+
+### Summary
+Added goal/output/gate explanation support for non-trivial work while preserving easy-first compactness, selected continuation, and evidence-grounded next-goal recommendations.
 
 ---
 

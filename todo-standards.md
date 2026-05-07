@@ -1,11 +1,11 @@
 # TODO Standards
-> **Current Version:** 2.24
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.24
+> **Current Version:** 2.25
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.25
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Keep `TODO.md` as the durable execution-tracking layer, use Claude Code's built-in task list as the live execution-tracking surface for non-trivial active work, and resolve tracking posture early instead of treating it as retrospective cleanup.**
+**Core Principle: Keep `TODO.md` as the durable execution-tracking layer, use Claude Code's built-in task list as the live execution-tracking surface for non-trivial active work, keep non-trivial tracking entries outcome/goal-shaped rather than command-only, and resolve tracking posture early instead of treating it as retrospective cleanup.**
 Multi-session shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine.
 ---
 ## Core Contract
@@ -54,6 +54,7 @@ Bounded phase context may include current active phase, current phase family/sta
 Guidance:
 - create the built-in task list for active phase work rather than waiting for the user to ask
 - default to current active phase before opening tasks for later phases
+- shape non-trivial phase-backed tasks around outcome, expected output, and completion gate when this prevents command-only drift
 - task shaping may reveal that a phase file is needed, but it must not choose a new major phase silently; phase identity belongs to `phase-implementation.md` and its lineage gate
 - use authored next-phase information for continuity and draft visibility, not silent activation
 - do not let task-list continuation become implicit new-major creation when checked lineage points to an existing family or is unresolved
@@ -62,6 +63,7 @@ Guidance:
 - future-phase tasks remain draft/proposal until the phase is opened, selected, or otherwise made active by governing phase context
 - one phase may have several outcome-sized tasks; do not force a whole phase into one oversized task
 - each phase-backed or clearly phase-shaped live task should visibly expose phase ID, phase name, phase family, or implied-stage context in the subject or description
+- goal/output/gate meaning may live in the subject or description when it improves execution clarity, but it must not force bulky templates into simple tasks
 - prefer compact subject linkage such as `P<phase-id>` when no stronger title grammar applies
 - when subject linkage would conflict with another title grammar, put `phase_ref`, phase file path, phase name, or equivalent visible linkage in the description instead
 - hidden internal phase alignment alone is not enough for non-trivial phase-backed task entries
@@ -73,7 +75,7 @@ When the built-in task list is in use:
 - mark a task `completed` as soon as that slice is actually done
 - preserve or add a visible verification slice when non-trivial coding implementation is done but targeted verification remains material
 - add new tasks when newly discovered work is real and non-trivial
-- keep entries outcome-sized rather than command-sized
+- keep entries outcome-sized rather than command-sized, and include expected output or completion gate when material
 - extend the current task list within the same active objective instead of replacing it
 - keep completed tasks visible until objective closure or explicit reset
 - start fresh only for a genuinely new objective, true closure, or explicit user reset
@@ -119,7 +121,8 @@ TODO content updates still happen last among primary active layers. That later o
 - [ ] Phase-backed or clearly phase-shaped task entries visibly exposed phase context in subject or description
 - [ ] Task creation did not silently allocate a new major phase when phase lineage needed `phase-implementation.md` handling
 - [ ] Task wording aligned to active session language/register
-- [ ] Task entries remained outcome-sized
+- [ ] Task entries remained outcome-sized and included output/gate meaning when material
+- [ ] Goal-aware task wording improved non-trivial execution clarity without turning every task into a rigid template
 - [ ] Required TODO synchronization was not downgraded into optional bookkeeping
 - [ ] Live tracking friction was repaired when material, or bounded and reported when non-material to a standalone worker lane
 - [ ] TODO content update occurred after design/runtime/changelog synchronization
@@ -138,7 +141,8 @@ TODO content updates still happen last among primary active layers. That later o
 | Visible phase linkage for phase-backed task entries | High |
 | Task-list-driven new-major phase drift | 0 critical cases |
 | Future-phase task drift before explicit phase opening | 0 critical cases |
-| Stale or vague live task lists during non-trivial work | Low |
+| Stale, vague, or command-only live task lists during non-trivial work | Low |
+| Goal-aware task framing as rigid ceremony | Low |
 | Worker routing collapsed by non-material tracking friction | 0 critical cases |
 ---
 ## Integration
@@ -146,6 +150,7 @@ Related documents:
 - [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) - owns coding-time verification strategy; TODO standards keeps material verification slices visible in live tracking
 - [artifact-initiation-control.md](artifact-initiation-control.md) - startup tracking posture resolution
 - [phase-implementation.md](phase-implementation.md) - phase identity and major-vs-subphase lineage selection when task shaping reveals phase work
+- [goal-set-review-and-priority-balance.md](goal-set-review-and-priority-balance.md) - goal-first working frame, goal/output/gate semantics, and anti-ritual boundaries
 - [document-changelog-control.md](document-changelog-control.md) - synchronization order and authority boundary
 - [project-documentation-standards.md](project-documentation-standards.md) - repository role model and durable-vs-live tracking distinction
 - [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - worker routing should not collapse from non-material live tracking friction

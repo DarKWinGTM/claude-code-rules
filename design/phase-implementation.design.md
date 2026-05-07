@@ -3,14 +3,22 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.29
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 2.30
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## Current Target-State Refinement
+
+This design now makes roadmap and phase-matrix entries goal/output/gate-aware. Meaningful candidate phases should expose the goal they pursue, the expected output or user/system-visible result, the completion or verification gate, dependencies, deliverables, and status.
+
+Phase-backed closeout may recommend a supported next phase, wave, or goal after true completion, but only from checked roadmap, design, TODO, phase, or implementation evidence. Proposal/draft entries stay non-active until selected or opened.
 
 ---
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order and a bounded roadmap/phase matrix, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, records material Development Verification / TestKit Coverage for phase-backed coding work, and closes phase-backed work with practical delivery/impact plus meaningful next-phase recommendation behavior rather than audit-only status.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order and a bounded goal/output/gate-aware roadmap or phase matrix, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, records material Development Verification / TestKit Coverage for phase-backed coding work, and closes phase-backed work with practical delivery/impact plus meaningful next-phase, wave, or goal recommendation behavior rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -51,7 +59,7 @@ that phase posture must be resolved before substantial work drifts.
 The preferred path is early phase establishment, not retrospective phase backfill.
 When staged or governed execution is already clearly implied by the checked work shape, phase establishment should not be treated as an optional afterthought.
 
-When governed design is sufficiently clear for staged execution, phase should actively derive or update execution order from that normalized design truth. The phase workspace should split design target state into outcome-sized phases by dependency, risk, rollout boundary, and verification gate; create or update `phase/SUMMARY.md`, a bounded roadmap/phase matrix, and current child phase files; initialize or extend live tasks for the current phase when non-trivial work begins; and proceed phase-by-phase unless a real stop gate exists. This synthesis remains one-way: phase executes design and does not replace design as target-state authority. Roadmap entries guide continuity and recommendation, but only selected/opened and safe work becomes active execution.
+When governed design is sufficiently clear for staged execution, phase should actively derive or update execution order from that normalized design truth. The phase workspace should split design target state into outcome-sized phases by dependency, risk, rollout boundary, expected output, and verification gate; create or update `phase/SUMMARY.md`, a bounded goal/output/gate-aware roadmap or phase matrix, and current child phase files; initialize or extend live tasks for the current phase when non-trivial work begins; and proceed phase-by-phase unless a real stop gate exists. This synthesis remains one-way: phase executes design and does not replace design as target-state authority. Roadmap entries guide continuity and recommendation, but only selected/opened and safe work becomes active execution.
 
 ---
 
@@ -152,7 +160,7 @@ Patch artifacts remain outside the live phase-plan namespace.
 - end-to-end verification requirements
 - Development Verification / TestKit Coverage expectations when phase-backed coding verification materially affects exit criteria
 - phase closeout expectations for delivered work, feature/improvement, impact, verification basis, next phase state, and goal-qualified next recommendation when meaningful
-- roadmap/phase-matrix status such as active, selected, implied-unblocked, proposal, blocked, needs-approval, or none opened
+- goal/output/gate-aware roadmap or phase-matrix entries with status such as active, selected, implied-unblocked, proposal, blocked, needs-approval, or none opened
 - overall rollback or containment behavior
 
 ### 5.2 Child phase role
@@ -232,7 +240,7 @@ Phase-backed closeout should report what the phase delivered in practical terms 
 - user/system impact or why the change matters
 - verification basis at the evidence strength actually checked
 - next phase state when relevant: not started, draft/planned, selected, active, implied-unblocked, proposal, blocked, needs-approval, or none opened
-- recommended next phase/wave with goal, expected output, and gate when checked roadmap surfaces show meaningful unselected successor work
+- recommended next phase/wave/goal with goal, expected output, and gate when checked roadmap surfaces show meaningful unselected successor work
 
 This shape should remain concise, should not block safe continuation through already selected phases, and should not be forced onto trivial non-phase work.
 

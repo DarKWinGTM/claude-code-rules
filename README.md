@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.89</b><br><sub>Current Release</sub>
+  <b>v9.90</b><br><sub>Release Candidate</sub>
 </td>
 <td align="center" width="200">
   <b>44</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Runtime + Body Verified</sub>
+  <b>Runtime Verified</b><br><sub>Release Pending</sub>
 </td>
 <td align="center" width="200">
-  <b>Roadmap closeout</b><br><sub>P075-02 Refinement</sub>
+  <b>Goal-first frame</b><br><sub>P075-03 Refinement</sub>
 </td>
 </tr>
 </table>
@@ -322,6 +322,7 @@ Please:
 - P081-02 subagent research orchestration is synchronized for v9.87: broad research/design-improvement/source-heavy work now maps into focused research lanes before leader raw source absorption, while active runtime count remains 44
 - P073-10 active runtime body sufficiency is synchronized for v9.88: 10 metadata-only root runtime files are re-materialized, active runtime count remains 44, source/runtime parity and body-sufficiency verification passed 44/44, and destination extras remain observed-only
 - P075-02 roadmap-aware completion is synchronized for v9.89: true objective closeout can recommend supported next phases/waves without blocking selected safe continuation; active runtime count remains 44, runtime install/parity/body-sufficiency verification passed 44/44, git push completed, and GitHub release `v9.89` is published
+- P075-03 goal-first working frame is synchronized and runtime-verified for v9.90: non-trivial work can use proportional goal/output/gate navigation and supported next-goal recommendations without turning goal wording into a rigid ritual; active runtime count remains 44, source/runtime install parity plus body sufficiency passed 44/44 with destination extras observed-only, and git push plus GitHub release `v9.90` remain pending verification
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -417,7 +418,7 @@ Please:
 
 **📊 Active Runtime Rules: 44**
 
-Latest refinement: P075-02 adds roadmap-aware completion behavior so, after a governed objective is truly complete, closeout can recommend the best-supported next phase or wave from checked design/TODO/phase surfaces. It preserves continue-first execution for selected, safe, unblocked successor work; keeps unselected successor work advisory with goal/output/gate wording; adds compact optional deep-dive offers for easy-first answers; and extends worker routing to broad roadmap or phase-matrix analysis. The active runtime set remains 44 files; source audit plus runtime install/parity/body-sufficiency verification passed 44/44, master was pushed, and GitHub release `v9.89` is published.
+Latest refinement: P075-03 adds a goal-first working frame so non-trivial work can identify the active goal, expected output, and completion gate when that prevents drift or improves verification. It keeps goal framing proportional rather than mandatory, preserves continue-first execution for selected safe successor work, and supports evidence-grounded next-goal recommendations at true closeout. The active runtime set remains 44 files; source owner-chain alignment, master sync, runtime install/parity, and body-sufficiency verification have passed 44/44 with destination extras observed-only; master push and GitHub release `v9.90` remain pending until those gates are executed.
 </div>
 
 ---
@@ -1125,9 +1126,9 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 44 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, and P075-02 install/body-sufficiency gates were verified after explicit install gates; P075-02 keeps the active runtime count at 44 and GitHub release `v9.89` is published | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, and P075-03 install/body-sufficiency gates stay bounded to the 44 source-owned active runtime files; P075-03 keeps the active runtime count at 44, runtime install/parity/body-sufficiency passed 44/44, and release verification for `v9.90` remains pending | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
-| Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, and edit-only coding closeout |
+| Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
 | Shared destination boundary | Co-located runtime files outside the source-owned set are not cleanup targets by default | Prevents other-owner file damage |
 
@@ -1216,7 +1217,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.89 |
+  <b>Version</b>: 9.90 |
   <b>Last Updated</b>: 2026-05-07 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

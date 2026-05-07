@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.29
+> **Current Version:** 2.30
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.30 | 2026-05-07 | **[Added goal-output-gate-aware phase roadmaps](#version-230)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended phase roadmaps and phase matrices with goal, expected output, completion gate, and supported next phase/wave/goal recommendation semantics. | |
 | 2.29 | 2026-05-06 | **[Added roadmap-aware phase matrix and next-phase recommendations](#version-229)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added bounded roadmap/phase-matrix synthesis and closeout next-phase recommendation behavior with goal/output/gate while preserving selected safe continuation | |
 | 2.28 | 2026-05-06 | **[Added material development verification coverage to phase-backed coding work](#version-228)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -45,6 +47,24 @@
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-230"></a>
+## Version 2.30: Added goal-output-gate-aware phase roadmaps
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.29 to v2.30.
+- Updated `design/phase-implementation.design.md` from v2.29 to v2.30.
+- Made roadmap and phase-matrix entries goal/output/gate-aware.
+- Added expected output and completion gate semantics to phase synthesis and child phase expectations.
+- Extended closeout recommendation behavior to supported next phase, wave, or goal recommendations while preserving draft/proposal boundaries.
+
+### Summary
+Extended phase roadmaps and phase matrices with goal, expected output, completion gate, and supported next phase/wave/goal recommendation semantics.
 
 ---
 
