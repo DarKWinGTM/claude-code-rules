@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.30
+> **Current Version:** 2.31
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.31 | 2026-05-08 | **[Added daily phase history rollover entrypoint discipline](#version-231)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Required `phase/SUMMARY.md` to remain a compact roadmap/index while daily movement goes to referenced `phase/history/` and completed detail remains in `phase/done/` when active scans would otherwise bloat. | |
 | 2.30 | 2026-05-07 | **[Added goal-output-gate-aware phase roadmaps](#version-230)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Extended phase roadmaps and phase matrices with goal, expected output, completion gate, and supported next phase/wave/goal recommendation semantics. | |
 | 2.29 | 2026-05-06 | **[Added roadmap-aware phase matrix and next-phase recommendations](#version-229)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -51,6 +53,21 @@
 ---
 
 <a id="version-230"></a>
+
+---
+
+<a id="version-231"></a>
+## Version 2.31: Added daily phase history rollover entrypoint discipline
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Required `phase/SUMMARY.md` to remain a compact roadmap/index while daily movement goes to referenced `phase/history/` and completed detail remains in `phase/done/` when active scans would otherwise bloat.
+
+### Summary
+Required `phase/SUMMARY.md` to remain a compact roadmap/index while daily movement goes to referenced `phase/history/` and completed detail remains in `phase/done/` when active scans would otherwise bloat.
+
 ## Version 2.30: Added goal-output-gate-aware phase roadmaps
 
 **Date:** 2026-05-07

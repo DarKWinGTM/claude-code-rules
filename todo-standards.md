@@ -1,45 +1,60 @@
 # TODO Standards
-> **Current Version:** 2.25
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.25
+> **Current Version:** 2.26
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.26
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Keep `TODO.md` as the durable execution-tracking layer, use Claude Code's built-in task list as the live execution-tracking surface for non-trivial active work, keep non-trivial tracking entries outcome/goal-shaped rather than command-only, and resolve tracking posture early instead of treating it as retrospective cleanup.**
+**Core Principle: Keep `TODO.md` as the compact durable current execution index, move accumulated daily movement and large completed detail into referenced `todo/history/` and `todo/done/` shards, use Claude Code's built-in task list as the live execution-tracking surface for non-trivial active work, keep non-trivial tracking entries outcome/goal-shaped rather than command-only, and resolve tracking posture early instead of treating it as retrospective cleanup.**
 Multi-session shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine.
 ---
 ## Core Contract
 ### 1) Durable vs live tracking
-`TODO.md` is the durable repository/project execution-tracking artifact. It is not version authority and does not replace live task visibility. Claude Code's built-in task list is the live execution-tracking surface for active non-trivial work.
+`TODO.md` is the compact durable repository/project execution-tracking entrypoint. It is not version authority, it does not replace live task visibility, and it should not carry accumulated historical detail once daily/history/done rollover is required. Claude Code's built-in task list is the live execution-tracking surface for active non-trivial work.
 
 Guidance:
 - use the built-in task list to show planned, in-progress, and completed slices during active non-trivial work
-- keep `TODO.md` for durable tracking when persistence/history is needed
+- keep `TODO.md` for current durable tracking and pointers to moved history/detail
+- keep accumulated daily movement in `todo/history/YYYY-MM-DD*.md` and large completed detail in `todo/done/<task-or-wave>.md` when rollover is triggered
 - do not treat the built-in task list as a governed repository document
 - do not treat `TODO.md` as the primary live execution board during active non-trivial work
 
-### 2) Startup establishment bridge
+### 2) Daily-first TODO rollover
+
+When `TODO.md` grows past practical active-scan limits, preserve old content in reachable history/done shards and restart the main file as a compact current-state index.
+
+Required guidance:
+- `TODO.md` keeps only current active work, deferred/open items that still need active visibility, compact completed highlights, and references to `todo/history/` / `todo/done/`
+- `todo/history/YYYY-MM-DD*.md` records daily task movement, rollover notes, and links back to the parent `TODO.md`
+- `todo/done/<task-or-wave>.md` may hold large completed closeout detail that would bloat the active file
+- pre-rollover snapshots are allowed for preservation but must be referenced from the active file rather than duplicated there
+- rollover is not deletion authority; active items must be carried forward or explicitly referenced
+
+### 3) Startup establishment bridge
 When meaningful governed work requires tracking, startup tracking posture must be resolved early through `artifact-initiation-control.md`. Resolution may include `TODO.md: use existing | create now | ask now | not required` and early built-in task-list initialization when work is non-trivial and live visibility helps. Durable TODO establishment at startup is different from later TODO content updates.
 
-### 3) Required TODO structure
+### 4) Required TODO structure
 ```markdown
 # <Project Name> - TODO
 > **Last Updated:** YYYY-MM-DD
 ---
 ## ✅ Completed
-<summary or completed checklist>
+<compact summary or completed checklist, with large detail linked to `todo/done/`>
 ---
 ## 📋 Tasks To Do
 ### <Optional Category>
 - [ ] <task>
 ---
 ## 📜 History
+- Daily movement: `todo/history/YYYY-MM-DD.md`
+- Large completed detail: `todo/done/<task-or-wave>.md`
+
 | Date | Changes |
 |------|---------|
 ```
 
-### 4) Pending-only discipline
-Pending areas contain pending tasks only. Completed content belongs only in `Completed` and `History`. Deferred work remains pending with clear text labels.
+### 5) Pending-only discipline
+Pending areas contain pending tasks only. Completed content belongs only in `Completed`, `History`, or referenced `todo/done/` detail shards. Deferred work remains pending with clear text labels.
 ---
 ## Live Task-List Trigger Model
 Built-in task-list usage is expected by default when work is non-trivial, has 3+ steps, spans multiple files/stages, may continue across slices, benefits from live pending/in_progress/completed visibility, has an active phase, has non-trivial coding work where implementation and verification are distinct outcomes, or is clearly phase-shaped/staged even before the exact next phase file is opened.
@@ -105,13 +120,15 @@ When governance work changes governed artifacts, update in this order:
 1. design
 2. runtime rule
 3. changelog
-4. TODO
+4. TODO, including active-entrypoint compaction and `todo/history/` / `todo/done/` reference updates when rollover is triggered
 
 TODO content updates still happen last among primary active layers. That later order does not weaken early startup establishment or live task-list expectations. When `TODO.md` is required for governed work, TODO synchronization is required companion work; the built-in task list does not replace durable TODO sync when repository-level tracked history is required.
 ---
 ## Verification Checklist
-- [ ] TODO keeps the required simplified structure
+- [ ] TODO keeps the required simplified compact-entrypoint structure
 - [ ] Pending area contains pending tasks only
+- [ ] `TODO.md` references `todo/history/` and `todo/done/` whenever rollover shards exist.
+- [ ] Historical daily movement and large completed detail are not duplicated in the active TODO body after rollover.
 - [ ] Completed items are not mixed into pending sections
 - [ ] No dashboard or priority overhead is present
 - [ ] Tracking posture was resolved early when meaningful tracking was required
@@ -153,6 +170,7 @@ Related documents:
 - [goal-set-review-and-priority-balance.md](goal-set-review-and-priority-balance.md) - goal-first working frame, goal/output/gate semantics, and anti-ritual boundaries
 - [document-changelog-control.md](document-changelog-control.md) - synchronization order and authority boundary
 - [project-documentation-standards.md](project-documentation-standards.md) - repository role model and durable-vs-live tracking distinction
+- [governed-document-rollover-control.md](governed-document-rollover-control.md) - daily-first active TODO/history/done rollover owner
 - [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - worker routing should not collapse from non-material live tracking friction
 ---
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)

@@ -1,7 +1,7 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-05-08 | **[Added rollover maintenance as a continuation gate](#version-116)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Made oversized active governance entrypoints a continuity gate: compact or roll them over before broad continuation when they block safe current-state discovery. | |
 | 1.15 | 2026-05-07 | **[Added goal-state continuity and next-goal bridge](#version-115)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added current goal/output/gate continuity during non-trivial execution and extended true-completion handling to supported next-goal recommendations without blocking selected safe continuation. | |
 | 1.14 | 2026-05-06 | **[Added completion-to-roadmap recommendation bridge](#version-114)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -33,6 +35,21 @@
 ---
 
 <a id="version-115"></a>
+
+---
+
+<a id="version-116"></a>
+## Version 1.16: Added rollover maintenance as a continuation gate
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Made oversized active governance entrypoints a continuity gate: compact or roll them over before broad continuation when they block safe current-state discovery.
+
+### Summary
+Made oversized active governance entrypoints a continuity gate: compact or roll them over before broad continuation when they block safe current-state discovery.
+
 ## Version 1.15: Added goal-state continuity and next-goal bridge
 
 **Date:** 2026-05-07

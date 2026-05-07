@@ -1,7 +1,7 @@
 # Changelog - Safe File Reading
 
 > **Parent Document:** [../safe-file-reading.md](../safe-file-reading.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-08 | **[Added oversized governance entrypoint rollover trigger](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Treated oversized `TODO.md` and `phase/SUMMARY.md` reads, read failures, and autocompact thrash as rollover-maintenance signals instead of repeated full-read targets. | |
 | 1.4 | 2026-05-06 | **[Materialized active runtime body and closed metadata-only stub drift](#version-14)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Re-materialized root `safe-file-reading.md` as a substantive active runtime rule with `Full history`, preserving current design target behavior while removing design-only runtime dependency | |
 | 1.3 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-13)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -24,6 +26,21 @@
 ---
 
 <a id="version-14"></a>
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added oversized governance entrypoint rollover trigger
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Treated oversized `TODO.md` and `phase/SUMMARY.md` reads, read failures, and autocompact thrash as rollover-maintenance signals instead of repeated full-read targets.
+
+### Summary
+Treated oversized `TODO.md` and `phase/SUMMARY.md` reads, read failures, and autocompact thrash as rollover-maintenance signals instead of repeated full-read targets.
+
 ## Version 1.4: Materialized active runtime body and closed metadata-only stub drift
 
 **Date:** 2026-05-06

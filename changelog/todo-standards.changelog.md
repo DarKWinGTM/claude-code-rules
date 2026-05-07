@@ -1,7 +1,7 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.25
+> **Current Version:** 2.26
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.26 | 2026-05-08 | **[Added daily-first TODO rollover entrypoint discipline](#version-226)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Required `TODO.md` to remain a compact current-state index after rollover, with old movement/detail preserved under referenced `todo/history/` and `todo/done/` shards instead of duplicated in the active file. | |
 | 2.25 | 2026-05-07 | **[Added outcome-goal-shaped live task entries](#version-225a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Extended live task-list doctrine so non-trivial entries stay outcome/goal-shaped and include expected output or completion gate meaning when material. | |
 | 2.24 | 2026-05-06 | **[Added live tracking friction recovery for bounded worker lanes](#version-224a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -43,6 +45,21 @@
 ---
 
 <a id="version-225a"></a>
+
+---
+
+<a id="version-226"></a>
+## Version 2.26: Added daily-first TODO rollover entrypoint discipline
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Required `TODO.md` to remain a compact current-state index after rollover, with old movement/detail preserved under referenced `todo/history/` and `todo/done/` shards instead of duplicated in the active file.
+
+### Summary
+Required `TODO.md` to remain a compact current-state index after rollover, with old movement/detail preserved under referenced `todo/history/` and `todo/done/` shards instead of duplicated in the active file.
+
 ## Version 2.25: Added outcome-goal-shaped live task entries
 
 **Date:** 2026-05-07

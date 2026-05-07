@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.25
+> **Current Version:** 2.26
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
@@ -15,6 +15,10 @@ This design now requires non-trivial live task entries to stay outcome/goal-shap
 This applies especially to phase-backed or staged work, where tasks should expose phase context and the intended output/gate without turning every command or trivial lookup into a bulky template.
 
 ---
+
+### 3.4 Daily-First Rollover Surfaces
+
+`TODO.md` remains the current durable state file, not a growing archive. When active-scan bloat appears, old movement/detail is preserved in `todo/history/YYYY-MM-DD*.md` and `todo/done/<task-or-wave>.md`, while the main TODO restarts as a compact index with active tasks and explicit history/done references.
 
 ## 1) Goal
 

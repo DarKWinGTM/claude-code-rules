@@ -3,10 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.36
+> **Current Version:** 2.37
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
+
+### Daily-First Rollover Target
+
+Repository documentation treats `TODO.md` and `phase/SUMMARY.md` as compact current-state entrypoints. Accumulated TODO and phase movement belongs in referenced `todo/history/`, `todo/done/`, `phase/history/`, and `phase/done/` shards when active scans become too large, and main entrypoints must preserve links so history is reachable without duplicating old content in active files.
 
 ## 1) Goal
 

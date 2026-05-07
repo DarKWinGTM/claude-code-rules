@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
@@ -15,6 +15,10 @@ This design now carries goal-state continuity through execution mode. Non-trivia
 The completion bridge now covers next goals as well as next phases or waves: selected and unblocked successor goals continue, meaningful unselected successor goals become advisory recommendations with why/output/gate, ambiguous or approval-sensitive successors trigger a narrow question, and unsupported successors are not invented.
 
 ---
+
+### Rollover-Maintenance Continuity Target
+
+Continuous execution should use compact active entrypoints. If the entrypoint itself is oversized enough to block safe continuation, the next executable slice is rollover/compaction maintenance before broad active-state absorption continues.
 
 ## 1) Goal
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.30
+> **Current Version:** 2.31
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
@@ -15,6 +15,10 @@ This design now makes roadmap and phase-matrix entries goal/output/gate-aware. M
 Phase-backed closeout may recommend a supported next phase, wave, or goal after true completion, but only from checked roadmap, design, TODO, phase, or implementation evidence. Proposal/draft entries stay non-active until selected or opened.
 
 ---
+
+### Daily Phase History Target
+
+`phase/SUMMARY.md` remains the compact phase roadmap/index. Daily movement and rollover notes may live in `phase/history/YYYY-MM-DD*.md`, and completed phase detail may live in `phase/done/`; active summary content links to those surfaces instead of retaining duplicate historical detail.
 
 ## 1) Goal
 

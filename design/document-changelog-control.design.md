@@ -3,10 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.9
+> **Current Version:** 4.10
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
+
+### Daily Rollover Boundary
+
+`changelog/done/` remains the changelog history mechanism. Daily-first TODO and phase-summary rollover is owned by `governed-document-rollover-control.md`, so changelog files keep version authority without becoming the storage location for daily TODO/phase movement.
 
 ## 1) Goal
 

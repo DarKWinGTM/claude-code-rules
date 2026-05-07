@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.91</b><br><sub>Released</sub>
+  <b>v9.92</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
-  <b>45</b><br><sub>Active Runtime Rules</sub>
+  <b>46</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
   <b>Passed</b><br><sub>Runtime + Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>Audience surface</b><br><sub>P085-01 Refinement</sub>
+  <b>Daily rollover</b><br><sub>P087-01 Refinement</sub>
 </td>
 </tr>
 </table>
@@ -108,6 +108,7 @@ rule_files=(
   external-verification-and-source-trust.md
   flow-diagram-no-frame.md
   functional-intent-verification.md
+  governed-document-rollover-control.md
   memory-governance-and-session-boundary.md
   maintainable-code-structure-and-decomposition.md
   development-verification-and-debug-strategy.md
@@ -175,6 +176,7 @@ $ruleFiles = @(
   "external-verification-and-source-trust.md",
   "flow-diagram-no-frame.md",
   "functional-intent-verification.md",
+  "governed-document-rollover-control.md",
   "memory-governance-and-session-boundary.md",
   "maintainable-code-structure-and-decomposition.md",
   "development-verification-and-debug-strategy.md",
@@ -210,7 +212,7 @@ foreach ($file in $ruleFiles) {
 
 - Already cloned the repo? Skip the clone step and run the install block only.
 - Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/`.
-- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 45-file source-owned set are not cleanup targets by default.
+- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 46-file source-owned set are not cleanup targets by default.
 
 ### 🤖 AI-Assisted Install Prompts
 
@@ -310,7 +312,7 @@ Please:
 <td width="50%">
 
 #### Runtime Context Discipline
-- 45 active runtime rules in the current source install set
+- 46 active runtime rules in the current source install set
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -326,7 +328,8 @@ Please:
 - P075-02 roadmap-aware completion is synchronized for v9.89: true objective closeout can recommend supported next phases/waves without blocking selected safe continuation; active runtime count remains 44, runtime install/parity/body-sufficiency verification passed 44/44, git push completed, and GitHub release `v9.89` is published
 - P075-03 goal-first working frame is released for v9.90: non-trivial work can use proportional goal/output/gate navigation and supported next-goal recommendations without turning goal wording into a rigid ritual; active runtime count remains 44, source/runtime install parity plus body sufficiency passed 44/44 with destination extras observed-only, `master` was pushed, and GitHub release `v9.90` is published.
 - P085-01 status/documentation/memory/mechanism/audience-surface refinement is released for v9.91: it adds `audience-surface-disclosure-control.md` as the 45th active source-owned runtime rule; source/runtime install parity plus body sufficiency passed 45/45 with destination extras observed-only; `master` was pushed; and GitHub release `v9.91` is published.
-- Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
+- P087-01 daily-first governance rollover is released for v9.92: it adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule, compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints, preserves pre-rollover snapshots, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.92`.
+- Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
 </td>
@@ -353,7 +356,7 @@ Please:
 
 ---
 
-### 🟡 Quality & Safety (32 rules)
+### 🟡 Quality & Safety (34 rules)
 
 > **Ensure consistent, safe, and well-documented outputs**
 
@@ -362,6 +365,7 @@ Please:
 | [`accurate-communication.md`](accurate-communication.md) | Clear, honest communication | No vague claims, no over-strong contradiction wording, acknowledgement without factual endorsement, evidence-backed agreement, user-owned preference/direction separation, reusable partial-evidence technical snapshot wording, stronger human-language glosses, easy-explanation continuity so plain Thai explanations stay simple through the full answer, clearer explanation of variables/fields/config keys/internal labels when answers depend on them, goal-qualified proposal wording for advisory future-work ideas, honest duplicate-looking Team Agent reporting with observed-vs-inferred state separation, governing-basis clarification before deep branch analysis, compact post-compact re-anchor wording, explicit memory-derived-context disclosure wording for path-matched remembered context, natural-professional wording, direct human-readable action/result wording preferred over metaphor-heavy internal shorthand, main-point-first framing for diagnosis/test/recommendation/proposal/update answers, evidence-honest phase closeout delivery/feature/impact wording, continuation-first guidance, clearer recommendation-plus-reason next-step wording that still preserves alternatives when multiple paths are real, and active summaries that keep resolved topics available for reasoning without repeating them as current issues by default |
 | [`artifact-initiation-control.md`](artifact-initiation-control.md) | Startup artifact governance | Resolve design/changelog/TODO/phase/patch posture before meaningful governed work drifts, resolve phase posture from sufficiently clear governed design when staged execution is warranted, and when phase posture resolves to `create now`, delegate current-phase/subphase/new-major identity selection to `phase-implementation.md` instead of implying a fresh major phase; initialize live task tracking early when non-trivial work needs visible execution state, treat phase-backed live task tracking as expected startup behavior with visible phase linkage from initialization, keep initialized live task lists as the continuing surface for the active objective, keep newly encountered unclear files in classification-first posture rather than disposal-first posture, and keep patch non-default during greenfield startup unless a real before/after review surface exists |
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | User authority respected, checked master/governed repo surfaces outrank git-state cleanup heuristics when classifying file meaning, runtime co-location is not ownership authority, destination/runtime files outside the current source-owned install set require owner/project scope resolution before classification or cleanup, fresh user directives override previously offered assistant options, unnecessary option branching is discouraged when one safe continuation path already exists, future-work proposals stay advisory until explicitly selected, user-declared RULES-first issues stay RULES-first instead of being diverted into memory-first fixes, memory applicability now defers to the dedicated memory-governance owner, non-matching path-scoped remembered context cannot override the current repo/objective, unresolved governing-basis selection stays user-owned unless authority/evidence already settles it, compacted-session continuation re-anchors to the latest active directive and active frame, and overlapping team expansion stays advisory unless a distinct new role is actually needed |
+| [`audience-surface-disclosure-control.md`](audience-surface-disclosure-control.md) | Audience surface disclosure | Full direct-user/project-owner transparency stays separate from audience-safe generated public, customer-facing, operator-facing, log, demo, release, onboarding, and externally shared wording |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer the best visible custom/specialist agent after native worker routing has already classified intent, selected the needed worker capability, and chosen a direct/subagent/multi-subagent/team scale; do not turn agent availability into a routing or Agent Team escalation decision |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
 | [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, source-owned active runtime, active runtime body-sufficiency, shared runtime destination, other-owner runtime, destination/runtime, local execution, and reusable source-artifact references distinct so parity/no-drift claims do not pass on shared-destination co-location, metadata-only roots, or cleanup-driven file classification |
@@ -372,6 +376,7 @@ Please:
 | [`evidence-grounded-burden-of-proof.md`](evidence-grounded-burden-of-proof.md) | Evidence-seeking proof-aware judgment | One first-class authority for practical evidence-seeking before substantial reasoning, ordinary-evidence-versus-binding-constraint thresholds, burden-of-proof thresholds for factual endorsement and contradiction, user-owned preference/direction separation, fact/inference/hypothesis separation, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, honest source-conflict handling, orchestrated research-lane source trust, and external evidence grounding for recommendation/design judgments |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Clarifies destructive, ambiguous, or high-impact intent before execution, with a real delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
+| [`governed-document-rollover-control.md`](governed-document-rollover-control.md) | Governed rollover control | Keeps large active governance entrypoints such as `TODO.md` and `phase/SUMMARY.md` compact by moving accumulated history into daily-first referenced `history/` and `done/` shards without deleting governed meaning |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep any optional external recall generic, supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
 | [`maintainable-code-structure-and-decomposition.md`](maintainable-code-structure-and-decomposition.md) | Maintainable code structure | Owns coding-time responsibility boundaries, maintainability as future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comment discipline, God function/file pressure, wrong-abstraction avoidance, explicit dependency/state boundaries, behavior-preserving refactor posture, verification-strategy deferral, and tactical structure-debt convergence without rigid line-count or architecture-template rules |
 | [`development-verification-and-debug-strategy.md`](development-verification-and-debug-strategy.md) | Development verification strategy | Owns proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and closeout wording that does not treat edits as proof |
@@ -419,16 +424,16 @@ Please:
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 45**
+**📊 Active Runtime Rules: 46**
 
-Latest refinement: P085-01 adds readiness-versus-completion wording, README current-state sync discipline, memory index hygiene triggers, mechanism-first coordination design, and direct-user-transparent audience-surface disclosure control. The active source install set is now 45 files after adding `audience-surface-disclosure-control.md`; source/runtime install parity plus body sufficiency passed 45/45 with destination extras observed-only, `master` was pushed, and GitHub release `v9.91` is published.
+Latest refinement: P087-01 adds daily-first governed rollover for oversized active control files. The active source install set is now 46 files after adding `governed-document-rollover-control.md`; `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` and `done/` references. Source/runtime install parity plus body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.92` is published.
 </div>
 
 ---
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 45-rule set and describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 46-rule set and describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 
@@ -502,7 +507,10 @@ ls ./.claude/rules/artifact-initiation-control.md
 | `./changelog/changelog.md` | Master repository-wide history | Master changelog |
 | `./changelog/*.changelog.md` | Per-chain authoritative active history/current version state | Active changelogs |
 | `./changelog/done/*.changelog.md` | Older or completed detailed history outside active scans | Inactive history for audit/rollback/provenance/trace |
-| `./phase/SUMMARY.md` | Governed summary/index for live phase planning, one-way source-input rollup, and review rollup | Phase summary doc |
+| `./todo/history/*.md` | Daily TODO movement and pre-rollover snapshots outside the active TODO entrypoint | Referenced inactive TODO history |
+| `./todo/done/*.md` | Large completed TODO/task detail outside the active TODO entrypoint | Referenced inactive TODO detail |
+| `./phase/SUMMARY.md` | Compact governed summary/index for live phase planning and current roadmap state | Phase summary doc |
+| `./phase/history/*.md` | Daily phase movement and pre-rollover phase-summary snapshots outside the active summary | Referenced inactive phase history |
 | `./phase/phase-NNN-<phase-name>.md` | Governed active major-phase execution detail | Active major phase docs |
 | `./phase/phase-NNN-NN-<subphase-name>.md` | Governed active subphase execution detail | Active subphase docs |
 | `./phase/done/phase-NNN-*.md` | Completed phase detail retained outside active scans | Inactive completed phase history |
@@ -513,9 +521,10 @@ ls ./.claude/rules/artifact-initiation-control.md
 > **💡 Single Source of Truth Principle:**
 > - Design files (`.design.md`) define active target state and do not use a default `design/done/` surface
 > - Per-chain active changelogs (`*.changelog.md`) remain the authority for current governed chain history/version state
-> - `changelog/done/`, `phase/done/`, and `patch/done/` are inactive-by-default history surfaces for audit, rollback, provenance, or trace reconstruction
+> - `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are inactive-by-default referenced history/detail surfaces for audit, rollback, provenance, or trace reconstruction
 > - `changelog/changelog.md` records repository-level synchronization history
 > - `README.md` remains overview-only, not chain authority
+> - `TODO.md` and `phase/SUMMARY.md` stay compact current-state entrypoints; moved history remains reachable through their `history/` and `done/` references
 > - Older coordination-flavored rollout records in `TODO.md`, `phase/SUMMARY.md`, and `changelog/changelog.md` remain historical context only; current active authority stays in the active runtime rules and design docs
 
 ---
@@ -533,7 +542,10 @@ This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and gov
 | `changelog/changelog.md` | Master repository-wide synchronization history | Repository-level governed sync events |
 | `changelog/*.changelog.md` | Authoritative active per-chain version history | Any rule/design update with version impact |
 | `changelog/done/*.changelog.md` | Inactive completed or older detailed history | History/audit/rollback/provenance/trace needs only |
-| `phase/SUMMARY.md` | Governed summary/index for live phased execution | Phased implementation work needs one summary file with a phase map, source-input extraction rollup, review rollup, and global coordination |
+| `todo/history/*.md` | Referenced inactive TODO history | Daily movement, pre-rollover snapshots, and audit trail when active `TODO.md` is compacted |
+| `todo/done/*.md` | Referenced inactive TODO detail | Large completed task/wave detail retained outside the active TODO entrypoint |
+| `phase/SUMMARY.md` | Compact governed summary/index for live phased execution | Current phase roadmap/index and links to referenced history/done shards |
+| `phase/history/*.md` | Referenced inactive phase history | Daily phase movement and pre-rollover summary snapshots when active `phase/SUMMARY.md` is compacted |
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Governed active phase-detail layer | Multi-stage execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
 | `phase/done/phase-NNN-*.md` | Inactive completed phase history | Completed phase detail should leave active scans but remain traceable |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed active patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
@@ -585,8 +597,9 @@ Change request received
   → record repository-level sync in changelog/changelog.md when applicable
   → update TODO pending/completed/history
   → update phase/patch companion records when in scope
+  → roll oversized active TODO or phase-summary history into referenced daily-first `history/` and `done/` shards before broad active-file absorption continues
   → move completed phase/patch/changelog detail to `done/` only when active scan bloat justifies inactive history separation
-  → install only the 45 source-owned active runtime rules when an install gate is explicitly in scope
+  → install only the 46 source-owned active runtime rules when an install gate is explicitly in scope
   → verify links, versions, active install scope, source/runtime parity, and active runtime body sufficiency only when a runtime install gate is in scope
 ```
 
@@ -596,7 +609,8 @@ Change request received
 - Design file links to the correct changelog file
 - Changelog unified row maps to an existing detailed section
 - Runtime rule version/header aligns with changelog current version
-- README active runtime install list still contains exactly the 45 source-owned root rule files
+- README active runtime install list still contains exactly the 46 source-owned root rule files
+- `TODO.md` and `phase/SUMMARY.md` stay compact enough for active current-state reads and reference their relevant `history/` and `done/` shards
 - `phase/SUMMARY.md` exists when phased execution is used and names governing patch artifacts or explicit `none`
 - `phase/SUMMARY.md` keeps the phase map, source inputs, cross-phase handoffs, TODO/changelog coordination, verification, and rollback/containment picture current
 - child phase files include design references, patch references or explicit `none`, objective, entry conditions, action checklist, affected artifacts, TODO/changelog coordination, verification, closeout, exit criteria, risks/rollback notes, and next possible phases when relevant
@@ -1128,11 +1142,11 @@ Result: ✅ Verified from actual files
 
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
-| Active runtime scope | 45 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, and P085-01 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P085-01 raises the source install set to 45, verifies source/runtime install parity plus body sufficiency 45/45 with destination extras observed-only, and publishes GitHub release `v9.91` after the release gate passes | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Active runtime scope | 46 source-owned root rule files | Keeps install scope explicit |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, P085-01, and P087-01 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P087-01 raises the source install set to 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, and publishes GitHub release `v9.92` after the release gate passes | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
-| Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
+| Completed/history surfaces | `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are referenced inactive surfaces by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
 | Shared destination boundary | Co-located runtime files outside the source-owned set are not cleanup targets by default | Prevents other-owner file damage |
 
 </div>
@@ -1220,8 +1234,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.91 |
-  <b>Last Updated</b>: 2026-05-07 |
+  <b>Version</b>: 9.92 |
+  <b>Last Updated</b>: 2026-05-08 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

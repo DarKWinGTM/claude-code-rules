@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.30
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.30
+> **Current Version:** 2.31
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.31
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -9,9 +9,9 @@
 
 ## Rule Statement
 
-**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order and a bounded goal/output/gate-aware roadmap or phase matrix, maintain an active `/phase` workspace with mandatory `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria, visibly link non-trivial phase-backed live tasks to active or implied phase context, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
+**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order and a bounded goal/output/gate-aware roadmap or phase matrix, maintain an active `/phase` workspace with mandatory compact `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria, visibly link non-trivial phase-backed live tasks to active or implied phase context, move accumulated daily phase movement into referenced `phase/history/` shards, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
 
-This rule owns phase-execution semantics. `phase/SUMMARY.md` is the governed summary/index; active child files hold phase-local execution detail; `phase/done/` is inactive completed history; design remains target-state authority; patch remains governed before/after review authority. Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
+This rule owns phase-execution semantics. `phase/SUMMARY.md` is the compact governed summary/index; active child files hold phase-local execution detail; `phase/history/` holds referenced daily phase movement; `phase/done/` is inactive completed history; design remains target-state authority; patch remains governed before/after review authority. Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
 
 ---
 
@@ -68,10 +68,11 @@ When phased planning is used:
 - `phase/SUMMARY.md` is mandatory
 - active executable files live under `phase/`
 - valid active paths are `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md`
+- daily phase movement may live under `phase/history/YYYY-MM-DD*.md` and must link back to `phase/SUMMARY.md`
 - completed phase-detail history may live under `phase/done/` with the same filename grammar
 - live phased execution files inside patch artifacts are **not allowed**
 
-`phase/done/` is inactive-by-default completed phase history. Active scans start with `phase/SUMMARY.md` and active child files in `phase/`; consult `phase/done/` only for history, audit, rollback, provenance, or trace reconstruction. Completed files are not junk or deletion-authorized by completed status, and `phase/done/` must not replace the live phase namespace.
+`phase/history/` is referenced daily movement history and `phase/done/` is inactive-by-default completed phase history. Active scans start with compact `phase/SUMMARY.md` and active child files in `phase/`; consult `phase/history/` or `phase/done/` only through active references or for history, audit, rollback, provenance, or trace reconstruction. History files are not junk or deletion-authorized by rollover/completed status, and history/done shards must not replace the live phase namespace.
 
 ---
 
@@ -99,7 +100,7 @@ When external docs/specs/provider references materially constrain execution, pha
 
 ## Phase File Responsibilities
 
-`phase/SUMMARY.md` keeps the global execution picture: context, target state, risk, constraints, dependencies, goal/output/gate-aware roadmap or phase matrix, phase map/index, active child references, lineage context, needed `phase/done/` pointers, design/patch source inputs, governing patch references, cross-phase handoffs, TODO/changelog coordination, end-to-end verification, next-phase or next-goal recommendation basis, and rollback/containment behavior.
+`phase/SUMMARY.md` keeps the compact global execution picture: context, target state, risk, constraints, dependencies, goal/output/gate-aware roadmap or phase matrix, phase map/index, active child references, lineage context, needed `phase/history/` and `phase/done/` pointers, design/patch source inputs, governing patch references, cross-phase handoffs, TODO/changelog coordination, end-to-end verification, next-phase or next-goal recommendation basis, and rollback/containment behavior.
 
 Each executable child phase should define or map to:
 - Summary File, Phase ID, Status
@@ -157,11 +158,12 @@ Phase-backed closeout should report practical delivery, not only files/tasks/aud
 - [ ] `NNN` / `NNN-NN` grammar, required active paths, and `phase/SUMMARY.md` are used
 - [ ] major-vs-subphase selection checks lineage before any new major phase
 - [ ] startup governance establishes or asks about `/phase` before staged/governed drift
-- [ ] `phase/done/` remains inactive history, never junk/deletion authority or live namespace
-- [ ] sufficiently clear governed design synthesizes into phase summary, bounded goal/output/gate-aware roadmap or phase matrix, current child files, and current-phase live tasks without replacing design authority
+- [ ] `phase/history/` and `phase/done/` remain referenced/inactive history, never junk/deletion authority or live namespace
+- [ ] sufficiently clear governed design synthesizes into compact phase summary, bounded goal/output/gate-aware roadmap or phase matrix, current child files, and current-phase live tasks without replacing design authority
 - [ ] roadmap entries distinguish selected/active work from proposal, blocked, needs-approval, or none-opened states without auto-promoting future work
 - [ ] meaningful roadmap or phase-matrix entries expose goal, expected output, and completion gate when that improves execution or closeout
 - [ ] patch-derived phase work shows explicit patch linkage and patch artifacts stay outside live phase workspace
+- [ ] oversized phase summaries are compacted into current indexes with reachable `phase/history/` and `phase/done/` references instead of retaining duplicate historical detail.
 - [ ] child phases include required source references, execution fields, verification, rollback/risks, and closeout
 - [ ] phase-backed coding work includes Development Verification / TestKit Coverage or equivalent when material
 - [ ] closeout reports delivery, feature/improvement, impact, evidence-strength-aligned verification basis, next phase state, and supported next-phase/wave/goal recommendation when meaningful
@@ -176,5 +178,6 @@ Related rules:
 - [artifact-initiation-control.md](artifact-initiation-control.md) - startup phase posture
 - [document-patch-control.md](document-patch-control.md) - patch governance boundary
 - [project-documentation-standards.md](project-documentation-standards.md) - repository document model
+- [governed-document-rollover-control.md](governed-document-rollover-control.md) - daily-first `phase/SUMMARY.md` / `phase/history/` / `phase/done/` rollover owner
 - [todo-standards.md](todo-standards.md) - TODO and live task coordination
 - [goal-set-review-and-priority-balance.md](goal-set-review-and-priority-balance.md) - goal-first working frame, goal hierarchy, and next-goal recommendation boundaries

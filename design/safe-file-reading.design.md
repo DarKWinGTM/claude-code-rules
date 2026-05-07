@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
@@ -227,3 +227,9 @@ RISKY FILES (use head -c 3000)
 ---
 
 > Full history: [../changelog/safe-file-reading.changelog.md](../changelog/safe-file-reading.changelog.md)
+
+---
+
+### Governance Rollover Read Target
+
+Oversized active governance entrypoints are not normal files to re-read in full. If `TODO.md` or `phase/SUMMARY.md` causes read failures, repeated large context absorption, or autocompact thrash, the target behavior is bounded current-state extraction followed by rollover into referenced history/done shards.

@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.36
+> **Current Version:** 2.37
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.37 | 2026-05-08 | **[Added daily-first governance rollover documentation surfaces](#version-237)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added `todo/history/`, `todo/done/`, and `phase/history/` to the repository role model while keeping `TODO.md` and `phase/SUMMARY.md` as compact active entrypoints with reachable history/done links. | |
 | 2.36 | 2026-05-07 | **[Added README current-state release sync discipline](#version-236)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Clarified that README release sync updates current overview/status/install/latest-refinement/quality signals instead of dumping changelog timelines into the README body | |
 | 2.35 | 2026-05-06 | **[Added active runtime body-sufficiency install boundary](#version-235)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -54,6 +56,21 @@
 ---
 
 <a id="version-236"></a>
+
+---
+
+<a id="version-237"></a>
+## Version 2.37: Added daily-first governance rollover documentation surfaces
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added `todo/history/`, `todo/done/`, and `phase/history/` to the repository role model while keeping `TODO.md` and `phase/SUMMARY.md` as compact active entrypoints with reachable history/done links.
+
+### Summary
+Added `todo/history/`, `todo/done/`, and `phase/history/` to the repository role model while keeping `TODO.md` and `phase/SUMMARY.md` as compact active entrypoints with reachable history/done links.
+
 ## Version 2.36: Added README current-state release sync discipline
 
 **Date:** 2026-05-07

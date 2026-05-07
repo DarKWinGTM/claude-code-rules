@@ -1,7 +1,7 @@
 # Changelog - Document Changelog Control
 
 > **Parent Document:** [../document-changelog-control.md](../document-changelog-control.md)
-> **Current Version:** 4.9
+> **Current Version:** 4.10
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 4.10 | 2026-05-08 | **[Aligned changelog history with daily rollover boundaries](#version-410)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Clarified that changelog history remains version authority while daily TODO and phase-summary rollover is owned by `governed-document-rollover-control.md`. | |
 | 4.9 | 2026-05-07 | **[Separated changelog history from README current-state sync](#version-49)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 4.8 | 2026-04-29 | **[Added completed changelog history surface](#version-48)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 4.7 | 2026-03-08 | **[Normalized runtime header contract and active-state design separation](#version-47)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -32,6 +34,21 @@
 ---
 
 <a id="version-49"></a>
+
+---
+
+<a id="version-410"></a>
+## Version 4.10: Aligned changelog history with daily rollover boundaries
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Clarified that changelog history remains version authority while daily TODO and phase-summary rollover is owned by `governed-document-rollover-control.md`.
+
+### Summary
+Clarified that changelog history remains version authority while daily TODO and phase-summary rollover is owned by `governed-document-rollover-control.md`.
+
 ## Version 4.9: Separated changelog history from README current-state sync
 
 **Date:** 2026-05-07

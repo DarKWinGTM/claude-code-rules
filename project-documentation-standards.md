@@ -1,11 +1,11 @@
 # Project Documentation Standards
-> **Current Version:** 2.36
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.36
+> **Current Version:** 2.37
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.37
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Use one deterministic documentation baseline across README, design, body-sufficient runtime rules, changelog, TODO, `/phase`, `/patch`, completed history surfaces, and non-governed helper/support or extension-package artifacts; resolve startup posture before governed work drifts; declare patch participation in live phase when patch is in scope; keep public onboarding/install guidance portable.**
+**Core Principle: Use one deterministic documentation baseline across README, design, body-sufficient runtime rules, changelog, compact active TODO/phase entrypoints, daily-first history/done rollover surfaces, `/patch`, completed history surfaces, and non-governed helper/support or extension-package artifacts; resolve startup posture before governed work drifts; declare patch participation in live phase when patch is in scope; keep public onboarding/install guidance portable.**
 ---
 ## Required Document Set
 | Document | Required when | Purpose | Owner |
@@ -14,8 +14,11 @@
 | `design/*.design.md` | design/spec required | active target behavior/contract | `document-design-control` |
 | `changelog/*.changelog.md` | version trace required | active version authority, current index, and navigation | `document-changelog-control` |
 | `changelog/done/*.changelog.md` | completed/older history should leave active scans | inactive history for audit/rollback/provenance/trace | `document-changelog-control` |
-| `TODO.md` | tracking required | durable execution tracking | `todo-standards` |
-| `phase/SUMMARY.md` | phased work required | live phase summary/index | `phase-implementation` |
+| `TODO.md` | tracking required | compact durable current execution index | `todo-standards` |
+| `todo/history/YYYY-MM-DD*.md` | accumulated TODO daily movement should leave active scans | referenced daily TODO history | `governed-document-rollover-control` / `todo-standards` |
+| `todo/done/<task-or-wave>.md` | large completed TODO detail retained outside active scans | referenced inactive TODO detail history | `governed-document-rollover-control` / `todo-standards` |
+| `phase/SUMMARY.md` | phased work required | compact live phase roadmap/index | `phase-implementation` |
+| `phase/history/YYYY-MM-DD*.md` | accumulated phase daily movement should leave active scans | referenced daily phase history | `governed-document-rollover-control` / `phase-implementation` |
 | `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md` | multi-stage detail required | active execution detail | `phase-implementation` |
 | `phase/done/phase-NNN-*.md`, `phase/done/phase-NNN-NN-*.md` | completed phase detail retained outside active scans | inactive completed phase history | `phase-implementation` |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | patch/review required | active review artifact outside phase | `document-patch-control` |
@@ -34,9 +37,9 @@
 - Changelog owns current version/history authority; `changelog/done/` is inactive older/completed history, and changelog is not phase-definition storage.
 - README is the current front page, not the history book. Release sync updates current-state sections such as overview/status cards, install arrays, active runtime count, latest refinement, current quality signals, and current safety/runtime notes instead of dumping version timelines into the README body.
 - Design owns active target-state truth and has no default `design/done/` surface.
-- Phase planning belongs to `phase-implementation.md`; `phase/SUMMARY.md` plus active `phase/phase-NNN-*.md` / `phase/phase-NNN-NN-*.md` files form the live phase workspace, while `phase/done/` is inactive completed history. `phase/SUMMARY.md` preserves phase-family lineage when it affects later major-vs-subphase decisions.
+- Phase planning belongs to `phase-implementation.md`; `phase/SUMMARY.md` stays the compact live phase roadmap/index, active `phase/phase-NNN-*.md` / `phase/phase-NNN-NN-*.md` files hold current execution detail, `phase/history/` carries referenced daily movement, and `phase/done/` is inactive completed history. `phase/SUMMARY.md` preserves phase-family lineage and must keep history/done pointers when rollover moves detail out of active scans.
 - Patch artifacts are self-identifying before/after review artifacts outside live phase planning; `patch/done/` is inactive completed patch history, and live phase execution must not be stored in patch artifacts. Design and patch artifacts need not point back to phase.
-- `TODO.md` is durable tracking; Claude Code's built-in task list is live in-session tracking and does not replace durable/governed surfaces or define phases. For non-trivial phase-backed work, built-in task entries should visibly point to the active or clearly implied phase context without becoming phase authority.
+- `TODO.md` is the compact durable current-state tracking entrypoint; `todo/history/` and `todo/done/` are referenced history/detail surfaces, not replacements for the active index. Claude Code's built-in task list is live in-session tracking and does not replace durable/governed surfaces or define phases. For non-trivial phase-backed work, built-in task entries should visibly point to the active or clearly implied phase context without becoming phase authority.
 - Runtime installs target only the current project/source-owned active runtime rule files. Design, changelog, TODO, phase, patch, support, helper, and extension-package surfaces are not runtime-rule install targets unless a later explicit gate selects them. Naming an install destination does not widen the current source-owned install set.
 - README-listed source-owned active runtime rules must contain canonical metadata and substantive runtime behavior bodies; design, changelog, TODO, phase, patch, support, and helper surfaces cannot substitute for installed runtime behavior.
 - Shared runtime destinations may contain other project/plugin-owned runtime files; current repo docs must not classify, manage, or delete them unless owner/project scope is selected or verified. Runtime co-location is an observation, not ownership authority.
@@ -44,12 +47,12 @@
 ---
 ## Completed Documentation Surface Governance
 Completed surfaces reduce active scan bloat without deleting governed history.
-- Allowed inactive history: `phase/done/`, `patch/done/`, and `changelog/done/`.
+- Allowed inactive or referenced history: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/`.
 - Not default: `design/done/`; design remains active blueprint/target-state authority.
-- Current-state scans start with active design/changelog/TODO, `phase/SUMMARY.md`, active phase/patch files, and checked implementation state.
+- Current-state scans start with active design/changelog, compact `TODO.md`, compact `phase/SUMMARY.md`, active phase/patch files, and checked implementation state; history/done shards are opened only through active references or audit/rollback/provenance need.
 - Open `done/` or archive surfaces only for history, audit, rollback, provenance, or trace reconstruction.
 - Completed status is not junk classification or deletion authorization, and active surfaces must keep enough pointers for history to be found.
-- Do not let `done/` history replace active summary/index surfaces: `phase/SUMMARY.md`, active changelog index/current version, and active patch/review artifacts remain the first current-state lookup layer.
+- Do not let `history/` or `done/` history replace active summary/index surfaces: `TODO.md`, `phase/SUMMARY.md`, active changelog index/current version, and active patch/review artifacts remain the first current-state lookup layer.
 ---
 ## Startup Artifact Gate
 Before meaningful governed work, `artifact-initiation-control` resolves relevant surfaces as `use existing`, `create now`, `ask now`, or `not required`; this happens before later sync order.
@@ -70,7 +73,7 @@ continue only after required posture is resolved enough for the active slice
 ## New or Unclear File Classification
 When a new/unclear file appears during governed work, keep role unresolved until checked rather than turning uncertainty into cleanup/disposal logic.
 - Check master surfaces and relevant governed owner chains first; minimum active lookup when applicable is `README.md`, `design/design.md`, `changelog/changelog.md`, `TODO.md`, relevant active `phase/`, and relevant active `patch/`.
-- Consult `phase/done/`, `patch/done/`, or `changelog/done/` only for history/audit/rollback/provenance/trace needs.
+- Consult `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, or `changelog/done/` only through active references or for history/audit/rollback/provenance/trace needs.
 - Destination/runtime files outside the current source-owned active runtime install set require owner/project scope resolution before classification.
 - Git state and runtime co-location are observed local evidence only; disposal requires stronger semantic authority plus destructive-execution permission.
 - `not required` does not mean `safe to remove`.
@@ -93,7 +96,7 @@ Required guidance:
 - Portable defaults defer to `portable-implementation-and-hardcoding-control.md`; source/destination and cross-reference consistency defer to `document-consistency.md`.
 - Required document set, versions, metadata, full-history links, parent links, and active session IDs align with the governing chain. Active metadata must use real session identifiers; placeholders are not valid in active governed artifacts.
 - Source/runtime parity and no-drift claims for active runtime rules include body sufficiency, not only file existence, metadata alignment, or hash equality.
-- Phase records preserve live phase workspace boundaries, current/future phase distinction, and enough lineage for major-vs-subphase decisions.
+- Phase records preserve live phase workspace boundaries, current/future phase distinction, daily history/done reference integrity, and enough lineage for major-vs-subphase decisions.
 - Patch artifacts stay outside live phase namespace, remain before/after review surfaces, and show phase-to-patch linkage when patch participates.
 - Governed coding phases keep development verification/TestKit coverage expectations aligned across phase, TODO, changelog, and closeout surfaces when verification materially affects exit criteria; detailed strategy defers to `development-verification-and-debug-strategy.md`.
 - Built-in task lists remain live tracking, normally reused/extended within one active objective, visibly phase-linked for non-trivial phase-backed work, and never downgrade required design/changelog/TODO/phase/patch surfaces.
@@ -105,10 +108,11 @@ Required guidance:
 - [ ] Startup posture is resolved; required governed companions and live task tracking are not downgraded.
 - [ ] Phase-backed live task entries visibly point to active or implied phase context without becoming phase authority.
 - [ ] Governed coding phases keep material Development Verification / TestKit Coverage aligned across phase, TODO, changelog, and closeout surfaces.
-- [ ] Active design/changelog, phase, patch, TODO, and completed-history boundaries remain distinct.
+- [ ] Active design/changelog, compact TODO/phase entrypoints, phase, patch, daily history, done detail, and completed-history boundaries remain distinct.
 - [ ] Phase lineage and phase file selection defer to `phase-implementation.md`.
 - [ ] Patch surfaces stay self-identifying, before/after-oriented, and outside live phase planning.
 - [ ] README release sync updates current-state sections and does not become a changelog timeline dump.
+- [ ] `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` and `done/` references after rollover.
 - [ ] Public onboarding/support artifacts stay portable and source-vs-destination wording is distinct.
 - [ ] Runtime install scope is limited to current project/source-owned active runtime rule files.
 - [ ] Other-owner runtime files and unclear files are not classified, managed, or deleted without owner/project scope and stronger authority.
@@ -128,15 +132,16 @@ Required guidance:
 | Rule | Relationship |
 |---|---|
 | [artifact-initiation-control.md](artifact-initiation-control.md) v1.8 | startup artifact-resolution owner and phase-linked live-task initialization |
-| [document-changelog-control.md](document-changelog-control.md) v4.8 | version authority and `changelog/done/` completed history boundary |
+| [document-changelog-control.md](document-changelog-control.md) v4.10 | version authority and `changelog/done/` completed history boundary |
 | [document-design-control.md](document-design-control.md) v1.10 | design structure and no-default-`design/done/` boundary |
 | [document-patch-control.md](document-patch-control.md) v2.7 | patch boundary, before/after contract, and `patch/done/` completed history boundary |
 | [development-verification-and-debug-strategy.md](development-verification-and-debug-strategy.md) v1.0 | coding-time verification strategy, debug signal selection, testing depth, and TestKit/scenario decision owner |
-| [phase-implementation.md](phase-implementation.md) v2.28 | phased execution semantics, major-vs-subphase lineage selection, visible phase-linked live tasks, Development Verification / TestKit Coverage, and `phase/done/` completed history boundary |
+| [phase-implementation.md](phase-implementation.md) v2.31 | phased execution semantics, daily `phase/history/`, major-vs-subphase lineage selection, visible phase-linked live tasks, Development Verification / TestKit Coverage, and `phase/done/` completed history boundary |
 | [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) v1.2 | portable shared-artifact defaults |
 | [unified-version-control-system.md](unified-version-control-system.md) v1.3 | controller-level active runtime body-sufficiency and version-governance validation |
+| [governed-document-rollover-control.md](governed-document-rollover-control.md) v1.0 | daily-first active entrypoint/history/done rollover owner for oversized governed control files |
 | [document-consistency.md](document-consistency.md) v1.9 | source/destination, active runtime body-sufficiency, and source-owned/shared-destination reference consistency |
-| [todo-standards.md](todo-standards.md) v2.24 | TODO structure, startup bridge, visible phase context, and material verification slices in live task entries |
+| [todo-standards.md](todo-standards.md) v2.26 | compact TODO active entrypoint, daily `todo/history/`, `todo/done/`, startup bridge, visible phase context, and material verification slices in live task entries |
 | [design/rules-plugin-extension.design.md](design/rules-plugin-extension.design.md) | historical plugin-extension boundary; active plugin/runtime coordination is not Main RULES doctrine |
 ---
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
