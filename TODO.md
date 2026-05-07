@@ -6,6 +6,8 @@
 
 ## ✅ Completed
 
+- [x] Complete P085-01 status, documentation, memory, mechanism, and audience-surface refinement: add readiness-versus-completion wording, README current-state sync discipline, memory index hygiene triggers, mechanism-first coordination design, and direct-user-transparent audience-surface disclosure control; synchronize v9.91 governed records; install only the 45 README-listed active runtime rules; verify source/runtime parity plus body sufficiency with destination extras observed-only; push master; and publish GitHub release `v9.91`.
+
 - [x] Complete P075-03 goal-first working frame and next-goal recommendations: add proportional goal/output/gate navigation, triggered visible goal framing, continuation-first execution, outcome-shaped task/phase guidance, and evidence-grounded next-goal recommendations; synchronize v9.90 governed records; install only the 44 README-listed active runtime rules; verify source/runtime parity plus body sufficiency; push master; and publish GitHub release `v9.90`.
 
 - [x] Complete P075-02 roadmap-aware completion and next-phase proposal behavior: keep selected safe continuation first, add advisory next-phase recommendations at true closeout boundaries, synchronize master design/changelog/README/TODO/phase/patch records for v9.89, install only the 44 README-listed active runtime rules, verify source/runtime parity plus body sufficiency, push master, and publish GitHub release `v9.89`.
@@ -170,18 +172,11 @@
 
 ### Active Work
 
-No active RULES release work is currently pending.
+No active RULES release work is currently selected.
 
 ### Deferred Enhancements
 - [ ] Automated validation script for documentation compliance (deferred by user).
 - [ ] Integration testing for design/changelog/rule/TODO integration paths (deferred by user).
-
-### Active Verification
-- [x] Verify README Bash and PowerShell active runtime install arrays remain at exactly 44 files and contain the same filenames.
-- [x] Verify all 44 README-listed active runtime roots exist, include `Full history`, and contain substantive runtime bodies.
-- [x] Install only the README-listed 44 active runtime rules to `~/.claude/rules/` and verify source/runtime hash parity.
-- [x] Verify destination runtime extras remain observed-only and untouched.
-- [x] Verify GitHub release `v9.90` exists after push/release.
 
 ---
 
@@ -189,6 +184,7 @@ No active RULES release work is currently pending.
 
 | Date | Changes |
 |------|---------|
+| 2026-05-07 | Completed P085-01 status/documentation/memory/mechanism/audience-surface refinement for v9.91: source-governance sync raises the source-owned active runtime set to 45 with `audience-surface-disclosure-control.md`; 45/45 source/runtime install parity plus body-sufficiency passed with destination extras observed-only; master was pushed; and GitHub release `v9.91` was published. |
 | 2026-05-07 | Completed P075-03 goal-first working frame and next-goal recommendations: eight active runtime owners, paired design/changelog chains, and v9.90 master records now carry proportional goal/output/gate, triggered visibility, continuation-first, outcome-shaped task, and evidence-grounded next-goal behavior; 44/44 source/runtime install parity plus body-sufficiency verification passed with destination extras observed-only, master was pushed, and GitHub release `v9.90` was published. |
 | 2026-05-07 | Completed P075-02 roadmap-aware completion and next-phase proposal behavior: seven active runtime owners and paired design/changelog chains now carry completion-to-roadmap, compact next recommendation, optional deep-dive, high-signal preservation, and roadmap/phase-matrix worker-routing guidance; v9.89 source audit plus 44/44 runtime install/parity/body-sufficiency verification passed, master was pushed, and GitHub release `v9.89` was published. |
 | 2026-05-06 | Completed P073-10 active runtime body sufficiency corrective validation: re-materialized 10 metadata-only active runtime roots, synchronized body-sufficiency doctrine across controller/documentation/consistency owners, kept the active runtime count at 44, verified source and runtime body-sufficiency/parity gates 44/44 with destination extras observed-only, pushed master, and published GitHub release `v9.88`. |

@@ -1,6 +1,6 @@
 # Native Worker Agent Routing and Context Control
-> **Current Version:** 1.3
-> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.4
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/native-worker-agent-routing-and-context-control.changelog.md](changelog/native-worker-agent-routing-and-context-control.changelog.md)
 ---
@@ -59,6 +59,14 @@ Required guidance:
 - require each lane to return analyzed findings with checked scope, source quality, conflicts, implications, and leader verification needs
 - the leader should synthesize across lanes, inspect only selected high-value evidence when needed, and avoid treating subagent findings as proof by themselves
 
+### 4.2) Mechanism-first coordination design
+Before proposing broad coordination, worker-runtime, or cross-session behavior, classify the actual mechanism instead of assuming a transport exists.
+Required guidance:
+- identify whether the checked mechanism is a passive shared board, local hook, injected context, tmux transport, recall/memsearch, official Agent Team, external plugin/MCP, or unavailable/unsupported mechanism
+- match design claims to checked capability: passive boards store state, hooks react locally, injected context informs prompts, tmux transports text, recall retrieves context, official teams coordinate teammates, and plugins/MCPs provide their documented APIs
+- do not design runtime mutation, delivery guarantees, or cross-session authority from an imagined hook, hidden transport, or plugin feature that has not been checked
+- keep plugin/shared-board exact grammar outside Main RULES unless an owning plugin or explicit authority surface is selected
+
 ### 5) Native execution behavior
 Worker routing is normal execution behavior, not a special mode. Proactively look for worker-fit slices, keep the worker set minimal, prefer subagent-first handling for broad lanes without shared-team coordination, reuse active/recent standing-role workers before duplicate-looking spawns, put phase/task/objective context in the assignment rather than necessarily in worker identity, and do not over-delegate simple work.
 
@@ -116,6 +124,7 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 | user asks about AI/RULES behavior while providing logs/snippets | classify as behavior/governance first; do not auto-explore project |
 | broad search/read or repository exploration | dispatch standalone worker or state narrow direct-handling reason before broad absorption |
 | broad roadmap/phase-matrix analysis | use a focused read-only planning/review lane when multiple design, TODO, phase, risk, or dependency surfaces need synthesis |
+| coordination design or cross-session behavior proposal | classify the actual mechanism first, then keep claims within checked capability |
 | high-output test/log/build evidence | prefer worker filtering before leader reads raw noisy output |
 | multi-surface governance audit | use a focused audit worker or multiple standalone workers when scope is broad |
 | external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
@@ -127,7 +136,7 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 | high edit overlap | avoid parallel edit lanes; consider read-only investigation instead |
 
 ## Anti-Pattern Boundary
-Avoid: treating pasted project paths/logs as permission to inspect code; leader absorbing all broad raw search/read/log/test/roadmap evidence by default; leader running broad design-improvement websearch or phase-roadmap synthesis directly when research/planning lanes would filter it better; routing by tool name alone; saying agents could help without dispatching when worker-fit is present; treating teammate/Agent Team bans as standalone-subagent bans; escalating to Agent Team when one subagent would cover the work; fixed handoff caps; raw worker dumps; duplicate same-role worker spawn; overlapping parallel edits; treating worker summaries as proof; or importing plugin/shared-board grammar into Main RULES.
+Avoid: treating pasted project paths/logs as permission to inspect code; leader absorbing all broad raw search/read/log/test/roadmap evidence by default; leader running broad design-improvement websearch or phase-roadmap synthesis directly when research/planning lanes would filter it better; routing by tool name alone; assuming an unverified hook, transport, recall, board, team, plugin, or MCP mechanism can deliver coordination behavior; saying agents could help without dispatching when worker-fit is present; treating teammate/Agent Team bans as standalone-subagent bans; escalating to Agent Team when one subagent would cover the work; fixed handoff caps; raw worker dumps; duplicate same-role worker spawn; overlapping parallel edits; treating worker summaries as proof; or importing plugin/shared-board grammar into Main RULES.
 
 Better behavior: classify intent and worker scale first, dispatch the smallest fitting lane or state the narrow direct-handling reason, keep Agent Team escalation for true shared coordination, and require leader verification before completion wording.
 ---

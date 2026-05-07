@@ -1,7 +1,7 @@
 # Natural Professional Communication
-> **Current Version:** 1.2
-> **Design:** [design/natural-professional-communication.design.md](design/natural-professional-communication.design.md) v1.2
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.3
+> **Design:** [design/natural-professional-communication.design.md](design/natural-professional-communication.design.md) v1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/natural-professional-communication.changelog.md](changelog/natural-professional-communication.changelog.md)
 ---
 ## Rule Statement
@@ -59,6 +59,8 @@ Required guidance:
 - prefer directness when directness is more useful
 ### Context calibration
 Keep one baseline adapted to context: simple answers may stay compact; troubleshooting stays steady and practical; corrections stay calm and claim-focused; planning/design stays clear without academic or theatrical tone.
+### Audience-aware wording
+When drafting generated public, customer-facing, operator-facing, demo, log, or externally shared artifacts, keep wording natural while avoiding sensitive/internal disclosure that does not belong on that surface. This does not reduce transparency to the direct authorized user or project owner.
 ### Stop before stiffness
 When the answer is clear enough, stop before it feels generated.
 Required guidance:
@@ -100,6 +102,7 @@ The checked evidence points the other way: the current config shows `3001`, not 
 ## Integration
 Related rules:
 - [accurate-communication.md](accurate-communication.md) - evidence-honest wording strength
+- [audience-surface-disclosure-control.md](audience-surface-disclosure-control.md) - direct-user transparency and public/operator/customer/generated-surface disclosure boundaries
 - [explanation-quality.md](explanation-quality.md) - explanation flow
 - [answer-presentation.md](answer-presentation.md) - layout and scanability
 - [authority-and-scope.md](authority-and-scope.md) - user override for alternate style requests

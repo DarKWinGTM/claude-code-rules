@@ -1,8 +1,8 @@
 # Changelog - Natural Professional Communication
 
 > **Parent Document:** [../natural-professional-communication.md](../natural-professional-communication.md)
-> **Current Version:** 1.2
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 1.3 | 2026-04-16 | **[Added easy-explanation register support for plain Thai answers](#version-13)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
+| 1.3 | 2026-05-07 | **[Added easy-explanation and audience-aware surface wording](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.2 | 2026-04-09 | **[Added purpose-before-detail guidance for operational answers](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-08 | **[Rejected metaphor-heavy abstraction as a default professional style](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-03-27 | **[Created first-class natural-professional-communication rule chain](#version-10)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
@@ -19,19 +19,21 @@
 ---
 
 <a id="version-13"></a>
-## Version 1.3: Added easy-explanation register support for plain Thai answers
+## Version 1.3: Added easy-explanation and audience-aware surface wording
 
-**Date:** 2026-04-16
-**Session:** 1b81d009-cf82-44a3-9739-cd3ea4af34dd
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ### Changes
 - Updated `natural-professional-communication.md` from v1.2 to v1.3.
 - Updated `design/natural-professional-communication.design.md` from v1.2 to v1.3.
-- Added an easy-explanation register principle so answers that were explicitly requested in plain Thai or less jargon now keep everyday Thai wording as the visible default register instead of drifting back into internal English or abstract system wording.
-- Preserved the existing calm, low-drama, human-readable professional baseline.
+- Preserved easy-explanation register support so plain Thai or less-jargon answers keep everyday wording throughout the response.
+- Added audience-aware wording guidance for generated public, customer-facing, operator-facing, demo, log, or externally shared artifacts.
+- Clarified that generated audience-surface minimization must not weaken full transparency to the direct authorized user or project owner.
+- Added integration with `audience-surface-disclosure-control.md` as the disclosure-boundary owner.
 
 ### Summary
-Natural-professional-communication now keeps easy explanations in an everyday Thai register instead of sounding simple only at the start and abstract again later.
+Natural-professional-communication now keeps easy explanations natural while also making generated audience-surface copy clear, low-drama, and disclosure-aware without hiding relevant details from the direct user.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.5
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662 (2026-04-17)
+> **Current Version:** 1.6
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
 
@@ -34,6 +34,7 @@ But the repository still lacks one semantic owner for memory governance itself.
 
 Observed failure modes this design intends to close:
 - memory structure remains implicit, so `MEMORY.md` can drift into a large content dump instead of a compact index
+- loader warnings, truncation risk, and index-size warnings can be treated as noise instead of immediate memory-index maintenance signals
 - remembered context can leak across unrelated sessions or projects because scope and applicability are under-specified
 - session identity is mistaken for applicability even when the real durable scope is the working path/project
 - archived or stale memory remains too easy to treat as active truth
@@ -101,6 +102,9 @@ Required behavior:
 - root `MEMORY.md` stays present as the entrypoint to active memory
 - root `MEMORY.md` should point to active scope indexes and active memory files instead of becoming a large monolithic content dump
 - active root indexing should remain compact enough to scan quickly
+- loader warnings, truncation warnings, and entry-length/index-bloat warnings should trigger maintenance of the root index
+- maintenance should compact index entries, move detail into topic files, split or archive stale inactive entries, and preserve path-scope pointers
+- index maintenance must not delete memory content merely because the active root index is too large
 - archive entries must not remain in the active root index
 
 ### 4.3 Scope Taxonomy Principle

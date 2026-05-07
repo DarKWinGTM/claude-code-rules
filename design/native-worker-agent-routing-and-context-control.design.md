@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 1.4
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
 
@@ -31,6 +31,7 @@ Observed failure modes:
 - subagents can be asked to search without clear topic boundaries, source-trust expectations, roadmap dimensions, or synthesis requirements
 - custom-agent selection can be confused with the earlier question of whether the work should be delegated at all
 - execution continuity can push into the next broad slice without re-running an intent and worker-scale gate
+- coordination design can jump from desired behavior to imagined hook, transport, recall, board, team, plugin, or MCP capability before checking the real mechanism
 
 The repository needs one source-owned Main RULES chain that says when the assistant should consider workers, how to choose the smallest effective worker structure, how subagent-first routing should work, and how leader verification remains mandatory.
 
@@ -50,6 +51,7 @@ The repository needs one source-owned Main RULES chain that says when the assist
 - Roadmap/phase-matrix analysis lane decomposition when multiple design, TODO, phase, risk, dependency, or verification surfaces need synthesis
 - Parallel edit containment
 - Leader verification after worker output or edits
+- Mechanism-first coordination design classification before broad coordination or cross-session behavior claims
 - Integration boundary with custom-agent selection and execution-continuity owners
 
 ### 3.2 Out of Scope
@@ -97,6 +99,18 @@ Target behavior:
 - one research/planning lane is preferred when the question is coherent; multiple lanes are used only when topics or phase/risk axes are independent enough to compare or synthesize cleanly
 - research and roadmap handoff includes checked scope, source or artifact trust notes, conflicts, implications, and leader verification needs
 - the leader synthesizes across lanes and verifies selected high-value evidence before final recommendations
+
+### 4.2.2 Mechanism-First Coordination Design Target
+Before proposing broad coordination behavior, classify the checked mechanism as passive shared board, local hook, injected context, tmux transport, recall/memsearch, official Agent Team, external plugin/MCP, or unavailable/unsupported mechanism.
+
+Target behavior:
+- passive boards are treated as state surfaces, not live delivery guarantees
+- hooks are treated as local event reactions, not automatic cross-session transport
+- injected context informs prompts but does not prove state mutation
+- tmux transports text but does not prove semantic acceptance or completion
+- recall retrieves context but does not prove current truth
+- official teams and external plugins/MCPs stay within their documented capability
+- plugin/shared-board exact grammar stays outside Main RULES unless the owning surface is selected
 
 ### 4.3 Capability-Based Routing
 Routing should be driven by:
@@ -195,6 +209,7 @@ This chain succeeds when:
 - broad research/design-improvement work is decomposed into research lanes when that improves coverage or protects leader context
 - broad roadmap/phase-matrix analysis is decomposed into focused planning/review lanes when multiple design, TODO, phase, risk, dependency, or verification surfaces need synthesis
 - research and roadmap handoffs include source/artifact quality, conflicts, implications, and leader verification needs instead of raw dumps
+- coordination-design claims classify the actual checked mechanism before claiming delivery, mutation, awareness, routing, or authority behavior
 - Agent Teams are used only when coordination semantics are worth the overhead and allowed by user direction
 - teammate/Agent Team restrictions are not misread as standalone-subagent bans
 - worker handoffs are analyzed and sized to the real evidence, not raw dumps or arbitrary caps

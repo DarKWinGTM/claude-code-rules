@@ -1,6 +1,6 @@
 # Development Verification and Debug Strategy
-> **Current Version:** 1.0
-> **Design:** [design/development-verification-and-debug-strategy.design.md](design/development-verification-and-debug-strategy.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/development-verification-and-debug-strategy.design.md](design/development-verification-and-debug-strategy.design.md) v1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/development-verification-and-debug-strategy.changelog.md](changelog/development-verification-and-debug-strategy.changelog.md)
 ---
@@ -60,13 +60,17 @@ Do not create TestKit scenarios for every task by reflex. Do not skip the decisi
 ### 5) Evidence boundary and closeout discipline
 Verification evidence must be reported at its true strength.
 
-| Evidence held | Do not claim |
-|---|---|
-| code edited only | fixed, verified, working |
-| unit/focused tests passed | whole system or live dependency works |
-| fake/local TestKit scenario passed | real provider/runtime/deploy works |
-| smoke check passed once | stable over time |
-| no test run | verified behavior |
+| Evidence held | Acceptable status | Do not claim |
+|---|---|---|
+| checklist, plan, or artifact ready | prepared | implemented, tested, verified, live, fixed, stable |
+| settings or wiring changed | configured | runtime/live-verified or working unless checked |
+| source edited | implemented | fixed, verified, working |
+| unit/focused tests passed | tested / verified-in-scope | whole system or live dependency works |
+| fake/local TestKit scenario passed | fake/local verified-in-scope | real provider/runtime/deploy works |
+| smoke check passed once | smoke-tested / runtime-checked once | stable over time |
+| real provider/runtime/deploy checked | runtime/live-verified | stable unless repeated/time-based evidence supports it |
+| failure scope reproduced and corrected with matching evidence | fixed in checked scope | globally stable or all edge cases covered |
+| no test run | not tested | verified behavior |
 
 Coding closeout should include the compact verification record when material:
 ```text
@@ -90,6 +94,7 @@ For phase-backed coding work, phase records should show `Development Verificatio
 | integration/provider/runtime/payment/auth/privacy work | fake/local verification first, then explicit smoke/live decision and safety boundary |
 | scenario-like flow | prefer TestKit/scenario harness or explain why focused tests are stronger |
 | implementation completed but not tested | continue to verification when safe instead of stopping at edit-only progress |
+| checklist/config/scaffold readiness | report prepared/configured/implemented only; do not claim tested, verified, live, fixed, or stable without matching evidence |
 | trivial no-behavior change | avoid ceremony; mark test not applicable with reason when needed |
 ---
 ## Anti-Pattern Boundary
@@ -103,7 +108,7 @@ Better behavior: understand behavior, choose a proportionate verification route,
 - [ ] TestKit/scenario decision was explicit when scenario-like behavior or integration risk existed
 - [ ] verification depth matched behavior risk without over-ceremony
 - [ ] fake/local/live/provider/runtime boundaries were not blurred
-- [ ] closeout separated edited, tested, working, fixed, stable, and not-tested scope
+- [ ] closeout separated prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, stable, and not-tested scope
 - [ ] phase/TODO/continuation surfaces preserved a verification slice when material
 ---
 ## Quality Metrics

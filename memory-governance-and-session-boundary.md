@@ -1,7 +1,7 @@
 # Memory Governance and Session Boundary
-> **Current Version:** 1.5
-> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.5
-> **Session:** a9bec472-1706-4019-8cfd-5ba988a71662
+> **Current Version:** 1.6
+> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.6
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/memory-governance-and-session-boundary.changelog.md](changelog/memory-governance-and-session-boundary.changelog.md)
 ---
 ## Rule Statement
@@ -10,7 +10,7 @@ This rule owns memory role boundaries, taxonomy, root index behavior, path match
 ---
 ## Core Contract
 - **Memory-Is-Context:** memory may orient continuity, but it must not outrank live user instruction, current checked repo/project evidence, or a RULES-owned fix the user explicitly requests.
-- **Root index only:** root `MEMORY.md` is the active entrypoint and should point to active scope indexes/files, not store long-form bodies. Archive entries must not remain in the active root index.
+- **Root index only:** root `MEMORY.md` is the active entrypoint and should point to active scope indexes/files, not store long-form bodies. Loader warnings, truncation risk, or root-index bloat are maintenance signals, not reasons to delete memory content. Archive entries must not remain in the active root index.
 - **Taxonomy:** `global/`, `path/`, and `archive/` mean broadly reusable context, canonical path-scoped context, and inactive historical/non-default memory.
 - **Path-primary applicability:** project memory applies because current work targets the matching path scope, not because it came from the same session. Matching still requires relevance and freshness.
 - **Session-Provenance:** session IDs support audit/traceability only; same-session continuity must never bypass path, relevance, or staleness checks.
@@ -31,6 +31,12 @@ Do not let an umbrella workspace silently absorb child-project memory. Stale, un
 ---
 ## `MEMORY.md` and Scope Layout
 Root `MEMORY.md` should organize active entries by `GLOBAL` and `PATH_SCOPE:<canonical-path>` or equivalent, use compact one-line hooks, point to active scope indexes/files, and avoid full memory bodies.
+
+If the loader reports size, truncation, or entry-length warnings, treat it as index maintenance work:
+- compact root index entries before changing memory semantics
+- move detail into topic files or scope indexes rather than the root index
+- split or archive stale inactive entries with reachable pointers when history matters
+- preserve path-scope pointers and do not delete memory content merely because the active index is too large
 
 Path scope layout may be:
 ```text

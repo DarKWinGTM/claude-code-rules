@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12 (2026-03-14)
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
 
@@ -32,6 +32,7 @@ Observed failure patterns:
 - switching authority baselines implicitly mid-debugging
 - leaving temporary runtime entities behind with no retirement plan
 - claiming runtime topology is fixed without verifying the post-mutation state
+- designing coordination behavior from desired effects before classifying the real mechanism and capability
 
 Without a dedicated topology-control chain, adjacent rules can enforce safety, authority, and evidence quality while still leaving runtime mutation posture under-specified.
 
@@ -47,6 +48,7 @@ Without a dedicated topology-control chain, adjacent rules can enforce safety, a
 - Explicit handling of deliberate multi-authority runtime modes.
 - Approval sensitivity for topology-changing actions.
 - Topology-specific reporting obligations before and after mutation.
+- Mechanism-first classification for coordination/runtime design claims before mutation or capability assertions.
 
 ### Out of Scope
 - Retry classes, cooldown policy, and failure ceilings (owned by `operational-failure-handling`).
@@ -69,6 +71,7 @@ It does not redefine refusal, emergency, authority, retry, or general communicat
 | `runtime entity` | A concrete running or runnable unit such as a container, server process, runtime target, worker, proxy, background job, or assignment endpoint |
 | `runtime role` | The logical job a runtime entity performs for a path, workflow, or capability |
 | `runtime authority` | The layer that is currently authoritative for what should run for a given role/path |
+| `coordination mechanism` | The checked mechanism behind coordination or runtime-design claims: passive shared board, local hook, injected context, tmux transport, recall/memsearch, official Agent Team, external plugin/MCP, or unavailable/unsupported mechanism |
 | `topology-changing action` | Any action that creates, removes, replaces, reassigns, duplicates, or reroutes runtime entities |
 | `repair-in-place` | Correcting an existing runtime entity/path without creating a parallel runtime owner |
 | `replacement mutation` | Swapping or replacing the current runtime owner in a controlled way |
@@ -123,6 +126,7 @@ If a topology change is proposed, state the delta clearly.
 
 Required guidance:
 - classify the step as `OBSERVE_ONLY`, `REPAIR_IN_PLACE`, `REPLACEMENT_MUTATION`, or `ADDITIVE_EXPANSION`
+- classify the actual coordination mechanism before claims about awareness, delivery, mutation, routing, or authority behavior
 - say explicitly when the step also changes authority baseline or enters explicit multi-authority mode
 - do not silently escalate from a smaller delta class into a larger one
 
@@ -158,6 +162,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | proposal to replace an existing unit | restart, rebind, swap current owner, move assignment | declare replacement delta and local rollback direction first |
 | deliberate parallel-runtime request | scaling, HA, canary, compare, shadow, side-by-side validation | enter explicit multi-authority mode and define purpose + boundaries |
 | temporary debug runtime | short-lived extra runtime for investigation | require explicit retirement plan before creation |
+| coordination/runtime design claim | proposed awareness, delivery, routing, mutation, or authority behavior | classify the actual mechanism and keep claims within checked capability |
 | post-mutation success claim | “fixed”, “aligned”, “working now” | verify post-mutation topology and report checked scope before claiming success |
 
 ---

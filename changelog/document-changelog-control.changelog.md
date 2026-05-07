@@ -1,7 +1,7 @@
 # Changelog - Document Changelog Control
 
 > **Parent Document:** [../document-changelog-control.md](../document-changelog-control.md)
-> **Current Version:** 4.8
+> **Current Version:** 4.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 4.9 | 2026-05-07 | **[Separated changelog history from README current-state sync](#version-49)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 4.8 | 2026-04-29 | **[Added completed changelog history surface](#version-48)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 4.7 | 2026-03-08 | **[Normalized runtime header contract and active-state design separation](#version-47)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Updated the chain to require canonical root runtime `Design + Session + Full history` headers and active-state-only design bodies | |
@@ -27,6 +28,23 @@
 | | | Summary: Design docs provide navigation link rather than duplicated full history | |
 | 4.0 | 2026-01-20 | **[Established baseline version-governance architecture](#version-40)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Introduced foundational documentation version-governance model | |
+
+---
+
+<a id="version-49"></a>
+## Version 4.9: Separated changelog history from README current-state sync
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `document-changelog-control.md` from v4.8 to v4.9.
+- Updated `design/document-changelog-control.design.md` from v4.8 to v4.9.
+- Clarified that changelog remains the detailed version/history layer.
+- Clarified that README should consume release state only to update current sections, not receive changelog timeline dumps.
+
+### Summary
+Document-changelog-control now keeps release history in changelog while preserving README as the current-state front page.
 
 ---
 

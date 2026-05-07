@@ -1,8 +1,8 @@
 # Changelog - Runtime Topology Control
 
 > **Parent Document:** [../runtime-topology-control.md](../runtime-topology-control.md)
-> **Current Version:** 1.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
@@ -10,10 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-07 | **[Added coordination mechanism classification before runtime design claims](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added mechanism-first classification for passive boards, hooks, injected context, tmux transport, recall, official teams, external plugins/MCPs, and unsupported mechanisms before coordination/runtime claims | |
 | 1.1 | 2026-03-14 | **[Refined runtime-topology-control wording for tighter natural-language clarity](#version-11)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 | | | Summary: Tightened wording across the new chain so the rule stays principle-first and natural to read while preserving the same topology-control boundary and adjacent-rule ownership model | |
 | 1.0 | 2026-03-14 | **[Created first-class runtime-topology-control rule chain for bounded runtime mutation discipline](#version-10)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 | | | Summary: Created a new design/runtime/changelog chain that governs bounded runtime mutation posture with inspect-before-mutate, one-authority-at-a-time, replace-over-accumulate, explicit topology deltas, approval-gated topology changes, and explicit multi-authority exceptions while preserving adjacent rule boundaries | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Added coordination mechanism classification before runtime design claims
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `runtime-topology-control.md` from v1.1 to v1.2.
+- Updated `design/runtime-topology-control.design.md` from v1.1 to v1.2.
+- Added `coordination mechanism` to the runtime topology vocabulary.
+- Added mechanism-first classification before claiming coordination/runtime delivery, mutation, awareness, routing, or authority behavior.
+- Clarified that passive boards, local hooks, injected context, tmux transport, recall/memsearch, official teams, external plugins/MCPs, and unsupported mechanisms have different capability boundaries.
+- Preserved inspect-before-mutate, one-authority-at-a-time, approval-gated topology changes, and scoped post-mutation verification requirements.
+
+### Summary
+Runtime-topology-control now requires coordination/runtime design claims to classify the checked mechanism and stay within its real capability before mutation or success claims.
 
 ---
 

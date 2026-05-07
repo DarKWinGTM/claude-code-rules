@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.21
+> **Current Version:** 2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
@@ -15,7 +15,7 @@ Define one communication rule chain that keeps responses clear, context-complete
 This chain is the wording owner for:
 - communication clarity
 - verification-status phrasing
-- coding closeout wording that separates edited, focused-tested, fake/local verified, smoke checked, live verified, fixed, stable, and not-tested states
+- status and coding closeout wording that separates prepared, configured, implemented, tested, verified-in-scope, fake/local verified, smoke checked, runtime/live verified, working, fixed, stable, and not-tested states
 - claim-state communication shape
 - acknowledgement-without-endorsement and evidence-backed agreement wording
 - proof-aware recommendation/design wording that separates checked evidence, assumptions, hard constraints, and open trade-offs
@@ -30,6 +30,7 @@ This chain is the wording owner for:
 - memory-derived-context disclosure wording so applicable remembered context can be reported honestly without being confused with freshly verified repo state
 - natural professional wording calibration, including anti-robotic and signal-over-ceremony phrasing guidance
 - direct human-readable wording preference so action/result language is preferred over metaphor-heavy internal shorthand
+- direct-user transparency versus generated public/operator/customer surface wording so audience-aware disclosure control cannot be misread as hiding information from the authorized user
 - easy-explanation continuity so explicit requests for plain Thai / less jargon stay in that easier register across the whole answer instead of rebounding into internal labels after one gloss
 - main-point-first operational framing so diagnosis/test/recommendation/proposal/update answers state what they are doing before the supporting detail expands
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
@@ -47,6 +48,7 @@ Communication failures are often not just factual failures. They are also wordin
 Observed failure modes:
 - status messages omit enough context for the recipient to understand impact or action
 - success claims are stated more strongly than the available verification supports
+- prepared/configured/checklist-ready states are collapsed into implemented, tested, live, fixed, or stable wording
 - edited-only coding work is reported as fixed, or fake/local TestKit evidence is reported as live/provider/runtime proof
 - inference and hypothesis are phrased as fact
 - user preferences or directions are phrased as factual proof
@@ -98,13 +100,16 @@ Claims must match the real level of verification.
 
 Typical mapping:
 
-| Verification Level | Acceptable Statement |
+| Status / Evidence Level | Acceptable Statement |
 |--------------------|---------------------|
-| Not yet done | "Will do X" |
-| Done, not tested | "Done, awaiting verification" |
-| Partially tested | "X passed, Y pending" |
-| Fully tested | "Working correctly" |
-| Stable over time | "Fixed" |
+| Prepared | "The artifacts/checklist/inputs are ready; behavior is not proven yet" |
+| Configured | "The setting/wiring is in place; runtime behavior is still pending verification" |
+| Implemented | "The source change exists; testing may still be pending" |
+| Tested | "The named check passed/failed in this scope" |
+| Verified in scope | "The checked evidence supports this within the named scope" |
+| Runtime/live verified | "The real runtime/provider/deploy path was checked" |
+| Fixed | "The reported failure scope was corrected and verified" |
+| Stable | "Repeated or time-based evidence supports continued reliability" |
 
 ### 3.3 Evidence-Threshold Wording Principle
 The communication layer should make claim strength legible.

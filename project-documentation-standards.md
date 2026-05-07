@@ -1,6 +1,6 @@
 # Project Documentation Standards
-> **Current Version:** 2.35
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.35
+> **Current Version:** 2.36
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.36
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
@@ -32,6 +32,7 @@
 ---
 ## Role Boundaries
 - Changelog owns current version/history authority; `changelog/done/` is inactive older/completed history, and changelog is not phase-definition storage.
+- README is the current front page, not the history book. Release sync updates current-state sections such as overview/status cards, install arrays, active runtime count, latest refinement, current quality signals, and current safety/runtime notes instead of dumping version timelines into the README body.
 - Design owns active target-state truth and has no default `design/done/` surface.
 - Phase planning belongs to `phase-implementation.md`; `phase/SUMMARY.md` plus active `phase/phase-NNN-*.md` / `phase/phase-NNN-NN-*.md` files form the live phase workspace, while `phase/done/` is inactive completed history. `phase/SUMMARY.md` preserves phase-family lineage when it affects later major-vs-subphase decisions.
 - Patch artifacts are self-identifying before/after review artifacts outside live phase planning; `patch/done/` is inactive completed patch history, and live phase execution must not be stored in patch artifacts. Design and patch artifacts need not point back to phase.
@@ -107,6 +108,7 @@ Required guidance:
 - [ ] Active design/changelog, phase, patch, TODO, and completed-history boundaries remain distinct.
 - [ ] Phase lineage and phase file selection defer to `phase-implementation.md`.
 - [ ] Patch surfaces stay self-identifying, before/after-oriented, and outside live phase planning.
+- [ ] README release sync updates current-state sections and does not become a changelog timeline dump.
 - [ ] Public onboarding/support artifacts stay portable and source-vs-destination wording is distinct.
 - [ ] Runtime install scope is limited to current project/source-owned active runtime rule files.
 - [ ] Other-owner runtime files and unclear files are not classified, managed, or deleted without owner/project scope and stronger authority.

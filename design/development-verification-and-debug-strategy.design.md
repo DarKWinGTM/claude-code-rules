@@ -1,10 +1,10 @@
 # Development Verification and Debug Strategy Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/development-verification-and-debug-strategy.changelog.md](../changelog/development-verification-and-debug-strategy.changelog.md)
 ---
 ## Target State
-Development verification becomes a normal part of non-trivial AI coding work. The assistant should not treat coding as complete merely because files were edited; it should identify the changed behavior, choose a proportionate debug/test strategy, run or define the relevant checks when practical, and report evidence limits honestly.
+Development verification becomes a normal part of non-trivial AI coding work. The assistant should not treat coding as complete merely because files were edited, configured, scaffolded, or made checklist-ready; it should identify the changed behavior, choose a proportionate debug/test strategy, run or define the relevant checks when practical, and report evidence limits honestly.
 
 This design makes verification strategic rather than rigid. It requires the verification decision, not the same artifact or same command every time.
 ---
@@ -41,11 +41,15 @@ This keeps coding accuracy high without turning every small edit into a full tes
 ---
 ## Evidence and Closeout Target
 Closeout wording should distinguish:
-- edited only
+- prepared/checklist-ready
+- configured/wired
+- implemented/edited only
 - tested partially
+- verified in the named scope
 - fake/local verified
 - smoke checked
 - live/provider/runtime verified
+- fixed in checked failure scope
 - stable over time
 
 A useful coding closeout should record what was run, what passed/failed, what behavior it covers, what remains untested, and confidence at the evidence strength actually held.

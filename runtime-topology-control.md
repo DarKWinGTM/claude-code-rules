@@ -1,7 +1,7 @@
 # Runtime Topology Control
-> **Current Version:** 1.1
-> **Design:** [design/runtime-topology-control.design.md](design/runtime-topology-control.design.md) v1.1
-> **Session:** 77d0802a-fd64-4023-a66d-88c165ccca12
+> **Current Version:** 1.2
+> **Design:** [design/runtime-topology-control.design.md](design/runtime-topology-control.design.md) v1.2
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/runtime-topology-control.changelog.md](changelog/runtime-topology-control.changelog.md)
 ---
 ## Rule Statement
@@ -24,6 +24,7 @@ This rule governs runtime mutation posture without replacing safety, authority, 
 - Restarting/rebinding/swapping current owner: declare replacement delta and rollback direction first.
 - Scaling/HA/canary/compare/shadow: enter explicit multi-authority mode with boundaries.
 - Temporary debug runtime: define retirement plan before creation.
+- Coordination/runtime design: classify the actual mechanism before claiming delivery, mutation, awareness, or authority behavior.
 - Post-mutation success claim: verify topology and checked scope before claiming success.
 ---
 ## Vocabulary and Delta Classes
@@ -31,6 +32,7 @@ Key terms:
 - `runtime entity` = runnable unit such as container, server process, target, worker, proxy, background job, or assignment endpoint
 - `runtime role` = logical job for a path/workflow/capability
 - `runtime authority` = layer authoritative for what should run for a role/path
+- `coordination mechanism` = actual checked mechanism such as passive shared board, local hook, injected context, tmux transport, recall/memsearch, official Agent Team, external plugin/MCP, or unavailable/unsupported mechanism
 - `topology-changing action` = creates, removes, replaces, reassigns, duplicates, or reroutes runtime entities
 - `repair-in-place` = corrects existing path/entity without parallel owner
 - `replacement mutation` = swaps current owner in a controlled way
@@ -44,7 +46,9 @@ Key terms:
 | `REPLACEMENT_MUTATION` | replace/swap current owner in bounded way | allowed when justified/safe |
 | `ADDITIVE_EXPANSION` | create additional entities/parallel paths | blocked until justified/approved |
 
-Mutation gate: before mutating, identify current entities, authority baseline, ambiguities, delta class, multi-authority state, authorization, and rollback/retirement direction. If any gate is missing, remain `OBSERVE_ONLY` and request evidence/input.
+Mutation gate: before mutating, identify current entities, authority baseline, ambiguities, delta class, coordination mechanism when relevant, multi-authority state, authorization, and rollback/retirement direction. If any gate is missing, remain `OBSERVE_ONLY` and request evidence/input.
+
+Mechanism-first design gate: before claiming a coordination/runtime design can deliver awareness, requests, interrupts, state sharing, recall, routing, or mutation, classify the checked mechanism and its capability. Passive boards do not prove live delivery; hooks do not prove cross-session transport; injected context does not prove state mutation; tmux input does not prove semantic acceptance; recall does not prove current truth; official teams and plugins/MCPs are limited to their documented capability.
 ---
 ## Communication Contract
 When topology control matters, report:
@@ -53,6 +57,7 @@ topology_posture: <OBSERVE_ONLY | REPAIR_IN_PLACE | REPLACEMENT_MUTATION | ADDIT
 current_entities:
 - ...
 authority_baseline: <owner per role/path>
+coordination_mechanism: <passive board | local hook | injected context | tmux transport | recall/memsearch | official Agent Team | external plugin/MCP | unavailable/unsupported | not applicable>
 ambiguous_authorities:
 - ...
 proposed_delta:
@@ -76,11 +81,12 @@ Not allowed: debug-by-expansion, accidental parallel authority, implicit authori
 
 Verification checklist:
 - [ ] current runtime entities and authority baseline identified before mutation
+- [ ] coordination/runtime mechanism is classified before design or mutation claims when relevant
 - [ ] topology delta classified
 - [ ] additive/authority-changing actions have explicit approval
 - [ ] multi-authority mode has purpose, boundaries, and retirement/steady-state plan
 - [ ] post-mutation success claim cites checked scope
 ---
 ## Integration
-Related rules: `functional-intent-verification.md` owns confirmation/blast-radius gates; `authority-and-scope.md` owns precedence; `no-variable-guessing.md` owns inspected-scope facts; `accurate-communication.md` owns claim strength; `operational-failure-handling.md` owns retry/cooldown escalation.
+Related rules: `functional-intent-verification.md` owns confirmation/blast-radius gates; `authority-and-scope.md` owns precedence; `no-variable-guessing.md` owns inspected-scope facts; `native-worker-agent-routing-and-context-control.md` owns worker/coordination routing before broad absorption; `accurate-communication.md` owns claim strength; `operational-failure-handling.md` owns retry/cooldown escalation.
 ---

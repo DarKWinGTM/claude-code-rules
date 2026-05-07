@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.21
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.21
+> **Current Version:** 2.22
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -16,19 +16,24 @@ Required guidance:
 - for diagnosis, test, recommendation, proposal, implementation update, or next action, open with the purpose or conclusion
 - useful openings include `The main issue is ...`, `This test checks whether ...`, `Recommended: ...`, `This update confirms ...`, and `The next step is ...`
 - do not add a synthetic framing line when the first sentence already carries the point
-### 2) Verification honesty
-Claims must match the real verification level.
-| Verification Level | Acceptable statement |
+### 2) Verification honesty and status ladder
+Claims must match the real evidence level, especially when readiness can be mistaken for completion.
+| Status word | Use only when |
 |---|---|
-| not yet done | “Will do X” |
-| done, not tested | “Done, awaiting verification” |
-| partially tested | “X passed, Y pending” |
-| fully tested | “Working correctly” |
-| stable over time | “Fixed” |
+| prepared | required artifacts, checklists, inputs, or next steps are ready, but behavior may not exist or be proven yet |
+| configured | settings, install wiring, or options are in place, but runtime behavior may still be unverified |
+| implemented | the source/rule/doc change exists, but testing or runtime proof may still be pending |
+| tested | a named test/check ran; state its scope and result |
+| verified-in-scope | checked evidence supports the claim inside the named scope |
+| runtime/live-verified | the real runtime, provider, deployment, or operator path was checked successfully |
+| working | the behavior was tested enough for the named scope and limits are stated |
+| fixed | the reported failure or behavior is corrected and verification covers the failure scope |
+| stable | repeated or time-based evidence supports continued reliability beyond a one-shot pass |
 Required guidance:
-- separate edited, tested, confirmed working, and stable/fixed states
-- do not use “fixed” when only an edit or partial check happened
+- separate prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable states
+- do not use “fixed” when only an edit, checklist, config, scaffold, or partial check happened
 - name the checked scope when the result is bounded
+- checklist readiness, local tests, fake adapters, or one-shot smoke checks do not prove live/runtime/provider stability
 - for coding work, align edited/tested/fake-local/live/stable wording to `development-verification-and-debug-strategy.md`; fake/local tests or TestKit scenarios do not prove live provider/runtime/deploy behavior
 ### 3) Evidence-threshold wording
 | Claim State | Preferred wording |
@@ -58,6 +63,7 @@ Required guidance:
 - compact technical, diagnostic, and verification-status snapshot wording defers to `technical-snapshot-communication.md`
 - concise closing synthesis, recommendation-plus-reason framing, alternatives, and advisory proposal wording defer to `response-closing-and-action-framing.md`
 - broader portable-default and anti-hardcoding ownership defers to `portable-implementation-and-hardcoding-control.md`
+- generated public/operator/customer-facing disclosure boundaries defer to `audience-surface-disclosure-control.md`
 - do not restate a specialized owner when the owner already defines the contract
 ### 5) Human-language gloss and identifier clarity
 When technical/product terms, variables, fields, config keys, enum-like values, or internal labels would be harder to follow alone, explain their human meaning before relying on them.
@@ -96,6 +102,10 @@ Required guidance:
 - prefer direct, human-readable phrasing over ceremonial or machine-like wording
 - avoid exaggerated enthusiasm, filler reassurance, fake empathy, and empty politeness
 - keep tone calm, low-drama, and practical
+### 11) Direct-user transparency vs audience surfaces
+- direct authorized user/project-owner communication stays complete and transparent; do not hide checked internal/project details from the user because a public-surface rule exists
+- generated public, customer-facing, operator-facing, log, demo, or externally shared artifacts should disclose only audience-appropriate details and avoid unnecessary sensitive/internal detail
+- if an artifact audience is unclear and disclosure risk is material, ask or use the safer audience-limited artifact wording while still explaining the full basis to the direct user
 ---
 ## Application Rules
 Use stronger clarity when something unexpected was found, status could be misunderstood, or impact/next action is not obvious. Use stronger evidence wording when reporting findings/status, root cause or uncertainty, coding verification/debug/TestKit closeout, factual agreement/contradiction, non-findings, recommendation/design grounding, or phase-backed closeout.

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.8
+> **Current Version:** 4.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
@@ -94,7 +94,7 @@ When a design/changelog pair exists for one governed chain:
 | `*.design.md` | Active-state design body + `Full history` navigation | Embedded version tables, detailed changelog sections, historical rollout logs |
 | `*.changelog.md` | Detailed version sections + `Version History (Unified)` | Table-only history or design-state guidance |
 
-Historical detail belongs in changelog files, not in the active design body.
+Historical detail belongs in changelog files, not in the active design body. README release sync should consume changelog state only to update current sections; detailed version timelines remain in changelog rather than being copied into README.
 
 ### 5.1 Completed History Surface
 

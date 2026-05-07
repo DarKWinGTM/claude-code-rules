@@ -1,7 +1,7 @@
 # Changelog - Development Verification and Debug Strategy
 
 > **Parent Document:** [../development-verification-and-debug-strategy.md](../development-verification-and-debug-strategy.md)
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,7 +10,25 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-05-07 | **[Clarified readiness versus live/fixed/stable evidence ladder](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-05-06 | **[Created first-class development verification and debug strategy owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+
+---
+
+<a id="version-11"></a>
+## Version 1.1: Clarified readiness versus live/fixed/stable evidence ladder
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `development-verification-and-debug-strategy.md` from v1.0 to v1.1.
+- Updated `design/development-verification-and-debug-strategy.design.md` from v1.0 to v1.1.
+- Added evidence boundaries for prepared/checklist-ready, configured/wired, implemented, tested, verified-in-scope, runtime/live-verified, fixed, and stable states.
+- Clarified that scaffold/config readiness is not testing or live proof, and a one-shot smoke check is not stability evidence.
+
+### Summary
+Development verification now gives coding/runtime closeout a clearer ladder so implementation readiness, local checks, live verification, fixed scope, and stability remain distinct.
 
 ---
 

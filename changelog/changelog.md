@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.90
+> **Current Version:** 9.91
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.91 | 2026-05-07 | **[Added status, documentation, memory, mechanism, and audience-surface refinement](#version-991)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.90 | 2026-05-07 | **[Added goal-first working frame and next-goal recommendations](#version-990)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.89 | 2026-05-07 | **[Added roadmap-aware completion and next-phase proposal behavior](#version-989)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.88 | 2026-05-06 | **[Added active runtime body sufficiency corrective validation](#version-988)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -124,6 +125,26 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-991"></a>
+## Version 9.91: Added status, documentation, memory, mechanism, and audience-surface refinement
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Completed P085-01 as a governed release wave for readiness-versus-completion wording, README current-state release sync, memory index hygiene, mechanism-first coordination design, and direct-user-transparent audience-surface disclosure control.
+- Updated `accurate-communication` to v2.22 and `development-verification-and-debug-strategy` to v1.1 so prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable wording stays tied to evidence.
+- Updated `project-documentation-standards` to v2.36 and `document-changelog-control` to v4.9 so README current sections stay front-page/current-state oriented while changelog remains the version-history layer.
+- Updated `memory-governance-and-session-boundary` to v1.6 so root `MEMORY.md` index bloat, loader warnings, and truncation risk become maintenance triggers without deleting memory content by cleanup instinct.
+- Updated `native-worker-agent-routing-and-context-control` to v1.4 and `runtime-topology-control` to v1.2 so broad coordination/runtime design classifies the real mechanism before proposing behavior or topology changes.
+- Updated `natural-professional-communication` to v1.3 and created `audience-surface-disclosure-control` v1.0 as the 45th source-owned active runtime rule, preserving full direct-user transparency while generated public/operator/customer/log/demo/external artifacts use audience-appropriate disclosure boundaries.
+- Synchronized README install arrays and master design/changelog/TODO/phase/patch records for the v9.91 release state; installed only the README-listed 45 active runtime rules into `~/.claude/rules/`; verified source/runtime parity plus body sufficiency 45/45 with destination extras observed-only; pushed `master`; and published GitHub release `v9.91`.
+
+### Summary
+P085-01 improves how RULES reports status, updates README, maintains memory indexes, designs coordination mechanisms, and drafts audience-facing copy. The source-owned active runtime set is now 45 files after adding `audience-surface-disclosure-control.md`; source/runtime install parity plus body-sufficiency verification passed 45/45 with destination extras observed-only, `master` was pushed, and GitHub release `v9.91` was published.
 
 ---
 

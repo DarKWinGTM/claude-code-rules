@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.21
+> **Current Version:** 2.22
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.22 | 2026-05-07 | **[Added readiness status ladder and audience-surface wording boundary](#version-222)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Clarified prepared/configured/implemented/tested/verified/live/fixed/stable wording and preserved full direct-user transparency while deferring generated public-surface disclosure boundaries to the new audience owner | |
 | 2.21 | 2026-05-06 | **[Aligned coding closeout wording to verification evidence strength](#version-221)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added coding verification/debug/TestKit closeout wording so edited, focused-tested, fake/local verified, smoke checked, live verified, fixed, stable, and not-tested claims do not outrun the evidence held | |
 | 2.20 | 2026-04-30 | **[Added proof-aware recommendation and design wording](#version-220)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -61,6 +63,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-222"></a>
+## Version 2.22: Added readiness status ladder and audience-surface wording boundary
+
+**Date:** 2026-05-07
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `accurate-communication.md` from v2.21 to v2.22.
+- Updated `design/accurate-communication.design.md` from v2.21 to v2.22.
+- Added a clearer status ladder for prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable wording.
+- Clarified that checklist readiness, local tests, fake adapters, or one-shot smoke checks do not prove live/runtime/provider stability.
+- Added direct-user transparency versus generated public/operator/customer-surface disclosure wording and deferred detailed audience rules to `audience-surface-disclosure-control.md`.
+
+### Summary
+Accurate-communication now prevents readiness wording from outrunning evidence and keeps public-surface disclosure control separate from full transparency to the direct authorized user.
 
 ---
 

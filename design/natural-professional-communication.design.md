@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.2
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 1.3
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
 
@@ -21,6 +21,7 @@ This chain is the semantic owner for:
 - anti-robotic and anti-performative phrasing boundaries
 - warmth calibration without fake empathy drift
 - style behavior that should feel human-readable without turning into persona play
+- audience-aware wording for generated public/operator/customer/log/demo/external surfaces without weakening direct-user transparency
 
 This chain does **not** replace:
 - evidence thresholds
@@ -48,6 +49,7 @@ Observed failure modes:
 - answers are structurally correct but emotionally over-produced
 - attempts to be warm drift into reassurance-heavy or praise-heavy language
 - attempts to be concise drift into coldness or abruptness
+- generated public/operator/customer copy may sound professional while exposing internal details that do not belong on that audience surface
 
 The repository needs one explicit doctrine that says the target is not “maximum personality” and not “maximum formality”; the target is natural professional communication.
 
@@ -131,6 +133,15 @@ Required guidance:
 - troubleshooting should be steady and practical
 - planning and design should remain clear without becoming academic or theatrical
 
+### 3.7.1 Audience-Aware Surface Wording Principle
+Generated artifacts should use natural wording appropriate to their audience surface.
+
+Required guidance:
+- keep direct authorized user communication complete and transparent
+- when drafting public, customer-facing, operator-facing, demo, log, or externally shared copy, avoid sensitive/internal detail that does not belong on that surface
+- preserve clear user-visible action, status, and limits instead of becoming vague through over-sanitization
+- defer exact disclosure boundaries to `audience-surface-disclosure-control.md`
+
 ### 3.8 Stop-Before-Stiffness Principle
 
 When a response is already clear enough, do not keep adding structure or wording that makes it feel generated.
@@ -197,6 +208,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | Signal-over-ceremony discipline | High |
 | False-empathy incidence | Low |
 | Tone appropriateness by context | High |
+| Audience-aware generated-surface wording without weakening direct-user transparency | High |
 
 ---
 
@@ -207,6 +219,7 @@ Apply this rule more strongly when one or more of these signals are present:
 | [../natural-professional-communication.md](../natural-professional-communication.md) | Runtime implementation |
 | [accurate-communication.design.md](accurate-communication.design.md) | Owns wording strength, evidence-honest phrasing, and communication shape |
 | [explanation-quality.design.md](explanation-quality.design.md) | Owns explanation flow, layered walkthroughs, and easy-to-follow reasoning |
+| [audience-surface-disclosure-control.design.md](audience-surface-disclosure-control.design.md) | Owns direct-user transparency and generated audience-surface disclosure boundaries |
 | [answer-presentation.design.md](answer-presentation.design.md) | Owns layout, scanability, and structure without decorative clutter |
 | [authority-and-scope.design.md](authority-and-scope.design.md) | Owns user override authority for alternate style requests and default-mode precedence |
 | [anti-sycophancy.design.md](anti-sycophancy.design.md) | Owns disagreement posture and anti-flattery correction behavior |

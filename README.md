@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.90</b><br><sub>Released</sub>
+  <b>v9.91</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
-  <b>44</b><br><sub>Active Runtime Rules</sub>
+  <b>45</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Runtime + Body Verified</sub>
+  <b>Passed</b><br><sub>Runtime + Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>Goal-first frame</b><br><sub>P075-03 Refinement</sub>
+  <b>Audience surface</b><br><sub>P085-01 Refinement</sub>
 </td>
 </tr>
 </table>
@@ -95,6 +95,7 @@ rule_files=(
   anti-sycophancy.md
   artifact-initiation-control.md
   authority-and-scope.md
+  audience-surface-disclosure-control.md
   custom-agent-selection-priority.md
   dan-safe-normalization.md
   document-consistency.md
@@ -161,6 +162,7 @@ $ruleFiles = @(
   "anti-sycophancy.md",
   "artifact-initiation-control.md",
   "authority-and-scope.md",
+  "audience-surface-disclosure-control.md",
   "custom-agent-selection-priority.md",
   "dan-safe-normalization.md",
   "document-consistency.md",
@@ -208,7 +210,7 @@ foreach ($file in $ruleFiles) {
 
 - Already cloned the repo? Skip the clone step and run the install block only.
 - Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/`.
-- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 44-file source-owned set are not cleanup targets by default.
+- This runtime-only install copies active rule files only. Governed design/changelog/TODO/phase/patch artifacts, inactive `phase/done/`, `patch/done/`, and `changelog/done/` history surfaces, plus `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates; files already present in a shared runtime destination but outside this 45-file source-owned set are not cleanup targets by default.
 
 ### 🤖 AI-Assisted Install Prompts
 
@@ -308,7 +310,7 @@ Please:
 <td width="50%">
 
 #### Runtime Context Discipline
-- 44 active runtime rules only
+- 45 active runtime rules in the current source install set
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -323,6 +325,7 @@ Please:
 - P073-10 active runtime body sufficiency is synchronized for v9.88: 10 metadata-only root runtime files are re-materialized, active runtime count remains 44, source/runtime parity and body-sufficiency verification passed 44/44, and destination extras remain observed-only
 - P075-02 roadmap-aware completion is synchronized for v9.89: true objective closeout can recommend supported next phases/waves without blocking selected safe continuation; active runtime count remains 44, runtime install/parity/body-sufficiency verification passed 44/44, git push completed, and GitHub release `v9.89` is published
 - P075-03 goal-first working frame is released for v9.90: non-trivial work can use proportional goal/output/gate navigation and supported next-goal recommendations without turning goal wording into a rigid ritual; active runtime count remains 44, source/runtime install parity plus body sufficiency passed 44/44 with destination extras observed-only, `master` was pushed, and GitHub release `v9.90` is published.
+- P085-01 status/documentation/memory/mechanism/audience-surface refinement is released for v9.91: it adds `audience-surface-disclosure-control.md` as the 45th active source-owned runtime rule; source/runtime install parity plus body sufficiency passed 45/45 with destination extras observed-only; `master` was pushed; and GitHub release `v9.91` is published.
 - Completed `phase/`, `patch/`, and `changelog` history can move to inactive `done/` surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -416,16 +419,16 @@ Please:
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Efficient file handling |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
-**📊 Active Runtime Rules: 44**
+**📊 Active Runtime Rules: 45**
 
-Latest refinement: P075-03 adds a goal-first working frame so non-trivial work can identify the active goal, expected output, and completion gate when that prevents drift or improves verification. It keeps goal framing proportional rather than mandatory, preserves continue-first execution for selected safe successor work, and supports evidence-grounded next-goal recommendations at true closeout. The active runtime set remains 44 files; source owner-chain alignment, master sync, runtime install/parity, and body-sufficiency verification passed 44/44 with destination extras observed-only; `master` was pushed and GitHub release `v9.90` is published at https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v9.90.
+Latest refinement: P085-01 adds readiness-versus-completion wording, README current-state sync discipline, memory index hygiene triggers, mechanism-first coordination design, and direct-user-transparent audience-surface disclosure control. The active source install set is now 45 files after adding `audience-surface-disclosure-control.md`; source/runtime install parity plus body sufficiency passed 45/45 with destination extras observed-only, `master` was pushed, and GitHub release `v9.91` is published.
 </div>
 
 ---
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 44-rule set and describe when to use each path without repeating the long file list.
+The Quick Start block above is still the canonical runtime-only install block. The methods below use the same active 45-rule set and describe when to use each path without repeating the long file list.
 
 ### 🎯 Method 1: Full Installation (Recommended)
 
@@ -583,8 +586,8 @@ Change request received
   → update TODO pending/completed/history
   → update phase/patch companion records when in scope
   → move completed phase/patch/changelog detail to `done/` only when active scan bloat justifies inactive history separation
-  → install only the 44 source-owned active runtime rules when an install gate is explicitly in scope
-  → verify links, versions, active install scope, and source/runtime parity only when a runtime install gate is in scope
+  → install only the 45 source-owned active runtime rules when an install gate is explicitly in scope
+  → verify links, versions, active install scope, source/runtime parity, and active runtime body sufficiency only when a runtime install gate is in scope
 ```
 
 
@@ -593,7 +596,7 @@ Change request received
 - Design file links to the correct changelog file
 - Changelog unified row maps to an existing detailed section
 - Runtime rule version/header aligns with changelog current version
-- README active runtime install list still contains exactly the 44 source-owned root rule files
+- README active runtime install list still contains exactly the 45 source-owned root rule files
 - `phase/SUMMARY.md` exists when phased execution is used and names governing patch artifacts or explicit `none`
 - `phase/SUMMARY.md` keeps the phase map, source inputs, cross-phase handoffs, TODO/changelog coordination, verification, and rollback/containment picture current
 - child phase files include design references, patch references or explicit `none`, objective, entry conditions, action checklist, affected artifacts, TODO/changelog coordination, verification, closeout, exit criteria, risks/rollback notes, and next possible phases when relevant
@@ -1125,8 +1128,8 @@ Result: ✅ Verified from actual files
 
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
-| Active runtime scope | 44 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, and P075-03 install/body-sufficiency gates stay bounded to the 44 source-owned active runtime files; P075-03 keeps the active runtime count at 44, runtime install/parity/body-sufficiency passed 44/44, and GitHub release `v9.90` is published | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Active runtime scope | 45 source-owned root rule files | Keeps install scope explicit |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, and P085-01 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P085-01 raises the source install set to 45, verifies source/runtime install parity plus body sufficiency 45/45 with destination extras observed-only, and publishes GitHub release `v9.91` after the release gate passes | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
 | Completed history surfaces | `phase/done/`, `patch/done/`, and `changelog/done/` are inactive by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1217,7 +1220,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.90 |
+  <b>Version</b>: 9.91 |
   <b>Last Updated</b>: 2026-05-07 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

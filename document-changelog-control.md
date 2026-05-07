@@ -1,7 +1,7 @@
 # Document Changelog & Versions History Control
 
-> **Current Version:** 4.8
-> **Design:** [design/document-changelog-control.design.md](design/document-changelog-control.design.md) v4.8
+> **Current Version:** 4.9
+> **Design:** [design/document-changelog-control.design.md](design/document-changelog-control.design.md) v4.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)
 
@@ -15,17 +15,18 @@
 
 ## Core Contract
 
-Each governed chain keeps one active authoritative changelog. It owns current version, current index, and forward navigation; runtime, design, phase, patch, and TODO sync align to its version state when applicable. Changelog records shipped/synchronized history and version authority; it should not become phase-definition storage or duplicate active design target-state truth.
+Each governed chain keeps one active authoritative changelog. It owns current version, current index, and forward navigation; runtime, design, phase, patch, and TODO sync align to its version state when applicable. Changelog records shipped/synchronized history and version authority; it should not become phase-definition storage, duplicate active design target-state truth, or serve as README current-state content.
 
 `changelog/done/` may hold older/completed detailed history when active scans would otherwise bloat. It is inactive by default, used only for history/audit/rollback/provenance/trace reconstruction, and never deletion authority or junk classification. The active changelog must keep enough pointers/index entries for moved history to remain reachable and must still explain current authority after detail is moved out of the active scan surface.
 
-Design documents remain active target-state truth. Detailed historical explanation, including design-specific history, belongs under changelog governance and may use `changelog/done/`; do not park it under a default `design/done/` pattern.
+Design documents remain active target-state truth. README remains the current-state front page for overview, install, active count, latest refinement, and quality signals; detailed version timelines belong in changelog instead of README release-sync dumps. Detailed historical explanation, including design-specific history, belongs under changelog governance and may use `changelog/done/`; do not park it under a default `design/done/` pattern.
 
 ---
 
 ## Verification Checklist
 
 - [ ] Active changelog remains current version/index/navigation authority.
+- [ ] README current-state sync is not replaced by changelog timeline dumping.
 - [ ] `changelog/done/` is inactive history, reachable when audit/rollback/trace needs it, and never junk/deletion authority.
 - [ ] Design history is kept under changelog governance, not default `design/done`.
 

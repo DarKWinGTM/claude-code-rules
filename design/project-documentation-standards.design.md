@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.35
+> **Current Version:** 2.36
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
@@ -49,6 +49,7 @@ Applies to projects that keep governed documentation artifacts and support/refer
 This includes:
 - repository role boundaries across README, design, changelog, TODO, phase, and patch artifacts
 - startup artifact posture before meaningful governed work
+- README current-state release sync, including status cards, install arrays, active runtime count, latest refinement, current quality signals, and current safety/runtime notes
 - public onboarding/install guidance in README or adjacent install docs
 - source-side versus destination/runtime notation clarity when install docs name both
 - active-scan versus completed-history boundaries for `phase/done/`, `patch/done/`, and `changelog/done/`
@@ -58,8 +59,8 @@ This includes:
 ## 3) Repository Role Model
 
 ### 3.1 README Role
-`README.md` is an overview/reference document.
-It is not version authority for governed chains.
+`README.md` is the current front page for overview, onboarding/install guidance, active runtime count, current status, latest refinement, and current quality signals.
+It is not version authority for governed chains and should not become a changelog timeline dump during release sync.
 
 ### 3.2 Runtime Rule Role
 Root runtime rules are the active rule layer.
