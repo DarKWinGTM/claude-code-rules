@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 075-03
-> **Status:** In Progress
+> **Status:** Completed
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Design References:** [../design/design.md](../design/design.md), [../design/goal-set-review-and-priority-balance.design.md](../design/goal-set-review-and-priority-balance.design.md), [../design/execution-continuity-and-mode-selection.design.md](../design/execution-continuity-and-mode-selection.design.md), [../design/response-closing-and-action-framing.design.md](../design/response-closing-and-action-framing.design.md), [../design/explanation-quality.design.md](../design/explanation-quality.design.md), [../design/answer-presentation.design.md](../design/answer-presentation.design.md), [../design/high-signal-communication.design.md](../design/high-signal-communication.design.md), [../design/phase-implementation.design.md](../design/phase-implementation.design.md), [../design/todo-standards.design.md](../design/todo-standards.design.md)
 > **Patch References:** [../patch/goal-first-working-frame-and-next-goal-recommendations.patch.md](../patch/goal-first-working-frame-and-next-goal-recommendations.patch.md)
@@ -36,10 +36,10 @@ Improve RULES execution behavior so non-trivial work establishes a goal-aware wo
 - [x] Sync paired changelog files for the touched runtime owners.
 - [x] Sync `design/design.md` and `changelog/changelog.md` for v9.90.
 - [x] Sync `README.md`, `TODO.md`, and `phase/SUMMARY.md`.
-- [ ] Mark this phase and patch completed after git push and release verification.
+- [x] Mark this phase and patch completed after git push and release verification.
 - [x] Install only the 44 README-listed active runtime rule files.
 - [x] Verify source/runtime parity, body sufficiency, and destination extras as observed-only.
-- [ ] Push `master` and publish GitHub release `v9.90`.
+- [x] Push `master` and publish GitHub release `v9.90`.
 
 ---
 
@@ -75,7 +75,7 @@ Verification route:
 - [x] Runtime install copies only active runtime rules.
 - [x] Source/runtime parity and body-sufficiency checks pass for all 44 active runtime files.
 - [x] Other-owner runtime files in the destination remain observed-only and untouched.
-- [ ] Git push and GitHub release `v9.90` are verified.
+- [x] Git push and GitHub release `v9.90` are verified.
 
 ---
 
@@ -100,6 +100,12 @@ Risk: next-goal recommendations could overclaim future work as selected executio
 Risk: goal-setting could interrupt selected safe continuation.
 
 Rollback posture: narrow or revert only the P075-03 goal-first / next-goal wording while preserving P075-02 roadmap-aware completion, P075-01 feature/impact closeout reporting, P076 design-to-phase synthesis, P081 worker routing, and the 44-file runtime install/body-sufficiency boundary.
+
+---
+
+## Closeout Summary
+
+P075-03 delivered goal-first working-frame behavior for the RULES runtime: non-trivial work can use goal/output/gate navigation when it prevents drift or improves verification, selected safe continuation remains unblocked, and next-goal recommendations require checked evidence instead of ritualized guessing. The 44-file active runtime set stayed unchanged, source/runtime parity and body sufficiency passed 44/44 with destination extras observed-only, `master` was pushed, and GitHub release `v9.90` was published.
 
 ---
 
