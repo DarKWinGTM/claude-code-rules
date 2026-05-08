@@ -1,7 +1,7 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-08 | **[Added Memory-base relative root-index compaction](#version-17)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.6 | 2026-05-07 | **[Added memory index overflow maintenance trigger](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.5 | 2026-04-17 | **[Retired memsearch-specific naming in favor of generic optional external recall wording](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.4 | 2026-04-17 | **[Reduced memory-governance memsearch wording to global optional-recall doctrine only](#version-14)** | 1b81d009-cf82-44a3-9739-cd3ea4af34dd |
@@ -18,6 +19,25 @@
 | 1.1 | 2026-04-13 | **[Added optional extension recall boundary for memsearch-style layers](#version-11)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.0 | 2026-04-09 | **[Created first-class memory-governance-and-session-boundary rule chain](#version-10)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added Memory-base relative root-index compaction
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `memory-governance-and-session-boundary.md` from v1.6 to v1.7.
+- Updated `design/memory-governance-and-session-boundary.design.md` from v1.6 to v1.7.
+- Added explicit `Scope` plus `Memory base` root-index format for path-scoped memory sections.
+- Added relative-entry guidance so root `MEMORY.md` can avoid repeating long memory-relative scope folders in every line.
+- Preserved root-index visibility by requiring one-line active hooks instead of a link-only router or second-layer hidden-memory index.
+- Added anti-patterns for fake markdown aliases such as `path = path`, broken relative links, and overcorrecting compaction into opaque folder pointers.
+
+### Summary
+Memory governance now supports tree-style root `MEMORY.md` compaction: declare one canonical scope and one memory base per path scope, then list active memory entries as visible relative hooks without hiding useful context behind another index layer.
 
 ---
 

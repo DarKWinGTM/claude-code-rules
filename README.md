@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.92</b><br><sub>Released</sub>
+  <b>v9.93</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>46</b><br><sub>Active Runtime Rules</sub>
@@ -28,7 +28,7 @@
   <b>Passed</b><br><sub>Runtime + Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>Daily rollover</b><br><sub>P087-01 Refinement</sub>
+  <b>Memory index</b><br><sub>P088 Refinement</sub>
 </td>
 </tr>
 </table>
@@ -329,6 +329,7 @@ Please:
 - P075-03 goal-first working frame is released for v9.90: non-trivial work can use proportional goal/output/gate navigation and supported next-goal recommendations without turning goal wording into a rigid ritual; active runtime count remains 44, source/runtime install parity plus body sufficiency passed 44/44 with destination extras observed-only, `master` was pushed, and GitHub release `v9.90` is published.
 - P085-01 status/documentation/memory/mechanism/audience-surface refinement is released for v9.91: it adds `audience-surface-disclosure-control.md` as the 45th active source-owned runtime rule; source/runtime install parity plus body sufficiency passed 45/45 with destination extras observed-only; `master` was pushed; and GitHub release `v9.91` is published.
 - P087-01 daily-first governance rollover is released for v9.92: it adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule, compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints, preserves pre-rollover snapshots, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.92`.
+- P088 memory root-index relative compaction is released for v9.93: it updates `memory-governance-and-session-boundary.md` to v1.7, compacts active root `MEMORY.md` into `Scope` + `Memory base` sections with visible relative hooks, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.93`.
 - Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -377,7 +378,7 @@ Please:
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External verification and source trust | Proactive web-backed fact checking, source ranking, corroboration, honest source-conflict handling, orchestrated research-lane source trust, and external evidence grounding for recommendation/design judgments |
 | [`functional-intent-verification.md`](functional-intent-verification.md) | Intent validation | Clarifies destructive, ambiguous, or high-impact intent before execution, with a real delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
 | [`governed-document-rollover-control.md`](governed-document-rollover-control.md) | Governed rollover control | Keeps large active governance entrypoints such as `TODO.md` and `phase/SUMMARY.md` compact by moving accumulated history into daily-first referenced `history/` and `done/` shards without deleting governed meaning |
-| [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as an active index only, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep any optional external recall generic, supplemental, availability-checked, and subordinate to stronger checked execution surfaces |
+| [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance and session boundary | Treat memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as a compact but meaning-visible active index, compress repeated path-scope text with one declared `Scope` and `Memory base`, list active path-scoped entries as visible relative hooks, reject fake aliases and link-only hidden-memory routers, use `global/path/archive` semantics, make path the primary applicability key, keep session IDs as provenance only, keep archived memory inactive by default, and keep optional external recall supplemental to stronger checked execution surfaces |
 | [`maintainable-code-structure-and-decomposition.md`](maintainable-code-structure-and-decomposition.md) | Maintainable code structure | Owns coding-time responsibility boundaries, maintainability as future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comment discipline, God function/file pressure, wrong-abstraction avoidance, explicit dependency/state boundaries, behavior-preserving refactor posture, verification-strategy deferral, and tactical structure-debt convergence without rigid line-count or architecture-template rules |
 | [`development-verification-and-debug-strategy.md`](development-verification-and-debug-strategy.md) | Development verification strategy | Owns proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and closeout wording that does not treat edits as proof |
 | [`operational-failure-handling.md`](operational-failure-handling.md) | Operational failure policy | Bounded retry ceilings, honest cooldown guidance, and stop/escalation behavior for technical failures, including duplicate-looking Team Agent handling that treats stale or duplicate-looking presence as inspect-before-respawn rather than respawn-first churn |
@@ -426,7 +427,7 @@ Please:
 
 **📊 Active Runtime Rules: 46**
 
-Latest refinement: P087-01 adds daily-first governed rollover for oversized active control files. The active source install set is now 46 files after adding `governed-document-rollover-control.md`; `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` and `done/` references. Source/runtime install parity plus body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.92` is published.
+Latest refinement: P088 adds memory root-index relative scope compaction. The active source install set remains 46 files; `memory-governance-and-session-boundary.md` v1.7 now requires root `MEMORY.md` to keep active one-line hooks visible while path-scoped sections declare one `Scope` and one `Memory base`, then list entries as relative hooks. Source/runtime install parity plus body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.93` is published.
 </div>
 
 ---
@@ -1143,7 +1144,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 46 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, P085-01, and P087-01 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P087-01 raises the source install set to 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, and publishes GitHub release `v9.92` after the release gate passes | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, P085-01, P087-01, and P088 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P088 keeps the source install set at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, and publishes GitHub release `v9.93` after the release gate passes | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
 | Completed/history surfaces | `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are referenced inactive surfaces by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1234,7 +1235,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.92 |
+  <b>Version</b>: 9.93 |
   <b>Last Updated</b>: 2026-05-08 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

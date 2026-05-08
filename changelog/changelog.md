@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.92
+> **Current Version:** 9.93
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.93 | 2026-05-08 | **[Added memory root-index relative scope compaction](#version-993)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.92 | 2026-05-08 | **[Added daily-first governance rollover and history sharding](#version-992)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.91 | 2026-05-07 | **[Added status, documentation, memory, mechanism, and audience-surface refinement](#version-991)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.90 | 2026-05-07 | **[Added goal-first working frame and next-goal recommendations](#version-990)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -126,6 +127,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-993"></a>
+## Version 9.93: Added memory root-index relative scope compaction
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P088 as the memory root-index relative scope compaction wave for active memory-index size reduction without hiding active memory meaning.
+- Updated `memory-governance-and-session-boundary.md`, `design/memory-governance-and-session-boundary.design.md`, and `changelog/memory-governance-and-session-boundary.changelog.md` to v1.7.
+- Rewrote active root `MEMORY.md` into scope-relative sections that declare one `Scope` and one `Memory base`, then list active memory entries as visible relative one-line hooks.
+- Preserved memory detail files and avoided link-only routing, fake markdown aliases, and second-layer hidden-memory indexes.
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.93 release state; installed only the README-listed 46 active runtime rules into `~/.claude/rules/`; verified source/runtime parity plus body sufficiency 46/46 with destination extras observed-only; pushed `master`; and published GitHub release `v9.93`.
+
+### Summary
+P088 compacts the active root memory index by removing repeated path-scope prefixes while keeping useful one-line hooks visible in loaded context. The active source install set remains 46 files; source/runtime install parity plus body-sufficiency verification passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.93` was published.
 
 ---
 

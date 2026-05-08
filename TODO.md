@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-08
-> **Current Release Target:** v9.92 / P087-01
+> **Current Release Target:** v9.93 / P088
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -12,6 +12,7 @@
 - [x] P085-01 / v9.91 status, documentation, memory, mechanism, and audience-surface refinement was completed, installed, pushed, and released.
 - [x] Pre-rollover `TODO.md` content was preserved at [todo/history/2026-05-08-pre-rollover-TODO.md](todo/history/2026-05-08-pre-rollover-TODO.md) before P087-01 compaction.
 - [x] P087-01 / v9.92 daily-first rollover and history-sharding release was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
+- [x] P088 / v9.93 memory root-index relative scope compaction was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
 
 Completed historical detail before this compact entrypoint is intentionally not duplicated here. Use the pre-rollover snapshot or future `todo/done/` shards for audit, rollback, or provenance.
 
@@ -37,5 +38,6 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
+| 2026-05-08 | Released P088 / v9.93 memory root-index relative scope compaction; updated memory-governance to v1.7, compacted active root `MEMORY.md` with visible `Scope` + `Memory base` hooks, installed 46 runtime rules, verified 46/46 parity/body sufficiency, pushed `master`, and published GitHub release `v9.93`. |
 | 2026-05-08 | Opened P087-01 daily-first governance rollover; preserved pre-rollover TODO; compacted this main file into current state + history/done references. |
 | 2026-05-07 | Released v9.91 / P085-01. Full prior TODO detail is preserved in the pre-rollover snapshot. |
