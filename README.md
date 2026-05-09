@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.93</b><br><sub>Released</sub>
+  <b>v9.94</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>46</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Passed</b><br><sub>Runtime + Release Gates</sub>
+  <b>Verified</b><br><sub>Runtime + Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>Memory index</b><br><sub>P088 Refinement</sub>
+  <b>Constructive dissent</b><br><sub>P086 Refinement</sub>
 </td>
 </tr>
 </table>
@@ -292,10 +292,10 @@ Please:
 <td width="50%">
 
 #### 🛡️ Anti-Sycophancy
-- Evidence-seeking agreement, design, recommendation, and challenge
-- User preference/direction stays separate from factual proof
-- Factual agreement requires checked evidence
-- Claim-focused corrections remain allowed when evidence conflicts
+- Evaluate proposals before agreement-shaped wording
+- Safe user direction stays separate from factual or quality endorsement
+- Substantial agreement, design, recommendation, and challenge use checked evidence when material
+- Claim-focused corrections and constructive dissent remain allowed when evidence or fit conflicts
 
 </td>
 </tr>
@@ -330,6 +330,7 @@ Please:
 - P085-01 status/documentation/memory/mechanism/audience-surface refinement is released for v9.91: it adds `audience-surface-disclosure-control.md` as the 45th active source-owned runtime rule; source/runtime install parity plus body sufficiency passed 45/45 with destination extras observed-only; `master` was pushed; and GitHub release `v9.91` is published.
 - P087-01 daily-first governance rollover is released for v9.92: it adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule, compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints, preserves pre-rollover snapshots, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.92`.
 - P088 memory root-index relative compaction is released for v9.93: it updates `memory-governance-and-session-boundary.md` to v1.7, compacts active root `MEMORY.md` into `Scope` + `Memory base` sections with visible relative hooks, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.93`.
+- P086 constructive dissent and anti-over-agreement refinement is released for v9.94: it updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before agreement-shaped wording, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.94`.
 - Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -352,7 +353,7 @@ Please:
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`anti-mockup.md`](anti-mockup.md) | Real systems over simulations | No fake implementations |
-| [`anti-sycophancy.md`](anti-sycophancy.md) | Evidence-seeking agreement/disagreement | Honest feedback that can accept user direction without factual endorsement, seek practical evidence before substantial alignment or challenge, and correct claims when evidence conflicts |
+| [`anti-sycophancy.md`](anti-sycophancy.md) | Proposal evaluation and evidence-calibrated dissent | Honest thinking-partner behavior that evaluates user proposals before agreement-shaped wording, accepts safe user direction without factual or quality endorsement, seeks practical evidence before substantial alignment or challenge, and corrects claims when evidence conflicts |
 | [`zero-hallucination.md`](zero-hallucination.md) | Verify-first factual discipline | Fact, preference/direction, inference, hypothesis, uncertainty, scoped non-findings, factual endorsement, and proof-aware assumptions stay separate |
 
 ---
@@ -427,7 +428,7 @@ Please:
 
 **📊 Active Runtime Rules: 46**
 
-Latest refinement: P088 adds memory root-index relative scope compaction. The active source install set remains 46 files; `memory-governance-and-session-boundary.md` v1.7 now requires root `MEMORY.md` to keep active one-line hooks visible while path-scoped sections declare one `Scope` and one `Memory base`, then list entries as relative hooks. Source/runtime install parity plus body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.93` is published.
+Latest released refinement: P086 adds constructive dissent and anti-over-agreement behavior. The active source install set remains 46 files; `anti-sycophancy.md` v1.7 now requires proposal evaluation before agreement-shaped wording, separates safe user direction from factual or quality endorsement, and keeps dissent advisory, evidence-calibrated, and decision-improving. Source/runtime install parity plus body-sufficiency verification passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.94` was published.
 </div>
 
 ---
@@ -1144,7 +1145,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 46 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, P085-01, P087-01, and P088 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P088 keeps the source install set at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, and publishes GitHub release `v9.93` after the release gate passes | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, P085-01, P087-01, P088, and P086 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P086 keeps the source install set at 46 and verifies runtime install, source/runtime parity plus body sufficiency 46/46, and release publication for `v9.94` | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
 | Completed/history surfaces | `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are referenced inactive surfaces by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1165,7 +1166,7 @@ Result: ✅ Verified from actual files
 | **No Mock/Stub by Default** | Prefer real systems and clearly label or avoid fake implementations unless explicitly requested |
 | **No Guessing** | Verify local paths, values, symbols, and configuration before treating them as known |
 | **Evidence-Honest Claims** | Match wording strength to checked evidence and disclose scoped non-findings |
-| **No Sycophancy** | Use evidence-seeking proof-aware agreement: accept user direction without factual endorsement, agree when evidence supports it, seek proof before substantial recommendations or challenges, and correct claims when evidence conflicts |
+| **No Sycophancy** | Evaluate user proposals before agreement-shaped wording, accept safe user direction without factual or quality endorsement, seek proof before substantial recommendations or challenges, and correct claims when evidence conflicts |
 | **Destructive-Action Guard** | Cleanup, hygiene, isolation, or worktree rationale never authorizes deletion by itself |
 
 **The practical goal is safe, evidence-grounded AI behavior that keeps user authority intact.**
@@ -1235,7 +1236,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.93 |
+  <b>Version</b>: 9.94 |
   <b>Last Updated</b>: 2026-05-08 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

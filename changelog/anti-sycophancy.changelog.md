@@ -1,7 +1,7 @@
 # Changelog - Anti Sycophancy
 
 > **Parent Document:** [../anti-sycophancy.md](../anti-sycophancy.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-08 | **[Added constructive dissent and anti-over-agreement refinement](#version-17)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Extended anti-sycophancy so user proposals are evaluated for fit, cost, risk, timing, evidence, and alternatives before agreement-shaped wording while preserving user authority for safe selected direction | |
 | 1.6 | 2026-04-30 | **[Added evidence-seeking proof-aware recommendation posture](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Extended anti-sycophancy so substantial recommendation, design, agreement, and disagreement seek practical evidence when factual grounding would improve judgment without turning ordinary evidence into a forced path | |
 | 1.5 | 2026-04-30 | **[Added evidence-calibrated agreement principle](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -24,6 +26,25 @@
 | | | Summary: Added deterministic pre-agreement verification triggers and status labels for evidence-first disagreement behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added constructive dissent and anti-over-agreement refinement
+
+**Date:** 2026-05-08
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `anti-sycophancy.md` from v1.6 to v1.7.
+- Updated `design/anti-sycophancy.design.md` from v1.6 to v1.7.
+- Added proposal evaluation before agreement-shaped responses.
+- Added constructive dissent guidance for proposals, plans, strategies, architecture choices, and implementation directions.
+- Added direction/quality separation so safe user-selected direction is not treated as proof that a proposal is best, low-risk, or concern-free.
+- Added anti-pattern and quality-metric coverage for proposal over-agreement, direction/quality conflation, and argumentative drift.
+
+### Summary
+Anti-sycophancy now treats user proposals as things to evaluate before endorsement: the assistant should assess fit, cost, risk, timing, evidence, and alternatives while preserving user authority to choose a safe path.
 
 ---
 
