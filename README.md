@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.94</b><br><sub>Released</sub>
+  <b>v9.95</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>46</b><br><sub>Active Runtime Rules</sub>
@@ -28,7 +28,7 @@
   <b>Verified</b><br><sub>Runtime + Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>Constructive dissent</b><br><sub>P086 Refinement</sub>
+  <b>Phase boundaries</b><br><sub>P076-04 Refinement</sub>
 </td>
 </tr>
 </table>
@@ -331,6 +331,7 @@ Please:
 - P087-01 daily-first governance rollover is released for v9.92: it adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule, compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints, preserves pre-rollover snapshots, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.92`.
 - P088 memory root-index relative compaction is released for v9.93: it updates `memory-governance-and-session-boundary.md` to v1.7, compacts active root `MEMORY.md` into `Scope` + `Memory base` sections with visible relative hooks, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.93`.
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94: it updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before agreement-shaped wording, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.94`.
+- P076-04 main/subphase boundary refinement is released for v9.95: it updates `phase-implementation.md` to v2.32 so lineage remains evidence rather than a permanent container, subphases preserve bounded goal/output/gate meaning, same-domain or historical-family evidence is not enough by itself, and saturated umbrella families can open clearer main phases when output/gate/release/rollback boundaries diverge; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.95` is published.
 - Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -428,7 +429,7 @@ Please:
 
 **📊 Active Runtime Rules: 46**
 
-Latest released refinement: P086 adds constructive dissent and anti-over-agreement behavior. The active source install set remains 46 files; `anti-sycophancy.md` v1.7 now requires proposal evaluation before agreement-shaped wording, separates safe user direction from factual or quality endorsement, and keeps dissent advisory, evidence-calibrated, and decision-improving. Source/runtime install parity plus body-sufficiency verification passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.94` was published.
+Latest released refinement: P076-04 adds bounded main/subphase boundary refinement. The active source install set remains 46 files; `phase-implementation.md` v2.32 now keeps lineage as evidence rather than a permanent container, requires subphases to preserve bounded goal/output/gate meaning, treats same-domain or historical-family evidence as insufficient by itself, and allows saturated umbrella families to open clearer main phases when output/gate/release/rollback boundaries diverge. Runtime install plus source/runtime parity and body-sufficiency verification passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.95` is published.
 </div>
 
 ---
@@ -1145,7 +1146,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 46 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, P085-01, P087-01, P088, and P086 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P086 keeps the source install set at 46 and verifies runtime install, source/runtime parity plus body sufficiency 46/46, and release publication for `v9.94` | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Runtime install boundary | P073, P077, P078, P079, P080, P081, P082, P083, P076-02, P073-09, P076-03, P084-01, P081-02, P073-10, P075-02, P075-03, P085-01, P087-01, P088, P086, and P076-04 install/body-sufficiency gates stay bounded to the source-owned active runtime files; P076-04 keeps the source install set at 46 and verifies runtime install, source/runtime parity plus body sufficiency 46/46, and release publication for `v9.95` | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
 | Completed/history surfaces | `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are referenced inactive surfaces by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1236,8 +1237,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.94 |
-  <b>Last Updated</b>: 2026-05-08 |
+  <b>Version</b>: 9.95 |
+  <b>Last Updated</b>: 2026-05-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

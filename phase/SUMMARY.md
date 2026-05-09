@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.67
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.31
+> **Current Version:** 1.68
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P086 / v9.94 constructive dissent and anti-over-agreement refinement completed, installed, pushed, and released
+> **Status:** P076-04 / v9.95 bounded main/subphase boundary refinement completed, installed, pushed, and released
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,6 +23,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 | State | Phase | File | Goal | Output | Gate |
 |---|---|---|---|---|---|
+| completed | P076-04 | [phase-076-04-main-subphase-boundary-refinement.md](phase-076-04-main-subphase-boundary-refinement.md) | Refine main/subphase selection so lineage remains evidence without trapping distinct work inside an old umbrella phase | `phase-implementation` v2.32, v9.95 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.95` verified |
 | completed | P086 | [phase-086-constructive-dissent-anti-over-agreement-refinement.md](phase-086-constructive-dissent-anti-over-agreement-refinement.md) | Add constructive dissent and proposal evaluation before agreement-shaped responses | `anti-sycophancy` v1.7, v9.94 governed release sync, active runtime count remains 46 | README/master records sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.94` verified |
 | completed | P088 | [phase-088-memory-root-index-relative-scope-compaction.md](phase-088-memory-root-index-relative-scope-compaction.md) | Compact root memory indexing without hiding active memory meaning | Memory-governance v1.7, root `MEMORY.md` `Scope` + `Memory base` format, v9.93 master sync | Source docs sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.93` verified |
 | completed | P087-01 | [phase-087-01-daily-first-governance-rollover-history-sharding.md](phase-087-01-daily-first-governance-rollover-history-sharding.md) | Add daily-first rollover governance for oversized active control files | Runtime owner, adjacent owner sync, compact TODO/SUMMARY entrypoints, v9.92 master sync | 46/46 source-runtime parity and body sufficiency pass, master push succeeds, release `v9.92` is verified |
@@ -30,6 +31,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Current Phase Detail
+
+### P076-04 — Main/Subphase Boundary Refinement
+
+- **Status:** Completed
+- **Design References:** [../design/design.md](../design/design.md) v9.95; [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
+- **Patch References:** [../patch/phase-main-subphase-boundary-refinement.patch.md](../patch/phase-main-subphase-boundary-refinement.patch.md)
+- **Expected Output:** `phase-implementation` runtime/design/changelog v2.32 keeps lineage-first phase selection while adding bounded subphase-fit doctrine, same-domain-is-not-enough wording, phase saturation checks, and umbrella-escape signals; README, master design/changelog, TODO, phase, and patch records align to v9.95 / P076-04; active runtime count remains 46.
+- **Completion Gate:** source docs synchronized, runtime install copies only README-listed active runtime rules, 46/46 source/runtime parity and body sufficiency pass, `master` is pushed, and GitHub release `v9.95` is verified.
 
 ### P086 — Constructive Dissent and Anti-Over-Agreement Refinement
 
@@ -72,6 +81,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - P087-01 / v9.92 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
 - P088 / v9.93 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
 - P086 / v9.94 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
+- P076-04 / v9.95 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
 - Earlier phase-map and extraction tables through P085 remain preserved in the pre-rollover snapshot instead of this active summary.
 
 ---
@@ -81,16 +91,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - [x] Pre-rollover `phase/SUMMARY.md` snapshot exists.
 - [x] Active `phase/SUMMARY.md` references `phase/history/` and `phase/done/` surfaces.
 - [x] Active `TODO.md` references `todo/history/` and `todo/done/` surfaces.
-- [x] Memory governance runtime/design/changelog align at v1.7.
-- [x] Active root `MEMORY.md` uses `Scope` + `Memory base` sections with visible relative hooks.
-- [x] Anti-sycophancy runtime/design/changelog align at v1.7 for P086 source state.
-- [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.94 / P086 source state.
+- [x] P076-04 phase and patch records exist and link to phase-implementation design truth.
+- [x] Phase-implementation runtime/design/changelog align at v2.32 for P076-04 source state.
+- [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.95 / P076-04 source state.
 - [x] Runtime install arrays contain exactly 46 source-owned active runtime rule files.
 - [x] Source/runtime parity and active runtime body sufficiency pass for 46/46 files.
-- [x] Git push and GitHub release `v9.94` are verified.
+- [x] Git push and GitHub release `v9.95` are verified.
 
 ---
 
 ## Rollback / Containment
 
-If P086 is reversed, restore anti-sycophancy v1.6 behavior and the prior v9.93 release surfaces, then reinstall the prior v9.93 46-file runtime set only under an explicit rollback gate. Do not delete phase, patch, history, `done/`, memory detail, unrelated runtime destination files, or observed-only extras as cleanup; P086, P087 rollover, and P088 memory-index compaction are governance changes, not deletion authority.
+If P076-04 is reversed, narrow the bounded subphase-fit, same-domain-is-not-enough, phase-saturation, and umbrella-escape wording while preserving P076-02 lineage-first selection. Restore prior v9.94 release surfaces only through a governed rollback, reinstall the prior 46-file runtime set only under an explicit rollback gate, and do not delete phase, patch, history, `done/`, memory detail, unrelated runtime destination files, or observed-only extras as cleanup.

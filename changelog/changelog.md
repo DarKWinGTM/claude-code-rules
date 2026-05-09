@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.94
+> **Current Version:** 9.95
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.95 | 2026-05-09 | **[Added bounded main/subphase boundary refinement](#version-995)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.94 | 2026-05-08 | **[Added constructive dissent and anti-over-agreement refinement](#version-994)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.93 | 2026-05-08 | **[Added memory root-index relative scope compaction](#version-993)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.92 | 2026-05-08 | **[Added daily-first governance rollover and history sharding](#version-992)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -128,6 +129,24 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-995"></a>
+## Version 9.95: Added bounded main/subphase boundary refinement
+
+**Date:** 2026-05-09
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P076-04 as the bounded main/subphase boundary refinement under the existing phase-identity family.
+- Updated `phase-implementation.md`, `design/phase-implementation.design.md`, and `changelog/phase-implementation.changelog.md` to v2.32.
+- Added bounded subphase-fit doctrine so subphases must preserve a parent phase family's goal/output/gate meaning rather than relying only on broad same-domain or historical-family evidence.
+- Added phase saturation and umbrella-escape signals so old major phase families do not absorb distinct work indefinitely when capability, output, verification gate, release boundary, or rollback boundary diverges.
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.95 / P076-04 source state, installed the 46 README-listed active runtime rule files, verified source/runtime parity plus body sufficiency 46/46 with destination extras observed-only, pushed `master`, and published GitHub release `v9.95`.
+
+### Summary
+P076-04 refines phase identity selection so lineage remains evidence rather than a permanent container. The active source install set remains 46 files; runtime install plus source/runtime parity and body-sufficiency verification passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.95` was published.
 
 ---
 

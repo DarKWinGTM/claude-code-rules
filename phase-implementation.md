@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.31
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.31
+> **Current Version:** 2.32
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order and a bounded goal/output/gate-aware roadmap or phase matrix, maintain an active `/phase` workspace with mandatory compact `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria, visibly link non-trivial phase-backed live tasks to active or implied phase context, move accumulated daily phase movement into referenced `phase/history/` shards, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
+**Core Principle: Use phased planning only when staged execution improves clarity, synthesize sufficiently clear governed design into live phase execution order and a bounded goal/output/gate-aware roadmap or phase matrix, maintain an active `/phase` workspace with mandatory compact `SUMMARY.md` and deterministic `NNN` / `NNN-NN` IDs, choose major versus subphase identity through lineage-first criteria that keep subphases tied to bounded execution gates while allowing umbrella-phase escape when a family becomes misleading or saturated, visibly link non-trivial phase-backed live tasks to active or implied phase context, move accumulated daily phase movement into referenced `phase/history/` shards, keep completed phase detail in inactive `phase/done/` history, resolve phase posture early through startup governance, and declare governed patch participation when patch is in scope.**
 
 This rule owns phase-execution semantics. `phase/SUMMARY.md` is the compact governed summary/index; active child files hold phase-local execution detail; `phase/history/` holds referenced daily phase movement; `phase/done/` is inactive completed history; design remains target-state authority; patch remains governed before/after review authority. Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES doctrine.
 
@@ -44,24 +44,29 @@ Resolving phase posture does not automatically open a new major phase. When a ph
 ### Major-vs-subphase lineage gate
 Before opening a new major phase, inspect checked phase lineage and choose the smallest truthful identity:
 - update the current active phase when work remains inside the same active execution slice
-- create a new `NNN-NN` subphase when work continues an existing major phase family
-- create a new `NNN` major phase only for a new top-level rollout family
+- create a new `NNN-NN` subphase when work continues the same bounded execution gate inside an existing major family
+- create a new `NNN` major phase when work forms a distinct top-level rollout family, capability boundary, output, verification gate, release boundary, or rollback boundary
 - ask or record the governing basis when multiple phase families plausibly fit and checked evidence does not settle lineage
 
-Subphase-fit signals:
-- same user-facing objective, policy domain, rule owner chain, design target, patch surface, or rollback boundary
-- follow-up that refines, repairs, verifies, installs, releases, documents, or synchronizes the same governed target
-- dependency on prior phase output or a clear link from `Next possible phases`, closeout notes, `TODO.md`, changelog, or `phase/SUMMARY.md`
-- completed parent/sibling history still defines the same rollout family
+Lineage is evidence, not a prison. A subphase must preserve the parent family's bounded goal/output/gate meaning; same product area, broad domain, owner chain, historical label, or old phase family is not sufficient by itself.
 
-Major-phase-fit signals:
-- new first-class rule or policy domain
-- materially different user-facing objective, governing basis, design target, or rollback/containment boundary
-- independent rollout that does not need an existing family to be understandable or reviewable
+Subphase-fit signals:
+- same bounded execution gate, target output, verification gate, dependency chain, or rollback boundary
+- same governed target where the follow-up refines, repairs, verifies, installs, releases, documents, or synchronizes that target without changing the top-level capability boundary
+- dependency on prior phase output or a clear link from `Next possible phases`, closeout notes, `TODO.md`, changelog, or `phase/SUMMARY.md` that preserves the same goal/output/gate
+- completed parent/sibling history still defines the same bounded rollout family rather than only the same broad program area
+
+Major-phase-fit and umbrella-escape signals:
+- new first-class rule, policy domain, feature capability, or rollout family
+- materially different user-facing objective, governing basis, design target, output, verification gate, release boundary, or rollback/containment boundary
+- independent rollout that does not need an existing phase family to be understandable or reviewable
+- the parent label has become a program bucket rather than a bounded execution slice
+- many sibling subphases no longer share one clear gate, output, or closeout meaning
+- readers cannot tell why the work remains inside the old family without reading historical context
 - nesting under an existing family would overload or mislead that family
 - explicit user direction to start a new phase family
 
-Completed status does not break lineage, and new concern wording does not justify a new major phase by itself. Do not force subphases for unrelated work; if no real lineage exists, open a new major phase. Subphase use is criteria-based, not automatic nesting: the checked evidence must show shared objective, owner chain, target state, patch surface, dependency, or rollback meaning. If lineage is real but ambiguous or overloaded, preserve the relationship in `phase/SUMMARY.md` or the child phase record and choose the clearer identity.
+Completed status does not break lineage, and new concern wording does not justify a new major phase by itself. Do not force subphases for unrelated work; if no real lineage exists, open a new major phase. Do not force old-family subphases when the work has a separate output/gate/release/rollback meaning or the old family is saturated. If lineage is real but ambiguous or overloaded, preserve the relationship in `phase/SUMMARY.md` or the child phase record and choose the clearer identity, including a new major phase when that prevents umbrella drift.
 
 ### Required files and history
 When phased planning is used:
@@ -157,6 +162,8 @@ Phase-backed closeout should report practical delivery, not only files/tasks/aud
 
 - [ ] `NNN` / `NNN-NN` grammar, required active paths, and `phase/SUMMARY.md` are used
 - [ ] major-vs-subphase selection checks lineage before any new major phase
+- [ ] subphase selection preserves a bounded goal/output/gate rather than relying only on broad same-domain or historical-family signals
+- [ ] phase saturation and umbrella-escape signals are considered before keeping distinct work inside an old major family
 - [ ] startup governance establishes or asks about `/phase` before staged/governed drift
 - [ ] `phase/history/` and `phase/done/` remain referenced/inactive history, never junk/deletion authority or live namespace
 - [ ] sufficiently clear governed design synthesizes into compact phase summary, bounded goal/output/gate-aware roadmap or phase matrix, current child files, and current-phase live tasks without replacing design authority

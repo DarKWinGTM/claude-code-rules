@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-08
-> **Current Release Target:** v9.94 / P086
+> **Last Updated:** 2026-05-09
+> **Current Release Target:** v9.95 / P076-04
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -14,6 +14,7 @@
 - [x] P087-01 / v9.92 daily-first rollover and history-sharding release was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
 - [x] P088 / v9.93 memory root-index relative scope compaction was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
 - [x] P086 / v9.94 constructive dissent and anti-over-agreement refinement was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
+- [x] P076-04 / v9.95 bounded main/subphase boundary refinement was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
 
 Completed historical detail before this compact entrypoint is intentionally not duplicated here. Use the pre-rollover snapshot or future `todo/done/` shards for audit, rollback, or provenance.
 
@@ -23,7 +24,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-No active RULES release task is currently open after P086 / v9.94 closeout.
+No active RULES release task is currently open after P076-04 / v9.95 closeout.
 
 ### Deferred / Not Selected
 
@@ -42,6 +43,7 @@ No active RULES release task is currently open after P086 / v9.94 closeout.
 
 | Date | Changes |
 |------|---------|
+| 2026-05-09 | Released P076-04 / v9.95 bounded main/subphase boundary refinement; updated `phase-implementation` to v2.32, installed the 46 active runtime rules, verified 46/46 source/runtime parity and body sufficiency, pushed `master`, and published GitHub release `v9.95`. |
 | 2026-05-08 | Released P086 / v9.94 constructive dissent and anti-over-agreement refinement; updated `anti-sycophancy` to v1.7 so user proposals are evaluated before agreement-shaped wording, installed the 46 active runtime rules, verified 46/46 source/runtime parity and body sufficiency, pushed `master`, and published GitHub release `v9.94`. |
 | 2026-05-08 | Released P088 / v9.93 memory root-index relative scope compaction; updated memory-governance to v1.7, compacted active root `MEMORY.md` with visible `Scope` + `Memory base` hooks, installed 46 runtime rules, verified 46/46 parity/body sufficiency, pushed `master`, and published GitHub release `v9.93`. |
 | 2026-05-08 | Opened P087-01 daily-first governance rollover; preserved pre-rollover TODO; compacted this main file into current state + history/done references. |

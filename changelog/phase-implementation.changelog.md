@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
 > **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.31
+> **Current Version:** 2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.32 | 2026-05-09 | **[Added bounded main/subphase boundary refinement](#version-232)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Kept lineage-first phase selection while adding bounded subphase-fit, same-domain-is-not-enough, phase saturation, and umbrella-escape doctrine so old major families do not absorb distinct work indefinitely. | |
 | 2.31 | 2026-05-08 | **[Added daily phase history rollover entrypoint discipline](#version-231)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Required `phase/SUMMARY.md` to remain a compact roadmap/index while daily movement goes to referenced `phase/history/` and completed detail remains in `phase/done/` when active scans would otherwise bloat. | |
 | 2.30 | 2026-05-07 | **[Added goal-output-gate-aware phase roadmaps](#version-230)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -52,7 +54,22 @@
 
 ---
 
-<a id="version-230"></a>
+<a id="version-232"></a>
+## Version 2.32: Added bounded main/subphase boundary refinement
+
+**Date:** 2026-05-09
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `phase-implementation.md` from v2.31 to v2.32.
+- Updated `design/phase-implementation.design.md` from v2.31 to v2.32.
+- Added bounded subphase-fit doctrine so subphases must preserve a parent family's goal/output/gate meaning.
+- Added same-domain-is-not-enough wording so broad product area, owner chain, or historical family labels are supporting evidence rather than sufficient proof.
+- Added phase saturation and umbrella-escape signals for old major families that no longer share one clear output, gate, closeout, or review meaning.
+- Preserved lineage-first selection and valid subphase continuity for work that genuinely continues the same bounded execution gate.
+
+### Summary
+Kept lineage-first phase selection while adding bounded subphase-fit, same-domain-is-not-enough, phase saturation, and umbrella-escape doctrine so old major families do not absorb distinct work indefinitely.
 
 ---
 
@@ -68,6 +85,9 @@
 ### Summary
 Required `phase/SUMMARY.md` to remain a compact roadmap/index while daily movement goes to referenced `phase/history/` and completed detail remains in `phase/done/` when active scans would otherwise bloat.
 
+---
+
+<a id="version-230"></a>
 ## Version 2.30: Added goal-output-gate-aware phase roadmaps
 
 **Date:** 2026-05-07

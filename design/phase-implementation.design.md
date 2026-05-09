@@ -3,16 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.31
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+> **Current Version:** 2.32
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-09)
 
 ---
 
 ## Current Target-State Refinement
 
-This design now makes roadmap and phase-matrix entries goal/output/gate-aware. Meaningful candidate phases should expose the goal they pursue, the expected output or user/system-visible result, the completion or verification gate, dependencies, deliverables, and status.
+This design now tightens major-vs-subphase selection so lineage remains evidence rather than a permanent container. A subphase should continue the same bounded goal/output/gate, while a new major phase is appropriate when the work has its own capability, output, verification gate, release boundary, rollback boundary, or when an existing family has become a misleading umbrella.
 
-Phase-backed closeout may recommend a supported next phase, wave, or goal after true completion, but only from checked roadmap, design, TODO, phase, or implementation evidence. Proposal/draft entries stay non-active until selected or opened.
+Roadmap and phase-matrix entries remain goal/output/gate-aware. Meaningful candidate phases should expose the goal they pursue, the expected output or user/system-visible result, the completion or verification gate, dependencies, deliverables, and status. Phase-backed closeout may recommend a supported next phase, wave, or goal after true completion, but only from checked roadmap, design, TODO, phase, or implementation evidence. Proposal/draft entries stay non-active until selected or opened.
 
 ---
 
@@ -22,7 +22,7 @@ Phase-backed closeout may recommend a supported next phase, wave, or goal after 
 
 ## 1) Goal
 
-Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order and a bounded goal/output/gate-aware roadmap or phase matrix, selects major phases versus subphases through lineage-first criteria, visibly links non-trivial phase-backed live tasks to active or implied phase context, records material Development Verification / TestKit Coverage for phase-backed coding work, and closes phase-backed work with practical delivery/impact plus meaningful next-phase, wave, or goal recommendation behavior rather than audit-only status.
+Define one deterministic semantic model for phased execution planning so the RULES repository uses one stable active `/phase` structure, may move completed phase detail into `phase/done/` as inactive history, establishes `/phase` early when startup artifact governance already shows phased work is required, synthesizes sufficiently clear governed design into phase execution order and a bounded goal/output/gate-aware roadmap or phase matrix, selects major phases versus subphases through lineage-first criteria with bounded-phase and umbrella-escape safeguards, visibly links non-trivial phase-backed live tasks to active or implied phase context, records material Development Verification / TestKit Coverage for phase-backed coding work, and closes phase-backed work with practical delivery/impact plus meaningful next-phase, wave, or goal recommendation behavior rather than audit-only status.
 
 Multi-session shared-board, plugin, and external coordination/runtime mechanics are outside Main RULES scope.
 
@@ -86,32 +86,36 @@ Before opening a new major phase, the phase owner should inspect checked phase l
 - a new major phase / rollout family
 - an unresolved lineage choice that needs user or evidence clarification
 
-The decision is principle-based rather than subphase-first or major-first. The goal is to preserve real execution lineage without hiding genuinely new rollout families inside an overloaded old phase.
+The decision is principle-based rather than subphase-first or major-first. The goal is to preserve real execution lineage without hiding genuinely new rollout families inside an overloaded old phase or trapping distinct work inside a saturated umbrella phase.
 
-### 3.4 Subphase-fit criteria
-A new `NNN-NN` subphase is usually a better fit when the work continues the same rollout family by refining, repairing, verifying, documenting, installing, releasing, or synchronizing the same governed target.
+### 3.4 Bounded subphase-fit criteria
+A new `NNN-NN` subphase is usually a better fit when the work continues the same bounded execution gate inside the same rollout family by refining, repairing, verifying, documenting, installing, releasing, or synchronizing the same governed target without changing the top-level capability boundary.
 
 Strong subphase signals include:
-- same user-facing objective or policy domain
-- same rule owner chain, design target, patch surface, or rollback boundary
-- direct follow-up from an authored `Next possible phases`, closeout note, TODO item, or phase summary relationship
+- same bounded goal/output/gate, verification gate, dependency chain, or rollback boundary
+- same governed target where the follow-up keeps the same top-level capability boundary
+- direct follow-up from an authored `Next possible phases`, closeout note, TODO item, or phase summary relationship that preserves the same gate meaning
 - dependency on a prior phase's output or a need to preserve visible lineage for review
-- completed parent or sibling phases whose history still defines the same rollout family
+- completed parent or sibling phases whose history still defines the same bounded rollout family rather than only the same broad program area
 
-### 3.5 Major-phase-fit criteria
-A new `NNN` major phase is usually a better fit when the work starts a new top-level rollout family.
+Same product area, broad policy domain, rule owner chain, historical phase label, or project umbrella is supporting evidence only. It is not enough by itself when the new work has a distinct output, verification gate, release boundary, or rollback boundary.
 
-Strong major-phase signals include:
-- new first-class rule or policy domain
-- materially different user-facing objective, governing basis, design target, or rollback boundary
+### 3.5 Major-phase-fit and umbrella-escape criteria
+A new `NNN` major phase is usually a better fit when the work starts a new top-level rollout family or when an old family would become misleading if extended again.
+
+Strong major-phase and umbrella-escape signals include:
+- new first-class rule, policy domain, feature capability, or rollout family
+- materially different user-facing objective, governing basis, design target, output, verification gate, release boundary, or rollback boundary
 - independent rollout that does not depend on an existing phase family for reviewability
-- an existing major family would become misleading or overloaded if the new work were nested under it
+- an existing major family would become misleading, saturated, or overloaded if the new work were nested under it
+- many sibling subphases no longer share one clear gate, output, or closeout meaning
+- readers cannot tell why the work remains inside the old family without reading historical context
 - explicit user direction to start a new program or separate phase family
 
 ### 3.6 Ambiguity and no-forced-subphase boundary
-Completed status does not automatically break lineage, and new concern wording does not automatically justify a new major phase.
+Completed status does not automatically break lineage, and new concern wording does not automatically justify a new major phase. Lineage is evidence, not a prison.
 
-If multiple existing phase families plausibly fit and checked lineage does not clearly choose one, the phase owner should preserve uncertainty and ask or record the selected basis instead of inventing a relationship. If no real lineage exists, opening a new major phase is correct. If the lineage is real but the old family would become unclear or overloaded, a new major may still be correct with a visible relation note.
+If multiple existing phase families plausibly fit and checked lineage does not clearly choose one, the phase owner should preserve uncertainty and ask or record the selected basis instead of inventing a relationship. If no real lineage exists, opening a new major phase is correct. If lineage exists but the old family would become unclear, saturated, or overloaded, a new major phase may still be correct with a visible relation note.
 
 ### 3.7 Anti-confusion rules
 The active model must not allow these ambiguities:
@@ -254,6 +258,8 @@ This shape should remain concise, should not block safe continuation through alr
 
 - [ ] `phase-implementation` explicitly defines `NNN` and `NNN-NN`
 - [ ] phase identity selection checks lineage before opening a new major phase
+- [ ] subphase use preserves bounded goal/output/gate meaning rather than relying only on same-domain or historical-family evidence
+- [ ] umbrella-escape signals are checked when an old major family would become saturated, misleading, or overloaded
 - [ ] subphase use remains criteria-based rather than forced by default
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
 - [ ] staged/governed work that clearly implies phase usage is not left without explicit phase posture until late backfill
@@ -279,7 +285,9 @@ This shape should remain concise, should not block safe continuation through alr
 |--------|--------|
 | Appropriate use of phase planning | High |
 | Major-vs-subphase lineage selection quality | High |
+| Bounded subphase fit and same-domain-is-not-enough discipline | High |
 | New-major bias for related follow-up work | Low |
+| Umbrella-phase drift from saturated major families | Low |
 | Forced subphase use for unrelated rollout families | Low |
 | `/phase` workspace compliance | 100% |
 | `SUMMARY.md` presence when phased planning is used | 100% |
