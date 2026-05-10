@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-10
-> **Current Release Target:** none selected after v9.97 / P090 release
+> **Current Release Target:** v9.98 / P090-01 opportunistic God-line repair
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -26,7 +26,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- None currently.
+- [ ] P090-01 / v9.98 opportunistic God-line repair source sync, runtime install, 47/47 parity/body sufficiency, density review, push, and release are in progress.
 
 ### Deferred / Not Selected
 
@@ -45,6 +45,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
+| 2026-05-10 | Opened P090-01 / v9.98 opportunistic God-line repair refinement; advanced the context-load owner to v1.1 and began source sync, runtime install, verification, push, and release gates while keeping active runtime count at 47. |
 | 2026-05-10 | Released P090 / v9.97 context-load and document-density control; added the 47th active runtime rule, synchronized source records, installed runtime rules, verified 47/47 source/runtime parity plus body sufficiency, pushed `master`, and published GitHub release `v9.97`. |
 | 2026-05-10 | Released P089 / v9.96 governed design sharding compact-index doctrine; updated design-sharding owner chains, synchronized master records, installed 46 active runtime rules, verified 46/46 source/runtime parity plus body sufficiency, pushed `master`, and published GitHub release `v9.96`. |
 | 2026-05-09 | Released P076-04 / v9.95 bounded main/subphase boundary refinement; updated `phase-implementation` to v2.32, installed the 46 active runtime rules, verified 46/46 source/runtime parity and body sufficiency, pushed `master`, and published GitHub release `v9.95`. |

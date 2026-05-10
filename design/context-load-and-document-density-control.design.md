@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 
 ---
@@ -15,6 +15,7 @@ Define a first-class RULES owner for context-load lifecycle management and docum
 The target outcome is practical:
 - broad raw evidence is filtered before it burdens the leader session
 - active docs stay cheap to read, edit, diff, and verify later
+- clear low-risk God-line candidates in touched active docs are repaired opportunistically
 - compact/thrash is treated as a signal to repair workflow or document structure
 - the solution stays strategic instead of becoming a blunt post-compact restriction
 
@@ -30,6 +31,7 @@ Observed failure modes:
 - leader sessions sometimes read raw design/changelog/TODO/phase/patch sets directly instead of routing broad review to a worker
 - active summaries can become history dumps because new releases are appended to one dense line
 - a small logical edit can produce a huge one-line diff when the target line is already too dense
+- assistants may notice a touched God-line candidate but only warn instead of repairing a clear low-risk split
 - compact/thrash can be misread as a need for rigid post-compact bans instead of a workflow and document-structure repair signal
 
 The system needs an owner that connects these issues across reading, writing, worker routing, and closeout verification.
@@ -68,6 +70,7 @@ Preferred active-doc shape:
 - short current-state bullets
 - small focused tables
 - separate verification and risk sections
+- local low-risk repair of touched God-line candidates
 - pointers to changelog/history/done detail
 - compact parent indexes for sharded active designs
 
@@ -94,11 +97,17 @@ When raw evidence is broad, noisy, or multi-surface, workers should absorb and f
 
 This extends worker-routing doctrine with a specific context-load reason: protecting the leader window is part of correctness, not only efficiency.
 
-### 4.4 Append-vs-restructure gate
+### 4.4 Opportunistic touched-doc repair
 
-Before adding to an active line, classify the new content and inspect the target line's responsibility. If the line is already dense, split it or move historical detail to the correct owner.
+When the assistant is already editing an active document and a touched line is a clear, low-risk God-line candidate, the target state is immediate local repair in the same edit. The repair should split mixed responsibilities without changing meaning.
 
-### 4.5 Density-aware closeout
+If the split is broad, history-heavy, ambiguous, or likely to change meaning, the target state is explicit density-debt tracking instead of silent append-only growth.
+
+### 4.5 Append-vs-restructure gate
+
+Before adding to an active line, classify the new content and inspect the target line's responsibility. If the line is already dense, split it when the repair is clear and low-risk, or move/flag it through the correct owner when it is not.
+
+### 4.6 Density-aware closeout
 
 Governance sync should include a quick density check when touched docs are active entrypoints or review surfaces. Semantic sync is incomplete if the update leaves the next session with avoidable context debt.
 
@@ -111,6 +120,7 @@ This rule owns:
 - aggregate read-burst control
 - leader-context protection as a context-safety requirement
 - document-density and God-line prevention
+- opportunistic touched-doc God-line repair
 - append-vs-restructure decision gates
 - compact/thrash as repair signal
 
@@ -126,24 +136,25 @@ This rule does not own:
 
 ## 6) Acceptance Criteria
 
-- A new active runtime rule exists and is included in the runtime install set.
-- README install arrays move from 46 to 47 source-owned active runtime rules.
-- The rule tells assistants to use workers as broad raw evidence filters before leader absorption.
-- The rule defines God-line and append-vs-restructure doctrine for active governance docs.
-- The rule frames compact/thrash as a repair signal rather than a simple post-compact restriction.
-- Master design, changelog, TODO, phase, and patch records describe v9.97 / P090 consistently.
+- The existing active runtime rule advances to v1.1 without adding a new runtime rule.
+- README install arrays remain at the same 47 source-owned active runtime rule files.
+- The rule tells assistants to repair clear low-risk touched active-doc God-line candidates in the same edit.
+- The rule tells assistants to flag or plan broad, history-heavy, or meaning-risky density debt instead of silently appending.
+- The rule preserves worker-first broad raw evidence filtering and compact/thrash repair signals.
+- Master design, changelog, TODO, phase, and patch records describe v9.98 / P090-01 consistently.
 - Source/runtime parity and active runtime body sufficiency pass for 47/47 runtime files.
 
 ---
 
 ## 7) Verification Notes
 
-P090 verification should check both semantic governance sync and future-read cost.
+P090-01 verification should check both semantic governance sync and future-read cost.
 
 Required verification categories:
 - README Bash and PowerShell arrays contain the same 47 files
-- new runtime/design/changelog chain versions align at v1.0
+- runtime/design/changelog chain versions align at v1.1
 - active runtime install parity passes for 47/47 files
 - active runtime body sufficiency passes for 47/47 files
 - touched active docs avoid new God-line style append dumps
+- clear low-risk touched-doc God-line candidates are repaired or explicitly flagged
 - broad final audit uses worker filtering when the scope is multi-surface

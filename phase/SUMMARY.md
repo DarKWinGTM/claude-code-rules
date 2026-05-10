@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.70
+> **Current Version:** 1.71
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P090 / v9.97 context-load and document-density control completed, installed, pushed, and released
+> **Status:** P090-01 / v9.98 opportunistic God-line repair source sync active; runtime and release gates pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -21,18 +21,62 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Active Phase Roadmap
 
-| State | Phase | File | Goal | Output | Gate |
-|---|---|---|---|---|---|
-| completed | P090 | [phase-090-context-load-and-document-density-control.md](phase-090-context-load-and-document-density-control.md) | Add context-load and document-density control for worker-filtered broad evidence and density-safe active docs | `context-load-and-document-density-control` v1.0; active runtime count 47 | Source sync, runtime install, 47/47 checks, density check, `master` push, and release `v9.97` verified |
-| completed | P089 | [phase-089-governed-design-sharding-compact-index.md](phase-089-governed-design-sharding-compact-index.md) | Add governed design sharding doctrine so large active designs use compact parent indexes plus governed child shards | `document-design-control` v1.11, `project-documentation-standards` v2.38, `safe-file-reading` v1.6, `document-consistency` v1.10, v9.96 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.96` verified |
-| completed | P076-04 | [phase-076-04-main-subphase-boundary-refinement.md](phase-076-04-main-subphase-boundary-refinement.md) | Refine main/subphase selection so lineage remains evidence without trapping distinct work inside an old umbrella phase | `phase-implementation` v2.32, v9.95 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.95` verified |
-| completed | P086 | [phase-086-constructive-dissent-anti-over-agreement-refinement.md](phase-086-constructive-dissent-anti-over-agreement-refinement.md) | Add constructive dissent and proposal evaluation before agreement-shaped responses | `anti-sycophancy` v1.7, v9.94 governed release sync, active runtime count remains 46 | README/master records sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.94` verified |
-| completed | P088 | [phase-088-memory-root-index-relative-scope-compaction.md](phase-088-memory-root-index-relative-scope-compaction.md) | Compact root memory indexing without hiding active memory meaning | Memory-governance v1.7, root `MEMORY.md` `Scope` + `Memory base` format, v9.93 master sync | Source docs sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.93` verified |
-| completed | P087-01 | [phase-087-01-daily-first-governance-rollover-history-sharding.md](phase-087-01-daily-first-governance-rollover-history-sharding.md) | Add daily-first rollover governance for oversized active control files | Runtime owner, adjacent owner sync, compact TODO/SUMMARY entrypoints, v9.92 master sync | 46/46 source-runtime parity and body sufficiency pass, master push succeeds, release `v9.92` is verified |
+### Active
+
+- **P090-01:** [phase-090-01-opportunistic-god-line-repair.md](phase-090-01-opportunistic-god-line-repair.md)
+  - **State:** active
+  - **Goal:** refine the context-load owner so clear touched God-line candidates are repaired locally.
+  - **Output:** `context-load-and-document-density-control` v1.1; active runtime count remains 47.
+  - **Gate:** source sync, runtime install, 47/47 checks, density review, push, and release `v9.98` pending.
+
+### Recently Completed
+
+- **P090:** [phase-090-context-load-and-document-density-control.md](phase-090-context-load-and-document-density-control.md)
+  - Added context-load and document-density control for worker-filtered broad evidence.
+  - Output: `context-load-and-document-density-control` v1.0; active runtime count 47.
+  - Gate: 47/47 checks, density check, push, and release `v9.97` verified.
+- **P089:** [phase-089-governed-design-sharding-compact-index.md](phase-089-governed-design-sharding-compact-index.md)
+  - Added governed design sharding with compact parent indexes and active child shards.
+  - Output: design/documentation/safe-reading/consistency owner chains updated; active runtime count 46.
+  - Gate: 46/46 checks, push, and release `v9.96` verified.
+- **P076-04:** [phase-076-04-main-subphase-boundary-refinement.md](phase-076-04-main-subphase-boundary-refinement.md)
+  - Refined main/subphase selection so lineage remains evidence, not a permanent container.
+  - Output: `phase-implementation` v2.32; active runtime count 46.
+  - Gate: 46/46 checks, push, and release `v9.95` verified.
+- **P086:** [phase-086-constructive-dissent-anti-over-agreement-refinement.md](phase-086-constructive-dissent-anti-over-agreement-refinement.md)
+  - Added constructive dissent and proposal evaluation before agreement-shaped responses.
+  - Output: `anti-sycophancy` v1.7; active runtime count 46.
+  - Gate: 46/46 checks, push, and release `v9.94` verified.
+- **P088:** [phase-088-memory-root-index-relative-scope-compaction.md](phase-088-memory-root-index-relative-scope-compaction.md)
+  - Compacted root memory indexing without hiding active memory meaning.
+  - Output: memory-governance v1.7 and root `MEMORY.md` scope-base format.
+  - Gate: 46/46 checks, push, and release `v9.93` verified.
+- **P087-01:** [phase-087-01-daily-first-governance-rollover-history-sharding.md](phase-087-01-daily-first-governance-rollover-history-sharding.md)
+  - Added daily-first rollover governance for oversized active control files.
+  - Output: rollover owner, adjacent owner sync, and compact TODO/SUMMARY entrypoints.
+  - Gate: 46/46 checks, push, and release `v9.92` verified.
 
 ---
 
 ## Current Phase Detail
+
+### P090-01 — Opportunistic God-Line Repair
+
+- **Status:** In Progress
+- **Design References:**
+  - [../design/design.md](../design/design.md) v9.98
+  - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.1
+  - [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.10
+- **Patch References:** [../patch/opportunistic-god-line-repair.patch.md](../patch/opportunistic-god-line-repair.patch.md)
+- **Expected Output:**
+  - `context-load-and-document-density-control` runtime/design/changelog v1.1 is source-synchronized.
+  - README, master changelog, TODO, phase, and patch records align to v9.98 / P090-01.
+  - Active runtime count remains 47.
+- **Completion Gate:**
+  - Runtime install copies only README-listed active runtime rules.
+  - 47/47 source/runtime parity and active runtime body sufficiency pass.
+  - Touched active docs pass density review.
+  - `master` is pushed and GitHub release `v9.98` is verified.
 
 ### P090 — Context Load and Document Density Control
 
@@ -100,6 +144,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Recent Completed Release Context
 
+- P090-01 / v9.98 is active; source sync is underway and runtime/release gates remain pending.
 - P085-01 / v9.91 was completed, installed, pushed, and released with 45/45 runtime parity/body-sufficiency gates passed.
 - P087-01 / v9.92 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
 - P088 / v9.93 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
@@ -117,15 +162,21 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - [x] Active `phase/SUMMARY.md` references `phase/history/` and `phase/done/` surfaces.
 - [x] Active `TODO.md` references `todo/history/` and `todo/done/` surfaces.
 - [x] P090 phase and patch records exist and link to context-load and document-density design truth.
-- [x] New context-load owner chain exists at runtime/design/changelog v1.0.
-- [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.97 / P090 source state.
+- [x] P090-01 phase and patch records exist and link to context-load owner v1.1 design truth.
+- [x] New context-load owner chain exists at runtime/design/changelog v1.1.
+- [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.98 / P090-01 source state.
 - [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
-- [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
-- [x] Touched active docs pass density-oriented review.
-- [x] Git push and GitHub release `v9.97` are verified.
+- [ ] Runtime install copies only README-listed active runtime rules for v9.98.
+- [ ] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
+- [ ] Touched active docs pass density-oriented review.
+- [ ] Git push and GitHub release `v9.98` are verified.
 
 ---
 
 ## Rollback / Containment
 
-If P090 is reversed, narrow context-load and document-density wording while preserving the leader-context and density-lifecycle principles that remain valid. Restore prior v9.96 release surfaces only through a governed rollback, reinstall the prior 46-file runtime set only under an explicit rollback gate, and do not delete NodeClaw evidence files, phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup.
+If P090-01 is reversed:
+- narrow opportunistic God-line repair wording while preserving the P090 leader-context and density-lifecycle principles
+- restore prior v9.97 release surfaces only through a governed rollback
+- reinstall the prior 47-file runtime set only under an explicit rollback gate
+- do not delete NodeClaw evidence files, phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

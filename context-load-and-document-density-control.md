@@ -1,7 +1,7 @@
 # Context Load and Document Density Control
 
-> **Current Version:** 1.0
-> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/context-load-and-document-density-control.changelog.md](changelog/context-load-and-document-density-control.changelog.md)
 
@@ -11,7 +11,7 @@
 
 **Core Principle: Manage context load as a full lifecycle across reading, writing, worker routing, and repair, so broad raw evidence is filtered before it burdens the leader session and active documents are written in a density-safe shape that stays cheap to read, edit, diff, and verify later.**
 
-This rule owns context-load strategy, aggregate read-burst control, leader-context protection, document-density discipline, God-line prevention, append-vs-restructure decisions, and compact/thrash repair signals. It does not replace safe file reading, worker routing, document role governance, rollover, or evidence rules.
+This rule owns context-load strategy, aggregate read-burst control, leader-context protection, document-density discipline, God-line prevention, opportunistic touched-doc God-line repair, append-vs-restructure decisions, and compact/thrash repair signals. It does not replace safe file reading, worker routing, document role governance, rollover, or evidence rules.
 
 ---
 
@@ -66,7 +66,30 @@ Required guidance:
 - use semantic bullets, small tables, and short paragraphs instead of one-line history dumps
 - treat very long active lines as repair triggers, not as proof the content is disposable
 
-### 5) Append-vs-restructure gate
+### 5) Opportunistic touched-doc God-line repair
+
+When an active document is already being edited and the touched area contains a God-line candidate, do not only warn about the density problem.
+
+Repair immediately when all conditions hold:
+- the candidate is in a touched active document or touched section
+- the semantic split is clear from the local context
+- the repair is local, meaning-preserving, and low-risk
+- the repair separates responsibilities such as current state, history, verification, risks, exclusions, and next work
+- the repair does not require broad historical reconstruction or repo-wide formatting
+
+Flag or plan instead of editing immediately when any condition holds:
+- the line is history-heavy and its exact meaning could be changed by splitting
+- the line mixes old release history with current state in a way that needs owner review
+- the repair would touch broad unrelated sections or many files
+- the correct destination for moved content is ambiguous
+- the user explicitly limited the task to analysis only
+
+Required behavior:
+- if safe immediate repair applies, split or restructure in the same edit before claiming the touched doc is clean
+- if immediate repair is unsafe, record it as density debt, follow-up work, or a phase/patch item when material
+- do not append more content to a known God-line candidate unless no safer structure exists and the limit is stated
+
+### 6) Append-vs-restructure gate
 
 Before appending to an existing active line or bullet, check whether the append would make future diffs and reads larger than the logical change.
 
@@ -77,9 +100,9 @@ Required questions:
 4. Should the new content become a new bullet, a subsection, a changelog entry, or a history/done shard reference?
 5. Should the existing line be split before adding the new detail?
 
-If the target line is already a God-line candidate, restructure first or in the same change instead of appending again.
+If the target line is already a God-line candidate, restructure first or in the same change when the split is clear and low-risk. If the split is broad or meaning-risky, flag or plan the repair instead of appending silently.
 
-### 6) Active entrypoints are maps, not storage dumps
+### 7) Active entrypoints are maps, not storage dumps
 
 `TODO.md`, `phase/SUMMARY.md`, README current-state sections, and compact design indexes should help a fresh session find current work quickly.
 
@@ -89,16 +112,16 @@ Required guidance:
 - store daily movement or completed detail in referenced history/done shards when rollover owners require it
 - keep enough context in active maps to navigate without rereading every historical detail
 
-### 7) Compact/thrash is a repair signal
+### 8) Compact/thrash is a repair signal
 
 Autocompact thrash or immediate post-compact refill means the workflow or document shape needs review.
 
 Required response:
 - identify whether the cause is restored context, aggregate read burst, high-density files, worker-gate miss, God lines, oversized entrypoints, or raw output flooding
-- repair the source pattern when practical: route broad reads to workers, split dense lines, roll over active entrypoints, or narrow the authority surface
+- repair the source pattern when practical: route broad reads to workers, split dense touched lines, roll over active entrypoints, or narrow the authority surface
 - do not create a rigid “after compact never read X” policy unless a specific owner requires it
 
-### 8) Density-aware verification
+### 9) Density-aware verification
 
 After non-trivial governance edits, verify not only semantic sync but also future read cost.
 
@@ -107,6 +130,7 @@ Useful checks:
 - one-line version timeline growth
 - active summary lines mixing current state and history
 - README/TODO/phase/patch lines that would create large one-line diffs
+- touched God-line candidates that were repaired or explicitly flagged
 - whether worker routing was used before broad raw review
 
 Density checks are practical repair triggers. They are not deletion authority and not a substitute for semantic correctness.
@@ -125,7 +149,7 @@ Broad raw content likely?
   → NO: read targeted anchor directly
   ↓
 Writing active docs?
-  → YES: apply append-vs-restructure and density checks
+  → YES: apply touched-doc God-line repair, append-vs-restructure, and density checks
   → NO: preserve checked-scope evidence boundaries
   ↓
 Compact/thrash or high-density output appears?
@@ -140,6 +164,7 @@ Avoid:
 - leader-session raw absorption of broad docs, logs, or governance surfaces by momentum
 - reading several “bounded” files without considering aggregate output size
 - appending release/history details to an already huge active line
+- noticing a low-risk touched God-line candidate but only warning while continuing to edit around it
 - treating line count as safe when characters per line are high
 - using post-compact restrictions as the main solution when document structure or worker routing is the real cause
 - turning active entrypoints into history books
@@ -154,6 +179,8 @@ Better behavior: ask the question first, route broad raw evidence through worker
 - [ ] Broad raw reads were routed through a worker/filter lane or a narrow direct-handling reason was stated.
 - [ ] Multi-file read plans considered aggregate output and line density, not only per-file line count.
 - [ ] Active docs avoid God-line appends and split mixed responsibilities when needed.
+- [ ] Clear low-risk God-line candidates in touched active docs were repaired in the same edit.
+- [ ] Broad, history-heavy, or meaning-risky God-line candidates were flagged or planned instead of silently appended.
 - [ ] Current state, history, verification, risks, and next work are not collapsed into one dense line.
 - [ ] Active entrypoints remain compact maps with pointers to detailed history/done/changelog surfaces.
 - [ ] Compact/thrash triggered diagnosis and repair of workflow or document structure.
@@ -169,6 +196,7 @@ Better behavior: ask the question first, route broad raw evidence through worker
 | Worker filtering before broad reads | High |
 | Aggregate read-burst awareness | High |
 | God-line / single-line history dump creation | Low / 0 critical cases |
+| Unrepaired clear touched-doc God-line candidates | Low / 0 critical cases |
 | Active entrypoint map clarity | High |
 | Compact/thrash repair response | High |
 | Future-read and diff maintainability | High |

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 9.97
+> **Current Version:** 9.98
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -20,7 +20,7 @@ Current model focus:
 - design files hold target-state truth and may use compact parent indexes with governed child shards for large active designs
 - changelog remains version and history authority, while TODO and phase stay compact current-state entrypoints
 - broad raw evidence should be filtered through workers before it burdens the leader session when the task shape is context-heavy
-- active governance docs should avoid God-line history dumps and use density-aware closeout when touched
+- active governance docs should avoid God-line history dumps, repair clear low-risk touched God-line candidates, and use density-aware closeout
 - startup, phase, patch, verification, portability, memory, audience-surface, and release boundaries stay with their dedicated owners
 
 ---
@@ -61,6 +61,11 @@ This repository uses one deterministic governance model:
   - It raises the source-owned active runtime set to 47 by adding `context-load-and-document-density-control.md`.
   - It connects leader-context protection, worker-first broad raw evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, density-aware verification, and compact/thrash repair signals.
   - Runtime install and 47/47 parity/body-sufficiency passed; `master` was pushed and GitHub release `v9.97` is published.
+- P090-01 is the active v9.98 opportunistic God-line repair refinement.
+  - It keeps the source-owned active runtime set at 47 and advances `context-load-and-document-density-control` to v1.1.
+  - It requires clear low-risk touched active-doc God-line candidates to be repaired in the same edit.
+  - Broad, history-heavy, ambiguous, or meaning-risky density repairs are flagged or planned instead of silently rewritten.
+  - Runtime install, parity/body-sufficiency, density review, push, and release gates remain pending during source sync.
 - maintainable code structure and decomposition gives coding-time work a first-class owner for responsibility boundaries, future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comments, God function/file pressure, wrong-abstraction avoidance, behavior-preserving refactor posture, and tactical structure-debt convergence without rigid architecture templates
 - development verification and debug strategy gives non-trivial coding work a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that does not treat edits as proof
 - active runtime rule compression must preserve semantic parity and should start from a complete patch inventory/baseline before any rule-body rewrite begins
@@ -139,7 +144,7 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 44 | development-verification-and-debug-strategy.md | development-verification-and-debug-strategy.design.md v1.1 | First-class owner for proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that distinguishes prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable states |
 | 45 | audience-surface-disclosure-control.md | audience-surface-disclosure-control.design.md v1.0 | First-class owner for full direct-user/project-owner transparency plus audience-aware disclosure minimization for generated public, customer-facing, operator-facing, demo, log, release, onboarding, and externally shared artifacts |
 | 46 | governed-document-rollover-control.md | governed-document-rollover-control.design.md v1.0 | First-class owner for daily-first rollover of oversized active governance entrypoints, compact TODO/phase summary active-index behavior, reachable history/done shard references, existing oversized-file migration, and no-deletion-by-rollover boundaries |
-| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.0 | First-class owner for context-load lifecycle strategy, leader-context protection, worker-first broad raw evidence filtering, aggregate read-burst awareness, document-density discipline, God-line prevention, append-vs-restructure gates, and compact/thrash repair signals |
+| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.1 | Context-load lifecycle owner for leader-context protection, worker-filtered broad evidence, density-safe active docs, touched God-line repair, and compact/thrash repair signals |
 
 ### 3.2 Category View
 

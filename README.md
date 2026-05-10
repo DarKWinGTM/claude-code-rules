@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.97</b><br><sub>Released</sub>
+  <b>v9.98</b><br><sub>In Progress</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Verified</b><br><sub>47/47 Runtime Installed</sub>
+  <b>Source Sync</b><br><sub>Release Gates Pending</sub>
 </td>
 <td align="center" width="200">
-  <b>Context density</b><br><sub>P090 Refinement</sub>
+  <b>God-line repair</b><br><sub>P090-01 Refinement</sub>
 </td>
 </tr>
 </table>
@@ -327,20 +327,47 @@ Please:
 - P073-09 refreshed active runtime compression is synchronized for v9.84: 43 source-owned runtime rules were reduced from 42,961 to 35,017 words, producing a 7,944-word reduction inside the accepted 7,580-7,944 range; behavior-anchor, golden-scenario, source-boundary, and 43/43 runtime parity audits passed, with destination extras observed-only
 - P076-03 phase-visible task linkage is synchronized for v9.85: phase-backed live task entries must visibly expose active or clearly implied phase context in the subject or description; active runtime count remains 43 and 43/43 runtime install parity has passed
 - P084-01 development verification and debug strategy is synchronized for v9.86: non-trivial coding work now has a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout; active runtime count is 44 and 44/44 runtime install/parity has passed with destination extras observed-only
-- P081-02 subagent research orchestration is synchronized for v9.87: broad research/design-improvement/source-heavy work now maps into focused research lanes before leader raw source absorption, while active runtime count remains 44
-- P073-10 active runtime body sufficiency is synchronized for v9.88: 10 metadata-only root runtime files are re-materialized, active runtime count remains 44, source/runtime parity and body-sufficiency verification passed 44/44, and destination extras remain observed-only
-- P075-02 roadmap-aware completion is synchronized for v9.89: true objective closeout can recommend supported next phases/waves without blocking selected safe continuation; active runtime count remains 44, runtime install/parity/body-sufficiency verification passed 44/44, git push completed, and GitHub release `v9.89` is published
-- P075-03 goal-first working frame is released for v9.90: non-trivial work can use proportional goal/output/gate navigation and supported next-goal recommendations without turning goal wording into a rigid ritual; active runtime count remains 44, source/runtime install parity plus body sufficiency passed 44/44 with destination extras observed-only, `master` was pushed, and GitHub release `v9.90` is published.
-- P085-01 status/documentation/memory/mechanism/audience-surface refinement is released for v9.91: it adds `audience-surface-disclosure-control.md` as the 45th active source-owned runtime rule; source/runtime install parity plus body sufficiency passed 45/45 with destination extras observed-only; `master` was pushed; and GitHub release `v9.91` is published.
-- P087-01 daily-first governance rollover is released for v9.92: it adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule, compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints, preserves pre-rollover snapshots, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.92`.
-- P088 memory root-index relative compaction is released for v9.93: it updates `memory-governance-and-session-boundary.md` to v1.7, compacts active root `MEMORY.md` into `Scope` + `Memory base` sections with visible relative hooks, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.93`.
-- P086 constructive dissent and anti-over-agreement refinement is released for v9.94: it updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before agreement-shaped wording, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.94`.
+- P081-02 subagent research orchestration is synchronized for v9.87.
+  - Broad research and source-heavy work maps into focused research lanes before leader raw absorption.
+  - Active runtime count remains 44.
+- P073-10 active runtime body sufficiency is synchronized for v9.88.
+  - Ten metadata-only root runtime files were re-materialized.
+  - Active runtime count remains 44 and 44/44 parity/body-sufficiency checks passed.
+- P075-02 roadmap-aware completion is synchronized for v9.89.
+  - True objective closeout can recommend supported next phases without blocking selected continuation.
+  - Active runtime count remains 44 and GitHub release `v9.89` is published.
+- P075-03 goal-first working frame is released for v9.90.
+  - Non-trivial work can use proportional goal/output/gate navigation.
+  - Active runtime count remains 44 and GitHub release `v9.90` is published.
+- P085-01 status/documentation/memory/mechanism/audience-surface refinement is released for v9.91.
+  - Adds `audience-surface-disclosure-control.md` as the 45th active source-owned runtime rule.
+  - 45/45 parity/body-sufficiency checks passed and GitHub release `v9.91` is published.
+- P087-01 daily-first governance rollover is released for v9.92.
+  - Adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule.
+  - Compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints.
+  - 46/46 parity/body-sufficiency checks passed and GitHub release `v9.92` is published.
+- P088 memory root-index relative compaction is released for v9.93.
+  - Updates `memory-governance-and-session-boundary.md` to v1.7.
+  - Keeps active memory hooks visible through `Scope` + `Memory base` sections.
+  - Active runtime count remains 46 and GitHub release `v9.93` is published.
+- P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
+  - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
+  - Active runtime count remains 46 and GitHub release `v9.94` is published.
+- P090-01 opportunistic God-line repair is active for v9.98.
+  - Keeps the source-owned active runtime set at 47 files.
+  - Advances `context-load-and-document-density-control` to v1.1.
+  - Requires clear low-risk touched active-doc God-line candidates to be repaired in the same edit.
+  - Runtime install, 47/47 parity/body sufficiency, density review, push, and release `v9.98` gates are pending.
 - P090 context-load and document-density control is released as v9.97.
   - Adds `context-load-and-document-density-control.md` as the 47th source-owned active runtime rule.
   - Teaches leader-context protection, worker-first broad evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, and density-aware closeout.
-  - Runtime install, 47/47 source/runtime parity and body sufficiency, `master` push, and release `v9.97` verification are complete.
-- P089 governed design sharding compact-index doctrine is released for v9.96: it updates `document-design-control.md` to v1.11, `project-documentation-standards.md` to v2.38, `safe-file-reading.md` to v1.6, and `document-consistency.md` to v1.10 so large active designs can use compact parent indexes plus governed active child shards without turning those shards into history/done rollover surfaces; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.96` is published.
-- P076-04 main/subphase boundary refinement is released for v9.95: it updates `phase-implementation.md` to v2.32 so lineage remains evidence rather than a permanent container, subphases preserve bounded goal/output/gate meaning, same-domain or historical-family evidence is not enough by itself, and saturated umbrella families can open clearer main phases when output/gate/release/rollback boundaries diverge; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.95` is published.
+  - Runtime install, 47/47 parity/body sufficiency, push, and release `v9.97` verification are complete.
+- P089 governed design sharding compact-index doctrine is released for v9.96.
+  - Updates design-sharding, documentation, safe-reading, and consistency owner chains.
+  - Active runtime count remains 46 and GitHub release `v9.96` is published.
+- P076-04 main/subphase boundary refinement is released for v9.95.
+  - Updates `phase-implementation.md` to v2.32 with bounded subphase-fit and umbrella-escape doctrine.
+  - Active runtime count remains 46 and GitHub release `v9.95` is published.
 - Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
 - Non-runtime governance artifacts stay out of runtime install
 
@@ -433,13 +460,17 @@ Please:
 |:-----|:--------|:------------|
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions, including keeping git-state file signals as weak local evidence only |
 | [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Classifies intent before project exploration, routes broad/noisy/high-context/multi-surface and broad research/design-improvement/source-heavy work by required capability, prefers standalone subagent and research lanes first, and keeps Agent Team workflow as an exceptional coordination escalation while the leader remains synthesis and verification owner |
-| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Keeps leader sessions from absorbing broad raw evidence by default, treats aggregate read bursts and dense lines as lifecycle risks, prevents God-line active docs, and makes compact/thrash a repair signal |
+| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Routes broad raw evidence through workers, tracks aggregate read and density risk, prevents God-line active docs, repairs clear low-risk touched God-line candidates, and treats compact/thrash as a repair signal |
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Bounded file handling with parent-index-first, shard-selective reads for sharded active designs and rollover signals for oversized governance entrypoints |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
 **📊 Active Runtime Rules: 47**
 
-Current release: P090 adds context-load and document-density control. The active source install set is 47 files after adding `context-load-and-document-density-control.md`; runtime install, source/runtime parity, body sufficiency, `master` push, and GitHub release `v9.97` verification are complete.
+Current release target: P090-01 / v9.98 opportunistic God-line repair refinement.
+
+- Active source install set remains 47 files.
+- `context-load-and-document-density-control.md` is advanced to v1.1.
+- Runtime install, 47/47 parity/body sufficiency, density review, `master` push, and GitHub release `v9.98` are pending.
 </div>
 
 ---
@@ -1156,7 +1187,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 47 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | Current install gates stay bounded to the 47 source-owned active runtime files; P090 has 47/47 source/runtime parity and body sufficiency with destination extras observed-only, and GitHub release `v9.97` is verified | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Runtime install boundary | v9.98 keeps install scope at 47 source-owned active runtime files; P090-01 release gates stay pending until install, parity, body-sufficiency, push, and release verification pass | Protects install scope and other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
 | Completed/history surfaces | `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are referenced inactive surfaces by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
@@ -1247,7 +1278,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.97 |
+  <b>Version</b>: 9.98 |
   <b>Last Updated</b>: 2026-05-10 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

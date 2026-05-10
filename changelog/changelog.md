@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.97
+> **Current Version:** 9.98
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.98 | 2026-05-10 | **[Added opportunistic touched-doc God-line repair](#version-998)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.97 | 2026-05-10 | **[Added context-load and document-density control](#version-997)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.96 | 2026-05-10 | **[Added governed design sharding compact-index doctrine](#version-996)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.95 | 2026-05-09 | **[Added bounded main/subphase boundary refinement](#version-995)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -131,6 +132,26 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-998"></a>
+## Version 9.98: Added opportunistic touched-doc God-line repair
+
+**Date:** 2026-05-10
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P090-01 as the opportunistic God-line repair refinement under the P090 context-load owner.
+- Advanced `context-load-and-document-density-control` runtime/design/changelog chain to v1.1.
+- Required same-edit repair for clear low-risk touched active-doc God-line candidates.
+- Added boundaries so broad, history-heavy, ambiguous, or meaning-risky density debt is flagged or planned instead of silently rewritten.
+- Kept the README-listed source-owned active runtime rule set at 47 files.
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.98 / P090-01 source state.
+- Runtime install, 47/47 parity/body sufficiency, density review, `master` push, and GitHub release verification remain pending during source sync.
+
+### Summary
+P090-01 refines the existing context-load and document-density owner. It turns clear touched-doc God-line repair into bounded operational behavior while preserving worker-first broad evidence filtering and avoiding broad auto-formatting.
 
 ---
 
