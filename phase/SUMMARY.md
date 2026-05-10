@@ -3,7 +3,7 @@
 > **Current Version:** 1.69
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P089 / v9.96 governed design sharding compact-index release active; runtime install and 46/46 parity/body sufficiency verified, push and release gates pending
+> **Status:** P089 / v9.96 governed design sharding compact-index release completed, installed, pushed, and released
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 | State | Phase | File | Goal | Output | Gate |
 |---|---|---|---|---|---|
-| active | P089 | [phase-089-governed-design-sharding-compact-index.md](phase-089-governed-design-sharding-compact-index.md) | Add governed design sharding doctrine so large active designs use compact parent indexes plus governed child shards | `document-design-control` v1.11, `project-documentation-standards` v2.38, `safe-file-reading` v1.6, `document-consistency` v1.10, v9.96 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.96` verified |
+| completed | P089 | [phase-089-governed-design-sharding-compact-index.md](phase-089-governed-design-sharding-compact-index.md) | Add governed design sharding doctrine so large active designs use compact parent indexes plus governed child shards | `document-design-control` v1.11, `project-documentation-standards` v2.38, `safe-file-reading` v1.6, `document-consistency` v1.10, v9.96 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.96` verified |
 | completed | P076-04 | [phase-076-04-main-subphase-boundary-refinement.md](phase-076-04-main-subphase-boundary-refinement.md) | Refine main/subphase selection so lineage remains evidence without trapping distinct work inside an old umbrella phase | `phase-implementation` v2.32, v9.95 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.95` verified |
 | completed | P086 | [phase-086-constructive-dissent-anti-over-agreement-refinement.md](phase-086-constructive-dissent-anti-over-agreement-refinement.md) | Add constructive dissent and proposal evaluation before agreement-shaped responses | `anti-sycophancy` v1.7, v9.94 governed release sync, active runtime count remains 46 | README/master records sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.94` verified |
 | completed | P088 | [phase-088-memory-root-index-relative-scope-compaction.md](phase-088-memory-root-index-relative-scope-compaction.md) | Compact root memory indexing without hiding active memory meaning | Memory-governance v1.7, root `MEMORY.md` `Scope` + `Memory base` format, v9.93 master sync | Source docs sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.93` verified |
@@ -35,7 +35,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P089 — Governed Design Sharding Compact Index
 
-- **Status:** Active
+- **Status:** Completed
 - **Design References:** [../design/design.md](../design/design.md) v9.96; [../design/document-design-control.design.md](../design/document-design-control.design.md) v1.11; [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md) v2.38; [../design/safe-file-reading.design.md](../design/safe-file-reading.design.md) v1.6; [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.10
 - **Patch References:** [../patch/governed-design-sharding-compact-index.patch.md](../patch/governed-design-sharding-compact-index.patch.md)
 - **Expected Output:** governed design sharding doctrine is installed in the design/documentation/safe-reading/consistency owner chains; README, master design/changelog, TODO, phase, and patch records align to v9.96 / P089; active runtime count remains 46.
@@ -105,7 +105,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.96 / P089 source state.
 - [x] Runtime install arrays contain exactly 46 source-owned active runtime rule files.
 - [x] Source/runtime parity and active runtime body sufficiency pass for 46/46 files.
-- [ ] Git push and GitHub release `v9.96` are verified.
+- [x] Git push and GitHub release `v9.96` are verified.
 
 ---
 

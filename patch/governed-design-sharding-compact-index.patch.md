@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.96
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -137,7 +137,7 @@ A P089 phase record tracks owner-chain updates, master governed sync, runtime in
 
 ## 4) Verification
 
-Runtime install, source/runtime parity, and active runtime body sufficiency have passed for 46/46 active files with destination extras observed-only. Push and GitHub release verification remain pending until publish gates pass.
+Runtime install, source/runtime parity, and active runtime body sufficiency passed for 46/46 active files with destination extras observed-only. `master` push and GitHub release `v9.96` are verified.
 
 - [x] `document-design-control` runtime/design/changelog updated and audited at v1.11.
 - [x] `project-documentation-standards` runtime/design/changelog updated and audited at v2.38.
@@ -147,7 +147,7 @@ Runtime install, source/runtime parity, and active runtime body sufficiency have
 - [x] README Bash and PowerShell install arrays remain exactly 46 active runtime files.
 - [x] Runtime install parity is verified for the 46 active runtime rule files.
 - [x] Active runtime body sufficiency is verified for the 46 active runtime rule files.
-- [ ] Source/runtime release artifacts are pushed and GitHub release `v9.96` is created.
+- [x] Source/runtime release artifacts are pushed and GitHub release `v9.96` is created.
 
 ---
 

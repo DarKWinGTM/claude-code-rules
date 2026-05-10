@@ -147,10 +147,10 @@
 - Updated `document-consistency.md`, `design/document-consistency.design.md`, and `changelog/document-consistency.changelog.md` to v1.10.
 - Added compact parent design index plus governed active child-shard doctrine for `design/<slug>.design.md` and `design/<slug>/*.design.md` without introducing a default `design/done` model.
 - Added parent-index-first, shard-selective reading and parent-index-to-child-shard consistency checks for sharded active designs.
-- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.96 / P089 source state; installed the 46 README-listed active runtime rule files; verified source/runtime parity plus body sufficiency 46/46 with destination extras observed-only; `master` push and GitHub release remain pending until publish gates pass.
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.96 / P089 release state; installed the 46 README-listed active runtime rule files; verified source/runtime parity plus body sufficiency 46/46 with destination extras observed-only; pushed `master`; and published GitHub release `v9.96`.
 
 ### Summary
-P089 teaches RULES how to manage large active design documents as compact parent indexes with governed active child shards. The active source install set remains 46 files; runtime install plus source/runtime parity and body-sufficiency verification passed 46/46 with destination extras observed-only; push and release remain pending until publish gates pass.
+P089 teaches RULES how to manage large active design documents as compact parent indexes with governed active child shards. The active source install set remains 46 files; runtime install plus source/runtime parity and body-sufficiency verification passed 46/46 with destination extras observed-only; `master` was pushed and GitHub release `v9.96` is published.
 
 ---
 

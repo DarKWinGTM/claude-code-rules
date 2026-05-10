@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.96</b><br><sub>Source Sync</sub>
+  <b>v9.96</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>46</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Runtime verified</b><br><sub>Push + Release Pending</sub>
+  <b>Published</b><br><sub>46/46 Runtime Verified</sub>
 </td>
 <td align="center" width="200">
   <b>Design sharding</b><br><sub>P089 Refinement</sub>
@@ -331,7 +331,7 @@ Please:
 - P087-01 daily-first governance rollover is released for v9.92: it adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule, compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints, preserves pre-rollover snapshots, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.92`.
 - P088 memory root-index relative compaction is released for v9.93: it updates `memory-governance-and-session-boundary.md` to v1.7, compacts active root `MEMORY.md` into `Scope` + `Memory base` sections with visible relative hooks, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.93`.
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94: it updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before agreement-shaped wording, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.94`.
-- P089 governed design sharding compact-index doctrine is the active v9.96 release target: it updates `document-design-control.md` to v1.11, `project-documentation-standards.md` to v2.38, `safe-file-reading.md` to v1.6, and `document-consistency.md` to v1.10 so large active designs can use compact parent indexes plus governed active child shards without turning those shards into history/done rollover surfaces; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, and `master` push plus GitHub release remain pending until publish gates pass.
+- P089 governed design sharding compact-index doctrine is released for v9.96: it updates `document-design-control.md` to v1.11, `project-documentation-standards.md` to v2.38, `safe-file-reading.md` to v1.6, and `document-consistency.md` to v1.10 so large active designs can use compact parent indexes plus governed active child shards without turning those shards into history/done rollover surfaces; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.96` is published.
 - P076-04 main/subphase boundary refinement is released for v9.95: it updates `phase-implementation.md` to v2.32 so lineage remains evidence rather than a permanent container, subphases preserve bounded goal/output/gate meaning, same-domain or historical-family evidence is not enough by itself, and saturated umbrella families can open clearer main phases when output/gate/release/rollback boundaries diverge; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.95` is published.
 - Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
 - Non-runtime governance artifacts stay out of runtime install
@@ -430,7 +430,7 @@ Please:
 
 **📊 Active Runtime Rules: 46**
 
-Latest active release target: P089 adds governed design sharding compact-index doctrine. The active source install set remains 46 files; `document-design-control.md` v1.11 defines compact active parent indexes and governed child design shards, `project-documentation-standards.md` v2.38 adds `design/<slug>/*.design.md` to the document role model, `safe-file-reading.md` v1.6 requires parent-index-first shard-selective reads, and `document-consistency.md` v1.10 adds parent-index-to-child-shard consistency checks. Runtime install plus source/runtime parity and body-sufficiency verification passed 46/46 with destination extras observed-only; `master` push and GitHub release `v9.96` remain pending until publish gates pass.
+Latest released refinement: P089 adds governed design sharding compact-index doctrine. The active source install set remains 46 files; `document-design-control.md` v1.11 defines compact active parent indexes and governed child design shards, `project-documentation-standards.md` v2.38 adds `design/<slug>/*.design.md` to the document role model, `safe-file-reading.md` v1.6 requires parent-index-first shard-selective reads, and `document-consistency.md` v1.10 adds parent-index-to-child-shard consistency checks. Runtime install plus source/runtime parity and body-sufficiency verification passed 46/46 with destination extras observed-only; `master` was pushed and GitHub release `v9.96` is published.
 </div>
 
 ---

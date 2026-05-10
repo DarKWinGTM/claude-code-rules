@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 089
-> **Status:** Active
+> **Status:** Completed
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Design References:** [../design/design.md](../design/design.md), [../design/document-design-control.design.md](../design/document-design-control.design.md), [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md), [../design/safe-file-reading.design.md](../design/safe-file-reading.design.md), [../design/document-consistency.design.md](../design/document-consistency.design.md)
 > **Patch References:** [../patch/governed-design-sharding-compact-index.patch.md](../patch/governed-design-sharding-compact-index.patch.md)
@@ -51,7 +51,7 @@ This is a new main phase because governed design sharding is a distinct document
 
 - Create this P089 phase record.
 - Create `patch/governed-design-sharding-compact-index.patch.md` as the before/after review surface.
-- Mark TODO and phase summary as active for P089 until verification/release gates pass.
+- Mark TODO and phase summary as active for P089 until verification/release gates pass, then close them after release verification.
 
 ### 2) Update design-sharding owner chains
 
@@ -142,7 +142,7 @@ This is a new main phase because governed design sharding is a distinct document
 - [x] Runtime install copies only README-listed active runtime rules.
 - [x] Source/runtime parity passes for 46 active runtime files.
 - [x] Active runtime body sufficiency passes for 46 active runtime files.
-- [ ] `master` push and GitHub release `v9.96` are verified.
+- [x] `master` push and GitHub release `v9.96` are verified.
 
 ---
 
@@ -187,4 +187,4 @@ Rollback:
 
 ## Next Possible Phases
 
-- None selected until P089 verification and release gates complete.
+- None selected after P089 closeout.
