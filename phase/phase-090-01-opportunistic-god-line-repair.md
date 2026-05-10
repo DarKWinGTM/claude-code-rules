@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 090-01
-> **Status:** In Progress
+> **Status:** Completed
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Design References:**
 > - [../design/design.md](../design/design.md)
@@ -14,7 +14,12 @@
 
 ## Objective
 
-Refine the context-load and document-density owner so touched active documents do not only warn about God lines. When a touched God-line candidate has a clear, low-risk semantic split, the assistant should repair it in the same edit; when the split is broad, history-heavy, or meaning-risky, it should flag or plan the repair instead of appending more content.
+Refine the context-load and document-density owner so touched active documents do not only warn about God lines.
+
+Required behavior:
+- repair a touched God-line candidate in the same edit when the semantic split is clear and low-risk
+- flag or plan the repair when the split is broad, history-heavy, or meaning-risky
+- avoid appending more content to a known God-line candidate
 
 พูดง่าย ๆ: ถ้า AI กำลังแก้เอกสารตรงนั้นอยู่แล้ว และเห็นบรรทัดยักษ์ที่แยกความหมายได้ชัดเจน ก็ควรช่วยแตกบรรทัดให้เลย ไม่ใช่เติมต่อให้ยาวขึ้นอีก.
 
@@ -144,15 +149,15 @@ Verification route:
 
 ## Verification
 
-- [ ] Phase and patch records exist and link correctly.
-- [ ] Context-load owner chain advances to v1.1.
-- [ ] Master records describe v9.98 / P090-01 consistently.
-- [ ] README Bash and PowerShell install arrays remain exactly 47 active runtime rule files.
-- [ ] Runtime install copies only README-listed active runtime rules.
-- [ ] Source/runtime parity passes for 47 active runtime files.
-- [ ] Active runtime body sufficiency passes for 47 active runtime files.
-- [ ] Touched active docs pass a density-oriented check.
-- [ ] `master` push and GitHub release `v9.98` are verified.
+- [x] Phase and patch records exist and link correctly.
+- [x] Context-load owner chain advances to v1.1.
+- [x] Master records describe v9.98 / P090-01 consistently.
+- [x] README Bash and PowerShell install arrays remain exactly 47 active runtime rule files.
+- [x] Runtime install copies only README-listed active runtime rules.
+- [x] Source/runtime parity passes for 47 active runtime files.
+- [x] Active runtime body sufficiency passes for 47 active runtime files.
+- [x] Touched active docs pass a density-oriented check.
+- [x] `master` push and GitHub release `v9.98` are verified.
 
 ---
 
@@ -191,7 +196,22 @@ Rollback:
 
 ## Closeout Summary
 
-Pending until verification, push, and release gates pass.
+P090-01 is complete.
+
+Delivered:
+- `context-load-and-document-density-control` v1.1 is installed as the active owner refinement.
+- Clear low-risk touched active-doc God-line candidates now have same-edit repair guidance.
+- Broad, history-heavy, ambiguous, or meaning-risky density debt stays in flag-or-plan posture instead of silent rewrite.
+
+Verification:
+- README Bash and PowerShell active runtime arrays remained at 47 files and matched.
+- Runtime install copied only README-listed active runtime rules.
+- Source/runtime parity and active runtime body sufficiency passed for 47/47 files.
+- Touched active docs passed density-oriented review.
+
+Release:
+- `master` was pushed.
+- GitHub release `v9.98` is published and verified.
 
 ---
 

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.71
+> **Current Version:** 1.72
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P090-01 / v9.98 opportunistic God-line repair source sync active; runtime and release gates pending
+> **Status:** P090-01 / v9.98 opportunistic God-line repair completed, installed, pushed, and released
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,14 +23,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P090-01:** [phase-090-01-opportunistic-god-line-repair.md](phase-090-01-opportunistic-god-line-repair.md)
-  - **State:** active
-  - **Goal:** refine the context-load owner so clear touched God-line candidates are repaired locally.
-  - **Output:** `context-load-and-document-density-control` v1.1; active runtime count remains 47.
-  - **Gate:** source sync, runtime install, 47/47 checks, density review, push, and release `v9.98` pending.
+- None currently.
 
 ### Recently Completed
 
+- **P090-01:** [phase-090-01-opportunistic-god-line-repair.md](phase-090-01-opportunistic-god-line-repair.md)
+  - Refined the context-load owner so clear touched God-line candidates are repaired locally.
+  - Output: `context-load-and-document-density-control` v1.1; active runtime count remains 47.
+  - Gate: 47/47 checks, density review, push, and release `v9.98` verified.
 - **P090:** [phase-090-context-load-and-document-density-control.md](phase-090-context-load-and-document-density-control.md)
   - Added context-load and document-density control for worker-filtered broad evidence.
   - Output: `context-load-and-document-density-control` v1.0; active runtime count 47.
@@ -62,7 +62,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P090-01 — Opportunistic God-Line Repair
 
-- **Status:** In Progress
+- **Status:** Completed
 - **Design References:**
   - [../design/design.md](../design/design.md) v9.98
   - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.1
@@ -88,8 +88,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - [../design/safe-file-reading.design.md](../design/safe-file-reading.design.md) v1.6
   - [../design/governed-document-rollover-control.design.md](../design/governed-document-rollover-control.design.md) v1.0
 - **Patch References:** [../patch/context-load-and-document-density-control.patch.md](../patch/context-load-and-document-density-control.patch.md)
-- **Expected Output:** `context-load-and-document-density-control` runtime/design/changelog v1.0 is installed as a new active runtime owner; README, master design/changelog, TODO, phase, and patch records align to v9.97 / P090; active runtime count is 47.
-- **Completion Gate:** source docs synchronized, runtime install copies only README-listed active runtime rules, 47/47 source/runtime parity and body sufficiency pass, touched active docs pass density review, `master` is pushed, and GitHub release `v9.97` is verified.
+- **Expected Output:**
+  - `context-load-and-document-density-control` runtime/design/changelog v1.0 is installed as a new active runtime owner.
+  - README, master design/changelog, TODO, phase, and patch records align to v9.97 / P090.
+  - Active runtime count is 47.
+- **Completion Gate:**
+  - source docs synchronized
+  - runtime install copies only README-listed active runtime rules
+  - 47/47 source/runtime parity and body sufficiency pass
+  - touched active docs pass density review
+  - `master` is pushed and GitHub release `v9.97` is verified
 
 ### P089 — Governed Design Sharding Compact Index
 
@@ -144,7 +152,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Recent Completed Release Context
 
-- P090-01 / v9.98 is active; source sync is underway and runtime/release gates remain pending.
+- P090-01 / v9.98 was completed, installed, pushed, and released with 47/47 runtime parity/body-sufficiency gates passed.
 - P085-01 / v9.91 was completed, installed, pushed, and released with 45/45 runtime parity/body-sufficiency gates passed.
 - P087-01 / v9.92 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
 - P088 / v9.93 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
@@ -166,10 +174,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - [x] New context-load owner chain exists at runtime/design/changelog v1.1.
 - [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.98 / P090-01 source state.
 - [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
-- [ ] Runtime install copies only README-listed active runtime rules for v9.98.
-- [ ] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
-- [ ] Touched active docs pass density-oriented review.
-- [ ] Git push and GitHub release `v9.98` are verified.
+- [x] Runtime install copies only README-listed active runtime rules for v9.98.
+- [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
+- [x] Touched active docs pass density-oriented review.
+- [x] Git push and GitHub release `v9.98` are verified.
 
 ---
 

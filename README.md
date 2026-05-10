@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.98</b><br><sub>In Progress</sub>
+  <b>v9.98</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Source Sync</b><br><sub>Release Gates Pending</sub>
+  <b>Verified</b><br><sub>47/47 Runtime Installed</sub>
 </td>
 <td align="center" width="200">
   <b>God-line repair</b><br><sub>P090-01 Refinement</sub>
@@ -353,11 +353,11 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P090-01 opportunistic God-line repair is active for v9.98.
+- P090-01 opportunistic God-line repair is released for v9.98.
   - Keeps the source-owned active runtime set at 47 files.
   - Advances `context-load-and-document-density-control` to v1.1.
   - Requires clear low-risk touched active-doc God-line candidates to be repaired in the same edit.
-  - Runtime install, 47/47 parity/body sufficiency, density review, push, and release `v9.98` gates are pending.
+  - Runtime install, 47/47 parity/body sufficiency, density review, push, and release `v9.98` verification are complete.
 - P090 context-load and document-density control is released as v9.97.
   - Adds `context-load-and-document-density-control.md` as the 47th source-owned active runtime rule.
   - Teaches leader-context protection, worker-first broad evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, and density-aware closeout.
@@ -460,17 +460,17 @@ Please:
 |:-----|:--------|:------------|
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions, including keeping git-state file signals as weak local evidence only |
 | [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Classifies intent before project exploration, routes broad/noisy/high-context/multi-surface and broad research/design-improvement/source-heavy work by required capability, prefers standalone subagent and research lanes first, and keeps Agent Team workflow as an exceptional coordination escalation while the leader remains synthesis and verification owner |
-| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Routes broad raw evidence through workers, tracks aggregate read and density risk, prevents God-line active docs, repairs clear low-risk touched God-line candidates, and treats compact/thrash as a repair signal |
+| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Worker-filtered evidence, safe docs, and God-line repair |
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Bounded file handling with parent-index-first, shard-selective reads for sharded active designs and rollover signals for oversized governance entrypoints |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
 **📊 Active Runtime Rules: 47**
 
-Current release target: P090-01 / v9.98 opportunistic God-line repair refinement.
+Current release: P090-01 / v9.98 opportunistic God-line repair refinement.
 
 - Active source install set remains 47 files.
 - `context-load-and-document-density-control.md` is advanced to v1.1.
-- Runtime install, 47/47 parity/body sufficiency, density review, `master` push, and GitHub release `v9.98` are pending.
+- Runtime install, 47/47 parity/body sufficiency, density review, `master` push, and GitHub release `v9.98` are verified.
 </div>
 
 ---
@@ -1184,14 +1184,43 @@ Result: ✅ Verified from actual files
 
 <div align="center">
 
-| Signal | Current README Meaning | Impact |
-|--------|-------------------------|--------|
-| Active runtime scope | 47 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | v9.98 keeps install scope at 47 source-owned active runtime files; P090-01 release gates stay pending until install, parity, body-sufficiency, push, and release verification pass | Protects install scope and other-owner runtime files |
-| Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
-| Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
-| Completed/history surfaces | `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are referenced inactive surfaces by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
-| Shared destination boundary | Co-located runtime files outside the source-owned set are not cleanup targets by default | Prevents other-owner file damage |
+### Active runtime scope
+
+- Current README meaning: 47 source-owned root rule files.
+- Impact: keeps install scope explicit.
+
+### Runtime install boundary
+
+- Current README meaning: v9.98 keeps install scope at 47 source-owned active runtime files.
+- Verification: P090-01 install, parity, body sufficiency, push, and release verification passed.
+- Impact: protects install scope and other-owner runtime files.
+
+### Evidence discipline
+
+- Current README meaning: proof-seeking and claim-state boundaries stay separate.
+- Scope: fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and binding constraints.
+- Impact: reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk.
+
+### Phase execution
+
+- Current README meaning: governed design can drive phase posture, order, and tasks.
+- Lineage: phase-shaped follow-up checks current phase, subphase, new major, or ask-now posture.
+- Live tasks: non-trivial phase-backed entries visibly carry phase context.
+- Closeout: roadmap context can support next-phase recommendations at true closeout.
+- Coding gates: material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria.
+- Impact: reduces retrospective phase backfill, phase-hidden task drift, silent closeout dead-ends, and edit-only coding closeout.
+
+### Completed/history surfaces
+
+- Current README meaning: history and done surfaces are referenced inactive surfaces by default.
+- Included surfaces: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/`.
+- Boundary: `design/done/` is not a default pattern.
+- Impact: reduces active scan bloat without deleting governed history.
+
+### Shared destination boundary
+
+- Current README meaning: co-located runtime files outside the source-owned set are not cleanup targets by default.
+- Impact: prevents other-owner file damage.
 
 </div>
 

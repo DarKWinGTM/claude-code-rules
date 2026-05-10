@@ -9,9 +9,20 @@
 
 ## Rule Statement
 
-**Core Principle: Manage context load as a full lifecycle across reading, writing, worker routing, and repair, so broad raw evidence is filtered before it burdens the leader session and active documents are written in a density-safe shape that stays cheap to read, edit, diff, and verify later.**
+**Core Principle: Manage context load as a full lifecycle.**
 
-This rule owns context-load strategy, aggregate read-burst control, leader-context protection, document-density discipline, God-line prevention, opportunistic touched-doc God-line repair, append-vs-restructure decisions, and compact/thrash repair signals. It does not replace safe file reading, worker routing, document role governance, rollover, or evidence rules.
+This lifecycle covers reading, writing, worker routing, and repair.
+
+Target outcomes:
+- broad raw evidence is filtered before it burdens the leader session
+- active documents stay density-safe and cheap to read, edit, diff, and verify later
+
+This rule owns:
+- context-load strategy, aggregate read-burst control, and leader-context protection
+- document-density discipline, God-line prevention, and opportunistic touched-doc God-line repair
+- append-vs-restructure decisions and compact/thrash repair signals
+
+It does not replace safe file reading, worker routing, document role governance, rollover, or evidence rules.
 
 ---
 
@@ -100,7 +111,11 @@ Required questions:
 4. Should the new content become a new bullet, a subsection, a changelog entry, or a history/done shard reference?
 5. Should the existing line be split before adding the new detail?
 
-If the target line is already a God-line candidate, restructure first or in the same change when the split is clear and low-risk. If the split is broad or meaning-risky, flag or plan the repair instead of appending silently.
+If the target line is already a God-line candidate, do not append silently.
+
+Required handling:
+- restructure first or in the same change when the split is clear and low-risk
+- flag or plan the repair when the split is broad or meaning-risky
 
 ### 7) Active entrypoints are maps, not storage dumps
 

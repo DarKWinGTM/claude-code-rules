@@ -59,13 +59,16 @@ This repository uses one deterministic governance model:
 - P089 is the completed v9.96 governed design sharding compact-index refinement: it keeps the source-owned active runtime set at 46, updates `document-design-control.md` to v1.11, `project-documentation-standards.md` to v2.38, `safe-file-reading.md` to v1.6, and `document-consistency.md` to v1.10 so large active designs can use compact parent indexes plus governed active child shards; runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.96` is published
 - P090 is the completed v9.97 context-load and document-density control wave.
   - It raises the source-owned active runtime set to 47 by adding `context-load-and-document-density-control.md`.
-  - It connects leader-context protection, worker-first broad raw evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, density-aware verification, and compact/thrash repair signals.
+  - It connects:
+    - leader-context protection and worker-first broad raw evidence filtering
+    - aggregate read-burst awareness and God-line prevention
+    - append-vs-restructure gates, density-aware verification, and compact/thrash repair signals
   - Runtime install and 47/47 parity/body-sufficiency passed; `master` was pushed and GitHub release `v9.97` is published.
-- P090-01 is the active v9.98 opportunistic God-line repair refinement.
+- P090-01 is the completed v9.98 opportunistic God-line repair refinement.
   - It keeps the source-owned active runtime set at 47 and advances `context-load-and-document-density-control` to v1.1.
   - It requires clear low-risk touched active-doc God-line candidates to be repaired in the same edit.
   - Broad, history-heavy, ambiguous, or meaning-risky density repairs are flagged or planned instead of silently rewritten.
-  - Runtime install, parity/body-sufficiency, density review, push, and release gates remain pending during source sync.
+  - Runtime install, 47/47 parity/body-sufficiency, density review, `master` push, and GitHub release `v9.98` verification passed.
 - maintainable code structure and decomposition gives coding-time work a first-class owner for responsibility boundaries, future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comments, God function/file pressure, wrong-abstraction avoidance, behavior-preserving refactor posture, and tactical structure-debt convergence without rigid architecture templates
 - development verification and debug strategy gives non-trivial coding work a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that does not treat edits as proof
 - active runtime rule compression must preserve semantic parity and should start from a complete patch inventory/baseline before any rule-body rewrite begins
@@ -144,21 +147,74 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 44 | development-verification-and-debug-strategy.md | development-verification-and-debug-strategy.design.md v1.1 | First-class owner for proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that distinguishes prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable states |
 | 45 | audience-surface-disclosure-control.md | audience-surface-disclosure-control.design.md v1.0 | First-class owner for full direct-user/project-owner transparency plus audience-aware disclosure minimization for generated public, customer-facing, operator-facing, demo, log, release, onboarding, and externally shared artifacts |
 | 46 | governed-document-rollover-control.md | governed-document-rollover-control.design.md v1.0 | First-class owner for daily-first rollover of oversized active governance entrypoints, compact TODO/phase summary active-index behavior, reachable history/done shard references, existing oversized-file migration, and no-deletion-by-rollover boundaries |
-| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.1 | Context-load lifecycle owner for leader-context protection, worker-filtered broad evidence, density-safe active docs, touched God-line repair, and compact/thrash repair signals |
+| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.1 | Context-load lifecycle, density-safe docs, touched God-line repair, and compact/thrash signals |
 
 ### 3.2 Category View
 
-| Category | Rules | Purpose |
-|----------|-------|---------|
-| Accuracy & Truth | accurate-communication, technical-snapshot-communication, evidence-grounded-burden-of-proof, external-verification-and-source-trust, zero-hallucination, anti-sycophancy, no-variable-guessing, memory-governance-and-session-boundary | Evidence-seeking, proof-aware, verified, scope-aware, memory-aware, honest, evidence-calibrated agreement/disagreement, and snapshot-aware output |
-| Portable Implementation | portable-implementation-and-hardcoding-control, no-variable-guessing, project-documentation-standards, tactical-strategic-programming | Portable defaults, public onboarding/install portability, late-bound environment resolution, and anti-hardcoding discipline for shared artifacts |
-| Presentation & Readability | answer-presentation, explanation-quality, response-closing-and-action-framing, flow-diagram-no-frame, natural-professional-communication, high-signal-communication, audience-surface-disclosure-control | Readable, orderly, scannable, naturally professional, well-closed, audience-aware, and higher-signal output presentation |
-| Output Safety | context-load-and-document-density-control, safe-file-reading, safe-terminal-output, flow-diagram-no-frame, strict-file-hygiene | Context-load lifecycle control, output flood prevention, safe text presentation, and file hygiene |
-| Startup Governance | artifact-initiation-control, governed-document-rollover-control, project-documentation-standards, todo-standards, phase-implementation | Resolve artifact posture before meaningful governed work drifts and keep large active entrypoints compact with referenced history/done shards |
-| User Control | authority-and-scope, custom-agent-selection-priority, emergency-protocol, functional-intent-verification, operational-failure-handling, refusal-classification, recovery-contract, runtime-topology-control, execution-continuity-and-mode-selection | Preserve user authority, correct mode selection, re-check intent before project exploration when technical evidence could be misread, prefer clear best-fit custom specialists after routing says delegation/specialist handling fits, and maintain safe operational posture |
-| Execution Strategy | native-worker-agent-routing-and-context-control, context-load-and-document-density-control, goal-set-review-and-priority-balance, tactical-strategic-programming, maintainable-code-structure-and-decomposition, development-verification-and-debug-strategy | Route broad/high-context/high-output and broad research/design-improvement/source-heavy work through intent-first worker lanes, keep leader context protected, keep the full active goal set visible, preserve structure-first priority balance, keep coding-time structure maintainable, and make non-trivial coding work carry proportionate verification strategy before strong completion claims |
-| Adversarial Workflow | refusal-minimization, dan-safe-normalization | Reduce false refusals in authorized adversarial/security workflows |
-| Quality & Governance | document-consistency, document-changelog-control, document-design-control, document-patch-control, governed-document-rollover-control, anti-mockup, unified-version-control-system | Documentation determinism, reference-role clarity, active entrypoint rollover, patch semantics, and governance quality |
+#### Accuracy & Truth
+
+- Rules:
+  - `accurate-communication`, `technical-snapshot-communication`, `evidence-grounded-burden-of-proof`
+  - `external-verification-and-source-trust`, `zero-hallucination`, `anti-sycophancy`
+  - `no-variable-guessing`, `memory-governance-and-session-boundary`
+- Purpose: evidence-seeking, proof-aware, verified, scope-aware, and memory-aware output.
+- Communication posture: honest, evidence-calibrated agreement/disagreement and snapshot-aware reporting.
+
+#### Portable Implementation
+
+- Rules: `portable-implementation-and-hardcoding-control`, `no-variable-guessing`, `project-documentation-standards`, `tactical-strategic-programming`.
+- Purpose: portable defaults, public onboarding portability, late-bound environment resolution, and anti-hardcoding discipline.
+
+#### Presentation & Readability
+
+- Rules:
+  - `answer-presentation`, `explanation-quality`, `response-closing-and-action-framing`
+  - `flow-diagram-no-frame`, `natural-professional-communication`, `high-signal-communication`
+  - `audience-surface-disclosure-control`
+- Purpose: readable, orderly, scannable, naturally professional, well-closed, audience-aware, and higher-signal output.
+
+#### Output Safety
+
+- Rules: `context-load-and-document-density-control`, `safe-file-reading`, `safe-terminal-output`, `flow-diagram-no-frame`, `strict-file-hygiene`.
+- Purpose: context-load lifecycle control, output flood prevention, safe text presentation, and file hygiene.
+
+#### Startup Governance
+
+- Rules: `artifact-initiation-control`, `governed-document-rollover-control`, `project-documentation-standards`, `todo-standards`, `phase-implementation`.
+- Purpose: resolve artifact posture before meaningful governed work drifts.
+- Active-entrypoint posture: keep large active entrypoints compact with referenced history/done shards.
+
+#### User Control
+
+- Rules:
+  - `authority-and-scope`, `custom-agent-selection-priority`, `emergency-protocol`
+  - `functional-intent-verification`, `operational-failure-handling`, `refusal-classification`
+  - `recovery-contract`, `runtime-topology-control`, `execution-continuity-and-mode-selection`
+- Purpose: preserve user authority, correct mode selection, and safe operational posture.
+- Scope guard: re-check intent before project exploration when technical evidence could be misread.
+- Specialist guard: prefer clear best-fit custom specialists after routing selects specialist handling.
+
+#### Execution Strategy
+
+- Rules:
+  - `native-worker-agent-routing-and-context-control`, `context-load-and-document-density-control`
+  - `goal-set-review-and-priority-balance`, `tactical-strategic-programming`
+  - `maintainable-code-structure-and-decomposition`, `development-verification-and-debug-strategy`
+- Purpose: route broad or high-output work through intent-first worker lanes.
+- Goal posture: protect leader context, keep the full goal set visible, and preserve structure-first balance.
+- Coding posture: keep code maintainable and require proportionate verification before strong completion claims.
+
+#### Adversarial Workflow
+
+- Rules: `refusal-minimization`, `dan-safe-normalization`.
+- Purpose: reduce false refusals in authorized adversarial/security workflows.
+
+#### Quality & Governance
+
+- Rules:
+  - `document-consistency`, `document-changelog-control`, `document-design-control`, `document-patch-control`
+  - `governed-document-rollover-control`, `anti-mockup`, `unified-version-control-system`
+- Purpose: documentation determinism, reference-role clarity, active entrypoint rollover, patch semantics, and governance quality.
 
 ---
 

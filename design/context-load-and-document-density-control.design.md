@@ -99,13 +99,19 @@ This extends worker-routing doctrine with a specific context-load reason: protec
 
 ### 4.4 Opportunistic touched-doc repair
 
-When the assistant is already editing an active document and a touched line is a clear, low-risk God-line candidate, the target state is immediate local repair in the same edit. The repair should split mixed responsibilities without changing meaning.
+When the assistant is already editing an active document and a touched line is a clear, low-risk God-line candidate, the target state is immediate local repair in the same edit.
+
+The repair should split mixed responsibilities without changing meaning.
 
 If the split is broad, history-heavy, ambiguous, or likely to change meaning, the target state is explicit density-debt tracking instead of silent append-only growth.
 
 ### 4.5 Append-vs-restructure gate
 
-Before adding to an active line, classify the new content and inspect the target line's responsibility. If the line is already dense, split it when the repair is clear and low-risk, or move/flag it through the correct owner when it is not.
+Before adding to an active line, classify the new content and inspect the target line's responsibility.
+
+If the line is already dense:
+- split it when the repair is clear and low-risk
+- move or flag it through the correct owner when it is not
 
 ### 4.6 Density-aware closeout
 

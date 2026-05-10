@@ -147,11 +147,18 @@
 - Required same-edit repair for clear low-risk touched active-doc God-line candidates.
 - Added boundaries so broad, history-heavy, ambiguous, or meaning-risky density debt is flagged or planned instead of silently rewritten.
 - Kept the README-listed source-owned active runtime rule set at 47 files.
-- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.98 / P090-01 source state.
-- Runtime install, 47/47 parity/body sufficiency, density review, `master` push, and GitHub release verification remain pending during source sync.
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.98 / P090-01 release state.
+- Runtime install and release gates passed:
+  - copied only the README-listed 47 active runtime rules
+  - verified 47/47 source/runtime parity and body sufficiency
+  - passed touched active-doc density review
+  - pushed `master`
+  - published and verified GitHub release `v9.98`
 
 ### Summary
-P090-01 refines the existing context-load and document-density owner. It turns clear touched-doc God-line repair into bounded operational behavior while preserving worker-first broad evidence filtering and avoiding broad auto-formatting.
+P090-01 refines the existing context-load and document-density owner.
+
+It turns clear touched-doc God-line repair into bounded operational behavior while preserving worker-first broad evidence filtering and avoiding broad auto-formatting.
 
 ---
 
@@ -166,12 +173,17 @@ P090-01 refines the existing context-load and document-density owner. It turns c
 - Added `context-load-and-document-density-control.md` as a new active runtime rule at v1.0.
 - Added `design/context-load-and-document-density-control.design.md` and `changelog/context-load-and-document-density-control.changelog.md` as the companion owner chain.
 - Raised the README-listed source-owned active runtime set from 46 to 47 files.
-- Added lifecycle doctrine for leader-context protection, worker-first broad raw evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, density-aware verification, and compact/thrash repair signals.
+- Added lifecycle doctrine for context-load and document-density control:
+  - leader-context protection and worker-first broad evidence filtering
+  - aggregate read-burst awareness and God-line prevention
+  - append-vs-restructure gates, density-aware verification, and compact/thrash repair signals
 - Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.97 / P090 source state.
 - Runtime install, 47/47 parity/body sufficiency, `master` push, and GitHub release verification passed during P090 closeout.
 
 ### Summary
-P090 adds a first-class owner for context-load and document-density strategy. It treats reading, writing, worker routing, and compact/thrash repair as one lifecycle so broad raw evidence can be filtered before leader absorption and active docs stay cheaper to read, edit, diff, and verify.
+P090 adds a first-class owner for context-load and document-density strategy.
+
+It treats reading, writing, worker routing, and compact/thrash repair as one lifecycle. Broad raw evidence can be filtered before leader absorption, and active docs stay cheaper to read, edit, diff, and verify.
 
 ---
 

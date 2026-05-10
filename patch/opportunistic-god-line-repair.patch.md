@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.98
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -114,22 +114,33 @@ Runtime destination contains installed v9.98 active rules with 47/47 source/runt
 
 ## 4) Verification
 
-Planned verification:
-- [ ] Runtime/design/changelog chain aligns at v1.1.
-- [ ] README Bash and PowerShell install arrays still contain the same 47 files.
-- [ ] README-listed active runtime files all exist at source root.
-- [ ] README-listed active runtime files are not metadata-only.
-- [ ] Runtime install copies only README-listed active runtime rules.
-- [ ] Source/runtime parity passes for 47/47 active files.
-- [ ] Active runtime body sufficiency passes for 47/47 active files.
-- [ ] Touched active docs are checked for obvious God-line or density regression.
-- [ ] `master` push and GitHub release `v9.98` are verified.
+Verified closeout:
+- [x] Runtime/design/changelog chain aligns at v1.1.
+- [x] README Bash and PowerShell install arrays still contain the same 47 files.
+- [x] README-listed active runtime files all exist at source root.
+- [x] README-listed active runtime files are not metadata-only.
+- [x] Runtime install copies only README-listed active runtime rules.
+- [x] Source/runtime parity passes for 47/47 active files.
+- [x] Active runtime body sufficiency passes for 47/47 active files.
+- [x] Touched active docs are checked for obvious God-line or density regression.
+- [x] `master` push and GitHub release `v9.98` are verified.
 
 ---
 
 ## 5) Closeout Summary
 
-Pending until source sync, runtime install, verification, push, and release gates pass.
+P090-01 is complete.
+
+Closed change surface:
+- `context-load-and-document-density-control` advanced to v1.1 across runtime, design, and changelog.
+- README, master design, master changelog, TODO, phase, and patch records align to v9.98 / P090-01.
+- Active runtime count remains 47.
+
+Verified gates:
+- runtime install copied only README-listed active runtime rules
+- source/runtime parity and body sufficiency passed for 47/47 files
+- touched active docs passed density-oriented review
+- `master` push and GitHub release `v9.98` are verified
 
 ## 6) Rollback Approach
 
