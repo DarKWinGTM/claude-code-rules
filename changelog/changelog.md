@@ -158,7 +158,7 @@
   - `document-consistency` to v1.11
 - Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.99 / P091 source state.
 - Runtime install and 47/47 parity/body sufficiency passed for the README-listed active runtime rules.
-- Density/God-file review passed; `master` push and GitHub release `v9.99` verification remain pending until the release gate finishes.
+- Density/God-file review, `master` push, and GitHub release `v9.99` verification passed.
 
 ### Summary
 P091 adds a file-level capacity gate for governed documents.

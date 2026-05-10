@@ -69,12 +69,11 @@ This repository uses one deterministic governance model:
   - It requires clear low-risk touched active-doc God-line candidates to be repaired in the same edit.
   - Broad, history-heavy, ambiguous, or meaning-risky density repairs are flagged or planned instead of silently rewritten.
   - Runtime install, 47/47 parity/body-sufficiency, density review, `master` push, and GitHub release `v9.98` verification passed.
-- P091 is the active v9.99 governed document God-file prevention and repair wave.
+- P091 is the released v9.99 governed document God-file prevention and repair wave.
   - It keeps the source-owned active runtime set at 47.
   - It adds document-capacity gates and role-aware repair routes across design, changelog, TODO, phase, patch, README, and active summary surfaces.
   - It advances the project-documentation, context-load, design, changelog, TODO, phase, patch, rollover, and consistency owner chains.
-  - Runtime install and 47/47 parity/body-sufficiency passed.
-  - Density/God-file review passed; `master` push and GitHub release `v9.99` verification remain pending.
+  - Runtime install, 47/47 parity/body-sufficiency, density/God-file review, `master` push, and GitHub release `v9.99` verification passed.
 - maintainable code structure and decomposition gives coding-time work a first-class owner for responsibility boundaries, future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comments, God function/file pressure, wrong-abstraction avoidance, behavior-preserving refactor posture, and tactical structure-debt convergence without rigid architecture templates
 - development verification and debug strategy gives non-trivial coding work a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that does not treat edits as proof
 - active runtime rule compression must preserve semantic parity and should start from a complete patch inventory/baseline before any rule-body rewrite begins

@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.99</b><br><sub>In Progress</sub>
+  <b>v9.99</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Installed</b><br><sub>Release Gate Pending</sub>
+  <b>Verified</b><br><sub>Release Published</sub>
 </td>
 <td align="center" width="200">
-  <b>God-file control</b><br><sub>P091 Governance</sub>
+  <b>God-file control</b><br><sub>P091 Released</sub>
 </td>
 </tr>
 </table>
@@ -353,11 +353,10 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P091 governed document God-file prevention and repair is in progress for v9.99.
+- P091 governed document God-file prevention and repair is released for v9.99.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds document-capacity gates and role-aware repair routes across active governance documents.
-  - Runtime install and 47/47 parity/body sufficiency are complete.
-  - Density/God-file review is complete; push and release `v9.99` verification remain pending.
+  - Runtime install, 47/47 parity/body sufficiency, density/God-file review, `master` push, and GitHub release `v9.99` verification are complete.
 - P090-01 opportunistic God-line repair is released for v9.98.
   - Keeps the source-owned active runtime set at 47 files.
   - Advances `context-load-and-document-density-control` to v1.1.
@@ -471,12 +470,11 @@ Please:
 
 **📊 Active Runtime Rules: 47**
 
-Current release target: P091 / v9.99 governed document God-file prevention and repair.
+Current release: P091 / v9.99 governed document God-file prevention and repair.
 
 - Active source install set remains 47 files.
-- Document owner chains now define God-file/God-document prevention and role-aware repair routes.
-- Runtime install and 47/47 parity/body sufficiency are complete.
-- Density/God-file review is complete; `master` push and GitHub release `v9.99` verification remain pending.
+- Document owner chains define God-file/God-document prevention and role-aware repair routes.
+- Runtime install, 47/47 parity/body sufficiency, density/God-file review, `master` push, and GitHub release `v9.99` verification are complete.
 </div>
 
 ---
@@ -1197,9 +1195,8 @@ Result: ✅ Verified from actual files
 
 ### Runtime install boundary
 
-- Current README meaning: v9.99 keeps install scope at 47 source-owned active runtime files while push/release gates are pending.
-- Verification: P091 source docs are synchronized; runtime install, 47/47 parity/body sufficiency, and density review passed.
-- Pending: `master` push and GitHub release `v9.99` verification remain open.
+- Current README meaning: v9.99 keeps install scope at 47 source-owned active runtime files after release verification.
+- Verification: P091 source docs are synchronized; runtime install, 47/47 parity/body sufficiency, density review, push, and release verification passed.
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity

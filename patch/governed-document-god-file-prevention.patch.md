@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.99
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -95,4 +95,4 @@ If rollback is needed:
 
 ## Current Status
 
-Patch is open and in progress. Source/runtime install, 47/47 parity/body sufficiency, and density review are complete. Push and release verification remain pending.
+Patch is complete. Source/runtime install, 47/47 parity/body sufficiency, density review, `master` push, and GitHub release `v9.99` verification passed.

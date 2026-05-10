@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-11
-> **Current Release Target:** v9.99 / P091 governed document God-file prevention and repair
+> **Current Release:** v9.99 / P091 governed document God-file prevention and repair
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -18,6 +18,7 @@
 - [x] P089 / v9.96 governed design sharding compact-index release was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
 - [x] P090 / v9.97 context-load and document-density control was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P090-01 / v9.98 opportunistic God-line repair refinement was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
+- [x] P091 / v9.99 governed document God-file prevention and repair was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 
 Completed historical detail before this compact entrypoint is intentionally not duplicated here. Use the pre-rollover snapshot or future `todo/done/` shards for audit, rollback, or provenance.
 
@@ -27,9 +28,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- [ ] P091 / v9.99 governed document God-file prevention and repair is in progress.
-  - Goal: prevent active design, changelog, TODO, phase, patch, SUMMARY, and README surfaces from becoming overloaded God files.
-  - Gate: source sync, 47/47 runtime parity/body sufficiency, and density/God-file review are complete; push and release verification remain pending.
+No active release phase is selected after the P091 / v9.99 closeout.
 
 ### Deferred / Not Selected
 
@@ -48,7 +47,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
-| 2026-05-11 | Opened P091 / v9.99 governed document God-file prevention and repair; release gates are pending. |
+| 2026-05-11 | Released P091 / v9.99 governed document God-file prevention and repair; 47/47 parity/body sufficiency passed; density review passed; `master` pushed; release `v9.99` published. |
 | 2026-05-10 | Released P090-01 / v9.98; context-load owner v1.1 installed; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.98` published. |
 | 2026-05-10 | Released P090 / v9.97; added context-load owner as the 47th runtime rule; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.97` published. |
 | 2026-05-10 | Released P089 / v9.96 governed design sharding compact-index doctrine; updated design-sharding owner chains, synchronized master records, installed 46 active runtime rules, verified 46/46 source/runtime parity plus body sufficiency, pushed `master`, and published GitHub release `v9.96`. |

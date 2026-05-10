@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.73
+> **Current Version:** 1.74
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.33
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P091 / v9.99 governed document God-file prevention and repair in progress
+> **Status:** P091 / v9.99 governed document God-file prevention and repair released
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,12 +23,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P091:** [phase-091-governed-document-god-file-prevention.md](phase-091-governed-document-god-file-prevention.md)
-  - Adds governed document God-file prevention and repair across active design, changelog, TODO, phase, patch, SUMMARY, and README surfaces.
-  - Output: document owner chains define file-level capacity gates; active runtime count remains 47 unless an explicit later gate adds a rule.
-  - Gate: source sync, 47/47 runtime parity/body sufficiency, density/God-file review, push, and release `v9.99` verified.
+No active phase is selected after the P091 / v9.99 closeout.
 
 ### Recently Completed
+
+- **P091:** [phase-091-governed-document-god-file-prevention.md](phase-091-governed-document-god-file-prevention.md)
+  - Added governed document God-file prevention and repair across active design, changelog, TODO, phase, patch, SUMMARY, and README surfaces.
+  - Output: document owner chains define file-level capacity gates; active runtime count remains 47.
+  - Gate: source sync, 47/47 runtime parity/body sufficiency, density/God-file review, push, and release `v9.99` verified.
 
 - **P090-01:** [phase-090-01-opportunistic-god-line-repair.md](phase-090-01-opportunistic-god-line-repair.md)
   - Refined the context-load owner so clear touched God-line candidates are repaired locally.
@@ -65,7 +67,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P091 — Governed Document God-File Prevention and Repair
 
-- **Status:** In Progress
+- **Status:** Completed
 - **Design References:**
   - [../design/design.md](../design/design.md) v9.99
   - [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md) v2.39
@@ -174,6 +176,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Recent Completed Release Context
 
+- P091 / v9.99 was completed, installed, pushed, and released with 47/47 runtime parity/body-sufficiency gates passed.
 - P090-01 / v9.98 was completed, installed, pushed, and released with 47/47 runtime parity/body-sufficiency gates passed.
 - P085-01 / v9.91 was completed, installed, pushed, and released with 45/45 runtime parity/body-sufficiency gates passed.
 - P087-01 / v9.92 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
@@ -195,7 +198,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - [x] Runtime install copies only README-listed active runtime rules for v9.99.
 - [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
 - [x] Touched active docs pass density and God-file-oriented review.
-- [ ] Git push and GitHub release `v9.99` are verified.
+- [x] Git push and GitHub release `v9.99` are verified.
 
 ---
 

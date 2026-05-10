@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P091
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Release:** v9.99
 > **Design References:**
 > - [../design/design.md](../design/design.md) v9.99
@@ -51,8 +51,8 @@ P091 is a new major phase because it adds a file-role capacity model across docu
 - [x] Install only README-listed active runtime rules.
 - [x] Verify 47/47 source/runtime parity and active runtime body sufficiency.
 - [x] Run density and God-file-oriented checks for touched active docs.
-- [ ] Push `master` and publish GitHub release `v9.99`.
-- [ ] Close P091 records only after release verification passes.
+- [x] Push `master` and publish GitHub release `v9.99`.
+- [x] Close P091 records only after release verification passes.
 
 ---
 
@@ -88,4 +88,4 @@ If P091 is reversed:
 
 ## Current Status
 
-P091 is open and in progress. Source docs, runtime install, 47/47 parity/body sufficiency, and density review are complete. Push and release gates remain pending.
+P091 is complete. Source docs, runtime install, 47/47 parity/body sufficiency, density review, `master` push, and GitHub release `v9.99` verification passed.
