@@ -1,7 +1,7 @@
 # Changelog - Document Design Control
 
 > **Parent Document:** [../document-design-control.md](../document-design-control.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-05-10 | **[Added governed design sharding compact-index doctrine](#version-111)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.10 | 2026-04-29 | **[Clarified design is not a completed-work done surface](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.9 | 2026-04-23 | **[Added doc-derived knowledge capture to the governed design layer](#version-19)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 1.8 | 2026-03-08 | **[Enforced active-state-only design bodies and support-artifact boundary](#version-18)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
@@ -30,6 +31,24 @@
 | | | Summary: Removed local version-table expectation from design docs | |
 | 1.0 | 2026-01-20 | **[Initial design-control standard](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Established baseline naming/location/structure standards for design docs | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Added governed design sharding compact-index doctrine
+
+**Date:** 2026-05-10
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated runtime `document-design-control.md` from v1.10 to v1.11.
+- Updated `design/document-design-control.design.md` from v1.10 to v1.11.
+- Added compact parent index and governed child shard semantics for large active design documents.
+- Clarified that `design/<slug>/*.design.md` child shards remain active target-state design surfaces by default, not `design/done`, changelog history, or archive material.
+- Added parent-index requirements for purpose, authority boundary, current target-state summary, shard map, and shard-selective read guidance.
+
+### Summary
+Document-design-control now supports large active designs through compact parent indexes and governed child shards while preserving design as active target-state authority.
 
 ---
 

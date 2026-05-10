@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.68
+> **Current Version:** 1.69
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P076-04 / v9.95 bounded main/subphase boundary refinement completed, installed, pushed, and released
+> **Status:** P089 / v9.96 governed design sharding compact-index release active; runtime install and 46/46 parity/body sufficiency verified, push and release gates pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,6 +23,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 | State | Phase | File | Goal | Output | Gate |
 |---|---|---|---|---|---|
+| active | P089 | [phase-089-governed-design-sharding-compact-index.md](phase-089-governed-design-sharding-compact-index.md) | Add governed design sharding doctrine so large active designs use compact parent indexes plus governed child shards | `document-design-control` v1.11, `project-documentation-standards` v2.38, `safe-file-reading` v1.6, `document-consistency` v1.10, v9.96 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.96` verified |
 | completed | P076-04 | [phase-076-04-main-subphase-boundary-refinement.md](phase-076-04-main-subphase-boundary-refinement.md) | Refine main/subphase selection so lineage remains evidence without trapping distinct work inside an old umbrella phase | `phase-implementation` v2.32, v9.95 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.95` verified |
 | completed | P086 | [phase-086-constructive-dissent-anti-over-agreement-refinement.md](phase-086-constructive-dissent-anti-over-agreement-refinement.md) | Add constructive dissent and proposal evaluation before agreement-shaped responses | `anti-sycophancy` v1.7, v9.94 governed release sync, active runtime count remains 46 | README/master records sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.94` verified |
 | completed | P088 | [phase-088-memory-root-index-relative-scope-compaction.md](phase-088-memory-root-index-relative-scope-compaction.md) | Compact root memory indexing without hiding active memory meaning | Memory-governance v1.7, root `MEMORY.md` `Scope` + `Memory base` format, v9.93 master sync | Source docs sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.93` verified |
@@ -31,6 +32,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Current Phase Detail
+
+### P089 — Governed Design Sharding Compact Index
+
+- **Status:** Active
+- **Design References:** [../design/design.md](../design/design.md) v9.96; [../design/document-design-control.design.md](../design/document-design-control.design.md) v1.11; [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md) v2.38; [../design/safe-file-reading.design.md](../design/safe-file-reading.design.md) v1.6; [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.10
+- **Patch References:** [../patch/governed-design-sharding-compact-index.patch.md](../patch/governed-design-sharding-compact-index.patch.md)
+- **Expected Output:** governed design sharding doctrine is installed in the design/documentation/safe-reading/consistency owner chains; README, master design/changelog, TODO, phase, and patch records align to v9.96 / P089; active runtime count remains 46.
+- **Completion Gate:** source docs synchronized, runtime install copies only README-listed active runtime rules, 46/46 source/runtime parity and body sufficiency pass, `master` is pushed, and GitHub release `v9.96` is verified.
 
 ### P076-04 — Main/Subphase Boundary Refinement
 
@@ -91,15 +100,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - [x] Pre-rollover `phase/SUMMARY.md` snapshot exists.
 - [x] Active `phase/SUMMARY.md` references `phase/history/` and `phase/done/` surfaces.
 - [x] Active `TODO.md` references `todo/history/` and `todo/done/` surfaces.
-- [x] P076-04 phase and patch records exist and link to phase-implementation design truth.
-- [x] Phase-implementation runtime/design/changelog align at v2.32 for P076-04 source state.
-- [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.95 / P076-04 source state.
+- [x] P089 phase and patch records exist and link to governed design sharding design truth.
+- [x] Design-sharding owner chains align at `document-design-control` v1.11, `project-documentation-standards` v2.38, `safe-file-reading` v1.6, and `document-consistency` v1.10.
+- [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.96 / P089 source state.
 - [x] Runtime install arrays contain exactly 46 source-owned active runtime rule files.
 - [x] Source/runtime parity and active runtime body sufficiency pass for 46/46 files.
-- [x] Git push and GitHub release `v9.95` are verified.
+- [ ] Git push and GitHub release `v9.96` are verified.
 
 ---
 
 ## Rollback / Containment
 
-If P076-04 is reversed, narrow the bounded subphase-fit, same-domain-is-not-enough, phase-saturation, and umbrella-escape wording while preserving P076-02 lineage-first selection. Restore prior v9.94 release surfaces only through a governed rollback, reinstall the prior 46-file runtime set only under an explicit rollback gate, and do not delete phase, patch, history, `done/`, memory detail, unrelated runtime destination files, or observed-only extras as cleanup.
+If P089 is reversed, narrow compact-index, governed child-shard, index-first read, and parent-index-to-child-shard consistency wording while preserving the active design versus history/done boundary. Restore prior v9.95 release surfaces only through a governed rollback, reinstall the prior 46-file runtime set only under an explicit rollback gate, and do not delete child design shards, phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup.

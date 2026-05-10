@@ -1,7 +1,7 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-05-10 | **[Added sharded design reference consistency checks](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added parent-index-to-child-shard consistency, stale/orphan shard checks, and selected-shard evidence-scope boundaries for governed sharded active designs | |
 | 1.9 | 2026-05-06 | **[Added active runtime body-sufficiency parity checks](#version-19)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added cross-reference and parity guidance so active runtime no-drift claims must verify substantive root runtime bodies, not only metadata or hash equality | |
 | 1.8 | 2026-04-25 | **[Added source-owned/shared-destination runtime vocabulary](#version-18)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -27,6 +29,24 @@
 | | | Summary: Enforced visual verification standards from design | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-110"></a>
+## Version 1.10: Added sharded design reference consistency checks
+
+**Date:** 2026-05-10
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `document-consistency.md` from v1.9 to v1.10.
+- Updated `design/document-consistency.design.md` from v1.9 to v1.10.
+- Added governed design parent index and child shard reference roles.
+- Added checks for compact parent shard maps, child parent/scope alignment, orphan/stale shard risk, and conflicting shard authority.
+- Clarified that selected child-shard reads are scoped evidence and cannot support whole-design no-drift claims without sufficient coverage.
+
+### Summary
+Document-consistency now verifies sharded active design references across compact parent indexes and governed child shards while keeping selected-shard evidence bounded.
 
 ---
 

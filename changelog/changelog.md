@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.95
+> **Current Version:** 9.96
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.96 | 2026-05-10 | **[Added governed design sharding compact-index doctrine](#version-996)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.95 | 2026-05-09 | **[Added bounded main/subphase boundary refinement](#version-995)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.94 | 2026-05-08 | **[Added constructive dissent and anti-over-agreement refinement](#version-994)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.93 | 2026-05-08 | **[Added memory root-index relative scope compaction](#version-993)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -129,6 +130,27 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-996"></a>
+## Version 9.96: Added governed design sharding compact-index doctrine
+
+**Date:** 2026-05-10
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P089 as the governed design sharding compact-index refinement wave.
+- Updated `document-design-control.md`, `design/document-design-control.design.md`, and `changelog/document-design-control.changelog.md` to v1.11.
+- Updated `project-documentation-standards.md`, `design/project-documentation-standards.design.md`, and `changelog/project-documentation-standards.changelog.md` to v2.38.
+- Updated `safe-file-reading.md`, `design/safe-file-reading.design.md`, and `changelog/safe-file-reading.changelog.md` to v1.6.
+- Updated `document-consistency.md`, `design/document-consistency.design.md`, and `changelog/document-consistency.changelog.md` to v1.10.
+- Added compact parent design index plus governed active child-shard doctrine for `design/<slug>.design.md` and `design/<slug>/*.design.md` without introducing a default `design/done` model.
+- Added parent-index-first, shard-selective reading and parent-index-to-child-shard consistency checks for sharded active designs.
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.96 / P089 source state; installed the 46 README-listed active runtime rule files; verified source/runtime parity plus body sufficiency 46/46 with destination extras observed-only; `master` push and GitHub release remain pending until publish gates pass.
+
+### Summary
+P089 teaches RULES how to manage large active design documents as compact parent indexes with governed active child shards. The active source install set remains 46 files; runtime install plus source/runtime parity and body-sufficiency verification passed 46/46 with destination extras observed-only; push and release remain pending until publish gates pass.
 
 ---
 

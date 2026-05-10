@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.37
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 2.38
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 
 ---
 
@@ -33,6 +33,7 @@ This model must preserve one authority system while clearly separating:
 - `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
 - `changelog/done/` as inactive-by-default completed/older changelog history while active changelogs keep version authority and navigation
 - design as active blueprint/target-state authority with no default `design/done/` pattern
+- compact active design indexes and governed child design shards for large active design surfaces
 - design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
 - `/phase` as both the governed current execution structure and a bounded source of already-authored next planned structure that may guide continuity without silently activating unopened future work
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
@@ -51,7 +52,7 @@ This model must preserve one authority system while clearly separating:
 Applies to projects that keep governed documentation artifacts and support/reference materials in the same repository.
 
 This includes:
-- repository role boundaries across README, design, changelog, TODO, phase, and patch artifacts
+- repository role boundaries across README, design, governed design child shards, changelog, TODO, phase, and patch artifacts
 - startup artifact posture before meaningful governed work
 - README current-state release sync, including status cards, install arrays, active runtime count, latest refinement, current quality signals, and current safety/runtime notes
 - public onboarding/install guidance in README or adjacent install docs
@@ -82,6 +83,8 @@ Runtime rule role also requires body sufficiency: a root runtime rule listed for
 `design/*.design.md` documents hold active target-state guidance.
 Historical detail lives in changelog files, not in active design bodies.
 Design remains blueprint authority and does not use a default `design/done/` pattern.
+
+Large active designs may use a compact parent index at `design/<slug>.design.md` plus governed child shards under `design/<slug>/*.design.md`. The parent index stays the first current-state lookup surface and should preserve purpose, authority boundary, target-state summary, shard map, and shard-selective read guidance. Child shards remain active design truth by default, not completed history or archive content.
 
 ### 3.4 Changelog Role
 Each governed chain uses one authoritative active changelog.
@@ -168,7 +171,8 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 | Document | Required When | Purpose | Governance Role |
 |----------|---------------|---------|-----------------|
 | `README.md` | Always | Overview, onboarding, repository map | Overview only |
-| `design/*.design.md` | Design/specification needed | Active target-state guidance | Governed design layer |
+| `design/*.design.md` | Design/specification needed | Active target-state guidance or compact parent design index | Governed design layer |
+| `design/<slug>/*.design.md` | Large active design needs governed shards | Active child target-state design detail under a compact parent index | Governed design layer |
 | `changelog/*.changelog.md` | Chain history needed | Authoritative version history, current index, and navigation | Governed authority layer |
 | `changelog/done/*.changelog.md` | Older or completed detailed history should leave the active scan surface | Inactive-by-default history for audit/rollback/provenance/trace | Completed changelog history layer |
 | `TODO.md` | Work tracking needed | Durable repository/project execution tracking | Execution layer |
@@ -248,7 +252,7 @@ Not a default completed-history surface:
 - `design/done/` because design remains active blueprint and target-state authority
 
 Required guidance:
-- current-state scans start with active design, active changelog, `phase/SUMMARY.md`, active phase files, active patch files, `TODO.md`, and checked implementation state
+- current-state scans start with active design, compact parent design indexes when a design is sharded, active changelog, `phase/SUMMARY.md`, active phase files, active patch files, `TODO.md`, and checked implementation state
 - `done/` surfaces are inactive by default and should be opened only for history, audit, rollback, provenance, or trace reconstruction
 - files in `done/` are not junk and completed status is not deletion authorization
 - active surfaces must keep enough pointer/index context that completed history can be found when needed
@@ -342,6 +346,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` active phase files under `phase/`
 - [ ] Completed phase, patch, and changelog history uses `phase/done/`, `patch/done/`, and `changelog/done/` only as inactive-by-default history
 - [ ] No default `design/done/` pattern is introduced for governed blueprint docs
+- [ ] Sharded active designs keep compact parent indexes and governed child shards distinct from completed history surfaces
 - [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
 - [ ] Patch artifacts use `patch/<context>.patch.md`, `patch/done/<context>.patch.md`, or root `<context>.patch.md`
 - [ ] Patch artifacts stay self-identifying and comparison-oriented
@@ -360,6 +365,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 |--------|--------|
 | Required document coverage | 100% |
 | Version-reference correctness | 100% |
+| Compact design index and child-shard role clarity | High |
 | Active metadata session integrity | 100% |
 | Cross-link validity | 100% |
 | Phase-rule role clarity | 100% |

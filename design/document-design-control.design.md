@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.10
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
+> **Current Version:** 1.11
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 
 ---
 
 ## 1) Goal
 
-Define one deterministic structure for design documents that stays aligned with UDVC-1 governance, keeps active design state separate from historical records, preserves implementation-relevant knowledge extracted from external docs/specs when later work still depends on it, and keeps design as active blueprint authority rather than a completed-work `done/` surface.
+Define one deterministic structure for design documents that stays aligned with UDVC-1 governance, keeps active design state separate from historical records, supports compact active design indexes with governed child shards for large design surfaces, preserves implementation-relevant knowledge extracted from external docs/specs when later work still depends on it, and keeps design as active blueprint authority rather than a completed-work `done/` surface.
 
 ---
 
@@ -19,6 +19,7 @@ Define one deterministic structure for design documents that stays aligned with 
 Applies to:
 
 - `design/*.design.md`
+- `design/<slug>/*.design.md` governed child design shards when a compact parent index is needed
 - master design documents maintained in `design/`
 - design-to-changelog pair behavior
 - support-artifact boundaries when content should not behave like a governed design doc
@@ -32,6 +33,7 @@ Applies to:
 
 - Governed design documents use `<name>.design.md`.
 - Governed design documents live under `design/`.
+- Large governed designs may use a compact parent index at `design/<slug>.design.md` and governed child shards under `design/<slug>/*.design.md`.
 - Their authoritative changelog lives at `changelog/<name>.changelog.md` when the chain has a dedicated changelog.
 
 ### 3.2 Mandatory Metadata
@@ -65,6 +67,20 @@ Required guidance:
 - keep implementation-relevant target truth in active design files until superseded or removed from the active target state
 - move historical explanation to changelog surfaces instead of parking old blueprint state under `design/done/`
 - if a legacy design snapshot must be retained, label it as historical/reference-only and keep it outside active design authority
+
+### 3.3.2 Governed Design Sharding Rule
+
+A governed design may be sharded when the active design body is too large for safe repeated reading or when distinct target-state slices are clearer as separate child documents.
+
+Required structure:
+- `design/<slug>.design.md` remains the compact active parent index and authority gateway
+- `design/<slug>/*.design.md` contains governed active child design shards for coherent target-state slices
+- child shards remain active design truth by default, not `design/done`, changelog history, or archive material
+- parent index content must include purpose, authority boundary, current target-state summary, shard map, shard-selection/read guidance, and full-history navigation
+- child shards should identify their parent index/scope and avoid conflicting with sibling shards or the parent summary
+- broad shard review should start from the parent index and read only relevant shards unless an audit explicitly needs wider coverage
+
+This pattern is not daily-first TODO/phase rollover. It keeps active design truth in active design surfaces while reducing context load and improving targeted reads.
 
 ### 3.4 Navigator Rule
 
@@ -156,6 +172,7 @@ Governance documents use canonical `#version-xy` anchors for version navigation.
 - [ ] Design body is active-state only
 - [ ] Historical detail is delegated to changelog or `changelog/done/` when inactive history separation is needed
 - [ ] No default `design/done/` pattern is introduced for active blueprint governance
+- [ ] Large sharded designs keep a compact active parent index and governed active child shards with clear shard maps and read guidance
 - [ ] External-doc/spec-derived implementation truth is captured in design when later work still depends on it
 - [ ] Captured knowledge is normalized and implementation-relevant rather than copied source prose
 - [ ] Runtime rule references use `Design`, not `Based on`
@@ -169,12 +186,14 @@ Governance documents use canonical `#version-xy` anchors for version navigation.
 | Metric | Target |
 |--------|--------|
 | Active-state-only design-body compliance | 100% |
+| Compact design index and child-shard authority clarity | High |
 | Navigator compliance in paired design docs | 100% |
 | External-doc-derived implementation truth captured when material | High |
 | Ambiguous governed-looking support artifacts | 0 |
 | Broken design/changelog links | 0 |
 | Stale historical guidance inside active design bodies | 0 critical cases |
 | Default `design/done/` usage for governed blueprint docs | 0 critical cases |
+| Link-only parent index or hidden child-shard authority drift | 0 critical cases |
 
 ---
 

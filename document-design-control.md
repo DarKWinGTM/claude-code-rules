@@ -1,7 +1,7 @@
 # Document Design Control
 
-> **Current Version:** 1.10
-> **Design:** [design/document-design-control.design.md](design/document-design-control.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/document-design-control.design.md](design/document-design-control.design.md) v1.11
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-design-control.changelog.md](changelog/document-design-control.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Governed design documents should preserve the current implementation-relevant target-state truth, stay active blueprint authority rather than completed-work `done/` surfaces, and normalize implementation-relevant external-doc/spec/provider knowledge before or alongside continued multi-step work that depends on it.**
+**Core Principle: Governed design documents should preserve the current implementation-relevant target-state truth, stay active blueprint authority rather than completed-work `done/` surfaces, allow compact active design indexes with governed child shards when large designs need safe selective reading, and normalize implementation-relevant external-doc/spec/provider knowledge before or alongside continued multi-step work that depends on it.**
 
 ---
 
@@ -20,6 +20,17 @@ Governed design documents define current target behavior, contract, and implemen
 Active design bodies should describe what the system should be now or next target-state, not how every prior wave got there. If historical detail is still useful for audit, rollback, or provenance, keep it reachable through changelog governance rather than embedding it as active blueprint content.
 
 Historical explanation belongs in changelog surfaces, including `changelog/done/` when inactive history separation is needed. `design/` remains active blueprint authority and has no default `design/done`; active target truth stays in current design files until superseded or removed from target state. Retained legacy snapshots must be labeled historical/reference-only and kept outside active design authority.
+
+### Governed design sharding and compact indexes
+Large active design documents may use a compact parent index at `design/<slug>.design.md` with governed child shards under `design/<slug>/*.design.md` when one active design body becomes too large for safe repeated reading.
+
+Required guidance:
+- the parent file remains the active design index and authority gateway, not a placeholder or link-only router
+- child shards remain active target-state design surfaces by default, not inactive history, `done`, archive, or changelog substitutes
+- the parent index should preserve purpose, authority, current target-state summary, shard map, read path, and enough context to choose relevant shards without broad raw absorption
+- each child shard should identify its parent/index scope, own one coherent target-state slice, and avoid duplicating or conflicting with sibling shard authority
+- broad shard audits should use shard maps, targeted reads, and worker filtering when context-heavy
+- retiring or superseding shard content requires governed design/changelog alignment rather than quiet file removal or history reclassification
 
 ### Doc-derived knowledge capture
 When external docs, API specs, provider references, or comparable authorities materially constrain implementation, normalize the extracted implementation truth into governed design before or alongside multi-step work that relies on it. Capture requirements, not copied prose, and do not rely on transient reading memory for contract-critical requirements.
@@ -41,6 +52,7 @@ When a paired changelog exists, design navigation is limited to `Full history`; 
 
 - [ ] Governed design naming is used only for true governed design documents, with complete metadata and resolving links.
 - [ ] Design body is active-state only; historical detail goes to changelog/`changelog/done`, not default `design/done`.
+- [ ] Sharded designs keep a compact active parent index and governed active child shards with clear shard maps and read paths.
 - [ ] External-doc/spec-derived implementation truth is normalized into design when later work depends on it.
 - [ ] Rule/design/changelog versions align where applicable.
 - [ ] Support-only artifacts are not left in ambiguous governed-looking design form.
@@ -52,6 +64,7 @@ When a paired changelog exists, design navigation is limited to `Full history`; 
 | Metric | Target |
 |---|---|
 | Active-state design body, navigator, and version alignment | 100% |
+| Compact design index and child-shard authority clarity | High |
 | External-doc-derived implementation truth captured when material | High |
 | Ambiguous governed-looking support artifacts or broken links | 0 |
 | Stale history or default `design/done` usage in active blueprint docs | 0 critical cases |

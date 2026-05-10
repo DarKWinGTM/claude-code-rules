@@ -1,7 +1,7 @@
 # Safe File Reading Guide
 
-> **Current Version:** 1.5
-> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.6
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/safe-file-reading.changelog.md](changelog/safe-file-reading.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Read files in a bounded, purpose-aware way that preserves session responsiveness, avoids terminal/output flooding, verifies paths before factual claims, uses partial reads or searches for large or risky files, and treats oversized active governance entrypoints or autocompact thrash as rollover-maintenance signals.**
+**Core Principle: Read files in a bounded, purpose-aware way that preserves session responsiveness, avoids terminal/output flooding, verifies paths before factual claims, uses partial reads or searches for large or risky files, treats oversized active governance entrypoints or autocompact thrash as rollover-maintenance signals, and reads sharded active designs through compact parent indexes before child shards.**
 
 This rule owns file-reading safety and output-size control. It does not replace no-variable-guessing, evidence thresholds, or the dedicated Read tool preference.
 
@@ -47,7 +47,18 @@ Required guidance:
 - use worker routing for broad multi-file searches or context-heavy sweeps when appropriate
 - do not treat a small excerpt as proof about the entire file unless the checked scope is sufficient
 
-### 4) Oversized governance entrypoints
+### 4) Sharded active design reading
+
+When a governed design uses `design/<slug>.design.md` plus `design/<slug>/*.design.md`, start from the compact parent index and select only the child shards needed for the active question.
+
+Required guidance:
+- read the parent index first to understand purpose, authority boundary, target-state summary, shard map, and shard-selection guidance
+- read child shards selectively by target-state slice instead of absorbing the whole shard directory by default
+- use worker filtering for broad shard audits, stale-shard checks, or multi-shard consistency sweeps
+- report checked shard scope when using selected shards as evidence
+- do not treat child design shards as `history/`, `done/`, archive, or rollover surfaces by default; they remain active design truth unless governance says otherwise
+
+### 5) Oversized governance entrypoints
 
 If active governance entrypoints such as `TODO.md` or `phase/SUMMARY.md` exceed practical read limits, trigger bounded inspection and rollover maintenance instead of repeatedly reading the same oversized active file.
 
@@ -57,7 +68,7 @@ Required guidance:
 - after rollover, start active reads at the compact entrypoint and follow history/done references only when needed
 - do not treat the pre-rollover snapshot as active current context unless audit/rollback/provenance requires it
 
-### 5) Safe fallback patterns
+### 6) Safe fallback patterns
 
 When a command-line read is unavoidable, use deterministic caps such as line and character limits. Avoid `cat`/unbounded output for large or unknown files.
 
@@ -81,6 +92,8 @@ Do not preserve exact shell snippets as reusable defaults when the dedicated too
 |---|---|---|
 | Small normal source/doc | Low | Use Read directly |
 | Large source/doc | Medium | Use Read with offset/limit |
+| Sharded active design parent index | Low/Medium | Read compact parent index first and select relevant child shards |
+| Sharded active design child shard set | Medium/High | Read shard map first, then targeted shards; use worker filtering for broad audits |
 | Oversized `TODO.md` / `phase/SUMMARY.md` | High | Bounded read for current state, then rollover/compact active entrypoint |
 | Minified/bundled/generated | High | Preview/search only |
 | Logs/build outputs | High | Tail/search/filter; consider worker review |
@@ -98,6 +111,8 @@ Avoid:
 - repeating failed oversized reads without narrowing scope
 - leaving oversized active governance entrypoints untouched after read failures or autocompact thrash identify them as context-bloat sources
 - reading broad file sets into leader context when a worker lane should filter them
+- reading every child shard of a sharded active design before checking the compact parent index
+- treating sharded active design child docs as history, `done`, archive, or rollover surfaces by default
 - presenting local path/file facts without checked scope
 
 Better behavior: read with purpose, cap output, search targeted content, and disclose the checked scope.
@@ -110,6 +125,7 @@ Better behavior: read with purpose, cap output, search targeted content, and dis
 - [ ] Large or risky files used bounded reads/searches.
 - [ ] Checked scope was clear when reporting file facts or non-findings.
 - [ ] Broad reads used worker routing when context-heavy.
+- [ ] Sharded active designs started at compact parent index and used shard-selective reads.
 - [ ] Oversized active governance entrypoints triggered rollover/compaction review instead of repeated full reads.
 - [ ] No unbounded terminal/file output was introduced.
 
@@ -123,6 +139,7 @@ Better behavior: read with purpose, cap output, search targeted content, and dis
 | Unbounded reads of risky files | Low |
 | Read-before-reference discipline | High |
 | Scoped non-finding clarity | High |
+| Sharded design read selectivity | High |
 | Dedicated tool preference | High |
 
 ---
@@ -134,7 +151,8 @@ Related rules:
 - [no-variable-guessing.md](no-variable-guessing.md) - verifies paths, symbols, config, and scoped non-findings
 - [evidence-grounded-burden-of-proof.md](evidence-grounded-burden-of-proof.md) - defines claim strength from partial reads
 - [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - routes broad read/search work to worker lanes when appropriate
-- [document-consistency.md](document-consistency.md) - keeps references and source/destination roles aligned
+- [document-design-control.md](document-design-control.md) - owns compact parent design index and governed child shard semantics
+- [document-consistency.md](document-consistency.md) - keeps references, shard maps, and source/destination roles aligned
 - [governed-document-rollover-control.md](governed-document-rollover-control.md) - owns daily-first rollover when active governance entrypoints become too large to read safely
 
 ---

@@ -1,7 +1,7 @@
 # Changelog - Safe File Reading
 
 > **Parent Document:** [../safe-file-reading.md](../safe-file-reading.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-05-10 | **[Added index-first sharded design read path](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
+| | | Summary: Added parent-index-first, shard-selective reading guidance for sharded active governed designs without treating child shards as history/done rollover surfaces. | |
 | 1.5 | 2026-05-08 | **[Added oversized governance entrypoint rollover trigger](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Treated oversized `TODO.md` and `phase/SUMMARY.md` reads, read failures, and autocompact thrash as rollover-maintenance signals instead of repeated full-read targets. | |
 | 1.4 | 2026-05-06 | **[Materialized active runtime body and closed metadata-only stub drift](#version-14)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -25,7 +27,21 @@
 
 ---
 
-<a id="version-14"></a>
+<a id="version-16"></a>
+## Version 1.6: Added index-first sharded design read path
+
+**Date:** 2026-05-10
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated runtime `safe-file-reading.md` from v1.5 to v1.6.
+- Updated `design/safe-file-reading.design.md` from v1.5 to v1.6.
+- Added index-first reading guidance for governed sharded active designs using `design/<slug>.design.md` and `design/<slug>/*.design.md`.
+- Required shard-selective reads and checked shard-scope reporting before broad design-wide claims.
+- Clarified that sharded design child documents remain active design truth by default and are not TODO/phase rollover, `history/`, `done`, or archive surfaces.
+
+### Summary
+Safe-file-reading now starts large sharded active design review from the compact parent index and opens only relevant child shards unless a broad audit explicitly needs worker-filtered coverage.
 
 ---
 
@@ -41,6 +57,7 @@
 ### Summary
 Treated oversized `TODO.md` and `phase/SUMMARY.md` reads, read failures, and autocompact thrash as rollover-maintenance signals instead of repeated full-read targets.
 
+<a id="version-14"></a>
 ## Version 1.4: Materialized active runtime body and closed metadata-only stub drift
 
 **Date:** 2026-05-06

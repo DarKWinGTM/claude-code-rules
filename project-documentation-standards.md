@@ -1,17 +1,18 @@
 # Project Documentation Standards
-> **Current Version:** 2.37
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.37
+> **Current Version:** 2.38
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.38
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: Use one deterministic documentation baseline across README, design, body-sufficient runtime rules, changelog, compact active TODO/phase entrypoints, daily-first history/done rollover surfaces, `/patch`, completed history surfaces, and non-governed helper/support or extension-package artifacts; resolve startup posture before governed work drifts; declare patch participation in live phase when patch is in scope; keep public onboarding/install guidance portable.**
+**Core Principle: Use one deterministic documentation baseline across README, compact active design indexes with governed design shards, body-sufficient runtime rules, changelog, compact active TODO/phase entrypoints, daily-first history/done rollover surfaces, `/patch`, completed history surfaces, and non-governed helper/support or extension-package artifacts; resolve startup posture before governed work drifts; declare patch participation in live phase when patch is in scope; keep public onboarding/install guidance portable.**
 ---
 ## Required Document Set
 | Document | Required when | Purpose | Owner |
 |---|---|---|---|
 | `README.md` | always | overview/onboarding | standard practice |
-| `design/*.design.md` | design/spec required | active target behavior/contract | `document-design-control` |
+| `design/*.design.md` | design/spec required | active target behavior/contract or compact parent design index | `document-design-control` |
+| `design/<slug>/*.design.md` | large active design needs governed shards | active child target-state design detail under a compact parent index | `document-design-control` |
 | `changelog/*.changelog.md` | version trace required | active version authority, current index, and navigation | `document-changelog-control` |
 | `changelog/done/*.changelog.md` | completed/older history should leave active scans | inactive history for audit/rollback/provenance/trace | `document-changelog-control` |
 | `TODO.md` | tracking required | compact durable current execution index | `todo-standards` |
@@ -36,7 +37,7 @@
 ## Role Boundaries
 - Changelog owns current version/history authority; `changelog/done/` is inactive older/completed history, and changelog is not phase-definition storage.
 - README is the current front page, not the history book. Release sync updates current-state sections such as overview/status cards, install arrays, active runtime count, latest refinement, current quality signals, and current safety/runtime notes instead of dumping version timelines into the README body.
-- Design owns active target-state truth and has no default `design/done/` surface.
+- Design owns active target-state truth and has no default `design/done/` surface. Large active designs may use a compact parent index at `design/<slug>.design.md` with governed child shards under `design/<slug>/*.design.md`; those shards remain active design truth by default, not completed history.
 - Phase planning belongs to `phase-implementation.md`; `phase/SUMMARY.md` stays the compact live phase roadmap/index, active `phase/phase-NNN-*.md` / `phase/phase-NNN-NN-*.md` files hold current execution detail, `phase/history/` carries referenced daily movement, and `phase/done/` is inactive completed history. `phase/SUMMARY.md` preserves phase-family lineage and must keep history/done pointers when rollover moves detail out of active scans.
 - Patch artifacts are self-identifying before/after review artifacts outside live phase planning; `patch/done/` is inactive completed patch history, and live phase execution must not be stored in patch artifacts. Design and patch artifacts need not point back to phase.
 - `TODO.md` is the compact durable current-state tracking entrypoint; `todo/history/` and `todo/done/` are referenced history/detail surfaces, not replacements for the active index. Claude Code's built-in task list is live in-session tracking and does not replace durable/governed surfaces or define phases. For non-trivial phase-backed work, built-in task entries should visibly point to the active or clearly implied phase context without becoming phase authority.
@@ -49,7 +50,7 @@
 Completed surfaces reduce active scan bloat without deleting governed history.
 - Allowed inactive or referenced history: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/`.
 - Not default: `design/done/`; design remains active blueprint/target-state authority.
-- Current-state scans start with active design/changelog, compact `TODO.md`, compact `phase/SUMMARY.md`, active phase/patch files, and checked implementation state; history/done shards are opened only through active references or audit/rollback/provenance need.
+- Current-state scans start with active design/changelog, compact parent design indexes when a design is sharded, compact `TODO.md`, compact `phase/SUMMARY.md`, active phase/patch files, and checked implementation state; history/done shards are opened only through active references or audit/rollback/provenance need.
 - Open `done/` or archive surfaces only for history, audit, rollback, provenance, or trace reconstruction.
 - Completed status is not junk classification or deletion authorization, and active surfaces must keep enough pointers for history to be found.
 - Do not let `history/` or `done/` history replace active summary/index surfaces: `TODO.md`, `phase/SUMMARY.md`, active changelog index/current version, and active patch/review artifacts remain the first current-state lookup layer.
@@ -108,7 +109,7 @@ Required guidance:
 - [ ] Startup posture is resolved; required governed companions and live task tracking are not downgraded.
 - [ ] Phase-backed live task entries visibly point to active or implied phase context without becoming phase authority.
 - [ ] Governed coding phases keep material Development Verification / TestKit Coverage aligned across phase, TODO, changelog, and closeout surfaces.
-- [ ] Active design/changelog, compact TODO/phase entrypoints, phase, patch, daily history, done detail, and completed-history boundaries remain distinct.
+- [ ] Active design/changelog, compact design indexes and governed design shards, compact TODO/phase entrypoints, phase, patch, daily history, done detail, and completed-history boundaries remain distinct.
 - [ ] Phase lineage and phase file selection defer to `phase-implementation.md`.
 - [ ] Patch surfaces stay self-identifying, before/after-oriented, and outside live phase planning.
 - [ ] README release sync updates current-state sections and does not become a changelog timeline dump.
@@ -121,6 +122,7 @@ Required guidance:
 | Metric | Target |
 |---|---|
 | Document coverage, metadata, version, and links | 100% |
+| Compact design index and child-shard role clarity | High |
 | Design/changelog/phase/patch/TODO role boundaries | 100% |
 | Completed-history inactive-surface boundary | 100% |
 | Startup posture and phase-to-patch linkage when in scope | 100% |

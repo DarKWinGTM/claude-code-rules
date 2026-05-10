@@ -1,7 +1,7 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.37
+> **Current Version:** 2.38
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.38 | 2026-05-10 | **[Added governed design shard role model](#version-238)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.37 | 2026-05-08 | **[Added daily-first governance rollover documentation surfaces](#version-237)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added `todo/history/`, `todo/done/`, and `phase/history/` to the repository role model while keeping `TODO.md` and `phase/SUMMARY.md` as compact active entrypoints with reachable history/done links. | |
 | 2.36 | 2026-05-07 | **[Added README current-state release sync discipline](#version-236)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -52,6 +53,24 @@
 | | | Summary: Replaced the lingering `patches/` teaching model with an explicit repository-wide patch placement rule using `patch/<context>.patch.md` or root `<context>.patch.md`, while clarifying that patch means a self-identifying before/after artifact | |
 | 2.5 | 2026-03-15 | **[Added directory-as-namespace naming guidance for governed document workspaces](#version-25)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined project-documentation-standards so namespaced workspaces may use role-based filenames like `design.md`, `changelog.md`, `patch.md`, and `TODO.md` when the parent path already supplies stable context | |
+
+---
+
+<a id="version-238"></a>
+## Version 2.38: Added governed design shard role model
+
+**Date:** 2026-05-10
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Updated `project-documentation-standards.md` from v2.37 to v2.38.
+- Updated `design/project-documentation-standards.design.md` from v2.37 to v2.38.
+- Added `design/<slug>/*.design.md` as governed active child design shards in the repository role model.
+- Clarified that compact parent design indexes remain the first current-state lookup surface for sharded active designs.
+- Preserved the no-default-`design/done` boundary and kept design shards distinct from completed-history surfaces.
+
+### Summary
+Project-documentation-standards now models large active design surfaces as compact parent indexes plus governed child shards, keeping design detail active while reducing broad-read pressure.
 
 ---
 

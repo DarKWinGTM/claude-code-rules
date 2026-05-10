@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.5
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 1.6
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 
 ---
 
@@ -16,8 +16,9 @@ Set standards for secure file reading to:
 
 - Prevents terminal flooding from large output
 - Make the session work smoothly
-- Use the UOLF framework to cover all reading methods.
-- Always plan before reading.
+- Use the UOLF framework to cover all reading methods
+- Always plan before reading
+- Start sharded active design reads from compact parent indexes before opening child shards
 
 ### 1.2 Problem Statement
 
@@ -27,6 +28,7 @@ Set standards for secure file reading to:
 | Long lines | 500KB+ on 1 line | Character limit |
 | Minified files | Entire file = 1 line | head -c 3000 |
 | Base64 content | Massive output | Character limit |
+| Sharded active design | Reading all child shards refills context | Parent-index-first, shard-selective read path |
 
 ### 1.3 Solution
 
@@ -36,6 +38,7 @@ Create a UOLF (Universal Output Limit Framework) that:
 2. Covers all reading methods (CLI, Tools, Languages)
 3. Use Double Limit Pattern
 4. Plan before reading (Evaluate → Plan → Read)
+5. Use compact design indexes to select only relevant governed child shards
 
 ---
 
@@ -116,6 +119,26 @@ Create a UOLF (Universal Output Limit Framework) that:
 | `*.json` (unknown) | `head -c 3000` |
 | Base64 content | `head -c 500` |
 
+### 4.3 By Sharded Active Design Structure
+
+When a governed design is split into a compact parent index and child shards, the target read behavior is index-first and shard-selective.
+
+```text
+Read compact parent design index
+  ↓
+Identify relevant target-state shard(s)
+  ↓
+Read only selected child shard(s)
+  ↓
+Report checked shard scope before making design-wide claims
+```
+
+Required guidance:
+- start from `design/<slug>.design.md` instead of opening `design/<slug>/*.design.md` broadly
+- read child shards only when the parent index or active question selects them
+- use worker filtering for broad shard-map audits, stale child-shard checks, or multi-shard consistency sweeps
+- do not treat child shards as `history/`, `done`, or archive surfaces by default
+
 ---
 
 ## 5. Implementation Flow
@@ -146,6 +169,7 @@ Execute read with chosen method
 | Minified files (few lines, large) | `head -c 3000` |
 | Searching specific content | `grep \| head -100 \| head -c 5000` |
 | Log files | `tail -100 \| head -c 5000` |
+| Sharded active design | Read compact parent index, then selected child shard(s) |
 | Unknown files | `head -c 2000` (preview first) |
 
 ---
@@ -157,6 +181,7 @@ Execute read with chosen method
 | Output Limit | ≤ 5000 chars | Every read operation |
 | Size Check | Default | Before reading large files |
 | Character Limit | 100% | Always applied |
+| Sharded Design Selectivity | High | Parent index read before selected shard reads |
 | Session Responsiveness | Maintained | No flooding |
 
 ---
@@ -183,6 +208,8 @@ grep -n "search_term" <file> | head -100 | head -c 5000
 |------|-------------|
 | safe-terminal-output | Command output limits |
 | no-variable-guessing | Verify file exists first |
+| document-design-control | Compact parent design index and governed child shard semantics |
+| document-consistency | Parent-index-to-child-shard reference verification |
 
 ### 8.2 Synergy with safe-terminal-output
 
@@ -226,10 +253,14 @@ RISKY FILES (use head -c 3000)
 
 ---
 
-> Full history: [../changelog/safe-file-reading.changelog.md](../changelog/safe-file-reading.changelog.md)
+### Sharded Active Design Read Target
 
----
+Large active designs that use `design/<slug>.design.md` plus `design/<slug>/*.design.md` are not rollover files. The target behavior is to read the compact parent index first, then selected governed child shards only when the active question needs them.
 
 ### Governance Rollover Read Target
 
 Oversized active governance entrypoints are not normal files to re-read in full. If `TODO.md` or `phase/SUMMARY.md` causes read failures, repeated large context absorption, or autocompact thrash, the target behavior is bounded current-state extraction followed by rollover into referenced history/done shards.
+
+---
+
+> Full history: [../changelog/safe-file-reading.changelog.md](../changelog/safe-file-reading.changelog.md)
