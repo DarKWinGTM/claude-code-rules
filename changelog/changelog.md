@@ -147,7 +147,7 @@
 - Raised the README-listed source-owned active runtime set from 46 to 47 files.
 - Added lifecycle doctrine for leader-context protection, worker-first broad raw evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, density-aware verification, and compact/thrash repair signals.
 - Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.97 / P090 source state.
-- Runtime install and 47/47 parity/body sufficiency passed during P090 execution; `master` push and GitHub release verification remain pending until closeout.
+- Runtime install, 47/47 parity/body sufficiency, `master` push, and GitHub release verification passed during P090 closeout.
 
 ### Summary
 P090 adds a first-class owner for context-load and document-density strategy. It treats reading, writing, worker routing, and compact/thrash repair as one lifecycle so broad raw evidence can be filtered before leader absorption and active docs stay cheaper to read, edit, diff, and verify.

@@ -3,7 +3,7 @@
 > **Current Version:** 1.70
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P090 / v9.97 context-load and document-density control active; runtime install and 47/47 verification passed, push/release pending
+> **Status:** P090 / v9.97 context-load and document-density control completed, installed, pushed, and released
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 | State | Phase | File | Goal | Output | Gate |
 |---|---|---|---|---|---|
-| active | P090 | [phase-090-context-load-and-document-density-control.md](phase-090-context-load-and-document-density-control.md) | Add context-load and document-density control for worker-filtered broad evidence and density-safe active docs | `context-load-and-document-density-control` v1.0; active runtime count 47 | Source sync, runtime install, 47/47 checks, and density check passed; push and release pending |
+| completed | P090 | [phase-090-context-load-and-document-density-control.md](phase-090-context-load-and-document-density-control.md) | Add context-load and document-density control for worker-filtered broad evidence and density-safe active docs | `context-load-and-document-density-control` v1.0; active runtime count 47 | Source sync, runtime install, 47/47 checks, density check, `master` push, and release `v9.97` verified |
 | completed | P089 | [phase-089-governed-design-sharding-compact-index.md](phase-089-governed-design-sharding-compact-index.md) | Add governed design sharding doctrine so large active designs use compact parent indexes plus governed child shards | `document-design-control` v1.11, `project-documentation-standards` v2.38, `safe-file-reading` v1.6, `document-consistency` v1.10, v9.96 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.96` verified |
 | completed | P076-04 | [phase-076-04-main-subphase-boundary-refinement.md](phase-076-04-main-subphase-boundary-refinement.md) | Refine main/subphase selection so lineage remains evidence without trapping distinct work inside an old umbrella phase | `phase-implementation` v2.32, v9.95 governed release sync, active runtime count remains 46 | README/master records source sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.95` verified |
 | completed | P086 | [phase-086-constructive-dissent-anti-over-agreement-refinement.md](phase-086-constructive-dissent-anti-over-agreement-refinement.md) | Add constructive dissent and proposal evaluation before agreement-shaped responses | `anti-sycophancy` v1.7, v9.94 governed release sync, active runtime count remains 46 | README/master records sync, runtime install, 46/46 parity/body sufficiency, `master` push, and release `v9.94` verified |
@@ -36,7 +36,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P090 — Context Load and Document Density Control
 
-- **Status:** Active
+- **Status:** Completed
 - **Design References:**
   - [../design/design.md](../design/design.md) v9.97
   - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.0
@@ -44,7 +44,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - [../design/safe-file-reading.design.md](../design/safe-file-reading.design.md) v1.6
   - [../design/governed-document-rollover-control.design.md](../design/governed-document-rollover-control.design.md) v1.0
 - **Patch References:** [../patch/context-load-and-document-density-control.patch.md](../patch/context-load-and-document-density-control.patch.md)
-- **Expected Output:** `context-load-and-document-density-control` runtime/design/changelog v1.0 is installed as a new active runtime owner; README, master design/changelog, TODO, phase, and patch records align to v9.97 / P090; active runtime count target is 47.
+- **Expected Output:** `context-load-and-document-density-control` runtime/design/changelog v1.0 is installed as a new active runtime owner; README, master design/changelog, TODO, phase, and patch records align to v9.97 / P090; active runtime count is 47.
 - **Completion Gate:** source docs synchronized, runtime install copies only README-listed active runtime rules, 47/47 source/runtime parity and body sufficiency pass, touched active docs pass density review, `master` is pushed, and GitHub release `v9.97` is verified.
 
 ### P089 — Governed Design Sharding Compact Index
@@ -106,7 +106,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - P086 / v9.94 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
 - P076-04 / v9.95 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
 - P089 / v9.96 was completed, installed, pushed, and released with 46/46 runtime parity/body-sufficiency gates passed.
-- P090 / v9.97 is active with source sync, runtime install, 47/47 parity/body sufficiency, and density checks passed; push and release verification remain pending.
+- P090 / v9.97 was completed, installed, pushed, and released with 47/47 runtime parity/body-sufficiency gates passed.
 - Earlier phase-map and extraction tables through P085 remain preserved in the pre-rollover snapshot instead of this active summary.
 
 ---
@@ -122,7 +122,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
 - [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
 - [x] Touched active docs pass density-oriented review.
-- [ ] Git push and GitHub release `v9.97` are verified.
+- [x] Git push and GitHub release `v9.97` are verified.
 
 ---
 

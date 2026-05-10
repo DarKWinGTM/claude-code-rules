@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v9.97
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -145,11 +145,15 @@ Planned verification:
 - [x] Source/runtime parity passes for 47/47 active files.
 - [x] Active runtime body sufficiency passes for 47/47 active files.
 - [x] Touched active docs are checked for obvious God-line or density regression.
-- [ ] `master` push and GitHub release `v9.97` are verified.
+- [x] `master` push and GitHub release `v9.97` are verified.
 
 ---
 
-## 5) Rollback Approach
+## 5) Closeout Summary
+
+P090 completed the context-load and document-density control release. Source records were synchronized, the 47-file runtime set was installed, parity/body-sufficiency and density checks passed, `master` was pushed, and GitHub release `v9.97` was verified.
+
+## 6) Rollback Approach
 
 If P090 overreaches or causes confusing behavior:
 - narrow the runtime rule wording while preserving the leader-context and density-lifecycle principles

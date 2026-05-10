@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 090
-> **Status:** In Progress
+> **Status:** Completed
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Design References:**
 > - [../design/design.md](../design/design.md)
@@ -153,7 +153,7 @@ Verification route:
 - [x] Source/runtime parity passes for 47 active runtime files.
 - [x] Active runtime body sufficiency passes for 47 active runtime files.
 - [x] Touched active docs pass a density-oriented check.
-- [ ] `master` push and GitHub release `v9.97` are verified.
+- [x] `master` push and GitHub release `v9.97` are verified.
 
 ---
 
@@ -193,6 +193,12 @@ Rollback:
 - Restore prior v9.96 master records only through governed rollback.
 - Reinstall the prior 46-file runtime set only under an explicit rollback gate.
 - Do not delete runtime destination extras or NodeClaw evidence files as cleanup.
+
+---
+
+## Closeout Summary
+
+P090 delivered a new active runtime owner for context-load and document-density control. It also synchronized v9.97 records, installed 47 source-owned active runtime rules, verified 47/47 source/runtime parity and body sufficiency, passed density review, pushed `master`, and published GitHub release `v9.97`.
 
 ---
 

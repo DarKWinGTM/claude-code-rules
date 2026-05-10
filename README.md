@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v9.97</b><br><sub>In Progress</sub>
+  <b>v9.97</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
@@ -335,10 +335,10 @@ Please:
 - P087-01 daily-first governance rollover is released for v9.92: it adds `governed-document-rollover-control.md` as the 46th active source-owned runtime rule, compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints, preserves pre-rollover snapshots, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.92`.
 - P088 memory root-index relative compaction is released for v9.93: it updates `memory-governance-and-session-boundary.md` to v1.7, compacts active root `MEMORY.md` into `Scope` + `Memory base` sections with visible relative hooks, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.93`.
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94: it updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before agreement-shaped wording, keeps the active runtime count at 46, verifies source/runtime install parity plus body sufficiency 46/46 with destination extras observed-only, pushes `master`, and publishes GitHub release `v9.94`.
-- P090 context-load and document-density control is active for v9.97.
+- P090 context-load and document-density control is released as v9.97.
   - Adds `context-load-and-document-density-control.md` as the 47th source-owned active runtime rule.
   - Teaches leader-context protection, worker-first broad evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, and density-aware closeout.
-  - Runtime install plus 47/47 source/runtime parity and body sufficiency passed; `master` push and release `v9.97` verification remain pending.
+  - Runtime install, 47/47 source/runtime parity and body sufficiency, `master` push, and release `v9.97` verification are complete.
 - P089 governed design sharding compact-index doctrine is released for v9.96: it updates `document-design-control.md` to v1.11, `project-documentation-standards.md` to v2.38, `safe-file-reading.md` to v1.6, and `document-consistency.md` to v1.10 so large active designs can use compact parent indexes plus governed active child shards without turning those shards into history/done rollover surfaces; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.96` is published.
 - P076-04 main/subphase boundary refinement is released for v9.95: it updates `phase-implementation.md` to v2.32 so lineage remains evidence rather than a permanent container, subphases preserve bounded goal/output/gate meaning, same-domain or historical-family evidence is not enough by itself, and saturated umbrella families can open clearer main phases when output/gate/release/rollback boundaries diverge; active runtime count remains 46, runtime install plus source/runtime parity and body sufficiency passed 46/46 with destination extras observed-only, `master` was pushed, and GitHub release `v9.95` is published.
 - Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
@@ -439,7 +439,7 @@ Please:
 
 **📊 Active Runtime Rules: 47**
 
-Current refinement target: P090 adds context-load and document-density control. The active source install set is 47 files after adding `context-load-and-document-density-control.md`; runtime install, source/runtime parity, and body sufficiency have passed, with push and release verification still pending for v9.97.
+Current release: P090 adds context-load and document-density control. The active source install set is 47 files after adding `context-load-and-document-density-control.md`; runtime install, source/runtime parity, body sufficiency, `master` push, and GitHub release `v9.97` verification are complete.
 </div>
 
 ---
@@ -1156,7 +1156,7 @@ Result: ✅ Verified from actual files
 | Signal | Current README Meaning | Impact |
 |--------|-------------------------|--------|
 | Active runtime scope | 47 source-owned root rule files | Keeps install scope explicit |
-| Runtime install boundary | Current install gates stay bounded to the 47 source-owned active runtime files; P090 has 47/47 source/runtime parity and body sufficiency with destination extras observed-only, while push and release verification remain pending before release closeout | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
+| Runtime install boundary | Current install gates stay bounded to the 47 source-owned active runtime files; P090 has 47/47 source/runtime parity and body sufficiency with destination extras observed-only, and GitHub release `v9.97` is verified | Avoids overclaiming source/runtime scope, prevents metadata-only active runtime roots from passing parity, and protects other-owner runtime files |
 | Evidence discipline | Practical proof-seeking, fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and ordinary-evidence-vs-binding-constraint boundaries stay separate | Reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk |
 | Phase execution | Clear governed design can drive phase posture/order/tasks, phase-shaped follow-up work checks lineage before choosing current phase, subphase, new major, or ask-now posture, non-trivial phase-backed task entries visibly carry phase context, roadmap/phase-matrix context can support next-phase recommendations at true closeout, goal/output/gate semantics can keep non-trivial phase work outcome-shaped, and material coding phases preserve Development Verification / TestKit Coverage when it affects exit criteria | Reduces retrospective phase backfill, new-major bias, generic phase-hidden live tasks, silent closeout dead-ends, command-only task drift, and edit-only coding closeout |
 | Completed/history surfaces | `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are referenced inactive surfaces by default; `design/done/` is not a default pattern | Reduces active scan bloat without deleting governed history |
