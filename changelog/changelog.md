@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.96
+> **Current Version:** 9.97
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.97 | 2026-05-10 | **[Added context-load and document-density control](#version-997)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.96 | 2026-05-10 | **[Added governed design sharding compact-index doctrine](#version-996)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.95 | 2026-05-09 | **[Added bounded main/subphase boundary refinement](#version-995)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.94 | 2026-05-08 | **[Added constructive dissent and anti-over-agreement refinement](#version-994)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -130,6 +131,26 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-997"></a>
+## Version 9.97: Added context-load and document-density control
+
+**Date:** 2026-05-10
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P090 as the context-load and document-density control wave.
+- Added `context-load-and-document-density-control.md` as a new active runtime rule at v1.0.
+- Added `design/context-load-and-document-density-control.design.md` and `changelog/context-load-and-document-density-control.changelog.md` as the companion owner chain.
+- Raised the README-listed source-owned active runtime set from 46 to 47 files.
+- Added lifecycle doctrine for leader-context protection, worker-first broad raw evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, density-aware verification, and compact/thrash repair signals.
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.97 / P090 source state.
+- Runtime install and 47/47 parity/body sufficiency passed during P090 execution; `master` push and GitHub release verification remain pending until closeout.
+
+### Summary
+P090 adds a first-class owner for context-load and document-density strategy. It treats reading, writing, worker routing, and compact/thrash repair as one lifecycle so broad raw evidence can be filtered before leader absorption and active docs stay cheaper to read, edit, diff, and verify.
 
 ---
 

@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-10
-> **Current Release Target:** none selected after v9.96 / P089 release
+> **Current Release Target:** P090 / v9.97 context-load and document-density control
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -25,7 +25,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- None currently.
+- [ ] P090 / v9.97 context-load and document-density control source sync, runtime install, 47/47 parity/body sufficiency, and density check are complete; push and release verification remain pending.
 
 ### Deferred / Not Selected
 
@@ -44,6 +44,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
+| 2026-05-10 | Opened P090 / v9.97 context-load and document-density control; source sync, runtime install, 47/47 parity/body sufficiency, and density check passed with push and release verification still pending. |
 | 2026-05-10 | Released P089 / v9.96 governed design sharding compact-index doctrine; updated design-sharding owner chains, synchronized master records, installed 46 active runtime rules, verified 46/46 source/runtime parity plus body sufficiency, pushed `master`, and published GitHub release `v9.96`. |
 | 2026-05-09 | Released P076-04 / v9.95 bounded main/subphase boundary refinement; updated `phase-implementation` to v2.32, installed the 46 active runtime rules, verified 46/46 source/runtime parity and body sufficiency, pushed `master`, and published GitHub release `v9.95`. |
 | 2026-05-08 | Released P086 / v9.94 constructive dissent and anti-over-agreement refinement; updated `anti-sycophancy` to v1.7 so user proposals are evaluated before agreement-shaped wording, installed the 46 active runtime rules, verified 46/46 source/runtime parity and body sufficiency, pushed `master`, and published GitHub release `v9.94`. |
