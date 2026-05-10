@@ -1,7 +1,7 @@
 # Document Design Control
 
-> **Current Version:** 1.11
-> **Design:** [design/document-design-control.design.md](design/document-design-control.design.md) v1.11
+> **Current Version:** 1.12
+> **Design:** [design/document-design-control.design.md](design/document-design-control.design.md) v1.12
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-design-control.changelog.md](changelog/document-design-control.changelog.md)
 
@@ -48,7 +48,19 @@ When a paired changelog exists, design navigation is limited to `Full history`; 
 
 ---
 
+### Design God-file prevention
+
+A design document becomes a God file when it stops being active target-state truth and absorbs changelog history, phase execution, TODO tracking, patch review, audit notes, rollback journals, or multiple unrelated design domains.
+
+Required guidance:
+- keep current implementation-relevant target state in design
+- shard large active target-state scope through a compact parent index and coherent child shards
+- move historical explanation to changelog governance instead of active design body
+- keep phase sequencing and patch before/after review in their owning surfaces
+- split unrelated design domains instead of expanding one parent index into an umbrella design dump
+
 ## Verification Checklist
+- [ ] Design files did not absorb changelog, phase, TODO, patch, or audit roles as active target-state content.
 
 - [ ] Governed design naming is used only for true governed design documents, with complete metadata and resolving links.
 - [ ] Design body is active-state only; historical detail goes to changelog/`changelog/done`, not default `design/done`.

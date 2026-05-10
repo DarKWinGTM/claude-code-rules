@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.26
+> **Current Version:** 2.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
@@ -19,6 +19,10 @@ This applies especially to phase-backed or staged work, where tasks should expos
 ### 3.4 Daily-First Rollover Surfaces
 
 `TODO.md` remains the current durable state file, not a growing archive. When active-scan bloat appears, old movement/detail is preserved in `todo/history/YYYY-MM-DD*.md` and `todo/done/<task-or-wave>.md`, while the main TODO restarts as a compact index with active tasks and explicit history/done references.
+
+## P091 Target-State Refinement: TODO Capacity Gate
+
+`TODO.md` should remain a compact current execution index. Daily movement, completed detail, phase execution, changelog history, and verification logs should not accumulate in the active TODO body when history/done references or owner surfaces fit better.
 
 ## 1) Goal
 

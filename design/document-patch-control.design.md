@@ -3,10 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 2.7
+> **Current Version:** 2.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
 
 ---
+
+## P091 Target-State Refinement: God Patch Prevention
+
+Patch artifacts should remain reviewable before/after change surfaces.
+
+When unrelated targets, change types, review boundaries, or rollback paths accumulate, split into self-identifying patch artifacts.
+
+Do not let one patch become a phase plan or release history dump.
 
 ## 1) Goal
 

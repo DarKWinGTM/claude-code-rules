@@ -1,12 +1,18 @@
 # Changelog - Context Load and Document Density Control
 
 > **Parent Document:** [../context-load-and-document-density-control.md](../context-load-and-document-density-control.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+## Version 1.2: Added governed document God-file prevention and repair routing
+
+- Added P091 governed document God-file prevention and repair semantics for this owner chain.
+- Preserved role-specific authority boundaries while adding the correct split, shard, rollover, or redistribution route.
+
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|

@@ -1,6 +1,6 @@
 # Document Consistency and Cross-Reference Validation
-> **Current Version:** 1.10
-> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.11
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-consistency.changelog.md](changelog/document-consistency.changelog.md)
 ---
@@ -33,6 +33,16 @@ Required guidance:
 ### Verification triggers
 Verify before asserting concrete references, cross-file sync/no-drift, rename/move/update impact, ambiguous references, mixed source/destination wording, parent-index-to-child-shard alignment, shard map completeness, orphan/stale shard status, conflicting shard authority, parity scope vs shared-destination ownership, active runtime body sufficiency, tool-path leakage into reusable source, or junk/disposal classification. If the checked scope is limited, report the non-finding as scoped rather than global absence.
 ---
+### God-file consistency checks
+
+Cross-document consistency includes checking that a sync did not move content into the wrong owner or overload one active file.
+
+Required guidance:
+- verify that current state, target-state design, version history, execution tracking, phase execution, patch review, and rollback detail remain in their owning surfaces
+- when a touched document is split, sharded, or rolled over, verify parent/index links and child/history/done references
+- include God Phase and God Patch split decisions in no-drift review when phase or patch files are touched
+- do not claim sync/no-drift if active docs became role-overloaded even though versions and links match
+
 ## Verification Flow
 ```text
 Create reference
@@ -68,6 +78,11 @@ Change-impact expectations:
 - claiming active runtime parity or no-drift checks root runtime body sufficiency as well as metadata, links, and hashes
 When classifying a new file as junk/disposable/non-governed/safe-to-remove, first scan master surfaces and dependent history; resolve shared-destination owner scope; keep classification unresolved if checked scope is incomplete; and never treat missing recognition or co-location as disposal proof.
 ---
+## Verification Checklist
+
+- [ ] No-drift claims include God-file role-boundary checks for touched active governance documents.
+- [ ] Split, shard, rollover, phase, and patch references remain reachable after God-file repair.
+
 ## Quality Metrics
 | Metric | Target |
 |---|---|

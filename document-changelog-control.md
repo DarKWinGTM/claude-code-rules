@@ -1,7 +1,7 @@
 # Document Changelog & Versions History Control
 
-> **Current Version:** 4.10
-> **Design:** [design/document-changelog-control.design.md](design/document-changelog-control.design.md) v4.10
+> **Current Version:** 4.11
+> **Design:** [design/document-changelog-control.design.md](design/document-changelog-control.design.md) v4.11
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-changelog-control.changelog.md](changelog/document-changelog-control.changelog.md)
 
@@ -23,7 +23,18 @@ Design documents remain active target-state truth. README remains the current-st
 
 ---
 
+### Changelog God-file prevention
+
+A changelog becomes a God file when current version authority turns into phase planning, design target-state storage, TODO tracking, release dashboarding, or detailed history that makes the active changelog hard to scan.
+
+Required guidance:
+- keep the active changelog as current version, index, and navigation authority
+- move older or bulky completed history into `changelog/done/` when active scans bloat
+- keep design target state in design, phase execution in phase, TODO tracking in TODO, and current front-page status in README
+- avoid appending release prose that duplicates active README, TODO, phase, or patch content
+
 ## Verification Checklist
+- [ ] Active changelog avoids God-file overload by keeping detailed completed history in reachable inactive history when needed.
 
 - [ ] Active changelog remains current version/index/navigation authority.
 - [ ] README current-state sync is not replaced by changelog timeline dumping.

@@ -1,6 +1,6 @@
 # TODO Standards
-> **Current Version:** 2.26
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.26
+> **Current Version:** 2.27
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
@@ -29,6 +29,17 @@ Required guidance:
 - `todo/done/<task-or-wave>.md` may hold large completed closeout detail that would bloat the active file
 - pre-rollover snapshots are allowed for preservation but must be referenced from the active file rather than duplicated there
 - rollover is not deletion authority; active items must be carried forward or explicitly referenced
+
+### 2.1) TODO God-file prevention
+
+`TODO.md` becomes a God file when it tries to store live execution, detailed history, completed closeouts, phase roadmap, release notes, verification logs, and future proposals in the active entrypoint.
+
+Required guidance:
+- keep the active TODO as a compact current execution index
+- move daily movement to `todo/history/` and large completed detail to `todo/done/`
+- keep version authority in changelog and staged execution detail in phase
+- do not append completed history into pending sections or current active bullets
+- if a TODO update would create a large mixed-responsibility entry, split it into current-state bullet plus history/done reference
 
 ### 3) Startup establishment bridge
 When meaningful governed work requires tracking, startup tracking posture must be resolved early through `artifact-initiation-control.md`. Resolution may include `TODO.md: use existing | create now | ask now | not required` and early built-in task-list initialization when work is non-trivial and live visibility helps. Durable TODO establishment at startup is different from later TODO content updates.
@@ -125,6 +136,7 @@ When governance work changes governed artifacts, update in this order:
 TODO content updates still happen last among primary active layers. That later order does not weaken early startup establishment or live task-list expectations. When `TODO.md` is required for governed work, TODO synchronization is required companion work; the built-in task list does not replace durable TODO sync when repository-level tracked history is required.
 ---
 ## Verification Checklist
+- [ ] TODO updates do not turn the active entrypoint into a God file mixing live work, history, phase detail, changelog, and verification logs.
 - [ ] TODO keeps the required simplified compact-entrypoint structure
 - [ ] Pending area contains pending tasks only
 - [ ] `TODO.md` references `todo/history/` and `todo/done/` whenever rollover shards exist.

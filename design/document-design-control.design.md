@@ -3,10 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 
 ---
+
+## P091 Target-State Refinement: Design God-File Prevention
+
+Design documents should remain active target-state authority.
+
+If target-state scope is broad, use a compact parent index with coherent child shards.
+
+If size comes from history, execution, TODO, patch, audit, or rollout detail, move that content to the appropriate owner instead of the active design body.
 
 ## 1) Goal
 

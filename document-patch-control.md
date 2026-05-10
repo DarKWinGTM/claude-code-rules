@@ -1,6 +1,6 @@
 # Document Patch Control
-> **Current Version:** 2.7
-> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.7
+> **Current Version:** 2.8
+> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-patch-control.changelog.md](changelog/document-patch-control.changelog.md)
 ---
@@ -53,6 +53,20 @@ Required guidance:
 - if external requirements determine request parameters, authentication, callbacks, acceptance criteria, field semantics, or integration constraints, make that basis legible in context/analysis
 - do not rely on transient doc-reading memory alone for later review passes
 ---
+## God Patch Prevention
+
+A God Patch is a patch artifact that tries to review several unrelated before/after changes, execution phases, release history, TODO state, and rollback plans in one file.
+
+Required guidance:
+- keep each patch centered on a coherent review target or change family
+- split patch artifacts when target artifacts, change types, review boundaries, or rollback paths diverge
+- keep live phased execution in `/phase`, not in `/patch`
+- keep detailed version history in changelog, not in patch body
+- move completed patch detail to `patch/done/` only as inactive history after active review is closed
+- preserve reviewability: target location, current state, target state, and change type must remain visible after any split
+
+God Patch repair is restructuring, splitting, or completion-history movement. It is never deletion authority by itself.
+
 ## Patch vs Phase Authority Split
 Patch owns tactical before/after review: identity, metadata, target-design/history links, change representation, synchronization behavior, filename/location rules, completed patch history, and the boundary keeping live phase planning out of patch artifacts.
 Phase owns live staged execution through `/phase`, `phase/SUMMARY.md`, and child phase detail files. Phase semantics, sequencing, design traceability, execution-step quality, patch-input synthesis, TODO/changelog coordination, handoffs, verification, rollback, and `SUMMARY.md` quality defer to `phase-implementation.md`.
@@ -62,6 +76,7 @@ Phase owns live staged execution through `/phase`, `phase/SUMMARY.md`, and child
 Active review scans start with active `patch/<context>.patch.md` and root `<context>.patch.md`. Consult `patch/done/` only for history, audit, rollback, provenance, or trace reconstruction; do not treat completed patch artifacts as active phase inputs, junk, or deletion-authorized by status alone. If completed patch history still matters to current review, reference it from the active patch/changelog/phase surface rather than making `patch/done/` the default active scan namespace.
 ---
 ## Compliance Checklist
+- [ ] Patch artifacts avoid God Patch overload and split unrelated before/after review targets when needed.
 - [ ] Patch path and filename use an allowed self-identifying, version-suffix-free location.
 - [ ] Metadata is complete, session metadata is real, `Target Design` / `Full history` links resolve, and patch version aligns with patch changelog when applicable.
 - [ ] Patch includes context, analysis, change items, verification, and rollback approach.

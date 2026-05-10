@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.72
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.32
+> **Current Version:** 1.73
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.33
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P090-01 / v9.98 opportunistic God-line repair completed, installed, pushed, and released
+> **Status:** P091 / v9.99 governed document God-file prevention and repair in progress
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently.
+- **P091:** [phase-091-governed-document-god-file-prevention.md](phase-091-governed-document-god-file-prevention.md)
+  - Adds governed document God-file prevention and repair across active design, changelog, TODO, phase, patch, SUMMARY, and README surfaces.
+  - Output: document owner chains define file-level capacity gates; active runtime count remains 47 unless an explicit later gate adds a rule.
+  - Gate: source sync, 47/47 runtime parity/body sufficiency, density/God-file review, push, and release `v9.99` verified.
 
 ### Recently Completed
 
@@ -59,6 +62,25 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Current Phase Detail
+
+### P091 — Governed Document God-File Prevention and Repair
+
+- **Status:** In Progress
+- **Design References:**
+  - [../design/design.md](../design/design.md) v9.99
+  - [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md) v2.39
+  - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.2
+  - [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.33
+- **Patch References:** [../patch/governed-document-god-file-prevention.patch.md](../patch/governed-document-god-file-prevention.patch.md)
+- **Expected Output:**
+  - Active governance owners define God-file/God-document prevention and repair routes.
+  - README, master design, master changelog, TODO, phase, and patch records align to v9.99 / P091.
+  - Active runtime count remains 47 unless a later explicit gate adds a new runtime rule.
+- **Completion Gate:**
+  - Runtime install copies only README-listed active runtime rules.
+  - 47/47 source/runtime parity and active runtime body sufficiency pass.
+  - Touched active docs pass density and God-file-oriented review.
+  - `master` is pushed and GitHub release `v9.99` is verified.
 
 ### P090-01 — Opportunistic God-Line Repair
 
@@ -166,25 +188,21 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-- [x] Pre-rollover `phase/SUMMARY.md` snapshot exists.
-- [x] Active `phase/SUMMARY.md` references `phase/history/` and `phase/done/` surfaces.
-- [x] Active `TODO.md` references `todo/history/` and `todo/done/` surfaces.
-- [x] P090 phase and patch records exist and link to context-load and document-density design truth.
-- [x] P090-01 phase and patch records exist and link to context-load owner v1.1 design truth.
-- [x] New context-load owner chain exists at runtime/design/changelog v1.1.
-- [x] README, master design, master changelog, TODO, phase, and patch records are synchronized for v9.98 / P090-01 source state.
+- [x] P091 phase and patch records exist.
+- [x] P091 owner-chain runtime/design/changelog versions are source-synchronized.
+- [x] README, master design, master changelog, TODO, phase, and patch records align to v9.99 / P091 install-verified state.
 - [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
-- [x] Runtime install copies only README-listed active runtime rules for v9.98.
+- [x] Runtime install copies only README-listed active runtime rules for v9.99.
 - [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
-- [x] Touched active docs pass density-oriented review.
-- [x] Git push and GitHub release `v9.98` are verified.
+- [x] Touched active docs pass density and God-file-oriented review.
+- [ ] Git push and GitHub release `v9.99` are verified.
 
 ---
 
 ## Rollback / Containment
 
-If P090-01 is reversed:
-- narrow opportunistic God-line repair wording while preserving the P090 leader-context and density-lifecycle principles
-- restore prior v9.97 release surfaces only through a governed rollback
+If P091 is reversed:
+- revert the v9.99 governed document God-file prevention changes through a governed rollback
+- restore prior v9.98 owner-chain versions and master records
 - reinstall the prior 47-file runtime set only under an explicit rollback gate
-- do not delete NodeClaw evidence files, phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
+- do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

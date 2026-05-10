@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-08)
 > **Full history:** [../changelog/governed-document-rollover-control.changelog.md](../changelog/governed-document-rollover-control.changelog.md)
 
@@ -16,6 +16,14 @@ The RULES repository needs active governance entrypoints that stay readable duri
 This design creates one first-class owner for that behavior: daily-first rollover is an active governance maintenance mechanism, not a cleanup instinct and not a replacement for TODO or phase authority.
 
 ---
+
+## P091 Target State: God-Document Repair Routing
+
+Rollover is one repair route for God-document pressure in active TODO and phase entrypoints.
+
+It preserves current maps while moving accumulated daily movement or completed detail to reachable history/done shards.
+
+It does not replace design sharding, changelog history governance, or phase/patch splitting when those owners fit better.
 
 ## 1) Goal
 

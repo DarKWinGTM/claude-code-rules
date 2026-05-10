@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.32
+> **Current Version:** 2.33
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-09)
 
 ---
@@ -19,6 +19,14 @@ Roadmap and phase-matrix entries remain goal/output/gate-aware. Meaningful candi
 ### Daily Phase History Target
 
 `phase/SUMMARY.md` remains the compact phase roadmap/index. Daily movement and rollover notes may live in `phase/history/YYYY-MM-DD*.md`, and completed phase detail may live in `phase/done/`; active summary content links to those surfaces instead of retaining duplicate historical detail.
+
+## P091 Target-State Refinement: God Phase Prevention
+
+A phase file should represent one bounded execution slice.
+
+When a phase carries independent goals, outputs, verification gates, rollback boundaries, or capability streams, it should not remain one overloaded file.
+
+Repair it by restructuring, splitting into a fitting subphase, or opening a new major phase according to lineage and umbrella-escape rules.
 
 ## 1) Goal
 

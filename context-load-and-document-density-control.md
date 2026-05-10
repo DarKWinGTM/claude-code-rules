@@ -1,7 +1,7 @@
 # Context Load and Document Density Control
 
-> **Current Version:** 1.1
-> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/context-load-and-document-density-control.changelog.md](changelog/context-load-and-document-density-control.changelog.md)
 
@@ -152,6 +152,26 @@ Density checks are practical repair triggers. They are not deletion authority an
 
 ---
 
+### 10) Governed document God-file prevention
+
+A God document is an active governance file that carries too many document roles or independent execution meanings in one place.
+
+Signals include:
+- current state, history, verification, rollback, roadmap, TODO, changelog, and design truth mixed in one active body
+- one phase or patch carrying several independent goals, outputs, gates, rollback boundaries, or capability streams
+- active README, TODO, phase summary, design, changelog, or patch updates that require large unrelated edits for a small logical change
+- repeated compaction or broad rereads caused by one active file acting as a storage dump instead of a map
+
+Required repair posture:
+- redistribute content to the owner that matches its role before appending more detail
+- use design sharding for large active target-state truth
+- use changelog or `changelog/done/` for version history overload
+- use `todo/history` / `todo/done` and `phase/history` / `phase/done` for accumulated movement or completed detail
+- split God Phase and God Patch candidates by bounded goal, output, gate, rollback, or review boundary
+- repair clear low-risk touched-document overload locally; flag or open a governed phase/patch when the split is broad or meaning-risky
+
+Do not treat God-file classification as cleanup or deletion authority. The response is role-aware redistribution, sharding, rollover, splitting, or explicitly tracked repair.
+
 ## Decision Flow
 
 ```text
@@ -190,6 +210,7 @@ Better behavior: ask the question first, route broad raw evidence through worker
 ---
 
 ## Verification Checklist
+- [ ] Touched active documents were checked for God-file pressure and repaired, redistributed, or flagged when material.
 
 - [ ] Broad raw reads were routed through a worker/filter lane or a narrow direct-handling reason was stated.
 - [ ] Multi-file read plans considered aggregate output and line density, not only per-file line count.

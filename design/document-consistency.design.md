@@ -3,10 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 
 ---
+
+## P091 Target-State Refinement: God-File Consistency
+
+Consistency checks now include document role boundaries.
+
+A synced artifact set can still drift if one active document absorbs unrelated roles or if a split, shard, or rollover loses required links.
+
+No-drift claims should include this role-capacity check when touched governance docs are material.
 
 ## 1. Overview
 

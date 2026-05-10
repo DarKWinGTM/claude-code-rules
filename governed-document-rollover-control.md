@@ -1,7 +1,7 @@
 # Governed Document Rollover Control
 
-> **Current Version:** 1.0
-> **Design:** [design/governed-document-rollover-control.design.md](design/governed-document-rollover-control.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/governed-document-rollover-control.design.md](design/governed-document-rollover-control.design.md) v1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/governed-document-rollover-control.changelog.md](changelog/governed-document-rollover-control.changelog.md)
 
@@ -100,6 +100,19 @@ Not allowed:
 
 ---
 
+### 7) God-document repair routing
+
+God-file pressure is a rollover and redistribution signal when active entrypoints accumulate roles beyond their purpose.
+
+Required guidance:
+- route accumulated TODO movement to `todo/history/` or `todo/done/`
+- route accumulated phase movement to `phase/history/` or `phase/done/`
+- keep active entrypoints as maps after rollover, not link-only placeholders
+- do not roll active target-state design truth into history/done; use design sharding or changelog history separation instead
+- preserve bidirectional references so moved detail remains reachable
+
+Rollover may be part of God-document repair, but the repair must preserve meaning and owner boundaries.
+
 ## Decision Flow
 
 ```text
@@ -121,6 +134,7 @@ References updated both ways?
 ---
 
 ## Verification Checklist
+- [ ] God-document pressure is repaired through role-aware rollover/sharding/splitting without deleting governed meaning.
 
 - [ ] `TODO.md` and `phase/SUMMARY.md` remain active current-state/navigation entrypoints.
 - [ ] Daily-first `history/` shards exist when movement/history bulk is moved out.

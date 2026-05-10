@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.32
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.32
+> **Current Version:** 2.33
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.33
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -67,6 +67,24 @@ Major-phase-fit and umbrella-escape signals:
 - explicit user direction to start a new phase family
 
 Completed status does not break lineage, and new concern wording does not justify a new major phase by itself. Do not force subphases for unrelated work; if no real lineage exists, open a new major phase. Do not force old-family subphases when the work has a separate output/gate/release/rollback meaning or the old family is saturated. If lineage is real but ambiguous or overloaded, preserve the relationship in `phase/SUMMARY.md` or the child phase record and choose the clearer identity, including a new major phase when that prevents umbrella drift.
+
+### God Phase prevention
+
+A God Phase is a phase file that tries to execute several independent phases at once. It is not defined by length alone; it is defined by mixed execution responsibilities.
+
+God Phase signals include:
+- multiple primary goals that can complete independently
+- multiple expected outputs that do not share one bounded gate
+- unrelated verification gates, rollback boundaries, or capability streams
+- phase content that is really a roadmap, changelog, TODO list, patch review, and execution file combined
+- readers cannot tell what must be true for this phase alone to close
+
+Required repair posture:
+- if the work still has one bounded goal/output/gate, restructure the phase file in place
+- if the work shares the same parent rollout gate, split into `NNN-NN` subphases
+- if the work has a distinct capability, release, verification, output, or rollback boundary, open a new major phase
+- keep `phase/SUMMARY.md` as the compact map and move accumulated history/completed detail to `phase/history` or `phase/done`
+- do not use phase splitting as deletion authority for old content
 
 ### Required files and history
 When phased planning is used:
@@ -159,6 +177,7 @@ Phase-backed closeout should report practical delivery, not only files/tasks/aud
 ---
 
 ## Verification Checklist
+- [ ] God Phase signals were checked, and independent goals/outputs/gates/rollback boundaries were split instead of hidden inside one phase file.
 
 - [ ] `NNN` / `NNN-NN` grammar, required active paths, and `phase/SUMMARY.md` are used
 - [ ] major-vs-subphase selection checks lineage before any new major phase

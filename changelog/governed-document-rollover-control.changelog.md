@@ -1,12 +1,18 @@
 # Changelog - Governed Document Rollover Control
 
 > **Parent Document:** [../governed-document-rollover-control.md](../governed-document-rollover-control.md)
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+## Version 1.1: Added God-document repair routing through rollover surfaces
+
+- Added P091 governed document God-file prevention and repair semantics for this owner chain.
+- Preserved role-specific authority boundaries while adding the correct split, shard, rollover, or redistribution route.
+
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|

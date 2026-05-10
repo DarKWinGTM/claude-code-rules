@@ -3,10 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
 
 ---
+
+## P091 Target-State Refinement: God-Document Prevention
+
+The context-load owner now treats file-level responsibility overload as part of the context lifecycle.
+
+God-document candidates should be repaired by role-aware redistribution, design sharding, rollover, phase/patch splitting, or explicit follow-up.
+
+Do not append more content into an overloaded active file when an owner-specific route exists.
 
 ## 1) Goal
 

@@ -1,6 +1,6 @@
 # Project Documentation Standards
-> **Current Version:** 2.38
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.38
+> **Current Version:** 2.39
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.39
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
@@ -55,6 +55,25 @@ Completed surfaces reduce active scan bloat without deleting governed history.
 - Completed status is not junk classification or deletion authorization, and active surfaces must keep enough pointers for history to be found.
 - Do not let `history/` or `done/` history replace active summary/index surfaces: `TODO.md`, `phase/SUMMARY.md`, active changelog index/current version, and active patch/review artifacts remain the first current-state lookup layer.
 ---
+## Governed Document Capacity and God-File Prevention
+
+Active governed documents should keep one primary role.
+
+A God file appears when one active document becomes the owner for several roles at once.
+
+Common overload roles include target-state design, release history, execution tracking, verification proof, rollback detail, roadmap, and operational notes.
+
+Required guidance:
+- identify the document's primary role before appending new content
+- move or link content to the owning surface when the new content belongs elsewhere
+- shard active design truth when design scope is genuinely large
+- roll accumulated history or completed detail into the allowed history/done surfaces
+- split phase and patch files when their goals, outputs, gates, rollback boundaries, or review targets diverge
+- keep README current-state focused and delegate detailed history to governed owner chains
+- preserve history and owner scope; God-file repair is not deletion authority
+
+Document capacity is a governance gate. A release sync is not clean if the touched active document became harder to read, edit, or verify because unrelated roles were added into the same file.
+
 ## Startup Artifact Gate
 Before meaningful governed work, `artifact-initiation-control` resolves relevant surfaces as `use existing`, `create now`, `ask now`, or `not required`; this happens before later sync order.
 Required companions remain non-optional when triggered: design for material target behavior/contract/policy, changelog for governed version/history, `TODO.md` for durable tracked work, `/phase` for staged execution, `/patch` for before/after review, and built-in tasks for live non-trivial visibility.
@@ -104,6 +123,7 @@ Required guidance:
 - Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES scope; helper/support/extension artifacts stay non-governed unless intentionally promoted. If those mechanisms need authority later, promote them through an explicit governed chain rather than by side-effect reference.
 ---
 ## Verification Checklist
+- [ ] Active governed documents avoid God-file role overload, or overload is routed to sharding, rollover, split phase, split patch, or owner-specific history surfaces.
 - [ ] Required document set, versions, metadata, full-history/parent links, and active session IDs align.
 - [ ] Active runtime install targets are not metadata-only and carry substantive runtime behavior bodies.
 - [ ] Startup posture is resolved; required governed companions and live task tracking are not downgraded.

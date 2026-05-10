@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 9.98
+> **Current Version:** 9.99
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 9.99 | 2026-05-11 | **[Added governed document God-file prevention and repair](#version-999)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.98 | 2026-05-10 | **[Added opportunistic touched-doc God-line repair](#version-998)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.97 | 2026-05-10 | **[Added context-load and document-density control](#version-997)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.96 | 2026-05-10 | **[Added governed design sharding compact-index doctrine](#version-996)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -132,6 +133,37 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-999"></a>
+## Version 9.99: Added governed document God-file prevention and repair
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Opened P091 as the governed document God-file prevention and repair wave.
+- Kept the README-listed source-owned active runtime set at 47 files.
+- Added document-capacity and God-document prevention semantics across active governance surfaces.
+- Advanced these owner chains:
+  - `context-load-and-document-density-control` to v1.2
+  - `project-documentation-standards` to v2.39
+  - `document-design-control` to v1.12
+  - `document-changelog-control` to v4.11
+  - `todo-standards` to v2.27
+  - `phase-implementation` to v2.33
+  - `document-patch-control` to v2.8
+  - `governed-document-rollover-control` to v1.1
+  - `document-consistency` to v1.11
+- Synchronized README, master design, master changelog, TODO, phase, and patch records for the v9.99 / P091 source state.
+- Runtime install and 47/47 parity/body sufficiency passed for the README-listed active runtime rules.
+- Density/God-file review passed; `master` push and GitHub release `v9.99` verification remain pending until the release gate finishes.
+
+### Summary
+P091 adds a file-level capacity gate for governed documents.
+
+It prevents active README, design, changelog, TODO, phase, patch, and summary surfaces from becoming God files by routing overload to sharding, rollover, phase/patch splitting, or owner-correct redistribution instead of silent append growth.
 
 ---
 
