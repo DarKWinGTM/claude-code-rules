@@ -1,12 +1,28 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-112"></a>
+## Version 1.12: Added God artifact automation no-drift gate
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added a no-drift gate for automatic God artifact repair or visible repair planning.
+- Blocked sync, closeout, and release-ready claims when touched-scope God pressure remains unresolved.
+- Required planned repairs to appear in a visible governed owner surface instead of hidden status wording.
+
+### Summary
+Added God artifact automation no-drift gate for P092 / v10.00.
+
+---
 
 ## Version 1.11: Added God-file cross-document consistency checks
 
@@ -16,6 +32,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-05-11 | **[Added God artifact automation no-drift gate](#version-112)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.10 | 2026-05-10 | **[Added sharded design reference consistency checks](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added parent-index-to-child-shard consistency, stale/orphan shard checks, and selected-shard evidence-scope boundaries for governed sharded active designs | |
 | 1.9 | 2026-05-06 | **[Added active runtime body-sufficiency parity checks](#version-19)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

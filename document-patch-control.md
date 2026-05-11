@@ -1,6 +1,6 @@
 # Document Patch Control
-> **Current Version:** 2.8
-> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.8
+> **Current Version:** 2.9
+> **Design:** [design/document-patch-control.design.md](design/document-patch-control.design.md) v2.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-patch-control.changelog.md](changelog/document-patch-control.changelog.md)
 ---
@@ -66,6 +66,20 @@ Required guidance:
 - preserve reviewability: target location, current state, target state, and change type must remain visible after any split
 
 God Patch repair is restructuring, splitting, or completion-history movement. It is never deletion authority by itself.
+
+### Automatic God Patch handling
+
+When God Patch pressure is found in touched patch scope, choose the smallest reviewable repair route.
+
+Required handling:
+- restructure in place when one coherent review target still exists
+- split patch artifacts when targets, change types, rollback paths, or review boundaries diverge
+- move completed patch detail to `patch/done/` only after active review closes
+- route live execution detail back to `/phase` instead of expanding the patch
+- create or extend a visible repair slice when the split is real but cannot be completed safely now
+- block patch closeout while touched-scope God Patch pressure remains unrepaired or unplanned
+
+God Patch detection is not deletion authority and does not weaken reviewability requirements.
 
 ## Patch vs Phase Authority Split
 Patch owns tactical before/after review: identity, metadata, target-design/history links, change representation, synchronization behavior, filename/location rules, completed patch history, and the boundary keeping live phase planning out of patch artifacts.

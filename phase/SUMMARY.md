@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.74
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.33
+> **Current Version:** 1.75
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P091 / v9.99 governed document God-file prevention and repair released
+> **Status:** P092 / v10.00 automatic God artifact planning and controlled repair in progress
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-No active phase is selected after the P091 / v9.99 closeout.
+- **P092:** [phase-092-automatic-god-artifact-planning-controlled-repair.md](phase-092-automatic-god-artifact-planning-controlled-repair.md)
+  - Status: active / in progress.
+  - Goal: make God artifact findings trigger safe repair, visible planning, or closeout blocking.
+  - Gate: source sync, runtime install, parity/body sufficiency, density review, push, and release `v10.00` verification pass.
 
 ### Recently Completed
 
@@ -64,6 +67,33 @@ No active phase is selected after the P091 / v9.99 closeout.
 ---
 
 ## Current Phase Detail
+
+### P092 — Automatic God Artifact Planning and Controlled Repair
+
+- **Status:** In Progress
+- **Design References:**
+  - [../design/design.md](../design/design.md) v10.00
+  - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.3
+  - [../design/execution-continuity-and-mode-selection.design.md](../design/execution-continuity-and-mode-selection.design.md) v1.17
+  - [../design/artifact-initiation-control.design.md](../design/artifact-initiation-control.design.md) v1.9
+  - [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.12
+  - [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md) v2.40
+  - [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
+  - [../design/todo-standards.design.md](../design/todo-standards.design.md) v2.28
+  - [../design/document-patch-control.design.md](../design/document-patch-control.design.md) v2.9
+  - [../design/governed-document-rollover-control.design.md](../design/governed-document-rollover-control.design.md) v1.2
+- **Patch References:** [../patch/automatic-god-artifact-planning-controlled-repair.patch.md](../patch/automatic-god-artifact-planning-controlled-repair.patch.md)
+- **Expected Output:**
+  - God artifact findings become actionable workflow events, not report-only observations.
+  - Clear low-risk touched-scope overload is repaired immediately.
+  - Broader or ambiguous pressure gets a visible owner in task, TODO, phase, patch, design, changelog, or rollover context.
+  - Active runtime count remains 47 unless a later explicit gate adds a new runtime rule.
+- **Completion Gate:**
+  - Runtime install copies only README-listed active runtime rules.
+  - 47/47 source/runtime parity and active runtime body sufficiency pass.
+  - Touched active docs pass density and God-artifact automation review.
+  - Unresolved touched-scope God pressure is repaired or visibly planned.
+  - `master` is pushed and GitHub release `v10.00` is verified.
 
 ### P091 — Governed Document God-File Prevention and Repair
 
@@ -191,21 +221,21 @@ No active phase is selected after the P091 / v9.99 closeout.
 
 ## Verification Focus
 
-- [x] P091 phase and patch records exist.
-- [x] P091 owner-chain runtime/design/changelog versions are source-synchronized.
-- [x] README, master design, master changelog, TODO, phase, and patch records align to v9.99 / P091 install-verified state.
+- [x] P092 phase and patch records exist.
+- [x] P092 owner-chain runtime/design/changelog versions are source-synchronized.
+- [x] README, master design, master changelog, TODO, phase, and patch records align to v10.00 / P092 source state.
 - [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
-- [x] Runtime install copies only README-listed active runtime rules for v9.99.
+- [x] Runtime install copies only README-listed active runtime rules for v10.00.
 - [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
-- [x] Touched active docs pass density and God-file-oriented review.
-- [x] Git push and GitHub release `v9.99` are verified.
+- [x] Touched active docs pass density and God-artifact automation review.
+- [ ] Git push and GitHub release `v10.00` are verified.
 
 ---
 
 ## Rollback / Containment
 
-If P091 is reversed:
-- revert the v9.99 governed document God-file prevention changes through a governed rollback
-- restore prior v9.98 owner-chain versions and master records
+If P092 is reversed:
+- revert the v10.00 automatic God artifact planning changes through a governed rollback
+- restore prior v9.99 owner-chain versions and master records
 - reinstall the prior 47-file runtime set only under an explicit rollback gate
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

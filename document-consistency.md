@@ -1,6 +1,6 @@
 # Document Consistency and Cross-Reference Validation
-> **Current Version:** 1.11
-> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.11
+> **Current Version:** 1.12
+> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.12
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/document-consistency.changelog.md](changelog/document-consistency.changelog.md)
 ---
@@ -42,6 +42,18 @@ Required guidance:
 - when a touched document is split, sharded, or rolled over, verify parent/index links and child/history/done references
 - include God Phase and God Patch split decisions in no-drift review when phase or patch files are touched
 - do not claim sync/no-drift if active docs became role-overloaded even though versions and links match
+
+### God artifact automation gate
+
+Consistency review must verify that detected touched-scope God artifact pressure has an owned outcome.
+
+A no-drift, sync, closeout, or release-ready claim is invalid when any touched governed document still has unresolved God pressure that is neither repaired nor represented as a visible governed repair slice.
+
+Required checks:
+- repaired local split, shard, rollover, or phase/patch split is reflected in links and indexes
+- planned repair has a visible owner in task, TODO, phase, patch, or changelog context
+- broad deferred repair is labeled as deferred and not hidden inside completion wording
+- unresolved ambiguity is surfaced as a blocker, not converted into clean sync wording
 
 ## Verification Flow
 ```text

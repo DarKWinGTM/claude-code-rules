@@ -1,15 +1,32 @@
 # Changelog - Artifact Initiation Control
 
 > **Parent Document:** [../artifact-initiation-control.md](../artifact-initiation-control.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
 
+<a id="version-19"></a>
+## Version 1.9: Added God artifact repair posture resolution
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added God artifact repair posture resolution for findings that cannot be safely repaired in place.
+- Mapped design, changelog, TODO, phase, patch, and live task surfaces to repair planning needs.
+- Clarified that `not required` never means a detected God artifact is ignorable or deletion-authorized.
+
+### Summary
+Added God artifact repair posture resolution for P092 / v10.00.
+
+---
+
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-05-11 | **[Added God artifact repair posture resolution](#version-19)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.8 | 2026-05-04 | **[Initialized phase-backed live tasks with visible linkage](#version-18)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.7 | 2026-05-04 | **[Delegated phase creation identity to lineage selection](#version-17)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.6 | 2026-04-27 | **[Added clear-design phase posture startup bridge](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

@@ -1,7 +1,7 @@
 # Governed Document Rollover Control
 
-> **Current Version:** 1.1
-> **Design:** [design/governed-document-rollover-control.design.md](design/governed-document-rollover-control.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/governed-document-rollover-control.design.md](design/governed-document-rollover-control.design.md) v1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/governed-document-rollover-control.changelog.md](changelog/governed-document-rollover-control.changelog.md)
 
@@ -112,6 +112,20 @@ Required guidance:
 - preserve bidirectional references so moved detail remains reachable
 
 Rollover may be part of God-document repair, but the repair must preserve meaning and owner boundaries.
+
+### 8) Automatic rollover repair planning
+
+When God-document pressure points to TODO or phase accumulation, rollover should become an owned repair action instead of a warning.
+
+Required guidance:
+- repair immediately when current/history/done split is clear and low-risk
+- create or extend a visible repair slice when rollover needs broader classification
+- preserve active entrypoints as compact maps after any split
+- keep moved history reachable through parent and shard references
+- block closeout when touched active entrypoints remain overloaded without a repaired or planned route
+
+Rollover repair remains preservation work.
+It is never cleanup deletion.
 
 ## Decision Flow
 

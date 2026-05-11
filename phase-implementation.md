@@ -1,7 +1,7 @@
 # Phase Implementation
 
-> **Current Version:** 2.33
-> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.33
+> **Current Version:** 2.34
+> **Design:** [design/phase-implementation.design.md](design/phase-implementation.design.md) v2.34
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/phase-implementation.changelog.md](changelog/phase-implementation.changelog.md)
 
@@ -85,6 +85,20 @@ Required repair posture:
 - if the work has a distinct capability, release, verification, output, or rollback boundary, open a new major phase
 - keep `phase/SUMMARY.md` as the compact map and move accumulated history/completed detail to `phase/history` or `phase/done`
 - do not use phase splitting as deletion authority for old content
+
+### Automatic God Phase handling
+
+When God Phase pressure is found in touched phase scope, run the lineage gate immediately.
+
+Required handling:
+- restructure in place when one bounded goal, output, and gate still exists
+- split into `NNN-NN` subphases when work shares one parent rollout gate
+- open a new major phase when the capability, release, verification, rollback, or output boundary is distinct
+- update `phase/SUMMARY.md` as the compact map when the split changes active navigation
+- create or extend visible phase-linked live tasks when repair work is non-trivial
+- block phase closeout while touched-scope God Phase pressure remains unrepaired or unplanned
+
+Ask only when checked lineage does not settle the repair boundary.
 
 ### Required files and history
 When phased planning is used:

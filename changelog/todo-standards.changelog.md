@@ -1,12 +1,28 @@
 # Changelog - TODO Standards
 
 > **Parent Document:** [../todo-standards.md](../todo-standards.md)
-> **Current Version:** 2.27
+> **Current Version:** 2.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-228"></a>
+## Version 2.28: Added visible God artifact repair task planning
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added visible repair task planning for detected God artifacts that cannot be safely repaired immediately.
+- Required owner surface, output, and gate context when repair planning would otherwise drift.
+- Kept TODO compact by routing broad detail to live tasks, phase, patch, history, or done surfaces as appropriate.
+
+### Summary
+Added visible God artifact repair task planning for P092 / v10.00.
+
+---
 
 ## Version 2.27: Added TODO God-file prevention and active-index capacity gate
 
@@ -16,6 +32,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.28 | 2026-05-11 | **[Added visible God artifact repair task planning](#version-228)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.26 | 2026-05-08 | **[Added daily-first TODO rollover entrypoint discipline](#version-226)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Required `TODO.md` to remain a compact current-state index after rollover, with old movement/detail preserved under referenced `todo/history/` and `todo/done/` shards instead of duplicated in the active file. | |
 | 2.25 | 2026-05-07 | **[Added outcome-goal-shaped live task entries](#version-225a)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

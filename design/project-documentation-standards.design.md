@@ -3,8 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.39
+> **Current Version:** 2.40
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
+
+---
+
+## P092 Target-State Refinement: Automatic God Artifact Planning
+
+Repository documentation governance now requires detected God artifact pressure to become owned work.
+
+The target state is direct repair for clear touched-scope issues, visible planning for broad repairs, and closeout blocking for unresolved touched-scope overload.
 
 ---
 

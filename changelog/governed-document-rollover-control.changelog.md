@@ -1,12 +1,28 @@
 # Changelog - Governed Document Rollover Control
 
 > **Parent Document:** [../governed-document-rollover-control.md](../governed-document-rollover-control.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-12"></a>
+## Version 1.2: Added automatic rollover repair planning for God documents
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added automatic rollover repair planning for God-document pressure in active TODO and phase entrypoints.
+- Required immediate rollover when clear or visible repair planning when broader classification is needed.
+- Preserved the no-deletion boundary and parent/history/done reference requirements.
+
+### Summary
+Added automatic rollover repair planning for God documents for P092 / v10.00.
+
+---
 
 ## Version 1.1: Added God-document repair routing through rollover surfaces
 
@@ -16,6 +32,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-11 | **[Added automatic rollover repair planning for God documents](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-05-08 | **[Created daily-first governance rollover owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created the first-class active runtime owner for daily-first TODO and phase-summary rollover, active entrypoint preservation, history/done reference integrity, existing oversized file migration, and no-deletion-by-rollover boundaries. | |
 

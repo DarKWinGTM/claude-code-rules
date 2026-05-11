@@ -3,8 +3,19 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
+
+---
+
+## P092 Target-State Refinement: Automatic God Artifact Planning
+
+The context-load owner now treats God artifact findings as actionable workflow events.
+
+Detection must flow into classification, owner routing, action-mode selection, repair or visible planning, and closeout verification.
+
+Clear touched-scope repairs happen immediately.
+Broad, ambiguous, or owner-sensitive repairs become governed repair slices instead of warnings.
 
 ---
 

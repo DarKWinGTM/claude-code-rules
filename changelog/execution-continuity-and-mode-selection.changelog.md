@@ -1,15 +1,32 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
 
+<a id="version-117"></a>
+## Version 1.17: Added God artifact repair as continuation work
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added touched-scope God artifact pressure as an implied continuation slice during governed execution.
+- Required clear repairs or visible repair planning instead of report-only stop behavior.
+- Preserved stop gates for ambiguity, approval-sensitive scope, destructive action, and missing authority.
+
+### Summary
+Added God artifact repair as continuation work for P092 / v10.00.
+
+---
+
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.17 | 2026-05-11 | **[Added God artifact repair as continuation work](#version-117)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.16 | 2026-05-08 | **[Added rollover maintenance as a continuation gate](#version-116)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Made oversized active governance entrypoints a continuity gate: compact or roll them over before broad continuation when they block safe current-state discovery. | |
 | 1.15 | 2026-05-07 | **[Added goal-state continuity and next-goal bridge](#version-115)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

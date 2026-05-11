@@ -1,6 +1,6 @@
 # TODO Standards
-> **Current Version:** 2.27
-> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.27
+> **Current Version:** 2.28
+> **Design:** [design/todo-standards.design.md](design/todo-standards.design.md) v2.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/todo-standards.changelog.md](changelog/todo-standards.changelog.md)
 ---
@@ -40,6 +40,21 @@ Required guidance:
 - keep version authority in changelog and staged execution detail in phase
 - do not append completed history into pending sections or current active bullets
 - if a TODO update would create a large mixed-responsibility entry, split it into current-state bullet plus history/done reference
+
+### 2.2) God artifact repair task planning
+
+When a detected God artifact cannot be safely repaired immediately and the repair belongs to the active objective, create or extend a visible repair task.
+
+Required guidance:
+- keep the task outcome-shaped, not command-only
+- include the owner surface such as design, changelog, TODO, phase, patch, README, or summary
+- include expected output or completion gate when it prevents drift
+- use phase linkage when the repair is phase-backed or phase-shaped
+- keep broad historical repair deferred or bounded instead of stuffing detail into `TODO.md`
+- mark closeout blocked when touched-scope God pressure has no repaired or planned task state
+
+The live task list is the first place for active repair visibility.
+`TODO.md` remains the compact durable index when repository-level tracking is required.
 
 ### 3) Startup establishment bridge
 When meaningful governed work requires tracking, startup tracking posture must be resolved early through `artifact-initiation-control.md`. Resolution may include `TODO.md: use existing | create now | ask now | not required` and early built-in task-list initialization when work is non-trivial and live visibility helps. Durable TODO establishment at startup is different from later TODO content updates.

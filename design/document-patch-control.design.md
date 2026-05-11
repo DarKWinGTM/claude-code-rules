@@ -3,8 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 2.8
+> **Current Version:** 2.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
+
+---
+
+## P092 Target-State Refinement: Automatic God Patch Handling
+
+Patch governance now treats God Patch detection as an immediate review-boundary repair event.
+
+The target state is in-place restructure, patch split, phase routing, or visible repair planning before patch closeout.
 
 ---
 

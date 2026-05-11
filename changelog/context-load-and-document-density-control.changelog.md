@@ -1,12 +1,28 @@
 # Changelog - Context Load and Document Density Control
 
 > **Parent Document:** [../context-load-and-document-density-control.md](../context-load-and-document-density-control.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-13"></a>
+## Version 1.3: Added automatic God artifact planning and controlled repair
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added the God Artifact Control Loop for detected God-line, God-document, God-phase, and God-patch pressure.
+- Defined action modes for immediate repair, current-phase planning, patch packaging, phase splitting, closeout blocking, and ambiguity handling.
+- Required touched-scope God pressure to be repaired or visibly planned before sync, no-drift, closeout, or release-ready claims.
+
+### Summary
+Added automatic God artifact planning and controlled repair for P092 / v10.00.
+
+---
 
 ## Version 1.2: Added governed document God-file prevention and repair routing
 
@@ -16,6 +32,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-11 | **[Added automatic God artifact planning and controlled repair](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-05-10 | **[Added opportunistic touched-doc God-line repair](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Refined the active owner so clear low-risk touched God-line candidates are repaired in the same edit while broad or meaning-risky repairs are flagged or planned. | |
 | 1.0 | 2026-05-10 | **[Created context-load and document-density control](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

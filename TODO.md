@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-11
-> **Current Release:** v9.99 / P091 governed document God-file prevention and repair
+> **Current Release:** v10.00 / P092 automatic God artifact planning and controlled repair
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -28,7 +28,10 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-No active release phase is selected after the P091 / v9.99 closeout.
+- [ ] P092 / v10.00 automatic God artifact planning and controlled repair is active.
+  - Goal: make detected God artifact pressure trigger repair, planning, or closeout blocking without a second user instruction.
+  - Passed: source sync, runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation review.
+  - Remaining gate: `master` push and GitHub release `v10.00` verification.
 
 ### Deferred / Not Selected
 
@@ -47,6 +50,8 @@ No active release phase is selected after the P091 / v9.99 closeout.
 
 | Date | Changes |
 |------|---------|
+| 2026-05-11 | P092 runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation checks passed; push/release remains pending. |
+| 2026-05-11 | Opened P092 / v10.00 automatic God artifact planning; owner chains and master records are source-synchronized while release gates remain pending. |
 | 2026-05-11 | Released P091 / v9.99 governed document God-file prevention and repair; 47/47 parity/body sufficiency passed; density review passed; `master` pushed; release `v9.99` published. |
 | 2026-05-10 | Released P090-01 / v9.98; context-load owner v1.1 installed; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.98` published. |
 | 2026-05-10 | Released P090 / v9.97; added context-load owner as the 47th runtime rule; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.97` published. |

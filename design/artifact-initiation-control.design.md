@@ -3,8 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+
+---
+
+## P092 Target-State Refinement: God Artifact Repair Startup
+
+Startup governance now applies when a detected God artifact needs a governed repair surface.
+
+The target state is to resolve design, changelog, TODO, live task, phase, or patch posture before the repair drifts into an untracked warning.
 
 ---
 

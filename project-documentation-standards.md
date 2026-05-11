@@ -1,6 +1,6 @@
 # Project Documentation Standards
-> **Current Version:** 2.39
-> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.39
+> **Current Version:** 2.40
+> **Design:** [design/project-documentation-standards.design.md](design/project-documentation-standards.design.md) v2.40
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/project-documentation-standards.changelog.md](changelog/project-documentation-standards.changelog.md)
 ---
@@ -73,6 +73,19 @@ Required guidance:
 - preserve history and owner scope; God-file repair is not deletion authority
 
 Document capacity is a governance gate. A release sync is not clean if the touched active document became harder to read, edit, or verify because unrelated roles were added into the same file.
+
+### Automatic God artifact planning
+
+A detected God artifact must have an owner outcome before governed work can be called synchronized.
+
+Required guidance:
+- repair clear touched-scope overload in the owning document when safe
+- route broader repair to design sharding, changelog/done, TODO history/done, phase split, patch split, or README current-state reduction
+- create or extend a visible repair slice when the repair is real but not safe to complete immediately
+- keep planned repair compact and owner-specific instead of turning TODO, phase, or patch into another God file
+- block closeout when touched-scope God pressure has no repaired, planned, deferred, or blocked owner state
+
+The user should not need to issue a second instruction when the RULES layer already knows the correct owner route.
 
 ## Startup Artifact Gate
 Before meaningful governed work, `artifact-initiation-control` resolves relevant surfaces as `use existing`, `create now`, `ask now`, or `not required`; this happens before later sync order.

@@ -3,8 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.27
+> **Current Version:** 2.28
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## P092 Target-State Refinement: God Artifact Repair Tasks
+
+TODO governance now requires broad non-immediate God artifact repairs to become visible repair slices when they belong to the active objective.
+
+The target state is compact live task visibility plus durable TODO sync only when repository-level tracking is required.
 
 ---
 

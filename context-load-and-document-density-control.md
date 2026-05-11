@@ -1,7 +1,7 @@
 # Context Load and Document Density Control
 
-> **Current Version:** 1.2
-> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/context-load-and-document-density-control.changelog.md](changelog/context-load-and-document-density-control.changelog.md)
 
@@ -172,6 +172,31 @@ Required repair posture:
 
 Do not treat God-file classification as cleanup or deletion authority. The response is role-aware redistribution, sharding, rollover, splitting, or explicitly tracked repair.
 
+### 11) Automatic God Artifact Control Loop
+
+God artifact findings are not report-only observations during governed work.
+
+When God-line, God-document, God-phase, God-patch, TODO, design, changelog, README, or summary pressure is found in touched governed scope, choose an action mode.
+
+Action modes:
+- `REPAIR_NOW`: clear, local, meaning-preserving, low-risk touched-scope split
+- `PLAN_IN_CURRENT_PHASE`: real repair belongs to the active phase or implied execution slice
+- `OPEN_REPAIR_PATCH`: reviewable before/after change needs patch packaging
+- `OPEN_NEW_PHASE_OR_SUBPHASE`: distinct goal, output, gate, release, rollback, or capability boundary exists
+- `BLOCK_CLOSEOUT`: touched-scope pressure remains unresolved or unplanned
+- `ASK_ONLY_IF_AMBIGUOUS`: owner, meaning, or approval basis changes the safe path
+
+Required loop:
+1. detect the God artifact pressure
+2. classify document family, owner, risk, and repair boundary
+3. route content to the correct owner surface
+4. repair now when `REPAIR_NOW` applies
+5. otherwise create or extend the smallest visible governed repair slice
+6. verify repaired or planned state before sync, no-drift, closeout, or release-ready claims
+
+Do not ask the user to restate the repair instruction when the route is clear.
+Ask only when ambiguity or approval sensitivity changes the action.
+
 ## Decision Flow
 
 ```text
@@ -186,6 +211,10 @@ Broad raw content likely?
 Writing active docs?
   → YES: apply touched-doc God-line repair, append-vs-restructure, and density checks
   → NO: preserve checked-scope evidence boundaries
+  ↓
+God artifact pressure found in touched scope?
+  → YES: classify owner/risk, then repair now or create a visible repair slice
+  → NO: continue
   ↓
 Compact/thrash or high-density output appears?
   → YES: diagnose source pattern and repair document/workflow shape

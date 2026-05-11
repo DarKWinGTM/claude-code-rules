@@ -1,12 +1,28 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.39
+> **Current Version:** 2.40
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-240"></a>
+## Version 2.40: Added automatic God artifact planning role model
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added automatic God artifact planning to the repository document-role model.
+- Required detected overload to be repaired, routed, visibly planned, deferred, or blocked before sync claims.
+- Kept repair role-aware and explicitly outside deletion authority.
+
+### Summary
+Added automatic God artifact planning role model for P092 / v10.00.
+
+---
 
 ## Version 2.39: Added governed document God-file prevention role model
 
@@ -16,6 +32,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.40 | 2026-05-11 | **[Added automatic God artifact planning role model](#version-240)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.38 | 2026-05-10 | **[Added governed design shard role model](#version-238)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.37 | 2026-05-08 | **[Added daily-first governance rollover documentation surfaces](#version-237)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added `todo/history/`, `todo/done/`, and `phase/history/` to the repository role model while keeping `TODO.md` and `phase/SUMMARY.md` as compact active entrypoints with reachable history/done links. | |

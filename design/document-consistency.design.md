@@ -3,8 +3,17 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
+
+---
+
+## P092 Target-State Refinement: God Artifact Automation Gate
+
+Document consistency now checks that detected touched-scope God artifact pressure has an owned result.
+
+Clean sync requires repair, visible repair planning, or an explicit blocker.
+Version and link alignment alone are not enough.
 
 ---
 

@@ -3,8 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+
+---
+
+## P092 Target-State Refinement: God Artifact Continuation
+
+Execution continuity now treats unresolved touched-scope God artifact pressure as continuation work.
+
+The assistant should repair clear cases, plan broad cases in the current execution surface, and block closeout only when unresolved pressure remains without a safe route.
 
 ---
 

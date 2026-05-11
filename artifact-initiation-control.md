@@ -1,6 +1,6 @@
 # Artifact Initiation Control
-> **Current Version:** 1.8
-> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.8
+> **Current Version:** 1.9
+> **Design:** [design/artifact-initiation-control.design.md](design/artifact-initiation-control.design.md) v1.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/artifact-initiation-control.changelog.md](changelog/artifact-initiation-control.changelog.md)
 ---
@@ -23,6 +23,24 @@ Guidance:
 - do not silently skip required artifacts or live tracking surfaces
 - do not use `trivial`, cleanup, or `not required` wording to classify an existing/newly encountered file as removable or `safe to remove`; file meaning and deletion authority require stronger owners
 ---
+## God Artifact Repair Posture
+
+When detected God artifact pressure cannot be safely repaired in place, resolve the required governed repair surface immediately.
+
+Use existing artifacts when they already fit.
+Create now when the owner route is clear and governed startup criteria are met.
+Ask now only when owner, scope, phase lineage, patch need, or approval-sensitive meaning is ambiguous.
+
+Required posture examples:
+- design sharding or design split needs design posture
+- bulky version history needs changelog or changelog/done posture
+- accumulated TODO movement needs TODO history/done posture
+- God Phase pressure needs phase lineage posture
+- God Patch pressure needs patch posture
+- cross-surface repair needs live task tracking when non-trivial
+
+`not required` for a surface never means the detected artifact is safe to ignore or delete.
+
 ## Phase and Patch Startup Rules
 Phase:
 - if staged execution, gates, rollback boundaries, or sufficiently clear governed design make `/phase` useful, resolve phase posture now as `use existing`, `create now`, or `ask now`

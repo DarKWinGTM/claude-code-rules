@@ -1,12 +1,28 @@
 # Changelog - Document Patch Control
 
 > **Parent Document:** [../document-patch-control.md](../document-patch-control.md)
-> **Current Version:** 2.8
+> **Current Version:** 2.9
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-29"></a>
+## Version 2.9: Added automatic God Patch repair planning
+
+**Date:** 2026-05-11
+**Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+
+### Changes
+- Added automatic God Patch handling for touched patch scope.
+- Required in-place restructure, patch split, phase routing, or visible repair planning before closeout.
+- Preserved reviewability and the no-deletion boundary for God Patch repair.
+
+### Summary
+Added automatic God Patch repair planning for P092 / v10.00.
+
+---
 
 ## Version 2.8: Added God Patch prevention and patch-split criteria
 
@@ -16,6 +32,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.9 | 2026-05-11 | **[Added automatic God Patch repair planning](#version-29)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.7 | 2026-04-29 | **[Added completed patch history surface](#version-27)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.6 | 2026-04-23 | **[Added external-requirement basis visibility for patch review](#version-26)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.5 | 2026-04-08 | **[Narrowed patch semantics so startup baseline formation no longer implies patch by default](#version-25)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |

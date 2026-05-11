@@ -3,8 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.33
+> **Current Version:** 2.34
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-09)
+
+---
+
+## P092 Target-State Refinement: Automatic God Phase Handling
+
+Phase governance now treats God Phase detection as an immediate lineage and repair-planning event.
+
+The target state is restructure, subphase split, new major phase, or narrow ambiguity question before phase closeout claims.
 
 ---
 

@@ -1,6 +1,6 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.16
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.16
+> **Current Version:** 1.17
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.17
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
@@ -34,6 +34,19 @@ When execution mode is active, startup posture is resolved enough, and no real s
 - do not end a turn only to report a milestone if safe continuation exists
 - do not pause to expose an obvious task when the assistant can do it directly
 - status may clarify changes/completion/blockers, but reporting alone must not become the stop reason
+
+### God artifact continuation
+
+Detected touched-scope God artifact pressure is active continuation work when governed execution is already underway.
+
+Required guidance:
+- continue into safe local repair when the split is clear and low-risk
+- create or extend a visible repair slice when the repair is broad but belongs to the active objective
+- route phase-shaped repair through phase lineage before opening a new major phase
+- route reviewable before/after repair through patch posture when needed
+- stop only for real ambiguity, approval-sensitive scope, destructive action, missing authority, or completed objective with no selected repair path
+
+Reporting that God pressure exists is not a legitimate stop by itself when repair or planning is already clear.
 
 ### Goal-state continuity and completion-to-next-goal bridge
 During non-trivial execution, use the goal/output/gate frame as navigation when it prevents drift or improves verification. The frame may stay internal when the path is obvious, and it must not become a stop ritual between already selected safe slices.

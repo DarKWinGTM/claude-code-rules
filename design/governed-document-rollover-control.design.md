@@ -3,9 +3,17 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-08)
 > **Full history:** [../changelog/governed-document-rollover-control.changelog.md](../changelog/governed-document-rollover-control.changelog.md)
+
+---
+
+## P092 Target State: Automatic Rollover Repair Planning
+
+Rollover governance now treats God-document pressure in TODO and phase entrypoints as an owned repair event.
+
+The target state is immediate rollover when clear, visible repair planning when broader, and closeout blocking when touched overload remains unowned.
 
 ---
 
