@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.00</b><br><sub>In Progress</sub>
+  <b>v10.00</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pending</b><br><sub>Release Gates</sub>
+  <b>Verified</b><br><sub>Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>God automation</b><br><sub>P092 Active</sub>
+  <b>God automation</b><br><sub>P092 Released</sub>
 </td>
 </tr>
 </table>
@@ -353,10 +353,10 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P092 automatic God artifact planning and controlled repair is active for v10.00.
+- P092 automatic God artifact planning and controlled repair is released for v10.00.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds action-mode routing for repair-now, phase planning, patch packaging, phase splitting, closeout blocking, and ambiguity handling.
-  - Runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation review passed; `master` push and GitHub release `v10.00` verification remain pending.
+  - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification are complete.
 - P091 governed document God-file prevention and repair is released for v9.99.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds document-capacity gates and role-aware repair routes across active governance documents.
@@ -478,7 +478,7 @@ Current release: P092 / v10.00 automatic God artifact planning and controlled re
 
 - Active source install set remains 47 files.
 - Owner chains define automatic God artifact detection, repair planning, and closeout blocking for unresolved touched-scope pressure.
-- Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification remain pending.
+- Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification are complete.
 </div>
 
 ---
@@ -1200,7 +1200,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: v10.00 keeps install scope at 47 source-owned active runtime files.
-- Verification state: P092 source docs are synchronized; runtime install, 47/47 parity/body sufficiency, and density review passed; push and release verification remain pending.
+- Verification state: P092 source docs, runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification are complete.
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity and automation

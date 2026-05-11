@@ -19,6 +19,7 @@
 - [x] P090 / v9.97 context-load and document-density control was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P090-01 / v9.98 opportunistic God-line repair refinement was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P091 / v9.99 governed document God-file prevention and repair was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
+- [x] P092 / v10.00 automatic God artifact planning and controlled repair was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 
 Completed historical detail before this compact entrypoint is intentionally not duplicated here. Use the pre-rollover snapshot or future `todo/done/` shards for audit, rollback, or provenance.
 
@@ -28,10 +29,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- [ ] P092 / v10.00 automatic God artifact planning and controlled repair is active.
-  - Goal: make detected God artifact pressure trigger repair, planning, or closeout blocking without a second user instruction.
-  - Passed: source sync, runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation review.
-  - Remaining gate: `master` push and GitHub release `v10.00` verification.
+- None currently selected after P092 / v10.00 closeout.
 
 ### Deferred / Not Selected
 
@@ -50,8 +48,9 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
-| 2026-05-11 | P092 runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation checks passed; push/release remains pending. |
-| 2026-05-11 | Opened P092 / v10.00 automatic God artifact planning; owner chains and master records are source-synchronized while release gates remain pending. |
+| 2026-05-11 | Released P092 / v10.00 automatic God artifact planning and controlled repair; 47/47 parity/body sufficiency passed; density/God-artifact automation review passed; `master` pushed; release `v10.00` published. |
+| 2026-05-11 | P092 runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation checks passed before final push/release closeout. |
+| 2026-05-11 | Opened P092 / v10.00 automatic God artifact planning; owner chains and master records were source-synchronized before release gates closed. |
 | 2026-05-11 | Released P091 / v9.99 governed document God-file prevention and repair; 47/47 parity/body sufficiency passed; density review passed; `master` pushed; release `v9.99` published. |
 | 2026-05-10 | Released P090-01 / v9.98; context-load owner v1.1 installed; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.98` published. |
 | 2026-05-10 | Released P090 / v9.97; added context-load owner as the 47th runtime rule; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.97` published. |

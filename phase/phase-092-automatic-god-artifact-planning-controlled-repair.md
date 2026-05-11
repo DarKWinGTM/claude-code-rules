@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P092
-> **Status:** In Progress
+> **Status:** Completed
 > **Target Release:** v10.00
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.00
@@ -66,8 +66,8 @@ P092 makes detection actionable by default while preserving safety:
 - [x] Install only README-listed active runtime rules.
 - [x] Verify 47/47 source/runtime parity and active runtime body sufficiency.
 - [x] Run density and God-artifact automation checks for touched active docs.
-- [ ] Push `master` and publish GitHub release `v10.00`.
-- [ ] Close P092 records only after release verification passes.
+- [x] Push `master` and publish GitHub release `v10.00`.
+- [x] Close P092 records after release verification passes.
 
 ---
 
@@ -105,4 +105,4 @@ If P092 is reversed:
 
 ## Current Status
 
-P092 is active. Source sync, runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation gates are complete; push, release, and closeout remain pending.
+P092 is complete. Source sync, runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
