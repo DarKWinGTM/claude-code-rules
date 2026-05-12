@@ -3,8 +3,20 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P094 Target-State Refinement: Edit-Capable Governed-Document Repair Delegation
+
+Native worker routing now defines a bounded edit-capable governed-document repair lane for `general-purpose`-style workers.
+
+Broad audits stay read-only unless edit ownership is explicit.
+
+Edit-capable workers may repair only assigned governed docs or anchors. They require non-overlapping ownership, meaning-preservation constraints, no destructive action, and leader verification before clean claims.
+
+Repair handoffs must include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs.
 
 ---
 
@@ -45,6 +57,7 @@ Observed failure modes:
 - worker handoffs are over-constrained by arbitrary word limits or under-constrained as raw dumps
 - broad external/design-improvement research can still be handled as leader raw websearch instead of decomposed research lanes
 - broad roadmap/phase-matrix analysis can still be handled as leader raw design/TODO/phase absorption instead of a filtered planning/review lane
+- context-heavy God-line or God-document repair can be unsafe without explicit edit ownership and preservation constraints
 - subagents can be asked to search without clear topic boundaries, source-trust expectations, roadmap dimensions, or synthesis requirements
 - custom-agent selection can be confused with the earlier question of whether the work should be delegated at all
 - execution continuity can push into the next broad slice without re-running an intent and worker-scale gate
@@ -64,6 +77,7 @@ The repository needs one source-owned Main RULES chain that says when the assist
 - Native proactive delegation behavior during real execution
 - Team/teammate restriction boundary when standalone subagents remain allowed
 - Worker handoff quality and proportionality
+- Edit-capable governed-document repair delegation for bounded `general-purpose`-style workers
 - Research-lane decomposition and leader-context protection for broad external/source research
 - Roadmap/phase-matrix analysis lane decomposition when multiple design, TODO, phase, risk, dependency, or verification surfaces need synthesis
 - Parallel edit containment
@@ -129,6 +143,19 @@ Target behavior:
 - official teams and external plugins/MCPs stay within their documented capability
 - plugin/shared-board exact grammar stays outside Main RULES unless the owning surface is selected
 
+### 4.2.3 Edit-Capable Governed-Document Repair Target
+
+For context-heavy governed-document repair, routing may select one bounded edit-capable `general-purpose`-style worker lane.
+
+Target behavior:
+- the leader assigns exact files, sections, anchors, and allowed edit scope
+- broad audit or review lanes remain read-only unless edit ownership is explicit
+- edit-capable workers preserve meaning, history reachability, cross-references, and authority roles
+- destructive actions, file deletion, status upgrades, unrequested relocation, and authority-role mutation are out of scope
+- parallel edit-capable lanes own non-overlapping artifacts or sections
+- workers stop and return risks when ambiguity or overlap appears
+- the leader verifies changed artifacts before sync, no-drift, closeout, or release-ready wording
+
 ### 4.3 Capability-Based Routing
 Routing should be driven by:
 - user intent and active scope
@@ -156,6 +183,8 @@ A user restriction on `teammate` or `Agent Team` should block coordinated team w
 Worker output should be analyzed and proportionate. It should include only the material result, checked scope, evidence strength, conflicts or uncertainty, and next verification when useful.
 
 Research handoff should also show what topic/query families were checked, which source tiers were trusted or downgraded, where sources conflicted, what the findings imply for design/recommendation choices, and which evidence the leader should verify directly.
+
+Edit-capable repair handoff must include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs.
 
 Arbitrary generic handoff limits are not part of the target state. The output size should fit the actual task and evidence complexity.
 
@@ -225,6 +254,8 @@ This chain succeeds when:
 - subagents are used first for bounded independent filtering/research/review lanes
 - broad research/design-improvement work is decomposed into research lanes when that improves coverage or protects leader context
 - broad roadmap/phase-matrix analysis is decomposed into focused planning/review lanes when multiple design, TODO, phase, risk, dependency, or verification surfaces need synthesis
+- edit-capable governed-document repair is bounded by explicit scope, non-overlap, preservation constraints, and leader verification
+- edit-capable repair handoffs include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs
 - research and roadmap handoffs include source/artifact quality, conflicts, implications, and leader verification needs instead of raw dumps
 - coordination-design claims classify the actual checked mechanism before claiming delivery, mutation, awareness, routing, or authority behavior
 - Agent Teams are used only when coordination semantics are worth the overhead and allowed by user direction

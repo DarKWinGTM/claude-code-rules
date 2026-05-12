@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-12
-> **Current Release:** v10.01 / P093 worker-first aggregate-read gate
+> **Current Release:** v10.02 / P094 edit-capable governed-document repair delegation
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -30,7 +30,11 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-No active release phase is selected after P093 / v10.01 closeout.
+- [ ] P094 / v10.02 edit-capable governed-document repair delegation is active/pre-release.
+  - Goal: allow native edit-capable workers to perform bounded meaning-preserving governed-document repair while the leader remains final verifier.
+  - Source state: owner-chain implementation and master current-state doc sync are recorded for the active P094 gate.
+  - Passed gates: runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review.
+  - Remaining gates: push and GitHub release `v10.02` verification.
 
 ### Deferred / Not Selected
 
@@ -49,6 +53,9 @@ No active release phase is selected after P093 / v10.01 closeout.
 
 | Date | Changes |
 |------|---------|
+| 2026-05-12 | P094 / v10.02 source sync recorded owner-chain implementation and active master-doc alignment. |
+| 2026-05-12 | P094 runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed; push/release remain pending. |
+| 2026-05-12 | Opened P094 / v10.02 edit-capable governed-document repair delegation. |
 | 2026-05-12 | Released P093 / v10.01 worker-first aggregate-read gate; 47/47 parity/body sufficiency, density review, push, and release passed. |
 | 2026-05-11 | Released P092 / v10.00 automatic God artifact planning and controlled repair; 47/47 parity/body sufficiency passed; density/God-artifact automation review passed; `master` pushed; release `v10.00` published. |
 | 2026-05-11 | P092 runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation checks passed before final push/release closeout. |

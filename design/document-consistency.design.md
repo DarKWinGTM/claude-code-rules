@@ -3,8 +3,24 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P094 Target-State Refinement: Delegated-Repair Consistency Gate
+
+Document consistency now treats worker-edited governed documents as requiring leader verification before clean sync, no-drift, closeout, or release-ready claims.
+
+The gate checks:
+- meaning preservation and authority-role boundaries
+- history/done reachability and cross-reference resolution
+- version alignment
+- phase/patch links when touched
+- README install-array safety when relevant
+- source-owned runtime install scope
+
+Worker handoff is input, not proof.
 
 ---
 
@@ -49,6 +65,7 @@ Set document consistency standards to:
 - distinguish governed design parent indexes, governed design child shards, source-owned active runtime files, active runtime body sufficiency, shared runtime destinations, and other-owner runtime files
 - keep compact design index shard maps and child-shard authority boundaries aligned
 - keep local execution paths distinct from reusable source-artifact references so tool-local paths do not silently become source contracts
+- verify worker-edited governed documents before using them in clean sync/no-drift/closeout claims
 
 ### 1.2 Problem Statement
 
@@ -63,6 +80,7 @@ Set document consistency standards to:
 | Source/destination blur | Readers cannot tell where an artifact comes from versus where it installs/runs | Separate reference roles explicitly |
 | Parity scope blurred with destination ownership | Files in a shared runtime destination can be mistaken as owned or junk based on co-location alone | Separate source-owned install set, shared destination, and other-owner runtime vocabulary |
 | File looks untracked/new so it gets treated as cleanup noise before reference checks | Governed references/history can be destroyed before the repo meaning is checked | Require master-surface, owner-scope, and cross-reference checks before disposal classification |
+| Worker-edited governed docs are treated as clean from handoff alone | Meaning, links, or authority roles can drift without leader proof | Require delegated-repair consistency verification before clean claims |
 
 ### 1.3 Solution
 
@@ -89,6 +107,7 @@ Create a Consistency Framework that:
 - Keep current source-owned active runtime install scope distinct from the shared runtime destination directory
 - Keep active runtime body sufficiency distinct from metadata/header parity and hash parity when claiming install success or no-drift
 - Keep other-owner runtime files distinct from the current project's parity/install target set unless their owner/project is explicitly selected or verified
+- Treat worker-edited governed documents as unverified until the leader checks meaning preservation, role boundaries, links, and version scope
 - Defer broader portable-default and anti-hardcoding ownership to `portable-implementation-and-hardcoding-control.md`
 
 ### 2.2 Reference Types
@@ -122,6 +141,7 @@ Apply verification before finalizing references or consistency claims when trigg
 | Parity scope blurred with destination ownership | install/parity wording treats the whole runtime destination as current-project owned | distinguish source-owned install set, shared destination, and other-owner runtime files |
 | Active runtime body sufficiency | parity/no-drift wording checks metadata or hashes but not whether runtime behavior exists | verify substantive active runtime body before parity, no-drift, or release claims |
 | Disposal or junk classification | file may still be referenced by governed repo surfaces or owned by another runtime source | check master surfaces, dependent references, and owner/project scope before classifying the file as cleanup noise |
+| Worker-edited governed docs | worker changed governed artifacts | leader checks preservation, roles, links, versions, install safety, and runtime scope |
 
 ---
 
@@ -188,6 +208,18 @@ Verify consistency
 - "The variable somewhere in the code"
 - one exact workstation path acting as both source path and destination/runtime path without explanation
 
+### 4.1.1 Delegated-repair consistency labels
+
+When worker-edited governed documents participate in a clean claim, report them as checked only after leader verification covers:
+- meaning preservation
+- authority-role boundaries
+- history/done reachability
+- cross-reference resolution
+- runtime/design/changelog version alignment
+- phase/patch links when touched
+- README install-array safety when relevant
+- source-owned runtime install scope
+
 ### 4.2 Verification Labels
 
 ```markdown
@@ -210,6 +242,7 @@ Verify consistency
 | Source-vs-destination separation | High |
 | Source-owned/shared-destination/other-owner separation | High | Install-doc roles stay explicit |
 | Active runtime body-sufficiency validation | High | Parity/no-drift claims check substantive runtime bodies |
+| Delegated-repair consistency verification | High | Worker-edited governed docs are leader-verified before clean claims |
 | Compact design index and child-shard consistency | High | Parent index shard maps and child scopes align |
 
 ---
@@ -256,6 +289,8 @@ When classifying a newly encountered file as junk/disposable/non-governed:
 | portable-implementation-and-hardcoding-control | Owns broader anti-hardcoding semantics and source-side versus destination/runtime notation discipline |
 | document-design-control | Owns compact parent design index and governed child shard semantics |
 | unified-version-control-system | Owns controller-level active runtime body-sufficiency validation |
+| native-worker-agent-routing-and-context-control | Owns bounded edit-capable worker routing before delegated repair |
+| context-load-and-document-density-control | Owns delegated repair routing for context-heavy God artifact pressure |
 | authority-and-scope | Owns the runtime co-location non-ownership boundary |
 
 ### 7.2 Tool Usage

@@ -3,8 +3,20 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P094 Target-State Refinement: Delegated Governed-Document Repair Route
+
+The context-load owner now treats delegated repair as a bounded route for context-heavy God-line or God-document repair.
+
+Delegated repair is allowed only when meaning can be preserved inside exact artifacts or anchors.
+
+It must not delete, summarize away, reinterpret, relocate, status-upgrade, mutate authority roles, lose history reachability, or break cross-references.
+
+Ambiguous, history-heavy, authority-shifting, broad, destructive, or user-analysis-only cases route to visible planning, blocking, or ask state instead of worker edits.
 
 ---
 
@@ -62,6 +74,7 @@ Observed failure modes:
 - a small logical edit can produce a huge one-line diff when the target line is already too dense
 - assistants may notice a touched God-line candidate but only warn instead of repairing a clear low-risk split
 - compact/thrash can be misread as a need for rigid post-compact bans instead of a workflow and document-structure repair signal
+- context-heavy God-line or God-document repair may need worker help, but unsafe cases must not become worker edits
 
 The system needs an owner that connects these issues across reading, writing, worker routing, and closeout verification.
 
@@ -146,6 +159,14 @@ If the line is already dense:
 
 Governance sync should include a quick density check when touched docs are active entrypoints or review surfaces. Semantic sync is incomplete if the update leaves the next session with avoidable context debt.
 
+### 4.7 Delegated governed-document repair
+
+Context-heavy repair may be delegated only when the worker receives exact artifacts or anchors, a meaning-preservation goal, and explicit non-destructive boundaries.
+
+The delegated route is not available when the repair would require deletion, summary loss, reinterpretation, relocation, status upgrade, authority-role mutation, or broken history/cross-reference reachability.
+
+Ambiguous, broad, history-heavy, authority-shifting, destructive, or user-analysis-only cases become visible planning, blocking, or ask states.
+
 ---
 
 ## 5) Owner Boundaries
@@ -156,6 +177,7 @@ This rule owns:
 - leader-context protection as a context-safety requirement
 - document-density and God-line prevention
 - opportunistic touched-doc God-line repair
+- delegated governed-document repair route for bounded context-heavy repair
 - append-vs-restructure decision gates
 - compact/thrash as repair signal
 
@@ -171,25 +193,22 @@ This rule does not own:
 
 ## 6) Acceptance Criteria
 
-- The existing active runtime rule advances to v1.1 without adding a new runtime rule.
-- README install arrays remain at the same 47 source-owned active runtime rule files.
-- The rule tells assistants to repair clear low-risk touched active-doc God-line candidates in the same edit.
-- The rule tells assistants to flag or plan broad, history-heavy, or meaning-risky density debt instead of silently appending.
+- The existing active runtime rule advances to v1.5 without adding a new runtime rule.
+- The design/runtime/changelog chain describes the P094 delegated-repair route consistently.
+- Context-heavy God-line or God-document repair can be delegated only when bounded and meaning-preserving.
+- Delegated repair cannot delete, summarize away, reinterpret, relocate, status-upgrade, mutate authority roles, lose history reachability, or break cross-references.
+- Ambiguous, history-heavy, authority-shifting, broad, destructive, or analysis-only cases route to visible planning, blocking, or ask state.
 - The rule preserves worker-first broad raw evidence filtering and compact/thrash repair signals.
-- Master design, changelog, TODO, phase, and patch records describe v9.98 / P090-01 consistently.
-- Source/runtime parity and active runtime body sufficiency pass for 47/47 runtime files.
 
 ---
 
 ## 7) Verification Notes
 
-P090-01 verification should check both semantic governance sync and future-read cost.
+P094 verification should check both semantic governance sync and future-read cost.
 
 Required verification categories:
-- README Bash and PowerShell arrays contain the same 47 files
-- runtime/design/changelog chain versions align at v1.1
-- active runtime install parity passes for 47/47 files
-- active runtime body sufficiency passes for 47/47 files
+- runtime/design/changelog chain versions align at v1.5
+- delegated repair route is bounded by exact artifacts or anchors
+- prohibited repair mutations are excluded from worker-edit scope
+- ambiguous or authority-shifting repairs are not assigned as worker edits
 - touched active docs avoid new God-line style append dumps
-- clear low-risk touched-doc God-line candidates are repaired or explicitly flagged
-- broad final audit uses worker filtering when the scope is multi-surface

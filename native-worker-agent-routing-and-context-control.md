@@ -1,6 +1,6 @@
 # Native Worker Agent Routing and Context Control
-> **Current Version:** 1.5
-> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/native-worker-agent-routing-and-context-control.changelog.md](changelog/native-worker-agent-routing-and-context-control.changelog.md)
 ---
@@ -53,6 +53,7 @@ Route by capability and workload shape, not rigid tool name. Evaluate user inten
 |---|---|
 | trivial, exact, one-step, low-output, tightly sequential | leader directly |
 | one bounded research/review/source scan/log-test filter/docs lookup/evidence proof lane | one focused standalone subagent / worker lane |
+| one bounded governed-document repair lane with explicit edit ownership | one edit-capable `general-purpose`-style standalone worker lane |
 | two or more independent read-only/filter/comparison lanes | multiple focused standalone subagents |
 | shared ownership, dependencies, teammate messaging, implementation plus review/test/docs sync, or durable handoff | official Agent Team / teammates as exceptional escalation |
 
@@ -75,23 +76,81 @@ Required guidance:
 - do not design runtime mutation, delivery guarantees, or cross-session authority from an imagined hook, hidden transport, or plugin feature that has not been checked
 - keep plugin/shared-board exact grammar outside Main RULES unless an owning plugin or explicit authority surface is selected
 
+### 4.3) Edit-capable governed-document repair lane
+A native edit-capable governed-document repair lane may use a `general-purpose`-style worker only when the leader assigns explicit bounded scope, exact artifacts or sections, and non-overlapping edit ownership.
+
+Required guidance:
+- broad audits and reviews remain read-only unless edit ownership is explicit
+- repair only the assigned governed documents and anchors
+- preserve meaning, history reachability, cross-references, and authority-role boundaries
+- do not delete files, remove history, relocate content, upgrade status, or mutate authority roles
+- stop and return risks when scope, ownership, or meaning preservation becomes ambiguous
+- leader verification of changed artifacts is required before sync, no-drift, closeout, or release-ready claims
+
+Edit-capable repair handoffs must include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs.
+
 ### 5) Native execution behavior
-Worker routing is normal execution behavior, not a special mode. Proactively look for worker-fit slices, keep the worker set minimal, prefer subagent-first handling for broad lanes without shared-team coordination, reuse active/recent standing-role workers before duplicate-looking spawns, put phase/task/objective context in the assignment rather than necessarily in worker identity, and do not over-delegate simple work.
+Worker routing is normal execution behavior, not a special mode.
+
+Required behavior:
+- proactively look for worker-fit slices
+- keep the worker set minimal
+- prefer subagent-first handling for broad lanes without shared-team coordination
+- reuse active/recent standing-role workers before duplicate-looking spawns
+- put phase/task/objective context in the assignment rather than necessarily in worker identity
+- do not over-delegate simple work
 
 ### 6) Team restriction boundary
-A user ban on `teammate`, `Agent Team`, or team workflow restricts coordinated team/teammate mechanisms unless the user explicitly broadens the ban. It does **not** automatically ban standalone subagents, `Agent(...)`, `Explore(...)`, read-only reviewer/auditor agents, or comparable worker tools. If Agent Team is disallowed but broad worker-fit work remains, use a standalone subagent when suitable. If all agent/subagent mechanisms are explicitly disallowed, handle directly and state the constraint when broad work would otherwise be delegated.
+A user ban on `teammate`, `Agent Team`, or team workflow restricts coordinated team/teammate mechanisms unless the user explicitly broadens the ban.
+
+It does **not** automatically ban standalone subagents, `Agent(...)`, `Explore(...)`, read-only reviewer/auditor agents, or comparable worker tools.
+
+If Agent Team is disallowed but broad worker-fit work remains, use a standalone subagent when suitable.
+
+If all agent/subagent mechanisms are explicitly disallowed, handle directly and state the constraint when broad work would otherwise be delegated.
 
 ### 7) Subagent lane contract
-Use a standalone subagent for bounded independent work that benefits from separate context but not full team coordination. Default research/audit/review lanes to read-only unless edit ownership is explicit. Brief the lane with objective, checked scope, allowed actions, expected output, and stop gates. For research lanes, include the decision surface, suggested topic boundaries, source-trust expectations, and permission to refine query/topic strategy inside scope. Scope the lane to return analyzed findings, not raw dumps. Use multiple subagents only for meaningfully independent lanes.
+Use a standalone subagent for bounded independent work that benefits from separate context but not full team coordination.
+
+Default research/audit/review lanes to read-only unless edit ownership is explicit. Edit-capable governed-document repair lanes are allowed only under the bounded repair contract above.
+
+Brief the lane with objective, checked scope, allowed actions, expected output, and stop gates.
+
+For research lanes, include the decision surface, suggested topic boundaries, source-trust expectations, and permission to refine query/topic strategy inside scope.
+
+Scope the lane to return analyzed findings, not raw dumps. Use multiple subagents only for meaningfully independent lanes.
 
 ### 8) Agent Team escalation contract
-Use official Agent Team / teammate workflow only when coordination is needed, not merely context filtering. Teams require shared task ownership, dependencies, messaging, implementation plus review/test/docs sync, or durable handoff that standalone subagents cannot cover cleanly. Every teammate needs distinct role, objective, checked scope, edit permission, expected output, and stop gates. Edit-capable teammates must own non-overlapping artifacts/classes. Plugin/shared-board/custom tmux bridge mechanics remain outside this Main RULES owner unless separately selected by the user or an active project rule.
+Use official Agent Team / teammate workflow only when coordination is needed, not merely context filtering.
+
+Teams require shared task ownership, dependencies, messaging, implementation plus review/test/docs sync, or durable handoff that standalone subagents cannot cover cleanly.
+
+Every teammate needs distinct role, objective, checked scope, edit permission, expected output, and stop gates. Edit-capable teammates must own non-overlapping artifacts/classes.
+
+Plugin/shared-board/custom tmux bridge mechanics remain outside this Main RULES owner unless separately selected by the user or an active project rule.
 
 ### 9) Worker handoff quality
-Worker output must be filtered and analyzed. Do not impose a fixed generic limit such as “under 300 words”; size handoff to task type, evidence complexity, and decision value. Include outcome, checked scope, relevant evidence, evidence strength, conflicts/uncertainty, and recommended next verification when material. Research handoffs should also name topic/query families checked, source-quality tier or trust notes, source conflicts, design/recommendation implications, and what the leader should verify directly. Omit noise unless it explains a finding, conflict, or risk. Preserve exact file paths, symbols, command output, URLs, or line references only when materially supporting the result.
+Worker output must be filtered and analyzed. Do not impose a fixed generic limit such as “under 300 words”; size handoff to task type, evidence complexity, and decision value.
+
+Baseline handoff should include outcome, checked scope, relevant evidence, evidence strength, conflicts or uncertainty, and recommended next verification when material.
+
+Research handoffs should also name topic/query families checked, source-quality tier or trust notes, source conflicts, design/recommendation implications, and what the leader should verify directly.
+
+Edit-capable repair handoffs must name:
+- touched artifacts and exact anchors
+- preservation notes
+- checks run
+- unresolved risks
+- leader verification needs
+
+Omit noise unless it explains a finding, conflict, or risk. Preserve exact file paths, symbols, command output, URLs, or line references only when materially supporting the result.
 
 ### 10) Parallel edit containment
-Parallel implementation is allowed only with clear ownership separation by file, module, test target, documentation surface, or artifact class. Do not assign overlapping writes unless one lane is explicitly review-only. Use read-only workers for investigation/review when edit overlap risk is high. Edit-capable lanes report touched artifacts, checks run, unresolved risks, and handoff notes.
+Parallel implementation is allowed only with clear ownership separation by file, module, test target, documentation surface, or artifact class.
+
+Do not assign overlapping writes unless one lane is explicitly review-only. Use read-only workers for investigation/review when edit overlap risk is high.
+
+Edit-capable lanes report touched artifacts, checks run, unresolved risks, and handoff notes.
 
 ### 11) Main-controller verification
 The leader remains responsible for synthesis, direction, verification, and completion claims. Worker findings are context, not automatic proof. Resolve conflicts from checked evidence, verify material claims before user-facing factual/completion/sync/fixed wording, and inspect changed artifacts after worker edits.
@@ -113,8 +172,8 @@ Is it broad research/source comparison/roadmap-analysis/design-improvement evide
   → YES: map research or roadmap lanes, then use one or more focused standalone subagents when lanes are independent
   → NO: continue
   ↓
-One bounded independent lane can filter/research/review it?
-  → YES: use one focused standalone subagent
+One bounded independent lane can filter, research, review, or own a governed-document repair scope?
+  → YES: use one focused standalone subagent or bounded edit-capable repair lane
   → NO: continue
   ↓
 Independent read-only lanes can run without shared ownership?
@@ -135,6 +194,7 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 | coordination design or cross-session behavior proposal | classify the actual mechanism first, then keep claims within checked capability |
 | high-output test/log/build evidence | prefer worker filtering before leader reads raw noisy output |
 | multi-surface governance audit | use a focused audit worker or multiple standalone workers when scope is broad |
+| context-heavy God-line/God-document repair | use a bounded edit-capable repair lane only with explicit scope, edit ownership, and preservation constraints |
 | external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
 | broad design-improvement research | map independent topic lanes first, then dispatch one or more focused subagents before leader raw websearch absorption |
 | independent parallel research lanes | use multiple subagents when coordination need stays low and topics are meaningfully separable |
@@ -155,6 +215,7 @@ Avoid:
 - treating teammate/Agent Team bans as standalone-subagent bans
 - escalating to Agent Team when one subagent would cover the work
 - fixed handoff caps, raw worker dumps, duplicate same-role worker spawn, or overlapping parallel edits
+- assigning edit-capable governed-document repair without bounded ownership and preservation constraints
 - treating worker summaries as proof or importing plugin/shared-board grammar into Main RULES
 
 Better behavior: classify intent and worker scale first, dispatch the smallest fitting lane or state the narrow direct-handling reason, keep Agent Team escalation for true shared coordination, and require leader verification before completion wording.
@@ -170,6 +231,7 @@ Better behavior: classify intent and worker scale first, dispatch the smallest f
 - [ ] Agent Team / teammate workflow was used only when shared coordination was truly needed and allowed
 - [ ] A teammate/Agent Team ban was not treated as a standalone-subagent ban unless the user broadened it
 - [ ] Research/review lanes were read-only unless edit ownership was explicit
+- [ ] Edit-capable governed-document repair lanes had bounded scope and preservation constraints
 - [ ] Edit-capable lanes had non-overlapping ownership
 - [ ] Worker handoff was analyzed and proportionate, not raw dump or fixed word cap
 - [ ] Leader verified material claims and changed artifacts before completion wording
@@ -187,6 +249,7 @@ Better behavior: classify intent and worker scale first, dispatch the smallest f
 | Delegation-by-capability clarity | High |
 | Over-delegation of trivial work | Low |
 | Worker handoff signal quality | High |
+| Edit-capable governed-document repair containment | High |
 | Parallel edit overlap | 0 critical cases |
 | Leader verification before completion claims | 100% |
 ---

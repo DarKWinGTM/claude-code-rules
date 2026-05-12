@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.01</b><br><sub>Released</sub>
+  <b>v10.02</b><br><sub>P094 Active</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Verified</b><br><sub>Release Gates</sub>
+  <b>Pending</b><br><sub>Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>Worker-first reads</b><br><sub>P093 Released</sub>
+  <b>Delegated repair</b><br><sub>Leader verified</sub>
 </td>
 </tr>
 </table>
@@ -353,6 +353,12 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
+- P094 edit-capable governed-document repair delegation is active/pre-release for v10.02.
+  - Keeps the source-owned active runtime set at 47 files.
+  - Adds bounded native edit-capable repair for governed documents when scope is explicit and meaning-preserving.
+  - Requires leader final verification before sync, no-drift, closeout, parity, or release-ready claims.
+  - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
+  - Push and GitHub release `v10.02` verification remain pending.
 - P093 worker-first aggregate-read gate is released for v10.01.
   - Keeps the source-owned active runtime set at 47 files.
   - Requires worker-first filtering before broad governance/code aggregate reads unless a narrow direct-handling exception is stated.
@@ -419,7 +425,7 @@ Please:
 | [`audience-surface-disclosure-control.md`](audience-surface-disclosure-control.md) | Audience surface disclosure | Full direct-user/project-owner transparency stays separate from audience-safe generated public, customer-facing, operator-facing, log, demo, release, onboarding, and externally shared wording |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer the best visible custom/specialist agent after native worker routing has already classified intent, selected the needed worker capability, and chosen a direct/subagent/multi-subagent/team scale; do not turn agent availability into a routing or Agent Team escalation decision |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
-| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps portable, source-side, governed design parent index, governed design child shard, source-owned active runtime, active runtime body-sufficiency, shared runtime destination, other-owner runtime, destination/runtime, local execution, and reusable source-artifact references distinct so parity/no-drift claims do not pass on shard-map drift, selected-shard overreach, shared-destination co-location, metadata-only roots, or cleanup-driven file classification |
+| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps no-drift claims scoped; delegated repairs require leader-verified meaning, authority, history, and reference preservation |
 | [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Active changelogs stay version authority while `changelog/done/` can hold inactive completed/older history when active scans would become too large |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Active blueprint/target-state structure, compact parent design indexes with governed active child shards for large designs, no default `design/done/`, and required capture of implementation-relevant truth extracted from external docs/specs/provider references when later work still depends on it |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed before/after patch/review artifacts outside the live `/phase` workspace, with `patch/done/` as inactive completed patch history rather than junk or active phase input by default |
@@ -471,20 +477,21 @@ Please:
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions, including keeping git-state file signals as weak local evidence only |
-| [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Classifies intent before project exploration, routes broad/noisy/high-context/multi-surface and broad research/design-improvement/source-heavy work by required capability, prefers standalone subagent and research lanes first, and keeps Agent Team workflow as an exceptional coordination escalation while the leader remains synthesis and verification owner |
-| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Worker-filtered evidence, safe docs, and God-line repair |
+| [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Smallest worker lane for broad work; repair needs explicit scope and leader check |
+| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Evidence intake, density, God-line repair, and low-risk repair routing |
 | [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Bounded file handling with parent-index-first, shard-selective reads for sharded active designs and rollover signals for oversized governance entrypoints |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
 **📊 Active Runtime Rules: 47**
 
-Current release: P093 / v10.01 worker-first aggregate-read gate.
+Current release: P094 / v10.02 edit-capable governed-document repair delegation is active/pre-release.
 
 - Active source install set remains 47 files.
-- Owner chains require worker-first filtering before broad governance/code aggregate reads unless a narrow direct-handling exception is stated.
-- Source governance sync is complete.
-- Runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed.
-- Release verification: `master` pushed and release `v10.01` published.
+- Owner chains now cover bounded native edit-capable repair for governed documents.
+- Delegated repair must be explicit, non-overlapping, and meaning-preserving.
+- Leader final verification remains required before sync, no-drift, closeout, parity, or release-ready claims.
+- Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
+- Push and GitHub release `v10.02` verification remain pending.
 </div>
 
 ---
@@ -1205,10 +1212,10 @@ Result: ✅ Verified from actual files
 
 ### Runtime install boundary
 
-- Current README meaning: v10.01 keeps install scope at 47 source-owned active runtime files.
-- Source state: P093 source governance sync is complete.
-- Runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed.
-- Release verification: `master` pushed and GitHub release `v10.01` published.
+- Current README meaning: v10.02 keeps install scope at 47 source-owned active runtime files.
+- Source state: P094 remains active/pre-release for edit-capable governed-document repair delegation.
+- Passed gates: runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review.
+- Remaining gates: push and GitHub release `v10.02` verification.
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity and automation

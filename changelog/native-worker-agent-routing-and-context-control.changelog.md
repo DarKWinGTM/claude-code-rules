@@ -1,7 +1,7 @@
 # Changelog - Native Worker Agent Routing and Context Control
 
 > **Parent Document:** [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-05-12 | **[Added edit-capable governed-document repair delegation](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Added a bounded `general-purpose`-style repair lane with explicit edit ownership, preservation constraints, and leader verification | |
 | 1.5 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Made broad governance/code aggregate reads worker-fit by default and required filtered worker handoffs plus leader anchor verification before broad claims | |
 | 1.4 | 2026-05-07 | **[Added mechanism-first coordination design gate](#version-14)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -20,6 +22,24 @@
 | 1.1 | 2026-05-04 | **[Refined subagent-first capability routing and intent gate](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-05-03 | **[Created native worker routing and context-control owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class rule chain for proactive workload-shaped worker routing, smallest-effective subagent/Agent Team selection, analyzed handoffs, parallel edit containment, and leader verification | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added edit-capable governed-document repair delegation
+
+**Date:** 2026-05-12
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `native-worker-agent-routing-and-context-control.md` from v1.5 to v1.6.
+- Updated `design/native-worker-agent-routing-and-context-control.design.md` from v1.5 to v1.6.
+- Added a bounded edit-capable governed-document repair lane for `general-purpose`-style workers.
+- Required explicit scope, non-overlapping edit ownership, meaning preservation, no destructive action, and leader verification.
+- Required edit-capable repair handoffs to include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs.
+
+### Summary
+Native worker routing now supports delegated governed-document repair only inside bounded, preservation-first edit ownership.
 
 ---
 

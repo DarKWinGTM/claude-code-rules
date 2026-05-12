@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.76
+> **Current Version:** 1.77
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected after P093 / v10.01 release
+> **Status:** P094 active for v10.02 edit-capable governed-document repair delegation
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,13 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- No active phase selected after P093 / v10.01 closeout.
+- **P094:** [phase-094-edit-capable-governed-document-repair-delegation.md](phase-094-edit-capable-governed-document-repair-delegation.md)
+  - Adds bounded edit-capable governed-document repair delegation for native workers.
+  - Output: workers may repair clear meaning-preserving document pressure while leader remains final verifier.
+  - Source state: owner-chain implementation and master current-state doc sync are recorded for active P094.
+  - Scope: no deletion, semantic damage, authority-role mutation, history loss, or unchecked final claims.
+  - Passed gates: runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review.
+  - Remaining gates: push and release `v10.02` verification.
 
 ### Recently Completed
 
@@ -76,9 +82,32 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Recent Phase Detail
 
+### P094 — Edit-Capable Governed-Document Repair Delegation
+
+- **Status:** Active/pre-release; install, 47/47 parity/body sufficiency, and density/God-artifact review passed; push/release pending
+- **Design References:**
+  - [../design/design.md](../design/design.md) v10.02
+  - [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md) v1.6
+  - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.5
+  - [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.14
+- **Patch References:** [../patch/edit-capable-governed-document-repair-delegation.patch.md](../patch/edit-capable-governed-document-repair-delegation.patch.md)
+- **Expected Output:**
+  - Native edit-capable workers can perform bounded governed-document repair when explicitly delegated.
+  - Delegated repair must preserve document meaning, authority role, history reachability, and cross-references.
+  - Ambiguous or meaning-risky repair becomes planned, blocked, or ask-now state instead of silent edits.
+  - Leader verifies selected anchors before final sync/no-drift/closeout/release-ready claims.
+  - Active runtime count remains 47.
+- **Completion Gate:**
+  - Runtime install copied only README-listed active runtime rules for the current 47-file set.
+  - README Bash and PowerShell arrays contain the same 47 active runtime files.
+  - 47/47 source/runtime parity and source/destination active runtime body sufficiency passed.
+  - Touched active docs pass density and God-artifact review.
+  - Broad validation uses worker-first filtering or records a narrow direct-handling exception.
+  - `master` push and GitHub release `v10.02` verification must pass before closeout.
+
 ### P093 — Worker-First Aggregate-Read Gate
 
-- **Status:** Active
+- **Status:** Completed
 - **Design References:**
   - [../design/design.md](../design/design.md) v10.01
   - [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md) v1.5
@@ -253,22 +282,28 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-- [x] P093 phase and patch records exist.
-- [x] P093 owner-chain runtime/design/changelog versions are source-synchronized.
-- [x] README, master design, master changelog, TODO, phase, and patch records align to v10.01 / P093 released state.
-- [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
-- [x] Runtime install copies only README-listed active runtime rules for v10.01.
-- [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
-- [x] Touched active docs pass density and God-artifact review.
-- [x] Broad validation used worker-first filtering for release validation.
-- [x] Git push and GitHub release `v10.01` are verified.
+P094 verification is active and must stay evidence-bound until each gate passes.
+
+Current source-sync focus:
+- P094 phase and patch records exist.
+- P094 owner-chain runtime/design/changelog versions are source-synchronized.
+- README, master design, master changelog, TODO, phase, and patch records align to active v10.02 / P094 state.
+
+Passed gates:
+- runtime install copied only README-listed active runtime rules
+- 47/47 source/runtime parity and source/destination active runtime body sufficiency passed
+- touched active docs passed final density and God-artifact review
+- broad validation used worker-first filtering for source and post-install checks
+
+Pending release gates:
+- `master` push and GitHub release `v10.02` verification pass before closeout
 
 ---
 
 ## Rollback / Containment
 
-If P093 is reversed:
-- revert the v10.01 worker-first aggregate-read gate changes through a governed rollback
-- restore prior v10.00 owner-chain versions and master records
+If P094 is reversed:
+- revert the v10.02 delegated repair changes through a governed rollback
+- restore prior v10.01 owner-chain versions and master records
 - reinstall the prior 47-file runtime set only under an explicit rollback gate
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

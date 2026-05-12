@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.01
+> **Current Version:** 10.02
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -79,6 +79,13 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
+- P094 is the active/pre-release v10.02 edit-capable governed-document repair delegation wave.
+  - It keeps the source-owned active runtime set at 47.
+  - It extends worker-first governance from filtered reads into bounded native edit-capable repair for governed documents.
+  - Delegated repair must be explicit, non-overlapping, meaning-preserving, and leader-verifiable before final claims.
+  - It advances `native-worker-agent-routing-and-context-control` to v1.6, `context-load-and-document-density-control` to v1.5, and `document-consistency` to v1.14.
+  - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
+  - Push and GitHub release `v10.02` verification remain pending.
 - P093 released v10.01 as the worker-first aggregate-read gate release wave.
   - It keeps the source-owned active runtime set at 47.
   - It turns broad governance/code aggregate reads into worker-first behavior before leader raw absorption unless a narrow direct-handling exception is stated.
@@ -125,7 +132,7 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 6 | authority-and-scope.md | authority-and-scope.design.md v2.5 | User authority, deterministic precedence, repo-governed semantic-authority precedence over git-state cleanup heuristics, runtime co-location as non-ownership authority, owner/project scope resolution before destination/runtime file classification or cleanup outside the current source-owned install set, fresh-directive override behavior, a rule against unnecessary option branching when one safe continuation path already exists, advisory future-work boundaries, RULES-first-over-memory authority, memory-governance deferral plus current-scope-wins protection, user-owned governing-basis selection, post-compact active-frame preservation, team-expansion boundaries, and deferral of discussion-vs-execution mode selection to the first-class execution-continuity owner |
 | 7 | custom-agent-selection-priority.md | custom-agent-selection-priority.design.md v1.3 | First-class owner for preferring the best visible custom/specialist agent after native worker routing has classified user intent, identified the needed worker capability, and selected a direct/subagent/multi-subagent/team scale; it selects capability-fit specialists without becoming the owner of worker-scale routing, leader-context control, or Agent Team escalation |
 | 8 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.3 | Normalize jailbreak-style wrappers into bounded intent evaluation |
-| 9 | document-consistency.md | document-consistency.design.md v1.13 | Cross-reference/no-drift validation, parity/body checks, God checks, and worker-gate compliance |
+| 9 | document-consistency.md | document-consistency.design.md v1.14 | Cross-reference/no-drift validation, parity/body checks, God checks, worker-gate compliance, and delegated-repair preservation checks |
 | 10 | document-changelog-control.md | document-changelog-control.design.md v4.11 | Changelog version authority, current navigation, inactive `changelog/done/`, and changelog God-file prevention |
 | 11 | document-design-control.md | document-design-control.design.md v1.12 | Active-state design standards, compact design indexes, governed child shards, and Design God-file prevention |
 | 12 | document-patch-control.md | document-patch-control.design.md v2.9 | Patch governance, before/after review meaning, inactive `patch/done/`, God Patch prevention, and automatic God Patch handling |
@@ -136,7 +143,7 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 17 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.2 | Text diagrams without frames or boxes |
 | 18 | functional-intent-verification.md | functional-intent-verification.design.md v1.2 | Clarify destructive/expensive intent before execution, including an explicit delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
 | 19 | memory-governance-and-session-boundary.md | memory-governance-and-session-boundary.design.md v1.7 | First-class owner for memory role boundaries, root `MEMORY.md` active-index behavior, visible one-line hook preservation, `Scope` + `Memory base` relative path compaction for repeated path scopes, loader-warning and index-bloat maintenance triggers, fake-alias and link-only hidden-memory-router avoidance, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, archive-inactive lifecycle semantics, and generic optional external recall guidance that stays supplemental and subordinate to stronger execution evidence |
-| 20 | native-worker-agent-routing-and-context-control.md | native-worker-agent-routing-and-context-control.design.md v1.5 | Intent-first worker routing and aggregate-read gate |
+| 20 | native-worker-agent-routing-and-context-control.md | native-worker-agent-routing-and-context-control.design.md v1.6 | Intent-first worker routing, aggregate-read gating, and bounded edit-capable governed-document repair delegation |
 | 21 | no-variable-guessing.md | no-variable-guessing.design.md v1.5 | Read before reference with inspected-scope local evidence discipline, including git-state observations kept in the weak local-evidence lane until governed repo surfaces are checked |
 | 22 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and a Team Agent duplicate/stale-presence profile that treats duplicate-looking or stale team-agent presence as inspect-before-respawn rather than respawn-first churn |
 | 23 | phase-implementation.md | phase-implementation.design.md v2.34 | Phase planning with bounded lineage, compact summaries, phase-visible tasks, verification gates, next-goal closeout, God Phase prevention, and automatic God Phase handling |
@@ -163,7 +170,7 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 44 | development-verification-and-debug-strategy.md | development-verification-and-debug-strategy.design.md v1.1 | First-class owner for proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that distinguishes prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable states |
 | 45 | audience-surface-disclosure-control.md | audience-surface-disclosure-control.design.md v1.0 | First-class owner for full direct-user/project-owner transparency plus audience-aware disclosure minimization for generated public, customer-facing, operator-facing, demo, log, release, onboarding, and externally shared artifacts |
 | 46 | governed-document-rollover-control.md | governed-document-rollover-control.design.md v1.2 | Daily-first TODO/phase rollover, history/done references, God-document routing, and automatic rollover repair planning |
-| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.4 | Context-load, doc density, and aggregate-read gating |
+| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.5 | Context-load, doc density, aggregate-read gating, and delegated repair routing |
 
 ### 3.2 Category View
 

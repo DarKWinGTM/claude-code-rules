@@ -1,7 +1,7 @@
 # Context Load and Document Density Control
 
-> **Current Version:** 1.4
-> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/context-load-and-document-density-control.changelog.md](changelog/context-load-and-document-density-control.changelog.md)
 
@@ -20,6 +20,7 @@ Target outcomes:
 This rule owns:
 - context-load strategy, aggregate read-burst control, and leader-context protection
 - document-density discipline, God-line prevention, and opportunistic touched-doc God-line repair
+- delegated governed-document repair routing for context-heavy God artifacts
 - append-vs-restructure decisions and compact/thrash repair signals
 
 It does not replace safe file reading, worker routing, document role governance, rollover, or evidence rules.
@@ -197,6 +198,7 @@ When God-line, God-document, God-phase, God-patch, TODO, design, changelog, READ
 
 Action modes:
 - `REPAIR_NOW`: clear, local, meaning-preserving, low-risk touched-scope split
+- `DELEGATE_REPAIR`: context-heavy but bounded repair assigned to an edit-capable worker
 - `PLAN_IN_CURRENT_PHASE`: real repair belongs to the active phase or implied execution slice
 - `OPEN_REPAIR_PATCH`: reviewable before/after change needs patch packaging
 - `OPEN_NEW_PHASE_OR_SUBPHASE`: distinct goal, output, gate, release, rollback, or capability boundary exists
@@ -214,6 +216,23 @@ Required loop:
 Do not ask the user to restate the repair instruction when the route is clear.
 Ask only when ambiguity or approval sensitivity changes the action.
 
+### 12) Delegated governed-document repair route
+
+Context-heavy God-line or God-document repair may be delegated to an edit-capable worker only when the repair is bounded, meaning-preserving, and assigned to exact artifacts or anchors.
+
+Delegated repair must not:
+- delete files or governed history
+- summarize away, reinterpret, or status-upgrade content
+- relocate content or mutate authority roles
+- lose history/done reachability or break cross-references
+- perform destructive action
+
+Route to visible planning, blocking, or ask state instead of worker edits when repair is:
+- ambiguous, history-heavy, authority-shifting, or broad
+- destructive or limited by a user analysis-only request
+
+Leader verification remains required before clean sync, no-drift, closeout, or release-ready wording.
+
 ## Decision Flow
 
 ```text
@@ -230,7 +249,7 @@ Writing active docs?
   → NO: preserve checked-scope evidence boundaries
   ↓
 God artifact pressure found in touched scope?
-  → YES: classify owner/risk, then repair now or create a visible repair slice
+  → YES: classify owner/risk, then repair now, delegate bounded repair, or create a visible repair slice
   → NO: continue
   ↓
 Compact/thrash or high-density output appears?
@@ -249,6 +268,7 @@ Avoid:
 - treating line count as safe when characters per line are high
 - using post-compact restrictions as the main solution when document structure or worker routing is the real cause
 - turning active entrypoints into history books
+- delegating ambiguous, history-heavy, authority-shifting, broad, destructive, or analysis-only repair to worker edits
 - claiming no-drift or release readiness without checking body sufficiency and density risks when relevant
 
 Better behavior: ask the question first, route broad raw evidence through workers, write docs for future reads, and repair density debt when it appears.
@@ -257,6 +277,7 @@ Better behavior: ask the question first, route broad raw evidence through worker
 
 ## Verification Checklist
 - [ ] Touched active documents were checked for God-file pressure and repaired, redistributed, or flagged when material.
+- [ ] Delegated repairs were bounded, meaning-preserving, and leader-verified before clean closeout wording.
 
 - [ ] Broad raw reads were routed through a worker/filter lane or a narrow direct-handling reason was stated.
 - [ ] Aggregate governance/code read-burst triggers used worker-first filtering before leader raw absorption.
@@ -278,6 +299,7 @@ Better behavior: ask the question first, route broad raw evidence through worker
 | Leader raw broad-context absorption | Low |
 | Worker filtering before broad reads | High |
 | Worker-first aggregate-read gate compliance | High |
+| Delegated repair preservation and containment | High |
 | Aggregate read-burst awareness | High |
 | God-line / single-line history dump creation | Low / 0 critical cases |
 | Unrepaired clear touched-doc God-line candidates | Low / 0 critical cases |

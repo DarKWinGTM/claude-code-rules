@@ -1,6 +1,6 @@
 # Document Consistency and Cross-Reference Validation
-> **Current Version:** 1.13
-> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.13
+> **Current Version:** 1.14
+> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-consistency.changelog.md](changelog/document-consistency.changelog.md)
 ---
@@ -35,6 +35,7 @@ Verify before asserting:
 - concrete references, cross-file sync/no-drift, rename/move/update impact, or ambiguous references
 - mixed source/destination wording, parent-index-to-child-shard alignment, shard map completeness, orphan/stale shard status, or conflicting shard authority
 - parity scope vs shared-destination ownership, active runtime body sufficiency, or worker-first aggregate-read gate compliance for broad scan claims
+- worker-edited governed docs before sync/no-drift/closeout/release-ready claims
 - tool-path leakage into reusable source or junk/disposal classification
 
 If the checked scope is limited, report the non-finding as scoped rather than global absence.
@@ -72,6 +73,20 @@ Required checks:
 - leader verified selected anchors before final sync/no-drift/release-ready wording
 - direct leader handling is limited to narrow known files, exact edit/verify ranges, or a stated narrow exception
 - skipped or incomplete gate handling is surfaced as a blocker, not converted into clean release wording
+
+### Delegated-repair consistency gate
+
+No sync, no-drift, closeout, or release-ready claim is valid when worker-edited governed documents have not been leader-verified. Worker handoff is input, not proof.
+
+Leader verification must check:
+- meaning preservation and authority-role boundaries
+- history/done reachability and cross-reference resolution
+- version alignment across runtime, design, and changelog surfaces
+- phase and patch links when those surfaces are touched
+- README install-array safety when install/onboarding surfaces are touched
+- source-owned runtime install scope and active runtime body sufficiency
+
+Skipped or incomplete delegated-repair verification is a blocker, not a clean sync result.
 
 ## Verification Flow
 ```text
@@ -112,6 +127,7 @@ When classifying a new file as junk/disposable/non-governed/safe-to-remove, firs
 
 - [ ] No-drift claims include God-file role-boundary checks for touched active governance documents.
 - [ ] Broad sync/no-drift/closeout/release-ready claims include worker-first aggregate-read gate compliance or a recorded narrow exception.
+- [ ] Worker-edited governed docs were leader-verified before clean sync/no-drift/closeout/release-ready claims.
 - [ ] Split, shard, rollover, phase, and patch references remain reachable after God-file repair.
 
 ## Quality Metrics
@@ -119,6 +135,7 @@ When classifying a new file as junk/disposable/non-governed/safe-to-remove, firs
 |---|---|
 | Naming/reference consistency, verification, and dependency updates | High / 100% when claiming sync |
 | Active runtime body-sufficiency verification | High / 100% when claiming parity or no-drift |
+| Delegated-repair consistency verification | High / 100% when worker-edited governed docs are included |
 | Portable/local, source/destination, and source-owned/shared-destination/other-owner separation | High |
 | Scoped non-finding and unresolved owner wording | High |
 | Compact design index and child-shard consistency | High |

@@ -1,12 +1,31 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-114"></a>
+## Version 1.14: Added delegated-repair consistency gate
+
+**Date:** 2026-05-12
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-consistency.md` from v1.13 to v1.14.
+- Updated `design/document-consistency.design.md` from v1.13 to v1.14.
+- Added a delegated-repair consistency gate for worker-edited governed documents.
+- Required leader verification for meaning preservation, authority-role boundaries, history/done reachability, and cross-reference resolution.
+- Included version alignment, phase/patch links, README install-array safety, and source-owned runtime install scope in the check.
+- Blocked sync, no-drift, closeout, and release-ready claims when worker-edited governed docs have not been leader-verified.
+
+### Summary
+Document consistency now treats worker-edited governed docs as unproven until leader verification confirms preservation and cross-surface integrity.
+
+---
 
 <a id="version-113"></a>
 ## Version 1.13: Added worker-gate no-drift check
@@ -50,6 +69,7 @@ Added God artifact automation no-drift gate for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-05-12 | **[Added delegated-repair consistency gate](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-12 | **[Added worker-gate no-drift check](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-11 | **[Added God artifact automation no-drift gate](#version-112)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.10 | 2026-05-10 | **[Added sharded design reference consistency checks](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
