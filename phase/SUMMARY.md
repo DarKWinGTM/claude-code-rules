@@ -3,7 +3,7 @@
 > **Current Version:** 1.76
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P093 / v10.01 worker-first aggregate-read gate active
+> **Status:** No active phase selected after P093 / v10.01 release
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,14 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P093:** [phase-093-worker-first-aggregate-read-gate.md](phase-093-worker-first-aggregate-read-gate.md)
-  - Adds an enforceable worker-first aggregate-read gate for broad governance/code scans.
-  - Output: owner chains require standalone worker filtering before broad leader raw absorption.
-  - Scope: narrow direct-handling exceptions must be stated; active runtime count remains 47.
-  - Gate: source sync, install, 47/47 parity/body sufficiency, and density/God-artifact review passed.
-  - Pending: `master` push and release `v10.01` verification.
+- No active phase selected after P093 / v10.01 closeout.
 
 ### Recently Completed
+
+- **P093:** [phase-093-worker-first-aggregate-read-gate.md](phase-093-worker-first-aggregate-read-gate.md)
+  - Added an enforceable worker-first aggregate-read gate for broad governance/code scans.
+  - Output: owner chains require standalone worker filtering before broad leader raw absorption.
+  - Scope: narrow direct-handling exceptions must be stated; active runtime count remains 47.
+  - Gate: source sync, install, 47/47 parity/body sufficiency, density/God-artifact review, push, and release `v10.01` verified.
 
 - **P092:** [phase-092-automatic-god-artifact-planning-controlled-repair.md](phase-092-automatic-god-artifact-planning-controlled-repair.md)
   - Added automatic God artifact planning and controlled repair.
@@ -254,13 +255,13 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 - [x] P093 phase and patch records exist.
 - [x] P093 owner-chain runtime/design/changelog versions are source-synchronized.
-- [x] README, master design, master changelog, TODO, phase, and patch records align to v10.01 / P093 active release state.
-- [ ] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
-- [ ] Runtime install copies only README-listed active runtime rules for v10.01.
-- [ ] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
-- [ ] Touched active docs pass density and God-artifact review.
-- [ ] Broad validation uses worker-first filtering or records a narrow direct-handling exception.
-- [ ] Git push and GitHub release `v10.01` are verified.
+- [x] README, master design, master changelog, TODO, phase, and patch records align to v10.01 / P093 released state.
+- [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
+- [x] Runtime install copies only README-listed active runtime rules for v10.01.
+- [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
+- [x] Touched active docs pass density and God-artifact review.
+- [x] Broad validation used worker-first filtering for release validation.
+- [x] Git push and GitHub release `v10.01` are verified.
 
 ---
 

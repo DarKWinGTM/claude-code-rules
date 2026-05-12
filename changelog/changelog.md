@@ -156,7 +156,7 @@
   - `document-consistency` to v1.13
 - Synchronized design and changelog authority for the P093 / v10.01 release state.
 - Runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed.
-- `master` push and GitHub release `v10.01` verification remain release gates until checked.
+- `master` was pushed and GitHub release `v10.01` was published.
 
 ### Summary
 P093 makes broad aggregate governance/code reading worker-first by default.

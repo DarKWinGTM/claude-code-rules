@@ -79,12 +79,12 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P093 is the active v10.01 worker-first aggregate-read gate release wave.
+- P093 released v10.01 as the worker-first aggregate-read gate release wave.
   - It keeps the source-owned active runtime set at 47.
   - It turns broad governance/code aggregate reads into worker-first behavior before leader raw absorption unless a narrow direct-handling exception is stated.
   - It advances native-worker routing, context-load, safe-file-reading, execution-continuity, and document-consistency owner chains.
   - Runtime install, source/runtime parity, body sufficiency, and density/God-artifact review passed.
-  - Remaining release gates: `master` push and GitHub release `v10.01` verification.
+  - `master` push and GitHub release `v10.01` verification passed.
 - maintainable code structure and decomposition gives coding-time work a first-class owner for responsibility boundaries, future changeability, code-smell triggers, smallest useful decomposition, helper-function necessity, useful source-code comments, God function/file pressure, wrong-abstraction avoidance, behavior-preserving refactor posture, and tactical structure-debt convergence without rigid architecture templates
 - development verification and debug strategy gives non-trivial coding work a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that does not treat edits as proof
 - active runtime rule compression must preserve semantic parity and should start from a complete patch inventory/baseline before any rule-body rewrite begins

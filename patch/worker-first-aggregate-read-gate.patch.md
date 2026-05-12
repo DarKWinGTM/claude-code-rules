@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active
+> **Status:** Completed
 > **Target Design:** [../design/design.md](../design/design.md) v10.01
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -109,4 +109,4 @@ If rollback is needed:
 
 ## Current Status
 
-Patch is active. Source sync, install, parity/body sufficiency, and density/God-artifact review passed. Push and release verification remain pending.
+Patch is complete. Source sync, install, parity/body sufficiency, density/God-artifact review, push, and release verification passed.

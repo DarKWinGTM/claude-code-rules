@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P093
-> **Status:** Active
+> **Status:** Completed
 > **Target Release:** v10.01
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.01
@@ -58,8 +58,8 @@ P093 closes that gap by making broad governance/code scans pass through an aggre
 - [x] Validate version alignment, install arrays, active runtime body sufficiency, density, and God-artifact posture.
 - [x] Install only README-listed active runtime rules.
 - [x] Verify 47/47 source/runtime parity and active runtime body sufficiency.
-- [ ] Push `master` and publish GitHub release `v10.01`.
-- [ ] Close P093 records after release verification passes.
+- [x] Push `master` and publish GitHub release `v10.01`.
+- [x] Close P093 records after release verification passes.
 
 ---
 
@@ -97,4 +97,4 @@ If P093 is reversed:
 
 ## Current Status
 
-P093 is active. Source sync, install, parity/body sufficiency, and density/God-artifact review passed. Push and GitHub release verification remain pending.
+P093 is complete. Source sync, install, parity/body sufficiency, density/God-artifact review, push, and GitHub release verification passed.

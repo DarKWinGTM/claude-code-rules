@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.01</b><br><sub>Active</sub>
+  <b>v10.01</b><br><sub>Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pending</b><br><sub>Release Gates</sub>
+  <b>Verified</b><br><sub>Release Gates</sub>
 </td>
 <td align="center" width="200">
-  <b>Worker-first reads</b><br><sub>P093 Active</sub>
+  <b>Worker-first reads</b><br><sub>P093 Released</sub>
 </td>
 </tr>
 </table>
@@ -353,10 +353,10 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P093 worker-first aggregate-read gate is active for v10.01.
+- P093 worker-first aggregate-read gate is released for v10.01.
   - Keeps the source-owned active runtime set at 47 files.
   - Requires worker-first filtering before broad governance/code aggregate reads unless a narrow direct-handling exception is stated.
-  - Source governance sync is complete; runtime install, parity/body sufficiency, push, and release verification remain pending gates.
+  - Runtime install, 47/47 parity/body sufficiency, density review, push, and release verification passed.
 - P092 automatic God artifact planning and controlled repair is released for v10.00.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds action-mode routing for repair-now, phase planning, patch packaging, phase splitting, closeout blocking, and ambiguity handling.
@@ -484,7 +484,7 @@ Current release: P093 / v10.01 worker-first aggregate-read gate.
 - Owner chains require worker-first filtering before broad governance/code aggregate reads unless a narrow direct-handling exception is stated.
 - Source governance sync is complete.
 - Runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed.
-- Pending gates: `master` push and release `v10.01` verification.
+- Release verification: `master` pushed and release `v10.01` published.
 </div>
 
 ---
@@ -1208,7 +1208,7 @@ Result: ✅ Verified from actual files
 - Current README meaning: v10.01 keeps install scope at 47 source-owned active runtime files.
 - Source state: P093 source governance sync is complete.
 - Runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed.
-- Pending gates: `master` push and GitHub release `v10.01` verification.
+- Release verification: `master` pushed and GitHub release `v10.01` published.
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity and automation
