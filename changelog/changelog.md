@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.02 | 2026-05-12 | **[Advanced edit-capable governed-document repair delegation pre-release](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.02 | 2026-05-12 | **[Released edit-capable governed-document repair delegation](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.01 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-1001)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.00 | 2026-05-11 | **[Added automatic God artifact planning and controlled repair](#version-1000)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 9.99 | 2026-05-11 | **[Added governed document God-file prevention and repair](#version-999)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -140,7 +140,7 @@
 ---
 
 <a id="version-1002"></a>
-## Version 10.02: Opened edit-capable governed-document repair delegation
+## Version 10.02: Released edit-capable governed-document repair delegation
 
 **Date:** 2026-05-12
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
@@ -152,9 +152,12 @@
   - `native-worker-agent-routing-and-context-control` to v1.6
   - `context-load-and-document-density-control` to v1.5
   - `document-consistency` to v1.14
-- Synchronized master current-state surfaces for active v10.02 / P094 source governance.
+- Synchronized master current-state surfaces for released v10.02 / P094 governance.
 - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
-- Push and GitHub release `v10.02` verification remain pending; P094 stays active/pre-release until those gates pass.
+- `master` was pushed and matched `origin/master`.
+- GitHub release `v10.02` was verified: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+- Release target commit and tag `v10.02` both point to `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
+- Release `publishedAt` is `2026-05-12T14:38:36Z`.
 
 ### Summary
 P094 extends worker-first governance from broad raw evidence filtering into bounded native edit-capable governed-document repair.

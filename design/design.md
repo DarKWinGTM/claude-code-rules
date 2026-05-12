@@ -79,13 +79,16 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P094 is the active/pre-release v10.02 edit-capable governed-document repair delegation wave.
+- P094 is the released v10.02 edit-capable governed-document repair delegation wave.
   - It keeps the source-owned active runtime set at 47.
   - It extends worker-first governance from filtered reads into bounded native edit-capable repair for governed documents.
   - Delegated repair must be explicit, non-overlapping, meaning-preserving, and leader-verifiable before final claims.
   - It advances `native-worker-agent-routing-and-context-control` to v1.6, `context-load-and-document-density-control` to v1.5, and `document-consistency` to v1.14.
   - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
-  - Push and GitHub release `v10.02` verification remain pending.
+  - `master` push and GitHub release `v10.02` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+  - Release target and tag point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
+  - Published at `2026-05-12T14:38:36Z`.
 - P093 released v10.01 as the worker-first aggregate-read gate release wave.
   - It keeps the source-owned active runtime set at 47.
   - It turns broad governance/code aggregate reads into worker-first behavior before leader raw absorption unless a narrow direct-handling exception is stated.

@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.02</b><br><sub>P094 Active</sub>
+  <b>v10.02</b><br><sub>P094 Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pending</b><br><sub>Release Gates</sub>
+  <b>Released</b><br><sub>GitHub v10.02</sub>
 </td>
 <td align="center" width="200">
   <b>Delegated repair</b><br><sub>Leader verified</sub>
@@ -353,12 +353,15 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P094 edit-capable governed-document repair delegation is active/pre-release for v10.02.
+- P094 edit-capable governed-document repair delegation is released for v10.02.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds bounded native edit-capable repair for governed documents when scope is explicit and meaning-preserving.
   - Requires leader final verification before sync, no-drift, closeout, parity, or release-ready claims.
   - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
-  - Push and GitHub release `v10.02` verification remain pending.
+  - `master` push and GitHub release `v10.02` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+  - Release target and tag point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
+  - Published at `2026-05-12T14:38:36Z`.
 - P093 worker-first aggregate-read gate is released for v10.01.
   - Keeps the source-owned active runtime set at 47 files.
   - Requires worker-first filtering before broad governance/code aggregate reads unless a narrow direct-handling exception is stated.
@@ -484,14 +487,17 @@ Please:
 
 **📊 Active Runtime Rules: 47**
 
-Current release: P094 / v10.02 edit-capable governed-document repair delegation is active/pre-release.
+Current release: P094 / v10.02 edit-capable governed-document repair delegation is released.
 
 - Active source install set remains 47 files.
 - Owner chains now cover bounded native edit-capable repair for governed documents.
 - Delegated repair must be explicit, non-overlapping, and meaning-preserving.
 - Leader final verification remains required before sync, no-drift, closeout, parity, or release-ready claims.
 - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
-- Push and GitHub release `v10.02` verification remain pending.
+- `master` push and GitHub release `v10.02` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+- Release target and tag point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
+- Published at `2026-05-12T14:38:36Z`.
 </div>
 
 ---
@@ -1213,9 +1219,10 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: v10.02 keeps install scope at 47 source-owned active runtime files.
-- Source state: P094 remains active/pre-release for edit-capable governed-document repair delegation.
+- Source state: P094 is released for edit-capable governed-document repair delegation.
 - Passed gates: runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review.
-- Remaining gates: push and GitHub release `v10.02` verification.
+- Release gates: `master` push and GitHub release `v10.02` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity and automation

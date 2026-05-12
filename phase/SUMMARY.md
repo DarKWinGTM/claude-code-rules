@@ -3,7 +3,7 @@
 > **Current Version:** 1.77
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P094 active for v10.02 edit-capable governed-document repair delegation
+> **Status:** P094 completed and released for v10.02 edit-capable governed-document repair delegation
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,15 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P094:** [phase-094-edit-capable-governed-document-repair-delegation.md](phase-094-edit-capable-governed-document-repair-delegation.md)
-  - Adds bounded edit-capable governed-document repair delegation for native workers.
-  - Output: workers may repair clear meaning-preserving document pressure while leader remains final verifier.
-  - Source state: owner-chain implementation and master current-state doc sync are recorded for active P094.
-  - Scope: no deletion, semantic damage, authority-role mutation, history loss, or unchecked final claims.
-  - Passed gates: runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review.
-  - Remaining gates: push and release `v10.02` verification.
+None currently selected after P094 / v10.02 closeout.
 
 ### Recently Completed
+
+- **P094:** [phase-094-edit-capable-governed-document-repair-delegation.md](phase-094-edit-capable-governed-document-repair-delegation.md)
+  - Added bounded edit-capable governed-document repair delegation for native workers.
+  - Output: workers may repair clear meaning-preserving document pressure while leader remains final verifier.
+  - Scope: no deletion, semantic damage, authority-role mutation, history loss, or unchecked final claims.
+  - Gate: source sync, install, 47/47 parity/body sufficiency, density/God-artifact review, push, and release `v10.02` verified.
 
 - **P093:** [phase-093-worker-first-aggregate-read-gate.md](phase-093-worker-first-aggregate-read-gate.md)
   - Added an enforceable worker-first aggregate-read gate for broad governance/code scans.
@@ -84,7 +84,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P094 — Edit-Capable Governed-Document Repair Delegation
 
-- **Status:** Active/pre-release; install, 47/47 parity/body sufficiency, and density/God-artifact review passed; push/release pending
+- **Status:** Completed/released; install, 47/47 parity/body sufficiency, density/God-artifact review, push, and release passed
 - **Design References:**
   - [../design/design.md](../design/design.md) v10.02
   - [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md) v1.6
@@ -103,7 +103,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - 47/47 source/runtime parity and source/destination active runtime body sufficiency passed.
   - Touched active docs pass density and God-artifact review.
   - Broad validation uses worker-first filtering or records a narrow direct-handling exception.
-  - `master` push and GitHub release `v10.02` verification must pass before closeout.
+  - `master` push and GitHub release `v10.02` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+  - Release target and tag point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
+  - Published at `2026-05-12T14:38:36Z`.
 
 ### P093 — Worker-First Aggregate-Read Gate
 
@@ -282,21 +285,20 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-P094 verification is active and must stay evidence-bound until each gate passes.
+P094 verification is complete for the v10.02 release closeout.
 
-Current source-sync focus:
-- P094 phase and patch records exist.
+Released source-sync state:
+- P094 phase and patch records exist and are closed.
 - P094 owner-chain runtime/design/changelog versions are source-synchronized.
-- README, master design, master changelog, TODO, phase, and patch records align to active v10.02 / P094 state.
+- README, master design, master changelog, TODO, phase, and patch records align to released v10.02 / P094 state.
 
 Passed gates:
 - runtime install copied only README-listed active runtime rules
 - 47/47 source/runtime parity and source/destination active runtime body sufficiency passed
 - touched active docs passed final density and God-artifact review
 - broad validation used worker-first filtering for source and post-install checks
-
-Pending release gates:
-- `master` push and GitHub release `v10.02` verification pass before closeout
+- `master` push and GitHub release `v10.02` verification passed
+- release target and tag both point to `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`
 
 ---
 

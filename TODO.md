@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-12
-> **Current Release:** v10.02 / P094 edit-capable governed-document repair delegation
+> **Current Release:** v10.02 / P094 edit-capable governed-document repair delegation (released)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -21,6 +21,7 @@
 - [x] P091 / v9.99 governed document God-file prevention and repair was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P092 / v10.00 automatic God artifact planning and controlled repair was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P093 / v10.01 worker-first aggregate-read gate was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
+- [x] P094 / v10.02 edit-capable governed-document repair delegation was completed, installed, pushed, and released with 47/47 parity/body sufficiency and density/God-artifact review passing.
 
 Completed historical detail before this compact entrypoint is intentionally not duplicated here. Use the pre-rollover snapshot or future `todo/done/` shards for audit, rollback, or provenance.
 
@@ -30,11 +31,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- [ ] P094 / v10.02 edit-capable governed-document repair delegation is active/pre-release.
-  - Goal: allow native edit-capable workers to perform bounded meaning-preserving governed-document repair while the leader remains final verifier.
-  - Source state: owner-chain implementation and master current-state doc sync are recorded for the active P094 gate.
-  - Passed gates: runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review.
-  - Remaining gates: push and GitHub release `v10.02` verification.
+None currently for P094 / v10.02. Release, push, install, parity, body sufficiency, and density/God-artifact gates are complete.
 
 ### Deferred / Not Selected
 
@@ -53,8 +50,10 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
-| 2026-05-12 | P094 / v10.02 source sync recorded owner-chain implementation and active master-doc alignment. |
-| 2026-05-12 | P094 runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed; push/release remain pending. |
+| 2026-05-12 | Released P094 / v10.02; `master` matched origin and GitHub release verification passed. |
+| 2026-05-12 | Release tag and target commit both point to `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`; published at `2026-05-12T14:38:36Z`. |
+| 2026-05-12 | P094 / v10.02 source sync recorded owner-chain implementation and released master-doc alignment. |
+| 2026-05-12 | P094 runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed. |
 | 2026-05-12 | Opened P094 / v10.02 edit-capable governed-document repair delegation. |
 | 2026-05-12 | Released P093 / v10.01 worker-first aggregate-read gate; 47/47 parity/body sufficiency, density review, push, and release passed. |
 | 2026-05-11 | Released P092 / v10.00 automatic God artifact planning and controlled repair; 47/47 parity/body sufficiency passed; density/God-artifact automation review passed; `master` pushed; release `v10.00` published. |

@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P094
-> **Status:** Active
+> **Status:** Completed
 > **Target Release:** v10.02
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.02
@@ -55,8 +55,8 @@ P094 closes that gap by defining when an edit-capable worker may safely handle c
 - [x] Install only README-listed active runtime rules.
 - [x] Verify 47/47 source/runtime parity and source/destination active runtime body sufficiency.
 - [x] Validate remaining version alignment, density, and God-artifact posture.
-- [ ] Push `master` and publish GitHub release `v10.02`.
-- [ ] Close P094 records after release verification passes.
+- [x] Push `master` and publish GitHub release `v10.02`.
+- [x] Close P094 records after release verification passes.
 
 ---
 
@@ -79,7 +79,10 @@ P094 closes that gap by defining when an edit-capable worker may safely handle c
 - Touched active docs pass density and God-artifact review.
 - Delegated repair semantics preserve governed document meaning, authority role, history reachability, and cross-references.
 - Broad validation uses worker-first filtering or records a narrow direct-handling exception.
-- `master` push and GitHub release `v10.02` verification must pass before closeout.
+- `master` push and GitHub release `v10.02` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+- Release target and tag point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
+- Published at `2026-05-12T14:38:36Z`.
 
 ---
 
@@ -95,4 +98,8 @@ If P094 is reversed:
 
 ## Current Status
 
-P094 remains active/pre-release. Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed. Remaining gates are push and GitHub release `v10.02` verification.
+P094 is completed and released for v10.02. Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, density/God-artifact review, `master` push, and GitHub release verification passed.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+
+Release target and tag both point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`; `publishedAt` is `2026-05-12T14:38:36Z`.
