@@ -3,8 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.6
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
+> **Current Version:** 1.7
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P093 Target-State Refinement: Worker-First File-Reading Gate
+
+Safe file reading now treats broad governance/code scans and aggregate multi-file read plans as worker-first by default.
+
+Direct leader reads remain valid for narrow known files, exact line ranges, final verification anchors, tightly sequential work, unavailable worker tooling, or a stated narrow direct-handling exception.
+
+Partial reads must keep checked-scope wording clear so a small excerpt is not presented as proof about the whole file or whole artifact set.
 
 ---
 

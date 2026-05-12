@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.75
+> **Current Version:** 1.76
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
-> **Status:** P092 / v10.00 automatic God artifact planning and controlled repair completed; no active phase selected
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Status:** P093 / v10.01 worker-first aggregate-read gate active
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,12 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected after P092 / v10.00 closeout.
+- **P093:** [phase-093-worker-first-aggregate-read-gate.md](phase-093-worker-first-aggregate-read-gate.md)
+  - Adds an enforceable worker-first aggregate-read gate for broad governance/code scans.
+  - Output: owner chains require standalone worker filtering before broad leader raw absorption.
+  - Scope: narrow direct-handling exceptions must be stated; active runtime count remains 47.
+  - Gate: source sync, install, 47/47 parity/body sufficiency, and density/God-artifact review passed.
+  - Pending: `master` push and release `v10.01` verification.
 
 ### Recently Completed
 
@@ -69,6 +74,29 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Recent Phase Detail
+
+### P093 — Worker-First Aggregate-Read Gate
+
+- **Status:** Active
+- **Design References:**
+  - [../design/design.md](../design/design.md) v10.01
+  - [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md) v1.5
+  - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.4
+  - [../design/safe-file-reading.design.md](../design/safe-file-reading.design.md) v1.7
+  - [../design/execution-continuity-and-mode-selection.design.md](../design/execution-continuity-and-mode-selection.design.md) v1.18
+  - [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.13
+- **Patch References:** [../patch/worker-first-aggregate-read-gate.patch.md](../patch/worker-first-aggregate-read-gate.patch.md)
+- **Expected Output:**
+  - Broad governance/code scans become worker-fit by default.
+  - Worker outputs return filtered findings, conflicts, exact anchors, and leader verification needs before broad claims.
+  - Direct leader reads remain valid for narrow known files, exact edit ranges, and final verification anchors.
+  - Active runtime count remains 47.
+- **Completion Gate:**
+  - Runtime install copies only README-listed active runtime rules.
+  - README Bash and PowerShell arrays contain the same 47 active runtime files.
+  - 47/47 source/runtime parity and active runtime body sufficiency pass.
+  - Broad validation uses worker-first filtering or records a narrow direct-handling exception.
+  - `master` is pushed and GitHub release `v10.01` is verified.
 
 ### P092 — Automatic God Artifact Planning and Controlled Repair
 
@@ -224,21 +252,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-- [x] P092 phase and patch records exist.
-- [x] P092 owner-chain runtime/design/changelog versions are source-synchronized.
-- [x] README, master design, master changelog, TODO, phase, and patch records align to v10.00 / P092 release state.
-- [x] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
-- [x] Runtime install copies only README-listed active runtime rules for v10.00.
-- [x] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
-- [x] Touched active docs pass density and God-artifact automation review.
-- [x] Git push and GitHub release `v10.00` are verified.
+- [x] P093 phase and patch records exist.
+- [x] P093 owner-chain runtime/design/changelog versions are source-synchronized.
+- [x] README, master design, master changelog, TODO, phase, and patch records align to v10.01 / P093 active release state.
+- [ ] Runtime install arrays contain exactly 47 source-owned active runtime rule files.
+- [ ] Runtime install copies only README-listed active runtime rules for v10.01.
+- [ ] Source/runtime parity and active runtime body sufficiency pass for 47/47 files.
+- [ ] Touched active docs pass density and God-artifact review.
+- [ ] Broad validation uses worker-first filtering or records a narrow direct-handling exception.
+- [ ] Git push and GitHub release `v10.01` are verified.
 
 ---
 
 ## Rollback / Containment
 
-If P092 is reversed:
-- revert the v10.00 automatic God artifact planning changes through a governed rollback
-- restore prior v9.99 owner-chain versions and master records
+If P093 is reversed:
+- revert the v10.01 worker-first aggregate-read gate changes through a governed rollback
+- restore prior v10.00 owner-chain versions and master records
 - reinstall the prior 47-file runtime set only under an explicit rollback gate
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

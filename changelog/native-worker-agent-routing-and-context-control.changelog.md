@@ -1,8 +1,8 @@
 # Changelog - Native Worker Agent Routing and Context Control
 
 > **Parent Document:** [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md)
-> **Current Version:** 1.4
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.5
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Made broad governance/code aggregate reads worker-fit by default and required filtered worker handoffs plus leader anchor verification before broad claims | |
 | 1.4 | 2026-05-07 | **[Added mechanism-first coordination design gate](#version-14)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Required broad coordination designs to classify the actual mechanism before claiming delivery, mutation, awareness, or cross-session behavior | |
 | 1.3 | 2026-05-06 | **[Added roadmap and phase-matrix worker-lane routing](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -18,6 +20,25 @@
 | 1.1 | 2026-05-04 | **[Refined subagent-first capability routing and intent gate](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-05-03 | **[Created native worker routing and context-control owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class rule chain for proactive workload-shaped worker routing, smallest-effective subagent/Agent Team selection, analyzed handoffs, parallel edit containment, and leader verification | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added worker-first aggregate-read gate
+
+**Date:** 2026-05-12
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `native-worker-agent-routing-and-context-control.md` from v1.4 to v1.5.
+- Updated `design/native-worker-agent-routing-and-context-control.design.md` from v1.4 to v1.5.
+- Added a named worker-first aggregate-read gate for broad governance/code scans and aggregate read bursts.
+- Required a standalone read-only worker before broad leader raw absorption unless a narrow direct-handling exception is stated first.
+- Required worker handoffs to return filtered findings, conflicts, exact anchors, evidence strength, and leader verification needs.
+- Preserved leader responsibility to verify selected anchors before broad sync, no-drift, closeout, or release-ready wording.
+
+### Summary
+Native worker routing now turns broad aggregate governance/code reading into a worker-first behavior instead of a soft preference, while keeping leader verification as the final proof boundary.
 
 ---
 

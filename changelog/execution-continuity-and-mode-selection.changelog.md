@@ -1,12 +1,30 @@
 # Changelog - Execution Continuity and Mode Selection
 
 > **Parent Document:** [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md)
-> **Current Version:** 1.17
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.18
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-118"></a>
+## Version 1.18: Added aggregate-read momentum boundary
+
+**Date:** 2026-05-12
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-continuity-and-mode-selection.md` from v1.17 to v1.18.
+- Updated `design/execution-continuity-and-mode-selection.design.md` from v1.17 to v1.18.
+- Clarified that execution momentum cannot bypass the worker-first aggregate-read gate.
+- Required broad continuation, release closeout, no-drift review, and release-ready validation to route aggregate governance/code evidence through worker filtering first.
+- Preserved narrow direct handling for exact edit or verification ranges and stated direct-handling exceptions.
+
+### Summary
+Execution continuity now keeps selected safe work moving without turning broad aggregate validation into leader raw evidence absorption.
+
+---
 
 <a id="version-117"></a>
 ## Version 1.17: Added God artifact repair as continuation work
@@ -26,6 +44,7 @@ Added God artifact repair as continuation work for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.18 | 2026-05-12 | **[Added aggregate-read momentum boundary](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-11 | **[Added God artifact repair as continuation work](#version-117)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.16 | 2026-05-08 | **[Added rollover maintenance as a continuation gate](#version-116)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Made oversized active governance entrypoints a continuity gate: compact or roll them over before broad continuation when they block safe current-state discovery. | |

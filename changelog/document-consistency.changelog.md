@@ -1,12 +1,30 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.12
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.13
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-113"></a>
+## Version 1.13: Added worker-gate no-drift check
+
+**Date:** 2026-05-12
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-consistency.md` from v1.12 to v1.13.
+- Updated `design/document-consistency.design.md` from v1.12 to v1.13.
+- Added worker-first aggregate-read gate compliance to broad sync, no-drift, closeout, and release-ready consistency claims.
+- Required worker handoffs to provide filtered findings, conflicts, exact anchors, and leader verification needs before final broad claims.
+- Required skipped or incomplete worker-gate handling to be surfaced as a blocker unless a narrow direct-handling exception was recorded.
+
+### Summary
+Document consistency now treats worker-first aggregate-read compliance as part of broad no-drift and release-ready proof, not an optional workflow preference.
+
+---
 
 <a id="version-112"></a>
 ## Version 1.12: Added God artifact automation no-drift gate
@@ -32,6 +50,7 @@ Added God artifact automation no-drift gate for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-05-12 | **[Added worker-gate no-drift check](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-11 | **[Added God artifact automation no-drift gate](#version-112)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.10 | 2026-05-10 | **[Added sharded design reference consistency checks](#version-110)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added parent-index-to-child-shard consistency, stale/orphan shard checks, and selected-shard evidence-scope boundaries for governed sharded active designs | |

@@ -1,7 +1,7 @@
 # Document Consistency and Cross-Reference Validation
-> **Current Version:** 1.12
-> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.12
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.13
+> **Design:** [design/document-consistency.design.md](design/document-consistency.design.md) v1.13
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-consistency.changelog.md](changelog/document-consistency.changelog.md)
 ---
 ## Rule Statement
@@ -31,7 +31,13 @@ Required guidance:
 | Local execution path | exact current-machine/harness path only | execution context |
 | Symbol / command / config | `getUserById`, `npm run build`, `DATABASE_URL` | search, run when needed, or read config source |
 ### Verification triggers
-Verify before asserting concrete references, cross-file sync/no-drift, rename/move/update impact, ambiguous references, mixed source/destination wording, parent-index-to-child-shard alignment, shard map completeness, orphan/stale shard status, conflicting shard authority, parity scope vs shared-destination ownership, active runtime body sufficiency, tool-path leakage into reusable source, or junk/disposal classification. If the checked scope is limited, report the non-finding as scoped rather than global absence.
+Verify before asserting:
+- concrete references, cross-file sync/no-drift, rename/move/update impact, or ambiguous references
+- mixed source/destination wording, parent-index-to-child-shard alignment, shard map completeness, orphan/stale shard status, or conflicting shard authority
+- parity scope vs shared-destination ownership, active runtime body sufficiency, or worker-first aggregate-read gate compliance for broad scan claims
+- tool-path leakage into reusable source or junk/disposal classification
+
+If the checked scope is limited, report the non-finding as scoped rather than global absence.
 ---
 ### God-file consistency checks
 
@@ -54,6 +60,18 @@ Required checks:
 - planned repair has a visible owner in task, TODO, phase, patch, or changelog context
 - broad deferred repair is labeled as deferred and not hidden inside completion wording
 - unresolved ambiguity is surfaced as a blocker, not converted into clean sync wording
+
+### Worker-first aggregate-read consistency gate
+
+Consistency review must verify that broad sync, no-drift, closeout, and release-ready claims were assembled through the worker-first aggregate-read gate when broad governance/code scanning was required.
+
+A broad claim is invalid when the leader skipped worker-first filtering for a worker-fit aggregate read and no narrow direct-handling exception was recorded.
+
+Required checks:
+- worker handoff returned filtered findings, conflicts, exact anchors, and leader verification needs
+- leader verified selected anchors before final sync/no-drift/release-ready wording
+- direct leader handling is limited to narrow known files, exact edit/verify ranges, or a stated narrow exception
+- skipped or incomplete gate handling is surfaced as a blocker, not converted into clean release wording
 
 ## Verification Flow
 ```text
@@ -93,6 +111,7 @@ When classifying a new file as junk/disposable/non-governed/safe-to-remove, firs
 ## Verification Checklist
 
 - [ ] No-drift claims include God-file role-boundary checks for touched active governance documents.
+- [ ] Broad sync/no-drift/closeout/release-ready claims include worker-first aggregate-read gate compliance or a recorded narrow exception.
 - [ ] Split, shard, rollover, phase, and patch references remain reachable after God-file repair.
 
 ## Quality Metrics

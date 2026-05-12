@@ -1,12 +1,30 @@
 # Changelog - Context Load and Document Density Control
 
 > **Parent Document:** [../context-load-and-document-density-control.md](../context-load-and-document-density-control.md)
-> **Current Version:** 1.3
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.4
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-14"></a>
+## Version 1.4: Added worker-first aggregate read-burst gate
+
+**Date:** 2026-05-12
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `context-load-and-document-density-control.md` from v1.3 to v1.4.
+- Updated `design/context-load-and-document-density-control.design.md` from v1.3 to v1.4.
+- Defined aggregate governance/code read bursts as worker-gated before broad leader absorption.
+- Added triggers for 3+ governance surfaces, release/no-drift/closeout validation, repo-wide search plus multi-file reads, broad code+docs evidence, and dense active docs.
+- Made skipped worker-first filtering a blocker for broad sync, no-drift, closeout, or release-ready claims unless a narrow exception is stated.
+
+### Summary
+Context-load control now treats several bounded governance/code reads as one context-cost event that must be worker-filtered before broad leader claims.
+
+---
 
 <a id="version-13"></a>
 ## Version 1.3: Added automatic God artifact planning and controlled repair
@@ -32,6 +50,7 @@ Added automatic God artifact planning and controlled repair for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-12 | **[Added worker-first aggregate read-burst gate](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-11 | **[Added automatic God artifact planning and controlled repair](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-05-10 | **[Added opportunistic touched-doc God-line repair](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Refined the active owner so clear low-risk touched God-line candidates are repaired in the same edit while broad or meaning-risky repairs are flagged or planned. | |

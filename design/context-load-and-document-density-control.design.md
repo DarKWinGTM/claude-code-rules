@@ -3,8 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
+> **Current Version:** 1.4
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P093 Target-State Refinement: Aggregate Read-Burst Gate
+
+The context-load owner now treats aggregate governance/code reads as one context-cost event.
+
+Worker-first filtering is required before leader raw absorption when aggregate triggers apply. Skipping the gate blocks broad sync, no-drift, closeout, or release-ready claims unless a narrow direct-handling exception is stated.
+
+Worker handoffs should return filtered findings, conflicts, exact anchors, and leader verification needs so the leader verifies selected anchors instead of absorbing every raw source.
 
 ---
 

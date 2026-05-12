@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-11
-> **Current Release:** v10.00 / P092 automatic God artifact planning and controlled repair
+> **Last Updated:** 2026-05-12
+> **Current Release:** v10.01 / P093 worker-first aggregate-read gate
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -29,7 +29,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- None currently selected after P092 / v10.00 closeout.
+- [ ] P093 / v10.01 worker-first gate remains active for push and release verification; source sync, install, parity/body sufficiency, and density/God-artifact review passed.
 
 ### Deferred / Not Selected
 
@@ -48,6 +48,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
+| 2026-05-12 | P093 / v10.01 source sync, install, 47/47 parity/body sufficiency, and density/God-artifact review passed; push and release remain pending. |
 | 2026-05-11 | Released P092 / v10.00 automatic God artifact planning and controlled repair; 47/47 parity/body sufficiency passed; density/God-artifact automation review passed; `master` pushed; release `v10.00` published. |
 | 2026-05-11 | P092 runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation checks passed before final push/release closeout. |
 | 2026-05-11 | Opened P092 / v10.00 automatic God artifact planning; owner chains and master records were source-synchronized before release gates closed. |

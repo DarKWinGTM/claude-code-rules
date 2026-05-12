@@ -1,8 +1,8 @@
 # Context Load and Document Density Control
 
-> **Current Version:** 1.3
-> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.3
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.4
+> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.4
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/context-load-and-document-density-control.changelog.md](changelog/context-load-and-document-density-control.changelog.md)
 
 ---
@@ -52,11 +52,28 @@ Required guidance:
 
 Several bounded reads can still overload context when combined, especially if lines are dense.
 
-Before reading multiple governance surfaces, identify:
+Aggregate governance/code read bursts are worker-gated before broad leader absorption.
+
+Before reading multiple governance or code surfaces, identify:
 - the question being answered
 - the authority surface most likely to answer it
 - whether exact raw content is needed or a filtered worker handoff is enough
 - cumulative output risk across all planned reads, not only per-file line count
+
+Worker-first filtering is required before leader raw absorption when any trigger applies:
+- 3+ governance surfaces are needed for one claim, sync, release, or no-drift review
+- cross-surface release sync, closeout, or release-ready validation is being assembled
+- repo-wide search is followed by multi-file reads
+- broad code+docs evidence is needed together
+- dense/history-bearing active docs would be read as a set
+
+The worker handoff should return:
+- filtered findings
+- conflicts
+- exact anchors
+- leader verification needs
+
+Skipping the gate blocks broad sync, no-drift, closeout, or release-ready claims unless a narrow direct-handling exception is stated.
 
 Density warning signals include:
 - many active governance files read in one burst
@@ -242,6 +259,7 @@ Better behavior: ask the question first, route broad raw evidence through worker
 - [ ] Touched active documents were checked for God-file pressure and repaired, redistributed, or flagged when material.
 
 - [ ] Broad raw reads were routed through a worker/filter lane or a narrow direct-handling reason was stated.
+- [ ] Aggregate governance/code read-burst triggers used worker-first filtering before leader raw absorption.
 - [ ] Multi-file read plans considered aggregate output and line density, not only per-file line count.
 - [ ] Active docs avoid God-line appends and split mixed responsibilities when needed.
 - [ ] Clear low-risk God-line candidates in touched active docs were repaired in the same edit.
@@ -259,6 +277,7 @@ Better behavior: ask the question first, route broad raw evidence through worker
 |---|---|
 | Leader raw broad-context absorption | Low |
 | Worker filtering before broad reads | High |
+| Worker-first aggregate-read gate compliance | High |
 | Aggregate read-burst awareness | High |
 | God-line / single-line history dump creation | Low / 0 critical cases |
 | Unrepaired clear touched-doc God-line candidates | Low / 0 critical cases |

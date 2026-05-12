@@ -3,8 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.17
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+> **Current Version:** 1.18
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P093 Target-State Refinement: Aggregate-Read Momentum Boundary
+
+Execution momentum cannot bypass the worker-first aggregate-read gate.
+
+When the next safe continuation requires several bounded governance/code reads for one claim, release closeout, no-drift review, or release-ready validation, the leader routes broad evidence through a worker before raw absorption.
+
+Continuous execution still continues selected safe work, but broad validation must be filtered first unless the leader states a narrow direct-handling exception.
 
 ---
 

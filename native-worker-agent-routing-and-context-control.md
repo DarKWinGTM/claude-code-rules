@@ -1,7 +1,7 @@
 # Native Worker Agent Routing and Context Control
-> **Current Version:** 1.4
-> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.4
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.5
+> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.5
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/native-worker-agent-routing-and-context-control.changelog.md](changelog/native-worker-agent-routing-and-context-control.changelog.md)
 ---
 ## Rule Statement
@@ -28,11 +28,19 @@ Behavior/RULES questions are answered from the behavior/rule layer first. Projec
 
 ### 2) Worker-scale gate
 Before broad main-session absorption, classify the smallest worker structure that preserves correctness and context efficiency.
-Required guidance:
-- run this gate before broad reads/searches, noisy command output, multi-surface audit, external research, roadmap/phase-matrix analysis, design-improvement research, source comparison, or safely partitionable implementation
+
+Worker-first aggregate-read gate:
+- run this gate before broad reads/searches, aggregate governance/code read bursts, noisy command output, multi-surface audit, external research, roadmap/phase-matrix analysis, design-improvement research, source comparison, or safely partitionable implementation
+- treat broad governance/code scans as worker-fit by default when any aggregate trigger applies
+- aggregate triggers include 3+ governance surfaces, cross-surface release/no-drift/closeout validation, repo-wide search followed by multi-file reads, broad code+docs evidence, or dense/history-bearing active docs
+- dispatch a standalone read-only worker before the leader absorbs raw aggregate-read evidence unless a narrow direct-handling exception is stated before the broad read starts
+- require worker output to return filtered findings, conflicts, exact anchors, evidence strength, and leader verification needs rather than raw dumps
+
+General routing guidance:
 - when the work is broad research or multidimensional roadmap analysis, first map the objective into topic/phase/risk lanes before deciding whether one or multiple subagents fit
 - prefer one standalone subagent-style lane for a bounded independent broad/read/review/filter/research task before considering Agent Team workflow
 - if a worker lane is selected, dispatch/assign it before the leader absorbs raw broad output
+- direct leader handling remains valid for narrow known files, exact edit or verification ranges, tightly sequential interactive-control work, unavailable worker tooling, or explicit user direction
 - if the leader handles broad worker-fit work directly, state the narrow reason before or alongside the direct action
 - saying “an agent could help” is not enough; select a path and act when suitable
 - worker routing never removes leader verification responsibility
@@ -122,7 +130,7 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 | Trigger | Required behavior |
 |---|---|
 | user asks about AI/RULES behavior while providing logs/snippets | classify as behavior/governance first; do not auto-explore project |
-| broad search/read or repository exploration | dispatch standalone worker or state narrow direct-handling reason before broad absorption |
+| broad search/read, aggregate governance/code read burst, or repository exploration | dispatch standalone worker or state narrow direct-handling reason before broad absorption |
 | broad roadmap/phase-matrix analysis | use a focused read-only planning/review lane when multiple design, TODO, phase, risk, or dependency surfaces need synthesis |
 | coordination design or cross-session behavior proposal | classify the actual mechanism first, then keep claims within checked capability |
 | high-output test/log/build evidence | prefer worker filtering before leader reads raw noisy output |
@@ -136,13 +144,25 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 | high edit overlap | avoid parallel edit lanes; consider read-only investigation instead |
 
 ## Anti-Pattern Boundary
-Avoid: treating pasted project paths/logs as permission to inspect code; leader absorbing all broad raw search/read/log/test/roadmap evidence by default; leader running broad design-improvement websearch or phase-roadmap synthesis directly when research/planning lanes would filter it better; routing by tool name alone; assuming an unverified hook, transport, recall, board, team, plugin, or MCP mechanism can deliver coordination behavior; saying agents could help without dispatching when worker-fit is present; treating teammate/Agent Team bans as standalone-subagent bans; escalating to Agent Team when one subagent would cover the work; fixed handoff caps; raw worker dumps; duplicate same-role worker spawn; overlapping parallel edits; treating worker summaries as proof; or importing plugin/shared-board grammar into Main RULES.
+Avoid:
+- treating pasted project paths/logs as permission to inspect code
+- leader absorbing broad raw search/read/log/test/roadmap evidence by default
+- skipping the worker-first aggregate-read gate before broad governance/code scans
+- leader running broad design-improvement websearch or phase-roadmap synthesis directly when research/planning lanes would filter it better
+- routing by tool name alone
+- assuming an unverified hook, transport, recall, board, team, plugin, or MCP mechanism can deliver coordination behavior
+- saying agents could help without dispatching when worker-fit is present
+- treating teammate/Agent Team bans as standalone-subagent bans
+- escalating to Agent Team when one subagent would cover the work
+- fixed handoff caps, raw worker dumps, duplicate same-role worker spawn, or overlapping parallel edits
+- treating worker summaries as proof or importing plugin/shared-board grammar into Main RULES
 
 Better behavior: classify intent and worker scale first, dispatch the smallest fitting lane or state the narrow direct-handling reason, keep Agent Team escalation for true shared coordination, and require leader verification before completion wording.
 ---
 ## Verification Checklist
 - [ ] User intent was classified before project exploration or broad evidence absorption
 - [ ] Broad work used a standalone worker lane or had a narrow direct-handling reason
+- [ ] Aggregate governance/code read bursts used worker-first filtering or recorded a narrow direct-handling exception before broad leader absorption
 - [ ] Routing used intent, required capability, and workload shape, not rigid tool-name rules
 - [ ] Smallest effective worker structure was selected
 - [ ] Broad research/roadmap-analysis/design-improvement work was decomposed into lanes when that improved coverage or protected leader context

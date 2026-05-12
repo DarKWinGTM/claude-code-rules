@@ -3,8 +3,25 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+> **Current Version:** 1.5
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P093 Target-State Refinement: Worker-First Aggregate-Read Gate
+
+Native worker routing now owns an enforceable aggregate-read gate.
+
+Broad governance/code scans are worker-fit by default when aggregate triggers apply:
+- 3+ governance surfaces for one claim
+- cross-surface release, no-drift, closeout, or release-ready validation
+- repo-wide search followed by multi-file reads
+- broad code+docs evidence
+- dense or history-bearing active docs read as a set
+
+The leader must dispatch a standalone read-only worker before absorbing raw broad evidence unless a narrow direct-handling exception is stated before the broad read begins.
+
+Worker handoff must return filtered findings, conflicts, exact anchors, evidence strength, and leader verification needs. Leader verification remains mandatory before sync, no-drift, closeout, or release-ready wording.
 
 ---
 

@@ -1,7 +1,7 @@
 # Execution Continuity and Mode Selection
-> **Current Version:** 1.17
-> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.17
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.18
+> **Design:** [design/execution-continuity-and-mode-selection.design.md](design/execution-continuity-and-mode-selection.design.md) v1.18
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-continuity-and-mode-selection.changelog.md](changelog/execution-continuity-and-mode-selection.changelog.md)
 ---
 ## Rule Statement
@@ -76,14 +76,16 @@ Phase-shaped next work must not become a new major phase by momentum. If it may 
 Continuous execution must not outrun required knowledge capture or required active-entrypoint compaction. If external docs/specs/provider references produce implementation-critical knowledge, normalize the extracted truth into the governed artifact before later multi-step execution depends on it. Prefer governed design for implementation truth, use phase/patch for execution consequences when in scope, and do not rely on transient reading memory when compact/handoff could remove context.
 ---
 ## Worker Routing Before Broad Continuation
-Continuous execution must not turn the next broad slice into default leader-session raw absorption.
+Continuous execution must not turn the next broad slice or aggregate read burst into default leader-session raw absorption.
 - when implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, apply `native-worker-agent-routing-and-context-control.md` before broad direct reading/searching/testing/log review
+- apply the same gate when implied work requires several bounded governance/code reads for one claim
+- broad continuation, release closeout, no-drift review, and release-ready validation must not bypass the worker-first aggregate-read gate by treating momentum as authorization
 - when implied work is broad external research, design-improvement research, source comparison, or recommendation research, apply the native research orchestration gate before leader raw WebSearch/source absorption
 - apply intent-first worker routing before project exploration when the next slice could be behavior/RULES analysis rather than project work
 - prefer standalone subagent / worker-lane handling for broad independent read/search/audit/review work before considering Agent Team workflow
 - if worker routing selects a standalone subagent, multiple subagents, or Agent Team lane, dispatch or assign that lane before the leader absorbs raw broad evidence
 - if the leader handles broad worker-fit work directly, state the narrow reason rather than treating execution momentum as authorization
-- trivial, low-output, tightly sequential, or exact interactive-control work may still continue directly
+- trivial, low-output, tightly sequential, exact edit/verify ranges, or exact interactive-control work may still continue directly
 ---
 ## Legitimate Stop Gates
 Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion with no selected safe continuation. Active objective completion may still require a supported next-goal recommendation before the response ends when checked surfaces show meaningful unselected successor work.
@@ -105,7 +107,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | implementation completed but material verification remains | continue into the proportionate verification slice when safe, or state the blocker/not-applicable reason |
 | phase-shaped follow-up | apply phase lineage handling before opening a new major phase and preserve visible phase linkage in created/extended task entries |
 | active objective complete with meaningful unselected successor work | recommend the supported next goal with why, output, and gate without blocking selected safe continuation |
-| broad/noisy next slice | apply worker routing before broad leader-session absorption |
+| broad/noisy next slice or aggregate governance/code read burst | apply worker routing before broad leader-session absorption |
 | broad research/design-improvement next slice | decompose into research lanes or state a narrow direct-handling reason before leader raw websearch/source absorption |
 | milestone-only pause drift | continue after reporting when safe |
 | open concept/design/behavior work | stay in discussion mode |

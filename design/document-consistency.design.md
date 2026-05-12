@@ -3,8 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.12
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
+> **Current Version:** 1.13
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+
+---
+
+## P093 Target-State Refinement: Worker-Gate No-Drift Check
+
+Document consistency now checks worker-first aggregate-read gate compliance before broad sync, no-drift, closeout, or release-ready claims.
+
+A broad claim is not clean when worker-fit aggregate reading was handled directly without a recorded narrow exception.
+
+The worker handoff supplies filtered findings, conflicts, exact anchors, and leader verification needs; the leader still verifies selected anchors before final wording.
 
 ---
 

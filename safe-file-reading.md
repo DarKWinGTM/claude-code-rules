@@ -1,8 +1,8 @@
 # Safe File Reading Guide
 
-> **Current Version:** 1.6
-> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.6
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.7
+> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.7
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/safe-file-reading.changelog.md](changelog/safe-file-reading.changelog.md)
 
 ---
@@ -37,14 +37,17 @@ Default safety limits:
 - logs, maps, SVG, HTML, unknown JSON, and base64-like files: use targeted search or small preview
 - if output exceeds tool limits, switch to narrower offsets/searches rather than repeatedly reading the same whole file
 
-### 3) Evaluate before broad reading
+### 3) Evaluate before broad reading and the worker-first aggregate-read gate
 
-Before broad file absorption, identify the purpose of the read.
+Before broad file absorption or a multi-file governance/code read burst, identify the purpose of the read and whether the leader needs raw content.
 
 Required guidance:
 - read only the sections needed for the active claim or edit
 - search first when looking for a symbol, config key, version, heading, or reference
-- use worker routing for broad multi-file searches or context-heavy sweeps when appropriate
+- use worker-first filtering by default for broad governance/code scans, broad multi-file searches, context-heavy sweeps, or aggregate read plans that cross several authority surfaces
+- dispatch the worker before the leader absorbs raw broad content
+- require worker findings to include conflicts, exact anchors, and leader verification needs
+- allow direct leader reads for narrow known files, exact line ranges, final verification anchors, tightly sequential interactive-control work, unavailable worker tooling, or a stated narrow direct-handling exception
 - do not treat a small excerpt as proof about the entire file unless the checked scope is sufficient
 
 ### 4) Sharded active design reading
@@ -124,7 +127,7 @@ Better behavior: read with purpose, cap output, search targeted content, and dis
 - [ ] Dedicated read/search tools were preferred where suitable.
 - [ ] Large or risky files used bounded reads/searches.
 - [ ] Checked scope was clear when reporting file facts or non-findings.
-- [ ] Broad reads used worker routing when context-heavy.
+- [ ] Broad governance/code scans and aggregate read plans used worker-first filtering unless a narrow direct-handling exception was stated.
 - [ ] Sharded active designs started at compact parent index and used shard-selective reads.
 - [ ] Oversized active governance entrypoints triggered rollover/compaction review instead of repeated full reads.
 - [ ] No unbounded terminal/file output was introduced.

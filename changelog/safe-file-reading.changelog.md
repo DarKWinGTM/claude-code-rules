@@ -1,8 +1,8 @@
 # Changelog - Safe File Reading
 
 > **Parent Document:** [../safe-file-reading.md](../safe-file-reading.md)
-> **Current Version:** 1.6
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.7
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-12 | **[Added worker-first file-reading aggregate gate](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Required worker-first filtering for broad governance/code scans and aggregate multi-file read plans while preserving narrow direct reads and checked-scope wording. | |
 | 1.6 | 2026-05-10 | **[Added index-first sharded design read path](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Added parent-index-first, shard-selective reading guidance for sharded active governed designs without treating child shards as history/done rollover surfaces. | |
 | 1.5 | 2026-05-08 | **[Added oversized governance entrypoint rollover trigger](#version-15)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -24,6 +26,24 @@
 | | | Summary: Standardized explicit capped read pattern and synchronized metadata | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added worker-first file-reading aggregate gate
+
+**Date:** 2026-05-12
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated runtime `safe-file-reading.md` from v1.6 to v1.7.
+- Updated `design/safe-file-reading.design.md` from v1.6 to v1.7.
+- Required worker-first filtering for broad governance/code scans and aggregate multi-file read plans that cross several authority surfaces.
+- Preserved direct leader reads for narrow known files, exact line ranges, final verification anchors, tightly sequential work, unavailable worker tooling, or a stated narrow exception.
+- Strengthened checked-scope wording for partial reads so excerpts are not treated as whole-file or whole-artifact proof.
+
+### Summary
+Safe-file-reading now makes broad aggregate file reading worker-first by default while keeping narrow direct reads available for exact anchors and verification ranges.
 
 ---
 
