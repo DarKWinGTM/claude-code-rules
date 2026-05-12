@@ -3,8 +3,22 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.6
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+> **Current Version:** 1.7
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+
+---
+
+## P095 Target-State Refinement: Standing-Role Worker Reuse and Audit Boundary
+
+Native worker routing now defines global standing-role worker and teammate reuse doctrine.
+
+Phase and task identifiers are assignment context, not worker identity. Active or recent aligned standing-role workers should be reused or steered before duplicate-looking spawns.
+
+Lifecycle decisions require scoped coordination evidence before reuse, spawn, respawn, shutdown, or duplicate/overlap reporting. State claims such as active, recent, stale, missing, unavailable, and not found in checked scope must stay evidence-calibrated.
+
+Simultaneous same-role lanes should be named by real responsibility, surface, or output rather than phase ID alone.
+
+Plugin-only shared-board grammar, session-short-id prefixes, creator-owner hooks, hidden registries, package tmux bridge behavior, and exact teammate display modes remain outside Main RULES ownership.
 
 ---
 
@@ -58,6 +72,8 @@ Observed failure modes:
 - broad external/design-improvement research can still be handled as leader raw websearch instead of decomposed research lanes
 - broad roadmap/phase-matrix analysis can still be handled as leader raw design/TODO/phase absorption instead of a filtered planning/review lane
 - context-heavy God-line or God-document repair can be unsafe without explicit edit ownership and preservation constraints
+- phase changes can cause duplicate-looking worker or teammate spawns when the standing role did not materially change
+- lifecycle decisions can overclaim active duplicate overlap, safe absence, stale presence, shutdown readiness, or respawn need without scoped coordination evidence
 - subagents can be asked to search without clear topic boundaries, source-trust expectations, roadmap dimensions, or synthesis requirements
 - custom-agent selection can be confused with the earlier question of whether the work should be delegated at all
 - execution continuity can push into the next broad slice without re-running an intent and worker-scale gate
@@ -78,6 +94,8 @@ The repository needs one source-owned Main RULES chain that says when the assist
 - Team/teammate restriction boundary when standalone subagents remain allowed
 - Worker handoff quality and proportionality
 - Edit-capable governed-document repair delegation for bounded `general-purpose`-style workers
+- Standing-role worker and teammate reuse across phases
+- Evidence-based lifecycle audit before reuse, spawn, respawn, shutdown, or duplicate/overlap reporting
 - Research-lane decomposition and leader-context protection for broad external/source research
 - Roadmap/phase-matrix analysis lane decomposition when multiple design, TODO, phase, risk, dependency, or verification surfaces need synthesis
 - Parallel edit containment
@@ -155,6 +173,19 @@ Target behavior:
 - parallel edit-capable lanes own non-overlapping artifacts or sections
 - workers stop and return risks when ambiguity or overlap appears
 - the leader verifies changed artifacts before sync, no-drift, closeout, or release-ready wording
+
+### 4.2.4 Standing-Role Reuse and Lifecycle Audit Target
+
+Workers and teammates should use stable role-based identities across phases when their responsibility remains materially the same.
+
+Target behavior:
+- phase/task IDs are carried in assignment context, checked scope, objective, task subject, or handoff rather than worker identity
+- active or recent aligned standing roles are reused or steered before duplicate-looking spawns
+- new workers are added only for genuinely new roles, audited unavailability, user-selected separation, or simultaneous distinct scope
+- lifecycle decisions audit requested role, objective, checked scope, observed state, role owner, objective alignment, decision, and reason
+- observed state claims stay scoped as active, recent, stale, missing, unavailable, or not found in checked scope
+- simultaneous same-role lanes are named by responsibility, surface, or output rather than phase ID alone
+- plugin-only shared-board/session/tmux mechanics are excluded from Main RULES required behavior
 
 ### 4.3 Capability-Based Routing
 Routing should be driven by:
@@ -256,6 +287,9 @@ This chain succeeds when:
 - broad roadmap/phase-matrix analysis is decomposed into focused planning/review lanes when multiple design, TODO, phase, risk, dependency, or verification surfaces need synthesis
 - edit-capable governed-document repair is bounded by explicit scope, non-overlap, preservation constraints, and leader verification
 - edit-capable repair handoffs include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs
+- standing-role workers and teammates are reused or steered across phases when their responsibility remains materially the same
+- lifecycle decisions audit checked coordination evidence before reuse, spawn, respawn, shutdown, or duplicate/overlap reporting
+- simultaneous same-role lanes are named by responsibility, surface, or output rather than phase ID alone
 - research and roadmap handoffs include source/artifact quality, conflicts, implications, and leader verification needs instead of raw dumps
 - coordination-design claims classify the actual checked mechanism before claiming delivery, mutation, awareness, routing, or authority behavior
 - Agent Teams are used only when coordination semantics are worth the overhead and allowed by user direction

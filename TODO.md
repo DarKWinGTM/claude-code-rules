@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-12
-> **Current Release:** v10.02 / P094 edit-capable governed-document repair delegation (released)
+> **Last Updated:** 2026-05-13
+> **Current Release:** v10.03 / P095 standing-role worker reuse and audit boundary (active)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -31,10 +31,17 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-None currently for P094 / v10.02. Release, push, install, parity, body sufficiency, and density/God-artifact gates are complete.
+- [ ] P095 / v10.03 standing-role worker reuse and audit boundary is active.
+  - Output: Main RULES defines global standing-role worker/teammate reuse, lifecycle audit, scoped state evidence, and responsibility-based lane naming.
+  - Scope: promote only universal clause 6 doctrine; keep `claude-session-coordination` shared-board/session/tmux/plugin mechanics local.
+  - Verified: source sync, 47/47 install/parity/body sufficiency, plugin-exclusion validation, and P095-specific density review passed.
+  - Pending: `master` push and GitHub release `v10.03` verification.
 
 ### Deferred / Not Selected
 
+- [ ] Master governance density rollover remains deferred.
+  - Scope: large active `changelog/changelog.md` history and release-history-heavy master README/design sections.
+  - Gate: open a dedicated repair phase or patch before claiming full active-entrypoint God-document cleanup.
 - [ ] Automated validation script for documentation compliance remains deferred by user.
 - [ ] Integration testing for design/changelog/rule/TODO integration paths remains deferred by user.
 
@@ -50,21 +57,22 @@ None currently for P094 / v10.02. Release, push, install, parity, body sufficien
 
 | Date | Changes |
 |------|---------|
+| 2026-05-13 | Opened P095 / v10.03 standing-role worker reuse and audit boundary. |
 | 2026-05-12 | Released P094 / v10.02; `master` matched origin and GitHub release verification passed. |
 | 2026-05-12 | Release tag and target commit both point to `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`; published at `2026-05-12T14:38:36Z`. |
 | 2026-05-12 | P094 / v10.02 source sync recorded owner-chain implementation and released master-doc alignment. |
 | 2026-05-12 | P094 runtime install, 47/47 parity/body sufficiency, and density/God-artifact review passed. |
 | 2026-05-12 | Opened P094 / v10.02 edit-capable governed-document repair delegation. |
 | 2026-05-12 | Released P093 / v10.01 worker-first aggregate-read gate; 47/47 parity/body sufficiency, density review, push, and release passed. |
-| 2026-05-11 | Released P092 / v10.00 automatic God artifact planning and controlled repair; 47/47 parity/body sufficiency passed; density/God-artifact automation review passed; `master` pushed; release `v10.00` published. |
-| 2026-05-11 | P092 runtime install, 47/47 parity/body sufficiency, and density/God-artifact automation checks passed before final push/release closeout. |
-| 2026-05-11 | Opened P092 / v10.00 automatic God artifact planning; owner chains and master records were source-synchronized before release gates closed. |
-| 2026-05-11 | Released P091 / v9.99 governed document God-file prevention and repair; 47/47 parity/body sufficiency passed; density review passed; `master` pushed; release `v9.99` published. |
-| 2026-05-10 | Released P090-01 / v9.98; context-load owner v1.1 installed; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.98` published. |
-| 2026-05-10 | Released P090 / v9.97; added context-load owner as the 47th runtime rule; 47/47 parity/body sufficiency passed; `master` pushed; release `v9.97` published. |
-| 2026-05-10 | Released P089 / v9.96 governed design sharding compact-index doctrine; updated design-sharding owner chains, synchronized master records, installed 46 active runtime rules, verified 46/46 source/runtime parity plus body sufficiency, pushed `master`, and published GitHub release `v9.96`. |
-| 2026-05-09 | Released P076-04 / v9.95 bounded main/subphase boundary refinement; updated `phase-implementation` to v2.32, installed the 46 active runtime rules, verified 46/46 source/runtime parity and body sufficiency, pushed `master`, and published GitHub release `v9.95`. |
-| 2026-05-08 | Released P086 / v9.94 constructive dissent and anti-over-agreement refinement; updated `anti-sycophancy` to v1.7 so user proposals are evaluated before agreement-shaped wording, installed the 46 active runtime rules, verified 46/46 source/runtime parity and body sufficiency, pushed `master`, and published GitHub release `v9.94`. |
-| 2026-05-08 | Released P088 / v9.93 memory root-index relative scope compaction; updated memory-governance to v1.7, compacted active root `MEMORY.md` with visible `Scope` + `Memory base` hooks, installed 46 runtime rules, verified 46/46 parity/body sufficiency, pushed `master`, and published GitHub release `v9.93`. |
+| 2026-05-11 | Released P092 / v10.00 automatic God artifact planning and controlled repair. |
+| 2026-05-11 | P092 runtime install, parity/body sufficiency, and God-artifact automation checks passed. |
+| 2026-05-11 | Opened P092 / v10.00 automatic God artifact planning and source sync. |
+| 2026-05-11 | Released P091 / v9.99 governed document God-file prevention and repair. |
+| 2026-05-10 | Released P090-01 / v9.98 context-load owner v1.1 install wave. |
+| 2026-05-10 | Released P090 / v9.97 and added context-load owner as the 47th runtime rule. |
+| 2026-05-10 | Released P089 / v9.96 governed design sharding compact-index doctrine. |
+| 2026-05-09 | Released P076-04 / v9.95 bounded main/subphase boundary refinement. |
+| 2026-05-08 | Released P086 / v9.94 constructive dissent and anti-over-agreement refinement. |
+| 2026-05-08 | Released P088 / v9.93 memory root-index relative scope compaction. |
 | 2026-05-08 | Opened P087-01 daily-first governance rollover; preserved pre-rollover TODO; compacted this main file into current state + history/done references. |
 | 2026-05-07 | Released v9.91 / P085-01. Full prior TODO detail is preserved in the pre-rollover snapshot. |

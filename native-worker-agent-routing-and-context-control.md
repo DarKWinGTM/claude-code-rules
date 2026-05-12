@@ -1,12 +1,12 @@
 # Native Worker Agent Routing and Context Control
-> **Current Version:** 1.6
-> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/native-worker-agent-routing-and-context-control.design.md](design/native-worker-agent-routing-and-context-control.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/native-worker-agent-routing-and-context-control.changelog.md](changelog/native-worker-agent-routing-and-context-control.changelog.md)
 ---
 ## Rule Statement
 **Core Principle: Use the smallest effective standalone worker lane first for broad, research-heavy, roadmap-analysis-heavy, high-context, high-output, or naturally parallel work, so the leader session stays the controller and verifier instead of absorbing every raw search, read, source, log, test, roadmap, or review surface itself.**
-This rule owns native worker routing, leader-context protection, research-lane decomposition, subagent-first worker-scale decisions, Agent Team escalation boundaries, worker handoff quality, and main-session verification boundaries. It does not replace custom-agent selection, task-list semantics, phase semantics, external source-trust ownership, evidence wording, safety gates, or plugin/shared-board/runtime coordination mechanics.
+This rule owns native worker routing, standing-role worker and teammate reuse, lifecycle audit before reuse/spawn/respawn/shutdown/overlap reporting, leader-context protection, research-lane decomposition, subagent-first worker-scale decisions, Agent Team escalation boundaries, worker handoff quality, and main-session verification boundaries. It does not replace custom-agent selection, task-list semantics, phase semantics, external source-trust ownership, evidence wording, safety gates, or plugin/shared-board/runtime coordination mechanics.
 ---
 ## Intent and Scope Boundary
 Classify the user’s intent before treating technical material as project work:
@@ -89,6 +89,41 @@ Required guidance:
 
 Edit-capable repair handoffs must include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs.
 
+### 4.4) Standing-role reuse and lifecycle audit
+Use stable role-based workers or teammates across phases when the responsibility remains materially the same. Phase or task identifiers are assignment context, not worker identity.
+
+Required guidance:
+- prefer standing role names for recurring responsibilities
+- steer an existing active or recent aligned standing-role worker before spawning a duplicate-looking role
+- put phase/task identifiers in the assignment message, task subject, objective, checked scope, or handoff
+- spawn a new worker only for a genuinely new role, audited unavailability, explicit user-selected separate lane, or simultaneous distinct scope
+- when simultaneous lanes need separation, name them by real responsibility, surface, or output rather than phase ID alone
+- do not report active duplicate overlap, safe absence, or cleanup-ready stale presence from unverified UI residue, stale task state, or memory alone
+- keep shared-board grammar, session-short-id prefixes, creator-owner hooks, hidden registries, package tmux bridge behavior, and exact teammate display modes outside Main RULES ownership
+
+Before reuse, spawn, respawn, shutdown, or duplicate/overlap reporting, audit checked coordination evidence at the smallest useful scope.
+
+Audit fields:
+- `requested_role`
+- `objective`
+- `checked_scope`
+- `observed_state`: `active`, `recent`, `stale`, `missing`, `unavailable`, or `not found in checked scope`
+- `role_owner`
+- `objective_alignment`
+- `decision`
+- `reason`
+
+Decision rules:
+- active/recent + same standing role + next phase assignment -> steer existing role
+- active/recent + same role + same objective -> reuse or steer
+- active/recent + same role + different objective -> keep distinct only with explicit lane boundary
+- stale or missing -> verify before claiming active duplicate or safe absence
+- unavailable -> stop for state, input, or authorization before respawn as needed
+- not found in checked scope -> report scoped non-finding; spawn only when the checked scope is sufficient
+- phase change alone -> reuse or steer standing role, not phase-suffixed spawn
+- one broad context-heavy task with one independent lane and no matching worker in checked scope -> focused standalone subagent preferred over leader overload
+- coordinated context-heavy task with three or more distinct lanes or shared dependencies -> official Agent Team / teammates only when allowed and justified
+
 ### 5) Native execution behavior
 Worker routing is normal execution behavior, not a special mode.
 
@@ -96,8 +131,9 @@ Required behavior:
 - proactively look for worker-fit slices
 - keep the worker set minimal
 - prefer subagent-first handling for broad lanes without shared-team coordination
-- reuse active/recent standing-role workers before duplicate-looking spawns
+- reuse or steer active/recent aligned standing-role workers before duplicate-looking spawns
 - put phase/task/objective context in the assignment rather than necessarily in worker identity
+- audit checked coordination evidence before lifecycle decisions or duplicate/overlap reporting
 - do not over-delegate simple work
 
 ### 6) Team restriction boundary
@@ -194,6 +230,9 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 | coordination design or cross-session behavior proposal | classify the actual mechanism first, then keep claims within checked capability |
 | high-output test/log/build evidence | prefer worker filtering before leader reads raw noisy output |
 | multi-surface governance audit | use a focused audit worker or multiple standalone workers when scope is broad |
+| phase changes but the worker responsibility remains the same | reuse or steer the standing-role worker; put phase context in the assignment |
+| reuse, spawn, respawn, shutdown, or duplicate/overlap report | audit checked coordination evidence and report scoped state before deciding |
+| simultaneous same-role lanes | name lanes by responsibility, surface, or output rather than phase ID alone |
 | context-heavy God-line/God-document repair | use a bounded edit-capable repair lane only with explicit scope, edit ownership, and preservation constraints |
 | external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
 | broad design-improvement research | map independent topic lanes first, then dispatch one or more focused subagents before leader raw websearch absorption |
@@ -215,6 +254,9 @@ Avoid:
 - treating teammate/Agent Team bans as standalone-subagent bans
 - escalating to Agent Team when one subagent would cover the work
 - fixed handoff caps, raw worker dumps, duplicate same-role worker spawn, or overlapping parallel edits
+- naming workers by phase ID alone when the standing role did not change
+- reporting active duplicate overlap, safe absence, stale-worker cleanup, shutdown, or respawn without checked coordination evidence
+- importing shared-board grammar, session-short-id prefixes, creator-owner hooks, hidden registries, package tmux bridge behavior, or exact teammate display modes into Main RULES required behavior
 - assigning edit-capable governed-document repair without bounded ownership and preservation constraints
 - treating worker summaries as proof or importing plugin/shared-board grammar into Main RULES
 
@@ -230,6 +272,10 @@ Better behavior: classify intent and worker scale first, dispatch the smallest f
 - [ ] Research lanes returned analyzed source-quality-aware findings rather than raw search dumps
 - [ ] Agent Team / teammate workflow was used only when shared coordination was truly needed and allowed
 - [ ] A teammate/Agent Team ban was not treated as a standalone-subagent ban unless the user broadened it
+- [ ] Active/recent aligned standing-role workers were reused or steered before duplicate-looking spawns
+- [ ] Phase/task identifiers were kept as assignment context rather than worker identity
+- [ ] Reuse, spawn, respawn, shutdown, and duplicate/overlap reporting used checked coordination evidence
+- [ ] Plugin-only shared-board/session/tmux mechanics were not imported as Main RULES required behavior
 - [ ] Research/review lanes were read-only unless edit ownership was explicit
 - [ ] Edit-capable governed-document repair lanes had bounded scope and preservation constraints
 - [ ] Edit-capable lanes had non-overlapping ownership
@@ -246,6 +292,9 @@ Better behavior: classify intent and worker scale first, dispatch the smallest f
 | Research/roadmap-lane decomposition for broad source/design/phase analysis | High |
 | Agent Team over-escalation | Low |
 | Main-session raw search/source context overload | Low |
+| Standing-role reuse before duplicate spawn | High |
+| Lifecycle audit before reuse/spawn/respawn/shutdown/overlap reporting | High |
+| Plugin-mechanic leakage into Main RULES | 0 critical cases |
 | Delegation-by-capability clarity | High |
 | Over-delegation of trivial work | Low |
 | Worker handoff signal quality | High |

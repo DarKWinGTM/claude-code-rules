@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.02
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+> **Current Version:** 10.03
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -20,6 +20,7 @@ Current model focus:
 - design files hold target-state truth and may use compact parent indexes with governed child shards for large active designs
 - changelog remains version and history authority, while TODO and phase stay compact current-state entrypoints
 - broad raw evidence should be filtered through workers before it burdens the leader session when the task shape is context-heavy
+- standing-role worker and teammate reuse should carry across phases when responsibility remains materially the same
 - active governance docs should avoid God-line history dumps, repair clear low-risk touched God-line candidates, prevent God-file role overload, and route detected God artifact pressure into repair or visible planning
 - startup, phase, patch, verification, portability, memory, audience-surface, and release boundaries stay with their dedicated owners
 
@@ -79,6 +80,14 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
+- P095 is the active v10.03 standing-role worker reuse and audit boundary wave.
+  - It keeps the source-owned active runtime set at 47.
+  - It promotes standing-role worker/teammate reuse, phase-ID-as-context, lifecycle audit, scoped state evidence, and responsibility-based lane naming into Main RULES.
+  - It advances `native-worker-agent-routing-and-context-control` to v1.7.
+  - Plugin-owned shared-board/session/tmux mechanics remain outside Main RULES required behavior.
+  - Runtime install, 47/47 source/runtime parity, and source/destination active runtime body sufficiency passed.
+  - P095-specific density/God-artifact review passed; broader master governance density rollover remains deferred.
+  - `master` push and GitHub release `v10.03` verification remain pending.
 - P094 is the released v10.02 edit-capable governed-document repair delegation wave.
   - It keeps the source-owned active runtime set at 47.
   - It extends worker-first governance from filtered reads into bounded native edit-capable repair for governed documents.
@@ -146,7 +155,7 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 17 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.2 | Text diagrams without frames or boxes |
 | 18 | functional-intent-verification.md | functional-intent-verification.design.md v1.2 | Clarify destructive/expensive intent before execution, including an explicit delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
 | 19 | memory-governance-and-session-boundary.md | memory-governance-and-session-boundary.design.md v1.7 | First-class owner for memory role boundaries, root `MEMORY.md` active-index behavior, visible one-line hook preservation, `Scope` + `Memory base` relative path compaction for repeated path scopes, loader-warning and index-bloat maintenance triggers, fake-alias and link-only hidden-memory-router avoidance, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, archive-inactive lifecycle semantics, and generic optional external recall guidance that stays supplemental and subordinate to stronger execution evidence |
-| 20 | native-worker-agent-routing-and-context-control.md | native-worker-agent-routing-and-context-control.design.md v1.6 | Intent-first worker routing, aggregate-read gating, and bounded edit-capable governed-document repair delegation |
+| 20 | native-worker-agent-routing-and-context-control.md | native-worker-agent-routing-and-context-control.design.md v1.7 | Intent-first worker routing, aggregate-read gating, bounded edit-capable governed-document repair delegation, standing-role worker/teammate reuse, and lifecycle audit before reuse/spawn/respawn/shutdown/overlap reporting |
 | 21 | no-variable-guessing.md | no-variable-guessing.design.md v1.5 | Read before reference with inspected-scope local evidence discipline, including git-state observations kept in the weak local-evidence lane until governed repo surfaces are checked |
 | 22 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and a Team Agent duplicate/stale-presence profile that treats duplicate-looking or stale team-agent presence as inspect-before-respawn rather than respawn-first churn |
 | 23 | phase-implementation.md | phase-implementation.design.md v2.34 | Phase planning with bounded lineage, compact summaries, phase-visible tasks, verification gates, next-goal closeout, God Phase prevention, and automatic God Phase handling |

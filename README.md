@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.02</b><br><sub>P094 Released</sub>
+  <b>v10.03</b><br><sub>P095 Active</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>GitHub v10.02</sub>
+  <b>Installed</b><br><sub>Release pending</sub>
 </td>
 <td align="center" width="200">
-  <b>Delegated repair</b><br><sub>Leader verified</sub>
+  <b>Standing roles</b><br><sub>Audit boundary</sub>
 </td>
 </tr>
 </table>
@@ -353,6 +353,13 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
+- P095 standing-role worker reuse and audit boundary is active for v10.03.
+  - Keeps the source-owned active runtime set at 47 files.
+  - Promotes standing-role worker/teammate reuse and lifecycle audit into Main RULES.
+  - Treats phase/task IDs as assignment context rather than worker identity.
+  - Keeps plugin-owned shared-board/session/tmux mechanics outside Main RULES required behavior.
+  - Runtime install, 47/47 parity, body sufficiency, plugin-exclusion validation, and P095-specific density review passed.
+  - `master` push and GitHub release `v10.03` remain pending.
 - P094 edit-capable governed-document repair delegation is released for v10.02.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds bounded native edit-capable repair for governed documents when scope is explicit and meaning-preserving.
@@ -487,17 +494,17 @@ Please:
 
 **📊 Active Runtime Rules: 47**
 
-Current release: P094 / v10.02 edit-capable governed-document repair delegation is released.
+Current release wave: P095 / v10.03 standing-role worker reuse and audit boundary is installed in the active runtime set.
 
 - Active source install set remains 47 files.
-- Owner chains now cover bounded native edit-capable repair for governed documents.
-- Delegated repair must be explicit, non-overlapping, and meaning-preserving.
-- Leader final verification remains required before sync, no-drift, closeout, parity, or release-ready claims.
-- Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
-- `master` push and GitHub release `v10.02` verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
-- Release target and tag point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
-- Published at `2026-05-12T14:38:36Z`.
+- Runtime install copied the 47 README-listed root runtime rules.
+- Source/runtime parity and source/destination active runtime body sufficiency passed for 47/47 files.
+- `native-worker-agent-routing-and-context-control` now defines global standing-role worker/teammate reuse and lifecycle audit doctrine.
+- Phase/task IDs are assignment context, not worker identity.
+- Reuse, spawn, respawn, shutdown, and duplicate/overlap reporting require scoped coordination evidence.
+- Plugin-owned shared-board/session/tmux mechanics remain outside Main RULES required behavior.
+- P095-specific density review passed; broader master governance density rollover remains deferred.
+- `master` push and GitHub release `v10.03` remain pending.
 </div>
 
 ---
@@ -1218,11 +1225,11 @@ Result: ✅ Verified from actual files
 
 ### Runtime install boundary
 
-- Current README meaning: v10.02 keeps install scope at 47 source-owned active runtime files.
-- Source state: P094 is released for edit-capable governed-document repair delegation.
-- Passed gates: runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review.
-- Release gates: `master` push and GitHub release `v10.02` verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
+- Current README meaning: v10.03 keeps install scope at 47 source-owned active runtime files.
+- Source state: P095 is active for standing-role worker reuse and lifecycle audit boundary.
+- Verified gates: runtime install, 47/47 source/runtime parity, source/destination body sufficiency, plugin-exclusion validation, and P095-specific density review passed.
+- Deferred density work: broader master governance density rollover remains tracked in `TODO.md`.
+- Release gates: `master` push and GitHub release `v10.03` remain pending.
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity and automation

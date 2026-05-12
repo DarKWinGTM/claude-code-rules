@@ -1,7 +1,7 @@
 # Changelog - Native Worker Agent Routing and Context Control
 
 > **Parent Document:** [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-13 | **[Added standing-role worker reuse and audit boundary](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Promoted universal standing-role reuse, phase-ID-as-context, lifecycle audit, scoped state evidence, and plugin-mechanic exclusion into Main RULES | |
 | 1.6 | 2026-05-12 | **[Added edit-capable governed-document repair delegation](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Added a bounded `general-purpose`-style repair lane with explicit edit ownership, preservation constraints, and leader verification | |
 | 1.5 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -22,6 +24,27 @@
 | 1.1 | 2026-05-04 | **[Refined subagent-first capability routing and intent gate](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.0 | 2026-05-03 | **[Created native worker routing and context-control owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class rule chain for proactive workload-shaped worker routing, smallest-effective subagent/Agent Team selection, analyzed handoffs, parallel edit containment, and leader verification | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added standing-role worker reuse and audit boundary
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `native-worker-agent-routing-and-context-control.md` from v1.6 to v1.7.
+- Updated `design/native-worker-agent-routing-and-context-control.design.md` from v1.6 to v1.7.
+- Added global standing-role worker and teammate reuse across phases.
+- Clarified that phase/task IDs are assignment context, not worker identity.
+- Required checked coordination evidence before reuse, spawn, respawn, shutdown, or duplicate/overlap reporting.
+- Added scoped observed-state wording for active, recent, stale, missing, unavailable, and not found in checked scope.
+- Required simultaneous same-role lanes to be named by responsibility, surface, or output rather than phase ID alone.
+- Excluded shared-board grammar, session-short-id prefixes, creator-owner hooks, hidden registries, package tmux bridge behavior, and exact teammate display modes from Main RULES required behavior.
+
+### Summary
+Native worker routing now treats standing-role reuse and evidence-based lifecycle audit as global behavior, while plugin-owned coordination mechanics remain local to their owning surface.
 
 ---
 

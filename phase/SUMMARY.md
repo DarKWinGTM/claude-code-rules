@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.77
+> **Current Version:** 1.78
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P094 completed and released for v10.02 edit-capable governed-document repair delegation
+> **Status:** P095 active for v10.03 standing-role worker reuse and audit boundary
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-None currently selected after P094 / v10.02 closeout.
+- **P095:** [phase-095-standing-role-worker-reuse-and-audit-boundary.md](phase-095-standing-role-worker-reuse-and-audit-boundary.md)
+  - Goal: promote universal standing-role worker/teammate reuse and lifecycle audit doctrine into Main RULES.
+  - Output: phase IDs become assignment context; reuse/steer happens before duplicate spawns; lifecycle decisions use scoped evidence.
+  - Scope: plugin-only shared-board/session/tmux mechanics stay local to `claude-session-coordination`.
+  - Gate: source sync, install, 47/47 parity/body sufficiency, plugin-exclusion validation, density review, push, and release `v10.03` verified.
 
 ### Recently Completed
 
@@ -81,6 +85,29 @@ None currently selected after P094 / v10.02 closeout.
 ---
 
 ## Recent Phase Detail
+
+### P095 — Standing-Role Worker Reuse and Audit Boundary
+
+- **Status:** Active
+- **Design References:**
+  - [../design/design.md](../design/design.md) v10.03
+  - [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md) v1.7
+- **Patch References:** [../patch/standing-role-worker-reuse-and-audit-boundary.patch.md](../patch/standing-role-worker-reuse-and-audit-boundary.patch.md)
+- **Expected Output:**
+  - Main RULES defines standing-role worker/teammate reuse across phases.
+  - Phase/task IDs are assignment context, not worker identity.
+  - Lifecycle decisions audit scoped coordination evidence before reuse, spawn, respawn, shutdown, or duplicate/overlap reporting.
+  - Simultaneous same-role lanes are named by responsibility, surface, or output rather than phase ID alone.
+  - Plugin-only `claude-session-coordination` mechanics remain out of Main RULES required behavior.
+  - Active runtime count remains 47.
+- **Completion Gate:**
+  - Runtime install copies only README-listed active runtime rules.
+  - README Bash and PowerShell arrays contain the same 47 active runtime files.
+  - 47/47 source/runtime parity and active runtime body sufficiency pass.
+  - Semantic promotion and plugin-exclusion gates pass.
+  - Touched active docs pass density and God-artifact review.
+  - Broad validation uses worker-first filtering or records a narrow direct-handling exception.
+  - `master` is pushed and GitHub release `v10.03` is verified.
 
 ### P094 — Edit-Capable Governed-Document Repair Delegation
 
@@ -285,27 +312,27 @@ None currently selected after P094 / v10.02 closeout.
 
 ## Verification Focus
 
-P094 verification is complete for the v10.02 release closeout.
+P095 verification is active for the v10.03 source-sync and release gates.
 
-Released source-sync state:
-- P094 phase and patch records exist and are closed.
-- P094 owner-chain runtime/design/changelog versions are source-synchronized.
-- README, master design, master changelog, TODO, phase, and patch records align to released v10.02 / P094 state.
+Current verified state:
+- P095 phase and patch records exist and are active.
+- `native-worker-agent-routing-and-context-control` runtime/design/changelog versions are synchronized to v1.7 in source.
+- README, master design, master changelog, TODO, phase, and patch records align to v10.03 / P095 active state.
+- Runtime install copied only README-listed active runtime rules.
+- 47/47 source/runtime parity and source/destination active runtime body sufficiency passed.
+- Semantic promotion, plugin-exclusion validation, and P095-specific density review passed.
+- Broader master governance density rollover remains deferred and tracked in `TODO.md`.
+- Broad validation used worker-first filtering plus leader verification.
 
-Passed gates:
-- runtime install copied only README-listed active runtime rules
-- 47/47 source/runtime parity and source/destination active runtime body sufficiency passed
-- touched active docs passed final density and God-artifact review
-- broad validation used worker-first filtering for source and post-install checks
-- `master` push and GitHub release `v10.02` verification passed
-- release target and tag both point to `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`
+Pending gates:
+- `master` push and GitHub release `v10.03` verification pass
 
 ---
 
 ## Rollback / Containment
 
-If P094 is reversed:
-- revert the v10.02 delegated repair changes through a governed rollback
-- restore prior v10.01 owner-chain versions and master records
+If P095 is reversed before release:
+- revert the v10.03 standing-role reuse and lifecycle-audit changes through a governed rollback
+- restore prior v10.02 owner-chain versions and master records
 - reinstall the prior 47-file runtime set only under an explicit rollback gate
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

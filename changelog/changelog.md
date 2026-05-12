@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.02
+> **Current Version:** 10.03
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.03 | 2026-05-13 | **[Added standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.02 | 2026-05-12 | **[Released edit-capable governed-document repair delegation](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.01 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-1001)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.00 | 2026-05-11 | **[Added automatic God artifact planning and controlled repair](#version-1000)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -136,6 +137,32 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-1003"></a>
+## Version 10.03: Added standing-role worker reuse and audit boundary
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Opened and implemented P095 owner-chain updates for standing-role worker reuse and lifecycle audit boundary.
+- Kept the README-listed source-owned active runtime set at 47 files.
+- Advanced `native-worker-agent-routing-and-context-control` to v1.7.
+- Added global standing-role worker and teammate reuse across phases.
+- Clarified that phase/task IDs are assignment context, not worker identity.
+- Required scoped coordination evidence before reuse, spawn, respawn, shutdown, or duplicate/overlap reporting.
+- Required simultaneous same-role lanes to be named by responsibility, surface, or output rather than phase ID alone.
+- Kept shared-board grammar, session-short-id prefixes, creator-owner hooks, hidden registries, package tmux bridge behavior, and exact teammate display modes outside Main RULES required behavior.
+- Synchronized source current-state surfaces for active v10.03 / P095 governance.
+- Runtime install copied the 47 README-listed active runtime rules.
+- Source/runtime parity and source/destination active runtime body sufficiency passed for 47/47 files.
+- P095-specific density/God-artifact review passed; broader master governance density rollover remains deferred.
+- `master` push and GitHub release `v10.03` verification remain pending.
+
+### Summary
+P095 promotes universal standing-role reuse and evidence-based lifecycle audit into Main RULES while preserving plugin-owned coordination mechanics as local to their owning surfaces.
 
 ---
 
