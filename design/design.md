@@ -80,14 +80,17 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P095 is the active v10.03 standing-role worker reuse and audit boundary wave.
+- P095 is the released v10.03 standing-role worker reuse and audit boundary wave.
   - It keeps the source-owned active runtime set at 47.
   - It promotes standing-role worker/teammate reuse, phase-ID-as-context, lifecycle audit, scoped state evidence, and responsibility-based lane naming into Main RULES.
   - It advances `native-worker-agent-routing-and-context-control` to v1.7.
   - Plugin-owned shared-board/session/tmux mechanics remain outside Main RULES required behavior.
   - Runtime install, 47/47 source/runtime parity, and source/destination active runtime body sufficiency passed.
   - P095-specific density/God-artifact review passed; broader master governance density rollover remains deferred.
-  - `master` push and GitHub release `v10.03` verification remain pending.
+  - `master` push and GitHub release `v10.03` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+  - Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
+  - Published at `2026-05-12T22:23:41Z`.
 - P094 is the released v10.02 edit-capable governed-document repair delegation wave.
   - It keeps the source-owned active runtime set at 47.
   - It extends worker-first governance from filtered reads into bounded native edit-capable repair for governed documents.

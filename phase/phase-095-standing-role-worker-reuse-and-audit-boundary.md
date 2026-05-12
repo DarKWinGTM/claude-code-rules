@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P095
-> **Status:** Active
+> **Status:** Completed / Released
 > **Target Release:** v10.03
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.03
@@ -54,8 +54,8 @@ P095 makes the global behavior explicit:
 - [x] Install only README-listed active runtime rules.
 - [x] Verify source/runtime parity and source/destination body sufficiency for 47/47 files.
 - [x] Validate P095-specific density/God-artifact posture.
-- [ ] Push `master` and publish GitHub release `v10.03`.
-- [ ] Close P095 records after release verification passes.
+- [x] Push `master` and publish GitHub release `v10.03`.
+- [x] Close P095 records after release verification passes.
 
 ---
 
@@ -95,16 +95,20 @@ If P095 is reversed:
 
 ## Current Status
 
-P095 is active.
+P095 is completed and released.
 
-Verified in source/runtime:
-- phase and patch records are open
+Verified in source/runtime/release:
+- phase and patch records are closed for v10.03 release state
 - native-worker owner-chain updates are complete
 - master source sync is complete
 - runtime install copied the 47 README-listed root rules
 - source/runtime parity and source/destination body sufficiency passed for 47/47 files
 - semantic promotion, plugin exclusion, and P095-specific density review passed
+- `master` push and GitHub release `v10.03` verification passed
+- release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+- release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`
+- published at `2026-05-12T22:23:41Z`
 - broader master governance density rollover remains deferred in `TODO.md`
 
 Pending gates:
-- push and release verification
+- none for P095

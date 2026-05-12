@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-13
-> **Current Release:** v10.03 / P095 standing-role worker reuse and audit boundary (active)
+> **Current Release:** v10.03 / P095 standing-role worker reuse and audit boundary (released)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -22,6 +22,7 @@
 - [x] P092 / v10.00 automatic God artifact planning and controlled repair was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P093 / v10.01 worker-first aggregate-read gate was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P094 / v10.02 edit-capable governed-document repair delegation was completed, installed, pushed, and released with 47/47 parity/body sufficiency and density/God-artifact review passing.
+- [x] P095 / v10.03 standing-role worker reuse and audit boundary was completed, installed, pushed, and released with 47/47 parity/body sufficiency, plugin-exclusion validation, and density/God-artifact review passing.
 
 Completed historical detail before this compact entrypoint is intentionally not duplicated here. Use the pre-rollover snapshot or future `todo/done/` shards for audit, rollback, or provenance.
 
@@ -31,11 +32,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- [ ] P095 / v10.03 standing-role worker reuse and audit boundary is active.
-  - Output: Main RULES defines global standing-role worker/teammate reuse, lifecycle audit, scoped state evidence, and responsibility-based lane naming.
-  - Scope: promote only universal clause 6 doctrine; keep `claude-session-coordination` shared-board/session/tmux/plugin mechanics local.
-  - Verified: source sync, 47/47 install/parity/body sufficiency, plugin-exclusion validation, and P095-specific density review passed.
-  - Pending: `master` push and GitHub release `v10.03` verification.
+- None currently selected.
 
 ### Deferred / Not Selected
 
@@ -57,6 +54,8 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
+| 2026-05-13 | Released P095 / v10.03 standing-role worker reuse and audit boundary; `master`, tag, and GitHub release verification passed. |
+| 2026-05-13 | Release tag and target commit both point to `d5d7f1dbd3f16a1159f308e67b577878784f0356`; published at `2026-05-12T22:23:41Z`. |
 | 2026-05-13 | Opened P095 / v10.03 standing-role worker reuse and audit boundary. |
 | 2026-05-12 | Released P094 / v10.02; `master` matched origin and GitHub release verification passed. |
 | 2026-05-12 | Release tag and target commit both point to `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`; published at `2026-05-12T14:38:36Z`. |

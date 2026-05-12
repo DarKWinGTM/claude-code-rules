@@ -3,7 +3,7 @@
 > **Current Version:** 1.78
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P095 active for v10.03 standing-role worker reuse and audit boundary
+> **Status:** P095 released for v10.03 standing-role worker reuse and audit boundary
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- None currently selected.
+
+### Recently Completed
+
 - **P095:** [phase-095-standing-role-worker-reuse-and-audit-boundary.md](phase-095-standing-role-worker-reuse-and-audit-boundary.md)
   - Goal: promote universal standing-role worker/teammate reuse and lifecycle audit doctrine into Main RULES.
   - Output: phase IDs become assignment context; reuse/steer happens before duplicate spawns; lifecycle decisions use scoped evidence.
   - Scope: plugin-only shared-board/session/tmux mechanics stay local to `claude-session-coordination`.
   - Gate: source sync, install, 47/47 parity/body sufficiency, plugin-exclusion validation, density review, push, and release `v10.03` verified.
-
-### Recently Completed
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+  - Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
+  - Published at `2026-05-12T22:23:41Z`.
 
 - **P094:** [phase-094-edit-capable-governed-document-repair-delegation.md](phase-094-edit-capable-governed-document-repair-delegation.md)
   - Added bounded edit-capable governed-document repair delegation for native workers.
@@ -88,7 +93,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P095 — Standing-Role Worker Reuse and Audit Boundary
 
-- **Status:** Active
+- **Status:** Completed/released; install, 47/47 parity/body sufficiency, plugin-exclusion validation, density/God-artifact review, push, and release passed
 - **Design References:**
   - [../design/design.md](../design/design.md) v10.03
   - [../design/native-worker-agent-routing-and-context-control.design.md](../design/native-worker-agent-routing-and-context-control.design.md) v1.7
@@ -108,6 +113,9 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Touched active docs pass density and God-artifact review.
   - Broad validation uses worker-first filtering or records a narrow direct-handling exception.
   - `master` is pushed and GitHub release `v10.03` is verified.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+  - Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
+  - Published at `2026-05-12T22:23:41Z`.
 
 ### P094 — Edit-Capable Governed-Document Repair Delegation
 
@@ -312,26 +320,30 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-P095 verification is active for the v10.03 source-sync and release gates.
+P095 verification is complete for the v10.03 source-sync, install, push, and release gates.
 
 Current verified state:
-- P095 phase and patch records exist and are active.
+- P095 phase and patch records exist and are released.
 - `native-worker-agent-routing-and-context-control` runtime/design/changelog versions are synchronized to v1.7 in source.
-- README, master design, master changelog, TODO, phase, and patch records align to v10.03 / P095 active state.
+- README, master design, master changelog, TODO, phase, and patch records align to v10.03 / P095 released state.
 - Runtime install copied only README-listed active runtime rules.
 - 47/47 source/runtime parity and source/destination active runtime body sufficiency passed.
 - Semantic promotion, plugin-exclusion validation, and P095-specific density review passed.
+- `master` push and GitHub release `v10.03` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+- Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
+- Published at `2026-05-12T22:23:41Z`.
 - Broader master governance density rollover remains deferred and tracked in `TODO.md`.
 - Broad validation used worker-first filtering plus leader verification.
 
-Pending gates:
-- `master` push and GitHub release `v10.03` verification pass
+Release gates:
+- `master` push and GitHub release `v10.03` verification passed
 
 ---
 
 ## Rollback / Containment
 
-If P095 is reversed before release:
+If P095 is reversed after release:
 - revert the v10.03 standing-role reuse and lifecycle-audit changes through a governed rollback
 - restore prior v10.02 owner-chain versions and master records
 - reinstall the prior 47-file runtime set only under an explicit rollback gate

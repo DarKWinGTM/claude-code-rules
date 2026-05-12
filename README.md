@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.03</b><br><sub>P095 Active</sub>
+  <b>v10.03</b><br><sub>P095 Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Installed</b><br><sub>Release pending</sub>
+  <b>Released</b><br><sub>Release verified</sub>
 </td>
 <td align="center" width="200">
   <b>Standing roles</b><br><sub>Audit boundary</sub>
@@ -353,13 +353,16 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P095 standing-role worker reuse and audit boundary is active for v10.03.
+- P095 standing-role worker reuse and audit boundary is released for v10.03.
   - Keeps the source-owned active runtime set at 47 files.
   - Promotes standing-role worker/teammate reuse and lifecycle audit into Main RULES.
   - Treats phase/task IDs as assignment context rather than worker identity.
   - Keeps plugin-owned shared-board/session/tmux mechanics outside Main RULES required behavior.
   - Runtime install, 47/47 parity, body sufficiency, plugin-exclusion validation, and P095-specific density review passed.
-  - `master` push and GitHub release `v10.03` remain pending.
+  - `master` push and GitHub release `v10.03` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+  - Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
+  - Published at `2026-05-12T22:23:41Z`.
 - P094 edit-capable governed-document repair delegation is released for v10.02.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds bounded native edit-capable repair for governed documents when scope is explicit and meaning-preserving.
@@ -494,7 +497,7 @@ Please:
 
 **📊 Active Runtime Rules: 47**
 
-Current release wave: P095 / v10.03 standing-role worker reuse and audit boundary is installed in the active runtime set.
+Current release wave: P095 / v10.03 standing-role worker reuse and audit boundary is released and installed in the active runtime set.
 
 - Active source install set remains 47 files.
 - Runtime install copied the 47 README-listed root runtime rules.
@@ -504,7 +507,8 @@ Current release wave: P095 / v10.03 standing-role worker reuse and audit boundar
 - Reuse, spawn, respawn, shutdown, and duplicate/overlap reporting require scoped coordination evidence.
 - Plugin-owned shared-board/session/tmux mechanics remain outside Main RULES required behavior.
 - P095-specific density review passed; broader master governance density rollover remains deferred.
-- `master` push and GitHub release `v10.03` remain pending.
+- `master` push and GitHub release `v10.03` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
 </div>
 
 ---
@@ -1226,10 +1230,10 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: v10.03 keeps install scope at 47 source-owned active runtime files.
-- Source state: P095 is active for standing-role worker reuse and lifecycle audit boundary.
-- Verified gates: runtime install, 47/47 source/runtime parity, source/destination body sufficiency, plugin-exclusion validation, and P095-specific density review passed.
+- Source state: P095 is released for standing-role worker reuse and lifecycle audit boundary.
+- Verified gates: runtime install, 47/47 source/runtime parity, source/destination body sufficiency, plugin-exclusion validation, P095-specific density review, push, and release passed.
 - Deferred density work: broader master governance density rollover remains tracked in `TODO.md`.
-- Release gates: `master` push and GitHub release `v10.03` remain pending.
+- Release gates: `master` push and GitHub release `v10.03` are verified.
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity and automation
@@ -1350,8 +1354,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 9.98 |
-  <b>Last Updated</b>: 2026-05-10 |
+  <b>Version</b>: 10.03 |
+  <b>Last Updated</b>: 2026-05-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

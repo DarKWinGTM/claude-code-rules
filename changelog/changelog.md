@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.03 | 2026-05-13 | **[Added standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.03 | 2026-05-13 | **[Released standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.02 | 2026-05-12 | **[Released edit-capable governed-document repair delegation](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.01 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-1001)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.00 | 2026-05-11 | **[Added automatic God artifact planning and controlled repair](#version-1000)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -141,7 +141,7 @@
 ---
 
 <a id="version-1003"></a>
-## Version 10.03: Added standing-role worker reuse and audit boundary
+## Version 10.03: Released standing-role worker reuse and audit boundary
 
 **Date:** 2026-05-13
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
@@ -159,7 +159,10 @@
 - Runtime install copied the 47 README-listed active runtime rules.
 - Source/runtime parity and source/destination active runtime body sufficiency passed for 47/47 files.
 - P095-specific density/God-artifact review passed; broader master governance density rollover remains deferred.
-- `master` push and GitHub release `v10.03` verification remain pending.
+- `master` push and GitHub release `v10.03` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+- Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
+- Published at `2026-05-12T22:23:41Z`.
 
 ### Summary
 P095 promotes universal standing-role reuse and evidence-based lifecycle audit into Main RULES while preserving plugin-owned coordination mechanics as local to their owning surfaces.

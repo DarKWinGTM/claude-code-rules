@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active
+> **Status:** Completed / Released
 > **Target Design:** [../design/design.md](../design/design.md) v10.03
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -10,7 +10,7 @@
 
 ## Context
 
-P095 is a governance-only release that promotes universal standing-role worker and teammate reuse doctrine into Main RULES.
+P095 is a released governance-only update that promotes universal standing-role worker and teammate reuse doctrine into Main RULES.
 
 The target behavior is not to copy plugin-owned coordination mechanics. It is to make role reuse, phase-ID-as-context, and evidence-based lifecycle audit apply whether or not `claude-session-coordination` is active.
 
@@ -55,7 +55,7 @@ Excluded examples:
 - **Target artifacts:** `README.md`, `design/design.md`, `changelog/changelog.md`, `TODO.md`, `phase/SUMMARY.md`, and P095 phase/patch records
 - **Change type:** synchronization
 - **Current state:** v10.02 / P094 is released; P095 is not yet recorded as active or released.
-- **Target state:** v10.03 / P095 is recorded as active during implementation and released only after gates pass.
+- **Target state:** v10.03 / P095 is recorded as released after implementation, install, push, and release gates pass.
   Runtime install count remains 47.
 
 ---
@@ -92,15 +92,19 @@ If rollback is needed:
 
 ## Current Status
 
-Patch is active for the v10.03 release.
+Patch is completed for the v10.03 release.
 
-Verified in source/runtime:
+Verified in source/runtime/release:
 - owner-chain edits are complete
 - master source sync is complete
 - runtime install copied the 47 README-listed root rules
 - source/runtime parity and source/destination body sufficiency passed for 47/47 files
 - semantic promotion, plugin exclusion, and P095-specific density review passed
+- `master` push and GitHub release `v10.03` verification passed
+- release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+- release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`
+- published at `2026-05-12T22:23:41Z`
 - broader master governance density rollover remains deferred in `TODO.md`
 
 Pending gates:
-- push and release verification
+- none for P095
