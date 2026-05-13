@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.03</b><br><sub>P095 Released</sub>
+  <b>v10.04</b><br><sub>P096-01 Active</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Release verified</sub>
+  <b>In progress</b><br><sub>Pre-release sync</sub>
 </td>
 <td align="center" width="200">
-  <b>Standing roles</b><br><sub>Audit boundary</sub>
+  <b>Changelog shards</b><br><sub>Parent/detail model</sub>
 </td>
 </tr>
 </table>
@@ -353,6 +353,13 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
+- P096-01 changelog chain version detail shards is active for v10.04.
+  - Keeps the source-owned active runtime set at 47 files.
+  - Adds active parent changelog plus chain-scoped version detail shard doctrine.
+  - Keeps `changelog/<chain>.changelog.md` as current version authority and navigation.
+  - Uses `changelog/<chain>/vX.YY-short-topic.changelog.md` for bulky same-chain version detail.
+  - Keeps `changelog/done/` as legacy/archive/fallback history, not ordinary detail-shard storage.
+  - Owner-chain source updates, runtime install, and 47/47 source/runtime parity plus body sufficiency are complete; density review, push, and GitHub release verification remain pending.
 - P095 standing-role worker reuse and audit boundary is released for v10.03.
   - Keeps the source-owned active runtime set at 47 files.
   - Promotes standing-role worker/teammate reuse and lifecycle audit into Main RULES.
@@ -438,8 +445,8 @@ Please:
 | [`audience-surface-disclosure-control.md`](audience-surface-disclosure-control.md) | Audience surface disclosure | Full direct-user/project-owner transparency stays separate from audience-safe generated public, customer-facing, operator-facing, log, demo, release, onboarding, and externally shared wording |
 | [`custom-agent-selection-priority.md`](custom-agent-selection-priority.md) | Custom agent selection priority | Prefer the best visible custom/specialist agent after native worker routing has already classified intent, selected the needed worker capability, and chosen a direct/subagent/multi-subagent/team scale; do not turn agent availability into a routing or Agent Team escalation decision |
 | [`dan-safe-normalization.md`](dan-safe-normalization.md) | Prompt-wrapper normalization | Safer intent evaluation before decisioning |
-| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps no-drift claims scoped; delegated repairs require leader-verified meaning, authority, history, and reference preservation |
-| [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Active changelogs stay version authority while `changelog/done/` can hold inactive completed/older history when active scans would become too large |
+| [`document-consistency.md`](document-consistency.md) | Cross-reference validation | Keeps no-drift claims scoped; validates active parent changelog maps, version detail shard back-links, delegated repair preservation, and source/runtime body-sufficiency boundaries |
+| [`document-changelog-control.md`](document-changelog-control.md) | Version tracking system | Active parent changelogs stay version authority; chain-scoped version detail shards hold bulky same-chain detail, while `changelog/done/` remains legacy/archive/fallback history |
 | [`document-design-control.md`](document-design-control.md) | Design document standards | Active blueprint/target-state structure, compact parent design indexes with governed active child shards for large designs, no default `design/done/`, and required capture of implementation-relevant truth extracted from external docs/specs/provider references when later work still depends on it |
 | [`document-patch-control.md`](document-patch-control.md) | Patch Control | Governed before/after patch/review artifacts outside the live `/phase` workspace, with `patch/done/` as inactive completed patch history rather than junk or active phase input by default |
 | [`emergency-protocol.md`](emergency-protocol.md) | Crisis response | Fast, safe reactions |
@@ -462,7 +469,7 @@ Please:
 | [`refusal-minimization.md`](refusal-minimization.md) | False-refusal reduction | Prefer recoverable constrained/context paths when authorized |
 | [`strict-file-hygiene.md`](strict-file-hygiene.md) | File hygiene | Prevent junk files while allowing required governed startup artifacts, keep hygiene/cleanup wording from acting as deletion authority, and prevent shared runtime destination co-location from making other-owner runtime files junk by default |
 | [`todo-standards.md`](todo-standards.md) | Task management | Compact durable TODO tracking plus phase-visible live task entries, same-objective task-list reuse, verification slices, and worker-lane tracking recovery |
-| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus compact active design index and governed child-shard role modeling, startup artifact gate, completed documentation surface governance for `phase/done/`, `patch/done/`, and `changelog/done/`, no-default-`design/done/` blueprint boundary, governed companion status for required design/changelog/TODO/phase/patch surfaces, phase-family lineage visibility without taking over current-phase/subphase/new-major identity semantics, phase-shaped task creation alignment with visible phase pointers, runtime installs scoped to the current project/source-owned active runtime rule set, active runtime body-sufficiency install boundary, other-owner runtime destination file boundary, live-task-list-vs-durable-TODO distinction, non-default startup patch posture, and portable public onboarding/install guidance |
+| [`project-documentation-standards.md`](project-documentation-standards.md) | Project documentation standards | Standardized docs for all projects plus compact active design indexes, active parent changelog and version detail shard role modeling, startup artifact gates, completed documentation surface governance, no-default-`design/done/` blueprint boundary, governed companion status for required design/changelog/TODO/phase/patch surfaces, phase-family lineage visibility, phase-shaped task creation alignment, runtime install scope/body-sufficiency boundaries, other-owner runtime destination boundaries, live-task-list-vs-durable-TODO distinction, non-default startup patch posture, and portable public onboarding/install guidance |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portable implementation control | Keep shared artifacts, reusable support/package source artifacts, and public onboarding/install guidance portable by default, bind environment-specific values late, and prevent machine-local hardcoding drift |
 | [`execution-continuity-and-mode-selection.md`](execution-continuity-and-mode-selection.md) | Execution continuity and mode selection | Separates discussion mode from execution mode, re-checks intent when pasted logs/paths/snippets could be behavior/RULES evidence rather than project authorization, keeps startup governance as an execution precondition, keeps work moving when execution mode is active, discovers the next unfinished slice from execution surfaces, applies phase-lineage handling before opening a new major phase for phase-shaped follow-up work, preserves visible phase linkage in continuation-created or continuation-extended live tasks, and sends broad continuation, including research/design-improvement/source-comparison continuation, through subagent-first worker routing before leader raw absorption |
 | [`unified-version-control-system.md`](unified-version-control-system.md) | Unified version governance | Single deterministic UDVC-1 controller plus active runtime body-sufficiency validation |
@@ -491,24 +498,21 @@ Please:
 |:-----|:--------|:------------|
 | [`no-variable-guessing.md`](no-variable-guessing.md) | Read before reference | No wrong assumptions, including keeping git-state file signals as weak local evidence only |
 | [`native-worker-agent-routing-and-context-control.md`](native-worker-agent-routing-and-context-control.md) | Native worker routing | Smallest worker lane for broad work; repair needs explicit scope and leader check |
-| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Evidence intake, density, God-line repair, and low-risk repair routing |
-| [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Bounded file handling with parent-index-first, shard-selective reads for sharded active designs and rollover signals for oversized governance entrypoints |
+| [`context-load-and-document-density-control.md`](context-load-and-document-density-control.md) | Context-load and document-density control | Evidence intake, density, God-line repair, changelog parent/detail-shard routing, and low-risk repair routing |
+| [`safe-file-reading.md`](safe-file-reading.md) | Plan-before-read | Bounded file handling with parent-index-first, shard-selective reads for sharded active designs, changelog version detail shards, and rollover signals for oversized governance entrypoints |
 | [`safe-terminal-output.md`](safe-terminal-output.md) | Output management | No terminal flooding |
 
 **📊 Active Runtime Rules: 47**
 
-Current release wave: P095 / v10.03 standing-role worker reuse and audit boundary is released and installed in the active runtime set.
+Current release wave: P096-01 / v10.04 changelog chain version detail shards is active and pre-release.
 
 - Active source install set remains 47 files.
-- Runtime install copied the 47 README-listed root runtime rules.
-- Source/runtime parity and source/destination active runtime body sufficiency passed for 47/47 files.
-- `native-worker-agent-routing-and-context-control` now defines global standing-role worker/teammate reuse and lifecycle audit doctrine.
-- Phase/task IDs are assignment context, not worker identity.
-- Reuse, spawn, respawn, shutdown, and duplicate/overlap reporting require scoped coordination evidence.
-- Plugin-owned shared-board/session/tmux mechanics remain outside Main RULES required behavior.
-- P095-specific density review passed; broader master governance density rollover remains deferred.
-- `master` push and GitHub release `v10.03` verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
+- Owner-chain source sync is complete for document-changelog, project-documentation, document-consistency, safe-file-reading, and context-load owners.
+- `document-changelog-control` now defines active parent changelogs plus chain-scoped version detail shards.
+- `project-documentation-standards` recognizes `changelog/<chain>/v*.changelog.md` as indexed same-chain version detail shards.
+- Consistency, safe-reading, and density owners now validate, read, and route parent changelog maps and selected version detail shards.
+- `changelog/done/` remains legacy/archive/fallback history and is not the default ordinary same-chain detail shard namespace.
+- Runtime install, 47/47 source/runtime parity, and body sufficiency passed; density review, push, and GitHub release `v10.04` verification remain pending.
 </div>
 
 ---
@@ -587,8 +591,9 @@ ls ./.claude/rules/artifact-initiation-control.md
 | `./design/*.design.md` | Active design specifications and target-state truth | Design docs; no default `design/done/` |
 | `*.md` (root) | Active runtime rules | Rules files |
 | `./changelog/changelog.md` | Master repository-wide history | Master changelog |
-| `./changelog/*.changelog.md` | Per-chain authoritative active history/current version state | Active changelogs |
-| `./changelog/done/*.changelog.md` | Older or completed detailed history outside active scans | Inactive history for audit/rollback/provenance/trace |
+| `./changelog/*.changelog.md` | Per-chain authoritative active history/current version state | Active parent changelogs |
+| `./changelog/<chain>/v*.changelog.md` | Same-chain detailed version entries indexed by the parent changelog | Version detail shards |
+| `./changelog/done/*.changelog.md` | Legacy/archive/fallback detailed history outside active scans | Inactive history for audit/rollback/provenance/trace |
 | `./todo/history/*.md` | Daily TODO movement and pre-rollover snapshots outside the active TODO entrypoint | Referenced inactive TODO history |
 | `./todo/done/*.md` | Large completed TODO/task detail outside the active TODO entrypoint | Referenced inactive TODO detail |
 | `./phase/SUMMARY.md` | Compact governed summary/index for live phase planning and current roadmap state | Phase summary doc |
@@ -603,6 +608,7 @@ ls ./.claude/rules/artifact-initiation-control.md
 > **💡 Single Source of Truth Principle:**
 > - Design files (`.design.md`) define active target state and do not use a default `design/done/` surface
 > - Per-chain active changelogs (`*.changelog.md`) remain the authority for current governed chain history/version state
+> - Chain-scoped version detail shards (`changelog/<chain>/v*.changelog.md`) hold indexed same-chain detail without becoming separate version authority
 > - `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are inactive-by-default referenced history/detail surfaces for audit, rollback, provenance, or trace reconstruction
 > - `changelog/changelog.md` records repository-level synchronization history
 > - `README.md` remains overview-only, not chain authority
@@ -1229,11 +1235,11 @@ Result: ✅ Verified from actual files
 
 ### Runtime install boundary
 
-- Current README meaning: v10.03 keeps install scope at 47 source-owned active runtime files.
-- Source state: P095 is released for standing-role worker reuse and lifecycle audit boundary.
-- Verified gates: runtime install, 47/47 source/runtime parity, source/destination body sufficiency, plugin-exclusion validation, P095-specific density review, push, and release passed.
+- Current README meaning: v10.04 keeps install scope at 47 source-owned active runtime files.
+- Source state: P096-01 records changelog parent/detail-shard doctrine; release verification is not claimed yet.
+- Verified gates so far: owner-chain source updates, source validation, runtime install, 47/47 source/runtime parity, and source/destination body sufficiency are complete in checked scope.
+- Pending gates: density/God-artifact review closeout, push, and GitHub release `v10.04`.
 - Deferred density work: broader master governance density rollover remains tracked in `TODO.md`.
-- Release gates: `master` push and GitHub release `v10.03` are verified.
 - Impact: protects install scope and other-owner runtime files.
 
 ### Governed document capacity and automation
@@ -1259,8 +1265,8 @@ Result: ✅ Verified from actual files
 
 ### Completed/history surfaces
 
-- Current README meaning: history and done surfaces are referenced inactive surfaces by default.
-- Included surfaces: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/`.
+- Current README meaning: history, detail, and done surfaces are referenced or inactive by role, not deletion authority.
+- Included surfaces: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, `changelog/<chain>/v*.changelog.md` for indexed version detail, and `changelog/done/` for legacy/archive/fallback history.
 - Boundary: `design/done/` is not a default pattern.
 - Impact: reduces active scan bloat without deleting governed history.
 
@@ -1354,7 +1360,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.03 |
+  <b>Version</b>: 10.04 |
   <b>Last Updated</b>: 2026-05-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

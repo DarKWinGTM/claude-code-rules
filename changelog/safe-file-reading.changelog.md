@@ -1,7 +1,7 @@
 # Changelog - Safe File Reading
 
 > **Parent Document:** [../safe-file-reading.md](../safe-file-reading.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-05-13 | **[Added changelog version-shard read path](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Added active-parent-map-first, version-shard-selective reading for chain-scoped changelog detail while keeping `changelog/done/` as fallback history. | |
 | 1.7 | 2026-05-12 | **[Added worker-first file-reading aggregate gate](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Required worker-first filtering for broad governance/code scans and aggregate multi-file read plans while preserving narrow direct reads and checked-scope wording. | |
 | 1.6 | 2026-05-10 | **[Added index-first sharded design read path](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -26,6 +28,24 @@
 | | | Summary: Standardized explicit capped read pattern and synchronized metadata | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added changelog version-shard read path
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated runtime `safe-file-reading.md` from v1.7 to v1.8.
+- Updated `design/safe-file-reading.design.md` from v1.7 to v1.8.
+- Added parent-map-first reading guidance for `changelog/<chain>.changelog.md` plus `changelog/<chain>/v*.changelog.md` version detail shards.
+- Required version-shard-selective reads and checked parent/shard scope before version-history claims.
+- Clarified that `changelog/done/` is opened only through active reference or history/audit/rollback/provenance need, not as the default same-chain detail namespace.
+
+### Summary
+Safe-file-reading now starts large changelog detail review from the active parent shard map and opens only selected version detail shards unless broad worker-filtered coverage is needed.
 
 ---
 

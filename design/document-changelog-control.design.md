@@ -3,22 +3,24 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 4.11
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
+> **Current Version:** 4.12
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
 
 ---
 
-### Daily Rollover Boundary
+### Chain-Scoped Version Detail Boundary
 
-`changelog/done/` remains the changelog history mechanism. Daily-first TODO and phase-summary rollover is owned by `governed-document-rollover-control.md`, so changelog files keep version authority without becoming the storage location for daily TODO/phase movement.
+`changelog/<chain>.changelog.md` remains the active parent changelog and current version authority. Large same-chain version detail should prefer `changelog/<chain>/vX.YY-short-topic.changelog.md` shards when the parent would otherwise become expensive to read or verify.
 
-## P091 Target-State Refinement: Changelog God-File Prevention
+`changelog/done/` remains available for legacy, archive, completed-history, or explicit fallback cases. Daily-first TODO and phase-summary rollover is owned by `governed-document-rollover-control.md`, so changelog files keep version authority without becoming the storage location for daily TODO/phase movement.
 
-The active changelog should stay current version authority, index, and navigation.
+## P096-01 Target-State Refinement: Changelog Chain Version Detail Shards
+
+The active changelog should stay current version authority, index, shard map, and navigation.
 
 It should not become design target-state storage, phase execution, TODO tracking, README status, or an unbounded history dump.
 
-Bulky completed history can move to `changelog/done/` with active navigation preserved.
+Bulky same-chain version detail can move to chain-scoped version shards with active navigation preserved.
 
 ## 1) Goal
 
@@ -33,7 +35,8 @@ Applies to governed documentation artifacts in this repository:
 - root runtime rules (`*.md`, excluding overview-only/support documents)
 - `design/*.design.md`
 - `changelog/*.changelog.md`
-- `changelog/done/*.changelog.md` when older or completed detailed history is retained outside the active scan surface
+- `changelog/<chain>/v*.changelog.md` when same-chain version detail is retained outside the active parent changelog
+- `changelog/done/*.changelog.md` when legacy, archive, completed-history, or explicit fallback detail is retained outside the active scan surface
 - `TODO.md`
 - `patch/<context>.patch.md` or root `<context>.patch.md`
 
@@ -43,10 +46,11 @@ Applies to governed documentation artifacts in this repository:
 
 ### 3.1 Single Authority Per Chain
 
-- Each governed chain has one authoritative active changelog.
-- The active changelog controls latest version state, current index, and forward navigation for that chain.
+- Each governed chain has one authoritative active parent changelog.
+- The active parent changelog controls latest version state, current index, shard map when present, and forward navigation for that chain.
 - Runtime, design, and patch artifacts reference that authority through `Full history` links.
-- Completed or older detailed history may move under `changelog/done/`, but only as inactive-by-default history that the active changelog still points to when navigation or audit continuity requires it.
+- Same-chain detailed version entries may move under `changelog/<chain>/vX.YY-short-topic.changelog.md`, but only as detail shards that the active parent changelog indexes.
+- Completed or older legacy/archive/fallback history may move under `changelog/done/`, but only as inactive-by-default history that the active changelog still points to when navigation or audit continuity requires it.
 
 ### 3.2 Rule-Chain Alignment
 
@@ -104,16 +108,24 @@ When a design/changelog pair exists for one governed chain:
 | File | MUST use | MUST NOT use |
 |------|----------|--------------|
 | `*.design.md` | Active-state design body + `Full history` navigation | Embedded version tables, detailed changelog sections, historical rollout logs |
-| `*.changelog.md` | Detailed version sections + `Version History (Unified)` | Table-only history or design-state guidance |
+| `*.changelog.md` | Current version authority, current index, shard map when present, detailed version sections when small enough, and `Version History (Unified)` | Table-only history, design-state guidance, or unindexed shard offload |
 
 Historical detail belongs in changelog files, not in the active design body. README release sync should consume changelog state only to update current sections; detailed version timelines remain in changelog rather than being copied into README.
 
-### 5.1 Completed History Surface
+### 5.1 Chain-Scoped Version Detail Shards and Completed History Surface
 
-`changelog/done/` may hold completed or older detailed changelog history when keeping all historical detail in the active scan surface would create avoidable context bloat.
+`changelog/<chain>/vX.YY-short-topic.changelog.md` is the preferred split target when a large active changelog needs to retain detailed same-chain version entries outside the compact parent.
 
-Required guidance:
-- the active changelog remains the current version authority and primary navigation surface
+Required version-shard guidance:
+- the active parent changelog remains the current version authority and primary navigation surface
+- each version detail shard belongs to one parent chain and links back to that parent
+- the parent must map versions to shards so readers are not forced to discover files by guessing
+- a version detail shard is not an independent changelog authority
+- exact historical content should be preserved during migration unless an explicit governed rewrite is selected
+
+`changelog/done/` may hold legacy, archive, completed-history, or explicit fallback changelog detail when chain-scoped version shards are not the right shape.
+
+Required `done` guidance:
 - `changelog/done/` is inactive by default for ordinary current-state scans
 - consult `changelog/done/` only when history, audit, rollback, provenance, or trace reconstruction needs it
 - moving history into `changelog/done/` does not make it junk and does not authorize deletion
@@ -163,7 +175,17 @@ When synchronizing governed documentation:
 > **Session:** <real-session-id>
 ```
 
-### 8.3 Design Footer
+### 8.3 Version Detail Shard Header
+
+```markdown
+# Changelog Detail - <Document> vX.YY <Topic>
+
+> **Parent Changelog:** [../<doc>.changelog.md](../<doc>.changelog.md)
+> **Version:** X.YY
+> **Session:** <real-session-id>
+```
+
+### 8.4 Design Footer
 
 ```markdown
 > Full history: [../changelog/<doc>.changelog.md](../changelog/<doc>.changelog.md)
@@ -173,14 +195,15 @@ When synchronizing governed documentation:
 
 ## 9) Verification Checklist
 
-- [ ] Each governed chain has one authoritative changelog
+- [ ] Each governed chain has one authoritative parent changelog
 - [ ] Runtime-rule header uses `Design`, not `Based on`
 - [ ] Active runtime headers include `Session`
 - [ ] Rule/design/changelog versions are aligned for governed rule chains
 - [ ] Design files keep active guidance only
-- [ ] Changelog files hold historical detail
-- [ ] Active changelogs retain current version authority when older detail moves to `changelog/done/`
-- [ ] `changelog/done/` is treated as inactive-by-default history, not junk or deletion authority
+- [ ] Changelog parent files hold current version authority, index, shard map when present, and navigation
+- [ ] Version detail shards are same-chain detail surfaces and link back to their parent
+- [ ] Active changelogs retain current version authority when detail moves to version shards or `changelog/done/`
+- [ ] `changelog/done/` is treated as legacy/archive/fallback history, not junk or deletion authority
 - [ ] Version links use canonical `#version-xy` anchors
 - [ ] Synchronization order was followed
 
@@ -194,7 +217,7 @@ When synchronizing governed documentation:
 | Runtime header contract consistency | 100% |
 | Active placeholder session markers | 0 |
 | Historical detail left in active design bodies | 0 critical cases |
-| Active changelog authority lost to `changelog/done/` | 0 critical cases |
+| Active changelog authority lost to version shards or `changelog/done/` | 0 critical cases |
 | Broken `Full history` links | 0 |
 
 ---

@@ -1,7 +1,7 @@
 # Safe File Reading Guide
 
-> **Current Version:** 1.7
-> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/safe-file-reading.design.md](design/safe-file-reading.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/safe-file-reading.changelog.md](changelog/safe-file-reading.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Read files in a bounded, purpose-aware way that preserves session responsiveness, avoids terminal/output flooding, verifies paths before factual claims, uses partial reads or searches for large or risky files, treats oversized active governance entrypoints or autocompact thrash as rollover-maintenance signals, and reads sharded active designs through compact parent indexes before child shards.**
+**Core Principle: Read files in a bounded, purpose-aware way that preserves session responsiveness, avoids terminal/output flooding, verifies paths before factual claims, uses partial reads or searches for large or risky files, treats oversized active governance entrypoints or autocompact thrash as rollover-maintenance signals, reads sharded active designs through compact parent indexes before child shards, and reads chain-scoped changelog version shards through active parent changelog maps before detail shards.**
 
 This rule owns file-reading safety and output-size control. It does not replace no-variable-guessing, evidence thresholds, or the dedicated Read tool preference.
 
@@ -61,7 +61,18 @@ Required guidance:
 - report checked shard scope when using selected shards as evidence
 - do not treat child design shards as `history/`, `done/`, archive, or rollover surfaces by default; they remain active design truth unless governance says otherwise
 
-### 5) Oversized governance entrypoints
+### 5) Changelog version detail shard reading
+
+When a governed changelog uses `changelog/<chain>.changelog.md` plus `changelog/<chain>/v*.changelog.md`, start from the active parent changelog and select only the version detail shards needed for the active question.
+
+Required guidance:
+- read the active parent changelog first to understand current version authority, shard map, and navigation
+- read version detail shards selectively by version/topic instead of absorbing the whole chain shard directory by default
+- use worker filtering for broad version-history audits, parent/shard consistency sweeps, or multi-shard migration reviews
+- report checked parent and shard scope when using selected shards as evidence
+- do not treat `changelog/done/` as the default same-chain detail namespace; consult it only through active references or for history, audit, rollback, provenance, or trace reconstruction
+
+### 6) Oversized governance entrypoints
 
 If active governance entrypoints such as `TODO.md` or `phase/SUMMARY.md` exceed practical read limits, trigger bounded inspection and rollover maintenance instead of repeatedly reading the same oversized active file.
 
@@ -71,7 +82,7 @@ Required guidance:
 - after rollover, start active reads at the compact entrypoint and follow history/done references only when needed
 - do not treat the pre-rollover snapshot as active current context unless audit/rollback/provenance requires it
 
-### 6) Safe fallback patterns
+### 7) Safe fallback patterns
 
 When a command-line read is unavoidable, use deterministic caps such as line and character limits. Avoid `cat`/unbounded output for large or unknown files.
 
@@ -97,6 +108,9 @@ Do not preserve exact shell snippets as reusable defaults when the dedicated too
 | Large source/doc | Medium | Use Read with offset/limit |
 | Sharded active design parent index | Low/Medium | Read compact parent index first and select relevant child shards |
 | Sharded active design child shard set | Medium/High | Read shard map first, then targeted shards; use worker filtering for broad audits |
+| Active parent changelog | Low/Medium | Read parent authority and shard map before selected version detail shards |
+| Changelog version detail shard set | Medium/High | Read parent shard map first, then targeted version shards; use worker filtering for broad history audits |
+| `changelog/done/` fallback history | Medium/High | Open only through active reference or history/audit/rollback/provenance need |
 | Oversized `TODO.md` / `phase/SUMMARY.md` | High | Bounded read for current state, then rollover/compact active entrypoint |
 | Minified/bundled/generated | High | Preview/search only |
 | Logs/build outputs | High | Tail/search/filter; consider worker review |
@@ -116,6 +130,8 @@ Avoid:
 - reading broad file sets into leader context when a worker lane should filter them
 - reading every child shard of a sharded active design before checking the compact parent index
 - treating sharded active design child docs as history, `done`, archive, or rollover surfaces by default
+- reading every changelog version detail shard before checking the active parent changelog shard map
+- treating `changelog/done/` as the default same-chain version detail namespace
 - presenting local path/file facts without checked scope
 
 Better behavior: read with purpose, cap output, search targeted content, and disclose the checked scope.
@@ -129,6 +145,8 @@ Better behavior: read with purpose, cap output, search targeted content, and dis
 - [ ] Checked scope was clear when reporting file facts or non-findings.
 - [ ] Broad governance/code scans and aggregate read plans used worker-first filtering unless a narrow direct-handling exception was stated.
 - [ ] Sharded active designs started at compact parent index and used shard-selective reads.
+- [ ] Changelog version detail reads started at the active parent changelog shard map and used version-shard-selective reads.
+- [ ] `changelog/done/` was opened only through active reference or history/audit/rollback/provenance need.
 - [ ] Oversized active governance entrypoints triggered rollover/compaction review instead of repeated full reads.
 - [ ] No unbounded terminal/file output was introduced.
 
@@ -143,6 +161,7 @@ Better behavior: read with purpose, cap output, search targeted content, and dis
 | Read-before-reference discipline | High |
 | Scoped non-finding clarity | High |
 | Sharded design read selectivity | High |
+| Changelog parent-map-first read selectivity | High |
 | Dedicated tool preference | High |
 
 ---
@@ -155,6 +174,7 @@ Related rules:
 - [evidence-grounded-burden-of-proof.md](evidence-grounded-burden-of-proof.md) - defines claim strength from partial reads
 - [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - routes broad read/search work to worker lanes when appropriate
 - [document-design-control.md](document-design-control.md) - owns compact parent design index and governed child shard semantics
+- [document-changelog-control.md](document-changelog-control.md) - owns active parent changelog, chain-scoped version detail shard, and fallback history semantics
 - [document-consistency.md](document-consistency.md) - keeps references, shard maps, and source/destination roles aligned
 - [governed-document-rollover-control.md](governed-document-rollover-control.md) - owns daily-first rollover when active governance entrypoints become too large to read safely
 

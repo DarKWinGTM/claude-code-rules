@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.78
+> **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P095 released for v10.03 standing-role worker reuse and audit boundary
+> **Status:** P096-01 active for v10.04 changelog chain version detail shards
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected.
+- **P096-01:** [phase-096-01-changelog-chain-version-detail-shards.md](phase-096-01-changelog-chain-version-detail-shards.md)
+  - Goal: make active changelog parent files compact current-version authority and move detailed version entries into chain-scoped shards.
+  - Output: owner-chain doctrine, docs sync, runtime install, 47/47 parity/body sufficiency, push, and release `v10.04`.
+  - Scope: no migration of existing project changelogs in this first RULES doctrine wave.
+  - Gate: parent/shard links resolve, `changelog/done/` remains legacy/exception only, and release verification passes.
 
 ### Recently Completed
 
@@ -90,6 +94,30 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Recent Phase Detail
+
+### P096-01 — Changelog Chain Version Detail Shards
+
+- **Status:** Active/in progress; owner-chain doctrine, master source docs sync, validation, runtime install, and 47/47 parity/body sufficiency are complete, with density review and release verification pending
+- **Design References:**
+  - [../design/design.md](../design/design.md) v10.04
+  - [../design/document-changelog-control.design.md](../design/document-changelog-control.design.md) v4.12
+  - [../design/project-documentation-standards.design.md](../design/project-documentation-standards.design.md) v2.41
+  - [../design/document-consistency.design.md](../design/document-consistency.design.md) v1.15
+  - [../design/safe-file-reading.design.md](../design/safe-file-reading.design.md) v1.8
+  - [../design/context-load-and-document-density-control.design.md](../design/context-load-and-document-density-control.design.md) v1.6
+- **Patch References:** [../patch/changelog-chain-version-detail-shards.patch.md](../patch/changelog-chain-version-detail-shards.patch.md)
+- **Expected Output:**
+  - Active changelog parent files remain current version authority and navigation indexes.
+  - Chain-scoped version detail shards hold detailed entries without becoming separate authorities.
+  - `changelog/done/` stays available as legacy/archive/fallback only.
+  - Active runtime count remains 47.
+- **Completion Gate:**
+  - Source docs are synchronized for `v10.04 / P096-01`.
+  - README install arrays still define the same 47 active runtime rules.
+  - Parent/shard links, current-version mapping, and shard authority boundaries validate.
+  - 47/47 source/runtime parity and active runtime body sufficiency pass.
+  - Touched active docs pass density and God-artifact review.
+  - `master` is pushed and GitHub release `v10.04` is verified.
 
 ### P095 — Standing-Role Worker Reuse and Audit Boundary
 
@@ -320,31 +348,33 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-P095 verification is complete for the v10.03 source-sync, install, push, and release gates.
+P096-01 verification is active for the v10.04 source-sync, install, push, and release gates.
 
-Current verified state:
-- P095 phase and patch records exist and are released.
-- `native-worker-agent-routing-and-context-control` runtime/design/changelog versions are synchronized to v1.7 in source.
-- README, master design, master changelog, TODO, phase, and patch records align to v10.03 / P095 released state.
-- Runtime install copied only README-listed active runtime rules.
+Current checked state:
+- P096-01 phase and patch records exist and remain active/pre-release.
+- `document-changelog-control` runtime/design/changelog versions are synchronized to v4.12 in source.
+- `project-documentation-standards` runtime/design/changelog versions are synchronized to v2.41 in source.
+- `document-consistency` runtime/design/changelog versions are synchronized to v1.15 in source.
+- `safe-file-reading` runtime/design/changelog versions are synchronized to v1.8 in source.
+- `context-load-and-document-density-control` runtime/design/changelog versions are synchronized to v1.6 in source.
+- README, master design, master changelog, TODO, phase, and patch records align to active/pre-release `v10.04 / P096-01` state in checked source scope.
+- Runtime install copied the 47 README-listed active runtime rules.
 - 47/47 source/runtime parity and source/destination active runtime body sufficiency passed.
-- Semantic promotion, plugin-exclusion validation, and P095-specific density review passed.
-- `master` push and GitHub release `v10.03` verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
-- Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
-- Published at `2026-05-12T22:23:41Z`.
+- Parent changelog plus chain-scoped version detail shard doctrine is present in touched owner chains.
+- `changelog/done/` remains legacy/archive/fallback history, not default ordinary same-chain detail storage.
 - Broader master governance density rollover remains deferred and tracked in `TODO.md`.
-- Broad validation used worker-first filtering plus leader verification.
+- Broad source validation used worker-first filtering plus leader repair of reported stale anchors.
 
-Release gates:
-- `master` push and GitHub release `v10.03` verification passed
+Pending release gates:
+- touched active doc density and God-artifact review closeout
+- `master` push and GitHub release `v10.04` verification
 
 ---
 
 ## Rollback / Containment
 
-If P095 is reversed after release:
-- revert the v10.03 standing-role reuse and lifecycle-audit changes through a governed rollback
-- restore prior v10.02 owner-chain versions and master records
+If P096-01 is reversed:
+- revert the v10.04 changelog parent/detail-shard doctrine through a governed rollback
+- restore prior v10.03 owner-chain versions and master records
 - reinstall the prior 47-file runtime set only under an explicit rollback gate
-- do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
+- do not delete phase, patch, history, `done/`, `changelog/done/`, future changelog shard directories, unrelated runtime destination files, or observed-only extras as cleanup

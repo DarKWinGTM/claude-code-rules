@@ -1,12 +1,30 @@
 # Changelog - Document Consistency
 
 > **Parent Document:** [../document-consistency.md](../document-consistency.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-115"></a>
+## Version 1.15: Added changelog version-shard consistency checks
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-consistency.md` from v1.14 to v1.15.
+- Updated `design/document-consistency.design.md` from v1.14 to v1.15.
+- Added active parent changelog and chain-scoped version detail shard reference roles.
+- Required parent shard maps, version-to-shard mapping, shard-to-parent back-links, and indexed-detail non-authority checks.
+- Clarified that `changelog/done/` remains legacy/archive/completed-history/fallback history rather than the default same-chain detail shard namespace.
+
+### Summary
+Document consistency now validates active parent changelog shard maps and version detail shard back-links while keeping `changelog/done/` distinct as fallback history.
+
+---
 
 <a id="version-114"></a>
 ## Version 1.14: Added delegated-repair consistency gate
@@ -69,6 +87,8 @@ Added God artifact automation no-drift gate for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-05-13 | **[Added changelog version-shard consistency checks](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Validates active parent changelog shard maps and version detail shard back-links while keeping `changelog/done/` distinct as fallback history. | |
 | 1.14 | 2026-05-12 | **[Added delegated-repair consistency gate](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-12 | **[Added worker-gate no-drift check](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-11 | **[Added God artifact automation no-drift gate](#version-112)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

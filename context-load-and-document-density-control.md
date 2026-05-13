@@ -1,7 +1,7 @@
 # Context Load and Document Density Control
 
-> **Current Version:** 1.5
-> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/context-load-and-document-density-control.design.md](design/context-load-and-document-density-control.design.md) v1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/context-load-and-document-density-control.changelog.md](changelog/context-load-and-document-density-control.changelog.md)
 
@@ -16,10 +16,12 @@ This lifecycle covers reading, writing, worker routing, and repair.
 Target outcomes:
 - broad raw evidence is filtered before it burdens the leader session
 - active documents stay density-safe and cheap to read, edit, diff, and verify later
+- active changelog parents stay compact by routing bulky same-chain version detail into indexed shards when needed
 
 This rule owns:
 - context-load strategy, aggregate read-burst control, and leader-context protection
 - document-density discipline, God-line prevention, and opportunistic touched-doc God-line repair
+- changelog density routing between active parent changelogs, version detail shards, and fallback history
 - delegated governed-document repair routing for context-heavy God artifacts
 - append-vs-restructure decisions and compact/thrash repair signals
 
@@ -91,7 +93,8 @@ A God line is a long line that carries multiple responsibilities such as current
 Required guidance:
 - keep one line or bullet focused on one concept or one small group of tightly related facts
 - split current state, history, verification, risks, and exclusions into separate bullets or sections when they grow
-- move long version timelines or historical detail to changelog/history surfaces instead of appending them to active summary lines
+- route long version timelines or detailed same-chain version entries to active parent changelog maps plus chain-scoped version detail shards when needed
+- use `changelog/done/` only for legacy, archive, completed-history, or fallback history, not ordinary same-chain detail sharding
 - use semantic bullets, small tables, and short paragraphs instead of one-line history dumps
 - treat very long active lines as repair triggers, not as proof the content is disposable
 
@@ -137,11 +140,11 @@ Required handling:
 
 ### 7) Active entrypoints are maps, not storage dumps
 
-`TODO.md`, `phase/SUMMARY.md`, README current-state sections, and compact design indexes should help a fresh session find current work quickly.
+`TODO.md`, `phase/SUMMARY.md`, README current-state sections, compact design indexes, and active parent changelog indexes should help a fresh session find current work quickly.
 
 Required guidance:
-- keep active entrypoints focused on current state, selected roadmap, active tasks, gates, and pointers
-- store detailed version history in changelog, not active summaries
+- keep active entrypoints focused on current state, selected roadmap, active tasks, gates, shard maps, and pointers
+- store bulky same-chain version detail in `changelog/<chain>/v*.changelog.md` shards when the parent changelog would become a history dump
 - store daily movement or completed detail in referenced history/done shards when rollover owners require it
 - keep enough context in active maps to navigate without rereading every historical detail
 
@@ -162,6 +165,7 @@ Useful checks:
 - longest lines in touched active docs
 - one-line version timeline growth
 - active summary lines mixing current state and history
+- active parent changelog entries that should become mapped version detail shards
 - README/TODO/phase/patch lines that would create large one-line diffs
 - touched God-line candidates that were repaired or explicitly flagged
 - whether worker routing was used before broad raw review
@@ -183,7 +187,8 @@ Signals include:
 Required repair posture:
 - redistribute content to the owner that matches its role before appending more detail
 - use design sharding for large active target-state truth
-- use changelog or `changelog/done/` for version history overload
+- use active parent changelog shard maps plus `changelog/<chain>/v*.changelog.md` for same-chain version detail overload
+- reserve `changelog/done/` for legacy, archive, completed-history, or explicit fallback history
 - use `todo/history` / `todo/done` and `phase/history` / `phase/done` for accumulated movement or completed detail
 - split God Phase and God Patch candidates by bounded goal, output, gate, rollback, or review boundary
 - repair clear low-risk touched-document overload locally; flag or open a governed phase/patch when the split is broad or meaning-risky
@@ -268,6 +273,7 @@ Avoid:
 - treating line count as safe when characters per line are high
 - using post-compact restrictions as the main solution when document structure or worker routing is the real cause
 - turning active entrypoints into history books
+- treating `changelog/done/` as the default storage route for ordinary same-chain version detail
 - delegating ambiguous, history-heavy, authority-shifting, broad, destructive, or analysis-only repair to worker edits
 - claiming no-drift or release readiness without checking body sufficiency and density risks when relevant
 
@@ -287,6 +293,8 @@ Better behavior: ask the question first, route broad raw evidence through worker
 - [ ] Broad, history-heavy, or meaning-risky God-line candidates were flagged or planned instead of silently appended.
 - [ ] Current state, history, verification, risks, and next work are not collapsed into one dense line.
 - [ ] Active entrypoints remain compact maps with pointers to detailed history/done/changelog surfaces.
+- [ ] Active parent changelogs remain compact maps when same-chain version detail is moved to indexed shards.
+- [ ] `changelog/done/` is not used as the default route for ordinary same-chain version detail overload.
 - [ ] Compact/thrash triggered diagnosis and repair of workflow or document structure.
 - [ ] Density checks were included in non-trivial governance closeout when touched docs could grow.
 
@@ -304,6 +312,7 @@ Better behavior: ask the question first, route broad raw evidence through worker
 | God-line / single-line history dump creation | Low / 0 critical cases |
 | Unrepaired clear touched-doc God-line candidates | Low / 0 critical cases |
 | Active entrypoint map clarity | High |
+| Changelog parent/detail-shard density routing | High |
 | Compact/thrash repair response | High |
 | Future-read and diff maintainability | High |
 
@@ -313,11 +322,12 @@ Better behavior: ask the question first, route broad raw evidence through worker
 
 Related rules:
 - [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - owns worker scale and delegation before broad leader absorption
-- [safe-file-reading.md](safe-file-reading.md) - owns bounded file reading and sharded design read order
+- [safe-file-reading.md](safe-file-reading.md) - owns bounded file reading plus sharded design and changelog parent-map read order
 - [safe-terminal-output.md](safe-terminal-output.md) - owns bounded command output handling
 - [governed-document-rollover-control.md](governed-document-rollover-control.md) - owns TODO/phase active-entrypoint rollover
 - [document-design-control.md](document-design-control.md) - owns compact design indexes and child shards
-- [document-consistency.md](document-consistency.md) - owns cross-reference and no-drift verification
+- [document-changelog-control.md](document-changelog-control.md) - owns active parent changelogs, chain-scoped version detail shards, and fallback history boundaries
+- [document-consistency.md](document-consistency.md) - owns cross-reference, parent/shard links, and no-drift verification
 - [project-documentation-standards.md](project-documentation-standards.md) - owns document roles and active runtime install scope
 - [maintainable-code-structure-and-decomposition.md](maintainable-code-structure-and-decomposition.md) - provides the code-side analogy for God-function/God-file pressure
 - [evidence-grounded-burden-of-proof.md](evidence-grounded-burden-of-proof.md) - keeps partial reads and worker findings evidence-bounded

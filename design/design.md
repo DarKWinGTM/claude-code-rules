@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.03
+> **Current Version:** 10.04
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -18,10 +18,10 @@ This active-state model must preserve UDVC-1 while keeping the active RULES syst
 Current model focus:
 - runtime rules are active behavior contracts with body-sufficient root files
 - design files hold target-state truth and may use compact parent indexes with governed child shards for large active designs
-- changelog remains version and history authority, while TODO and phase stay compact current-state entrypoints
+- active parent changelogs remain version authority and may point to chain-scoped version detail shards, while TODO and phase stay compact current-state entrypoints
 - broad raw evidence should be filtered through workers before it burdens the leader session when the task shape is context-heavy
 - standing-role worker and teammate reuse should carry across phases when responsibility remains materially the same
-- active governance docs should avoid God-line history dumps, repair clear low-risk touched God-line candidates, prevent God-file role overload, and route detected God artifact pressure into repair or visible planning
+- active governance docs should avoid God-line history dumps, route bulky same-chain changelog detail into parent-mapped version shards, repair clear low-risk touched God-line candidates, prevent God-file role overload, and route detected God artifact pressure into repair or visible planning
 - startup, phase, patch, verification, portability, memory, audience-surface, and release boundaries stay with their dedicated owners
 
 ---
@@ -37,7 +37,7 @@ Current model focus:
 | Design | `design/*.design.md`, `design/<slug>/*.design.md` | Active target-state guidance with compact parent indexes and governed active child shards for large designs; no default `design/done/` surface |
 | Phase | `phase/SUMMARY.md`, `phase/history/*.md`, `phase/phase-NNN-<phase-name>.md`, `phase/phase-NNN-NN-<subphase-name>.md`, `phase/done/phase-NNN-*.md` | Compact governed live phase-planning summary/index and execution detail, with referenced inactive daily/pre-rollover history under `phase/history/` and completed phase history under `phase/done/` |
 | Patch | `patch/<context>.patch.md`, `patch/done/<context>.patch.md`, or root `<context>.patch.md` | Governed active patch/review artifacts plus inactive completed patch history outside live phase planning |
-| History | `changelog/*.changelog.md`, `changelog/done/*.changelog.md` | Authoritative active chain history/version state plus inactive completed or older history when needed |
+| History | `changelog/*.changelog.md`, `changelog/<chain>/v*.changelog.md`, `changelog/done/*.changelog.md` | Active parent changelog current-version authority, indexed chain-scoped version detail, plus legacy/archive/fallback inactive history when needed |
 | Execution | `TODO.md`, `todo/history/*.md`, `todo/done/*.md` | Compact active execution tracking plus referenced inactive history/detail shards |
 | Support | `phase-implementation-template.md`, `support/**/*.md` | Root-level helper templates and reference-only/support materials inside RULES only |
 
@@ -80,6 +80,12 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
+- P096-01 is the active v10.04 changelog chain version detail shard wave.
+  - It keeps the source-owned active runtime set at 47.
+  - It advances `document-changelog-control` to v4.12, `project-documentation-standards` to v2.41, `document-consistency` to v1.15, `safe-file-reading` to v1.8, and `context-load-and-document-density-control` to v1.6.
+  - It makes `changelog/<chain>.changelog.md` the active parent changelog authority and `changelog/<chain>/vX.YY-short-topic.changelog.md` the indexed same-chain detail surface when large version detail needs sharding.
+  - It keeps `changelog/done/` as legacy/archive/fallback history rather than the default ordinary same-chain detail namespace.
+  - Runtime install, 47/47 source/runtime parity, and source/destination active runtime body sufficiency passed; density review, push, and GitHub release `v10.04` verification remain pending.
 - P095 is the released v10.03 standing-role worker reuse and audit boundary wave.
   - It keeps the source-owned active runtime set at 47.
   - It promotes standing-role worker/teammate reuse, phase-ID-as-context, lifecycle audit, scoped state evidence, and responsibility-based lane naming into Main RULES.
@@ -147,8 +153,8 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 6 | authority-and-scope.md | authority-and-scope.design.md v2.5 | User authority, deterministic precedence, repo-governed semantic-authority precedence over git-state cleanup heuristics, runtime co-location as non-ownership authority, owner/project scope resolution before destination/runtime file classification or cleanup outside the current source-owned install set, fresh-directive override behavior, a rule against unnecessary option branching when one safe continuation path already exists, advisory future-work boundaries, RULES-first-over-memory authority, memory-governance deferral plus current-scope-wins protection, user-owned governing-basis selection, post-compact active-frame preservation, team-expansion boundaries, and deferral of discussion-vs-execution mode selection to the first-class execution-continuity owner |
 | 7 | custom-agent-selection-priority.md | custom-agent-selection-priority.design.md v1.3 | First-class owner for preferring the best visible custom/specialist agent after native worker routing has classified user intent, identified the needed worker capability, and selected a direct/subagent/multi-subagent/team scale; it selects capability-fit specialists without becoming the owner of worker-scale routing, leader-context control, or Agent Team escalation |
 | 8 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.3 | Normalize jailbreak-style wrappers into bounded intent evaluation |
-| 9 | document-consistency.md | document-consistency.design.md v1.14 | Cross-reference/no-drift validation, parity/body checks, God checks, worker-gate compliance, and delegated-repair preservation checks |
-| 10 | document-changelog-control.md | document-changelog-control.design.md v4.11 | Changelog version authority, current navigation, inactive `changelog/done/`, and changelog God-file prevention |
+| 9 | document-consistency.md | document-consistency.design.md v1.15 | Cross-reference/no-drift validation, parity/body checks, God checks, worker-gate compliance, and delegated-repair preservation checks |
+| 10 | document-changelog-control.md | document-changelog-control.design.md v4.12 | Changelog version authority, current navigation, inactive `changelog/done/`, and changelog God-file prevention |
 | 11 | document-design-control.md | document-design-control.design.md v1.12 | Active-state design standards, compact design indexes, governed child shards, and Design God-file prevention |
 | 12 | document-patch-control.md | document-patch-control.design.md v2.9 | Patch governance, before/after review meaning, inactive `patch/done/`, God Patch prevention, and automatic God Patch handling |
 | 13 | emergency-protocol.md | emergency-protocol.design.md v1.2 | High-signal emergency response |
@@ -162,11 +168,11 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 21 | no-variable-guessing.md | no-variable-guessing.design.md v1.5 | Read before reference with inspected-scope local evidence discipline, including git-state observations kept in the weak local-evidence lane until governed repo surfaces are checked |
 | 22 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and a Team Agent duplicate/stale-presence profile that treats duplicate-looking or stale team-agent presence as inspect-before-respawn rather than respawn-first churn |
 | 23 | phase-implementation.md | phase-implementation.design.md v2.34 | Phase planning with bounded lineage, compact summaries, phase-visible tasks, verification gates, next-goal closeout, God Phase prevention, and automatic God Phase handling |
-| 24 | project-documentation-standards.md | project-documentation-standards.design.md v2.40 | Repository document-role model for README, design, changelog, TODO, phase, patch, runtime install scope, God-file prevention, and automatic God artifact planning |
+| 24 | project-documentation-standards.md | project-documentation-standards.design.md v2.41 | Repository document-role model for README, design, changelog, TODO, phase, patch, runtime install scope, God-file prevention, and automatic God artifact planning |
 | 25 | recovery-contract.md | recovery-contract.design.md v1.6 | No dead-end constrained/refused responses |
 | 26 | refusal-classification.md | refusal-classification.design.md v1.5 | Deterministic refusal taxonomy |
 | 27 | refusal-minimization.md | refusal-minimization.design.md v1.6 | Prefer recoverable paths over premature refusal |
-| 28 | safe-file-reading.md | safe-file-reading.design.md v1.7 | Bounded reads, shard-selective design reads, and worker-first aggregate-read gating |
+| 28 | safe-file-reading.md | safe-file-reading.design.md v1.8 | Bounded reads, shard-selective design reads, and worker-first aggregate-read gating |
 | 29 | safe-terminal-output.md | safe-terminal-output.design.md v1.4 | Plan-before-execute output safety |
 | 30 | strict-file-hygiene.md | strict-file-hygiene.design.md v1.5 | Prevent junk files and duplicates while deferring to required governed startup artifacts, blocking cleanup/hygiene wording from acting as deletion authority, keeping destination/runtime files outside the current source-owned install set from being treated as junk by shared-destination co-location alone, and avoiding machine-local hardcoded defaults in reusable artifacts |
 | 31 | todo-standards.md | todo-standards.design.md v2.28 | Durable TODO governance with compact active entrypoints, referenced history/done shards, phase-visible tasks, TODO God-file prevention, and God artifact repair task planning |
@@ -185,7 +191,7 @@ The active runtime inventory contains 47 source-owned root rule files.
 | 44 | development-verification-and-debug-strategy.md | development-verification-and-debug-strategy.design.md v1.1 | First-class owner for proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that distinguishes prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable states |
 | 45 | audience-surface-disclosure-control.md | audience-surface-disclosure-control.design.md v1.0 | First-class owner for full direct-user/project-owner transparency plus audience-aware disclosure minimization for generated public, customer-facing, operator-facing, demo, log, release, onboarding, and externally shared artifacts |
 | 46 | governed-document-rollover-control.md | governed-document-rollover-control.design.md v1.2 | Daily-first TODO/phase rollover, history/done references, God-document routing, and automatic rollover repair planning |
-| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.5 | Context-load, doc density, aggregate-read gating, and delegated repair routing |
+| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.6 | Context-load, doc density, aggregate-read gating, and delegated repair routing |
 
 ### 3.2 Category View
 

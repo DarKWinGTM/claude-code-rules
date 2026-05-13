@@ -1,12 +1,30 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.40
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 2.41
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-241"></a>
+## Version 2.41: Added changelog version detail shard role model
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated runtime `project-documentation-standards.md` from v2.40 to v2.41.
+- Updated `design/project-documentation-standards.design.md` from v2.40 to v2.41.
+- Added `changelog/<chain>/v*.changelog.md` as an indexed same-chain version detail surface.
+- Clarified that active parent changelogs remain current version authority, index, shard map, and navigation surfaces.
+- Reclassified `changelog/done/` as legacy/archive/completed-history/fallback rather than the default split target for ordinary large-chain version detail.
+
+### Summary
+Project-documentation-standards now models active parent changelogs, chain-scoped version detail shards, and `changelog/done/` fallback history as distinct documentation surfaces.
+
+---
 
 <a id="version-240"></a>
 ## Version 2.40: Added automatic God artifact planning role model
@@ -32,6 +50,8 @@ Added automatic God artifact planning role model for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.41 | 2026-05-13 | **[Added changelog version detail shard role model](#version-241)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Modeled active parent changelogs, chain-scoped version detail shards, and `changelog/done/` fallback history as distinct documentation surfaces. | |
 | 2.40 | 2026-05-11 | **[Added automatic God artifact planning role model](#version-240)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.38 | 2026-05-10 | **[Added governed design shard role model](#version-238)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.37 | 2026-05-08 | **[Added daily-first governance rollover documentation surfaces](#version-237)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

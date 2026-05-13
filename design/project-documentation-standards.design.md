@@ -3,8 +3,16 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.40
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-10)
+> **Current Version:** 2.41
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+
+---
+
+## P096-01 Target-State Refinement: Changelog Chain Version Detail Shards
+
+Repository documentation governance now recognizes chain-scoped changelog version detail shards as the preferred active detail surface for large same-chain version entries.
+
+`changelog/<chain>.changelog.md` remains the active parent authority, current index, shard map, and navigation surface. `changelog/<chain>/vX.YY-short-topic.changelog.md` holds indexed detail only. `changelog/done/` remains legacy/archive/completed-history/fallback rather than the default split path.
 
 ---
 
@@ -26,7 +34,8 @@ Every active governed document has a primary role and a capacity boundary.
 
 When content would make the file own unrelated roles, route that content to the correct owner:
 - shard active design truth
-- roll accumulated history or completed detail
+- shard bulky same-chain changelog version detail under the active parent changelog
+- roll accumulated daily movement, legacy history, archive detail, or fallback completed detail
 - split phase/patch artifacts by gate or review boundary
 - keep README as the current-state front page
 
@@ -49,7 +58,9 @@ This model must preserve one authority system while clearly separating:
 - Claude Code's built-in task list as the live in-session execution surface for non-trivial work, with visible phase pointers when the work is phase-backed
 - `development-verification-and-debug-strategy.md` as the coding-time verification strategy owner whose material coverage should stay aligned across governed phase, TODO, changelog, and closeout surfaces
 - `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
-- `changelog/done/` as inactive-by-default completed/older changelog history while active changelogs keep version authority and navigation
+- active parent changelogs as current version authority, index, shard map when present, and navigation
+- `changelog/<chain>/v*.changelog.md` as indexed same-chain version detail shards that do not become independent authorities
+- `changelog/done/` as inactive-by-default legacy/archive/completed-history/fallback changelog history
 - design as active blueprint/target-state authority with no default `design/done/` pattern
 - compact active design indexes and governed child design shards for large active design surfaces
 - design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
@@ -70,12 +81,12 @@ This model must preserve one authority system while clearly separating:
 Applies to projects that keep governed documentation artifacts and support/reference materials in the same repository.
 
 This includes:
-- repository role boundaries across README, design, governed design child shards, changelog, TODO, phase, and patch artifacts
+- repository role boundaries across README, design, governed design child shards, active parent changelogs, changelog version detail shards, changelog fallback history, TODO, phase, and patch artifacts
 - startup artifact posture before meaningful governed work
 - README current-state release sync, including status cards, install arrays, active runtime count, latest refinement, current quality signals, and current safety/runtime notes
 - public onboarding/install guidance in README or adjacent install docs
 - source-side versus destination/runtime notation clarity when install docs name both
-- active-scan versus completed-history boundaries for `phase/done/`, `patch/done/`, and `changelog/done/`
+- active-scan versus detail/history boundaries for changelog version detail shards, `phase/done/`, `patch/done/`, and `changelog/done/`
 
 ---
 
@@ -105,9 +116,11 @@ Design remains blueprint authority and does not use a default `design/done/` pat
 Large active designs may use a compact parent index at `design/<slug>.design.md` plus governed child shards under `design/<slug>/*.design.md`. The parent index stays the first current-state lookup surface and should preserve purpose, authority boundary, target-state summary, shard map, and shard-selective read guidance. Child shards remain active design truth by default, not completed history or archive content.
 
 ### 3.4 Changelog Role
-Each governed chain uses one authoritative active changelog.
-Active changelog files hold latest version state, current index, and navigation.
-Older or completed detailed history may live under `changelog/done/` when inactive history separation reduces active scan bloat.
+Each governed chain uses one authoritative active parent changelog.
+Active parent changelog files hold latest version state, current index, shard map when present, and navigation.
+Large same-chain version detail may live under `changelog/<chain>/vX.YY-short-topic.changelog.md` when the parent would otherwise become expensive to read or verify.
+Version detail shards are indexed detail surfaces for one parent chain, not independent version authorities.
+Legacy, archive, completed-history, or explicit fallback detail may live under `changelog/done/` when chain-scoped version shards are not the right shape.
 
 ### 3.5 TODO Role
 `TODO.md` tracks durable repository/project execution state only.
@@ -191,8 +204,9 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 | `README.md` | Always | Overview, onboarding, repository map | Overview only |
 | `design/*.design.md` | Design/specification needed | Active target-state guidance or compact parent design index | Governed design layer |
 | `design/<slug>/*.design.md` | Large active design needs governed shards | Active child target-state design detail under a compact parent index | Governed design layer |
-| `changelog/*.changelog.md` | Chain history needed | Authoritative version history, current index, and navigation | Governed authority layer |
-| `changelog/done/*.changelog.md` | Older or completed detailed history should leave the active scan surface | Inactive-by-default history for audit/rollback/provenance/trace | Completed changelog history layer |
+| `changelog/*.changelog.md` | Chain history needed | Active parent authority, current index, shard map when present, and navigation | Governed authority layer |
+| `changelog/<chain>/v*.changelog.md` | Large same-chain version detail should leave the active parent changelog | Indexed detail shard for one parent chain | Governed changelog detail layer |
+| `changelog/done/*.changelog.md` | Legacy, archive, completed-history, or explicit fallback detail should leave the active scan surface | Inactive-by-default history for audit/rollback/provenance/trace | Completed changelog history layer |
 | `TODO.md` | Work tracking needed | Durable repository/project execution tracking | Execution layer |
 | `phase/SUMMARY.md` | Phased execution planning is required | Governed summary/index for live phase planning | Governed phase summary layer |
 | `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Multi-stage execution detail exists | Active major/subphase execution detail | Governed phase-detail layer |
@@ -209,7 +223,7 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 ## 5) UDVC-1 Integration
 
 ### 5.1 Single Authority Per Chain
-- Changelog is the authority for each governed chain.
+- The active parent changelog is the authority for each governed chain.
 - Runtime, design, phase, and patch metadata align to that chain authority where applicable.
 - Installed active runtime rules carry their own runtime behavior bodies; design remains target-state authority and changelog remains history authority.
 - Root-level helper artifacts, support artifacts, and optional extension-package artifacts do not create parallel version authority.
@@ -261,16 +275,18 @@ Instead, the assistant should:
 
 Completed documentation surfaces reduce active scan bloat without deleting governed history.
 
-Allowed completed-history surfaces:
+Allowed detail/history surfaces:
+- `changelog/<chain>/v*.changelog.md` for indexed same-chain version detail under an active parent changelog
 - `phase/done/` for completed phase execution detail
 - `patch/done/` for completed patch/review artifacts
-- `changelog/done/` for older or completed detailed version history
+- `changelog/done/` for legacy, archive, completed-history, or fallback version history
 
 Not a default completed-history surface:
 - `design/done/` because design remains active blueprint and target-state authority
 
 Required guidance:
-- current-state scans start with active design, compact parent design indexes when a design is sharded, active changelog, `phase/SUMMARY.md`, active phase files, active patch files, `TODO.md`, and checked implementation state
+- current-state scans start with active design, compact parent design indexes when a design is sharded, active parent changelogs, changelog shard maps when present, `phase/SUMMARY.md`, active phase files, active patch files, `TODO.md`, and checked implementation state
+- version detail shards are opened through the active parent changelog when their mapped version detail is needed
 - `done/` surfaces are inactive by default and should be opened only for history, audit, rollback, provenance, or trace reconstruction
 - files in `done/` are not junk and completed status is not deletion authorization
 - active surfaces must keep enough pointer/index context that completed history can be found when needed
@@ -346,7 +362,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 ## 10) Verification Checklist
 
 - [ ] Required document set matches project scope
-- [ ] Changelog exists for each governed chain
+- [ ] An active parent changelog exists for each governed chain
 - [ ] Version references align across chain metadata
 - [ ] Active runtime install targets have canonical metadata and substantive runtime behavior bodies, not metadata-only stubs
 - [ ] Active session metadata has no placeholders
@@ -362,7 +378,8 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Phase records preserve enough phase-family lineage for later identity decisions
 - [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` active phase files under `phase/`
-- [ ] Completed phase, patch, and changelog history uses `phase/done/`, `patch/done/`, and `changelog/done/` only as inactive-by-default history
+- [ ] Changelog version detail shards are indexed by the active parent and do not become separate authorities
+- [ ] Completed phase, patch, and changelog fallback history uses `phase/done/`, `patch/done/`, and `changelog/done/` only as inactive-by-default history
 - [ ] No default `design/done/` pattern is introduced for governed blueprint docs
 - [ ] Sharded active designs keep compact parent indexes and governed child shards distinct from completed history surfaces
 - [ ] Phased work with governed patch artifacts shows explicit patch linkage from `phase/SUMMARY.md` and relevant child phase files
@@ -392,6 +409,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Phase-file role clarity | 100% |
 | Patch-role separation clarity | 100% |
 | Patch placement clarity | 100% |
+| Changelog parent/shard/done boundary clarity | 100% |
 | Completed-history inactive-surface boundary clarity | 100% |
 | Explicit phase-to-patch linkage coverage when patch is in scope | 100% |
 | Startup artifact posture resolved before drift | 100% |
@@ -414,7 +432,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | Rule | Relationship |
 |------|-------------|
 | [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup artifact-resolution owner, early live task-tracking bridge, and phase-linked initialization |
-| [document-changelog-control.md](../document-changelog-control.md) | Version authority contract and `changelog/done/` completed history boundary |
+| [document-changelog-control.md](../document-changelog-control.md) | Parent changelog authority, chain-scoped version detail shards, and `changelog/done/` fallback history boundary |
 | [document-design-control.md](../document-design-control.md) | Design structure standards and no-default-`design/done/` boundary |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary, explicit before/after patch contract, and `patch/done/` history boundary outside live phase planning |
 | [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Coding-time verification strategy owner; repository docs keep material verification coverage aligned across phase, TODO, changelog, and closeout surfaces |

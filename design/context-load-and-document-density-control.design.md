@@ -3,8 +3,20 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.5
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+> **Current Version:** 1.6
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+
+---
+
+## P096-01 Target-State Refinement: Changelog Parent and Version Detail Shard Density Route
+
+Context-load control now treats oversized active changelog detail as a density problem with an owned route.
+
+The target shape is:
+- keep `changelog/<chain>.changelog.md` as the compact active parent, current version authority, shard map, and navigation surface
+- move bulky same-chain version detail into `changelog/<chain>/vX.YY-short-topic.changelog.md` shards when needed
+- keep `changelog/done/` for legacy, archive, completed-history, or explicit fallback history, not ordinary same-chain detail sharding
+- verify parent maps and shard back-links before clean no-drift or release-ready wording
 
 ---
 
@@ -56,6 +68,7 @@ Define a first-class RULES owner for context-load lifecycle management and docum
 The target outcome is practical:
 - broad raw evidence is filtered before it burdens the leader session
 - active docs stay cheap to read, edit, diff, and verify later
+- active changelog parents stay compact when bulky same-chain version detail moves into indexed shards
 - clear low-risk God-line candidates in touched active docs are repaired opportunistically
 - compact/thrash is treated as a signal to repair workflow or document structure
 - the solution stays strategic instead of becoming a blunt post-compact restriction
@@ -71,6 +84,7 @@ Observed failure modes:
 - line count can hide real size when markdown lines are thousands of characters
 - leader sessions sometimes read raw design/changelog/TODO/phase/patch sets directly instead of routing broad review to a worker
 - active summaries can become history dumps because new releases are appended to one dense line
+- active parent changelogs can become version-detail dumps when bulky same-chain entries stay inline instead of moving to indexed shards
 - a small logical edit can produce a huge one-line diff when the target line is already too dense
 - assistants may notice a touched God-line candidate but only warn instead of repairing a clear low-risk split
 - compact/thrash can be misread as a need for rigid post-compact bans instead of a workflow and document-structure repair signal
@@ -115,6 +129,7 @@ Preferred active-doc shape:
 - local low-risk repair of touched God-line candidates
 - pointers to changelog/history/done detail
 - compact parent indexes for sharded active designs
+- compact active parent changelogs with shard maps for version detail
 
 Unhealthy shape:
 - one bullet carrying version history, current state, verification, caveats, exclusions, and next work
@@ -177,6 +192,7 @@ This rule owns:
 - leader-context protection as a context-safety requirement
 - document-density and God-line prevention
 - opportunistic touched-doc God-line repair
+- changelog density routing between active parent changelogs, version detail shards, and fallback history
 - delegated governed-document repair route for bounded context-heavy repair
 - append-vs-restructure decision gates
 - compact/thrash as repair signal
@@ -186,29 +202,30 @@ This rule does not own:
 - exact read caps, which stay with `safe-file-reading.md` and `safe-terminal-output.md`
 - TODO/phase rollover semantics, which stay with `governed-document-rollover-control.md`
 - design shard semantics, which stay with `document-design-control.md`
-- version authority, which stays with changelog governance
+- changelog parent/version-shard authority, which stays with changelog governance
 - deletion authority, which stays outside density and hygiene signals
 
 ---
 
 ## 6) Acceptance Criteria
 
-- The existing active runtime rule advances to v1.5 without adding a new runtime rule.
-- The design/runtime/changelog chain describes the P094 delegated-repair route consistently.
-- Context-heavy God-line or God-document repair can be delegated only when bounded and meaning-preserving.
-- Delegated repair cannot delete, summarize away, reinterpret, relocate, status-upgrade, mutate authority roles, lose history reachability, or break cross-references.
-- Ambiguous, history-heavy, authority-shifting, broad, destructive, or analysis-only cases route to visible planning, blocking, or ask state.
-- The rule preserves worker-first broad raw evidence filtering and compact/thrash repair signals.
+- The existing active runtime rule advances to v1.6 without adding a new runtime rule.
+- The design/runtime/changelog chain describes the P096-01 changelog parent/detail-shard density route consistently.
+- Bulky same-chain version detail routes to `changelog/<chain>/v*.changelog.md` shards when the active parent changelog would become a history dump.
+- `changelog/done/` remains legacy, archive, completed-history, or fallback history rather than the default same-chain detail split path.
+- Context-heavy God-line or God-document repair remains delegated only when bounded and meaning-preserving.
+- The rule preserves worker-first broad raw evidence filtering, bounded delegated repair, and compact/thrash repair signals.
 
 ---
 
 ## 7) Verification Notes
 
-P094 verification should check both semantic governance sync and future-read cost.
+P096-01 verification should check both semantic governance sync and future-read cost.
 
 Required verification categories:
-- runtime/design/changelog chain versions align at v1.5
-- delegated repair route is bounded by exact artifacts or anchors
+- runtime/design/changelog chain versions align at v1.6
+- active parent changelog density routes to mapped version detail shards when needed
+- `changelog/done/` is not treated as ordinary same-chain detail storage
+- delegated repair route remains bounded by exact artifacts or anchors
 - prohibited repair mutations are excluded from worker-edit scope
-- ambiguous or authority-shifting repairs are not assigned as worker edits
 - touched active docs avoid new God-line style append dumps

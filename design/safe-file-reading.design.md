@@ -3,8 +3,28 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.7
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+> **Current Version:** 1.8
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+
+---
+
+## P096-01 Target-State Refinement: Changelog Version Detail Shard Reading
+
+Safe file reading now treats chain-scoped changelog version detail shards as parent-map-first surfaces.
+
+The target read path is:
+
+```text
+Read active parent changelog
+  ↓
+Use its shard map to select needed version detail shard(s)
+  ↓
+Read only selected `changelog/<chain>/v*.changelog.md` shards
+  ↓
+Report checked parent/shard scope before making version-history claims
+```
+
+`changelog/done/` is not the default same-chain detail namespace. Open it only through active references or for history, audit, rollback, provenance, or trace reconstruction.
 
 ---
 
@@ -29,6 +49,7 @@ Set standards for secure file reading to:
 - Use the UOLF framework to cover all reading methods
 - Always plan before reading
 - Start sharded active design reads from compact parent indexes before opening child shards
+- Start changelog version detail reads from active parent changelog shard maps before opening detail shards
 
 ### 1.2 Problem Statement
 
@@ -39,6 +60,7 @@ Set standards for secure file reading to:
 | Minified files | Entire file = 1 line | head -c 3000 |
 | Base64 content | Massive output | Character limit |
 | Sharded active design | Reading all child shards refills context | Parent-index-first, shard-selective read path |
+| Sharded changelog version detail | Reading every version shard or generic done history refills context and blurs authority | Active-parent-map-first, version-shard-selective read path |
 
 ### 1.3 Solution
 
@@ -49,6 +71,7 @@ Create a UOLF (Universal Output Limit Framework) that:
 3. Use Double Limit Pattern
 4. Plan before reading (Evaluate → Plan → Read)
 5. Use compact design indexes to select only relevant governed child shards
+6. Use active parent changelog shard maps to select only relevant chain-scoped version detail shards
 
 ---
 
@@ -149,6 +172,26 @@ Required guidance:
 - use worker filtering for broad shard-map audits, stale child-shard checks, or multi-shard consistency sweeps
 - do not treat child shards as `history/`, `done`, or archive surfaces by default
 
+### 4.4 By Changelog Version Detail Shards
+
+When a governed changelog uses an active parent plus chain-scoped version detail shards, the target read behavior is parent-map-first and shard-selective.
+
+```text
+Read active parent changelog
+  ↓
+Identify relevant version shard(s) from the shard map
+  ↓
+Read only selected version detail shard(s)
+  ↓
+Report checked parent/shard scope before making version-history claims
+```
+
+Required guidance:
+- start from `changelog/<chain>.changelog.md` instead of opening `changelog/<chain>/v*.changelog.md` broadly
+- read version detail shards only when the parent shard map or active question selects them
+- use worker filtering for broad version-history audits, parent/shard consistency sweeps, or multi-shard migration reviews
+- do not treat `changelog/done/` as the default same-chain version detail namespace
+
 ---
 
 ## 5. Implementation Flow
@@ -180,6 +223,7 @@ Execute read with chosen method
 | Searching specific content | `grep \| head -100 \| head -c 5000` |
 | Log files | `tail -100 \| head -c 5000` |
 | Sharded active design | Read compact parent index, then selected child shard(s) |
+| Sharded changelog version detail | Read active parent changelog, then selected version detail shard(s) |
 | Unknown files | `head -c 2000` (preview first) |
 
 ---
@@ -192,6 +236,7 @@ Execute read with chosen method
 | Size Check | Default | Before reading large files |
 | Character Limit | 100% | Always applied |
 | Sharded Design Selectivity | High | Parent index read before selected shard reads |
+| Changelog Version Shard Selectivity | High | Active parent shard map read before selected version detail shard reads |
 | Session Responsiveness | Maintained | No flooding |
 
 ---
@@ -219,7 +264,8 @@ grep -n "search_term" <file> | head -100 | head -c 5000
 | safe-terminal-output | Command output limits |
 | no-variable-guessing | Verify file exists first |
 | document-design-control | Compact parent design index and governed child shard semantics |
-| document-consistency | Parent-index-to-child-shard reference verification |
+| document-changelog-control | Active parent changelog, chain-scoped version detail shard, and fallback history semantics |
+| document-consistency | Parent-index-to-child-shard and parent-changelog-to-version-shard reference verification |
 
 ### 8.2 Synergy with safe-terminal-output
 
@@ -266,6 +312,10 @@ RISKY FILES (use head -c 3000)
 ### Sharded Active Design Read Target
 
 Large active designs that use `design/<slug>.design.md` plus `design/<slug>/*.design.md` are not rollover files. The target behavior is to read the compact parent index first, then selected governed child shards only when the active question needs them.
+
+### Changelog Version Detail Read Target
+
+Large changelog chains that use `changelog/<chain>.changelog.md` plus `changelog/<chain>/v*.changelog.md` are not generic done/archive reads. The target behavior is to read the active parent changelog first, then selected version detail shards only when the active question needs them.
 
 ### Governance Rollover Read Target
 

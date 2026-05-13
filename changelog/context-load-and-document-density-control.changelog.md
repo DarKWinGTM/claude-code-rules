@@ -1,12 +1,30 @@
 # Changelog - Context Load and Document Density Control
 
 > **Parent Document:** [../context-load-and-document-density-control.md](../context-load-and-document-density-control.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-16"></a>
+## Version 1.6: Added changelog shard density routing
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `context-load-and-document-density-control.md` from v1.5 to v1.6.
+- Updated `design/context-load-and-document-density-control.design.md` from v1.5 to v1.6.
+- Added density routing for active parent changelogs and chain-scoped version detail shards.
+- Required bulky same-chain version detail to route to `changelog/<chain>/v*.changelog.md` when parent changelogs would become history dumps.
+- Clarified that `changelog/done/` remains legacy/archive/completed-history/fallback history rather than the default detail split path.
+
+### Summary
+Context-load control now treats oversized changelog version detail as parent-map and version-shard density work instead of append-only active changelog growth.
+
+---
 
 <a id="version-15"></a>
 ## Version 1.5: Added delegated governed-document repair route
@@ -68,6 +86,8 @@ Added automatic God artifact planning and controlled repair for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-05-13 | **[Added changelog shard density routing](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Treats oversized changelog version detail as parent-map and version-shard density work instead of append-only active changelog growth. | |
 | 1.5 | 2026-05-12 | **[Added delegated governed-document repair route](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-12 | **[Added worker-first aggregate read-burst gate](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-11 | **[Added automatic God artifact planning and controlled repair](#version-13)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

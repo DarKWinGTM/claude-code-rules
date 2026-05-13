@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.03
+> **Current Version:** 10.04
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.04 | 2026-05-13 | **[Opened changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.03 | 2026-05-13 | **[Released standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.02 | 2026-05-12 | **[Released edit-capable governed-document repair delegation](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.01 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-1001)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -137,6 +138,35 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-1004"></a>
+## Version 10.04: Opened changelog chain version detail shards
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Opened P096-01 as the changelog chain version detail shard release wave.
+- Kept the README-listed source-owned active runtime set at 47 files.
+- Advanced these owner chains:
+  - `document-changelog-control` to v4.12
+  - `project-documentation-standards` to v2.41
+  - `document-consistency` to v1.15
+  - `safe-file-reading` to v1.8
+  - `context-load-and-document-density-control` to v1.6
+- Added active parent changelog plus chain-scoped version detail shard doctrine.
+- Kept `changelog/<chain>.changelog.md` as current version authority, shard map, and navigation.
+- Added `changelog/<chain>/vX.YY-short-topic.changelog.md` as the preferred detail surface for bulky same-chain version entries.
+- Preserved `changelog/done/` as legacy/archive/fallback history, not the default ordinary same-chain detail namespace.
+- Synchronized README and master design current-state wording for active v10.04 / P096-01 governance.
+- Runtime install copied the 47 README-listed active runtime rules.
+- Source/runtime parity and source/destination body sufficiency passed for 47/47 files.
+- Push and GitHub release `v10.04` verification remain pending.
+
+### Summary
+P096-01 makes changelog God-file prevention more precise by keeping parent changelogs compact and routing detailed same-chain version history into indexed version shards when needed.
 
 ---
 

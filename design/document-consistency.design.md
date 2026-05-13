@@ -3,8 +3,21 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.14
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+> **Current Version:** 1.15
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+
+---
+
+## P096-01 Target-State Refinement: Changelog Version Detail Shard Consistency
+
+Document consistency now treats active parent changelogs and chain-scoped version detail shards as first-class reference roles.
+
+The consistency gate checks:
+- active parent changelog current-version authority and shard map
+- version-to-shard mapping for offloaded same-chain detail
+- shard-to-parent back-links
+- version detail shard status as indexed detail, not independent authority
+- `changelog/done/` as legacy, archive, completed-history, or fallback history rather than the default same-chain detail surface
 
 ---
 
@@ -62,8 +75,9 @@ Set document consistency standards to:
 - update references when changes are made
 - use precise references instead of vague descriptions
 - keep source-side references distinct from destination/runtime references in onboarding/install docs
-- distinguish governed design parent indexes, governed design child shards, source-owned active runtime files, active runtime body sufficiency, shared runtime destinations, and other-owner runtime files
+- distinguish governed design parent indexes, governed design child shards, active parent changelogs, changelog version detail shards, changelog fallback history, source-owned active runtime files, active runtime body sufficiency, shared runtime destinations, and other-owner runtime files
 - keep compact design index shard maps and child-shard authority boundaries aligned
+- keep active parent changelog shard maps, version-to-shard references, and shard-to-parent back-links aligned
 - keep local execution paths distinct from reusable source-artifact references so tool-local paths do not silently become source contracts
 - verify worker-edited governed documents before using them in clean sync/no-drift/closeout claims
 
@@ -76,6 +90,8 @@ Set document consistency standards to:
 | Metadata-only active runtime roots | Install/parity claims can pass while runtime behavior is absent | Check body sufficiency for active runtime files |
 | Stale references | Outdated information | Update all affected |
 | Stale or orphan design shards | Child shards may look active while missing from the compact parent index | Verify parent shard map, child parent scope, and checked shard coverage |
+| Unmapped changelog version detail shards | Readers must guess which version detail belongs to which active parent | Verify parent shard maps and shard-to-parent back-links |
+| `changelog/done/` treated as ordinary detail shard storage | Legacy/archive/fallback history can blur with indexed same-chain version detail | Keep `changelog/done/` inactive and parent-referenced only when selected by authority need |
 | Vague descriptions | Don't know what this is referring to | Use precise refs |
 | Source/destination blur | Readers cannot tell where an artifact comes from versus where it installs/runs | Separate reference roles explicitly |
 | Parity scope blurred with destination ownership | Files in a shared runtime destination can be mistaken as owned or junk based on co-location alone | Separate source-owned install set, shared destination, and other-owner runtime vocabulary |
@@ -90,7 +106,7 @@ Create a Consistency Framework that:
 2. verifies references before use
 3. updates dependencies when changing
 4. always uses precise references
-5. keeps portable shared references, source-side references, governed design parent indexes, governed design child shards, source-owned active runtime files, active runtime body sufficiency, shared runtime destinations, other-owner runtime files, destination/runtime references, and checked local facts semantically distinct
+5. keeps portable shared references, source-side references, governed design parent indexes, governed design child shards, active parent changelogs, changelog version detail shards, changelog fallback history, source-owned active runtime files, active runtime body sufficiency, shared runtime destinations, other-owner runtime files, destination/runtime references, and checked local facts semantically distinct
 
 ---
 
@@ -104,6 +120,8 @@ Create a Consistency Framework that:
 - Keep portable shared references distinct from checked local facts or machine-scoped examples
 - Keep source-side references distinct from destination/runtime references when both appear in onboarding/install docs
 - Keep governed design parent indexes distinct from governed child shards while verifying shard maps, parent scope, and selected-shard coverage
+- Keep active parent changelogs distinct from version detail shards while verifying shard maps, version-to-shard mapping, and shard-to-parent links
+- Keep `changelog/done/` distinct from ordinary chain-scoped version detail shards unless the parent authority selects it as legacy, archive, completed-history, or fallback history
 - Keep current source-owned active runtime install scope distinct from the shared runtime destination directory
 - Keep active runtime body sufficiency distinct from metadata/header parity and hash parity when claiming install success or no-drift
 - Keep other-owner runtime files distinct from the current project's parity/install target set unless their owner/project is explicitly selected or verified
@@ -118,6 +136,9 @@ Create a Consistency Framework that:
 | Source-side install path | `<repo-root>` or `./` when the command is run from the repo root | Read / command-context verification |
 | Governed design parent index | `design/<slug>.design.md` | Read parent index and verify shard map |
 | Governed design child shard | `design/<slug>/<slice>.design.md` | Parent shard map + targeted Read |
+| Active parent changelog | `changelog/<chain>.changelog.md` | Read parent and verify current version plus shard map |
+| Changelog version detail shard | `changelog/<chain>/vX.YY-short-topic.changelog.md` | Parent shard map + shard-to-parent back-link |
+| Changelog legacy/archive/fallback history | `changelog/done/*.changelog.md` | Active parent reference or audit/rollback/provenance need |
 | Destination/runtime path | `<install-root>`, `<user-runtime-rules>` | Read config/source contract when applicable |
 | Source-owned active runtime files | checked README-listed active runtime rule set with substantive root bodies | Source inventory + body-sufficiency check |
 | Shared runtime destination | `<user-runtime-rules>` as a destination that may contain several owners' files | Source/destination contract check |
@@ -138,6 +159,7 @@ Apply verification before finalizing references or consistency claims when trigg
 | Ambiguous or unresolved reference | missing file/symbol or uncertain mapping | mark status explicitly and avoid unstated assumptions |
 | Mixed source/destination wording | install docs blur clone/source path with installed/runtime path | separate the reference roles explicitly and normalize wording |
 | Sharded active design references | parent index shard map, child scope, or selected-shard evidence may drift | verify parent-to-child links, child parent scope, and checked shard coverage |
+| Changelog version detail sharding | parent shard map, version-to-shard mapping, shard back-link, or done/fallback boundary may drift | verify active parent authority, indexed detail status, and `changelog/done/` fallback use |
 | Parity scope blurred with destination ownership | install/parity wording treats the whole runtime destination as current-project owned | distinguish source-owned install set, shared destination, and other-owner runtime files |
 | Active runtime body sufficiency | parity/no-drift wording checks metadata or hashes but not whether runtime behavior exists | verify substantive active runtime body before parity, no-drift, or release claims |
 | Disposal or junk classification | file may still be referenced by governed repo surfaces or owned by another runtime source | check master surfaces, dependent references, and owner/project scope before classifying the file as cleanup noise |
@@ -161,6 +183,9 @@ What reference role is it?
   → source-side reference
   → governed design parent index
   → governed design child shard
+  → active parent changelog
+  → changelog version detail shard
+  → changelog fallback history
   → source-owned active runtime file
   → shared runtime destination
   → other-owner runtime file
@@ -242,6 +267,7 @@ When worker-edited governed documents participate in a clean claim, report them 
 | Source-vs-destination separation | High |
 | Source-owned/shared-destination/other-owner separation | High | Install-doc roles stay explicit |
 | Active runtime body-sufficiency validation | High | Parity/no-drift claims check substantive runtime bodies |
+| Changelog parent/shard/done consistency | High | Active parent changelog maps version detail shards and preserves fallback-history boundaries |
 | Delegated-repair consistency verification | High | Worker-edited governed docs are leader-verified before clean claims |
 | Compact design index and child-shard consistency | High | Parent index shard maps and child scopes align |
 
@@ -274,6 +300,7 @@ When classifying a newly encountered file as junk/disposable/non-governed:
 | Change config | Update all references |
 | Normalize install docs | Update source-side, source-owned install scope, shared destination, and other-owner runtime wording separately |
 | Shard active design | Verify compact parent index shard map, child parent/scope, orphan/stale shard status, and selected-shard claim boundaries |
+| Shard changelog version detail | Verify active parent shard map, version-to-shard mapping, shard-to-parent back-link, and `changelog/done/` fallback boundary |
 
 ---
 
@@ -288,6 +315,8 @@ When classifying a newly encountered file as junk/disposable/non-governed:
 | functional-intent-verification | Verify intent of references |
 | portable-implementation-and-hardcoding-control | Owns broader anti-hardcoding semantics and source-side versus destination/runtime notation discipline |
 | document-design-control | Owns compact parent design index and governed child shard semantics |
+| document-changelog-control | Owns active parent changelog, chain-scoped version detail shard, and fallback history semantics |
+| project-documentation-standards | Owns repository document roles and completed documentation surface boundaries |
 | unified-version-control-system | Owns controller-level active runtime body-sufficiency validation |
 | native-worker-agent-routing-and-context-control | Owns bounded edit-capable worker routing before delegated repair |
 | context-load-and-document-density-control | Owns delegated repair routing for context-heavy God artifact pressure |

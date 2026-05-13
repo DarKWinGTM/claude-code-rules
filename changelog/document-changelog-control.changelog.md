@@ -1,12 +1,28 @@
 # Changelog - Document Changelog Control
 
 > **Parent Document:** [../document-changelog-control.md](../document-changelog-control.md)
-> **Current Version:** 4.11
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 4.12
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-412"></a>
+## Version 4.12: Added chain-scoped version detail shard doctrine
+
+**Date:** 2026-05-13
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated runtime `document-changelog-control.md` from v4.11 to v4.12.
+- Updated `design/document-changelog-control.design.md` from v4.11 to v4.12.
+- Added `changelog/<chain>/vX.YY-short-topic.changelog.md` as the preferred detail-shard model for large same-chain version entries.
+- Clarified that parent changelog files remain current version authority, index, shard map, and navigation surfaces.
+- Reclassified `changelog/done/` as legacy/archive/fallback history rather than the default split path for ordinary large-chain version detail.
+
+### Summary
+Document-changelog-control now prefers compact active parent changelogs plus chain-scoped version detail shards, while preserving `changelog/done/` only as inactive legacy/archive/fallback history.
 
 ## Version 4.11: Added changelog God-file prevention and history-overload routing
 
@@ -16,6 +32,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 4.12 | 2026-05-13 | **[Added chain-scoped version detail shard doctrine](#version-412)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Preferred compact parent changelogs plus chain-scoped version detail shards, with `changelog/done/` kept as legacy/archive/fallback history. | |
 | 4.10 | 2026-05-08 | **[Aligned changelog history with daily rollover boundaries](#version-410)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Clarified that changelog history remains version authority while daily TODO and phase-summary rollover is owned by `governed-document-rollover-control.md`. | |
 | 4.9 | 2026-05-07 | **[Separated changelog history from README current-state sync](#version-49)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
