@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.04 | 2026-05-13 | **[Opened changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.04 | 2026-05-13 | **[Released changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.03 | 2026-05-13 | **[Released standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.02 | 2026-05-12 | **[Released edit-capable governed-document repair delegation](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.01 | 2026-05-12 | **[Added worker-first aggregate-read gate](#version-1001)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -142,13 +142,13 @@
 ---
 
 <a id="version-1004"></a>
-## Version 10.04: Opened changelog chain version detail shards
+## Version 10.04: Released changelog chain version detail shards
 
 **Date:** 2026-05-13
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ### Changes
-- Opened P096-01 as the changelog chain version detail shard release wave.
+- Released P096-01 as the changelog chain version detail shard release wave.
 - Kept the README-listed source-owned active runtime set at 47 files.
 - Advanced these owner chains:
   - `document-changelog-control` to v4.12
@@ -160,10 +160,13 @@
 - Kept `changelog/<chain>.changelog.md` as current version authority, shard map, and navigation.
 - Added `changelog/<chain>/vX.YY-short-topic.changelog.md` as the preferred detail surface for bulky same-chain version entries.
 - Preserved `changelog/done/` as legacy/archive/fallback history, not the default ordinary same-chain detail namespace.
-- Synchronized README and master design current-state wording for active v10.04 / P096-01 governance.
+- Synchronized README and master design current-state wording for released v10.04 / P096-01 governance.
 - Runtime install copied the 47 README-listed active runtime rules.
 - Source/runtime parity and source/destination body sufficiency passed for 47/47 files.
-- Push and GitHub release `v10.04` verification remain pending.
+- Density/God-artifact review, `master` push, and GitHub release `v10.04` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+- Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+- Published at `2026-05-13T16:53:38Z`.
 
 ### Summary
 P096-01 makes changelog God-file prevention more precise by keeping parent changelogs compact and routing detailed same-chain version history into indexed version shards when needed.

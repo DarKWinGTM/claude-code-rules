@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P096-01
-> **Status:** Active / In Progress
+> **Status:** Released / Completed
 > **Target Release:** v10.04
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.04
@@ -58,8 +58,8 @@ This keeps current changelog reads cheap while preserving exact version history 
 - [x] Validate 47-file README install arrays, source body sufficiency, parent/shard semantics, links, and density boundaries.
 - [x] Install only README-listed active runtime rules to the runtime rules directory.
 - [x] Verify 47/47 source/runtime parity and source/destination body sufficiency.
-- [ ] Commit, push `master`, create GitHub release `v10.04`, and verify tag/release state.
-- [ ] Close P096-01 records only after release verification passes.
+- [x] Commit, push `master`, create GitHub release `v10.04`, and verify tag/release state.
+- [x] Close P096-01 records after release verification passes.
 
 ---
 
@@ -99,15 +99,20 @@ If P096-01 is reversed:
 
 ## Current Status
 
-P096-01 is active.
+P096-01 is released and closed for `v10.04`.
 
 Completed:
 - preflight confirmed the `v10.03 / P095` baseline and absent `v10.04` release
 - phase and patch startup artifacts are opened
 - changelog parent/detail-shard doctrine is implemented in the owner chain
 - project documentation, consistency, safe-reading, and density owner chains are synchronized
-- README, master design, master changelog, TODO, phase, and patch records are synchronized to active/pre-release `v10.04 / P096-01` state
+- README, master design, master changelog, TODO, phase, and patch records are synchronized to released `v10.04 / P096-01` state
+- density/God-artifact review passed for the touched P096-01 scope
+- `master` push and GitHub release `v10.04` verification passed
 
-Pending:
-- density/God-artifact review closeout
-- commit, push, release, and release-verified closeout
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+- Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+- Published at `2026-05-13T16:53:38Z`.
+
+No pending P096-01 release gates remain in checked scope.

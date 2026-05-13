@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-13
-> **Current Release:** v10.04 / P096-01 changelog chain version detail shards (active)
+> **Last Updated:** 2026-05-14
+> **Current Release:** v10.04 / P096-01 changelog chain version detail shards (released)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -23,6 +23,8 @@
 - [x] P093 / v10.01 worker-first aggregate-read gate was completed, installed, pushed, and released with 47/47 source/runtime parity and body sufficiency passing.
 - [x] P094 / v10.02 edit-capable governed-document repair delegation was completed, installed, pushed, and released with 47/47 parity/body sufficiency and density/God-artifact review passing.
 - [x] P095 / v10.03 standing-role worker reuse and audit boundary was completed, installed, pushed, and released with 47/47 parity/body sufficiency, plugin-exclusion validation, and density/God-artifact review passing.
+- [x] P096-01 / v10.04 changelog chain version detail shards was completed, installed, pushed, and released.
+  - Verified: 47/47 parity/body sufficiency, parent/shard doctrine validation, density/God-artifact review, and GitHub release verification passed.
 
 Completed historical detail before this compact entrypoint is intentionally not duplicated here. Use the pre-rollover snapshot or future `todo/done/` shards for audit, rollback, or provenance.
 
@@ -32,12 +34,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- [ ] P096-01 / v10.04 changelog chain version detail shards.
-  - Goal: make active changelog parents stay compact while detailed version entries move to chain-scoped shards.
-  - Source state: owner-chain doctrine and master docs sync are complete for active/pre-release `v10.04 / P096-01`.
-  - Verified gates: validation, runtime install, and 47/47 source/runtime parity/body sufficiency passed.
-  - Pending gates: density/God-artifact review closeout, push, and GitHub release `v10.04` verification.
-  - Gate: parent/shard doctrine, non-default `changelog/done/` boundary, source/runtime parity, and GitHub release `v10.04` verified.
+No active governed release is currently opened.
 
 ### Deferred / Not Selected
 
@@ -59,8 +56,9 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
-| 2026-05-13 | P096-01 validation, runtime install, and 47/47 source/runtime parity/body sufficiency passed; push and release remain pending. |
-| 2026-05-13 | Synced P096-01 owner chains and master docs to active/pre-release `v10.04` state. |
+| 2026-05-14 | Finalized P096-01 / v10.04 closeout records after verified push and GitHub release. |
+| 2026-05-13 | Released P096-01 / v10.04 changelog chain version detail shards; tag and target commit point to `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`; published at `2026-05-13T16:53:38Z`. |
+| 2026-05-13 | Synced P096-01 owner chains and master docs before release closeout. |
 | 2026-05-13 | Opened P096-01 / v10.04 changelog chain version detail shards. |
 | 2026-05-13 | Released P095 / v10.03 standing-role worker reuse and audit boundary; `master`, tag, and GitHub release verification passed. |
 | 2026-05-13 | Release tag and target commit both point to `d5d7f1dbd3f16a1159f308e67b577878784f0356`; published at `2026-05-12T22:23:41Z`. |

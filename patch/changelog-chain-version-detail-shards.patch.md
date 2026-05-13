@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Released / Completed
 > **Target Design:** [design/document-changelog-control.design.md](../design/document-changelog-control.design.md) v4.12
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -85,15 +85,20 @@ Source doctrine sync is implemented for the owner chains:
 - `safe-file-reading` v1.8
 - `context-load-and-document-density-control` v1.6
 
-Master source records are synchronized to active/pre-release `v10.04 / P096-01` state.
+Master source records are synchronized to released `v10.04 / P096-01` state.
 
-Validation, runtime install, and 47/47 source/runtime parity plus source/destination body sufficiency passed. Pending gates remain density/God-artifact review closeout, push, and GitHub release `v10.04` verification.
+Validation, runtime install, 47/47 source/runtime parity, source/destination body sufficiency, density/God-artifact review, push, and GitHub release `v10.04` verification passed.
+
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+- Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+- Published at `2026-05-13T16:53:38Z`.
 
 ---
 
 ## Verification
 
-Required checks before release:
+Verified checks for release:
 - README Bash and PowerShell install arrays contain exactly the same 47 active runtime rule files.
 - All 47 source root runtime files have substantive active bodies.
 - Runtime install copies only README-listed active runtime rules.

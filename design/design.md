@@ -80,12 +80,15 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P096-01 is the active v10.04 changelog chain version detail shard wave.
+- P096-01 is the completed v10.04 changelog chain version detail shard wave.
   - It keeps the source-owned active runtime set at 47.
   - It advances `document-changelog-control` to v4.12, `project-documentation-standards` to v2.41, `document-consistency` to v1.15, `safe-file-reading` to v1.8, and `context-load-and-document-density-control` to v1.6.
   - It makes `changelog/<chain>.changelog.md` the active parent changelog authority and `changelog/<chain>/vX.YY-short-topic.changelog.md` the indexed same-chain detail surface when large version detail needs sharding.
   - It keeps `changelog/done/` as legacy/archive/fallback history rather than the default ordinary same-chain detail namespace.
-  - Runtime install, 47/47 source/runtime parity, and source/destination active runtime body sufficiency passed; density review, push, and GitHub release `v10.04` verification remain pending.
+  - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, density review, push, and GitHub release `v10.04` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+  - Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+  - Published at `2026-05-13T16:53:38Z`.
 - P095 is the released v10.03 standing-role worker reuse and audit boundary wave.
   - It keeps the source-owned active runtime set at 47.
   - It promotes standing-role worker/teammate reuse, phase-ID-as-context, lifecycle audit, scoped state evidence, and responsibility-based lane naming into Main RULES.

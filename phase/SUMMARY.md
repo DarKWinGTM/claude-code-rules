@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P096-01 active for v10.04 changelog chain version detail shards
+> **Status:** P096-01 released for v10.04 changelog chain version detail shards
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P096-01:** [phase-096-01-changelog-chain-version-detail-shards.md](phase-096-01-changelog-chain-version-detail-shards.md)
-  - Goal: make active changelog parent files compact current-version authority and move detailed version entries into chain-scoped shards.
-  - Output: owner-chain doctrine, docs sync, runtime install, 47/47 parity/body sufficiency, push, and release `v10.04`.
-  - Scope: no migration of existing project changelogs in this first RULES doctrine wave.
-  - Gate: parent/shard links resolve, `changelog/done/` remains legacy/exception only, and release verification passes.
+- None currently opened.
 
 ### Recently Completed
+
+- **P096-01:** [phase-096-01-changelog-chain-version-detail-shards.md](phase-096-01-changelog-chain-version-detail-shards.md)
+  - Goal: make active changelog parent files compact current-version authority and move detailed version entries into chain-scoped shards.
+  - Output: owner-chain doctrine, docs sync, runtime install, 47/47 parity/body sufficiency, density review, push, and release `v10.04`.
+  - Scope: no migration of existing project changelogs in this first RULES doctrine wave.
+  - Gate: parent/shard links resolve, `changelog/done/` remains legacy/exception only, and release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+  - Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+  - Published at `2026-05-13T16:53:38Z`.
 
 - **P095:** [phase-095-standing-role-worker-reuse-and-audit-boundary.md](phase-095-standing-role-worker-reuse-and-audit-boundary.md)
   - Goal: promote universal standing-role worker/teammate reuse and lifecycle audit doctrine into Main RULES.
@@ -97,7 +102,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P096-01 — Changelog Chain Version Detail Shards
 
-- **Status:** Active/in progress; owner-chain doctrine, master source docs sync, validation, runtime install, and 47/47 parity/body sufficiency are complete, with density review and release verification pending
+- **Status:** Completed/released; owner-chain doctrine, master source docs sync, validation, runtime install, 47/47 parity/body sufficiency, density review, push, and release verification passed
 - **Design References:**
   - [../design/design.md](../design/design.md) v10.04
   - [../design/document-changelog-control.design.md](../design/document-changelog-control.design.md) v4.12
@@ -118,6 +123,9 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - 47/47 source/runtime parity and active runtime body sufficiency pass.
   - Touched active docs pass density and God-artifact review.
   - `master` is pushed and GitHub release `v10.04` is verified.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+  - Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+  - Published at `2026-05-13T16:53:38Z`.
 
 ### P095 — Standing-Role Worker Reuse and Audit Boundary
 
@@ -348,26 +356,29 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-P096-01 verification is active for the v10.04 source-sync, install, push, and release gates.
+P096-01 verification is complete for the v10.04 source-sync, install, push, and release gates.
 
 Current checked state:
-- P096-01 phase and patch records exist and remain active/pre-release.
+- P096-01 phase and patch records exist and are released/closed.
 - `document-changelog-control` runtime/design/changelog versions are synchronized to v4.12 in source.
 - `project-documentation-standards` runtime/design/changelog versions are synchronized to v2.41 in source.
 - `document-consistency` runtime/design/changelog versions are synchronized to v1.15 in source.
 - `safe-file-reading` runtime/design/changelog versions are synchronized to v1.8 in source.
 - `context-load-and-document-density-control` runtime/design/changelog versions are synchronized to v1.6 in source.
-- README, master design, master changelog, TODO, phase, and patch records align to active/pre-release `v10.04 / P096-01` state in checked source scope.
+- README, master design, master changelog, TODO, phase, and patch records align to released `v10.04 / P096-01` state in checked source scope.
 - Runtime install copied the 47 README-listed active runtime rules.
 - 47/47 source/runtime parity and source/destination active runtime body sufficiency passed.
 - Parent changelog plus chain-scoped version detail shard doctrine is present in touched owner chains.
 - `changelog/done/` remains legacy/archive/fallback history, not default ordinary same-chain detail storage.
-- Broader master governance density rollover remains deferred and tracked in `TODO.md`.
+- Touched active doc density and God-artifact review passed for the P096-01 scope.
 - Broad source validation used worker-first filtering plus leader repair of reported stale anchors.
+- `master` push and GitHub release `v10.04` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+- Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+- Published at `2026-05-13T16:53:38Z`.
+- Broader master governance density rollover remains deferred and tracked in `TODO.md`.
 
-Pending release gates:
-- touched active doc density and God-artifact review closeout
-- `master` push and GitHub release `v10.04` verification
+No pending P096-01 release gates remain in checked scope.
 
 ---
 

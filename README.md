@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.04</b><br><sub>P096-01 Active</sub>
+  <b>v10.04</b><br><sub>P096-01 Released</sub>
 </td>
 <td align="center" width="200">
   <b>47</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>In progress</b><br><sub>Pre-release sync</sub>
+  <b>Released</b><br><sub>GitHub verified</sub>
 </td>
 <td align="center" width="200">
   <b>Changelog shards</b><br><sub>Parent/detail model</sub>
@@ -353,13 +353,16 @@ Please:
 - P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
   - Updates `anti-sycophancy.md` to v1.7 so user proposals are evaluated before endorsement.
   - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P096-01 changelog chain version detail shards is active for v10.04.
+- P096-01 changelog chain version detail shards is released for v10.04.
   - Keeps the source-owned active runtime set at 47 files.
   - Adds active parent changelog plus chain-scoped version detail shard doctrine.
   - Keeps `changelog/<chain>.changelog.md` as current version authority and navigation.
   - Uses `changelog/<chain>/vX.YY-short-topic.changelog.md` for bulky same-chain version detail.
   - Keeps `changelog/done/` as legacy/archive/fallback history, not ordinary detail-shard storage.
-  - Owner-chain source updates, runtime install, and 47/47 source/runtime parity plus body sufficiency are complete; density review, push, and GitHub release verification remain pending.
+  - Owner-chain source updates, runtime install, 47/47 source/runtime parity plus body sufficiency, density review, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+  - Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+  - Published at `2026-05-13T16:53:38Z`.
 - P095 standing-role worker reuse and audit boundary is released for v10.03.
   - Keeps the source-owned active runtime set at 47 files.
   - Promotes standing-role worker/teammate reuse and lifecycle audit into Main RULES.
@@ -504,7 +507,7 @@ Please:
 
 **📊 Active Runtime Rules: 47**
 
-Current release wave: P096-01 / v10.04 changelog chain version detail shards is active and pre-release.
+Current release wave: P096-01 / v10.04 changelog chain version detail shards is released.
 
 - Active source install set remains 47 files.
 - Owner-chain source sync is complete for document-changelog, project-documentation, document-consistency, safe-file-reading, and context-load owners.
@@ -512,7 +515,10 @@ Current release wave: P096-01 / v10.04 changelog chain version detail shards is 
 - `project-documentation-standards` recognizes `changelog/<chain>/v*.changelog.md` as indexed same-chain version detail shards.
 - Consistency, safe-reading, and density owners now validate, read, and route parent changelog maps and selected version detail shards.
 - `changelog/done/` remains legacy/archive/fallback history and is not the default ordinary same-chain detail shard namespace.
-- Runtime install, 47/47 source/runtime parity, and body sufficiency passed; density review, push, and GitHub release `v10.04` verification remain pending.
+- Runtime install, 47/47 source/runtime parity, body sufficiency, density review, push, and GitHub release `v10.04` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+- Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+- Published at `2026-05-13T16:53:38Z`.
 </div>
 
 ---
@@ -1236,9 +1242,11 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: v10.04 keeps install scope at 47 source-owned active runtime files.
-- Source state: P096-01 records changelog parent/detail-shard doctrine; release verification is not claimed yet.
-- Verified gates so far: owner-chain source updates, source validation, runtime install, 47/47 source/runtime parity, and source/destination body sufficiency are complete in checked scope.
-- Pending gates: density/God-artifact review closeout, push, and GitHub release `v10.04`.
+- Source state: P096-01 records changelog parent/detail-shard doctrine, and GitHub release `v10.04` is verified.
+- Verified gates: owner-chain source updates, source validation, runtime install, 47/47 source/runtime parity, source/destination body sufficiency, density/God-artifact review, push, and GitHub release `v10.04` verification passed in checked scope.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
+- Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
+- Published at `2026-05-13T16:53:38Z`.
 - Deferred density work: broader master governance density rollover remains tracked in `TODO.md`.
 - Impact: protects install scope and other-owner runtime files.
 
