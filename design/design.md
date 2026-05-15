@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.04
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+> **Current Version:** 10.05
+> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 (2026-05-16)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -80,6 +80,12 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
+- P097 is the active v10.05 source merge cleanup compact runtime set release-preparation wave.
+  - It reduces the active source-owned runtime install set from 47 root rule files to 18 merged body-sufficient runtime rules.
+  - It removes absorbed legacy root rules from active source authority while preserving their execution-relevant semantics inside merged owner rules.
+  - It adds missing design/changelog companion coverage for merged runtime owners.
+  - It keeps `.claude-code-rules-legacy-backup/` outside active runtime authority and ignores it as local preservation output.
+  - Runtime install, source/runtime parity, push, and GitHub release verification remain pending until the P097 release gate completes.
 - P096-01 is the completed v10.04 changelog chain version detail shard wave.
   - It keeps the source-owned active runtime set at 47.
   - It advances `document-changelog-control` to v4.12, `project-documentation-standards` to v2.41, `document-consistency` to v1.15, `safe-file-reading` to v1.8, and `context-load-and-document-density-control` to v1.6.
@@ -144,124 +150,50 @@ This repository uses one deterministic governance model:
 
 ### 3.1 Active Runtime Inventory
 
-The active runtime inventory contains 47 source-owned root rule files.
+The active runtime inventory contains 18 source-owned root rule files.
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
-| 1 | accurate-communication.md | accurate-communication.design.md v2.22 | Evidence-honest communication for status, recommendations, agreement/disagreement, memory/post-compact context, phase closeout, and continuation wording |
-| 2 | answer-presentation.md | answer-presentation.design.md v1.28 | Principle-first, trigger-driven presentation guidance for readable, orderly, and scannable output, including purpose-first framing, compact goal-aware working-frame layout for non-trivial work, roadmap-aware completion shape for next phase/wave/goal recommendations, optional deep-dive offers for easy-first answers, compact phase-backed closeout layout, and advisory proposal layouts that distinguish future-work ideas from queued execution |
-| 3 | anti-mockup.md | anti-mockup.design.md v1.2 | Real systems over mocks with clear proof boundaries for mock/stub use |
-| 4 | anti-sycophancy.md | anti-sycophancy.design.md v1.7 | Evidence-seeking proof-aware agreement, disagreement, recommendation, design, and constructive-dissent posture: truth over pleasing, user proposals evaluated for fit/cost/risk/timing/evidence/trade-offs/dependencies/alternatives before agreement-shaped wording, safe user direction accepted without factual or quality endorsement, ordinary evidence stays grounding input unless it creates a hard constraint, and corrections remain claim-focused when contrary evidence exists |
-| 5 | artifact-initiation-control.md | artifact-initiation-control.design.md v1.9 | Startup-governance owner that resolves required artifacts early and resolves God artifact repair posture when safe in-place repair is not enough |
-| 6 | authority-and-scope.md | authority-and-scope.design.md v2.5 | User authority, deterministic precedence, repo-governed semantic-authority precedence over git-state cleanup heuristics, runtime co-location as non-ownership authority, owner/project scope resolution before destination/runtime file classification or cleanup outside the current source-owned install set, fresh-directive override behavior, a rule against unnecessary option branching when one safe continuation path already exists, advisory future-work boundaries, RULES-first-over-memory authority, memory-governance deferral plus current-scope-wins protection, user-owned governing-basis selection, post-compact active-frame preservation, team-expansion boundaries, and deferral of discussion-vs-execution mode selection to the first-class execution-continuity owner |
-| 7 | custom-agent-selection-priority.md | custom-agent-selection-priority.design.md v1.3 | First-class owner for preferring the best visible custom/specialist agent after native worker routing has classified user intent, identified the needed worker capability, and selected a direct/subagent/multi-subagent/team scale; it selects capability-fit specialists without becoming the owner of worker-scale routing, leader-context control, or Agent Team escalation |
-| 8 | dan-safe-normalization.md | dan-safe-normalization.design.md v1.3 | Normalize jailbreak-style wrappers into bounded intent evaluation |
-| 9 | document-consistency.md | document-consistency.design.md v1.15 | Cross-reference/no-drift validation, parity/body checks, God checks, worker-gate compliance, and delegated-repair preservation checks |
-| 10 | document-changelog-control.md | document-changelog-control.design.md v4.12 | Changelog version authority, current navigation, inactive `changelog/done/`, and changelog God-file prevention |
-| 11 | document-design-control.md | document-design-control.design.md v1.12 | Active-state design standards, compact design indexes, governed child shards, and Design God-file prevention |
-| 12 | document-patch-control.md | document-patch-control.design.md v2.9 | Patch governance, before/after review meaning, inactive `patch/done/`, God Patch prevention, and automatic God Patch handling |
-| 13 | emergency-protocol.md | emergency-protocol.design.md v1.2 | High-signal emergency response |
-| 14 | evidence-grounded-burden-of-proof.md | evidence-grounded-burden-of-proof.design.md v1.6 | First-class owner for evidence-seeking proof-aware reasoning, evidence taxonomy, ordinary-evidence-versus-binding-constraint thresholds, burden-of-proof thresholds for factual endorsement and contradiction, user-owned preference/direction separation, contradiction protocol, scoped negative-evidence semantics, unresolved governing-basis uncertainty handling when materially different policies/frames would change the answer, remembered path-matched context as a distinct evidence/claim state, post-compact needs-recheck handling for compacted carry-forward exact detail, and explicit limits on using git-state evidence for disposal conclusions |
-| 15 | explanation-quality.md | explanation-quality.design.md v2.23 | Plain-language-first, proof-aware, layered analytical and technical explanation structure that preserves proportional goal/output/gate framing when non-trivial work benefits from it, keeps easy-first answers complete without becoming overlong, explains roadmap-aware next phase/wave/goal recommendations at true closeout, offers one optional deeper-detail path when useful, and keeps evidence, mechanism, implication, and continuation boundaries readable |
-| 16 | external-verification-and-source-trust.md | external-verification-and-source-trust.design.md v1.2 | First-class owner for proactive external verification, source-trust ranking, corroboration, source-conflict handling, orchestrated broad external research lanes, and current external evidence grounding for recommendation/design judgments without turning ordinary external evidence into an automatic design lock |
-| 17 | flow-diagram-no-frame.md | flow-diagram-no-frame.design.md v1.2 | Text diagrams without frames or boxes |
-| 18 | functional-intent-verification.md | functional-intent-verification.design.md v1.2 | Clarify destructive/expensive intent before execution, including an explicit delete guard that blocks cleanup/isolation rationale from acting as deletion authorization |
-| 19 | memory-governance-and-session-boundary.md | memory-governance-and-session-boundary.design.md v1.7 | First-class owner for memory role boundaries, root `MEMORY.md` active-index behavior, visible one-line hook preservation, `Scope` + `Memory base` relative path compaction for repeated path scopes, loader-warning and index-bloat maintenance triggers, fake-alias and link-only hidden-memory-router avoidance, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, archive-inactive lifecycle semantics, and generic optional external recall guidance that stays supplemental and subordinate to stronger execution evidence |
-| 20 | native-worker-agent-routing-and-context-control.md | native-worker-agent-routing-and-context-control.design.md v1.7 | Intent-first worker routing, aggregate-read gating, bounded edit-capable governed-document repair delegation, standing-role worker/teammate reuse, and lifecycle audit before reuse/spawn/respawn/shutdown/overlap reporting |
-| 21 | no-variable-guessing.md | no-variable-guessing.design.md v1.5 | Read before reference with inspected-scope local evidence discipline, including git-state observations kept in the weak local-evidence lane until governed repo surfaces are checked |
-| 22 | operational-failure-handling.md | operational-failure-handling.design.md v1.2 | Profile-driven operational failure classification, bounded retry policy, honest cooldown/escalation behavior, and a Team Agent duplicate/stale-presence profile that treats duplicate-looking or stale team-agent presence as inspect-before-respawn rather than respawn-first churn |
-| 23 | phase-implementation.md | phase-implementation.design.md v2.34 | Phase planning with bounded lineage, compact summaries, phase-visible tasks, verification gates, next-goal closeout, God Phase prevention, and automatic God Phase handling |
-| 24 | project-documentation-standards.md | project-documentation-standards.design.md v2.41 | Repository document-role model for README, design, changelog, TODO, phase, patch, runtime install scope, God-file prevention, and automatic God artifact planning |
-| 25 | recovery-contract.md | recovery-contract.design.md v1.6 | No dead-end constrained/refused responses |
-| 26 | refusal-classification.md | refusal-classification.design.md v1.5 | Deterministic refusal taxonomy |
-| 27 | refusal-minimization.md | refusal-minimization.design.md v1.6 | Prefer recoverable paths over premature refusal |
-| 28 | safe-file-reading.md | safe-file-reading.design.md v1.8 | Bounded reads, shard-selective design reads, and worker-first aggregate-read gating |
-| 29 | safe-terminal-output.md | safe-terminal-output.design.md v1.4 | Plan-before-execute output safety |
-| 30 | strict-file-hygiene.md | strict-file-hygiene.design.md v1.5 | Prevent junk files and duplicates while deferring to required governed startup artifacts, blocking cleanup/hygiene wording from acting as deletion authority, keeping destination/runtime files outside the current source-owned install set from being treated as junk by shared-destination co-location alone, and avoiding machine-local hardcoded defaults in reusable artifacts |
-| 31 | todo-standards.md | todo-standards.design.md v2.28 | Durable TODO governance with compact active entrypoints, referenced history/done shards, phase-visible tasks, TODO God-file prevention, and God artifact repair task planning |
-| 32 | runtime-topology-control.md | runtime-topology-control.design.md v1.2 | Bounded runtime mutation posture with inspect-before-mutate discipline and mechanism-first coordination/runtime classification before topology or transport claims |
-| 33 | unified-version-control-system.md | unified-version-control-system.design.md v1.3 | UDVC-1 controller-level governance view with active runtime body-sufficiency validation |
-| 34 | tactical-strategic-programming.md | tactical-strategic-programming.design.md v1.3 | Tactical entry, strategic target, convergence path, strategic closure doctrine, anti-hardcoding tactical-boundary discipline, and explicit deferral of coding-time responsibility/decomposition quality to the maintainable code structure owner |
-| 35 | natural-professional-communication.md | natural-professional-communication.design.md v1.3 | First-class doctrine for natural professional communication, including easy-explanation register support for plain Thai answers, rejection of metaphor-heavy or management-style abstraction when direct human-readable wording would be clearer, and explicit purpose-before-detail wording for operational answers |
-| 36 | portable-implementation-and-hardcoding-control.md | portable-implementation-and-hardcoding-control.design.md v1.2 | First-class owner for portable implementation defaults, portable-by-default support/package source artifacts, public onboarding/install portability, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline |
-| 37 | zero-hallucination.md | zero-hallucination.design.md v1.6 | Verified information only, including practical evidence-seeking for material factual premises and verified factual endorsement before agreement with factual claims, while keeping fact/preference-direction/inference/hypothesis/uncertainty separation, scoped non-finding discipline, unsupported factual-endorsement risk, proof-aware uncertainty, and explicit limits on using git-state observations as disposal truth |
-| 38 | high-signal-communication.md | high-signal-communication.design.md v1.3 | Bounded supplementary high-signal filtering that trims low-value extra content and repeated wording while preserving required goal/output/gate framing, supported next-goal recommendations, roadmap recommendations, optional deep-dive offers at true completion boundaries, and other owner-required content |
-| 39 | execution-continuity-and-mode-selection.md | execution-continuity-and-mode-selection.design.md v1.18 | Execution continuity and broad-read worker gating |
-| 40 | goal-set-review-and-priority-balance.md | goal-set-review-and-priority-balance.design.md v1.1 | First-class owner for continuous goal-set review, structure-first priority balance, goal-first working frames, outcome-first goal navigation, goal/output/gate semantics, goal hierarchy, triggered goal visibility, anti-ritual boundaries, anti-fixation, and evidence-grounded next-goal recommendations |
-| 41 | technical-snapshot-communication.md | technical-snapshot-communication.design.md v1.0 | First-class owner for bounded technical snapshot wording, exact/partial/inferred separation, scoped local-fact snapshot communication, and concise diagnostic snapshot state reporting |
-| 42 | response-closing-and-action-framing.md | response-closing-and-action-framing.design.md v1.3 | First-class owner for concise end-of-response synthesis, clear action framing, recommendation-with-reason wording, alternative preservation, closed-topic summary handling, phase-backed closeout synthesis, advisory goal-qualified proposal framing, roadmap-aware completion shape, optional deep-dive offers, and supported next phase/wave/goal recommendations at true completion boundaries |
-| 43 | maintainable-code-structure-and-decomposition.md | maintainable-code-structure-and-decomposition.design.md v1.2 | First-class owner for coding-time maintainability as future changeability, responsibility boundaries by reason to change, code-smell triggers rather than verdicts, smallest useful decomposition, helper-function necessity, useful source-code comment discipline, God function/file pressure, wrong-abstraction guardrails, explicit dependency/state boundaries, behavior-preserving refactor posture, verification-strategy deferral to the development verification owner, and tactical structure-debt convergence without rigid line-count or architecture-template doctrine |
-| 44 | development-verification-and-debug-strategy.md | development-verification-and-debug-strategy.design.md v1.1 | First-class owner for proportionate coding-time verification strategy, debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout that distinguishes prepared, configured, implemented, tested, verified-in-scope, runtime/live-verified, working, fixed, and stable states |
-| 45 | audience-surface-disclosure-control.md | audience-surface-disclosure-control.design.md v1.0 | First-class owner for full direct-user/project-owner transparency plus audience-aware disclosure minimization for generated public, customer-facing, operator-facing, demo, log, release, onboarding, and externally shared artifacts |
-| 46 | governed-document-rollover-control.md | governed-document-rollover-control.design.md v1.2 | Daily-first TODO/phase rollover, history/done references, God-document routing, and automatic rollover repair planning |
-| 47 | context-load-and-document-density-control.md | context-load-and-document-density-control.design.md v1.6 | Context-load, doc density, aggregate-read gating, and delegated repair routing |
+| 1 | `accurate-communication.md` | `accurate-communication.design.md v2.22` | Evidence-calibrated status, recommendations, agreement/disagreement, memory/post-compact context, and phase closeout wording |
+| 2 | `action-safety.md` | `action-safety.design.md v1.0` | Destructive/high-impact action safety, topology control, emergency posture, and bounded retry handling |
+| 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.0` | Direct-user transparency plus audience-appropriate generated public/operator/customer disclosure |
+| 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.5` | User authority, hard-boundary precedence, fresh-directive override, and source/project ownership boundaries |
+| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.0` | Maintainable code structure, verification strategy, and tactical-to-strategic convergence |
+| 6 | `communication-register.md` | `communication-register.design.md v1.0` | Natural professional tone, signal pruning, anti-sycophancy, and proposal evaluation |
+| 7 | `document-governance.md` | `document-governance.design.md v1.0` | Repository document roles, design/changelog/patch governance, runtime body sufficiency, and UDVC-1 |
+| 8 | `document-integrity.md` | `document-integrity.design.md v1.0` | Cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline |
+| 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.0` | Verify-first factual discipline, burden thresholds, scoped non-findings, and real-vs-mock boundaries |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.0` | Discussion/execution mode, continuous execution, goal framing, and next-work boundaries |
+| 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.0` | Plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing |
+| 12 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.2` | External source verification, trust ranking, corroboration, and source-conflict handling |
+| 13 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v1.7` | Scoped memory governance, compact memory index behavior, path scope, and optional recall boundaries |
+| 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.0` | Startup artifact posture, phase execution, TODO durability, and live task tracking |
+| 15 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.2` | Portable defaults, late-bound environment resolution, and source/destination notation discipline |
+| 16 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.0` | Wrapper normalization, refusal classification, minimization, and recovery paths |
+| 17 | `safe-io.md` | `safe-io.design.md v1.0` | Bounded file reading and terminal output with parent-index-first and worker-first behavior |
+| 18 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.0` | Leader-context protection, worker routing, custom-agent selection, and document-density control |
 
 ### 3.2 Category View
 
-#### Accuracy & Truth
+#### Communication, Explanation, and Disclosure
 
-- Rules:
-  - `accurate-communication`, `technical-snapshot-communication`, `evidence-grounded-burden-of-proof`
-  - `external-verification-and-source-trust`, `zero-hallucination`, `anti-sycophancy`
-  - `no-variable-guessing`, `memory-governance-and-session-boundary`
-- Purpose: evidence-seeking, proof-aware, verified, scope-aware, and memory-aware output.
-- Communication posture: honest, evidence-calibrated agreement/disagreement and snapshot-aware reporting.
+- Rules: `accurate-communication`, `communication-register`, `explanation-and-presentation`, `audience-surface-disclosure-control`.
+- Purpose: keep user-facing communication clear, evidence-calibrated, naturally professional, readable, and audience-safe.
 
-#### Portable Implementation
+#### Evidence, Authority, and Safety
 
-- Rules: `portable-implementation-and-hardcoding-control`, `no-variable-guessing`, `project-documentation-standards`, `tactical-strategic-programming`.
-- Purpose: portable defaults, public onboarding portability, late-bound environment resolution, and anti-hardcoding discipline.
+- Rules: `evidence-discipline`, `authority-and-scope`, `refusal-and-recovery`, `action-safety`.
+- Purpose: separate verified fact from inference, preserve user authority inside hard boundaries, recover safely from blocked requests, and gate destructive or high-impact action.
 
-#### Presentation & Readability
+#### Execution, Coding, and Worker Control
 
-- Rules:
-  - `answer-presentation`, `explanation-quality`, `response-closing-and-action-framing`
-  - `flow-diagram-no-frame`, `natural-professional-communication`, `high-signal-communication`
-  - `audience-surface-disclosure-control`
-- Purpose: readable, orderly, scannable, naturally professional, well-closed, audience-aware, and higher-signal output.
+- Rules: `execution-and-goal-frame`, `coding-discipline`, `worker-routing-and-context`, `safe-io`.
+- Purpose: keep active work goal-aligned, maintainable, proportionately verified, context-safe, and delegated only when worker lanes add value.
 
-#### Output Safety
+#### Governance, Memory, and Portability
 
-- Rules: `context-load-and-document-density-control`, `safe-file-reading`, `safe-terminal-output`, `flow-diagram-no-frame`, `strict-file-hygiene`.
-- Purpose: context-load lifecycle control, output flood prevention, safe text presentation, and file hygiene.
-
-#### Startup Governance
-
-- Rules: `artifact-initiation-control`, `governed-document-rollover-control`, `project-documentation-standards`, `todo-standards`, `phase-implementation`.
-- Purpose: resolve artifact posture before meaningful governed work drifts.
-- Active-entrypoint posture: keep large active entrypoints compact with referenced history/done shards.
-
-#### User Control
-
-- Rules:
-  - `authority-and-scope`, `custom-agent-selection-priority`, `emergency-protocol`
-  - `functional-intent-verification`, `operational-failure-handling`, `refusal-classification`
-  - `recovery-contract`, `runtime-topology-control`, `execution-continuity-and-mode-selection`
-- Purpose: preserve user authority, correct mode selection, and safe operational posture.
-- Scope guard: re-check intent before project exploration when technical evidence could be misread.
-- Specialist guard: prefer clear best-fit custom specialists after routing selects specialist handling.
-
-#### Execution Strategy
-
-- Rules:
-  - `native-worker-agent-routing-and-context-control`, `context-load-and-document-density-control`
-  - `goal-set-review-and-priority-balance`, `tactical-strategic-programming`
-  - `maintainable-code-structure-and-decomposition`, `development-verification-and-debug-strategy`
-- Purpose: route broad or high-output work through intent-first worker lanes.
-- Goal posture: protect leader context, keep the full goal set visible, and preserve structure-first balance.
-- Coding posture: keep code maintainable and require proportionate verification before strong completion claims.
-
-#### Adversarial Workflow
-
-- Rules: `refusal-minimization`, `dan-safe-normalization`.
-- Purpose: reduce false refusals in authorized adversarial/security workflows.
-
-#### Quality & Governance
-
-- Rules:
-  - `document-consistency`, `document-changelog-control`, `document-design-control`, `document-patch-control`
-  - `governed-document-rollover-control`, `anti-mockup`, `unified-version-control-system`
-- Purpose: documentation determinism, reference-role clarity, active entrypoint rollover, patch semantics, and governance quality.
+- Rules: `document-governance`, `document-integrity`, `phase-todo-artifact`, `memory-governance-and-session-boundary`, `portable-implementation-and-hardcoding-control`, `external-verification-and-source-trust`.
+- Purpose: keep repository docs governed, cross-references consistent, startup/phase/TODO surfaces aligned, memory scoped, shared artifacts portable, and external facts source-ranked.
 
 ---
 
@@ -284,13 +216,13 @@ For governed updates:
 
 ### 4.3 Startup Artifact Contract
 The active startup contract is:
-- `artifact-initiation-control.md` is the semantic owner for startup artifact posture
+- `phase-todo-artifact.md` is the semantic owner for startup artifact posture
 - meaningful governed work must resolve artifact posture before drift
 - execution continuity does not bypass that startup gate while required artifact posture is still unresolved
 - required artifacts may be reused, created now, asked about now, or marked not required
 - required design/changelog/TODO/phase/patch surfaces remain governed companions when the checked work shape still requires them, even if live execution surfaces are also active
 - when governed design is sufficiently clear and staged execution is warranted, phase posture resolves to `use existing` or `create now` instead of lingering as implicit planning
-- phase `create now` delegates identity selection to `phase-implementation.md`, where creation may resolve to current-phase update, existing-family subphase, new major phase, or ask-now lineage handling
+- phase `create now` delegates identity selection to `phase-todo-artifact.md`, where creation may resolve to current-phase update, existing-family subphase, new major phase, or ask-now lineage handling
 - when the checked project/workstream is already clearly phase-shaped, live task creation should align to that staged structure and visibly expose active or implied phase context instead of defaulting to detached standalone tasks
 - startup establishment is distinct from later content synchronization order
 

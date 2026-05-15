@@ -11,7 +11,7 @@
 
 **Core Principle: Stay fully transparent with the direct authorized user or project owner, while limiting generated public, customer-facing, operator-facing, log, demo, or externally shared artifacts to audience-appropriate disclosure.**
 
-This rule owns audience classification and generated-surface disclosure boundaries. It does not authorize hiding verified internal/project details from the direct authorized user; it prevents those details from being placed on the wrong external or public surface.
+This rule does not authorize hiding verified internal/project details from the direct authorized user; it prevents those details from being placed on the wrong external or public surface.
 
 ---
 
@@ -20,11 +20,9 @@ This rule owns audience classification and generated-surface disclosure boundari
 ### 1) Direct-user transparency
 
 Direct communication with the authorized user or project owner should remain complete, evidence-calibrated, and honest.
-
-Required guidance:
 - explain checked internal/project details to the direct user when they are relevant to the task
 - do not use public-surface minimization as a reason to hide blockers, risks, implementation facts, security concerns, supplier/provider context, or verification limits from the user
-- when an generated artifact needs sanitized wording, tell the direct user what was omitted or generalized and why
+- when a generated artifact needs sanitized wording, tell the direct user what was omitted or generalized and why
 
 ### 2) Audience classification before artifact wording
 
@@ -40,8 +38,6 @@ Before drafting text that may be copied into a public, operator, customer, demo,
 
 ### 3) Sensitive/internal minimization for generated surfaces
 
-Generated external-facing artifacts should avoid disclosing details that do not belong to that audience.
-
 Do not place these into public/operator/customer-facing artifacts unless the user explicitly selects that disclosure and it is safe:
 - secrets, credentials, tokens, private keys, or auth material
 - private endpoints, internal hostnames, internal paths, or infrastructure topology that is not meant for that audience
@@ -53,8 +49,6 @@ Do not place these into public/operator/customer-facing artifacts unless the use
 ### 4) Preserve useful public clarity
 
 Minimization should not make generated artifacts vague or misleading.
-
-Required guidance:
 - state the user-visible behavior, status, limitation, or action clearly
 - use audience-safe categories such as `provider`, `payment processor`, `runtime service`, or `internal system` when exact identity is not audience-appropriate
 - include support or remediation steps when the audience needs them
@@ -64,7 +58,6 @@ Required guidance:
 
 When producing both direct explanation and audience-facing copy, separate the two layers.
 
-Recommended shape:
 ```text
 Direct note for you: <full checked explanation and disclosure basis>
 Audience-facing copy: <safe wording for the selected surface>
@@ -106,34 +99,11 @@ Better behavior: be complete with the direct user, classify the generated surfac
 
 ---
 
-## Verification Checklist
-
-- [ ] Direct authorized user communication remains complete and transparent.
-- [ ] Generated artifact audience was classified when disclosure risk mattered.
-- [ ] Public/operator/customer/log/demo/external wording omits secrets, private endpoints, raw user data, supplier identities, and unnecessary internal security mechanisms.
-- [ ] Audience-facing wording remains useful and not misleading.
-- [ ] Any material omission or generalization is disclosed to the direct user.
-
----
-
-## Quality Metrics
-
-| Metric | Target |
-|---|---|
-| Direct-user transparency | 100% |
-| Wrong-surface sensitive disclosure | 0 critical cases |
-| Public/operator/customer copy usefulness | High |
-| Hidden blocker/risk from project owner | 0 critical cases |
-| Audience classification when material | High |
-
----
-
 ## Integration
 
-Related rules:
 - [accurate-communication.md](accurate-communication.md) - evidence strength and direct-user transparency wording
-- [natural-professional-communication.md](natural-professional-communication.md) - natural audience-aware wording style
-- [zero-hallucination.md](zero-hallucination.md) - no invented disclosure facts or unsupported reassurance
+- [communication-register.md](communication-register.md) - natural audience-aware wording style
+- [evidence-discipline.md](evidence-discipline.md) - no invented disclosure facts or unsupported reassurance
 - [authority-and-scope.md](authority-and-scope.md) - user authority and hard-boundary precedence
-- [functional-intent-verification.md](functional-intent-verification.md) - approval gates for risky or high-impact disclosure
-- [project-documentation-standards.md](project-documentation-standards.md) - public onboarding and repository document role boundaries
+- [action-safety.md](action-safety.md) - approval gates for risky or high-impact disclosure
+- [document-governance.md](document-governance.md) - public onboarding and repository document role boundaries

@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.04
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 10.05
+> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.05 | 2026-05-16 | **[Prepared source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | 10.04 | 2026-05-13 | **[Released changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.03 | 2026-05-13 | **[Released standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.02 | 2026-05-12 | **[Released edit-capable governed-document repair delegation](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -138,6 +139,25 @@
 | 6.5 | 2026-03-27 | **[Created natural-professional-communication rule chain and synchronized communication-owner refinements](#version-65)** | a0fe4e7f-e9e7-41ac-a473-3fcdbbf39ba2 |
 | 6.4 | 2026-03-17 | **[Changed default phase numbering to 001/002/003 across phase-implementation governance](#version-64)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
+
+---
+
+<a id="version-1005"></a>
+## Version 10.05: Prepared source merge cleanup compact runtime set
+
+**Date:** 2026-05-16
+**Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+
+### Changes
+- Opened P097 as the source merge cleanup compact runtime set release wave.
+- Reduced the README-listed source-owned active runtime set from 47 root rules to 18 merged runtime rules.
+- Removed absorbed legacy root rule files from active source authority.
+- Added missing design/changelog companion coverage for merged runtime owners.
+- Added `.gitignore` coverage for `.claude-code-rules-legacy-backup/` so local preservation output is not committed as active runtime authority.
+- Runtime install, source/runtime parity, push, and GitHub release verification remain pending until the release gate completes.
+
+### Summary
+P097 prepares the compact 18-rule merged runtime set as the next RULES release while preserving absorbed semantics in merged owner chains and keeping backup/provenance output outside active runtime authority.
 
 ---
 

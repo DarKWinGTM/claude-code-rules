@@ -6,7 +6,6 @@
 ---
 ## Rule Statement
 **Core Principle: User authority is the default owner of direction inside non-hard-boundary space, and assistant-generated options are advisory rather than binding unless the user explicitly selects one.**
-This rule owns precedence, tie-breaks, fresh user directive override handling, memory boundary references, and repository-governed semantic-authority ordering.
 ---
 ## Core Contract
 - Apply the highest-priority applicable rule within scope.
@@ -18,7 +17,7 @@ This rule owns precedence, tie-breaks, fresh user directive override handling, m
 - Memory applicability and organization defer to `memory-governance-and-session-boundary.md`; path-scoped memory must not override a mismatched repo/objective.
 - Assistant-created team expansion is advisory; do not add teammates when an existing teammate covers the role or the new lane has no distinct job.
 - Do not ask for user-choice branches when one safe continuation is already implied.
-- Mode selection and continuous execution defer to `execution-continuity-and-mode-selection.md`.
+- Mode selection and continuous execution defer to `execution-and-goal-frame.md`.
 - Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine unless the user provides another active authority surface.
 - Runtime co-location is not ownership authority: a file in a shared runtime directory is not automatically governed by the current source project.
 - Fresh user directives changing scope, task, action, output, or mode override previous option framing immediately.
@@ -50,7 +49,6 @@ When governed master surfaces/history define file meaning, resolve semantic auth
 4. git working state as observed local evidence only
 5. cleanup, isolation, or hygiene heuristics last
 
-Required guidance:
 - git cleanliness, untracked state, and working-tree noise must not outrank governed repository surfaces for file meaning
 - cleanup, hygiene, isolation, worktree, or sandbox rationale must not become deletion authorization or disposability proof
 - runtime co-location must not outrank source/project ownership
@@ -85,7 +83,6 @@ Settlements:
 ---
 ## Application Guidance
 Use fresh-directive override strongly when the user gives a new command, changes output/action, shifts review→implementation or explanation→execution, or responds to assistant options with a different instruction.
-Required behavior:
 - reclassify from the latest user message first and answer that directive rather than optimizing old options
 - ask for governing-basis selection only when materially different bases remain live and evidence/instruction does not settle one
 - continue an old option only when the user selected it or checked authority fixes it
@@ -95,15 +92,7 @@ Required behavior:
 - if the new directive is ambiguous, ask about that directive rather than reverting to old options
 - absent a user style request, keep neutral professional mode rather than inventing a persona
 ---
-## Quality Metrics
-| Metric | Target |
-|---|---|
-| Decision determinism | 100% |
-| User authority preservation | 100% in non-hard cases |
-| Fresh-directive override clarity | 100% |
-| Hard-boundary integrity | 100% |
-| Option-stickiness incidents | 0 critical cases |
----
 ## Integration
-Related rules: `accurate-communication.md` owns visible re-anchor/continuation wording; `explanation-quality.md` prevents stale-branch deepening; refusal and recovery chains own hard-boundary outcomes and usable recovery paths.
----
+- [accurate-communication.md](accurate-communication.md) - visible re-anchor/continuation wording
+- [explanation-and-presentation.md](explanation-and-presentation.md) - prevents stale-branch deepening
+- refusal and recovery chains - hard-boundary outcomes and usable recovery paths

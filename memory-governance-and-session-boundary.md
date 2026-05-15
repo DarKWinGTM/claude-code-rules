@@ -6,7 +6,6 @@
 ---
 ## Rule Statement
 **Core Principle: Use memory as scoped reusable context rather than active authority, keep root `MEMORY.md` as a compact but still meaning-visible active index, compress repeated scope paths with one declared `Memory base` per path scope, and govern applicability by path scope first while treating session IDs as provenance only.**
-This rule owns memory role boundaries, taxonomy, root index behavior, path matching, visible root-index compaction, Session-Provenance, `SCOPE.md`, optional recall, and archive lifecycle.
 ---
 ## Core Contract
 - **Memory-Is-Context:** memory may orient continuity, but it must not outrank live user instruction, current checked repo/project evidence, or a RULES-owned fix the user explicitly requests.
@@ -104,18 +103,6 @@ Recommended target shape:
 
 This defines the target model; it does not require migrating the live tree in the same wave.
 ---
-## Verification Checklist
-- [ ] root `MEMORY.md` remains active index, not content dump or link-only router
-- [ ] active root entries keep one-line hooks visible enough for context use
-- [ ] path-scoped sections use one `Scope` and one `Memory base` when repeated paths would bloat the index
-- [ ] entries under a `Memory base` use clear relative paths, not fake markdown aliases
-- [ ] path-scoped memory uses Path-Primary applicability
-- [ ] session IDs are provenance only
-- [ ] ancestor-path bleed is avoided
-- [ ] archived entries are inactive and absent from active index
-- [ ] exact current-state claims from memory are rechecked when material
-- [ ] optional recall does not outrank checked task/phase/design/implementation evidence
----
 ## Integration
-Related rules: `authority-and-scope.md` keeps memory below live authority; `accurate-communication.md` owns memory-derived wording; `evidence-grounded-burden-of-proof.md` owns evidence thresholds; `project-documentation-standards.md` owns repo document-role governance; `safe-file-reading.md` and `governed-document-rollover-control.md` provide the bounded-read and active-entrypoint maintenance posture when root indexes grow too large.
+Related rules: `authority-and-scope.md` keeps memory below live authority; `accurate-communication.md` owns memory-derived wording; `evidence-discipline.md` owns evidence thresholds; `document-governance.md` owns repo document-role governance; `safe-io.md` and `document-integrity.md` provide the bounded-read and active-entrypoint maintenance posture when root indexes grow too large.
 ---

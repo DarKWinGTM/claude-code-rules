@@ -6,7 +6,7 @@
 ---
 ## Rule Statement
 **Core Principle: Keep shared implementation artifacts and public onboarding/install guidance portable by default, bind environment-specific values late, and treat exact local values as scoped observations rather than reusable defaults.**
-This rule owns environment-binding discipline for shared artifacts and public install/onboarding examples: paths, install locations, hostnames, ports, and other machine- or environment-specific values.
+This rule owns environment-binding discipline for shared artifacts and install/onboarding examples: paths, install locations, hostnames, ports, and other machine/environment-specific values.
 ---
 ## Core Principles
 - **Portable core:** shared rules, design docs, templates, reusable code, support/package content, and generalized examples describe portable behavior first; workstation layout is one observed environment, not the system model.
@@ -34,12 +34,12 @@ Exact environment-specific values are acceptable when a tool requires the exact 
 In those cases, keep scope explicit and do not silently upgrade the value into a portable default. Exact local values may be used for current tool execution or local verification notes, but shared artifacts should still prefer placeholders, config, or late-bound resolution unless the artifact itself is deliberately machine-scoped.
 ---
 ## Trigger and Anti-Pattern Model
-Trigger this rule when shared artifacts, reusable templates/examples, support/package source, public onboarding/install examples, or executable reusable automation contain machine-local paths, hardcoded hosts/ports, environment defaults, internal umbrella roots, or mixed placeholder/env notation.
+Trigger when shared artifacts, reusable templates/examples, support/package source, public onboarding/install examples, or executable reusable automation contain machine-local paths, hardcoded hosts/ports, environment defaults, internal umbrella roots, or mixed placeholder/env notation.
 Required response:
 - replace shared machine-local values with placeholders, env/config, adapters, launchers, or repo-root-relative source guidance unless explicitly machine-scoped
 - move environment defaults in shared logic to config/env/adapter unless the value is true domain data
 - keep checked local values scoped as local facts and normalize mixed notation to the canonical model
-Forbidden drift includes developer-machine-as-default, observed-value-becomes-contract, home-directory-as-architecture, temp-dir-as-authority, localhost-default-for-shared-system, single-machine install assumption, internal umbrella root as public default, support-source-hardcodes-workstation-path, source/destination blur, mixed resolution models, and silent machine-scoped examples.
+Forbidden drift: developer-machine-as-default, observed-value-becomes-contract, home-directory-as-architecture, temp-dir-as-authority, localhost-default-for-shared-system, single-machine install assumption, internal umbrella root as public default, support-source-hardcodes-workstation-path, source/destination blur, mixed resolution models, silent machine-scoped examples.
 
 Common corrections:
 | Drift | Better behavior |
@@ -58,21 +58,12 @@ Common corrections:
 - [ ] The artifact would still work after moving machines, users, or workspace locations, and notation stays consistent.
 - [ ] Public examples do not teach bad defaults by presenting local-only paths, hosts, or ports as reusable setup guidance.
 ---
-## Quality Metrics
-| Metric | Target |
-|---|---|
-| Shared-artifact and public onboarding portability | High |
-| Hardcoded environment assumptions or workstation defaults in shared artifacts | 0 critical cases |
-| Local fact vs portable contract separation | High |
-| Source-vs-destination notation and canonical model consistency | High |
-| Machine-scoped exception labeling | High |
----
 ## Integration
 Related rules:
-- [no-variable-guessing.md](no-variable-guessing.md) - local values still require checked-scope verification
+- [evidence-discipline.md](evidence-discipline.md) - local values require checked-scope verification
 - [accurate-communication.md](accurate-communication.md) - exact local values need correct evidence strength and scope wording
-- [project-documentation-standards.md](project-documentation-standards.md) - shared docs and onboarding/install guidance remain portable
-- [document-consistency.md](document-consistency.md) - source-side and destination/runtime references stay distinct
-- [strict-file-hygiene.md](strict-file-hygiene.md) - reusable artifacts should not accumulate machine-local junk assumptions
-- [tactical-strategic-programming.md](tactical-strategic-programming.md) - tactical convenience must not become hidden long-term authority
+- [document-governance.md](document-governance.md) - shared docs and onboarding/install guidance stay portable
+- [document-integrity.md](document-integrity.md) - source-side and destination/runtime references stay distinct
+- [document-integrity.md](document-integrity.md) - reusable artifacts should not accumulate machine-local assumptions
+- [coding-discipline.md](coding-discipline.md) - tactical convenience must not become hidden long-term authority
 ---

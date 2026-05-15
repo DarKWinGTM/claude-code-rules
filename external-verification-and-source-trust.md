@@ -6,7 +6,6 @@
 ---
 ## Rule Statement
 **Core Principle: When external factual claims materially affect analysis, design, accuracy, or recommendations, verify proactively, rank source trust explicitly, compare sources when needed, and report conflicts honestly.**
-This rule owns WebSearch/WebFetch-backed external verification triggers, source trust, corroboration, source-conflict handling, research-lane source-trust expectations, and external evidence as proof-aware grounding rather than automatic decision lock. It does not replace native worker routing, which decides when broad research should be delegated.
 ---
 ## Core Contract
 ### Proactive verification
@@ -15,7 +14,7 @@ When a cheap external check resolves a material factual question:
 - prefer checking over unsupported reassurance or passive hesitation
 - skip external checks for trivial, conceptual, speculative, or local-source-of-truth questions
 ### Orchestrated external research
-When external research is broad, comparison-heavy, source-volume-heavy, or intended to improve a design/recommendation, use `native-worker-agent-routing-and-context-control.md` to decide whether one or more research lanes should gather evidence before the leader absorbs raw sources.
+When external research is broad, comparison-heavy, source-volume-heavy, or intended to improve a design/recommendation, use `worker-routing-and-context.md` to decide whether one or more research lanes should gather evidence before the leader absorbs raw sources.
 Required guidance:
 - research lane assignments should include the factual question, decision surface, preferred source tiers, and conflict-reporting expectations
 - research lane handoffs should report checked topic/query families, source authority/freshness/specificity, downgraded weak sources, conflicts, and what evidence the leader should verify directly
@@ -71,24 +70,12 @@ When comparing:
 ## Anti-Patterns
 Avoid vague non-checking when cheap verification matters, unchecked external assumptions in recommendations, weak-source trust, one-source high-impact conclusions, silent source-conflict resolution, broken-source credibility, raw research-lane source dumps without trust/conflict analysis, leader over-absorption of broad external research that should have been lane-filtered, and treating ordinary external evidence as the only valid design path.
 ---
-## Quality Metrics
-| Metric | Target |
-|---|---|
-| Proactive external verification on material current facts | High |
-| Proof-aware external grounding for recommendations/design | High |
-| Source reliability ranking clarity | High |
-| Multi-source comparison on high-impact/ambiguous claims | High |
-| Silent source-conflict resolution | 0 critical cases |
-| Over-trusting weak secondary sources | 0 critical cases |
-| Honest bounded fallback | High |
-| Research-lane source-trust handoff quality | High when broad research is delegated |
----
 ## Integration
 Related rules:
-- [zero-hallucination.md](zero-hallucination.md) - factual discipline; deeper external source trust defers here
-- [evidence-grounded-burden-of-proof.md](evidence-grounded-burden-of-proof.md) - consumes source strength into claim thresholds
+- [evidence-discipline.md](evidence-discipline.md) - factual discipline and source priority
+- [evidence-discipline.md](evidence-discipline.md) - source strength into claim thresholds
 - [accurate-communication.md](accurate-communication.md) - source conflict and evidence-strength wording
-- [anti-sycophancy.md](anti-sycophancy.md) - disagreement posture when stronger external evidence conflicts with a claim
-- [operational-failure-handling.md](operational-failure-handling.md) - retry/stop/escalation after web failures
-- [native-worker-agent-routing-and-context-control.md](native-worker-agent-routing-and-context-control.md) - decides when broad external research should be decomposed into standalone worker lanes before leader raw source absorption
+- [communication-register.md](communication-register.md) - disagreement when stronger evidence conflicts
+- [action-safety.md](action-safety.md) - retry/stop after web failures
+- [worker-routing-and-context.md](worker-routing-and-context.md) - worker routing for broad research
 ---

@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P096-01 released for v10.04 changelog chain version detail shards
+> **Status:** P097 active for v10.05 source merge cleanup compact runtime set
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently opened.
+- **P097:** [phase-097-source-merge-cleanup-compact-runtime-set.md](phase-097-source-merge-cleanup-compact-runtime-set.md)
+  - Goal: release the compact 18-rule merged runtime set.
+  - Output: source docs sync, merged-rule companion coverage, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.05`.
+  - Scope: legacy backup output remains local preservation, not active runtime authority.
+  - Gate: source/runtime parity and body sufficiency pass for 18/18 active files, docs align, and release verification passes.
 
 ### Recently Completed
 
@@ -99,6 +103,24 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Recent Phase Detail
+
+### P097 — Source Merge Cleanup Compact Runtime Set
+
+- **Status:** Active / release preparation
+- **Design References:**
+  - [../design/design.md](../design/design.md) v10.05
+  - merged active runtime rule companion designs under [../design/](../design/)
+- **Patch References:** [../patch/source-merge-cleanup-compact-runtime-set.patch.md](../patch/source-merge-cleanup-compact-runtime-set.patch.md)
+- **Expected Output:**
+  - Active source-owned runtime install set is the compact 18-rule merged set.
+  - Absorbed legacy root rules are removed from active source authority.
+  - Merged runtime owners have design/changelog companion coverage.
+  - Runtime install copies only the 18 README-listed active root rules.
+- **Completion Gate:**
+  - README Bash and PowerShell install arrays define the same 18 active runtime files.
+  - Source/runtime parity and active runtime body sufficiency pass for 18/18 files.
+  - Backup/provenance output is ignored or otherwise kept outside active runtime authority.
+  - `master` is pushed and GitHub release `v10.05` is verified.
 
 ### P096-01 — Changelog Chain Version Detail Shards
 
