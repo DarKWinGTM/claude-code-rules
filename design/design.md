@@ -80,12 +80,15 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P097 is the active v10.05 source merge cleanup compact runtime set release-preparation wave.
+- P097 is the completed v10.05 source merge cleanup compact runtime set release wave.
   - It reduces the active source-owned runtime install set from 47 root rule files to 18 merged body-sufficient runtime rules.
   - It removes absorbed legacy root rules from active source authority while preserving their execution-relevant semantics inside merged owner rules.
   - It adds missing design/changelog companion coverage for merged runtime owners.
   - It keeps `.claude-code-rules-legacy-backup/` outside active runtime authority and ignores it as local preservation output.
-  - Runtime install, source/runtime parity, push, and GitHub release verification remain pending until the P097 release gate completes.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, metadata-link validation, consistency sweep, push, and GitHub release `v10.05` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+  - Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+  - Published at `2026-05-15T21:39:33Z`.
 - P096-01 is the completed v10.04 changelog chain version detail shard wave.
   - It keeps the source-owned active runtime set at 47.
   - It advances `document-changelog-control` to v4.12, `project-documentation-standards` to v2.41, `document-consistency` to v1.15, `safe-file-reading` to v1.8, and `context-load-and-document-density-control` to v1.6.

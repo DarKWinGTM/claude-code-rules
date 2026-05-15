@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P097
-> **Status:** Active / Release Preparation
+> **Status:** Released / Completed
 > **Target Release:** v10.05
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.05
@@ -44,9 +44,9 @@ P097 turns that source-local cleanup into a governed release by synchronizing me
 - [x] Confirm current cleanup scope targets the compact 18-rule merged set.
 - [x] Repair merged rule metadata and missing design/changelog companions.
 - [x] Sync README, master design, master changelog, TODO, phase summary, phase, and patch records to P097 pre-release state.
-- [ ] Validate README install arrays, metadata links, source body sufficiency, runtime install, and source/runtime parity.
-- [ ] Commit source release, push `master`, create GitHub release `v10.05`, and verify release state.
-- [ ] Finalize P097 closeout records after release verification passes.
+- [x] Validate README install arrays, metadata links, source body sufficiency, runtime install, and source/runtime parity.
+- [x] Commit source release, push `master`, create GitHub release `v10.05`, and verify release state.
+- [x] Finalize P097 closeout records after release verification passes.
 
 ---
 
@@ -73,13 +73,22 @@ P097 turns that source-local cleanup into a governed release by synchronizing me
 
 ## Current Status
 
-P097 is active in release preparation.
+P097 is released and closed for `v10.05`.
 
-Completed so far:
+Completed:
 - preflight selected `v10.05 / P097` because `v10.05` release and tag were not found
 - active runtime target is the compact 18-rule merged set
 - merged-rule metadata and missing companion links were repaired
-- pre-release governance surfaces are being synchronized
+- README, master design, master changelog, TODO, phase, and patch records are synchronized to released `v10.05 / P097` state
+- runtime install copied the 18 README-listed active runtime rules
+- 18/18 source/runtime parity and source/destination body sufficiency passed
+- metadata-link validation passed for 18/18 active runtime files
+- consistency sweep passed for P097 surfaces
+- `master` push and GitHub release `v10.05` verification passed
 
-Pending:
-- validation, runtime install, commit, push, GitHub release, and closeout verification
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+- Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+- Published at `2026-05-15T21:39:33Z`.
+
+No pending P097 release gates remain in checked scope.

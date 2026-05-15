@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P097 active for v10.05 source merge cleanup compact runtime set
+> **Status:** P097 released for v10.05 source merge cleanup compact runtime set
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- None currently opened.
+
+### Recently Completed
+
 - **P097:** [phase-097-source-merge-cleanup-compact-runtime-set.md](phase-097-source-merge-cleanup-compact-runtime-set.md)
   - Goal: release the compact 18-rule merged runtime set.
   - Output: source docs sync, merged-rule companion coverage, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.05`.
   - Scope: legacy backup output remains local preservation, not active runtime authority.
-  - Gate: source/runtime parity and body sufficiency pass for 18/18 active files, docs align, and release verification passes.
-
-### Recently Completed
+  - Gate: source/runtime parity and body sufficiency passed for 18/18 active files, docs aligned, and release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+  - Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+  - Published at `2026-05-15T21:39:33Z`.
 
 - **P096-01:** [phase-096-01-changelog-chain-version-detail-shards.md](phase-096-01-changelog-chain-version-detail-shards.md)
   - Goal: make active changelog parent files compact current-version authority and move detailed version entries into chain-scoped shards.
@@ -106,7 +111,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P097 — Source Merge Cleanup Compact Runtime Set
 
-- **Status:** Active / release preparation
+- **Status:** Released / completed
 - **Design References:**
   - [../design/design.md](../design/design.md) v10.05
   - merged active runtime rule companion designs under [../design/](../design/)
@@ -121,6 +126,9 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Source/runtime parity and active runtime body sufficiency pass for 18/18 files.
   - Backup/provenance output is ignored or otherwise kept outside active runtime authority.
   - `master` is pushed and GitHub release `v10.05` is verified.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+  - Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+  - Published at `2026-05-15T21:39:33Z`.
 
 ### P096-01 — Changelog Chain Version Detail Shards
 

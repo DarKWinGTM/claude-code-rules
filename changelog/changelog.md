@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.05 | 2026-05-16 | **[Prepared source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
+| 10.05 | 2026-05-16 | **[Released source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | 10.04 | 2026-05-13 | **[Released changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.03 | 2026-05-13 | **[Released standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.02 | 2026-05-12 | **[Released edit-capable governed-document repair delegation](#version-1002)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -143,21 +143,24 @@
 ---
 
 <a id="version-1005"></a>
-## Version 10.05: Prepared source merge cleanup compact runtime set
+## Version 10.05: Released source merge cleanup compact runtime set
 
 **Date:** 2026-05-16
 **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
 
 ### Changes
-- Opened P097 as the source merge cleanup compact runtime set release wave.
+- Released P097 as the source merge cleanup compact runtime set release wave.
 - Reduced the README-listed source-owned active runtime set from 47 root rules to 18 merged runtime rules.
 - Removed absorbed legacy root rule files from active source authority.
 - Added missing design/changelog companion coverage for merged runtime owners.
 - Added `.gitignore` coverage for `.claude-code-rules-legacy-backup/` so local preservation output is not committed as active runtime authority.
-- Runtime install, source/runtime parity, push, and GitHub release verification remain pending until the release gate completes.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, metadata-link validation, consistency sweep, push, and GitHub release `v10.05` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+- Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+- Published at `2026-05-15T21:39:33Z`.
 
 ### Summary
-P097 prepares the compact 18-rule merged runtime set as the next RULES release while preserving absorbed semantics in merged owner chains and keeping backup/provenance output outside active runtime authority.
+P097 releases the compact 18-rule merged runtime set while preserving absorbed semantics in merged owner chains and keeping backup/provenance output outside active runtime authority.
 
 ---
 

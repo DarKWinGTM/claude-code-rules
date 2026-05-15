@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
-> **Status:** Active / Release Preparation
+> **Status:** Released / Completed
 > **Target Design:** [design/design.md](../design/design.md) v10.05
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -64,14 +64,30 @@ The release risk is not only file count reduction; the risk is broken governance
 
 ## Verification
 
-Required checks before release:
+Verified checks for release:
 - README Bash and PowerShell install arrays contain exactly the same 18 active runtime files.
 - All 18 active source runtime files exist and have substantive bodies.
 - All 18 active runtime files have resolvable design and changelog metadata links.
 - Runtime install copies only README-listed active root runtime rules.
 - Source/runtime parity and source/destination body sufficiency pass for 18/18 files.
 - Git diff has no whitespace errors.
-- GitHub release `v10.05` is created and verified before closeout wording claims release completion.
+- GitHub release `v10.05` was created and verified before closeout wording claimed release completion.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+- Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+- Published at `2026-05-15T21:39:33Z`.
+
+---
+
+## Implementation Status
+
+P097 is released and closed for `v10.05`.
+
+Validation, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, metadata-link validation, consistency sweep, push, and GitHub release verification passed.
+
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+- Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+- Published at `2026-05-15T21:39:33Z`.
 
 ---
 

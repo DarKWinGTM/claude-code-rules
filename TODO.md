@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-16
-> **Current Release:** v10.05 / P097 source merge cleanup compact runtime set (pre-release)
+> **Current Release:** v10.05 / P097 source merge cleanup compact runtime set (released)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -9,6 +9,9 @@
 
 ## ✅ Completed
 
+- [x] P097 / v10.05 source merge cleanup compact runtime set was completed, installed, pushed, and released.
+  - Verified: 18/18 parity/body sufficiency, metadata-link validation, consistency sweep, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
 - [x] P085-01 / v9.91 status, documentation, memory, mechanism, and audience-surface refinement was completed, installed, pushed, and released.
 - [x] Pre-rollover `TODO.md` content was preserved at [todo/history/2026-05-08-pre-rollover-TODO.md](todo/history/2026-05-08-pre-rollover-TODO.md) before P087-01 compaction.
 - [x] P087-01 / v9.92 daily-first rollover and history-sharding release was completed, installed, pushed, and released with 46/46 source/runtime parity and body sufficiency passing.
@@ -34,9 +37,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- [ ] P097 / v10.05 source merge cleanup compact runtime set is in release preparation.
-  - Goal: release the compact 18-rule merged runtime set with governed metadata, design/changelog companion coverage, runtime install, parity, push, and GitHub release verification.
-  - Gate: 18/18 source/runtime parity and body sufficiency pass, source docs align to P097/v10.05, backup output remains non-runtime, and release verification passes.
+No active governed release is currently opened.
 
 ### Deferred / Not Selected
 
@@ -58,7 +59,8 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
-| 2026-05-16 | Opened P097 / v10.05 source merge cleanup compact runtime set release preparation. |
+| 2026-05-16 | Finalized P097 / v10.05 closeout records after verified push and GitHub release. |
+| 2026-05-16 | Opened and released P097 / v10.05 source merge cleanup compact runtime set. |
 | 2026-05-14 | Finalized P096-01 / v10.04 closeout records after verified push and GitHub release. |
 | 2026-05-13 | Released P096-01 / v10.04 changelog chain version detail shards; tag and target commit point to `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`; published at `2026-05-13T16:53:38Z`. |
 | 2026-05-13 | Synced P096-01 owner chains and master docs before release closeout. |

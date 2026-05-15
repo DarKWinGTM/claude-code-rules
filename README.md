@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.05</b><br><sub>P097 Release Prep</sub>
+  <b>v10.05</b><br><sub>P097 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Validation pending</sub>
+  <b>Released</b><br><sub>GitHub verified</sub>
 </td>
 <td align="center" width="200">
   <b>Merged runtime</b><br><sub>Compact install set</sub>
@@ -535,11 +535,14 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P097 source merge cleanup is prepared for v10.05.
+- P097 source merge cleanup is released for v10.05.
   - It makes the compact 18-rule merged runtime set the source-owned install target.
   - It adds missing merged-rule design/changelog companion coverage.
   - It treats `.claude-code-rules-legacy-backup/` as local preservation output, not active runtime authority.
-  - Runtime install, parity, push, and GitHub release verification remain pending until the release gate completes.
+  - Runtime install, 18/18 source/runtime parity, body sufficiency, metadata-link validation, consistency sweep, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+  - Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+  - Published at `2026-05-15T21:39:33Z`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -702,9 +705,12 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P097 / v10.05 prepares the compact 18-rule merged runtime set for release
-- absorbed old root rules are removed from active source authority and preserved only through governed history or local backup/provenance surfaces
-- pre-release docs do not claim push, GitHub release, or final closeout verification until those gates complete
+- P097 / v10.05 releases the compact 18-rule merged runtime set.
+- absorbed old root rules are removed from active source authority and preserved only through governed history or local backup/provenance surfaces.
+- runtime install, 18/18 source/runtime parity, body sufficiency, metadata-link validation, consistency sweep, push, and GitHub release verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
+- Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
+- Published at `2026-05-15T21:39:33Z`.
 </div>
 
 ---
