@@ -1,7 +1,7 @@
 # Document Governance
-> **Current Version:** 1.0
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.1
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active target-state truth, keep changelog as version/history authority, keep patch as before/after review outside live phase planning, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
+**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active target-state truth, keep changelog as version/history authority, keep patch as before/after review outside live phase planning, recognize governance/release-sync work shapes before deep execution, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
 
 This rule unifies repository documentation baseline, design/changelog/patch role boundaries, completed-surface governance, and UDVC-1 version-control discipline. It keeps one clear owner per document role so active docs remain understandable, auditable, and cheap to maintain.
 
@@ -76,6 +76,14 @@ Current-state scans should start from active entrypoints and checked implementat
 - checked implementation state
 
 Open `done/` or archive surfaces only through active references or for history, audit, rollback, provenance, or trace reconstruction.
+
+### 5.1) Governance and release-sync work-shape recognition
+When work touches several governed surfaces, classify the work shape before deep execution.
+- distinguish focused document edit, owner-aligned sync, broad release-ready/no-drift audit, history rollover, and before/after patch review
+- decompose broad governance or release-sync objectives into owner-aligned lanes such as design truth update, runtime rule sync, changelog sync, TODO/phase sync, patch metadata final sync, or release audit
+- use this decomposition to preserve role boundaries and reduce reread churn
+- `worker-routing-and-context.md` owns whether a lane becomes a worker and `safe-io.md` owns bounded file/command absorption during multi-surface review
+- do not force lane decomposition or delegation for tiny local sync or one-surface metadata fixes
 
 ### 6) Public onboarding and install portability
 README/onboarding/install docs stay portable by default.
@@ -372,6 +380,7 @@ Keep these aligned across the governed chain when applicable:
 - active session IDs
 - source/runtime parity and body sufficiency
 - phase-vs-patch boundaries
+- broad governance/release-sync lanes staying inside their owner surfaces or tightly coupled sync slices
 - source/destination wording in public onboarding
 - runtime install scope limits to current source-owned active rule files
 
@@ -413,6 +422,7 @@ A detected God artifact must have an owner outcome before governed work can be c
 | large active design body | use compact parent design index plus coherent child shards |
 | bulky same-chain version history | keep active parent changelog authority and offload detail into `changelog/<chain>/v*.changelog.md` |
 | ordinary completed/history detail | move into allowed `history/` / `done/` surfaces without deleting meaning |
+| broad governance/release-sync request touches several owner surfaces | classify the work shape and decompose it into owner-aligned sync or audit lanes before deep execution |
 | before/after review need | use patch outside live phase planning |
 | README release sync | update current-state sections, not long version timelines |
 | metadata-only runtime root | treat as invalid active runtime install state |
@@ -430,6 +440,9 @@ Avoid:
 - using patch as a live phase workspace
 - treating `changelog/done/` as ordinary same-chain shard storage by default
 - active runtime roots that are metadata-only stubs
+- broad governance/release-sync sweeps with no work-shape classification
+- one generic `sync everything` lane that blurs design/changelog/TODO/phase/patch ownership
+- forcing delegation or broad multi-surface lane decomposition for a tiny one-surface fix
 - letting runtime install scope drift into design/changelog/TODO/phase/patch/helper surfaces
 - mixing source-side and destination/runtime wording in public install guidance
 - treating completed/inactive surfaces as junk or deletion authority
@@ -444,5 +457,6 @@ Related rules:
 - [phase-todo-artifact.md](phase-todo-artifact.md) - startup artifact posture, live phase semantics, TODO/live-task doctrine
 - [accurate-communication.md](accurate-communication.md) - evidence-strength wording for sync/parity/readiness claims
 - [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - portable shared-artifact defaults and public onboarding portability
+- [worker-routing-and-context.md](worker-routing-and-context.md) - worker scale and lane routing for broad governance/release-sync work
 - [safe-io.md](safe-io.md) - bounded file reading and parent-index/shard-first reading behavior
 - [coding-discipline.md](coding-discipline.md) - coding verification depth when phase/changelog/closeout claims depend on tested behavior

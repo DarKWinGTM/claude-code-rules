@@ -1,8 +1,8 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.1
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.2
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -23,6 +23,8 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 
 P098 refinement: this owner must now also preserve target-state doctrine for discussion/execution mode selection, visible intent read, selective clarification, repair re-anchor, and next-work boundaries.
 
+P099 refinement: this owner must now also preserve broad-objective decomposition before deep execution, worker-fit next-lane continuation, and lane-aware continuation boundaries while keeping delegation and read/output control with `worker-routing-and-context.md` and `safe-io.md`.
+
 ---
 
 ## Runtime Requirements
@@ -30,6 +32,7 @@ P098 refinement: this owner must now also preserve target-state doctrine for dis
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
+- Preserve lane decomposition and next-lane continuation semantics without taking delegation or bounded-I/O ownership away from `worker-routing-and-context.md` and `safe-io.md`.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---

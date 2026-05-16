@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.06
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835 (2026-05-16)
+> **Current Version:** 10.07
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-16)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -19,8 +19,9 @@ Current model focus:
 - runtime rules are active behavior contracts with body-sufficient root files
 - design files hold target-state truth and may use compact parent indexes with governed child shards for large active designs
 - active parent changelogs remain version authority and may point to chain-scoped version detail shards, while TODO and phase stay compact current-state entrypoints
-- broad raw evidence should be filtered through workers before it burdens the leader session when the task shape is context-heavy
-- standing-role worker and teammate reuse should carry across phases when responsibility remains materially the same
+- broad raw evidence should be filtered through workers before it burdens the leader session when the task shape is context-heavy, and predictable worker-fit slices should be delegated proactively once the topology is clear
+- leader context should be spent on control, synthesis, and anchor verification, while lane templates and topology selection keep broad work from collapsing back into one raw leader pass
+- phase/TODO and governance surfaces should expose lane-aware continuation when broad objectives naturally split into implementation, verification, governance/release-sync, research, or evidence-audit slices
 - active governance docs should avoid God-line history dumps, route bulky same-chain changelog detail into parent-mapped version shards, repair clear low-risk touched God-line candidates, prevent God-file role overload, and route detected God artifact pressure into repair or visible planning
 - startup, phase, patch, verification, portability, memory, audience-surface, and release boundaries stay with their dedicated owners
 
@@ -80,6 +81,11 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
+- P099 is the active v10.07 proactive subagent efficiency and lane templates wave.
+  - It keeps the source-owned active runtime set at 18 root runtime rules.
+  - It teaches proactive delegation by work shape, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, lane-aware phase/task shaping, and governance/release-sync lane recognition across existing merged owners.
+  - It advances `worker-routing-and-context` to v1.2, `safe-io` to v1.1, `execution-and-goal-frame` to v1.2, `phase-todo-artifact` to v1.1, and `document-governance` to v1.1.
+  - Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency passed; push and GitHub release `v10.07` verification remain pending until closeout.
 - P098 is the completed v10.06 intent-grounding conversation doctrine wave.
   - It keeps the source-owned active runtime set at 18 root runtime rules.
   - It teaches visible intent read, selective clarification, root-cause framing, repair re-anchor, and diagnosis-first mixed-intent handling across existing merged owners.
@@ -171,18 +177,18 @@ The active runtime inventory contains 18 source-owned root rule files.
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.5` | User authority, hard-boundary precedence, fresh-directive override, and source/project ownership boundaries |
 | 5 | `coding-discipline.md` | `coding-discipline.design.md v1.1` | Maintainable code structure, verification strategy, coding/debug root-cause narrowing, and tactical-to-strategic convergence |
 | 6 | `communication-register.md` | `communication-register.design.md v1.1` | Natural professional tone, signal pruning, anti-ceremony clarification, and proposal evaluation |
-| 7 | `document-governance.md` | `document-governance.design.md v1.0` | Repository document roles, design/changelog/patch governance, runtime body sufficiency, and UDVC-1 |
+| 7 | `document-governance.md` | `document-governance.design.md v1.1` | Repository document roles, design/changelog/patch governance, runtime body sufficiency, and UDVC-1 |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.0` | Cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.1` | Verify-first factual discipline, root-cause evidence thresholds, scoped non-findings, and real-vs-mock boundaries |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.1` | Discussion/execution mode, visible intent read, selective clarification, and next-work boundaries |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.2` | Discussion/execution mode, visible intent read, selective clarification, and next-work boundaries |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.1` | Plain-language explanation, intent-read/root-cause response shapes, diagram discipline, and concise action framing |
 | 12 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.2` | External source verification, trust ranking, corroboration, and source-conflict handling |
 | 13 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v1.7` | Scoped memory governance, compact memory index behavior, path scope, and optional recall boundaries |
-| 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.0` | Startup artifact posture, phase execution, TODO durability, and live task tracking |
+| 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.1` | Startup artifact posture, phase execution, TODO durability, and live task tracking |
 | 15 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.2` | Portable defaults, late-bound environment resolution, and source/destination notation discipline |
 | 16 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.0` | Wrapper normalization, refusal classification, minimization, and recovery paths |
-| 17 | `safe-io.md` | `safe-io.design.md v1.0` | Bounded file reading and terminal output with parent-index-first and worker-first behavior |
-| 18 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.1` | Intent taxonomy, worker routing, diagnosis-first mixed-intent handling, and document-density control |
+| 17 | `safe-io.md` | `safe-io.design.md v1.1` | Bounded file reading and terminal output with parent-index-first and worker-first behavior |
+| 18 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.2` | Intent taxonomy, worker routing, diagnosis-first mixed-intent handling, and document-density control |
 
 ### 3.2 Category View
 

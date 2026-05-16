@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-16
-> **Current Release:** v10.06 / P098 intent-grounding conversation doctrine (released)
+> **Current Release:** v10.07 / P099 proactive subagent efficiency and lane templates (pre-release)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -40,7 +40,9 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-No active governed release is currently opened.
+- [ ] P099 / v10.07 proactive subagent efficiency and lane templates is in release preparation.
+  - Goal: make built-in agent/subagent usage more proactive and efficient through work-shape routing, lane templates, stronger handoffs, leader context budgeting, and worker-fit continuation behavior while keeping the active runtime install count at 18.
+  - Gate: touched owner/runtime/design/changelog surfaces align to P099, README arrays remain 18/18, runtime install and source/runtime parity pass for 18/18, and GitHub release verification passes.
 
 ### Deferred / Not Selected
 
@@ -62,6 +64,7 @@ No active governed release is currently opened.
 
 | Date | Changes |
 |------|---------|
+| 2026-05-16 | Opened P099 / v10.07 proactive subagent efficiency and lane templates release preparation. |
 | 2026-05-16 | Finalized P098 / v10.06 closeout records after verified push and GitHub release. |
 | 2026-05-16 | Opened and released P098 / v10.06 intent-grounding conversation doctrine. |
 | 2026-05-16 | Finalized P097 / v10.05 closeout records after verified push and GitHub release. |

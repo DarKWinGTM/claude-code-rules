@@ -1,15 +1,15 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.1 (merged M10)
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.1
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.2 (merged M10)
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.2
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
 ---
 
 ## Rule Statement
 
-**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; keep the full active goal set visible and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
+**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; decompose broad objectives before deep execution, continue automatically into the next worker-fit lane when safe, keep the full active goal set visible and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
 
 This rule owns mode selection, stop/continue, continuous execution, next-work discovery, goal-set visibility, priority balance, goal-frame semantics, goal hierarchy, anti-ritual boundaries, and the completion-to-next-goal bridge. It does not replace startup governance, user authority, safety gates, evidence wording, worker routing, phase roadmap semantics, or shared-board/plugin coordination.
 
@@ -73,12 +73,27 @@ For non-trivial work, establish a working frame when it prevents drift, improves
 
 This frame may stay internal when the path is obvious. Make it visible only when the user benefits from orientation, work spans several steps/files/phases, verification depends on the target outcome, or closeout needs a supported next-goal recommendation.
 
+### 4.1) Broad-objective decomposition before deep execution
+When the active objective is broad enough that several execution shapes, owner surfaces, or continuation slices are already visible, decompose it before deep execution.
+- classify the objective into the smallest meaningful lanes such as implementation, verification, governance/release-sync, research, or evidence audit
+- define each lane by goal, expected output, and gate rather than by raw commands
+- prefer phase-backed or task-backed lane structure when staged execution is already active
+- use the decomposition to choose the next safe slice, not to justify automatic delegation or over-planning
+- do not split trivial, single-step, or tightly sequential work into artificial lanes
+
 ### 5) Continuous execution
 When execution mode is active, startup posture is resolved enough, and no real stop gate exists, continue the active objective.
 - continue when the next step is implied by current goal, phase, task list, TODO, or checked implementation state
 - when implementation is complete but material verification/debug/TestKit evidence remains pending, continue into the proportionate verification slice when safe
 - do not end a turn only to report a milestone if safe continuation exists; do not pause to expose an obvious task the assistant can do directly
 - status may clarify changes/completion/blockers, but reporting alone must not become the stop reason
+
+### 5.1) Auto-next-lane continuation
+When the current lane closes and the next lane in the same objective is already implied, continue automatically instead of pausing for milestone narration.
+- if the next lane is broad, noisy, or naturally independent, treat it as worker-fit and apply `worker-routing-and-context.md` before deep raw absorption
+- if the next lane is phase-backed, preserve its phase linkage in task and phase surfaces before deeper execution
+- if the next lane is governance/release-sync or multi-surface validation, classify the owner surfaces first instead of collapsing it into a vague `sync everything` pass
+- do not auto-continue into approval-sensitive, destructive, materially divergent, or clearly user-choice-sensitive work
 
 ### 6) Goal hierarchy and priority balance
 Goal hierarchy avoids confusing broad strategy with the current slice:
@@ -125,6 +140,9 @@ When execution mode remains active, inspect execution surfaces instead of waitin
 - use the current task list first when it clearly expresses the objective; if insufficient, inspect active phase, compact `phase/SUMMARY.md`, compact `TODO.md`, and checked implementation state
 - follow `todo/history/`, `todo/done/`, `phase/history/`, or `phase/done/` references only when active entrypoints point there
 - prefer unfinished work in the same objective/phase family before opening a fresh objective
+- when a broad objective exposes several unfinished lanes, choose the next unblocked lane inside the same objective before opening a fresh goal
+- if that next lane is already worker-fit, route it through `worker-routing-and-context.md` before deep direct execution
+- governance/release-sync, verification, and evidence-audit slices are common lane types when they are grounded in checked execution surfaces
 - when the current objective is complete, treat design, phase roadmap, TODO, task list, and checked implementation state as roadmap-discovery surfaces for a supported next-goal recommendation
 - shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
 - oversized active governance files are maintenance triggers, not execution surfaces
@@ -135,11 +153,13 @@ Phase-shaped next work must not become a new major phase by momentum. If it may 
 
 ## Worker Routing Before Broad Continuation
 Continuous execution must not turn the next broad slice or aggregate read burst into default leader-session raw absorption.
+- perform broad-objective decomposition first so worker routing receives a real lane/objective rather than a vague `keep going` instruction
 - when implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, or requires several bounded governance/code reads for one claim, apply `worker-routing-and-context.md` before broad direct reading/searching/testing/log review
 - for broad external/design-improvement research, apply the research orchestration gate before leader raw WebSearch/source absorption
 - broad continuation, release closeout, no-drift review, and release-ready validation must not bypass the worker-first aggregate-read gate by treating momentum as authorization
 - apply intent-first worker routing before project exploration when the next slice could be behavior/RULES analysis
 - prefer standalone subagent / worker-lane handling for broad independent work before Agent Team workflow; dispatch the selected lane before the leader absorbs raw broad evidence; if the leader handles broad worker-fit work directly, state the narrow reason
+- `worker-routing-and-context.md` decides delegation scale and `safe-io.md` still owns bounded reads/output once a broad lane is recognized
 - trivial, low-output, tightly sequential, exact edit/verify ranges, or interactive-control work may continue directly
 
 ---
@@ -165,11 +185,14 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | unresolved startup gate | resolve startup posture before execution drift |
 | oversized active governance entrypoint | compact/roll over before broad continuation |
 | clear active phase/task path or discoverable unfinished work | inspect execution surfaces and continue if safe |
+| broad objective exposes several distinct work shapes or owner surfaces | decompose it into outcome-sized lanes before deep execution |
 | non-trivial multi-step/multi-file/phase-backed work | establish goal/output/gate when it prevents drift or improves verification |
 | single-goal overfocus, micro-cleanup drift, or one-area summaries | review whether sibling goals are neglected and rebalance |
 | user says work is too granular | perform goal review immediately |
 | several major goals remain open | keep current focus proportional to the whole set |
 | implementation completed but material verification remains | continue into verification when safe, or state blocker/not-applicable reason |
+| current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
+| next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
 | phase-shaped follow-up | apply phase lineage handling and preserve visible phase linkage |
 | objective truly complete with meaningful unselected successor work | recommend supported next goal with why/output/gate without blocking selected safe continuation |
 | broad/noisy next slice or aggregate governance/code read burst | apply worker routing before broad leader-session absorption |
@@ -182,7 +205,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 ---
 
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, new-major allocation by momentum, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
+Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, new-major allocation by momentum, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
 
 ---
 
@@ -190,6 +213,7 @@ Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roa
 Related rules:
 - [coding-discipline.md](coding-discipline.md) - proportionate verification/debug/TestKit strategy
 - [worker-routing-and-context.md](worker-routing-and-context.md) - worker routing and leader-context control
+- [safe-io.md](safe-io.md) - bounded reads/output once broad worker-fit lanes are recognized
 - [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
 - [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording
 - [phase-todo-artifact.md](phase-todo-artifact.md) - live task list as execution surface

@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.06
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 10.07
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.07 | 2026-05-16 | **[Opened proactive subagent efficiency and lane templates](#version-1007)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.06 | 2026-05-16 | **[Released intent-grounding conversation doctrine](#version-1006)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | 10.05 | 2026-05-16 | **[Released source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | 10.04 | 2026-05-13 | **[Released changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -142,6 +143,22 @@
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 
 ---
+
+<a id="version-1007"></a>
+## Version 10.07: Opened proactive subagent efficiency and lane templates
+
+**Date:** 2026-05-16
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Opened P099 as the active pre-release refinement wave.
+- Kept the README-listed source-owned active runtime set at 18 files.
+- Advanced the merged owner chains for proactive delegation triggers, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, phase/task lane awareness, and governance/release-sync lane recognition.
+- Opened the P099 phase and patch artifacts and synchronized active TODO/phase posture.
+- Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency passed; push and GitHub release `v10.07` verification remain pending.
+
+### Summary
+P099 opens the next refinement wave on top of the compact 18-rule runtime set so worker use becomes proactive, lane-aware, and more context-efficient instead of depending mainly on explicit prompting.
 
 <a id="version-1006"></a>
 ## Version 10.06: Released intent-grounding conversation doctrine

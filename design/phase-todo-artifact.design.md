@@ -1,8 +1,8 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
 ---
@@ -21,6 +21,8 @@ This design owns the target-state shape for artifact initiation control, phase i
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 
+P099 refinement: this owner must now also preserve phase-backed lane structuring and lane-aware live task shaping for broad worker-fit execution without making delegation itself a phase-owned decision.
+
 ---
 
 ## Runtime Requirements
@@ -28,6 +30,7 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
+- Preserve phase-backed lane structure and lane-aware task shaping while leaving worker-scaling and bounded-I/O behavior to `worker-routing-and-context.md` and `safe-io.md`.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---

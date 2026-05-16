@@ -1,7 +1,7 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.0
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.1
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Resolve artifact posture before governed work drifts, use phases only when staged execution adds real value, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work.**
+**Core Principle: Resolve artifact posture before governed work drifts, use phases only when staged execution adds real value, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work, including lane-oriented continuation when broad worker-fit execution needs explicit structure.**
 
 This rule unifies startup artifact initiation, live phase execution semantics, and durable-vs-live task tracking. It keeps staged work aligned to real goals, outputs, and gates without letting TODO, phase, patch, or startup posture drift into retrospective cleanup.
 
@@ -158,6 +158,14 @@ Repair posture:
 
 Ask only when design ambiguity, materially different rollout choices, missing access, destructive/high-impact action, or approval-sensitive scope would change the plan.
 
+### 5.1) Phase-backed lane structuring
+When a phase-backed objective is broad enough to contain distinct execution shapes, structure it into lanes before deep work drifts.
+- lanes are bounded execution slices such as implementation, verification, governance/release-sync, evidence audit, or bounded research
+- each lane should map to a clear goal, expected output, and completion gate rather than acting as a command bucket
+- lane changes inside the same rollout family should normally stay in the current phase or a truthful subphase rather than opening a fresh major phase by momentum
+- worker routing decides whether a lane becomes a standalone subagent or stays direct; phase only keeps the staged execution map visible
+- do not create lane scaffolding for trivial, tightly sequential, or one-step work
+
 ### 6) Roadmap and next-phase synthesis
 When a governed objective has enough evidence to forecast beyond the current slice, `phase/SUMMARY.md` should carry a bounded roadmap or phase matrix.
 Roadmap entries should expose:
@@ -187,6 +195,7 @@ Each active child phase should define or map to:
 - objective and why the phase exists
 - expected output
 - completion gate / verification gate
+- lane map or lane ordering when the phase contains distinct implementation / verification / governance slices
 - entry conditions
 - action checklist and out-of-scope boundaries
 - affected artifacts
@@ -241,7 +250,7 @@ Required repair posture:
 - if a TODO update would create a large mixed-responsibility entry, split it into a current-state bullet plus history/done reference
 
 ### 4) Live task-list trigger model
-Use the built-in task list by default when work is non-trivial, has 3+ steps, spans multiple files/stages, may continue across slices, benefits from live visibility, has an active phase, or has non-trivial coding work where implementation and verification are distinct outcomes.
+Use the built-in task list by default when work is non-trivial, has 3+ steps, spans multiple files/stages, may continue across slices, benefits from live visibility, has an active phase, decomposes into distinct lanes, or has non-trivial coding work where implementation and verification are distinct outcomes.
 
 Do not force task-list overhead for trivial isolated work or one-step lookup/fix work.
 
@@ -255,6 +264,13 @@ When active phase or staged context exists, the task list should mirror the curr
 - each phase-backed or clearly phase-shaped live task should visibly expose phase ID, phase name, phase family, or implied-stage context in subject or description
 - hidden internal phase alignment is insufficient
 
+### 5.1) Lane-aware live tasks
+When the active phase includes distinct lanes, the task list should expose them directly.
+- create separate outcome-sized tasks for implementation, verification, governance/release-sync, or similar lanes when combining them would hide gates or ownership
+- keep lane titles/descriptions phase-linked and human-readable
+- when the next lane is already implied and unblocked, open or continue it early instead of waiting until after a milestone-only status turn
+- do not create one task per command or treat every lane change as a new major phase
+
 ### 6) Live task-list update contract
 When the built-in task list is in use:
 - create it early rather than after work is underway
@@ -266,6 +282,7 @@ When the built-in task list is in use:
 - extend the current task list within the same active objective instead of replacing it
 - keep completed tasks visible until true closure or explicit reset
 - align task creation to current active phase or clearly implied stage/family when checked context is phase-shaped
+- when a broad objective has explicit lanes, prefer lane-aware task continuity before opening unrelated new tasks
 - use the task list first for next unfinished work; if insufficient, use active phase, current phase family, `phase/SUMMARY.md`, `TODO.md`, authored `Next possible phases`, and checked implementation state
 
 ### 7) Live tracking friction recovery
@@ -299,7 +316,10 @@ The later sync order does not weaken early startup establishment or live task-li
 | multi-file governed change | resolve TODO and likely phase before drift |
 | staged work or rollout gates | establish `/phase` via lineage handling |
 | clear governed design for staged execution | synthesize phases from design truth and keep current-phase live tasks visible |
+| broad phase-backed objective with distinct implementation / verification / governance slices | define lanes or lane-aligned tasks before deep execution |
 | active phase or implied staged lane | expose phase context in built-in tasks and current-phase-first execution |
+| current phase lane closes and the next lane is selected or clearly implied | continue into the next lane and keep phase linkage visible |
+| governance/release-sync slice inside an active phase | give it its own lane or task when mixing it with implementation would blur ownership or gates |
 | oversized `TODO.md` or `phase/SUMMARY.md` | roll history/detail into referenced `history/` / `done/` shards and keep compact active entrypoints |
 | God Phase or TODO overload | repair now when clear, otherwise create/extend a visible governed repair slice |
 | implementation done but verification still material | preserve a verification slice in phase closeout and live task tracking |
@@ -319,6 +339,8 @@ Avoid:
 - turning `TODO.md` into a history dump, roadmap dump, or verification log dump
 - generic live task titles that hide active phase context
 - treating the built-in task list as a replacement for durable TODO/phase surfaces
+- lane decomposition that is forced onto trivial or tightly sequential work
+- lane-aware tasks that hide goal/output/gate or collapse governance/release-sync into a generic implementation bucket
 - letting task-list continuation silently allocate a new major phase
 - stopping after implementation when phase-backed verification is still the active remaining slice
 - phase or TODO closeout that reports only files/tasks/audit status and not delivered result / impact / verification basis
@@ -330,6 +352,8 @@ Avoid:
 Related rules:
 - [document-governance.md](document-governance.md) - repository document model and sync order
 - [document-governance.md](document-governance.md) - patch semantics and patch-vs-phase boundary
+- [worker-routing-and-context.md](worker-routing-and-context.md) - worker scale stays separate from phase-backed lane structure
+- [safe-io.md](safe-io.md) - bounded read/output behavior for broad phase-backed lanes
 - [coding-discipline.md](coding-discipline.md) - phase-backed coding verification and TestKit/scenario decisions
 - [execution-and-goal-frame.md](execution-and-goal-frame.md) - goal/output/gate semantics and next-goal boundaries
 - [document-integrity.md](document-integrity.md) - daily-first `TODO.md` and `phase/SUMMARY.md` rollover owner

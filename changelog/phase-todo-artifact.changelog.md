@@ -1,8 +1,8 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -10,10 +10,27 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-05-16 | **[Added P099 proactive subagent-efficiency doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-11"></a>
+## Version 1.1: Added P099 proactive subagent-efficiency doctrine
+
+**Date:** 2026-05-16
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Extended `phase-todo-artifact.md` for the P099 proactive subagent-efficiency release wave.
+- Added doctrine coverage for phase-backed lane structuring and lane-aware live task shaping.
+- Added guidance for continuing into the next implied lane without silently creating a new major phase.
+- Preserved `worker-routing-and-context.md` and `safe-io.md` as separate owners for delegation scale and bounded broad-lane reads/output.
+
+### Summary
+`phase-todo-artifact.md` now carries the P099 phase and task-structuring refinement for proactive subagent efficiency while preserving phase/runtime owner boundaries.
 
 <a id="version-10"></a>
 ## Version 1.0: Created merged runtime owner chain

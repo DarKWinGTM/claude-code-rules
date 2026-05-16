@@ -1,15 +1,15 @@
 # Safe I/O (File Reading + Terminal Output)
 
-> **Current Version:** 1.0 (merged M12)
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1 (merged M12)
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.1
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
 ---
 
 ## Rule Statement
 
-**Core Principle: Bound I/O operations — file reading and terminal output — so session stays responsive, paths are verified before factual claims, large/risky files use partial reads or searches, command output cannot flood context or hide material failures, sharded active designs and changelog version shards are read through their parent indexes first, and oversized active governance entrypoints or autocompact thrash are treated as rollover-maintenance signals.**
+**Core Principle: Bound I/O operations — file reading and terminal output — so session stays responsive, paths are verified before factual claims, large/risky files use partial reads or searches, worker-fit aggregate read/output bursts are delegated before leader raw absorption when that is the safer context-budget choice, command output cannot flood context or hide material failures, sharded active designs and changelog version shards are read through their parent indexes first, and oversized active governance entrypoints or autocompact thrash are treated as rollover-maintenance signals.**
 
 ---
 
@@ -33,7 +33,7 @@ File reading should not flood the session.
 - logs, maps, SVG, HTML, unknown JSON, base64-like files: targeted search or small preview
 - if output exceeds tool limits, switch to narrower offsets/searches rather than rereading the whole file
 
-### 3) Evaluate before broad reading and the worker-first aggregate-read gate
+### 3) Evaluate before broad reading and the delegate-first aggregate-read burst gate
 
 Before broad file absorption or a multi-file governance/code read burst, identify the read's purpose and whether the leader needs raw content.
 
@@ -44,6 +44,21 @@ Before broad file absorption or a multi-file governance/code read burst, identif
 - worker findings must include conflicts, exact anchors, and leader verification needs
 - direct leader reads allowed for narrow known files, exact line ranges, final verification anchors, tightly sequential interactive-control work, unavailable worker tooling, or a stated narrow exception
 - do not treat a small excerpt as proof about the entire file unless checked scope is sufficient
+
+Delegate-first aggregate-read burst signals:
+
+| Signal | Typical I/O shape | Default posture |
+|---|---|---|
+| repo-wide search + several follow-up opens | search results then 4+ file reads | use a filter lane before more raw reads |
+| parent index + multiple child shards or version details | design/changelog audit | delegate shard selection and digest first |
+| mixed docs + code + command output | audit or diagnosis | let a worker normalize the evidence before leader synthesis |
+| repeated offset hopping or rereads after compact | thrash | stop raw intake and delegate or compact before continuing |
+| dense markdown lines across several active docs | TODO/phase/design sets | worker returns anchors, conflicts, and exact ranges |
+
+Burst rule:
+- one decisive high-risk signal or two moderate signals are enough to prefer delegate-first handling
+- once burst signals are active, avoid "just one more raw read" drift; either narrow scope or hand off the burst
+- safe-io owns the trigger; worker-routing owns topology selection and orchestration after the trigger fires
 
 ### 4) Sharded active design reading
 
@@ -95,6 +110,7 @@ Before running a command likely to emit large, noisy, repetitive, binary-like, m
 - avoid dumping broad logs, builds, tests, grep recursion, find output, base64, or HTTP bodies directly into the conversation
 - use bounded output, redirected files, targeted filters, or background tasks where appropriate
 - prefer worker filtering for broad/noisy test, log, build, or search review when the leader does not need raw output
+- if the output will immediately require multi-pass filtering or cross-reference with several files, treat it as a delegate-first burst instead of a direct leader read
 - keep stderr visible enough to diagnose real failures
 
 ### 9) Bound terminal output without losing signal
@@ -135,6 +151,8 @@ Do not add shell output indirection for simple low-output commands. Use direct c
 | Changelog version detail shard set | Medium/High | Read parent shard map first, then targeted version shards; worker filtering for broad history audits |
 | `changelog/done/` fallback history | Medium/High | Open only through active reference or history/audit/rollback/provenance need |
 | Oversized `TODO.md` / `phase/SUMMARY.md` | High | Bounded read for current state, then rollover/compact active entrypoint |
+| Aggregate multi-file read burst | High | Delegate-first filtering or narrow scope before leader raw reads |
+| Mixed output + follow-up file investigation | High | Capture/filter first, then inspect anchors or worker digest |
 | Minified/bundled/generated | High | Preview/search only |
 | Logs/build outputs | High | Tail/search/filter; consider worker review |
 | Unknown JSON/HTML/SVG/map | Medium/High | Search or preview by bounded range |
@@ -151,17 +169,20 @@ Use this rule strongly for:
 - base64 or binary-like data
 - generated/minified assets
 - any command likely to produce long lines or thousands of lines
+- any output that will need cross-checking against several files or several reruns before the leader can act
 
 ### Recommended command flow
 
 ```text
 Command planned
   ↓
-Could output be large/noisy?
+Could output or follow-up reads become large/noisy?
   → NO: run directly if safe
   → YES: choose capture/filter strategy
   ↓
-Run command with bounded output or persisted capture
+Burst signals present?
+  → YES: delegate-first or persist/filter before leader review
+  → NO: continue with bounded direct capture
   ↓
 Review concise relevant evidence
   ↓
@@ -178,7 +199,9 @@ Avoid:
 - whole-project claims from narrow excerpts
 - repeating failed oversized reads without narrowing scope
 - leaving oversized active governance entrypoints untouched after read failures or autocompact thrash
+- waiting until after a read/output burst has already filled leader context before deciding to delegate it
 - reading broad file sets into leader context when a worker lane should filter them
+- combining repo-wide search, dense docs, and noisy output in one leader pass when a filter lane should have handled the burst first
 - reading every child shard before checking the compact parent design index
 - treating sharded active design child docs as history/`done`/archive/rollover surfaces by default
 - reading every changelog version detail shard before checking the active parent changelog shard map

@@ -1,8 +1,8 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
 ---
@@ -21,6 +21,8 @@ This design owns the target-state shape for project documentation standards, des
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 
+P099 refinement: this owner must now also preserve governance/release-sync work-shape recognition and owner-aligned lane decomposition for broad multi-surface sync or release-readiness passes.
+
 ---
 
 ## Runtime Requirements
@@ -28,6 +30,7 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
+- Preserve owner-aligned sync-lane recognition while leaving worker-scaling and bounded multi-surface reads to `worker-routing-and-context.md` and `safe-io.md`.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---

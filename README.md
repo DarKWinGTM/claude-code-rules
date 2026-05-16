@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.06</b><br><sub>P098 Released</sub>
+  <b>v10.07</b><br><sub>P099 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>GitHub verified</sub>
+  <b>Validated</b><br><sub>Push/release pending</sub>
 </td>
 <td align="center" width="200">
-  <b>Intent grounding</b><br><sub>Conversation refinement</sub>
+  <b>Proactive delegation</b><br><sub>Lane-template refinement</sub>
 </td>
 </tr>
 </table>
@@ -535,13 +535,10 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P098 intent-grounding conversation doctrine is released for v10.06.
+- P099 proactive subagent efficiency and lane templates is the active v10.07 wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It adds visible intent read, selective clarification, root-cause framing, repair re-anchor, intent taxonomy, trigger additions, anti-patterns, examples, and success metrics across the touched merged owners.
-  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, consistency sweep, push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
-  - Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
-  - Published at `2026-05-16T03:36:14Z`.
+  - It adds proactive delegation triggers, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, and governance/release-sync lane recognition across the touched merged owners.
+  - Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed in checked scope; push and GitHub release verification are still pending.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -704,12 +701,10 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P098 / v10.06 releases the intent-grounding conversation doctrine on top of the compact 18-rule merged runtime set.
-- touched merged owners now cover visible intent read, selective clarification, root-cause framing, repair re-anchor, and diagnosis-first mixed-intent handling.
-- runtime install, 18/18 source/runtime parity, source/destination body sufficiency, consistency sweep, push, and GitHub release verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
-- Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
-- Published at `2026-05-16T03:36:14Z`.
+- P099 / v10.07 opens the proactive subagent efficiency and lane-templates refinement wave on top of the compact 18-rule merged runtime set.
+- touched merged owners now cover proactive delegation triggers, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, and governance/release-sync lane recognition.
+- phase and patch startup artifacts for P099 are opened.
+- runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed in checked scope; push and GitHub release verification are still pending.
 </div>
 
 ---
@@ -1435,7 +1430,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.06 / P098` intent-grounding doctrine wave with verified runtime install, parity, and GitHub release evidence in checked scope.
+- Source state: this README reflects the active pre-release `v10.07 / P099` proactive delegation refinement wave; verified runtime install, 18/18 parity, and source/destination body sufficiency are now in checked scope, while push and GitHub release evidence are still pending.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1558,7 +1553,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.06 |
+  <b>Version</b>: 10.07 |
   <b>Last Updated</b>: 2026-05-16 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
