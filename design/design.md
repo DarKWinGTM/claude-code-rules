@@ -81,11 +81,14 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P100 is the active v10.08 safe-first active runtime compression wave.
+- P100 is the completed v10.08 safe-first active runtime compression wave.
   - It keeps the source-owned active runtime set at 18 root runtime rules.
   - It compresses repeated explanation, recap, examples, and reminder blocks in selected merged owners without weakening triggers, taxonomies, decision flows, response contracts, owner-local operational behavior, or phase/task/worker linkage semantics.
   - It advances `execution-and-goal-frame` to v1.3, `worker-routing-and-context` to v1.3, `safe-io` to v1.2, `phase-todo-artifact` to v1.2, `accurate-communication` to v2.24, `communication-register` to v1.2, `portable-implementation-and-hardcoding-control` to v1.3, and `refusal-and-recovery` to v1.1.
-  - Source-side runtime/design/changelog sync is complete; runtime install, 18/18 source/runtime parity, and source/destination body sufficiency recheck pass in checked scope; push and GitHub release verification are still pending.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release `v10.08` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.08
+  - Release target and tag point to commit `f57d67727b52fea53078223725034730b882af09`.
+  - Published at `2026-05-16T23:10:15Z`.
 - P099 is the completed v10.07 proactive subagent efficiency and lane templates wave.
   - It keeps the source-owned active runtime set at 18 root runtime rules.
   - It teaches proactive delegation by work shape, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, lane-aware phase/task shaping, and governance/release-sync lane recognition across existing merged owners.

@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Released / Completed
 > **Target Design:** [design/design.md](../design/design.md) v10.08
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -76,31 +76,39 @@ The main risk in P100 is not under-compression. The main risks are:
 - **Target artifact:** touched design/changelog companions plus `README.md`, `design/design.md`, `changelog/changelog.md`, `TODO.md`, `phase/SUMMARY.md`, P100 phase record, and this patch
 - **Change type:** release synchronization
 - **Current state:** master surfaces identify `v10.07 / P099` as the current released wave.
-- **Target state:** master surfaces identify `v10.08 / P100` as the active safe-first compression wave until release verification passes.
+- **Target state:** master surfaces identify `v10.08 / P100` as the released safe-first compression wave with verified install, parity, push, and release evidence.
 - **Review point:** keep runtime install count at 18 unless a separate install-scope change is explicitly validated.
 
 ---
 
 ## Verification
 
-Required checks before release closeout:
+Verified checks for release:
 - README Bash and PowerShell install arrays contain exactly the same 18 active runtime files.
 - All 18 active source runtime files exist and have substantive bodies.
 - Touched owner files keep resolvable design and changelog metadata links.
 - Preserve-mechanism validation confirms that triggers, taxonomies, decision flows, response contracts, owner-local operational behaviors, and phase/task/worker linkage semantics remain intact in checked scope.
 - Runtime install copies only README-listed active root runtime rules.
-- Source/runtime parity and source/destination body sufficiency pass for 18/18 files.
-- `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set.
-- Git diff has no whitespace errors.
-- GitHub release `v10.08` must be created and verified before closeout wording claims release completion.
+- Source/runtime parity and source/destination body sufficiency passed for 18/18 files.
+- `shared-task-list-path-coordination.md` remained observed-only and outside the source-owned install set.
+- Git diff had no whitespace errors.
+- GitHub release `v10.08` was created and verified before closeout wording claimed release completion.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.08
+- Release target and tag point to commit `f57d67727b52fea53078223725034730b882af09`.
+- Published at `2026-05-16T23:10:15Z`.
 
 ---
 
 ## Implementation Status
 
-P100 is active and not yet released.
+P100 is released and closed for `v10.08`.
 
-Phase/patch startup state is open. Runtime-owner compression plus touched companion/master-surface sync are complete in source scope. Runtime install/parity validation is complete; push, GitHub release creation, and closeout verification are still pending.
+Validation, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed.
+
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.08
+- Release target and tag point to commit `f57d67727b52fea53078223725034730b882af09`.
+- Published at `2026-05-16T23:10:15Z`.
 
 ---
 

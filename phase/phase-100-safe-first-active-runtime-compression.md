@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P100
-> **Status:** Active / In Progress
+> **Status:** Released / Completed
 > **Target Release:** v10.08
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.08
@@ -47,8 +47,8 @@ P100 exists to capture those savings without broad deletion and without weakenin
 - [x] Sync touched owner design and changelog companions.
 - [x] Sync README, master design, master changelog, TODO, phase summary, phase, and patch records to P100 pre-release state.
 - [x] Validate preserve-mechanism safety, README arrays, metadata links, source body sufficiency, runtime install, and source/runtime parity.
-- [ ] Commit source release, push `master`, create GitHub release `v10.08`, and verify release state.
-- [ ] Finalize P100 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.08`, and verify release state.
+- [x] Finalize P100 closeout records after release verification passes.
 
 ---
 
@@ -76,17 +76,18 @@ P100 exists to capture those savings without broad deletion and without weakenin
 
 ## Current Status
 
-P100 is active in release preparation for `v10.08`.
+P100 is released and closed for `v10.08`.
 
-Completed so far:
-- current active runtime install set remains the compact 18-rule set
+Completed:
+- current active runtime install set remained the compact 18-rule set
 - fresh closeout/history shards from the recent TODO/phase compaction were preserved as governed history, not scratch state
-- P100 phase/patch startup state has been opened
-- safe-first compression is applied across the selected runtime owners
-- touched design/changelog companions and master release surfaces are synced to P100 pre-release state
-- preserve-mechanism review passed in checked source scope
-- runtime install and 18/18 source/runtime parity/body-sufficiency recheck passed in checked scope
+- safe-first compression was applied across the selected runtime owners
+- touched design/changelog companions and master release surfaces were synchronized to `v10.08 / P100`
+- preserve-mechanism review, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed
 
-Still pending:
-- git diff/whitespace review, commit, push, and GitHub release verification
-- final closeout after release verification
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.08
+- Release target and tag point to commit `f57d67727b52fea53078223725034730b882af09`.
+- Published at `2026-05-16T23:10:15Z`.
+
+No pending P100 release gates remain in checked scope.
