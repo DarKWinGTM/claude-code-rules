@@ -1,7 +1,7 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,10 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 delegate-first aggregate-burst doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `safe-io.md` and its design companion so the merged runtime owner now covers delegate-first aggregate read/output burst signals, burst-risk posture, and high-output flow updates while preserving the compact 18-rule runtime set. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `safe-io.md` as a body-sufficient merged runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Applied P100 safe-first compression refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `safe-io.md` from v1.1 to v1.2.
+- Updated `design/safe-io.design.md` from v1.1 to v1.2.
+- Compressed repeated burst-signal presentation while preserving delegate-first burst detection, bounded I/O posture, parent-index-first read order, and high-output command handling.
+- Preserved the boundary where safe-io owns burst detection and `worker-routing-and-context.md` owns topology/orchestration.
+
+### Summary
+`safe-io.md` now stays more compact while preserving its read/output trigger semantics and owner boundary for the P100 safe-first compression wave.
 
 ---
 

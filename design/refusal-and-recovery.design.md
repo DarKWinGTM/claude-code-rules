@@ -1,7 +1,7 @@
 # Design - Refusal and Recovery Chain
 
 > **Parent Rule:** [../refusal-and-recovery.md](../refusal-and-recovery.md)
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
 > **Full history:** [../changelog/refusal-and-recovery.changelog.md](../changelog/refusal-and-recovery.changelog.md)
 
@@ -18,6 +18,8 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 ## Scope
 
 This design owns the target-state shape for DAN-safe normalization, refusal classification, refusal minimization, and recovery contract.
+
+P100 refinement: this owner may compress repeated response-format presentation, but it must keep the refusal classes, decision outputs, and required non-allow recovery fields explicit.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 

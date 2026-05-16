@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.07
+> **Current Version:** 10.08
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.08 | 2026-05-17 | **[Opened safe-first active runtime compression](#version-1008)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.07 | 2026-05-16 | **[Released proactive subagent efficiency and lane templates](#version-1007)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.06 | 2026-05-16 | **[Released intent-grounding conversation doctrine](#version-1006)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | 10.05 | 2026-05-16 | **[Released source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
@@ -143,6 +144,23 @@
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 
 ---
+
+<a id="version-1008"></a>
+## Version 10.08: Opened safe-first active runtime compression
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Opened P100 as the safe-first active runtime compression wave.
+- Kept the README-listed source-owned active runtime set at 18 files.
+- Compressed repeated explanation, recap, examples, and reminder blocks in selected merged runtime owners while preserving triggers, taxonomies, decision flows, response contracts, owner-local operational behavior, and phase/task/worker linkage semantics.
+- Advanced `execution-and-goal-frame` to v1.3, `worker-routing-and-context` to v1.3, `safe-io` to v1.2, `phase-todo-artifact` to v1.2, `accurate-communication` to v2.24, `communication-register` to v1.2, `portable-implementation-and-hardcoding-control` to v1.3, and `refusal-and-recovery` to v1.1.
+- Opened and synchronized the P100 phase, patch, TODO, summary, and touched design/changelog companion surfaces in source scope.
+- Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency recheck have passed in checked scope; push and GitHub release verification are still pending.
+
+### Summary
+P100 opens the v10.08 source-side compression wave so the active runtime set becomes modestly tighter without weakening the mechanisms the RULES system depends on.
 
 <a id="version-1007"></a>
 ## Version 10.07: Released proactive subagent efficiency and lane templates

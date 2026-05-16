@@ -1,7 +1,7 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,12 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-16 | **[Added P099 proactive delegation efficiency doctrine](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `worker-routing-and-context.md` and its design companion so the merged runtime owner now covers proactive delegation triggers, work-shape topology selection, reusable lane/swarm presets, stronger worker handoffs, leader context budget, and delegation-efficiency review signals while keeping the active runtime count at 18. | |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Applied P100 safe-first compression refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `worker-routing-and-context.md` from v1.2 to v1.3.
+- Updated `design/worker-routing-and-context.design.md` from v1.2 to v1.3.
+- Compressed repeated intent-routing explanation, aggregate-read gate prose, preset descriptions, and audit-heuristic wording.
+- Preserved intent-first routing, aggregate-read gate behavior, proactive trigger logic, topology selection, stronger handoff contract, leader verification duty, and the safe-io ownership split.
+
+### Summary
+`worker-routing-and-context.md` now stays more compact while preserving its routing/orchestration mechanism and owner boundary for the P100 safe-first compression wave.
 
 ---
 

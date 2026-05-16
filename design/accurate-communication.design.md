@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.23
+> **Current Version:** 2.24
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835 (2026-05-16)
 
 ---
@@ -36,6 +36,7 @@ This chain is the wording owner for:
 - visible intent-read wording so the assistant can expose a short working interpretation of the user's goal when that reduces drift
 - root-cause wording that distinguishes symptom, likely cause, verified cause, and next-best check without overclaiming
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
+- safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
 
 This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `development-verification-and-debug-strategy`, bounded technical snapshot wording to `technical-snapshot-communication`, and end-of-response closing / action / proposal framing to `response-closing-and-action-framing`.
 

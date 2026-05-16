@@ -1,7 +1,7 @@
 # Design - Safe I/O
 
 > **Parent Rule:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/safe-io.changelog.md](../changelog/safe-io.changelog.md)
 
@@ -14,6 +14,8 @@
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 
 P099 refinement extends the target state with delegate-first aggregate read/output burst signals, explicit burst-risk posture, and tighter coordination with worker-routing when leader raw intake would become the expensive path.
+
+P100 refinement: this owner may compress repeated burst-signal presentation and high-output reminder wording, but it must keep bounded read/output behavior, parent-index-first read order, high-output command handling, and the ownership split where safe-io owns burst detection while worker-routing owns topology/orchestration.
 
 ---
 

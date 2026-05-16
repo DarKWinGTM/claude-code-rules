@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.2 (merged M10)
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.2
+> **Current Version:** 1.3 (merged M10)
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -51,14 +51,6 @@ Ask a clarifying question only when ambiguity materially changes the answer, act
 - if clarification is needed, ask one narrow, high-information question rather than broad intake questioning
 - after user correction, re-anchor before continuing: restate the active interpretation, the active goal, and the scope being deferred
 - do not keep reasoning from a stale frame after the user has corrected the direction
-
-### 2.3) Success metrics for intent-grounded conversation
-Judge this behavior by whether it improves execution quality rather than whether the wording sounds more thoughtful.
-- drift decreases: the assistant more often stays on the user's actual goal
-- unnecessary clarification decreases: questions are narrower and less frequent when the path is already clear
-- root-cause focus improves: diagnosis turns separate symptom, evidence, likely cause, and next-best check earlier
-- correction recovery improves: when the user repairs scope, the assistant re-anchors faster and stops reasoning from the stale frame
-- ceremony does not increase: trivial asks still receive direct compact answers
 
 ### 3) Startup gate and capture before continue
 Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.

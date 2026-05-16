@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.2 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.2
+> **Current Version:** 1.3 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -51,36 +51,19 @@ Use direct leader handling for trivial, one-step, tightly sequential, low-output
 
 ### 2) Intent-first worker gate
 
-Behavior/RULES questions are answered from the behavior/rule layer first. Project exploration begins only when the user asks for project facts, implementation, or verification, or when checked evidence is required and scope is stated. Another session's pasted output may show a possible worker use case, but it does not make project inspection the active task. If intent is behavior analysis plus broad evidence review, use a worker lane to analyze the evidence rather than letting the leader absorb it directly.
+Behavior/RULES questions are answered from the behavior/rule layer first. Project exploration begins only when the user asks for project facts, implementation, or verification, or when checked evidence is required and scope is stated. Another session's pasted output may suggest a worker use case, but it does not make project inspection the active task.
 
-When one user turn mixes several intents, resolve the dominant execution question before broadening scope.
-- if logs/snippets plus a short ask imply diagnosis, default to diagnosis-first rather than implementation-first
-- if the user is actually correcting the assistant's scope, repair that scope before routing into project exploration
-- if one narrow working interpretation is enough to continue safely, state that interpretation instead of asking broad intake questions
+When one user turn mixes several intents, resolve the dominant execution question first: diagnosis-heavy asks stay diagnosis-first, scope corrections are repaired before project exploration, and one narrow working interpretation is preferred over broad intake questions when it is enough to continue safely.
 
 ### 3) Worker-scale gate, proactive delegation matrix, and aggregate read-burst control
 
 Before broad main-session absorption, classify the smallest worker structure that preserves correctness and context efficiency. Several bounded reads can still overload context when combined, especially if lines are dense.
 
-Before reading multiple governance or code surfaces, identify:
-- the question being answered
-- the authority surface most likely to answer it
-- whether exact raw content is needed or a filtered worker handoff is enough
-- cumulative output risk across all planned reads, not only per-file line count
-- whether waiting would only spend leader context rather than reduce uncertainty
+Before broad multi-surface reading, identify the question being answered, the authority surface most likely to answer it, whether exact raw content is needed or a filtered handoff is enough, and whether additional waiting would only spend leader context rather than reduce uncertainty.
 
-Worker-first aggregate-read gate is required before leader raw absorption when any trigger applies:
-- 3+ governance surfaces are needed for one claim, sync, release, or no-drift review
-- cross-surface release sync, closeout, or release-ready validation is being assembled
-- repo-wide search is followed by multi-file reads
-- broad code+docs evidence is needed together
-- dense/history-bearing active docs would be read as a set
-- noisy command output, multi-surface audit, external research, roadmap/phase-matrix analysis, design-improvement research, source comparison, or safely partitionable implementation is planned
+Worker-first aggregate-read gate is required before leader raw absorption when a broad trigger applies, such as 3+ governance surfaces for one claim, cross-surface sync/closeout/release-readiness review, repo-wide search plus multi-file reads, broad code+docs evidence, dense active-doc bursts, noisy command output, broad external research, roadmap/design-improvement analysis, source comparison, or safely partitionable implementation.
 
-Gate behavior:
-- treat broad governance/code scans as worker-fit by default when any aggregate trigger applies
-- dispatch a standalone read-only worker before the leader absorbs raw aggregate-read evidence unless a narrow direct-handling exception is stated before the broad read starts
-- require worker output to return filtered findings, conflicts, exact anchors, evidence strength, and leader verification needs rather than raw dumps
+When the gate fires, treat the work as worker-fit by default, dispatch the read-only worker before broad raw intake unless a narrow direct-handling exception is stated, and require the handoff to return filtered findings, conflicts, exact anchors, evidence strength, and leader verification needs.
 
 Proactive delegation trigger matrix:
 
@@ -138,13 +121,13 @@ Route by capability and workload shape, not rigid tool name. Evaluate user inten
 | implementation plus dependent review/test/docs sync or shared ownership | coordinated swarm | official Agent Team / teammates as exceptional escalation |
 
 Lane templates and swarm presets:
-- `Scout preset`: one lane answers one broad question, filters evidence, and returns a decision-ready digest plus exact anchors.
-- `Compare preset`: two or more read-only lanes use the same decision rubric on different sources or options so the leader can synthesize without absorbing all raw evidence.
-- `Audit + Repair preset`: one audit lane narrows the exact anchors; one repair lane edits only that bounded scope after the audit returns.
+- `Scout preset`: one lane answers one broad question and returns a decision-ready digest plus anchors.
+- `Compare preset`: two or more read-only lanes compare independent sources or options with the same rubric.
+- `Audit + Repair preset`: one audit lane narrows exact anchors, then one bounded repair lane edits only that scope.
 - `Verification preset`: one lane checks tests/logs/runtime evidence for a defined gate while implementation ownership stays elsewhere.
-- `Coordinated swarm preset`: use a small role set such as implementer + reviewer/verifier + docs/test sync only when shared dependencies or durable messaging make standalone lanes insufficient.
+- `Coordinated swarm preset`: use a small shared-dependency role set only when standalone lanes are insufficient.
 
-Presets are planning shorthands, not proof that a Team Agent workflow is required. Choose the smallest topology that matches the real dependency shape.
+Presets are planning shorthands, not proof that a Team Agent workflow is required; choose the smallest topology that matches the dependency shape.
 
 ### 7) Research orchestration gate
 
@@ -260,12 +243,7 @@ Handoff quality rules:
 - name the next best action instead of forcing the leader to reconstruct the lane's intent from raw notes
 - if a handoff is causing repeated clarification turns, treat that as routing debt and tighten the brief or change topology
 
-Delegation efficiency and success signals are audit heuristics, not a requirement for hidden telemetry:
-- `early delegation rate` — worker-fit work was delegated before the leader absorbed most raw evidence
-- `anchor-first handoff quality` — handoffs mostly contain synthesis plus anchors, not raw dumps
-- `reuse before respawn` — aligned existing lanes were reused or steered before new ones were opened
-- `one-pass unblock rate` — the first handoff was enough for the leader to decide, continue, or verify with minimal churn
-- `verification closure` — the leader reached claim-ready verification by checking selected anchors instead of rereading whole evidence sets
+Delegation efficiency and success signals are audit heuristics, not hidden-telemetry requirements: prefer early delegation before raw evidence piles up, anchor-first handoffs instead of dumps, reuse before respawn, one-pass unblocks when possible, and verification closure through selected anchors rather than full rereads.
 
 ### 16) Parallel edit containment
 

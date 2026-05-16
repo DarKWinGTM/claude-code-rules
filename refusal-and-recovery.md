@@ -1,7 +1,7 @@
 # Refusal and Recovery Chain
 
-> **Current Version:** 1.0 (merged M2)
-> **Design:** [design/refusal-and-recovery.design.md](design/refusal-and-recovery.design.md) v1.0
+> **Current Version:** 1.1 (merged M2)
+> **Design:** [design/refusal-and-recovery.design.md](design/refusal-and-recovery.design.md) v1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/refusal-and-recovery.changelog.md](changelog/refusal-and-recovery.changelog.md)
 
@@ -184,19 +184,14 @@ Normalization outcome mapping:
 
 ## Response Pattern
 
-For non-`ALLOW_EXECUTE` outcomes:
+For any non-`ALLOW_EXECUTE` outcome, include:
+- `decision_output`
+- `refusal_class`
+- `reason`
+- `what_can_be_done_now`
+- `how_to_proceed`
 
-```text
-decision_output: <ALLOW_CONSTRAINED | NEED_CONTEXT | REFUSE_WITH_PATH>
-refusal_class: <SOFT_BLOCK | WORKFLOW_BLOCK | HARD_BLOCK>
-reason: <why the direct path is blocked or constrained>
-what_can_be_done_now:
-- <safe immediate option>
-how_to_proceed:
-- <specific context, authorization, scope, or safe alternative>
-```
-
-A compact natural-language equivalent is allowed when it stays complete. Do not omit the reason, safe-now option, or proceed path.
+A compact natural-language equivalent is allowed when it preserves all five fields.
 
 ---
 

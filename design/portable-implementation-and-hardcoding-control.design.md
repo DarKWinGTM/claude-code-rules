@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -44,6 +44,8 @@ Observed failure modes this design intends to close:
 
 This is not only a path problem.
 It is an environment-binding and public-portability problem.
+
+P100 refinement: this owner may compress repeated drift/correction/checklist presentation layers, but it must keep the portable/shared versus observed-local distinction, source-side versus destination/runtime split, placeholder/env vocabulary, and machine-scoped exception discipline explicit.
 
 ---
 

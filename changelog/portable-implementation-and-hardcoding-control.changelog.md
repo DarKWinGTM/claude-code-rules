@@ -1,7 +1,7 @@
 # Changelog - Portable Implementation and Hardcoding Control
 
 > **Parent Document:** [../portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 
 ---
@@ -10,11 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-04-09 | **[Extended portability rules to reusable support/package source artifacts](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
 | 1.1 | 2026-04-02 | **[Added public onboarding/install portability and source-vs-destination guidance](#version-11)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Extended the chain so public install/onboarding docs now treat workstation-specific absolute paths and internal umbrella workspace roots as portability failures by default, while adding explicit source-side versus destination/runtime notation guidance | |
 | 1.0 | 2026-04-02 | **[Created first-class portable-implementation-and-hardcoding-control rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new design/runtime/changelog triad that governs portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline for shared artifacts | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Applied P100 safe-first compression refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `portable-implementation-and-hardcoding-control.md` from v1.2 to v1.3.
+- Updated `design/portable-implementation-and-hardcoding-control.design.md` from v1.2 to v1.3.
+- Compressed repeated trigger/correction/checklist presentation into one tighter drift-response section.
+- Preserved the portable/shared versus observed-local distinction, source-side versus destination/runtime split, placeholder/env vocabulary, and machine-scoped exception discipline.
+
+### Summary
+`portable-implementation-and-hardcoding-control.md` now stays more compact while preserving its portability and anti-hardcoding enforcement semantics for the P100 safe-first compression wave.
 
 ---
 

@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.1
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -254,36 +254,16 @@ Use the built-in task list by default when work is non-trivial, has 3+ steps, sp
 
 Do not force task-list overhead for trivial isolated work or one-step lookup/fix work.
 
-### 5) Phase-context-aware live tasks
-When active phase or staged context exists, the task list should mirror the current phase/stage before future-phase work and visibly expose that context.
-- inspect `/phase` context before shaping tasks when relevant
-- default to current active phase before later phases
-- shape non-trivial phase-backed tasks around outcome, expected output, and completion gate when that prevents command-only drift
-- do not let task-list shaping silently allocate a new major phase
-- authored next-phase information can guide continuity, but does not silently activate future work
-- each phase-backed or clearly phase-shaped live task should visibly expose phase ID, phase name, phase family, or implied-stage context in subject or description
-- hidden internal phase alignment is insufficient
-
-### 5.1) Lane-aware live tasks
-When the active phase includes distinct lanes, the task list should expose them directly.
-- create separate outcome-sized tasks for implementation, verification, governance/release-sync, or similar lanes when combining them would hide gates or ownership
-- keep lane titles/descriptions phase-linked and human-readable
-- when the next lane is already implied and unblocked, open or continue it early instead of waiting until after a milestone-only status turn
-- do not create one task per command or treat every lane change as a new major phase
-
-### 6) Live task-list update contract
-When the built-in task list is in use:
-- create it early rather than after work is underway
-- mark a task `in_progress` when real work on that slice begins
-- mark a task `completed` as soon as the slice is actually done
-- preserve or add a visible verification slice when implementation is done but targeted verification remains material
-- add new tasks when newly discovered work is real and non-trivial
-- keep entries outcome-sized rather than command-sized
-- extend the current task list within the same active objective instead of replacing it
-- keep completed tasks visible until true closure or explicit reset
-- align task creation to current active phase or clearly implied stage/family when checked context is phase-shaped
-- when a broad objective has explicit lanes, prefer lane-aware task continuity before opening unrelated new tasks
-- use the task list first for next unfinished work; if insufficient, use active phase, current phase family, `phase/SUMMARY.md`, `TODO.md`, authored `Next possible phases`, and checked implementation state
+### 5) Phase-linked live task shaping
+When the built-in task list is in use for phase-backed work:
+- inspect `/phase` context first and default to the current active phase before later phases
+- keep phase context visible in task subject or description
+- shape tasks around outcome, expected output, and completion gate when that prevents command-only drift
+- split implementation, verification, and governance/release-sync into separate tasks only when combining them would hide gates or ownership
+- keep tasks outcome-sized rather than command-sized
+- mark `in_progress` when real work begins and `completed` as soon as the slice is actually done
+- preserve a visible verification slice when implementation is done but targeted verification remains material
+- use the task list first for the next unfinished slice; if insufficient, fall back to active phase context, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state
 
 ### 7) Live tracking friction recovery
 If live task-list creation or update fails, classify whether tracking is material to safe continuation.

@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.23
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.23
+> **Current Version:** 2.24
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.24
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -127,29 +127,19 @@ Avoid by default: “You are wrong”, “You are mistaken”, or “You are con
 
 Duplicate-looking team-agent reporting must separate observation from inference: say what was observed in the UI, team directory, or checked state; distinguish real active duplicate from stale/partially cleaned-up presence; avoid promising UI noise will disappear until shutdown/cleanup is verified; and if checked scope shows missing live team state, say so instead of implying definite active overlap.
 ---
-## Decision Checklist
-Before sending a finding/status update, confirm:
-1. the situation, impact, and action are understandable
-2. claim state is labeled correctly, including memory, post-compact, and scoped non-finding states
-3. factual agreement/contradiction has evidence; otherwise acknowledge, verify, or describe uncertainty
-4. recommendation/design separates proof, suggestion, trade-off, judgment, and preference
-5. absence claims name checked scope and avoid global overclaiming
-6. troubleshooting/progress/verification applies the Snapshot Wording section below
-7. jargon, identifiers, scope boundaries, or shorthand get a direct gloss when useful
-8. purpose-first, safe continuation, stage progression, full-set-first, governing-basis, proposal, and phase-closeout boundaries are followed when relevant
-9. wording stays natural, professional, and non-ceremonial
-10. compact or corrective prompts use a visible working interpretation when that prevents drift or clarifies the active goal
----
-## Compact Examples
-```text
-Verified fact: Verified: the checked config sets `PORT=3001`.
-Working interpretation: My working read is that you want the diagnosis direction first, not an implementation patch yet.
-Inference/hypothesis: Based on logs it likely needs a database setting; stale cache remains only a possibility until verified.
-Likely cause: The evidence currently points to the verifier path, but I have not confirmed whether the failure is URL, token, or timeout.
-Scoped non-finding: I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did not find `DATABASE_URL` there.
-Human-language/direct gloss: instead of “surface source-query behavior”, say “add a flow so the user can list, search, and open indexed source entries directly”.
-Post-compact/memory: current objective / carried-forward facts / needs-recheck / next action; remembered repo context needs current-code recheck before verified wording.
-```
+## Operational use
+Before sending a finding or status update:
+- make the situation, impact, and next action understandable
+- label claim strength correctly, including memory/post-compact and scoped non-finding states when relevant
+- keep contradiction and non-finding wording evidence-bounded
+- use a short working interpretation only when it prevents drift or clarifies the active goal
+- keep wording natural, professional, and non-ceremonial
+
+Compact examples:
+- Verified: the checked config sets `PORT=3001`.
+- Working read: you want the diagnosis direction first, not an implementation patch yet.
+- Likely cause: the evidence currently points to the verifier path, but the exact failure source is not confirmed yet.
+- Scoped non-finding: I checked the listed files and did not find `DATABASE_URL`.
 ---
 ## Anti-Patterns
 | Anti-pattern | Better approach |

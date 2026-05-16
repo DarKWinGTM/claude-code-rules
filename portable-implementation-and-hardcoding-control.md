@@ -1,6 +1,6 @@
 # Portable Implementation and Hardcoding Control
-> **Current Version:** 1.2
-> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.3
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/portable-implementation-and-hardcoding-control.changelog.md](changelog/portable-implementation-and-hardcoding-control.changelog.md)
 ---
@@ -33,30 +33,20 @@ Local inspection/debugging may use exact values in tool execution, debug snapsho
 Exact environment-specific values are acceptable when a tool requires the exact local path/value now, the user explicitly asks for it, a debug/audit report needs the checked local fact, an operational contract is intentionally machine-scoped, or a forensic/incident record needs exact preservation.
 In those cases, keep scope explicit and do not silently upgrade the value into a portable default. Exact local values may be used for current tool execution or local verification notes, but shared artifacts should still prefer placeholders, config, or late-bound resolution unless the artifact itself is deliberately machine-scoped.
 ---
-## Trigger and Anti-Pattern Model
-Trigger when shared artifacts, reusable templates/examples, support/package source, public onboarding/install examples, or executable reusable automation contain machine-local paths, hardcoded hosts/ports, environment defaults, internal umbrella roots, or mixed placeholder/env notation.
-Required response:
-- replace shared machine-local values with placeholders, env/config, adapters, launchers, or repo-root-relative source guidance unless explicitly machine-scoped
-- move environment defaults in shared logic to config/env/adapter unless the value is true domain data
-- keep checked local values scoped as local facts and normalize mixed notation to the canonical model
-Forbidden drift: developer-machine-as-default, observed-value-becomes-contract, home-directory-as-architecture, temp-dir-as-authority, localhost-default-for-shared-system, single-machine install assumption, internal umbrella root as public default, support-source-hardcodes-workstation-path, source/destination blur, mixed resolution models, silent machine-scoped examples.
+## Drift response
+Trigger when shared artifacts or reusable automation carry machine-local paths, hardcoded hosts/ports, environment defaults, internal umbrella roots, or mixed source-side versus destination/runtime notation.
 
-Common corrections:
-| Drift | Better behavior |
-|---|---|
-| workstation/home/tmp path as shared default | semantic placeholder or env/config binding |
-| hardcoded host/port in shared logic | config/env/adapter at the edge |
-| internal umbrella root as public install path | repo-root-relative source guidance |
-| exact local value in reusable example | mark local-only or replace with portable placeholder |
-| one path used as both source and destination | separate source-side and destination/runtime notation |
----
-## Validation Checklist
-- [ ] Values are classified as portable contract, executable config, observed local fact, or machine-scoped contract.
-- [ ] Shared artifacts avoid machine-specific literals by default; executable paths/hosts/ports resolve through env/config or adapters.
-- [ ] Exact local values are explicitly scoped and not upgraded into reusable defaults.
-- [ ] Public onboarding separates source path from destination/runtime path and prefers `<repo-root>` or repo-root `./` for repo-local commands.
-- [ ] The artifact would still work after moving machines, users, or workspace locations, and notation stays consistent.
-- [ ] Public examples do not teach bad defaults by presenting local-only paths, hosts, or ports as reusable setup guidance.
+Required response:
+- replace shared machine-local values with placeholders or env/config binding unless the artifact is explicitly machine-scoped
+- move shared runtime defaults to config/env/adapter layers unless the value is true domain data
+- keep exact checked local values scoped as observed local facts rather than reusable defaults
+- keep source-side and destination/runtime notation explicit and separate
+
+Quick checks:
+- no workstation/home/tmp path as shared default
+- no hardcoded shared host/port without edge binding
+- no exact local value presented as reusable default
+- no source/destination blur
 ---
 ## Integration
 Related rules:

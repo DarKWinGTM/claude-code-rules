@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 
 ---
@@ -10,10 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Applied P100 safe-first compression refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.1 to v1.2.
+- Updated `design/communication-register.design.md` from v1.1 to v1.2.
+- Compressed repeated inclusion/pruning prose and reduced the example stack to a smaller canonical set.
+- Preserved the natural professional baseline, signal pruning, truth-over-pleasing, proposal evaluation, and evidence-calibrated correction behavior.
+
+### Summary
+`communication-register.md` now stays more compact while preserving its tone, pruning, and anti-sycophancy mechanism for the P100 safe-first compression wave.
 
 ---
 

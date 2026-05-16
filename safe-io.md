@@ -1,7 +1,7 @@
 # Safe I/O (File Reading + Terminal Output)
 
-> **Current Version:** 1.1 (merged M12)
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.1
+> **Current Version:** 1.2 (merged M12)
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
@@ -45,15 +45,7 @@ Before broad file absorption or a multi-file governance/code read burst, identif
 - direct leader reads allowed for narrow known files, exact line ranges, final verification anchors, tightly sequential interactive-control work, unavailable worker tooling, or a stated narrow exception
 - do not treat a small excerpt as proof about the entire file unless checked scope is sufficient
 
-Delegate-first aggregate-read burst signals:
-
-| Signal | Typical I/O shape | Default posture |
-|---|---|---|
-| repo-wide search + several follow-up opens | search results then 4+ file reads | use a filter lane before more raw reads |
-| parent index + multiple child shards or version details | design/changelog audit | delegate shard selection and digest first |
-| mixed docs + code + command output | audit or diagnosis | let a worker normalize the evidence before leader synthesis |
-| repeated offset hopping or rereads after compact | thrash | stop raw intake and delegate or compact before continuing |
-| dense markdown lines across several active docs | TODO/phase/design sets | worker returns anchors, conflicts, and exact ranges |
+Delegate-first aggregate-read burst signals include repo-wide search followed by several file opens, parent index plus multiple child shards or version details, mixed docs+code+command output, repeated offset hopping after compact, or dense markdown across several active docs.
 
 Burst rule:
 - one decisive high-risk signal or two moderate signals are enough to prefer delegate-first handling

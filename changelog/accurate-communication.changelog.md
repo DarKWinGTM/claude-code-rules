@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.23
+> **Current Version:** 2.24
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.24 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-224)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.23 | 2026-05-16 | **[Added intent-read and root-cause wording refinement](#version-223)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Added working-interpretation wording, likely-cause phrasing, scope-repair language, and examples for the P098 intent-grounding conversation doctrine wave. | |
 | 2.22 | 2026-05-07 | **[Added readiness status ladder and audience-surface wording boundary](#version-222)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -65,6 +66,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-224"></a>
+## Version 2.24: Applied P100 safe-first compression refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.23 to v2.24.
+- Updated `design/accurate-communication.design.md` from v2.23 to v2.24.
+- Compressed repeated checklist and example presentation into one shorter operational-use block.
+- Preserved the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording.
+
+### Summary
+`accurate-communication.md` now stays more compact while preserving its evidence-strength wording and claim-state communication mechanism for the P100 safe-first compression wave.
 
 ---
 

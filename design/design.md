@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.07
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-16)
+> **Current Version:** 10.08
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -81,6 +81,11 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
+- P100 is the active v10.08 safe-first active runtime compression wave.
+  - It keeps the source-owned active runtime set at 18 root runtime rules.
+  - It compresses repeated explanation, recap, examples, and reminder blocks in selected merged owners without weakening triggers, taxonomies, decision flows, response contracts, owner-local operational behavior, or phase/task/worker linkage semantics.
+  - It advances `execution-and-goal-frame` to v1.3, `worker-routing-and-context` to v1.3, `safe-io` to v1.2, `phase-todo-artifact` to v1.2, `accurate-communication` to v2.24, `communication-register` to v1.2, `portable-implementation-and-hardcoding-control` to v1.3, and `refusal-and-recovery` to v1.1.
+  - Source-side runtime/design/changelog sync is complete; runtime install, 18/18 source/runtime parity, and source/destination body sufficiency recheck pass in checked scope; push and GitHub release verification are still pending.
 - P099 is the completed v10.07 proactive subagent efficiency and lane templates wave.
   - It keeps the source-owned active runtime set at 18 root runtime rules.
   - It teaches proactive delegation by work shape, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, lane-aware phase/task shaping, and governance/release-sync lane recognition across existing merged owners.
@@ -174,24 +179,24 @@ The active runtime inventory contains 18 source-owned root rule files.
 
 | # | Rule | Design Doc | Purpose |
 |---|------|------------|---------|
-| 1 | `accurate-communication.md` | `accurate-communication.design.md v2.23` | Evidence-calibrated status, intent-read/root-cause wording, agreement/disagreement, memory/post-compact context, and phase closeout wording |
+| 1 | `accurate-communication.md` | `accurate-communication.design.md v2.24` | Evidence-calibrated status, intent-read/root-cause wording, agreement/disagreement, memory/post-compact context, and phase closeout wording |
 | 2 | `action-safety.md` | `action-safety.design.md v1.0` | Destructive/high-impact action safety, topology control, emergency posture, and bounded retry handling |
 | 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.0` | Direct-user transparency plus audience-appropriate generated public/operator/customer disclosure |
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.5` | User authority, hard-boundary precedence, fresh-directive override, and source/project ownership boundaries |
 | 5 | `coding-discipline.md` | `coding-discipline.design.md v1.1` | Maintainable code structure, verification strategy, coding/debug root-cause narrowing, and tactical-to-strategic convergence |
-| 6 | `communication-register.md` | `communication-register.design.md v1.1` | Natural professional tone, signal pruning, anti-ceremony clarification, and proposal evaluation |
+| 6 | `communication-register.md` | `communication-register.design.md v1.2` | Natural professional tone, signal pruning, anti-ceremony clarification, and proposal evaluation |
 | 7 | `document-governance.md` | `document-governance.design.md v1.1` | Repository document roles, design/changelog/patch governance, runtime body sufficiency, and UDVC-1 |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.0` | Cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.1` | Verify-first factual discipline, root-cause evidence thresholds, scoped non-findings, and real-vs-mock boundaries |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.2` | Discussion/execution mode, visible intent read, selective clarification, and next-work boundaries |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.3` | Discussion/execution mode, visible intent read, selective clarification, and next-work boundaries |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.1` | Plain-language explanation, intent-read/root-cause response shapes, diagram discipline, and concise action framing |
 | 12 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.2` | External source verification, trust ranking, corroboration, and source-conflict handling |
 | 13 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v1.7` | Scoped memory governance, compact memory index behavior, path scope, and optional recall boundaries |
-| 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.1` | Startup artifact posture, phase execution, TODO durability, and live task tracking |
-| 15 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.2` | Portable defaults, late-bound environment resolution, and source/destination notation discipline |
-| 16 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.0` | Wrapper normalization, refusal classification, minimization, and recovery paths |
-| 17 | `safe-io.md` | `safe-io.design.md v1.1` | Bounded file reading and terminal output with parent-index-first and worker-first behavior |
-| 18 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.2` | Intent taxonomy, worker routing, diagnosis-first mixed-intent handling, and document-density control |
+| 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.2` | Startup artifact posture, phase execution, TODO durability, and live task tracking |
+| 15 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.3` | Portable defaults, late-bound environment resolution, and source/destination notation discipline |
+| 16 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.1` | Wrapper normalization, refusal classification, minimization, and recovery paths |
+| 17 | `safe-io.md` | `safe-io.design.md v1.2` | Bounded file reading and terminal output with parent-index-first and worker-first behavior |
+| 18 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.3` | Intent taxonomy, worker routing, diagnosis-first mixed-intent handling, and document-density control |
 
 ### 3.2 Category View
 
