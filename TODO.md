@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-16
-> **Current Release:** v10.07 / P099 proactive subagent efficiency and lane templates (pre-release)
+> **Current Release:** v10.07 / P099 proactive subagent efficiency and lane templates
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -9,6 +9,9 @@
 
 ## ✅ Completed
 
+- [x] P099 / v10.07 proactive subagent efficiency and lane templates was completed, installed, pushed, and released.
+  - Verified: 18/18 parity/body sufficiency, owner-link validation, runtime install, source/runtime parity, source/destination body sufficiency, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
 - [x] P098 / v10.06 intent-grounding conversation doctrine was completed, installed, pushed, and released.
   - Verified: 18/18 parity/body sufficiency, consistency sweep, owner-link validation, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
@@ -38,12 +41,6 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ## 📋 Tasks To Do
 
-### Active / In Progress
-
-- [ ] P099 / v10.07 proactive subagent efficiency and lane templates is in release preparation.
-  - Goal: make built-in agent/subagent usage more proactive and efficient through work-shape routing, lane templates, stronger handoffs, leader context budgeting, and worker-fit continuation behavior while keeping the active runtime install count at 18.
-  - Gate: touched owner/runtime/design/changelog surfaces align to P099, README arrays remain 18/18, runtime install and source/runtime parity pass for 18/18, and GitHub release verification passes.
-
 ### Deferred / Not Selected
 
 - [ ] Master governance density rollover remains deferred.
@@ -64,6 +61,8 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
+| 2026-05-16 | Finalized P099 / v10.07 closeout records after verified push and GitHub release. |
+| 2026-05-16 | Released P099 / v10.07 proactive subagent efficiency and lane templates; tag and target commit point to `80b60e5c95dbee8569a144623aad544fdf6c62cb`; published at `2026-05-16T07:02:18Z`. |
 | 2026-05-16 | Opened P099 / v10.07 proactive subagent efficiency and lane templates release preparation. |
 | 2026-05-16 | Finalized P098 / v10.06 closeout records after verified push and GitHub release. |
 | 2026-05-16 | Opened and released P098 / v10.06 intent-grounding conversation doctrine. |

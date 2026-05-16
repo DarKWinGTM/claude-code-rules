@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P099
-> **Status:** Active / In Progress
+> **Status:** Released / Completed
 > **Target Release:** v10.07
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.07
@@ -47,8 +47,8 @@ P099 adds proactive delegation triggers, work-shape topology selection, lane tem
 - [x] Sync touched owner design and changelog companions.
 - [x] Sync README, master design, master changelog, TODO, phase summary, phase, and patch records to P099 pre-release state.
 - [x] Validate README arrays, metadata links, source body sufficiency, runtime install, and source/runtime parity.
-- [ ] Commit source release, push `master`, create GitHub release `v10.07`, and verify release state.
-- [ ] Finalize P099 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.07`, and verify release state.
+- [x] Finalize P099 closeout records after release verification passes.
 
 ---
 
@@ -76,14 +76,18 @@ P099 adds proactive delegation triggers, work-shape topology selection, lane tem
 
 ## Current Status
 
-P099 is active in release preparation for `v10.07`.
+P099 is released and closed for `v10.07`.
 
-Completed so far:
-- current active runtime install set remains the compact 18-rule set
-- P099 phase/TODO/summary startup state has been opened
+Completed:
+- current active runtime install set remained the compact 18-rule set
+- P099 phase/TODO/summary/patch startup state was opened and synchronized
 - touched owner doctrines and their design/changelog companions were updated for proactive delegation and lane-aware continuation
-- master release surfaces are synchronized to active pre-release `v10.07 / P099` state
-- README arrays, metadata links, source body sufficiency, runtime install, 18/18 source/runtime parity, and source/destination body sufficiency passed
+- master release surfaces were synchronized to `v10.07 / P099`
+- README arrays, metadata links, source body sufficiency, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed
 
-Still pending:
-- push `master`, create GitHub release `v10.07`, and finalize closeout records
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+- Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+- Published at `2026-05-16T07:02:18Z`.
+
+No pending P099 release gates remain in checked scope.

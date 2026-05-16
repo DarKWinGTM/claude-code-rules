@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Released / Completed
 > **Target Design:** [design/design.md](../design/design.md) v10.07
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -67,24 +67,32 @@ The main risk in P099 is not file count. The main risks are:
 
 ## Verification
 
-Required checks before release closeout:
+Verified checks for release:
 - README Bash and PowerShell install arrays contain exactly the same 18 active runtime files.
 - All 18 active source runtime files exist and have substantive bodies.
 - Touched owner files keep resolvable design and changelog metadata links.
 - Proactive delegation triggers, topology selection, lane presets, leader context budgeting, structured handoffs, lane-aware continuation, and governance/release-sync lane handling are present in the correct owners.
 - Runtime install copies only README-listed active root runtime rules.
-- Source/runtime parity and source/destination body sufficiency pass for 18/18 files.
+- Source/runtime parity and source/destination body sufficiency passed for 18/18 files.
 - `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set.
-- Git diff has no whitespace errors.
-- GitHub release `v10.07` must be created and verified before closeout wording claims release completion.
+- Git diff had no whitespace errors.
+- GitHub release `v10.07` was created and verified before closeout wording claimed release completion.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+- Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+- Published at `2026-05-16T07:02:18Z`.
 
 ---
 
 ## Implementation Status
 
-P099 is active and not yet released.
+P099 is released and closed for `v10.07`.
 
-Owner-doctrine edits, touched design/changelog companion updates, master release-surface sync, runtime install, 18/18 source/runtime parity, and source/destination body sufficiency are in place, but push, GitHub release creation, and closeout verification are still pending.
+Validation, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed.
+
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+- Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+- Published at `2026-05-16T07:02:18Z`.
 
 ---
 

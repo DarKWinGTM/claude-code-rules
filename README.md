@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.07</b><br><sub>P099 Active</sub>
+  <b>v10.07</b><br><sub>P099 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Validated</b><br><sub>Push/release pending</sub>
+  <b>Released</b><br><sub>GitHub verified</sub>
 </td>
 <td align="center" width="200">
   <b>Proactive delegation</b><br><sub>Lane-template refinement</sub>
@@ -535,10 +535,13 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P099 proactive subagent efficiency and lane templates is the active v10.07 wave.
+- P099 proactive subagent efficiency and lane templates is the released v10.07 wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
   - It adds proactive delegation triggers, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, and governance/release-sync lane recognition across the touched merged owners.
-  - Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed in checked scope; push and GitHub release verification are still pending.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+  - Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+  - Published at `2026-05-16T07:02:18Z`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -701,10 +704,13 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P099 / v10.07 opens the proactive subagent efficiency and lane-templates refinement wave on top of the compact 18-rule merged runtime set.
+- P099 / v10.07 releases the proactive subagent efficiency and lane-templates refinement wave on top of the compact 18-rule merged runtime set.
 - touched merged owners now cover proactive delegation triggers, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, and governance/release-sync lane recognition.
-- phase and patch startup artifacts for P099 are opened.
-- runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed in checked scope; push and GitHub release verification are still pending.
+- phase and patch startup artifacts for P099 are opened and closed with release evidence.
+- runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed in checked scope.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+- Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+- Published at `2026-05-16T07:02:18Z`.
 </div>
 
 ---
@@ -1430,7 +1436,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active pre-release `v10.07 / P099` proactive delegation refinement wave; verified runtime install, 18/18 parity, and source/destination body sufficiency are now in checked scope, while push and GitHub release evidence are still pending.
+- Source state: this README reflects the released `v10.07 / P099` proactive delegation refinement wave with verified runtime install, 18/18 parity, source/destination body sufficiency, push, and GitHub release evidence in checked scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

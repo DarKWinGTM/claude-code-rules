@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.07 | 2026-05-16 | **[Opened proactive subagent efficiency and lane templates](#version-1007)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.07 | 2026-05-16 | **[Released proactive subagent efficiency and lane templates](#version-1007)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.06 | 2026-05-16 | **[Released intent-grounding conversation doctrine](#version-1006)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | 10.05 | 2026-05-16 | **[Released source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | 10.04 | 2026-05-13 | **[Released changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -145,20 +145,23 @@
 ---
 
 <a id="version-1007"></a>
-## Version 10.07: Opened proactive subagent efficiency and lane templates
+## Version 10.07: Released proactive subagent efficiency and lane templates
 
 **Date:** 2026-05-16
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ### Changes
-- Opened P099 as the active pre-release refinement wave.
+- Released P099 as the proactive subagent efficiency and lane-templates refinement wave.
 - Kept the README-listed source-owned active runtime set at 18 files.
 - Advanced the merged owner chains for proactive delegation triggers, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, phase/task lane awareness, and governance/release-sync lane recognition.
-- Opened the P099 phase and patch artifacts and synchronized active TODO/phase posture.
-- Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency passed; push and GitHub release `v10.07` verification remain pending.
+- Opened and closed the P099 phase and patch artifacts with synchronized TODO/phase/master release surfaces.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release `v10.07` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+- Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+- Published at `2026-05-16T07:02:18Z`.
 
 ### Summary
-P099 opens the next refinement wave on top of the compact 18-rule runtime set so worker use becomes proactive, lane-aware, and more context-efficient instead of depending mainly on explicit prompting.
+P099 releases the next refinement wave on top of the compact 18-rule runtime set so worker use becomes proactive, lane-aware, and more context-efficient instead of depending mainly on explicit prompting.
 
 <a id="version-1006"></a>
 ## Version 10.06: Released intent-grounding conversation doctrine

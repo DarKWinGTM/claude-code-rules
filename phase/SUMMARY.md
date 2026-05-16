@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P099 active for v10.07 proactive subagent efficiency and lane templates
+> **Status:** P099 released for v10.07 proactive subagent efficiency and lane templates
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- none opened in checked scope.
+
+### Recently Completed
+
 - **P099:** [phase-099-proactive-subagent-efficiency-and-lane-templates.md](phase-099-proactive-subagent-efficiency-and-lane-templates.md)
   - Goal: make built-in agent/subagent use more proactive and efficient through work-shape routing, lane templates, leader context budgeting, and stronger handoffs.
   - Output: touched owner chains, docs sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.07`.
-  - Scope: active runtime install count remains 18; no new root runtime rule is introduced.
-  - Gate: owner/doctrine sync passes, README arrays remain 18/18, runtime install and parity/body sufficiency pass, and release verification passes.
-
-### Recently Completed
+  - Scope: active runtime install count remained 18; no new root runtime rule was introduced.
+  - Gate: owner/doctrine sync passed, README arrays remained 18/18, runtime install and parity/body sufficiency passed, and release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+  - Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+  - Published at `2026-05-16T07:02:18Z`.
 
 - **P098:** [phase-098-conversation-intent-root-cause-and-scope-drift-refinement.md](phase-098-conversation-intent-root-cause-and-scope-drift-refinement.md)
   - Goal: improve user-intent understanding, visible working interpretation, selective clarification, root-cause framing, and repair re-anchor behavior.
@@ -124,7 +129,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P099 — Proactive Subagent Efficiency and Lane Templates
 
-- **Status:** Active / release preparation
+- **Status:** Released / completed
 - **Design References:**
   - [../design/design.md](../design/design.md) v10.07
   - touched merged-owner design companions under [../design/](../design/)
@@ -136,9 +141,12 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - **Completion Gate:**
   - touched runtime/design/changelog owners align to `v10.07 / P099`
   - README Bash and PowerShell arrays still define the same 18 active runtime files
-  - runtime install, 18/18 source/runtime parity, and source/destination body sufficiency pass
-  - touched active docs pass density/God-artifact review
-  - `master` is pushed and GitHub release `v10.07` is verified
+  - runtime install, 18/18 source/runtime parity, and source/destination body sufficiency passed
+  - touched active docs passed density/God-artifact review
+  - `master` was pushed and GitHub release `v10.07` was verified
+- **Release URL:** https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+- **Release target and tag:** `80b60e5c95dbee8569a144623aad544fdf6c62cb`
+- **Published at:** `2026-05-16T07:02:18Z`
 
 ### P098 — Conversation Intent, Root-Cause, and Scope-Drift Refinement
 
@@ -435,22 +443,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-P099 verification should prove that built-in agent/subagent usage becomes more proactive and efficient without expanding the active 18-rule runtime set or weakening leader verification discipline.
+P099 verification proved that built-in agent/subagent usage became more proactive and efficient without expanding the active 18-rule runtime set or weakening leader verification discipline.
 
-Current focus:
-- `worker-routing-and-context` owns proactive delegation triggers, work-shape topology selection, lane templates, stronger handoffs, leader context budgeting, and delegation success metrics.
-- `execution-and-goal-frame` owns worker-fit continuation and broad-objective decomposition before deep execution.
-- `phase-todo-artifact` should keep phase-backed tasks aligned to lane structure when work becomes multi-stage.
-- `document-governance` should recognize governance/release-sync work shapes that favor worker-first decomposition.
-- `safe-io` should reinforce aggregate-read bursts as delegate-first signals.
-- README install arrays must remain the same compact 18-rule set.
-- Runtime install has copied only the 18 README-listed active runtime rules.
+Latest completed verification:
+- `worker-routing-and-context` now owns proactive delegation triggers, work-shape topology selection, lane templates, stronger handoffs, leader context budgeting, and delegation success metrics.
+- `execution-and-goal-frame` now owns worker-fit continuation and broad-objective decomposition before deep execution.
+- `phase-todo-artifact` keeps phase-backed tasks aligned to lane structure when work becomes multi-stage.
+- `document-governance` recognizes governance/release-sync work shapes that favor worker-first decomposition.
+- `safe-io` reinforces aggregate-read bursts as delegate-first signals.
+- README install arrays remained the same compact 18-rule set.
+- Runtime install copied only the 18 README-listed active runtime rules.
 - 18/18 source/runtime parity and source/destination active runtime body sufficiency passed after install.
-- The runtime destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set.
-- Touched active docs must pass density and God-artifact review.
-- Broad source validation should use worker-first filtering plus leader verification of selected anchors.
+- The runtime destination extra `shared-task-list-path-coordination.md` remained observed-only and outside the source-owned install set.
+- Touched active docs passed density and God-artifact review.
+- Broad source validation used worker-first filtering plus leader verification of selected anchors.
 
-No P099 release-complete claim is valid until push and GitHub release `v10.07` verification pass.
+P099 push and GitHub release `v10.07` verification passed.
 
 ---
 

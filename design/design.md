@@ -81,11 +81,14 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P099 is the active v10.07 proactive subagent efficiency and lane templates wave.
+- P099 is the completed v10.07 proactive subagent efficiency and lane templates wave.
   - It keeps the source-owned active runtime set at 18 root runtime rules.
   - It teaches proactive delegation by work shape, topology selection, lane presets, leader context budgeting, delegate-first aggregate-read handling, broad-objective decomposition, auto-next-lane continuation, lane-aware phase/task shaping, and governance/release-sync lane recognition across existing merged owners.
   - It advances `worker-routing-and-context` to v1.2, `safe-io` to v1.1, `execution-and-goal-frame` to v1.2, `phase-todo-artifact` to v1.1, and `document-governance` to v1.1.
-  - Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency passed; push and GitHub release `v10.07` verification remain pending until closeout.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release `v10.07` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+  - Release target and tag point to commit `80b60e5c95dbee8569a144623aad544fdf6c62cb`.
+  - Published at `2026-05-16T07:02:18Z`.
 - P098 is the completed v10.06 intent-grounding conversation doctrine wave.
   - It keeps the source-owned active runtime set at 18 root runtime rules.
   - It teaches visible intent read, selective clarification, root-cause framing, repair re-anchor, and diagnosis-first mixed-intent handling across existing merged owners.
