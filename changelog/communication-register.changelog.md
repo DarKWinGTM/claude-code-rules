@@ -1,8 +1,8 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 
 ---
 
@@ -10,10 +10,26 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
+| | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-11"></a>
+## Version 1.1: Added P098 intent-grounding refinement
+
+**Date:** 2026-05-16
+**Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+
+### Changes
+- Extended `communication-register.md` for the P098 intent-grounding conversation doctrine wave.
+- Added doctrine coverage for anti-ceremony clarification and evidence-calibrated agreement or dissent.
+- Preserved the compact merged runtime owner structure and kept the active runtime install count unchanged at 18.
+
+### Summary
+`communication-register.md` now carries the P098 intent-grounding refinement while preserving its existing merged-owner boundary.
 
 <a id="version-10"></a>
 ## Version 1.0: Created merged runtime owner chain

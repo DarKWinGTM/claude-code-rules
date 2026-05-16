@@ -1,7 +1,7 @@
 # Accurate Communication Standard
-> **Current Version:** 2.22
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.22
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 2.23
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.23
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
 ## Rule Statement
@@ -42,7 +42,9 @@ Claims must match the real evidence level, especially when readiness can be mist
 | user-owned preference/direction | "I'll use that as the working direction/preference, not as proof of the factual claim." |
 | evidence-grounded recommendation/design | "The checked evidence grounds this recommendation, but it does not prove this is the only valid design." |
 | evidence-backed inference | "Based on X and Y, it likely ..." |
+| working interpretation of user intent | "My working read is ..." / "I interpret this as ..." |
 | working hypothesis | "One possibility is ..." |
+| likely cause | "The evidence currently points to ..." |
 | unresolved uncertainty | "I cannot confirm yet because ..." |
 | unresolved governing basis | ask the user to choose the governing basis before deep branch analysis |
 | recalled path-matched context | "From applicable path-scoped memory, ..." |
@@ -50,6 +52,7 @@ Claims must match the real evidence level, especially when readiness can be mist
 | not found in checked scope | "I checked A/B/C and did not find ..." |
 
 - do not present inference as fact or hypothesis as verified cause
+- do not present a working interpretation of user intent as certainty about the user's mind
 - do not present user preference or direction as factual proof
 - do not agree with or endorse factual/technical/completion/root-cause/security claims beyond checked evidence
 - when evidence grounds analysis, design, or recommendation, state what it proves, suggests, and does not settle when that boundary matters
@@ -105,6 +108,12 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 ## Application Rules
 Use stronger clarity when something unexpected was found, status could be misunderstood, or impact/next action is not obvious. Use stronger evidence wording when reporting findings/status, root cause or uncertainty, coding verification/debug/TestKit closeout, factual agreement/contradiction, non-findings, recommendation/design grounding, or phase-backed closeout.
 
+When the user's prompt is compact, broad, corrective, or easy to misread, a short working interpretation may be useful before deep detail:
+- state what you think the user wants now
+- state what this answer or action will focus on when drift risk is material
+- keep the working interpretation short and non-ceremonial
+- if the user corrects the scope, re-anchor to the new interpretation before continuing
+
 For proof-aware analysis, separate checked evidence from assumptions, say when evidence is only grounding input, and identify hard constraints only when proof supports that status. For phase-backed closeout, state practical delivery and impact without upgrading edited/partially verified work into working, fixed, or stable claims. Use post-compact and memory disclosure when exact state may have been compressed or recalled rather than freshly checked.
 
 Prefer evidence-calibrated agreement and claim-focused correction:
@@ -129,11 +138,14 @@ Before sending a finding/status update, confirm:
 7. jargon, identifiers, scope boundaries, or shorthand get a direct gloss when useful
 8. purpose-first, safe continuation, stage progression, full-set-first, governing-basis, proposal, and phase-closeout boundaries are followed when relevant
 9. wording stays natural, professional, and non-ceremonial
+10. compact or corrective prompts use a visible working interpretation when that prevents drift or clarifies the active goal
 ---
 ## Compact Examples
 ```text
 Verified fact: Verified: the checked config sets `PORT=3001`.
+Working interpretation: My working read is that you want the diagnosis direction first, not an implementation patch yet.
 Inference/hypothesis: Based on logs it likely needs a database setting; stale cache remains only a possibility until verified.
+Likely cause: The evidence currently points to the verifier path, but I have not confirmed whether the failure is URL, token, or timeout.
 Scoped non-finding: I checked `backend/.env`, `backend/config.js`, and `docker-compose.yml` and did not find `DATABASE_URL` there.
 Human-language/direct gloss: instead of “surface source-query behavior”, say “add a flow so the user can list, search, and open indexed source entries directly”.
 Post-compact/memory: current objective / carried-forward facts / needs-recheck / next action; remembered repo context needs current-code recheck before verified wording.
@@ -151,6 +163,7 @@ Post-compact/memory: current objective / carried-forward facts / needs-recheck /
 | setup before purpose | open with what is being tested, diagnosed, proposed, recommended, or concluded |
 | same-scope deepening, option prompting, or narrow subsets when progression/full set is needed | move stage, continue safely, or show the complete relevant set |
 | compressed/memory context as fresh truth, duplicate-looking agents as definite overlap, or phase closeout as file/task-only status | re-anchor/recheck, separate observation from inference, and state delivery/impact/verification/next state at checked strength |
+| treating a working interpretation of user intent as verified user intent | keep it short, useful, and explicitly framed as the assistant's active read |
 | ceremonial opening, exaggerated enthusiasm, or fake empathy | lead with the point calmly |
 ---
 ## Snapshot Wording (absorbed from technical-snapshot-communication)

@@ -1,8 +1,8 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 
 ---
 
@@ -10,10 +10,26 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
+| | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-11"></a>
+## Version 1.1: Added P098 intent-grounding refinement
+
+**Date:** 2026-05-16
+**Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+
+### Changes
+- Extended `worker-routing-and-context.md` for the P098 intent-grounding conversation doctrine wave.
+- Added doctrine coverage for intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection.
+- Preserved the compact merged runtime owner structure and kept the active runtime install count unchanged at 18.
+
+### Summary
+`worker-routing-and-context.md` now carries the P098 intent-grounding refinement while preserving its existing merged-owner boundary.
 
 <a id="version-10"></a>
 ## Version 1.0: Created merged runtime owner chain

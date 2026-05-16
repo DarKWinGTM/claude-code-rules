@@ -1,15 +1,15 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.0 (merged M10)
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1 (merged M10)
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
 ---
 
 ## Rule Statement
 
-**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and once work is execution-ready continue by default from compact active surfaces; keep the full active goal set visible and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
+**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; keep the full active goal set visible and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
 
 This rule owns mode selection, stop/continue, continuous execution, next-work discovery, goal-set visibility, priority balance, goal-frame semantics, goal hierarchy, anti-ritual boundaries, and the completion-to-next-goal bridge. It does not replace startup governance, user authority, safety gates, evidence wording, worker routing, phase roadmap semantics, or shared-board/plugin coordination.
 
@@ -30,6 +30,35 @@ When the user provides logs, snippets, paths, or another session's output, re-ch
 - do not start project file reading or implementation merely because evidence contains paths or code
 - project exploration is appropriate only when requested for project facts/implementation/review, or for a bounded verification need aligned with the active question
 - if the user corrects scope back to AI/RULES behavior, drop the project path and continue in the corrected scope
+
+### 2.1) Visible intent read and goal lock
+When user input is compact, broad, corrective, meta-level, or easy to misread, state a short working interpretation before deep analysis or execution.
+- this visible intent read should make the assistant's active frame legible without turning the answer into ceremony
+- identify what the assistant thinks the user wants now
+- identify the current turn goal when it affects the answer shape or next action
+- identify what is intentionally being kept out of scope when drift risk is material
+- keep this visible read short and practical; it is a grounding device, not a ritual opening
+- do not present the working interpretation as certainty about the user's mind; treat it as the assistant's active frame
+
+Useful shapes include:
+- `My working read is ...`
+- `I interpret this as ...`
+- `I think you want X, so I will focus on Y rather than Z.`
+
+### 2.2) Selective clarification and repair re-anchor
+Ask a clarifying question only when ambiguity materially changes the answer, action, risk, or root-cause branch.
+- if one interpretation clearly dominates or a bounded answer is still useful, state the working interpretation and continue
+- if clarification is needed, ask one narrow, high-information question rather than broad intake questioning
+- after user correction, re-anchor before continuing: restate the active interpretation, the active goal, and the scope being deferred
+- do not keep reasoning from a stale frame after the user has corrected the direction
+
+### 2.3) Success metrics for intent-grounded conversation
+Judge this behavior by whether it improves execution quality rather than whether the wording sounds more thoughtful.
+- drift decreases: the assistant more often stays on the user's actual goal
+- unnecessary clarification decreases: questions are narrower and less frequent when the path is already clear
+- root-cause focus improves: diagnosis turns separate symptom, evidence, likely cause, and next-best check earlier
+- correction recovery improves: when the user repairs scope, the assistant re-anchors faster and stops reasoning from the stale frame
+- ceremony does not increase: trivial asks still receive direct compact answers
 
 ### 3) Startup gate and capture before continue
 Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.
@@ -130,6 +159,9 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | explicit continue intent | preserve execution mode unless real stop gate exists |
 | pasted logs/paths/snippets from another session | classify intent before project exploration |
 | AI/RULES behavior question | stay discussion unless project inspection is explicitly requested |
+| compact or broad ask with meaningful drift risk | state a visible working interpretation before deepening |
+| ambiguity changes answer, action, risk, or root-cause branch | ask one narrow clarification before deeper execution |
+| user correction changes active scope or goal | repair and re-anchor the working frame before continuing |
 | unresolved startup gate | resolve startup posture before execution drift |
 | oversized active governance entrypoint | compact/roll over before broad continuation |
 | clear active phase/task path or discoverable unfinished work | inspect execution surfaces and continue if safe |
@@ -150,7 +182,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 ---
 
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, new-major allocation by momentum, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, and next-goal proposals treated as selected execution.
+Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, new-major allocation by momentum, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
 
 ---
 

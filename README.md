@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.05</b><br><sub>P097 Released</sub>
+  <b>v10.06</b><br><sub>P098 Release Prep</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>GitHub verified</sub>
+  <b>Pre-release</b><br><sub>Validation pending</sub>
 </td>
 <td align="center" width="200">
-  <b>Merged runtime</b><br><sub>Compact install set</sub>
+  <b>Intent grounding</b><br><sub>Conversation refinement</sub>
 </td>
 </tr>
 </table>
@@ -535,14 +535,10 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P097 source merge cleanup is released for v10.05.
-  - It makes the compact 18-rule merged runtime set the source-owned install target.
-  - It adds missing merged-rule design/changelog companion coverage.
-  - It treats `.claude-code-rules-legacy-backup/` as local preservation output, not active runtime authority.
-  - Runtime install, 18/18 source/runtime parity, body sufficiency, metadata-link validation, consistency sweep, push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
-  - Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
-  - Published at `2026-05-15T21:39:33Z`.
+- P098 intent-grounding conversation doctrine is active for v10.06.
+  - It keeps the compact 18-rule merged runtime set as the source-owned install target.
+  - It adds visible intent read, selective clarification, root-cause framing, repair re-anchor, intent taxonomy, trigger additions, anti-patterns, examples, and success metrics across the touched merged owners.
+  - Runtime install, 18/18 source/runtime parity, push, and GitHub release verification remain pending until the P098 release gate completes.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -705,12 +701,9 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P097 / v10.05 releases the compact 18-rule merged runtime set.
-- absorbed old root rules are removed from active source authority and preserved only through governed history or local backup/provenance surfaces.
-- runtime install, 18/18 source/runtime parity, body sufficiency, metadata-link validation, consistency sweep, push, and GitHub release verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
-- Release target and tag point to commit `14310761b1804d3355d5a1fa2b380901daf1ce6d`.
-- Published at `2026-05-15T21:39:33Z`.
+- P098 / v10.06 is the active refinement wave on top of the compact 18-rule merged runtime set.
+- touched merged owners are being extended for visible intent read, selective clarification, root-cause framing, repair re-anchor, and diagnosis-first mixed-intent handling.
+- runtime install, 18/18 source/runtime parity, push, and GitHub release verification remain pending until the P098 release gate completes.
 </div>
 
 ---
@@ -1436,7 +1429,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects source-local merge cleanup only; it does not claim push, release, or runtime parity verification beyond checked source scope.
+- Source state: this README reflects the active `v10.06 / P098` intent-grounding pre-release wave; it does not claim push, GitHub release, or final runtime parity verification beyond the checked pre-release scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1559,7 +1552,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.05 |
+  <b>Version</b>: 10.06 |
   <b>Last Updated</b>: 2026-05-16 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

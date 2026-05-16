@@ -1,7 +1,7 @@
 # Coding Discipline
-> **Current Version:** 1.0
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
 
@@ -128,6 +128,14 @@ For bug-fix, failure, flaky behavior, or complex integration work, keep a debug 
 - prefer a failing test, focused reproduction, TestKit scenario, fixture, fake adapter, log/report, or failure injection when practical
 - if reproduction is unavailable, state what evidence is missing and use bounded diagnostics rather than guessing
 
+### 3.1) Root-cause narrowing for coding and debug work
+When the user's goal is diagnosis rather than immediate patching, make the root-cause path visible enough to guide safe implementation.
+- separate the observed failure from the working cause hypothesis
+- name the discriminating check that would confirm or disprove the current leading hypothesis
+- prefer the next-best test that cuts away major competing explanations over shotgun patching several branches at once
+- if the fix proceeds before the cause is fully proven, state that the edit is hypothesis-driven and preserve the evidence limit
+- after the user corrects the debugging direction, re-anchor the active reproduction target before continuing with code edits or tests
+
 ### 4) TestKit / scenario decision contract
 For non-trivial coding work, select one verification route explicitly:
 - `existing_test`: an existing focused/regression test covers the behavior
@@ -227,6 +235,7 @@ When this doctrine materially matters, make these meanings visible: **Strategic 
 |---|---|
 | non-trivial coding feature | choose verification depth and TestKit/scenario decision before closeout |
 | bug/debug request | define observed failure/reproduction, hypothesis, signal, fix, and regression check when practical |
+| root-cause diagnosis before patching | separate symptom, leading hypothesis, discriminating check, and evidence boundary before shotgun edits |
 | refactor | preserve behavior and rerun affected tests or state verification limits |
 | integration/provider/runtime/payment/auth/privacy work | fake/local verification first, then explicit smoke/live decision and safety boundary |
 | scenario-like flow | prefer TestKit/scenario harness or explain why focused tests are stronger |
@@ -256,6 +265,7 @@ Avoid:
 - edit-only completion, testing as an afterthought, mandatory TestKit creation for trivial work
 - fake/local pass presented as live proof, refactor without behavior-preservation checks
 - debugging from guesses without a signal, adding tests that do not cover the changed behavior
+- shotgun edits across several speculative causes before a discriminating check narrows the branch
 - running broad/noisy tests without worker filtering when appropriate
 - reporting fixed/stable beyond checked evidence
 - tactical entry without a declared strategic target or convergence path

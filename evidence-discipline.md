@@ -1,8 +1,8 @@
 # Evidence Discipline
 
-> **Current Version:** 1.0 (merged M1)
-> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1 (merged M1)
+> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
 
 ---
@@ -34,6 +34,22 @@ Do not state or endorse technical or project-specific claims as fact until relev
 - **Not always a lock:** bind only hard constraints, authoritative requirements, safety boundaries, and verified contradictions; otherwise treat evidence as input to judgment, trade-offs, and user-owned goals.
 - **Claim-state separation:** keep verified fact, observed local fact, user-owned preference, inference, hypothesis, unresolved uncertainty, scoped non-finding, strong absence, unresolved governing basis, compacted carry-forward detail, and memory-derived context distinct.
 - **Burden-aware wording:** factual endorsement requires enough evidence to state the claim as fact; direct correction requires contrary evidence; likely/probable wording requires evidence-backed inference; possibility wording requires only partial evidence and must stay tentative.
+
+### 2.1) Root-cause claim discipline
+
+Treat root-cause language as a factual discipline, not as a storytelling shortcut.
+- separate the **observed symptom** from the suspected mechanism that might explain it
+- treat `working cause hypothesis` and `likely cause` as inference states, not verified fact
+- reserve `verified cause` wording for evidence that materially confirms the mechanism or rules out the main competing explanations in checked scope
+- when diagnosis is the user's goal, state what was observed, what the evidence suggests, what remains unproven, and what next check would discriminate best
+- do not let one plausible branch become `the root cause` merely because it is the first coherent explanation
+
+Useful diagnosis shape:
+- symptom
+- checked evidence
+- leading hypothesis or likely cause so far
+- what would confirm or disprove it
+- next-best check
 
 ### 3) Local lookup and portable-contract boundary
 
@@ -101,6 +117,9 @@ Source priority: external factual claims should prefer authoritative external so
 | `USER_OWNED_PREFERENCE_OR_DIRECTION` | user-stated priority, preference, style, scope, or selected direction | “I will use that as the working direction/preference, not as proof of the factual claim.” |
 | `EVIDENCE_BACKED_INFERENCE` | observed facts plus clear reasoning | “Based on X and Y, it likely …” |
 | `WORKING_HYPOTHESIS` | partial or suggestive evidence | “One possibility is …” |
+| `ROOT_CAUSE_WORKING_HYPOTHESIS` | a plausible but still unproven explanation for the observed symptom | “A working cause hypothesis is ...” |
+| `LIKELY_CAUSE` | evidence-backed inference that currently best explains the symptom, but is not yet fully confirmed | “The evidence currently points to ...” |
+| `VERIFIED_CAUSE` | checked evidence confirms the mechanism strongly enough to state it as cause in scope | factual cause wording, with evidence reference when material |
 | `UNRESOLVED_UNCERTAINTY` | insufficient or conflicting evidence | “I cannot confirm yet because …” |
 | `POST_COMPACT_NEEDS_RECHECK` | summary-carried detail without enough surviving exact evidence | “This was carried forward from compacted state, but exact detail needs recheck before I treat it as verified fact.” |
 | `UNRESOLVED_GOVERNING_BASIS` | outcome-changing basis ambiguity not settled by evidence or instruction | ask the user to choose the governing basis before deep branch analysis |
@@ -168,6 +187,7 @@ Verify before factual claims, factual endorsement, or strong wording when these 
 | runtime/config value (env var, port, endpoint base URL, config key) | read actual config source |
 | cross-file / cross-reference claim (“updated everywhere”, “all references fixed”) | verify impacted artifacts before claiming sync/no drift |
 | ambiguous source of truth (multiple candidate files or conflicting values) | preserve uncertainty and declare inspected scope |
+| diagnosis or root-cause request | separate symptom, checked evidence, cause hypothesis, and next-best check before strong cause wording |
 | negative claim (“there is no X”, “X does not exist”) | decide whether evidence supports scoped non-finding or strong absence |
 | git-state file classification (untracked, new file, clean/dirty) | keep git state scoped and check governed surfaces before classifying file meaning |
 | uncertainty detected | mark uncertainty before final claim |
@@ -235,6 +255,7 @@ Is a mock needed because real path is unavailable/costly/approval-gated?
 | proof-aware reasoning becomes invented proof | label assumptions or unresolved uncertainty instead |
 | treating ordinary evidence as a rigid final decision lock | bind only hard constraints, authoritative requirements, safety boundaries, or verified contradictions |
 | presenting inference or hypothesis as fact/cause | mark the claim state explicitly |
+| collapsing symptom into root cause because the explanation feels plausible | separate observation, hypothesis, and confirmation boundary |
 | reporting “not found” / scoped non-finding as non-existence or omitting checked scope | declare checked scope |
 | git-state or cleanup rationale treated as file disposability / disposal authority | keep git state scoped and check governed meaning and deletion authority first |
 | calling the user wrong/mistaken/confused without contrary evidence | verify first or describe tension |

@@ -1,8 +1,8 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
 ---
@@ -20,6 +20,8 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 This design owns the target-state shape for responsibility boundaries, helper/comment discipline, behavior-preserving refactor, debug/test depth, and tactical convergence.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+
+P098 refinement: this owner must now also preserve target-state doctrine for maintainable code structure, proportionate verification, coding/debug root-cause narrowing, and tactical-to-strategic convergence.
 
 ---
 

@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P097 released for v10.05 source merge cleanup compact runtime set
+> **Status:** P098 active for v10.06 intent-grounding conversation doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently opened.
+- **P098:** [phase-098-conversation-intent-root-cause-and-scope-drift-refinement.md](phase-098-conversation-intent-root-cause-and-scope-drift-refinement.md)
+  - Goal: improve user-intent understanding, visible working interpretation, selective clarification, root-cause framing, and repair re-anchor behavior.
+  - Output: touched owner chains, docs sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.06`.
+  - Scope: active runtime install count remains 18; no new root runtime rule is introduced.
+  - Gate: owner/doctrine sync passes, README arrays remain 18/18, runtime install and parity/body sufficiency pass, and release verification passes.
 
 ### Recently Completed
 
@@ -108,6 +112,24 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Recent Phase Detail
+
+### P098 — Conversation Intent, Root-Cause, and Scope-Drift Refinement
+
+- **Status:** Active / release preparation
+- **Design References:**
+  - [../design/design.md](../design/design.md) v10.06
+  - touched merged-owner design companions under [../design/](../design/)
+- **Patch References:** [../patch/conversation-intent-root-cause-and-scope-drift-refinement.patch.md](../patch/conversation-intent-root-cause-and-scope-drift-refinement.patch.md)
+- **Expected Output:**
+  - existing merged owner rules teach visible intent read, selective clarification, root-cause framing, and repair re-anchor behavior
+  - intent taxonomy, trigger additions, anti-patterns, examples, and success metrics are added in role-correct owners
+  - runtime install scope remains the same compact 18-rule set
+- **Completion Gate:**
+  - touched runtime/design/changelog owners align to `v10.06 / P098`
+  - README Bash and PowerShell arrays still define the same 18 active runtime files
+  - runtime install, 18/18 source/runtime parity, and source/destination body sufficiency pass
+  - touched active docs pass density/God-artifact review
+  - `master` is pushed and GitHub release `v10.06` is verified
 
 ### P097 — Source Merge Cleanup Compact Runtime Set
 
@@ -386,36 +408,29 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-P096-01 verification is complete for the v10.04 source-sync, install, push, and release gates.
+P098 verification should prove that the active 18-rule runtime set becomes more intent-aware without adding a new root runtime rule or drifting into ceremonial conversation behavior.
 
-Current checked state:
-- P096-01 phase and patch records exist and are released/closed.
-- `document-changelog-control` runtime/design/changelog versions are synchronized to v4.12 in source.
-- `project-documentation-standards` runtime/design/changelog versions are synchronized to v2.41 in source.
-- `document-consistency` runtime/design/changelog versions are synchronized to v1.15 in source.
-- `safe-file-reading` runtime/design/changelog versions are synchronized to v1.8 in source.
-- `context-load-and-document-density-control` runtime/design/changelog versions are synchronized to v1.6 in source.
-- README, master design, master changelog, TODO, phase, and patch records align to released `v10.04 / P096-01` state in checked source scope.
-- Runtime install copied the 47 README-listed active runtime rules.
-- 47/47 source/runtime parity and source/destination active runtime body sufficiency passed.
-- Parent changelog plus chain-scoped version detail shard doctrine is present in touched owner chains.
-- `changelog/done/` remains legacy/archive/fallback history, not default ordinary same-chain detail storage.
-- Touched active doc density and God-artifact review passed for the P096-01 scope.
-- Broad source validation used worker-first filtering plus leader repair of reported stale anchors.
-- `master` push and GitHub release `v10.04` verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
-- Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
-- Published at `2026-05-13T16:53:38Z`.
-- Broader master governance density rollover remains deferred and tracked in `TODO.md`.
+Current focus:
+- `execution-and-goal-frame` owns visible intent read, selective clarification, and repair re-anchor doctrine.
+- `worker-routing-and-context` owns intent taxonomy and routing implications.
+- `evidence-discipline` owns root-cause claim-state boundaries and evidence thresholds.
+- `accurate-communication`, `communication-register`, and `explanation-and-presentation` own wording, examples, and response shape.
+- `coding-discipline` owns coding/debug-specific root-cause framing only.
+- README install arrays must remain the same compact 18-rule set.
+- Runtime install must copy only the 18 README-listed active runtime rules.
+- 18/18 source/runtime parity and source/destination active runtime body sufficiency must pass after install.
+- The runtime destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set.
+- Touched active docs must pass density and God-artifact review.
+- Broad source validation should use worker-first filtering plus leader verification of selected anchors.
 
-No pending P096-01 release gates remain in checked scope.
+No P098 release-complete claim is valid until push and GitHub release `v10.06` verification pass.
 
 ---
 
 ## Rollback / Containment
 
-If P096-01 is reversed:
-- revert the v10.04 changelog parent/detail-shard doctrine through a governed rollback
-- restore prior v10.03 owner-chain versions and master records
-- reinstall the prior 47-file runtime set only under an explicit rollback gate
-- do not delete phase, patch, history, `done/`, `changelog/done/`, future changelog shard directories, unrelated runtime destination files, or observed-only extras as cleanup
+If P098 is reversed before release:
+- revert the touched owner-chain doctrine edits as one governed rollback
+- restore the released `v10.05 / P097` source state as the active baseline
+- keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
+- do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

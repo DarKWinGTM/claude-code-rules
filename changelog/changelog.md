@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.05
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 10.06
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.06 | 2026-05-16 | **[Opened intent-grounding conversation doctrine](#version-1006)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | 10.05 | 2026-05-16 | **[Released source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | 10.04 | 2026-05-13 | **[Released changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.03 | 2026-05-13 | **[Released standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -141,6 +142,21 @@
 | 6.3 | 2026-03-17 | **[Created first-class tactical-strategic-programming rule chain and synchronized master governance](#version-63)** | 77d0802a-fd64-4023-a66d-88c165ccca12 |
 
 ---
+
+<a id="version-1006"></a>
+## Version 10.06: Opened intent-grounding conversation doctrine
+
+**Date:** 2026-05-16
+**Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+
+### Changes
+- Opened P098 as the intent-grounding conversation doctrine release wave.
+- Kept the README-listed source-owned active runtime set at 18 files.
+- Began updating the merged owner chains for visible intent read, selective clarification, root-cause framing, repair re-anchor, intent taxonomy, trigger additions, examples, anti-patterns, and success metrics.
+- Runtime install, source/runtime parity, push, and GitHub release verification remain pending until the release gate completes.
+
+### Summary
+P098 opens the next refinement wave on top of the compact 18-rule runtime set so Main RULES can understand user intent more visibly and keep diagnosis/root-cause conversations more disciplined.
 
 <a id="version-1005"></a>
 ## Version 10.05: Released source merge cleanup compact runtime set

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.22
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 2.23
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835 (2026-05-16)
 
 ---
 
@@ -33,6 +33,8 @@ This chain is the wording owner for:
 - direct-user transparency versus generated public/operator/customer surface wording so audience-aware disclosure control cannot be misread as hiding information from the authorized user
 - easy-explanation continuity so explicit requests for plain Thai / less jargon stay in that easier register across the whole answer instead of rebounding into internal labels after one gloss
 - main-point-first operational framing so diagnosis/test/recommendation/proposal/update answers state what they are doing before the supporting detail expands
+- visible intent-read wording so the assistant can expose a short working interpretation of the user's goal when that reduces drift
+- root-cause wording that distinguishes symptom, likely cause, verified cause, and next-best check without overclaiming
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
 
 This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `development-verification-and-debug-strategy`, bounded technical snapshot wording to `technical-snapshot-communication`, and end-of-response closing / action / proposal framing to `response-closing-and-action-framing`.

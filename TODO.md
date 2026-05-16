@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-16
-> **Current Release:** v10.05 / P097 source merge cleanup compact runtime set (released)
+> **Current Release:** v10.06 / P098 intent-grounding conversation doctrine (pre-release)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -37,7 +37,9 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-No active governed release is currently opened.
+- [ ] P098 / v10.06 intent-grounding conversation doctrine is in release preparation.
+  - Goal: improve user-intent understanding, visible working interpretation, selective clarification, root-cause framing, and repair re-anchor behavior without changing the active 18-rule runtime install count.
+  - Gate: touched owner/runtime/design/changelog surfaces align to P098, README arrays remain 18/18, runtime install and source/runtime parity pass for 18/18, and GitHub release verification passes.
 
 ### Deferred / Not Selected
 
@@ -59,6 +61,7 @@ No active governed release is currently opened.
 
 | Date | Changes |
 |------|---------|
+| 2026-05-16 | Opened P098 / v10.06 intent-grounding conversation doctrine release preparation. |
 | 2026-05-16 | Finalized P097 / v10.05 closeout records after verified push and GitHub release. |
 | 2026-05-16 | Opened and released P097 / v10.05 source merge cleanup compact runtime set. |
 | 2026-05-14 | Finalized P096-01 / v10.04 closeout records after verified push and GitHub release. |

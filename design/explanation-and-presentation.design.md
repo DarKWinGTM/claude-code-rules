@@ -1,8 +1,8 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
 ---
@@ -20,6 +20,8 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 This design owns the target-state shape for answer presentation, explanation quality, no-frame diagrams, and response closing.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+
+P098 refinement: this owner must now also preserve target-state doctrine for plain-language explanation, visible intent-read response shapes, root-cause walkthroughs, and concise action framing.
 
 ---
 

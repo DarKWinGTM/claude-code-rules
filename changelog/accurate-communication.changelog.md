@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.22
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 2.23
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.23 | 2026-05-16 | **[Added intent-read and root-cause wording refinement](#version-223)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
+| | | Summary: Added working-interpretation wording, likely-cause phrasing, scope-repair language, and examples for the P098 intent-grounding conversation doctrine wave. | |
 | 2.22 | 2026-05-07 | **[Added readiness status ladder and audience-surface wording boundary](#version-222)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Clarified prepared/configured/implemented/tested/verified/live/fixed/stable wording and preserved full direct-user transparency while deferring generated public-surface disclosure boundaries to the new audience owner | |
 | 2.21 | 2026-05-06 | **[Aligned coding closeout wording to verification evidence strength](#version-221)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -65,6 +67,20 @@
 | | | Summary: Initial version - later deemed too rigid | |
 
 ---
+
+<a id="version-223"></a>
+## Version 2.23: Added intent-read and root-cause wording refinement
+
+**Date:** 2026-05-16
+**Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+
+### Changes
+- Added wording shapes for working interpretation of user intent.
+- Added likely-cause phrasing and guardrails against overclaiming root cause.
+- Added application guidance, checklist coverage, and compact examples for P098 intent-grounding behavior.
+
+### Summary
+`accurate-communication.md` now gives the P098 wave evidence-calibrated wording for visible intent reads, root-cause explanation boundaries, and scope repair.
 
 <a id="version-222"></a>
 ## Version 2.22: Added readiness status ladder and audience-surface wording boundary

@@ -1,7 +1,7 @@
 # Explanation and Presentation
-> **Current Version:** 1.0
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
 
@@ -48,6 +48,14 @@ Move from simple framing to deeper detail in order.
 - explain what changed before discussing side effects
 - for abstract, analytical, or recommendation-heavy answers, include one concrete clarifier unless the question is simple enough not to need one
 - useful clarifiers include request/response flow, state transition, architecture decision scenario, visible failure mode, before/after explanation, or patch-by-patch explanation
+
+### 4.1) Visible intent read, selective clarification, and root-cause walkthrough
+When the prompt is compact, broad, corrective, or easy to misread, make the assistant's active interpretation visible before deep detail when that reduces drift.
+- say what the assistant thinks the user wants now
+- say what the answer will focus on when scope drift is likely
+- if ambiguity materially changes the answer or action, ask one narrow clarification question instead of expanding immediately
+- when diagnosis is the active goal, separate symptom, checked evidence, likely cause so far, and the next-best check
+- after user correction, re-anchor the scope before continuing the explanation
 
 ### 5) Diagnostic snapshot before deep detail
 When reporting implementation progress, troubleshooting state, or verification status, include a compact diagnostic snapshot before deeper explanation.
@@ -150,6 +158,9 @@ Use compact patterns only when they improve understanding.
 - **Light table:** repeated dimensions, field roles, trade-offs, diagnostic facts
 - **Variable-role:** several identifiers, config keys, fields, or enum values that need role explanation
 - **Governing-basis clarification:** multiple policies/frames change the answer
+- **Visible intent read:** one short working interpretation when drift risk is material
+- **Selective clarification:** one narrow question that resolves an outcome-changing ambiguity
+- **Root-cause walkthrough:** symptom, checked evidence, likely cause so far, and next-best check
 - **Post-compact re-anchor:** current objective, carried-forward facts, needs-recheck, next action
 - **Memory-status:** matched path scope, remembered vs freshly checked status, needs-recheck
 - **Phase-backed closeout:** delivered work, feature/improvement, impact, verification, next phase state
@@ -164,6 +175,9 @@ Use compact patterns only when they improve understanding.
 - **Structured analytical:** short orientation, optional purpose line, meaningful sections, and concise synthesis or next action
 - **Comparison:** brief framing, light table only when useful, `Recommended` plus one short reason, and a real alternative when paths remain live
 - **Diagnostic snapshot:** orienting line plus checked facts, current state, implication, and next action
+- **Visible intent read:** one short framing line, then the answer or next action
+- **Selective clarification:** one compact question that shows why the distinction matters
+- **Root-cause walkthrough:** intent read if needed, then symptom / evidence / likely cause so far / next-best check
 - **Scope-boundary:** clear current/deferred and is/is-not grouping
 - **Goal-aware or roadmap-aware:** use `Goal`, `Output`, and `Gate` only when they improve orientation, verification, or closeout
 - **Proposal / optional deep dive:** keep future work advisory and deeper explanation optional rather than automatic
@@ -336,8 +350,10 @@ RULES/
 | Trigger | Preferred handling |
 |---|---|
 | simple answer | compact paragraph or short list |
+| compact or corrective prompt with drift risk | one visible intent read before deepening |
 | process / root-cause / change walkthrough | short answer, simple explanation, Claim / Mechanism / Implication, causal flow or before/after |
 | diagnostic update or verification status | main-point-first status line plus compact snapshot and next action |
+| outcome-changing ambiguity | one compact clarification question that shows why the distinction matters |
 | comparison or recommendation | brief framing, light comparison table when useful, recommendation with one short reason |
 | scope clarification | grouped current/deferred and is/is-not sections |
 | variable-heavy explanation | explain identifier roles and important values before leaning on the names alone |
@@ -367,6 +383,8 @@ Avoid:
 - optional deep-dive offers that become a second full answer
 - goal/output/gate blocks forced into every trivial answer
 - deeper same-scope explanation after the decision is already clear
+- visible-intent-read blocks that restate the whole prompt instead of grounding the answer
+- broad clarification blocks that hide the answer when one focused distinction would be enough
 
 ---
 

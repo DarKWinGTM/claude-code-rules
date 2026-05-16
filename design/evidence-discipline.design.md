@@ -1,8 +1,8 @@
 # Design - Evidence Discipline
 
 > **Parent Rule:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [../changelog/evidence-discipline.changelog.md](../changelog/evidence-discipline.changelog.md)
 
 ---
@@ -20,6 +20,8 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 This design owns the target-state shape for zero hallucination, no variable guessing, anti-mockup, and evidence-grounded burden of proof.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+
+P098 refinement: this owner must now also preserve target-state doctrine for verify-first factual discipline, root-cause evidence thresholds, claim-state separation, and real-vs-mock boundaries.
 
 ---
 

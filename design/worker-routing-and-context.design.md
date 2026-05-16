@@ -1,8 +1,8 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
 ---
@@ -20,6 +20,8 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 This design owns the target-state shape for native worker routing, custom agent priority, context-load control, and God-line/God-document routing.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+
+P098 refinement: this owner must now also preserve target-state doctrine for intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection.
 
 ---
 

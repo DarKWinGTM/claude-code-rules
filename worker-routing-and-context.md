@@ -1,8 +1,8 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.0 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.1
+> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
 ---
@@ -30,6 +30,18 @@ Classify the user's intent before treating technical material as project work:
 - review, audit, or verification
 - explanation only
 
+Use the smallest useful intent taxonomy below when the distinction changes routing, clarification, or scope handling:
+
+| Intent class | Meaning | Default routing implication |
+|---|---|---|
+| behavior/governance | the user is asking how the assistant, RULES, or workflow should behave | stay behavior-first; project exploration needs explicit request or bounded proof need |
+| fact lookup | the user wants current checked project facts | inspect the minimal authority surface needed; avoid broad implementation drift |
+| diagnosis / root-cause analysis | the user wants to understand why something is happening | diagnosis-first; do not jump to edits before symptom, evidence, and next-best check are framed |
+| implementation | the user wants a source/config change | move to execution when scope/path are clear |
+| review / audit | the user wants evaluation, risk finding, or consistency checking | preserve checked-scope evidence and worker-filter broad reads when needed |
+| plan / design | the user wants strategy, structure, or decision framing | stay discussion-first until the chosen path is clear |
+| coordination / workflow | the user wants handoff, routing, lane choice, or process behavior | classify mechanism and worker path before inspecting project surfaces |
+
 Pasted logs, snippets, paths, or another session's worker notes are evidence for the current question, not automatic authorization to inspect the referenced project. If the user asks about assistant behavior or RULES behavior, stay in that scope unless project exploration is explicitly requested or a bounded verification need is stated.
 
 Use direct leader handling for trivial, one-step, tightly sequential, low-output, exact interactive-control work, high edit-overlap work, unavailable worker tooling, or explicit user direction. Otherwise run the worker gate before broad codebase searches, large file reads, symbol/path tracing, high-output tests/logs/builds, external docs/provider research, roadmap/phase-matrix analysis, design-improvement research, source comparison, multi-surface governance sweeps, design/security/migration reviews, or safely partitionable implementation.
@@ -39,6 +51,11 @@ Use direct leader handling for trivial, one-step, tightly sequential, low-output
 ### 2) Intent-first worker gate
 
 Behavior/RULES questions are answered from the behavior/rule layer first. Project exploration begins only when the user asks for project facts, implementation, or verification, or when checked evidence is required and scope is stated. Another session's pasted output may show a possible worker use case, but it does not make project inspection the active task. If intent is behavior analysis plus broad evidence review, use a worker lane to analyze the evidence rather than letting the leader absorb it directly.
+
+When one user turn mixes several intents, resolve the dominant execution question before broadening scope.
+- if logs/snippets plus a short ask imply diagnosis, default to diagnosis-first rather than implementation-first
+- if the user is actually correcting the assistant's scope, repair that scope before routing into project exploration
+- if one narrow working interpretation is enough to continue safely, state that interpretation instead of asking broad intake questions
 
 ### 3) Worker-scale gate and aggregate read-burst control
 
@@ -424,6 +441,8 @@ Compact/thrash or high-density output appears?
 | Trigger | Required behavior |
 |---|---|
 | user asks about AI/RULES behavior while providing logs/snippets | classify as behavior/governance first; do not auto-explore project |
+| compact or corrective prompt where visible intent repair would reduce drift | state a short working scope before broadening the search or lane count |
+| symptom-heavy ask with mixed logs/snippets and possible implementation implications | default to diagnosis-first; do not auto-jump into edits |
 | broad search/read, aggregate governance/code read burst, or repository exploration | dispatch standalone worker or state narrow direct-handling reason before broad absorption |
 | broad roadmap/phase-matrix analysis | use a focused read-only planning/review lane when multiple design, TODO, phase, risk, or dependency surfaces need synthesis |
 | coordination design or cross-session behavior proposal | classify the actual mechanism first, then keep claims within checked capability |
@@ -450,6 +469,7 @@ Compact/thrash or high-density output appears?
 
 Avoid:
 - treating pasted project paths/logs as permission to inspect code
+- assuming a short or corrective user turn is implementation authorization when it was really a scope repair or diagnosis request
 - leader absorbing broad raw search/read/log/test/roadmap evidence by default
 - skipping the worker-first aggregate-read gate before broad governance/code scans
 - leader running broad design-improvement websearch or phase-roadmap synthesis directly when research/planning lanes would filter it better
