@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P098 active for v10.06 intent-grounding conversation doctrine
+> **Status:** P098 released for v10.06 intent-grounding conversation doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- None currently opened.
+
+### Recently Completed
+
 - **P098:** [phase-098-conversation-intent-root-cause-and-scope-drift-refinement.md](phase-098-conversation-intent-root-cause-and-scope-drift-refinement.md)
   - Goal: improve user-intent understanding, visible working interpretation, selective clarification, root-cause framing, and repair re-anchor behavior.
   - Output: touched owner chains, docs sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.06`.
   - Scope: active runtime install count remains 18; no new root runtime rule is introduced.
-  - Gate: owner/doctrine sync passes, README arrays remain 18/18, runtime install and parity/body sufficiency pass, and release verification passes.
-
-### Recently Completed
+  - Gate: owner/doctrine sync passed, README arrays remained 18/18, runtime install and parity/body sufficiency passed, and release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
+  - Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
+  - Published at `2026-05-16T03:36:14Z`.
 
 - **P097:** [phase-097-source-merge-cleanup-compact-runtime-set.md](phase-097-source-merge-cleanup-compact-runtime-set.md)
   - Goal: release the compact 18-rule merged runtime set.
@@ -115,7 +120,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### P098 — Conversation Intent, Root-Cause, and Scope-Drift Refinement
 
-- **Status:** Active / release preparation
+- **Status:** Released / completed
 - **Design References:**
   - [../design/design.md](../design/design.md) v10.06
   - touched merged-owner design companions under [../design/](../design/)
@@ -423,14 +428,30 @@ Current focus:
 - Touched active docs must pass density and God-artifact review.
 - Broad source validation should use worker-first filtering plus leader verification of selected anchors.
 
-No P098 release-complete claim is valid until push and GitHub release `v10.06` verification pass.
+P098 verification is complete for the v10.06 source-sync, install, push, and release gates.
+
+Current checked state:
+- P098 phase and patch records exist and are synchronized in released/closed state.
+- README, master design, master changelog, TODO, phase, and patch records align to released `v10.06 / P098` state in checked source scope.
+- Touched merged owner runtime/design/changelog chains are synchronized and linked.
+- Runtime install copied the 18 README-listed active runtime rules.
+- 18/18 source/runtime parity and source/destination active runtime body sufficiency passed.
+- The runtime destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set.
+- Touched active doc density and God-artifact review passed for the P098 scope.
+- Broad source validation used worker-first filtering plus leader verification of selected anchors.
+- `master` push and GitHub release `v10.06` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
+- Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
+- Published at `2026-05-16T03:36:14Z`.
+
+No pending P098 release gates remain in checked scope.
 
 ---
 
 ## Rollback / Containment
 
-If P098 is reversed before release:
-- revert the touched owner-chain doctrine edits as one governed rollback
+If P098 is reversed after release:
+- revert the touched owner-chain doctrine edits as one governed rollback release
 - restore the released `v10.05 / P097` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

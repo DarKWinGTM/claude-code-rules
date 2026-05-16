@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P098
-> **Status:** Active / Release Preparation
+> **Status:** Released / Completed
 > **Target Release:** v10.06
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.06
@@ -42,12 +42,12 @@ P098 adds visible intent read, selective clarification, root-cause framing, and 
 - [x] Confirm `v10.06` release/tag is not already present.
 - [x] Confirm current baseline is released `v10.05 / P097` with the compact 18-rule runtime set.
 - [x] Open P098 phase/patch and sync active roadmap/TODO state.
-- [ ] Update touched merged runtime owners with intent-grounding doctrine.
-- [ ] Sync touched owner design and changelog companions.
-- [ ] Sync README, master design, master changelog, TODO, phase summary, phase, and patch records to P098 pre-release state.
-- [ ] Validate README install arrays, metadata links, source body sufficiency, runtime install, and source/runtime parity.
-- [ ] Commit source release, push `master`, create GitHub release `v10.06`, and verify release state.
-- [ ] Finalize P098 closeout records after release verification passes.
+- [x] Update touched merged runtime owners with intent-grounding doctrine.
+- [x] Sync touched owner design and changelog companions.
+- [x] Sync README, master design, master changelog, TODO, phase summary, phase, and patch records to P098 pre-release state.
+- [x] Validate README install arrays, metadata links, source body sufficiency, runtime install, and source/runtime parity.
+- [x] Commit source release, push `master`, create GitHub release `v10.06`, and verify release state.
+- [x] Finalize P098 closeout records after release verification passes.
 
 ---
 
@@ -75,14 +75,22 @@ P098 adds visible intent read, selective clarification, root-cause framing, and 
 
 ## Current Status
 
-P098 is active in release preparation.
+P098 is released and closed for `v10.06`.
 
-Completed so far:
+Completed:
 - preflight confirmed `v10.06` release and tag were not found
-- current baseline is released `v10.05 / P097`
-- current active runtime install set remains 18 rules
-- P098 phase and patch startup artifacts are opened
-- active TODO and phase roadmap state are synchronized to P098 pre-release mode
+- current baseline was released `v10.05 / P097`
+- current active runtime install set remained 18 rules
+- P098 phase and patch startup artifacts were opened
+- touched owner doctrines, companion chains, and master surfaces were synchronized
+- runtime install copied the 18 README-listed active runtime rules
+- 18/18 source/runtime parity and source/destination body sufficiency passed
+- consistency sweep passed for P098 surfaces
+- `master` push and GitHub release `v10.06` verification passed
 
-Pending:
-- doctrine implementation, owner-chain sync, validation, runtime install, commit, push, GitHub release, and closeout verification
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
+- Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
+- Published at `2026-05-16T03:36:14Z`.
+
+No pending P098 release gates remain in checked scope.

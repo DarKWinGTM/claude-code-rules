@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.06 | 2026-05-16 | **[Opened intent-grounding conversation doctrine](#version-1006)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
+| 10.06 | 2026-05-16 | **[Released intent-grounding conversation doctrine](#version-1006)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | 10.05 | 2026-05-16 | **[Released source merge cleanup compact runtime set](#version-1005)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | 10.04 | 2026-05-13 | **[Released changelog chain version detail shards](#version-1004)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.03 | 2026-05-13 | **[Released standing-role worker reuse and audit boundary](#version-1003)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -144,19 +144,22 @@
 ---
 
 <a id="version-1006"></a>
-## Version 10.06: Opened intent-grounding conversation doctrine
+## Version 10.06: Released intent-grounding conversation doctrine
 
 **Date:** 2026-05-16
 **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 
 ### Changes
-- Opened P098 as the intent-grounding conversation doctrine release wave.
+- Released P098 as the intent-grounding conversation doctrine release wave.
 - Kept the README-listed source-owned active runtime set at 18 files.
-- Began updating the merged owner chains for visible intent read, selective clarification, root-cause framing, repair re-anchor, intent taxonomy, trigger additions, examples, anti-patterns, and success metrics.
-- Runtime install, source/runtime parity, push, and GitHub release verification remain pending until the release gate completes.
+- Updated the merged owner chains for visible intent read, selective clarification, root-cause framing, repair re-anchor, intent taxonomy, trigger additions, examples, anti-patterns, and success metrics.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, consistency sweep, push, and GitHub release `v10.06` verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
+- Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
+- Published at `2026-05-16T03:36:14Z`.
 
 ### Summary
-P098 opens the next refinement wave on top of the compact 18-rule runtime set so Main RULES can understand user intent more visibly and keep diagnosis/root-cause conversations more disciplined.
+P098 releases the next refinement wave on top of the compact 18-rule runtime set so Main RULES can understand user intent more visibly and keep diagnosis/root-cause conversations more disciplined.
 
 <a id="version-1005"></a>
 ## Version 10.05: Released source merge cleanup compact runtime set

@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
-> **Status:** Active / Release Preparation
+> **Status:** Released / Completed
 > **Target Design:** [design/design.md](../design/design.md) v10.06
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -66,7 +66,7 @@ The main risk in P098 is not file count. The main risks are:
 
 ## Verification
 
-Required checks before release:
+Verified checks for release:
 - README Bash and PowerShell install arrays contain exactly the same 18 active runtime files.
 - All 18 active source runtime files exist and have substantive bodies.
 - Touched owner files keep resolvable design and changelog metadata links.
@@ -75,12 +75,28 @@ Required checks before release:
 - Source/runtime parity and source/destination body sufficiency pass for 18/18 files.
 - `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set.
 - Git diff has no whitespace errors.
-- GitHub release `v10.06` is created and verified before closeout wording claims release completion.
+- GitHub release `v10.06` was created and verified before closeout wording claimed release completion.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
+- Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
+- Published at `2026-05-16T03:36:14Z`.
+
+---
+
+## Implementation Status
+
+P098 is released and closed for `v10.06`.
+
+Validation, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, consistency sweep, push, and GitHub release verification passed.
+
+Release evidence:
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
+- Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
+- Published at `2026-05-16T03:36:14Z`.
 
 ---
 
 ## Rollback Approach
 
-If P098 is rejected before release, restore the prior `v10.05 / P097` source state from git and keep the compact 18-rule runtime install scope unchanged.
+If P098 is reversed after release, restore the prior `v10.05 / P097` source state through a governed rollback release and keep the compact 18-rule runtime install scope unchanged unless an explicit rollback gate selects another install action.
 
-If release already happened, perform a governed rollback release that restores the prior doctrine wording and records the rollback in README, changelog, TODO, phase, and patch surfaces without treating runtime destination extras as deletion targets.
+Do not treat runtime destination extras as deletion targets during rollback.

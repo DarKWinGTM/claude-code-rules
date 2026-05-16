@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-16
-> **Current Release:** v10.06 / P098 intent-grounding conversation doctrine (pre-release)
+> **Current Release:** v10.06 / P098 intent-grounding conversation doctrine (released)
 > **History:** [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/](todo/done/)
 
@@ -9,6 +9,9 @@
 
 ## ✅ Completed
 
+- [x] P098 / v10.06 intent-grounding conversation doctrine was completed, installed, pushed, and released.
+  - Verified: 18/18 parity/body sufficiency, consistency sweep, owner-link validation, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
 - [x] P097 / v10.05 source merge cleanup compact runtime set was completed, installed, pushed, and released.
   - Verified: 18/18 parity/body sufficiency, metadata-link validation, consistency sweep, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.05
@@ -37,9 +40,7 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 ### Active / In Progress
 
-- [ ] P098 / v10.06 intent-grounding conversation doctrine is in release preparation.
-  - Goal: improve user-intent understanding, visible working interpretation, selective clarification, root-cause framing, and repair re-anchor behavior without changing the active 18-rule runtime install count.
-  - Gate: touched owner/runtime/design/changelog surfaces align to P098, README arrays remain 18/18, runtime install and source/runtime parity pass for 18/18, and GitHub release verification passes.
+No active governed release is currently opened.
 
 ### Deferred / Not Selected
 
@@ -61,7 +62,8 @@ Completed historical detail before this compact entrypoint is intentionally not 
 
 | Date | Changes |
 |------|---------|
-| 2026-05-16 | Opened P098 / v10.06 intent-grounding conversation doctrine release preparation. |
+| 2026-05-16 | Finalized P098 / v10.06 closeout records after verified push and GitHub release. |
+| 2026-05-16 | Opened and released P098 / v10.06 intent-grounding conversation doctrine. |
 | 2026-05-16 | Finalized P097 / v10.05 closeout records after verified push and GitHub release. |
 | 2026-05-16 | Opened and released P097 / v10.05 source merge cleanup compact runtime set. |
 | 2026-05-14 | Finalized P096-01 / v10.04 closeout records after verified push and GitHub release. |

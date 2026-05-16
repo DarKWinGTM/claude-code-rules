@@ -80,11 +80,14 @@ This repository uses one deterministic governance model:
   - It turns detected touched-scope God pressure into action-mode routing, safe repair, visible repair planning, or closeout blocking.
   - It advances context-load, execution-continuity, startup, consistency, documentation, phase, TODO, patch, and rollover owner chains.
   - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification passed.
-- P098 is the active v10.06 intent-grounding conversation doctrine wave.
+- P098 is the completed v10.06 intent-grounding conversation doctrine wave.
   - It keeps the source-owned active runtime set at 18 root runtime rules.
   - It teaches visible intent read, selective clarification, root-cause framing, repair re-anchor, and diagnosis-first mixed-intent handling across existing merged owners.
   - It advances `execution-and-goal-frame` to v1.1, `worker-routing-and-context` to v1.1, `evidence-discipline` to v1.1, `accurate-communication` to v2.23, `communication-register` to v1.1, `explanation-and-presentation` to v1.1, and `coding-discipline` to v1.1.
-  - Runtime install, source/runtime parity, push, and GitHub release verification remain pending until the P098 release gate completes.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, consistency sweep, push, and GitHub release `v10.06` verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.06
+  - Release target and tag point to commit `e3b9801560a5be177fcc7bf8fbe8498e5eb5cdb5`.
+  - Published at `2026-05-16T03:36:14Z`.
 - P097 is the completed v10.05 source merge cleanup compact runtime set release wave.
   - It reduces the active source-owned runtime install set from 47 root rule files to 18 merged body-sufficient runtime rules.
   - It removes absorbed legacy root rules from active source authority while preserving their execution-relevant semantics inside merged owner rules.
