@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P102
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Release:** v10.10
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.10
@@ -49,11 +49,11 @@ Because that decision model is still implicit, AI can keep appending to parent d
 - [x] Confirm README Bash and PowerShell arrays still define the same 18 active runtime files.
 - [x] Confirm the untracked `plugin/` tree remains preserved and out of scope.
 - [x] Open P102 phase/patch and sync active roadmap/TODO state.
-- [ ] Add chain-shape classification, flat sibling shard doctrine, append-vs-shard gate, and `docs_analysis` form to the touched runtime owners.
-- [ ] Sync touched owner design/changelog companions plus master release surfaces to P102 pre-release state.
-- [ ] Validate chain-shape doctrine integrity, compact-entrypoint behavior, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.10`, and verify release state.
-- [ ] Finalize P102 closeout records after release verification passes.
+- [x] Add chain-shape classification, flat sibling shard doctrine, append-vs-shard gate, and `docs_analysis` form to the touched runtime owners.
+- [x] Sync touched owner design/changelog companions plus master release surfaces to P102 pre-release state.
+- [x] Validate chain-shape doctrine integrity, compact-entrypoint behavior, runtime install, and 18/18 parity/body sufficiency.
+- [x] Commit source release, push `master`, create GitHub release `v10.10`, and verify release state.
+- [x] Finalize P102 closeout records after release verification passes.
 
 ---
 
@@ -86,20 +86,19 @@ Because that decision model is still implicit, AI can keep appending to parent d
 
 ## Current Status
 
-P102 is active in pre-release implementation for `v10.10`.
+P102 is released as `v10.10`.
 
-Completed so far:
-- current baseline is released `v10.09 / P101`
+Release verification summary:
+- current baseline before the wave was released `v10.09 / P101`
 - no active phase was open before P102 started
-- `v10.10` tag/release is absent in checked scope
-- README arrays still match the compact 18-rule runtime set
-- the untracked `plugin/` tree remains preserved as out-of-scope state
-- phase/patch startup and active roadmap/TODO sync are open in source scope
-
-Still pending:
-- touched doctrine-owner updates
-- companion/master-surface sync
-- normalized chain-shape validation
-- runtime install and 18/18 source/runtime parity/body-sufficiency recheck
-- git diff/whitespace review, commit, push, and GitHub release verification
-- final closeout after release verification
+- README Bash and PowerShell arrays remained aligned to the compact 18-rule runtime set
+- the untracked `plugin/` tree remained preserved as out-of-scope state
+- chain-shape doctrine updates are applied in source scope
+- touched design/changelog companions and master release surfaces are synced to released P102 state in checked scope
+- normalized chain-shape validation passed
+- runtime install and 18/18 source/runtime parity/body-sufficiency recheck passed
+- git diff/whitespace review passed before release commit
+- `master` push and GitHub release verification passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.10
+- Release tag `v10.10` resolves to commit `941fde875dedc2cede3db6f4bee2d144c4b029c3`
+- Published at `2026-05-17T01:55:18Z`

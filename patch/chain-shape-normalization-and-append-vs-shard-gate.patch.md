@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.10
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -49,7 +49,7 @@ The second issue is procedural: because append-vs-shard selection is still impli
 - **Target artifact:** touched owner design/changelog companions plus `README.md`, `design/design.md`, `changelog/changelog.md`, `TODO.md`, `phase/SUMMARY.md`, P102 phase record, and this patch
 - **Change type:** release synchronization
 - **Current state:** master surfaces identify `v10.09 / P101` as the current released wave with no active phase open.
-- **Target state:** master surfaces identify `v10.10 / P102` as the active chain-shape normalization + append-vs-shard wave until release verification passes.
+- **Target state:** master surfaces identify `v10.10 / P102` as the current released chain-shape normalization + append-vs-shard wave after release verification passes.
 - **Review point:** keep runtime install count at 18 and keep the `plugin/` tree reference-only and out of release scope.
 
 ---
@@ -75,9 +75,15 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P102 is active and not yet released.
+P102 is released as `v10.10`.
 
-Phase/patch startup state is open from the released `v10.09 / P101` baseline. Doctrine updates, companion/master-surface sync, runtime install/parity validation, push, GitHub release creation, and closeout verification are still pending.
+Closeout summary: doctrine updates, companion/master-surface sync, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed in checked scope.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.10
+
+Release tag `v10.10` resolves to commit `941fde875dedc2cede3db6f4bee2d144c4b029c3`.
+
+Published at `2026-05-17T01:55:18Z`.
 
 ---
 

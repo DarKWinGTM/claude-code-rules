@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-17
-> **Current Release:** v10.09 / P101 governed path normalization and premise-separation
-> **Active Wave:** v10.10 / P102 chain-shape normalization and append-vs-shard gate (pre-release)
+> **Current Release:** v10.10 / P102 chain-shape normalization and append-vs-shard gate
+> **Active Wave:** none open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P102 / v10.10 chain-shape normalization and append-vs-shard gate was completed, installed, pushed, and released.
+  - Verified: chain-shape doctrine consistency in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.10
+  - Release tag `v10.10` resolves to commit `941fde875dedc2cede3db6f4bee2d144c4b029c3`.
+  - Published at `2026-05-17T01:55:18Z`.
 - [x] P101 / v10.09 governed path normalization and premise-separation was completed, installed, pushed, and released.
   - Verified: normalization integrity, touched-owner/companion consistency in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
@@ -29,10 +34,7 @@
 
 ### Active / In Progress
 
-- [ ] P102 / v10.10 chain-shape normalization and append-vs-shard gate is in pre-release implementation.
-  - Goal: make AI classify chain shape before governed doc normalization so bootstrap chains can use flat sibling shards while broad mature chains still converge to same-stem subfolder normalization.
-  - Current state: P102 startup is open from released `v10.09 / P101` baseline; phase/patch, owner doctrine updates, companion sync, install, and release verification are pending.
-  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope plugin tree.
+- none open.
 
 ### Deferred / Not Selected
 
