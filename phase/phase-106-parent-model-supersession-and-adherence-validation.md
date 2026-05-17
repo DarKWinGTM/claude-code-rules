@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P106
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Release:** v10.14
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.14
@@ -52,10 +52,10 @@ The remaining gap is adoption and chronology. Some active design companions and 
 - [x] Add active-doctrine supersession wording in the touched runtime/design owners.
 - [x] Add compact historical guard wording to selected completed P104 artifacts without rewriting their historical truth.
 - [x] Extend verification doctrine so chronology/supersession review is explicit.
-- [x] Sync touched owner design/changelog companions plus master release surfaces to P106 pre-release state.
+- [x] Sync touched owner design/changelog companions plus master release surfaces for the P106 release path.
 - [x] Validate doctrine integrity, chronology clarity, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.14`, and verify release state.
-- [ ] Finalize P106 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.14`, and verify release state.
+- [x] Finalize P106 closeout records after release verification passes.
 
 ---
 
@@ -93,20 +93,21 @@ The remaining gap is adoption and chronology. Some active design companions and 
 
 ## Current Status
 
-P106 is active in pre-release implementation for `v10.14`.
+P106 is released as `v10.14`.
 
-Completed so far:
-- the current released baseline is `v10.13 / P105`
-- no active phase is open before P106 startup
-- `v10.14` tag/release is absent in checked scope
-- README Bash and PowerShell arrays still match the compact 18-rule runtime set
-- the untracked `plugin/` tree remains preserved as out-of-scope observed evidence
+Release verification summary:
+- the current released baseline before the wave was opened was `v10.13 / P105`
+- no active phase was open before P106 startup
+- `v10.14` tag/release was absent in checked scope before release work began
+- README Bash and PowerShell arrays still matched the compact 18-rule runtime set
+- the untracked `plugin/` tree remained preserved as out-of-scope observed evidence
 - the user selected the full combined scope: active-doctrine supersession hardening, historical guard wording, and bounded manual adherence-validation hardening
-- P106 phase/patch/changelog startup plus active roadmap/TODO sync are open in source scope
-- active-doctrine supersession wording, selected historical guard wording, and chronology/adherence verification hardening are complete in source scope
+- P106 phase/patch/changelog startup plus active roadmap/TODO sync completed in source scope
+- active-doctrine supersession wording, selected historical guard wording, and chronology/adherence verification hardening completed in source scope
 - runtime install plus 18/18 source/runtime parity and source/destination body sufficiency passed locally
-- `git diff --check` passed with no whitespace errors so far
-
-Still pending:
-- release commit, push, and GitHub release verification
-- final closeout after release verification
+- `git diff --check` passed with no whitespace errors
+- `master` push passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.14
+- Release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`
+- Published at `2026-05-17T23:36:10Z`.
+- Published at `2026-05-17T23:36:10Z`.

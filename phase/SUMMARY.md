@@ -3,7 +3,7 @@
 > **Current Version:** 1.80
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P106 active for v10.14 parent-model supersession and adherence validation
+> **Status:** No active phase open; latest released wave is P106 / v10.14 parent-model supersession and adherence validation
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,15 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- none open.
+
+### Most Recently Completed
+
 - **P106:** [phase-106-parent-model-supersession-and-adherence-validation.md](phase-106-parent-model-supersession-and-adherence-validation.md)
-  - Goal: stop chronology/adoption drift so active doctrine outranks older P104 semantic-parent-only wording when AI answers structure-selection questions.
-  - Output: touched owner chains, companion/master-surface supersession sync, historical guard wording, expanded chronology/adherence verification, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.14`.
-  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
-  - Gate: doctrine integrity, chronology clarity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
+  - Output: touched owner chains, companion/master-surface supersession sync, selected historical guard wording, expanded chronology/adherence verification, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.14`.
+  - Gate: doctrine integrity, chronology clarity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.14
+  - Release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`.
+  - Published at `2026-05-17T23:36:10Z`.
 
-### Most Recently Completed
-
-### Most Recently Completed
+### Previously Completed
 
 - **P105:** [phase-105-folder-scoped-generic-parent-and-single-parent-authority.md](phase-105-folder-scoped-generic-parent-and-single-parent-authority.md)
   - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.13`.
@@ -40,7 +43,6 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Release tag `v10.13` resolves to commit `b1eba20b8c31041afd794625650a1107d8702e05`.
   - Published at `2026-05-17T13:43:03Z`.
 
-### Previously Completed
 
 - **P104:** [phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md](phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md)
   - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.12`.
@@ -83,8 +85,11 @@ Latest verified release state:
 - governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
 - folder-scoped single-chain namespaces may use generic parents such as `design/design.md` and `changelog/changelog.md`
 - exactly one active parent model remains per chain so generic and semantic parents do not coexist as active owners
+- active runtime/design doctrine now explicitly outranks older completed P104 wording when chronology conflicts
+- selected completed P104 artifacts keep historical truth while carrying compact guards against being misread as current authority after P105
 - observed project shape, extracted doctrine, selected target form, and equivalence-claim basis remain explicit when checked examples ground normalization recommendations
 - semantic parent naming, bootstrap-first timing, and explicit shard-opening basis remain part of the released baseline while staying bounded by folder-scoped generic-parent allowance
+- chronology/supersession review is explicit in the checked verification-oriented surfaces
 - the append-vs-shard gate and `docs_analysis` form remain explicit in the checked touched owner surfaces
 - flat sibling shard mode is bounded by parent authority plus shard-map discipline
 - same-stem parent + subfolder normalization remains the strong-preferred form for broad mature chains
@@ -94,7 +99,7 @@ Latest verified release state:
 - 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
 - the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.13` was published at `2026-05-17T13:43:03Z` and release tag `v10.13` resolves to commit `b1eba20b8c31041afd794625650a1107d8702e05`
+- GitHub release `v10.14` was published at `2026-05-17T23:36:10Z` and release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.14
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -89,9 +89,15 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P106 is active and not yet released.
+P106 is released as `v10.14`.
 
-Phase/patch startup is open from the released `v10.13 / P105` baseline. Active-doctrine supersession hardening, selected historical guard wording, chronology/adherence verification hardening, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, and pre-release master-surface sync are complete in source scope. Push, GitHub release creation, and closeout verification are still pending.
+Phase/patch startup, active-doctrine supersession hardening, selected historical guard wording, chronology/adherence verification hardening, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed from the released `v10.13 / P105` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.14
+
+Release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`.
+
+Published at `2026-05-17T23:36:10Z`.
 
 ---
 

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-17
-> **Current Release:** v10.13 / P105 folder-scoped generic parent and single-parent authority
-> **Active Wave:** v10.14 / P106 parent-model supersession and adherence validation (pre-release)
+> **Last Updated:** 2026-05-18
+> **Current Release:** v10.14 / P106 parent-model supersession and adherence validation
+> **Active Wave:** none open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P106 / v10.14 parent-model supersession and adherence validation was completed, installed, pushed, and released.
+  - Verified: active-doctrine supersession precedence, selected historical guard wording, chronology/adherence verification hardening, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.14
+  - Release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`.
+  - Published at `2026-05-17T23:36:10Z`.
 - [x] P105 / v10.13 folder-scoped generic parent and single-parent authority was completed, installed, pushed, and released.
   - Verified: folder-scoped generic-parent allowance, single-parent-authority integrity, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.13
@@ -49,10 +54,7 @@
 
 ### Active / In Progress
 
-- [ ] P106 / v10.14 parent-model supersession and adherence validation is in pre-release implementation.
-  - Goal: make active doctrine explicitly supersede the older P104 semantic-parent-only restriction for folder-scoped single-chain namespaces while preserving P104 bootstrap/shard timing discipline.
-  - Current state: P106 startup, active-doctrine supersession hardening, selected historical guard wording, adherence-validation hardening, and install/parity validation are complete in source scope; release verification and closeout are still pending.
-  - Gate: touched doctrine owners, selected historical guard surfaces, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
+- none open.
 
 ### Deferred / Not Selected
 
