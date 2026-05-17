@@ -1,7 +1,7 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.09
+> **Current Version:** 10.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -13,10 +13,13 @@
 
 - [ ] README remains overview-only
 - [ ] Runtime rules remain the active rule layer and stay body-sufficient
-- [ ] Broad governed design/changelog chains use compact parents plus active same-stem shard paths when broad enough to justify normalization
-- [ ] Parent/shard and parent/version-shard links remain aligned and non-orphaned
+- [ ] Governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback` before meaningful normalization edits continue
+- [ ] Flat sibling shard mode is allowed only when the current folder already scopes the chain and the parent clearly exposes the shard map
+- [ ] Broad governed design/changelog chains still converge to compact parents plus active same-stem shard paths when broad enough to justify normalization
+- [ ] Parent/shard and parent/version-shard links remain aligned and non-orphaned across sibling and same-stem modes
 - [ ] `changelog/done/` stays legacy/archive/fallback rather than the normal active detail path
 - [ ] `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` / `done/` references
+- [ ] The append-vs-shard gate and `docs_analysis` form are explicit in the touched owner surfaces
 - [ ] Concern, factual claim, goal request, proposal, and assistant next action remain separated before endorsement or continuation where that distinction matters
 - [ ] Evidence-seeking proof-aware reasoning remains grounded in checked evidence when material
 - [ ] Runtime install scope remains the README-listed 18 root runtime rules only

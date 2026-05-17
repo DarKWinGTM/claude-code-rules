@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,11 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-17 | **[Added P102 chain-shape classification and append-vs-shard doctrine](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Added P101 governed path-normalization refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 proactive subagent-efficiency doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added P102 chain-shape classification and append-vs-shard doctrine
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.2 to v1.3.
+- Updated `design/document-governance.design.md` from v1.2 to v1.3.
+- Added explicit governed chain-shape classification for `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, and `archive-history-fallback`.
+- Added doctrine that flat sibling shards are valid when the current folder already scopes the chain, while same-stem nested normalization remains the strong-preferred form for broad mature chains.
+- Strengthened parent authority requirements so append-versus-shard posture and shard-map visibility are explicit before later edits continue parent growth.
+
+### Summary
+`document-governance.md` now carries the P102 chain-shape and append-vs-shard doctrine needed to make governed design/changelog normalization more deterministic.
 
 ---
 

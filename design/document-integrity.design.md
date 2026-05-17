@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -22,6 +22,8 @@ This design owns the target-state shape for document consistency, governed rollo
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 
 P101 refinement: this owner should now verify normalized same-stem parent/shard pairs, compact-entrypoint visibility, and prevent archive fallback from silently becoming the active owner path.
+
+P102 refinement: this owner should now verify declared chain shape, flat sibling shard maps, and no-orphan/no-mixed-mode drift for chains that intentionally stay in a folder-scoped sibling-shard form before escalating to same-stem nested normalization.
 
 ---
 

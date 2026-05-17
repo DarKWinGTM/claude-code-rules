@@ -1,7 +1,7 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
@@ -18,6 +18,8 @@ P098 refinement remains part of target state: intent taxonomy, routing implicati
 P099 refinement extends target state with proactive delegation triggers, reusable work-shape topologies, lane/swarm presets, stronger handoff structure, leader context-budget doctrine, and delegation-efficiency review signals.
 
 P100 refinement: this owner may compress repeated routing explanation, preset prose, and audit-heuristic wording, but it must keep intent-first routing, aggregate-read gate behavior, proactive trigger logic, topology selection, stronger handoff contract, leader verification duty, and the safe-io ownership split explicit.
+
+P102 refinement: this owner should now extend touched-doc append-vs-restructure behavior into append-vs-shard gating for compact design/changelog parents so chain-shape classification happens before parent authority files silently keep growing.
 
 ---
 

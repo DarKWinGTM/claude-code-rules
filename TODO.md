@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-17
 > **Current Release:** v10.09 / P101 governed path normalization and premise-separation
-> **Active Wave:** none open
+> **Active Wave:** v10.10 / P102 chain-shape normalization and append-vs-shard gate (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -29,7 +29,10 @@
 
 ### Active / In Progress
 
-- none open.
+- [ ] P102 / v10.10 chain-shape normalization and append-vs-shard gate is in pre-release implementation.
+  - Goal: make AI classify chain shape before governed doc normalization so bootstrap chains can use flat sibling shards while broad mature chains still converge to same-stem subfolder normalization.
+  - Current state: P102 startup is open from released `v10.09 / P101` baseline; phase/patch, owner doctrine updates, companion sync, install, and release verification are pending.
+  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope plugin tree.
 
 ### Deferred / Not Selected
 

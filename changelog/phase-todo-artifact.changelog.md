@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,12 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-17 | **[Added P102 docs-analysis gate for chain-shape selection](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P101 compact-entrypoint normalization refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 proactive subagent-efficiency doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added P102 docs-analysis gate for chain-shape selection
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.3 to v1.4.
+- Updated `design/phase-todo-artifact.design.md` from v1.3 to v1.4.
+- Added a compact `docs_analysis` form for governed design/changelog normalization work.
+- Required explicit choice between bootstrap-parent growth, flat sibling shards, and same-stem nested normalization before deeper document-structure edits continue.
+- Preserved startup posture, phase lineage, durable-vs-live tracking, and compact TODO/phase entrypoint behavior.
+
+### Summary
+`phase-todo-artifact.md` now carries the P102 docs-analysis gate so governed documentation normalization decisions are captured before AI drifts into the wrong structure.
 
 ---
 

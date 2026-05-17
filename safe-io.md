@@ -1,7 +1,7 @@
 # Safe I/O (File Reading + Terminal Output)
 
-> **Current Version:** 1.3
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Bound I/O operations — file reading and terminal output — so session stays responsive, paths are verified before factual claims, large/risky files use partial reads or searches, worker-fit aggregate read/output bursts are delegated before leader raw absorption when that is the safer context-budget choice, command output cannot flood context or hide material failures, sharded active designs and changelog version shards are read through their parent indexes first, and oversized active governance entrypoints or autocompact thrash are treated as rollover-maintenance signals.**
+**Core Principle: Bound I/O operations — file reading and terminal output — so session stays responsive, paths are verified before factual claims, large/risky files use partial reads or searches, worker-fit aggregate read/output bursts are delegated before leader raw absorption when that is the safer context-budget choice, command output cannot flood context or hide material failures, governed design/changelog chains are read through their declared compact parent first whether they use flat sibling or same-stem shard mode, and oversized active governance entrypoints or autocompact thrash are treated as rollover-maintenance signals.**
 
 ---
 
@@ -54,22 +54,26 @@ Burst rule:
 
 ### 4) Sharded active design reading
 
-For designs using `design/<slug>.design.md` plus `design/<slug>/*.design.md`, start from the compact parent index and select only the child shards needed.
+For designs using a compact parent plus active child shards, start from the compact parent index and follow the declared chain shape.
 
-- read the parent index first for purpose, authority boundary, target-state summary, shard map, and shard-selection guidance
-- open the smallest relevant child shard rather than absorbing the whole child directory or large sibling set
-- read child shards selectively by target-state slice; do not absorb the whole shard directory
+- read the parent index first for purpose, authority boundary, target-state summary, selected chain shape, shard map, and shard-selection guidance
+- if the parent declares `flat-sibling-shards`, open only the named sibling shard in the same folder rather than assuming a nested same-stem child directory
+- if the parent declares `same-stem-subfolder-normalized`, open only the named child shard in the declared child directory rather than absorbing the whole child set
+- do not invent a nested same-stem child directory from the parent filename alone; rely on the parent-declared chain shape
+- read child/sibling shards selectively by target-state slice; do not absorb the whole shard set
 - use worker filtering for broad shard audits, stale-shard checks, or multi-shard consistency sweeps
-- report checked shard scope when using selected shards as evidence
+- report checked parent and shard scope when using selected shards as evidence
 - do not treat child design shards as `history/`, `done/`, archive, or rollover surfaces by default; they remain active design truth unless governance says otherwise
 
 ### 5) Changelog version detail shard reading
 
-For changelogs using `changelog/<chain>.changelog.md` plus `changelog/<chain>/v*.changelog.md`, start from the active parent changelog and select only the version detail shards needed.
+For changelogs using a compact parent plus active version-detail shards, start from the active parent changelog and follow the declared chain shape.
 
-- read the active parent changelog first for current version authority, shard map, and navigation
-- open the smallest relevant version shard rather than absorbing the whole chain directory or several unrelated versions at once
-- read version detail shards selectively by version/topic; do not absorb the whole chain shard directory
+- read the active parent changelog first for current version authority, selected chain shape, shard map, and navigation
+- if the parent declares `flat-sibling-shards`, open only the named sibling version-detail shard in the same folder rather than assuming a nested same-stem child directory
+- if the parent declares `same-stem-subfolder-normalized`, open only the named version-detail shard in the declared child directory rather than absorbing the whole chain shard directory
+- do not invent a nested same-stem child directory from the parent filename alone; rely on the parent-declared chain shape
+- read version detail shards selectively by version/topic; do not absorb the whole shard set
 - use worker filtering for broad version-history audits, parent/shard consistency sweeps, or multi-shard migration reviews
 - report checked parent and shard scope when using selected shards as evidence
 - do not treat `changelog/done/` as the default same-chain detail namespace; consult it only through active references or for history, audit, rollback, provenance, or trace reconstruction
@@ -140,9 +144,9 @@ Do not add shell output indirection for simple low-output commands. Use direct c
 | Small normal source/doc | Low | Use Read directly |
 | Large source/doc | Medium | Use Read with offset/limit |
 | Sharded active design parent index | Low/Medium | Read compact parent index first; select relevant child shards |
-| Sharded active design child shard set | Medium/High | Read shard map first, then targeted shards; worker filtering for broad audits |
-| Active parent changelog | Low/Medium | Read parent authority and shard map before selected version detail shards |
-| Changelog version detail shard set | Medium/High | Read parent shard map first, then targeted version shards; worker filtering for broad history audits |
+| Sharded active design child/sibling shard set | Medium/High | Read the parent chain shape and shard map first, then targeted shards; worker filtering for broad audits |
+| Active parent changelog | Low/Medium | Read parent authority, chain shape, and shard map before selected version detail shards |
+| Changelog version detail child/sibling shard set | Medium/High | Read parent chain shape and shard map first, then targeted version shards; worker filtering for broad history audits |
 | `changelog/done/` fallback history | Medium/High | Open only through active reference or history/audit/rollback/provenance need |
 | Oversized `TODO.md` / `phase/SUMMARY.md` | High | Bounded read for current state, then rollover/compact active entrypoint |
 | Aggregate multi-file read burst | High | Delegate-first filtering or narrow scope before leader raw reads |

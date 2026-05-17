@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase open; latest released wave is P101 / v10.09 governed path normalization and premise-separation
+> **Status:** P102 active for v10.10 chain-shape normalization and append-vs-shard gate
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none open.
+- **P102:** [phase-102-chain-shape-normalization-and-append-vs-shard-gate.md](phase-102-chain-shape-normalization-and-append-vs-shard-gate.md)
+  - Goal: add chain-shape classification, append-vs-shard gating, and flat sibling shard doctrine without weakening same-stem normalized parent/shard doctrine for broad mature chains.
+  - Output: touched owner chains, master design/changelog doctrine sync, docs-analysis gate, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.10`.
+  - Scope: main RULES doctrine only; keep `plugin/` reference-only and out of staged release scope.
+  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and release verification pass.
 
 ### Most Recently Completed
 
@@ -52,24 +56,28 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Latest verified release state:
-- parent/index + shard normalization is explicit for the master `design/design.md` and `changelog/changelog.md` chains
-- `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- concern/fact/proposal/goal/next-action separation remains explicit in the checked touched interaction owners
-- README Bash and PowerShell arrays still define the same compact 18-rule runtime set
-- runtime install copied only the 18 README-listed active runtime rules
-- 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
+P102 verification must prove that chain-shape classification becomes explicit enough that AI stops drifting into silent parent-only growth while the compact 18-rule runtime install scope remains unchanged.
+
+Current focus:
+- governed design/changelog chains must explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, or `same-stem-subfolder-normalized`
+- the append-vs-shard gate and `docs_analysis` form must remain explicit in checked owner doctrine
+- flat sibling shard mode must be valid only when the current folder already scopes the chain and the parent exposes the shard map clearly
+- same-stem parent + subfolder normalization must remain the strong-preferred form for broad mature chains
+- `TODO.md` and `phase/SUMMARY.md` must remain compact current entrypoints with reachable `history/` / `done/` references
+- README install arrays must remain the same compact 18-rule set
+- runtime install must copy only the 18 README-listed active runtime rules
+- 18/18 source/runtime parity and source/destination active runtime body sufficiency must pass after install
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
-- touched active docs passed density/consistency review in checked scope
-- GitHub release `v10.09` is published at `2026-05-17T00:52:06Z` and points to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`
+- the untracked `plugin/` tree must remain outside staged release scope
+- no P102 release-complete claim is valid until push and GitHub release `v10.10` verification pass
 
 ---
 
 ## Rollback / Containment
 
-If P101 is reversed after release:
-- revert the touched owner-chain compression edits as one governed rollback release
-- restore the released `v10.08 / P100` source state as the active baseline
+If P102 is reversed after release:
+- revert the touched owner-chain chain-shape/append-vs-shard edits as one governed rollback release
+- restore the released `v10.09 / P101` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

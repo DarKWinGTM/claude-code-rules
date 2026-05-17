@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -24,6 +24,8 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 P099 refinement: this owner must now also preserve governance/release-sync work-shape recognition and owner-aligned lane decomposition for broad multi-surface sync or release-readiness passes.
 
 P101 refinement: this owner should now strongly prefer same-stem parent/index + shard paths for broad design/changelog chains while keeping `changelog/done/` as legacy/archive/fallback rather than the normal active detail path.
+
+P102 refinement: this owner should now explicitly classify governed chain shape, allow flat sibling shards when the current folder already scopes the chain, and require visible append-vs-shard posture before parent design/changelog authorities absorb more detail.
 
 ---
 

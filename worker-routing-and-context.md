@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.3 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.3
+> **Current Version:** 1.4 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -315,9 +315,9 @@ Required behavior:
 - if immediate repair is unsafe, record it as density debt, follow-up work, or a phase/patch item when material
 - do not append more content to a known God-line candidate unless no safer structure exists and the limit is stated
 
-### 22) Append-vs-restructure gate
+### 22) Append-vs-restructure-and-shard gate
 
-Before appending to an existing active line or bullet, check whether the append would make future diffs and reads larger than the logical change.
+Before appending to an existing active line, bullet, or governed design/changelog parent, check whether the append would make future diffs and reads larger than the logical change or whether the content should move into a shard instead.
 
 Required questions:
 1. Is the new content current state, history, verification, risk, or next work?
@@ -325,15 +325,24 @@ Required questions:
 3. Would the edit replace one huge line for a small logical change?
 4. Should the new content become a new bullet, a subsection, a changelog entry, or a history/done shard reference?
 5. Should the existing line be split before adding the new detail?
+6. Is the target a compact governed design/changelog parent authority rather than an ordinary body paragraph?
+7. What is the current chain shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`?
+8. Does the current folder already act as the chain namespace, making a flat sibling shard safer than a redundant nested same-stem folder?
+9. Should this detail become or update a shard rather than expanding the parent authority file again?
 
-If the target line is already a God-line candidate, do not append silently.
+Required behavior:
+- if the target line is already a God-line candidate, do not append silently
 - restructure first or in the same change when the split is clear and low-risk
-- flag or plan the repair when the split is broad or meaning-risky
+- when the target is a compact governed design/changelog parent and shard choice is material, classify chain shape before appending
+- prefer local flat sibling shards when the folder already scopes the chain and only a few coherent slices are needed
+- prefer same-stem nested normalization when the chain is broad, root-heavy, multi-shard, or already showing God-file pressure
+- flag or plan the repair when the split or shard destination is broad, meaning-risky, or authority-ambiguous
 
 ### 23) Active entrypoints are maps, not storage dumps
 
 `TODO.md`, `phase/SUMMARY.md`, README current-state sections, compact design indexes, and active parent changelog indexes should help a fresh session find current work quickly.
 - keep them focused on current state, selected roadmap, active tasks, gates, shard maps, and pointers
+- when compact design/changelog parents have active shards, make the selected chain shape and shard map visible enough that later edits do not fall back into silent parent-only growth
 - move bulky same-chain detail to changelog version shards and daily/completed movement to referenced history/done surfaces
 - keep enough context to navigate without rereading full history
 
@@ -454,7 +463,7 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
 After worker scale decided, select best-fit visible specialist when capability fits
   ↓
 Writing active docs?
-  → YES: apply touched-doc God-line repair, append-vs-restructure, and density checks
+  → YES: apply touched-doc God-line repair, append-vs-restructure-and-shard, and density checks
   → NO: preserve checked-scope evidence boundaries
   ↓
 God artifact pressure found in touched scope?
@@ -495,6 +504,7 @@ Compact/thrash or high-density output appears?
 | high edit overlap | avoid parallel edit lanes; consider read-only investigation instead |
 | visible custom agent matches selected worker capability | prefer best-fit specialist before generic fallback |
 | repeated weak handoffs or clarification churn | treat it as routing debt; improve the brief or change topology rather than adding more raw context |
+| governed design/changelog parent about to absorb new detail | run the append-vs-restructure-and-shard gate and classify chain shape before appending |
 | God artifact pressure in touched scope | choose an action mode (REPAIR_NOW, DELEGATE_REPAIR, PLAN_IN_CURRENT_PHASE, OPEN_REPAIR_PATCH, OPEN_NEW_PHASE_OR_SUBPHASE, BLOCK_CLOSEOUT, ASK_ONLY_IF_AMBIGUOUS) |
 | compact/thrash or post-compact refill | diagnose source pattern and repair document/workflow shape |
 

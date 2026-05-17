@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.2
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active target-state truth, keep changelog as version/history authority, keep patch as before/after review outside live phase planning, recognize governance/release-sync work shapes before deep execution, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
+**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active target-state truth, keep changelog as version/history authority, classify governed design/changelog chain shape before appending or sharding detail, keep patch as before/after review outside live phase planning, recognize governance/release-sync work shapes before deep execution, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
 
 This rule unifies repository documentation baseline, design/changelog/patch role boundaries, completed-surface governance, and UDVC-1 version-control discipline. It keeps one clear owner per document role so active docs remain understandable, auditable, and cheap to maintain.
 
@@ -85,6 +85,23 @@ When work touches several governed surfaces, classify the work shape before deep
 - `worker-routing-and-context.md` owns whether a lane becomes a worker and `safe-io.md` owns bounded file/command absorption during multi-surface review
 - do not force lane decomposition or delegation for tiny local sync or one-surface metadata fixes
 
+### 5.2) Governed design/changelog chain-shape classification
+Before appending new target-state or version-detail content into a governed design/changelog parent, classify the active chain shape first.
+
+Named shapes:
+- `single-file-bootstrap`
+- `flat-sibling-shards`
+- `same-stem-subfolder-normalized`
+- `archive-history-fallback`
+
+Required guidance:
+- use `single-file-bootstrap` only while the parent remains compact, coherent, and not yet detail-heavy enough to justify active shards
+- `flat-sibling-shards` is allowed when the current folder already acts as the chain namespace and only a few coherent slices are needed; the compact parent stays the authority gateway and names the active shard map
+- `same-stem-subfolder-normalized` remains the strong-preferred form for broad, root-heavy, multi-shard, or God-file-prone chains
+- `archive-history-fallback` remains inactive by default and must not become the ordinary active detail namespace by momentum
+- do not create a same-stem nested shard directory merely because a parent named `design.md` or `changelog.md` exists; first check whether the current folder already scopes the chain
+- when a parent has active shards, it should expose the selected chain shape, shard map, and append-vs-shard posture clearly enough that later edits do not fall back into silent parent-only growth
+
 ### 6) Public onboarding and install portability
 README/onboarding/install docs stay portable by default.
 - prefer repo-root-relative source guidance for cloneable/self-contained repos
@@ -113,12 +130,14 @@ Governed design documents define the current implementation-relevant target-stat
 Large active design documents may use:
 - compact parent index at `design/<slug>.design.md`
 - governed child shards under `design/<slug>/*.design.md`
+- flat sibling child shards beside a compact parent when the current folder already acts as the chain namespace and a same-stem nested folder would be redundant too early
 
 Required guidance:
 - broad or God-file-prone active design chains should strongly prefer a same-stem normalized path pair: `design/<slug>.design.md` plus `design/<slug>/`
+- flat sibling child shards are allowed only when the current folder already scopes the chain; the compact parent must declare that mode and name the active shard map
 - the parent file remains the active design index and authority gateway, not a placeholder or link-only router
 - child shards remain active target-state truth by default, not inactive history or changelog substitutes
-- the parent index should preserve purpose, authority, current target-state summary, shard map, and enough context to choose relevant shards without broad raw absorption
+- the parent index should preserve purpose, authority, current target-state summary, shard map, selected chain shape, and enough context to choose relevant shards without broad raw absorption
 - each child shard should identify parent scope, own one coherent target-state slice, and avoid duplicating/conflicting with sibling authority
 - child shards should carry parent backlink plus version/session and stable section/provenance fields when practical
 - broad shard audits should use shard maps, targeted reads, and worker filtering when context-heavy
@@ -171,8 +190,9 @@ Large governed chains may split detailed version sections into chain-scoped vers
 
 Required guidance:
 - broad or God-file-prone active changelog chains should strongly prefer a same-stem normalized path pair: `changelog/<chain>.changelog.md` plus `changelog/<chain>/`
+- flat sibling version-detail shards are allowed when the current folder already scopes the chain and only a small number of coherent version-detail files is needed; the compact parent must declare that mode and name the active shard map
 - keep `changelog/<chain>.changelog.md` as the current version authority, index, shard map, and navigation surface
-- place same-chain detailed entries in `changelog/<chain>/vX.YY-short-topic.changelog.md` when sharding is needed
+- place same-chain detailed entries in `changelog/<chain>/vX.YY-short-topic.changelog.md` when sharding is needed, or in flat sibling version files beside the parent when flat sibling mode is explicitly selected
 - use self-identifying shard filenames that include version and short topic
 - keep parent-to-shard and shard-to-parent links resolvable
 - version shards should carry parent backlink plus parent-document/reference metadata and stable provenance fields when practical

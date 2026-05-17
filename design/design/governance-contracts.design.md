@@ -1,7 +1,7 @@
 # Governance Contracts - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.09
+> **Current Version:** 10.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Section:** Active governance contracts
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -64,14 +64,21 @@ The active rollover contract is:
 
 ## Normalized Broad-Chain Contract
 
-When a design or changelog chain becomes broad, history-heavy, or God-file-prone:
-- strongly prefer a same-stem normalized path pair
-  - `design/<slug>.design.md` + `design/<slug>/`
-  - `changelog/<chain>.changelog.md` + `changelog/<chain>/`
+When a design or changelog chain is touched for meaningful normalization, classify the chain shape first:
+- `single-file-bootstrap`
+- `flat-sibling-shards`
+- `same-stem-subfolder-normalized`
+- `archive-history-fallback`
+
+Contract:
+- `single-file-bootstrap` is valid only while the parent remains compact and coherent enough that detail has not yet outgrown parent-only ownership
+- `flat-sibling-shards` is valid when the current folder already scopes the chain and only a few coherent slices are needed; the parent remains the compact authority gateway and exposes the active shard map
+- `same-stem-subfolder-normalized` remains the strong-preferred form for broad, root-heavy, multi-shard, or God-file-prone chains
 - keep the parent compact as the active authority gateway
 - keep child design shards as active target-state truth
 - keep changelog version shards as parent-indexed detail, not competing authority
 - keep `changelog/done/` as legacy/archive/fallback, not the default active detail path
+- do not create a redundant same-stem nested folder until chain-shape classification says the current folder is no longer the right namespace
 
 ## Memory Governance Contract
 

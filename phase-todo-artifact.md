@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.3
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Resolve artifact posture before governed work drifts, use phases only when staged execution adds real value, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work, including lane-oriented continuation when broad worker-fit execution needs explicit structure.**
+**Core Principle: Resolve artifact posture and governed documentation chain analysis before work drifts, use phases only when staged execution adds real value, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work, including lane-oriented continuation when broad worker-fit execution needs explicit structure.**
 
 This rule unifies startup artifact initiation, live phase execution semantics, and durable-vs-live task tracking. It keeps staged work aligned to real goals, outputs, and gates without letting TODO, phase, patch, or startup posture drift into retrospective cleanup.
 
@@ -91,6 +91,28 @@ reason: ...
 what_must_happen_before_continuing:
 - ...
 ```
+
+### 5.1) Documentation chain-shape analysis
+When meaningful governed work will normalize or split active design/changelog documentation, resolve the chain-shape decision before deeper edits.
+
+Use a compact `docs_analysis` form:
+```text
+docs_analysis:
+- document_role: <design | changelog>
+- parent_authority: <checked parent file>
+- current_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
+- selected_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
+- normalization_action: <append-in-parent | create-or-update-flat-sibling | create-or-update-same-stem-child | migrate-flat-to-same-stem | use-history-or-done>
+- append_vs_shard_reason: <why the next detail belongs in parent or shard>
+- parent_index_update_required: <yes | no>
+- integrity_checks: <shard map, backlinks, version/current-state alignment, no orphan detail>
+```
+
+Required guidance:
+- use this form when a governed design/changelog parent is about to receive enough new detail that append-versus-shard choice materially changes the resulting structure
+- if the current folder already acts as the chain namespace, `create-or-update-flat-sibling` may be selected without creating a redundant same-stem nested folder
+- if the chain is broad, root-heavy, multi-shard, or already showing God-file pressure, same-stem nested normalization remains the strong-preferred direction
+- do not silently keep appending to a parent authority file merely because no child shard exists yet; the absence of shards should trigger classification, not default approval
 
 ---
 

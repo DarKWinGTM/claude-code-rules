@@ -1,7 +1,7 @@
 # Design - Safe I/O
 
 > **Parent Rule:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/safe-io.changelog.md](../changelog/safe-io.changelog.md)
 
@@ -28,6 +28,8 @@ It also owns read/output-side delegation triggers for aggregate-read bursts and 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 
 P101 refinement: this owner should now strengthen parent-first reading into smallest-relevant-shard selection for normalized design/changelog chains and the smallest needed history/done shard after rollover.
+
+P102 refinement: this owner should now make read order depend on the parent-declared chain shape so flat sibling shard mode and same-stem nested shard mode are both readable without inventing a nested child directory from filename symmetry alone.
 
 ---
 

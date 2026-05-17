@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.09</b><br><sub>P101 Released</sub>
+  <b>v10.10</b><br><sub>P102 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Install verified</sub>
+  <b>Pre-release</b><br><sub>Source sync active</sub>
 </td>
 <td align="center" width="200">
-  <b>Path normalization</b><br><sub>Premise-separation</sub>
+  <b>Chain shape</b><br><sub>Append-vs-shard</sub>
 </td>
 </tr>
 </table>
@@ -535,13 +535,12 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P101 governed path normalization and premise-separation is the released `v10.09` wave.
+- P102 chain-shape normalization and append-vs-shard gate is the active `v10.10` pre-release wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It strengthens same-stem parent/index + shard normalization for broad design/changelog chains, makes compact `TODO.md` / `phase/SUMMARY.md` entrypoint expectations clearer, and separates concern/factual conclusion/proposal/goal/next-action handling more explicitly across touched merged owners.
-  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed in checked scope.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-  - Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
-  - GitHub release `v10.09` was published at `2026-05-17T00:52:06Z`.
+  - It adds explicit chain-shape classification, flat sibling shard doctrine for folder-scoped bootstrap chains, and append-vs-shard gating before governed design/changelog parents silently keep growing.
+  - Same-stem normalized parent + subfolder doctrine remains the strong-preferred form for broad mature chains.
+  - Source-side runtime/design/changelog sync is active; runtime install, 18/18 source/runtime parity, source/destination body sufficiency recheck, push, and GitHub release verification are still pending.
+  - Latest published release remains `v10.09 / P101` until the P102 release gates pass.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -704,13 +703,12 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P101 / v10.09 releases the governed path normalization and premise-separation wave on top of the compact 18-rule merged runtime set.
-- Touched merged owners now strengthen same-stem parent/index + shard normalization for broad design/changelog chains, stricter compact TODO/phase entrypoint doctrine, and clearer concern/factual-claim/proposal/goal/next-action separation before endorsement or continuation.
-- Master `design/design.md` and `changelog/changelog.md` are normalized into compact parent authorities with same-stem shard paths in source scope.
-- P101 phase and patch records are closed as released closeout artifacts.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-- Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`, published at `2026-05-17T00:52:06Z`.
+- P102 / v10.10 opens the chain-shape normalization and append-vs-shard gate wave on top of the compact 18-rule merged runtime set.
+- Touched merged owners now require chain-shape classification before governed design/changelog parents absorb more detail.
+- Flat sibling shards are now being added as an explicit valid form when the current folder already scopes the chain, while broad mature chains still converge to same-stem parent + child-directory normalization.
+- P102 phase and patch startup artifacts are opened for active pre-release tracking.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency recheck, push, and GitHub release verification are pending.
+- Latest published release remains `v10.09 / P101` until the P102 release gates pass.
 </div>
 
 ---
@@ -788,12 +786,14 @@ ls ./.claude/rules/worker-routing-and-context.md
 
 | Location | Purpose | File Type |
 |----------|---------|-----------|
-| `./design/<slug>.design.md` | Compact active parent design index/gateway for broad chains | Active design parent |
-| `./design/<slug>/*.design.md` | Active child target-state shards selected through the parent index | Active design shards |
+| `./design/<slug>.design.md` | Compact active parent design index/gateway for governed chains | Active design parent |
+| `./design/<slug>/*.design.md` | Active child target-state shards in same-stem nested mode | Active design shards |
+| `./design/*.design.md` beside a compact parent | Flat sibling design shards when the current folder already scopes the chain | Active design sibling shards |
 | `*.md` (root) | Active runtime rules | Rules files |
 | `./changelog/changelog.md` | Compact master repository-wide current-version authority and shard map | Master changelog parent |
 | `./changelog/*.changelog.md` | Per-chain authoritative active parent history/current version state | Active parent changelogs |
-| `./changelog/<chain>/v*.changelog.md` | Same-chain detailed version entries indexed by the parent changelog | Version detail shards |
+| `./changelog/<chain>/v*.changelog.md` | Same-chain detailed version entries in same-stem nested mode | Version detail shards |
+| `./changelog/v*.changelog.md` beside a compact parent | Flat sibling version-detail shards when the current folder already scopes the chain | Version detail sibling shards |
 | `./changelog/done/*.changelog.md` | Legacy/archive/fallback detailed history outside active scans | Inactive history for audit/rollback/provenance/trace |
 | `./todo/history/*.md` | Daily TODO movement and pre-rollover snapshots outside the active TODO entrypoint | Referenced inactive TODO history |
 | `./todo/done/*.md` | Large completed TODO/task detail outside the active TODO entrypoint | Referenced inactive TODO detail |
@@ -807,10 +807,12 @@ ls ./.claude/rules/worker-routing-and-context.md
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact that also exposes active phase family, planned next phase(s), activation boundary, and next checkpoint guidance for future `/phase` authoring |
 
 > **💡 Single Source of Truth Principle:**
-> - Broad active design chains should strongly prefer same-stem parent/index + shard pairs (`design/<slug>.design.md` + `design/<slug>/`) and do not use a default `design/done/` surface
+> - Governed design/changelog chains should classify chain shape before parent files absorb more detail
+> - Flat sibling shards are valid when the current folder already scopes the chain and the compact parent clearly exposes the shard map
+> - Broad active design chains should still strongly prefer same-stem parent/index + shard pairs (`design/<slug>.design.md` + `design/<slug>/`) and do not use a default `design/done/` surface
 > - Per-chain active changelogs (`*.changelog.md`) remain the authority for current governed chain history/version state
-> - Broad active changelog chains should strongly prefer same-stem parent/index + shard pairs (`changelog/<chain>.changelog.md` + `changelog/<chain>/`)
-> - Chain-scoped version detail shards (`changelog/<chain>/v*.changelog.md`) hold indexed same-chain detail without becoming separate version authority
+> - Broad active changelog chains should still strongly prefer same-stem parent/index + shard pairs (`changelog/<chain>.changelog.md` + `changelog/<chain>/`)
+> - Chain-scoped version detail shards hold indexed same-chain detail without becoming separate version authority, whether they appear in flat sibling mode or same-stem nested mode
 > - `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are inactive-by-default referenced history/detail surfaces for audit, rollback, provenance, or trace reconstruction
 > - `changelog/changelog.md` records repository-level synchronization history
 > - `README.md` remains overview-only, not chain authority
@@ -1438,7 +1440,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.09 / P101` normalization and premise-separation wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release evidence all passed in checked scope.
+- Source state: this README reflects the active `v10.10 / P102` chain-shape normalization and append-vs-shard pre-release wave; runtime install, 18/18 parity, source/destination body sufficiency recheck, push, and GitHub release evidence are still pending in checked scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

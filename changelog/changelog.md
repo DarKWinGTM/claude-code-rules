@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.09
+> **Current Version:** 10.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.10 | 2026-05-17 | **[Opened chain-shape normalization and append-vs-shard gate](changelog/v10.10-added-chain-shape-normalization-and-append-vs-shard-gate.changelog.md#version-1010)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.09 | 2026-05-17 | **[Released governed path normalization and premise-separation](#version-1009)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.08 | 2026-05-17 | **[Released safe-first active runtime compression](changelog/v10.08-released-safe-first-active-runtime-compression.changelog.md#version-1008)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.07 | 2026-05-16 | **[Released proactive subagent efficiency and lane templates](changelog/v10.07-released-proactive-subagent-efficiency-and-lane-templates.changelog.md#version-1007)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

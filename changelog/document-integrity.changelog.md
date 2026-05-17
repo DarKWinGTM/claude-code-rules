@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,9 +10,28 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-17 | **[Added P102 chain-shape integrity and flat-sibling verification](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-12"></a>
+## Version 1.2: Added P102 chain-shape integrity and flat-sibling verification
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-integrity.md` from v1.1 to v1.2.
+- Updated `design/document-integrity.design.md` from v1.1 to v1.2.
+- Expanded integrity checks so parent design/changelog authorities now verify declared chain shape, sibling-shard maps, and no-orphan/no-mixed-mode drift.
+- Added reference-role entries for flat sibling design shards and flat sibling changelog version-detail shards.
+- Strengthened no-drift review so parent/sibling and parent/nested shard modes are distinguished explicitly instead of being inferred from filename shape alone.
+
+### Summary
+`document-integrity.md` now carries the P102 chain-shape integrity refinement needed to keep flat sibling shard mode reviewable without weakening existing normalized parent/shard checks.
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.09
+> **Current Version:** 10.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.09 / P101` should keep the RULES system readable, source-owned, evidence-grounded, more explicitly normalized for broad governed chains, and less likely to drift from user concern into unverified factual endorsement.
+The active model for `v10.10 / P102` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, and less likely to drift into the wrong parent/shard structure by momentum.
 
 ---
 
@@ -22,11 +22,13 @@ The active model for `v10.09 / P101` should keep the RULES system readable, sour
 
 Current target-state priorities:
 - runtime rules stay as body-sufficient active behavior contracts
-- broad governed design/changelog chains should strongly prefer compact parent indexes plus active same-stem child shard paths
+- governed design/changelog chains must classify chain shape before appending or sharding detail
+- flat sibling shards are valid when the current folder already scopes the chain and only a few coherent slices are needed
+- broad mature design/changelog chains should still strongly prefer compact parent indexes plus active same-stem child shard paths
 - `TODO.md` and `phase/SUMMARY.md` stay compact active entrypoints, with `history/` and `done/` as normalized overflow paths
 - current release and version authority stay in active parent changelogs, while bulky same-chain detail moves to chain-scoped version shards
 - concern, factual claim, goal request, proposal, and assistant next action should stay separated before endorsement or continuation
-- worker-first/context-safe reading still starts from parent indexes and opens the smallest relevant shard or detail surface
+- worker-first/context-safe reading still starts from parent indexes and then follows the declared smallest relevant shard or detail surface
 
 Historical release-by-release detail lives in [../changelog/changelog.md](../changelog/changelog.md), not in this active target-state parent.
 

@@ -1,7 +1,7 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,12 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-17 | **[Added P102 chain-shape-aware shard reading](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P101 smallest-shard-first refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 delegate-first aggregate-burst doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `safe-io.md` and its design companion so the merged runtime owner now covers delegate-first aggregate read/output burst signals, burst-risk posture, and high-output flow updates while preserving the compact 18-rule runtime set. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `safe-io.md` as a body-sufficient merged runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added P102 chain-shape-aware shard reading
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `safe-io.md` from v1.3 to v1.4.
+- Updated `design/safe-io.design.md` from v1.3 to v1.4.
+- Made parent-first reading depend on the parent-declared chain shape instead of inferring nested child directories from filename symmetry alone.
+- Added explicit read-order handling for flat sibling shard mode and same-stem nested shard mode.
+- Preserved bounded I/O, delegate-first burst handling, and archive-fallback boundaries.
+
+### Summary
+`safe-io.md` now carries the P102 chain-shape-aware read-order refinement so AI can read the right shard mode without inventing nested folders too early.
 
 ---
 
