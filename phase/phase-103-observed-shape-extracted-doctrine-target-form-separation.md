@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P103
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Release:** v10.11
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.11
@@ -51,8 +51,8 @@ P103 exists to make that separation explicit so checked examples ground doctrine
 - [x] Add observed-shape / extracted-doctrine / selected-target separation and equivalence-basis wording to the touched runtime owners.
 - [x] Sync touched owner design/changelog companions plus master release surfaces to P103 pre-release state.
 - [x] Validate wording/equivalence integrity, compact-entrypoint behavior, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.11`, and verify release state.
-- [ ] Finalize P103 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.11`, and verify release state.
+- [x] Finalize P103 closeout records after release verification passes.
 
 ---
 
@@ -84,21 +84,19 @@ P103 exists to make that separation explicit so checked examples ground doctrine
 
 ## Current Status
 
-P103 is active in pre-release implementation for `v10.11`.
+P103 is released as `v10.11`.
 
-Completed so far:
-- current baseline is released `v10.10 / P102`
+Release verification summary:
+- current baseline before the wave was released was `v10.10 / P102`
 - no active phase was open before P103 started
-- `v10.11` tag/release is absent in checked scope
-- README arrays still match the compact 18-rule runtime set
-- the untracked `plugin/` tree remains preserved as out-of-scope state
-- phase/patch startup and active roadmap/TODO sync are open in source scope
-- touched doctrine-owner wording updates are complete in source scope
-- touched owner design/changelog companions plus master release surfaces are synced to P103 pre-release state
+- `v10.11` tag/release was absent in checked scope before release work began
+- README arrays still matched the compact 18-rule runtime set
+- the untracked `plugin/` tree remained preserved as out-of-scope state
+- touched doctrine-owner wording and companion/master-surface sync completed in source scope
 - wording/equivalence validation passed in checked source scope
 - runtime install plus 18/18 source/runtime parity and source/destination body sufficiency passed locally
 - `git diff --check` passed with no whitespace errors
-
-Still pending:
-- source release commit, push, and GitHub release verification
-- final closeout after release verification
+- `master` push passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
+- Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`
+- Published at `2026-05-17T07:01:37Z`

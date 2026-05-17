@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P103 active for v10.11 observed-shape, extracted-doctrine, and selected-target separation
+> **Status:** No active phase open; latest released wave is P103 / v10.11 observed-shape, extracted-doctrine, and selected-target separation
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P103:** [phase-103-observed-shape-extracted-doctrine-target-form-separation.md](phase-103-observed-shape-extracted-doctrine-target-form-separation.md)
-  - Goal: add explicit wording/evidence separation for observed project shape, extracted doctrine, and selected target form without reopening P102 chain-shape selection.
-  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.11`.
-  - Scope: main RULES doctrine only; keep `plugin/` reference-only and out of staged release scope.
-  - Gate: wording/equivalence integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and release verification pass.
+- none open.
 
 ### Most Recently Completed
+
+- **P103:** [phase-103-observed-shape-extracted-doctrine-target-form-separation.md](phase-103-observed-shape-extracted-doctrine-target-form-separation.md)
+  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.11`.
+  - Gate: wording/equivalence integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
+  - Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`.
+  - Published at `2026-05-17T07:01:37Z`.
+
+### Previously Completed
 
 - **P102:** [phase-102-chain-shape-normalization-and-append-vs-shard-gate.md](phase-102-chain-shape-normalization-and-append-vs-shard-gate.md)
   - Output: touched owner chains, master design/changelog doctrine sync, docs-analysis gate, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.10`.
@@ -37,8 +42,6 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.10
   - Release tag `v10.10` resolves to commit `941fde875dedc2cede3db6f4bee2d144c4b029c3`.
   - Published at `2026-05-17T01:55:18Z`.
-
-### Previously Completed
 
 - **P101:** [phase-101-governed-path-normalization-and-premise-separation.md](phase-101-governed-path-normalization-and-premise-separation.md)
   - Output: touched owner chains, normalized master design/changelog structures, docs sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.09`.

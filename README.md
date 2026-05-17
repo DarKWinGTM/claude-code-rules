@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.11</b><br><sub>P103 Active</sub>
+  <b>v10.11</b><br><sub>P103 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Install verified</sub>
+  <b>Released</b><br><sub>Install verified</sub>
 </td>
 <td align="center" width="200">
   <b>Observed shape</b><br><sub>Doctrine-target split</sub>
@@ -535,12 +535,15 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P103 observed-shape, extracted-doctrine, and selected-target separation is the active `v10.11` pre-release wave.
+- P103 observed-shape, extracted-doctrine, and selected-target separation is the released `v10.11` wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
   - It makes touched owners separate checked example shape, extracted doctrine, and selected RULES target form before describing normalization recommendations.
   - It expands `docs_analysis` with observed-shape and equivalence-basis fields so example-backed structure choices do not collapse into one unsupported claim.
   - It preserves the released P102 chain-shape doctrine, including flat sibling shard mode for folder-scoped chains and same-stem normalization as the strong-preferred form for broad mature chains.
-  - Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed locally for `v10.11`; `master` push and GitHub release verification are still pending.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, and `master` push passed in checked scope.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
+  - Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`.
+  - GitHub release `v10.11` was published at `2026-05-17T07:01:37Z`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -703,12 +706,14 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P103 / v10.11 opens the observed-shape, extracted-doctrine, and selected-target separation wave on top of the released `v10.10 / P102` baseline.
+- P103 / v10.11 releases the observed-shape, extracted-doctrine, and selected-target separation wave on top of the released `v10.10 / P102` baseline.
 - Touched merged owners now separate checked example shape, extracted doctrine, and selected RULES target form before describing normalization recommendations.
 - `docs_analysis` now records observed project shape, extracted doctrine, selected target form, and equivalence-claim basis when checked examples drive governed normalization work.
-- P102 phase and patch records remain the most recently completed released closeout artifacts, while P103 phase and patch records are open as active pre-release artifacts.
+- P103 phase and patch records are closed as released closeout artifacts.
 - The untracked `plugin/` tree remains preserved and out of staged release scope.
-- Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed locally for `v10.11`; `master` push and GitHub release verification are still pending.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
+- Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`, published at `2026-05-17T07:01:37Z`.
 </div>
 
 ---
@@ -1440,7 +1445,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active `v10.11 / P103` pre-release wave; runtime install, 18/18 parity, and source/destination body sufficiency have passed locally, while `master` push and GitHub release verification are still pending for this wave.
+- Source state: this README reflects the released `v10.11 / P103` wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed in checked scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

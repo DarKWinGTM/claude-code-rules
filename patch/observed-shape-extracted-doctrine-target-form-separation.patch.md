@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.11
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -76,9 +76,13 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P103 is active and not yet released.
+P103 is released as `v10.11`.
 
-Phase/patch startup, touched doctrine-owner wording, companion/master-surface sync, local validation, runtime install, and 18/18 parity/body-sufficiency checks are complete from the released `v10.10 / P102` baseline. Push, GitHub release creation, and closeout verification are still pending.
+Phase/patch startup, touched doctrine-owner wording, companion/master-surface sync, local validation, runtime install, 18/18 parity/body-sufficiency checks, `master` push, and GitHub release verification all passed from the released `v10.10 / P102` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
+Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`.
+Published at `2026-05-17T07:01:37Z`.
 
 ---
 

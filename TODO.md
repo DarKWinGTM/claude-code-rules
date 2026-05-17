@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-17
-> **Current Release:** v10.10 / P102 chain-shape normalization and append-vs-shard gate
-> **Active Wave:** v10.11 / P103 observed-shape, extracted-doctrine, and selected-target separation (pre-release)
+> **Current Release:** v10.11 / P103 observed-shape, extracted-doctrine, and selected-target separation
+> **Active Wave:** none open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P103 / v10.11 observed-shape, extracted-doctrine, and selected-target separation was completed, installed, pushed, and released.
+  - Verified: wording/equivalence integrity in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
+  - Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`.
+  - Published at `2026-05-17T07:01:37Z`.
 - [x] P102 / v10.10 chain-shape normalization and append-vs-shard gate was completed, installed, pushed, and released.
   - Verified: chain-shape doctrine consistency in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.10
@@ -34,10 +39,7 @@
 
 ### Active / In Progress
 
-- [ ] P103 / v10.11 observed-shape, extracted-doctrine, and selected-target separation is in pre-release implementation.
-  - Goal: make AI keep checked example shape, extracted doctrine, and selected RULES target form separate instead of collapsing them into one claim.
-  - Current state: P103 startup, touched owner wording, companion/master-surface sync, local validation, runtime install, and 18/18 parity/body-sufficiency checks are complete in source scope; push/release verification and closeout are still pending.
-  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
+- none open.
 
 ### Deferred / Not Selected
 
