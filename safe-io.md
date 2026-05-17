@@ -1,7 +1,7 @@
 # Safe I/O (File Reading + Terminal Output)
 
-> **Current Version:** 1.2 (merged M12)
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
@@ -57,6 +57,7 @@ Burst rule:
 For designs using `design/<slug>.design.md` plus `design/<slug>/*.design.md`, start from the compact parent index and select only the child shards needed.
 
 - read the parent index first for purpose, authority boundary, target-state summary, shard map, and shard-selection guidance
+- open the smallest relevant child shard rather than absorbing the whole child directory or large sibling set
 - read child shards selectively by target-state slice; do not absorb the whole shard directory
 - use worker filtering for broad shard audits, stale-shard checks, or multi-shard consistency sweeps
 - report checked shard scope when using selected shards as evidence
@@ -67,6 +68,7 @@ For designs using `design/<slug>.design.md` plus `design/<slug>/*.design.md`, st
 For changelogs using `changelog/<chain>.changelog.md` plus `changelog/<chain>/v*.changelog.md`, start from the active parent changelog and select only the version detail shards needed.
 
 - read the active parent changelog first for current version authority, shard map, and navigation
+- open the smallest relevant version shard rather than absorbing the whole chain directory or several unrelated versions at once
 - read version detail shards selectively by version/topic; do not absorb the whole chain shard directory
 - use worker filtering for broad version-history audits, parent/shard consistency sweeps, or multi-shard migration reviews
 - report checked parent and shard scope when using selected shards as evidence
@@ -78,7 +80,7 @@ If active governance entrypoints such as `TODO.md` or `phase/SUMMARY.md` exceed 
 
 - use offsets/searches to identify current state only long enough to preserve and compact it
 - if a read fails from size or autocompact thrash points to repeated large file absorption, roll active detail into `history/`/`done/` shards
-- after rollover, start active reads at the compact entrypoint and follow history/done references only when needed
+- after rollover, start active reads at the compact entrypoint and follow only the history/done shard actually needed
 - do not treat the pre-rollover snapshot as active current context unless audit/rollback/provenance requires it
 
 ### 7) Safe fallback patterns for command-line reads

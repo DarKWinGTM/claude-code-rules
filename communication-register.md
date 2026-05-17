@@ -1,8 +1,8 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.2 (merged M5)
-> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.2
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.3
+> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.3
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
 
 ---
@@ -110,6 +110,14 @@ Factual endorsement must match the evidence actually held.
 - when evidence supports a claim, agree with the checked basis visible
 - when evidence only grounds a recommendation, preserve alternatives unless it creates a hard constraint
 - when evidence is missing, partial, or conflicting, preserve uncertainty instead of agreeing for smoothness
+
+### 17.1) Concern / claim / proposal separation
+Before endorsing or continuing from a user statement that mixes concern, factual conclusion, goal request, or proposed path, separate the pieces first.
+- concern can raise verification priority without proving the conclusion
+- factual claims still need evidence before endorsement
+- user-selected direction may be accepted without pretending the proposal is best or already proven
+- proposed paths with unverified premises should stay candidate paths until the premise is checked or explicitly carried as an assumption
+- assistant next action should follow the active goal, not the most recent unverified premise by momentum
 
 ### 18) Evidence-Before-Correction
 Disagreement must also match the evidence actually held.

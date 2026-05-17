@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.24
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835 (2026-05-16)
+> **Current Version:** 2.25
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -38,9 +38,9 @@ This chain is the wording owner for:
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
 - safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
 
-This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `development-verification-and-debug-strategy`, bounded technical snapshot wording to `technical-snapshot-communication`, and end-of-response closing / action / proposal framing to `response-closing-and-action-framing`.
+This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `coding-discipline`, keeps bounded technical snapshot wording inside its absorbed Snapshot Wording section, and defers end-of-response closing / action / proposal framing to `explanation-and-presentation`.
 
-It should work with, not replace, the evidence-threshold semantics now owned by `evidence-grounded-burden-of-proof`.
+It should work with, not replace, the evidence-threshold semantics now owned by `evidence-discipline`.
 
 ---
 
@@ -129,13 +129,14 @@ Required guidance:
 - non-findings should identify the inspected scope rather than implying stronger absence
 - person-directed contradiction wording should not outrun the available evidence
 
-### 3.4 Technical Snapshot Wording Deferral Principle
-This chain no longer owns bounded wording for compact technical snapshots.
+### 3.4 Technical Snapshot Wording Ownership Principle
+This chain owns bounded wording for compact technical, diagnostic, and verification-status snapshots through its absorbed Snapshot Wording section.
 
 Required guidance:
-- defer snapshot-specific wording semantics to `technical-snapshot-communication.md`
+- keep snapshot-specific wording semantics in this chain so compact status language stays aligned with its claim-strength ladder
+- defer snapshot layout, fact-table presentation, and explanation flow to `explanation-and-presentation.md`
 - keep broader portable-default and anti-hardcoding ownership deferred to `portable-implementation-and-hardcoding-control.md`
-- avoid leaving duplicate snapshot-semantic ownership active here once the specialized snapshot owner exists
+- avoid splitting snapshot-semantic ownership across duplicate active owners
 
 ### 3.5 Agreement, Proof-Aware Recommendation, and Contradiction Wording Guardrail
 This chain owns phrasing discipline for acknowledgement, evidence-backed agreement, proof-aware recommendation/design, and contradiction.
@@ -226,7 +227,7 @@ Required guidance:
 This chain no longer owns end-of-response synthesis, recommendation-with-reason framing, closed-topic summary handling, or goal-qualified advisory proposal wording.
 
 Required guidance:
-- defer those ending/action/proposal semantics to `response-closing-and-action-framing.md`
+- defer those ending/action/proposal semantics to `explanation-and-presentation.md`
 - avoid leaving duplicate active authority for summary signal density, recommendation framing, alternative preservation, or advisory proposal wording in this chain
 - keep continuation-first execution wording here only as long as it remains part of the broader communication-owner set rather than the specialized closing owner
 
@@ -375,8 +376,8 @@ Not allowed:
 ### 6.8 Inferred implication
 - "Based on those checked facts, the likely implication is that the failure sits between request routing and runtime-target resolution, not in initial client boot."
 
-### 6.9 Closing synthesis
-- "Summary: the implementation is complete, but production validation is still pending. Next step: run the final environment check before calling it fixed."
+### 6.9 Implementation-status synthesis
+- "Current state: the implementation is complete in source scope, but production validation is still pending before stronger fixed wording."
 
 ### 6.10 Move to the next state
 - "Phase 12 is already clear enough now. The next useful move is to switch from scope clarification to the implementation checklist."
@@ -397,12 +398,9 @@ Not allowed:
 - "What this phase delivered: it changed closeout reporting so phase completion explains the delivered improvement before audit details."
 - "Verification: source wording updated and scoped consistency checks passed; live runtime behavior still needs install/parity verification before stronger completion wording."
 
-### 6.15 Goal-qualified proposal
-- "Proposal: build an automated visual QA verdict layer."
-- "Goal: turn screenshot capture/compare output into a review result that is easier to act on."
-- "What it would improve: reduce the manual work needed to interpret raw compare artifacts."
-- "Expected output: a machine-readable QA summary with per-device verdicts and concise regression notes."
-- "Success condition: a compare workflow can end with a usable verdict artifact instead of raw screenshots/diff data only."
+### 6.15 Evidence-grounded recommendation boundary
+- "The checked evidence supports simplifying this reporting path, but it does not prove that this is the only valid design."
+- "I can follow the selected direction, but I should still keep trade-offs visible rather than wording it as the obviously best path without proof."
 
 ### 6.16 Post-compact re-anchor
 - "Post-compact re-anchor: continue the active implementation objective already selected by the user."
@@ -465,7 +463,7 @@ Not allowed:
 | Duplicate-looking team-agent reporting honesty | High |
 | Phase closeout evidence-aligned delivery/impact wording | High |
 | Unsupported person-directed contradiction | 0 critical cases |
-| Closing usefulness | Ending makes the next path clear when one exists |
+| Operational orientation usefulness | Status wording keeps the current state and evidence limit clear before specialized closing/presentation guidance takes over |
 
 ---
 
@@ -474,13 +472,13 @@ Not allowed:
 | Rule | Relationship |
 |------|--------------|
 | [../accurate-communication.md](../accurate-communication.md) | Runtime implementation |
-| [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Supplies coding-time verification/debug/TestKit evidence boundaries that this design turns into edited/tested/fake-local/live/fixed/stable wording |
-| [evidence-grounded-burden-of-proof.design.md](evidence-grounded-burden-of-proof.design.md) | Owns evidence taxonomy, proof-aware reasoning, burden-of-proof thresholds for factual endorsement and contradiction, and negative-evidence semantics |
-| [zero-hallucination.design.md](zero-hallucination.design.md) | Verification honesty depends on verify-first factual discipline and unsupported factual-endorsement risk handling |
-| [anti-sycophancy.design.md](anti-sycophancy.design.md) | Prevents comfort-first agreement drift and unsupported contradiction drift |
-| [no-variable-guessing.design.md](no-variable-guessing.design.md) | Supplies local inspected-scope discipline for project-specific communication |
-| [answer-presentation.design.md](answer-presentation.design.md) | Owns the layout of snapshot sections and small fact tables |
-| [explanation-quality.design.md](explanation-quality.design.md) | Analytical explanations should end with concise synthesis and clear next-step guidance |
+| [coding-discipline.design.md](coding-discipline.design.md) | Supplies coding-time verification/debug/TestKit evidence boundaries that this design turns into edited/tested/fake-local/live/fixed/stable wording |
+| [evidence-discipline.design.md](evidence-discipline.design.md) | Owns evidence taxonomy, proof-aware reasoning, burden-of-proof thresholds, scoped non-findings, and real-vs-mock boundaries that this design turns into communication-strength wording |
+| [communication-register.design.md](communication-register.design.md) | Keeps agreement/disagreement posture evidence-calibrated so this chain does not drift into comfort-first endorsement or unsupported contradiction |
+| [explanation-and-presentation.design.md](explanation-and-presentation.design.md) | Owns explanation flow, snapshot layout, and closing/action/proposal presentation that this design defers out |
+| [memory-governance-and-session-boundary.design.md](memory-governance-and-session-boundary.design.md) | Governs memory-derived-context disclosure and recheck posture that this chain must word honestly |
+| [portable-implementation-and-hardcoding-control.design.md](portable-implementation-and-hardcoding-control.design.md) | Keeps local-path/local-value wording portable and correctly scoped |
+| [audience-surface-disclosure-control.design.md](audience-surface-disclosure-control.design.md) | Keeps public/operator/customer-facing disclosure control separate from direct-user transparency |
 
 ---
 

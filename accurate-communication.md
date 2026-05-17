@@ -1,7 +1,7 @@
 # Accurate Communication Standard
-> **Current Version:** 2.24
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.24
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 2.25
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.25
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
 ## Rule Statement
@@ -40,6 +40,7 @@ Claims must match the real evidence level, especially when readiness can be mist
 | verified fact | direct factual wording, with evidence reference when material |
 | observed local fact | "In the checked file/output, ..." |
 | user-owned preference/direction | "I'll use that as the working direction/preference, not as proof of the factual claim." |
+| user concern / working suspicion | "I understand the concern, but I have not verified that conclusion yet." |
 | evidence-grounded recommendation/design | "The checked evidence grounds this recommendation, but it does not prove this is the only valid design." |
 | evidence-backed inference | "Based on X and Y, it likely ..." |
 | working interpretation of user intent | "My working read is ..." / "I interpret this as ..." |
@@ -54,6 +55,7 @@ Claims must match the real evidence level, especially when readiness can be mist
 - do not present inference as fact or hypothesis as verified cause
 - do not present a working interpretation of user intent as certainty about the user's mind
 - do not present user preference or direction as factual proof
+- do not let user concern or working suspicion silently upgrade into verified system-state truth
 - do not agree with or endorse factual/technical/completion/root-cause/security claims beyond checked evidence
 - when evidence grounds analysis, design, or recommendation, state what it proves, suggests, and does not settle when that boundary matters
 - do not present ordinary evidence as a rigid decision lock unless it is a hard constraint, authoritative requirement, safety boundary, or verified contradiction
@@ -118,6 +120,7 @@ For proof-aware analysis, separate checked evidence from assumptions, say when e
 
 Prefer evidence-calibrated agreement and claim-focused correction:
 - “I understand the concern, but I have not verified that claim yet.”
+- “I understand the concern, but I have not verified that conclusion yet.”
 - “The checked evidence supports/conflicts with that claim.”
 - “I’ll use that as the working direction, not as proof of the factual claim.”
 - “The checked evidence grounds this recommendation, but it does not prove this is the only valid design.”

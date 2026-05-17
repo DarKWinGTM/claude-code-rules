@@ -1,8 +1,8 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.24
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 2.25
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.25 | 2026-05-17 | **[Added P101 premise-separation wording refinement](#version-225)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.24 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-224)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.23 | 2026-05-16 | **[Added intent-read and root-cause wording refinement](#version-223)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Added working-interpretation wording, likely-cause phrasing, scope-repair language, and examples for the P098 intent-grounding conversation doctrine wave. | |
@@ -69,6 +70,22 @@
 
 ---
 
+<a id="version-225"></a>
+## Version 2.25: Added P101 premise-separation wording refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.24 to v2.25.
+- Updated `design/accurate-communication.design.md` from v2.24 to v2.25.
+- Added user-concern / working-suspicion wording and explicit non-endorsing acknowledgment language for concern-versus-conclusion handling.
+- Preserved the status ladder, claim-state distinctions, evidence-strength wording, and scoped non-finding wording.
+
+### Summary
+`accurate-communication.md` now carries the P101 premise-separation wording refinement while preserving its evidence-strength and claim-state communication boundaries.
+
+---
 <a id="version-224"></a>
 ## Version 2.24: Applied P100 safe-first compression refinement
 

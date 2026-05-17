@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-05-17 | **[Added P101 governed path-normalization refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 proactive subagent-efficiency doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
@@ -17,6 +18,22 @@
 
 ---
 
+<a id="version-12"></a>
+## Version 1.2: Added P101 governed path-normalization refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.1 to v1.2.
+- Updated `design/document-governance.design.md` from v1.1 to v1.2.
+- Strengthened broad-chain normalization so design and changelog parents now strongly prefer same-stem parent/index + shard paths.
+- Clarified child/version shard metadata expectations and preserved `changelog/done/` as legacy/archive/fallback rather than the normal active detail namespace.
+
+### Summary
+`document-governance.md` now carries the P101 path-normalization refinement while preserving document-role authority boundaries and UDVC-1 behavior.
+
+---
 <a id="version-11"></a>
 ## Version 1.1: Added P099 proactive subagent-efficiency doctrine
 

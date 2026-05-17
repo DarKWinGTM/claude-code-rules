@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.2
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -188,6 +188,8 @@ When phased work uses a governed patch artifact:
 ### 8) Phase file responsibilities
 `phase/SUMMARY.md` keeps the compact global execution picture: context, target state, risk, constraints, dependencies, roadmap/phase matrix, phase map, active child references, lineage context, history/done pointers, design/patch references, handoffs, TODO/changelog coordination, end-to-end verification, next-goal basis, and rollback behavior.
 
+In normalized compact-entrypoint form it should keep current status, active-or-latest-completed phase visibility, verification focus, rollback/containment state, and explicit history/done references while pushing bulky execution detail into child phase files or `history/` / `done/` shards.
+
 Each active child phase should define or map to:
 - Summary File / Phase ID / Status
 - design references
@@ -224,6 +226,7 @@ Phase-backed closeout should report practical delivery, not just files/tasks/aud
 - it is not version authority
 - it does not replace live task visibility
 - it should not carry accumulated history once rollover is required
+- in normalized compact-entrypoint form it should keep release/active-wave context, compact completed highlights, current active or deferred items that still need visibility, and explicit `history/` / `done/` references
 
 Claude Code's built-in task list is the live execution-tracking surface for active non-trivial work.
 - use the built-in task list for planned / in-progress / completed slices during active work

@@ -1,7 +1,7 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-17 | **[Added P101 smallest-shard-first refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 delegate-first aggregate-burst doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `safe-io.md` and its design companion so the merged runtime owner now covers delegate-first aggregate read/output burst signals, burst-risk posture, and high-output flow updates while preserving the compact 18-rule runtime set. | |
@@ -18,6 +19,22 @@
 
 ---
 
+<a id="version-13"></a>
+## Version 1.3: Added P101 smallest-shard-first refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `safe-io.md` from v1.2 to v1.3.
+- Updated `design/safe-io.design.md` from v1.2 to v1.3.
+- Strengthened parent-first reading into smallest-relevant-shard and smallest-needed-history/done behavior.
+- Preserved bounded I/O, delegate-first burst handling, and parent-index-first authority boundaries.
+
+### Summary
+`safe-io.md` now carries the P101 smallest-shard-first refinement while preserving its bounded read/output and burst-boundary mechanisms.
+
+---
 <a id="version-12"></a>
 ## Version 1.2: Applied P100 safe-first compression refinement
 

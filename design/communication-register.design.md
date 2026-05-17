@@ -1,8 +1,8 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.2
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.3
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
 ---
@@ -24,6 +24,8 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 P098 refinement: this owner must now also preserve target-state doctrine for natural professional tone, signal pruning, anti-ceremony clarification, and evidence-calibrated agreement or dissent.
 
 P100 refinement: this owner may compress repeated examples and inclusion/pruning prose, but it must keep the natural professional baseline, high-signal pruning, truth-over-pleasing, proposal-evaluation-before-agreement, and evidence-calibrated correction behavior explicit.
+
+P101 refinement: this owner should now separate concern, factual claim, proposal, and assistant next action before endorsement or continuation so truth-over-pleasing remains operational rather than only tonal.
 
 ---
 

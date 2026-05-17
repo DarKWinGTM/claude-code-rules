@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -26,6 +26,8 @@ P098 refinement: this owner must now also preserve target-state doctrine for dis
 P099 refinement: this owner must now also preserve broad-objective decomposition before deep execution, worker-fit next-lane continuation, and lane-aware continuation boundaries while keeping delegation and read/output control with `worker-routing-and-context.md` and `safe-io.md`.
 
 P100 refinement: this owner may remove non-mechanism meta-evaluation text and tighten repeated continuation wording, but it must keep mode selection, intent recheck, visible intent read, selective clarification, goal/output/gate framing, next-lane continuation, and the worker-routing bridge explicit.
+
+P101 refinement: this owner should now preserve the active goal while holding unverified proposal premises as candidate paths and retire stale premises after user correction before continuation.
 
 ---
 

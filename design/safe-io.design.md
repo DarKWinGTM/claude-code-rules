@@ -1,7 +1,7 @@
 # Design - Safe I/O
 
 > **Parent Rule:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/safe-io.changelog.md](../changelog/safe-io.changelog.md)
 
@@ -26,6 +26,8 @@ This design owns the target-state shape for safe file reading, safe terminal out
 It also owns read/output-side delegation triggers for aggregate-read bursts and noisy command flows, while leaving routing topology and worker orchestration to `worker-routing-and-context.md`.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+
+P101 refinement: this owner should now strengthen parent-first reading into smallest-relevant-shard selection for normalized design/changelog chains and the smallest needed history/done shard after rollover.
 
 ---
 

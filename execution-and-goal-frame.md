@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.3 (merged M10)
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -51,6 +51,14 @@ Ask a clarifying question only when ambiguity materially changes the answer, act
 - if clarification is needed, ask one narrow, high-information question rather than broad intake questioning
 - after user correction, re-anchor before continuing: restate the active interpretation, the active goal, and the scope being deferred
 - do not keep reasoning from a stale frame after the user has corrected the direction
+
+### 2.3) Premise separation before continuation
+When a user turn mixes concern, factual conclusion, goal request, or proposed path, separate them before deeper execution.
+- keep the active goal distinct from the claimed problem state and from the proposed path
+- let concern raise verification priority without silently proving the conclusion
+- hold a proposed path with an unverified premise as a candidate path until the premise is checked or explicitly carried as an assumption
+- after a user correction, retire stale premise assumptions before choosing the next action
+- do not let momentum promote the most recent unverified premise into the active execution basis
 
 ### 3) Startup gate and capture before continue
 Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.
@@ -174,6 +182,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | compact or broad ask with meaningful drift risk | state a visible working interpretation before deepening |
 | ambiguity changes answer, action, risk, or root-cause branch | ask one narrow clarification before deeper execution |
 | user correction changes active scope or goal | repair and re-anchor the working frame before continuing |
+| user concern includes a factual conclusion or proposed path | separate concern, claim, goal, and candidate path before deeper continuation |
 | unresolved startup gate | resolve startup posture before execution drift |
 | oversized active governance entrypoint | compact/roll over before broad continuation |
 | clear active phase/task path or discoverable unfinished work | inspect execution surfaces and continue if safe |

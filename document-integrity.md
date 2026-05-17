@@ -1,8 +1,8 @@
 # Document Integrity
 
-> **Current Version:** 1.0 (merged M8)
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.1
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
 ---
@@ -23,9 +23,10 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 - verify concrete references or mark them unknown/unverified, and verify impacted files/sections before sync/no-drift claims
 - update or describe dependencies when a change impacts multiple files/sections
 - separate portable shared references, checked local facts, machine-scoped examples, source-side install paths, destination/runtime paths, governed design parent indexes, governed design child shards, active parent changelogs, changelog version detail shards, changelog legacy/archive/fallback history, source-owned active runtime install scope, shared runtime destinations, other-owner runtime files, and local execution paths
-- keep governed design parent indexes and child shards aligned so shard maps, parent scope, and child target-state authority do not drift
-- keep active parent changelog shard maps and chain-scoped version detail shards aligned so version-to-shard mapping, shard-to-parent back-links, and non-authority detail status do not drift
+- keep governed design parent indexes and child shards aligned so shard maps, parent scope, child target-state authority, and normalized same-stem parent/directory pairs do not drift
+- keep active parent changelog shard maps and chain-scoped version detail shards aligned so version-to-shard mapping, shard-to-parent back-links, normalized same-stem parent/directory pairs, and non-authority detail status do not drift
 - keep `changelog/done/` distinct from ordinary chain-scoped version detail shards unless the checked parent authority selects it as legacy, archive, completed-history, or fallback history
+- when the compact active-entrypoint model is selected, keep `TODO.md` and `phase/SUMMARY.md` visibly current rather than letting history/done shards silently become the effective owner path
 - keep other-owner runtime files outside the current project's parity/install target set unless owner/project scope is explicitly selected or verified
 - include active runtime body sufficiency when claiming source/runtime parity, no-drift, release readiness, or active runtime install success
 - defer broader portability and anti-hardcoding to `portable-implementation-and-hardcoding-control.md`
@@ -93,6 +94,8 @@ Existing large `TODO.md`, `phase/SUMMARY.md`, or comparable governed entrypoints
 ### 7) Reference integrity and no orphan shards
 
 Main files must point to history and done surfaces when those surfaces exist or are part of the governed model: active entrypoints link to the relevant daily/history/done shards; shards identify their parent entrypoint and scope; moved history remains reachable from the active file; no shard should become an orphan authority guessed by filename alone; archive/detail files are inactive by default unless the active entrypoint selects them for current review.
+
+When normalized parent/shard mode is selected for a broad design or changelog chain, verify the compact parent still names the active shard map and that child/version shards remain reachable through the parent rather than through archive fallback paths.
 
 ### 8) Rollover is not cleanup deletion
 

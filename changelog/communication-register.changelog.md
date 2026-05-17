@@ -1,8 +1,8 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.2
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.3
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-17 | **[Added P101 premise-separation refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
@@ -18,6 +19,22 @@
 
 ---
 
+<a id="version-13"></a>
+## Version 1.3: Added P101 premise-separation refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.2 to v1.3.
+- Updated `design/communication-register.design.md` from v1.2 to v1.3.
+- Added concern / claim / proposal separation before endorsement or continuation.
+- Preserved the natural professional baseline, signal pruning, truth-over-pleasing, proposal-evaluation-before-agreement, and evidence-calibrated correction behavior.
+
+### Summary
+`communication-register.md` now carries the P101 premise-separation refinement while preserving its tone, pruning, and anti-over-agreement boundary.
+
+---
 <a id="version-12"></a>
 ## Version 1.2: Applied P100 safe-first compression refinement
 

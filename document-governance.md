@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.1
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.2
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -115,10 +115,12 @@ Large active design documents may use:
 - governed child shards under `design/<slug>/*.design.md`
 
 Required guidance:
+- broad or God-file-prone active design chains should strongly prefer a same-stem normalized path pair: `design/<slug>.design.md` plus `design/<slug>/`
 - the parent file remains the active design index and authority gateway, not a placeholder or link-only router
 - child shards remain active target-state truth by default, not inactive history or changelog substitutes
 - the parent index should preserve purpose, authority, current target-state summary, shard map, and enough context to choose relevant shards without broad raw absorption
 - each child shard should identify parent scope, own one coherent target-state slice, and avoid duplicating/conflicting with sibling authority
+- child shards should carry parent backlink plus version/session and stable section/provenance fields when practical
 - broad shard audits should use shard maps, targeted reads, and worker filtering when context-heavy
 - retiring or superseding shard content requires governed design/changelog alignment rather than quiet removal or reclassification
 
@@ -168,10 +170,12 @@ Runtime, design, phase, patch, and TODO sync align to the parent changelog versi
 Large governed chains may split detailed version sections into chain-scoped version detail shards under `changelog/<chain>/vX.YY-short-topic.changelog.md`.
 
 Required guidance:
+- broad or God-file-prone active changelog chains should strongly prefer a same-stem normalized path pair: `changelog/<chain>.changelog.md` plus `changelog/<chain>/`
 - keep `changelog/<chain>.changelog.md` as the current version authority, index, shard map, and navigation surface
 - place same-chain detailed entries in `changelog/<chain>/vX.YY-short-topic.changelog.md` when sharding is needed
 - use self-identifying shard filenames that include version and short topic
 - keep parent-to-shard and shard-to-parent links resolvable
+- version shards should carry parent backlink plus parent-document/reference metadata and stable provenance fields when practical
 - keep one version-detail entry in one active shard or in the parent, not duplicated as competing authority
 - preserve exact historical content during migration unless an explicit governed rewrite is selected
 - do not create a God directory where the parent no longer tells readers which shard owns which version detail

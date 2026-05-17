@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-17 | **[Added P101 compact-entrypoint normalization refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 proactive subagent-efficiency doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
@@ -18,6 +19,22 @@
 
 ---
 
+<a id="version-13"></a>
+## Version 1.3: Added P101 compact-entrypoint normalization refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.2 to v1.3.
+- Updated `design/phase-todo-artifact.design.md` from v1.2 to v1.3.
+- Clarified normalized compact-entrypoint expectations for `TODO.md` and `phase/SUMMARY.md`.
+- Preserved phase lineage, live-task semantics, and `history/` / `done/` rollover behavior.
+
+### Summary
+`phase-todo-artifact.md` now carries the P101 compact-entrypoint normalization refinement while preserving startup, phase, TODO, and live-task boundaries.
+
+---
 <a id="version-12"></a>
 ## Version 1.2: Applied P100 safe-first compression refinement
 

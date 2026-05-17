@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -24,6 +24,8 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 P099 refinement: this owner must now also preserve phase-backed lane structuring and lane-aware live task shaping for broad worker-fit execution without making delegation itself a phase-owned decision.
 
 P100 refinement: this owner may compress repeated phase-context, lane-aware task, and task-update presentation, but it must keep startup posture, lineage, durable-vs-live tracking, visible phase linkage, lane-aware task shaping, and verification-slice behavior explicit.
+
+P101 refinement: this owner should now make the compact active-entrypoint shape of `TODO.md` and `phase/SUMMARY.md` more explicit while preserving `history/` / `done/` as normalized overflow paths.
 
 ---
 

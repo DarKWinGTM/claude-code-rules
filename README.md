@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.08</b><br><sub>P100 Released</sub>
+  <b>v10.09</b><br><sub>P101 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>GitHub verified</sub>
+  <b>Pre-release</b><br><sub>Source sync active</sub>
 </td>
 <td align="center" width="200">
-  <b>Safe-first compression</b><br><sub>Mechanism-preserving</sub>
+  <b>Path normalization</b><br><sub>Premise-separation</sub>
 </td>
 </tr>
 </table>
@@ -535,13 +535,11 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P100 safe-first active runtime compression is the released v10.08 wave.
+- P101 governed path normalization and premise-separation is the active v10.09 pre-release wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It compresses repeated explanation, recap, examples, and reminder blocks across touched merged owners while preserving triggers, taxonomies, decision flows, response contracts, owner-local operational behavior, and phase/task/worker linkage semantics.
-  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.08
-  - Release target and tag point to commit `f57d67727b52fea53078223725034730b882af09`.
-  - Published at `2026-05-16T23:10:15Z`.
+  - It strengthens same-stem parent/index + shard normalization for broad design/changelog chains, makes compact `TODO.md` / `phase/SUMMARY.md` entrypoint expectations clearer, and separates concern/factual conclusion/proposal/goal/next-action handling more explicitly across touched merged owners.
+  - Source-side runtime/design/changelog sync is active; runtime install, 18/18 source/runtime parity, source/destination body sufficiency recheck, push, and GitHub release verification are still pending.
+  - Latest published release remains `v10.08 / P100` until the P101 release gates pass.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -704,13 +702,12 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P100 / v10.08 releases the safe-first active runtime compression wave on top of the compact 18-rule merged runtime set.
-- Touched merged owners now compress repeated explanation, recap, examples, and reminder blocks while preserving triggers, taxonomies, decision flows, response contracts, owner-local operational behavior, and phase/task/worker linkage semantics.
-- phase and patch startup artifacts for P100 are opened and closed with release evidence.
-- runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed in checked scope.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.08
-- Release target and tag point to commit `f57d67727b52fea53078223725034730b882af09`.
-- Published at `2026-05-16T23:10:15Z`.
+- P101 / v10.09 opens the governed path normalization and premise-separation wave on top of the compact 18-rule merged runtime set.
+- Touched merged owners now strengthen same-stem parent/index + shard normalization for broad design/changelog chains, stricter compact TODO/phase entrypoint doctrine, and clearer concern/factual-claim/proposal/goal/next-action separation before endorsement or continuation.
+- Master `design/design.md` and `changelog/changelog.md` are being normalized into compact parent authorities with same-stem shard paths in source scope.
+- P101 phase and patch startup artifacts are opened for active pre-release tracking.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency recheck, push, and GitHub release verification are pending.
+- Latest published release remains `v10.08 / P100` until the P101 release gates pass.
 </div>
 
 ---
@@ -788,10 +785,11 @@ ls ./.claude/rules/worker-routing-and-context.md
 
 | Location | Purpose | File Type |
 |----------|---------|-----------|
-| `./design/*.design.md` | Active design specifications and target-state truth | Design docs; no default `design/done/` |
+| `./design/<slug>.design.md` | Compact active parent design index/gateway for broad chains | Active design parent |
+| `./design/<slug>/*.design.md` | Active child target-state shards selected through the parent index | Active design shards |
 | `*.md` (root) | Active runtime rules | Rules files |
-| `./changelog/changelog.md` | Master repository-wide history | Master changelog |
-| `./changelog/*.changelog.md` | Per-chain authoritative active history/current version state | Active parent changelogs |
+| `./changelog/changelog.md` | Compact master repository-wide current-version authority and shard map | Master changelog parent |
+| `./changelog/*.changelog.md` | Per-chain authoritative active parent history/current version state | Active parent changelogs |
 | `./changelog/<chain>/v*.changelog.md` | Same-chain detailed version entries indexed by the parent changelog | Version detail shards |
 | `./changelog/done/*.changelog.md` | Legacy/archive/fallback detailed history outside active scans | Inactive history for audit/rollback/provenance/trace |
 | `./todo/history/*.md` | Daily TODO movement and pre-rollover snapshots outside the active TODO entrypoint | Referenced inactive TODO history |
@@ -806,8 +804,9 @@ ls ./.claude/rules/worker-routing-and-context.md
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact that also exposes active phase family, planned next phase(s), activation boundary, and next checkpoint guidance for future `/phase` authoring |
 
 > **💡 Single Source of Truth Principle:**
-> - Design files (`.design.md`) define active target state and do not use a default `design/done/` surface
+> - Broad active design chains should strongly prefer same-stem parent/index + shard pairs (`design/<slug>.design.md` + `design/<slug>/`) and do not use a default `design/done/` surface
 > - Per-chain active changelogs (`*.changelog.md`) remain the authority for current governed chain history/version state
+> - Broad active changelog chains should strongly prefer same-stem parent/index + shard pairs (`changelog/<chain>.changelog.md` + `changelog/<chain>/`)
 > - Chain-scoped version detail shards (`changelog/<chain>/v*.changelog.md`) hold indexed same-chain detail without becoming separate version authority
 > - `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, and `changelog/done/` are inactive-by-default referenced history/detail surfaces for audit, rollback, provenance, or trace reconstruction
 > - `changelog/changelog.md` records repository-level synchronization history
@@ -1436,7 +1435,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.08 / P100` safe-first compression wave with verified runtime install, 18/18 parity, source/destination body sufficiency, push, and GitHub release evidence in checked scope.
+- Source state: this README reflects the active `v10.09 / P101` normalization and premise-separation pre-release wave; runtime install, 18/18 parity, source/destination body sufficiency recheck, push, and GitHub release evidence are still pending in checked scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1559,8 +1558,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.07 |
-  <b>Last Updated</b>: 2026-05-16 |
+  <b>Version</b>: 10.09 |
+  <b>Last Updated</b>: 2026-05-17 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
