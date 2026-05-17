@@ -1,7 +1,7 @@
 # Safe I/O (File Reading + Terminal Output)
 
-> **Current Version:** 1.4
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
@@ -63,6 +63,7 @@ For designs using a compact parent plus active child shards, start from the comp
 - read child/sibling shards selectively by target-state slice; do not absorb the whole shard set
 - use worker filtering for broad shard audits, stale-shard checks, or multi-shard consistency sweeps
 - report checked parent and shard scope when using selected shards as evidence
+- when the chain is being read as an example/reference input, report that checked scope as observed example shape rather than as automatic proof of the selected target form
 - do not treat child design shards as `history/`, `done/`, archive, or rollover surfaces by default; they remain active design truth unless governance says otherwise
 
 ### 5) Changelog version detail shard reading
@@ -76,7 +77,17 @@ For changelogs using a compact parent plus active version-detail shards, start f
 - read version detail shards selectively by version/topic; do not absorb the whole shard set
 - use worker filtering for broad version-history audits, parent/shard consistency sweeps, or multi-shard migration reviews
 - report checked parent and shard scope when using selected shards as evidence
+- when the chain is being read as an example/reference input, report that checked scope as observed example shape rather than as automatic proof of the selected target form
 - do not treat `changelog/done/` as the default same-chain detail namespace; consult it only through active references or for history, audit, rollback, provenance, or trace reconstruction
+
+### 5.1) Observed example shape versus selected target wording
+When another project, repo, or example chain is being read as evidence for governance, report the checked structure as observed example shape only.
+
+Required guidance:
+- do not let a bounded read of an example become proof that the current RULES target must use the same form
+- if a recommendation follows, label the extracted doctrine and selected target form separately
+- if equivalence between the observed example and the selected target form is not checked, say so rather than upgrading the example into a target-truth claim
+- parent-first reading still applies: check the compact parent first, then inspect only the smallest surrounding evidence needed to classify the observed example honestly
 
 ### 6) Oversized governance entrypoints
 

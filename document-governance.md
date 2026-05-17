@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.3
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -101,6 +101,25 @@ Required guidance:
 - `archive-history-fallback` remains inactive by default and must not become the ordinary active detail namespace by momentum
 - do not create a same-stem nested shard directory merely because a parent named `design.md` or `changelog.md` exists; first check whether the current folder already scopes the chain
 - when a parent has active shards, it should expose the selected chain shape, shard map, and append-vs-shard posture clearly enough that later edits do not fall back into silent parent-only growth
+
+### 5.3) Observed project shape versus extracted doctrine versus selected target form
+When a checked project, subsystem, repo, or prior governed chain is used to justify a documentation shape, keep three meanings separate:
+- `observed project shape` = the structure actually verified in the checked example
+- `extracted doctrine` = the reusable governance principle inferred from that observed shape
+- `selected target form` = the normalized structure intentionally chosen for the current governed chain
+
+Required guidance:
+- do not describe an extracted doctrine as the literal observed project pattern unless checked evidence confirms that equivalence
+- a checked example may ground a recommendation without proving that the current selected target form is the only valid design
+- if the checked example and the selected target form differ, say both explicitly and name why the target form is still being selected
+- chain-shape selection for the current repo is governed by checked current need plus active doctrine, not by loose analogy to an example project
+- if equivalence between the observed example and the selected target form is not checked, avoid wording such as `project-style`, `the project uses this exact form`, or equivalent claim-collapsing phrasing
+
+Preferred wording:
+- `In the checked file/output, the observed project shape is ...`
+- `The extracted doctrine is ...`
+- `For this RULES chain, the selected target form is ...`
+- `The checked evidence grounds this recommendation, but it does not prove this is the only valid design.`
 
 ### 6) Public onboarding and install portability
 README/onboarding/install docs stay portable by default.

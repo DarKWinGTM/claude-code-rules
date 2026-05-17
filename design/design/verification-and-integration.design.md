@@ -1,7 +1,7 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.10
+> **Current Version:** 10.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -16,6 +16,8 @@
 - [ ] Governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback` before meaningful normalization edits continue
 - [ ] Flat sibling shard mode is allowed only when the current folder already scopes the chain and the parent clearly exposes the shard map
 - [ ] Broad governed design/changelog chains still converge to compact parents plus active same-stem shard paths when broad enough to justify normalization
+- [ ] Observed project shape, extracted doctrine, selected target form, and equivalence-claim basis stay distinct when checked examples ground normalization recommendations
+- [ ] No surface describes the selected RULES target form as the literal observed project pattern without checked equivalence proof
 - [ ] Parent/shard and parent/version-shard links remain aligned and non-orphaned across sibling and same-stem modes
 - [ ] `changelog/done/` stays legacy/archive/fallback rather than the normal active detail path
 - [ ] `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` / `done/` references

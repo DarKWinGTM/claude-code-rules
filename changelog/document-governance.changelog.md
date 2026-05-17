@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,12 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-17 | **[Added P103 observed-shape, extracted-doctrine, and selected-target-form separation](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P102 chain-shape classification and append-vs-shard doctrine](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Added P101 governed path-normalization refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P099 proactive subagent-efficiency doctrine](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added P103 observed-shape, extracted-doctrine, and selected-target-form separation
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.3 to v1.4.
+- Updated `design/document-governance.design.md` from v1.3 to v1.4.
+- Added explicit separation between `observed project shape`, `extracted doctrine`, and `selected target form` when checked examples are used to justify governed documentation structure.
+- Added equivalence-claim-basis wording so normalized RULES target forms are not described as literal checked project patterns without checked proof.
+- Preserved the P102 chain-shape selection doctrine, same-stem strong-preferred guidance for broad mature chains, and owner-aligned sync-lane behavior.
+
+### Summary
+`document-governance.md` now carries the P103 wording/evidence refinement needed to keep checked example structure, extracted governance doctrine, and the selected RULES target form distinct.
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-17
 > **Current Release:** v10.10 / P102 chain-shape normalization and append-vs-shard gate
-> **Active Wave:** none open
+> **Active Wave:** v10.11 / P103 observed-shape, extracted-doctrine, and selected-target separation (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -34,7 +34,10 @@
 
 ### Active / In Progress
 
-- none open.
+- [ ] P103 / v10.11 observed-shape, extracted-doctrine, and selected-target separation is in pre-release implementation.
+  - Goal: make AI keep checked example shape, extracted doctrine, and selected RULES target form separate instead of collapsing them into one claim.
+  - Current state: P103 startup, touched owner wording, companion/master-surface sync, local validation, runtime install, and 18/18 parity/body-sufficiency checks are complete in source scope; push/release verification and closeout are still pending.
+  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
 
 ### Deferred / Not Selected
 

@@ -1,7 +1,7 @@
 # Governance Contracts - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.10
+> **Current Version:** 10.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Section:** Active governance contracts
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -79,6 +79,10 @@ Contract:
 - keep changelog version shards as parent-indexed detail, not competing authority
 - keep `changelog/done/` as legacy/archive/fallback, not the default active detail path
 - do not create a redundant same-stem nested folder until chain-shape classification says the current folder is no longer the right namespace
+- keep `observed project shape` as the checked example structure only
+- keep `extracted doctrine` as the reusable governance lesson inferred from that checked structure
+- keep `selected target form` as the structure intentionally chosen for the current RULES chain
+- do not describe the selected target form as the literal observed project pattern unless checked equivalence evidence supports that claim
 
 ## Memory Governance Contract
 

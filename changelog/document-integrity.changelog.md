@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,10 +10,29 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-17 | **[Added P103 observed-shape, doctrine, and target-form integrity checks](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Added P102 chain-shape integrity and flat-sibling verification](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added P103 observed-shape, doctrine, and target-form integrity checks
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-integrity.md` from v1.2 to v1.3.
+- Updated `design/document-integrity.design.md` from v1.2 to v1.3.
+- Added no-drift review coverage so `observed project shape`, `extracted doctrine`, `selected target form`, and `equivalence claim basis` stay aligned but distinct when checked examples ground governance structure.
+- Extended integrity verification so checked example structure is not collapsed into the selected RULES target form without checked equivalence evidence.
+- Preserved parent/shard integrity, reference consistency, rollover discipline, and no-delete-by-cleanup boundaries.
+
+### Summary
+`document-integrity.md` now carries the P103 integrity refinement needed to keep example-backed governance wording precise during sync, verification, and closeout.
 
 ---
 

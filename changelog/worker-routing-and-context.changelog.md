@@ -1,7 +1,7 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-17 | **[Added P103 observed-example handoff separation](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P102 append-vs-shard routing gate](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-16 | **[Added P099 proactive delegation efficiency doctrine](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -18,6 +19,24 @@
 | | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added P103 observed-example handoff separation
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `worker-routing-and-context.md` from v1.4 to v1.5.
+- Updated `design/worker-routing-and-context.design.md` from v1.4 to v1.5.
+- Added handoff doctrine so workers and leaders separate observed example shape, extracted doctrine, selected target form, and verified equivalence basis when example-backed normalization is in scope.
+- Extended the append-vs-shard gate so example-grounded decisions must identify what was observed, what doctrine is being extracted, and what target form is selected here.
+- Preserved leader verification responsibility, aggregate-read gating, and worker-routing ownership boundaries.
+
+### Summary
+`worker-routing-and-context.md` now carries the P103 handoff refinement needed to stop example-backed structure recommendations from collapsing into one unsupported claim.
 
 ---
 

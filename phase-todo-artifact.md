@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.4
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -101,8 +101,12 @@ docs_analysis:
 - document_role: <design | changelog>
 - parent_authority: <checked parent file>
 - current_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
+- observed_project_shape: <checked local/example structure | unknown | not-applicable>
+- extracted_doctrine: <reusable governance principle derived from checked evidence | none>
 - selected_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
+- selected_target_form: <target structure intentionally chosen for this RULES chain>
 - normalization_action: <append-in-parent | create-or-update-flat-sibling | create-or-update-same-stem-child | migrate-flat-to-same-stem | use-history-or-done>
+- equivalence_claim_basis: <checked proof of equivalence | no equivalence claim>
 - append_vs_shard_reason: <why the next detail belongs in parent or shard>
 - parent_index_update_required: <yes | no>
 - integrity_checks: <shard map, backlinks, version/current-state alignment, no orphan detail>
@@ -112,6 +116,10 @@ Required guidance:
 - use this form when a governed design/changelog parent is about to receive enough new detail that append-versus-shard choice materially changes the resulting structure
 - if the current folder already acts as the chain namespace, `create-or-update-flat-sibling` may be selected without creating a redundant same-stem nested folder
 - if the chain is broad, root-heavy, multi-shard, or already showing God-file pressure, same-stem nested normalization remains the strong-preferred direction
+- `observed_project_shape` records what was actually checked in the example rather than what the assistant wishes the example had looked like
+- `extracted_doctrine` records the reusable lesson taken from the checked example
+- `selected_target_form` records the structure intentionally chosen for the current RULES chain
+- if `equivalence_claim_basis` is not `checked proof of equivalence`, do not phrase the selected RULES target form as if it were the literal observed project pattern
 - do not silently keep appending to a parent authority file merely because no child shard exists yet; the absence of shards should trigger classification, not default approval
 
 ---

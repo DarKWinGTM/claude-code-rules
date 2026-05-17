@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -28,6 +28,8 @@ P100 refinement: this owner may compress repeated phase-context, lane-aware task
 P101 refinement: this owner should now make the compact active-entrypoint shape of `TODO.md` and `phase/SUMMARY.md` more explicit while preserving `history/` / `done/` as normalized overflow paths.
 
 P102 refinement: this owner should now require a compact `docs_analysis` form when governed design/changelog normalization work must choose between staying in a bootstrap parent, opening flat sibling shards, or escalating to same-stem nested normalization.
+
+P103 refinement: this owner should now extend `docs_analysis` so checked example shape, extracted doctrine, selected target form, and equivalence-claim basis are recorded separately before assistants present a normalization choice as if it were observed project truth.
 
 ---
 

@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.4 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.4
+> **Current Version:** 1.5 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -245,6 +245,19 @@ Handoff quality rules:
 
 Delegation efficiency and success signals are audit heuristics, not hidden-telemetry requirements: prefer early delegation before raw evidence piles up, anchor-first handoffs instead of dumps, reuse before respawn, one-pass unblocks when possible, and verification closure through selected anchors rather than full rereads.
 
+### 15.1) Observed example versus selected target separation in handoffs
+When a worker or leader uses another project, subsystem, or prior chain as evidence for documentation normalization, the handoff must distinguish:
+- what was observed in the checked example
+- what doctrine was extracted from that observation
+- what target form is selected for the current RULES chain
+- whether exact equivalence between the observed example and the selected target was verified
+
+Required guidance:
+- do not say `project X uses this pattern` when the checked evidence only supports `this pattern is the selected target inspired by project X`
+- if the example is mixed, transitional, bootstrap-shaped, or only partially checked, carry that limit forward into the handoff
+- if the current recommendation is stricter than the checked example, state that the stricter form is a selected target, not a discovered fact about the example
+- leader verification must confirm that example-shaped wording does not overclaim checked project truth before sync, no-drift, closeout, or release-ready wording
+
 ### 16) Parallel edit containment
 
 Parallel implementation is allowed only with clear ownership separation by file, module, test target, documentation surface, or artifact class.
@@ -329,6 +342,7 @@ Required questions:
 7. What is the current chain shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`?
 8. Does the current folder already act as the chain namespace, making a flat sibling shard safer than a redundant nested same-stem folder?
 9. Should this detail become or update a shard rather than expanding the parent authority file again?
+10. If this choice is grounded in another checked project or example, what is the observed project shape, what doctrine is being extracted, and what target form is selected here?
 
 Required behavior:
 - if the target line is already a God-line candidate, do not append silently

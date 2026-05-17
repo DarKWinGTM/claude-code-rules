@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-17 | **[Added P103 docs-analysis evidence-layer refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P102 docs-analysis gate for chain-shape selection](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P101 compact-entrypoint normalization refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -17,6 +18,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added P103 docs-analysis evidence-layer refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.4 to v1.5.
+- Updated `design/phase-todo-artifact.design.md` from v1.4 to v1.5.
+- Expanded `docs_analysis` so governed design/changelog normalization work records `observed_project_shape`, `extracted_doctrine`, `selected_target_form`, and `equivalence_claim_basis` separately.
+- Preserved explicit chain-shape selection while preventing checked example structure, extracted doctrine, and selected RULES target form from collapsing into one unsupported field or claim.
+- Preserved startup posture, phase lineage, durable-vs-live tracking, and compact TODO/phase entrypoint behavior.
+
+### Summary
+`phase-todo-artifact.md` now carries the P103 evidence-layer refinement so documentation-normalization choices record what was observed, what doctrine was extracted, and what target form was actually selected.
 
 ---
 

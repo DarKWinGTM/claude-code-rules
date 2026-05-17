@@ -1,7 +1,7 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-17 | **[Added P103 observed-example wording and equivalence-boundary refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P102 chain-shape-aware shard reading](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P101 smallest-shard-first refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -17,6 +18,24 @@
 | | | Summary: Extended `safe-io.md` and its design companion so the merged runtime owner now covers delegate-first aggregate read/output burst signals, burst-risk posture, and high-output flow updates while preserving the compact 18-rule runtime set. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `safe-io.md` as a body-sufficient merged runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added P103 observed-example wording and equivalence-boundary refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `safe-io.md` from v1.4 to v1.5.
+- Updated `design/safe-io.design.md` from v1.4 to v1.5.
+- Added wording so checked example chains are reported as `observed example shape`, not as automatic proof of the selected RULES target form.
+- Extended parent-first design/changelog reading guidance so selected target structure still requires explicit doctrine extraction and equivalence-claim basis when that distinction matters.
+- Preserved bounded I/O, delegate-first burst handling, chain-shape-aware read order, and archive-fallback boundaries.
+
+### Summary
+`safe-io.md` now carries the P103 wording/evidence refinement needed to keep example-chain reads precise without weakening its existing bounded-read doctrine.
 
 ---
 
