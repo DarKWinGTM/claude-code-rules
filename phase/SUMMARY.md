@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P104 active for v10.12 semantic parent naming and bootstrap-first design normalization
+> **Status:** No active phase open; latest released wave is P104 / v10.12 semantic parent naming and bootstrap-first design normalization
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,20 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P104:** [phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md](phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md)
-  - Goal: add semantic parent naming, master-parent reservation, bootstrap-first behavior, and explicit shard-opening triggers without weakening P102/P103 doctrine.
-  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.12`.
-  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
-  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
+- none open.
 
 ### Most Recently Completed
 
-- **P103:** [phase-103-observed-shape-extracted-doctrine-target-form-separation.md](phase-103-observed-shape-extracted-doctrine-target-form-separation.md)
-  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.11`.
-  - Gate: wording/equivalence integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
-  - Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`.
-  - Published at `2026-05-17T07:01:37Z`.
+- **P104:** [phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md](phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md)
+  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.12`.
+  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.12
+  - Release tag `v10.12` resolves to commit `a5dfb34ab7a26dc91bff3861ca3425bf00c99d8a`.
+  - Published at `2026-05-17T09:16:12Z`.
 
 ### Previously Completed
 

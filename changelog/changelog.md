@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.12 | 2026-05-17 | **[Added semantic parent naming and bootstrap-first design normalization (pre-release)](changelog/v10.12-added-semantic-parent-naming-and-bootstrap-first-normalization.changelog.md#version-1012)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.12 | 2026-05-17 | **[Released semantic parent naming and bootstrap-first design normalization](changelog/v10.12-added-semantic-parent-naming-and-bootstrap-first-normalization.changelog.md#version-1012)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.11 | 2026-05-17 | **[Released observed-shape, extracted-doctrine, and selected-target-form separation](changelog/v10.11-added-observed-shape-extracted-doctrine-target-form-separation.changelog.md#version-1011)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.10 | 2026-05-17 | **[Released chain-shape normalization and append-vs-shard gate](changelog/v10.10-added-chain-shape-normalization-and-append-vs-shard-gate.changelog.md#version-1010)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.09 | 2026-05-17 | **[Released governed path normalization and premise-separation](#version-1009)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
