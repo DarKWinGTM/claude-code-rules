@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P101
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Release:** v10.09
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.09
@@ -51,9 +51,9 @@ At the same time, anti-over-agreement behavior is present mostly as wording disc
 - [x] Normalize master `changelog/changelog.md` into a compact parent authority plus version-shard path.
 - [x] Strengthen premise-separation doctrine in `communication-register.md`, `evidence-discipline.md`, `execution-and-goal-frame.md`, and `accurate-communication.md`.
 - [x] Sync touched owner design/changelog companions plus master release surfaces to P101 pre-release state.
-- [ ] Validate normalization integrity, compact-entrypoint behavior, premise-separation mechanism preservation, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.09`, and verify release state.
-- [ ] Finalize P101 closeout records after release verification passes.
+- [x] Validate normalization integrity, compact-entrypoint behavior, premise-separation mechanism preservation, runtime install, and 18/18 parity/body sufficiency.
+- [x] Commit source release, push `master`, create GitHub release `v10.09`, and verify release state.
+- [x] Finalize P101 closeout records after release verification passes.
 
 ---
 
@@ -84,22 +84,22 @@ At the same time, anti-over-agreement behavior is present mostly as wording disc
 
 ## Current Status
 
-P101 is active in pre-release validation for `v10.09`.
+P101 is released as `v10.09`.
 
-Completed so far:
-- current baseline is released `v10.08 / P100`
+Release verification summary:
+- current baseline before the wave was released `v10.08 / P100`
 - no active phase was open before P101 started
-- `v10.09` tag/release is absent in checked scope
-- README arrays still match the compact 18-rule runtime set
+- README Bash and PowerShell arrays remained aligned to the compact 18-rule runtime set
 - `design/design/` and `changelog/changelog/` were opened without path collision
-- the untracked `plugin/memory-context-intelligence/` tree was identified and preserved as out-of-scope state
+- the untracked `plugin/memory-context-intelligence/` tree remained preserved as out-of-scope state
 - normalization-owner doctrine updates are applied in source scope
 - master `design/design.md` and `changelog/changelog.md` are normalized into compact parent authorities with shard paths
 - premise-separation doctrine updates are applied in source scope
-- touched design/changelog companions and active master surfaces are synced to P101 pre-release state in source scope
-
-Still pending:
-- normalized-structure validation
-- runtime install and 18/18 source/runtime parity/body-sufficiency recheck
-- git diff/whitespace review, commit, push, and GitHub release verification
-- final closeout after release verification
+- touched design/changelog companions and master release surfaces are synced to released P101 state in checked scope
+- normalized-structure validation passed
+- runtime install and 18/18 source/runtime parity/body-sufficiency recheck passed
+- git diff/whitespace review passed before release commit
+- `master` push and GitHub release verification passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
+- Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`
+- Published at `2026-05-17T00:52:06Z`

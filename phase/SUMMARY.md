@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P101 active for v10.09 governed path normalization and premise-separation
+> **Status:** No active phase open; latest released wave is P101 / v10.09 governed path normalization and premise-separation
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P101:** [phase-101-governed-path-normalization-and-premise-separation.md](phase-101-governed-path-normalization-and-premise-separation.md)
-  - Goal: normalize broad governed path structures more explicitly and strengthen concern/fact/proposal/goal separation before endorsement or continuation.
-  - Output: touched owner chains, normalized master design/changelog structures, docs sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.09`.
-  - Scope: no active root runtime rule file count change; preserve owner boundaries while promoting stronger normalized path and premise-separation doctrine.
-  - Gate: normalization integrity passes, README arrays remain 18/18, runtime install and parity/body sufficiency pass, and release verification passes.
+- none open.
 
 ### Most Recently Completed
+
+- **P101:** [phase-101-governed-path-normalization-and-premise-separation.md](phase-101-governed-path-normalization-and-premise-separation.md)
+  - Output: touched owner chains, normalized master design/changelog structures, docs sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.09`.
+  - Gate: normalization integrity, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
+  - Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
+  - Published at `2026-05-17T00:52:06Z`.
+
+### Previously Completed
 
 - **P100:** [phase-100-safe-first-active-runtime-compression.md](phase-100-safe-first-active-runtime-compression.md)
   - Output: safe-first compression across selected merged owners released as `v10.08`.
@@ -47,18 +52,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-P101 verification must prove that broad-chain normalization and premise-separation doctrine become clearer without weakening active RULES mechanisms or the 18-file runtime install scope.
-
-Current focus:
-- parent/index + shard normalization must validate for the new master design/changelog paths
-- `TODO.md` and `phase/SUMMARY.md` must remain compact current entrypoints with reachable `history/` / `done/` references
-- concern/fact/proposal/goal/next-action separation must remain explicit in checked owner doctrine
-- README install arrays must remain the same compact 18-rule set
-- runtime install must copy only the 18 README-listed active runtime rules
-- 18/18 source/runtime parity and source/destination active runtime body sufficiency must pass after install
+Latest verified release state:
+- parent/index + shard normalization is explicit for the master `design/design.md` and `changelog/changelog.md` chains
+- `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
+- concern/fact/proposal/goal/next-action separation remains explicit in the checked touched interaction owners
+- README Bash and PowerShell arrays still define the same compact 18-rule runtime set
+- runtime install copied only the 18 README-listed active runtime rules
+- 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
-- touched active docs must pass density and God-file review
-- no P101 release-complete claim is valid until push and GitHub release `v10.09` verification pass
+- touched active docs passed density/consistency review in checked scope
+- GitHub release `v10.09` is published at `2026-05-17T00:52:06Z` and points to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`
 
 ---
 

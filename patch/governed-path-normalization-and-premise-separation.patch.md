@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.09
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -65,7 +65,7 @@ The second issue is epistemic: RULES discourages over-agreement, but the mechani
 - **Target artifact:** touched owner design/changelog companions plus `README.md`, `design/design.md`, `changelog/changelog.md`, `TODO.md`, `phase/SUMMARY.md`, P101 phase record, and this patch
 - **Change type:** release synchronization
 - **Current state:** master surfaces identify `v10.08 / P100` as the current released wave.
-- **Target state:** master surfaces identify `v10.09 / P101` as the active normalization + premise-separation wave until release verification passes.
+- **Target state:** master surfaces identify `v10.09 / P101` as the current released normalization + premise-separation wave after release verification passes.
 - **Review point:** keep runtime install count at 18 unless a separate install-scope change is explicitly validated.
 
 ---
@@ -89,9 +89,15 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P101 is active and not yet released.
+P101 is released as `v10.09`.
 
-Phase/patch startup state is open. Doctrine updates, master normalization, and touched companion/master-surface sync are complete in source scope. Runtime install/parity validation, push, GitHub release creation, and closeout verification are still pending.
+Closeout summary: doctrine updates, master normalization, touched companion/master-surface sync, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed in checked scope.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
+
+Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
+
+Published at `2026-05-17T00:52:06Z`.
 
 ---
 

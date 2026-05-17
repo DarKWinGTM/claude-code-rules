@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.09 | 2026-05-17 | **[Opened governed path normalization and premise-separation](#version-1009)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.09 | 2026-05-17 | **[Released governed path normalization and premise-separation](#version-1009)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.08 | 2026-05-17 | **[Released safe-first active runtime compression](changelog/v10.08-released-safe-first-active-runtime-compression.changelog.md#version-1008)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.07 | 2026-05-16 | **[Released proactive subagent efficiency and lane templates](changelog/v10.07-released-proactive-subagent-efficiency-and-lane-templates.changelog.md#version-1007)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.06 | 2026-05-16 | **[Released intent-grounding conversation doctrine](changelog/v10.06-released-intent-grounding-conversation-doctrine.changelog.md#version-1006)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
@@ -162,18 +162,21 @@ Use [changelog/](changelog/) for superseded active-era version detail and [done/
 ---
 
 <a id="version-1009"></a>
-## Version 10.09: Opened governed path normalization and premise-separation
+## Version 10.09: Released governed path normalization and premise-separation
 
 **Date:** 2026-05-17
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ### Changes
-- Opened P101 as the governed path normalization and premise-separation wave.
+- Released P101 as the governed path normalization and premise-separation wave.
 - Kept the README-listed source-owned active runtime set at 18 files.
 - Strengthened normalization-owner doctrine so broad design/changelog chains now more clearly prefer same-stem parent/index + shard paths and compact active entrypoints with `history/` / `done/` overflow.
-- Opened master-chain normalization under `design/design/` and `changelog/changelog/` while preserving changelog current-version authority and legacy archive boundaries.
+- Normalized the master design and master changelog under `design/design/` and `changelog/changelog/` while preserving changelog current-version authority and legacy archive boundaries.
 - Strengthened concern/factual-claim/proposal/goal separation across the touched interaction owners so endorsement and continuation do not silently inherit an unverified premise.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, push, and GitHub release verification are still pending.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
+- Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
+- Published at `2026-05-17T00:52:06Z`.
 
 ### Summary
-P101 opens the next RULES refinement wave so broad governed chains normalize more explicitly and premise-separation becomes more operational before agreement or continuation.
+P101 releases the next RULES refinement wave so broad governed chains normalize more explicitly and premise-separation becomes more operational before agreement or continuation while the compact 18-rule runtime install set remains unchanged.

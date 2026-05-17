@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.09</b><br><sub>P101 Active</sub>
+  <b>v10.09</b><br><sub>P101 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Source sync active</sub>
+  <b>Released</b><br><sub>Install verified</sub>
 </td>
 <td align="center" width="200">
   <b>Path normalization</b><br><sub>Premise-separation</sub>
@@ -535,11 +535,12 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P101 governed path normalization and premise-separation is the active v10.09 pre-release wave.
+- P101 governed path normalization and premise-separation is the released `v10.09` wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
   - It strengthens same-stem parent/index + shard normalization for broad design/changelog chains, makes compact `TODO.md` / `phase/SUMMARY.md` entrypoint expectations clearer, and separates concern/factual conclusion/proposal/goal/next-action handling more explicitly across touched merged owners.
-  - Source-side runtime/design/changelog sync is active; runtime install, 18/18 source/runtime parity, source/destination body sufficiency recheck, push, and GitHub release verification are still pending.
-  - Latest published release remains `v10.08 / P100` until the P101 release gates pass.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed in checked scope.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
+  - Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b` and were published at `2026-05-17T00:52:06Z`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -702,12 +703,13 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P101 / v10.09 opens the governed path normalization and premise-separation wave on top of the compact 18-rule merged runtime set.
+- P101 / v10.09 releases the governed path normalization and premise-separation wave on top of the compact 18-rule merged runtime set.
 - Touched merged owners now strengthen same-stem parent/index + shard normalization for broad design/changelog chains, stricter compact TODO/phase entrypoint doctrine, and clearer concern/factual-claim/proposal/goal/next-action separation before endorsement or continuation.
-- Master `design/design.md` and `changelog/changelog.md` are being normalized into compact parent authorities with same-stem shard paths in source scope.
-- P101 phase and patch startup artifacts are opened for active pre-release tracking.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency recheck, push, and GitHub release verification are pending.
-- Latest published release remains `v10.08 / P100` until the P101 release gates pass.
+- Master `design/design.md` and `changelog/changelog.md` are normalized into compact parent authorities with same-stem shard paths in source scope.
+- P101 phase and patch records are closed as released closeout artifacts.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
+- Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`, published at `2026-05-17T00:52:06Z`.
 </div>
 
 ---
@@ -1435,7 +1437,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active `v10.09 / P101` normalization and premise-separation pre-release wave; runtime install, 18/18 parity, source/destination body sufficiency recheck, push, and GitHub release evidence are still pending in checked scope.
+- Source state: this README reflects the released `v10.09 / P101` normalization and premise-separation wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release evidence all passed in checked scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
