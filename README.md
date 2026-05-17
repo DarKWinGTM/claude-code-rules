@@ -540,7 +540,7 @@ Please:
   - It strengthens same-stem parent/index + shard normalization for broad design/changelog chains, makes compact `TODO.md` / `phase/SUMMARY.md` entrypoint expectations clearer, and separates concern/factual conclusion/proposal/goal/next-action handling more explicitly across touched merged owners.
   - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed in checked scope.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-  - Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b` and were published at `2026-05-17T00:52:06Z`.
+  - Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b` and were published at `2026-05-17T00:52:06Z`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -709,7 +709,7 @@ Current source state:
 - P101 phase and patch records are closed as released closeout artifacts.
 - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
 - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-- Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`, published at `2026-05-17T00:52:06Z`.
+- Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`, published at `2026-05-17T00:52:06Z`.
 </div>
 
 ---

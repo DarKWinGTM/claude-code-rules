@@ -101,5 +101,5 @@ Release verification summary:
 - git diff/whitespace review passed before release commit
 - `master` push and GitHub release verification passed
 - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-- Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`
+- Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`
 - Published at `2026-05-17T00:52:06Z`

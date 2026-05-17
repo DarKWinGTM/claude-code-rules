@@ -13,7 +13,7 @@
 - [x] P101 / v10.09 governed path normalization and premise-separation was completed, installed, pushed, and released.
   - Verified: normalization integrity, touched-owner/companion consistency in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-  - Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
+  - Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
   - Published at `2026-05-17T00:52:06Z`.
 - [x] P100 / v10.08 safe-first active runtime compression was completed, installed, pushed, and released.
   - Verified: preserve-mechanism review, 18/18 parity/body sufficiency, owner-link validation, runtime install, source/runtime parity, source/destination body sufficiency, and GitHub release verification passed.

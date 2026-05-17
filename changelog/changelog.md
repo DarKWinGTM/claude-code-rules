@@ -175,7 +175,7 @@ Use [changelog/](changelog/) for superseded active-era version detail and [done/
 - Strengthened concern/factual-claim/proposal/goal separation across the touched interaction owners so endorsement and continuation do not silently inherit an unverified premise.
 - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
 - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-- Release target and tag point to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
+- Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
 - Published at `2026-05-17T00:52:06Z`.
 
 ### Summary
