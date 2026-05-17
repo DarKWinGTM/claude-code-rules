@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P105
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Release:** v10.13
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.13
@@ -51,10 +51,10 @@ P105 exists to make that distinction explicit so AI chooses the parent model fro
 - [x] Confirm the untracked `plugin/` tree remains preserved and out of scope.
 - [x] Open P105 phase/patch and sync active roadmap/TODO state.
 - [x] Replace master-only/generic-parent restriction with folder-scoped single-chain allowance plus single-parent-per-chain doctrine in the touched runtime owners.
-- [x] Sync touched owner design/changelog companions plus master release surfaces to P105 pre-release state.
-- [ ] Validate doctrine integrity, compact-entrypoint behavior, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.13`, and verify release state.
-- [ ] Finalize P105 closeout records after release verification passes.
+- [x] Sync touched owner design/changelog companions plus master release surfaces for the P105 release path.
+- [x] Validate doctrine integrity, compact-entrypoint behavior, runtime install, and 18/18 parity/body sufficiency.
+- [x] Commit source release, push `master`, create GitHub release `v10.13`, and verify release state.
+- [x] Finalize P105 closeout records after release verification passes.
 
 ---
 
@@ -88,20 +88,19 @@ P105 exists to make that distinction explicit so AI chooses the parent model fro
 
 ## Current Status
 
-P105 is active in pre-release implementation for `v10.13`.
+P105 is released as `v10.13`.
 
-Completed so far:
-- current baseline is released `v10.12 / P104`
+Release verification summary:
+- current baseline before the wave was released was `v10.12 / P104`
 - no active phase was open before P105 started
-- `v10.13` tag/release is absent in checked scope
-- README arrays still match the compact 18-rule runtime set
-- the untracked `plugin/` tree remains preserved as out-of-scope observed evidence
-- phase/patch startup and active roadmap/TODO sync are open in source scope
-- touched doctrine-owner wording updates are complete in source scope
-- touched owner design/changelog companions plus master release surfaces are synced to P105 pre-release state
-
-Still pending:
-- doctrine validation
-- runtime install and 18/18 source/runtime parity/body-sufficiency recheck
-- git diff/whitespace review, commit, push, and GitHub release verification
-- final closeout after release verification
+- `v10.13` tag/release was absent in checked scope before release work began
+- README arrays still matched the compact 18-rule runtime set
+- the untracked `plugin/` tree remained preserved as out-of-scope observed evidence
+- phase/patch startup, touched doctrine-owner wording, and companion/master-surface sync completed in source scope
+- doctrine validation passed in checked source scope
+- runtime install plus 18/18 source/runtime parity and source/destination body sufficiency passed locally
+- `git diff --check` passed with no whitespace errors
+- `master` push passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.13
+- Release tag `v10.13` resolves to commit `b1eba20b8c31041afd794625650a1107d8702e05`
+- Published at `2026-05-17T13:43:03Z`.

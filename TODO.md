@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-17
-> **Current Release:** v10.12 / P104 semantic parent naming and bootstrap-first design normalization
-> **Active Wave:** v10.13 / P105 folder-scoped generic parent and single-parent authority (pre-release)
+> **Current Release:** v10.13 / P105 folder-scoped generic parent and single-parent authority
+> **Active Wave:** none open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P105 / v10.13 folder-scoped generic parent and single-parent authority was completed, installed, pushed, and released.
+  - Verified: folder-scoped generic-parent allowance, single-parent-authority integrity, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.13
+  - Release tag `v10.13` resolves to commit `b1eba20b8c31041afd794625650a1107d8702e05`.
+  - Published at `2026-05-17T13:43:03Z`.
 - [x] P104 / v10.12 semantic parent naming and bootstrap-first design normalization was completed, installed, pushed, and released.
   - Verified: naming/bootstrap integrity in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.12
@@ -44,10 +49,7 @@
 
 ### Active / In Progress
 
-- [ ] P105 / v10.13 folder-scoped generic parent and single-parent authority is in pre-release implementation.
-  - Goal: allow `design/design.md` and `changelog/changelog.md` in folder-scoped single-chain namespaces while enforcing exactly one active parent model per chain.
-  - Current state: P105 startup, touched doctrine-owner wording, and companion/master-surface sync are complete in source scope; install, release verification, and closeout are still pending.
-  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
+- none open.
 
 ### Deferred / Not Selected
 

@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P105 active for v10.13 folder-scoped generic parent and single-parent authority
+> **Status:** No active phase open; latest released wave is P105 / v10.13 folder-scoped generic parent and single-parent authority
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P105:** [phase-105-folder-scoped-generic-parent-and-single-parent-authority.md](phase-105-folder-scoped-generic-parent-and-single-parent-authority.md)
-  - Goal: allow generic parents in folder-scoped single-chain namespaces while enforcing one active parent model per chain.
-  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.13`.
-  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
-  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
+- none open.
 
 ### Most Recently Completed
+
+- **P105:** [phase-105-folder-scoped-generic-parent-and-single-parent-authority.md](phase-105-folder-scoped-generic-parent-and-single-parent-authority.md)
+  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.13`.
+  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.13
+  - Release tag `v10.13` resolves to commit `b1eba20b8c31041afd794625650a1107d8702e05`.
+  - Published at `2026-05-17T13:43:03Z`.
+
+### Previously Completed
 
 - **P104:** [phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md](phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md)
   - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.12`.
@@ -37,8 +42,6 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.12
   - Release tag `v10.12` resolves to commit `a5dfb34ab7a26dc91bff3861ca3425bf00c99d8a`.
   - Published at `2026-05-17T09:16:12Z`.
-
-### Previously Completed
 
 - **P102:** [phase-102-chain-shape-normalization-and-append-vs-shard-gate.md](phase-102-chain-shape-normalization-and-append-vs-shard-gate.md)
   - Output: touched owner chains, master design/changelog doctrine sync, docs-analysis gate, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.10`.
@@ -72,8 +75,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 Latest verified release state:
 - governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
+- folder-scoped single-chain namespaces may use generic parents such as `design/design.md` and `changelog/changelog.md`
+- exactly one active parent model remains per chain so generic and semantic parents do not coexist as active owners
 - observed project shape, extracted doctrine, selected target form, and equivalence-claim basis remain explicit when checked examples ground normalization recommendations
-- semantic parent naming, bootstrap-first timing, and explicit shard-opening basis remain part of the released P104 baseline
+- semantic parent naming, bootstrap-first timing, and explicit shard-opening basis remain part of the released baseline while staying bounded by folder-scoped generic-parent allowance
 - the append-vs-shard gate and `docs_analysis` form remain explicit in the checked touched owner surfaces
 - flat sibling shard mode is bounded by parent authority plus shard-map discipline
 - same-stem parent + subfolder normalization remains the strong-preferred form for broad mature chains
@@ -83,7 +88,7 @@ Latest verified release state:
 - 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
 - the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.12` was published at `2026-05-17T09:16:12Z` and release tag `v10.12` resolves to commit `a5dfb34ab7a26dc91bff3861ca3425bf00c99d8a`
+- GitHub release `v10.13` was published at `2026-05-17T13:43:03Z` and release tag `v10.13` resolves to commit `b1eba20b8c31041afd794625650a1107d8702e05`
 
 ---
 
