@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-18 | **[Added P106 parent-model supersession precedence](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-17 | **[Added P105 folder-scoped generic parent and single-parent authority](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-17 | **[Added P104 semantic parent naming and bootstrap-first normalization](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P103 observed-shape, extracted-doctrine, and selected-target-form separation](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,23 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added P106 parent-model supersession precedence
+
+**Date:** 2026-05-18
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.6 to v1.7.
+- Updated `design/document-governance.design.md` from v1.6 to v1.7.
+- Added explicit active-doctrine precedence so older completed phase/patch/changelog wording cannot silently override the current P105 parent-model doctrine.
+- Preserved the released P105 folder-scoped generic-parent allowance and the released bootstrap/shard timing discipline.
+
+### Summary
+`document-governance.md` now makes chronology precedence explicit so active doctrine remains authoritative when reachable history still preserves older P104 wording.
 
 ---
 

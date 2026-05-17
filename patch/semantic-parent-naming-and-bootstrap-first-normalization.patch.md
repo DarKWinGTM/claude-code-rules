@@ -16,6 +16,14 @@ It packages a structure-selection refinement wave so AI must choose semantic par
 
 ---
 
+## Historical Supersession Note
+
+This patch remains historically correct for the released `v10.12 / P104` review surface.
+
+After released `v10.13 / P105`, folder-scoped single-chain namespaces no longer follow the older P104 master-only/generic-parent restriction recorded here. For current interpretation in that case, active P105-or-later runtime/design doctrine outranks this completed patch record, while the bootstrap-first and shard-opening discipline preserved here still remains part of the active baseline.
+
+---
+
 ## Analysis
 
 The released `v10.11 / P103` wave separated observed project shape from extracted doctrine and selected target form, but it still left one normalization gap open.

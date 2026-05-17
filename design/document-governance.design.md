@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -29,9 +29,11 @@ P102 refinement: this owner should now explicitly classify governed chain shape,
 
 P103 refinement: this owner should now keep observed project shape, extracted doctrine, and selected target form distinct so normalized RULES doctrine is not described as the literal project pattern unless checked equivalence evidence exists.
 
-P104 refinement: this owner should now resolve master-chain versus subject-chain parent naming before shape selection, reserve generic master parents for master-chain or compatibility-only roles, require subject-derived semantic parent filenames for non-master chains, and make bootstrap-first plus explicit shard-opening justification part of the target state.
+P104 refinement (superseded for folder-scoped single-chain namespaces by P105/P106): this owner should now resolve master-chain versus subject-chain parent naming before shape selection, reserve generic master parents for master-chain or compatibility-only roles, require subject-derived semantic parent filenames for non-master chains, and make bootstrap-first plus explicit shard-opening justification part of the target state.
 
 P105 refinement: this owner should now allow `design/design.md` and `changelog/changelog.md` when the current folder already fully scopes one chain, while requiring exactly one active parent model per chain so generic and semantic parents do not coexist as active owners.
+
+P106 refinement: this owner should now state explicitly that P105 supersedes the older P104 master-only/generic-parent restriction for folder-scoped single-chain namespaces, while still preserving the active bootstrap-first and shard-opening discipline from the released baseline.
 
 ---
 

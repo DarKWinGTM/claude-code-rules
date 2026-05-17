@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.7 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.7
+> **Current Version:** 1.8 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -348,6 +348,7 @@ Required questions:
 13. Does a checked `bootstrap_exit_trigger` justify leaving `single-file-bootstrap` now?
 14. Should this detail become or update a shard rather than expanding the parent authority file again, and what is the `shard_opening_basis`?
 15. If this choice is grounded in another checked project or example, what is the observed project shape, what doctrine is being extracted, and what target form is selected here?
+16. If reachable completed phase, patch, or changelog history preserves an older rule, which active runtime/design surface is authoritative now and what part of the older wording is historical only?
 
 Required behavior:
 - if the target line is already a God-line candidate, do not append silently
@@ -359,6 +360,7 @@ Required behavior:
 - prefer local flat sibling shards when the folder already scopes the chain and only a few coherent slices are needed
 - prefer same-stem nested normalization when the chain is broad, root-heavy, multi-shard, or already showing God-file pressure
 - do not let generic and semantic active parents compete for the same chain at the same time
+- if reachable completed history still preserves older wording, name the active authority explicitly and keep the older wording historical rather than letting chronology drift decide the answer
 - flag or plan the repair when the split or shard destination is broad, meaning-risky, or authority-ambiguous
 
 ### 23) Active entrypoints are maps, not storage dumps

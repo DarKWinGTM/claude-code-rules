@@ -29,6 +29,14 @@ P104 exists to make master-versus-subject chain distinction, semantic parent nam
 
 ---
 
+## Historical Supersession Note
+
+This phase remains historically correct for the released `v10.12 / P104` baseline.
+
+After released `v10.13 / P105`, folder-scoped single-chain namespaces no longer follow the older P104 master-only/generic-parent restriction recorded here. For current interpretation in that case, active P105-or-later runtime/design doctrine outranks this completed phase record, while the bootstrap-first and shard-opening discipline recorded here still remains part of the active baseline.
+
+---
+
 ## Expected Output
 
 - RULES explicitly reserves generic master parents such as `design/design.md` and `changelog/changelog.md` for master-chain or explicit compatibility-only roles.

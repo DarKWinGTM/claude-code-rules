@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.13
+> **Current Version:** 10.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.13 / P105` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, explicit about when a folder-scoped single-chain namespace may use `design/design.md` or `changelog/changelog.md`, explicit about requiring exactly one active parent model per chain, explicit about separating observed project shape from extracted doctrine and the selected target form, and less likely to confuse namespace scope with a mandatory filename pattern.
+The active model for `v10.14 / P106` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, explicit about when a folder-scoped single-chain namespace may use `design/design.md` or `changelog/changelog.md`, explicit about requiring exactly one active parent model per chain, explicit about separating observed project shape from extracted doctrine and the selected target form, explicit about active-doctrine precedence over older completed-history wording when chronology conflicts, and less likely to confuse namespace scope with a mandatory filename pattern.
 
 ---
 
@@ -22,6 +22,7 @@ The active model for `v10.13 / P105` should keep the RULES system readable, sour
 
 Current target-state priorities:
 - runtime rules stay as body-sufficient active behavior contracts
+- active runtime/design doctrine must outrank older completed phase/patch wording when chronology conflicts
 - governed design/changelog chains must classify chain shape before appending or sharding detail
 - folder-scoped single-chain namespaces may use `design/design.md` or `changelog/changelog.md` when the folder already fully identifies one chain
 - each chain must still keep exactly one active parent model: generic parent or semantic parent, never both
@@ -30,6 +31,7 @@ Current target-state priorities:
 - broad mature design/changelog chains should still strongly prefer compact parent indexes plus active same-stem child shard paths
 - checked example structure must stay distinct from extracted doctrine and the selected target form when governance recommendations are derived from another project or chain
 - `docs_analysis` must record observed project shape, extracted doctrine, selected target form, equivalence-claim basis, namespace scope, parent model choice, and single-parent authority basis when normalization work is in scope
+- chronology/supersession review must stay explicit when active doctrine and reachable completed history discuss the same normalization rule
 - `TODO.md` and `phase/SUMMARY.md` stay compact active entrypoints, with `history/` and `done/` as normalized overflow paths
 - current release and version authority stay in active parent changelogs, while bulky same-chain detail moves to chain-scoped version shards
 - concern, factual claim, goal request, proposal, and assistant next action should stay separated before endorsement or continuation

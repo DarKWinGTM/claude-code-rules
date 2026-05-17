@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.6
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -127,6 +127,7 @@ Required guidance:
 - keep the selected parent filename aligned to namespace scope and the actual chain subject instead of to a placeholder example name, unless the checked subject really matches that name
 - if a folder already fully scopes one chain, a generic parent may be the selected active owner; if the folder is shared, a semantic parent is usually the clearer choice
 - if both a generic parent and a semantic parent exist for one chain, only one may remain active authority; the other must be explicitly compatibility-only or inactive
+- if reachable completed phase, patch, or changelog detail preserves an older released doctrine, active runtime/design doctrine plus the latest released baseline still control current interpretation; older history remains provenance unless an active surface selects it as current authority
 - chain-shape selection for the current repo is governed by checked current need plus active doctrine, not by loose analogy to an example project
 - if equivalence between the observed example and the selected target form is not checked, avoid wording such as `project-style`, `the project uses this exact form`, or equivalent claim-collapsing phrasing
 

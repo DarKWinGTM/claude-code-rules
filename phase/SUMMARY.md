@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.79
+> **Current Version:** 1.80
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase open; latest released wave is P105 / v10.13 folder-scoped generic parent and single-parent authority
+> **Status:** P106 active for v10.14 parent-model supersession and adherence validation
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,13 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none open.
+- **P106:** [phase-106-parent-model-supersession-and-adherence-validation.md](phase-106-parent-model-supersession-and-adherence-validation.md)
+  - Goal: stop chronology/adoption drift so active doctrine outranks older P104 semantic-parent-only wording when AI answers structure-selection questions.
+  - Output: touched owner chains, companion/master-surface supersession sync, historical guard wording, expanded chronology/adherence verification, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.14`.
+  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
+  - Gate: doctrine integrity, chronology clarity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
+
+### Most Recently Completed
 
 ### Most Recently Completed
 

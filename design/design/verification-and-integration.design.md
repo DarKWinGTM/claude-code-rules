@@ -1,7 +1,7 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.13
+> **Current Version:** 10.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -16,6 +16,7 @@
 - [ ] Governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback` before meaningful normalization edits continue
 - [ ] Folder-scoped single-chain namespaces may use `design/design.md` or `changelog/changelog.md` as their one active parent model
 - [ ] Shared folders containing several chains use self-identifying semantic parent filenames
+- [ ] Active doctrine explicitly states that P105 supersedes the older P104 master-only/generic-parent restriction for folder-scoped single-chain namespaces
 - [ ] Exactly one active parent model remains per chain; generic and semantic parents do not coexist as active owners
 - [ ] Single-body chains stay bootstrap-first until a checked `bootstrap_exit_trigger` and `shard_opening_basis` justify shards
 - [ ] Flat sibling shard mode is allowed only when the current folder already scopes the chain and the parent clearly exposes the shard map
@@ -23,7 +24,8 @@
 - [ ] Observed project shape, extracted doctrine, selected target form, and equivalence-claim basis stay distinct when checked examples ground normalization recommendations
 - [ ] No surface describes the selected RULES target form as the literal observed project pattern without checked equivalence proof
 - [ ] Parent/shard and parent/version-shard links remain aligned and non-orphaned across sibling and same-stem modes
-- [ ] Generic compatibility parents and semantic active parents do not remain ambiguous competing steady-state owners for the same non-master chain
+- [ ] Reachable completed P104 phase/patch history is explicitly treated as historical provenance rather than as current authority after P105
+- [ ] Generic and semantic active parents do not remain ambiguous competing steady-state owners for the same chain when chronology is reviewed explicitly
 - [ ] `changelog/done/` stays legacy/archive/fallback rather than the normal active detail path
 - [ ] `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` / `done/` references
 - [ ] The append-vs-shard gate and `docs_analysis` form are explicit in the touched owner surfaces
