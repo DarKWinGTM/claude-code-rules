@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-17
 > **Current Release:** v10.11 / P103 observed-shape, extracted-doctrine, and selected-target separation
-> **Active Wave:** none open
+> **Active Wave:** v10.12 / P104 semantic parent naming and bootstrap-first design normalization (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -39,7 +39,10 @@
 
 ### Active / In Progress
 
-- none open.
+- [ ] P104 / v10.12 semantic parent naming and bootstrap-first design normalization is in pre-release implementation.
+  - Goal: make AI choose semantic parent naming and bootstrap-first design normalization before it opens same-stem shard directories or confuses generic compatibility parents with active semantic owners.
+  - Current state: P104 startup, touched doctrine-owner wording, companion/master-surface sync, local validation, runtime install, and 18/18 parity/body-sufficiency checks are complete in source scope; release verification and closeout are still pending.
+  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
 
 ### Deferred / Not Selected
 

@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.5 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.5
+> **Current Version:** 1.6 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -339,17 +339,23 @@ Required questions:
 4. Should the new content become a new bullet, a subsection, a changelog entry, or a history/done shard reference?
 5. Should the existing line be split before adding the new detail?
 6. Is the target a compact governed design/changelog parent authority rather than an ordinary body paragraph?
-7. What is the current chain shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`?
-8. Does the current folder already act as the chain namespace, making a flat sibling shard safer than a redundant nested same-stem folder?
-9. Should this detail become or update a shard rather than expanding the parent authority file again?
-10. If this choice is grounded in another checked project or example, what is the observed project shape, what doctrine is being extracted, and what target form is selected here?
+7. Is this chain a `master-chain` or a subject-specific non-master chain?
+8. What is the actual chain subject, and what semantic parent filename should represent it?
+9. Is any generic compatibility parent present, and if so is it active authority or compatibility-only?
+10. What is the current chain shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`?
+11. Does the current folder already act as the chain namespace, making a flat sibling shard safer than a redundant nested same-stem folder?
+12. Does a checked `bootstrap_exit_trigger` justify leaving `single-file-bootstrap` now?
+13. Should this detail become or update a shard rather than expanding the parent authority file again, and what is the `shard_opening_basis`?
+14. If this choice is grounded in another checked project or example, what is the observed project shape, what doctrine is being extracted, and what target form is selected here?
 
 Required behavior:
 - if the target line is already a God-line candidate, do not append silently
 - restructure first or in the same change when the split is clear and low-risk
-- when the target is a compact governed design/changelog parent and shard choice is material, classify chain shape before appending
+- when the target is a compact governed design/changelog parent and shard choice is material, classify chain naming basis and chain shape before appending
+- keep non-master chains bootstrap-first when no checked `bootstrap_exit_trigger` or `shard_opening_basis` justifies opening shards yet
 - prefer local flat sibling shards when the folder already scopes the chain and only a few coherent slices are needed
 - prefer same-stem nested normalization when the chain is broad, root-heavy, multi-shard, or already showing God-file pressure
+- do not let a generic compatibility parent compete silently with a semantic active parent for the same chain
 - flag or plan the repair when the split or shard destination is broad, meaning-risky, or authority-ambiguous
 
 ### 23) Active entrypoints are maps, not storage dumps

@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -28,6 +28,8 @@ P101 refinement: this owner should now strongly prefer same-stem parent/index + 
 P102 refinement: this owner should now explicitly classify governed chain shape, allow flat sibling shards when the current folder already scopes the chain, and require visible append-vs-shard posture before parent design/changelog authorities absorb more detail.
 
 P103 refinement: this owner should now keep observed project shape, extracted doctrine, and selected target form distinct so normalized RULES doctrine is not described as the literal project pattern unless checked equivalence evidence exists.
+
+P104 refinement: this owner should now resolve master-chain versus subject-chain parent naming before shape selection, reserve generic master parents for master-chain or compatibility-only roles, require subject-derived semantic parent filenames for non-master chains, and make bootstrap-first plus explicit shard-opening justification part of the target state.
 
 ---
 

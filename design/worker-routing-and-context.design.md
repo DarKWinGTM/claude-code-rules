@@ -1,7 +1,7 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
@@ -22,6 +22,8 @@ P100 refinement: this owner may compress repeated routing explanation, preset pr
 P102 refinement: this owner should now extend touched-doc append-vs-restructure behavior into append-vs-shard gating for compact design/changelog parents so chain-shape classification happens before parent authority files silently keep growing.
 
 P103 refinement: this owner should now require worker/leader handoffs to separate observed example shape, extracted doctrine, selected target form, and equivalence-claim basis when checked example structure is used to justify a normalization recommendation.
+
+P104 refinement: this owner should now require append-vs-shard and handoff decisions to distinguish master-chain versus subject-chain naming, semantic parent filename choice, compatibility-parent role, and bootstrap exit trigger before assistants open same-stem shard structure.
 
 ---
 

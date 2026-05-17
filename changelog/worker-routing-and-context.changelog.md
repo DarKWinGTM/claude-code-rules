@@ -1,7 +1,7 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-05-17 | **[Added P104 naming-aware append-vs-shard routing gate](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-17 | **[Added P103 observed-example handoff separation](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P102 append-vs-shard routing gate](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,24 @@
 | | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added P104 naming-aware append-vs-shard routing gate
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `worker-routing-and-context.md` from v1.5 to v1.6.
+- Updated `design/worker-routing-and-context.design.md` from v1.5 to v1.6.
+- Expanded append-vs-shard questions so routing decisions distinguish master-chain versus subject-chain naming, semantic parent filename choice, compatibility-parent role, bootstrap exit trigger, and shard-opening basis.
+- Added explicit bootstrap-first behavior when no checked trigger justifies leaving a compact semantic parent body yet.
+- Preserved leader verification responsibility, aggregate-read gating, and the released P102/P103 routing semantics.
+
+### Summary
+`worker-routing-and-context.md` now carries the P104 routing refinement needed to keep naming and shard-opening decisions explicit before assistants mirror or open structure by momentum.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,11 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-17 | **[Added P104 naming and dual-parent integrity refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P103 observed-shape, doctrine, and target-form integrity checks](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Added P102 chain-shape integrity and flat-sibling verification](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added P104 naming and dual-parent integrity refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-integrity.md` from v1.3 to v1.4.
+- Updated `design/document-integrity.design.md` from v1.3 to v1.4.
+- Added integrity coverage for actual chain subject, selected parent filename, compatibility-parent role, bootstrap exit trigger, and shard-opening basis.
+- Added explicit verification that generic compatibility parents and semantic active parents do not remain ambiguous competing owners.
+- Preserved existing parent/shard integrity, reference consistency, rollover discipline, and no-delete-by-cleanup boundaries.
+
+### Summary
+`document-integrity.md` now carries the P104 integrity refinement needed to verify semantic parent naming and bootstrap-vs-shard timing without leaving dual-parent ambiguity behind.
 
 ---
 

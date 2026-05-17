@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.5
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Resolve artifact posture and governed documentation chain analysis before work drifts, use phases only when staged execution adds real value, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work, including lane-oriented continuation when broad worker-fit execution needs explicit structure.**
+**Core Principle: Resolve artifact posture and governed documentation chain naming/shape analysis before work drifts, use phases only when staged execution adds real value, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work, including lane-oriented continuation when broad worker-fit execution needs explicit structure.**
 
 This rule unifies startup artifact initiation, live phase execution semantics, and durable-vs-live task tracking. It keeps staged work aligned to real goals, outputs, and gates without letting TODO, phase, patch, or startup posture drift into retrospective cleanup.
 
@@ -92,19 +92,26 @@ what_must_happen_before_continuing:
 - ...
 ```
 
-### 5.1) Documentation chain-shape analysis
-When meaningful governed work will normalize or split active design/changelog documentation, resolve the chain-shape decision before deeper edits.
+### 5.1) Documentation chain naming and chain-shape analysis
+When meaningful governed work will normalize or split active design/changelog documentation, resolve the chain naming basis and chain-shape decision before deeper edits.
 
 Use a compact `docs_analysis` form:
 ```text
 docs_analysis:
 - document_role: <design | changelog>
+- chain_scope_kind: <master-chain | subject-chain>
+- actual_chain_subject: <real topic/capsule/component name>
 - parent_authority: <checked parent file>
+- selected_parent_filename: <active semantic filename chosen for this chain>
+- parent_naming_basis: <derived-from-chain-subject | reserved-master-name | compatibility-only-legacy | unresolved>
+- compatibility_parent_role: <active-authority | compatibility-only | not-present>
 - current_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
 - observed_project_shape: <checked local/example structure | unknown | not-applicable>
 - extracted_doctrine: <reusable governance principle derived from checked evidence | none>
 - selected_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
 - selected_target_form: <target structure intentionally chosen for this RULES chain>
+- bootstrap_exit_trigger: <none | parent no longer compact | 2+ coherent slices | God-file pressure | other checked reason>
+- shard_opening_basis: <why same-stem or flat-sibling shards are justified now>
 - normalization_action: <append-in-parent | create-or-update-flat-sibling | create-or-update-same-stem-child | migrate-flat-to-same-stem | use-history-or-done>
 - equivalence_claim_basis: <checked proof of equivalence | no equivalence claim>
 - append_vs_shard_reason: <why the next detail belongs in parent or shard>
@@ -114,8 +121,13 @@ docs_analysis:
 
 Required guidance:
 - use this form when a governed design/changelog parent is about to receive enough new detail that append-versus-shard choice materially changes the resulting structure
+- resolve `chain_scope_kind`, `actual_chain_subject`, and `selected_parent_filename` before deeper shape edits continue
+- for non-master chains, the selected parent filename should come from the actual chain subject rather than from a generic compatibility name or placeholder example token
 - if the current folder already acts as the chain namespace, `create-or-update-flat-sibling` may be selected without creating a redundant same-stem nested folder
 - if the chain is broad, root-heavy, multi-shard, or already showing God-file pressure, same-stem nested normalization remains the strong-preferred direction
+- if `bootstrap_exit_trigger` is `none`, keep the chain bootstrap-first instead of opening a same-stem shard directory early
+- `shard_opening_basis` must name the checked reason the chain no longer stays compact as one parent body
+- `compatibility_parent_role` must not be left ambiguous when a generic parent and a semantic parent coexist in checked scope
 - `observed_project_shape` records what was actually checked in the example rather than what the assistant wishes the example had looked like
 - `extracted_doctrine` records the reusable lesson taken from the checked example
 - `selected_target_form` records the structure intentionally chosen for the current RULES chain

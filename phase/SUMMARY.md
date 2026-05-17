@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase open; latest released wave is P103 / v10.11 observed-shape, extracted-doctrine, and selected-target separation
+> **Status:** P104 active for v10.12 semantic parent naming and bootstrap-first design normalization
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none open.
+- **P104:** [phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md](phase-104-semantic-parent-naming-and-bootstrap-first-normalization.md)
+  - Goal: add semantic parent naming, master-parent reservation, bootstrap-first behavior, and explicit shard-opening triggers without weakening P102/P103 doctrine.
+  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.12`.
+  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
+  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
 
 ### Most Recently Completed
 
@@ -68,6 +72,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 Latest verified release state:
 - governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
+- observed project shape, extracted doctrine, selected target form, and equivalence-claim basis remain explicit when checked examples ground normalization recommendations
 - the append-vs-shard gate and `docs_analysis` form remain explicit in the checked touched owner surfaces
 - flat sibling shard mode is bounded by parent authority plus shard-map discipline
 - same-stem parent + subfolder normalization remains the strong-preferred form for broad mature chains
@@ -77,15 +82,15 @@ Latest verified release state:
 - 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
 - the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.10` was published at `2026-05-17T01:55:18Z` and release tag `v10.10` resolves to commit `941fde875dedc2cede3db6f4bee2d144c4b029c3`
+- GitHub release `v10.11` was published at `2026-05-17T07:01:37Z` and release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`
 
 ---
 
 ## Rollback / Containment
 
-If P102 is reversed after release:
-- revert the touched owner-chain chain-shape/append-vs-shard edits as one governed rollback release
-- restore the released `v10.09 / P101` source state as the active baseline
+If P104 is reversed after release:
+- revert the touched owner-chain semantic-parent/bootstrap-first normalization edits as one governed rollback release
+- restore the released `v10.11 / P103` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.11</b><br><sub>P103 Released</sub>
+  <b>v10.12</b><br><sub>P104 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Install verified</sub>
+  <b>Pre-release</b><br><sub>Validation pending</sub>
 </td>
 <td align="center" width="200">
-  <b>Observed shape</b><br><sub>Doctrine-target split</sub>
+  <b>Semantic naming</b><br><sub>Bootstrap-first split</sub>
 </td>
 </tr>
 </table>
@@ -535,15 +535,13 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P103 observed-shape, extracted-doctrine, and selected-target separation is the released `v10.11` wave.
+- P104 semantic parent naming and bootstrap-first design normalization is the active `v10.12` pre-release wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It makes touched owners separate checked example shape, extracted doctrine, and selected RULES target form before describing normalization recommendations.
-  - It expands `docs_analysis` with observed-shape and equivalence-basis fields so example-backed structure choices do not collapse into one unsupported claim.
-  - It preserves the released P102 chain-shape doctrine, including flat sibling shard mode for folder-scoped chains and same-stem normalization as the strong-preferred form for broad mature chains.
-  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, and `master` push passed in checked scope.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
-  - Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`.
-  - GitHub release `v10.11` was published at `2026-05-17T07:01:37Z`.
+  - It reserves generic master parents such as `design/design.md` and `changelog/changelog.md` for master-chain or compatibility-only roles.
+  - It requires semantic parent filenames for non-master chains and keeps placeholder names illustrative only.
+  - It makes `single-file-bootstrap` the explicit default until a checked `bootstrap_exit_trigger` and `shard_opening_basis` justify same-stem shard directories.
+  - It preserves the released P102 chain-shape doctrine and the released P103 evidence-layer separation.
+  - Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed locally for `v10.12`; `master` push and GitHub release verification are still pending.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -706,14 +704,12 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P103 / v10.11 releases the observed-shape, extracted-doctrine, and selected-target separation wave on top of the released `v10.10 / P102` baseline.
-- Touched merged owners now separate checked example shape, extracted doctrine, and selected RULES target form before describing normalization recommendations.
-- `docs_analysis` now records observed project shape, extracted doctrine, selected target form, and equivalence-claim basis when checked examples drive governed normalization work.
-- P103 phase and patch records are closed as released closeout artifacts.
+- P104 / v10.12 opens the semantic parent naming and bootstrap-first normalization wave on top of the released `v10.11 / P103` baseline.
+- Touched merged owners now distinguish master-chain parents from subject-chain parents before choosing semantic filenames or opening same-stem shard directories.
+- `docs_analysis` will record chain subject, parent naming basis, bootstrap exit trigger, and shard-opening basis when governed design/changelog normalization work is in scope.
+- P103 phase and patch records remain the most recently completed released closeout artifacts, while P104 phase and patch records are open as active pre-release artifacts.
 - The untracked `plugin/` tree remains preserved and out of staged release scope.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
-- Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`, published at `2026-05-17T07:01:37Z`.
+- Runtime install, 18/18 source/runtime parity, and source/destination body sufficiency have passed locally for `v10.12`; `master` push and GitHub release verification are still pending.
 </div>
 
 ---
@@ -1568,7 +1564,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.11 |
+  <b>Version</b>: 10.12 |
   <b>Last Updated</b>: 2026-05-17 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
