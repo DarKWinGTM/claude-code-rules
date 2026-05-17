@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -32,6 +32,8 @@ P102 refinement: this owner should now require a compact `docs_analysis` form wh
 P103 refinement: this owner should now extend `docs_analysis` so checked example shape, extracted doctrine, selected target form, and equivalence-claim basis are recorded separately before assistants present a normalization choice as if it were observed project truth.
 
 P104 refinement: this owner should now extend `docs_analysis` so chain scope kind, actual chain subject, selected parent filename, parent naming basis, compatibility-parent role, bootstrap exit trigger, and shard-opening basis are recorded before assistants normalize design/changelog structure.
+
+P105 refinement: this owner should now replace master-only generic-parent assumptions with namespace-scope analysis so `docs_analysis` can choose generic parent or semantic parent explicitly while still recording one active parent model only.
 
 ---
 

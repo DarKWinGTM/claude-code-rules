@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.4
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -26,7 +26,7 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 - keep governed design parent indexes and child/sibling shards aligned so selected chain shape, shard maps, parent scope, child target-state authority, and normalized same-stem parent/directory pairs do not drift
 - keep active parent changelog shard maps and chain-scoped version detail child/sibling shards aligned so selected chain shape, version-to-shard mapping, shard-to-parent back-links, normalized same-stem parent/directory pairs, and non-authority detail status do not drift
 - when a governed design/changelog parent uses active shards, make the selected chain shape explicit enough that no-drift review can distinguish single-file bootstrap, flat sibling shard mode, same-stem normalized mode, and archive fallback mode
-- keep actual chain subject, selected parent filename, compatibility parent role, bootstrap exit trigger, and shard-opening basis aligned but distinct when they materially affect structure selection
+- keep namespace scope, parent model choice, selected parent filename, coexistence state, bootstrap exit trigger, and shard-opening basis aligned but distinct when they materially affect structure selection
 - keep observed project shape, extracted doctrine, selected target form, and any equivalence claim basis aligned but distinct when a checked example is used to justify governance structure
 - keep `changelog/done/` distinct from ordinary chain-scoped version detail shards unless the checked parent authority selects it as legacy, archive, completed-history, or fallback history
 - when the compact active-entrypoint model is selected, keep `TODO.md` and `phase/SUMMARY.md` visibly current rather than letting history/done shards silently become the effective owner path
@@ -39,12 +39,12 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 | Type | Preferred form | Check |
 |---|---|---|
 | File/source path | `<workspace-root>/src/config.js`, `<repo-root>`, or repo-root `./`; exact path only as scoped local fact | Glob / Read / command context |
-| Governed design parent index | `design/<slug>.design.md` as compact active index and authority gateway | Read parent index and verify shard map plus declared chain shape |
-| Master design compatibility parent | `design/design.md` only when the checked chain is the repository-wide master design chain or the file is explicitly labeled compatibility-only | Read role statement and verify it is not silently competing with a semantic active parent |
+| Governed design generic parent | `design/design.md` when the checked folder already fully scopes one design chain | Read role statement and verify no competing semantic active parent exists |
+| Governed design semantic parent index | `design/<slug>.design.md` when the checked folder contains several chains or needs a self-identifying parent filename | Read parent index and verify shard map plus declared chain shape |
 | Governed design child shard | `design/<slug>/<slice>.design.md` as active target-state detail in same-stem nested mode | Parent shard map + targeted Read |
 | Governed design flat sibling shard | `<current-design-folder>/<slice>.design.md` beside the compact parent when the current folder already scopes the chain | Parent shard map + declared flat sibling mode + targeted Read |
-| Active parent changelog | `changelog/<chain>.changelog.md` as current version authority, index, shard map when present, and navigation | Read parent and verify current version plus shard map and declared chain shape |
-| Master changelog compatibility parent | `changelog/changelog.md` only when the checked chain is the repository-wide master changelog or the file is explicitly labeled compatibility-only | Read role statement and verify it is not silently competing with a semantic active parent |
+| Active generic parent changelog | `changelog/changelog.md` when the checked folder already fully scopes one changelog chain | Read role statement and verify no competing semantic active parent exists |
+| Active semantic parent changelog | `changelog/<chain>.changelog.md` when the checked folder contains several chains or needs a self-identifying parent filename | Read parent and verify current version plus shard map and declared chain shape |
 | Changelog version detail shard | `changelog/<chain>/vX.YY-short-topic.changelog.md` as indexed same-chain version detail in same-stem nested mode | Parent shard map + shard-to-parent back-link |
 | Changelog flat sibling version detail shard | `<current-changelog-folder>/vX.YY-short-topic.changelog.md` beside the compact parent when the current folder already scopes the chain | Parent shard map + declared flat sibling mode + shard-to-parent back-link |
 | Changelog legacy/archive/fallback history | `changelog/done/*.changelog.md` as inactive-by-default history | Active parent reference or audit/rollback/provenance need |
@@ -54,7 +54,7 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 | Local execution path | exact current-machine/harness path only | execution context |
 | Symbol / command / config | `getUserById`, `npm run build`, `DATABASE_URL` | search, run when needed, or read config source |
 
-Verify before asserting: concrete references, cross-file sync/no-drift, rename/move/update impact, ambiguous references; parent-index-to-child/sibling-shard and active-parent-changelog-to-version-detail child/sibling-shard alignment, selected chain-shape declaration, shard map completeness, orphan/stale shard status, mixed-mode drift, `changelog/done/` fallback drift; actual-chain-subject / selected-parent-filename / compatibility-parent-role / bootstrap-exit-trigger / shard-opening-basis alignment when naming and timing affect structure selection; observed-project-shape / extracted-doctrine / selected-target-form separation plus equivalence-claim basis when an example is used as doctrine evidence; parity scope vs shared-destination ownership, active runtime body sufficiency; worker-edited governed docs before sync/no-drift/closeout/release-ready claims; tool-path leakage. If checked scope is limited, report the non-finding as scoped rather than global absence.
+Verify before asserting: concrete references, cross-file sync/no-drift, rename/move/update impact, ambiguous references; parent-index-to-child/sibling-shard and active-parent-changelog-to-version-detail child/sibling-shard alignment, selected chain-shape declaration, shard map completeness, orphan/stale shard status, mixed-mode drift, `changelog/done/` fallback drift; namespace-scope / parent-model-choice / selected-parent-filename / coexistence-state / bootstrap-exit-trigger / shard-opening-basis alignment when naming and timing affect structure selection; observed-project-shape / extracted-doctrine / selected-target-form separation plus equivalence-claim basis when an example is used as doctrine evidence; parity scope vs shared-destination ownership, active runtime body sufficiency; worker-edited governed docs before sync/no-drift/closeout/release-ready claims; tool-path leakage. If checked scope is limited, report the non-finding as scoped rather than global absence.
 
 ### 2) God-file, worker-gate, and delegated-repair consistency
 

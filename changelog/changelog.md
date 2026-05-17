@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.12
+> **Current Version:** 10.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.13 | 2026-05-17 | **[Added folder-scoped generic parent and single-parent authority (pre-release)](changelog/v10.13-added-folder-scoped-generic-parent-and-single-parent-authority.changelog.md#version-1013)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.12 | 2026-05-17 | **[Released semantic parent naming and bootstrap-first design normalization](changelog/v10.12-added-semantic-parent-naming-and-bootstrap-first-normalization.changelog.md#version-1012)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.11 | 2026-05-17 | **[Released observed-shape, extracted-doctrine, and selected-target-form separation](changelog/v10.11-added-observed-shape-extracted-doctrine-target-form-separation.changelog.md#version-1011)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.10 | 2026-05-17 | **[Released chain-shape normalization and append-vs-shard gate](changelog/v10.10-added-chain-shape-normalization-and-append-vs-shard-gate.changelog.md#version-1010)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

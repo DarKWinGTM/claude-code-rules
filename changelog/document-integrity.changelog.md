@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,12 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-17 | **[Added P105 folder-scoped generic-parent integrity refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P104 naming and dual-parent integrity refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P103 observed-shape, doctrine, and target-form integrity checks](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Added P102 chain-shape integrity and flat-sibling verification](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added P105 folder-scoped generic-parent integrity refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-integrity.md` from v1.4 to v1.5.
+- Updated `design/document-integrity.design.md` from v1.4 to v1.5.
+- Replaced master-only generic-parent assumptions with namespace-scope integrity checks.
+- Added explicit verification that folder-scoped generic parents are valid only when no competing semantic active parent remains.
+- Preserved bootstrap timing checks, parent/shard integrity, and no-delete-by-cleanup boundaries.
+
+### Summary
+`document-integrity.md` now carries the P105 corrective refinement needed to verify generic-parent use by namespace scope without allowing dual-parent authority drift.
 
 ---
 

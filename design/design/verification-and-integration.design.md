@@ -1,7 +1,7 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.12
+> **Current Version:** 10.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -14,8 +14,9 @@
 - [ ] README remains overview-only
 - [ ] Runtime rules remain the active rule layer and stay body-sufficient
 - [ ] Governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback` before meaningful normalization edits continue
-- [ ] Non-master chains use semantic parent filenames derived from the actual chain subject rather than generic compatibility names or placeholder examples
-- [ ] Generic master parents such as `design/design.md` and `changelog/changelog.md` are used only for master-chain or compatibility-only roles
+- [ ] Folder-scoped single-chain namespaces may use `design/design.md` or `changelog/changelog.md` as their one active parent model
+- [ ] Shared folders containing several chains use self-identifying semantic parent filenames
+- [ ] Exactly one active parent model remains per chain; generic and semantic parents do not coexist as active owners
 - [ ] Single-body chains stay bootstrap-first until a checked `bootstrap_exit_trigger` and `shard_opening_basis` justify shards
 - [ ] Flat sibling shard mode is allowed only when the current folder already scopes the chain and the parent clearly exposes the shard map
 - [ ] Broad governed design/changelog chains still converge to compact parents plus active same-stem shard paths when broad enough to justify normalization

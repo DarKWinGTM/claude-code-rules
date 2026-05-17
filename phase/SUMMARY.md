@@ -3,7 +3,7 @@
 > **Current Version:** 1.79
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase open; latest released wave is P104 / v10.12 semantic parent naming and bootstrap-first design normalization
+> **Status:** P105 active for v10.13 folder-scoped generic parent and single-parent authority
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none open.
+- **P105:** [phase-105-folder-scoped-generic-parent-and-single-parent-authority.md](phase-105-folder-scoped-generic-parent-and-single-parent-authority.md)
+  - Goal: allow generic parents in folder-scoped single-chain namespaces while enforcing one active parent model per chain.
+  - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.13`.
+  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
+  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
 
 ### Most Recently Completed
 
@@ -69,6 +73,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 Latest verified release state:
 - governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
 - observed project shape, extracted doctrine, selected target form, and equivalence-claim basis remain explicit when checked examples ground normalization recommendations
+- semantic parent naming, bootstrap-first timing, and explicit shard-opening basis remain part of the released P104 baseline
 - the append-vs-shard gate and `docs_analysis` form remain explicit in the checked touched owner surfaces
 - flat sibling shard mode is bounded by parent authority plus shard-map discipline
 - same-stem parent + subfolder normalization remains the strong-preferred form for broad mature chains
@@ -78,15 +83,15 @@ Latest verified release state:
 - 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
 - the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.11` was published at `2026-05-17T07:01:37Z` and release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`
+- GitHub release `v10.12` was published at `2026-05-17T09:16:12Z` and release tag `v10.12` resolves to commit `a5dfb34ab7a26dc91bff3861ca3425bf00c99d8a`
 
 ---
 
 ## Rollback / Containment
 
-If P104 is reversed after release:
-- revert the touched owner-chain semantic-parent/bootstrap-first normalization edits as one governed rollback release
-- restore the released `v10.11 / P103` source state as the active baseline
+If P105 is reversed after release:
+- revert the touched owner-chain folder-scoped generic-parent and single-parent-authority edits as one governed rollback release
+- restore the released `v10.12 / P104` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

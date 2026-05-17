@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -28,6 +28,8 @@ P102 refinement: this owner should now verify declared chain shape, flat sibling
 P103 refinement: this owner should now verify that observed project shape, extracted doctrine, selected target form, and equivalence-claim basis do not collapse into one unsupported sync/no-drift claim when examples are used as doctrine evidence.
 
 P104 refinement: this owner should now verify actual chain subject, selected parent filename, compatibility-parent role, bootstrap exit trigger, and shard-opening basis so generic compatibility parents and semantic active parents do not remain ambiguous competing owners.
+
+P105 refinement: this owner should now verify namespace-scope-based generic-parent selection and enforce one active parent model per chain so folder-scoped generic parents are allowed without reintroducing dual-parent ambiguity.
 
 ---
 

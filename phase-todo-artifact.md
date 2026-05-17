@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.6
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -99,12 +99,13 @@ Use a compact `docs_analysis` form:
 ```text
 docs_analysis:
 - document_role: <design | changelog>
-- chain_scope_kind: <master-chain | subject-chain>
+- namespace_scope: <folder-scoped-single-chain | shared-multi-chain>
 - actual_chain_subject: <real topic/capsule/component name>
 - parent_authority: <checked parent file>
-- selected_parent_filename: <active semantic filename chosen for this chain>
-- parent_naming_basis: <derived-from-chain-subject | reserved-master-name | compatibility-only-legacy | unresolved>
-- compatibility_parent_role: <active-authority | compatibility-only | not-present>
+- parent_model_choice: <generic-parent | semantic-parent>
+- selected_parent_filename: <active filename chosen for this chain>
+- parent_model_basis: <folder-already-scopes-one-chain | shared-folder-needs-self-identifying-name | compatibility-only-legacy | unresolved>
+- coexistence_state: <single-active-parent | generic-plus-semantic-ambiguous | generic-plus-semantic-compatibility-only>
 - current_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
 - observed_project_shape: <checked local/example structure | unknown | not-applicable>
 - extracted_doctrine: <reusable governance principle derived from checked evidence | none>
@@ -121,13 +122,15 @@ docs_analysis:
 
 Required guidance:
 - use this form when a governed design/changelog parent is about to receive enough new detail that append-versus-shard choice materially changes the resulting structure
-- resolve `chain_scope_kind`, `actual_chain_subject`, and `selected_parent_filename` before deeper shape edits continue
-- for non-master chains, the selected parent filename should come from the actual chain subject rather than from a generic compatibility name or placeholder example token
+- resolve `namespace_scope`, `actual_chain_subject`, `parent_model_choice`, and `selected_parent_filename` before deeper shape edits continue
+- if the current folder already fully scopes one chain, a generic parent such as `design.md` or `changelog.md` may be the selected active parent model
+- if the current folder contains several chains, the selected parent filename should stay self-identifying for that shared namespace
 - if the current folder already acts as the chain namespace, `create-or-update-flat-sibling` may be selected without creating a redundant same-stem nested folder
 - if the chain is broad, root-heavy, multi-shard, or already showing God-file pressure, same-stem nested normalization remains the strong-preferred direction
-- if `bootstrap_exit_trigger` is `none`, keep the chain bootstrap-first instead of opening a same-stem shard directory early
+- if `bootstrap_exit_trigger` is `none`, keep the chosen parent bootstrap-first instead of opening a same-stem shard directory early
 - `shard_opening_basis` must name the checked reason the chain no longer stays compact as one parent body
-- `compatibility_parent_role` must not be left ambiguous when a generic parent and a semantic parent coexist in checked scope
+- `coexistence_state` must not be left ambiguous when a generic parent and a semantic parent both appear in checked scope
+- only one active parent model may remain for the same chain; the other must be compatibility-only or absent
 - `observed_project_shape` records what was actually checked in the example rather than what the assistant wishes the example had looked like
 - `extracted_doctrine` records the reusable lesson taken from the checked example
 - `selected_target_form` records the structure intentionally chosen for the current RULES chain

@@ -1,7 +1,7 @@
 # Governance Contracts - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.12
+> **Current Version:** 10.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Section:** Active governance contracts
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -71,10 +71,11 @@ When a design or changelog chain is touched for meaningful normalization, classi
 - `archive-history-fallback`
 
 Contract:
-- first decide whether the chain is a `master-chain` or a subject-specific non-master chain
-- master chains may use reserved generic parents such as `design/design.md` and `changelog/changelog.md`
-- non-master chains should use semantic parent filenames derived from the actual chain subject rather than from generic compatibility names or placeholder examples
+- first decide whether the current folder already fully scopes one chain or is a shared folder containing several chains
+- if the current folder fully scopes one chain, generic parents such as `design/design.md` and `changelog/changelog.md` are valid
+- if the current folder is shared by several chains, use subject-derived semantic parent filenames so each chain stays self-identifying in that shared folder
 - placeholder names are illustrative only and must not become mandatory literal active names unless they match the checked chain subject
+- one chain must keep exactly one active parent model: generic parent or semantic parent, never both at the same time
 - `single-file-bootstrap` is valid only while the parent remains compact and coherent enough that detail has not yet outgrown parent-only ownership
 - if a chain still has one compact body and no checked `bootstrap_exit_trigger`, keep it bootstrap-first instead of opening same-stem shards early
 - `flat-sibling-shards` is valid when the current folder already scopes the chain and only a few coherent slices are needed; the parent remains the compact authority gateway and exposes the active shard map

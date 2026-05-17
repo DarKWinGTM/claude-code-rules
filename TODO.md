@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-17
 > **Current Release:** v10.12 / P104 semantic parent naming and bootstrap-first design normalization
-> **Active Wave:** none open
+> **Active Wave:** v10.13 / P105 folder-scoped generic parent and single-parent authority (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -44,7 +44,10 @@
 
 ### Active / In Progress
 
-- none open.
+- [ ] P105 / v10.13 folder-scoped generic parent and single-parent authority is in pre-release implementation.
+  - Goal: allow `design/design.md` and `changelog/changelog.md` in folder-scoped single-chain namespaces while enforcing exactly one active parent model per chain.
+  - Current state: P105 startup, touched doctrine-owner wording, and companion/master-surface sync are complete in source scope; install, release verification, and closeout are still pending.
+  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
 
 ### Deferred / Not Selected
 

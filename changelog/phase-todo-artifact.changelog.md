@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-17 | **[Added P105 namespace-scope and single-parent docs-analysis refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-17 | **[Added P104 docs-analysis naming and bootstrap refinement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-17 | **[Added P103 docs-analysis evidence-layer refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P102 docs-analysis gate for chain-shape selection](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added P105 namespace-scope and single-parent docs-analysis refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.6 to v1.7.
+- Updated `design/phase-todo-artifact.design.md` from v1.6 to v1.7.
+- Replaced master-only generic-parent assumptions in `docs_analysis` with namespace-scope analysis.
+- Added explicit parent-model choice, parent-model basis, and coexistence-state tracking so one active parent model remains per chain.
+- Preserved bootstrap-first and shard-opening-basis capture.
+
+### Summary
+`phase-todo-artifact.md` now carries the P105 corrective refinement so `docs_analysis` can choose generic or semantic parents from namespace scope while still enforcing one active parent model per chain.
 
 ---
 

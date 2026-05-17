@@ -1,7 +1,7 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-17 | **[Added P105 folder-scoped generic-parent routing refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-17 | **[Added P104 naming-aware append-vs-shard routing gate](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-17 | **[Added P103 observed-example handoff separation](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P102 append-vs-shard routing gate](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -20,6 +21,24 @@
 | | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added P105 folder-scoped generic-parent routing refinement
+
+**Date:** 2026-05-17
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `worker-routing-and-context.md` from v1.6 to v1.7.
+- Updated `design/worker-routing-and-context.design.md` from v1.6 to v1.7.
+- Replaced master-only generic-parent assumptions in the append-vs-shard gate with namespace-scope parent-model decisions.
+- Added routing guidance that folder-scoped single-chain namespaces may keep a generic parent while shared folders should prefer self-identifying semantic parents.
+- Preserved bootstrap-first timing checks and the no-dual-parent boundary.
+
+### Summary
+`worker-routing-and-context.md` now carries the P105 corrective refinement needed to route parent-model decisions from namespace scope rather than from a blanket semantic-parent rule.
 
 ---
 
