@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.84
+> **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase open; latest released wave is P108 / v10.16 worker-routing runtime compaction and owner redistribution
+> **Status:** P109 active for v10.17 lineage-first phase selection and subphase enforcement
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none open.
+- **P109:** [phase-109-lineage-first-phase-selection-and-subphase-enforcement.md](phase-109-lineage-first-phase-selection-and-subphase-enforcement.md)
+  - Goal: make phase selection lineage-first so current phase reuse and same-family subphase fit are checked before new major creation.
+  - Output: strict fall-through phase identity gate, explicit why-not-current / why-not-subphase basis, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.17`.
+  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
+  - Gate: lineage integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
 
 ### Most Recently Completed
 
@@ -118,9 +122,9 @@ Latest verified release state:
 
 ## Rollback / Containment
 
-If P108 is reversed after release:
-- revert the touched worker-routing/document-governance/document-integrity redistribution edits as one governed rollback release
-- restore the released `v10.15 / P107` source state as the active baseline
+If P109 is reversed after release:
+- revert the touched lineage-first phase-selection enforcement edits as one governed rollback release
+- restore the released `v10.16 / P108` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

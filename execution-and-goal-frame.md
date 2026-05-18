@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.5
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -163,7 +163,7 @@ When execution mode remains active, inspect execution surfaces instead of waitin
 - shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
 - oversized active governance files are maintenance triggers, not execution surfaces
 
-Phase-shaped next work must not become a new major phase by momentum. If it may belong to an existing family, apply `phase-todo-artifact.md` major-vs-subphase lineage handling before choosing current-phase update, existing-family subphase, new major, or ask-now posture. Continuation-created or -extended task entries for phase-backed work must preserve visible phase linkage.
+Phase-shaped next work must not become a new major phase by momentum. Apply ordered phase identity handling every time: current active phase first, existing-family subphase second, new major phase only after both earlier options are ruled out by checked phase context, and ask/record basis when evidence remains unsettled. Continuation-created or -extended task entries for phase-backed work must preserve visible phase linkage and, when a new major is selected, visible why-not-current / why-not-subphase basis.
 
 ---
 
@@ -210,7 +210,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | implementation completed but material verification remains | continue into verification when safe, or state blocker/not-applicable reason |
 | current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
-| phase-shaped follow-up | apply phase lineage handling and preserve visible phase linkage |
+| phase-shaped follow-up | apply ordered phase identity handling and preserve visible phase linkage: current active phase → existing-family subphase → new major → ask/record basis; a new major requires checked why-not-current / why-not-subphase evidence |
 | objective truly complete with meaningful unselected successor work | recommend supported next goal with why/output/gate without blocking selected safe continuation |
 | broad/noisy next slice or aggregate governance/code read burst | apply worker routing before broad leader-session absorption |
 | broad research/design-improvement next slice | decompose into research lanes or state narrow direct-handling reason |
@@ -222,7 +222,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 ---
 
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, new-major allocation by momentum, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
+Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, checking new-major criteria before current-phase and subphase fit, treating any local deliverable/gate difference as a top-level major boundary, opening a new major without visible why-not-current / why-not-subphase basis, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
 
 ---
 

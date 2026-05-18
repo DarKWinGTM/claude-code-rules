@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-18
 > **Current Release:** v10.16 / P108 worker-routing runtime compaction and owner redistribution
-> **Active Wave:** none open
+> **Active Wave:** v10.17 / P109 lineage-first phase selection and subphase enforcement (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -64,13 +64,16 @@
 
 ### Active / In Progress
 
-- none open.
+- [ ] P109 / v10.17 lineage-first phase selection and subphase enforcement is in pre-release release-lane verification.
+  - Goal: make phase selection lineage-first so AI checks current phase reuse first, then same-family subphase fit, and only opens a new major phase when a distinct boundary is proven.
+  - Current state: P109 startup, lineage-enforcement edits, touched companion/master-surface sync, README-driven runtime install, and 18/18 source/runtime parity/body-sufficiency validation are complete in source scope; `master` push, GitHub release verification, and released-state closeout are still pending.
+  - Gate: current phase → subphase → new major becomes strict fall-through order, new-major selection requires why-not-current / why-not-subphase basis, runtime install and 18/18 source/runtime parity/body sufficiency pass, and `plugin/` remains out of scope.
 
 ### Deferred / Not Selected
 
-- [ ] `memory-context-intelligence` phase 008 bounded intake is complete; remaining runtime implementation and promotion work stays deferred and capsule-scoped before any main RULES merge.
-  - Scope: phases 001-006 remain design concept phases; phase 007 created the isolated package scaffold under `../PLUGIN/memory-context-intelligence/`; phase 008 added bounded safe memsearch intake only; phases 009-016 define remaining runtime implementation through usable release; phases 017-018 define post-usable promotion readiness and possible main RULES merge closeout.
-  - Gate: use `~/.claude/rules/additional/` as the trial stage before any main RULES merge, but only after future runtime phases implement and verify signal extraction, topic generation, candidate emission, and live bounded trial behavior; revisit main RULES promotion only after the runtime and additional-stage trial are selected, tested, and proven useful enough to promote.
+- [ ] `memory-context-intelligence` phases 017-018 promotion and merge work remains deferred; phase 016 checked-scope runtime readiness is completed.
+  - Scope: phases 001-006 remain design concept phases; phase 007 created the isolated package scaffold under `plugin/memory-context-intelligence/`; phase 008 added bounded safe memsearch intake; phase 009 added internal-only signal extraction and topic generation from bounded intake output; phase 010 added list-first topic presentation and fileless selected-topic recording; phase 011 added optional controlled research enrichment from one selected topic plus recorded source fixtures; phase 012 added deterministic runtime-local Trace Scout, Research Scout, Source-Trust Reviewer, and Synthesis Lead orchestration findings; phase 013 added candidate packet building and dry-run-first, approval-gated additional-stage emission; phase 014 added deterministic historical replay validation with dry-run emit preview only; phase 015 added bounded live additional-stage trial reporting and emitted one approved local trial artifact under `/additional/`; phase 016 added the `ready` checked-scope readiness report and final wording `usable in checked scope`; only phases 017-018 remain conditional post-ready promotion readiness and possible main RULES merge closeout.
+  - Gate: use `~/.claude/rules/additional/` as the trial stage before any main RULES merge, but treat phase-013 emission, phase-014 replay output, phase-015 live trial output, and phase-016 readiness output as trial material, validation evidence, or checked-scope readiness evidence only; install/publication, marketplace release, stable or broad production readiness, main RULES promotion, main RULES mutation, and main RULES merge remain unperformed and unselected.
 - [ ] Master governance density rollover remains deferred.
   - Scope: large active `changelog/changelog.md` history and release-history-heavy master README/design sections.
   - Gate: open a dedicated repair phase or patch before claiming full active-entrypoint God-document cleanup.

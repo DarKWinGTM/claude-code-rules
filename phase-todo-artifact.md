@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.8
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.8
+> **Current Version:** 1.9
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -74,6 +74,7 @@ Typical owner routes:
 ### 4) Phase and patch startup boundary
 - if staged work is clear, resolve phase posture now as `use existing`, `create now`, or `ask now`
 - `create now` does not mean automatic new-major creation; phase lineage still decides current phase update vs subphase vs new major
+- phase identity selection must still run in strict order: current active phase update → existing-family subphase → new major phase → ask/record basis
 - patch is non-default during greenfield/baseline formation unless a real before/after review surface exists or the user explicitly asks for it
 
 ### 5) Startup communication contract
@@ -169,11 +170,16 @@ Identity grammar:
 - major phase: `NNN`
 - subphase: `NNN-NN`
 
-Before opening a new major phase, choose the smallest truthful identity:
-- update the current active phase when work remains in the same execution slice
-- create a new subphase when work continues the same bounded execution gate inside an existing family
-- create a new major phase when the work forms a distinct top-level rollout family, capability boundary, output, verification gate, release boundary, or rollback boundary
+Before opening a new major phase, choose the smallest truthful identity.
+
+Required identity decision order is strict fall-through, not a menu:
+- update the current active phase first when checked `phase/SUMMARY.md`, the current active child phase, and visible phase-linked live tasks show that the work still fits the same execution slice, goal, expected output, completion gate, dependency path, or rollback boundary
+- create a new subphase second when the current phase cannot truthfully absorb the work, but the work still continues the same bounded execution gate or rollout family inside an existing major phase
+- create a new major phase third only after checked evidence rules out both current-phase update and existing-family subphase, and the work forms a distinct top-level rollout family, capability boundary, output, verification gate, release boundary, or rollback boundary
+- when a new major phase is selected, record visible why-not-current and why-not-subphase basis rather than leaving the negative checks implicit
 - ask or record the governing basis when multiple families plausibly fit and checked evidence does not settle lineage
+
+A new file need, completed current phase, task-list continuation, fresh concern wording, or milestone closeout is not by itself a lineage break.
 
 Subphase fit depends on real shared goal/output/gate meaning, not only broad product area or historical proximity.
 
@@ -208,6 +214,7 @@ When a phase-backed objective is broad enough to contain distinct execution shap
 - lanes are bounded execution slices such as implementation, verification, governance/release-sync, evidence audit, or bounded research
 - each lane should map to a clear goal, expected output, and completion gate rather than acting as a command bucket
 - lane changes inside the same rollout family should normally stay in the current phase or a truthful subphase rather than opening a fresh major phase by momentum
+- for lane changes, apply the same identity order explicitly: current active phase first, existing-family subphase second, new major phase only after both earlier fits are ruled out by checked phase context
 - worker routing decides whether a lane becomes a standalone subagent or stays direct; phase only keeps the staged execution map visible
 - do not create lane scaffolding for trivial, tightly sequential, or one-step work
 
@@ -320,6 +327,8 @@ Do not force task-list overhead for trivial isolated work or one-step lookup/fix
 ### 5) Phase-linked live task shaping
 When the built-in task list is in use for phase-backed work:
 - inspect `/phase` context first and default to the current active phase before later phases
+- when a task would create or extend phase artifacts, keep the identity basis visible: current-phase update, existing-family subphase, new major, or ask/record basis
+- a new-major basis must include why current-phase update and existing-family subphase do not fit
 - keep phase context visible in task subject or description
 - shape tasks around outcome, expected output, and completion gate when that prevents command-only drift
 - split implementation, verification, and governance/release-sync into separate tasks only when combining them would hide gates or ownership

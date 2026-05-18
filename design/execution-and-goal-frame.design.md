@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -31,6 +31,8 @@ P101 refinement: this owner should now preserve the active goal while holding un
 
 P107 refinement: this owner should now make explicit when a supported next-goal recommendation may be translated into an advisory Claude Code `/goal` command, while keeping direct continuation as the default when the next slice is already safe and implied.
 
+P109 refinement: this owner must now preserve ordered handling for phase-shaped continuation so execution momentum continues the current active phase first, then an existing-family subphase, and only then a new major phase when checked evidence rules out the earlier identities.
+
 ---
 
 ## Runtime Requirements
@@ -39,6 +41,7 @@ P107 refinement: this owner should now make explicit when a supported next-goal 
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
 - Preserve lane decomposition and next-lane continuation semantics without taking delegation or bounded-I/O ownership away from `worker-routing-and-context.md` and `safe-io.md`.
+- Preserve ordered phase-shaped continuation handling so current-phase reuse and truthful subphase fit are evaluated before any new-major phase selection.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---

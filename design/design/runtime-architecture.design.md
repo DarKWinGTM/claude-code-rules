@@ -24,11 +24,11 @@ The active runtime inventory contains 18 source-owned root rule files.
 | 7 | `document-governance.md` | `document-governance.design.md v1.8` | Repository document roles, parent/shard authority, append-vs-shard doctrine, patch governance, and UDVC-1 |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.6` | Cross-reference consistency, rollover integrity, document-density/God-file repair, and no-delete-by-cleanup discipline |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.2` | Verify-first factual discipline, concern-vs-conclusion discipline, scoped non-findings, and real-vs-mock boundaries |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.4` | Discussion/execution mode, visible intent read, premise separation, and next-work boundaries |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.6` | Discussion/execution mode, visible intent read, premise separation, next-work boundaries, and lineage-first phase-shaped continuation |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.1` | Plain-language explanation, diagram discipline, and concise action framing |
 | 12 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.2` | External source verification, trust ranking, corroboration, and source-conflict handling |
 | 13 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v1.7` | Scoped memory governance, compact memory index behavior, path scope, and optional recall boundaries |
-| 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.3` | Startup artifact posture, phase execution, compact TODO/phase entrypoints, and live task tracking |
+| 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.9` | Startup artifact posture, phase execution, compact TODO/phase entrypoints, live task tracking, and lineage-first phase identity selection |
 | 15 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.3` | Portable defaults, late-bound environment resolution, and source/destination notation discipline |
 | 16 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.1` | Wrapper normalization, refusal classification, minimization, and recovery paths |
 | 17 | `safe-io.md` | `safe-io.design.md v1.3` | Bounded file reading/output with parent-first and smallest-shard-first behavior |

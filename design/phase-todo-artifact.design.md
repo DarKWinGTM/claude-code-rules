@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -37,6 +37,8 @@ P105 refinement: this owner should now replace master-only generic-parent assump
 
 P107 refinement: this owner should now preserve how a compact advisory `/goal` command is sourced from checked Goal/Output/Gate/Verification surfaces without introducing a new durable tracking schema.
 
+P109 refinement: this owner must now preserve ordered phase identity selection as a target-state invariant: current active phase update first, existing-family subphase second, new major third, ask/record basis when unsettled. New-major selection must require checked evidence that current-phase and subphase fit were ruled out.
+
 ---
 
 ## Runtime Requirements
@@ -44,6 +46,7 @@ P107 refinement: this owner should now preserve how a compact advisory `/goal` c
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
+- Preserve ordered phase identity selection and visible lineage-basis recording; do not let future compression reduce current-phase → subphase → new-major into unordered criteria.
 - Preserve phase-backed lane structure and lane-aware task shaping while leaving worker-scaling and bounded-I/O behavior to `worker-routing-and-context.md` and `safe-io.md`.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-05-18 | **[Added P109 lineage-first continuation enforcement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-18 | **[Added P107 explicit `/goal` suggestion bridge](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P101 premise-separation continuation refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,23 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added P109 lineage-first continuation enforcement
+
+**Date:** 2026-05-18
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.5 to v1.6.
+- Updated `design/execution-and-goal-frame.design.md` from v1.5 to v1.6.
+- Added ordered handling for phase-shaped continuation so current-phase reuse and same-family subphase fit are checked before any new major phase is allowed.
+- Added explicit why-not-current / why-not-subphase anti-pattern and trigger wording for phase-shaped follow-up.
+
+### Summary
+`execution-and-goal-frame.md` now keeps phase-shaped continuation lineage-first so momentum does not open a new major phase too early.
 
 ---
 
