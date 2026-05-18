@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-18
-> **Current Release:** v10.14 / P106 parent-model supersession and adherence validation
-> **Active Wave:** v10.15 / P107 explicit goal-command suggestion doctrine (pre-release)
+> **Current Release:** v10.15 / P107 explicit goal-command suggestion doctrine
+> **Active Wave:** none open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P107 / v10.15 explicit goal-command suggestion doctrine was completed, installed, pushed, and released.
+  - Verified: `/goal` trigger doctrine, compact `/goal` output shape, `/goal` sourcing/writing doctrine, advisory/pruning guards, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.15
+  - Release tag `v10.15` resolves to commit `771a4769b65910cf28b9c7e6c30145551a88cec8`.
+  - Published at `2026-05-18T02:34:32Z`.
 - [x] P106 / v10.14 parent-model supersession and adherence validation was completed, installed, pushed, and released.
   - Verified: active-doctrine supersession precedence, selected historical guard wording, chronology/adherence verification hardening, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.14
@@ -54,10 +59,7 @@
 
 ### Active / In Progress
 
-- [ ] P107 / v10.15 explicit goal-command suggestion doctrine is in pre-release implementation.
-  - Goal: make AI suggest compact, high-signal `/goal` commands only when a bounded successor objective is clear, measurable, provable in transcript, and better surfaced as an advisory command than as direct continuation.
-  - Current state: P107 startup, `/goal` trigger doctrine, command-shape doctrine, sourcing/writing doctrine, and install/parity validation are complete in source scope; release verification and closeout are still pending.
-  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
+- none open.
 
 ### Deferred / Not Selected
 

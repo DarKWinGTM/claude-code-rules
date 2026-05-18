@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.81
+> **Current Version:** 1.82
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P107 active for v10.15 explicit goal-command suggestion doctrine
+> **Status:** No active phase open; latest released wave is P107 / v10.15 explicit goal-command suggestion doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P107:** [phase-107-explicit-goal-command-suggestion-doctrine.md](phase-107-explicit-goal-command-suggestion-doctrine.md)
-  - Goal: teach AI when to suggest a compact `/goal` command instead of continuing directly or giving vague next-step prose.
-  - Output: touched owner chains, companion/master-surface sync, `/goal` trigger doctrine, `/goal` output shape, `/goal` sourcing/writing doctrine, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.15`.
-  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
-  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
+- none open.
 
 ### Most Recently Completed
+
+- **P107:** [phase-107-explicit-goal-command-suggestion-doctrine.md](phase-107-explicit-goal-command-suggestion-doctrine.md)
+  - Output: touched owner chains, companion/master-surface sync, `/goal` trigger doctrine, `/goal` output shape, `/goal` sourcing/writing doctrine, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.15`.
+  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.15
+  - Release tag `v10.15` resolves to commit `771a4769b65910cf28b9c7e6c30145551a88cec8`.
+  - Published at `2026-05-18T02:34:32Z`.
+
+### Previously Completed
 
 - **P106:** [phase-106-parent-model-supersession-and-adherence-validation.md](phase-106-parent-model-supersession-and-adherence-validation.md)
   - Output: touched owner chains, companion/master-surface supersession sync, selected historical guard wording, expanded chronology/adherence verification, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.14`.
@@ -38,7 +43,6 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`.
   - Published at `2026-05-17T23:36:10Z`.
 
-### Previously Completed
 
 - **P105:** [phase-105-folder-scoped-generic-parent-and-single-parent-authority.md](phase-105-folder-scoped-generic-parent-and-single-parent-authority.md)
   - Output: touched owner chains, master design/changelog doctrine sync, expanded `docs_analysis`, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.13`.
@@ -89,21 +93,20 @@ Latest verified release state:
 - governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
 - folder-scoped single-chain namespaces may use generic parents such as `design/design.md` and `changelog/changelog.md`
 - exactly one active parent model remains per chain so generic and semantic parents do not coexist as active owners
-- active runtime/design doctrine now explicitly outranks older completed P104 wording when chronology conflicts
-- selected completed P104 artifacts keep historical truth while carrying compact guards against being misread as current authority after P105
+- active runtime/design doctrine now explicitly outranks older completed-history wording when chronology conflicts
+- compact advisory `/goal` suggestions are allowed only when a bounded successor objective is clear, measurable, and provable in transcript
+- compact advisory `/goal` suggestions are sourced from checked Goal/Output/Gate/Verification surfaces rather than improvised prose
+- `/goal` suggestions remain advisory, high-signal, and bounded instead of turning into selected execution or mini-spec dumps
 - observed project shape, extracted doctrine, selected target form, and equivalence-claim basis remain explicit when checked examples ground normalization recommendations
-- semantic parent naming, bootstrap-first timing, and explicit shard-opening basis remain part of the released baseline while staying bounded by folder-scoped generic-parent allowance
-- chronology/supersession review is explicit in the checked verification-oriented surfaces
+- chronology/supersession review remains explicit in the checked verification-oriented surfaces
 - the append-vs-shard gate and `docs_analysis` form remain explicit in the checked touched owner surfaces
-- flat sibling shard mode is bounded by parent authority plus shard-map discipline
-- same-stem parent + subfolder normalization remains the strong-preferred form for broad mature chains
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - README Bash and PowerShell arrays still define the same compact 18-rule runtime set
 - runtime install copied only the 18 README-listed active runtime rules
 - 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
 - the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.14` was published at `2026-05-17T23:36:10Z` and release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`
+- GitHub release `v10.15` was published at `2026-05-18T02:34:32Z` and release tag `v10.15` resolves to commit `771a4769b65910cf28b9c7e6c30145551a88cec8`
 
 ---
 

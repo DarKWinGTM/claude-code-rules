@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.15
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -88,9 +88,15 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P107 is active and not yet released.
+P107 is released as `v10.15`.
 
-Phase/patch startup is open from the released `v10.14 / P106` baseline. `/goal` trigger doctrine, output-shape doctrine, sourcing/writing doctrine, advisory/pruning guards, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, and pre-release master-surface sync are complete in source scope. Push, GitHub release creation, and closeout verification are still pending.
+Phase/patch startup, `/goal` trigger doctrine, output-shape doctrine, sourcing/writing doctrine, advisory/pruning guards, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed from the released `v10.14 / P106` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.15
+
+Release tag `v10.15` resolves to commit `771a4769b65910cf28b9c7e6c30145551a88cec8`.
+
+Published at `2026-05-18T02:34:32Z`.
 
 ---
 

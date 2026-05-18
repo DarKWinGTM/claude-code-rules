@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P107
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Release:** v10.15
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.15
@@ -43,19 +43,19 @@ The current RULES already knows how to express supported next goals, goal/output
 
 ## Action Checklist
 
-- [ ] Confirm current baseline is released `v10.14 / P106` with no active phase open before P107 startup.
-- [ ] Confirm `v10.15` release/tag is not already present.
-- [ ] Confirm README Bash and PowerShell arrays still define the same 18 active runtime files.
-- [ ] Confirm the untracked `plugin/` tree remains preserved and out of scope.
-- [ ] Open P107 phase/patch/changelog startup artifacts and sync active roadmap/TODO state.
+- [x] Confirm current baseline is released `v10.14 / P106` with no active phase open before P107 startup.
+- [x] Confirm `v10.15` release/tag is not already present.
+- [x] Confirm README Bash and PowerShell arrays still define the same 18 active runtime files.
+- [x] Confirm the untracked `plugin/` tree remains preserved and out of scope.
+- [x] Open P107 phase/patch/changelog startup artifacts and sync active roadmap/TODO state.
 - [x] Add `/goal` trigger and no-trigger doctrine in the touched runtime/design owners.
 - [x] Add compact `/goal` output-shape doctrine in the closing/presentation owner.
 - [x] Add `/goal` sourcing doctrine from Goal/Output/Gate/Verification surfaces.
 - [x] Add advisory wording and high-signal pruning guards for `/goal` suggestions.
-- [x] Sync touched owner design/changelog companions plus master release surfaces to P107 pre-release state.
+- [x] Sync touched owner design/changelog companions plus master release surfaces for the P107 release path.
 - [x] Validate doctrine integrity, install scope, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.15`, and verify release state.
-- [ ] Finalize P107 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.15`, and verify release state.
+- [x] Finalize P107 closeout records after release verification passes.
 
 ---
 
@@ -90,19 +90,19 @@ The current RULES already knows how to express supported next goals, goal/output
 
 ## Current Status
 
-P107 is active in pre-release implementation for `v10.15`.
+P107 is released as `v10.15`.
 
-Completed so far:
-- the current released baseline is `v10.14 / P106`
-- no active phase is open before P107 startup
-- `v10.15` tag/release is absent in checked scope
-- the current 18-rule runtime install scope remains intact in README arrays
-- the untracked `plugin/` tree remains preserved as out-of-scope observed evidence
-- P107 phase/patch/changelog startup plus active roadmap/TODO sync are open in source scope
-- `/goal` trigger doctrine, command-shape doctrine, sourcing/writing doctrine, and pruning/writing guards are complete in source scope
+Release verification summary:
+- the current released baseline before the wave was opened was `v10.14 / P106`
+- no active phase was open before P107 startup
+- `v10.15` tag/release was absent in checked scope before release work began
+- README Bash and PowerShell arrays still matched the compact 18-rule runtime set
+- the untracked `plugin/` tree remained preserved as out-of-scope observed evidence
+- P107 phase/patch/changelog startup plus active roadmap/TODO sync completed in source scope
+- `/goal` trigger doctrine, command-shape doctrine, sourcing/writing doctrine, and pruning/writing guards completed in source scope
 - runtime install plus 18/18 source/runtime parity and source/destination body sufficiency passed locally
-- `git diff --check` passed with no whitespace errors so far
-
-Still pending:
-- source release commit, push, and GitHub release verification
-- final closeout after release verification
+- `git diff --check` passed with no whitespace errors
+- `master` push passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.15
+- Release tag `v10.15` resolves to commit `771a4769b65910cf28b9c7e6c30145551a88cec8`
+- Published at `2026-05-18T02:34:32Z`.

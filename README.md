@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.15</b><br><sub>P107 Active</sub>
+  <b>v10.15</b><br><sub>P107 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Validation pending</sub>
+  <b>Released</b><br><sub>Install verified</sub>
 </td>
 <td align="center" width="200">
   <b>/goal</b><br><sub>Compact suggestion doctrine</sub>
@@ -535,12 +535,12 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P107 explicit goal-command suggestion doctrine is the active `v10.15` pre-release wave.
+- P107 explicit goal-command suggestion doctrine is the released `v10.15` wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
   - It teaches when a compact advisory Claude Code `/goal` command is appropriate and when direct continuation should still win.
   - It teaches how `/goal` suggestions are sourced from checked Goal/Output/Gate/Verification surfaces with transcript-visible proof.
   - It preserves the released P106 chronology/adherence doctrine and keeps `/goal` suggestions advisory, high-signal, and bounded.
-  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification are still pending for `v10.15`.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed for `v10.15`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -703,12 +703,12 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P107 / v10.15 opens the explicit goal-command suggestion doctrine wave on top of the released `v10.14 / P106` baseline.
+- P107 / v10.15 releases the explicit goal-command suggestion doctrine wave on top of the released `v10.14 / P106` baseline.
 - Touched doctrine and design surfaces now define when a compact advisory `/goal` command is appropriate instead of direct continuation or vague next-step prose.
 - Goal/Output/Gate/Verification surfaces now translate into compact `/goal` suggestions with transcript-visible proof and bounded scope.
-- P106 phase and patch records remain the most recently completed released closeout artifacts, while P107 phase and patch records are open as active pre-release artifacts.
+- P107 phase and patch records are the most recently completed released closeout artifacts, with P106 retained as the previous released baseline.
 - The untracked `plugin/` tree remains preserved and out of staged release scope.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification are still pending for `v10.15`.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed for `v10.15`.
 </div>
 
 ---
@@ -1440,7 +1440,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active `v10.15 / P107` pre-release wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification are still pending in checked scope.
+- Source state: this README reflects the released `v10.15 / P107` wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed in checked scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
