@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.8 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.8
+> **Current Version:** 1.9 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -287,167 +287,15 @@ Selection order after routing selects delegation/specialist handling:
 
 Prefer a custom user agent only when worker routing has already selected a delegated/specialist path and the fit, value, and scope are materially stronger than the generic path.
 
-### 19) Context is a lifecycle, not a post-compact rule
+### 19) Document-context routing boundary
 
-Do not treat context safety as only "read less after compact."
-- prevent future context cost while writing and syncing docs
-- route broad raw evidence through workers when the leader does not need the raw body
-- repair dense active documents when compact/thrash exposes structural debt
-- avoid blunt post-compact bans when workflow or document structure is the real fix
+Worker-routing owns only the routing decision for document-heavy work: direct handling, read-only audit lane, bounded edit-capable repair lane, or Team escalation.
 
-### 20) Document-density and God-line prevention
+Document-density, God-line/God-file, active-entrypoint, parent/shard/changelog, compact/thrash, and no-drift repair doctrine lives in `document-integrity.md` and `document-governance.md`.
 
-Write active docs so future sessions can read and edit them cheaply.
-- keep one line or bullet focused on one concept or one tight fact group
-- split current state, history, verification, risks, exclusions, and next work when they start to mix
-- route long version detail to active parent changelog maps plus chain-scoped version detail shards when needed
-- keep `changelog/done/` for legacy/archive/completed-history/fallback history, not ordinary same-chain detail sharding
-- use semantic bullets, small tables, and short paragraphs instead of one-line history dumps
-- treat very long active lines as repair triggers, not disposal proof
+When those document signals appear, apply the document-owner rules first; return here only to decide whether a worker lane is needed. Do not delegate document edits when analysis-only scope, owner ambiguity, meaning risk, history preservation, or destructive risk makes the repair unsafe.
 
-### 21) Opportunistic touched-doc God-line repair
-
-When an active document is already being edited and the touched area contains a God-line candidate, do not only warn about the density problem.
-
-Repair immediately when all conditions hold:
-- the candidate is in a touched active document or touched section
-- the semantic split is clear from the local context
-- the repair is local, meaning-preserving, and low-risk
-- the repair separates responsibilities such as current state, history, verification, risks, exclusions, and next work
-- the repair does not require broad historical reconstruction or repo-wide formatting
-
-Flag or plan instead of editing immediately when any condition holds:
-- the line is history-heavy and its exact meaning could be changed by splitting
-- the line mixes old release history with current state in a way that needs owner review
-- the repair would touch broad unrelated sections or many files
-- the correct destination for moved content is ambiguous
-- the user explicitly limited the task to analysis only
-
-Required behavior:
-- if safe immediate repair applies, split or restructure in the same edit before claiming the touched doc is clean
-- if immediate repair is unsafe, record it as density debt, follow-up work, or a phase/patch item when material
-- do not append more content to a known God-line candidate unless no safer structure exists and the limit is stated
-
-### 22) Append-vs-restructure-and-shard gate
-
-Before appending to an existing active line, bullet, or governed design/changelog parent, check whether the append would make future diffs and reads larger than the logical change or whether the content should move into a shard instead.
-
-Required questions:
-1. Is the new content current state, history, verification, risk, or next work?
-2. Does the target line already mix more than one responsibility?
-3. Would the edit replace one huge line for a small logical change?
-4. Should the new content become a new bullet, a subsection, a changelog entry, or a history/done shard reference?
-5. Should the existing line be split before adding the new detail?
-6. Is the target a compact governed design/changelog parent authority rather than an ordinary body paragraph?
-7. Does the current folder already fully scope one chain, or is it a shared folder containing several chains?
-8. What is the actual chain subject?
-9. Should this chain use a generic parent or a semantic parent, and why?
-10. If both generic and semantic parents exist, which one is active and which one is compatibility-only?
-11. What is the current chain shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`?
-12. Does the current folder already act as the chain namespace, making a flat sibling shard safer than a redundant nested same-stem folder?
-13. Does a checked `bootstrap_exit_trigger` justify leaving `single-file-bootstrap` now?
-14. Should this detail become or update a shard rather than expanding the parent authority file again, and what is the `shard_opening_basis`?
-15. If this choice is grounded in another checked project or example, what is the observed project shape, what doctrine is being extracted, and what target form is selected here?
-16. If reachable completed phase, patch, or changelog history preserves an older rule, which active runtime/design surface is authoritative now and what part of the older wording is historical only?
-
-Required behavior:
-- if the target line is already a God-line candidate, do not append silently
-- restructure first or in the same change when the split is clear and low-risk
-- when the target is a compact governed design/changelog parent and shard choice is material, classify namespace scope, parent model choice, and chain shape before appending
-- if the folder already fully scopes one chain, a generic parent may remain the active bootstrap parent until checked triggers justify broader structure
-- if the folder is shared by several chains, prefer a self-identifying semantic parent
-- keep the chosen parent bootstrap-first when no checked `bootstrap_exit_trigger` or `shard_opening_basis` justifies opening shards yet
-- prefer local flat sibling shards when the folder already scopes the chain and only a few coherent slices are needed
-- prefer same-stem nested normalization when the chain is broad, root-heavy, multi-shard, or already showing God-file pressure
-- do not let generic and semantic active parents compete for the same chain at the same time
-- if reachable completed history still preserves older wording, name the active authority explicitly and keep the older wording historical rather than letting chronology drift decide the answer
-- flag or plan the repair when the split or shard destination is broad, meaning-risky, or authority-ambiguous
-
-### 23) Active entrypoints are maps, not storage dumps
-
-`TODO.md`, `phase/SUMMARY.md`, README current-state sections, compact design indexes, and active parent changelog indexes should help a fresh session find current work quickly.
-- keep them focused on current state, selected roadmap, active tasks, gates, shard maps, and pointers
-- when compact design/changelog parents have active shards, make the selected chain shape and shard map visible enough that later edits do not fall back into silent parent-only growth
-- move bulky same-chain detail to changelog version shards and daily/completed movement to referenced history/done surfaces
-- keep enough context to navigate without rereading full history
-
-### 24) Compact/thrash is a repair signal
-
-Autocompact thrash or immediate post-compact refill means the workflow or document shape needs review.
-- identify whether the cause is aggregate read burst, dense files, missed worker routing, God lines, oversized entrypoints, or raw output flooding
-- repair the source pattern when practical instead of inventing rigid post-compact bans
-
-### 25) Density-aware verification
-
-After non-trivial governance edits, verify future read cost as well as semantic sync.
-- check longest lines in touched active docs
-- check one-line version timeline growth
-- check active summary lines mixing current state and history
-- check whether active parent changelog entries should become mapped version detail shards
-- check README/TODO/phase/patch lines that would create large one-line diffs
-- check whether touched God-line candidates were repaired or explicitly flagged
-- check whether worker routing was used before broad raw review
-
-### 26) Governed document God-file prevention
-
-A God document is an active governance file that carries too many document roles or independent execution meanings in one place.
-
-Signals include:
-- current state, history, verification, rollback, roadmap, TODO, changelog, and design truth mixed in one active body
-- one phase or patch carrying several independent goals, outputs, gates, rollback boundaries, or capability streams
-- active README, TODO, phase summary, design, changelog, or patch updates that require large unrelated edits for a small logical change
-- repeated compaction or broad rereads caused by one active file acting as a storage dump instead of a map
-
-Required repair posture:
-- redistribute content to the owner that matches its role before appending more detail
-- use design sharding for large active target-state truth
-- use active parent changelog shard maps plus `changelog/<chain>/v*.changelog.md` for same-chain version detail overload
-- reserve `changelog/done/` for legacy, archive, completed-history, or explicit fallback history
-- use `todo/history` / `todo/done` and `phase/history` / `phase/done` for accumulated movement or completed detail
-- split God Phase and God Patch candidates by bounded goal, output, gate, rollback, or review boundary
-- repair clear low-risk touched-document overload locally; flag or open a governed phase/patch when the split is broad or meaning-risky
-
-Do not treat God-file classification as cleanup or deletion authority.
-
-### 27) Automatic God Artifact Control Loop
-
-When God-line, God-document, God-phase, God-patch, TODO, design, changelog, README, or summary pressure is found in touched governed scope, choose an action mode.
-
-Action modes:
-- `REPAIR_NOW`: clear, local, meaning-preserving, low-risk touched-scope split
-- `DELEGATE_REPAIR`: context-heavy but bounded repair assigned to an edit-capable worker
-- `PLAN_IN_CURRENT_PHASE`: real repair belongs to the active phase or implied execution slice
-- `OPEN_REPAIR_PATCH`: reviewable before/after change needs patch packaging
-- `OPEN_NEW_PHASE_OR_SUBPHASE`: distinct goal, output, gate, release, rollback, or capability boundary exists
-- `BLOCK_CLOSEOUT`: touched-scope pressure remains unresolved or unplanned
-- `ASK_ONLY_IF_AMBIGUOUS`: owner, meaning, or approval basis changes the safe path
-
-Required loop:
-1. detect the God artifact pressure
-2. classify document family, owner, risk, and repair boundary
-3. route content to the correct owner surface
-4. repair now when `REPAIR_NOW` applies
-5. otherwise create or extend the smallest visible governed repair slice
-6. verify repaired or planned state before sync, no-drift, closeout, or release-ready claims
-
-Do not ask the user to restate the repair instruction when the route is clear. Ask only when ambiguity or approval sensitivity changes the action.
-
-### 28) Delegated governed-document repair route
-
-Context-heavy God-line or God-document repair may be delegated to an edit-capable worker only when the repair is bounded, meaning-preserving, and assigned to exact artifacts or anchors.
-
-Delegated repair must not:
-- delete files or governed history
-- summarize away, reinterpret, or status-upgrade content
-- relocate content or mutate authority roles
-- lose history/done reachability or break cross-references
-- perform destructive action
-
-Route to visible planning, blocking, or ask state instead of worker edits when repair is:
-- ambiguous, history-heavy, authority-shifting, or broad
-- destructive or limited by a user analysis-only request
-
-Leader verification remains required before clean sync, no-drift, closeout, or release-ready wording
+---
 
 ---
 
@@ -487,16 +335,9 @@ Needs shared ownership, dependencies, messaging, or implementation/review/test/d
   ↓
 After worker scale decided, select best-fit visible specialist when capability fits
   ↓
-Writing active docs?
-  → YES: apply touched-doc God-line repair, append-vs-restructure-and-shard, and density checks
-  → NO: preserve checked-scope evidence boundaries
-  ↓
-God artifact pressure found in touched scope?
-  → YES: classify owner/risk, then repair now, delegate bounded repair, or create a visible repair slice
+Document-heavy repair or active-doc pressure appears?
+  → YES: apply `document-integrity.md` / `document-governance.md` first, then decide whether direct handling, audit lane, or bounded repair lane is appropriate
   → NO: continue
-  ↓
-Compact/thrash or high-density output appears?
-  → YES: diagnose source pattern and repair document/workflow shape
 ```
 
 ---
@@ -519,7 +360,7 @@ Compact/thrash or high-density output appears?
 | phase changes but the worker responsibility remains the same | reuse or steer the standing-role worker; put phase context in the assignment |
 | reuse, spawn, respawn, shutdown, or duplicate/overlap report | audit checked coordination evidence and report scoped state before deciding |
 | simultaneous same-role lanes | name lanes by responsibility, surface, or output rather than phase ID alone |
-| context-heavy God-line/God-document repair | use a bounded edit-capable repair lane only with explicit scope, edit ownership, and preservation constraints |
+| context-heavy governed-document repair | apply `document-integrity.md` / `document-governance.md` first, then use a bounded edit-capable repair lane only with explicit scope, edit ownership, and preservation constraints |
 | external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
 | broad design-improvement research | map independent topic lanes first, then dispatch one or more focused subagents before leader raw websearch absorption |
 | independent parallel research lanes | use multiple subagents when coordination need stays low and topics are meaningfully separable |
@@ -529,9 +370,6 @@ Compact/thrash or high-density output appears?
 | high edit overlap | avoid parallel edit lanes; consider read-only investigation instead |
 | visible custom agent matches selected worker capability | prefer best-fit specialist before generic fallback |
 | repeated weak handoffs or clarification churn | treat it as routing debt; improve the brief or change topology rather than adding more raw context |
-| governed design/changelog parent about to absorb new detail | run the append-vs-restructure-and-shard gate and classify chain shape before appending |
-| God artifact pressure in touched scope | choose an action mode (REPAIR_NOW, DELEGATE_REPAIR, PLAN_IN_CURRENT_PHASE, OPEN_REPAIR_PATCH, OPEN_NEW_PHASE_OR_SUBPHASE, BLOCK_CLOSEOUT, ASK_ONLY_IF_AMBIGUOUS) |
-| compact/thrash or post-compact refill | diagnose source pattern and repair document/workflow shape |
 
 ---
 
@@ -566,16 +404,9 @@ Avoid:
 - over-delegating trivial work
 - tolerating repeated weak handoffs instead of fixing the brief or switching topology
 - reading several "bounded" files without considering aggregate output size
-- appending release/history details to an already huge active line
-- noticing a low-risk touched God-line candidate but only warning while continuing to edit around it
-- treating line count as safe when characters per line are high
-- using post-compact restrictions as the main solution when document structure or worker routing is the real cause
-- turning active entrypoints into history books
-- treating `changelog/done/` as the default storage route for ordinary same-chain version detail
-- delegating ambiguous, history-heavy, authority-shifting, broad, destructive, or analysis-only repair to worker edits
-- claiming no-drift or release readiness without checking body sufficiency and density risks when relevant
+- delegating ambiguous, history-heavy, authority-shifting, broad, destructive, or analysis-only governed-document repair to worker edits before the document-owner rules say the repair is safe
 
-Better behavior: classify intent and worker scale first, delegate predictable worker-fit slices before the leader burns context, dispatch the smallest fitting lane or state the narrow direct-handling reason, select the best-fit visible specialist for the chosen capability, keep Agent Team escalation for true shared coordination, ask the question first, route broad raw evidence through workers, write docs for future reads, repair density debt when it appears, and require leader verification before completion wording.
+Better behavior: classify intent and worker scale first, delegate predictable worker-fit slices before the leader burns context, dispatch the smallest fitting lane or state the narrow direct-handling reason, select the best-fit visible specialist for the chosen capability, keep Agent Team escalation for true shared coordination, ask the question first, route broad raw evidence through workers, and require leader verification before completion wording.
 
 ---
 
@@ -584,12 +415,8 @@ Better behavior: classify intent and worker scale first, delegate predictable wo
 Related rules:
 - [safe-io.md](safe-io.md) - bounded file reading plus sharded design and changelog parent-map read order
 - [safe-io.md](safe-io.md) - bounded command output handling
-- [document-integrity.md](document-integrity.md) - TODO/phase active-entrypoint rollover
-- [document-governance.md](document-governance.md) - compact design indexes and child shards
-- [document-governance.md](document-governance.md) - active parent changelogs, chain-scoped version detail shards, fallback history boundaries
-- [document-integrity.md](document-integrity.md) - cross-reference, parent/shard links, no-drift verification
-- [document-governance.md](document-governance.md) - document roles and active runtime install scope
-- [coding-discipline.md](coding-discipline.md) - code-side analogy for God-function/God-file pressure
+- [document-integrity.md](document-integrity.md) - active-entrypoint rollover, density repair, governed-document repair safety, and no-drift verification
+- [document-governance.md](document-governance.md) - compact design/changelog parent authority, shard decisions, and active runtime install scope
 - [evidence-discipline.md](evidence-discipline.md) - keeps partial reads and worker findings evidence-bounded
 - [external-verification-and-source-trust.md](external-verification-and-source-trust.md) - source trust, corroboration, and external-evidence conflict handling for research lanes
 - [authority-and-scope.md](authority-and-scope.md) - user override for specialist choice

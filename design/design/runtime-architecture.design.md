@@ -21,8 +21,8 @@ The active runtime inventory contains 18 source-owned root rule files.
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.5` | User authority, hard-boundary precedence, and source/project ownership boundaries |
 | 5 | `coding-discipline.md` | `coding-discipline.design.md v1.1` | Maintainable code structure, verification strategy, coding/debug root-cause narrowing, and tactical-to-strategic convergence |
 | 6 | `communication-register.md` | `communication-register.design.md v1.3` | Natural professional tone, proposal evaluation, anti-over-agreement, and signal discipline |
-| 7 | `document-governance.md` | `document-governance.design.md v1.2` | Repository document roles, normalized path governance, patch governance, and UDVC-1 |
-| 8 | `document-integrity.md` | `document-integrity.design.md v1.1` | Cross-reference consistency, normalized parent/shard integrity, rollover integrity, and no-delete-by-cleanup discipline |
+| 7 | `document-governance.md` | `document-governance.design.md v1.8` | Repository document roles, parent/shard authority, append-vs-shard doctrine, patch governance, and UDVC-1 |
+| 8 | `document-integrity.md` | `document-integrity.design.md v1.6` | Cross-reference consistency, rollover integrity, document-density/God-file repair, and no-delete-by-cleanup discipline |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.2` | Verify-first factual discipline, concern-vs-conclusion discipline, scoped non-findings, and real-vs-mock boundaries |
 | 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.4` | Discussion/execution mode, visible intent read, premise separation, and next-work boundaries |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.1` | Plain-language explanation, diagram discipline, and concise action framing |
@@ -32,7 +32,7 @@ The active runtime inventory contains 18 source-owned root rule files.
 | 15 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.3` | Portable defaults, late-bound environment resolution, and source/destination notation discipline |
 | 16 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.1` | Wrapper normalization, refusal classification, minimization, and recovery paths |
 | 17 | `safe-io.md` | `safe-io.design.md v1.3` | Bounded file reading/output with parent-first and smallest-shard-first behavior |
-| 18 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.3` | Intent taxonomy, worker routing, diagnosis-first mixed-intent handling, and document-density control |
+| 18 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.9` | Intent taxonomy, worker routing, diagnosis-first mixed-intent handling, and the routing decision boundary for document-heavy work |
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-05-18 | **[Added P108 routing-core compaction and owner redistribution](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-18 | **[Added P106 chronology-aware authority routing](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-17 | **[Added P105 folder-scoped generic-parent routing refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-17 | **[Added P104 naming-aware append-vs-shard routing gate](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -22,6 +23,23 @@
 | | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added P108 routing-core compaction and owner redistribution
+
+**Date:** 2026-05-18
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `worker-routing-and-context.md` from v1.8 to v1.9.
+- Updated `design/worker-routing-and-context.design.md` from v1.8 to v1.9.
+- Removed non-routing document-density, append-vs-shard, compact/thrash, and delegated governed-document repair doctrine from the routing owner.
+- Kept routing-core behavior, routing-only document-boundary deferral, and leader-verification boundaries intact while reducing runtime size.
+
+### Summary
+`worker-routing-and-context.md` now stays focused on routing-core behavior while deferring non-routing document doctrine to the correct owners.
 
 ---
 

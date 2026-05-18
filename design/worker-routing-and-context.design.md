@@ -1,7 +1,7 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Target State
 
-`worker-routing-and-context.md` is the active runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control.
+`worker-routing-and-context.md` is the active runtime owner for leader-context protection, worker routing, custom-agent selection, and the routing decision boundary for document-heavy work.
 
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 
@@ -29,11 +29,13 @@ P105 refinement: this owner should now require append-vs-shard and handoff decis
 
 P106 refinement: this owner should now require routing and handoff decisions to name the active authority explicitly when reachable completed history still preserves older parent-model wording, so chronology does not silently override the current doctrine.
 
+P108 refinement: this owner should now keep routing-core doctrine only, defer document-density and governed-document repair doctrine to `document-integrity.md`, and defer append-vs-restructure-and-shard doctrine to `document-governance.md` so the runtime rule stays compact without losing the routing decision boundary.
+
 ---
 
 ## Scope
 
-This design owns the target-state shape for native worker routing, custom agent priority, context-load control, God-line/God-document routing, and proactive subagent-efficiency orchestration.
+This design owns the target-state shape for native worker routing, custom agent priority, context-load control, proactive subagent-efficiency orchestration, and the routing decision for whether document-heavy work stays direct, becomes an audit lane, or becomes a bounded repair lane.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 

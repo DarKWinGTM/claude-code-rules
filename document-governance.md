@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.7
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -107,6 +107,18 @@ Required guidance:
 - `archive-history-fallback` remains inactive by default and must not become the ordinary active detail namespace by momentum
 - do not create a same-stem nested shard directory merely because a parent named `design.md` or `changelog.md` exists; first check whether the current folder already scopes the chain and whether a real shard-opening basis exists
 - when a parent has active shards, it should expose the selected chain shape, shard map, append-vs-shard posture, and the checked reason why the chain no longer stays bootstrap-only
+
+### 5.2.1) Append-vs-restructure-and-shard gate
+Before appending to an active governed design/changelog parent, decide whether the detail still belongs in the parent or whether it should trigger restructuring, a new sibling/child shard, or a history/done reference instead.
+
+Required guidance:
+- classify whether the new detail is current state, history, verification, risk, or next work
+- do not append silently when the target line already mixes several responsibilities or would create a very large diff for a small logical change
+- when the target is a compact governed design/changelog parent, resolve namespace scope, actual chain subject, parent model choice, active-versus-compatibility coexistence, current chain shape, and shard-opening basis before adding more detail
+- if the folder already fully scopes one chain, generic parents such as `design/design.md` or `changelog/changelog.md` may remain active bootstrap parents until checked triggers justify broader structure
+- if the folder is shared by several chains, prefer a self-identifying semantic parent
+- keep older completed-history wording historical only when chronology conflicts; active runtime/design doctrine still controls current interpretation unless an active surface selects otherwise
+- flag or plan the repair instead of appending when the split or destination remains broad, meaning-risky, or authority-ambiguous
 
 ### 5.3) Observed project shape versus extracted doctrine versus selected target form
 When a checked project, subsystem, repo, or prior governed chain is used to justify a documentation shape, keep three meanings separate:

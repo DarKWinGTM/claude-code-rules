@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -30,6 +30,8 @@ P103 refinement: this owner should now verify that observed project shape, extra
 P104 refinement: this owner should now verify actual chain subject, selected parent filename, compatibility-parent role, bootstrap exit trigger, and shard-opening basis so generic compatibility parents and semantic active parents do not remain ambiguous competing owners.
 
 P105 refinement: this owner should now verify namespace-scope-based generic-parent selection and enforce one active parent model per chain so folder-scoped generic parents are allowed without reintroducing dual-parent ambiguity.
+
+P108 refinement: this owner should now absorb document-density, compact-thrash, God-line/God-file repair, and delegated governed-document repair doctrine that was previously duplicated inside worker-routing, while preserving preservation-first and no-delete semantics.
 
 ---
 

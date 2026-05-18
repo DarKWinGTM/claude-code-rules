@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -34,6 +34,8 @@ P104 refinement (superseded for folder-scoped single-chain namespaces by P105/P1
 P105 refinement: this owner should now allow `design/design.md` and `changelog/changelog.md` when the current folder already fully scopes one chain, while requiring exactly one active parent model per chain so generic and semantic parents do not coexist as active owners.
 
 P106 refinement: this owner should now state explicitly that P105 supersedes the older P104 master-only/generic-parent restriction for folder-scoped single-chain namespaces, while still preserving the active bootstrap-first and shard-opening discipline from the released baseline.
+
+P108 refinement: this owner should now absorb the append-vs-restructure-and-shard decision gate from worker-routing so governed parent-authority growth, shard-opening basis, and parent-model choice stay with the document-governance owner rather than the routing owner.
 
 ---
 

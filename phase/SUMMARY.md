@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.82
+> **Current Version:** 1.83
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase open; latest released wave is P107 / v10.15 explicit goal-command suggestion doctrine
+> **Status:** P108 active for v10.16 worker-routing runtime compaction and owner redistribution
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none open.
+- **P108:** [phase-108-worker-routing-runtime-compaction-and-owner-redistribution.md](phase-108-worker-routing-runtime-compaction-and-owner-redistribution.md)
+  - Goal: reduce `worker-routing-and-context.md` below the performance threshold by moving non-routing doctrine to the correct owners while preserving routing behavior.
+  - Output: worker-routing compaction, owner redistribution into document-integrity/document-governance, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.16`.
+  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
+  - Gate: compaction integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
 
 ### Most Recently Completed
 
@@ -112,9 +116,9 @@ Latest verified release state:
 
 ## Rollback / Containment
 
-If P105 is reversed after release:
-- revert the touched owner-chain folder-scoped generic-parent and single-parent-authority edits as one governed rollback release
-- restore the released `v10.12 / P104` source state as the active baseline
+If P108 is reversed after release:
+- revert the touched worker-routing/document-governance/document-integrity redistribution edits as one governed rollback release
+- restore the released `v10.15 / P107` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-18
 > **Current Release:** v10.15 / P107 explicit goal-command suggestion doctrine
-> **Active Wave:** none open
+> **Active Wave:** v10.16 / P108 worker-routing runtime compaction and owner redistribution (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -59,13 +59,16 @@
 
 ### Active / In Progress
 
-- none open.
+- [ ] P108 / v10.16 worker-routing runtime compaction and owner redistribution is in pre-release implementation.
+  - Goal: reduce `worker-routing-and-context.md` below the performance threshold by moving non-routing doctrine to the correct RULES owners while preserving routing/subagent behavior.
+  - Current state: P108 startup, redistribution edits, and companion/master-surface sync are complete in source scope; install/parity validation, release verification, and closeout are still pending.
+  - Gate: worker-routing falls below the threshold, doctrine is preserved under the correct owners, runtime install and 18/18 source/runtime parity/body sufficiency pass, and `plugin/` remains out of scope.
 
 ### Deferred / Not Selected
 
-- [ ] `memory-context-intelligence` additional-stage trial routing remains capsule-scoped and not yet selected for main RULES merge.
-  - Scope: the capsule now routes real rule experimentation to `~/.claude/rules/additional/` first instead of proposing direct main-rule mutation.
-  - Gate: only revisit main RULES merge after the additional-stage trial design is selected, tested, and proven useful enough to promote.
+- [ ] `memory-context-intelligence` phase 008 bounded intake is complete; remaining runtime implementation and promotion work stays deferred and capsule-scoped before any main RULES merge.
+  - Scope: phases 001-006 remain design concept phases; phase 007 created the isolated package scaffold under `../PLUGIN/memory-context-intelligence/`; phase 008 added bounded safe memsearch intake only; phases 009-016 define remaining runtime implementation through usable release; phases 017-018 define post-usable promotion readiness and possible main RULES merge closeout.
+  - Gate: use `~/.claude/rules/additional/` as the trial stage before any main RULES merge, but only after future runtime phases implement and verify signal extraction, topic generation, candidate emission, and live bounded trial behavior; revisit main RULES promotion only after the runtime and additional-stage trial are selected, tested, and proven useful enough to promote.
 - [ ] Master governance density rollover remains deferred.
   - Scope: large active `changelog/changelog.md` history and release-history-heavy master README/design sections.
   - Gate: open a dedicated repair phase or patch before claiming full active-entrypoint God-document cleanup.

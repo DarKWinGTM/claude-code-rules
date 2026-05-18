@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.15</b><br><sub>P107 Released</sub>
+  <b>v10.16</b><br><sub>P108 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Install verified</sub>
+  <b>Pre-release</b><br><sub>Validation pending</sub>
 </td>
 <td align="center" width="200">
-  <b>/goal</b><br><sub>Compact suggestion doctrine</sub>
+  <b>Compaction</b><br><sub>Owner redistribution</sub>
 </td>
 </tr>
 </table>
@@ -535,12 +535,12 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P107 explicit goal-command suggestion doctrine is the released `v10.15` wave.
+- P108 worker-routing runtime compaction and owner redistribution is the active `v10.16` pre-release wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It teaches when a compact advisory Claude Code `/goal` command is appropriate and when direct continuation should still win.
-  - It teaches how `/goal` suggestions are sourced from checked Goal/Output/Gate/Verification surfaces with transcript-visible proof.
-  - It preserves the released P106 chronology/adherence doctrine and keeps `/goal` suggestions advisory, high-signal, and bounded.
-  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed for `v10.15`.
+  - It reduces `worker-routing-and-context.md` below the performance threshold by moving non-routing doctrine to the correct owners.
+  - It preserves routing/topology/handoff/leader-verification behavior while redistributing document-density and append-vs-shard doctrine.
+  - It preserves the released P107 `/goal` doctrine and the released P106 chronology/adherence doctrine.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification are still pending for `v10.16`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -703,12 +703,12 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P107 / v10.15 releases the explicit goal-command suggestion doctrine wave on top of the released `v10.14 / P106` baseline.
-- Touched doctrine and design surfaces now define when a compact advisory `/goal` command is appropriate instead of direct continuation or vague next-step prose.
-- Goal/Output/Gate/Verification surfaces now translate into compact `/goal` suggestions with transcript-visible proof and bounded scope.
+- P108 / v10.16 opens the worker-routing runtime compaction and owner-redistribution wave on top of the released `v10.15 / P107` baseline.
+- Touched doctrine and design surfaces will keep routing-core behavior in `worker-routing-and-context.md` while moving non-routing document doctrine to `document-integrity.md` and `document-governance.md`.
+- `worker-routing-and-context.md` should fall below the performance threshold without turning into a stub or losing body-sufficient routing behavior.
 - P107 phase and patch records are the most recently completed released closeout artifacts, with P106 retained as the previous released baseline.
 - The untracked `plugin/` tree remains preserved and out of staged release scope.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed for `v10.15`.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification are still pending for `v10.16`.
 </div>
 
 ---
@@ -1563,8 +1563,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.13 |
-  <b>Last Updated</b>: 2026-05-17 |
+  <b>Version</b>: 10.16 |
+  <b>Last Updated</b>: 2026-05-18 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

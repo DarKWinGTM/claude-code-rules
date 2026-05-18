@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.5
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -115,6 +115,29 @@ Rollover preserves meaning. It does not authorize deletion. Not allowed: deletin
 God-file pressure is a rollover and redistribution signal: route accumulated TODO movement to `todo/history/` or `todo/done/`; route accumulated phase movement to `phase/history/` or `phase/done/`; keep active entrypoints as maps after rollover, not link-only placeholders; do not roll active target-state design truth into history/done (use design sharding or changelog history separation); preserve bidirectional references.
 
 When God-document pressure points to TODO or phase accumulation, rollover becomes an owned repair action: repair immediately when current/history/done split is clear and low-risk; create or extend a visible repair slice when rollover needs broader classification; preserve active entrypoints as compact maps after any split; keep moved history reachable through parent and shard references; block closeout when touched active entrypoints remain overloaded without a repaired or planned route. Rollover repair remains preservation work; never cleanup deletion.
+
+### 9.1) Document-density, compact-thrash, and delegated governed-document repair
+Active governed documents should stay cheap to read and edit.
+
+Required guidance:
+- keep one line or bullet focused on one concept or one tight fact group
+- split current state, history, verification, risks, exclusions, and next work when they start to mix
+- treat very long active lines as repair triggers, not disposal proof
+- when a touched area is a clear low-risk God-line candidate, repair it in the same change instead of only warning about it
+- when the split is history-heavy, authority-shifting, broad, or meaning-risky, record a visible repair slice instead of forcing an unsafe edit
+- treat compact/thrash or repeated oversized rereads as repair signals; diagnose whether the cause is dense files, oversized entrypoints, missed worker routing, or raw output flooding
+- after non-trivial governance edits, verify future read cost as well as semantic sync by checking long lines, mixed current/history summary lines, and whether touched density debt was repaired or explicitly flagged
+- delegated governed-document repair is allowed only when the repair is bounded, meaning-preserving, assigned to exact artifacts/anchors, and preserves history reachability, authority roles, and non-destructive behavior
+- if repair ambiguity, authority ambiguity, history risk, destructive risk, or analysis-only scope remains, do not delegate the edit as routine worker work
+
+Named action modes for touched-scope repair remain:
+- `REPAIR_NOW`
+- `DELEGATE_REPAIR`
+- `PLAN_IN_CURRENT_PHASE`
+- `OPEN_REPAIR_PATCH`
+- `OPEN_NEW_PHASE_OR_SUBPHASE`
+- `BLOCK_CLOSEOUT`
+- `ASK_ONLY_IF_AMBIGUOUS`
 
 ### 10) File hygiene
 
