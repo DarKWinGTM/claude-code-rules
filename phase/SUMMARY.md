@@ -3,7 +3,7 @@
 > **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P109 active for v10.17 lineage-first phase selection and subphase enforcement
+> **Status:** Released through v10.17 / P109 lineage-first phase selection and subphase enforcement; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P109:** [phase-109-lineage-first-phase-selection-and-subphase-enforcement.md](phase-109-lineage-first-phase-selection-and-subphase-enforcement.md)
-  - Goal: make phase selection lineage-first so current phase reuse and same-family subphase fit are checked before new major creation.
-  - Output: strict fall-through phase identity gate, explicit why-not-current / why-not-subphase basis, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.17`.
-  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
-  - Gate: lineage integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
+- none currently open
 
 ### Most Recently Completed
+
+- **P109:** [phase-109-lineage-first-phase-selection-and-subphase-enforcement.md](phase-109-lineage-first-phase-selection-and-subphase-enforcement.md)
+  - Output: strict fall-through phase identity gate, explicit why-not-current / why-not-subphase basis, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.17`.
+  - Gate: lineage integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.17
+  - Release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0`.
+  - Published at `2026-05-18T14:01:40Z`.
+
+### Previously Completed
 
 - **P108:** [phase-108-worker-routing-runtime-compaction-and-owner-redistribution.md](phase-108-worker-routing-runtime-compaction-and-owner-redistribution.md)
   - Output: worker-routing compaction, owner redistribution into document-integrity/document-governance, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.16`.
@@ -37,8 +42,6 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.16
   - Release tag `v10.16` resolves to commit `731624622af67e68869469d74f419d5c67a6752d`.
   - Published at `2026-05-18T05:01:02Z`.
-
-### Previously Completed
 
 - **P107:** [phase-107-explicit-goal-command-suggestion-doctrine.md](phase-107-explicit-goal-command-suggestion-doctrine.md)
   - Output: touched owner chains, companion/master-surface sync, `/goal` trigger doctrine, `/goal` output shape, `/goal` sourcing/writing doctrine, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.15`.
@@ -116,7 +119,7 @@ Latest verified release state:
 - 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
 - the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.16` was published at `2026-05-18T05:01:02Z` and release tag `v10.16` resolves to commit `731624622af67e68869469d74f419d5c67a6752d`
+- GitHub release `v10.17` was published at `2026-05-18T14:01:40Z` and release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0`
 
 ---
 

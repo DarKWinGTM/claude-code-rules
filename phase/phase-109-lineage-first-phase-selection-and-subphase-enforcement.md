@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P109
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.17
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.17
@@ -51,10 +51,10 @@ P109 exists to turn phase identity selection into an explicit decision order so 
 - [x] Open P109 phase/patch and sync active roadmap/TODO state.
 - [x] Add lineage-first phase identity enforcement to `phase-todo-artifact.md`.
 - [x] Add matching continuation/next-work enforcement to `execution-and-goal-frame.md`.
-- [x] Sync touched owner design/changelog companions plus master release surfaces to P109 pre-release state.
+- [x] Sync touched owner design/changelog companions plus master release surfaces to the P109 source-release state.
 - [x] Validate lineage enforcement integrity, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.17`, and verify release state.
-- [ ] Finalize P109 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.17`, and verify release state.
+- [x] Finalize P109 closeout records after release verification passes.
 
 ---
 
@@ -85,18 +85,17 @@ P109 exists to turn phase identity selection into an explicit decision order so 
 
 ## Current Status
 
-P109 is active in pre-release implementation for `v10.17`.
+P109 is completed and released for `v10.17`.
 
-Completed so far:
-- the current released baseline is `v10.16 / P108`
-- no active phase was open before P109 started
-- `v10.17` tag/release is absent in checked scope
-- README arrays still match the compact 18-rule runtime set
-- the untracked `plugin/` tree remains preserved as out-of-scope observed evidence
-- P109 phase/patch startup and active roadmap/TODO sync are open in source scope
-- lineage gap analysis is complete: current doctrine has the concepts, but lacks strict ordered fall-through and mandatory why-not-current / why-not-subphase checks before new major selection
+Completed delivery:
+- the current released baseline advanced from `v10.16 / P108` to `v10.17 / P109`
+- strict ordered fall-through now checks current active phase first, then existing-family subphase, then new major, then ask/record basis
+- new-major selection now requires visible why-not-current / why-not-subphase basis
+- touched runtime/design/changelog/master surfaces are synchronized in checked scope
+- README-driven runtime install passed with 18/18 source/runtime parity and source/destination body sufficiency
+- the untracked `plugin/` tree remained preserved as out-of-scope observed evidence
+- GitHub release `v10.17` is published at https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.17
+- release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0` and was published at `2026-05-18T14:01:40Z`
 
 Still pending:
-- source release commit
-- `master` push and GitHub release `v10.17` verification
-- final released-state closeout after release verification
+- none

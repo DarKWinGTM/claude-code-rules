@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.17
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -51,7 +51,7 @@ The third issue is continuation drift: phase-shaped next work can still become a
 - **Target artifact:** touched owner design/changelog companions plus `README.md`, `design/design.md`, `changelog/changelog.md`, `TODO.md`, `phase/SUMMARY.md`, P109 phase record, and this patch
 - **Change type:** release synchronization
 - **Current state:** master surfaces identify `v10.16 / P108` as the current released wave with no active phase open.
-- **Target state:** master surfaces identify `v10.17 / P109` as the active phase-lineage correction wave until release verification passes.
+- **Target state:** master surfaces identify `v10.17 / P109` as the current released phase-lineage correction wave with no active successor wave open.
 - **Review point:** keep runtime install count at 18 and keep the `plugin/` tree observed-only and out of release scope.
 
 ---
@@ -78,9 +78,13 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P109 is active and not yet released.
+P109 is completed and released.
 
-Phase/patch startup, lineage enforcement edits, touched release-surface sync, README-driven runtime install, and 18/18 source/runtime parity/body-sufficiency validation are complete from the released `v10.16 / P108` baseline. `master` push, GitHub release creation, and closeout verification are still pending.
+Phase/patch startup, lineage enforcement edits, touched release-surface sync, README-driven runtime install, 18/18 source/runtime parity/body-sufficiency validation, `master` push, GitHub release creation, and closeout verification all passed from the released `v10.16 / P108` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.17
+Release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0`.
+Published at `2026-05-18T14:01:40Z`.
 
 ---
 

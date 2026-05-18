@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-18
-> **Current Release:** v10.16 / P108 worker-routing runtime compaction and owner redistribution
-> **Active Wave:** v10.17 / P109 lineage-first phase selection and subphase enforcement (pre-release)
+> **Current Release:** v10.17 / P109 lineage-first phase selection and subphase enforcement
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P109 / v10.17 lineage-first phase selection and subphase enforcement was completed, installed, pushed, and released.
+  - Verified: strict current-phase → subphase → new-major fall-through enforcement, explicit why-not-current / why-not-subphase basis, touched companion/master-surface sync, README-driven runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.17
+  - Release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0`.
+  - Published at `2026-05-18T14:01:40Z`.
 - [x] P108 / v10.16 worker-routing runtime compaction and owner redistribution was completed, installed, pushed, and released.
   - Verified: worker-routing compaction below the performance threshold, owner redistribution into document-integrity/document-governance, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.16
@@ -64,10 +69,7 @@
 
 ### Active / In Progress
 
-- [ ] P109 / v10.17 lineage-first phase selection and subphase enforcement is in pre-release release-lane verification.
-  - Goal: make phase selection lineage-first so AI checks current phase reuse first, then same-family subphase fit, and only opens a new major phase when a distinct boundary is proven.
-  - Current state: P109 startup, lineage-enforcement edits, touched companion/master-surface sync, README-driven runtime install, and 18/18 source/runtime parity/body-sufficiency validation are complete in source scope; `master` push, GitHub release verification, and released-state closeout are still pending.
-  - Gate: current phase → subphase → new major becomes strict fall-through order, new-major selection requires why-not-current / why-not-subphase basis, runtime install and 18/18 source/runtime parity/body sufficiency pass, and `plugin/` remains out of scope.
+- none currently open
 
 ### Deferred / Not Selected
 
