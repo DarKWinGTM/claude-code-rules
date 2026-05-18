@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.80
+> **Current Version:** 1.81
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase open; latest released wave is P106 / v10.14 parent-model supersession and adherence validation
+> **Status:** P107 active for v10.15 explicit goal-command suggestion doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none open.
+- **P107:** [phase-107-explicit-goal-command-suggestion-doctrine.md](phase-107-explicit-goal-command-suggestion-doctrine.md)
+  - Goal: teach AI when to suggest a compact `/goal` command instead of continuing directly or giving vague next-step prose.
+  - Output: touched owner chains, companion/master-surface sync, `/goal` trigger doctrine, `/goal` output shape, `/goal` sourcing/writing doctrine, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.15`.
+  - Scope: main RULES doctrine only; keep `plugin/` observed-only and out of staged release scope.
+  - Gate: doctrine integrity, README arrays 18/18, runtime install/parity/body sufficiency, push, and GitHub release verification pass.
 
 ### Most Recently Completed
 

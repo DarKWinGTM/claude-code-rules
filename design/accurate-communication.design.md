@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.25
+> **Current Version:** 2.26
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -230,6 +230,7 @@ Required guidance:
 - defer those ending/action/proposal semantics to `explanation-and-presentation.md`
 - avoid leaving duplicate active authority for summary signal density, recommendation framing, alternative preservation, or advisory proposal wording in this chain
 - keep continuation-first execution wording here only as long as it remains part of the broader communication-owner set rather than the specialized closing owner
+- if an advisory `/goal` command is suggested, keep this chain limited to evidence-calibrated wording, transcript-visible proof discipline, and advisory-vs-selected-execution boundary rather than owning the command shape itself
 
 ### 3.7.1 Continuation-First Execution Principle
 When the assistant is still inside the user’s active requested work and can safely continue without clarification, approval, or a stronger rule-owned gate, it should continue execution rather than pause merely to narrate progress, expose optional next steps, or ask the user to choose among continuations that are not materially different.

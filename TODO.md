@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-18
 > **Current Release:** v10.14 / P106 parent-model supersession and adherence validation
-> **Active Wave:** none open
+> **Active Wave:** v10.15 / P107 explicit goal-command suggestion doctrine (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -54,10 +54,16 @@
 
 ### Active / In Progress
 
-- none open.
+- [ ] P107 / v10.15 explicit goal-command suggestion doctrine is in pre-release implementation.
+  - Goal: make AI suggest compact, high-signal `/goal` commands only when a bounded successor objective is clear, measurable, provable in transcript, and better surfaced as an advisory command than as direct continuation.
+  - Current state: P107 startup, `/goal` trigger doctrine, command-shape doctrine, sourcing/writing doctrine, and install/parity validation are complete in source scope; release verification and closeout are still pending.
+  - Gate: touched doctrine owners, companion/master surfaces, runtime install, 18/18 source/runtime parity, push, and GitHub release verification all pass without touching the out-of-scope `plugin/` tree.
 
 ### Deferred / Not Selected
 
+- [ ] `memory-context-intelligence` additional-stage trial routing remains capsule-scoped and not yet selected for main RULES merge.
+  - Scope: the capsule now routes real rule experimentation to `~/.claude/rules/additional/` first instead of proposing direct main-rule mutation.
+  - Gate: only revisit main RULES merge after the additional-stage trial design is selected, tested, and proven useful enough to promote.
 - [ ] Master governance density rollover remains deferred.
   - Scope: large active `changelog/changelog.md` history and release-history-heavy master README/design sections.
   - Gate: open a dedicated repair phase or patch before claiming full active-entrypoint God-document cleanup.

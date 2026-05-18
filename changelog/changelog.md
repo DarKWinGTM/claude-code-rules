@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.14
+> **Current Version:** 10.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.15 | 2026-05-18 | **[Added explicit goal-command suggestion doctrine (pre-release)](changelog/v10.15-added-explicit-goal-command-suggestion-doctrine.changelog.md#version-1015)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.14 | 2026-05-18 | **[Released parent-model supersession and adherence validation](changelog/v10.14-added-parent-model-supersession-and-adherence-validation.changelog.md#version-1014)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.13 | 2026-05-17 | **[Released folder-scoped generic parent and single-parent authority](changelog/v10.13-added-folder-scoped-generic-parent-and-single-parent-authority.changelog.md#version-1013)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.12 | 2026-05-17 | **[Released semantic parent naming and bootstrap-first design normalization](changelog/v10.12-added-semantic-parent-naming-and-bootstrap-first-normalization.changelog.md#version-1012)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

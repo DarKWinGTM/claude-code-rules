@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.1
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.2
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -242,6 +242,16 @@ When the main answer is intentionally easy-first and compact but deeper explanat
 - omit it when the answer is trivial, already detailed enough, or active execution should simply continue
 - keep it short so it does not dilute the main answer
 
+### 8.1) Advisory `/goal` suggestion shape
+When checked next-goal doctrine says a compact command would help more than prose alone, the assistant may emit one advisory `Suggested /goal:` block.
+
+Required guidance:
+- keep the command compact and copy-pasteable
+- build it from one measurable outcome, transcript-visible proof/checks, bounded scope, hard guardrails, and an optional stop bound
+- do not turn it into a mini-spec dump or background essay
+- do not emit several competing `/goal` commands when the real decision surface is still open
+- if the command would be too broad, too long, or too weakly provable, fall back to ordinary recommendation wording instead
+
 ### 9) Preferred closing shapes
 ```text
 Phase-backed closeout:
@@ -268,6 +278,9 @@ Proposal: <future work>
 Goal: <target outcome>
 Output: <expected result>
 Success condition: <how done is judged>
+
+Suggested /goal:
+/goal Done when <single measurable outcome>. Prove with: <checks surfaced in transcript>. Scope: <bounded files/dirs/spec refs>. Keep: <hard constraints only>. Stop after <N turns/time>.
 
 Optional deep dive:
 ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง <specific topic> ต่อได้.

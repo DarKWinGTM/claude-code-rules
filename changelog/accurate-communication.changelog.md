@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.25
+> **Current Version:** 2.26
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.26 | 2026-05-18 | **[Added P107 advisory `/goal` wording guard](#version-226)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.25 | 2026-05-17 | **[Added P101 premise-separation wording refinement](#version-225)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.24 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-224)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.23 | 2026-05-16 | **[Added intent-read and root-cause wording refinement](#version-223)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
@@ -67,6 +68,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-226"></a>
+## Version 2.26: Added P107 advisory `/goal` wording guard
+
+**Date:** 2026-05-18
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.25 to v2.26.
+- Updated `design/accurate-communication.design.md` from v2.25 to v2.26.
+- Added explicit guidance that any `/goal` suggestion must remain visibly advisory and rely on proof/checks that can be surfaced in conversation.
+- Preserved evidence-calibrated recommendation wording and continuation-first behavior.
+
+### Summary
+`accurate-communication.md` now carries the P107 wording guard so `/goal` suggestions stay advisory, evidence-backed, and transcript-aware.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-18 | **[Added P107 high-signal `/goal` pruning refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P101 premise-separation refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
@@ -33,6 +34,22 @@
 
 ### Summary
 `communication-register.md` now carries the P101 premise-separation refinement while preserving its tone, pruning, and anti-over-agreement boundary.
+
+---
+<a id="version-14"></a>
+## Version 1.4: Added P107 high-signal `/goal` pruning refinement
+
+**Date:** 2026-05-18
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.3 to v1.4.
+- Updated `design/communication-register.design.md` from v1.3 to v1.4.
+- Added pruning guidance so one compact advisory `/goal` command can survive when useful while repetitive rationale and decorative alternatives are removed.
+- Preserved the natural professional baseline, signal pruning, truth-over-pleasing, and proposal-evaluation boundaries.
+
+### Summary
+`communication-register.md` now carries the P107 pruning refinement so `/goal` suggestions stay compact, useful, and non-ritualized.
 
 ---
 <a id="version-12"></a>

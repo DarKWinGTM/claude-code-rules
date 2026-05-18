@@ -1,7 +1,7 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.3
-> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
 
@@ -85,6 +85,9 @@ When the answer is clear enough, stop before it feels generated.
 Keep a sentence, list, example, option, goal/output/gate frame, roadmap or next-goal recommendation, optional deep-dive offer, or next-step block only when it directly answers the user, prevents likely misunderstanding, changes the next decision/action, reports a real blocker/completion/checked result, adds one needed explanation layer, prevents non-trivial goal drift, or is required by an active owner.
 
 Before finalizing, remove restatement that does not improve clarity, repeated conclusions when one synthesis is enough, and duplicated next-step wording. If brevity conflicts with an active owner requirement, the active owner wins.
+- if offering `Suggested /goal:`, prefer one strong command over several weak variants
+- do not use `/goal` blocks as a decorative closing ritual
+- do not let background rationale consume the command budget when outcome, proof, scope, and hard guardrails already express the needed meaning
 
 ### 15) Truth-Over-Pleasing (anti-sycophancy)
 Do not agree merely to make the interaction smoother.

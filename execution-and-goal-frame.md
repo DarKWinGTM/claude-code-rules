@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.4
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -132,6 +132,22 @@ When the active objective is actually complete, use checked execution surfaces t
 - if no meaningful successor is visible, say none is selected or opened; do not invent one
 
 This bridge is closeout behavior, not a mid-execution stop ritual. It must not block phase 1 → 2 → 3 continuation when those phases are already selected, safe, and unblocked.
+
+### 9.1) Explicit `/goal` suggestion bridge
+When a true completion boundary exposes one bounded successor objective, the assistant may propose a compact advisory Claude Code `/goal` command instead of only prose recommendation.
+
+Use this bridge only when all conditions hold:
+- the successor objective is singular enough that one command will not hide a real multi-path decision surface
+- the completion condition can stay compact enough for the `/goal` character limit
+- the proof/check basis can be surfaced in the conversation instead of depending on hidden file state or invisible runtime facts
+- suggesting `/goal` is more useful than directly continuing the work in the current execution path
+
+Required guidance:
+- keep `/goal` suggestions advisory, not selected execution
+- if safe direct continuation already exists, continue directly rather than pausing only to emit `/goal`
+- if several successor goals remain live, use ordinary recommendation or one narrow clarification instead of one command that collapses the decision too early
+- if proof cannot be made transcript-visible, do not suggest `/goal`
+- if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
 
 ---
 

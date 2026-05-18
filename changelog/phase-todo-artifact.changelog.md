@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-05-18 | **[Added P107 `/goal` sourcing from governed surfaces](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-17 | **[Added P105 namespace-scope and single-parent docs-analysis refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-17 | **[Added P104 docs-analysis naming and bootstrap refinement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-17 | **[Added P103 docs-analysis evidence-layer refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -20,6 +21,23 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added P107 `/goal` sourcing from governed surfaces
+
+**Date:** 2026-05-18
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.7 to v1.8.
+- Updated `design/phase-todo-artifact.design.md` from v1.7 to v1.8.
+- Added explicit translation guidance from Goal/Output/Gate/Verification surfaces into compact advisory `/goal` commands.
+- Preserved the existing durable tracking and phase/TODO execution-surface model without introducing a new schema.
+
+### Summary
+`phase-todo-artifact.md` now carries the P107 sourcing refinement so compact advisory `/goal` suggestions are grounded in checked governed execution surfaces.
 
 ---
 

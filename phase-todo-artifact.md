@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.7
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -223,6 +223,21 @@ Roadmap entries should expose:
 
 Roadmap entries are planning context, not automatic execution authority.
 After a phase-backed objective closes, inspect checked roadmap and goal surfaces before ending closeout. If future work is meaningful, name the best-supported next phase/wave/goal with why, expected output, and gate.
+
+### 6.1) `/goal` suggestion sourcing from governed surfaces
+When another owner has already decided that an advisory `/goal` command is the right next-step shape, source the command from checked governed execution surfaces rather than from improvised prose.
+
+Use this translation model:
+- `Done when` ← current goal plus expected output
+- `Prove with` ← completion gate plus verification basis that can be surfaced in transcript
+- `Scope` ← touched artifacts, lane boundary, or bounded execution slice
+- `Keep` ← out-of-scope boundary plus preserve-semantics constraints that materially matter
+- `Stop after` ← bounded execution guard when runaway continuation risk matters
+
+Required guidance:
+- do not invent a new durable tracking schema only for `/goal`
+- do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
+- if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command
 
 ### 7) Patch linkage inside phase
 When phased work uses a governed patch artifact:

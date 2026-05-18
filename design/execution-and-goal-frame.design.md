@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -28,6 +28,8 @@ P099 refinement: this owner must now also preserve broad-objective decomposition
 P100 refinement: this owner may remove non-mechanism meta-evaluation text and tighten repeated continuation wording, but it must keep mode selection, intent recheck, visible intent read, selective clarification, goal/output/gate framing, next-lane continuation, and the worker-routing bridge explicit.
 
 P101 refinement: this owner should now preserve the active goal while holding unverified proposal premises as candidate paths and retire stale premises after user correction before continuation.
+
+P107 refinement: this owner should now make explicit when a supported next-goal recommendation may be translated into an advisory Claude Code `/goal` command, while keeping direct continuation as the default when the next slice is already safe and implied.
 
 ---
 

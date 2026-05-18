@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -26,6 +26,8 @@ P098 refinement: this owner must now also preserve target-state doctrine for nat
 P100 refinement: this owner may compress repeated examples and inclusion/pruning prose, but it must keep the natural professional baseline, high-signal pruning, truth-over-pleasing, proposal-evaluation-before-agreement, and evidence-calibrated correction behavior explicit.
 
 P101 refinement: this owner should now separate concern, factual claim, proposal, and assistant next action before endorsement or continuation so truth-over-pleasing remains operational rather than only tonal.
+
+P107 refinement: this owner should now preserve a high-signal pruning boundary for advisory `/goal` suggestions so one compact command can survive when useful, while background rationale and decorative alternatives are pruned away.
 
 ---
 
