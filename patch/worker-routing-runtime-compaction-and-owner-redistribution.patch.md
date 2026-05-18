@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.16
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -81,15 +81,21 @@ Required checks before release closeout:
 - `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set.
 - The untracked `plugin/` tree remains outside staged release scope.
 - Git diff has no whitespace errors.
-- GitHub release `v10.16` must be created and verified before closeout wording claims release completion.
+- GitHub release `v10.16` was created and verified before closeout wording claimed release completion.
 
 ---
 
 ## Implementation Status
 
-P108 is active and not yet released.
+P108 is released as `v10.16`.
 
-Phase/patch startup, redistribution edits, and companion/master-surface sync are complete from the released `v10.15 / P107` baseline. Runtime install/parity validation, push, GitHub release creation, and closeout verification are still pending.
+Phase/patch startup, redistribution edits, companion/master-surface sync, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed from the released `v10.15 / P107` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.16
+
+Release tag `v10.16` resolves to commit `731624622af67e68869469d74f419d5c67a6752d`.
+
+Published at `2026-05-18T05:01:02Z`.
 
 ---
 

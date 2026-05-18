@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P108
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Release:** v10.16
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.16
@@ -50,10 +50,10 @@ P108 exists to compact the worker-routing runtime rule without deleting meaning:
 - [x] Confirm the untracked `plugin/` tree remains preserved and out of scope.
 - [x] Open P108 phase/patch and sync active roadmap/TODO state.
 - [x] Move non-routing doctrine out of `worker-routing-and-context.md` and compact its runtime body.
-- [x] Sync touched owner design/changelog companions plus master release surfaces to P108 pre-release state.
-- [ ] Validate redistribution integrity, runtime install, and 18/18 parity/body sufficiency.
-- [ ] Commit source release, push `master`, create GitHub release `v10.16`, and verify release state.
-- [ ] Finalize P108 closeout records after release verification passes.
+- [x] Sync touched owner design/changelog companions plus master release surfaces for the P108 release path.
+- [x] Validate redistribution integrity, runtime install, and 18/18 parity/body sufficiency.
+- [x] Commit source release, push `master`, create GitHub release `v10.16`, and verify release state.
+- [x] Finalize P108 closeout records after release verification passes.
 
 ---
 
@@ -84,18 +84,19 @@ P108 exists to compact the worker-routing runtime rule without deleting meaning:
 
 ## Current Status
 
-P108 is active in pre-release implementation for `v10.16`.
+P108 is released as `v10.16`.
 
-Completed so far:
-- the current released baseline is `v10.15 / P107`
+Release verification summary:
+- the current released baseline before the wave was opened was `v10.15 / P107`
 - no active phase was open before P108 started
-- `v10.16` tag/release is absent in checked scope
-- README arrays still match the compact 18-rule runtime set
-- the untracked `plugin/` tree remains preserved as out-of-scope observed evidence
-- P108 phase/patch startup and active roadmap/TODO sync are open in source scope
-- redistribution mapping has been identified: routing-core remains in `worker-routing-and-context.md`, non-routing document-repair doctrine moves to `document-integrity.md`, and append-vs-shard authority-shape doctrine moves to `document-governance.md`
-
-Still pending:
-- runtime install and 18/18 source/runtime parity/body-sufficiency recheck
-- git diff/whitespace review, commit, push, and GitHub release verification
-- final closeout after release verification
+- `v10.16` tag/release was absent in checked scope before release work began
+- README arrays still matched the compact 18-rule runtime set
+- the untracked `plugin/` tree remained preserved as out-of-scope observed evidence
+- P108 phase/patch/changelog startup and active roadmap/TODO sync completed in source scope
+- routing-core compaction and owner redistribution completed in source scope
+- runtime install plus 18/18 source/runtime parity and source/destination body sufficiency passed locally
+- `git diff --check` passed with no whitespace errors
+- `master` push passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.16
+- Release tag `v10.16` resolves to commit `731624622af67e68869469d74f419d5c67a6752d`
+- Published at `2026-05-18T05:01:02Z`.

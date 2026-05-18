@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.16</b><br><sub>P108 Active</sub>
+  <b>v10.16</b><br><sub>P108 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Validation pending</sub>
+  <b>Released</b><br><sub>Install verified</sub>
 </td>
 <td align="center" width="200">
   <b>Compaction</b><br><sub>Owner redistribution</sub>
@@ -535,12 +535,12 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P108 worker-routing runtime compaction and owner redistribution is the active `v10.16` pre-release wave.
+- P108 worker-routing runtime compaction and owner redistribution is the released `v10.16` wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
   - It reduces `worker-routing-and-context.md` below the performance threshold by moving non-routing doctrine to the correct owners.
   - It preserves routing/topology/handoff/leader-verification behavior while redistributing document-density and append-vs-shard doctrine.
   - It preserves the released P107 `/goal` doctrine and the released P106 chronology/adherence doctrine.
-  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification are still pending for `v10.16`.
+  - Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed for `v10.16`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -703,12 +703,12 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P108 / v10.16 opens the worker-routing runtime compaction and owner-redistribution wave on top of the released `v10.15 / P107` baseline.
-- Touched doctrine and design surfaces will keep routing-core behavior in `worker-routing-and-context.md` while moving non-routing document doctrine to `document-integrity.md` and `document-governance.md`.
-- `worker-routing-and-context.md` should fall below the performance threshold without turning into a stub or losing body-sufficient routing behavior.
-- P107 phase and patch records are the most recently completed released closeout artifacts, with P106 retained as the previous released baseline.
+- P108 / v10.16 releases the worker-routing runtime compaction and owner-redistribution wave on top of the released `v10.15 / P107` baseline.
+- Touched doctrine and design surfaces now keep routing-core behavior in `worker-routing-and-context.md` while moving non-routing document doctrine to `document-integrity.md` and `document-governance.md`.
+- `worker-routing-and-context.md` is below the performance threshold while remaining body-sufficient for active runtime use.
+- P108 phase and patch records are the most recently completed released closeout artifacts, with P107 retained as the previous released baseline.
 - The untracked `plugin/` tree remains preserved and out of staged release scope.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification are still pending for `v10.16`.
+- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed for `v10.16`.
 </div>
 
 ---
@@ -1440,7 +1440,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.15 / P107` wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed in checked scope.
+- Source state: this README reflects the released `v10.16 / P108` wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification all passed in checked scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

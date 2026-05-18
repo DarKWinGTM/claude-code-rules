@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-18
-> **Current Release:** v10.15 / P107 explicit goal-command suggestion doctrine
-> **Active Wave:** v10.16 / P108 worker-routing runtime compaction and owner redistribution (pre-release)
+> **Current Release:** v10.16 / P108 worker-routing runtime compaction and owner redistribution
+> **Active Wave:** none open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P108 / v10.16 worker-routing runtime compaction and owner redistribution was completed, installed, pushed, and released.
+  - Verified: worker-routing compaction below the performance threshold, owner redistribution into document-integrity/document-governance, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.16
+  - Release tag `v10.16` resolves to commit `731624622af67e68869469d74f419d5c67a6752d`.
+  - Published at `2026-05-18T05:01:02Z`.
 - [x] P107 / v10.15 explicit goal-command suggestion doctrine was completed, installed, pushed, and released.
   - Verified: `/goal` trigger doctrine, compact `/goal` output shape, `/goal` sourcing/writing doctrine, advisory/pruning guards, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.15
@@ -59,10 +64,7 @@
 
 ### Active / In Progress
 
-- [ ] P108 / v10.16 worker-routing runtime compaction and owner redistribution is in pre-release implementation.
-  - Goal: reduce `worker-routing-and-context.md` below the performance threshold by moving non-routing doctrine to the correct RULES owners while preserving routing/subagent behavior.
-  - Current state: P108 startup, redistribution edits, and companion/master-surface sync are complete in source scope; install/parity validation, release verification, and closeout are still pending.
-  - Gate: worker-routing falls below the threshold, doctrine is preserved under the correct owners, runtime install and 18/18 source/runtime parity/body sufficiency pass, and `plugin/` remains out of scope.
+- none open.
 
 ### Deferred / Not Selected
 
