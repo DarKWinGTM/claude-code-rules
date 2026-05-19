@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P112
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.20
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.20
@@ -56,8 +56,8 @@ P112 exists to upgrade the playground from rule-complete baseline into a more re
 - [x] Sync touched README/design/changelog/TODO/phase/patch/playground surfaces to the P112 source-release state.
 - [x] Verify all updated observed cases remain factual, scoped, and anchored to exact transcript paths plus search hints.
 - [x] Verify `playground/` remains outside the runtime install payload and `git diff --check` passes.
-- [ ] Commit source release, push `master`, create GitHub release `v10.20`, and verify release state.
-- [ ] Finalize P112 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.20`, and verify release state.
+- [x] Finalize P112 closeout records after release verification passes.
 
 ---
 
@@ -86,15 +86,16 @@ P112 exists to upgrade the playground from rule-complete baseline into a more re
 
 ## Current Status
 
-P112 is active in source-release verification for `v10.20`.
+P112 is completed and released for `v10.20`.
 
-Completed so far:
-- released baseline is `v10.19 / P111`
-- `v10.20` is absent in checked scope before this wave opened
-- the candidate transcript anchors and realism critique were reviewed in checked scope
-- the selected upgrade direction is to use transcript-grounded observed cases, richer multi-turn traces, and stronger flow explanations
-- playground owner files now include transcript-grounded observed entries, richer multi-turn traces, and two justified new scenario families
-- install-boundary proof now confirms `playground/` stays outside the runtime payload while source/runtime parity and body sufficiency remain `18/18`
+Completed delivery:
+- the current released baseline advanced from `v10.19 / P111` to `v10.20 / P112`
+- the grounded `playground/` upgrade now includes transcript-derived observed entries with exact checked transcript paths plus anchor hints
+- the updated scenario set now uses richer multi-turn traces, stronger flow explanations, and two grounded new scenario families for completion-claim audit and workflow-blocked visual QA
+- README pointer-only integration keeps the playground out of the runtime install payload while the active runtime set remains 18
+- project-local install proof passed with 18/18 parity/body sufficiency and `playground/` remained outside `.claude/rules/`
+- GitHub release `v10.20` is published at https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.20
+- release tag `v10.20` resolves to commit `4851338417501a391e7dc505d0b049d7fb6209db` and was published at `2026-05-19T03:51:01Z`
 
 Still pending:
-- commit / push / GitHub release verification and final closeout are not yet complete
+- none

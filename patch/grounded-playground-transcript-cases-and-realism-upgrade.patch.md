@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.20
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -89,9 +89,13 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P112 is active and not yet released.
+P112 is completed and released.
 
-Wave startup is complete from the released `v10.19 / P111` baseline. Transcript-anchor verification, template/matrix realism upgrade, updated observed/case surfaces, touched playground/design sync, and runtime-boundary verification are now complete in checked source scope. Commit / push / GitHub release verification and final closeout are still pending.
+Wave startup, transcript-anchor verification, template/matrix realism upgrade, updated observed/case surfaces, touched playground/design sync, runtime-boundary verification, source-release commit, `master` push, GitHub release creation, and closeout verification all passed from the released `v10.19 / P111` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.20
+Release tag `v10.20` resolves to commit `4851338417501a391e7dc505d0b049d7fb6209db`.
+Published at `2026-05-19T03:51:01Z`.
 
 ---
 

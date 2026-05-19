@@ -3,7 +3,7 @@
 > **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P112 active for v10.20 grounded playground transcript cases and realism upgrade
+> **Status:** Released through v10.20 / P112 grounded playground transcript cases and realism upgrade; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,11 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P112:** [phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md](phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md)
-  - Output: transcript-grounded observed log updates, richer multi-turn playground case traces, two new grounded scenario families, touched playground/design sync, runtime install parity/body sufficiency proof, and pending source-release closeout for `v10.20`.
-  - Gate: source edits, transcript anchors, install-boundary verification, `git diff --check`, `master` push, and GitHub release `v10.20` verification.
+- none currently open
 
 ### Most Recently Completed
+
+- **P112:** [phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md](phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md)
+  - Output: transcript-grounded observed log updates, richer multi-turn playground case traces, two grounded new scenario families, touched playground/design sync, runtime install parity/body sufficiency proof, push, and GitHub release `v10.20`.
+  - Gate: transcript-anchor integrity, realism-trace integrity, non-runtime playground boundary, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.20
+  - Release tag `v10.20` resolves to commit `4851338417501a391e7dc505d0b049d7fb6209db`.
+  - Published at `2026-05-19T03:51:01Z`.
 
 - **P111:** [phase-111-rules-playground-behavior-scenarios.md](phase-111-rules-playground-behavior-scenarios.md)
   - Output: playground architecture design, playground index/coverage/matrix/template/observed files, 10 scenario-family case files with prompt/response examples and flow diagrams, README pointer-only integration, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.19`.

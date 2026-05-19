@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.20 | 2026-05-19 | **[Pre-release grounded playground transcript cases and realism upgrade](changelog/v10.20-added-grounded-playground-transcript-cases-and-realism-upgrade.changelog.md#version-1020)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.20 | 2026-05-19 | **[Released grounded playground transcript cases and realism upgrade](changelog/v10.20-added-grounded-playground-transcript-cases-and-realism-upgrade.changelog.md#version-1020)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.19 | 2026-05-19 | **[Released RULES playground family behavior scenarios](changelog/v10.19-added-rules-playground-behavior-scenarios.changelog.md#version-1019)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.18 | 2026-05-19 | **[Released project-local Claude Code install architecture and explanation clarity doctrine](changelog/v10.18-added-project-local-claude-code-remote-install-helpers.changelog.md#version-1018)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.17 | 2026-05-18 | **[Released lineage-first phase selection and subphase enforcement](changelog/v10.17-added-lineage-first-phase-selection-and-subphase-enforcement.changelog.md#version-1017)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.20</b><br><sub>P112 Active</sub>
+  <b>v10.20</b><br><sub>P112 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Source proof pending</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Playground</b><br><sub>Rule behavior cases</sub>
@@ -195,10 +195,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P112 grounded playground transcript cases and realism upgrade is the active `v10.20` pre-release wave.
+- P112 grounded playground transcript cases and realism upgrade is released as `v10.20`.
   - It upgrades `playground/` with transcript-derived observed cases from real Claude Code sessions on this machine.
   - It expands scenario realism with richer multi-turn prompt/response traces, blockers, partial evidence, retries, and user corrections.
-  - It may add new scenario families when checked transcript evidence supports them, while keeping fact/observed/virtual separation explicit.
+  - It adds two grounded scenario families for status-ladder completion audits and workflow-blocked visual QA where checked transcript evidence supports the split.
   - It keeps the active runtime install set at 18 and leaves `playground/` outside the installer payload.
   - It keeps README integration pointer-level only instead of turning README into the scenario owner.
 - P073 source compression completed and audited
@@ -1114,7 +1114,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active `v10.20 / P112` pre-release wave; the grounded playground realism upgrade is being opened while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.20 / P112` grounded playground realism upgrade while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

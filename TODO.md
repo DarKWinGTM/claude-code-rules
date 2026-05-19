@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-19
-> **Current Release:** v10.19 / P111 RULES playground family behavior scenarios
-> **Active Wave:** v10.20 / P112 grounded playground transcript cases and realism upgrade (pre-release)
+> **Current Release:** v10.20 / P112 grounded playground transcript cases and realism upgrade
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P112 / v10.20 grounded playground transcript cases and realism upgrade was completed, installed, pushed, and released.
+  - Verified: transcript-grounded observed entries with exact checked transcript paths plus anchor hints, richer multi-turn scenario traces, stronger flow explanations, two grounded new scenario families, README pointer-level integration, project-local 18/18 source/runtime parity, source/destination body sufficiency, `playground/` excluded from `.claude/rules/`, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.20
+  - Release tag `v10.20` resolves to commit `4851338417501a391e7dc505d0b049d7fb6209db`.
+  - Published at `2026-05-19T03:51:01Z`.
 - [x] P111 / v10.19 RULES playground family behavior scenarios was completed, installed, pushed, and released.
   - Verified: governed non-runtime playground family baseline, 10 scenario-family case files, prompt/response examples, lightweight flow diagrams, full 18-rule coverage map, virtual-case matrix, README pointer-level integration, project-local 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.19

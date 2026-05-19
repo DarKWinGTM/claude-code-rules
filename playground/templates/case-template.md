@@ -79,7 +79,7 @@ Preferred shape:
 - keep the dialogue compatible with the checked rule behavior and observed evidence boundary
 
 ### Dialogue label
-`virtual` / `transcript-grounded` / `mixed`
+Use one short boundary-visible label such as `virtual`, `transcript-grounded`, `mixed`, or a slightly longer descriptive form when it still makes the evidence boundary explicit.
 
 ### Turn 1 — User
 `<prompt>`
