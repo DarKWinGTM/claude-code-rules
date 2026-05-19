@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-19
-> **Current Release:** v10.18 / P110 project-local Claude Code install architecture and explanation clarity doctrine
-> **Active Wave:** v10.19 / P111 RULES playground family behavior scenarios (pre-release)
+> **Current Release:** v10.19 / P111 RULES playground family behavior scenarios
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P111 / v10.19 RULES playground family behavior scenarios was completed, installed, pushed, and released.
+  - Verified: governed non-runtime playground family baseline, 10 scenario-family case files, prompt/response examples, lightweight flow diagrams, full 18-rule coverage map, virtual-case matrix, README pointer-level integration, project-local 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.19
+  - Release tag `v10.19` resolves to commit `e3e0bdfe255c2370085abcfebbb25a6544de9a1b`.
+  - Published at `2026-05-19T01:39:59Z`.
 - [x] P110 / v10.18 project-local Claude Code install architecture and explanation clarity doctrine was completed, installed, pushed, and released.
   - Verified: launcher-first clone → project install UX, helper execution layer preservation, dedicated installer architecture design, meaning-first identifier explanation doctrine updates, launcher-driven Bash/PowerShell install proof, project-local 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.18
@@ -85,10 +90,6 @@
 
 ### Active / In Progress
 
-- [ ] P111 / v10.19 RULES playground family behavior scenarios is in pre-release source-ready state.
-  - Goal: add a governed `playground/` family that shows how current RULES change AI behavior in practice, with 10 scenario families, a rule-coverage matrix, a virtual-case matrix, and an ongoing observed-case update path.
-  - Current state: playground architecture design, playground family files, prompt/response example dialogues, flow diagrams, README pointer-level integration, touched master-surface sync, project-local install proof, and `git diff --check` are complete in checked source scope; release selection is not part of this source-release step.
-  - Gate: each case separates `rule-enforced fact`, `observed case`, and `virtual variant`; all 18 active runtime rules are mapped to at least one scenario family; the virtual matrix covers several decision axes; `playground/` stays outside the runtime install payload; the active runtime set remains 18.
 
 ### Deferred / Not Selected
 

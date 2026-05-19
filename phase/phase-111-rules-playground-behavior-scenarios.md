@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P111
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.19
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.19
@@ -59,8 +59,8 @@ P111 exists to open a governed non-runtime family that demonstrates RULES behavi
 - [x] Verify all 18 runtime rules are covered by at least one scenario family.
 - [x] Verify each scenario visibly separates `rule-enforced fact`, `observed case`, and `virtual variant`.
 - [x] Verify `playground/` remains outside the runtime install payload and `git diff --check` passes.
-- [ ] Commit source release, push `master`, create GitHub release `v10.19`, and verify release state.
-- [ ] Finalize P111 closeout records after release verification passes.
+- [x] Commit source release, push `master`, create GitHub release `v10.19`, and verify release state.
+- [x] Finalize P111 closeout records after release verification passes.
 
 ---
 
@@ -91,16 +91,16 @@ P111 exists to open a governed non-runtime family that demonstrates RULES behavi
 
 ## Current Status
 
-P111 is active in pre-release source-ready state for `v10.19`.
+P111 is completed and released for `v10.19`.
 
-Completed so far:
-- released baseline is `v10.18 / P110`
-- `v10.19` is absent in checked scope before this wave opened
-- `phase-111*` is absent in checked scope before this wave opened
-- the grounded scenario model and governed-family direction are selected from checked current rules
-- playground architecture design, family files, prompt/response examples, flow diagrams, coverage matrix, and virtual matrix are complete in checked source scope
-- project-local install proof passed while keeping `playground/` outside the runtime install payload
-- `git diff --check` passed in checked source scope
+Completed delivery:
+- the current released baseline advanced from `v10.18 / P110` to `v10.19 / P111`
+- the governed non-runtime `playground/` family now exists with 10 scenario-family files, coverage/matrix surfaces, an observed log, and a reusable template
+- each scenario now separates `rule-enforced fact`, `observed case`, and `virtual variant`, and also includes prompt/response examples plus a lightweight flow diagram
+- README pointer-only integration keeps the playground out of the runtime install payload while the active runtime set remains 18
+- project-local install proof passed with 18/18 parity/body sufficiency and `playground/` remained outside `.claude/rules/`
+- GitHub release `v10.19` is published at https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.19
+- release tag `v10.19` resolves to commit `e3e0bdfe255c2370085abcfebbb25a6544de9a1b` and was published at `2026-05-19T01:39:59Z`
 
 Still pending:
-- source release commit/push and GitHub release closeout are not yet complete
+- none

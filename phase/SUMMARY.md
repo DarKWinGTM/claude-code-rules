@@ -3,7 +3,7 @@
 > **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P111 active for v10.19 RULES playground family behavior scenarios
+> **Status:** Released through v10.19 / P111 RULES playground family behavior scenarios; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P111:** [phase-111-rules-playground-behavior-scenarios.md](phase-111-rules-playground-behavior-scenarios.md)
-  - Goal: establish a governed `playground/` family that demonstrates how current RULES change AI behavior in practice.
-  - Output: playground architecture design, playground index/coverage/matrix/template/observed files, 10 scenario-family case files with prompt/response examples and flow diagrams, README pointer-only integration, touched master-surface sync, and preserved 18-rule runtime install boundary.
-  - Scope: source chain only; playground is non-runtime governed content; no plugin-scope drift; no Codex/Gemini support drift; no character voice.
-  - Gate: all 18 active runtime rules are covered by at least one scenario family, every scenario separates fact/observed/virtual layers, virtual matrix axes are explicit, and `playground/` stays outside the installer payload.
+- none currently open
 
 ### Most Recently Completed
+
+- **P111:** [phase-111-rules-playground-behavior-scenarios.md](phase-111-rules-playground-behavior-scenarios.md)
+  - Output: playground architecture design, playground index/coverage/matrix/template/observed files, 10 scenario-family case files with prompt/response examples and flow diagrams, README pointer-only integration, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.19`.
+  - Gate: playground family integrity, 18-rule coverage mapping, virtual matrix axis coverage, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.19
+  - Release tag `v10.19` resolves to commit `e3e0bdfe255c2370085abcfebbb25a6544de9a1b`.
+  - Published at `2026-05-19T01:39:59Z`.
+
+### Previously Completed
 
 - **P110:** [phase-110-project-local-claude-code-remote-install-helpers.md](phase-110-project-local-claude-code-remote-install-helpers.md)
   - Output: launcher-first README and AI install guidance, Bash/PowerShell launcher scripts over the helper execution layer, dedicated installer architecture design, explanation clarity doctrine refinements, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.18`.
@@ -37,8 +42,6 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.18
   - Release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a`.
   - Published at `2026-05-19T00:42:14Z`.
-
-### Previously Completed
 
 - **P109:** [phase-109-lineage-first-phase-selection-and-subphase-enforcement.md](phase-109-lineage-first-phase-selection-and-subphase-enforcement.md)
   - Output: strict fall-through phase identity gate, explicit why-not-current / why-not-subphase basis, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.17`.

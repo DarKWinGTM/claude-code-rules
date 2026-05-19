@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.19
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -93,9 +93,13 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P111 is active and not yet released.
+P111 is completed and released.
 
-Wave startup is complete from the released `v10.18 / P110` baseline. Playground-family design and file creation, prompt/response example dialogues, flow diagrams, README pointer integration, touched master-surface sync, runtime-boundary verification, project-local install proof, and `git diff --check` are complete in checked source scope. Release closeout is still pending.
+Phase/patch startup, playground-family design and file creation, prompt/response example dialogues, flow diagrams, README pointer integration, touched master-surface sync, runtime-boundary verification, project-local install proof, `master` push, GitHub release creation, and closeout verification all passed from the released `v10.18 / P110` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.19
+Release tag `v10.19` resolves to commit `e3e0bdfe255c2370085abcfebbb25a6544de9a1b`.
+Published at `2026-05-19T01:39:59Z`.
 
 ---
 

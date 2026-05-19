@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.19</b><br><sub>P111 Active</sub>
+  <b>v10.19</b><br><sub>P111 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Source proof passed</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Playground</b><br><sub>Rule behavior cases</sub>
@@ -195,11 +195,13 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P111 RULES playground family behavior scenarios is the active `v10.19` pre-release wave.
+- P111 RULES playground family behavior scenarios is the released `v10.19` wave.
   - It opens a governed non-runtime `playground/` family for behavior scenarios, coverage maps, and virtual-case matrices.
   - It keeps `rule-enforced fact`, `observed case`, and `virtual variant` visibly separate.
+  - It adds prompt/response examples and lightweight flow diagrams so rule impact is easier to picture.
   - It keeps the active runtime install set at 18 and leaves `playground/` outside the installer payload.
   - It keeps README integration pointer-level only instead of turning README into the scenario owner.
+  - Runtime install verification, `master` push, and GitHub release verification passed for `v10.19`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -1113,7 +1115,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active `v10.19 / P111` pre-release wave; the playground family is being opened as a governed non-runtime surface while the active runtime install set remains 18 root rules.
+- Source state: this README reflects the released `v10.19 / P111` wave; the playground family is now a governed non-runtime surface, the active runtime install set remains 18 root rules, and release verification passed in checked source scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
