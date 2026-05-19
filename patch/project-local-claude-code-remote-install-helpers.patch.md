@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.18
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -86,14 +86,19 @@ Required checks before closeout:
 - touched communication/explanation owners require meaning-first identifier explanation, nested-key parent → child walkthroughs when useful, UI-versus-storage separation when relevant, and anti-over-explanation limits
 - project-local install proof passes with 18/18 source/destination parity and body sufficiency
 - `git diff --check` passes
+- GitHub release `v10.18` must be created and verified before closeout wording claims release completion
 
 ---
 
 ## Implementation Status
 
-P110 is active and not yet released.
+P110 is completed and released.
 
-Wave startup is complete from the released `v10.17 / P109` baseline. Helper extraction, README install-surface correction, touched master-surface sync, project-local install proof, and `git diff --check` are complete in checked source scope. Release selection is not part of the current goal.
+Phase/patch startup, installer/helper/launcher rollout, touched master-surface sync, launcher-driven Bash and PowerShell install proof, project-local live install proof, `master` push, GitHub release creation, and closeout verification all passed from the released `v10.17 / P109` baseline.
+
+Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.18
+Release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a`.
+Published at `2026-05-19T00:42:14Z`.
 
 ---
 

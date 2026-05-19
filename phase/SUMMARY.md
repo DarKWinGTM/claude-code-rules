@@ -3,7 +3,7 @@
 > **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** P110 active for v10.18 project-local Claude Code install architecture and explanation clarity doctrine
+> **Status:** Released through v10.18 / P110 project-local Claude Code install architecture and explanation clarity doctrine; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P110:** [phase-110-project-local-claude-code-remote-install-helpers.md](phase-110-project-local-claude-code-remote-install-helpers.md)
-  - Goal: normalize project-local Claude Code install architecture and improve easy explanation doctrine so identifiers are explained by system role instead of bare names.
-  - Output: Bash and PowerShell helper scripts, Bash and PowerShell launcher scripts, dedicated installer design shard, launcher-first README guidance, touched communication/explanation owner refinements, touched master-surface sync, project-local install proof, and clean diff-check state.
-  - Scope: Claude Code only for this install surface; no Codex/Gemini support claims for it; no character voice in the explanation doctrine; keep `plugin/` observed-only and out of staged wave scope.
-  - Gate: project-local install target, owner-aware manifest cleanup, dedicated installer design, meaning-first identifier explanation doctrine, 18/18 parity/body sufficiency, and `git diff --check` pass.
+- none currently open
 
 ### Most Recently Completed
+
+- **P110:** [phase-110-project-local-claude-code-remote-install-helpers.md](phase-110-project-local-claude-code-remote-install-helpers.md)
+  - Output: launcher-first README and AI install guidance, Bash/PowerShell launcher scripts over the helper execution layer, dedicated installer architecture design, explanation clarity doctrine refinements, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.18`.
+  - Gate: installer contract integrity, explanation-doctrine sync, runtime install/parity/body sufficiency, push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.18
+  - Release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a`.
+  - Published at `2026-05-19T00:42:14Z`.
+
+### Previously Completed
 
 - **P109:** [phase-109-lineage-first-phase-selection-and-subphase-enforcement.md](phase-109-lineage-first-phase-selection-and-subphase-enforcement.md)
   - Output: strict fall-through phase identity gate, explicit why-not-current / why-not-subphase basis, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.17`.
@@ -37,8 +42,6 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.17
   - Release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0`.
   - Published at `2026-05-18T14:01:40Z`.
-
-### Previously Completed
 
 - **P108:** [phase-108-worker-routing-runtime-compaction-and-owner-redistribution.md](phase-108-worker-routing-runtime-compaction-and-owner-redistribution.md)
   - Output: worker-routing compaction, owner redistribution into document-integrity/document-governance, companion/master-surface sync, runtime install, 18/18 parity/body sufficiency, push, and GitHub release `v10.16`.
@@ -109,21 +112,17 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ## Verification Focus
 
 Latest verified release state:
-- governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
-- folder-scoped single-chain namespaces may use generic parents such as `design/design.md` and `changelog/changelog.md`
-- exactly one active parent model remains per chain so generic and semantic parents do not coexist as active owners
-- active runtime/design doctrine explicitly outranks older completed-history wording when chronology conflicts
-- compact advisory `/goal` suggestions remain allowed only when a bounded successor objective is clear, measurable, and provable in transcript
-- compact advisory `/goal` suggestions remain sourced from checked Goal/Output/Gate/Verification surfaces rather than improvised prose
-- worker-routing now keeps routing-core behavior while document-density, compact-thrash, delegated governed-document repair, and append-vs-shard doctrine live under the correct owners
-- `worker-routing-and-context.md` is below the performance threshold while remaining body-sufficient
+- launcher-first project-local install is now the released Claude Code install model for this wave
+- launcher scripts drive the primary operator path while helper scripts remain the execution layer underneath
+- installer architecture design now governs primary target, optional fallback, source resolution, owner-aware cleanup, and verification contract
+- touched communication/explanation owners now require meaning-first identifier explanation, nested-key parent → child walkthroughs, and UI-versus-storage separation when helpful
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- README Bash and PowerShell arrays still define the same compact 18-rule runtime set
 - runtime install copied only the 18 README-listed active runtime rules
-- 18/18 source/runtime parity and source/destination active runtime body sufficiency passed
+- launcher-driven Bash and PowerShell install proof both passed with 18/18 source/runtime parity and source/destination body sufficiency
+- project-local live install into the selected target also passed with 18/18 parity/body sufficiency
 - destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
 - the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.17` was published at `2026-05-18T14:01:40Z` and release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0`
+- GitHub release `v10.18` was published at `2026-05-19T00:42:14Z` and release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a`
 
 ---
 

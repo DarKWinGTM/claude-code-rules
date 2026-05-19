@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.18 | 2026-05-19 | **[Added project-local Claude Code install architecture and explanation clarity doctrine (pre-release)](changelog/v10.18-added-project-local-claude-code-remote-install-helpers.changelog.md#version-1018)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.18 | 2026-05-19 | **[Released project-local Claude Code install architecture and explanation clarity doctrine](changelog/v10.18-added-project-local-claude-code-remote-install-helpers.changelog.md#version-1018)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.17 | 2026-05-18 | **[Released lineage-first phase selection and subphase enforcement](changelog/v10.17-added-lineage-first-phase-selection-and-subphase-enforcement.changelog.md#version-1017)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.16 | 2026-05-18 | **[Released worker-routing runtime compaction and owner redistribution](changelog/v10.16-added-worker-routing-runtime-compaction-and-owner-redistribution.changelog.md#version-1016)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.15 | 2026-05-18 | **[Released explicit goal-command suggestion doctrine](changelog/v10.15-added-explicit-goal-command-suggestion-doctrine.changelog.md#version-1015)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

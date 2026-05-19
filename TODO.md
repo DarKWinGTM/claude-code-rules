@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-19
-> **Current Release:** v10.17 / P109 lineage-first phase selection and subphase enforcement
-> **Active Wave:** v10.18 / P110 project-local Claude Code install architecture and explanation clarity doctrine (pre-release)
+> **Current Release:** v10.18 / P110 project-local Claude Code install architecture and explanation clarity doctrine
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P110 / v10.18 project-local Claude Code install architecture and explanation clarity doctrine was completed, installed, pushed, and released.
+  - Verified: launcher-first clone → project install UX, helper execution layer preservation, dedicated installer architecture design, meaning-first identifier explanation doctrine updates, launcher-driven Bash/PowerShell install proof, project-local 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.18
+  - Release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a`.
+  - Published at `2026-05-19T00:42:14Z`.
 - [x] P109 / v10.17 lineage-first phase selection and subphase enforcement was completed, installed, pushed, and released.
   - Verified: strict current-phase → subphase → new-major fall-through enforcement, explicit why-not-current / why-not-subphase basis, touched companion/master-surface sync, README-driven runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.17
@@ -73,10 +78,6 @@
 
 ### Active / In Progress
 
-- [ ] P110 / v10.18 project-local Claude Code install architecture and explanation clarity doctrine is in pre-release source-ready state.
-  - Goal: add `script/setup-claude-code-rules.sh` and `script/setup-claude-code-rules.ps1`, normalize installer architecture into a dedicated design surface, and teach selected communication/explanation owners to explain identifiers by system role in easier, non-character language.
-  - Current state: helper extraction, launcher-first installer design normalization, launcher-first README install guidance, touched master-surface sync, project-local install proof, explanation clarity doctrine updates, and `git diff --check` are complete in checked source scope; release selection is not part of the current goal.
-  - Gate: project-local `.claude/rules/` is the primary install target, owner-aware manifest cleanup is preserved, Codex/Gemini are not claimed supported for this install surface, selected communication/explanation owners require meaning-first identifier explanation with proportional anti-over-explanation limits, and 18/18 source/destination parity plus body sufficiency pass with `git diff --check` clean.
 - [ ] `memory-context-intelligence` darkwingtm namespace correction track is blocked at phase 025.
   - Goal: preserve phases 020-023 as transitional `@inline` / `rules-local` proof, set `memory-context-intelligence@darkwingtm` as the target install ID, and reprove session-only / persistent install / uninstall lifecycle under the selected namespace before further installability closeout.
   - Current state: phase 024 docs-only namespace governance sync is completed; phase 025 attempted source-side marketplace rename plus approved local mapping alignment, but is blocked because current CLI behavior cannot prove `memory-context-intelligence@darkwingtm` session-only availability without install. Phase 026 must not start until this namespace/CLI-precedence blocker is resolved or explicitly reselected.

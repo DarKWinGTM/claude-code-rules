@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.18</b><br><sub>P110 Active</sub>
+  <b>v10.18</b><br><sub>P110 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Pre-release</b><br><sub>Source proof passed</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Launcher-first</b><br><sub>Project-local `.claude/rules/`</sub>
@@ -194,14 +194,14 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P110 project-local Claude Code install architecture and explanation clarity doctrine is the active `v10.18` pre-release wave.
+- P110 project-local Claude Code install architecture and explanation clarity doctrine is the released `v10.18` wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It moves the primary install path into `script/setup-claude-code-rules.sh` and `script/setup-claude-code-rules.ps1`.
+  - It moves the primary install path into `script/launcher.sh` and `script/launcher.ps1` while keeping the helper scripts as the execution layer underneath.
   - It adds a dedicated installer architecture design surface for the project-local `.claude/rules/` model.
   - It switches the default target from user-level-first examples to project-local `.claude/rules/`.
   - It removes Codex CLI and Gemini CLI support claims for this install surface in touched README scope.
   - It also teaches AI to explain identifiers by system role in easier, non-character language instead of naming fields and variables as floating tokens.
-  - Project-local install proof and `git diff --check` passed in checked source scope for `v10.18`.
+  - Launcher-driven Bash/PowerShell install proof, `master` push, and GitHub release verification passed for `v10.18`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -1104,7 +1104,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active `v10.18 / P110` pre-release wave; project-local helper adoption, 18/18 parity, source/destination body sufficiency, and `git diff --check` have passed in checked source scope.
+- Source state: this README reflects the released `v10.18 / P110` wave; launcher-driven Bash/PowerShell install proof, project-local 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification passed in checked source scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

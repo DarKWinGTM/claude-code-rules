@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P110
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.18
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.18
@@ -58,8 +58,10 @@ P110 exists to make project-local Claude Code install the primary path, keep own
 - [x] Switch README Quick Start to clone + launcher install guidance.
 - [x] Remove Codex/Gemini support claims for this install surface from touched README sections.
 - [x] Add explanation clarity doctrine across the selected communication/explanation owners.
-- [x] Sync touched design/changelog/TODO/phase/patch surfaces to P110 pre-release state.
-- [x] Run project-local install proof and `git diff --check`. 
+- [x] Sync touched design/changelog/TODO/phase/patch surfaces to the P110 source-release state.
+- [x] Run launcher-driven Bash and PowerShell install proof plus project-local install proof and `git diff --check`.
+- [x] Commit source release, push `master`, create GitHub release `v10.18`, and verify release state.
+- [x] Finalize P110 closeout records after release verification passes.
 
 ---
 
@@ -90,13 +92,18 @@ P110 exists to make project-local Claude Code install the primary path, keep own
 
 ## Current Status
 
-P110 is active in pre-release implementation for `v10.18`.
+P110 is completed and released for `v10.18`.
 
-Completed so far:
-- released baseline is `v10.17 / P109`
-- `v10.18` is absent in checked scope
-- `phase-110*` is absent in checked scope
-- `script/` was absent before this wave opened
+Completed delivery:
+- the current released baseline advanced from `v10.17 / P109` to `v10.18 / P110`
+- clone → launcher is now the primary install path while helper scripts remain the execution layer underneath
+- the dedicated installer architecture design shard now governs the selected project-local `.claude/rules/` model
+- touched communication/explanation owners now explain identifiers by system role in easier, non-character language
+- launcher-driven Bash and PowerShell install proof both passed with 18/18 source/runtime parity and source/destination body sufficiency
+- project-local live install passed with 18/18 parity/body sufficiency
+- the untracked `plugin/` tree remained preserved as out-of-scope observed evidence
+- GitHub release `v10.18` is published at https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.18
+- release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a` and was published at `2026-05-19T00:42:14Z`
 
 Still pending:
-- release selection is not part of the current goal
+- none
