@@ -3,7 +3,7 @@
 > **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.19 / P111 RULES playground family behavior scenarios; no active phase open
+> **Status:** P112 active for v10.20 grounded playground transcript cases and realism upgrade
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,9 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none currently open
+- **P112:** [phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md](phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md)
+  - Output: transcript-grounded observed log updates, richer multi-turn playground case traces, two new grounded scenario families, touched playground/design sync, runtime install parity/body sufficiency proof, and pending source-release closeout for `v10.20`.
+  - Gate: source edits, transcript anchors, install-boundary verification, `git diff --check`, `master` push, and GitHub release `v10.20` verification.
 
 ### Most Recently Completed
 

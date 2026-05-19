@@ -9,7 +9,7 @@ This case family shows how RULES keep design, changelog, TODO, phase, patch, and
 ## Scenario family
 
 - Primary family: governed artifact lifecycle
-- Current status: governed baseline; checked observed examples present; virtual variants available
+- Current status: transcript-grounded observed examples present; virtual variants available
 
 ---
 
@@ -28,17 +28,20 @@ This case family shows how RULES keep design, changelog, TODO, phase, patch, and
 Current RULES require the assistant to:
 - open or reuse the correct governed surfaces before meaningful work drifts
 - keep design as target-state truth, changelog as version/history authority, TODO as compact durable index, phase as staged execution, and patch as before/after review
-- preserve history by rollover/sharding rather than deletion when files grow too large
+- preserve history by rollover or sharding rather than deletion when files grow too large
 - verify cross-surface sync before claiming no-drift or release-ready status
 
 ---
 
 ## Observed case
 
-Checked observed examples in repo scope:
-- released recent waves are recorded through synchronized README/design/changelog/TODO/phase/patch surfaces rather than one-off local notes
-- `v10.17 / P109` and `v10.18 / P110` both show phase, patch, changelog detail, master surfaces, and release records moving together under the governed model
-- these observed effects are recorded in `playground/observed/2026-05.md` as `O-2026-05-03` and `O-2026-05-05`
+Checked transcript-derived example:
+- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/0c68a707-81d9-4d1a-bcda-6fc04ae11efc.jsonl`
+- Anchor hints: `rollover / compact current index`, `Completed status ไม่ใช่ deletion authority`, `TODO.md`, `phase/SUMMARY.md`
+- Observed effect: oversized `TODO.md` and `phase/SUMMARY.md` were compacted through rollover while preserving current-state navigation and completed-history reachability.
+- Scope note: this proves lifecycle-preserving rollover behavior in that checked session; it does not authorize broad deletion or arbitrary restructuring elsewhere.
+
+Supporting repo-scope master-surface sync behavior is also recorded in `playground/observed/2026-05.md` as `O-2026-05-05`.
 
 ---
 
@@ -52,31 +55,49 @@ Expected behavior: create or repair the proper owner surface instead of overload
 
 ---
 
-## Example dialogue (virtual)
+## Example dialogue
 
-### User
-`Add this new governed family to the repo.`
+### Dialogue label
+`virtual trace patterned on a checked transcript-derived observed case`
 
-### AI without this rule family risk
-`I updated README with a new section.`
+### Turn 1 — User
+`TODO.md and phase/SUMMARY.md are getting huge. Can you clean them up?`
 
-### AI with RULES active
-`This needs the proper owner surfaces, so I will open design, changelog, TODO, phase, and patch where they are actually required instead of letting README carry the whole change.`
+### Turn 1 — AI without this rule family risk
+`Sure, I’ll delete the completed parts so the active files stay short.`
+
+### Turn 1 — AI with RULES active
+`I need to preserve history and owner roles here. If the problem is entrypoint bloat, the safe repair is rollover and compact-current-index maintenance, not deleting completed work.`
+
+### Turn 2 — Evidence, correction, or blocker
+`The checked session shows TODO around 336 lines / 32.5 KB and the phase summary around 401 lines / 37.8 KB.`
+
+### Turn 2 — AI without this rule family risk
+`That confirms the old material is disposable.`
+
+### Turn 2 — AI with RULES active
+`That confirms a rollover trigger, not disposal authority. Active state should stay compact while moved history remains reachable through the right owner surfaces.`
+
+### Turn 3 — Next-step narrowing / recovery / closeout
+`The repo still needs current navigation after the cleanup.`
+
+### Turn 3 — AI with RULES active
+`I’ll keep TODO and phase as compact current entrypoints, move historical bulk into referenced history or done shards, and then verify that the active links still point to the right owner surfaces.`
 
 ---
 
 ## Flow diagram
 
 ```text
-New governed work is selected
+Active entrypoint grows too large
   ↓
-Startup posture is resolved
+Current state is separated from history bulk
   ↓
-Correct owner surfaces are opened
+Correct owner surfaces are chosen
   ↓
-Family files are created and synced
+Rollover preserves references and history reachability
   ↓
-No-drift / release-ready checks happen on the right artifacts
+Compact active entrypoint remains the navigation surface
 ```
 
 ---
@@ -84,10 +105,16 @@ No-drift / release-ready checks happen on the right artifacts
 ## Matrix axes in play
 
 - request type: design sync / release sync / phase planning / rollover repair
-- evidence state: usually checked locally across several repo surfaces
+- evidence state: checked locally plus transcript-grounded
 - scope clarity: multi-surface but owner-aligned
 - risk level: medium
 - expected rule response: sync the correct owner surfaces and preserve history cleanly
+- turn count: 3
+- user behavior: cleanup-style request with lifecycle implications
+- evidence source: local file-size facts plus transcript anchor
+- failure mode: God-file drift and accidental history loss
+- tool discovery or lane shape: direct governance repair
+- completion state: compact current index with preserved history
 
 ---
 
@@ -95,4 +122,4 @@ No-drift / release-ready checks happen on the right artifacts
 
 Without this family, governed docs can drift, duplicate authority, or turn into God files.
 
-With RULES active, the repository should stay easier to navigate because each document family keeps its own role.
+With RULES active, the repository stays easier to navigate because each document family keeps its own role and large active entrypoints are compacted without losing meaning.

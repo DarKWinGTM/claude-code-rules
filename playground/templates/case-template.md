@@ -9,7 +9,7 @@ One or two sentences describing the behavior impact this case family is meant to
 ## Scenario family
 
 - Primary family: `<name>`
-- Current status: governed baseline / observed examples present-or-absent / virtual variants available
+- Current status: governed baseline / transcript-grounded observed examples present-or-absent / virtual variants available
 
 ---
 
@@ -41,8 +41,17 @@ Use one of these shapes:
 
 If you record an observed example:
 - name the checked source surface
+- if transcript-derived, record the exact checked transcript path
+- add short anchor hints that another reviewer can search quickly
+- say what the observed case proves in scope
 - keep it factual and scoped
 - do not turn one observed case into a global claim beyond the evidence held
+
+Helpful transcript-derived subshape:
+- Transcript path: `...jsonl`
+- Anchor hints: `...`, `...`, `...`
+- Observed effect: ...
+- Scope note: ...
 
 ---
 
@@ -59,16 +68,42 @@ Each virtual branch should remain compatible with the same checked rule behavior
 
 ---
 
-## Example dialogue (virtual unless explicitly observed)
+## Example dialogue
 
-### User
+Use this section for a realistic trace, not a one-line slogan.
+
+Preferred shape:
+- 3-6 turns when the case is non-trivial
+- at least one realism cue such as user correction, arriving evidence, blocker, retry, or narrowed next step
+- explicit label when the dialogue is virtual, transcript-grounded, or mixed
+- keep the dialogue compatible with the checked rule behavior and observed evidence boundary
+
+### Dialogue label
+`virtual` / `transcript-grounded` / `mixed`
+
+### Turn 1 — User
 `<prompt>`
 
-### AI without this rule family risk
+### Turn 1 — AI without this rule family risk
 `<ungoverned or weaker response>`
 
-### AI with RULES active
+### Turn 1 — AI with RULES active
 `<governed response>`
+
+### Turn 2 — Evidence, correction, or blocker
+`<new evidence or follow-up turn>`
+
+### Turn 2 — AI without this rule family risk
+`<ungoverned or weaker follow-up>`
+
+### Turn 2 — AI with RULES active
+`<governed follow-up>`
+
+### Turn 3 — Next-step narrowing / recovery / closeout
+`<next step or bounded closeout>`
+
+### Turn 3 — AI with RULES active
+`<governed next step>`
 
 ---
 
@@ -77,7 +112,9 @@ Each virtual branch should remain compatible with the same checked rule behavior
 ```text
 User request
   ↓
-Initial decision point
+Initial read
+  ↓
+Evidence / correction / blocker arrives
   ↓
 Relevant RULES intervene
   ↓
@@ -95,6 +132,12 @@ Governed response or next step
 - scope clarity: ...
 - risk level: ...
 - expected rule response: ...
+- turn count: ...
+- user behavior: ...
+- evidence source: ...
+- failure mode: ...
+- tool discovery or lane shape: ...
+- completion state: ...
 
 ---
 
@@ -113,5 +156,6 @@ Keep this section claim-calibrated:
 
 When a new observed case appears:
 1. add it to `playground/observed/YYYY-MM.md`
-2. update this case file's observed section
+2. update this case file's observed section and realism trace
 3. update `playground/coverage.md` only if rule coverage or scenario mapping changes
+4. open a new scenario family only when the existing families no longer model the behavior honestly and transcript evidence supports the split

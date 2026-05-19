@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.19
+> **Current Version:** 10.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.19 / P111` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, explicit about when a folder-scoped single-chain namespace may use `design/design.md` or `changelog/changelog.md`, explicit about requiring exactly one active parent model per chain, explicit about separating observed project shape from extracted doctrine and the selected target form, explicit about active-doctrine precedence over older completed-history wording when chronology conflicts, explicit about when a compact `/goal` suggestion is appropriate, less likely to let phase selection skip current-phase reuse or truthful subphase fit before opening a new major phase, explicit that Claude Code helper installs should prefer project-local `.claude/rules/` without overclaiming unsupported cross-harness install surfaces, and explicit that the new `playground/` family is a governed non-runtime surface that separates `rule-enforced fact`, `observed case`, and `virtual variant`.
+The active model for `v10.20 / P112` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, explicit about when a folder-scoped single-chain namespace may use `design/design.md` or `changelog/changelog.md`, explicit about requiring exactly one active parent model per chain, explicit about separating observed project shape from extracted doctrine and the selected target form, explicit about active-doctrine precedence over older completed-history wording when chronology conflicts, explicit about when a compact `/goal` suggestion is appropriate, less likely to let phase selection skip current-phase reuse or truthful subphase fit before opening a new major phase, explicit that Claude Code helper installs should prefer project-local `.claude/rules/` without overclaiming unsupported cross-harness install surfaces, and explicit that the `playground/` family remains a governed non-runtime surface while transcript-derived observed cases must stay factual, anchored, and visibly distinct from virtual variants.
 
 ---
 
@@ -41,7 +41,9 @@ Current target-state priorities:
 - `TODO.md` and `phase/SUMMARY.md` stay compact active entrypoints, with `history/` and `done/` as normalized overflow paths
 - current release and version authority stay in active parent changelogs, while bulky same-chain detail moves to chain-scoped version shards
 - concern, factual claim, goal request, proposal, and assistant next action should stay separated before endorsement or continuation
-- a new governed `playground/` family may show how RULES change AI behavior in practice, but it must keep `rule-enforced fact`, `observed case`, and `virtual variant` visibly separate
+- a governed `playground/` family may show how RULES change AI behavior in practice, but it must keep `rule-enforced fact`, `observed case`, and `virtual variant` visibly separate
+- transcript-derived observed cases inside the playground must include exact checked paths and anchor hints rather than loose storytelling
+- playground examples should prefer more realistic multi-turn traces when they help show how RULES alter the assistant path
 - governed behavior playground material stays outside the runtime install payload unless a later explicit doctrine changes that boundary
 - worker-first/context-safe reading still starts from parent indexes and then follows the declared smallest relevant shard or detail surface
 

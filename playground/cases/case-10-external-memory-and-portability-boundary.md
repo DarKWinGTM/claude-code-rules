@@ -9,7 +9,7 @@ This case family shows how RULES stop current external facts, remembered context
 ## Scenario family
 
 - Primary family: external, memory, and portability boundary
-- Current status: governed baseline; checked observed examples present; virtual variants available
+- Current status: transcript-grounded observed examples present; virtual variants available
 
 ---
 
@@ -30,15 +30,19 @@ Current RULES require the assistant to:
 - verify material external facts when they affect the recommendation
 - recheck path-scoped memory before using it as current exact repo truth
 - keep shared artifacts portable by default instead of hardcoding local paths as defaults
-- distinguish source-side repo paths from runtime/install destinations
+- distinguish source-side repo paths from runtime or install destinations
 
 ---
 
 ## Observed case
 
-Checked observed examples in repo scope:
-- the released `v10.18 / P110` wave moved install guidance to clone → launcher with project-local `.claude/rules/` as the primary target and explicitly removed unsupported Codex/Gemini install-surface claims in touched scope
-- this observed effect is recorded in `playground/observed/2026-05.md` as `O-2026-05-01`
+Checked transcript-derived example:
+- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/1b81d009-cf82-44a3-9739-cd3ea4af34dd/subagents/agent-a11775f8a9be66221.jsonl`
+- Anchor hints: `Short answer: จาก official Claude Code docs ที่เช็กแล้ว`, `Official plugin structure/reference ไม่ได้ list`, `claude --plugin-dir`, `/plugin install`
+- Observed effect: the answer was narrowed to what official Claude Code plugin docs actually support instead of overclaiming that plugin installation also covers `.claude/rules/` or `CLAUDE.md` surfaces.
+- Scope note: this proves external-doc verification plus boundary narrowing in that checked session; it does not mean all install surfaces are interchangeable.
+
+Supporting repo-scope install-boundary behavior is also recorded in `playground/observed/2026-05.md` as `O-2026-05-01`.
 
 ---
 
@@ -46,22 +50,40 @@ Checked observed examples in repo scope:
 
 - User asks for install guidance using an exact local machine path as if it were a shared default.
 - Memory says a path or file existed earlier, but the repo may have changed.
-- An external CLI/API behavior claim matters to the user’s next decision and may have drifted.
+- An external CLI or API behavior claim matters to the user’s next decision and may have drifted.
 
 Expected behavior: verify current facts, preserve path scope, and keep shared docs portable.
 
 ---
 
-## Example dialogue (virtual)
+## Example dialogue
 
-### User
-`Use the old path from memory and write the install guide with it.`
+### Dialogue label
+`virtual trace patterned on a checked transcript-derived observed case`
 
-### AI without this rule family risk
-`Sure — use /home/node/... as the default install path.`
+### Turn 1 — User
+`Can plugin install also deploy our .claude/rules set? Put the exact local path into the guide if needed.`
 
-### AI with RULES active
-`I can use that exact path as a checked local fact for this machine, but shared install guidance should stay portable. I will verify the current source and then write the guide with `<project-root>` or another portable contract label.`
+### Turn 1 — AI without this rule family risk
+`Yes — plugin install covers that too. Use /home/node/... as the default path.`
+
+### Turn 1 — AI with RULES active
+`That answer depends on current official docs and on whether we are talking about a shared contract or one machine-local fact. I need to verify both before I narrow the guidance.`
+
+### Turn 2 — Evidence, correction, or blocker
+`The checked transcript shows official Claude Code plugin references like claude --plugin-dir and /plugin install, but not .claude/rules or CLAUDE.md as plugin components.`
+
+### Turn 2 — AI without this rule family risk
+`Those are close enough. I’ll treat the install surfaces as equivalent.`
+
+### Turn 2 — AI with RULES active
+`The stronger reading is narrower: plugin installation is documented for plugin package surfaces, not for our runtime rules surface. Shared guidance should stay portable rather than inheriting one local path as the default.`
+
+### Turn 3 — Next-step narrowing / recovery / closeout
+`The user still needs install wording after that clarification.`
+
+### Turn 3 — AI with RULES active
+`I can write the shared guidance with portable repo/runtime labels and keep any exact machine path only as a scoped local fact when that local detail is actually needed.`
 
 ---
 
@@ -72,11 +94,11 @@ Memory or external fact enters the decision
   ↓
 Current source-of-truth is re-checked
   ↓
+Supported install surface is narrowed
+  ↓
 Local fact is separated from shared contract
   ↓
 Portable wording is chosen for shared docs
-  ↓
-Exact local detail stays scoped instead of becoming the default
 ```
 
 ---
@@ -84,10 +106,16 @@ Exact local detail stays scoped instead of becoming the default
 ## Matrix axes in play
 
 - request type: install guidance / external fact / memory reuse / path-specific recommendation
-- evidence state: verified / recalled / stale risk / external-drift risk
+- evidence state: verified / recalled / stale-risk / external-drift risk
 - scope clarity: mixed until source-of-truth is checked
 - risk level: medium
 - expected rule response: verify, recheck, and keep shared contracts portable
+- turn count: 3
+- user behavior: request mixes current support claim with local-path convenience
+- evidence source: official docs, memory, and local-path context
+- failure mode: overclaim risk plus portability drift
+- tool discovery or lane shape: external-doc verification
+- completion state: narrowed recommendation after verification
 
 ---
 
