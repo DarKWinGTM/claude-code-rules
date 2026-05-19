@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.26
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.26
+> **Current Version:** 2.27
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.27
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -73,6 +73,10 @@ Claims must match the real evidence level, especially when readiness can be mist
 When technical/product terms, variables, fields, config keys, enum-like values, or internal labels would be harder to follow alone, explain their human meaning before relying on them.
 - use `พูดง่าย ๆ`, `ถ้าพูดแบบภาษาคน`, or a clear English equivalent when helpful
 - explain what the identifier is, its role, where it sits in the flow when sequence matters, and what important values mean
+- when the identifier is central to the answer, prefer meaning-first order: what it is, what it does, and what changes if it changes
+- when a nested key or path matters, explain parent → child instead of dropping the deepest raw name as if it were self-explanatory
+- when user-facing mental model and storage model differ, say both explicitly, such as `UI = rules-oriented` and `storage = config-backed`, when that distinction prevents misreading
+- avoid leaving variables, fields, and keys as floating names with no role sentence attached
 - keep glosses evidence-aligned; do not invent semantics from names alone
 - when the user asks for easier explanation, plain Thai, or less jargon, keep that easier register through the whole answer
 ### 6) Direct human-readable wording

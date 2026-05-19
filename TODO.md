@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-18
+> **Last Updated:** 2026-05-19
 > **Current Release:** v10.17 / P109 lineage-first phase selection and subphase enforcement
-> **Active Wave:** none currently open
+> **Active Wave:** v10.18 / P110 project-local Claude Code install architecture and explanation clarity doctrine (pre-release)
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -61,6 +61,10 @@
 - [x] P099 / v10.07 proactive subagent efficiency and lane templates was completed, installed, pushed, and released.
   - Verified: 18/18 parity/body sufficiency, owner-link validation, runtime install, source/runtime parity, source/destination body sufficiency, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
+- [x] `memory-context-intelligence` phases 019-023 remain completed checked-local installability evidence, now reclassified as transitional namespace proof.
+  - Verified: phase 019 planning/installability contract, phase 020 source-side manifest/local marketplace bootstrap, phase 021 session-only inline load proof, phase 022 local-scope persistent CLI install proof as `memory-context-intelligence@rules-local`, and phase 023 reload/new-process evidence reuse plus approved uninstall-only closeout are completed.
+  - Reclassification: under the later selected namespace basis, phases 020-023 prove `@inline` / `rules-local` behavior only; they do not prove selected target install ID `memory-context-intelligence@darkwingtm`.
+  - Boundary: prior evidence is preserved as checked local lifecycle evidence only, not publication, external marketplace release, slash-command/chat invocation proof, stable/broad production readiness, main RULES promotion, main RULES mutation, main RULES merge, or final darkwingtm namespace proof.
 - [x] Earlier completed release closeout detail was compacted into [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md).
 
 ---
@@ -69,13 +73,20 @@
 
 ### Active / In Progress
 
-- none currently open
+- [ ] P110 / v10.18 project-local Claude Code install architecture and explanation clarity doctrine is in pre-release source-ready state.
+  - Goal: add `script/setup-claude-code-rules.sh` and `script/setup-claude-code-rules.ps1`, normalize installer architecture into a dedicated design surface, and teach selected communication/explanation owners to explain identifiers by system role in easier, non-character language.
+  - Current state: helper extraction, launcher-first installer design normalization, launcher-first README install guidance, touched master-surface sync, project-local install proof, explanation clarity doctrine updates, and `git diff --check` are complete in checked source scope; release selection is not part of the current goal.
+  - Gate: project-local `.claude/rules/` is the primary install target, owner-aware manifest cleanup is preserved, Codex/Gemini are not claimed supported for this install surface, selected communication/explanation owners require meaning-first identifier explanation with proportional anti-over-explanation limits, and 18/18 source/destination parity plus body sufficiency pass with `git diff --check` clean.
+- [ ] `memory-context-intelligence` darkwingtm namespace correction track is blocked at phase 025.
+  - Goal: preserve phases 020-023 as transitional `@inline` / `rules-local` proof, set `memory-context-intelligence@darkwingtm` as the target install ID, and reprove session-only / persistent install / uninstall lifecycle under the selected namespace before further installability closeout.
+  - Current state: phase 024 docs-only namespace governance sync is completed; phase 025 attempted source-side marketplace rename plus approved local mapping alignment, but is blocked because current CLI behavior cannot prove `memory-context-intelligence@darkwingtm` session-only availability without install. Phase 026 must not start until this namespace/CLI-precedence blocker is resolved or explicitly reselected.
+  - Gate: `memory-context-intelligence@darkwingtm` remains unproven from `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/memory-context-intelligence/`; do not install/uninstall the plugin, mutate user-scope state, touch phases 017-018, or change `/additional/` behavior as part of this blocked phase.
 
 ### Deferred / Not Selected
 
-- [ ] `memory-context-intelligence` phases 017-018 promotion and merge work remains deferred; phase 016 checked-scope runtime readiness is completed.
-  - Scope: phases 001-006 remain design concept phases; phase 007 created the isolated package scaffold under `plugin/memory-context-intelligence/`; phase 008 added bounded safe memsearch intake; phase 009 added internal-only signal extraction and topic generation from bounded intake output; phase 010 added list-first topic presentation and fileless selected-topic recording; phase 011 added optional controlled research enrichment from one selected topic plus recorded source fixtures; phase 012 added deterministic runtime-local Trace Scout, Research Scout, Source-Trust Reviewer, and Synthesis Lead orchestration findings; phase 013 added candidate packet building and dry-run-first, approval-gated additional-stage emission; phase 014 added deterministic historical replay validation with dry-run emit preview only; phase 015 added bounded live additional-stage trial reporting and emitted one approved local trial artifact under `/additional/`; phase 016 added the `ready` checked-scope readiness report and final wording `usable in checked scope`; only phases 017-018 remain conditional post-ready promotion readiness and possible main RULES merge closeout.
-  - Gate: use `~/.claude/rules/additional/` as the trial stage before any main RULES merge, but treat phase-013 emission, phase-014 replay output, phase-015 live trial output, and phase-016 readiness output as trial material, validation evidence, or checked-scope readiness evidence only; install/publication, marketplace release, stable or broad production readiness, main RULES promotion, main RULES mutation, and main RULES merge remain unperformed and unselected.
+- [ ] `memory-context-intelligence` phases 017-018 promotion and merge work remains deferred.
+  - Scope: phases 001-016 remain completed concept/runtime/readiness work; phases 019-023 remain completed checked-local installability evidence but are transitional under the selected `darkwingtm` namespace basis; phase 024 completed docs-only namespace governance sync; phase 025 is blocked in the active track because current CLI behavior cannot prove darkwingtm session-only availability without install; phases 026-027 must not start until the blocker is resolved or explicitly reselected and are not main RULES promotion/merge work.
+  - Gate: use `~/.claude/rules/additional/` as the trial stage before any main RULES merge, but treat phase-013 emission, phase-014 replay output, phase-015 live trial output, phase-016 readiness output, phase-019 planning, phase-020 source-side bootstrap, phase-021 session-only inline load proof, phase-022 local-scope persistent CLI install proof, phase-023 uninstall-only closeout, and phase-024 namespace sync as trial material, validation evidence, checked-scope readiness evidence, planning evidence, transitional namespace evidence, checked local lifecycle evidence, or docs-only governance evidence only; publication, external marketplace release, slash-command/chat invocation proof, stable or broad production readiness, main RULES promotion, main RULES mutation, and main RULES merge remain unperformed and unselected.
 - [ ] Master governance density rollover remains deferred.
   - Scope: large active `changelog/changelog.md` history and release-history-heavy master README/design sections.
   - Gate: open a dedicated repair phase or patch before claiming full active-entrypoint God-document cleanup.

@@ -3,7 +3,7 @@
 > **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.17 / P109 lineage-first phase selection and subphase enforcement; no active phase open
+> **Status:** P110 active for v10.18 project-local Claude Code install architecture and explanation clarity doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none currently open
+- **P110:** [phase-110-project-local-claude-code-remote-install-helpers.md](phase-110-project-local-claude-code-remote-install-helpers.md)
+  - Goal: normalize project-local Claude Code install architecture and improve easy explanation doctrine so identifiers are explained by system role instead of bare names.
+  - Output: Bash and PowerShell helper scripts, Bash and PowerShell launcher scripts, dedicated installer design shard, launcher-first README guidance, touched communication/explanation owner refinements, touched master-surface sync, project-local install proof, and clean diff-check state.
+  - Scope: Claude Code only for this install surface; no Codex/Gemini support claims for it; no character voice in the explanation doctrine; keep `plugin/` observed-only and out of staged wave scope.
+  - Gate: project-local install target, owner-aware manifest cleanup, dedicated installer design, meaning-first identifier explanation doctrine, 18/18 parity/body sufficiency, and `git diff --check` pass.
 
 ### Most Recently Completed
 
@@ -125,9 +129,9 @@ Latest verified release state:
 
 ## Rollback / Containment
 
-If P109 is reversed after release:
-- revert the touched lineage-first phase-selection enforcement edits as one governed rollback release
-- restore the released `v10.16 / P108` source state as the active baseline
+If P110 is reversed after release:
+- revert the touched project-local Claude Code helper-install edits as one governed rollback release
+- restore the released `v10.17 / P109` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

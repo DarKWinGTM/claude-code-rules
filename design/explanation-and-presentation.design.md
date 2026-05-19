@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -24,6 +24,8 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 P098 refinement: this owner must now also preserve target-state doctrine for plain-language explanation, visible intent-read response shapes, root-cause walkthroughs, and concise action framing.
 
 P107 refinement: this owner should now preserve a compact advisory `Suggested /goal:` closing shape when another owner has already decided that a bounded, provable successor objective should be surfaced as a command rather than as ordinary prose alone.
+
+P110 refinement: this owner should now preserve meaning-first identifier walkthroughs so code/config/system explanation starts from what an identifier is, what it does, and what changes if it changes, explains nested keys parent → child, and keeps UI mental model versus storage model explicit when that distinction prevents user confusion.
 
 ---
 

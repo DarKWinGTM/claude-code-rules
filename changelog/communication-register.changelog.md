@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-19 | **[Added P110 easy-explanation register refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-18 | **[Added P107 high-signal `/goal` pruning refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P101 premise-separation refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -17,6 +18,23 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added P110 easy-explanation register refinement
+
+**Date:** 2026-05-19
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.4 to v1.5.
+- Updated `design/communication-register.design.md` from v1.4 to v1.5.
+- Added easy-explanation register guidance so simplified answers stay user-aligned, non-character, and free of stiff spec tone.
+- Added role-gloss and pruning guidance so identifier clarification stays informative without drifting into mini-tutorial over-expansion.
+
+### Summary
+`communication-register.md` now carries the P110 register refinement so easier explanations stay natural, proportional, and role-aware.
 
 ---
 

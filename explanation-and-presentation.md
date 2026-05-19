@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.2
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.3
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -75,6 +75,14 @@ Make boundaries explicit when the user may confuse current scope with future sco
 - include what the user will notice when product or workflow changes matter
 - translate architecture-first or metaphor-heavy wording into direct action/result language
 - when variables, fields, config keys, enum values, or internal labels matter, explain the identifier, its role, where it sits in the flow, and what important values mean
+
+### 6.1) Meaning-first identifier walkthrough
+When code/config/system explanation depends on identifiers, prefer the smallest explanation shape that lets the reader understand the system role without going back to the source first.
+- explain in this order when useful: what it is, what it does, and what changes if it changes
+- for nested keys or paths, explain parent → child so the reader understands the containing block before the leaf field
+- if several related identifiers appear together, use a short grouped walkthrough instead of repeating raw names across several paragraphs
+- when user-facing mental model differs from storage model, separate them explicitly, then say the runtime effect only if that extra layer helps the decision
+- stop once the role, effect, and important distinction are clear; do not expand every path segment or every nearby field by reflex
 
 ### 7) Easy-to-picture progress and closeout
 When explaining phase progress, closeout, or next-step reasoning, start with a short plain-language line that helps the user picture what the work is doing or delivered.

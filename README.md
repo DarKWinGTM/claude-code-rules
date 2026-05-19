@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.17</b><br><sub>P109 Released</sub>
+  <b>v10.18</b><br><sub>P110 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Validation passed</sub>
+  <b>Pre-release</b><br><sub>Source proof passed</sub>
 </td>
 <td align="center" width="200">
-  <b>Lineage-first</b><br><sub>Subphase enforced</sub>
+  <b>Launcher-first</b><br><sub>Project-local `.claude/rules/`</sub>
 </td>
 </tr>
 </table>
@@ -71,426 +71,85 @@
 
 ## ⚡ Quick Start
 
-Use the script for your platform. Both install the current compact 18-rule runtime set. Cleanup is owner-aware: it only removes files previously installed by this repo and still matching the last recorded install snapshot.
+Use the launcher for your platform. The primary install target is the current project's `.claude/rules/` directory. The launcher is the operator entrypoint; the helper scripts remain the execution layer underneath and keep the current compact 18-rule runtime set with owner-aware manifest cleanup inside that project-local destination.
 
 ### Bash — Linux / macOS
 
+Clone-first install into a target project:
+
 ```bash
-# Clone once
-if [ ! -d "claude-code-rules" ]; then
-  git clone https://github.com/DarKWinGTM/claude-code-rules.git
-fi
-
+git clone https://github.com/DarKWinGTM/claude-code-rules.git
 cd claude-code-rules || exit 1
+./script/launcher.sh --project-root "/path/to/project"
+```
 
-# Install active runtime rules into ~/.claude/rules/
-mkdir -p "$HOME/.claude/rules"
+If you are already inside the target project and cloned RULES beside it:
 
-active_rule_files=(
-  accurate-communication.md
-  action-safety.md
-  audience-surface-disclosure-control.md
-  authority-and-scope.md
-  coding-discipline.md
-  communication-register.md
-  document-governance.md
-  document-integrity.md
-  evidence-discipline.md
-  execution-and-goal-frame.md
-  explanation-and-presentation.md
-  external-verification-and-source-trust.md
-  memory-governance-and-session-boundary.md
-  phase-todo-artifact.md
-  portable-implementation-and-hardcoding-control.md
-  refusal-and-recovery.md
-  safe-io.md
-  worker-routing-and-context.md
-)
+```bash
+../claude-code-rules/script/launcher.sh --project-root "$PWD"
+```
 
-manifest_path="$HOME/.claude/rules/.claude-code-rules-manifest.tsv"
-legacy_backup_root="$HOME/.claude/rules/.claude-code-rules-legacy-backup"
-legacy_backup_run_dir=""
+Manual/helper path from a local clone:
 
-legacy_candidate_files=(
-  anti-mockup.md
-  anti-sycophancy.md
-  context-load-and-document-density-control.md
-  custom-agent-selection-priority.md
-  dan-safe-normalization.md
-  development-verification-and-debug-strategy.md
-  document-changelog-control.md
-  document-consistency.md
-  document-design-control.md
-  document-patch-control.md
-  emergency-protocol.md
-  evidence-grounded-burden-of-proof.md
-  execution-continuity-and-mode-selection.md
-  explanation-quality.md
-  flow-diagram-no-frame.md
-  functional-intent-verification.md
-  goal-set-review-and-priority-balance.md
-  governed-document-rollover-control.md
-  high-signal-communication.md
-  maintainable-code-structure-and-decomposition.md
-  native-worker-agent-routing-and-context-control.md
-  natural-professional-communication.md
-  no-variable-guessing.md
-  operational-failure-handling.md
-  phase-implementation.md
-  project-documentation-standards.md
-  recovery-contract.md
-  refusal-classification.md
-  refusal-minimization.md
-  response-closing-and-action-framing.md
-  runtime-topology-control.md
-  safe-file-reading.md
-  safe-terminal-output.md
-  strict-file-hygiene.md
-  tactical-strategic-programming.md
-  technical-snapshot-communication.md
-  todo-standards.md
-  unified-version-control-system.md
-  zero-hallucination.md
-  answer-presentation.md
-  artifact-initiation-control.md
-)
-
-hash_file() {
-  if command -v sha256sum >/dev/null 2>&1; then
-    sha256sum "$1" | awk '{print $1}'
-  elif command -v shasum >/dev/null 2>&1; then
-    shasum -a 256 "$1" | awk '{print $1}'
-  elif command -v openssl >/dev/null 2>&1; then
-    openssl dgst -sha256 "$1" | awk '{print $NF}'
-  else
-    echo "No SHA-256 tool available." >&2
-    return 1
-  fi
-}
-
-git_blob_hash() {
-  git hash-object "$1" 2>/dev/null || true
-}
-
-is_active_rule() {
-  local needle="$1"
-  local item
-  for item in "${active_rule_files[@]}"; do
-    if [ "$item" = "$needle" ]; then
-      return 0
-    fi
-  done
-  return 1
-}
-
-ensure_legacy_backup_dir() {
-  if [ -z "$legacy_backup_run_dir" ]; then
-    legacy_backup_run_dir="$legacy_backup_root/$(date +%Y%m%d-%H%M%S)"
-    mkdir -p "$legacy_backup_run_dir"
-  fi
-}
-
-quarantine_legacy_file() {
-  local file="$1"
-  local target="$2"
-  ensure_legacy_backup_dir
-  mv "$target" "$legacy_backup_run_dir/$file"
-  printf 'Quarantined legacy claude-code-rules file %s -> %s\n' "$file" "$legacy_backup_run_dir/$file" >&2
-}
-
-repo_has_historical_blob() {
-  local file="$1"
-  local current_blob="$2"
-  local commit historical_blob
-  [ -n "$current_blob" ] || return 1
-  while IFS= read -r commit; do
-    historical_blob="$(git rev-parse "$commit:$file" 2>/dev/null || true)"
-    if [ -n "$historical_blob" ] && [ "$historical_blob" = "$current_blob" ]; then
-      return 0
-    fi
-  done < <(git rev-list --all -- "$file" 2>/dev/null)
-  return 1
-}
-
-if [ -f "$manifest_path" ]; then
-  while IFS=$'\t' read -r file recorded_sha256 recorded_blob; do
-    [ -n "$file" ] || continue
-    if is_active_rule "$file"; then
-      continue
-    fi
-    target="$HOME/.claude/rules/$file"
-    if [ -f "$target" ]; then
-      current_sha256="$(hash_file "$target" || true)"
-      current_blob="$(git_blob_hash "$target")"
-      manifest_match=0
-      if [ -n "$recorded_blob" ]; then
-        [ "$current_blob" = "$recorded_blob" ] && manifest_match=1
-      elif [ -n "$recorded_sha256" ]; then
-        [ "$current_sha256" = "$recorded_sha256" ] && manifest_match=1
-      fi
-      if [ "$manifest_match" -eq 1 ]; then
-        rm -f "$target"
-      else
-        printf 'Skipping manifest cleanup for %s because it no longer matches the previous claude-code-rules install snapshot.\n' "$file" >&2
-      fi
-    fi
-  done < "$manifest_path"
-fi
-
-for file in "${legacy_candidate_files[@]}"; do
-  if is_active_rule "$file"; then
-    continue
-  fi
-  target="$HOME/.claude/rules/$file"
-  if [ -f "$target" ]; then
-    current_blob="$(git_blob_hash "$target")"
-    if repo_has_historical_blob "$file" "$current_blob"; then
-      quarantine_legacy_file "$file" "$target"
-    fi
-  fi
-done
-
-tmp_manifest="$(mktemp)"
-trap 'rm -f "$tmp_manifest"' EXIT
-
-for file in "${active_rule_files[@]}"; do
-  cp "$file" "$HOME/.claude/rules/$file"
-  printf '%s\t%s\t%s\n' "$file" "$(hash_file "$HOME/.claude/rules/$file")" "$(git_blob_hash "$HOME/.claude/rules/$file")" >> "$tmp_manifest"
-done
-
-mv "$tmp_manifest" "$manifest_path"
-trap - EXIT
+```bash
+./script/setup-claude-code-rules.sh --project-root "/path/to/project"
 ```
 
 ### PowerShell — Windows
 
+Clone-first install into a target project:
+
 ```powershell
-# Clone once
-if (-not (Test-Path "claude-code-rules")) {
-  git clone https://github.com/DarKWinGTM/claude-code-rules.git
-}
-
+git clone https://github.com/DarKWinGTM/claude-code-rules.git
 Set-Location claude-code-rules
+.\script\launcher.ps1 -ProjectRoot "C:\path\to\project"
+```
 
-# Install active runtime rules into ~/.claude/rules/
-$rulesDir = Join-Path $HOME ".claude/rules"
-New-Item -ItemType Directory -Force -Path $rulesDir | Out-Null
+If you are already inside the target project and cloned RULES beside it:
 
-$activeRuleFiles = @(
-  "accurate-communication.md",
-  "action-safety.md",
-  "audience-surface-disclosure-control.md",
-  "authority-and-scope.md",
-  "coding-discipline.md",
-  "communication-register.md",
-  "document-governance.md",
-  "document-integrity.md",
-  "evidence-discipline.md",
-  "execution-and-goal-frame.md",
-  "explanation-and-presentation.md",
-  "external-verification-and-source-trust.md",
-  "memory-governance-and-session-boundary.md",
-  "phase-todo-artifact.md",
-  "portable-implementation-and-hardcoding-control.md",
-  "refusal-and-recovery.md",
-  "safe-io.md",
-  "worker-routing-and-context.md"
-)
+```powershell
+..\claude-code-rules\script\launcher.ps1 -ProjectRoot (Get-Location).Path
+```
 
-$manifestPath = Join-Path $rulesDir ".claude-code-rules-manifest.tsv"
-$legacyBackupRoot = Join-Path $rulesDir ".claude-code-rules-legacy-backup"
-$legacyBackupRunDir = $null
+Manual/helper path from a local clone:
 
-$legacyCandidateFiles = @(
-  "anti-mockup.md",
-  "anti-sycophancy.md",
-  "context-load-and-document-density-control.md",
-  "custom-agent-selection-priority.md",
-  "dan-safe-normalization.md",
-  "development-verification-and-debug-strategy.md",
-  "document-changelog-control.md",
-  "document-consistency.md",
-  "document-design-control.md",
-  "document-patch-control.md",
-  "emergency-protocol.md",
-  "evidence-grounded-burden-of-proof.md",
-  "execution-continuity-and-mode-selection.md",
-  "explanation-quality.md",
-  "flow-diagram-no-frame.md",
-  "functional-intent-verification.md",
-  "goal-set-review-and-priority-balance.md",
-  "governed-document-rollover-control.md",
-  "high-signal-communication.md",
-  "maintainable-code-structure-and-decomposition.md",
-  "native-worker-agent-routing-and-context-control.md",
-  "natural-professional-communication.md",
-  "no-variable-guessing.md",
-  "operational-failure-handling.md",
-  "phase-implementation.md",
-  "project-documentation-standards.md",
-  "recovery-contract.md",
-  "refusal-classification.md",
-  "refusal-minimization.md",
-  "response-closing-and-action-framing.md",
-  "runtime-topology-control.md",
-  "safe-file-reading.md",
-  "safe-terminal-output.md",
-  "strict-file-hygiene.md",
-  "tactical-strategic-programming.md",
-  "technical-snapshot-communication.md",
-  "todo-standards.md",
-  "unified-version-control-system.md",
-  "zero-hallucination.md",
-  "answer-presentation.md",
-  "artifact-initiation-control.md"
-)
-
-function Get-RuleHash([string]$Path) {
-  (Get-FileHash $Path -Algorithm SHA256).Hash.ToLowerInvariant()
-}
-
-function Get-GitBlobHash([string]$Path) {
-  (git hash-object -- $Path).Trim().ToLowerInvariant()
-}
-
-function Ensure-LegacyBackupDir {
-  if (-not $script:legacyBackupRunDir) {
-    $script:legacyBackupRunDir = Join-Path $legacyBackupRoot (Get-Date -Format "yyyyMMdd-HHmmss")
-    New-Item -ItemType Directory -Force -Path $script:legacyBackupRunDir | Out-Null
-  }
-}
-
-function Move-LegacyRuleToBackup([string]$File, [string]$Target) {
-  Ensure-LegacyBackupDir
-  $destination = Join-Path $script:legacyBackupRunDir $File
-  Move-Item $Target $destination -Force
-  Write-Host "Quarantined legacy claude-code-rules file $File -> $destination"
-}
-
-function Test-RepoHistoricalBlob([string]$File, [string]$Blob) {
-  if ([string]::IsNullOrWhiteSpace($Blob)) { return $false }
-  foreach ($commit in (git rev-list --all -- $File 2>$null)) {
-    $historicalBlob = (git rev-parse ("{0}:{1}" -f $commit, $File) 2>$null).Trim().ToLowerInvariant()
-    if ($historicalBlob -eq $Blob) { return $true }
-  }
-  return $false
-}
-
-if (Test-Path $manifestPath) {
-  foreach ($line in Get-Content $manifestPath) {
-    if ([string]::IsNullOrWhiteSpace($line)) { continue }
-    $parts = $line -split "`t", 3
-    $file = $parts[0]
-    $recordedSha256 = if ($parts.Count -gt 1) { $parts[1].Trim().ToLowerInvariant() } else { "" }
-    $recordedBlob = if ($parts.Count -gt 2) { $parts[2].Trim().ToLowerInvariant() } else { "" }
-    if ($activeRuleFiles -contains $file) { continue }
-    $target = Join-Path $rulesDir $file
-    if (Test-Path $target) {
-      $currentSha256 = Get-RuleHash $target
-      $currentBlob = Get-GitBlobHash $target
-      $manifestMatch = $false
-      if (-not [string]::IsNullOrWhiteSpace($recordedBlob)) {
-        $manifestMatch = ($currentBlob -eq $recordedBlob)
-      } elseif (-not [string]::IsNullOrWhiteSpace($recordedSha256)) {
-        $manifestMatch = ($currentSha256 -eq $recordedSha256)
-      }
-      if ($manifestMatch) {
-        Remove-Item $target -Force -ErrorAction SilentlyContinue
-      } else {
-        Write-Host "Skipping manifest cleanup for $file because it no longer matches the previous claude-code-rules install snapshot."
-      }
-    }
-  }
-}
-
-foreach ($file in $legacyCandidateFiles) {
-  if ($activeRuleFiles -contains $file) { continue }
-  $target = Join-Path $rulesDir $file
-  if (Test-Path $target) {
-    $currentBlob = Get-GitBlobHash $target
-    if (Test-RepoHistoricalBlob $file $currentBlob) {
-      Move-LegacyRuleToBackup $file $target
-    }
-  }
-}
-
-$manifestLines = New-Object System.Collections.Generic.List[string]
-foreach ($file in $activeRuleFiles) {
-  $installedPath = Join-Path $rulesDir $file
-  Copy-Item $file $installedPath -Force
-  $manifestLines.Add("$file`t$(Get-RuleHash $installedPath)`t$(Get-GitBlobHash $installedPath)")
-}
-Set-Content -Path $manifestPath -Value $manifestLines
+```powershell
+.\script\setup-claude-code-rules.ps1 -ProjectRoot "C:\path\to\project"
 ```
 
 ### Notes
 
-- Already cloned the repo? Skip the clone step and run the install block only.
-- Need project-specific install instead? Change the destination from `~/.claude/rules/` to `./.claude/rules/` and keep the same manifest pattern inside that destination.
+- The primary install target is `<project-root>/.claude/rules/`.
+- The launcher is the primary operator path; helper scripts stay available as the execution layer and manual path.
+- If you run the launcher from the RULES repo root, pass `--project-root` / `-ProjectRoot` explicitly.
+- This wave supports Claude Code only. Codex CLI and Gemini CLI are not supported for this install surface in current scope.
 - This runtime-only install copies active rule files only.
 - Cleanup is owner-aware, not wildcard-by-filename.
-- Manifest cleanup removes only files previously installed by this repo and still matching the last recorded install snapshot.
-- Legacy cleanup checks old candidate filenames against this repo's git history; only exact historical blob matches are quarantined out of the active runtime path.
-- Legacy files that do not match repo history are preserved, so unrelated co-located tool rules are not touched by default.
+- Manifest cleanup removes only files previously installed by this repo and still matching the last recorded install snapshot inside the same project-local target.
+- Legacy cleanup checks old candidate filenames against this repo's git history; only exact historical blob matches are quarantined out of the active project-local runtime path.
+- Files already present in the target `.claude/rules/` directory but outside this repo's recorded install ownership or repo-history proof are preserved by default.
 - Governed design/changelog/TODO/phase/patch artifacts, inactive history/done surfaces, and `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates.
-- Files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 
-### 🤖 AI-Assisted Install Prompts
+### 🤖 AI-Assisted Install Prompt
 
-If you want an AI CLI to install or adapt this repo for you, paste one of these prompts directly into that tool.
-
-**Claude Code — native install into `~/.claude/rules/`**
+If you want Claude Code to install this repo for you into the current project's `.claude/rules/` target, use this prompt:
 
 ```text
 Install this rules repo for me from:
 https://github.com/DarKWinGTM/claude-code-rules
 
 Requirements:
-- clone the repo if needed
-- read the README Quick Start section first
-- install only the active runtime rule set into ~/.claude/rules/
-- use manifest-owned cleanup only; do not delete unrelated co-located rules in ~/.claude/rules/
+- clone the repo first
+- run the launcher script from the cloned repo, not a raw helper fetch as the default path
+- install only the active runtime rule set into the current project's .claude/rules/
+- use manifest-owned cleanup only inside that same project-local target
+- do not delete unrelated co-located rules in that project-local .claude/rules/ directory
 - do not install files from suspend/, support/, plugin/, design/, changelog/, phase/, patch/, or TODO.md
 - verify the installed files after copying
 - report exactly what was installed
 ```
 
-**Codex CLI — adapt active rules into `AGENTS.md`**
-
-```text
-Use this repo as the source of truth:
-https://github.com/DarKWinGTM/claude-code-rules
-
-Please:
-- clone or inspect the repo
-- read the README Quick Start and active root rule set
-- create/update AGENTS.md for this project so Codex follows the same active rule intent
-- adapt the rules into Codex-native instructions instead of copying Claude-specific runtime structure blindly
-- ignore files under suspend/, support/, plugin/, design/, changelog/, phase/, patch/, and TODO.md unless explicitly needed as reference
-- keep the result concise but faithful to the active rules
-- summarize which source rules were mapped into AGENTS.md
-```
-
-**Gemini CLI — adapt active rules into `GEMINI.md`**
-
-```text
-Use this repo as the source of truth:
-https://github.com/DarKWinGTM/claude-code-rules
-
-Please:
-- clone or inspect the repo
-- read the README Quick Start and active root rule set
-- create/update GEMINI.md for this project so Gemini CLI follows the same active rule intent
-- adapt the rules into Gemini-native instructions instead of copying Claude-specific runtime structure blindly
-- ignore files under suspend/, support/, plugin/, design/, changelog/, phase/, patch/, and TODO.md unless explicitly needed as reference
-- keep the result concise but faithful to the active rules
-- summarize which source rules were mapped into GEMINI.md
-```
-
-**When to use which prompt**
-- Use the **Claude Code** prompt when you want direct runtime installation into `~/.claude/rules/`
-- Use the **Codex CLI** prompt when you want equivalent behavior through `AGENTS.md`
-- Use the **Gemini CLI** prompt when you want equivalent behavior through `GEMINI.md`
+Codex CLI and Gemini CLI are not supported for this install surface in the current wave.
 
 ---
 
@@ -535,12 +194,14 @@ Please:
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P109 lineage-first phase selection and subphase enforcement is released for `v10.17`.
+- P110 project-local Claude Code install architecture and explanation clarity doctrine is the active `v10.18` pre-release wave.
   - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It enforces current phase reuse first, then same-family subphase fit, and only then new major selection.
-  - It requires visible why-not-current / why-not-subphase basis before a new major phase can open.
-  - It preserves the released P108 worker-routing owner split and the released P107 `/goal` doctrine.
-  - README-driven runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed for `v10.17`.
+  - It moves the primary install path into `script/setup-claude-code-rules.sh` and `script/setup-claude-code-rules.ps1`.
+  - It adds a dedicated installer architecture design surface for the project-local `.claude/rules/` model.
+  - It switches the default target from user-level-first examples to project-local `.claude/rules/`.
+  - It removes Codex CLI and Gemini CLI support claims for this install surface in touched README scope.
+  - It also teaches AI to explain identifiers by system role in easier, non-character language instead of naming fields and variables as floating tokens.
+  - Project-local install proof and `git diff --check` passed in checked source scope for `v10.18`.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -703,81 +364,84 @@ Please:
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P109 / v10.17 releases the lineage-first phase selection and subphase-enforcement wave on top of the released `v10.16 / P108` baseline.
-- Touched doctrine and design surfaces now make phase identity selection strict fall-through: current phase, then same-family subphase, then new major, then ask/record basis.
-- New-major selection now requires visible why-not-current / why-not-subphase reasoning instead of topic drift or milestone momentum alone.
-- P109 phase and patch records are the most recently completed released closeout artifacts, with P108 retained as the previous released baseline.
-- The untracked `plugin/` tree remained preserved and out of staged release scope.
-- Runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed for `v10.17`.
+- P110 / v10.18 opens the project-local Claude Code remote-install-helper wave on top of the released `v10.17 / P109` baseline.
+- Touched README and helper surfaces move the primary install path into dedicated Bash and PowerShell helper scripts.
+- A dedicated installer architecture design shard now defines the selected target, execution modes, cleanup boundary, support boundary, and verification contract.
+- The selected install target becomes project-local `.claude/rules/` rather than user-level-first examples.
+- Codex CLI and Gemini CLI should not be presented as supported for this install surface in touched scope.
+- Selected communication/explanation owners now require meaning-first identifier explanation, parent → child nested-key walkthroughs when useful, and explicit UI-versus-storage separation when that distinction helps the user understand the system.
+- P109 phase and patch records remain the most recently completed released closeout artifacts.
+- The untracked `plugin/` tree remains preserved and out of staged release scope.
+- Project-local install proof and `git diff --check` passed in checked source scope for `v10.18`.
 </div>
 
 ---
 
 ## 📦 Installation
 
-The Quick Start block above is still the canonical runtime-only install block. The methods below use the same compact 18-rule runtime set.
+The Quick Start block above is the canonical launcher-first install path. The methods below keep the same compact 18-rule runtime set while making project-local `.claude/rules/` the default target.
 
-### 🎯 Method 1: Full Installation (Recommended)
+### 🎯 Method 1: Full Project-Local Installation (Recommended)
 
-**Use this when:** you want the full active runtime set installed globally.
+**Use this when:** you want the full active runtime set inside the current project.
 
 Fastest path:
-1. Clone the repository.
-2. Run the Quick Start block exactly as shown above.
-3. Run the verification commands below.
+1. Clone the RULES repo.
+2. Run the launcher for your platform from that clone.
+3. Point it at the target project root.
+4. Run the verification commands below.
 
-If you already cloned the repo earlier, you do **not** need to repeat the clone step. Return to the repo root and rerun only the install portion against `~/.claude/rules/`.
+If you already cloned the repo earlier, you do **not** need to repeat the clone step. Return to the repo root and rerun the launcher locally against the project you want to govern.
 
-### 🎯 Method 2: Pick Your Rules
+### 🎯 Method 2: Pick One Rule (Project-Local)
 
-**Use this when:** you only want a small subset of the runtime rules.
+**Use this when:** you only want a small subset of the runtime rules in one project.
 
 ```bash
-# Example: Install just the evidence discipline chain
-curl -o ~/.claude/rules/evidence-discipline.md \
+mkdir -p ./.claude/rules
+curl -o ./.claude/rules/evidence-discipline.md \
   https://raw.githubusercontent.com/DarKWinGTM/claude-code-rules/master/evidence-discipline.md
 ```
 
-### 🎯 Method 3: Project-Specific
+### 🎯 Method 3: Optional Global Fallback
 
-**Use this when:** you want the same active runtime set, but only inside the current project.
+**Use this when:** you intentionally want the same launcher-driven install model under your home directory.
 
-1. Create `./.claude/rules/` in the project root.
-2. Reuse the same Quick Start command pattern.
-3. Change only the destination path from `~/.claude/rules/` to `./.claude/rules/`.
-
-This keeps the install set identical while scoping the rules to one repository.
+- Use the same cloned repo.
+- Run the launcher scripts.
+- Set `--project-root "$HOME"` for Bash or `-ProjectRoot $HOME` for PowerShell.
+- Treat this as an explicit fallback, not the primary recommendation for this wave.
 
 > Source-side note: public commands in this README are expressed from the repo root.
-> Destination/runtime note: installation targets are shown separately as `~/.claude/rules/` or `./.claude/rules/`.
+> Destination/runtime note: the primary target in this wave is `<project-root>/.claude/rules/`; global install is only the same launcher/helper model pointed at `$HOME` intentionally.
 
 ### 📍 Installation Paths
 
 | Location | Scope | Path | Use Case |
 |----------|-------|------|----------|
-| **Global** | All projects | `~/.claude/rules/*.md` | Default recommendation |
-| **Project** | Current project only | `./.claude/rules/*.md` | Project-specific needs |
+| **Project** | Current project only | `<project-root>/.claude/rules/*.md` | Default recommendation |
+| **Global fallback** | All projects | `$HOME/.claude/rules/*.md` | Explicit opt-in only |
 
 ### ✅ Verify Installation
 
-> Global install: verify under `~/.claude/rules/`.
-> Project-specific install: verify under `./.claude/rules/` instead.
+> Recommended: verify under the current project's `.claude/rules/` target.
+> Optional global fallback: verify under `$HOME/.claude/rules/` only if you intentionally used that target.
 
 ```bash
-# Global install check
+# Project-local install check (run from project root)
 claude --version
-head -20 ~/.claude/rules/evidence-discipline.md
-ls ~/.claude/rules/action-safety.md
-ls ~/.claude/rules/phase-todo-artifact.md
-ls ~/.claude/rules/document-governance.md
-ls ~/.claude/rules/worker-routing-and-context.md
-
-# Project-specific install check (run from project root)
 head -20 ./.claude/rules/evidence-discipline.md
 ls ./.claude/rules/action-safety.md
 ls ./.claude/rules/phase-todo-artifact.md
 ls ./.claude/rules/document-governance.md
 ls ./.claude/rules/worker-routing-and-context.md
+
+# Optional global fallback check
+head -20 "$HOME/.claude/rules/evidence-discipline.md"
+ls "$HOME/.claude/rules/action-safety.md"
+ls "$HOME/.claude/rules/phase-todo-artifact.md"
+ls "$HOME/.claude/rules/document-governance.md"
+ls "$HOME/.claude/rules/worker-routing-and-context.md"
 ```
 
 ---
@@ -1440,7 +1104,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.17 / P109` wave; runtime install, 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification passed in checked scope.
+- Source state: this README reflects the active `v10.18 / P110` pre-release wave; project-local helper adoption, 18/18 parity, source/destination body sufficiency, and `git diff --check` have passed in checked source scope.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

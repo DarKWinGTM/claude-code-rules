@@ -15,17 +15,17 @@ The active runtime inventory contains 18 source-owned root rule files.
 
 | # | Rule | Design Doc | Purpose |
 |---|---|---|---|
-| 1 | `accurate-communication.md` | `accurate-communication.design.md v2.25` | Evidence-calibrated status, claim-state wording, and phase closeout wording |
+| 1 | `accurate-communication.md` | `accurate-communication.design.md v2.27` | Evidence-calibrated status, claim-state wording, meaning-first identifier gloss, and phase closeout wording |
 | 2 | `action-safety.md` | `action-safety.design.md v1.0` | Destructive/high-impact action safety, topology control, emergency posture, and bounded retry handling |
 | 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.0` | Direct-user transparency plus audience-appropriate generated public/operator/customer disclosure |
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.5` | User authority, hard-boundary precedence, and source/project ownership boundaries |
 | 5 | `coding-discipline.md` | `coding-discipline.design.md v1.1` | Maintainable code structure, verification strategy, coding/debug root-cause narrowing, and tactical-to-strategic convergence |
-| 6 | `communication-register.md` | `communication-register.design.md v1.3` | Natural professional tone, proposal evaluation, anti-over-agreement, and signal discipline |
+| 6 | `communication-register.md` | `communication-register.design.md v1.5` | Natural professional tone, user-aligned easy explanation, anti-over-agreement, and signal discipline |
 | 7 | `document-governance.md` | `document-governance.design.md v1.8` | Repository document roles, parent/shard authority, append-vs-shard doctrine, patch governance, and UDVC-1 |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.6` | Cross-reference consistency, rollover integrity, document-density/God-file repair, and no-delete-by-cleanup discipline |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.2` | Verify-first factual discipline, concern-vs-conclusion discipline, scoped non-findings, and real-vs-mock boundaries |
 | 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.6` | Discussion/execution mode, visible intent read, premise separation, next-work boundaries, and lineage-first phase-shaped continuation |
-| 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.1` | Plain-language explanation, diagram discipline, and concise action framing |
+| 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.3` | Plain-language explanation, meaning-first identifier walkthroughs, diagram discipline, and concise action framing |
 | 12 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.2` | External source verification, trust ranking, corroboration, and source-conflict handling |
 | 13 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v1.7` | Scoped memory governance, compact memory index behavior, path scope, and optional recall boundaries |
 | 14 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.9` | Startup artifact posture, phase execution, compact TODO/phase entrypoints, live task tracking, and lineage-first phase identity selection |

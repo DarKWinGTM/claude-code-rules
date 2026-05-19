@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -28,6 +28,8 @@ P100 refinement: this owner may compress repeated examples and inclusion/pruning
 P101 refinement: this owner should now separate concern, factual claim, proposal, and assistant next action before endorsement or continuation so truth-over-pleasing remains operational rather than only tonal.
 
 P107 refinement: this owner should now preserve a high-signal pruning boundary for advisory `/goal` suggestions so one compact command can survive when useful, while background rationale and decorative alternatives are pruned away.
+
+P110 refinement: this owner should now preserve an easy-explanation register that matches the user's language shape without character voice, keeps identifier references paired with short role glosses, and prevents explanation from drifting into stiff spec tone or mini-tutorial over-expansion.
 
 ---
 

@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.27 | 2026-05-19 | **[Added P110 meaning-first identifier wording refinement](#version-227)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.26 | 2026-05-18 | **[Added P107 advisory `/goal` wording guard](#version-226)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.25 | 2026-05-17 | **[Added P101 premise-separation wording refinement](#version-225)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.24 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-224)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -68,6 +69,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-227"></a>
+## Version 2.27: Added P110 meaning-first identifier wording refinement
+
+**Date:** 2026-05-19
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.26 to v2.27.
+- Updated `design/accurate-communication.design.md` from v2.26 to v2.27.
+- Added meaning-first wording guidance so identifiers are explained as what they are, what they do, and what changes if they change before the answer leans on raw names alone.
+- Added nested-key parent → child explanation guidance plus explicit UI-versus-storage wording when that distinction prevents user confusion.
+
+### Summary
+`accurate-communication.md` now carries the P110 wording refinement so easy explanations stay natural and role-aware instead of naming fields or variables as floating tokens.
 
 ---
 

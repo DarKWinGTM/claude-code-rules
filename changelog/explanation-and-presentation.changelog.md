@@ -10,11 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-19 | **[Added P110 meaning-first identifier walkthroughs](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-18 | **[Added P107 compact `/goal` closing shape](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added P110 meaning-first identifier walkthroughs
+
+**Date:** 2026-05-19
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.2 to v1.3.
+- Updated `design/explanation-and-presentation.design.md` from v1.2 to v1.3.
+- Added meaning-first identifier walkthrough guidance so explanations can say what an identifier is, what it does, and what changes if it changes before leaning on raw names.
+- Added parent → child explanation guidance for nested keys plus explicit UI-versus-storage separation when it helps user understanding.
+- Added anti-over-explanation guidance so identifier clarification stops once the role and important effect are clear.
+
+### Summary
+`explanation-and-presentation.md` now carries the P110 walkthrough refinement so code/config explanation becomes easier to follow without turning into a mini-tutorial.
 
 ---
 
