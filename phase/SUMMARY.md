@@ -3,7 +3,7 @@
 > **Current Version:** 1.85
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.18 / P110 project-local Claude Code install architecture and explanation clarity doctrine; no active phase open
+> **Status:** P111 active for v10.19 RULES playground family behavior scenarios
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none currently open
+- **P111:** [phase-111-rules-playground-behavior-scenarios.md](phase-111-rules-playground-behavior-scenarios.md)
+  - Goal: establish a governed `playground/` family that demonstrates how current RULES change AI behavior in practice.
+  - Output: playground architecture design, playground index/coverage/matrix/template/observed files, 10 scenario-family case files with prompt/response examples and flow diagrams, README pointer-only integration, touched master-surface sync, and preserved 18-rule runtime install boundary.
+  - Scope: source chain only; playground is non-runtime governed content; no plugin-scope drift; no Codex/Gemini support drift; no character voice.
+  - Gate: all 18 active runtime rules are covered by at least one scenario family, every scenario separates fact/observed/virtual layers, virtual matrix axes are explicit, and `playground/` stays outside the installer payload.
 
 ### Most Recently Completed
 

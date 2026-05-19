@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.18</b><br><sub>P110 Released</sub>
+  <b>v10.19</b><br><sub>P111 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Validation passed</sub>
+  <b>Pre-release</b><br><sub>Source proof passed</sub>
 </td>
 <td align="center" width="200">
-  <b>Launcher-first</b><br><sub>Project-local `.claude/rules/`</sub>
+  <b>Playground</b><br><sub>Rule behavior cases</sub>
 </td>
 </tr>
 </table>
@@ -57,6 +57,7 @@
 - [📁 Rule Files](#-rule-files)
 - [📦 Installation](#-installation)
 - [📂 Design Documentation Structure](#-design-documentation-structure)
+- [🧪 Playground](#-playground)
 - [🔗 Integration Guide](#-integration-guide)
 - [🎓 Framework Highlights](#-framework-highlights)
 - [🖼️ Visual Guide](#️-visual-guide)
@@ -194,14 +195,11 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P110 project-local Claude Code install architecture and explanation clarity doctrine is the released `v10.18` wave.
-  - It keeps the compact 18-rule merged runtime set as the source-owned install target.
-  - It moves the primary install path into `script/launcher.sh` and `script/launcher.ps1` while keeping the helper scripts as the execution layer underneath.
-  - It adds a dedicated installer architecture design surface for the project-local `.claude/rules/` model.
-  - It switches the default target from user-level-first examples to project-local `.claude/rules/`.
-  - It removes Codex CLI and Gemini CLI support claims for this install surface in touched README scope.
-  - It also teaches AI to explain identifiers by system role in easier, non-character language instead of naming fields and variables as floating tokens.
-  - Launcher-driven Bash/PowerShell install proof, `master` push, and GitHub release verification passed for `v10.18`.
+- P111 RULES playground family behavior scenarios is the active `v10.19` pre-release wave.
+  - It opens a governed non-runtime `playground/` family for behavior scenarios, coverage maps, and virtual-case matrices.
+  - It keeps `rule-enforced fact`, `observed case`, and `virtual variant` visibly separate.
+  - It keeps the active runtime install set at 18 and leaves `playground/` outside the installer payload.
+  - It keeps README integration pointer-level only instead of turning README into the scenario owner.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
@@ -364,15 +362,13 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P110 / v10.18 opens the project-local Claude Code remote-install-helper wave on top of the released `v10.17 / P109` baseline.
-- Touched README and helper surfaces move the primary install path into dedicated Bash and PowerShell helper scripts.
-- A dedicated installer architecture design shard now defines the selected target, execution modes, cleanup boundary, support boundary, and verification contract.
-- The selected install target becomes project-local `.claude/rules/` rather than user-level-first examples.
-- Codex CLI and Gemini CLI should not be presented as supported for this install surface in touched scope.
-- Selected communication/explanation owners now require meaning-first identifier explanation, parent → child nested-key walkthroughs when useful, and explicit UI-versus-storage separation when that distinction helps the user understand the system.
-- P109 phase and patch records remain the most recently completed released closeout artifacts.
-- The untracked `plugin/` tree remains preserved and out of staged release scope.
-- Project-local install proof and `git diff --check` passed in checked source scope for `v10.18`.
+- P111 / v10.19 opens the governed playground family wave on top of the released `v10.18 / P110` baseline.
+- The new `playground/` family is intended to show how current RULES change AI behavior in practice without becoming part of the runtime install payload.
+- Each scenario should separate `rule-enforced fact`, `observed case`, and `virtual variant` instead of mixing checked behavior with illustrative thinking.
+- The playground should cover all 18 active runtime rules through scenario families plus a coverage matrix and a virtual-case matrix.
+- README should keep only a compact pointer to the playground family rather than absorbing the cases directly.
+- The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
+- The untracked `plugin/` tree remains preserved and out of staged wave scope.
 </div>
 
 ---
@@ -469,6 +465,8 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 | `./patch/<context>.patch.md` or `./<context>.patch.md` | Governed active patch/review artifacts outside live phase planning | Active patch docs |
 | `./patch/done/<context>.patch.md` | Completed patch artifacts retained outside active scans | Inactive completed patch history |
 | `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact that also exposes active phase family, planned next phase(s), activation boundary, and next checkpoint guidance for future `/phase` authoring |
+| `./playground/README.md` | Compact entrypoint for governed behavior playground material | Playground family index |
+| `./playground/cases/*.md`, `./playground/coverage.md`, `./playground/matrix.md` | Scenario families, rule coverage mapping, and virtual-case exploration outside runtime install scope | Governed non-runtime playground content |
 
 > **💡 Single Source of Truth Principle:**
 > - Governed design/changelog chains should classify chain shape before parent files absorb more detail
@@ -482,6 +480,17 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 > - `README.md` remains overview-only, not chain authority
 > - `TODO.md` and `phase/SUMMARY.md` stay compact current-state entrypoints; moved history remains reachable through their `history/` and `done/` references
 > - Older coordination-flavored rollout records in `TODO.md`, `phase/SUMMARY.md`, and `changelog/changelog.md` remain historical context only; current active authority stays in the active runtime rules and design docs
+
+---
+
+## 🧪 Playground
+
+For governed behavior scenarios, coverage mapping, and virtual-case exploration, start at [`./playground/README.md`](playground/README.md).
+
+Boundary:
+- `playground/` is a governed non-runtime family
+- it is not part of the 18-file `.claude/rules/` install payload
+- README stays pointer-level; detailed cases live under `playground/`
 
 ---
 
@@ -1104,7 +1113,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.18 / P110` wave; launcher-driven Bash/PowerShell install proof, project-local 18/18 parity, source/destination body sufficiency, `master` push, and GitHub release verification passed in checked source scope.
+- Source state: this README reflects the active `v10.19 / P111` pre-release wave; the playground family is being opened as a governed non-runtime surface while the active runtime install set remains 18 root rules.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
