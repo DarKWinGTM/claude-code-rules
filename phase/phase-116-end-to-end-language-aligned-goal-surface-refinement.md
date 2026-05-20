@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P116
-> **Status:** Active / Source sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.24
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.24
@@ -87,10 +87,10 @@ P116 exists to make the language surface end-to-end consistent and release that 
 
 ## Current Status
 
-P116 is active.
+P116 is completed.
 
 Current checked progress:
-- released baseline before P116 startup is `v10.23 / P115`
-- runtime doctrine gaps are already identified in the checked owner files and output templates
-- P116 startup surfaces are being opened for the runtime + playground refinement
-- runtime install-boundary proof, parity/body-sufficiency verification, push, and GitHub release proof are still pending at this stage
+- released baseline before P116 startup was `v10.23 / P115`
+- runtime/doctrine gaps were corrected in the checked owner files and output templates
+- the new playground case and index update are present in source scope
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release proof all passed

@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.24</b><br><sub>P116 Active</sub>
+  <b>v10.24</b><br><sub>P116 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Source sync in progress</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Language Surface</b><br><sub>End-to-end refinement</sub>
@@ -195,10 +195,11 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P116 end-to-end language-aligned goal surface refinement is the active wave for `v10.24`.
+- P116 end-to-end language-aligned goal surface refinement is released as `v10.24`.
   - It refines RULES so candidate goals, advisory `/goal`, recommendation labels, and recap/closing lines follow the dominant session language end-to-end instead of leaving English wrappers around Thai-first goal output.
   - It adds one new governed non-runtime playground case family for this language-surface behavior and keeps `playground/` outside the 18-file runtime install payload.
   - It preserves advisory `/goal`, keeps exact literals such as `/goal`, file paths, version tags, and code identifiers intact when they should remain exact, and keeps pointer-level README integration rather than turning the top-level README into the scenario owner.
+  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set

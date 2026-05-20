@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.24 | 2026-05-20 | **[Opened end-to-end language-aligned goal surface refinement](changelog/v10.24-added-end-to-end-language-aligned-goal-surface-refinement.changelog.md#version-1024)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.24 | 2026-05-20 | **[Released end-to-end language-aligned goal surface refinement](changelog/v10.24-added-end-to-end-language-aligned-goal-surface-refinement.changelog.md#version-1024)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.23 | 2026-05-20 | **[Released language-aware candidate-goal promotion playground case update](changelog/v10.23-added-language-aware-candidate-goal-promotion-playground-case-update.changelog.md#version-1023)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.22 | 2026-05-20 | **[Released language-aware candidate goal and goal-command doctrine](changelog/v10.22-added-language-aware-candidate-goal-and-goal-command-doctrine.changelog.md#version-1022)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.21 | 2026-05-20 | **[Released governed-work-only `/goal` context sourcing doctrine](changelog/v10.21-added-governed-work-only-goal-context-sourcing-doctrine.changelog.md#version-1021)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

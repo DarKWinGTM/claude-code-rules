@@ -3,7 +3,7 @@
 > **Current Version:** 1.89
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active: P116 end-to-end language-aligned goal surface refinement is in progress on top of the released v10.23 / P115 baseline
+> **Status:** Released through v10.24 / P116 end-to-end language-aligned goal surface refinement; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,10 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- none currently open
+
+### Most Recently Completed
+
 - **P116:** [phase-116-end-to-end-language-aligned-goal-surface-refinement.md](phase-116-end-to-end-language-aligned-goal-surface-refinement.md)
-  - Goal: refine the end-to-end session-language surface for candidate goals, advisory `/goal`, recommendation labels, and recap/closing lines while preserving exact-literal boundaries and the governed-work-only `/goal` bridge.
-  - Output: touched runtime owners and companions, one new playground case family plus index update, touched master release surfaces, and later runtime install/release verification.
-  - Gate: runtime/doctrine integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, push, GitHub release verification, and closeout alignment.
+  - Output: touched runtime owners and companions, one new playground case family plus index update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, and GitHub release `v10.24`.
+  - Gate: runtime/doctrine integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.24
+  - Release tag `v10.24` resolves to commit `68f623e26d46e381fc098ff87f04daf99b3e7818`.
+  - Published at `2026-05-20T09:53:32Z`.
 
 ### Most Recently Completed
 

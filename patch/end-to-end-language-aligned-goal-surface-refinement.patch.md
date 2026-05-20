@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** In progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.24
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -80,6 +80,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P116 is in progress.
+P116 is completed.
 
-The runtime doctrine gaps are identified in checked source scope and startup surfaces are being opened; owner/companion/changelog sync, playground case creation, runtime install-boundary proof, parity/body-sufficiency verification, commit/push, GitHub release verification, and final closeout alignment remain pending.
+The runtime doctrine gaps were corrected in checked source scope; owner/companion/changelog sync, playground case creation, runtime install-boundary proof, parity/body-sufficiency verification, commit/push, GitHub release verification, and final closeout alignment all completed.
