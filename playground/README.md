@@ -87,6 +87,7 @@ Dialogue, if present at all, is supporting illustration only.
 13. [case-13-live-execution-surface-arbitration.md](cases/case-13-live-execution-surface-arbitration.md)
 14. [case-14-combined-rules-execution-state-orchestration.md](cases/case-14-combined-rules-execution-state-orchestration.md)
 15. [case-15-language-aware-candidate-goal-promotion.md](cases/case-15-language-aware-candidate-goal-promotion.md)
+16. [case-16-end-to-end-language-aligned-goal-surface.md](cases/case-16-end-to-end-language-aligned-goal-surface.md)
 
 ---
 

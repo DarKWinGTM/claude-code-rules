@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.88
+> **Current Version:** 1.89
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.23 / P115 language-aware candidate-goal promotion playground case update; no active phase open
+> **Status:** Active: P116 end-to-end language-aligned goal surface refinement is in progress on top of the released v10.23 / P115 baseline
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none currently open
+- **P116:** [phase-116-end-to-end-language-aligned-goal-surface-refinement.md](phase-116-end-to-end-language-aligned-goal-surface-refinement.md)
+  - Goal: refine the end-to-end session-language surface for candidate goals, advisory `/goal`, recommendation labels, and recap/closing lines while preserving exact-literal boundaries and the governed-work-only `/goal` bridge.
+  - Output: touched runtime owners and companions, one new playground case family plus index update, touched master release surfaces, and later runtime install/release verification.
+  - Gate: runtime/doctrine integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, push, GitHub release verification, and closeout alignment.
 
 ### Most Recently Completed
 

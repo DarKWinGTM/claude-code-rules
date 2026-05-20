@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.11
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.11
+> **Current Version:** 1.12
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -250,14 +250,15 @@ Use this sourcing order:
 
 Use this translation model:
 - candidate goal label ← current goal plus expected output plus the smallest useful gate clue when several successor directions remain live
-- `Done when` ← current goal plus expected output
-- `Prove with` ← completion gate plus verification basis that can be surfaced in transcript
-- `Scope` ← touched artifacts, lane boundary, or bounded execution slice
-- `Keep` ← out-of-scope boundary plus preserve-semantics constraints that materially matter
-- `Stop after` ← bounded execution guard when runaway continuation risk matters
+- done condition (`Done when` in English-only examples) ← current goal plus expected output
+- proof/check basis (`Prove with` in English-only examples) ← completion gate plus verification basis that can be surfaced in transcript
+- scope boundary (`Scope` in English-only examples) ← touched artifacts, lane boundary, or bounded execution slice
+- keep constraints (`Keep` in English-only examples) ← out-of-scope boundary plus preserve-semantics constraints that materially matter
+- stop bound (`Stop after` in English-only examples) ← bounded execution guard when runaway continuation risk matters
 
 Required guidance:
 - do not invent a new durable tracking schema only for `/goal`
+- treat the translated slots above as concept slots rather than as mandatory English surface labels; emitted wording should follow the dominant session language while preserving exact literals when they should remain exact
 - when several successor directions remain live, shape them as candidate goals before promoting any one of them into `/goal`
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
 - do not pull heavy governed-surface context into trivial non-governed next steps

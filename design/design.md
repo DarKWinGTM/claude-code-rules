@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.23
+> **Current Version:** 10.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -50,6 +50,8 @@ Current target-state priorities:
 - transcript-derived observed cases inside the playground must include exact checked paths and anchor hints rather than loose storytelling
 - playground examples should prefer more realistic multi-turn traces when they help show how RULES alter the assistant path
 - playground scenario coverage may include a language-aware candidate-goal promotion family so dominant-session-language ownership, candidate-goal-first successor recommendations, and selective `/goal` promotion remain inspectable as operational behavior
+- candidate goals, promoted `/goal`, recommendation labels, and recap/closing lines should follow the dominant session language end-to-end, with English preserved only for exact literals such as command names, file paths, version tags, and code-level identifiers unless the user explicitly selects another language style
+- playground scenario coverage may also include an end-to-end language-aligned goal surface family so wrapper labels, candidate-goal headings, promoted `/goal`, and recap lines can be inspected operationally rather than only as doctrine text
 - governed behavior playground material stays outside the runtime install payload unless a later explicit doctrine changes that boundary
 - worker-first/context-safe reading still starts from parent indexes and then follows the declared smallest relevant shard or detail surface
 

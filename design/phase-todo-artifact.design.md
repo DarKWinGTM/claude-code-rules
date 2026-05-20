@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -42,6 +42,8 @@ P109 refinement: this owner must now preserve ordered phase identity selection a
 P113 refinement: this owner should now make governed-surface `/goal` sourcing design-first by default, require that heavy governed context appears only for repo-governed successor work, and include changelog/patch/README only when they materially shape completion, release/current-state truth, or before/after review boundaries.
 
 P114 refinement: this owner should now preserve candidate-goal shaping before `/goal` promotion so several live successor directions can stay compact goal options, while the promoted governed `/goal` still comes from the existing design-first sourcing order and material-only execution/release inputs.
+
+P116 refinement: this owner should now treat `Done when` / `Prove with` / `Scope` / `Keep` / `Stop after` as concept slots rather than mandatory English surface labels so emitted `/goal` wording can follow the dominant session language while preserving exact literals where needed.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.28
+> **Current Version:** 2.29
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.29 | 2026-05-20 | **[Added P116 end-to-end language-surface wording refinement](#version-229)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.28 | 2026-05-20 | **[Added P114 language-aware candidate-goal wording refinement](#version-228)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.27 | 2026-05-19 | **[Added P110 meaning-first identifier wording refinement](#version-227)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.26 | 2026-05-18 | **[Added P107 advisory `/goal` wording guard](#version-226)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -70,6 +71,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-229"></a>
+## Version 2.29: Added P116 end-to-end language-surface wording refinement
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.28 to v2.29.
+- Updated `design/accurate-communication.design.md` from v2.28 to v2.29.
+- Extended dominant-session-language wording from candidate-goal and promoted-`/goal` body text into surrounding recommendation labels and recap/closing lines.
+- Added explicit exact-literal preservation for `/goal`, file paths, version tags, and code identifiers when they should remain exact.
+
+### Summary
+`accurate-communication.md` now closes the wording gap where non-English goal output could still be surrounded by English-first wrapper labels or recap text.
 
 ---
 

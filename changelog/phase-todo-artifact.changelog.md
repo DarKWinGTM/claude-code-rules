@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-05-20 | **[Added P116 language-surface concept-slot clarification](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-20 | **[Added P114 candidate-goal shaping before `/goal` sourcing](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-20 | **[Added P113 governed-work-only `/goal` sourcing order](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-18 | **[Added P109 lineage-first phase identity enforcement](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -24,6 +25,23 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Added P116 language-surface concept-slot clarification
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.11 to v1.12.
+- Updated `design/phase-todo-artifact.design.md` from v1.11 to v1.12.
+- Reframed `Done when` / `Prove with` / `Scope` / `Keep` / `Stop after` as concept-slot examples rather than mandatory English surface labels.
+- Preserved design-first and material-only governed `/goal` sourcing while allowing emitted wording to follow the dominant session language.
+
+### Summary
+`phase-todo-artifact.md` now keeps governed `/goal` sourcing semantics stable without forcing English slot labels into non-English goal output.
 
 ---
 

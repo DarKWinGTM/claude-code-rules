@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -32,6 +32,8 @@ P107 refinement: this owner should now preserve a high-signal pruning boundary f
 P110 refinement: this owner should now preserve an easy-explanation register that matches the user's language shape without character voice, keeps identifier references paired with short role glosses, and prevents explanation from drifting into stiff spec tone or mini-tutorial over-expansion.
 
 P114 refinement: this owner should now keep candidate goals and promoted `/goal` suggestions aligned to the dominant session language and preserve a pruning boundary where several live successor directions may appear as compact goal options without forcing every option into command form.
+
+P116 refinement: this owner should now extend that language alignment to wrapper labels and recap lines while preserving exact literals that should remain exact instead of translating them by habit.
 
 ---
 

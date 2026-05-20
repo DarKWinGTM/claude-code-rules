@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-20 | **[Added P116 end-to-end goal-surface register refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-20 | **[Added P114 session-language and candidate-goal register refinement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-19 | **[Added P110 easy-explanation register refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-18 | **[Added P107 high-signal `/goal` pruning refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,23 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added P116 end-to-end goal-surface register refinement
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.6 to v1.7.
+- Updated `design/communication-register.design.md` from v1.6 to v1.7.
+- Extended dominant-session-language guidance from candidate goals and promoted `/goal` body text into wrapper labels and recap lines.
+- Added an explicit register boundary so exact literals can remain exact instead of being translated by habit.
+
+### Summary
+`communication-register.md` now keeps the whole visible goal surface aligned to the user's working language without forcing translation of exact tokens that should stay exact.
 
 ---
 

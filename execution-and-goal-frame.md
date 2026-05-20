@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.8
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.8
+> **Current Version:** 1.9
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -159,7 +159,8 @@ Required guidance:
 - when several successor goals remain live, surface them as candidate goals first and promote only the best-supported governed candidate into `/goal` when this bridge actually holds
 - if proof cannot be made transcript-visible, do not suggest `/goal`
 - if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
-- when promoted, `/goal` wording should follow the dominant session language default unless the user explicitly selects another language
+- when surfaced, candidate-goal labels, promoted `/goal`, surrounding recommendation labels, and recap/closing lines should follow the dominant session language by default rather than leaving English wrappers around non-English goal output
+- preserve exact literals such as `/goal`, file paths, version tags, and code-level identifiers unless the user explicitly selects another language style or a checked exact token must remain unchanged
 - when governed-surface context is mandatory, source it from design first, then active execution surfaces, with changelog, patch, and README included only when they materially shape completion, review, or current-state impact
 
 ---
