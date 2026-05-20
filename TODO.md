@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-20
-> **Current Release:** v10.22 / P114 language-aware candidate goal and goal-command doctrine
-> **Active Wave:** P115 / v10.23 language-aware candidate-goal promotion playground case update
+> **Current Release:** v10.23 / P115 language-aware candidate-goal promotion playground case update
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P115 / v10.23 language-aware candidate-goal promotion playground case update was completed, installed, pushed, and released.
+  - Verified: `case-15-language-aware-candidate-goal-promotion.md`, playground index update, touched master/design/changelog/TODO/phase/patch sync, playground still excluded from the active runtime install payload, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.23
+  - Release tag `v10.23` resolves to commit `f434a3b31baa3532d933687545ec3f2b3f229c60`.
+  - Published at `2026-05-20T08:59:56Z`.
 - [x] P114 / v10.22 language-aware candidate goal and goal-command doctrine was completed, installed, pushed, and released.
   - Verified: dominant-session-language ownership for candidate goals and promoted `/goal`, candidate-goal-first successor recommendation mode, selective promotion from candidate goal to governed `/goal`, two Thai-first governed examples, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.22
@@ -117,9 +122,6 @@
 
 ### Active / In Progress
 
-- [ ] P115 / v10.23 language-aware candidate-goal promotion playground case update is in progress.
-  - Scope: release `case-15-language-aware-candidate-goal-promotion.md` plus the touched playground/master surfaces while keeping `playground/` non-runtime.
-  - Pending gate: finish source/master-surface sync, verify runtime install boundary still stays at 18 files, rerun 18/18 source/runtime parity plus source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.23`, and finalize closeout records.
 
 ### Deferred / Not Selected
 

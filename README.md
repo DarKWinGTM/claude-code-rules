@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.23</b><br><sub>P115 Active</sub>
+  <b>v10.23</b><br><sub>P115 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Source sync in progress</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Playground</b><br><sub>Case family update</sub>
@@ -195,10 +195,11 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P115 language-aware candidate-goal promotion playground case update is the active wave for `v10.23`.
+- P115 language-aware candidate-goal promotion playground case update is released as `v10.23`.
   - It adds one new scenario family showing dominant-session-language ownership, candidate-goal-first successor recommendations, and selective promotion into advisory `/goal` form.
   - It keeps the playground non-runtime and outside the 18-file runtime install payload.
   - It preserves the existing governed fact / observed case / virtual variant separation and uses pointer-level README integration instead of turning the top-level README into the scenario owner.
+  - It passed runtime install-boundary recheck plus 18/18 source/runtime parity and source/destination body sufficiency.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set

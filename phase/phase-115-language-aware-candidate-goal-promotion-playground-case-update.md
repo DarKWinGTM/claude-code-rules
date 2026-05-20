@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P115
-> **Status:** Active / Source sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.23
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.23

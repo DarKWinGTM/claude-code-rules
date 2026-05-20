@@ -3,7 +3,7 @@
 > **Current Version:** 1.88
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active: P115 language-aware candidate-goal promotion playground case update is in progress on top of the released v10.22 / P114 baseline
+> **Status:** Released through v10.23 / P115 language-aware candidate-goal promotion playground case update; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,10 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- none currently open
+
+### Most Recently Completed
+
 - **P115:** [phase-115-language-aware-candidate-goal-promotion-playground-case-update.md](phase-115-language-aware-candidate-goal-promotion-playground-case-update.md)
-  - Goal: release the new playground case for dominant-session-language candidate-goal promotion while preserving the non-runtime playground boundary.
-  - Output: `case-15-language-aware-candidate-goal-promotion.md`, updated playground index, touched design/master release surfaces, and later runtime install-boundary plus release proof.
-  - Gate: touched playground/master surfaces sync, runtime install boundary still fixed at 18, parity/body sufficiency recheck, `git diff --check`, push, GitHub release verification, and closeout alignment.
+  - Output: `case-15-language-aware-candidate-goal-promotion.md`, updated playground index, touched design/master release surfaces, runtime install-boundary recheck, 18/18 parity/body sufficiency, branch push, and GitHub release `v10.23`.
+  - Gate: playground-family integrity, non-runtime playground boundary, runtime install/parity/body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.23
+  - Release tag `v10.23` resolves to commit `f434a3b31baa3532d933687545ec3f2b3f229c60`.
+  - Published at `2026-05-20T08:59:56Z`.
 
 ### Most Recently Completed
 

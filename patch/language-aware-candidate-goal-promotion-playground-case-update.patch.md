@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** In progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.23
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
