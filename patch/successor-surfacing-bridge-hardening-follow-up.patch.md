@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** In progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.26
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -95,6 +95,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P118 is in progress.
+P118 is completed.
 
-The checked real-case set and the selected bounded improvement direction already exist; owner refinement, companion/changelog sync, playground case update, runtime install-boundary proof, parity/body-sufficiency verification, commit/push/default-branch update, GitHub release verification, and final closeout alignment remain pending.
+The checked real-case set and the selected bounded improvement direction were already established; owner refinement, companion/changelog sync, playground case update, runtime install-boundary proof, parity/body-sufficiency verification, commit/push/default-branch update, GitHub release verification, and final closeout alignment all completed.

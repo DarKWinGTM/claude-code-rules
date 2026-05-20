@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P118
-> **Status:** Active / Owner sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.26
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.26
@@ -93,9 +93,10 @@ P118 exists to harden that bridge without reopening the broader response-style w
 
 ## Current Status
 
-P118 is active.
+P118 is completed.
 
 Current checked progress:
-- released baseline before P118 startup is `v10.25 / P117`
-- a checked real-case set already exists and shows the residual miss pattern clearly enough to justify a bounded follow-up wave
-- the selected improvement direction is to harden the successor-surfacing bridge in `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` without reopening the broader response-style wave
+- released baseline before P118 startup was `v10.25 / P117`
+- the checked real-case set justified the bounded follow-up and the selected owner set was refined without reopening the broader response-style wave
+- the updated playground case is present in source scope
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release proof all passed

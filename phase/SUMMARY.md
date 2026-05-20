@@ -3,7 +3,7 @@
 > **Current Version:** 1.92
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active: P118 successor-surfacing bridge hardening follow-up is in progress on top of the released v10.25 / P117 baseline
+> **Status:** Released through v10.26 / P118 successor-surfacing bridge hardening follow-up; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -21,14 +21,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Active Phase Roadmap
 
-### Active
+### Most Recently Completed
 
 - **P118:** [phase-118-successor-surfacing-bridge-hardening-follow-up.md](phase-118-successor-surfacing-bridge-hardening-follow-up.md)
-  - Goal: close the residual miss where AI already sees meaningful successor work but still stops at a generic future note instead of selecting the correct next-step surface.
-  - Output: touched successor-surfacing bridge owners, one related playground case update, touched master release surfaces, and later runtime install/release verification.
-  - Gate: successor-bridge integrity, bounded successor-slice derivation integrity, anti-generic-future-note closing integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
-
-### Most Recently Completed
+  - Output: touched successor-surfacing bridge owners, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.26`.
+  - Gate: successor-bridge integrity, bounded successor-slice derivation integrity, anti-generic-future-note closing integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.26
+  - Release tag `v10.26` resolves to commit `b0b4b46fba2725b1abad4d6d4768647a897f2249`.
+  - Published at `2026-05-20T17:54:46Z`.
 
 - **P117:** [phase-117-proactive-goal-surfacing-and-decision-ready-response-style-refinement.md](phase-117-proactive-goal-surfacing-and-decision-ready-response-style-refinement.md)
   - Output: touched goal-surfacing owners, communication/presentation/evidence-boundary owners, one new playground case family plus index update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.25`.

@@ -1,20 +1,20 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-21
-> **Current Release:** v10.25 / P117 proactive goal surfacing and decision-ready response style refinement
-> **Active Wave:** P118 / v10.26 successor-surfacing bridge hardening follow-up
+> **Current Release:** v10.26 / P118 successor-surfacing bridge hardening follow-up
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
-## 🚧 Active / In Progress
-
-- [ ] P118 / v10.26 successor-surfacing bridge hardening follow-up is in progress.
-  - Scope: close the residual miss where AI already sees meaningful successor work but still stops at a generic future note instead of selecting the correct next-step surface: direct continuation, candidate goals, advisory next goal, or advisory `/goal`.
-  - Pending gate: refine `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` without duplicate doctrine or direct-continuation regression; update one related playground case; keep the runtime install scope at 18 files; rerun install plus 18/18 source/runtime parity and source/destination body sufficiency; run `git diff --check`; push; update the remote default branch; verify GitHub release `v10.26`; and finalize closeout records.
-
 ## ✅ Completed
+
+- [x] P118 / v10.26 successor-surfacing bridge hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched successor-surfacing bridge owners now reject generic future-note closeout when meaningful successor work is already visible, candidate goals surface more clearly when several successor directions remain live, and smaller bounded successor slices are derived from checked execution surfaces instead of echoing broad future labels; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.26
+  - Release tag `v10.26` resolves to commit `b0b4b46fba2725b1abad4d6d4768647a897f2249`.
+  - Published at `2026-05-20T17:54:46Z`.
 
 - [x] P117 / v10.25 proactive goal surfacing and decision-ready response style refinement was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched owners now surface candidate goals more proactively at real decision boundaries when no one path clearly dominates; default non-trivial answers now encode plain-language summary first, small-table-when-useful, grouped explanation, identifier-meaning-first wording, visible verified/inference/hypothesis separation, and concise decision-ready close; `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` and the playground index update are present; touched master/design/changelog/TODO/phase/patch sync is complete; playground still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
