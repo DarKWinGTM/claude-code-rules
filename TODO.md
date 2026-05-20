@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-20
 > **Current Release:** v10.22 / P114 language-aware candidate goal and goal-command doctrine
-> **Active Wave:** P114 language-aware candidate goal and goal-command doctrine
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P114 / v10.22 language-aware candidate goal and goal-command doctrine was completed, installed, pushed, and released.
+  - Verified: dominant-session-language ownership for candidate goals and promoted `/goal`, candidate-goal-first successor recommendation mode, selective promotion from candidate goal to governed `/goal`, two Thai-first governed examples, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.22
+  - Release tag `v10.22` resolves to commit `3313fb193f96d5f18c6a6d45c7864e9971c8569d`.
+  - Published at `2026-05-20T08:24:10Z`.
 - [x] P113 / v10.21 governed-work-only goal context sourcing doctrine was completed, installed, pushed, and released.
   - Verified: governed-work-only `/goal` trigger doctrine, exact mandatory governed-surface trigger conditions, design-first governed `/goal` sourcing order, material-only changelog/patch/README inclusion, compact advisory output guidance, two concrete `/goal` examples, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.21
@@ -112,9 +117,6 @@
 
 ### Active / In Progress
 
-- [ ] P114 / v10.22 language-aware candidate goal and goal-command doctrine is in progress.
-  - Scope: make candidate goals and promoted `/goal` suggestions follow the dominant session language, add candidate-goal-first successor recommendations, and keep selective governed `/goal` promotion under the existing design-first sourcing boundary.
-  - Pending gate: finish owner/master-surface sync, install the active runtime rules into `~/.claude/rules`, verify 18/18 source/runtime parity plus source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.22`, and finalize closeout records.
 
 ### Deferred / Not Selected
 

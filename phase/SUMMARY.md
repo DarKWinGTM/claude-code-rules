@@ -3,7 +3,7 @@
 > **Current Version:** 1.87
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active: P114 language-aware candidate goal and goal-command doctrine is in progress on top of the released v10.21 / P113 baseline
+> **Status:** Released through v10.22 / P114 language-aware candidate goal and goal-command doctrine; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,12 +23,17 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P114:** [phase-114-language-aware-candidate-goal-and-goal-command-doctrine.md](phase-114-language-aware-candidate-goal-and-goal-command-doctrine.md)
-  - Goal: make `/goal` language-aware by dominant session language and shape multi-path successor recommendations as candidate goals before command promotion.
-  - Output: touched wording/execution/presentation owners, design/changelog companions, Thai-first candidate-goal and promoted-`/goal` examples, and later runtime install/release proof.
-  - Gate: touched runtime/design/changelog/master surfaces sync, runtime install, 18/18 parity/body sufficiency, `git diff --check`, push, GitHub release verification, and closeout alignment.
+- none currently open
 
 ### Most Recently Completed
+
+- **P114:** [phase-114-language-aware-candidate-goal-and-goal-command-doctrine.md](phase-114-language-aware-candidate-goal-and-goal-command-doctrine.md)
+  - Output: dominant-session-language ownership for candidate goals and promoted `/goal`, candidate-goal-first successor recommendation mode, selective governed `/goal` promotion, two Thai-first governed examples, runtime install, 18/18 parity/body sufficiency, branch push, and GitHub release `v10.22`.
+  - Gate: doctrine integrity, 18-rule install boundary, runtime install/parity/body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.22
+  - Release tag `v10.22` resolves to commit `3313fb193f96d5f18c6a6d45c7864e9971c8569d`.
+  - Published at `2026-05-20T08:24:10Z`.
+
 
 - **P113:** [phase-113-governed-work-only-goal-context-sourcing-doctrine.md](phase-113-governed-work-only-goal-context-sourcing-doctrine.md)
   - Output: governed-work-only `/goal` trigger doctrine, exact mandatory governed-surface triggers, design-first governed sourcing order, compact material-only output guidance, two concrete `/goal` examples, runtime install, 18/18 parity/body sufficiency, branch push, and GitHub release `v10.21`.

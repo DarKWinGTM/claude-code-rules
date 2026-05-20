@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P114
-> **Status:** Active / Source sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.22
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.22
@@ -47,17 +47,17 @@ P114 exists to make `/goal` language-aware and to insert a candidate-goal layer 
 
 ## Action Checklist
 
-- [ ] Confirm released baseline is `v10.21 / P113` with no active wave open before P114 startup.
-- [ ] Update the wording and presentation owners for dominant-session-language candidate-goal and promoted-`/goal` behavior.
-- [ ] Update the execution/sourcing owners for candidate-goal-first successor recommendation and selective promotion into governed `/goal`.
-- [ ] Sync touched owner design companions and owner changelog parents.
-- [ ] Open P114 master surfaces in README, design, changelog, TODO, phase, and patch.
-- [ ] Preserve at least two Thai-first governed examples: one non-release and one release-closeout.
-- [ ] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
-- [ ] Run `git diff --check` clean.
-- [ ] Commit the source release state and push the branch.
-- [ ] Create and verify GitHub release `v10.22`.
-- [ ] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
+- [x] Confirm released baseline is `v10.21 / P113` with no active wave open before P114 startup.
+- [x] Update the wording and presentation owners for dominant-session-language candidate-goal and promoted-`/goal` behavior.
+- [x] Update the execution/sourcing owners for candidate-goal-first successor recommendation and selective promotion into governed `/goal`.
+- [x] Sync touched owner design companions and owner changelog parents.
+- [x] Open P114 master surfaces in README, design, changelog, TODO, phase, and patch.
+- [x] Preserve at least two Thai-first governed examples: one non-release and one release-closeout.
+- [x] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
+- [x] Run `git diff --check` clean.
+- [x] Commit the source release state and push the branch.
+- [x] Create and verify GitHub release `v10.22`.
+- [x] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
 
 ---
 
@@ -88,10 +88,17 @@ P114 exists to make `/goal` language-aware and to insert a candidate-goal layer 
 
 ## Current Status
 
-P114 is active.
+P114 is released as `v10.22`.
 
-Current checked progress:
-- the released baseline is `v10.21 / P113`
-- the isolated worktree remains the active execution surface
-- touched runtime owners are in progress for language-aware candidate-goal and promoted-`/goal` doctrine
-- release verification, runtime install/parity, push, and GitHub release proof are still pending at this stage
+Release verification summary:
+- the released baseline before the wave was opened was `v10.21 / P113`
+- the isolated worktree remained the active execution surface for this wave
+- dominant-session-language ownership for candidate goals and promoted `/goal` suggestions is now explicit in active doctrine
+- several live successor directions may now be shaped as candidate goals before command promotion is considered
+- only the best-supported governed repo candidate is now promoted into advisory `/goal` form under the existing governed-work-only boundary
+- two Thai-first governed examples are preserved for non-release and release-closeout review
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, and `git diff --check` passed
+- branch push passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.22
+- release tag `v10.22` resolves to commit `3313fb193f96d5f18c6a6d45c7864e9971c8569d`
+- Published at `2026-05-20T08:24:10Z`.

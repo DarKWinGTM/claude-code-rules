@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** In progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.22
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -107,6 +107,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P114 is in progress.
+P114 is released as `v10.22`.
 
-The language-aware candidate-goal runtime update is underway; master-surface sync, runtime install/parity, commit/push, GitHub release verification, and final closeout alignment remain pending.
+The language-aware candidate-goal runtime update, master-surface sync, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, GitHub release verification, and final closeout alignment all passed.
