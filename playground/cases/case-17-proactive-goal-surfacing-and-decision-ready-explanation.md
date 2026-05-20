@@ -108,25 +108,25 @@ Present the three next slices as candidate goals, compare them in a small table,
 
 ## User-visible reply example
 
-`สรุปสั้น ๆ ก่อน: ตอนนี้ปัญหายังไม่ชี้ชัดว่าอยู่ที่ queue order, retry behavior, หรือ status visibility อย่างใดอย่างหนึ่งแบบเด็ดขาด ดังนั้นแทนที่จะฟันธงทางเดียว ควรแยกเป็น 3 goal ให้เทียบก่อน แล้วค่อยเลือก goal แรกที่คุ้มสุดครับ.
+`Quick summary first: the current evidence does not point decisively to queue order, retry behavior, or status visibility as the single cause yet. So instead of forcing one path too early, the better next step is to surface 3 candidate goals, compare them briefly, and then pick the first goal with the strongest payoff.
 
-| Goal | สิ่งที่จะได้คำตอบ | หลักฐานตอนนี้ | เหมาะเป็นลำดับแรกแค่ไหน |
+| Goal | What it would clarify | Evidence so far | Best first step? |
 |---|---|---|---|
-| ตรวจ queue/worker lease | รู้ว่าคิวค้างเพราะลำดับหรือการยึดงานไหม | verified fact: มีอาการ stalled queue; inference: lease/order อาจเกี่ยว | สูง |
-| ตรวจ retry/backoff | รู้ว่าปัญหาเกิดจากงานล้มแล้ววน retry หรือไม่ | verified fact: ยังไม่มี proof ตรงว่ามี retry storm | กลาง |
-| ตรวจ status visibility | รู้ว่าจริง ๆ งานเดินแต่เราเห็นไม่ครบหรือไม่ | hypothesis: อาจเป็น visibility gap มากกว่าคอขวดจริง | กลาง |
+| Inspect queue/worker lease | Determine whether the stall comes from ordering or lease ownership | verified fact: there is a stalled queue symptom; inference: lease/order may be involved | High |
+| Inspect retry/backoff | Determine whether failed work is looping and re-entering the queue | verified fact: there is no direct proof of a retry storm yet | Medium |
+| Inspect status visibility | Determine whether work is progressing but the reporting layer is incomplete | hypothesis: this may be a visibility gap rather than a real execution bottleneck | Medium |
 
 Verified:
-- มีอาการ stalled queue ใน checked scope
-- ตอนนี้ยังไม่มีหลักฐานชัดว่ามี path เดียวที่ควรฟันธงทันที
+- There is a stalled queue symptom in checked scope.
+- The current evidence does not justify collapsing immediately to one path.
 
 Inference:
-- queue order / worker lease เป็น candidate แรกที่น่าตรวจ เพราะอธิบาย stalled behavior ได้ตรงที่สุดในตอนนี้
+- Queue order / worker lease is the strongest first candidate because it fits the observed stall most directly so far.
 
 Hypothesis:
-- ส่วนหนึ่งของปัญหาอาจเป็น status visibility ไม่ใช่ execution bottleneck จริง
+- Part of the problem may be status visibility rather than the execution path itself.
 
-แนะนำลำดับแรก: เปิด goal ตรวจ queue/worker lease ก่อน เพราะตอนนี้มันมีทั้ง impact สูงและ evidence support มากสุด เมื่อเทียบกับอีก 2 ทาง.`
+Recommended first goal: inspect queue/worker lease first, because it currently has the strongest evidence support and the highest immediate diagnostic value.`
 
 ---
 
