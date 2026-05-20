@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-05-20 | **[Added P114 candidate-goal shaping before `/goal` sourcing](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-20 | **[Added P113 governed-work-only `/goal` sourcing order](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-18 | **[Added P109 lineage-first phase identity enforcement](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-18 | **[Added P107 `/goal` sourcing from governed surfaces](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -23,6 +24,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Added P114 candidate-goal shaping before `/goal` sourcing
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.10 to v1.11.
+- Updated `design/phase-todo-artifact.design.md` from v1.10 to v1.11.
+- Added candidate-goal shaping before `/goal` promotion so several live successor directions can stay compact goal options.
+- Preserved the existing design-first governed `/goal` sourcing order and material-only inclusion of changelog/patch/README.
+- Avoided introducing any new durable tracking schema.
+
+### Summary
+`phase-todo-artifact.md` now shapes several live successor directions as candidate goals before selective `/goal` promotion while preserving the design-first governed sourcing order.
 
 ---
 

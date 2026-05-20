@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.4
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -250,17 +250,20 @@ When the main answer is intentionally easy-first and compact but deeper explanat
 - omit it when the answer is trivial, already detailed enough, or active execution should simply continue
 - keep it short so it does not dilute the main answer
 
-### 8.1) Advisory `/goal` suggestion shape
-When checked next-goal doctrine says a compact command would help more than prose alone, the assistant may emit one advisory `Suggested /goal:` block.
+### 8.1) Candidate-goal and advisory `/goal` suggestion shape
+When checked next-goal doctrine says a compact goal-oriented next-step surface would help more than plain prose alone, the assistant may emit candidate goals and may promote one governed candidate into an advisory `Suggested /goal:` block.
 
 Required guidance:
-- keep the command compact and copy-pasteable
-- build it from one measurable outcome, transcript-visible proof/checks, bounded scope, hard guardrails, and an optional stop bound
-- if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light command rather than governed-surface framing
+- if several successor directions remain live, present them first as compact candidate goals rather than as a plain choice list
+- promote only the best-supported governed candidate into `Suggested /goal:`; other candidates may stay prose goals
+- keep candidate-goal and promoted `/goal` wording aligned to the dominant session language unless the user explicitly selects another language
+- keep the promoted command compact and copy-pasteable
+- build promoted `/goal` output from one measurable outcome, transcript-visible proof/checks, bounded scope, hard guardrails, and an optional stop bound
+- if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light goal-shaped recommendation rather than governed-surface framing
 - if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
 - do not turn it into a mini-spec dump or background essay
 - do not emit several competing `/goal` commands when the real decision surface is still open
-- if the command would be too broad, too long, or too weakly provable, fall back to ordinary recommendation wording instead
+- if the command would be too broad, too long, or too weakly provable, fall back to candidate goals or ordinary recommendation wording instead
 
 ### 9) Preferred closing shapes
 ```text
@@ -282,6 +285,14 @@ Recommendation:
 Recommended: <path>
 Why this first: <one short reason>
 Other options: <real alternative when the choice still exists>
+
+Candidate goals:
+Goal A: <target outcome>
+Output: <expected result>
+Gate: <smallest useful success clue>
+Goal B: <target outcome>
+Output: <expected result>
+Gate: <smallest useful success clue>
 
 Advisory proposal:
 Proposal: <future work>

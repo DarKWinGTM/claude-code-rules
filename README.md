@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.21</b><br><sub>P113 Released</sub>
+  <b>v10.22</b><br><sub>P114 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Validation passed</sub>
+  <b>Active</b><br><sub>Source sync in progress</sub>
 </td>
 <td align="center" width="200">
-  <b>/goal</b><br><sub>Governed context</sub>
+  <b>/goal</b><br><sub>Language-aware goals</sub>
 </td>
 </tr>
 </table>
@@ -195,11 +195,11 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P113 governed-work-only `/goal` context sourcing doctrine is released as `v10.21`.
-  - It keeps trivial non-governed next steps concise by default instead of dragging governed context into small successor work.
-  - It makes bounded governed repo successor work design-first and execution-surface-aware when explicit context materially defines done.
-  - It includes changelog, patch, and README in governed `/goal` construction only when they materially shape completion, review, or current-state impact.
-  - It keeps the active runtime install set at 18, preserves advisory `/goal` behavior, and passed runtime install plus 18/18 parity/body-sufficiency verification.
+- P114 language-aware candidate goal and goal-command doctrine is the active wave for `v10.22`.
+  - It makes candidate goals and promoted `/goal` suggestions follow the dominant session language by default, especially in Thai-first sessions.
+  - It makes multi-path successor recommendations candidate-goal-first instead of plain unlabeled next-step choices.
+  - It promotes only the best-supported governed repo candidate into advisory `/goal` form under the existing governed-work-only boundary.
+  - It keeps the active runtime install set at 18 and preserves compact advisory `/goal` behavior instead of selected execution.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set

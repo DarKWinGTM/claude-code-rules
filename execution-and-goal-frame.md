@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.7
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -128,16 +128,18 @@ Reporting that God pressure exists is not a legitimate stop when repair or plann
 When the active objective is actually complete, use checked execution surfaces to decide whether a next-goal recommendation is useful.
 - if a selected, unblocked current or next goal exists in the same objective or phase chain, continue rather than converting it into a proposal
 - if meaningful successor work is implied by design, phase roadmap, TODO, or checked implementation state but is not selected/opened, recommend it as an advisory next goal with why/output/gate
+- if several meaningful successor directions remain live, present them as candidate goals rather than as a plain next-step choice list
 - if successor state is ambiguous, approval-sensitive, destructive, or materially divergent, ask a narrow basis/approval question
 - if no meaningful successor is visible, say none is selected or opened; do not invent one
 
 This bridge is closeout behavior, not a mid-execution stop ritual. It must not block phase 1 → 2 → 3 continuation when those phases are already selected, safe, and unblocked.
 
 ### 9.1) Explicit `/goal` suggestion bridge
-When a true completion boundary exposes one bounded governed-work successor objective, the assistant may propose a compact advisory Claude Code `/goal` command instead of only prose recommendation.
+When a true completion boundary exposes one bounded governed-work successor objective, the assistant may promote that candidate goal into a compact advisory Claude Code `/goal` command instead of leaving it only as prose recommendation.
 
 Use this bridge only when all conditions hold:
 - the successor objective is singular enough that one command will not hide a real multi-path decision surface
+- the candidate goal is already the best-supported successor rather than one of several still-undifferentiated live options
 - the completion condition can stay compact enough for the `/goal` character limit
 - the proof/check basis can be surfaced in the conversation instead of depending on hidden file state or invisible runtime facts
 - suggesting `/goal` is more useful than directly continuing the work in the current execution path
@@ -153,10 +155,11 @@ Governed-surface context becomes mandatory for `/goal` construction when one or 
 Required guidance:
 - keep `/goal` suggestions advisory, not selected execution
 - if safe direct continuation already exists, continue directly rather than pausing only to emit `/goal`
-- trivial or small non-governed next steps should stay ordinary next-step guidance or a very light `/goal`, not a governed-surface dump
-- if several successor goals remain live, use ordinary recommendation or one narrow clarification instead of one command that collapses the decision too early
+- trivial or small non-governed next steps should stay ordinary next-step guidance or a very light goal-shaped recommendation, not a governed-surface dump
+- when several successor goals remain live, surface them as candidate goals first and promote only the best-supported governed candidate into `/goal` when this bridge actually holds
 - if proof cannot be made transcript-visible, do not suggest `/goal`
 - if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
+- when promoted, `/goal` wording should follow the dominant session language default unless the user explicitly selects another language
 - when governed-surface context is mandatory, source it from design first, then active execution surfaces, with changelog, patch, and README included only when they materially shape completion, review, or current-state impact
 
 ---

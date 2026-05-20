@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.10
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -249,6 +249,7 @@ Use this sourcing order:
 - README only when front-page current-state, install guidance, or user-visible repository impact materially shapes completion
 
 Use this translation model:
+- candidate goal label ← current goal plus expected output plus the smallest useful gate clue when several successor directions remain live
 - `Done when` ← current goal plus expected output
 - `Prove with` ← completion gate plus verification basis that can be surfaced in transcript
 - `Scope` ← touched artifacts, lane boundary, or bounded execution slice
@@ -257,6 +258,7 @@ Use this translation model:
 
 Required guidance:
 - do not invent a new durable tracking schema only for `/goal`
+- when several successor directions remain live, shape them as candidate goals before promoting any one of them into `/goal`
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
 - do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command

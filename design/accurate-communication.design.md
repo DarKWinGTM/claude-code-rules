@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.27
+> **Current Version:** 2.28
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -37,6 +37,8 @@ This chain is the wording owner for:
 - visible intent-read wording so the assistant can expose a short working interpretation of the user's goal when that reduces drift
 - root-cause wording that distinguishes symptom, likely cause, verified cause, and next-best check without overclaiming
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
+- candidate-goal wording so multi-path successor recommendations can be expressed as compact goals instead of plain unlabeled choice lists when that shape better preserves outcome/gate meaning
+- dominant-session-language wording for candidate goals and promoted `/goal` suggestions unless the user explicitly selects another language
 - safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
 
 This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `coding-discipline`, keeps bounded technical snapshot wording inside its absorbed Snapshot Wording section, and defers end-of-response closing / action / proposal framing to `explanation-and-presentation`.

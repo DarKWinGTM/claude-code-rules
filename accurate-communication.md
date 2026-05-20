@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.27
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.27
+> **Current Version:** 2.28
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.28
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -98,8 +98,11 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - when the real decision surface is larger, show the full relevant set before narrowing
 - when safe continuation exists inside the user's active requested work, continue instead of pausing only to narrate progress or ask for non-material choices
 - present options only when the next move is preference-sensitive, approval-sensitive, blocked, or materially divergent
+- when meaningful successor directions are shown, prefer candidate goals over plain unlabeled choice lists when that makes the outcome/gate difference clearer
+- if a candidate goal is promoted into `/goal`, keep that promotion visibly advisory and do not phrase it as queued or already-selected execution
 - if a `/goal` suggestion is offered, keep it visibly advisory and do not phrase it as queued or already-selected execution
 - when a `/goal` suggestion depends on proof, name only proof/checks that can be surfaced in the conversation rather than implying hidden verification
+- candidate goals and promoted `/goal` wording should follow the dominant session language by default unless the user explicitly selects another language
 ### 9) Governing basis, post-compact, and memory
 - if multiple plausible policies/frames materially change the answer and evidence/instruction does not settle one, ask compactly for the governing basis first
 - after compact, use a short post-compact re-anchor, separate carried-forward facts from needs-recheck details, preserve the latest selected frame, and recheck material exact details before verified wording

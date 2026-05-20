@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-20
-> **Current Release:** v10.21 / P113 governed-work-only goal context sourcing doctrine
-> **Active Wave:** none currently open
+> **Current Release:** v10.22 / P114 language-aware candidate goal and goal-command doctrine
+> **Active Wave:** P114 language-aware candidate goal and goal-command doctrine
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -112,6 +112,9 @@
 
 ### Active / In Progress
 
+- [ ] P114 / v10.22 language-aware candidate goal and goal-command doctrine is in progress.
+  - Scope: make candidate goals and promoted `/goal` suggestions follow the dominant session language, add candidate-goal-first successor recommendations, and keep selective governed `/goal` promotion under the existing design-first sourcing boundary.
+  - Pending gate: finish owner/master-surface sync, install the active runtime rules into `~/.claude/rules`, verify 18/18 source/runtime parity plus source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.22`, and finalize closeout records.
 
 ### Deferred / Not Selected
 

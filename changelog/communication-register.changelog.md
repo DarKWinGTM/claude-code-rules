@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.6
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-05-20 | **[Added P114 session-language and candidate-goal register refinement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-19 | **[Added P110 easy-explanation register refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-18 | **[Added P107 high-signal `/goal` pruning refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-17 | **[Added P101 premise-separation refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -18,6 +19,23 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-16"></a>
+## Version 1.6: Added P114 session-language and candidate-goal register refinement
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.5 to v1.6.
+- Updated `design/communication-register.design.md` from v1.5 to v1.6.
+- Added dominant-session-language guidance for candidate goals and promoted `/goal` suggestions.
+- Added a pruning boundary so several live successor directions can appear as compact candidate goals without forcing every option into command form.
+
+### Summary
+`communication-register.md` now carries the P114 register refinement so goal-oriented next-step options stay language-aligned, compact, and distinct from promoted `/goal` commands.
 
 ---
 

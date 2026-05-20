@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-05-20 | **[Added P114 candidate-goal presentation before `/goal` promotion](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-20 | **[Added P113 governed-work-only `/goal` output shaping](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-19 | **[Added P110 meaning-first identifier walkthroughs](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-18 | **[Added P107 compact `/goal` closing shape](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -17,6 +18,24 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-15"></a>
+## Version 1.5: Added P114 candidate-goal presentation before `/goal` promotion
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.4 to v1.5.
+- Updated `design/explanation-and-presentation.design.md` from v1.4 to v1.5.
+- Added a candidate-goal presentation shape for several live successor directions before command promotion.
+- Added guidance to keep promoted `/goal` wording aligned to the dominant session language by default.
+- Preserved compact material-only promoted `/goal` output and kept several competing commands disallowed.
+
+### Summary
+`explanation-and-presentation.md` now presents multi-path successor work as candidate goals first and keeps promoted `/goal` output compact, language-aware, and clearly separate from prose goal options.
 
 ---
 
