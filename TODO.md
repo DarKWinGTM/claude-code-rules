@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-20
 > **Current Release:** v10.22 / P114 language-aware candidate goal and goal-command doctrine
-> **Active Wave:** none currently open
+> **Active Wave:** P115 / v10.23 language-aware candidate-goal promotion playground case update
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -117,6 +117,9 @@
 
 ### Active / In Progress
 
+- [ ] P115 / v10.23 language-aware candidate-goal promotion playground case update is in progress.
+  - Scope: release `case-15-language-aware-candidate-goal-promotion.md` plus the touched playground/master surfaces while keeping `playground/` non-runtime.
+  - Pending gate: finish source/master-surface sync, verify runtime install boundary still stays at 18 files, rerun 18/18 source/runtime parity plus source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.23`, and finalize closeout records.
 
 ### Deferred / Not Selected
 

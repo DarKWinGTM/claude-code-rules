@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.22
+> **Current Version:** 10.23
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.23 | 2026-05-20 | **[Opened language-aware candidate-goal promotion playground case update](changelog/v10.23-added-language-aware-candidate-goal-promotion-playground-case-update.changelog.md#version-1023)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.22 | 2026-05-20 | **[Released language-aware candidate goal and goal-command doctrine](changelog/v10.22-added-language-aware-candidate-goal-and-goal-command-doctrine.changelog.md#version-1022)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.21 | 2026-05-20 | **[Released governed-work-only `/goal` context sourcing doctrine](changelog/v10.21-added-governed-work-only-goal-context-sourcing-doctrine.changelog.md#version-1021)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.20 | 2026-05-19 | **[Released grounded playground transcript cases and realism upgrade](changelog/v10.20-added-grounded-playground-transcript-cases-and-realism-upgrade.changelog.md#version-1020)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

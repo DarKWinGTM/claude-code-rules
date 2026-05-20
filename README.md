@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.22</b><br><sub>P114 Released</sub>
+  <b>v10.23</b><br><sub>P115 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Validation passed</sub>
+  <b>Active</b><br><sub>Source sync in progress</sub>
 </td>
 <td align="center" width="200">
-  <b>/goal</b><br><sub>Language-aware goals</sub>
+  <b>Playground</b><br><sub>Case family update</sub>
 </td>
 </tr>
 </table>
@@ -195,11 +195,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P114 language-aware candidate goal and goal-command doctrine is released as `v10.22`.
-  - It makes candidate goals and promoted `/goal` suggestions follow the dominant session language by default, especially in Thai-first sessions.
-  - It makes multi-path successor recommendations candidate-goal-first instead of plain unlabeled next-step choices.
-  - It promotes only the best-supported governed repo candidate into advisory `/goal` form under the existing governed-work-only boundary.
-  - It keeps the active runtime install set at 18 and passed runtime install plus 18/18 parity/body-sufficiency verification.
+- P115 language-aware candidate-goal promotion playground case update is the active wave for `v10.23`.
+  - It adds one new scenario family showing dominant-session-language ownership, candidate-goal-first successor recommendations, and selective promotion into advisory `/goal` form.
+  - It keeps the playground non-runtime and outside the 18-file runtime install payload.
+  - It preserves the existing governed fact / observed case / virtual variant separation and uses pointer-level README integration instead of turning the top-level README into the scenario owner.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set

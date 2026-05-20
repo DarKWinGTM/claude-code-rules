@@ -1,8 +1,8 @@
 # Playground Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.20
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-19)
+> **Current Version:** 10.23
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Section:** Governed playground family for RULES behavior scenarios
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -16,6 +16,8 @@ This shard defines the active architecture for the governed `playground/` family
 It exists so RULES can show how the current rules change AI behavior in practice without turning README into a scenario dump, without mixing checked facts with invented demonstrations, and without expanding the runtime install payload beyond the active 18-rule set.
 
 For `v10.20 / P112`, the family should also prefer transcript-grounded observed cases from real Claude Code session JSONL transcripts on this machine, richer multi-turn scenario traces, and more realistic blocker / correction / retry shapes when checked evidence supports them.
+
+For `v10.23 / P115`, the family may also add a focused case family showing dominant-session-language ownership, candidate-goal-first successor recommendations, and selective promotion into advisory `/goal` form when current RULES behavior justifies that scenario split.
 
 ---
 
@@ -127,6 +129,9 @@ Original baseline scenario families:
 Grounded expansion patterns already justified by checked transcript evidence in this wave:
 11. status ladder and completion-claim audit
 12. workflow-blocked visual QA
+
+Additional focused scenario-family expansion justified by current governed behavior coverage in the current family:
+13. language-aware candidate-goal promotion
 
 ---
 

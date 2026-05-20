@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.22
+> **Current Version:** 10.23
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -49,6 +49,7 @@ Current target-state priorities:
 - a governed `playground/` family may show how RULES change AI behavior in practice, but it must keep `rule-enforced fact`, `observed case`, and `virtual variant` visibly separate
 - transcript-derived observed cases inside the playground must include exact checked paths and anchor hints rather than loose storytelling
 - playground examples should prefer more realistic multi-turn traces when they help show how RULES alter the assistant path
+- playground scenario coverage may include a language-aware candidate-goal promotion family so dominant-session-language ownership, candidate-goal-first successor recommendations, and selective `/goal` promotion remain inspectable as operational behavior
 - governed behavior playground material stays outside the runtime install payload unless a later explicit doctrine changes that boundary
 - worker-first/context-safe reading still starts from parent indexes and then follows the declared smallest relevant shard or detail surface
 
