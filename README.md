@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.25</b><br><sub>P117 Released</sub>
+  <b>v10.26</b><br><sub>P118 Active</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Validation passed</sub>
+  <b>Active</b><br><sub>Owner sync in progress</sub>
 </td>
 <td align="center" width="200">
-  <b>Goal + Style</b><br><sub>Decision-ready refinement</sub>
+  <b>Successor Bridge</b><br><sub>Generic-note hardening</sub>
 </td>
 </tr>
 </table>
@@ -195,11 +195,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P117 proactive goal surfacing and decision-ready response style refinement is released as `v10.25`.
-  - It tightens why AI does not surface next-step options as candidate goals often enough, then refines the correct owners so goal surfacing becomes more proactive at real decision boundaries without weakening direct-continuation logic.
-  - It refines default non-trivial answer style so responses become easy-first, compact-but-complete, scanable, identifier-meaning-first, evidence-layer-clear, and decision-ready without turning trivial work into ritual.
-  - It keeps the active runtime install scope at 18 files, preserves advisory `/goal`, and adds one new governed non-runtime playground case family for the combined behavior change while keeping `playground/` outside the runtime install payload.
-  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification.
+- P118 successor-surfacing bridge hardening follow-up is the active wave for `v10.26`.
+  - It closes the residual miss where AI already sees meaningful successor work but still stops at a generic future note instead of selecting the correct next-step surface.
+  - It narrows the refinement to `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` so direct continuation, candidate goals, advisory next goal, and advisory `/goal` are chosen more reliably without reopening the broader response-style wave.
+  - It keeps the active runtime install scope at 18 files, preserves advisory `/goal`, keeps `playground/` outside the runtime install payload, and updates one related governed non-runtime playground case to make the residual miss/fix inspectable.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set

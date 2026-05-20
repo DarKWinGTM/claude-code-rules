@@ -248,6 +248,7 @@ Future-work ideas must stay clearly advisory unless the user selects them.
 When a phase-backed or governed objective is genuinely complete and checked surfaces show meaningful future work, the closeout should include a compact next recommendation unless selected safe continuation is already happening.
 - first close the completed work with delivery, impact, and verification scope
 - then recommend the next phase/wave/goal only if it is supported by design, phase roadmap, TODO, or checked implementation state
+- do not end with only generic future-note wording such as `ถ้าจะไปต่อ...`, `next step would be ...`, or `implementation wave ใหม่` when a governed next-step surface is already visible
 - include goal, expected output/result, and gate or success condition when material
 - keep the recommendation advisory when the user has not selected it
 - if no meaningful next work is visible, say no next phase/wave/goal is currently selected or opened rather than inventing one
@@ -424,6 +425,7 @@ Avoid:
 - raw identifiers or internal jargon with no role explanation
 - phase closeout phrased only as file/task/audit status with no delivered feature or impact
 - future work phrased like automatic continuation when it is still only a proposal
+- generic future-note closeout when the next-goal surface is already visible enough to name directly
 - summaries that repeat the whole answer instead of synthesizing it
 - optional deep-dive offers that become a second full answer
 - goal/output/gate blocks forced into every trivial answer

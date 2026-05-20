@@ -47,6 +47,8 @@ P116 refinement: this owner should now treat `Done when` / `Prove with` / `Scope
 
 P117 refinement: this owner should now let checked phase/roadmap/TODO surfaces shape compact candidate goals at real decision boundaries when several unselected next slices remain live and no one continuation path clearly dominates.
 
+P118 refinement: this owner should now derive the smallest bounded successor slice from checked goal/output/gate/touched-surface context when phase/roadmap/TODO wording stays too broad, and should not leave successor output at generic future-note level when a smaller truthful next slice is already derivable.
+
 ---
 
 ## Runtime Requirements

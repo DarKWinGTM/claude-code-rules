@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.25
+> **Current Version:** 10.26
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -35,6 +35,8 @@ Current target-state priorities:
 - compact `/goal` suggestions should stay light or be omitted entirely for trivial non-governed next steps
 - candidate goals should be the preferred shape for multi-path successor recommendations when several meaningful directions remain live
 - candidate goals may also surface at real decision boundaries when several materially different next slices remain live and no one continuation path clearly dominates
+- when meaningful successor work is already visible, a generic future note such as `ถ้าจะไปต่อ...`, `next step would be ...`, or `implementation wave ใหม่` should not remain the final shape by itself; the assistant should resolve that successor state into direct continuation, candidate goals, advisory next goal, or advisory `/goal`
+- if checked execution surfaces expose only a broad successor label but already provide enough material to derive a smaller bounded next slice, the assistant should derive that smaller slice instead of echoing the broad label back unchanged
 - candidate goals and promoted `/goal` suggestions should follow the dominant session language by default unless the user explicitly selects another language
 - compact `/goal` suggestions should be allowed only when a bounded governed-work successor objective is clear, measurable, provable in transcript, and better than direct continuation
 - governed-surface context for `/goal` should become mandatory only for repo-governed multi-step, phase-backed, design-impacting, doc-sync, release-sync, runtime-rule-impacting, or materially current-state/review-sensitive work

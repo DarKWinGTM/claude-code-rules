@@ -35,6 +35,8 @@ P116 refinement: this owner should now keep the visible wrapper labels and outpu
 
 P117 refinement: this owner should now encode the default non-trivial answer shape more explicitly as plain-language summary first, small-table-when-useful for multi-axis explanation, grouped explanation by concept, and concise decision-ready close without turning trivial answers into a mandatory template.
 
+P118 refinement: this owner should now treat generic future-note closeout as insufficient when a governed next-step surface is already visible, and should preserve closing shapes that name the successor goal/output/gate directly instead of leaving the next action in broad prose.
+
 ---
 
 ## Runtime Requirements

@@ -41,6 +41,8 @@ P116 refinement: this owner should now make dominant-session-language behavior e
 
 P117 refinement: this owner should now allow candidate-goal surfacing at real decision boundaries where several materially different next slices remain live and no one continuation path clearly dominates, while still preserving direct continuation when one path is already clearly selected and safe.
 
+P118 refinement: this owner should now reject generic future-note closeout when meaningful successor work is already visible, require conversion into the correct next-step surface, and derive a smaller truthful successor slice when checked execution surfaces already provide more than a broad future label.
+
 ---
 
 ## Runtime Requirements

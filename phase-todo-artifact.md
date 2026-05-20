@@ -261,6 +261,8 @@ Required guidance:
 - treat the translated slots above as concept slots rather than as mandatory English surface labels; emitted wording should follow the dominant session language while preserving exact literals when they should remain exact
 - when several successor directions remain live, shape them as candidate goals before promoting any one of them into `/goal`
 - when checked phase/roadmap/TODO surfaces already show several unselected but materially different next slices and no one continuation path clearly dominates, use those surfaces to shape compact candidate goals rather than plain unlabeled next-step bullets
+- when current phase/roadmap/TODO wording names only a broad future label such as `implementation wave ใหม่`, but checked goal/output/gate/touched-surface context already defines a smaller bounded successor slice, derive that smaller slice before emitting successor wording
+- do not leave successor output as a generic future note when the smaller bounded slice is already derivable from checked execution surfaces
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
 - do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command

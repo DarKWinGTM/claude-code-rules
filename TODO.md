@@ -1,12 +1,18 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-20
+> **Last Updated:** 2026-05-21
 > **Current Release:** v10.25 / P117 proactive goal surfacing and decision-ready response style refinement
-> **Active Wave:** none currently open
+> **Active Wave:** P118 / v10.26 successor-surfacing bridge hardening follow-up
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## 🚧 Active / In Progress
+
+- [ ] P118 / v10.26 successor-surfacing bridge hardening follow-up is in progress.
+  - Scope: close the residual miss where AI already sees meaningful successor work but still stops at a generic future note instead of selecting the correct next-step surface: direct continuation, candidate goals, advisory next goal, or advisory `/goal`.
+  - Pending gate: refine `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` without duplicate doctrine or direct-continuation regression; update one related playground case; keep the runtime install scope at 18 files; rerun install plus 18/18 source/runtime parity and source/destination body sufficiency; run `git diff --check`; push; update the remote default branch; verify GitHub release `v10.26`; and finalize closeout records.
 
 ## ✅ Completed
 

@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-05-21 | **[Added P118 bounded successor-slice derivation from execution surfaces](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-20 | **[Added P117 phase-backed candidate-goal shaping at decision boundaries](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-20 | **[Added P116 language-surface concept-slot clarification](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-20 | **[Added P114 candidate-goal shaping before `/goal` sourcing](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -26,6 +27,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Added P118 bounded successor-slice derivation from execution surfaces
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.13 to v1.14.
+- Updated `design/phase-todo-artifact.design.md` from v1.13 to v1.14.
+- Added guidance to derive the smallest bounded successor slice when phase/roadmap/TODO wording stays too broad but checked goal/output/gate/touched-surface context already provides more.
+- Added guidance to avoid leaving successor output at generic future-note level when a smaller truthful next slice is already derivable.
+- Preserved design-first governed `/goal` sourcing and material-only context boundaries.
+
+### Summary
+`phase-todo-artifact.md` now turns broad future labels into smaller truthful successor slices when checked execution surfaces already provide enough bounded next-step context.
 
 ---
 

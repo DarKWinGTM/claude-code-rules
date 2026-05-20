@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES should surface several materially different next-step options as candidate goals earlier at a real decision boundary, and how the answer should stay easy-first, compact-but-complete, structured, evidence-clear, and decision-ready instead of collapsing too early into one path or sprawling into dense prose.
+This case family shows how RULES should surface several materially different next-step options as candidate goals earlier at a real decision boundary, and how the answer should stay easy-first, compact-but-complete, structured, evidence-clear, and decision-ready instead of collapsing too early into one path, stopping at a generic future note, or sprawling into dense prose.
 
 ---
 
@@ -37,7 +37,11 @@ Current RULES require the assistant to:
 
 ## Observed case
 
-No checked observed example recorded in repo scope yet.
+Checked transcript-derived example:
+- Transcript path: `<claude-project-scope-root>/519ee145-4708-49b8-9b9e-e57227b2ade7.jsonl`
+- Anchor hints: `P696 ปิดได้แล้ว`, `implementation wave ใหม่`, `ขอคำสั่ง goal ในการดำเนินการ`
+- Observed effect: after a docs-lock closeout already made the successor state visible, the answer still ended in a generic future note instead of surfacing a governed next-step shape directly enough; the user had to ask again for a goal command.
+- Scope note: this proves a residual successor-surfacing bridge miss in that checked session; it does not prove that every closeout should emit `/goal`.
 
 ---
 
@@ -51,7 +55,7 @@ No checked observed example recorded in repo scope yet.
 - No one path is clearly dominant yet.
 - The answer needs to explain flow/order/concurrency clearly enough that the user can decide which slice to open first.
 
-Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation.
+Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation.
 
 ---
 

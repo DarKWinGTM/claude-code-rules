@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-05-21 | **[Added P118 anti-generic-future-note successor bridge hardening](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-20 | **[Added P117 proactive decision-boundary candidate-goal surfacing](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-20 | **[Added P116 end-to-end language-surface alignment](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-20 | **[Added P114 candidate-goal promotion bridge](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -24,6 +25,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Added P118 anti-generic-future-note successor bridge hardening
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.10 to v1.11.
+- Updated `design/execution-and-goal-frame.design.md` from v1.10 to v1.11.
+- Added explicit anti-generic-future-note behavior so meaningful visible successor work must resolve into direct continuation, candidate goals, advisory next goal, or advisory `/goal` instead of broad future-note prose.
+- Added smaller-successor-slice derivation guidance when checked execution surfaces already provide more than a broad future label.
+- Preserved direct continuation when one path is already clearly selected and safe.
+
+### Summary
+`execution-and-goal-frame.md` now hardens the successor bridge so visible next work is surfaced as the correct next-step shape instead of being left as a generic future note.
 
 ---
 

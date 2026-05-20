@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-05-21 | **[Added P118 anti-generic-future-note closing refinement](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-20 | **[Added P117 decision-ready default non-trivial answer shape](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-20 | **[Added P116 language-surface-neutral `/goal` output templates](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-20 | **[Added P114 candidate-goal presentation before `/goal` promotion](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -20,6 +21,24 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added P118 anti-generic-future-note closing refinement
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.7 to v1.8.
+- Updated `design/explanation-and-presentation.design.md` from v1.7 to v1.8.
+- Added guidance that generic future-note wording is not a sufficient closeout shape when a governed next-step surface is already visible.
+- Added an explicit anti-pattern for broad future-note closeout when the next-goal surface can already be named directly.
+- Preserved concise, decision-ready closeout without forcing heavy structure onto trivial work.
+
+### Summary
+`explanation-and-presentation.md` now rejects broad future-note closeout when a real governed next-step shape is already visible to the assistant.
 
 ---
 
