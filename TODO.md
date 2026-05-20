@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-20
 > **Current Release:** v10.21 / P113 governed-work-only goal context sourcing doctrine
-> **Active Wave:** P113 governed-work-only goal context sourcing doctrine
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,6 +10,11 @@
 
 ## ✅ Completed
 
+- [x] P113 / v10.21 governed-work-only goal context sourcing doctrine was completed, installed, pushed, and released.
+  - Verified: governed-work-only `/goal` trigger doctrine, exact mandatory governed-surface trigger conditions, design-first governed `/goal` sourcing order, material-only changelog/patch/README inclusion, compact advisory output guidance, two concrete `/goal` examples, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.21
+  - Release tag `v10.21` resolves to commit `53f80777bd3b0ec9d5ad84165bcd58e6e726c4f2`.
+  - Published at `2026-05-20T07:54:14Z`.
 - [x] P112 / v10.20 grounded playground transcript cases and realism upgrade was completed, installed, pushed, and released.
   - Verified: transcript-grounded observed entries with exact checked transcript paths plus anchor hints, richer multi-turn scenario traces, stronger flow explanations, two grounded new scenario families, README pointer-level integration, project-local 18/18 source/runtime parity, source/destination body sufficiency, `playground/` excluded from `.claude/rules/`, `master` push, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.20
@@ -107,9 +112,6 @@
 
 ### Active / In Progress
 
-- [ ] P113 / v10.21 governed-work-only goal context sourcing doctrine is in progress.
-  - Scope: tighten `/goal` so trivial non-governed next steps stay concise while bounded governed repo successor work becomes design-first and execution-surface-aware.
-  - Pending gate: finish master-surface sync, install the active runtime rules into `~/.claude/rules`, verify 18/18 source/runtime parity plus source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.21`, and finalize closeout records.
 
 ### Deferred / Not Selected
 

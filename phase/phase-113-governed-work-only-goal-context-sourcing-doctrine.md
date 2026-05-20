@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P113
-> **Status:** Active / Source sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.21
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.21
@@ -46,16 +46,16 @@ Without that distinction, `/goal` can still drift in two bad directions:
 
 ## Action Checklist
 
-- [ ] Confirm the clean isolated worktree stays the active execution surface for P113.
-- [ ] Update the `/goal` runtime owners with governed-work-only trigger, sourcing, and compact-output doctrine.
-- [ ] Sync the touched owner design companions and owner changelog parents.
-- [ ] Open P113 master surfaces in README, design, changelog, TODO, phase, and patch.
-- [ ] Preserve at least two concrete example `/goal` outputs: one governed non-release example and one governed release-closeout example.
-- [ ] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
-- [ ] Run `git diff --check` clean.
-- [ ] Commit the source release state and push the branch.
-- [ ] Create and verify GitHub release `v10.21`.
-- [ ] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
+- [x] Confirm the clean isolated worktree stays the active execution surface for P113.
+- [x] Update the `/goal` runtime owners with governed-work-only trigger, sourcing, and compact-output doctrine.
+- [x] Sync the touched owner design companions and owner changelog parents.
+- [x] Open P113 master surfaces in README, design, changelog, TODO, phase, and patch.
+- [x] Preserve at least two concrete example `/goal` outputs: one governed non-release example and one governed release-closeout example.
+- [x] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
+- [x] Run `git diff --check` clean.
+- [x] Commit the source release state and push the branch.
+- [x] Create and verify GitHub release `v10.21`.
+- [x] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
 
 ---
 
@@ -86,10 +86,16 @@ Without that distinction, `/goal` can still drift in two bad directions:
 
 ## Current Status
 
-P113 is active.
+P113 is released as `v10.21`.
 
-Current checked progress:
-- the isolated worktree is the active execution surface for this wave
-- the three primary `/goal` runtime owners have started the governed-work-only doctrine update
-- touched design companions and owner changelog parents are in scope for this same wave
-- release verification, runtime install/parity, commit/push, and GitHub release steps are still pending at this stage
+Release verification summary:
+- the isolated worktree stayed the active execution surface for this wave
+- the three primary `/goal` runtime owners now explicitly distinguish trivial non-governed next steps from bounded governed repo successor work
+- exact mandatory governed-surface trigger conditions are now explicit in active doctrine
+- governed `/goal` sourcing is now design-first, then active execution surfaces, with changelog/patch/README included only when they materially shape completion, review, or current-state impact
+- two concrete `/goal` outputs are preserved for governed non-release and governed release-closeout review
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, and `git diff --check` passed
+- branch push passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.21
+- release tag `v10.21` resolves to commit `53f80777bd3b0ec9d5ad84165bcd58e6e726c4f2`
+- Published at `2026-05-20T07:54:14Z`.

@@ -3,7 +3,7 @@
 > **Current Version:** 1.86
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active: P113 governed-work-only goal context sourcing doctrine is in progress on top of the released v10.20 / P112 baseline
+> **Status:** Released through v10.21 / P113 governed-work-only goal context sourcing doctrine; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,12 +23,17 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P113:** [phase-113-governed-work-only-goal-context-sourcing-doctrine.md](phase-113-governed-work-only-goal-context-sourcing-doctrine.md)
-  - Goal: keep `/goal` concise for trivial non-governed next steps while making bounded governed repo successor work design-first and execution-surface-aware.
-  - Output: tightened `/goal` trigger doctrine, design-first governed sourcing order, compact material-only output guidance, P113 phase/patch/changelog startup artifacts, and later runtime install/release closeout proof.
-  - Gate: touched runtime/design/changelog/master surfaces sync, runtime install, 18/18 parity/body sufficiency, `git diff --check`, push, GitHub release verification, and closeout alignment.
+- none currently open
 
 ### Most Recently Completed
+
+- **P113:** [phase-113-governed-work-only-goal-context-sourcing-doctrine.md](phase-113-governed-work-only-goal-context-sourcing-doctrine.md)
+  - Output: governed-work-only `/goal` trigger doctrine, exact mandatory governed-surface triggers, design-first governed sourcing order, compact material-only output guidance, two concrete `/goal` examples, runtime install, 18/18 parity/body sufficiency, branch push, and GitHub release `v10.21`.
+  - Gate: doctrine integrity, 18-rule install boundary, runtime install/parity/body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.21
+  - Release tag `v10.21` resolves to commit `53f80777bd3b0ec9d5ad84165bcd58e6e726c4f2`.
+  - Published at `2026-05-20T07:54:14Z`.
+
 
 - **P112:** [phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md](phase-112-grounded-playground-transcript-cases-and-realism-upgrade.md)
   - Output: transcript-grounded observed log updates, richer multi-turn playground case traces, two grounded new scenario families, touched playground/design sync, runtime install parity/body sufficiency proof, push, and GitHub release `v10.20`.
@@ -129,25 +134,24 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ## Verification Focus
 
 Latest verified release state:
-- launcher-first project-local install is now the released Claude Code install model for this wave
-- launcher scripts drive the primary operator path while helper scripts remain the execution layer underneath
-- installer architecture design now governs primary target, optional fallback, source resolution, owner-aware cleanup, and verification contract
-- touched communication/explanation owners now require meaning-first identifier explanation, nested-key parent → child walkthroughs, and UI-versus-storage separation when helpful
+- governed-work-only `/goal` doctrine now keeps trivial non-governed next steps concise by default
+- bounded governed repo successor work now uses design-first `/goal` sourcing, then active execution surfaces
+- changelog, patch, and README now participate in governed `/goal` construction only when they materially shape completion, review, or current-state impact
+- two concrete `/goal` outputs are preserved for governed non-release and governed release-closeout review
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- runtime install copied only the 18 README-listed active runtime rules
-- launcher-driven Bash and PowerShell install proof both passed with 18/18 source/runtime parity and source/destination body sufficiency
-- project-local live install into the selected target also passed with 18/18 parity/body sufficiency
-- destination extra `shared-task-list-path-coordination.md` remains observed-only and outside the source-owned install set
-- the untracked `plugin/` tree remained outside staged release scope
-- GitHub release `v10.18` was published at `2026-05-19T00:42:14Z` and release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a`
+- runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
+- 18/18 source/runtime parity and source/destination body sufficiency passed
+- `git diff --check` passed with no whitespace errors
+- branch `goal-governed-work-only` was pushed to origin
+- GitHub release `v10.21` was published at `2026-05-20T07:54:14Z` and release tag `v10.21` resolves to commit `53f80777bd3b0ec9d5ad84165bcd58e6e726c4f2`
 
 ---
 
 ## Rollback / Containment
 
-If P110 is reversed after release:
-- revert the touched project-local Claude Code helper-install edits as one governed rollback release
-- restore the released `v10.17 / P109` source state as the active baseline
+If P113 is reversed after release:
+- revert the touched governed `/goal` doctrine edits as one governed rollback release
+- restore the released `v10.20 / P112` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

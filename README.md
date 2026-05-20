@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.21</b><br><sub>P113 Active</sub>
+  <b>v10.21</b><br><sub>P113 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Source sync in progress</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>/goal</b><br><sub>Governed context</sub>
@@ -195,11 +195,11 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P113 governed-work-only `/goal` context sourcing doctrine is the active wave for `v10.21`.
-  - It tightens `/goal` so trivial non-governed next steps stay concise by default.
+- P113 governed-work-only `/goal` context sourcing doctrine is released as `v10.21`.
+  - It keeps trivial non-governed next steps concise by default instead of dragging governed context into small successor work.
   - It makes bounded governed repo successor work design-first and execution-surface-aware when explicit context materially defines done.
   - It includes changelog, patch, and README in governed `/goal` construction only when they materially shape completion, review, or current-state impact.
-  - It keeps the active runtime install set at 18 and preserves advisory `/goal` behavior instead of selected execution.
+  - It keeps the active runtime install set at 18, preserves advisory `/goal` behavior, and passed runtime install plus 18/18 parity/body-sufficiency verification.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
