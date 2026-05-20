@@ -2,11 +2,17 @@
 
 > **Last Updated:** 2026-05-20
 > **Current Release:** v10.24 / P116 end-to-end language-aligned goal surface refinement
-> **Active Wave:** none currently open
+> **Active Wave:** P117 / v10.25 proactive goal surfacing and decision-ready response style refinement
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## 🚧 Active / In Progress
+
+- [ ] P117 / v10.25 proactive goal surfacing and decision-ready response style refinement is in progress.
+  - Scope: analyze and tighten goal-surfacing behavior in the correct owners, refine default non-trivial response structure/tone/evidence-surface behavior in the correct communication/presentation owners, add one new governed non-runtime playground case plus index update, and sync touched runtime/design/changelog/TODO/phase/patch/master surfaces.
+  - Pending gate: preserve advisory `/goal`, exact-literal boundaries, evidence-discipline strictness, trivial-answer anti-ritual boundaries, the active runtime install scope at 18 files, and the non-runtime playground boundary; then rerun install plus 18/18 source/runtime parity and source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.25`, update the remote default branch, and finalize closeout records.
 
 ## ✅ Completed
 
@@ -15,8 +21,6 @@
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.24
   - Release tag `v10.24` resolves to commit `68f623e26d46e381fc098ff87f04daf99b3e7818`.
   - Published at `2026-05-20T09:53:32Z`.
-
-## ✅ Completed
 
 - [x] P115 / v10.23 language-aware candidate-goal promotion playground case update was completed, installed, pushed, and released.
   - Verified: `case-15-language-aware-candidate-goal-promotion.md`, playground index update, touched master/design/changelog/TODO/phase/patch sync, playground still excluded from the active runtime install payload, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.

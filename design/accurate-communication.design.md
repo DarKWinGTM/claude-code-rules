@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.29
+> **Current Version:** 2.30
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -40,6 +40,7 @@ This chain is the wording owner for:
 - candidate-goal wording so multi-path successor recommendations can be expressed as compact goals instead of plain unlabeled choice lists when that shape better preserves outcome/gate meaning
 - dominant-session-language wording for candidate goals, promoted `/goal`, surrounding recommendation labels, and recap/closing lines unless the user explicitly selects another language style
 - explicit preservation of exact literals such as `/goal`, file paths, version tags, and code identifiers when they should remain exact rather than translated
+- visible evidence-layer wording so mixed-confidence answers can separate verified facts, inference, and hypotheses clearly enough for the reader without relying on tone alone
 - safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
 
 This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `coding-discipline`, keeps bounded technical snapshot wording inside its absorbed Snapshot Wording section, and defers end-of-response closing / action / proposal framing to `explanation-and-presentation`.

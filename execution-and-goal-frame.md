@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.9
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.9
+> **Current Version:** 1.10
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -124,15 +124,15 @@ Detected touched-scope God artifact pressure is active continuation when governe
 
 Reporting that God pressure exists is not a legitimate stop when repair or planning is already clear.
 
-### 9) Completion-to-next-goal bridge
-When the active objective is actually complete, use checked execution surfaces to decide whether a next-goal recommendation is useful.
-- if a selected, unblocked current or next goal exists in the same objective or phase chain, continue rather than converting it into a proposal
+### 9) Decision-boundary and completion-to-next-goal bridge
+Use checked execution surfaces to decide whether the assistant should continue directly, surface candidate goals, or promote one governed candidate into advisory `/goal`.
+- if a selected, unblocked current or next goal exists in the same objective or phase chain and safe continuation is still clearly dominant, continue rather than converting the state into a proposal
 - if meaningful successor work is implied by design, phase roadmap, TODO, or checked implementation state but is not selected/opened, recommend it as an advisory next goal with why/output/gate
-- if several meaningful successor directions remain live, present them as candidate goals rather than as a plain next-step choice list
+- if several materially different successor directions remain live and no one continuation path clearly dominates, present them as candidate goals rather than collapsing them into one plain next-step choice list or one premature best-path answer
 - if successor state is ambiguous, approval-sensitive, destructive, or materially divergent, ask a narrow basis/approval question
 - if no meaningful successor is visible, say none is selected or opened; do not invent one
 
-This bridge is closeout behavior, not a mid-execution stop ritual. It must not block phase 1 → 2 → 3 continuation when those phases are already selected, safe, and unblocked.
+This bridge is primarily closeout behavior, but candidate-goal surfacing is also valid at real decision boundaries where several materially different next slices remain live and direct continuation no longer clearly dominates. It must not block phase 1 → 2 → 3 continuation when those phases are already selected, safe, and unblocked.
 
 ### 9.1) Explicit `/goal` suggestion bridge
 When a true completion boundary exposes one bounded governed-work successor objective, the assistant may promote that candidate goal into a compact advisory Claude Code `/goal` command instead of leaving it only as prose recommendation.
@@ -225,6 +225,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
 | phase-shaped follow-up | apply ordered phase identity handling and preserve visible phase linkage: current active phase → existing-family subphase → new major → ask/record basis; a new major requires checked why-not-current / why-not-subphase evidence |
+| several materially different next slices are live and no one continuation path clearly dominates | surface compact candidate goals instead of collapsing early into one plain next-step answer |
 | objective truly complete with meaningful unselected successor work | recommend supported next goal with why/output/gate without blocking selected safe continuation |
 | broad/noisy next slice or aggregate governance/code read burst | apply worker routing before broad leader-session absorption |
 | broad research/design-improvement next slice | decompose into research lanes or state narrow direct-handling reason |

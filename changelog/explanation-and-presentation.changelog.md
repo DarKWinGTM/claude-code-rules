@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-20 | **[Added P117 decision-ready default non-trivial answer shape](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-20 | **[Added P116 language-surface-neutral `/goal` output templates](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-20 | **[Added P114 candidate-goal presentation before `/goal` promotion](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-20 | **[Added P113 governed-work-only `/goal` output shaping](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,23 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added P117 decision-ready default non-trivial answer shape
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.6 to v1.7.
+- Updated `design/explanation-and-presentation.design.md` from v1.6 to v1.7.
+- Added a more explicit default non-trivial answer shape: plain-language summary first, small table when several axes matter, grouped explanation, and concise decision-ready close.
+- Added a stronger flow/process/queue/order/concurrency trigger for overview → table → grouped explanation → concise summary when that structure improves understanding.
+
+### Summary
+`explanation-and-presentation.md` now encodes the requested decision-ready answer shape more directly without forcing heavy structure onto trivial questions.
 
 ---
 

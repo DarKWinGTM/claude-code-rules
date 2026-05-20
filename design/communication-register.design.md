@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -34,6 +34,8 @@ P110 refinement: this owner should now preserve an easy-explanation register tha
 P114 refinement: this owner should now keep candidate goals and promoted `/goal` suggestions aligned to the dominant session language and preserve a pruning boundary where several live successor directions may appear as compact goal options without forcing every option into command form.
 
 P116 refinement: this owner should now extend that language alignment to wrapper labels and recap lines while preserving exact literals that should remain exact instead of translating them by habit.
+
+P117 refinement: this owner should now make the default density for non-trivial technical answers less abrupt and less diffuse by preferring one short orienting paragraph plus enough structured follow-through to preserve the decision basis, while leaving exact layout ownership to `explanation-and-presentation.md`.
 
 ---
 

@@ -1,7 +1,7 @@
 # Design - Evidence Discipline
 
 > **Parent Rule:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/evidence-discipline.changelog.md](../changelog/evidence-discipline.changelog.md)
 
@@ -24,6 +24,8 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 P098 refinement: this owner must now also preserve target-state doctrine for verify-first factual discipline, root-cause evidence thresholds, claim-state separation, and real-vs-mock boundaries.
 
 P101 refinement: this owner should now treat user concern as prioritization input rather than factual proof and require explicit assumption handling when a design or recommendation depends on an unverified premise.
+
+P117 refinement: this owner should now make the presentation boundary explicit: evidence semantics, proof thresholds, and claim-state distinctions stay here, while human-facing grouping/labels for verified fact, inference, and hypothesis defer to the communication/presentation owners.
 
 ---
 

@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -38,6 +38,8 @@ P113 refinement: this owner should now keep `/goal` suggestions concise for triv
 P114 refinement: this owner should now treat successor recommendations as candidate goals first when several meaningful directions remain live, and allow promotion from candidate goal to advisory `/goal` only when one governed candidate becomes the best-supported bounded successor under the existing governed-work-only bridge.
 
 P116 refinement: this owner should now make dominant-session-language behavior end-to-end across candidate-goal labels, promoted `/goal`, surrounding recommendation labels, and recap/closing lines while preserving exact literals that should remain exact instead of translating them for cosmetic consistency.
+
+P117 refinement: this owner should now allow candidate-goal surfacing at real decision boundaries where several materially different next slices remain live and no one continuation path clearly dominates, while still preserving direct continuation when one path is already clearly selected and safe.
 
 ---
 

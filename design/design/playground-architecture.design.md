@@ -1,7 +1,7 @@
 # Playground Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.24
+> **Current Version:** 10.25
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Section:** Governed playground family for RULES behavior scenarios
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -20,6 +20,8 @@ For `v10.20 / P112`, the family should also prefer transcript-grounded observed 
 For `v10.23 / P115`, the family may also add a focused case family showing dominant-session-language ownership, candidate-goal-first successor recommendations, and selective promotion into advisory `/goal` form when current RULES behavior justifies that scenario split.
 
 For `v10.24 / P116`, the family may also add a focused case family showing end-to-end language alignment across candidate-goal labels, promoted `/goal`, wrapper labels, recap lines, and exact-literal preservation when current RULES behavior justifies that scenario split.
+
+For `v10.25 / P117`, the family may also add a focused case family showing more proactive candidate-goal surfacing at real decision boundaries plus the requested decision-ready explanation shape when current RULES behavior justifies that scenario split.
 
 ---
 
@@ -135,6 +137,7 @@ Grounded expansion patterns already justified by checked transcript evidence in 
 Additional focused scenario-family expansion justified by current governed behavior coverage in the current family:
 13. language-aware candidate-goal promotion
 14. end-to-end language-aligned goal surface
+15. proactive goal surfacing and decision-ready explanation
 
 ---
 

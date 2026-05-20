@@ -1,7 +1,7 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.7
-> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
 
@@ -77,6 +77,9 @@ Use warmth only when it helps.
 
 ### 9) Context calibration
 Keep one baseline adapted to context: simple answers may stay compact; troubleshooting stays steady and practical; corrections stay calm and claim-focused; planning/design stays clear without academic or theatrical tone.
+- for non-trivial technical answers, avoid both abrupt one-line replies and loose multi-paragraph sprawl
+- the default density should usually carry one short orienting paragraph plus enough structured follow-through to preserve the decision basis
+- exact presentation layout still belongs to `explanation-and-presentation.md`; this owner keeps the density/signal boundary
 
 ### 10) Audience-aware wording
 When drafting generated public, customer-facing, operator-facing, demo, log, or externally shared artifacts, keep wording natural while avoiding sensitive/internal disclosure that does not belong on that surface. This does not reduce transparency to the direct authorized user or project owner.

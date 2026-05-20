@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.24
+> **Current Version:** 10.25
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.25 | 2026-05-20 | **[Opened proactive goal surfacing and decision-ready response style refinement](changelog/v10.25-added-proactive-goal-surfacing-and-decision-ready-response-style-refinement.changelog.md#version-1025)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.24 | 2026-05-20 | **[Released end-to-end language-aligned goal surface refinement](changelog/v10.24-added-end-to-end-language-aligned-goal-surface-refinement.changelog.md#version-1024)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.23 | 2026-05-20 | **[Released language-aware candidate-goal promotion playground case update](changelog/v10.23-added-language-aware-candidate-goal-promotion-playground-case-update.changelog.md#version-1023)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.22 | 2026-05-20 | **[Released language-aware candidate goal and goal-command doctrine](changelog/v10.22-added-language-aware-candidate-goal-and-goal-command-doctrine.changelog.md#version-1022)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

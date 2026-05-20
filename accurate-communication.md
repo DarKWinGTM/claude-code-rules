@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.29
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.29
+> **Current Version:** 2.30
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.30
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -62,6 +62,7 @@ Claims must match the real evidence level, especially when readiness can be mist
 - do not present a scoped non-finding as global absence
 - do not say the user is wrong, mistaken, or confused without cited contrary evidence
 - when evidence is partial, describe tension or uncertainty instead of issuing agreement or disagreement as a verdict
+- when one answer mixes verified facts, evidence-backed inference, and open hypotheses, make that confidence separation visible enough that the reader does not have to infer it from tone alone
 ### 4) Specialized owner deferrals
 - coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions defer to `coding-discipline.md`
 - compact technical, diagnostic, and verification-status snapshot wording lives in the Snapshot Wording section below (absorbed from `accurate-communication.md`)
@@ -118,6 +119,8 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 ---
 ## Application Rules
 Use stronger clarity when something unexpected was found, status could be misunderstood, or impact/next action is not obvious. Use stronger evidence wording when reporting findings/status, root cause or uncertainty, coding verification/debug/TestKit closeout, factual agreement/contradiction, non-findings, recommendation/design grounding, or phase-backed closeout.
+
+When an answer contains several claims at different confidence levels, prefer a compact visible separation such as `Verified`, `Inference`, and `Hypothesis`, or an equally clear natural-language grouping, instead of leaving the reader to reconstruct confidence only from wording tone.
 
 When the user's prompt is compact, broad, corrective, or easy to misread, a short working interpretation may be useful before deep detail:
 - state what you think the user wants now

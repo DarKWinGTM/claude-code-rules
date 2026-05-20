@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-05-20 | **[Added P117 non-trivial answer density calibration](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-20 | **[Added P116 end-to-end goal-surface register refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-20 | **[Added P114 session-language and candidate-goal register refinement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-19 | **[Added P110 easy-explanation register refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -20,6 +21,23 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added P117 non-trivial answer density calibration
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.7 to v1.8.
+- Updated `design/communication-register.design.md` from v1.7 to v1.8.
+- Added density guidance so non-trivial technical answers avoid both abrupt one-liners and diffuse multi-paragraph sprawl.
+- Preserved the owner split where exact layout remains with `explanation-and-presentation.md`.
+
+### Summary
+`communication-register.md` now sets a clearer density baseline for non-trivial answers while leaving structure/layout ownership in the presentation owner.
 
 ---
 

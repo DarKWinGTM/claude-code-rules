@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.6
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -34,6 +34,14 @@ Use only the layers that materially improve understanding: short answer, purpose
 - when a goal frame is visible, explain it in human terms: what outcome is being pursued, what output should exist, and what gate proves it is complete enough
 - use a simple version plus a technical version only when the distinction really helps the reader
 
+### 2.1) Default non-trivial answer shape
+For non-trivial analytical, diagnostic, design, or recommendation-heavy answers, prefer this default shape when it improves understanding:
+- open with one short plain-language summary paragraph
+- if several axes, states, trade-offs, or comparison points matter, use a small table to make the decision surface visible
+- follow with grouped explanation organized by the real conceptual units rather than one long prose block
+- close with a concise summary or next action that is decision-ready
+- keep this as a default non-trivial shape, not as a ritual for trivial questions
+
 ### 3) Proof-aware explanation
 When analysis, design, recommendation, or disagreement depends on factual grounding:
 - show the checked evidence when it materially changes the answer
@@ -47,6 +55,7 @@ Move from simple framing to deeper detail in order.
 - explain one patch, transition, or causal jump at a time when walking through change
 - explain what changed before discussing side effects
 - for abstract, analytical, or recommendation-heavy answers, include one concrete clarifier unless the question is simple enough not to need one
+- for flow/process/queue/order/concurrency-heavy answers, prefer an overview → small table → grouped explanation → concise summary shape when that reduces cognitive load better than dense prose alone
 - useful clarifiers include request/response flow, state transition, architecture decision scenario, visible failure mode, before/after explanation, or patch-by-patch explanation
 
 ### 4.1) Visible intent read, selective clarification, and root-cause walkthrough
@@ -163,7 +172,7 @@ When the current explanation is sufficient, show the next state instead of circl
 
 ### 6) Specialized compact patterns
 Use compact patterns only when they improve understanding.
-- **Light table:** repeated dimensions, field roles, trade-offs, diagnostic facts
+- **Light table:** repeated dimensions, field roles, trade-offs, diagnostic facts, multi-axis comparison, or multi-state flow checkpoints where side-by-side structure lowers cognitive load
 - **Variable-role:** several identifiers, config keys, fields, or enum values that need role explanation
 - **Governing-basis clarification:** multiple policies/frames change the answer
 - **Visible intent read:** one short working interpretation when drift risk is material
@@ -180,8 +189,8 @@ Use compact patterns only when they improve understanding.
 
 ### 7) Preferred output shapes
 - **Compact direct:** one or two short paragraphs, with a short list only if it improves scanability
-- **Structured analytical:** short orientation, optional purpose line, meaningful sections, and concise synthesis or next action
-- **Comparison:** brief framing, light table only when useful, `Recommended` plus one short reason, and a real alternative when paths remain live
+- **Structured analytical:** short plain-language summary, optional small table when several axes matter, meaningful grouped sections, and concise decision-ready synthesis or next action
+- **Comparison:** brief framing, light table when it makes competing dimensions visible faster, `Recommended` plus one short reason, and a real alternative when paths remain live
 - **Diagnostic snapshot:** orienting line plus checked facts, current state, implication, and next action
 - **Visible intent read:** one short framing line, then the answer or next action
 - **Selective clarification:** one compact question that shows why the distinction matters

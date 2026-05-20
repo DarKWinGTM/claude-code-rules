@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -32,6 +32,8 @@ P113 refinement: this owner should now keep advisory `Suggested /goal:` output c
 P114 refinement: this owner should now preserve a candidate-goal presentation shape before command promotion, keep promoted `/goal` wording aligned to the dominant session language by default, and maintain a clear presentation boundary between prose goal options and the single governed candidate that is actually promoted into command form.
 
 P116 refinement: this owner should now keep the visible wrapper labels and output examples language-neutral or dominant-session-language-driven instead of hardcoding English-first user-facing templates around non-English goal output.
+
+P117 refinement: this owner should now encode the default non-trivial answer shape more explicitly as plain-language summary first, small-table-when-useful for multi-axis explanation, grouped explanation by concept, and concise decision-ready close without turning trivial answers into a mandatory template.
 
 ---
 

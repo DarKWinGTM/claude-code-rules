@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.24
+> **Current Version:** 10.25
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -34,6 +34,7 @@ Current target-state priorities:
 - chronology/supersession review must stay explicit when active doctrine and reachable completed history discuss the same normalization rule
 - compact `/goal` suggestions should stay light or be omitted entirely for trivial non-governed next steps
 - candidate goals should be the preferred shape for multi-path successor recommendations when several meaningful directions remain live
+- candidate goals may also surface at real decision boundaries when several materially different next slices remain live and no one continuation path clearly dominates
 - candidate goals and promoted `/goal` suggestions should follow the dominant session language by default unless the user explicitly selects another language
 - compact `/goal` suggestions should be allowed only when a bounded governed-work successor objective is clear, measurable, provable in transcript, and better than direct continuation
 - governed-surface context for `/goal` should become mandatory only for repo-governed multi-step, phase-backed, design-impacting, doc-sync, release-sync, runtime-rule-impacting, or materially current-state/review-sensitive work
@@ -42,7 +43,10 @@ Current target-state priorities:
 - phase identity selection should stay lineage-first: current active phase update first, existing-family subphase second, new major only after visible why-not-current / why-not-subphase evidence
 - Claude Code helper installs should prefer project-local `.claude/rules/` as the primary runtime target, use owner-aware manifest cleanup, and avoid overclaiming unsupported non-native harnesses for that install surface
 - AI explanation should stay meaning-first: explain what an identifier is, what it does, and what changes if it changes before leaning on raw field or variable names alone
+- non-trivial answers should usually open with one short plain-language summary, use a small table when several axes matter, continue with grouped explanation by concept, and end with a concise decision-ready close
+- flow/process/queue/order/concurrency explanations may prefer an overview → small table → grouped explanation → concise summary shape when that structure reduces cognitive load
 - nested keys should normally be explained parent → child, and UI mental model versus storage model should stay explicit when that distinction matters to understanding
+- readable grouping of verified fact, inference, and hypothesis belongs to the communication owners, while proof thresholds and evidence semantics stay with `evidence-discipline.md`
 - `TODO.md` and `phase/SUMMARY.md` stay compact active entrypoints, with `history/` and `done/` as normalized overflow paths
 - current release and version authority stay in active parent changelogs, while bulky same-chain detail moves to chain-scoped version shards
 - concern, factual claim, goal request, proposal, and assistant next action should stay separated before endorsement or continuation
