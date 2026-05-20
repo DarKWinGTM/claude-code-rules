@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.85
+> **Current Version:** 1.86
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.20 / P112 grounded playground transcript cases and realism upgrade; no active phase open
+> **Status:** Active: P113 governed-work-only goal context sourcing doctrine is in progress on top of the released v10.20 / P112 baseline
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none currently open
+- **P113:** [phase-113-governed-work-only-goal-context-sourcing-doctrine.md](phase-113-governed-work-only-goal-context-sourcing-doctrine.md)
+  - Goal: keep `/goal` concise for trivial non-governed next steps while making bounded governed repo successor work design-first and execution-surface-aware.
+  - Output: tightened `/goal` trigger doctrine, design-first governed sourcing order, compact material-only output guidance, P113 phase/patch/changelog startup artifacts, and later runtime install/release closeout proof.
+  - Gate: touched runtime/design/changelog/master surfaces sync, runtime install, 18/18 parity/body sufficiency, `git diff --check`, push, GitHub release verification, and closeout alignment.
 
 ### Most Recently Completed
 

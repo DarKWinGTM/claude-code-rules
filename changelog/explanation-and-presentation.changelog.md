@@ -1,8 +1,8 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.2
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.4
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
@@ -10,12 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-20 | **[Added P113 governed-work-only `/goal` output shaping](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-19 | **[Added P110 meaning-first identifier walkthroughs](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-18 | **[Added P107 compact `/goal` closing shape](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added P113 governed-work-only `/goal` output shaping
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.3 to v1.4.
+- Updated `design/explanation-and-presentation.design.md` from v1.3 to v1.4.
+- Added guidance to prefer ordinary next-step wording or a very light command for trivial non-governed successor work.
+- Added a material-only governed-surface detail rule so advisory `/goal` commands include only what defines completion, proof, scope, or review.
+- Preserved the compact advisory `Suggested /goal:` shape and kept mini-spec dumps disallowed.
+
+### Summary
+`explanation-and-presentation.md` now keeps governed `/goal` output compact by default and avoids dragging heavy governed-surface framing into small non-governed next steps.
 
 ---
 

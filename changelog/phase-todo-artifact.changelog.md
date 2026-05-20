@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-05-20 | **[Added P113 governed-work-only `/goal` sourcing order](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-18 | **[Added P109 lineage-first phase identity enforcement](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-18 | **[Added P107 `/goal` sourcing from governed surfaces](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-17 | **[Added P105 namespace-scope and single-parent docs-analysis refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -22,6 +23,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-110"></a>
+## Version 1.10: Added P113 governed-work-only `/goal` sourcing order
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.9 to v1.10.
+- Updated `design/phase-todo-artifact.design.md` from v1.9 to v1.10.
+- Made governed-surface context mandatory only for repo-governed successor work that matches explicit multi-step, phase-backed, design-impacting, release/current-state, or verification triggers.
+- Added design-first → active execution surfaces → material-only changelog/patch/README sourcing order for governed `/goal` construction.
+- Preserved the compact translation model and avoided introducing any new durable tracking schema.
+
+### Summary
+`phase-todo-artifact.md` now keeps `/goal` sourcing lightweight for trivial next steps while bounded governed repo successor work uses a design-first sourcing order grounded in the active execution surfaces.
 
 ---
 

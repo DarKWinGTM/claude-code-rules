@@ -1,7 +1,7 @@
 # Explanation and Presentation
-> **Current Version:** 1.3
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.3
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.4
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.4
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
 
@@ -256,6 +256,8 @@ When checked next-goal doctrine says a compact command would help more than pros
 Required guidance:
 - keep the command compact and copy-pasteable
 - build it from one measurable outcome, transcript-visible proof/checks, bounded scope, hard guardrails, and an optional stop bound
+- if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light command rather than governed-surface framing
+- if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
 - do not turn it into a mini-spec dump or background essay
 - do not emit several competing `/goal` commands when the real decision surface is still open
 - if the command would be too broad, too long, or too weakly provable, fall back to ordinary recommendation wording instead

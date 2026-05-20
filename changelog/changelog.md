@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.20
+> **Current Version:** 10.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.21 | 2026-05-20 | **[Opened governed-work-only `/goal` context sourcing doctrine](changelog/v10.21-added-governed-work-only-goal-context-sourcing-doctrine.changelog.md#version-1021)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.20 | 2026-05-19 | **[Released grounded playground transcript cases and realism upgrade](changelog/v10.20-added-grounded-playground-transcript-cases-and-realism-upgrade.changelog.md#version-1020)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.19 | 2026-05-19 | **[Released RULES playground family behavior scenarios](changelog/v10.19-added-rules-playground-behavior-scenarios.changelog.md#version-1019)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.18 | 2026-05-19 | **[Released project-local Claude Code install architecture and explanation clarity doctrine](changelog/v10.18-added-project-local-claude-code-remote-install-helpers.changelog.md#version-1018)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

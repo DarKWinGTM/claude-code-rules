@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -38,6 +38,8 @@ P105 refinement: this owner should now replace master-only generic-parent assump
 P107 refinement: this owner should now preserve how a compact advisory `/goal` command is sourced from checked Goal/Output/Gate/Verification surfaces without introducing a new durable tracking schema.
 
 P109 refinement: this owner must now preserve ordered phase identity selection as a target-state invariant: current active phase update first, existing-family subphase second, new major third, ask/record basis when unsettled. New-major selection must require checked evidence that current-phase and subphase fit were ruled out.
+
+P113 refinement: this owner should now make governed-surface `/goal` sourcing design-first by default, require that heavy governed context appears only for repo-governed successor work, and include changelog/patch/README only when they materially shape completion, release/current-state truth, or before/after review boundaries.
 
 ---
 

@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.9
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.9
+> **Current Version:** 1.10
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -234,6 +234,20 @@ After a phase-backed objective closes, inspect checked roadmap and goal surfaces
 ### 6.1) `/goal` suggestion sourcing from governed surfaces
 When another owner has already decided that an advisory `/goal` command is the right next-step shape, source the command from checked governed execution surfaces rather than from improvised prose.
 
+Governed-surface context is mandatory only when the successor objective is repo-governed and at least one of these is true:
+- the work is multi-step inside the current source tree
+- the work is phase-backed or lane-backed
+- design target-state truth materially defines the next outcome
+- runtime-rule-impacting, doc-sync, release-sync, parity, or verification work is the objective
+- current-state, release, or review truth depends materially on changelog, patch, or README alignment
+
+Use this sourcing order:
+- design first for target-state truth and the authoritative meaning of done
+- active execution surfaces next: current phase, built-in task list, `TODO.md`, and checked implementation state
+- changelog only when version/release/current-state truth materially shapes completion
+- patch only when before/after review boundaries materially shape the next objective
+- README only when front-page current-state, install guidance, or user-visible repository impact materially shapes completion
+
 Use this translation model:
 - `Done when` ← current goal plus expected output
 - `Prove with` ← completion gate plus verification basis that can be surfaced in transcript
@@ -244,6 +258,7 @@ Use this translation model:
 Required guidance:
 - do not invent a new durable tracking schema only for `/goal`
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
+- do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command
 
 ### 7) Patch linkage inside phase

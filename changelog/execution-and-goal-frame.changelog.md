@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-05-20 | **[Added P113 governed-work-only `/goal` successor bridge](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-18 | **[Added P109 lineage-first continuation enforcement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-18 | **[Added P107 explicit `/goal` suggestion bridge](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P101 premise-separation continuation refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -20,6 +21,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added P113 governed-work-only `/goal` successor bridge
+
+**Date:** 2026-05-20
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.6 to v1.7.
+- Updated `design/execution-and-goal-frame.design.md` from v1.6 to v1.7.
+- Tightened the `/goal` bridge so command suggestions now target bounded governed-work successor objectives instead of any bounded successor objective.
+- Added exact trigger conditions for when governed-surface context becomes mandatory.
+- Required design-first sourcing plus material-only changelog/patch/README inclusion when governed `/goal` context is needed.
+
+### Summary
+`execution-and-goal-frame.md` now keeps trivial non-governed next steps light while bounded governed repo successor work can use a design-first advisory `/goal` bridge.
 
 ---
 

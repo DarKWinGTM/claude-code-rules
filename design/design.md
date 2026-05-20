@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.20
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
+> **Current Version:** 10.21
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
 
@@ -32,8 +32,10 @@ Current target-state priorities:
 - checked example structure must stay distinct from extracted doctrine and the selected target form when governance recommendations are derived from another project or chain
 - `docs_analysis` must record observed project shape, extracted doctrine, selected target form, equivalence-claim basis, namespace scope, parent model choice, and single-parent authority basis when normalization work is in scope
 - chronology/supersession review must stay explicit when active doctrine and reachable completed history discuss the same normalization rule
-- compact `/goal` suggestions should be allowed only when a bounded successor objective is clear, measurable, and provable in transcript
-- compact `/goal` suggestions should be sourced from checked Goal/Output/Gate/Verification surfaces rather than improvised from vague next-step prose
+- compact `/goal` suggestions should stay light or be omitted entirely for trivial non-governed next steps
+- compact `/goal` suggestions should be allowed only when a bounded governed-work successor objective is clear, measurable, provable in transcript, and better than direct continuation
+- governed-surface context for `/goal` should become mandatory only for repo-governed multi-step, phase-backed, design-impacting, doc-sync, release-sync, runtime-rule-impacting, or materially current-state/review-sensitive work
+- governed `/goal` suggestions should source design first, then current phase/task/TODO/checked implementation state, with changelog/patch/README included only when they materially shape completion, review, or current-state impact
 - phase identity selection should stay lineage-first: current active phase update first, existing-family subphase second, new major only after visible why-not-current / why-not-subphase evidence
 - Claude Code helper installs should prefer project-local `.claude/rules/` as the primary runtime target, use owner-aware manifest cleanup, and avoid overclaiming unsupported non-native harnesses for that install surface
 - AI explanation should stay meaning-first: explain what an identifier is, what it does, and what changes if it changes before leaning on raw field or variable names alone

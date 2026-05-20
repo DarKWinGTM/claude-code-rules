@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -32,6 +32,8 @@ P101 refinement: this owner should now preserve the active goal while holding un
 P107 refinement: this owner should now make explicit when a supported next-goal recommendation may be translated into an advisory Claude Code `/goal` command, while keeping direct continuation as the default when the next slice is already safe and implied.
 
 P109 refinement: this owner must now preserve ordered handling for phase-shaped continuation so execution momentum continues the current active phase first, then an existing-family subphase, and only then a new major phase when checked evidence rules out the earlier identities.
+
+P113 refinement: this owner should now keep `/goal` suggestions concise for trivial non-governed next steps, but require governed-surface context for bounded repo-governed successor objectives and source that context from design first, then active execution surfaces, with changelog/patch/README included only when they materially shape completion, review, or current-state impact.
 
 ---
 

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-19
-> **Current Release:** v10.20 / P112 grounded playground transcript cases and realism upgrade
-> **Active Wave:** none currently open
+> **Last Updated:** 2026-05-20
+> **Current Release:** v10.21 / P113 governed-work-only goal context sourcing doctrine
+> **Active Wave:** P113 governed-work-only goal context sourcing doctrine
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -107,6 +107,9 @@
 
 ### Active / In Progress
 
+- [ ] P113 / v10.21 governed-work-only goal context sourcing doctrine is in progress.
+  - Scope: tighten `/goal` so trivial non-governed next steps stay concise while bounded governed repo successor work becomes design-first and execution-surface-aware.
+  - Pending gate: finish master-surface sync, install the active runtime rules into `~/.claude/rules`, verify 18/18 source/runtime parity plus source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.21`, and finalize closeout records.
 
 ### Deferred / Not Selected
 
