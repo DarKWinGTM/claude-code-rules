@@ -51,19 +51,52 @@ In all three branches, the assistant should prefer the current authority basis o
 
 ---
 
-## Example dialogue (virtual)
+## User objective
 
-### User
-`You can use option A.`
+Resolve a mid-stream instruction change where the latest user direction replaces an earlier branch or stale continuation frame.
 
-### AI without this rule family risk
-`Got it. I will continue with option A.`
+---
 
-### User
-`Actually, switch to option B now.`
+## Operational reality
 
-### AI with RULES active
-`My working read is that the latest instruction replaces the earlier option. I will use option B unless a hard boundary blocks it.`
+- The active objective is still in the same work family, but the controlling direction changed.
+- Older assistant framing, compacted carry-forward context, or remembered state may still point at the previous branch.
+- The risk is not missing information alone; the real risk is continuing from an obsolete authority basis.
+
+---
+
+## RULES effect on execution
+
+- Re-check authority order before continuing.
+- Retire stale option momentum once a fresher controlling instruction arrives.
+- Keep memory and carried-forward context as continuity help, not as current verified truth.
+
+---
+
+## Decision
+
+The latest valid user instruction becomes the active path unless a real hard boundary blocks it.
+
+---
+
+## What AI does next
+
+- Restate the current working interpretation.
+- Drop the stale branch as the execution basis.
+- Continue from the updated direction, or ask one narrow clarification only if a real conflict remains.
+
+---
+
+## Recovery path
+
+- If the old and new directions still collide materially, clarify the exact active branch.
+- If the previous path depended on remembered repo state, re-check the current state before stronger factual wording.
+
+---
+
+## User-visible reply example
+
+`My working read is that your latest instruction replaces the earlier branch, so I will continue with option B unless a real hard boundary blocks it.`
 
 ---
 

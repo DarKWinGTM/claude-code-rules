@@ -19,6 +19,8 @@ This file proves that the playground baseline and grounded transcript upgrades c
 | Coding change with verification discipline | Keep code maintainable and completion claims matched to proof | `coding-discipline.md`, `evidence-discipline.md`, `accurate-communication.md`, `portable-implementation-and-hardcoding-control.md` |
 | Execution continuity and worker routing | Keep work moving safely while routing broad or noisy evidence through the smallest effective lane | `execution-and-goal-frame.md`, `worker-routing-and-context.md`, `phase-todo-artifact.md`, `safe-io.md`, `accurate-communication.md` |
 | Governed artifact lifecycle | Open, sync, shard, compact, and preserve governed docs correctly | `phase-todo-artifact.md`, `document-governance.md`, `document-integrity.md`, `safe-io.md`, `authority-and-scope.md` |
+| Live execution surface arbitration | Resolve next-work ambiguity across task list, active phase, TODO, and checked implementation state | `phase-todo-artifact.md`, `execution-and-goal-frame.md`, `document-integrity.md`, `authority-and-scope.md`, `accurate-communication.md` |
+| Combined-rules execution-state orchestration | Show how several RULES interact across ambiguity, evidence arrival, worker routing, blocked branches, continuation, and closeout | `authority-and-scope.md`, `execution-and-goal-frame.md`, `evidence-discipline.md`, `worker-routing-and-context.md`, `refusal-and-recovery.md`, `accurate-communication.md`, `phase-todo-artifact.md` |
 | External, memory, and portability boundary | Keep external facts current, memory scoped, and shared artifacts portable | `external-verification-and-source-trust.md`, `memory-governance-and-session-boundary.md`, `portable-implementation-and-hardcoding-control.md`, `evidence-discipline.md`, `document-governance.md`, `document-integrity.md` |
 | Status ladder and completion-claim audit | Keep completion wording proportional to evidence and audit overclaim before closeout | `accurate-communication.md`, `evidence-discipline.md`, `coding-discipline.md`, `communication-register.md`, `phase-todo-artifact.md` |
 | Workflow-blocked visual QA | Turn inaccessible or unsupported visual QA requests into `NEED_CONTEXT` with a usable recovery path | `refusal-and-recovery.md`, `accurate-communication.md`, `evidence-discipline.md`, `authority-and-scope.md`, `action-safety.md` |
@@ -29,24 +31,24 @@ This file proves that the playground baseline and grounded transcript upgrades c
 
 | Runtime rule file | Covered by scenario families |
 |---|---|
-| `accurate-communication.md` | authority collision resolver; evidence-calibrated diagnosis; destructive action and topology gate; communication and presentation calibration; audience-safe disclosure split; coding change with verification discipline; execution continuity and worker routing; status ladder and completion-claim audit; workflow-blocked visual QA |
+| `accurate-communication.md` | authority collision resolver; evidence-calibrated diagnosis; destructive action and topology gate; communication and presentation calibration; audience-safe disclosure split; coding change with verification discipline; execution continuity and worker routing; live execution surface arbitration; combined-rules execution-state orchestration; status ladder and completion-claim audit; workflow-blocked visual QA |
 | `action-safety.md` | safe refusal and recovery; destructive action and topology gate; workflow-blocked visual QA |
 | `audience-surface-disclosure-control.md` | communication and presentation calibration; audience-safe disclosure split |
-| `authority-and-scope.md` | authority collision resolver; safe refusal and recovery; destructive action and topology gate; governed artifact lifecycle; workflow-blocked visual QA |
+| `authority-and-scope.md` | authority collision resolver; safe refusal and recovery; destructive action and topology gate; governed artifact lifecycle; live execution surface arbitration; combined-rules execution-state orchestration; workflow-blocked visual QA |
 | `coding-discipline.md` | coding change with verification discipline; status ladder and completion-claim audit |
 | `communication-register.md` | evidence-calibrated diagnosis; safe refusal and recovery; communication and presentation calibration; audience-safe disclosure split; status ladder and completion-claim audit |
 | `document-governance.md` | governed artifact lifecycle; external, memory, and portability boundary |
-| `document-integrity.md` | destructive action and topology gate; governed artifact lifecycle; external, memory, and portability boundary |
-| `evidence-discipline.md` | authority collision resolver; evidence-calibrated diagnosis; safe refusal and recovery; destructive action and topology gate; audience-safe disclosure split; coding change with verification discipline; external, memory, and portability boundary; status ladder and completion-claim audit; workflow-blocked visual QA |
-| `execution-and-goal-frame.md` | authority collision resolver; execution continuity and worker routing |
+| `document-integrity.md` | destructive action and topology gate; governed artifact lifecycle; live execution surface arbitration; external, memory, and portability boundary |
+| `evidence-discipline.md` | authority collision resolver; evidence-calibrated diagnosis; safe refusal and recovery; destructive action and topology gate; audience-safe disclosure split; coding change with verification discipline; combined-rules execution-state orchestration; external, memory, and portability boundary; status ladder and completion-claim audit; workflow-blocked visual QA |
+| `execution-and-goal-frame.md` | authority collision resolver; execution continuity and worker routing; live execution surface arbitration; combined-rules execution-state orchestration |
 | `explanation-and-presentation.md` | evidence-calibrated diagnosis; communication and presentation calibration |
 | `external-verification-and-source-trust.md` | external, memory, and portability boundary |
 | `memory-governance-and-session-boundary.md` | authority collision resolver; external, memory, and portability boundary |
-| `phase-todo-artifact.md` | execution continuity and worker routing; governed artifact lifecycle; status ladder and completion-claim audit |
+| `phase-todo-artifact.md` | execution continuity and worker routing; governed artifact lifecycle; live execution surface arbitration; combined-rules execution-state orchestration; status ladder and completion-claim audit |
 | `portable-implementation-and-hardcoding-control.md` | coding change with verification discipline; external, memory, and portability boundary |
-| `refusal-and-recovery.md` | safe refusal and recovery; workflow-blocked visual QA |
+| `refusal-and-recovery.md` | safe refusal and recovery; combined-rules execution-state orchestration; workflow-blocked visual QA |
 | `safe-io.md` | evidence-calibrated diagnosis; execution continuity and worker routing; governed artifact lifecycle |
-| `worker-routing-and-context.md` | execution continuity and worker routing |
+| `worker-routing-and-context.md` | execution continuity and worker routing; combined-rules execution-state orchestration |
 
 ---
 

@@ -36,7 +36,7 @@ Current RULES require the assistant to:
 ## Observed case
 
 Checked transcript-derived example:
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/0242764f-4e83-4651-bc03-3cc5c1055cd1.jsonl`
+- Transcript path: `<claude-project-scope-root>/0242764f-4e83-4651-bc03-3cc5c1055cd1.jsonl`
 - Anchor hints: `internal_routing_failure`, `สิ่งที่ evidence ตัวนี้พิสูจน์ได้จริง`, `Diagnose gateway not-yet-product`
 - Observed effect: after grounding the diagnosis to what the evidence actually proved, the assistant routed the broader follow-up investigation through a read-only lane instead of absorbing the full audit into the main session.
 - Scope note: this proves worker-routed continuation in that checked session; it does not mean every follow-up must become a worker lane.
@@ -55,34 +55,52 @@ Expected behavior: keep moving, but route the noisy lane before the main session
 
 ---
 
-## Example dialogue
+## User objective
 
-### Dialogue label
-`virtual trace patterned on a checked transcript-derived observed case`
+Keep a multi-step task moving without stalling early or flooding the main session with broad raw evidence.
 
-### Turn 1 — User
-`PAYG customer auth is failing. Here is the error payload. What do we do next?`
+---
 
-### Turn 1 — AI without this rule family risk
-`I’ll read everything in the repo here and tell you the answer after that.`
+## Operational reality
 
-### Turn 1 — AI with RULES active
-`I can start with the checked symptom now, but if the next slice turns broad I’ll split it into a smaller read-only lane instead of flooding the main session with raw evidence.`
+- The next safe slice is often already implied by the active goal or checked state.
+- Some follow-up lanes are broad, noisy, or multi-surface enough that the main session should not absorb all raw evidence directly.
+- Progress and delegation both need to stay tied to the same objective.
 
-### Turn 2 — Evidence, correction, or blocker
-`The checked session shows both the error payload and a later re-anchoring section around what the evidence actually proves.`
+---
 
-### Turn 2 — AI without this rule family risk
-`I still need to pull the full codebase into the main thread before I can say anything useful.`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`The diagnosis can stay scoped here. The broader verifier-path audit is the noisy slice, so that part should go through a smaller investigation lane first.`
+- Continue active execution when the next slice is already clear.
+- Decompose broad objectives into lanes before deep drift.
+- Use worker routing before broad raw leader-session absorption when the next lane is noisy or large.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`The read-only lane returns filtered anchors for the verifier path and its likely dependencies.`
+---
 
-### Turn 3 — AI with RULES active
-`Now I can verify the important anchors in the main session and continue the actual objective without losing context budget on the raw bulk read.`
+## Decision
+
+Continue the objective, but route the broad follow-up lane through the smallest effective worker path before reading everything directly.
+
+---
+
+## What AI does next
+
+- Identify the current lane and the next implied lane.
+- If the next lane is broad, delegate filtered reading or audit work first.
+- Verify the returned anchors before stronger user-facing claims.
+
+---
+
+## Recovery path
+
+- If the scope is still mixed, narrow the question before deeper execution.
+- If the worker result is partial, run the next targeted check instead of absorbing raw bulk evidence by momentum.
+
+---
+
+## User-visible reply example
+
+`The next safe move is to continue the diagnosis, but the follow-up audit is broad enough that I should route it through a read-only worker first.`
 
 ---
 

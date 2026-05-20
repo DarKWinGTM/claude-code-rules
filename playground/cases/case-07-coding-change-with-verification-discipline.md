@@ -50,16 +50,52 @@ Expected behavior: report the exact checked scope rather than overclaiming compl
 
 ---
 
-## Example dialogue (virtual)
+## User objective
 
-### User
-`Fix this bug in the handler.`
+Make a code change or bug fix without overstating completion before the relevant verification actually runs.
 
-### AI without this rule family risk
-`Fixed. It should work now.`
+---
 
-### AI with RULES active
-`I updated the handler logic. I have not run the relevant check yet, so the correct status is implemented, not verified-in-scope. Next I should run the smallest useful verification for this behavior.`
+## Operational reality
+
+- A source edit can exist before tests, runtime proof, or live checks do.
+- Maintainability and verification depth both matter to whether the work is truly done.
+- The assistant must separate code progress from proof of behavior.
+
+---
+
+## RULES effect on execution
+
+- Choose the smallest useful structural move.
+- Decide verification depth before calling the work done.
+- Keep implemented, tested, verified-in-scope, fixed, and stable as separate statuses.
+
+---
+
+## Decision
+
+The work is only `implemented` until the relevant verification for the failure scope or behavior change passes.
+
+---
+
+## What AI does next
+
+- Apply the smallest useful code change.
+- Run the proportionate verification route for the changed behavior.
+- Report the exact evidence level instead of upgrading straight to fixed or stable.
+
+---
+
+## Recovery path
+
+- Run the missing focused test, scenario check, smoke check, or live check as appropriate.
+- If verification is blocked, state the remaining gap instead of claiming the bug is fixed.
+
+---
+
+## User-visible reply example
+
+`The fix is implemented in source, but I have not verified the failure scope yet. The next step is a focused check on the changed handler path.`
 
 ---
 

@@ -35,7 +35,7 @@ Current RULES require the assistant to:
 ## Observed case
 
 Checked transcript-derived example:
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/1b81d009-cf82-44a3-9739-cd3ea4af34dd/subagents/agent-ab427fea6a26aaa34.jsonl`
+- Transcript path: `<claude-project-scope-root>/1b81d009-cf82-44a3-9739-cd3ea4af34dd/subagents/agent-ab427fea6a26aaa34.jsonl`
 - Anchor hints: `decision_output: NEED_CONTEXT`, `refusal_class: WORKFLOW_BLOCK`, `must use publicly reachable`, `must not probe or depend on local Chromium`
 - Observed effect: a requested visual QA capture against a local preview stayed in `NEED_CONTEXT` / `WORKFLOW_BLOCK` because the checked workflow only supports publicly reachable pages and forbids local browser probing.
 - Scope note: this proves workflow-block handling in that checked environment; it does not say every visual QA request is blocked, only the unsupported local one.
@@ -52,34 +52,52 @@ Expected behavior: classify the block honestly, then tell the user what artifact
 
 ---
 
-## Example dialogue
+## User objective
 
-### Dialogue label
-`virtual trace patterned on a checked transcript-derived observed case`
+Capture or compare a visual QA artifact even though the requested path depends on an unsupported localhost or machine-local capture route.
 
-### Turn 1 — User
-`Capture a visual QA screenshot from my local preview at http://127.0.0.1:4173 and compare it to the design.`
+---
 
-### Turn 1 — AI without this rule family risk
-`Sure, I’ll just open the local page and grab the screenshot.`
+## Operational reality
 
-### Turn 1 — AI with RULES active
-`I need to check whether this session can reach that preview directly before I promise a capture path.`
+- The requested preview exists on a local-only path.
+- The checked workflow does not provide direct local-browser probing for that surface.
+- The real blocker is capability and access path, not willingness to continue.
 
-### Turn 2 — Evidence, correction, or blocker
-`The checked workflow only allows publicly reachable http(s) pages and explicitly avoids local Chromium, Playwright, Puppeteer, or Selenium probing.`
+---
 
-### Turn 2 — AI without this rule family risk
-`I’ll try the local browser anyway.`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`That turns this into a workflow block, not a silent fallback. I can continue once you provide a publicly reachable page or another supported artifact.`
+- Classify unsupported local capture as a workflow block.
+- Keep the blocked state explicit instead of faking local browser access.
+- Return a recovery path that tells the user exactly what supported input would unblock progress.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`The user still wants progress now, not just a refusal.`
+---
 
-### Turn 3 — AI with RULES active
-`Current decision_output is NEED_CONTEXT. What I can do now is review screenshots or files you upload, or check a public URL once that path exists.`
+## Decision
+
+Return `NEED_CONTEXT` / `WORKFLOW_BLOCK` for the unsupported local capture path.
+
+---
+
+## What AI does next
+
+- Stop the localhost capture path.
+- State what the workflow can and cannot do now.
+- Narrow the request to a supported artifact or reachable URL.
+
+---
+
+## Recovery path
+
+- The user can upload a screenshot or other supported visual artifact.
+- The user can provide a publicly reachable URL for the same preview once that path exists.
+
+---
+
+## User-visible reply example
+
+`I cannot capture that localhost preview directly in this workflow. If you upload a screenshot or provide a publicly reachable URL, I can compare it with the design immediately.`
 
 ---
 

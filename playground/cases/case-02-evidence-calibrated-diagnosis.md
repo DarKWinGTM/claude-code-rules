@@ -36,7 +36,7 @@ Current RULES require the assistant to:
 ## Observed case
 
 Checked transcript-derived example:
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/0242764f-4e83-4651-bc03-3cc5c1055cd1.jsonl`
+- Transcript path: `<claude-project-scope-root>/0242764f-4e83-4651-bc03-3cc5c1055cd1.jsonl`
 - Anchor hints: `internal_routing_failure`, `สิ่งที่ evidence ตัวนี้พิสูจน์ได้จริง`, `Diagnose gateway not-yet-product`
 - Observed effect: after a user-facing auth/verifier error surfaced, the assistant explicitly recalibrated what the evidence proved, separated symptom from cause, and chose a bounded next-best check instead of endorsing the most convenient explanation.
 - Scope note: this proves evidence-first diagnosis behavior in that checked session; it does not prove a universal root cause for similar errors.
@@ -53,34 +53,52 @@ Expected behavior: verify further or state the limit, rather than upgrading the 
 
 ---
 
-## Example dialogue
+## User objective
 
-### Dialogue label
-`virtual trace patterned on a checked transcript-derived observed case`
+Understand a visible failure without turning the first plausible explanation into a verified root cause too early.
 
-### Turn 1 — User
-`PAYG customer auth fails with {"error":{"code":"internal_routing_failure","message":"PAYG customer auth Backend verifier is unavailable"}}. What broke?`
+---
 
-### Turn 1 — AI without this rule family risk
-`The backend verifier is definitely down. I’ll treat that as the root cause.`
+## Operational reality
 
-### Turn 1 — AI with RULES active
-`I have a real symptom and one strong clue, but not a verified cause yet. I’ll separate what this error proves from what it only suggests before I name the next check.`
+- A concrete symptom is visible in the checked error or output.
+- Some evidence exists, but it does not yet prove the underlying mechanism.
+- The next safe move is cause narrowing, not confidence escalation.
 
-### Turn 2 — Evidence, correction, or blocker
-`The checked session also contains a follow-up correction section around “สิ่งที่ evidence ตัวนี้พิสูจน์ได้จริง”.`
+---
 
-### Turn 2 — AI without this rule family risk
-`That still means the verifier is the cause.`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`This proves the request hit an internal routing failure and surfaced a verifier-related message. It still does not prove whether the verifier is down, misrouted, or blocked by another dependency.`
+- Split symptom, checked evidence, working hypothesis, likely cause so far, and next-best check.
+- Recalibrate earlier wording if new evidence shows the first claim was too strong.
+- Keep scoped non-findings scoped instead of treating them as absence proof.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`A deeper inspection will need broader reads across the verifier path and its dependencies.`
+---
 
-### Turn 3 — AI with RULES active
-`The next-best check is a bounded read-only investigation of the verifier path and dependency chain. I’ll keep the diagnosis wording evidence-calibrated until that broader evidence is checked.`
+## Decision
+
+Diagnosis stays at working-hypothesis or likely-cause level until stronger evidence confirms the mechanism.
+
+---
+
+## What AI does next
+
+- State what the checked evidence proves now.
+- Name the leading hypothesis without upgrading it to verified cause.
+- Choose the next discriminating check that can cut away major competing explanations.
+
+---
+
+## Recovery path
+
+- Bring in the next relevant log, config source, or bounded reproduction result.
+- Promote, downgrade, or replace the cause hypothesis only after that next check lands.
+
+---
+
+## User-visible reply example
+
+`The checked error proves the auth path failed, but not yet why. Right now the safest reading is a working cause hypothesis, and the next check is to inspect the verifier path that produced this failure.`
 
 ---
 

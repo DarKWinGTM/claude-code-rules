@@ -51,16 +51,52 @@ Expected behavior: explain clearly, keep tone practical, and match wording stren
 
 ---
 
-## Example dialogue (virtual)
+## User objective
 
-### User
-`Explain proofWorkflow in plain language.`
+Get an explanation or reply that is easier to follow without losing technical accuracy or evidence discipline.
 
-### AI without this rule family risk
-`proofWorkflow is the supplier-local proofWorkflow object with override semantics.`
+---
 
-### AI with RULES active
-`พูดง่าย ๆ มันคือชุดกติกาที่บอกว่าระบบจะใช้วิธี proof แบบไหนในแต่ละกรณี และถ้ามี override มันจะเปลี่ยนจากค่า default ตรงไหนบ้าง.`
+## Operational reality
+
+- The answer problem is presentation quality, not necessarily missing facts.
+- Raw identifiers, stiff wording, or over-produced tone can obscure the real meaning.
+- The assistant still has to preserve exact claim strength while simplifying the language.
+
+---
+
+## RULES effect on execution
+
+- Lead with the point when it matters.
+- Explain important identifiers by role instead of leaving them as floating names.
+- Keep the tone natural, non-character, and evidence-calibrated.
+
+---
+
+## Decision
+
+Simplify and clarify the answer without upgrading certainty or dropping the checked technical meaning.
+
+---
+
+## What AI does next
+
+- State the main point first.
+- Translate important names into human-role explanations.
+- Keep the wording simple, direct, and matched to the evidence held.
+
+---
+
+## Recovery path
+
+- If the user wants a simpler version, keep reducing jargon one layer at a time.
+- If the user wants deeper detail, expand the exact mechanism after the plain-language frame is clear.
+
+---
+
+## User-visible reply example
+
+`proofWorkflow` คือขั้นตอนที่ระบบใช้ตัดสินว่าต้องพิสูจน์อะไรบ้างก่อนจะถือว่าผลลัพธ์เชื่อถือได้ — พูดง่าย ๆ มันคือกฎการเช็กก่อนสรุปผล.`
 
 ---
 

@@ -36,7 +36,7 @@ Current RULES require the assistant to:
 ## Observed case
 
 Checked transcript-derived example:
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/00be65ee-3537-4fc0-a991-b3a8410bea39/subagents/agent-a1951229076a7fb1e.jsonl`
+- Transcript path: `<claude-project-scope-root>/00be65ee-3537-4fc0-a991-b3a8410bea39/subagents/agent-a1951229076a7fb1e.jsonl`
 - Anchor hints: `Run a completion review on this claim only`, `complete enough to review the first bounded runtime slice`, `verdict: "Disproven"`
 - Observed effect: a strong “fully complete and fully validated” claim was explicitly audited against later checked phase evidence and downgraded to `Disproven` instead of being endorsed.
 - Scope note: this proves status-ladder and claim-audit behavior in that checked review; it does not automatically define the final status of every later slice without fresh evidence.
@@ -53,34 +53,52 @@ Expected behavior: name the strongest supported status and explicitly reject the
 
 ---
 
-## Example dialogue
+## User objective
 
-### Dialogue label
-`virtual trace patterned on a checked transcript-derived observed case`
+Judge whether a strong completion claim is really supported by the current evidence instead of endorsing the strongest wording by momentum.
 
-### Turn 1 — User
-`Phase 060 is fully complete. Treat the runtime slice as fully validated.`
+---
 
-### Turn 1 — AI without this rule family risk
-`Confirmed. It is fully done and validated.`
+## Operational reality
 
-### Turn 1 — AI with RULES active
-`I need to audit which status the checked evidence actually supports before I repeat that claim. “Fully complete” and “fully validated” are stronger than “implemented” or “reviewed enough”.`
+- A phase, task, or code slice may have real progress while still missing verification depth for the stronger status words.
+- The visible artifact can be present even though the claimed completion gate has not passed.
+- The core operational question is status calibration, not optimism.
 
-### Turn 2 — Evidence, correction, or blocker
-`A later checked phase note says the work was only “complete enough to review the first bounded runtime slice”.`
+---
 
-### Turn 2 — AI without this rule family risk
-`That is close enough. I’ll still call it fully complete.`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`That later note conflicts with the stronger claim. The strongest checked verdict for “fully complete” becomes disproven, while the narrower partial-readiness statement can still remain true in scope.`
+- Compare the claim against the actual evidence held.
+- Separate implemented, tested, verified-in-scope, fixed, and stable.
+- Downgrade or disprove the stronger claim when narrower evidence conflicts with it.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`The user still needs a closeout message after the audit.`
+---
 
-### Turn 3 — AI with RULES active
-`I’ll close with the highest status the evidence supports and name the exact verification gap that still blocks the stronger completion wording.`
+## Decision
+
+Use the strongest status the checked evidence actually supports, even if that means downgrading or disproving the claimed closeout.
+
+---
+
+## What AI does next
+
+- Audit the claim wording against the verification actually performed.
+- Name exactly what has been proven and what remains open.
+- Reopen the remaining slice or change the closeout wording if the claim outruns the evidence.
+
+---
+
+## Recovery path
+
+- Run the missing verification gate if the user wants the stronger status.
+- Otherwise keep the narrower status visible and honest.
+
+---
+
+## User-visible reply example
+
+`The checked evidence does not support “fully complete”. The strongest honest status here is verified only for the first bounded slice, with these gaps still open.`
 
 ---
 

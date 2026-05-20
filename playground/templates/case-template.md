@@ -68,59 +68,98 @@ Each virtual branch should remain compatible with the same checked rule behavior
 
 ---
 
-## Example dialogue
+## User objective
 
-Use this section for a realistic trace, not a one-line slogan.
+State the concrete thing the user is trying to get done in this scenario.
 
-Preferred shape:
-- 3-6 turns when the case is non-trivial
-- at least one realism cue such as user correction, arriving evidence, blocker, retry, or narrowed next step
-- explicit label when the dialogue is virtual, transcript-grounded, or mixed
-- keep the dialogue compatible with the checked rule behavior and observed evidence boundary
+Keep it outcome-first and practical.
 
-### Dialogue label
-Use one short boundary-visible label such as `virtual`, `transcript-grounded`, `mixed`, or a slightly longer descriptive form when it still makes the evidence boundary explicit.
+---
 
-### Turn 1 — User
-`<prompt>`
+## Operational reality
 
-### Turn 1 — AI without this rule family risk
-`<ungoverned or weaker response>`
+State the actual working conditions that shape execution here.
 
-### Turn 1 — AI with RULES active
-`<governed response>`
+Use this section for things such as:
+- what evidence exists already
+- what is missing
+- what is blocked
+- what capability or environment boundary matters
+- what makes the request easy, risky, broad, or constrained
 
-### Turn 2 — Evidence, correction, or blocker
-`<new evidence or follow-up turn>`
+---
 
-### Turn 2 — AI without this rule family risk
-`<ungoverned or weaker follow-up>`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`<governed follow-up>`
+Explain how RULES change the assistant's operational behavior in this case.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`<next step or bounded closeout>`
+Use this section for:
+- what RULES force the assistant to check first
+- what RULES prevent the assistant from doing by momentum
+- what classification, guardrail, or routing behavior becomes active
 
-### Turn 3 — AI with RULES active
-`<governed next step>`
+This is the main behavior layer. Do not make dialogue the primary explanation.
+
+---
+
+## Decision
+
+State the resulting operational decision clearly.
+
+Examples:
+- latest user instruction becomes the active path
+- `verify first`
+- `NEED_CONTEXT`
+- `ALLOW_CONSTRAINED`
+- ask before mutate
+- downgrade the completion claim
+- worker-route the broad lane before deeper raw intake
+
+---
+
+## What AI does next
+
+List the next concrete AI actions that should happen under current RULES.
+
+Keep it execution-shaped rather than rhetorical.
+
+---
+
+## Recovery path
+
+State how safe progress can continue from the current state.
+
+Use this section for:
+- what the user can provide
+- what evidence or approval would unblock the work
+- what narrower safe path remains available now
+
+---
+
+## User-visible reply example
+
+Give one compact example of what the assistant could say to the user after applying the operational decision.
+
+If the case is virtual, keep the example compatible with that virtual boundary.
+
+Dialogue, if included at all, should be supporting illustration only, not the main explanatory layer.
 
 ---
 
 ## Flow diagram
 
+Optional. Use only when it helps clarify the operational decision flow.
+
 ```text
-User request
+User objective arrives
   ↓
-Initial read
-  ↓
-Evidence / correction / blocker arrives
+Operational reality is checked
   ↓
 Relevant RULES intervene
   ↓
-Adjusted reasoning / action path
+Decision is selected
   ↓
-Governed response or next step
+Next action / recovery path becomes visible
 ```
 
 ---
@@ -156,6 +195,6 @@ Keep this section claim-calibrated:
 
 When a new observed case appears:
 1. add it to `playground/observed/YYYY-MM.md`
-2. update this case file's observed section and realism trace
+2. update this case file's observed section and operational behavior sections
 3. update `playground/coverage.md` only if rule coverage or scenario mapping changes
 4. open a new scenario family only when the existing families no longer model the behavior honestly and transcript evidence supports the split

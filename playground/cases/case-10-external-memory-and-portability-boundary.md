@@ -37,7 +37,7 @@ Current RULES require the assistant to:
 ## Observed case
 
 Checked transcript-derived example:
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/1b81d009-cf82-44a3-9739-cd3ea4af34dd/subagents/agent-a11775f8a9be66221.jsonl`
+- Transcript path: `<claude-project-scope-root>/1b81d009-cf82-44a3-9739-cd3ea4af34dd/subagents/agent-a11775f8a9be66221.jsonl`
 - Anchor hints: `Short answer: จาก official Claude Code docs ที่เช็กแล้ว`, `Official plugin structure/reference ไม่ได้ list`, `claude --plugin-dir`, `/plugin install`
 - Observed effect: the answer was narrowed to what official Claude Code plugin docs actually support instead of overclaiming that plugin installation also covers `.claude/rules/` or `CLAUDE.md` surfaces.
 - Scope note: this proves external-doc verification plus boundary narrowing in that checked session; it does not mean all install surfaces are interchangeable.
@@ -56,34 +56,52 @@ Expected behavior: verify current facts, preserve path scope, and keep shared do
 
 ---
 
-## Example dialogue
+## User objective
 
-### Dialogue label
-`virtual trace patterned on a checked transcript-derived observed case`
+Answer a question that mixes current external facts, remembered context, and local-path convenience without turning them into one unsupported recommendation.
 
-### Turn 1 — User
-`Can plugin install also deploy our .claude/rules set? Put the exact local path into the guide if needed.`
+---
 
-### Turn 1 — AI without this rule family risk
-`Yes — plugin install covers that too. Use /home/node/... as the default path.`
+## Operational reality
 
-### Turn 1 — AI with RULES active
-`That answer depends on current official docs and on whether we are talking about a shared contract or one machine-local fact. I need to verify both before I narrow the guidance.`
+- External docs may have changed.
+- Path-scoped memory can help continuity but may not reflect current repo truth.
+- An exact local machine path can be real in one environment while still being the wrong shared default.
 
-### Turn 2 — Evidence, correction, or blocker
-`The checked transcript shows official Claude Code plugin references like claude --plugin-dir and /plugin install, but not .claude/rules or CLAUDE.md as plugin components.`
+---
 
-### Turn 2 — AI without this rule family risk
-`Those are close enough. I’ll treat the install surfaces as equivalent.`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`The stronger reading is narrower: plugin installation is documented for plugin package surfaces, not for our runtime rules surface. Shared guidance should stay portable rather than inheriting one local path as the default.`
+- Verify the external fact before leaning on it.
+- Recheck memory before using it as current exact truth.
+- Keep shared wording portable and separate local exact paths from reusable guidance.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`The user still needs install wording after that clarification.`
+---
 
-### Turn 3 — AI with RULES active
-`I can write the shared guidance with portable repo/runtime labels and keep any exact machine path only as a scoped local fact when that local detail is actually needed.`
+## Decision
+
+Narrow the answer to checked support, and treat any exact local path as a scoped local fact rather than a portable default.
+
+---
+
+## What AI does next
+
+- Check the official or current authoritative source.
+- Separate remembered context from freshly checked fact.
+- Use placeholders or late-bound wording for shared artifacts.
+
+---
+
+## Recovery path
+
+- If the user truly needs a machine-scoped example, provide it explicitly as local-only context.
+- If support remains unclear, keep the answer bounded instead of overclaiming equivalence.
+
+---
+
+## User-visible reply example
+
+`The checked docs support the plugin surface only. For shared guidance I will keep the path portable, and I will mention an exact local path only if you need a machine-scoped example.`
 
 ---
 

@@ -36,7 +36,7 @@ Current RULES require the assistant to:
 ## Observed case
 
 Checked transcript-derived example:
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/0c68a707-81d9-4d1a-bcda-6fc04ae11efc.jsonl`
+- Transcript path: `<claude-project-scope-root>/0c68a707-81d9-4d1a-bcda-6fc04ae11efc.jsonl`
 - Anchor hints: `rollover / compact current index`, `Completed status ไม่ใช่ deletion authority`, `TODO.md`, `phase/SUMMARY.md`
 - Observed effect: oversized `TODO.md` and `phase/SUMMARY.md` were compacted through rollover while preserving current-state navigation and completed-history reachability.
 - Scope note: this proves lifecycle-preserving rollover behavior in that checked session; it does not authorize broad deletion or arbitrary restructuring elsewhere.
@@ -55,34 +55,52 @@ Expected behavior: create or repair the proper owner surface instead of overload
 
 ---
 
-## Example dialogue
+## User objective
 
-### Dialogue label
-`virtual trace patterned on a checked transcript-derived observed case`
+Repair or extend governed documentation without letting current-state, history, and owner roles drift into one overloaded surface.
 
-### Turn 1 — User
-`TODO.md and phase/SUMMARY.md are getting huge. Can you clean them up?`
+---
 
-### Turn 1 — AI without this rule family risk
-`Sure, I’ll delete the completed parts so the active files stay short.`
+## Operational reality
 
-### Turn 1 — AI with RULES active
-`I need to preserve history and owner roles here. If the problem is entrypoint bloat, the safe repair is rollover and compact-current-index maintenance, not deleting completed work.`
+- Several governed surfaces can be in play at once: design, changelog, TODO, phase, patch, and README.
+- Large active files often need rollover or sharding, but that is preservation work rather than cleanup deletion.
+- The main risk is owner drift and history loss, not only file size.
 
-### Turn 2 — Evidence, correction, or blocker
-`The checked session shows TODO around 336 lines / 32.5 KB and the phase summary around 401 lines / 37.8 KB.`
+---
 
-### Turn 2 — AI without this rule family risk
-`That confirms the old material is disposable.`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`That confirms a rollover trigger, not disposal authority. Active state should stay compact while moved history remains reachable through the right owner surfaces.`
+- Choose the correct owner surface before editing.
+- Preserve history by rollover or sharding instead of deletion.
+- Verify cross-surface sync before claiming no-drift or release readiness.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`The repo still needs current navigation after the cleanup.`
+---
 
-### Turn 3 — AI with RULES active
-`I’ll keep TODO and phase as compact current entrypoints, move historical bulk into referenced history or done shards, and then verify that the active links still point to the right owner surfaces.`
+## Decision
+
+Treat the issue as governed-structure repair under the correct owner, not as generic cleanup.
+
+---
+
+## What AI does next
+
+- Classify which owner surface should hold the new or moved content.
+- Compact the active entrypoint if it is oversized.
+- Update references and verify sync across the touched surfaces.
+
+---
+
+## Recovery path
+
+- If the split is broad or owner boundaries are unclear, open a bounded repair slice instead of forcing an unsafe compact.
+- If history must move, preserve reachability and bidirectional references.
+
+---
+
+## User-visible reply example
+
+`This is a governed-structure repair, not a generic cleanup. I should compact the active index, preserve history, and sync the owner surfaces before calling it aligned.`
 
 ---
 

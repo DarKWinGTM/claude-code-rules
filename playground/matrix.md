@@ -2,11 +2,11 @@
 
 ## Purpose
 
-This file explores virtual-case combinations for the playground family.
+This file explores virtual operational-case combinations for the playground family.
 
 Every row here is virtual unless it explicitly links to a checked observed case elsewhere.
 
-For `v10.20 / P112`, the matrix should also help scenario authors model realistic multi-turn traces, blockers, retries, and completion-state disputes without inventing new RULES capability.
+For `v10.20 / P112`, the matrix should help scenario authors model realistic operational branches, blockers, retries, recovery paths, and completion-state disputes without inventing new RULES capability.
 
 ---
 
@@ -29,10 +29,10 @@ Required baseline axes in this matrix:
 
 ---
 
-## Grounded realism axes
+## Grounded operational-modeling axes
 
-These axes help shape more realistic dialogue traces:
-- turn count
+These axes help shape more realistic operational case branches:
+- turn count when a multi-step trace is still useful as supporting illustration
 - user behavior
 - evidence source
 - failure mode
@@ -82,6 +82,7 @@ These axes help shape more realistic dialogue traces:
 | M14 | visual QA is requested against a local-only preview with no public URL | return `NEED_CONTEXT` plus a usable recovery path | workflow-blocked visual QA |
 | M15 | TODO or phase entrypoint is oversized and mixes active plus completed history | compact the current index and preserve history via rollover | governed artifact lifecycle |
 | M16 | plugin-install question assumes `.claude/rules/` is a supported plugin surface | verify official docs and narrow the claim instead of guessing | external, memory, and portability boundary |
+| M17 | one workflow moves through ambiguity, worker routing, blocked execution, supported continuation, and closeout pressure | shift rule response at each state boundary instead of treating the whole path as one flat answer | combined-rules execution-state orchestration |
 
 ---
 
@@ -90,5 +91,5 @@ These axes help shape more realistic dialogue traces:
 - matrix rows stay virtual unless linked to checked observed evidence
 - matrix rows should point back to at least one scenario family
 - matrix rows may explore several branches, but they must not invent new RULES capability
-- realism cues should stay compatible with checked rule behavior and observed evidence boundaries
+- operational modeling cues should stay compatible with checked rule behavior and observed evidence boundaries
 - when a virtual row later becomes a checked observed case, record it in `observed/YYYY-MM.md` and update the linked scenario file

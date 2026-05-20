@@ -36,10 +36,10 @@ Current RULES require the assistant to:
 ## Observed case
 
 Checked transcript-derived examples:
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/0c68a707-81d9-4d1a-bcda-6fc04ae11efc.jsonl`
+- Transcript path: `<claude-project-scope-root>/0c68a707-81d9-4d1a-bcda-6fc04ae11efc.jsonl`
   - Anchor hints: `rollover / compact current index`, `Completed status ไม่ใช่ deletion authority`, `336 lines / 32.5 KB`, `90 lines / 6.4 KB`
   - Observed effect: oversized active docs were handled through rollover and compact-current-index preservation instead of deleting completed history by cleanup instinct.
-- Transcript path: `/home/node/.claude/projects/-home-node-workplace-AWCLOUD-CLAUDE/519ee145-4708-49b8-9b9e-e57227b2ade7.jsonl`
+- Transcript path: `<claude-project-scope-root>/519ee145-4708-49b8-9b9e-e57227b2ade7.jsonl`
   - Anchor hints: `rejects real-smoke without explicit confirmation`, `real-smoke requires --confirm-real-smoke`
   - Observed effect: an approval-sensitive real-smoke path stayed behind an explicit confirmation gate instead of being treated as safe default continuation.
 
@@ -55,34 +55,52 @@ Expected behavior: inspect and confirm rather than mutate by instinct.
 
 ---
 
-## Example dialogue
+## User objective
 
-### Dialogue label
-`virtual trace patterned on checked rollover and confirmation-gate behavior`
+Clean up, mutate, or verify risky state without letting convenience or momentum replace real approval and scope control.
 
-### Turn 1 — User
-`TODO.md is huge now. Clean up the completed stuff and run a real smoke check if needed.`
+---
 
-### Turn 1 — AI without this rule family risk
-`Sure, I deleted the old sections and ran the smoke check.`
+## Operational reality
 
-### Turn 1 — AI with RULES active
-`I need to separate two high-impact moves here: history cleanup and real-smoke verification. I won’t delete completed detail just because the file is large, and I won’t run a real-smoke path without explicit confirmation.`
+- The requested action may delete, overwrite, or otherwise mutate important state.
+- Cleanup wording and untracked/noisy state do not prove anything is disposable.
+- Real-smoke or other approval-sensitive checks are a separate risk gate, not default continuation.
 
-### Turn 2 — Evidence, correction, or blocker
-`The checked entrypoint is 336 lines / 32.5 KB, and completed items are still only reachable through the active file.`
+---
 
-### Turn 2 — AI without this rule family risk
-`That still sounds like safe cleanup. I’ll remove the old items.`
+## RULES effect on execution
 
-### Turn 2 — AI with RULES active
-`That size is a rollover signal, not deletion authority. The safe move is compact current index plus preserved history references.`
+- Require exact scope, impact, and rollback direction before risky execution.
+- Block cleanup/hygiene reasoning from becoming deletion authority.
+- Keep approval-sensitive verification such as real-smoke behind explicit confirmation.
 
-### Turn 3 — Next-step narrowing / recovery / closeout
-`If you still want live verification after that, it would require a real-smoke gate.`
+---
 
-### Turn 3 — AI with RULES active
-`I can do the reversible rollover now. The real-smoke path stays blocked until you confirm that exact action and scope.`
+## Decision
+
+Risky mutation or real-smoke work stops at an explicit confirmation gate until the approved scope is clear.
+
+---
+
+## What AI does next
+
+- Inspect the affected surfaces first.
+- Explain what would change, what could break, and how rollback would work.
+- Ask for explicit confirmation before destructive or approval-sensitive execution.
+
+---
+
+## Recovery path
+
+- The user can narrow the exact target scope.
+- The user can explicitly approve the risky mutation or real-smoke step once the blast radius is clear.
+
+---
+
+## User-visible reply example
+
+`This needs an explicit confirmation gate first. I can map the affected files, impact, and rollback path now, then execute only the scope you approve.`
 
 ---
 

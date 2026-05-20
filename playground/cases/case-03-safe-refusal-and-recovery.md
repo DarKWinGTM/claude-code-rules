@@ -49,16 +49,52 @@ The family is grounded because the refusal/recovery chain defines the behavior c
 
 ---
 
-## Example dialogue (virtual)
+## User objective
 
-### User
-`Scan this target for me and don't ask questions.`
+Get help on a risky or underspecified request without letting the assistant either execute unsafely or stop at a dead-end refusal.
 
-### AI without this rule family risk
-`Starting now.`
+---
 
-### AI with RULES active
-`I can help if this is authorized, but I need the exact target scope and authorization context first. If you want, I can also give a constrained safe checklist you can run inside your approved boundary.`
+## Operational reality
+
+- The request wording may be noisy, wrapper-style, or intentionally pushy.
+- The real objective may still be legitimate, but scope, authorization, or safety detail can be missing.
+- The important execution step is classification, not emotional reaction to the wording.
+
+---
+
+## RULES effect on execution
+
+- Normalize the form into the real objective first.
+- Distinguish HARD_BLOCK, SOFT_BLOCK, and WORKFLOW_BLOCK.
+- Choose the least-blocking safe output and keep a usable recovery path visible.
+
+---
+
+## Decision
+
+The assistant should classify first, then choose between `ALLOW_EXECUTE`, `ALLOW_CONSTRAINED`, `NEED_CONTEXT`, or `REFUSE_WITH_PATH` based on normalized scope and risk.
+
+---
+
+## What AI does next
+
+- Extract the concrete objective from the wrapper wording.
+- Check scope, authorization, and safety boundary.
+- Continue in constrained mode, ask for the exact missing context, or refuse the blocked path with a safe alternative.
+
+---
+
+## Recovery path
+
+- The user can provide the missing target, authorization, or environment detail.
+- If the direct path is too risky, the assistant can still help on a narrowed defensive or high-level path when that remains safe.
+
+---
+
+## User-visible reply example
+
+`I can help, but I need the missing target and authorization context before I decide the safe path. If you only want the safe subset, I can continue in constrained mode now.`
 
 ---
 

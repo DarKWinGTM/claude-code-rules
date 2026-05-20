@@ -50,16 +50,52 @@ Expected behavior: one direct explanation layer plus one audience-safe artifact 
 
 ---
 
-## Example dialogue (virtual)
+## User objective
 
-### User
-`Explain this internal issue to me, then draft a short public status note.`
+Explain the full issue to the direct user while also producing copy that is safe for a more public or operator-facing audience.
 
-### AI without this rule family risk
-`The problem is our internal abuse detector on host X blocked route Y...`
+---
 
-### AI with RULES active
-`Direct note for you: here is the checked internal diagnosis. Public-facing copy: the issue affected request handling and is under mitigation. Disclosure note: I removed internal routing and security-mechanism detail from the public version.`
+## Operational reality
+
+- One request may span more than one audience surface.
+- The direct user may need the internal detail, while the public or operator-facing copy should avoid sensitive mechanisms or raw internal data.
+- The challenge is controlled disclosure, not blanket omission.
+
+---
+
+## RULES effect on execution
+
+- Keep full transparency with the direct authorized user.
+- Classify the target audience before drafting external-facing wording.
+- Remove or generalize only the details that do not belong on that surface.
+
+---
+
+## Decision
+
+Split the output into a direct-user explanation and an audience-safe artifact instead of forcing one disclosure level onto both.
+
+---
+
+## What AI does next
+
+- Explain the checked internal basis to the direct user.
+- Draft the public/operator-safe wording separately.
+- Call out what was generalized when that difference matters.
+
+---
+
+## Recovery path
+
+- If the audience is unclear, ask or choose the safer external wording by default.
+- If broader disclosure is explicitly requested, re-check it against safety and privacy boundaries first.
+
+---
+
+## User-visible reply example
+
+`Direct note for you: the internal routing failure came from the verifier dependency. Audience-facing copy: customer authentication is temporarily degraded while we investigate an internal dependency issue.`
 
 ---
 
