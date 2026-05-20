@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** In progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.25
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -92,6 +92,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P117 is in progress.
+P117 is completed.
 
-The owner evidence for both behavior gaps is already checked and startup surfaces are being opened; owner refinement, companion/changelog sync, playground case creation, runtime install-boundary proof, parity/body-sufficiency verification, commit/push/default-branch update, GitHub release verification, and final closeout alignment remain pending.
+The owner evidence for both behavior gaps was checked; owner refinement, companion/changelog sync, playground case creation, runtime install-boundary proof, parity/body-sufficiency verification, commit/push/default-branch update, GitHub release verification, and final closeout alignment all completed.

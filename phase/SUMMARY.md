@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.90
+> **Current Version:** 1.91
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active: P117 proactive goal surfacing and decision-ready response style refinement is in progress on top of the released v10.24 / P116 baseline
+> **Status:** Released through v10.25 / P117 proactive goal surfacing and decision-ready response style refinement; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,10 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
+- none currently open
+
+### Most Recently Completed
+
 - **P117:** [phase-117-proactive-goal-surfacing-and-decision-ready-response-style-refinement.md](phase-117-proactive-goal-surfacing-and-decision-ready-response-style-refinement.md)
-  - Goal: tighten why and when AI should surface next-step options as candidate goals and refine default non-trivial response style into an easy-first, structured, evidence-clear, decision-ready shape without ritual drift.
-  - Output: touched runtime owners and companions, one new playground case family plus index update, touched master release surfaces, and later runtime install/release verification.
-  - Gate: goal/doctrine integrity, response-style owner integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, push, default-branch update, GitHub release verification, and closeout alignment.
+  - Output: touched goal-surfacing owners, communication/presentation/evidence-boundary owners, one new playground case family plus index update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.25`.
+  - Gate: goal/doctrine integrity, response-style owner integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.25
+  - Release tag `v10.25` resolves to commit `0a32fa1c81a81739094ab94c9e6e8627d024bc03`.
+  - Published at `2026-05-20T13:05:37Z`.
 
 ### Most Recently Completed
 

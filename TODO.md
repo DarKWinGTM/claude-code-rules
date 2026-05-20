@@ -1,20 +1,20 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-20
-> **Current Release:** v10.24 / P116 end-to-end language-aligned goal surface refinement
-> **Active Wave:** P117 / v10.25 proactive goal surfacing and decision-ready response style refinement
+> **Current Release:** v10.25 / P117 proactive goal surfacing and decision-ready response style refinement
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
-## 🚧 Active / In Progress
-
-- [ ] P117 / v10.25 proactive goal surfacing and decision-ready response style refinement is in progress.
-  - Scope: analyze and tighten goal-surfacing behavior in the correct owners, refine default non-trivial response structure/tone/evidence-surface behavior in the correct communication/presentation owners, add one new governed non-runtime playground case plus index update, and sync touched runtime/design/changelog/TODO/phase/patch/master surfaces.
-  - Pending gate: preserve advisory `/goal`, exact-literal boundaries, evidence-discipline strictness, trivial-answer anti-ritual boundaries, the active runtime install scope at 18 files, and the non-runtime playground boundary; then rerun install plus 18/18 source/runtime parity and source/destination body sufficiency, run `git diff --check`, push, verify GitHub release `v10.25`, update the remote default branch, and finalize closeout records.
-
 ## ✅ Completed
+
+- [x] P117 / v10.25 proactive goal surfacing and decision-ready response style refinement was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched owners now surface candidate goals more proactively at real decision boundaries when no one path clearly dominates; default non-trivial answers now encode plain-language summary first, small-table-when-useful, grouped explanation, identifier-meaning-first wording, visible verified/inference/hypothesis separation, and concise decision-ready close; `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` and the playground index update are present; touched master/design/changelog/TODO/phase/patch sync is complete; playground still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.25
+  - Release tag `v10.25` resolves to commit `0a32fa1c81a81739094ab94c9e6e8627d024bc03`.
+  - Published at `2026-05-20T13:05:37Z`.
 
 - [x] P116 / v10.24 end-to-end language-aligned goal surface refinement was completed, installed, pushed, and released.
   - Verified: touched runtime owners teach end-to-end dominant-session-language behavior across candidate goals, advisory `/goal`, recommendation labels, and recap/closing lines; exact literals remain preservable where they should stay exact; `case-16-end-to-end-language-aligned-goal-surface.md` and the playground index update are present; touched master/design/changelog/TODO/phase/patch sync is complete; playground still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.

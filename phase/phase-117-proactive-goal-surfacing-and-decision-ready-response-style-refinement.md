@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P117
-> **Status:** Active / Owner sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.25
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.25
@@ -88,10 +88,10 @@ P117 exists to tighten those owners without creating new rule chains and to make
 
 ## Current Status
 
-P117 is active.
+P117 is completed.
 
 Current checked progress:
-- released baseline before P117 startup is `v10.24 / P116`
-- owner evidence for both behavior gaps is already checked in runtime communication/presentation/evidence surfaces
-- P117 startup surfaces are being opened for the combined runtime + playground refinement
-- runtime install-boundary proof, parity/body-sufficiency verification, push/default-branch update, and GitHub release proof are still pending at this stage
+- released baseline before P117 startup was `v10.24 / P116`
+- owner evidence for both behavior gaps was checked and the selected owners were refined without opening duplicate rule chains
+- the new playground case and index update are present in source scope
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release proof all passed
