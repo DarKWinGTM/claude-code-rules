@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.92
+> **Current Version:** 1.93
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active: P119 active-exchange language alignment hardening follow-up is in progress on top of the released v10.26 / P118 baseline
+> **Status:** Released through v10.27 / P119 active-exchange language alignment hardening follow-up; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -21,14 +21,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Active Phase Roadmap
 
-### Active
+### Most Recently Completed
 
 - **P119:** [phase-119-active-exchange-language-alignment-hardening-follow-up.md](phase-119-active-exchange-language-alignment-hardening-follow-up.md)
-  - Goal: make goal-shaped and recommendation-shaped natural-language scaffold follow the user's active exchange language by default instead of translating only the wrapper or waiting for an explicit language command.
-  - Output: touched language-alignment owners, one related playground case update, touched master release surfaces, and later runtime install/release verification.
-  - Gate: active-exchange-language integrity, exact-literal preservation integrity, anti-wrapper-only-translation integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
-
-### Most Recently Completed
+  - Output: touched language-alignment owners, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.27`.
+  - Gate: active-exchange-language integrity, exact-literal preservation integrity, anti-wrapper-only-translation integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.27
+  - Release tag `v10.27` resolves to commit `54943578d587b1a0deb4bdfda8d402ab065fe111`.
+  - Published at `2026-05-21T02:15:51Z`.
 
 - **P118:** [phase-118-successor-surfacing-bridge-hardening-follow-up.md](phase-118-successor-surfacing-bridge-hardening-follow-up.md)
   - Output: touched successor-surfacing bridge owners, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.26`.

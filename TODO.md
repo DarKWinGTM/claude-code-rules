@@ -1,20 +1,20 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-21
-> **Current Release:** v10.26 / P118 successor-surfacing bridge hardening follow-up
-> **Active Wave:** P119 / v10.27 active-exchange language alignment hardening follow-up
+> **Current Release:** v10.27 / P119 active-exchange language alignment hardening follow-up
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
-## 🚧 Active / In Progress
-
-- [ ] P119 / v10.27 active-exchange language alignment hardening follow-up is in progress.
-  - Scope: make goal-shaped and recommendation-shaped natural-language scaffold follow the user's active exchange language by default, keep explicit language request as a stronger override, preserve exact literals such as `/goal`, file paths, identifiers, version tags, and query params, and eliminate translate-wrapper-only output.
-  - Pending gate: refine `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `communication-register.md`, `accurate-communication.md`, and `explanation-and-presentation.md`; update one related playground case; keep the runtime install scope at 18 files; rerun install plus 18/18 source/runtime parity and source/destination body sufficiency; run `git diff --check`; push; update the remote default branch; verify GitHub release `v10.27`; and finalize closeout records.
-
 ## ✅ Completed
+
+- [x] P119 / v10.27 active-exchange language alignment hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched language-alignment owners now make active-exchange language the default for goal-shaped output even without a direct language instruction, explicit language requests remain a stronger override, exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters stay token-scoped instead of turning the whole block into an exact literal, and wrapper-only translation is explicitly rejected; the updated `case-16-end-to-end-language-aligned-goal-surface.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.27
+  - Release tag `v10.27` resolves to commit `54943578d587b1a0deb4bdfda8d402ab065fe111`.
+  - Published at `2026-05-21T02:15:51Z`.
 
 - [x] P118 / v10.26 successor-surfacing bridge hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched successor-surfacing bridge owners now reject generic future-note closeout when meaningful successor work is already visible, candidate goals surface more clearly when several successor directions remain live, and smaller bounded successor slices are derived from checked execution surfaces instead of echoing broad future labels; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.

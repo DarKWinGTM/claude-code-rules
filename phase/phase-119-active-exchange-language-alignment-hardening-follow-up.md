@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P119
-> **Status:** Active / Owner sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.27
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.27
@@ -89,9 +89,11 @@ P119 exists to harden that language-selection boundary without reopening the bro
 
 ## Current Status
 
-P119 is active.
+P119 is completed.
 
 Current checked progress:
-- released baseline before P119 startup is `v10.26 / P118`
-- the checked follow-up discussion identifies an active-exchange language-alignment miss in goal-shaped output without proving a larger doctrine absence
-- the selected improvement direction is to harden the active-exchange-language default, explicit-request override, and exact-literal token boundary across the touched owners without reopening the broader response-style wave
+- released baseline before P119 startup was `v10.26 / P118`
+- the checked follow-up discussion identified an active-exchange language-alignment miss in goal-shaped output without proving a larger doctrine absence
+- the selected improvement direction hardened the active-exchange-language default, explicit-request override, and exact-literal token boundary across the touched owners without reopening the broader response-style wave
+- the updated playground case is present in source scope
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release proof all passed

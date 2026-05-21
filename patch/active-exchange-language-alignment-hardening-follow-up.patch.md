@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** In progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.27
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -92,6 +92,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P119 is in progress.
+P119 is completed.
 
-The checked follow-up language-alignment gap and the selected bounded improvement direction already exist; owner refinement, companion/changelog sync, playground case update, runtime install-boundary proof, parity/body-sufficiency verification, commit/push/default-branch update, GitHub release verification, and final closeout alignment remain pending.
+The checked follow-up language-alignment gap and the selected bounded improvement direction were already established; owner refinement, companion/changelog sync, playground case update, runtime install-boundary proof, parity/body-sufficiency verification, commit/push/default-branch update, GitHub release verification, and final closeout alignment all completed.

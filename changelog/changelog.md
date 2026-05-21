@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.27 | 2026-05-21 | **[Opened active-exchange language alignment hardening follow-up](changelog/v10.27-added-active-exchange-language-alignment-hardening-follow-up.changelog.md#version-1027)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.27 | 2026-05-21 | **[Released active-exchange language alignment hardening follow-up](changelog/v10.27-added-active-exchange-language-alignment-hardening-follow-up.changelog.md#version-1027)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.26 | 2026-05-21 | **[Released successor-surfacing bridge hardening follow-up](changelog/v10.26-added-successor-surfacing-bridge-hardening-follow-up.changelog.md#version-1026)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.25 | 2026-05-20 | **[Released proactive goal surfacing and decision-ready response style refinement](changelog/v10.25-added-proactive-goal-surfacing-and-decision-ready-response-style-refinement.changelog.md#version-1025)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.24 | 2026-05-20 | **[Released end-to-end language-aligned goal surface refinement](changelog/v10.24-added-end-to-end-language-aligned-goal-surface-refinement.changelog.md#version-1024)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
