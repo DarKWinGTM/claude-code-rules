@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.30
+> **Current Version:** 2.31
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -38,8 +38,10 @@ This chain is the wording owner for:
 - root-cause wording that distinguishes symptom, likely cause, verified cause, and next-best check without overclaiming
 - continuation-first execution guidance so active work continues when no real user decision or higher-priority gate blocks it
 - candidate-goal wording so multi-path successor recommendations can be expressed as compact goals instead of plain unlabeled choice lists when that shape better preserves outcome/gate meaning
-- dominant-session-language wording for candidate goals, promoted `/goal`, surrounding recommendation labels, and recap/closing lines unless the user explicitly selects another language style
-- explicit preservation of exact literals such as `/goal`, file paths, version tags, and code identifiers when they should remain exact rather than translated
+- active-exchange-language wording for candidate goals, promoted `/goal`, surrounding recommendation labels, recap/closing lines, and the natural-language scaffold around preserved exact literals even when the user did not issue a direct language instruction
+- explicit language-request override wording so direct user language selection outranks the default active-exchange inference without becoming a prerequisite for alignment
+- explicit preservation of exact literals such as `/goal`, file paths, version tags, code identifiers, and query parameters when they should remain exact rather than translated
+- wrapper-only-translation wording so translating the wrapper while leaving the goal-shaped body in another language is treated as insufficient alignment rather than as success
 - visible evidence-layer wording so mixed-confidence answers can separate verified facts, inference, and hypotheses clearly enough for the reader without relying on tone alone
 - safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
 

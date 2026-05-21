@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-05-21 | **[Added P119 active-exchange goal-surface alignment refinement](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-21 | **[Added P118 anti-generic-future-note closing refinement](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-20 | **[Added P117 decision-ready default non-trivial answer shape](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-20 | **[Added P116 language-surface-neutral `/goal` output templates](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -21,6 +22,25 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added P119 active-exchange goal-surface alignment refinement
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.8 to v1.9.
+- Updated `design/explanation-and-presentation.design.md` from v1.8 to v1.9.
+- Refined language-alignment guidance so wrapper labels, promoted `/goal` body text, recap lines, and scaffold text around preserved exact literals follow the active exchange language by default even without a direct language instruction.
+- Added explicit language-request override guidance.
+- Expanded exact-literal preservation to include query parameters.
+- Added an explicit anti-pattern for wrapper-only translation where the visible goal/recommendation body still stays in another language beyond preserved exact literals.
+
+### Summary
+`explanation-and-presentation.md` now requires the visible goal surface to localize end-to-end from the active exchange while keeping exact-literal preservation narrow and explicit.
 
 ---
 

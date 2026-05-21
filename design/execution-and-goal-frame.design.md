@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -42,6 +42,8 @@ P116 refinement: this owner should now make dominant-session-language behavior e
 P117 refinement: this owner should now allow candidate-goal surfacing at real decision boundaries where several materially different next slices remain live and no one continuation path clearly dominates, while still preserving direct continuation when one path is already clearly selected and safe.
 
 P118 refinement: this owner should now reject generic future-note closeout when meaningful successor work is already visible, require conversion into the correct next-step surface, and derive a smaller truthful successor slice when checked execution surfaces already provide more than a broad future label.
+
+P119 refinement: this owner should now infer the default language for goal-shaped next-step surfaces from the user's main working language across the active exchange even without a direct language instruction, treat an explicit language request as a stronger override, preserve exact literals token-by-token including query parameters, and reject wrapper-only translation where the `/goal` or recommendation body remains in another language beyond those preserved literals.
 
 ---
 

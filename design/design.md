@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.26
+> **Current Version:** 10.27
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -37,7 +37,9 @@ Current target-state priorities:
 - candidate goals may also surface at real decision boundaries when several materially different next slices remain live and no one continuation path clearly dominates
 - when meaningful successor work is already visible, a generic future note such as `ถ้าจะไปต่อ...`, `next step would be ...`, or `implementation wave ใหม่` should not remain the final shape by itself; the assistant should resolve that successor state into direct continuation, candidate goals, advisory next goal, or advisory `/goal`
 - if checked execution surfaces expose only a broad successor label but already provide enough material to derive a smaller bounded next slice, the assistant should derive that smaller slice instead of echoing the broad label back unchanged
-- candidate goals and promoted `/goal` suggestions should follow the dominant session language by default unless the user explicitly selects another language
+- goal-shaped and recommendation-shaped natural-language scaffold should follow the dominant language of the active exchange by default even when the user did not issue a direct language instruction; an explicit language request is a stronger override
+- exact literals such as `/goal`, file paths, version tags, code identifiers, and query parameters should remain exact where exactness matters instead of making the whole block read as an exact literal
+- wrapper-only translation is insufficient: if the wrapper switches language but the goal/recommendation body stays in another language beyond preserved exact literals, the visible surface is still misaligned
 - compact `/goal` suggestions should be allowed only when a bounded governed-work successor objective is clear, measurable, provable in transcript, and better than direct continuation
 - governed-surface context for `/goal` should become mandatory only for repo-governed multi-step, phase-backed, design-impacting, doc-sync, release-sync, runtime-rule-impacting, or materially current-state/review-sensitive work
 - governed `/goal` suggestions should source design first, then current phase/task/TODO/checked implementation state, with changelog/patch/README included only when they materially shape completion, review, or current-state impact

@@ -1,5 +1,5 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.13
+> **Current Version:** 1.15
 > **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
@@ -258,11 +258,13 @@ Use this translation model:
 
 Required guidance:
 - do not invent a new durable tracking schema only for `/goal`
-- treat the translated slots above as concept slots rather than as mandatory English surface labels; emitted wording should follow the dominant session language while preserving exact literals when they should remain exact
+- treat the translated slots above as concept slots rather than as mandatory English surface labels; emitted natural-language scaffold should follow the dominant language of the active exchange even when the user did not issue a direct language instruction
+- treat an explicit user language request as a stronger override than the default active-exchange inference
 - when several successor directions remain live, shape them as candidate goals before promoting any one of them into `/goal`
 - when checked phase/roadmap/TODO surfaces already show several unselected but materially different next slices and no one continuation path clearly dominates, use those surfaces to shape compact candidate goals rather than plain unlabeled next-step bullets
 - when current phase/roadmap/TODO wording names only a broad future label such as `implementation wave ใหม่`, but checked goal/output/gate/touched-surface context already defines a smaller bounded successor slice, derive that smaller slice before emitting successor wording
 - do not leave successor output as a generic future note when the smaller bounded slice is already derivable from checked execution surfaces
+- preserve exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters where exactness matters, but do not treat the whole emitted command body as one exact literal
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
 - do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command

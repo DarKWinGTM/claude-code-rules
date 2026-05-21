@@ -1,5 +1,5 @@
 # Explanation and Presentation
-> **Current Version:** 1.7
+> **Current Version:** 1.9
 > **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
@@ -266,10 +266,12 @@ When checked next-goal doctrine says a compact goal-oriented next-step surface w
 Required guidance:
 - if several successor directions remain live, present them first as compact candidate goals rather than as a plain choice list
 - promote only the best-supported governed candidate into one advisory `/goal` block; other candidates may stay prose goals
-- keep candidate-goal wording, promoted `/goal`, wrapper labels, and recap/closing lines aligned to the dominant session language unless the user explicitly selects another language
+- keep candidate-goal wording, promoted `/goal`, wrapper labels, recap/closing lines, and the natural-language scaffold around preserved exact literals aligned to the dominant language of the active exchange unless the user explicitly selects another language
+- infer that default language from the user's main working language across the current exchange even when no direct language instruction was given; an explicit language request is a stronger override
 - keep the promoted command compact and copy-pasteable
 - build promoted `/goal` output from one measurable outcome, transcript-visible proof/checks, bounded scope, hard guardrails, and an optional stop bound
-- preserve exact literals such as `/goal`, file paths, version tags, and code-level identifiers when they should remain exact
+- preserve exact literals such as `/goal`, file paths, version tags, code-level identifiers, and query parameters when they should remain exact
+- do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language except for preserved exact literals
 - if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light goal-shaped recommendation rather than governed-surface framing
 - if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
 - do not turn it into a mini-spec dump or background essay
@@ -426,6 +428,7 @@ Avoid:
 - phase closeout phrased only as file/task/audit status with no delivered feature or impact
 - future work phrased like automatic continuation when it is still only a proposal
 - generic future-note closeout when the next-goal surface is already visible enough to name directly
+- wrapper-only translation where the wrapper label follows the user's language but the promoted `/goal` or recommendation body still stays in another language beyond preserved exact literals
 - summaries that repeat the whole answer instead of synthesizing it
 - optional deep-dive offers that become a second full answer
 - goal/output/gate blocks forced into every trivial answer

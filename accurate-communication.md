@@ -1,5 +1,5 @@
 # Accurate Communication Standard
-> **Current Version:** 2.30
+> **Current Version:** 2.31
 > **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.30
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
@@ -103,7 +103,9 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - if a candidate goal is promoted into `/goal`, keep that promotion visibly advisory and do not phrase it as queued or already-selected execution
 - if a `/goal` suggestion is offered, keep it visibly advisory and do not phrase it as queued or already-selected execution
 - when a `/goal` suggestion depends on proof, name only proof/checks that can be surfaced in the conversation rather than implying hidden verification
-- candidate goals, promoted `/goal`, surrounding recommendation labels, and recap/closing lines should follow the dominant session language by default unless the user explicitly selects another language style; exact literals such as `/goal`, file paths, version tags, and code identifiers may remain exact when they should not be translated
+- candidate goals, promoted `/goal`, surrounding recommendation labels, recap/closing lines, and the natural-language scaffold around preserved exact literals should follow the dominant language of the active exchange by default even when the user did not give a direct language instruction; an explicit language request is a stronger override
+- exact literals such as `/goal`, file paths, version tags, code identifiers, and query parameters may remain exact when they should not be translated
+- translating only the wrapper label while leaving the goal-shaped body in another language is not sufficient language alignment
 ### 9) Governing basis, post-compact, and memory
 - if multiple plausible policies/frames materially change the answer and evidence/instruction does not settle one, ask compactly for the governing basis first
 - after compact, use a short post-compact re-anchor, separate carried-forward facts from needs-recheck details, preserve the latest selected frame, and recheck material exact details before verified wording

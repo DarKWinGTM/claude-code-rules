@@ -1,6 +1,6 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.10
+> **Current Version:** 1.12
 > **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
@@ -161,8 +161,10 @@ Required guidance:
 - when several successor goals remain live, surface them as candidate goals first and promote only the best-supported governed candidate into `/goal` when this bridge actually holds
 - if proof cannot be made transcript-visible, do not suggest `/goal`
 - if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
-- when surfaced, candidate-goal labels, promoted `/goal`, surrounding recommendation labels, and recap/closing lines should follow the dominant session language by default rather than leaving English wrappers around non-English goal output
-- preserve exact literals such as `/goal`, file paths, version tags, and code-level identifiers unless the user explicitly selects another language style or a checked exact token must remain unchanged
+- when surfaced, candidate-goal labels, promoted `/goal` body, surrounding recommendation labels, and recap/closing lines should follow the dominant language of the active exchange by default rather than leaving English scaffolds around non-English goal output
+- infer that default language from the user's main working language across the current exchange even when the user did not issue a direct language instruction; an explicit language request is a stronger override
+- preserve exact literals such as `/goal`, file paths, version tags, code-level identifiers, and query parameters unless the user explicitly selects another language style or a checked exact token must remain unchanged
+- do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language; only preserved exact literals may remain unchanged inside the localized scaffold
 - when governed-surface context is mandatory, source it from design first, then active execution surfaces, with changelog, patch, and README included only when they materially shape completion, review, or current-state impact
 
 ---

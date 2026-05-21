@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.30
+> **Current Version:** 2.31
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.31 | 2026-05-21 | **[Added P119 active-exchange scaffold wording refinement](#version-231)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.30 | 2026-05-20 | **[Added P117 visible evidence-layer grouping refinement](#version-230)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.29 | 2026-05-20 | **[Added P116 end-to-end language-surface wording refinement](#version-229)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.28 | 2026-05-20 | **[Added P114 language-aware candidate-goal wording refinement](#version-228)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -72,6 +73,25 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-231"></a>
+## Version 2.31: Added P119 active-exchange scaffold wording refinement
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.30 to v2.31.
+- Updated `design/accurate-communication.design.md` from v2.30 to v2.31.
+- Refined language-alignment wording so candidate goals, promoted `/goal`, recommendation labels, recap lines, and the scaffold around preserved exact literals follow the user's active-exchange language by default even without a direct language instruction.
+- Added explicit language-request override guidance.
+- Expanded exact-literal preservation to include query parameters.
+- Added explicit wording that wrapper-only translation is insufficient when the goal-shaped body still remains in another language beyond preserved exact literals.
+
+### Summary
+`accurate-communication.md` now treats active-exchange language as the default wording basis for goal-shaped output while keeping exact-literal preservation narrow and explicit.
 
 ---
 

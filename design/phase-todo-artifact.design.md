@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -48,6 +48,8 @@ P116 refinement: this owner should now treat `Done when` / `Prove with` / `Scope
 P117 refinement: this owner should now let checked phase/roadmap/TODO surfaces shape compact candidate goals at real decision boundaries when several unselected next slices remain live and no one continuation path clearly dominates.
 
 P118 refinement: this owner should now derive the smallest bounded successor slice from checked goal/output/gate/touched-surface context when phase/roadmap/TODO wording stays too broad, and should not leave successor output at generic future-note level when a smaller truthful next slice is already derivable.
+
+P119 refinement: this owner should now make the emitted `/goal` scaffold follow the dominant language of the active exchange by default even without a direct language instruction, treat explicit language requests as a stronger override, preserve exact literals token-by-token including query parameters, and prevent whole-command exact-literal drift when only the surrounding scaffold should localize.
 
 ---
 

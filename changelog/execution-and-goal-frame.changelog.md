@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-05-21 | **[Added P119 active-exchange language default and exact-literal boundary refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-21 | **[Added P118 anti-generic-future-note successor bridge hardening](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-20 | **[Added P117 proactive decision-boundary candidate-goal surfacing](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-20 | **[Added P116 end-to-end language-surface alignment](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -25,6 +26,25 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Added P119 active-exchange language default and exact-literal boundary refinement
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.11 to v1.12.
+- Updated `design/execution-and-goal-frame.design.md` from v1.11 to v1.12.
+- Added guidance that goal-shaped next-step surfaces should infer their default language from the user's active exchange language even without a direct language instruction.
+- Added guidance that explicit language requests remain a stronger override than the default active-exchange inference.
+- Expanded exact-literal preservation from generic code-level tokens into an explicit token-level boundary that includes query parameters and rejects whole-block preservation drift.
+- Added an explicit anti-pattern for wrapper-only translation where the `/goal` or recommendation body remains in another language beyond preserved exact literals.
+
+### Summary
+`execution-and-goal-frame.md` now makes language alignment for goal-shaped output depend on the active exchange by default while keeping exact-literal preservation narrow and explicit.
 
 ---
 

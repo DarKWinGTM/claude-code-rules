@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.9
 > **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -36,6 +36,8 @@ P116 refinement: this owner should now keep the visible wrapper labels and outpu
 P117 refinement: this owner should now encode the default non-trivial answer shape more explicitly as plain-language summary first, small-table-when-useful for multi-axis explanation, grouped explanation by concept, and concise decision-ready close without turning trivial answers into a mandatory template.
 
 P118 refinement: this owner should now treat generic future-note closeout as insufficient when a governed next-step surface is already visible, and should preserve closing shapes that name the successor goal/output/gate directly instead of leaving the next action in broad prose.
+
+P119 refinement: this owner should now require wrapper labels, promoted `/goal` body text, and recommendation-shaped scaffold around preserved exact literals to stay aligned to the dominant language of the active exchange by default, treat explicit language requests as a stronger override, preserve exact literals token-by-token including query parameters, and reject wrapper-only translation as insufficient visible alignment.
 
 ---
 

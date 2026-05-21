@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-05-21 | **[Added P119 active-exchange concept-slot and exact-literal boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-21 | **[Added P118 bounded successor-slice derivation from execution surfaces](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-20 | **[Added P117 phase-backed candidate-goal shaping at decision boundaries](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-20 | **[Added P116 language-surface concept-slot clarification](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -27,6 +28,25 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-115"></a>
+## Version 1.15: Added P119 active-exchange concept-slot and exact-literal boundary refinement
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.14 to v1.15.
+- Updated `design/phase-todo-artifact.design.md` from v1.14 to v1.15.
+- Added guidance that emitted `/goal` scaffold wording should follow the dominant language of the active exchange even without a direct language instruction.
+- Added guidance that explicit language requests remain a stronger override than the default active-exchange inference.
+- Added a narrower exact-literal boundary so `/goal`, file paths, identifiers, version tags, and query parameters remain token-scoped while the scaffold still localizes.
+- Added guidance that the whole emitted command body must not be treated as one exact literal.
+
+### Summary
+`phase-todo-artifact.md` now localizes `/goal` concept-slot scaffold from the active exchange by default while keeping exact-literal preservation token-scoped instead of block-scoped.
 
 ---
 

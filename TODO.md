@@ -2,11 +2,17 @@
 
 > **Last Updated:** 2026-05-21
 > **Current Release:** v10.26 / P118 successor-surfacing bridge hardening follow-up
-> **Active Wave:** none currently open
+> **Active Wave:** P119 / v10.27 active-exchange language alignment hardening follow-up
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## 🚧 Active / In Progress
+
+- [ ] P119 / v10.27 active-exchange language alignment hardening follow-up is in progress.
+  - Scope: make goal-shaped and recommendation-shaped natural-language scaffold follow the user's active exchange language by default, keep explicit language request as a stronger override, preserve exact literals such as `/goal`, file paths, identifiers, version tags, and query params, and eliminate translate-wrapper-only output.
+  - Pending gate: refine `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `communication-register.md`, `accurate-communication.md`, and `explanation-and-presentation.md`; update one related playground case; keep the runtime install scope at 18 files; rerun install plus 18/18 source/runtime parity and source/destination body sufficiency; run `git diff --check`; push; update the remote default branch; verify GitHub release `v10.27`; and finalize closeout records.
 
 ## ✅ Completed
 

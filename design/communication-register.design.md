@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -36,6 +36,8 @@ P114 refinement: this owner should now keep candidate goals and promoted `/goal`
 P116 refinement: this owner should now extend that language alignment to wrapper labels and recap lines while preserving exact literals that should remain exact instead of translating them by habit.
 
 P117 refinement: this owner should now make the default density for non-trivial technical answers less abrupt and less diffuse by preferring one short orienting paragraph plus enough structured follow-through to preserve the decision basis, while leaving exact layout ownership to `explanation-and-presentation.md`.
+
+P119 refinement: this owner should now treat the user's main working language across the active exchange as the default register for candidate-goal wording, wrapper labels, promoted `/goal` body text, and recap lines even without a direct language instruction, preserve exact literals token-by-token including query parameters, and reject wrapper-only translation as insufficient end-to-end alignment.
 
 ---
 

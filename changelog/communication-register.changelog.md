@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-05-21 | **[Added P119 active-exchange goal-surface register hardening](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-20 | **[Added P117 non-trivial answer density calibration](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-20 | **[Added P116 end-to-end goal-surface register refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-20 | **[Added P114 session-language and candidate-goal register refinement](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -21,6 +22,25 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added P119 active-exchange goal-surface register hardening
+
+**Date:** 2026-05-21
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.8 to v1.9.
+- Updated `design/communication-register.design.md` from v1.8 to v1.9.
+- Refined dominant-language guidance so candidate-goal wording, wrapper labels, promoted `/goal` body text, and recap lines follow the user's active-exchange language even without a direct language instruction.
+- Added explicit language-request override guidance.
+- Expanded exact-literal preservation to include query parameters.
+- Added an explicit anti-pattern for wrapper-only translation when the goal or recommendation body remains in another language beyond preserved exact literals.
+
+### Summary
+`communication-register.md` now treats active-exchange language as the default register for the visible goal surface while keeping exact-literal preservation narrow and explicit.
 
 ---
 
