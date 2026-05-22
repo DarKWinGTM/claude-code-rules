@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-05-22 | **[Added P120 strategy-before-patch recommendation refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-21 | **[Added P119 active-exchange goal-surface register hardening](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-20 | **[Added P117 non-trivial answer density calibration](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-20 | **[Added P116 end-to-end goal-surface register refinement](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -22,6 +23,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-110"></a>
+## Version 1.10: Added P120 strategy-before-patch recommendation refinement
+
+**Date:** 2026-05-22
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.9 to v1.10.
+- Updated `design/communication-register.design.md` from v1.9 to v1.10.
+- Added strategy-before-patch evaluation guidance so shared mechanisms are compared against local exceptions before a narrow local fix is recommended.
+- Added guidance that the smallest convenient patch scope is not automatically the best-supported recommendation scope.
+- Preserved proposal-evaluation-before-agreement, evidence-calibrated correction, and high-signal wording boundaries.
+
+### Summary
+`communication-register.md` now makes strategic correction recommendations less convenience-first and more evidence-shaped without turning the owner into a prohibition list.
 
 ---
 

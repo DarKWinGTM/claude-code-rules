@@ -1,7 +1,7 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,12 +10,31 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-05-22 | **[Added P120 strategic correction scope discipline](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-20 | **[Added P117 evidence-presentation owner-boundary clarification](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Added P101 concern-and-premise discipline](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
 | | | Summary: Extended `evidence-discipline.md` so the merged runtime owner now covers root-cause evidence thresholds, claim-state separation, and real-vs-mock boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added P120 strategic correction scope discipline
+
+**Date:** 2026-05-22
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `evidence-discipline.md` from v1.3 to v1.4.
+- Updated `design/evidence-discipline.design.md` from v1.3 to v1.4.
+- Added strategic correction and scope discipline so local anomalies become evidence inputs rather than immediate owner decisions.
+- Added burden-of-proof guidance for narrowing a recommendation into supplier/model/path-specific fix scope.
+- Preserved verify-first, root-cause, and claim-state semantics while making fix-scope narrowing more explicitly evidence-earned.
+
+### Summary
+`evidence-discipline.md` now treats strategic fix scope as something evidence must prove instead of something a convenient local anomaly may assume.
 
 ---
 

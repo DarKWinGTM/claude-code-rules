@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.27
+> **Current Version:** 10.28
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -40,6 +40,10 @@ Current target-state priorities:
 - goal-shaped and recommendation-shaped natural-language scaffold should follow the dominant language of the active exchange by default even when the user did not issue a direct language instruction; an explicit language request is a stronger override
 - exact literals such as `/goal`, file paths, version tags, code identifiers, and query parameters should remain exact where exactness matters instead of making the whole block read as an exact literal
 - wrapper-only translation is insufficient: if the wrapper switches language but the goal/recommendation body stays in another language beyond preserved exact literals, the visible surface is still misaligned
+- correction reasoning should start from the system logic or mechanism that best explains the symptom before narrowing into local fix scope
+- supplier/model/path-specific narrowing should be treated as a scope hypothesis to prove from evidence rather than as the default first recommendation
+- shared mechanisms should be evaluated before local exceptions, and local exceptions should be used only when the evidence supports a real local doctrine difference
+- recommendation strength should match proof strength: provisional scope should stay provisional until corroboration supports a narrower owner decision
 - compact `/goal` suggestions should be allowed only when a bounded governed-work successor objective is clear, measurable, provable in transcript, and better than direct continuation
 - governed-surface context for `/goal` should become mandatory only for repo-governed multi-step, phase-backed, design-impacting, doc-sync, release-sync, runtime-rule-impacting, or materially current-state/review-sensitive work
 - governed `/goal` suggestions should source design first, then current phase/task/TODO/checked implementation state, with changelog/patch/README included only when they materially shape completion, review, or current-state impact

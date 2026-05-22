@@ -1,5 +1,5 @@
 # External Verification and Source Trust
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Design:** [design/external-verification-and-source-trust.design.md](design/external-verification-and-source-trust.design.md) v1.2
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/external-verification-and-source-trust.changelog.md](changelog/external-verification-and-source-trust.changelog.md)
@@ -30,6 +30,8 @@ Required guidance:
 Use multiple sources for high-impact, ambiguous, contradictory, stale, non-primary, version/provider-dependent, or security/compliance-sensitive claims. If sources conflict, name the conflict, identify the stronger source and why, avoid silently picking convenience, and say what would settle unresolved conflict.
 ### Recommendation and design integrity
 If a recommendation, disagreement, or design judgment depends on current external facts, verify first when practical and proportional, prefer primary sources, corroborate when impact is high or source strength is weak, and align wording to gathered evidence. External evidence becomes binding only when it is an authoritative requirement, compatibility limit, safety/compliance boundary, or verified contradiction; otherwise preserve trade-offs and user goals.
+
+When a recommendation is about provider-, supplier-, model-, or path-specific fix scope, treat that narrower scope as something the evidence must earn. Compare whether the same observed issue is better explained by a shared mechanism before presenting the local scope as the strategic fix owner.
 ### Honest fallback
 If verification remains incomplete, separate verified from likely, state what remains unresolved, provide the best bounded recommendation still justified, and avoid false certainty or unnecessary blockage.
 ---
@@ -41,6 +43,7 @@ Use proactive WebSearch/WebFetch-backed verification for:
 - security-sensitive or compliance-sensitive external fact
 - decision-critical external fact the user may act on
 - standards, provider constraints, or current behavior that materially shapes analysis, design, or recommendation
+- supplier-, model-, or path-specific claims that would materially narrow the recommended fix scope
 - broad design-improvement or recommendation research where source breadth, comparison cost, or topic independence makes worker-lane research useful
 Prefer verification when information drifts, depends on current vendor/runtime state, quick checking reduces material uncertainty, or the user prioritizes accuracy. Usually skip when the question is conceptual, local project evidence is source of truth, or the user asks for speculative discussion.
 ---

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
@@ -20,6 +20,8 @@ Define one first-class rule chain for proactive external verification and source
 - handles external source conflicts honestly without drifting into either passivity or overclaiming
 
 This chain should increase factual accuracy and proof-aware recommendation quality while preserving the existing burden-of-proof, contradiction, user-authority, and communication contracts owned by adjacent rules.
+
+P120 refinement: this owner should now also make provider-, supplier-, model-, or path-specific narrowing an evidence-earned scope decision rather than a default convenience recommendation, requiring broader corroboration when the narrower local doctrine claim would materially change the chosen fix owner.
 
 ---
 

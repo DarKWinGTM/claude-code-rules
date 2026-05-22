@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.93
+> **Current Version:** 1.94
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.27 / P119 active-exchange language alignment hardening follow-up; no active phase open
+> **Status:** Active: P120 strategic correction posture hardening follow-up is in progress on top of the released v10.27 / P119 baseline
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -20,6 +20,13 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Active Phase Roadmap
+
+### Active
+
+- **P120:** [phase-120-strategic-correction-posture-hardening-follow-up.md](phase-120-strategic-correction-posture-hardening-follow-up.md)
+  - Goal: make AI start from system logic before local symptoms, prove fix scope from evidence, prefer shared mechanisms before local exceptions, and treat exceptions as evidence-earned rather than default recommendations.
+  - Output: touched strategic-reasoning owners, one related playground case update, touched master release surfaces, and later runtime install/release verification.
+  - Gate: logic-first correction integrity, scope-proven narrowing integrity, shared-mechanism-before-exception integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
 
 ### Most Recently Completed
 

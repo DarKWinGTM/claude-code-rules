@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES stop current external facts, remembered context, and local machine details from being blended into one unreliable answer.
+This case family shows how RULES stop current external facts, remembered context, local machine details, and one convenient local anomaly from being blended into one unreliable or over-narrow recommendation.
 
 ---
 
@@ -31,6 +31,7 @@ Current RULES require the assistant to:
 - recheck path-scoped memory before using it as current exact repo truth
 - keep shared artifacts portable by default instead of hardcoding local paths as defaults
 - distinguish source-side repo paths from runtime or install destinations
+- treat supplier/model/path-specific narrowing as something evidence must earn rather than as the default first recommendation from one failing local case
 
 ---
 
@@ -51,8 +52,9 @@ Supporting repo-scope install-boundary behavior is also recorded in `playground/
 - User asks for install guidance using an exact local machine path as if it were a shared default.
 - Memory says a path or file existed earlier, but the repo may have changed.
 - An external CLI or API behavior claim matters to the user’s next decision and may have drifted.
+- A current failing case appears under one supplier/model/path and tempts the assistant toward a narrow exception before shared logic has been tested.
 
-Expected behavior: verify current facts, preserve path scope, and keep shared docs portable.
+Expected behavior: verify current facts, preserve path scope, keep shared docs portable, and treat narrow fix scope as something evidence must prove rather than an early convenience choice.
 
 ---
 
@@ -75,12 +77,13 @@ Answer a question that mixes current external facts, remembered context, and loc
 - Verify the external fact before leaning on it.
 - Recheck memory before using it as current exact truth.
 - Keep shared wording portable and separate local exact paths from reusable guidance.
+- Compare shared-mechanism explanations against narrow supplier/model/path-specific explanations before presenting the local scope as settled.
 
 ---
 
 ## Decision
 
-Narrow the answer to checked support, and treat any exact local path as a scoped local fact rather than a portable default.
+Narrow the answer to checked support, treat any exact local path as a scoped local fact rather than a portable default, and keep local fix scope provisional until evidence proves it is truly narrower than the shared mechanism.
 
 ---
 
@@ -101,7 +104,11 @@ Narrow the answer to checked support, and treat any exact local path as a scoped
 
 ## User-visible reply example
 
-`The checked docs support the plugin surface only. For shared guidance I will keep the path portable, and I will mention an exact local path only if you need a machine-scoped example.`
+`Before (too narrow): "This current failing supplier row is enough to justify a supplier-specific fix."
+
+After (strategy-first): "The current failing row is a real evidence input, but not enough by itself to prove that the doctrine is supplier-specific. I would test the shared mechanism first, then narrow to a local exception only if the broader comparison still supports a real local difference."
+
+The checked docs support the plugin surface only. For shared guidance I will keep the path portable, and I will mention an exact local path only if you need a machine-scoped example.`
 
 ---
 
@@ -131,7 +138,7 @@ Portable wording is chosen for shared docs
 - turn count: 3
 - user behavior: request mixes current support claim with local-path convenience
 - evidence source: official docs, memory, and local-path context
-- failure mode: overclaim risk plus portability drift
+- failure mode: overclaim risk plus portability drift plus premature local-scope narrowing from one convenient failing case
 - tool discovery or lane shape: external-doc verification
 - completion state: narrowed recommendation after verification
 
@@ -141,4 +148,4 @@ Portable wording is chosen for shared docs
 
 Without this family, the assistant can treat memory or local machine detail as if it were a portable current default.
 
-With RULES active, external facts, memory, and portability boundaries stay separated more cleanly.
+With RULES active, external facts, memory, portability boundaries, and strategic fix-scope selection stay separated more cleanly, so one local anomaly does not silently become the owner decision for the whole fix.

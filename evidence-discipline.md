@@ -1,6 +1,6 @@
 # Evidence Discipline
 
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.3
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
@@ -59,6 +59,15 @@ Useful diagnosis shape:
 - leading hypothesis or likely cause so far
 - what would confirm or disprove it
 - next-best check
+
+### 2.3) Strategic correction and scope discipline
+
+Treat fix scope as a conclusion to earn from evidence, not as an early convenience assumption.
+- start by asking which shared logic, mechanism, or semantics best explains the observed symptom before narrowing into supplier-, model-, path-, or case-specific scope
+- treat a local anomaly as evidence input, not as automatic proof that the doctrine is local
+- compare the leading shared-mechanism hypothesis against narrower local-doctrine hypotheses before presenting a scope recommendation as settled
+- let a local exception emerge only when the checked evidence shows a stable, meaningfully different local doctrine rather than one convenient failing example
+- if the scope is still unsettled, keep the recommendation provisional and say what evidence would justify narrowing it further
 
 ### 3) Local lookup and portable-contract boundary
 
@@ -148,6 +157,7 @@ Source priority: external factual claims should prefer authoritative external so
 | Accept user preference, priority, or direction | user-owned instruction or selected preference | accept as direction; do not treat it as verified factual evidence |
 | Accept user concern or working suspicion as investigation input | user-described risk, discomfort, or suspicion | raise verification priority if useful, but do not endorse the conclusion as fact from concern alone |
 | Ground substantial analysis, design, or recommendation | material factual questions where checking is practical and proportional | seek available local/project/external evidence first; if unavailable or incomplete, proceed with labeled assumptions, hypotheses, or bounded recommendations |
+| Narrow a recommendation into supplier/model/path-specific fix scope | evidence that the narrower scope is meaningfully different or that broader shared-mechanism hypotheses are weaker in checked scope | present the local scope as a conclusion earned from evidence rather than as a convenience-first default |
 | Treat evidence as a binding decision constraint | hard constraint, authoritative requirement, safety boundary, or verified contradiction | bind only the constrained part; otherwise keep evidence as grounding input for judgment and trade-offs |
 | Directly contradict the user’s claim | contrary evidence relevant to the same claim/scope | cite the contrary evidence and correct the claim |
 | Say the user is wrong/mistaken/confused | direct contradiction threshold plus genuine need for person-directed wording | avoid by default; prefer claim-focused correction |

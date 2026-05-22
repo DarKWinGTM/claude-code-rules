@@ -1,12 +1,18 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-21
+> **Last Updated:** 2026-05-22
 > **Current Release:** v10.27 / P119 active-exchange language alignment hardening follow-up
-> **Active Wave:** none currently open
+> **Active Wave:** P120 / v10.28 strategic correction posture hardening follow-up
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## 🚧 Active / In Progress
+
+- [ ] P120 / v10.28 strategic correction posture hardening follow-up is in progress.
+  - Scope: make AI start from system logic before local symptoms, prove fix scope from evidence instead of assuming supplier/model/path-specific narrowing too early, prefer shared mechanisms before local exceptions, and treat exceptions as evidence-earned rather than default recommendations; encode this as strategic principles rather than command-style prohibitions.
+  - Pending gate: refine `evidence-discipline.md`, `external-verification-and-source-trust.md`, `communication-register.md`, and `accurate-communication.md`; update one related playground case; keep the runtime install scope at 18 files; rerun install plus 18/18 source/runtime parity and source/destination body sufficiency; run `git diff --check`; push; update the remote default branch; verify GitHub release `v10.28`; and finalize closeout records.
 
 ## ✅ Completed
 

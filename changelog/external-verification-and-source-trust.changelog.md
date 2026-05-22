@@ -1,7 +1,7 @@
 # Changelog - External Verification and Source Trust
 
 > **Parent Document:** [../external-verification-and-source-trust.md](../external-verification-and-source-trust.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,11 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-05-22 | **[Added evidence-earned provider/supplier scope narrowing refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-06 | **[Integrated source trust with delegated research lanes](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.1 | 2026-04-30 | **[Added proof-aware external grounding for recommendations and design](#version-11)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Extended external verification so current external facts can ground analysis, design, recommendation, and disagreement while only authoritative requirements, compatibility limits, safety/compliance boundaries, or verified contradictions become binding | |
 | 1.0 | 2026-03-31 | **[Created first-class external-verification-and-source-trust rule chain](#version-10)** | dd0bf4af-a66b-4b07-bb9d-a90a0e57b54e |
 | | | Summary: Created a new design/runtime/changelog triad that governs proactive external verification, source-reliability ranking, corroboration expectations, and source-conflict handling for WebSearch/WebFetch-backed factual work | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Added evidence-earned provider/supplier scope narrowing refinement
+
+**Date:** 2026-05-22
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `external-verification-and-source-trust.md` from v1.2 to v1.3.
+- Updated `design/external-verification-and-source-trust.design.md` from v1.2 to v1.3.
+- Added guidance that provider-, supplier-, model-, or path-specific narrowing should be treated as an evidence-earned scope decision rather than a default convenience recommendation.
+- Added stronger corroboration expectations when a narrower local doctrine claim would materially change the chosen fix owner.
+- Preserved source trust, conflict handling, and broad research-lane orchestration behavior.
+
+### Summary
+`external-verification-and-source-trust.md` now requires stronger corroboration before provider/supplier/model/path-specific scope becomes the strategic recommendation.
 
 ---
 

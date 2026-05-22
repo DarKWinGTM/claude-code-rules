@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.31
+> **Current Version:** 2.32
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.32 | 2026-05-22 | **[Added P120 strategic-scope wording refinement](#version-232)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.31 | 2026-05-21 | **[Added P119 active-exchange scaffold wording refinement](#version-231)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.30 | 2026-05-20 | **[Added P117 visible evidence-layer grouping refinement](#version-230)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.29 | 2026-05-20 | **[Added P116 end-to-end language-surface wording refinement](#version-229)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -73,6 +74,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-232"></a>
+## Version 2.32: Added P120 strategic-scope wording refinement
+
+**Date:** 2026-05-22
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.31 to v2.32.
+- Updated `design/accurate-communication.design.md` from v2.31 to v2.32.
+- Added wording guidance that shared-mechanism readings should remain visible when the evidence does not yet justify supplier/model/path-specific scope as settled.
+- Added a strategic recommendation example showing provisional shared-logic scope instead of premature supplier-specific narrowing.
+- Preserved claim-state separation, evidence-threshold wording, and anti-overclaim boundaries.
+
+### Summary
+`accurate-communication.md` now keeps strategic fix-scope wording aligned to the evidence instead of letting narrow local scope read as settled too early.
 
 ---
 
