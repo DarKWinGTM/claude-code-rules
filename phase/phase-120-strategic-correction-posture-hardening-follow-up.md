@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P120
-> **Status:** Active / Owner sync in progress
+> **Status:** Completed / Released
 > **Target Release:** v10.28
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.28
@@ -89,9 +89,11 @@ P120 exists to harden that strategic reasoning posture without turning RULES int
 
 ## Current Status
 
-P120 is active.
+P120 is completed.
 
 Current checked progress:
-- released baseline before P120 startup is `v10.27 / P119`
-- the checked follow-up discussion identifies a strategic correction-posture gap where AI can still narrow too early into local scope from one failing case
-- the selected improvement direction is to harden logic-first correction, evidence-proven scope selection, and exception-earned recommendation posture across the touched owners without turning the doctrine into command-style prohibitions
+- released baseline before P120 startup was `v10.27 / P119`
+- the checked follow-up discussion identified a strategic correction-posture gap where AI could still narrow too early into local scope from one failing case
+- the selected improvement direction hardened logic-first correction, evidence-proven scope selection, and exception-earned recommendation posture across the touched owners without turning the doctrine into command-style prohibitions
+- the updated playground case is present in source scope
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release proof all passed

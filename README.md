@@ -19,16 +19,16 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.28</b><br><sub>P120 Active</sub>
+  <b>v10.28</b><br><sub>P120 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Owner sync in progress</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
-  <b>Strategic Posture</b><br><sub>Logic-first hardening</sub>
+  <b>Strategic Posture</b><br><sub>Logic-first hardened</sub>
 </td>
 </tr>
 </table>
@@ -195,10 +195,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P120 strategic correction posture hardening follow-up is the active wave for `v10.28`.
+- P120 strategic correction posture hardening follow-up is released as `v10.28`.
   - It closes the residual AI tendency to localize fixes too early around supplier/model/path-specific symptoms instead of starting from the shared logic and proving scope from evidence.
   - It refines `evidence-discipline.md`, `external-verification-and-source-trust.md`, `communication-register.md`, and `accurate-communication.md` so correction reasoning becomes logic-first, scope-proven, strategy-before-patch, and exception-earned-by-evidence without turning the RULES into command-style prohibitions.
-  - It keeps the active runtime install scope at 18 files, preserves direct-continuation and evidence-discipline boundaries, keeps `playground/` outside the runtime install payload, and updates one related governed non-runtime playground case to make the behavior delta inspectable.
+  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set

@@ -1,20 +1,20 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-22
-> **Current Release:** v10.27 / P119 active-exchange language alignment hardening follow-up
-> **Active Wave:** P120 / v10.28 strategic correction posture hardening follow-up
+> **Current Release:** v10.28 / P120 strategic correction posture hardening follow-up
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
-## 🚧 Active / In Progress
-
-- [ ] P120 / v10.28 strategic correction posture hardening follow-up is in progress.
-  - Scope: make AI start from system logic before local symptoms, prove fix scope from evidence instead of assuming supplier/model/path-specific narrowing too early, prefer shared mechanisms before local exceptions, and treat exceptions as evidence-earned rather than default recommendations; encode this as strategic principles rather than command-style prohibitions.
-  - Pending gate: refine `evidence-discipline.md`, `external-verification-and-source-trust.md`, `communication-register.md`, and `accurate-communication.md`; update one related playground case; keep the runtime install scope at 18 files; rerun install plus 18/18 source/runtime parity and source/destination body sufficiency; run `git diff --check`; push; update the remote default branch; verify GitHub release `v10.28`; and finalize closeout records.
-
 ## ✅ Completed
+
+- [x] P120 / v10.28 strategic correction posture hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched strategic-reasoning owners now make correction reasoning start from system logic before local symptoms, treat supplier/model/path-specific narrowing as a scope conclusion earned from evidence, prefer shared mechanisms before local exceptions, and keep local exceptions as evidence-earned options rather than reflex defaults; the updated `case-10-external-memory-and-portability-boundary.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.28
+  - Release tag `v10.28` resolves to commit `6a69e8c98bda1b58631f5b055f827df3519a2dda`.
+  - Published at `2026-05-22T14:21:29Z`.
 
 - [x] P119 / v10.27 active-exchange language alignment hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched language-alignment owners now make active-exchange language the default for goal-shaped output even without a direct language instruction, explicit language requests remain a stronger override, exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters stay token-scoped instead of turning the whole block into an exact literal, and wrapper-only translation is explicitly rejected; the updated `case-16-end-to-end-language-aligned-goal-surface.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
