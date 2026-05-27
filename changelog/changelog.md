@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.29 | 2026-05-27 | **[Opened goal-to-plan bridge doctrine](changelog/v10.29-added-goal-to-plan-bridge-doctrine.changelog.md#version-1029)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.29 | 2026-05-27 | **[Released goal-to-plan bridge doctrine](changelog/v10.29-added-goal-to-plan-bridge-doctrine.changelog.md#version-1029)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.28 | 2026-05-22 | **[Released strategic correction posture hardening follow-up](changelog/v10.28-added-strategic-correction-posture-hardening-follow-up.changelog.md#version-1028)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.27 | 2026-05-21 | **[Released active-exchange language alignment hardening follow-up](changelog/v10.27-added-active-exchange-language-alignment-hardening-follow-up.changelog.md#version-1027)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.26 | 2026-05-21 | **[Released successor-surfacing bridge hardening follow-up](changelog/v10.26-added-successor-surfacing-bridge-hardening-follow-up.changelog.md#version-1026)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

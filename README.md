@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.29</b><br><sub>P121 Active</sub>
+  <b>v10.29</b><br><sub>P121 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Verification pending</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Goal→Plan Bridge</b><br><sub>Objective/route hardening</sub>
@@ -195,13 +195,12 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P121 goal-to-plan bridge doctrine is active toward `v10.29`.
-  - It is refining RULES so `/goal` stays the objective owner, `/plan` stays the route owner, non-trivial governed goals may bridge into planning without making planning mandatory for every goal, and closeout returns to the goal gate instead of route completion alone.
-  - Active verification is still pending for runtime install, parity/body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release proof.
-- Latest released baseline remains P120 strategic correction posture hardening follow-up as `v10.28`.
+- P121 goal-to-plan bridge doctrine is released as `v10.29`.
+  - It refines RULES so `/goal` stays the objective owner, `/plan` stays the route owner, non-trivial governed goals may bridge into planning without making planning mandatory for every goal, and closeout returns to the goal gate instead of route completion alone.
+  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification.
+- The immediately previous released baseline remains P120 strategic correction posture hardening follow-up as `v10.28`.
   - It closed the residual AI tendency to localize fixes too early around supplier/model/path-specific symptoms instead of starting from the shared logic and proving scope from evidence.
   - It refined `evidence-discipline.md`, `external-verification-and-source-trust.md`, `communication-register.md`, and `accurate-communication.md` so correction reasoning became logic-first, scope-proven, strategy-before-patch, and exception-earned-by-evidence without turning the RULES into command-style prohibitions.
-  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set

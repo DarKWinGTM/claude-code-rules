@@ -1,14 +1,20 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-27
-> **Current Release:** v10.28 / P120 strategic correction posture hardening follow-up
-> **Active Wave:** P121 / target v10.29 goal-to-plan bridge doctrine
+> **Current Release:** v10.29 / P121 goal-to-plan bridge doctrine
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
 ## ✅ Completed
+
+- [x] P121 / v10.29 goal-to-plan bridge doctrine was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched owners now keep `/goal` as the objective owner and `/plan` as the route owner, bridge governed non-trivial goals into planning without making planning mandatory for every goal, and return closeout to the goal gate instead of route completion alone; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.29
+  - Release tag `v10.29` resolves to commit `d30c378b0be3593cea131e0c10c521f52749f48f`.
+  - Published at `2026-05-27T10:41:28Z`.
 
 - [x] P120 / v10.28 strategic correction posture hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched strategic-reasoning owners now make correction reasoning start from system logic before local symptoms, treat supplier/model/path-specific narrowing as a scope conclusion earned from evidence, prefer shared mechanisms before local exceptions, and keep local exceptions as evidence-earned options rather than reflex defaults; the updated `case-10-external-memory-and-portability-boundary.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
@@ -152,10 +158,6 @@
 
 ### Active / In Progress
 
-- [ ] P121 / v10.29 goal-to-plan bridge doctrine is now open.
-  - Goal: make `/goal` the objective owner, make `/plan` the route owner, bridge governed non-trivial goals into `/plan` without making planning mandatory for every goal, and return closeout to the goal gate.
-  - Expected output: touched owner rules, one updated playground case, touched master/design/changelog/TODO/phase/patch sync, runtime install verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch update, and GitHub release verification.
-  - Current status: `phase/phase-121-goal-to-plan-bridge-doctrine.md` and `patch/goal-to-plan-bridge-doctrine.patch.md` are opened; owner refinement and release sync remain in progress.
 
 ### Deferred / Not Selected
 

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.96
+> **Current Version:** 1.97
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active P121 / target v10.29 goal-to-plan bridge doctrine; latest released baseline remains v10.28 / P120
+> **Status:** Released through v10.29 / P121 goal-to-plan bridge doctrine; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -21,15 +21,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Active Phase Roadmap
 
-### Active
+### Most Recently Completed
 
 - **P121:** [phase-121-goal-to-plan-bridge-doctrine.md](phase-121-goal-to-plan-bridge-doctrine.md)
-  - Goal: make `/goal` the objective owner, `/plan` the route owner, keep the bridge into `/plan` limited to governed non-trivial goals, and return closeout to the goal gate.
   - Output: touched owner rules, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.29`.
-  - Gate: objective-vs-route integrity, non-trivial bridge integrity, goal-gate closeout integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
+  - Gate: objective-vs-route integrity, non-trivial bridge integrity, goal-gate closeout integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.29
+  - Release tag `v10.29` resolves to commit `d30c378b0be3593cea131e0c10c521f52749f48f`.
+  - Published at `2026-05-27T10:41:28Z`.
   - Patch: [../patch/goal-to-plan-bridge-doctrine.patch.md](../patch/goal-to-plan-bridge-doctrine.patch.md)
-
-### Most Recently Completed
 
 - **P120:** [phase-120-strategic-correction-posture-hardening-follow-up.md](phase-120-strategic-correction-posture-hardening-follow-up.md)
   - Output: touched strategic-reasoning owners, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.28`.
@@ -193,22 +193,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Latest released baseline before P121 work:
-- released baseline is `v10.28 / P120`
-- strategic correction posture is already hardened around logic-first correction, scope-proven narrowing, and strategy-before-patch recommendation posture
-- `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
-- 18/18 source/runtime parity and source/destination body sufficiency passed for the latest released baseline
-- `git diff --check` passed for the latest released baseline
-- branch `goal-governed-work-only` and GitHub release `v10.28` are the current checked released state before P121 opens
-
-Current P121 verification focus:
-- `/goal` owns objective/done condition/proof/scope and `/plan` owns route/sequence/task breakdown
+Latest verified release state:
+- released baseline is `v10.29 / P121`
+- `/goal` now stays the objective owner while `/plan` stays the route owner
 - governed non-trivial goals may bridge into `/plan` without making planning mandatory for every goal
 - closeout returns to the goal gate instead of treating plan completion alone as sufficient proof
 - the updated playground case keeps the objective-vs-route behavior delta inspectable
+- `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
+- runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
+- 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
-- runtime install, source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, default-branch update, and GitHub release verification still remain required before P121 closeout
+- `git diff --check` passed with no whitespace errors
+- branch `goal-governed-work-only` was pushed to origin, the remote default branch now points to `goal-governed-work-only`, and GitHub release `v10.29` was published at `2026-05-27T10:41:28Z`
 
 ---
 
