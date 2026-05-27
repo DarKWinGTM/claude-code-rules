@@ -1,6 +1,6 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
@@ -123,6 +123,14 @@ When a concrete failing case tempts the answer toward a narrow local fix, compar
 - treat supplier-, model-, or path-specific fixes as narrower strategic claims, not as the automatic low-blast-radius default
 - prefer the smallest scope that is actually supported by evidence, not the smallest scope that merely looks convenient to patch first
 - local exceptions remain valid options when the evidence shows a real local doctrine difference, but they should arrive as earned conclusions rather than as reflex recommendations
+
+### 16.2) Goal-vs-plan register
+When `/goal` and `/plan` both appear, keep objective ownership and route ownership visibly separate.
+- describe `/goal` as the objective surface and `/plan` as the route surface rather than blending them into one generic work block
+- do not praise or summarize a detailed plan as if detail alone proves that the goal is already satisfied
+- when recommending a plan, frame it as needed because the route is non-trivial, not because every good goal must always produce a plan
+- use wording such as `this plan serves the selected goal` rather than wording that makes the plan sound like a replacement objective
+- if the route is complete but the goal gate is still open, say so directly instead of smoothing it into completion-shaped wording
 
 ### 17) Evidence-Calibrated Agreement
 Factual endorsement must match the evidence actually held.

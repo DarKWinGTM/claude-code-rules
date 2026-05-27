@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-22
+> **Last Updated:** 2026-05-27
 > **Current Release:** v10.28 / P120 strategic correction posture hardening follow-up
-> **Active Wave:** none currently open
+> **Active Wave:** P121 / target v10.29 goal-to-plan bridge doctrine
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -152,6 +152,10 @@
 
 ### Active / In Progress
 
+- [ ] P121 / v10.29 goal-to-plan bridge doctrine is now open.
+  - Goal: make `/goal` the objective owner, make `/plan` the route owner, bridge governed non-trivial goals into `/plan` without making planning mandatory for every goal, and return closeout to the goal gate.
+  - Expected output: touched owner rules, one updated playground case, touched master/design/changelog/TODO/phase/patch sync, runtime install verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch update, and GitHub release verification.
+  - Current status: `phase/phase-121-goal-to-plan-bridge-doctrine.md` and `patch/goal-to-plan-bridge-doctrine.patch.md` are opened; owner refinement and release sync remain in progress.
 
 ### Deferred / Not Selected
 

@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-05-27 | **[Added P121 selected-goal to `/plan` execution bridge refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-21 | **[Added P119 active-exchange concept-slot and exact-literal boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-21 | **[Added P118 bounded successor-slice derivation from execution surfaces](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-20 | **[Added P117 phase-backed candidate-goal shaping at decision boundaries](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -28,6 +29,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-116"></a>
+## Version 1.16: Added P121 selected-goal to `/plan` execution bridge refinement
+
+**Date:** 2026-05-27
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.15 to v1.16.
+- Updated `design/phase-todo-artifact.design.md` from v1.15 to v1.16.
+- Added a governed selected-goal to `/plan` bridge so execution surfaces move route-heavy work into planning only when the route is materially non-trivial.
+- Added guidance that phase/task linkage must stay tied back to the selected goal when planning is opened.
+- Added guidance that closeout still returns to the selected goal gate instead of the route state alone.
+
+### Summary
+`phase-todo-artifact.md` now bridges selected governed goals into planning only when the route truly needs it and keeps execution surfaces linked back to the selected goal rather than letting route state become the semantic owner.
 
 ---
 

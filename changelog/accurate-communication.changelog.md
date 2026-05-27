@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.32
+> **Current Version:** 2.33
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.33 | 2026-05-27 | **[Added P121 goal-versus-route wording refinement](#version-233)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.32 | 2026-05-22 | **[Added P120 strategic-scope wording refinement](#version-232)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.31 | 2026-05-21 | **[Added P119 active-exchange scaffold wording refinement](#version-231)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.30 | 2026-05-20 | **[Added P117 visible evidence-layer grouping refinement](#version-230)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -74,6 +75,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-233"></a>
+## Version 2.33: Added P121 goal-versus-route wording refinement
+
+**Date:** 2026-05-27
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.32 to v2.33.
+- Updated `design/accurate-communication.design.md` from v2.32 to v2.33.
+- Added wording guidance that `/goal` keeps ownership of outcome/proof/scope while `/plan` keeps ownership of route/sequence/task breakdown.
+- Added wording guidance that plan completion must not be reported as goal completion until the goal gate is actually checked.
+- Added guidance that mixed goal/plan status should stay explicit about whether the answer is describing objective state or route state.
+
+### Summary
+`accurate-communication.md` now keeps goal-versus-route wording more evidence-calibrated so finished plan work does not overclaim that the selected goal itself is already complete.
 
 ---
 

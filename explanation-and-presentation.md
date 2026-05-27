@@ -1,5 +1,5 @@
 # Explanation and Presentation
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
@@ -277,6 +277,14 @@ Required guidance:
 - do not turn it into a mini-spec dump or background essay
 - do not emit several competing `/goal` commands when the real decision surface is still open
 - if the command would be too broad, too long, or too weakly provable, fall back to candidate goals or ordinary recommendation wording instead
+
+### 8.2) Goal-to-plan explanation shape
+When `/goal` and `/plan` both matter, keep the explanation explicit about which layer is being discussed.
+- present `/goal` as the objective layer: outcome, proof/checks, scope, and hard guardrails
+- present `/plan` as the route layer: sequence, approach, task breakdown, and execution order
+- when both are shown together, separate the two layers directly instead of letting plan bullets read like replacement goal conditions
+- when the route is still non-trivial, explain that `/plan` serves the selected goal rather than becoming a new objective by itself
+- if a plan is finished but the goal gate is still unchecked, say so explicitly and keep closeout anchored to the goal state rather than the route state alone
 
 ### 9) Preferred closing shapes
 ```text

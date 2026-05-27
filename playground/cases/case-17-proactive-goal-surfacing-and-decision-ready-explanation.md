@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES should surface several materially different next-step options as candidate goals earlier at a real decision boundary, and how the answer should stay easy-first, compact-but-complete, structured, evidence-clear, and decision-ready instead of collapsing too early into one path, stopping at a generic future note, or sprawling into dense prose.
+This case family shows how RULES should surface several materially different next-step options as candidate goals earlier at a real decision boundary, how the answer should stay easy-first, compact-but-complete, structured, evidence-clear, and decision-ready instead of collapsing too early into one path, stopping at a generic future note, or sprawling into dense prose, and how a selected governed goal may then bridge into `/plan` without turning route detail into new goal conditions or treating route completion as goal completion.
 
 ---
 
@@ -15,11 +15,11 @@ This case family shows how RULES should surface several materially different nex
 
 ## Governing rules
 
-- `execution-and-goal-frame.md` — allow candidate-goal surfacing at real decision boundaries when several materially different next slices remain live and no one continuation path clearly dominates
-- `phase-todo-artifact.md` — let checked phase/roadmap/TODO surfaces shape compact candidate goals from visible unselected next slices
-- `explanation-and-presentation.md` — keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and close with a concise decision-ready next action
-- `communication-register.md` — prevent the answer from becoming either abrupt or diffuse while keeping tone professional and human-readable
-- `accurate-communication.md` — make verified facts, inference, and hypotheses visible enough that the reader does not have to infer confidence from tone alone
+- `execution-and-goal-frame.md` — allow candidate-goal surfacing at real decision boundaries when several materially different next slices remain live and no one continuation path clearly dominates, then keep `/goal` as the objective owner and `/plan` as the route owner once one governed goal is selected
+- `phase-todo-artifact.md` — let checked phase/roadmap/TODO surfaces shape compact candidate goals from visible unselected next slices, then bridge selected governed route-heavy work into `/plan` only when the route is materially non-trivial
+- `explanation-and-presentation.md` — keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output
+- `communication-register.md` — prevent the answer from becoming either abrupt or diffuse while keeping tone professional and human-readable and keeping goal-vs-plan wording distinct
+- `accurate-communication.md` — make verified facts, inference, and hypotheses visible enough that the reader does not have to infer confidence from tone alone, and keep route completion separate from goal completion wording
 - `evidence-discipline.md` — keep the proof thresholds and claim-state semantics strict while leaving readable grouping to the communication owners
 
 ---
@@ -30,6 +30,9 @@ Current RULES require the assistant to:
 - continue directly when one safe path is already clearly selected and dominant
 - surface candidate goals when several materially different next slices remain live and no one continuation path clearly dominates
 - keep `/goal` stricter than ordinary candidate goals and preserve its advisory-only status
+- keep `/goal` responsible for objective, proof, and scope after one governed goal is selected
+- use `/plan` only for route/sequence/task breakdown when the selected goal's route is still materially non-trivial
+- return closeout to the goal gate instead of treating finished plan steps as sufficient proof by themselves
 - open non-trivial answers with plain-language orientation, use a small table when several axes matter, explain identifiers by role, and end with a concise decision-ready close when that structure improves understanding
 - separate verified fact, evidence-backed inference, and open hypothesis visibly enough for a user to judge confidence correctly
 
@@ -54,14 +57,15 @@ Checked transcript-derived example:
   3. inspect status-reporting and visibility gaps
 - No one path is clearly dominant yet.
 - The answer needs to explain flow/order/concurrency clearly enough that the user can decide which slice to open first.
+- After the first slice is selected, the remaining route is still multi-file and verification-sensitive enough that `/plan` may become useful.
 
-Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation.
+Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation. If the user selects that governed goal and the route remains materially non-trivial, the assistant should bridge into `/plan` for route detail while keeping `/goal` as the objective contract.
 
 ---
 
 ## User objective
 
-Understand the system quickly, compare the live next directions clearly, and decide which bounded slice should be selected next.
+Understand the system quickly, compare the live next directions clearly, decide which bounded slice should be selected next, and understand when a selected goal should stay as `/goal` versus when the route should bridge into `/plan`.
 
 ---
 
@@ -71,6 +75,7 @@ Understand the system quickly, compare the live next directions clearly, and dec
 - The user needs both system understanding and an execution recommendation.
 - Flow/order/concurrency details matter.
 - Some points are checked facts, while some are still inference or open hypothesis.
+- After one goal is selected, the remaining route can still be non-trivial enough that objective and route must stay visibly separate.
 
 ---
 
@@ -82,13 +87,14 @@ Understand the system quickly, compare the live next directions clearly, and dec
 - Use a small comparison table because several axes differ materially.
 - Explain queue/worker/retry/status identifiers by role instead of only naming them.
 - Make confidence visible: what is verified, what is inferred, and what is still hypothesis.
-- End with one concise recommendation and why it is first.
+- If one governed goal is selected and the route is still materially non-trivial, keep that selected goal in `/goal` and move route detail into `/plan`.
+- End with one concise recommendation and why it is first, then keep closeout tied to the selected goal gate rather than the route state alone.
 
 ---
 
 ## Decision
 
-Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives.
+Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives. If the user selects that governed goal and the route is still materially non-trivial, bridge into `/plan` for route detail while keeping the selected goal as the objective owner.
 
 ---
 
@@ -99,6 +105,7 @@ Present the three next slices as candidate goals, compare them in a small table,
 - Group the explanation into flow, evidence, and recommendation layers.
 - Mark which points are verified facts versus inference versus hypotheses.
 - Close with one decision-ready next action.
+- If the user selects the governed first goal and route complexity remains material, keep `/goal` focused on outcome/proof/scope and move route breakdown into `/plan`.
 
 ---
 
@@ -130,7 +137,9 @@ Inference:
 Hypothesis:
 - Part of the problem may be status visibility rather than the execution path itself.
 
-Recommended first goal: inspect queue/worker lease first, because it currently has the strongest evidence support and the highest immediate diagnostic value.`
+Recommended first goal: inspect queue/worker lease first, because it currently has the strongest evidence support and the highest immediate diagnostic value.
+
+If you select that goal and the remaining route is still multi-file and verification-sensitive, keep `/goal` for outcome/proof/scope and use `/plan` only for the route breakdown. In other words: `/goal` = what must be true when this slice is done; `/plan` = how we will execute the slice. Finishing the plan steps alone is still not enough until the selected goal gate is checked.`
 
 ---
 
@@ -172,9 +181,9 @@ Close with one decision-ready recommendation
 
 ## Behavior delta
 
-Without this family, the assistant can answer with one early best-path recommendation or a long prose explanation that still leaves the user to reconstruct the decision surface manually.
+Without this family, the assistant can answer with one early best-path recommendation or a long prose explanation that still leaves the user to reconstruct the decision surface manually, and after a goal is selected it can still blur `/goal` and `/plan` by overloading the goal with route detail or by treating route completion as if it already proved the goal.
 
-With RULES active, the assistant surfaces real candidate goals earlier when the decision boundary is genuinely multi-path, explains the system in an easy-first structured way, separates checked facts from inference/hypothesis, and closes with a recommendation the user can act on immediately.
+With RULES active, the assistant surfaces real candidate goals earlier when the decision boundary is genuinely multi-path, explains the system in an easy-first structured way, separates checked facts from inference/hypothesis, closes with a recommendation the user can act on immediately, and keeps selected-goal objective ownership distinct from later plan-route breakdown.
 
 ---
 

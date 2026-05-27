@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.95
+> **Current Version:** 1.96
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.28 / P120 strategic correction posture hardening follow-up; no active phase open
+> **Status:** Active P121 / target v10.29 goal-to-plan bridge doctrine; latest released baseline remains v10.28 / P120
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -20,6 +20,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Active Phase Roadmap
+
+### Active
+
+- **P121:** [phase-121-goal-to-plan-bridge-doctrine.md](phase-121-goal-to-plan-bridge-doctrine.md)
+  - Goal: make `/goal` the objective owner, `/plan` the route owner, keep the bridge into `/plan` limited to governed non-trivial goals, and return closeout to the goal gate.
+  - Output: touched owner rules, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.29`.
+  - Gate: objective-vs-route integrity, non-trivial bridge integrity, goal-gate closeout integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
+  - Patch: [../patch/goal-to-plan-bridge-doctrine.patch.md](../patch/goal-to-plan-bridge-doctrine.patch.md)
 
 ### Most Recently Completed
 
@@ -185,17 +193,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Latest verified release state:
-- governed-work-only `/goal` doctrine now keeps trivial non-governed next steps concise by default
-- bounded governed repo successor work now uses design-first `/goal` sourcing, then active execution surfaces
-- changelog, patch, and README now participate in governed `/goal` construction only when they materially shape completion, review, or current-state impact
-- two concrete `/goal` outputs are preserved for governed non-release and governed release-closeout review
+Latest released baseline before P121 work:
+- released baseline is `v10.28 / P120`
+- strategic correction posture is already hardened around logic-first correction, scope-proven narrowing, and strategy-before-patch recommendation posture
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
-- 18/18 source/runtime parity and source/destination body sufficiency passed
-- `git diff --check` passed with no whitespace errors
-- branch `goal-governed-work-only` was pushed to origin
-- GitHub release `v10.21` was published at `2026-05-20T07:54:14Z` and release tag `v10.21` resolves to commit `53f80777bd3b0ec9d5ad84165bcd58e6e726c4f2`
+- 18/18 source/runtime parity and source/destination body sufficiency passed for the latest released baseline
+- `git diff --check` passed for the latest released baseline
+- branch `goal-governed-work-only` and GitHub release `v10.28` are the current checked released state before P121 opens
+
+Current P121 verification focus:
+- `/goal` owns objective/done condition/proof/scope and `/plan` owns route/sequence/task breakdown
+- governed non-trivial goals may bridge into `/plan` without making planning mandatory for every goal
+- closeout returns to the goal gate instead of treating plan completion alone as sufficient proof
+- the updated playground case keeps the objective-vs-route behavior delta inspectable
+- `playground/` remains outside the runtime install payload while the active runtime count remains 18
+- runtime install, source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, default-branch update, and GitHub release verification still remain required before P121 closeout
 
 ---
 

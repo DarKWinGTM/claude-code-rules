@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-05-27 | **[Added P121 goal-vs-plan register refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-22 | **[Added P120 strategy-before-patch recommendation refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-21 | **[Added P119 active-exchange goal-surface register hardening](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-20 | **[Added P117 non-trivial answer density calibration](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -23,6 +24,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Added P121 goal-vs-plan register refinement
+
+**Date:** 2026-05-27
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.10 to v1.11.
+- Updated `design/communication-register.design.md` from v1.10 to v1.11.
+- Added a goal-vs-plan register so `/goal` is described as the objective layer and `/plan` as the route layer.
+- Added guidance that planning should be recommended because the route is materially non-trivial, not because every goal must automatically produce a plan.
+- Added guidance that finished route work must not be smoothed into goal-completion wording when the goal gate is still open.
+
+### Summary
+`communication-register.md` now keeps goal-vs-plan wording more semantically stable so the assistant does not blur objective ownership, route ownership, and completion status into one pleasant-but-misleading summary.
 
 ---
 

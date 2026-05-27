@@ -1,5 +1,5 @@
 # Accurate Communication Standard
-> **Current Version:** 2.32
+> **Current Version:** 2.33
 > **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.30
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
@@ -104,6 +104,9 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - if a candidate goal is promoted into `/goal`, keep that promotion visibly advisory and do not phrase it as queued or already-selected execution
 - if a `/goal` suggestion is offered, keep it visibly advisory and do not phrase it as queued or already-selected execution
 - when a `/goal` suggestion depends on proof, name only proof/checks that can be surfaced in the conversation rather than implying hidden verification
+- if `/plan` is introduced after a selected `/goal`, keep the wording explicit that the goal still owns outcome/proof/scope while the plan owns route/sequence/task breakdown
+- if the plan is complete but the goal gate is not yet checked, say so directly rather than letting route completion read like goal completion
+- when both surfaces are mentioned together, make it visible whether the status being reported is objective status or route status
 - candidate goals, promoted `/goal`, surrounding recommendation labels, recap/closing lines, and the natural-language scaffold around preserved exact literals should follow the dominant language of the active exchange by default even when the user did not give a direct language instruction; an explicit language request is a stronger override
 - exact literals such as `/goal`, file paths, version tags, code identifiers, and query parameters may remain exact when they should not be translated
 - translating only the wrapper label while leaving the goal-shaped body in another language is not sufficient language alignment

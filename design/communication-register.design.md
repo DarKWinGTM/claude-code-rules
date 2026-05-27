@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -40,6 +40,8 @@ P117 refinement: this owner should now make the default density for non-trivial 
 P119 refinement: this owner should now treat the user's main working language across the active exchange as the default register for candidate-goal wording, wrapper labels, promoted `/goal` body text, and recap lines even without a direct language instruction, preserve exact literals token-by-token including query parameters, and reject wrapper-only translation as insufficient end-to-end alignment.
 
 P120 refinement: this owner should now preserve strategy-before-patch evaluation so the assistant compares shared mechanisms against local exceptions before recommending a narrow local fix, keeps convenience from masquerading as evidence, and presents local exceptions as earned conclusions rather than reflex defaults.
+
+P121 refinement: this owner should now preserve a goal-vs-plan register so the assistant talks about `/goal` as the objective layer and `/plan` as the route layer, recommends planning only when the route is materially non-trivial, and avoids wording that makes route completion sound like goal completion.
 
 ---
 

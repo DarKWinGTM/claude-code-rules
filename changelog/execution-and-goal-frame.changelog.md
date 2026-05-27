@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-05-27 | **[Added P121 selected-goal to `/plan` bridge refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-21 | **[Added P119 active-exchange language default and exact-literal boundary refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-21 | **[Added P118 anti-generic-future-note successor bridge hardening](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-20 | **[Added P117 proactive decision-boundary candidate-goal surfacing](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -26,6 +27,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-113"></a>
+## Version 1.13: Added P121 selected-goal to `/plan` bridge refinement
+
+**Date:** 2026-05-27
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.12 to v1.13.
+- Updated `design/execution-and-goal-frame.design.md` from v1.12 to v1.13.
+- Added an explicit selected-goal to `/plan` bridge so `/goal` stays the objective owner while `/plan` stays the route owner.
+- Added guidance that governed non-trivial goals may bridge into planning when route decomposition is materially needed without forcing plans for every goal.
+- Added goal-gate closeout guidance so finished route steps do not substitute for proof that the selected goal is complete.
+
+### Summary
+`execution-and-goal-frame.md` now keeps selected-goal objective ownership explicit while letting non-trivial governed route work bridge into `/plan` without collapsing route completion into goal completion.
 
 ---
 
