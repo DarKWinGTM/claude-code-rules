@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.98
+> **Current Version:** 1.99
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active P122 / target v10.30 goal-to-plan default next-surface hardening; latest released baseline remains v10.29 / P121
+> **Status:** Released through v10.30 / P122 goal-to-plan default next-surface hardening; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -21,12 +21,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Active Phase Roadmap
 
-### Active
+### Most Recently Completed
 
 - **P122:** [phase-122-goal-to-plan-default-next-surface-hardening.md](phase-122-goal-to-plan-default-next-surface-hardening.md)
-  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and make `/plan` the explicit default next surface when a selected governed goal remains materially route-heavy.
-  - Output: touched owner rules, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.30`.
-  - Gate: explicit `/plan` next-surface integrity, objective-vs-route integrity, goal-gate closeout integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
+  - Output: touched owner rules, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.30`.
+  - Gate: explicit `/plan` next-surface integrity, objective-vs-route integrity, goal-gate closeout integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.30
+  - Release tag `v10.30` resolves to commit `c22a6c09a16d3cea4fc522f9ac2a39160ce7d717`.
+  - Published at `2026-05-27T20:53:00Z`.
   - Patch: [../patch/goal-to-plan-default-next-surface-hardening.patch.md](../patch/goal-to-plan-default-next-surface-hardening.patch.md)
 
 ### Most Recently Completed
@@ -214,13 +216,18 @@ Latest released baseline before P122 work:
 - `git diff --check` passed for the latest released baseline
 - branch `goal-governed-work-only` and GitHub release `v10.29` are the current checked released state before P122 opens
 
-Current P122 verification focus:
-- a selected governed route-heavy goal should now explicitly recommend `/plan` as the default next surface instead of broad prose follow-up
-- `/goal` must still remain the objective owner and `/plan` must still remain the route owner
-- closeout must still verify the goal gate rather than route completion alone
-- the updated playground case should keep the explicit `/plan` recommendation delta inspectable
-- `playground/` must remain outside the runtime install payload while the active runtime count remains 18
-- runtime install, source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, default-branch update, and GitHub release verification still remain required before P122 closeout
+Current released baseline after P122 closeout:
+- released baseline is `v10.30 / P122`
+- a selected governed route-heavy goal now explicitly recommends `/plan` as the default next surface instead of broad prose follow-up
+- `/goal` still remains the objective owner and `/plan` still remains the route owner
+- closeout still verifies the goal gate rather than route completion alone
+- the updated playground case keeps the explicit `/plan` recommendation delta inspectable
+- `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
+- runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
+- 18/18 source/runtime parity and source/destination body sufficiency passed
+- `playground/` remains outside the runtime install payload while the active runtime count remains 18
+- `git diff --check` passed with no whitespace errors
+- branch `goal-governed-work-only` was pushed to origin, the remote default branch remained `goal-governed-work-only`, and GitHub release `v10.30` was published at `2026-05-27T20:53:00Z`
 
 ---
 

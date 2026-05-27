@@ -1,14 +1,20 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-28
-> **Current Release:** v10.29 / P121 goal-to-plan bridge doctrine
-> **Active Wave:** P122 / target v10.30 goal-to-plan default next-surface hardening
+> **Current Release:** v10.30 / P122 goal-to-plan default next-surface hardening
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
 ## ✅ Completed
+
+- [x] P122 / v10.30 goal-to-plan default next-surface hardening was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched owners now explicitly recommend `/plan` as the default next surface when a selected governed goal remains route-heavy while still keeping `/goal` as the objective owner, `/plan` as the route owner, and goal-gate closeout as the completion proof owner; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.30
+  - Release tag `v10.30` resolves to commit `c22a6c09a16d3cea4fc522f9ac2a39160ce7d717`.
+  - Published at `2026-05-27T20:53:00Z`.
 
 - [x] P121 / v10.29 goal-to-plan bridge doctrine was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched owners now keep `/goal` as the objective owner and `/plan` as the route owner, bridge governed non-trivial goals into planning without making planning mandatory for every goal, and return closeout to the goal gate instead of route completion alone; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
@@ -158,10 +164,6 @@
 
 ### Active / In Progress
 
-- [ ] P122 / v10.30 goal-to-plan default next-surface hardening is now open.
-  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and make `/plan` the explicit default next surface when a selected governed goal remains materially route-heavy.
-  - Expected output: touched owner rules, one updated playground case, touched master/design/changelog/TODO/phase/patch sync, runtime install verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch update, and GitHub release verification.
-  - Current status: `phase/phase-122-goal-to-plan-default-next-surface-hardening.md` and `patch/goal-to-plan-default-next-surface-hardening.patch.md` are opened; doctrine refinement and release sync remain in progress.
 
 ### Deferred / Not Selected
 

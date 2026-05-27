@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.30</b><br><sub>P122 Active</sub>
+  <b>v10.30</b><br><sub>P122 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Verification pending</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Plan Next Surface</b><br><sub>Explicit handoff hardening</sub>
@@ -195,12 +195,11 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P122 goal-to-plan default next-surface hardening is active toward `v10.30`.
-  - It is refining RULES so route-heavy selected governed goals explicitly recommend `/plan` as the default next surface instead of leaving the planning handoff only implied in broad prose.
-  - It preserves `/goal` as the objective owner, `/plan` as the route owner, and goal-gate closeout instead of route-completion closeout.
-  - Active verification is still pending for runtime install, parity/body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release proof.
-- Latest released baseline remains P121 goal-to-plan bridge doctrine as `v10.29`.
-  - It refined RULES so `/goal` stayed the objective owner, `/plan` stayed the route owner, non-trivial governed goals could bridge into planning without making planning mandatory for every goal, and closeout returned to the goal gate instead of route completion alone.
+- P122 goal-to-plan default next-surface hardening is released as `v10.30`.
+  - It refines RULES so route-heavy selected governed goals explicitly recommend `/plan` as the default next surface while `/goal` stays the objective owner, `/plan` stays the route owner, and closeout returns to the goal gate instead of route completion alone.
+  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification.
+- The immediately previous released baseline remains P121 goal-to-plan bridge doctrine as `v10.29`.
+  - It refines RULES so `/goal` stays the objective owner, `/plan` stays the route owner, non-trivial governed goals may bridge into planning without making planning mandatory for every goal, and closeout returns to the goal gate instead of route completion alone.
   - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates

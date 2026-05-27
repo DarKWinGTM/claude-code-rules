@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P122
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.30
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.30
@@ -55,10 +55,10 @@ P122 exists to harden that next-step recommendation posture without turning `/pl
 - [x] Re-verify that `playground/` stays outside the 18-file runtime install payload.
 - [x] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
 - [x] Run `git diff --check` clean.
-- [ ] Commit the source release state and push the branch.
-- [ ] Update the remote default branch so the repo view reflects the released state.
-- [ ] Create and verify GitHub release `v10.30`.
-- [ ] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
+- [x] Commit the source release state and push the branch.
+- [x] Update the remote default branch so the repo view reflects the released state.
+- [x] Create and verify GitHub release `v10.30`.
+- [x] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
 
 ---
 
@@ -90,11 +90,11 @@ P122 exists to harden that next-step recommendation posture without turning `/pl
 
 ## Current Status
 
-P122 is active.
+P122 is completed.
 
 Current checked progress:
-- released baseline before P122 startup is `v10.29 / P121`
-- the selected improvement direction is to make `/plan` the explicit default next surface when a selected governed goal remains materially route-heavy
+- released baseline before P122 startup was `v10.29 / P121`
+- the selected improvement direction hardened explicit `/plan` next-surface recommendation while preserving `/goal` as the objective contract and `/plan` as the route contract
 - touched runtime owners, design companions, owner changelog parents, one related playground case, and touched master surfaces are updated in source scope
-- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` runtime exclusion recheck, and `git diff --check` have already passed
-- commit/push/default-branch update, GitHub release verification, and final closeout alignment still remain
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` runtime exclusion recheck, and `git diff --check` all passed
+- branch push, remote default-branch verification, GitHub release `v10.30` verification, and final closeout alignment all passed

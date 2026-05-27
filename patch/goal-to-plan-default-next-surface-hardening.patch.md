@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.30
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -96,6 +96,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P122 is active.
+P122 is completed.
 
-The checked cooperation gap is established, the bounded improvement direction is selected, and the phase/patch startup artifacts are opened. Owner refinement, companion/changelog sync, playground update, master-surface sync, runtime install-boundary proof, 18/18 parity/body-sufficiency verification, and `git diff --check` are now complete in checked scope. Commit/push/default-branch update, GitHub release verification, and final closeout alignment remain in progress.
+The checked cooperation gap was established, the bounded improvement direction was selected, and the phase/patch startup artifacts were opened. Owner refinement, companion/changelog sync, playground update, master-surface sync, runtime install-boundary proof, 18/18 parity/body-sufficiency verification, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and final closeout alignment all completed.
