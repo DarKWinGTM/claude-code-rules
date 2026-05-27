@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -52,6 +52,8 @@ P118 refinement: this owner should now derive the smallest bounded successor sli
 P119 refinement: this owner should now make the emitted `/goal` scaffold follow the dominant language of the active exchange by default even without a direct language instruction, treat explicit language requests as a stronger override, preserve exact literals token-by-token including query parameters, and prevent whole-command exact-literal drift when only the surrounding scaffold should localize.
 
 P121 refinement: this owner should now preserve a governed selected-goal to `/plan` bridge so execution surfaces can escalate route-heavy work into planning only when the route is materially non-trivial, keep phase/task linkage tied back to the selected goal, and return closeout to the goal gate instead of the route state alone.
+
+P122 refinement: this owner should now preserve an explicit `/plan` next-surface recommendation in execution surfaces once that route-heavy bridge is active, rather than leaving planning only as an implied option in prose.
 
 ---
 

@@ -32,6 +32,7 @@ Current RULES require the assistant to:
 - keep `/goal` stricter than ordinary candidate goals and preserve its advisory-only status
 - keep `/goal` responsible for objective, proof, and scope after one governed goal is selected
 - use `/plan` only for route/sequence/task breakdown when the selected goal's route is still materially non-trivial
+- explicitly recommend `/plan` as the next surface when that route-heavy condition holds instead of leaving the route in broad prose follow-up
 - return closeout to the goal gate instead of treating finished plan steps as sufficient proof by themselves
 - open non-trivial answers with plain-language orientation, use a small table when several axes matter, explain identifiers by role, and end with a concise decision-ready close when that structure improves understanding
 - separate verified fact, evidence-backed inference, and open hypothesis visibly enough for a user to judge confidence correctly
@@ -87,14 +88,14 @@ Understand the system quickly, compare the live next directions clearly, decide 
 - Use a small comparison table because several axes differ materially.
 - Explain queue/worker/retry/status identifiers by role instead of only naming them.
 - Make confidence visible: what is verified, what is inferred, and what is still hypothesis.
-- If one governed goal is selected and the route is still materially non-trivial, keep that selected goal in `/goal` and move route detail into `/plan`.
+- If one governed goal is selected and the route is still materially non-trivial, keep that selected goal in `/goal`, explicitly recommend `/plan` as the next surface, and move route detail into `/plan`.
 - End with one concise recommendation and why it is first, then keep closeout tied to the selected goal gate rather than the route state alone.
 
 ---
 
 ## Decision
 
-Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives. If the user selects that governed goal and the route is still materially non-trivial, bridge into `/plan` for route detail while keeping the selected goal as the objective owner.
+Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives. If the user selects that governed goal and the route is still materially non-trivial, explicitly recommend `/plan` as the next surface for route detail while keeping the selected goal as the objective owner.
 
 ---
 
@@ -105,7 +106,7 @@ Present the three next slices as candidate goals, compare them in a small table,
 - Group the explanation into flow, evidence, and recommendation layers.
 - Mark which points are verified facts versus inference versus hypotheses.
 - Close with one decision-ready next action.
-- If the user selects the governed first goal and route complexity remains material, keep `/goal` focused on outcome/proof/scope and move route breakdown into `/plan`.
+- If the user selects the governed first goal and route complexity remains material, keep `/goal` focused on outcome/proof/scope, explicitly recommend `/plan` as the next surface, and move route breakdown into `/plan`.
 
 ---
 
@@ -139,7 +140,7 @@ Hypothesis:
 
 Recommended first goal: inspect queue/worker lease first, because it currently has the strongest evidence support and the highest immediate diagnostic value.
 
-If you select that goal and the remaining route is still multi-file and verification-sensitive, keep `/goal` for outcome/proof/scope and use `/plan` only for the route breakdown. In other words: `/goal` = what must be true when this slice is done; `/plan` = how we will execute the slice. Finishing the plan steps alone is still not enough until the selected goal gate is checked.`
+If you select that goal and the remaining route is still multi-file and verification-sensitive, recommended next surface: `/plan`. Keep `/goal` for outcome/proof/scope and use `/plan` only for the route breakdown. In other words: `/goal` = what must be true when this slice is done; `/plan` = how we will execute the slice. Finishing the plan steps alone is still not enough until the selected goal gate is checked.`
 
 ---
 
@@ -159,6 +160,9 @@ Use small table for comparison
 Separate verified / inference / hypothesis
   ↓
 Close with one decision-ready recommendation
+  ↓
+If the selected goal stays route-heavy
+  → explicitly recommend `/plan` as the next surface
 ```
 
 ---

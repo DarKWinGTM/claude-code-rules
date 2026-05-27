@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -46,6 +46,8 @@ P118 refinement: this owner should now reject generic future-note closeout when 
 P119 refinement: this owner should now infer the default language for goal-shaped next-step surfaces from the user's main working language across the active exchange even without a direct language instruction, treat an explicit language request as a stronger override, preserve exact literals token-by-token including query parameters, and reject wrapper-only translation where the `/goal` or recommendation body remains in another language beyond those preserved literals.
 
 P121 refinement: this owner should now preserve an explicit goal-to-plan bridge so `/goal` remains the objective owner, `/plan` remains the route owner, governed non-trivial goals may bridge into planning without forcing plans for every goal, and route completion alone cannot substitute for goal-gate closeout.
+
+P122 refinement: this owner should now preserve explicit `/plan` next-surface recommendation once a selected governed goal remains route-heavy, so the assistant does not leave the route in broad prose after the goal is already chosen.
 
 ---
 

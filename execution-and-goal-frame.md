@@ -1,6 +1,6 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
@@ -172,6 +172,7 @@ When a goal is already selected, `/plan` is a route tool, not a second goal surf
 - keep `/goal` responsible for objective, done condition, proof, and scope
 - use `/plan` for route selection, sequence, task breakdown, and execution order only when the route is still materially non-trivial
 - bridge into `/plan` when the selected goal is governed and the route still needs meaningful decomposition, such as multi-file work, multiple owner surfaces, several live route options, meaningful verification/release sync, or architecture/rollback-sensitive sequencing
+- when that bridge condition holds, explicitly recommend `/plan` as the default next surface rather than leaving the route in broad prose follow-up
 - do not open `/plan` by reflex when the selected goal is already direct, bounded, and safe to continue without route uncertainty
 - if the route in `/plan` drifts from the selected goal, repair the route or explicitly revisit the goal basis instead of silently treating the plan as the new authority
 - when plan steps are completed but the selected goal's proof/gate is still open, continue into goal-gate verification instead of closing on route completion alone
@@ -238,7 +239,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
 | phase-shaped follow-up | apply ordered phase identity handling and preserve visible phase linkage: current active phase → existing-family subphase → new major → ask/record basis; a new major requires checked why-not-current / why-not-subphase evidence |
-| selected governed goal is non-trivial and route choice is still material | bridge into `/plan` while keeping the selected `/goal` as the active objective owner |
+| selected governed goal is non-trivial and route choice is still material | explicitly recommend `/plan` as the default next surface while keeping the selected `/goal` as the active objective owner |
 | plan steps are done but goal proof/gate is still pending | continue to goal-gate verification instead of closing on route completion |
 | several materially different next slices are live and no one continuation path clearly dominates | surface compact candidate goals instead of collapsing early into one plain next-step answer |
 | objective truly complete with meaningful unselected successor work | recommend supported next goal with why/output/gate without blocking selected safe continuation |

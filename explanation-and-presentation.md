@@ -1,5 +1,5 @@
 # Explanation and Presentation
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
@@ -284,6 +284,7 @@ When `/goal` and `/plan` both matter, keep the explanation explicit about which 
 - present `/plan` as the route layer: sequence, approach, task breakdown, and execution order
 - when both are shown together, separate the two layers directly instead of letting plan bullets read like replacement goal conditions
 - when the route is still non-trivial, explain that `/plan` serves the selected goal rather than becoming a new objective by itself
+- when the route is still non-trivial enough to justify planning, explicitly recommend `/plan` as the next surface instead of leaving the recommendation in generic prose
 - if a plan is finished but the goal gate is still unchecked, say so explicitly and keep closeout anchored to the goal state rather than the route state alone
 
 ### 9) Preferred closing shapes
@@ -306,6 +307,12 @@ Recommendation:
 <recommended-path label in dominant session language>: <path>
 <why-this-first label in dominant session language>: <one short reason>
 <other-options label in dominant session language>: <real alternative when the choice still exists>
+
+Goal-to-plan handoff:
+<selected-goal label in dominant session language>: <goal already chosen>
+<why-plan-now label in dominant session language>: <why the remaining route is still materially non-trivial>
+<plan-should-cover label in dominant session language>: <sequence, task breakdown, verification order, or equivalent route detail>
+<recommended-next label in dominant session language>: `/plan`
 
 Candidate goals:
 <goal-option label 1 in dominant session language>: <target outcome>

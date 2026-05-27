@@ -1,5 +1,5 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
@@ -274,6 +274,7 @@ When a governed goal is already selected and the remaining work is route-heavy, 
 - keep `/goal` as the objective contract for outcome, proof, scope, and hard guardrails
 - use `/plan` to choose sequence, phase/lane breakdown, owner ordering, and verification order when those route decisions are materially non-trivial
 - bridge into `/plan` when the selected goal is multi-step, multi-file, phase-backed, owner-splitting, release-sync-heavy, or still has several materially different execution routes
+- when that bridge condition holds, execution surfaces should explicitly recommend `/plan` as the next surface instead of broad prose follow-up
 - if the selected goal is already direct, bounded, and safe to continue, keep execution in goal/phase/task surfaces without forcing a plan
 - when a plan is opened, phase and task surfaces should keep visible which selected goal the route serves
 - closeout should still verify the selected goal gate rather than treating completed plan steps as sufficient proof by themselves
@@ -403,7 +404,7 @@ The later sync order does not weaken early startup establishment or live task-li
 | broad phase-backed objective with distinct implementation / verification / governance slices | define lanes or lane-aligned tasks before deep execution |
 | active phase or implied staged lane | expose phase context in built-in tasks and current-phase-first execution |
 | current phase lane closes and the next lane is selected or clearly implied | continue into the next lane and keep phase linkage visible |
-| selected governed goal has a non-trivial route still to choose | bridge into `/plan` while preserving visible linkage back to the selected goal |
+| selected governed goal has a non-trivial route still to choose | explicitly recommend `/plan` as the next surface while preserving visible linkage back to the selected goal |
 | governance/release-sync slice inside an active phase | give it its own lane or task when mixing it with implementation would blur ownership or gates |
 | oversized `TODO.md` or `phase/SUMMARY.md` | roll history/detail into referenced `history/` / `done/` shards and keep compact active entrypoints |
 | God Phase or TODO overload | repair now when clear, otherwise create/extend a visible governed repair slice |

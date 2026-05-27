@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-05-28 | **[Added P122 explicit `/plan` recommendation register refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-27 | **[Added P121 goal-vs-plan register refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-22 | **[Added P120 strategy-before-patch recommendation refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-21 | **[Added P119 active-exchange goal-surface register hardening](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -24,6 +25,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Added P122 explicit `/plan` recommendation register refinement
+
+**Date:** 2026-05-28
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.11 to v1.12.
+- Updated `design/communication-register.design.md` from v1.11 to v1.12.
+- Added guidance that when planning is the right next surface, the assistant should name `/plan` directly instead of hiding the handoff behind vague prose.
+- Preserved the rule that planning is recommended because the route is materially non-trivial, not because every goal must always produce a plan.
+- Preserved wording that keeps route completion distinct from goal completion.
+
+### Summary
+`communication-register.md` now makes the language around planning more direct so AI says `/plan` when `/plan` is truly the right next surface, instead of softening the handoff into generic organizing language.
 
 ---
 

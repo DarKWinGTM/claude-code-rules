@@ -1,6 +1,6 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
@@ -129,6 +129,7 @@ When `/goal` and `/plan` both appear, keep objective ownership and route ownersh
 - describe `/goal` as the objective surface and `/plan` as the route surface rather than blending them into one generic work block
 - do not praise or summarize a detailed plan as if detail alone proves that the goal is already satisfied
 - when recommending a plan, frame it as needed because the route is non-trivial, not because every good goal must always produce a plan
+- when planning is the right next surface, prefer naming `/plan` explicitly over vague prose such as `the next step is to think through the route a bit more`
 - use wording such as `this plan serves the selected goal` rather than wording that makes the plan sound like a replacement objective
 - if the route is complete but the goal gate is still open, say so directly instead of smoothing it into completion-shaped wording
 

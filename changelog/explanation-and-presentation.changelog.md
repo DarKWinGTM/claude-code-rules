@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-05-28 | **[Added P122 explicit `/plan` handoff presentation refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-27 | **[Added P121 goal-to-plan explanation-shape refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-21 | **[Added P119 active-exchange goal-surface alignment refinement](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-21 | **[Added P118 anti-generic-future-note closing refinement](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -23,6 +24,24 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Added P122 explicit `/plan` handoff presentation refinement
+
+**Date:** 2026-05-28
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.10 to v1.11.
+- Updated `design/explanation-and-presentation.design.md` from v1.10 to v1.11.
+- Added guidance that route-heavy selected goals should explicitly recommend `/plan` as the next surface instead of implying planning through broad prose.
+- Added a compact goal-to-plan handoff closing shape so selected goal, why plan now, plan coverage, and recommended next surface can stay visible together.
+- Preserved goal-vs-route separation and goal-gate closeout wording.
+
+### Summary
+`explanation-and-presentation.md` now makes the handoff from selected goal into `/plan` visible as an explicit next-surface recommendation instead of leaving the cooperation between the two commands mostly implicit.
 
 ---
 

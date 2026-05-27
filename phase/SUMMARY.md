@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.97
+> **Current Version:** 1.98
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.29 / P121 goal-to-plan bridge doctrine; no active phase open
+> **Status:** Active P122 / target v10.30 goal-to-plan default next-surface hardening; latest released baseline remains v10.29 / P121
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -20,6 +20,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Active Phase Roadmap
+
+### Active
+
+- **P122:** [phase-122-goal-to-plan-default-next-surface-hardening.md](phase-122-goal-to-plan-default-next-surface-hardening.md)
+  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and make `/plan` the explicit default next surface when a selected governed goal remains materially route-heavy.
+  - Output: touched owner rules, one related playground case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.30`.
+  - Gate: explicit `/plan` next-surface integrity, objective-vs-route integrity, goal-gate closeout integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
+  - Patch: [../patch/goal-to-plan-default-next-surface-hardening.patch.md](../patch/goal-to-plan-default-next-surface-hardening.patch.md)
 
 ### Most Recently Completed
 
@@ -193,18 +201,26 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Latest verified release state:
+Latest released baseline before P122 work:
 - released baseline is `v10.29 / P121`
-- `/goal` now stays the objective owner while `/plan` stays the route owner
-- governed non-trivial goals may bridge into `/plan` without making planning mandatory for every goal
-- closeout returns to the goal gate instead of treating plan completion alone as sufficient proof
-- the updated playground case keeps the objective-vs-route behavior delta inspectable
+- `/goal` already stays the objective owner while `/plan` already stays the route owner
+- governed non-trivial goals may already bridge into `/plan` without making planning mandatory for every goal
+- closeout already returns to the goal gate instead of treating plan completion alone as sufficient proof
+- the updated playground case already keeps the objective-vs-route behavior delta inspectable
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
-- 18/18 source/runtime parity and source/destination body sufficiency passed
+- 18/18 source/runtime parity and source/destination body sufficiency passed for the latest released baseline
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
-- `git diff --check` passed with no whitespace errors
-- branch `goal-governed-work-only` was pushed to origin, the remote default branch now points to `goal-governed-work-only`, and GitHub release `v10.29` was published at `2026-05-27T10:41:28Z`
+- `git diff --check` passed for the latest released baseline
+- branch `goal-governed-work-only` and GitHub release `v10.29` are the current checked released state before P122 opens
+
+Current P122 verification focus:
+- a selected governed route-heavy goal should now explicitly recommend `/plan` as the default next surface instead of broad prose follow-up
+- `/goal` must still remain the objective owner and `/plan` must still remain the route owner
+- closeout must still verify the goal gate rather than route completion alone
+- the updated playground case should keep the explicit `/plan` recommendation delta inspectable
+- `playground/` must remain outside the runtime install payload while the active runtime count remains 18
+- runtime install, source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, default-branch update, and GitHub release verification still remain required before P122 closeout
 
 ---
 

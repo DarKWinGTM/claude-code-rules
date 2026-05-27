@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-27
+> **Last Updated:** 2026-05-28
 > **Current Release:** v10.29 / P121 goal-to-plan bridge doctrine
-> **Active Wave:** none currently open
+> **Active Wave:** P122 / target v10.30 goal-to-plan default next-surface hardening
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -158,6 +158,10 @@
 
 ### Active / In Progress
 
+- [ ] P122 / v10.30 goal-to-plan default next-surface hardening is now open.
+  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and make `/plan` the explicit default next surface when a selected governed goal remains materially route-heavy.
+  - Expected output: touched owner rules, one updated playground case, touched master/design/changelog/TODO/phase/patch sync, runtime install verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch update, and GitHub release verification.
+  - Current status: `phase/phase-122-goal-to-plan-default-next-surface-hardening.md` and `patch/goal-to-plan-default-next-surface-hardening.patch.md` are opened; doctrine refinement and release sync remain in progress.
 
 ### Deferred / Not Selected
 

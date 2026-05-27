@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-27 | **[Added P121 selected-goal to `/plan` bridge refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-21 | **[Added P119 active-exchange language default and exact-literal boundary refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-21 | **[Added P118 anti-generic-future-note successor bridge hardening](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -27,6 +28,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Added P122 explicit `/plan` next-surface refinement
+
+**Date:** 2026-05-28
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.13 to v1.14.
+- Updated `design/execution-and-goal-frame.design.md` from v1.13 to v1.14.
+- Added guidance that route-heavy selected governed goals should explicitly recommend `/plan` as the default next surface.
+- Preserved `/goal` as the objective owner and `/plan` as the route owner.
+- Preserved goal-gate closeout instead of route-completion closeout.
+
+### Summary
+`execution-and-goal-frame.md` now moves from a generic bridge into planning toward an explicit `/plan` next-surface recommendation when the selected governed goal remains materially route-heavy.
 
 ---
 

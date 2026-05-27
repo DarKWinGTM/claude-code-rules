@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.17 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-27 | **[Added P121 selected-goal to `/plan` execution bridge refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-21 | **[Added P119 active-exchange concept-slot and exact-literal boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-21 | **[Added P118 bounded successor-slice derivation from execution surfaces](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -29,6 +30,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-117"></a>
+## Version 1.17: Added P122 explicit `/plan` next-surface execution refinement
+
+**Date:** 2026-05-28
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.16 to v1.17.
+- Updated `design/phase-todo-artifact.design.md` from v1.16 to v1.17.
+- Added guidance that execution surfaces should explicitly recommend `/plan` as the next surface once a selected governed goal stays materially route-heavy.
+- Preserved linkage from phase/task/TODO surfaces back to the selected goal.
+- Preserved goal-gate closeout instead of route-state closeout.
+
+### Summary
+`phase-todo-artifact.md` now makes planning the explicit next execution surface for route-heavy selected goals instead of leaving the goal-to-plan handoff only implied.
 
 ---
 
