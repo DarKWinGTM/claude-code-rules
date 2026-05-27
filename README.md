@@ -363,11 +363,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P111 / v10.19 opens the governed playground family wave on top of the released `v10.18 / P110` baseline.
-- The new `playground/` family is intended to show how current RULES change AI behavior in practice without becoming part of the runtime install payload.
-- Each scenario should separate `rule-enforced fact`, `observed case`, and `virtual variant` instead of mixing checked behavior with illustrative thinking.
-- The playground should cover all 18 active runtime rules through scenario families plus a coverage matrix and a virtual-case matrix.
-- README should keep only a compact pointer to the playground family rather than absorbing the cases directly.
+- P122 / v10.30 releases the goal-to-plan default next-surface hardening wave on top of the released `v10.29 / P121` baseline.
+- It refines RULES so route-heavy selected governed goals explicitly recommend `/plan` as the default next surface while `/goal` stays the objective owner and `/plan` stays the route owner.
+- The refinement keeps goal-gate closeout intact instead of treating plan completion alone as sufficient proof.
+- The governed `playground/` family remains non-runtime; the updated case keeps the explicit `/plan` recommendation delta inspectable without entering the runtime install payload.
 - The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
 - The untracked `plugin/` tree remains preserved and out of staged wave scope.
 </div>
@@ -1114,7 +1113,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.20 / P112` grounded playground realism upgrade while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.30 / P122` goal-to-plan default next-surface hardening wave while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

@@ -233,9 +233,9 @@ Current released baseline after P122 closeout:
 
 ## Rollback / Containment
 
-If P113 is reversed after release:
+If P122 is reversed after release:
 - revert the touched governed `/goal` doctrine edits as one governed rollback release
-- restore the released `v10.20 / P112` source state as the active baseline
+- restore the released `v10.29 / P121` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

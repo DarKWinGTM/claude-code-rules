@@ -10,7 +10,7 @@
 
 ## Context
 
-This is the governed patch record for the planned `v10.30 / P122` wave.
+This is the governed patch record for the released `v10.30 / P122` wave.
 
 It packages one bounded runtime + playground follow-up refinement so selected governed goals not only preserve a bridge into `/plan` when needed, but explicitly recommend `/plan` as the default next surface when route complexity is still materially non-trivial.
 
