@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.31</b><br><sub>P123 Active</sub>
+  <b>v10.31</b><br><sub>P123 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Verification pending</sub>
+  <b>Released</b><br><sub>Validation passed</sub>
 </td>
 <td align="center" width="200">
   <b>Goal Subagent Assist</b><br><sub>Internal helper hardening</sub>
@@ -195,10 +195,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P123 goal internal native subagent assistance refinement is active toward `v10.31`.
-  - It is refining RULES so `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when selected governed goals remain non-trivial or route-heavy, while `/goal` stays the objective owner and `/plan` stays the route owner.
-  - Active verification is still pending for runtime install, parity/body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release proof.
-- Latest released baseline remains P122 goal-to-plan default next-surface hardening as `v10.30`.
+- P123 goal internal native subagent assistance refinement is released as `v10.31`.
+  - It refines RULES so `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when selected governed goals remain non-trivial or route-heavy, while `/goal` stays the objective owner, `/plan` stays the route owner, and leader-owned proof wording remains the completion authority.
+  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification.
+- The immediately previous released baseline remains P122 goal-to-plan default next-surface hardening as `v10.30`.
   - It refined RULES so route-heavy selected governed goals explicitly recommend `/plan` as the default next surface while `/goal` stayed the objective owner, `/plan` stayed the route owner, and closeout returned to the goal gate instead of route completion alone.
   - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification.
 - P073 source compression completed and audited
@@ -363,10 +363,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P123 / v10.31 opens the goal internal native subagent assistance refinement wave on top of the released `v10.30 / P122` baseline.
-- It is refining RULES so `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting while `/goal` stays the objective owner and `/plan` stays the route owner.
-- The refinement must keep helper behavior internal only, keep leader-owned synthesis/proof wording intact, and keep goal-gate closeout stricter than plan draft or worker output.
-- The governed `playground/` family remains non-runtime; one updated goal-related case should keep the helper-vs-owner behavior delta inspectable without entering the runtime install payload.
+- P123 / v10.31 releases the goal internal native subagent assistance refinement wave on top of the released `v10.30 / P122` baseline.
+- It refines RULES so `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting while `/goal` stays the objective owner and `/plan` stays the route owner.
+- The refinement keeps helper behavior internal only, keeps leader-owned synthesis/proof wording intact, and keeps goal-gate closeout stricter than plan draft or worker output.
+- The governed `playground/` family remains non-runtime; the updated goal-related case keeps the helper-vs-owner behavior delta inspectable without entering the runtime install payload.
 - The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
 - The untracked `plugin/` tree remains preserved and out of staged wave scope.
 </div>
@@ -1113,7 +1113,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.30 / P122` goal-to-plan default next-surface hardening wave while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.31 / P123` goal internal native subagent assistance refinement wave while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.

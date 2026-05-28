@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.00
+> **Current Version:** 2.01
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active P123 / target v10.31 goal internal native subagent assistance refinement; latest released baseline remains v10.30 / P122
+> **Status:** Released through v10.31 / P123 goal internal native subagent assistance refinement; no active phase open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -21,12 +21,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Active Phase Roadmap
 
-### Active
+### Most Recently Completed
 
 - **P123:** [phase-123-goal-internal-subagent-assistance-refinement.md](phase-123-goal-internal-subagent-assistance-refinement.md)
-  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and let `/goal` conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when the selected governed goal remains non-trivial or route-heavy.
-  - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.31`.
-  - Gate: objective-vs-route integrity, internal-helper-only subagent integrity, conditional agent-use integrity, leader-owned synthesis/proof integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
+  - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.31`.
+  - Gate: objective-vs-route integrity, internal-helper-only subagent integrity, conditional agent-use integrity, leader-owned synthesis/proof integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.31
+  - Release tag `v10.31` resolves to commit `22974c982ea3f3c51ed0a42cdf945da7c6e0f82e`.
+  - Published at `2026-05-28T10:14:31Z`.
   - Patch: [../patch/goal-internal-subagent-assistance-refinement.patch.md](../patch/goal-internal-subagent-assistance-refinement.patch.md)
 
 ### Most Recently Completed
@@ -224,20 +226,18 @@ Latest released baseline before P123 work:
 - `git diff --check` passed for the latest released baseline
 - branch `goal-governed-work-only` and GitHub release `v10.30` are the current checked released state before P123 opens
 
-Current P123 verification focus:
+Current released baseline after P123 closeout:
+- released baseline is `v10.31 / P123`
 - a selected governed non-trivial or route-heavy goal may now conditionally use internal native subagent assistance for analysis, verification, testing, or bounded plan drafting without creating a new user-facing command
-- `/goal` must still remain the objective owner and `/plan` must still remain the route owner
-- helper findings must remain subordinate to leader-owned synthesis/proof wording rather than becoming automatic completion proof
-- one updated playground/reference case should keep the helper-vs-owner behavior delta inspectable
-- `playground/` must remain outside the runtime install payload while the active runtime count remains 18
-- runtime install, source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, default-branch update, and GitHub release verification still remain required before P123 closeout
-- the updated playground case keeps the explicit `/plan` recommendation delta inspectable
+- `/goal` still remains the objective owner and `/plan` still remains the route owner
+- helper findings remain subordinate to leader-owned synthesis/proof wording rather than becoming automatic completion proof
+- the updated playground/reference case keeps the helper-vs-owner behavior delta inspectable
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
 - 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
-- branch `goal-governed-work-only` was pushed to origin, the remote default branch remained `goal-governed-work-only`, and GitHub release `v10.30` was published at `2026-05-27T20:53:00Z`
+- branch `goal-governed-work-only` was pushed to origin, the remote default branch remained `goal-governed-work-only`, and GitHub release `v10.31` was published at `2026-05-28T10:14:31Z`
 
 ---
 

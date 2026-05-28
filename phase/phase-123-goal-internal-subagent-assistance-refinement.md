@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P123
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.31
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.31
@@ -45,20 +45,20 @@ P123 exists to refine the existing pattern rather than layering a new one on top
 
 - [x] Confirm released baseline is `v10.30 / P122` with no active wave open before P123 startup.
 - [x] Open P123 phase and patch execution surfaces.
-- [ ] Tighten goal-owned internal-helper doctrine in `execution-and-goal-frame.md`.
-- [ ] Tighten bounded goal-assisted subagent lane doctrine in `worker-routing-and-context.md`.
-- [ ] Tighten governed `/goal` execution-surface doctrine in `phase-todo-artifact.md` so internal helper use stays subordinate and `/plan` remains the route owner.
-- [ ] Tighten presentation/register/wording owners so plan draft, worker help, and goal proof stay visibly distinct.
-- [ ] Sync the directly affected design companions and owner changelog parents.
-- [ ] Update one related playground/reference case and any directly required reference surface.
-- [ ] Sync touched master surfaces in README, design, changelog, TODO, phase, and patch.
-- [ ] Re-verify that `playground/` stays outside the 18-file runtime install payload.
-- [ ] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
-- [ ] Run `git diff --check` clean.
-- [ ] Commit the source release state and push the branch.
-- [ ] Update the remote default branch so the repo view reflects the released state.
-- [ ] Create and verify GitHub release `v10.31`.
-- [ ] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
+- [x] Tighten goal-owned internal-helper doctrine in `execution-and-goal-frame.md`.
+- [x] Tighten bounded goal-assisted subagent lane doctrine in `worker-routing-and-context.md`.
+- [x] Tighten governed `/goal` execution-surface doctrine in `phase-todo-artifact.md` so internal helper use stays subordinate and `/plan` remains the route owner.
+- [x] Tighten presentation/register/wording owners so plan draft, worker help, and goal proof stay visibly distinct.
+- [x] Sync the directly affected design companions and owner changelog parents.
+- [x] Update one related playground/reference case and any directly required reference surface.
+- [x] Sync touched master surfaces in README, design, changelog, TODO, phase, and patch.
+- [x] Re-verify that `playground/` stays outside the 18-file runtime install payload.
+- [x] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
+- [x] Run `git diff --check` clean.
+- [x] Commit the source release state and push the branch.
+- [x] Update the remote default branch so the repo view reflects the released state.
+- [x] Create and verify GitHub release `v10.31`.
+- [x] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
 
 ---
 
@@ -92,10 +92,11 @@ P123 exists to refine the existing pattern rather than layering a new one on top
 
 ## Current Status
 
-P123 is active.
+P123 is completed.
 
 Current checked progress:
-- released baseline before P123 startup is `v10.30 / P122`
-- the selected improvement direction is to keep `/goal` as the only visible objective surface while allowing conditional internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when route complexity remains material
-- P123 phase/patch startup artifacts and active master execution surfaces are now opened
-- touched runtime owner refinement, companion/changelog sync, reference-case update, runtime install verification, release verification, and final closeout alignment still remain
+- released baseline before P123 startup was `v10.30 / P122`
+- the selected improvement direction hardened conditional internal native subagent assistance for analysis, verification, testing, and bounded plan drafting while keeping `/goal` as the visible objective owner and `/plan` as the route owner
+- touched runtime owners, design companions, owner changelog parents, one related playground/reference case, and touched master surfaces are updated in source scope
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` runtime exclusion recheck, and `git diff --check` all passed
+- branch push, remote default-branch verification, GitHub release `v10.31` verification, and final closeout alignment all passed

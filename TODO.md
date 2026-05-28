@@ -1,14 +1,20 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-28
-> **Current Release:** v10.30 / P122 goal-to-plan default next-surface hardening
-> **Active Wave:** P123 / target v10.31 goal internal native subagent assistance refinement
+> **Current Release:** v10.31 / P123 goal internal native subagent assistance refinement
+> **Active Wave:** none currently open
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
 ## ✅ Completed
+
+- [x] P123 / v10.31 goal internal native subagent assistance refinement was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched owners now let `/goal` conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when selected governed goals remain non-trivial or route-heavy while still keeping `/goal` as the objective owner, `/plan` as the route owner, helper behavior internal-only, and leader-owned synthesis/proof wording as the completion authority; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.31
+  - Release tag `v10.31` resolves to commit `22974c982ea3f3c51ed0a42cdf945da7c6e0f82e`.
+  - Published at `2026-05-28T10:14:31Z`.
 
 - [x] P122 / v10.30 goal-to-plan default next-surface hardening was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched owners now explicitly recommend `/plan` as the default next surface when a selected governed goal remains route-heavy while still keeping `/goal` as the objective owner, `/plan` as the route owner, and goal-gate closeout as the completion proof owner; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
@@ -164,10 +170,6 @@
 
 ### Active / In Progress
 
-- [ ] P123 / v10.31 goal internal native subagent assistance refinement is now open.
-  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and let `/goal` conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when the selected governed goal remains non-trivial or route-heavy.
-  - Expected output: touched runtime owners, one updated playground/reference case, touched master/design/changelog/TODO/phase/patch sync, runtime install-boundary verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch update, and GitHub release verification.
-  - Current status: phase/patch startup artifacts are being opened and the touched owner doctrine refinement is now in progress.
 
 ### Deferred / Not Selected
 

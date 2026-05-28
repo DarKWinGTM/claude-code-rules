@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.31 | 2026-05-28 | **[Opened goal internal native subagent assistance refinement](changelog/v10.31-added-goal-internal-subagent-assistance-refinement.changelog.md#version-1031)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 10.31 | 2026-05-28 | **[Released goal internal native subagent assistance refinement](changelog/v10.31-added-goal-internal-subagent-assistance-refinement.changelog.md#version-1031)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.30 | 2026-05-28 | **[Released goal-to-plan default next-surface hardening](changelog/v10.30-added-goal-to-plan-default-next-surface-hardening.changelog.md#version-1030)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.29 | 2026-05-27 | **[Released goal-to-plan bridge doctrine](changelog/v10.29-added-goal-to-plan-bridge-doctrine.changelog.md#version-1029)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.28 | 2026-05-22 | **[Released strategic correction posture hardening follow-up](changelog/v10.28-added-strategic-correction-posture-hardening-follow-up.changelog.md#version-1028)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
