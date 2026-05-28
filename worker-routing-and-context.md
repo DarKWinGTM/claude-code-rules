@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.9 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.9
+> **Current Version:** 1.10 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -190,6 +190,7 @@ Worker routing is normal execution behavior, not a special mode.
 - proactively look for worker-fit slices
 - keep the worker set minimal
 - prefer subagent-first handling for broad lanes without shared-team coordination
+- goal-owned internal helper use may route bounded analysis, verification, testing, or compact plan-draft slices through standalone subagents when that lowers context cost without creating a new public surface
 - reuse/steer aligned standing-role workers before duplicate-looking spawns
 - do not over-delegate simple work
 
@@ -216,6 +217,8 @@ A lane brief should minimally say:
 - what decision or next action the handoff should unblock
 
 For research lanes, include the decision surface, suggested topic boundaries, source-trust expectations, and permission to refine query/topic strategy inside scope. Scope the lane to return analyzed findings, not raw dumps. Use multiple subagents only for meaningfully independent lanes.
+
+For goal-owned internal helper use, the lane brief should also name the selected goal the helper serves, whether the lane is analysis, verification, testing, or bounded plan drafting, and that returned material remains subordinate to the selected goal rather than becoming route authority by itself.
 
 ### 14) Agent Team escalation contract
 
@@ -266,7 +269,7 @@ Do not assign overlapping writes unless one lane is explicitly review-only. Use 
 
 ### 17) Main-controller verification
 
-The leader remains responsible for synthesis, direction, verification, and completion claims. Worker findings are context, not automatic proof. Resolve conflicts from checked evidence, verify material claims before user-facing factual/completion/sync/fixed wording, and inspect changed artifacts after worker edits.
+The leader remains responsible for synthesis, direction, verification, and completion claims. Worker findings are context, not automatic proof. Resolve conflicts from checked evidence, verify material claims before user-facing factual/completion/sync/fixed wording, inspect changed artifacts after worker edits, and do not treat helper-produced plan draft, test triage, or verification notes as goal-completion proof until the leader verifies the relevant anchors/checks.
 
 ### 18) Custom agent selection after routing
 

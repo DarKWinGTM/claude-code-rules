@@ -1,7 +1,7 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
@@ -30,6 +30,8 @@ P105 refinement: this owner should now require append-vs-shard and handoff decis
 P106 refinement: this owner should now require routing and handoff decisions to name the active authority explicitly when reachable completed history still preserves older parent-model wording, so chronology does not silently override the current doctrine.
 
 P108 refinement: this owner should now keep routing-core doctrine only, defer document-density and governed-document repair doctrine to `document-integrity.md`, and defer append-vs-restructure-and-shard doctrine to `document-governance.md` so the runtime rule stays compact without losing the routing decision boundary.
+
+P123 refinement: this owner should now preserve bounded goal-owned internal helper lanes for analysis, verification, testing, and compact plan drafting so native subagent help can support `/goal` conditionally while remaining internal-only, minimally scoped, and subordinate to leader-owned synthesis and proof wording.
 
 ---
 

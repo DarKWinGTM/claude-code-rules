@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-05-28 | **[Added P123 goal-helper presentation refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-28 | **[Added P122 explicit `/plan` handoff presentation refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-27 | **[Added P121 goal-to-plan explanation-shape refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-21 | **[Added P119 active-exchange goal-surface alignment refinement](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -24,6 +25,23 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Added P123 goal-helper presentation refinement
+
+**Date:** 2026-05-28
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.11 to v1.12.
+- Updated `design/explanation-and-presentation.design.md` from v1.11 to v1.12.
+- Added presentation guidance for compact `Plan draft` and `Verification / testing route` output when bounded internal helper use is supporting the selected goal.
+- Preserved goal-vs-route separation and kept helper output subordinate to the selected goal instead of exposing a new public surface.
+
+### Summary
+`explanation-and-presentation.md` now makes bounded internal helper output presentable without inflating `/goal` into a mini-`/plan` or turning orchestration detail into the public surface.
 
 ---
 

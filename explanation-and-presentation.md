@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.11
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.7
+> **Current Version:** 1.12
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -274,6 +274,7 @@ Required guidance:
 - do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language except for preserved exact literals
 - if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light goal-shaped recommendation rather than governed-surface framing
 - if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
+- if bounded internal helper use shaped the answer, the visible surface may include a compact `Plan draft` or `Verification / testing route` block when that helps the selected goal, but it should not expose a new public owner or inflate `/goal` into a mini-spec
 - do not turn it into a mini-spec dump or background essay
 - do not emit several competing `/goal` commands when the real decision surface is still open
 - if the command would be too broad, too long, or too weakly provable, fall back to candidate goals or ordinary recommendation wording instead
@@ -285,6 +286,7 @@ When `/goal` and `/plan` both matter, keep the explanation explicit about which 
 - when both are shown together, separate the two layers directly instead of letting plan bullets read like replacement goal conditions
 - when the route is still non-trivial, explain that `/plan` serves the selected goal rather than becoming a new objective by itself
 - when the route is still non-trivial enough to justify planning, explicitly recommend `/plan` as the next surface instead of leaving the recommendation in generic prose
+- if bounded internal helper use is supporting the current turn, explain any visible `Plan draft` or `Verification / testing route` as subordinate support for the selected goal rather than as a replacement route surface
 - if a plan is finished but the goal gate is still unchecked, say so explicitly and keep closeout anchored to the goal state rather than the route state alone
 
 ### 9) Preferred closing shapes
@@ -313,6 +315,12 @@ Goal-to-plan handoff:
 <why-plan-now label in dominant session language>: <why the remaining route is still materially non-trivial>
 <plan-should-cover label in dominant session language>: <sequence, task breakdown, verification order, or equivalent route detail>
 <recommended-next label in dominant session language>: `/plan`
+
+Goal-assisted internal helper output:
+<selected-goal label in dominant session language>: <goal already chosen>
+<why-helper-now label in dominant session language>: <why bounded analysis / verification / testing / compact route drafting is still useful>
+<plan-draft label in dominant session language>: <bounded route draft that stays subordinate to the goal>
+<verification-testing-route label in dominant session language>: <checks or triage path that still need leader-owned proof wording>
 
 Candidate goals:
 <goal-option label 1 in dominant session language>: <target outcome>

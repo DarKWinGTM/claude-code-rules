@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES should surface several materially different next-step options as candidate goals earlier at a real decision boundary, how the answer should stay easy-first, compact-but-complete, structured, evidence-clear, and decision-ready instead of collapsing too early into one path, stopping at a generic future note, or sprawling into dense prose, and how a selected governed goal may then bridge into `/plan` without turning route detail into new goal conditions or treating route completion as goal completion.
+This case family shows how RULES should surface several materially different next-step options as candidate goals earlier at a real decision boundary, how the answer should stay easy-first, compact-but-complete, structured, evidence-clear, and decision-ready instead of collapsing too early into one path, stopping at a generic future note, or sprawling into dense prose, and how a selected governed goal may then either bridge into `/plan` or receive bounded internal-helper `Plan draft` / `Verification / testing route` support without turning route detail into new goal conditions or treating helper output or route completion as goal completion.
 
 ---
 
@@ -16,8 +16,9 @@ This case family shows how RULES should surface several materially different nex
 ## Governing rules
 
 - `execution-and-goal-frame.md` — allow candidate-goal surfacing at real decision boundaries when several materially different next slices remain live and no one continuation path clearly dominates, then keep `/goal` as the objective owner and `/plan` as the route owner once one governed goal is selected
-- `phase-todo-artifact.md` — let checked phase/roadmap/TODO surfaces shape compact candidate goals from visible unselected next slices, then bridge selected governed route-heavy work into `/plan` only when the route is materially non-trivial
-- `explanation-and-presentation.md` — keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output
+- `phase-todo-artifact.md` — let checked phase/roadmap/TODO surfaces shape compact candidate goals from visible unselected next slices, then bridge selected governed route-heavy work into `/plan` only when the route is materially non-trivial while allowing bounded goal-owned helper output to stay subordinate when the user remains inside `/goal`
+- `worker-routing-and-context.md` — keep native subagent help minimally scoped, internal-only, and leader-verified when it is assisting analysis, verification, testing, or compact route drafting for the selected goal
+- `explanation-and-presentation.md` — keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output or bounded helper output
 - `communication-register.md` — prevent the answer from becoming either abrupt or diffuse while keeping tone professional and human-readable and keeping goal-vs-plan wording distinct
 - `accurate-communication.md` — make verified facts, inference, and hypotheses visible enough that the reader does not have to infer confidence from tone alone, and keep route completion separate from goal completion wording
 - `evidence-discipline.md` — keep the proof thresholds and claim-state semantics strict while leaving readable grouping to the communication owners
@@ -33,7 +34,8 @@ Current RULES require the assistant to:
 - keep `/goal` responsible for objective, proof, and scope after one governed goal is selected
 - use `/plan` only for route/sequence/task breakdown when the selected goal's route is still materially non-trivial
 - explicitly recommend `/plan` as the next surface when that route-heavy condition holds instead of leaving the route in broad prose follow-up
-- return closeout to the goal gate instead of treating finished plan steps as sufficient proof by themselves
+- when the user stays inside the existing `/goal` surface, allow bounded internal helper output such as `Plan draft` or `Verification / testing route` while keeping that support subordinate to the selected goal
+- return closeout to the goal gate instead of treating finished plan steps, helper output, or route drafts as sufficient proof by themselves
 - open non-trivial answers with plain-language orientation, use a small table when several axes matter, explain identifiers by role, and end with a concise decision-ready close when that structure improves understanding
 - separate verified fact, evidence-backed inference, and open hypothesis visibly enough for a user to judge confidence correctly
 
@@ -59,14 +61,15 @@ Checked transcript-derived example:
 - No one path is clearly dominant yet.
 - The answer needs to explain flow/order/concurrency clearly enough that the user can decide which slice to open first.
 - After the first slice is selected, the remaining route is still multi-file and verification-sensitive enough that `/plan` may become useful.
+- In some turns, the user may still want to remain inside the existing `/goal` surface instead of switching immediately into `/plan`.
 
-Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation. If the user selects that governed goal and the route remains materially non-trivial, the assistant should bridge into `/plan` for route detail while keeping `/goal` as the objective contract.
+Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation. If the user selects that governed goal and the route remains materially non-trivial, the assistant should either bridge into `/plan` for route detail or, when the user remains inside `/goal`, return bounded internal-helper `Plan draft` / `Verification / testing route` support while keeping `/goal` as the objective contract.
 
 ---
 
 ## User objective
 
-Understand the system quickly, compare the live next directions clearly, decide which bounded slice should be selected next, and understand when a selected goal should stay as `/goal` versus when the route should bridge into `/plan`.
+Understand the system quickly, compare the live next directions clearly, decide which bounded slice should be selected next, and understand when a selected goal should stay as `/goal`, when the route should bridge into `/plan`, and when bounded internal-helper output can still help without changing the visible command surface.
 
 ---
 
@@ -77,6 +80,7 @@ Understand the system quickly, compare the live next directions clearly, decide 
 - Flow/order/concurrency details matter.
 - Some points are checked facts, while some are still inference or open hypothesis.
 - After one goal is selected, the remaining route can still be non-trivial enough that objective and route must stay visibly separate.
+- In some turns, the user may still want bounded route/help output while staying inside the existing `/goal` surface.
 
 ---
 
@@ -89,13 +93,14 @@ Understand the system quickly, compare the live next directions clearly, decide 
 - Explain queue/worker/retry/status identifiers by role instead of only naming them.
 - Make confidence visible: what is verified, what is inferred, and what is still hypothesis.
 - If one governed goal is selected and the route is still materially non-trivial, keep that selected goal in `/goal`, explicitly recommend `/plan` as the next surface, and move route detail into `/plan`.
+- If the user remains inside the existing `/goal` surface, bounded internal helper use may still return a compact `Plan draft` or `Verification / testing route` while keeping that output subordinate to the selected goal.
 - End with one concise recommendation and why it is first, then keep closeout tied to the selected goal gate rather than the route state alone.
 
 ---
 
 ## Decision
 
-Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives. If the user selects that governed goal and the route is still materially non-trivial, explicitly recommend `/plan` as the next surface for route detail while keeping the selected goal as the objective owner.
+Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives. If the user selects that governed goal and the route is still materially non-trivial, explicitly recommend `/plan` as the next surface for route detail while keeping the selected goal as the objective owner. If the user stays inside `/goal`, bounded internal helper output may still surface a compact `Plan draft` and `Verification / testing route` without replacing `/plan` as the route owner.
 
 ---
 
@@ -107,6 +112,7 @@ Present the three next slices as candidate goals, compare them in a small table,
 - Mark which points are verified facts versus inference versus hypotheses.
 - Close with one decision-ready next action.
 - If the user selects the governed first goal and route complexity remains material, keep `/goal` focused on outcome/proof/scope, explicitly recommend `/plan` as the next surface, and move route breakdown into `/plan`.
+- If the user remains inside `/goal`, bounded internal helper use may still return a compact `Plan draft` and `Verification / testing route` while leaving route ownership with `/plan` and proof ownership with the selected goal.
 
 ---
 
@@ -140,7 +146,21 @@ Hypothesis:
 
 Recommended first goal: inspect queue/worker lease first, because it currently has the strongest evidence support and the highest immediate diagnostic value.
 
-If you select that goal and the remaining route is still multi-file and verification-sensitive, recommended next surface: `/plan`. Keep `/goal` for outcome/proof/scope and use `/plan` only for the route breakdown. In other words: `/goal` = what must be true when this slice is done; `/plan` = how we will execute the slice. Finishing the plan steps alone is still not enough until the selected goal gate is checked.`
+If you select that goal and the remaining route is still multi-file and verification-sensitive, recommended next surface: `/plan`. Keep `/goal` for outcome/proof/scope and use `/plan` only for the route breakdown. In other words: `/goal` = what must be true when this slice is done; `/plan` = how we will execute the slice.
+
+If you want to keep the current turn inside `/goal`, bounded helper support may still help:
+
+Plan draft:
+- inspect queue / worker lease ordering first
+- inspect retry / backoff evidence second
+- inspect status visibility third
+
+Verification / testing route:
+- capture one checked queue trace
+- confirm whether retries are re-entering the queue
+- confirm whether the status lag is a reporting issue or a real execution stall
+
+This helper output supports the selected goal, but it does not replace `/plan` as the route owner and it still does not count as goal completion proof by itself.`
 
 ---
 
@@ -163,6 +183,9 @@ Close with one decision-ready recommendation
   ↓
 If the selected goal stays route-heavy
   → explicitly recommend `/plan` as the next surface
+  ↓
+If the user stays inside `/goal`
+  → bounded internal helper may shape `Plan draft` / `Verification / testing route`
 ```
 
 ---
@@ -185,9 +208,9 @@ If the selected goal stays route-heavy
 
 ## Behavior delta
 
-Without this family, the assistant can answer with one early best-path recommendation or a long prose explanation that still leaves the user to reconstruct the decision surface manually, and after a goal is selected it can still blur `/goal` and `/plan` by overloading the goal with route detail or by treating route completion as if it already proved the goal.
+Without this family, the assistant can answer with one early best-path recommendation or a long prose explanation that still leaves the user to reconstruct the decision surface manually, and after a goal is selected it can still blur `/goal` and `/plan` by overloading the goal with route detail, by hiding needed route help inside broad prose, or by treating helper output or route completion as if it already proved the goal.
 
-With RULES active, the assistant surfaces real candidate goals earlier when the decision boundary is genuinely multi-path, explains the system in an easy-first structured way, separates checked facts from inference/hypothesis, closes with a recommendation the user can act on immediately, and keeps selected-goal objective ownership distinct from later plan-route breakdown.
+With RULES active, the assistant surfaces real candidate goals earlier when the decision boundary is genuinely multi-path, explains the system in an easy-first structured way, separates checked facts from inference/hypothesis, closes with a recommendation the user can act on immediately, and keeps selected-goal objective ownership distinct from later `/plan` route breakdown or bounded internal-helper `Plan draft` / `Verification / testing route` support.
 
 ---
 

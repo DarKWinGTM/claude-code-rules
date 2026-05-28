@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.34
+> **Current Version:** 2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.35 | 2026-05-28 | **[Added P123 internal helper wording refinement](#version-235)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.34 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface wording refinement](#version-234)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.33 | 2026-05-27 | **[Added P121 goal-versus-route wording refinement](#version-233)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.32 | 2026-05-22 | **[Added P120 strategic-scope wording refinement](#version-232)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -76,6 +77,23 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-235"></a>
+## Version 2.35: Added P123 internal helper wording refinement
+
+**Date:** 2026-05-28
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.34 to v2.35.
+- Updated `design/accurate-communication.design.md` from v2.34 to v2.35.
+- Added wording guidance so helper-shaped analysis, verification, testing, or `Plan draft` output inside `/goal` is described as subordinate support rather than as a new public surface or automatic goal proof.
+- Preserved explicit `/goal` vs `/plan` wording and goal-gate closeout honesty.
+
+### Summary
+`accurate-communication.md` now keeps internal helper output evidence-calibrated so bounded route/support help can be surfaced without being misread as route ownership or verified goal completion.
 
 ---
 

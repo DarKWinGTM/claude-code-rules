@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-05-28
 > **Current Release:** v10.30 / P122 goal-to-plan default next-surface hardening
-> **Active Wave:** none currently open
+> **Active Wave:** P123 / target v10.31 goal internal native subagent assistance refinement
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -164,6 +164,10 @@
 
 ### Active / In Progress
 
+- [ ] P123 / v10.31 goal internal native subagent assistance refinement is now open.
+  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and let `/goal` conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when the selected governed goal remains non-trivial or route-heavy.
+  - Expected output: touched runtime owners, one updated playground/reference case, touched master/design/changelog/TODO/phase/patch sync, runtime install-boundary verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch update, and GitHub release verification.
+  - Current status: phase/patch startup artifacts are being opened and the touched owner doctrine refinement is now in progress.
 
 ### Deferred / Not Selected
 

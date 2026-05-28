@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -42,6 +42,8 @@ P119 refinement: this owner should now treat the user's main working language ac
 P120 refinement: this owner should now preserve strategy-before-patch evaluation so the assistant compares shared mechanisms against local exceptions before recommending a narrow local fix, keeps convenience from masquerading as evidence, and presents local exceptions as earned conclusions rather than reflex defaults.
 
 P121 refinement: this owner should now preserve a goal-vs-plan register so the assistant talks about `/goal` as the objective layer and `/plan` as the route layer, recommends planning only when the route is materially non-trivial, and avoids wording that makes route completion sound like goal completion.
+
+P123 refinement: this owner should now preserve a helper-aware goal register so visible output can mention bounded internal helper support as subordinate `Plan draft` or `Verification route` assistance when needed, while avoiding orchestration-heavy wording or the appearance of a new public owner surface.
 
 P122 refinement: this owner should now preserve explicit `/plan` recommendation wording once planning is the right next surface, so the assistant does not hide the intended handoff behind vague prose about organizing or thinking through the route.
 

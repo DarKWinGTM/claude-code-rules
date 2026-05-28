@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 1.99
+> **Current Version:** 2.00
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.30 / P122 goal-to-plan default next-surface hardening; no active phase open
+> **Status:** Active P123 / target v10.31 goal internal native subagent assistance refinement; latest released baseline remains v10.30 / P122
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -20,6 +20,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Active Phase Roadmap
+
+### Active
+
+- **P123:** [phase-123-goal-internal-subagent-assistance-refinement.md](phase-123-goal-internal-subagent-assistance-refinement.md)
+  - Goal: keep `/goal` as the objective owner, keep `/plan` as the route owner, and let `/goal` conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when the selected governed goal remains non-trivial or route-heavy.
+  - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch update, and GitHub release `v10.31`.
+  - Gate: objective-vs-route integrity, internal-helper-only subagent integrity, conditional agent-use integrity, leader-owned synthesis/proof integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, default-branch update, GitHub release verification, and closeout alignment.
+  - Patch: [../patch/goal-internal-subagent-assistance-refinement.patch.md](../patch/goal-internal-subagent-assistance-refinement.patch.md)
 
 ### Most Recently Completed
 
@@ -203,24 +211,26 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Latest released baseline before P122 work:
-- released baseline is `v10.29 / P121`
-- `/goal` already stays the objective owner while `/plan` already stays the route owner
-- governed non-trivial goals may already bridge into `/plan` without making planning mandatory for every goal
+Latest released baseline before P123 work:
+- released baseline is `v10.30 / P122`
+- route-heavy selected governed goals already explicitly recommend `/plan` as the default next surface instead of broad prose follow-up
+- `/goal` already remains the objective owner while `/plan` already remains the route owner
 - closeout already returns to the goal gate instead of treating plan completion alone as sufficient proof
-- the updated playground case already keeps the objective-vs-route behavior delta inspectable
+- the updated playground case already keeps the explicit `/plan` recommendation delta inspectable
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
 - 18/18 source/runtime parity and source/destination body sufficiency passed for the latest released baseline
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed for the latest released baseline
-- branch `goal-governed-work-only` and GitHub release `v10.29` are the current checked released state before P122 opens
+- branch `goal-governed-work-only` and GitHub release `v10.30` are the current checked released state before P123 opens
 
-Current released baseline after P122 closeout:
-- released baseline is `v10.30 / P122`
-- a selected governed route-heavy goal now explicitly recommends `/plan` as the default next surface instead of broad prose follow-up
-- `/goal` still remains the objective owner and `/plan` still remains the route owner
-- closeout still verifies the goal gate rather than route completion alone
+Current P123 verification focus:
+- a selected governed non-trivial or route-heavy goal may now conditionally use internal native subagent assistance for analysis, verification, testing, or bounded plan drafting without creating a new user-facing command
+- `/goal` must still remain the objective owner and `/plan` must still remain the route owner
+- helper findings must remain subordinate to leader-owned synthesis/proof wording rather than becoming automatic completion proof
+- one updated playground/reference case should keep the helper-vs-owner behavior delta inspectable
+- `playground/` must remain outside the runtime install payload while the active runtime count remains 18
+- runtime install, source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, default-branch update, and GitHub release verification still remain required before P123 closeout
 - the updated playground case keeps the explicit `/plan` recommendation delta inspectable
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
@@ -233,9 +243,9 @@ Current released baseline after P122 closeout:
 
 ## Rollback / Containment
 
-If P122 is reversed after release:
+If P123 is reversed after release:
 - revert the touched governed `/goal` doctrine edits as one governed rollback release
-- restore the released `v10.29 / P121` source state as the active baseline
+- restore the released `v10.30 / P122` source state as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

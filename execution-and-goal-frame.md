@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.14
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.10
+> **Current Version:** 1.15
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -167,12 +167,22 @@ Required guidance:
 - do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language; only preserved exact literals may remain unchanged inside the localized scaffold
 - when governed-surface context is mandatory, source it from design first, then active execution surfaces, with changelog, patch, and README included only when they materially shape completion, review, or current-state impact
 
+### 9.1.1) Internal native subagent assistance inside `/goal`
+When a selected or promoted governed `/goal` remains non-trivial or route-heavy, `/goal` may conditionally use internal native subagent assistance to help with analysis, verification, testing, or bounded plan drafting without creating a new user-facing command.
+- keep `/goal` as the visible objective contract and do not expose helper use as a new public owner by default
+- use helper assistance only when separate context materially improves evidence gathering, verification, test/log triage, or compact route drafting for the selected goal
+- any returned `Plan draft` or verification/testing route remains subordinate support for the selected goal and must not replace `/plan` as the route owner
+- if explicit route work becomes the user-facing next surface, still recommend `/plan` directly instead of overloading `/goal`
+- helper findings are input, not completion proof; main-controller synthesis, visible proof wording, and goal-gate closeout remain leader-owned
+- do not force helper use for trivial or already direct goals
+
 ### 9.2) Selected goal to `/plan` bridge
 When a goal is already selected, `/plan` is a route tool, not a second goal surface.
 - keep `/goal` responsible for objective, done condition, proof, and scope
 - use `/plan` for route selection, sequence, task breakdown, and execution order only when the route is still materially non-trivial
 - bridge into `/plan` when the selected goal is governed and the route still needs meaningful decomposition, such as multi-file work, multiple owner surfaces, several live route options, meaningful verification/release sync, or architecture/rollback-sensitive sequencing
 - when that bridge condition holds, explicitly recommend `/plan` as the default next surface rather than leaving the route in broad prose follow-up
+- if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper assistance may support the selected goal without changing `/plan` route ownership
 - do not open `/plan` by reflex when the selected goal is already direct, bounded, and safe to continue without route uncertainty
 - if the route in `/plan` drifts from the selected goal, repair the route or explicitly revisit the goal basis instead of silently treating the plan as the new authority
 - when plan steps are completed but the selected goal's proof/gate is still open, continue into goal-gate verification instead of closing on route completion alone

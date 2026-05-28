@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.17
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.13
+> **Current Version:** 1.18
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -266,6 +266,7 @@ Required guidance:
 - do not leave successor output as a generic future note when the smaller bounded slice is already derivable from checked execution surfaces
 - preserve exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters where exactness matters, but do not treat the whole emitted command body as one exact literal
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
+- when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape a compact `Plan draft` or verification/testing route through conditional internal native subagent assistance, but that support remains subordinate to the goal and does not create a new public route owner
 - do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command
 
@@ -275,9 +276,10 @@ When a governed goal is already selected and the remaining work is route-heavy, 
 - use `/plan` to choose sequence, phase/lane breakdown, owner ordering, and verification order when those route decisions are materially non-trivial
 - bridge into `/plan` when the selected goal is multi-step, multi-file, phase-backed, owner-splitting, release-sync-heavy, or still has several materially different execution routes
 - when that bridge condition holds, execution surfaces should explicitly recommend `/plan` as the next surface instead of broad prose follow-up
+- if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper use may support the selected goal without changing `/plan` route ownership
 - if the selected goal is already direct, bounded, and safe to continue, keep execution in goal/phase/task surfaces without forcing a plan
 - when a plan is opened, phase and task surfaces should keep visible which selected goal the route serves
-- closeout should still verify the selected goal gate rather than treating completed plan steps as sufficient proof by themselves
+- closeout should still verify the selected goal gate rather than treating completed plan steps or worker-produced route drafts as sufficient proof by themselves
 
 ### 7) Patch linkage inside phase
 When phased work uses a governed patch artifact:

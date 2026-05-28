@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.18 | 2026-05-28 | **[Added P123 internal goal-helper execution refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-27 | **[Added P121 selected-goal to `/plan` execution bridge refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-21 | **[Added P119 active-exchange concept-slot and exact-literal boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -30,6 +31,23 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-118"></a>
+## Version 1.18: Added P123 internal goal-helper execution refinement
+
+**Date:** 2026-05-28
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.17 to v1.18.
+- Updated `design/phase-todo-artifact.design.md` from v1.17 to v1.18.
+- Added guidance that governed execution surfaces may keep the user inside the existing `/goal` surface while using conditional internal native subagent assistance to shape bounded plan draft or verification/testing route output.
+- Preserved `/plan` as the route owner and kept helper-produced route support subordinate to leader-owned goal proof.
+
+### Summary
+`phase-todo-artifact.md` now explains how governed execution can use conditional internal helper support inside `/goal` without creating a new public pattern or replacing `/plan` as the route owner.
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.34
+> **Current Version:** 2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -43,6 +43,7 @@ This chain is the wording owner for:
 - explicit preservation of exact literals such as `/goal`, file paths, version tags, code identifiers, and query parameters when they should remain exact rather than translated
 - wrapper-only-translation wording so translating the wrapper while leaving the goal-shaped body in another language is treated as insufficient alignment rather than as success
 - goal-versus-plan wording so responses keep `/goal` responsible for outcome/proof/scope, keep `/plan` responsible for route/sequence/task breakdown, and avoid letting completed route work read like completed goal proof
+- internal-helper wording so bounded native subagent assistance inside `/goal` can surface plan draft or verification/testing route help without being misreported as a new public surface or automatic goal proof
 - explicit `/plan` next-surface wording so route-heavy selected goals can name planning directly instead of implying it only through broad prose about organizing next work
 - visible evidence-layer wording so mixed-confidence answers can separate verified facts, inference, and hypotheses clearly enough for the reader without relying on tone alone
 - strategy-aware recommendation wording so shared-mechanism readings remain visible when the evidence does not yet justify supplier/model/path-specific scope as a settled fix owner
