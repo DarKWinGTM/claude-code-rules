@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-05-29 | **[Added P124 pre-goal plan-backed goal-authoring refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-28 | **[Added P123 internal goal-helper refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-27 | **[Added P121 selected-goal to `/plan` bridge refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -29,6 +30,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-116"></a>
+## Version 1.16: Added P124 pre-goal plan-backed goal-authoring refinement
+
+**Date:** 2026-05-29
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.15 to v1.16.
+- Updated `design/execution-and-goal-frame.design.md` from v1.15 to v1.16.
+- Added guidance that advisory governed `/goal` creation may conditionally run an internal pre-goal planning pass before final goal emission when route synthesis materially improves the command.
+- Added native-subagent assistance coverage for analysis, route drafting, verification ordering, and optional plan-file reference synthesis while keeping that help internal-only and subordinate to the emitted or selected goal.
+- Preserved `/goal` as the objective owner, preserved direct `/goal` emission for simple goals, and preserved `/plan` as the route owner when explicit user-facing route work is still needed.
+
+### Summary
+`execution-and-goal-frame.md` now allows plan-backed advisory `/goal` authoring before final goal emission without transferring objective ownership away from `/goal` or turning plan-backed route material into goal-completion proof.
 
 ---
 

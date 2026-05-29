@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-05-29 | **[Added P124 plan-backed goal register refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-28 | **[Added P123 helper-aware goal register refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-28 | **[Added P122 explicit `/plan` recommendation register refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-27 | **[Added P121 goal-vs-plan register refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -26,6 +27,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Added P124 plan-backed goal register refinement
+
+**Date:** 2026-05-29
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.13 to v1.14.
+- Updated `design/communication-register.design.md` from v1.13 to v1.14.
+- Added register guidance so a conditional pre-goal planning pass reads as preparation for the advisory `/goal`, not as `/plan` taking over ownership.
+- Added `Plan reference` wording support while preserving route-only meaning and preventing the reference from reading like proof that the goal is already satisfied.
+- Preserved goal-vs-plan wording and high-signal pruning boundaries.
+
+### Summary
+`communication-register.md` now keeps plan-backed `/goal` wording concise and professional without making route preparation sound like objective transfer or goal-completion proof.
 
 ---
 

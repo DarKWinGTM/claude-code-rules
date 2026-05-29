@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.18
+> **Current Version:** 1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-05-29 | **[Added P124 pre-goal `/goal` sourcing refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-05-28 | **[Added P123 internal goal-helper execution refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-27 | **[Added P121 selected-goal to `/plan` execution bridge refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -31,6 +32,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-119"></a>
+## Version 1.19: Added P124 pre-goal `/goal` sourcing refinement
+
+**Date:** 2026-05-29
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.18 to v1.19.
+- Updated `design/phase-todo-artifact.design.md` from v1.18 to v1.19.
+- Added guidance that governed execution surfaces may conditionally run an internal pre-goal planning pass before advisory `/goal` emission when route synthesis materially improves the command.
+- Added optional plan-file reference guidance while preserving plan files as route-only context.
+- Preserved direct `/goal` emission for simple work, preserved `/plan` as the route owner after goal selection, and preserved goal-gate closeout instead of route-state proof.
+
+### Summary
+`phase-todo-artifact.md` now explains how governed execution surfaces can shape route-heavy advisory `/goal` output through a conditional pre-goal planning pass without replacing `/goal` as the objective owner or `/plan` as the route owner.
 
 ---
 

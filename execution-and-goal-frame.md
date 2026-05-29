@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.15
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.15
+> **Current Version:** 1.16
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.16
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -161,17 +161,21 @@ Required guidance:
 - when several successor goals remain live, surface them as candidate goals first and promote only the best-supported governed candidate into `/goal` when this bridge actually holds
 - if proof cannot be made transcript-visible, do not suggest `/goal`
 - if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
+- when governed work is non-trivial or route-heavy and route synthesis would materially improve the command, advisory `/goal` creation may conditionally run an internal pre-goal planning pass before final goal emission
+- that pre-goal planning pass may use native subagent assistance for analysis, route drafting, verification ordering, and optional plan-file reference synthesis while remaining internal-only and subordinate to the emitted goal
+- simple or already direct goals should still emit `/goal` directly without forcing pre-planning
+- when a durable route artifact is useful, a plan file may be referenced from the emitted goal or surrounding explanation, but the plan file must remain a route artifact and must not become objective authority
 - when surfaced, candidate-goal labels, promoted `/goal` body, surrounding recommendation labels, and recap/closing lines should follow the dominant language of the active exchange by default rather than leaving English scaffolds around non-English goal output
 - infer that default language from the user's main working language across the current exchange even when the user did not issue a direct language instruction; an explicit language request is a stronger override
 - preserve exact literals such as `/goal`, file paths, version tags, code-level identifiers, and query parameters unless the user explicitly selects another language style or a checked exact token must remain unchanged
 - do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language; only preserved exact literals may remain unchanged inside the localized scaffold
 - when governed-surface context is mandatory, source it from design first, then active execution surfaces, with changelog, patch, and README included only when they materially shape completion, review, or current-state impact
 
-### 9.1.1) Internal native subagent assistance inside `/goal`
-When a selected or promoted governed `/goal` remains non-trivial or route-heavy, `/goal` may conditionally use internal native subagent assistance to help with analysis, verification, testing, or bounded plan drafting without creating a new user-facing command.
-- keep `/goal` as the visible objective contract and do not expose helper use as a new public owner by default
-- use helper assistance only when separate context materially improves evidence gathering, verification, test/log triage, or compact route drafting for the selected goal
-- any returned `Plan draft` or verification/testing route remains subordinate support for the selected goal and must not replace `/plan` as the route owner
+### 9.1.1) Internal native subagent assistance inside and before `/goal`
+When a governed `/goal` is being shaped or has already been selected and route complexity remains material, `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, or bounded route drafting without creating a new user-facing command.
+- keep `/goal` as the visible objective contract whether the helper work happened during pre-goal planning or after the goal was selected
+- use helper assistance only when separate context materially improves evidence gathering, route drafting, verification ordering, test/log triage, or optional plan-file reference synthesis
+- any returned `Plan draft`, `Verification / testing route`, or plan-file reference remains subordinate route support for the goal and must not replace `/plan` as the route owner
 - if explicit route work becomes the user-facing next surface, still recommend `/plan` directly instead of overloading `/goal`
 - helper findings are input, not completion proof; main-controller synthesis, visible proof wording, and goal-gate closeout remain leader-owned
 - do not force helper use for trivial or already direct goals
@@ -182,6 +186,7 @@ When a goal is already selected, `/plan` is a route tool, not a second goal surf
 - use `/plan` for route selection, sequence, task breakdown, and execution order only when the route is still materially non-trivial
 - bridge into `/plan` when the selected goal is governed and the route still needs meaningful decomposition, such as multi-file work, multiple owner surfaces, several live route options, meaningful verification/release sync, or architecture/rollback-sensitive sequencing
 - when that bridge condition holds, explicitly recommend `/plan` as the default next surface rather than leaving the route in broad prose follow-up
+- if a pre-goal planning pass or helper-produced route draft already exists, that material remains subordinate support for the selected goal and does not eliminate the `/plan` bridge when explicit user-facing route work is still needed
 - if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper assistance may support the selected goal without changing `/plan` route ownership
 - do not open `/plan` by reflex when the selected goal is already direct, bounded, and safe to continue without route uncertainty
 - if the route in `/plan` drifts from the selected goal, repair the route or explicitly revisit the goal basis instead of silently treating the plan as the new authority
@@ -249,6 +254,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
 | phase-shaped follow-up | apply ordered phase identity handling and preserve visible phase linkage: current active phase → existing-family subphase → new major → ask/record basis; a new major requires checked why-not-current / why-not-subphase evidence |
+| governed non-trivial or route-heavy `/goal` candidate would benefit from route synthesis before final emission | allow a conditional internal pre-goal planning pass while keeping `/goal` as objective owner and `/plan` as route owner |
 | selected governed goal is non-trivial and route choice is still material | explicitly recommend `/plan` as the default next surface while keeping the selected `/goal` as the active objective owner |
 | plan steps are done but goal proof/gate is still pending | continue to goal-gate verification instead of closing on route completion |
 | several materially different next slices are live and no one continuation path clearly dominates | surface compact candidate goals instead of collapsing early into one plain next-step answer |

@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.35
+> **Current Version:** 2.36
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.36 | 2026-05-29 | **[Added P124 pre-goal planning-pass wording refinement](#version-236)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.35 | 2026-05-28 | **[Added P123 internal helper wording refinement](#version-235)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.34 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface wording refinement](#version-234)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.33 | 2026-05-27 | **[Added P121 goal-versus-route wording refinement](#version-233)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -77,6 +78,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-236"></a>
+## Version 2.36: Added P124 pre-goal planning-pass wording refinement
+
+**Date:** 2026-05-29
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.35 to v2.36.
+- Updated `design/accurate-communication.design.md` from v2.35 to v2.36.
+- Added wording guidance so a conditional pre-goal planning pass is described as route preparation for an advisory `/goal`, not as plan ownership or completion proof.
+- Added optional plan-reference wording coverage while preserving that plan files and helper output remain route-only context.
+- Preserved explicit `/goal` vs `/plan` wording and goal-gate closeout honesty.
+
+### Summary
+`accurate-communication.md` now keeps pre-goal planning-pass wording evidence-calibrated so plan-backed `/goal` authoring can be described clearly without making plan files or helper output sound like objective ownership or verified goal completion.
 
 ---
 

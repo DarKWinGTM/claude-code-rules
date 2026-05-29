@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-05-29 | **[Added P124 plan-backed advisory `/goal` presentation refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-28 | **[Added P123 goal-helper presentation refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-28 | **[Added P122 explicit `/plan` handoff presentation refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-27 | **[Added P121 goal-to-plan explanation-shape refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -25,6 +26,24 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-113"></a>
+## Version 1.13: Added P124 plan-backed advisory `/goal` presentation refinement
+
+**Date:** 2026-05-29
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.12 to v1.13.
+- Updated `design/explanation-and-presentation.design.md` from v1.12 to v1.13.
+- Added presentation guidance for plan-backed advisory `/goal` output when a conditional pre-goal planning pass shapes the command before final emission.
+- Added compact `Plan reference` coverage alongside `Plan draft` and `Verification / testing route` while preserving route-only meaning.
+- Preserved goal-vs-route separation and kept pre-goal helper output subordinate to the emitted or selected goal instead of exposing a new public surface.
+
+### Summary
+`explanation-and-presentation.md` now makes plan-backed advisory `/goal` output presentable without inflating the visible goal surface into a mini-`/plan` or turning route context into a second objective layer.
 
 ---
 

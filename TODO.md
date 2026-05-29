@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-28
+> **Last Updated:** 2026-05-29
 > **Current Release:** v10.31 / P123 goal internal native subagent assistance refinement
-> **Active Wave:** none currently open
+> **Active Wave:** P124 / target v10.32 pre-goal plan-backed goal authoring refinement
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -170,6 +170,10 @@
 
 ### Active / In Progress
 
+- [ ] P124 / v10.32 pre-goal plan-backed goal authoring refinement is now open.
+  - Goal: keep `/goal` as the objective owner, keep `/plan` plus plan files as route artifacts only, and let advisory `/goal` creation conditionally run an internal pre-goal planning pass with native subagent help for analysis, route drafting, verification ordering, and optional plan-file reference synthesis when governed work remains non-trivial or route-heavy.
+  - Expected output: touched runtime owners, one updated playground/reference case, touched master/design/changelog/TODO/phase/patch sync, runtime install-boundary verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch verification, and GitHub release verification.
+  - Current status: phase/patch startup artifacts are being opened and the touched owner doctrine refinement is now in progress.
 
 ### Deferred / Not Selected
 

@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -40,6 +40,8 @@ P118 refinement: this owner should now treat generic future-note closeout as ins
 P119 refinement: this owner should now require wrapper labels, promoted `/goal` body text, and recommendation-shaped scaffold around preserved exact literals to stay aligned to the dominant language of the active exchange by default, treat explicit language requests as a stronger override, preserve exact literals token-by-token including query parameters, and reject wrapper-only translation as insufficient visible alignment.
 
 P123 refinement: this owner should now preserve a compact `Plan draft` / `Verification / testing route` presentation shape for goal-owned internal helper use, keep that helper output visibly subordinate to the selected goal, and avoid letting the visible `/goal` surface inflate into a mini-`/plan` or orchestration narrative.
+
+P124 refinement: this owner should now preserve a plan-backed advisory `/goal` presentation shape so a conditional pre-goal planning pass may surface compact `Plan draft`, `Verification / testing route`, or `Plan reference` context before or around the emitted goal without turning the visible goal surface into a mini-`/plan` or a second objective layer.
 
 P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
 

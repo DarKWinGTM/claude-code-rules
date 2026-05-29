@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.12
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.12
+> **Current Version:** 1.13
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -274,7 +274,8 @@ Required guidance:
 - do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language except for preserved exact literals
 - if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light goal-shaped recommendation rather than governed-surface framing
 - if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
-- if bounded internal helper use shaped the answer, the visible surface may include a compact `Plan draft` or `Verification / testing route` block when that helps the selected goal, but it should not expose a new public owner or inflate `/goal` into a mini-spec
+- if a conditional pre-goal planning pass shaped the promoted `/goal`, the visible surface may include a compact `Plan draft`, `Verification / testing route`, or `Plan reference` block, but only as subordinate route context rather than as a second objective surface or completion proof
+- if bounded internal helper use shaped the answer, keep any helper block compact enough that it supports the goal without inflating `/goal` into a mini-spec
 - do not turn it into a mini-spec dump or background essay
 - do not emit several competing `/goal` commands when the real decision surface is still open
 - if the command would be too broad, too long, or too weakly provable, fall back to candidate goals or ordinary recommendation wording instead
@@ -283,9 +284,11 @@ Required guidance:
 When `/goal` and `/plan` both matter, keep the explanation explicit about which layer is being discussed.
 - present `/goal` as the objective layer: outcome, proof/checks, scope, and hard guardrails
 - present `/plan` as the route layer: sequence, approach, task breakdown, and execution order
+- if a conditional pre-goal planning pass shaped the advisory `/goal` before emission, explain that the planning pass prepared the route basis but did not replace `/goal` as the objective layer
 - when both are shown together, separate the two layers directly instead of letting plan bullets read like replacement goal conditions
 - when the route is still non-trivial, explain that `/plan` serves the selected goal rather than becoming a new objective by itself
 - when the route is still non-trivial enough to justify planning, explicitly recommend `/plan` as the next surface instead of leaving the recommendation in generic prose
+- if a plan file is referenced from the goal surface, present it as `Plan reference` or equivalent route context rather than as objective ownership or completion proof
 - if bounded internal helper use is supporting the current turn, explain any visible `Plan draft` or `Verification / testing route` as subordinate support for the selected goal rather than as a replacement route surface
 - if a plan is finished but the goal gate is still unchecked, say so explicitly and keep closeout anchored to the goal state rather than the route state alone
 
@@ -338,6 +341,7 @@ Advisory proposal:
 
 Advisory `/goal` block:
 <label in dominant session language if a wrapper is shown, or omit the wrapper entirely>
+<plan-reference label in dominant session language, when a durable route artifact materially helps>: <plan file path or compact route note>
 /goal <dominant-session-language wording for outcome + proof/checks + scope + keep constraints + stop bound, preserving exact literals where they should remain exact>
 
 Optional deep dive:

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.01
+> **Current Version:** 2.02
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Released through v10.31 / P123 goal internal native subagent assistance refinement; no active phase open
+> **Status:** Active P124 / target v10.32 pre-goal plan-backed goal authoring refinement; latest released baseline remains v10.31 / P123
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -20,6 +20,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ---
 
 ## Active Phase Roadmap
+
+### Active
+
+- **P124:** [phase-124-pre-goal-plan-backed-goal-authoring-refinement.md](phase-124-pre-goal-plan-backed-goal-authoring-refinement.md)
+  - Goal: keep `/goal` as the objective owner, keep `/plan` plus plan files as route artifacts only, and let advisory `/goal` creation conditionally run an internal pre-goal planning pass before final goal emission when governed work remains non-trivial or route-heavy.
+  - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.32`.
+  - Gate: pre-goal route-synthesis integrity, plan-backed goal-authoring integrity, simple-goal direct-path integrity, plan-file reference-only integrity, leader-owned normalization/proof integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment.
+  - Patch: [../patch/pre-goal-plan-backed-goal-authoring-refinement.patch.md](../patch/pre-goal-plan-backed-goal-authoring-refinement.patch.md)
 
 ### Most Recently Completed
 

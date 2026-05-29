@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.35
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.35
+> **Current Version:** 2.36
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.36
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -104,9 +104,10 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - if a candidate goal is promoted into `/goal`, keep that promotion visibly advisory and do not phrase it as queued or already-selected execution
 - if a `/goal` suggestion is offered, keep it visibly advisory and do not phrase it as queued or already-selected execution
 - when a `/goal` suggestion depends on proof, name only proof/checks that can be surfaced in the conversation rather than implying hidden verification
+- if a `/goal` suggestion was shaped by a conditional pre-goal planning pass, say that the planning pass only prepared route basis, proof ordering, or an optional plan reference; it does not make the plan, plan file, or helper output the objective owner or goal-completion proof
 - if `/plan` is introduced after a selected `/goal`, keep the wording explicit that the goal still owns outcome/proof/scope while the plan owns route/sequence/task breakdown
 - if route complexity is still the reason planning is needed, say `/plan` directly instead of implying it only through vague prose about structuring or organizing next work
-- if bounded internal helper use shapes analysis, verification, testing, or a `Plan draft` inside `/goal`, keep the wording explicit that helper output is subordinate support rather than a new public surface or automatic goal proof
+- if bounded internal helper use shapes analysis, verification, testing, pre-goal planning, or a `Plan draft` inside `/goal`, keep the wording explicit that helper output is subordinate support rather than a new public surface or automatic goal proof
 - if the plan is complete but the goal gate is not yet checked, say so directly rather than letting route completion read like goal completion
 - when both surfaces are mentioned together, make it visible whether the status being reported is objective status or route status
 - candidate goals, promoted `/goal`, surrounding recommendation labels, recap/closing lines, and the natural-language scaffold around preserved exact literals should follow the dominant language of the active exchange by default even when the user did not give a direct language instruction; an explicit language request is a stronger override
