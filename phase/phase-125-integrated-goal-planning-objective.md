@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P125
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.33
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.33
@@ -42,22 +42,22 @@ P125 exists to normalize that target shape. `/goal` should still be the visible 
 
 ## Action Checklist
 
-- [ ] Open P125 phase and patch execution surfaces while preserving P123 as the latest released baseline.
-- [ ] Mark P124 as an unreleased predecessor draft superseded by the broader P125 target model.
-- [ ] Tighten integrated goal-with-planning doctrine in `execution-and-goal-frame.md`.
-- [ ] Tighten governed `/goal` execution-surface doctrine in `phase-todo-artifact.md` so automatic planning support remains inside the goal-centric surface.
-- [ ] Tighten presentation/register owners so visible output no longer reads like `/goal` and `/plan` are two sideways branches.
-- [ ] Tighten worker-routing doctrine so helper/subagent lanes support integrated goal authoring and not a competing planning surface.
-- [ ] Sync the directly affected design companions and owner changelog parents.
-- [ ] Update one related playground/reference case and any directly required reference surface.
-- [ ] Sync touched master surfaces in README, design, changelog, TODO, phase, and patch.
-- [ ] Re-verify that `playground/` stays outside the 18-file runtime install payload.
-- [ ] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
-- [ ] Run `git diff --check` clean.
-- [ ] Commit the source release state and push the branch.
-- [ ] Update the remote default branch so the repo view reflects the released state.
-- [ ] Create and verify GitHub release `v10.33`.
-- [ ] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
+- [x] Open P125 phase and patch execution surfaces while preserving P123 as the latest released baseline.
+- [x] Mark P124 as an unreleased predecessor draft superseded by the broader P125 target model.
+- [x] Tighten integrated goal-with-planning doctrine in `execution-and-goal-frame.md`.
+- [x] Tighten governed `/goal` execution-surface doctrine in `phase-todo-artifact.md` so automatic planning support remains inside the goal-centric surface.
+- [x] Tighten presentation/register owners so visible output no longer reads like `/goal` and `/plan` are two sideways branches.
+- [x] Tighten worker-routing doctrine so helper/subagent lanes support integrated goal authoring and not a competing planning surface.
+- [x] Sync the directly affected design companions and owner changelog parents.
+- [x] Update one related playground/reference case and any directly required reference surface.
+- [x] Sync touched master surfaces in README, design, changelog, TODO, phase, and patch.
+- [x] Re-verify that `playground/` stays outside the 18-file runtime install payload.
+- [x] Install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
+- [x] Run `git diff --check` clean.
+- [x] Commit the source release state and push the branch.
+- [x] Update the remote default branch so the repo view reflects the released state.
+- [x] Create and verify GitHub release `v10.33`.
+- [x] Finalize closeout records so runtime/design/changelog/TODO/phase/patch status agree.
 
 ---
 
@@ -94,10 +94,11 @@ P125 exists to normalize that target shape. `/goal` should still be the visible 
 
 ## Current Status
 
-P125 is active.
+P125 is completed.
 
 Current checked progress:
-- released baseline before P125 startup remains `v10.31 / P123`
-- the selected improvement direction is to integrate planning into the goal-centric surface rather than offering `/goal` and `/plan` as sideways outputs
-- P125 phase/patch startup artifacts and active master execution surfaces are now being opened
-- touched runtime owner refinement, companion/changelog sync, reference-case update, runtime install verification, release verification, and final closeout alignment still remain
+- released baseline before P125 startup was `v10.31 / P123`
+- the selected improvement direction now ships one integrated goal-with-planning visible surface for governed non-trivial or route-heavy work while keeping `/goal` as the objective owner and `/plan` as overflow or explicitly requested standalone route handling only
+- touched runtime owners, design companions, owner changelog parents, one related playground/reference case, and touched master surfaces are updated in source scope
+- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` runtime exclusion recheck, and `git diff --check` all passed
+- branch push, remote default-branch verification, GitHub release `v10.33` verification, and final closeout alignment all passed

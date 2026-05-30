@@ -1,14 +1,21 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-30
-> **Current Release:** v10.31 / P123 goal internal native subagent assistance refinement
-> **Active Wave:** P125 / target v10.33 integrated goal-with-planning objective
+> **Current Release:** v10.33 / P125 integrated goal-with-planning objective
+> **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
 ## ✅ Completed
+
+- [x] P125 / v10.33 integrated goal-with-planning objective was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: touched owners now keep route-heavy governed `/goal` work on one integrated goal-centric visible surface by default, allow internal planning / plan-mode-style support only when necessary, keep compact `Plan draft` / `Plan basis` / `Verification / testing route` / `Plan reference` support subordinate to the goal surface, keep `/plan` as overflow or explicitly requested standalone route handling only, and preserve simple-goal direct emission; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.33
+  - Release tag `v10.33` resolves to commit `b509d7cea18de13f6bfcc5435f8cb7255ceb4cda`.
+  - Published at `2026-05-30T15:59:23Z`.
+  - Historical note: P124 remains an unreleased predecessor draft preserved as the narrower pre-goal plan-backed stage that led into this released model.
 
 - [x] P123 / v10.31 goal internal native subagent assistance refinement was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched owners now let `/goal` conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when selected governed goals remain non-trivial or route-heavy while still keeping `/goal` as the objective owner, `/plan` as the route owner, helper behavior internal-only, and leader-owned synthesis/proof wording as the completion authority; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
@@ -170,13 +177,7 @@
 
 ### Active / In Progress
 
-- [ ] P125 / v10.33 integrated goal-with-planning objective is now open.
-  - Goal: keep `/goal` as the single visible objective surface for governed non-trivial or route-heavy requests, let internal planning / plan-mode-style support run automatically when necessary before emitting the goal, keep planning support subordinate inside the goal-centric surface, and keep `/plan` plus plan files as overflow or explicitly requested route artifacts only rather than a normal paired output.
-  - Expected output: touched runtime owners, one updated playground/reference case, touched master/design/changelog/TODO/phase/patch sync, runtime install-boundary verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch verification, and GitHub release verification.
-  - Current status: P125 phase/patch startup artifacts are being opened and the touched owner doctrine refinement is now in progress.
-
-- [ ] P124 / v10.32 pre-goal plan-backed goal authoring refinement remains an unreleased predecessor draft and is superseded by the broader P125 integrated goal-with-planning objective.
-  - Boundary: keep P124 as historical predecessor context rather than the active target model; latest released baseline still remains `v10.31 / P123`.
+- None currently selected. Latest released baseline is `v10.33 / P125`.
 
 ### Deferred / Not Selected
 

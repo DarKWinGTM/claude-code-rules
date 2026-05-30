@@ -3,7 +3,7 @@
 > **Current Version:** 2.03
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active P125 / target v10.33 integrated goal-with-planning objective; latest released baseline remains v10.31 / P123
+> **Status:** No active phase selected; latest released baseline is v10.33 / P125 integrated goal-with-planning objective
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,16 +23,20 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P125:** [phase-125-integrated-goal-planning-objective.md](phase-125-integrated-goal-planning-objective.md)
-  - Goal: keep `/goal` as the single visible objective surface for governed non-trivial or route-heavy requests, let internal planning / plan-mode-style support run automatically when necessary before emitting the goal, keep planning support subordinate inside the goal-centric surface, and keep `/plan` plus plan files as overflow or explicitly requested route artifacts only rather than a normal paired output.
-  - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.33`.
-  - Gate: integrated goal-surface integrity, automatic-when-necessary planning integrity, simple-goal direct-path integrity, subordinate-planning-support integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment.
-  - Patch: [../patch/integrated-goal-planning-objective.patch.md](../patch/integrated-goal-planning-objective.patch.md)
-
-- **P124:** [phase-124-pre-goal-plan-backed-goal-authoring-refinement.md](phase-124-pre-goal-plan-backed-goal-authoring-refinement.md)
-  - Status note: unreleased predecessor draft superseded by P125; keep as historical context for the shift from pre-goal plan-backed authoring into one integrated goal-with-planning surface.
+- None currently selected. Latest released baseline is `v10.33 / P125`.
 
 ### Most Recently Completed
+
+- **P125:** [phase-125-integrated-goal-planning-objective.md](phase-125-integrated-goal-planning-objective.md)
+  - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.33`.
+  - Gate: integrated goal-surface integrity, automatic-when-necessary planning integrity, simple-goal direct-path integrity, subordinate-planning-support integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.33
+  - Release tag `v10.33` resolves to commit `b509d7cea18de13f6bfcc5435f8cb7255ceb4cda`.
+  - Published at `2026-05-30T15:59:23Z`.
+  - Patch: [../patch/integrated-goal-planning-objective.patch.md](../patch/integrated-goal-planning-objective.patch.md)
+  - Historical note: P124 remains an unreleased predecessor draft preserved as context for the narrower pre-goal plan-backed stage that led into this released model.
+
+### Previously Completed
 
 - **P123:** [phase-123-goal-internal-subagent-assistance-refinement.md](phase-123-goal-internal-subagent-assistance-refinement.md)
   - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.31`.

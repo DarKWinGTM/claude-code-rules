@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [design/design.md](../design/design.md) v10.33
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
@@ -10,7 +10,7 @@
 
 ## Context
 
-This is the governed patch record for the planned `v10.33 / P125` wave.
+This is the governed patch record for the released `v10.33 / P125` wave.
 
 It packages one bounded runtime + reference follow-up refinement so `/goal` and planning work as one integrated surface for governed non-trivial or route-heavy requests: assistant may automatically use internal planning / plan-mode-style support when necessary before final goal emission, while the visible output remains one goal-centric surface and `/plan` remains overflow or explicitly requested route handling only.
 
@@ -106,6 +106,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P125 is active.
+P125 is completed.
 
-The checked workflow gap and the bounded improvement direction are established, and the phase/patch startup artifacts are opened. Touched runtime owner refinement, companion/changelog sync, reference-case update, runtime install-boundary proof, 18/18 parity/body-sufficiency verification, `git diff --check`, commit/push/default-branch verification, GitHub release verification, and final closeout alignment remain in progress.
+The checked workflow gap was established, the bounded improvement direction was selected, and the phase/patch startup artifacts were opened. Touched runtime owner refinement, companion/changelog sync, reference-case update, runtime install-boundary proof, 18/18 parity/body-sufficiency verification, `git diff --check`, commit/push/default-branch verification, GitHub release verification, and final closeout alignment all completed.

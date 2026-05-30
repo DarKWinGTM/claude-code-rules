@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.33</b><br><sub>P125 Active</sub>
+  <b>v10.33</b><br><sub>P125 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>Verification pending</sub>
+  <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
   <b>Integrated Goal</b><br><sub>Planning as one surface</sub>
@@ -195,14 +195,13 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 #### Runtime Context Discipline
 - 18 active runtime rules in the current compact merged source install set
-- P125 integrated goal-with-planning objective is active toward `v10.33`.
-  - It is refining RULES so governed non-trivial or route-heavy `/goal` requests may automatically use internal planning / plan-mode-style support when necessary before the goal is emitted, while the visible output stays one goal-centric surface and any plan basis, verification route, or plan reference stays subordinate route context rather than a competing `/plan` block.
-  - It is also demoting `/plan` from normal paired next-step output into an overflow or explicitly requested route surface only, while keeping `/goal` as the objective owner and keeping helper or planning support out of completion-proof status.
-  - Active verification is still pending for runtime install, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release proof.
-- Latest released baseline remains P123 goal internal native subagent assistance refinement as `v10.31`.
+- P125 integrated goal-with-planning objective is released as `v10.33`.
+  - RULES now keep route-heavy governed `/goal` work on one integrated goal-centric visible surface by default, with internal planning / plan-mode-style support allowed when necessary before or around goal emission.
+  - Compact `Plan draft`, `Plan basis`, `Verification / testing route`, and `Plan reference` support remain subordinate route context, while `/plan` remains overflow or explicitly requested standalone route handling only.
+  - Verified: runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` exclusion, clean `/usr/bin/git diff --check`, branch push, remote default-branch verification, and GitHub release proof.
+- Latest released baseline is now P125 integrated goal-with-planning objective as `v10.33`.
 - P124 pre-goal plan-backed goal authoring refinement remains an unreleased predecessor draft that led into the broader P125 integrated goal-with-planning target model.
-  - It refined RULES so `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when selected governed goals remain non-trivial or route-heavy, while `/goal` stayed the objective owner, `/plan` stayed the route owner, and leader-owned proof wording remained the completion authority.
-  - It passed runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification.
+  - It prepared the narrower pre-goal plan-backed stage that was later absorbed into this released integrated goal-with-planning model.
 - P073 source compression completed and audited
 - P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
 - P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
