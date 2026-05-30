@@ -31,7 +31,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.33`.
   - Gate: integrated goal-surface integrity, automatic-when-necessary planning integrity, simple-goal direct-path integrity, subordinate-planning-support integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.33
-  - Release tag `v10.33` resolves to commit `afb2a37240c078be25288b1cb4aa98924959d414`.
+  - Release tag `v10.33` resolves to commit `ce8ed142ebe6a69308e7321d78b52f4990ed45a3`.
   - Published at `2026-05-30T15:59:23Z`.
   - Patch: [../patch/integrated-goal-planning-objective.patch.md](../patch/integrated-goal-planning-objective.patch.md)
   - Historical note: P124 remains an unreleased predecessor draft preserved as context for the narrower pre-goal plan-backed stage that led into this released model.
@@ -239,7 +239,7 @@ Current released baseline after P125 closeout:
 - 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
-- branch `goal-governed-work-only` and remote `master` both resolve to the same released commit `afb2a37240c078be25288b1cb4aa98924959d414`
+- branch `goal-governed-work-only` and remote `master` both resolve to the same released commit `ce8ed142ebe6a69308e7321d78b52f4990ed45a3`
 - GitHub release `v10.33` was published at `2026-05-30T15:59:23Z`
 
 ---
