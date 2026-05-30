@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.17 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-29 | **[Added P124 pre-goal plan-backed goal-authoring refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-28 | **[Added P123 internal goal-helper refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -30,6 +31,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-117"></a>
+## Version 1.17: Added P125 integrated goal-with-planning execution refinement
+
+**Date:** 2026-05-30
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.16 to v1.17.
+- Updated `design/execution-and-goal-frame.design.md` from v1.16 to v1.17.
+- Added guidance that route-heavy governed `/goal` work should first use an integrated goal-centric surface where internal planning / plan-mode-style support may prepare the emitted or selected goal.
+- Added guidance that compact route notes, plan basis, verification-order hints, and similar route support stay subordinate inside or adjacent to that goal-centric surface rather than reading like a neighboring `/plan` branch.
+- Demoted `/plan` from ordinary paired next-surface behavior to overflow or explicitly requested standalone route handling only.
+
+### Summary
+`execution-and-goal-frame.md` now keeps route-heavy governed goal work on one integrated goal-with-planning surface by default while reserving `/plan` for overflow or explicitly requested standalone route handling.
 
 ---
 

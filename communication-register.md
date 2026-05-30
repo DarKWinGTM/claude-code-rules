@@ -1,7 +1,7 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.14
-> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.14
+> **Current Version:** 1.15
+> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
 
@@ -124,15 +124,14 @@ When a concrete failing case tempts the answer toward a narrow local fix, compar
 - prefer the smallest scope that is actually supported by evidence, not the smallest scope that merely looks convenient to patch first
 - local exceptions remain valid options when the evidence shows a real local doctrine difference, but they should arrive as earned conclusions rather than as reflex recommendations
 
-### 16.2) Goal-vs-plan register
-When `/goal` and `/plan` both appear, keep objective ownership and route ownership visibly separate.
-- describe `/goal` as the objective surface and `/plan` as the route surface rather than blending them into one generic work block
-- do not praise or summarize a detailed plan as if detail alone proves that the goal is already satisfied
-- when a conditional pre-goal planning pass shapes an advisory `/goal`, describe that pass as preparation for the goal rather than as `/plan` taking over ownership
-- when recommending a plan, frame it as needed because the route is non-trivial, not because every good goal must always produce a plan
-- when planning is the right next surface, prefer naming `/plan` explicitly over vague prose such as `the next step is to think through the route a bit more`
-- if internal helper use is mentioned, frame it as support for the selected goal or emitted goal candidate rather than as a new public surface; prefer compact labels such as `Plan draft`, `Verification route`, or `Plan reference` over orchestration narration
-- use wording such as `this plan serves the selected goal` rather than wording that makes the plan sound like a replacement objective
+### 16.2) Goal-centered planning register
+When `/goal` and planning both appear, keep objective ownership and route ownership visibly separate without surfacing them as two sideways branches.
+- describe `/goal` as the objective surface and describe planning as support for that same goal unless standalone route handling is materially needed
+- do not praise or summarize a detailed route note as if detail alone proves that the goal is already satisfied
+- when internal planning shapes an advisory `/goal`, describe that work as preparation for the goal rather than as `/plan` taking over ownership
+- do not present `/plan` as the ordinary paired next step for every route-heavy goal; present it only when overflow route detail or explicit standalone planning is actually needed
+- if internal helper use is mentioned, frame it as support for the selected goal or emitted goal candidate rather than as a new public surface; prefer compact labels such as `Plan draft`, `Plan basis`, `Verification route`, or `Plan reference` over orchestration narration
+- use wording such as `this route support serves the selected goal` rather than wording that makes the plan sound like a replacement objective or sibling recommendation
 - if a plan file is referenced from the goal surface, keep it clearly route-only and do not let the reference read like proof that the goal is already satisfied
 - if the route is complete but the goal gate is still open, say so directly instead of smoothing it into completion-shaped wording
 

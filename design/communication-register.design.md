@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -46,6 +46,8 @@ P121 refinement: this owner should now preserve a goal-vs-plan register so the a
 P123 refinement: this owner should now preserve a helper-aware goal register so visible output can mention bounded internal helper support as subordinate `Plan draft` or `Verification route` assistance when needed, while avoiding orchestration-heavy wording or the appearance of a new public owner surface.
 
 P124 refinement: this owner should now preserve plan-backed goal-authoring register guidance so a conditional pre-goal planning pass reads as preparation for the advisory `/goal`, not as `/plan` taking over ownership, and any visible `Plan reference` remains clearly route-only rather than proof that the goal is already satisfied.
+
+P125 refinement: this owner should now preserve a goal-centered planning register where route-heavy `/goal` output still reads as one visible goal-centric surface, compact `Plan draft` / `Plan basis` / `Verification route` / `Plan reference` support stays subordinate, and `/plan` appears only for overflow or explicitly requested standalone route handling.
 
 P122 refinement: this owner should now preserve explicit `/plan` recommendation wording once planning is the right next surface, so the assistant does not hide the intended handoff behind vague prose about organizing or thinking through the route.
 

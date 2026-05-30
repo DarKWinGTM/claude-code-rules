@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.32
+> **Current Version:** 10.33
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.33 | 2026-05-30 | **[Opened integrated goal-with-planning objective](changelog/v10.33-added-integrated-goal-planning-objective.changelog.md#version-1033)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.32 | 2026-05-29 | **[Opened pre-goal plan-backed goal authoring refinement](changelog/v10.32-added-pre-goal-plan-backed-goal-authoring-refinement.changelog.md#version-1032)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.31 | 2026-05-28 | **[Released goal internal native subagent assistance refinement](changelog/v10.31-added-goal-internal-subagent-assistance-refinement.changelog.md#version-1031)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.30 | 2026-05-28 | **[Released goal-to-plan default next-surface hardening](changelog/v10.30-added-goal-to-plan-default-next-surface-hardening.changelog.md#version-1030)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

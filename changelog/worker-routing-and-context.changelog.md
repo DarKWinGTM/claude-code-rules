@@ -1,7 +1,7 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-05-30 | **[Added P125 integrated goal-planning helper-lane refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-29 | **[Added P124 pre-goal helper-lane refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-28 | **[Added P123 goal-owned helper lane refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-18 | **[Added P108 routing-core compaction and owner redistribution](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -25,6 +26,24 @@
 | | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Added P125 integrated goal-planning helper-lane refinement
+
+**Date:** 2026-05-30
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `worker-routing-and-context.md` from v1.11 to v1.12.
+- Updated `design/worker-routing-and-context.design.md` from v1.11 to v1.12.
+- Added helper-lane guidance so native helper work can support integrated internal planning / plan-mode-style goal authoring and selected-goal route support without surfacing a neighboring planning surface.
+- Preserved internal-only, minimally scoped helper use and leader-owned synthesis/proof verification.
+- Preserved helper output as route support instead of route authority or completion proof.
+
+### Summary
+`worker-routing-and-context.md` now routes goal-related helper work toward one integrated goal-with-planning surface instead of a visible goal-versus-plan pair.
 
 ---
 

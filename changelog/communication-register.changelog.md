@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-05-30 | **[Added P125 integrated goal-with-planning register refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-29 | **[Added P124 plan-backed goal register refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-28 | **[Added P123 helper-aware goal register refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-28 | **[Added P122 explicit `/plan` recommendation register refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -27,6 +28,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-115"></a>
+## Version 1.15: Added P125 integrated goal-with-planning register refinement
+
+**Date:** 2026-05-30
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.14 to v1.15.
+- Updated `design/communication-register.design.md` from v1.14 to v1.15.
+- Added register guidance so route-heavy `/goal` output still reads as one visible goal-centric surface instead of a neighboring goal-versus-plan pair.
+- Preserved compact `Plan draft`, `Plan basis`, `Verification route`, and `Plan reference` wording as subordinate support for that same goal.
+- Preserved `/plan` only for overflow or explicitly requested standalone route handling.
+
+### Summary
+`communication-register.md` now keeps goal-related planning language compact and human-readable without surfacing `/goal` and planning as two equal side-by-side outputs.
 
 ---
 

@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.19
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.19
+> **Current Version:** 1.20
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
@@ -266,22 +266,22 @@ Required guidance:
 - do not leave successor output as a generic future note when the smaller bounded slice is already derivable from checked execution surfaces
 - preserve exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters where exactness matters, but do not treat the whole emitted command body as one exact literal
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
-- when advisory `/goal` creation for governed non-trivial or route-heavy work would benefit from route synthesis, it may conditionally run an internal pre-goal planning pass before final goal emission
-- that pre-goal planning pass may use native subagent assistance for analysis, route drafting, verification ordering, and optional plan-file reference synthesis while remaining internal-only and subordinate to leader-owned normalization
-- simple or already direct goals should still emit `/goal` directly without forcing pre-planning
+- when advisory `/goal` creation for governed non-trivial or route-heavy work would benefit from route synthesis, it may conditionally run an internal planning / plan-mode-style pass before final goal emission
+- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and optional plan-file reference synthesis while remaining internal-only and subordinate to leader-owned normalization
+- simple or already direct goals should still emit `/goal` directly without forcing planning for every request
 - when a durable route artifact is useful, a plan file may be referenced from the emitted goal or surrounding explanation, but the plan file must remain route-only and must not become objective authority
-- when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape a compact `Plan draft` or verification/testing route through conditional internal native subagent assistance, but that support remains subordinate to the goal and does not create a new public route owner
+- when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape compact route support such as `Plan draft`, verification/testing route, or a plan reference inside or adjacent to the goal-centric surface, but that support remains subordinate to the goal and does not create a new public route owner
 - do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command
 
-### 6.2) Selected goal to `/plan` bridge for governed work
-When a governed goal is already selected and the remaining work is route-heavy, the execution surfaces should bridge that goal into `/plan` rather than stuffing route detail back into goal text.
+### 6.2) Selected goal overflow route handling for governed work
+When a governed goal is already selected and the remaining work is route-heavy, the execution surfaces should keep route detail inside the goal-centric surface first and open `/plan` only when standalone route handling is materially needed.
 - keep `/goal` as the objective contract for outcome, proof, scope, and hard guardrails
-- use `/plan` to choose sequence, phase/lane breakdown, owner ordering, and verification order when those route decisions are materially non-trivial
-- bridge into `/plan` when the selected goal is multi-step, multi-file, phase-backed, owner-splitting, release-sync-heavy, or still has several materially different execution routes
-- when that bridge condition holds, execution surfaces should explicitly recommend `/plan` as the next surface instead of broad prose follow-up
-- if a pre-goal planning pass or helper-produced route draft already exists, that material remains subordinate support for the selected goal and does not eliminate the `/plan` bridge when explicit user-facing route work is still needed
-- if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper use may support the selected goal without changing `/plan` route ownership
+- use compact route notes, phase/lane cues, owner ordering hints, and verification-order support inside the selected goal surface when that is enough to continue clearly
+- open `/plan` only when sequence, phase/lane breakdown, owner ordering, or verification order no longer fits safely inside the integrated goal-centric surface, or when the user explicitly wants standalone planning
+- do not teach `/plan` as the ordinary next surface for every route-heavy selected goal
+- if integrated planning support or helper-produced route draft already exists, that material remains subordinate support for the selected goal and does not require a public `/plan` handoff by default
+- if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper use may support the selected goal without changing route ownership
 - if the selected goal is already direct, bounded, and safe to continue, keep execution in goal/phase/task surfaces without forcing a plan
 - when a plan is opened, phase and task surfaces should keep visible which selected goal the route serves
 - closeout should still verify the selected goal gate rather than treating completed plan steps or worker-produced route drafts as sufficient proof by themselves
@@ -411,8 +411,8 @@ The later sync order does not weaken early startup establishment or live task-li
 | broad phase-backed objective with distinct implementation / verification / governance slices | define lanes or lane-aligned tasks before deep execution |
 | active phase or implied staged lane | expose phase context in built-in tasks and current-phase-first execution |
 | current phase lane closes and the next lane is selected or clearly implied | continue into the next lane and keep phase linkage visible |
-| governed non-trivial or route-heavy `/goal` candidate is still route-heavy before final emission | allow a conditional internal pre-goal planning pass to shape the emitted `/goal` while keeping `/goal` as objective owner and `/plan` as route owner |
-| selected governed goal has a non-trivial route still to choose | explicitly recommend `/plan` as the next surface while preserving visible linkage back to the selected goal |
+| governed non-trivial or route-heavy `/goal` candidate is still route-heavy before final emission | allow automatic internal planning / plan-mode-style support to shape the emitted `/goal` while keeping one integrated goal-centric visible surface |
+| selected governed goal has a non-trivial route still to choose | keep route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed |
 | governance/release-sync slice inside an active phase | give it its own lane or task when mixing it with implementation would blur ownership or gates |
 | oversized `TODO.md` or `phase/SUMMARY.md` | roll history/detail into referenced `history/` / `done/` shards and keep compact active entrypoints |
 | God Phase or TODO overload | repair now when clear, otherwise create/extend a visible governed repair slice |

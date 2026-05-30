@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-29
+> **Last Updated:** 2026-05-30
 > **Current Release:** v10.31 / P123 goal internal native subagent assistance refinement
-> **Active Wave:** P124 / target v10.32 pre-goal plan-backed goal authoring refinement
+> **Active Wave:** P125 / target v10.33 integrated goal-with-planning objective
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -170,10 +170,13 @@
 
 ### Active / In Progress
 
-- [ ] P124 / v10.32 pre-goal plan-backed goal authoring refinement is now open.
-  - Goal: keep `/goal` as the objective owner, keep `/plan` plus plan files as route artifacts only, and let advisory `/goal` creation conditionally run an internal pre-goal planning pass with native subagent help for analysis, route drafting, verification ordering, and optional plan-file reference synthesis when governed work remains non-trivial or route-heavy.
+- [ ] P125 / v10.33 integrated goal-with-planning objective is now open.
+  - Goal: keep `/goal` as the single visible objective surface for governed non-trivial or route-heavy requests, let internal planning / plan-mode-style support run automatically when necessary before emitting the goal, keep planning support subordinate inside the goal-centric surface, and keep `/plan` plus plan files as overflow or explicitly requested route artifacts only rather than a normal paired output.
   - Expected output: touched runtime owners, one updated playground/reference case, touched master/design/changelog/TODO/phase/patch sync, runtime install-boundary verification, parity/body sufficiency proof, clean `git diff --check`, push/default-branch verification, and GitHub release verification.
-  - Current status: phase/patch startup artifacts are being opened and the touched owner doctrine refinement is now in progress.
+  - Current status: P125 phase/patch startup artifacts are being opened and the touched owner doctrine refinement is now in progress.
+
+- [ ] P124 / v10.32 pre-goal plan-backed goal authoring refinement remains an unreleased predecessor draft and is superseded by the broader P125 integrated goal-with-planning objective.
+  - Boundary: keep P124 as historical predecessor context rather than the active target model; latest released baseline still remains `v10.31 / P123`.
 
 ### Deferred / Not Selected
 

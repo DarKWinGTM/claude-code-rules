@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -42,6 +42,8 @@ P119 refinement: this owner should now require wrapper labels, promoted `/goal` 
 P123 refinement: this owner should now preserve a compact `Plan draft` / `Verification / testing route` presentation shape for goal-owned internal helper use, keep that helper output visibly subordinate to the selected goal, and avoid letting the visible `/goal` surface inflate into a mini-`/plan` or orchestration narrative.
 
 P124 refinement: this owner should now preserve a plan-backed advisory `/goal` presentation shape so a conditional pre-goal planning pass may surface compact `Plan draft`, `Verification / testing route`, or `Plan reference` context before or around the emitted goal without turning the visible goal surface into a mini-`/plan` or a second objective layer.
+
+P125 refinement: this owner should now preserve an integrated goal-with-planning presentation shape so route-heavy governed `/goal` output stays one goal-centric visible surface, compact route support remains subordinate inside or adjacent to that surface, and `/plan` appears only for overflow or explicitly requested standalone route handling.
 
 P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
 

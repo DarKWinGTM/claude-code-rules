@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -48,6 +48,8 @@ P116 refinement: this owner should now treat `Done when` / `Prove with` / `Scope
 P123 refinement: this owner should now preserve how governed execution surfaces may keep the user inside the existing `/goal` surface while using conditional internal native subagent assistance to shape bounded plan draft or verification/testing route output, without replacing `/plan` as the route owner or turning helper output into completion proof.
 
 P124 refinement: this owner should now preserve how governed execution surfaces may conditionally run an internal pre-goal planning pass before advisory `/goal` emission when route synthesis materially improves the command, keep simple goals on the direct `/goal` path, allow optional plan-file reference as route-only context, and preserve `/plan` as the route owner once explicit user-facing planning is still needed after goal selection.
+
+P125 refinement: this owner should now preserve integrated goal-with-planning execution surfaces so governed work keeps compact route notes, plan basis, verification-order support, and similar route context inside the emitted or selected goal-centric surface first, and opens `/plan` only when overflow route detail or explicit standalone planning is materially needed.
 
 P117 refinement: this owner should now let checked phase/roadmap/TODO surfaces shape compact candidate goals at real decision boundaries when several unselected next slices remain live and no one continuation path clearly dominates.
 

@@ -2,8 +2,8 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P124
-> **Status:** Active / In Progress
-> **Target Release:** v10.32
+> **Status:** Superseded predecessor draft / Not selected for release
+> **Target Release:** v10.32 (historical predecessor draft)
 > **Design References:**
 > - [../design/design.md](../design/design.md) v10.32
 > **Patch References:** [../patch/pre-goal-plan-backed-goal-authoring-refinement.patch.md](../patch/pre-goal-plan-backed-goal-authoring-refinement.patch.md)
@@ -93,10 +93,10 @@ P124 exists to refine the existing pattern rather than layering a new one on top
 
 ## Current Status
 
-P124 is active.
+P124 is now retained as a superseded predecessor draft.
 
-Current checked progress:
-- released baseline before P124 startup is `v10.31 / P123`
-- the selected improvement direction is to make plan-backed goal authoring conditional for governed non-trivial or route-heavy work while keeping `/goal` as the objective owner, `/plan` as the route owner, and plan file behavior reference-only
-- P124 phase/patch startup artifacts and active master execution surfaces are now being opened
-- touched runtime owner refinement, companion/changelog sync, reference-case update, runtime install verification, release verification, and final closeout alignment still remain
+Current checked status:
+- released baseline before P124 startup remained `v10.31 / P123`
+- the P124 direction established the move toward conditional pre-goal plan-backed goal authoring while still keeping `/goal` as the objective owner, `/plan` as the route owner, and plan file behavior reference-only
+- the broader P125 integrated goal-with-planning objective now supersedes P124 as the active target model
+- this file remains provenance for the design step between selected-goal helper support and the newer integrated one-surface model; it is not the active release target

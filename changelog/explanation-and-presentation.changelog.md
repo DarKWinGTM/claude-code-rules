@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-05-30 | **[Added P125 integrated goal-with-planning presentation refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-29 | **[Added P124 plan-backed advisory `/goal` presentation refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-28 | **[Added P123 goal-helper presentation refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-28 | **[Added P122 explicit `/plan` handoff presentation refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -26,6 +27,24 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Added P125 integrated goal-with-planning presentation refinement
+
+**Date:** 2026-05-30
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.13 to v1.14.
+- Updated `design/explanation-and-presentation.design.md` from v1.13 to v1.14.
+- Added presentation guidance so route-heavy governed `/goal` output stays one goal-centric visible surface with compact route support inside or adjacent to that same surface.
+- Preserved compact `Plan draft`, `Plan basis`, `Verification / testing route`, and `Plan reference` context as subordinate support instead of a neighboring planning block.
+- Preserved `/plan` only for overflow or explicitly requested standalone route handling.
+
+### Summary
+`explanation-and-presentation.md` now presents route-heavy governed goal work as one integrated goal-with-planning surface instead of a visible `/goal` plus planning pair.
 
 ---
 

@@ -2,8 +2,8 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
-> **Target Design:** [design/design.md](../design/design.md) v10.32
+> **Status:** Superseded predecessor draft / Not selected for release
+> **Target Design:** [design/design.md](../design/design.md) v10.32 (historical predecessor draft)
 > **Full history:** [changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -108,6 +108,6 @@ Required checks before release closeout:
 
 ## Implementation Status
 
-P124 is active.
+P124 is now retained as a superseded predecessor draft.
 
-The checked workflow gap and the bounded improvement direction are established, and the phase/patch startup artifacts are opened. Touched runtime owner refinement, companion/changelog sync, reference-case update, runtime install-boundary proof, 18/18 parity/body-sufficiency verification, `git diff --check`, commit/push/default-branch verification, GitHub release verification, and final closeout alignment remain in progress.
+The checked workflow gap and the bounded improvement direction remain preserved here as provenance for the step that introduced pre-goal plan-backed authoring. The broader P125 integrated goal-with-planning objective now supersedes this patch as the active release target. This file remains historical review context, not the selected release patch for the current wave.

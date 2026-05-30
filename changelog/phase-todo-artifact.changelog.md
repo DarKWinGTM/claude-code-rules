@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.20 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution-surface refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-05-29 | **[Added P124 pre-goal `/goal` sourcing refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-05-28 | **[Added P123 internal goal-helper execution refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -32,6 +33,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-120"></a>
+## Version 1.20: Added P125 integrated goal-with-planning execution-surface refinement
+
+**Date:** 2026-05-30
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.19 to v1.20.
+- Updated `design/phase-todo-artifact.design.md` from v1.19 to v1.20.
+- Added guidance that governed execution surfaces should keep compact route notes, plan basis, and verification-order support inside the emitted or selected goal-centric surface first.
+- Preserved `/plan` only for overflow route detail or explicit standalone planning after goal selection rather than the ordinary paired next surface.
+- Preserved goal-gate closeout and direct `/goal` emission for simple work.
+
+### Summary
+`phase-todo-artifact.md` now keeps goal-related planning support inside the governed goal-centric execution surface first while reserving `/plan` for overflow or explicit standalone route work.
 
 ---
 
