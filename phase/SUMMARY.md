@@ -31,7 +31,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
   - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.33`.
   - Gate: integrated goal-surface integrity, automatic-when-necessary planning integrity, simple-goal direct-path integrity, subordinate-planning-support integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.33
-  - Release tag `v10.33` resolves to commit `b509d7cea18de13f6bfcc5435f8cb7255ceb4cda`.
+  - Release tag `v10.33` resolves to commit `afb2a37240c078be25288b1cb4aa98924959d414`.
   - Published at `2026-05-30T15:59:23Z`.
   - Patch: [../patch/integrated-goal-planning-objective.patch.md](../patch/integrated-goal-planning-objective.patch.md)
   - Historical note: P124 remains an unreleased predecessor draft preserved as context for the narrower pre-goal plan-backed stage that led into this released model.
@@ -228,39 +228,27 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Latest released baseline before P123 work:
-- released baseline is `v10.30 / P122`
-- route-heavy selected governed goals already explicitly recommend `/plan` as the default next surface instead of broad prose follow-up
-- `/goal` already remains the objective owner while `/plan` already remains the route owner
-- closeout already returns to the goal gate instead of treating plan completion alone as sufficient proof
-- the updated playground case already keeps the explicit `/plan` recommendation delta inspectable
-- `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
-- 18/18 source/runtime parity and source/destination body sufficiency passed for the latest released baseline
-- `playground/` remains outside the runtime install payload while the active runtime count remains 18
-- `git diff --check` passed for the latest released baseline
-- branch `goal-governed-work-only` and GitHub release `v10.30` are the current checked released state before P123 opens
-
-Current released baseline after P123 closeout:
-- released baseline is `v10.31 / P123`
-- a selected governed non-trivial or route-heavy goal may now conditionally use internal native subagent assistance for analysis, verification, testing, or bounded plan drafting without creating a new user-facing command
-- `/goal` still remains the objective owner and `/plan` still remains the route owner
-- helper findings remain subordinate to leader-owned synthesis/proof wording rather than becoming automatic completion proof
-- the updated playground/reference case keeps the helper-vs-owner behavior delta inspectable
+Current released baseline after P125 closeout:
+- released baseline is `v10.33 / P125`
+- governed non-trivial or route-heavy `/goal` requests may now use internal planning / plan-mode-style support when necessary before or around goal emission while keeping one integrated goal-centric visible surface
+- `/goal` remains the objective owner while `/plan` remains overflow or explicitly requested standalone route handling only
+- visible planning support such as `Plan draft`, `Plan basis`, `Verification / testing route`, or `Plan reference` remains subordinate route context rather than becoming a second objective surface or completion proof
+- the updated playground/reference case keeps the integrated goal-with-planning behavior delta inspectable
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
 - 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
-- branch `goal-governed-work-only` was pushed to origin, the remote default branch remained `goal-governed-work-only`, and GitHub release `v10.31` was published at `2026-05-28T10:14:31Z`
+- branch `goal-governed-work-only` and remote `master` both resolve to the same released commit `afb2a37240c078be25288b1cb4aa98924959d414`
+- GitHub release `v10.33` was published at `2026-05-30T15:59:23Z`
 
 ---
 
 ## Rollback / Containment
 
-If P123 is reversed after release:
+If P125 is reversed after release:
 - revert the touched governed `/goal` doctrine edits as one governed rollback release
-- restore the released `v10.30 / P122` source state as the active baseline
+- restore the immediately previous released baseline as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 

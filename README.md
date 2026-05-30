@@ -364,10 +364,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P124 / v10.32 opens the pre-goal plan-backed goal authoring refinement wave on top of the released `v10.31 / P123` baseline.
-- It is refining RULES so advisory `/goal` creation for governed non-trivial or route-heavy work may conditionally run an internal pre-goal planning pass before final goal emission.
-- The refinement must keep `/goal` as the objective owner, keep `/plan` plus plan files as route artifacts only, keep simple goals on the direct path, and keep goal-gate closeout stricter than plan draft, helper output, or plan completion.
-- The governed `playground/` family remains non-runtime; one updated goal-related case should keep the pre-goal planning-pass behavior delta inspectable without entering the runtime install payload.
+- P125 / v10.33 releases the integrated goal-with-planning objective on top of the previously released `v10.31 / P123` baseline.
+- RULES now allow governed non-trivial or route-heavy `/goal` requests to use internal planning / plan-mode-style support when necessary before or around final goal emission while keeping one goal-centric visible surface.
+- The released model keeps `/goal` as the objective owner, keeps `/plan` plus plan files as overflow or explicitly requested route artifacts only, keeps simple goals on the direct path, and keeps goal-gate closeout stricter than plan draft, helper output, or plan completion.
+- The governed `playground/` family remains non-runtime; the updated goal-related case keeps the integrated goal-with-planning behavior delta inspectable without entering the runtime install payload.
 - The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
 - The untracked `plugin/` tree remains preserved and out of staged wave scope.
 </div>
@@ -1114,7 +1114,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the active `v10.32 / P124` pre-goal plan-backed goal authoring refinement wave while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.33 / P125` integrated goal-with-planning model while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1237,8 +1237,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.31 |
-  <b>Last Updated</b>: 2026-05-28 |
+  <b>Version</b>: 10.33 |
+  <b>Last Updated</b>: 2026-05-30 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 
