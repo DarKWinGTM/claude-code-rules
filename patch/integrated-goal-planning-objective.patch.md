@@ -78,7 +78,7 @@ This update stays bounded. It does not add a new user-facing command, does not m
 
 - **Target artifact:** touched README/design/changelog/TODO/phase/patch surfaces
 - **Change type:** release synchronization
-- **Current state:** master surfaces identify `v10.32 / P124` as the active target, while latest released baseline remains `v10.31 / P123`
+- **Current state:** before this release, master surfaces identified `v10.32 / P124` as the active target while the latest released baseline still remained `v10.31 / P123`
 - **Target state:** touched master surfaces open and later close `v10.33 / P125` consistently, preserve the 18-file runtime install scope, teach the integrated goal-with-planning target model, keep `/plan` out of ordinary paired output, and preserve the non-runtime playground boundary
 - **Review point:** keep runtime install scope at 18 and make no claim that `playground/` entered the install payload
 

@@ -13,7 +13,6 @@
 - [x] P125 / v10.33 integrated goal-with-planning objective was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched owners now keep route-heavy governed `/goal` work on one integrated goal-centric visible surface by default, allow internal planning / plan-mode-style support only when necessary, keep compact `Plan draft` / `Plan basis` / `Verification / testing route` / `Plan reference` support subordinate to the goal surface, keep `/plan` as overflow or explicitly requested standalone route handling only, and preserve simple-goal direct emission; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.33
-  - Release tag `v10.33` resolves to commit `ce8ed142ebe6a69308e7321d78b52f4990ed45a3`.
   - Published at `2026-05-30T15:59:23Z`.
   - Historical note: P124 remains an unreleased predecessor draft preserved as the narrower pre-goal plan-backed stage that led into this released model.
 
