@@ -28,7 +28,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ### Most Recently Completed
 
 - **P126:** [phase-126-phase-grammar-forms-and-release-sync.md](phase-126-phase-grammar-forms-and-release-sync.md)
-  - Output: explicit forward-valid `phase-NNN` / `phase-NNN-NN` / `phase-NNN-NN-NN` doctrine, legacy-only alphanumeric handling, touched master/design/changelog/TODO/phase/patch sync, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.34`.
+  - Output: explicit forward-valid `phase-NNN` / `phase-NNN-NN` / `phase-NNN-NN-NN` doctrine, legacy-only alphanumeric handling, touched master/design/changelog/TODO/phase/patch sync, runtime install into a checked project-local `.claude/rules/` target, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.34`.
   - Gate: explicit numeric phase-grammar integrity, explicit alphanumeric legacy-only integrity, no-rename/migration-in-wave integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.34
   - Patch: [../patch/phase-grammar-forms-and-release-sync.patch.md](../patch/phase-grammar-forms-and-release-sync.patch.md)
@@ -243,7 +243,7 @@ Current released baseline after P126 closeout:
 - deeper hybrid forms such as `phase-NNN-NN-NNb` are not treated as forward-valid grammar by default
 - the release wave did not rename or migrate NodeClaw phase files
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
+- runtime install copied only the 18 README-listed active runtime rules into a checked project-local `.claude/rules/` target
 - 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors

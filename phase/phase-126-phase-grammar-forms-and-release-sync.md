@@ -35,7 +35,7 @@ P126 exists to close that authority gap without mutating NodeClaw filenames in t
 - `design/phase-implementation.design.md` and related design summaries/checklists sync to the explicit three-level numeric grammar and alphanumeric legacy-only posture
 - repository-facing guidance in `README.md` and `document-governance.md` no longer relies on broad `phase-NNN*` wording where exact forward-valid forms matter
 - touched changelog/TODO/phase/patch surfaces open and close `v10.34 / P126` consistently
-- runtime install into `~/.claude/rules`, 18/18 parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release `v10.34` verification all pass
+- runtime install into a checked project-local `.claude/rules/` target, 18/18 parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release `v10.34` verification all pass
 
 ---
 
@@ -48,7 +48,7 @@ P126 exists to close that authority gap without mutating NodeClaw filenames in t
 - [x] Sync repository-facing governance/overview wording where exact phase file forms matter.
 - [x] Open and later close touched master surfaces in changelog, TODO, phase, and patch.
 - [x] Preserve the no-rename / non-destructive migration posture for NodeClaw filenames in this wave.
-- [x] Re-install the active runtime rules into `~/.claude/rules` and verify 18/18 source/runtime parity plus source/destination body sufficiency.
+- [x] Re-install the active runtime rules into a checked project-local `.claude/rules/` target and verify 18/18 source/runtime parity plus source/destination body sufficiency.
 - [x] Run `git diff --check` clean.
 - [x] Commit the release wave, push the branch, update the remote default branch, and verify GitHub release `v10.34`.
 
@@ -86,5 +86,5 @@ Current checked progress:
 - the checked NodeClaw inventory and phase-doc precedent were reviewed before doctrine selection
 - the selected doctrine now makes nested numeric child phases explicit forward-valid grammar and keeps observed alphanumeric forms preserved as legacy-only rather than future-valid naming
 - touched runtime/design/changelog/TODO/phase/patch/README/document-governance surfaces are updated in source scope
-- runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` runtime exclusion recheck, and `git diff --check` passed
+- runtime install into a checked project-local `.claude/rules/` target, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` runtime exclusion recheck, and `git diff --check` passed
 - branch push, remote default-branch verification, GitHub release `v10.34` verification, and closeout alignment passed
