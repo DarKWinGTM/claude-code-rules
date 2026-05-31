@@ -57,6 +57,7 @@ Keeping all of that in one parent file would immediately create a design God fil
 - [05-generated-artifacts-and-hook-posture.design.md](05-generated-artifacts-and-hook-posture.design.md) — review/repair artifacts, hook posture, reminder boundaries, and non-hidden governance rules
 - [06-action-policy-and-release-gate.design.md](06-action-policy-and-release-gate.design.md) — advisory / guarded-execute / bounded auto-normalize policy, approval boundary, automation-risk non-goals, and release-gate model
 - [07-article-markdown-presentation.design.md](07-article-markdown-presentation.design.md) — governed-docs-owned Markdown-to-HTML article presentation, safe rendering boundary, and frontend/presentation contract
+- [08-preview-portal-and-sync.design.md](08-preview-portal-and-sync.design.md) — root `preview/` portal contract, full-site sync model, UI/UX shell direction, and support-only preview authority boundary
 
 ## 6) V1 baseline
 

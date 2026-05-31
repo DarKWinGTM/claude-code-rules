@@ -185,5 +185,50 @@ This bootstrap establishes `governed-docs` as a RULES-native companion design ch
 
 ### Notes
 - all user-facing command paths still require explicit target workspace paths and do not fall back to ambient cwd
-- article preview output remains a generated runtime artifact rather than a governed source-of-truth surface
 - this closeout is verified in checked local scope for the plugin workspace; it is not a claim about external deployment or broader runtime environments
+
+---
+
+## Working note: P002 preview portal and sync wave
+
+**State:** implemented and tested in checked scope; this is not a new release tag.
+
+**Date:** 2026-06-01
+**Session:** b7f7ee85-27ec-467a-ba63-568c831fcd36
+
+### Added and synchronized surfaces
+- `src/governed_docs/preview_paths.py`
+- `src/governed_docs/preview_site.py`
+- `src/governed_docs/commands/present_sync.py`
+- `skills/present-sync/SKILL.md`
+- `agents/governed-docs-present-inventory-scout.md`
+- `agents/governed-docs-present-architect.md`
+- `agents/governed-docs-present-renderer.md`
+- `agents/governed-docs-present-sync-auditor.md`
+- `design/08-preview-portal-and-sync.design.md`
+- `phase/phase-002-preview-portal-and-sync-wave.md`
+- `phase/phase-002-01-preview-path-and-present-md-refactor.md`
+- `phase/phase-002-02-present-sync-site-build.md`
+- `phase/phase-002-03-preview-portal-ui-and-subagents.md`
+- `phase/phase-002-04-preview-wave-verification-and-closeout.md`
+- `patch/preview-portal-and-sync-wave.patch.md`
+- updated `README.md`, `TODO.md`, `phase/SUMMARY.md`, `.gitignore`, and preview-related tests/docs
+
+### Behavior now implemented in checked scope
+- `present-md` now writes to the root `preview/` portal structure instead of `generated/article-preview/`
+- `present-sync` rebuilds `preview/index.html`, `preview/manifest.json`, and family pages from governed source docs
+- preview portal output is bounded to `preview/**`
+- selected governed source docs remain unchanged across sync verification
+- preview helper skill/agent surfaces exist for inventory, architecture, rendering, and sync auditing
+
+### Verification
+- `cd /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs && python3 -m unittest discover -s tests -v` → 45 tests passed
+- `cd /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs && ./bin/governed-docs present-md /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs design/07-article-markdown-presentation.design.md` → wrote `preview/design/07-article-markdown-presentation/index.html`
+- `cd /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs && ./bin/governed-docs present-sync /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs` → generated `preview/index.html` and `preview/manifest.json`
+- selected source-hash verification confirmed that `TODO.md`, `phase/SUMMARY.md`, `design/design.md`, and `patch/preview-portal-and-sync-wave.patch.md` stayed unchanged across `present-sync`
+- leftover `generated/article-preview/` artifact was removed after the root `preview/` migration
+
+### Notes
+- the preview tree is a presentation/support surface only and not a governed source-of-truth document family
+- no background auto-sync path was added; sync remains explicit-command driven in checked scope
+- ambient cwd fallback remains blocked for both `present-md` and `present-sync`

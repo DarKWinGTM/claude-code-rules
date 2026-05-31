@@ -23,7 +23,7 @@ def load_symbol(case: unittest.TestCase, module_name: str, symbol_name: str):
 
 
 class PresentMdCommandTests(unittest.TestCase):
-    def test_present_md_command_writes_article_preview(self):
+    def test_present_md_command_writes_design_preview_index_page(self):
         run_present_md_command = load_symbol(
             self,
             "governed_docs.commands.present_md",
@@ -32,14 +32,37 @@ class PresentMdCommandTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as tmp_dir:
             workspace_root = Path(tmp_dir)
-            source_path = workspace_root / "docs" / "guide.md"
+            source_path = workspace_root / "design" / "guide.design.md"
             source_path.parent.mkdir(parents=True, exist_ok=True)
             source_path.write_text("# Guide\n\nReadable body.", encoding="utf-8")
 
-            output = run_present_md_command(workspace_root, "docs/guide.md")
+            output = run_present_md_command(workspace_root, "design/guide.design.md")
+            expected_output = workspace_root / "preview" / "design" / "guide" / "index.html"
+
+            self.assertTrue(expected_output.exists())
+            self.assertIn(str(expected_output), output)
 
         self.assertIn("Article preview generated", output)
-        self.assertIn("guide.html", output)
+
+    def test_present_md_command_writes_todo_preview_index_page(self):
+        run_present_md_command = load_symbol(
+            self,
+            "governed_docs.commands.present_md",
+            "run_present_md_command",
+        )
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            workspace_root = Path(tmp_dir)
+            source_path = workspace_root / "TODO.md"
+            source_path.write_text("# TODO\n\n- [ ] Example", encoding="utf-8")
+
+            output = run_present_md_command(workspace_root, "TODO.md")
+            expected_output = workspace_root / "preview" / "todo" / "index.html"
+
+            self.assertTrue(expected_output.exists())
+            self.assertIn(str(expected_output), output)
+
+        self.assertIn("Article preview generated", output)
 
     def test_present_md_command_blocks_path_escape(self):
         present_md_path_error = load_symbol(

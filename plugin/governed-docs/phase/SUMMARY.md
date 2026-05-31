@@ -3,7 +3,7 @@
 > **Current Version:** 0.1.0
 > **Target Design:** [../design/design.md](../design/design.md) v0.1.0
 > **Session:** b7f7ee85-27ec-467a-ba63-568c831fcd36
-> **Status:** P001 through P001-07 completed in checked scope; no open phase remains in the current program
+> **Status:** P001 and P002 completed in checked scope; no open phase remains in the current program
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **History:** none opened yet
 > **Completed Detail:** none opened yet
@@ -14,14 +14,9 @@
 
 This file is the compact active phase roadmap/index for the `governed-docs` plugin-local chain.
 
-The current program is now complete in checked scope:
-- scanner foundation
-- doctrine evaluator
-- repair planner and generated artifacts
-- operator skill/agent entry surfaces
-- bounded executor policy and hook-light guardrails
-- release-gate flow
-- governed-docs-owned article-style Markdown presentation path
+The current implemented program is complete in checked scope across two rollout families:
+- **P001** — scanner, evaluator, repair planner, operator surfaces, bounded executor policy, release-gate flow, and article-style single-document rendering
+- **P002** — root `preview/` portal architecture, `present-md` path refactor, `present-sync` full-site rebuild, preview helper surfaces, and preview-wave verification/closeout
 
 ---
 
@@ -34,7 +29,12 @@ The current program is now complete in checked scope:
 - **P001-04** ← operator skill set and custom agent set from [`04-skills-and-agent-system.design.md`](../design/04-skills-and-agent-system.design.md)
 - **P001-05** ← bounded executor boundary, hook posture, and action policy enforcement from [`01-architecture-layers.design.md`](../design/01-architecture-layers.design.md), [`05-generated-artifacts-and-hook-posture.design.md`](../design/05-generated-artifacts-and-hook-posture.design.md), [`06-action-policy-and-release-gate.design.md`](../design/06-action-policy-and-release-gate.design.md)
 - **P001-06** ← release-gate flow and closeout consistency from [`05-generated-artifacts-and-hook-posture.design.md`](../design/05-generated-artifacts-and-hook-posture.design.md), [`06-action-policy-and-release-gate.design.md`](../design/06-action-policy-and-release-gate.design.md)
-- **P001-07** ← governed-docs-owned article Markdown presentation from [`07-article-markdown-presentation.design.md`](../design/07-article-markdown-presentation.design.md) plus the checked NodeClaw article reference as input only
+- **P001-07** ← governed-docs-owned article Markdown presentation from [`07-article-markdown-presentation.design.md`](../design/07-article-markdown-presentation.design.md)
+- **P002** ← preview portal and sync wave from [`08-preview-portal-and-sync.design.md`](../design/08-preview-portal-and-sync.design.md) plus article presentation and generated-artifact doctrine
+- **P002-01** ← root `preview/` output-path contract and `present-md` single-document refactor
+- **P002-02** ← `present-sync` full preview-site inventory / manifest / portal rebuild
+- **P002-03** ← preview portal UI shell and present-layer helper agents
+- **P002-04** ← preview-wave verification, smoke checks, and governed closeout sync
 
 ---
 
@@ -47,6 +47,10 @@ The current program is now complete in checked scope:
 5. **P001-05** — bounded executor boundary, hook-light guardrails, and action policy enforcement (**completed**)
 6. **P001-06** — release-gate flow and closeout consistency (**completed**)
 7. **P001-07** — governed-docs-owned article-style Markdown presentation (**completed**)
+8. **P002-01** — root `preview/` path refactor for `present-md` (**completed**)
+9. **P002-02** — `present-sync` full preview-site build (**completed**)
+10. **P002-03** — preview portal UI shell and helper subagents (**completed**)
+11. **P002-04** — preview-wave verification and closeout (**completed**)
 
 ---
 
@@ -62,6 +66,11 @@ The current program is now complete in checked scope:
 - **P001-05:** [phase-001-05-bounded-executor-policy-and-hook-guardrails.md](phase-001-05-bounded-executor-policy-and-hook-guardrails.md)
 - **P001-06:** [phase-001-06-release-gate-flow-and-closeout-consistency.md](phase-001-06-release-gate-flow-and-closeout-consistency.md)
 - **P001-07:** [phase-001-07-article-markdown-presentation-separate-later-phase.md](phase-001-07-article-markdown-presentation-separate-later-phase.md)
+- **P002:** [phase-002-preview-portal-and-sync-wave.md](phase-002-preview-portal-and-sync-wave.md)
+- **P002-01:** [phase-002-01-preview-path-and-present-md-refactor.md](phase-002-01-preview-path-and-present-md-refactor.md)
+- **P002-02:** [phase-002-02-present-sync-site-build.md](phase-002-02-present-sync-site-build.md)
+- **P002-03:** [phase-002-03-preview-portal-ui-and-subagents.md](phase-002-03-preview-portal-ui-and-subagents.md)
+- **P002-04:** [phase-002-04-preview-wave-verification-and-closeout.md](phase-002-04-preview-wave-verification-and-closeout.md)
 
 ### Open phases
 
@@ -72,17 +81,15 @@ The current program is now complete in checked scope:
 ## Verification Focus
 
 Latest checked implementation proof:
-- `python3 -m unittest discover -s tests -v` passed with 40 tests
-- `./bin/governed-docs scan /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs` routes correctly through the operator surface
-- scanner → evaluator runtime emits read-only doctrine findings in checked scope
-- `./bin/governed-docs repair-plan /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs` emits a read-only repair-plan artifact with `Mutated: False`
-- bounded-normalizer preview enforces policy boundaries
-- `./bin/governed-docs release-gate /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs` returns `Verdict: pass`
-- `./bin/governed-docs present-md /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs design/07-article-markdown-presentation.design.md` generates a governed-docs-owned HTML preview and reports `No governed files were edited.`
+- `python3 -m unittest discover -s tests -v` passed with **45 tests**
+- `./bin/governed-docs present-md /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs design/07-article-markdown-presentation.design.md` wrote to `preview/design/07-article-markdown-presentation/index.html`
+- `./bin/governed-docs present-sync /home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/governed-docs` generated `preview/index.html` and `preview/manifest.json`
+- source hash verification across selected governed files remained unchanged before/after `present-sync`
+- old leftover `generated/article-preview/` artifact was removed after the root `preview/` migration
 
 Verification route policy remained per-slice:
 - scanner / evaluator / planner / executor / release-gate / presentation all used focused local tests plus bounded smoke checks where the public operator surface mattered
-- no release-ready claim was used as a substitute for per-slice verification
+- the preview wave added focused tests for `present-sync`, preview path routing, stale-page pruning, and no-source-rewrite behavior
 - no slice introduced ambient-cwd fallback, hidden hook authority, or broad auto-fix behavior
 
 ---
@@ -91,6 +98,7 @@ Verification route policy remained per-slice:
 
 If future work reopens this chain:
 - keep explicit target-path gating as the strongest preserved boundary
-- keep scanner facts, doctrine judgments, repair planning, executor policy, and release-gate logic separated by layer
-- keep article-style presentation owned by governed-docs and treat NodeClaw as reference input only
+- keep scanner facts, doctrine judgments, repair planning, executor policy, release-gate logic, and preview portal sync separated by layer
+- keep `preview/**` as a presentation/support surface only
+- keep source authority in the governed doc families, not in preview output
 - keep hook behavior advisory/support-only unless a later explicit wave selects stronger activation with checked proof

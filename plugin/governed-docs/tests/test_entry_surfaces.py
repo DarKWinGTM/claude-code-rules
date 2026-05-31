@@ -16,12 +16,17 @@ class EntrySurfaceTests(unittest.TestCase):
             PLUGIN_ROOT / 'skills' / 'phase-audit' / 'SKILL.md',
             PLUGIN_ROOT / 'skills' / 'release-gate' / 'SKILL.md',
             PLUGIN_ROOT / 'skills' / 'present-md' / 'SKILL.md',
+            PLUGIN_ROOT / 'skills' / 'present-sync' / 'SKILL.md',
             PLUGIN_ROOT / 'agents' / 'governed-docs-scout.md',
             PLUGIN_ROOT / 'agents' / 'governed-docs-doctrine-evaluator.md',
             PLUGIN_ROOT / 'agents' / 'governed-docs-repair-architect.md',
             PLUGIN_ROOT / 'agents' / 'governed-docs-normalizer.md',
             PLUGIN_ROOT / 'agents' / 'governed-docs-release-auditor.md',
             PLUGIN_ROOT / 'agents' / 'governed-docs-phase-lineage-auditor.md',
+            PLUGIN_ROOT / 'agents' / 'governed-docs-present-inventory-scout.md',
+            PLUGIN_ROOT / 'agents' / 'governed-docs-present-architect.md',
+            PLUGIN_ROOT / 'agents' / 'governed-docs-present-renderer.md',
+            PLUGIN_ROOT / 'agents' / 'governed-docs-present-sync-auditor.md',
             PLUGIN_ROOT / '.claude' / 'hooks' / 'governed-docs-reminder.sh',
         ]
         for path in expected_paths:

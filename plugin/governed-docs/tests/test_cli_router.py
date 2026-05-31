@@ -52,19 +52,41 @@ class CliRouterTests(unittest.TestCase):
         self.assertFalse(is_error)
         self.assertIn("repair plan artifact", output)
 
-    def test_dispatch_present_md_routes_to_article_presentation(self):
+    def test_dispatch_present_md_routes_to_preview_index_page(self):
         dispatch_command = load_symbol(self, "governed_docs.cli", "dispatch_command")
 
         with tempfile.TemporaryDirectory() as tmp_dir:
             workspace_root = Path(tmp_dir)
-            write_file(workspace_root / "docs" / "guide.md", "# Guide\n\nReadable body.")
+            write_file(workspace_root / "design" / "guide.design.md", "# Guide\n\nReadable body.")
             exit_code, output, is_error = dispatch_command(
-                ["present-md", str(workspace_root), "docs/guide.md"]
+                ["present-md", str(workspace_root), "design/guide.design.md"]
             )
+
+            expected_output = workspace_root / "preview" / "design" / "guide" / "index.html"
+            self.assertTrue(expected_output.exists())
 
         self.assertEqual(exit_code, 0)
         self.assertFalse(is_error)
         self.assertIn("Article preview generated", output)
+
+    def test_dispatch_present_sync_routes_to_preview_site_builder(self):
+        dispatch_command = load_symbol(self, "governed_docs.cli", "dispatch_command")
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            workspace_root = Path(tmp_dir)
+            write_file(workspace_root / "design" / "guide.design.md", "# Guide\n\nReadable body.")
+            write_file(workspace_root / "TODO.md", "# TODO\n\n- [ ] Example")
+            write_file(workspace_root / "phase" / "SUMMARY.md", "# Phase Summary\n\nCurrent work.")
+            exit_code, output, is_error = dispatch_command(
+                ["present-sync", str(workspace_root)]
+            )
+
+            expected_output = workspace_root / "preview" / "index.html"
+            self.assertTrue(expected_output.exists())
+
+        self.assertEqual(exit_code, 0)
+        self.assertFalse(is_error)
+        self.assertIn("Preview site synced", output)
 
 
 if __name__ == "__main__":

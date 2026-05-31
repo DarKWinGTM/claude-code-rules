@@ -1,8 +1,8 @@
 # governed-docs - TODO
 
 > **Last Updated:** 2026-06-01
-> **Current Wave:** P001 phase-backed implementation program completed in checked scope
-> **Status:** scanner, evaluator, repair planner, operator entry surfaces, bounded executor policy, release-gate flow, article presentation, and governed-surface closeout are all implemented and locally verified in checked scope
+> **Current Wave:** P002 preview portal and sync wave completed in checked scope
+> **Status:** P001 and P002 are implemented and locally verified in checked scope; no new implementation wave is currently selected
 > **History:** none opened yet
 > **Done Detail:** none opened yet
 
@@ -20,13 +20,19 @@
 - [x] Implement **P001-06** release-gate flow and closeout consistency.
 - [x] Implement **P001-07** governed-docs-owned Markdown/article presentation.
 - [x] Add the plugin-local `README.md` front page so the governed-docs workspace satisfies the active governed-surface inventory.
-- [x] Run final postflight verification: full unittest suite plus `repair-plan`, `release-gate`, and `present-md` smoke checks.
+- [x] Run final postflight verification for P001: full unittest suite plus `repair-plan`, `release-gate`, and `present-md` smoke checks.
+- [x] Open and sync the P002 preview portal and sync wave across design / TODO / phase / patch.
+- [x] Refactor `present-md` from `generated/article-preview/` to the root `preview/` path contract.
+- [x] Implement `present-sync` for full preview-site rebuild/sync across governed doc families.
+- [x] Add preview portal shell plus bounded preview helper subagents.
+- [x] Run final P002 tests + smoke checks and verify sync mutates only `preview/**` while governed source docs stay unchanged.
 
 No new implementation wave is currently selected for this plugin-local chain.
 
 ## Notes
 
 - All user-facing commands still require an explicit target workspace path.
-- `release-gate` now returns `pass` against the governed-docs workspace in checked local scope.
-- `present-md` writes local preview output under `generated/article-preview/` and reports that no governed files were edited.
+- `present-md` now writes into root `preview/` instead of `generated/article-preview/`.
+- `present-sync` rebuilds `preview/index.html`, `preview/manifest.json`, and family pages under `preview/**`.
+- `present-sync` is verified in checked local scope to leave selected governed source hashes unchanged.
 - No hidden hook authority or broad governed-file auto-fix behavior is active.

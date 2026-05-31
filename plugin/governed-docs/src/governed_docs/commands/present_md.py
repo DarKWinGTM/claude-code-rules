@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Optional, Union
 
 from governed_docs.article_presentation import render_markdown_article
+from governed_docs.preview_paths import resolve_preview_target
 from governed_docs.target_path import resolve_target_workspace_path
 
 
@@ -38,10 +39,10 @@ def run_present_md_command(
     source_path = resolve_markdown_source(workspace_path, source_rel_path)
     markdown_text = source_path.read_text(encoding='utf-8')
     rendered = render_markdown_article(markdown_text, source_rel_path=source_rel_path)
+    preview_target = resolve_preview_target(source_rel_path)
 
-    output_dir = workspace_path / 'generated' / 'article-preview'
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / f'{rendered.slug}.html'
+    output_path = workspace_path / preview_target.output_rel_path
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rendered.full_html, encoding='utf-8')
 
     return (

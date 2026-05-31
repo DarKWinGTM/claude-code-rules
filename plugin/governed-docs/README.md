@@ -16,7 +16,8 @@ Implemented and verified in checked local scope:
 - operator command/skill/agent entry surfaces
 - bounded executor-policy preview path
 - release-gate verdict flow
-- governed-docs-owned Markdown-to-HTML article preview generation
+- `present-md` single-document preview rendering into root `preview/`
+- `present-sync` full preview-portal rebuild/sync for governed source families
 
 This plugin is a maintenance/support companion only.
 
@@ -73,6 +74,7 @@ Start with one of these commands against an explicit target workspace:
 ./bin/governed-docs scan <explicit-target-workspace-path>
 ./bin/governed-docs release-gate <explicit-target-workspace-path>
 ./bin/governed-docs present-md <explicit-target-workspace-path> <source-markdown-relative-path>
+./bin/governed-docs present-sync <explicit-target-workspace-path>
 ```
 
 Boundary:
@@ -113,7 +115,8 @@ If the target path is missing, invalid, or points outside the allowed workspace 
 | `repair-plan` | Converts doctrine findings into reviewable repair-plan items |
 | `phase-audit` | Focused phase-shape / phase-lineage audit entry surface |
 | `release-gate` | Produces `pass`, `pass-with-notes`, `rework`, or `blocked` from checked governed-surface state |
-| `present-md` | Renders a governed-docs-owned article-style HTML preview from a Markdown source inside the named target workspace |
+| `present-md` | Renders one governed-docs-owned document page into the root `preview/` portal structure |
+| `present-sync` | Rebuilds and resyncs the full root `preview/` portal, manifest, and family pages from governed source docs |
 
 ---
 
@@ -122,16 +125,26 @@ If the target path is missing, invalid, or points outside the allowed workspace 
 `present-md` is governed-docs-owned presentation work.
 
 Current behavior in checked scope:
-- reads a Markdown source that must stay inside the named target workspace
-- renders a safe article-style HTML page with TOC support
-- blocks unsafe link schemes such as `javascript:` and `data:`
-- writes the preview under:
+- `present-md` reads one governed Markdown/doc source that must stay inside the named target workspace
+- `present-md` renders a safe article-style HTML page with TOC support
+- `present-md` blocks unsafe link schemes such as `javascript:` and `data:`
+- `present-md` writes into the root preview portal structure, for example:
 
 ```text
-generated/article-preview/
+preview/design/<slug>/index.html
+preview/todo/index.html
+preview/phase/index.html
 ```
 
-This preview path is a generated runtime artifact, not a governed source-of-truth document family.
+- `present-sync` rebuilds the full preview portal from governed source families and writes:
+
+```text
+preview/index.html
+preview/manifest.json
+preview/<family>/<slug>/index.html
+```
+
+The `preview/` tree is a presentation/support surface only, not a governed source-of-truth document family.
 
 NodeClaw article behavior was used only as a checked reference input for design direction. Ownership of this implementation remains inside `governed-docs`.
 

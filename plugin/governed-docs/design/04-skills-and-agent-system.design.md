@@ -98,12 +98,22 @@ Typical use:
 ### `/governed-docs:present-md`
 
 Purpose:
-- render one governed-docs-owned Markdown source into an article-style HTML presentation that is easier to read than raw Markdown
+- render one governed-docs-owned Markdown/doc source into one page inside the root `preview/` portal structure
 
 Typical use:
-- preview a governed Markdown document as an article-style page
+- preview one governed document as an article-style page
 - verify the governed-docs-owned presentation contract without borrowing NodeClaw ownership
-- produce a generated HTML preview artifact from one explicit target workspace path plus one explicit Markdown source path
+- update one bounded page under `preview/**` from one explicit target workspace path plus one explicit source path
+
+### `/governed-docs:present-sync`
+
+Purpose:
+- rebuild and resync the full root `preview/` portal across governed source families
+
+Typical use:
+- after design / changelog / TODO / phase / patch updates
+- when the preview portal needs a fresh index + manifest + family page rebuild
+- when stale preview pages should be pruned from `preview/**`
 
 ## 4) Custom agent set
 
@@ -130,6 +140,22 @@ Typical use:
 ### `governed-docs-phase-lineage-auditor`
 - specialized read-only lane
 - focuses on phase numbering, lineage fit, legacy-only forms, and malformed grammar cases
+
+### `governed-docs-present-inventory-scout`
+- read-only
+- discovers eligible preview-source docs and classifies them by family
+
+### `governed-docs-present-architect`
+- read-only planning role
+- shapes portal IA, family grouping, and preview shell structure
+
+### `governed-docs-present-renderer`
+- bounded presentation helper
+- focuses on page-shell readability and family page consistency inside `preview/**`
+
+### `governed-docs-present-sync-auditor`
+- read-only audit lane
+- verifies source ↔ preview parity, stale-page pruning, and bounded mutation to `preview/**`
 
 ## 4) Why split skills and agents this way
 

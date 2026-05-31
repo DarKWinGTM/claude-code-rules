@@ -3,6 +3,7 @@ from typing import Callable, Dict, List, Optional, Sequence, Tuple
 
 from governed_docs.commands.phase_audit import run_phase_audit_command
 from governed_docs.commands.present_md import PresentMdPathError, run_present_md_command
+from governed_docs.commands.present_sync import run_present_sync_command
 from governed_docs.commands.repair_plan import run_repair_plan_command
 from governed_docs.commands.release_gate import run_release_gate_command
 from governed_docs.commands.review import run_review_command
@@ -16,7 +17,7 @@ CommandResult = Tuple[int, str, bool]
 def help_text() -> str:
     return (
         'Usage: governed-docs <command> <explicit-target-workspace-path> [extra-args]\n'
-        'Commands: scan, review, repair-plan, phase-audit, release-gate, present-md'
+        'Commands: scan, review, repair-plan, phase-audit, release-gate, present-md, present-sync'
     )
 
 
@@ -29,6 +30,7 @@ def command_handlers() -> Dict[str, Callable[..., str]]:
         'phase-audit': run_phase_audit_command,
         'release-gate': run_release_gate_command,
         'present-md': run_present_md_command,
+        'present-sync': run_present_sync_command,
     }
 
 
