@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+set -u
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+PACKAGE_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
+
+show_status() {
+  printf '%s\n' "memory-context-intelligence local status"
+  printf '%s\n' "mode: bounded intake, internal signal analysis, topic presentation, choose flow, optional controlled research enrichment, runtime-local bounded orchestration, candidate packet building, gated additional-stage emission, historical replay validation, live bounded additional-stage trial, and checked-scope readiness available"
+  printf '%s\n' "safe intake command: intake"
+  printf '%s\n' "internal analysis command: signals"
+  printf '%s\n' "topic presentation command: present"
+  printf '%s\n' "topic selection command: choose"
+  printf '%s\n' "research enrichment command: enrich"
+  printf '%s\n' "native-agent orchestration command: orchestrate"
+  printf '%s\n' "candidate packet command: packet"
+  printf '%s\n' "additional-stage emission command: emit"
+  printf '%s\n' "historical replay command: replay"
+  printf '%s\n' "live bounded trial command: trial"
+  printf '%s\n' "checked-scope readiness command: ready"
+  printf '%s\n' "memsearch intake: explicit --memory-root or MEMORY_CONTEXT_INTELLIGENCE_MEMORY_ROOT/MCI_MEMORY_ROOT only"
+  printf '%s\n' "config policy: explicit --config or upward-discovered memory-context-intelligence.config.json"
+  printf '%s\n' "analysis surface: when no config file is loaded, operator-facing payload may include guided config questions instead of expecting raw args as the normal UX path"
+  printf '%s\n' "topic generation: internal-only through signals; presentation requires explicit present command"
+  printf '%s\n' "choose flow: records one selected topic as structured fileless state"
+  printf '%s\n' "research enrichment: optional through enrich using one selected topic report and controlled/recorded sources; no live web access by default"
+  printf '%s\n' "native-agent orchestration: runtime-local bounded orchestration available; no external agent process is spawned"
+  printf '%s\n' "candidate packet building: available through packet; output remains local structured stdout"
+  printf '%s\n' "/additional/ emission: dry-run preview by default; approved write requires emit --approved-write"
+  printf '%s\n' "historical replay: bounded deterministic phase-014 replay with dry-run emit preview only; approved writes are unavailable"
+  printf '%s\n' "live bounded trial: one selected candidate can be emitted under an explicitly selected additional root with --approved-write"
+  printf '%s\n' "checked-scope readiness: aggregates phases 007-015 and reports usable in checked scope only when evidence gates pass"
+  printf '%s\n' "main RULES merge: not performed"
+  printf '%s\n' "main RULES promotion: not performed"
+  printf '%s\n' "stable or broad production readiness: not claimed"
+  printf '%s\n' "install/marketplace publication: not performed"
+  printf '%s\n' "main RULES mutation: not performed"
+  printf '%s\n' "runtime install/publication: not performed"
+  printf '%s\n' "configuration: late-bound; no machine-specific memsearch or additional roots are package defaults"
+  printf '%s\n' "usage: memory-context-intelligence analysis-surface"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence intake --memory-root <memory-root> [--config <config.json>] [--scope <text>]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence signals --intake-report <intake-report.json>"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence present --signals-report <signals-report.json> [--output-mode auto|native-first|bilingual|fixed]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence choose --signals-report <signals-report.json> --topic-id <topic-id> [--output-mode auto|native-first|bilingual|fixed]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence enrich --selection-report <choose-report.json> [--sources-fixture <sources.json>]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence orchestrate [--intake-report <intake.json>] [--signals-report <signals.json>] [--selection-report <choose.json>] [--enrichment-report <enrich.json>] [--sources-fixture <sources.json>] [--max-sources <n>]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence packet --orchestration-report <orchestrate.json> --owner-domain <domain> --main-rule-target <rule.md>"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence emit --packet-report <packet.json> [--additional-root <additional-root>] [--approved-write] [--allow-overwrite]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence replay --memory-root <memory-root> [--scope <text>] [--sources-fixture <sources.json>] [--additional-root <additional-root>]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence trial --memory-root <memory-root> --owner-domain <domain> --main-rule-target <rule.md> --additional-root <additional-root> [--approved-write]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence ready --memory-root <memory-root> --owner-domain <domain> --main-rule-target <rule.md> --additional-root <additional-root> --main-rules-root <rules-root> [--phase-015-trial-artifact <artifact.md>]"
+}
+
+case "${1:---help}" in
+  --help|-h|help|status|noop)
+    show_status
+    ;;
+  analysis-surface)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/analysis_surface.py" "$@"
+    ;;
+  intake)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/intake.py" "$@"
+    ;;
+  signals)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/signals.py" "$@"
+    ;;
+  present)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/presentation.py" present "$@"
+    ;;
+  choose)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/presentation.py" choose "$@"
+    ;;
+  enrich)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/research_enrichment.py" "$@"
+    ;;
+  orchestrate)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/orchestration.py" "$@"
+    ;;
+  packet)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/candidate_packet.py" packet "$@"
+    ;;
+  emit)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/candidate_packet.py" emit "$@"
+    ;;
+  replay)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/historical_replay.py" "$@"
+    ;;
+  trial)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/live_trial.py" "$@"
+    ;;
+  ready)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/readiness.py" "$@"
+    ;;
+  *)
+    printf '%s\n' "memory-context-intelligence: unknown command '$1'" >&2
+    printf '%s\n' "Run with --help, status, noop, intake, signals, present, choose, enrich, orchestrate, packet, emit, replay, trial, or ready." >&2
+    exit 2
+    ;;
+esac
