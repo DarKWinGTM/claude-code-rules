@@ -1,0 +1,36 @@
+{
+  "name": "darkwingtm",
+  "owner": {
+    "name": "darkwingtm"
+  },
+  "metadata": {
+    "description": "Source-side local marketplace bootstrap for governed Claude Code plugin packages under TEMPLATE/RULES/plugin. This file identifies local package sources for later verification under the local marketplace name darkwingtm and does not prove Claude runtime load, persistent install, publication, or marketplace release.",
+    "version": "0.1.29"
+  },
+  "plugins": [
+    {
+      "name": "memory-context-intelligence",
+      "source": "./memory-context-intelligence",
+      "description": "Source-side governed plugin capsule for bounded memory-trace intake, signal analysis, candidate packet building, additional-stage trial emission, historical replay validation, and checked-scope readiness reporting. This entry identifies the local source package only and does not claim runtime load or install proof.",
+      "tags": [
+        "memory-context",
+        "signal-analysis",
+        "candidate-packet",
+        "checked-scope-readiness",
+        "rules-governance"
+      ]
+    },
+    {
+      "name": "governed-docs",
+      "source": "./governed-docs",
+      "description": "Source-side governed plugin capsule for explicit-path governed-document scanning, doctrine-aware maintenance classification, repair-plan generation, bounded release-gate evaluation, and article-style Markdown preview rendering. This entry identifies the local source package only and does not claim runtime load or install proof.",
+      "tags": [
+        "rules-governance",
+        "governed-docs",
+        "doc-maintenance",
+        "release-gate",
+        "markdown-preview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "governed-docs",
+  "version": "0.1.0",
+  "description": "RULES-native governed document maintenance companion",
+  "author": "DarKWinGTM",
+  "license": "UNLICENSED",
+  "keywords": [
+    "rules",
+    "governance",
+    "docs",
+    "maintenance",
+    "phase"
+  ]
+}
