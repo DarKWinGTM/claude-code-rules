@@ -191,6 +191,131 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
         self.assertIn("memory-context-intelligence.config.json", payload["config_questions"]["suggested_config_path"])
         self.assertEqual(len(payload["config_questions"]["questions"]), 4)
 
+    def test_analysis_surface_surfaces_adaptive_deep_analysis_plan(self) -> None:
+        captured: list[dict] = []
+        present_payload = {
+            "status": "available",
+            "topic_cards": [
+                {
+                    "id": "topic-001",
+                    "title": "Topic title",
+                    "recommended_first": True,
+                    "status_line": "candidate only; advisory only; not approved yet",
+                    "confidence": "medium",
+                    "evidence_summary": "Historical trace evidence is the primary signal.",
+                    "sections": [{"label": "What this means", "value": "Example"}],
+                }
+            ],
+            "next_action_options": {
+                "heading": "Next action options",
+                "status_line": "advisory only; no topic selected yet",
+                "options": [],
+            },
+        }
+
+        with tempfile.TemporaryDirectory(prefix="mci-analysis-surface-adaptive-") as temp_dir:
+            temp_path = Path(temp_dir)
+
+            with patch.object(
+                analysis_surface,
+                "find_memory_root",
+                return_value=temp_path / ".memsearch" / "memory",
+            ), patch.object(analysis_surface, "run_json_command") as mock_run, patch.object(
+                analysis_surface,
+                "emit",
+                side_effect=captured.append,
+            ), patch.object(
+                analysis_surface.tempfile,
+                "mkdtemp",
+                return_value=temp_dir,
+            ), patch.object(
+                analysis_surface.Path,
+                "cwd",
+                return_value=temp_path,
+            ):
+                mock_run.side_effect = [
+                    (
+                        subprocess.CompletedProcess(args=["intake"], returncode=0, stdout='{"status": "available"}', stderr=""),
+                        {
+                            "status": "available",
+                            "scope": {"basis": "historical-default", "day_shard": "2026-06-01", "same_day_widened": False},
+                            "source": {
+                                "retrieval_mode": "raw-day-shard-scope",
+                                "source_classes_present": ["trace_evidence", "recall_evidence", "durable_memory_context", "governance_context"],
+                            },
+                            "source_policy": {
+                                "loaded": False,
+                                "config_path": None,
+                                "config_source": "none",
+                                "policy_limited": False,
+                                "effective_source_classes": ["trace_evidence", "recall_evidence", "durable_memory_context", "governance_context"],
+                                "policy_note": "No config file was loaded; runtime defaults remain active.",
+                            },
+                        },
+                    ),
+                    (
+                        subprocess.CompletedProcess(args=["signals"], returncode=0, stdout='{"status": "available"}', stderr=""),
+                        {
+                            "status": "available",
+                            "ranked_signals": [
+                                {
+                                    "id": "signal-001",
+                                    "rank": 1,
+                                    "kind": "blocker",
+                                    "review_focus": "evidence-boundary",
+                                    "confidence": "medium",
+                                    "keywords": ["verification", "policy"],
+                                    "source_classes": ["trace_evidence", "governance_context"],
+                                    "source_mix_label": "trace_evidence + governance_context",
+                                    "trace_record_count": 2,
+                                    "historical_strength": "2 trace record(s) across 2 session(s) and 2 shard(s)",
+                                    "current_session_confirmation": "historical-only",
+                                }
+                            ],
+                            "topic_candidates": [
+                                {
+                                    "rank": 1,
+                                    "id": "topic-001",
+                                    "title": "Strengthen evidence discipline around completion claims",
+                                    "confidence": "medium",
+                                    "promotion_tier": "promoted-candidate",
+                                    "source_signal_ids": ["signal-001"],
+                                }
+                            ],
+                        },
+                    ),
+                    (
+                        subprocess.CompletedProcess(args=["present"], returncode=0, stdout='{"status": "available"}', stderr=""),
+                        present_payload,
+                    ),
+                ]
+
+                exit_code = analysis_surface.main([
+                    "--session-id",
+                    "session-123",
+                    "--current-day",
+                    "2026-06-01",
+                ])
+
+        self.assertEqual(exit_code, 0)
+        payload = captured[0]
+        self.assertIn("adaptive_deep_analysis", payload)
+        self.assertEqual(payload["adaptive_deep_analysis"]["strategy"], "adaptive-escalate")
+        self.assertTrue(payload["adaptive_deep_analysis"]["all_four_internal_sources_default"])
+        self.assertTrue(payload["adaptive_deep_analysis"]["deepening_required"])
+        self.assertTrue(payload["adaptive_deep_analysis"]["must_deepen_before_first_response"])
+        self.assertEqual(payload["adaptive_deep_analysis"]["required_topic_ids"], ["topic-001"])
+        self.assertTrue(payload["adaptive_deep_analysis"]["tool_unavailability_requires_note"])
+        self.assertIn("must perform one bounded deepening pass", payload["adaptive_deep_analysis"]["execution_contract"])
+        self.assertEqual(
+            payload["adaptive_deep_analysis"]["topic_deepening_candidates"][0]["recommended_mode"],
+            "subagent+external-research",
+        )
+        self.assertTrue(payload["adaptive_deep_analysis"]["subagent_deepening_allowed"])
+        self.assertTrue(payload["adaptive_deep_analysis"]["external_research_enrichment_allowed"])
+        self.assertTrue(payload["adaptive_deep_analysis"]["advisory_only_before_selection"])
+        self.assertIn("trace_evidence remains the live promotion anchor", payload["adaptive_deep_analysis"]["trace_anchor_rule"])
+
     def test_analysis_surface_emits_advisory_stale_session_warning_when_plugin_update_is_newer_than_session(self) -> None:
         captured: list[dict] = []
         present_payload = {

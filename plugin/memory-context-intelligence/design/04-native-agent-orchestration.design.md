@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.18
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-18)
+> **Current Version:** 0.1.74
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -30,6 +30,17 @@ The runtime package under `<repo-root>/plugin/memory-context-intelligence/` now 
 - **Synthesis Lead** — merges lane findings into readiness states and emits bounded `phase_013_candidate_input`
 
 The lead session remains responsible for final framing, authority boundaries, direct verification of material anchors, and what is shown to the user.
+
+## 3.1) Phase-069 user-facing adaptive deepening contract
+
+Phase 069 does not replace runtime-local orchestration with a new always-on external workflow. It uses the existing lane concepts as a bounded first-response deepening aid for `/memory-context-intelligence:analysis`.
+
+Current checked behavior:
+- the adaptive payload can now mark deepening as required before the first response
+- that payload names which topic ids require the bounded deepening step
+- the first response may use a read-only subagent lane plus supporting web/external research when the current runtime exposes those tools
+- if the required tool is unavailable, the response must say so explicitly instead of silently skipping the step
+- deepening remains advisory-only and read-only; it must not select a topic, build a candidate packet, write `/additional/`, or weaken the trace anchor
 
 ## 4) When to use orchestration
 

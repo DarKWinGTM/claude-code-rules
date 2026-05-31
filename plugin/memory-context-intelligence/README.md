@@ -1,8 +1,8 @@
 # memory-context-intelligence
 
-> **Status:** Usable in checked scope for `/memory-context-intelligence:analysis`; `review` and `packet` remain deferred
-> **Current Version:** 0.1.72
-> **Plugin Package Version:** 0.9.25
+> **Status:** Final plugin-scoped release closeout completed in checked scope for `/memory-context-intelligence:analysis`; `review` and `packet` remain deferred, and future development remains open
+> **Current Version:** 0.1.74
+> **Plugin Package Version:** 0.9.26
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
 
 ---
@@ -23,6 +23,8 @@ Current checked behavior that matters:
 - the default mode is **historical-first analysis**, not current-session-only summary
 - `trace_evidence` remains the live promotion anchor
 - `recall_evidence`, `durable_memory_context`, and `governance_context` can strengthen wording and context, but they do not replace trace proof
+- when adaptive deep-analysis marks a top topic as requiring deeper review, the checked current skill contract now requires one **bounded read-only deepening pass** before the first response instead of silently skipping it
+- that deepening can use read-only subagent help plus optional web/external research support, but it still stays advisory-only and cannot replace local trace proof
 - if no config file is loaded, the plugin can show a **guided config helper** instead of expecting raw arguments as the normal UX
 
 ## When to use it
@@ -37,43 +39,6 @@ This is **not** the right tool when you want to:
 - jump straight into fixing product code without caring about trace history
 - treat bare `/analysis` as the public command
 - rely on the plugin to auto-run in the background through hooks or monitors
-
-## Install Claude Code
-
-Install Claude Code first, then install this plugin.
-
-### Linux / WSL
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-### Windows PowerShell
-
-```powershell
-irm https://claude.ai/install.ps1 | iex
-```
-
-### Windows CMD
-
-```batch
-curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
-```
-
-Notes:
-- On native Windows, **Git for Windows is recommended** so Claude Code can use the Bash tool.
-- If Git for Windows is not installed, Claude Code falls back to PowerShell as its shell tool.
-- After installation, start Claude Code with:
-
-```bash
-claude
-```
-
-If you have not logged in yet, do it inside the session with:
-
-```text
-/login
-```
 
 ## Install and load this plugin
 
@@ -152,6 +117,7 @@ If usable evidence is available, you should get topic-card output such as:
 - why it surfaced from evidence
 - what the before/after behavior looks like
 - that the result is still `candidate only; advisory only; not approved yet`
+- when the adaptive payload flags a top topic for deeper review, the first response may now include one bounded read-only deepening pass before the cards are finished, while still keeping the final result advisory-only and trace-anchored
 
 At the end of the output, you should also see `Next action options`, such as:
 - choose a topic number
@@ -306,11 +272,10 @@ A better mental model is:
 
 ## Current truth summary
 
-If you want the shortest version, remember these 5 steps:
-1. install Claude Code first
-2. add the local marketplace from `<template-root>`
-3. install `memory-context-intelligence@darkwingtm`
-4. run `/reload-plugins`
-5. start with `/memory-context-intelligence:analysis`
+If you want the shortest version, remember these 4 steps:
+1. add the local marketplace from `<template-root>`
+2. install `memory-context-intelligence@darkwingtm`
+3. run `/reload-plugins`
+4. start with `/memory-context-intelligence:analysis`
 
 If your first run does not load a config file yet, that is fine — the plugin should guide you with the config helper instead of forcing raw arguments as the normal starting UX.

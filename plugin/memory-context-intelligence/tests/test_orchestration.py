@@ -230,6 +230,30 @@ class OrchestrationTests(unittest.TestCase):
         self.assertFalse(report["candidate_packet_built"])
         self.assertFalse(report["main_rules_mutation_performed"])
 
+    def test_adaptive_deepening_plan_flags_top_topics_for_subagent_and_external_support(self) -> None:
+        report = orchestration.build_adaptive_deepening_plan(signals_report(), max_topics=2)
+
+        self.assertTrue(report["enabled"])
+        self.assertEqual(report["strategy"], "adaptive-escalate")
+        self.assertEqual(report["max_topics_for_deepening"], 2)
+        self.assertTrue(report["deepening_required"])
+        self.assertTrue(report["must_deepen_before_first_response"])
+        self.assertEqual(report["required_topic_ids"], ["topic-001"])
+        self.assertTrue(report["tool_unavailability_requires_note"])
+        self.assertIn("must perform one bounded deepening pass", report["execution_contract"])
+        self.assertGreaterEqual(len(report["topic_deepening_candidates"]), 1)
+        first = report["topic_deepening_candidates"][0]
+        self.assertEqual(first["topic_id"], "topic-001")
+        self.assertEqual(first["recommended_mode"], "subagent+external-research")
+        self.assertIn("strong-signal", first["deepening_reasons"])
+        self.assertTrue(first["trace_anchor_present"])
+        self.assertTrue(first["external_research_allowed"])
+        self.assertTrue(first["external_research_recommended"])
+        self.assertIn("trace-scout", first["recommended_lanes"])
+        self.assertIn("research-scout", first["recommended_lanes"])
+        self.assertIn("source-trust-reviewer", first["recommended_lanes"])
+        self.assertIn("synthesis-lead", first["recommended_lanes"])
+
 
 if __name__ == "__main__":
     unittest.main()

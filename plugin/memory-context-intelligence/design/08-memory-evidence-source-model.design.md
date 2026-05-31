@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.72
+> **Current Version:** 0.1.74
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
 > **Parent Design:** [design.md](design.md)
 
@@ -91,6 +91,7 @@ Current implementation expectations:
 - `durable_memory_context`: remain visible when durable memory materially strengthened the candidate
 - `governance_context`: remain visible when owner/boundary/promotion fit materially shaped the candidate
 - config-file source policy: remain visible when source selection or source limits materially narrowed what the run could judge, so a limited-source run does not overread as broader evidence than it actually holds
+- adaptive deepening: if read-only subagent or web/external research support materially strengthened the explanation, keep that support visible as supporting evidence rather than letting it read like a new promotion anchor
 
 The first operator-facing response does not need raw dumps, but it should make the evidence mix visible enough that the user can tell where the proposal came from.
 
@@ -138,6 +139,7 @@ Report no strong candidate when:
 A proposal-first topic may surface when:
 - `trace_evidence` shows a repeated historical pattern strong enough to review
 - `recall_evidence`, `durable_memory_context`, or `governance_context` strengthen the candidate when relevant
+- adaptive deepening may sharpen mechanism, stop-gate wording, source-trust framing, or supporting principle detail, but it must stay explicitly subordinate to the trace-backed local topic
 - the result can still be framed honestly as a design-grounded review topic rather than a promotion-ready rule change
 
 ### 6.3 Promotion-consideration candidate

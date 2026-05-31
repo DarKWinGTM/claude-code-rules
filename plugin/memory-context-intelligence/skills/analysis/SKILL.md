@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.25
+version: 0.9.26
 ---
 
 # Memory Context Intelligence Analysis
@@ -78,6 +78,20 @@ When invoked for normal operator use:
 - same-family weaker topics may still appear, but they should stay in the same repeated topic-card rhythm rather than being moved into a separate global variants wrapper
 - repeated recap or summary blocks must be removed; each topic block should add topic-specific meaning rather than restating a global summary again
 - the first response must not require a second manual rewrite pass; it should already read as native-first operator-facing output
+- treat the analysis surface as adaptive deep-analysis when the rendered payload includes `adaptive_deep_analysis`
+- all four internal evidence sources should be treated as the default internal evidence basis when the payload says they are enabled by default
+- when `adaptive_deep_analysis.deepening_required` is true, you must deepen the top 1-2 topic candidates named in `adaptive_deep_analysis.required_topic_ids` before the first response instead of silently skipping deepening
+- when a required candidate recommends `subagent-assisted`, use a read-only subagent lane if the current runtime exposes subagent capability
+- when a required candidate recommends `subagent+external-research`, use the read-only subagent lane plus web/external research if those tools are available in the current runtime
+- if the required subagent or web/external research tool is unavailable, you must say so explicitly and keep the skipped deepening visible rather than silently skipping it
+- do not silently skip required adaptive deepening
+- subagent-assisted deepening should stay read-only and focus on clarifying mechanism, impact, source conflicts, and decision-ready intervention wording for the already-ranked topic
+- web/external research enrichment is allowed only as a supporting layer after a trace-backed local topic already exists; it may strengthen principle/mechanism support, constraints, or trade-offs, but it must not replace local trace proof
+- keep `trace_evidence` as the live promotion anchor even after adaptive deep-analysis, subagent-assisted deepening, or web/external research enrichment
+- `trace_evidence` remains the live promotion anchor even when deeper analysis uses multiple internal sources and optional external support
+- trace_evidence remains the live promotion anchor even when deeper analysis uses multiple internal sources and optional external support
+- adaptive deepening before topic selection must not be treated as selected or approved; it remains advisory-only until the user chooses a topic or explicitly asks for a change proposal/goal draft
+- keep the topic-card output shape even after deeper analysis; deepen the evidence and mechanism inside the cards rather than replacing them with a new wrapper format
 
 If the rendered status is `blocked`:
 - say directly that analysis is blocked

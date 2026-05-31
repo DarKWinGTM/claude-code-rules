@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.72
+> **Current Version:** 0.1.74
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
 > **Parent Design:** [design.md](design.md)
 
@@ -134,6 +134,9 @@ The first output layer must:
 - make the breadth summary explicit enough to show when broader multi-session/multi-shard history outranked narrow historical-only signals
 - surface compact source-mix wording when durable memory or governance context materially shaped a candidate
 - when no config file is loaded for the run, the operator-facing payload may expose an advisory guided config helper with `config_questions` and `suggested_config_path` instead of treating raw args as the normal config UX
+- when `adaptive_deep_analysis.deepening_required` is true, the first response must run one bounded deepening pass for the top 1-2 topic ids named in `adaptive_deep_analysis.required_topic_ids` before the topic cards are rendered
+- that deepening pass may use read-only subagent help plus supporting web/external research when those tools are available, but it must stay advisory-only and must not replace local trace proof
+- if a required deepening tool is unavailable, the response must say so explicitly instead of silently skipping the deepening step
 - include provenance notes when they materially help the user judge the evidence boundary
 - every first-pass topic card should include a compact `Before behavior` and `After behavior` preview so the user can picture the change immediately without waiting for a second prompt
 - those first-pass before/after previews must stay compact, human-readable, and evidence-calibrated; they help visualize the target change but must not overclaim that the current system always behaved exactly that way

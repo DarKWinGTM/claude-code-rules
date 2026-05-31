@@ -23,6 +23,19 @@ LANE_SOURCE_TRUST = "source-trust-reviewer"
 LANE_SYNTHESIS = "synthesis-lead"
 LANE_ORDER = (LANE_TRACE, LANE_RESEARCH, LANE_SOURCE_TRUST, LANE_SYNTHESIS)
 
+EXTERNAL_RESEARCH_KEYWORDS = {
+    "approval",
+    "boundary",
+    "constraint",
+    "disclosure",
+    "governance",
+    "policy",
+    "standard",
+    "support",
+    "trust",
+    "verification",
+}
+
 
 class OrchestrationError(ValueError):
     """Raised when orchestration input is malformed."""
@@ -476,6 +489,180 @@ def synthesis_lane(lanes: list[dict[str, Any]], topic: dict[str, Any] | None) ->
         leader_verification_needs=all_leader_needs
         + ["Treat this orchestration output as phase-013 input only, not as a candidate packet."],
     )
+
+
+def parse_historical_strength_label(value: Any) -> tuple[int, int, int] | None:
+    text = str(value or "").strip()
+    parts = text.split()
+    if len(parts) < 8:
+        return None
+    try:
+        return int(parts[0]), int(parts[4]), int(parts[7])
+    except ValueError:
+        return None
+
+
+
+def merged_source_classes(signal: dict[str, Any], topic: dict[str, Any]) -> list[str]:
+    values = signal.get("source_classes") or topic.get("source_classes") or ["trace_evidence"]
+    return [str(item) for item in values if item]
+
+
+
+def merged_trace_record_count(signal: dict[str, Any], topic: dict[str, Any]) -> int:
+    direct = signal.get("trace_record_count")
+    if isinstance(direct, int):
+        return direct
+    records = signal.get("records", [])
+    if isinstance(records, list) and records:
+        return len(records)
+    parsed_strength = parse_historical_strength_label(signal.get("historical_strength") or topic.get("historical_strength"))
+    if parsed_strength:
+        return parsed_strength[0]
+    return 0
+
+
+
+def merged_topic_text(signal: dict[str, Any], topic: dict[str, Any]) -> str:
+    parts = [
+        str(topic.get("title") or ""),
+        str(topic.get("purpose") or ""),
+        str(topic.get("why_surfaced") or ""),
+        str(topic.get("expected_behavior_impact") or ""),
+        str(topic.get("high_level_mechanism") or ""),
+        str(topic.get("expected_output") or ""),
+        str(signal.get("label") or ""),
+    ]
+    return " ".join(part for part in parts if part).lower()
+
+
+
+def merged_keywords(signal: dict[str, Any], topic: dict[str, Any]) -> set[str]:
+    keywords = {str(item).lower() for item in signal.get("keywords", []) if item}
+    keywords.update(token.strip("`.,;:()[]{}") for token in merged_topic_text(signal, topic).split())
+    return {token for token in keywords if token}
+
+
+
+def deepening_reason_set(signal: dict[str, Any], topic: dict[str, Any]) -> list[str]:
+    reasons: list[str] = []
+    if str(signal.get("confidence") or topic.get("confidence") or "") in {"medium", "high"}:
+        reasons.append("strong-signal")
+    if str(signal.get("kind") or "") in {"blocker", "evidence_gap"}:
+        reasons.append("high-impact")
+    if len(merged_source_classes(signal, topic)) > 1:
+        reasons.append("multi-source-synthesis")
+    review_focus = str(signal.get("review_focus") or "")
+    topic_text = merged_topic_text(signal, topic)
+    if review_focus in {"evidence-boundary", "surface-boundary"} or "mechanism" in topic_text or "principle" in topic_text:
+        reasons.append("mechanism-clarification")
+    parsed_strength = parse_historical_strength_label(signal.get("historical_strength") or topic.get("historical_strength"))
+    if parsed_strength and parsed_strength[1] >= 2 and parsed_strength[2] >= 2:
+        reasons.append("broad-historical-pattern")
+    return reasons
+
+
+
+def external_research_recommended(signal: dict[str, Any], topic: dict[str, Any]) -> bool:
+    if merged_trace_record_count(signal, topic) <= 0:
+        return False
+    if str(signal.get("review_focus") or "") == "evidence-boundary":
+        return True
+    if str(signal.get("kind") or "") in {"blocker", "evidence_gap"}:
+        return True
+    return bool(merged_keywords(signal, topic) & EXTERNAL_RESEARCH_KEYWORDS)
+
+
+
+def recommended_deepening_mode(signal: dict[str, Any], topic: dict[str, Any]) -> str:
+    if merged_trace_record_count(signal, topic) <= 0:
+        return "local-only"
+    reasons = deepening_reason_set(signal, topic)
+    if not reasons:
+        return "local-only"
+    if external_research_recommended(signal, topic):
+        return "subagent+external-research"
+    return "subagent-assisted"
+
+
+
+def recommended_lanes_for_signal(signal: dict[str, Any], topic: dict[str, Any]) -> list[str]:
+    mode = recommended_deepening_mode(signal, topic)
+    lanes = [LANE_TRACE]
+    if len(merged_source_classes(signal, topic)) > 1:
+        lanes.append("context-scout")
+    if mode in {"subagent-assisted", "subagent+external-research"}:
+        lanes.append(LANE_SYNTHESIS)
+    if mode == "subagent+external-research":
+        lanes.extend([LANE_RESEARCH, LANE_SOURCE_TRUST])
+    return lanes
+
+
+
+def build_adaptive_deepening_plan(signals_report: dict[str, Any], *, max_topics: int = 2) -> dict[str, Any]:
+    ranked_signals = [
+        signal
+        for signal in (signals_report.get("ranked_signals", []) or [])
+        if isinstance(signal, dict)
+    ]
+    signal_by_id = {str(signal.get("id")): signal for signal in ranked_signals if signal.get("id")}
+
+    raw_topics = []
+    for key in ("topic_candidates", "advisory_fallback_topics"):
+        values = signals_report.get(key, []) or []
+        if isinstance(values, list):
+            raw_topics.extend(topic for topic in values if isinstance(topic, dict))
+
+    candidates: list[dict[str, Any]] = []
+    for topic in raw_topics[: max(1, min(max_topics, 5))]:
+        signal_ids = [str(signal_id) for signal_id in topic.get("source_signal_ids", []) if signal_id]
+        signal = next((signal_by_id[signal_id] for signal_id in signal_ids if signal_id in signal_by_id), {})
+        mode = recommended_deepening_mode(signal, topic)
+        trace_anchor_present = merged_trace_record_count(signal, topic) > 0
+        candidates.append(
+            {
+                "topic_id": topic.get("id"),
+                "title": topic.get("title"),
+                "confidence": topic.get("confidence"),
+                "promotion_tier": topic.get("promotion_tier", "promoted-candidate"),
+                "trace_anchor_present": trace_anchor_present,
+                "recommended_mode": mode,
+                "deepening_reasons": deepening_reason_set(signal, topic),
+                "external_research_allowed": trace_anchor_present,
+                "external_research_recommended": external_research_recommended(signal, topic),
+                "recommended_lanes": recommended_lanes_for_signal(signal, topic),
+                "source_mix_label": signal.get("source_mix_label") or topic.get("source_mix_label"),
+                "historical_strength": signal.get("historical_strength") or topic.get("historical_strength"),
+                "current_session_confirmation": signal.get("current_session_confirmation") or topic.get("current_session_confirmation"),
+                "source_signal_ids": signal_ids,
+            }
+        )
+
+    required_topic_ids = [
+        str(candidate.get("topic_id"))
+        for candidate in candidates
+        if candidate["recommended_mode"] in {"subagent-assisted", "subagent+external-research"}
+        and candidate.get("topic_id")
+    ]
+
+    return {
+        "enabled": True,
+        "strategy": "adaptive-escalate",
+        "max_topics_for_deepening": max(1, min(max_topics, 5)),
+        "topic_candidates_considered": len(raw_topics),
+        "deepening_required": bool(required_topic_ids),
+        "must_deepen_before_first_response": bool(required_topic_ids),
+        "required_topic_ids": required_topic_ids,
+        "tool_unavailability_requires_note": True,
+        "execution_contract": "When deepening_required is true, the analysis skill must perform one bounded deepening pass for required_topic_ids before the first response. It may skip only if the required subagent or web/external research tool is unavailable, and then it must say so explicitly.",
+        "topic_deepening_candidates": candidates,
+        "notes": [
+            "All four internal evidence sources may remain enabled by default, while adaptive deepening decides how much extra analysis is worth doing per topic.",
+            "External research can support principle or mechanism synthesis only when trace-backed local evidence already anchors the topic.",
+            "Deepening stays advisory before topic selection; it must not be treated as approved execution or candidate-packet promotion by itself.",
+        ],
+    }
+
 
 
 def boundary_flags() -> dict[str, Any]:

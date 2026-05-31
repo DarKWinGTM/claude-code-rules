@@ -12,7 +12,7 @@ class PluginManifestTests(unittest.TestCase):
     def test_plugin_manifest_is_valid_json_and_tracks_current_version(self) -> None:
         payload = json.loads(PLUGIN_MANIFEST.read_text(encoding="utf-8"))
         self.assertEqual(payload["name"], "memory-context-intelligence")
-        self.assertEqual(payload["version"], "0.9.25")
+        self.assertEqual(payload["version"], "0.9.26")
         self.assertIn("description", payload)
 
 

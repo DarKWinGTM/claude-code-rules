@@ -172,6 +172,25 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("suggested_config_path", text)
         self.assertIn("when the runtime payload says no config file is loaded", text)
 
+    def test_analysis_skill_describes_adaptive_deep_analysis_behavior(self) -> None:
+        text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
+        self.assertIn("adaptive deep-analysis", text)
+        self.assertIn("all four internal evidence sources", text)
+        self.assertIn("subagent-assisted", text)
+        self.assertIn("web/external research", text)
+        self.assertIn("before the first response", text)
+        self.assertIn("must not be treated as selected or approved", text)
+        self.assertIn("supporting layer", text)
+        self.assertIn("trace_evidence remains the live promotion anchor", text)
+
+    def test_analysis_skill_requires_bounded_deepening_when_adaptive_plan_flags_it(self) -> None:
+        text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
+        self.assertIn("deepening_required", text)
+        self.assertIn("required_topic_ids", text)
+        self.assertIn("must deepen", text)
+        self.assertIn("must say so explicitly", text)
+        self.assertIn("do not silently skip", text)
+
 
 if __name__ == "__main__":
     unittest.main()

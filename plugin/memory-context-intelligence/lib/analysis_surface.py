@@ -16,6 +16,7 @@ if str(LIB_DIR) not in os.sys.path:
     os.sys.path.insert(0, str(LIB_DIR))
 
 from config_policy import build_guided_config_questions
+from orchestration import build_adaptive_deepening_plan
 
 REGISTERED_OPERATOR_SURFACE = "/memory-context-intelligence:analysis"
 RUNTIME_PROOF_NOTE = "not proved in checked current print-mode runtime"
@@ -427,6 +428,31 @@ def main(argv: list[str] | None = None) -> int:
 
     operator_warnings = build_operator_warnings(cwd=cwd, session_id=args.session_id)
 
+    effective_source_classes = []
+    if isinstance(intake.get("source_policy"), dict):
+        raw_effective = intake.get("source_policy", {}).get("effective_source_classes") or []
+        if isinstance(raw_effective, list):
+            effective_source_classes = [str(item) for item in raw_effective if item]
+    source_classes_present = intake.get("source", {}).get("source_classes_present")
+    adaptive_deep_analysis = build_adaptive_deepening_plan(signals)
+    adaptive_deep_analysis.update(
+        {
+            "default_internal_source_classes": effective_source_classes,
+            "source_classes_present": source_classes_present,
+            "all_four_internal_sources_default": effective_source_classes
+            == [
+                "trace_evidence",
+                "recall_evidence",
+                "durable_memory_context",
+                "governance_context",
+            ],
+            "subagent_deepening_allowed": True,
+            "external_research_enrichment_allowed": True,
+            "trace_anchor_rule": "trace_evidence remains the live promotion anchor even when deeper analysis uses multiple internal sources and optional external support.",
+            "advisory_only_before_selection": True,
+        }
+    )
+
     payload = {
         "registered_operator_surface": REGISTERED_OPERATOR_SURFACE,
         "design_grounded_review": True,
@@ -451,7 +477,8 @@ def main(argv: list[str] | None = None) -> int:
         "no_topics_message": present.get("no_topics_message"),
         "no_topics_details": present.get("no_topics_details", []),
         "recommended_next_step": present.get("recommended_next_step"),
-        "source_classes_present": intake.get("source", {}).get("source_classes_present"),
+        "source_classes_present": source_classes_present,
+        "adaptive_deep_analysis": adaptive_deep_analysis,
         "topic_cards": present.get("topic_cards"),
         "next_action_options": present.get("next_action_options"),
     }
