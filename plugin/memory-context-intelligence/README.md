@@ -9,38 +9,38 @@
 
 ## What this plugin does
 
-`memory-context-intelligence` เป็น Claude Code plugin สำหรับอ่าน **bounded work evidence** จาก memory traces ที่ถูกเตรียมไว้ แล้วสรุปออกมาเป็น **topic cards** ที่ช่วยคุณเห็นว่า workflow, RULES, หรือ operating habits แบบไหนกำลังมี pattern ซ้ำ ๆ จนควรถูกยกขึ้นมาปรับปรุง
+`memory-context-intelligence` is a Claude Code plugin that reads bounded work evidence from prepared memory traces and turns it into topic cards that help you spot recurring workflow, RULES, and operating-pattern issues worth reviewing.
 
-พูดง่าย ๆ: มันไม่ได้ช่วยเขียน feature ในโปรเจกต์โดยตรง แต่ช่วยตอบคำถามแบบนี้ได้ดี:
-- `ช่วงนี้เราติด workflow แบบเดิมซ้ำ ๆ ไหม`
-- `มี RULES gap อะไรที่ควรถูกเสนอขึ้นมาเป็น proposal`
-- `ควรเริ่มคุยหรือวิจัยเรื่องไหนก่อน เพื่อให้การทำงานรอบต่อไปดีขึ้น`
+In plain terms, this plugin is not for writing product features directly. It is for questions like:
+- Are we getting stuck on the same workflow problem repeatedly?
+- Is there a RULES gap that should be turned into a proposal?
+- Which governance or workflow topic should we investigate first to improve the next wave of work?
 
-Current checked public surface มีอันเดียว:
+Current checked public surface:
 - `/memory-context-intelligence:analysis`
 
-Current checked behavior ที่สำคัญ:
-- default เป็น **historical-first analysis** ไม่ใช่สรุปเฉพาะ current session
-- ใช้ `trace_evidence` เป็น live promotion anchor
-- `recall_evidence`, `durable_memory_context`, และ `governance_context` ช่วยเสริมความชัดได้ แต่ไม่แทน trace proof
-- ถ้าไม่มี config file ระบบจะโชว์ **guided config helper** แทนการบังคับให้ผู้ใช้จำ raw args
+Current checked behavior that matters:
+- the default mode is **historical-first analysis**, not current-session-only summary
+- `trace_evidence` remains the live promotion anchor
+- `recall_evidence`, `durable_memory_context`, and `governance_context` can strengthen wording and context, but they do not replace trace proof
+- if no config file is loaded, the plugin can show a **guided config helper** instead of expecting raw arguments as the normal UX
 
 ## When to use it
 
-เหมาะเมื่อคุณอยากให้ Claude Code ช่วย review รูปแบบการทำงานย้อนหลังแบบ evidence-first เช่น:
-- หลังทำงานมาสักพักแล้ว อยากดูว่า recurring blocker อะไรเริ่มโผล่ซ้ำ
-- อยากหา candidate topic สำหรับปรับ RULES / workflow / governance
-- อยากได้ historical review ที่กว้างกว่า current session เดียว
-- อยากจำกัด source classes หรือ historical depth ด้วย config file โดยไม่เปลี่ยน evidence model หลัก
+Use this plugin when you want Claude Code to review your past work patterns in an evidence-first way, for example:
+- after a stretch of work, when you want to see which blockers keep repeating
+- when you want candidate topics for improving RULES, workflow, or governance
+- when you want a broader historical review instead of a narrow current-session-only summary
+- when you want to limit source classes or historical depth through a config file without changing the core evidence model
 
-ไม่ใช่ทางเลือกที่เหมาะถ้าคุณต้องการ:
-- แก้โค้ดทันทีโดยไม่สน trace history
-- ใช้ bare `/analysis` เป็น public command
-- ให้ plugin auto-run เองแบบ background hooks/monitors
+This is **not** the right tool when you want to:
+- jump straight into fixing product code without caring about trace history
+- treat bare `/analysis` as the public command
+- rely on the plugin to auto-run in the background through hooks or monitors
 
 ## Install Claude Code
 
-ใช้ Claude Code ให้พร้อมก่อน แล้วค่อยติดตั้ง plugin นี้
+Install Claude Code first, then install this plugin.
 
 ### Linux / WSL
 
@@ -61,15 +61,15 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del in
 ```
 
 Notes:
-- บน native Windows, **Git for Windows เป็น recommended** เพื่อให้ Claude Code ใช้ Bash tool ได้
-- ถ้าไม่ได้ติดตั้ง Git for Windows, Claude Code จะ fallback ไปใช้ PowerShell เป็น shell tool
-- หลังติดตั้งแล้ว ให้เปิด Claude Code ด้วยคำสั่ง:
+- On native Windows, **Git for Windows is recommended** so Claude Code can use the Bash tool.
+- If Git for Windows is not installed, Claude Code falls back to PowerShell as its shell tool.
+- After installation, start Claude Code with:
 
 ```bash
 claude
 ```
 
-ถ้ายังไม่เคย login ให้ทำใน session ด้วย:
+If you have not logged in yet, do it inside the session with:
 
 ```text
 /login
@@ -77,31 +77,31 @@ claude
 
 ## Install and load this plugin
 
-Plugin นี้ใน checked scope ปัจจุบันถูกแจกผ่าน **local marketplace ชื่อ `darkwingtm`** ที่ root `TEMPLATE` และ marketplace entry ของมันชี้มาที่ source:
+In checked scope, this plugin is currently distributed through a **local marketplace named `darkwingtm`** at the root `TEMPLATE` directory, and its marketplace entry points to:
 - `./RULES/plugin/memory-context-intelligence`
 
-เพราะฉะนั้น end-user flow ที่ตรงกับ current truth คือ:
+That means the current end-user flow is:
 
-### 1) เตรียม local checkout ของ TEMPLATE
+### 1) Prepare a local checkout of TEMPLATE
 
-คุณต้องมีโฟลเดอร์ `TEMPLATE` อยู่บนเครื่องก่อน โดยใน root ต้องมี `.claude-plugin/marketplace.json`
+You need a local `TEMPLATE` directory on your machine, and its root must contain `.claude-plugin/marketplace.json`.
 
 Portable placeholder:
-- `<template-root>` = path ไปยังโฟลเดอร์ `TEMPLATE` บนเครื่องคุณ
+- `<template-root>` = the path to your local `TEMPLATE` directory
 
-ตัวอย่างรูปแบบ path:
+Example path shapes:
 - Linux / WSL: `/home/<user>/work/TEMPLATE`
 - Windows: `C:\Users\<user>\work\TEMPLATE`
 
 ### 2) Add the marketplace
 
-ภายใน Claude Code session ให้เพิ่ม marketplace จาก local path:
+Inside Claude Code, add the marketplace from the local path:
 
 ```text
 /plugin marketplace add <template-root>
 ```
 
-ถ้าคุณอยากชี้ตรงไปที่ไฟล์ก็ได้:
+If you prefer to point directly to the file:
 
 ```text
 /plugin marketplace add <template-root>/.claude-plugin/marketplace.json
@@ -113,12 +113,12 @@ Portable placeholder:
 /plugin install memory-context-intelligence@darkwingtm
 ```
 
-Official plugin docs ที่ checked ใน scope นี้บอกว่า direct install command แบบนี้จะลง **user scope by default**
+The checked Claude Code plugin docs say that direct installs like this use **user scope by default**.
 
-ถ้าคุณต้องการเลือก scope เอง:
-- เปิด `/plugin`
-- ไปที่ Discover / plugin details
-- เลือก `user`, `project`, หรือ `local`
+If you want a different scope:
+- open `/plugin`
+- go to Discover or the plugin details view
+- choose `user`, `project`, or `local`
 
 ### 4) Reload plugins
 
@@ -128,58 +128,58 @@ Official plugin docs ที่ checked ใน scope นี้บอกว่า 
 
 ### 5) Verify the install
 
-วิธีเช็คแบบง่ายที่สุดคือ:
-- เปิด `/plugin` แล้วดูว่า plugin ถูกติดตั้งและ enabled อยู่
-- จากนั้นลองเรียก slash surface ด้านล่างได้เลย
+The simplest verification path is:
+- open `/plugin` and confirm the plugin is installed and enabled
+- then call the slash surface below
 
 ## First use: start with `/memory-context-intelligence:analysis`
 
 ### Minimal first run
 
-ใน Claude Code session ที่คุณต้องการวิเคราะห์ ให้พิมพ์:
+Inside the Claude Code session you want to analyze, run:
 
 ```text
 /memory-context-intelligence:analysis
 ```
 
-นั่นคือ current checked public entrypoint ที่ควรเริ่มจากมันก่อน
+This is the current checked public entrypoint and should be your normal starting point.
 
 ### What you should expect
 
-ถ้า evidence พร้อม คุณจะได้ผลลัพธ์แบบ topic cards เช่น:
+If usable evidence is available, you should get topic-card output such as:
 - `Topic 1`, `Topic 2`, `Topic 3`
-- แต่ละ card อธิบายว่า topic นี้คืออะไร
-- ทำไมมันถูกยกขึ้นมาจาก evidence
-- ก่อนปรับ / หลังปรับ จะต่างกันอย่างไร
-- ตอนนี้เป็นเพียง `candidate only; advisory only; not approved yet`
+- each card explains what the topic is about
+- why it surfaced from evidence
+- what the before/after behavior looks like
+- that the result is still `candidate only; advisory only; not approved yet`
 
-ท้ายผลลัพธ์จะมี `Next action options` ให้คุณเลือกต่อ เช่น:
-- เลือก topic number
-- พิมพ์คำขอโดยตรง
-- ขอ deep thinking / websearch / webfetch ก่อน
+At the end of the output, you should also see `Next action options`, such as:
+- choose a topic number
+- type a direct request
+- ask for deep thinking, websearch, or webfetch first
 
 ### If no config file is loaded
 
-ถ้า run นี้ยังไม่มี `memory-context-intelligence.config.json` ที่ถูกโหลด คุณควรเห็น **Config helper** ซึ่งจะช่วยถามแนวคิดระดับ operator เช่น:
-- จะให้ default scope เป็น historical-default หรือ narrow ลง
-- จะเปิด source classes อะไรบ้าง
-- จะยอมให้ same-day widening ได้ไหม
-- จะ save config เป็น project default หรือใช้ครั้งเดียว
+If the current run does not load `memory-context-intelligence.config.json`, you should see a **Config helper** that asks operator-facing questions such as:
+- should the default scope stay historical-first or narrow down
+- which source classes should stay enabled
+- whether same-day widening should be allowed
+- whether the next config choice should be saved as a project default or used once
 
-จุดสำคัญ:
-- helper นี้เป็น **advisory only**
-- plugin **ไม่ auto-write config ให้เอง**
-- มันช่วยบอกว่าควรตั้ง policy ยังไง แล้วคุณค่อยเขียนไฟล์เองถ้าต้องการ
+Important boundary:
+- the helper is **advisory only**
+- the plugin does **not** auto-write config files for you
+- it helps you choose a source policy, then you decide whether to create the file yourself
 
 ## Optional config file
 
-ถ้าคุณอยากควบคุม source policy แบบชัดเจน ให้สร้างไฟล์ชื่อ:
+If you want explicit source-policy control, create a file named:
 
 ```text
 memory-context-intelligence.config.json
 ```
 
-runtime จะหาไฟล์นี้แบบ **upward discovery** จาก working directory ปัจจุบัน
+The runtime looks for this file through **upward discovery** from the current working directory.
 
 Example shape:
 
@@ -206,111 +206,111 @@ Current checked keys:
 - `allow_same_day_widening`
 
 Important behavior:
-- config file นี้เป็น **late-bound source policy** เท่านั้น
-- มันไม่ได้สร้าง evidence class ใหม่
-- มันไม่ได้ weaken `trace_evidence` ให้หายไปจาก role เดิมของมัน
-- ถ้าคุณปิด `trace_evidence` หรือเหลือแต่ context-only sources ผลลัพธ์ต้องไม่ถูก overclaim ว่าเป็น promotable live candidate
+- this config file is a **late-bound source policy** only
+- it does not create a fifth evidence class
+- it does not weaken the role of `trace_evidence` as the live promotion anchor
+- if you disable `trace_evidence` or leave only context-only sources in scope, the result must not be overclaimed as a promotable live candidate
 
 ## Boundaries you should know
 
-Current checked boundaries ของ plugin นี้คือ:
-- public surface ที่พิสูจน์แล้วมีแค่ `/memory-context-intelligence:analysis`
-- bare `/analysis` **ยังไม่ใช่ current proved runtime behavior**
-- `/memory-context-intelligence:review` และ `/memory-context-intelligence:packet` ยัง deferred
-- `bin/memory-context-intelligence` เป็น internal implementation adapter ไม่ใช่ main user workflow
-- plugin-managed auto-flow ยังไม่ถูก claim ว่าพร้อมใช้งาน
-- README นี้ไม่ claim external marketplace publication หรือ broad production readiness
+Current checked boundaries for this plugin:
+- the only proved public surface is `/memory-context-intelligence:analysis`
+- bare `/analysis` is **not** current proved runtime behavior
+- `/memory-context-intelligence:review` and `/memory-context-intelligence:packet` are still deferred
+- `bin/memory-context-intelligence` is an internal implementation adapter, not the main user workflow
+- plugin-managed auto-flow is not currently claimed as proved behavior
+- this README does not claim external marketplace publication or broad production readiness
 
-พูดง่าย ๆ: ติดตั้งแล้วคุณควรคาดหวัง **analysis command ที่เรียกเองเมื่ออยาก review pattern** ไม่ใช่ plugin ที่แอบรันเองตลอดเวลา
+In plain terms: after installation, you should expect an **analysis command that you run when you want a workflow-pattern review**, not a plugin that silently runs itself all the time.
 
 ## Troubleshooting
 
-### `/memory-context-intelligence:analysis` ไม่ขึ้นหรือเรียกไม่ได้
+### `/memory-context-intelligence:analysis` does not appear or does not work
 
-เช็กตามลำดับนี้:
-1. รัน `/reload-plugins`
-2. เปิด `/plugin` แล้วดูว่า plugin ยัง installed + enabled อยู่ไหม
-3. เช็กว่า install มาจาก `memory-context-intelligence@darkwingtm`
-4. ถ้ายังเพิ่งอัปเดต plugin ระหว่างที่ session เปิดค้างมานาน ให้ restart session แล้วลองใหม่
+Check in this order:
+1. run `/reload-plugins`
+2. open `/plugin` and confirm the plugin is still installed and enabled
+3. confirm the installed source is `memory-context-intelligence@darkwingtm`
+4. if the plugin was updated while this session was already running, restart the Claude Code session and retry
 
-### `memory-context-intelligence@darkwingtm` ติดตั้งไม่ได้
+### `memory-context-intelligence@darkwingtm` will not install
 
-มักเกิดจาก marketplace path ผิด
+This is usually a marketplace-path problem.
 
-เช็กว่า:
-- คุณ add marketplace จาก `<template-root>` ที่ถูกต้อง
-- root ของ path นั้นมี `.claude-plugin/marketplace.json`
-- marketplace entry ของ `memory-context-intelligence` ยังชี้ไปที่ `./RULES/plugin/memory-context-intelligence`
+Check that:
+- you added the correct `<template-root>` marketplace path
+- the root of that path contains `.claude-plugin/marketplace.json`
+- the marketplace entry for `memory-context-intelligence` still points to `./RULES/plugin/memory-context-intelligence`
 
-### ได้ผลลัพธ์ว่า blocked / dormant / no-topics
+### The result is `blocked`, `dormant`, or `no-topics`
 
-นั่นไม่ได้แปลว่าปลั๊กอินพังเสมอไป
+That does not automatically mean the plugin is broken.
 
-ความหมายทั่วไปคือ:
-- `blocked` = input หรือ dependency สำหรับ analysis ยังไม่พร้อม
-- `dormant` = memory input ที่มีอยู่อาจ stale เกินไป
-- `no-topics` = ยังไม่มี repeated pattern ที่แรงพอจะยกขึ้นมาเป็น proposal
+Typical meanings:
+- `blocked` = required analysis input or dependency is not ready
+- `dormant` = the available memory input is too stale
+- `no-topics` = there is not yet a repeated enough pattern to promote into a proposal
 
-สิ่งที่ควรทำต่อ:
-- ทำงานจริงเพิ่มให้มี trace history มากขึ้น
-- ลองปรับ source policy / historical depth
-- ถ้าต้องการ narrow run ค่อยใช้ scope ที่แคบลงอย่างมีเจตนา
+What to do next:
+- keep working until there is more trace history to analyze
+- adjust source policy or historical depth if needed
+- use a narrower scope intentionally if that better fits the review you want
 
-### Session เก่าแล้วพฤติกรรมดูไม่ตรงกับ source ล่าสุด
+### The session is old and behavior does not match the latest source
 
-Current checked contract มี advisory warning ชื่อ `possible stale long-lived session`
+The current checked contract includes an advisory warning named `possible stale long-lived session`.
 
-ถ้า warning นี้โผล่:
-- ให้ restart Claude Code session
-- แล้วเรียก `/memory-context-intelligence:analysis` ใหม่
+If you see it:
+- restart the Claude Code session
+- run `/memory-context-intelligence:analysis` again
 
-นี่เป็น diagnostic safeguard ชั่วคราว ไม่ใช่การบอกว่า long-lived session mismatch เป็นเรื่องปกติ
+This is only a temporary diagnostic safeguard. It does **not** mean long-lived session mismatch is considered normal behavior.
 
 ## Advanced notes
 
 ### Evidence model at a glance
 
-Current implemented evidence model ใช้ 4 classes:
+The current implemented evidence model uses 4 classes:
 - `trace_evidence`
 - `recall_evidence`
 - `durable_memory_context`
 - `governance_context`
 
-หลักสำคัญคือ:
-- `trace_evidence` ยังเป็น live anchor
-- source mix ต้องมองเห็นได้ ถ้า durable memory หรือ governance context มีผลต่อ candidate
-- historical-first เป็นค่า default แต่ explicit narrowing ยังทำได้เมื่อ operator ต้องการ
+Core rules:
+- `trace_evidence` remains the live anchor
+- source mix should stay visible when durable memory or governance context materially shaped a candidate
+- historical-first is the default, but explicit narrowing is still available when the operator wants it
 
 ### Narrowing runs intentionally
 
-ถ้าคุณต้องการ review slice ที่แคบลง current design ยังรองรับแนวคิดพวกนี้:
+If you want a narrower review slice, the current design still supports concepts such as:
 - `day=YYYY-MM-DD`
 - `session=<id>`
 - `lookback=<minutes|hours>`
 
-แต่ current public UX ตั้งใจให้เริ่มจาก slash surface + guided config/helper ก่อน ไม่ใช่ให้ผู้ใช้ต้องจำ raw args เป็น main path
+But the checked public UX is intentionally built around the slash surface and guided helper first, not around making raw arguments the main normal path.
 
 ### What this plugin is not
 
-Plugin นี้ไม่ใช่:
-- automatic rule writer
-- background monitor
-- public proof ว่า bare `/analysis` ใช้ได้แล้ว
-- shortcut สำหรับข้าม evidence gates
-- replacement ของ real work traces
+This plugin is not:
+- an automatic rule writer
+- a background monitor
+- proof that bare `/analysis` is publicly available
+- a shortcut for bypassing evidence gates
+- a replacement for real work traces
 
-ถ้าคุณอยากใช้มันให้คุ้มที่สุด ให้คิดว่ามันคือ:
+A better mental model is:
 - `historical workflow reviewer`
 - `RULES / governance topic suggester`
 - `evidence-first reflection tool`
 
 ## Current truth summary
 
-ถ้าคุณอยากจำสั้น ๆ ให้จำ 5 ข้อนี้:
-1. ติดตั้ง Claude Code ก่อน
-2. add local marketplace จาก `<template-root>`
+If you want the shortest version, remember these 5 steps:
+1. install Claude Code first
+2. add the local marketplace from `<template-root>`
 3. install `memory-context-intelligence@darkwingtm`
 4. run `/reload-plugins`
-5. เริ่มใช้ด้วย `/memory-context-intelligence:analysis`
+5. start with `/memory-context-intelligence:analysis`
 
-ถ้ารอบแรกยังไม่มี config file ก็ไม่เป็นไร — plugin ควรช่วยถามคุณต่อผ่าน guided config helper แทนการบังคับให้เริ่มจาก raw arguments
+If your first run does not load a config file yet, that is fine — the plugin should guide you with the config helper instead of forcing raw arguments as the normal starting UX.
