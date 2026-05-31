@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.34
+> **Current Version:** 10.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.35 | 2026-05-31 | **[Released README Core Capabilities list and doctrine framing](changelog/v10.35-refined-readme-core-capabilities-presentation.changelog.md#version-1035)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.34 | 2026-05-31 | **[Released explicit phase grammar forms and legacy-only alphanumeric handling](changelog/v10.34-added-phase-grammar-forms-and-runtime-parity.changelog.md#version-1034)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.33 | 2026-05-30 | **[Released integrated goal-with-planning objective](changelog/v10.33-added-integrated-goal-planning-objective.changelog.md#version-1033)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.32 | 2026-05-29 | **[Opened pre-goal plan-backed goal authoring refinement](changelog/v10.32-added-pre-goal-plan-backed-goal-authoring-refinement.changelog.md#version-1032)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

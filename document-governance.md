@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.9
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.9
+> **Current Version:** 1.10
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -50,6 +50,7 @@ Active metadata must use real session identifiers; placeholders are not allowed 
 ### 3) Role boundaries
 Each document family keeps one primary role.
 - **README** is the current front page, not the history book
+- README capability/current-state sections should explain active doctrine and current-state behavior in user-facing terms, not retell phase/release execution chronology as the meaning of the capability itself
 - **design** is active target-state truth, not changelog history or completed-work storage
 - **changelog** is current version/history authority, not phase-definition storage
 - **TODO** is the compact durable current-state execution index, not the primary live board

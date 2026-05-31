@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-05-31 | **[Added P127 README front-page capability framing refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-31 | **[Added P126 explicit live phase-file grammar wording](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-18 | **[Added P108 append-vs-shard owner uptake](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-18 | **[Added P106 parent-model supersession precedence](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -22,6 +23,23 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-110"></a>
+## Version 1.10: Added P127 README front-page capability framing refinement
+
+**Date:** 2026-05-31
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.9 to v1.10.
+- Updated `design/document-governance.design.md` from v1.9 to v1.10.
+- Added an explicit README/front-page boundary that capability and current-state sections should explain active doctrine and current-state behavior directly.
+- Rejected phase/release execution chronology as the meaning of a front-page capability section.
+
+### Summary
+`document-governance.md` now makes README capability/current-state presentation front-page scoped and doctrine-grounded instead of execution-chronology shaped.
 
 ---
 

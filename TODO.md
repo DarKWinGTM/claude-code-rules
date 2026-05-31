@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-05-31
-> **Current Release:** v10.34 / P126 explicit phase grammar forms and legacy-only alphanumeric handling
+> **Current Release:** v10.35 / P127 README Core Capabilities list and doctrine framing
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,11 @@
 ---
 
 ## ✅ Completed
+
+- [x] P127 / v10.35 README Core Capabilities list and doctrine framing was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: the old Core Capabilities grid/table is gone; every capability now appears in a readable list; wording explains active doctrine/current-state behavior rather than phase/release chronology; Runtime Context Discipline now stays front-page scoped; touched README/design/changelog/TODO/phase/patch sync is complete; runtime install into a checked project-local `.claude/rules/` target, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.35
+  - Historical note: this wave refines front-page capability presentation only; it does not reopen the earlier phase-grammar execution doctrine as the meaning of the capabilities themselves.
 
 - [x] P126 / v10.34 explicit phase grammar forms and legacy-only alphanumeric handling was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: touched owners now make `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` explicit forward-valid numeric execution forms; observed `phase-NNN-NNa` forms remain preserved as legacy-only unless a later doctrine explicitly normalizes them; deeper hybrid forms such as `phase-NNN-NN-NNb` are not forward-valid grammar by default; touched master/design/changelog/TODO/phase/patch sync is complete; no NodeClaw phase-file rename/migration was performed in this wave; `playground/` still stays outside the active runtime install payload; runtime install into a checked project-local `.claude/rules/` target, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.

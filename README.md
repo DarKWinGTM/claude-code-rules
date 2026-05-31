@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.34</b><br><sub>P126 Released</sub>
+  <b>v10.35</b><br><sub>P127 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,7 +28,7 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Phase Grammar</b><br><sub>Numeric depth 3, alpha legacy-only</sub>
+  <b>Capability Lists</b><br><sub>Doctrine-grounded front page</sub>
 </td>
 </tr>
 </table>
@@ -156,152 +156,33 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 
 ## ✨ Features
 
-<div align="center">
-
 ### 🎯 Core Capabilities
 
-<table>
-<tr>
-<td width="50%">
+These capabilities summarize the current operating model at the front-page level. They are grounded in active doctrine and current-state behavior, not in phase-by-phase execution history.
 
-#### 🔍 Evidence-First Accuracy
-- Seek practical proof before substantial reasoning when material
-- Separate fact, inference, hypothesis, and scoped non-finding
-- Use evidence as grounding, not an automatic decision lock
-- No guessing local paths, values, symbols, or config
+- **Evidence-First Accuracy** — Evidence-grounded reasoning is the current baseline for material claims.
+  - Seek practical proof before substantial reasoning when the question depends on current facts
+  - Keep verified fact, inference, hypothesis, and scoped non-finding separate
+  - Use evidence as grounding rather than an automatic decision lock
+  - Avoid guessing local paths, values, symbols, or config
 
-</td>
-<td width="50%">
+- **Anti-Sycophancy** — User direction is respected without turning agreement into false proof.
+  - Evaluate proposals before agreement-shaped wording
+  - Keep safe user-selected direction separate from factual or quality endorsement
+  - Use checked evidence for material agreement, recommendation, and challenge
+  - Prefer claim-focused corrections and constructive dissent when fit or proof conflicts
 
-#### 🛡️ Anti-Sycophancy
-- Evaluate proposals before agreement-shaped wording
-- Safe user direction stays separate from factual or quality endorsement
-- Substantial agreement, design, recommendation, and challenge use checked evidence when material
-- Claim-focused corrections and constructive dissent remain allowed when evidence or fit conflicts
+- **Security First** — Safety and action boundaries remain first-pass concerns.
+  - Prefer real systems over simulated success when implementation truth matters
+  - Avoid mock implementations by default unless the scope explicitly calls for them
+  - Verify configurations before making strong runtime or readiness claims
+  - Require intent clarity before destructive or high-impact actions
 
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-#### 🔒 Security First
-- Real systems over simulations
-- No mock implementations by default
-- Verified configurations before strong claims
-- Destructive/high-impact actions require intent clarity
-
-</td>
-<td width="50%">
-
-#### Runtime Context Discipline
-- 18 active runtime rules in the current compact merged source install set
-- P125 integrated goal-with-planning objective is released as `v10.33`.
-  - RULES now keep route-heavy governed `/goal` work on one integrated goal-centric visible surface by default, with internal planning / plan-mode-style support allowed when necessary before or around goal emission.
-  - Compact `Plan draft`, `Plan basis`, `Verification / testing route`, and `Plan reference` support remain subordinate route context, while `/plan` remains overflow or explicitly requested standalone route handling only.
-  - Verified: runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `playground/` exclusion, clean `/usr/bin/git diff --check`, branch push, remote default-branch verification, and GitHub release proof.
-- Latest released baseline is now P125 integrated goal-with-planning objective as `v10.33`.
-- P124 pre-goal plan-backed goal authoring refinement remains an unreleased predecessor draft that led into the broader P125 integrated goal-with-planning target model.
-  - It prepared the narrower pre-goal plan-backed stage that was later absorbed into this released integrated goal-with-planning model.
-- P073 source compression completed and audited
-- P073/P077/P078/P079 runtime install parity was verified only after explicit install gates
-- P080 source governance is synchronized and runtime install parity is verified for the 42-rule set
-- P081 source governance is synchronized for v9.80; runtime install parity is verified for the 42 active rule set; git push completed and GitHub release `v9.80` is published
-- P082 source governance is synchronized for v9.81 with a new maintainable code structure owner; source audit, semantic anchor audit, and 43-file runtime install/parity passed; git push completed and GitHub release `v9.81` is published
-- P083 source governance is synchronized for v9.82 with `maintainable-code-structure-and-decomposition` v1.1 helper-function necessity and source-code comment discipline; runtime install/parity passed, git push completed, and GitHub release `v9.82` is published
-- P076-02 source governance is synchronized for v9.83 with lineage-first current-phase/subphase/new-major phase identity selection; active runtime count remains 43; runtime install/parity passed, git push completed, and GitHub release `v9.83` is published
-- P073-09 refreshed active runtime compression is synchronized for v9.84: 43 source-owned runtime rules were reduced from 42,961 to 35,017 words, producing a 7,944-word reduction inside the accepted 7,580-7,944 range; behavior-anchor, golden-scenario, source-boundary, and 43/43 runtime parity audits passed, with destination extras observed-only
-- P076-03 phase-visible task linkage is synchronized for v9.85: phase-backed live task entries must visibly expose active or clearly implied phase context in the subject or description; active runtime count remains 43 and 43/43 runtime install parity has passed
-- P084-01 development verification and debug strategy is synchronized for v9.86: non-trivial coding work now has a first-class owner for proportionate debug signal selection, testing depth, TestKit/scenario decisions, fake/local versus live evidence boundaries, and coding closeout; active runtime count is 44 and 44/44 runtime install/parity has passed with destination extras observed-only
-- P081-02 subagent research orchestration is synchronized for v9.87.
-  - Broad research and source-heavy work maps into focused research lanes before leader raw absorption.
-  - Active runtime count remains 44.
-- P073-10 active runtime body sufficiency is synchronized for v9.88.
-  - Ten metadata-only root runtime files were re-materialized.
-  - Active runtime count remains 44 and 44/44 parity/body-sufficiency checks passed.
-- P075-02 roadmap-aware completion is synchronized for v9.89.
-  - True objective closeout can recommend supported next phases without blocking selected continuation.
-  - Active runtime count remains 44 and GitHub release `v9.89` is published.
-- P075-03 goal-first working frame is released for v9.90.
-  - Non-trivial work can use proportional goal/output/gate navigation.
-  - Active runtime count remains 44 and GitHub release `v9.90` is published.
-- P085-01 status/documentation/memory/mechanism/audience-surface refinement is released for v9.91.
-  - Adds `audience-surface-disclosure-control.md` as the 45th active source-owned runtime rule.
-  - 45/45 parity/body-sufficiency checks passed and GitHub release `v9.91` is published.
-- P087-01 daily-first governance rollover is released for v9.92.
-  - Adds `document-integrity.md` as the 46th active source-owned runtime rule.
-  - Compacts `TODO.md` and `phase/SUMMARY.md` into active current-state entrypoints.
-  - 46/46 parity/body-sufficiency checks passed and GitHub release `v9.92` is published.
-- P088 memory root-index relative compaction is released for v9.93.
-  - Updates `memory-governance-and-session-boundary.md` to v1.7.
-  - Keeps active memory hooks visible through `Scope` + `Memory base` sections.
-  - Active runtime count remains 46 and GitHub release `v9.93` is published.
-- P086 constructive dissent and anti-over-agreement refinement is released for v9.94.
-  - Updates `communication-register.md` to v1.7 so user proposals are evaluated before endorsement.
-  - Active runtime count remains 46 and GitHub release `v9.94` is published.
-- P096-01 changelog chain version detail shards is released for v10.04.
-  - Keeps the source-owned active runtime set at 47 files.
-  - Adds active parent changelog plus chain-scoped version detail shard doctrine.
-  - Keeps `changelog/<chain>.changelog.md` as current version authority and navigation.
-  - Uses `changelog/<chain>/vX.YY-short-topic.changelog.md` for bulky same-chain version detail.
-  - Keeps `changelog/done/` as legacy/archive/fallback history, not ordinary detail-shard storage.
-  - Owner-chain source updates, runtime install, 47/47 source/runtime parity plus body sufficiency, density review, push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.04
-  - Release target and tag point to commit `3fa3935e2c7d12d474e8d8d3652ffde9997074c7`.
-  - Published at `2026-05-13T16:53:38Z`.
-- P095 standing-role worker reuse and audit boundary is released for v10.03.
-  - Keeps the source-owned active runtime set at 47 files.
-  - Promotes standing-role worker/teammate reuse and lifecycle audit into Main RULES.
-  - Treats phase/task IDs as assignment context rather than worker identity.
-  - Keeps plugin-owned shared-board/session/tmux mechanics outside Main RULES required behavior.
-  - Runtime install, 47/47 parity, body sufficiency, plugin-exclusion validation, and P095-specific density review passed.
-  - `master` push and GitHub release `v10.03` verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.03
-  - Release target and tag point to commit `d5d7f1dbd3f16a1159f308e67b577878784f0356`.
-  - Published at `2026-05-12T22:23:41Z`.
-- P094 edit-capable governed-document repair delegation is released for v10.02.
-  - Keeps the source-owned active runtime set at 47 files.
-  - Adds bounded native edit-capable repair for governed documents when scope is explicit and meaning-preserving.
-  - Requires leader final verification before sync, no-drift, closeout, parity, or release-ready claims.
-  - Runtime install, 47/47 source/runtime parity, source/destination active runtime body sufficiency, and density/God-artifact review passed.
-  - `master` push and GitHub release `v10.02` verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.02
-  - Release target and tag point to commit `3c41b85cab832d197cb65e7a9661127fbf8f9e1c`.
-  - Published at `2026-05-12T14:38:36Z`.
-- P093 worker-first aggregate-read gate is released for v10.01.
-  - Keeps the source-owned active runtime set at 47 files.
-  - Requires worker-first filtering before broad governance/code aggregate reads unless a narrow direct-handling exception is stated.
-  - Runtime install, 47/47 parity/body sufficiency, density review, push, and release verification passed.
-- P092 automatic God artifact planning and controlled repair is released for v10.00.
-  - Keeps the source-owned active runtime set at 47 files.
-  - Adds action-mode routing for repair-now, phase planning, patch packaging, phase splitting, closeout blocking, and ambiguity handling.
-  - Runtime install, 47/47 parity/body sufficiency, density/God-artifact automation review, `master` push, and GitHub release `v10.00` verification are complete.
-- P091 governed document God-file prevention and repair is released for v9.99.
-  - Keeps the source-owned active runtime set at 47 files.
-  - Adds document-capacity gates and role-aware repair routes across active governance documents.
-  - Runtime install, 47/47 parity/body sufficiency, density/God-file review, `master` push, and GitHub release `v9.99` verification are complete.
-- P090-01 opportunistic God-line repair is released for v9.98.
-  - Keeps the source-owned active runtime set at 47 files.
-  - Advances `context-load-and-document-density-control` to v1.1.
-  - Requires clear low-risk touched active-doc God-line candidates to be repaired in the same edit.
-  - Runtime install, 47/47 parity/body sufficiency, density review, push, and release `v9.98` verification are complete.
-- P090 context-load and document-density control is released as v9.97.
-  - Adds `worker-routing-and-context.md` as the 47th source-owned active runtime rule.
-  - Teaches leader-context protection, worker-first broad evidence filtering, aggregate read-burst awareness, God-line prevention, append-vs-restructure gates, and density-aware closeout.
-  - Runtime install, 47/47 parity/body sufficiency, push, and release `v9.97` verification are complete.
-- P089 governed design sharding compact-index doctrine is released for v9.96.
-  - Updates design-sharding, documentation, safe-reading, and consistency owner chains.
-  - Active runtime count remains 46 and GitHub release `v9.96` is published.
-- P076-04 main/subphase boundary refinement is released for v9.95.
-  - Updates `phase-todo-artifact.md` to v2.32 with bounded subphase-fit and umbrella-escape doctrine.
-  - Active runtime count remains 46 and GitHub release `v9.95` is published.
-- Completed or historical `todo/`, `phase/`, `patch/`, and `changelog` detail can move to referenced inactive history/done surfaces
-- Non-runtime governance artifacts stay out of runtime install
-
-</td>
-</tr>
-</table>
-
-</div>
+- **Runtime Context Discipline** — The runtime layer stays compact, body-sufficient, and limited to doctrine the assistant must apply now.
+  - Keep the 18 active runtime rules focused on live behavioral guidance rather than historical rollout detail
+  - Keep design as target-state authority, changelog as version/history authority, and TODO/phase as execution surfaces
+  - Verify install scope, parity, and body sufficiency before claiming runtime synchronization
+  - Preserve the project-local `.claude/rules/` install contract while keeping non-runtime governance artifacts out of the runtime payload
 
 ---
 
@@ -364,9 +245,9 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P126 / v10.34 releases explicit NodeClaw-informed phase identity grammar doctrine on top of the previously released `v10.33 / P125` baseline.
-- RULES now make `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` explicit forward-valid numeric execution forms rather than leaving nested numeric depth as tolerated precedent only.
-- The released model keeps observed alphanumeric forms such as `phase-NNN-NNa` preserved as legacy-only unless a later doctrine explicitly normalizes them, and it keeps deeper hybrid forms such as `phase-NNN-NN-NNb` out of the forward-valid grammar by default.
+- P127 / v10.35 refines the README front-page capability presentation on top of the released `v10.34 / P126` baseline.
+- Core Capabilities now explain active doctrine and current-state behavior in a readable list instead of a grid with phase-heavy runtime-history narration.
+- Runtime Context Discipline now stays front-page scoped: current runtime shape, authority boundaries, and install-discipline expectations are summarized without turning README into a phase summary.
 - The governed `playground/` family remains non-runtime and outside the installer payload.
 - The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
 - The untracked `plugin/` tree remains preserved and out of staged wave scope.
