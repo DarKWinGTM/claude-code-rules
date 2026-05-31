@@ -1,9 +1,9 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.20
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.20
+> **Current Version:** 1.21
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
-> **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.34, todo-standards v2.28
+> **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
 ---
 
@@ -158,7 +158,8 @@ Do not force phases for a single obvious low-risk change, a normal checklist, or
 When phased planning is used:
 - `phase/SUMMARY.md` is mandatory as the compact live roadmap/index
 - active executable files live under `phase/`
-- active phase files use `phase/phase-NNN-*.md` or `phase/phase-NNN-NN-*.md`
+- active phase files use `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, or `phase/phase-NNN-NN-NN-*.md`
+- existing alphanumeric forms such as `phase-NNN-NNa-*.md` remain legacy-only unless a later doctrine explicitly normalizes them
 - daily movement may live under `phase/history/YYYY-MM-DD*.md`
 - completed phase detail may live under `phase/done/`
 - live phased execution files are not allowed inside patch artifacts
@@ -169,19 +170,24 @@ When phased planning is used:
 Identity grammar:
 - major phase: `NNN`
 - subphase: `NNN-NN`
+- nested child phase: `NNN-NN-NN`
+- existing alphanumeric forms such as `NNN-NNa` remain legacy-only observed lineage, not forward-valid grammar
+- deeper hybrid forms such as `NNN-NN-NNb` are not forward-valid grammar unless a later doctrine explicitly normalizes them
 
 Before opening a new major phase, choose the smallest truthful identity.
 
 Required identity decision order is strict fall-through, not a menu:
 - update the current active phase first when checked `phase/SUMMARY.md`, the current active child phase, and visible phase-linked live tasks show that the work still fits the same execution slice, goal, expected output, completion gate, dependency path, or rollback boundary
-- create a new subphase second when the current phase cannot truthfully absorb the work, but the work still continues the same bounded execution gate or rollout family inside an existing major phase
-- create a new major phase third only after checked evidence rules out both current-phase update and existing-family subphase, and the work forms a distinct top-level rollout family, capability boundary, output, verification gate, release boundary, or rollback boundary
-- when a new major phase is selected, record visible why-not-current and why-not-subphase basis rather than leaving the negative checks implicit
+- create an existing-family child phase second when the current phase cannot truthfully absorb the work, but the work still continues the same bounded execution gate or rollout family inside the existing lineage
+- if the current active phase is a major phase, the next truthful child form is `NNN-NN`
+- if the current active phase is a subphase and the work still belongs inside that same bounded gate family, the next truthful child form is `NNN-NN-NN`
+- create a new major phase third only after checked evidence rules out both current-phase update and existing-family child fit, and the work forms a distinct top-level rollout family, capability boundary, output, verification gate, release boundary, or rollback boundary
+- when a new major phase is selected, record visible why-not-current and why-not-child-phase basis rather than leaving the negative checks implicit
 - ask or record the governing basis when multiple families plausibly fit and checked evidence does not settle lineage
 
 A new file need, completed current phase, task-list continuation, fresh concern wording, or milestone closeout is not by itself a lineage break.
 
-Subphase fit depends on real shared goal/output/gate meaning, not only broad product area or historical proximity.
+Child-phase fit depends on real shared goal/output/gate meaning, immediate parent lineage, and bounded rollout continuity, not only broad product area or historical proximity.
 
 ### 4) God Phase repair
 A God Phase is a phase file that tries to execute several independent phases at once.
@@ -193,8 +199,9 @@ Signals include:
 
 Repair posture:
 - restructure in place when one bounded goal/output/gate still exists
-- split into `NNN-NN` subphases when work shares the parent rollout gate
+- split into `NNN-NN` or `NNN-NN-NN` child phases when work shares the parent rollout gate and the checked lineage still fits the same bounded family
 - open a new major phase when capability, release, verification, output, or rollback boundary is distinct
+- keep existing alphanumeric child forms as legacy-only during repair unless a later doctrine explicitly selects normalization
 - update `phase/SUMMARY.md` when the split changes navigation
 - create or extend visible phase-linked live tasks when repair is non-trivial
 - block closeout while touched-scope God Phase pressure remains unrepaired or unplanned

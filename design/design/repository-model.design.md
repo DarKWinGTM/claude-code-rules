@@ -16,7 +16,7 @@
 | Overview | `README.md` | Repository overview and usage guidance only |
 | Runtime | root `*.md` rules | Active runtime behavior |
 | Design | `design/*.design.md`, `design/<slug>/*.design.md` | Active target-state guidance with compact parent indexes plus governed child or sibling shards chosen by declared chain shape |
-| Phase | `phase/SUMMARY.md`, `phase/phase-NNN*.md`, `phase/history/`, `phase/done/` | Compact live roadmap/index and phased execution detail with referenced inactive history |
+| Phase | `phase/SUMMARY.md`, `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, `phase/phase-NNN-NN-NN-*.md`, `phase/history/`, `phase/done/` | Compact live roadmap/index and phased execution detail with explicit forward-valid numeric phase grammar plus referenced inactive history |
 | Patch | `patch/<context>.patch.md`, `patch/done/` | Governed before/after review artifacts outside live phase planning |
 | History | `changelog/*.changelog.md`, `changelog/<chain>/v*.changelog.md`, `changelog/done/*.changelog.md` | Active parent version authority with indexed detail shards in sibling or same-stem mode plus legacy/archive fallback history |
 | Execution | `TODO.md`, `todo/history/`, `todo/done/` | Compact active execution tracking plus referenced inactive history/detail |

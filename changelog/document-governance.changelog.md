@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-05-31 | **[Added P126 explicit live phase-file grammar wording](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-18 | **[Added P108 append-vs-shard owner uptake](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-05-18 | **[Added P106 parent-model supersession precedence](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-17 | **[Added P105 folder-scoped generic parent and single-parent authority](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -21,6 +22,23 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-19"></a>
+## Version 1.9: Added P126 explicit live phase-file grammar wording
+
+**Date:** 2026-05-31
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.8 to v1.9.
+- Updated `design/document-governance.design.md` from v1.8 to v1.9.
+- Replaced broad `phase/phase-NNN*.md` wording with the explicit forward-valid live phase workspace forms `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, and `phase/phase-NNN-NN-NN-*.md`.
+- Kept observed alphanumeric phase variants outside the forward-valid canonical set unless a later doctrine explicitly normalizes them.
+
+### Summary
+`document-governance.md` now names the live phase file grammar explicitly at the repository-document level while keeping observed alphanumeric variants out of the forward-valid canonical set.
 
 ---
 

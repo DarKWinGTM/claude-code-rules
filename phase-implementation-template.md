@@ -5,6 +5,8 @@ Use this helper when you want to draft a **readable, process-heavy phased implem
 - executable phase files under `phase/` using canonical IDs:
   - major phases: `phase/phase-NNN-<phase-name>.md`
   - subphases: `phase/phase-NNN-NN-<subphase-name>.md`
+  - nested child phases: `phase/phase-NNN-NN-NN-<child-phase-name>.md`
+- observed alphanumeric forms such as `phase/phase-NNN-NNa-<phase-name>.md` are legacy-only unless a later doctrine explicitly normalizes them
 
 This file is intentionally written as normal markdown.
 It is a **helper**, not a governed chain.
@@ -22,11 +24,13 @@ This template helps you write a phase plan that is:
 - structured enough for day-to-day execution tracking
 - detailed enough for review, handoff, and governance checkpoints
 
-The semantic rule is `phase-implementation.md`.
+The active runtime owner is `phase-todo-artifact.md`, and the deeper phase-workspace grammar companion is `design/phase-implementation.design.md`.
 The governed structure for phased work is:
 - summary/index file: `phase/SUMMARY.md`
 - major phase files: `phase/phase-NNN-<phase-name>.md`
 - subphase files: `phase/phase-NNN-NN-<subphase-name>.md`
+- nested child-phase files: `phase/phase-NNN-NN-NN-<child-phase-name>.md`
+- observed alphanumeric child forms remain legacy-only unless a later doctrine explicitly normalizes them
 
 ---
 
@@ -50,10 +54,14 @@ Do **not** use this template when the task is so small that a normal implementat
 
 Use the repository roles like this:
 
-- `phase-implementation.md`
-  - semantic rule for phase behavior
-  - defines what a valid `/phase` structure should contain
-  - owns the active phase-identity model (`NNN` / `NNN-NN`)
+- `phase-todo-artifact.md`
+  - active runtime owner for phase behavior, lineage selection, and live phase workspace rules
+  - defines when phased execution is required and how current-phase / child-phase / new-major selection works
+  - owns the active forward-valid phase-identity model (`NNN` / `NNN-NN` / `NNN-NN-NN`)
+
+- `design/phase-implementation.design.md`
+  - deeper design companion for phase workspace structure and file-pattern examples
+  - explains the executable phase file shapes that the runtime owner expects
 
 - `phase/SUMMARY.md`
   - the real governed summary/index file
@@ -277,7 +285,8 @@ Describe:
 
 - Target design: `<design file>`
 - Source patch (optional): `<patch file or n/a>`
-- Phase rule: `phase-implementation.md`
+- Phase runtime owner: `phase-todo-artifact.md`
+- Phase design companion: `design/phase-implementation.design.md`
 - TODO companion: `TODO.md`
 - Changelog companion: `<relevant changelog file>`
 
@@ -360,7 +369,7 @@ Copy this block into each real executable phase file and replace the placeholder
 # <Phase Title>
 
 > **Summary File:** [SUMMARY.md](./SUMMARY.md)
-> **Phase ID:** <001 or 001-01>
+> **Phase ID:** <001 or 001-01 or 001-01-01>
 > **Status:** <Pending / In Progress / Blocked / Completed / Deferred>
 > **Session:** <session-id>
 

@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.8
+> **Current Version:** 1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -36,6 +36,8 @@ P105 refinement: this owner should now allow `design/design.md` and `changelog/c
 P106 refinement: this owner should now state explicitly that P105 supersedes the older P104 master-only/generic-parent restriction for folder-scoped single-chain namespaces, while still preserving the active bootstrap-first and shard-opening discipline from the released baseline.
 
 P108 refinement: this owner should now absorb the append-vs-restructure-and-shard decision gate from worker-routing so governed parent-authority growth, shard-opening basis, and parent-model choice stay with the document-governance owner rather than the routing owner.
+
+P126 refinement: this owner should now make the live phase workspace examples explicit at the repository-document level by naming `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, and `phase/phase-NNN-NN-NN-*.md` as forward-valid execution files while keeping observed alphanumeric variants outside the forward-valid canonical set unless a later doctrine explicitly normalizes them.
 
 ---
 

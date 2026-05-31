@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -51,6 +51,8 @@ P124 refinement: this owner should now preserve how governed execution surfaces 
 
 P125 refinement: this owner should now preserve integrated goal-with-planning execution surfaces so governed work keeps compact route notes, plan basis, verification-order support, and similar route context inside the emitted or selected goal-centric surface first, and opens `/plan` only when overflow route detail or explicit standalone planning is materially needed.
 
+P126 refinement: this owner should now make `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms, preserve lineage-first child-phase selection across those three numeric depths, and classify observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
+
 P117 refinement: this owner should now let checked phase/roadmap/TODO surfaces shape compact candidate goals at real decision boundaries when several unselected next slices remain live and no one continuation path clearly dominates.
 
 P118 refinement: this owner should now derive the smallest bounded successor slice from checked goal/output/gate/touched-surface context when phase/roadmap/TODO wording stays too broad, and should not leave successor output at generic future-note level when a smaller truthful next slice is already derivable.
@@ -68,7 +70,8 @@ P122 refinement: this owner should now preserve an explicit `/plan` next-surface
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
-- Preserve ordered phase identity selection and visible lineage-basis recording; do not let future compression reduce current-phase → subphase → new-major into unordered criteria.
+- Preserve ordered phase identity selection and visible lineage-basis recording; do not let future compression reduce current-phase → child-phase → new-major into unordered criteria.
+- Preserve explicit forward-valid numeric grammar for `NNN`, `NNN-NN`, and `NNN-NN-NN`, and preserve observed alphanumeric forms as legacy-only unless a later doctrine selects normalization.
 - Preserve phase-backed lane structure and lane-aware task shaping while leaving worker-scaling and bounded-I/O behavior to `worker-routing-and-context.md` and `safe-io.md`.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

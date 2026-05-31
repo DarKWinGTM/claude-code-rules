@@ -42,6 +42,9 @@ The active phase-planning contract is:
 - phased execution consumes normalized design truth one-way
 - `phase/SUMMARY.md` is the governed summary/index for live phased execution
 - phase identity remains lineage-first
+- forward-valid phase grammar explicitly includes `NNN`, `NNN-NN`, and `NNN-NN-NN`
+- observed alphanumeric phase forms such as `NNN-NNa` remain legacy-only unless a later doctrine explicitly normalizes them
+- deeper hybrid forms such as `NNN-NN-NNb` are not forward-valid grammar by default
 - non-trivial phase-backed live tasks visibly link to active or clearly implied phase context
 - patch docs remain separate governed review artifacts outside live phase planning
 

@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.21 | 2026-05-31 | **[Added P126 explicit nested phase grammar and alphanumeric legacy handling](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution-surface refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-05-29 | **[Added P124 pre-goal `/goal` sourcing refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-05-28 | **[Added P123 internal goal-helper execution refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -33,6 +34,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-121"></a>
+## Version 1.21: Added P126 explicit nested phase grammar and alphanumeric legacy handling
+
+**Date:** 2026-05-31
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.20 to v1.21.
+- Updated `design/phase-todo-artifact.design.md` from v1.20 to v1.21.
+- Made `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms.
+- Added lineage-first child-phase handling so checked continuation can descend from a major phase into `NNN-NN` and from a subphase into `NNN-NN-NN` before opening a new major phase.
+- Classified observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them, and rejected deeper hybrid forms such as `NNN-NN-NNb` as forward-valid grammar.
+
+### Summary
+`phase-todo-artifact.md` now carries the P126 phase grammar doctrine so nested numeric child phases are explicitly allowed while observed alphanumeric forms remain preserved as legacy-only rather than forward-valid naming.
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.33
+> **Current Version:** 10.34
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.33 / P125` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, explicit about when a folder-scoped single-chain namespace may use `design/design.md` or `changelog/changelog.md`, explicit about requiring exactly one active parent model per chain, explicit about separating observed project shape from extracted doctrine and the selected target form, explicit about active-doctrine precedence over older completed-history wording when chronology conflicts, explicit about when a compact `/goal` suggestion is appropriate, explicit that `/goal` owns objective/done/proof/scope while planning support stays subordinate inside the goal-centric surface, explicit that governed non-trivial or route-heavy `/goal` requests may automatically use an internal planning / plan-mode-style pass when route uncertainty would otherwise make the emitted goal vague or hard to execute, explicit that native subagent help may support that internal planning through analysis, route drafting, verification ordering, and optional plan-file reference synthesis without creating a new user-facing command, explicit that `/plan` and any plan file remain route artifacts only rather than objective owners, explicit that `/plan` is an overflow or explicitly requested route surface rather than the normal next-step partner surface, explicit that helper findings and integrated route support remain subordinate to leader-owned normalization/synthesis/proof wording and goal-gate closeout, less likely to let phase selection skip current-phase reuse or truthful subphase fit before opening a new major phase, explicit that Claude Code helper installs should prefer project-local `.claude/rules/` without overclaiming unsupported cross-harness install surfaces, and explicit that the `playground/` family remains a governed non-runtime surface while transcript-derived observed cases must stay factual, anchored, and visibly distinct from virtual variants.
+The active model for `v10.34 / P126` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, explicit about when a folder-scoped single-chain namespace may use `design/design.md` or `changelog/changelog.md`, explicit about requiring exactly one active parent model per chain, explicit about separating observed project shape from extracted doctrine and the selected target form, explicit about active-doctrine precedence over older completed-history wording when chronology conflicts, explicit about when a compact `/goal` suggestion is appropriate, explicit that `/goal` owns objective/done/proof/scope while planning support stays subordinate inside the goal-centric surface, explicit that governed non-trivial or route-heavy `/goal` requests may automatically use an internal planning / plan-mode-style pass when route uncertainty would otherwise make the emitted goal vague or hard to execute, explicit that native subagent help may support that internal planning through analysis, route drafting, verification ordering, and optional plan-file reference synthesis without creating a new user-facing command, explicit that `/plan` and any plan file remain route artifacts only rather than objective owners, explicit that `/plan` is an overflow or explicitly requested route surface rather than the normal next-step partner surface, explicit that helper findings and integrated route support remain subordinate to leader-owned normalization/synthesis/proof wording and goal-gate closeout, explicit that phase grammar now treats `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` as forward-valid execution forms, explicit that observed alphanumeric forms such as `phase-NNN-NNa` remain legacy-only unless a later doctrine explicitly normalizes them, less likely to let phase selection skip current-phase reuse or truthful child-phase fit before opening a new major phase, explicit that Claude Code helper installs should prefer project-local `.claude/rules/` without overclaiming unsupported cross-harness install surfaces, and explicit that the `playground/` family remains a governed non-runtime surface while transcript-derived observed cases must stay factual, anchored, and visibly distinct from virtual variants.
 
 ---
 
@@ -60,7 +60,10 @@ Current target-state priorities:
 - that assistance remains internal helper behavior only, not a new user-facing command or a replacement objective surface
 - main-controller synthesis, visible proof wording, and goal-gate closeout remain leader-owned even when helper lanes or integrated route drafts contribute evidence
 - closeout after planning should still prove the selected goal gate instead of treating completed plan steps, plan-file completion, or helper output as sufficient evidence by themselves
-- phase identity selection should stay lineage-first: current active phase update first, existing-family subphase second, new major only after visible why-not-current / why-not-subphase evidence
+- phase identity selection should stay lineage-first: current active phase update first, existing-family child phase second, new major only after visible why-not-current / why-not-child-phase evidence
+- forward-valid phase grammar should explicitly allow `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
+- observed alphanumeric phase forms such as `phase-NNN-NNa` should remain preserved as legacy-only until a later doctrine explicitly normalizes them
+- deeper hybrid forms such as `phase-NNN-NN-NNb` should not be treated as forward-valid grammar by default
 - Claude Code helper installs should prefer project-local `.claude/rules/` as the primary runtime target, use owner-aware manifest cleanup, and avoid overclaiming unsupported non-native harnesses for that install surface
 - AI explanation should stay meaning-first: explain what an identifier is, what it does, and what changes if it changes before leaning on raw field or variable names alone
 - non-trivial answers should usually open with one short plain-language summary, use a small table when several axes matter, continue with grouped explanation by concept, and end with a concise decision-ready close
@@ -116,6 +119,8 @@ Release validation for this master design chain should confirm:
 - this parent remains compact and body-sufficient
 - child shards are reachable and role-correct
 - runtime/design/changelog versions align
+- forward-valid phase grammar explicitly includes `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
+- observed alphanumeric phase forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous
 - observed project shape, extracted doctrine, selected target form, and any equivalence-claim basis stay distinct when checked examples ground governance recommendations
 - history/release detail stays with changelog authority instead of re-accumulating in active design truth
 

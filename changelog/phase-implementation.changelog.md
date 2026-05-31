@@ -1,7 +1,7 @@
 # Changelog - Phase Implementation
 
-> **Parent Document:** [../phase-implementation.md](../phase-implementation.md)
-> **Current Version:** 2.34
+> **Parent Document:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md)
+> **Current Version:** 2.35
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -32,6 +32,7 @@ Added automatic God Phase repair planning for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.35 | 2026-05-31 | **[Added P126 explicit nested phase grammar and alphanumeric legacy handling](#version-235)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.34 | 2026-05-11 | **[Added automatic God Phase repair planning](#version-234)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.32 | 2026-05-09 | **[Added bounded main/subphase boundary refinement](#version-232)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Kept lineage-first phase selection while adding bounded subphase-fit, same-domain-is-not-enough, phase saturation, and umbrella-escape doctrine so old major families do not absorb distinct work indefinitely. | |
@@ -74,6 +75,24 @@ Added automatic God Phase repair planning for P092 / v10.00.
 | | | Summary: Kept the one-way phase-synthesis model but updated active wording so phase now references patch artifacts as self-identifying before/after inputs in `patch/` or at repository root instead of older `patches/` assumptions | |
 | 2.2 | 2026-03-17 | **[Changed default phase numbering from 010/020/030 to 001/002/003](#version-22)** | 9b6e3a46-d4f0-4968-9f5a-be083de4304c |
 | | | Summary: Refined phase-implementation so phase files now use zero-padded contiguous numbering for clearer human-readable sequencing instead of sparse 010/020/030 numbering | |
+
+---
+
+<a id="version-235"></a>
+## Version 2.35: Added P126 explicit nested phase grammar and alphanumeric legacy handling
+
+**Date:** 2026-05-31
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `design/phase-implementation.design.md` from v2.34 to v2.35.
+- Made `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid numeric phase identity forms.
+- Classified observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
+- Rejected deeper hybrid forms such as `NNN-NN-NNb` as forward-valid grammar.
+- Extended the verification checklist so phase grammar, alphanumeric status, and nested-child examples are checked explicitly.
+
+### Summary
+`design/phase-implementation.design.md` now makes nested numeric child phases explicit doctrine while preserving observed alphanumeric forms as legacy-only rather than future-valid grammar.
 
 ---
 

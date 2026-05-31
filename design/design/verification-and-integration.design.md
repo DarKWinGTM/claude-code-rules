@@ -28,6 +28,9 @@
 - [ ] Generic and semantic active parents do not remain ambiguous competing steady-state owners for the same chain when chronology is reviewed explicitly
 - [ ] `changelog/done/` stays legacy/archive/fallback rather than the normal active detail path
 - [ ] `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` / `done/` references
+- [ ] The live phase workspace explicitly names `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` as forward-valid numeric forms
+- [ ] Observed alphanumeric phase forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous
+- [ ] Deeper hybrid forms such as `phase-NNN-NN-NNb` are not silently treated as forward-valid grammar
 - [ ] The append-vs-shard gate and `docs_analysis` form are explicit in the touched owner surfaces
 - [ ] Concern, factual claim, goal request, proposal, and assistant next action remain separated before endorsement or continuation where that distinction matters
 - [ ] Evidence-seeking proof-aware reasoning remains grounded in checked evidence when material

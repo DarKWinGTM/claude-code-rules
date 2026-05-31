@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.34
+> **Current Version:** 2.35
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-09)
 
 ---
@@ -89,11 +89,15 @@ When governed design is sufficiently clear for staged execution, phase should ac
 The active identity model is:
 - major phase ID: `NNN`
 - subphase ID: `NNN-NN`
+- nested child phase ID: `NNN-NN-NN`
+- observed alphanumeric forms such as `NNN-NNa` are legacy-only unless a later doctrine explicitly normalizes them
+- deeper hybrid forms such as `NNN-NN-NNb` are not forward-valid grammar
 
 ### 3.2 Semantic meaning
 - `NNN` identifies a top-level execution phase or grouped rollout stage
 - `NNN-NN` identifies a child execution slice inside major phase `NNN`
-- hierarchy is expressed by the hyphenated suffix, not by implication or prose alone
+- `NNN-NN-NN` identifies a nested child execution slice inside subphase `NNN-NN` when the work still belongs to the same bounded rollout gate
+- hierarchy is expressed by the hyphenated numeric suffix, not by implication or prose alone
 
 ### 3.3 Lineage-first phase selection
 Before opening a new major phase, the phase owner should inspect checked phase lineage and decide whether the work is better represented as:
@@ -107,12 +111,14 @@ The decision is principle-based rather than subphase-first or major-first. The g
 ### 3.4 Bounded subphase-fit criteria
 A new `NNN-NN` subphase is usually a better fit when the work continues the same bounded execution gate inside the same rollout family by refining, repairing, verifying, documenting, installing, releasing, or synchronizing the same governed target without changing the top-level capability boundary.
 
-Strong subphase signals include:
+Strong child-phase signals include:
 - same bounded goal/output/gate, verification gate, dependency chain, or rollback boundary
 - same governed target where the follow-up keeps the same top-level capability boundary
 - direct follow-up from an authored `Next possible phases`, closeout note, TODO item, or phase summary relationship that preserves the same gate meaning
 - dependency on a prior phase's output or a need to preserve visible lineage for review
 - completed parent or sibling phases whose history still defines the same bounded rollout family rather than only the same broad program area
+- current active major phase still needs a bounded child execution slice, making `NNN-NN` the next truthful form
+- current active subphase still needs a bounded child execution slice inside that same gate family, making `NNN-NN-NN` the next truthful form
 
 Same product area, broad policy domain, rule owner chain, historical phase label, or project umbrella is supporting evidence only. It is not enough by itself when the new work has a distinct output, verification gate, release boundary, or rollback boundary.
 
@@ -152,6 +158,9 @@ When phased planning is used, the repository must use:
 The active path patterns are:
 - major-phase file: `phase/phase-NNN-<phase-name>.md`
 - subphase file: `phase/phase-NNN-NN-<subphase-name>.md`
+- nested child-phase file: `phase/phase-NNN-NN-NN-<child-phase-name>.md`
+
+Observed alphanumeric forms such as `phase/phase-NNN-NNa-<phase-name>.md` remain legacy-only unless a later doctrine explicitly normalizes them.
 
 Completed phase-detail files may be retained under `phase/done/` using the same phase filename grammar when they are no longer part of the active execution scan surface.
 
@@ -272,9 +281,11 @@ This shape should remain concise, should not block safe continuation through alr
 
 ## 8) Verification Checklist
 
-- [ ] `phase-implementation` explicitly defines `NNN` and `NNN-NN`
+- [ ] `phase-implementation` explicitly defines `NNN`, `NNN-NN`, and `NNN-NN-NN` as forward-valid numeric forms
+- [ ] observed alphanumeric forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous
+- [ ] deeper hybrid forms such as `NNN-NN-NNb` are not silently treated as forward-valid grammar
 - [ ] phase identity selection checks lineage before opening a new major phase
-- [ ] subphase use preserves bounded goal/output/gate meaning rather than relying only on same-domain or historical-family evidence
+- [ ] child-phase use preserves bounded goal/output/gate meaning rather than relying only on same-domain or historical-family evidence
 - [ ] umbrella-escape signals are checked when an old major family would become saturated, misleading, or overloaded
 - [ ] subphase use remains criteria-based rather than forced by default
 - [ ] startup artifact governance establishes or asks about `/phase` before drift when phase is required
@@ -285,7 +296,7 @@ This shape should remain concise, should not block safe continuation through alr
 - [ ] roadmap entries distinguish selected/active work from proposal, blocked, needs-approval, and none-opened states without auto-promotion
 - [ ] active examples do not mix sparse `010/020/030` with the new contract
 - [ ] symbolic IDs are not used as active canonical phase identifiers
-- [ ] `/phase` examples show a valid major/subphase model
+- [ ] `/phase` examples show a valid major/subphase/nested-child model
 - [ ] `SUMMARY.md` guidance makes grouping visible when subphases exist
 - [ ] active phase scans start with `phase/SUMMARY.md` and active child files before `phase/done/`
 - [ ] `phase/done/` is inactive-by-default history, not junk or deletion authority

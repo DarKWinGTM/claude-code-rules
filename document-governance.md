@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.8
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.8
+> **Current Version:** 1.9
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.9
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -31,7 +31,7 @@ Required surfaces when applicable:
 - `changelog/done/*.changelog.md` — legacy/archive/completed-history/fallback changelog detail
 - `TODO.md` — compact durable current execution index
 - `todo/history/` and `todo/done/` — referenced TODO history/detail surfaces
-- `phase/SUMMARY.md` plus `phase/phase-NNN*.md` — live staged execution
+- `phase/SUMMARY.md` plus `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, and `phase/phase-NNN-NN-NN-*.md` — live staged execution
 - `phase/history/` and `phase/done/` — referenced/inactive phase history
 - `patch/<context>.patch.md` or root `<context>.patch.md` — active review artifact outside phase
 - `patch/done/` — inactive completed patch history

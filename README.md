@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.33</b><br><sub>P125 Released</sub>
+  <b>v10.34</b><br><sub>P126 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,7 +28,7 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Integrated Goal</b><br><sub>Planning as one surface</sub>
+  <b>Phase Grammar</b><br><sub>Numeric depth 3, alpha legacy-only</sub>
 </td>
 </tr>
 </table>
@@ -364,10 +364,10 @@ Codex CLI and Gemini CLI are not supported for this install surface in the curre
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P125 / v10.33 releases the integrated goal-with-planning objective on top of the previously released `v10.31 / P123` baseline.
-- RULES now allow governed non-trivial or route-heavy `/goal` requests to use internal planning / plan-mode-style support when necessary before or around final goal emission while keeping one goal-centric visible surface.
-- The released model keeps `/goal` as the objective owner, keeps `/plan` plus plan files as overflow or explicitly requested route artifacts only, keeps simple goals on the direct path, and keeps goal-gate closeout stricter than plan draft, helper output, or plan completion.
-- The governed `playground/` family remains non-runtime; the updated goal-related case keeps the integrated goal-with-planning behavior delta inspectable without entering the runtime install payload.
+- P126 / v10.34 releases explicit NodeClaw-informed phase identity grammar doctrine on top of the previously released `v10.33 / P125` baseline.
+- RULES now make `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` explicit forward-valid numeric execution forms rather than leaving nested numeric depth as tolerated precedent only.
+- The released model keeps observed alphanumeric forms such as `phase-NNN-NNa` preserved as legacy-only unless a later doctrine explicitly normalizes them, and it keeps deeper hybrid forms such as `phase-NNN-NN-NNb` out of the forward-valid grammar by default.
+- The governed `playground/` family remains non-runtime and outside the installer payload.
 - The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
 - The untracked `plugin/` tree remains preserved and out of staged wave scope.
 </div>
@@ -462,6 +462,7 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 | `./phase/history/*.md` | Daily phase movement and pre-rollover phase-summary snapshots outside the active summary | Referenced inactive phase history |
 | `./phase/phase-NNN-<phase-name>.md` | Governed active major-phase execution detail | Active major phase docs |
 | `./phase/phase-NNN-NN-<subphase-name>.md` | Governed active subphase execution detail | Active subphase docs |
+| `./phase/phase-NNN-NN-NN-<child-phase-name>.md` | Governed active nested child-phase execution detail inside one bounded parent family | Active nested child phase docs |
 | `./phase/done/phase-NNN-*.md` | Completed phase detail retained outside active scans | Inactive completed phase history |
 | `./patch/<context>.patch.md` or `./<context>.patch.md` | Governed active patch/review artifacts outside live phase planning | Active patch docs |
 | `./patch/done/<context>.patch.md` | Completed patch artifacts retained outside active scans | Inactive completed patch history |
@@ -512,7 +513,7 @@ This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and gov
 | `todo/done/*.md` | Referenced inactive TODO detail | Large completed task/wave detail retained outside the active TODO entrypoint |
 | `phase/SUMMARY.md` | Compact governed summary/index for live phased execution | Current phase roadmap/index and links to referenced history/done shards |
 | `phase/history/*.md` | Referenced inactive phase history | Daily phase movement and pre-rollover summary snapshots when active `phase/SUMMARY.md` is compacted |
-| `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` | Governed active phase-detail layer | Multi-stage execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
+| `phase/phase-NNN-<phase-name>.md`, `phase/phase-NNN-NN-<subphase-name>.md`, and `phase/phase-NNN-NN-NN-<child-phase-name>.md` | Governed active phase-detail layer | Multi-stage execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
 | `phase/done/phase-NNN-*.md` | Inactive completed phase history | Completed phase detail should leave active scans but remain traceable |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed active patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
 | `patch/done/<context>.patch.md` | Inactive completed patch history | Completed patch artifacts should leave active review scans but remain traceable |

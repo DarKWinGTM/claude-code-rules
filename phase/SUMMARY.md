@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.03
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.34
+> **Current Version:** 2.04
+> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.33 / P125 integrated goal-with-planning objective
+> **Status:** No active phase selected; latest released baseline is v10.34 / P126 explicit phase grammar forms and legacy-only alphanumeric handling
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.33 / P125`.
+- None currently selected. Latest released baseline is `v10.34 / P126`.
 
 ### Most Recently Completed
+
+- **P126:** [phase-126-phase-grammar-forms-and-release-sync.md](phase-126-phase-grammar-forms-and-release-sync.md)
+  - Output: explicit forward-valid `phase-NNN` / `phase-NNN-NN` / `phase-NNN-NN-NN` doctrine, legacy-only alphanumeric handling, touched master/design/changelog/TODO/phase/patch sync, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.34`.
+  - Gate: explicit numeric phase-grammar integrity, explicit alphanumeric legacy-only integrity, no-rename/migration-in-wave integrity, non-runtime playground boundary, 18-file install-boundary preservation, parity/body sufficiency, `git diff --check`, branch push, remote default-branch verification, GitHub release verification, and closeout alignment passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.34
+  - Patch: [../patch/phase-grammar-forms-and-release-sync.patch.md](../patch/phase-grammar-forms-and-release-sync.patch.md)
+  - Historical note: NodeClaw evidence drove the doctrine decision, but this release wave did not rename NodeClaw files; observed alphanumeric forms remain legacy-only until a later normalization wave is explicitly selected.
+
+### Previously Completed
 
 - **P125:** [phase-125-integrated-goal-planning-objective.md](phase-125-integrated-goal-planning-objective.md)
   - Output: touched runtime owners, one related playground/reference case update, touched master release surfaces, runtime install into `~/.claude/rules`, 18/18 parity/body sufficiency, branch push, remote default-branch verification, and GitHub release `v10.33`.
@@ -227,26 +236,26 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current released baseline after P125 closeout:
-- released baseline is `v10.33 / P125`
-- governed non-trivial or route-heavy `/goal` requests may now use internal planning / plan-mode-style support when necessary before or around goal emission while keeping one integrated goal-centric visible surface
-- `/goal` remains the objective owner while `/plan` remains overflow or explicitly requested standalone route handling only
-- visible planning support such as `Plan draft`, `Plan basis`, `Verification / testing route`, or `Plan reference` remains subordinate route context rather than becoming a second objective surface or completion proof
-- the updated playground/reference case keeps the integrated goal-with-planning behavior delta inspectable
+Current released baseline after P126 closeout:
+- released baseline is `v10.34 / P126`
+- RULES now treat `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` as explicit forward-valid numeric execution forms
+- observed alphanumeric forms such as `phase-NNN-NNa` remain preserved as legacy-only unless a later doctrine explicitly normalizes them
+- deeper hybrid forms such as `phase-NNN-NN-NNb` are not treated as forward-valid grammar by default
+- the release wave did not rename or migrate NodeClaw phase files
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into `~/.claude/rules`
 - 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
 - branch `goal-governed-work-only` and remote `master` both resolve to the same released commit
-- GitHub release `v10.33` was published at `2026-05-30T15:59:23Z`
+- GitHub release `v10.34` was verified after the release wave closeout
 
 ---
 
 ## Rollback / Containment
 
-If P125 is reversed after release:
-- revert the touched governed `/goal` doctrine edits as one governed rollback release
+If P126 is reversed after release:
+- revert the touched phase-grammar doctrine edits as one governed rollback release
 - restore the immediately previous released baseline as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
