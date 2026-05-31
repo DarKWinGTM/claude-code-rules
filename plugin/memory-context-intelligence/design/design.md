@@ -1,0 +1,132 @@
+# Design Index - memory-context-intelligence
+
+## 0) Document Control
+
+> **Parent Scope:** memory-context-intelligence plugin-local governed design chain
+> **Current Version:** 0.1.72
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
+> **Selected Parent Model:** generic parent
+> **Selected Chain Shape:** flat-sibling-shards
+
+---
+
+## 1) Purpose
+
+This file is the active parent design index for the `memory-context-intelligence` plugin-local design chain.
+
+It exists to keep the chain readable as a compact authority gateway while moving detailed target-state slices into flat sibling shards.
+
+## 2) Why `design.md` is the active parent here
+
+The current `design/` folder fully scopes one chain for this capsule. Under the current RULES doctrine, a generic parent is valid when the folder already acts as the full namespace for one chain.
+
+This chain therefore uses:
+- active parent model: `design.md`
+- chain shape: `flat-sibling-shards`
+
+## 3) Authority boundary
+
+- This design chain is local to `plugin/memory-context-intelligence/` because the user selected a plugin-local governed extension form for this capsule.
+- That selected local form applies to this capsule only. It must not be generalized automatically into root RULES doctrine or treated as proof that every `plugin/**` path should own a governed chain.
+- Root RULES still remains stronger than this capsule for active global RULES semantics.
+- Memsearch-produced traces remain analysis input, not semantic authority.
+- Runtime package outputs and plugin lifecycle checks remain evidence input only until a later governed phase selects, verifies, and promotes a candidate path.
+- The capsule exposes one plugin capability through peer harness-facing surfaces rather than through a primary external CLI workflow.
+- Any `bin/**` command adapter inside the package is an internal implementation mechanism unless a later governed phase explicitly promotes a user-facing command surface with separate proof.
+
+## 4) Why this chain no longer stays bootstrap-only
+
+The capsule no longer stays `single-file-bootstrap` because the design had already grown past one compact active body and now contains several coherent slices that are easier to review separately.
+
+## 5) Active shard map
+
+- [00-core-concept.design.md](00-core-concept.design.md) — main concept, source model, signal model, consumer model, and boundaries
+- [01-memsearch-required-dependency.design.md](01-memsearch-required-dependency.design.md) — why memsearch is required for this capsule and how that requirement is scoped
+- [02-topic-list-and-choice-flow.design.md](02-topic-list-and-choice-flow.design.md) — list-first / choice-second interaction contract, historical-default analysis scope, design-grounded RULES/workflow review framing, doctrine/mechanism-lifted topic titles, incident-details-in-proposal behavior, compact first-pass before/after previews for every topic card, evidence-grounded proposal examples with expanded before/after behavior when real preview evidence exists, repeated topic-card operator output, compact post-topic `Next action options` bridge, explicit slash-invocation-as-request / no-generic-no-request fallback contract, temporary stale-session diagnostic safeguard wording, restored native-first Thai explanation bodies for the known doctrine-level cards, per-topic repeated-format presentation, provenance-visible historical labeling, native-first no-second-rewrite behavior, candidate/advisory/not-approved status visibility, output modes, implemented config-policy loading for analysis inputs, and guided config-helper UX when no config file is loaded
+- [03-research-enrichment.design.md](03-research-enrichment.design.md) — when and how controlled research strengthens locally derived candidate improvements
+- [04-native-agent-orchestration.design.md](04-native-agent-orchestration.design.md) — runtime-local lane orchestration, delegated gathering, research, trust review, and synthesis boundaries
+- [05-additional-staging-and-promotion.design.md](05-additional-staging-and-promotion.design.md) — how selected candidates stage to `/additional/` before any main-rule merge
+- [06-plugin-installability.design.md](06-plugin-installability.design.md) — plugin installability contract, source-home boundary, peer harness-facing surface model, install/load-vs-invocation proof separation, transitional 019-023 proof, selected darkwingtm target namespace, historical reclassification for phases 025-033, root-TEMPLATE marketplace binding to `./RULES/plugin/memory-context-intelligence`, removed duplicate projection-tree authority, completed phase 055 single-source authority cleanup, completed phase 034 harness-surface governance sync, completed phase 035 slash proof/blocker capture, completed phase 036 invocation-design sync, completed phase 037 implementation planning, completed phase 038 analysis-surface runtime implementation, completed phases 039-041 naming authority correction plus proof/no-drift closeout, completed phase 042 single-public-`/analysis` memsearch-backed operator sync, and completed phase 057 analysis skill wrapper permission-safe correction
+- [07-recall-scoping-and-time-window.design.md](07-recall-scoping-and-time-window.design.md) — checked memsearch recall behavior, selected historical-default scope model, explicit narrowing contract, implemented historical-first runtime path, and current proof boundary for `/analysis`
+- [08-memory-evidence-source-model.design.md](08-memory-evidence-source-model.design.md) — implemented multi-source evidence model, provenance handling, historical-strength weighting, trace-anchored promotion logic, late-bound config-file source-policy loading, policy-limited operator provenance, and guided config-helper boundaries
+
+## 6) Implementation phase program boundary
+
+The complete phase program is defined in [../phase/SUMMARY.md](../phase/SUMMARY.md). This design parent intentionally keeps only the compact design boundary instead of duplicating the phase table.
+
+The program keeps:
+- phases 001-006 as the existing design concept lineage
+- phase 007 as the completed isolated runtime package scaffold bootstrap
+- phase 008 as the completed bounded safe memsearch intake layer
+- phase 009 as the completed internal signal extraction and topic-generation layer
+- phase 010 as the completed topic presentation and choose-flow layer
+- phase 011 as the completed optional controlled research-enrichment layer
+- phase 012 as the completed runtime-local bounded orchestration layer
+- phase 013 as the completed candidate-packet and gated additional-emission layer
+- phase 014 as the completed deterministic historical replay validation layer
+- phase 015 as the completed bounded live additional-stage trial layer
+- phase 016 as the completed checked-scope runtime readiness layer
+- phases 017-018 as deferred post-ready promotion readiness and possible main RULES merge closeout
+- phase 019 as completed installability planning and contract alignment
+- phase 020 as completed source-side manifest and local marketplace bootstrap, now transitional namespace evidence
+- phase 021 as completed session-only inline load proof using `memory-context-intelligence@inline`, now transitional namespace evidence
+- phase 022 as completed local-scope persistent install proof using `memory-context-intelligence@rules-local`, now transitional namespace evidence
+- phase 023 as completed reload/new-process evidence reuse, approved uninstall-only proof, and install-doc closeout for `rules-local`
+- phase 024 as completed docs-only namespace governance sync for selected target install ID `memory-context-intelligence@darkwingtm`
+- phase 025 as completed historical split-proof evidence from the temporary/remapped darkwingtm state, no longer current runtime truth after marketplace restore
+- phase 026 as completed historical local-scope persistent install proof from the temporary/remapped darkwingtm state, no longer current installed/enabled state
+- phase 027 as completed historical uninstall-only lifecycle closeout from the temporary/remapped darkwingtm state, with retained cache/data treated as evidence only
+- phase 028 as completed docs-only restored darkwingtm shared-marketplace governance sync
+- phase 029 as completed docs-only shared darkwingtm marketplace bridge design selection
+- phase 030 as blocked shared-marketplace bridge implementation attempt because Claude Code rejected the outside-base bridge source as unsupported / path traversal during install
+- phase 031 as completed docs-only historical selection for the older `TEMPLATE/PLUGIN/memory-context-intelligence/` projection family
+- phase 032 as completed checked-local historical implementation/reproof for that older projection family
+- phase 033 as completed historical runtime-loaded proof plus broader transcript-governed correction closeout for that same family
+- phase 034 as completed docs-only harness-surface governance sync that classifies skill, slash, and plugin-managed auto flow as peer entry surfaces while reclassifying `bin/memory-context-intelligence` as an internal implementation mechanism only
+- phase 035 as completed named slash-surface proof plus exact auto-flow blocker capture in checked local scope
+- phase 036 as completed docs-only analysis-only invocation design sync
+- phase 037 as completed implementation planning for analysis-surface runtime changes
+- phase 038 as completed runtime implementation and checked-scope proof for `/memory-context-intelligence:analysis`
+- phase 039 as completed official plugin-skill naming authority correction
+- phase 040 as completed picker shorthand and bare-alias proof separation
+- phase 041 as completed naming-model no-drift closeout
+- phase 042 as completed the earlier single public `/analysis` memsearch-backed operator-surface sync
+- phase 043 as completed recall-scoped design clarification for current-session/current-day analysis input before runtime mutation
+- phase 044 as completed scope-first recall runtime implementation and compatibility/verification closeout
+- phase 045 as completed the registered analysis surface correction
+- phase 046 as completed bare `/analysis` surface model selection
+- phase 047 as completed design-grounded current-session-first analysis review correction
+- phase 048 as completed memsearch-backed analysis retrieval correction plus actionable insufficiency sync
+- phase 049 as completed analysis-surface output-contract correction plus issue-first topic-title sync
+- phase 050 as the completed governed source-model clarification wave that separated current memsearch-only truth from the later four-class evidence target before runtime mutation
+- phase 051 as the completed multi-source evidence implementation wave that made `trace_evidence`, `recall_evidence`, `durable_memory_context`, and `governance_context` real in checked scope while keeping promotion trace-anchored and `/additional/` unchanged
+- phase 052 as the completed diagnosis/clarification wave that proved an earlier `no-topics` result can be expected before repeated current-session trace accumulates and therefore did not require a runtime code fix
+- phase 053 as the completed historical-default redesign wave that moved default analysis to bounded broader historical memory, re-ranked promotion around historical repetition / cross-session breadth / recency, and synced governed plus runtime-facing docs
+- phase 054 as the completed native-first communication-contract wave that rewrote first-response titles into semantic human-readable wording, separated presentation / recommendation / proposal, exposed candidate/advisory/not-approved status, and synced the then-current governed contract to the new operator-facing behavior
+- phase 055 as the completed single-source authority cleanup wave that removed active truth drift from the old `TEMPLATE/PLUGIN/memory-context-intelligence/` projection family, kept `memory-context-intelligence@darkwingtm`, and made the root `TEMPLATE` marketplace plus `./RULES/plugin/memory-context-intelligence` the only current authority model
+- phase 056 as the completed historical breadth and ordering correction wave that keeps narrow historical-only patterns below the broader-review bar, prioritizes multi-session/multi-shard evidence more clearly, and exposes a compact historical breadth summary before the proposal block
+- phase 057 as the completed analysis skill wrapper permission-safe correction wave that replaces the permission-blocked inline executable block with the fixed `memory-context-intelligence analysis-surface` runtime subcommand, restores approved non-interactive local slash proof, and keeps breadth/promotion semantics unchanged
+- phase 058 as the completed doctrine-level analysis topic synthesis wave that lifts surfaced topics through doctrine/mechanism lenses, keeps incident details inside proposal evidence/examples, preserves minimum-three advisory behavior, and keeps the trace-anchored evidence model unchanged
+- phase 059 as the completed evidence-grounded proposal-example refinement wave that adds concrete `Evidence examples` plus explicit `Before behavior` / `After behavior` sections when usable bounded preview evidence exists, while omitting fabricated examples when it does not
+- phase 060 as the completed historical presentation-spine cleanup wave that attempted to compress weaker same-family topics into `related variants`, kept only primary topic families in the main first-response list, and carried one `presentation / recommendation / proposal / related variants` wrapper spine
+- phase 061 as the completed repeated topic-card operator-output correction wave that removes the report-wrapper first-response model, renders each surfaced topic as its own repeated topic card, and preserves evidence/status boundaries inside each topic
+- phase 062 as the completed session-independent slash no-request hardening wave that treats the slash invocation itself as the request, disallows generic `no request` fallback when rendered analysis context exists, and closes the topic-card response with one compact advisory `Next action options` bridge
+- phase 063 as the completed stale-session diagnostic safeguard wave that adds one advisory `possible stale long-lived session` warning when checked freshness evidence shows the current session predates the installed plugin update, while preserving normal analysis status/output and keeping restart subordinate to the real bug fix
+- phase 064 as the completed compact first-pass before/after preview wave that promotes brief `Before behavior` / `After behavior` previews into every topic card while keeping `Evidence examples` real-preview-only and long-form illustrative before/after in the expanded follow-up layer
+- phase 065 as the completed rich topic-card explanation restoration wave that forces native-first wrapper rendering for the live operator surface and restores richer Thai explanation bodies for the known doctrine-level topic cards
+- phase 066 as the completed docs-only sync wave that defines config file as a late-bound source-selection/source-limit policy for the existing four-class evidence model without changing runtime/code truth or weakening trace-anchored promotion
+- phase 067 as the completed runtime config-policy implementation wave that adds explicit `--config` plus upward discovery, source-class and shard-limit enforcement, guided config-helper output when no config file is loaded, and policy-limited provenance while keeping `trace_evidence` as the live promotion anchor
+
+The checked local active runtime source home remains `<repo-root>/plugin/memory-context-intelligence/`. Phase 008 adds bounded safe intake there, phase 009 adds internal-only signal extraction plus topic candidates from bounded intake output, phase 010 adds list-first presentation plus choose-flow recording, phase 011 adds optional controlled research enrichment from one selected topic plus recorded source fixtures, phase 012 adds runtime-local orchestration findings across Trace Scout, Research Scout, Source-Trust Reviewer, and Synthesis Lead lanes, phase 013 adds candidate packet building plus dry-run-first, approval-gated additional-stage emission, phase 014 adds deterministic historical replay validation with dry-run emit preview only, phase 015 adds bounded live additional-stage trial reporting plus one approved trial artifact under `/additional/`, and phase 016 adds checked-scope readiness reporting.
+
+Installability phases 019-023 remain completed checked-local evidence, but phase 024 reclassifies phases 020-023 under the selected `darkwingtm` namespace basis. Phase 020 added source-side manifest and local marketplace bootstrap only. Phase 021 proved session-only inline availability as `memory-context-intelligence@inline`. Phase 022 proved checked local-scope persistent CLI availability as `memory-context-intelligence@rules-local`. Phase 023 reused phase-022 normal plus bare CLI checks as reload/new-process evidence and completed approved uninstall-only closeout for `rules-local`. These facts are preserved as historical/transitional evidence, not erased or marked undone.
+
+The selected target install ID remains `memory-context-intelligence@darkwingtm`, and current runtime truth in this transcript now uses one single-source authority model. Active source authority remains `<repo-root>/plugin/memory-context-intelligence/`. Active runtime marketplace truth is the root `TEMPLATE` marketplace: checked config maps `darkwingtm` to that root, the shared marketplace file at the root includes `memory-context-intelligence` with supported in-base source `./RULES/plugin/memory-context-intelligence`, and the earlier `TEMPLATE/PLUGIN/memory-context-intelligence/` projection family is no longer part of current runtime truth. Phases 031-033 remain preserved as historical installability/proof evidence for that older projection experiment only. In the current checked-local state, `claude plugin list --json` and `claude --bare plugin list --json` both show `memory-context-intelligence@darkwingtm` installed/enabled in local scope for `<workspace-root>`, normal plus bare plugin details still show source `memory-context-intelligence@darkwingtm`, one skill, and four agents, and the current RULES-owned package implements the historical-default analysis model for `analysis`: default intake scope uses bounded broader historical memory across the user's work corpus, repeated historical trace can surface topics without requiring current-session trace as the primary gate, explicit `day` / `session` / `lookback` narrowing remains available when requested, current-session confirmation is supporting provenance/freshness context only, the slash invocation itself counts as the request even with no extra text, and generic `no request` fallback is disallowed when rendered analysis context exists. Phase 049 kept the operator-facing output contract free of development/progress-summary leakage, phase 050 clarified the broader four-class source model, phase 051 made that evidence model real in checked scope, phase 052 proved the earlier `no-topics` result was an expected momentary insufficiency rather than a runtime bug, phase 053 completed the historical-default redesign, phase 054 completed the native-first communication contract, phase 055 removed the remaining active authority drift from the old duplicate path, phase 057 restored the actual slash-surface proof path through a permission-safe wrapper correction, phase 058 lifted surfaced topics through doctrine/mechanism lenses, phase 059 added concrete evidence-grounded proposal examples plus explicit before/after behavior when usable bounded preview evidence exists, phase 060 preserved the now-historical wrapper-spine experiment, phase 061 replaced that operator surface with repeated topic cards, and phase 062 hardened the session-independent no-request boundary with explicit request-ownership markers plus one compact advisory `Next action options` bridge after the topic cards. Current proof for the redesigned behavior is the packaged `intake → signals → present` chain plus green focused/full tests covering the historical-default path, together with checked approved non-interactive local slash runs for `/memory-context-intelligence:analysis` when local command approval is intentionally granted with `--permission-mode bypassPermissions`; those checked local runs now include doctrine-level topics, conditional evidence-preview sections when usable bounded preview evidence exists, repeated topic cards, and the compact post-topic action bridge instead of generic no-request wording. The current implemented source model distinguishes `trace_evidence`, `recall_evidence`, `durable_memory_context`, and `governance_context` explicitly. Live pattern detection remains memsearch-backed and trace-anchored; durable memory and governance context can strengthen provenance and review fit, but they do not replace missing live trace proof. Plain no-approval print-mode is not used here as proof because the slash surface needs a local command run. `/memory-context-intelligence:analysis` still appears in checked slash-command registry output, and official Claude Code docs checked in scope state that plugin skills use the `plugin-name:skill-name` namespace when invoked as slash commands. The active contract therefore keeps `/memory-context-intelligence:analysis` as the checked plugin-owned surface and treats any future true bare `/analysis` command as a separate non-plugin harness-native owner surface rather than as a plugin-skill alias target. That keeps direct `--plugin-dir` session identity separate as the historical `memory-context-intelligence@inline` boundary while preserving the single-source RULES-owned marketplace model as current truth.
+
+Phases 025-027 therefore remain completed historical checked evidence from the temporary/remapped `darkwingtm` state, not current target-state proof. Phase 028 remains the earlier docs-only governance correction that restored the shared marketplace baseline. Phase 029 completed docs-only selection of the bridge design, phase 030 implementation evidence rejected that bridge because the source `../RULES/plugin/memory-context-intelligence` is unsupported / path traversal outside the marketplace base, and phases 031-033 are now explicitly historical projection-family evidence only. Phase 055 supersedes those active-authority assumptions by keeping the root `TEMPLATE` marketplace plus `./RULES/plugin/memory-context-intelligence` as the only current installability truth.
+
+The design target remains trial-first and candidate-controlled until user selection, checked evidence, replay validation, live bounded trial behavior, checked-scope runtime readiness, supported shared-marketplace exposure design, checked-local lifecycle proof, a governed `/additional/` evaluation, and the selected invocation design are all aligned. Phase 016 may report `usable in checked scope` only when evidence gates pass. Phases 019-034 do not create approved replay writes, live web access, external agent process spawning, publication, external marketplace release, stable/broad production readiness, main RULES promotion, main RULES mutation, or main RULES merge behavior. Phase 035 captures named slash-command surface proof for the pre-implementation self-named surface while keeping distinct plugin-managed auto-flow proof unclaimed. Phase 036 is a docs-only invocation-design sync wave that selects analysis-only as the next target interaction shape, keeps `review` and `packet` deferred, and preserves the old `/memory-context-intelligence:memory-context-intelligence` proof as historical pre-implementation evidence. Phase 037 is the completed implementation-planning wave for changing the user-facing slash surface and default first-response behavior. Phase 038 is the completed runtime implementation and checked-scope proof wave for `/memory-context-intelligence:analysis`. Phase 042 remains the earlier active-surface correction wave that promoted bare `/analysis` as the public operator-facing surface, but phase 045 supersedes that runtime-surface interpretation in active docs: current checked slash registry output exposes `/memory-context-intelligence:analysis`, bare `/analysis` is not registered there, and phase 057 now closes the former unresolved slash-proof gap with approved non-interactive local output proof when `--permission-mode bypassPermissions` is intentionally granted. Phase 044 preserves the scope-first recall implementation and packaged runtime-chain proof under those corrected surface limits. Phase 050 is a docs-only source-model clarification wave: it records current memsearch-only implementation truth, selects the later four-class evidence model, and does not mutate code, runtime package behavior, or `/additional/`. Phase 029 did not mutate runtime state, marketplaces, settings, installed plugins, or cache; phase 030 remains blocked implementation evidence; phase 031 remains completed docs-only design selection; phase 032 remains completed checked-local implementation/reproof evidence only; phase 033 closes the broader transcript-governed correction objective in checked local scope only; phase 035 is a bounded proof-and-blocker capture wave rather than a runtime cleanup or main RULES promotion wave; phase 036 is a design/governance sync wave rather than a runtime surface mutation wave; phases 038, 044, 045, 050, and 057 do not change `/additional/`, prove plugin-managed auto-flow, or claim publication, external marketplace release, stable/broad production readiness, or main RULES promotion/mutation/merge. Main RULES promotion/merge remains a separate governed decision in deferred phases 017-018.
+
+---
+
+> Full history: [../changelog/changelog.md](../changelog/changelog.md)
