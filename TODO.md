@@ -192,7 +192,7 @@
 
 ### Active / In Progress
 
-- None currently selected. Latest released baseline is `v10.33 / P125`.
+- None currently selected. Latest released baseline is `v10.36 / P128`.
 
 ### Deferred / Not Selected
 

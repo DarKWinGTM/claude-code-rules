@@ -252,19 +252,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current released baseline after P127 closeout:
-- released baseline is `v10.35 / P127`
-- README Core Capabilities now use a readable doctrine-grounded list instead of the old grid/table block
-- capability wording now explains active doctrine and current-state behavior directly rather than phase/release execution chronology
-- Runtime Context Discipline now stays front-page scoped instead of retelling rollout history as capability meaning
-- `document-governance.md` explicitly keeps README capability/current-state sections front-page scoped and doctrine-grounded
+Current released baseline in checked branch/release scope after P128 closeout:
+- released baseline is `v10.36 / P128`
+- README current-state sections now expose `diagram/` as the dedicated governed visual lane and `diagram/STRUCTURE.md` as the whole-repo visual anchor
+- active doctrine keeps `design/` as semantic authority and keeps inline answer/phase-local text-diagram formatting separate from repository diagram-source doctrine
+- `document-governance.md` explicitly recognizes the governed diagram lane and keeps README capability/current-state sections front-page scoped
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - runtime install copied only the 18 README-listed active runtime rules into a checked project-local `.claude/rules/` target
 - 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
-- branch `goal-governed-work-only` and remote `master` both resolve to the same released commit
-- GitHub release `v10.35` was verified after the release wave closeout
+- branch `governed-docs-diagram-support` resolves to released commit `c9f16db0d37a549084af30be9d8d44bee2277d64`
+- GitHub release `v10.36` was verified in branch/release scope; remote default-branch promotion remains a separate verification step until checked explicitly
 
 ---
 
