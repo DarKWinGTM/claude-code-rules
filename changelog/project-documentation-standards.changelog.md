@@ -1,12 +1,29 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.41
+> **Current Version:** 2.42
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-242"></a>
+## Version 2.42: Added dedicated diagram lane role model
+
+**Date:** 2026-06-01
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.41 to v2.42.
+- Added `diagram/STRUCTURE.md`, `diagram/<subject>.design.md`, and optional child visual shards to the repository role model.
+- Clarified that `diagram/` is a dedicated governed visual lane rather than a mirror of `design/**` shard structure.
+- Clarified that integrated subject diagrams should start whole and split only when visual complexity or genuinely different visual questions justify it.
+
+### Summary
+Project-documentation-standards now treats `diagram/` as a first-class governed visual lane and separates visual-source structure from text-design shard structure.
+
+---
 
 <a id="version-241"></a>
 ## Version 2.41: Added changelog version detail shard role model
@@ -50,6 +67,7 @@ Added automatic God artifact planning role model for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.42 | 2026-06-01 | **[Added dedicated diagram lane role model](#version-242)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.41 | 2026-05-13 | **[Added changelog version detail shard role model](#version-241)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Modeled active parent changelogs, chain-scoped version detail shards, and `changelog/done/` fallback history as distinct documentation surfaces. | |
 | 2.40 | 2026-05-11 | **[Added automatic God artifact planning role model](#version-240)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |

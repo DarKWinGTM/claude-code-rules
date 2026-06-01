@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.41
+> **Current Version:** 2.42
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
 
 ---
@@ -63,6 +63,8 @@ This model must preserve one authority system while clearly separating:
 - `changelog/done/` as inactive-by-default legacy/archive/completed-history/fallback changelog history
 - design as active blueprint/target-state authority with no default `design/done/` pattern
 - compact active design indexes and governed child design shards for large active design surfaces
+- `diagram/` as a dedicated governed visual synthesis lane whose global anchor starts at `diagram/STRUCTURE.md`
+- integrated subject diagrams under `diagram/<subject>.design.md` by default, with child visual shards only when visual complexity genuinely justifies a split
 - design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
 - `/phase` as both the governed current execution structure and a bounded source of already-authored next planned structure that may guide continuity without silently activating unopened future work
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
@@ -81,7 +83,7 @@ This model must preserve one authority system while clearly separating:
 Applies to projects that keep governed documentation artifacts and support/reference materials in the same repository.
 
 This includes:
-- repository role boundaries across README, design, governed design child shards, active parent changelogs, changelog version detail shards, changelog fallback history, TODO, phase, and patch artifacts
+- repository role boundaries across README, design, governed design child shards, governed diagram lane surfaces, active parent changelogs, changelog version detail shards, changelog fallback history, TODO, phase, and patch artifacts
 - startup artifact posture before meaningful governed work
 - README current-state release sync, including status cards, install arrays, active runtime count, latest refinement, current quality signals, and current safety/runtime notes
 - public onboarding/install guidance in README or adjacent install docs
@@ -109,20 +111,29 @@ They use the canonical runtime header contract:
 Runtime rule role also requires body sufficiency: a root runtime rule listed for install must materialize its active behavior body rather than point only to design or changelog metadata.
 
 ### 3.3 Design Role
-`design/*.design.md` documents hold active target-state guidance.
+`design/*.design.md` documents hold active textual target-state guidance.
 Historical detail lives in changelog files, not in active design bodies.
 Design remains blueprint authority and does not use a default `design/done/` pattern.
 
 Large active designs may use a compact parent index at `design/<slug>.design.md` plus governed child shards under `design/<slug>/*.design.md`. The parent index stays the first current-state lookup surface and should preserve purpose, authority boundary, target-state summary, shard map, and shard-selective read guidance. Child shards remain active design truth by default, not completed history or archive content.
 
-### 3.4 Changelog Role
+If the repo opens a governed visual lane, `diagram/` stays separate from `design/`: diagram explains relationships visually, while `design/` remains semantic authority when the two differ.
+
+### 3.4 Diagram Role
+`diagram/` is the governed visual synthesis lane.
+
+Its top-level anchor is `diagram/STRUCTURE.md`. Subject-level work should start as one integrated diagram under `diagram/<subject>.design.md` and split into child visual shards only when visual complexity or genuinely different visual questions justify the split.
+
+Diagram structure must not automatically mirror design-shard structure. Tooling and previews may support the lane, but they do not replace source doctrine or semantic authority.
+
+### 3.5 Changelog Role
 Each governed chain uses one authoritative active parent changelog.
 Active parent changelog files hold latest version state, current index, shard map when present, and navigation.
 Large same-chain version detail may live under `changelog/<chain>/vX.YY-short-topic.changelog.md` when the parent would otherwise become expensive to read or verify.
 Version detail shards are indexed detail surfaces for one parent chain, not independent version authorities.
 Legacy, archive, completed-history, or explicit fallback detail may live under `changelog/done/` when chain-scoped version shards are not the right shape.
 
-### 3.5 TODO Role
+### 3.6 TODO Role
 `TODO.md` tracks durable repository/project execution state only.
 It is not a version-authority document.
 
@@ -132,12 +143,12 @@ For non-trivial phase-backed work, built-in task entries should visibly point to
 For non-trivial coding work, live task entries should preserve material verification slices when implementation and verification are distinct outcomes.
 Visible session ownership should remain a default board-facing standard for session-owned task-list work whether the current task list is being used by one session or several.
 
-### 3.6 Phase Summary Role
+### 3.7 Phase Summary Role
 `phase/SUMMARY.md` is the governed summary/index for live phased execution planning.
 It is the required top-level control surface when phased planning is used.
 It should preserve phase-family lineage when that context affects later major-vs-subphase decisions.
 
-### 3.7 Phase Execution-File Role
+### 3.8 Phase Execution-File Role
 The active phase identity model uses:
 - major phase files: `phase/phase-NNN-<phase-name>.md`
 - subphase files: `phase/phase-NNN-NN-<subphase-name>.md`
@@ -146,18 +157,18 @@ Phase execution-file creation and selection should defer to `phase-implementatio
 
 Completed phase files may move under `phase/done/` when they are no longer active execution inputs and only history/audit/rollback/trace needs remain.
 
-### 3.8 Patch Role
+### 3.9 Patch Role
 `patch/<context>.patch.md` or root `<context>.patch.md` is a governed active patch/review artifact layer.
 It is not the live phase-plan namespace.
 A patch is a self-identifying before/after artifact whose job is to show what will change.
 It is not the default startup artifact for greenfield / baseline-formation work when no stable before-state exists yet.
 Completed patch artifacts may move under `patch/done/` when they are no longer active review inputs and only history/audit/rollback/trace needs remain.
 
-### 3.9 Startup Artifact-Initiation Role
+### 3.10 Startup Artifact-Initiation Role
 `artifact-initiation-control.md` is the semantic owner of startup artifact posture.
 It decides whether design, changelog, TODO, phase, and patch should be reused, created now, asked about now, or marked not required before meaningful work drifts.
 
-### 3.9.1 Master-Surface Consultation Boundary
+### 3.10.1 Master-Surface Consultation Boundary
 Before a newly encountered file is classified as junk, disposable, non-governed, or safe to remove, the assistant should consult the repository's checked master surfaces first.
 
 Minimum lookup set when applicable:
@@ -174,15 +185,15 @@ Required guidance:
 - `not required` does not mean `safe to remove` unless stronger authority and stronger destructive-execution permission also exist
 - destination/runtime files outside the current source-owned active runtime install set are not project junk by default merely because they sit in the same runtime destination
 
-### 3.10 Phase Rule Role
+### 3.11 Phase Rule Role
 `phase-implementation.md` is the semantic rule for phased execution planning.
 It owns phase semantics after `/phase` is required.
 
-### 3.11 Root Helper Role
+### 3.12 Root Helper Role
 `phase-implementation-template.md` is a non-governed root helper.
 It exists for readability, drafting, and reuse.
 
-### 3.12 Extension-Package Role
+### 3.13 Extension-Package Role
 `plugin/**` may exist as an optional extension-package area.
 It may contain package-local implementation assets such as:
 - `README.md`
@@ -204,6 +215,9 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 | `README.md` | Always | Overview, onboarding, repository map | Overview only |
 | `design/*.design.md` | Design/specification needed | Active target-state guidance or compact parent design index | Governed design layer |
 | `design/<slug>/*.design.md` | Large active design needs governed shards | Active child target-state design detail under a compact parent index | Governed design layer |
+| `diagram/STRUCTURE.md` | The repo needs a governed visual lane | Whole-repo visual anchor and authority-boundary orientation surface | Governed diagram lane |
+| `diagram/<subject>.design.md` | A subject needs integrated visual explanation | Default bodyful integrated subject diagram | Governed diagram lane |
+| `diagram/<subject>/*.design.md` | Visual complexity justifies a split | Child visual shards under a subject-level diagram parent | Governed diagram lane |
 | `changelog/*.changelog.md` | Chain history needed | Active parent authority, current index, shard map when present, and navigation | Governed authority layer |
 | `changelog/<chain>/v*.changelog.md` | Large same-chain version detail should leave the active parent changelog | Indexed detail shard for one parent chain | Governed changelog detail layer |
 | `changelog/done/*.changelog.md` | Legacy, archive, completed-history, or explicit fallback detail should leave the active scan surface | Inactive-by-default history for audit/rollback/provenance/trace | Completed changelog history layer |

@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.14
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.14
+> **Current Version:** 1.15
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -14,6 +14,8 @@
 This rule unifies explanation flow, answer presentation, text-diagram formatting, and response-closing behavior. It keeps answers readable, complete enough for the user's decision, proportionate to the task, and oriented toward forward motion without turning every response into a rigid template.
 
 พูดง่าย ๆ: อธิบายให้เข้าใจก่อน, จัดคำตอบให้อ่านง่าย, ใช้ diagram แบบเบา ๆ เท่าที่จำเป็น, และปิดท้ายด้วยข้อสรุปกับ next action ที่ชัด.
+
+Scope boundary: this owner governs inline answer/status/phase-local text diagrams only. Governed repository diagram source under `diagram/` belongs to `document-governance.md` and the dedicated diagram lane.
 
 ---
 
@@ -368,7 +370,7 @@ Allowed diagram tools:
 Required guidance:
 - use arrows only for real sequence or dependency relationships
 - keep line width short enough to survive terminal wrapping
-- split complex diagrams into smaller flows
+- for inline explanatory diagrams, split complex flows into smaller diagrams or ordered lists when that improves readability
 - prefer prose or ordered lists when a diagram would reduce clarity
 
 ### 3) Diagram purpose first

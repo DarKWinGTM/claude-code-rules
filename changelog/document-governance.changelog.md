@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-06-01 | **[Added P128 governed diagram lane role model](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-31 | **[Added P127 README front-page capability framing refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-31 | **[Added P126 explicit live phase-file grammar wording](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.8 | 2026-05-18 | **[Added P108 append-vs-shard owner uptake](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -23,6 +24,25 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Added P128 governed diagram lane role model
+
+**Date:** 2026-06-01
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.10 to v1.11.
+- Updated `design/document-governance.design.md` from v1.10 to v1.11.
+- Added a dedicated governed `diagram/` lane to the repository document-role model.
+- Required `diagram/STRUCTURE.md` as the top-level visual anchor when the lane is opened.
+- Clarified that integrated subject diagrams should start whole by default and must not auto-mirror design shards.
+- Clarified that inline answer/phase-local diagram formatting remains separate from repository diagram-lane doctrine.
+
+### Summary
+`document-governance.md` now models `diagram/` as a first-class governed visual lane while keeping `design/` as semantic authority and keeping inline text-diagram formatting out of source-doctrine ownership.
 
 ---
 

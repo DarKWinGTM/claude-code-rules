@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Target State
 
-`document-governance.md` is the active runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control.
+`document-governance.md` is the active runtime owner for repository document roles, design/diagram/changelog/patch governance, and runtime rule version control.
 
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 
@@ -17,7 +17,7 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 
 ## Scope
 
-This design owns the target-state shape for project documentation standards, design control, changelog control, patch control, and UDVC-1.
+This design owns the target-state shape for project documentation standards, diagram/design control, changelog control, patch control, and UDVC-1.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 
@@ -41,6 +41,8 @@ P126 refinement: this owner should now make the live phase workspace examples ex
 
 P127 refinement: this owner should now keep README capability/current-state presentation front-page scoped by explaining active doctrine and current-state behavior directly, while avoiding phase/release execution chronology as the meaning of the capability itself.
 
+P128 refinement: this owner should now recognize `diagram/` as a dedicated governed visual lane, require `diagram/STRUCTURE.md` as the top-level visual anchor when the lane is opened, keep `diagram/<subject>.design.md` as the default integrated subject body, and reject automatic diagram splits that merely mirror design-shard structure.
+
 ---
 
 ## Runtime Requirements
@@ -49,6 +51,7 @@ P127 refinement: this owner should now keep README capability/current-state pres
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
 - Preserve owner-aligned sync-lane recognition while leaving worker-scaling and bounded multi-surface reads to `worker-routing-and-context.md` and `safe-io.md`.
+- Keep inline answer/phase-local text-diagram formatting separate from repository `diagram/` lane doctrine so presentation guidance does not silently become source authority.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---

@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Target State
 
-`explanation-and-presentation.md` is the active runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing.
+`explanation-and-presentation.md` is the active runtime owner for plain-language explanation, scan-friendly presentation, inline diagram discipline, and concise action framing.
 
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 
@@ -17,7 +17,7 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 
 ## Scope
 
-This design owns the target-state shape for answer presentation, explanation quality, no-frame diagrams, and response closing.
+This design owns the target-state shape for answer presentation, explanation quality, inline no-frame diagrams, and response closing.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 
@@ -48,6 +48,8 @@ P125 refinement: this owner should now preserve an integrated goal-with-planning
 P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
 
 P122 refinement: this owner should now preserve a compact explicit next-surface recommendation shape for route-heavy selected goals so `/plan` can be named directly instead of being implied through broad planning prose.
+
+P128 refinement: this owner should now keep inline answer/status/phase-local text-diagram discipline clearly separate from repository `diagram/` lane doctrine so no-frame formatting rules do not silently become source authority for governed visual documents.
 
 ---
 

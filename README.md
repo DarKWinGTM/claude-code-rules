@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.35</b><br><sub>P127 Released</sub>
+  <b>v10.36</b><br><sub>P128 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,10 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Capability Lists</b><br><sub>Doctrine-grounded front page</sub>
+  <b>Diagram Lane</b><br><sub>Unified visual doctrine</sub>
 </td>
 </tr>
 </table>
+
+> **Current release note:** `v10.36 / P128` establishes `diagram/` as the dedicated governed visual lane, opens `diagram/STRUCTURE.md` as the whole-repo visual anchor, and keeps repository diagram doctrine separate from inline answer/phase-local text-diagram formatting.
 
 <!-- CTA Buttons -->
 <p>
@@ -331,6 +333,9 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 | `./design/<slug>.design.md` | Compact active parent design index/gateway for governed chains | Active design parent |
 | `./design/<slug>/*.design.md` | Active child target-state shards in same-stem nested mode | Active design shards |
 | `./design/*.design.md` beside a compact parent | Flat sibling design shards when the current folder already scopes the chain | Active design sibling shards |
+| `./diagram/STRUCTURE.md` | Whole-repo visual anchor when a governed diagram lane is opened | Active diagram global anchor |
+| `./diagram/<subject>.design.md` | Default integrated subject diagram in the dedicated visual lane | Active subject diagram |
+| `./diagram/<subject>/*.design.md` | Child visual shards only after a real visual split trigger | Active diagram child shards |
 | `*.md` (root) | Active runtime rules | Rules files |
 | `./changelog/changelog.md` | Compact master repository-wide current-version authority and shard map | Master changelog parent |
 | `./changelog/*.changelog.md` | Per-chain authoritative active parent history/current version state | Active parent changelogs |
@@ -353,6 +358,9 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 
 > **💡 Single Source of Truth Principle:**
 > - Governed design/changelog chains should classify chain shape before parent files absorb more detail
+> - `diagram/STRUCTURE.md` is the top-level visual anchor when a governed diagram lane is opened
+> - `diagram/<subject>.design.md` is the default bodyful integrated subject diagram; split only when visual complexity or genuinely different visual questions justify it
+> - Diagram structure must not auto-mirror design shards, and `design/` remains semantic authority when text and diagram differ
 > - Flat sibling shards are valid when the current folder already scopes the chain and the compact parent clearly exposes the shard map
 > - Broad active design chains should still strongly prefer same-stem parent/index + shard pairs (`design/<slug>.design.md` + `design/<slug>/`) and do not use a default `design/done/` surface
 > - Per-chain active changelogs (`*.changelog.md`) remain the authority for current governed chain history/version state
@@ -379,13 +387,14 @@ Boundary:
 
 ## 🔗 Integration Guide
 
-This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and governed phase-planning artifacts should be updated together.
+This section defines how `design`, `diagram`, `changelog`, `runtime rules`, `TODO`, and governed phase-planning artifacts should be updated together.
 
 ### Document Roles
 
 | Document | Role | Update Trigger |
 |----------|------|----------------|
 | `design/*.design.md` | Target behavior/specification | Requirement or policy change |
+| `diagram/STRUCTURE.md` and `diagram/*.design.md` | Governed visual synthesis / relationship explanation | A whole-repo or subject-level visual explanation needs active source truth |
 | `*.md` (root runtime rules) | Active runtime behavior | Approved design change requires runtime sync |
 | `changelog/changelog.md` | Master repository-wide synchronization history | Repository-level governed sync events |
 | `changelog/*.changelog.md` | Authoritative active per-chain version history | Any rule/design update with version impact |

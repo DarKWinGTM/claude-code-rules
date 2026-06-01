@@ -1,7 +1,7 @@
 # Changelog - Flow Diagram No Frame
 
 > **Parent Document:** [../flow-diagram-no-frame.md](../flow-diagram-no-frame.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,12 +10,30 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-06-01 | **[Narrowed inline text-diagram scope and boundary](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-06 | **[Materialized active runtime body and closed metadata-only stub drift](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Re-materialized root `flow-diagram-no-frame.md` as a substantive active runtime rule with `Full history`, preserving current design target behavior while removing design-only runtime dependency | |
 | 1.1 | 2026-03-08 | **[Normalized runtime metadata header to canonical cleanup-wave contract](#version-11)** | 41261a5a-d60b-4f6c-b174-229df0a58ac2 |
 | | | Summary: Added canonical `Design + Session + Full history` runtime header metadata without changing substantive diagram-format behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-13"></a>
+## Version 1.3: Narrowed inline text-diagram scope and boundary
+
+**Date:** 2026-06-01
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `design/flow-diagram-no-frame.design.md` from v1.2 to v1.3.
+- Clarified that this chain governs inline text diagrams used inside answers, status/progress updates, examples, and phase-local execution aids.
+- Clarified that repository governed visual source under `diagram/` belongs to document governance and the dedicated diagram doctrine instead.
+- Narrowed fallback wording so wide inline diagrams may split for readability without implying source-doctrine sharding rules.
+
+### Summary
+Flow-diagram-no-frame now behaves as inline text-diagram formatting guidance only and no longer reads like the authority owner for repository visual-source doctrine.
 
 ---
 

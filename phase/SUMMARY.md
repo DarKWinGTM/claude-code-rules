@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.35 / P127 README Core Capabilities list and doctrine framing
+> **Status:** No active phase selected; latest released baseline is v10.36 / P128 RULES unified diagram doctrine correction
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.35 / P127`.
+- None currently selected. Latest released baseline is `v10.36 / P128`.
 
 ### Most Recently Completed
+
+- **P128:** [phase-128-rules-unified-diagram-doctrine-correction.md](phase-128-rules-unified-diagram-doctrine-correction.md)
+  - Output: dedicated `diagram/` visual lane is now recognized in active owner docs, `diagram/STRUCTURE.md` is present as the whole-repo visual anchor, fragmented companion assumptions were withdrawn, touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.36 / P128`, and temporary project-local install proof passed for the touched runtime-owner surfaces.
+  - Gate: design-vs-diagram authority boundary integrity passed, no touched active surface kept the old fragmented baseline as selected truth, `git diff --check` passed, temporary project-local install proof passed with 18 active runtime rule markdown files, touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`, and release closeout was selected.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36
+  - Patch: [../patch/rules-unified-diagram-doctrine-correction.patch.md](../patch/rules-unified-diagram-doctrine-correction.patch.md)
+  - Historical note: this wave corrected doctrine before any future re-entry into tooling/plugin implementation and did not revive plugin-first execution as the default path.
+
+### Previously Completed
 
 - **P127:** [phase-127-readme-core-capabilities-list-and-doctrine-framing.md](phase-127-readme-core-capabilities-list-and-doctrine-framing.md)
   - Output: README Core Capabilities now use a readable doctrine-grounded list, Runtime Context Discipline stays front-page scoped, touched README/design/changelog/TODO/phase/patch sync is complete, runtime install into a checked project-local `.claude/rules/` target passed at 18/18 parity/body sufficiency, branch push completed, and GitHub release `v10.35` is published.

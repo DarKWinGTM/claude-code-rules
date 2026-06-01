@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-06-01 | **[Added P128 inline-diagram boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-30 | **[Added P125 integrated goal-with-planning presentation refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-29 | **[Added P124 plan-backed advisory `/goal` presentation refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-28 | **[Added P123 goal-helper presentation refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -27,6 +28,24 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-115"></a>
+## Version 1.15: Added P128 inline-diagram boundary refinement
+
+**Date:** 2026-06-01
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.14 to v1.15.
+- Updated `design/explanation-and-presentation.design.md` from v1.14 to v1.15.
+- Added an explicit scope boundary so this owner governs inline answer/status/phase-local text diagrams only.
+- Clarified that governed repository diagram source under `diagram/` belongs to document governance and the dedicated diagram lane.
+- Narrowed split guidance so inline explanatory diagrams may split for readability without implying repository source-lane splitting rules.
+
+### Summary
+`explanation-and-presentation.md` now keeps no-frame inline diagram discipline while explicitly deferring repository visual-source doctrine to the dedicated `diagram/` lane.
 
 ---
 

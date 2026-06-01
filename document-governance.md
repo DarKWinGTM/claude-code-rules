@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.10
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.11
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -9,11 +9,11 @@
 
 ## Rule Statement
 
-**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active target-state truth, keep changelog as version/history authority, resolve namespace scope and choose one active parent model before appending or sharding detail, allow generic parents when the current folder fully scopes one chain, keep bootstrap-first behavior until checked triggers justify shards, classify governed design/changelog chain shape before opening or expanding shard structure, keep patch as before/after review outside live phase planning, recognize governance/release-sync work shapes before deep execution, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
+**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active textual target-state truth, keep `diagram/` as the governed visual synthesis lane when a repo needs visual structure, keep changelog as version/history authority, resolve namespace scope and choose one active parent model before appending or sharding detail, allow generic parents when the current folder fully scopes one chain, keep bootstrap-first behavior until checked triggers justify shards, classify governed design/diagram/changelog chain shape before opening or expanding shard structure, keep patch as before/after review outside live phase planning, recognize governance/release-sync work shapes before deep execution, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
 
 This rule unifies repository documentation baseline, design/changelog/patch role boundaries, completed-surface governance, and UDVC-1 version-control discipline. It keeps one clear owner per document role so active docs remain understandable, auditable, and cheap to maintain.
 
-พูดง่าย ๆ: README คือ front page, design คือ target truth, changelog คือ version/history, patch คือ before/after review, runtime root rules ต้องมี body จริง, และทุกอย่างต้องไม่แย่งกันเป็น authority เดียวกันมั่ว ๆ.
+พูดง่าย ๆ: README คือ front page, design คือ textual truth, `diagram/` คือ visual lane, changelog คือ version/history, patch คือ before/after review, runtime root rules ต้องมี body จริง, และทุกอย่างต้องไม่แย่งกันเป็น authority เดียวกันมั่ว ๆ.
 
 ---
 
@@ -26,6 +26,9 @@ Required surfaces when applicable:
 - `README.md` — overview / onboarding / current-state front page
 - `design/*.design.md` — active target behavior / contract / blueprint
 - `design/<slug>/*.design.md` — active child target-state shards for large designs
+- `diagram/STRUCTURE.md` — top-level visual anchor when the repo needs a governed diagram lane
+- `diagram/*.design.md` — integrated subject-level diagram documents in the dedicated visual lane
+- `diagram/<subject>/*.design.md` — child visual shards when visual complexity justifies a split
 - `changelog/*.changelog.md` — active parent version authority, current index, shard map when present, and navigation
 - `changelog/<chain>/v*.changelog.md` — indexed same-chain version detail shards
 - `changelog/done/*.changelog.md` — legacy/archive/completed-history/fallback changelog detail
@@ -52,6 +55,7 @@ Each document family keeps one primary role.
 - **README** is the current front page, not the history book
 - README capability/current-state sections should explain active doctrine and current-state behavior in user-facing terms, not retell phase/release execution chronology as the meaning of the capability itself
 - **design** is active target-state truth, not changelog history or completed-work storage
+- **diagram** is the governed visual synthesis lane, not semantic truth over design
 - **changelog** is current version/history authority, not phase-definition storage
 - **TODO** is the compact durable current-state execution index, not the primary live board
 - **phase** is live staged execution, not design or patch authority
@@ -70,6 +74,7 @@ Completed surfaces reduce active scan bloat without deleting governed history.
 Current-state scans should start from active entrypoints and checked implementation state:
 - `README.md`
 - active design parent indexes and needed child shards
+- active diagram structure/subject surfaces when a governed diagram lane exists
 - active parent changelogs and needed version-detail shards
 - compact `TODO.md`
 - compact `phase/SUMMARY.md`
@@ -81,7 +86,7 @@ Open `done/` or archive surfaces only through active references or for history, 
 ### 5.1) Governance and release-sync work-shape recognition
 When work touches several governed surfaces, classify the work shape before deep execution.
 - distinguish focused document edit, owner-aligned sync, broad release-ready/no-drift audit, history rollover, and before/after patch review
-- decompose broad governance or release-sync objectives into owner-aligned lanes such as design truth update, runtime rule sync, changelog sync, TODO/phase sync, patch metadata final sync, or release audit
+- decompose broad governance or release-sync objectives into owner-aligned lanes such as design truth update, diagram truth update, runtime rule sync, changelog sync, TODO/phase sync, patch metadata final sync, or release audit
 - use this decomposition to preserve role boundaries and reduce reread churn
 - `worker-routing-and-context.md` owns whether a lane becomes a worker and `safe-io.md` owns bounded file/command absorption during multi-surface review
 - do not force lane decomposition or delegation for tiny local sync or one-surface metadata fixes
@@ -149,6 +154,18 @@ Preferred wording:
 - `The extracted doctrine is ...`
 - `For this RULES chain, the selected target form is ...`
 - `The checked evidence grounds this recommendation, but it does not prove this is the only valid design.`
+
+### 5.4) Governed diagram lane
+When a repo needs governed visual structure, use a dedicated `diagram/` lane instead of forcing diagrams into `design/**` shards or plugin-owned preview surfaces.
+
+Required guidance:
+- `design/` stays textual target-state authority; `diagram/` is the visual synthesis lane
+- `diagram/STRUCTURE.md` is the top-level whole-repo visual anchor
+- `diagram/<subject>.design.md` is the default bodyful integrated subject diagram
+- child visual shards under `diagram/<subject>/` open only when visual complexity or genuinely different visual questions justify the split
+- do not mirror design shards automatically just because text design already split
+- if design and diagram differ, `design/` remains semantic authority
+- plugin/preview/manifest/report output stays support-only and must not become source truth
 
 ### 6) Public onboarding and install portability
 README/onboarding/install docs stay portable by default.

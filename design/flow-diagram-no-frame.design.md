@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
@@ -12,7 +12,7 @@
 
 ### 1.1 Purpose
 
-Standardize the drawing of Flow Diagrams to:
+Standardize the drawing of inline text Flow Diagrams to:
 
 - Prevent rendering problems with Unicode box characters.
 - Make diagrams display correctly every time terminal/viewer
@@ -173,7 +173,7 @@ Database
 | Situation | Solution |
 |-----------|----------|
 | Complex flow | Numbered list with indentation |
-| Wide diagram | Split into smaller diagrams |
+| Wide inline diagram | Split into smaller diagrams or ordered lists |
 | Need grouping | Headers and indentation |
 | Need emphasis | **bold text** or CAPS |
 
@@ -207,13 +207,15 @@ Before outputting diagram:
 
 ### 9.1 Scope
 
-Applies to ALL text-based diagrams:
+Applies to inline text diagrams used inside answers, status/progress updates, examples, and phase-local execution aids:
 - Flow diagrams
 - Sequence diagrams
 - Process diagrams
-- Architecture diagrams
-- System diagrams
-- Any diagram in markdown code blocks
+- Architecture diagrams when rendered inline as text
+- System diagrams when rendered inline as text
+- Any diagram in markdown code blocks that is serving an inline explanatory role
+
+Does **not** define repository source doctrine for governed visual documents under `diagram/`; that lane is owned by document governance and the dedicated diagram doctrine.
 
 ### 9.2 Related Rules
 

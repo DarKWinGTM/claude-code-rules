@@ -1,12 +1,18 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-05-31
-> **Current Release:** v10.35 / P127 README Core Capabilities list and doctrine framing
+> **Last Updated:** 2026-06-01
+> **Current Release:** v10.36 / P128 RULES unified diagram doctrine correction
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## ✅ Completed
+
+- [x] P128 / v10.36 RULES unified diagram doctrine correction was completed, pushed, and released.
+  - Verified: RULES now recognizes `diagram/` as a dedicated governed visual lane; `diagram/STRUCTURE.md` is present as the whole-repo visual anchor; integrated subject diagrams are the default visual posture; automatic design-shard mirroring was rejected; plugin-first fragmented companion assumptions were withdrawn from active current-state doctrine; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; temporary project-local install proof passed with 18 active runtime rule markdown files; touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36
 
 ## ✅ Completed
 
