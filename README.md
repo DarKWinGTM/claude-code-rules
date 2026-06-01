@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.37</b><br><sub>P129 Released</sub>
+  <b>v10.38</b><br><sub>P130 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Diagram Lane</b><br><sub>Kroki-compatible doctrine</sub>
+  <b>Goal Surface</b><br><sub>Plan reference by default</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.37 / P129` makes governed `diagram/` source mandatory Kroki-compatible, supports all suitable formats by defining them as Kroki-compatible + governance-suitable, upgrades `diagram/STRUCTURE.md` into a bodyful whole-project detailed visual structure authority, and keeps inline answer/phase-local text-diagram formatting outside governed source truth by default.
+> **Current release note:** `v10.38 / P130` makes actual governed `/goal` creation plan-first by default: assistant prepares a full detailed plan file before final goal emission, emits a compact `/goal` that references that route file through `Plan reference`, keeps `/goal` as the objective owner, keeps the plan file as route-only support, and keeps visible `/plan` out of the ordinary paired next-surface role.
 
 <!-- CTA Buttons -->
 <p>
@@ -1006,7 +1006,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.37 / P129` Kroki-compatible diagram doctrine model while the active runtime install set remains 18 root rules, `diagram/` stays the governed Kroki-compatible visual lane, and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.38 / P130` always-on plan-file-backed goal model while the active runtime install set remains 18 root rules, created governed `/goal` output now authors plan-first and references the prepared route file, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1129,7 +1129,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.37 |
+  <b>Version</b>: 10.38 |
   <b>Last Updated</b>: 2026-06-02 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

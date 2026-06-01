@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.37 / P129 Kroki-compatible governed diagram doctrine
+> **Status:** No active phase selected; latest released baseline is v10.38 / P130 always-on plan-file-backed goal model
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.37 / P129`.
+- None currently selected. Latest released baseline is `v10.38 / P130`.
 
 ### Most Recently Completed
+
+- **P130:** [phase-130-always-on-plan-file-backed-goal-model.md](phase-130-always-on-plan-file-backed-goal-model.md)
+  - Output: any actual governed `/goal` creation now prepares a full detailed plan file before final goal emission, emitted governed `/goal` output now references that route file through `Plan reference`, `/goal` remains the objective owner, the referenced plan file remains route-only support, and visible `/plan` remains explicit standalone planning, later route revision, or overflow only.
+  - Gate: plan-first governed goal-authoring integrity passed, plan-reference compact-goal integrity passed, goal-vs-plan authority integrity passed, explicit-standalone-or-overflow-only `/plan` integrity passed, touched README/design/changelog/TODO/phase/patch surfaces align to `v10.38 / P130`, runtime install/update verification passed with 18 active runtime rules plus manifest, targeted source/runtime parity and source/destination body sufficiency for touched owners passed, `git diff --check` passed, and reconciled branch/default-branch/tag/release evidence now points to one promoted `v10.38` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.38
+  - Patch: [../patch/always-on-plan-file-backed-goal-model.patch.md](../patch/always-on-plan-file-backed-goal-model.patch.md)
+
 
 - **P129:** [phase-129-kroki-compatible-governed-diagram-doctrine.md](phase-129-kroki-compatible-governed-diagram-doctrine.md)
   - Output: governed `diagram/` source is now mandatory Kroki-compatible, allowed breadth is defined as Kroki-compatible + governance-suitable, `diagram/STRUCTURE.md` now acts as a bodyful whole-project detailed visual structure authority, subject diagrams are positioned as zoom-in / decomposition views of the global structure, and touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.37 / P129`.
@@ -261,22 +268,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current promoted baseline after P129 closeout:
-- released baseline is `v10.37 / P129`
-- README current-state sections now expose mandatory Kroki-compatible governed `diagram/` doctrine and describe `diagram/STRUCTURE.md` as the bodyful whole-project detailed visual structure authority
-- active doctrine keeps `design/` as semantic authority, defines allowed breadth as Kroki-compatible + governance-suitable, and keeps inline answer/phase-local text-diagram formatting outside governed source truth by default
-- `document-governance.md` explicitly recognizes the governed Kroki-compatible diagram lane and keeps README capability/current-state sections front-page scoped
+Current promoted baseline after P130 closeout:
+- released baseline is `v10.38 / P130`
+- README current-state sections now expose always-on plan-file-backed governed `/goal` doctrine and describe compact goal emission with `Plan reference` as the current release posture
+- active doctrine keeps `/goal` as semantic/objective authority for outcome, proof/checks, scope, and hard guardrails while the referenced plan file stays route-only support
+- `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now agree that actual governed `/goal` creation is plan-first and visible `/plan` remains explicit standalone planning, later route revision, or overflow only
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - `git diff --check` passed with no whitespace errors
-- branch `p129-kroki-diagram-doctrine`, remote `master`, and tag `v10.37` now resolve to the same promoted commit lineage
-- GitHub release `v10.37` was verified on the promoted state after default-branch reconciliation
+- local source release state, remote `master`, and tag `v10.38` resolve to the same promoted commit lineage
+- GitHub release `v10.38` was verified on the promoted state after default-branch reconciliation
 
 ---
 
 ## Rollback / Containment
 
-If P127 is reversed after release:
-- revert the touched README capability-presentation and front-page authority edits as one governed rollback release
+If P130 is reversed after release:
+- revert the touched always-on plan-file-backed governed `/goal` doctrine edits as one governed rollback release
 - restore the immediately previous released baseline as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

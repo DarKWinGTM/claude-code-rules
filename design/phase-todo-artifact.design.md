@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.21
+> **Current Version:** 1.22
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -45,11 +45,13 @@ P114 refinement: this owner should now preserve candidate-goal shaping before `/
 
 P116 refinement: this owner should now treat `Done when` / `Prove with` / `Scope` / `Keep` / `Stop after` as concept slots rather than mandatory English surface labels so emitted `/goal` wording can follow the dominant session language while preserving exact literals where needed.
 
-P123 refinement: this owner should now preserve how governed execution surfaces may keep the user inside the existing `/goal` surface while using conditional internal native subagent assistance to shape bounded plan draft or verification/testing route output, without replacing `/plan` as the route owner or turning helper output into completion proof.
+P123 refinement: this owner should now preserve how governed execution surfaces may keep the user inside the existing `/goal` surface while using internal native subagent assistance to shape full plan-file preparation, verification/testing route output, or bounded route drafting, without replacing `/goal` as objective owner or turning helper output into completion proof.
 
-P124 refinement: this owner should now preserve how governed execution surfaces may conditionally run an internal pre-goal planning pass before advisory `/goal` emission when route synthesis materially improves the command, keep simple goals on the direct `/goal` path, allow optional plan-file reference as route-only context, and preserve `/plan` as the route owner once explicit user-facing planning is still needed after goal selection.
+P124 refinement: this owner should now preserve how governed execution surfaces run an internal pre-goal planning pass before advisory `/goal` emission, require the emitted goal to reference the prepared plan file as route-only context, and treat any direct/simple-goal wording as applying only to non-governed lightweight next-step guidance rather than created governed goals.
 
-P125 refinement: this owner should now preserve integrated goal-with-planning execution surfaces so governed work keeps compact route notes, plan basis, verification-order support, and similar route context inside the emitted or selected goal-centric surface first, and opens `/plan` only when overflow route detail or explicit standalone planning is materially needed.
+P125 refinement: this owner should now preserve integrated goal-with-plan-reference execution surfaces so governed work keeps the emitted goal compact, keeps the detailed route in the referenced plan file, and opens `/plan` only for explicit standalone planning, route revision, or overflow around an already plan-backed selected goal.
+
+P130 refinement: this owner should now require plan-first authoring for any actual governed `/goal` creation: governed execution surfaces should prepare a full detailed route file before final goal emission, keep the emitted `/goal` compact but always reference that plan file, preserve the plan file as route-only support rather than objective authority, and reserve visible `/plan` for explicit standalone planning, route revision, or later overflow around an already plan-backed selected goal.
 
 P126 refinement: this owner should now make `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms, preserve lineage-first child-phase selection across those three numeric depths, and classify observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
 
@@ -59,9 +61,9 @@ P118 refinement: this owner should now derive the smallest bounded successor sli
 
 P119 refinement: this owner should now make the emitted `/goal` scaffold follow the dominant language of the active exchange by default even without a direct language instruction, treat explicit language requests as a stronger override, preserve exact literals token-by-token including query parameters, and prevent whole-command exact-literal drift when only the surrounding scaffold should localize.
 
-P121 refinement: this owner should now preserve a governed selected-goal to `/plan` bridge so execution surfaces can escalate route-heavy work into planning only when the route is materially non-trivial, keep phase/task linkage tied back to the selected goal, and return closeout to the goal gate instead of the route state alone.
+P121 refinement: this owner should now preserve a governed selected-goal to `/plan` bridge only when explicit standalone planning, route revision, or later overflow beyond the already referenced plan file is materially needed, while keeping phase/task linkage tied back to the selected goal and returning closeout to the goal gate instead of the route state alone.
 
-P122 refinement: this owner should now preserve an explicit `/plan` next-surface recommendation in execution surfaces once that route-heavy bridge is active, rather than leaving planning only as an implied option in prose.
+P122 refinement: this owner should now preserve an explicit `/plan` next-surface recommendation only when that explicit standalone-planning or later-overflow bridge is actually needed, rather than leaving planning only as an implied option in prose.
 
 ---
 

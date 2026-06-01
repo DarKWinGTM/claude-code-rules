@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.21
+> **Current Version:** 1.22
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.22 | 2026-06-02 | **[Added P130 always-on plan-file-backed goal sourcing](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-05-31 | **[Added P126 explicit nested phase grammar and alphanumeric legacy handling](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution-surface refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-05-29 | **[Added P124 pre-goal `/goal` sourcing refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -34,6 +35,25 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-122"></a>
+## Version 1.22: Added P130 always-on plan-file-backed goal sourcing
+
+**Date:** 2026-06-02
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.21 to v1.22.
+- Updated `design/phase-todo-artifact.design.md` from v1.21 to v1.22.
+- Replaced conditional pre-goal planning support with plan-first authoring for any actual governed `/goal` creation.
+- Required governed execution surfaces to prepare a full detailed plan file before final goal emission.
+- Required emitted goals to reference that plan file as route-only context.
+- Preserved `/goal` objective ownership, kept `/plan` for explicit standalone planning or later route overflow/revision only, and preserved goal-gate closeout over plan-step completion.
+
+### Summary
+`phase-todo-artifact.md` now treats plan-file-backed goal authoring as the default governed `/goal` creation model: prepare the detailed route file first, emit a compact goal that references it, and keep the plan file subordinate to the selected goal.
 
 ---
 

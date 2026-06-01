@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.17
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.17
+> **Current Version:** 1.18
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -161,35 +161,35 @@ Required guidance:
 - when several successor goals remain live, surface them as candidate goals first and promote only the best-supported governed candidate into `/goal` when this bridge actually holds
 - if proof cannot be made transcript-visible, do not suggest `/goal`
 - if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
-- when governed work is non-trivial or route-heavy and route synthesis would materially improve the command, advisory `/goal` creation may conditionally run an internal planning / plan-mode-style pass before final goal emission
-- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and optional plan-file reference synthesis while remaining internal-only and subordinate to the emitted goal
-- simple or already direct goals should still emit `/goal` directly without forcing planning for every request
-- when a durable route artifact is useful, a plan file may be referenced from the emitted goal or surrounding explanation, but the plan file must remain a route artifact and must not become objective authority
+- once advisory `/goal` creation is selected for governed work, it should first run an internal planning / plan-mode-style pass and prepare a full detailed plan file before final goal emission
+- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and plan-file preparation while remaining internal-only and subordinate to the emitted goal
+- compactness belongs to the emitted `/goal` surface, not to the route artifact; even direct/simple created goals should not bypass plan-file preparation before final goal emission
+- the emitted goal should reference the generated plan file with `Plan reference` or equivalent route-only wording, and the plan file must remain a route artifact and must not become objective authority
 - when surfaced, candidate-goal labels, promoted `/goal` body, surrounding recommendation labels, and recap/closing lines should follow the dominant language of the active exchange by default rather than leaving English scaffolds around non-English goal output
 - infer that default language from the user's main working language across the current exchange even when the user did not issue a direct language instruction; an explicit language request is a stronger override
 - preserve exact literals such as `/goal`, file paths, version tags, code-level identifiers, and query parameters unless the user explicitly selects another language style or a checked exact token must remain unchanged
 - do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language; only preserved exact literals may remain unchanged inside the localized scaffold
 - when governed-surface context is mandatory, source it from design first, then active execution surfaces, with changelog, patch, and README included only when they materially shape completion, review, or current-state impact
 
-### 9.1.1) Integrated internal planning support inside and before `/goal`
-When a governed `/goal` is being shaped or has already been selected and route complexity remains material, `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, or bounded route drafting without creating a new user-facing command.
+### 9.1.1) Integrated plan-file support inside and before `/goal`
+When a governed `/goal` is being shaped or has already been selected, `/goal` should prepare a full detailed plan file as route support before final goal emission instead of leaving route detail only inside compact goal text.
 - keep `/goal` as the visible objective contract whether the helper work happened during internal planning before emission or after the goal was selected
-- use helper assistance only when separate context materially improves evidence gathering, route drafting, verification ordering, test/log triage, or optional plan-file reference synthesis
-- any returned `Plan draft`, `Verification / testing route`, plan basis, or plan-file reference remains subordinate route support for the goal and must not become a second visible objective surface or completion proof
-- if route support is surfaced beside the goal, it must read as integrated support for that goal rather than as a neighboring `/plan` branch
-- `/plan` remains available only when explicit standalone route handling is still needed after the selected goal exists or when overflow route detail no longer fits the integrated goal-centric surface
+- use helper assistance when separate context materially improves evidence gathering, full plan-file preparation, route drafting, verification ordering, or test/log triage
+- the prepared plan file, any returned `Plan draft`, `Verification / testing route`, plan basis, or `Plan reference` remains subordinate route support for the goal and must not become a second visible objective surface or completion proof
+- if route support is surfaced beside the goal, it must read as integrated support for that goal and include a visible `Plan reference` rather than a neighboring `/plan` branch
+- `/plan` remains available only for explicit standalone planning, later route revision, or genuine overflow route handling around the selected goal after the plan-backed goal already exists
 - helper findings are input, not completion proof; main-controller synthesis, visible proof wording, and goal-gate closeout remain leader-owned
-- do not force helper use for trivial or already direct goals
+- once `/goal` creation is selected, do not skip plan-file preparation even if the emitted goal itself stays short and direct
 
-### 9.2) Selected goal overflow route handling
-When a goal is already selected, `/plan` remains a route tool, not a second goal surface.
+### 9.2) Selected goal route handling after plan-backed emission
+When a goal is already selected, the referenced plan file is the default route artifact, while `/plan` remains a route tool and not a second goal surface.
 - keep `/goal` responsible for objective, done condition, proof, and scope
-- use the integrated goal-centric surface first for compact route notes, verification ordering hints, and bounded planning support when that is enough to proceed clearly
-- open `/plan` only when route selection, sequence, task breakdown, or execution order no longer fits safely inside that integrated goal-centric surface, or when the user explicitly wants standalone planning
-- do not present `/plan` as the ordinary paired next step for every route-heavy selected goal
-- if integrated planning support already shaped the goal, keep that material subordinate and do not turn it into a public handoff unless standalone route ownership materially helps
-- if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper assistance may support the selected goal without changing route ownership
-- if the route in `/plan` drifts from the selected goal, repair the route or explicitly revisit the goal basis instead of silently treating the plan as the new authority
+- use the referenced plan file for detailed sequence, task breakdown, owner ordering, dependency notes, and verification order instead of forcing that detail into the compact `/goal` body
+- open `/plan` only when explicit standalone planning, route revision, or later overflow route handling is materially needed beyond the selected goal plus its referenced plan file
+- do not present `/plan` as the ordinary paired next step for every selected goal, because a plan-backed goal already carries its route artifact
+- if integrated planning support already shaped the goal and plan file, keep that material subordinate and do not turn it into a public handoff unless standalone route ownership materially helps
+- if the current turn still needs bounded analysis, verification, testing, or compact route drafting around the existing goal and plan file, conditional internal helper assistance may support the selected goal without changing route ownership
+- if the route in the referenced plan file or `/plan` drifts from the selected goal, repair the route or explicitly revisit the goal basis instead of silently treating the plan as the new authority
 - when plan steps are completed but the selected goal's proof/gate is still open, continue into goal-gate verification instead of closing on route completion alone
 
 ---
@@ -254,8 +254,8 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
 | phase-shaped follow-up | apply ordered phase identity handling and preserve visible phase linkage: current active phase → existing-family subphase → new major → ask/record basis; a new major requires checked why-not-current / why-not-subphase evidence |
-| governed non-trivial or route-heavy `/goal` candidate would benefit from route synthesis before final emission | allow automatic internal planning / plan-mode-style support while keeping one integrated goal-centric visible surface |
-| selected governed goal is non-trivial and route choice is still material | keep route support inside the selected goal surface first, then open `/plan` only when overflow route detail or explicit standalone planning is materially needed |
+| any actual governed `/goal` creation or promotion is selected | prepare a full detailed plan file first, then emit a compact `/goal` with `Plan reference` while keeping one integrated goal-centric visible surface |
+| selected governed goal already exists | treat the referenced plan file as the default route artifact and open `/plan` only for explicit standalone planning, route revision, or later overflow beyond the plan-backed goal |
 | plan steps are done but goal proof/gate is still pending | continue to goal-gate verification instead of closing on route completion |
 | several materially different next slices are live and no one continuation path clearly dominates | surface compact candidate goals instead of collapsing early into one plain next-step answer |
 | objective truly complete with meaningful unselected successor work | recommend supported next goal with why/output/gate without blocking selected safe continuation |

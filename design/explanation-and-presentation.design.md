@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -39,15 +39,17 @@ P118 refinement: this owner should now treat generic future-note closeout as ins
 
 P119 refinement: this owner should now require wrapper labels, promoted `/goal` body text, and recommendation-shaped scaffold around preserved exact literals to stay aligned to the dominant language of the active exchange by default, treat explicit language requests as a stronger override, preserve exact literals token-by-token including query parameters, and reject wrapper-only translation as insufficient visible alignment.
 
-P123 refinement: this owner should now preserve a compact `Plan draft` / `Verification / testing route` presentation shape for goal-owned internal helper use, keep that helper output visibly subordinate to the selected goal, and avoid letting the visible `/goal` surface inflate into a mini-`/plan` or orchestration narrative.
+P123 refinement: this owner should now preserve compact `Plan draft` / `Verification / testing route` wording for goal-owned internal helper use, keep that helper output visibly subordinate to the selected goal and its referenced plan file, and avoid letting the visible `/goal` surface inflate into a mini-`/plan` or orchestration narrative.
 
-P124 refinement: this owner should now preserve a plan-backed advisory `/goal` presentation shape so a conditional pre-goal planning pass may surface compact `Plan draft`, `Verification / testing route`, or `Plan reference` context before or around the emitted goal without turning the visible goal surface into a mini-`/plan` or a second objective layer.
+P124 refinement: this owner should now preserve a plan-backed advisory `/goal` presentation shape so a pre-goal planning pass prepares the full route file first and may surface compact `Plan draft`, `Verification / testing route`, or `Plan reference` context before or around the emitted goal without turning the visible goal surface into a mini-`/plan` or a second objective layer.
 
-P125 refinement: this owner should now preserve an integrated goal-with-planning presentation shape so route-heavy governed `/goal` output stays one goal-centric visible surface, compact route support remains subordinate inside or adjacent to that surface, and `/plan` appears only for overflow or explicitly requested standalone route handling.
+P125 refinement: this owner should now preserve an integrated goal-with-plan-reference presentation shape so governed `/goal` output stays one goal-centric visible surface, the emitted goal remains compact, the detailed route stays in the referenced plan file, and `/plan` appears only for overflow, later route revision, or explicitly requested standalone route handling.
 
-P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
+P130 refinement: this owner should now require promoted or selected governed `/goal` output to use a prepared full detailed plan file as route support, keep the emitted `/goal` compact, surface a `Plan reference` as the normal route-context companion, and keep the referenced plan file visibly subordinate to the goal rather than a second objective surface or completion proof.
 
-P122 refinement: this owner should now preserve a compact explicit next-surface recommendation shape for route-heavy selected goals so `/plan` can be named directly instead of being implied through broad planning prose.
+P121 refinement: this owner should now preserve a goal-to-plan explanation shape only for explicit standalone planning, later route revision, or overflow beyond an already referenced plan file, while keeping visible output objective-vs-route separate and anchoring closeout wording back to the goal gate when route work finishes first.
+
+P122 refinement: this owner should now preserve a compact explicit `/plan` next-surface recommendation shape only when that explicit standalone-planning or later-overflow path is actually needed instead of the plan-backed goal reference alone.
 
 P128 refinement: this owner should now keep inline answer/status/phase-local text-diagram discipline clearly separate from repository `diagram/` lane doctrine so no-frame formatting rules do not silently become source authority for governed visual documents.
 

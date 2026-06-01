@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.18 | 2026-06-02 | **[Added P130 always-on plan-file-backed goal authoring](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-29 | **[Added P124 pre-goal plan-backed goal-authoring refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-28 | **[Added P123 internal goal-helper refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -31,6 +32,25 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-118"></a>
+## Version 1.18: Added P130 always-on plan-file-backed goal authoring
+
+**Date:** 2026-06-02
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.17 to v1.18.
+- Updated `design/execution-and-goal-frame.design.md` from v1.17 to v1.18.
+- Replaced the conditional route-heavy trigger with plan-first authoring for any actual governed `/goal` creation.
+- Required a full detailed plan file to be prepared before final goal emission.
+- Required the emitted `/goal` to reference that plan file as route-only support.
+- Preserved `/goal` as objective owner, kept `/plan` out of the ordinary paired-next-surface role, and kept goal-gate closeout stronger than plan-step completion.
+
+### Summary
+`execution-and-goal-frame.md` now requires plan-first, goal-second governed `/goal` authoring: the route file is prepared first, the emitted `/goal` stays compact and objective-owned, and the referenced plan file stays subordinate route support only.
 
 ---
 
