@@ -1,9 +1,9 @@
 # memory-context-intelligence
 
-> **Status:** Corrective clean plugin-scoped release recut completed in checked scope for `/memory-context-intelligence:analysis`; `review` and `packet` remain deferred, and future development remains open
-> **Current Version:** 0.1.75
-> **Plugin Package Version:** 0.9.27
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
+> **Status:** Plugin-scoped split-contract release closeout completed in checked scope for `/memory-context-intelligence:analysis`; `review` and `packet` remain deferred, packet/additional emission stays one-topic-per-artifact, and future development remains open
+> **Current Version:** 0.1.76
+> **Plugin Package Version:** 0.9.28
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
 
 ---
 
@@ -25,6 +25,7 @@ Current checked behavior that matters:
 - `recall_evidence`, `durable_memory_context`, and `governance_context` can strengthen wording and context, but they do not replace trace proof
 - when adaptive deep-analysis marks a top topic as requiring deeper review, the checked current skill contract now requires one **bounded read-only deepening pass** before the first response instead of silently skipping it
 - that deepening can use read-only subagent help plus optional web/external research support, but it still stays advisory-only and cannot replace local trace proof
+- if several advisory topics are deepened or compared, any later packet-derived or additional-stage output must still keep **one selected topic per artifact** and must **split into separate per-topic artifacts** instead of emitting a combined file
 - if no config file is loaded, the plugin can show a **guided config helper** instead of expecting raw arguments as the normal UX
 
 ## When to use it
@@ -117,6 +118,7 @@ If usable evidence is available, you should get topic-card output such as:
 - why it surfaced from evidence
 - what the before/after behavior looks like
 - that the result is still `candidate only; advisory only; not approved yet`
+- multiple topic cards are still advisory comparison output only; they are not a combined packet/additional artifact candidate
 - when the adaptive payload flags a top topic for deeper review, the first response may now include one bounded read-only deepening pass before the cards are finished, while still keeping the final result advisory-only and trace-anchored
 
 At the end of the output, you should also see `Next action options`, such as:
@@ -184,6 +186,7 @@ Current checked boundaries for this plugin:
 - bare `/analysis` is **not** current proved runtime behavior
 - `/memory-context-intelligence:review` and `/memory-context-intelligence:packet` are still deferred
 - `bin/memory-context-intelligence` is an internal implementation adapter, not the main user workflow
+- packet/additional-stage emission remains a single-topic-per-artifact flow; if several topics are ever carried forward, they must split into separate per-topic artifacts rather than one combined file
 - plugin-managed auto-flow is not currently claimed as proved behavior
 - this README does not claim external marketplace publication or broad production readiness
 

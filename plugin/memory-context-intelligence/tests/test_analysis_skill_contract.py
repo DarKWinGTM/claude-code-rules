@@ -10,12 +10,9 @@ RUNTIME_OLD = PACKAGE_ROOT / "skills" / "memory-context-intelligence" / "SKILL.m
 
 def _resolve_source_root() -> Path:
     candidates = [PACKAGE_ROOT]
+    candidates.extend(parent / "plugin" / "memory-context-intelligence" for parent in PACKAGE_ROOT.parents)
     candidates.extend(
-        parent / "plugin" / "memory-context-intelligence" for parent in PACKAGE_ROOT.parents
-    )
-    candidates.extend(
-        parent / "RULES" / "plugin" / "memory-context-intelligence"
-        for parent in PACKAGE_ROOT.parents
+        parent / "RULES" / "plugin" / "memory-context-intelligence" for parent in PACKAGE_ROOT.parents
     )
     for candidate in candidates:
         if (candidate / "skills" / "analysis" / "SKILL.md").exists():
@@ -195,6 +192,8 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("must not be treated as selected or approved", text)
         self.assertIn("supporting layer", text)
         self.assertIn("trace_evidence remains the live promotion anchor", text)
+        self.assertIn("one selected topic per artifact", text)
+        self.assertIn("split into separate per-topic artifacts", text)
 
     def test_analysis_skill_requires_bounded_deepening_when_adaptive_plan_flags_it(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")

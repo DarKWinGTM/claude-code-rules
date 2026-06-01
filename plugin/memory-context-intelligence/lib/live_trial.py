@@ -524,7 +524,8 @@ def build_live_trial_report(args: argparse.Namespace) -> dict[str, Any]:
         },
         "notes": [
             "Live trial uses bounded memory intake and deterministic runtime-local helpers only.",
-            "Approved write creates one trial-stage file under the selected additional root when --approved-write is supplied.",
+            "Approved write creates one trial-stage file for one selected topic under the selected additional root when --approved-write is supplied.",
+            "If several topics need carry-forward, they must split into separate per-topic artifacts instead of one combined trial file.",
             "Live trial output is phase-015 evidence only; it is not a phase-016 usable-release claim or main RULES promotion approval.",
         ],
         "live_web_access_performed": False,
