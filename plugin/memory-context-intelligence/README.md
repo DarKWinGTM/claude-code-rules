@@ -1,8 +1,8 @@
 # memory-context-intelligence
 
-> **Status:** Final plugin-scoped release closeout completed in checked scope for `/memory-context-intelligence:analysis`; `review` and `packet` remain deferred, and future development remains open
-> **Current Version:** 0.1.74
-> **Plugin Package Version:** 0.9.26
+> **Status:** Corrective clean plugin-scoped release recut completed in checked scope for `/memory-context-intelligence:analysis`; `review` and `packet` remain deferred, and future development remains open
+> **Current Version:** 0.1.75
+> **Plugin Package Version:** 0.9.27
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
 
 ---

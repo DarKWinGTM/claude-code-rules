@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.74
+> **Current Version:** 0.1.75
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
 > **Parent Design:** [design.md](design.md)
 

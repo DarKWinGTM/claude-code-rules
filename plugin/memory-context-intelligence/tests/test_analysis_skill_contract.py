@@ -6,11 +6,24 @@ from pathlib import Path
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
 RUNTIME_ANALYSIS = PACKAGE_ROOT / "skills" / "analysis" / "SKILL.md"
 RUNTIME_OLD = PACKAGE_ROOT / "skills" / "memory-context-intelligence" / "SKILL.md"
-SOURCE_ROOT = (
-    PACKAGE_ROOT
-    if "TEMPLATE/RULES/plugin/memory-context-intelligence" in str(PACKAGE_ROOT)
-    else PACKAGE_ROOT.parents[1] / "RULES" / "plugin" / "memory-context-intelligence"
-)
+
+
+def _resolve_source_root() -> Path:
+    candidates = [PACKAGE_ROOT]
+    candidates.extend(
+        parent / "plugin" / "memory-context-intelligence" for parent in PACKAGE_ROOT.parents
+    )
+    candidates.extend(
+        parent / "RULES" / "plugin" / "memory-context-intelligence"
+        for parent in PACKAGE_ROOT.parents
+    )
+    for candidate in candidates:
+        if (candidate / "skills" / "analysis" / "SKILL.md").exists():
+            return candidate
+    return PACKAGE_ROOT
+
+
+SOURCE_ROOT = _resolve_source_root()
 SOURCE_ANALYSIS = SOURCE_ROOT / "skills" / "analysis" / "SKILL.md"
 SOURCE_OLD = SOURCE_ROOT / "skills" / "memory-context-intelligence" / "SKILL.md"
 

@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.26
+version: 0.9.27
 ---
 
 # Memory Context Intelligence Analysis

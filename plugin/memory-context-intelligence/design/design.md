@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.74
+> **Current Version:** 0.1.75
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
 > **Selected Parent Model:** generic parent
 > **Selected Chain Shape:** flat-sibling-shards
@@ -118,6 +118,8 @@ The program keeps:
 - phase 067 as the completed runtime config-policy implementation wave that adds explicit `--config` plus upward discovery, source-class and shard-limit enforcement, guided config-helper output when no config file is loaded, and policy-limited provenance while keeping `trace_evidence` as the live promotion anchor
 - phase 069 as the completed adaptive deep-analysis contract-enforcement wave that requires bounded read-only deepening for the top flagged topic candidates before the first response and keeps any skipped deepening visible when a required tool is unavailable
 - phase 070 as the completed final plugin-scoped release closeout wave that removes the unnecessary Claude Code installation tutorial from the plugin README, bumps the package/release versions, preserves plugin-only release scope, and records this capsule as complete for the current wave while leaving future development open
+- phase 071 as the completed corrective clean plugin-only release recut wave that keeps the same checked plugin contract while proving the branch-first merge/push/release path from an isolated clean checkout
+- phase 071 as the completed corrective clean plugin-only release recut wave that re-publishes the plugin from an isolated clean checkout, bumps the package/release versions again, preserves the same plugin-specific runtime contract, and proves the branch/tag/release path without unrelated working-tree drift
 
 The checked local active runtime source home remains `<repo-root>/plugin/memory-context-intelligence/`. Phase 008 adds bounded safe intake there, phase 009 adds internal-only signal extraction plus topic candidates from bounded intake output, phase 010 adds list-first presentation plus choose-flow recording, phase 011 adds optional controlled research enrichment from one selected topic plus recorded source fixtures, phase 012 adds runtime-local orchestration findings across Trace Scout, Research Scout, Source-Trust Reviewer, and Synthesis Lead lanes, phase 013 adds candidate packet building plus dry-run-first, approval-gated additional-stage emission, phase 014 adds deterministic historical replay validation with dry-run emit preview only, phase 015 adds bounded live additional-stage trial reporting plus one approved trial artifact under `/additional/`, and phase 016 adds checked-scope readiness reporting.
 
