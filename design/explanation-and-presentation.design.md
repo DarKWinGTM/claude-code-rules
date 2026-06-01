@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -50,6 +50,8 @@ P121 refinement: this owner should now preserve a goal-to-plan explanation shape
 P122 refinement: this owner should now preserve a compact explicit next-surface recommendation shape for route-heavy selected goals so `/plan` can be named directly instead of being implied through broad planning prose.
 
 P128 refinement: this owner should now keep inline answer/status/phase-local text-diagram discipline clearly separate from repository `diagram/` lane doctrine so no-frame formatting rules do not silently become source authority for governed visual documents.
+
+P129 refinement: this owner should now keep inline answer/status/phase-local text diagrams explicitly outside mandatory Kroki-compatible governance unless they are deliberately promoted into the governed `diagram/` lane.
 
 ---
 

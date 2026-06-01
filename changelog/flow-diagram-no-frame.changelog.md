@@ -1,7 +1,7 @@
 # Changelog - Flow Diagram No Frame
 
 > **Parent Document:** [../flow-diagram-no-frame.md](../flow-diagram-no-frame.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-06-02 | **[Added P129 inline-text-diagram non-governed Kroki boundary](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-06-01 | **[Narrowed inline text-diagram scope and boundary](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-06 | **[Materialized active runtime body and closed metadata-only stub drift](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Re-materialized root `flow-diagram-no-frame.md` as a substantive active runtime rule with `Full history`, preserving current design target behavior while removing design-only runtime dependency | |
@@ -17,6 +18,21 @@
 | | | Summary: Added canonical `Design + Session + Full history` runtime header metadata without changing substantive diagram-format behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-14"></a>
+## Version 1.4: Added P129 inline-text-diagram non-governed Kroki boundary
+
+**Date:** 2026-06-02
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `design/flow-diagram-no-frame.design.md` from v1.3 to v1.4.
+- Clarified that repository governed visual source under `diagram/` includes mandatory Kroki-compatible doctrine, while inline text diagrams stay outside that boundary unless promoted.
+
+### Summary
+Flow-diagram-no-frame now states more explicitly that inline text diagrams stay outside mandatory Kroki-compatible governed-source doctrine unless explicitly promoted into the governed lane.
 
 ---
 

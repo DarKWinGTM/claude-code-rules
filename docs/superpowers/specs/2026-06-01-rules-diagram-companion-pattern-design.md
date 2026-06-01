@@ -2,7 +2,7 @@
 
 > **Status:** Revised design-only specification. This document supersedes the earlier fragmented companion assumption and becomes the active design basis for the current diagram-doctrine correction wave.
 >
-> **Core direction:** RULES diagrams should be treated as a visual lane that preserves whole-system coherence. `design/` remains textual target-state authority, while `diagram/` becomes the visual synthesis lane. Diagram structure must not mirror design shards automatically.
+> **Core direction:** RULES diagrams should be treated as a Kroki-compatible visual lane that preserves whole-system coherence. `design/` remains textual target-state authority, while `diagram/` becomes the governed visual synthesis lane. Governed diagram source must stay Kroki-compatible, support all suitable formats, and diagram structure must not mirror design shards automatically.
 
 ## Checked basis
 
@@ -40,9 +40,13 @@ This doctrine must solve four problems:
 
 The target outcome is:
 - `design/` remains the textual authority lane
-- `diagram/` becomes the visual synthesis lane
+- `diagram/` becomes the governed Kroki-compatible visual synthesis lane
+- governed diagram source supports all suitable formats, defined as Kroki-compatible + governance-suitable
 - diagrams start unified first
+- `diagram/STRUCTURE.md` becomes a bodyful whole-project detailed visual structure authority
+- subject diagrams behave as zoom-in / decomposition views of the global structure
 - diagram splitting happens only when visual complexity justifies it
+- inline answer/phase-local text diagrams stay outside governed source truth unless explicitly promoted
 - plugin/tooling support remains downstream of the doctrine, not upstream of it
 
 ---
@@ -86,10 +90,11 @@ RULES should have one top-level visual entrypoint:
 - `diagram/STRUCTURE.md`
 
 This file should explain:
-- the whole RULES repo shape
+- the whole RULES repo shape in enough detail for diagram-first understanding
 - major document families and their relationships
 - authority boundaries between runtime rules, design, changelog, TODO, phase, patch, and diagram
 - the highest-level architecture/flow picture needed to orient readers quickly
+- the structural decomposition path that later subject diagrams zoom into rather than duplicate arbitrarily
 
 ### 3.4 Subject diagrams
 
@@ -120,14 +125,22 @@ But this is a later split posture, not the baseline starting posture.
 ### 4.2 `diagram/`
 
 `diagram/` becomes:
-- visual synthesis lane
+- governed Kroki-compatible visual synthesis lane
 - architecture/flow/relationship explanation layer
 - a governed documentation lane in its own right, but not the owner of semantic truth over design
 
-### 4.3 Tooling / plugin surfaces
+### 4.3 Kroki-compatible source contract
+
+For governed diagram source:
+- Kroki-compatible is mandatory, not optional
+- the allowed breadth is all formats that are both Kroki-compatible and governance-suitable
+- governance-suitable means text-source-governable, diff/review-friendly, semantically stable enough for source truth, and portable enough for repo-governed workflow
+- inline answer/phase-local text diagrams do not enter this contract automatically
+
+### 4.4 Tooling / plugin surfaces
 
 Tooling such as governed-docs remains:
-- renderer
+- downstream renderer/helper path that should obey the source contract
 - preview/index helper
 - scanner/review support
 - drift reporter
@@ -138,7 +151,7 @@ Tooling is **not**:
 - approval owner
 - source-of-truth replacement
 
-### 4.4 Authority hierarchy
+### 4.5 Authority hierarchy
 
 For this doctrine:
 1. user-selected objective and current instruction
@@ -159,10 +172,12 @@ diagram/
 ```
 
 Purpose:
-- whole-project structure
+- whole-project structure in enough detail for diagram-first understanding
 - cross-family relationships
+- authority and dependency boundaries across the repo
 - orientation for new readers
 - stable top-level visual entrypoint
+- the global structure that subject diagrams later zoom into or decompose
 
 ### 5.2 Default subject surface
 
@@ -172,7 +187,8 @@ diagram/
 ```
 
 Purpose:
-- one integrated diagram document for the subject
+- one integrated Kroki-compatible diagram document for the subject
+- a zoom-in / decomposition view of the global structure rather than a disconnected fragment
 - enough explanatory notes to understand the picture without scattering meaning across too many tiny files
 
 ### 5.3 Optional split surface
@@ -249,7 +265,8 @@ When split is justified:
 ### 7.3 Global structure surface
 
 `diagram/STRUCTURE.md` is different:
-- it is expected to stay a direct bodyful whole-project structure surface
+- it is expected to stay a direct bodyful whole-project detailed visual structure surface
+- it should carry enough structural depth that readers can understand the project through the diagram-first view as much as practical
 - it should not become a shallow link-only router unless the project reaches a much larger complexity class later
 
 ---
@@ -287,6 +304,8 @@ Until the revised doctrine is approved and normalized into active RULES surfaces
 When tooling returns later, it should support this revised doctrine by:
 - recognizing `diagram/STRUCTURE.md`
 - recognizing integrated subject diagrams under `diagram/*.design.md`
+- treating governed diagram source as mandatory Kroki-compatible
+- supporting all formats that are both Kroki-compatible and governance-suitable
 - supporting split child shards only when the diagram lane actually uses them
 - keeping preview/manifest/report output non-authoritative
 - reporting drift, not silently reshaping source doctrine

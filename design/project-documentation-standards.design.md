@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.42
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+> **Current Version:** 2.43
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-02)
 
 ---
 
@@ -63,8 +63,9 @@ This model must preserve one authority system while clearly separating:
 - `changelog/done/` as inactive-by-default legacy/archive/completed-history/fallback changelog history
 - design as active blueprint/target-state authority with no default `design/done/` pattern
 - compact active design indexes and governed child design shards for large active design surfaces
-- `diagram/` as a dedicated governed visual synthesis lane whose global anchor starts at `diagram/STRUCTURE.md`
-- integrated subject diagrams under `diagram/<subject>.design.md` by default, with child visual shards only when visual complexity genuinely justifies a split
+- `diagram/` as a dedicated governed Kroki-compatible visual synthesis lane whose global anchor starts at `diagram/STRUCTURE.md`
+- `diagram/STRUCTURE.md` as a bodyful whole-project detailed visual structure authority rather than a link/index router
+- integrated subject diagrams under `diagram/<subject>.design.md` by default as zoom-in / decomposition views of the global structure, with child visual shards only when visual complexity genuinely justifies a split
 - design, phase, TODO, task-list, and checked implementation state as execution-discovery surfaces once execution mode is already active
 - `/phase` as both the governed current execution structure and a bounded source of already-authored next planned structure that may guide continuity without silently activating unopened future work
 - `artifact-initiation-control.md` as the startup-governance owner that resolves artifact posture before meaningful work drifts
@@ -120,11 +121,11 @@ Large active designs may use a compact parent index at `design/<slug>.design.md`
 If the repo opens a governed visual lane, `diagram/` stays separate from `design/`: diagram explains relationships visually, while `design/` remains semantic authority when the two differ.
 
 ### 3.4 Diagram Role
-`diagram/` is the governed visual synthesis lane.
+`diagram/` is the governed Kroki-compatible visual synthesis lane.
 
-Its top-level anchor is `diagram/STRUCTURE.md`. Subject-level work should start as one integrated diagram under `diagram/<subject>.design.md` and split into child visual shards only when visual complexity or genuinely different visual questions justify the split.
+Its top-level anchor is `diagram/STRUCTURE.md`, which should stay a bodyful whole-project detailed visual structure authority rather than a shallow router. Subject-level work should start as one integrated Kroki-compatible diagram under `diagram/<subject>.design.md` and split into child visual shards only when visual complexity or genuinely different visual questions justify the split.
 
-Diagram structure must not automatically mirror design-shard structure. Tooling and previews may support the lane, but they do not replace source doctrine or semantic authority.
+The allowed breadth is all diagram formats that are both Kroki-compatible and governance-suitable for source truth. Diagram structure must not automatically mirror design-shard structure. Tooling and previews may support the lane, but they do not replace source doctrine or semantic authority.
 
 ### 3.5 Changelog Role
 Each governed chain uses one authoritative active parent changelog.

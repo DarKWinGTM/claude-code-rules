@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-01
-> **Current Release:** v10.36 / P128 RULES unified diagram doctrine correction
+> **Last Updated:** 2026-06-02
+> **Current Release:** v10.37 / P129 Kroki-compatible governed diagram doctrine
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P129 / v10.37 Kroki-compatible governed diagram doctrine was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: governed `diagram/` source is now mandatory Kroki-compatible; allowed breadth is defined as all formats that are both Kroki-compatible and governance-suitable; `design/` remains semantic authority; `diagram/STRUCTURE.md` is now a bodyful whole-project detailed visual structure authority; subject diagrams are positioned as zoom-in / decomposition views of the global structure; inline answer/phase-local text diagrams are explicitly kept outside governed source truth unless promoted; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.37` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.37
 
 - [x] P128 / v10.36 RULES unified diagram doctrine correction was completed, pushed, mirrored to the remote default branch, and released.
   - Verified: RULES now recognizes `diagram/` as a dedicated governed visual lane; `diagram/STRUCTURE.md` is present as the whole-repo visual anchor; integrated subject diagrams are the default visual posture; automatic design-shard mirroring was rejected; plugin-first fragmented companion assumptions were withdrawn from active current-state doctrine; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; temporary project-local install proof passed with 18 active runtime rule markdown files; touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`; reconciled branch/default-branch/tag/release evidence is aligned to the promoted `v10.36` state.

@@ -140,7 +140,7 @@ Recommended summary sections:
 - context
 - governing references
 - source-input extraction summary table
-- phase overview flow diagram (optional inline execution aid; not repository diagram-lane authority)
+- phase overview flow diagram (optional inline execution aid; not repository diagram-lane authority and not Kroki-required unless explicitly promoted into `diagram/`)
 - review summary table
 - phase map / phase index
 - cross-phase coordination
@@ -162,7 +162,7 @@ Recommended child sections:
 - patch references (optional)
 - design extraction
 - patch-to-phase extraction (optional)
-- flow diagram (optional inline execution aid; not repository diagram-lane authority)
+- flow diagram (optional inline execution aid; not repository diagram-lane authority and not Kroki-required unless explicitly promoted into `diagram/`)
 - reviewer checklist
 - objective
 - why this phase exists

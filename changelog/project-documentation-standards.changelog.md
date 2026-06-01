@@ -1,12 +1,30 @@
 # Changelog - Project Documentation Standards
 
 > **Parent Document:** [../project-documentation-standards.md](../project-documentation-standards.md)
-> **Current Version:** 2.42
+> **Current Version:** 2.43
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
 
 ## Version History (Unified)
+
+<a id="version-243"></a>
+## Version 2.43: Added P129 Kroki-compatible diagram role contract
+
+**Date:** 2026-06-02
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `design/project-documentation-standards.design.md` from v2.42 to v2.43.
+- Clarified that the governed diagram lane is mandatory Kroki-compatible.
+- Defined allowed breadth as all formats that are both Kroki-compatible and governance-suitable.
+- Strengthened `diagram/STRUCTURE.md` into a bodyful whole-project detailed visual structure authority.
+- Clarified that subject diagrams are zoom-in / decomposition views of the global structure.
+
+### Summary
+Project-documentation-standards now treats the governed diagram lane as mandatory Kroki-compatible, keeps allowed breadth open to governance-suitable Kroki formats, and frames subject diagrams as zoom-in/decomposition views under a detailed global structure surface.
+
+---
 
 <a id="version-242"></a>
 ## Version 2.42: Added dedicated diagram lane role model
@@ -67,6 +85,7 @@ Added automatic God artifact planning role model for P092 / v10.00.
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.43 | 2026-06-02 | **[Added P129 Kroki-compatible diagram role contract](#version-243)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.42 | 2026-06-01 | **[Added dedicated diagram lane role model](#version-242)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.41 | 2026-05-13 | **[Added changelog version detail shard role model](#version-241)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Modeled active parent changelogs, chain-scoped version detail shards, and `changelog/done/` fallback history as distinct documentation surfaces. | |

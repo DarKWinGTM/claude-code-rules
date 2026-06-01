@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.15
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.15
+> **Current Version:** 1.16
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.16
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -15,7 +15,7 @@ This rule unifies explanation flow, answer presentation, text-diagram formatting
 
 พูดง่าย ๆ: อธิบายให้เข้าใจก่อน, จัดคำตอบให้อ่านง่าย, ใช้ diagram แบบเบา ๆ เท่าที่จำเป็น, และปิดท้ายด้วยข้อสรุปกับ next action ที่ชัด.
 
-Scope boundary: this owner governs inline answer/status/phase-local text diagrams only. Governed repository diagram source under `diagram/` belongs to `document-governance.md` and the dedicated diagram lane.
+Scope boundary: this owner governs inline answer/status/phase-local text diagrams only. Governed repository diagram source under `diagram/` belongs to `document-governance.md` and the dedicated diagram lane, and governed `diagram/` source is the place where Kroki-compatible enforcement applies rather than these inline explanatory diagrams by default.
 
 ---
 

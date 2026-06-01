@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.36 / P128 RULES unified diagram doctrine correction
+> **Status:** No active phase selected; latest released baseline is v10.37 / P129 Kroki-compatible governed diagram doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,18 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.36 / P128`.
+- None currently selected. Latest released baseline is `v10.37 / P129`.
 
 ### Most Recently Completed
+
+- **P129:** [phase-129-kroki-compatible-governed-diagram-doctrine.md](phase-129-kroki-compatible-governed-diagram-doctrine.md)
+  - Output: governed `diagram/` source is now mandatory Kroki-compatible, allowed breadth is defined as Kroki-compatible + governance-suitable, `diagram/STRUCTURE.md` now acts as a bodyful whole-project detailed visual structure authority, subject diagrams are positioned as zoom-in / decomposition views of the global structure, and touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.37 / P129`.
+  - Gate: mandatory Kroki-compatible contract integrity passed, suitability/admission boundary integrity passed, design-vs-diagram authority integrity passed, inline-text-diagram boundary integrity passed, `diagram/STRUCTURE.md` bodyful whole-project authority integrity passed, `git diff --check` passed, and reconciled branch/default-branch/tag/release evidence now points to one promoted `v10.37` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.37
+  - Patch: [../patch/rules-kroki-compatible-governed-diagram-doctrine.patch.md](../patch/rules-kroki-compatible-governed-diagram-doctrine.patch.md)
+  - Historical note: this wave strengthens the RULES diagram lane contract only and does not reopen governed-docs implementation as an owner path.
+
+### Previously Completed
 
 - **P128:** [phase-128-rules-unified-diagram-doctrine-correction.md](phase-128-rules-unified-diagram-doctrine-correction.md)
   - Output: dedicated `diagram/` visual lane is now recognized in active owner docs, `diagram/STRUCTURE.md` is present as the whole-repo visual anchor, fragmented companion assumptions were withdrawn, touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.36 / P128`, temporary project-local install proof passed for the touched runtime-owner surfaces, and the promoted state now mirrors onto the remote default branch.
@@ -252,18 +261,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current promoted baseline after P128 closeout:
-- released baseline is `v10.36 / P128`
-- README current-state sections now expose `diagram/` as the dedicated governed visual lane and `diagram/STRUCTURE.md` as the whole-repo visual anchor
-- active doctrine keeps `design/` as semantic authority and keeps inline answer/phase-local text-diagram formatting separate from repository diagram-source doctrine
-- `document-governance.md` explicitly recognizes the governed diagram lane and keeps README capability/current-state sections front-page scoped
+Current promoted baseline after P129 closeout:
+- released baseline is `v10.37 / P129`
+- README current-state sections now expose mandatory Kroki-compatible governed `diagram/` doctrine and describe `diagram/STRUCTURE.md` as the bodyful whole-project detailed visual structure authority
+- active doctrine keeps `design/` as semantic authority, defines allowed breadth as Kroki-compatible + governance-suitable, and keeps inline answer/phase-local text-diagram formatting outside governed source truth by default
+- `document-governance.md` explicitly recognizes the governed Kroki-compatible diagram lane and keeps README capability/current-state sections front-page scoped
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- runtime install copied only the 18 README-listed active runtime rules into a checked project-local `.claude/rules/` target
-- 18/18 source/runtime parity and source/destination body sufficiency passed
-- `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
-- branch `governed-docs-diagram-support`, remote `master`, and tag `v10.36` now resolve to the same promoted commit lineage
-- GitHub release `v10.36` was verified on the promoted state after default-branch reconciliation
+- branch `p129-kroki-diagram-doctrine`, remote `master`, and tag `v10.37` now resolve to the same promoted commit lineage
+- GitHub release `v10.37` was verified on the promoted state after default-branch reconciliation
 
 ---
 

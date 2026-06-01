@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Target State
 
-`document-governance.md` is the active runtime owner for repository document roles, design/diagram/changelog/patch governance, and runtime rule version control.
+`document-governance.md` is the active runtime owner for repository document roles, design/diagram/changelog/patch governance, mandatory Kroki-compatible diagram-source doctrine, and runtime rule version control.
 
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 
@@ -43,6 +43,8 @@ P127 refinement: this owner should now keep README capability/current-state pres
 
 P128 refinement: this owner should now recognize `diagram/` as a dedicated governed visual lane, require `diagram/STRUCTURE.md` as the top-level visual anchor when the lane is opened, keep `diagram/<subject>.design.md` as the default integrated subject body, and reject automatic diagram splits that merely mirror design-shard structure.
 
+P129 refinement: this owner should now make governed `diagram/` source mandatory Kroki-compatible, define allowed breadth as all formats that are both Kroki-compatible and governance-suitable, keep inline answer/phase-local text diagrams outside governed source truth unless explicitly promoted, and elevate `diagram/STRUCTURE.md` from a generic anchor into a bodyful whole-project detailed visual structure authority.
+
 ---
 
 ## Runtime Requirements
@@ -52,6 +54,7 @@ P128 refinement: this owner should now recognize `diagram/` as a dedicated gover
 - Keep metadata linked to this design and the chain changelog.
 - Preserve owner-aligned sync-lane recognition while leaving worker-scaling and bounded multi-surface reads to `worker-routing-and-context.md` and `safe-io.md`.
 - Keep inline answer/phase-local text-diagram formatting separate from repository `diagram/` lane doctrine so presentation guidance does not silently become source authority.
+- Keep the governed `diagram/` lane Kroki-compatible by contract and keep `diagram/STRUCTURE.md` whole-project/bodyful rather than link-router shaped.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---

@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-06-02 | **[Added P129 mandatory Kroki-compatible diagram governance](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-06-01 | **[Added P128 governed diagram lane role model](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-31 | **[Added P127 README front-page capability framing refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.9 | 2026-05-31 | **[Added P126 explicit live phase-file grammar wording](#version-19)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -24,6 +25,25 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-112"></a>
+## Version 1.12: Added P129 mandatory Kroki-compatible diagram governance
+
+**Date:** 2026-06-02
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.11 to v1.12.
+- Updated `design/document-governance.design.md` from v1.11 to v1.12.
+- Made governed `diagram/` source mandatory Kroki-compatible.
+- Defined allowed breadth as all formats that are both Kroki-compatible and governance-suitable.
+- Clarified that `diagram/STRUCTURE.md` is a bodyful whole-project detailed visual structure authority rather than a shallow router.
+- Clarified that inline answer/status/phase-local text diagrams do not become governed source truth automatically.
+
+### Summary
+`document-governance.md` now treats governed `diagram/` source as mandatory Kroki-compatible, defines the allowed breadth as Kroki-compatible + governance-suitable, and elevates `diagram/STRUCTURE.md` into a bodyful whole-project detailed visual structure authority.
 
 ---
 

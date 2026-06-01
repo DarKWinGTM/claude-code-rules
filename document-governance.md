@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.11
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.11
+> **Current Version:** 1.12
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.12
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active textual target-state truth, keep `diagram/` as the governed visual synthesis lane when a repo needs visual structure, keep changelog as version/history authority, resolve namespace scope and choose one active parent model before appending or sharding detail, allow generic parents when the current folder fully scopes one chain, keep bootstrap-first behavior until checked triggers justify shards, classify governed design/diagram/changelog chain shape before opening or expanding shard structure, keep patch as before/after review outside live phase planning, recognize governance/release-sync work shapes before deep execution, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
+**Core Principle: Govern governed documentation as one deterministic system: keep active runtime rules body-sufficient, keep design as active textual target-state truth, keep `diagram/` as the governed Kroki-compatible visual synthesis lane when a repo needs visual structure, require governed diagram source to stay Kroki-compatible and governance-suitable, keep changelog as version/history authority, resolve namespace scope and choose one active parent model before appending or sharding detail, allow generic parents when the current folder fully scopes one chain, keep bootstrap-first behavior until checked triggers justify shards, classify governed design/diagram/changelog chain shape before opening or expanding shard structure, keep patch as before/after review outside live phase planning, recognize governance/release-sync work shapes before deep execution, preserve compact active entrypoints with referenced history surfaces, and keep public onboarding/install guidance portable.**
 
 This rule unifies repository documentation baseline, design/changelog/patch role boundaries, completed-surface governance, and UDVC-1 version-control discipline. It keeps one clear owner per document role so active docs remain understandable, auditable, and cheap to maintain.
 
@@ -26,9 +26,9 @@ Required surfaces when applicable:
 - `README.md` — overview / onboarding / current-state front page
 - `design/*.design.md` — active target behavior / contract / blueprint
 - `design/<slug>/*.design.md` — active child target-state shards for large designs
-- `diagram/STRUCTURE.md` — top-level visual anchor when the repo needs a governed diagram lane
-- `diagram/*.design.md` — integrated subject-level diagram documents in the dedicated visual lane
-- `diagram/<subject>/*.design.md` — child visual shards when visual complexity justifies a split
+- `diagram/STRUCTURE.md` — top-level Kroki-compatible whole-project visual structure authority when the repo needs a governed diagram lane
+- `diagram/*.design.md` — Kroki-compatible integrated subject-level diagram documents in the dedicated visual lane
+- `diagram/<subject>/*.design.md` — Kroki-compatible child visual shards when visual complexity justifies a split
 - `changelog/*.changelog.md` — active parent version authority, current index, shard map when present, and navigation
 - `changelog/<chain>/v*.changelog.md` — indexed same-chain version detail shards
 - `changelog/done/*.changelog.md` — legacy/archive/completed-history/fallback changelog detail
@@ -55,7 +55,7 @@ Each document family keeps one primary role.
 - **README** is the current front page, not the history book
 - README capability/current-state sections should explain active doctrine and current-state behavior in user-facing terms, not retell phase/release execution chronology as the meaning of the capability itself
 - **design** is active target-state truth, not changelog history or completed-work storage
-- **diagram** is the governed visual synthesis lane, not semantic truth over design
+- **diagram** is the governed Kroki-compatible visual synthesis lane, not semantic truth over design
 - **changelog** is current version/history authority, not phase-definition storage
 - **TODO** is the compact durable current-state execution index, not the primary live board
 - **phase** is live staged execution, not design or patch authority
@@ -160,11 +160,15 @@ When a repo needs governed visual structure, use a dedicated `diagram/` lane ins
 
 Required guidance:
 - `design/` stays textual target-state authority; `diagram/` is the visual synthesis lane
-- `diagram/STRUCTURE.md` is the top-level whole-repo visual anchor
-- `diagram/<subject>.design.md` is the default bodyful integrated subject diagram
+- governed diagram source must be Kroki-compatible always
+- supported diagram formats are all formats that are both Kroki-compatible and governance-suitable
+- governance-suitable means the source is text-governable, diff/review-friendly, semantically stable enough for source truth, and portable enough for repo-governed workflow
+- `diagram/STRUCTURE.md` is the bodyful top-level whole-project detailed visual structure authority, not a shallow link/index router
+- `diagram/<subject>.design.md` is the default bodyful integrated subject diagram and should act as a zoom-in / decomposition view of the global structure
 - child visual shards under `diagram/<subject>/` open only when visual complexity or genuinely different visual questions justify the split
 - do not mirror design shards automatically just because text design already split
 - if design and diagram differ, `design/` remains semantic authority
+- inline answer/status/phase-local text diagrams do not become governed `diagram/` source truth automatically
 - plugin/preview/manifest/report output stays support-only and must not become source truth
 
 ### 6) Public onboarding and install portability

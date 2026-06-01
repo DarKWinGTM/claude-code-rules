@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
 
 ---
@@ -215,7 +215,7 @@ Applies to inline text diagrams used inside answers, status/progress updates, ex
 - System diagrams when rendered inline as text
 - Any diagram in markdown code blocks that is serving an inline explanatory role
 
-Does **not** define repository source doctrine for governed visual documents under `diagram/`; that lane is owned by document governance and the dedicated diagram doctrine.
+Does **not** define repository source doctrine for governed visual documents under `diagram/`; that lane is owned by document governance and the dedicated diagram doctrine, including mandatory Kroki-compatible source governance.
 
 ### 9.2 Related Rules
 
