@@ -450,6 +450,8 @@ def main(argv: list[str] | None = None) -> int:
             "external_research_enrichment_allowed": True,
             "trace_anchor_rule": "trace_evidence remains the live promotion anchor even when deeper analysis uses multiple internal sources and optional external support.",
             "advisory_only_before_selection": True,
+            "packet_artifact_scope_after_selection": "single-topic-only",
+            "multi_topic_deepening_combines_packet_output": False,
         }
     )
 

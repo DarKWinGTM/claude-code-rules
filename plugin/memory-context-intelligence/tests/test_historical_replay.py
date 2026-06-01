@@ -131,6 +131,7 @@ class HistoricalReplayTests(unittest.TestCase):
             self.assertTrue(packet_findings["packet_built"])
             self.assertEqual(packet_findings["emit_preview_status"], "preview")
             self.assertTrue(packet_findings["trial_stage_only"])
+            self.assertIn("## Topic scope", packet_findings["emit_preview_material_preview"])
             self.assertEqual(report["bounded_historical_input"]["records_sampled"], 3)
             self.assertTrue(report["topic_quality_notes"])
             self.assertTrue(report["orchestration_lane_behavior_summary"])

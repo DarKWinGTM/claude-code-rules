@@ -182,6 +182,8 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("must not be treated as selected or approved", text)
         self.assertIn("supporting layer", text)
         self.assertIn("trace_evidence remains the live promotion anchor", text)
+        self.assertIn("one selected topic per artifact", text)
+        self.assertIn("split into separate per-topic artifacts", text)
 
     def test_analysis_skill_requires_bounded_deepening_when_adaptive_plan_flags_it(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")

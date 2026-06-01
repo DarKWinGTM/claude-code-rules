@@ -111,6 +111,7 @@ class LiveTrialTests(unittest.TestCase):
             self.assertTrue(report["emission_checks"]["emitted_file_exists"])
             self.assertTrue(report["emission_checks"]["material_contains_success_criteria"])
             self.assertTrue(report["emission_checks"]["material_contains_rollback_notes"])
+            self.assertIn("## Topic scope", material)
             self.assertIn("## Success criteria", material)
             self.assertIn("## Rollback notes", material)
             audit = report["live_trial_boundary_audit"]
