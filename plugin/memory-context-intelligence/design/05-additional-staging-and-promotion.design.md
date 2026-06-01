@@ -3,15 +3,15 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.54
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-21)
+> **Current Version:** 0.1.75
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
 > **Parent Design:** [design.md](design.md)
 
 ---
 
 ## 1) Goal
 
-Define where selected `memory-context-intelligence` proposals should go before they are allowed to become main RULES changes.
+Define where selected `memory-context-intelligence` proposals should go before they are allowed to become main RULES changes, while keeping candidate packets and additional-stage artifacts scoped to one selected topic per artifact.
 
 ## 2) Core direction
 
@@ -36,6 +36,8 @@ This `additional/` layer means:
 - it is not yet merged into main-stage RULES
 - it may still be active in runtime if the chosen runtime activation path loads or exports it there
 - successful use in `additional/` is evidence for later promotion, not automatic merge authority
+- one selected topic maps to one candidate packet and one additional-stage artifact
+- if several selected topics are ever carried forward together, they must split into separate per-topic artifacts before render/write rather than being combined into one file
 - phase 015 emitted one checked local trial artifact at `<user-runtime-rules>/additional/memory-context-intelligence/phase-015-live-bounded-additional-stage-trial.md` with disposition `continue`; this path is local evidence, not a portable default
 - phase 016 added checked-scope readiness reporting and may report `usable in checked scope` only when replay, trial, artifact, boundary, and main RULES unchanged gates pass
 
@@ -54,7 +56,8 @@ When a candidate is strong enough to become a real trial rule, the plugin should
 
 ```text
 memory-derived candidate
-  → user selects candidate for real trial consideration
+  → user selects one topic for real trial consideration
+  → if several topics need carry-forward, split them into separate per-topic candidate paths first
   → confirm live pattern strength from trace_evidence
   → use recall_evidence when exact wording/sequence is needed
   → use durable_memory_context to confirm lasting preference/project context when relevant
@@ -105,6 +108,7 @@ The phase program keeps `/additional/` staging in the runtime path before main R
 
 A promotion-ready candidate packet should include:
 - candidate summary
+- explicit topic-scope metadata such as one selected topic per artifact, selected-topic count, and combined-output-forbidden state
 - signal/evidence basis
 - intended main RULES owner domain and target
 - proposed `additional/` rule path/name

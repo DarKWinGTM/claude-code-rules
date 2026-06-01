@@ -464,6 +464,9 @@ def synthesis_lane(lanes: list[dict[str, Any]], topic: dict[str, Any] | None) ->
         "phase_013_candidate_input": {
             "model_version": "phase-012-orchestration-result-v1",
             "selected_topic": topic,
+            "artifact_topic_scope": "single-topic-only",
+            "selected_topic_count": 1 if selected_topic_present else 0,
+            "multi_topic_combination_allowed": False,
             "lane_ids": [lane["lane_id"] for lane in lanes],
             "trace_anchors": lane_by_id.get(LANE_TRACE, {}).get("anchors", []),
             "source_anchors": lane_by_id.get(LANE_RESEARCH, {}).get("anchors", []),
@@ -654,7 +657,7 @@ def build_adaptive_deepening_plan(signals_report: dict[str, Any], *, max_topics:
         "must_deepen_before_first_response": bool(required_topic_ids),
         "required_topic_ids": required_topic_ids,
         "tool_unavailability_requires_note": True,
-        "execution_contract": "When deepening_required is true, the analysis skill must perform one bounded deepening pass for required_topic_ids before the first response. It may skip only if the required subagent or web/external research tool is unavailable, and then it must say so explicitly.",
+        "execution_contract": "When deepening_required is true, the analysis skill must perform one bounded deepening pass for required_topic_ids before the first response. It may skip only if the required subagent or web/external research tool is unavailable, and then it must say so explicitly. Required multi-topic deepening remains advisory only before selection and must not combine multiple topics into one packet or additional artifact.",
         "topic_deepening_candidates": candidates,
         "notes": [
             "All four internal evidence sources may remain enabled by default, while adaptive deepening decides how much extra analysis is worth doing per topic.",

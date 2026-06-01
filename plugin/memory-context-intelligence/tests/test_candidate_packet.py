@@ -157,6 +157,9 @@ class CandidatePacketTests(unittest.TestCase):
             body["proposed_additional_rule"]["relative_path"],
             "memory-context-intelligence/completion-evidence-trial.md",
         )
+        self.assertEqual(body["artifact_topic_scope"], "single-topic-only")
+        self.assertEqual(body["selected_topic_count"], 1)
+        self.assertFalse(body["multi_topic_combination_allowed"])
         self.assertTrue(body["trial_first_rationale"])
         self.assertTrue(body["risks"])
         self.assertTrue(body["success_criteria"])
@@ -177,6 +180,8 @@ class CandidatePacketTests(unittest.TestCase):
             self.assertFalse(preview["main_rules_mutation_performed"])
             self.assertFalse(destination.exists())
             self.assertIn("Additional trial rule", preview["preview_material"])
+            self.assertIn("## Topic scope", preview["preview_material"])
+            self.assertIn("split into separate per-topic artifacts", preview["preview_material"])
             self.assertIn("## Rollback notes", preview["preview_material"])
 
     def test_approved_write_targets_controlled_additional_root(self) -> None:
@@ -194,6 +199,8 @@ class CandidatePacketTests(unittest.TestCase):
             self.assertEqual(destination.parent.name, "memory-context-intelligence")
             material = destination.read_text(encoding="utf-8")
             self.assertIn("Trial-only additional-stage material", material)
+            self.assertIn("## Topic scope", material)
+            self.assertIn("must not combine multiple selected topics", material)
             self.assertIn("## Success criteria", material)
             self.assertIn("## Rollback notes", material)
 
@@ -212,6 +219,33 @@ class CandidatePacketTests(unittest.TestCase):
                 allow_overwrite=True,
             )
             self.assertEqual(overwritten["status"], "emitted")
+
+    def test_multi_topic_candidate_input_is_rejected_before_packet_build(self) -> None:
+        candidate_input = copy.deepcopy(orchestration_report()["phase_013_candidate_input"])
+        candidate_input["selected_topics"] = [
+            candidate_input["selected_topic"],
+            {**candidate_input["selected_topic"], "id": "topic-002", "title": "Another topic"},
+        ]
+
+        with self.assertRaises(candidate_packet.CandidatePacketError) as exc:
+            candidate_packet.build_candidate_packet(
+                candidate_input,
+                owner_domain="evidence-discipline",
+                main_rule_target="rules/evidence-discipline.md",
+            )
+
+        self.assertIn("split into separate per-topic artifacts", str(exc.exception))
+
+    def test_combined_topic_packet_is_rejected_before_emit(self) -> None:
+        packet = copy.deepcopy(packet_report())
+        packet["candidate_packet"]["selected_topic_count"] = 2
+        packet["candidate_packet"]["multi_topic_combination_allowed"] = True
+
+        with tempfile.TemporaryDirectory() as temp_root:
+            with self.assertRaises(candidate_packet.CandidatePacketError) as exc:
+                candidate_packet.emit_additional(packet, additional_root=temp_root)
+
+        self.assertIn("single selected topic", str(exc.exception))
 
     def test_path_safety_refuses_escape_and_main_rules_root(self) -> None:
         with self.assertRaises(candidate_packet.CandidatePacketError):

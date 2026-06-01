@@ -518,6 +518,9 @@ class TopicPresentationTests(unittest.TestCase):
         self.assertFalse(selected["selection_required_before_carry_forward"])
         self.assertTrue(selected["carry_forward_allowed"])
         self.assertTrue(selected["selected_topic"]["carry_forward_allowed"])
+        self.assertTrue(
+            any("one-topic-per-artifact" in note or "one selected topic per artifact" in note for note in selected["notes"])
+        )
 
     def test_topic_cards_preserve_provenance_visibility(self) -> None:
         rendered = presentation.build_presentation(signals_report(), output_mode="native-first", language="en")

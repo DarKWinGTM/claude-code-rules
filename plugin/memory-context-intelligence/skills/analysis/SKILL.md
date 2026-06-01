@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.27
+version: 0.9.28
 ---
 
 # Memory Context Intelligence Analysis
@@ -74,6 +74,7 @@ When invoked for normal operator use:
 - Do not use `Presentation`, `Recommendation`, `Proposal`, and `Related variants` as top-level blocks in normal operator output
 - Do not split one topic across multiple sections
 - do not merge several surfaced topics into one combined explanation block
+- multiple topic cards stay comparison/advisory output only; any later packet/additional-stage flow must keep one selected topic per artifact and split into separate per-topic artifacts
 - if one topic is stronger, mark it inside that same topic card as the recommended first topic instead of creating a separate recommendation wrapper section
 - same-family weaker topics may still appear, but they should stay in the same repeated topic-card rhythm rather than being moved into a separate global variants wrapper
 - repeated recap or summary blocks must be removed; each topic block should add topic-specific meaning rather than restating a global summary again
@@ -91,6 +92,7 @@ When invoked for normal operator use:
 - `trace_evidence` remains the live promotion anchor even when deeper analysis uses multiple internal sources and optional external support
 - trace_evidence remains the live promotion anchor even when deeper analysis uses multiple internal sources and optional external support
 - adaptive deepening before topic selection must not be treated as selected or approved; it remains advisory-only until the user chooses a topic or explicitly asks for a change proposal/goal draft
+- multiple `required_topic_ids` may be deepened in one analysis pass, but any packet/additional-stage follow-up must still keep one selected topic per artifact and split into separate per-topic artifacts
 - keep the topic-card output shape even after deeper analysis; deepen the evidence and mechanism inside the cards rather than replacing them with a new wrapper format
 
 If the rendered status is `blocked`:
@@ -167,6 +169,7 @@ Keep these boundaries:
 - do not claim plugin-managed auto-flow proof
 - do not claim publication, external marketplace release, stable/broad production readiness, or main RULES promotion/mutation/merge beyond checked evidence
 - do not touch `/additional/` behavior from this skill response alone
+- do not imply that several selected topics can be emitted into one combined additional artifact; downstream packet/additional output must split into separate per-topic artifacts
 - do not present candidate topics as already-approved RULES changes
 - if memsearch-backed analysis cannot continue, stop at blocked/dormant/no-strong-candidate output rather than improvising equivalent context
 

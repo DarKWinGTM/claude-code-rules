@@ -895,6 +895,7 @@ def build_selection(
         "notes": [
             "Exactly one selected topic is recorded in this fileless structured output.",
             "Only the selected topic may be carried forward to later phases.",
+            "Packet/additional-stage flow stays one selected topic per artifact; multi-topic output must split into separate per-topic artifacts first.",
             "Unselected topics remain advisory only and are not automatically promoted.",
             "Research enrichment has not been performed by choose mode.",
             "Candidate packet building has not been performed by choose mode.",

@@ -314,6 +314,8 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
         self.assertTrue(payload["adaptive_deep_analysis"]["subagent_deepening_allowed"])
         self.assertTrue(payload["adaptive_deep_analysis"]["external_research_enrichment_allowed"])
         self.assertTrue(payload["adaptive_deep_analysis"]["advisory_only_before_selection"])
+        self.assertEqual(payload["adaptive_deep_analysis"]["packet_artifact_scope_after_selection"], "single-topic-only")
+        self.assertFalse(payload["adaptive_deep_analysis"]["multi_topic_deepening_combines_packet_output"])
         self.assertIn("trace_evidence remains the live promotion anchor", payload["adaptive_deep_analysis"]["trace_anchor_rule"])
 
     def test_analysis_surface_emits_advisory_stale_session_warning_when_plugin_update_is_newer_than_session(self) -> None:
