@@ -185,6 +185,9 @@ class OrchestrationTests(unittest.TestCase):
 
         phase_013_input = report["phase_013_candidate_input"]
         self.assertEqual(phase_013_input["selected_topic"]["id"], "topic-001")
+        self.assertEqual(phase_013_input["artifact_topic_scope"], "single-topic-only")
+        self.assertEqual(phase_013_input["selected_topic_count"], 1)
+        self.assertFalse(phase_013_input["multi_topic_combination_allowed"])
         self.assertTrue(phase_013_input["trace_anchors"])
         self.assertTrue(phase_013_input["source_anchors"])
         self.assertFalse(phase_013_input["candidate_packet_built"])
@@ -241,6 +244,7 @@ class OrchestrationTests(unittest.TestCase):
         self.assertEqual(report["required_topic_ids"], ["topic-001"])
         self.assertTrue(report["tool_unavailability_requires_note"])
         self.assertIn("must perform one bounded deepening pass", report["execution_contract"])
+        self.assertIn("must not combine multiple topics into one packet or additional artifact", report["execution_contract"])
         self.assertGreaterEqual(len(report["topic_deepening_candidates"]), 1)
         first = report["topic_deepening_candidates"][0]
         self.assertEqual(first["topic_id"], "topic-001")

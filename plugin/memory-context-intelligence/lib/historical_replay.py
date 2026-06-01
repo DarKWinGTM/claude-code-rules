@@ -257,6 +257,7 @@ def packet_safety_findings(packet_report: dict[str, Any] | None, emit_preview: d
         "Packet building emitted structured stdout only.",
         "Proposed additional path is relative to the selected additional root.",
         "Trial-stage-only status remains visible in packet output.",
+        "Packet-derived and additional-stage output stays one selected topic per artifact; multi-topic carry-forward must split before preview/write.",
     ]
     if stop_gates:
         findings.append("Packet has stop gates that must be cleared before any approved additional-stage write.")
@@ -271,6 +272,9 @@ def packet_safety_findings(packet_report: dict[str, Any] | None, emit_preview: d
         "proposed_additional_relative_path": proposed.get("relative_path"),
         "trial_stage_only": bool(proposed.get("trial_stage_only")),
         "emit_preview_status": emit_preview.get("status") if isinstance(emit_preview, dict) else "skipped",
+        "emit_preview_material_preview": (
+            str(emit_preview.get("preview_material") or "")[:400] if isinstance(emit_preview, dict) else ""
+        ),
         "findings": findings,
         "safe_for_phase_015": not stop_gates,
     }

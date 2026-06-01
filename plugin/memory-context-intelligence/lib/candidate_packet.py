@@ -22,6 +22,14 @@ from typing import Any
 PACKET_MODEL = "phase-013-candidate-packet-v1"
 EMISSION_MODEL = "phase-013-additional-emission-v1"
 DEFAULT_ADDITIONAL_ROOT = "~/.claude/rules/additional"
+SINGLE_TOPIC_ARTIFACT_SCOPE = "single-topic-only"
+FORBIDDEN_MULTI_TOPIC_INPUT_KEYS = (
+    "selected_topics",
+    "selected_topic_ids",
+    "packet_topics",
+    "additional_topics",
+    "combined_topics",
+)
 
 
 class CandidatePacketError(ValueError):
@@ -125,6 +133,39 @@ def dedupe_text(values: list[str]) -> list[str]:
     return result
 
 
+def assert_single_topic_candidate_input(candidate_input: dict[str, Any]) -> None:
+    for key in FORBIDDEN_MULTI_TOPIC_INPUT_KEYS:
+        if as_list(candidate_input.get(key)):
+            raise CandidatePacketError(
+                f"{key} is not allowed for candidate packet building; multi-topic packet-derived output must split into separate per-topic artifacts."
+            )
+    selected_topic_count = candidate_input.get("selected_topic_count")
+    if selected_topic_count not in (None, 1):
+        raise CandidatePacketError(
+            "phase_013_candidate_input must describe exactly one selected topic before packet building; multi-topic packet-derived output must split into separate per-topic artifacts."
+        )
+    artifact_topic_scope = candidate_input.get("artifact_topic_scope")
+    if artifact_topic_scope not in (None, SINGLE_TOPIC_ARTIFACT_SCOPE):
+        raise CandidatePacketError(
+            "phase_013 candidate input must keep single-topic artifact scope before packet building."
+        )
+    if candidate_input.get("multi_topic_combination_allowed") not in (None, False):
+        raise CandidatePacketError(
+            "phase_013 candidate input must not allow multi-topic combination; split into separate per-topic artifacts first."
+        )
+
+
+def assert_single_topic_packet(packet: dict[str, Any]) -> None:
+    if packet.get("selected_topic_count") != 1:
+        raise CandidatePacketError("candidate packet must carry exactly one single selected topic before additional emission.")
+    if packet.get("artifact_topic_scope") != SINGLE_TOPIC_ARTIFACT_SCOPE:
+        raise CandidatePacketError("candidate packet must keep single-topic artifact scope before additional emission.")
+    if packet.get("multi_topic_combination_allowed") is not False:
+        raise CandidatePacketError(
+            "candidate packet must disallow multi-topic combination before additional emission."
+        )
+
+
 def slugify(value: str, fallback: str = "memory-context-candidate") -> str:
     lowered = value.strip().lower()
     slug = re.sub(r"[^a-z0-9]+", "-", lowered).strip("-")
@@ -142,6 +183,7 @@ def extract_candidate_input(report: dict[str, Any]) -> dict[str, Any]:
 
 
 def selected_topic_from(candidate_input: dict[str, Any]) -> dict[str, Any]:
+    assert_single_topic_candidate_input(candidate_input)
     topic = candidate_input.get("selected_topic")
     if not isinstance(topic, dict):
         raise CandidatePacketError("phase_013_candidate_input.selected_topic is required for packet building.")
@@ -278,6 +320,9 @@ def build_candidate_packet(
 
     packet = {
         "candidate_summary": candidate_summary,
+        "artifact_topic_scope": SINGLE_TOPIC_ARTIFACT_SCOPE,
+        "selected_topic_count": 1,
+        "multi_topic_combination_allowed": False,
         "signal_evidence_basis": signal_evidence_basis,
         "owner_domain_mapping": owner_mapping,
         "proposed_additional_rule": {
@@ -325,6 +370,9 @@ def build_candidate_packet(
         "mode": "packet",
         "status": status,
         "candidate_packet_model": PACKET_MODEL,
+        "artifact_topic_scope": SINGLE_TOPIC_ARTIFACT_SCOPE,
+        "selected_topic_count": 1,
+        "multi_topic_combination_allowed": False,
         "candidate_packet": packet,
         "candidate_packet_built": True,
         "additional_emission_performed": False,
@@ -332,6 +380,7 @@ def build_candidate_packet(
         "install_or_publication_performed": False,
         "notes": [
             "Candidate packet building is local and deterministic.",
+            "Packet/additional-stage flow stays one selected topic per artifact.",
             "No additional-stage file was written by packet mode.",
             "Main RULES mutation was not performed.",
         ],
@@ -348,6 +397,7 @@ def render_additional_rule(packet_report: dict[str, Any]) -> str:
     packet = packet_report.get("candidate_packet")
     if not isinstance(packet, dict):
         raise CandidatePacketError("packet_report.candidate_packet is required for rendering.")
+    assert_single_topic_packet(packet)
     summary = packet.get("candidate_summary", {}) if isinstance(packet.get("candidate_summary"), dict) else {}
     owner = packet.get("owner_domain_mapping", {}) if isinstance(packet.get("owner_domain_mapping"), dict) else {}
     proposed = packet.get("proposed_additional_rule", {}) if isinstance(packet.get("proposed_additional_rule"), dict) else {}
@@ -362,6 +412,12 @@ def render_additional_rule(packet_report: dict[str, Any]) -> str:
             "> **Source:** memory-context-intelligence phase-013 candidate packet",
             f"> **Intended main-rule target:** {owner.get('intended_main_rule_target', 'needs-leader-verification')}",
             "> **Main RULES mutation:** Not performed",
+            "",
+            "## Topic scope",
+            "",
+            "This additional-stage artifact is scoped to one selected topic per artifact.",
+            "Multi-topic packet-derived output must split into separate per-topic artifacts.",
+            "This file must not combine multiple selected topics.",
             "",
             "## Candidate summary",
             "",
@@ -457,6 +513,7 @@ def emit_additional(
     proposed = packet.get("proposed_additional_rule")
     if not isinstance(proposed, dict):
         raise CandidatePacketError("candidate_packet.proposed_additional_rule is required for emission.")
+    assert_single_topic_packet(packet)
     relative_path = normalize_relative_path(str(proposed.get("relative_path") or ""))
     root, destination = resolve_destination(default_additional_root(additional_root), relative_path)
     material = render_additional_rule(packet_report)
@@ -479,6 +536,9 @@ def emit_additional(
         "approved_write": approved_write,
         "allow_overwrite": allow_overwrite,
         "dry_run": not approved_write,
+        "artifact_topic_scope": SINGLE_TOPIC_ARTIFACT_SCOPE,
+        "selected_topic_count": 1,
+        "multi_topic_combination_allowed": False,
         "additional_root": str(root),
         "destination_path": str(destination),
         "destination_relative_path": relative_path,
