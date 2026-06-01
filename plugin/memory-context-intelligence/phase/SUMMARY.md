@@ -1,9 +1,9 @@
 # Phase Summary - memory-context-intelligence
 
-> **Current Version:** 0.1.74
-> **Target Design:** [../design/design.md](../design/design.md) v0.1.74
+> **Current Version:** 0.1.75
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.75
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
-> **Status:** Phase 070 completed final plugin release closeout in checked scope
+> **Status:** Phase 071 completed corrective clean plugin-only release recut in checked scope
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -81,6 +81,7 @@ Current runtime truth after completed phase 055 single-source authority cleanup:
 - phase 067 proof now includes focused `test_intake.py`, `test_signals.py`, `test_analysis_surface.py`, `test_presentation.py`, and `test_analysis_skill_contract.py`, a green `98`-test full package suite, one direct packaged `intake → signals → present` proof for config-policy loading plus repeated topic-card continuity, one added packaged recall-only proof that stays low-confidence and emits no live topic candidates without trace, one approved local slash proof without config showing the guided helper, and one approved local slash proof with auto-discovered config showing no-args policy loading
 - phase 069 now turns adaptive deep-analysis into enforced first-response behavior when required: the runtime payload names required topic ids, the skill must perform bounded read-only deepening before the first response, skipped deepening must be reported explicitly, and checked local proof now shows both subagent and web-search support while preserving `trace_evidence` as the live promotion anchor
 - phase 070 closes the final plugin-scoped release wave by removing the unnecessary Claude Code installation tutorial from the plugin README, bumping the plugin package version again, preserving plugin-only release scope, and recording this capsule as complete for the current wave while leaving future development open
+- phase 071 recuts that same plugin-scoped release from an isolated clean checkout, bumps the package/release versions again, and proves the merge/push/tag/release path without unrelated RULES-root or `plugin/governed-docs` drift in the release workspace
 - phase 050 remains the docs-only clarification wave, phase 051 completed the runtime implementation plus focused verification and doc sync that made the four-class model real in checked scope, phase 052 completed the no-bug clarification wave, phase 053 completed the historical-default redesign closeout, and phase 054 completed the native-first communication-contract closeout
 
 Phase 024 completed docs-only namespace governance sync. Phases 025-027 remain valid historical checked evidence from the temporary/remapped darkwingtm state, but they no longer represent current runtime truth after the marketplace restore. Phase 028 reclassified the active docs to the restored shared-marketplace state, phase 029 selected the bridge design, and phase 030 proved that the `../RULES/plugin/memory-context-intelligence` bridge path is unsupported because Claude Code rejects it as path traversal outside the marketplace base. Phases 031-033 are now retained only as historical projection-family evidence for the removed `TEMPLATE/PLUGIN/memory-context-intelligence/` workaround/proof cycle. Phase 055 supersedes those active-authority assumptions: current installability truth is now one RULES-owned source home, one root-`TEMPLATE` shared marketplace binding, preserved install identity `memory-context-intelligence@darkwingtm`, and no duplicate projection-tree authority.
@@ -159,6 +160,7 @@ Phase 024 completed docs-only namespace governance sync. Phases 025-027 remain v
 | 068 | `phase-068-plugin-scoped-git-push-and-release.md` | Completed | Tracked the plugin directly in the RULES repo, bumped the plugin package version, and executed a plugin-scoped branch push plus release path without pulling unrelated RULES changes into the wave |
 | 069 | `phase-069-adaptive-deep-analysis-required-bounded-deepening.md` | Completed | Enforced bounded adaptive deepening before the first response when the payload requires it, and re-proved the slash surface with read-only subagent plus web-search support |
 | 070 | `phase-070-final-plugin-release-closeout.md` | Completed | Removed the unnecessary Claude Code installation tutorial from the plugin README, bumped the package/release versions again, and closed the current plugin-scoped release wave while leaving future development open |
+| 071 | `phase-071-clean-plugin-only-release-recut.md` | Completed | Re-cut the plugin-only release from an isolated clean checkout, bumped the package/release versions again, and proved the branch/tag/release path without unrelated working-tree drift |
 
 ## Program boundaries
 

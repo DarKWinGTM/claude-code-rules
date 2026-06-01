@@ -1,6 +1,6 @@
 {
   "name": "memory-context-intelligence",
-  "version": "0.9.26",
+  "version": "0.9.27",
   "description": "Claude Code plugin package for bounded memory-trace intake, internal signal/topic analysis, topic presentation, choose-flow selection, optional controlled research enrichment, runtime-local bounded orchestration, candidate packet building, gated additional-stage emission, deterministic historical replay validation, bounded live additional-stage trial reporting, and checked-scope readiness reporting. Phase 016 reports usable in checked scope only when evidence gates pass and has no stable/broad production readiness, install/publication, marketplace release, main RULES mutation, main RULES promotion, or main RULES merge claims.",
   "author": {
     "name": "darkwingtm",
