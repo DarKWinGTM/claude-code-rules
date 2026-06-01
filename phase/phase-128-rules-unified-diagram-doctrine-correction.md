@@ -86,5 +86,5 @@ Current checked result:
 - `diagram/STRUCTURE.md` exists as the whole-repo visual anchor
 - `git diff --check` passed
 - temporary project-local install proof passed with 18 active runtime rule markdown files and parity matched for the touched runtime-owner files `document-governance.md` and `explanation-and-presentation.md`
-- the branch was pushed and GitHub release `v10.36` was created in the selected outward-facing scope
+- the reconciled branch was pushed, the promoted state was mirrored to the remote default branch, and GitHub release `v10.36` was verified on the promoted state
 - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36

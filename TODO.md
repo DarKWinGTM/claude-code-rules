@@ -10,8 +10,8 @@
 
 ## ✅ Completed
 
-- [x] P128 / v10.36 RULES unified diagram doctrine correction was completed, pushed, and released.
-  - Verified: RULES now recognizes `diagram/` as a dedicated governed visual lane; `diagram/STRUCTURE.md` is present as the whole-repo visual anchor; integrated subject diagrams are the default visual posture; automatic design-shard mirroring was rejected; plugin-first fragmented companion assumptions were withdrawn from active current-state doctrine; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; temporary project-local install proof passed with 18 active runtime rule markdown files; touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`.
+- [x] P128 / v10.36 RULES unified diagram doctrine correction was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: RULES now recognizes `diagram/` as a dedicated governed visual lane; `diagram/STRUCTURE.md` is present as the whole-repo visual anchor; integrated subject diagrams are the default visual posture; automatic design-shard mirroring was rejected; plugin-first fragmented companion assumptions were withdrawn from active current-state doctrine; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; temporary project-local install proof passed with 18 active runtime rule markdown files; touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`; reconciled branch/default-branch/tag/release evidence is aligned to the promoted `v10.36` state.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36
 
 ## ✅ Completed

@@ -28,8 +28,8 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ### Most Recently Completed
 
 - **P128:** [phase-128-rules-unified-diagram-doctrine-correction.md](phase-128-rules-unified-diagram-doctrine-correction.md)
-  - Output: dedicated `diagram/` visual lane is now recognized in active owner docs, `diagram/STRUCTURE.md` is present as the whole-repo visual anchor, fragmented companion assumptions were withdrawn, touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.36 / P128`, and temporary project-local install proof passed for the touched runtime-owner surfaces.
-  - Gate: design-vs-diagram authority boundary integrity passed, no touched active surface kept the old fragmented baseline as selected truth, `git diff --check` passed, temporary project-local install proof passed with 18 active runtime rule markdown files, touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`, and release closeout was selected.
+  - Output: dedicated `diagram/` visual lane is now recognized in active owner docs, `diagram/STRUCTURE.md` is present as the whole-repo visual anchor, fragmented companion assumptions were withdrawn, touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.36 / P128`, temporary project-local install proof passed for the touched runtime-owner surfaces, and the promoted state now mirrors onto the remote default branch.
+  - Gate: design-vs-diagram authority boundary integrity passed, no touched active surface kept the old fragmented baseline as selected truth, `git diff --check` passed, temporary project-local install proof passed with 18 active runtime rule markdown files, touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`, and reconciled branch/default-branch/tag/release evidence now points to one promoted `v10.36` baseline.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36
   - Patch: [../patch/rules-unified-diagram-doctrine-correction.patch.md](../patch/rules-unified-diagram-doctrine-correction.patch.md)
   - Historical note: this wave corrected doctrine before any future re-entry into tooling/plugin implementation and did not revive plugin-first execution as the default path.
@@ -252,7 +252,7 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current released baseline in checked branch/release scope after P128 closeout:
+Current promoted baseline after P128 closeout:
 - released baseline is `v10.36 / P128`
 - README current-state sections now expose `diagram/` as the dedicated governed visual lane and `diagram/STRUCTURE.md` as the whole-repo visual anchor
 - active doctrine keeps `design/` as semantic authority and keeps inline answer/phase-local text-diagram formatting separate from repository diagram-source doctrine
@@ -262,8 +262,8 @@ Current released baseline in checked branch/release scope after P128 closeout:
 - 18/18 source/runtime parity and source/destination body sufficiency passed
 - `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
-- branch `governed-docs-diagram-support` resolves to released commit `c9f16db0d37a549084af30be9d8d44bee2277d64`
-- GitHub release `v10.36` was verified in branch/release scope; remote default-branch promotion remains a separate verification step until checked explicitly
+- branch `governed-docs-diagram-support`, remote `master`, and tag `v10.36` now resolve to the same promoted commit lineage
+- GitHub release `v10.36` was verified on the promoted state after default-branch reconciliation
 
 ---
 
