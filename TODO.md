@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-02
-> **Current Release:** v10.41 / P133 Quick Start companion-plugin setup
+> **Current Release:** v10.42 / P134 copyable goal plan-reference hardening
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P134 / v10.42 copyable goal plan-reference hardening was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now require any durable plan-backed governed `/goal` to keep `Plan reference` inside the same copied goal artifact; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the plan file remains route-only support and not authority or completion proof; the advisory `/goal` block template now keeps the plan pointer inside the same copied artifact; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.42 / P134` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.42` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.42
 
 - [x] P133 / v10.41 Quick Start companion-plugin setup was completed, pushed, mirrored to the remote default branch, and released.
   - Verified: the root README now includes a Quick Start companion-plugin setup block immediately after the runtime-rule install notes; the block points operators to install `governed-docs` and `memory-context-intelligence` from the local marketplace, keeps plugin install separate from the `.claude/rules/` runtime payload, preserves `memory-context-intelligence` first use as `/memory-context-intelligence:init` followed by `/memory-context-intelligence:analysis`, and syncs touched README/TODO/phase/patch/changelog surfaces to one `v10.41 / P133` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.41` state.
@@ -214,7 +218,7 @@
 
 ### Active / In Progress
 
-- None currently selected. Latest released baseline is `v10.38 / P130`.
+- None currently selected. Latest released baseline is `v10.42 / P134`.
 
 ### Deferred / Not Selected
 

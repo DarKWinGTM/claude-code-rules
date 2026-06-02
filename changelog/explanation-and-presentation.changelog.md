@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,9 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 1.17 | 2026-06-02 | **[Added P130 plan-reference-first goal presentation](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
-| 1.16 | 2026-06-02 | **[Added P129 inline-diagram Kroki-boundary retention](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
-| 1.15 | 2026-06-01 | **[Added P128 inline-diagram boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.15 | 2026-06-03 | **[Added P134 copyable advisory goal plan-reference hardening](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-30 | **[Added P125 integrated goal-with-planning presentation refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-29 | **[Added P124 plan-backed advisory `/goal` presentation refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-28 | **[Added P123 goal-helper presentation refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -33,56 +31,21 @@
 
 ---
 
-<a id="version-117"></a>
-## Version 1.17: Added P130 plan-reference-first goal presentation
-
-**Date:** 2026-06-02
-**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
-### Changes
-- Updated `explanation-and-presentation.md` from v1.16 to v1.17.
-- Updated `design/explanation-and-presentation.design.md` from v1.16 to v1.17.
-- Made `Plan reference` the normal compact route-context companion for promoted or selected governed `/goal` output.
-- Clarified that the full detailed route belongs in the referenced plan file while the emitted `/goal` stays compact and objective-owned.
-- Clarified that the referenced plan file remains route-only support rather than a second objective surface or completion proof.
-- Preserved `/plan` as an explicit standalone route surface rather than the ordinary paired next step.
-
-### Summary
-`explanation-and-presentation.md` now presents plan-file-backed governed `/goal` output as one compact goal surface with a normal `Plan reference` companion, while keeping the referenced plan file subordinate to the goal rather than a second public objective surface.
-
----
-
-<a id="version-116"></a>
-## Version 1.16: Added P129 inline-diagram Kroki-boundary retention
-
-**Date:** 2026-06-02
-**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
-### Changes
-- Updated `explanation-and-presentation.md` from v1.15 to v1.16.
-- Updated `design/explanation-and-presentation.design.md` from v1.15 to v1.16.
-- Clarified that mandatory Kroki-compatible enforcement belongs to governed `diagram/` source rather than inline explanatory diagrams by default.
-
-### Summary
-`explanation-and-presentation.md` now keeps inline answer/status/phase-local text diagrams explicitly outside mandatory Kroki-compatible governed-diagram enforcement unless they are deliberately promoted into the governed lane.
-
----
-
 <a id="version-115"></a>
-## Version 1.15: Added P128 inline-diagram boundary refinement
+## Version 1.15: Added P134 copyable advisory goal plan-reference hardening
 
-**Date:** 2026-06-01
+**Date:** 2026-06-03
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ### Changes
 - Updated `explanation-and-presentation.md` from v1.14 to v1.15.
 - Updated `design/explanation-and-presentation.design.md` from v1.14 to v1.15.
-- Added an explicit scope boundary so this owner governs inline answer/status/phase-local text diagrams only.
-- Clarified that governed repository diagram source under `diagram/` belongs to document governance and the dedicated diagram lane.
-- Narrowed split guidance so inline explanatory diagrams may split for readability without implying repository source-lane splitting rules.
+- Required any durable `Plan reference` for a governed advisory `/goal` to stay inside the same copyable goal artifact instead of living only in surrounding prose or adjacent support.
+- Preserved adjacent route context only for non-durable notes such as `Plan draft`, `Plan basis`, and verification/testing support.
+- Updated the advisory `/goal` block template so the copied artifact explicitly contains the plan pointer while keeping `/goal` goal-owned and compact.
 
 ### Summary
-`explanation-and-presentation.md` now keeps no-frame inline diagram discipline while explicitly deferring repository visual-source doctrine to the dedicated `diagram/` lane.
+`explanation-and-presentation.md` now keeps durable plan-backed route support inside the same copyable advisory goal artifact while preserving the existing goal-versus-route explanation boundary.
 
 ---
 

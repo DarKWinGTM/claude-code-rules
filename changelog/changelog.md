@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.41
+> **Current Version:** 10.42
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.42 | 2026-06-03 | **[Released copyable goal plan-reference hardening](changelog/v10.42-released-copyable-goal-plan-reference-hardening.changelog.md#version-1042)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.41 | 2026-06-02 | **[Released Quick Start companion-plugin setup](changelog/v10.41-released-quickstart-companion-plugin-setup.changelog.md#version-1041)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.40 | 2026-06-02 | **[Released companion plugin READMEs and image guidance](changelog/v10.40-released-companion-plugin-readmes-and-image-guidance.changelog.md#version-1040)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.39 | 2026-06-02 | **[Released RULES diagram infrastructure doctrine](changelog/v10.39-released-rules-diagram-infrastructure-doctrine.changelog.md#version-1039)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

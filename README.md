@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.41</b><br><sub>P133 Released</sub>
+  <b>v10.42</b><br><sub>P134 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Companion Plugins</b><br><sub>Quick setup in Quick Start</sub>
+  <b>Copyable /goal</b><br><sub>Plan ref stays attached</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.41 / P133` adds a Quick Start companion-plugin setup path to the root README so operators can install `governed-docs` and `memory-context-intelligence` immediately after the runtime-rule install while preserving the boundary that plugins still load separately from the active `.claude/rules/` payload.
+> **Current release note:** `v10.42 / P134` hardens governed `/goal` copyability so any durable plan-backed route now keeps its `Plan reference` inside the same copied goal artifact instead of leaving that pointer only in surrounding explanation, while preserving `/goal` as objective owner and the plan file as route-only support.
 
 <!-- CTA Buttons -->
 <p>
@@ -278,12 +278,12 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P127 / v10.35 refines the README front-page capability presentation on top of the released `v10.34 / P126` baseline.
-- Core Capabilities now explain active doctrine and current-state behavior in a readable list instead of a grid with phase-heavy runtime-history narration.
+- P134 / v10.42 hardens copyable governed `/goal` output on top of the released `v10.41 / P133` baseline.
+- Durable plan-backed governed `/goal` output now keeps `Plan reference` inside the same copied artifact instead of leaving the pointer only in surrounding explanation.
+- `/goal` remains the objective owner while the plan file remains route-only support and not completion proof.
 - Runtime Context Discipline now stays front-page scoped: current runtime shape, authority boundaries, and install-discipline expectations are summarized without turning README into a phase summary.
 - The governed `playground/` family remains non-runtime and outside the installer payload.
 - The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
-- The untracked `plugin/` tree remains preserved and out of staged wave scope.
 </div>
 
 ---
@@ -1063,7 +1063,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.38 / P130` always-on plan-file-backed goal model while the active runtime install set remains 18 root rules, created governed `/goal` output now authors plan-first and references the prepared route file, and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.42 / P134` copyable-goal plan-reference hardening while the active runtime install set remains 18 root rules, created governed `/goal` output now keeps any durable `Plan reference` inside the same copied goal artifact, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1186,8 +1186,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.38 |
-  <b>Last Updated</b>: 2026-06-02 |
+  <b>Version</b>: 10.42 |
+  <b>Last Updated</b>: 2026-06-03 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

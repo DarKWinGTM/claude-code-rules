@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.17
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.17
+> **Current Version:** 1.15
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -14,8 +14,6 @@
 This rule unifies explanation flow, answer presentation, text-diagram formatting, and response-closing behavior. It keeps answers readable, complete enough for the user's decision, proportionate to the task, and oriented toward forward motion without turning every response into a rigid template.
 
 พูดง่าย ๆ: อธิบายให้เข้าใจก่อน, จัดคำตอบให้อ่านง่าย, ใช้ diagram แบบเบา ๆ เท่าที่จำเป็น, และปิดท้ายด้วยข้อสรุปกับ next action ที่ชัด.
-
-Scope boundary: this owner governs inline answer/status/phase-local text diagrams only. Governed repository diagram source under `diagram/` belongs to `document-governance.md` and the dedicated diagram lane, and governed `diagram/` source is the place where Kroki-compatible enforcement applies rather than these inline explanatory diagrams by default.
 
 ---
 
@@ -276,21 +274,22 @@ Required guidance:
 - do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language except for preserved exact literals
 - if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light goal-shaped recommendation rather than governed-surface framing
 - if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
-- promoted or selected governed `/goal` output should include a compact `Plan reference` to the prepared full route file; any `Plan draft`, `Verification / testing route`, or `Plan basis` context remains subordinate support inside or adjacent to the goal-centric surface rather than a second objective surface or completion proof
-- if bounded internal helper use shaped the answer, keep any helper block compact enough that it supports the goal without inflating `/goal` into a mini-spec or making the referenced plan file read like a second objective surface
-- do not turn the emitted `/goal` into a mini-spec dump or background essay; detailed route belongs in the referenced plan file
+- if integrated planning support shaped the promoted `/goal` and a durable route plan materially guides execution, the visible copied goal artifact must carry `Plan reference` inside that same artifact rather than leaving it only in surrounding prose or adjacent support
+- if integrated planning support shaped the promoted `/goal`, the visible surface may include compact route context such as `Plan draft`, `Verification / testing route`, `Plan basis`, or `Plan reference`, but only as subordinate support; adjacent route context is acceptable only when it is not the sole durable plan pointer and does not become a second objective surface or completion proof
+- if bounded internal helper use shaped the answer, keep any helper block compact enough that it supports the goal without inflating `/goal` into a mini-spec or reading like a neighboring `/plan` block
+- do not turn it into a mini-spec dump or background essay
 - do not emit several competing `/goal` commands when the real decision surface is still open
-- if the command would be too broad or too weakly provable, fall back to candidate goals or ordinary recommendation wording instead of emitting an under-grounded plan-backed `/goal`
+- if the command would be too broad, too long, or too weakly provable, fall back to candidate goals or ordinary recommendation wording instead
 
 ### 8.2) Goal-centered planning explanation shape
 When `/goal` and planning both matter, keep the explanation explicit about which layer is being discussed.
 - present `/goal` as the objective layer: outcome, proof/checks, scope, and hard guardrails
 - present planning as route support for that same goal rather than as a second equal surface
-- if a governed `/goal` is emitted, explain that planning prepared the full route file and did not replace `/goal` as the objective layer
-- when route context is shown with the goal, keep it inside or adjacent to the same goal-centric explanation instead of letting plan bullets read like a sibling branch
-- emit a `Plan reference` to the prepared route file as the default companion rather than teaching `/plan` as the ordinary paired next step
-- if a plan file is referenced from the goal surface, present it as `Plan reference` or equivalent route context and make clear that the file is detailed route support rather than objective ownership or completion proof
-- if bounded internal helper use is supporting the current turn, explain any visible `Plan draft`, `Plan basis`, or `Verification / testing route` as subordinate support for the selected goal and its referenced plan file rather than as a replacement route surface
+- if internal planning shaped the advisory `/goal` before emission, explain that the planning prepared the route basis but did not replace `/goal` as the objective layer
+- when route context is shown with the goal, keep it inside the same copied goal artifact for any durable `Plan reference`, and allow adjacent support only for non-durable route notes so plan bullets do not read like a sibling branch
+- if the route is still non-trivial enough to exceed the integrated goal-centric surface, explain that `/plan` is the overflow or explicitly requested route surface for the selected goal rather than the ordinary paired next step
+- if a plan file is referenced from the goal surface, present it as `Plan reference` or equivalent route context inside the same copyable goal artifact rather than as objective ownership or completion proof
+- if bounded internal helper use is supporting the current turn, explain any visible `Plan draft`, `Plan basis`, or `Verification / testing route` as subordinate support for the selected goal rather than as a replacement route surface
 - if a plan is finished but the goal gate is still unchecked, say so explicitly and keep closeout anchored to the goal state rather than the route state alone
 
 ### 9) Preferred closing shapes
@@ -314,11 +313,11 @@ Recommendation:
 <why-this-first label in dominant session language>: <one short reason>
 <other-options label in dominant session language>: <real alternative when the choice still exists>
 
-Goal-with-plan-reference:
+Goal-to-plan handoff:
 <selected-goal label in dominant session language>: <goal already chosen>
-<plan-reference label in dominant session language>: <referenced full route file>
+<why-plan-now label in dominant session language>: <why the remaining route is still materially non-trivial>
 <plan-should-cover label in dominant session language>: <sequence, task breakdown, verification order, or equivalent route detail>
-<route-status label in dominant session language>: <route artifact is subordinate to the selected goal>
+<recommended-next label in dominant session language>: `/plan`
 
 Goal-assisted internal helper output:
 <selected-goal label in dominant session language>: <goal already chosen>
@@ -342,8 +341,10 @@ Advisory proposal:
 
 Advisory `/goal` block:
 <label in dominant session language if a wrapper is shown, or omit the wrapper entirely>
-<plan-reference label in dominant session language>: <plan file path or equivalent route-only reference>
+<same copied goal artifact starts here>
+<plan-reference label in dominant session language, when a durable route artifact materially helps>: <plan file path or compact route note>
 /goal <dominant-session-language wording for outcome + proof/checks + scope + keep constraints + stop bound, preserving exact literals where they should remain exact>
+<same copied goal artifact ends here>
 
 Optional deep dive:
 ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง <specific topic> ต่อได้.
@@ -370,7 +371,7 @@ Allowed diagram tools:
 Required guidance:
 - use arrows only for real sequence or dependency relationships
 - keep line width short enough to survive terminal wrapping
-- for inline explanatory diagrams, split complex flows into smaller diagrams or ordered lists when that improves readability
+- split complex diagrams into smaller flows
 - prefer prose or ordered lists when a diagram would reduce clarity
 
 ### 3) Diagram purpose first

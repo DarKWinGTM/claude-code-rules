@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.41 / P133 Quick Start companion-plugin setup
+> **Status:** No active phase selected; latest released baseline is v10.42 / P134 copyable goal plan-reference hardening
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.41 / P133`.
+- None currently selected. Latest released baseline is `v10.42 / P134`.
 
 ### Most Recently Completed
+
+- **P134:** [phase-134-copyable-goal-plan-reference-hardening.md](phase-134-copyable-goal-plan-reference-hardening.md)
+  - Output: governed `/goal` doctrine now requires any durable plan-backed route to keep `Plan reference` inside the same copied goal artifact, while `/goal` remains the objective owner and the plan file remains route-only support.
+  - Gate: copyable goal plan-reference integrity passed, `/goal` objective-ownership integrity passed, route-only plan-support integrity passed, advisory `/goal` artifact template integrity passed, touched design/changelog/README/TODO/phase/patch surfaces align to `v10.42 / P134`, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.42` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.42
+  - Patch: [../patch/copyable-goal-plan-reference-hardening.patch.md](../patch/copyable-goal-plan-reference-hardening.patch.md)
 
 - **P133:** [phase-133-quickstart-companion-plugin-setup.md](phase-133-quickstart-companion-plugin-setup.md)
   - Output: the root README now carries a Quick Start companion-plugin setup block that tells operators how to install `governed-docs` and `memory-context-intelligence` immediately after the runtime-rule install, while preserving the boundary that plugins still load separately from the active `.claude/rules/` payload.
@@ -286,22 +292,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current promoted baseline after P130 closeout:
-- released baseline is `v10.38 / P130`
-- README current-state sections now expose always-on plan-file-backed governed `/goal` doctrine and describe compact goal emission with `Plan reference` as the current release posture
+Current promoted baseline after P134 closeout:
+- released baseline is `v10.42 / P134`
+- README current-state sections now expose the copyable-goal plan-reference hardening as the current release posture for governed `/goal`
 - active doctrine keeps `/goal` as semantic/objective authority for outcome, proof/checks, scope, and hard guardrails while the referenced plan file stays route-only support
-- `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now agree that actual governed `/goal` creation is plan-first and visible `/plan` remains explicit standalone planning, later route revision, or overflow only
+- `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now agree that any durable plan-backed governed `/goal` must keep `Plan reference` inside the same copied goal artifact rather than only in surrounding explanation or adjacent support
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - `git diff --check` passed with no whitespace errors
-- local source release state, remote `master`, and tag `v10.38` resolve to the same promoted commit lineage
-- GitHub release `v10.38` was verified on the promoted state after default-branch reconciliation
+- local source release state, remote `master`, and tag `v10.42` resolve to the same promoted commit lineage
+- GitHub release `v10.42` was verified on the promoted state after default-branch reconciliation
 
 ---
 
 ## Rollback / Containment
 
-If P130 is reversed after release:
-- revert the touched always-on plan-file-backed governed `/goal` doctrine edits as one governed rollback release
+If P134 is reversed after release:
+- revert the touched copyable goal plan-reference hardening edits as one governed rollback release
 - restore the immediately previous released baseline as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup

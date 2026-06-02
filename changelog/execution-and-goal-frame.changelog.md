@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 1.18 | 2026-06-02 | **[Added P130 always-on plan-file-backed goal authoring](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.18 | 2026-06-03 | **[Added P134 copyable goal plan-reference hardening](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-29 | **[Added P124 pre-goal plan-backed goal-authoring refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-28 | **[Added P123 internal goal-helper refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -36,21 +36,20 @@
 ---
 
 <a id="version-118"></a>
-## Version 1.18: Added P130 always-on plan-file-backed goal authoring
+## Version 1.18: Added P134 copyable goal plan-reference hardening
 
-**Date:** 2026-06-02
+**Date:** 2026-06-03
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ### Changes
 - Updated `execution-and-goal-frame.md` from v1.17 to v1.18.
 - Updated `design/execution-and-goal-frame.design.md` from v1.17 to v1.18.
-- Replaced the conditional route-heavy trigger with plan-first authoring for any actual governed `/goal` creation.
-- Required a full detailed plan file to be prepared before final goal emission.
-- Required the emitted `/goal` to reference that plan file as route-only support.
-- Preserved `/goal` as objective owner, kept `/plan` out of the ordinary paired-next-surface role, and kept goal-gate closeout stronger than plan-step completion.
+- Required any durable route-plan pointer for a governed `/goal` to travel inside the same copyable goal artifact instead of living only in surrounding explanation.
+- Preserved `/goal` as the objective owner and kept plan files route-only rather than objective authority or completion proof.
+- Preserved adjacent route notes only for non-durable support so the copy-boundary hardening stays narrower than the broader P125/P130 model.
 
 ### Summary
-`execution-and-goal-frame.md` now requires plan-first, goal-second governed `/goal` authoring: the route file is prepared first, the emitted `/goal` stays compact and objective-owned, and the referenced plan file stays subordinate route support only.
+`execution-and-goal-frame.md` now closes the copy-boundary gap for durable plan-backed governed `/goal` output while preserving the existing objective-versus-route ownership split.
 
 ---
 

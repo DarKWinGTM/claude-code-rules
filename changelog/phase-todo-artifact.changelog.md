@@ -10,7 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 1.22 | 2026-06-02 | **[Added P130 always-on plan-file-backed goal sourcing](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.22 | 2026-06-03 | **[Added P134 in-artifact plan-reference goal sourcing hardening](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-05-31 | **[Added P126 explicit nested phase grammar and alphanumeric legacy handling](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution-surface refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-05-29 | **[Added P124 pre-goal `/goal` sourcing refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -39,21 +39,20 @@
 ---
 
 <a id="version-122"></a>
-## Version 1.22: Added P130 always-on plan-file-backed goal sourcing
+## Version 1.22: Added P134 in-artifact plan-reference goal sourcing hardening
 
-**Date:** 2026-06-02
+**Date:** 2026-06-03
 **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ### Changes
 - Updated `phase-todo-artifact.md` from v1.21 to v1.22.
 - Updated `design/phase-todo-artifact.design.md` from v1.21 to v1.22.
-- Replaced conditional pre-goal planning support with plan-first authoring for any actual governed `/goal` creation.
-- Required governed execution surfaces to prepare a full detailed plan file before final goal emission.
-- Required emitted goals to reference that plan file as route-only context.
-- Preserved `/goal` objective ownership, kept `/plan` for explicit standalone planning or later route overflow/revision only, and preserved goal-gate closeout over plan-step completion.
+- Required a durable plan-backed governed `/goal` to carry an in-artifact `Plan reference` slot inside the same copyable goal artifact.
+- Preserved adjacent support only for non-durable route notes while keeping plan files route-only rather than objective authority.
+- Preserved `/plan` ownership, goal-gate closeout, and the existing design-first governed `/goal` sourcing order.
 
 ### Summary
-`phase-todo-artifact.md` now treats plan-file-backed goal authoring as the default governed `/goal` creation model: prepare the detailed route file first, emit a compact goal that references it, and keep the plan file subordinate to the selected goal.
+`phase-todo-artifact.md` now makes plan-backed governed `/goal` sourcing keep the durable plan pointer inside the copied goal artifact instead of leaving that pointer free to drift into surrounding prose.
 
 ---
 
