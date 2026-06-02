@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.35</b><br><sub>P127 Released</sub>
+  <b>v10.39</b><br><sub>P131 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,10 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Capability Lists</b><br><sub>Doctrine-grounded front page</sub>
+  <b>Diagram Infrastructure</b><br><sub>Required governed diagram lane</sub>
 </td>
 </tr>
 </table>
+
+> **Current release note:** `v10.39 / P131` makes diagram docs required governed-docs infrastructure for RULES: governed diagram authority now stays under `diagram/` only, `diagram/STRUCTURE.md` is the mandatory compact active whole-project diagram-side entrypoint, `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping, `design/**` remains semantic authority, and future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup.
 
 <!-- CTA Buttons -->
 <p>
@@ -331,6 +333,9 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 | `./design/<slug>.design.md` | Compact active parent design index/gateway for governed chains | Active design parent |
 | `./design/<slug>/*.design.md` | Active child target-state shards in same-stem nested mode | Active design shards |
 | `./design/*.design.md` beside a compact parent | Flat sibling design shards when the current folder already scopes the chain | Active design sibling shards |
+| `./diagram/STRUCTURE.md` | Bodyful whole-project detailed visual structure authority when a governed diagram lane is opened | Active diagram global anchor |
+| `./diagram/<subject>.design.md` | Default integrated Kroki-compatible subject diagram as a zoom-in / decomposition view of the global structure | Active subject diagram |
+| `./diagram/<subject>/*.design.md` | Kroki-compatible child visual shards only after a real visual split trigger | Active diagram child shards |
 | `*.md` (root) | Active runtime rules | Rules files |
 | `./changelog/changelog.md` | Compact master repository-wide current-version authority and shard map | Master changelog parent |
 | `./changelog/*.changelog.md` | Per-chain authoritative active parent history/current version state | Active parent changelogs |
@@ -353,6 +358,10 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 
 > **💡 Single Source of Truth Principle:**
 > - Governed design/changelog chains should classify chain shape before parent files absorb more detail
+> - `diagram/STRUCTURE.md` is the bodyful top-level whole-project detailed visual structure authority when a governed diagram lane is opened
+> - governed `diagram/` source is mandatory Kroki-compatible and supports all formats that are both Kroki-compatible and governance-suitable
+> - `diagram/<subject>.design.md` is the default bodyful integrated subject diagram as a zoom-in / decomposition view of the global structure; split only when visual complexity or genuinely different visual questions justify it
+> - Diagram structure must not auto-mirror design shards, inline answer/phase-local text diagrams do not become governed source truth automatically, and `design/` remains semantic authority when text and diagram differ
 > - Flat sibling shards are valid when the current folder already scopes the chain and the compact parent clearly exposes the shard map
 > - Broad active design chains should still strongly prefer same-stem parent/index + shard pairs (`design/<slug>.design.md` + `design/<slug>/`) and do not use a default `design/done/` surface
 > - Per-chain active changelogs (`*.changelog.md`) remain the authority for current governed chain history/version state
@@ -379,13 +388,14 @@ Boundary:
 
 ## 🔗 Integration Guide
 
-This section defines how `design`, `changelog`, `runtime rules`, `TODO`, and governed phase-planning artifacts should be updated together.
+This section defines how `design`, `diagram`, `changelog`, `runtime rules`, `TODO`, and governed phase-planning artifacts should be updated together.
 
 ### Document Roles
 
 | Document | Role | Update Trigger |
 |----------|------|----------------|
 | `design/*.design.md` | Target behavior/specification | Requirement or policy change |
+| `diagram/STRUCTURE.md` and `diagram/*.design.md` | Governed Kroki-compatible visual synthesis / relationship explanation | A whole-repo or subject-level visual explanation needs active source truth |
 | `*.md` (root runtime rules) | Active runtime behavior | Approved design change requires runtime sync |
 | `changelog/changelog.md` | Master repository-wide synchronization history | Repository-level governed sync events |
 | `changelog/*.changelog.md` | Authoritative active per-chain version history | Any rule/design update with version impact |
@@ -996,7 +1006,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.33 / P125` integrated goal-with-planning model while the active runtime install set remains 18 root rules and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.38 / P130` always-on plan-file-backed goal model while the active runtime install set remains 18 root rules, created governed `/goal` output now authors plan-first and references the prepared route file, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1119,8 +1129,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.33 |
-  <b>Last Updated</b>: 2026-05-30 |
+  <b>Version</b>: 10.38 |
+  <b>Last Updated</b>: 2026-06-02 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

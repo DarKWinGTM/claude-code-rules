@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.35 / P127 README Core Capabilities list and doctrine framing
+> **Status:** No active phase selected; latest released baseline is v10.39 / P131 required RULES diagram infrastructure doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,40 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.35 / P127`.
+- None currently selected. Latest released baseline is `v10.39 / P131`.
 
 ### Most Recently Completed
+
+- **P131:** [phase-131-rules-diagram-infrastructure-doctrine.md](phase-131-rules-diagram-infrastructure-doctrine.md)
+  - Output: `diagram/` is now required governed-docs infrastructure for RULES, governed diagram authority stays under `diagram/` only, `diagram/STRUCTURE.md` is the mandatory compact active whole-project diagram-side entrypoint, `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping, and future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup authority.
+  - Gate: required diagram-infrastructure integrity passed, diagram-authority-scope integrity passed, `diagram/STRUCTURE.md` ownership/navigation integrity passed, design-vs-diagram authority integrity passed, preservation-not-cleanup integrity passed, touched README/design/changelog/TODO/phase/patch surfaces align to `v10.39 / P131`, runtime install/update verification plus checked parity/body sufficiency passed, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.39` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.39
+  - Patch: [../patch/rules-diagram-infrastructure-doctrine.patch.md](../patch/rules-diagram-infrastructure-doctrine.patch.md)
+
+- **P130:** [phase-130-always-on-plan-file-backed-goal-model.md](phase-130-always-on-plan-file-backed-goal-model.md)
+  - Output: any actual governed `/goal` creation now prepares a full detailed plan file before final goal emission, emitted governed `/goal` output now references that route file through `Plan reference`, `/goal` remains the objective owner, the referenced plan file remains route-only support, and visible `/plan` remains explicit standalone planning, later route revision, or overflow only.
+  - Gate: plan-first governed goal-authoring integrity passed, plan-reference compact-goal integrity passed, goal-vs-plan authority integrity passed, explicit-standalone-or-overflow-only `/plan` integrity passed, touched README/design/changelog/TODO/phase/patch surfaces align to `v10.38 / P130`, runtime install/update verification passed with 18 active runtime rules plus manifest, targeted source/runtime parity and source/destination body sufficiency for touched owners passed, `git diff --check` passed, and reconciled branch/default-branch/tag/release evidence now points to one promoted `v10.38` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.38
+  - Patch: [../patch/always-on-plan-file-backed-goal-model.patch.md](../patch/always-on-plan-file-backed-goal-model.patch.md)
+
+
+- **P129:** [phase-129-kroki-compatible-governed-diagram-doctrine.md](phase-129-kroki-compatible-governed-diagram-doctrine.md)
+  - Output: governed `diagram/` source is now mandatory Kroki-compatible, allowed breadth is defined as Kroki-compatible + governance-suitable, `diagram/STRUCTURE.md` now acts as a bodyful whole-project detailed visual structure authority, subject diagrams are positioned as zoom-in / decomposition views of the global structure, and touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.37 / P129`.
+  - Gate: mandatory Kroki-compatible contract integrity passed, suitability/admission boundary integrity passed, design-vs-diagram authority integrity passed, inline-text-diagram boundary integrity passed, `diagram/STRUCTURE.md` bodyful whole-project authority integrity passed, `git diff --check` passed, and reconciled branch/default-branch/tag/release evidence now points to one promoted `v10.37` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.37
+  - Patch: [../patch/rules-kroki-compatible-governed-diagram-doctrine.patch.md](../patch/rules-kroki-compatible-governed-diagram-doctrine.patch.md)
+  - Historical note: this wave strengthens the RULES diagram lane contract only and does not reopen governed-docs implementation as an owner path.
+
+### Previously Completed
+
+- **P128:** [phase-128-rules-unified-diagram-doctrine-correction.md](phase-128-rules-unified-diagram-doctrine-correction.md)
+  - Output: dedicated `diagram/` visual lane is now recognized in active owner docs, `diagram/STRUCTURE.md` is present as the whole-repo visual anchor, fragmented companion assumptions were withdrawn, touched README/design/changelog/TODO/phase/patch surfaces are aligned to `v10.36 / P128`, temporary project-local install proof passed for the touched runtime-owner surfaces, and the promoted state now mirrors onto the remote default branch.
+  - Gate: design-vs-diagram authority boundary integrity passed, no touched active surface kept the old fragmented baseline as selected truth, `git diff --check` passed, temporary project-local install proof passed with 18 active runtime rule markdown files, touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`, and reconciled branch/default-branch/tag/release evidence now points to one promoted `v10.36` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36
+  - Patch: [../patch/rules-unified-diagram-doctrine-correction.patch.md](../patch/rules-unified-diagram-doctrine-correction.patch.md)
+  - Historical note: this wave corrected doctrine before any future re-entry into tooling/plugin implementation and did not revive plugin-first execution as the default path.
+
+### Previously Completed
 
 - **P127:** [phase-127-readme-core-capabilities-list-and-doctrine-framing.md](phase-127-readme-core-capabilities-list-and-doctrine-framing.md)
   - Output: README Core Capabilities now use a readable doctrine-grounded list, Runtime Context Discipline stays front-page scoped, touched README/design/changelog/TODO/phase/patch sync is complete, runtime install into a checked project-local `.claude/rules/` target passed at 18/18 parity/body sufficiency, branch push completed, and GitHub release `v10.35` is published.
@@ -243,26 +274,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current released baseline after P127 closeout:
-- released baseline is `v10.35 / P127`
-- README Core Capabilities now use a readable doctrine-grounded list instead of the old grid/table block
-- capability wording now explains active doctrine and current-state behavior directly rather than phase/release execution chronology
-- Runtime Context Discipline now stays front-page scoped instead of retelling rollout history as capability meaning
-- `document-governance.md` explicitly keeps README capability/current-state sections front-page scoped and doctrine-grounded
+Current promoted baseline after P130 closeout:
+- released baseline is `v10.38 / P130`
+- README current-state sections now expose always-on plan-file-backed governed `/goal` doctrine and describe compact goal emission with `Plan reference` as the current release posture
+- active doctrine keeps `/goal` as semantic/objective authority for outcome, proof/checks, scope, and hard guardrails while the referenced plan file stays route-only support
+- `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now agree that actual governed `/goal` creation is plan-first and visible `/plan` remains explicit standalone planning, later route revision, or overflow only
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- runtime install copied only the 18 README-listed active runtime rules into a checked project-local `.claude/rules/` target
-- 18/18 source/runtime parity and source/destination body sufficiency passed
-- `playground/` remains outside the runtime install payload while the active runtime count remains 18
 - `git diff --check` passed with no whitespace errors
-- branch `goal-governed-work-only` and remote `master` both resolve to the same released commit
-- GitHub release `v10.35` was verified after the release wave closeout
+- local source release state, remote `master`, and tag `v10.38` resolve to the same promoted commit lineage
+- GitHub release `v10.38` was verified on the promoted state after default-branch reconciliation
 
 ---
 
 ## Rollback / Containment
 
-If P127 is reversed after release:
-- revert the touched README capability-presentation and front-page authority edits as one governed rollback release
+If P130 is reversed after release:
+- revert the touched always-on plan-file-backed governed `/goal` doctrine edits as one governed rollback release
 - restore the immediately previous released baseline as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
