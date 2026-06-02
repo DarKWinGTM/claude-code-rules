@@ -176,6 +176,33 @@ def explicit_narrow_request_active(
     return bool(day_shard or session_id or lookback_minutes is not None or scope_filters)
 
 
+def apply_config_default_scope(
+    *,
+    active_scope_basis: str,
+    scope_filters: list[str],
+    day_shard: str | None,
+    session_id: str | None,
+    lookback_minutes: int | None,
+    scope_policy: dict[str, Any],
+) -> tuple[str, str | None, str | None, int | None]:
+    if explicit_narrow_request_active(
+        day_shard=day_shard,
+        session_id=session_id,
+        lookback_minutes=lookback_minutes,
+        scope_filters=scope_filters,
+    ):
+        return active_scope_basis, day_shard, session_id, lookback_minutes
+
+    mode = scope_policy.get("default_scope_mode")
+    if mode == "day" and scope_policy.get("scope_day_shard"):
+        return "config-default-day", str(scope_policy.get("scope_day_shard")), None, None
+    if mode == "session" and scope_policy.get("scope_session_id"):
+        return "config-default-session", None, str(scope_policy.get("scope_session_id")), None
+    if mode == "lookback" and scope_policy.get("scope_lookback_minutes"):
+        return "config-default-lookback", None, None, int(scope_policy.get("scope_lookback_minutes"))
+    return "historical-default", day_shard, session_id, lookback_minutes
+
+
 def filter_records_for_source_policy(records: list[dict[str, Any]], allowed_source_classes: list[str]) -> list[dict[str, Any]]:
     filtered: list[dict[str, Any]] = []
     allowed = set(allowed_source_classes)
@@ -710,11 +737,15 @@ def scope_basis(args: argparse.Namespace) -> str:
     return "historical-default"
 
 
-def select_daily_shards(shards: list[Path], args: argparse.Namespace, max_shards: int) -> list[Path]:
-    day_shard = getattr(args, "day", None)
-    session_id = getattr(args, "session_id", None)
-    lookback_minutes = getattr(args, "lookback_minutes", None)
-    allow_same_day_widening = getattr(args, "allow_same_day_widening", False)
+def select_daily_shards(
+    shards: list[Path],
+    *,
+    day_shard: str | None,
+    session_id: str | None,
+    lookback_minutes: int | None,
+    allow_same_day_widening: bool,
+    max_shards: int,
+) -> list[Path]:
     if day_shard:
         return [path for path in shards if path.stem == day_shard][:1]
     if session_id or lookback_minutes is not None or allow_same_day_widening:
@@ -983,6 +1014,18 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
     lookback_minutes = None if raw_lookback_minutes is None else max(0, raw_lookback_minutes)
     active_scope_basis = scope_basis(args)
     project_dir = resolve_path(Path.cwd())
+    stored_scope_policy = load_analysis_source_policy(
+        explicit_config_path=getattr(args, "config", None),
+        cwd=project_dir,
+    ).get("scope_policy", {})
+    active_scope_basis, day_shard, session_id, lookback_minutes = apply_config_default_scope(
+        active_scope_basis=active_scope_basis,
+        scope_filters=scope_filters,
+        day_shard=day_shard,
+        session_id=session_id,
+        lookback_minutes=lookback_minutes,
+        scope_policy=stored_scope_policy,
+    )
     source_policy_state = build_source_policy_state(
         args,
         project_dir=project_dir,
@@ -1050,7 +1093,14 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
         return report
 
     shards = discover_daily_shards(memory_root)
-    selected_shards = select_daily_shards(shards, args, effective_max_shards)
+    selected_shards = select_daily_shards(
+        shards,
+        day_shard=day_shard,
+        session_id=session_id,
+        lookback_minutes=lookback_minutes,
+        allow_same_day_widening=allow_same_day_widening,
+        max_shards=effective_max_shards,
+    )
     latest_shard = shards[0] if shards else None
     latest_date = parse_shard_date(latest_shard) if latest_shard else None
     latest_mtime = (
@@ -1180,6 +1230,7 @@ def build_report(args: argparse.Namespace) -> dict[str, Any]:
             "bounded_subset_only": True,
         },
         "source_policy": source_policy_state,
+        "scope_policy": stored_scope_policy,
         "freshness": {
             "latest_shard_date": latest_date.isoformat() if latest_date else None,
             "latest_shard_mtime": latest_mtime,

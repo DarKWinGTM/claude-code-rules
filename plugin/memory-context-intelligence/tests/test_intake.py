@@ -19,6 +19,16 @@ SPEC.loader.exec_module(intake)
 
 
 class ScopedIntakeTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.home_temp_dir = tempfile.TemporaryDirectory()
+        self.home_root = Path(self.home_temp_dir.name)
+        self.home_patcher = mock.patch.object(intake.Path, "home", return_value=self.home_root)
+        self.home_patcher.start()
+
+    def tearDown(self) -> None:
+        self.home_patcher.stop()
+        self.home_temp_dir.cleanup()
+
     def write_day_shard(self, root: Path) -> None:
         text = textwrap.dedent(
             """
@@ -113,6 +123,66 @@ class ScopedIntakeTests(unittest.TestCase):
             self.assertEqual(report["scope"]["historical_shards_considered"], 1)
             self.assertEqual(report["source"]["daily_shards_considered"], ["2026-05-20.md"])
             self.assertEqual([record["session_id"] for record in report["records"]], ["current-session"])
+
+    def test_config_scope_policy_day_applies_when_no_explicit_narrowing_is_given(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            self.write_historical_shards(root)
+            claude_root = root / ".claude"
+            claude_root.mkdir()
+            config_path = claude_root / "memory-context-intelligence.config.json"
+            config_path.write_text(
+                textwrap.dedent(
+                    """
+                    {
+                      "analysis": {
+                        "scope_policy": {
+                          "default_scope_mode": "day",
+                          "scope_day_shard": "2026-05-19",
+                          "scope_session_id": null,
+                          "scope_lookback_minutes": null
+                        },
+                        "source_policy": {
+                          "enabled_source_classes": ["trace_evidence", "recall_evidence", "durable_memory_context", "governance_context"],
+                          "max_historical_shards": 10,
+                          "allow_same_day_widening": true
+                        }
+                      }
+                    }
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
+
+            with mock.patch.object(intake.Path, "cwd", return_value=root), mock.patch.object(intake.Path, "home", return_value=root):
+                args = intake.parse_args(["--memory-root", str(root)])
+                report = intake.build_report(args)
+
+            self.assertEqual(report["scope"]["basis"], "config-default-day")
+            self.assertEqual(report["scope_policy"]["default_scope_mode"], "day")
+            self.assertEqual(report["scope_policy"]["scope_day_shard"], "2026-05-19")
+            self.assertEqual(report["source"]["daily_shards_considered"], ["2026-05-19.md"])
+            self.assertEqual([record["session_id"] for record in report["records"]], ["session-d"])
+
+    def test_explicit_day_override_beats_config_scope_policy(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            self.write_historical_shards(root)
+            claude_root = root / ".claude"
+            claude_root.mkdir()
+            config_path = claude_root / "memory-context-intelligence.config.json"
+            config_path.write_text(
+                '{"analysis":{"scope_policy":{"default_scope_mode":"day","scope_day_shard":"2026-05-19","scope_session_id":null,"scope_lookback_minutes":null}}}\n',
+                encoding="utf-8",
+            )
+
+            with mock.patch.object(intake.Path, "cwd", return_value=root), mock.patch.object(intake.Path, "home", return_value=root):
+                args = intake.parse_args(["--memory-root", str(root), "--day", "2026-05-20"])
+                report = intake.build_report(args)
+
+            self.assertEqual(report["scope"]["basis"], "explicit-day")
+            self.assertEqual(report["source"]["daily_shards_considered"], ["2026-05-20.md"])
 
     def test_day_session_lookback_narrows_records_before_analysis(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -351,7 +421,9 @@ class ScopedIntakeTests(unittest.TestCase):
 
             project_dir = Path(temp_dir) / "project"
             project_dir.mkdir()
-            (project_dir / "memory-context-intelligence.config.json").write_text(
+            claude_root = Path(temp_dir) / ".claude"
+            claude_root.mkdir()
+            (claude_root / "memory-context-intelligence.config.json").write_text(
                 textwrap.dedent(
                     """
                     {
@@ -369,7 +441,7 @@ class ScopedIntakeTests(unittest.TestCase):
             )
 
             args = intake.parse_args(["--memory-root", str(root)])
-            with mock.patch.object(intake.Path, "cwd", return_value=project_dir):
+            with mock.patch.object(intake.Path, "cwd", return_value=project_dir), mock.patch.object(intake.Path, "home", return_value=Path(temp_dir)):
                 report = intake.build_report(args)
 
             self.assertTrue(report["source_policy"]["loaded"])
@@ -393,7 +465,9 @@ class ScopedIntakeTests(unittest.TestCase):
 
             project_dir = Path(temp_dir) / "project"
             project_dir.mkdir()
-            (project_dir / "memory-context-intelligence.config.json").write_text(
+            claude_root = Path(temp_dir) / ".claude"
+            claude_root.mkdir()
+            (claude_root / "memory-context-intelligence.config.json").write_text(
                 textwrap.dedent(
                     """
                     {
@@ -421,7 +495,7 @@ class ScopedIntakeTests(unittest.TestCase):
                     "lookback clue",
                 ]
             )
-            with mock.patch.object(intake.Path, "cwd", return_value=project_dir):
+            with mock.patch.object(intake.Path, "cwd", return_value=project_dir), mock.patch.object(intake.Path, "home", return_value=Path(temp_dir)):
                 report = intake.build_report(args)
 
             self.assertTrue(report["source_policy"]["loaded"])

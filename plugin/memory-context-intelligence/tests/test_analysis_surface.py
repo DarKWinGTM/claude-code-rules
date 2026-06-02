@@ -105,6 +105,89 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
         self.assertEqual(payload["source_policy"]["config_path"], str(config_path))
         self.assertIn("trace_evidence", payload["source_policy"]["policy_note"])
 
+    def test_analysis_surface_passes_scope_policy_through_when_config_is_loaded(self) -> None:
+        captured: list[dict] = []
+        present_payload = {
+            "status": "available",
+            "topic_cards": [],
+            "next_action_options": {
+                "heading": "Next action options",
+                "status_line": "advisory only; no topic selected yet",
+                "options": [],
+            },
+        }
+
+        with tempfile.TemporaryDirectory(prefix="mci-analysis-scope-policy-") as temp_dir:
+            temp_path = Path(temp_dir)
+            home_path = temp_path / "home"
+
+            with patch.object(
+                analysis_surface,
+                "find_memory_root",
+                return_value=temp_path / ".memsearch" / "memory",
+            ), patch.object(analysis_surface, "run_json_command") as mock_run, patch.object(
+                analysis_surface,
+                "emit",
+                side_effect=captured.append,
+            ), patch.object(
+                analysis_surface.tempfile,
+                "mkdtemp",
+                return_value=temp_dir,
+            ), patch.object(
+                analysis_surface.Path,
+                "cwd",
+                return_value=temp_path,
+            ), patch.object(
+                analysis_surface.Path,
+                "home",
+                return_value=home_path,
+            ):
+                mock_run.side_effect = [
+                    (
+                        subprocess.CompletedProcess(args=["intake"], returncode=0, stdout='{"status": "available"}', stderr=""),
+                        {
+                            "status": "available",
+                            "scope": {"basis": "config-default-day", "day_shard": "2026-06-02", "same_day_widened": False},
+                            "scope_policy": {
+                                "default_scope_mode": "day",
+                                "scope_day_shard": "2026-06-02",
+                                "scope_session_id": None,
+                                "scope_lookback_minutes": None,
+                            },
+                            "source": {"retrieval_mode": "raw-day-shard-scope", "source_classes_present": ["trace_evidence"]},
+                            "source_policy": {
+                                "loaded": True,
+                                "config_path": str(home_path / ".claude" / "memory-context-intelligence.config.json"),
+                                "config_source": "auto-upward",
+                                "policy_limited": False,
+                                "effective_source_classes": ["trace_evidence", "recall_evidence", "durable_memory_context", "governance_context"],
+                                "policy_note": "Config file loaded without changing the active source-policy limits.",
+                            },
+                        },
+                    ),
+                    (
+                        subprocess.CompletedProcess(args=["signals"], returncode=0, stdout='{"status": "available"}', stderr=""),
+                        {"status": "available"},
+                    ),
+                    (
+                        subprocess.CompletedProcess(args=["present"], returncode=0, stdout='{"status": "available"}', stderr=""),
+                        present_payload,
+                    ),
+                ]
+
+                exit_code = analysis_surface.main([
+                    "--session-id",
+                    "session-123",
+                    "--current-day",
+                    "2026-06-02",
+                ])
+
+        self.assertEqual(exit_code, 0)
+        payload = captured[0]
+        self.assertEqual(payload["scope_basis"], "config-default-day")
+        self.assertEqual(payload["scope_day_shard"], "2026-06-02")
+        self.assertEqual(payload["scope_policy"]["default_scope_mode"], "day")
+
     def test_analysis_surface_surfaces_guided_config_questions_when_no_config_is_loaded(self) -> None:
         captured: list[dict] = []
         present_payload = {
@@ -129,6 +212,7 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory(prefix="mci-analysis-surface-guided-config-") as temp_dir:
             temp_path = Path(temp_dir)
+            home_path = temp_path / "home"
 
             with patch.object(
                 analysis_surface,
@@ -146,6 +230,10 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
                 analysis_surface.Path,
                 "cwd",
                 return_value=temp_path,
+            ), patch.object(
+                analysis_surface.Path,
+                "home",
+                return_value=home_path,
             ):
                 mock_run.side_effect = [
                     (
@@ -188,7 +276,10 @@ class AnalysisSurfacePayloadTests(unittest.TestCase):
         self.assertEqual(payload["status"], "available")
         self.assertIn("config_questions", payload)
         self.assertTrue(payload["config_questions"]["advisory_only"])
-        self.assertIn("memory-context-intelligence.config.json", payload["config_questions"]["suggested_config_path"])
+        self.assertEqual(
+            payload["config_questions"]["suggested_config_path"],
+            str(home_path / ".claude" / "memory-context-intelligence.config.json"),
+        )
         self.assertEqual(len(payload["config_questions"]["questions"]), 4)
 
     def test_analysis_surface_surfaces_adaptive_deep_analysis_plan(self) -> None:

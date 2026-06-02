@@ -425,6 +425,12 @@ def main(argv: list[str] | None = None) -> int:
         scope_basis = "explicit current-session slice"
     elif scope_report.get("basis") == "explicit-day":
         scope_basis = "explicit day slice"
+    elif scope_report.get("basis") == "config-default-day":
+        scope_basis = "config-default-day"
+    elif scope_report.get("basis") == "config-default-session":
+        scope_basis = "config-default-session"
+    elif scope_report.get("basis") == "config-default-lookback":
+        scope_basis = "config-default-lookback"
 
     operator_warnings = build_operator_warnings(cwd=cwd, session_id=args.session_id)
 
@@ -473,6 +479,7 @@ def main(argv: list[str] | None = None) -> int:
         "same_day_widened": scope_report.get("same_day_widened", False),
         "retrieval_mode": intake.get("source", {}).get("retrieval_mode"),
         "source_policy": intake.get("source_policy"),
+        "scope_policy": intake.get("scope_policy"),
         "intake_status": intake.get("status"),
         "signals_status": signals.get("status"),
         "present_status": present.get("status"),

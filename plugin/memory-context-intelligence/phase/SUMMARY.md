@@ -1,9 +1,9 @@
 # Phase Summary - memory-context-intelligence
 
-> **Current Version:** 0.1.76
-> **Target Design:** [../design/design.md](../design/design.md) v0.1.76
+> **Current Version:** 0.1.77
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.77
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
-> **Status:** Phase 072 completed split-contract release closeout in checked scope
+> **Status:** Phase 073 completed init configuration surface in checked scope
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
 ---
@@ -78,6 +78,7 @@ Current runtime truth after completed phase 055 single-source authority cleanup:
 - memsearch-backed `trace_evidence` remains the live pattern anchor, while `durable_memory_context` and `governance_context` strengthen context/provenance only and cannot promote a live candidate without trace support
 - phase 066 now records the docs-only clarification that config file is a late-bound source-selection/source-limit policy for those same four evidence classes, not a fifth evidence class, not semantic authority, and not a substitute for trace-anchored promotion proof
 - phase 067 now implements that bounded config-policy layer in runtime: explicit `--config` plus upward discovery, source-class filtering, historical-shard caps, config-driven same-day widening only for non-explicit runs, guided config-helper output when no config file is loaded, and policy-limited provenance that still does not let durable/governance context promote without trace
+- phase 073 now adds `/memory-context-intelligence:init` as the setup/config surface, moves the default config target to `~/.claude/memory-context-intelligence.config.json`, and makes stored default scope subordinate to explicit runtime narrowing
 - phase 067 proof now includes focused `test_intake.py`, `test_signals.py`, `test_analysis_surface.py`, `test_presentation.py`, and `test_analysis_skill_contract.py`, a green `98`-test full package suite, one direct packaged `intake → signals → present` proof for config-policy loading plus repeated topic-card continuity, one added packaged recall-only proof that stays low-confidence and emits no live topic candidates without trace, one approved local slash proof without config showing the guided helper, and one approved local slash proof with auto-discovered config showing no-args policy loading
 - phase 069 now turns adaptive deep-analysis into enforced first-response behavior when required: the runtime payload names required topic ids, the skill must perform bounded read-only deepening before the first response, skipped deepening must be reported explicitly, and checked local proof now shows both subagent and web-search support while preserving `trace_evidence` as the live promotion anchor
 - phase 070 closes the final plugin-scoped release wave by removing the unnecessary Claude Code installation tutorial from the plugin README, bumping the plugin package version again, preserving plugin-only release scope, and recording this capsule as complete for the current wave while leaving future development open
@@ -165,6 +166,7 @@ Phase 024 completed docs-only namespace governance sync. Phases 025-027 remain v
 | 070 | `phase-070-final-plugin-release-closeout.md` | Completed | Removed the unnecessary Claude Code installation tutorial from the plugin README, bumped the package/release versions again, and closed the current plugin-scoped release wave while leaving future development open |
 | 071 | `phase-071-per-topic-additional-artifact-split-contract.md` | Completed | Hardened packet/additional emission so one selected topic always maps to one artifact and future multi-topic carry-forward must split into separate per-topic artifacts |
 | 072 | `phase-072-split-contract-release-closeout.md` | Completed | Closed the plugin-scoped release wave for split-contract hardening, bumped the package/governed versions again, and preserved the same public-surface boundaries in the released state |
+| 073 | `phase-073-init-configuration-surface.md` | Completed | Added `/memory-context-intelligence:init`, moved the default config target to user scope under `~/.claude`, and wired stored scope defaults into analysis without overriding explicit runtime narrowing |
 
 ## Program boundaries
 

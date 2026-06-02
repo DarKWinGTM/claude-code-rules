@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.76
+> **Current Version:** 0.1.77
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
 > **Selected Parent Model:** generic parent
 > **Selected Chain Shape:** flat-sibling-shards
@@ -48,7 +48,8 @@ The capsule no longer stays `single-file-bootstrap` because the design had alrea
 - [05-additional-staging-and-promotion.design.md](05-additional-staging-and-promotion.design.md) — how selected candidates stage to `/additional/` before any main-rule merge, with one selected topic per artifact and explicit per-topic split for any future multi-topic carry-forward
 - [06-plugin-installability.design.md](06-plugin-installability.design.md) — plugin installability contract, source-home boundary, peer harness-facing surface model, install/load-vs-invocation proof separation, transitional 019-023 proof, selected darkwingtm target namespace, historical reclassification for phases 025-033, root-TEMPLATE marketplace binding to `./RULES/plugin/memory-context-intelligence`, removed duplicate projection-tree authority, completed phase 055 single-source authority cleanup, completed phase 034 harness-surface governance sync, completed phase 035 slash proof/blocker capture, completed phase 036 invocation-design sync, completed phase 037 implementation planning, completed phase 038 analysis-surface runtime implementation, completed phases 039-041 naming authority correction plus proof/no-drift closeout, completed phase 042 single-public-`/analysis` memsearch-backed operator sync, and completed phase 057 analysis skill wrapper permission-safe correction
 - [07-recall-scoping-and-time-window.design.md](07-recall-scoping-and-time-window.design.md) — checked memsearch recall behavior, selected historical-default scope model, explicit narrowing contract, implemented historical-first runtime path, and current proof boundary for `/analysis`
-- [08-memory-evidence-source-model.design.md](08-memory-evidence-source-model.design.md) — implemented multi-source evidence model, provenance handling, historical-strength weighting, trace-anchored promotion logic, late-bound config-file source-policy loading, policy-limited operator provenance, guided config-helper boundaries, and adaptive deepening that still cannot promote without trace
+- [08-memory-evidence-source-model.design.md](08-memory-evidence-source-model.design.md) — implemented multi-source evidence model, provenance handling, historical-strength weighting, trace-anchored promotion logic, user-scope config-policy loading, policy-limited operator provenance, guided config-helper boundaries, and adaptive deepening that still cannot promote without trace
+- [09-init-configuration-surface.design.md](09-init-configuration-surface.design.md) — public `/memory-context-intelligence:init` setup surface, broadest-first default scope, explicit-only narrowing, user-scope config target, and shared `scope_policy` + `source_policy` contract
 
 ## 6) Implementation phase program boundary
 

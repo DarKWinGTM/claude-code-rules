@@ -181,6 +181,8 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("guided config helper", text)
         self.assertIn("suggested_config_path", text)
         self.assertIn("when the runtime payload says no config file is loaded", text)
+        self.assertIn("/memory-context-intelligence:init", text)
+        self.assertIn("~/.claude/memory-context-intelligence.config.json", text)
 
     def test_analysis_skill_describes_adaptive_deep_analysis_behavior(self) -> None:
         text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")

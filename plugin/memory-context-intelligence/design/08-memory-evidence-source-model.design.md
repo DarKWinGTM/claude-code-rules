@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.75
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
+> **Current Version:** 0.1.77
+> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -29,17 +29,19 @@ The current checked implementation uses four explicit source classes.
 Phase 067 implements the bounded config-file source-policy behavior for this source model.
 
 Current checked behavior:
-- the config file is a late-bound source-selection/source-limit policy for the four existing source classes
-- the intake layer accepts explicit `--config <path>` and also discovers `memory-context-intelligence.config.json` upward from the current working directory when no explicit path is supplied
-- current checked fields include `enabled_source_classes`, `max_historical_shards`, and `allow_same_day_widening`
+- the config file is a late-bound analysis-default/source-limit policy for the existing evidence model
+- the default config target is now the user-scope file `~/.claude/memory-context-intelligence.config.json`
+- the intake layer accepts explicit `--config <path>` and otherwise falls back to that user-scope default path instead of project-local upward discovery
+- current checked fields now include `analysis.scope_policy.default_scope_mode`, `scope_day_shard`, `scope_session_id`, `scope_lookback_minutes`, plus `enabled_source_classes`, `max_historical_shards`, and `allow_same_day_widening`
 - source-policy filtering now runs before later signals/presentation stages, so policy-limited runs only carry the remaining allowed source classes forward
-- same-day widening requested by config does not override an explicit narrow run; explicit `day` / `session` / `lookback` requests stay narrow unless the operator explicitly asks for widening
-- when no config file is loaded, the public analysis surface may expose advisory guided config questions with `suggested_config_path`, but that helper does not write config automatically
+- stored `scope_policy` applies only when the operator did not explicitly narrow the run; explicit `day` / `session` / `lookback` requests stay stronger than stored defaults
+- when no config file is loaded, the public analysis surface may expose advisory guided config questions with `suggested_config_path` and point the operator to `/memory-context-intelligence:init`
+- `/memory-context-intelligence:init` is the dedicated public setup/config surface that writes this user-scope file
 - config policy is **not** a fifth evidence class
 - it is **not** semantic authority
 - it is **not** promotion proof by itself
 - it must not persist selected-topic state that phase-010 still treats as structured fileless state
-- it must not hard-code machine-local paths as portable defaults; exact local paths stay runtime-discovered facts or explicit machine-scoped overrides only
+- the selected default path is intentionally user-scope under `~/.claude`; it is no longer a project-local portable default
 
 ## 3) What each source class is meant to prove
 

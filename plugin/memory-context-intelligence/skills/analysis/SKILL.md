@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.28
+version: 0.9.29
 ---
 
 # Memory Context Intelligence Analysis
@@ -30,8 +30,9 @@ Current implemented evidence model for this surface:
 - `governance_context` can come from checked RULES/design/changelog/TODO/phase/patch surfaces in scope
 - durable memory and governance context can strengthen a candidate, but they must not replace missing live trace proof
 - source mix should stay visible when durable memory or governance context materially shaped a candidate
-- the analysis path now also supports bounded config-policy loading: explicit `--config` or upward-discovered `memory-context-intelligence.config.json` may limit source classes, cap historical shards, and request same-day widening only for non-explicit runs
+- the analysis path now also supports bounded config-policy loading: explicit `--config` or the default user-scope config at `~/.claude/memory-context-intelligence.config.json` may limit source classes, cap historical shards, and request same-day widening only for non-explicit runs
 - when config policy narrows the run, `source_policy` should stay visible so the operator can see that the evidence scope was intentionally limited
+- `/memory-context-intelligence:init` is the setup companion surface for guided config creation/update when the operator wants question/choice dialogs instead of raw-arg setup
 
 Deferred / non-public command ideas in this wave:
 - `/memory-context-intelligence:review`
