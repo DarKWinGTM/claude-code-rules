@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.40 / P132 companion plugin READMEs and image guidance
+> **Status:** No active phase selected; latest released baseline is v10.41 / P133 Quick Start companion-plugin setup
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.40 / P132`.
+- None currently selected. Latest released baseline is `v10.41 / P133`.
 
 ### Most Recently Completed
+
+- **P133:** [phase-133-quickstart-companion-plugin-setup.md](phase-133-quickstart-companion-plugin-setup.md)
+  - Output: the root README now carries a Quick Start companion-plugin setup block that tells operators how to install `governed-docs` and `memory-context-intelligence` immediately after the runtime-rule install, while preserving the boundary that plugins still load separately from the active `.claude/rules/` payload.
+  - Gate: Quick Start companion-plugin setup integrity passed, plugin/runtime boundary integrity passed, `memory-context-intelligence` first-use flow integrity passed, touched README/TODO/phase/patch/changelog surfaces align to `v10.41 / P133`, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.41` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.41
+  - Patch: [../patch/quickstart-companion-plugin-setup.patch.md](../patch/quickstart-companion-plugin-setup.patch.md)
 
 - **P132:** [phase-132-companion-plugin-readmes-and-image-guidance.md](phase-132-companion-plugin-readmes-and-image-guidance.md)
   - Output: both requested plugin-local image assets now exist, both companion plugin READMEs have stronger orientation plus image references, and the root README now names the two companion plugins and what they help with while preserving the runtime/plugin boundary.

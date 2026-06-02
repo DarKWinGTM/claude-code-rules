@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.40</b><br><sub>P132 Released</sub>
+  <b>v10.41</b><br><sub>P133 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Companion Plugins</b><br><sub>Discoverable plugin docs</sub>
+  <b>Companion Plugins</b><br><sub>Quick setup in Quick Start</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.40 / P132` makes the two companion plugins easier to discover and use: `governed-docs` and `memory-context-intelligence` now have richer plugin READMEs with plugin-local image assets, and the root README now introduces both plugins clearly while preserving the boundary that they install separately from the active runtime rule payload.
+> **Current release note:** `v10.41 / P133` adds a Quick Start companion-plugin setup path to the root README so operators can install `governed-docs` and `memory-context-intelligence` immediately after the runtime-rule install while preserving the boundary that plugins still load separately from the active `.claude/rules/` payload.
 
 <!-- CTA Buttons -->
 <p>
@@ -133,6 +133,36 @@ Manual/helper path from a local clone:
 - Legacy cleanup checks old candidate filenames against this repo's git history; only exact historical blob matches are quarantined out of the active project-local runtime path.
 - Files already present in the target `.claude/rules/` directory but outside this repo's recorded install ownership or repo-history proof are preserved by default.
 - Governed design/changelog/TODO/phase/patch artifacts, inactive history/done surfaces, and `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates.
+- Companion plugins are now a recommended follow-up when you want the current full RULES toolchain, but they still install separately from the `.claude/rules/` runtime payload.
+
+### 🔌 Companion Plugin Quick Setup
+
+If you want the current full RULES toolchain, install the companion plugins right after the runtime-rule install.
+
+Portable placeholder:
+- `<rules-repo-root>` = your local `claude-code-rules` checkout
+
+Repo-local marketplace quick path:
+
+```text
+/plugin marketplace add <rules-repo-root>/plugin
+/plugin install governed-docs@darkwingtm
+/plugin install memory-context-intelligence@darkwingtm
+/reload-plugins
+```
+
+What this gives you:
+- `governed-docs` → governed document scan / repair-plan / release-gate support
+- `memory-context-intelligence` → historical workflow / RULES reflection support
+
+Boundary:
+- these plugins are **not** copied into `.claude/rules/`
+- they load separately from the local marketplace and keep their own command / slash surfaces
+- for plugin-specific verification, alternate marketplace layouts, and troubleshooting, use the plugin READMEs linked in [`Companion Plugins`](#-companion-plugins)
+
+Recommended first use after install:
+- `governed-docs` → open its README and run the explicit-target command flow that matches your workspace
+- `memory-context-intelligence` → run `/memory-context-intelligence:init`, then `/memory-context-intelligence:analysis`
 
 ### 🤖 AI-Assisted Install Prompt
 

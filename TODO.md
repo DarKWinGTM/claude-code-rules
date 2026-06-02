@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-02
-> **Current Release:** v10.40 / P132 companion plugin READMEs and image guidance
+> **Current Release:** v10.41 / P133 Quick Start companion-plugin setup
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P133 / v10.41 Quick Start companion-plugin setup was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: the root README now includes a Quick Start companion-plugin setup block immediately after the runtime-rule install notes; the block points operators to install `governed-docs` and `memory-context-intelligence` from the local marketplace, keeps plugin install separate from the `.claude/rules/` runtime payload, preserves `memory-context-intelligence` first use as `/memory-context-intelligence:init` followed by `/memory-context-intelligence:analysis`, and syncs touched README/TODO/phase/patch/changelog surfaces to one `v10.41 / P133` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.41` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.41
 
 - [x] P132 / v10.40 companion plugin READMEs and image guidance was completed, pushed, mirrored to the remote default branch, and released.
   - Verified: `plugin/governed-docs/img/GOD.png` and `plugin/memory-context-intelligence/img/MCI.png` now exist; both plugin READMEs include clearer top-level guidance plus image references; the root README now introduces the two companion plugins and their roles; touched README/TODO/phase/patch/changelog surfaces are aligned; plugin/runtime boundary wording stays intact; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.40` state.
