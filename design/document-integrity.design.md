@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -32,6 +32,8 @@ P104 refinement: this owner should now verify actual chain subject, selected par
 P105 refinement: this owner should now verify namespace-scope-based generic-parent selection and enforce one active parent model per chain so folder-scoped generic parents are allowed without reintroducing dual-parent ambiguity.
 
 P108 refinement: this owner should now absorb document-density, compact-thrash, God-line/God-file repair, and delegated governed-document repair doctrine that was previously duplicated inside worker-routing, while preserving preservation-first and no-delete semantics.
+
+P135 refinement: this owner should now allow a route-only plan file required by the selected governed `/goal` authoring contract when it will be referenced exactly from the emitted copied goal artifact, while still rejecting speculative checkpoint/work-summary files, duplicate authority artifacts, and version-suffixed plan copies.
 
 ---
 

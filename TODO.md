@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-02
-> **Current Release:** v10.42 / P134 copyable goal plan-reference hardening
+> **Last Updated:** 2026-06-03
+> **Current Release:** v10.43 / P135 governed goal auto-plan-file authoring
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P135 / v10.43 governed goal auto-plan-file authoring was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `document-integrity.md`, and the aligned presentation/communication owners now require actual governed `/goal` authoring with durable route support to write the route-only plan file before final goal emission; the final copied goal artifact carries the exact in-artifact `Plan reference`; the assistant no longer leaves save-plan or rerun-`/goal` loops as normal behavior when no real stop gate exists; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the plan file remains route-only support and not authority or completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.43 / P135` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.43` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.43
 
 - [x] P134 / v10.42 copyable goal plan-reference hardening was completed, pushed, mirrored to the remote default branch, and released.
   - Verified: `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now require any durable plan-backed governed `/goal` to keep `Plan reference` inside the same copied goal artifact; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the plan file remains route-only support and not authority or completion proof; the advisory `/goal` block template now keeps the plan pointer inside the same copied artifact; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.42 / P134` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.42` state.
@@ -218,7 +222,7 @@
 
 ### Active / In Progress
 
-- None currently selected. Latest released baseline is `v10.42 / P134`.
+- None currently selected. Latest released baseline is `v10.43 / P135`.
 
 ### Deferred / Not Selected
 

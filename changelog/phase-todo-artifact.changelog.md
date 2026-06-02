@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.22
+> **Current Version:** 1.23
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.23 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.22 | 2026-06-03 | **[Added P134 in-artifact plan-reference goal sourcing hardening](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-05-31 | **[Added P126 explicit nested phase grammar and alphanumeric legacy handling](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution-surface refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -35,6 +36,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-123"></a>
+## Version 1.23: Added P135 governed goal auto-plan-file authoring sequence hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.22 to v1.23.
+- Updated `design/phase-todo-artifact.design.md` from v1.22 to v1.23.
+- Required governed `/goal` authoring to write the route-only plan file before final emission when durable route support is needed.
+- Added no-save-plan / no-rerun-`/goal` guidance for the same governed authoring flow when no real stop gate exists.
+- Preserved `/plan` as overflow, explicit standalone planning, or later route revision only.
+
+### Summary
+`phase-todo-artifact.md` now keeps governed `/goal` sourcing and artifact behavior aligned with an auto-written route-only plan file instead of leaving persistence as an optional user-facing step.
 
 ---
 

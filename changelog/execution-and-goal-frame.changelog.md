@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.18
+> **Current Version:** 1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-03 | **[Added P134 copyable goal plan-reference hardening](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-29 | **[Added P124 pre-goal plan-backed goal-authoring refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -32,6 +33,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-119"></a>
+## Version 1.19: Added P135 governed goal auto-plan-file authoring sequence hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.18 to v1.19.
+- Updated `design/execution-and-goal-frame.design.md` from v1.18 to v1.19.
+- Required actual governed `/goal` authoring with durable route support to write the route-only plan file before final goal emission.
+- Required the final goal to use an exact in-artifact `Plan reference` only after the file write succeeds.
+- Added explicit no-save-plan / no-rerun-`/goal` behavior when no real stop gate exists.
+
+### Summary
+`execution-and-goal-frame.md` now hardens the actual governed `/goal` authoring sequence so route-only plan persistence happens before final goal emission instead of being treated as an optional follow-up step.
 
 ---
 

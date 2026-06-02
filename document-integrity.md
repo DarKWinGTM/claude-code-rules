@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.6
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -145,6 +145,7 @@ Named action modes for touched-scope repair remain:
 - **No junk docs:** do not create unnecessary summaries, duplicate plans, checkpoint/work-summary files, or version-suffixed copies such as `-v2`, `_final`, `_backup`, `_draft`, or `_old` unless the user explicitly requests them.
 - **Ask when unclear:** unclear artifact necessity is a question, not permission to create speculative files or silently skip a required governed startup artifact.
 - **Governed-startup exception:** required design/changelog/TODO/phase/patch startup artifacts from `artifact-initiation-control` may be created proactively and are not junk. Ambiguous startup need still requires asking; this exception applies only to required governed startup artifacts, not arbitrary summaries or duplicate docs; it does not authorize deletion of newly encountered files merely because they do not match the expected artifact set.
+- **Governed-goal route-plan exception:** a route-only plan file required by the selected governed `/goal` authoring contract is allowed when it will be referenced exactly from the emitted copyable goal artifact. This exception does not allow duplicate authority artifacts, speculative summaries/checkpoints, or version-suffixed plan copies, and it does not turn the plan file into objective authority.
 - **Shared-destination boundary:** destination/runtime files outside the current source-owned active runtime install set are not junk merely because they share a runtime directory; resolve owner/project scope before classification.
 - **Portable-artifact hygiene:** reusable helpers/support artifacts avoid machine-local defaults unless explicitly machine-scoped; broader portability defers to `portable-implementation-and-hardcoding-control.md`.
 - **No deletion by hygiene:** hygiene, cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition is never standalone deletion authority; removal needs stronger semantic authority plus the destructive-confirmation owner.
@@ -153,7 +154,7 @@ Named action modes for touched-scope repair remain:
 
 ## Allowed vs Not Allowed
 
-Allowed creation: functional code/config required for operation; documents explicitly requested by the user; required governed startup artifacts from `artifact-initiation-control`; intentionally short-lived temporary files in `/tmp`.
+Allowed creation: functional code/config required for operation; documents explicitly requested by the user; required governed startup artifacts from `artifact-initiation-control`; required route-only plan files created by the selected governed `/goal` authoring contract; intentionally short-lived temporary files in `/tmp`.
 
 Not allowed: version-suffixed copies (`-v2`, `_final`, `_draft`, `_backup`, `_old`); checkpoint/summary/plan/work-summary files not requested and not required by startup governance; duplicate authority artifacts when an existing file already serves the role; treating untracked/newly seen or shared-destination files as junk by cleanup instinct alone; using hygiene/cleanup/isolation/worktree/sandbox/runtime co-location rationale as deletion authority.
 

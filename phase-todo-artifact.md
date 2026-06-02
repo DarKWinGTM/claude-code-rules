@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.22
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.22
+> **Current Version:** 1.23
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.23
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -274,10 +274,12 @@ Required guidance:
 - preserve exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters where exactness matters, but do not treat the whole emitted command body as one exact literal
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
 - when advisory `/goal` creation for governed non-trivial or route-heavy work would benefit from route synthesis, it may conditionally run an internal planning / plan-mode-style pass before final goal emission
-- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and optional plan-file reference synthesis while remaining internal-only and subordinate to leader-owned normalization
+- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and helper-side route preparation while remaining internal-only and subordinate to leader-owned normalization
+- for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must write the route-only plan file before final goal emission and keep that write inside the same governed authoring flow
 - simple or already direct goals should still emit `/goal` directly without forcing planning for every request
-- when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries an in-artifact `Plan reference: <exact path>` slot; surrounding explanation may repeat or explain the reference, but the plan file must remain route-only and must not become objective authority
+- when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries an in-artifact `Plan reference: <exact path>` slot that points to a successfully written route-only plan file; surrounding explanation may repeat or explain the reference, but the plan file must remain route-only and must not become objective authority
 - when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape compact route support such as `Plan draft`, verification/testing route, or a plan reference inside that same copied goal artifact; adjacent route support remains allowed only when it is not the sole durable plan pointer and remains subordinate to the goal without creating a new public route owner
+- do not ask the user whether to save the plan and do not ask them to invoke `/goal` again when the governed authoring flow already has sufficient route basis and no real stop gate exists
 - do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command
 

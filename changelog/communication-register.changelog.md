@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-06-03 | **[Added P135 no-save-loop goal register refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-30 | **[Added P125 integrated goal-with-planning register refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-29 | **[Added P124 plan-backed goal register refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-28 | **[Added P123 helper-aware goal register refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -28,6 +29,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-116"></a>
+## Version 1.16: Added P135 no-save-loop goal register refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.15 to v1.16.
+- Updated `design/communication-register.design.md` from v1.15 to v1.16.
+- Added register guidance so actual governed `/goal` authoring talks about the route-only plan as already-written support instead of a courtesy save offer.
+- Added guidance that the assistant should avoid rerun-`/goal` loops when the same authoring flow can finish directly.
+- Preserved compact, subordinate route support wording and `/plan` overflow-only behavior.
+
+### Summary
+`communication-register.md` now keeps governed goal-authoring language high-signal and direct by treating plan persistence as an internal completion step rather than a second user interaction loop.
 
 ---
 

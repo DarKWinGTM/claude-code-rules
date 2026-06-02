@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-06-03 | **[Added P135 governed goal route-plan file-hygiene carve-out](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-18 | **[Added P108 document-density and repair-owner uptake](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-17 | **[Added P105 folder-scoped generic-parent integrity refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P104 naming and dual-parent integrity refinement](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -18,6 +19,23 @@
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-17"></a>
+## Version 1.7: Added P135 governed goal route-plan file-hygiene carve-out
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-integrity.md` from v1.6 to v1.7.
+- Updated `design/document-integrity.design.md` from v1.6 to v1.7.
+- Added a narrow file-hygiene exception for route-only plan files required by the selected governed `/goal` authoring contract.
+- Preserved the ban on speculative summaries/checkpoints, duplicate authority artifacts, and version-suffixed plan copies.
+
+### Summary
+`document-integrity.md` now allows the exact route-only plan artifact that governed `/goal` authoring needs without reopening junk-plan creation behavior.
 
 ---
 

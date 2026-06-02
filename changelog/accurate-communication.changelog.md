@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.36
+> **Current Version:** 2.37
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.37 | 2026-06-03 | **[Added P135 governed goal auto-plan-file wording refinement](#version-237)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.36 | 2026-05-29 | **[Added P124 pre-goal planning-pass wording refinement](#version-236)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.35 | 2026-05-28 | **[Added P123 internal helper wording refinement](#version-235)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.34 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface wording refinement](#version-234)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -78,6 +79,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-237"></a>
+## Version 2.37: Added P135 governed goal auto-plan-file wording refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.36 to v2.37.
+- Updated `design/accurate-communication.design.md` from v2.36 to v2.37.
+- Added wording guidance so required governed plan persistence is not phrased as a user choice.
+- Added claim-strength guidance that `Plan reference` implies the route-only plan file was actually written, or else the assistant must report a blocker.
+- Preserved route-only, non-authority, and non-completion-proof wording for plan files and helper output.
+
+### Summary
+`accurate-communication.md` now keeps plan-backed governed `/goal` wording honest about whether the route-only plan file actually exists and prevents save/rerun loops from being phrased like user-owned choices.
 
 ---
 

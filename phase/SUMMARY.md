@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.42 / P134 copyable goal plan-reference hardening
+> **Status:** No active phase selected; latest released baseline is v10.43 / P135 governed goal auto-plan-file authoring
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.42 / P134`.
+- None currently selected. Latest released baseline is `v10.43 / P135`.
 
 ### Most Recently Completed
+
+- **P135:** [phase-135-governed-goal-auto-plan-file-authoring.md](phase-135-governed-goal-auto-plan-file-authoring.md)
+  - Output: governed `/goal` authoring now writes the route-only plan file first for non-trivial governed goals that need durable route support, then emits the final copied goal artifact with exact in-artifact `Plan reference`, while `/goal` remains the objective owner and the plan file remains route-only support.
+  - Gate: auto-plan-file authoring integrity passed, no-save-plan-loop integrity passed, no-rerun-`/goal` loop integrity passed, `/goal` objective-ownership integrity passed, route-only plan-support integrity passed, touched design/changelog/README/TODO/phase/patch surfaces align to `v10.43 / P135`, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.43` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.43
+  - Patch: [../patch/governed-goal-auto-plan-file-authoring.patch.md](../patch/governed-goal-auto-plan-file-authoring.patch.md)
 
 - **P134:** [phase-134-copyable-goal-plan-reference-hardening.md](phase-134-copyable-goal-plan-reference-hardening.md)
   - Output: governed `/goal` doctrine now requires any durable plan-backed route to keep `Plan reference` inside the same copied goal artifact, while `/goal` remains the objective owner and the plan file remains route-only support.
@@ -292,22 +298,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current promoted baseline after P134 closeout:
-- released baseline is `v10.42 / P134`
-- README current-state sections now expose the copyable-goal plan-reference hardening as the current release posture for governed `/goal`
+Current promoted baseline after P135 closeout:
+- released baseline is `v10.43 / P135`
+- README current-state sections now expose governed goal auto-plan-file authoring as the current release posture for governed `/goal`
 - active doctrine keeps `/goal` as semantic/objective authority for outcome, proof/checks, scope, and hard guardrails while the referenced plan file stays route-only support
-- `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now agree that any durable plan-backed governed `/goal` must keep `Plan reference` inside the same copied goal artifact rather than only in surrounding explanation or adjacent support
+- `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `document-integrity.md`, `explanation-and-presentation.md`, `accurate-communication.md`, and `communication-register.md` now agree that actual governed `/goal` authoring writes the route-only plan file before final goal emission when the durable-route trigger holds, keeps the exact `Plan reference` inside the same copied goal artifact, and rejects save-plan / rerun-`/goal` loops when no real stop gate exists
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - `git diff --check` passed with no whitespace errors
-- local source release state, remote `master`, and tag `v10.42` resolve to the same promoted commit lineage
-- GitHub release `v10.42` was verified on the promoted state after default-branch reconciliation
+- local source release state, remote `master`, and tag `v10.43` resolve to the same promoted commit lineage
+- GitHub release `v10.43` was verified on the promoted state after default-branch reconciliation
 
 ---
 
 ## Rollback / Containment
 
-If P134 is reversed after release:
-- revert the touched copyable goal plan-reference hardening edits as one governed rollback release
+If P135 is reversed after release:
+- revert the touched governed goal auto-plan-file authoring edits as one governed rollback release
 - restore the immediately previous released baseline as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
