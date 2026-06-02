@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.38 / P130 always-on plan-file-backed goal model
+> **Status:** No active phase selected; latest released baseline is v10.39 / P131 required RULES diagram infrastructure doctrine
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.38 / P130`.
+- None currently selected. Latest released baseline is `v10.39 / P131`.
 
 ### Most Recently Completed
+
+- **P131:** [phase-131-rules-diagram-infrastructure-doctrine.md](phase-131-rules-diagram-infrastructure-doctrine.md)
+  - Output: `diagram/` is now required governed-docs infrastructure for RULES, governed diagram authority stays under `diagram/` only, `diagram/STRUCTURE.md` is the mandatory compact active whole-project diagram-side entrypoint, `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping, and future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup authority.
+  - Gate: required diagram-infrastructure integrity passed, diagram-authority-scope integrity passed, `diagram/STRUCTURE.md` ownership/navigation integrity passed, design-vs-diagram authority integrity passed, preservation-not-cleanup integrity passed, touched README/design/changelog/TODO/phase/patch surfaces align to `v10.39 / P131`, runtime install/update verification plus checked parity/body sufficiency passed, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.39` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.39
+  - Patch: [../patch/rules-diagram-infrastructure-doctrine.patch.md](../patch/rules-diagram-infrastructure-doctrine.patch.md)
 
 - **P130:** [phase-130-always-on-plan-file-backed-goal-model.md](phase-130-always-on-plan-file-backed-goal-model.md)
   - Output: any actual governed `/goal` creation now prepares a full detailed plan file before final goal emission, emitted governed `/goal` output now references that route file through `Plan reference`, `/goal` remains the objective owner, the referenced plan file remains route-only support, and visible `/plan` remains explicit standalone planning, later route revision, or overflow only.

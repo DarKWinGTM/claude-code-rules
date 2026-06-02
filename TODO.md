@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-02
-> **Current Release:** v10.38 / P130 always-on plan-file-backed goal model
+> **Current Release:** v10.39 / P131 required RULES diagram infrastructure doctrine
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P131 / v10.39 RULES diagram infrastructure doctrine was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: `diagram/` is now required governed-docs infrastructure for RULES; governed diagram authority stays under `diagram/` only; `diagram/STRUCTURE.md` is now the mandatory compact active whole-project diagram-side entrypoint; `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping; `design/**` remains semantic authority if text and diagram differ; future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup authority; touched README/design/changelog/TODO/phase/patch surfaces are aligned; runtime install/update verification passed for the touched active runtime owners; parity/body sufficiency in checked scope passed; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.39` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.39
 
 - [x] P130 / v10.38 always-on plan-file-backed goal model was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: any actual governed `/goal` creation now prepares a full detailed plan file before final goal emission; emitted governed `/goal` output now references that route file through `Plan reference`; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the referenced plan file remains route-only support and not objective authority or completion proof; visible `/plan` remains explicit standalone planning, later route revision, or overflow only; touched README/design/changelog/TODO/phase/patch surfaces are aligned; runtime install/update verification passed with 18 active source/runtime rule files plus manifest; source/destination body sufficiency and targeted parity for touched runtime owners passed; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.38` state.

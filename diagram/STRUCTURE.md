@@ -1,9 +1,9 @@
 # RULES Diagram Structure
 
-> **Status:** Active whole-project visual structure surface / Released
-> **Current Doctrine Basis:** [../docs/superpowers/specs/2026-06-01-rules-diagram-companion-pattern-design.md](../docs/superpowers/specs/2026-06-01-rules-diagram-companion-pattern-design.md)
+> **Status:** Active whole-project visual structure surface / Current P131 doctrine basis
+> **Current Doctrine Basis:** [../docs/superpowers/specs/2026-06-02-rules-diagram-infrastructure-doctrine.md](../docs/superpowers/specs/2026-06-02-rules-diagram-infrastructure-doctrine.md)
 > **Design Alignment:** [../design/document-governance.design.md](../design/document-governance.design.md)
-> **Current Release:** v10.37 / P129
+> **Current Doctrine State:** P131 diagram infrastructure refinement
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -19,6 +19,28 @@ This surface should let a reader understand:
 - which surfaces are active authority versus support-only
 - how runtime rules, design, diagram, changelog, TODO, phase, patch, docs, playground, and plugin areas relate
 - which later subject diagrams are zoom-in / decomposition views of the global structure instead of disconnected one-off pictures
+
+In the selected infrastructure model, this file also acts as:
+- the whole-project concept map
+- the source/code/folder/directory topology map
+- the diagram-to-diagram relationship map
+- the reader-routing entrypoint for deeper diagram files
+- the boundary ledger showing what diagram owns versus what design, changelog, TODO, phase, and patch own
+
+---
+
+## Infrastructure role
+
+This file should not be treated as a generic visual landing page only.
+
+Its required job is to hold the whole-project structure view at the level of:
+- main project concepts
+- repo/source layout mapping
+- diagram-to-diagram routing
+- authority/boundary explanation
+
+It does **not** need to inline the full content of every child diagram.
+It **does** need to say which diagram covers which area and how those diagrams relate.
 
 ---
 
@@ -56,7 +78,7 @@ flowchart TB
     ProjectDocsDesign["design/project-documentation-standards.design.md"]
     ExplainDesign["design/explanation-and-presentation.design.md"]
     FlowNoFrameDesign["design/flow-diagram-no-frame.design.md"]
-    DiagramSpec["docs/superpowers/specs/2026-06-01-rules-diagram-companion-pattern-design.md<br/>Detailed diagram doctrine spec"]
+    DiagramSpec["docs/superpowers/specs/2026-06-02-rules-diagram-infrastructure-doctrine.md<br/>Diagram infrastructure doctrine spec"]
   end
 
   subgraph Diagram[Governed Diagram Lane]
@@ -166,11 +188,15 @@ What is **not** enough reason to split:
 
 ---
 
-## Current released posture
+## Current doctrine posture
 
-Current released posture in v10.37 / P129:
-- governed `diagram/` source is mandatory Kroki-compatible
-- all allowed breadth is defined as Kroki-compatible + governance-suitable
-- `diagram/STRUCTURE.md` is the bodyful top-level whole-project detailed visual structure authority
-- subject diagrams are governed zoom-in / decomposition views under the global structure
+Current P131 diagram infrastructure posture:
+- `diagram/` is required governed-docs infrastructure for RULES
+- all governed diagram authority stays under `diagram/`
+- governed `diagram/` source remains mandatory Kroki-compatible and governance-suitable
+- `diagram/STRUCTURE.md` is mandatory as the compact active whole-project diagram-side entrypoint
+- `diagram/STRUCTURE.md` owns whole-project concept mapping, source/folder/topology mapping, authority-boundary explanation, and diagram-to-diagram navigation
+- subject diagrams remain governed zoom-in / decomposition views under the global structure
+- `design/**` remains semantic authority if text and diagram differ
 - inline answer/status/phase-local text diagrams remain outside governed source truth unless explicitly promoted into `diagram/`
+- if the diagram family later rolls over, `diagram/history/` and `diagram/done/` act as preservation infrastructure rather than cleanup

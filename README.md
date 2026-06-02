@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.38</b><br><sub>P130 Released</sub>
+  <b>v10.39</b><br><sub>P131 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Goal Surface</b><br><sub>Plan reference by default</sub>
+  <b>Diagram Infrastructure</b><br><sub>Required governed diagram lane</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.38 / P130` makes actual governed `/goal` creation plan-first by default: assistant prepares a full detailed plan file before final goal emission, emits a compact `/goal` that references that route file through `Plan reference`, keeps `/goal` as the objective owner, keeps the plan file as route-only support, and keeps visible `/plan` out of the ordinary paired next-surface role.
+> **Current release note:** `v10.39 / P131` makes diagram docs required governed-docs infrastructure for RULES: governed diagram authority now stays under `diagram/` only, `diagram/STRUCTURE.md` is the mandatory compact active whole-project diagram-side entrypoint, `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping, `design/**` remains semantic authority, and future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup.
 
 <!-- CTA Buttons -->
 <p>

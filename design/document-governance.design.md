@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -44,6 +44,8 @@ P127 refinement: this owner should now keep README capability/current-state pres
 P128 refinement: this owner should now recognize `diagram/` as a dedicated governed visual lane, require `diagram/STRUCTURE.md` as the top-level visual anchor when the lane is opened, keep `diagram/<subject>.design.md` as the default integrated subject body, and reject automatic diagram splits that merely mirror design-shard structure.
 
 P129 refinement: this owner should now make governed `diagram/` source mandatory Kroki-compatible, define allowed breadth as all formats that are both Kroki-compatible and governance-suitable, keep inline answer/phase-local text diagrams outside governed source truth unless explicitly promoted, and elevate `diagram/STRUCTURE.md` from a generic anchor into a bodyful whole-project detailed visual structure authority.
+
+P131 refinement: this owner should now treat `diagram/` as required governed-docs infrastructure for RULES, require `diagram/STRUCTURE.md` as the compact active diagram-side entrypoint, define `STRUCTURE.md` as the whole-project concept / folder-topology / authority-boundary / diagram-navigation map, require all governed diagram authority to stay under `diagram/`, and generalize the NodeClaw-style active-parent + `history/` + `done/` preservation model into diagram infrastructure without promoting diagram docs above design authority.
 
 ---
 

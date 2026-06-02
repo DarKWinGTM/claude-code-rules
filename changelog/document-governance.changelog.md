@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-06-02 | **[Added P131 diagram infrastructure doctrine](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-06-02 | **[Added P129 mandatory Kroki-compatible diagram governance](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-06-01 | **[Added P128 governed diagram lane role model](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-31 | **[Added P127 README front-page capability framing refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -25,6 +26,26 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-113"></a>
+## Version 1.13: Added P131 diagram infrastructure doctrine
+
+**Date:** 2026-06-02
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.12 to v1.13.
+- Updated `design/document-governance.design.md` from v1.12 to v1.13.
+- Made `diagram/` required governed-docs infrastructure for RULES instead of a conditional lane.
+- Required `diagram/STRUCTURE.md` as the compact active diagram-side entrypoint.
+- Clarified that `diagram/STRUCTURE.md` owns whole-project concept mapping, source/folder topology mapping, authority-boundary mapping, and diagram navigation.
+- Clarified that all governed diagram authority stays under `diagram/` and remains subordinate to design semantics.
+- Added NodeClaw-style `history/` / `done/` preservation doctrine for future diagram infrastructure rollover.
+
+### Summary
+`document-governance.md` now treats `diagram/` as required RULES infrastructure and strengthens `diagram/STRUCTURE.md` into the mandatory diagram-side project map and navigation surface while preserving design authority over semantics.
 
 ---
 
