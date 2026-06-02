@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.39</b><br><sub>P131 Released</sub>
+  <b>v10.40</b><br><sub>P132 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Diagram Infrastructure</b><br><sub>Required governed diagram lane</sub>
+  <b>Companion Plugins</b><br><sub>Discoverable plugin docs</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.39 / P131` makes diagram docs required governed-docs infrastructure for RULES: governed diagram authority now stays under `diagram/` only, `diagram/STRUCTURE.md` is the mandatory compact active whole-project diagram-side entrypoint, `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping, `design/**` remains semantic authority, and future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup.
+> **Current release note:** `v10.40 / P132` makes the two companion plugins easier to discover and use: `governed-docs` and `memory-context-intelligence` now have richer plugin READMEs with plugin-local image assets, and the root README now introduces both plugins clearly while preserving the boundary that they install separately from the active runtime rule payload.
 
 <!-- CTA Buttons -->
 <p>
@@ -58,6 +58,7 @@
 - [✨ Features](#-features)
 - [📁 Rule Files](#-rule-files)
 - [📦 Installation](#-installation)
+- [🔌 Companion Plugins](#-companion-plugins)
 - [📂 Design Documentation Structure](#-design-documentation-structure)
 - [🧪 Playground](#-playground)
 - [🔗 Integration Guide](#-integration-guide)
@@ -323,6 +324,32 @@ ls "$HOME/.claude/rules/phase-todo-artifact.md"
 ls "$HOME/.claude/rules/document-governance.md"
 ls "$HOME/.claude/rules/worker-routing-and-context.md"
 ```
+
+---
+
+## 🔌 Companion Plugins
+
+This repo also carries local marketplace plugins that sit **beside** the 18 active runtime rules.
+
+พูดง่าย ๆ คือ runtime rules ยังเป็นแกนหลักของพฤติกรรม Claude Code ใน `.claude/rules/` ส่วน plugin พวกนี้เป็นเครื่องมือเสริมที่ช่วยงานเฉพาะด้านและติดตั้งแยกจาก `plugin/` ตามความต้องการ
+
+Current companion plugins worth knowing:
+
+- **`governed-docs`** — maintenance companion for governed document families
+  - scans repo-governed docs against RULES doctrine
+  - generates repair-plan / release-gate style review output
+  - provides an index-backed preview flow for governed document navigation
+  - README: [`plugin/governed-docs/README.md`](plugin/governed-docs/README.md)
+
+- **`memory-context-intelligence`** — evidence-first workflow reflection companion
+  - reads bounded historical work evidence and surfaces candidate workflow / RULES improvement topics
+  - keeps `trace_evidence` as the live anchor while still using memory/governance context carefully
+  - provides a guided init flow plus the analysis surface for historical-first review
+  - README: [`plugin/memory-context-intelligence/README.md`](plugin/memory-context-intelligence/README.md)
+
+Boundary:
+- these plugins are **not** part of the active 18-rule runtime payload copied into `.claude/rules/`
+- they are companion tools you install separately from the local plugin marketplace under `plugin/`
 
 ---
 

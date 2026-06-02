@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-02
-> **Current Release:** v10.39 / P131 required RULES diagram infrastructure doctrine
+> **Current Release:** v10.40 / P132 companion plugin READMEs and image guidance
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P132 / v10.40 companion plugin READMEs and image guidance was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: `plugin/governed-docs/img/GOD.png` and `plugin/memory-context-intelligence/img/MCI.png` now exist; both plugin READMEs include clearer top-level guidance plus image references; the root README now introduces the two companion plugins and their roles; touched README/TODO/phase/patch/changelog surfaces are aligned; plugin/runtime boundary wording stays intact; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.40` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.40
 
 - [x] P131 / v10.39 RULES diagram infrastructure doctrine was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: `diagram/` is now required governed-docs infrastructure for RULES; governed diagram authority stays under `diagram/` only; `diagram/STRUCTURE.md` is now the mandatory compact active whole-project diagram-side entrypoint; `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping; `design/**` remains semantic authority if text and diagram differ; future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup authority; touched README/design/changelog/TODO/phase/patch surfaces are aligned; runtime install/update verification passed for the touched active runtime owners; parity/body sufficiency in checked scope passed; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.39` state.

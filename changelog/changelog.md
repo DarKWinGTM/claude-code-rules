@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.39
+> **Current Version:** 10.40
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.40 | 2026-06-02 | **[Released companion plugin READMEs and image guidance](changelog/v10.40-released-companion-plugin-readmes-and-image-guidance.changelog.md#version-1040)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.39 | 2026-06-02 | **[Released RULES diagram infrastructure doctrine](changelog/v10.39-released-rules-diagram-infrastructure-doctrine.changelog.md#version-1039)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.38 | 2026-06-02 | **[Released always-on plan-file-backed goal model](changelog/v10.38-added-always-on-plan-file-backed-goal-model.changelog.md#version-1038)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.37 | 2026-06-02 | **[Released mandatory Kroki-compatible governed diagram doctrine](changelog/v10.37-released-mandatory-kroki-compatible-governed-diagram-doctrine.changelog.md#version-1037)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

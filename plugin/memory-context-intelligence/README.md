@@ -1,8 +1,8 @@
 # memory-context-intelligence
 
-> **Status:** Plugin-scoped split-contract release closeout completed in checked scope for `/memory-context-intelligence:analysis`; `review` and `packet` remain deferred, packet/additional emission stays one-topic-per-artifact, and future development remains open
-> **Current Version:** 0.1.76
-> **Plugin Package Version:** 0.9.28
+> **Status:** Plugin-scoped init-configuration surface completed in checked scope; `/memory-context-intelligence:init` now owns guided setup, `/memory-context-intelligence:analysis` remains the review surface, `review` and `packet` remain deferred, and packet/additional emission stays one-topic-per-artifact
+> **Current Version:** 0.1.77
+> **Plugin Package Version:** 0.9.29
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
 
 ---
@@ -16,8 +16,15 @@ In plain terms, this plugin is not for writing product features directly. It is 
 - Is there a RULES gap that should be turned into a proposal?
 - Which governance or workflow topic should we investigate first to improve the next wave of work?
 
-Current checked public surface:
+<p align="center">
+  <img src="img/MCI.png" alt="Memory Context Intelligence visual" width="520">
+</p>
+
+> ภาพนี้เป็น visual identity ของ plugin ตัวนี้ — มันสื่อแนวคิดหลักของ plugin ว่าใช้ memory + context + evidence เพื่อช่วย review pattern การทำงาน ไม่ใช่เพื่อกระโดดไปแก้ product code ตรง ๆ
+
+Current checked public surfaces:
 - `/memory-context-intelligence:analysis`
+- `/memory-context-intelligence:init`
 
 Current checked behavior that matters:
 - the default mode is **historical-first analysis**, not current-session-only summary
@@ -26,7 +33,25 @@ Current checked behavior that matters:
 - when adaptive deep-analysis marks a top topic as requiring deeper review, the checked current skill contract now requires one **bounded read-only deepening pass** before the first response instead of silently skipping it
 - that deepening can use read-only subagent help plus optional web/external research support, but it still stays advisory-only and cannot replace local trace proof
 - if several advisory topics are deepened or compared, any later packet-derived or additional-stage output must still keep **one selected topic per artifact** and must **split into separate per-topic artifacts** instead of emitting a combined file
-- if no config file is loaded, the plugin can show a **guided config helper** instead of expecting raw arguments as the normal UX
+- if no config file is loaded, the plugin can show a **guided config helper** and point the operator to `/memory-context-intelligence:init` instead of expecting raw arguments as the normal UX
+- the default config target is now the user-scope file `~/.claude/memory-context-intelligence.config.json`
+
+---
+
+## At a glance
+
+Use this plugin when you want an **evidence-first reflection tool** that can:
+- scan historical work traces for repeated workflow/RULES issues
+- surface candidate topics before you decide what to improve next
+- keep trace evidence as the live anchor while still benefiting from recall, durable memory, and governance context
+- offer a guided setup path so the normal UX does not depend on raw config arguments
+
+This plugin is especially useful after a work stretch when you want to understand:
+- what keeps repeating
+- what should become a proposal next
+- which issue is worth investigating first
+
+---
 
 ## When to use it
 
@@ -40,6 +65,8 @@ This is **not** the right tool when you want to:
 - jump straight into fixing product code without caring about trace history
 - treat bare `/analysis` as the public command
 - rely on the plugin to auto-run in the background through hooks or monitors
+
+---
 
 ## Install and load this plugin
 
@@ -96,19 +123,33 @@ If you want a different scope:
 
 The simplest verification path is:
 - open `/plugin` and confirm the plugin is installed and enabled
-- then call the slash surface below
+- then call the slash surfaces below
 
-## First use: start with `/memory-context-intelligence:analysis`
+---
 
-### Minimal first run
+## First use workflow
 
-Inside the Claude Code session you want to analyze, run:
+### Step 1 — guided setup
+
+Inside the Claude Code session, run the setup surface first:
+
+```text
+/memory-context-intelligence:init
+```
+
+That flow should use question/choice dialogs, default to `Comprehensive default (Recommended)`, and write:
+
+```text
+~/.claude/memory-context-intelligence.config.json
+```
+
+### Step 2 — run the analysis surface
+
+After setup, your normal review command remains:
 
 ```text
 /memory-context-intelligence:analysis
 ```
-
-This is the current checked public entrypoint and should be your normal starting point.
 
 ### What you should expect
 
@@ -128,32 +169,44 @@ At the end of the output, you should also see `Next action options`, such as:
 
 ### If no config file is loaded
 
-If the current run does not load `memory-context-intelligence.config.json`, you should see a **Config helper** that asks operator-facing questions such as:
-- should the default scope stay historical-first or narrow down
+If the current run does not load `~/.claude/memory-context-intelligence.config.json`, you should see a **Config helper** that points you toward `/memory-context-intelligence:init` and asks operator-facing questions such as:
+- should the default scope stay broad historical-first or narrow down
 - which source classes should stay enabled
 - whether same-day widening should be allowed
-- whether the next config choice should be saved as a project default or used once
+- whether the next config choice should be written now
 
 Important boundary:
-- the helper is **advisory only**
-- the plugin does **not** auto-write config files for you
-- it helps you choose a source policy, then you decide whether to create the file yourself
+- the helper is still **advisory only** inside `/memory-context-intelligence:analysis`
+- the dedicated write path now belongs to `/memory-context-intelligence:init`
+- `/memory-context-intelligence:analysis` remains the review surface
 
-## Optional config file
+---
 
-If you want explicit source-policy control, create a file named:
+## Default config file
+
+The default config target is now:
 
 ```text
-memory-context-intelligence.config.json
+~/.claude/memory-context-intelligence.config.json
 ```
 
-The runtime looks for this file through **upward discovery** from the current working directory.
+The preferred way to create/update it is:
+
+```text
+/memory-context-intelligence:init
+```
 
 Example shape:
 
 ```json
 {
   "analysis": {
+    "scope_policy": {
+      "default_scope_mode": "historical-comprehensive",
+      "scope_day_shard": null,
+      "scope_session_id": null,
+      "scope_lookback_minutes": null
+    },
     "source_policy": {
       "enabled_source_classes": [
         "trace_evidence",
@@ -161,7 +214,7 @@ Example shape:
         "durable_memory_context",
         "governance_context"
       ],
-      "max_historical_shards": 5,
+      "max_historical_shards": 10,
       "allow_same_day_widening": true
     }
   }
@@ -169,20 +222,29 @@ Example shape:
 ```
 
 Current checked keys:
+- `default_scope_mode`
+- `scope_day_shard`
+- `scope_session_id`
+- `scope_lookback_minutes`
 - `enabled_source_classes`
 - `max_historical_shards`
 - `allow_same_day_widening`
 
 Important behavior:
-- this config file is a **late-bound source policy** only
+- this config file is a late-bound analysis default, not semantic authority
+- `scope_policy` defines the stored default scope, but explicit runtime narrowing still wins
+- `source_policy` stays bounded to source classes, shard cap, and same-day widening
 - it does not create a fifth evidence class
 - it does not weaken the role of `trace_evidence` as the live promotion anchor
 - if you disable `trace_evidence` or leave only context-only sources in scope, the result must not be overclaimed as a promotable live candidate
 
+---
+
 ## Boundaries you should know
 
 Current checked boundaries for this plugin:
-- the only proved public surface is `/memory-context-intelligence:analysis`
+- the proved public analysis surface is `/memory-context-intelligence:analysis`
+- the setup/configuration surface is `/memory-context-intelligence:init`
 - bare `/analysis` is **not** current proved runtime behavior
 - `/memory-context-intelligence:review` and `/memory-context-intelligence:packet` are still deferred
 - `bin/memory-context-intelligence` is an internal implementation adapter, not the main user workflow
@@ -190,7 +252,9 @@ Current checked boundaries for this plugin:
 - plugin-managed auto-flow is not currently claimed as proved behavior
 - this README does not claim external marketplace publication or broad production readiness
 
-In plain terms: after installation, you should expect an **analysis command that you run when you want a workflow-pattern review**, not a plugin that silently runs itself all the time.
+In plain terms: after installation, you should expect an **analysis command that you run when you want a workflow-pattern review**, plus a dedicated init/setup surface — not a plugin that silently runs itself all the time.
+
+---
 
 ## Troubleshooting
 
@@ -235,6 +299,8 @@ If you see it:
 
 This is only a temporary diagnostic safeguard. It does **not** mean long-lived session mismatch is considered normal behavior.
 
+---
+
 ## Advanced notes
 
 ### Evidence model at a glance
@@ -273,12 +339,18 @@ A better mental model is:
 - `RULES / governance topic suggester`
 - `evidence-first reflection tool`
 
+---
+
 ## Current truth summary
 
-If you want the shortest version, remember these 4 steps:
+If you want the shortest version, remember these 5 steps:
 1. add the local marketplace from `<template-root>`
 2. install `memory-context-intelligence@darkwingtm`
 3. run `/reload-plugins`
-4. start with `/memory-context-intelligence:analysis`
+4. run `/memory-context-intelligence:init`
+5. use `/memory-context-intelligence:analysis`
 
-If your first run does not load a config file yet, that is fine — the plugin should guide you with the config helper instead of forcing raw arguments as the normal starting UX.
+Image asset used by this README:
+- [`img/MCI.png`](img/MCI.png)
+
+If your first run does not load a config file yet, that is fine — the plugin should guide you with the config helper and `/memory-context-intelligence:init` instead of forcing raw arguments as the normal starting UX.

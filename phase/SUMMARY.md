@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.39 / P131 required RULES diagram infrastructure doctrine
+> **Status:** No active phase selected; latest released baseline is v10.40 / P132 companion plugin READMEs and image guidance
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.39 / P131`.
+- None currently selected. Latest released baseline is `v10.40 / P132`.
 
 ### Most Recently Completed
+
+- **P132:** [phase-132-companion-plugin-readmes-and-image-guidance.md](phase-132-companion-plugin-readmes-and-image-guidance.md)
+  - Output: both requested plugin-local image assets now exist, both companion plugin READMEs have stronger orientation plus image references, and the root README now names the two companion plugins and what they help with while preserving the runtime/plugin boundary.
+  - Gate: plugin-image-placement integrity passed, governed-docs README guidance/image integrity passed, memory-context-intelligence README guidance/image integrity passed, root README companion-plugin discovery integrity passed, touched README/TODO/phase/patch/changelog surfaces align to `v10.40 / P132`, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.40` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.40
+  - Patch: [../patch/companion-plugin-readmes-and-image-guidance.patch.md](../patch/companion-plugin-readmes-and-image-guidance.patch.md)
 
 - **P131:** [phase-131-rules-diagram-infrastructure-doctrine.md](phase-131-rules-diagram-infrastructure-doctrine.md)
   - Output: `diagram/` is now required governed-docs infrastructure for RULES, governed diagram authority stays under `diagram/` only, `diagram/STRUCTURE.md` is the mandatory compact active whole-project diagram-side entrypoint, `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping, and future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup authority.
