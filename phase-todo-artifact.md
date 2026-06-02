@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.23
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.23
+> **Current Version:** 1.24
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -276,9 +276,10 @@ Required guidance:
 - when advisory `/goal` creation for governed non-trivial or route-heavy work would benefit from route synthesis, it may conditionally run an internal planning / plan-mode-style pass before final goal emission
 - that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and helper-side route preparation while remaining internal-only and subordinate to leader-owned normalization
 - for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must write the route-only plan file before final goal emission and keep that write inside the same governed authoring flow
+- when that copied goal artifact carries a durable `Plan reference`, the artifact must show `/goal` first and place `Plan reference:` after the command inside the same copied artifact rather than above it as a detachable preface
 - simple or already direct goals should still emit `/goal` directly without forcing planning for every request
 - when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries an in-artifact `Plan reference: <exact path>` slot that points to a successfully written route-only plan file; surrounding explanation may repeat or explain the reference, but the plan file must remain route-only and must not become objective authority
-- when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape compact route support such as `Plan draft`, verification/testing route, or a plan reference inside that same copied goal artifact; adjacent route support remains allowed only when it is not the sole durable plan pointer and remains subordinate to the goal without creating a new public route owner
+- when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape compact route support such as `Plan draft`, verification/testing route, or a plan reference inside that same copied goal artifact; when the route support is durable the copied artifact must present `/goal` first and `Plan reference:` after it, while adjacent route support remains allowed only when it is not the sole durable plan pointer and remains subordinate to the goal without creating a new public route owner
 - do not ask the user whether to save the plan and do not ask them to invoke `/goal` again when the governed authoring flow already has sufficient route basis and no real stop gate exists
 - do not pull heavy governed-surface context into trivial non-governed next steps
 - if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command

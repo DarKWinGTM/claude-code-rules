@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.43
+> **Current Version:** 10.44
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.44 | 2026-06-03 | **[Released goal-first Plan reference ordering](changelog/v10.44-released-goal-first-plan-reference-ordering.changelog.md#version-1044)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.43 | 2026-06-03 | **[Released governed goal auto-plan-file authoring](changelog/v10.43-released-governed-goal-auto-plan-file-authoring.changelog.md#version-1043)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.42 | 2026-06-03 | **[Released copyable goal plan-reference hardening](changelog/v10.42-released-copyable-goal-plan-reference-hardening.changelog.md#version-1042)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.41 | 2026-06-02 | **[Released Quick Start companion-plugin setup](changelog/v10.41-released-quickstart-companion-plugin-setup.changelog.md#version-1041)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

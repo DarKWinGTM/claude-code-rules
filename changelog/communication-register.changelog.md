@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.17 | 2026-06-03 | **[Added P136 goal-first plan-reference register refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-06-03 | **[Added P135 no-save-loop goal register refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-30 | **[Added P125 integrated goal-with-planning register refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-29 | **[Added P124 plan-backed goal register refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -29,6 +30,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-117"></a>
+## Version 1.17: Added P136 goal-first plan-reference register refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.16 to v1.17.
+- Updated `design/communication-register.design.md` from v1.16 to v1.17.
+- Added register guidance so copied durable-plan-backed governed `/goal` artifacts present `/goal` before `Plan reference:` inside the same copied artifact.
+- Prevented the plan reference from reading like a detachable heading above the command while preserving compact subordinate route-support wording.
+- Preserved the P135 already-written-plan and no-rerun loop register behavior.
+
+### Summary
+`communication-register.md` now keeps goal-related route support phrasing high-signal by making the command visibly primary and the durable plan reference visibly secondary inside the copied artifact.
 
 ---
 

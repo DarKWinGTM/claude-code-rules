@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.19
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.19
+> **Current Version:** 1.20
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -164,6 +164,7 @@ Required guidance:
 - when governed work is non-trivial or route-heavy and route synthesis would materially improve the command, advisory `/goal` creation may conditionally run an internal planning / plan-mode-style pass before final goal emission
 - that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and optional helper delegation while remaining internal-only and subordinate to the emitted goal
 - for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must write the route-only plan file first, confirm that write succeeded, and only then emit the final copyable `/goal` artifact with exact in-artifact `Plan reference: <exact path>`
+- when that copied artifact carries a durable `Plan reference`, the artifact must show the `/goal` command first and place `Plan reference:` after the command inside the same copied artifact rather than above it as a detachable preface
 - simple or already direct goals should still emit `/goal` directly without forcing planning for every request
 - when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries `Plan reference: <exact path>` or equivalent inside that same artifact; surrounding explanation may repeat or explain the reference, but it must not be the sole carrier, and the plan file must remain a route artifact and must not become objective authority
 - when surfaced, candidate-goal labels, promoted `/goal` body, surrounding recommendation labels, and recap/closing lines should follow the dominant language of the active exchange by default rather than leaving English scaffolds around non-English goal output
@@ -177,7 +178,7 @@ When a governed `/goal` is being shaped or has already been selected and route c
 - keep `/goal` as the visible objective contract whether the helper work happened during internal planning before emission or after the goal was selected
 - use helper assistance only when separate context materially improves evidence gathering, route drafting, verification ordering, test/log triage, or route-plan preparation inside the same governed authoring flow
 - any returned `Plan draft`, `Verification / testing route`, plan basis, or plan-file reference remains subordinate route support for the goal and must not become a second visible objective surface or completion proof
-- if a durable plan-file reference exists, it must point to a route-only plan file that has already been written successfully and be carried inside the same copyable goal artifact rather than only beside it; non-durable route notes may still sit beside the goal when they remain clearly subordinate support
+- if a durable plan-file reference exists, it must point to a route-only plan file that has already been written successfully and be carried inside the same copyable goal artifact rather than only beside it; inside that artifact the `/goal` command comes first and `Plan reference:` follows after it; non-durable route notes may still sit beside the goal when they remain clearly subordinate support
 - do not ask whether to save the plan and do not ask the user to invoke `/goal` again when the governed authoring flow already has sufficient route basis and no real stop gate exists
 - if route support is surfaced beside the goal, it must read as integrated support for that goal rather than as a neighboring `/plan` branch
 - `/plan` remains available only when explicit standalone route handling is still needed after the selected goal exists or when overflow route detail no longer fits the integrated goal-centric surface
@@ -192,7 +193,7 @@ When a goal is already selected, `/plan` remains a route tool, not a second goal
 - do not present `/plan` as the ordinary paired next step for every route-heavy selected goal
 - if integrated planning support already shaped the goal, keep that material subordinate and do not turn it into a public handoff unless standalone route ownership materially helps
 - if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper assistance may support the selected goal without changing route ownership
-- when actual governed `/goal` authoring requires durable route support, the same flow owns writing the route-only plan file, emitting the final goal with exact in-artifact `Plan reference`, and continuing execution unless a real stop gate blocks it
+- when actual governed `/goal` authoring requires durable route support, the same flow owns writing the route-only plan file, emitting the final goal with exact in-artifact `Plan reference`, keeping `/goal` before `Plan reference:` inside that copied artifact, and continuing execution unless a real stop gate blocks it
 - if the route in `/plan` drifts from the selected goal, repair the route or explicitly revisit the goal basis instead of silently treating the plan as the new authority
 - when plan steps are completed but the selected goal's proof/gate is still open, continue into goal-gate verification instead of closing on route completion alone
 

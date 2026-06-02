@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.23
+> **Current Version:** 1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -54,6 +54,8 @@ P125 refinement: this owner should now preserve integrated goal-with-planning ex
 P134 refinement: this owner should now require a durable plan-backed governed `/goal` to carry an in-artifact `Plan reference` slot inside the same copyable goal artifact, while preserving adjacent support only for non-durable route notes and keeping the plan file route-only rather than objective authority.
 
 P135 refinement: this owner should now require governed `/goal` authoring to write the route-only plan file before final emission when the trigger holds, keep that write inside the same authoring flow without asking the user to save or rerun `/goal`, and preserve `/plan` as overflow/explicit standalone route handling rather than the normal persistence step.
+
+P136 refinement: this owner should now require governed `/goal` artifact sourcing and execution surfaces to keep copied durable-plan-backed artifacts in `/goal`-first order, with `Plan reference:` after the command inside the same copied artifact rather than above it as detached route support.
 
 P126 refinement: this owner should now make `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms, preserve lineage-first child-phase selection across those three numeric depths, and classify observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
 

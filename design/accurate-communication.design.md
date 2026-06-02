@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.37
+> **Current Version:** 2.38
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -46,6 +46,7 @@ This chain is the wording owner for:
 - internal-helper wording so bounded native subagent assistance inside `/goal` can surface plan draft or verification/testing route help without being misreported as a new public surface or automatic goal proof
 - plan-backed-goal wording so a conditional pre-goal planning pass can be described as route preparation for an advisory `/goal`, with optional helper delegation, without letting plan files or helper output read as objective ownership or goal-completion proof
 - actual-goal-authoring wording so when a route-only plan file is required for governed `/goal` emission the assistant does not ask whether to save it, does not ask the user to run `/goal` again, and does not imply a `Plan reference` exists before the file write succeeds
+- copied-goal-ordering wording so when a governed copied artifact carries durable route support it presents `/goal` first and `Plan reference:` after it inside the same copied artifact instead of as a detachable heading above the command
 - explicit `/plan` next-surface wording so route-heavy selected goals can name planning directly instead of implying it only through broad prose about organizing next work
 - visible evidence-layer wording so mixed-confidence answers can separate verified facts, inference, and hypotheses clearly enough for the reader without relying on tone alone
 - strategy-aware recommendation wording so shared-mechanism readings remain visible when the evidence does not yet justify supplier/model/path-specific scope as a settled fix owner

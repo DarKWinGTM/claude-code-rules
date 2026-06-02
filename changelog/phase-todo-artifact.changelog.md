@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.23
+> **Current Version:** 1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.24 | 2026-06-03 | **[Added P136 goal-first governed goal artifact ordering](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.23 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.22 | 2026-06-03 | **[Added P134 in-artifact plan-reference goal sourcing hardening](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-05-31 | **[Added P126 explicit nested phase grammar and alphanumeric legacy handling](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -36,6 +37,24 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-124"></a>
+## Version 1.24: Added P136 goal-first governed goal artifact ordering
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.23 to v1.24.
+- Updated `design/phase-todo-artifact.design.md` from v1.23 to v1.24.
+- Required governed `/goal` artifact sourcing and execution surfaces to keep copied durable-plan-backed artifacts in `/goal`-first order with `Plan reference:` after the command.
+- Preserved the P135 plan-file-first flow and kept the reference inside the same copied artifact rather than above it as detached route support.
+- Preserved `/plan` overflow-only behavior and goal-gate closeout boundaries.
+
+### Summary
+`phase-todo-artifact.md` now keeps governed `/goal` artifact sourcing aligned to `/goal`-first copied output instead of letting the durable plan pointer drift into a pre-command preface.
 
 ---
 

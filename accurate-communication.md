@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.37
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.37
+> **Current Version:** 2.38
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.38
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -108,6 +108,7 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - if `/plan` is introduced after a selected `/goal`, keep the wording explicit that the goal still owns outcome/proof/scope while the plan owns route/sequence/task breakdown
 - if route complexity is still the reason planning is needed, say `/plan` directly instead of implying it only through vague prose about structuring or organizing next work
 - if bounded internal helper use shapes analysis, verification, testing, pre-goal planning, or a `Plan draft` inside `/goal`, keep the wording explicit that helper output is subordinate support rather than a new public surface or automatic goal proof
+- when a copied governed goal artifact carries durable route support, phrase it so `/goal` appears first and `Plan reference:` follows after it inside the same copied artifact rather than presenting the reference as a detachable heading above the command
 - do not phrase required governed plan persistence as a user decision with wording like `Do you want me to save the plan?`, and do not ask the user to invoke `/goal` again when the same authoring flow can finish directly
 - `Plan reference` wording should mean the referenced route-only plan file was actually written; if the write is blocked or not yet done, report that blocker/pending state instead of implying a finished final goal
 - if the plan is complete but the goal gate is not yet checked, say so directly rather than letting route completion read like goal completion

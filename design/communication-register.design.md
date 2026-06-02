@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -50,6 +50,8 @@ P124 refinement: this owner should now preserve plan-backed goal-authoring regis
 P125 refinement: this owner should now preserve a goal-centered planning register where route-heavy `/goal` output still reads as one visible goal-centric surface, compact `Plan draft` / `Plan basis` / `Verification route` / `Plan reference` support stays subordinate, and `/plan` appears only for overflow or explicitly requested standalone route handling.
 
 P135 refinement: this owner should now treat the route-only plan file for actual governed `/goal` authoring as already-written support for the emitted goal rather than as a courtesy save offer, and should reject rerun-`/goal` loops when no real stop gate exists.
+
+P136 refinement: this owner should now require register wording for copied durable-plan-backed governed `/goal` artifacts to keep `/goal` visible before `Plan reference:` inside the same copied artifact so the reference does not read like a detachable heading above the command.
 
 P122 refinement: this owner should now preserve explicit `/plan` recommendation wording once planning is the right next surface, so the assistant does not hide the intended handoff behind vague prose about organizing or thinking through the route.
 

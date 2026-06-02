@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
 > **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.37
+> **Current Version:** 2.38
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.38 | 2026-06-03 | **[Added P136 goal-first plan-reference wording refinement](#version-238)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.37 | 2026-06-03 | **[Added P135 governed goal auto-plan-file wording refinement](#version-237)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.36 | 2026-05-29 | **[Added P124 pre-goal planning-pass wording refinement](#version-236)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.35 | 2026-05-28 | **[Added P123 internal helper wording refinement](#version-235)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -79,6 +80,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+<a id="version-238"></a>
+## Version 2.38: Added P136 goal-first plan-reference wording refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.37 to v2.38.
+- Updated `design/accurate-communication.design.md` from v2.37 to v2.38.
+- Added wording guidance so copied governed goal artifacts present `/goal` first and `Plan reference:` after it inside the same copied artifact.
+- Prevented the plan reference from reading like a detachable heading above the command while preserving route-only support meaning.
+- Preserved the P135 no-save-loop and write-before-emit wording boundaries.
+
+### Summary
+`accurate-communication.md` now phrases copied governed goal artifacts so the command stays visibly primary and the durable plan reference reads as subordinate route support.
 
 ---
 
