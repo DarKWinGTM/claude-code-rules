@@ -1,7 +1,7 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
@@ -36,6 +36,8 @@ P123 refinement: this owner should now preserve bounded goal-owned internal help
 P124 refinement: this owner should now preserve goal-owned helper lanes that may support a conditional pre-goal planning pass through analysis, route drafting, verification ordering, testing, and optional plan-file reference synthesis, while keeping helper output internal-only, minimally scoped, and subordinate to the emitted or selected goal rather than route authority or completion proof.
 
 P125 refinement: this owner should now preserve integrated goal-planning helper-lane routing so native helper work can support internal planning / plan-mode-style goal authoring and selected-goal route support without surfacing a neighboring planning surface, and without elevating helper output into route authority or completion proof.
+
+P137 refinement: this owner should now preserve a Subagent-Driven-first execution default for selected non-trivial plan-backed or goal-backed work, keep topology selection inside worker-routing, prefer standalone subagent lanes before Agent Team escalation, and preserve Inline Execution only as a checked direct-handling exception when it is more effective for the current slice.
 
 ---
 

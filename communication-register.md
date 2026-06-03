@@ -1,7 +1,7 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.17
-> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.17
+> **Current Version:** 1.18
+> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
 
@@ -134,6 +134,8 @@ When `/goal` and planning both appear, keep objective ownership and route owners
 - use wording such as `this route support serves the selected goal` rather than wording that makes the plan sound like a replacement objective or sibling recommendation
 - if a plan file is referenced from the goal surface, keep it clearly route-only and do not let the reference read like proof that the goal is already satisfied
 - when actual governed `/goal` authoring requires durable route support, talk about the route-only plan as already-written support for the emitted goal rather than as a courtesy offer to save it later, and when the copied artifact itself is shown present `/goal` before `Plan reference:` inside that same artifact
+- when selected non-trivial plan-backed or goal-backed work is already execution-ready, do not surface `Subagent-Driven` vs `Inline Execution` as a default option menu when the system can choose the more suitable mode from checked execution context
+- if Inline Execution is chosen despite the Subagent-Driven-first preference, keep the checked reason visible enough to show why direct handling is more effective for the current slice
 - avoid loops such as `Do you want me to save the plan?` or `run /goal again after I save it` when no real stop gate exists and the same authoring flow can finish directly
 - if the route is complete but the goal gate is still open, say so directly instead of smoothing it into completion-shaped wording
 

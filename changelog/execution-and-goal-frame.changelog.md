@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.21 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution posture](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-06-03 | **[Added P136 goal-first copied-artifact ordering contract](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-03 | **[Added P134 copyable goal plan-reference hardening](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -34,6 +35,24 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-121"></a>
+## Version 1.21: Added P137 Subagent-Driven-first execution posture
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.20 to v1.21.
+- Updated `design/execution-and-goal-frame.design.md` from v1.20 to v1.21.
+- Added an automatic execution-posture rule for selected non-trivial plan-backed or goal-backed work so the system no longer needs to surface a default execution-style choice prompt.
+- Made Subagent-Driven the preferred first posture for worker-suitable selected execution.
+- Preserved Inline Execution only as a checked direct-handling exception when more effective for the current slice.
+
+### Summary
+`execution-and-goal-frame.md` now decides execution posture for selected non-trivial plan/goal work directly instead of surfacing Subagent-Driven vs Inline as a default user-facing choice.
 
 ---
 

@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.44</b><br><sub>P136 Released</sub>
+  <b>v10.45</b><br><sub>P137 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Goal ordering</b><br><sub>`/goal` before `Plan reference`</sub>
+  <b>Execution routing</b><br><sub>Subagent-Driven first</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.44 / P136` hardens governed `/goal` copyable-artifact ordering so any durable-plan-backed governed goal artifact now keeps `/goal` first and `Plan reference:` after it inside the same copied artifact, while preserving P135 plan-file-first authoring and route-only plan support.
+> **Current release note:** `v10.45 / P137` hardens selected non-trivial plan-backed or goal-backed execution so the system prefers Subagent-Driven first after a checked suitability gate, while preserving Inline Execution only as a checked direct-handling exception when more effective.
 
 <!-- CTA Buttons -->
 <p>
@@ -278,9 +278,9 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 18**
 
 Current source state:
-- P136 / v10.44 hardens governed `/goal` copyable-artifact ordering on top of the released `v10.43 / P135` baseline.
-- Durable-plan-backed governed `/goal` artifacts now present `/goal` first and `Plan reference:` after it inside the same copied artifact.
-- P135 plan-file-first authoring remains intact: non-trivial governed `/goal` flows that need durable route support still write the route-only plan file first.
+- P137 / v10.45 hardens execution routing on top of the released `v10.44 / P136` baseline.
+- Selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate.
+- Inline Execution remains valid only when checked suitability shows direct handling is more effective for the current slice.
 - `/goal` remains the objective owner while the plan file remains route-only support and not completion proof.
 - Runtime Context Discipline now stays front-page scoped: current runtime shape, authority boundaries, and install-discipline expectations are summarized without turning README into a phase summary.
 - The governed `playground/` family remains non-runtime and outside the installer payload.
@@ -1064,7 +1064,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.44 / P136` goal-first Plan reference ordering hardening while the active runtime install set remains 18 root rules, created governed `/goal` output now writes the route-only plan file first, keeps `/goal` before `Plan reference:` inside the same copied artifact, and `playground/` stays outside the install payload.
+- Source state: this README reflects the released `v10.45 / P137` Subagent-Driven-first execution routing hardening while the active runtime install set remains 18 root rules, selected non-trivial plan-backed or goal-backed execution now prefers Subagent-Driven first after a checked suitability gate, Inline Execution remains a checked direct-handling exception, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1187,7 +1187,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.44 |
+  <b>Version</b>: 10.45 |
   <b>Last Updated</b>: 2026-06-03 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

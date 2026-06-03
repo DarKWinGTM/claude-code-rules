@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -56,6 +56,8 @@ P134 refinement: this owner should now require any durable route-plan pointer fo
 P135 refinement: this owner should now require actual governed `/goal` authoring with durable route support to write the route-only plan file before final goal emission, ban save-plan and rerun-`/goal` loops when no real stop gate exists, and treat failed plan-file writes as blockers rather than emitting a fake `Plan reference`.
 
 P136 refinement: this owner should now require copied durable-plan-backed governed `/goal` artifacts to keep `/goal` first and `Plan reference:` second inside the same copied artifact, while preserving the P135 plan-file-first authoring contract and rejecting detached-preface presentation of the plan reference.
+
+P137 refinement: this owner should now preserve an automatic execution-posture decision for selected non-trivial plan-backed or goal-backed work so execution prefers Subagent-Driven first, delegates topology to worker-routing-and-context.md, delegates live task shaping to phase-todo-artifact.md, and preserves Inline Execution only as a checked direct-handling exception when more effective.
 
 P121 refinement: this owner should now preserve an explicit goal-to-plan bridge so `/goal` remains the objective owner, `/plan` remains the route owner, governed non-trivial goals may bridge into planning without forcing plans for every goal, and route completion alone cannot substitute for goal-gate closeout.
 

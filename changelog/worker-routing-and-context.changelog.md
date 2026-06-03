@@ -1,7 +1,7 @@
 # Changelog - Worker Routing and Context Control
 
 > **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution routing refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-30 | **[Added P125 integrated goal-planning helper-lane refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-05-29 | **[Added P124 pre-goal helper-lane refinement](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.10 | 2026-05-28 | **[Added P123 goal-owned helper lane refinement](#version-110)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -26,6 +27,24 @@
 | | | Summary: Extended `worker-routing-and-context.md` so the merged runtime owner now covers intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-113"></a>
+## Version 1.13: Added P137 Subagent-Driven-first execution routing refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `worker-routing-and-context.md` from v1.12 to v1.13.
+- Updated `design/worker-routing-and-context.design.md` from v1.12 to v1.13.
+- Added a Subagent-Driven-first execution default for selected non-trivial plan-backed or goal-backed work.
+- Kept worker-routing as the topology owner, preferred standalone subagent lanes before Agent Team escalation, and preserved Inline Execution only as a checked direct-handling exception when more effective.
+- Preserved leader verification, `/goal` objective ownership, and route-only plan support boundaries.
+
+### Summary
+`worker-routing-and-context.md` now defaults selected non-trivial plan/goal execution toward the smallest effective Subagent-Driven topology instead of surfacing an execution-style choice prompt by default.
 
 ---
 

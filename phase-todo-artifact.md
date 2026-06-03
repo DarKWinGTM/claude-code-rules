@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.24
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.24
+> **Current Version:** 1.25
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.25
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -387,6 +387,14 @@ When the built-in task list is in use for phase-backed work:
 - preserve a visible verification slice when implementation is done but targeted verification remains material
 - use the task list first for the next unfinished slice; if insufficient, fall back to active phase context, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state
 
+### 5.1) Selected goal/plan execution task materialization
+When selected `/goal` work or a selected plan-backed route becomes execution-ready and the work is non-trivial, execution surfaces should materialize that work into bounded built-in tasks before deep continuation rather than leaving the route only as prose.
+- keep `/goal` and plan-reference linkage visible when material
+- prefer Subagent-Driven execution first when `worker-routing-and-context.md` classifies the tasks as worker-suitable
+- keep Inline Execution available only when worker routing selects a checked direct-handling exception for the current slice
+- preserve separate implementation, verification, and governance/release-sync tasks when their gates differ
+- keep tasks outcome-sized so one bounded task can cleanly become one standalone subagent lane when suitable
+
 ### 7) Live tracking friction recovery
 If live task-list creation or update fails, classify whether tracking is material to safe continuation.
 - when live tracking is material for non-trivial phase-backed, multi-step, or coordinated work, repair the task entry/title/scope/phase linkage before treating work as synchronized
@@ -423,6 +431,7 @@ The later sync order does not weaken early startup establishment or live task-li
 | current phase lane closes and the next lane is selected or clearly implied | continue into the next lane and keep phase linkage visible |
 | governed non-trivial or route-heavy `/goal` candidate is still route-heavy before final emission | allow automatic internal planning / plan-mode-style support to shape the emitted `/goal` while keeping one integrated goal-centric visible surface |
 | selected governed goal has a non-trivial route still to choose | keep route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed |
+| selected non-trivial plan-backed or goal-backed execution is ready to run | materialize built-in tasks, prefer Subagent-Driven execution first when worker-suitable, and keep Inline only as a checked direct-handling exception |
 | governance/release-sync slice inside an active phase | give it its own lane or task when mixing it with implementation would blur ownership or gates |
 | oversized `TODO.md` or `phase/SUMMARY.md` | roll history/detail into referenced `history/` / `done/` shards and keep compact active entrypoints |
 | God Phase or TODO overload | repair now when clear, otherwise create/extend a visible governed repair slice |

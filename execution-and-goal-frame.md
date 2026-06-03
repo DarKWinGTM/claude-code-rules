@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.20
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.20
+> **Current Version:** 1.21
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -94,6 +94,15 @@ When the current lane closes and the next lane in the same objective is already 
 - if the next lane is phase-backed, preserve its phase linkage in task and phase surfaces before deeper execution
 - if the next lane is governance/release-sync or multi-surface validation, classify the owner surfaces first instead of collapsing it into a vague `sync everything` pass
 - do not auto-continue into approval-sensitive, destructive, materially divergent, or clearly user-choice-sensitive work
+
+### 5.2) Selected plan/goal execution posture
+When a `/goal`, selected `/plan`, or plan-backed route is already selected for execution and the work is non-trivial, execution-ready, and decomposable into bounded outcome-sized tasks, the system should decide execution posture directly instead of surfacing a default execution-style choice prompt.
+- prefer Subagent-Driven execution first when the current slice is worker-suitable and no stronger stop gate applies
+- use `worker-routing-and-context.md` for topology selection and `phase-todo-artifact.md` for live task shaping rather than leaving the route only as prose
+- keep `/goal` as objective owner for outcome, proof/checks, scope, and hard guardrails
+- keep plan files and `Plan reference` route-only instead of objective authority
+- allow Inline Execution only when a checked direct-handling exception shows it is more effective for the current slice
+- valid direct-handling exceptions include trivial work, tightly coupled or highly sequential work, high edit overlap, interactive or approval-sensitive work, worker-unavailable scope, or explicit user direction
 
 ### 6) Goal hierarchy and priority balance
 Goal hierarchy avoids confusing broad strategy with the current slice:
@@ -252,6 +261,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | clear active phase/task path or discoverable unfinished work | inspect execution surfaces and continue if safe |
 | broad objective exposes several distinct work shapes or owner surfaces | decompose it into outcome-sized lanes before deep execution |
 | non-trivial multi-step/multi-file/phase-backed work | establish goal/output/gate when it prevents drift or improves verification |
+| selected plan-backed or goal-backed execution that is non-trivial and taskable | auto-decide execution posture: prefer Subagent-Driven first, fall back to Inline only with a checked direct-handling reason |
 | single-goal overfocus, micro-cleanup drift, or one-area summaries | review whether sibling goals are neglected and rebalance |
 | user says work is too granular | perform goal review immediately |
 | several major goals remain open | keep current focus proportional to the whole set |

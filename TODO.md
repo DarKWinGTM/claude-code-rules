@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-03
-> **Current Release:** v10.44 / P136 goal-first Plan reference ordering
+> **Current Release:** v10.45 / P137 Subagent-Driven-first execution routing
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P137 / v10.45 Subagent-Driven-first execution routing was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate; Inline Execution remains available only as a checked direct-handling exception when more effective for the current slice; `/goal` remains the objective owner while the plan file remains route-only support and not completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.45 / P137` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.45` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.45
 
 - [x] P136 / v10.44 goal-first Plan reference ordering was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: copied durable-plan-backed governed `/goal` artifacts now keep `/goal` first and `Plan reference:` after it inside the same copied artifact; P135 plan-file-first authoring remains intact; `/goal` remains the objective owner while the plan file remains route-only support and not completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.44 / P136` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.44` state.
@@ -226,7 +230,7 @@
 
 ### Active / In Progress
 
-- None currently selected. Latest released baseline is `v10.44 / P136`.
+- None currently selected. Latest released baseline is `v10.45 / P137`.
 
 ### Deferred / Not Selected
 

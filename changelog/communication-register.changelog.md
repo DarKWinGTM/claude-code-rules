@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
 > **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.18 | 2026-06-03 | **[Added P137 execution-choice suppression and inline exception register refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-06-03 | **[Added P136 goal-first plan-reference register refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-06-03 | **[Added P135 no-save-loop goal register refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-30 | **[Added P125 integrated goal-with-planning register refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -30,6 +31,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-118"></a>
+## Version 1.18: Added P137 execution-choice suppression and inline exception register refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.17 to v1.18.
+- Updated `design/communication-register.design.md` from v1.17 to v1.18.
+- Added register guidance so selected non-trivial plan-backed or goal-backed execution does not need to surface `Subagent-Driven` vs `Inline Execution` as a default user-facing choice menu.
+- Required a visible checked reason when Inline Execution is selected despite the Subagent-Driven-first preference.
+- Preserved route-only plan support wording and prior P136 copied-artifact ordering behavior.
+
+### Summary
+`communication-register.md` now keeps execution-choice wording high-signal by letting the system choose the suitable mode directly while still making Inline exceptions explainable.
 
 ---
 

@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.12 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.12
+> **Current Version:** 1.13 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.13
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use the smallest effective standalone worker lane first for broad, research-heavy, roadmap-analysis-heavy, high-context, high-output, or naturally parallel work; proactively delegate predictable worker-fit slices before the leader session burns avoidable context; manage context load as a full lifecycle covering reading, writing, worker routing, and repair; and after worker routing establishes delegation or specialist need, prefer the best-fit visible custom or specialist agent before generic fallback.**
+**Core Principle: Use the smallest effective standalone worker lane first for broad, research-heavy, roadmap-analysis-heavy, high-context, high-output, or naturally parallel work; proactively delegate predictable worker-fit slices before the leader session burns avoidable context; manage context load as a full lifecycle covering reading, writing, worker routing, and repair; when selected non-trivial plan-backed or goal-backed work is execution-ready, prefer the smallest effective Subagent-Driven execution path before inline fallback; and after worker routing establishes delegation or specialist need, prefer the best-fit visible custom or specialist agent before generic fallback.**
 
 Target outcomes:
 - broad raw evidence is filtered before it burdens the leader session
@@ -194,6 +194,18 @@ Worker routing is normal execution behavior, not a special mode.
 - reuse/steer aligned standing-role workers before duplicate-looking spawns
 - do not over-delegate simple work
 
+### 11.1) Subagent-Driven-first execution default
+
+When selected plan-backed or goal-backed work is already in execution mode and no stronger stop gate applies, worker routing should prefer the smallest effective Subagent-Driven task-execution topology first rather than surfacing a default execution-style choice prompt.
+
+Required guidance:
+- apply this default only when the selected work is non-trivial, execution-ready, and decomposable into bounded outcome-sized tasks
+- prefer one standalone subagent lane per bounded task before considering Agent Team escalation
+- keep Inline Execution available as a checked direct-handling exception when the current slice is smaller, safer, tighter, lower-output, high-overlap, more interactive, worker-unavailable, or explicitly user-directed
+- if Inline Execution is selected despite the Subagent-Driven-first preference, the reason should be visible enough for leader verification and later review
+- keep `/goal` as objective owner, keep plan files route-only, and keep live task shaping with `phase-todo-artifact.md`
+- leader verification remains mandatory before completion, sync, fixed, or release-ready wording
+
 ### 12) Team restriction boundary
 
 A user ban on `teammate`, `Agent Team`, or team workflow restricts coordinated team/teammate mechanisms unless the user explicitly broadens the ban.
@@ -367,6 +379,7 @@ Document-heavy repair or active-doc pressure appears?
 | external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
 | broad design-improvement research | map independent topic lanes first, then dispatch one or more focused subagents before leader raw websearch absorption |
 | goal-owned integrated planning or route-heavy advisory `/goal` authoring | use a bounded standalone helper lane only when separate context materially improves analysis, route drafting, verification ordering, testing, or optional plan-file reference synthesis without surfacing a competing plan block |
+| selected non-trivial plan-backed or goal-backed execution | prefer the smallest effective Subagent-Driven task topology first; Inline stays available only when a checked direct-handling exception makes it more effective |
 | independent parallel research lanes | use multiple subagents when coordination need stays low and topics are meaningfully separable |
 | implementation plus review/test/docs sync with dependencies | consider Agent Team only when shared coordination is truly needed |
 | teammate/Agent Team is banned | use standalone subagent if agents are not broadly banned |

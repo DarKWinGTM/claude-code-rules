@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.44 / P136 goal-first Plan reference ordering
+> **Status:** No active phase selected; latest released baseline is v10.45 / P137 Subagent-Driven-first execution routing
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.44 / P136`.
+- None currently selected. Latest released baseline is `v10.45 / P137`.
+
+### Most Recently Completed
+
+- **P137:** [phase-137-subagent-driven-first-execution-routing.md](phase-137-subagent-driven-first-execution-routing.md)
+  - Output: selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate, while Inline Execution remains available only as a checked direct-handling exception when more effective.
+  - Gate: selected execution posture doctrine passed, Subagent-Driven-first routing passed, Inline exception doctrine passed, touched design/changelog/README/TODO/phase/patch surfaces align to `v10.45 / P137`, touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.45` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.45
+  - Patch: [../patch/subagent-driven-first-execution-routing.patch.md](../patch/subagent-driven-first-execution-routing.patch.md)
 
 ### Most Recently Completed
 
@@ -304,23 +312,23 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current promoted baseline after P136 closeout:
-- released baseline is `v10.44 / P136`
-- README current-state sections now expose goal-first Plan reference ordering as the current release posture for governed `/goal`
+Current promoted baseline after P137 closeout:
+- released baseline is `v10.45 / P137`
+- README current-state sections now expose Subagent-Driven-first execution routing as the current release posture for selected non-trivial plan-backed or goal-backed work
 - active doctrine keeps `/goal` as semantic/objective authority for outcome, proof/checks, scope, and hard guardrails while the referenced plan file stays route-only support
-- `explanation-and-presentation.md`, `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `accurate-communication.md`, and `communication-register.md` now agree that copied durable-plan-backed governed `/goal` artifacts show `/goal` first and `Plan reference:` after it inside the same copied artifact while preserving P135 plan-file-first authoring
+- `worker-routing-and-context.md`, `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `communication-register.md` now agree that selected non-trivial plan-backed or goal-backed execution prefers Subagent-Driven first after a checked suitability gate while Inline Execution remains a checked direct-handling exception when more effective
 - `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
 - `git diff --check` passed with no whitespace errors
 - touched runtime-owner install/update verification passed with source/runtime parity and body sufficiency in checked scope
-- local source release state, remote `master`, and tag `v10.44` resolve to the same promoted commit lineage
-- GitHub release `v10.44` was verified on the promoted state after default-branch reconciliation
+- local source release state, remote `master`, and tag `v10.45` resolve to the same promoted commit lineage
+- GitHub release `v10.45` was verified on the promoted state after default-branch reconciliation
 
 ---
 
 ## Rollback / Containment
 
-If P136 is reversed after release:
-- revert the touched goal-first Plan reference ordering edits as one governed rollback release
+If P137 is reversed after release:
+- revert the touched Subagent-Driven-first execution routing edits as one governed rollback release
 - restore the immediately previous released baseline as the active baseline
 - keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
