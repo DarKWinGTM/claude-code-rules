@@ -11,7 +11,7 @@
 
 **Core Principle: Code with maintainable structure, proportionate verification, and tactical-to-strategic convergence. Preserve responsibility clarity, decompose only when it lowers real change cost, carry a verification strategy before completion claims, and anchor tactical work to a declared strategic target with a visible convergence path.**
 
-This rule covers coding-time responsibility, decomposition, helper-function necessity, source-code comment discipline, behavior-preserving refactor, verification strategy, debug signal selection, TestKit/scenario decisions, evidence-calibrated closeout, tactical entry, strategic target, convergence, and anti-drift posture.
+This rule covers coding-time responsibility, decomposition, semantic source naming, helper-function necessity, source-code comment discipline, bounded code-to-document linkage, behavior-preserving refactor, verification strategy, debug signal selection, TestKit/scenario decisions, evidence-calibrated closeout, tactical entry, strategic target, convergence, and anti-drift posture.
 
 พูดง่าย ๆ: เขียนโค้ดให้คนแก้ต่อได้ง่าย, พิสูจน์ได้ว่าของจริงใช้ได้แค่ไหน, และ tactical ต้องมีปลายทาง strategic ไม่ใช่ชั่วคราวถาวร.
 
@@ -25,6 +25,9 @@ Maintainability means future readers can understand, test, modify, extend, or re
 ### 2) Responsibility by reason-to-change
 Group or split code by why it changes, not by a fixed template. Keep cohesive logic together when it changes for one reason; separate responsibilities that change for different reasons or are tested/owned differently. Inspect mixed business rules, orchestration, UI, persistence, integrations, validation, formatting, config, logging, and error handling. Reuse existing project structure when adequate.
 
+### 2.1) Semantic source naming
+Source identifiers should describe domain meaning, behavior, state, or responsibility before execution history. Function, variable, helper, class, type, module, and test-helper names must stay semantic/domain/behavior-first unless an external interface forces a literal token. Do not put phase IDs, document IDs, ticket IDs, patch IDs, changelog versions, roadmap labels, or temporary review names into source identifiers merely to show where the code came from. Those tokens belong in governed documents or in bounded source comments only when they materially aid maintenance. An artifact token may appear in code only when it is itself a real external/domain contract term, protocol value, stored data value, public API field, migration identifier, compatibility alias, or operator-facing literal that the system must preserve.
+
 ### 3) Code smell as trigger, not verdict
 Treat God function/file, long method, large class, helper inflation, shotgun surgery, divergent change, feature envy, primitive obsession, hidden dependency, comment spam, stale comments, and speculative generality as investigation signals. Do not refactor solely because a unit is long; do not extract helpers merely because extraction is possible. Decide from cohesion, coupling, change axes, testability, navigation cost, comment usefulness, and implementation risk. Preserve uncertainty when the right split is not yet clear.
 
@@ -32,7 +35,7 @@ Treat God function/file, long method, large class, helper inflation, shotgun sur
 Choose the smallest structural move that improves real maintainability. Prefer clear local code before extraction when inline flow is easier to read. Extract a named local step only when the name adds meaning or test/side-effect boundaries. Split modules/files only when responsibilities or change axes materially differ. Add interfaces, factories, strategies, or plugin-like abstractions only when current evidence justifies variation or isolation. Keep navigation and call flow easier after the split, not harder. If a tactical direct edit is safest now, name the convergence path when material structure debt remains.
 
 ### 5) Helper-function necessity
-Helper functions must earn their indirection cost. Extract when the name captures a real concept, business rule, process step, reusable behavior, testable unit, or side-effect boundary better than inline code. Do not create helpers for obvious expressions, trivial assignments, one-line wrappers, or simple sequential code clearer inline. Avoid pass-through helper chains and inline helpers whose body is as clear as the name. Single-use helpers are allowed only when the name materially clarifies intent, process, or boundary.
+Helper functions must earn their indirection cost. Extract when the name captures a real concept, business rule, process step, reusable behavior, testable unit, or side-effect boundary better than inline code. Do not create helpers for obvious expressions, trivial assignments, one-line wrappers, or simple sequential code clearer inline. Avoid pass-through helper chains and inline helpers whose body is as clear as the name. Single-use helpers are allowed only when the name materially clarifies intent, process, or boundary. Helper names must not encode phase, ticket, document, patch, or changelog provenance unless that token is a real domain or external contract term.
 
 ### 6) Wrong-abstraction guardrail
 Duplication can be safer than coupling unrelated concepts behind a false shared abstraction. Do not merge code merely because it looks similar. Extract shared behavior only when the underlying concept and reason to change are genuinely shared. Prefer short-lived duplication over premature abstraction that makes future change harder. Remove or simplify speculative generality when it adds indirection without current value.
@@ -43,6 +46,8 @@ Make important dependencies and state flow visible enough to reason about. Avoid
 ### 8) Appropriate source-code explanation
 Names and structure explain normal flow first; comments explain what code cannot express clearly enough. Add concise comments for purpose, why, business rule, process order, constraint, side effect, external contract, compatibility workaround, security/performance/concurrency caveat, or operational consequence otherwise hard to understand. Avoid comments that repeat syntax, narrate every line, or compensate for unclear names/structure. Update or remove nearby comments when behavior changes; stale comments are worse than missing comments. Do not invent explanatory comments for behavior not verified from code, tests, docs, or user-provided requirements. Keep broad policy/spec/architecture authority in governed docs, not oversized source comments.
 
+Comments may cite governed documents only when the link materially lowers maintenance cost, such as preserving durable rationale, an external contract constraint, a migration boundary, compatibility workaround, or rollback context. Prefer stable design or contract references by default when source code needs a durable rationale link. Phase, changelog, patch, ticket, or route-plan references should stay narrow: provenance for a temporary tactical bridge, migration, compatibility exception, rollback note, or reviewed before/after change that would be costly to rediscover. Do not tag every function, helper, class, or branch with execution chronology; ordinary source names and structure should remain readable without carrying phase/doc/ticket history.
+
 ### 9) Behavior-preserving refactor
 Refactoring should improve internal structure while preserving externally visible behavior unless behavior change is explicitly part of the task. Separate structural refactor from behavior change when practical. Use small transformations rather than broad rewrites when behavior risk is high. Run relevant tests, type checks, lint, or bounded verification when available. If verification is incomplete, report the limit instead of claiming the code is fixed, clean, or stable.
 
@@ -51,6 +56,7 @@ Before expanding or introducing a substantial function, file, module, class, hel
 - cohesive, small, one reason to change → keep local and clear
 - obvious expression or trivial assignment → keep inline; do not extract a helper
 - repeated named step inside one flow → extract only when the name improves understanding
+- new identifier would carry phase/doc/ticket/patch/changelog provenance → prefer a semantic behavior/domain name and move any necessary provenance to a bounded comment or governed document
 - mixed responsibilities or different change reasons → split by responsibility/module boundary
 - side-effect boundary mixed with pure logic → separate orchestration from pure transformation when useful
 - same concept in multiple places → extract only when concept and reason to change match
@@ -62,11 +68,12 @@ Before expanding or introducing a substantial function, file, module, class, hel
 ### 11) Helper Function Decision Gate
 Before extracting a helper, answer:
 1. Does the helper name express a real concept, rule, process step, reusable behavior, testable unit, or side-effect boundary better than the inline code?
-2. Is the logic complex enough that a named step lowers cognitive load?
-3. Is repeated logic genuinely the same concept and reason to change?
-4. Does extraction improve testability, side-effect separation, or future change locality?
-5. Does extraction avoid excessive parameter threading and call-chain hopping?
-6. Would inline code be clearer?
+2. Does the helper name stay semantic/domain/behavior-first instead of encoding phase, ticket, document, patch, or changelog provenance?
+3. Is the logic complex enough that a named step lowers cognitive load?
+4. Is repeated logic genuinely the same concept and reason to change?
+5. Does extraction improve testability, side-effect separation, or future change locality?
+6. Does extraction avoid excessive parameter threading and call-chain hopping?
+7. Would inline code be clearer?
 
 If the inline form is clearer or the helper adds no semantic value, do not extract; keep the code local or inline the helper back.
 
@@ -74,11 +81,13 @@ If the inline form is clearer or the helper adds no semantic value, do not extra
 Before adding or leaving a comment, answer:
 1. Does the comment explain purpose, why, process order, constraint, side effect, external contract, or business rule not obvious from code?
 2. Would clearer naming, structure, or a better helper remove the need for this comment?
-3. Is the comment still true after the change?
-4. Is the comment concise enough to stay local rather than become durable documentation?
-5. Is the behavior verified well enough to explain it?
+3. If it cites a governed document, does that reference materially lower maintenance cost, and would a stable design/contract reference be the better durable link?
+4. If it cites a phase, changelog, patch, ticket, or route-plan artifact, is the reference narrowly needed for provenance, a temporary tactical bridge, migration, compatibility, or rollback context?
+5. Is the comment still true after the change?
+6. Is the comment concise enough to stay local rather than become durable documentation?
+7. Is the behavior verified well enough to explain it?
 
-If the comment repeats syntax, narrates obvious code, is stale, or belongs in governed docs, remove or rewrite it.
+If the comment repeats syntax, narrates obvious code, is stale, tags ordinary code with execution chronology, or belongs in governed docs, remove or rewrite it.
 
 ### 13) Smell Trigger Model
 
@@ -90,7 +99,8 @@ If the comment repeats syntax, narrates obvious code, is stale, or belongs in go
 | Divergent change / shotgun surgery | one axis touches too many places, or one unit changes for unrelated reasons | separate unrelated axes, or consolidate only a genuinely shared concept |
 | Feature envy / primitive obsession | behavior or raw values live far from better owner | move logic toward the better owner or introduce a type/helper only when it reduces errors or clarifies behavior |
 | Hidden dependency | behavior relies on global/ambient/implicit state | make dependency/state flow explicit where practical |
-| Comment spam / stale comment | comments repeat syntax or no longer match behavior | remove noise, improve names/structure, or update verified explanation |
+| Chronology-coded identifier | source names carry phase, ticket, document, patch, or changelog labels instead of domain/behavior meaning | rename toward semantic responsibility unless the token is a real external/domain contract term |
+| Comment spam / stale comment | comments repeat syntax, no longer match behavior, or tag ordinary code with execution chronology | remove noise, improve names/structure, or update verified explanation |
 | Speculative generality | abstraction exists for a future not currently needed | simplify, defer, or justify from current evidence |
 
 ---
@@ -243,6 +253,8 @@ When this doctrine materially matters, make these meanings visible: **Strategic 
 | checklist/config/scaffold readiness | report prepared/configured/implemented only; do not claim tested, verified, live, fixed, or stable without matching evidence |
 | trivial no-behavior change | avoid ceremony; mark test not applicable with reason when needed |
 | broad/growing function/file | inspect for God/responsibility split before continuing to grow |
+| source identifier includes phase/doc/ticket/patch/changelog history | rename toward domain/behavior meaning unless the token is a real external/domain contract term |
+| source comment cites governed execution artifacts | prefer stable design/contract references for durable rationale; keep phase/changelog/patch/ticket references narrow to provenance, migration, compatibility, tactical bridge, or rollback context |
 | fast local fix in unclear terrain | allow only with strategic target and convergence path |
 | patch accumulation | check for tactical drift and promotion need |
 | phase/roadmap planning | let strategic framing dominate |
@@ -261,6 +273,8 @@ Avoid:
 - interfaces/factories/strategies for one current use, merging coincidental duplication
 - refactor-plus-behavior-change without a boundary, rewriting a whole file for one smell
 - syntax-narrating comments, stale comments
+- phase/doc/ticket/patch/changelog IDs in function, variable, helper, class, type, or module names when those tokens are not real external/domain contract terms
+- tagging every function or helper with execution chronology instead of using semantic names plus bounded comments only where they lower maintenance cost
 - local tactical patches that become hidden permanent structure
 - edit-only completion, testing as an afterthought, mandatory TestKit creation for trivial work
 - fake/local pass presented as live proof, refactor without behavior-preservation checks
@@ -270,7 +284,7 @@ Avoid:
 - reporting fixed/stable beyond checked evidence
 - tactical entry without a declared strategic target or convergence path
 
-Better behavior: identify responsibility, choose the smallest useful structural move, understand behavior, choose a proportionate verification route, preserve not-tested scope, report evidence at the correct strength, and anchor tactical work to a declared strategic target.
+Better behavior: identify responsibility, choose the smallest useful structural move, name source code by domain/behavior meaning, use governed-doc comments only where they lower maintenance cost, understand behavior, choose a proportionate verification route, preserve not-tested scope, report evidence at the correct strength, and anchor tactical work to a declared strategic target.
 
 ---
 
@@ -283,14 +297,17 @@ When this rule materially applies:
 4. identify the strategic target and convergence path when tactical
 5. choose the smallest useful structural move
 6. keep cohesive code together and split mixed responsibilities deliberately
-7. avoid helper inflation, speculative abstractions, and wrong DRY extractions
-8. add or update concise comments only for useful purpose/process/boundary information
-9. identify behavior under change, risk, debug signal, and verification depth
-10. make the TestKit/scenario decision explicit when material
-11. preserve behavior during refactor unless behavior change is explicit
-12. run proportionate checks; report verification limits honestly
-13. report edited/tested/fake-local/live/fixed/stable wording at correct evidence strength
-14. name tactical convergence when material structure debt remains
+7. name functions, variables, helpers, classes, types, and modules by domain/behavior meaning rather than phase/doc/ticket/patch chronology
+8. avoid helper inflation, speculative abstractions, and wrong DRY extractions
+9. add or update concise comments only for useful purpose/process/boundary information
+10. cite governed docs in comments only when the link materially lowers maintenance cost; prefer stable design/contract references for durable rationale
+11. keep phase/changelog/patch/ticket references narrow to provenance, temporary tactical bridge, migration, compatibility, or rollback context
+12. identify behavior under change, risk, debug signal, and verification depth
+13. make the TestKit/scenario decision explicit when material
+14. preserve behavior during refactor unless behavior change is explicit
+15. run proportionate checks; report verification limits honestly
+16. report edited/tested/fake-local/live/fixed/stable wording at correct evidence strength
+17. name tactical convergence when material structure debt remains
 
 ---
 

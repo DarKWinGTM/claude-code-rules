@@ -1,8 +1,8 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.1
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.2
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
 ---
@@ -23,12 +23,16 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 
 P098 refinement: this owner must now also preserve target-state doctrine for maintainable code structure, proportionate verification, coding/debug root-cause narrowing, and tactical-to-strategic convergence.
 
+P138 refinement: this owner should now require semantic/domain/behavior-first identifiers and bounded governed-doc source-comment linkage, so source names and comments explain implementation meaning without turning comments into duplicate documentation or stale governance pointers.
+
 ---
 
 ## Runtime Requirements
 
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
+- Preserve semantic/domain/behavior-first naming as coding-time clarity doctrine rather than documentation ceremony.
+- Keep governed-doc citations in source comments bounded to useful purpose, process, constraint, side-effect, or external-contract pointers.
 - Keep metadata linked to this design and the chain changelog.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

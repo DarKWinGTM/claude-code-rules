@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.45
+> **Current Version:** 10.46
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.46 | 2026-06-04 | **[Released semantic code naming and code-doc comment linkage](changelog/v10.46-released-semantic-code-naming-and-code-doc-comment-linkage.changelog.md#version-1046)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.45 | 2026-06-03 | **[Released Subagent-Driven-first execution routing](changelog/v10.45-released-subagent-driven-first-execution-routing.changelog.md#version-1045)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.44 | 2026-06-03 | **[Released goal-first Plan reference ordering](changelog/v10.44-released-goal-first-plan-reference-ordering.changelog.md#version-1044)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.43 | 2026-06-03 | **[Released governed goal auto-plan-file authoring](changelog/v10.43-released-governed-goal-auto-plan-file-authoring.changelog.md#version-1043)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

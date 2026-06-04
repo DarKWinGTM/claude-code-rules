@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -35,12 +35,15 @@ P108 refinement: this owner should now absorb document-density, compact-thrash, 
 
 P135 refinement: this owner should now allow a route-only plan file required by the selected governed `/goal` authoring contract when it will be referenced exactly from the emitted copied goal artifact, while still rejecting speculative checkpoint/work-summary files, duplicate authority artifacts, and version-suffixed plan copies.
 
+P138 refinement: this owner should now treat governed-doc citations in source comments as checked references, requiring update or removal when referenced paths, sections, or authority roles change, and preventing stale comment links from being treated as harmless local code detail.
+
 ---
 
 ## Runtime Requirements
 
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
+- Treat source-comment citations to governed docs as reference surfaces that need checked-path and checked-role maintenance when nearby behavior changes.
 - Keep metadata linked to this design and the chain changelog.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.45</b><br><sub>P137 Released</sub>
+  <b>v10.46</b><br><sub>P138 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Execution routing</b><br><sub>Subagent-Driven first</sub>
+  <b>Code naming</b><br><sub>Semantic-first</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.45 / P137` hardens selected non-trivial plan-backed or goal-backed execution so the system prefers Subagent-Driven first after a checked suitability gate, while preserving Inline Execution only as a checked direct-handling exception when more effective.
+> **Current release note:** `v10.46 / P138` hardens coding-time doctrine so source-code identifiers stay semantic/domain/behavior-first, while governed-doc links move into bounded source comments only when they materially lower maintenance cost and remain maintainable checked references.
 
 <!-- CTA Buttons -->
 <p>

@@ -55,12 +55,14 @@ Active metadata must use real session identifiers; placeholders are not allowed 
 Each document family keeps one primary role.
 - **README** is the current front page, not the history book
 - README capability/current-state sections should explain active doctrine and current-state behavior in user-facing terms, not retell phase/release execution chronology as the meaning of the capability itself
-- **design** is active target-state truth, not changelog history or completed-work storage
+- **design** is active target-state truth and durable rationale/contract owner, not changelog history, phase execution, patch review, or completed-work storage
 - **diagram** is the required governed Kroki-compatible visual infrastructure lane for project structure mapping and diagram routing, not semantic truth over design
 - **changelog** is current version/history authority, not phase-definition storage
 - **TODO** is the compact durable current-state execution index, not the primary live board
-- **phase** is live staged execution, not design or patch authority
-- **patch** is before/after review outside live phase planning
+- **phase** is live staged execution and provenance, not design, patch, or code naming authority
+- **patch** is before/after review outside live phase planning, not the durable design contract or staged execution owner
+- **source comments** may point to governed design, phase, or patch docs when useful, but they stay navigational/contextual and do not become a new authority layer
+- phase chronology may explain provenance, but it must not become source-code naming authority for functions, classes, modules, routes, or config keys
 - **helper/support** artifacts do not become authority just because they exist near governed files
 
 ### 4) Completed documentation surfaces

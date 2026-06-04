@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.45 / P137 Subagent-Driven-first execution routing
+> **Status:** No active phase selected; latest released baseline is v10.46 / P138 Semantic code naming and code-doc comment linkage
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,9 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None currently selected. Latest released baseline is `v10.45 / P137`.
+- none selected
 
 ### Most Recently Completed
+
+- **P138:** [phase-138-semantic-code-naming-and-code-doc-comment-linkage.md](phase-138-semantic-code-naming-and-code-doc-comment-linkage.md)
+  - Output: source-code identifiers now stay semantic/domain/behavior-first, governed-doc links in source comments stay bounded and maintenance-driven, design remains the durable rationale owner, and phase/patch references stay narrow provenance aids rather than code-naming scaffolds.
+  - Gate: touched coding/document-governance/document-integrity runtime owners passed their doctrine sync, touched design/changelog/README/TODO/phase/patch surfaces align to `v10.46 / P138`, touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.46` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.46
+  - Patch: [../patch/semantic-code-naming-and-code-doc-comment-linkage.patch.md](../patch/semantic-code-naming-and-code-doc-comment-linkage.patch.md)
 
 - **P137:** [phase-137-subagent-driven-first-execution-routing.md](phase-137-subagent-driven-first-execution-routing.md)
   - Output: selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate, while Inline Execution remains available only as a checked direct-handling exception when more effective.
@@ -312,25 +318,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current promoted baseline after P137 closeout:
-- released baseline is `v10.45 / P137`
-- README current-state sections now expose Subagent-Driven-first execution routing as the current release posture for selected non-trivial plan-backed or goal-backed work
-- active doctrine keeps `/goal` as semantic/objective authority for outcome, proof/checks, scope, and hard guardrails while the referenced plan file stays route-only support
-- `worker-routing-and-context.md`, `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `communication-register.md` now agree that selected non-trivial plan-backed or goal-backed execution prefers Subagent-Driven first after a checked suitability gate while Inline Execution remains a checked direct-handling exception when more effective
-- `TODO.md` and `phase/SUMMARY.md` remain compact current entrypoints with reachable `history/` / `done/` references
-- `git diff --check` passed with no whitespace errors
-- touched runtime-owner install/update verification passed with source/runtime parity and body sufficiency in checked scope
-- local source release state, remote `master`, and tag `v10.45` resolve to the same promoted commit lineage
-- GitHub release `v10.45` was verified on the promoted state after default-branch reconciliation
+Current focus while P138 is open:
+- latest released baseline remains `v10.45 / P137`
+- active wave is `v10.46 / P138`, not yet released by this phase-summary state
+- design companion versions should align to `coding-discipline` v1.2, `document-governance` v1.14, and `document-integrity` v1.8
+- per-chain changelogs should record the P138 doctrine refinement without claiming release, publish, install, tag, or runtime parity completion
+- `TODO.md` and `phase/SUMMARY.md` should show P138 as active rather than `none selected`
+- P138 phase and patch surfaces should identify Task #455 as the remaining owner for final verification, install, publish, tag, and release evidence
 
 ---
 
 ## Rollback / Containment
 
-If P137 is reversed after release:
-- revert the touched Subagent-Driven-first execution routing edits as one governed rollback release
-- restore the immediately previous released baseline as the active baseline
-- keep the compact 18-file runtime install scope unchanged unless an explicit rollback gate selects another install action
+If P138 is reversed before release:
+- revert the P138 runtime-doctrine source edits and companion/execution-surface sync through a governed rollback or explicit patch path
+- restore `v10.45 / P137` as the latest released baseline and clear the active P138 wave only through an explicit governed update
+- keep Task #455 pending or blocked rather than implying release work happened
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 
 ---

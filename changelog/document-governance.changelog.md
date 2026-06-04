@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-06-04 | **[Added P138 source-comment and governed-doc role-boundary refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-06-02 | **[Added P131 diagram infrastructure doctrine](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-06-02 | **[Added P129 mandatory Kroki-compatible diagram governance](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.11 | 2026-06-01 | **[Added P128 governed diagram lane role model](#version-111)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -26,6 +27,24 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Added P138 source-comment and governed-doc role-boundary refinement
+
+**Date:** 2026-06-04
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.13 to v1.14.
+- Updated `design/document-governance.design.md` from v1.13 to v1.14.
+- Reinforced that design, phase, patch, changelog, and source comments each keep distinct authority roles.
+- Clarified that source comments may act as bounded local explanation or signposts to governed docs, but they do not become parallel design, phase, patch, or changelog bodies.
+- Preserved diagram-lane, README-front-page, and UDVC-1 boundaries; this entry does not claim release, publish, install, tag, or runtime parity completion.
+
+### Summary
+`document-governance.md` now carries the P138 document-role boundary needed for source-comment linkage without weakening governed document authority surfaces.
 
 ---
 

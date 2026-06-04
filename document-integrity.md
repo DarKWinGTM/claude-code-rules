@@ -22,6 +22,8 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 - keep names, paths, identifiers, and references consistent across the response or checked artifact set
 - verify concrete references or mark them unknown/unverified, and verify impacted files/sections before sync/no-drift claims
 - update or describe dependencies when a change impacts multiple files/sections
+- treat source comments that cite governed docs as checked references; update or remove the comment when the referenced path or anchor moves out of checked scope
+- keep scoped non-findings scoped when a source comment's governed-doc reference is not found; do not silently upgrade a limited search into a global broken-link claim
 - separate portable shared references, checked local facts, machine-scoped examples, source-side install paths, destination/runtime paths, governed design parent indexes, governed design child shards, active parent changelogs, changelog version detail shards, changelog legacy/archive/fallback history, source-owned active runtime install scope, shared runtime destinations, other-owner runtime files, and local execution paths
 - keep governed design parent indexes and child/sibling shards aligned so selected chain shape, shard maps, parent scope, child target-state authority, and normalized same-stem parent/directory pairs do not drift
 - keep active parent changelog shard maps and chain-scoped version detail child/sibling shards aligned so selected chain shape, version-to-shard mapping, shard-to-parent back-links, normalized same-stem parent/directory pairs, and non-authority detail status do not drift
@@ -48,6 +50,7 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 | Changelog version detail shard | `changelog/<chain>/vX.YY-short-topic.changelog.md` as indexed same-chain version detail in same-stem nested mode | Parent shard map + shard-to-parent back-link |
 | Changelog flat sibling version detail shard | `<current-changelog-folder>/vX.YY-short-topic.changelog.md` beside the compact parent when the current folder already scopes the chain | Parent shard map + declared flat sibling mode + shard-to-parent back-link |
 | Changelog legacy/archive/fallback history | `changelog/done/*.changelog.md` as inactive-by-default history | Active parent reference or audit/rollback/provenance need |
+| Source comment governed-doc reference | `design/<slug>.design.md#section`, `phase/phase-NNN-*.md#section`, or `patch/<context>.patch.md#section` when a source comment materially points outside code | Verify cited path/anchor; update or remove the comment if the referenced target moves or no longer resolves in checked scope |
 | Destination/runtime path | `<install-root>/skills`, `<user-runtime-rules>` | config/source contract check |
 | Source-owned active runtime files | checked current-project install set with substantive root bodies, not every shared-destination file or metadata-only stub | checked source inventory + body-sufficiency check |
 | Shared destination / other-owner runtime file | destination may contain several owners; non-members need owner/project scope | source/destination contract + owner resolution |
@@ -145,7 +148,6 @@ Named action modes for touched-scope repair remain:
 - **No junk docs:** do not create unnecessary summaries, duplicate plans, checkpoint/work-summary files, or version-suffixed copies such as `-v2`, `_final`, `_backup`, `_draft`, or `_old` unless the user explicitly requests them.
 - **Ask when unclear:** unclear artifact necessity is a question, not permission to create speculative files or silently skip a required governed startup artifact.
 - **Governed-startup exception:** required design/changelog/TODO/phase/patch startup artifacts from `artifact-initiation-control` may be created proactively and are not junk. Ambiguous startup need still requires asking; this exception applies only to required governed startup artifacts, not arbitrary summaries or duplicate docs; it does not authorize deletion of newly encountered files merely because they do not match the expected artifact set.
-- **Governed-goal route-plan exception:** a route-only plan file required by the selected governed `/goal` authoring contract is allowed when it will be referenced exactly from the emitted copyable goal artifact. This exception does not allow duplicate authority artifacts, speculative summaries/checkpoints, or version-suffixed plan copies, and it does not turn the plan file into objective authority.
 - **Shared-destination boundary:** destination/runtime files outside the current source-owned active runtime install set are not junk merely because they share a runtime directory; resolve owner/project scope before classification.
 - **Portable-artifact hygiene:** reusable helpers/support artifacts avoid machine-local defaults unless explicitly machine-scoped; broader portability defers to `portable-implementation-and-hardcoding-control.md`.
 - **No deletion by hygiene:** hygiene, cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition is never standalone deletion authority; removal needs stronger semantic authority plus the destructive-confirmation owner.
@@ -154,7 +156,7 @@ Named action modes for touched-scope repair remain:
 
 ## Allowed vs Not Allowed
 
-Allowed creation: functional code/config required for operation; documents explicitly requested by the user; required governed startup artifacts from `artifact-initiation-control`; required route-only plan files created by the selected governed `/goal` authoring contract; intentionally short-lived temporary files in `/tmp`.
+Allowed creation: functional code/config required for operation; documents explicitly requested by the user; required governed startup artifacts from `artifact-initiation-control`; intentionally short-lived temporary files in `/tmp`.
 
 Not allowed: version-suffixed copies (`-v2`, `_final`, `_draft`, `_backup`, `_old`); checkpoint/summary/plan/work-summary files not requested and not required by startup governance; duplicate authority artifacts when an existing file already serves the role; treating untracked/newly seen or shared-destination files as junk by cleanup instinct alone; using hygiene/cleanup/isolation/worktree/sandbox/runtime co-location rationale as deletion authority.
 
@@ -172,7 +174,7 @@ Use precise portable placeholders (`<workspace-root>/src/config.js`, `<repo-root
 
 Avoid vague references ("the config file", "that function") or one workstation path acting as both source and destination/runtime path. In reusable source artifacts prefer placeholders or env/config resolution. Source-owned install scope points to checked source inventory, not every file in a shared runtime destination. Source/runtime parity names both install scope and body sufficiency; a hash match to a metadata-only root is not no-drift.
 
-Change-impact expectations: renaming/moving files updates imports, links, install examples, and dependent paths; renaming symbols updates usages within checked scope; changing config keys or commands updates related docs, examples, and verification instructions; normalizing install docs keeps source-side, destination/runtime, shared destination, and other-owner runtime wording separate; sharding changelog version detail updates parent shard maps, shard-to-parent back-links, and `changelog/done/` fallback wording together; runtime parity/no-drift checks body sufficiency as well as metadata/links/hashes. Classify new files against master surfaces and dependent history; keep classification unresolved when checked scope is incomplete.
+Change-impact expectations: renaming/moving files updates imports, links, install examples, source comments that cite governed docs, and dependent paths; renaming symbols updates usages within checked scope; changing config keys or commands updates related docs, examples, and verification instructions; normalizing install docs keeps source-side, destination/runtime, shared destination, and other-owner runtime wording separate; sharding changelog version detail updates parent shard maps, shard-to-parent back-links, and `changelog/done/` fallback wording together; runtime parity/no-drift checks body sufficiency as well as metadata/links/hashes. Classify new files against master surfaces and dependent history; keep classification unresolved when checked scope is incomplete.
 
 ---
 

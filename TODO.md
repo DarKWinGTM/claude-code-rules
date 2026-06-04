@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-03
-> **Current Release:** v10.45 / P137 Subagent-Driven-first execution routing
+> **Last Updated:** 2026-06-04
+> **Current Release:** v10.46 / P138 Semantic code naming and code-doc comment linkage
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P138 / v10.46 semantic code naming and code-doc comment linkage was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: source-code identifiers now stay semantic/domain/behavior-first unless a literal token is itself a real external/domain contract term; governed-doc links in source comments are now bounded to maintenance-helpful cases, with stable design/contract references preferred by default and phase/changelog/patch references kept narrow to provenance, migration, compatibility, tactical bridge, or rollback context; governed-doc citations inside source comments are now treated as checked references that must be updated or removed when paths, headings, owner roles, or nearby behavior change; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.46 / P138` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.46` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.46
 
 - [x] P137 / v10.45 Subagent-Driven-first execution routing was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate; Inline Execution remains available only as a checked direct-handling exception when more effective for the current slice; `/goal` remains the objective owner while the plan file remains route-only support and not completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.45 / P137` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.45` state.
@@ -230,7 +234,10 @@
 
 ### Active / In Progress
 
-- None currently selected. Latest released baseline is `v10.45 / P137`.
+- [ ] P138 / v10.46 semantic code naming and code-doc comment linkage is active.
+  - Current state: runtime doctrine source edits are recorded as completed by Tasks #453, #456, and #457; this sync task opens the selected design/changelog/TODO/phase/patch surfaces only.
+  - Scope: `design/coding-discipline.design.md`, `design/document-governance.design.md`, `design/document-integrity.design.md`, their per-chain changelogs, `TODO.md`, `phase/SUMMARY.md`, `phase/phase-138-semantic-code-naming-and-code-doc-comment-linkage.md`, and `patch/semantic-code-naming-and-code-doc-comment-linkage.patch.md`.
+  - Gate: Task #455 still owns final verification, install, publish, tag, and release evidence before any release-success wording.
 
 ### Deferred / Not Selected
 

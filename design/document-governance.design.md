@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.13
+> **Current Version:** 1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -47,6 +47,8 @@ P129 refinement: this owner should now make governed `diagram/` source mandatory
 
 P131 refinement: this owner should now treat `diagram/` as required governed-docs infrastructure for RULES, require `diagram/STRUCTURE.md` as the compact active diagram-side entrypoint, define `STRUCTURE.md` as the whole-project concept / folder-topology / authority-boundary / diagram-navigation map, require all governed diagram authority to stay under `diagram/`, and generalize the NodeClaw-style active-parent + `history/` + `done/` preservation model into diagram infrastructure without promoting diagram docs above design authority.
 
+P138 refinement: this owner should now reinforce design, phase, patch, and source-comment role boundaries so governed documents remain the durable authority surfaces, while source comments stay local implementation explanation or bounded pointers rather than becoming parallel design, phase, patch, or changelog bodies.
+
 ---
 
 ## Runtime Requirements
@@ -55,6 +57,7 @@ P131 refinement: this owner should now treat `diagram/` as required governed-doc
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
 - Preserve owner-aligned sync-lane recognition while leaving worker-scaling and bounded multi-surface reads to `worker-routing-and-context.md` and `safe-io.md`.
+- Keep design, phase, patch, changelog, and source-comment responsibilities separated so local code comments cannot replace governed authority surfaces.
 - Keep inline answer/phase-local text-diagram formatting separate from repository `diagram/` lane doctrine so presentation guidance does not silently become source authority.
 - Keep the governed `diagram/` lane Kroki-compatible by contract and keep `diagram/STRUCTURE.md` whole-project/bodyful rather than link-router shaped.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.

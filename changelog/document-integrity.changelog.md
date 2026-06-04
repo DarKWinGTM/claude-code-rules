@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-06-04 | **[Added P138 governed-doc source-comment reference integrity](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-06-03 | **[Added P135 governed goal route-plan file-hygiene carve-out](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-18 | **[Added P108 document-density and repair-owner uptake](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.5 | 2026-05-17 | **[Added P105 folder-scoped generic-parent integrity refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,24 @@
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-18"></a>
+## Version 1.8: Added P138 governed-doc source-comment reference integrity
+
+**Date:** 2026-06-04
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-integrity.md` from v1.7 to v1.8.
+- Updated `design/document-integrity.design.md` from v1.7 to v1.8.
+- Added integrity expectations for source comments that cite governed documents, including checked path/section/reference treatment.
+- Required cited governed-doc links in source comments to be updated or removed when paths, headings, owner roles, or nearby behavior change.
+- Preserved file-hygiene and no-delete-by-cleanup boundaries; this entry does not claim release, publish, install, tag, or runtime parity completion.
+
+### Summary
+`document-integrity.md` now treats governed-doc citations inside source comments as maintainable checked references rather than harmless local text that can silently go stale.
 
 ---
 
