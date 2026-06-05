@@ -225,6 +225,16 @@ When a phase-backed objective is broad enough to contain distinct execution shap
 - worker routing decides whether a lane becomes a standalone subagent or stays direct; phase only keeps the staged execution map visible
 - do not create lane scaffolding for trivial, tightly sequential, or one-step work
 
+### 5.2) Design-slice semantic coverage
+When a governed design section, slice, shard, or target-state subset is selected for implementation, phase synthesis must account for the selected semantic slice before the slice can be called implemented or complete.
+- identify the selected design slice explicitly enough that later execution, review, and closeout can tell which target-state subset is being carried
+- extract implementation-relevant semantic items from that slice when materially present: behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary
+- phase/task surfaces may stay compact and do not need to copy the whole design body, but the selected semantic coverage must stay visible enough to prevent silent loss
+- each selected semantic item must reach an explicit state before closeout: `implemented`, `verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`
+- a visible headline output is not enough when selected invariants, durability, recovery, retry, idempotency, rollback, or similar semantics remain uncovered
+- if a selected semantic item is deferred, blocked, not applicable, or out of scope, keep that status visible in phase/task/verification surfaces rather than silently dropping it from execution
+- phase consumes design truth as execution coverage; it must not become a second design-authority summary of the whole source material
+
 ### 6) Roadmap and next-phase synthesis
 When a governed objective has enough evidence to forecast beyond the current slice, `phase/SUMMARY.md` should carry a bounded roadmap or phase matrix.
 Roadmap entries should expose:
@@ -318,6 +328,7 @@ Each active child phase should define or map to:
 - objective and why the phase exists
 - expected output
 - completion gate / verification gate
+- selected design slice and semantic coverage status when the phase executes a bounded design subset with materially distinct obligations
 - lane map or lane ordering when the phase contains distinct implementation / verification / governance slices
 - entry conditions
 - action checklist and out-of-scope boundaries
@@ -335,6 +346,7 @@ Phase-backed closeout should report practical delivery, not just files/tasks/aud
 - delivered feature, capability, behavior, governance improvement, or verification gate
 - user/system impact
 - evidence-strength-aligned verification basis
+- selected design-slice semantic items are either verified or carried forward with an explicit status instead of being silently omitted behind a visible headline output
 - next phase state when relevant
 - a compact supported next-phase/wave/goal recommendation when checked surfaces show meaningful successor work
 
@@ -433,6 +445,7 @@ The later sync order does not weaken early startup establishment or live task-li
 | staged work or rollout gates | establish `/phase` via lineage handling |
 | clear governed design for staged execution | synthesize phases from design truth and keep current-phase live tasks visible |
 | broad phase-backed objective with distinct implementation / verification / governance slices | define lanes or lane-aligned tasks before deep execution |
+| selected design slice carries behavior, invariant, failure-mode, or dependency semantics beyond the headline feature label | extract the selected semantic items into phase/task/verification coverage and assign explicit statuses before closeout |
 | active phase or implied staged lane | expose phase context in built-in tasks and current-phase-first execution |
 | current phase lane closes and the next lane is selected or clearly implied | continue into the next lane and keep phase linkage visible |
 | plain governed goal request without plan-file wording | resolve planning depth and choose direct goal wording, compact route support, durable route-only plan file, or one narrow substantive clarification about the work |
@@ -463,6 +476,7 @@ Avoid:
 - asking the user to choose `Subagent-Driven` versus `Inline Execution` or another routing label when the system can decide internally from checked context
 - lane decomposition that is forced onto trivial or tightly sequential work
 - lane-aware tasks that hide goal/output/gate or collapse governance/release-sync into a generic implementation bucket
+- phase/task closeout that stops at a visible feature headline while selected design invariants, failure modes, or dependency semantics remain silently uncovered
 - letting task-list continuation silently allocate a new major phase
 - stopping after implementation when phase-backed verification is still the active remaining slice
 - phase or TODO closeout that reports only files/tasks/audit status and not delivered result / impact / verification basis

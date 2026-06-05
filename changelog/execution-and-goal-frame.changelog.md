@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
+> **Current Version:** 1.23
 > **Current Version:** 1.22
-> **Current Version:** 1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.23 | 2026-06-05 | **[Added P140 design-slice obligation coverage and continuation gate refinement](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.22 | 2026-06-05 | **[Added P139 goal route support and execution posture selection](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution posture](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-06-03 | **[Added P136 goal-first copied-artifact ordering contract](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -39,6 +40,24 @@
 
 ---
 
+
+<a id="version-123"></a>
+## Version 1.23: Added P140 design-slice obligation coverage and continuation gate refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.22 to v1.23.
+- Updated `design/execution-and-goal-frame.design.md` from v1.22 to v1.23.
+- Added selected design-slice obligation coverage so execution extracts implementation-relevant semantic obligations from the bounded governed design slice before treating the slice as ready or complete.
+- Required continuation when the visible action is implemented but selected invariants, failure modes, or dependency semantics remain uncovered without explicit status.
+- Hardened anti-pattern and trigger wording so headline-output-only closeout no longer reads as sufficient for selected design-slice execution.
+
+### Summary
+`execution-and-goal-frame.md` now keeps execution and closeout tied to the full selected design slice instead of allowing progress or completion to collapse into the visible happy-path feature headline.
+
+---
 
 <a id="version-122"></a>
 ## Version 1.22: Added P139 goal route support and execution posture selection

@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
+> **Current Version:** 1.27
 > **Current Version:** 1.26
-> **Current Version:** 1.25
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.27 | 2026-06-05 | **[Added P140 design-slice semantic coverage refinement](#version-127)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.26 | 2026-06-05 | **[Added P139 plain-goal route support and selected-execution task-shaping refinement](#version-126)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.25 | 2026-06-03 | **[Added P137 selected-execution task materialization refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.24 | 2026-06-03 | **[Added P136 goal-first governed goal artifact ordering](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -42,6 +43,24 @@
 
 ---
 
+
+<a id="version-127"></a>
+## Version 1.27: Added P140 design-slice semantic coverage refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.26 to v1.27.
+- Updated `design/phase-todo-artifact.design.md` from v1.26 to v1.27.
+- Added explicit design-slice semantic coverage doctrine so a selected governed design slice must be extracted into implementation-relevant semantic items before phase closeout.
+- Required explicit status classification for selected semantic items as implemented, verified, deferred, blocked, not applicable, or out of scope.
+- Hardened phase closeout so visible headline output is insufficient when selected invariants, failure modes, durability, or dependency semantics remain uncovered.
+
+### Summary
+`phase-todo-artifact.md` now makes phase/task/verification execution carry the full selected design slice semantically instead of letting closeout stop at the visible feature headline alone.
+
+---
 
 <a id="version-126"></a>
 ## Version 1.26: Added P139 plain-goal route support and selected-execution task-shaping refinement

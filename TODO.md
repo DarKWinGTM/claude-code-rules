@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-04
-> **Current Release:** v10.47 / P139 Goal route support and execution posture selection
+> **Last Updated:** 2026-06-05
+> **Current Release:** v10.48 / P140 design-slice semantic coverage
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P140 / v10.48 design-slice semantic coverage was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: selected governed design slices now require semantic coverage before phase/task closeout; implementation-relevant semantic items are explicit when materially present as behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary; selected semantic items now receive explicit status classification as `implemented`, `verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`; execution and closeout can no longer stop at a visible headline output while selected invariants, failure modes, durability, or dependency semantics remain silently uncovered; touched design/changelog/TODO/phase/patch surfaces are aligned to one `v10.48 / P140` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.48` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.48
 
 - [x] P139 / v10.47 goal route support and execution posture selection was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: plain goal requests now trigger planning-depth resolution and receive the smallest sufficient route support when the work is governed/non-trivial/route-heavy; users no longer need to say `goal plan file` to receive proper governed route support; `/goal` remains the objective owner while any plan file remains route-only support; durable `Plan reference:` now means the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow; selected `/goal` or selected plan execution no longer exposes `Subagent-Driven` vs `Inline Execution` as a default user-facing choice menu; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.47 / P139` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.47` state.
@@ -238,10 +242,7 @@
 
 ### Active / In Progress
 
-- [ ] P138 / v10.46 semantic code naming and code-doc comment linkage is active.
-  - Current state: runtime doctrine source edits are recorded as completed by Tasks #453, #456, and #457; this sync task opens the selected design/changelog/TODO/phase/patch surfaces only.
-  - Scope: `design/coding-discipline.design.md`, `design/document-governance.design.md`, `design/document-integrity.design.md`, their per-chain changelogs, `TODO.md`, `phase/SUMMARY.md`, `phase/phase-138-semantic-code-naming-and-code-doc-comment-linkage.md`, and `patch/semantic-code-naming-and-code-doc-comment-linkage.patch.md`.
-  - Gate: Task #455 still owns final verification, install, publish, tag, and release evidence before any release-success wording.
+- none selected
 
 ### Deferred / Not Selected
 

@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.26
+> **Current Version:** 1.27
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -61,6 +61,8 @@ P137 refinement: this owner should now preserve task materialization for selecte
 
 P139 refinement: this owner should now preserve smallest-sufficient route support for plain governed goal requests, allow durable route-only plan files only when route pressure or continuity risk justifies them, and keep selected goal/plan task materialization aligned to internal execution-posture choice instead of a user-facing mode selection.
 
+P140 refinement: this owner should now preserve design-to-phase semantic coverage so a selected governed design slice is extracted into implementation-relevant semantic items, phase/task/verification surfaces keep explicit status for each selected item, and phase closeout cannot stop at a headline output while selected invariants or failure modes remain uncovered.
+
 P126 refinement: this owner should now make `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms, preserve lineage-first child-phase selection across those three numeric depths, and classify observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
 
 P117 refinement: this owner should now let checked phase/roadmap/TODO surfaces shape compact candidate goals at real decision boundaries when several unselected next slices remain live and no one continuation path clearly dominates.
@@ -82,6 +84,7 @@ P122 refinement: this owner should now preserve an explicit `/plan` next-surface
 - Keep metadata linked to this design and the chain changelog.
 - Preserve ordered phase identity selection and visible lineage-basis recording; do not let future compression reduce current-phase → child-phase → new-major into unordered criteria.
 - Preserve explicit forward-valid numeric grammar for `NNN`, `NNN-NN`, and `NNN-NN-NN`, and preserve observed alphanumeric forms as legacy-only unless a later doctrine selects normalization.
+- Preserve selected design-slice extraction and explicit semantic-item status coverage when a phase executes a bounded governed design subset.
 - Preserve phase-backed lane structure and lane-aware task shaping while leaving worker-scaling and bounded-I/O behavior to `worker-routing-and-context.md` and `safe-io.md`.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

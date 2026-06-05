@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.05
+> **Current Version:** 2.06
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.47 / P139 Goal route support and execution posture selection
+> **Status:** No active phase selected; latest released baseline is v10.48 / P140 design-slice semantic coverage
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -26,6 +26,12 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - none selected
 
 ### Most Recently Completed
+
+- **P140:** [phase-140-design-slice-semantic-coverage.md](phase-140-design-slice-semantic-coverage.md)
+  - Output: selected governed design slices now carry explicit semantic-obligation coverage into phase/task/verification execution, so closeout can no longer stop at the visible headline output while selected invariants, failure modes, durability, or dependency semantics remain silently uncovered.
+  - Gate: selected design-slice semantic coverage integrity passed, explicit semantic-item status classification passed, continuation/completion gate hardening passed, touched design/changelog/TODO/phase/patch/master-changelog/detail surfaces align to `v10.48 / P140`, touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.48` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.48
+  - Patch: [../patch/design-slice-semantic-coverage.patch.md](../patch/design-slice-semantic-coverage.patch.md)
 
 - **P139:** [phase-139-goal-route-support-and-execution-posture-selection.md](phase-139-goal-route-support-and-execution-posture-selection.md)
   - Output: plain goal requests now auto-resolve the smallest sufficient route support when the work is governed/non-trivial/route-heavy, while selected goal/plan execution chooses posture internally and no longer exposes `Subagent-Driven` vs `Inline Execution` as a default user-facing menu.
