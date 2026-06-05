@@ -3,7 +3,7 @@
 > **Current Version:** 2.05
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.46 / P138 Semantic code naming and code-doc comment linkage
+> **Status:** No active phase selected; latest released baseline is v10.47 / P139 Goal route support and execution posture selection
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -26,6 +26,12 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - none selected
 
 ### Most Recently Completed
+
+- **P139:** [phase-139-goal-route-support-and-execution-posture-selection.md](phase-139-goal-route-support-and-execution-posture-selection.md)
+  - Output: plain goal requests now auto-resolve the smallest sufficient route support when the work is governed/non-trivial/route-heavy, while selected goal/plan execution chooses posture internally and no longer exposes `Subagent-Driven` vs `Inline Execution` as a default user-facing menu.
+  - Gate: touched execution/phase-routing/worker-routing/communication/accuracy/presentation runtime owners passed their doctrine sync, touched design/changelog/README/TODO/phase/patch surfaces align to `v10.47 / P139`, touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency, `git diff --check` passed, and branch/default-branch/tag/release evidence now points to one promoted `v10.47` baseline.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.47
+  - Patch: [../patch/goal-route-support-and-execution-posture-selection.patch.md](../patch/goal-route-support-and-execution-posture-selection.patch.md)
 
 - **P138:** [phase-138-semantic-code-naming-and-code-doc-comment-linkage.md](phase-138-semantic-code-naming-and-code-doc-comment-linkage.md)
   - Output: source-code identifiers now stay semantic/domain/behavior-first, governed-doc links in source comments stay bounded and maintenance-driven, design remains the durable rationale owner, and phase/patch references stay narrow provenance aids rather than code-naming scaffolds.

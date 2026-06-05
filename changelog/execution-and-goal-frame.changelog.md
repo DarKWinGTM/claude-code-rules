@@ -1,6 +1,6 @@
 # Changelog - Execution and Goal Frame
 
-> **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
+> **Current Version:** 1.22
 > **Current Version:** 1.21
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.22 | 2026-06-05 | **[Added P139 goal route support and execution posture selection](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution posture](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-06-03 | **[Added P136 goal-first copied-artifact ordering contract](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -35,6 +36,25 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-122"></a>
+## Version 1.22: Added P139 goal route support and execution posture selection
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.21 to v1.22.
+- Updated `design/execution-and-goal-frame.design.md` from v1.21 to v1.22.
+- Made plain goal requests sufficient to trigger planning-depth resolution without requiring `goal plan file` phrasing.
+- Required the smallest sufficient route support for governed/non-trivial/route-heavy goals, while preserving `/goal` as objective authority and any plan file as route-only support.
+- Hardened selected goal/plan execution so posture is chosen internally from checked context and no default user-facing `Subagent-Driven` vs `Inline Execution` choice menu is emitted.
+
+### Summary
+`execution-and-goal-frame.md` now resolves both goal support depth and selected execution posture from checked context instead of making users learn internal artifact or routing labels.
 
 ---
 

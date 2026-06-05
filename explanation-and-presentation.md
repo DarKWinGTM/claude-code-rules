@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.17
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.17
+> **Current Version:** 1.18
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -274,9 +274,10 @@ Required guidance:
 - do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language except for preserved exact literals
 - if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light goal-shaped recommendation rather than governed-surface framing
 - if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
+- for plain goal requests that `execution-and-goal-frame.md` classifies as governed and in need of route support, provide the smallest sufficient route support automatically when checked context is enough; do not ask the user to choose or learn a `goal plan file` concept
 - if integrated planning support shaped the promoted `/goal` and a durable route plan materially guides execution, the visible copied goal artifact must carry `Plan reference` inside that same artifact rather than leaving it only in surrounding prose or adjacent support, and the assistant should emit that final artifact only after the route-only plan file has actually been written
 - if a durable `Plan reference` is shown inside the copied artifact, the artifact must start with the `/goal` command first and place `Plan reference:` after that command inside the same copied artifact; the reference must not appear as a detachable preface above the command
-- if integrated planning support shaped the promoted `/goal`, the visible surface may include compact route context such as `Plan draft`, `Verification / testing route`, `Plan basis`, or `Plan reference`, but only as subordinate support; adjacent route context is acceptable only when it is not the sole durable plan pointer and does not become a second objective surface or completion proof
+- if integrated planning support shaped the promoted `/goal`, the visible surface may include compact non-durable route context such as `Plan draft`, `Verification / testing route`, or `Plan basis`; reserve the exact `Plan reference:` line for the durable plan-file pointer only, and keep adjacent route context subordinate so it does not become a second objective surface or completion proof
 - do not present `Do you want me to save the plan?` or `run /goal again after I save it` when no real blocker exists; if the plan write is blocked, present the blocker instead of a final plan-backed goal
 - if bounded internal helper use shaped the answer, keep any helper block compact enough that it supports the goal without inflating `/goal` into a mini-spec or reading like a neighboring `/plan` block
 - do not turn it into a mini-spec dump or background essay
@@ -287,11 +288,14 @@ Required guidance:
 When `/goal` and planning both matter, keep the explanation explicit about which layer is being discussed.
 - present `/goal` as the objective layer: outcome, proof/checks, scope, and hard guardrails
 - present planning as route support for that same goal rather than as a second equal surface
+- user-facing explanation should say what route support is being used or what action is being taken, not present `Subagent-Driven` versus `Inline Execution` as a default menu
+- if route-choice context is insufficient, ask one narrow substantive clarification about the goal, scope, artifact, gate, access, or approval; do not ask the user to choose an internal routing label
+- preserve exact routing labels only when governance/workflow behavior itself is under discussion or exact copied artifact wording materially requires them
 - if internal planning shaped the advisory `/goal` before emission, explain that the planning prepared the route basis but did not replace `/goal` as the objective layer
 - when route context is shown with the goal, keep it inside the same copied goal artifact for any durable `Plan reference`, and allow adjacent support only for non-durable route notes so plan bullets do not read like a sibling branch
 - if a durable plan file is referenced from the goal surface, the copied artifact should show `/goal` first and then `Plan reference:` after it inside that same artifact rather than presenting the reference as a heading or preface above the command
 - if the route is still non-trivial enough to exceed the integrated goal-centric surface, explain that `/plan` is the overflow or explicitly requested route surface for the selected goal rather than the ordinary paired next step
-- if a plan file is referenced from the goal surface, present it as `Plan reference` or equivalent route context inside the same copyable goal artifact rather than as objective ownership or completion proof
+- if a durable plan file is referenced from the goal surface, use the exact `Plan reference:` line inside the same copyable goal artifact; reserve other route-context labels for non-durable adjacent support only, never as objective ownership or completion proof
 - if bounded internal helper use is supporting the current turn, explain any visible `Plan draft`, `Plan basis`, or `Verification / testing route` as subordinate support for the selected goal rather than as a replacement route surface
 - if a plan is finished but the goal gate is still unchecked, say so explicitly and keep closeout anchored to the goal state rather than the route state alone
 
@@ -346,7 +350,7 @@ Advisory `/goal` block:
 <label in dominant session language if a wrapper is shown, or omit the wrapper entirely>
 <same copied goal artifact starts here>
 /goal <dominant-session-language wording for outcome + proof/checks + scope + keep constraints + stop bound, preserving exact literals where they should remain exact>
-<plan-reference label in dominant session language, when a durable route artifact materially helps and the route-only plan file was already written successfully>: <plan file path or compact route note>
+Plan reference: <exact route-only plan file path; only when a durable route artifact materially helps and the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow>
 <same copied goal artifact ends here>
 
 Optional deep dive:

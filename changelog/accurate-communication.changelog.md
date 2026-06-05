@@ -1,6 +1,6 @@
 # Changelog - Accurate Communication Standard
 
-> **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
+> **Current Version:** 2.39
 > **Current Version:** 2.38
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.39 | 2026-06-05 | **[Added P139 goal-route support and execution-label wording refinement](#version-239)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.38 | 2026-06-03 | **[Added P136 goal-first plan-reference wording refinement](#version-238)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.37 | 2026-06-03 | **[Added P135 governed goal auto-plan-file wording refinement](#version-237)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.36 | 2026-05-29 | **[Added P124 pre-goal planning-pass wording refinement](#version-236)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -80,6 +81,25 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+
+<a id="version-239"></a>
+## Version 2.39: Added P139 goal-route support and execution-label wording refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.38 to v2.39.
+- Updated `design/accurate-communication.design.md` from v2.38 to v2.39.
+- Added wording so plain goal requests can receive the smallest sufficient route support without making the user ask for a `goal plan file`.
+- Added wording so selected goal/plan execution reports chosen action/route/result instead of a default `Subagent-Driven` / `Inline Execution` choice menu.
+- Tightened `Plan reference:` semantics so it means a route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow.
+
+### Summary
+`accurate-communication.md` now keeps goal-route support and execution-routing wording aligned to actual evidence and durable plan-file truth.
 
 ---
 

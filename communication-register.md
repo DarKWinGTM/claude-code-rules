@@ -1,7 +1,7 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.18
-> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.18
+> **Current Version:** 1.19
+> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
 
@@ -129,13 +129,16 @@ When `/goal` and planning both appear, keep objective ownership and route owners
 - describe `/goal` as the objective surface and describe planning as support for that same goal unless standalone route handling is materially needed
 - do not praise or summarize a detailed route note as if detail alone proves that the goal is already satisfied
 - when internal planning shapes an advisory `/goal`, describe that work as preparation for the goal rather than as `/plan` taking over ownership
+- for plain goal requests that `execution-and-goal-frame.md` classifies as governed and in need of route support, let the assistant resolve the smallest sufficient route support automatically when checked context is enough; do not make the user learn or choose a `goal plan file` concept
 - do not present `/plan` as the ordinary paired next step for every route-heavy goal; present it only when overflow route detail or explicit standalone planning is actually needed
-- if internal helper use is mentioned, frame it as support for the selected goal or emitted goal candidate rather than as a new public surface; prefer compact labels such as `Plan draft`, `Plan basis`, `Verification route`, or `Plan reference` over orchestration narration
+- if internal helper use is mentioned, frame it as support for the selected goal or emitted goal candidate rather than as a new public surface; prefer compact non-durable labels such as `Plan draft`, `Plan basis`, or `Verification route` over orchestration narration, and reserve `Plan reference:` for the exact durable plan-file pointer only
 - use wording such as `this route support serves the selected goal` rather than wording that makes the plan sound like a replacement objective or sibling recommendation
 - if a plan file is referenced from the goal surface, keep it clearly route-only and do not let the reference read like proof that the goal is already satisfied
 - when actual governed `/goal` authoring requires durable route support, talk about the route-only plan as already-written support for the emitted goal rather than as a courtesy offer to save it later, and when the copied artifact itself is shown present `/goal` before `Plan reference:` inside that same artifact
-- when selected non-trivial plan-backed or goal-backed work is already execution-ready, do not surface `Subagent-Driven` vs `Inline Execution` as a default option menu when the system can choose the more suitable mode from checked execution context
+- when selected non-trivial plan-backed or goal-backed work is already execution-ready, do not surface internal routing labels such as `Subagent-Driven` vs `Inline Execution` as a default option menu when the system can choose the more suitable mode from checked execution context
+- when checked context is sufficient, present the chosen action, route support, or result; when it is insufficient, ask one narrow substantive clarification about the work rather than asking the user to pick a routing label
 - if Inline Execution is chosen despite the Subagent-Driven-first preference, keep the checked reason visible enough to show why direct handling is more effective for the current slice
+- preserve exact routing labels only when governance/workflow behavior itself is under discussion or exact artifact wording materially requires them
 - avoid loops such as `Do you want me to save the plan?` or `run /goal again after I save it` when no real stop gate exists and the same authoring flow can finish directly
 - if the route is complete but the goal gate is still open, say so directly instead of smoothing it into completion-shaped wording
 

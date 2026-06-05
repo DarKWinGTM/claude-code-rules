@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.25
+> **Current Version:** 1.26
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -58,6 +58,8 @@ P135 refinement: this owner should now require governed `/goal` authoring to wri
 P136 refinement: this owner should now require governed `/goal` artifact sourcing and execution surfaces to keep copied durable-plan-backed artifacts in `/goal`-first order, with `Plan reference:` after the command inside the same copied artifact rather than above it as detached route support.
 
 P137 refinement: this owner should now preserve task materialization for selected non-trivial plan-backed or goal-backed execution so built-in tasks become the live execution surface, Subagent-Driven routing is preferred first when worker-suitable, and Inline Execution remains only a checked direct-handling exception when more effective.
+
+P139 refinement: this owner should now preserve smallest-sufficient route support for plain governed goal requests, allow durable route-only plan files only when route pressure or continuity risk justifies them, and keep selected goal/plan task materialization aligned to internal execution-posture choice instead of a user-facing mode selection.
 
 P126 refinement: this owner should now make `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms, preserve lineage-first child-phase selection across those three numeric depths, and classify observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
 

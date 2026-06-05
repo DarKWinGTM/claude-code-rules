@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.38
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.38
+> **Current Version:** 2.39
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.39
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -100,17 +100,20 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - when the real decision surface is larger, show the full relevant set before narrowing
 - when safe continuation exists inside the user's active requested work, continue instead of pausing only to narrate progress or ask for non-material choices
 - present options only when the next move is preference-sensitive, approval-sensitive, blocked, or materially divergent
+- after a selected `/goal` or selected plan-backed route exists, do not present internal routing labels as default user-facing choices; choose from checked context when possible, or ask one narrow substantive clarification about the work when context is insufficient
 - when meaningful successor directions are shown, prefer candidate goals over plain unlabeled choice lists when that makes the outcome/gate difference clearer
 - if a candidate goal is promoted into `/goal`, keep that promotion visibly advisory and do not phrase it as queued or already-selected execution
 - if a `/goal` suggestion is offered, keep it visibly advisory and do not phrase it as queued or already-selected execution
 - when a `/goal` suggestion depends on proof, name only proof/checks that can be surfaced in the conversation rather than implying hidden verification
 - if a `/goal` suggestion was shaped by a conditional pre-goal planning pass, say that the planning pass only prepared route basis, proof ordering, or route support for the final goal; for actual governed `/goal` authoring that requires durable route support, the route-only plan file should be written before the final goal is emitted, and the plan, plan file, or helper output still must not read like objective ownership or goal-completion proof
+- for plain goal requests that `execution-and-goal-frame.md` classifies as governed and in need of route support, describe automatic route support in ordinary user-facing terms such as route support, plan support, or `Plan reference` only when exact artifact wording requires it; do not require users to learn `goal plan file` as a choice
 - if `/plan` is introduced after a selected `/goal`, keep the wording explicit that the goal still owns outcome/proof/scope while the plan owns route/sequence/task breakdown
 - if route complexity is still the reason planning is needed, say `/plan` directly instead of implying it only through vague prose about structuring or organizing next work
 - if bounded internal helper use shapes analysis, verification, testing, pre-goal planning, or a `Plan draft` inside `/goal`, keep the wording explicit that helper output is subordinate support rather than a new public surface or automatic goal proof
 - when a copied governed goal artifact carries durable route support, phrase it so `/goal` appears first and `Plan reference:` follows after it inside the same copied artifact rather than presenting the reference as a detachable heading above the command
 - do not phrase required governed plan persistence as a user decision with wording like `Do you want me to save the plan?`, and do not ask the user to invoke `/goal` again when the same authoring flow can finish directly
-- `Plan reference` wording should mean the referenced route-only plan file was actually written; if the write is blocked or not yet done, report that blocker/pending state instead of implying a finished final goal
+- `Plan reference` wording should mean the referenced route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow; if that create/verify step is blocked or not yet done, report that blocker/pending state instead of implying a finished final goal
+- preserve exact routing/workflow labels only when governance/workflow behavior itself is under discussion or exact artifact wording materially requires them
 - if the plan is complete but the goal gate is not yet checked, say so directly rather than letting route completion read like goal completion
 - when both surfaces are mentioned together, make it visible whether the status being reported is objective status or route status
 - candidate goals, promoted `/goal`, surrounding recommendation labels, recap/closing lines, and the natural-language scaffold around preserved exact literals should follow the dominant language of the active exchange by default even when the user did not give a direct language instruction; an explicit language request is a stronger override

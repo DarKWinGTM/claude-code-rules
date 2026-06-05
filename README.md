@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.46</b><br><sub>P138 Released</sub>
+  <b>v10.47</b><br><sub>P139 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Code naming</b><br><sub>Semantic-first</sub>
+  <b>Goal routing</b><br><sub>Auto support + internal posture</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.46 / P138` hardens coding-time doctrine so source-code identifiers stay semantic/domain/behavior-first, while governed-doc links move into bounded source comments only when they materially lower maintenance cost and remain maintainable checked references.
+> **Current release note:** `v10.47 / P139` hardens goal handling so plain goal requests auto-resolve the smallest sufficient route support when needed, while selected goal/plan execution chooses posture internally instead of exposing `Subagent-Driven` vs `Inline Execution` as a default user-facing menu.
 
 <!-- CTA Buttons -->
 <p>

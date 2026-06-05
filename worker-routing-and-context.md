@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.13 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.13
+> **Current Version:** 1.14 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.14
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -191,18 +191,22 @@ Worker routing is normal execution behavior, not a special mode.
 - keep the worker set minimal
 - prefer subagent-first handling for broad lanes without shared-team coordination
 - goal-owned internal helper use may route bounded analysis, route drafting, verification ordering, testing, compact route-support drafting, or optional plan-file reference synthesis slices through standalone subagents when that lowers context cost without creating a new public surface or a competing planning surface
+- for plain goal requests that `execution-and-goal-frame.md` classifies as governed and in need of route support, resolve the smallest sufficient route support automatically when checked context is enough; describe it as route support, plan support, or `Plan reference` only when that exact artifact wording matters, not as a user-facing `goal plan file` choice
 - reuse/steer aligned standing-role workers before duplicate-looking spawns
 - do not over-delegate simple work
 
 ### 11.1) Subagent-Driven-first execution default
 
-When selected plan-backed or goal-backed work is already in execution mode and no stronger stop gate applies, worker routing should prefer the smallest effective Subagent-Driven task-execution topology first rather than surfacing a default execution-style choice prompt.
+When selected plan-backed or goal-backed work is already in execution mode and no stronger stop gate applies, worker routing should choose the smallest effective task-execution topology from checked context. The Subagent-Driven-first preference is an internal routing default, not a default user-facing choice prompt.
 
 Required guidance:
 - apply this default only when the selected work is non-trivial, execution-ready, and decomposable into bounded outcome-sized tasks
+- when checked context is sufficient, present the chosen action, route, or result instead of asking the user to choose between `Subagent-Driven` and `Inline Execution`
+- when checked context is insufficient, ask one narrow substantive clarification about the work, scope, access, artifact, or approval that would change the route; do not ask a routing-label choice
 - prefer one standalone subagent lane per bounded task before considering Agent Team escalation
 - keep Inline Execution available as a checked direct-handling exception when the current slice is smaller, safer, tighter, lower-output, high-overlap, more interactive, worker-unavailable, or explicitly user-directed
 - if Inline Execution is selected despite the Subagent-Driven-first preference, the reason should be visible enough for leader verification and later review
+- preserve exact labels such as `Subagent-Driven` and `Inline Execution` only when governance/workflow behavior itself is under discussion or exact artifact wording materially requires them
 - keep `/goal` as objective owner, keep plan files route-only, and keep live task shaping with `phase-todo-artifact.md`
 - leader verification remains mandatory before completion, sync, fixed, or release-ready wording
 
@@ -378,8 +382,8 @@ Document-heavy repair or active-doc pressure appears?
 | context-heavy governed-document repair | apply `document-integrity.md` / `document-governance.md` first, then use a bounded edit-capable repair lane only with explicit scope, edit ownership, and preservation constraints |
 | external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
 | broad design-improvement research | map independent topic lanes first, then dispatch one or more focused subagents before leader raw websearch absorption |
-| goal-owned integrated planning or route-heavy advisory `/goal` authoring | use a bounded standalone helper lane only when separate context materially improves analysis, route drafting, verification ordering, testing, or optional plan-file reference synthesis without surfacing a competing plan block |
-| selected non-trivial plan-backed or goal-backed execution | prefer the smallest effective Subagent-Driven task topology first; Inline stays available only when a checked direct-handling exception makes it more effective |
+| goal-owned integrated planning or route-heavy advisory `/goal` authoring | when `execution-and-goal-frame.md` classifies plain goal requests as governed and in need of route support, provide the smallest sufficient route support automatically; helper lanes and plan-file references stay route-only and must not surface as a competing plan block or user-facing `goal plan file` choice |
+| selected non-trivial plan-backed or goal-backed execution | choose the smallest effective task topology from checked context; present the chosen action/result, use Inline only for checked direct-handling exceptions, and ask substantive work clarification rather than routing-label choices when context is insufficient |
 | independent parallel research lanes | use multiple subagents when coordination need stays low and topics are meaningfully separable |
 | implementation plus review/test/docs sync with dependencies | consider Agent Team only when shared coordination is truly needed |
 | teammate/Agent Team is banned | use standalone subagent if agents are not broadly banned |

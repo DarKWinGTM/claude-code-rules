@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.25
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.25
+> **Current Version:** 1.26
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.26
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Resolve artifact posture and governed documentation chain naming/shape analysis before work drifts, use phases only when staged execution adds real value, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work, including lane-oriented continuation when broad worker-fit execution needs explicit structure.**
+**Core Principle: Resolve artifact posture and governed documentation chain naming/shape analysis before work drifts, use phases only when staged execution adds real value, resolve planning depth for plain governed goal requests, keep `phase/SUMMARY.md` and `TODO.md` as compact active entrypoints, and treat the built-in task list as the live execution surface for non-trivial phase-backed work, including lane-oriented continuation when broad worker-fit execution needs explicit structure.**
 
 This rule unifies startup artifact initiation, live phase execution semantics, and durable-vs-live task tracking. It keeps staged work aligned to real goals, outputs, and gates without letting TODO, phase, patch, or startup posture drift into retrospective cleanup.
 
@@ -239,9 +239,9 @@ Roadmap entries are planning context, not automatic execution authority.
 After a phase-backed objective closes, inspect checked roadmap and goal surfaces before ending closeout. If future work is meaningful, name the best-supported next phase/wave/goal with why, expected output, and gate.
 
 ### 6.1) `/goal` suggestion sourcing from governed surfaces
-When another owner has already decided that an advisory `/goal` command is the right next-step shape, source the command from checked governed execution surfaces rather than from improvised prose.
+When the user plainly asks for a governed goal or another owner has already decided that an advisory `/goal` command is the right next-step shape, source the command from checked governed execution surfaces rather than from improvised prose.
 
-Governed-surface context is mandatory only when the successor objective is repo-governed and at least one of these is true:
+Governed-surface context is mandatory only when the requested or successor objective is repo-governed and at least one of these is true:
 - the work is multi-step inside the current source tree
 - the work is phase-backed or lane-backed
 - design target-state truth materially defines the next outcome
@@ -265,6 +265,9 @@ Use this translation model:
 
 Required guidance:
 - do not invent a new durable tracking schema only for `/goal`
+- a plain goal request is enough to trigger planning-depth resolution; do not require wording such as `goal plan file` before considering whether direct goal wording, compact route support, or a durable route-only plan file is the smallest sufficient support
+- choose the smallest sufficient route support: no plan file for simple direct goals, compact non-durable route notes when ordering matters but fits, durable route-only plan file only when route complexity or later execution needs persistence, or one narrow substantive clarification about the work outcome/scope/gate when the objective is not bounded enough
+- a clarification should ask about the work itself, not whether the user wants `Subagent-Driven`, `Inline Execution`, `/plan`, or a plan-file label
 - treat the translated slots above as concept slots rather than as mandatory English surface labels; emitted natural-language scaffold should follow the dominant language of the active exchange even when the user did not issue a direct language instruction
 - treat an explicit user language request as a stronger override than the default active-exchange inference
 - when several successor directions remain live, shape them as candidate goals before promoting any one of them into `/goal`
@@ -275,10 +278,11 @@ Required guidance:
 - do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
 - when advisory `/goal` creation for governed non-trivial or route-heavy work would benefit from route synthesis, it may conditionally run an internal planning / plan-mode-style pass before final goal emission
 - that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and helper-side route preparation while remaining internal-only and subordinate to leader-owned normalization
-- for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must write the route-only plan file before final goal emission and keep that write inside the same governed authoring flow
+- for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must create or verify the route-only plan file before final goal emission and keep that file check/write inside the same governed authoring flow
+- do not include a durable `Plan reference` from intention, draft text, or an unwritten plan; it is valid only when the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow
 - when that copied goal artifact carries a durable `Plan reference`, the artifact must show `/goal` first and place `Plan reference:` after the command inside the same copied artifact rather than above it as a detachable preface
 - simple or already direct goals should still emit `/goal` directly without forcing planning for every request
-- when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries an in-artifact `Plan reference: <exact path>` slot that points to a successfully written route-only plan file; surrounding explanation may repeat or explain the reference, but the plan file must remain route-only and must not become objective authority
+- when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries an in-artifact `Plan reference: <exact path>` slot that points to a checked existing or successfully written route-only plan file; surrounding explanation may repeat or explain the reference, but the plan file must remain route-only and must not become objective authority
 - when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape compact route support such as `Plan draft`, verification/testing route, or a plan reference inside that same copied goal artifact; when the route support is durable the copied artifact must present `/goal` first and `Plan reference:` after it, while adjacent route support remains allowed only when it is not the sole durable plan pointer and remains subordinate to the goal without creating a new public route owner
 - do not ask the user whether to save the plan and do not ask them to invoke `/goal` again when the governed authoring flow already has sufficient route basis and no real stop gate exists
 - do not pull heavy governed-surface context into trivial non-governed next steps
@@ -390,6 +394,8 @@ When the built-in task list is in use for phase-backed work:
 ### 5.1) Selected goal/plan execution task materialization
 When selected `/goal` work or a selected plan-backed route becomes execution-ready and the work is non-trivial, execution surfaces should materialize that work into bounded built-in tasks before deep continuation rather than leaving the route only as prose.
 - keep `/goal` and plan-reference linkage visible when material
+- do not present `Subagent-Driven` versus `Inline Execution` as a default user-facing choice menu; worker routing should select the execution posture internally from checked context
+- if task materialization lacks enough objective, scope, gate, access, or approval context, ask one narrow substantive clarification about the work before shaping tasks rather than asking for a routing label
 - prefer Subagent-Driven execution first when `worker-routing-and-context.md` classifies the tasks as worker-suitable
 - keep Inline Execution available only when worker routing selects a checked direct-handling exception for the current slice
 - preserve separate implementation, verification, and governance/release-sync tasks when their gates differ
@@ -429,9 +435,10 @@ The later sync order does not weaken early startup establishment or live task-li
 | broad phase-backed objective with distinct implementation / verification / governance slices | define lanes or lane-aligned tasks before deep execution |
 | active phase or implied staged lane | expose phase context in built-in tasks and current-phase-first execution |
 | current phase lane closes and the next lane is selected or clearly implied | continue into the next lane and keep phase linkage visible |
+| plain governed goal request without plan-file wording | resolve planning depth and choose direct goal wording, compact route support, durable route-only plan file, or one narrow substantive clarification about the work |
 | governed non-trivial or route-heavy `/goal` candidate is still route-heavy before final emission | allow automatic internal planning / plan-mode-style support to shape the emitted `/goal` while keeping one integrated goal-centric visible surface |
 | selected governed goal has a non-trivial route still to choose | keep route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed |
-| selected non-trivial plan-backed or goal-backed execution is ready to run | materialize built-in tasks, prefer Subagent-Driven execution first when worker-suitable, and keep Inline only as a checked direct-handling exception |
+| selected non-trivial plan-backed or goal-backed execution is ready to run | materialize built-in tasks, prefer Subagent-Driven execution first when worker-suitable, keep Inline only as a checked direct-handling exception, and avoid a default routing-choice menu |
 | governance/release-sync slice inside an active phase | give it its own lane or task when mixing it with implementation would blur ownership or gates |
 | oversized `TODO.md` or `phase/SUMMARY.md` | roll history/detail into referenced `history/` / `done/` shards and keep compact active entrypoints |
 | God Phase or TODO overload | repair now when clear, otherwise create/extend a visible governed repair slice |
@@ -452,6 +459,8 @@ Avoid:
 - turning `TODO.md` into a history dump, roadmap dump, or verification log dump
 - generic live task titles that hide active phase context
 - treating the built-in task list as a replacement for durable TODO/phase surfaces
+- requiring the user to say `goal plan file` before resolving planning depth for a plain governed goal request
+- asking the user to choose `Subagent-Driven` versus `Inline Execution` or another routing label when the system can decide internally from checked context
 - lane decomposition that is forced onto trivial or tightly sequential work
 - lane-aware tasks that hide goal/output/gate or collapse governance/release-sync into a generic implementation bucket
 - letting task-list continuation silently allocate a new major phase

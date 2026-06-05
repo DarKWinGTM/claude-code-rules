@@ -1,6 +1,6 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
+> **Current Version:** 1.26
 > **Current Version:** 1.25
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.26 | 2026-06-05 | **[Added P139 plain-goal route support and selected-execution task-shaping refinement](#version-126)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.25 | 2026-06-03 | **[Added P137 selected-execution task materialization refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.24 | 2026-06-03 | **[Added P136 goal-first governed goal artifact ordering](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.23 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -38,6 +39,25 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-126"></a>
+## Version 1.26: Added P139 plain-goal route support and selected-execution task-shaping refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.25 to v1.26.
+- Updated `design/phase-todo-artifact.design.md` from v1.25 to v1.26.
+- Made plain governed goal requests sufficient to trigger smallest-sufficient route support without requiring `goal plan file` phrasing.
+- Preserved durable route-only plan files only when route pressure or continuity risk justifies them.
+- Hardened selected goal/plan task materialization so execution keeps internal posture selection instead of exposing a user-facing mode choice.
+
+### Summary
+`phase-todo-artifact.md` now lets plain governed goals receive the right route depth automatically while keeping selected execution task shaping aligned to internal posture selection.
 
 ---
 

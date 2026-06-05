@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.38
+> **Current Version:** 2.39
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -51,6 +51,9 @@ This chain is the wording owner for:
 - visible evidence-layer wording so mixed-confidence answers can separate verified facts, inference, and hypotheses clearly enough for the reader without relying on tone alone
 - strategy-aware recommendation wording so shared-mechanism readings remain visible when the evidence does not yet justify supplier/model/path-specific scope as a settled fix owner
 - safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
+
+- goal-request route-support wording so plain goal requests can receive the smallest sufficient route support without requiring users to ask for a `goal plan file`
+- execution-posture wording so selected goal/plan execution reports chosen action/route/result instead of default `Subagent-Driven` / `Inline Execution` choice menus, while `Plan reference:` remains exact only when a route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow
 
 This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `coding-discipline`, keeps bounded technical snapshot wording inside its absorbed Snapshot Wording section, and defers end-of-response closing / action / proposal framing to `explanation-and-presentation`.
 

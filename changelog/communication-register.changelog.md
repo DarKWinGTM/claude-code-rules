@@ -1,6 +1,6 @@
 # Changelog - Communication Register
 
-> **Parent Document:** [../communication-register.md](../communication-register.md)
+> **Current Version:** 1.19
 > **Current Version:** 1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-06-05 | **[Added P139 goal-route wording and internal-label suppression refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-03 | **[Added P137 execution-choice suppression and inline exception register refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-06-03 | **[Added P136 goal-first plan-reference register refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-06-03 | **[Added P135 no-save-loop goal register refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -31,6 +32,25 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-119"></a>
+## Version 1.19: Added P139 goal-route wording and internal-label suppression refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.18 to v1.19.
+- Updated `design/communication-register.design.md` from v1.18 to v1.19.
+- Added outcome-first wording so plain goal requests can receive route support without users learning `goal plan file` as a concept.
+- Suppressed internal routing labels as default user-facing choices after selected goal/plan execution exists.
+- Reserved exact `Plan reference:` wording for the durable plan-file pointer only.
+
+### Summary
+`communication-register.md` now reports goal-support and execution-routing behavior in ordinary user-facing terms instead of leaking internal labels by default.
 
 ---
 

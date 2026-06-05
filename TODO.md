@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-04
-> **Current Release:** v10.46 / P138 Semantic code naming and code-doc comment linkage
+> **Current Release:** v10.47 / P139 Goal route support and execution posture selection
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P139 / v10.47 goal route support and execution posture selection was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: plain goal requests now trigger planning-depth resolution and receive the smallest sufficient route support when the work is governed/non-trivial/route-heavy; users no longer need to say `goal plan file` to receive proper governed route support; `/goal` remains the objective owner while any plan file remains route-only support; durable `Plan reference:` now means the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow; selected `/goal` or selected plan execution no longer exposes `Subagent-Driven` vs `Inline Execution` as a default user-facing choice menu; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.47 / P139` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.47` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.47
 
 - [x] P138 / v10.46 semantic code naming and code-doc comment linkage was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: source-code identifiers now stay semantic/domain/behavior-first unless a literal token is itself a real external/domain contract term; governed-doc links in source comments are now bounded to maintenance-helpful cases, with stable design/contract references preferred by default and phase/changelog/patch references kept narrow to provenance, migration, compatibility, tactical bridge, or rollback context; governed-doc citations inside source comments are now treated as checked references that must be updated or removed when paths, headings, owner roles, or nearby behavior change; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.46 / P138` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.46` state.
