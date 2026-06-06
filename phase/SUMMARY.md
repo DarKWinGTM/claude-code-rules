@@ -3,7 +3,7 @@
 > **Current Version:** 2.06
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.48 / P140 design-slice semantic coverage
+> **Status:** Active phase selected: P141 governed /goal routing-choice surface hardening; latest released baseline is v10.48 / P140 design-slice semantic coverage
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none selected
+- **P141:** [phase-141-governed-goal-routing-choice-surface-hardening.md](phase-141-governed-goal-routing-choice-surface-hardening.md)
+  - Output: governed `/goal` or goal/plan-file authoring now has an explicit stop boundary, so the emitted goal artifact plus subordinate route support can finish cleanly without leaking a default `Subagent-Driven` / `Inline Execution` menu when execution was not yet selected.
+  - Gate: touched runtime owners, companion design docs, and per-chain changelog parents are aligned to the authoring stop-boundary refinement; `TODO.md`, this summary, `phase-141-governed-goal-routing-choice-surface-hardening.md`, and `patch/governed-goal-routing-choice-surface-hardening.patch.md` reflect the active wave; touched runtime install/update parity is now aligned and `git diff --check` passed, but final release-history sync plus push/tag/release remain blocked because `master` is `ahead 3, behind 19` relative to `origin/master` and the working tree still contains extensive unrelated modified/untracked files outside P141 scope.
+  - Patch: [../patch/governed-goal-routing-choice-surface-hardening.patch.md](../patch/governed-goal-routing-choice-surface-hardening.patch.md)
 
 ### Most Recently Completed
 

@@ -1,7 +1,7 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.19
-> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.19
+> **Current Version:** 1.20
+> **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
 
@@ -137,6 +137,7 @@ When `/goal` and planning both appear, keep objective ownership and route owners
 - when actual governed `/goal` authoring requires durable route support, talk about the route-only plan as already-written support for the emitted goal rather than as a courtesy offer to save it later, and when the copied artifact itself is shown present `/goal` before `Plan reference:` inside that same artifact
 - when selected non-trivial plan-backed or goal-backed work is already execution-ready, do not surface internal routing labels such as `Subagent-Driven` vs `Inline Execution` as a default option menu when the system can choose the more suitable mode from checked execution context
 - when checked context is sufficient, present the chosen action, route support, or result; when it is insufficient, ask one narrow substantive clarification about the work rather than asking the user to pick a routing label
+- if the current turn is only goal or plan-file authoring, report the emitted goal/route support and stop there unless execution was also selected or clearly implied
 - if Inline Execution is chosen despite the Subagent-Driven-first preference, keep the checked reason visible enough to show why direct handling is more effective for the current slice
 - preserve exact routing labels only when governance/workflow behavior itself is under discussion or exact artifact wording materially requires them
 - avoid loops such as `Do you want me to save the plan?` or `run /goal again after I save it` when no real stop gate exists and the same authoring flow can finish directly

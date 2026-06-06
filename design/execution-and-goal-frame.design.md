@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.23
+> **Current Version:** 1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -62,6 +62,8 @@ P137 refinement: this owner should now preserve an automatic execution-posture d
 P139 refinement: this owner should now treat plain goal requests as enough to trigger planning-depth resolution, choose the smallest sufficient route support automatically for governed work, keep durable `Plan reference` valid only after a route-only plan file already exists in checked scope or was successfully written in the same flow, and keep selected goal/plan execution posture internally chosen rather than exposed as a default user-facing mode choice.
 
 P140 refinement: this owner should now preserve selected design-slice obligation coverage so execution extracts implementation-relevant semantic obligations from the bounded governed design slice, uses them for task/verification/continuation logic, and refuses headline-output-only closeout while selected invariants, failure modes, or dependency semantics remain uncovered without explicit status.
+
+P141 refinement: this owner should now preserve a goal-authoring stop boundary so governed `/goal` or route-only plan-support authoring ends at the emitted goal artifact plus subordinate route support when execution was not yet selected, while execution-posture selection remains a later internal transition and no default `Subagent-Driven` / `Inline Execution` menu is surfaced at authoring closeout.
 
 P121 refinement: this owner should now preserve an explicit goal-to-plan bridge so `/goal` remains the objective owner, `/plan` remains the route owner, governed non-trivial goals may bridge into planning without forcing plans for every goal, and route completion alone cannot substitute for goal-gate closeout.
 

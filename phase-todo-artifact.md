@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.26
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.26
+> **Current Version:** 1.28
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.28
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -291,6 +291,7 @@ Required guidance:
 - for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must create or verify the route-only plan file before final goal emission and keep that file check/write inside the same governed authoring flow
 - do not include a durable `Plan reference` from intention, draft text, or an unwritten plan; it is valid only when the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow
 - when that copied goal artifact carries a durable `Plan reference`, the artifact must show `/goal` first and place `Plan reference:` after the command inside the same copied artifact rather than above it as a detachable preface
+- if the current turn is only governed goal/plan-file authoring, stop at the copied goal artifact plus subordinate route support rather than surfacing `Subagent-Driven` / `Inline Execution` as a default follow-up menu
 - simple or already direct goals should still emit `/goal` directly without forcing planning for every request
 - when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries an in-artifact `Plan reference: <exact path>` slot that points to a checked existing or successfully written route-only plan file; surrounding explanation may repeat or explain the reference, but the plan file must remain route-only and must not become objective authority
 - when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape compact route support such as `Plan draft`, verification/testing route, or a plan reference inside that same copied goal artifact; when the route support is durable the copied artifact must present `/goal` first and `Plan reference:` after it, while adjacent route support remains allowed only when it is not the sole durable plan pointer and remains subordinate to the goal without creating a new public route owner
@@ -404,8 +405,9 @@ When the built-in task list is in use for phase-backed work:
 - use the task list first for the next unfinished slice; if insufficient, fall back to active phase context, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state
 
 ### 5.1) Selected goal/plan execution task materialization
-When selected `/goal` work or a selected plan-backed route becomes execution-ready and the work is non-trivial, execution surfaces should materialize that work into bounded built-in tasks before deep continuation rather than leaving the route only as prose.
+When selected `/goal` work or a selected plan-backed route becomes execution-ready, execution is actually selected or clearly implied, and the work is non-trivial, execution surfaces should materialize that work into bounded built-in tasks before deep continuation rather than leaving the route only as prose.
 - keep `/goal` and plan-reference linkage visible when material
+- goal/plan-file authoring by itself does not yet trigger task materialization or a user-facing execution-mode menu
 - do not present `Subagent-Driven` versus `Inline Execution` as a default user-facing choice menu; worker routing should select the execution posture internally from checked context
 - if task materialization lacks enough objective, scope, gate, access, or approval context, ask one narrow substantive clarification about the work before shaping tasks rather than asking for a routing label
 - prefer Subagent-Driven execution first when `worker-routing-and-context.md` classifies the tasks as worker-suitable
@@ -452,6 +454,7 @@ The later sync order does not weaken early startup establishment or live task-li
 | governed non-trivial or route-heavy `/goal` candidate is still route-heavy before final emission | allow automatic internal planning / plan-mode-style support to shape the emitted `/goal` while keeping one integrated goal-centric visible surface |
 | selected governed goal has a non-trivial route still to choose | keep route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed |
 | selected non-trivial plan-backed or goal-backed execution is ready to run | materialize built-in tasks, prefer Subagent-Driven execution first when worker-suitable, keep Inline only as a checked direct-handling exception, and avoid a default routing-choice menu |
+| governed goal/plan-file authoring reaches a bounded final artifact | stop at the copied goal artifact plus subordinate route support and do not append an execution-mode choice menu unless execution was also selected or clearly implied |
 | governance/release-sync slice inside an active phase | give it its own lane or task when mixing it with implementation would blur ownership or gates |
 | oversized `TODO.md` or `phase/SUMMARY.md` | roll history/detail into referenced `history/` / `done/` shards and keep compact active entrypoints |
 | God Phase or TODO overload | repair now when clear, otherwise create/extend a visible governed repair slice |
@@ -474,6 +477,7 @@ Avoid:
 - treating the built-in task list as a replacement for durable TODO/phase surfaces
 - requiring the user to say `goal plan file` before resolving planning depth for a plain governed goal request
 - asking the user to choose `Subagent-Driven` versus `Inline Execution` or another routing label when the system can decide internally from checked context
+- goal/plan-file authoring that auto-extends into a `Which approach?` menu even though execution was not yet selected
 - lane decomposition that is forced onto trivial or tightly sequential work
 - lane-aware tasks that hide goal/output/gate or collapse governance/release-sync into a generic implementation bucket
 - phase/task closeout that stops at a visible feature headline while selected design invariants, failure modes, or dependency semantics remain silently uncovered

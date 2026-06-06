@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
+> **Current Version:** 2.40
 > **Current Version:** 2.39
-> **Current Version:** 2.38
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.40 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary wording refinement](#version-240)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.39 | 2026-06-05 | **[Added P139 goal-route support and execution-label wording refinement](#version-239)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.38 | 2026-06-03 | **[Added P136 goal-first plan-reference wording refinement](#version-238)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.37 | 2026-06-03 | **[Added P135 governed goal auto-plan-file wording refinement](#version-237)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -81,6 +82,24 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+
+<a id="version-240"></a>
+## Version 2.40: Added P141 goal-authoring stop-boundary wording refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.39 to v2.40.
+- Updated `design/accurate-communication.design.md` from v2.39 to v2.40.
+- Added wording for turns that are only goal or plan-file authoring so the response says the goal artifact plus route support are ready and stops there.
+- Preserved the boundary that execution-style choice menus are not appended unless a real decision boundary remains.
+
+### Summary
+`accurate-communication.md` now states the authoring stop boundary directly, so bounded goal/plan-file turns finish with a clear artifact-ready message instead of leaking an unnecessary execution-choice prompt.
 
 ---
 

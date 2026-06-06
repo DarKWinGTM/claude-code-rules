@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
+> **Current Version:** 1.24
 > **Current Version:** 1.23
-> **Current Version:** 1.22
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.24 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and no-menu leakage refinement](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.23 | 2026-06-05 | **[Added P140 design-slice obligation coverage and continuation gate refinement](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.22 | 2026-06-05 | **[Added P139 goal route support and execution posture selection](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution posture](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -37,6 +38,25 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-124"></a>
+## Version 1.24: Added P141 goal-authoring stop-boundary and no-menu leakage refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.23 to v1.24.
+- Updated `design/execution-and-goal-frame.design.md` from v1.23 to v1.24.
+- Added a goal-authoring stop boundary so governed `/goal` or route-only plan-support authoring ends at the emitted goal artifact plus subordinate route support when execution was not yet selected.
+- Kept execution-posture selection as a later internal transition instead of a default user-facing `Subagent-Driven` / `Inline Execution` menu.
+- Hardened trigger and anti-pattern wording so goal/plan-file authoring no longer auto-spills into a `Which approach?` menu.
+
+### Summary
+`execution-and-goal-frame.md` now distinguishes goal authoring from later execution transition more explicitly, so bounded goal/plan-file authoring can finish cleanly without leaking an execution-mode choice menu.
 
 ---
 

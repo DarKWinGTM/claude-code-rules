@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.18
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.18
+> **Current Version:** 1.19
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -289,6 +289,7 @@ When `/goal` and planning both matter, keep the explanation explicit about which
 - present `/goal` as the objective layer: outcome, proof/checks, scope, and hard guardrails
 - present planning as route support for that same goal rather than as a second equal surface
 - user-facing explanation should say what route support is being used or what action is being taken, not present `Subagent-Driven` versus `Inline Execution` as a default menu
+- if the current turn is only governed goal or plan-file authoring, end at the emitted goal artifact plus subordinate route support instead of appending an execution-style choice menu
 - if route-choice context is insufficient, ask one narrow substantive clarification about the goal, scope, artifact, gate, access, or approval; do not ask the user to choose an internal routing label
 - preserve exact routing labels only when governance/workflow behavior itself is under discussion or exact copied artifact wording materially requires them
 - if internal planning shaped the advisory `/goal` before emission, explain that the planning prepared the route basis but did not replace `/goal` as the objective layer

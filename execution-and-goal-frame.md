@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.22
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.22
+> **Current Version:** 1.24
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -114,6 +114,13 @@ When a `/goal`, selected `/plan`, or plan-backed route is already selected for e
 - allow Inline Execution only when a checked direct-handling exception shows it is more effective for the current slice
 - valid direct-handling exceptions include trivial work, tightly coupled or highly sequential work, high edit overlap, interactive or approval-sensitive work, worker-unavailable scope, or explicit user direction
 
+### 5.2.1) Goal-authoring stop boundary
+When the current turn is still shaping or emitting a governed `/goal` or route-only plan-support artifact, keep the work at the authoring surface unless execution was also selected or is already the only safe implied continuation.
+- if the user asked for `goal`, `goal plan file`, or equivalent authoring output, emit the bounded goal artifact plus subordinate route support and stop there when no further execution slice was selected
+- do not append `Subagent-Driven` / `Inline Execution` menus after goal/plan-file authoring
+- execution-posture selection belongs to the later execution transition, not to the authoring closeout
+- if execution continuation is already selected or clearly implied, continue through `5.2` without exposing internal routing labels as a menu
+
 ### 6) Goal hierarchy and priority balance
 Goal hierarchy avoids confusing broad strategy with the current slice:
 - `strategic goal`: broad system direction
@@ -160,6 +167,7 @@ When the user plainly asks for a goal, including a request to create a goal for 
 - choose the smallest sufficient route support: direct `/goal` wording for a simple bounded objective, compact non-durable route notes when ordering matters but fits inside the goal-centric surface, durable route-only plan file only when persistent route support materially improves later execution, or one narrow substantive clarification when objective/scope/gate evidence is insufficient
 - keep `/goal` as the objective owner for outcome, proof/checks, scope, and hard guardrails while any plan file remains route-only support
 - if route support becomes durable, create or verify the route-only plan file before emitting the final goal artifact and carry `Plan reference:` only after that file exists in checked scope or was successfully written in the same flow
+- if the current turn is only goal or plan-file authoring, stop at the final goal artifact plus subordinate route support instead of auto-extending into execution-style choice prompts
 - trivial or already direct goals should stay lightweight and must not be forced into durable plan files
 
 ### 9.1) Explicit `/goal` suggestion bridge
@@ -282,6 +290,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | non-trivial multi-step/multi-file/phase-backed work | establish goal/output/gate when it prevents drift or improves verification |
 | plain governed goal request or plain `/goal` shaping request | resolve planning depth, choose the smallest sufficient route support, and ask only one narrow substantive clarification if objective/scope/gate evidence is insufficient |
 | selected plan-backed or goal-backed execution that is non-trivial and taskable | auto-decide execution posture internally: prefer Subagent-Driven first when worker-suitable, fall back to Inline only with a checked direct-handling reason, and do not show a default routing-choice menu |
+| goal/plan-file authoring reaches a bounded final artifact but execution is not yet selected | stop at the authoring surface, report the goal artifact plus route support directly, and do not append an execution-style choice menu |
 | single-goal overfocus, micro-cleanup drift, or one-area summaries | review whether sibling goals are neglected and rebalance |
 | user says work is too granular | perform goal review immediately |
 | several major goals remain open | keep current focus proportional to the whole set |
@@ -306,7 +315,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 ---
 
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, generic future-note closeout when successor work is already visible, echoing a broad successor label when a smaller truthful next slice is already derivable, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, default user-facing `Subagent-Driven` versus `Inline Execution` menus for selected goals or plans, asking for a routing label when one substantive work-scope clarification would unblock the path, treating a visible headline feature as complete while selected design-slice invariants, failure modes, or dependency semantics remain silently uncovered, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, checking new-major criteria before current-phase and subphase fit, treating any local deliverable/gate difference as a top-level major boundary, opening a new major without visible why-not-current / why-not-subphase basis, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
+Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, generic future-note closeout when successor work is already visible, echoing a broad successor label when a smaller truthful next slice is already derivable, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, default user-facing `Subagent-Driven` versus `Inline Execution` menus for selected goals or plans, goal/plan-file authoring that auto-spills into a `Which approach?` menu even though execution was not yet selected, asking for a routing label when one substantive work-scope clarification would unblock the path, treating a visible headline feature as complete while selected design-slice invariants, failure modes, or dependency semantics remain silently uncovered, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, checking new-major criteria before current-phase and subphase fit, treating any local deliverable/gate difference as a top-level major boundary, opening a new major without visible why-not-current / why-not-subphase basis, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
 
 ---
 

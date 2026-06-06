@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.39
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.39
+> **Current Version:** 2.40
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.40
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -107,6 +107,7 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - when a `/goal` suggestion depends on proof, name only proof/checks that can be surfaced in the conversation rather than implying hidden verification
 - if a `/goal` suggestion was shaped by a conditional pre-goal planning pass, say that the planning pass only prepared route basis, proof ordering, or route support for the final goal; for actual governed `/goal` authoring that requires durable route support, the route-only plan file should be written before the final goal is emitted, and the plan, plan file, or helper output still must not read like objective ownership or goal-completion proof
 - for plain goal requests that `execution-and-goal-frame.md` classifies as governed and in need of route support, describe automatic route support in ordinary user-facing terms such as route support, plan support, or `Plan reference` only when exact artifact wording requires it; do not require users to learn `goal plan file` as a choice
+- if the current turn is only goal or plan-file authoring, say that the goal artifact and route support are ready, then stop at that authoring boundary instead of appending an execution-style choice menu
 - if `/plan` is introduced after a selected `/goal`, keep the wording explicit that the goal still owns outcome/proof/scope while the plan owns route/sequence/task breakdown
 - if route complexity is still the reason planning is needed, say `/plan` directly instead of implying it only through vague prose about structuring or organizing next work
 - if bounded internal helper use shapes analysis, verification, testing, pre-goal planning, or a `Plan draft` inside `/goal`, keep the wording explicit that helper output is subordinate support rather than a new public surface or automatic goal proof

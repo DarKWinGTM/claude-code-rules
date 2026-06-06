@@ -1,12 +1,19 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-05
+> **Last Updated:** 2026-06-07
 > **Current Release:** v10.48 / P140 design-slice semantic coverage
-> **Active Wave:** none selected
+> **Active Wave:** P141 / v10.49 governed /goal routing-choice surface hardening
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## 🔄 Active
+
+- [ ] P141 / v10.49 governed `/goal` routing-choice surface hardening is in progress.
+  - Current focus: keep governed goal/plan-file authoring objective-facing, stop cleanly at the emitted goal artifact plus subordinate route support, and remove the post-goal execution-menu leak without reopening the broader P139/P140 architecture.
+  - Current checked progress: touched runtime owners plus companion design/per-chain changelog sync are in place; `TODO.md`, `phase/SUMMARY.md`, `phase/phase-141-governed-goal-routing-choice-surface-hardening.md`, and `patch/governed-goal-routing-choice-surface-hardening.patch.md` are the active current-state sync surfaces.
+  - Open gate: touched runtime install/update parity is now aligned and `git diff --check` passed, but final push/tag/release is blocked because `master` is currently `ahead 3, behind 19` relative to `origin/master` and the working tree still contains extensive unrelated modified/untracked files outside P141 scope.
 
 ## ✅ Completed
 

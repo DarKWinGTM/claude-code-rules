@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -56,6 +56,8 @@ P136 refinement: this owner should now require register wording for copied durab
 P137 refinement: this owner should now suppress the default need to surface `Subagent-Driven` vs `Inline Execution` as a user-facing choice menu when selected non-trivial plan-backed or goal-backed work is execution-ready, while still requiring a visible checked reason when Inline is chosen despite the Subagent-Driven-first preference.
 
 P139 refinement: this owner should now preserve outcome-first wording for plain goal requests, keep automatic route support described in ordinary user-facing terms, and reserve exact routing labels plus exact `Plan reference:` wording for governance/workflow discussion or exact copied artifact contexts only.
+
+P141 refinement: this owner should now preserve a goal-authoring register boundary so the assistant reports the emitted goal plus route support and stops there when execution was not yet selected, instead of auto-spilling into a `Subagent-Driven` / `Inline Execution` menu at the end of the authoring turn.
 
 P122 refinement: this owner should now preserve explicit `/plan` recommendation wording once planning is the right next surface, so the assistant does not hide the intended handoff behind vague prose about organizing or thinking through the route.
 

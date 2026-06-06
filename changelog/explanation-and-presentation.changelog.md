@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
+> **Current Version:** 1.19
 > **Current Version:** 1.18
-> **Current Version:** 1.17
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-06-07 | **[Added P141 goal-authoring presentation stop-boundary refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-05 | **[Added P139 goal-route support and exact Plan reference presentation refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-06-03 | **[Added P136 goal-first copied-artifact ordering hardening](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-06-03 | **[Added P135 auto-written plan-backed goal presentation hardening](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -31,6 +32,24 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-119"></a>
+## Version 1.19: Added P141 goal-authoring presentation stop-boundary refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.18 to v1.19.
+- Updated `design/explanation-and-presentation.design.md` from v1.18 to v1.19.
+- Added presentation guidance so a turn that is only governed goal or plan-file authoring ends at the emitted goal artifact plus subordinate route support.
+- Preserved the boundary that execution-style choice menus appear only when a real decision boundary still exists.
+
+### Summary
+`explanation-and-presentation.md` now gives goal authoring a clean stopping shape, so the visible response can end at the goal artifact instead of drifting into a follow-up execution menu.
 
 ---
 

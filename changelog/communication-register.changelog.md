@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
+> **Current Version:** 1.20
 > **Current Version:** 1.19
-> **Current Version:** 1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.20 | 2026-06-07 | **[Added P141 goal-authoring register stop-boundary refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-06-05 | **[Added P139 goal-route wording and internal-label suppression refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-03 | **[Added P137 execution-choice suppression and inline exception register refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-06-03 | **[Added P136 goal-first plan-reference register refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -32,6 +33,24 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-120"></a>
+## Version 1.20: Added P141 goal-authoring register stop-boundary refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.19 to v1.20.
+- Updated `design/communication-register.design.md` from v1.19 to v1.20.
+- Added register guidance so authoring-only goal turns report the emitted goal plus route support and stop there unless execution was also selected or clearly implied.
+- Preserved the suppression of default `Subagent-Driven` / `Inline Execution` menus while keeping internal routing labels available only for governance/exact-artifact contexts.
+
+### Summary
+`communication-register.md` now treats goal authoring and execution transition as different communication moments, so the assistant no longer drifts from a finished goal artifact into an unnecessary execution-mode menu.
 
 ---
 

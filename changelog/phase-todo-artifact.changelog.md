@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
+> **Current Version:** 1.28
 > **Current Version:** 1.27
-> **Current Version:** 1.26
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.28 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and execution-surface gating refinement](#version-128)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.27 | 2026-06-05 | **[Added P140 design-slice semantic coverage refinement](#version-127)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.26 | 2026-06-05 | **[Added P139 plain-goal route support and selected-execution task-shaping refinement](#version-126)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.25 | 2026-06-03 | **[Added P137 selected-execution task materialization refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -40,6 +41,25 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-128"></a>
+## Version 1.28: Added P141 goal-authoring stop-boundary and execution-surface gating refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.27 to v1.28.
+- Updated `design/phase-todo-artifact.design.md` from v1.27 to v1.28.
+- Added a goal-authoring stop boundary so governed goal/plan-file authoring can end at the copied goal artifact plus subordinate route support when execution was not yet selected.
+- Delayed task materialization and execution-posture handling until execution is actually selected or clearly implied.
+- Hardened trigger and anti-pattern wording so authoring-only turns no longer leak a default execution-mode choice menu.
+
+### Summary
+`phase-todo-artifact.md` now keeps authoring-only goal turns at the goal-centric surface and waits to shape live execution tasks until execution is truly the active next slice.
 
 ---
 
