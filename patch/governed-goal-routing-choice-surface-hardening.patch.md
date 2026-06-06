@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active / In Progress
+> **Status:** Complete / Released
 > **Target Design:** [../design/execution-and-goal-frame.design.md](../design/execution-and-goal-frame.design.md) v1.24
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -93,6 +93,6 @@ If the P141 wording/mechanism split proves too aggressive, roll back only the go
 
 ## Implementation Status
 
-P141 is in progress.
+P141 is completed.
 
-The touched runtime owners now carry the authoring stop-boundary refinement, companion design/changelog owner sync plus TODO/phase/patch current-state sync are in place, touched runtime install/update parity is aligned, `git diff --check` passed, and final release-history sync plus push/tag/release evidence remain blocked by the current `master...origin/master [ahead 3, behind 19]` divergence and extensive unrelated dirty/untracked repo state outside P141 scope.
+The touched runtime owners now carry the authoring stop-boundary refinement, companion design/changelog/TODO/phase/patch/master-changelog/detail surfaces are aligned to `v10.49 / P141`, touched runtime install/update parity is aligned, `git diff --check` passed, and push to `master`, tag `v10.49`, and GitHub release verification passed. Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.49

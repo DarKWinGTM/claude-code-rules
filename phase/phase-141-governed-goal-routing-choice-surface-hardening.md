@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P141
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.49
 > **Design References:**
 > - [../design/execution-and-goal-frame.design.md](../design/execution-and-goal-frame.design.md) v1.24
@@ -54,8 +54,8 @@ P141 closes that leak by making the authoring stop boundary explicit across the 
 - [x] Implement the selected primary runtime-owner doctrine updates.
 - [x] Sync the touched design companions and per-chain changelogs.
 - [x] Sync `TODO.md`, `phase/SUMMARY.md`, this phase file, and `patch/governed-goal-routing-choice-surface-hardening.patch.md`.
-- [ ] Sync `changelog/changelog.md` and `changelog/changelog/v10.49-released-governed-goal-routing-choice-surface-hardening.changelog.md`.
-- [ ] Complete final verification, install, publish, tag, and release evidence.
+- [x] Sync `changelog/changelog.md` and `changelog/changelog/v10.49-released-governed-goal-routing-choice-surface-hardening.changelog.md`.
+- [x] Complete final verification, install, publish, tag, and release evidence.
 
 ---
 
@@ -82,17 +82,17 @@ P141 closes that leak by making the authoring stop boundary explicit across the 
 ## Development Verification / TestKit Coverage
 
 - **Route:** `not_applicable_with_reason` for product behavior; this wave is governed doctrine/release work only.
-- **Checks planned:** touched-owner anchor verification, doc-surface alignment, runtime install/update verification, source/runtime parity, body sufficiency, `git diff --check`, branch/default-branch update verification, tag verification, and GitHub release verification.
-- **Confidence:** implementation and owner sync are in progress; release-level verification has not been claimed yet.
+- **Checks run:** touched-owner anchor verification, doc-surface alignment, runtime install/update verification, source/runtime parity, body sufficiency, `git diff --check`, push to `master`, tag verification, and GitHub release verification.
+- **Confidence:** released and verified in the checked doctrine scope.
 
 ---
 
 ## Current Status
 
-P141 is active.
+P141 is completed.
 
 Current checked progress:
 - the selected runtime-owner doctrine edits are in place across `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `accurate-communication.md`, `communication-register.md`, and `explanation-and-presentation.md`
-- the touched design companions and per-chain changelogs are aligned to the same authoring stop-boundary refinement
-- `TODO.md`, `phase/SUMMARY.md`, this phase file, and `patch/governed-goal-routing-choice-surface-hardening.patch.md` now reflect the active wave
-- touched runtime install/update parity is aligned and `git diff --check` passed, but release-history sync plus push/update to `master`, tag `v10.49`, and GitHub release verification remain blocked because `master` is `ahead 3, behind 19` relative to `origin/master` and the working tree still contains extensive unrelated modified/untracked files outside P141 scope
+- the touched design companions, per-chain changelogs, TODO/phase/patch surfaces, master changelog, and `v10.49` release-detail shard are aligned to the same authoring stop-boundary refinement
+- touched runtime install/update parity is aligned, `git diff --check` passed, and push to `master`, tag `v10.49`, and GitHub release verification passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.49

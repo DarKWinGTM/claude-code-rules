@@ -1,19 +1,18 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-07
-> **Current Release:** v10.48 / P140 design-slice semantic coverage
-> **Active Wave:** P141 / v10.49 governed /goal routing-choice surface hardening
+> **Current Release:** v10.49 / P141 governed /goal routing-choice surface hardening
+> **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
-## 🔄 Active
+## ✅ Completed
 
-- [ ] P141 / v10.49 governed `/goal` routing-choice surface hardening is in progress.
-  - Current focus: keep governed goal/plan-file authoring objective-facing, stop cleanly at the emitted goal artifact plus subordinate route support, and remove the post-goal execution-menu leak without reopening the broader P139/P140 architecture.
-  - Current checked progress: touched runtime owners plus companion design/per-chain changelog sync are in place; `TODO.md`, `phase/SUMMARY.md`, `phase/phase-141-governed-goal-routing-choice-surface-hardening.md`, and `patch/governed-goal-routing-choice-surface-hardening.patch.md` are the active current-state sync surfaces.
-  - Open gate: touched runtime install/update parity is now aligned and `git diff --check` passed, but final push/tag/release is blocked because `master` is currently `ahead 3, behind 19` relative to `origin/master` and the working tree still contains extensive unrelated modified/untracked files outside P141 scope.
+- [x] P141 / v10.49 governed `/goal` routing-choice surface hardening was completed, installed, pushed to `master`, tagged, and released.
+  - Verified: governed goal/plan-file authoring now stops at the emitted goal artifact plus subordinate route support when execution was not yet selected; authoring-only turns no longer append a default `Subagent-Driven` / `Inline Execution` menu; execution-transition wording now reports the chosen action/result or current stop boundary rather than a routing-label menu; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.49 / P141` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.49`, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.49
 
 ## ✅ Completed
 
