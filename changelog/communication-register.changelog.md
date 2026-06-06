@@ -1,7 +1,7 @@
 # Changelog - Communication Register
 
-> **Parent Document:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.20
+> **Current Version:** 1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,11 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.20 | 2026-06-07 | **[Added P141 goal-authoring register stop-boundary refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.19 | 2026-06-05 | **[Added P139 goal-route wording and internal-label suppression refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.18 | 2026-06-03 | **[Added P137 execution-choice suppression and inline exception register refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.17 | 2026-06-03 | **[Added P136 goal-first plan-reference register refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.16 | 2026-06-03 | **[Added P135 no-save-loop goal register refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-30 | **[Added P125 integrated goal-with-planning register refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-29 | **[Added P124 plan-backed goal register refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-28 | **[Added P123 helper-aware goal register refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -28,6 +33,97 @@
 | | | Summary: Extended `communication-register.md` so the merged runtime owner now covers anti-ceremony clarification and evidence-calibrated agreement or dissent for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-120"></a>
+## Version 1.20: Added P141 goal-authoring register stop-boundary refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.19 to v1.20.
+- Updated `design/communication-register.design.md` from v1.19 to v1.20.
+- Added register guidance so authoring-only goal turns report the emitted goal plus route support and stop there unless execution was also selected or clearly implied.
+- Preserved the suppression of default `Subagent-Driven` / `Inline Execution` menus while keeping internal routing labels available only for governance/exact-artifact contexts.
+
+### Summary
+`communication-register.md` now treats goal authoring and execution transition as different communication moments, so the assistant no longer drifts from a finished goal artifact into an unnecessary execution-mode menu.
+
+---
+
+
+<a id="version-119"></a>
+## Version 1.19: Added P139 goal-route wording and internal-label suppression refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.18 to v1.19.
+- Updated `design/communication-register.design.md` from v1.18 to v1.19.
+- Added outcome-first wording so plain goal requests can receive route support without users learning `goal plan file` as a concept.
+- Suppressed internal routing labels as default user-facing choices after selected goal/plan execution exists.
+- Reserved exact `Plan reference:` wording for the durable plan-file pointer only.
+
+### Summary
+`communication-register.md` now reports goal-support and execution-routing behavior in ordinary user-facing terms instead of leaking internal labels by default.
+
+---
+
+<a id="version-118"></a>
+## Version 1.18: Added P137 execution-choice suppression and inline exception register refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.17 to v1.18.
+- Updated `design/communication-register.design.md` from v1.17 to v1.18.
+- Added register guidance so selected non-trivial plan-backed or goal-backed execution does not need to surface `Subagent-Driven` vs `Inline Execution` as a default user-facing choice menu.
+- Required a visible checked reason when Inline Execution is selected despite the Subagent-Driven-first preference.
+- Preserved route-only plan support wording and prior P136 copied-artifact ordering behavior.
+
+### Summary
+`communication-register.md` now keeps execution-choice wording high-signal by letting the system choose the suitable mode directly while still making Inline exceptions explainable.
+
+---
+
+<a id="version-117"></a>
+## Version 1.17: Added P136 goal-first plan-reference register refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.16 to v1.17.
+- Updated `design/communication-register.design.md` from v1.16 to v1.17.
+- Added register guidance so copied durable-plan-backed governed `/goal` artifacts present `/goal` before `Plan reference:` inside the same copied artifact.
+- Prevented the plan reference from reading like a detachable heading above the command while preserving compact subordinate route-support wording.
+- Preserved the P135 already-written-plan and no-rerun loop register behavior.
+
+### Summary
+`communication-register.md` now keeps goal-related route support phrasing high-signal by making the command visibly primary and the durable plan reference visibly secondary inside the copied artifact.
+
+---
+
+<a id="version-116"></a>
+## Version 1.16: Added P135 no-save-loop goal register refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.15 to v1.16.
+- Updated `design/communication-register.design.md` from v1.15 to v1.16.
+- Added register guidance so actual governed `/goal` authoring talks about the route-only plan as already-written support instead of a courtesy save offer.
+- Added guidance that the assistant should avoid rerun-`/goal` loops when the same authoring flow can finish directly.
+- Preserved compact, subordinate route support wording and `/plan` overflow-only behavior.
+
+### Summary
+`communication-register.md` now keeps governed goal-authoring language high-signal and direct by treating plan persistence as an internal completion step rather than a second user interaction loop.
 
 ---
 

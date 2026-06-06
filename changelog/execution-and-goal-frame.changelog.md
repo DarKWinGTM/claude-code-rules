@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
-> **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.24
+> **Current Version:** 1.23
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,13 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.24 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and no-menu leakage refinement](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.23 | 2026-06-05 | **[Added P140 design-slice obligation coverage and continuation gate refinement](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.22 | 2026-06-05 | **[Added P139 goal route support and execution posture selection](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.21 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution posture](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.20 | 2026-06-03 | **[Added P136 goal-first copied-artifact ordering contract](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.19 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.18 | 2026-06-03 | **[Added P134 copyable goal plan-reference hardening](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution refinement](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.16 | 2026-05-29 | **[Added P124 pre-goal plan-backed goal-authoring refinement](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.15 | 2026-05-28 | **[Added P123 internal goal-helper refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -31,6 +38,134 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-124"></a>
+## Version 1.24: Added P141 goal-authoring stop-boundary and no-menu leakage refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.23 to v1.24.
+- Updated `design/execution-and-goal-frame.design.md` from v1.23 to v1.24.
+- Added a goal-authoring stop boundary so governed `/goal` or route-only plan-support authoring ends at the emitted goal artifact plus subordinate route support when execution was not yet selected.
+- Kept execution-posture selection as a later internal transition instead of a default user-facing `Subagent-Driven` / `Inline Execution` menu.
+- Hardened trigger and anti-pattern wording so goal/plan-file authoring no longer auto-spills into a `Which approach?` menu.
+
+### Summary
+`execution-and-goal-frame.md` now distinguishes goal authoring from later execution transition more explicitly, so bounded goal/plan-file authoring can finish cleanly without leaking an execution-mode choice menu.
+
+---
+
+
+<a id="version-123"></a>
+## Version 1.23: Added P140 design-slice obligation coverage and continuation gate refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.22 to v1.23.
+- Updated `design/execution-and-goal-frame.design.md` from v1.22 to v1.23.
+- Added selected design-slice obligation coverage so execution extracts implementation-relevant semantic obligations from the bounded governed design slice before treating the slice as ready or complete.
+- Required continuation when the visible action is implemented but selected invariants, failure modes, or dependency semantics remain uncovered without explicit status.
+- Hardened anti-pattern and trigger wording so headline-output-only closeout no longer reads as sufficient for selected design-slice execution.
+
+### Summary
+`execution-and-goal-frame.md` now keeps execution and closeout tied to the full selected design slice instead of allowing progress or completion to collapse into the visible happy-path feature headline.
+
+---
+
+<a id="version-122"></a>
+## Version 1.22: Added P139 goal route support and execution posture selection
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.21 to v1.22.
+- Updated `design/execution-and-goal-frame.design.md` from v1.21 to v1.22.
+- Made plain goal requests sufficient to trigger planning-depth resolution without requiring `goal plan file` phrasing.
+- Required the smallest sufficient route support for governed/non-trivial/route-heavy goals, while preserving `/goal` as objective authority and any plan file as route-only support.
+- Hardened selected goal/plan execution so posture is chosen internally from checked context and no default user-facing `Subagent-Driven` vs `Inline Execution` choice menu is emitted.
+
+### Summary
+`execution-and-goal-frame.md` now resolves both goal support depth and selected execution posture from checked context instead of making users learn internal artifact or routing labels.
+
+---
+
+<a id="version-121"></a>
+## Version 1.21: Added P137 Subagent-Driven-first execution posture
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.20 to v1.21.
+- Updated `design/execution-and-goal-frame.design.md` from v1.20 to v1.21.
+- Added an automatic execution-posture rule for selected non-trivial plan-backed or goal-backed work so the system no longer needs to surface a default execution-style choice prompt.
+- Made Subagent-Driven the preferred first posture for worker-suitable selected execution.
+- Preserved Inline Execution only as a checked direct-handling exception when more effective for the current slice.
+
+### Summary
+`execution-and-goal-frame.md` now decides execution posture for selected non-trivial plan/goal work directly instead of surfacing Subagent-Driven vs Inline as a default user-facing choice.
+
+---
+
+<a id="version-120"></a>
+## Version 1.20: Added P136 goal-first copied-artifact ordering contract
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.19 to v1.20.
+- Updated `design/execution-and-goal-frame.design.md` from v1.19 to v1.20.
+- Required copied durable-plan-backed governed `/goal` artifacts to keep `/goal` first and `Plan reference:` second inside the same copied artifact.
+- Preserved P135 plan-file-first authoring and kept detached-preface plan-reference presentation out of the copied artifact contract.
+- Preserved `/goal` objective ownership and route-only plan support boundaries.
+
+### Summary
+`execution-and-goal-frame.md` now hardens governed `/goal` output so durable plan-backed copied artifacts cannot place `Plan reference:` above the command they support.
+
+---
+
+<a id="version-119"></a>
+## Version 1.19: Added P135 governed goal auto-plan-file authoring sequence hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.18 to v1.19.
+- Updated `design/execution-and-goal-frame.design.md` from v1.18 to v1.19.
+- Required actual governed `/goal` authoring with durable route support to write the route-only plan file before final goal emission.
+- Required the final goal to use an exact in-artifact `Plan reference` only after the file write succeeds.
+- Added explicit no-save-plan / no-rerun-`/goal` behavior when no real stop gate exists.
+
+### Summary
+`execution-and-goal-frame.md` now hardens the actual governed `/goal` authoring sequence so route-only plan persistence happens before final goal emission instead of being treated as an optional follow-up step.
+
+---
+
+<a id="version-118"></a>
+## Version 1.18: Added P134 copyable goal plan-reference hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.17 to v1.18.
+- Updated `design/execution-and-goal-frame.design.md` from v1.17 to v1.18.
+- Required any durable route-plan pointer for a governed `/goal` to travel inside the same copyable goal artifact instead of living only in surrounding explanation.
+- Preserved `/goal` as the objective owner and kept plan files route-only rather than objective authority or completion proof.
+- Preserved adjacent route notes only for non-durable support so the copy-boundary hardening stays narrower than the broader P125/P130 model.
+
+### Summary
+`execution-and-goal-frame.md` now closes the copy-boundary gap for durable plan-backed governed `/goal` output while preserving the existing objective-versus-route ownership split.
 
 ---
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.36
+> **Current Version:** 2.40
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -44,11 +44,17 @@ This chain is the wording owner for:
 - wrapper-only-translation wording so translating the wrapper while leaving the goal-shaped body in another language is treated as insufficient alignment rather than as success
 - goal-versus-plan wording so responses keep `/goal` responsible for outcome/proof/scope, keep `/plan` responsible for route/sequence/task breakdown, and avoid letting completed route work read like completed goal proof
 - internal-helper wording so bounded native subagent assistance inside `/goal` can surface plan draft or verification/testing route help without being misreported as a new public surface or automatic goal proof
-- plan-backed-goal wording so a conditional pre-goal planning pass can be described as route preparation for an advisory `/goal`, with optional plan reference, without letting plan files or helper output read as objective ownership or goal-completion proof
+- plan-backed-goal wording so a conditional pre-goal planning pass can be described as route preparation for an advisory `/goal`, with optional helper delegation, without letting plan files or helper output read as objective ownership or goal-completion proof
+- actual-goal-authoring wording so when a route-only plan file is required for governed `/goal` emission the assistant does not ask whether to save it, does not ask the user to run `/goal` again, and does not imply a `Plan reference` exists before the file write succeeds
+- copied-goal-ordering wording so when a governed copied artifact carries durable route support it presents `/goal` first and `Plan reference:` after it inside the same copied artifact instead of as a detachable heading above the command
 - explicit `/plan` next-surface wording so route-heavy selected goals can name planning directly instead of implying it only through broad prose about organizing next work
 - visible evidence-layer wording so mixed-confidence answers can separate verified facts, inference, and hypotheses clearly enough for the reader without relying on tone alone
 - strategy-aware recommendation wording so shared-mechanism readings remain visible when the evidence does not yet justify supplier/model/path-specific scope as a settled fix owner
 - safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
+
+- goal-request route-support wording so plain goal requests can receive the smallest sufficient route support without requiring users to ask for a `goal plan file`
+- goal-authoring stop-boundary wording so a turn that is only governed goal/plan-file authoring reports the emitted goal artifact plus route support as ready and stops there instead of appending an execution-style choice menu
+- execution-posture wording so selected goal/plan execution reports chosen action/route/result instead of default `Subagent-Driven` / `Inline Execution` choice menus, while `Plan reference:` remains exact only when a route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow
 
 This chain now defers coding-time verification strategy, debug path selection, testing depth, and TestKit/scenario decisions to `coding-discipline`, keeps bounded technical snapshot wording inside its absorbed Snapshot Wording section, and defers end-of-response closing / action / proposal framing to `explanation-and-presentation`.
 

@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.21
+> **Current Version:** 1.28
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -51,6 +51,20 @@ P124 refinement: this owner should now preserve how governed execution surfaces 
 
 P125 refinement: this owner should now preserve integrated goal-with-planning execution surfaces so governed work keeps compact route notes, plan basis, verification-order support, and similar route context inside the emitted or selected goal-centric surface first, and opens `/plan` only when overflow route detail or explicit standalone planning is materially needed.
 
+P134 refinement: this owner should now require a durable plan-backed governed `/goal` to carry an in-artifact `Plan reference` slot inside the same copyable goal artifact, while preserving adjacent support only for non-durable route notes and keeping the plan file route-only rather than objective authority.
+
+P135 refinement: this owner should now require governed `/goal` authoring to write the route-only plan file before final emission when the trigger holds, keep that write inside the same authoring flow without asking the user to save or rerun `/goal`, and preserve `/plan` as overflow/explicit standalone route handling rather than the normal persistence step.
+
+P136 refinement: this owner should now require governed `/goal` artifact sourcing and execution surfaces to keep copied durable-plan-backed artifacts in `/goal`-first order, with `Plan reference:` after the command inside the same copied artifact rather than above it as detached route support.
+
+P137 refinement: this owner should now preserve task materialization for selected non-trivial plan-backed or goal-backed execution so built-in tasks become the live execution surface, Subagent-Driven routing is preferred first when worker-suitable, and Inline Execution remains only a checked direct-handling exception when more effective.
+
+P139 refinement: this owner should now preserve smallest-sufficient route support for plain governed goal requests, allow durable route-only plan files only when route pressure or continuity risk justifies them, and keep selected goal/plan task materialization aligned to internal execution-posture choice instead of a user-facing mode selection.
+
+P140 refinement: this owner should now preserve design-to-phase semantic coverage so a selected governed design slice is extracted into implementation-relevant semantic items, phase/task/verification surfaces keep explicit status for each selected item, and phase closeout cannot stop at a headline output while selected invariants or failure modes remain uncovered.
+
+P141 refinement: this owner should now preserve a goal-authoring stop boundary inside the execution surfaces so governed goal/plan-file authoring can end at the copied goal artifact plus subordinate route support, while task materialization and execution-posture selection wait until execution is actually selected or clearly implied and no default execution-mode menu leaks out of the authoring turn.
+
 P126 refinement: this owner should now make `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms, preserve lineage-first child-phase selection across those three numeric depths, and classify observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
 
 P117 refinement: this owner should now let checked phase/roadmap/TODO surfaces shape compact candidate goals at real decision boundaries when several unselected next slices remain live and no one continuation path clearly dominates.
@@ -72,6 +86,7 @@ P122 refinement: this owner should now preserve an explicit `/plan` next-surface
 - Keep metadata linked to this design and the chain changelog.
 - Preserve ordered phase identity selection and visible lineage-basis recording; do not let future compression reduce current-phase → child-phase → new-major into unordered criteria.
 - Preserve explicit forward-valid numeric grammar for `NNN`, `NNN-NN`, and `NNN-NN-NN`, and preserve observed alphanumeric forms as legacy-only unless a later doctrine selects normalization.
+- Preserve selected design-slice extraction and explicit semantic-item status coverage when a phase executes a bounded governed design subset.
 - Preserve phase-backed lane structure and lane-aware task shaping while leaving worker-scaling and bounded-I/O behavior to `worker-routing-and-context.md` and `safe-io.md`.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

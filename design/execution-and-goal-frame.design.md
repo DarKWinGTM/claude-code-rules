@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -51,6 +51,20 @@ P124 refinement: this owner should now allow advisory governed `/goal` creation 
 
 P125 refinement: this owner should now preserve an integrated goal-with-planning visible surface so route-heavy governed `/goal` work may use internal planning / plan-mode-style support before or around final goal emission, keep compact route support inside or adjacent to that goal-centric surface, and reserve `/plan` for overflow or explicitly requested standalone route handling instead of the ordinary paired next surface.
 
+P134 refinement: this owner should now require any durable route-plan pointer for a plan-backed governed `/goal` to travel inside the same copyable goal artifact instead of living only in surrounding explanation, while keeping `/goal` as the objective owner, keeping the plan file route-only, and allowing adjacent route notes only when they are not the sole durable plan pointer.
+
+P135 refinement: this owner should now require actual governed `/goal` authoring with durable route support to write the route-only plan file before final goal emission, ban save-plan and rerun-`/goal` loops when no real stop gate exists, and treat failed plan-file writes as blockers rather than emitting a fake `Plan reference`.
+
+P136 refinement: this owner should now require copied durable-plan-backed governed `/goal` artifacts to keep `/goal` first and `Plan reference:` second inside the same copied artifact, while preserving the P135 plan-file-first authoring contract and rejecting detached-preface presentation of the plan reference.
+
+P137 refinement: this owner should now preserve an automatic execution-posture decision for selected non-trivial plan-backed or goal-backed work so execution prefers Subagent-Driven first, delegates topology to worker-routing-and-context.md, delegates live task shaping to phase-todo-artifact.md, and preserves Inline Execution only as a checked direct-handling exception when more effective.
+
+P139 refinement: this owner should now treat plain goal requests as enough to trigger planning-depth resolution, choose the smallest sufficient route support automatically for governed work, keep durable `Plan reference` valid only after a route-only plan file already exists in checked scope or was successfully written in the same flow, and keep selected goal/plan execution posture internally chosen rather than exposed as a default user-facing mode choice.
+
+P140 refinement: this owner should now preserve selected design-slice obligation coverage so execution extracts implementation-relevant semantic obligations from the bounded governed design slice, uses them for task/verification/continuation logic, and refuses headline-output-only closeout while selected invariants, failure modes, or dependency semantics remain uncovered without explicit status.
+
+P141 refinement: this owner should now preserve a goal-authoring stop boundary so governed `/goal` or route-only plan-support authoring ends at the emitted goal artifact plus subordinate route support when execution was not yet selected, while execution-posture selection remains a later internal transition and no default `Subagent-Driven` / `Inline Execution` menu is surfaced at authoring closeout.
+
 P121 refinement: this owner should now preserve an explicit goal-to-plan bridge so `/goal` remains the objective owner, `/plan` remains the route owner, governed non-trivial goals may bridge into planning without forcing plans for every goal, and route completion alone cannot substitute for goal-gate closeout.
 
 P122 refinement: this owner should now preserve explicit `/plan` next-surface recommendation once a selected governed goal remains route-heavy, so the assistant does not leave the route in broad prose after the goal is already chosen.
@@ -63,6 +77,7 @@ P122 refinement: this owner should now preserve explicit `/plan` next-surface re
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
 - Preserve lane decomposition and next-lane continuation semantics without taking delegation or bounded-I/O ownership away from `worker-routing-and-context.md` and `safe-io.md`.
+- Preserve selected design-slice obligation extraction and the rule that uncovered obligations continue execution instead of allowing headline-output-only closeout.
 - Preserve ordered phase-shaped continuation handling so current-phase reuse and truthful subphase fit are evaluated before any new-major phase selection.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

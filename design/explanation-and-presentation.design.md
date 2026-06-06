@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -44,6 +44,16 @@ P123 refinement: this owner should now preserve a compact `Plan draft` / `Verifi
 P124 refinement: this owner should now preserve a plan-backed advisory `/goal` presentation shape so a conditional pre-goal planning pass may surface compact `Plan draft`, `Verification / testing route`, or `Plan reference` context before or around the emitted goal without turning the visible goal surface into a mini-`/plan` or a second objective layer.
 
 P125 refinement: this owner should now preserve an integrated goal-with-planning presentation shape so route-heavy governed `/goal` output stays one goal-centric visible surface, compact route support remains subordinate inside or adjacent to that surface, and `/plan` appears only for overflow or explicitly requested standalone route handling.
+
+P134 refinement: this owner should now require any durable plan-backed governed `/goal` artifact to keep `Plan reference` inside the same copyable goal artifact, while allowing adjacent support only for non-durable route notes and preserving the plan file as route-only context rather than objective authority or completion proof.
+
+P135 refinement: this owner should now require the final copied advisory `/goal` artifact to appear only after the route-only plan file has been written successfully, and should suppress save-plan/rerun-`/goal` prompts unless a real blocker prevents finishing the same authoring flow.
+
+P136 refinement: this owner should now require copied durable-plan-backed governed `/goal` artifacts to present the `/goal` command before any in-artifact `Plan reference:` slot, keep that `Plan reference:` after the command inside the same copied artifact, and reject presentation shapes where the reference appears as a detachable preface above the command.
+
+P139 refinement: this owner should now preserve the smallest sufficient route support for plain goal requests, keep default user-facing wording focused on chosen action/result rather than routing labels, and reserve exact `Plan reference:` only for the durable route-only plan-file pointer inside the copied goal artifact.
+
+P141 refinement: this owner should now preserve a goal-authoring presentation stop boundary so when the current turn is only governed goal or plan-file authoring the visible surface ends at the emitted goal artifact plus subordinate route support rather than auto-appending an execution-style choice menu.
 
 P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
 

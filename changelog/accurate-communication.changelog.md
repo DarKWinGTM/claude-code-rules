@@ -1,7 +1,7 @@
 # Changelog - Accurate Communication Standard
 
-> **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
-> **Current Version:** 2.36
+> **Current Version:** 2.40
+> **Current Version:** 2.39
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,10 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.40 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary wording refinement](#version-240)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 2.39 | 2026-06-05 | **[Added P139 goal-route support and execution-label wording refinement](#version-239)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 2.38 | 2026-06-03 | **[Added P136 goal-first plan-reference wording refinement](#version-238)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 2.37 | 2026-06-03 | **[Added P135 governed goal auto-plan-file wording refinement](#version-237)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.36 | 2026-05-29 | **[Added P124 pre-goal planning-pass wording refinement](#version-236)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.35 | 2026-05-28 | **[Added P123 internal helper wording refinement](#version-235)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.34 | 2026-05-28 | **[Added P122 explicit `/plan` next-surface wording refinement](#version-234)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -78,6 +82,79 @@
 | 1.0 | 2026-02-06 | **[Initial Design](#version-10)** | f19e8a67-d3c2-4c85-aa11-4db6949e61f8 |
 | | | - Created as rigid rules (too strict) | |
 | | | Summary: Initial version - later deemed too rigid | |
+
+---
+
+
+<a id="version-240"></a>
+## Version 2.40: Added P141 goal-authoring stop-boundary wording refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.39 to v2.40.
+- Updated `design/accurate-communication.design.md` from v2.39 to v2.40.
+- Added wording for turns that are only goal or plan-file authoring so the response says the goal artifact plus route support are ready and stops there.
+- Preserved the boundary that execution-style choice menus are not appended unless a real decision boundary remains.
+
+### Summary
+`accurate-communication.md` now states the authoring stop boundary directly, so bounded goal/plan-file turns finish with a clear artifact-ready message instead of leaking an unnecessary execution-choice prompt.
+
+---
+
+
+<a id="version-239"></a>
+## Version 2.39: Added P139 goal-route support and execution-label wording refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.38 to v2.39.
+- Updated `design/accurate-communication.design.md` from v2.38 to v2.39.
+- Added wording so plain goal requests can receive the smallest sufficient route support without making the user ask for a `goal plan file`.
+- Added wording so selected goal/plan execution reports chosen action/route/result instead of a default `Subagent-Driven` / `Inline Execution` choice menu.
+- Tightened `Plan reference:` semantics so it means a route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow.
+
+### Summary
+`accurate-communication.md` now keeps goal-route support and execution-routing wording aligned to actual evidence and durable plan-file truth.
+
+---
+
+<a id="version-238"></a>
+## Version 2.38: Added P136 goal-first plan-reference wording refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.37 to v2.38.
+- Updated `design/accurate-communication.design.md` from v2.37 to v2.38.
+- Added wording guidance so copied governed goal artifacts present `/goal` first and `Plan reference:` after it inside the same copied artifact.
+- Prevented the plan reference from reading like a detachable heading above the command while preserving route-only support meaning.
+- Preserved the P135 no-save-loop and write-before-emit wording boundaries.
+
+### Summary
+`accurate-communication.md` now phrases copied governed goal artifacts so the command stays visibly primary and the durable plan reference reads as subordinate route support.
+
+---
+
+<a id="version-237"></a>
+## Version 2.37: Added P135 governed goal auto-plan-file wording refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.36 to v2.37.
+- Updated `design/accurate-communication.design.md` from v2.36 to v2.37.
+- Added wording guidance so required governed plan persistence is not phrased as a user choice.
+- Added claim-strength guidance that `Plan reference` implies the route-only plan file was actually written, or else the assistant must report a blocker.
+- Preserved route-only, non-authority, and non-completion-proof wording for plan files and helper output.
+
+### Summary
+`accurate-communication.md` now keeps plan-backed governed `/goal` wording honest about whether the route-only plan file actually exists and prevents save/rerun loops from being phrased like user-owned choices.
 
 ---
 

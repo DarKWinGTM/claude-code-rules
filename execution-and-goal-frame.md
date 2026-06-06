@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.17
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.17
+> **Current Version:** 1.24
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; decompose broad objectives before deep execution, continue automatically into the next worker-fit lane when safe, keep the full active goal set visible and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
+**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; decompose broad objectives before deep execution, continue automatically into the next worker-fit lane when safe, keep the full active goal set visible, resolve plain goal requests into the smallest sufficient route support, and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
 
 This rule owns mode selection, stop/continue, continuous execution, next-work discovery, goal-set visibility, priority balance, goal-frame semantics, goal hierarchy, anti-ritual boundaries, and the completion-to-next-goal bridge. It does not replace startup governance, user authority, safety gates, evidence wording, worker routing, phase roadmap semantics, or shared-board/plugin coordination.
 
@@ -81,9 +81,17 @@ When the active objective is broad enough that several execution shapes, owner s
 - use the decomposition to choose the next safe slice, not to justify automatic delegation or over-planning
 - do not split trivial, single-step, or tightly sequential work into artificial lanes
 
+### 4.2) Selected design-slice obligation coverage
+When execution is driven by a bounded governed design slice, identify the implementation-relevant obligations from that slice before treating the slice as execution-ready or complete.
+- obligation extraction should look for behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary when materially present
+- use the extracted obligations to shape lanes, tasks, verification, and continuation logic rather than relying only on the visible feature label or happy-path action
+- if checked context is still too thin to tell whether a design item is a real obligation or only background context, inspect the selected design slice further before closing execution around a narrower headline
+- compact execution surfaces do not need to restate the whole design body, but they must keep enough semantic coverage visible that selected obligations are not silently dropped from the active slice
+
 ### 5) Continuous execution
 When execution mode is active, startup posture is resolved enough, and no real stop gate exists, continue the active objective.
 - continue when the next step is implied by current goal, phase, task list, TODO, or checked implementation state
+- when the visible action or headline feature is implemented but selected design-slice obligations remain uncovered, continue into the remaining implementation, verification, defer-with-owner, blocker, or explicit out-of-scope classification slice instead of stopping at the headline output
 - when implementation is complete but material verification/debug/TestKit evidence remains pending, continue into the proportionate verification slice when safe
 - do not end a turn only to report a milestone if safe continuation exists; do not pause to expose an obvious task the assistant can do directly
 - status may clarify changes/completion/blockers, but reporting alone must not become the stop reason
@@ -94,6 +102,24 @@ When the current lane closes and the next lane in the same objective is already 
 - if the next lane is phase-backed, preserve its phase linkage in task and phase surfaces before deeper execution
 - if the next lane is governance/release-sync or multi-surface validation, classify the owner surfaces first instead of collapsing it into a vague `sync everything` pass
 - do not auto-continue into approval-sensitive, destructive, materially divergent, or clearly user-choice-sensitive work
+
+### 5.2) Selected plan/goal execution posture
+When a `/goal`, selected `/plan`, or plan-backed route is already selected for execution and the work is non-trivial, execution-ready, and decomposable into bounded outcome-sized tasks, the system should decide execution posture internally instead of surfacing a default execution-style choice prompt.
+- do not present `Subagent-Driven` versus `Inline Execution` as a default user-facing choice menu
+- if checked context is insufficient to select the next execution slice, ask one narrow substantive clarification about the work objective, scope, gate, access, or approval boundary rather than asking the user to choose an execution routing label
+- prefer Subagent-Driven execution first when the current slice is worker-suitable and no stronger stop gate applies
+- use `worker-routing-and-context.md` for topology selection and `phase-todo-artifact.md` for live task shaping rather than leaving the route only as prose
+- keep `/goal` as objective owner for outcome, proof/checks, scope, and hard guardrails
+- keep plan files and `Plan reference` route-only instead of objective authority
+- allow Inline Execution only when a checked direct-handling exception shows it is more effective for the current slice
+- valid direct-handling exceptions include trivial work, tightly coupled or highly sequential work, high edit overlap, interactive or approval-sensitive work, worker-unavailable scope, or explicit user direction
+
+### 5.2.1) Goal-authoring stop boundary
+When the current turn is still shaping or emitting a governed `/goal` or route-only plan-support artifact, keep the work at the authoring surface unless execution was also selected or is already the only safe implied continuation.
+- if the user asked for `goal`, `goal plan file`, or equivalent authoring output, emit the bounded goal artifact plus subordinate route support and stop there when no further execution slice was selected
+- do not append `Subagent-Driven` / `Inline Execution` menus after goal/plan-file authoring
+- execution-posture selection belongs to the later execution transition, not to the authoring closeout
+- if execution continuation is already selected or clearly implied, continue through `5.2` without exposing internal routing labels as a menu
 
 ### 6) Goal hierarchy and priority balance
 Goal hierarchy avoids confusing broad strategy with the current slice:
@@ -136,6 +162,14 @@ Use checked execution surfaces to decide whether the assistant should continue d
 
 This bridge is primarily closeout behavior, but candidate-goal surfacing is also valid at real decision boundaries where several materially different next slices remain live and direct continuation no longer clearly dominates. It must not block phase 1 → 2 → 3 continuation when those phases are already selected, safe, and unblocked.
 
+### 9.0.1) User-requested governed goal shaping
+When the user plainly asks for a goal, including a request to create a goal for a work item, that request is enough to trigger planning-depth resolution; do not require the user to say `goal plan file` before deciding route support.
+- choose the smallest sufficient route support: direct `/goal` wording for a simple bounded objective, compact non-durable route notes when ordering matters but fits inside the goal-centric surface, durable route-only plan file only when persistent route support materially improves later execution, or one narrow substantive clarification when objective/scope/gate evidence is insufficient
+- keep `/goal` as the objective owner for outcome, proof/checks, scope, and hard guardrails while any plan file remains route-only support
+- if route support becomes durable, create or verify the route-only plan file before emitting the final goal artifact and carry `Plan reference:` only after that file exists in checked scope or was successfully written in the same flow
+- if the current turn is only goal or plan-file authoring, stop at the final goal artifact plus subordinate route support instead of auto-extending into execution-style choice prompts
+- trivial or already direct goals should stay lightweight and must not be forced into durable plan files
+
 ### 9.1) Explicit `/goal` suggestion bridge
 When a true completion boundary exposes one bounded governed-work successor objective, the assistant may promote that candidate goal into a compact advisory Claude Code `/goal` command instead of leaving it only as prose recommendation.
 
@@ -162,9 +196,12 @@ Required guidance:
 - if proof cannot be made transcript-visible, do not suggest `/goal`
 - if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
 - when governed work is non-trivial or route-heavy and route synthesis would materially improve the command, advisory `/goal` creation may conditionally run an internal planning / plan-mode-style pass before final goal emission
-- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and optional plan-file reference synthesis while remaining internal-only and subordinate to the emitted goal
+- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and optional helper delegation while remaining internal-only and subordinate to the emitted goal
+- for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must create or verify the route-only plan file first, confirm that the check/write succeeded, and only then emit the final copyable `/goal` artifact with exact in-artifact `Plan reference: <exact path>`
+- do not include a durable `Plan reference` from intention, draft text, or an unwritten plan; it is valid only when the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow
+- when that copied artifact carries a durable `Plan reference`, the artifact must show the `/goal` command first and place `Plan reference:` after the command inside the same copied artifact rather than above it as a detachable preface
 - simple or already direct goals should still emit `/goal` directly without forcing planning for every request
-- when a durable route artifact is useful, a plan file may be referenced from the emitted goal or surrounding explanation, but the plan file must remain a route artifact and must not become objective authority
+- when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries `Plan reference: <exact path>` or equivalent inside that same artifact; surrounding explanation may repeat or explain the reference, but it must not be the sole carrier, and the plan file must remain a route artifact and must not become objective authority
 - when surfaced, candidate-goal labels, promoted `/goal` body, surrounding recommendation labels, and recap/closing lines should follow the dominant language of the active exchange by default rather than leaving English scaffolds around non-English goal output
 - infer that default language from the user's main working language across the current exchange even when the user did not issue a direct language instruction; an explicit language request is a stronger override
 - preserve exact literals such as `/goal`, file paths, version tags, code-level identifiers, and query parameters unless the user explicitly selects another language style or a checked exact token must remain unchanged
@@ -174,8 +211,10 @@ Required guidance:
 ### 9.1.1) Integrated internal planning support inside and before `/goal`
 When a governed `/goal` is being shaped or has already been selected and route complexity remains material, `/goal` may conditionally use internal native subagent assistance for analysis, verification, testing, or bounded route drafting without creating a new user-facing command.
 - keep `/goal` as the visible objective contract whether the helper work happened during internal planning before emission or after the goal was selected
-- use helper assistance only when separate context materially improves evidence gathering, route drafting, verification ordering, test/log triage, or optional plan-file reference synthesis
+- use helper assistance only when separate context materially improves evidence gathering, route drafting, verification ordering, test/log triage, or route-plan preparation inside the same governed authoring flow
 - any returned `Plan draft`, `Verification / testing route`, plan basis, or plan-file reference remains subordinate route support for the goal and must not become a second visible objective surface or completion proof
+- if a durable plan-file reference exists, it must point to a route-only plan file that already exists in checked scope or was written successfully in the same flow, and it must be carried inside the same copyable goal artifact rather than only beside it; inside that artifact the `/goal` command comes first and `Plan reference:` follows after it; non-durable route notes may still sit beside the goal when they remain clearly subordinate support
+- do not ask whether to save the plan and do not ask the user to invoke `/goal` again when the governed authoring flow already has sufficient route basis and no real stop gate exists
 - if route support is surfaced beside the goal, it must read as integrated support for that goal rather than as a neighboring `/plan` branch
 - `/plan` remains available only when explicit standalone route handling is still needed after the selected goal exists or when overflow route detail no longer fits the integrated goal-centric surface
 - helper findings are input, not completion proof; main-controller synthesis, visible proof wording, and goal-gate closeout remain leader-owned
@@ -189,6 +228,7 @@ When a goal is already selected, `/plan` remains a route tool, not a second goal
 - do not present `/plan` as the ordinary paired next step for every route-heavy selected goal
 - if integrated planning support already shaped the goal, keep that material subordinate and do not turn it into a public handoff unless standalone route ownership materially helps
 - if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper assistance may support the selected goal without changing route ownership
+- when actual governed `/goal` authoring requires durable route support, the same flow owns writing the route-only plan file, emitting the final goal with exact in-artifact `Plan reference`, keeping `/goal` before `Plan reference:` inside that copied artifact, and continuing execution unless a real stop gate blocks it
 - if the route in `/plan` drifts from the selected goal, repair the route or explicitly revisit the goal basis instead of silently treating the plan as the new authority
 - when plan steps are completed but the selected goal's proof/gate is still open, continue into goal-gate verification instead of closing on route completion alone
 
@@ -226,7 +266,7 @@ Continuous execution must not turn the next broad slice or aggregate read burst 
 ## Legitimate Stop Gates
 Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion with no selected safe continuation. Completion may still require a supported next-goal recommendation when checked surfaces show meaningful unselected successor work.
 
-Completing one slice is not a stop. Implementation complete but material verification pending is not completion unless verification is blocked, not applicable with reason, approval-sensitive, or already satisfied. Continue into the next slice when already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff report; do not auto-promote draft-only, future-only, or unselected phases/goals.
+Completing one slice is not a stop. Implementation complete but material verification pending is not completion unless verification is blocked, not applicable with reason, approval-sensitive, or already satisfied. A selected design slice is also not complete when invariants, failure modes, or required dependency/state semantics remain uncovered without an explicit status such as verified, deferred, blocked, not applicable, or out of scope. Continue into the next slice when already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff report; do not auto-promote draft-only, future-only, or unselected phases/goals.
 
 Re-check mode when the user changes scope, corrects intent, provides evidence from another session, or shifts between behavior analysis and project execution. Move back to discussion mode only for real new ambiguity, design work, behavior/RULES analysis, or user direction. Do not let habit, ceremony, or milestone reporting reset execution mode.
 
@@ -246,7 +286,11 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | oversized active governance entrypoint | compact/roll over before broad continuation |
 | clear active phase/task path or discoverable unfinished work | inspect execution surfaces and continue if safe |
 | broad objective exposes several distinct work shapes or owner surfaces | decompose it into outcome-sized lanes before deep execution |
+| selected design slice carries behavior, invariant, failure-mode, or dependency semantics beyond the headline feature label | extract the implementation-relevant obligations before treating the slice as execution-ready or complete |
 | non-trivial multi-step/multi-file/phase-backed work | establish goal/output/gate when it prevents drift or improves verification |
+| plain governed goal request or plain `/goal` shaping request | resolve planning depth, choose the smallest sufficient route support, and ask only one narrow substantive clarification if objective/scope/gate evidence is insufficient |
+| selected plan-backed or goal-backed execution that is non-trivial and taskable | auto-decide execution posture internally: prefer Subagent-Driven first when worker-suitable, fall back to Inline only with a checked direct-handling reason, and do not show a default routing-choice menu |
+| goal/plan-file authoring reaches a bounded final artifact but execution is not yet selected | stop at the authoring surface, report the goal artifact plus route support directly, and do not append an execution-style choice menu |
 | single-goal overfocus, micro-cleanup drift, or one-area summaries | review whether sibling goals are neglected and rebalance |
 | user says work is too granular | perform goal review immediately |
 | several major goals remain open | keep current focus proportional to the whole set |
@@ -271,7 +315,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 ---
 
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, generic future-note closeout when successor work is already visible, echoing a broad successor label when a smaller truthful next slice is already derivable, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, checking new-major criteria before current-phase and subphase fit, treating any local deliverable/gate difference as a top-level major boundary, opening a new major without visible why-not-current / why-not-subphase basis, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
+Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, generic future-note closeout when successor work is already visible, echoing a broad successor label when a smaller truthful next slice is already derivable, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, default user-facing `Subagent-Driven` versus `Inline Execution` menus for selected goals or plans, goal/plan-file authoring that auto-spills into a `Which approach?` menu even though execution was not yet selected, asking for a routing label when one substantive work-scope clarification would unblock the path, treating a visible headline feature as complete while selected design-slice invariants, failure modes, or dependency semantics remain silently uncovered, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, checking new-major criteria before current-phase and subphase fit, treating any local deliverable/gate difference as a top-level major boundary, opening a new major without visible why-not-current / why-not-subphase basis, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
 
 ---
 

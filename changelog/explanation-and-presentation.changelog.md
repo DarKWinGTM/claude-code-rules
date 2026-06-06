@@ -1,7 +1,7 @@
 # Changelog - Explanation and Presentation
 
-> **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.19
+> **Current Version:** 1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,11 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-06-07 | **[Added P141 goal-authoring presentation stop-boundary refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.18 | 2026-06-05 | **[Added P139 goal-route support and exact Plan reference presentation refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.17 | 2026-06-03 | **[Added P136 goal-first copied-artifact ordering hardening](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.16 | 2026-06-03 | **[Added P135 auto-written plan-backed goal presentation hardening](#version-116)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.15 | 2026-06-03 | **[Added P134 copyable advisory goal plan-reference hardening](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-05-30 | **[Added P125 integrated goal-with-planning presentation refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-05-29 | **[Added P124 plan-backed advisory `/goal` presentation refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-28 | **[Added P123 goal-helper presentation refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -27,6 +32,97 @@
 | | | Summary: Extended `explanation-and-presentation.md` so the merged runtime owner now covers visible intent-read response shapes, root-cause walkthroughs, and concise action framing for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-119"></a>
+## Version 1.19: Added P141 goal-authoring presentation stop-boundary refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.18 to v1.19.
+- Updated `design/explanation-and-presentation.design.md` from v1.18 to v1.19.
+- Added presentation guidance so a turn that is only governed goal or plan-file authoring ends at the emitted goal artifact plus subordinate route support.
+- Preserved the boundary that execution-style choice menus appear only when a real decision boundary still exists.
+
+### Summary
+`explanation-and-presentation.md` now gives goal authoring a clean stopping shape, so the visible response can end at the goal artifact instead of drifting into a follow-up execution menu.
+
+---
+
+
+<a id="version-118"></a>
+## Version 1.18: Added P139 goal-route support and exact Plan reference presentation refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.17 to v1.18.
+- Updated `design/explanation-and-presentation.design.md` from v1.17 to v1.18.
+- Added presentation guidance so plain goal requests can receive the smallest sufficient route support automatically when justified.
+- Replaced default user-facing routing-label menus with chosen action/result wording.
+- Reserved exact `Plan reference:` presentation for the durable route-only plan-file pointer only, while keeping non-durable route notes under other labels.
+
+### Summary
+`explanation-and-presentation.md` now presents goal route support as an adaptive user-facing surface while keeping durable `Plan reference:` exact and subordinate to the copied goal artifact.
+
+---
+
+<a id="version-117"></a>
+## Version 1.17: Added P136 goal-first copied-artifact ordering hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.16 to v1.17.
+- Updated `design/explanation-and-presentation.design.md` from v1.16 to v1.17.
+- Required copied durable-plan-backed governed `/goal` artifacts to present the `/goal` command before any in-artifact `Plan reference:` slot.
+- Updated the advisory `/goal` block template so `Plan reference:` follows the `/goal` line inside the same copied artifact instead of appearing above it as a detachable preface.
+- Preserved the P135 plan-file-first authoring contract and route-only support boundaries.
+
+### Summary
+`explanation-and-presentation.md` now keeps copied governed goal artifacts in `/goal`-first order so durable `Plan reference` support stays subordinate to the command it belongs to.
+
+---
+
+<a id="version-116"></a>
+## Version 1.16: Added P135 auto-written plan-backed goal presentation hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.15 to v1.16.
+- Updated `design/explanation-and-presentation.design.md` from v1.15 to v1.16.
+- Required the final copied advisory `/goal` artifact to appear only after the route-only plan file has been written successfully when durable route support is needed.
+- Added explicit no-save-plan / no-rerun-`/goal` presentation guidance when no real blocker exists.
+- Preserved compact goal-owned presentation and route-only plan support semantics.
+
+### Summary
+`explanation-and-presentation.md` now presents the final governed `/goal` artifact only after the route-only plan file exists, instead of letting plan persistence remain an external follow-up step.
+
+---
+
+<a id="version-115"></a>
+## Version 1.15: Added P134 copyable advisory goal plan-reference hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.14 to v1.15.
+- Updated `design/explanation-and-presentation.design.md` from v1.14 to v1.15.
+- Required any durable `Plan reference` for a governed advisory `/goal` to stay inside the same copyable goal artifact instead of living only in surrounding prose or adjacent support.
+- Preserved adjacent route context only for non-durable notes such as `Plan draft`, `Plan basis`, and verification/testing support.
+- Updated the advisory `/goal` block template so the copied artifact explicitly contains the plan pointer while keeping `/goal` goal-owned and compact.
+
+### Summary
+`explanation-and-presentation.md` now keeps durable plan-backed route support inside the same copyable advisory goal artifact while preserving the existing goal-versus-route explanation boundary.
 
 ---
 

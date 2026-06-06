@@ -1,7 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.21
+> **Current Version:** 1.28
+> **Current Version:** 1.27
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,13 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.28 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and execution-surface gating refinement](#version-128)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.27 | 2026-06-05 | **[Added P140 design-slice semantic coverage refinement](#version-127)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.26 | 2026-06-05 | **[Added P139 plain-goal route support and selected-execution task-shaping refinement](#version-126)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.25 | 2026-06-03 | **[Added P137 selected-execution task materialization refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.24 | 2026-06-03 | **[Added P136 goal-first governed goal artifact ordering](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.23 | 2026-06-03 | **[Added P135 governed goal auto-plan-file authoring sequence hardening](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
+| 1.22 | 2026-06-03 | **[Added P134 in-artifact plan-reference goal sourcing hardening](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.21 | 2026-05-31 | **[Added P126 explicit nested phase grammar and alphanumeric legacy handling](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-05-30 | **[Added P125 integrated goal-with-planning execution-surface refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-05-29 | **[Added P124 pre-goal `/goal` sourcing refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -34,6 +41,134 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+
+<a id="version-128"></a>
+## Version 1.28: Added P141 goal-authoring stop-boundary and execution-surface gating refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.27 to v1.28.
+- Updated `design/phase-todo-artifact.design.md` from v1.27 to v1.28.
+- Added a goal-authoring stop boundary so governed goal/plan-file authoring can end at the copied goal artifact plus subordinate route support when execution was not yet selected.
+- Delayed task materialization and execution-posture handling until execution is actually selected or clearly implied.
+- Hardened trigger and anti-pattern wording so authoring-only turns no longer leak a default execution-mode choice menu.
+
+### Summary
+`phase-todo-artifact.md` now keeps authoring-only goal turns at the goal-centric surface and waits to shape live execution tasks until execution is truly the active next slice.
+
+---
+
+
+<a id="version-127"></a>
+## Version 1.27: Added P140 design-slice semantic coverage refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.26 to v1.27.
+- Updated `design/phase-todo-artifact.design.md` from v1.26 to v1.27.
+- Added explicit design-slice semantic coverage doctrine so a selected governed design slice must be extracted into implementation-relevant semantic items before phase closeout.
+- Required explicit status classification for selected semantic items as implemented, verified, deferred, blocked, not applicable, or out of scope.
+- Hardened phase closeout so visible headline output is insufficient when selected invariants, failure modes, durability, or dependency semantics remain uncovered.
+
+### Summary
+`phase-todo-artifact.md` now makes phase/task/verification execution carry the full selected design slice semantically instead of letting closeout stop at the visible feature headline alone.
+
+---
+
+<a id="version-126"></a>
+## Version 1.26: Added P139 plain-goal route support and selected-execution task-shaping refinement
+
+**Date:** 2026-06-05
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.25 to v1.26.
+- Updated `design/phase-todo-artifact.design.md` from v1.25 to v1.26.
+- Made plain governed goal requests sufficient to trigger smallest-sufficient route support without requiring `goal plan file` phrasing.
+- Preserved durable route-only plan files only when route pressure or continuity risk justifies them.
+- Hardened selected goal/plan task materialization so execution keeps internal posture selection instead of exposing a user-facing mode choice.
+
+### Summary
+`phase-todo-artifact.md` now lets plain governed goals receive the right route depth automatically while keeping selected execution task shaping aligned to internal posture selection.
+
+---
+
+<a id="version-125"></a>
+## Version 1.25: Added P137 selected-execution task materialization refinement
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.24 to v1.25.
+- Updated `design/phase-todo-artifact.design.md` from v1.24 to v1.25.
+- Added task-materialization guidance for selected non-trivial plan-backed or goal-backed execution so built-in tasks become the live execution surface before deep continuation.
+- Preferred Subagent-Driven execution first when worker-suitable and preserved Inline Execution only as a checked direct-handling exception when more effective.
+- Preserved `/goal` ownership, plan-route-only boundaries, and separate implementation/verification/governance task shaping.
+
+### Summary
+`phase-todo-artifact.md` now turns selected non-trivial plan/goal execution into bounded live tasks that can prefer Subagent-Driven execution first instead of leaving execution mode as a user-facing choice prompt.
+
+---
+
+<a id="version-124"></a>
+## Version 1.24: Added P136 goal-first governed goal artifact ordering
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.23 to v1.24.
+- Updated `design/phase-todo-artifact.design.md` from v1.23 to v1.24.
+- Required governed `/goal` artifact sourcing and execution surfaces to keep copied durable-plan-backed artifacts in `/goal`-first order with `Plan reference:` after the command.
+- Preserved the P135 plan-file-first flow and kept the reference inside the same copied artifact rather than above it as detached route support.
+- Preserved `/plan` overflow-only behavior and goal-gate closeout boundaries.
+
+### Summary
+`phase-todo-artifact.md` now keeps governed `/goal` artifact sourcing aligned to `/goal`-first copied output instead of letting the durable plan pointer drift into a pre-command preface.
+
+---
+
+<a id="version-123"></a>
+## Version 1.23: Added P135 governed goal auto-plan-file authoring sequence hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.22 to v1.23.
+- Updated `design/phase-todo-artifact.design.md` from v1.22 to v1.23.
+- Required governed `/goal` authoring to write the route-only plan file before final emission when durable route support is needed.
+- Added no-save-plan / no-rerun-`/goal` guidance for the same governed authoring flow when no real stop gate exists.
+- Preserved `/plan` as overflow, explicit standalone planning, or later route revision only.
+
+### Summary
+`phase-todo-artifact.md` now keeps governed `/goal` sourcing and artifact behavior aligned with an auto-written route-only plan file instead of leaving persistence as an optional user-facing step.
+
+---
+
+<a id="version-122"></a>
+## Version 1.22: Added P134 in-artifact plan-reference goal sourcing hardening
+
+**Date:** 2026-06-03
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.21 to v1.22.
+- Updated `design/phase-todo-artifact.design.md` from v1.21 to v1.22.
+- Required a durable plan-backed governed `/goal` to carry an in-artifact `Plan reference` slot inside the same copyable goal artifact.
+- Preserved adjacent support only for non-durable route notes while keeping plan files route-only rather than objective authority.
+- Preserved `/plan` ownership, goal-gate closeout, and the existing design-first governed `/goal` sourcing order.
+
+### Summary
+`phase-todo-artifact.md` now makes plan-backed governed `/goal` sourcing keep the durable plan pointer inside the copied goal artifact instead of leaving that pointer free to drift into surrounding prose.
 
 ---
 

@@ -1,14 +1,57 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-02
-> **Current Release:** v10.39 / P131 required RULES diagram infrastructure doctrine
-> **Active Wave:** none selected
+> **Last Updated:** 2026-06-07
+> **Current Release:** v10.48 / P140 design-slice semantic coverage
+> **Active Wave:** P141 / v10.49 governed /goal routing-choice surface hardening
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
+## 🔄 Active
+
+- [ ] P141 / v10.49 governed `/goal` routing-choice surface hardening is in progress.
+  - Current focus: keep governed goal/plan-file authoring objective-facing, stop cleanly at the emitted goal artifact plus subordinate route support, and remove the post-goal execution-menu leak without reopening the broader P139/P140 architecture.
+  - Current checked progress: touched runtime owners plus companion design/per-chain changelog sync are in place; `TODO.md`, `phase/SUMMARY.md`, `phase/phase-141-governed-goal-routing-choice-surface-hardening.md`, and `patch/governed-goal-routing-choice-surface-hardening.patch.md` are the active current-state sync surfaces.
+  - Open gate: touched runtime install/update parity is now aligned and `git diff --check` passed, but final push/tag/release is blocked because `master` is currently `ahead 3, behind 19` relative to `origin/master` and the working tree still contains extensive unrelated modified/untracked files outside P141 scope.
+
 ## ✅ Completed
+
+- [x] P140 / v10.48 design-slice semantic coverage was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: selected governed design slices now require semantic coverage before phase/task closeout; implementation-relevant semantic items are explicit when materially present as behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary; selected semantic items now receive explicit status classification as `implemented`, `verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`; execution and closeout can no longer stop at a visible headline output while selected invariants, failure modes, durability, or dependency semantics remain silently uncovered; touched design/changelog/TODO/phase/patch surfaces are aligned to one `v10.48 / P140` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.48` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.48
+
+- [x] P139 / v10.47 goal route support and execution posture selection was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: plain goal requests now trigger planning-depth resolution and receive the smallest sufficient route support when the work is governed/non-trivial/route-heavy; users no longer need to say `goal plan file` to receive proper governed route support; `/goal` remains the objective owner while any plan file remains route-only support; durable `Plan reference:` now means the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow; selected `/goal` or selected plan execution no longer exposes `Subagent-Driven` vs `Inline Execution` as a default user-facing choice menu; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.47 / P139` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.47` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.47
+
+- [x] P138 / v10.46 semantic code naming and code-doc comment linkage was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: source-code identifiers now stay semantic/domain/behavior-first unless a literal token is itself a real external/domain contract term; governed-doc links in source comments are now bounded to maintenance-helpful cases, with stable design/contract references preferred by default and phase/changelog/patch references kept narrow to provenance, migration, compatibility, tactical bridge, or rollback context; governed-doc citations inside source comments are now treated as checked references that must be updated or removed when paths, headings, owner roles, or nearby behavior change; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.46 / P138` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.46` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.46
+
+- [x] P137 / v10.45 Subagent-Driven-first execution routing was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate; Inline Execution remains available only as a checked direct-handling exception when more effective for the current slice; `/goal` remains the objective owner while the plan file remains route-only support and not completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.45 / P137` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.45` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.45
+
+- [x] P136 / v10.44 goal-first Plan reference ordering was completed, installed, pushed, mirrored to the remote default branch, and released.
+  - Verified: copied durable-plan-backed governed `/goal` artifacts now keep `/goal` first and `Plan reference:` after it inside the same copied artifact; P135 plan-file-first authoring remains intact; `/goal` remains the objective owner while the plan file remains route-only support and not completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.44 / P136` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.44` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.44
+
+- [x] P135 / v10.43 governed goal auto-plan-file authoring was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `document-integrity.md`, and the aligned presentation/communication owners now require actual governed `/goal` authoring with durable route support to write the route-only plan file before final goal emission; the final copied goal artifact carries the exact in-artifact `Plan reference`; the assistant no longer leaves save-plan or rerun-`/goal` loops as normal behavior when no real stop gate exists; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the plan file remains route-only support and not authority or completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.43 / P135` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.43` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.43
+
+- [x] P134 / v10.42 copyable goal plan-reference hardening was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now require any durable plan-backed governed `/goal` to keep `Plan reference` inside the same copied goal artifact; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the plan file remains route-only support and not authority or completion proof; the advisory `/goal` block template now keeps the plan pointer inside the same copied artifact; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.42 / P134` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.42` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.42
+
+- [x] P133 / v10.41 Quick Start companion-plugin setup was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: the root README now includes a Quick Start companion-plugin setup block immediately after the runtime-rule install notes; the block points operators to install `governed-docs` and `memory-context-intelligence` from the local marketplace, keeps plugin install separate from the `.claude/rules/` runtime payload, preserves `memory-context-intelligence` first use as `/memory-context-intelligence:init` followed by `/memory-context-intelligence:analysis`, and syncs touched README/TODO/phase/patch/changelog surfaces to one `v10.41 / P133` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.41` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.41
+
+- [x] P132 / v10.40 companion plugin READMEs and image guidance was completed, pushed, mirrored to the remote default branch, and released.
+  - Verified: `plugin/governed-docs/img/GOD.png` and `plugin/memory-context-intelligence/img/MCI.png` now exist; both plugin READMEs include clearer top-level guidance plus image references; the root README now introduces the two companion plugins and their roles; touched README/TODO/phase/patch/changelog surfaces are aligned; plugin/runtime boundary wording stays intact; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.40` state.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.40
 
 - [x] P131 / v10.39 RULES diagram infrastructure doctrine was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: `diagram/` is now required governed-docs infrastructure for RULES; governed diagram authority stays under `diagram/` only; `diagram/STRUCTURE.md` is now the mandatory compact active whole-project diagram-side entrypoint; `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping; `design/**` remains semantic authority if text and diagram differ; future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup authority; touched README/design/changelog/TODO/phase/patch surfaces are aligned; runtime install/update verification passed for the touched active runtime owners; parity/body sufficiency in checked scope passed; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.39` state.
@@ -206,7 +249,7 @@
 
 ### Active / In Progress
 
-- None currently selected. Latest released baseline is `v10.38 / P130`.
+- none selected
 
 ### Deferred / Not Selected
 
