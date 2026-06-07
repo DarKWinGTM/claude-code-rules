@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Project Documentation Standards
-> **Current Version:** 2.9
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-29)
+> **Current Version:** 2.10
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 
 ---
 
@@ -43,7 +43,7 @@ Applies to:
 - governed patch execution/review artifacts that are not the live `/phase` plan workspace
 - patch documents describing code, configuration, schema, query, command, policy-text, or structured document changes
 
-The root helper `phase-implementation-template.md` may help authors draft a plan, but it is not itself a governed chain.
+The root helper `template/phase-authoring-template.md` may help authors draft a plan, but it is not itself a governed chain.
 
 ---
 
@@ -96,8 +96,8 @@ phase/
 ```
 
 ### 3.4 Helper placement
-- The canonical reusable helper for this repository is the root-level `phase-implementation-template.md`
-- Root-level helper placement improves discoverability, but helper placement does not change chain authority
+- The canonical reusable helper for this repository is `template/phase-authoring-template.md` under the dedicated template support directory
+- Template-directory helper placement reduces confusion with active runtime rules, but helper placement still does not change chain authority
 
 ---
 
@@ -223,7 +223,7 @@ The following are not allowed:
 - storing live per-phase execution files in patch artifacts
 
 ### 6.4 Semantic authority
-If phased execution exists, it should follow `phase-implementation.md` for:
+If phased execution exists, it should follow `phase-todo-artifact.md` for:
 - when phase planning is appropriate
 - the required `/phase` structure
 - stable per-phase fields
@@ -235,7 +235,7 @@ If phased execution exists, it should follow `phase-implementation.md` for:
 - verification and rollback boundaries
 
 ### 6.4.1 One-way synthesis clarification
-`phase-implementation.md` may synthesize governed patch inputs into live phased execution planning when relevant.
+`phase-todo-artifact.md` may synthesize governed patch inputs into live phased execution planning when relevant.
 
 This does not create a reverse-link requirement:
 - patch documents may remain complete patch artifacts without pointing back to phase
@@ -292,7 +292,7 @@ Do not validate here:
 - per-phase execution-step quality
 - `SUMMARY.md` content quality
 
-Those belong to `phase-implementation.md` when phases are used.
+Those belong to `phase-todo-artifact.md` when phases are used.
 
 ---
 
@@ -312,8 +312,8 @@ Use this checklist to validate the patch as a governed artifact.
 - [ ] Patch version aligns with patch changelog version when applicable
 - [ ] Patch remains identifiable as a governed patch artifact
 - [ ] `patch/done/` artifacts remain inactive-by-default history, not junk or deletion authority
-- [ ] `phase-implementation.md` is referenced for phase semantics when applicable
-- [ ] Root-level `phase-implementation-template.md` remains non-governed
+- [ ] `phase-todo-artifact.md` is referenced for phase semantics when applicable
+- [ ] Root-level `template/phase-authoring-template.md` remains non-governed
 - [ ] The patch does not act like TODO authority or changelog authority
 - [ ] The patch does not masquerade as the live `/phase` summary/index or per-phase detail layer
 
@@ -365,7 +365,7 @@ Use this checklist to validate the patch as a governed artifact.
 |------|-------------|
 | [document-changelog-control.md](document-changelog-control.md) v4.8 | Version authority and completed changelog history contract |
 | [project-documentation-standards.md](project-documentation-standards.md) v2.31 | Project-level documentation role and completed-surface model |
-| [phase-implementation.md](phase-implementation.md) v2.25 | Semantic authority for phased execution planning and `phase/done/` history boundary |
+| [phase-todo-artifact.md](phase-todo-artifact.md) v2.25 | Semantic authority for phased execution planning and `phase/done/` history boundary |
 | [todo-standards.md](todo-standards.md) v2.17 | TODO structure standards |
 
 ---

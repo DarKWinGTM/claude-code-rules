@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.7
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-13)
+> **Current Version:** 1.8
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 
 ---
 
@@ -269,7 +269,7 @@ Needs ownership, dependencies, messaging, or implementation/review/test/docs syn
 | [../external-verification-and-source-trust.md](../external-verification-and-source-trust.md) | Owns source trust, corroboration, and conflict handling for external research lanes |
 | [../execution-continuity-and-mode-selection.md](../execution-continuity-and-mode-selection.md) | Ensures continuation rechecks intent and does not bypass the worker-scale gate |
 | [../todo-standards.md](../todo-standards.md) | Live task list supports non-trivial active work and coordinated slices |
-| [../phase-implementation.md](../phase-implementation.md) | Phase context and roadmap/phase-matrix surfaces shape worker assignments when phased work is active or broad next-phase analysis is needed |
+| [../phase-todo-artifact.md](../phase-todo-artifact.md) | Phase context and roadmap/phase-matrix surfaces shape worker assignments when phased work is active or broad next-phase analysis is needed |
 | [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md) | Evidence strength governs worker and leader claims |
 | [../accurate-communication.md](../accurate-communication.md) | Handoff and completion wording must remain evidence-honest |
 | [../zero-hallucination.md](../zero-hallucination.md) | Worker output must not be upgraded into unsupported certainty |

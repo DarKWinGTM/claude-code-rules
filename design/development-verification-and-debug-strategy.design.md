@@ -1,6 +1,6 @@
 # Development Verification and Debug Strategy Design
-> **Current Version:** 1.1
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.2
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 > **Full history:** [../changelog/development-verification-and-debug-strategy.changelog.md](../changelog/development-verification-and-debug-strategy.changelog.md)
 ---
 ## Target State
@@ -57,7 +57,7 @@ A useful coding closeout should record what was run, what passed/failed, what be
 ## Integration Target
 - `maintainable-code-structure-and-decomposition.md` keeps structure/refactor responsibility while this owner handles verification strategy.
 - `accurate-communication.md` keeps evidence-strength wording aligned with coding verification states.
-- `phase-implementation.md` records Development Verification / TestKit Coverage for phase-backed coding work when material.
+- `phase-todo-artifact.md` records Development Verification / TestKit Coverage for phase-backed coding work when material.
 - `todo-standards.md` keeps live verification slices visible for non-trivial coding work.
 - `project-documentation-standards.md` records repository-level documentation role boundaries for coding verification coverage.
 - `execution-continuity-and-mode-selection.md` prevents stopping after implementation when verification remains the implied next safe slice.

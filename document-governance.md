@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.13
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.13
+> **Current Version:** 1.15
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -39,7 +39,7 @@ Required surfaces when applicable:
 - `phase/history/` and `phase/done/` — referenced/inactive phase history
 - `patch/<context>.patch.md` or root `<context>.patch.md` — active review artifact outside phase
 - `patch/done/` — inactive completed patch history
-- helper/support surfaces such as `phase-implementation-template.md`, `support/**`, `plugin/**` remain non-governed unless explicitly promoted
+- helper/support surfaces such as `template/**`, `support/**`, `plugin/**` remain non-governed unless explicitly promoted
 
 ### 2) Governance update order
 Default governed sync order:

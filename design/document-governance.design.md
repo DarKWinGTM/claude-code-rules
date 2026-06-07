@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -48,6 +48,8 @@ P129 refinement: this owner should now make governed `diagram/` source mandatory
 P131 refinement: this owner should now treat `diagram/` as required governed-docs infrastructure for RULES, require `diagram/STRUCTURE.md` as the compact active diagram-side entrypoint, define `STRUCTURE.md` as the whole-project concept / folder-topology / authority-boundary / diagram-navigation map, require all governed diagram authority to stay under `diagram/`, and generalize the NodeClaw-style active-parent + `history/` + `done/` preservation model into diagram infrastructure without promoting diagram docs above design authority.
 
 P138 refinement: this owner should now reinforce design, phase, patch, and source-comment role boundaries so governed documents remain the durable authority surfaces, while source comments stay local implementation explanation or bounded pointers rather than becoming parallel design, phase, patch, or changelog bodies.
+
+P142 refinement: this owner should now keep reusable phase-authoring scaffolds under `template/**` instead of the active root runtime-rule surface, so support-only templates stay discoverable without reading like installed phase authority or active runtime payload.
 
 ---
 

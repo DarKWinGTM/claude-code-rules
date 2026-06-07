@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.9
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+> **Current Version:** 1.10
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 
 ---
 
@@ -25,7 +25,7 @@ The target behavior is:
 - the assistant does not drift into non-trivial governed work while required artifacts remain implicit
 - required startup artifacts are either reused, created now, asked about now, or explicitly marked not required
 - sufficiently clear governed design that warrants staged execution resolves phase posture to `use existing` or `create now` instead of lingering as implicit planning
-- phase `create now` delegates identity selection to `phase-implementation.md` so startup posture does not default to opening a new major phase
+- phase `create now` delegates identity selection to `phase-todo-artifact.md` so startup posture does not default to opening a new major phase
 - live task tracking is initialized early when non-trivial work needs it
 - phase-backed live task initialization creates visibly phase-linked entries from the start
 - trivial work keeps a lightweight bypass
@@ -133,7 +133,7 @@ Apply this chain strongly when one or more are true:
 | Changelog | a governed chain is being created or version-impacting behavior is changing |
 | TODO | work is multi-step, tracked, persistent, or likely to span multiple execution slices |
 | Live task list | work is non-trivial and the user would materially benefit from seeing pending / in_progress / completed state during active execution; phase-backed or clearly phase-shaped work strengthens this from preferred to expected and should initialize with visible phase linkage |
-| Phase | staged execution, gates, sequencing, rollback boundaries, explicit user request, or sufficiently clear governed design requiring staged execution make `/phase` materially useful; phase identity selection remains owned by `phase-implementation.md` |
+| Phase | staged execution, gates, sequencing, rollback boundaries, explicit user request, or sufficiently clear governed design requiring staged execution make `/phase` materially useful; phase identity selection remains owned by `phase-todo-artifact.md` |
 | Patch | explicit before/after review packaging outside live phase planning is materially useful for an existing governed surface; greenfield startup / baseline formation normally defaults to `not required` unless the user explicitly requests patch packaging |
 
 ### 5.3 Low-strength / bypass triggers
@@ -153,7 +153,7 @@ Create the required artifact immediately when:
 - the artifact role is unambiguous
 - no higher-priority user-authority issue blocks creation
 - creation follows the repository’s governed model cleanly
-- for phase artifacts, `phase-implementation.md` has selected current phase update, existing-family subphase, new major, or ask-now lineage handling
+- for phase artifacts, `phase-todo-artifact.md` has selected current phase update, existing-family subphase, new major, or ask-now lineage handling
 
 ### 6.2 Ask now
 Ask immediately when:
@@ -198,7 +198,7 @@ Equivalent headings are acceptable if the meaning remains explicit.
 | phase-backed live task initialization creates generic entries | users can see tasks but cannot see which phase governs them | initialize phase-backed entries with visible phase linkage in subject or description |
 | force every artifact every time | creates unnecessary ceremony | resolve only the required subset |
 | create patch by default during greenfield startup or baseline formation | startup work is mislabeled as a review delta before a stable before-state exists | default patch to `not required` unless a real existing surface or explicit user request justifies it |
-| treat phase `create now` as automatic new-major creation | startup posture gets confused with phase lineage semantics | let `phase-implementation.md` choose current phase, existing-family subphase, new major, or ask-now lineage handling |
+| treat phase `create now` as automatic new-major creation | startup posture gets confused with phase lineage semantics | let `phase-todo-artifact.md` choose current phase, existing-family subphase, new major, or ask-now lineage handling |
 | collapse `not required` into deletion authority for an already-present or newly encountered file | artifact posture gets misread as disposal permission | keep file classification unresolved until stronger authority is checked |
 | let hygiene rules suppress required startup artifacts | makes governance reactive and late | let startup artifact control decide, then apply hygiene to non-required files |
 | ask too late | work already drifts before the user sees the artifact decision | ask immediately when startup posture is unclear |
@@ -223,7 +223,7 @@ Equivalent headings are acceptable if the meaning remains explicit.
 | Rule | Relationship |
 |------|-------------|
 | [project-documentation-standards.md](../project-documentation-standards.md) | Repository-level document-role model and later synchronization order |
-| [phase-implementation.md](../phase-implementation.md) | Phase semantics once `/phase` is required |
+| [phase-todo-artifact.md](../phase-todo-artifact.md) | Phase semantics once `/phase` is required |
 | [todo-standards.md](../todo-standards.md) | TODO structure and update discipline |
 | [document-patch-control.md](../document-patch-control.md) | Patch semantics and before/after review artifact behavior |
 | [strict-file-hygiene.md](../strict-file-hygiene.md) | Hygiene boundary that must defer for required startup artifacts |

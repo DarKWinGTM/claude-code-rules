@@ -1,4 +1,4 @@
-# Phase Implementation Template
+# Phase Authoring Template
 
 Use this helper when you want to draft a **readable, process-heavy phased implementation plan** using the current RULES model:
 - one governed summary/index file at `phase/SUMMARY.md`
@@ -9,7 +9,7 @@ Use this helper when you want to draft a **readable, process-heavy phased implem
 - observed alphanumeric forms such as `phase/phase-NNN-NNa-<phase-name>.md` are legacy-only unless a later doctrine explicitly normalizes them
 
 This file is intentionally written as normal markdown.
-It is a **helper**, not a governed chain.
+It is a **support-only template**: non-runtime, non-authority, and not a governed chain.
 
 ---
 

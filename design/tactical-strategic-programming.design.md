@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-04)
+> **Current Version:** 1.4
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 
 ---
 
@@ -245,7 +245,7 @@ Apply this rule more strongly when one or more of these signals are present:
 
 | Rule | Relationship |
 |------|--------------|
-| `phase-implementation.md` | Strategic execution and convergence layer |
+| `phase-todo-artifact.md` | Strategic execution and convergence layer |
 | `document-patch-control.md` | Tactical artifact governance |
 | `project-documentation-standards.md` | Tactical vs strategic document-role map |
 | `runtime-topology-control.md` | Tactical runtime changes require convergence/retirement path |

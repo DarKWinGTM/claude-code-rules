@@ -100,7 +100,7 @@ flowchart TB
     DocsSP["docs/superpowers/<br/>Specs / plans / supporting design material"]
     Playground["playground/<br/>Governed non-runtime behavior cases"]
     Plugin["plugin/<br/>Optional downstream support packages"]
-    Template["phase-implementation-template.md<br/>Helper, not authority"]
+    Template["template/phase-authoring-template.md<br/>Helper, not authority"]
   end
 
   README --> RootRules

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.28
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+> **Current Version:** 2.29
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 
 ---
 
@@ -129,7 +129,7 @@ Detached generic task shaping in the presence of relevant governed phase context
 
 If the exact next phase file does not yet exist but the checked project/workstream context already makes the current phase family or staged execution lane clear, task-list creation should still align to that implied current phase/stage instead of falling back to detached generic standalone tasks.
 
-Task-list shaping may reveal that a phase file is needed, but it should not silently decide that the file must be a new major phase. Current phase update, existing-family subphase, new major, or ask-now lineage handling belongs to `phase-implementation.md`.
+Task-list shaping may reveal that a phase file is needed, but it should not silently decide that the file must be a new major phase. Current phase update, existing-family subphase, new major, or ask-now lineage handling belongs to `phase-todo-artifact.md`.
 
 If `/phase` already contains additional relevant planning context, task behavior should not stop at the currently open phase file alone. It should also consult bounded phase context that already exists in the governed phase workspace, such as:
 - the current active phase
@@ -178,7 +178,7 @@ When the built-in task list is in use:
 - add new tasks when newly discovered work is real and non-trivial
 - keep task entries outcome-sized rather than command-sized, and include expected output or completion gate meaning when material
 - when the checked project/workstream context is already phase-shaped, keep task creation aligned to the current active phase or clearly implied current stage/family even if the exact next phase file is still pending
-- if task shaping shows a new phase file is needed, defer current phase vs subphase vs new-major selection to `phase-implementation.md`
+- if task shaping shows a new phase file is needed, defer current phase vs subphase vs new-major selection to `phase-todo-artifact.md`
 - when `/phase` exists and relevant governed phase context is available, inspect that phase context before shaping new task entries or extending existing ones
 - do not default task creation to detached generic standalone wording when stronger checked phase/stage context already exists
 - when relevant governed phase context exists but task shaping does not follow it, treat that outcome as task-shaping drift rather than as an acceptable generic fallback
@@ -233,7 +233,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 - [ ] Non-trivial coding work preserves a visible verification slice when implementation and verification are distinct material outcomes
 - [ ] Task creation stays aligned to active phase or clearly implied staged/phase context when that context is already visible
 - [ ] Phase-backed or clearly phase-shaped task entries visibly expose phase context in subject or description
-- [ ] Task creation does not silently allocate a new major phase when `phase-implementation.md` lineage handling is needed
+- [ ] Task creation does not silently allocate a new major phase when `phase-todo-artifact.md` lineage handling is needed
 - [ ] Task wording stays aligned to the active session language/register instead of defaulting to detached generic wording
 - [ ] Task entries remain outcome-sized rather than command-sized and include output/gate meaning when material
 - [ ] Required TODO synchronization is not downgraded into optional bookkeeping
@@ -268,7 +268,7 @@ That means TODO may sync later in the order, but it still needs to be completed 
 |----------|--------------|
 | [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Owns coding-time verification strategy; this design keeps material verification work visible in live task tracking |
 | [artifact-initiation-control.md](../artifact-initiation-control.md) | Startup tracking posture resolution |
-| [phase-implementation.md](../phase-implementation.md) | Phase identity and major-vs-subphase lineage selection when task shaping reveals phase work |
+| [phase-todo-artifact.md](../phase-todo-artifact.md) | Phase identity and major-vs-subphase lineage selection when task shaping reveals phase work |
 | [document-changelog-control.design.md](document-changelog-control.design.md) | Synchronization order and authority boundary |
 | [project-documentation-standards.design.md](project-documentation-standards.design.md) | Repository role model and durable-vs-live tracking distinction |
 | [../todo-standards.md](../todo-standards.md) | Runtime implementation |

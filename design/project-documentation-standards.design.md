@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.43
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-02)
+> **Current Version:** 2.44
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 
 ---
 
@@ -48,13 +48,13 @@ Shared governed docs and templates should remain portable by default rather than
 Public onboarding/install docs should also stay portable by default so cloneable or self-contained repositories do not teach one workstation's absolute path or an internal umbrella workspace root as the default way to install or use the project.
 
 This model must preserve one authority system while clearly separating:
-- `phase-implementation.md` as the first-class rule for phase semantics and major-vs-subphase lineage selection
+- `phase-todo-artifact.md` as the first-class rule for phase semantics and major-vs-subphase lineage selection
 - `phase/SUMMARY.md` as the governed summary/index for the active phase plan and phase-family lineage context
 - `phase/phase-NNN-<phase-name>.md` and `phase/phase-NNN-NN-<subphase-name>.md` as governed active execution files
 - `phase/done/` as inactive-by-default completed phase history
 - `patch/<context>.patch.md` or root `<context>.patch.md` as active patch-governance artifacts outside the live phase workspace
 - `patch/done/` as inactive-by-default completed patch history
-- `phase-implementation-template.md` as the readable root-level helper
+- `template/phase-authoring-template.md` as the readable template-directory helper
 - Claude Code's built-in task list as the live in-session execution surface for non-trivial work, with visible phase pointers when the work is phase-backed
 - `development-verification-and-debug-strategy.md` as the coding-time verification strategy owner whose material coverage should stay aligned across governed phase, TODO, changelog, and closeout surfaces
 - `TODO.md`, changelog, `/phase`, and `/patch` as required governed companions when the work shape actually requires them, but not as replacements for each other's roles
@@ -154,7 +154,7 @@ The active phase identity model uses:
 - major phase files: `phase/phase-NNN-<phase-name>.md`
 - subphase files: `phase/phase-NNN-NN-<subphase-name>.md`
 
-Phase execution-file creation and selection should defer to `phase-implementation.md` for current phase update, existing-family subphase, new major phase, or ask-now lineage handling.
+Phase execution-file creation and selection should defer to `phase-todo-artifact.md` for current phase update, existing-family subphase, new major phase, or ask-now lineage handling.
 
 Completed phase files may move under `phase/done/` when they are no longer active execution inputs and only history/audit/rollback/trace needs remain.
 
@@ -187,11 +187,11 @@ Required guidance:
 - destination/runtime files outside the current source-owned active runtime install set are not project junk by default merely because they sit in the same runtime destination
 
 ### 3.11 Phase Rule Role
-`phase-implementation.md` is the semantic rule for phased execution planning.
+`phase-todo-artifact.md` is the semantic rule for phased execution planning.
 It owns phase semantics after `/phase` is required.
 
 ### 3.12 Root Helper Role
-`phase-implementation-template.md` is a non-governed root helper.
+`template/phase-authoring-template.md` is a non-governed root helper.
 It exists for readability, drafting, and reuse.
 
 ### 3.13 Extension-Package Role
@@ -229,8 +229,8 @@ They do not create a second design/changelog/phase/TODO authority stack under `p
 | `patch/<context>.patch.md` or root `<context>.patch.md` | A separate before/after review artifact for an existing governed surface is required | Active governed patch/review artifact outside the live phase workspace | Governed patch layer |
 | `patch/done/<context>.patch.md` | Completed patch artifact is retained outside active scans | Inactive-by-default completed patch history | Completed patch history layer |
 | `artifact-initiation-control.md` | Startup artifact posture must be standardized | First-class startup-governance behavior | Governed runtime rule |
-| `phase-implementation.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
-| `phase-implementation-template.md` | Reusable phased authoring aid is needed at repository root | Readable root-level helper template | Non-governed helper artifact |
+| `phase-todo-artifact.md` | Phase semantics need to be standardized | First-class rule for phased planning behavior | Governed runtime rule |
+| `template/phase-authoring-template.md` | Reusable phased authoring aid is needed in the dedicated template support directory | Readable template-directory helper | Non-governed helper artifact |
 | `support/**/*.md`, `plugin/**`, or equivalent support/extension path | Reference-only content or optional extension-package content exists | Support/reference or extension-package artifacts | Non-governed support / extension layer |
 
 ---
@@ -276,7 +276,7 @@ The built-in task list may help execute the work live, but it does not replace r
 Where the checked repository/workstream already operates through a phased or staged structure, live task-list creation should remain aligned to that phase-shaped execution model rather than collapsing into detached standalone task wording.
 Phase-backed live task entries should visibly expose the active or implied phase context through subject or description linkage, while `phase/SUMMARY.md` and active phase files remain the phase authority.
 When `/phase` already contains relevant planning data, the assistant should not ignore that governed phase context: current phase, active phase family, phase ordering/dependencies, checked lineage, and already-authored next planned phases may all guide bounded task discovery and draft next-work visibility.
-That planning context does not by itself silently activate unopened future-phase execution, and it does not by itself allocate a new major phase without the `phase-implementation.md` lineage gate.
+That planning context does not by itself silently activate unopened future-phase execution, and it does not by itself allocate a new major phase without the `phase-todo-artifact.md` lineage gate.
 
 When a newly encountered file appears during meaningful governed work and its role is unclear, the assistant should not collapse that uncertainty into cleanup/disposal logic.
 Instead, the assistant should:
@@ -388,8 +388,8 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 - [ ] Built-in task-list usage is treated as the live execution surface for non-trivial active work rather than as a governed document artifact
 - [ ] Phase-backed built-in task entries visibly point to active or implied phase context without becoming phase authority
 - [ ] Governed coding phases keep material Development Verification / TestKit Coverage aligned across phase, TODO, changelog, and closeout surfaces
-- [ ] `phase-implementation.md` is treated as the semantic phase-planning rule
-- [ ] Phase file creation/selection defers to `phase-implementation.md` major-vs-subphase lineage handling
+- [ ] `phase-todo-artifact.md` is treated as the semantic phase-planning rule
+- [ ] Phase file creation/selection defers to `phase-todo-artifact.md` major-vs-subphase lineage handling
 - [ ] Phased work uses `phase/SUMMARY.md`
 - [ ] Phase records preserve enough phase-family lineage for later identity decisions
 - [ ] Multi-stage execution uses canonical `NNN` / `NNN-NN` active phase files under `phase/`
@@ -451,7 +451,7 @@ This design delegates broader anti-hardcoding semantics to `portable-implementat
 | [document-design-control.md](../document-design-control.md) | Design structure standards and no-default-`design/done/` boundary |
 | [document-patch-control.md](../document-patch-control.md) | Patch-governance boundary, explicit before/after patch contract, and `patch/done/` history boundary outside live phase planning |
 | [development-verification-and-debug-strategy.design.md](development-verification-and-debug-strategy.design.md) | Coding-time verification strategy owner; repository docs keep material verification coverage aligned across phase, TODO, changelog, and closeout surfaces |
-| [phase-implementation.md](../phase-implementation.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, visible phase-linked live tasks, Development Verification / TestKit Coverage, `phase/done/` history boundary, and one-way design/patch source synthesis |
+| [phase-todo-artifact.md](../phase-todo-artifact.md) | Semantic standard for phased execution planning, major-vs-subphase lineage selection, visible phase-linked live tasks, Development Verification / TestKit Coverage, `phase/done/` history boundary, and one-way design/patch source synthesis |
 | [portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md) | Portable shared-artifact defaults and anti-hardcoding discipline |
 | [unified-version-control-system.md](../unified-version-control-system.md) | Controller-level active runtime body-sufficiency and version-governance validation |
 | [document-consistency.md](../document-consistency.md) | Source-side, destination/runtime, body-sufficiency, source-owned install scope, shared destination, and other-owner runtime reference consistency |

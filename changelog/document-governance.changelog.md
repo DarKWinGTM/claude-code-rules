@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.14
+> **Current Version:** 1.15
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-06-07 | **[Added P142 template-directory support-boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-06-04 | **[Added P138 source-comment and governed-doc role-boundary refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-06-02 | **[Added P131 diagram infrastructure doctrine](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-06-02 | **[Added P129 mandatory Kroki-compatible diagram governance](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -27,6 +28,23 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-115"></a>
+## Version 1.15: Added P142 template-directory support-boundary refinement
+
+**Date:** 2026-06-07
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `document-governance.md` from v1.13 to v1.15.
+- Updated `design/document-governance.design.md` from v1.14 to v1.15.
+- Reclassified the phase authoring template under `template/**` instead of the active root runtime-rule surface.
+- Kept helper/support artifacts explicit as non-governed support material unless separately promoted.
+
+### Summary
+`document-governance.md` now keeps the phase authoring template in a dedicated support directory so it stays readable and reusable without looking like active phase authority or runtime payload.
 
 ---
 

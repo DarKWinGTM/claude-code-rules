@@ -132,7 +132,7 @@ Manual/helper path from a local clone:
 - Manifest cleanup removes only files previously installed by this repo and still matching the last recorded install snapshot inside the same project-local target.
 - Legacy cleanup checks old candidate filenames against this repo's git history; only exact historical blob matches are quarantined out of the active project-local runtime path.
 - Files already present in the target `.claude/rules/` directory but outside this repo's recorded install ownership or repo-history proof are preserved by default.
-- Governed design/changelog/TODO/phase/patch artifacts, inactive history/done surfaces, and `phase-implementation-template.md` remain in the repository for maintenance and synchronized updates.
+- Governed design/changelog/TODO/phase/patch artifacts, inactive history/done surfaces, and `template/phase-authoring-template.md` remain in the repository for maintenance and synchronized updates.
 - Companion plugins are now a recommended follow-up when you want the current full RULES toolchain, but they still install separately from the `.claude/rules/` runtime payload.
 
 ### 🔌 Companion Plugin Quick Setup
@@ -394,7 +394,7 @@ Boundary:
 | `./diagram/STRUCTURE.md` | Bodyful whole-project detailed visual structure authority when a governed diagram lane is opened | Active diagram global anchor |
 | `./diagram/<subject>.design.md` | Default integrated Kroki-compatible subject diagram as a zoom-in / decomposition view of the global structure | Active subject diagram |
 | `./diagram/<subject>/*.design.md` | Kroki-compatible child visual shards only after a real visual split trigger | Active diagram child shards |
-| `*.md` (root) | Active runtime rules | Rules files |
+| `*.md` (selected active root rule files) | Active runtime rules | Rules files |
 | `./changelog/changelog.md` | Compact master repository-wide current-version authority and shard map | Master changelog parent |
 | `./changelog/*.changelog.md` | Per-chain authoritative active parent history/current version state | Active parent changelogs |
 | `./changelog/<chain>/v*.changelog.md` | Same-chain detailed version entries in same-stem nested mode | Version detail shards |
@@ -410,7 +410,7 @@ Boundary:
 | `./phase/done/phase-NNN-*.md` | Completed phase detail retained outside active scans | Inactive completed phase history |
 | `./patch/<context>.patch.md` or `./<context>.patch.md` | Governed active patch/review artifacts outside live phase planning | Active patch docs |
 | `./patch/done/<context>.patch.md` | Completed patch artifacts retained outside active scans | Inactive completed patch history |
-| `./phase-implementation-template.md` | Root helper for phased planning | Helper artifact that also exposes active phase family, planned next phase(s), activation boundary, and next checkpoint guidance for future `/phase` authoring |
+| `./template/phase-authoring-template.md` | Template helper for phased planning | Support-only authoring template that exposes active phase family, planned next phase(s), activation boundary, and next checkpoint guidance for future `/phase` authoring |
 | `./playground/README.md` | Compact entrypoint for governed behavior playground material | Playground family index |
 | `./playground/cases/*.md`, `./playground/coverage.md`, `./playground/matrix.md` | Scenario families, rule coverage mapping, and virtual-case exploration outside runtime install scope | Governed non-runtime playground content |
 
@@ -466,7 +466,7 @@ This section defines how `design`, `diagram`, `changelog`, `runtime rules`, `TOD
 | `phase/done/phase-NNN-*.md` | Inactive completed phase history | Completed phase detail should leave active scans but remain traceable |
 | `patch/<context>.patch.md` or root `<context>.patch.md` | Governed active patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
 | `patch/done/<context>.patch.md` | Inactive completed patch history | Completed patch artifacts should leave active review scans but remain traceable |
-| `phase-implementation-template.md` | Root helper for phased planning readability | Reusable authoring support when staged execution matters, including active phase family, planned next phase(s), activation boundary, and next checkpoint guidance |
+| `template/phase-authoring-template.md` | Template helper for phased planning readability | Reusable authoring support when staged execution matters, including active phase family, planned next phase(s), activation boundary, and next checkpoint guidance |
 | `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
 
 ### Startup Artifact Gate

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.18
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-12)
+> **Current Version:** 1.19
+> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-06-07)
 
 ---
 
@@ -94,7 +94,7 @@ Execution continuity should not outrun required knowledge capture when external 
 Execution continuity should not make broad, noisy, context-heavy, high-output, multi-surface, naturally parallel, or broad research next work default to leader-session raw absorption. Those slices should pass through `native-worker-agent-routing-and-context-control.md` unless direct handling has a narrow reason. Broad external research, design-improvement research, source comparison, and recommendation research should pass through the native research orchestration gate before leader raw WebSearch/source absorption.
 
 ### 3.8.1 Phase-Lineage and Visible-Linkage Continuity Boundary
-Execution continuity should not turn same-family phase-shaped follow-up work into a new major phase by momentum. When next work needs phase identity selection, `phase-implementation.md` should decide current phase update, existing-family subphase, new major phase, or ask-now lineage handling. When continuation creates or extends phase-backed task entries, those entries should preserve visible phase linkage in the subject or description rather than becoming generic next-work tasks.
+Execution continuity should not turn same-family phase-shaped follow-up work into a new major phase by momentum. When next work needs phase identity selection, `phase-todo-artifact.md` should decide current phase update, existing-family subphase, new major phase, or ask-now lineage handling. When continuation creates or extends phase-backed task entries, those entries should preserve visible phase linkage in the subject or description rather than becoming generic next-work tasks.
 
 ### 3.9 Legitimate Stop-Gate Principle
 Stopping should be driven by real blockers, approval gates, unresolved governing basis, material ambiguity, actual completion, or a required knowledge-capture gate. Implementation-only completion is not actual completion when material verification remains safe, relevant, and unresolved.
@@ -136,7 +136,7 @@ Is implementation complete but material verification remains implied and safe?
   → No: continue
   ↓
 Does the next slice require phase identity selection or a phase-shaped continuation decision?
-  → Yes: apply `phase-implementation.md` current-phase/subphase/new-major lineage handling, then continue on selected path
+  → Yes: apply `phase-todo-artifact.md` current-phase/subphase/new-major lineage handling, then continue on selected path
   → No: continue
   ↓
 Is the active objective complete while checked surfaces show meaningful unselected successor work?
@@ -168,7 +168,7 @@ It does not replace:
 - evidence wording
 - presentation wording
 - task-list mechanics
-- phase identity semantics, roadmap/phase-matrix content, next-phase state taxonomy, and visible phase-linkage rules, including current phase versus subphase versus new-major selection, which defer to `phase-implementation.md`
+- phase identity semantics, roadmap/phase-matrix content, next-phase state taxonomy, and visible phase-linkage rules, including current phase versus subphase versus new-major selection, which defer to `phase-todo-artifact.md`
 - development verification strategy, debug signal selection, testing depth, and TestKit/scenario decisions, which defer to `development-verification-and-debug-strategy.md`
 - approval/confirmation mechanics
 - native worker routing and leader-context control, which defer to `native-worker-agent-routing-and-context-control.md`
