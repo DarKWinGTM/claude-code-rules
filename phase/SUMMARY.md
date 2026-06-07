@@ -3,7 +3,7 @@
 > **Current Version:** 2.06
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.49 / P141 governed /goal routing-choice surface hardening
+> **Status:** No active phase selected; latest released baseline is v10.50 / P142 phase authoring template relocation and runtime-boundary clarification
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -26,6 +26,12 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - none selected
 
 ### Most Recently Completed
+
+- **P142:** [phase-142-phase-authoring-template-relocation-and-runtime-boundary.md](phase-142-phase-authoring-template-relocation-and-runtime-boundary.md)
+  - Output: the old root phase template now lives under `template/phase-authoring-template.md`, so it remains reusable without reading like an active Rule or runtime payload.
+  - Gate: checked active references now use the template-directory path where current-state authority requires it; active phase doctrine remains explicit in `phase-todo-artifact.md` plus governed `phase/` surfaces; touched design/changelog/TODO/phase/patch/master-changelog/detail surfaces align to `v10.50 / P142`; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency; `git diff --check` passed; and push to `master`, tag `v10.50`, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.50
+  - Patch: [../patch/phase-authoring-template-relocation-and-runtime-boundary.patch.md](../patch/phase-authoring-template-relocation-and-runtime-boundary.patch.md)
 
 - **P141:** [phase-141-governed-goal-routing-choice-surface-hardening.md](phase-141-governed-goal-routing-choice-surface-hardening.md)
   - Output: governed `/goal` or goal/plan-file authoring now stops cleanly at the emitted goal artifact plus subordinate route support when execution was not yet selected, so authoring-only turns no longer leak a default `Subagent-Driven` / `Inline Execution` menu.

@@ -1,12 +1,18 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-07
-> **Current Release:** v10.49 / P141 governed /goal routing-choice surface hardening
+> **Current Release:** v10.50 / P142 phase authoring template relocation and runtime-boundary clarification
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## ✅ Completed
+
+- [x] P142 / v10.50 phase authoring template relocation and runtime-boundary clarification was completed, installed, pushed to `master`, tagged, and released.
+  - Verified: `phase-implementation-template.md` no longer sits in the root active product RULES surface; `template/phase-authoring-template.md` now carries the support-only / non-runtime / non-authority role explicitly; checked active references now use the template-directory path where current-state authority requires it; active phase doctrine remains explicit in `phase-todo-artifact.md` plus governed `phase/` surfaces; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.50 / P142` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.50`, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.50
 
 ## ✅ Completed
 
