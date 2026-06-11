@@ -1,6 +1,6 @@
 # Changelog - Explanation and Presentation
 
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Current Version:** 1.18
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.20 | 2026-06-11 | **[Added P143 hybrid progress-snapshot presentation refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-06-07 | **[Added P141 goal-authoring presentation stop-boundary refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-05 | **[Added P139 goal-route support and exact Plan reference presentation refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.17 | 2026-06-03 | **[Added P136 goal-first copied-artifact ordering hardening](#version-117)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -35,6 +36,23 @@
 
 ---
 
+
+<a id="version-120"></a>
+## Version 1.20: Added P143 hybrid progress-snapshot presentation refinement
+
+**Date:** 2026-06-11
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `explanation-and-presentation.md` from v1.19 to v1.20.
+- Updated `design/explanation-and-presentation.design.md` from v1.19 to v1.20.
+- Added a hybrid progress snapshot shape for non-trivial in-flight work using `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`.
+- Kept the shape compact and optional so trivial replies still stay direct instead of ceremonial.
+
+### Summary
+`explanation-and-presentation.md` now gives progress updates a clearer scan-friendly layout, so readers can see movement and the next gate without needing a long narrative.
+
+---
 
 <a id="version-119"></a>
 ## Version 1.19: Added P141 goal-authoring presentation stop-boundary refinement

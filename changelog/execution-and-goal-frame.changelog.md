@@ -1,6 +1,6 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.24
+> **Current Version:** 1.25
 > **Current Version:** 1.23
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.25 | 2026-06-11 | **[Added P143 progress narration and continuation-boundary refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.24 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and no-menu leakage refinement](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.23 | 2026-06-05 | **[Added P140 design-slice obligation coverage and continuation gate refinement](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.22 | 2026-06-05 | **[Added P139 goal route support and execution posture selection](#version-122)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -41,6 +42,23 @@
 
 ---
 
+
+<a id="version-125"></a>
+## Version 1.25: Added P143 progress narration and continuation-boundary refinement
+
+**Date:** 2026-06-11
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.24 to v1.25.
+- Updated `design/execution-and-goal-frame.design.md` from v1.24 to v1.25.
+- Added a progress narration boundary so non-trivial updates may use `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` markers when helpful.
+- Preserved the rule that progress narration must not become a stop reason or milestone-only pause when safe continuation still exists.
+
+### Summary
+`execution-and-goal-frame.md` now makes clearer progress reporting compatible with continuation-first execution, so status helps orientation without interrupting safe forward movement.
+
+---
 
 <a id="version-124"></a>
 ## Version 1.24: Added P141 goal-authoring stop-boundary and no-menu leakage refinement

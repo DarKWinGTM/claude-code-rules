@@ -1,6 +1,6 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Current Version:** 1.28
+> **Current Version:** 1.29
 > **Current Version:** 1.27
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.29 | 2026-06-11 | **[Added P143 live progress-snapshot shaping refinement](#version-129)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.28 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and execution-surface gating refinement](#version-128)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.27 | 2026-06-05 | **[Added P140 design-slice semantic coverage refinement](#version-127)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.26 | 2026-06-05 | **[Added P139 plain-goal route support and selected-execution task-shaping refinement](#version-126)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -44,6 +45,23 @@
 
 ---
 
+
+<a id="version-129"></a>
+## Version 1.29: Added P143 live progress-snapshot shaping refinement
+
+**Date:** 2026-06-11
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.28 to v1.29.
+- Updated `design/phase-todo-artifact.design.md` from v1.28 to v1.29.
+- Added shaping guidance so non-trivial live task and phase-backed updates may use `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` markers when that improves readability.
+- Kept the shape bounded so TODO/phase tracking does not drift into a dashboard or ceremonial status dump.
+
+### Summary
+`phase-todo-artifact.md` now gives live execution surfaces one clearer progress shape, so active work can be easier to scan without losing phase/task discipline.
+
+---
 
 <a id="version-128"></a>
 ## Version 1.28: Added P141 goal-authoring stop-boundary and execution-surface gating refinement

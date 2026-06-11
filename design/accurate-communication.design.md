@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.40
+> **Current Version:** 2.41
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
 ---
@@ -24,6 +24,7 @@ This chain is the wording owner for:
 - meaning-first explanation for variables, fields, config keys, enum-like values, and internal labels so the answer says what the identifier is, what it does, and what changes if it changes before leaning on the raw name alone
 - easy-to-picture short phase/progress and phase-backed closeout framing before denser execution or governance detail when the reader is trying to understand what the work is doing or delivered
 - evidence-honest phase-backed closeout wording so delivered work, feature/improvement, and impact are visible without upgrading edited or partially verified work into fixed/stable claims
+- hybrid progress-reporting snapshots so non-trivial in-flight updates can present `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` when that structure improves scanability without forcing ceremony on trivial replies
 - clarification of variable names, field names, config keys, enum-like values, and internal labels when the answer depends on them
 - duplicate-looking team-agent reporting honesty so observed overlap is not overstated as confirmed active duplication
 - governing-basis clarification before deep branch analysis when multiple materially different policies/frames remain live

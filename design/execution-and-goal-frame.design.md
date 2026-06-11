@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.24
+> **Current Version:** 1.25
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -64,6 +64,8 @@ P139 refinement: this owner should now treat plain goal requests as enough to tr
 P140 refinement: this owner should now preserve selected design-slice obligation coverage so execution extracts implementation-relevant semantic obligations from the bounded governed design slice, uses them for task/verification/continuation logic, and refuses headline-output-only closeout while selected invariants, failure modes, or dependency semantics remain uncovered without explicit status.
 
 P141 refinement: this owner should now preserve a goal-authoring stop boundary so governed `/goal` or route-only plan-support authoring ends at the emitted goal artifact plus subordinate route support when execution was not yet selected, while execution-posture selection remains a later internal transition and no default `Subagent-Driven` / `Inline Execution` menu is surfaced at authoring closeout.
+
+P143 refinement: this owner should now preserve progress narration as navigation rather than ceremony so non-trivial progress updates can show `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` when helpful, but status narration must not become a stop reason or milestone-only pause when safe continuation exists.
 
 P121 refinement: this owner should now preserve an explicit goal-to-plan bridge so `/goal` remains the objective owner, `/plan` remains the route owner, governed non-trivial goals may bridge into planning without forcing plans for every goal, and route completion alone cannot substitute for goal-gate closeout.
 

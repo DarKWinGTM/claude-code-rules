@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.06
+> **Current Version:** 2.07
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.50 / P142 phase authoring template relocation and runtime-boundary clarification
+> **Status:** Active phase selected: P143 hybrid progress-reporting surface alignment; latest released baseline is v10.50 / P142 phase authoring template relocation and runtime-boundary clarification
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,10 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none selected
+- **P143:** [phase-143-hybrid-progress-reporting-surface-alignment.md](phase-143-hybrid-progress-reporting-surface-alignment.md)
+  - Output: non-trivial Claude progress updates now have one compact hybrid snapshot built around `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`, while keeping evidence-strength wording, continuation-first execution, and the route-only `/goal` authoring boundary aligned.
+  - Gate: touched runtime owners plus companion design and per-chain changelog sync are in place in checked clean-worktree scope; `TODO.md`, this summary, `phase-143-hybrid-progress-reporting-surface-alignment.md`, and `patch/hybrid-progress-reporting-surface-alignment.patch.md` are the active current-state sync surfaces; release-history sync and any runtime install/update or publish verification remain pending until that closeout scope is explicitly satisfied.
+  - Patch: [../patch/hybrid-progress-reporting-surface-alignment.patch.md](../patch/hybrid-progress-reporting-surface-alignment.patch.md)
 
 ### Most Recently Completed
 

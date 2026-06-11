@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.28
+> **Current Version:** 1.29
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -64,6 +64,8 @@ P139 refinement: this owner should now preserve smallest-sufficient route suppor
 P140 refinement: this owner should now preserve design-to-phase semantic coverage so a selected governed design slice is extracted into implementation-relevant semantic items, phase/task/verification surfaces keep explicit status for each selected item, and phase closeout cannot stop at a headline output while selected invariants or failure modes remain uncovered.
 
 P141 refinement: this owner should now preserve a goal-authoring stop boundary inside the execution surfaces so governed goal/plan-file authoring can end at the copied goal artifact plus subordinate route support, while task materialization and execution-posture selection wait until execution is actually selected or clearly implied and no default execution-mode menu leaks out of the authoring turn.
+
+P143 refinement: this owner should now preserve compact live progress snapshots for non-trivial work so Current / Done so far / In progress / Remaining / Blockers / Notes / Next markers can appear in task/phase closeout when useful without turning TODO/phase tracking into a dashboard or ceremony.
 
 P126 refinement: this owner should now make `NNN`, `NNN-NN`, and `NNN-NN-NN` explicit forward-valid phase identity forms, preserve lineage-first child-phase selection across those three numeric depths, and classify observed alphanumeric forms such as `NNN-NNa` as legacy-only unless a later doctrine explicitly normalizes them.
 

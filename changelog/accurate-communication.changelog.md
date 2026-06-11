@@ -1,6 +1,6 @@
 # Changelog - Accurate Communication Standard
 
-> **Current Version:** 2.40
+> **Current Version:** 2.41
 > **Current Version:** 2.39
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.41 | 2026-06-11 | **[Added P143 hybrid progress-reporting snapshot wording refinement](#version-241)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.40 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary wording refinement](#version-240)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.39 | 2026-06-05 | **[Added P139 goal-route support and execution-label wording refinement](#version-239)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.38 | 2026-06-03 | **[Added P136 goal-first plan-reference wording refinement](#version-238)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -85,6 +86,23 @@
 
 ---
 
+
+<a id="version-241"></a>
+## Version 2.41: Added P143 hybrid progress-reporting snapshot wording refinement
+
+**Date:** 2026-06-11
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `accurate-communication.md` from v2.40 to v2.41.
+- Updated `design/accurate-communication.design.md` from v2.40 to v2.41.
+- Added wording so non-trivial in-flight updates can use a compact `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` snapshot when that structure improves scanability.
+- Kept `Done so far` explicitly bounded to checked scope so progress updates do not read like full completion.
+
+### Summary
+`accurate-communication.md` now gives non-trivial progress updates one clearer evidence-calibrated shape, so readers can see what moved, what remains, and what happens next without losing status honesty.
+
+---
 
 <a id="version-240"></a>
 ## Version 2.40: Added P141 goal-authoring stop-boundary wording refinement

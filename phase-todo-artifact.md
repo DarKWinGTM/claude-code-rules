@@ -1,5 +1,5 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.28
+> **Current Version:** 1.29
 > **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.28
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
@@ -414,6 +414,17 @@ When selected `/goal` work or a selected plan-backed route becomes execution-rea
 - keep Inline Execution available only when worker routing selects a checked direct-handling exception for the current slice
 - preserve separate implementation, verification, and governance/release-sync tasks when their gates differ
 - keep tasks outcome-sized so one bounded task can cleanly become one standalone subagent lane when suitable
+
+### 5.2) Hybrid progress snapshot shaping
+When live task or phase-backed updates need to be more readable, use a compact hybrid progress snapshot:
+- `Current`
+- `Done so far`
+- `In progress`
+- `Remaining`
+- `Blockers / Notes`
+- `Next`
+- keep `Done so far` within checked scope
+- keep this bounded and practical; do not turn TODO/phase tracking into a dashboard or ceremony
 
 ### 7) Live tracking friction recovery
 If live task-list creation or update fails, classify whether tracking is material to safe continuation.

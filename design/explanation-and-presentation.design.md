@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -54,6 +54,8 @@ P136 refinement: this owner should now require copied durable-plan-backed govern
 P139 refinement: this owner should now preserve the smallest sufficient route support for plain goal requests, keep default user-facing wording focused on chosen action/result rather than routing labels, and reserve exact `Plan reference:` only for the durable route-only plan-file pointer inside the copied goal artifact.
 
 P141 refinement: this owner should now preserve a goal-authoring presentation stop boundary so when the current turn is only governed goal or plan-file authoring the visible surface ends at the emitted goal artifact plus subordinate route support rather than auto-appending an execution-style choice menu.
+
+P143 refinement: this owner should now preserve a hybrid progress snapshot shape for non-trivial in-flight work, using `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` markers when that structure improves scanability without forcing ceremony on trivial replies.
 
 P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
 

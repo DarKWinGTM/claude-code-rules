@@ -1,5 +1,5 @@
 # Explanation and Presentation
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
@@ -76,6 +76,16 @@ When reporting implementation progress, troubleshooting state, or verification s
 - keep claim strength aligned to what was actually checked
 
 Snapshot wording semantics defer to `accurate-communication.md`; layout patterns defer to this rule's presentation section.
+
+### 5.1) Hybrid progress snapshot
+When reporting non-trivial in-flight work, use a compact hybrid snapshot when that structure makes the state easier to scan:
+- `Current` names the slice or stage being discussed now
+- `Done so far` shows what is complete within checked scope
+- `In progress` shows what is actively happening now
+- `Remaining` shows what still needs to happen before the gate is satisfied
+- `Blockers / Notes` stays short and practical for caveats, limits, or unresolved checks
+- `Next` names the immediate next action or next gate
+- do not force this shape onto trivial replies or obvious one-step answers
 
 ### 6) Scope, user-visible meaning, and identifier clarity
 Make boundaries explicit when the user may confuse current scope with future scope, internal implementation with user-facing meaning, or active work with deferred work.

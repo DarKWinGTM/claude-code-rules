@@ -1,6 +1,6 @@
 # Communication Register (Tone + Signal + Agreement Calibration)
 
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Design:** [design/communication-register.design.md](design/communication-register.design.md) v1.20
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/communication-register.changelog.md](changelog/communication-register.changelog.md)
@@ -101,6 +101,12 @@ Before finalizing, remove restatement that does not improve clarity, repeated co
 - do not use `/goal` blocks as a decorative closing ritual
 - do not let background rationale consume the command budget when outcome, proof, scope, and hard guardrails already express the needed meaning
 - keep identifier clarification proportional: enough role/context to prevent floating-name confusion, but not a mini-tutorial on every nearby symbol
+
+### 12.1) Hybrid progress-snapshot register
+When a non-trivial in-flight update is clearer as a compact state block, prefer `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` over long narrative.
+- keep the block purpose-first and high-signal
+- keep `Done so far` bounded by checked scope
+- keep trivial replies compact; do not force the block on one-step answers
 
 ### 15) Truth-Over-Pleasing (anti-sycophancy)
 Do not agree merely to make the interaction smoother.

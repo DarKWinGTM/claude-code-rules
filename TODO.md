@@ -1,12 +1,19 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-07
+> **Last Updated:** 2026-06-11
 > **Current Release:** v10.50 / P142 phase authoring template relocation and runtime-boundary clarification
-> **Active Wave:** none selected
+> **Active Wave:** P143 / v10.51 hybrid progress-reporting surface alignment
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
+
+## 🔄 Active
+
+- [ ] P143 / v10.51 hybrid progress-reporting surface alignment is in progress.
+  - Current focus: standardize a compact hybrid progress snapshot across the selected runtime owners so non-trivial updates can clearly show `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` without turning progress narration into ceremony or a stop gate.
+  - Current checked progress: touched runtime owners plus companion design/per-chain changelog sync are in place in the clean worktree; `TODO.md`, `phase/SUMMARY.md`, `phase/phase-143-hybrid-progress-reporting-surface-alignment.md`, and `patch/hybrid-progress-reporting-surface-alignment.patch.md` are the active current-state sync surfaces for this wave.
+  - Open gate: active TODO/phase/patch sync is still being finalized, and any release-scope sync or runtime install/update verification must stay evidence-gated rather than implied from edit-only progress.
 
 ## ✅ Completed
 
@@ -14,13 +21,11 @@
   - Verified: `phase-implementation-template.md` no longer sits in the root active product RULES surface; `template/phase-authoring-template.md` now carries the support-only / non-runtime / non-authority role explicitly; checked active references now use the template-directory path where current-state authority requires it; active phase doctrine remains explicit in `phase-todo-artifact.md` plus governed `phase/` surfaces; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.50 / P142` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.50`, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.50
 
-## ✅ Completed
 
 - [x] P141 / v10.49 governed `/goal` routing-choice surface hardening was completed, installed, pushed to `master`, tagged, and released.
   - Verified: governed goal/plan-file authoring now stops at the emitted goal artifact plus subordinate route support when execution was not yet selected; authoring-only turns no longer append a default `Subagent-Driven` / `Inline Execution` menu; execution-transition wording now reports the chosen action/result or current stop boundary rather than a routing-label menu; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.49 / P141` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.49`, and GitHub release verification passed.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.49
 
-## ✅ Completed
 
 - [x] P140 / v10.48 design-slice semantic coverage was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: selected governed design slices now require semantic coverage before phase/task closeout; implementation-relevant semantic items are explicit when materially present as behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary; selected semantic items now receive explicit status classification as `implemented`, `verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`; execution and closeout can no longer stop at a visible headline output while selected invariants, failure modes, durability, or dependency semantics remain silently uncovered; touched design/changelog/TODO/phase/patch surfaces are aligned to one `v10.48 / P140` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.48` state.
@@ -66,7 +71,6 @@
   - Verified: any actual governed `/goal` creation now prepares a full detailed plan file before final goal emission; emitted governed `/goal` output now references that route file through `Plan reference`; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the referenced plan file remains route-only support and not objective authority or completion proof; visible `/plan` remains explicit standalone planning, later route revision, or overflow only; touched README/design/changelog/TODO/phase/patch surfaces are aligned; runtime install/update verification passed with 18 active source/runtime rule files plus manifest; source/destination body sufficiency and targeted parity for touched runtime owners passed; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.38` state.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.38
 
-## ✅ Completed
 
 - [x] P129 / v10.37 Kroki-compatible governed diagram doctrine was completed, pushed, mirrored to the remote default branch, and released.
   - Verified: governed `diagram/` source is now mandatory Kroki-compatible; allowed breadth is defined as all formats that are both Kroki-compatible and governance-suitable; `design/` remains semantic authority; `diagram/STRUCTURE.md` is now a bodyful whole-project detailed visual structure authority; subject diagrams are positioned as zoom-in / decomposition views of the global structure; inline answer/phase-local text diagrams are explicitly kept outside governed source truth unless promoted; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.37` state.
@@ -76,7 +80,6 @@
   - Verified: RULES now recognizes `diagram/` as a dedicated governed visual lane; `diagram/STRUCTURE.md` is present as the whole-repo visual anchor; integrated subject diagrams are the default visual posture; automatic design-shard mirroring was rejected; plugin-first fragmented companion assumptions were withdrawn from active current-state doctrine; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; temporary project-local install proof passed with 18 active runtime rule markdown files; touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`; reconciled branch/default-branch/tag/release evidence is aligned to the promoted `v10.36` state.
   - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36
 
-## ✅ Completed
 
 - [x] P127 / v10.35 README Core Capabilities list and doctrine framing was completed, installed, pushed, mirrored to the remote default branch, and released.
   - Verified: the old Core Capabilities grid/table is gone; every capability now appears in a readable list; wording explains active doctrine/current-state behavior rather than phase/release chronology; Runtime Context Discipline now stays front-page scoped; touched README/design/changelog/TODO/phase/patch sync is complete; runtime install into a checked project-local `.claude/rules/` target, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.

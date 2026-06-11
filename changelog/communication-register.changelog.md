@@ -1,6 +1,6 @@
 # Changelog - Communication Register
 
-> **Current Version:** 1.20
+> **Current Version:** 1.21
 > **Current Version:** 1.19
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.21 | 2026-06-11 | **[Added P143 hybrid progress-snapshot register refinement](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-06-07 | **[Added P141 goal-authoring register stop-boundary refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-06-05 | **[Added P139 goal-route wording and internal-label suppression refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-03 | **[Added P137 execution-choice suppression and inline exception register refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -36,6 +37,23 @@
 
 ---
 
+
+<a id="version-121"></a>
+## Version 1.21: Added P143 hybrid progress-snapshot register refinement
+
+**Date:** 2026-06-11
+**Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+
+### Changes
+- Updated `communication-register.md` from v1.20 to v1.21.
+- Updated `design/communication-register.design.md` from v1.20 to v1.21.
+- Added register guidance so non-trivial in-flight updates may use the shared `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` markers when that shape is more useful than long narrative.
+- Kept the shape high-signal and optional so trivial replies do not become ritualized status blocks.
+
+### Summary
+`communication-register.md` now treats compact progress snapshots as a signal tool rather than a ceremony, improving scanability without sacrificing brevity.
+
+---
 
 <a id="version-120"></a>
 ## Version 1.20: Added P141 goal-authoring register stop-boundary refinement

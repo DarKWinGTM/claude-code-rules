@@ -1,6 +1,6 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.24
+> **Current Version:** 1.25
 > **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.24
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
@@ -120,6 +120,13 @@ When the current turn is still shaping or emitting a governed `/goal` or route-o
 - do not append `Subagent-Driven` / `Inline Execution` menus after goal/plan-file authoring
 - execution-posture selection belongs to the later execution transition, not to the authoring closeout
 - if execution continuation is already selected or clearly implied, continue through `5.2` without exposing internal routing labels as a menu
+
+### 5.2.2) Progress narration boundary
+When progress reporting helps orientation, it may be compact and list-like instead of long-form:
+- show `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` when that structure improves clarity
+- keep `Done so far` bounded to checked scope, not global completion
+- do not let progress narration become a stop reason or milestone-only pause
+- when safe continuation exists, report the progress snapshot and then continue
 
 ### 6) Goal hierarchy and priority balance
 Goal hierarchy avoids confusing broad strategy with the current slice:

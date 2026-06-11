@@ -1,5 +1,5 @@
 # Accurate Communication Standard
-> **Current Version:** 2.40
+> **Current Version:** 2.41
 > **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.40
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
@@ -95,6 +95,8 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - for phase-backed coding closeout, state verification depth, checks/scenarios run, untested scope, and evidence limits when material
 - keep delivery, testing, fixed/stable, and impact claims aligned to the verification actually performed
 - keep governance detail after the orientation, not before it
+- for non-trivial in-flight updates, a compact hybrid progress snapshot may use `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` when that structure improves scanability
+- keep `Done so far` bounded to checked scope rather than letting it read like total completion
 ### 8) Stage progression, whole set, and continuation
 - when the current state is sufficiently explained, prefer the next useful stage/state/milestone over deeper same-scope elaboration
 - when the real decision surface is larger, show the full relevant set before narrowing
