@@ -1,21 +1,19 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-06-11
-> **Current Release:** v10.50 / P142 phase authoring template relocation and runtime-boundary clarification
-> **Active Wave:** P143 / v10.51 hybrid progress-reporting surface alignment
+> **Current Release:** v10.51 / P143 hybrid progress-reporting surface alignment
+> **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
-## 🔄 Active
-
-- [ ] P143 / v10.51 hybrid progress-reporting surface alignment is in progress.
-  - Current focus: standardize a compact hybrid progress snapshot across the selected runtime owners so non-trivial updates can clearly show `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` without turning progress narration into ceremony or a stop gate.
-  - Current checked progress: touched runtime owners plus companion design/per-chain changelog sync are in place in the clean worktree; `TODO.md`, `phase/SUMMARY.md`, `phase/phase-143-hybrid-progress-reporting-surface-alignment.md`, and `patch/hybrid-progress-reporting-surface-alignment.patch.md` are the active current-state sync surfaces for this wave.
-  - Open gate: active TODO/phase/patch sync is still being finalized, and any release-scope sync or runtime install/update verification must stay evidence-gated rather than implied from edit-only progress.
-
 ## ✅ Completed
+
+- [x] P143 / v10.51 hybrid progress-reporting surface alignment was completed, installed, pushed to `master`, tagged, and released.
+  - Verified: the selected runtime owners now support a shared hybrid progress snapshot for non-trivial in-flight work using `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`; `Done so far` is explicitly bounded to checked scope; progress narration no longer reads like a stop gate or milestone-only pause when safe continuation exists; the P141 route-only `/goal` authoring boundary remains intact with no default execution-mode menu leakage; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.51 / P143` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.51`, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.51
+
 
 - [x] P142 / v10.50 phase authoring template relocation and runtime-boundary clarification was completed, installed, pushed to `master`, tagged, and released.
   - Verified: `phase-implementation-template.md` no longer sits in the root active product RULES surface; `template/phase-authoring-template.md` now carries the support-only / non-runtime / non-authority role explicitly; checked active references now use the template-directory path where current-state authority requires it; active phase doctrine remains explicit in `phase-todo-artifact.md` plus governed `phase/` surfaces; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.50 / P142` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.50`, and GitHub release verification passed.

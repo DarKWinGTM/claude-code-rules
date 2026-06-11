@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.50
+> **Current Version:** 10.51
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.51 | 2026-06-11 | **[Released hybrid progress-reporting surface alignment](changelog/v10.51-released-hybrid-progress-reporting-surface-alignment.changelog.md#version-1051)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.50 | 2026-06-07 | **[Released phase authoring template relocation and runtime-boundary clarification](changelog/v10.50-released-phase-authoring-template-relocation-and-runtime-boundary.changelog.md#version-1050)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.49 | 2026-06-07 | **[Released governed /goal routing-choice surface hardening](changelog/v10.49-released-governed-goal-routing-choice-surface-hardening.changelog.md#version-1049)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.48 | 2026-06-05 | **[Released design-slice semantic coverage](changelog/v10.48-released-design-slice-semantic-coverage.changelog.md#version-1048)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.07
+> **Current Version:** 2.08
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** Active phase selected: P143 hybrid progress-reporting surface alignment; latest released baseline is v10.50 / P142 phase authoring template relocation and runtime-boundary clarification
+> **Status:** No active phase selected; latest released baseline is v10.51 / P143 hybrid progress-reporting surface alignment
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,12 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P143:** [phase-143-hybrid-progress-reporting-surface-alignment.md](phase-143-hybrid-progress-reporting-surface-alignment.md)
-  - Output: non-trivial Claude progress updates now have one compact hybrid snapshot built around `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`, while keeping evidence-strength wording, continuation-first execution, and the route-only `/goal` authoring boundary aligned.
-  - Gate: touched runtime owners plus companion design and per-chain changelog sync are in place in checked clean-worktree scope; `TODO.md`, this summary, `phase-143-hybrid-progress-reporting-surface-alignment.md`, and `patch/hybrid-progress-reporting-surface-alignment.patch.md` are the active current-state sync surfaces; release-history sync and any runtime install/update or publish verification remain pending until that closeout scope is explicitly satisfied.
-  - Patch: [../patch/hybrid-progress-reporting-surface-alignment.patch.md](../patch/hybrid-progress-reporting-surface-alignment.patch.md)
+- none selected
 
 ### Most Recently Completed
+
+- **P143:** [phase-143-hybrid-progress-reporting-surface-alignment.md](phase-143-hybrid-progress-reporting-surface-alignment.md)
+  - Output: non-trivial Claude progress updates now have one compact hybrid snapshot built around `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`, while keeping evidence-strength wording, continuation-first execution, and the route-only `/goal` authoring boundary aligned.
+  - Gate: touched runtime owners, companion design docs, per-chain changelog parents, TODO/phase/patch/master-changelog/detail surfaces align to `v10.51 / P143`; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency; `git diff --check` passed; and push to `master`, tag `v10.51`, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.51
+  - Patch: [../patch/hybrid-progress-reporting-surface-alignment.patch.md](../patch/hybrid-progress-reporting-surface-alignment.patch.md)
+
 
 - **P142:** [phase-142-phase-authoring-template-relocation-and-runtime-boundary.md](phase-142-phase-authoring-template-relocation-and-runtime-boundary.md)
   - Output: the old root phase template now lives under `template/phase-authoring-template.md`, so it remains reusable without reading like an active Rule or runtime payload.

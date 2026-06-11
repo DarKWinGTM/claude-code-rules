@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** In Progress
+> **Status:** Complete / Released
 > **Target Design:** [../design/explanation-and-presentation.design.md](../design/explanation-and-presentation.design.md) v1.20
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -91,6 +91,6 @@ If the hybrid snapshot proves too heavy, keep the evidence-strength and continua
 
 ## Implementation Status
 
-P143 is in progress.
+P143 is completed.
 
-The selected runtime-owner doctrine updates plus their design/per-chain changelog companions are already in place in checked clean-worktree scope. Active TODO/phase/patch synchronization and any optional release-scope closeout remain pending.
+The selected runtime-owner doctrine updates plus their design/per-chain changelog companions are in place in checked clean-worktree scope, `TODO.md` / `phase/SUMMARY.md` / this patch / `phase/phase-143-hybrid-progress-reporting-surface-alignment.md` align to `v10.51 / P143`, touched runtime-owner install/update verification plus source/runtime parity and body sufficiency passed, `git diff --check` passed, and push to `master`, tag `v10.51`, and GitHub release verification passed. Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.51

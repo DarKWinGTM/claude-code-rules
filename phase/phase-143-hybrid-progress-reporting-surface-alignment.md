@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** P143
-> **Status:** Active / In Progress
+> **Status:** Completed / Released
 > **Target Release:** v10.51
 > **Design References:**
 > - [../design/accurate-communication.design.md](../design/accurate-communication.design.md) v2.41
@@ -55,9 +55,9 @@ P143 closes that gap with one bounded hybrid progress-reporting surface instead 
 
 - [x] Implement the selected runtime-owner doctrine updates.
 - [x] Sync the touched design companions and per-chain changelogs.
-- [ ] Sync `TODO.md`, `phase/SUMMARY.md`, this phase file, and `patch/hybrid-progress-reporting-surface-alignment.patch.md`.
-- [ ] Decide and complete release-scope sync (`changelog/changelog.md` and a `v10.51` release-detail shard) only if the wave is promoted through release closeout.
-- [ ] Complete final verification, runtime install/update verification if selected, and any release/publish evidence required by the chosen closeout scope.
+- [x] Sync `TODO.md`, `phase/SUMMARY.md`, this phase file, and `patch/hybrid-progress-reporting-surface-alignment.patch.md`.
+- [x] Sync `changelog/changelog.md` and `changelog/changelog/v10.51-released-hybrid-progress-reporting-surface-alignment.changelog.md`.
+- [x] Complete final verification, runtime install/update verification, push, tag, and release evidence.
 
 ---
 
@@ -86,17 +86,18 @@ P143 closes that gap with one bounded hybrid progress-reporting surface instead 
 ## Development Verification / TestKit Coverage
 
 - **Route:** `not_applicable_with_reason` for product behavior; this wave is governed wording, presentation, and execution-surface work only.
-- **Checks planned:** touched-owner anchor verification, per-chain changelog sync, TODO/phase/patch sync, `git diff --check`, and runtime install/update parity plus body sufficiency if runtime install verification is included in closeout.
-- **Confidence:** runtime and design/changelog owner updates are in progress; release-scope sync is not yet claimed.
+- **Checks run:** touched-owner anchor verification, per-chain changelog sync, TODO/phase/patch/master-changelog/detail sync, runtime install/update parity plus body sufficiency, `git diff --check`, push to `master`, tag verification, and GitHub release verification.
+- **Confidence:** released and verified in checked scope.
 
 ---
 
 ## Current Status
 
-P143 is active.
+P143 is completed.
 
 Current checked progress:
 - the selected runtime-owner doctrine updates are in place across `accurate-communication.md`, `explanation-and-presentation.md`, `communication-register.md`, `execution-and-goal-frame.md`, and `phase-todo-artifact.md`
 - the touched design companions and per-chain changelogs are aligned to the same hybrid progress-reporting refinement
-- this clean worktree was opened from `origin/master` because the main local RULES checkout is ahead/behind and full of unrelated modified/untracked state outside the selected wave
-- TODO/phase/patch current-state sync plus any release-scope closeout are still pending
+- `TODO.md`, `phase/SUMMARY.md`, this phase file, `patch/hybrid-progress-reporting-surface-alignment.patch.md`, `changelog/changelog.md`, and `changelog/changelog/v10.51-released-hybrid-progress-reporting-surface-alignment.changelog.md` align to `v10.51 / P143` in checked scope
+- touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency, `git diff --check` passed, and push to `master`, tag `v10.51`, and GitHub release verification passed
+- Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.51

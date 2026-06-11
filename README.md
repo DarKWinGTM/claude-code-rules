@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.47</b><br><sub>P139 Released</sub>
+  <b>v10.51</b><br><sub>P143 Released</sub>
 </td>
 <td align="center" width="200">
   <b>18</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Goal routing</b><br><sub>Auto support + internal posture</sub>
+  <b>Progress reporting</b><br><sub>Hybrid snapshot + continuation-safe</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.47 / P139` hardens goal handling so plain goal requests auto-resolve the smallest sufficient route support when needed, while selected goal/plan execution chooses posture internally instead of exposing `Subagent-Driven` vs `Inline Execution` as a default user-facing menu.
+> **Current release note:** `v10.51 / P143` standardizes a hybrid progress-reporting surface for non-trivial Claude work, so updates can clearly show `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` while keeping evidence-calibrated status wording and continuation-first execution aligned.
 
 <!-- CTA Buttons -->
 <p>
