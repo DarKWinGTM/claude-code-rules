@@ -19,21 +19,21 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.51</b><br><sub>P143 Released</sub>
+  <b>v10.52</b><br><sub>P144 Released</sub>
 </td>
 <td align="center" width="200">
-  <b>18</b><br><sub>Active Runtime Rules</sub>
+  <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Progress reporting</b><br><sub>Hybrid snapshot + continuation-safe</sub>
+  <b>Goal route owner</b><br><sub>Dedicated /goal contract</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.51 / P143` standardizes a hybrid progress-reporting surface for non-trivial Claude work, so updates can clearly show `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` while keeping evidence-calibrated status wording and continuation-first execution aligned.
+> **Current release note:** `v10.52 / P144` ships a dedicated `goal-authoring-and-route-support.md` runtime owner, keeps `execution-and-goal-frame.md` plus `phase-todo-artifact.md` focused on their execution/task bridges, and makes maintainer closeout require README sync, runtime install, source push, and repo release before a RULES wave is considered done.
 
 <!-- CTA Buttons -->
 <p>
@@ -75,7 +75,7 @@
 
 ## ⚡ Quick Start
 
-Use the launcher for your platform. The primary install target is the current project's `.claude/rules/` directory. The launcher is the operator entrypoint; the helper scripts remain the execution layer underneath and keep the current compact 18-rule runtime set with owner-aware manifest cleanup inside that project-local destination.
+Use the launcher for your platform. The primary install target is the current project's `.claude/rules/` directory. The launcher is the operator entrypoint; the helper scripts remain the execution layer underneath and keep the current compact 19-rule runtime set with owner-aware manifest cleanup inside that project-local destination.
 
 ### Bash — Linux / macOS
 
@@ -212,7 +212,7 @@ These capabilities summarize the current operating model at the front-page level
   - Require intent clarity before destructive or high-impact actions
 
 - **Runtime Context Discipline** — The runtime layer stays compact, body-sufficient, and limited to doctrine the assistant must apply now.
-  - Keep the 18 active runtime rules focused on live behavioral guidance rather than historical rollout detail
+  - Keep the 19 active runtime rules focused on live behavioral guidance rather than historical rollout detail
   - Keep design as target-state authority, changelog as version/history authority, and TODO/phase as execution surfaces
   - Verify install scope, parity, and body sufficiency before claiming runtime synchronization
   - Preserve the project-local `.claude/rules/` install contract while keeping non-runtime governance artifacts out of the runtime payload
@@ -249,7 +249,7 @@ These capabilities summarize the current operating model at the front-page level
 
 ---
 
-### 🔵 Execution & Coordination (4 rules)
+### 🔵 Execution & Coordination (5 rules)
 
 > **How governed work is started, tracked, phased, and routed**
 
@@ -257,6 +257,7 @@ These capabilities summarize the current operating model at the front-page level
 |:-----|:--------|:------------|
 | [`coding-discipline.md`](coding-discipline.md) | Coding execution discipline | Maintainable structure, proportionate verification, and tactical-to-strategic convergence |
 | [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Keeps work moving from active surfaces with clear goal/output/gate reasoning |
+| [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Keeps goal authoring, `Plan reference`, and `/plan` overflow doctrine in one runtime owner |
 | [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective worker lane and protects leader context from raw overload |
 | [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves startup posture early, governs live `/phase`, and keeps TODO vs live task roles distinct |
 
@@ -275,7 +276,7 @@ These capabilities summarize the current operating model at the front-page level
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance | Keeps memory scoped, compact, path-aware, and subordinate to checked current evidence |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portability defaults | Prevents machine-local assumptions from becoming shared contracts |
 
-**📊 Active Runtime Rules: 18**
+**📊 Active Runtime Rules: 19**
 
 Current source state:
 - P137 / v10.45 hardens execution routing on top of the released `v10.44 / P136` baseline.
@@ -284,14 +285,14 @@ Current source state:
 - `/goal` remains the objective owner while the plan file remains route-only support and not completion proof.
 - Runtime Context Discipline now stays front-page scoped: current runtime shape, authority boundaries, and install-discipline expectations are summarized without turning README into a phase summary.
 - The governed `playground/` family remains non-runtime and outside the installer payload.
-- The active runtime install set remains 18 root rules and `playground/` stays outside the installer payload.
+- The active runtime install set remains 19 root rules and `playground/` stays outside the installer payload.
 </div>
 
 ---
 
 ## 📦 Installation
 
-The Quick Start block above is the canonical launcher-first install path. The methods below keep the same compact 18-rule runtime set while making project-local `.claude/rules/` the default target.
+The Quick Start block above is the canonical launcher-first install path. The methods below keep the same compact 19-rule runtime set while making project-local `.claude/rules/` the default target.
 
 ### 🎯 Method 1: Full Project-Local Installation (Recommended)
 
@@ -360,7 +361,7 @@ ls "$HOME/.claude/rules/worker-routing-and-context.md"
 
 ## 🔌 Companion Plugins
 
-This repo also carries local marketplace plugins that sit **beside** the 18 active runtime rules.
+This repo also carries local marketplace plugins that sit **beside** the 19 active runtime rules.
 
 พูดง่าย ๆ คือ runtime rules ยังเป็นแกนหลักของพฤติกรรม Claude Code ใน `.claude/rules/` ส่วน plugin พวกนี้เป็นเครื่องมือเสริมที่ช่วยงานเฉพาะด้านและติดตั้งแยกจาก `plugin/` ตามความต้องการ
 
@@ -439,7 +440,7 @@ For governed behavior scenarios, coverage mapping, and virtual-case exploration,
 
 Boundary:
 - `playground/` is a governed non-runtime family
-- it is not part of the 18-file `.claude/rules/` install payload
+- it is not part of the 19-file `.claude/rules/` install payload
 - README stays pointer-level; detailed cases live under `playground/`
 
 ---
@@ -515,7 +516,7 @@ Change request received
   → update phase/patch companion records when in scope
   → roll oversized active TODO or phase-summary history into referenced daily-first `history/` and `done/` shards before broad active-file absorption continues
   → move completed phase/patch/changelog detail to `done/` only when active scan bloat justifies inactive history separation
-  → install only the 18 source-owned active runtime rules when an install gate is explicitly in scope
+  → install only the 19 source-owned active runtime rules when an install gate is explicitly in scope
   → verify links, versions, active install scope, source/runtime parity, and active runtime body sufficiency only when a runtime install gate is in scope
 ```
 
@@ -525,7 +526,7 @@ Change request received
 - Design file links to the correct changelog file
 - Changelog unified row maps to an existing detailed section
 - Runtime rule version/header aligns with changelog current version
-- README active runtime install list still contains exactly the 18 source-owned root rule files
+- README active runtime install list still contains exactly the 19 source-owned root rule files
 - `TODO.md` and `phase/SUMMARY.md` stay compact enough for active current-state reads and reference their relevant `history/` and `done/` shards
 - `phase/SUMMARY.md` exists when phased execution is used and names governing patch artifacts or explicit `none`
 - `phase/SUMMARY.md` keeps the phase map, source inputs, cross-phase handoffs, TODO/changelog coordination, verification, and rollback/containment picture current
@@ -1058,13 +1059,13 @@ Result: ✅ Verified from actual files
 
 ### Active runtime scope
 
-- Current README meaning: 18 source-owned root runtime rules form the active merged install set.
+- Current README meaning: 19 source-owned root runtime rules form the active merged install set.
 - Impact: keeps install scope explicit after root-rule compression.
 
 ### Runtime install boundary
 
-- Current README meaning: the Quick Start block installs the compact 18-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the released `v10.45 / P137` Subagent-Driven-first execution routing hardening while the active runtime install set remains 18 root rules, selected non-trivial plan-backed or goal-backed execution now prefers Subagent-Driven first after a checked suitability gate, Inline Execution remains a checked direct-handling exception, and `playground/` stays outside the install payload.
+- Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
+- Source state: this README reflects released `v10.52 / P144`, where `goal-authoring-and-route-support.md` now owns governed `/goal` route-support doctrine, the active runtime install set contains 19 root rules, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1144,7 +1145,8 @@ These rules evolve based on real-world usage:
 2. Include clear documentation
 3. Add visual assets if applicable
 4. Update changelog
-5. Respect completion boundaries — do not add new mandatory capability blocks to a completed governance model unless the change is explicitly justified and intentionally approved
+5. After every RULES improvement wave, finish maintainer closeout: update README, install the active runtime rules, push the source update, and create the repo release
+6. Respect completion boundaries — do not add new mandatory capability blocks to a completed governance model unless the change is explicitly justified and intentionally approved
 
 **We value:** Quality over quantity, clarity over complexity, and bounded governance over endless expansion
 
@@ -1187,8 +1189,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.45 |
-  <b>Last Updated</b>: 2026-06-03 |
+  <b>Version</b>: 10.52 |
+  <b>Last Updated</b>: 2026-06-13 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

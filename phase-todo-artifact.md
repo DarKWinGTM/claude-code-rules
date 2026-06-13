@@ -1,7 +1,7 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.29
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.28
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.30
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.30
+> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
@@ -249,67 +249,23 @@ Roadmap entries are planning context, not automatic execution authority.
 After a phase-backed objective closes, inspect checked roadmap and goal surfaces before ending closeout. If future work is meaningful, name the best-supported next phase/wave/goal with why, expected output, and gate.
 
 ### 6.1) `/goal` suggestion sourcing from governed surfaces
-When the user plainly asks for a governed goal or another owner has already decided that an advisory `/goal` command is the right next-step shape, source the command from checked governed execution surfaces rather than from improvised prose.
+When a governed goal is requested or a governed successor objective is being shaped, phase/TODO execution surfaces must still supply the checked execution evidence for that goal.
 
-Governed-surface context is mandatory only when the requested or successor objective is repo-governed and at least one of these is true:
-- the work is multi-step inside the current source tree
-- the work is phase-backed or lane-backed
-- design target-state truth materially defines the next outcome
-- runtime-rule-impacting, doc-sync, release-sync, parity, or verification work is the objective
-- current-state, release, or review truth depends materially on changelog, patch, or README alignment
+Keep this file responsible for the phase/TODO side only:
+- design, current phase, built-in task list, `TODO.md`, and checked implementation state remain valid execution surfaces for shaping goal/output/gate evidence
+- changelog, patch, and README still matter only when version/release/current-state truth materially affects completion or review
+- broad future labels such as `implementation wave ใหม่` should still be refined into smaller truthful successor slices when checked phase/TODO context already supports that
+- phase/task linkage must stay visible when a selected goal later receives route notes, a durable `Plan reference`, or an opened `/plan`
 
-Use this sourcing order:
-- design first for target-state truth and the authoritative meaning of done
-- active execution surfaces next: current phase, built-in task list, `TODO.md`, and checked implementation state
-- changelog only when version/release/current-state truth materially shapes completion
-- patch only when before/after review boundaries materially shape the next objective
-- README only when front-page current-state, install guidance, or user-visible repository impact materially shapes completion
-
-Use this translation model:
-- candidate goal label ← current goal plus expected output plus the smallest useful gate clue when several successor directions remain live
-- done condition (`Done when` in English-only examples) ← current goal plus expected output
-- proof/check basis (`Prove with` in English-only examples) ← completion gate plus verification basis that can be surfaced in transcript
-- scope boundary (`Scope` in English-only examples) ← touched artifacts, lane boundary, or bounded execution slice
-- keep constraints (`Keep` in English-only examples) ← out-of-scope boundary plus preserve-semantics constraints that materially matter
-- stop bound (`Stop after` in English-only examples) ← bounded execution guard when runaway continuation risk matters
-
-Required guidance:
-- do not invent a new durable tracking schema only for `/goal`
-- a plain goal request is enough to trigger planning-depth resolution; do not require wording such as `goal plan file` before considering whether direct goal wording, compact route support, or a durable route-only plan file is the smallest sufficient support
-- choose the smallest sufficient route support: no plan file for simple direct goals, compact non-durable route notes when ordering matters but fits, durable route-only plan file only when route complexity or later execution needs persistence, or one narrow substantive clarification about the work outcome/scope/gate when the objective is not bounded enough
-- a clarification should ask about the work itself, not whether the user wants `Subagent-Driven`, `Inline Execution`, `/plan`, or a plan-file label
-- treat the translated slots above as concept slots rather than as mandatory English surface labels; emitted natural-language scaffold should follow the dominant language of the active exchange even when the user did not issue a direct language instruction
-- treat an explicit user language request as a stronger override than the default active-exchange inference
-- when several successor directions remain live, shape them as candidate goals before promoting any one of them into `/goal`
-- when checked phase/roadmap/TODO surfaces already show several unselected but materially different next slices and no one continuation path clearly dominates, use those surfaces to shape compact candidate goals rather than plain unlabeled next-step bullets
-- when current phase/roadmap/TODO wording names only a broad future label such as `implementation wave ใหม่`, but checked goal/output/gate/touched-surface context already defines a smaller bounded successor slice, derive that smaller slice before emitting successor wording
-- do not leave successor output as a generic future note when the smaller bounded slice is already derivable from checked execution surfaces
-- preserve exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters where exactness matters, but do not treat the whole emitted command body as one exact literal
-- do not turn all roadmap/TODO detail into command text; keep only the parts needed to define completion, proof, scope, and hard guardrails
-- when advisory `/goal` creation for governed non-trivial or route-heavy work would benefit from route synthesis, it may conditionally run an internal planning / plan-mode-style pass before final goal emission
-- that integrated planning support may use native subagent assistance for analysis, route drafting, verification ordering, and helper-side route preparation while remaining internal-only and subordinate to leader-owned normalization
-- for actual governed `/goal` authoring that needs durable route support, once the route basis is sufficient the assistant must create or verify the route-only plan file before final goal emission and keep that file check/write inside the same governed authoring flow
-- do not include a durable `Plan reference` from intention, draft text, or an unwritten plan; it is valid only when the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow
-- when that copied goal artifact carries a durable `Plan reference`, the artifact must show `/goal` first and place `Plan reference:` after the command inside the same copied artifact rather than above it as a detachable preface
-- if the current turn is only governed goal/plan-file authoring, stop at the copied goal artifact plus subordinate route support rather than surfacing `Subagent-Driven` / `Inline Execution` as a default follow-up menu
-- simple or already direct goals should still emit `/goal` directly without forcing planning for every request
-- when a durable route artifact materially guides a governed `/goal`, the emitted copyable goal artifact is incomplete unless it carries an in-artifact `Plan reference: <exact path>` slot that points to a checked existing or successfully written route-only plan file; surrounding explanation may repeat or explain the reference, but the plan file must remain route-only and must not become objective authority
-- when the user remains inside the existing `/goal` surface and the selected governed work is still non-trivial, governed execution may shape compact route support such as `Plan draft`, verification/testing route, or a plan reference inside that same copied goal artifact; when the route support is durable the copied artifact must present `/goal` first and `Plan reference:` after it, while adjacent route support remains allowed only when it is not the sole durable plan pointer and remains subordinate to the goal without creating a new public route owner
-- do not ask the user whether to save the plan and do not ask them to invoke `/goal` again when the governed authoring flow already has sufficient route basis and no real stop gate exists
-- do not pull heavy governed-surface context into trivial non-governed next steps
-- if the governed surfaces do not yet provide a bounded, provable successor slice, do not force a `/goal` command
+Detailed governed `/goal` authoring, route-support selection, durable `Plan reference`, candidate-goal promotion, and overflow `/plan` handling are owned by `goal-authoring-and-route-support.md`.
 
 ### 6.2) Selected goal overflow route handling for governed work
-When a governed goal is already selected and the remaining work is route-heavy, the execution surfaces should keep route detail inside the goal-centric surface first and open `/plan` only when standalone route handling is materially needed.
-- keep `/goal` as the objective contract for outcome, proof, scope, and hard guardrails
-- use compact route notes, phase/lane cues, owner ordering hints, and verification-order support inside the selected goal surface when that is enough to continue clearly
-- open `/plan` only when sequence, phase/lane breakdown, owner ordering, or verification order no longer fits safely inside the integrated goal-centric surface, or when the user explicitly wants standalone planning
-- do not teach `/plan` as the ordinary next surface for every route-heavy selected goal
-- if integrated planning support or helper-produced route draft already exists, that material remains subordinate support for the selected goal and does not require a public `/plan` handoff by default
-- if the current turn still needs bounded analysis, verification, testing, or compact route drafting inside the existing `/goal` surface, conditional internal helper use may support the selected goal without changing route ownership
-- if the selected goal is already direct, bounded, and safe to continue, keep execution in goal/phase/task surfaces without forcing a plan
-- when a plan is opened, phase and task surfaces should keep visible which selected goal the route serves
-- closeout should still verify the selected goal gate rather than treating completed plan steps or worker-produced route drafts as sufficient proof by themselves
+For phase/TODO surfaces, keep only this boundary:
+- if a selected goal becomes route-heavy, phase and task surfaces should still show which selected goal the route serves
+- if `/plan` is opened later, phase/task linkage and verification gate visibility must stay intact
+- completed route steps must not replace the selected goal gate in phase-backed closeout
+
+The detailed overflow rule — when route detail stays inside the goal-centric surface, when `/plan` is justified, and how route support remains subordinate to `/goal` — is owned by `goal-authoring-and-route-support.md`.
 
 ### 7) Patch linkage inside phase
 When phased work uses a governed patch artifact:
@@ -507,5 +463,6 @@ Related rules:
 - [safe-io.md](safe-io.md) - bounded read/output behavior for broad phase-backed lanes
 - [coding-discipline.md](coding-discipline.md) - phase-backed coding verification and TestKit/scenario decisions
 - [execution-and-goal-frame.md](execution-and-goal-frame.md) - goal/output/gate semantics and next-goal boundaries
+- [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) - governed `/goal` authoring, route-only plan support, `Plan reference`, and overflow route handling owner
 - [document-integrity.md](document-integrity.md) - daily-first `TODO.md` and `phase/SUMMARY.md` rollover owner
 - [document-integrity.md](document-integrity.md) - hygiene must defer to required artifact posture and does not authorize deletion

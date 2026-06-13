@@ -1,8 +1,8 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.25
-> **Current Version:** 1.23
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.26
+> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.26 | 2026-06-13 | **[Extracted governed `/goal` authoring into dedicated owner rule](#version-126)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 1.25 | 2026-06-11 | **[Added P143 progress narration and continuation-boundary refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.24 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and no-menu leakage refinement](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.23 | 2026-06-05 | **[Added P140 design-slice obligation coverage and continuation gate refinement](#version-123)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

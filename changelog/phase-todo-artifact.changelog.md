@@ -1,8 +1,8 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Current Version:** 1.29
-> **Current Version:** 1.27
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.30
+> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.30 | 2026-06-13 | **[Extracted governed `/goal` authoring out of phase/TODO execution surfaces](#version-130)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 1.29 | 2026-06-11 | **[Added P143 live progress-snapshot shaping refinement](#version-129)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.28 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and execution-surface gating refinement](#version-128)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.27 | 2026-06-05 | **[Added P140 design-slice semantic coverage refinement](#version-127)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
