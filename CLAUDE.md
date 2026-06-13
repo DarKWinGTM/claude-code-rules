@@ -16,3 +16,10 @@ For every RULES improvement wave, normal governed sync is not enough by itself. 
 - The four closeout steps above are an additional maintainer completion gate, not a replacement for existing governed sync.
 - When install is in scope, verify source/runtime parity and body sufficiency rather than assuming copied files are correct.
 - Keep README current enough that the published repo front page matches the released runtime/install state.
+
+## Source-first scope guard
+- For RULES work, start from the checked source-controlled repository first.
+- Treat `/home/node/.claude/rules` as an installed runtime target, not as the source authority.
+- Do not start by editing the installed runtime copy unless the user explicitly chooses a runtime-only emergency or install-verification task.
+- If a clean clone/worktree is needed because a local checkout is dirty, complete the source update there first, then sync the local checkout from the released source state.
+- When install is in scope, install from the checked source repo and verify source/runtime parity plus body sufficiency afterward.

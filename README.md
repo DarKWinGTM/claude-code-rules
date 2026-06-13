@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.52</b><br><sub>P144 Released</sub>
+  <b>v10.53</b><br><sub>P145 Released</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -28,12 +28,12 @@
   <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
-  <b>Goal route owner</b><br><sub>Dedicated /goal contract</sub>
+  <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
 </td>
 </tr>
 </table>
 
-> **Current release note:** `v10.52 / P144` ships a dedicated `goal-authoring-and-route-support.md` runtime owner, keeps `execution-and-goal-frame.md` plus `phase-todo-artifact.md` focused on their execution/task bridges, and makes maintainer closeout require README sync, runtime install, source push, and repo release before a RULES wave is considered done.
+> **Current release note:** `v10.53 / P145` makes source-first scope explicit for RULES maintenance: start from the checked source repo, treat `/home/node/.claude/rules` as a downstream install target, and keep README sync, runtime install, source push, and repo release as mandatory closeout before a wave counts as done.
 
 <!-- CTA Buttons -->
 <p>
@@ -279,11 +279,11 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- P137 / v10.45 hardens execution routing on top of the released `v10.44 / P136` baseline.
-- Selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate.
-- Inline Execution remains valid only when checked suitability shows direct handling is more effective for the current slice.
-- `/goal` remains the objective owner while the plan file remains route-only support and not completion proof.
-- Runtime Context Discipline now stays front-page scoped: current runtime shape, authority boundaries, and install-discipline expectations are summarized without turning README into a phase summary.
+- Released `v10.53 / P145` makes source-first scope explicit for RULES maintenance.
+- Repo-root `CLAUDE.md` now says start from the checked source-controlled RULES repo first and treat `/home/node/.claude/rules` as a downstream install target.
+- Runtime-first edits are now outside the default path unless the task is explicitly runtime-only emergency or install-verification work.
+- Maintainer closeout still requires README sync, runtime install, source push, and repo release before a RULES wave is considered done.
+- Runtime Context Discipline stays front-page scoped: current runtime shape, authority boundaries, and install-discipline expectations are summarized without turning README into a phase summary.
 - The governed `playground/` family remains non-runtime and outside the installer payload.
 - The active runtime install set remains 19 root rules and `playground/` stays outside the installer payload.
 </div>
@@ -1065,7 +1065,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects released `v10.52 / P144`, where `goal-authoring-and-route-support.md` now owns governed `/goal` route-support doctrine, the active runtime install set contains 19 root rules, and `playground/` stays outside the install payload.
+- Source state: this README reflects released `v10.53 / P145`, where repo-root `CLAUDE.md` now enforces source-first scope for RULES maintenance, the active runtime install set still contains 19 root rules, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1146,7 +1146,8 @@ These rules evolve based on real-world usage:
 3. Add visual assets if applicable
 4. Update changelog
 5. After every RULES improvement wave, finish maintainer closeout: update README, install the active runtime rules, push the source update, and create the repo release
-6. Respect completion boundaries — do not add new mandatory capability blocks to a completed governance model unless the change is explicitly justified and intentionally approved
+6. Start from the checked source repo first; treat installed runtime copies as downstream targets unless the task is explicitly runtime-only
+7. Respect completion boundaries — do not add new mandatory capability blocks to a completed governance model unless the change is explicitly justified and intentionally approved
 
 **We value:** Quality over quantity, clarity over complexity, and bounded governance over endless expansion
 
@@ -1189,8 +1190,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.52 |
-  <b>Last Updated</b>: 2026-06-13 |
+  <b>Version</b>: 10.53 |
+  <b>Last Updated</b>: 2026-06-14 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

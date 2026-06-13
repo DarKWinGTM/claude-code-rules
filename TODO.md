@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-11
-> **Current Release:** v10.51 / P143 hybrid progress-reporting surface alignment
+> **Last Updated:** 2026-06-14
+> **Current Release:** v10.53 / P145 source-first scope guard and repo-authority enforcement
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] P145 / v10.53 source-first scope guard and repo-authority enforcement was completed, installed, pushed to `master`, tagged, and released.
+  - Verified: repo-root `CLAUDE.md` now explicitly says RULES work starts from the checked source-controlled repository first; `/home/node/.claude/rules` is treated as a downstream install target rather than source authority; runtime-first edits are outside the default path unless the task is explicitly runtime-only emergency or install-verification work; README current-state/release-facing wording matches the new guard; `TODO.md`, `phase/SUMMARY.md`, this release wave's phase/patch/master-changelog/detail surfaces align to `v10.53 / P145`; runtime install/update verification was rerun from the checked source repo; selected runtime parity checks passed in checked scope; `git push` to `master`, tag `v10.53`, and GitHub release verification all passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.53
 
 - [x] P143 / v10.51 hybrid progress-reporting surface alignment was completed, installed, pushed to `master`, tagged, and released.
   - Verified: the selected runtime owners now support a shared hybrid progress snapshot for non-trivial in-flight work using `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`; `Done so far` is explicitly bounded to checked scope; progress narration no longer reads like a stop gate or milestone-only pause when safe continuation exists; the P141 route-only `/goal` authoring boundary remains intact with no default execution-mode menu leakage; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.51 / P143` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.51`, and GitHub release verification passed.

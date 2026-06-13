@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.52
+> **Current Version:** 10.53
 > **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.53 | 2026-06-14 | **[Released source-first scope guard and repo-authority enforcement](changelog/v10.53-released-source-first-scope-guard-and-repo-authority-enforcement.changelog.md#version-1053)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 10.52 | 2026-06-13 | **[Released goal route-support owner and mandatory maintainer release flow](changelog/v10.52-released-goal-route-support-owner-and-mandatory-release-flow.changelog.md#version-1052)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 10.51 | 2026-06-11 | **[Released hybrid progress-reporting surface alignment](changelog/v10.51-released-hybrid-progress-reporting-surface-alignment.changelog.md#version-1051)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 10.50 | 2026-06-07 | **[Released phase authoring template relocation and runtime-boundary clarification](changelog/v10.50-released-phase-authoring-template-relocation-and-runtime-boundary.changelog.md#version-1050)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.08
+> **Current Version:** 2.09
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-> **Status:** No active phase selected; latest released baseline is v10.51 / P143 hybrid progress-reporting surface alignment
+> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+> **Status:** No active phase selected; latest released baseline is v10.53 / P145 source-first scope guard and repo-authority enforcement
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -26,6 +26,12 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 - none selected
 
 ### Most Recently Completed
+
+- **P145:** [phase-145-source-first-scope-guard-and-repo-authority-enforcement.md](phase-145-source-first-scope-guard-and-repo-authority-enforcement.md)
+  - Output: repo-root `CLAUDE.md` now makes source-first scope explicit for RULES maintenance, so work starts from the checked source repository and `/home/node/.claude/rules` is treated as a downstream install target instead of a source-authority workspace.
+  - Gate: source-first scope guard wording passed, README/release-facing wording aligns to `v10.53 / P145`, `TODO.md` / `phase/SUMMARY.md` / phase / patch / master-changelog/detail surfaces align, runtime install/update verification was rerun from the checked source repo, selected runtime parity checks passed in checked scope, `git push` to `master` passed, tag `v10.53` passed, and GitHub release verification passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.53
+  - Patch: [../patch/source-first-scope-guard-and-repo-authority-enforcement.patch.md](../patch/source-first-scope-guard-and-repo-authority-enforcement.patch.md)
 
 - **P143:** [phase-143-hybrid-progress-reporting-surface-alignment.md](phase-143-hybrid-progress-reporting-surface-alignment.md)
   - Output: non-trivial Claude progress updates now have one compact hybrid snapshot built around `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`, while keeping evidence-strength wording, continuation-first execution, and the route-only `/goal` authoring boundary aligned.
