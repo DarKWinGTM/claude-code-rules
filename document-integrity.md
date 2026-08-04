@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.6
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.7
 > **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -22,6 +22,8 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 - keep names, paths, identifiers, and references consistent across the response or checked artifact set
 - verify concrete references or mark them unknown/unverified, and verify impacted files/sections before sync/no-drift claims
 - update or describe dependencies when a change impacts multiple files/sections
+- treat source comments that cite governed docs as checked references; update or remove the comment when the referenced path or anchor moves out of checked scope
+- keep scoped non-findings scoped when a source comment's governed-doc reference is not found; do not silently upgrade a limited search into a global broken-link claim
 - separate portable shared references, checked local facts, machine-scoped examples, source-side install paths, destination/runtime paths, governed design parent indexes, governed design child shards, active parent changelogs, changelog version detail shards, changelog legacy/archive/fallback history, source-owned active runtime install scope, shared runtime destinations, other-owner runtime files, and local execution paths
 - keep governed design parent indexes and child/sibling shards aligned so selected chain shape, shard maps, parent scope, child target-state authority, and normalized same-stem parent/directory pairs do not drift
 - keep active parent changelog shard maps and chain-scoped version detail child/sibling shards aligned so selected chain shape, version-to-shard mapping, shard-to-parent back-links, normalized same-stem parent/directory pairs, and non-authority detail status do not drift
@@ -48,6 +50,7 @@ This rule owns cross-reference consistency, change propagation, reference verifi
 | Changelog version detail shard | `changelog/<chain>/vX.YY-short-topic.changelog.md` as indexed same-chain version detail in same-stem nested mode | Parent shard map + shard-to-parent back-link |
 | Changelog flat sibling version detail shard | `<current-changelog-folder>/vX.YY-short-topic.changelog.md` beside the compact parent when the current folder already scopes the chain | Parent shard map + declared flat sibling mode + shard-to-parent back-link |
 | Changelog legacy/archive/fallback history | `changelog/done/*.changelog.md` as inactive-by-default history | Active parent reference or audit/rollback/provenance need |
+| Source comment governed-doc reference | `design/<slug>.design.md#section`, `phase/phase-NNN-*.md#section`, or `patch/<context>.patch.md#section` when a source comment materially points outside code | Verify cited path/anchor; update or remove the comment if the referenced target moves or no longer resolves in checked scope |
 | Destination/runtime path | `<install-root>/skills`, `<user-runtime-rules>` | config/source contract check |
 | Source-owned active runtime files | checked current-project install set with substantive root bodies, not every shared-destination file or metadata-only stub | checked source inventory + body-sufficiency check |
 | Shared destination / other-owner runtime file | destination may contain several owners; non-members need owner/project scope | source/destination contract + owner resolution |
@@ -171,7 +174,7 @@ Use precise portable placeholders (`<workspace-root>/src/config.js`, `<repo-root
 
 Avoid vague references ("the config file", "that function") or one workstation path acting as both source and destination/runtime path. In reusable source artifacts prefer placeholders or env/config resolution. Source-owned install scope points to checked source inventory, not every file in a shared runtime destination. Source/runtime parity names both install scope and body sufficiency; a hash match to a metadata-only root is not no-drift.
 
-Change-impact expectations: renaming/moving files updates imports, links, install examples, and dependent paths; renaming symbols updates usages within checked scope; changing config keys or commands updates related docs, examples, and verification instructions; normalizing install docs keeps source-side, destination/runtime, shared destination, and other-owner runtime wording separate; sharding changelog version detail updates parent shard maps, shard-to-parent back-links, and `changelog/done/` fallback wording together; runtime parity/no-drift checks body sufficiency as well as metadata/links/hashes. Classify new files against master surfaces and dependent history; keep classification unresolved when checked scope is incomplete.
+Change-impact expectations: renaming/moving files updates imports, links, install examples, source comments that cite governed docs, and dependent paths; renaming symbols updates usages within checked scope; changing config keys or commands updates related docs, examples, and verification instructions; normalizing install docs keeps source-side, destination/runtime, shared destination, and other-owner runtime wording separate; sharding changelog version detail updates parent shard maps, shard-to-parent back-links, and `changelog/done/` fallback wording together; runtime parity/no-drift checks body sufficiency as well as metadata/links/hashes. Classify new files against master surfaces and dependent history; keep classification unresolved when checked scope is incomplete.
 
 ---
 
