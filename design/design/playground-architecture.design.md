@@ -1,8 +1,8 @@
 # Playground Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.25
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-20)
+> **Current Version:** 10.54
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
 > **Section:** Governed playground family for RULES behavior scenarios
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -13,7 +13,7 @@
 
 This shard defines the active architecture for the governed `playground/` family.
 
-It exists so RULES can show how the current rules change AI behavior in practice without turning README into a scenario dump, without mixing checked facts with invented demonstrations, and without expanding the runtime install payload beyond the active 18-rule set.
+It exists so RULES can show how the current rules change AI behavior in practice without turning README into a scenario dump, without mixing checked facts with invented demonstrations, and without expanding the runtime install payload beyond the active 19-rule set.
 
 For `v10.20 / P112`, the family should also prefer transcript-grounded observed cases from real Claude Code session JSONL transcripts on this machine, richer multi-turn scenario traces, and more realistic blocker / correction / retry shapes when checked evidence supports them.
 
@@ -113,7 +113,7 @@ Baseline and expansion posture for this wave:
 
 The playground must:
 - preserve the original 10 baseline scenario families
-- map all 18 active runtime rule files to at least one scenario family
+- map all 19 active runtime rule files to at least one scenario family
 - allow additional scenario families when checked transcript evidence justifies new coverage
 - keep scenario-family naming semantic rather than version-shaped
 - allow one rule to appear in several scenario families when that better reflects real behavior
@@ -186,7 +186,7 @@ Recommended update flow:
 The playground family remains outside the active runtime install payload.
 
 Contract:
-- the active runtime install set remains exactly 18 root runtime rule files
+- the active runtime install set remains exactly 19 root runtime rule files
 - `playground/` must not be copied into `<project-root>/.claude/rules/`
 - installer scripts do not gain `playground/` as install scope in this wave
 - README install guidance may point to `playground/` as repo content, but not as runtime payload
@@ -214,10 +214,10 @@ Playground closeout or proof should confirm:
 - each scenario visibly separates `rule-enforced fact`, `observed case`, and `virtual variant`
 - transcript-derived observed cases cite exact checked transcript paths and anchor hints
 - updated dialogues use richer multi-turn traces where relevant
-- `playground/coverage.md` maps all 18 active runtime rules to at least one scenario family
+- `playground/coverage.md` maps all 19 active runtime rules to at least one scenario family
 - `playground/matrix.md` uses explicit virtual-case axes plus realism axes
 - README keeps only a compact pointer to the playground family
-- `playground/` stays outside the runtime install payload and the active runtime count remains 18
+- `playground/` stays outside the runtime install payload and the active runtime count remains 19
 - `git diff --check` remains clean after source edits when source work is in scope
 
 ---

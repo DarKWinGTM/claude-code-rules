@@ -63,7 +63,7 @@ Dialogue, if present at all, is supporting illustration only.
 
 ## Start here
 
-- [coverage.md](coverage.md) — maps all 18 active runtime rules to at least one scenario family
+- [coverage.md](coverage.md) — maps all 19 active runtime rules to at least one scenario family
 - [matrix.md](matrix.md) — virtual operational-case matrix across decision and execution axes
 - [templates/case-template.md](templates/case-template.md) — standard shape for future case additions
 - [observed/2026-05.md](observed/2026-05.md) — current observed-case log for this month
@@ -105,6 +105,6 @@ When a new real prompt/workflow event shows RULES behavior clearly:
 
 ## Runtime boundary
 
-The active runtime install set remains 18 root runtime rules.
+The active runtime install set remains 19 root runtime rules.
 
 `playground/` is repository-governed content only and stays outside `.claude/rules/` install payloads in this wave.

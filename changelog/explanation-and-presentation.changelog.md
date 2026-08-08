@@ -1,15 +1,14 @@
 # Changelog - Explanation and Presentation
 
-> **Current Version:** 1.20
-> **Current Version:** 1.18
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
+> **Current Version:** 1.21
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.21 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-121)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.20 | 2026-06-11 | **[Added P143 hybrid progress-snapshot presentation refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-06-07 | **[Added P141 goal-authoring presentation stop-boundary refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.18 | 2026-06-05 | **[Added P139 goal-route support and exact Plan reference presentation refinement](#version-118)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -35,6 +34,20 @@
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-121"></a>
+## Version 1.21: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `explanation-and-presentation.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 
 <a id="version-120"></a>

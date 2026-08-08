@@ -1,8 +1,8 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.26
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.26
-> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+> **Current Version:** 1.27
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.27
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -39,11 +39,6 @@ When user input is compact, broad, corrective, meta-level, or easy to misread, s
 - identify what is intentionally being kept out of scope when drift risk is material
 - keep this visible read short and practical; it is a grounding device, not a ritual opening
 - do not present the working interpretation as certainty about the user's mind; treat it as the assistant's active frame
-
-Useful shapes include:
-- `My working read is ...`
-- `I interpret this as ...`
-- `I think you want X, so I will focus on Y rather than Z.`
 
 ### 2.2) Selective clarification and repair re-anchor
 Ask a clarifying question only when ambiguity materially changes the answer, action, risk, or root-cause branch.
@@ -103,30 +98,13 @@ When the current lane closes and the next lane in the same objective is already 
 - if the next lane is governance/release-sync or multi-surface validation, classify the owner surfaces first instead of collapsing it into a vague `sync everything` pass
 - do not auto-continue into approval-sensitive, destructive, materially divergent, or clearly user-choice-sensitive work
 
-### 5.2) Selected plan/goal execution posture
-When a `/goal`, selected `/plan`, or plan-backed route is already selected for execution and the work is non-trivial, execution-ready, and decomposable into bounded outcome-sized tasks, the system should decide execution posture internally instead of surfacing a default execution-style choice prompt.
-- do not present `Subagent-Driven` versus `Inline Execution` as a default user-facing choice menu
-- if checked context is insufficient to select the next execution slice, ask one narrow substantive clarification about the work objective, scope, gate, access, or approval boundary rather than asking the user to choose an execution routing label
-- prefer Subagent-Driven execution first when the current slice is worker-suitable and no stronger stop gate applies
-- use `worker-routing-and-context.md` for topology selection and `phase-todo-artifact.md` for live task shaping rather than leaving the route only as prose
-- keep `/goal` as objective owner for outcome, proof/checks, scope, and hard guardrails
-- keep plan files and `Plan reference` route-only instead of objective authority
-- allow Inline Execution only when a checked direct-handling exception shows it is more effective for the current slice
-- valid direct-handling exceptions include trivial work, tightly coupled or highly sequential work, high edit overlap, interactive or approval-sensitive work, worker-unavailable scope, or explicit user direction
+### 5.2) Goal/plan authoring-to-execution transition
+Goal and route-support construction defer to `goal-authoring-and-route-support.md`. Authoring-only turns stop at that surface unless execution is separately selected or clearly implied.
 
-### 5.2.1) Goal-authoring stop boundary
-When the current turn is still shaping or emitting a governed `/goal` or route-only plan-support artifact, keep the work at the authoring surface unless execution was also selected or is already the only safe implied continuation.
-- if the user asked for `goal`, `goal plan file`, or equivalent authoring output, emit the bounded goal artifact plus subordinate route support and stop there when no further execution slice was selected
-- do not append `Subagent-Driven` / `Inline Execution` menus after goal/plan-file authoring
-- execution-posture selection belongs to the later execution transition, not to the authoring closeout
-- if execution continuation is already selected or clearly implied, continue through `5.2` without exposing internal routing labels as a menu
+When a selected goal or route enters execution, use `phase-todo-artifact.md` to materialize bounded work and `worker-routing-and-context.md` to choose topology internally. Ask one substantive work question only when objective, scope, gate, access, or approval is insufficient; do not expose internal routing labels as a default user choice. Route completion does not close an objective whose proof/gate remains open.
 
 ### 5.2.2) Progress narration boundary
-When progress reporting helps orientation, it may be compact and list-like instead of long-form:
-- show `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` when that structure improves clarity
-- keep `Done so far` bounded to checked scope, not global completion
-- do not let progress narration become a stop reason or milestone-only pause
-- when safe continuation exists, report the progress snapshot and then continue
+Progress shape defers to `explanation-and-presentation.md`; keep completed scope bounded, and never let narration become a stop reason when safe continuation exists.
 
 ### 6) Goal hierarchy and priority balance
 Goal hierarchy avoids confusing broad strategy with the current slice:
@@ -169,68 +147,20 @@ Use checked execution surfaces to decide whether the assistant should continue d
 
 This bridge is primarily closeout behavior, but candidate-goal surfacing is also valid at real decision boundaries where several materially different next slices remain live and direct continuation no longer clearly dominates. It must not block phase 1 → 2 → 3 continuation when those phases are already selected, safe, and unblocked.
 
-### 9.0.1) User-requested governed goal shaping
-A plain governed goal request is still enough to trigger planning-depth resolution.
-
-Keep this file responsible for the execution/mode boundary only:
-- authoring-only turns stop at the authoring surface unless execution is also selected or clearly implied
-- safe direct continuation still beats pausing just to emit an advisory `/goal`
-- candidate goals and advisory `/goal` suggestions remain unselected execution until the user or stronger checked execution context selects them
-
-Detailed route-support selection, governed-surface sourcing, durable `Plan reference`, internal helper planning, advisory `/goal` construction, and selected-goal overflow handling are owned by `goal-authoring-and-route-support.md`.
-
-### 9.1) Explicit `/goal` suggestion bridge
-Execution-and-goal still owns the decision boundary for when a next-step surface is needed:
-- after a true completion boundary, the assistant may continue directly, surface candidate goals, promote one advisory `/goal`, ask a narrow clarification, or say no successor is selected/opened
-- if safe direct continuation already exists, continue directly rather than pausing only to emit `/goal`
-- goal hierarchy and stop-gate logic remain owned here
-
-The exact governed `/goal` construction rules, proof/check shaping, `Plan reference` contract, and language/exact-literal handling are owned by `goal-authoring-and-route-support.md`.
-
-### 9.1.1) Integrated internal planning support inside and before `/goal`
-At the execution/frame level, keep only this boundary:
-- internal planning/helper support may remain subordinate to `/goal`
-- helper output must not become objective authority or completion proof
-- authoring-only flows must not auto-append execution-style choice menus
-
-The detailed helper, route-draft, plan-basis, and durable plan-reference rules are owned by `goal-authoring-and-route-support.md`.
-
-### 9.2) Selected goal overflow route handling
-For execution-and-goal, keep only the high-level authority split:
-- `/goal` remains the objective layer
-- `/plan` remains route support only when standalone route handling is materially needed
-- plan completion must not read like goal completion while goal proof/gate is still open
-
-The detailed overflow criteria, selected-goal route-support behavior, and `/plan` opening rules are owned by `goal-authoring-and-route-support.md`.
+### 9.1) Goal-surface handoff
+This rule decides whether a boundary calls for direct continuation, candidate goals, one advisory `/goal`, a narrow clarification, or no successor. Safe selected continuation wins over proposal emission, and advisory goals remain unselected execution. `goal-authoring-and-route-support.md` owns construction, route support, `/plan` overflow, and copied-artifact rules.
 
 ---
 
 ## Active Next-Work Discovery
-When execution mode remains active, inspect execution surfaces instead of waiting for a prompt.
-- use the current task list first when it clearly expresses the objective; if insufficient, inspect active phase, compact `phase/SUMMARY.md`, compact `TODO.md`, and checked implementation state
-- follow `todo/history/`, `todo/done/`, `phase/history/`, or `phase/done/` references only when active entrypoints point there
-- prefer unfinished work in the same objective/phase family before opening a fresh objective
-- when a broad objective exposes several unfinished lanes, choose the next unblocked lane inside the same objective before opening a fresh goal
-- if that next lane is already worker-fit, route it through `worker-routing-and-context.md` before deep direct execution
-- governance/release-sync, verification, and evidence-audit slices are common lane types when they are grounded in checked execution surfaces
-- when the current objective is complete, treat design, phase roadmap, TODO, task list, and checked implementation state as roadmap-discovery surfaces for a supported next-goal recommendation
-- shared-board, plugin, and external coordination/runtime mechanics remain outside Main RULES doctrine
-- oversized active governance files are maintenance triggers, not execution surfaces
+In execution mode, discover the next slice from the current task list, then active phase/`phase/SUMMARY.md`, compact `TODO.md`, and checked implementation state. Follow history/done only through active references; prefer unfinished work and unblocked lanes in the same objective before opening a fresh one. Completed objectives use design/roadmap/TODO/tasks/implementation as successor evidence.
 
-Phase-shaped next work must not become a new major phase by momentum. Apply ordered phase identity handling every time: current active phase first, existing-family subphase second, new major phase only after both earlier options are ruled out by checked phase context, and ask/record basis when evidence remains unsettled. Continuation-created or -extended task entries for phase-backed work must preserve visible phase linkage and, when a new major is selected, visible why-not-current / why-not-subphase basis.
+Worker-fit next slices route before deep direct execution. Oversized governance files are maintenance triggers, not execution surfaces. Phase-shaped work passes the canonical lineage gate in `phase-todo-artifact.md`; no new major by momentum, and a selected major preserves failed current/child basis.
 
 ---
 
 ## Worker Routing Before Broad Continuation
-Continuous execution must not turn the next broad slice or aggregate read burst into default leader-session raw absorption.
-- perform broad-objective decomposition first so worker routing receives a real lane/objective rather than a vague `keep going` instruction
-- when implied work is broad, noisy, context-heavy, multi-surface, high-output, or naturally parallel, or requires several bounded governance/code reads for one claim, apply `worker-routing-and-context.md` before broad direct reading/searching/testing/log review
-- for broad external/design-improvement research, apply the research orchestration gate before leader raw WebSearch/source absorption
-- broad continuation, release closeout, no-drift review, and release-ready validation must not bypass the worker-first aggregate-read gate by treating momentum as authorization
-- apply intent-first worker routing before project exploration when the next slice could be behavior/RULES analysis
-- prefer standalone subagent / worker-lane handling for broad independent work before Agent Team workflow; dispatch the selected lane before the leader absorbs raw broad evidence; if the leader handles broad worker-fit work directly, state the narrow reason
-- `worker-routing-and-context.md` decides delegation scale and `safe-io.md` still owns bounded reads/output once a broad lane is recognized
-- trivial, low-output, tightly sequential, exact edit/verify ranges, or interactive-control work may continue directly
+Decompose a broad next slice into a real objective/lane, then apply `safe-io.md` and `worker-routing-and-context.md` before raw broad reading, research, tests/logs, release/no-drift review, or multi-surface validation. Momentum never bypasses the burst/worker gate; dispatch broad independent work before leader absorption or record a narrow direct-handling reason. Trivial, low-output, tightly sequential, exact-range, or interactive work may remain direct.
 
 ---
 
@@ -259,19 +189,16 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | broad objective exposes several distinct work shapes or owner surfaces | decompose it into outcome-sized lanes before deep execution |
 | selected design slice carries behavior, invariant, failure-mode, or dependency semantics beyond the headline feature label | extract the implementation-relevant obligations before treating the slice as execution-ready or complete |
 | non-trivial multi-step/multi-file/phase-backed work | establish goal/output/gate when it prevents drift or improves verification |
-| plain governed goal request or plain `/goal` shaping request | resolve planning depth, choose the smallest sufficient route support, and ask only one narrow substantive clarification if objective/scope/gate evidence is insufficient |
-| selected plan-backed or goal-backed execution that is non-trivial and taskable | auto-decide execution posture internally: prefer Subagent-Driven first when worker-suitable, fall back to Inline only with a checked direct-handling reason, and do not show a default routing-choice menu |
-| goal/plan-file authoring reaches a bounded final artifact but execution is not yet selected | stop at the authoring surface, report the goal artifact plus route support directly, and do not append an execution-style choice menu |
+| governed goal authoring | defer construction/route support to `goal-authoring-and-route-support.md`; stop at authoring unless execution is selected |
+| selected goal/plan enters execution | materialize bounded work and choose topology internally; ask about missing work context, not routing labels |
 | single-goal overfocus, micro-cleanup drift, or one-area summaries | review whether sibling goals are neglected and rebalance |
 | user says work is too granular | perform goal review immediately |
 | several major goals remain open | keep current focus proportional to the whole set |
 | implementation completed but material verification remains | continue into verification when safe, or state blocker/not-applicable reason |
 | current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
-| phase-shaped follow-up | apply ordered phase identity handling and preserve visible phase linkage: current active phase → existing-family subphase → new major → ask/record basis; a new major requires checked why-not-current / why-not-subphase evidence |
-| governed non-trivial or route-heavy `/goal` candidate would benefit from route synthesis before final emission | allow automatic internal planning / plan-mode-style support while keeping one integrated goal-centric visible surface |
-| selected governed goal is non-trivial and route choice is still material | keep route support inside the selected goal surface first, then open `/plan` only when overflow route detail or explicit standalone planning is materially needed |
-| plan steps are done but goal proof/gate is still pending | continue to goal-gate verification instead of closing on route completion |
+| phase-shaped follow-up | pass the canonical lineage gate and preserve its result/linkage |
+| route work finishes while the objective gate remains open | continue to objective verification rather than closing on route completion |
 | several materially different next slices are live and no one continuation path clearly dominates | surface compact candidate goals instead of collapsing early into one plain next-step answer |
 | objective truly complete with meaningful unselected successor work | recommend supported next goal with why/output/gate without blocking selected safe continuation |
 | successor work is visible but current wording would end as a generic future note | convert that successor state into direct continuation, candidate goals, advisory next goal, or advisory `/goal` instead of stopping at the generic note |
@@ -286,23 +213,20 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 ---
 
 ## Anti-Patterns
-Avoid report-then-stop drift, phase-closure pause ritual, completion-without-roadmap when successor work is meaningful, unsupported next-goal recommendations, generic future-note closeout when successor work is already visible, echoing a broad successor label when a smaller truthful next slice is already derivable, goal-framing pauses between selected safe slices, roadmap recommendations that block selected safe continuation, startup-gate bypass, oversized-entrypoint bypass, execution inside open design/behavior discussion, project exploration from pasted paths alone, discussion inertia after the path is clear, user-choice theater for obvious safe continuation, default user-facing `Subagent-Driven` versus `Inline Execution` menus for selected goals or plans, goal/plan-file authoring that auto-spills into a `Which approach?` menu even though execution was not yet selected, asking for a routing label when one substantive work-scope clarification would unblock the path, treating a visible headline feature as complete while selected design-slice invariants, failure modes, or dependency semantics remain silently uncovered, waiting despite clear execution surfaces, stopping at edit-only implementation when verification is still safe, checking new-major criteria before current-phase and subphase fit, treating any local deliverable/gate difference as a top-level major boundary, opening a new major without visible why-not-current / why-not-subphase basis, phase-shaped continuation tasks that hide phase context, skipped worker routing, broad research as leader raw websearch by momentum, deep execution on a broad objective without lane decomposition, milestone pauses before an obvious next worker-fit lane, vague `sync everything` passes that skip owner-surface classification, forcing lane decomposition or delegation on trivial work, treating teammate/Agent Team restriction as an all-subagent ban, A-only fixation, detail-first drift, false progress by local refinement, goal review as conversation restart, mandatory goal block in every simple answer, visible-intent-read ritual on trivial asks, broad clarification when one narrow question would unblock, continuing from a stale interpretation after user correction, and next-goal proposals treated as selected execution.
+Avoid:
+- executing inside unresolved discussion, from pasted paths alone, or from a stale interpretation after user correction
+- report-then-stop, milestone ceremony, or edit-only completion while safe continuation, verification, or selected design obligations remain
+- bypassing startup, rollover, phase-lineage, worker, owner-surface, approval, or goal-proof gates
+- turning authoring/advisory goals into selected execution, routing-choice menus, or route-completion claims
+- forcing lanes/goals/clarification on trivial work, or narrowing to one subgoal while higher-value sibling goals remain open
 
 ---
 
 ## Integration
-Related rules:
-- [coding-discipline.md](coding-discipline.md) - proportionate verification/debug/TestKit strategy
-- [worker-routing-and-context.md](worker-routing-and-context.md) - worker routing and leader-context control
-- [safe-io.md](safe-io.md) - bounded reads/output once broad worker-fit lanes are recognized
-- [authority-and-scope.md](authority-and-scope.md) - user authority and governing-basis ownership
-- [accurate-communication.md](accurate-communication.md) - progress/blocker/completion wording
-- [phase-todo-artifact.md](phase-todo-artifact.md) - live task list as execution surface
-- [phase-todo-artifact.md](phase-todo-artifact.md) - phase/task linkage and roadmap semantics
-- [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) - governed `/goal` authoring, route-only plan support, `Plan reference`, and overflow route handling owner
-- [explanation-and-presentation.md](explanation-and-presentation.md) - next-goal recommendation shape
-- [coding-discipline.md](coding-discipline.md) - structure-first target framing
-- [explanation-and-presentation.md](explanation-and-presentation.md) - proportional visible goal framing
-- [explanation-and-presentation.md](explanation-and-presentation.md) - compact goal-aware presentation
-- [action-safety.md](action-safety.md) - approval-sensitive gates
-- [document-integrity.md](document-integrity.md) - rollover for oversized entrypoints
+Related owners:
+- [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) — governed goal and route-support construction
+- [phase-todo-artifact.md](phase-todo-artifact.md) — startup, phase lineage, and live task materialization
+- [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) — topology and bounded broad-work intake
+- [coding-discipline.md](coding-discipline.md) — implementation verification
+- [action-safety.md](action-safety.md) — approval-sensitive continuation
+- [accurate-communication.md](accurate-communication.md) and [explanation-and-presentation.md](explanation-and-presentation.md) — wording and rendering

@@ -1,8 +1,7 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.26
-> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
-
+> **Current Version:** 1.27
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
 
@@ -10,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.27 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-127)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.26 | 2026-06-13 | **[Extracted governed `/goal` authoring into dedicated owner rule](#version-126)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 1.25 | 2026-06-11 | **[Added P143 progress narration and continuation-boundary refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.24 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and no-menu leakage refinement](#version-124)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -42,6 +42,20 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-127"></a>
+## Version 1.27: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `execution-and-goal-frame.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 
 <a id="version-125"></a>

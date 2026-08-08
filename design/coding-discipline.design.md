@@ -1,8 +1,8 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.2
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.3
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
 ---
@@ -40,7 +40,7 @@ P138 refinement: this owner should now require semantic/domain/behavior-first id
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the compact 18-rule set is selected.
+Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
 Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
 

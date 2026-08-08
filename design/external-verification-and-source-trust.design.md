@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-06)
+> **Current Version:** 1.4
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
 
@@ -68,12 +68,11 @@ Observed failure modes this design intends to close:
 - Source-trust and conflict-reporting expectations for delegated research-lane outputs
 
 ### 3.2 Out of Scope
-- Local file/reference lookup mechanics (owned by `no-variable-guessing`)
-- Burden-of-proof wording strength and contradiction thresholds (owned by `evidence-grounded-burden-of-proof`)
-- General communication shape (owned by `accurate-communication`)
-- WebSearch/WebFetch retry/cooldown/failure handling (owned by `operational-failure-handling`)
+- Local file/reference lookup and claim-threshold mechanics (owned by `evidence-discipline.md`)
+- General communication shape (owned by `accurate-communication.md`)
+- WebSearch/WebFetch retry/cooldown/failure handling (owned by `action-safety.md`)
 - Pure presentation/layout concerns
-- Worker-scale routing and Agent Team escalation decisions, which are owned by `native-worker-agent-routing-and-context-control.md`
+- Worker-scale routing and Agent Team escalation decisions (owned by `worker-routing-and-context.md`)
 
 ### 3.3 Boundary Principle
 This chain owns **how external evidence should be gathered, ranked, compared, and trusted**.
@@ -275,12 +274,11 @@ Use external evidence to ground design choices, but distinguish binding external
 
 | Rule | Relationship |
 |------|--------------|
-| [../zero-hallucination.md](../zero-hallucination.md) | Runtime factual-discipline owner; should defer deeper external source-trust workflow here |
-| [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md) | Consumes source strength into claim thresholds, proof-aware grounding, and contradiction behavior |
+| [../evidence-discipline.md](../evidence-discipline.md) | Owns factual discipline, claim thresholds, proof-aware grounding, and contradiction behavior |
 | [../accurate-communication.md](../accurate-communication.md) | Owns wording shape for source conflict and evidence-strength communication |
-| [../anti-sycophancy.md](../anti-sycophancy.md) | Owns disagreement posture when better external evidence conflicts with the user’s claim |
-| [../operational-failure-handling.md](../operational-failure-handling.md) | Owns retry/stop/escalation behavior after WebSearch/WebFetch failures |
-| [../native-worker-agent-routing-and-context-control.md](../native-worker-agent-routing-and-context-control.md) | Owns when broad external research should be delegated into research lanes before leader raw source absorption |
+| [../communication-register.md](../communication-register.md) | Owns evidence-calibrated agreement and disagreement posture |
+| [../action-safety.md](../action-safety.md) | Owns retry, stop, and escalation behavior after WebSearch/WebFetch failures |
+| [../worker-routing-and-context.md](../worker-routing-and-context.md) | Owns when broad external research should be delegated before leader raw-source absorption |
 
 ---
 

@@ -1,8 +1,8 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.20
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.21
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
 ---
@@ -74,7 +74,7 @@ P122 refinement: this owner should now preserve a compact explicit next-surface 
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the compact 18-rule set is selected.
+Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
 Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
 

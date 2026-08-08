@@ -1,8 +1,8 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.14
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.15
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
 ---
@@ -56,14 +56,14 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
-- Keep the compact merged runtime set at 18 active root rules; P099 must not become a new root rule.
+- Keep the compact merged runtime set at 19 active root Rules; historical phase work must not become a new root Rule by itself.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the compact 18-rule set is selected.
+Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
 Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
 

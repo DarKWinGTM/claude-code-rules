@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.35
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-31)
+> **Current Version:** 10.54
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
 
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.35 / P127` should keep the RULES system readable, source-owned, evidence-grounded, explicit about governed chain-shape selection before doc normalization, explicit about when a folder-scoped single-chain namespace may use `design/design.md` or `changelog/changelog.md`, explicit about requiring exactly one active parent model per chain, explicit about separating observed project shape from extracted doctrine and the selected target form, explicit about active-doctrine precedence over older completed-history wording when chronology conflicts, explicit about when a compact `/goal` suggestion is appropriate, explicit that `/goal` owns objective/done/proof/scope while planning support stays subordinate inside the goal-centric surface, explicit that governed non-trivial or route-heavy `/goal` requests may automatically use an internal planning / plan-mode-style pass when route uncertainty would otherwise make the emitted goal vague or hard to execute, explicit that native subagent help may support that internal planning through analysis, route drafting, verification ordering, and optional plan-file reference synthesis without creating a new user-facing command, explicit that `/plan` and any plan file remain route artifacts only rather than objective owners, explicit that `/plan` is an overflow or explicitly requested route surface rather than the normal next-step partner surface, explicit that helper findings and integrated route support remain subordinate to leader-owned normalization/synthesis/proof wording and goal-gate closeout, explicit that phase grammar now treats `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` as forward-valid execution forms, explicit that observed alphanumeric forms such as `phase-NNN-NNa` remain legacy-only unless a later doctrine explicitly normalizes them, explicit that README capability/current-state presentation should summarize active doctrine and current-state behavior rather than phase/release execution chronology, less likely to let phase selection skip current-phase reuse or truthful child-phase fit before opening a new major phase, explicit that Claude Code helper installs should prefer project-local `.claude/rules/` without overclaiming unsupported cross-harness install surfaces, and explicit that the `playground/` family remains a governed non-runtime surface while transcript-derived observed cases must stay factual, anchored, and visibly distinct from virtual variants.
+The active model for `v10.54` keeps 19 source-owned runtime Rules as body-sufficient owner contracts, compresses repeated cross-Rule wording without weakening authority, safety, evidence, execution, verification, approval, recovery, or stop mechanisms, and keeps design, changelog, TODO, phase, installer, playground, and release surfaces aligned to the same active inventory.
 
 ---
 
@@ -92,7 +92,7 @@ Historical release-by-release detail lives in [../changelog/changelog.md](../cha
 Open the smallest shard that answers the question.
 
 - [repository-model.design.md](design/repository-model.design.md) — active surface roles and normalized documentation model
-- [runtime-architecture.design.md](design/runtime-architecture.design.md) — 18-rule runtime inventory and category view
+- [runtime-architecture.design.md](design/runtime-architecture.design.md) — 19-rule runtime inventory and category view
 - [governance-contracts.design.md](design/governance-contracts.design.md) — metadata, sync order, startup, phase, rollover, and memory contracts
 - [installer-architecture.design.md](design/installer-architecture.design.md) — project-local Claude Code helper install contract, cleanup boundary, and verification model
 - [playground-architecture.design.md](design/playground-architecture.design.md) — governed playground family role, fact/observed/virtual separation, coverage model, and update flow

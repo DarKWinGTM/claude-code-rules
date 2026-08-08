@@ -1,8 +1,8 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.14
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
+> **Current Version:** 10.54
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -34,7 +34,7 @@
 - [ ] The append-vs-shard gate and `docs_analysis` form are explicit in the touched owner surfaces
 - [ ] Concern, factual claim, goal request, proposal, and assistant next action remain separated before endorsement or continuation where that distinction matters
 - [ ] Evidence-seeking proof-aware reasoning remains grounded in checked evidence when material
-- [ ] Runtime install scope remains the README-listed 18 root runtime rules only
+- [ ] Runtime install scope remains the README-listed 19 root runtime rules only
 - [ ] Source/runtime parity and source/destination body sufficiency remain explicit verification gates
 
 ## Integration

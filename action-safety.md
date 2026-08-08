@@ -1,7 +1,7 @@
 # Action Safety
-> **Current Version:** 1.0
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.0
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.1
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.1
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
 
@@ -84,7 +84,9 @@ Inspect current topology, lock one authority baseline per role/path, and prefer 
 | `ADDITIVE_EXPANSION` | create additional entities/parallel paths | blocked until justified/approved |
 
 ### Mutation gate
-Before mutating, identify current entities, authority baseline, ambiguities, delta class, coordination mechanism when relevant, multi-authority state, authorization, and rollback/retirement direction. If any gate is missing, remain `OBSERVE_ONLY` and request evidence/input.### Mechanism-first design gate
+Before mutating, identify current entities, authority baseline, ambiguities, delta class, coordination mechanism when relevant, multi-authority state, authorization, and rollback/retirement direction. If any gate is missing, remain `OBSERVE_ONLY` and request evidence/input.
+
+### Mechanism-first design gate
 Before claiming a coordination/runtime design can deliver awareness, requests, interrupts, state sharing, recall, routing, or mutation, classify the checked mechanism and its capability. Passive boards do not prove live delivery; hooks do not prove cross-session transport; injected context does not prove state mutation; tmux input does not prove semantic acceptance; recall does not prove current truth; teams and plugins/MCPs are limited to documented capability.
 
 ### Communication Contract

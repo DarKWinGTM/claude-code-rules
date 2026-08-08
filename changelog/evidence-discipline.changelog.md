@@ -1,15 +1,15 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.4
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
+> **Current Version:** 1.5
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.4 | 2026-05-22 | **[Added P120 strategic correction scope discipline](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-20 | **[Added P117 evidence-presentation owner-boundary clarification](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-17 | **[Added P101 concern-and-premise discipline](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +19,20 @@
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-15"></a>
+## Version 1.5: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `evidence-discipline.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 <a id="version-14"></a>
 ## Version 1.4: Added P120 strategic correction scope discipline

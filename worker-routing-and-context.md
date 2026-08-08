@@ -1,8 +1,8 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.14 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.14
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.15 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.15
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
 ---
@@ -11,123 +11,41 @@
 
 **Core Principle: Use the smallest effective standalone worker lane first for broad, research-heavy, roadmap-analysis-heavy, high-context, high-output, or naturally parallel work; proactively delegate predictable worker-fit slices before the leader session burns avoidable context; manage context load as a full lifecycle covering reading, writing, worker routing, and repair; when selected non-trivial plan-backed or goal-backed work is execution-ready, prefer the smallest effective Subagent-Driven execution path before inline fallback; and after worker routing establishes delegation or specialist need, prefer the best-fit visible custom or specialist agent before generic fallback.**
 
-Target outcomes:
-- broad raw evidence is filtered before it burdens the leader session
-- worker-fit tasks are delegated early enough that the leader does not spend context on avoidable raw intake
-- active documents stay density-safe and cheap to read, edit, diff, and verify later
-- active changelog parents stay compact by routing bulky same-chain version detail into indexed shards when needed
-- delegation stays proportional through reusable lane topologies, stronger handoffs, and visible efficiency review signals
-
 ---
 
 ## Core Contract
 
 ### 1) Intent and scope boundary
+Classify only as deeply as routing requires: behavior/governance, fact lookup, diagnosis, implementation, review/audit, plan/design, coordination/workflow, or explanation. Stay behavior-first for AI/RULES questions; keep diagnosis before edits; inspect project state only when the user requests project facts/implementation/verification or a stated bounded proof need requires it.
 
-Classify the user's intent before treating technical material as project work:
-- AI/RULES behavior or workflow-compliance analysis
-- project fact-checking or codebase inspection
-- implementation or refactor execution
-- review, audit, or verification
-- explanation only
+Pasted logs, paths, snippets, or worker notes are evidence for the active question, not project-inspection authorization. When intents mix, resolve the dominant execution question and repair scope corrections before exploration.
 
-Use the smallest useful intent taxonomy below when the distinction changes routing, clarification, or scope handling:
+Direct handling fits trivial, one-step, tightly sequential, low-output, interactive, high-overlap, worker-unavailable, or explicitly user-directed work. Broad searches/reads, noisy tests/logs/builds, external research, roadmap/source comparison, governance/security/migration review, or safely partitionable implementation pass the worker gate first.
 
-| Intent class | Meaning | Default routing implication |
-|---|---|---|
-| behavior/governance | the user is asking how the assistant, RULES, or workflow should behave | stay behavior-first; project exploration needs explicit request or bounded proof need |
-| fact lookup | the user wants current checked project facts | inspect the minimal authority surface needed; avoid broad implementation drift |
-| diagnosis / root-cause analysis | the user wants to understand why something is happening | diagnosis-first; do not jump to edits before symptom, evidence, and next-best check are framed |
-| implementation | the user wants a source/config change | move to execution when scope/path are clear |
-| review / audit | the user wants evaluation, risk finding, or consistency checking | preserve checked-scope evidence and worker-filter broad reads when needed |
-| plan / design | the user wants strategy, structure, or decision framing | stay discussion-first until the chosen path is clear |
-| coordination / workflow | the user wants handoff, routing, lane choice, or process behavior | classify mechanism and worker path before inspecting project surfaces |
+### 3) Worker-scale gate after workload detection
+`safe-io.md` owns aggregate read/output burst detection. When that gate fires—or when non-I/O work is independently broad, research-heavy, naturally parallel, or safely partitionable—choose the smallest worker topology that preserves correctness and context efficiency.
 
-Pasted logs, snippets, paths, or another session's worker notes are evidence for the current question, not automatic authorization to inspect the referenced project. If the user asks about assistant behavior or RULES behavior, stay in that scope unless project exploration is explicitly requested or a bounded verification need is stated.
+Before dispatch, identify the objective, required evidence/authority, whether the leader needs raw evidence or an analyzed result, lane independence, edit overlap, worker availability, and user constraints. Prefer one read-only standalone lane for one bounded evidence axis; fan out only for genuinely independent branches; use audit-then-repair when findings must precede a safe bounded edit; escalate to Agent Team only for shared ownership or coordination dependencies.
 
-Use direct leader handling for trivial, one-step, tightly sequential, low-output, exact interactive-control work, high edit-overlap work, unavailable worker tooling, or explicit user direction. Otherwise run the worker gate before broad codebase searches, large file reads, symbol/path tracing, high-output tests/logs/builds, external docs/provider research, roadmap/phase-matrix analysis, design-improvement research, source comparison, multi-surface governance sweeps, design/security/migration reviews, or safely partitionable implementation.
+Dispatch before further raw leader intake. Require a filtered handoff with outcome, checked scope, conflicts/uncertainty, exact anchors, evidence strength, and leader verification needs. The leader remains responsible for selected-anchor verification. Repeated rereads or clarification churn means tighten the brief or topology rather than absorb more raw content.
 
-พูดง่าย ๆ: ถ้างานกว้างจน main session ไม่จำเป็นต้องอ่าน raw ทุกอย่างเอง ให้ใช้ subagent หรือ worker lane ที่เล็กที่สุดไปกรองก่อน แต่ถ้าผู้ใช้ถามเรื่องพฤติกรรมของ AI ก็อย่าไหลไปสำรวจ project เพียงเพราะมี path/log แปะมา.
-
-### 2) Intent-first worker gate
-
-Behavior/RULES questions are answered from the behavior/rule layer first. Project exploration begins only when the user asks for project facts, implementation, or verification, or when checked evidence is required and scope is stated. Another session's pasted output may suggest a worker use case, but it does not make project inspection the active task.
-
-When one user turn mixes several intents, resolve the dominant execution question first: diagnosis-heavy asks stay diagnosis-first, scope corrections are repaired before project exploration, and one narrow working interpretation is preferred over broad intake questions when it is enough to continue safely.
-
-### 3) Worker-scale gate, proactive delegation matrix, and aggregate read-burst control
-
-Before broad main-session absorption, classify the smallest worker structure that preserves correctness and context efficiency. Several bounded reads can still overload context when combined, especially if lines are dense.
-
-Before broad multi-surface reading, identify the question being answered, the authority surface most likely to answer it, whether exact raw content is needed or a filtered handoff is enough, and whether additional waiting would only spend leader context rather than reduce uncertainty.
-
-Worker-first aggregate-read gate is required before leader raw absorption when a broad trigger applies, such as 3+ governance surfaces for one claim, cross-surface sync/closeout/release-readiness review, repo-wide search plus multi-file reads, broad code+docs evidence, dense active-doc bursts, noisy command output, broad external research, roadmap/design-improvement analysis, source comparison, or safely partitionable implementation.
-
-When the gate fires, treat the work as worker-fit by default, dispatch the read-only worker before broad raw intake unless a narrow direct-handling exception is stated, and require the handoff to return filtered findings, conflicts, exact anchors, evidence strength, and leader verification needs.
-
-Proactive delegation trigger matrix:
-
-| Signal | Typical shape | Default response |
-|---|---|---|
-| predictable single-question broad scan | one question needs search + several follow-up reads | dispatch one scout/filter lane before leader raw intake |
-| independent evidence branches | compare two or more sources, filesets, or risk lanes | split into separate read-only lanes and synthesize later |
-| audit-then-repair shape | findings must be identified before a bounded fix is safe | use an audit lane first, then a bounded repair lane if needed |
-| high-output diagnosis | failing tests/logs/builds plus source inspection | delegate log/output triage before leader deep reads |
-| leader budget would be spent on repetition | rereads, offset hopping, or repeated raw clarification would dominate | delegate early instead of waiting for more raw intake |
-
-Skipping the gate blocks broad sync, no-drift, closeout, or release-ready claims unless a narrow direct-handling exception is stated.
-
-Density warning signals include:
-- many active governance files read in one burst
-- long markdown lines that carry several concepts
-- repeated reads after compact that refill context quickly
-- bounded line ranges with unusually high character count
-
-General routing guidance:
-- when the work is broad research or multidimensional roadmap analysis, first map the objective into topic/phase/risk lanes before deciding whether one or multiple subagents fit
-- prefer one standalone subagent-style lane for a bounded independent broad/read/review/filter/research task before considering Agent Team workflow
-- if a worker lane is selected, dispatch/assign it before the leader absorbs raw broad output
-- direct leader handling remains valid for narrow known files, exact edit or verification ranges, tightly sequential interactive-control work, unavailable worker tooling, or explicit user direction
-- if the leader handles broad worker-fit work directly, state the narrow reason before or alongside the direct action
-- saying "an agent could help" is not enough; select a path and act when suitable
-- worker routing never removes leader verification responsibility
-
-### 4) Leader-context protection and budget
-
-The leader session should stay the controller, verifier, and final decision maker. It should not absorb broad raw evidence by default.
-- use subagents or worker lanes as raw evidence absorbers and filters for broad docs, logs, searches, audits, or multi-surface reviews
-- brief workers with the exact question, checked scope, expected anchors, conflicts, risks, and leader verification needs
-- make the leader verify selected anchors before final claims instead of reading every raw source
-- do not satisfy the worker gate by only saying a worker could help; dispatch one when the broad-read shape requires it
-
-Leader context budget is a planning budget, not a promise about exact token counts.
-- spend leader context on control decisions, synthesis, and anchor verification before spending it on raw bulk evidence
-- default target: one compact handoff plus selected anchor checks per lane, not lane-sized raw dumps
-- if the leader would need to personally read several medium bodies, several noisy reruns, or more than one unresolved raw evidence branch, delegation should happen before more raw intake
-- when the budget is already being spent on repetitive searching, rereading, or clarifying weak handoffs, tighten the brief or switch topology rather than absorbing more raw content
+If Safe I/O detected a worker-fit burst, skipping worker routing blocks broad sync, no-drift, closeout, or release-ready claims unless a narrow direct-handling exception is recorded. Valid exceptions are narrow known files, exact edit/verification ranges, tightly sequential or interactive work, high edit overlap, unavailable worker tooling, explicit user direction, or another stated narrow reason.
 
 ### 5) Capability-based routing criteria
 
 Route by capability and workload shape, not rigid tool name. Evaluate user intent/scope, context isolation and output noise, broad evidence-filtering need, lane independence, specialist value, parallel value, coordination/dependencies, risk/security/verification burden, edit overlap, whether the leader needs raw evidence or analyzed result, worker availability, and user constraints. Tool names such as `Agent`, `Explore`, repository search, web search, or future workers are implementation details.
 
 ### 6) Work-shape topology selection
-
-| Work shape | Topology | Preferred path |
+| Work shape | Topology / preset | Preferred path |
 |---|---|---|
-| trivial, exact, one-step, low-output, tightly sequential | direct | leader directly |
-| one broad question with one main evidence axis | scout | one focused standalone subagent / worker lane |
-| two or more independent evidence branches with no shared writes | fan-out / fan-in | multiple focused standalone subagents with leader synthesis |
-| findings must be filtered before a bounded fix is safe | audit + repair pair | read-only audit lane followed by one bounded edit-capable repair lane |
-| implementation plus dependent review/test/docs sync or shared ownership | coordinated swarm | official Agent Team / teammates as exceptional escalation |
+| trivial, exact, low-output, sequential | direct | leader directly |
+| one broad evidence axis | scout / `Scout preset` | one focused standalone lane returning a digest and anchors |
+| independent read-only axes | fan-out/fan-in / `Compare preset` | focused lanes using a shared rubric, then leader synthesis |
+| findings must precede a safe fix | `Audit + Repair preset` | read-only audit, then one bounded non-overlapping repair lane |
+| defined test/log/runtime gate | `Verification preset` | evidence lane while implementation ownership stays elsewhere |
+| shared ownership/dependencies | coordinated swarm / `Coordinated swarm preset` | official Agent Team only when standalone lanes are insufficient |
 
-Lane templates and swarm presets:
-- `Scout preset`: one lane answers one broad question and returns a decision-ready digest plus anchors.
-- `Compare preset`: two or more read-only lanes compare independent sources or options with the same rubric.
-- `Audit + Repair preset`: one audit lane narrows exact anchors, then one bounded repair lane edits only that scope.
-- `Verification preset`: one lane checks tests/logs/runtime evidence for a defined gate while implementation ownership stays elsewhere.
-- `Coordinated swarm preset`: use a small shared-dependency role set only when standalone lanes are insufficient.
-
-Presets are planning shorthands, not proof that a Team Agent workflow is required; choose the smallest topology that matches the dependency shape.
+Presets are planning shorthand, not Team escalation proof; choose the smallest dependency-fitting topology.
 
 ### 7) Research orchestration gate
 
@@ -184,31 +102,12 @@ Decision rules:
 - one broad independent lane with no matching worker -> focused standalone subagent preferred
 - three or more distinct lanes with shared dependencies -> Agent Team / teammates only when justified
 
-### 11) Native execution behavior
+### 11) Native and selected-goal execution
+Worker routing is normal execution behavior: identify worker-fit slices proactively, keep the worker set minimal, prefer standalone lanes before shared-team coordination, reuse aligned standing roles, and do not over-delegate simple work. If the goal owner requests a bounded authoring/helper lane, route it without turning its output into a new objective surface.
 
-Worker routing is normal execution behavior, not a special mode.
-- proactively look for worker-fit slices
-- keep the worker set minimal
-- prefer subagent-first handling for broad lanes without shared-team coordination
-- goal-owned internal helper use may route bounded analysis, route drafting, verification ordering, testing, compact route-support drafting, or optional plan-file reference synthesis slices through standalone subagents when that lowers context cost without creating a new public surface or a competing planning surface
-- for plain goal requests that `execution-and-goal-frame.md` classifies as governed and in need of route support, resolve the smallest sufficient route support automatically when checked context is enough; describe it as route support, plan support, or `Plan reference` only when that exact artifact wording matters, not as a user-facing `goal plan file` choice
-- reuse/steer aligned standing-role workers before duplicate-looking spawns
-- do not over-delegate simple work
+For selected non-trivial plan/goal work that is execution-ready and taskable, `Subagent-Driven` is the internal first preference: normally one standalone lane per bounded task. Choose rather than ask the user between `Subagent-Driven` and `Inline Execution`; if context is insufficient, ask one substantive question about work, scope, access, artifact, or approval.
 
-### 11.1) Subagent-Driven-first execution default
-
-When selected plan-backed or goal-backed work is already in execution mode and no stronger stop gate applies, worker routing should choose the smallest effective task-execution topology from checked context. The Subagent-Driven-first preference is an internal routing default, not a default user-facing choice prompt.
-
-Required guidance:
-- apply this default only when the selected work is non-trivial, execution-ready, and decomposable into bounded outcome-sized tasks
-- when checked context is sufficient, present the chosen action, route, or result instead of asking the user to choose between `Subagent-Driven` and `Inline Execution`
-- when checked context is insufficient, ask one narrow substantive clarification about the work, scope, access, artifact, or approval that would change the route; do not ask a routing-label choice
-- prefer one standalone subagent lane per bounded task before considering Agent Team escalation
-- keep Inline Execution available as a checked direct-handling exception when the current slice is smaller, safer, tighter, lower-output, high-overlap, more interactive, worker-unavailable, or explicitly user-directed
-- if Inline Execution is selected despite the Subagent-Driven-first preference, the reason should be visible enough for leader verification and later review
-- preserve exact labels such as `Subagent-Driven` and `Inline Execution` only when governance/workflow behavior itself is under discussion or exact artifact wording materially requires them
-- keep `/goal` as objective owner, keep plan files route-only, and keep live task shaping with `phase-todo-artifact.md`
-- leader verification remains mandatory before completion, sync, fixed, or release-ready wording
+Use `Inline Execution` when the slice is smaller, safer, tightly sequential, low-output, high-overlap, interactive, worker-unavailable, or explicitly user-directed, and keep the reason visible. Preserve these exact routing labels only when workflow behavior or artifact wording requires them. Task shaping defers to `phase-todo-artifact.md`; leader verification remains mandatory before completion, sync, fixed, or release-ready wording.
 
 ### 12) Team restriction boundary
 
@@ -234,7 +133,7 @@ A lane brief should minimally say:
 
 For research lanes, include the decision surface, suggested topic boundaries, source-trust expectations, and permission to refine query/topic strategy inside scope. Scope the lane to return analyzed findings, not raw dumps. Use multiple subagents only for meaningfully independent lanes.
 
-For goal-owned internal helper use, the lane brief should also name the selected goal the helper serves, or the advisory governed goal candidate the helper is helping shape before emission, whether the lane is analysis, route drafting, verification ordering, testing, bounded route-support drafting, or optional plan-file reference synthesis, and that returned material remains subordinate to the emitted or selected goal rather than becoming a competing route surface, route authority, or completion proof by itself.
+A goal-support lane also names the goal/candidate it serves and returns subordinate support only, never competing route authority or completion proof.
 
 ### 14) Agent Team escalation contract
 
@@ -285,7 +184,7 @@ Do not assign overlapping writes unless one lane is explicitly review-only. Use 
 
 ### 17) Main-controller verification
 
-The leader remains responsible for synthesis, direction, verification, and completion claims. Worker findings are context, not automatic proof. Resolve conflicts from checked evidence, verify material claims before user-facing factual/completion/sync/fixed wording, inspect changed artifacts after worker edits, and do not treat helper-produced integrated route support, plan-file references, route drafts, test triage, or verification notes as goal-completion proof until the leader verifies the relevant anchors/checks.
+The leader remains responsible for synthesis, direction, verification, and completion claims. Worker findings and helper/route/test outputs are context, not proof. Resolve conflicts from checked evidence, inspect worker edits, and verify material anchors before factual, completion, sync, fixed, or goal-completion wording.
 
 ### 18) Custom agent selection after routing
 
@@ -307,139 +206,40 @@ Selection order after routing selects delegation/specialist handling:
 Prefer a custom user agent only when worker routing has already selected a delegated/specialist path and the fit, value, and scope are materially stronger than the generic path.
 
 ### 19) Document-context routing boundary
-
-Worker-routing owns only the routing decision for document-heavy work: direct handling, read-only audit lane, bounded edit-capable repair lane, or Team escalation.
-
-Document-density, God-line/God-file, active-entrypoint, parent/shard/changelog, compact/thrash, and no-drift repair doctrine lives in `document-integrity.md` and `document-governance.md`.
-
-When those document signals appear, apply the document-owner rules first; return here only to decide whether a worker lane is needed. Do not delegate document edits when analysis-only scope, owner ambiguity, meaning risk, history preservation, or destructive risk makes the repair unsafe.
-
----
-
----
-
-## Decision Flow
-
-```text
-Work starts or next slice is discovered
-  ↓
-Classify intent
-  → AI/RULES behavior: stay behavior/governance first
-  → project fact/implementation/review: continue
-  → unclear and outcome-changing: clarify or state working scope
-  ↓
-Broad, noisy, context-heavy, multi-surface, or parallelizable?
-  → NO: leader handles directly
-  → YES: continue
-  ↓
-Would raw leader intake mainly spend context budget rather than reduce uncertainty?
-  → YES: choose the smallest useful topology and delegate first
-  → NO: continue
-  ↓
-Is it broad research/source comparison/roadmap-analysis/design-improvement evidence gathering?
-  → YES: map research or roadmap lanes, then use one or more focused standalone subagents when lanes are independent
-  → NO: continue
-  ↓
-One bounded independent lane can filter, research, review, or own a governed-document repair scope?
-  → YES: use one focused standalone subagent or bounded edit-capable repair lane
-  → NO: continue
-  ↓
-Independent read-only lanes can run without shared ownership?
-  → YES: use multiple focused standalone subagents
-  → NO: continue
-  ↓
-Needs shared ownership, dependencies, messaging, or implementation/review/test/docs sync?
-  → YES: Agent Team / teammates only if allowed and justified
-  → NO: leader handles directly with narrow reason
-  ↓
-After worker scale decided, select best-fit visible specialist when capability fits
-  ↓
-Document-heavy repair or active-doc pressure appears?
-  → YES: apply `document-integrity.md` / `document-governance.md` first, then decide whether direct handling, audit lane, or bounded repair lane is appropriate
-  → NO: continue
-```
+Document owners decide authority, density, sharding/rollover, preservation, and repair safety first; this rule then chooses direct, audit, bounded repair, or Team topology. Analysis-only scope, owner ambiguity, meaning/history risk, or destructive risk blocks delegated document edits.
 
 ---
 
 ## Trigger Model
 
-| Trigger | Required behavior |
+| Routing trigger | Required behavior |
 |---|---|
-| user asks about AI/RULES behavior while providing logs/snippets | classify as behavior/governance first; do not auto-explore project |
-| compact or corrective prompt where visible intent repair would reduce drift | state a short working scope before broadening the search or lane count |
-| symptom-heavy ask with mixed logs/snippets and possible implementation implications | default to diagnosis-first; do not auto-jump into edits |
-| predictable single-question broad scan | use the `Scout preset` before the leader absorbs search results plus follow-up reads |
-| leader context budget would be spent on rereads, offset hopping, or repeated raw clarification | delegate early or tighten the brief/topology before more raw intake |
-| broad search/read, aggregate governance/code read burst, or repository exploration | dispatch standalone worker or state narrow direct-handling reason before broad absorption |
-| broad roadmap/phase-matrix analysis | use a focused read-only planning/review lane when multiple design, TODO, phase, risk, or dependency surfaces need synthesis |
-| coordination design or cross-session behavior proposal | classify the actual mechanism first, then keep claims within checked capability |
-| high-output test/log/build evidence | prefer worker filtering before leader reads raw noisy output |
-| multi-surface governance audit | use a focused audit worker or multiple standalone workers when scope is broad |
-| findings must be narrowed before a safe bounded fix | use the `Audit + Repair preset` instead of mixing investigation and edits in one raw lane |
-| phase changes but the worker responsibility remains the same | reuse or steer the standing-role worker; put phase context in the assignment |
-| reuse, spawn, respawn, shutdown, or duplicate/overlap report | audit checked coordination evidence and report scoped state before deciding |
-| simultaneous same-role lanes | name lanes by responsibility, surface, or output rather than phase ID alone |
-| context-heavy governed-document repair | apply `document-integrity.md` / `document-governance.md` first, then use a bounded edit-capable repair lane only with explicit scope, edit ownership, and preservation constraints |
-| external docs/API/provider research | use worker lane when source volume or comparison cost is high, with source-trust expectations in the assignment |
-| broad design-improvement research | map independent topic lanes first, then dispatch one or more focused subagents before leader raw websearch absorption |
-| goal-owned integrated planning or route-heavy advisory `/goal` authoring | when `execution-and-goal-frame.md` classifies plain goal requests as governed and in need of route support, provide the smallest sufficient route support automatically; helper lanes and plan-file references stay route-only and must not surface as a competing plan block or user-facing `goal plan file` choice |
-| selected non-trivial plan-backed or goal-backed execution | choose the smallest effective task topology from checked context; present the chosen action/result, use Inline only for checked direct-handling exceptions, and ask substantive work clarification rather than routing-label choices when context is insufficient |
-| independent parallel research lanes | use multiple subagents when coordination need stays low and topics are meaningfully separable |
-| implementation plus review/test/docs sync with dependencies | consider Agent Team only when shared coordination is truly needed |
-| teammate/Agent Team is banned | use standalone subagent if agents are not broadly banned |
-| trivial local task | handle directly; do not force delegation |
-| high edit overlap | avoid parallel edit lanes; consider read-only investigation instead |
-| visible custom agent matches selected worker capability | prefer best-fit specialist before generic fallback |
-| repeated weak handoffs or clarification churn | treat it as routing debt; improve the brief or change topology rather than adding more raw context |
+| AI/RULES behavior question with project evidence | stay behavior-first unless project inspection is explicitly needed |
+| one bounded evidence axis | use one scout/filter lane |
+| independent evidence branches | use compare/fan-out lanes |
+| findings must precede a safe fix | use audit then bounded repair |
+| broad research | split by decision-relevant topics and require source-trust/conflict reporting |
+| shared ownership or dependent implementation/review/test work | consider Agent Team only when standalone lanes are insufficient |
+| phase changes but responsibility remains | reuse or steer the standing-role worker |
+| reuse/spawn/duplicate report | audit checked coordination state before deciding |
+| high edit overlap or interactive work | keep edits direct and use read-only workers when useful |
+| teammate/Agent Team ban | standalone subagents remain allowed unless agents are broadly banned |
+| matching specialist exists after routing | prefer the best-fit visible specialist |
+| weak handoff or clarification churn | tighten the brief or change topology |
 
 ---
 
 ## Anti-Patterns
 
-Avoid:
-- treating pasted project paths/logs as permission to inspect code
-- assuming a short or corrective user turn is implementation authorization when it was really a scope repair or diagnosis request
-- waiting until after the leader has already absorbed most raw evidence to decide that delegation would have helped
-- leader absorbing broad raw search/read/log/test/roadmap evidence by default
-- skipping the worker-first aggregate-read gate before broad governance/code scans
-- leader running broad design-improvement websearch or phase-roadmap synthesis directly when research/planning lanes would filter it better
-- routing by tool name alone
-- assuming an unverified hook, transport, recall, board, team, plugin, or MCP mechanism can deliver coordination behavior
-- saying agents could help without dispatching when worker-fit is present
-- treating teammate/Agent Team bans as standalone-subagent bans
-- escalating to Agent Team when one subagent would cover the work
-- choosing a bigger topology than the dependency shape actually needs
-- fixed handoff caps, raw worker dumps, duplicate same-role worker spawn, or overlapping parallel edits
-- naming workers by phase ID alone when the standing role did not change
-- reporting active duplicate overlap, safe absence, stale-worker cleanup, shutdown, or respawn without checked coordination evidence
-- importing shared-board grammar, session-short-id prefixes, creator-owner hooks, hidden registries, package tmux bridge behavior, or exact teammate display modes into Main RULES required behavior
-- assigning edit-capable governed-document repair without bounded ownership and preservation constraints
-- treating worker summaries as proof or importing plugin/shared-board grammar into Main RULES
-- ignoring a clear custom specialist after routing already selected specialist handling
-- delegating to a custom agent without strong capability fit
-- using custom-agent availability as the routing decision
-- using specialist-selection rules to escalate subagent-fit work into Agent Team workflow
-- spawning a second same-role worker without a distinct partition
-- treating built-ins/plugins as automatically superior to user custom agents when a visible user specialist fits better
-- pretending an undiscovered agent is available
-- over-delegating trivial work
-- tolerating repeated weak handoffs instead of fixing the brief or switching topology
-- reading several "bounded" files without considering aggregate output size
-- delegating ambiguous, history-heavy, authority-shifting, broad, destructive, or analysis-only governed-document repair to worker edits before the document-owner rules say the repair is safe
-
-Better behavior: classify intent and worker scale first, delegate predictable worker-fit slices before the leader burns context, dispatch the smallest fitting lane or state the narrow direct-handling reason, select the best-fit visible specialist for the chosen capability, keep Agent Team escalation for true shared coordination, ask the question first, route broad raw evidence through workers, and require leader verification before completion wording.
+Avoid routing by tool name or agent availability; absorbing worker-fit raw evidence before dispatch; escalating beyond the dependency shape; treating Team bans as standalone-agent bans; overlapping edits or duplicate roles without partition; inventing mechanism capability; delegating ambiguous/destructive governed repair; accepting raw handoffs as proof; or tolerating weak handoffs instead of fixing the brief/topology.
 
 ---
 
 ## Integration
 
-Related rules:
-- [safe-io.md](safe-io.md) - bounded file reading plus sharded design and changelog parent-map read order
-- [safe-io.md](safe-io.md) - bounded command output handling
-- [document-integrity.md](document-integrity.md) - active-entrypoint rollover, density repair, governed-document repair safety, and no-drift verification
-- [document-governance.md](document-governance.md) - compact design/changelog parent authority, shard decisions, and active runtime install scope
-- [evidence-discipline.md](evidence-discipline.md) - keeps partial reads and worker findings evidence-bounded
-- [external-verification-and-source-trust.md](external-verification-and-source-trust.md) - source trust, corroboration, and external-evidence conflict handling for research lanes
-- [authority-and-scope.md](authority-and-scope.md) - user override for specialist choice
-- [action-safety.md](action-safety.md) - execution confirmation separate from delegation choice
-- execution-continuity must not bypass the worker gate; TODO/phase rules shape live tracking and phase context; evidence, accurate-communication, and zero-hallucination chains keep worker and leader claims calibrated; communication/anti-sycophancy rules keep specialist choice calm and evidence-based
+Related owners:
+- [safe-io.md](safe-io.md) — burst detection and bounded I/O
+- [document-governance.md](document-governance.md) / [document-integrity.md](document-integrity.md) — document authority and repair safety before routing
+- [external-verification-and-source-trust.md](external-verification-and-source-trust.md) — research source trust and conflicts
+- [evidence-discipline.md](evidence-discipline.md) — worker findings remain evidence-bounded
+- [execution-and-goal-frame.md](execution-and-goal-frame.md) / [phase-todo-artifact.md](phase-todo-artifact.md) — continuation and live task shaping

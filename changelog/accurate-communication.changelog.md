@@ -1,15 +1,14 @@
 # Changelog - Accurate Communication Standard
 
-> **Current Version:** 2.41
-> **Current Version:** 2.39
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
+> **Current Version:** 2.42
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.42 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-242)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.41 | 2026-06-11 | **[Added P143 hybrid progress-reporting snapshot wording refinement](#version-241)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.40 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary wording refinement](#version-240)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.39 | 2026-06-05 | **[Added P139 goal-route support and execution-label wording refinement](#version-239)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -85,6 +84,20 @@
 | | | Summary: Initial version - later deemed too rigid | |
 
 ---
+
+<a id="version-242"></a>
+## Version 2.42: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `accurate-communication.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 
 <a id="version-241"></a>

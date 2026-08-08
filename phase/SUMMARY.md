@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.09
+> **Current Version:** 2.10
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
-> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
-> **Status:** No active phase selected; latest released baseline is v10.53 / P145 source-first scope guard and repo-authority enforcement
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Status:** No active phase selected; current repository release is v10.54 active runtime Rule compression; latest phase-backed release remains v10.53 / P145 source-first scope guard and repo-authority enforcement
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)

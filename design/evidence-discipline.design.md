@@ -1,8 +1,8 @@
 # Design - Evidence Discipline
 
 > **Parent Rule:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.4
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.5
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/evidence-discipline.changelog.md](../changelog/evidence-discipline.changelog.md)
 
 ---
@@ -42,7 +42,7 @@ P120 refinement: this owner should now keep correction scope as an evidence-earn
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the compact 18-rule set is selected.
+Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
 Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
 

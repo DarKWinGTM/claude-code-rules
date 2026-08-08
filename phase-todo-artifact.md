@@ -1,7 +1,7 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.30
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.30
-> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+> **Current Version:** 1.31
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.31
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
@@ -72,71 +72,28 @@ Typical owner routes:
 `not required` for a surface never means the artifact is safe to ignore or delete.
 
 ### 4) Phase and patch startup boundary
-- if staged work is clear, resolve phase posture now as `use existing`, `create now`, or `ask now`
-- `create now` does not mean automatic new-major creation; phase lineage still decides current phase update vs subphase vs new major
-- phase identity selection must still run in strict order: current active phase update → existing-family subphase → new major phase → ask/record basis
+- resolve clear staged work as `use existing`, `create now`, or `ask now`; `create now` still passes the canonical lineage gate in Part B and never implies a new major
 - patch is non-default during greenfield/baseline formation unless a real before/after review surface exists or the user explicitly asks for it
 
 ### 5) Startup communication contract
-When startup posture materially matters, use a compact explicit shape:
-```text
-meaningful_work_state: <lightweight_exploration | meaningful_governed_work>
-artifact_posture:
-- design: <use existing | create now | ask now | not required>
-- changelog: <use existing | create now | ask now | not required>
-- TODO: <use existing | create now | ask now | not required>
-- live task list: <initialize now | not required>
-- phase: <use existing | create now | ask now | not required>
-- patch: <use existing | create now | ask now | not required>
-reason: ...
-what_must_happen_before_continuing:
-- ...
-```
+When posture materially affects continuation, state whether work is lightweight exploration or meaningful governed work, each relevant surface's exact posture, the reason, and what must happen before continuing. Rendering may stay compact; do not omit unresolved required surfaces.
 
-### 5.1) Documentation chain naming and chain-shape analysis
-When meaningful governed work will normalize or split active design/changelog documentation, resolve the chain naming basis and chain-shape decision before deeper edits.
+### 5.1) Documentation-chain startup decision
+When startup work may append, split, or normalize a design/changelog chain, apply the canonical model in `document-governance.md` and record only decision-changing state:
 
-Use a compact `docs_analysis` form:
 ```text
 docs_analysis:
 - document_role: <design | changelog>
-- namespace_scope: <folder-scoped-single-chain | shared-multi-chain>
-- actual_chain_subject: <real topic/capsule/component name>
-- parent_authority: <checked parent file>
-- parent_model_choice: <generic-parent | semantic-parent>
-- selected_parent_filename: <active filename chosen for this chain>
-- parent_model_basis: <folder-already-scopes-one-chain | shared-folder-needs-self-identifying-name | compatibility-only-legacy | unresolved>
-- coexistence_state: <single-active-parent | generic-plus-semantic-ambiguous | generic-plus-semantic-compatibility-only>
-- current_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
-- observed_project_shape: <checked local/example structure | unknown | not-applicable>
-- extracted_doctrine: <reusable governance principle derived from checked evidence | none>
-- selected_chain_shape: <single-file-bootstrap | flat-sibling-shards | same-stem-subfolder-normalized | archive-history-fallback>
-- selected_target_form: <target structure intentionally chosen for this RULES chain>
-- bootstrap_exit_trigger: <none | parent no longer compact | 2+ coherent slices | God-file pressure | other checked reason>
-- shard_opening_basis: <why same-stem or flat-sibling shards are justified now>
-- normalization_action: <append-in-parent | create-or-update-flat-sibling | create-or-update-same-stem-child | migrate-flat-to-same-stem | use-history-or-done>
-- equivalence_claim_basis: <checked proof of equivalence | no equivalence claim>
-- append_vs_shard_reason: <why the next detail belongs in parent or shard>
-- parent_index_update_required: <yes | no>
-- integrity_checks: <shard map, backlinks, version/current-state alignment, no orphan detail>
+- namespace_and_subject: <scope + real chain subject>
+- active_parent: <checked file + generic/semantic model + coexistence state>
+- selected_chain_shape: <canonical shape>
+- transition_basis: <bootstrap exit, shard opening, or append-vs-shard reason>
+- action: <append | sibling shard | same-stem child | normalize | history/done>
+- example_basis: <observed/extracted/selected/equivalence state when an example is used>
+- integrity_updates: <map, backlinks, current/version alignment, orphan prevention>
 ```
 
-Required guidance:
-- use this form when a governed design/changelog parent is about to receive enough new detail that append-versus-shard choice materially changes the resulting structure
-- resolve `namespace_scope`, `actual_chain_subject`, `parent_model_choice`, and `selected_parent_filename` before deeper shape edits continue
-- if the current folder already fully scopes one chain, a generic parent such as `design.md` or `changelog.md` may be the selected active parent model
-- if the current folder contains several chains, the selected parent filename should stay self-identifying for that shared namespace
-- if the current folder already acts as the chain namespace, `create-or-update-flat-sibling` may be selected without creating a redundant same-stem nested folder
-- if the chain is broad, root-heavy, multi-shard, or already showing God-file pressure, same-stem nested normalization remains the strong-preferred direction
-- if `bootstrap_exit_trigger` is `none`, keep the chosen parent bootstrap-first instead of opening a same-stem shard directory early
-- `shard_opening_basis` must name the checked reason the chain no longer stays compact as one parent body
-- `coexistence_state` must not be left ambiguous when a generic parent and a semantic parent both appear in checked scope
-- only one active parent model may remain for the same chain; the other must be compatibility-only or absent
-- `observed_project_shape` records what was actually checked in the example rather than what the assistant wishes the example had looked like
-- `extracted_doctrine` records the reusable lesson taken from the checked example
-- `selected_target_form` records the structure intentionally chosen for the current RULES chain
-- if `equivalence_claim_basis` is not `checked proof of equivalence`, do not phrase the selected RULES target form as if it were the literal observed project pattern
-- do not silently keep appending to a parent authority file merely because no child shard exists yet; the absence of shards should trigger classification, not default approval
+Resolve ambiguity before deeper edits; do not restate chain-selection doctrine or append by default merely because no shard exists.
 
 ---
 
@@ -198,12 +155,9 @@ Signals include:
 - roadmap/changelog/TODO/patch/execution all mixed in one active body
 
 Repair posture:
-- restructure in place when one bounded goal/output/gate still exists
-- split into `NNN-NN` or `NNN-NN-NN` child phases when work shares the parent rollout gate and the checked lineage still fits the same bounded family
-- open a new major phase when capability, release, verification, output, or rollback boundary is distinct
-- keep existing alphanumeric child forms as legacy-only during repair unless a later doctrine explicitly selects normalization
-- update `phase/SUMMARY.md` when the split changes navigation
-- create or extend visible phase-linked live tasks when repair is non-trivial
+- apply the canonical lineage gate: restructure the current phase when one bounded goal/output/gate remains, otherwise choose the smallest truthful child or major result
+- keep existing alphanumeric child forms legacy-only unless later doctrine selects normalization
+- update `phase/SUMMARY.md` and visible phase-linked tasks when the split changes execution/navigation
 - block closeout while touched-scope God Phase pressure remains unrepaired or unplanned
 
 ### 5) Design-to-phase synthesis
@@ -220,8 +174,7 @@ Ask only when design ambiguity, materially different rollout choices, missing ac
 When a phase-backed objective is broad enough to contain distinct execution shapes, structure it into lanes before deep work drifts.
 - lanes are bounded execution slices such as implementation, verification, governance/release-sync, evidence audit, or bounded research
 - each lane should map to a clear goal, expected output, and completion gate rather than acting as a command bucket
-- lane changes inside the same rollout family should normally stay in the current phase or a truthful subphase rather than opening a fresh major phase by momentum
-- for lane changes, apply the same identity order explicitly: current active phase first, existing-family subphase second, new major phase only after both earlier fits are ruled out by checked phase context
+- lane changes pass the canonical lineage gate and must not open a major phase by momentum
 - worker routing decides whether a lane becomes a standalone subagent or stays direct; phase only keeps the staged execution map visible
 - do not create lane scaffolding for trivial, tightly sequential, or one-step work
 
@@ -248,24 +201,8 @@ Roadmap entries should expose:
 Roadmap entries are planning context, not automatic execution authority.
 After a phase-backed objective closes, inspect checked roadmap and goal surfaces before ending closeout. If future work is meaningful, name the best-supported next phase/wave/goal with why, expected output, and gate.
 
-### 6.1) `/goal` suggestion sourcing from governed surfaces
-When a governed goal is requested or a governed successor objective is being shaped, phase/TODO execution surfaces must still supply the checked execution evidence for that goal.
-
-Keep this file responsible for the phase/TODO side only:
-- design, current phase, built-in task list, `TODO.md`, and checked implementation state remain valid execution surfaces for shaping goal/output/gate evidence
-- changelog, patch, and README still matter only when version/release/current-state truth materially affects completion or review
-- broad future labels such as `implementation wave ใหม่` should still be refined into smaller truthful successor slices when checked phase/TODO context already supports that
-- phase/task linkage must stay visible when a selected goal later receives route notes, a durable `Plan reference`, or an opened `/plan`
-
-Detailed governed `/goal` authoring, route-support selection, durable `Plan reference`, candidate-goal promotion, and overflow `/plan` handling are owned by `goal-authoring-and-route-support.md`.
-
-### 6.2) Selected goal overflow route handling for governed work
-For phase/TODO surfaces, keep only this boundary:
-- if a selected goal becomes route-heavy, phase and task surfaces should still show which selected goal the route serves
-- if `/plan` is opened later, phase/task linkage and verification gate visibility must stay intact
-- completed route steps must not replace the selected goal gate in phase-backed closeout
-
-The detailed overflow rule — when route detail stays inside the goal-centric surface, when `/plan` is justified, and how route support remains subordinate to `/goal` — is owned by `goal-authoring-and-route-support.md`.
+### 6.1) Goal linkage from phase/TODO surfaces
+Design, active phase, built-in tasks, `TODO.md`, and checked implementation state supply execution evidence for governed goal shaping; release/review surfaces matter only when they affect completion. Keep the selected goal, phase/task linkage, and verification gate visible when route notes, a plan reference, or `/plan` exists. Route completion must not replace the goal gate. Goal construction and route-support rules defer to `goal-authoring-and-route-support.md`.
 
 ### 7) Patch linkage inside phase
 When phased work uses a governed patch artifact:
@@ -324,23 +261,8 @@ Claude Code's built-in task list is the live execution-tracking surface for acti
 - do not treat the built-in task list as a governed repository document
 - do not treat `TODO.md` as the primary live execution board during active non-trivial work
 
-### 2) Daily-first TODO rollover
-When `TODO.md` grows past practical active-scan limits, preserve old content in reachable history/done shards and keep the main file as a compact current-state index.
-- `TODO.md` keeps current active work, deferred/open items that still need active visibility, compact completed highlights, and references to `todo/history/` / `todo/done/`
-- `todo/history/YYYY-MM-DD*.md` records daily movement, rollover notes, and links back to `TODO.md`
-- `todo/done/<task-or-wave>.md` may hold large completed closeout detail
-- pre-rollover snapshots are allowed for preservation but must be referenced rather than duplicated
-- rollover is not deletion authority
-
-### 3) TODO God-file prevention
-`TODO.md` becomes a God file when it tries to store live execution, detailed history, completed closeouts, phase roadmap, release notes, verification logs, and future proposals in the active entrypoint.
-
-Required repair posture:
-- keep the active TODO as a compact current execution index
-- move daily movement to `todo/history/` and large completed detail to `todo/done/`
-- keep version authority in changelog and staged execution detail in phase
-- do not append completed history into pending sections or current active bullets
-- if a TODO update would create a large mixed-responsibility entry, split it into a current-state bullet plus history/done reference
+### 2) TODO compaction consequence
+`TODO.md` stays a compact current execution index rather than absorbing live execution, detailed history, phase roadmap, release notes, or verification logs. When size/thrash or mixed-role pressure triggers rollover, apply the preservation, shard, snapshot, threshold, and no-delete contract in `document-integrity.md`; retain current/deferred visibility and reachable history references in `TODO.md`, while version and staged-execution detail remain in changelog and phase.
 
 ### 4) Live task-list trigger model
 Use the built-in task list by default when work is non-trivial, has 3+ steps, spans multiple files/stages, may continue across slices, benefits from live visibility, has an active phase, decomposes into distinct lanes, or has non-trivial coding work where implementation and verification are distinct outcomes.
@@ -350,8 +272,7 @@ Do not force task-list overhead for trivial isolated work or one-step lookup/fix
 ### 5) Phase-linked live task shaping
 When the built-in task list is in use for phase-backed work:
 - inspect `/phase` context first and default to the current active phase before later phases
-- when a task would create or extend phase artifacts, keep the identity basis visible: current-phase update, existing-family subphase, new major, or ask/record basis
-- a new-major basis must include why current-phase update and existing-family subphase do not fit
+- when a task creates or extends phase artifacts, keep the canonical lineage result visible; a new major records why current and existing-family child fits failed
 - keep phase context visible in task subject or description
 - shape tasks around outcome, expected output, and completion gate when that prevents command-only drift
 - split implementation, verification, and governance/release-sync into separate tasks only when combining them would hide gates or ownership
@@ -360,27 +281,11 @@ When the built-in task list is in use for phase-backed work:
 - preserve a visible verification slice when implementation is done but targeted verification remains material
 - use the task list first for the next unfinished slice; if insufficient, fall back to active phase context, `phase/SUMMARY.md`, `TODO.md`, and checked implementation state
 
-### 5.1) Selected goal/plan execution task materialization
-When selected `/goal` work or a selected plan-backed route becomes execution-ready, execution is actually selected or clearly implied, and the work is non-trivial, execution surfaces should materialize that work into bounded built-in tasks before deep continuation rather than leaving the route only as prose.
-- keep `/goal` and plan-reference linkage visible when material
-- goal/plan-file authoring by itself does not yet trigger task materialization or a user-facing execution-mode menu
-- do not present `Subagent-Driven` versus `Inline Execution` as a default user-facing choice menu; worker routing should select the execution posture internally from checked context
-- if task materialization lacks enough objective, scope, gate, access, or approval context, ask one narrow substantive clarification about the work before shaping tasks rather than asking for a routing label
-- prefer Subagent-Driven execution first when `worker-routing-and-context.md` classifies the tasks as worker-suitable
-- keep Inline Execution available only when worker routing selects a checked direct-handling exception for the current slice
-- preserve separate implementation, verification, and governance/release-sync tasks when their gates differ
-- keep tasks outcome-sized so one bounded task can cleanly become one standalone subagent lane when suitable
+### 5.1) Selected-goal task materialization
+When a selected goal or plan-backed route is execution-ready and non-trivial, materialize it into bounded built-in tasks before deep continuation. Authoring alone does not trigger execution. Keep goal/plan linkage visible, ask one substantive question if objective/scope/gate/access/approval is insufficient, and separate implementation, verification, or governance tasks when their gates differ. Worker topology defers to `worker-routing-and-context.md`.
 
-### 5.2) Hybrid progress snapshot shaping
-When live task or phase-backed updates need to be more readable, use a compact hybrid progress snapshot:
-- `Current`
-- `Done so far`
-- `In progress`
-- `Remaining`
-- `Blockers / Notes`
-- `Next`
-- keep `Done so far` within checked scope
-- keep this bounded and practical; do not turn TODO/phase tracking into a dashboard or ceremony
+### 5.2) Progress rendering
+Progress layout defers to `explanation-and-presentation.md`; keep completed scope checked and bounded, and do not turn phase/task tracking into a dashboard or stop ceremony.
 
 ### 7) Live tracking friction recovery
 If live task-list creation or update fails, classify whether tracking is material to safe continuation.
@@ -417,52 +322,23 @@ The later sync order does not weaken early startup establishment or live task-li
 | selected design slice carries behavior, invariant, failure-mode, or dependency semantics beyond the headline feature label | extract the selected semantic items into phase/task/verification coverage and assign explicit statuses before closeout |
 | active phase or implied staged lane | expose phase context in built-in tasks and current-phase-first execution |
 | current phase lane closes and the next lane is selected or clearly implied | continue into the next lane and keep phase linkage visible |
-| plain governed goal request without plan-file wording | resolve planning depth and choose direct goal wording, compact route support, durable route-only plan file, or one narrow substantive clarification about the work |
-| governed non-trivial or route-heavy `/goal` candidate is still route-heavy before final emission | allow automatic internal planning / plan-mode-style support to shape the emitted `/goal` while keeping one integrated goal-centric visible surface |
-| selected governed goal has a non-trivial route still to choose | keep route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed |
-| selected non-trivial plan-backed or goal-backed execution is ready to run | materialize built-in tasks, prefer Subagent-Driven execution first when worker-suitable, keep Inline only as a checked direct-handling exception, and avoid a default routing-choice menu |
-| governed goal/plan-file authoring reaches a bounded final artifact | stop at the copied goal artifact plus subordinate route support and do not append an execution-mode choice menu unless execution was also selected or clearly implied |
+| selected non-trivial goal/plan enters execution | materialize bounded tasks with visible goal linkage and distinct verification/governance gates when needed |
 | governance/release-sync slice inside an active phase | give it its own lane or task when mixing it with implementation would blur ownership or gates |
-| oversized `TODO.md` or `phase/SUMMARY.md` | roll history/detail into referenced `history/` / `done/` shards and keep compact active entrypoints |
-| God Phase or TODO overload | repair now when clear, otherwise create/extend a visible governed repair slice |
+| oversized `TODO.md` or `phase/SUMMARY.md` | invoke the `document-integrity.md` rollover contract and keep compact active entrypoints |
+| God Phase or TODO overload | keep the active role visible and route repair through the owning phase or document-integrity contract |
 | implementation done but verification still material | preserve a verification slice in phase closeout and live task tracking |
 | true objective completion with meaningful successor work | report supported next phase/wave/goal with why, output, and gate |
 
 ---
 
 ## Anti-Patterns
-
-Avoid:
-- meaningful governed work starting before startup artifact posture is resolved
-- treating `create now` for phase as automatic new-major creation
-- using `not required`, cleanup, or trivial framing as file-removal authority
-- forcing phases for filler stages with no execution meaning
-- phase files that mix several independent goals/outputs/gates into one active body
-- letting `phase/history/` or `phase/done/` replace active phase navigation
-- turning `TODO.md` into a history dump, roadmap dump, or verification log dump
-- generic live task titles that hide active phase context
-- treating the built-in task list as a replacement for durable TODO/phase surfaces
-- requiring the user to say `goal plan file` before resolving planning depth for a plain governed goal request
-- asking the user to choose `Subagent-Driven` versus `Inline Execution` or another routing label when the system can decide internally from checked context
-- goal/plan-file authoring that auto-extends into a `Which approach?` menu even though execution was not yet selected
-- lane decomposition that is forced onto trivial or tightly sequential work
-- lane-aware tasks that hide goal/output/gate or collapse governance/release-sync into a generic implementation bucket
-- phase/task closeout that stops at a visible feature headline while selected design invariants, failure modes, or dependency semantics remain silently uncovered
-- letting task-list continuation silently allocate a new major phase
-- stopping after implementation when phase-backed verification is still the active remaining slice
-- phase or TODO closeout that reports only files/tasks/audit status and not delivered result / impact / verification basis
+Avoid unresolved startup posture; `create now` or task continuation treated as automatic new-major authority; `not required`/cleanup as deletion authority; filler phases or trivial lane scaffolding; God Phase/TODO bodies; history replacing active entrypoints; live tasks replacing durable surfaces; authoring materialized as execution; hidden phase/goal/gate context; closeout before selected semantics and verification are explicitly resolved; or file/task-only closeout without delivery, impact, and evidence basis.
 
 ---
 
 ## Integration
-
-Related rules:
-- [document-governance.md](document-governance.md) - repository document model and sync order
-- [document-governance.md](document-governance.md) - patch semantics and patch-vs-phase boundary
-- [worker-routing-and-context.md](worker-routing-and-context.md) - worker scale stays separate from phase-backed lane structure
-- [safe-io.md](safe-io.md) - bounded read/output behavior for broad phase-backed lanes
-- [coding-discipline.md](coding-discipline.md) - phase-backed coding verification and TestKit/scenario decisions
-- [execution-and-goal-frame.md](execution-and-goal-frame.md) - goal/output/gate semantics and next-goal boundaries
-- [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) - governed `/goal` authoring, route-only plan support, `Plan reference`, and overflow route handling owner
-- [document-integrity.md](document-integrity.md) - daily-first `TODO.md` and `phase/SUMMARY.md` rollover owner
-- [document-integrity.md](document-integrity.md) - hygiene must defer to required artifact posture and does not authorize deletion
+Related owners:
+- [document-governance.md](document-governance.md) / [document-integrity.md](document-integrity.md) — document roles, sync, rollover, hygiene
+- [worker-routing-and-context.md](worker-routing-and-context.md) / [safe-io.md](safe-io.md) — lane topology and bounded intake
+- [coding-discipline.md](coding-discipline.md) — coding verification/TestKit
+- [execution-and-goal-frame.md](execution-and-goal-frame.md) / [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) — continuation, goals, and route support

@@ -73,6 +73,7 @@ try {
     'evidence-discipline.md',
     'execution-and-goal-frame.md',
     'explanation-and-presentation.md',
+    'goal-authoring-and-route-support.md',
     'external-verification-and-source-trust.md',
     'memory-governance-and-session-boundary.md',
     'phase-todo-artifact.md',

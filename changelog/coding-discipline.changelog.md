@@ -1,15 +1,15 @@
 # Changelog - Coding Discipline
 
 > **Parent Document:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.2
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
+> **Current Version:** 1.3
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.2 | 2026-06-04 | **[Added P138 semantic code naming and governed-doc comment linkage refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Added semantic/domain/behavior-first identifier doctrine and bounded source-comment linkage to governed docs without turning comments into duplicate documentation. | |
 | 1.1 | 2026-05-16 | **[Added P098 intent-grounding refinement](#version-11)** | 808f88f7-3682-45ad-8f3e-3caf233d3835 |
@@ -18,6 +18,20 @@
 | | | Summary: Created `coding-discipline.md` as a body-sufficient merged runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-13"></a>
+## Version 1.3: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `coding-discipline.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 <a id="version-12"></a>
 ## Version 1.2: Added P138 semantic code naming and governed-doc comment linkage refinement

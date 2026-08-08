@@ -1,7 +1,7 @@
 # Goal Authoring and Route Support
-> **Current Version:** 1.0
-> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.0
-> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+> **Current Version:** 1.1
+> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.1
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/goal-authoring-and-route-support.changelog.md](changelog/goal-authoring-and-route-support.changelog.md)
 
 ---
@@ -56,128 +56,54 @@ Required guidance:
 - if checked surfaces already define a smaller truthful successor slice, derive that smaller slice instead of emitting a broad future label
 - if proof cannot be made transcript-visible, do not promote the goal into a copyable `/goal` command
 
-### 4) Choose the smallest sufficient route support
-Select route support proportionally:
-- direct `/goal` wording for simple bounded objectives
-- compact non-durable route notes when ordering matters but fits inside the goal-centric surface
-- durable route-only plan file only when route complexity or later execution needs persistence
-- one narrow substantive clarification when objective, scope, or gate is still not bounded enough
+### 4) Route-support and durable `Plan reference` contract
+Choose the smallest route support that safely serves the goal:
+- direct `/goal` wording for a simple bounded objective
+- compact non-durable route notes when ordering matters but still fits the goal-centric surface
+- a durable route-only plan file only when complexity or later execution materially needs persistence
+- one narrow substantive clarification about the work when objective, scope, or gate is not bounded enough
 
-Required guidance:
-- ask about the work itself, not routing labels such as `Subagent-Driven`, `Inline Execution`, `/plan`, or `goal plan file`
-- trivial or already direct goals should stay lightweight and must not be forced into durable plan files
-- do not pull heavy governed-surface context into trivial non-governed next steps
+Ask about the work itself, not routing labels. Do not force trivial goals into durable plan files or pull broad governed context into trivial non-governed work.
 
-### 5) Durable `Plan reference` contract
-Durable route support must be a route-only plan file that already exists in checked scope or was successfully written in the same governed authoring flow.
+A durable `Plan reference` is valid only after the route-only plan file exists in checked scope or was successfully written and verified in the same authoring flow. The copyable artifact starts with `/goal` and places `Plan reference: <exact path>` after it inside the same artifact. Never emit the reference from intention, draft text, or an unwritten file. If creation or verification is blocked, report the blocker instead of emitting a finished plan-backed goal.
 
-Required guidance:
-- never emit `Plan reference` from intention, draft text, or an unwritten file
-- the copied goal artifact must show `/goal` first and `Plan reference: <exact path>` after it inside the same artifact
-- do not place `Plan reference` above the command as a detachable preface
-- the plan file remains route support only and must not become objective authority or completion proof
-- if the plan write/verify step is blocked, report that blocker instead of implying a finished plan-backed goal
+### 5) Internal support remains subordinate
+Internal analysis, route drafting, verification ordering, testing/log triage, and bounded helper lanes may support goal authoring when materially useful. They remain subordinate route support: not a second objective surface, independent authority, or completion proof.
 
-### 6) Internal planning/helper support stays subordinate
-Governed `/goal` authoring may use internal planning or helper support when route complexity materially justifies it.
+When the same authoring flow can write and verify required durable route support, do not ask whether to save it and do not ask the user to invoke `/goal` again.
 
-Allowed support shapes include:
-- analysis support
-- route drafting
-- verification ordering
-- test/log triage
-- `Plan draft`
-- `Verification / testing route`
-- plan basis
+### 6) Authoring stop boundary
+If the current turn is only goal or route-support authoring, stop at the final goal artifact plus subordinate route support. Do not append a default execution-style choice menu or begin execution unless execution is separately selected or clearly implied. Preserve internal routing labels only when workflow behavior itself or exact artifact wording is under discussion.
 
-Required guidance:
-- helper output remains subordinate route support for the goal
-- helper output must not become a second public objective surface
-- helper output must not become completion proof by itself
-- do not ask whether to save a plan when the same authoring flow can write/verify it directly
-- do not ask the user to invoke `/goal` again when no real stop gate exists
+### 7) Candidate, advisory, and selected-goal boundaries
+At a true completion or decision boundary, surface compact candidate goals when several materially different successors remain live. Promote at most one best-supported governed candidate into a copyable advisory `/goal`; other candidates may remain prose goals.
 
-### 7) Authoring stop boundary
-If the current turn is only goal or plan-file authoring, stop at the final goal artifact plus subordinate route support.
+An advisory `/goal` remains unselected execution. If safe direct continuation already dominates, continue instead. Do not reduce approval-sensitive, destructive, or materially divergent work to `/goal`.
 
-Required guidance:
-- do not append default execution-style choice menus after authoring
-- do not auto-open execution-style follow-up unless execution is already selected or clearly implied by stronger checked context
-- preserve exact internal routing labels only when governance/workflow behavior itself is under discussion or exact copied artifact wording materially requires them
+For a selected goal, keep route detail inside the goal-centric surface first. Open `/plan` only when sequence, task/phase breakdown, verification/owner ordering, explicit standalone planning, or route size no longer fits compactly.
 
-### 8) Advisory `/goal` suggestion boundary
-After a true completion boundary, the assistant may promote one bounded governed successor into an advisory `/goal` command instead of leaving it only as prose.
+`/goal` owns outcome, done condition, proof/checks, scope, and hard guardrails. `/plan` owns route, sequence, task breakdown, owner ordering, and overflow route detail. Repair route drift instead of letting `/plan` replace the selected objective. Route, helper, or plan completion never closes the goal while its proof or gate remains open.
 
-Use this only when all conditions hold:
-- one successor objective is singular enough that a single command will not hide a real multi-path decision surface
-- the candidate is already the best-supported successor rather than one of several still-undifferentiated options
-- the completion condition fits within a compact goal artifact
-- proof/check basis can be surfaced in the conversation
-- suggesting `/goal` is more useful than directly continuing the current execution path
+### 8) Language and exact-literal boundary
+Follow the dominant language of the active exchange unless the user explicitly chooses another. Preserve exact literals such as `/goal`, paths, version tags, identifiers, and query parameters; do not translate only the wrapper while leaving the goal body in another language.
 
-Required guidance:
-- keep `/goal` suggestions advisory, not selected execution
-- if safe direct continuation already exists, continue directly rather than pausing only to emit `/goal`
-- if the next step is approval-sensitive, destructive, or materially divergent, do not reduce it to `/goal`
+### 9) Canonical copyable artifact
+When durable route support is present, use this order inside one copied artifact:
 
-### 9) Selected goal overflow and `/plan` boundary
-When a goal is already selected, keep route detail inside the goal-centric surface first.
+```text
+/goal <outcome + transcript-visible proof/checks + bounded scope + keep constraints + optional stop bound>
+Plan reference: <exact route-only plan path>
+```
 
-Open `/plan` only when:
-- route selection no longer fits safely in the selected goal surface
-- sequence or execution order needs a standalone route surface
-- phase/lane breakdown or task breakdown no longer fits compactly
-- verification ordering or owner ordering needs explicit standalone handling
-- the user explicitly asks for standalone planning
-
-Required guidance:
-- do not teach `/plan` as the ordinary paired next surface for every route-heavy goal
-- if compact route notes are enough, keep them inside the selected goal surface
-- if the route in `/plan` drifts from the selected goal, repair the route or revisit the goal basis instead of silently treating `/plan` as new authority
-- completed plan steps do not close the goal while goal proof/gate remains open
-
-### 10) Goal-vs-plan authority split
-Keep these meanings separate:
-- `/goal` owns outcome, done condition, proof/checks, scope, and hard guardrails
-- `/plan` owns route, sequence, task breakdown, owner ordering, and overflow route detail only when needed
-
-Required guidance:
-- do not let route support read like objective ownership
-- do not let plan completion read like goal completion
-- when both surfaces are mentioned together, make it visible whether the status being reported is objective status or route status
-
-### 11) Candidate goals before one promoted `/goal`
-When several meaningful successor directions remain live, surface compact candidate goals first.
-
-Required guidance:
-- preserve the real decision surface instead of collapsing it too early into one path
-- promote only one best-supported governed candidate into a copyable `/goal` artifact
-- other candidate goals may remain prose goals rather than command blocks
-
-### 12) Language and exact-literal boundary
-For goal artifacts and surrounding route-support wording:
-- follow the dominant language of the active exchange by default
-- let explicit user language requests override that default
-- preserve exact literals such as `/goal`, file paths, version tags, identifiers, and query parameters when they should remain exact
-- do not translate only the wrapper while leaving the goal body in another language except for preserved literals
+Wrapper text may surround the artifact, but `Plan reference` must not precede `/goal` or become a detachable preface. Omit it when no verified durable plan file exists.
 
 ---
 
 ## Application Boundary
 
-This rule is the canonical runtime owner for:
-- governed `/goal` authoring
-- route-only plan support
-- `Plan reference` formatting/validity
-- internal planning support inside governed goal authoring
-- selected-goal overflow handling into `/plan`
-- advisory `/goal` promotion conditions
+This rule is the sole semantic owner for governed `/goal` construction, route-support selection, durable plan-file lifecycle and `Plan reference`, internal authoring support, authoring stop, advisory promotion, selected-goal `/plan` overflow, goal-versus-route authority, and goal-artifact language/exact-literal rules.
 
-It does **not** replace:
-- phase/TODO/live-task doctrine (`phase-todo-artifact.md`)
-- discussion vs execution / continue vs stop / next-goal decision boundaries (`execution-and-goal-frame.md`)
-- evidence-strength wording (`accurate-communication.md`)
-- closing/presentation behavior (`explanation-and-presentation.md`)
+Satellite rules retain only local mode-transition, task-materialization, topology, evidence-wording, tone, or rendering responsibilities. It does **not** replace phase/TODO task doctrine, execution continue/stop decisions, evidence wording, or presentation layout.
 
 ---
 

@@ -1,7 +1,7 @@
 # Explanation and Presentation
-> **Current Version:** 1.20
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.19
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.21
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.21
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
 
@@ -197,18 +197,6 @@ Use compact patterns only when they improve understanding.
 - **Optional deep dive:** one short offer naming the specific expandable topic
 - **Easy explanation:** human-meaning-first headings and technical labels second when the user asks for simpler wording
 
-### 7) Preferred output shapes
-- **Compact direct:** one or two short paragraphs, with a short list only if it improves scanability
-- **Structured analytical:** short plain-language summary, optional small table when several axes matter, meaningful grouped sections, and concise decision-ready synthesis or next action
-- **Comparison:** brief framing, light table when it makes competing dimensions visible faster, `Recommended` plus one short reason, and a real alternative when paths remain live
-- **Diagnostic snapshot:** orienting line plus checked facts, current state, implication, and next action
-- **Visible intent read:** one short framing line, then the answer or next action
-- **Selective clarification:** one compact question that shows why the distinction matters
-- **Root-cause walkthrough:** intent read if needed, then symptom / evidence / likely cause so far / next-best check
-- **Scope-boundary:** clear current/deferred and is/is-not grouping
-- **Goal-aware or roadmap-aware:** use `Goal`, `Output`, and `Gate` only when they improve orientation, verification, or closeout
-- **Proposal / optional deep dive:** keep future work advisory and deeper explanation optional rather than automatic
-
 ---
 
 ## Part C — Response Closing and Action Framing
@@ -270,103 +258,17 @@ When the main answer is intentionally easy-first and compact but deeper explanat
 - omit it when the answer is trivial, already detailed enough, or active execution should simply continue
 - keep it short so it does not dilute the main answer
 
-### 8.1) Candidate-goal and advisory `/goal` suggestion shape
-When checked next-goal doctrine says a compact goal-oriented next-step surface would help more than plain prose alone, the assistant may emit candidate goals and may promote one governed candidate into an advisory `/goal` block whose visible wrapper wording also follows the dominant session language.
+### 8.1) Goal rendering
+When `execution-and-goal-frame.md` selects a goal-oriented surface, render several live directions as compact candidate goals (`Goal`, `Output`, `Gate`) and promote at most one best-supported candidate into a copyable advisory `/goal`. Keep it visibly unselected, compact, and aligned to the exchange language while preserving exact literals.
 
-Required guidance:
-- if several successor directions remain live, present them first as compact candidate goals rather than as a plain choice list
-- promote only the best-supported governed candidate into one advisory `/goal` block; other candidates may stay prose goals
-- keep candidate-goal wording, promoted `/goal`, wrapper labels, recap/closing lines, and the natural-language scaffold around preserved exact literals aligned to the dominant language of the active exchange unless the user explicitly selects another language
-- infer that default language from the user's main working language across the current exchange even when no direct language instruction was given; an explicit language request is a stronger override
-- keep the promoted command compact and copy-pasteable
-- build promoted `/goal` output from one measurable outcome, transcript-visible proof/checks, bounded scope, hard guardrails, and an optional stop bound
-- preserve exact literals such as `/goal`, file paths, version tags, code-level identifiers, and query parameters when they should remain exact
-- do not translate only the wrapper label while leaving the promoted `/goal` or recommendation body in another language except for preserved exact literals
-- if the next step is trivial or non-governed, prefer ordinary next-step wording or a very light goal-shaped recommendation rather than governed-surface framing
-- if governed-surface context is required, include only the surfaced design/execution/current-state details that materially define completion, proof, scope, or review
-- for plain goal requests that `execution-and-goal-frame.md` classifies as governed and in need of route support, provide the smallest sufficient route support automatically when checked context is enough; do not ask the user to choose or learn a `goal plan file` concept
-- if integrated planning support shaped the promoted `/goal` and a durable route plan materially guides execution, the visible copied goal artifact must carry `Plan reference` inside that same artifact rather than leaving it only in surrounding prose or adjacent support, and the assistant should emit that final artifact only after the route-only plan file has actually been written
-- if a durable `Plan reference` is shown inside the copied artifact, the artifact must start with the `/goal` command first and place `Plan reference:` after that command inside the same copied artifact; the reference must not appear as a detachable preface above the command
-- if integrated planning support shaped the promoted `/goal`, the visible surface may include compact non-durable route context such as `Plan draft`, `Verification / testing route`, or `Plan basis`; reserve the exact `Plan reference:` line for the durable plan-file pointer only, and keep adjacent route context subordinate so it does not become a second objective surface or completion proof
-- do not present `Do you want me to save the plan?` or `run /goal again after I save it` when no real blocker exists; if the plan write is blocked, present the blocker instead of a final plan-backed goal
-- if bounded internal helper use shaped the answer, keep any helper block compact enough that it supports the goal without inflating `/goal` into a mini-spec or reading like a neighboring `/plan` block
-- do not turn it into a mini-spec dump or background essay
-- do not emit several competing `/goal` commands when the real decision surface is still open
-- if the command would be too broad, too long, or too weakly provable, fall back to candidate goals or ordinary recommendation wording instead
+Goal construction and route eligibility defer to `goal-authoring-and-route-support.md`. When that owner supplies verified durable route support, render one copied artifact in this order:
 
-### 8.2) Goal-centered planning explanation shape
-When `/goal` and planning both matter, keep the explanation explicit about which layer is being discussed.
-- present `/goal` as the objective layer: outcome, proof/checks, scope, and hard guardrails
-- present planning as route support for that same goal rather than as a second equal surface
-- user-facing explanation should say what route support is being used or what action is being taken, not present `Subagent-Driven` versus `Inline Execution` as a default menu
-- if the current turn is only governed goal or plan-file authoring, end at the emitted goal artifact plus subordinate route support instead of appending an execution-style choice menu
-- if route-choice context is insufficient, ask one narrow substantive clarification about the goal, scope, artifact, gate, access, or approval; do not ask the user to choose an internal routing label
-- preserve exact routing labels only when governance/workflow behavior itself is under discussion or exact copied artifact wording materially requires them
-- if internal planning shaped the advisory `/goal` before emission, explain that the planning prepared the route basis but did not replace `/goal` as the objective layer
-- when route context is shown with the goal, keep it inside the same copied goal artifact for any durable `Plan reference`, and allow adjacent support only for non-durable route notes so plan bullets do not read like a sibling branch
-- if a durable plan file is referenced from the goal surface, the copied artifact should show `/goal` first and then `Plan reference:` after it inside that same artifact rather than presenting the reference as a heading or preface above the command
-- if the route is still non-trivial enough to exceed the integrated goal-centric surface, explain that `/plan` is the overflow or explicitly requested route surface for the selected goal rather than the ordinary paired next step
-- if a durable plan file is referenced from the goal surface, use the exact `Plan reference:` line inside the same copyable goal artifact; reserve other route-context labels for non-durable adjacent support only, never as objective ownership or completion proof
-- if bounded internal helper use is supporting the current turn, explain any visible `Plan draft`, `Plan basis`, or `Verification / testing route` as subordinate support for the selected goal rather than as a replacement route surface
-- if a plan is finished but the goal gate is still unchecked, say so explicitly and keep closeout anchored to the goal state rather than the route state alone
-
-### 9) Preferred closing shapes
 ```text
-Phase-backed closeout:
-What this phase delivered: <plain-language delivery>
-Feature / Improvement: <feature, capability, behavior, or governance improvement>
-Impact: <user/system impact>
-Verification: <checked evidence; avoid stronger wording than verified>
-Next phase state: <not started | draft/planned | selected | active | blocked | none opened>
-
-Roadmap-aware completion:
-<recommended-next label in dominant session language>: <phase/wave/goal name>
-<why-this-next label in dominant session language>: <one evidence-backed reason>
-<goal label in dominant session language>: <what the next phase, wave, or goal should achieve>
-<output label in dominant session language>: <expected artifact, feature, behavior, decision, or verified state>
-<gate label in dominant session language>: <what must be true before execution or closeout>
-
-Recommendation:
-<recommended-path label in dominant session language>: <path>
-<why-this-first label in dominant session language>: <one short reason>
-<other-options label in dominant session language>: <real alternative when the choice still exists>
-
-Goal-to-plan handoff:
-<selected-goal label in dominant session language>: <goal already chosen>
-<why-plan-now label in dominant session language>: <why the remaining route is still materially non-trivial>
-<plan-should-cover label in dominant session language>: <sequence, task breakdown, verification order, or equivalent route detail>
-<recommended-next label in dominant session language>: `/plan`
-
-Goal-assisted internal helper output:
-<selected-goal label in dominant session language>: <goal already chosen>
-<why-helper-now label in dominant session language>: <why bounded analysis / verification / testing / compact route drafting is still useful>
-<plan-draft label in dominant session language>: <bounded route draft that stays subordinate to the goal>
-<verification-testing-route label in dominant session language>: <checks or triage path that still need leader-owned proof wording>
-
-Candidate goals:
-<goal-option label 1 in dominant session language>: <target outcome>
-<output label in dominant session language>: <expected result>
-<gate label in dominant session language>: <smallest useful success clue>
-<goal-option label 2 in dominant session language>: <target outcome>
-<output label in dominant session language>: <expected result>
-<gate label in dominant session language>: <smallest useful success clue>
-
-Advisory proposal:
-<proposal label in dominant session language>: <future work>
-<goal label in dominant session language>: <target outcome>
-<output label in dominant session language>: <expected result>
-<success-condition label in dominant session language>: <how done is judged>
-
-Advisory `/goal` block:
-<label in dominant session language if a wrapper is shown, or omit the wrapper entirely>
-<same copied goal artifact starts here>
-/goal <dominant-session-language wording for outcome + proof/checks + scope + keep constraints + stop bound, preserving exact literals where they should remain exact>
-Plan reference: <exact route-only plan file path; only when a durable route artifact materially helps and the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow>
-<same copied goal artifact ends here>
-
-Optional deep dive:
-ถ้าต้องการ ผมสามารถอธิบายละเอียดเพิ่มเรื่อง <specific topic> ต่อได้.
+/goal <outcome + proof/checks + scope + guardrails + optional stop bound>
+Plan reference: <exact route-only plan path>
 ```
+
+Do not place the reference above `/goal`, render it for an unwritten/unverified file, or let adjacent route/helper text look like a second objective or completion proof.
 
 ---
 
@@ -398,45 +300,6 @@ A diagram should clarify sequence, branching, dependency, or handoff. It should 
 - keep each node label concise
 - avoid repeating the same relationship already clear in nearby prose
 - do not use visual complexity to compensate for unclear explanation
-
-### 4) Canonical patterns
-Step chain:
-```text
-User submits request
-  → Validate input
-  → Check authorization
-  → Execute allowed action
-  → Report result and verification limit
-```
-
-Vertical flow:
-```text
-Startup
-  ↓
-Load config
-  ↓
-Validate dependencies
-  ↓
-Start service
-```
-
-Decision flow:
-```text
-Request received
-  ↓
-Authorized?
-  → YES: continue in scoped mode
-  → NO: ask for context or refuse with path
-```
-
-Hierarchy:
-```text
-RULES/
-  design/
-  changelog/
-  phase/
-  patch/
-```
 
 ---
 
@@ -486,14 +349,8 @@ Avoid:
 ---
 
 ## Integration
-
-Related rules:
-- [accurate-communication.md](accurate-communication.md) - evidence wording, human-language glosses, and continuation-vs-option policy
-- [accurate-communication.md](accurate-communication.md) - exact/partial/inferred snapshot wording
-- [execution-and-goal-frame.md](execution-and-goal-frame.md) - goal hierarchy and next-goal recommendation boundaries
-- [execution-and-goal-frame.md](execution-and-goal-frame.md) - continue-vs-stop behavior and completion-to-roadmap bridge
-- [authority-and-scope.md](authority-and-scope.md) - user authority and advisory-option boundaries
-- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) - memory applicability and recheck posture
-- [document-integrity.md](document-integrity.md) - label and reference consistency
-- [evidence-discipline.md](evidence-discipline.md) - technical claims must remain verified
-- [communication-register.md](communication-register.md) - recommendations stay evidence-based
+Related owners:
+- [accurate-communication.md](accurate-communication.md) and [evidence-discipline.md](evidence-discipline.md) — wording and proof state
+- [execution-and-goal-frame.md](execution-and-goal-frame.md) and [authority-and-scope.md](authority-and-scope.md) — continuation, goals, and user authority
+- [communication-register.md](communication-register.md) — recommendation posture
+- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) and [document-integrity.md](document-integrity.md) — recalled context and reference consistency

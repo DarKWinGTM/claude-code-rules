@@ -1,7 +1,7 @@
 # Document Governance
-> **Current Version:** 1.15
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.15
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.16
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.16
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
 
@@ -94,69 +94,19 @@ When work touches several governed surfaces, classify the work shape before deep
 - `worker-routing-and-context.md` owns whether a lane becomes a worker and `safe-io.md` owns bounded file/command absorption during multi-surface review
 - do not force lane decomposition or delegation for tiny local sync or one-surface metadata fixes
 
-### 5.2) Governed design/changelog chain-shape classification
-Before appending new target-state or version-detail content into a governed design/changelog parent, classify the active chain naming basis and chain shape first.
+### 5.2) Governed chain model
+Before appending, splitting, or normalizing a design/changelog chain, resolve:
+- namespace: one folder-scoped chain or a shared multi-chain folder
+- subject and active parent: a generic parent is valid for one folder-scoped chain; shared folders use a self-identifying semantic parent derived from the actual subject
+- authority: exactly one active parent model; any coexisting parent is explicitly compatibility-only or inactive
+- shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
+- transition basis: bootstrap exit trigger, shard-opening basis, append-vs-shard reason, and parent-index update need
 
-Named shapes:
-- `single-file-bootstrap`
-- `flat-sibling-shards`
-- `same-stem-subfolder-normalized`
-- `archive-history-fallback`
+Keep bootstrap while the parent is compact and coherent. Flat siblings fit a folder that already scopes one chain and only a few coherent slices; the parent declares the shape and shard map. Same-stem normalization is preferred for broad, multi-shard, root-heavy, or God-file-prone chains only after a checked opening basis. Archive/history fallback is inactive and never the ordinary active-detail namespace. Do not infer a nested directory from the parent filename alone.
 
-Required guidance:
-- first decide whether the current folder is the full namespace for one chain or a shared folder that contains several chains
-- if the current folder fully scopes one chain, a generic parent such as `design/design.md` or `changelog/changelog.md` is valid
-- if the current folder contains several chains, use a subject-derived semantic parent filename so the chain stays self-identifying inside that shared folder
-- placeholder examples are illustrative only; they must not be copied forward as mandatory literal active filenames unless the checked chain subject actually matches the example
-- one chain must keep exactly one active parent model: generic parent or semantic parent, never both at the same time
-- use `single-file-bootstrap` only while the parent remains compact, coherent, and not yet detail-heavy enough to justify active shards
-- if a chain still has one compact design body and no checked `bootstrap_exit_trigger`, keep it bootstrap-first instead of opening a same-stem shard directory early
-- `flat-sibling-shards` is allowed when the current folder already acts as the chain namespace and only a few coherent slices are needed; the compact parent stays the authority gateway and names the active shard map
-- `same-stem-subfolder-normalized` remains the strong-preferred form for broad, root-heavy, multi-shard, or God-file-prone chains once checked `shard_opening_basis` justifies the split
-- `archive-history-fallback` remains inactive by default and must not become the ordinary active detail namespace by momentum
-- do not create a same-stem nested shard directory merely because a parent named `design.md` or `changelog.md` exists; first check whether the current folder already scopes the chain and whether a real shard-opening basis exists
-- when a parent has active shards, it should expose the selected chain shape, shard map, append-vs-shard posture, and the checked reason why the chain no longer stays bootstrap-only
+The parent remains the bodyful authority gateway and names the active shape/map. Child/detail shards remain reachable, coherent, back-linked, and non-duplicative. Before appending, classify the detail as current state, history, verification, risk, or next work; plan repair instead when destination or authority is ambiguous.
 
-### 5.2.1) Append-vs-restructure-and-shard gate
-Before appending to an active governed design/changelog parent, decide whether the detail still belongs in the parent or whether it should trigger restructuring, a new sibling/child shard, or a history/done reference instead.
-
-Required guidance:
-- classify whether the new detail is current state, history, verification, risk, or next work
-- do not append silently when the target line already mixes several responsibilities or would create a very large diff for a small logical change
-- when the target is a compact governed design/changelog parent, resolve namespace scope, actual chain subject, parent model choice, active-versus-compatibility coexistence, current chain shape, and shard-opening basis before adding more detail
-- if the folder already fully scopes one chain, generic parents such as `design/design.md` or `changelog/changelog.md` may remain active bootstrap parents until checked triggers justify broader structure
-- if the folder is shared by several chains, prefer a self-identifying semantic parent
-- keep older completed-history wording historical only when chronology conflicts; active runtime/design doctrine still controls current interpretation unless an active surface selects otherwise
-- flag or plan the repair instead of appending when the split or destination remains broad, meaning-risky, or authority-ambiguous
-
-### 5.3) Observed project shape versus extracted doctrine versus selected target form
-When a checked project, subsystem, repo, or prior governed chain is used to justify a documentation shape, keep three meanings separate:
-- `observed project shape` = the structure actually verified in the checked example
-- `extracted doctrine` = the reusable governance principle inferred from that observed shape
-- `selected target form` = the normalized structure intentionally chosen for the current governed chain
-
-Keep owner and naming decisions separate from those three meanings when they materially affect structure:
-- `actual chain subject` = the real topic/capsule/component the current chain is about
-- `selected parent filename` = the active filename chosen for this chain, whether generic or semantic
-- `parent model choice` = whether the chain uses a generic parent or a semantic parent
-- `single-parent authority basis` = why that one active parent model is the correct choice for this chain
-
-Required guidance:
-- do not describe an extracted doctrine as the literal observed project pattern unless checked evidence confirms that equivalence
-- a checked example may ground a recommendation without proving that the current selected target form is the only valid design
-- if the checked example and the selected target form differ, say both explicitly and name why the target form is still being selected
-- keep the selected parent filename aligned to namespace scope and the actual chain subject instead of to a placeholder example name, unless the checked subject really matches that name
-- if a folder already fully scopes one chain, a generic parent may be the selected active owner; if the folder is shared, a semantic parent is usually the clearer choice
-- if both a generic parent and a semantic parent exist for one chain, only one may remain active authority; the other must be explicitly compatibility-only or inactive
-- if reachable completed phase, patch, or changelog detail preserves an older released doctrine, active runtime/design doctrine plus the latest released baseline still control current interpretation; older history remains provenance unless an active surface selects it as current authority
-- chain-shape selection for the current repo is governed by checked current need plus active doctrine, not by loose analogy to an example project
-- if equivalence between the observed example and the selected target form is not checked, avoid wording such as `project-style`, `the project uses this exact form`, or equivalent claim-collapsing phrasing
-
-Preferred wording:
-- `In the checked file/output, the observed project shape is ...`
-- `The extracted doctrine is ...`
-- `For this RULES chain, the selected target form is ...`
-- `The checked evidence grounds this recommendation, but it does not prove this is the only valid design.`
+When an example informs the decision, keep `observed project shape`, `extracted doctrine`, and `selected target form` distinct. Placeholder names remain examples, and exact equivalence must not be claimed without checked proof.
 
 ### 5.4) Governed diagram lane
 For RULES, use a dedicated `diagram/` lane as required governed-docs infrastructure instead of forcing diagrams into `design/**` shards or plugin-owned preview surfaces.
@@ -177,14 +127,7 @@ Required guidance:
 - if the diagram family later needs rollover, `diagram/history/` preserves prior active state and `diagram/done/` preserves completed detail; these surfaces remain preservation infrastructure rather than cleanup authority
 
 ### 6) Public onboarding and install portability
-README/onboarding/install docs stay portable by default.
-- prefer repo-root-relative source guidance for cloneable/self-contained repos
-- do not present workstation absolute paths or internal umbrella roots as public defaults
-- distinguish source-side notation from destination/runtime notation
-- use placeholders or contract labels for destination/runtime paths
-- when naming runtime install scope, identify the current source-owned active runtime rule set rather than the whole shared destination directory
-- exact local paths may appear only as checked local facts, local examples, or machine-scoped contracts
-- if an exact local value must appear for debugging or audit, label it as local-only and do not let it become the reusable default
+README/onboarding/install artifacts apply the canonical binding and notation contract in `portable-implementation-and-hardcoding-control.md`. This document owner additionally keeps public install scope limited to the current source-owned active runtime set rather than every file in a shared destination.
 
 ---
 
@@ -201,25 +144,7 @@ Governed design documents define the current implementation-relevant target-stat
 `design/` remains active blueprint authority and has no default `design/done` surface. Active target truth stays in current design files until superseded or removed from target state.
 
 ### 3) Governed design sharding
-Large active design documents may use:
-- compact parent index at `design/<slug>.design.md`
-- governed child shards under `design/<slug>/*.design.md`
-- flat sibling child shards beside a compact parent when the current folder already acts as the chain namespace and a same-stem nested folder would be redundant too early
-
-Required guidance:
-- if the current folder fully scopes one chain, `design/design.md` may be the active parent index and authority gateway
-- if the current folder is shared by several chains, use `design/<slug>.design.md` so the chain stays self-identifying in that shared folder
-- broad or God-file-prone active design chains should strongly prefer a same-stem normalized path pair once checked shard-opening basis justifies that split
-- if the chain still has one compact design body, keep the chosen active parent as `single-file-bootstrap` until a checked `bootstrap_exit_trigger` justifies shards
-- flat sibling child shards are allowed only when the current folder already scopes the chain; the compact parent must declare that mode and name the active shard map
-- the parent file remains the active design index and authority gateway, not a placeholder or link-only router
-- generic and semantic active parents must not compete as steady-state owners for the same chain
-- child shards remain active target-state truth by default, not inactive history or changelog substitutes
-- the parent index should preserve purpose, authority, current target-state summary, shard map, selected chain shape, and enough context to choose relevant shards without broad raw absorption
-- each child shard should identify parent scope, own one coherent target-state slice, and avoid duplicating/conflicting with sibling authority
-- child shards should carry parent backlink plus version/session and stable section/provenance fields when practical
-- broad shard audits should use shard maps, targeted reads, and worker filtering when context-heavy
-- retiring or superseding shard content requires governed design/changelog alignment rather than quiet removal or reclassification
+Apply the governed-chain model in Part A. A design parent remains a bodyful target-state authority gateway; child shards own coherent active target-state slices, identify parent scope, remain reachable through the parent map, and do not become history by default. Retiring or superseding a shard requires governed design/changelog alignment, not quiet removal or reclassification.
 
 ### 4) External-doc-derived knowledge capture
 When external docs, API specs, or provider references materially constrain implementation, normalize the extracted implementation truth into governed design before or alongside continued multi-step work that depends on it.
@@ -263,30 +188,10 @@ It owns:
 
 Runtime, design, phase, patch, and TODO sync align to the parent changelog version state when applicable. Changelog records shipped/synchronized history and version authority; it should not become phase-definition storage, duplicate active design target-state truth, or serve as README current-state content.
 
-### 2) Chain-scoped version detail shards
-Large governed chains may split detailed version sections into chain-scoped version detail shards under `changelog/<chain>/vX.YY-short-topic.changelog.md`.
+### 2) Version-detail sharding and fallback history
+Apply the governed-chain model in Part A. The active changelog parent owns current version, index, map, and navigation. Each version detail has one active owner, uses a self-identifying version/topic filename when sharded, and keeps resolvable parent/back links. Preserve exact historical content during migration unless an explicit governed rewrite is selected.
 
-Required guidance:
-- if the current folder fully scopes one chain, `changelog/changelog.md` may be the active parent authority, index, shard map, and navigation surface
-- if the current folder is shared by several chains, use `changelog/<chain>.changelog.md` so the chain stays self-identifying in that shared folder
-- broad or God-file-prone active changelog chains should strongly prefer a same-stem normalized path pair once checked shard-opening basis justifies that split
-- if the chain still has one compact changelog body, keep the chosen active parent as `single-file-bootstrap` until a checked `bootstrap_exit_trigger` or version-detail pressure justifies shards
-- flat sibling version-detail shards are allowed when the current folder already scopes the chain and only a small number of coherent version-detail files is needed; the compact parent must declare that mode and name the active shard map
-- generic and semantic active parents must not compete as steady-state owners for the same chain
-- place same-chain detailed entries in `changelog/<chain>/vX.YY-short-topic.changelog.md` when sharding is needed, or in flat sibling version files beside the parent when flat sibling mode is explicitly selected
-- use self-identifying shard filenames that include version and short topic
-- keep parent-to-shard and shard-to-parent links resolvable
-- version shards should carry parent backlink plus parent-document/reference metadata and stable provenance fields when practical
-- keep one version-detail entry in one active shard or in the parent, not duplicated as competing authority
-- preserve exact historical content during migration unless an explicit governed rewrite is selected
-- do not create a God directory where the parent no longer tells readers which shard owns which version detail
-
-### 3) `changelog/done/` boundary
-`changelog/done/` remains allowed for legacy, archive, completed-history, or explicit fallback cases where chain-scoped version shards are not the right shape.
-- it is inactive by default
-- it is used only for history, audit, rollback, provenance, or trace reconstruction
-- it is never deletion authority or junk classification
-- it is not the default ordinary same-chain detail-shard namespace
+`changelog/done/` is inactive legacy/archive/completed/fallback history for audit, rollback, provenance, or trace reconstruction. It is not the ordinary same-chain detail namespace, junk classification, or deletion authority.
 
 ### 4) Changelog vs daily movement boundary
 Daily-first rollover for `TODO.md` and `phase/SUMMARY.md` stays with their dedicated owners. Changelog history remains version authority and should not absorb ordinary TODO/phase daily movement by default.
@@ -440,82 +345,15 @@ Required guidance:
 - a root runtime file with only title/version/design/session metadata cannot satisfy active rule-install claims
 - body sufficiency should be checked before claiming no-drift, runtime parity, release readiness, or active rule install success
 
-### 5) Validation model
-For each README-listed active runtime file:
-```text
-Active runtime file listed
-  ↓
-File exists at source root?
-  → NO: install set invalid
-  → YES: continue
-  ↓
-Canonical metadata includes Current Version, Design, Session, Full history?
-  → NO: metadata invalid
-  → YES: continue
-  ↓
-Substantive runtime body exists after metadata?
-  → NO: metadata-only stub; runtime install invalid
-  → YES: continue
-  ↓
-Runtime/design/changelog versions align?
-  → NO: chain sync invalid
-  → YES: eligible for runtime parity/install claim
-```
-
-### 6) UDVC anti-patterns
-Avoid:
-- active runtime root files that only point to design
-- treating design bodies as installed runtime behavior
-- changelog entries that say runtime updated while the root runtime body is empty
-- parity checks that compare hashes but ignore semantic body sufficiency
-- mixed `Based on` and `Design` labels in active root metadata
-- README install scope drifting into design/changelog/TODO/phase/patch surfaces
+### 5) Runtime validation gate
+A README-listed active runtime file is eligible for parity/install claims only when it exists at source root, carries `Current Version`, `Design`, `Session`, and `Full history`, has a substantive runtime body, and aligns runtime/design/changelog versions. Missing files/metadata, metadata-only roots, hash-only checks, mixed `Based on`/`Design`, or install scope widened into governed/support surfaces invalidate the claim.
 
 ---
 
 ## Cross-Document Alignment and God-File Prevention
+Keep applicable versions, canonical metadata and real session IDs, history/parent/map/back links, runtime body sufficiency, source-owned install scope, phase/patch boundaries, owner-aligned sync lanes, and portable source/destination wording aligned. Shared runtime co-location does not grant ownership; classify, manage, or delete another owner's file only after owner/project scope is verified.
 
-### 1) Cross-document alignment
-Keep these aligned across the governed chain when applicable:
-- versions
-- metadata
-- full-history links
-- parent links
-- active parent changelog shard maps and version-detail shard back-links
-- active session IDs
-- source/runtime parity and body sufficiency
-- phase-vs-patch boundaries
-- broad governance/release-sync lanes staying inside their owner surfaces or tightly coupled sync slices
-- source/destination wording in public onboarding
-- runtime install scope limits to current source-owned active rule files
-
-### 2) Active metadata must be real
-Active governed artifacts must use real session identifiers. Placeholder markers are not valid in active metadata.
-
-### 3) Runtime destination scope boundary
-Shared runtime destinations may contain other project/plugin-owned runtime files. Current repo docs must not classify, manage, or delete them unless owner/project scope is selected or verified. Runtime co-location is an observation, not ownership authority.
-
-### 4) Governed document God-file prevention
-A God file appears when one active document becomes owner for several roles at once.
-Common overload roles include target-state design, release history, execution tracking, verification proof, rollback detail, roadmap, and operational notes.
-
-Required repair posture:
-- identify the document's primary role before appending content
-- move or link content to the owning surface when it belongs elsewhere
-- shard active design truth when design scope is genuinely large
-- shard bulky same-chain changelog version detail under `changelog/<chain>/v*.changelog.md` while preserving parent authority
-- roll accumulated daily movement or completed detail into allowed history/done surfaces
-- split phase and patch files when their goals/outputs/gates/rollback/review boundaries diverge
-- keep README current-state focused and delegate history to governed owner chains
-- preserve history and owner scope; God-file repair is not deletion authority
-
-### 5) Automatic God-artifact planning
-A detected God artifact must have an owner outcome before governed work can be called synchronized.
-- repair clear touched-scope overload in the owning document when safe
-- route broader repair to design sharding, changelog version-detail sharding, changelog/done fallback history, TODO history/done, phase split, patch split, or README current-state reduction
-- create or extend a visible repair slice when the repair is real but not safe to complete immediately
-- keep planned repair compact and owner-specific instead of turning another surface into a God file
-- block closeout when touched-scope God pressure has no repaired, planned, deferred, or blocked owner state
+When an active document mixes target state, history, execution, verification, rollback, roadmap, or operations, keep its primary role and route detail to the owning design shard, changelog shard/fallback, TODO/phase history, phase/patch split, or README current-state surface. Preserve history; overload repair is not deletion authority. Touched God pressure must be repaired or visibly planned, deferred, or blocked before sync/closeout.
 
 ---
 
@@ -531,37 +369,19 @@ A detected God artifact must have an owner outcome before governed work can be c
 | before/after review need | use patch outside live phase planning |
 | README release sync | update current-state sections, not long version timelines |
 | metadata-only runtime root | treat as invalid active runtime install state |
-| public onboarding/install docs | keep source-side and destination/runtime guidance distinct and portable |
+| public onboarding/install docs | apply the portability owner while preserving source-owned runtime install scope |
 | touched governed doc with mixed roles | repair clear overload now or create an explicit owner-specific repair slice |
 
 ---
 
 ## Anti-Patterns
-
-Avoid:
-- using README as a changelog timeline dump
-- using design as completed-history storage or default `design/done`
-- using changelog as phase planner or TODO tracker
-- using patch as a live phase workspace
-- treating `changelog/done/` as ordinary same-chain shard storage by default
-- active runtime roots that are metadata-only stubs
-- broad governance/release-sync sweeps with no work-shape classification
-- one generic `sync everything` lane that blurs design/changelog/TODO/phase/patch ownership
-- forcing delegation or broad multi-surface lane decomposition for a tiny one-surface fix
-- letting runtime install scope drift into design/changelog/TODO/phase/patch/helper surfaces
-- mixing source-side and destination/runtime wording in public install guidance
-- treating completed/inactive surfaces as junk or deletion authority
-- quiet file removal or authority reclassification when the correct response is sharding, rollover, split, or explicit history movement
+Avoid README/design/changelog/phase/patch role collapse; `changelog/done/` as ordinary active detail; metadata-only runtime roots; unclassified `sync everything` sweeps; unnecessary broad lanes for tiny fixes; runtime install scope widened into governed/support files; public guidance that violates the portability owner; completed/inactive content treated as junk; or quiet removal/reclassification instead of governed sharding, rollover, split, or history movement.
 
 ---
 
 ## Integration
-
-Related rules:
-- [document-integrity.md](document-integrity.md) - cross-reference consistency, rollover/hygiene boundaries, and no-drift checks
-- [phase-todo-artifact.md](phase-todo-artifact.md) - startup artifact posture, live phase semantics, TODO/live-task doctrine
-- [accurate-communication.md](accurate-communication.md) - evidence-strength wording for sync/parity/readiness claims
-- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - portable shared-artifact defaults and public onboarding portability
-- [worker-routing-and-context.md](worker-routing-and-context.md) - worker scale and lane routing for broad governance/release-sync work
-- [safe-io.md](safe-io.md) - bounded file reading and parent-index/shard-first reading behavior
-- [coding-discipline.md](coding-discipline.md) - coding verification depth when phase/changelog/closeout claims depend on tested behavior
+Related owners:
+- [document-integrity.md](document-integrity.md) / [phase-todo-artifact.md](phase-todo-artifact.md) — references, rollover, startup, phase/TODO
+- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) — binding and public onboarding notation
+- [worker-routing-and-context.md](worker-routing-and-context.md) / [safe-io.md](safe-io.md) — broad governance lanes and bounded reads
+- [accurate-communication.md](accurate-communication.md) / [coding-discipline.md](coding-discipline.md) — claim strength and coding verification

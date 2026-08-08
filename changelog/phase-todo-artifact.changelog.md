@@ -1,8 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Current Version:** 1.30
-> **Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
-
+> **Current Version:** 1.31
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
 
@@ -10,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.31 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.30 | 2026-06-13 | **[Extracted governed `/goal` authoring out of phase/TODO execution surfaces](#version-130)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 1.29 | 2026-06-11 | **[Added P143 live progress-snapshot shaping refinement](#version-129)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.28 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary and execution-surface gating refinement](#version-128)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -45,6 +45,20 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-131"></a>
+## Version 1.31: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `phase-todo-artifact.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 
 <a id="version-129"></a>

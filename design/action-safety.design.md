@@ -1,8 +1,8 @@
 # Design - Action Safety
 
 > **Parent Rule:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.0
-> **Session:** 6ecc64cf-8eed-497a-9b84-02f5d5228ee3
+> **Current Version:** 1.1
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/action-safety.changelog.md](../changelog/action-safety.changelog.md)
 
 ---
@@ -34,7 +34,7 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the compact 18-rule set is selected.
+Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
 Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
 

@@ -1,15 +1,14 @@
 # Changelog - Worker Routing and Context Control
 
-> **Current Version:** 1.14
-> **Current Version:** 1.13
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
+> **Current Version:** 1.15
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-115)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.14 | 2026-06-05 | **[Added P139 route-support auto-resolution and internal routing-label refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution routing refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.12 | 2026-05-30 | **[Added P125 integrated goal-planning helper-lane refinement](#version-112)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -30,6 +29,20 @@
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-115"></a>
+## Version 1.15: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `worker-routing-and-context.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 
 <a id="version-114"></a>

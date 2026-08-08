@@ -1,8 +1,8 @@
 # Safe I/O (File Reading + Terminal Output)
 
-> **Current Version:** 1.5
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.5
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Current Version:** 1.6
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.6
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
 ---
@@ -33,210 +33,53 @@ File reading should not flood the session.
 - logs, maps, SVG, HTML, unknown JSON, base64-like files: targeted search or small preview
 - if output exceeds tool limits, switch to narrower offsets/searches rather than rereading the whole file
 
-### 3) Evaluate before broad reading and the delegate-first aggregate-read burst gate
+### 3) Aggregate read/output burst detection
+Before broad absorption, define the question, likely authority surface, and whether the leader needs raw content or a filtered result. Read or search only the smallest scope needed.
 
-Before broad file absorption or a multi-file governance/code read burst, identify the read's purpose and whether the leader needs raw content.
+A burst is worker-fit when one decisive high-risk signal or two moderate signals are present, including repo-wide search plus follow-up reads, several authority surfaces for one claim, parent plus multiple shards, mixed code/docs/command output, dense active documents, noisy logs/tests/builds, or repeated offset/reread churn after compact.
 
-- read only the sections needed for the active claim or edit
-- search first when looking for a symbol, config key, version, heading, or reference
-- use worker-first filtering by default for broad governance/code scans, broad multi-file searches, context-heavy sweeps, or aggregate read plans crossing several authority surfaces
-- dispatch the worker before the leader absorbs raw broad content
-- worker findings must include conflicts, exact anchors, and leader verification needs
-- direct leader reads allowed for narrow known files, exact line ranges, final verification anchors, tightly sequential interactive-control work, unavailable worker tooling, or a stated narrow exception
-- do not treat a small excerpt as proof about the entire file unless checked scope is sufficient
+When the gate fires, narrow the I/O or invoke `worker-routing-and-context.md` before further raw leader absorption. Do not continue with "one more" broad read. Direct handling remains allowed for narrow known files, exact edit/verification ranges, final anchor checks, tightly sequential interactive work, unavailable worker tooling, explicit user direction, or a stated narrow exception. A bounded excerpt supports only its checked scope.
 
-Delegate-first aggregate-read burst signals include repo-wide search followed by several file opens, parent index plus multiple child shards or version details, mixed docs+code+command output, repeated offset hopping after compact, or dense markdown across several active docs.
+Safe I/O owns burst detection and bounded capture. Worker Routing owns topology, dispatch, lane contracts, and handoff quality.
 
-Burst rule:
-- one decisive high-risk signal or two moderate signals are enough to prefer delegate-first handling
-- once burst signals are active, avoid "just one more raw read" drift; either narrow scope or hand off the burst
-- safe-io owns the trigger; worker-routing owns topology selection and orchestration after the trigger fires
+### 4) Parent-first governed-chain reading
+For sharded design or changelog chains, read the compact active parent first for authority, declared shape, map, and selection guidance. Then open only the named sibling or same-stem child needed for the active question.
 
-### 4) Sharded active design reading
+- do not infer a nested directory from the parent filename or absorb the whole shard set
+- broad consistency/history audits may trigger the aggregate-burst gate
+- report the checked parent/shard scope
+- treat design children as active target-state truth, not history/done by default
+- open `changelog/done/` only through an active reference or history/audit/rollback/provenance need
+- when reading an example, keep observed shape, extracted doctrine, selected target, and equivalence basis distinct
 
-For designs using a compact parent plus active child shards, start from the compact parent index and follow the declared chain shape.
+### 5) Oversized governance entrypoints
+When an active entrypoint exceeds practical read limits or causes compact thrash, inspect only enough current state to invoke the rollover contract in `document-integrity.md`. After rollover, start from the compact active entrypoint and open history/done only through an active reference or audit/rollback/provenance need.
 
-- read the parent index first for purpose, authority boundary, target-state summary, selected chain shape, shard map, and shard-selection guidance
-- if the parent declares `flat-sibling-shards`, open only the named sibling shard in the same folder rather than assuming a nested same-stem child directory
-- if the parent declares `same-stem-subfolder-normalized`, open only the named child shard in the declared child directory rather than absorbing the whole child set
-- do not invent a nested same-stem child directory from the parent filename alone; rely on the parent-declared chain shape
-- read child/sibling shards selectively by target-state slice; do not absorb the whole shard set
-- use worker filtering for broad shard audits, stale-shard checks, or multi-shard consistency sweeps
-- report checked parent and shard scope when using selected shards as evidence
-- when the chain is being read as an example/reference input, report that checked scope as observed example shape rather than as automatic proof of the selected target form
-- do not treat child design shards as `history/`, `done/`, archive, or rollover surfaces by default; they remain active design truth unless governance says otherwise
+### 6) Command and temporary-output safety
+Use direct tools for known low-output work. When shell or high-output commands are necessary, choose deterministic line/character caps, capture/filter strategy, and session-unique `/tmp` output before running them.
 
-### 5) Changelog version detail shard reading
-
-For changelogs using a compact parent plus active version-detail shards, start from the active parent changelog and follow the declared chain shape.
-
-- read the active parent changelog first for current version authority, selected chain shape, shard map, and navigation
-- if the parent declares `flat-sibling-shards`, open only the named sibling version-detail shard in the same folder rather than assuming a nested same-stem child directory
-- if the parent declares `same-stem-subfolder-normalized`, open only the named version-detail shard in the declared child directory rather than absorbing the whole chain shard directory
-- do not invent a nested same-stem child directory from the parent filename alone; rely on the parent-declared chain shape
-- read version detail shards selectively by version/topic; do not absorb the whole shard set
-- use worker filtering for broad version-history audits, parent/shard consistency sweeps, or multi-shard migration reviews
-- report checked parent and shard scope when using selected shards as evidence
-- when the chain is being read as an example/reference input, report that checked scope as observed example shape rather than as automatic proof of the selected target form
-- do not treat `changelog/done/` as the default same-chain detail namespace; consult it only through active references or for history, audit, rollback, provenance, or trace reconstruction
-
-### 5.1) Observed example shape versus selected target wording
-When another project, repo, or example chain is being read as evidence for governance, report the checked structure as observed example shape only.
-
-Required guidance:
-- do not let a bounded read of an example become proof that the current RULES target must use the same form
-- if a recommendation follows, label the extracted doctrine and selected target form separately
-- if equivalence between the observed example and the selected target form is not checked, say so rather than upgrading the example into a target-truth claim
-- parent-first reading still applies: check the compact parent first, then inspect only the smallest surrounding evidence needed to classify the observed example honestly
-
-### 6) Oversized governance entrypoints
-
-If active governance entrypoints such as `TODO.md` or `phase/SUMMARY.md` exceed practical read limits, trigger bounded inspection and rollover maintenance instead of repeatedly rereading the same oversized file.
-
-- use offsets/searches to identify current state only long enough to preserve and compact it
-- if a read fails from size or autocompact thrash points to repeated large file absorption, roll active detail into `history/`/`done/` shards
-- after rollover, start active reads at the compact entrypoint and follow only the history/done shard actually needed
-- do not treat the pre-rollover snapshot as active current context unless audit/rollback/provenance requires it
-
-### 7) Safe fallback patterns for command-line reads
-
-When a command-line read is unavoidable, use deterministic caps (line/character limits). Avoid `cat`/unbounded output for large or unknown files.
-
-```text
-preview/search first
-  ↓
-limit by lines and characters
-  ↓
-read narrower ranges when needed
-```
-
-Do not preserve exact shell snippets as reusable defaults when the dedicated tool is better.
-
-### 8) Plan before high-output commands
-
-Before running a command likely to emit large, noisy, repetitive, binary-like, minified, or long-line output, choose how output will be captured and reviewed.
-
-- avoid dumping broad logs, builds, tests, grep recursion, find output, base64, or HTTP bodies directly into the conversation
-- use bounded output, redirected files, targeted filters, or background tasks where appropriate
-- prefer worker filtering for broad/noisy test, log, build, or search review when the leader does not need raw output
-- if the output will immediately require multi-pass filtering or cross-reference with several files, treat it as a delegate-first burst instead of a direct leader read
-- keep stderr visible enough to diagnose real failures
-
-### 9) Bound terminal output without losing signal
-
-Output limits protect context but must not hide material failure state.
-
-- show command, exit status, and relevant failure summary when material
-- cap raw snippets to the smallest useful evidence
-- if output was truncated, say what was truncated and where persisted output can be reviewed when available
-- use focused reruns or searches to isolate failure lines rather than expanding raw output blindly
-
-### 10) Session-safe temporary output
-
-When redirecting temporary output, avoid shared filenames that can collide across sessions or objectives.
-
-- use session/process-unique temp names for ad hoc command output when temp files are necessary
-- keep temp files in `/tmp` unless a repo artifact is intentionally required
-- do not create persistent debug files in the repo for ordinary command output
-- temp-file cleanup is allowed; deletion of repo files follows destructive-confirmation rules
-
-### 11) Prefer direct tool behavior when safe
-
-Do not add shell output indirection for simple low-output commands. Use direct commands when output is known to be small and useful.
-
----
-
-## Risk Model
-
-### File-shape risk
-
-| File shape | Risk | Preferred behavior |
-|---|---|---|
-| Small normal source/doc | Low | Use Read directly |
-| Large source/doc | Medium | Use Read with offset/limit |
-| Sharded active design parent index | Low/Medium | Read compact parent index first; select relevant child shards |
-| Sharded active design child/sibling shard set | Medium/High | Read the parent chain shape and shard map first, then targeted shards; worker filtering for broad audits |
-| Active parent changelog | Low/Medium | Read parent authority, chain shape, and shard map before selected version detail shards |
-| Changelog version detail child/sibling shard set | Medium/High | Read parent chain shape and shard map first, then targeted version shards; worker filtering for broad history audits |
-| `changelog/done/` fallback history | Medium/High | Open only through active reference or history/audit/rollback/provenance need |
-| Oversized `TODO.md` / `phase/SUMMARY.md` | High | Bounded read for current state, then rollover/compact active entrypoint |
-| Aggregate multi-file read burst | High | Delegate-first filtering or narrow scope before leader raw reads |
-| Mixed output + follow-up file investigation | High | Capture/filter first, then inspect anchors or worker digest |
-| Minified/bundled/generated | High | Preview/search only |
-| Logs/build outputs | High | Tail/search/filter; consider worker review |
-| Unknown JSON/HTML/SVG/map | Medium/High | Search or preview by bounded range |
-| Binary/base64-like content | High | Avoid raw read; inspect metadata or small prefix only |
-
-### High-output command triggers
-
-Use this rule strongly for:
-- test/build logs
-- server logs and operational traces
-- recursive grep/find output
-- package manager output
-- JSON/HTML/API responses of unknown size
-- base64 or binary-like data
-- generated/minified assets
-- any command likely to produce long lines or thousands of lines
-- any output that will need cross-checking against several files or several reruns before the leader can act
-
-### Recommended command flow
-
-```text
-Command planned
-  ↓
-Could output or follow-up reads become large/noisy?
-  → NO: run directly if safe
-  → YES: choose capture/filter strategy
-  ↓
-Burst signals present?
-  → YES: delegate-first or persist/filter before leader review
-  → NO: continue with bounded direct capture
-  ↓
-Review concise relevant evidence
-  ↓
-Report exit/result, checked scope, and any truncation
-```
+- do not dump unknown logs, builds, recursive searches, HTTP bodies, generated/minified data, or binary/base64-like content into the conversation
+- keep command, exit status, material stderr, and failure summary visible
+- disclose truncation, partial scope, and where persisted output can be reviewed
+- use focused searches/reruns instead of expanding noisy output blindly
+- avoid repo-local ordinary debug artifacts; temporary cleanup is allowed, while repo-file deletion follows destructive confirmation
+- route multi-pass or cross-file output review through the aggregate-burst gate
 
 ---
 
 ## Anti-Patterns
 
-Avoid:
-- raw full reads of large/minified files, or `cat`/`head`/`tail`/`sed` when Read fits
-- unbounded output for unknown files/responses
-- whole-project claims from narrow excerpts
-- repeating failed oversized reads without narrowing scope
-- leaving oversized active governance entrypoints untouched after read failures or autocompact thrash
-- waiting until after a read/output burst has already filled leader context before deciding to delegate it
-- reading broad file sets into leader context when a worker lane should filter them
-- combining repo-wide search, dense docs, and noisy output in one leader pass when a filter lane should have handled the burst first
-- reading every child shard before checking the compact parent design index
-- treating sharded active design child docs as history/`done`/archive/rollover surfaces by default
-- reading every changelog version detail shard before checking the active parent changelog shard map
-- treating `changelog/done/` as the default same-chain version detail namespace
-- presenting local path/file facts without checked scope
-- dumping raw logs/builds/tests into the main context
-- truncating output while claiming full verification
-- hiding command failures behind suppressed stderr
-- creating repo-local junk output files
-- rerunning broad noisy commands instead of filtering
-- using output caps to ignore material failures
+Avoid unbounded or repeated broad reads; whole-scope claims from excerpts; bypassing active parents/maps; delaying burst routing until raw context is already absorbed; hiding failures or truncation; treating output caps as verification; and creating persistent repo debug output for ordinary command review.
 
 ---
 
 ## Integration
 
-Related rules:
-- [evidence-discipline.md](evidence-discipline.md) - verifies paths, symbols, config, scoped non-findings
-- [evidence-discipline.md](evidence-discipline.md) - claim strength from partial reads
-- [worker-routing-and-context.md](worker-routing-and-context.md) - routes broad read/search/output review to worker lanes
-- [document-governance.md](document-governance.md) - parent design index and child shard semantics
-- [document-governance.md](document-governance.md) - parent changelog, version shard, fallback history semantics
-- [document-integrity.md](document-integrity.md) - references, shard maps, source/destination alignment
-- [document-integrity.md](document-integrity.md) - daily-first rollover for oversized active entrypoints
-- [action-safety.md](action-safety.md) - failure classification and retry posture
-- [coding-discipline.md](coding-discipline.md) - verification strategy and evidence boundaries
-- [action-safety.md](action-safety.md) - confirmation gates for risky commands
+Related owners:
+- [worker-routing-and-context.md](worker-routing-and-context.md) — topology, dispatch, lane contracts, and handoff quality after burst detection
+- [document-governance.md](document-governance.md) — governed chain semantics
+- [document-integrity.md](document-integrity.md) — reference validation and rollover preservation
+- [evidence-discipline.md](evidence-discipline.md) — claim strength from checked I/O
+- [action-safety.md](action-safety.md) — risky commands, failures, retries, and destructive confirmation
 
 ---

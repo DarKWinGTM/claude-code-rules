@@ -1,15 +1,15 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.8
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
+> **Current Version:** 1.9
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-19)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.8 | 2026-06-04 | **[Added P138 governed-doc source-comment reference integrity](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-06-03 | **[Added P135 governed goal route-plan file-hygiene carve-out](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.6 | 2026-05-18 | **[Added P108 document-density and repair-owner uptake](#version-16)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -22,6 +22,20 @@
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-19"></a>
+## Version 1.9: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `document-integrity.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 <a id="version-18"></a>
 ## Version 1.8: Added P138 governed-doc source-comment reference integrity

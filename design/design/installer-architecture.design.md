@@ -1,8 +1,8 @@
 # Installer Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.18
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-19)
+> **Current Version:** 10.54
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
 > **Section:** Project-local Claude Code install architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -116,12 +116,12 @@ Not allowed:
 
 ## Active Runtime Set Contract
 
-The installer contract remains bound to the active 18-rule runtime set.
+The installer contract remains bound to the active 19-rule runtime set.
 
 Required guidance:
 - helper scripts install only the current README-listed source-owned runtime root files
 - design/changelog/TODO/phase/patch/helper/plugin surfaces remain outside the runtime install payload
-- parity and body-sufficiency proof must be checked against the same 18-file set
+- parity and body-sufficiency proof must be checked against the same 19-file set
 
 ---
 

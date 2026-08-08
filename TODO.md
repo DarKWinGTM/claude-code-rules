@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-06-14
-> **Current Release:** v10.53 / P145 source-first scope guard and repo-authority enforcement
+> **Last Updated:** 2026-08-08
+> **Current Release:** v10.54 active runtime Rule compression
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] v10.54 active runtime Rule compression was completed, installed, pushed to `master`, tagged, and released.
+  - Verified: 15 runtime owner Rules were compressed and version-aligned with their design/changelog chains; the active payload is 273,721 bytes versus the checked 405,914-byte baseline (32.57% reduction); the source-owned install set remains 19 root Rules; active 18-versus-19 inventory drift was corrected; `git diff --check`, metadata/link/body checks, temporary installation, 19/19 source/runtime parity, remote master, tag, and GitHub release checks passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.54
 
 - [x] P145 / v10.53 source-first scope guard and repo-authority enforcement was completed, installed, pushed to `master`, tagged, and released.
   - Verified: repo-root `CLAUDE.md` now explicitly says RULES work starts from the checked source-controlled repository first; `/home/node/.claude/rules` is treated as a downstream install target rather than source authority; runtime-first edits are outside the default path unless the task is explicitly runtime-only emergency or install-verification work; README current-state/release-facing wording matches the new guard; `TODO.md`, `phase/SUMMARY.md`, this release wave's phase/patch/master-changelog/detail surfaces align to `v10.53 / P145`; runtime install/update verification was rerun from the checked source repo; selected runtime parity checks passed in checked scope; `git push` to `master`, tag `v10.53`, and GitHub release verification all passed.

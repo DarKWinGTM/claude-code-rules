@@ -1,7 +1,7 @@
 # Coding Discipline
-> **Current Version:** 1.1
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.1
-> **Session:** 808f88f7-3682-45ad-8f3e-3caf233d3835
+> **Current Version:** 1.3
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.3
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
 
@@ -130,21 +130,10 @@ Use the smallest verification layer that gives meaningful signal.
 
 Strategy, not ceremony. A stronger existing test may replace a new scenario; a scenario harness may replace fragile ad hoc checks; a live check remains conditional on user approval, safety, and environment readiness.
 
-### 3) Debug strategy contract
-For bug-fix, failure, flaky behavior, or complex integration work, keep a debug path visible enough to guide implementation.
-- identify the observed failure or reproduction target when available
-- state the working hypothesis without treating it as proven cause
-- define the signal that would confirm the fix or invalidate the hypothesis
-- prefer a failing test, focused reproduction, TestKit scenario, fixture, fake adapter, log/report, or failure injection when practical
-- if reproduction is unavailable, state what evidence is missing and use bounded diagnostics rather than guessing
+### 3) Debug and root-cause strategy
+For bugs, failures, flaky behavior, or complex integration, identify the observed failure/reproduction target, working hypothesis, and discriminating signal before patching. Prefer a failing focused test, reproduction, scenario, fixture/fake, log/report, or failure injection that cuts away competing explanations.
 
-### 3.1) Root-cause narrowing for coding and debug work
-When the user's goal is diagnosis rather than immediate patching, make the root-cause path visible enough to guide safe implementation.
-- separate the observed failure from the working cause hypothesis
-- name the discriminating check that would confirm or disprove the current leading hypothesis
-- prefer the next-best test that cuts away major competing explanations over shotgun patching several branches at once
-- if the fix proceeds before the cause is fully proven, state that the edit is hypothesis-driven and preserve the evidence limit
-- after the user corrects the debugging direction, re-anchor the active reproduction target before continuing with code edits or tests
+If reproduction is unavailable, state the missing evidence and use bounded diagnostics. If implementation proceeds before cause is proven, label it hypothesis-driven. Re-anchor the reproduction target after user correction; do not shotgun-edit several speculative causes.
 
 ### 4) TestKit / scenario decision contract
 For non-trivial coding work, select one verification route explicitly:
@@ -159,17 +148,15 @@ Do not create TestKit scenarios for every task by reflex. Do not skip the decisi
 
 ### 5) Evidence boundary and closeout discipline
 
-| Evidence held | Acceptable status | Do not claim |
+| Coding evidence | Maximum claim in scope | Boundary |
 |---|---|---|
-| checklist, plan, or artifact ready | prepared | implemented, tested, verified, live, fixed, stable |
-| settings or wiring changed | configured | runtime/live-verified or working unless checked |
-| source edited | implemented | fixed, verified, working |
-| unit/focused tests passed | tested / verified-in-scope | whole system or live dependency works |
-| fake/local TestKit scenario passed | fake/local verified-in-scope | real provider/runtime/deploy works |
-| smoke check passed once | smoke-tested / runtime-checked once | stable over time |
-| real provider/runtime/deploy checked | runtime/live-verified | stable unless repeated/time-based evidence supports it |
-| failure scope reproduced and corrected with matching evidence | fixed in checked scope | globally stable or all edge cases covered |
-| no test run | not tested | verified behavior |
+| source edited | implemented | not fixed/working without checks |
+| focused/unit/regression passed | tested / verified-in-scope | not whole-system or live proof |
+| fake/local scenario passed | fake/local verified-in-scope | not provider/runtime/deploy proof |
+| one smoke check passed | runtime-checked once | not stable over time |
+| real provider/runtime/deploy checked | runtime/live-verified | not stable without repeated evidence |
+| reported failure reproduced and corrected with matching evidence | fixed in checked scope | not global/all-edge-case stability |
+| no test run | not tested | no verified-behavior claim |
 
 Coding closeout should include the compact verification record when material:
 ```text
@@ -284,45 +271,11 @@ Avoid:
 - reporting fixed/stable beyond checked evidence
 - tactical entry without a declared strategic target or convergence path
 
-Better behavior: identify responsibility, choose the smallest useful structural move, name source code by domain/behavior meaning, use governed-doc comments only where they lower maintenance cost, understand behavior, choose a proportionate verification route, preserve not-tested scope, report evidence at the correct strength, and anchor tactical work to a declared strategic target.
-
----
-
-## AI Coding Workflow
-
-When this rule materially applies:
-1. identify responsibility and reason-to-change boundaries before editing
-2. inspect existing project structure and reuse it when adequate
-3. classify the work as tactical, strategic, or tactical-with-strategic-track
-4. identify the strategic target and convergence path when tactical
-5. choose the smallest useful structural move
-6. keep cohesive code together and split mixed responsibilities deliberately
-7. name functions, variables, helpers, classes, types, and modules by domain/behavior meaning rather than phase/doc/ticket/patch chronology
-8. avoid helper inflation, speculative abstractions, and wrong DRY extractions
-9. add or update concise comments only for useful purpose/process/boundary information
-10. cite governed docs in comments only when the link materially lowers maintenance cost; prefer stable design/contract references for durable rationale
-11. keep phase/changelog/patch/ticket references narrow to provenance, temporary tactical bridge, migration, compatibility, or rollback context
-12. identify behavior under change, risk, debug signal, and verification depth
-13. make the TestKit/scenario decision explicit when material
-14. preserve behavior during refactor unless behavior change is explicit
-15. run proportionate checks; report verification limits honestly
-16. report edited/tested/fake-local/live/fixed/stable wording at correct evidence strength
-17. name tactical convergence when material structure debt remains
-
 ---
 
 ## Integration
-
-Related rules:
-- [accurate-communication.md](accurate-communication.md) - evidence-strength wording for edited/tested/fixed/stable claims
-- [phase-todo-artifact.md](phase-todo-artifact.md) - phase-backed verification and closeout surfaces
-- [phase-todo-artifact.md](phase-todo-artifact.md) - live task-list verification slices
-- [execution-and-goal-frame.md](execution-and-goal-frame.md) - continue from implementation into verification when safe
-- [worker-routing-and-context.md](worker-routing-and-context.md) - worker filtering for broad/noisy test/log output
-- [action-safety.md](action-safety.md) - runtime mutation and live/smoke verification gates
-- [document-governance.md](document-governance.md) - tactical patch artifacts
-- [document-governance.md](document-governance.md) - document roles and durable docs beyond source comments
-- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) - portable/environment binding
-- [execution-and-goal-frame.md](execution-and-goal-frame.md) - structure-first balance against objectives
-- [explanation-and-presentation.md](explanation-and-presentation.md) - assistant response explanations (source comments owned here)
-- [evidence-discipline.md](evidence-discipline.md) - maintainability claim calibration
+Related owners:
+- [accurate-communication.md](accurate-communication.md) and [evidence-discipline.md](evidence-discipline.md) — claim strength
+- [phase-todo-artifact.md](phase-todo-artifact.md) and [execution-and-goal-frame.md](execution-and-goal-frame.md) — verification slices and continuation
+- [worker-routing-and-context.md](worker-routing-and-context.md) and [action-safety.md](action-safety.md) — noisy checks and live/high-impact gates
+- [document-governance.md](document-governance.md), [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md), and [explanation-and-presentation.md](explanation-and-presentation.md) — governed artifacts, binding, and response explanation

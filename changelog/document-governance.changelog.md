@@ -1,15 +1,15 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.15
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
-
+> **Current Version:** 1.16
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.15 | 2026-06-07 | **[Added P142 template-directory support-boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-06-04 | **[Added P138 source-comment and governed-doc role-boundary refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-06-02 | **[Added P131 diagram infrastructure doctrine](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -30,6 +30,20 @@
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-116"></a>
+## Version 1.16: Applied owner-canonical active runtime compression
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compressed repeated runtime wording in `document-governance.md` while preserving the chain owner, operational contracts, and exact guard semantics.
+- Kept the design target state unchanged while synchronizing runtime, design, and changelog versions for repository release `v10.54`.
+- Revalidated this chain as part of the combined 19-Rule runtime set rather than as a standalone duplicated policy package.
+
+### Summary
+This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
 <a id="version-115"></a>
 ## Version 1.15: Added P142 template-directory support-boundary refinement
