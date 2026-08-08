@@ -3,7 +3,7 @@
 > **Current Version:** 2.13
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P073-11 runtime owner semantic conflict resolution and compression is active; v10.57 candidate verification, installation, and publication gates remain open
+> **Status:** No active phase; P073-11 completed, installed, pushed, tagged, released, and fresh-clone audited in v10.57
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,15 +23,15 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P073-11:** [phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md](phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md)
-  - Goal: resolve six semantic ambiguities and compact the existing 19 Active Runtime Rules through owner-canonical behavior-preserving compression.
-  - Done so far: the checked candidate contains all six settlements, complete image-strategy owner integration, leader-owned source/final integration, and explicit invocation routing across standalone, parallel test/metrics/matrix, and coordinated Team workflows while retaining 19/19 static body sufficiency and the exact guard registry.
-  - Verified on the invocation-refined candidate: 19-Rule inventory, 254,032-byte payload, body/literal/invocation registries, 39-path allowlist, 10/10 triads, changed-scope links, README 7/7 diff and mode `100644`, plus Bash/PowerShell disposable 19/19 installs with unrelated-sentinel preservation.
-  - Verified installation: latest candidate/canonical allowlist parity passes 39/39; canonical/root SHA-256 parity and body sufficiency pass 19/19; unrelated root Rules remain preserved.
-  - Remaining gate: push clean master, create the annotated tag and GitHub Release, and audit a fresh public clone.
-  - Patch: [../patch/runtime-owner-semantic-conflict-resolution-and-compression.patch.md](../patch/runtime-owner-semantic-conflict-resolution-and-compression.patch.md)
+- None.
 
 ### Most Recently Completed
+
+- **P073-11:** [phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md](phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md)
+  - Output: six semantic ambiguities resolved; complete image-strategy owner integration; leader-owned source/final integration; explicit standalone, parallel test/metrics/matrix, and coordinated Team invocation routing; 19-Rule payload compacted to 254,032 bytes.
+  - Gate: body/literal/invocation registries, 39-path canonical parity, 10/10 triads, changed-scope links, README 7/7 diff and mode `100644`, Bash/PowerShell disposable installs, canonical/root parity, clean master push, annotated tag, GitHub Release identity, and fresh public-clone 19/19 install audit passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.57
+  - Patch: [../patch/runtime-owner-semantic-conflict-resolution-and-compression.patch.md](../patch/runtime-owner-semantic-conflict-resolution-and-compression.patch.md)
 
 - **P145:** [phase-145-source-first-scope-guard-and-repo-authority-enforcement.md](phase-145-source-first-scope-guard-and-repo-authority-enforcement.md)
   - Output: repo-root `CLAUDE.md` now makes source-first scope explicit for RULES maintenance, so work starts from the checked source repository and `/home/node/.claude/rules` is treated as a downstream install target instead of a source-authority workspace.
@@ -361,24 +361,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current candidate focus:
+Released v10.57 verification:
 - `v10.57 / P073-11` keeps the Active Runtime Rule inventory at 19 and resolves the six checked semantic ambiguities through existing canonical owners
-- the checked source candidate after explicit helper-invocation routing is 254,032 bytes, 3,092 lines, and 33,038 words: 19,689 bytes (7.19%) below v10.54 and 151,882 bytes (37.42%) below the checked 405,914-byte baseline
-- source-scope checks pass for exact literal and invocation registries, selected high-risk clauses, changed-scope links, `git diff --check`, 10/10 touched triads, 39-path allowlist, and static body sufficiency 19/19
-- Bash/PowerShell manifests are ordered-identical at 19; both disposable installs pass source/install 19/19 parity and unrelated-sentinel preservation
-- latest invocation-refined candidate/canonical allowlist parity passes 39/39; canonical/root SHA-256 parity and body sufficiency pass 19/19 while unrelated root Rules remain preserved
-- final proof requires clean master push, annotated tag, GitHub Release, and fresh-clone audit
-- no Claude Code warning-elimination claim is allowed without a controlled before/after runtime witness
+- released payload is 254,032 bytes, 3,092 lines, and 33,038 words: 19,689 bytes (7.19%) below v10.54 and 151,882 bytes (37.42%) below the checked 405,914-byte baseline
+- exact literal and invocation registries, selected high-risk clauses, changed-scope links, `git diff --check`, 10/10 touched triads, 39-path allowlist, and body sufficiency 19/19 pass
+- Bash/PowerShell disposable, canonical/root, and fresh-clone install parity/body-sufficiency checks pass 19/19 with unrelated-file preservation
+- remote master, peeled annotated tag, and GitHub Release resolve to the same released commit
+- no Claude Code warning-elimination claim is made because no controlled before/after runtime witness was run
 
 ---
 
 ## Rollback / Containment
 
-For the v10.57 candidate:
-- before publication, revert only the scoped clean-lane changes if a release gate fails
-- stop canonical synchronization on overlapping unrelated local edits; do not broad-delete, reset, or replace the dirty backup checkout
-- runtime rollback requires explicit approval and reinstalls the known-good v10.56 19-Rule set while preserving unrelated destination files
-- after publication, use a corrective release; never force-move the public tag
+For released v10.57:
+- use a corrective commit and new release for post-publication defects; never force-move the public tag
+- preserve the dirty backup checkout and unrelated runtime files; do not broad-delete, reset, or replace them
+- runtime rollback requires explicit approval and reinstalls a known-good 19-Rule set while preserving unrelated destination files
 - never delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 
 ---

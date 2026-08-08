@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-11
-> **Status:** Active — release verification pending
+> **Status:** Completed — released and fresh-clone verified
 > **Target Release:** v10.57
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -133,7 +133,7 @@ Source-candidate checks completed:
 - final candidate payload after explicit helper-invocation routing is 254,032 bytes, 3,092 lines, and 33,038 words; semantic/static, 39-path allowlist, 10/10 triad, changed-link, `git diff --check`, and README 7/7/mode checks pass
 - Bash/PowerShell disposable installs pass 19/19 with unrelated-sentinel preservation; the latest allowlist is synchronized to canonical source and canonical/root SHA-256 parity plus body sufficiency pass 19/19 while unrelated root Rules remain preserved
 
-Terminal phase disposition remains `blocked` on publication verification only. This is not yet a completed or released phase.
+Terminal phase disposition is `verified`: canonical installation, clean master push, annotated tag, GitHub Release identity, and fresh public-clone audit passed for the released v10.57 scope.
 
 ## Exit Criteria
 

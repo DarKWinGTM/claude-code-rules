@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active — release verification pending
+> **Status:** Completed — released and fresh-clone verified
 > **Target Design:** [../design/design.md](../design/design.md) v10.57
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -116,11 +116,10 @@ Checked source-candidate evidence:
 - latest canonical synchronization passes candidate/canonical 39/39; canonical/root SHA-256 parity and body sufficiency pass 19/19; unrelated `shared-task-list-path-coordination.md` remains preserved
 - README remains an exact 7-addition/7-removal current-state diff with no restructure and the approved `100755` to `100644` mode correction
 
-Remaining release gates:
-- push only clean `master`
-- backup branch unchanged
-- annotated tag and GitHub Release resolve to the same commit as remote master
-- fresh public clone reproduces inventory, metrics, body, install, and reference checks
+Checked release gates:
+- pushed only clean `master`; backup branch remained unchanged
+- annotated tag, GitHub Release, and remote master resolve to the same commit
+- fresh public clone reproduced inventory, metrics, body, install, and reference checks
 
 ## 5) Rollback Approach
 

@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Prepared</b><br><sub>Release verification in progress</sub>
+  <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release note:** `v10.57` prepares six semantic conflict resolutions, complete image-strategy owner integration, leader-owned source/final integration, and work-shape-based Subagent/Teammate invocation with parallel testing/metrics/test-matrix specialization while keeping the 19-file runtime boundary unchanged. Canonical/root installation verification passes 19/19; publication verification remains in progress.
+> **Current release note:** Released `v10.57` resolves six semantic conflicts, integrates the complete image-strategy owner set, keeps source/final integration leader-owned, and routes standalone, parallel testing/metrics/test-matrix, and coordinated Teammate work by actual dependency shape while preserving the 19-file runtime boundary.
 
 <!-- CTA Buttons -->
 <p>
@@ -1064,7 +1064,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects the prepared `v10.57` candidate; the active payload remains 19 root Rules, Bash/PowerShell disposable and canonical/root parity/body-sufficiency checks pass 19/19, publication/fresh-clone proof remains pending, and `playground/` stays outside the install payload.
+- Source state: released `v10.57` keeps 19 root Rules; Bash/PowerShell disposable, canonical/root, and fresh-clone install parity/body-sufficiency checks pass 19/19, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
