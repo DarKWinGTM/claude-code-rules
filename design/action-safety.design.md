@@ -1,7 +1,7 @@
 # Design - Action Safety
 
 > **Parent Rule:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/action-safety.changelog.md](../changelog/action-safety.changelog.md)
 
@@ -20,6 +20,8 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 This design owns the target-state shape for functional intent verification, destructive confirmation, runtime topology control, emergency protocol, and retry/failure handling.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+
+P144 refinement: topology vocabulary must distinguish operational runtime workers/jobs/entities from Claude subagents/teammates; authorized bounded destructive work follows explicit action-and-scope confirmation rather than refusal classification; public read-only lookup is evidence gathering while consequential authenticated/private, mutating, sending/publishing, payment/purchase, deployment, account/shared-state, sensitive-data, meaningful-cost, or terms-acceptance actions retain approval gates; and only the smallest safe reversible emergency containment/diagnostic action may precede full startup when delay materially increases immediate harm, followed immediately by normal governance and recovery synchronization.
 
 ---
 

@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.17 | 2026-08-08 | **[Compacted document governance and bounded cross-Rule exact copies](#version-117)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.16 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.15 | 2026-06-07 | **[Added P142 template-directory support-boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.14 | 2026-06-04 | **[Added P138 source-comment and governed-doc role-boundary refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -30,6 +31,20 @@
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-117"></a>
+## Version 1.17: Compacted document governance and bounded cross-Rule exact copies
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Applied owner-canonical semantic compaction while preserving document roles, governed chain shapes, diagram authority, patch reviewability, UDVC-1, and runtime body-sufficiency gates.
+- Added the bounded cross-Rule exact-copy exception for the minimum synchronized literal or ordering needed to prevent likely execution, safety, verification, or ordering errors.
+- Restored strict plugin-output, design-history, non-code patch declaration, and body-sufficiency claim boundaries after independent review.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-116"></a>
 ## Version 1.16: Applied owner-canonical active runtime compression

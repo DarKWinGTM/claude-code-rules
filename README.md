@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.56</b><br><sub>Installer Design Correction</sub>
+  <b>v10.57</b><br><sub>Semantic Compaction</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Verified and published</sub>
+  <b>Prepared</b><br><sub>Release verification in progress</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release note:** `v10.56` aligns the active installer verification contract with the real 19-file manifests and 19/19 parity/body-sufficiency proof. The compressed 19-Rule runtime payload and all runtime owner versions remain unchanged.
+> **Current release note:** `v10.57` prepares six semantic conflict resolutions, complete image-strategy owner integration, leader-owned source/final integration, and work-shape-based Subagent/Teammate invocation with parallel testing/metrics/test-matrix specialization while keeping the 19-file runtime boundary unchanged. Canonical/root installation verification passes 19/19; publication verification remains in progress.
 
 <!-- CTA Buttons -->
 <p>
@@ -279,8 +279,8 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.56` aligns the active installer design verification contract with the real 19-file Bash and PowerShell manifests; no runtime Rule body or runtime owner version changed.
-- The combined active Rule payload is 273,721 bytes, down 132,193 bytes (32.57%) from the checked 405,914-byte `origin/master` baseline.
+- The `v10.57` candidate keeps the 19-file Bash and PowerShell runtime boundary unchanged while resolving six semantic ambiguities, integrating the complete strategy set through existing canonical owners, and selecting Subagent/Teammate invocation by work shape instead of delegation by default.
+- The combined active Rule payload is 254,032 bytes, down 19,689 bytes (7.19%) from v10.54 and 151,882 bytes (37.42%) from the checked 405,914-byte baseline.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
 - Maintainer closeout still requires README sync, runtime install, source push, and repo release before a RULES wave is considered done.
@@ -1064,7 +1064,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects released `v10.56`; the compressed runtime content remains installed as 19 root Rules, installer design proof now requires 19/19 parity and body sufficiency, and `playground/` stays outside the install payload.
+- Source state: this README reflects the prepared `v10.57` candidate; the active payload remains 19 root Rules, Bash/PowerShell disposable and canonical/root parity/body-sufficiency checks pass 19/19, publication/fresh-clone proof remains pending, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1189,7 +1189,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.56 |
+  <b>Version</b>: 10.57 |
   <b>Last Updated</b>: 2026-08-08 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

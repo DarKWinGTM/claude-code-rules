@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.21
+> **Current Version:** 1.22
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -56,6 +56,8 @@ P139 refinement: this owner should now preserve the smallest sufficient route su
 P141 refinement: this owner should now preserve a goal-authoring presentation stop boundary so when the current turn is only governed goal or plan-file authoring the visible surface ends at the emitted goal artifact plus subordinate route support rather than auto-appending an execution-style choice menu.
 
 P143 refinement: this owner should now preserve a hybrid progress snapshot shape for non-trivial in-flight work, using `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` markers when that structure improves scanability without forcing ceremony on trivial replies.
+
+P144 refinement: when `communication-register.md` admits supporting explanation to prevent a hidden error, place it next to the relevant action, heading, or decision; make consequence and required action visible; and do not restate the heading or duplicate the owner contract.
 
 P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
 

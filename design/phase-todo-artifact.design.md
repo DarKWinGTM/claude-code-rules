@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.31
+> **Current Version:** 1.32
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -57,7 +57,7 @@ P135 refinement: this owner should now require governed `/goal` authoring to wri
 
 P136 refinement: this owner should now require governed `/goal` artifact sourcing and execution surfaces to keep copied durable-plan-backed artifacts in `/goal`-first order, with `Plan reference:` after the command inside the same copied artifact rather than above it as detached route support.
 
-P137 refinement: this owner should now preserve task materialization for selected non-trivial plan-backed or goal-backed execution so built-in tasks become the live execution surface, Subagent-Driven routing is preferred first when worker-suitable, and Inline Execution remains only a checked direct-handling exception when more effective.
+P137 refinement is superseded by P144: selected non-trivial goal/plan work still materializes into bounded live tasks, but helper routing no longer implies Subagent-Driven source implementation.
 
 P139 refinement: this owner should now preserve smallest-sufficient route support for plain governed goal requests, allow durable route-only plan files only when route pressure or continuity risk justifies them, and keep selected goal/plan task materialization aligned to internal execution-posture choice instead of a user-facing mode selection.
 
@@ -78,6 +78,8 @@ P119 refinement: this owner should now make the emitted `/goal` scaffold follow 
 P121 refinement: this owner should now preserve a governed selected-goal to `/plan` bridge so execution surfaces can escalate route-heavy work into planning only when the route is materially non-trivial, keep phase/task linkage tied back to the selected goal, and return closeout to the goal gate instead of the route state alone.
 
 P122 refinement: this owner should now preserve an explicit `/plan` next-surface recommendation in execution surfaces once that route-heavy bridge is active, rather than leaving planning only as an implied option in prose.
+
+P144 refinement: phase/task surfaces distinguish implementation coverage (`not started` or `implemented`) from terminal disposition (`verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`); `implemented` is intermediate while material verification remains. In genuine emergencies, only the smallest safe reversible containment/diagnostic action may precede full startup when delay increases immediate harm, and startup/recovery synchronization resumes immediately afterward. Worker routing may attach bounded helper lanes, but leader-owned source implementation remains the default.
 
 ---
 

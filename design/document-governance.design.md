@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -50,6 +50,8 @@ P131 refinement: this owner should now treat `diagram/` as required governed-doc
 P138 refinement: this owner should now reinforce design, phase, patch, and source-comment role boundaries so governed documents remain the durable authority surfaces, while source comments stay local implementation explanation or bounded pointers rather than becoming parallel design, phase, patch, or changelog bodies.
 
 P142 refinement: this owner should now keep reusable phase-authoring scaffolds under `template/**` instead of the active root runtime-rule surface, so support-only templates stay discoverable without reading like installed phase authority or active runtime payload.
+
+P144 refinement: cross-Rule exact repetition is exceptional. A consumer may retain only the minimum literal/order needed to prevent a likely execution, safety, verification, or ordering error; it must identify the canonical owner, remain synchronized, and never become competing or recursively copied authority.
 
 ---
 

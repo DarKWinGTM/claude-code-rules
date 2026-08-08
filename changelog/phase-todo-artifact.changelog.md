@@ -1,6 +1,6 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Current Version:** 1.31
+> **Current Version:** 1.32
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.32 | 2026-08-08 | **[Compacted phase/TODO governance and clarified closeout semantics](#version-132)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.31 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.30 | 2026-06-13 | **[Extracted governed `/goal` authoring out of phase/TODO execution surfaces](#version-130)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 1.29 | 2026-06-11 | **[Added P143 live progress-snapshot shaping refinement](#version-129)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -46,6 +47,20 @@
 
 ---
 
+<a id="version-132"></a>
+## Version 1.32: Compacted phase/TODO governance and clarified closeout semantics
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Applied owner-canonical compaction while preserving startup posture literals, strict current-phase → existing-family child → new-major lineage, phase/TODO roles, roadmap duties, and closeout fields.
+- Separated implementation coverage from terminal disposition so `implemented` remains intermediate until `verified` or explicitly carried as `deferred`, `blocked`, `not applicable`, or `out of scope`.
+- Added the bounded emergency-startup exception and helper-lane linkage without transferring source ownership.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
+
 <a id="version-131"></a>
 ## Version 1.31: Applied owner-canonical active runtime compression
 
@@ -60,6 +75,22 @@
 ### Summary
 This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
+
+<a id="version-130"></a>
+## Version 1.30: Extracted governed `/goal` authoring out of phase/TODO execution surfaces
+
+**Date:** 2026-06-13
+**Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+
+### Changes
+- Updated `phase-todo-artifact.md` from v1.29 to v1.30.
+- Updated `design/phase-todo-artifact.design.md` from v1.29 to v1.30.
+- Extracted governed `/goal` construction, route-support selection, durable `Plan reference`, and `/plan` overflow doctrine into the dedicated `goal-authoring-and-route-support.md` runtime owner.
+- Kept phase linkage, selected-goal task materialization, TODO durability, and live execution tracking in this chain.
+- Preserved the v10.52 transition from an 18-Rule to 19-Rule source-owned active runtime set.
+
+### Summary
+`phase-todo-artifact.md` now owns phase/TODO execution surfaces without duplicating the full governed goal-authoring contract moved to its dedicated owner.
 
 <a id="version-129"></a>
 ## Version 1.29: Added P143 live progress-snapshot shaping refinement

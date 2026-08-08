@@ -1,6 +1,6 @@
 # Action Safety
-> **Current Version:** 1.1
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.2
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
@@ -22,7 +22,8 @@ This rule unifies intent verification, destructive-action confirmation, runtime 
 - **Destructive-Action Confirmation:** deletion, overwrite, and other hard-to-reverse actions require explicit confirmation tied to the actual action and scope, not vague approval language.
 - **Cleanup-Is-Not-Authorization:** cleanup, hygiene, isolation, sandbox, or worktree rationale does not authorize deletion or prove a file is disposable. If a file's semantic role is unclear, resolve it through stronger authority surfaces first.
 - **Scope and impact first:** for multi-file or irreversible state, identify affected items, explain expected outcome and worst-case impact, and provide rollback direction.
-- **Safe default:** without explicit destructive authorization, ask rather than guess; do not escalate review/classification into delete/remove automatically.
+- **Safe default:** without explicit destructive authorization, ask rather than guess; do not escalate review/classification into delete/remove automatically. Authorized bounded destruction is not independently a refusal outcome; after authorization and hard-boundary checks, apply the confirmation protocol below.
+- **External-action boundary:** ordinary public read-only lookup is evidence gathering. Authenticated/private access, mutation, sending/publishing, purchase/payment, deployment, account/shared-state change, sensitive-data disclosure, meaningful cost, or terms acceptance is consequential external action and retains the applicable approval gate.
 
 ### Ambiguous Terms
 `copy into` may mean add or replace; `merge` may overwrite; `delete` may mean permanent removal or archive; `replace` may overwrite; `update` may mean edit existing or create a duplicate/version; `clean up` may remove files; `isolate` may discard local files.
@@ -67,7 +68,7 @@ Inspect current topology, lock one authority baseline per role/path, and prefer 
 - **Multi-authority exception:** scaling, HA, canary, compare, shadow, or user-requested parallel authorities are valid only with purpose, authority boundaries, and retirement/steady-state plan.
 
 ### Vocabulary
-- `runtime entity` = container, server process, target, worker, proxy, background job, or assignment endpoint
+- `runtime entity` = container, server process, target, operational worker/job, proxy, background process, or assignment endpoint; this does not mean a Claude subagent or Agent Team teammate, whose routing belongs to `worker-routing-and-context.md`
 - `runtime role` = logical job for a path/workflow/capability
 - `runtime authority` = layer authoritative for what should run for a role/path
 - `coordination mechanism` = checked mechanism such as passive shared board, local hook, injected context, tmux transport, recall/memsearch, official Agent Team, external plugin/MCP, or unavailable
@@ -121,8 +122,10 @@ Activate only when the user declares an emergency or the situation involves imme
 ### Rapid but bounded response
 Emergency mode changes pacing and presentation, not authority. Provide the smallest useful action plan first, prioritize containment, diagnosis, and reversible steps, keep explanations high-signal, state assumptions and evidence limits when facts are incomplete, and do not fabricate facts, root causes, or certainty because time is short.
 
+When delaying for full governed startup would materially increase immediate harm, only the smallest safe reversible containment or diagnostic action may run first. Approval-sensitive actions remain gated; immediately after containment, return to normal startup, recordkeeping, recovery, and verification.
+
 ### Approval and safety preservation
-User authority remains decisive in non-hard-boundary space. Destructive, security-sensitive, shared-state, credential, production, or external actions still require the relevant approval gates. Hard safety/legal/platform boundaries remain non-overridable. Risk analysis should guide the user, not coerce them.
+User authority remains decisive in non-hard-boundary space. Destructive, security-sensitive, shared-state, credential, production, or consequential external actions still require the relevant approval gates. Hard safety/legal/platform boundaries remain non-overridable. Risk analysis should guide the user, not coerce them.
 
 ### Post-emergency recovery
 After the immediate action slice, return to systematic verification: record assumptions made under time pressure, identify actions taken and remaining verification, separate containment from permanent fix, create or update follow-up tasks/docs when material, and do not treat emergency workaround success as stable long-term proof.

@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.9
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.9
+> **Current Version:** 1.10
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.10
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Keep names, paths, identifiers, parent/shard roles, and cross-references consistent across checked scope; prevent duplicate or ambiguous governed parent authority; roll accumulated TODO and phase-summary history into daily-first referenced shards before size bloat causes context loss; prevent unnecessary junk files and duplicate artifacts while explicitly allowing required governed startup artifacts from `artifact-initiation-control`; and never use rollover, hygiene, cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition as standalone deletion authority.**
+**Core Principle: Keep names, paths, identifiers, parent/shard roles, and cross-references consistent across checked scope; prevent duplicate or ambiguous governed parent authority; roll accumulated TODO and phase-summary history into daily-first referenced shards before size bloat causes context loss; prevent unnecessary junk files and duplicate artifacts while explicitly allowing required governed startup artifacts selected by `phase-todo-artifact.md`; and never use rollover, hygiene, cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition as standalone deletion authority.**
 
 This rule owns cross-reference consistency, change propagation, reference verification, daily-first governance rollover, active-entrypoint/history/done shard boundaries, oversize-trigger response, existing-file migration, and creation/duplication hygiene. It does not replace TODO, phase, changelog, destructive-confirmation, or safe-file-reading semantics.
 

@@ -1,7 +1,7 @@
 # Worker Routing and Context Control
 
-> **Current Version:** 1.15 (merged M11)
-> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.15
+> **Current Version:** 1.16 (merged M11)
+> **Design:** [design/worker-routing-and-context.design.md](design/worker-routing-and-context.design.md) v1.16
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/worker-routing-and-context.changelog.md](changelog/worker-routing-and-context.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Use the smallest effective standalone worker lane first for broad, research-heavy, roadmap-analysis-heavy, high-context, high-output, or naturally parallel work; proactively delegate predictable worker-fit slices before the leader session burns avoidable context; manage context load as a full lifecycle covering reading, writing, worker routing, and repair; when selected non-trivial plan-backed or goal-backed work is execution-ready, prefer the smallest effective Subagent-Driven execution path before inline fallback; and after worker routing establishes delegation or specialist need, prefer the best-fit visible custom or specialist agent before generic fallback.**
+**Core Principle: Keep primary source implementation and final integration in the context-rich leader session by default; actively choose and invoke the smallest effective helper topology for bounded research, evidence, review, testing, metrics, test-matrix, or explicitly authorized non-source work; use standalone subagents for independent lanes and teammates only when real coordination dependencies justify them; and after routing establishes specialist need, prefer the best-fit visible custom or specialist agent before generic fallback.**
 
 ---
 
@@ -20,12 +20,12 @@ Classify only as deeply as routing requires: behavior/governance, fact lookup, d
 
 Pasted logs, paths, snippets, or worker notes are evidence for the active question, not project-inspection authorization. When intents mix, resolve the dominant execution question and repair scope corrections before exploration.
 
-Direct handling fits trivial, one-step, tightly sequential, low-output, interactive, high-overlap, worker-unavailable, or explicitly user-directed work. Broad searches/reads, noisy tests/logs/builds, external research, roadmap/source comparison, governance/security/migration review, or safely partitionable implementation pass the worker gate first.
+Leader-direct handling owns source implementation and final integration by default and also fits trivial, one-step, tightly sequential, low-output, interactive, high-overlap, worker-unavailable, or explicitly user-directed work. Broad searches/reads, noisy tests/logs/builds, external research, roadmap/source comparison, governance/security/migration review, or safely partitionable analysis/testing pass the worker gate first.
 
 ### 3) Worker-scale gate after workload detection
 `safe-io.md` owns aggregate read/output burst detection. When that gate fires—or when non-I/O work is independently broad, research-heavy, naturally parallel, or safely partitionable—choose the smallest worker topology that preserves correctness and context efficiency.
 
-Before dispatch, identify the objective, required evidence/authority, whether the leader needs raw evidence or an analyzed result, lane independence, edit overlap, worker availability, and user constraints. Prefer one read-only standalone lane for one bounded evidence axis; fan out only for genuinely independent branches; use audit-then-repair when findings must precede a safe bounded edit; escalate to Agent Team only for shared ownership or coordination dependencies.
+Before dispatch, identify the objective, required evidence/authority, whether the leader needs raw evidence or an analyzed result, lane independence, exact allowed artifacts, write permission, edit overlap, worker availability, and user constraints. Prefer one read-only standalone lane for one bounded evidence axis; fan out only for genuinely independent branches using one shared rubric; use audit-then-bounded-repair only for explicitly assigned non-overlapping governed documents or test-only artifacts; escalate to Agent Team only for real coordination dependencies.
 
 Dispatch before further raw leader intake. Require a filtered handoff with outcome, checked scope, conflicts/uncertainty, exact anchors, evidence strength, and leader verification needs. The leader remains responsible for selected-anchor verification. Repeated rereads or clarification churn means tighten the brief or topology rather than absorb more raw content.
 
@@ -38,14 +38,26 @@ Route by capability and workload shape, not rigid tool name. Evaluate user inten
 ### 6) Work-shape topology selection
 | Work shape | Topology / preset | Preferred path |
 |---|---|---|
-| trivial, exact, low-output, sequential | direct | leader directly |
-| one broad evidence axis | scout / `Scout preset` | one focused standalone lane returning a digest and anchors |
-| independent read-only axes | fan-out/fan-in / `Compare preset` | focused lanes using a shared rubric, then leader synthesis |
-| findings must precede a safe fix | `Audit + Repair preset` | read-only audit, then one bounded non-overlapping repair lane |
-| defined test/log/runtime gate | `Verification preset` | evidence lane while implementation ownership stays elsewhere |
-| shared ownership/dependencies | coordinated swarm / `Coordinated swarm preset` | official Agent Team only when standalone lanes are insufficient |
+| primary source implementation, high-overlap integration, interactive sequence | direct | context-rich leader/main session |
+| one broad evidence, diagnosis, review, or test axis | scout / `Scout preset` | one focused standalone subagent returning a digest and anchors |
+| independent analysis/review axes | fan-out/fan-in / `Compare preset` | standalone subagents invoked together with one shared rubric, then leader synthesis |
+| independent test/metrics/matrix cells | `Verification preset` | one standalone lane per real matrix dimension or failure domain, invoked in parallel |
+| findings must precede a safe fix | `Audit + Repair preset` | read-only audit, then leader source fix or one explicitly assigned governed-doc/test-only repair lane |
+| dependent test workflow, shared fixtures/state, or cross-lane messaging | coordinated swarm / `Coordinated swarm preset` | official Agent Team/teammates only when standalone lanes cannot coordinate the gate cleanly |
 
 Presets are planning shorthand, not Team escalation proof; choose the smallest dependency-fitting topology.
+
+### 6.1) Invocation decision and lifecycle
+
+Routing is incomplete until the selected topology is actually invoked and carried through fan-in:
+1. Keep the leader/main session on the primary objective, source changes, high-overlap integration, and final gate because it holds the broadest current workspace context.
+2. For one bounded independent evidence, diagnosis, review, or test unit, invoke one standalone subagent (`Agent`) with a self-contained lane brief.
+3. For independent analysis or test-matrix cells, invoke multiple standalone agents together in one dispatch so they run concurrently. Partition by a real dimension such as subsystem, platform, configuration, scenario family, failure class, performance metric, or release gate; related failures that may share one cause stay in one lane.
+4. Use official Agent Team/teammates only when workers must exchange findings, coordinate dependencies, share a staged test workflow, or maintain durable role ownership that standalone lanes cannot handle cleanly. Create one coordinated Team, assign one distinct task/owner per standing role, express dependencies on the shared task surface, and use targeted messages for handoff; worker count alone is not a Team trigger.
+5. Before spawning, audit active/recent aligned roles. Reuse or steer the same named worker (`SendMessage`) when role and objective still match; do not respawn by phase or retry habit.
+6. Let harness-tracked agents return by completion notification rather than short-interval polling. After handoff, the leader checks selected anchors, resolves cross-lane conflicts, applies source changes, and invokes the proportionate verification lane again when the fix changes tested behavior.
+
+For testing/metrics/matrix work, every lane must report the exact command/scenario, environment or matrix cell, result, failure signal, coverage limit, and rerun need. Do not run parallel cells against shared mutable state unless isolation is proven or Team coordination explicitly sequences access.
 
 ### 7) Research orchestration gate
 
@@ -67,13 +79,15 @@ Before proposing broad coordination, worker-runtime, or cross-session behavior, 
 
 ### 9) Edit-capable governed-document repair lane
 
-A native edit-capable governed-document repair lane may use a `general-purpose`-style worker only when the leader assigns explicit bounded scope, exact artifacts or sections, and non-overlapping edit ownership.
-- broad audits and reviews remain read-only unless edit ownership is explicit
-- repair only the assigned governed documents and anchors
-- preserve meaning, history reachability, cross-references, and authority-role boundaries
+A native edit-capable lane is exceptional and limited to explicitly assigned non-overlapping governed documents or test-only artifacts. The leader must assign exact files/sections, write permission, and stop gates.
+- broad audits, reviews, and source investigation remain read-only
+- Active Rule/product source, README, integration/install state, git, tags, and releases remain leader-owned
+- do not create unrequested plans/specs, phase/patch artifacts, directories, or parallel architecture
+- repair or author only the assigned governed-document anchors or test-only files
+- preserve meaning, history reachability, cross-references, authority-role boundaries, and source/test separation
 - do not delete files, remove history, relocate content, upgrade status, or mutate authority roles
-- stop and return risks when scope, ownership, or meaning preservation becomes ambiguous
-- leader verification of changed artifacts is required before sync, no-drift, closeout, or release-ready claims
+- stop and return risks when scope, ownership, test relevance, or meaning preservation becomes ambiguous
+- leader verification of changed artifacts and test evidence is required before sync, no-drift, fixed, closeout, or release-ready claims
 
 Edit-capable repair handoffs must include touched artifacts, exact anchors, preservation notes, checks run, unresolved risks, and leader verification needs.
 
@@ -102,12 +116,12 @@ Decision rules:
 - one broad independent lane with no matching worker -> focused standalone subagent preferred
 - three or more distinct lanes with shared dependencies -> Agent Team / teammates only when justified
 
-### 11) Native and selected-goal execution
-Worker routing is normal execution behavior: identify worker-fit slices proactively, keep the worker set minimal, prefer standalone lanes before shared-team coordination, reuse aligned standing roles, and do not over-delegate simple work. If the goal owner requests a bounded authoring/helper lane, route it without turning its output into a new objective surface.
+### 11) Leader-owned execution and helper routing
+Worker routing is normal support behavior: identify helper-fit slices proactively, keep the worker set minimal, prefer standalone lanes before shared-team coordination, reuse aligned standing roles, and do not over-delegate simple work. A goal-owned helper lane remains subordinate and must not become a new objective, route authority, or source owner.
 
-For selected non-trivial plan/goal work that is execution-ready and taskable, `Subagent-Driven` is the internal first preference: normally one standalone lane per bounded task. Choose rather than ask the user between `Subagent-Driven` and `Inline Execution`; if context is insufficient, ask one substantive question about work, scope, access, artifact, or approval.
+For selected non-trivial plan/goal work, the leader owns source implementation and final integration by default. Invoke bounded research, diagnosis, audit/review, independent testing, metrics/test-matrix analysis, test/log analysis, test-only authoring, or exact non-overlapping governed-doc work when separate context or parallelism materially improves the result. Prefer parallel standalone subagents for independent matrix cells; escalate to teammates only when the test workflow has real shared dependencies or messaging needs. Do not expose internal routing modes as a default user choice; ask one substantive work question only when scope, access, artifact, gate, or approval is insufficient.
 
-Use `Inline Execution` when the slice is smaller, safer, tightly sequential, low-output, high-overlap, interactive, worker-unavailable, or explicitly user-directed, and keep the reason visible. Preserve these exact routing labels only when workflow behavior or artifact wording requires them. Task shaping defers to `phase-todo-artifact.md`; leader verification remains mandatory before completion, sync, fixed, or release-ready wording.
+Task shaping defers to `phase-todo-artifact.md`. Worker output remains evidence input; the leader resolves conflicts, applies source changes, verifies material anchors, and owns completion, sync, fixed, or release-ready wording.
 
 ### 12) Team restriction boundary
 
@@ -121,13 +135,15 @@ If Agent Team is disallowed but broad worker-fit work remains, use a standalone 
 
 Use a standalone subagent for bounded independent work that benefits from separate context but not full team coordination.
 
-Default research/audit/review lanes to read-only unless edit ownership is explicit. Edit-capable governed-document repair lanes are allowed only under the bounded repair contract above.
+Default research, diagnosis, audit, and review lanes to read-only. Write access exists only for exact non-overlapping governed documents or test-only artifacts under the bounded contract above.
 
-A lane brief should minimally say:
-- lane template or preset being used (`scout`, `compare`, `audit + repair`, `verification`, or another clearly named bounded role)
+A lane brief must say:
+- lane template or bounded role
 - objective and why this lane exists
 - checked scope and excluded scope
+- exact allowed files/artifacts and explicit write permission (`none`, `governed-doc-only`, or `test-only`)
 - allowed actions and stop gates
+- shared evidence/test rubric when lanes run in parallel
 - required evidence/output shape, including exact anchors the leader should verify
 - what decision or next action the handoff should unblock
 
@@ -139,9 +155,9 @@ A goal-support lane also names the goal/candidate it serves and returns subordin
 
 Use official Agent Team / teammate workflow only when coordination is needed, not merely context filtering.
 
-Teams require shared task ownership, dependencies, messaging, implementation plus review/test/docs sync, or durable handoff that standalone subagents cannot cover cleanly.
+Teams require shared analysis/testing ownership, dependencies, messaging, coordinated review or governed-doc/test sync, a staged test-matrix workflow with shared fixtures/state, or durable handoff that standalone subagents cannot cover cleanly. Independent test cells remain parallel standalone-subagent work; Team scale alone does not authorize source implementation.
 
-Every teammate needs distinct role, objective, checked scope, edit permission, expected output, and stop gates. Edit-capable teammates must own non-overlapping artifacts/classes. Plugin/shared-board/custom tmux bridge mechanics remain outside this Main RULES owner unless separately selected by the user or an active project rule.
+Every teammate needs distinct role, objective, checked/excluded scope, exact allowed artifacts, write permission, expected output, shared rubric when parallel, and stop gates. Edit-capable teammates are limited to non-overlapping governed documents or test-only artifacts unless stronger explicit user/project authority selects another boundary. Plugin/shared-board/custom tmux bridge mechanics remain outside this Main RULES owner unless separately selected by the user or an active project rule.
 
 ### 15) Worker handoff quality and stronger contract
 
@@ -176,15 +192,15 @@ Required guidance:
 - if the current recommendation is stricter than the checked example, state that the stricter form is a selected target, not a discovered fact about the example
 - leader verification must confirm that example-shaped wording does not overclaim checked project truth before sync, no-drift, closeout, or release-ready wording
 
-### 16) Parallel edit containment
+### 16) Parallel helper containment
 
-Parallel implementation is allowed only with clear ownership separation by file, module, test target, documentation surface, or artifact class.
+Parallel lanes are for independent evidence, diagnosis, review, or testing axes using one shared rubric. Source implementation and final integration remain leader-owned by default.
 
-Do not assign overlapping writes unless one lane is explicitly review-only. Use read-only workers for investigation/review when edit overlap risk is high. Edit-capable lanes report touched artifacts, checks run, unresolved risks, and handoff notes.
+Do not assign overlapping writes. Use read-only workers for source investigation/review; limit explicit write lanes to non-overlapping governed documents or test-only artifacts. Edit-capable lanes report touched artifacts, checks run, unresolved risks, and leader handoff needs.
 
 ### 17) Main-controller verification
 
-The leader remains responsible for synthesis, direction, verification, and completion claims. Worker findings and helper/route/test outputs are context, not proof. Resolve conflicts from checked evidence, inspect worker edits, and verify material anchors before factual, completion, sync, fixed, or goal-completion wording.
+The leader remains responsible for direction, source edits, final integration, synthesis, verification, and completion claims. Worker findings and helper/route/test outputs are context, not proof. Resolve conflicts from checked evidence, inspect every permitted worker edit, and verify material anchors before factual, completion, sync, fixed, or goal-completion wording.
 
 ### 18) Custom agent selection after routing
 
@@ -215,11 +231,12 @@ Document owners decide authority, density, sharding/rollover, preservation, and 
 | Routing trigger | Required behavior |
 |---|---|
 | AI/RULES behavior question with project evidence | stay behavior-first unless project inspection is explicitly needed |
-| one bounded evidence axis | use one scout/filter lane |
-| independent evidence branches | use compare/fan-out lanes |
-| findings must precede a safe fix | use audit then bounded repair |
+| one bounded evidence/diagnosis/review/test axis | invoke one standalone subagent |
+| independent evidence branches or test-matrix cells | invoke parallel standalone lanes together with one shared rubric |
+| related failures that may share one cause | keep them in one diagnostic lane before fan-out |
+| findings must precede a safe fix | use audit, leader source repair, then targeted verification |
 | broad research | split by decision-relevant topics and require source-trust/conflict reporting |
-| shared ownership or dependent implementation/review/test work | consider Agent Team only when standalone lanes are insufficient |
+| staged test workflow with shared fixtures/state, dependent analysis, or cross-lane messaging | consider Agent Team only when standalone lanes cannot coordinate cleanly |
 | phase changes but responsibility remains | reuse or steer the standing-role worker |
 | reuse/spawn/duplicate report | audit checked coordination state before deciding |
 | high edit overlap or interactive work | keep edits direct and use read-only workers when useful |
@@ -231,7 +248,7 @@ Document owners decide authority, density, sharding/rollover, preservation, and 
 
 ## Anti-Patterns
 
-Avoid routing by tool name or agent availability; absorbing worker-fit raw evidence before dispatch; escalating beyond the dependency shape; treating Team bans as standalone-agent bans; overlapping edits or duplicate roles without partition; inventing mechanism capability; delegating ambiguous/destructive governed repair; accepting raw handoffs as proof; or tolerating weak handoffs instead of fixing the brief/topology.
+Avoid routing by tool name or agent availability; defining a lane without actually invoking the selected topology; running independent test-matrix cells sequentially without reason; spawning a Team for one bounded test; parallel access to unisolated shared mutable state; short-interval polling of harness-tracked agents; absorbing worker-fit raw evidence before dispatch; delegating Active Rule/product source or final integration by default; unrequested plan/spec/directory creation; escalating beyond the dependency shape; treating Team bans as standalone-agent bans; overlapping edits or duplicate roles without partition; inventing mechanism capability; delegating ambiguous/destructive repair; accepting raw handoffs as proof; or tolerating weak handoffs instead of fixing the brief/topology.
 
 ---
 

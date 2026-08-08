@@ -3,8 +3,9 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Full history:** [../changelog/external-verification-and-source-trust.changelog.md](../changelog/external-verification-and-source-trust.changelog.md)
 
 ---
 
@@ -22,6 +23,8 @@ Define one first-class rule chain for proactive external verification and source
 This chain should increase factual accuracy and proof-aware recommendation quality while preserving the existing burden-of-proof, contradiction, user-authority, and communication contracts owned by adjacent rules.
 
 P120 refinement: this owner should now also make provider-, supplier-, model-, or path-specific narrowing an evidence-earned scope decision rather than a default convenience recommendation, requiring broader corroboration when the narrower local doctrine claim would materially change the chosen fix owner.
+
+P144 refinement: ordinary public read-only lookup is evidence gathering and should remain proactive when proportional. Approval-sensitive external action begins at authenticated/private access, mutation, sending/publishing, purchase/payment, deployment, account/shared-state change, sensitive-data disclosure, meaningful cost, or terms acceptance; `action-safety.md` owns those gates.
 
 ---
 

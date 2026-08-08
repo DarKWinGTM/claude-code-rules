@@ -1,6 +1,6 @@
 # Changelog - Communication Register
 
-> **Current Version:** 1.22
+> **Current Version:** 1.23
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.23 | 2026-08-08 | **[Added error-prevention supporting-copy admission](#version-123)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.22 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-122)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.21 | 2026-06-11 | **[Added P143 hybrid progress-snapshot register refinement](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.20 | 2026-06-07 | **[Added P141 goal-authoring register stop-boundary refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -35,6 +36,19 @@
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-123"></a>
+## Version 1.23: Added error-prevention supporting-copy admission
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Made supporting explanation opt-in and non-repetitive by default while requiring it when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation or recovery, or a necessary next action.
+- Kept tone and content-admission ownership separate from presentation placement and exact action-safety disclosure.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-122"></a>
 ## Version 1.22: Applied owner-canonical active runtime compression

@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.27
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.27
+> **Current Version:** 1.28
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.28
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; decompose broad objectives before deep execution, continue automatically into the next worker-fit lane when safe, keep the full active goal set visible, resolve plain goal requests into the smallest sufficient route support, and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
+**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; decompose broad objectives before deep execution, continue automatically into the next helper-fit lane when safe, keep the full active goal set visible, resolve plain goal requests into the smallest sufficient route support, and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
 
 This rule owns mode selection, stop/continue, continuous execution, next-work discovery, goal-set visibility, priority balance, goal-frame semantics, goal hierarchy, anti-ritual boundaries, and the completion-to-next-goal bridge. It does not replace startup governance, user authority, safety gates, evidence wording, worker routing, phase roadmap semantics, or shared-board/plugin coordination.
 
@@ -56,7 +56,7 @@ When a user turn mixes concern, factual conclusion, goal request, or proposed pa
 - do not let momentum promote the most recent unverified premise into the active execution basis
 
 ### 3) Startup gate and capture before continue
-Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.
+Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. In a genuine emergency, `action-safety.md` may permit only the smallest safe reversible containment/diagnostic slice before startup when delay increases immediate harm; resume startup and recovery synchronization immediately afterward. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.
 
 Continuous execution must not outrun required knowledge capture. If external docs/specs/provider references produce implementation-critical knowledge, normalize it into the governed artifact before later multi-step execution depends on it. Prefer governed design for implementation truth, use phase/patch for execution consequences when in scope, and do not rely on transient reading memory when compact/handoff could remove context.
 
@@ -93,7 +93,7 @@ When execution mode is active, startup posture is resolved enough, and no real s
 
 ### 5.1) Auto-next-lane continuation
 When the current lane closes and the next lane in the same objective is already implied, continue automatically instead of pausing for milestone narration.
-- if the next lane is broad, noisy, or naturally independent, treat it as worker-fit and apply `worker-routing-and-context.md` before deep raw absorption
+- if the next lane is broad, noisy, or naturally independent, treat it as helper-fit and apply `worker-routing-and-context.md` before deep raw absorption; leader source ownership remains unchanged
 - if the next lane is phase-backed, preserve its phase linkage in task and phase surfaces before deeper execution
 - if the next lane is governance/release-sync or multi-surface validation, classify the owner surfaces first instead of collapsing it into a vague `sync everything` pass
 - do not auto-continue into approval-sensitive, destructive, materially divergent, or clearly user-choice-sensitive work
@@ -101,7 +101,7 @@ When the current lane closes and the next lane in the same objective is already 
 ### 5.2) Goal/plan authoring-to-execution transition
 Goal and route-support construction defer to `goal-authoring-and-route-support.md`. Authoring-only turns stop at that surface unless execution is separately selected or clearly implied.
 
-When a selected goal or route enters execution, use `phase-todo-artifact.md` to materialize bounded work and `worker-routing-and-context.md` to choose topology internally. Ask one substantive work question only when objective, scope, gate, access, or approval is insufficient; do not expose internal routing labels as a default user choice. Route completion does not close an objective whose proof/gate remains open.
+When a selected goal or route enters execution, use `phase-todo-artifact.md` to materialize bounded work and `worker-routing-and-context.md` to select and invoke the smallest useful helper topology. The leader owns source implementation and final integration by default. Ask one substantive work question only when objective, scope, gate, access, or approval is insufficient; do not expose internal routing labels as a default user choice. Route or helper completion does not close an objective whose proof/gate remains open.
 
 ### 5.2.2) Progress narration boundary
 Progress shape defers to `explanation-and-presentation.md`; keep completed scope bounded, and never let narration become a stop reason when safe continuation exists.
@@ -155,7 +155,7 @@ This rule decides whether a boundary calls for direct continuation, candidate go
 ## Active Next-Work Discovery
 In execution mode, discover the next slice from the current task list, then active phase/`phase/SUMMARY.md`, compact `TODO.md`, and checked implementation state. Follow history/done only through active references; prefer unfinished work and unblocked lanes in the same objective before opening a fresh one. Completed objectives use design/roadmap/TODO/tasks/implementation as successor evidence.
 
-Worker-fit next slices route before deep direct execution. Oversized governance files are maintenance triggers, not execution surfaces. Phase-shaped work passes the canonical lineage gate in `phase-todo-artifact.md`; no new major by momentum, and a selected major preserves failed current/child basis.
+Helper-fit support slices receive bounded helper routing before leader deep execution; source ownership remains unchanged. Oversized governance files are maintenance triggers, not execution surfaces. Phase-shaped work passes the canonical lineage gate in `phase-todo-artifact.md`; no new major by momentum, and a selected major preserves failed current/child basis.
 
 ---
 
@@ -165,7 +165,7 @@ Decompose a broad next slice into a real objective/lane, then apply `safe-io.md`
 ---
 
 ## Legitimate Stop Gates
-Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion with no selected safe continuation. Completion may still require a supported next-goal recommendation when checked surfaces show meaningful unselected successor work.
+Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/consequential external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion with no selected safe continuation. Completion may still require a supported next-goal recommendation when checked surfaces show meaningful unselected successor work.
 
 Completing one slice is not a stop. Implementation complete but material verification pending is not completion unless verification is blocked, not applicable with reason, approval-sensitive, or already satisfied. A selected design slice is also not complete when invariants, failure modes, or required dependency/state semantics remain uncovered without an explicit status such as verified, deferred, blocked, not applicable, or out of scope. Continue into the next slice when already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff report; do not auto-promote draft-only, future-only, or unselected phases/goals.
 
@@ -195,7 +195,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | user says work is too granular | perform goal review immediately |
 | several major goals remain open | keep current focus proportional to the whole set |
 | implementation completed but material verification remains | continue into verification when safe, or state blocker/not-applicable reason |
-| current lane is complete and the next implied lane is broad/worker-fit | continue into that lane through worker routing instead of pausing |
+| current lane is complete and the next implied lane is broad/helper-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
 | phase-shaped follow-up | pass the canonical lineage gate and preserve its result/linkage |
 | route work finishes while the objective gate remains open | continue to objective verification rather than closing on route completion |

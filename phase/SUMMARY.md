@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.12
+> **Current Version:** 2.13
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** No active phase selected; current repository release is v10.56 installer-design verification correction; latest phase-backed release remains v10.53 / P145 source-first scope guard and repo-authority enforcement
+> **Status:** P073-11 runtime owner semantic conflict resolution and compression is active; v10.57 candidate verification, installation, and publication gates remain open
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,13 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- none selected
+- **P073-11:** [phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md](phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md)
+  - Goal: resolve six semantic ambiguities and compact the existing 19 Active Runtime Rules through owner-canonical behavior-preserving compression.
+  - Done so far: the checked candidate contains all six settlements, complete image-strategy owner integration, leader-owned source/final integration, and explicit invocation routing across standalone, parallel test/metrics/matrix, and coordinated Team workflows while retaining 19/19 static body sufficiency and the exact guard registry.
+  - Verified on the invocation-refined candidate: 19-Rule inventory, 254,032-byte payload, body/literal/invocation registries, 39-path allowlist, 10/10 triads, changed-scope links, README 7/7 diff and mode `100644`, plus Bash/PowerShell disposable 19/19 installs with unrelated-sentinel preservation.
+  - Verified installation: latest candidate/canonical allowlist parity passes 39/39; canonical/root SHA-256 parity and body sufficiency pass 19/19; unrelated root Rules remain preserved.
+  - Remaining gate: push clean master, create the annotated tag and GitHub Release, and audit a fresh public clone.
+  - Patch: [../patch/runtime-owner-semantic-conflict-resolution-and-compression.patch.md](../patch/runtime-owner-semantic-conflict-resolution-and-compression.patch.md)
 
 ### Most Recently Completed
 
@@ -355,23 +361,25 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current repository release focus:
-- `v10.56` corrects stale 18/18 verification wording in the active installer architecture
-- no active phase is selected
-- `v10.53 / P145` remains the latest phase-backed release
-- `v10.54` remains the active runtime-compression baseline; v10.55 and v10.56 change no runtime Rule body or runtime owner version
-- Bash and PowerShell manifests, installer design, README, TODO, master changelog, phase summary, remote master, release tag, and GitHub release should resolve to the same 19-Rule state
-- canonical and installed runtime Rules should retain 19/19 hash parity with the unchanged v10.54 payload
+Current candidate focus:
+- `v10.57 / P073-11` keeps the Active Runtime Rule inventory at 19 and resolves the six checked semantic ambiguities through existing canonical owners
+- the checked source candidate after explicit helper-invocation routing is 254,032 bytes, 3,092 lines, and 33,038 words: 19,689 bytes (7.19%) below v10.54 and 151,882 bytes (37.42%) below the checked 405,914-byte baseline
+- source-scope checks pass for exact literal and invocation registries, selected high-risk clauses, changed-scope links, `git diff --check`, 10/10 touched triads, 39-path allowlist, and static body sufficiency 19/19
+- Bash/PowerShell manifests are ordered-identical at 19; both disposable installs pass source/install 19/19 parity and unrelated-sentinel preservation
+- latest invocation-refined candidate/canonical allowlist parity passes 39/39; canonical/root SHA-256 parity and body sufficiency pass 19/19 while unrelated root Rules remain preserved
+- final proof requires clean master push, annotated tag, GitHub Release, and fresh-clone audit
+- no Claude Code warning-elimination claim is allowed without a controlled before/after runtime witness
 
 ---
 
 ## Rollback / Containment
 
-If the v10.56 installer-design correction is reverted:
-- restore v10.55 as the current repository release while keeping the installer’s real 19-file manifest unchanged
-- do not restore stale 18/18 verification wording to active installer design
-- use v10.54 and v10.55 release records for compression and phase-summary provenance
-- do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
+For the v10.57 candidate:
+- before publication, revert only the scoped clean-lane changes if a release gate fails
+- stop canonical synchronization on overlapping unrelated local edits; do not broad-delete, reset, or replace the dirty backup checkout
+- runtime rollback requires explicit approval and reinstalls the known-good v10.56 19-Rule set while preserving unrelated destination files
+- after publication, use a corrective release; never force-move the public tag
+- never delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 
 ---
 

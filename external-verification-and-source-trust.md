@@ -1,6 +1,6 @@
 # External Verification and Source Trust
-> **Current Version:** 1.4
-> **Design:** [design/external-verification-and-source-trust.design.md](design/external-verification-and-source-trust.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/external-verification-and-source-trust.design.md](design/external-verification-and-source-trust.design.md) v1.5
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/external-verification-and-source-trust.changelog.md](changelog/external-verification-and-source-trust.changelog.md)
 ---
@@ -12,7 +12,10 @@
 When a cheap external check resolves a material factual question:
 - verify current external facts when material
 - prefer checking over unsupported reassurance or passive hesitation
+- treat ordinary public read-only lookup as evidence gathering, not consequential external mutation
 - skip external checks for trivial, conceptual, speculative, or local-source-of-truth questions
+
+Authenticated/private access, mutation, sending/publishing, purchase/payment, deployment, account/shared-state change, sensitive-data disclosure, meaningful cost, or terms acceptance defers to `action-safety.md` approval gates.
 ### Orchestrated external research
 When external research is broad, comparison-heavy, source-volume-heavy, or intended to improve a design/recommendation, use `worker-routing-and-context.md` to decide whether one or more research lanes should gather evidence before the leader absorbs raw sources.
 Required guidance:

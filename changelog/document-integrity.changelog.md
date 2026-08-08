@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-08-08 | **[Corrected active startup ownership and preserved integrity guards](#version-110)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.9 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-19)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.8 | 2026-06-04 | **[Added P138 governed-doc source-comment reference integrity](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.7 | 2026-06-03 | **[Added P135 governed goal route-plan file-hygiene carve-out](#version-17)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -22,6 +23,19 @@
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-110"></a>
+## Version 1.10: Corrected active startup ownership and preserved integrity guards
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Replaced the stale active `artifact-initiation-control` owner reference with `phase-todo-artifact.md` while preserving historical absorbed-owner provenance.
+- Kept cross-reference, rollover, preservation, density-repair, file-hygiene, and no-delete-by-cleanup contracts intact.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-19"></a>
 ## Version 1.9: Applied owner-canonical active runtime compression

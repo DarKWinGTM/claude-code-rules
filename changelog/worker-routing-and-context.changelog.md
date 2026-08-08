@@ -1,6 +1,6 @@
 # Changelog - Worker Routing and Context Control
 
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.16 | 2026-08-08 | **[Established leader-owned source and explicit helper invocation routing](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.15 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-115)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.14 | 2026-06-05 | **[Added P139 route-support auto-resolution and internal routing-label refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.13 | 2026-06-03 | **[Added P137 Subagent-Driven-first execution routing refinement](#version-113)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -29,6 +30,21 @@
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-116"></a>
+## Version 1.16: Established leader-owned source and explicit helper invocation routing
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Made source implementation, README, final integration, installation, git, tags, releases, and completion claims leader-owned by default.
+- Added the invocation decision: leader-direct for primary source/high-overlap integration, one standalone subagent for one bounded independent axis, parallel standalone dispatch for independent research/review/testing/metrics matrix cells, and Agent Team/teammates only for real coordination dependencies or staged shared-state test workflows.
+- Added test-matrix partitioning, related-failure grouping, active-worker reuse/steering, completion-notification instead of polling, and leader fan-in/re-verification requirements.
+- Constrained helper writes to explicitly assigned non-overlapping governed documents or test-only artifacts, with exact allowed files, write permission, shared rubrics, stop gates, filtered handoffs, and no unrequested plans/directories/parallel architecture.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-115"></a>
 ## Version 1.15: Applied owner-canonical active runtime compression

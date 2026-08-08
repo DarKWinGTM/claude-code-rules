@@ -1,6 +1,6 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.27
+> **Current Version:** 1.28
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.28 | 2026-08-08 | **[Aligned leader-owned source execution and consequential-action boundaries](#version-128)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.27 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-127)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.26 | 2026-06-13 | **[Extracted governed `/goal` authoring into dedicated owner rule](#version-126)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 | 1.25 | 2026-06-11 | **[Added P143 progress narration and continuation-boundary refinement](#version-125)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -43,6 +44,20 @@
 
 ---
 
+<a id="version-128"></a>
+## Version 1.28: Aligned leader-owned source execution and consequential-action boundaries
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Replaced broad whole-slice worker routing language with bounded helper-fit support routing while keeping source implementation and final integration leader-owned; selected helper-fit work now hands off to `worker-routing-and-context.md` for actual topology selection and invocation rather than lane description only.
+- Distinguished ordinary public evidence lookup from approval-sensitive destructive or consequential external action.
+- Preserved execution mode, selected-design obligations, continuous verification, phase lineage, goal gates, and stop conditions.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
+
 <a id="version-127"></a>
 ## Version 1.27: Applied owner-canonical active runtime compression
 
@@ -57,6 +72,22 @@
 ### Summary
 This version reduces runtime context cost without changing the chain’s governed responsibility or weakening its active decision boundaries.
 
+
+<a id="version-126"></a>
+## Version 1.26: Extracted governed `/goal` authoring into dedicated owner rule
+
+**Date:** 2026-06-13
+**Session:** 8b04beb0-b5ef-4500-a3f5-558bcedd088a
+
+### Changes
+- Updated `execution-and-goal-frame.md` from v1.25 to v1.26.
+- Updated `design/execution-and-goal-frame.design.md` from v1.25 to v1.26.
+- Extracted governed `/goal` authoring, route-support selection, durable `Plan reference`, and `/plan` overflow doctrine into the dedicated `goal-authoring-and-route-support.md` runtime owner.
+- Kept discussion/execution mode, continuation, next-goal boundaries, selected-execution transition, and goal-gate closeout in this chain.
+- Preserved the v10.52 transition from an 18-Rule to 19-Rule source-owned active runtime set.
+
+### Summary
+`execution-and-goal-frame.md` now owns execution and continuation bridges without duplicating the full governed goal-authoring contract moved to its dedicated owner.
 
 <a id="version-125"></a>
 ## Version 1.25: Added P143 progress narration and continuation-boundary refinement

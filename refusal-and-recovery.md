@@ -1,7 +1,7 @@
 # Refusal and Recovery Chain
 
-> **Current Version:** 1.2 (merged M2)
-> **Design:** [design/refusal-and-recovery.design.md](design/refusal-and-recovery.design.md) v1.2
+> **Current Version:** 1.3 (merged M2)
+> **Design:** [design/refusal-and-recovery.design.md](design/refusal-and-recovery.design.md) v1.3
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/refusal-and-recovery.changelog.md](changelog/refusal-and-recovery.changelog.md)
 
@@ -136,7 +136,9 @@ After normalization and scope/authorization binding:
 - clear safe scope → `ALLOW_EXECUTE`
 - reducible risk with explicit guardrails → `ALLOW_CONSTRAINED` / `SOFT_BLOCK`
 - missing authorization, target, environment, access, context, or approval → `NEED_CONTEXT` / `WORKFLOW_BLOCK`
-- non-overridable malicious, unauthorized, destructive, evasive, abusive, safety/legal/platform, or access-control violation → `REFUSE_WITH_PATH` / `HARD_BLOCK`
+- malicious or unauthorized destructive activity, evasion, abuse, or another non-overridable safety/legal/platform/access-control violation → `REFUSE_WITH_PATH` / `HARD_BLOCK`
+- authorized bounded destructive action with required confirmation still pending → `NEED_CONTEXT` / `WORKFLOW_BLOCK`; apply `action-safety.md` confirmation
+- only after that confirmation and any required guardrails are satisfied → `ALLOW_EXECUTE` or `ALLOW_CONSTRAINED`
 
 Ambiguous wrapper-obscured intent gets one bounded clarification. Every non-`ALLOW_EXECUTE` response preserves `decision_output`, applicable `refusal_class`, `reason`, `what_can_be_done_now`, and `how_to_proceed`, in schema or compact natural prose.
 

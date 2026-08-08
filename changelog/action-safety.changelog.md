@@ -1,7 +1,7 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,11 +9,26 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-08-08 | **[Clarified destructive authorization, emergency containment, and runtime entity scope](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.1 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-12"></a>
+## Version 1.2: Clarified destructive authorization, emergency containment, and runtime entity scope
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Qualified topology workers as operational runtime entities rather than Claude subagents or teammates.
+- Clarified that authorized bounded destructive work remains a workflow block until exact action-and-scope confirmation and required guardrails are satisfied.
+- Allowed only the smallest safe reversible emergency containment or diagnostic action before full startup when delay materially increases immediate harm, then required immediate governance recovery.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-11"></a>
 ## Version 1.1: Applied owner-canonical active runtime compression

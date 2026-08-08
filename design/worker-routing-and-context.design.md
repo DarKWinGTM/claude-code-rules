@@ -1,7 +1,7 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.15
+> **Current Version:** 1.16
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
@@ -37,9 +37,13 @@ P124 refinement: this owner should now preserve goal-owned helper lanes that may
 
 P125 refinement: this owner should now preserve integrated goal-planning helper-lane routing so native helper work can support internal planning / plan-mode-style goal authoring and selected-goal route support without surfacing a neighboring planning surface, and without elevating helper output into route authority or completion proof.
 
-P137 refinement: this owner should now preserve a Subagent-Driven-first execution default for selected non-trivial plan-backed or goal-backed work, keep topology selection inside worker-routing, prefer standalone subagent lanes before Agent Team escalation, and preserve Inline Execution only as a checked direct-handling exception when it is more effective for the current slice.
+P137 refinement is superseded by P144: selected work still receives an internal routing decision, but Subagent-Driven-first source implementation is retired.
 
 P139 refinement: this owner should now keep goal-related routing labels internal by default, provide automatic route support only after `execution-and-goal-frame.md` classifies a plain goal request as needing it, and ask one narrow substantive work clarification instead of exposing execution-mode or `goal plan file` choice labels.
+
+P144 refinement: source implementation and final integration are leader-owned by default. Subagents/teammates are bounded helpers for research, evidence filtering, diagnosis, audit/review, parallel independent analysis, existing-test execution, test/log analysis, explicitly assigned test-only authoring, or explicitly assigned non-overlapping governed-document edits. They must not autonomously change Active Rule/product source, README, integration/install state, git, tags, or releases; create unrequested plans/specs/directories; or claim completion. Every lane must state objective, checked/excluded scope, exact allowed artifacts, write permission, stop gates, output shape, and leader verification needs. Parallel lanes require independent axes and one shared evidence/test rubric; leader fan-in resolves conflicts and owns source edits, integration, verification, and completion wording.
+
+P145 refinement: routing doctrine must govern invocation, not only post-dispatch context. Keep primary source/integration in the context-rich leader session; invoke one standalone subagent for one bounded independent axis; invoke parallel standalone agents together for independent research, review, metrics, or test-matrix cells; use Agent Team/teammates only for shared dependencies, staged test workflows, cross-lane messaging, or durable coordinated roles. Partition test matrices by real subsystem/platform/configuration/scenario/failure/metric dimensions, keep related failures together until cause is discriminated, reuse or steer aligned workers instead of respawning, avoid polling harness-tracked agents, and return all helper evidence through leader fan-in and re-verification.
 
 ---
 
@@ -57,6 +61,9 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
 - Keep the compact merged runtime set at 19 active root Rules; historical phase work must not become a new root Rule by itself.
+- Preserve leader-owned source mutation and final integration as the default; delegated write access is limited to exact non-overlapping governed documents or test-only artifacts when explicitly assigned.
+- Preserve explicit invocation selection: leader-direct for primary source/high-overlap integration, one standalone subagent for one bounded independent axis, parallel standalone dispatch for independent test/metrics/matrix cells, and Agent Team only for real coordination dependencies.
+- Preserve worker reuse/steering, completion-notification rather than polling posture, shared-rubric fan-in, filtered handoffs, and leader verification without treating worker output as completion proof.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
 ---
@@ -75,4 +82,4 @@ Routing/orchestration semantics stay in this owner chain; `safe-io.md` owns read
 
 Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
 
-P099 validation should also confirm the runtime body contains proactive delegation matrix coverage, topology/preset guidance, stronger handoff doctrine, leader context-budget language, and delegation-efficiency review signals without widening the active runtime set.
+P099/P145 validation should confirm the runtime body contains proactive delegation triggers, explicit standalone-versus-parallel-versus-Team invocation decisions, test/metrics/matrix partitioning, reuse/steering and no-poll lifecycle behavior, topology/preset guidance, stronger handoff doctrine, leader context-budget language, and delegation-efficiency review signals without widening the active runtime set.

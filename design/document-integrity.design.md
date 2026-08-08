@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.9
+> **Current Version:** 1.10
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -36,6 +36,8 @@ P108 refinement: this owner should now absorb document-density, compact-thrash, 
 P135 refinement: this owner should now allow a route-only plan file required by the selected governed `/goal` authoring contract when it will be referenced exactly from the emitted copied goal artifact, while still rejecting speculative checkpoint/work-summary files, duplicate authority artifacts, and version-suffixed plan copies.
 
 P138 refinement: this owner should now treat governed-doc citations in source comments as checked references, requiring update or removal when referenced paths, sections, or authority roles change, and preventing stale comment links from being treated as harmless local code detail.
+
+P144 refinement: required governed startup artifacts are selected by the active owner `phase-todo-artifact.md`; references to retired absorbed owner names remain historical provenance only.
 
 ---
 

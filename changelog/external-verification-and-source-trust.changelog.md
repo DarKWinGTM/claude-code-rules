@@ -1,7 +1,7 @@
 # Changelog - External Verification and Source Trust
 
 > **Parent Document:** [../external-verification-and-source-trust.md](../external-verification-and-source-trust.md)
-> **Current Version:** 1.4
+> **Current Version:** 1.5
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-08-08 | **[Separated public evidence lookup from consequential external action](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.4 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-05-22 | **[Added evidence-earned provider/supplier scope narrowing refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-05-06 | **[Integrated source trust with delegated research lanes](#version-12)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -18,6 +19,20 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs proactive external verification, source-reliability ranking, corroboration expectations, and source-conflict handling for WebSearch/WebFetch-backed factual work | |
 
 ---
+
+<a id="version-15"></a>
+## Version 1.5: Separated public evidence lookup from consequential external action
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Clarified that ordinary public read-only lookup remains proactive evidence gathering when proportional.
+- Deferred authenticated/private access, mutation, sending or publishing, purchase or payment, deployment, account/shared-state change, sensitive-data disclosure, meaningful cost, and terms acceptance to `action-safety.md` approval gates.
+- Preserved source ranking, corroboration, conflict handling, and evidence-earned provider/supplier scope.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-14"></a>
 ## Version 1.4: Applied owner-canonical active runtime compression

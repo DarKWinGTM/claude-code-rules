@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.27
+> **Current Version:** 1.28
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -57,7 +57,7 @@ P135 refinement: this owner should now require actual governed `/goal` authoring
 
 P136 refinement: this owner should now require copied durable-plan-backed governed `/goal` artifacts to keep `/goal` first and `Plan reference:` second inside the same copied artifact, while preserving the P135 plan-file-first authoring contract and rejecting detached-preface presentation of the plan reference.
 
-P137 refinement: this owner should now preserve an automatic execution-posture decision for selected non-trivial plan-backed or goal-backed work so execution prefers Subagent-Driven first, delegates topology to worker-routing-and-context.md, delegates live task shaping to phase-todo-artifact.md, and preserves Inline Execution only as a checked direct-handling exception when more effective.
+P137 refinement is superseded by P144: selected work still receives an internal execution-posture decision, but source implementation remains leader-owned and helper routing is limited by `worker-routing-and-context.md`.
 
 P139 refinement: this owner should now treat plain goal requests as enough to trigger planning-depth resolution, choose the smallest sufficient route support automatically for governed work, keep durable `Plan reference` valid only after a route-only plan file already exists in checked scope or was successfully written in the same flow, and keep selected goal/plan execution posture internally chosen rather than exposed as a default user-facing mode choice.
 
@@ -70,6 +70,8 @@ P143 refinement: this owner should now preserve progress narration as navigation
 P121 refinement: this owner should now preserve an explicit goal-to-plan bridge so `/goal` remains the objective owner, `/plan` remains the route owner, governed non-trivial goals may bridge into planning without forcing plans for every goal, and route completion alone cannot substitute for goal-gate closeout.
 
 P122 refinement: this owner should now preserve explicit `/plan` next-surface recommendation once a selected governed goal remains route-heavy, so the assistant does not leave the route in broad prose after the goal is already chosen.
+
+P144 refinement: leader-owned source implementation is the default after a selected goal enters execution; bounded helper lanes may support research, diagnosis, review, parallel testing, test-only authoring, or exact governed-doc work but remain evidence inputs. Execution must hand helper-fit work to `worker-routing-and-context.md` for actual topology selection and invocation rather than stopping at lane description. Public read-only external lookup is evidence gathering rather than an approval-sensitive external mutation. Genuine emergencies may perform only the smallest safe reversible containment/diagnostic slice before startup when delay increases immediate harm, then immediately return to normal governance and recovery synchronization.
 
 ---
 

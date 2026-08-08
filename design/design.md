@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.54
+> **Current Version:** 10.57
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.54` keeps 19 source-owned runtime Rules as body-sufficient owner contracts, compresses repeated cross-Rule wording without weakening authority, safety, evidence, execution, verification, approval, recovery, or stop mechanisms, and keeps design, changelog, TODO, phase, installer, playground, and release surfaces aligned to the same active inventory.
+The active model for `v10.57` keeps the same 19 source-owned runtime Rules as body-sufficient owner contracts, resolves six checked semantic ambiguities, integrates the complete image-derived strategy set through existing canonical owners, and applies owner-canonical compaction without weakening authority, safety, evidence, execution, verification, approval, recovery, or stop mechanisms. Primary source implementation and final integration remain in the context-rich leader session; helper invocation is selected by work shape, with standalone agents for bounded independent axes, parallel standalone dispatch for independent test/metrics/matrix cells, and teammates only for real coordination dependencies.
 
 ---
 
@@ -22,6 +22,16 @@ The active model for `v10.54` keeps 19 source-owned runtime Rules as body-suffic
 
 Current target-state priorities:
 - runtime rules stay as body-sufficient active behavior contracts
+- one complete canonical owner should retain each mechanism; consumers keep only activation, local consequence, handoff, or the minimum synchronized exact copy needed to prevent a likely execution, safety, verification, or ordering error
+- supporting explanation stays opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action
+- source implementation and final integration stay leader-owned by default; helper lanes remain bounded to research, evidence filtering, diagnosis, audit/review, independent testing, test-only authoring, or explicitly assigned non-overlapping governed-document synchronization
+- invocation follows work shape: one standalone agent for one independent axis; parallel standalone agents launched together for independent test/metrics/matrix cells; teammates only for shared dependencies, staged coordinated testing, cross-lane messaging, or durable role ownership
+- reuse or steer an aligned active worker before spawning another; group potentially related failures in one diagnosis lane; return helper results through leader fan-in, selected-anchor verification, source repair, and proportionate rerun
+- operational runtime workers/jobs/entities remain distinct from Claude subagents and Agent Team teammates
+- authorized bounded destructive action remains blocked on exact action-and-scope confirmation and guardrails; malicious or unauthorized destructive activity may follow the refusal hard-block path
+- only the smallest safe reversible emergency containment or diagnostic action may precede full startup when delay materially increases immediate harm, and normal governance must resume immediately afterward
+- `implemented` remains intermediate while material verification is pending; terminal disposition is `verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`
+- ordinary public read-only lookup remains evidence gathering; consequential authenticated/private, mutating, sending, purchasing, deployment, shared-state, sensitive-data, meaningful-cost, or terms-acceptance actions remain approval-sensitive
 - active runtime/design doctrine must outrank older completed phase/patch wording when chronology conflicts
 - governed design/changelog chains must classify chain shape before appending or sharding detail
 - folder-scoped single-chain namespaces may use `design/design.md` or `changelog/changelog.md` when the folder already fully identifies one chain

@@ -1,7 +1,7 @@
 # Changelog - Refusal and Recovery Chain
 
 > **Parent Document:** [../refusal-and-recovery.md](../refusal-and-recovery.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,12 +9,27 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-08-08 | **[Corrected destructive confirmation ordering](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.2 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.1 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `refusal-and-recovery.md` as a body-sufficient merged runtime owner for wrapper normalization, refusal classification, refusal minimization, and actionable recovery paths in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-13"></a>
+## Version 1.3: Corrected destructive confirmation ordering
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Clarified that malicious or unauthorized destruction may be a hard block, while missing authorization or pending required confirmation maps to `NEED_CONTEXT` / `WORKFLOW_BLOCK`.
+- Required `action-safety.md` confirmation and guardrails before authorized bounded destructive action reaches `ALLOW_EXECUTE` or `ALLOW_CONSTRAINED`.
+- Preserved wrapper normalization, the exact refusal classes and decision outputs, and actionable non-allow recovery fields.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-12"></a>
 ## Version 1.2: Applied owner-canonical active runtime compression

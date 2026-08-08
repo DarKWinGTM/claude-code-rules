@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.22
+> **Current Version:** 1.23
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -53,13 +53,15 @@ P135 refinement: this owner should now treat the route-only plan file for actual
 
 P136 refinement: this owner should now require register wording for copied durable-plan-backed governed `/goal` artifacts to keep `/goal` visible before `Plan reference:` inside the same copied artifact so the reference does not read like a detachable heading above the command.
 
-P137 refinement: this owner should now suppress the default need to surface `Subagent-Driven` vs `Inline Execution` as a user-facing choice menu when selected non-trivial plan-backed or goal-backed work is execution-ready, while still requiring a visible checked reason when Inline is chosen despite the Subagent-Driven-first preference.
+P137 refinement is superseded by P144: internal helper-routing modes remain hidden by default, while leader-owned source implementation is the current execution baseline.
 
 P139 refinement: this owner should now preserve outcome-first wording for plain goal requests, keep automatic route support described in ordinary user-facing terms, and reserve exact routing labels plus exact `Plan reference:` wording for governance/workflow discussion or exact copied artifact contexts only.
 
 P141 refinement: this owner should now preserve a goal-authoring register boundary so the assistant reports the emitted goal plus route support and stops there when execution was not yet selected, instead of auto-spilling into a `Subagent-Driven` / `Inline Execution` menu at the end of the authoring turn.
 
 P143 refinement: this owner should now preserve hybrid progress-reporting snapshots as a high-signal communication shape for non-trivial in-flight work, using compact `Current` / `Done so far` / `In progress` / `Remaining` / `Blockers / Notes` / `Next` markers when useful while keeping trivial replies ceremony-free.
+
+P144 refinement: supporting explanation is opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action. This owner decides admission; `explanation-and-presentation.md` owns placement and rendering.
 
 P122 refinement: this owner should now preserve explicit `/plan` recommendation wording once planning is the right next surface, so the assistant does not hide the intended handoff behind vague prose about organizing or thinking through the route.
 

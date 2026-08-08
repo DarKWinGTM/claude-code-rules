@@ -1,6 +1,6 @@
 # Changelog - Explanation and Presentation
 
-> **Current Version:** 1.21
+> **Current Version:** 1.22
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.22 | 2026-08-08 | **[Compacted presentation while preserving error-prevention explanation](#version-122)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.21 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-121)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.20 | 2026-06-11 | **[Added P143 hybrid progress-snapshot presentation refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.19 | 2026-06-07 | **[Added P141 goal-authoring presentation stop-boundary refinement](#version-119)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -34,6 +35,20 @@
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-122"></a>
+## Version 1.22: Compacted presentation while preserving error-prevention explanation
+
+**Date:** 2026-08-08
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Applied owner-canonical compaction across explanation flow, presentation patterns, closing, goal rendering, and no-frame diagrams.
+- Placed required supporting explanation beside the relevant action, heading, or decision without duplicating owner doctrine.
+- Restored the concrete-clarifier default and compact diagnostic-snapshot requirement after independent review.
+
+### Summary
+This version synchronizes the active runtime and design target state for the v10.57 semantic-resolution and owner-canonical compaction wave without claiming publication before the release gate.
 
 <a id="version-121"></a>
 ## Version 1.21: Applied owner-canonical active runtime compression

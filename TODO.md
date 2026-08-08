@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-08
-> **Current Release:** v10.56 installer-design verification correction
-> **Active Wave:** none selected
+> **Current Release:** v10.57 runtime owner semantic conflict resolution and compression candidate
+> **Active Wave:** P073-11 runtime owner semantic conflict resolution and compression
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -271,7 +271,12 @@
 
 ### Active / In Progress
 
-- none selected
+- [ ] P073-11 / v10.57 runtime owner semantic conflict resolution and compression is active.
+  - Implemented in the checked candidate: six semantic settlements, complete image-strategy owner integration, leader-owned source/final integration, explicit standalone-versus-parallel-versus-Team invocation routing with testing/metrics/test-matrix specialization, ten runtime/design version alignments, and owner-canonical compaction of the 19 Active Runtime Rules.
+  - Measured candidate after explicit invocation routing: 254,032 bytes, 3,092 lines, and 33,038 words; 19,689 bytes (7.19%) below v10.54 and 151,882 bytes (37.42%) below the checked 405,914-byte baseline.
+  - Verified on the invocation-refined candidate: Active Rule count 19; payload 254,032 bytes / 3,092 lines / 33,038 words; body sufficiency 19/19; exact literal and invocation registries; 39-path allowlist; 10/10 triads; changed-scope links; `git diff --check`; README 7/7 surgical diff with mode `100644`; and Bash/PowerShell disposable 19/19 installs with unrelated-sentinel preservation.
+  - Verified installation: latest candidate/canonical allowlist parity passes 39/39; canonical/root SHA-256 parity and body sufficiency pass 19/19; unrelated root Rules remain preserved.
+  - Remaining gate: push clean `master`, create the annotated tag and GitHub Release, and audit a fresh public clone.
 
 ### Deferred / Not Selected
 
