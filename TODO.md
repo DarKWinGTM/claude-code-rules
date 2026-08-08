@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-08
-> **Current Release:** v10.54 active runtime Rule compression
+> **Current Release:** v10.55 phase-summary current-state correction
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] v10.55 phase-summary current-state correction was completed, pushed to `master`, tagged, and released.
+  - Verified: stale P138 open-wave and rollback wording was removed from the active `phase/SUMMARY.md`; the entrypoint now reports no active phase, keeps v10.53/P145 as the latest phase-backed release, and identifies v10.55 as the current repository release; README, master changelog, TODO, phase summary, remote master, tag, and GitHub release align; the v10.54 runtime payload remains unchanged at 19 Rules with canonical/runtime hash parity.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.55
 
 - [x] v10.54 active runtime Rule compression was completed, installed, pushed to `master`, tagged, and released.
   - Verified: 15 runtime owner Rules were compressed and version-aligned with their design/changelog chains; the active payload is 273,721 bytes versus the checked 405,914-byte baseline (32.57% reduction); the source-owned install set remains 19 root Rules; active 18-versus-19 inventory drift was corrected; `git diff --check`, metadata/link/body checks, temporary installation, 19/19 source/runtime parity, remote master, tag, and GitHub release checks passed.

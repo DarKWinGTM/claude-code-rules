@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.10
+> **Current Version:** 2.11
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** No active phase selected; current repository release is v10.54 active runtime Rule compression; latest phase-backed release remains v10.53 / P145 source-first scope guard and repo-authority enforcement
+> **Status:** No active phase selected; current repository release is v10.55 phase-summary current-state correction; latest phase-backed release remains v10.53 / P145 source-first scope guard and repo-authority enforcement
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -355,22 +355,22 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Current focus while P138 is open:
-- latest released baseline remains `v10.45 / P137`
-- active wave is `v10.46 / P138`, not yet released by this phase-summary state
-- design companion versions should align to `coding-discipline` v1.2, `document-governance` v1.14, and `document-integrity` v1.8
-- per-chain changelogs should record the P138 doctrine refinement without claiming release, publish, install, tag, or runtime parity completion
-- `TODO.md` and `phase/SUMMARY.md` should show P138 as active rather than `none selected`
-- P138 phase and patch surfaces should identify Task #455 as the remaining owner for final verification, install, publish, tag, and release evidence
+Current repository release focus:
+- `v10.55` corrects stale current-state text that incorrectly described P138 as open
+- no active phase is selected
+- `v10.53 / P145` remains the latest phase-backed release
+- `v10.54` remains the active runtime-compression baseline; v10.55 changes no runtime Rule body or runtime owner version
+- README, TODO, master changelog, phase summary, remote master, release tag, and GitHub release should resolve to the same v10.55 governance-correction state
+- canonical and installed runtime Rules should retain 19/19 hash parity with the unchanged v10.54 payload
 
 ---
 
 ## Rollback / Containment
 
-If P138 is reversed before release:
-- revert the P138 runtime-doctrine source edits and companion/execution-surface sync through a governed rollback or explicit patch path
-- restore `v10.45 / P137` as the latest released baseline and clear the active P138 wave only through an explicit governed update
-- keep Task #455 pending or blocked rather than implying release work happened
+If the v10.55 phase-summary correction is reverted:
+- restore v10.54 as the current repository release while keeping the accurate no-active-phase state
+- do not restore stale P138 open-wave, task-owner, or pre-release rollback wording to the active entrypoint
+- use phase history, done files, and the v10.46 release record for P138 provenance
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 
 ---

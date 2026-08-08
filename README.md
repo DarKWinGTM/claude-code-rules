@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.54</b><br><sub>Active Rule Compression</sub>
+  <b>v10.55</b><br><sub>Phase Summary Correction</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release note:** `v10.54` compresses repeated wording across 15 active runtime Rule owners while preserving the combined authority, safety, evidence, execution, verification, approval, recovery, and stop mechanisms. The install scope remains 19 source-owned root Rules.
+> **Current release note:** `v10.55` corrects stale P138 current-focus and rollback guidance in the active phase summary. The v10.54 compressed 19-Rule runtime payload and all runtime owner versions remain unchanged.
 
 <!-- CTA Buttons -->
 <p>
@@ -279,7 +279,7 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.54` applies owner-canonical compression to 15 active runtime Rule owners.
+- Released `v10.55` corrects the active phase-summary current focus and rollback state; no runtime Rule body or runtime owner version changed from v10.54.
 - The combined active Rule payload is 273,721 bytes, down 132,193 bytes (32.57%) from the checked 405,914-byte `origin/master` baseline.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
@@ -1064,7 +1064,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: this README reflects released `v10.54`, where 15 owner Rules use compressed runtime wording, the active runtime install set remains 19 root Rules, and `playground/` stays outside the install payload.
+- Source state: this README reflects released `v10.55`; the v10.54 compressed runtime content remains installed as 19 root Rules, the phase summary no longer reports P138 as open, and `playground/` stays outside the install payload.
 - Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
 - Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
 - Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
@@ -1189,7 +1189,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.54 |
+  <b>Version</b>: 10.55 |
   <b>Last Updated</b>: 2026-08-08 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
