@@ -1,7 +1,7 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-08
-> **Current Release:** v10.55 phase-summary current-state correction
+> **Current Release:** v10.56 installer-design verification correction
 > **Active Wave:** none selected
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
@@ -9,6 +9,10 @@
 ---
 
 ## ✅ Completed
+
+- [x] v10.56 installer-design verification correction was completed, pushed to `master`, tagged, and released.
+  - Verified: the active installer architecture now consistently requires a 19-file runtime count, 19/19 parity, and 19/19 body sufficiency; Bash and PowerShell manifests remain identical at 19 Rules; README, master changelog, TODO, phase summary, installer design, remote master, tag, and GitHub release align; runtime Rule bytes and versions remain unchanged from v10.54.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.56
 
 - [x] v10.55 phase-summary current-state correction was completed, pushed to `master`, tagged, and released.
   - Verified: stale P138 open-wave and rollback wording was removed from the active `phase/SUMMARY.md`; the entrypoint now reports no active phase, keeps v10.53/P145 as the latest phase-backed release, and identifies v10.55 as the current repository release; README, master changelog, TODO, phase summary, remote master, tag, and GitHub release align; the v10.54 runtime payload remains unchanged at 19 Rules with canonical/runtime hash parity.

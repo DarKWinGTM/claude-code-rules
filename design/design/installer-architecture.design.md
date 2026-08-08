@@ -1,7 +1,7 @@
 # Installer Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.54
+> **Current Version:** 10.56
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
 > **Section:** Project-local Claude Code install architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -130,9 +130,9 @@ Required guidance:
 Installer closeout or proof should confirm:
 - launcher scripts exist and drive the selected operator path correctly
 - helper scripts exist and target the selected install surface correctly
-- the active runtime set count remains 18
-- source/destination parity passes for 18/18 files
-- source/destination body sufficiency passes for 18/18 files
+- the active runtime set count remains 19
+- source/destination parity passes for 19/19 files
+- source/destination body sufficiency passes for 19/19 files
 - manifest cleanup and legacy quarantine stay owner-aware
 - `git diff --check` remains clean after source edits when source work is in scope
 

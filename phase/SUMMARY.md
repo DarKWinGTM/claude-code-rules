@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.11
+> **Current Version:** 2.12
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** No active phase selected; current repository release is v10.55 phase-summary current-state correction; latest phase-backed release remains v10.53 / P145 source-first scope guard and repo-authority enforcement
+> **Status:** No active phase selected; current repository release is v10.56 installer-design verification correction; latest phase-backed release remains v10.53 / P145 source-first scope guard and repo-authority enforcement
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -356,21 +356,21 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 ## Verification Focus
 
 Current repository release focus:
-- `v10.55` corrects stale current-state text that incorrectly described P138 as open
+- `v10.56` corrects stale 18/18 verification wording in the active installer architecture
 - no active phase is selected
 - `v10.53 / P145` remains the latest phase-backed release
-- `v10.54` remains the active runtime-compression baseline; v10.55 changes no runtime Rule body or runtime owner version
-- README, TODO, master changelog, phase summary, remote master, release tag, and GitHub release should resolve to the same v10.55 governance-correction state
+- `v10.54` remains the active runtime-compression baseline; v10.55 and v10.56 change no runtime Rule body or runtime owner version
+- Bash and PowerShell manifests, installer design, README, TODO, master changelog, phase summary, remote master, release tag, and GitHub release should resolve to the same 19-Rule state
 - canonical and installed runtime Rules should retain 19/19 hash parity with the unchanged v10.54 payload
 
 ---
 
 ## Rollback / Containment
 
-If the v10.55 phase-summary correction is reverted:
-- restore v10.54 as the current repository release while keeping the accurate no-active-phase state
-- do not restore stale P138 open-wave, task-owner, or pre-release rollback wording to the active entrypoint
-- use phase history, done files, and the v10.46 release record for P138 provenance
+If the v10.56 installer-design correction is reverted:
+- restore v10.55 as the current repository release while keeping the installer’s real 19-file manifest unchanged
+- do not restore stale 18/18 verification wording to active installer design
+- use v10.54 and v10.55 release records for compression and phase-summary provenance
 - do not delete phase, patch, history, `done/`, unrelated runtime destination files, or observed-only extras as cleanup
 
 ---

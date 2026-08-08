@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.55
+> **Current Version:** 10.56
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.56 | 2026-08-08 | **[Released installer-design verification correction](changelog/v10.56-released-installer-design-verification-correction.changelog.md#version-1056)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.55 | 2026-08-08 | **[Released phase-summary current-state correction](changelog/v10.55-released-phase-summary-current-state-correction.changelog.md#version-1055)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.54 | 2026-08-08 | **[Released active runtime Rule compression](changelog/v10.54-released-active-runtime-rule-compression.changelog.md#version-1054)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.53 | 2026-06-14 | **[Released source-first scope guard and repo-authority enforcement](changelog/v10.53-released-source-first-scope-guard-and-repo-authority-enforcement.changelog.md#version-1053)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
