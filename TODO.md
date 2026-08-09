@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.62 published; v10.63 corrective candidate active
-> **Active Wave:** P073-15 bounded-goal route-scope correction
+> **Current Release:** v10.63 published and fresh-public-tag verified
+> **Active Wave:** none selected
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,16 +10,17 @@
 
 ## Active / In Progress
 
-- [ ] **P073-15 / v10.63 Case 17 bounded-goal route-scope correction is active.**
-  - Output: keep the queue/worker-lease goal's plan and verification inside that slice; retain retry/backoff and status visibility only as deferred sibling notes outside execution and proof.
-  - Verified before publication: section-bounded assertions and independent whole-file review, exact scope/modes/links, protected bytes, Bash/PowerShell fixtures, disposable install, canonical release-owned convergence, and two-pass root installation.
-  - Remaining gate: immutable annotated tag, GitHub Release, fresh-public proof, and truthful closeout.
-  - Boundary: v10.62 remains immutable; Runtime Rules and installer sources remain unchanged; root installation is an explicitly requested idempotent parity witness.
+No RULES release wave is currently selected.
 
 ---
 
 ## Recently Completed
 
+- [x] **P073-15 / v10.63 Case 17 bounded-goal route-scope correction** was pushed to public `master`, tagged, released, and fresh-public-tag verified.
+  - Corrected the final Case 17 contradiction by keeping queue/worker-lease work as the only selected plan/proof slice and retaining retry/backoff plus status visibility solely as deferred sibling notes outside execution and proof.
+  - Verified exact nine-path release scope/modes/links, section-bounded assertions, independent whole-file doctrine review, protected 19-Rule bytes, Bash/PowerShell fixtures, disposable installation, canonical convergence, two-pass root installation, annotated tag and GitHub Release identity, and fresh-public master/tag reproduction.
+  - Runtime Rules and installer sources remained unchanged; root installation was an operator-requested idempotent 19/19 parity witness.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.63
 - [x] **P073-13 / v10.61 Case 17 semantic-owner consistency correction** was pushed to public `master`, tagged, released, and fresh-public-tag verified.
   - Corrected candidate/advisory posture separation, goal-authoring route ownership, phase/TODO evidence/linkage boundaries, and the narrow queue/worker-lease goal; P073-14 owns the later visible-order/branch residuals and P073-15 owns the final retry/status route-scope contradiction.
   - Verified the exact tagged v10.61 scope, protected-byte identity, Bash/PowerShell fixtures, disposable install, candidate/canonical/public/tag parity, annotated tag, GitHub Release identity, and v10.60 immutability.

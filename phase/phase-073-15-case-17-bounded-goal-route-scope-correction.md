@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-15
-> **Status:** Active — candidate implementation and verification
+> **Status:** Completed — released and fresh-public-tag verified
 > **Target Release:** v10.63
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -38,7 +38,7 @@ Candidate-goal posture remains separate from advisory eligibility. Goal-authorin
 
 ## Exact Allowlist
 
-The release candidate changes exactly nine paths:
+The immutable v10.63 release commit changed exactly nine paths:
 
 1. `../playground/cases/case-17-proactive-goal-surfacing-and-decision-ready-explanation.md`
 2. `phase-073-15-case-17-bounded-goal-route-scope-correction.md`
@@ -176,25 +176,28 @@ Run it twice. The gate requires exact 19-file manifest order, canonical/root byt
 - After publication, use a later release for defects; never amend or force-move v10.60, v10.61, v10.62, or v10.63.
 - No deletion, cleanup, quarantine removal, fallback, or restoration action is authorized.
 
-## Current Verification
+## Verification and Closeout
 
-Candidate implementation and pre-publication verification are active. No v10.63 commit, tag object, GitHub Release, fresh-public proof, or closeout evidence exists yet.
+P073-15 passed its complete release gate:
 
-Verified before publication:
-- public master `2db008d1fe9fe95db1912b97ee2f74ab935f3400`
-- immutable v10.62 tag object `4246218bbdb9b5a082f0a14a9111ec2d8b9cee13` peeling to `3d76d93b8fd4d813aee2521a63106f4b14df80ad`
-- v10.63 tag and GitHub Release identity absent before work
-- section-bounded static checks, changed-link validation, independent whole-file doctrine review, Bash/PowerShell fixtures, and two-pass disposable installation passed
-- canonical synchronization passed for eight exact files plus the release-owned TODO projection; the unrelated plugin TODO block and concurrent plugin work remain preserved
+- release commit `c7f42ecf73c965249611f6c08692310fd8bb7644` changed exactly the governed nine-path set
+- annotated `v10.63` tag object `24a13f14960babe01a64967dd91d7695661741ec` peels to the same release commit
+- GitHub Release `v10.63` is published, non-draft, and non-prerelease: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.63
+- fresh public master and immutable-tag clones passed exact scope/modes, links, section-bounded semantic checks, protected 19-Rule identity, Bash/PowerShell fixtures, and disposable installation
+- an independent fresh-tag whole-file doctrine audit returned `PASS` for bounded queue/lease execution and proof, deferred retry/status siblings, owner ordering, alternative route branches, helper non-proof, and the no-actual-`Plan reference:` boundary
+- canonical synchronization passed for eight exact files plus the release-owned TODO projection while unrelated plugin work remained preserved
 - the canonical installer ran twice against root; 19/19 byte and mode parity, manifest convergence, unrelated `additional/` and `shared-task-list-path-coordination.md` preservation, absent quarantine, and identical second-run state passed
+- prior immutable releases remained unchanged: v10.60 tag object `b1bc48e3221001675c9a59293cc469e9540cfd9c`, v10.61 tag object `114d0fb9856fac59c6283f8868c3727c37e0a5cf`, and v10.62 tag object `4246218bbdb9b5a082f0a14a9111ec2d8b9cee13`
+
+The documentation-only closeout updates the eight governed release surfaces and excludes Case 17. It does not move `v10.63`, change any Runtime Rule or installer source, or rewrite the unrelated canonical TODO plugin item.
 
 ## Exit Criteria
 
-- Case 17 is bounded-goal consistent across example, decision, and flow.
-- Full section-bounded semantic checks and independent review pass.
-- Exact nine-path public candidate and expected modes pass.
-- Protected runtime/governance/install surfaces remain unchanged.
-- Canonical release-owned synchronization passes while unrelated TODO work remains preserved.
-- Two-pass root installation proves 19/19 parity, idempotence, unrelated preservation, and no quarantine creation.
-- Public master, immutable annotated v10.63, GitHub Release, and fresh-public-tag proof pass.
-- Eight-path closeout advances master/canonical without changing tagged Case 17 or any immutable tag.
+- [x] Case 17 is bounded-goal consistent across example, decision, and flow.
+- [x] Full section-bounded semantic checks and independent pre-publication/fresh-tag reviews passed.
+- [x] Exact nine-path release scope and expected modes passed.
+- [x] Protected runtime/governance/install surfaces remained unchanged.
+- [x] Canonical release-owned synchronization preserved unrelated TODO/plugin work.
+- [x] Two-pass root installation proved 19/19 parity, idempotence, unrelated preservation, and no quarantine creation.
+- [x] Public master, immutable annotated v10.63, GitHub Release, and fresh-public-tag proof passed.
+- [x] Eight-path closeout excludes tagged Case 17 and leaves every immutable tag unchanged.

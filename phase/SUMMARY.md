@@ -3,7 +3,7 @@
 > **Current Version:** 2.19
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P073-15 / v10.63 bounded-goal route-scope correction active
+> **Status:** P073-15 / v10.63 released and fresh-public-tag verified
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,10 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P073-15:** [Case 17 bounded-goal route-scope correction](phase-073-15-case-17-bounded-goal-route-scope-correction.md) — active candidate for v10.63.
-  - Target output: keep the selected queue/worker-lease goal's plan and proof inside that slice while retaining retry/backoff and status visibility only as deferred sibling notes outside execution and proof.
-  - Gate: section-bounded semantic assertions, independent whole-file review, exact nine-path scope/modes, protected bytes, fixtures/disposable install, canonical convergence, two-pass root installation, and immutable public release/fresh-tag proof.
-  - Root boundary: reinstall the unchanged 19-file canonical Runtime Rule payload as an operator-requested idempotent parity witness, not a Runtime Rule Git change.
+No RULES release phase is currently selected.
 
 ### Blocked Predecessor
 
@@ -35,6 +32,13 @@ This file is the compact active roadmap/index. Start here for current execution 
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
 
 ### Most Recently Completed
+
+- **P073-15:** [Case 17 bounded-goal route-scope correction](phase-073-15-case-17-bounded-goal-route-scope-correction.md)
+  - Output: v10.63 keeps queue/worker-lease as the only selected plan/proof slice and retains retry/backoff plus status visibility solely as deferred sibling notes outside execution and proof.
+  - Gate: exact nine-path release scope/modes/links, section-bounded semantic assertions, independent pre-publication and fresh-tag whole-file reviews, protected 19-Rule identity, Bash/PowerShell fixtures, disposable installation, canonical convergence, two-pass root installation, immutable annotated tag, GitHub Release identity, and fresh-public master/tag reproduction passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.63
+  - Root boundary: the unchanged 19-file canonical payload was installed twice as an operator-requested idempotent parity witness, not a Runtime Rule Git change.
+  - Patch: none; the one-scenario semantic diff was directly reviewable.
 
 - **P073-13:** [Case 17 semantic-owner consistency correction](phase-073-13-case-17-semantic-owner-consistency-correction.md)
   - Output: v10.61 corrects candidate/advisory separation, bounded-goal scope, and the semantic owner map while all 19 Runtime Rules and installation payloads remain unchanged; P073-14 owns the later-discovered visible-order/branch residuals and P073-15 owns the final route-scope contradiction.
@@ -75,12 +79,12 @@ P073-14 and v10.62 are published and immutable. P073-15 corrects the residual bo
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Scenario correction | queue/lease-only plan and proof; retry/status as deferred sibling notes | section-bounded positive/forbidden checks plus independent whole-file review | verified before publication |
-| Governance | exact nine-path P073-15/v10.63 public set | links, modes, truthful candidate state, immutable v10.60-v10.62 | candidate active; pre-publication checks passed |
-| Protected state | 19 Runtime Rules, triads, installers/fixtures, prior releases | byte identity and exact ordered inventory | verified unchanged before publication |
-| Canonical convergence | eight exact file copies plus bounded TODO anchor merge | release-owned parity with unrelated canonical TODO block preserved | verified before publication |
-| Root installation | unchanged 19-file canonical payload installed twice | 19/19 byte/mode parity, manifest convergence, no unrelated mutation/quarantine | verified before publication |
-| Integration/release | public master/tag/Release/fresh clone | exact scope, immutable annotated tag, GitHub Release, fresh-tag proof | pending |
+| Scenario correction | queue/lease-only plan and proof; retry/status as deferred sibling notes | section-bounded positive/forbidden checks plus independent pre-publication and fresh-tag whole-file reviews | verified and released |
+| Governance | exact nine-path P073-15/v10.63 release plus eight-path closeout | links, modes, truthful lifecycle state, immutable v10.60-v10.63 | verified and closed |
+| Protected state | 19 Runtime Rules, triads, installers/fixtures, prior releases | byte identity and exact ordered inventory | verified unchanged |
+| Canonical convergence | eight exact file copies plus bounded TODO anchor merge | release-owned parity with unrelated canonical TODO/plugin work preserved | verified |
+| Root installation | unchanged 19-file canonical payload installed twice | 19/19 byte/mode parity, manifest convergence, no unrelated mutation/quarantine | verified idempotent |
+| Integration/release | public master/tag/Release/fresh clones | exact scope, immutable annotated tag, GitHub Release, fresh-tag proof | verified and released |
 
 ---
 
@@ -154,7 +158,7 @@ Required checks:
 - Root installation passes twice with 19/19 byte/mode parity, manifest convergence, unrelated preservation, and no new quarantine.
 - Public-master/tag/Release/fresh-clone proof passes before closeout.
 
-Current evidence: public master `2db008d1fe9fe95db1912b97ee2f74ab935f3400`; immutable v10.62 tag object `4246218bbdb9b5a082f0a14a9111ec2d8b9cee13` peeling to `3d76d93b8fd4d813aee2521a63106f4b14df80ad`; v10.63 identity absent before work; static/link/doctrine review, Bash/PowerShell fixtures, disposable installation, canonical release-owned convergence, and two-pass root installation passed. Publication and fresh-tag gates remain pending.
+Current evidence: v10.63 release commit `c7f42ecf73c965249611f6c08692310fd8bb7644`; annotated tag object `24a13f14960babe01a64967dd91d7695661741ec` peeling to the same commit; published non-draft/non-prerelease GitHub Release; fresh public master/tag exact-scope, link, semantic, protected-byte, fixture, disposable-install, and independent whole-file doctrine checks passed; canonical/root 19/19 parity and two-pass idempotence passed; v10.60-v10.62 identities remained immutable.
 
 ---
 
@@ -171,7 +175,7 @@ Current evidence: public master `2db008d1fe9fe95db1912b97ee2f74ab935f3400`; immu
 
 ## Next State
 
-P073-15 / v10.63 is selected and active. The bounded Case 17 correction, independent doctrine review, protected bytes, fixtures/disposable installation, canonical convergence, and two-pass root installation passed before publication. Remaining gates are the fast-forward release commit, immutable annotated tag, GitHub Release identity, fresh public master/tag reproduction, and truthful closeout. v10.60-v10.62 remain immutable.
+P073-15 / v10.63 is complete. The bounded Case 17 correction, exact release scope, independent pre-publication and fresh-tag doctrine reviews, protected bytes, fixtures/disposable installation, canonical convergence, two-pass root installation, immutable annotated tag, GitHub Release identity, and fresh public master/tag reproduction passed. v10.60-v10.63 remain immutable, and no successor RULES release phase is selected.
 
 ---
 

@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active candidate</b><br><sub>Verification pending</sub>
+  <b>Released</b><br><sub>Fresh-tag verified</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Candidate note:** `v10.63` corrects the remaining Case 17 bounded-goal route scope: queue ordering and worker lease remain the selected plan/proof slice, while retry/backoff and status visibility become deferred sibling notes outside that goal's execution and proof. The candidate preserves the 19 Runtime Rules and installer sources unchanged; semantic review, fixtures, canonical release-owned convergence, and the explicitly requested two-pass idempotent root reinstall passed. Immutable tag, GitHub Release, fresh-tag proof, and closeout remain pending. Published `v10.62` stays immutable with its semantic closeout blocker recorded.
+> **Release note:** `v10.63` corrects the remaining Case 17 bounded-goal route scope: queue ordering and worker lease remain the selected plan/proof slice, while retry/backoff and status visibility are deferred sibling notes outside that goal's execution and proof. The exact nine-path release, independent fresh-tag doctrine review, fixtures, canonical convergence, immutable annotated tag, GitHub Release, fresh-public reproduction, and explicitly requested two-pass idempotent root reinstall passed. All 19 Runtime Rules and installer sources remain unchanged; published `v10.62` stays immutable with its historical semantic blocker recorded.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,13 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Active `v10.63` candidate keeps the Case 17 queue/worker-lease goal's plan and proof inside that slice and retains retry/backoff and status visibility only as deferred sibling notes outside execution and proof.
-- Published `v10.62` remains immutable: technical release checks passed, but its whole-file semantic closeout blocker remains recorded.
+- Released `v10.63` keeps the Case 17 queue/worker-lease goal's plan and proof inside that slice and retains retry/backoff and status visibility only as deferred sibling notes outside execution and proof.
+- Published `v10.62` remains immutable with its historical whole-file semantic closeout blocker recorded; v10.63 owns the corrective result.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
+- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.63
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1068,7 +1068,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: active `v10.63` candidate keeps all 19 root Rules and installer sources unchanged while correcting the remaining Case 17 route-scope contradiction; semantic, fixture, canonical, and two-pass root-install gates passed, while public-release and fresh-tag gates remain pending.
+- Source state: released `v10.63` keeps all 19 root Rules and installer sources unchanged while correcting the remaining Case 17 route-scope contradiction; semantic, fixture, canonical, two-pass root-install, immutable-tag, GitHub Release, and fresh-public-tag gates passed.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
