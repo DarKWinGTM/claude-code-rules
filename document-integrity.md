@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.12
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.12
+> **Current Version:** 1.13
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.13
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -39,6 +39,12 @@ For migration-complete or no-drift claims, verify applicable active manifests, i
 | source-owned runtime set | checked inventory and substantive bodies |
 | shared destination / other owner | resolve owner/project scope before classification |
 | local or machine-specific value | label checked local scope; defer portable defaults to `portable-implementation-and-hardcoding-control.md` |
+
+Patch timeline migration requires a deterministic evidence manifest before mutation. Each selected row records admissible original-creation evidence, old/new exact paths, source SHA-256 and mode, dependent governed-reference hashes/modes, and the proposed metadata change. mtime/ctime or another indirect chronology signal cannot fill an evidence gap; ambiguous rows remain blocked.
+
+Reference propagation resolves each exact Patch path to its actual old target and recomputes the correct relative path after rename. Update exact references in Phase, design, changelog, TODO/history/done, and Patch companion history; do not globally replace basenames, rewrite wildcard examples such as `patch/*.patch.md`, or modify serialized request/transcript payloads by default. An explicitly suspended archive is a preservation sentinel: retain its names, bytes, modes, and inactive/disconnected role, and exclude it from active mutation rows.
+
+Apply requires unchanged manifest/source/reference hashes plus explicit action-and-scope approval. Write generated manifest/journal files exclusively with owner-only permissions where the filesystem supports them. Persist the rollback journal before the first mutation, replace reference files atomically, and keep explicit rollback able to classify unchanged, staged, and applied journal states without treating it as an automatic fallback. Verification checks the target filename/metadata, updated exact references, former-path inactivity, and preserved archive state together; rollback stops on any state outside the journal's original/applied hashes and modes. A Patch migration remains incomplete while any selected row is ambiguous, any exact old reference remains active, or any preserved archive participates in normal discovery or execution.
 
 ### 2) God-file, worker-gate, and delegated-repair consistency
 
@@ -95,6 +101,7 @@ Renames/moves update imports, links, install examples, governed-doc comments, an
 | Trigger | Required behavior |
 |---|---|
 | new/renamed/moved file, symbol, config key, command | update related references and verify consistency across checked scope |
+| legacy Patch chronology migration | require admissible creation evidence, hash-bound exact-reference manifest, explicit apply approval, archive sentinels, and post-apply/rollback verification |
 | sync/no-drift/closeout/release-ready claim | verify impacted files/sections, worker handoffs, and body sufficiency |
 | migration-complete or authority-replacement no-drift claim | verify active manifests/imports/config/build/deployment/tests/generated inputs/acceptance select current authority and inactive paths remain reference-only |
 | sharded design or changelog structure | verify parent index/shard map, shard-to-parent back-links, selected-shard scope |

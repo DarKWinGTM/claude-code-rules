@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.34
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.34
+> **Current Version:** 1.35
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -45,6 +45,8 @@ Required triggers:
 - **Live task list:** active non-trivial work; expected for phase-backed execution
 - **Phase:** meaningful stages, dependencies, verification/rollback gates, multi-system/owner coordination, or explicit request
 - **Patch:** useful governed before/after review surface
+
+When Patch posture is `create now`, capture one UTC instant to seconds and derive both the filename and `Created At` metadata from that same value under the exact contract in `document-governance.md`. Create the target exclusively, fail on collision, and never overwrite or invent `-v2`, `_final`, `_copy`, or another suffix. Record auditable `Creation Evidence`; moving or completing the Patch preserves its original timestamp.
 
 Emergency exception: when delay materially increases immediate harm, `action-safety.md` may permit only the smallest safe reversible containment/diagnostic action before this sequence. Approval-sensitive work remains gated; startup/recovery synchronization resumes immediately afterward.
 
@@ -136,7 +138,7 @@ When evidence supports forecasting, `phase/SUMMARY.md` should carry a bounded ro
 
 Design, active phase, built-in tasks, TODO, and checked implementation state supply governed goal evidence; release/review surfaces matter only when they affect completion. Phase/tasks preserve selected-goal linkage and its verification gate; goal construction belongs to `goal-authoring-and-route-support.md`.
 
-When patch is used, `phase/SUMMARY.md` names governing patch artifact(s) or explicit `none`, and each patch-derived child has `Patch References` or `none`. `none` is valid only when patch is genuinely unnecessary.
+When patch is used, `phase/SUMMARY.md` names the exact timestamped governing Patch path(s), and each patch-derived child has exact `Patch References`; do not replace exact links with a Patch ID, index lookup, basename-only guess, or wildcard. Use explicit `none` only when Patch is genuinely unnecessary.
 
 ### 6) Phase responsibility and closeout
 

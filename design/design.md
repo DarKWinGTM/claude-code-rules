@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.60
+> **Current Version:** 10.64
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.60` keeps the same 19 body-sufficient source-owned runtime Rules while repairing three owner boundaries: execution selects successor posture, goal-authoring constructs it, and presentation renders it; startup evaluates diagram after design only when materially triggered; action safety classifies duplicate/stale Agent Team presence while worker routing owns lifecycle decisions. Repeated cross-owner wording is compacted without weakening evidence, approval, recovery, migration, phase-lineage, worker, or exact goal-artifact guards.
+The active model for `v10.64` keeps the same 19 body-sufficient source-owned Runtime Rules while adding verified original-creation chronology for governed Patch artifacts. `document-governance.md` owns the canonical identity/evidence contract, `phase-todo-artifact.md` owns one-instant exclusive creation and exact Phase linkage, `document-integrity.md` owns evidence/hash-bound migration and reference convergence, and the repository-only `script/patch-timeline.mjs` Tool remains outside the Runtime Rule installation payload.
 
 ---
 
@@ -32,6 +32,10 @@ Current target-state priorities:
 - distinguish allowed-direction acceptance, factual confirmation, and best-route endorsement; invalidated assistant advice must be explicitly withdrawn/revised with the failed premise, contrary evidence, corrected recommendation, and remaining gate
 - non-trivial analysis/design should complete the material decision surface, compare only realistic alternatives, consider a simpler sufficient path, and recommend the best-supported route without fabricating project facts, forcing disagreement, or replacing user authority
 - migration/cutover closes only after positive target proof and proportionate negative former-path inactivity proof show exactly one active authority, no active bridge/fallback/dual path, and no normal quarantine read
+- governed Patch chronology derives from one verified original-creation UTC instant while retaining a semantic slug; filename and `Created At` remain equivalent and no Patch ID/index exists
+- new Patch creation captures the instant once, creates exclusively, emits exact direct references, and preserves creation identity across revisions and governed moves
+- legacy Patch migration remains evidence/hash-bound, updates only resolved exact references, blocks ambiguous or colliding rows, preserves suspended archives, and requires explicit verify/rollback rather than automatic fallback
+- `script/patch-timeline.mjs` is dependency-free repository tooling for inventory, evidence audit, planning, creation, apply, verification, and rollback; it never enters the ordered 19-Rule Runtime payload
 - runtime rules stay as body-sufficient active behavior contracts
 - one complete canonical owner should retain each mechanism; consumers keep only activation, local consequence, handoff, or the minimum synchronized exact copy needed to prevent a likely execution, safety, verification, or ordering error
 - supporting explanation stays opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action

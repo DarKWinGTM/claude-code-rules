@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.20 | 2026-08-09 | **[Added verified Patch creation timeline identity](#version-120)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.19 | 2026-08-09 | **[Added conditional diagram sync and compact owner handoffs](#version-119)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.18 | 2026-08-09 | **[Made inactive preservation reference-only after cutover](#version-118)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.17 | 2026-08-08 | **[Compacted document governance and bounded cross-Rule exact copies](#version-117)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -31,6 +32,22 @@
 | | | Summary: Extended `document-governance.md` so the merged runtime owner now covers governance/release-sync work-shape recognition and owner-aligned sync-lane doctrine for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-120"></a>
+## Version 1.20: Added verified Patch creation timeline identity
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Made the timestamped semantic filename the canonical Patch identity, with matching `Created At` and auditable Creation Evidence.
+- Defined original-creation semantics, admissible evidence, prohibited indirect substitutes, timestamp preservation, collision refusal, and the no-ID/no-index boundary.
+- Preserved suspended legacy archives only while inactive and execution-disconnected.
+
+### Summary
+This version advances the document-governance triad for P148 Patch timeline governance and the reusable RULES Tool.
 
 ---
 

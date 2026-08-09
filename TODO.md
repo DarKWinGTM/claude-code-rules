@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.63 published and fresh-public-tag verified
-> **Active Wave:** none selected
+> **Current Release:** v10.64 candidate; v10.63 remains published and immutable
+> **Active Wave:** P148 Patch timeline governance and RULES Tool
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,11 +10,29 @@
 
 ## Active / In Progress
 
-No RULES release wave is currently selected.
+- [ ] **P148 / v10.64 Patch timeline governance and RULES Tool**
+  - [x] Lock public/canonical/root baseline, select P148/v10.64, create the timestamped governed Patch, and implement the focused Tool suite.
+  - [x] Advance the document-governance 1.20, phase-todo-artifact 1.35, and document-integrity 1.13 triads.
+  - [x] Finish Case 09/matrix/coverage, README, release shard, daily history, and candidate-safe governance synchronization.
+  - [x] Prove NodeClaw read-only counts at 576 selected plus 199 preserved with 0 mutation rows, 576 evidence blockers, and identical repeated Patch/Git witnesses.
+  - [ ] Publish v10.64, fresh-public verify, and close out without moving the tag; candidate/canonical 27-path parity and two-pass root 19/19 installation already pass.
+  - Patch: [Patch timeline governance and RULES Tool](patch/2026-08-09T13-49-15Z--patch-timeline-governance-and-rules-tool.patch.md).
 
 ---
 
 ## Recently Completed
+
+- [x] **memory-context-intelligence v0.1.79 / package 0.9.31 corrective public-skill alignment** was pushed on the dedicated corrective branch, annotated-tagged, released, and fresh-tag verified.
+  - Corrected the immutable v0.9.30 metadata defect by aligning the manifest, analysis skill, and init skill at `0.9.31`; also corrected user-scope config wording, evidence/release descriptions, and the native-agent design shard metadata.
+  - Verified exact 17-path plugin scope with zero deletions, focused `21 passed`, source/clean-candidate/fresh-tag full suites `132 passed`, plugin validation PASS, remote branch/tag parity at `5e58f018a2b057ffdd009aeca3d88146e0cfab20`, and non-draft/non-prerelease GitHub Release identity.
+  - Confirmed the earlier v0.9.30 branch and annotated tag still resolve to `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`; no tag or release was moved or replaced.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.31
+
+- [x] **memory-context-intelligence v0.1.78 / package 0.9.30 deterministic standalone additional-stage emission** was pushed on the dedicated plugin branch, annotated-tagged, released, and fresh-tag verified.
+  - Delivered read-only initial analysis, explicit later trial selection, one rich standalone artifact per Topic, normalized evidence, full-set collision refusal, no overwrite path, and additional-root containment while keeping Main RULES promotion separate.
+  - Verified exact 37-path plugin scope with zero unexpected paths/deletions, clean-clone `113 passed` focused and `132 passed` full suites, remote branch/tag parity at `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`, non-draft GitHub Release identity, and fresh-tag manifest `0.9.30` with `132 passed` plus plugin validation PASS.
+  - Main RULES, other plugins, and the fifteen existing additional-stage artifacts remained outside the release scope.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.30
 
 - [x] **P073-15 / v10.63 Case 17 bounded-goal route-scope correction** was pushed to public `master`, tagged, released, and fresh-public-tag verified.
   - Corrected the final Case 17 contradiction by keeping queue/worker-lease work as the only selected plan/proof slice and retaining retry/backoff plus status visibility solely as deferred sibling notes outside execution and proof.

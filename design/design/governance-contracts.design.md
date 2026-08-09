@@ -1,7 +1,7 @@
 # Governance Contracts - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.60
+> **Current Version:** 10.64
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Section:** Active governance contracts
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -49,6 +49,16 @@ The active phase-planning contract is:
 - deeper hybrid forms such as `NNN-NN-NNb` are not forward-valid grammar by default
 - non-trivial phase-backed live tasks visibly link to active or clearly implied phase context
 - patch docs remain separate governed review artifacts outside live phase planning
+
+## Patch Timeline Contract
+
+The active Patch timeline contract is:
+- `document-governance.md` is the sole complete owner of canonical timestamped semantic identity, matching `Created At`/Creation Evidence, original-creation meaning, legacy preservation, and the no-ID/no-index boundary
+- `phase-todo-artifact.md` captures one UTC instant for new Patch filename/metadata, creates exclusively without overwrite or suffix fallback, and records exact direct Patch references in Phase surfaces
+- `document-integrity.md` requires deterministic evidence/hash-bound manifests, exact reference recomputation, collision and ambiguity blockers, suspended-archive preservation, positive target proof, and negative former-path inactivity proof
+- `script/patch-timeline.mjs` is repository-only support tooling and remains outside the ordered 19-file Runtime Rule install payload
+- create replays the preview-approved `Created At` value during execution, rejects multiline governed metadata, preserves URI-shaped text outside exact-reference migration, and keeps selected/preserved count expectations consistent across inventory, audit, and plan
+- apply and rollback remain explicit approval-hash operations with a durable pre-mutation journal, path-binding/symlink guards, atomic publication boundaries, and no automatic fallback; kernel power-loss durability is not claimed without a dedicated crash/filesystem harness
 
 ## Completed Documentation Surface Contract
 

@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -42,6 +42,8 @@ P144 refinement: required governed startup artifacts are selected by the active 
 P146 refinement: migration-complete and no-drift integrity must verify applicable manifests, imports/dependencies, config, build/deployment inputs, tests/test discovery, generated-input declarations, and acceptance surfaces select only current authority. Quarantine, history, and `done/` may remain reachable provenance references but must not remain active, fallback, generated, or normally discovered inputs.
 
 P073-12 refinement: conditionally selected diagram surfaces count as governed startup artifacts only when `phase-todo-artifact.md` selects them; document-integrity verifies their references but does not become a second diagram trigger owner.
+
+P148 refinement: Patch timeline migration requires an evidence- and SHA-256-bound manifest, exact-target reference resolution, correct relative-path recomputation, serialized/wildcard exclusions, suspended-archive preservation sentinels, explicit apply approval, exclusive owner-only manifest/journal output where supported, a rollback journal persisted before mutation, atomic reference replacement, post-apply former-path inactivity proof, and explicit journal/hash-gated rollback across unchanged, staged, or applied states. Ambiguous creation evidence remains blocked rather than inferred from mtime/ctime or indirect chronology.
 
 ---
 

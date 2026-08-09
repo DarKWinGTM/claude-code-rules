@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.63</b><br><sub>Case 17 Bounded Goal Scope</sub>
+  <b>v10.64</b><br><sub>Patch Timeline Candidate</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Fresh-tag verified</sub>
+  <b>Active</b><br><sub>P148 verification</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Release note:** `v10.63` corrects the remaining Case 17 bounded-goal route scope: queue ordering and worker lease remain the selected plan/proof slice, while retry/backoff and status visibility are deferred sibling notes outside that goal's execution and proof. The exact nine-path release, independent fresh-tag doctrine review, fixtures, canonical convergence, immutable annotated tag, GitHub Release, fresh-public reproduction, and explicitly requested two-pass idempotent root reinstall passed. All 19 Runtime Rules and installer sources remain unchanged; published `v10.62` stays immutable with its historical semantic blocker recorded.
+> **Candidate note:** `v10.64 / P148` adds verified original-creation chronology for governed Patch filenames, matching `Created At`/Creation Evidence, exact-reference migration integrity, and a reusable RULES-owned `script/patch-timeline.mjs`. Focused Tool tests, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, and disposable installation pass; final review, canonical/root installation, publication, and fresh-tag verification remain pending. The Runtime Rule payload stays exactly 19 files and excludes the Tool.
 
 <!-- CTA Buttons -->
 <p>
@@ -260,7 +260,7 @@ These capabilities summarize the current operating model at the front-page level
 | [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Selects direct continuation, candidate goals, advisory posture, clarification, or no successor |
 | [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs the execution-selected goal and preserves verified `Plan reference` and `/plan` overflow guards |
 | [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective lane and owns checked Agent Team reuse/steer/wait/partition/respawn decisions |
-| [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves design then conditional diagram startup posture, governs live `/phase`, and separates TODO from live tasks |
+| [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves design then conditional diagram startup, creates Patch chronology from one UTC instant, governs live `/phase`, and separates TODO from live tasks |
 
 ---
 
@@ -270,8 +270,8 @@ These capabilities summarize the current operating model at the front-page level
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`document-governance.md`](document-governance.md) | Document governance baseline | One authority model for README/design/diagram/changelog/patch/history plus conditional diagram synchronization and UDVC-1 |
-| [`document-integrity.md`](document-integrity.md) | Document integrity | Cross-reference consistency, rollover boundaries, and no-drift / no-delete-by-hygiene discipline |
+| [`document-governance.md`](document-governance.md) | Document governance baseline | One authority model for README/design/diagram/changelog/patch/history, including verified timestamped Patch identity, plus conditional diagram synchronization and UDVC-1 |
+| [`document-integrity.md`](document-integrity.md) | Document integrity | Cross-reference consistency, evidence/hash-bound Patch rename propagation, archive preservation, rollover boundaries, and no-drift / no-delete-by-hygiene discipline |
 | [`safe-io.md`](safe-io.md) | Safe file and terminal I/O | Bounded reading/output, parent-index-first reads, and rollover signals for oversized entrypoints |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External source trust | Proactive web-backed verification, source ranking, and conflict-aware evidence grounding |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance | Keeps memory scoped, compact, path-aware, and subordinate to checked current evidence |
@@ -280,8 +280,8 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.63` keeps the Case 17 queue/worker-lease goal's plan and proof inside that slice and retains retry/backoff and status visibility only as deferred sibling notes outside execution and proof.
-- Published `v10.62` remains immutable with its historical whole-file semantic closeout blocker recorded; v10.63 owns the corrective result.
+- Candidate `v10.64 / P148` adds verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and a reusable repository Tool; integrated verification and release remain pending.
+- Released `v10.63` remains immutable and keeps the Case 17 queue/worker-lease goal's plan and proof inside that slice while retry/backoff and status visibility remain deferred sibling notes.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
@@ -467,7 +467,7 @@ This section defines how `design`, `diagram`, `changelog`, `runtime rules`, `TOD
 | `phase/history/*.md` | Referenced inactive phase history | Daily phase movement and pre-rollover summary snapshots when active `phase/SUMMARY.md` is compacted |
 | `phase/phase-NNN-<phase-name>.md`, `phase/phase-NNN-NN-<subphase-name>.md`, and `phase/phase-NNN-NN-NN-<child-phase-name>.md` | Governed active phase-detail layer | Multi-stage execution detail under `/phase`, including design references, optional patch references, design extraction, optional patch extraction, review flow, reviewer checklist, review outcome, and execution detail |
 | `phase/done/phase-NNN-*.md` | Inactive completed phase history | Completed phase detail should leave active scans but remain traceable |
-| `patch/<context>.patch.md` or root `<context>.patch.md` | Governed active patch/review artifact layer | Patch or review work that is separate from live phase planning but may feed the phase layer one-way when relevant |
+| `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md` | Governed chronological active patch/review layer with matching `Created At` and Creation Evidence | Patch or review work separate from live phase planning; create from one verified UTC instant and feed exact references to phase one-way when relevant |
 | `patch/done/<context>.patch.md` | Inactive completed patch history | Completed patch artifacts should leave active review scans but remain traceable |
 | `template/phase-authoring-template.md` | Template helper for phased planning readability | Reusable authoring support when staged execution matters, including active phase family, planned next phase(s), activation boundary, and next checkpoint guidance |
 | `TODO.md` | Execution and progress tracking | Work starts/completes or task state changes |
@@ -1068,7 +1068,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: released `v10.63` keeps all 19 root Rules and installer sources unchanged while correcting the remaining Case 17 route-scope contradiction; semantic, fixture, canonical, two-pass root-install, immutable-tag, GitHub Release, and fresh-public-tag gates passed.
+- Source state: candidate `v10.64 / P148` advances three Runtime Rule triads and adds the repository-only Patch timeline Tool while the active install set remains exactly 19; focused Tool tests, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, and disposable installation pass, while final review, canonical/root, publication, and fresh-public gates remain pending.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.

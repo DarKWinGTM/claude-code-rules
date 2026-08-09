@@ -1,7 +1,7 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.60
+> **Current Version:** 10.64
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -25,6 +25,9 @@
 - [ ] Successor posture follows execution decision → goal construction → presentation rendering, with no consumer-side promotion and exact `/goal` then `Plan reference:` order
 - [ ] Structural/visual changes resolve diagram posture after design; ordinary design edits may use `not required` without opening a subject diagram
 - [ ] Duplicate/stale Agent Team presence blocks unchanged retry in action safety, then worker routing audits and decides lifecycle
+- [ ] Governed Patch filenames and `Created At` represent the same verified original-creation UTC instant, retain semantic identity, and introduce no Patch ID/index or collision suffix fallback
+- [ ] Legacy Patch manifests block ambiguous evidence and duplicate destinations, update only resolved exact references, preserve suspended archives, and prove target convergence plus former-path inactivity
+- [ ] The Patch timeline Tool passes focused creation/audit/plan/apply/verify/rollback tests, replays preview-approved creation time, rejects multiline governed metadata, excludes URI-shaped text from exact-reference rewrites, keeps command count expectations aligned, persists a synced journal before mutation, rejects ancestor symlinks, uses atomic publication boundaries, supports restartable explicit rollback, and remains outside the 19-file Runtime payload
 
 ### Installer, quarantine, and restoration
 

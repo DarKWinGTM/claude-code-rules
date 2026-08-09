@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.12
+> **Current Version:** 1.13
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.13 | 2026-08-09 | **[Added evidence-bound Patch rename and reference integrity](#version-113)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.12 | 2026-08-09 | **[Aligned startup-selected diagram artifacts and compact handoffs](#version-112)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.11 | 2026-08-09 | **[Added migration reference and discovery integrity](#version-111)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.10 | 2026-08-08 | **[Corrected active startup ownership and preserved integrity guards](#version-110)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -23,6 +24,22 @@
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-113"></a>
+## Version 1.13: Added evidence-bound Patch rename and reference integrity
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Required deterministic Patch migration manifests with admissible creation evidence, source/reference hashes, modes, and explicit blockers.
+- Added exact-target reference propagation with relative-path recomputation and wildcard/serialized-payload exclusions.
+- Added suspended-archive sentinels, explicit apply approval, exclusive owner-only manifest/journal output, pre-mutation journal persistence, atomic reference replacement, former-path inactivity proof, and explicit journal/hash-gated rollback across unchanged, staged, or applied states without automatic fallback.
+
+### Summary
+This version advances the document-integrity triad for P148 safe Patch timeline migration.
 
 ---
 

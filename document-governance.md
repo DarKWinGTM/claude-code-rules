@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.19
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.19
+> **Current Version:** 1.20
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.20
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -29,7 +29,7 @@
 | `changelog/<chain>/v*.changelog.md` | indexed same-chain version detail |
 | `TODO.md` | compact durable current execution index, not the primary live board |
 | `phase/SUMMARY.md`, `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, `phase/phase-NNN-NN-NN-*.md` | live staged execution and provenance |
-| `patch/<context>.patch.md` or root `<context>.patch.md` | governed before/after review outside live phase planning |
+| `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md` | governed chronological before/after review outside live phase planning |
 | allowed `history/` / `done/` surfaces | inactive referenced history/detail, never cleanup authority |
 
 Allowed preservation surfaces are `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, `changelog/done/`, and when diagram rollover is needed, `diagram/history/` plus `diagram/done/`. Active changelog detail shards remain under `changelog/<chain>/v*.changelog.md`. Design has **no default** `design/done/`; it remains active blueprint authority until superseded. Helper/support surfaces such as `template/**`, `support/**`, and `plugin/**` are non-governed unless explicitly promoted.
@@ -138,17 +138,25 @@ Keep the parent compact as version/index/map/navigation authority; move bulky sa
 
 ## Part D — Patch Governance
 
-### 1) Meaning, location, and change contract
+### 1) Meaning, location, and chronological identity
 
 A patch is a governed before/during-execution review artifact showing **what will change**. Each change item identifies a target artifact or stable locator, current/before state, target/after state, and one change type: `additive`, `replacement`, `deletion`, or `restructuring`.
 
-A patch is not a retrospective/phase summary, rollout dashboard, prose-only recap, deletion authority, or generic plan. Active review lives at `patch/<context>.patch.md` or root `<context>.patch.md`; completed history may move to `patch/done/<context>.patch.md` after review closes. Filenames are self-identifying and version-suffix-free; generic `patch.md` is invalid.
+A patch is not a retrospective/phase summary, rollout dashboard, prose-only recap, deletion authority, or generic plan. Active review uses `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md`; completed history may move to `patch/done/` without changing the filename timestamp. The timestamp is UTC to seconds, `--` separates chronology from meaning, and the slug is lowercase ASCII kebab-case. The exact filename contract is:
 
-### 2) Metadata and alignment
+```regex
+^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}Z--[a-z0-9]+(?:-[a-z0-9]+)*\.patch\.md$
+```
 
-Patch metadata requires `Current Version`, `Session`, `Status`, `Target Design`, and `Full history`. Its changelog metadata requires `Parent Document`, `Current Version`, and `Session`.
+The filename timestamp is the Patch artifact's verified original creation instant. It is not last modification, metadata-change, phase, release, completion, archive-copy, or move-to-`done/` time. Revisions and governed moves preserve the original timestamp. Do not create Patch IDs, Patch registries, or `patch/INDEX.md`; chronological identity comes from the filename and semantic identity from the slug. Generic `patch.md`, version suffixes, copy/final suffixes, and collision auto-suffixing are invalid.
 
-Use real session IDs in active artifacts; `LEGACY-*` is historical-only when original data is unavailable. Align patch and patch-changelog versions, resolve `Target Design` to an existing design/version, and perform final patch metadata sync in governance order. Metadata integrity does not make patch version authority or transfer design/phase ownership.
+### 2) Metadata, creation evidence, and alignment
+
+Patch metadata requires `Current Version`, `Session`, `Status`, `Created At`, `Creation Evidence`, `Target Design`, and `Full history`. `Created At` uses the matching ISO-8601 UTC form `YYYY-MM-DDTHH:mm:ssZ`; filename and metadata must represent the same instant. Its changelog metadata requires `Parent Document`, `Current Version`, and `Session`.
+
+Admissible creation evidence is a direct creator event, a transcript event explicitly confirming creation, verified filesystem birthtime not contradicted by copy/restore evidence, or authoritative external/operator-provided creation evidence. mtime, ctime, alphabetical order, Phase number/date, changelog date alone, Git first-add without creation proof, session UUID alone, and directory position are not creation evidence. A legacy Patch without admissible evidence remains legacy and blocks an evidence-complete migration row; do not infer or fabricate a timestamp.
+
+Use real session IDs in active artifacts; `LEGACY-*` is historical-only when original data is unavailable. Align patch and patch-changelog versions, resolve `Target Design` to an existing design/version, and perform final patch metadata sync in governance order. Metadata integrity does not make patch version authority or transfer design/phase ownership. An explicitly suspended archive may preserve legacy names only while it remains inactive, execution-disconnected, outside normal discovery, and unchanged by the active migration. `script/patch-timeline.mjs` is the reusable repository Tool for this contract; it and its tests/fixtures remain outside the active Runtime Rule installation payload.
 
 ### 3) Reviewability
 

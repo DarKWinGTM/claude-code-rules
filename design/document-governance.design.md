@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.19
+> **Current Version:** 1.20
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -56,6 +56,8 @@ P144 refinement: cross-Rule exact repetition is exceptional. A consumer may reta
 P146 refinement: active parents, maps, manifests, install sets, and generated-input declarations must identify only current authority. Quarantine, history, and `done/` remain reachable reference/provenance surfaces only; they cannot own active resolution, automatic fallback, normal generated input, or runtime/install discovery. The archive shape is `archive-history-reference-only`, not an active fallback model.
 
 P073-12 refinement: governed synchronization orders design first, then diagram only when startup posture triggers it, then Runtime Rule, changelog, TODO, and affected patch metadata. Diagram remains visual synthesis and never outranks design semantic truth.
+
+P148 refinement: governed Patch identity uses a verified original-creation UTC timestamp plus semantic slug in the filename, matching `Created At` and auditable `Creation Evidence` metadata. Patch IDs and indexes remain prohibited; revisions and moves preserve creation identity, ambiguous legacy evidence blocks migration, and suspended archives may retain legacy names only while inactive and execution-disconnected.
 
 ---
 

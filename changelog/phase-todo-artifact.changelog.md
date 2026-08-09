@@ -1,6 +1,7 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Current Version:** 1.34
+> **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
+> **Current Version:** 1.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.35 | 2026-08-09 | **[Added deterministic Patch creation lifecycle](#version-135)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.34 | 2026-08-09 | **[Added conditional diagram startup posture](#version-134)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.33 | 2026-08-09 | **[Corrected changelog owner vocabulary](#version-133)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.32 | 2026-08-08 | **[Compacted phase/TODO governance and clarified closeout semantics](#version-132)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -46,6 +48,22 @@
 | | | Summary: Extended `phase-todo-artifact.md` so the merged runtime owner now covers phase-backed lane structure, lane-aware live tasks, and worker-fit continuation boundaries for the P099 release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-135"></a>
+## Version 1.35: Added deterministic Patch creation lifecycle
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Required `create now` Patch posture to capture UTC once and derive filename plus `Created At` from the same value.
+- Required exclusive collision-refusing creation, auditable Creation Evidence, exact timestamped Phase references, and timestamp preservation across completion moves.
+- Kept the complete filename grammar with `document-governance.md` rather than duplicating its authority.
+
+### Summary
+This version advances the phase/TODO/artifact triad for P148 deterministic Patch creation and Phase linkage.
 
 ---
 

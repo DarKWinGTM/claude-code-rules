@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.63
+> **Current Version:** 10.64
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.64 | 2026-08-09 | **[Candidate Patch timeline governance and RULES Tool](changelog/v10.64-patch-timeline-governance-and-rules-tool.changelog.md#version-1064)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.63 | 2026-08-09 | **[Released Case 17 bounded-goal route-scope correction](changelog/v10.63-case-17-bounded-goal-route-scope-correction.changelog.md#version-1063)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.62 | 2026-08-09 | **[Released Case 17 goal-first route-branch correction — semantic closeout blocked](changelog/v10.62-case-17-goal-first-route-branch-correction.changelog.md#version-1062)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.61 | 2026-08-09 | **[Released Case 17 semantic-owner consistency correction](changelog/v10.61-case-17-semantic-owner-consistency-correction.changelog.md#version-1061)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |

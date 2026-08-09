@@ -28,6 +28,7 @@ This case family shows how RULES keep design, changelog, TODO, phase, patch, and
 Current RULES require the assistant to:
 - open or reuse the correct governed surfaces before meaningful work drifts
 - keep design as target-state truth, changelog as version/history authority, TODO as compact durable index, phase as staged execution, and patch as before/after review
+- create new Patch artifacts from one verified UTC creation instant using `YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md`, matching `Created At`/Creation Evidence, exclusive collision refusal, and no Patch ID/index
 - keep the active changelog parent as current-version/map/navigation authority, indexed same-chain shards as active version detail, and `changelog/done/` as inactive reference/provenance history rather than a fallback owner
 - preserve history by rollover or sharding rather than deletion when files grow too large
 - verify cross-surface sync before claiming no-drift or release-ready status
@@ -54,8 +55,10 @@ Supporting repo-scope master-surface sync behavior is also recorded in `playgrou
 - A repair instruction calls indexed active changelog version detail `fallback` and treats inactive `changelog/done/` history as an ordinary resolution source.
 - An ordinary wording-only design edit is proposed with no structural or visual change; diagram posture may be `not required`.
 - A folder-topology or visual-authority change is proposed; startup must evaluate diagram after design, while subject diagrams open only for a real visual question.
+- A new Patch is proposed from separate clock reads, collision auto-suffixing, a Patch ID or `patch/INDEX.md`, or mtime/ctime-based creation metadata.
+- A legacy Patch rename proposes global basename replacement, serialized request-payload rewriting, or normalization of a suspended archive.
 
-Expected behavior: create or repair the proper owner surface instead of overloading the wrong one. Correct the changelog roles explicitly: active parent for current version/map/navigation, indexed same-chain shard for active detail, inactive `done/` for reference/provenance only, and no fallback owner.
+Expected behavior: create or repair the proper owner surface instead of overloading the wrong one. Correct the changelog roles explicitly: active parent for current version/map/navigation, indexed same-chain shard for active detail, inactive `done/` for reference/provenance only, and no fallback owner. For Patch chronology, capture UTC once, create exclusively, keep filename and metadata equivalent, require admissible evidence for legacy rows, update only exact governed references through a hash-bound manifest, and preserve suspended archives unchanged and inactive.
 
 ---
 
@@ -78,6 +81,8 @@ Repair or extend governed documentation without letting current-state, history, 
 - Choose the correct owner surface before editing.
 - Evaluate diagram after design when structure, visual authority, diagram relationships, visual topology, or existing diagram correctness changes; ordinary design edits may mark it `not required` without opening a subject diagram.
 - Route changelog current state, indexed active detail, and inactive history to distinct governed roles without fallback semantics.
+- Give each new Patch verified original-creation chronology without IDs/indexes; block ambiguous legacy migration rather than infer timestamps.
+- Propagate legacy renames only through exact resolved references and preserve excluded serialized payloads plus suspended archives.
 - Preserve history by rollover or sharding instead of deletion.
 - Verify cross-surface sync before claiming no-drift or release readiness.
 

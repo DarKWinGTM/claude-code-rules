@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.34
+> **Current Version:** 1.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -84,6 +84,8 @@ P144 refinement: phase/task surfaces distinguish implementation coverage (`not s
 P147 refinement: repair routing must use real changelog owners: active same-chain version detail belongs in `changelog/<chain>/v*.changelog.md`, while inactive completed/reference history may use `changelog/done/` when applicable. No fallback owner, automatic resolution path, or restoration mechanism exists for changelog content.
 
 P073-12 refinement: startup posture now evaluates diagram after design when work materially changes project structure, visual authority, diagram relationships, visual architecture/folder topology, or an existing governed diagram's correctness. Ordinary design edits may mark diagram `not required`; no subject diagram opens automatically.
+
+P148 refinement: `create now` Patch posture captures one UTC instant and derives filename plus `Created At` from that value, uses exclusive collision-refusing creation, records Creation Evidence, and places exact timestamped Patch references in Phase surfaces without an ID/index lookup. Moving to `done/` preserves the original timestamp.
 
 ---
 
