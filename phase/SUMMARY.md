@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.16
+> **Current Version:** 2.17
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P073-12 / v10.60 released and fresh-public-tag verified; no active phase selected
+> **Status:** P073-13 / v10.61 Case 17 semantic-owner consistency correction active
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,13 +21,16 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- None selected.
+- **P073-13:** [Case 17 semantic-owner consistency correction](phase-073-13-case-17-semantic-owner-consistency-correction.md)
+  - Output: correct the complete Case 17 owner model and publish the bounded documentation-only v10.61 release while all 19 Runtime Rules and installation payloads remain unchanged.
+  - Gate: full-file positive and forbidden-negative owner assertions, exact nine-path allowlist/modes/links, protected-byte identity, fixture/disposable-install proof, canonical parity, immutable annotated tag, GitHub Release identity, and fresh-public-tag verification.
+  - Patch: none; the one-scenario semantic diff is directly reviewable.
 
 ### Most Recently Completed
 
 - **P073-12:** [runtime owner-boundary repair and bounded compression](phase-073-12-runtime-owner-boundary-repair-and-bounded-compression.md)
-  - Output: v10.60 repairs goal/diagram/Agent-Team owner boundaries, compacts repeated context across all 19 Runtime Rules, synchronizes the exact 77-path release set, and preserves the 19-file active inventory.
-  - Gate: semantic scenarios, protected literals/force words, all-19 triads, fixture matrices, disposable install, candidate/canonical/root/public-tag parity, immutable annotated tag, GitHub Release identity, and fresh-public-tag proof passed.
+  - Output: v10.60 repairs the Runtime Rule goal/diagram/Agent-Team owner contracts, compacts repeated context across all 19 Runtime Rules, synchronizes the exact 77-path release set, and preserves the 19-file active inventory.
+  - Gate: Runtime Rule owner contracts, diagram and Agent-Team scenarios, protected literals/force words, all-19 triads, fixtures, disposable install, parity, tag, Release, and fresh-tag proof passed; a later integrated review found stale owner wording inside Case 17, now isolated to P073-13.
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.60
   - Patch: [runtime owner-boundary repair and bounded compression](../patch/runtime-owner-boundary-repair-and-bounded-compression.patch.md).
 
@@ -48,21 +51,20 @@ Earlier released phase-map detail remains preserved in the [2026-08-09 pre-rollo
 
 ---
 
-## P073-12 Lineage and Lane Map
+## P073-13 Lineage and Lane Map
 
 ### Lineage
 
-P073-09/10/11 own the existing 19-Rule compression, body-sufficiency, installation, parity, and release family. P073-12 keeps that capability boundary and adds bounded owner repair/compaction, so the smallest truthful identity is the existing-family child `073-12`; no new major is justified.
+P073-12 is completed and immutable. P073-13 repairs a failed integrated Case 17 scenario-verification gate inside the same owner-boundary family while preserving every Runtime Rule and install payload, so the smallest truthful identity is the existing-family child `073-13`; reopening P073-12 or creating a new major is not justified.
 
 ### Lanes
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Goal posture | execution decision → goal construction → presentation rendering | direct/candidate/advisory/clarification/none branches and exact artifact order | verified and released |
-| Diagram posture | conditional startup and sync after design | ordinary-design `not required` plus structural/visual required branch | verified and released |
-| Agent Team lifecycle | safety classification → worker lifecycle audit | no unchanged retry; reuse/steer/wait/partition/respawn decision stays worker-owned | verified and released |
-| Compression | all 19 Runtime Rules/triads | protected literals, force words, body sufficiency, measured reduction | verified and released: 7,214 bytes / 141 lines / 1,286 words reduced |
-| Integration/release | exact 77 paths, canonical/root/public state | fixtures, install, parity, tag/Release/fresh clone | verified and released |
+| Scenario correction | complete Case 17 owner map | execution selects → goal-authoring constructs/routes → phase supplies evidence/linkage → presentation renders; no contradictory passage | implemented; verification pending |
+| Governance | exact nine-path P073-13/v10.61 set | links, modes, truthful candidate wording, immutable v10.60 | implemented; verification pending |
+| Protected state | 19 Runtime Rules, triads, installers/fixtures, root install | byte identity and exact ordered inventory | pending |
+| Integration/release | canonical, public master/tag/Release/fresh clone | 9/9 parity, fixtures, disposable install, annotated tag, fresh-tag proof | pending |
 
 ---
 
@@ -85,6 +87,8 @@ P146 is released and closed. P147-01 overlaps P146's design-completeness concern
 
 ## Selected Semantic Coverage
 
+- **Goal-owner scenario consistency:** verify Case 17 as one semantic unit; execution selects posture, goal-authoring constructs and owns route support, phase/TODO supplies checked evidence/linkage, and presentation renders only.
+- **Durable route reference:** keep `/goal` before `Plan reference:` and emit no reference until a route-only file exists and was verified; Case 17 creates no such file.
 - **Premise integrity:** separate goal, checkable premise, path, and action; inspect current ownership/dependencies before material expansion.
 - **Completed baseline:** checked narrow completed work remains active until evidence shows a real scope/gate defect.
 - **Counter-analysis:** preserve a valid goal while correcting a false premise and recommending the smallest supported route.
@@ -97,23 +101,24 @@ P146 is released and closed. P147-01 overlaps P146's design-completeness concern
 
 ## Development Verification / TestKit Coverage
 
-Selected route: focused playground Cases 01/05/09/14/17 and matrix cells M26-M28, static owner/registry assertions, changed-link delta review, unchanged installer fixture matrices, disposable install, and parity checks.
+Selected route: full Case 17 positive/forbidden semantic assertions plus independent whole-file review, exact nine-path/mode/link checks, protected-byte comparison, unchanged installer fixture matrices, disposable install, canonical parity, and fresh public master/tag proof.
 
 Required checks:
-- Decision → construction → rendering ownership, exact `/goal` then `Plan reference:` order, and unwritten-reference prohibition.
-- Conditional diagram startup/synchronization for ordinary-design and structural/visual branches.
-- `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` safety classification and worker-owned lifecycle handoff.
-- Exact 77-path allowlist, 19 aligned triads, protected registries/force words, 19/19 body sufficiency, and measured compression.
-- Bash and PowerShell manifest order and fixture matrices, disposable install, unrelated-file preservation, and no unexpected quarantine.
-- Candidate/canonical/root parity before publication; public-master/tag/Release/fresh-clone proof before closeout.
+- Execution selects posture; goal-authoring constructs the selected goal and owns subordinate route support, durable plan lifecycle, exact artifact order, and `/plan` overflow.
+- Phase/TODO supplies checked goal evidence and selected-goal linkage only; presentation renders without selecting or promoting.
+- No stale execution/phase route-owner statement or unwritten/unverified `Plan reference:` remains anywhere in Case 17.
+- Exact nine-path allowlist, expected modes, changed links, and `git diff --check` pass.
+- All 19 Runtime Rules, designs/per-rule changelogs, installers/fixtures, P073-12, v10.60 patch/shard, and root installation remain byte-identical.
+- Bash and PowerShell manifest order and fixture matrices plus disposable installation pass without mutating root Rules.
+- Candidate/canonical parity passes before publication; public-master/tag/Release/fresh-clone proof passes before closeout.
 
-Current evidence: the exact 77-path scope, three semantic-owner families, protected literals/force-word retention, all-19 triad versions/body sufficiency, zero newly introduced broken links, `git diff --check`, README anchors/mode, ordered Bash/PowerShell manifests and passing fixture matrices, disposable install, 77/77 candidate/canonical parity, 19/19 canonical/root parity, unrelated root-file preservation, public `master`, annotated `v10.60` tag, GitHub Release identity, and fresh-public-tag static/fixture/disposable-install reproduction pass. Runtime Rules measure 266,520 bytes, 3,075 lines, and 34,266 words: reductions of 7,214 bytes, 141 lines, and 1,286 words from the frozen baseline.
+Current evidence: public `master` is frozen at `34e88a8ee43928fab81943155526fea6cb611854`; v10.60 tag object `b1bc48e3221001675c9a59293cc469e9540cfd9c` still peels to `33ad330120b88461978c408bc6a857e269e4c73d`; v10.61 is unused; source/canonical/root Runtime Rule parity is 19/19; Case 17 and governed candidate edits are implemented, with integrated verification and publication still pending.
 
 ---
 
 ## Rollback / Containment
 
-- Before publication, revert only the scoped clean-lane P147 allowlist if a gate fails; do not mutate the dirty backup checkout or unrelated canonical/root files.
+- Before publication, discard or revert only the scoped clean-lane P073-13 allowlist if a gate fails; do not mutate the dirty backup checkout or unrelated canonical/root files.
 - Stop canonical synchronization on overlapping unrelated edits.
 - Preserve rollover snapshots and history references; compaction never authorizes deletion.
 - Helper invocation cannot widen the selected objective, mutation permission, or source ownership.
@@ -123,7 +128,7 @@ Current evidence: the exact 77-path scope, three semantic-owner families, protec
 
 ## Next State
 
-No successor phase or goal is selected. `v10.60` remains anchored to immutable release commit `33ad330120b88461978c408bc6a857e269e4c73d`; future defects require a later corrective release.
+P073-13 / v10.61 is active. The next gate is integrated Case 17 semantic verification followed by exact-scope canonical/public release proof. `v10.60` remains anchored to immutable release commit `33ad330120b88461978c408bc6a857e269e4c73d`.
 
 ---
 

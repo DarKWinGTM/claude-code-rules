@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.60</b><br><sub>Owner Boundaries + Bounded Compression</sub>
+  <b>v10.61</b><br><sub>Case 17 Owner Consistency</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Fresh tag verified</sub>
+  <b>Prepared</b><br><sub>Release verification pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Release note:** `v10.60` repairs successor decision/construction/rendering ownership, adds conditional diagram startup/synchronization, separates Agent Team failure classification from worker lifecycle decisions, and compactly removes repeated cross-owner Runtime Rule wording. Candidate/canonical/root, public master, annotated tag, GitHub Release, and fresh-public-tag verification pass.
+> **Release note:** `v10.61` is a bounded documentation candidate that corrects stale semantic-owner wording across the complete Case 17 scenario. The 19 Runtime Rules, their design/per-rule changelog companions, installers, fixtures, and root installation remain unchanged; integrated verification and publication are pending.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,13 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.60` keeps the 19-file Bash and PowerShell runtime boundary unchanged while repairing three owner boundaries and compacting repeated Runtime Rule wording.
-- Candidate/canonical/root, public-master, annotated-tag, GitHub Release, and fresh-public-tag verification pass.
+- Prepared `v10.61` corrects stale execution/phase route-owner wording across the complete Case 17 scenario while keeping the 19-file Bash and PowerShell runtime boundary unchanged.
+- Full-file positive/forbidden semantic checks, exact nine-path verification, protected-byte proof, canonical sync, public master, annotated tag, GitHub Release, and fresh-public-tag verification remain pending.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Latest released baseline: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.60
+- Latest released baseline remains https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.60; target v10.61 publication is pending.
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -652,7 +652,7 @@ artifact-initiation-control.design.md
 - the active runtime scope stayed limited to the then-README-installed 41 root rule files
 - final source state was recorded at 4,051 lines / 31,316 words / 231,675 bytes
 - runtime install into `~/.claude/rules/` happened only after the separate install gate opened
-- current child `P073-12` preserves the 19-Rule boundary while repairing owner conflicts and applying bounded context compaction before a new install/release gate
+- current child `P073-13` preserves the 19-Rule boundary while correcting the complete Case 17 semantic-owner scenario before the v10.61 documentation-only release gate
 - parity passed with no missing active files or hash mismatches
 - co-located runtime files outside the source-owned install set remained observed-only and untouched
 
@@ -1068,7 +1068,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: released `v10.60` keeps 19 root Rules and verifies owner-boundary repair, bounded compaction, fixtures, canonical/root installation, public-master publication, annotated tag, GitHub Release identity, and fresh-public-tag reproduction.
+- Source state: prepared `v10.61` keeps all 19 root Rules byte-identical while correcting the Case 17 scenario owner map; integrated semantic, fixture, canonical, publication, and fresh-public-tag verification remain pending.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
@@ -1194,7 +1194,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.60 |
+  <b>Version</b>: 10.61 |
   <b>Last Updated</b>: 2026-08-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

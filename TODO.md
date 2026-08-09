@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.60 runtime owner-boundary repair and bounded compression
-> **Active Wave:** none selected
+> **Current Release:** v10.61 Case 17 semantic-owner consistency correction candidate
+> **Active Wave:** P073-13 / v10.61
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,15 +10,18 @@
 
 ## Active / In Progress
 
-- None selected. Released work remains reachable below and through phase/changelog history.
+- [ ] **P073-13 / v10.61 Case 17 semantic-owner consistency correction**
+  - Correct the complete Case 17 owner model: execution selects posture, goal-authoring constructs and owns route support, phase/TODO supplies checked evidence/linkage, and presentation renders only.
+  - Verify positive plus forbidden-negative assertions across the full scenario, exact nine-path scope/modes/links, protected-byte identity, fixture matrices, disposable install, and candidate/canonical parity.
+  - Publish immutable annotated v10.61 and GitHub Release only after candidate/public-master proof, then close with fresh-public-tag evidence without moving the tag.
 
 ---
 
 ## Recently Completed
 
 - [x] **P073-12 / v10.60 runtime owner-boundary repair and bounded compression** was installed, pushed to public `master`, tagged, released, and fresh-public-tag verified.
-  - Delivered decision → construction → rendering ownership, conditional diagram startup/synchronization, Agent Team safety-to-worker lifecycle separation, and all-19 bounded Runtime Rule compaction.
-  - Verified the exact 77-path scope, 19 aligned/body-sufficient triads, protected registries/force words, zero newly introduced broken links, Bash/PowerShell fixture matrices, disposable install, candidate/canonical/root/public-tag parity, unrelated-file preservation, annotated tag, and GitHub Release identity.
+  - Delivered the Runtime Rule decision → construction → rendering contract, conditional diagram startup/synchronization, Agent Team safety-to-worker lifecycle separation, and all-19 bounded Runtime Rule compaction.
+  - Verified the exact 77-path scope, 19 aligned/body-sufficient triads, protected registries/force words, zero newly introduced broken links, Bash/PowerShell fixture matrices, disposable install, candidate/canonical/root/public-tag parity, unrelated-file preservation, annotated tag, and GitHub Release identity. A later integrated review found stale owner wording isolated to Case 17; P073-13 owns that corrective release.
   - Runtime reduction: 7,214 bytes, 141 lines, and 1,286 words; active inventory remains exactly 19.
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.60
 - [x] **P147 / v10.59 evidence-first counter-analysis and owner-integrity corrections** was installed, pushed to public `master`, tagged, released, and fresh-public-tag verified.

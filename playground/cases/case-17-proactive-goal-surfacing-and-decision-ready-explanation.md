@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES should proactively complete materially underspecified non-trivial analysis/design, surface several real next-step options as candidate goals at a decision boundary, and keep the answer easy-first, compact-but-complete, evidence-clear, and decision-ready instead of merely mirroring the prompt, collapsing too early, manufacturing alternatives, stopping at a generic future note, or sprawling into dense prose. It also shows how a governed next step may conditionally use internal planning to shape the emitted advisory `/goal` before final emission. Once the goal is selected, the assistant should keep compact route support inside the same goal-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is materially needed, without turning route detail into new goal conditions or treating helper output or route completion as goal completion.
+This case family shows how RULES should proactively complete materially underspecified non-trivial analysis/design, surface several real next-step options as candidate goals at a decision boundary, and keep the answer easy-first, compact-but-complete, evidence-clear, and decision-ready instead of merely mirroring the prompt, collapsing too early, manufacturing alternatives, stopping at a generic future note, or sprawling into dense prose. It also shows how execution selects advisory eligibility and hands that posture to goal-authoring, which may use bounded internal planning to shape the advisory `/goal` before presentation renders it. Once the goal is selected, goal-authoring should keep compact route support inside the same goal-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is materially needed, without turning route detail into new goal conditions or treating helper output or route completion as goal completion.
 
 ---
 
@@ -15,10 +15,11 @@ This case family shows how RULES should proactively complete materially underspe
 
 ## Governing rules
 
-- `execution-and-goal-frame.md` — verify decision-changing premises and current ownership before broader architecture, preserve a checked completed baseline, proactively complete material non-trivial design, compare only real alternatives, recommend the best-supported route, allow candidate-goal surfacing at real decision boundaries, and keep route-heavy governed advisory `/goal` planning inside one goal-centric visible surface before `/plan` overflow
-- `phase-todo-artifact.md` — let checked phase/roadmap/TODO surfaces shape compact candidate goals from visible unselected next slices, then allow a design-first advisory `/goal` to use conditional internal planning plus optional route context when route synthesis materially helps, keep compact route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed
-- `worker-routing-and-context.md` — keep native subagent help minimally scoped, internal-only, and leader-verified when it is assisting analysis, route drafting, verification ordering, testing, or optional plan-file reference synthesis for pre-goal planning or selected-goal support
-- `explanation-and-presentation.md` — keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output or bounded helper output
+- `execution-and-goal-frame.md` — verify decision-changing premises and current ownership before broader architecture, preserve a checked completed baseline, proactively complete material non-trivial design, compare only real alternatives, recommend the best-supported route, and select direct continuation, candidate goals, advisory `/goal` eligibility, clarification, or no successor before handing the posture to goal-authoring
+- `goal-authoring-and-route-support.md` — receive the execution-selected posture, construct the bounded goal artifact, choose subordinate route support, enforce durable route-file and `Plan reference` validity, and open `/plan` only when route detail overflows the goal-centric surface or standalone planning is explicitly selected
+- `phase-todo-artifact.md` — let checked design, phase, roadmap, TODO, task, and implementation surfaces supply bounded goal evidence, then preserve selected-goal phase/task linkage and verification gates after execution begins without constructing or promoting `/goal`
+- `worker-routing-and-context.md` — keep native subagent help minimally scoped, internal-only, and leader-verified when it assists goal-authoring with analysis, route drafting, verification ordering, testing, or verified durable plan-file preparation
+- `explanation-and-presentation.md` — render the execution-selected posture without selecting or promoting it, keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output or bounded helper output
 - `communication-register.md` — prevent the answer from becoming either abrupt or diffuse while keeping tone professional and human-readable and keeping goal-vs-plan wording distinct
 - `accurate-communication.md` — make verified facts, inference, and hypotheses visible enough that the reader does not have to infer confidence from tone alone, and keep route completion separate from goal completion wording
 - `evidence-discipline.md` — keep the proof thresholds and claim-state semantics strict while leaving readable grouping to the communication owners
@@ -37,12 +38,13 @@ Current RULES require the assistant to:
 - continue directly when one safe path is already clearly selected and dominant
 - surface candidate goals when several materially different next slices remain live and no one continuation path clearly dominates
 - keep `/goal` stricter than ordinary candidate goals and preserve its advisory-only status
-- when one governed candidate becomes the best-supported next step and route synthesis would materially improve the command, allow a conditional pre-goal planning pass before final `/goal` emission
-- allow that pre-goal planning pass to use bounded internal helper work for analysis, route drafting, verification ordering, and optional plan-file reference synthesis
+- when one governed candidate becomes the best-supported next step and route synthesis would materially improve the command, let execution select advisory posture and hand it to goal-authoring before any pre-goal route synthesis begins
+- let goal-authoring use bounded internal helper work for analysis, route drafting, verification ordering, and durable plan-file preparation while keeping that support subordinate and leader-verified
 - keep simple or already direct goals on the direct `/goal` path without forcing pre-planning
-- keep `/goal` responsible for objective, proof, and scope after one governed goal is selected
-- use compact route notes, `Plan draft`, `Plan basis`, `Verification / testing route`, or `Plan reference` inside the selected goal-centric surface first when the selected goal's route is still materially non-trivial
-- open `/plan` only when overflow route detail or explicitly requested standalone planning is still needed instead of treating it as the ordinary paired next surface
+- let goal-authoring construct `/goal` with objective, proof, and scope after execution selects the governed posture
+- keep compact non-durable route notes, `Plan draft`, `Plan basis`, or `Verification / testing route` inside the selected goal-centric surface first when the selected goal's route is still materially non-trivial
+- emit `Plan reference:` only after a durable route-only file exists and was verified, with `/goal` first and the reference second inside the same copied artifact
+- let goal-authoring open `/plan` only when overflow route detail or explicitly requested standalone planning is still needed instead of treating it as the ordinary paired next surface
 - keep any bounded internal helper output subordinate to the advisory or selected goal so route support remains support rather than a second visible owner
 - return closeout to the goal gate instead of treating finished plan steps, helper output, route drafts, or plan references as sufficient proof by themselves
 - open non-trivial answers with plain-language orientation, use a small table when several axes matter, explain identifiers by role, and end with a concise decision-ready close when that structure improves understanding
@@ -68,12 +70,13 @@ Checked transcript-derived example:
   2. inspect retry / backoff behavior
   3. inspect status-reporting and visibility gaps
 - No one path is clearly dominant yet.
-- Execution selects the candidate-goal posture; goal-authoring constructs at most one execution-selected advisory `/goal`; presentation renders that result and cannot independently promote another candidate.
+- Execution first selects the candidate-goal posture; presentation renders the candidates without constructing an advisory `/goal` from that posture.
 - The answer needs to explain flow/order/concurrency clearly enough that the user can decide which slice to open first.
+- If the comparison later establishes one governed candidate as the best-supported advisory successor, execution may separately select advisory `/goal` eligibility; only then does goal-authoring construct that bounded artifact.
 - After the first slice is selected, the remaining route is still multi-file and verification-sensitive enough that compact integrated route support is needed inside the selected `/goal`.
 - If that route detail later outgrows the goal-centric surface, `/plan` may still become the overflow or explicitly requested standalone route surface.
 
-Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation. If the user selects that governed goal and the route remains materially non-trivial, the assistant should keep compact route support inside the same goal-centric surface first and open `/plan` only if overflow route detail or explicit standalone planning is later needed.
+Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation. Candidate posture alone must not produce an advisory `/goal`; execution must separately select advisory eligibility after one governed successor becomes best-supported. If that goal is selected and the route remains materially non-trivial, goal-authoring keeps compact route support inside the same goal-centric surface first and opens `/plan` only if overflow route detail or explicit standalone planning is later needed.
 
 ### Underspecified design variant
 
@@ -123,21 +126,21 @@ Understand the system quickly, compare the live next directions clearly, decide 
 - Before ranking paths, verify any current-system ownership premise that would reopen completed work or broaden architecture.
 - If the premise is false, preserve the valid goal and completed baseline, explain the contradiction, and recommend the smallest supported route.
 - Do not continue directly if no one path clearly dominates.
-- Let execution choose direct continuation, candidate goals, advisory-goal posture, clarification, or no successor; goal-authoring constructs the selected goal and presentation renders it.
+- Let execution choose direct continuation, candidate goals, advisory-goal posture, clarification, or no successor; goal-authoring receives that posture and constructs the selected goal; presentation renders it.
 - Surface the live next slices as candidate goals.
 - Start with a short plain-language summary before technical details.
 - Use a small comparison table because several axes differ materially.
 - Explain queue/worker/retry/status identifiers by role instead of only naming them.
 - Make confidence visible: what is verified, what is inferred, and what is still hypothesis.
-- If one governed goal is selected and the route is still materially non-trivial, keep that selected goal in `/goal`, keep compact route detail inside the same goal-centric surface first, and move to `/plan` only when overflow route detail or explicit standalone planning is materially needed.
-- If the user remains inside the existing `/goal` surface, bounded internal helper use may still return a compact `Plan draft`, `Plan basis`, or `Verification / testing route` while keeping that output subordinate to the selected goal.
+- If one governed goal is selected and the route is still materially non-trivial, let goal-authoring keep compact route detail inside the same `/goal`-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is materially needed.
+- If the user remains inside the existing `/goal` surface, goal-authoring may use bounded internal helpers to return a compact `Plan draft`, `Plan basis`, or `Verification / testing route` while keeping that output subordinate to the selected goal.
 - End with one concise recommendation and why it is first, then keep closeout tied to the selected goal gate rather than the route state alone.
 
 ---
 
 ## Decision
 
-Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives. If the user selects that governed goal and the route is still materially non-trivial, keep compact route support inside the same goal-centric surface first, and open `/plan` only when overflow route detail or explicit standalone planning is truly needed. If the user stays inside `/goal`, bounded internal helper output may still surface a compact `Plan draft`, `Plan basis`, and `Verification / testing route` without replacing `/plan` as the route owner.
+Present the three next slices as candidate goals, compare them in a small table, then recommend the best first slice while keeping the other two visible as real alternatives. If execution selects that governed goal posture and the route is still materially non-trivial, let goal-authoring keep compact route support inside the same goal-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is truly needed. If the user stays inside `/goal`, goal-authoring may use bounded internal helpers to surface a compact `Plan draft`, `Plan basis`, and `Verification / testing route` while `/plan` remains the route-only command surface.
 
 ---
 
@@ -148,9 +151,9 @@ Present the three next slices as candidate goals, compare them in a small table,
 - Group the explanation into flow, evidence, and recommendation layers.
 - Mark which points are verified facts versus inference versus hypotheses.
 - Close with one decision-ready next action.
-- If the user selects the governed first goal and route complexity remains material, keep `/goal` focused on outcome/proof/scope and keep compact route support inside that same visible surface first.
-- If overflow route detail or explicit standalone planning is later needed, then open `/plan` as the route-only surface.
-- If the user remains inside `/goal`, bounded internal helper use may still return a compact `Plan draft`, `Plan basis`, and `Verification / testing route` while leaving route ownership with `/plan` and proof ownership with the selected goal.
+- If execution selects the governed first-goal posture and route complexity remains material, let goal-authoring keep `/goal` focused on outcome/proof/scope and keep compact route support inside that same visible surface first.
+- If overflow route detail or explicit standalone planning is later needed, let goal-authoring open `/plan` as the route-only command surface.
+- If the user remains inside `/goal`, goal-authoring may use bounded internal helpers to return a compact `Plan draft`, `Plan basis`, and `Verification / testing route` while proof remains with the selected goal.
 
 ---
 
@@ -184,7 +187,7 @@ Hypothesis:
 
 Recommended first goal: inspect queue/worker lease first, because it currently has the strongest evidence support and the highest immediate diagnostic value.
 
-Because this governed next step is still route-heavy enough that the command benefits from route synthesis first, bounded internal planning may help before the final advisory `/goal` is emitted.
+After the comparison establishes queue/worker lease as the one best-supported governed successor, execution separately selects advisory-goal eligibility; goal-authoring may then use bounded internal planning before it constructs that advisory `/goal`, and presentation renders the selected artifact.
 
 Plan draft:
 - inspect queue / worker lease ordering first
@@ -201,11 +204,11 @@ Verification / testing route:
 - confirm whether the status lag is a reporting issue or a real execution stall
 
 Advisory `/goal`:
-`/goal Done when queue / worker lease behavior is explained in checked scope and the highest-value next route is selected. Prove with: checked queue trace, retry-path check, and status-visibility check surfaced in transcript. Scope: queue ordering, worker lease handling, retry / backoff interaction, and status-reporting boundaries. Keep: `/goal` owns objective / proof / scope; compact route support stays subordinate inside the same goal-centric surface; `/plan` stays route-only if overflow detail or explicit standalone planning is later needed.`
+`/goal Done when queue ordering and worker lease behavior are explained in checked scope and the observed stall is classified as caused by or not caused by that slice. Prove with: one checked queue trace, lease-owner/state-transition evidence, and the stall's relation to that evidence surfaced in transcript. Scope: queue ordering and worker lease handling only. Keep: retry/backoff and status visibility remain subordinate route notes rather than objective conditions; compact route support stays subordinate inside the same goal-centric surface; `/plan` stays route-only if overflow detail or explicit standalone planning is later needed.`
 
-If you later select that goal and the remaining route is still multi-file and verification-sensitive, keep `/goal` for outcome/proof/scope and keep compact route support in that same visible surface first. If the route later outgrows that surface or the user explicitly wants standalone planning, then open `/plan` as the route-only surface. If a durable route artifact materially helps, surface it as a compact `Plan reference`, not as a second objective.
+If you later select that goal and the remaining route is still multi-file and verification-sensitive, goal-authoring keeps `/goal` for outcome/proof/scope and compact route support in that same visible surface first. If the route later outgrows that surface or the user explicitly wants standalone planning, goal-authoring opens `/plan` as the route-only command surface. A durable `Plan reference:` would be valid only after a route-only file exists and was verified; this scenario emits no such reference.
 
-This helper output supports the advisory or selected goal, but it does not replace `/plan` as the route owner and it still does not count as goal completion proof by itself.`
+This helper output supports the advisory or selected goal, but it does not replace the `/plan` route-only command surface and it still does not count as goal completion proof by itself.`
 
 ---
 
@@ -227,17 +230,21 @@ Separate verified / inference / hypothesis
 Close with one decision-ready recommendation
   ↓
 If one governed candidate becomes the best-supported next step and route synthesis would help
-  → run bounded internal planning
+  → execution selects advisory-goal posture
   ↓
-Emit advisory `/goal`
+Goal-authoring may run bounded internal route synthesis
   ↓
-Keep compact route support inside the same goal-centric surface first
+Goal-authoring constructs advisory `/goal`
+  ↓
+Presentation renders the selected artifact
+  ↓
+Goal-authoring keeps compact route support inside the same goal-centric surface first
   ↓
 If overflow route detail or explicit standalone planning is later needed
-  → open `/plan` as the route-only surface
+  → goal-authoring opens `/plan` as the route-only command surface
   ↓
 If the user stays inside `/goal`
-  → bounded internal helper may shape `Plan draft` / `Plan basis` / `Verification / testing route` / `Plan reference`
+  → bounded internal helper may shape `Plan draft` / `Plan basis` / `Verification / testing route`
 ```
 
 ---
