@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.61</b><br><sub>Case 17 Owner Consistency</sub>
+  <b>v10.62</b><br><sub>Case 17 Goal-First Branches</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Fresh tag verified</sub>
+  <b>Prepared</b><br><sub>Release verification pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Release note:** `v10.61` corrects stale semantic-owner wording across the complete Case 17 scenario. Candidate/advisory posture, bounded-goal scope, route support, phase/TODO evidence linkage, rendering, and `Plan reference` validity now follow one consistent model. The 19 Runtime Rules and root installation remain unchanged; exact-scope, fixture, canonical, public-master, annotated-tag, GitHub Release, and fresh-public-tag verification pass.
+> **Release candidate note:** `v10.62` makes the Case 17 advisory `/goal` visible before subordinate route support and models compact-in-goal support versus `/plan` as alternative goal-authoring branches completed before presentation renders. Candidate/advisory separation, bounded queue/worker-lease scope, subordinate retry/status notes, and the no-`Plan reference:` boundary remain intact. The 19 Runtime Rules and root installation remain unchanged; release verification is pending.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,13 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.61` corrects stale execution/phase route-owner wording across the complete Case 17 scenario while keeping the 19-file Bash and PowerShell runtime boundary unchanged.
-- Full-file positive/forbidden semantic checks, independent doctrine review, exact nine-path verification, protected-byte proof, canonical sync, public master, annotated tag, GitHub Release, and fresh-public-tag verification pass.
+- Prepared `v10.62` corrects Case 17 goal-first visible ordering and alternative route-branch semantics while keeping the 19-file Bash and PowerShell runtime boundary unchanged.
+- Candidate/advisory separation and queue/worker-lease-only scope remain preserved; full semantic, protected-byte, fixture, canonical, public, tag, Release, and fresh-tag verification remain pending.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Latest released baseline: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.61
+- Latest released baseline remains v10.61 while v10.62 verification is pending: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.61
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -652,7 +652,7 @@ artifact-initiation-control.design.md
 - the active runtime scope stayed limited to the then-README-installed 41 root rule files
 - final source state was recorded at 4,051 lines / 31,316 words / 231,675 bytes
 - runtime install into `~/.claude/rules/` happened only after the separate install gate opened
-- latest child `P073-13` preserves the 19-Rule boundary and closes the complete Case 17 semantic-owner scenario correction through the v10.61 documentation-only release gate
+- active child `P073-14` preserves the 19-Rule boundary and corrects Case 17 goal-first visible ordering plus alternative route branches for the v10.62 release gate
 - parity passed with no missing active files or hash mismatches
 - co-located runtime files outside the source-owned install set remained observed-only and untouched
 
@@ -1068,7 +1068,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: released `v10.61` keeps all 19 root Rules byte-identical while correcting the Case 17 scenario owner map; integrated semantic, fixture, canonical, public-master, annotated-tag, GitHub Release, and fresh-public-tag verification pass.
+- Source state: prepared `v10.62` keeps all 19 root Rules byte-identical while correcting Case 17 visible ordering and route-branch lifecycle; integrated semantic, fixture, canonical, public-master, annotated-tag, GitHub Release, and fresh-public-tag verification remain pending.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
@@ -1194,7 +1194,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.61 |
+  <b>Version</b>: 10.62 |
   <b>Last Updated</b>: 2026-08-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.61 Case 17 semantic-owner consistency correction
-> **Active Wave:** none selected
+> **Current Release:** v10.62 Case 17 goal-first route-branch correction candidate
+> **Active Wave:** P073-14 / v10.62
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,15 +10,18 @@
 
 ## Active / In Progress
 
-- None selected. Released work remains reachable below and through phase/changelog history.
+- [ ] **P073-14 / v10.62 Case 17 goal-first route-branch correction**
+  - Place advisory `/goal` before visible route-support blocks and model compact-in-goal versus `/plan` as alternative goal-authoring branches completed before presentation renders.
+  - Preserve candidate/advisory separation, queue/worker-lease-only goal scope, subordinate retry/status notes, no actual `Plan reference:`, and all 19 Runtime Rules/root installation unchanged.
+  - Gate: exact nine-path/mode/link scope, full positive/forbidden assertions, independent whole-file review, protected bytes, fixtures, disposable install, canonical/public/tag parity, immutable older releases, and fresh-public-tag proof.
 
 ---
 
 ## Recently Completed
 
 - [x] **P073-13 / v10.61 Case 17 semantic-owner consistency correction** was pushed to public `master`, tagged, released, and fresh-public-tag verified.
-  - Corrected candidate/advisory posture separation, goal-authoring route ownership, phase/TODO evidence/linkage boundaries, presentation-only rendering, and the narrow queue/worker-lease goal versus subordinate retry/status route.
-  - Verified the exact nine-path scope, full positive/forbidden semantic assertions, independent whole-file doctrine review, protected-byte identity, Bash/PowerShell fixtures, disposable install, candidate/canonical/public/tag parity, annotated tag, GitHub Release identity, and v10.60 immutability.
+  - Corrected candidate/advisory posture separation, goal-authoring route ownership, phase/TODO evidence/linkage boundaries, and the narrow queue/worker-lease goal versus subordinate retry/status route; P073-14 owns the later-discovered visible-order and alternative-branch residuals.
+  - Verified the exact tagged v10.61 scope, protected-byte identity, Bash/PowerShell fixtures, disposable install, candidate/canonical/public/tag parity, annotated tag, GitHub Release identity, and v10.60 immutability.
   - Runtime Rules and root installation remained unchanged at 19/19 parity.
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.61
 - [x] **P073-12 / v10.60 runtime owner-boundary repair and bounded compression** was installed, pushed to public `master`, tagged, released, and fresh-public-tag verified.

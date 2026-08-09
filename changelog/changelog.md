@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.61
+> **Current Version:** 10.62
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.62 | 2026-08-09 | **[Prepared Case 17 goal-first route-branch correction](changelog/v10.62-case-17-goal-first-route-branch-correction.changelog.md#version-1062)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.61 | 2026-08-09 | **[Released Case 17 semantic-owner consistency correction](changelog/v10.61-case-17-semantic-owner-consistency-correction.changelog.md#version-1061)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.60 | 2026-08-09 | **[Released runtime owner-boundary repair and bounded compression](changelog/v10.60-runtime-owner-boundary-repair-and-bounded-compression.changelog.md#version-1060)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.59 | 2026-08-09 | **[Released evidence-first counter-analysis and owner-integrity corrections](changelog/v10.59-evidence-first-counter-analysis-and-owner-integrity.changelog.md#version-1059)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |

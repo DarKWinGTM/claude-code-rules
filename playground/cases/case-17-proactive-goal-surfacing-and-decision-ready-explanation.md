@@ -187,7 +187,10 @@ Hypothesis:
 
 Recommended first goal: inspect queue/worker lease first, because it currently has the strongest evidence support and the highest immediate diagnostic value.
 
-After the comparison establishes queue/worker lease as the one best-supported governed successor, execution separately selects advisory-goal eligibility; goal-authoring may then use bounded internal planning before it constructs that advisory `/goal`, and presentation renders the selected artifact.
+After the comparison establishes queue/worker lease as the one best-supported governed successor, execution separately selects advisory-goal eligibility. Goal-authoring may use bounded internal planning to construct the advisory `/goal`; in the completed output, presentation places that goal before any user-visible subordinate route support.
+
+Advisory `/goal`:
+`/goal Done when queue ordering and worker lease behavior are explained in checked scope and the observed stall is classified as caused by or not caused by that slice. Prove with: one checked queue trace, lease-owner/state-transition evidence, and the stall's relation to that evidence surfaced in transcript. Scope: queue ordering and worker lease handling only. Keep: retry/backoff and status visibility remain subordinate route notes rather than objective conditions; compact route support stays subordinate inside the same goal-centric surface; `/plan` stays route-only if overflow detail or explicit standalone planning is later needed.`
 
 Plan draft:
 - inspect queue / worker lease ordering first
@@ -202,9 +205,6 @@ Verification / testing route:
 - capture one checked queue trace
 - confirm whether retries are re-entering the queue
 - confirm whether the status lag is a reporting issue or a real execution stall
-
-Advisory `/goal`:
-`/goal Done when queue ordering and worker lease behavior are explained in checked scope and the observed stall is classified as caused by or not caused by that slice. Prove with: one checked queue trace, lease-owner/state-transition evidence, and the stall's relation to that evidence surfaced in transcript. Scope: queue ordering and worker lease handling only. Keep: retry/backoff and status visibility remain subordinate route notes rather than objective conditions; compact route support stays subordinate inside the same goal-centric surface; `/plan` stays route-only if overflow detail or explicit standalone planning is later needed.`
 
 If you later select that goal and the remaining route is still multi-file and verification-sensitive, goal-authoring keeps `/goal` for outcome/proof/scope and compact route support in that same visible surface first. If the route later outgrows that surface or the user explicitly wants standalone planning, goal-authoring opens `/plan` as the route-only command surface. A durable `Plan reference:` would be valid only after a route-only file exists and was verified; this scenario emits no such reference.
 
@@ -236,15 +236,15 @@ Goal-authoring may run bounded internal route synthesis
   ↓
 Goal-authoring constructs advisory `/goal`
   ↓
-Presentation renders the selected artifact
+Goal-authoring selects one subordinate route-support branch
+  ├─ If compact support fits inside `/goal`
+  │    → bounded internal helper may shape `Plan draft` / `Plan basis` / `Verification / testing route`
+  │    → goal-authoring completes the goal-centric artifact
+  └─ If overflow route detail or explicit standalone planning is needed
+       → goal-authoring opens `/plan` as the route-only command surface
+       → goal-authoring completes the selected surface
   ↓
-Goal-authoring keeps compact route support inside the same goal-centric surface first
-  ↓
-If overflow route detail or explicit standalone planning is later needed
-  → goal-authoring opens `/plan` as the route-only command surface
-  ↓
-If the user stays inside `/goal`
-  → bounded internal helper may shape `Plan draft` / `Plan basis` / `Verification / testing route`
+Presentation renders only after the selected artifact or surface is complete
 ```
 
 ---
