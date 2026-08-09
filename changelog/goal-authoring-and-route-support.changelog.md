@@ -1,5 +1,6 @@
 # Changelog - Goal Authoring and Route Support
 
+> **Parent Document:** [../goal-authoring-and-route-support.md](../goal-authoring-and-route-support.md)
 > **Current Version:** 1.3
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---

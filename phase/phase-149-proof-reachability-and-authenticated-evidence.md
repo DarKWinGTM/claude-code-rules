@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 149
-> **Status:** Active — candidate commit and approval-gate preparation in progress
+> **Status:** Active — exact approval packet prepared and explicit confirmation pending
 > **Target Release:** v10.65
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -83,7 +83,7 @@ Required checks:
 - Bash/PowerShell fixtures, Patch timeline regression, disposable installation, second-pass idempotence, links, body sufficiency, and no governed/support runtime installation pass.
 - Real runtime installation and public publication remain blocked until the exact candidate SHA/scope packet is explicitly approved.
 
-Current evidence: focused doctrine, scenario, triad, governance/allowlist/protected-byte/mode/link, and README checks pass. Bash and PowerShell installer fixtures pass; all 32 Patch timeline regression tests pass; the timestamped P149 Patch is compliant; and a post-repair two-pass disposable installation proves 19/19 byte-and-mode parity, identical second-pass state, governed/support exclusion, and unrelated-file preservation. Independent doctrine and release/no-drift reviews pass after correcting HTTP `403` semantics and the active-phase baseline sentence. Exact candidate commit/approval, real Runtime Rule installation, publication, and fresh-public proof remain pending.
+Current evidence: focused doctrine, scenario, triad, governance/allowlist/protected-byte/mode/link, and README checks pass. Bash and PowerShell installer fixtures pass; all 32 Patch timeline regression tests pass; the timestamped P149 Patch is compliant; and a post-repair two-pass disposable installation proves 19/19 byte-and-mode parity, identical second-pass state, governed/support exclusion, and unrelated-file preservation. Independent doctrine and release/no-drift reviews pass after correcting HTTP `403` semantics and the active-phase baseline sentence. The candidate commit and exact approval packet are prepared; explicit approval, real Runtime Rule installation, publication, and fresh-public proof remain pending.
 
 ## Entry Conditions and Out of Scope
 

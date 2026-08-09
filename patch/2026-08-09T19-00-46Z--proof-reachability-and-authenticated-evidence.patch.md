@@ -63,7 +63,7 @@ The selected model separates proof-layer ownership from route prerequisites. Goa
 - Bash and PowerShell installer fixtures pass; all 32 Patch timeline regression tests pass; this timestamped Patch inventories as compliant.
 - A two-pass disposable installation proves 19/19 byte-and-mode parity, identical second-pass state, governed/support exclusion, and unrelated-file preservation.
 - Independent doctrine and release/no-drift reviews pass after the HTTP `403` and active-phase baseline corrections; focused checks and disposable installation were rerun after repair.
-- Exact candidate commit/approval, real Runtime Rule installation, push, annotated tag, GitHub Release, and fresh-public verification remain approval-gated and are not claimed by this Patch.
+- The candidate commit and exact approval packet are prepared; explicit approval, real Runtime Rule installation, push, annotated tag, GitHub Release, and fresh-public verification remain gated and are not claimed by this Patch.
 
 ## Rollback Approach
 

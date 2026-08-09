@@ -1,5 +1,6 @@
 # Changelog - Execution and Goal Frame
 
+> **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
 > **Current Version:** 1.32
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 

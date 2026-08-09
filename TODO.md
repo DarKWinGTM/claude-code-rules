@@ -15,8 +15,9 @@
   - [x] Advanced five existing Runtime Rule/design/changelog triads without adding a twentieth Runtime Rule.
   - [x] Synchronized the P149 Phase, timestamped Patch, Patch changelog, v10.65 shard, master design/changelog, phase summary, and README.
   - [x] Verified the frozen 29-path scope, five changed and 14 protected Runtime Rules, exact 19-file inventory, links/modes/bodies, fixtures, Patch timeline regression, disposable install, idempotence, and independent reviews.
-    - Corrected the independently found HTTP `403` semantics and active-phase baseline wording, then reran focused checks; doctrine and release/no-drift reviews pass. The final approval packet remains open.
-  - [ ] Prepare the exact candidate SHA/scope approval packet before real Runtime Rule installation, push, annotated v10.65 tag, GitHub Release, or dirty-checkout reconciliation.
+    - Corrected the independently found HTTP `403` semantics and active-phase baseline wording, then reran focused checks; doctrine and release/no-drift reviews pass.
+  - [x] Established the candidate commit and prepared the exact SHA/scope approval packet.
+  - [ ] Await explicit approval before real Runtime Rule installation, push, annotated v10.65 tag, or GitHub Release; dirty-checkout reconciliation remains excluded from this packet.
   - Phase: [phase-149-proof-reachability-and-authenticated-evidence.md](phase/phase-149-proof-reachability-and-authenticated-evidence.md)
   - Patch: [2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md](patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md)
 

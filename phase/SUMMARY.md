@@ -3,7 +3,7 @@
 > **Current Version:** 2.21
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P149 / candidate v10.65 active; candidate commit and approval-gate preparation in progress
+> **Status:** P149 / candidate v10.65 active; exact approval packet prepared and explicit confirmation pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -24,7 +24,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 - **P149:** [Proof reachability and authenticated evidence](phase-149-proof-reachability-and-authenticated-evidence.md)
   - Output: candidate v10.65 advances five existing Runtime Rule triads and three scenario families so source/local Goals can close at the selected reachable proof layer, explicitly selected live terminal gates remain binding, authenticated/private capability is preflighted, unchanged impossible retries stop, and supplied rendered artifacts remain claim-bounded.
   - Gate: exact frozen 29-path scope, five changed and 14 protected Runtime Rules, 19-file inventory, independent reviews, exact candidate approval, real Runtime Rule installation, publication, and fresh-public proof.
-  - Current evidence: governance synchronization, automated candidate checks, Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews pass; exact candidate commit/approval and approval-gated install/publication remain open.
+  - Current evidence: governance synchronization, automated candidate checks, Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews pass. The candidate commit and exact approval packet are prepared; explicit approval and approval-gated install/publication remain open.
   - Patch: [Proof reachability and authenticated evidence](../patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md).
 
 ### Blocked Predecessor
@@ -173,7 +173,7 @@ Required checks:
 - Independent doctrine and release/no-drift reviews pass before the exact install/publication approval packet is presented.
 - Real Runtime Rule installation, public master, annotated v10.65, GitHub Release, and fresh-public master/tag proof pass before closeout.
 
-Current evidence: focused doctrine, scenario, triad, governance/allowlist/protected-byte/mode/link, and README checks pass. Bash and PowerShell installer fixtures pass; all 32 Patch timeline regression tests pass; the P149 Patch inventories as compliant; and a post-repair two-pass disposable installation proves 19/19 byte-and-mode parity, identical second-pass state, governed/support exclusion, and unrelated-file preservation. Independent doctrine and release/no-drift reviews pass after correcting HTTP `403` semantics and active-phase baseline wording. Exact candidate commit/approval packet, real Runtime Rule installation, publication, and fresh-public proof remain pending.
+Current evidence: focused doctrine, scenario, triad, governance/allowlist/protected-byte/mode/link, and README checks pass. Bash and PowerShell installer fixtures pass; all 32 Patch timeline regression tests pass; the P149 Patch inventories as compliant; and a post-repair two-pass disposable installation proves 19/19 byte-and-mode parity, identical second-pass state, governed/support exclusion, and unrelated-file preservation. Independent doctrine and release/no-drift reviews pass after correcting HTTP `403` semantics and active-phase baseline wording. The candidate commit and exact approval packet are prepared; explicit approval, real Runtime Rule installation, publication, and fresh-public proof remain pending.
 
 ---
 
@@ -189,7 +189,7 @@ Current evidence: focused doctrine, scenario, triad, governance/allowlist/protec
 
 ## Next State
 
-P149 / candidate v10.65 is active. The five owner triads, Cases 17/12/04 plus matrix/coverage, and governance surfaces are synchronized. Focused doctrine/scenario/triad/governance checks, Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, post-repair two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews pass. Exact candidate commit/approval packet, real Runtime Rule installation, publication, and fresh-public proof remain open. Released v10.64 remains the latest immutable public release.
+P149 / candidate v10.65 is active. The five owner triads, Cases 17/12/04 plus matrix/coverage, and governance surfaces are synchronized. Focused doctrine/scenario/triad/governance checks, Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, post-repair two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews pass. The candidate commit and exact approval packet are prepared; explicit approval, real Runtime Rule installation, publication, and fresh-public proof remain open. Released v10.64 remains the latest immutable public release.
 
 ---
 
