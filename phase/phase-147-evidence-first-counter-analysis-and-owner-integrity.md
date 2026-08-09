@@ -89,4 +89,4 @@ Rollback/containment:
 - Playground branches, fixture matrices, disposable install, body sufficiency, parity, manifest order, and unrelated-file preservation pass.
 - Canonical source and installed root Rules match the verified candidate.
 - Clean master, annotated v10.59 tag, GitHub Release, and fresh public tag clone resolve to one released result.
-- The post-release efficiency audit is delivered separately and does not mutate v10.59.
+- The post-release efficiency audit remains a separate successor task and does not gate or mutate v10.59.
