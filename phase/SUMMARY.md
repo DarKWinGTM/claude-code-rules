@@ -91,7 +91,7 @@ No RULES release phase is active. P073-15 and P147 are closed, while P148 introd
 | Governed integration | Patch, Case 09, matrix/coverage, Phase/TODO/changelog/README | exact links, modes, candidate-safe state | candidate verification passed; canonical convergence pending |
 | NodeClaw audit | 576 selected and 199 preserved files | before/after Git and filesystem zero-mutation witnesses | verified read-only; 0 mutation rows and 576 evidence blockers |
 | Canonical/root | exact allowlist and 19 installed Runtime Rules | overlap safety, 19/19 parity, two-pass idempotence, Tool excluded | verified; 27-path parity and two-pass 19/19 install pass |
-| Publication | public master, annotated v10.64, Release, fresh clones, closeout | immutable identity and fresh-public reproduction | verified and released; documentation-only closeout active |
+| Publication | public master, annotated v10.64, Release, fresh clones, closeout | immutable identity and fresh-public reproduction | verified and released; documentation-only closeout published |
 
 ---
 
