@@ -3,7 +3,7 @@
 > **Current Version:** 2.17
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P073-13 / v10.61 Case 17 semantic-owner consistency correction active
+> **Status:** P073-13 / v10.61 released and fresh-public-tag verified; no active phase selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,12 +21,15 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P073-13:** [Case 17 semantic-owner consistency correction](phase-073-13-case-17-semantic-owner-consistency-correction.md)
-  - Output: correct the complete Case 17 owner model and publish the bounded documentation-only v10.61 release while all 19 Runtime Rules and installation payloads remain unchanged.
-  - Gate: full-file positive and forbidden-negative owner assertions, exact nine-path allowlist/modes/links, protected-byte identity, fixture/disposable-install proof, canonical parity, immutable annotated tag, GitHub Release identity, and fresh-public-tag verification.
-  - Patch: none; the one-scenario semantic diff is directly reviewable.
+- None selected.
 
 ### Most Recently Completed
+
+- **P073-13:** [Case 17 semantic-owner consistency correction](phase-073-13-case-17-semantic-owner-consistency-correction.md)
+  - Output: v10.61 corrects the complete Case 17 owner model while all 19 Runtime Rules and installation payloads remain unchanged.
+  - Gate: full-file positive/forbidden owner assertions, independent doctrine review, exact nine-path/mode/link checks, protected-byte identity, Bash/PowerShell fixtures, disposable install, canonical/public/tag parity, immutable annotated tag, GitHub Release identity, and fresh-public-tag proof passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.61
+  - Patch: none; the one-scenario semantic diff was directly reviewable.
 
 - **P073-12:** [runtime owner-boundary repair and bounded compression](phase-073-12-runtime-owner-boundary-repair-and-bounded-compression.md)
   - Output: v10.60 repairs the Runtime Rule goal/diagram/Agent-Team owner contracts, compacts repeated context across all 19 Runtime Rules, synchronizes the exact 77-path release set, and preserves the 19-file active inventory.
@@ -61,10 +64,10 @@ P073-12 is completed and immutable. P073-13 repairs a failed integrated Case 17 
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Scenario correction | complete Case 17 owner map | execution selects → goal-authoring constructs/routes → phase supplies evidence/linkage → presentation renders; no contradictory passage | implemented; verification pending |
-| Governance | exact nine-path P073-13/v10.61 set | links, modes, truthful candidate wording, immutable v10.60 | implemented; verification pending |
-| Protected state | 19 Runtime Rules, triads, installers/fixtures, root install | byte identity and exact ordered inventory | pending |
-| Integration/release | canonical, public master/tag/Release/fresh clone | 9/9 parity, fixtures, disposable install, annotated tag, fresh-tag proof | pending |
+| Scenario correction | complete Case 17 owner map | execution selects → goal-authoring constructs/routes → phase supplies evidence/linkage → presentation renders; no contradictory passage | verified and released |
+| Governance | exact nine-path P073-13/v10.61 set | links, modes, truthful lifecycle wording, immutable v10.60 | verified and released |
+| Protected state | 19 Runtime Rules, triads, installers/fixtures, root install | byte identity and exact ordered inventory | verified unchanged |
+| Integration/release | canonical, public master/tag/Release/fresh clone | 9/9 parity, fixtures, disposable install, annotated tag, fresh-tag proof | verified and released |
 
 ---
 
@@ -112,7 +115,7 @@ Required checks:
 - Bash and PowerShell manifest order and fixture matrices plus disposable installation pass without mutating root Rules.
 - Candidate/canonical parity passes before publication; public-master/tag/Release/fresh-clone proof passes before closeout.
 
-Current evidence: public `master` is frozen at `34e88a8ee43928fab81943155526fea6cb611854`; v10.60 tag object `b1bc48e3221001675c9a59293cc469e9540cfd9c` still peels to `33ad330120b88461978c408bc6a857e269e4c73d`; v10.61 is unused; source/canonical/root Runtime Rule parity is 19/19; Case 17 and governed candidate edits are implemented, with integrated verification and publication still pending.
+Current evidence: release commit `81c42c15db3034d11fdf8a79b1ce94c1707d60a3`, annotated v10.61 tag object `114d0fb9856fac59c6283f8868c3727c37e0a5cf`, GitHub Release, complete Case 17 static/doctrine review, exact nine-path/mode/link checks, 64 protected source artifacts, 19/19 source/canonical/root Runtime Rule parity, Bash/PowerShell fixtures, disposable install, and fresh-public-master/tag reproduction pass. v10.60 tag object `b1bc48e3221001675c9a59293cc469e9540cfd9c` still peels to `33ad330120b88461978c408bc6a857e269e4c73d`.
 
 ---
 
@@ -128,7 +131,7 @@ Current evidence: public `master` is frozen at `34e88a8ee43928fab81943155526fea6
 
 ## Next State
 
-P073-13 / v10.61 is active. The next gate is integrated Case 17 semantic verification followed by exact-scope canonical/public release proof. `v10.60` remains anchored to immutable release commit `33ad330120b88461978c408bc6a857e269e4c73d`.
+No successor phase or goal is selected. `v10.61` remains anchored to immutable release commit `81c42c15db3034d11fdf8a79b1ce94c1707d60a3`; v10.60 remains anchored to `33ad330120b88461978c408bc6a857e269e4c73d`.
 
 ---
 

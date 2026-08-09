@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-13
-> **Status:** Active — release candidate preparation
+> **Status:** Completed — released and fresh-public-tag verified
 > **Target Release:** v10.61
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -153,6 +153,22 @@ Containment:
 - Stop canonical synchronization on unexplained overlapping changes; do not overwrite unrelated work.
 - Root Rules remain observation-only and are not reinstalled.
 - After publication, use a later corrective release; never amend or force-move v10.60 or v10.61.
+
+## Current Verification
+
+Verified release evidence:
+- release commit: `81c42c15db3034d11fdf8a79b1ce94c1707d60a3`
+- annotated v10.61 tag object: `114d0fb9856fac59c6283f8868c3727c37e0a5cf`
+- tag peeled commit: `81c42c15db3034d11fdf8a79b1ce94c1707d60a3`
+- GitHub Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.61
+- full Case 17 static and independent doctrine review: passed
+- exact nine-path/mode/link and protected-byte gates: passed
+- Bash/PowerShell fixture matrices and disposable installation: passed
+- candidate/canonical parity and 19/19 canonical/root Runtime Rule parity: passed without root reinstall
+- fresh-public-master and fresh-public-tag static/fixture/disposable-install reproduction: passed
+- v10.60 immutable tag object and peeled release commit: unchanged
+
+Case 17 remains identical to the v10.61 tagged version during this documentation-only closeout.
 
 ## Exit Criteria
 
