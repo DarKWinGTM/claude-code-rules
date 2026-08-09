@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.29
+version: 0.9.30
 ---
 
 # Memory Context Intelligence Analysis
@@ -95,6 +95,24 @@ When invoked for normal operator use:
 - adaptive deepening before topic selection must not be treated as selected or approved; it remains advisory-only until the user chooses a topic or explicitly asks for a change proposal/goal draft
 - multiple `required_topic_ids` may be deepened in one analysis pass, but any packet/additional-stage follow-up must still keep one selected topic per artifact and split into separate per-topic artifacts
 - keep the topic-card output shape even after deeper analysis; deepen the evidence and mechanism inside the cards rather than replacing them with a new wrapper format
+
+## Deterministic post-presentation follow-up contract
+
+The initial analysis remains read-only and advisory. Topic presentation, ordinary `choose`, and adaptive deepening do not authorize file creation or Main RULES promotion.
+
+Only when the user makes an explicit later selection of one or several `Topic N` values and asks to create or proceed with additional-stage trial material:
+- create one independent packet and one standalone artifact per selected topic
+- set `selected_for_additional_trial=True` on each independent packet
+- keep `main_rules_promotion_approved=False`
+- preserve `trace_evidence` as the live entailment anchor and normalize evidence into standalone doctrine without temporary memory, transcript, packet-report, raw path-line, or `content_preview` dependencies
+- run one full-set preflight before any write across every selected packet and destination
+- refuse the complete set on any collision, duplicate destination, unsafe path, symlink boundary, packet stop gate, or invalid standalone artifact
+- preserve every existing destination byte-for-byte; there is no overwrite option, reuse, merge, rename, or replacement path
+- use one rich standalone trial schema per topic and keep Main RULES mutation outside this workflow
+- do not ask about template, routing, or source/runtime sync when these governed defaults apply
+- ask only when topic identity, owner mapping, destination, collision resolution, approval, or another real safety boundary remains ambiguous
+
+This explicit later follow-up writes only additional-stage trial material after the complete preflight passes. It does not mutate Main RULES, approve promotion, combine topics, or turn the initial analysis response into automatic execution.
 
 If the rendered status is `blocked`:
 - say directly that analysis is blocked

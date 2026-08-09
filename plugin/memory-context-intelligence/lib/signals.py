@@ -820,17 +820,21 @@ def advisory_focus_suffix(signal: dict[str, Any]) -> str:
 
 def topic_from_signal(signal: dict[str, Any], topic_rank: int, *, promotion_tier: str = "promoted-candidate") -> dict[str, Any]:
     kind = signal["kind"]
+    title = topic_title(signal)
+    mechanism = MECHANISM_BY_KIND[kind]
+    why_surfaced = (
+        f"{signal['record_count']} bounded intake record(s) clustered as a "
+        f"{GROUP_LABELS[signal['group']]} signal with evidence label {signal['evidence_label']}."
+    )
+    source_signal_ids = [signal["id"]]
     return {
         "rank": topic_rank,
         "id": f"topic-{topic_rank:03d}",
-        "title": topic_title(signal),
+        "title": title,
         "purpose": PURPOSE_BY_KIND[kind],
-        "why_surfaced": (
-            f"{signal['record_count']} bounded intake record(s) clustered as a "
-            f"{GROUP_LABELS[signal['group']]} signal with evidence label {signal['evidence_label']}."
-        ),
+        "why_surfaced": why_surfaced,
         "expected_behavior_impact": IMPACT_BY_KIND[kind],
-        "high_level_mechanism": MECHANISM_BY_KIND[kind],
+        "high_level_mechanism": mechanism,
         "expected_output": OUTPUT_BY_KIND[kind],
         "evidence_examples": proposal_evidence_examples_for_signal(signal),
         "before_behavior": proposal_before_behavior_for_signal(signal),
@@ -850,7 +854,15 @@ def topic_from_signal(signal: dict[str, Any], topic_rank: int, *, promotion_tier
         "confidence": signal["confidence"],
         "evidence_label": signal["evidence_label"],
         "promotion_tier": promotion_tier,
-        "source_signal_ids": [signal["id"]],
+        "source_signal_ids": source_signal_ids,
+        "candidate_entailment_basis": {
+            "candidate_title": title,
+            "source_signal_ids": source_signal_ids,
+            "trace_record_count": signal.get("trace_record_count", signal["record_count"]),
+            "source_keywords": list(signal.get("keywords", [])),
+            "transferable_observed_pattern": why_surfaced,
+            "supported_mechanism": mechanism,
+        },
     }
 
 

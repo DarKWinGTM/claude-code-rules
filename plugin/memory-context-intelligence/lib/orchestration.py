@@ -142,12 +142,19 @@ def selected_topic(selection_report: dict[str, Any] | None, enrichment_report: d
     return None
 
 
-def signal_anchors(signals_report: dict[str, Any] | None, limit: int = 12) -> list[dict[str, Any]]:
+def signal_anchors(
+    signals_report: dict[str, Any] | None,
+    signal_ids: set[str] | None = None,
+    limit: int = 12,
+) -> list[dict[str, Any]]:
     anchors: list[dict[str, Any]] = []
     if not isinstance(signals_report, dict):
         return anchors
     for signal in signals_report.get("ranked_signals", []) or []:
         if not isinstance(signal, dict):
+            continue
+        signal_id = str(signal.get("id") or "")
+        if signal_ids is not None and signal_id not in signal_ids:
             continue
         for record in signal.get("records", []) or []:
             if not isinstance(record, dict):
@@ -158,6 +165,8 @@ def signal_anchors(signals_report: dict[str, Any] | None, limit: int = 12) -> li
                     "signal_rank": signal.get("rank"),
                     "shard": record.get("shard"),
                     "section": record.get("section"),
+                    "session_id": record.get("session_id"),
+                    "source_classes": signal.get("source_classes", []),
                     "content_preview": record.get("content_preview"),
                 }
             )
@@ -264,13 +273,22 @@ def trace_lane(
     if topic is None:
         conflicts_uncertainty.append("no selected topic is present yet; later synthesis cannot build candidate input")
 
+    selected_signal_ids = (
+        {
+            str(item)
+            for item in topic.get("source_signal_ids", [])
+            if item not in (None, "")
+        }
+        if isinstance(topic, dict)
+        else None
+    )
     status = "findings-available" if ranked_signals else "stopped"
     return lane_finding(
         lane_id=LANE_TRACE,
         lane_name="Trace Scout",
         status=status,
         checked_scope=checked_scope,
-        anchors=signal_anchors(signals_report),
+        anchors=signal_anchors(signals_report, signal_ids=selected_signal_ids),
         source_basis=source_basis,
         findings={
             "ranked_signal_count": len(ranked_signals or []),

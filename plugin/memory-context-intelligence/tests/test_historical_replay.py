@@ -7,6 +7,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
@@ -19,7 +20,8 @@ SPEC.loader.exec_module(historical_replay)
 
 def write_memory_shard(memory_root: Path, *, content: str | None = None) -> None:
     memory_root.mkdir(parents=True, exist_ok=True)
-    (memory_root / "2026-05-18.md").write_text(
+    shard_day = date.today().isoformat()
+    (memory_root / f"{shard_day}.md").write_text(
         content
         or "\n".join(
             (
@@ -77,7 +79,8 @@ class HistoricalReplayTests(unittest.TestCase):
     def test_replay_runs_full_chain_with_fixture_and_dry_run_preview(self) -> None:
         with tempfile.TemporaryDirectory() as memory_dir, tempfile.TemporaryDirectory() as additional_dir:
             memory_root = Path(memory_dir)
-            additional_root = Path(additional_dir)
+            additional_root = Path(additional_dir) / "rules" / "additional"
+            additional_root.mkdir(parents=True)
             fixture_path = memory_root / "sources.json"
             write_memory_shard(memory_root)
             write_source_fixture(fixture_path)
@@ -126,6 +129,8 @@ class HistoricalReplayTests(unittest.TestCase):
             self.assertFalse(audit["live_web_access_performed"])
             self.assertFalse(audit["external_agent_process_spawned"])
             self.assertFalse(Path(audit["preview_destination_path"]).exists())
+            self.assertFalse(report["selected_for_additional_trial"])
+            self.assertFalse(report["main_rules_promotion_approved"])
 
             packet_findings = report["candidate_packet_safety_findings"]
             self.assertTrue(packet_findings["packet_built"])
@@ -139,6 +144,8 @@ class HistoricalReplayTests(unittest.TestCase):
     def test_replay_skips_research_without_fixture_instead_of_live_web(self) -> None:
         with tempfile.TemporaryDirectory() as memory_dir, tempfile.TemporaryDirectory() as additional_dir:
             memory_root = Path(memory_dir)
+            additional_root = Path(additional_dir) / "rules" / "additional"
+            additional_root.mkdir(parents=True)
             write_memory_shard(memory_root)
 
             args = historical_replay.parse_args(
@@ -150,7 +157,7 @@ class HistoricalReplayTests(unittest.TestCase):
                     "--max-records",
                     "3",
                     "--additional-root",
-                    additional_dir,
+                    str(additional_root),
                 ]
             )
 

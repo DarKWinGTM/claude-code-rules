@@ -928,6 +928,46 @@ class SignalGenerationTests(unittest.TestCase):
         self.assertTrue(report["ranked_signals"])
         self.assertEqual(report["ranked_signals"][0]["confidence"], "low")
 
+    def test_promoted_topic_carries_entailment_basis_linked_to_source_signal(self) -> None:
+        report = signals.build_report(
+            intake_report(
+                records=[
+                    {
+                        "shard": "2026-05-20.md",
+                        "section": "feedback",
+                        "session_id": "session-a",
+                        "content": "Do not claim fixed before verification; report evidence limits clearly.",
+                        "source_classes": ["trace_evidence"],
+                    },
+                    {
+                        "shard": "2026-05-19.md",
+                        "section": "feedback",
+                        "session_id": "session-b",
+                        "content": "Avoid claiming fixed before verification; keep evidence limits visible.",
+                        "source_classes": ["trace_evidence"],
+                    },
+                    {
+                        "shard": "2026-05-18.md",
+                        "section": "feedback",
+                        "session_id": "session-c",
+                        "content": "Completion wording must not outrun checked verification evidence.",
+                        "source_classes": ["trace_evidence"],
+                    },
+                ]
+            )
+        )
+
+        topic = report["topic_candidates"][0]
+        signal = report["ranked_signals"][0]
+        basis = topic["candidate_entailment_basis"]
+
+        self.assertEqual(basis["candidate_title"], topic["title"])
+        self.assertEqual(basis["source_signal_ids"], topic["source_signal_ids"])
+        self.assertEqual(basis["trace_record_count"], signal["trace_record_count"])
+        self.assertTrue(basis["source_keywords"])
+        self.assertTrue(basis["transferable_observed_pattern"])
+        self.assertEqual(basis["supported_mechanism"], topic["high_level_mechanism"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -205,6 +205,20 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("must say so explicitly", text)
         self.assertIn("do not silently skip", text)
 
+    def test_analysis_skill_keeps_initial_analysis_read_only_and_requires_explicit_follow_up_selection(self) -> None:
+        text = RUNTIME_ANALYSIS.read_text(encoding="utf-8")
+
+        self.assertIn("initial analysis remains read-only and advisory", text)
+        self.assertIn("explicit later selection", text)
+        self.assertIn("selected_for_additional_trial=True", text)
+        self.assertIn("main_rules_promotion_approved=False", text)
+        self.assertIn("one independent packet and one standalone artifact per selected topic", text)
+        self.assertIn("full-set preflight before any write", text)
+        self.assertIn("refuse the complete set on any collision", text)
+        self.assertIn("no overwrite option", text)
+        self.assertIn("do not ask about template, routing, or source/runtime sync", text)
+        self.assertIn("does not mutate Main RULES", text)
+
 
 if __name__ == "__main__":
     unittest.main()

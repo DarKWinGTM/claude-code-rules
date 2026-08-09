@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.75
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-01)
+> **Current Version:** 0.1.78
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -177,6 +177,27 @@ After user choice or explicit request for internals:
 - keep unchosen topics collapsed
 - keep explanatory text in the user's active working language where practical
 - preserve canonical technical identifiers, file paths, commands, env vars, and exact evidence anchors in exact form
+
+### Post-presentation selected-topic follow-up
+
+The initial `/memory-context-intelligence:analysis` surface remains read-only, proposal-first, and advisory. It must not parse topic-selection wording as an analysis-scope mutation or perform an additional-stage write during the first-response flow.
+
+After the topic cards are visible, a later explicit user instruction may select one or several topics for additional-stage trial creation. When that follow-up is clear, the assistant should apply one deterministic workflow instead of asking the user to choose internal routing, template, collision, or source-sync options that already have governed defaults.
+
+Selected defaults:
+- preserve every existing additional-stage artifact unchanged
+- create one new semantic file per selected topic
+- use the rich standalone trial-rule schema owned by `05-additional-staging-and-promotion.design.md`
+- normalize evidence into self-contained doctrine under the contract owned by `08-memory-evidence-source-model.design.md`
+- use the user-runtime additional-stage namespace for `memory-context-intelligence`
+- preflight all selected filenames and destinations before writing
+- refuse collisions and do not offer an overwrite path in the normal selected-topic workflow
+- keep initial analysis, additional-stage selection, and later Main RULES promotion as three distinct states
+- record explicit state equivalent to `selected_for_additional_trial=True` and `main_rules_promotion_approved=False` after the user selects trial creation
+- set additional-stage selection without implying Main RULES promotion approval
+- if several topics are selected, process them as independent one-topic packets/artifacts rather than a combined file
+
+A follow-up question is justified only when the user-selected topics, intended owner, destination, or collision state remains materially ambiguous. The assistant should not ask preference questions merely to expose internal implementation choices when one governed safe continuation already dominates.
 
 ## 5) Interactive presentation configuration
 

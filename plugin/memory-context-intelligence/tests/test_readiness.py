@@ -7,6 +7,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
@@ -19,7 +20,8 @@ SPEC.loader.exec_module(readiness)
 
 def write_memory_shard(memory_root: Path) -> None:
     memory_root.mkdir(parents=True, exist_ok=True)
-    (memory_root / "2026-05-18.md").write_text(
+    shard_day = date.today().isoformat()
+    (memory_root / f"{shard_day}.md").write_text(
         "\n".join(
             (
                 "# Recent Memory",
@@ -76,7 +78,8 @@ class ReadinessTests(unittest.TestCase):
     def test_ready_runs_full_chain_and_reports_checked_scope_usability(self) -> None:
         with tempfile.TemporaryDirectory() as memory_dir, tempfile.TemporaryDirectory() as additional_dir, tempfile.TemporaryDirectory() as rules_dir:
             memory_root = Path(memory_dir)
-            additional_root = Path(additional_dir)
+            additional_root = Path(additional_dir) / "rules" / "additional"
+            additional_root.mkdir(parents=True)
             rules_root = Path(rules_dir)
             fixture_path = memory_root / "sources.json"
             write_memory_shard(memory_root)
@@ -132,6 +135,12 @@ class ReadinessTests(unittest.TestCase):
             self.assertTrue(report["replay_result_summary"]["emit_preview_dry_run"])
             self.assertEqual(live_summary["status"], "trial-emitted")
             self.assertTrue(live_summary["artifact_summary"]["ok"])
+            checked_artifact = live_summary["artifact_summary"]["artifacts"][0]
+            self.assertTrue(checked_artifact["standalone_artifact_valid"])
+            self.assertEqual(checked_artifact["forbidden_dependencies"], [])
+            self.assertTrue(checked_artifact["selected_for_additional_trial"])
+            self.assertFalse(checked_artifact["main_rules_promotion_approved"])
+            self.assertIn("emit-selected", report["selected_invocation_surface"]["command_map"])
             self.assertTrue(destination.exists())
             self.assertEqual(
                 destination.relative_to(additional_root).as_posix(),
@@ -204,6 +213,36 @@ class ReadinessTests(unittest.TestCase):
             self.assertIn("phase-015", report["readiness_gates"]["failed_gates"])
             self.assertFalse(report["live_trial_result_summary"]["artifact_summary"]["ok"])
             self.assertTrue(report["verification_record"]["main_rules_unchanged_audit"]["ok"])
+
+    def test_ready_blocks_for_thin_or_ephemeral_dependent_artifact(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_root:
+            root = Path(temp_root)
+            thin = root / "thin.md"
+            thin.write_text(
+                "# Thin trial\n\n## Success criteria\n- present\n\n## Rollback notes\n- present\n",
+                encoding="utf-8",
+            )
+            ephemeral = root / "ephemeral.md"
+            ephemeral.write_text(
+                "\n".join(
+                    [
+                        "# Additional trial rule: Invalid dependency",
+                        "> **Main RULES mutation:** Not performed",
+                        "This additional-stage artifact is scoped to one selected topic per artifact.",
+                        *readiness.candidate_packet.REQUIRED_STANDALONE_HEADINGS,
+                        "Evidence must be reconstructed from .memsearch/memory/2026-08-09.md.",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            thin_check = readiness.path_contains_markers(thin)
+            ephemeral_check = readiness.path_contains_markers(ephemeral)
+
+            self.assertFalse(thin_check["standalone_artifact_valid"])
+            self.assertTrue(thin_check["missing_headings"])
+            self.assertFalse(ephemeral_check["standalone_artifact_valid"])
+            self.assertTrue(ephemeral_check["forbidden_dependencies"])
 
 
 if __name__ == "__main__":

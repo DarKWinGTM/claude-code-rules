@@ -7,6 +7,7 @@ import importlib.util
 import tempfile
 import textwrap
 import unittest
+from datetime import date
 from pathlib import Path
 from unittest import mock
 
@@ -18,14 +19,23 @@ assert SPEC.loader is not None
 SPEC.loader.exec_module(intake)
 
 
+class FrozenDate(date):
+    @classmethod
+    def today(cls) -> date:
+        return cls(2026, 5, 20)
+
+
 class ScopedIntakeTests(unittest.TestCase):
     def setUp(self) -> None:
         self.home_temp_dir = tempfile.TemporaryDirectory()
         self.home_root = Path(self.home_temp_dir.name)
         self.home_patcher = mock.patch.object(intake.Path, "home", return_value=self.home_root)
+        self.date_patcher = mock.patch.object(intake, "date", FrozenDate)
         self.home_patcher.start()
+        self.date_patcher.start()
 
     def tearDown(self) -> None:
+        self.date_patcher.stop()
         self.home_patcher.stop()
         self.home_temp_dir.cleanup()
 

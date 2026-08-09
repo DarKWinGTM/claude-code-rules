@@ -233,6 +233,47 @@ class OrchestrationTests(unittest.TestCase):
         self.assertFalse(report["candidate_packet_built"])
         self.assertFalse(report["main_rules_mutation_performed"])
 
+    def test_candidate_input_trace_anchors_are_filtered_to_selected_topic(self) -> None:
+        report_input = signals_report()
+        report_input["ranked_signals"][0]["source_classes"] = ["trace_evidence"]
+        report_input["ranked_signals"][0]["records"][0]["session_id"] = "session-a"
+        report_input["ranked_signals"].append(
+            {
+                "id": "signal-002",
+                "rank": 2,
+                "confidence": "medium",
+                "source_classes": ["trace_evidence"],
+                "records": [
+                    {
+                        "shard": "2026-05-19.md",
+                        "section": "feedback",
+                        "session_id": "session-b",
+                        "content_preview": "Another topic must not leak into selected trace anchors.",
+                    }
+                ],
+            }
+        )
+        report_input["topic_candidates"].append(
+            {
+                **report_input["topic_candidates"][0],
+                "id": "topic-002",
+                "title": "Keep unrelated trace anchors out of selected packet input",
+                "source_signal_ids": ["signal-002"],
+            }
+        )
+
+        report = orchestration.build_orchestration(
+            intake_report=intake_report(),
+            signals_report=report_input,
+            selection_report=selection_report(),
+        )
+        anchors = report["phase_013_candidate_input"]["trace_anchors"]
+
+        self.assertTrue(anchors)
+        self.assertEqual({item["signal_id"] for item in anchors}, {"signal-001"})
+        self.assertTrue(all("session_id" in item for item in anchors))
+        self.assertTrue(all("source_classes" in item for item in anchors))
+
     def test_adaptive_deepening_plan_flags_top_topics_for_subagent_and_external_support(self) -> None:
         report = orchestration.build_adaptive_deepening_plan(signals_report(), max_topics=2)
 

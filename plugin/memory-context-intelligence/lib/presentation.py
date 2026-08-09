@@ -653,6 +653,8 @@ def build_related_variants(topic_list: list[dict[str, Any]]) -> dict[str, Any]:
                 "source_mix_label": topic.get("source_mix_label"),
                 "advisory_only": True,
                 "carry_forward_allowed": False,
+                "selected_for_additional_trial": False,
+                "main_rules_promotion_approved": False,
             }
         )
     return {
@@ -686,6 +688,8 @@ def build_topic_cards(topic_list: list[dict[str, Any]], *, language: str) -> lis
                 "sections": proposal_sections(canonical_topic, language=language),
                 "advisory_only": True,
                 "carry_forward_allowed": False,
+                "selected_for_additional_trial": False,
+                "main_rules_promotion_approved": False,
             }
         )
     return cards
@@ -704,7 +708,7 @@ def build_next_action_options(topic_cards: list[dict[str, Any]], *, language: st
                 {
                     "id": "choose-topic-number",
                     "label": "เลือกหมายเลขหัวข้อ",
-                    "action": f"พิมพ์เช่น \"เลือก {first_topic_label}\" เพื่อให้ผมช่วยร่าง change proposal หรือ goal draft สำหรับหัวข้อนั้น",
+                    "action": f"พิมพ์คำขอภายหลังอย่างชัดเจน เช่น \"เลือก {first_topic_label} และสร้าง additional-stage trial\" เพื่อเลือกหัวข้อนั้นสำหรับ trial โดยยังไม่อนุมัติ Main RULES promotion",
                     "advisory_only": True,
                     "carry_forward_allowed": False,
                 },
@@ -732,9 +736,11 @@ def build_next_action_options(topic_cards: list[dict[str, Any]], *, language: st
             {
                 "id": "choose-topic-number",
                 "label": "Choose a topic number",
-                "action": f"Choose {first_topic_label} to turn that topic into a change proposal or goal draft.",
+                "action": f"Use an explicit later request such as 'select {first_topic_label} for additional-stage trial creation'; this does not approve Main RULES promotion.",
                 "advisory_only": True,
                 "carry_forward_allowed": False,
+                "selected_for_additional_trial": False,
+                "main_rules_promotion_approved": False,
             },
             {
                 "id": "type-direct-request",
@@ -742,6 +748,8 @@ def build_next_action_options(topic_cards: list[dict[str, Any]], *, language: st
                 "action": "Type a direct request in your own words and name the topic you want to adjust.",
                 "advisory_only": True,
                 "carry_forward_allowed": False,
+                "selected_for_additional_trial": False,
+                "main_rules_promotion_approved": False,
             },
             {
                 "id": "deepen-with-research",
@@ -749,6 +757,8 @@ def build_next_action_options(topic_cards: list[dict[str, Any]], *, language: st
                 "action": "Ask for deep thinking, websearch, or webfetch on a topic before any adjustment.",
                 "advisory_only": True,
                 "carry_forward_allowed": False,
+                "selected_for_additional_trial": False,
+                "main_rules_promotion_approved": False,
             },
         ],
     }
@@ -813,6 +823,8 @@ def build_presentation(
         "choose_flow_performed": False,
         "research_enrichment_performed": False,
         "candidate_packet_built": False,
+        "selected_for_additional_trial": False,
+        "main_rules_promotion_approved": False,
         "additional_emission_performed": False,
         "main_rules_mutation_performed": False,
     }
@@ -886,6 +898,8 @@ def build_selection(
             "selected": True,
             "advisory_only": False,
             "carry_forward_allowed": True,
+            "selected_for_additional_trial": False,
+            "main_rules_promotion_approved": False,
         },
         "unselected_topics": advisory_unselected_topics(topics, selected_id),
         "selection_required_before_carry_forward": False,
@@ -905,6 +919,8 @@ def build_selection(
         "choose_flow_performed": True,
         "research_enrichment_performed": False,
         "candidate_packet_built": False,
+        "selected_for_additional_trial": False,
+        "main_rules_promotion_approved": False,
         "additional_emission_performed": False,
         "main_rules_mutation_performed": False,
     }

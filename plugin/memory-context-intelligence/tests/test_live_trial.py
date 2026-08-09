@@ -7,6 +7,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
@@ -19,7 +20,8 @@ SPEC.loader.exec_module(live_trial)
 
 def write_memory_shard(memory_root: Path) -> None:
     memory_root.mkdir(parents=True, exist_ok=True)
-    (memory_root / "2026-05-18.md").write_text(
+    shard_day = date.today().isoformat()
+    (memory_root / f"{shard_day}.md").write_text(
         "\n".join(
             (
                 "# Recent Memory",
@@ -67,7 +69,8 @@ class LiveTrialTests(unittest.TestCase):
     def test_trial_runs_full_chain_and_writes_one_additional_file(self) -> None:
         with tempfile.TemporaryDirectory() as memory_dir, tempfile.TemporaryDirectory() as additional_dir:
             memory_root = Path(memory_dir)
-            additional_root = Path(additional_dir)
+            additional_root = Path(additional_dir) / "rules" / "additional"
+            additional_root.mkdir(parents=True)
             fixture_path = memory_root / "sources.json"
             write_memory_shard(memory_root)
             write_source_fixture(fixture_path)
@@ -111,6 +114,11 @@ class LiveTrialTests(unittest.TestCase):
             self.assertTrue(report["emission_checks"]["emitted_file_exists"])
             self.assertTrue(report["emission_checks"]["material_contains_success_criteria"])
             self.assertTrue(report["emission_checks"]["material_contains_rollback_notes"])
+            self.assertTrue(report["selected_for_additional_trial"])
+            self.assertFalse(report["main_rules_promotion_approved"])
+            self.assertTrue(report["emission_checks"]["standalone_artifact_valid"])
+            self.assertEqual(report["emission_checks"]["forbidden_dependencies"], [])
+            self.assertNotIn("allow_overwrite", report["emission"])
             self.assertIn("## Topic scope", material)
             self.assertIn("## Success criteria", material)
             self.assertIn("## Rollback notes", material)
@@ -124,7 +132,8 @@ class LiveTrialTests(unittest.TestCase):
     def test_trial_preview_does_not_write_and_requires_revision_disposition(self) -> None:
         with tempfile.TemporaryDirectory() as memory_dir, tempfile.TemporaryDirectory() as additional_dir:
             memory_root = Path(memory_dir)
-            additional_root = Path(additional_dir)
+            additional_root = Path(additional_dir) / "rules" / "additional"
+            additional_root.mkdir(parents=True)
             fixture_path = memory_root / "sources.json"
             write_memory_shard(memory_root)
             write_source_fixture(fixture_path)
@@ -161,7 +170,43 @@ class LiveTrialTests(unittest.TestCase):
             self.assertFalse(report["emission_checks"]["emitted_file_exists"])
             self.assertTrue(report["emission_checks"]["material_contains_success_criteria"])
             self.assertTrue(report["emission_checks"]["material_contains_rollback_notes"])
+            self.assertTrue(report["emission_checks"]["standalone_artifact_valid"])
             self.assertFalse(report["main_rules_mutation_performed"])
+
+    def test_trial_collision_blocks_and_preserves_existing_bytes(self) -> None:
+        with tempfile.TemporaryDirectory() as memory_dir, tempfile.TemporaryDirectory() as additional_dir:
+            memory_root = Path(memory_dir)
+            additional_root = Path(additional_dir) / "rules" / "additional"
+            destination = additional_root / "memory-context-intelligence" / "collision.md"
+            destination.parent.mkdir(parents=True)
+            destination.write_bytes(b"existing-sentinel")
+            write_memory_shard(memory_root)
+
+            args = live_trial.parse_args(
+                [
+                    "--memory-root",
+                    str(memory_root),
+                    "--max-shards",
+                    "1",
+                    "--max-records",
+                    "3",
+                    "--owner-domain",
+                    "evidence-discipline",
+                    "--main-rule-target",
+                    "rules/evidence-discipline.md",
+                    "--additional-root",
+                    str(additional_root),
+                    "--additional-relative-path",
+                    "memory-context-intelligence/collision.md",
+                    "--approved-write",
+                ]
+            )
+
+            report = live_trial.build_live_trial_report(args)
+
+            self.assertEqual(report["status"], "trial-blocked")
+            self.assertEqual(destination.read_bytes(), b"existing-sentinel")
+            self.assertFalse(report["additional_emission_performed"])
 
 
 if __name__ == "__main__":

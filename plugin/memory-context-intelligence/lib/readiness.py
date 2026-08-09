@@ -21,6 +21,7 @@ LIB_ROOT = Path(__file__).resolve().parent
 if str(LIB_ROOT) not in sys.path:
     sys.path.insert(0, str(LIB_ROOT))
 
+import candidate_packet
 import historical_replay
 import live_trial
 
@@ -100,11 +101,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--trial-approved-write",
         action="store_true",
         help="Allow readiness to run the trial stage with an approved write under the selected additional root.",
-    )
-    parser.add_argument(
-        "--allow-overwrite",
-        action="store_true",
-        help="Allow replacing an existing trial file when --trial-approved-write is also supplied.",
     )
     return parser.parse_args(argv)
 
@@ -209,7 +205,6 @@ def build_trial_report(args: argparse.Namespace) -> dict[str, Any]:
         additional_relative_path=args.additional_relative_path,
         additional_root=args.additional_root,
         approved_write=args.trial_approved_write,
-        allow_overwrite=args.allow_overwrite,
         disposition=None,
         usefulness_note=[],
         risk_note=[],
@@ -288,38 +283,69 @@ def compare_main_rules_snapshots(before: dict[str, Any], after: dict[str, Any]) 
     }
 
 
-def path_contains_markers(path: Path) -> dict[str, Any]:
+def path_contains_markers(
+    path: Path,
+    *,
+    selected_for_additional_trial: bool = False,
+    main_rules_promotion_approved: bool = False,
+) -> dict[str, Any]:
     if not path.is_file():
         return {
             "path": str(path),
             "exists": False,
             "contains_success_criteria": False,
             "contains_rollback_notes": False,
+            "standalone_artifact_valid": False,
+            "missing_headings": list(candidate_packet.REQUIRED_STANDALONE_HEADINGS),
+            "forbidden_dependencies": [],
+            "selected_for_additional_trial": selected_for_additional_trial,
+            "main_rules_promotion_approved": main_rules_promotion_approved,
         }
     material = path.read_text(encoding="utf-8")
+    validation = candidate_packet.validate_standalone_artifact(material)
     return {
         "path": str(path),
         "exists": True,
         "contains_success_criteria": "## Success criteria" in material,
         "contains_rollback_notes": "## Rollback notes" in material,
+        "standalone_artifact_valid": validation["valid"],
+        "missing_headings": validation["missing_headings"],
+        "forbidden_dependencies": validation["forbidden_dependencies"],
+        "selected_for_additional_trial": selected_for_additional_trial,
+        "main_rules_promotion_approved": main_rules_promotion_approved,
     }
 
 
 def live_trial_artifact_summary(args: argparse.Namespace, trial_report: dict[str, Any]) -> dict[str, Any]:
     checked_paths: list[dict[str, Any]] = []
+    selected_for_trial = trial_report.get("selected_for_additional_trial") is True
+    promotion_approved = trial_report.get("main_rules_promotion_approved") is True
     if args.phase_015_trial_artifact:
-        checked_paths.append(path_contains_markers(Path(args.phase_015_trial_artifact).expanduser()))
+        checked_paths.append(
+            path_contains_markers(
+                Path(args.phase_015_trial_artifact).expanduser(),
+                selected_for_additional_trial=selected_for_trial,
+                main_rules_promotion_approved=promotion_approved,
+            )
+        )
     emission = trial_report.get("emission", {}) if isinstance(trial_report.get("emission"), dict) else {}
     destination_path = emission.get("destination_path")
     if destination_path and emission.get("additional_emission_performed"):
         destination = Path(str(destination_path)).expanduser()
         if not any(item.get("path") == str(destination) for item in checked_paths):
-            checked_paths.append(path_contains_markers(destination))
+            checked_paths.append(
+                path_contains_markers(
+                    destination,
+                    selected_for_additional_trial=selected_for_trial,
+                    main_rules_promotion_approved=promotion_approved,
+                )
+            )
 
     ok = any(
         bool(item.get("exists"))
-        and bool(item.get("contains_success_criteria"))
-        and bool(item.get("contains_rollback_notes"))
+        and bool(item.get("standalone_artifact_valid"))
+        and bool(item.get("selected_for_additional_trial"))
+        and not bool(item.get("main_rules_promotion_approved"))
         for item in checked_paths
     )
     return {
@@ -327,9 +353,9 @@ def live_trial_artifact_summary(args: argparse.Namespace, trial_report: dict[str
         "ok": ok,
         "artifacts": checked_paths,
         "note": (
-            "At least one approved live additional-stage trial artifact was checked with success criteria and rollback notes."
+            "At least one explicitly selected live additional-stage artifact passed the rich standalone schema, dependency, and promotion-boundary checks."
             if ok
-            else "No checked live additional-stage trial artifact currently satisfies the phase-015 artifact evidence gate."
+            else "No checked live additional-stage trial artifact currently satisfies the rich phase-015 artifact evidence gate."
         ),
     }
 
@@ -358,7 +384,8 @@ def command_map() -> dict[str, dict[str, str]]:
         "enrich": {"purpose": "Use controlled source fixtures when research is needed.", "writes": "none"},
         "orchestrate": {"purpose": "Compose deterministic runtime-local lane findings.", "writes": "none"},
         "packet": {"purpose": "Build a reviewable candidate packet.", "writes": "none"},
-        "emit": {"purpose": "Preview or explicitly emit /additional/ trial material.", "writes": "only with --approved-write"},
+        "emit": {"purpose": "Preview or explicitly emit one selected-topic /additional/ trial artifact.", "writes": "only with --approved-write"},
+        "emit-selected": {"purpose": "Preflight and atomically emit an independent artifact for every explicitly selected topic.", "writes": "only with --approved-write after complete preflight"},
         "replay": {"purpose": "Run deterministic phase-014 historical replay.", "writes": "none; dry-run preview only"},
         "trial": {"purpose": "Run phase-015 bounded live additional-stage trial.", "writes": "only with --approved-write under selected additional root"},
         "ready": {"purpose": "Aggregate phase-007 through phase-015 checked evidence.", "writes": "none unless --trial-approved-write is explicitly supplied"},

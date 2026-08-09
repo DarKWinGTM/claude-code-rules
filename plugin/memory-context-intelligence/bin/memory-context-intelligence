@@ -14,7 +14,7 @@ show_status() {
   printf '%s\n' "research enrichment command: enrich"
   printf '%s\n' "native-agent orchestration command: orchestrate"
   printf '%s\n' "candidate packet command: packet"
-  printf '%s\n' "additional-stage emission command: emit"
+  printf '%s\n' "additional-stage emission commands: emit (one packet) and emit-selected (full selected set)"
   printf '%s\n' "historical replay command: replay"
   printf '%s\n' "live bounded trial command: trial"
   printf '%s\n' "checked-scope readiness command: ready"
@@ -27,7 +27,7 @@ show_status() {
   printf '%s\n' "research enrichment: optional through enrich using one selected topic report and controlled/recorded sources; no live web access by default"
   printf '%s\n' "native-agent orchestration: runtime-local bounded orchestration available; no external agent process is spawned"
   printf '%s\n' "candidate packet building: available through packet; output remains local structured stdout and one selected topic maps to one artifact"
-  printf '%s\n' "/additional/ emission: dry-run preview by default; approved write requires emit --approved-write and combined multi-topic output is not allowed"
+  printf '%s\n' "/additional/ emission: dry-run by default; explicit later Topic selection uses one packet per topic, one full-set preflight, exclusive writes, and collision refusal with no overwrite path"
   printf '%s\n' "historical replay: bounded deterministic phase-014 replay with dry-run emit preview only; approved writes are unavailable and any future multi-topic carry-forward must split first"
   printf '%s\n' "live bounded trial: one selected candidate can be emitted under an explicitly selected additional root with --approved-write; multiple topics require separate per-topic artifacts"
   printf '%s\n' "checked-scope readiness: aggregates phases 007-015 and reports usable in checked scope only when evidence gates pass"
@@ -45,8 +45,9 @@ show_status() {
   printf '%s\n' "usage: bash ./bin/memory-context-intelligence choose --signals-report <signals-report.json> --topic-id <topic-id> [--output-mode auto|native-first|bilingual|fixed]"
   printf '%s\n' "usage: bash ./bin/memory-context-intelligence enrich --selection-report <choose-report.json> [--sources-fixture <sources.json>]"
   printf '%s\n' "usage: bash ./bin/memory-context-intelligence orchestrate [--intake-report <intake.json>] [--signals-report <signals.json>] [--selection-report <choose.json>] [--enrichment-report <enrich.json>] [--sources-fixture <sources.json>] [--max-sources <n>]"
-  printf '%s\n' "usage: bash ./bin/memory-context-intelligence packet --orchestration-report <orchestrate.json> --owner-domain <domain> --main-rule-target <rule.md>"
-  printf '%s\n' "usage: bash ./bin/memory-context-intelligence emit --packet-report <packet.json> [--additional-root <additional-root>] [--approved-write] [--allow-overwrite]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence packet --orchestration-report <orchestrate.json> --owner-domain <domain> --main-rule-target <rule.md> [--integration-anchor <rule.md>] [--selected-for-additional-trial]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence emit --packet-report <packet.json> [--additional-root <additional-root>] [--approved-write]"
+  printf '%s\n' "usage: bash ./bin/memory-context-intelligence emit-selected --packet-report <packet.json> [--packet-report <packet-2.json>] [--additional-root <additional-root>] [--approved-write]"
   printf '%s\n' "usage: bash ./bin/memory-context-intelligence replay --memory-root <memory-root> [--scope <text>] [--sources-fixture <sources.json>] [--additional-root <additional-root>]"
   printf '%s\n' "usage: bash ./bin/memory-context-intelligence trial --memory-root <memory-root> --owner-domain <domain> --main-rule-target <rule.md> --additional-root <additional-root> [--approved-write]"
   printf '%s\n' "usage: bash ./bin/memory-context-intelligence ready --memory-root <memory-root> --owner-domain <domain> --main-rule-target <rule.md> --additional-root <additional-root> --main-rules-root <rules-root> [--phase-015-trial-artifact <artifact.md>]"
@@ -92,6 +93,10 @@ case "${1:---help}" in
     shift
     python3 "${PACKAGE_ROOT}/lib/candidate_packet.py" emit "$@"
     ;;
+  emit-selected)
+    shift
+    python3 "${PACKAGE_ROOT}/lib/candidate_packet.py" emit-selected "$@"
+    ;;
   replay)
     shift
     python3 "${PACKAGE_ROOT}/lib/historical_replay.py" "$@"
@@ -106,7 +111,7 @@ case "${1:---help}" in
     ;;
   *)
     printf '%s\n' "memory-context-intelligence: unknown command '$1'" >&2
-    printf '%s\n' "Run with --help, status, noop, intake, signals, present, choose, enrich, orchestrate, packet, emit, replay, trial, or ready." >&2
+    printf '%s\n' "Run with --help, status, noop, intake, signals, present, choose, enrich, orchestrate, packet, emit, emit-selected, replay, trial, or ready." >&2
     exit 2
     ;;
 esac

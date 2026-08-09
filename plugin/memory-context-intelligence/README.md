@@ -1,9 +1,9 @@
 # memory-context-intelligence
 
-> **Status:** Plugin-scoped init-configuration surface completed in checked scope; `/memory-context-intelligence:init` now owns guided setup, `/memory-context-intelligence:analysis` remains the review surface, `review` and `packet` remain deferred, and packet/additional emission stays one-topic-per-artifact
-> **Current Version:** 0.1.77
-> **Plugin Package Version:** 0.9.29
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
+> **Status:** Deterministic selected-topic additional-stage emission is implemented and verified in the local plugin test/smoke scope; `/memory-context-intelligence:analysis` remains read-only and advisory, while package publication and remote release verification remain pending
+> **Current Version:** 0.1.78
+> **Plugin Package Version:** 0.9.30
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 
 ---
 
@@ -32,7 +32,11 @@ Current checked behavior that matters:
 - `recall_evidence`, `durable_memory_context`, and `governance_context` can strengthen wording and context, but they do not replace trace proof
 - when adaptive deep-analysis marks a top topic as requiring deeper review, the checked current skill contract now requires one **bounded read-only deepening pass** before the first response instead of silently skipping it
 - that deepening can use read-only subagent help plus optional web/external research support, but it still stays advisory-only and cannot replace local trace proof
-- if several advisory topics are deepened or compared, any later packet-derived or additional-stage output must still keep **one selected topic per artifact** and must **split into separate per-topic artifacts** instead of emitting a combined file
+- the initial analysis response remains **read-only and advisory**; choosing a Topic for discussion does not create a file
+- after an explicit later request to create selected Topics as additional-stage trials, the plugin uses deterministic defaults rather than asking about internal template, routing, overwrite, or source-sync choices
+- every selected Topic becomes **one rich standalone artifact**, and a multi-topic selection remains a set of independent one-topic artifacts rather than one combined file
+- the complete selected set is preflighted before the first write; any duplicate or existing destination rejects the whole set, preserves existing bytes, and has no overwrite fallback
+- additional-stage selection does not approve Main RULES promotion, which remains a separate governed decision
 - if no config file is loaded, the plugin can show a **guided config helper** and point the operator to `/memory-context-intelligence:init` instead of expecting raw arguments as the normal UX
 - the default config target is now the user-scope file `~/.claude/memory-context-intelligence.config.json`
 
@@ -163,9 +167,12 @@ If usable evidence is available, you should get topic-card output such as:
 - when the adaptive payload flags a top topic for deeper review, the first response may now include one bounded read-only deepening pass before the cards are finished, while still keeping the final result advisory-only and trace-anchored
 
 At the end of the output, you should also see `Next action options`, such as:
-- choose a topic number
+- choose a topic number for further advisory review
+- explicitly request later additional-stage trial creation for one or several Topic numbers
 - type a direct request
 - ask for deep thinking, websearch, or webfetch first
+
+Choosing a Topic by itself does not authorize file creation. When you explicitly ask to create selected Topics as additional-stage trials, the deterministic workflow creates one standalone artifact per Topic only after the entire destination set passes collision and containment checks. Existing files are preserved, overwrite is unavailable, and Main RULES promotion remains unapproved.
 
 ### If no config file is loaded
 
@@ -248,7 +255,10 @@ Current checked boundaries for this plugin:
 - bare `/analysis` is **not** current proved runtime behavior
 - `/memory-context-intelligence:review` and `/memory-context-intelligence:packet` are still deferred
 - `bin/memory-context-intelligence` is an internal implementation adapter, not the main user workflow
-- packet/additional-stage emission remains a single-topic-per-artifact flow; if several topics are ever carried forward, they must split into separate per-topic artifacts rather than one combined file
+- initial analysis and ordinary Topic choice remain no-write advisory operations
+- explicit later additional-stage trial creation remains one-topic-per-artifact; several selected Topics are independently rendered and pass one full-set preflight before any write
+- any duplicate or existing destination blocks the complete selected set; existing bytes are preserved and no overwrite path is available
+- additional-stage trial selection does not approve Main RULES promotion
 - plugin-managed auto-flow is not currently claimed as proved behavior
 - this README does not claim external marketplace publication or broad production readiness
 

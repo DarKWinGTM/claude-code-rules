@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.77
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-06-02)
+> **Current Version:** 0.1.78
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 > **Parent Design:** [design.md](design.md)
 
 ---
@@ -97,6 +97,40 @@ Current implementation expectations:
 
 The first operator-facing response does not need raw dumps, but it should make the evidence mix visible enough that the user can tell where the proposal came from.
 
+### 4.1) Normalized standalone evidence contract
+
+Raw evidence anchors and emitted additional-stage doctrine serve different purposes and must remain separate.
+
+Internal analysis, orchestration, or packet reports may retain bounded raw anchors when they are needed for leader audit or candidate entailment review. Those internal anchors may include shard identity, section identity, record previews, source paths, session provenance, or other trace-local detail.
+
+An emitted additional-stage rule must instead carry a self-contained normalized evidence basis. It should preserve:
+- the evidence classes that materially shaped the candidate
+- whether the pattern is historical-only or also current-session-confirmed
+- recurrence and breadth at the level needed to judge strength
+- confidence and evidence label
+- the transferable observed pattern
+- relevant conflicts, uncertainty, and excluded scope
+- why the evidence supports the proposed doctrine mechanism
+- what still needs leader verification before promotion consideration
+
+The emitted rule must not depend on:
+- `.memsearch` or memory-shard filenames
+- transcript or JSONL paths
+- temporary directories or packet-report paths
+- absolute workstation paths used only during evidence gathering
+- raw `path:line` or shard/section anchors
+- raw record previews that are necessary to reconstruct the candidate's meaning
+
+Evidence normalization is a semantic distillation step, not simple redaction. The normalized text must explain the repeated mechanism well enough that the trial artifact remains understandable if the original transient evidence files disappear.
+
+Before ranking or emission, the selected candidate must pass an entailment check:
+- retain when bounded trace evidence directly supports the stated mechanism
+- narrow when it supports only part of the proposed doctrine
+- mark context-only and non-promotable when the source does not prove a live pattern
+- reject when the evidence is semantically unrelated to the candidate title or mechanism
+
+Durable memory and governance context may sharpen the normalized explanation, but they must not replace missing `trace_evidence` as the live trial anchor.
+
 ## 5) Weighting model
 
 This implementation uses role-weighted evidence, not one flat score.
@@ -170,8 +204,8 @@ Current implementation expectations:
 This implemented source model still does **not** claim:
 - interactive config-file writing, auto-save, or automatic config mutation from the guided helper
 - selected-topic persistence inside config
-- `/additional/` behavior changes
-- plugin-managed auto-flow proof
+- implemented proof of the approved standalone `/additional/` normalization/emission target before its source phase and verification gates pass
+- plugin-managed first-response auto-flow proof
 - publication
 - external marketplace release
 - stable-broad readiness
