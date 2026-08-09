@@ -3,7 +3,7 @@
 > **Current Version:** 2.14
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P146 active for v10.58 strategic design completeness and single-authority migration convergence
+> **Status:** No active phase; v10.58 / P146 released and fresh-public-clone verified
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,13 +23,16 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- **P146:** [phase-146-active-runtime-strategic-completeness-and-authority-convergence.md](phase-146-active-runtime-strategic-completeness-and-authority-convergence.md)
-  - Output: v10.58 strengthens proactive non-trivial design collaboration and makes completed migrations converge to one verified active authority with external execution-disconnected quarantine and controlled restoration.
-  - Children: [P146-01 proactive analysis/design completeness](phase-146-01-proactive-analysis-and-design-completeness.md); [P146-02 single-authority migration/quarantine](phase-146-02-single-authority-migration-and-quarantine.md).
-  - Current gate: runtime doctrine, governed sync, combined scenario/static checks, matched Bash/PowerShell fixture matrices, and canonical/root installation proof pass in checked scope. Clean publication identity and fresh-public-clone verification remain open.
-  - Patches: [proactive completeness](../patch/proactive-analysis-and-design-completeness.patch.md); [migration/quarantine](../patch/single-authority-migration-and-quarantine.patch.md).
+- None.
 
 ### Most Recently Completed
+
+- **P146:** [phase-146-active-runtime-strategic-completeness-and-authority-convergence.md](phase-146-active-runtime-strategic-completeness-and-authority-convergence.md)
+  - Output: v10.58 strengthens proactive non-trivial design collaboration and makes completed migrations converge to one verified active authority with external execution-disconnected quarantine and controlled restoration.
+  - Gate: nine changed triads, ten unchanged runtime chains, exact inventory/allowlist, links/literals/force words/scenarios, matched Bash/PowerShell fixture matrices, 19/19 candidate/canonical/root/fresh-clone parity/body, exact manifest order, unrelated-file preservation, clean master, annotated tag, and GitHub Release identity passed.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.58
+  - Children: [P146-01 proactive analysis/design completeness](phase-146-01-proactive-analysis-and-design-completeness.md); [P146-02 single-authority migration/quarantine](phase-146-02-single-authority-migration-and-quarantine.md).
+  - Patches: [proactive completeness](../patch/proactive-analysis-and-design-completeness.patch.md); [migration/quarantine](../patch/single-authority-migration-and-quarantine.patch.md).
 
 - **P073-11:** [phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md](phase-073-11-runtime-owner-semantic-conflict-resolution-and-compression.md)
   - Output: six semantic ambiguities resolved; complete image-strategy owner integration; leader-owned source/final integration; explicit standalone, parallel test/metrics/matrix, and coordinated Team invocation routing; 19-Rule payload compacted to 254,032 bytes.
@@ -365,13 +368,13 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
-Active v10.58 / P146 verification:
+Released v10.58 / P146 verification:
 - Active Runtime Rule inventory is the same 19 files; exactly nine changed triads align and the other ten runtime chains remain unchanged in candidate scope
 - proactive-design variants must prove material completeness, real-alternative comparison, simpler-path handling, evidence boundaries, and anti-overdesign
 - migration proof must combine target behavior with former-path inactivity, external quarantine, no fallback/dual read-write/discovery linkage, and one active authority
 - Bash and PowerShell fixture matrices passed in candidate scope, including ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases
-- exact 50-path allowlist, allowlisted local Markdown links, literals, force words, body sufficiency, README surgical diff, 19/19 candidate/canonical/root parity, exact manifest order, quarantine inactivity, and four unrelated-file preservation checks pass
-- root installation is verified in the named scope; pushed, tagged, released, migration-complete, and fresh-clone-verified wording remains blocked until publication identity and fresh public-clone checks run
+- exact 50-path allowlist, allowlisted local Markdown links, literals, force words, body sufficiency, README surgical diff, 19/19 candidate/canonical/root/fresh-clone parity, exact manifest order, quarantine inactivity, and four unrelated-file preservation checks pass
+- clean `master`, peeled annotated `v10.58` tag, GitHub Release, canonical source, installed runtime, and fresh public tag clone resolve to the released result; migration-complete is verified in the named release scope
 
 Released v10.57 verification:
 - `v10.57 / P073-11` keeps the Active Runtime Rule inventory at 19 and resolves the six checked semantic ambiguities through existing canonical owners

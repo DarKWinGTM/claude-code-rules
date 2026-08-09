@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Parent Phase:** [phase-146-active-runtime-strategic-completeness-and-authority-convergence.md](phase-146-active-runtime-strategic-completeness-and-authority-convergence.md)
 > **Phase ID:** 146-02
-> **Status:** Active
+> **Status:** Completed — verified in released scope
 > **Target Release:** v10.58
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -59,7 +59,7 @@ Required proof:
 - Bash and PowerShell installers: implemented with external execution-disconnected quarantine, fail-closed ownership preflight, staged 19-file payload plus manifest replacement, and bounded rollback journals for commit-phase failure; rollback is implementation-reviewed at candidate strength, not fixture-injected proof.
 - Matched Bash and PowerShell fixture matrices: tested and passed in candidate scope.
 - Canonical synchronization and root installation: verified in scope with 19/19 source/runtime parity and body sufficiency, exact 19-row manifest order, preservation of four unrelated runtime files, no retired source-owned Rule below the active tree, and no quarantine creation for the no-quarantine install.
-- Terminal disposition: not yet verified; publication identity and fresh-public-clone gates remain.
+- Terminal disposition: verified in the released scope; clean publication identity and fresh-public-clone one-authority reproduction passed.
 
 ## Risks and Rollback
 

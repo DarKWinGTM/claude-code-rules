@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Parent Phase:** [phase-146-active-runtime-strategic-completeness-and-authority-convergence.md](phase-146-active-runtime-strategic-completeness-and-authority-convergence.md)
 > **Phase ID:** 146-01
-> **Status:** Active
+> **Status:** Completed — verified in released scope
 > **Target Release:** v10.58
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -62,7 +62,7 @@ Required cases:
 
 - Canonical runtime owner, coding consequence, communication admission, and presentation rendering: implemented; focused semantic/version checks passed in the clean candidate scope.
 - Scenario Case 17/coverage/matrix, combined semantic/static gates, and canonical/root installation: verified in checked scope.
-- Terminal disposition: not yet verified; publication identity and fresh-public-clone reproduction remain.
+- Terminal disposition: verified in the released scope; clean publication identity and fresh-public-clone reproduction passed.
 
 ## Exit Criteria
 

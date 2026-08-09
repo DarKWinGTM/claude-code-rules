@@ -1,14 +1,19 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.57 runtime owner semantic conflict resolution and compression
-> **Active Wave:** P146 strategic design completeness and authority convergence targeting v10.58
+> **Current Release:** v10.58 strategic design completeness and authority convergence
+> **Active Wave:** none; P146 release closeout completed
 > **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
 > **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
 ## ✅ Completed
+
+- [x] P146 / v10.58 strategic design completeness and authority convergence was completed, installed, pushed to `master`, tagged, released, and fresh-public-clone verified.
+  - Delivered: proactive non-trivial analysis/design completeness through existing owners; implementation-completeness and one-active-authority migration convergence; execution-disconnected external quarantine; fail-closed ownership/path/link preflight; staged 19-file payload plus manifest; bounded installer rollback state; matched Bash/PowerShell fixtures.
+  - Verified: nine changed triads and ten unchanged runtime chains; exact 19-file inventory/body and 50-path allowlist; links/literals/force words/scenarios; 19/19 candidate/canonical/root/fresh-clone parity; exact manifest order; four unrelated runtime files preserved; no retired source-owned Rule under the active tree; clean master, annotated tag, and GitHub Release identity.
+  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.58
 
 - [x] P073-11 / v10.57 runtime owner semantic conflict resolution and compression was completed, installed, pushed to `master`, tagged, and released.
   - Delivered: six semantic settlements, complete image-strategy owner integration, leader-owned source/final integration, explicit standalone-versus-parallel-versus-Team invocation routing with testing/metrics/test-matrix specialization, ten runtime/design version alignments, and owner-canonical compaction of the 19 Active Runtime Rules.
@@ -275,15 +280,6 @@
 ## 📋 Tasks To Do
 
 ### Active / In Progress
-
-- [ ] P146 / v10.58 strategic design completeness and authority convergence.
-  - [ ] P146-01 doctrine, bounded consumers, combined scenario/static gates, and canonical/root installation proof pass; publication and fresh-clone proof remain.
-  - [ ] P146-02 doctrine, evidence/status/governance projections, external-quarantine installers, matched fixture matrices, and canonical/root one-authority proof pass; publication and fresh-clone proof remain.
-  - [x] Nine changed Rule/design/changelog triads align; the other ten runtime chains remain unchanged and the exact 19-file active inventory passes.
-  - [x] Master design/changelog, installer/verification/governance-contract designs, P146 phases, patches, phase summary, playground, and surgical README anchors are synchronized in candidate scope.
-  - [x] Exact 50-path allowlist and allowlisted local Markdown-link checks pass.
-  - [x] Verify literals, force words, body sufficiency, quarantine inactivity, 19/19 canonical/root parity, exact manifest order, and unrelated-file preservation.
-  - [ ] Push only clean `master`, publish annotated `v10.58`, verify GitHub Release identity and a fresh public clone, then run the requested read-only 19-Rule follow-up audit.
 
 ### Deferred / Not Selected
 

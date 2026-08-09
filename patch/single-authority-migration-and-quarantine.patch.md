@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active
+> **Status:** Completed — released and fresh-public-clone verified
 > **Target Design:** [../design/design.md](../design/design.md) v10.58
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -55,9 +55,9 @@ Passed in combined checked scope:
 - final literals, force words, body-sufficiency, file-mode, README, and combined scenario gates;
 - canonical/root parity 19/19, exact manifest order, unrelated-file preservation, retired-source absence below the active tree, and quarantine inactivity for the no-quarantine install.
 
-Pending:
-- publication identity and fresh-public-clone reproduction;
-- migration-complete wording appears only after positive target and negative inactivity proof in the named released scope.
+Released-scope verification:
+- clean `master`, peeled annotated tag, GitHub Release identity, and fresh-public-clone reproduction passed;
+- positive target proof and negative former-path inactivity proof support `migration complete` in the named released scope.
 
 ## 5) Rollback Approach
 

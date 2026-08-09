@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active
+> **Status:** Completed — released and fresh-public-clone verified
 > **Target Design:** [../design/design.md](../design/design.md) v10.58
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -54,8 +54,8 @@ Passed in combined checked scope:
 - force words and owner boundaries remain preserved;
 - body sufficiency and canonical/root parity pass 19/19.
 
-Pending:
-- publication identity and fresh-public-clone parity/reproduction.
+Released-scope verification:
+- clean `master`, peeled annotated tag, GitHub Release identity, and fresh-public-clone parity/reproduction passed.
 
 ## 5) Rollback Approach
 

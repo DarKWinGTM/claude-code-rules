@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Candidate</b><br><sub>Verification in progress</sub>
+  <b>Released</b><br><sub>Verified and published</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current candidate note:** `v10.58` adds proactive material design completeness and one-active-authority migration convergence, moves retained former material outside active Rule discovery, and preserves the same 19-file runtime boundary. Combined checks, matched Bash/PowerShell fixture matrices, governed synchronization, and canonical/root 19/19 installation proof pass in checked scope; publication identity and fresh-clone gates remain.
+> **Current release note:** Released `v10.58` adds proactive material design completeness and one-active-authority migration convergence, moves retained former material outside active Rule discovery, and preserves the same 19-file runtime boundary. Combined checks, matched Bash/PowerShell fixture matrices, governed synchronization, canonical/root 19/19 installation proof, publication identity, and fresh public-clone reproduction pass in the released scope.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,12 +280,12 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- The `v10.58` candidate keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding proportional non-trivial design completeness and one-active-authority migration convergence.
+- Released `v10.58` keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding proportional non-trivial design completeness and one-active-authority migration convergence.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Governed synchronization and root runtime installation pass in checked scope; maintainer closeout still requires source push, release identity, and fresh-clone verification.
+- Governed synchronization, root runtime installation, source push, annotated tag, GitHub Release identity, and fresh public-clone verification pass in the released scope.
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1066,7 +1066,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Candidate state: `v10.58` keeps 19 root Rules; matched Bash and PowerShell disposable fixture matrices pass ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases. Canonical/root parity and unrelated-file preservation pass; publication identity and fresh-clone reproduction remain release gates.
+- Source state: released `v10.58` keeps 19 root Rules; matched Bash and PowerShell disposable fixture matrices pass ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases; canonical/root and fresh-clone parity/body-sufficiency checks pass 19/19 with unrelated-file preservation.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
