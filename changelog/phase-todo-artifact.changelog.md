@@ -1,8 +1,8 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.35
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.36
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.36 | 2026-08-10 | **[Added proof-layer task reconciliation and live-successor separation](#version-136)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.35 | 2026-08-09 | **[Added deterministic Patch creation lifecycle](#version-135)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.34 | 2026-08-09 | **[Added conditional diagram startup posture](#version-134)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.33 | 2026-08-09 | **[Corrected changelog owner vocabulary](#version-133)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -50,6 +51,21 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-136"></a>
+## Version 1.36: Proof-layer task reconciliation and live-successor separation
+
+**Date:** 2026-08-10
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Required task-list reconciliation against the selected current proof layer before Goal closeout.
+- Kept material source/non-live verification tasks current while moving optional or assistant-inferred live/rendered observation to an unselected successor task.
+- Required explicitly selected but unavailable live proof to remain visibly blocked with a resume condition and `NO_RETRY_UNTIL_CHANGE` instead of repeated attempts.
+- Required satisfied implementation and code-level verification tasks to close before a separate live-verification successor is surfaced.
+
+### Summary
+Live task state now follows the selected proof boundary: code-level completion cannot be held open by optional live observation, while genuinely required unavailable live proof stops as a visible blocker rather than an unstopable loop.
 
 <a id="version-135"></a>
 ## Version 1.35: Added deterministic Patch creation lifecycle

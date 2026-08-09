@@ -2,11 +2,11 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 149
-> **Status:** Active — exact approval packet prepared and explicit confirmation pending
+> **Status:** Active — corrective six-triad verification and renewed approval-packet preparation in progress
 > **Target Release:** v10.65
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
-> **Design References:** [../design/design.md](../design/design.md) v10.65; [../design/goal-authoring-and-route-support.design.md](../design/goal-authoring-and-route-support.design.md) v1.3; [../design/execution-and-goal-frame.design.md](../design/execution-and-goal-frame.design.md) v1.32; [../design/action-safety.design.md](../design/action-safety.design.md) v1.5; [../design/external-verification-and-source-trust.design.md](../design/external-verification-and-source-trust.design.md) v1.7; [../design/evidence-discipline.design.md](../design/evidence-discipline.design.md) v1.8
+> **Design References:** [../design/design.md](../design/design.md) v10.65; [../design/goal-authoring-and-route-support.design.md](../design/goal-authoring-and-route-support.design.md) v1.3; [../design/execution-and-goal-frame.design.md](../design/execution-and-goal-frame.design.md) v1.32; [../design/action-safety.design.md](../design/action-safety.design.md) v1.5; [../design/external-verification-and-source-trust.design.md](../design/external-verification-and-source-trust.design.md) v1.7; [../design/evidence-discipline.design.md](../design/evidence-discipline.design.md) v1.8; [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.36
 > **Patch References:** [../patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md](../patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md)
 
 ---
@@ -18,14 +18,15 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 ## Lineage Decision
 
 - At the clean candidate baseline, P148 / v10.64 was released and closed and no RULES release phase was active; P149 became active when this governed wave opened.
-- This wave changes five Runtime Rule owner contracts and adds a distinct proof-reachability, authenticated-capability, retry, and supplied-artifact evidence family with its own scenario, installation, and publication gates.
+- This wave changes six Runtime Rule owner contracts and adds a distinct proof-reachability, explicit live-gate selection, task reconciliation, authenticated-capability, retry, and supplied-artifact evidence family with its own scenario, installation, and publication gates.
 - The work is not a bounded child of Patch chronology governance or the earlier Case 17 route-scope correction family.
 - P149 is therefore the smallest truthful new major. The checked public baseline had no P149 phase, v10.65 tag, or v10.65 GitHub Release when the clean candidate was established.
 
 ## Expected Output
 
 - Goal authoring records the required proof layer, current reachable layer, successor/excluded layers, and route prerequisites.
-- Execution framing closes source/local Goals at the selected reachable gate while preserving an explicitly selected stronger terminal gate as binding.
+- Execution framing closes source/code Goals at the selected reachable gate, prohibits assistant-inferred live acceptance, and preserves only a live gate explicitly selected by the user or checked governed authority as binding.
+- Task reconciliation closes satisfied implementation and source/non-live verification tasks before optional live/rendered observation becomes an unselected successor; explicitly required unavailable live proof remains blocked without unchanged retry.
 - Action safety preflights target, network, tool/session mechanism, authorization, approval, and bounded substitutes before authenticated/private access.
 - Deterministic capability failure stops unchanged retries after at most one evidence-backed discriminating correction.
 - External verification selects only reachable authorized sources after capability preflight.
@@ -39,7 +40,8 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 |---|---|---|
 | Reachable proof-layer Goal fields and prerequisite ordering | implemented | verified |
 | Source/local closure versus successor Product proof | implemented | verified |
-| Explicit live terminal-gate preservation | implemented | verified |
+| Explicit live-gate selection; no assistant-inferred live acceptance | implemented | verification pending |
+| Task-list reconciliation and optional live-successor separation | implemented | verification pending |
 | Authenticated/private capability and authorization preflight | implemented | verified |
 | One bounded discriminating correction and deterministic no-retry | implemented | verified |
 | Guest/login and 401 authentication boundary plus 403 refusal uncertainty | implemented | verified |
@@ -51,7 +53,7 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 ## Lane Map
 
 1. **Scenario/TestKit:** Cases 17/12/04 plus matrix and coverage define proof-reachability, terminal-gate, authenticated-capability, retry, and supplied-artifact branches.
-2. **Doctrine triads:** advance five existing Runtime Rule/design/changelog owners without adding a twentieth Runtime Rule.
+2. **Doctrine triads:** advance six existing Runtime Rule/design/changelog owners without adding a twentieth Runtime Rule.
 3. **Governed integration:** synchronize this Phase, its Patch and Patch changelog, release shard, master design/changelog, TODO, phase summary, and README.
 4. **Candidate verification:** run doctrine/scenario/triad assertions, protected-byte and allowlist checks, fixture suites, Patch timeline regression, disposable install, and independent reviews.
 5. **Approval-gated installation/publication:** prepare one exact SHA/scope packet before real Runtime Rule installation, push, annotated tag, GitHub Release, or dirty-checkout reconciliation.
@@ -64,6 +66,7 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 - `action-safety.md` triad → 1.5
 - `external-verification-and-source-trust.md` triad → 1.7
 - `evidence-discipline.md` triad → 1.8
+- `phase-todo-artifact.md` triad → 1.36
 - Cases 17, 12, and 04 plus `playground/matrix.md` and `playground/coverage.md`
 - master design/changelog, README, TODO, phase summary, this Phase, its Patch/Patch changelog, and the v10.65 release shard
 
@@ -73,17 +76,18 @@ Selected route: `new_testkit_scenario` plus exact triad/allowlist/protected-byte
 
 Required checks:
 - Case 17 closes a source-bounded Goal at its selected reachable layer and keeps distinct Product proof as an explicit successor.
-- Case 17 also keeps explicitly selected authenticated Product proof inside the current Goal until passed or explicitly narrowed.
+- Case 17 prevents generic completion wording or assistant inference from selecting live acceptance and keeps authenticated Product proof inside the current Goal only when the user or checked governed authority explicitly selects it.
+- Task-list reconciliation closes satisfied code/non-live tasks and routes optional live/rendered observation to an unselected successor; explicitly required unavailable live proof stays blocked without unchanged retry.
 - Cases 12/04 preflight authenticated/private capability before access and stop unchanged retries after deterministic failure.
 - Guest/login or `401` shows required authentication was not established; `403` shows refusal but does not alone distinguish missing authentication from insufficient authorization; none alone proves authenticated Product failure.
 - Screenshot, Rendered HTML, rendered text/semantic witness, sanitized export, and authenticated harness evidence remain claim-bounded.
 - No raw credential, cookie, bearer token, private key, auth-state dump, machine-local SMB/GVFS path, or universal push/tag/release requirement enters shared doctrine.
-- Exactly five Runtime Rules change; the other 14 remain byte-identical and the ordered inventory remains exactly 19.
-- The frozen candidate scope remains exactly 29 paths with no deletion, symlink change, or mode change.
+- Exactly six Runtime Rules change; the other 13 remain byte-identical and the ordered inventory remains exactly 19.
+- The expanded candidate scope remains exactly 32 paths with no deletion, symlink change, or mode change.
 - Bash/PowerShell fixtures, Patch timeline regression, disposable installation, second-pass idempotence, links, body sufficiency, and no governed/support runtime installation pass.
 - Real runtime installation and public publication remain blocked until the exact candidate SHA/scope packet is explicitly approved.
 
-Current evidence: focused doctrine, scenario, triad, governance/allowlist/protected-byte/mode/link, and README checks pass. Bash and PowerShell installer fixtures pass; all 32 Patch timeline regression tests pass; the timestamped P149 Patch is compliant; and a post-repair two-pass disposable installation proves 19/19 byte-and-mode parity, identical second-pass state, governed/support exclusion, and unrelated-file preservation. Independent doctrine and release/no-drift reviews pass after correcting HTTP `403` semantics and the active-phase baseline sentence. The candidate commit and exact approval packet are prepared; explicit approval, real Runtime Rule installation, publication, and fresh-public proof remain pending.
+Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. Before publication, user-reported Goal-loop and task-list evidence expanded source to six triads and 32 paths. Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass. Independent reviews, renewed commit/approval, runtime reinstallation, publication, and fresh-public proof remain pending.
 
 ## Entry Conditions and Out of Scope
 
@@ -112,7 +116,7 @@ Risks:
 - publication can overwrite unrelated dirty state or drift from the approved candidate.
 
 Rollback/containment:
-- before publication, revert only the clean candidate's frozen 29-path allowlist;
+- before publication, revert only the clean candidate's expanded 32-path allowlist;
 - stop on any unexpected path, deletion, mode/symlink change, triad mismatch, protected-byte drift, fixture failure, or remote-master change;
 - keep real Runtime Rule installation, push, tag, Release, and dirty-checkout reconciliation behind exact action-and-scope approval;
 - after publication, preserve v10.65 immutably and correct defects through a later release rather than moving the tag.
@@ -120,8 +124,8 @@ Rollback/containment:
 ## Exit Criteria
 
 - Five owner triads are aligned, body-sufficient, and scenario-covered.
-- Exactly five Runtime Rules change while the other 14 and the 19-file inventory remain protected.
-- Frozen 29-path scope, references, modes, and README current-state wording pass.
+- Exactly six Runtime Rules change while the other 13 and the 19-file inventory remain protected.
+- Expanded 32-path scope, references, modes, and README current-state wording pass.
 - Fixture suites, Patch timeline regression, disposable install, idempotence, body/parity checks, and independent reviews pass.
 - The exact candidate approval packet is accepted before real runtime installation or publication.
 - Runtime installation proves 19/19 parity and second-pass idempotence.

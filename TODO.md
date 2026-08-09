@@ -12,12 +12,13 @@
 
 - [ ] **P149 / candidate v10.65 proof reachability and authenticated evidence** is active in the clean candidate workspace.
   - [x] Added Cases 17/12/04 plus matrix/coverage branches for reachable proof closure, selected live terminal-gate preservation, authenticated/private capability preflight, deterministic no-retry, and bounded supplied rendered evidence.
-  - [x] Advanced five existing Runtime Rule/design/changelog triads without adding a twentieth Runtime Rule.
-  - [x] Synchronized the P149 Phase, timestamped Patch, Patch changelog, v10.65 shard, master design/changelog, phase summary, and README.
-  - [x] Verified the frozen 29-path scope, five changed and 14 protected Runtime Rules, exact 19-file inventory, links/modes/bodies, fixtures, Patch timeline regression, disposable install, idempotence, and independent reviews.
-    - Corrected the independently found HTTP `403` semantics and active-phase baseline wording, then reran focused checks; doctrine and release/no-drift reviews pass.
-  - [x] Established the candidate commit and prepared the exact SHA/scope approval packet.
-  - [ ] Await explicit approval before real Runtime Rule installation, push, annotated v10.65 tag, or GitHub Release; dirty-checkout reconciliation remains excluded from this packet.
+  - [x] Advanced six existing Runtime Rule/design/changelog triads without adding a twentieth Runtime Rule.
+  - [x] Installed the explicitly approved earlier 29-path candidate into the 19-Rule runtime and verified first-pass parity; no push, tag, or GitHub Release occurred.
+  - [x] Reverified the expanded 32-path corrective source after user-reported Goal-loop evidence added explicit live-gate selection and task-list reconciliation.
+    - Source/code Goals must not infer live acceptance; optional rendered/live observation becomes an unselected successor task, while explicitly required unavailable live proof blocks without unchanged retry.
+    - Focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass.
+  - [x] Resynchronized the P149 Phase, timestamped Patch, Patch changelog, v10.65 shard, master design/changelog, phase summary, and README for six changed and 13 protected Runtime Rules.
+  - [ ] Complete corrected independent reviews, establish the corrected candidate commit, and prepare a renewed exact SHA/scope approval packet before runtime reinstallation, push, annotated v10.65 tag, or GitHub Release; dirty-checkout reconciliation remains excluded.
   - Phase: [phase-149-proof-reachability-and-authenticated-evidence.md](phase/phase-149-proof-reachability-and-authenticated-evidence.md)
   - Patch: [2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md](patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md)
 

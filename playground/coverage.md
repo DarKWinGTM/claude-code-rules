@@ -57,6 +57,6 @@ This file proves that the playground baseline and grounded transcript upgrades c
 
 Coverage outcome for the grounded playground:
 - all 19 active runtime rules are still mapped to at least one scenario family
-- additional scenario families expand realism and observed evidence density without changing runtime install scope
+- additional scenario families expand realism and observed evidence density without changing runtime install scope; Case 17 and M33 prohibit assistant-inferred live acceptance for source/code goals
 - several rules intentionally appear in more than one family because the same owner shapes behavior across several situations
 - the matrix is rule-grounded, not capability-invented

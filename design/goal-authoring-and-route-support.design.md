@@ -38,6 +38,7 @@ This design owns the target-state shape for:
 - Receive direct/candidate/advisory posture from `execution-and-goal-frame.md`; do not independently promote a candidate.
 - Keep `/goal` as the objective owner for outcome, proof/checks, scope, and hard guardrails.
 - Encode the selected `required_proof_layer`, material `current_reachable_layer`, and explicitly classified excluded or successor layers only when those distinctions affect the goal.
+- For source/code goals, prohibit assistant inference from turning generic completion or verification wording into live Product acceptance; live proof stays excluded or successor unless the user or checked governed authority explicitly selects it.
 - Preserve an explicitly selected terminal proof as binding; expose prerequisite or blocker gaps instead of demoting it.
 - Order capability and state prerequisites before dependent proof and prevent unchanged checks that cannot add signal.
 - Keep `/plan` as route-only support when overflow route detail or explicit standalone planning is materially needed.
@@ -63,7 +64,7 @@ Historical detail remains in changelog, not as a parallel runtime authority.
 
 Release validation should confirm the parent runtime file exists at source root, links to this design and its changelog, ships in the active runtime install set when install is in scope, and leaves `execution-and-goal-frame.md` plus `phase-todo-artifact.md` with only their execution/task-surface bridges instead of the full duplicated `/goal` authoring contract.
 
-Case 17 M30/M31 validation must confirm that a source-bounded goal can close at its selected reachable source/local proof while Product proof remains a prerequisite-bearing successor; an explicitly selected authenticated live terminal proof remains binding and keeps the goal open when capability is unavailable; route prerequisites precede dependent live proof; and simple goals remain compact without mandatory proof-layer ceremony.
+Case 17 M30/M31 validation must confirm that a source-bounded goal can close at its selected reachable source/local proof while Product proof remains a prerequisite-bearing successor; generic `complete`, `verify`, `working`, or `done` wording does not select live proof; only the user or checked governed authority can explicitly keep authenticated live proof as the terminal gate; route prerequisites precede dependent live proof; and simple goals remain compact without mandatory proof-layer ceremony.
 
 ---
 

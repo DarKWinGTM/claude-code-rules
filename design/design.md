@@ -36,8 +36,9 @@ Current target-state priorities:
 - new Patch creation captures the instant once, creates exclusively, emits exact direct references, and preserves creation identity across revisions and governed moves
 - legacy Patch migration remains evidence/hash-bound, updates only resolved exact references, blocks ambiguous or colliding rows, preserves suspended archives, and requires explicit verify/rollback rather than automatic fallback
 - `script/patch-timeline.mjs` is dependency-free repository tooling for inventory, evidence audit, planning, creation, apply, verification, and rollback; it never enters the ordered 19-Rule Runtime payload
-- governed Goal construction distinguishes required proof, current reachable proof, successor/excluded proof, and route prerequisites; an explicitly selected live terminal gate remains binding rather than being demoted for difficulty
-- execution closes a source/local Goal only at its selected reachable layer and surfaces genuinely distinct downstream Product proof as a prerequisite-bearing successor without claiming live completion
+- governed Goal construction distinguishes required proof, current reachable proof, successor/excluded proof, and route prerequisites; source/code goals cannot infer live acceptance from generic completion wording, while a live terminal gate explicitly selected by the user or checked governed authority remains binding
+- execution closes a source/local Goal at its selected reachable layer, surfaces genuinely distinct downstream Product proof as a prerequisite-bearing successor, and stops unavailable explicitly required live proof without unchanged retry
+- live task reconciliation closes satisfied implementation and source/non-live verification tasks before optional live/rendered observation is surfaced as an unselected successor; required unavailable live proof remains visibly blocked with a resume condition
 - authenticated/private access starts with target, network, tool/session, authorization, approval, and bounded-substitute preflight; one evidence-backed correction may run before deterministic `NO_RETRY_UNTIL_CHANGE`
 - guest/login or `401` shows required authentication was not established; `403` shows refusal while authentication-versus-authorization cause remains unresolved; none alone proves the authenticated Product is broken
 - external verification ranks only reachable authorized claim-fit sources after capability preflight, while approval, credential, and retry ownership remains with action safety
@@ -152,8 +153,8 @@ Release validation for this master design chain should confirm:
 - this parent remains compact and body-sufficient
 - child shards are reachable and role-correct
 - runtime/design/changelog versions align
-- the five proof/auth/evidence triads advance together while the other 14 Runtime Rules remain byte-identical and the ordered inventory stays exactly 19
-- Cases 17/12/04 plus matrix/coverage exercise reachable closure, selected terminal-gate preservation, authenticated capability, deterministic retry, and supplied-artifact proof limits
+- the six proof/auth/evidence/task triads advance together while the other 13 Runtime Rules remain byte-identical and the ordered inventory stays exactly 19
+- Cases 17/12/04 plus matrix/coverage exercise reachable closure, explicit live-gate selection, task-list successor separation, authenticated capability, deterministic retry, and supplied-artifact proof limits
 - forward-valid phase grammar explicitly includes `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
 - observed alphanumeric phase forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous
 - observed project shape, extracted doctrine, selected target form, and any equivalence-claim basis stay distinct when checked examples ground governance recommendations

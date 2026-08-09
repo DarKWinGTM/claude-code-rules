@@ -120,9 +120,11 @@ current reachable layer: local integration verified
 successor proof layer: Product live verified after deploy/install/restart
 ```
 
-Expected behavior: close the current source-bounded goal at the selected reachable layer and surface the live Product check as a separate successor gate with its prerequisites. Do not describe the current goal as live-verified.
+Expected behavior: close the current source-bounded goal at the selected reachable layer and surface the live Product check as a separate successor gate with its prerequisites. Do not describe the current goal as live-verified. The assistant must not infer live proof from generic requests to `complete`, `verify`, confirm `working`, or mark the code work `done`.
 
-Counter-variant: if the selected goal explicitly says its terminal proof is authenticated Product behavior, that selected live terminal proof stays inside the current goal. The goal remains open until the proof passes or the user explicitly narrows the goal; the assistant must not demote it merely because deployment, authentication, or restart is difficult.
+Selection boundary: live proof can become the current terminal gate only when the user or checked governed authority explicitly selects authenticated/deployed/installed/restarted Product behavior as the acceptance criterion. An assistant-authored recommendation is advisory and cannot silently promote that proof into the active goal.
+
+Counter-variant: if that stronger authority explicitly selects authenticated Product behavior as terminal proof, the selected live terminal proof stays inside the current goal. The goal remains open until the proof passes or the user explicitly narrows the goal; the assistant must not demote it merely because deployment, authentication, or restart is difficult.
 
 Route order:
 

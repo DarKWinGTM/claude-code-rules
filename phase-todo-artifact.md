@@ -1,7 +1,7 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.35
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.35
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.36
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.36
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
@@ -174,7 +174,10 @@ For phase-backed work:
 - shape outcome-sized tasks around output and gate, not individual commands
 - split implementation, verification, and governance/release-sync only when combining them hides gates/ownership
 - mark `in_progress` when work begins and `completed` immediately when the slice is actually done
-- preserve a verification task while material checks remain
+- before Goal closeout, reconcile every open task against the current Goal's selected proof layer: keep material source/non-live checks in the current task family, but move assistant-inferred or optional live/rendered observation into an unselected successor task so it cannot block code-level completion
+- preserve a verification task while material checks for the selected current proof layer remain; do not preserve optional live proof as if it were a required current verification task
+- if the user or checked governed authority explicitly selected live proof and capability is unavailable, keep that task visibly blocked with its resume condition and apply `NO_RETRY_UNTIL_CHANGE` rather than looping
+- close satisfied implementation and source/non-live verification tasks before surfacing the separate live-verification successor
 - discover next work from the task list, then active phase, summary, TODO, and checked implementation
 
 When a selected non-trivial goal/plan enters execution, materialize bounded tasks before deep continuation. Authoring alone does not trigger execution. Keep goal/plan linkage; ask one substantive question only when objective, scope, gate, access, or approval is insufficient. Worker helper topology belongs to `worker-routing-and-context.md`.
@@ -207,12 +210,14 @@ Later sync does not weaken early startup or live-task requirements.
 | selected design semantics exceed headline output | extract obligations and explicit implementation/terminal states |
 | active phase/lane or selected goal execution | expose phase context, materialize bounded tasks, and continue current-phase-first |
 | oversized TODO/summary or God Phase/TODO | use preservation-first rollover/repair while keeping active navigation |
-| implementation done but verification remains | keep verification visible; do not close early |
+| implementation done but selected source/non-live verification remains | keep that verification visible; do not close early |
+| optional or assistant-inferred live proof remains after the code gate passes | close satisfied current tasks and route live proof to an unselected successor task; do not leave it as a current blocker |
+| explicitly selected live proof is unavailable | keep the live task blocked with a resume condition and stop unchanged retry under `NO_RETRY_UNTIL_CHANGE` |
 | objective complete with meaningful successor | report the supported next phase/wave/goal with why/output/gate |
 
 ## Anti-Patterns
 
-Avoid unresolved startup posture; `create now` or task continuation treated as automatic new-major authority; `not required`/cleanup as deletion authority; filler phases/lanes; invalid forward phase grammar; God Phase/TODO bodies; history replacing active entrypoints; live tasks replacing durable state; authoring treated as execution; hidden goal/phase/gate context; closeout before semantic disposition or verification; and file/task-only closeout without delivery, impact, and evidence.
+Avoid unresolved startup posture; `create now` or task continuation treated as automatic new-major authority; `not required`/cleanup as deletion authority; filler phases/lanes; invalid forward phase grammar; God Phase/TODO bodies; history replacing active entrypoints; live tasks replacing durable state; authoring treated as execution; hidden goal/phase/gate context; closeout before selected semantic disposition or verification; optional live observation left as a blocker after the current code gate passes; unchanged retry against unavailable live capability; and file/task-only closeout without delivery, impact, and evidence.
 
 ## Integration
 Related owners: [document-governance.md](document-governance.md) and [document-integrity.md](document-integrity.md) (roles/preservation/rollover); [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) (routing/intake); [coding-discipline.md](coding-discipline.md) (verification/TestKit); [execution-and-goal-frame.md](execution-and-goal-frame.md) and [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) (continuation/goal route).

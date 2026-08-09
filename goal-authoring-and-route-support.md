@@ -56,6 +56,8 @@ When a governed `/goal` is appropriate, translate checked execution context into
 Required guidance:
 - keep only the parts needed to define completion, proof, scope, and hard guardrails
 - bind `required_proof_layer` to the current goal's selected completion gate, not to the strongest imaginable whole-system proof
+- for a source/code goal, must not infer live, authenticated, deployed, installed, or restarted Product proof into `required_proof_layer`; absent explicit selection by the user or checked governed authority, keep that proof in `excluded_or_successor_layers`
+- generic wording such as `complete`, `verify`, `working`, or `done` does not explicitly select live proof, and an assistant-authored recommendation cannot promote live proof into the current goal's terminal gate by assistant inference
 - use `current_reachable_layer` to expose a real proof gap; do not present it as completion when it is weaker than `required_proof_layer`
 - classify proof outside the current goal explicitly as excluded or successor; do not turn it into an accidental blocker or silently drop it
 - if an explicitly selected terminal proof is stronger than the current reachable layer, keep that proof inside the current goal and keep the goal open with its prerequisite or blocker; difficulty, externality, or unavailable capability does not demote it
