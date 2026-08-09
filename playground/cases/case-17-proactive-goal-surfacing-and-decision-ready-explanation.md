@@ -190,21 +190,24 @@ Recommended first goal: inspect queue/worker lease first, because it currently h
 After the comparison establishes queue/worker lease as the one best-supported governed successor, execution separately selects advisory-goal eligibility. Goal-authoring may use bounded internal planning to construct the advisory `/goal`; in the completed output, presentation places that goal before any user-visible subordinate route support.
 
 Advisory `/goal`:
-`/goal Done when queue ordering and worker lease behavior are explained in checked scope and the observed stall is classified as caused by or not caused by that slice. Prove with: one checked queue trace, lease-owner/state-transition evidence, and the stall's relation to that evidence surfaced in transcript. Scope: queue ordering and worker lease handling only. Keep: retry/backoff and status visibility remain subordinate route notes rather than objective conditions; compact route support stays subordinate inside the same goal-centric surface; `/plan` stays route-only if overflow detail or explicit standalone planning is later needed.`
+`/goal Done when queue ordering and worker lease behavior are explained in checked scope and the observed stall is classified as caused by or not caused by that slice. Prove with: one checked queue trace, lease-owner/state-transition evidence, and the stall's relation to that evidence surfaced in transcript. Scope: queue ordering and worker lease handling only. Keep: retry/backoff and status visibility remain deferred sibling notes outside this goal's execution and proof; compact route support stays subordinate inside the same goal-centric surface; `/plan` stays route-only if overflow detail or explicit standalone planning is later needed.`
 
 Plan draft:
-- inspect queue / worker lease ordering first
-- confirm whether retries are re-entering the queue second
-- inspect status visibility last
+- inspect queue ordering and worker lease ownership first
+- trace lease-owner and state transitions for the checked stalled work
 
 Plan basis:
 - queue / worker lease is the strongest first slice because it best matches the checked stall symptom so far
-- retry / backoff and status visibility still remain real secondary candidates
+- retry / backoff and status visibility remain deferred sibling candidates outside this goal's execution and proof
+
+Deferred sibling notes — not execution or verification obligations for this goal:
+- retry / backoff may be selected later if queue / lease evidence does not explain the stall
+- status visibility may be selected later if checked execution evidence points to a reporting gap
 
 Verification / testing route:
 - capture one checked queue trace
-- confirm whether retries are re-entering the queue
-- confirm whether the status lag is a reporting issue or a real execution stall
+- capture lease-owner and state-transition evidence for the same stalled work
+- classify the observed stall as caused by or not caused by queue ordering and worker lease behavior
 
 If you later select that goal and the remaining route is still multi-file and verification-sensitive, goal-authoring keeps `/goal` for outcome/proof/scope and compact route support in that same visible surface first. If the route later outgrows that surface or the user explicitly wants standalone planning, goal-authoring opens `/plan` as the route-only command surface. A durable `Plan reference:` would be valid only after a route-only file exists and was verified; this scenario emits no such reference.
 

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.62 published — semantic closeout blocked
-> **Active Wave:** P073-14 blocked; corrective release not yet selected
+> **Current Release:** v10.62 published; v10.63 corrective candidate active
+> **Active Wave:** P073-15 bounded-goal route-scope correction
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,17 +10,18 @@
 
 ## Active / In Progress
 
-- [ ] **P073-14 / v10.62 semantic closeout is blocked after publication.**
-  - Technical publication passed: exact nine paths, protected bytes, Bash/PowerShell fixtures, disposable install, canonical/public/tag parity, annotated tag, and GitHub Release identity.
-  - Semantic blocker: the queue/worker-lease-only goal still schedules retry/status sibling candidates as plan and verification obligations.
-  - Required next state: keep v10.62 immutable and open a later corrective release only after selection; retry/status must remain deferred sibling notes rather than executable or proof requirements.
+- [ ] **P073-15 / v10.63 Case 17 bounded-goal route-scope correction is active.**
+  - Output: keep the queue/worker-lease goal's plan and verification inside that slice; retain retry/backoff and status visibility only as deferred sibling notes outside execution and proof.
+  - Verified before publication: section-bounded assertions and independent whole-file review, exact scope/modes/links, protected bytes, Bash/PowerShell fixtures, disposable install, canonical release-owned convergence, and two-pass root installation.
+  - Remaining gate: immutable annotated tag, GitHub Release, fresh-public proof, and truthful closeout.
+  - Boundary: v10.62 remains immutable; Runtime Rules and installer sources remain unchanged; root installation is an explicitly requested idempotent parity witness.
 
 ---
 
 ## Recently Completed
 
 - [x] **P073-13 / v10.61 Case 17 semantic-owner consistency correction** was pushed to public `master`, tagged, released, and fresh-public-tag verified.
-  - Corrected candidate/advisory posture separation, goal-authoring route ownership, phase/TODO evidence/linkage boundaries, and the narrow queue/worker-lease goal versus subordinate retry/status route; P073-14 owns the later-discovered visible-order and alternative-branch residuals.
+  - Corrected candidate/advisory posture separation, goal-authoring route ownership, phase/TODO evidence/linkage boundaries, and the narrow queue/worker-lease goal; P073-14 owns the later visible-order/branch residuals and P073-15 owns the final retry/status route-scope contradiction.
   - Verified the exact tagged v10.61 scope, protected-byte identity, Bash/PowerShell fixtures, disposable install, candidate/canonical/public/tag parity, annotated tag, GitHub Release identity, and v10.60 immutability.
   - Runtime Rules and root installation remained unchanged at 19/19 parity.
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.61
