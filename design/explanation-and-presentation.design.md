@@ -1,7 +1,7 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.23
+> **Current Version:** 1.24
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
@@ -64,6 +64,8 @@ P146 refinement: this owner should provide an optional material-only decision-re
 P121 refinement: this owner should now preserve a goal-to-plan explanation shape so visible output keeps objective and route as separate layers, makes planning subordinate to the selected goal instead of a replacement objective, and anchors closeout wording back to the goal gate when route work finishes first.
 
 P122 refinement: this owner should now preserve a compact explicit next-surface recommendation shape for route-heavy selected goals so `/plan` can be named directly instead of being implied through broad planning prose.
+
+P073-12 refinement: this owner renders candidate goals or one advisory `/goal` only after `execution-and-goal-frame.md` selects the posture and `goal-authoring-and-route-support.md` constructs the artifact. Presentation must not promote independently and must preserve the verified `/goal` then `Plan reference:` order.
 
 ---
 

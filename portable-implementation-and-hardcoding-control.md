@@ -1,6 +1,6 @@
 # Portable Implementation and Hardcoding Control
-> **Current Version:** 1.3
-> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/portable-implementation-and-hardcoding-control.design.md](design/portable-implementation-and-hardcoding-control.design.md) v1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
 > **Full history:** [changelog/portable-implementation-and-hardcoding-control.changelog.md](changelog/portable-implementation-and-hardcoding-control.changelog.md)
 ---
@@ -49,11 +49,4 @@ Quick checks:
 - no source/destination blur
 ---
 ## Integration
-Related rules:
-- [evidence-discipline.md](evidence-discipline.md) - local values require checked-scope verification
-- [accurate-communication.md](accurate-communication.md) - exact local values need correct evidence strength and scope wording
-- [document-governance.md](document-governance.md) - shared docs and onboarding/install guidance stay portable
-- [document-integrity.md](document-integrity.md) - source-side and destination/runtime references stay distinct
-- [document-integrity.md](document-integrity.md) - reusable artifacts should not accumulate machine-local assumptions
-- [coding-discipline.md](coding-discipline.md) - tactical convenience must not become hidden long-term authority
----
+Related owners: [evidence-discipline.md](evidence-discipline.md) and [accurate-communication.md](accurate-communication.md) (checked local values and wording); [document-governance.md](document-governance.md) and [document-integrity.md](document-integrity.md) (portable docs/reference separation); [coding-discipline.md](coding-discipline.md) (tactical-to-strategic convergence).

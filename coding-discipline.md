@@ -1,6 +1,6 @@
 # Coding Discipline
-> **Current Version:** 1.4
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.4
+> **Current Version:** 1.5
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.5
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
@@ -288,8 +288,4 @@ Avoid:
 ---
 
 ## Integration
-Related owners:
-- [accurate-communication.md](accurate-communication.md) and [evidence-discipline.md](evidence-discipline.md) — claim strength
-- [phase-todo-artifact.md](phase-todo-artifact.md) and [execution-and-goal-frame.md](execution-and-goal-frame.md) — verification slices and continuation
-- [worker-routing-and-context.md](worker-routing-and-context.md) and [action-safety.md](action-safety.md) — noisy checks and live/high-impact gates
-- [document-governance.md](document-governance.md), [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md), and [explanation-and-presentation.md](explanation-and-presentation.md) — governed artifacts, binding, and response explanation
+Related owners: [accurate-communication.md](accurate-communication.md) and [evidence-discipline.md](evidence-discipline.md) (claim strength); [phase-todo-artifact.md](phase-todo-artifact.md) and [execution-and-goal-frame.md](execution-and-goal-frame.md) (verification continuation); [worker-routing-and-context.md](worker-routing-and-context.md) and [action-safety.md](action-safety.md) (noisy/live checks); [document-governance.md](document-governance.md), [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md), and [explanation-and-presentation.md](explanation-and-presentation.md) (artifact/binding/presentation ownership).

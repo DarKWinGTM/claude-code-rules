@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.6
+> **Current Version:** 2.7
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 
 ---
@@ -200,3 +200,9 @@ Apply defaults
 ---
 
 > Full history: [../changelog/authority-and-scope.changelog.md](../changelog/authority-and-scope.changelog.md)
+
+---
+
+## P073-12 Runtime Compaction Refinement
+
+Compact Integration and cross-owner consumer wording to canonical owner pointers while preserving activation, local consequence, exact error-prevention literals, body sufficiency, and every existing safety, verification, approval, and stop gate.

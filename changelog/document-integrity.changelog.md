@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.12 | 2026-08-09 | **[Aligned startup-selected diagram artifacts and compact handoffs](#version-112)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.11 | 2026-08-09 | **[Added migration reference and discovery integrity](#version-111)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.10 | 2026-08-08 | **[Corrected active startup ownership and preserved integrity guards](#version-110)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.9 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-19)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -24,6 +25,19 @@
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-112"></a>
+## Version 1.12: Aligned startup-selected diagram artifacts and compact handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Recognized conditionally selected diagram surfaces as governed startup artifacts without creating a second trigger owner.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the document-integrity triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-111"></a>
 ## Version 1.11: Added migration reference and discovery integrity

@@ -1,7 +1,7 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-08-09 | **[Compacted memory integration handoffs](#version-18)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.7 | 2026-05-08 | **[Added Memory-base relative root-index compaction](#version-17)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.6 | 2026-05-07 | **[Added memory index overflow maintenance trigger](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.5 | 2026-04-17 | **[Retired memsearch-specific naming in favor of generic optional external recall wording](#version-15)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -21,6 +22,18 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
 
 ---
+
+<a id="version-18"></a>
+## Version 1.8: Compacted memory integration handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the memory-governance-and-session-boundary triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-17"></a>
 ## Version 1.7: Added Memory-base relative root-index compaction

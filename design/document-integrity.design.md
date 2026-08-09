@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.11
+> **Current Version:** 1.12
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -40,6 +40,8 @@ P138 refinement: this owner should now treat governed-doc citations in source co
 P144 refinement: required governed startup artifacts are selected by the active owner `phase-todo-artifact.md`; references to retired absorbed owner names remain historical provenance only.
 
 P146 refinement: migration-complete and no-drift integrity must verify applicable manifests, imports/dependencies, config, build/deployment inputs, tests/test discovery, generated-input declarations, and acceptance surfaces select only current authority. Quarantine, history, and `done/` may remain reachable provenance references but must not remain active, fallback, generated, or normally discovered inputs.
+
+P073-12 refinement: conditionally selected diagram surfaces count as governed startup artifacts only when `phase-todo-artifact.md` selects them; document-integrity verifies their references but does not become a second diagram trigger owner.
 
 ---
 

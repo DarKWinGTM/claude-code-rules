@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.18
+> **Current Version:** 1.19
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.19 | 2026-08-09 | **[Added conditional diagram sync and compact owner handoffs](#version-119)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.18 | 2026-08-09 | **[Made inactive preservation reference-only after cutover](#version-118)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.17 | 2026-08-08 | **[Compacted document governance and bounded cross-Rule exact copies](#version-117)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.16 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -32,6 +33,20 @@
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-119"></a>
+## Version 1.19: Added conditional diagram sync and compact owner handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Added diagram to governed synchronization only when startup posture materially triggers it.
+- Preserved design as semantic authority and diagram as visual synthesis.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the document-governance triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-118"></a>
 ## Version 1.18: Made inactive preservation reference-only after cutover

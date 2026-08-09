@@ -68,6 +68,7 @@ Checked transcript-derived example:
   2. inspect retry / backoff behavior
   3. inspect status-reporting and visibility gaps
 - No one path is clearly dominant yet.
+- Execution selects the candidate-goal posture; goal-authoring constructs at most one execution-selected advisory `/goal`; presentation renders that result and cannot independently promote another candidate.
 - The answer needs to explain flow/order/concurrency clearly enough that the user can decide which slice to open first.
 - After the first slice is selected, the remaining route is still multi-file and verification-sensitive enough that compact integrated route support is needed inside the selected `/goal`.
 - If that route detail later outgrows the goal-centric surface, `/plan` may still become the overflow or explicitly requested standalone route surface.
@@ -122,6 +123,7 @@ Understand the system quickly, compare the live next directions clearly, decide 
 - Before ranking paths, verify any current-system ownership premise that would reopen completed work or broaden architecture.
 - If the premise is false, preserve the valid goal and completed baseline, explain the contradiction, and recommend the smallest supported route.
 - Do not continue directly if no one path clearly dominates.
+- Let execution choose direct continuation, candidate goals, advisory-goal posture, clarification, or no successor; goal-authoring constructs the selected goal and presentation renders it.
 - Surface the live next slices as candidate goals.
 - Start with a short plain-language summary before technical details.
 - Use a small comparison table because several axes differ materially.

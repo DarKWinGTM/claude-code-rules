@@ -1,7 +1,7 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.6
+> **Current Version:** 1.7
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-08-09 | **[Compacted bounded-I/O integration handoffs](#version-17)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.6 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.5 | 2026-05-17 | **[Added P103 observed-example wording and equivalence-boundary refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.4 | 2026-05-17 | **[Added P102 chain-shape-aware shard reading](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -20,6 +21,18 @@
 | | | Summary: Created `safe-io.md` as a body-sufficient merged runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-17"></a>
+## Version 1.7: Compacted bounded-I/O integration handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the safe-io triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-16"></a>
 ## Version 1.6: Applied owner-canonical active runtime compression

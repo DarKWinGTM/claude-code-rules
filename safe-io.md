@@ -1,7 +1,7 @@
 # Safe I/O (File Reading + Terminal Output)
 
-> **Current Version:** 1.6
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.7
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
@@ -74,12 +74,4 @@ Avoid unbounded or repeated broad reads; whole-scope claims from excerpts; bypas
 ---
 
 ## Integration
-
-Related owners:
-- [worker-routing-and-context.md](worker-routing-and-context.md) — topology, dispatch, lane contracts, and handoff quality after burst detection
-- [document-governance.md](document-governance.md) — governed chain semantics
-- [document-integrity.md](document-integrity.md) — reference validation and rollover preservation
-- [evidence-discipline.md](evidence-discipline.md) — claim strength from checked I/O
-- [action-safety.md](action-safety.md) — risky commands, failures, retries, and destructive confirmation
-
----
+Related owners: [worker-routing-and-context.md](worker-routing-and-context.md) (topology/handoffs after burst detection); [document-governance.md](document-governance.md) and [document-integrity.md](document-integrity.md) (chain/reference/rollover); [evidence-discipline.md](evidence-discipline.md) (claim scope); [action-safety.md](action-safety.md) (risky commands/failures/destruction).

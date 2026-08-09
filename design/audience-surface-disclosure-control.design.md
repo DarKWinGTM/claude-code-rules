@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
 
 ---
@@ -161,3 +161,9 @@ This chain succeeds when:
 ---
 
 > Full history: [../changelog/audience-surface-disclosure-control.changelog.md](../changelog/audience-surface-disclosure-control.changelog.md)
+
+---
+
+## P073-12 Runtime Compaction Refinement
+
+Compact Integration and cross-owner consumer wording to canonical owner pointers while preserving activation, local consequence, exact error-prevention literals, body sufficiency, and every existing safety, verification, approval, and stop gate.

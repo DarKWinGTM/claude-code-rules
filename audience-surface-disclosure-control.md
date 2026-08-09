@@ -1,7 +1,7 @@
 # Audience Surface Disclosure Control
 
-> **Current Version:** 1.0
-> **Design:** [design/audience-surface-disclosure-control.design.md](design/audience-surface-disclosure-control.design.md) v1.0
+> **Current Version:** 1.1
+> **Design:** [design/audience-surface-disclosure-control.design.md](design/audience-surface-disclosure-control.design.md) v1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/audience-surface-disclosure-control.changelog.md](changelog/audience-surface-disclosure-control.changelog.md)
 
@@ -100,10 +100,4 @@ Better behavior: be complete with the direct user, classify the generated surfac
 ---
 
 ## Integration
-
-- [accurate-communication.md](accurate-communication.md) - evidence strength and direct-user transparency wording
-- [communication-register.md](communication-register.md) - natural audience-aware wording style
-- [evidence-discipline.md](evidence-discipline.md) - no invented disclosure facts or unsupported reassurance
-- [authority-and-scope.md](authority-and-scope.md) - user authority and hard-boundary precedence
-- [action-safety.md](action-safety.md) - approval gates for risky or high-impact disclosure
-- [document-governance.md](document-governance.md) - public onboarding and repository document role boundaries
+Related owners: [accurate-communication.md](accurate-communication.md), [communication-register.md](communication-register.md), and [evidence-discipline.md](evidence-discipline.md) (truthful audience wording); [authority-and-scope.md](authority-and-scope.md) and [action-safety.md](action-safety.md) (authority/approval); [document-governance.md](document-governance.md) (public/repository surfaces).

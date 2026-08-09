@@ -1,7 +1,7 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
@@ -44,6 +44,8 @@ P139 refinement: this owner should now keep goal-related routing labels internal
 P144 refinement: source implementation and final integration are leader-owned by default. Subagents/teammates are bounded helpers for research, evidence filtering, diagnosis, audit/review, parallel independent analysis, existing-test execution, test/log analysis, explicitly assigned test-only authoring, or explicitly assigned non-overlapping governed-document edits. They must not autonomously change Active Rule/product source, README, integration/install state, git, tags, or releases; create unrequested plans/specs/directories; or claim completion. Every lane must state objective, checked/excluded scope, exact allowed artifacts, write permission, stop gates, output shape, and leader verification needs. Parallel lanes require independent axes and one shared evidence/test rubric; leader fan-in resolves conflicts and owns source edits, integration, verification, and completion wording.
 
 P145 refinement: routing doctrine must govern invocation, not only post-dispatch context. Keep primary source/integration in the context-rich leader session; invoke one standalone subagent for one bounded independent axis; invoke parallel standalone agents together for independent research, review, metrics, or test-matrix cells; use Agent Team/teammates only for shared dependencies, staged test workflows, cross-lane messaging, or durable coordinated roles. Partition test matrices by real subsystem/platform/configuration/scenario/failure/metric dimensions, keep related failures together until cause is discriminated, reuse or steer aligned workers instead of respawning, avoid polling harness-tracked agents, and return all helper evidence through leader fan-in and re-verification.
+
+P073-12 refinement: when action-safety classifies duplicate/stale Agent Team teammate presence, this owner audits observed state and decides reuse, steer, wait, distinct partition, or evidence-supported respawn. Unchanged retry remains blocked until the state changes.
 
 ---
 

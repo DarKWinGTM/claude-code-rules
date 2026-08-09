@@ -1,6 +1,6 @@
 # Changelog - Accurate Communication Standard
 
-> **Current Version:** 2.43
+> **Current Version:** 2.44
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.44 | 2026-08-09 | **[Compacted cross-owner integration wording](#version-244)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.43 | 2026-08-09 | **[Added migration lifecycle status wording](#version-243)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.42 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-242)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.41 | 2026-06-11 | **[Added P143 hybrid progress-reporting snapshot wording refinement](#version-241)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -85,6 +86,18 @@
 | | | Summary: Initial version - later deemed too rigid | |
 
 ---
+
+<a id="version-244"></a>
+## Version 2.44: Compacted cross-owner integration wording
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the accurate-communication triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-243"></a>
 ## Version 2.43: Added migration lifecycle status wording

@@ -91,6 +91,9 @@ These axes help shape more realistic operational case branches:
 | M23 | later checked source disproves Claude's earlier broader recommendation | explicitly withdraw/revise it, name the failed premise and contrary evidence, then state the corrected route and remaining gate | communication and presentation calibration; combined-rules execution-state orchestration |
 | M24 | selected objective has one bounded helper-fit evidence lane, while a new durable Team/objective is also conceivable | invoke the bounded lane internally under worker routing; keep durable expansion advisory until selected | authority collision resolver; combined-rules execution-state orchestration |
 | M25 | repair text routes changelog detail to an undefined fallback owner | use active parent for current version/map/navigation, indexed same-chain shard for active detail, and `done/` only for inactive reference history | governed artifact lifecycle |
+| M26 | duplicate/stale Agent Team teammate presence appears before same-role respawn | classify `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE`, block unchanged retry, then let worker routing audit reuse/steer/wait/partition/respawn | combined-rules execution-state orchestration |
+| M27 | an ordinary design edit and a structural/visual-authority edit need startup posture | allow diagram `not required` for the ordinary edit; require diagram evaluation after design for the structural/visual branch without automatic subject-diagram creation | governed artifact lifecycle |
+| M28 | several successors remain and one may become advisory `/goal` | execution selects posture, goal-authoring constructs at most one selected advisory artifact, and presentation renders without promotion authority | authority collision resolver; communication and presentation calibration; proactive goal surfacing |
 
 ---
 

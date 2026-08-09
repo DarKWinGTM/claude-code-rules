@@ -1,7 +1,7 @@
 # Design - Goal Authoring and Route Support
 
 > **Parent Rule:** [../goal-authoring-and-route-support.md](../goal-authoring-and-route-support.md)
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/goal-authoring-and-route-support.changelog.md](../changelog/goal-authoring-and-route-support.changelog.md)
 
@@ -25,7 +25,7 @@ This design owns the target-state shape for:
 - durable `Plan reference` validity
 - subordinate internal helper / route-support behavior
 - goal-authoring stop boundaries
-- advisory `/goal` promotion conditions
+- construction of an execution-selected advisory `/goal`
 - selected-goal overflow into `/plan`
 - `/goal` versus `/plan` authority separation
 
@@ -33,9 +33,9 @@ This design owns the target-state shape for:
 
 ## Runtime Requirements
 
+- Receive direct/candidate/advisory posture from `execution-and-goal-frame.md`; do not independently promote a candidate.
 - Keep `/goal` as the objective owner for outcome, proof/checks, scope, and hard guardrails.
 - Keep `/plan` as route-only support when overflow route detail or explicit standalone planning is materially needed.
-- Preserve direct continuation when one safe execution path is already implied; do not force `/goal` or `/plan` as ritual surfaces.
 - Keep route-only plan files from reading like completion proof.
 - Keep phase/task materialization and execution posture outside this owner.
 - Keep metadata linked to this design and the chain changelog.
@@ -55,3 +55,9 @@ Historical detail remains in changelog, not as a parallel runtime authority.
 ## Verification
 
 Release validation should confirm the parent runtime file exists at source root, links to this design and its changelog, ships in the active runtime install set when install is in scope, and leaves `execution-and-goal-frame.md` plus `phase-todo-artifact.md` with only their execution/task-surface bridges instead of the full duplicated `/goal` authoring contract.
+
+---
+
+## P073-12 Runtime Compaction Refinement
+
+Compact Integration and cross-owner consumer wording to canonical owner pointers while preserving activation, local consequence, exact error-prevention literals, body sufficiency, and every existing safety, verification, approval, and stop gate.

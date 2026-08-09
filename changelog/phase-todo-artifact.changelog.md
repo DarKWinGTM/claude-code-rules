@@ -1,6 +1,6 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Current Version:** 1.33
+> **Current Version:** 1.34
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.34 | 2026-08-09 | **[Added conditional diagram startup posture](#version-134)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.33 | 2026-08-09 | **[Corrected changelog owner vocabulary](#version-133)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.32 | 2026-08-08 | **[Compacted phase/TODO governance and clarified closeout semantics](#version-132)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.31 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -47,6 +48,20 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-134"></a>
+## Version 1.34: Added conditional diagram startup posture
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Added conditional diagram posture after design for structural, visual-authority, relationship, topology, or existing-diagram correctness changes.
+- Kept ordinary design edits eligible for `not required` and prohibited automatic subject-diagram creation.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the phase-todo-artifact triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-133"></a>
 ## Version 1.33: Corrected changelog owner vocabulary

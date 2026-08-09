@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.59
+> **Current Version:** 10.60
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,13 +14,17 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.59` keeps the same 19 source-owned runtime Rules as body-sufficient owner contracts and extends proactive design participation with premise-before-expansion: decision-changing current-system premises are checked against ownership, sibling roles, dependencies, and completed verification before broader architecture is endorsed. A valid goal is preserved when its proposed premise is corrected; checked completed work remains the baseline until evidence shows a real gap; invalidated assistant recommendations are explicitly retracted and re-anchored. Active changelog detail and inactive history keep distinct governed owners, while bounded helper topology may reduce user research burden inside a selected objective without turning new objective/durable Team expansion into implicit authority.
+The active model for `v10.60` keeps the same 19 body-sufficient source-owned runtime Rules while repairing three owner boundaries: execution selects successor posture, goal-authoring constructs it, and presentation renders it; startup evaluates diagram after design only when materially triggered; action safety classifies duplicate/stale Agent Team presence while worker routing owns lifecycle decisions. Repeated cross-owner wording is compacted without weakening evidence, approval, recovery, migration, phase-lineage, worker, or exact goal-artifact guards.
 
 ---
 
 ## 2) Current Active-State Summary
 
 Current target-state priorities:
+- keep successor posture ownership deterministic: `execution-and-goal-frame.md` selects direct/candidate/advisory/clarification/none, `goal-authoring-and-route-support.md` constructs the selected goal and route support, and `explanation-and-presentation.md` renders it
+- evaluate diagram posture after design only when structure, visual authority, diagram relationships, visual topology, or existing diagram correctness changes; ordinary design edits may use `not required`
+- classify `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` in action safety, block unchanged retry while unresolved, and leave reuse/steer/wait/partition/respawn decisions to worker routing
+- keep one complete canonical owner per mechanism and compact consumers to activation, local consequence, exact error-prevention literal/order, or handoff only
 - separate a valid goal from its checkable factual premise, proposed path, and requested action before material expansion or replacement
 - verify current semantic ownership, active sibling roles, readers/writers, state, dependencies, and completed proof when a false premise would materially change architecture, behavior, risk, or scope
 - keep a checked completed narrow implementation as the active baseline until evidence shows its scope or gate is defective; use a discriminating check when evidence remains incomplete

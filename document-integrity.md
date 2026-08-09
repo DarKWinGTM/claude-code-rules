@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.11
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.11
+> **Current Version:** 1.12
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.12
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -74,7 +74,7 @@ Action modes remain: `REPAIR_NOW`, `DELEGATE_REPAIR`, `PLAN_IN_CURRENT_PHASE`, `
 
 ### 6) File hygiene
 - edit the existing fitting authority before creating a parallel one
-- create only required functional code/config, user-requested documents, governed startup artifacts selected by `phase-todo-artifact.md`, or short-lived `/tmp` files
+- create only required functional code/config, user-requested documents, governed startup artifacts—including conditionally selected diagram surfaces—chosen by `phase-todo-artifact.md`, or short-lived `/tmp` files
 - do not create unrequested summaries/checkpoints/work plans, duplicate authorities, or version-suffixed copies such as `-v2`, `_final`, `_backup`, `_draft`, or `_old`
 - ask when artifact need or ownership is ambiguous; required-startup status does not authorize arbitrary creation or deletion
 - resolve owner/project scope before classifying files in shared destinations
@@ -112,9 +112,4 @@ Avoid duplicate authority/junk artifacts; classifying new, untracked, co-located
 ---
 
 ## Integration
-Related owners:
-- [document-governance.md](document-governance.md) — roles, chain shapes, runtime body sufficiency
-- [phase-todo-artifact.md](phase-todo-artifact.md) / [execution-and-goal-frame.md](execution-and-goal-frame.md) — startup, active entrypoints, continuation
-- [safe-io.md](safe-io.md) / [evidence-discipline.md](evidence-discipline.md) — bounded checks and claim scope
-- [action-safety.md](action-safety.md) / [authority-and-scope.md](authority-and-scope.md) — destructive confirmation and ownership
-- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) — portable reference forms
+Related owners: [document-governance.md](document-governance.md) (roles/chains/runtime bodies); [phase-todo-artifact.md](phase-todo-artifact.md) and [execution-and-goal-frame.md](execution-and-goal-frame.md) (startup/continuation); [safe-io.md](safe-io.md) and [evidence-discipline.md](evidence-discipline.md) (bounded checks/claims); [action-safety.md](action-safety.md) and [authority-and-scope.md](authority-and-scope.md) (destruction/ownership); [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) (portable references).

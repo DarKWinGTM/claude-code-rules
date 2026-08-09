@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
 
 ---
@@ -273,3 +273,9 @@ Related chains:
 - [../tactical-strategic-programming.md](../tactical-strategic-programming.md)
 
 ---
+
+---
+
+## P073-12 Runtime Compaction Refinement
+
+Compact Integration and cross-owner consumer wording to canonical owner pointers while preserving activation, local consequence, exact error-prevention literals, body sufficiency, and every existing safety, verification, approval, and stop gate.

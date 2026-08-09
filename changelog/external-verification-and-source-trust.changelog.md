@@ -1,7 +1,7 @@
 # Changelog - External Verification and Source Trust
 
 > **Parent Document:** [../external-verification-and-source-trust.md](../external-verification-and-source-trust.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-08-09 | **[Compacted source-trust integration handoffs](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.5 | 2026-08-08 | **[Separated public evidence lookup from consequential external action](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.4 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-05-22 | **[Added evidence-earned provider/supplier scope narrowing refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,18 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs proactive external verification, source-reliability ranking, corroboration expectations, and source-conflict handling for WebSearch/WebFetch-backed factual work | |
 
 ---
+
+<a id="version-16"></a>
+## Version 1.6: Compacted source-trust integration handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the external-verification-and-source-trust triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-15"></a>
 ## Version 1.5: Separated public evidence lookup from consequential external action

@@ -1,6 +1,6 @@
 # Goal Authoring and Route Support
-> **Current Version:** 1.1
-> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.1
+> **Current Version:** 1.2
+> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.2
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/goal-authoring-and-route-support.changelog.md](changelog/goal-authoring-and-route-support.changelog.md)
 
@@ -65,7 +65,7 @@ Choose the smallest route support that safely serves the goal:
 
 Ask about the work itself, not routing labels. Do not force trivial goals into durable plan files or pull broad governed context into trivial non-governed work.
 
-A durable `Plan reference` is valid only after the route-only plan file exists in checked scope or was successfully written and verified in the same authoring flow. The copyable artifact starts with `/goal` and places `Plan reference: <exact path>` after it inside the same artifact. Never emit the reference from intention, draft text, or an unwritten file. If creation or verification is blocked, report the blocker instead of emitting a finished plan-backed goal.
+A durable `Plan reference` requires a route-only plan file that exists in checked scope or was successfully written and verified in the same authoring flow. Never emit it from intention, draft text, or an unwritten file; report a creation/verification blocker instead. Canonical artifact order is defined in section 9.
 
 ### 5) Internal support remains subordinate
 Internal analysis, route drafting, verification ordering, testing/log triage, and bounded helper lanes may support goal authoring when materially useful. They remain subordinate route support: not a second objective surface, independent authority, or completion proof.
@@ -75,10 +75,10 @@ When the same authoring flow can write and verify required durable route support
 ### 6) Authoring stop boundary
 If the current turn is only goal or route-support authoring, stop at the final goal artifact plus subordinate route support. Do not append a default execution-style choice menu or begin execution unless execution is separately selected or clearly implied. Preserve internal routing labels only when workflow behavior itself or exact artifact wording is under discussion.
 
-### 7) Candidate, advisory, and selected-goal boundaries
-At a true completion or decision boundary, surface compact candidate goals when several materially different successors remain live. Promote at most one best-supported governed candidate into a copyable advisory `/goal`; other candidates may remain prose goals.
+### 7) Selected advisory-goal and `/plan` boundaries
+`execution-and-goal-frame.md` decides whether a boundary calls for direct continuation, candidate goals, one advisory `/goal`, clarification, or no successor. This rule receives that selected posture and constructs the bounded goal artifact; it does not independently promote a candidate.
 
-An advisory `/goal` remains unselected execution. If safe direct continuation already dominates, continue instead. Do not reduce approval-sensitive, destructive, or materially divergent work to `/goal`.
+An advisory `/goal` remains unselected execution. Do not construct one from approval-sensitive, destructive, or materially divergent work unless the execution owner has resolved the required basis or approval.
 
 For a selected goal, keep route detail inside the goal-centric surface first. Open `/plan` only when sequence, task/phase breakdown, verification/owner ordering, explicit standalone planning, or route size no longer fits compactly.
 
@@ -95,23 +95,22 @@ When durable route support is present, use this order inside one copied artifact
 Plan reference: <exact route-only plan path>
 ```
 
-Wrapper text may surround the artifact, but `Plan reference` must not precede `/goal` or become a detachable preface. Omit it when no verified durable plan file exists.
+Wrapper text may surround the artifact; omit `Plan reference` when no verified durable plan file exists.
 
 ---
 
 ## Application Boundary
 
-This rule is the sole semantic owner for governed `/goal` construction, route-support selection, durable plan-file lifecycle and `Plan reference`, internal authoring support, authoring stop, advisory promotion, selected-goal `/plan` overflow, goal-versus-route authority, and goal-artifact language/exact-literal rules.
+This rule is the sole semantic owner for governed `/goal` construction after execution selects the posture, route-support selection, durable plan-file lifecycle and `Plan reference`, internal authoring support, authoring stop, selected-goal `/plan` overflow, goal-versus-route authority, and goal-artifact language/exact-literal rules.
 
-Satellite rules retain only local mode-transition, task-materialization, topology, evidence-wording, tone, or rendering responsibilities. It does **not** replace phase/TODO task doctrine, execution continue/stop decisions, evidence wording, or presentation layout.
+`execution-and-goal-frame.md` owns continuation and candidate/advisory eligibility; `explanation-and-presentation.md` owns rendering. Other satellite rules retain only local task, topology, evidence-wording, or tone consequences.
 
 ---
 
 ## Anti-Patterns
 
 Avoid:
-- emitting `Plan reference` for an unwritten or unchecked plan file
-- placing `Plan reference` above `/goal` instead of after it inside the same copied artifact
+- emitting an unwritten/unchecked `Plan reference` or placing it before `/goal`
 - treating helper output or route drafts as objective authority
 - appending `Subagent-Driven` / `Inline Execution` menus after pure goal/plan-file authoring
 - forcing durable plan files for trivial or already direct goals
@@ -123,9 +122,4 @@ Avoid:
 ---
 
 ## Integration
-
-Related owners:
-- `phase-todo-artifact.md` — phase/TODO/live-task linkage to selected goals, task materialization, and execution surfaces
-- `execution-and-goal-frame.md` — mode selection, continuation, stop gates, next-goal bridge, and selected execution posture
-- `accurate-communication.md` — evidence-strength wording and status-ladder discipline
-- `explanation-and-presentation.md` — copyable goal artifact shape, recommendation framing, and goal-centered presentation
+Related owners: [phase-todo-artifact.md](phase-todo-artifact.md) (goal-linked tasks/execution surfaces); [execution-and-goal-frame.md](execution-and-goal-frame.md) (mode/continuation/next-goal decisions); [accurate-communication.md](accurate-communication.md) (evidence-strength wording); [explanation-and-presentation.md](explanation-and-presentation.md) (goal rendering).

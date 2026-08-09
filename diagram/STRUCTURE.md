@@ -100,7 +100,7 @@ flowchart TB
     DocsSP["docs/superpowers/<br/>Specs / plans / supporting design material"]
     Playground["playground/<br/>Governed non-runtime behavior cases"]
     Plugin["plugin/<br/>Optional downstream support packages"]
-    Template["template/phase-authoring-template.md<br/>Helper, not authority"]
+    Template["phase-implementation-template.md<br/>Helper, not authority"]
   end
 
   README --> RootRules
@@ -195,6 +195,8 @@ Current P131 diagram infrastructure posture:
 - all governed diagram authority stays under `diagram/`
 - governed `diagram/` source remains mandatory Kroki-compatible and governance-suitable
 - `diagram/STRUCTURE.md` is mandatory as the compact active whole-project diagram-side entrypoint
+- governed startup evaluates diagram after design only when structure, visual authority, diagram relationships, visual topology, or existing diagram correctness changes; ordinary design edits may mark diagram `not required`
+- subject diagrams open only for a real visual question or complexity, never automatically from an ordinary design edit
 - `diagram/STRUCTURE.md` owns whole-project concept mapping, source/folder/topology mapping, authority-boundary explanation, and diagram-to-diagram navigation
 - subject diagrams remain governed zoom-in / decomposition views under the global structure
 - `design/**` remains semantic authority if text and diagram differ

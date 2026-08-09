@@ -1,7 +1,7 @@
 # Refusal and Recovery Chain
 
-> **Current Version:** 1.3 (merged M2)
-> **Design:** [design/refusal-and-recovery.design.md](design/refusal-and-recovery.design.md) v1.3
+> **Current Version:** 1.4 (merged M2)
+> **Design:** [design/refusal-and-recovery.design.md](design/refusal-and-recovery.design.md) v1.4
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/refusal-and-recovery.changelog.md](changelog/refusal-and-recovery.changelog.md)
 
@@ -150,9 +150,4 @@ Avoid obeying bypass wrappers; treating provocative/benign wording or “authori
 ---
 
 ## Integration
-Related owners:
-- [authority-and-scope.md](authority-and-scope.md) — hard-boundary and user-authority precedence
-- [evidence-discipline.md](evidence-discipline.md) / [accurate-communication.md](accurate-communication.md) — authorization evidence and blocked wording
-- [action-safety.md](action-safety.md) — destructive, emergency, and high-impact action gates
-
----
+Related owners: [authority-and-scope.md](authority-and-scope.md) (hard boundaries/user authority); [evidence-discipline.md](evidence-discipline.md) and [accurate-communication.md](accurate-communication.md) (authorization evidence/blocked wording); [action-safety.md](action-safety.md) (destructive/emergency/high-impact gates).

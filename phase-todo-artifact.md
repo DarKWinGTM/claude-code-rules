@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.33
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.33
+> **Current Version:** 1.34
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.34
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Resolve required design/changelog/TODO/phase/patch and live-task posture before governed work drifts; use phases only when staged execution adds value; keep `phase/SUMMARY.md` and `TODO.md` compact; and use the built-in task list as live state for non-trivial execution. Preserve strict phase lineage, selected-design semantic coverage, verification-before-closeout, and bounded helper-lane linkage without transferring source ownership.**
+**Core Principle: Resolve required design/diagram/changelog/TODO/phase/patch and live-task posture before governed work drifts; use phases only when staged execution adds value; keep `phase/SUMMARY.md` and `TODO.md` compact; and use the built-in task list as live state for non-trivial execution. Preserve strict phase lineage, selected-design semantic coverage, verification-before-closeout, and bounded helper-lane linkage without transferring source ownership.**
 
 พูดง่าย ๆ: lock ก่อนว่า artifact ไหนเป็น owner, ใช้ phase เมื่อมี stage/gate จริง, `TODO.md` เป็น durable index, และ built-in tasks เป็น live board.
 
@@ -31,13 +31,15 @@ Lightweight exploration may precede this boundary, but target-state planning, mu
 
 Default startup order:
 1. design
-2. changelog
-3. TODO
-4. phase
-5. patch
+2. diagram when materially triggered
+3. changelog
+4. TODO
+5. phase
+6. patch
 
 Required triggers:
 - **Design:** new/materially changed target behavior, policy, contract, or architecture
+- **Diagram:** work materially changes project structure, visual authority, diagram relationships, visual architecture/folder topology, or an existing governed diagram's correctness; ordinary design edits may use `not required`, and no subject diagram opens automatically
 - **Changelog:** new governed chain or version-impacting behavior
 - **TODO:** multi-step, persistent, tracked, or multi-slice work
 - **Live task list:** active non-trivial work; expected for phase-backed execution
@@ -132,7 +134,7 @@ A headline output does not close uncovered durability, recovery, retry, idempote
 
 When evidence supports forecasting, `phase/SUMMARY.md` should carry a bounded roadmap/matrix with goal, output, gate, dependencies, deliverables, and status: `active`, `selected`, `implied-unblocked`, `proposal`, `blocked`, `needs-approval`, or `none opened`. Roadmap context is not automatic execution authority. Before ending closeout, inspect checked roadmap and goal surfaces; when meaningful successor work exists, name it with why/output/gate.
 
-Design, active phase, built-in tasks, TODO, and checked implementation state supply governed goal evidence; release/review surfaces matter only when they affect completion. Keep selected goal, phase/task linkage, and verification gate visible when route notes, `Plan reference:`, or `/plan` exists. Route completion never replaces the goal gate; goal construction belongs to `goal-authoring-and-route-support.md`.
+Design, active phase, built-in tasks, TODO, and checked implementation state supply governed goal evidence; release/review surfaces matter only when they affect completion. Phase/tasks preserve selected-goal linkage and its verification gate; goal construction belongs to `goal-authoring-and-route-support.md`.
 
 When patch is used, `phase/SUMMARY.md` names governing patch artifact(s) or explicit `none`, and each patch-derived child has `Patch References` or `none`. `none` is valid only when patch is genuinely unnecessary.
 
@@ -197,25 +199,18 @@ Later sync does not weaken early startup or live-task requirements.
 
 | Trigger | Required handling |
 |---|---|
-| new chain or multi-file governed change | resolve design/changelog/TODO, evaluate phase/patch, initialize live tasks when non-trivial |
-| staged/rollout/verification gates | establish phase through strict lineage |
-| clear design for staged execution | synthesize phases and current-phase tasks from design truth |
-| broad phase objective | define outcome-sized lanes/tasks before deep work |
+| new chain or multi-file governed change | resolve design, conditional diagram, changelog, TODO, phase/patch, and live-task posture |
+| staged/rollout/verification gates | establish phase through strict lineage and synthesize current-phase work from design truth |
+| broad phase objective or governance/release-sync | define outcome-sized lanes/tasks and separate gates when ownership would blur |
 | selected design semantics exceed headline output | extract obligations and explicit implementation/terminal states |
-| active phase/lane | expose phase context and continue current-phase-first |
-| selected non-trivial goal/plan executes | materialize bounded tasks with distinct gates when needed |
-| governance/release-sync inside phase | separate its lane/task when mixing obscures ownership |
-| oversized TODO/summary or God Phase/TODO | invoke preservation-first rollover/repair while keeping active navigation |
-| implementation done, verification material | keep verification visible; do not close early |
-| objective complete with meaningful successor | report supported next phase/wave/goal with why/output/gate |
+| active phase/lane or selected goal execution | expose phase context, materialize bounded tasks, and continue current-phase-first |
+| oversized TODO/summary or God Phase/TODO | use preservation-first rollover/repair while keeping active navigation |
+| implementation done but verification remains | keep verification visible; do not close early |
+| objective complete with meaningful successor | report the supported next phase/wave/goal with why/output/gate |
 
 ## Anti-Patterns
 
 Avoid unresolved startup posture; `create now` or task continuation treated as automatic new-major authority; `not required`/cleanup as deletion authority; filler phases/lanes; invalid forward phase grammar; God Phase/TODO bodies; history replacing active entrypoints; live tasks replacing durable state; authoring treated as execution; hidden goal/phase/gate context; closeout before semantic disposition or verification; and file/task-only closeout without delivery, impact, and evidence.
 
 ## Integration
-
-- [document-governance.md](document-governance.md) / [document-integrity.md](document-integrity.md) — roles, sync, preservation, rollover
-- [worker-routing-and-context.md](worker-routing-and-context.md) / [safe-io.md](safe-io.md) — helper topology and bounded intake
-- [coding-discipline.md](coding-discipline.md) — coding verification/TestKit
-- [execution-and-goal-frame.md](execution-and-goal-frame.md) / [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) — continuation, goals, route support
+Related owners: [document-governance.md](document-governance.md) and [document-integrity.md](document-integrity.md) (roles/preservation/rollover); [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) (routing/intake); [coding-discipline.md](coding-discipline.md) (verification/TestKit); [execution-and-goal-frame.md](execution-and-goal-frame.md) and [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) (continuation/goal route).

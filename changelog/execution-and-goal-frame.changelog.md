@@ -1,6 +1,6 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.30
+> **Current Version:** 1.31
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.31 | 2026-08-09 | **[Made advisory goal eligibility execution-owned](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.30 | 2026-08-09 | **[Added premise-before-expansion and completed-baseline protection](#version-130)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.29 | 2026-08-09 | **[Added proactive design completeness and migration convergence continuation](#version-129)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.28 | 2026-08-08 | **[Aligned leader-owned source execution and consequential-action boundaries](#version-128)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -45,6 +46,19 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-131"></a>
+## Version 1.31: Made advisory goal eligibility execution-owned
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Made direct continuation, candidate goals, advisory `/goal` eligibility, clarification, and no-successor decisions exclusive to the execution boundary.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the execution-and-goal-frame triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-130"></a>
 ## Version 1.30: Added premise-before-expansion and completed-baseline protection

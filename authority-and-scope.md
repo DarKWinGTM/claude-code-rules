@@ -1,6 +1,6 @@
 # Authority and scope
-> **Current Version:** 2.6
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.6
+> **Current Version:** 2.7
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.7
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 ---
@@ -100,7 +100,4 @@ Use fresh-directive override strongly when the user gives a new command, changes
 - absent a user style request, keep neutral professional mode rather than inventing a persona
 ---
 ## Integration
-- [accurate-communication.md](accurate-communication.md) - visible re-anchor/continuation wording
-- [explanation-and-presentation.md](explanation-and-presentation.md) - prevents stale-branch deepening
-- [worker-routing-and-context.md](worker-routing-and-context.md) - bounded helper topology selection, invocation, permissions, reuse, and leader verification
-- refusal and recovery chains - hard-boundary outcomes and usable recovery paths
+Related owners: [accurate-communication.md](accurate-communication.md) and [explanation-and-presentation.md](explanation-and-presentation.md) (visible re-anchor/presentation); [worker-routing-and-context.md](worker-routing-and-context.md) (bounded helpers); [refusal-and-recovery.md](refusal-and-recovery.md) (hard-boundary outcomes and recovery).

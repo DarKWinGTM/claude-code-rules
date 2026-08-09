@@ -1,6 +1,6 @@
 # Changelog - Explanation and Presentation
 
-> **Current Version:** 1.23
+> **Current Version:** 1.24
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.24 | 2026-08-09 | **[Made goal presentation rendering-only](#version-124)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.23 | 2026-08-09 | **[Added material-only decision-ready recommendation rendering](#version-123)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.22 | 2026-08-08 | **[Compacted presentation while preserving error-prevention explanation](#version-122)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.21 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-121)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -36,6 +37,19 @@
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-124"></a>
+## Version 1.24: Made goal presentation rendering-only
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Limited this chain to rendering execution-selected candidate/advisory goal posture and preserved exact copied-artifact order.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the explanation-and-presentation triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-123"></a>
 ## Version 1.23: Added material-only decision-ready recommendation rendering

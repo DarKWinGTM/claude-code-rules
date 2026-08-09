@@ -1,7 +1,7 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.6
+> **Current Version:** 2.7
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.7 | 2026-08-09 | **[Compacted authority integration handoffs](#version-27)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.6 | 2026-08-09 | **[Clarified advisory expansion and bounded helper authority](#version-26)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.5 | 2026-04-25 | **[Added runtime destination ownership boundary](#version-25)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.4 | 2026-04-17 | **[Added repo-governed semantic-authority precedence over git-state cleanup heuristics](#version-24)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
@@ -36,6 +37,18 @@
 | | | Summary: Migrated to standard template | |
 
 ---
+
+<a id="version-27"></a>
+## Version 2.7: Compacted authority integration handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the authority-and-scope triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-26"></a>
 ## Version 2.6: Clarified advisory expansion and bounded helper authority

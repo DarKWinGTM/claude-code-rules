@@ -1,6 +1,6 @@
 # Memory Governance and Session Boundary
-> **Current Version:** 1.7
-> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.7
+> **Current Version:** 1.8
+> **Design:** [design/memory-governance-and-session-boundary.design.md](design/memory-governance-and-session-boundary.design.md) v1.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 > **Full history:** [changelog/memory-governance-and-session-boundary.changelog.md](changelog/memory-governance-and-session-boundary.changelog.md)
 ---
@@ -104,5 +104,4 @@ Recommended target shape:
 This defines the target model; it does not require migrating the live tree in the same wave.
 ---
 ## Integration
-Related rules: `authority-and-scope.md` keeps memory below live authority; `accurate-communication.md` owns memory-derived wording; `evidence-discipline.md` owns evidence thresholds; `document-governance.md` owns repo document-role governance; `safe-io.md` and `document-integrity.md` provide the bounded-read and active-entrypoint maintenance posture when root indexes grow too large.
----
+Related owners: [authority-and-scope.md](authority-and-scope.md) (memory below live authority); [accurate-communication.md](accurate-communication.md) and [evidence-discipline.md](evidence-discipline.md) (memory wording/proof); [document-governance.md](document-governance.md) (repo document roles); [safe-io.md](safe-io.md) and [document-integrity.md](document-integrity.md) (bounded index maintenance).

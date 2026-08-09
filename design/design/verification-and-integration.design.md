@@ -1,7 +1,7 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.58
+> **Current Version:** 10.60
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -22,6 +22,9 @@
 - [ ] Phase identity stays lineage-first and forward-valid numeric forms remain `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
 - [ ] Non-trivial analysis/design completes material outcome, constraint, dependency, failure, alternative, and verification gaps without fabricating facts or replacing user authority
 - [ ] Implementation closeout covers or explicitly disposes material behavior, state, integration, failure, observability, and verification obligations
+- [ ] Successor posture follows execution decision → goal construction → presentation rendering, with no consumer-side promotion and exact `/goal` then `Plan reference:` order
+- [ ] Structural/visual changes resolve diagram posture after design; ordinary design edits may use `not required` without opening a subject diagram
+- [ ] Duplicate/stale Agent Team presence blocks unchanged retry in action safety, then worker routing audits and decides lifecycle
 
 ### Installer, quarantine, and restoration
 

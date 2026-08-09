@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.43
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.43
+> **Current Version:** 2.44
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.44
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -94,18 +94,14 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 - for phase-backed coding closeout, state verification depth, checks/scenarios run, untested scope, and evidence limits when material
 - keep delivery, testing, fixed/stable, and impact claims aligned to the verification actually performed
 - keep governance detail after the orientation, not before it
-- for non-trivial in-flight updates, a compact hybrid progress snapshot may use `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next` when that structure improves scanability
-- keep `Done so far` bounded to checked scope rather than letting it read like total completion
+- progress snapshots must keep completed scope bounded to checked evidence and distinguish current, pending, blocker, and next-action state; layout belongs to `explanation-and-presentation.md`
 ### 8) Stage progression, whole set, and continuation
 - when the current state is sufficiently explained, prefer the next useful stage/state/milestone over deeper same-scope elaboration
 - when the real decision surface is larger, show the full relevant set before narrowing
 - when safe continuation exists inside the user's active requested work, continue instead of pausing only to narrate progress or ask for non-material choices
 - present options only when the next move is preference-sensitive, approval-sensitive, blocked, or materially divergent
 - do not present internal execution-routing labels as default user choices when the system can choose from checked context
-- keep candidate or advisory goals visibly unselected
-- distinguish objective status from route/helper/plan status; route completion cannot read as goal completion while proof/gate remains open
-- use `Plan reference` only for a route file that already exists and was checked; otherwise report the pending write/verification blocker
-- defer goal construction, route selection, artifact ordering, and language/exact-literal rules to `goal-authoring-and-route-support.md`
+- keep candidate or advisory goals visibly unselected and objective status distinct from route/helper/plan status; apply `goal-authoring-and-route-support.md` before wording a durable `Plan reference` or goal artifact
 ### 9) Governing basis, post-compact, and memory
 - if multiple plausible policies/frames materially change the answer and evidence/instruction does not settle one, ask compactly for the governing basis first
 - after compact, use a short post-compact re-anchor, separate carried-forward facts from needs-recheck details, preserve the latest selected frame, and recheck material exact details before verified wording
@@ -144,8 +140,4 @@ Separate exact captures, partial checked facts, inferred implications, and unava
 Use snapshots for troubleshooting, mixed done/pending state, verification checkpoints, incomplete runtime detail, or local values that could be mistaken for portable defaults. Never present inferred implications as captured facts.
 ---
 ## Integration
-- [evidence-discipline.md](evidence-discipline.md) — claim states and proof thresholds
-- [communication-register.md](communication-register.md) — agreement/correction posture
-- [explanation-and-presentation.md](explanation-and-presentation.md) — layout and closing
-- [coding-discipline.md](coding-discipline.md) — coding verification boundaries
-- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) and [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) — memory and local/portable wording
+Related owners: [evidence-discipline.md](evidence-discipline.md) (claim/proof state); [communication-register.md](communication-register.md) (agreement/tone); [explanation-and-presentation.md](explanation-and-presentation.md) (layout/closing); [coding-discipline.md](coding-discipline.md) (coding verification); [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) and [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) (memory and local/portable scope).

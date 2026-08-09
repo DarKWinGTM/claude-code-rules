@@ -49,6 +49,7 @@ Checked observed example in repo scope:
 - User proposes a direction whose factual premise needs verification before agreement.
 - Claude initially recommends the proposed replacement, but later checked source disproves the ownership premise.
 - A status update could be phrased as either noisy recap or concise snapshot.
+- Execution selects candidate/advisory-goal posture; communication and presentation must keep it high-signal and render it without becoming promotion authority.
 
 Expected behavior: explain clearly, keep tone practical, and match wording strength to evidence. Accept an allowed direction without claiming its premise is proven; if the earlier recommendation fails, say that it is withdrawn/revised, name the failed premise and contrary evidence, then state the corrected recommendation and remaining gate. Do not replace that correction with praise or a bare `you were right`.
 
@@ -75,6 +76,7 @@ Get an explanation or reply that is easier to follow without losing technical ac
 - When checked evidence invalidates earlier advice, retract it explicitly and re-anchor from the contrary evidence.
 - Explain important identifiers by role instead of leaving them as floating names.
 - Keep the tone natural, non-character, and evidence-calibrated.
+- Render execution-selected candidate/advisory output without independently selecting or promoting a candidate.
 
 ---
 

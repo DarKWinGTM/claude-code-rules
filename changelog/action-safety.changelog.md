@@ -1,7 +1,7 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-08-09 | **[Separated Agent Team failure posture from worker lifecycle](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-08-09 | **[Added single-authority migration convergence and controlled restoration](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.2 | 2026-08-08 | **[Clarified destructive authorization, emergency containment, and runtime entity scope](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.1 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -16,6 +17,20 @@
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-14"></a>
+## Version 1.4: Separated Agent Team failure posture from worker lifecycle
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Renamed the duplicate/stale Agent Team failure profile to `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE`.
+- Kept retry blocking in action safety while handing inspected-state and lifecycle decisions to `worker-routing-and-context.md`.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the action-safety triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-13"></a>
 ## Version 1.3: Added single-authority migration convergence and controlled restoration

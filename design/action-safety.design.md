@@ -1,7 +1,7 @@
 # Design - Action Safety
 
 > **Parent Rule:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/action-safety.changelog.md](../changelog/action-safety.changelog.md)
 
@@ -24,6 +24,8 @@ The runtime rule should stay compact enough to load as an active rule, but subst
 P144 refinement: topology vocabulary must distinguish operational runtime workers/jobs/entities from Claude subagents/teammates; authorized bounded destructive work follows explicit action-and-scope confirmation rather than refusal classification; public read-only lookup is evidence gathering while consequential authenticated/private, mutating, sending/publishing, payment/purchase, deployment, account/shared-state, sensitive-data, meaningful-cost, or terms-acceptance actions retain approval gates; and only the smallest safe reversible emergency containment/diagnostic action may precede full startup when delay materially increases immediate harm, followed immediately by normal governance and recovery synchronization.
 
 P146 refinement: completed migrations and authority replacements must converge to one verified active authority. Any compatibility bridge is temporary, bounded, observable, and retirement-gated; former material may remain only as execution-disconnected quarantine or inactive history outside runtime/install/import/config/build/deployment/test discovery. Quarantine is preservation, not fallback, restoration source, authority, or deletion permission. Restoration is an explicitly approved deliberate replacement from an independently verified exact known-good source/tag/commit selected outside quarantine, followed by one-authority proof.
+
+P073-12 refinement: `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` is a `LIKELY_SYSTEMIC` / `STOP_AND_ESCALATE` failure profile that blocks unchanged same-role respawn while state is unresolved. `worker-routing-and-context.md` owns inspection and the reuse/steer/wait/partition/respawn lifecycle decision.
 
 ---
 

@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.18
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.18
+> **Current Version:** 1.19
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.19
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -40,10 +40,11 @@ Completed or inactive status is not junk classification or deletion authorizatio
 
 Default sync order:
 1. design
-2. runtime rule
-3. changelog
-4. TODO
-5. patch metadata final sync when affected
+2. diagram when triggered by `phase-todo-artifact.md`
+3. runtime rule
+4. changelog
+5. TODO
+6. patch metadata final sync when affected
 
 Active governed metadata uses real session identifiers, never placeholders.
 
@@ -228,8 +229,4 @@ When a document mixes target state, history, execution, verification, rollback, 
 Avoid role collapse; ambiguous dual parents; archive/history used as active detail, automatic fallback, or generated input; automatic design-to-diagram mirroring; metadata-only runtime roots; unclassified `sync everything`; broad lanes for tiny fixes; install scope widened into governed/support files; machine-local public defaults; completed content treated as junk; and quiet removal/reclassification instead of governed sharding, rollover, split, or history movement.
 
 ## Integration
-
-- [document-integrity.md](document-integrity.md) / [phase-todo-artifact.md](phase-todo-artifact.md) — references, preservation, rollover, startup, phase/TODO
-- [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) — binding and onboarding notation
-- [worker-routing-and-context.md](worker-routing-and-context.md) / [safe-io.md](safe-io.md) — helper topology and bounded intake
-- [accurate-communication.md](accurate-communication.md) / [coding-discipline.md](coding-discipline.md) — claim strength and coding verification
+Related owners: [document-integrity.md](document-integrity.md) and [phase-todo-artifact.md](phase-todo-artifact.md) (references/preservation/startup); [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) (binding/onboarding); [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) (routing/intake); [accurate-communication.md](accurate-communication.md) and [coding-discipline.md](coding-discipline.md) (claim/coding verification).

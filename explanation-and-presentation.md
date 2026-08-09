@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.23
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.23
+> **Current Version:** 1.24
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.24
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -53,9 +53,7 @@ Wording strength belongs to `accurate-communication.md` and evidence state to `e
 
 ### 4) Intent, clarification, and diagnosis
 
-For compact, broad, corrective, or easy-to-misread prompts, use one short working interpretation when it prevents drift: what the assistant thinks the user wants, the active focus, and material excluded scope. Do not restate the whole prompt.
-
-Ask one narrow clarification only when ambiguity changes answer, action, risk, or root-cause branch. After correction, re-anchor scope directly. A root-cause walkthrough separates symptom, checked evidence, likely cause so far, and next-best discriminating check.
+When selected by `execution-and-goal-frame.md`, render one short working interpretation or clarification without restating the prompt; present the corrected frame directly after re-anchor. A root-cause walkthrough separately presents symptom, checked evidence, likely cause so far, and the next discriminating check.
 
 ### 5) Technical and progress snapshots
 
@@ -182,12 +180,12 @@ An optional deep-dive offer is one short, specific invitation. Omit it for trivi
 
 ### 4) Goal rendering
 
-When selected by `execution-and-goal-frame.md`, render several live directions as compact candidate goals (`Goal`, `Output`, `Gate`) and promote at most one best-supported candidate into a copyable advisory `/goal`. Keep candidate prose distinct from the promoted command; not every option needs command form. Keep it unselected, compact, and aligned end-to-end to the dominant exchange language—including wrapper labels, body, recommendation, and recap—while preserving exact literals such as `/goal`, paths, versions, identifiers, and query parameters.
+Render the posture selected by `execution-and-goal-frame.md`: compact candidate goals (`Goal`, `Output`, `Gate`) or at most one selected advisory `/goal`. Presentation does not choose or promote the candidate. Keep candidate prose distinct from the command; not every option needs command form. Keep advisory output unselected, compact, aligned to the dominant exchange language, and preserve exact literals such as `/goal`, paths, versions, identifiers, and query parameters.
 
-Goal construction/route eligibility belongs to `goal-authoring-and-route-support.md`. With verified durable route support, render one artifact in this exact order:
+Goal construction and route support belong to `goal-authoring-and-route-support.md`. With verified durable route support, render one artifact in this exact order:
 
 ```text
-/goal <outcome + proof/checks + scope + guardrails + optional stop bound>
+/goal <outcome + transcript-visible proof/checks + bounded scope + keep constraints + optional stop bound>
 Plan reference: <exact route-only plan path>
 ```
 
@@ -235,8 +233,4 @@ A diagram must clarify sequence, branching, dependency, or handoff—not decorat
 Avoid buried main points; raw dumps without implication; walls of text; rigid templates for simple answers; padded recommendation fields with no decision value; decorative/heavy tables; boxed diagrams; hidden scope boundaries; bare identifiers; file/task-only phase closeout; advisory work phrased as selected continuation; generic future notes when a governed successor is visible; wrapper-only language alignment; repeated summaries; optional deep dives becoming second answers; Goal/Output/Gate forced onto trivial replies; deeper same-scope elaboration after the decision is clear; prompt-restating intent reads; and broad clarification when one focused distinction is enough.
 
 ## Integration
-
-- [accurate-communication.md](accurate-communication.md) / [evidence-discipline.md](evidence-discipline.md) — wording and proof state
-- [execution-and-goal-frame.md](execution-and-goal-frame.md) / [authority-and-scope.md](authority-and-scope.md) — continuation, goals, user authority
-- [communication-register.md](communication-register.md) — admission, tone, recommendation posture
-- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) / [document-integrity.md](document-integrity.md) — recalled context and references
+Related owners: [accurate-communication.md](accurate-communication.md) and [evidence-discipline.md](evidence-discipline.md) (wording/proof); [execution-and-goal-frame.md](execution-and-goal-frame.md) and [authority-and-scope.md](authority-and-scope.md) (continuation/goals/authority); [communication-register.md](communication-register.md) (tone/admission); [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) and [document-integrity.md](document-integrity.md) (recalled context/references).

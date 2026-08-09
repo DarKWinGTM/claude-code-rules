@@ -1,7 +1,7 @@
 # Changelog - Audience Surface Disclosure Control
 
 > **Parent Document:** [../audience-surface-disclosure-control.md](../audience-surface-disclosure-control.md)
-> **Current Version:** 1.0
+> **Current Version:** 1.1
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
 
 ---
@@ -10,10 +10,23 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.1 | 2026-08-09 | **[Compacted disclosure integration handoffs](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-05-07 | **[Created direct-user-transparent audience-surface disclosure owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class runtime/design/changelog chain for full direct-user transparency plus audience-appropriate generated public/operator/customer/log/demo/external artifact disclosure boundaries | |
 
 ---
+
+<a id="version-11"></a>
+## Version 1.1: Compacted disclosure integration handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the audience-surface-disclosure-control triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-10"></a>
 ## Version 1.0: Created direct-user-transparent audience-surface disclosure owner

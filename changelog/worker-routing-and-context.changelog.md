@@ -1,6 +1,6 @@
 # Changelog - Worker Routing and Context Control
 
-> **Current Version:** 1.16
+> **Current Version:** 1.17
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.17 | 2026-08-09 | **[Owned Agent Team teammate lifecycle after failure classification](#version-117)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.16 | 2026-08-08 | **[Established leader-owned source and explicit helper invocation routing](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.15 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-115)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.14 | 2026-06-05 | **[Added P139 route-support auto-resolution and internal routing-label refinement](#version-114)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -30,6 +31,20 @@
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-117"></a>
+## Version 1.17: Owned Agent Team teammate lifecycle after failure classification
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Kept inspected state, reuse, steering, waiting, partitioning, spawning, and respawning in the canonical worker lifecycle owner.
+- Required unchanged retry to remain stopped after duplicate/stale teammate failure classification until state changes.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the worker-routing-and-context triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-116"></a>
 ## Version 1.16: Established leader-owned source and explicit helper invocation routing

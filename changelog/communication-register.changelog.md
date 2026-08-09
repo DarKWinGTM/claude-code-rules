@@ -1,6 +1,6 @@
 # Changelog - Communication Register
 
-> **Current Version:** 1.25
+> **Current Version:** 1.26
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.26 | 2026-08-09 | **[Compacted communication owner handoffs](#version-126)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.25 | 2026-08-09 | **[Added evidence-shaped agreement and explicit recommendation retraction](#version-125)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.24 | 2026-08-09 | **[Added decision-relevant completeness admission](#version-124)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.23 | 2026-08-08 | **[Added error-prevention supporting-copy admission](#version-123)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -38,6 +39,18 @@
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-126"></a>
+## Version 1.26: Compacted communication owner handoffs
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the communication-register triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-125"></a>
 ## Version 1.25: Added evidence-shaped agreement and explicit recommendation retraction

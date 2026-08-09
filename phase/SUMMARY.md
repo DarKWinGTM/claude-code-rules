@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.15
+> **Current Version:** 2.16
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** No active phase; v10.59 / P147 released and fresh-public-tag verified
+> **Status:** P073-12 active for v10.60; candidate/canonical/root verified and publication pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,10 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- None.
+- **P073-12:** [runtime owner-boundary repair and bounded compression](phase-073-12-runtime-owner-boundary-repair-and-bounded-compression.md)
+  - Output: repair goal/diagram/Agent-Team owner boundaries, compact repeated context across all 19 Runtime Rules, synchronize the exact 77-path release set, install, and publish v10.60.
+  - Gate: semantic scenarios, protected literals/force words, all-19 triads, fixture matrices, disposable install, candidate/canonical/root parity, immutable annotated tag, GitHub Release identity, and fresh-public-tag proof.
+  - Patch: [runtime owner-boundary repair and bounded compression](../patch/runtime-owner-boundary-repair-and-bounded-compression.patch.md).
 
 ### Most Recently Completed
 
@@ -39,6 +42,24 @@ This file is the compact active roadmap/index. Start here for current execution 
   - Children: [P146-01](phase-146-01-proactive-analysis-and-design-completeness.md); [P146-02](phase-146-02-single-authority-migration-and-quarantine.md).
 
 Earlier released phase-map detail remains preserved in the [2026-08-09 pre-rollover snapshot](history/2026-08-09-pre-rollover-SUMMARY.md), [released phase archive](done/released-phase-summary-archive.md), and dedicated completed phase files.
+
+---
+
+## P073-12 Lineage and Lane Map
+
+### Lineage
+
+P073-09/10/11 own the existing 19-Rule compression, body-sufficiency, installation, parity, and release family. P073-12 keeps that capability boundary and adds bounded owner repair/compaction, so the smallest truthful identity is the existing-family child `073-12`; no new major is justified.
+
+### Lanes
+
+| Lane | Owner/output | Verification gate | Status |
+|---|---|---|---|
+| Goal posture | execution decision → goal construction → presentation rendering | direct/candidate/advisory/clarification/none branches and exact artifact order | verified in candidate scope |
+| Diagram posture | conditional startup and sync after design | ordinary-design `not required` plus structural/visual required branch | verified in candidate scope |
+| Agent Team lifecycle | safety classification → worker lifecycle audit | no unchanged retry; reuse/steer/wait/partition/respawn decision stays worker-owned | verified in candidate scope |
+| Compression | all 19 Runtime Rules/triads | protected literals, force words, body sufficiency, measured reduction | verified: 7,214 bytes / 141 lines / 1,286 words reduced |
+| Integration/release | exact 77 paths, canonical/root/public state | fixtures, install, parity, tag/Release/fresh clone | candidate/canonical/root verified; publication pending |
 
 ---
 
@@ -73,18 +94,17 @@ P146 is released and closed. P147-01 overlaps P146's design-completeness concern
 
 ## Development Verification / TestKit Coverage
 
-Selected route: existing playground families plus unchanged installer fixture matrices and disposable install proof.
+Selected route: focused playground Cases 01/05/09/14/17 and matrix cells M26-M28, static owner/registry assertions, changed-link delta review, unchanged installer fixture matrices, disposable install, and parity checks.
 
 Required checks:
-- Case 14 end-to-end state transitions for false/supported/incomplete premises, completed baseline, and helper authority.
-- Cases 17/05/09/01 focused behavior for counter-analysis, evidence-shaped agreement/retraction, changelog ownership, and helper authority.
-- `playground/matrix.md` focused cells; `playground/coverage.md` remains unchanged unless Rule-to-family membership changes.
-- Exact four triad versions: execution `1.30`, communication `1.25`, phase/TODO `1.33`, authority `2.6`.
-- Other 15 Runtime Rules byte-identical to v10.58; active inventory and both manifests remain ordered-identical at 19.
-- Bash and PowerShell installer fixtures, disposable install, body sufficiency, manifest order, unrelated-file preservation, and no unexpected quarantine.
-- Candidate/canonical/root/public-tag parity and fresh-clone rerun before release closeout.
+- Decision → construction → rendering ownership, exact `/goal` then `Plan reference:` order, and unwritten-reference prohibition.
+- Conditional diagram startup/synchronization for ordinary-design and structural/visual branches.
+- `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` safety classification and worker-owned lifecycle handoff.
+- Exact 77-path allowlist, 19 aligned triads, protected registries/force words, 19/19 body sufficiency, and measured compression.
+- Bash and PowerShell manifest order and fixture matrices, disposable install, unrelated-file preservation, and no unexpected quarantine.
+- Candidate/canonical/root parity before publication; public-master/tag/Release/fresh-clone proof before closeout.
 
-Current evidence: four-triad semantics/versions, the 35-path allowlist, 15 unchanged Runtime Rule bytes, scenario/matrix anchors, links/literals, Bash and PowerShell fixture matrices, disposable install, rollover integrity, 35/35 candidate/canonical parity, 19/19 canonical/root/tag parity/body/manifest checks, unrelated-file preservation, public-master push, annotated `v10.59` tag, GitHub Release identity, and fresh-public-tag verification pass.
+Current evidence: the exact 77-path scope, three semantic-owner families, protected literals/force-word retention, all-19 triad versions/body sufficiency, zero newly introduced broken links, `git diff --check`, README anchors/mode, ordered Bash/PowerShell manifests and passing fixture matrices, disposable install, 77/77 candidate/canonical parity, 19/19 canonical/root parity, unrelated root-file preservation, and no unexpected quarantine pass. Runtime Rules measure 266,520 bytes, 3,075 lines, and 34,266 words: reductions of 7,214 bytes, 141 lines, and 1,286 words from the frozen baseline. Publication and fresh-public-tag proof remain pending.
 
 ---
 
@@ -94,13 +114,13 @@ Current evidence: four-triad semantics/versions, the 35-path allowlist, 15 uncha
 - Stop canonical synchronization on overlapping unrelated edits.
 - Preserve rollover snapshots and history references; compaction never authorizes deletion.
 - Helper invocation cannot widen the selected objective, mutation permission, or source ownership.
-- After publication, correct defects through a later release; never amend or force-move public `v10.58` or `v10.59` tags.
+- After publication, correct defects through a later release; never amend or force-move public `v10.58`, `v10.59`, or `v10.60` tags.
 
 ---
 
 ## Next State
 
-P147 is closed. Task #55 now opens the selected read-only 19-Rule audit for remaining duplication, contradiction, owner drift, and safe context-compression opportunities; recommendations remain advisory until separately selected.
+Publish the verified candidate through clean public `master`, annotated `v10.60`, and GitHub Release; then verify a fresh public tag clone before the documentation-only closeout commit. The tag remains immutable.
 
 ---
 

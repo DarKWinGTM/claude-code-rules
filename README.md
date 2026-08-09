@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.59</b><br><sub>Evidence-First Counter-Analysis</sub>
+  <b>v10.60</b><br><sub>Owner Boundaries + Bounded Compression</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Fresh public tag verified</sub>
+  <b>Candidate</b><br><sub>Installed; publication pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Release note:** `v10.59` adds premise-before-expansion, completed-baseline protection, proactive counter-analysis, explicit recommendation retraction, corrected changelog owner vocabulary, and a clear boundary between advisory durable expansion and internally invoked bounded helper support. Candidate/canonical/root verification, annotated-tag and GitHub Release identity, and fresh-public-tag reproduction pass.
+> **Candidate note:** `v10.60` repairs successor decision/construction/rendering ownership, adds conditional diagram startup/synchronization, separates Agent Team failure classification from worker lifecycle decisions, and compactly removes repeated cross-owner Runtime Rule wording. Candidate verification, canonical synchronization, and root installation pass; public push, tag/Release, and fresh-public-tag proof remain pending.
 
 <!-- CTA Buttons -->
 <p>
@@ -233,7 +233,7 @@ These capabilities summarize the current operating model at the front-page level
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | Deterministic precedence plus advisory durable expansion and internally routed bounded-support boundaries |
 | [`evidence-discipline.md`](evidence-discipline.md) | Evidence discipline | Verify-first factual reasoning, scoped lookup discipline, proof-aware uncertainty, and real-over-mock behavior |
 | [`refusal-and-recovery.md`](refusal-and-recovery.md) | Refusal and recovery chain | Normalized intent classification plus recoverable blocked-path responses |
-| [`action-safety.md`](action-safety.md) | Action safety | Intent verification, destructive confirmation, topology discipline, emergency posture, and retry boundaries |
+| [`action-safety.md`](action-safety.md) | Action safety | Intent verification, destructive confirmation, topology discipline, emergency posture, retry boundaries, and duplicate/stale Agent Team failure classification |
 
 ---
 
@@ -245,7 +245,7 @@ These capabilities summarize the current operating model at the front-page level
 |:-----|:--------|:------------|
 | [`accurate-communication.md`](accurate-communication.md) | Evidence-honest wording | Keeps claims, status, progress, and scope wording aligned to checked evidence |
 | [`communication-register.md`](communication-register.md) | Tone and agreement calibration | Natural professional register, high-signal trimming, and evidence-calibrated disagreement |
-| [`explanation-and-presentation.md`](explanation-and-presentation.md) | Explanation, layout, and closing shape | Plain-language-first explanation, readable structure, clean text diagrams, and concise action framing |
+| [`explanation-and-presentation.md`](explanation-and-presentation.md) | Explanation, layout, and closing shape | Plain-language-first explanation plus rendering of execution-selected candidate/advisory goal posture |
 | [`audience-surface-disclosure-control.md`](audience-surface-disclosure-control.md) | Audience-aware disclosure | Full direct-user transparency while keeping public/operator surfaces appropriately scoped |
 
 ---
@@ -257,10 +257,10 @@ These capabilities summarize the current operating model at the front-page level
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`coding-discipline.md`](coding-discipline.md) | Coding execution discipline | Maintainable structure, proportionate verification, and tactical-to-strategic convergence |
-| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Keeps work moving from active surfaces with clear goal/output/gate reasoning |
-| [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Keeps goal authoring, `Plan reference`, and `/plan` overflow doctrine in one runtime owner |
-| [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective worker lane and protects leader context from raw overload |
-| [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves startup posture early, governs live `/phase`, and keeps TODO vs live task roles distinct |
+| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Selects direct continuation, candidate goals, advisory posture, clarification, or no successor |
+| [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs the execution-selected goal and preserves verified `Plan reference` and `/plan` overflow guards |
+| [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective lane and owns checked Agent Team reuse/steer/wait/partition/respawn decisions |
+| [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves design then conditional diagram startup posture, governs live `/phase`, and separates TODO from live tasks |
 
 ---
 
@@ -270,7 +270,7 @@ These capabilities summarize the current operating model at the front-page level
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`document-governance.md`](document-governance.md) | Document governance baseline | One deterministic authority model for README, design, changelog, patch, completed history, and UDVC-1 |
+| [`document-governance.md`](document-governance.md) | Document governance baseline | One authority model for README/design/diagram/changelog/patch/history plus conditional diagram synchronization and UDVC-1 |
 | [`document-integrity.md`](document-integrity.md) | Document integrity | Cross-reference consistency, rollover boundaries, and no-drift / no-delete-by-hygiene discipline |
 | [`safe-io.md`](safe-io.md) | Safe file and terminal I/O | Bounded reading/output, parent-index-first reads, and rollover signals for oversized entrypoints |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External source trust | Proactive web-backed verification, source ranking, and conflict-aware evidence grounding |
@@ -280,13 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.59` keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding premise-before-expansion, completed-baseline protection, evidence-shaped agreement/retraction, corrected changelog ownership, and bounded-helper authority clarification.
-- Candidate verification, canonical/root installation, public-master push, annotated-tag and GitHub Release identity, and fresh-public-tag reproduction pass.
+- Candidate `v10.60` keeps the 19-file Bash and PowerShell runtime boundary unchanged while repairing three owner boundaries and compacting repeated Runtime Rule wording.
+- Candidate verification, canonical synchronization, and root installation pass; public push, annotated tag, GitHub Release, and fresh-public-tag reproduction remain pending.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.59
+- Latest released baseline: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.59
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -652,6 +652,7 @@ artifact-initiation-control.design.md
 - the active runtime scope stayed limited to the then-README-installed 41 root rule files
 - final source state was recorded at 4,051 lines / 31,316 words / 231,675 bytes
 - runtime install into `~/.claude/rules/` happened only after the separate install gate opened
+- current child `P073-12` preserves the 19-Rule boundary while repairing owner conflicts and applying bounded context compaction before a new install/release gate
 - parity passed with no missing active files or hash mismatches
 - co-located runtime files outside the source-owned install set remained observed-only and untouched
 
@@ -1067,7 +1068,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: released `v10.59` keeps 19 root Rules; matched Bash and PowerShell fixture matrices pass ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases; candidate/canonical/root and fresh-public-tag parity/body-sufficiency checks pass 19/19 with unrelated-file preservation.
+- Source state: candidate `v10.60` keeps 19 root Rules and verifies owner-boundary repair, bounded compaction, fixtures, canonical synchronization, and root installation; public-tag proof remains pending and the latest verified release baseline is `v10.59`.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
@@ -1193,7 +1194,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.59 |
+  <b>Version</b>: 10.60 |
   <b>Last Updated</b>: 2026-08-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

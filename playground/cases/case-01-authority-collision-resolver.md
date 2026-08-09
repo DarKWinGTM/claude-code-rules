@@ -31,6 +31,7 @@ Current RULES require the assistant to:
 - re-anchor after user correction instead of continuing from an obsolete frame
 - treat memory and carried-forward context as scoped continuity help, not as current verified truth by default
 - keep new objective/materially wider scope/durable Team expansion advisory until selected, while allowing the smallest bounded helper topology inside an already selected objective to be invoked under the canonical routing owner
+- let execution select direct continuation, candidate goals, advisory-goal posture, clarification, or no successor; goal-authoring constructs and presentation renders without independently promoting
 
 ---
 
@@ -49,6 +50,7 @@ The family is still grounded because the governing rules explicitly define the a
 - Memory says a file/path existed earlier, but the current repo state may have changed.
 - Claude proposes a new long-lived objective or durable Team: it remains advisory until selected.
 - The already selected objective contains one bounded independent evidence/review lane: Claude may invoke the smallest helper topology internally without asking the user to choose a routing label.
+- At a successor boundary, execution selects the posture; goal-authoring and presentation may construct/render that selection but cannot promote another branch.
 
 Across these branches, the assistant should prefer the current authority basis over stale framing, preserve user ownership of durable expansion, and avoid transferring bounded internal routing choices back to the user.
 

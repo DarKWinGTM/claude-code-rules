@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-08-09
 > **Current Release:** v10.59 evidence-first counter-analysis and owner-integrity corrections
-> **Active Wave:** none; P147 release closeout completed
+> **Active Wave:** P073-12 / v10.60 runtime owner-boundary repair and bounded compression
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,12 @@
 
 ## Active / In Progress
 
-- None.
+- [ ] **P073-12 / v10.60 runtime owner-boundary repair and bounded compression**
+  - [x] Freeze public/canonical/root baseline, exact 77-path allowlist, ordered 19-Rule manifest, versions, modes, hashes, and runtime metrics.
+  - [x] Complete the three semantic-owner repairs and bounded all-19 Integration/body compaction without weakening protected behavior.
+  - [x] Synchronize design/diagram/changelog/phase/patch/playground/history and surgical README anchors inside the allowlist.
+  - [x] Pass static, scenario, link-delta, protected-literal/force-word, fixture, disposable-install, candidate/canonical/root parity, body-sufficiency, and unrelated-file-preservation gates.
+  - [ ] Push clean `master`, publish immutable annotated `v10.60` and GitHub Release, verify a fresh public tag clone, then publish documentation-only closeout without moving the tag.
 
 ---
 

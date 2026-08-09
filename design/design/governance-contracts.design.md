@@ -1,7 +1,7 @@
 # Governance Contracts - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.58
+> **Current Version:** 10.60
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Section:** Active governance contracts
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -21,10 +21,11 @@ Root runtime rules use this canonical header order:
 
 For governed updates:
 1. design
-2. runtime rule
-3. changelog
-4. TODO
-5. patch metadata final sync when affected
+2. diagram when materially triggered by startup posture
+3. runtime rule
+4. changelog
+5. TODO
+6. patch metadata final sync when affected
 
 ## Startup Artifact Contract
 
@@ -33,7 +34,8 @@ The active startup contract is:
 - meaningful governed work resolves artifact posture before drift
 - execution continuity does not bypass unresolved startup posture
 - required artifacts may be reused, created now, asked now, or marked not required
-- required design/changelog/TODO/phase/patch surfaces remain governed companions when the work shape still requires them
+- required design/diagram/changelog/TODO/phase/patch surfaces remain governed companions when the work shape requires them
+- diagram is evaluated after design for structural/visual-authority/diagram-correctness changes; ordinary design edits may mark it `not required`, and no subject diagram opens automatically
 - clearly phase-shaped work should expose phase posture and phase-linked task visibility instead of remaining implicit
 
 ## Phase Planning Contract
@@ -53,7 +55,7 @@ The active phase-planning contract is:
 Completed surfaces remain reachable but inactive by default:
 - `phase/done/` for completed phase execution detail
 - `patch/done/` for completed patch/review artifacts
-- `changelog/done/` for older or fallback history
+- `changelog/done/` for inactive reference/provenance history only
 - no default `design/done/` surface because design remains active target-state authority
 
 ## Daily-First Rollover Contract

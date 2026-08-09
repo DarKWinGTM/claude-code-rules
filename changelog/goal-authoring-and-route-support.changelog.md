@@ -1,6 +1,6 @@
 # Changelog - Goal Authoring and Route Support
 
-> **Current Version:** 1.1
+> **Current Version:** 1.2
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,10 +8,24 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-08-09 | **[Made goal construction consume execution-selected posture](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.1 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-06-13 | **[Created governed `/goal` route-support owner chain](#version-10)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 
 ---
+
+<a id="version-12"></a>
+## Version 1.2: Made goal construction consume execution-selected posture
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Removed independent advisory promotion and made construction consume the posture selected by `execution-and-goal-frame.md`.
+- Compacted repeated Integration and consumer wording to canonical owner handoffs while preserving the chain’s active behavior, exact guards, and substantive runtime body.
+
+### Summary
+This version advances the goal-authoring-and-route-support triad for P073-12 owner-boundary repair and bounded runtime compaction without weakening its governed responsibility.
 
 <a id="version-11"></a>
 ## Version 1.1: Applied owner-canonical active runtime compression

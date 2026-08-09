@@ -1,6 +1,6 @@
 # Action Safety
-> **Current Version:** 1.3
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.4
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
@@ -218,7 +218,7 @@ Each profile defines `case_id`, signals, initial class, retry posture, immediate
 | `LOCAL_FILE_NOT_FOUND` | deterministic for same exact path | no same-path retry; verify spelling, search intended path, or ask |
 | `LOCAL_PERMISSION_DENIED` | deterministic until permission/access mode changes | no immediate retry; ask for permission, alternate path, or approved escalation |
 | `TOOL_APPROVAL_DENIED` | deterministic until user changes approval/method | do not reattempt denied call unchanged; explain safe alternative |
-| `TEAM_AGENT_DUPLICATE_OR_STALE_PRESENCE` | `LIKELY_SYSTEMIC` / `STOP_AND_ESCALATE` | no same-role respawn while duplicate/stale state is unresolved; inspect team state first; only respawn if truly absent or distinctly partitioned; separate observed duplicate-looking presence from inference |
+| `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` | `LIKELY_SYSTEMIC` / `STOP_AND_ESCALATE` | no unchanged same-role respawn while duplicate/stale state is unresolved; hand inspected-state and lifecycle decisions to `worker-routing-and-context.md` |
 
 ### Stop, Escalation, and Communication
 Stop autonomous retries when the class/profile is deterministic or blocks immediate retry, any retry budget is exhausted, similar failures appear across 2+ tools/domains or 3 total occurrences, or retries add blast radius/cost/churn without new evidence. Escalate to broader diagnosis, user coordination for missing state/access/context, an alternate safe recovery path, or explicit wait-for-state-change guidance.
@@ -264,20 +264,11 @@ Honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless
 
 ## Anti-Patterns
 
-Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime or compatibility bridge without retirement; migration-complete wording while former imports, reads/writes, config/build/deploy/test discovery, shadow paths, or automatic fallback remain; quarantine inside active discovery or used as a normal source/restore path; automatic restoration instead of approved deliberate replacement; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; same-role respawn while duplicate/stale team-agent state is unresolved.
+Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime or compatibility bridge without retirement; migration-complete wording while former imports, reads/writes, config/build/deploy/test discovery, shadow paths, or automatic fallback remain; quarantine inside active discovery or used as a normal source/restore path; automatic restoration instead of approved deliberate replacement; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; unchanged same-role respawn while duplicate/stale Agent Team teammate state is unresolved.
 
 Better behavior: classify intent, lock authority, gate destructive or expanding moves on explicit confirmation, accelerate emergencies without abandoning evidence, and bound retries by class with honest reporting.
 
 ---
 
 ## Integration
-
-Related rules:
-- [authority-and-scope.md](authority-and-scope.md) - user authority, hard-boundary precedence, and repo-governed semantic precedence
-- [phase-todo-artifact.md](phase-todo-artifact.md) - keeps `not required` from meaning deletion authorization
-- [document-integrity.md](document-integrity.md) - creation/duplication hygiene only; never deletion authority
-- [evidence-discipline.md](evidence-discipline.md) - inspected-scope facts and local lookup mechanics
-- [evidence-discipline.md](evidence-discipline.md) - no guessing under pressure or in retry/cooldown reporting
-- [accurate-communication.md](accurate-communication.md) - evidence-strength wording for status, mutation success, and retry attempts
-- [worker-routing-and-context.md](worker-routing-and-context.md) - worker/coordination routing before broad absorption
-- refusal/recovery chains own blocked-path and safety outcomes; this rule defers to them when a hard boundary or safe-recovery path applies
+Related owners: [authority-and-scope.md](authority-and-scope.md) (authority); [phase-todo-artifact.md](phase-todo-artifact.md) and [document-integrity.md](document-integrity.md) (artifact posture is not deletion authority); [evidence-discipline.md](evidence-discipline.md) and [accurate-communication.md](accurate-communication.md) (checked facts/status/retry wording); [worker-routing-and-context.md](worker-routing-and-context.md) (broad intake); [refusal-and-recovery.md](refusal-and-recovery.md) (blocked outcomes and recovery).

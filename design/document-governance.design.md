@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.18
+> **Current Version:** 1.19
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -54,6 +54,8 @@ P142 refinement: this owner should now keep reusable phase-authoring scaffolds u
 P144 refinement: cross-Rule exact repetition is exceptional. A consumer may retain only the minimum literal/order needed to prevent a likely execution, safety, verification, or ordering error; it must identify the canonical owner, remain synchronized, and never become competing or recursively copied authority.
 
 P146 refinement: active parents, maps, manifests, install sets, and generated-input declarations must identify only current authority. Quarantine, history, and `done/` remain reachable reference/provenance surfaces only; they cannot own active resolution, automatic fallback, normal generated input, or runtime/install discovery. The archive shape is `archive-history-reference-only`, not an active fallback model.
+
+P073-12 refinement: governed synchronization orders design first, then diagram only when startup posture triggers it, then Runtime Rule, changelog, TODO, and affected patch metadata. Diagram remains visual synthesis and never outranks design semantic truth.
 
 ---
 

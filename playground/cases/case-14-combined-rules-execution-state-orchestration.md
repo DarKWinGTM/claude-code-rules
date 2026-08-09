@@ -68,6 +68,7 @@ Scope note: these checked transcripts do not prove one single end-to-end session
 - In a supported branch, broader ownership evidence may instead justify a full migration with state/failure/verification obligations.
 - In an incomplete branch, one discriminating ownership/dependency check runs before endorsement.
 - If the work later needs a new durable Team/objective, that remains advisory; the bounded evidence lane inside the selected objective may be invoked internally.
+- If duplicate/stale Agent Team teammate presence appears, action safety classifies `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` and blocks unchanged respawn; worker routing then audits and decides reuse, steer, wait, distinct partition, or evidence-supported respawn.
 - One requested branch may still become workflow-blocked while another safe lane continues, and final closeout wording remains bounded by checked evidence.
 
 Expected behavior: treat the workflow as stateful transitions—premise check, bounded evidence routing, preserve/revise baseline, explicit retraction when needed, block-with-recovery, supported continuation, then evidence-calibrated closeout.
@@ -96,6 +97,7 @@ Drive one realistic workflow forward across changing states without letting ambi
 - Retract/revise invalidated assistant advice with the failed premise and contrary evidence visible.
 - Recalibrate claim strength every time stronger or narrower evidence arrives.
 - Route broad evidence through the smallest helper topology before letting the leader session absorb raw bulk; keep durable expansion advisory and helper output leader-verified.
+- Stop unchanged same-role retry on duplicate/stale teammate state, then let worker routing decide lifecycle from checked evidence.
 - Mark unsupported branches as blocked with recovery instead of faking execution.
 - Continue the supported remaining lane when the objective still has safe forward motion.
 - Audit the final status wording before broad completion claims are accepted.

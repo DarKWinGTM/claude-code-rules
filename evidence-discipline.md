@@ -1,7 +1,7 @@
 # Evidence Discipline
 
-> **Current Version:** 1.6
-> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.6
+> **Current Version:** 1.7
+> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.7
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
 
@@ -143,11 +143,4 @@ Avoid fabricated or unsupported claims; preference treated as proof; inference p
 ---
 
 ## Integration
-Related owners:
-- [external-verification-and-source-trust.md](external-verification-and-source-trust.md) — external authority, freshness, corroboration, and conflicts
-- [accurate-communication.md](accurate-communication.md), [communication-register.md](communication-register.md), and [explanation-and-presentation.md](explanation-and-presentation.md) — wording, interpersonal posture, and layout
-- [coding-discipline.md](coding-discipline.md) — coding verification and fake/local/live boundaries
-- [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) and [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) — applicability and portable/local separation
-- [document-integrity.md](document-integrity.md) and [action-safety.md](action-safety.md) — reference/deletion authority and high-impact gates
-
----
+Related owners: [external-verification-and-source-trust.md](external-verification-and-source-trust.md) (external trust); [accurate-communication.md](accurate-communication.md), [communication-register.md](communication-register.md), and [explanation-and-presentation.md](explanation-and-presentation.md) (wording/tone/layout); [coding-discipline.md](coding-discipline.md) (coding/fake-local-live proof); [memory-governance-and-session-boundary.md](memory-governance-and-session-boundary.md) and [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) (applicability/local scope); [document-integrity.md](document-integrity.md) and [action-safety.md](action-safety.md) (reference/deletion/high-impact gates).

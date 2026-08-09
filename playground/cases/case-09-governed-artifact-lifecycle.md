@@ -52,6 +52,8 @@ Supporting repo-scope master-surface sync behavior is also recorded in `playgrou
 - `TODO.md` grows by absorbing completed closeout history directly into the active section.
 - A patch starts behaving like a live phase workspace instead of a before/after review surface.
 - A repair instruction calls indexed active changelog version detail `fallback` and treats inactive `changelog/done/` history as an ordinary resolution source.
+- An ordinary wording-only design edit is proposed with no structural or visual change; diagram posture may be `not required`.
+- A folder-topology or visual-authority change is proposed; startup must evaluate diagram after design, while subject diagrams open only for a real visual question.
 
 Expected behavior: create or repair the proper owner surface instead of overloading the wrong one. Correct the changelog roles explicitly: active parent for current version/map/navigation, indexed same-chain shard for active detail, inactive `done/` for reference/provenance only, and no fallback owner.
 
@@ -74,6 +76,7 @@ Repair or extend governed documentation without letting current-state, history, 
 ## RULES effect on execution
 
 - Choose the correct owner surface before editing.
+- Evaluate diagram after design when structure, visual authority, diagram relationships, visual topology, or existing diagram correctness changes; ordinary design edits may mark it `not required` without opening a subject diagram.
 - Route changelog current state, indexed active detail, and inactive history to distinct governed roles without fallback semantics.
 - Preserve history by rollover or sharding instead of deletion.
 - Verify cross-surface sync before claiming no-drift or release readiness.

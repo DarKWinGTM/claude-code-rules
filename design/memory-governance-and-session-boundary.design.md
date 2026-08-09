@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.7
+> **Current Version:** 1.8
 > **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-08)
 
 ---
@@ -336,7 +336,7 @@ The target active root index should keep useful hook text while reducing repeate
 
 ```text
 ## PATH_SCOPE: RULES repository
-Scope: `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/`
+Scope: `<repo-root>/`
 Memory base: `path/home-node-workplace-AWCLOUD-TEMPLATE-RULES/`
 Entries below are relative to Memory base.
 
@@ -399,3 +399,9 @@ This design defines the governance contract for that target shape. It does not r
 ---
 
 > Full history: [../changelog/memory-governance-and-session-boundary.changelog.md](../changelog/memory-governance-and-session-boundary.changelog.md)
+
+---
+
+## P073-12 Runtime Compaction Refinement
+
+Compact Integration and cross-owner consumer wording to canonical owner pointers while preserving activation, local consequence, exact error-prevention literals, body sufficiency, and every existing safety, verification, approval, and stop gate.
