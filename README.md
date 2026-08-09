@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Candidate</b><br><sub>Verified and installed; publication pending</sub>
+  <b>Released</b><br><sub>Fresh public tag verified</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Candidate release note:** `v10.59` adds premise-before-expansion, completed-baseline protection, proactive counter-analysis, explicit recommendation retraction, corrected changelog owner vocabulary, and a clear boundary between advisory durable expansion and internally invoked bounded helper support. Candidate verification, canonical/root installation, public-master push, and fresh-public-master reproduction pass; the public released baseline remains `v10.58` until the annotated tag, GitHub Release, and fresh-tag-clone gates pass.
+> **Release note:** `v10.59` adds premise-before-expansion, completed-baseline protection, proactive counter-analysis, explicit recommendation retraction, corrected changelog owner vocabulary, and a clear boundary between advisory durable expansion and internally invoked bounded helper support. Candidate/canonical/root verification, annotated-tag and GitHub Release identity, and fresh-public-tag reproduction pass.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,13 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Candidate `v10.59` keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding premise-before-expansion, completed-baseline protection, evidence-shaped agreement/retraction, corrected changelog ownership, and bounded-helper authority clarification.
-- Candidate verification, canonical/root installation, public-master push, and fresh-public-master reproduction pass; the public released baseline remains `v10.58` until annotated-tag, GitHub-Release, and fresh-tag-clone proof pass.
+- Released `v10.59` keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding premise-before-expansion, completed-baseline protection, evidence-shaped agreement/retraction, corrected changelog ownership, and bounded-helper authority clarification.
+- Candidate verification, canonical/root installation, public-master push, annotated-tag and GitHub Release identity, and fresh-public-tag reproduction pass.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Publication identity and fresh-tag-clone gates remain pending for v10.59; do not read candidate verification or installation as released-state proof.
+- Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.59
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1067,7 +1067,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: candidate `v10.59` keeps 19 root Rules; matched Bash and PowerShell fixture matrices pass ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases; candidate/canonical/root and fresh-public-master parity/body-sufficiency checks pass 19/19 with unrelated-file preservation. Released `v10.58` remains the public baseline until the v10.59 publication gates pass.
+- Source state: released `v10.59` keeps 19 root Rules; matched Bash and PowerShell fixture matrices pass ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases; candidate/canonical/root and fresh-public-tag parity/body-sufficiency checks pass 19/19 with unrelated-file preservation.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
@@ -1193,7 +1193,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.59 candidate |
+  <b>Version</b>: 10.59 |
   <b>Last Updated</b>: 2026-08-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

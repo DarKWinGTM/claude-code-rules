@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Parent Phase:** [phase-147-evidence-first-counter-analysis-and-owner-integrity.md](phase-147-evidence-first-counter-analysis-and-owner-integrity.md)
 > **Phase ID:** 147-03
-> **Status:** Active — candidate behavior verified; publication identity pending
+> **Status:** Verified — released in v10.59
 > **Target Release:** v10.59
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -53,7 +53,7 @@ Required branches:
 
 - Runtime/design/changelog implementation: implemented.
 - Semantic/version, scenario, unchanged-owner, candidate/canonical/root installation parity, and fresh-public-master checks: passed in candidate scope.
-- Annotated tag, GitHub Release identity, and fresh-tag-clone gates: pending.
+- Annotated `v10.59` tag, GitHub Release identity, and fresh-public-tag verification: passed.
 
 ## Risks and Rollback
 

@@ -3,7 +3,7 @@
 > **Current Version:** 2.15
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P147 active; v10.59 candidate verified and installed; publication identity pending
+> **Status:** No active phase; v10.59 / P147 released and fresh-public-tag verified
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,14 +21,16 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P147:** [phase-147-evidence-first-counter-analysis-and-owner-integrity.md](phase-147-evidence-first-counter-analysis-and-owner-integrity.md)
-  - Goal: prevent unsupported premise momentum, correct changelog owner vocabulary, and clarify bounded helper authority without widening the 19-Rule runtime set.
-  - Current output: four selected runtime/design/changelog triads, governed P147 surfaces, canonical/root installation, public-master push, and fresh-public-master verification pass; publication identity remains open.
-  - Gate: all three child gates, changed-path allowlist, 15 unchanged Runtime Rule bytes, 19-file inventory, playground branches, installer fixtures, canonical/root installation, public release identity, and fresh-tag-clone verification must pass.
-  - Children: [P147-01 premise-before-expansion and explicit retraction](phase-147-01-premise-before-expansion-and-explicit-retraction.md); [P147-02 changelog role vocabulary](phase-147-02-changelog-role-vocabulary-correction.md); [P147-03 internal helper authority](phase-147-03-internal-helper-authority-boundary.md).
-  - Patches: [counter-analysis/retraction](../patch/evidence-first-counter-analysis-and-retraction.patch.md); [changelog vocabulary](../patch/changelog-role-vocabulary-correction.patch.md); [helper authority](../patch/internal-helper-authority-boundary.patch.md).
+- None.
 
 ### Most Recently Completed
+
+- **P147:** [phase-147-evidence-first-counter-analysis-and-owner-integrity.md](phase-147-evidence-first-counter-analysis-and-owner-integrity.md)
+  - Output: v10.59 adds premise-before-expansion, completed-baseline protection, proactive counter-analysis, explicit recommendation retraction, corrected changelog owner vocabulary, and bounded-helper authority clarification without widening the 19-Rule runtime set.
+  - Gate: four advanced triads, 15 unchanged Runtime Rules, the exact 35-path allowlist, scenario/matrix anchors, matched Bash/PowerShell fixtures, disposable install, candidate/canonical/root/tag parity, unrelated-file preservation, annotated tag, GitHub Release identity, and fresh-public-tag verification passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.59
+  - Children: [P147-01 premise-before-expansion and explicit retraction](phase-147-01-premise-before-expansion-and-explicit-retraction.md); [P147-02 changelog role vocabulary](phase-147-02-changelog-role-vocabulary-correction.md); [P147-03 internal helper authority](phase-147-03-internal-helper-authority-boundary.md).
+  - Patches: [counter-analysis/retraction](../patch/evidence-first-counter-analysis-and-retraction.patch.md); [changelog vocabulary](../patch/changelog-role-vocabulary-correction.patch.md); [helper authority](../patch/internal-helper-authority-boundary.patch.md).
 
 - **P146:** [phase-146-active-runtime-strategic-completeness-and-authority-convergence.md](phase-146-active-runtime-strategic-completeness-and-authority-convergence.md)
   - Output: v10.58 strengthened proactive non-trivial design collaboration and made completed migrations converge to one verified active authority with execution-disconnected quarantine and controlled restoration.
@@ -50,10 +52,10 @@ P146 is released and closed. P147-01 overlaps P146's design-completeness concern
 
 | Child | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| P147-01 | `execution-and-goal-frame` + `communication-register` triads | false/supported/incomplete premise branches, completed baseline, explicit retraction | verified in candidate/public-master scope |
-| P147-02 | `phase-todo-artifact` triad | active shard vs inactive history ownership; no fallback owner | verified in candidate/public-master scope |
-| P147-03 | `authority-and-scope` triad | advisory durable expansion vs internally invoked bounded helper topology | verified in candidate/public-master scope |
-| Integration | master docs, playground, canonical/root, public release | allowlist, unchanged owners, fixtures, parity, release/fresh clone | candidate/install passed; publication pending |
+| P147-01 | `execution-and-goal-frame` + `communication-register` triads | false/supported/incomplete premise branches, completed baseline, explicit retraction | verified and released |
+| P147-02 | `phase-todo-artifact` triad | active shard vs inactive history ownership; no fallback owner | verified and released |
+| P147-03 | `authority-and-scope` triad | advisory durable expansion vs internally invoked bounded helper topology | verified and released |
+| Integration | master docs, playground, canonical/root, public release | allowlist, unchanged owners, fixtures, parity, release/fresh clone | verified and released |
 
 ---
 
@@ -82,7 +84,7 @@ Required checks:
 - Bash and PowerShell installer fixtures, disposable install, body sufficiency, manifest order, unrelated-file preservation, and no unexpected quarantine.
 - Candidate/canonical/root/public-tag parity and fresh-clone rerun before release closeout.
 
-Current evidence: four-triad semantics/versions, the 35-path allowlist, 15 unchanged Runtime Rule bytes, scenario/matrix anchors, links/literals, Bash and PowerShell fixture matrices, disposable install, rollover integrity, 35/35 candidate/canonical parity, 19/19 canonical/root parity/body/manifest checks, unrelated-file preservation, public-master push, and fresh-public-master verification pass. Annotated tag, GitHub Release identity, and fresh-tag-clone verification remain pending.
+Current evidence: four-triad semantics/versions, the 35-path allowlist, 15 unchanged Runtime Rule bytes, scenario/matrix anchors, links/literals, Bash and PowerShell fixture matrices, disposable install, rollover integrity, 35/35 candidate/canonical parity, 19/19 canonical/root/tag parity/body/manifest checks, unrelated-file preservation, public-master push, annotated `v10.59` tag, GitHub Release identity, and fresh-public-tag verification pass.
 
 ---
 
@@ -98,7 +100,7 @@ Current evidence: four-triad semantics/versions, the 35-path allowlist, 15 uncha
 
 ## Next State
 
-P147 remains active through annotated-tag creation, GitHub Release identity verification, and fresh-tag-clone proof. After release closeout, task #55 opens a read-only 19-Rule audit for remaining duplication, contradiction, owner drift, and safe context-compression opportunities; recommendations remain advisory until separately selected.
+P147 is closed. Task #55 now opens the selected read-only 19-Rule audit for remaining duplication, contradiction, owner drift, and safe context-compression opportunities; recommendations remain advisory until separately selected.
 
 ---
 

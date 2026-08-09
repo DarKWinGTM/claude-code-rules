@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active — candidate verification and installation complete; publication identity pending
+> **Status:** Completed — verified and released in v10.59
 > **Target Design:** [../design/design.md](../design/design.md) v10.59
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -49,7 +49,7 @@ Candidate checks:
 - Case 09 proves parent/detail/done separation;
 - no history is moved, deleted, or activated by location alone.
 
-Candidate owner-vocabulary, link, canonical/root installation, and fresh-public-master checks pass. Release proof remains pending until the annotated tag, GitHub Release identity, and fresh-tag-clone gates pass.
+Candidate owner-vocabulary, link, canonical/root installation, annotated `v10.59` tag, GitHub Release identity, and fresh-public-tag checks pass.
 
 ## 5) Rollback Approach
 

@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 147
-> **Status:** Active — candidate verified and installed; publication identity pending
+> **Status:** Completed — verified and released in v10.59
 > **Target Release:** v10.59
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -65,7 +65,7 @@ Required branches:
 - bounded helper work is internally invokable while durable expansion remains advisory;
 - changelog active detail and inactive history resolve to real owners with no fallback path.
 
-Current evidence: four changed triads, the 35-path allowlist, 15 unchanged Runtime Rule bytes, scenario anchors, links, literals, rollover integrity, Bash/PowerShell fixture matrices, disposable install, 35/35 candidate/canonical parity, 19/19 canonical/root parity/body/manifest checks, unrelated-file preservation, public-master push, and fresh-public-master verification pass. Annotated tag, GitHub Release, release identity, and fresh-tag-clone gates remain pending.
+Current evidence: four changed triads, the 35-path allowlist, 15 unchanged Runtime Rule bytes, scenario anchors, links, literals, rollover integrity, Bash/PowerShell fixture matrices, disposable install, 35/35 candidate/canonical parity, 19/19 canonical/root/tag parity/body/manifest checks, unrelated-file preservation, public-master push, annotated `v10.59` tag, GitHub Release identity, and fresh-public-tag verification pass.
 
 ## Risks and Rollback
 

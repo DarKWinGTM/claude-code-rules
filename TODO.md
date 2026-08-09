@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.58 strategic design completeness and authority convergence
-> **Active Wave:** P147 / v10.59 evidence-first counter-analysis and owner-integrity corrections
+> **Current Release:** v10.59 evidence-first counter-analysis and owner-integrity corrections
+> **Active Wave:** none; P147 release closeout completed
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,22 +10,16 @@
 
 ## Active / In Progress
 
-- [ ] **P147 / v10.59 evidence-first counter-analysis and owner-integrity corrections**
-  - Parent: [phase/phase-147-evidence-first-counter-analysis-and-owner-integrity.md](phase/phase-147-evidence-first-counter-analysis-and-owner-integrity.md)
-  - [x] P147-01 runtime/design/changelog triads implement premise-before-expansion, completed-baseline protection, proactive counter-analysis, evidence-shaped agreement, and explicit recommendation retraction.
-  - [x] P147-02 runtime/design/changelog triad routes active same-chain version detail to `changelog/<chain>/v*.changelog.md` and inactive completed/reference history to `changelog/done/` when applicable, with no changelog fallback owner.
-  - [x] P147-03 runtime/design/changelog triad distinguishes advisory new objective/durable Team expansion from internally invoked bounded helper topology under `worker-routing-and-context.md`.
-  - [x] Synchronize P147 phase, patch, master design/changelog, playground, and surgical README candidate surfaces.
-  - [x] Run changed-path, triad, unchanged-owner, scenario, fixture, install, parity, manifest, preservation, and no-drift verification.
-  - [x] Synchronize the verified allowlist to canonical `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`, install the 19 Active Runtime Rules to `/home/node/.claude/rules`, and verify 19/19 canonical/root parity plus unrelated-file preservation.
-  - [x] Push the verified candidate to public `master` and rerun static, parity, Bash fixture, and PowerShell fixture gates from a fresh public-master clone.
-  - [ ] Create annotated `v10.59`, publish the GitHub Release, and rerun the final gates from a fresh public tag clone.
-  - Gate: do not mark released or fresh-tag-clone verified until task #54 supplies direct tag/Release evidence; any post-publication defect requires a later corrective release.
+- None.
 
 ---
 
 ## Recently Completed
 
+- [x] **P147 / v10.59 evidence-first counter-analysis and owner-integrity corrections** was installed, pushed to public `master`, tagged, released, and fresh-public-tag verified.
+  - Delivered premise-before-expansion, completed-baseline protection, proactive counter-analysis, evidence-shaped agreement and explicit retraction, corrected changelog owner vocabulary, and bounded-helper authority clarification while keeping the 19-Rule runtime boundary unchanged.
+  - Verified the exact 35-path allowlist, four advanced triads, 15 byte-identical Runtime Rules, scenario/matrix anchors, Bash and PowerShell fixture matrices, disposable install, 35/35 candidate/canonical parity, 19/19 canonical/root/tag parity and body sufficiency, unrelated-file preservation, annotated tag, and GitHub Release identity.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.59
 - [x] **P146 / v10.58 strategic design completeness and authority convergence** was installed, pushed to `master`, tagged, released, and fresh-public-clone verified.
   - Delivered proactive non-trivial analysis/design completeness, one-active-authority migration convergence, execution-disconnected external quarantine, controlled restoration, and hardened Bash/PowerShell installer ownership/path/link handling.
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.58
