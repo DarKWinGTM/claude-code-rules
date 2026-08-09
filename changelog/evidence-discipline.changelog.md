@@ -1,14 +1,15 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.8
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-08-10 | **[Added supplied rendered-artifact proof boundaries](#version-18)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.7 | 2026-08-09 | **[Compacted evidence integration handoffs](#version-17)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.6 | 2026-08-09 | **[Added two-sided migration proof](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.5 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -21,6 +22,21 @@
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-18"></a>
+## Version 1.8: Added supplied rendered-artifact proof boundaries
+
+**Date:** 2026-08-10
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Distinguished user-supplied artifact provenance from directly inspected artifact contents and from unverified live equivalence.
+- Added proof boundaries for screenshots, Rendered HTML, rendered text or semantic witnesses, sanitized console, log, or network exports, and authenticated harness evidence.
+- Required checked correlation before combining witnesses and preserved separate live, authenticated, current, and stability thresholds.
+- Standardized `<supplied-rendered-artifact>` as a portable placeholder and prohibited machine-local paths or endpoints as shared doctrine defaults.
+
+### Summary
+This version permits useful artifact-bounded analysis while preventing rendered or authenticated evidence from being projected beyond the witness type, checked run, provenance, sanitization, and verification scope that actually support the claim.
 
 <a id="version-17"></a>
 ## Version 1.7: Compacted evidence integration handoffs

@@ -1,7 +1,7 @@
 # Action Safety
-> **Current Version:** 1.4
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.4
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.5
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.5
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
 
@@ -24,6 +24,21 @@ This rule unifies intent verification, destructive-action confirmation, runtime 
 - **Scope and impact first:** for multi-file or irreversible state, identify affected items, explain expected outcome and worst-case impact, and provide rollback direction.
 - **Safe default:** without explicit destructive authorization, ask rather than guess; do not escalate review/classification into delete/remove automatically. Authorized bounded destruction is not independently a refusal outcome; after authorization and hard-boundary checks, apply the confirmation protocol below.
 - **External-action boundary:** ordinary public read-only lookup is evidence gathering. Authenticated/private access, mutation, sending/publishing, purchase/payment, deployment, account/shared-state change, sensitive-data disclosure, meaningful cost, or terms acceptance is consequential external action and retains the applicable approval gate.
+
+### Authenticated/private capability preflight
+Before the first authenticated/private access attempt, classify:
+- the target and evidence objective
+- network reachability from the checked environment
+- available tool or browser capability
+- whether an approved authenticated session mechanism exists, such as a supported harness or secure session integration
+- user authorization for the target and approval for the consequential access method
+- accessible bounded substitutes, such as a sanitized screenshot, Rendered HTML, rendered text, semantic witness, or sanitized log/network export
+
+Capability inspection does not authorize private access. Authorization, approval, and technical capability are separate gates; all applicable gates must pass before the authenticated action runs.
+
+A guest/login response or `401` shows that the current request did not establish the required authentication. A `403` shows refusal and may reflect missing authentication or insufficient authorization; it does not by itself identify which. None of these responses alone proves that the authenticated Product or route is broken.
+
+Do not solicit or expose raw credentials, cookies, bearer tokens, private keys, session dumps, or other auth-state material as a convenience substitute for an unavailable supported mechanism.
 
 ### Ambiguous Terms
 `copy into` may mean add or replace; `merge` may overwrite; `delete` may mean permanent removal or archive; `replace` may overwrite; `update` may mean edit existing or create a duplicate/version; `clean up` may remove files; `isolate` may discard local files.
@@ -184,6 +199,7 @@ Classify failures before retrying, apply matching case profiles, respect bounded
 - **Profile first:** if a known case profile matches, use it before generic retry defaults.
 - **Bound retries:** one same user-facing objective keeps one retry budget even if tools, wrappers, providers, or domains change.
 - **Stop when deterministic:** missing authorization/input, invalid path, unchanged approval denial, policy blocks, malformed requests, and absent dependencies require real state/input/authorization change before retry.
+- **Private capability before retry:** authenticated/private failures require the capability preflight above. A materially corrected target or mechanism is not an unchanged retry, but only one bounded evidence-backed correction is allowed before the path becomes deterministic again.
 - **Escalate cross-domain failure:** similar failures across 2+ tools/domains or 3 total same-turn occurrences indicate systemic risk; switch to diagnosis or coordination.
 - **Cooldown honesty:** recommended cooldowns are policy guidance, not proof that Claude slept or will retry later. Provider `Retry-After` wins.
 - **Extensible profiles:** add new cases as explicit profiles inside the same taxonomy and retry-posture vocabulary.
@@ -208,7 +224,7 @@ Each profile defines `case_id`, signals, initial class, retry posture, immediate
 | `WEB_SEARCH_TIMEOUT` | `POTENTIALLY_TRANSIENT` / `AUTONOMOUS_RETRY_ALLOWED` | allow 1 low-blast-radius probe retry when no provider wait exists; identical repeat promotes to systemic; report real attempts used |
 | `WEB_SEARCH_429_WITH_RETRY_AFTER` | transient but provider-constrained / `STOP_AND_ESCALATE` | no immediate retry; surface provider wait; do not pretend waiting occurred |
 | `WEB_SEARCH_5XX_OR_PROVIDER_UNAVAILABLE` | transient first, systemic after repeat | allow 1 safe confirmation retry; repeated provider-side signal escalates |
-| `WEB_FETCH_PRIVATE_OR_AUTH_REQUIRED` | `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE` | use authenticated/specialized access or ask for accessible source |
+| `WEB_FETCH_PRIVATE_OR_AUTH_REQUIRED` | `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE` | preflight target, network, tool/browser, approved session mechanism, authorization, approval, and accessible substitutes before private access; permit at most one bounded correction only when checked evidence materially changes the target or mechanism and the corrected path remains authorized and approval-compliant; count that correction as a real attempt; if no supported authenticated mechanism exists or the corrected witness remains guest-only, stop every unchanged retry and name the authorization, capability, supplied-evidence, target, or runtime-state change required |
 | `WEB_FETCH_INVALID_URL_OR_BAD_INPUT` | `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE` | request corrected URL/input; do not repeat same bad fetch |
 
 #### Local/tool/team
@@ -219,6 +235,8 @@ Each profile defines `case_id`, signals, initial class, retry posture, immediate
 | `LOCAL_PERMISSION_DENIED` | deterministic until permission/access mode changes | no immediate retry; ask for permission, alternate path, or approved escalation |
 | `TOOL_APPROVAL_DENIED` | deterministic until user changes approval/method | do not reattempt denied call unchanged; explain safe alternative |
 | `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` | `LIKELY_SYSTEMIC` / `STOP_AND_ESCALATE` | no unchanged same-role respawn while duplicate/stale state is unresolved; hand inspected-state and lifecycle decisions to `worker-routing-and-context.md` |
+
+The bounded private-access correction is a discriminating mechanism change, not a reusable retry allowance. It must be supported by checked evidence—for example, an exact approved-domain correction after a verified `localhost` session-domain mismatch. A speculative URL variation, repeated guest request, or switch to an unapproved tool or session path does not qualify.
 
 ### Stop, Escalation, and Communication
 Stop autonomous retries when the class/profile is deterministic or blocks immediate retry, any retry budget is exhausted, similar failures appear across 2+ tools/domains or 3 total occurrences, or retries add blast radius/cost/churn without new evidence. Escalate to broader diagnosis, user coordination for missing state/access/context, an alternate safe recovery path, or explicit wait-for-state-change guidance.
@@ -257,6 +275,7 @@ Honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless
 | post-mutation success claim | verify topology and checked scope before claiming success |
 | genuine emergency | activate emergency posture; lead with containment; preserve approval gates |
 | operational failure | classify before retry; apply matching profile; respect retry budget |
+| authenticated/private access or verification request | run target/network/tool/session/authorization/approval/substitute preflight before access; permit at most one evidence-backed mechanism correction; otherwise use `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE` |
 | repeated cross-domain failures | escalate to diagnosis or coordination instead of looping |
 | provider `Retry-After` present | surface provider wait; do not pretend waiting occurred |
 
@@ -264,7 +283,7 @@ Honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless
 
 ## Anti-Patterns
 
-Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime or compatibility bridge without retirement; migration-complete wording while former imports, reads/writes, config/build/deploy/test discovery, shadow paths, or automatic fallback remain; quarantine inside active discovery or used as a normal source/restore path; automatic restoration instead of approved deliberate replacement; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; unchanged same-role respawn while duplicate/stale Agent Team teammate state is unresolved.
+Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime or compatibility bridge without retirement; migration-complete wording while former imports, reads/writes, config/build/deploy/test discovery, shadow paths, or automatic fallback remain; quarantine inside active discovery or used as a normal source/restore path; automatic restoration instead of approved deliberate replacement; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; probing authenticated/private targets before capability and authorization preflight; treating a guest/login response, `401`, or `403` as authenticated-Product failure or treating `403` alone as proof of missing authentication; requesting raw credentials, cookies, tokens, private keys, or session dumps to compensate for missing supported capability; treating speculative URL changes as evidence-backed corrections; retrying the same guest-only or unsupported mechanism after the deterministic block is known; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; unchanged same-role respawn while duplicate/stale Agent Team teammate state is unresolved.
 
 Better behavior: classify intent, lock authority, gate destructive or expanding moves on explicit confirmation, accelerate emergencies without abandoning evidence, and bound retries by class with honest reporting.
 

@@ -1,18 +1,34 @@
 # Changelog - Goal Authoring and Route Support
 
-> **Current Version:** 1.2
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.3
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-08-10 | **[Bounded goal proof layers and terminal-gate preservation](#version-13)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.2 | 2026-08-09 | **[Made goal construction consume execution-selected posture](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.1 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-06-13 | **[Created governed `/goal` route-support owner chain](#version-10)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 
 ---
+
+<a id="version-13"></a>
+## Version 1.3: Bounded goal proof layers and terminal-gate preservation
+
+**Date:** 2026-08-10
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Added material-only construction of required, currently reachable, and explicitly excluded or successor proof layers.
+- Required route prerequisites to precede dependent proof checks and prohibited unchanged checks that cannot add signal.
+- Preserved explicitly selected terminal proof as binding when capability or prerequisite gaps block immediate verification.
+- Kept current-versus-successor scope selection with execution/user authority and retained route support as subordinate to `/goal`.
+
+### Summary
+Goal authoring now encodes selected proof-layer distinctions and prerequisite order without independently redefining current-goal versus successor scope or demoting a selected terminal gate.
 
 <a id="version-12"></a>
 ## Version 1.2: Made goal construction consume execution-selected posture

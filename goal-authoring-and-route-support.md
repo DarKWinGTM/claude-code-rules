@@ -1,7 +1,7 @@
 # Goal Authoring and Route Support
-> **Current Version:** 1.2
-> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.2
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.3
+> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.3
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/goal-authoring-and-route-support.changelog.md](changelog/goal-authoring-and-route-support.changelog.md)
 
 ---
@@ -45,16 +45,24 @@ Governed-surface context is mandatory only when the request or successor objecti
 When a governed `/goal` is appropriate, translate checked execution context into these concept slots:
 - candidate goal label
 - done condition
-- proof/check basis
+- `required_proof_layer`: the proof layer selected as the current goal's completion gate
+- `current_reachable_layer`: the strongest proof reachable in the selected scope with currently available and approved capability
+- `excluded_or_successor_layers` when materially different, with each layer classified explicitly as excluded or successor
+- route prerequisites when a later proof layer depends on state, access, approval, deployment, restart, or another capability change
 - scope boundary
 - keep constraints
 - stop bound when runaway continuation is a risk
 
 Required guidance:
 - keep only the parts needed to define completion, proof, scope, and hard guardrails
+- bind `required_proof_layer` to the current goal's selected completion gate, not to the strongest imaginable whole-system proof
+- use `current_reachable_layer` to expose a real proof gap; do not present it as completion when it is weaker than `required_proof_layer`
+- classify proof outside the current goal explicitly as excluded or successor; do not turn it into an accidental blocker or silently drop it
+- if an explicitly selected terminal proof is stronger than the current reachable layer, keep that proof inside the current goal and keep the goal open with its prerequisite or blocker; difficulty, externality, or unavailable capability does not demote it
+- classify material proof reachability as `REACHABLE_NOW`, `REQUIRES_APPROVAL`, `REQUIRES_EXTERNAL_STATE_CHANGE`, `REQUIRES_USER_ACTION`, `UNAVAILABLE_WITH_CURRENT_CAPABILITY`, or `NOT_APPLICABLE`; the label exposes the gate but does not change the selected terminal proof
 - when several successor directions remain live, surface compact candidate goals before promoting any one into `/goal`
 - if checked surfaces already define a smaller truthful successor slice, derive that smaller slice instead of emitting a broad future label
-- if proof cannot be made transcript-visible, do not promote the goal into a copyable `/goal` command
+- for an advisory `/goal`, do not emit a copyable command unless the required proof, or a checked prerequisite path to it, can become transcript-visible; an already selected terminal proof remains binding and may be reported blocked rather than demoted
 
 ### 4) Route-support and durable `Plan reference` contract
 Choose the smallest route support that safely serves the goal:
@@ -62,6 +70,8 @@ Choose the smallest route support that safely serves the goal:
 - compact non-durable route notes when ordering matters but still fits the goal-centric surface
 - a durable route-only plan file only when complexity or later execution materially needs persistence
 - one narrow substantive clarification about the work when objective, scope, or gate is not bounded enough
+
+Order prerequisites that change state, identity, access, approval, or runtime capability before dependent proof checks. Do not repeat a downstream check unchanged while unmet prerequisites mean it cannot add signal. Route prerequisites remain subordinate: they do not replace the goal's proof gate or become completion proof by themselves.
 
 Ask about the work itself, not routing labels. Do not force trivial goals into durable plan files or pull broad governed context into trivial non-governed work.
 
@@ -80,6 +90,8 @@ If the current turn is only goal or route-support authoring, stop at the final g
 
 An advisory `/goal` remains unselected execution. Do not construct one from approval-sensitive, destructive, or materially divergent work unless the execution owner has resolved the required basis or approval.
 
+Goal-authoring encodes the proof-layer posture selected by execution or the user; it does not independently move proof between the current goal and successor scope. An explicitly selected terminal proof remains the current goal's terminal gate until it passes or the user explicitly narrows the goal.
+
 For a selected goal, keep route detail inside the goal-centric surface first. Open `/plan` only when sequence, task/phase breakdown, verification/owner ordering, explicit standalone planning, or route size no longer fits compactly.
 
 `/goal` owns outcome, done condition, proof/checks, scope, and hard guardrails. `/plan` owns route, sequence, task breakdown, owner ordering, and overflow route detail. Repair route drift instead of letting `/plan` replace the selected objective. Route, helper, or plan completion never closes the goal while its proof or gate remains open.
@@ -91,11 +103,11 @@ Follow the dominant language of the active exchange unless the user explicitly c
 When durable route support is present, use this order inside one copied artifact:
 
 ```text
-/goal <outcome + transcript-visible proof/checks + bounded scope + keep constraints + optional stop bound>
+/goal <outcome + required transcript-visible proof/checks + bounded scope + keep constraints + material proof-layer/prerequisite distinctions + optional stop bound>
 Plan reference: <exact route-only plan path>
 ```
 
-Wrapper text may surround the artifact; omit `Plan reference` when no verified durable plan file exists.
+Include proof-layer distinctions and route prerequisites only when they materially differ; simple goals keep one direct proof/check statement. Wrapper text may surround the artifact; omit `Plan reference` when no verified durable plan file exists.
 
 ---
 
@@ -117,6 +129,10 @@ Avoid:
 - teaching `/plan` as the default next surface for every route-heavy goal
 - collapsing several materially different successor directions into one premature `/goal`
 - treating route completion as goal completion
+- demoting an explicitly selected terminal proof because it is external, difficult, approval-gated, or not currently reachable
+- treating a weaker current reachable layer as if it satisfied a stronger required proof layer
+- importing excluded or successor proof into the current goal accidentally, or leaving its status ambiguous
+- running dependent proof before route prerequisites can make the check informative
 - pulling heavy governed context into trivial non-governed next steps
 
 ---

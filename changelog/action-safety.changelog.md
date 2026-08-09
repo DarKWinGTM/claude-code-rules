@@ -1,14 +1,15 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.4
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.5
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-08-10 | **[Added authenticated/private capability preflight and deterministic retry stop](#version-15)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.4 | 2026-08-09 | **[Separated Agent Team failure posture from worker lifecycle](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-08-09 | **[Added single-authority migration convergence and controlled restoration](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.2 | 2026-08-08 | **[Clarified destructive authorization, emergency containment, and runtime entity scope](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -17,6 +18,22 @@
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-15"></a>
+## Version 1.5: Added authenticated/private capability preflight and deterministic retry stop
+
+**Date:** 2026-08-10
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Added preflight of target, network reachability, tool/browser capability, approved authenticated session mechanism, user authorization, consequential-action approval, and accessible bounded substitutes before authenticated/private access.
+- Clarified that a guest/login response or `401` shows required authentication was not established, while `403` shows refusal without identifying missing authentication versus insufficient authorization; none alone proves failure of the authenticated Product.
+- Allowed at most one bounded evidence-backed target or mechanism correction when checked evidence materially changes the attempted route, while preserving approval and secret-handling boundaries.
+- Expanded `WEB_FETCH_PRIVATE_OR_AUTH_REQUIRED` to require `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE` after the bounded correction fails or no qualifying correction exists.
+- Prohibited raw credentials, cookies, bearer tokens, private keys, or session-state dumps from becoming convenience substitutes for missing supported capability.
+
+### Summary
+This version makes authenticated/private verification capability-first and recoverable without allowing unsupported probing, secret solicitation, approval bypass, or unchanged retry loops.
 
 <a id="version-14"></a>
 ## Version 1.4: Separated Agent Team failure posture from worker lifecycle

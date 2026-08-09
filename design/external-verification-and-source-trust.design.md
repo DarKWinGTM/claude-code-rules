@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.6
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.7
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/external-verification-and-source-trust.changelog.md](../changelog/external-verification-and-source-trust.changelog.md)
 
 ---
@@ -18,6 +18,8 @@ Define one first-class rule chain for proactive external verification and source
 - compares multiple sources when one source is insufficient, ambiguous, stale, or contradicted
 - uses external evidence to ground analysis, design, recommendation, and disagreement when current external reality materially changes the answer
 - supports native worker research lanes for broad or comparison-heavy external verification while preserving source-trust duties
+- consumes authenticated/private capability and authorization preflight from `action-safety.md` before deciding which external sources are eligible
+- selects the strongest reachable authorized claim-fit source, or a bounded substitute with explicit provenance and proof limits when the preferred direct source is unavailable
 - handles external source conflicts honestly without drifting into either passivity or overclaiming
 
 This chain should increase factual accuracy and proof-aware recommendation quality while preserving the existing burden-of-proof, contradiction, user-authority, and communication contracts owned by adjacent rules.
@@ -25,6 +27,8 @@ This chain should increase factual accuracy and proof-aware recommendation quali
 P120 refinement: this owner should now also make provider-, supplier-, model-, or path-specific narrowing an evidence-earned scope decision rather than a default convenience recommendation, requiring broader corroboration when the narrower local doctrine claim would materially change the chosen fix owner.
 
 P144 refinement: ordinary public read-only lookup is evidence gathering and should remain proactive when proportional. Approval-sensitive external action begins at authenticated/private access, mutation, sending/publishing, purchase/payment, deployment, account/shared-state change, sensitive-data disclosure, meaningful cost, or terms acceptance; `action-safety.md` owns those gates.
+
+Version 1.7 refinement: this owner should consume—not recreate—the capability, authorization, and approval result from `action-safety.md`. It then owns selection among eligible sources by claim fit, authority, directness, freshness, specificity, and relevance. When no preferred direct source is reachable and authorized, it may select a bounded supplied or public substitute without upgrading that substitute into live/runtime proof.
 
 ---
 
@@ -55,6 +59,10 @@ Observed failure modes this design intends to close:
 - broad external research is gathered as raw leader context instead of delegated into focused research lanes when source volume or comparison cost is high
 - research-lane handoffs omit source trust, freshness, conflicts, or leader verification needs
 - one external fact is over-weighted as a rigid design lock even though it only informs trade-offs
+- a highly authoritative source is treated as an executable verification path even though the current mechanism cannot reach it or is not authorized to access it
+- a guest/login response or `401`, or a `403` refusal, is projected into an authenticated Product claim without preserving the authentication-versus-authorization uncertainty
+- a supplied screenshot, rendered artifact, or sanitized export is either ignored despite being useful or over-promoted into complete live/runtime proof
+- source-trust logic duplicates credential, approval, or retry decisions already owned by `action-safety.md`
 
 ---
 
@@ -69,16 +77,21 @@ Observed failure modes this design intends to close:
 - External-evidence-as-grounding versus external-evidence-as-binding-constraint separation
 - Honest fallback behavior when web verification remains incomplete or fails
 - Source-trust and conflict-reporting expectations for delegated research-lane outputs
+- Source eligibility and selection after capability/authorization preflight
+- Strongest reachable authorized source selection using claim fit plus trust factors
+- Bounded-substitute provenance and proof-limit handling
 
 ### 3.2 Out of Scope
 - Local file/reference lookup and claim-threshold mechanics (owned by `evidence-discipline.md`)
 - General communication shape (owned by `accurate-communication.md`)
-- WebSearch/WebFetch retry/cooldown/failure handling (owned by `action-safety.md`)
+- Capability detection, authorization and approval decisions, credential/cookie/token/session-material handling, and WebSearch/WebFetch retry/cooldown/failure behavior (owned by `action-safety.md`)
+- Workflow-block decision taxonomy and recovery schema when no eligible source exists (owned by `refusal-and-recovery.md`)
 - Pure presentation/layout concerns
 - Worker-scale routing and Agent Team escalation decisions (owned by `worker-routing-and-context.md`)
 
 ### 3.3 Boundary Principle
-This chain owns **how external evidence should be gathered, ranked, compared, and trusted**.
+This chain owns **how external evidence should be gathered, ranked, compared, and trusted**. It receives the eligible-source boundary from `action-safety.md`; it does not independently authorize access, request secret material, or decide retries. Inside that eligible set, it owns which source or bounded substitute best supports the exact claim.
+
 It does not replace adjacent chains that own:
 - factual-claim phrasing strength
 - contradiction posture
@@ -125,6 +138,17 @@ When external verification is broad, comparison-heavy, or source-volume-heavy, n
 
 Delegated research does not lower source-trust requirements. It should reduce raw context load while increasing evidence coverage and conflict visibility.
 
+### 4.7 Capability-bound source-selection principle
+For authenticated, private, local-only, or mechanism-constrained verification:
+1. consume the checked capability and authorization result from `action-safety.md`
+2. exclude sources that are unreachable or unauthorized under that result
+3. rank the remaining sources by claim fit, authority, directness, freshness, specificity, and relevance
+4. use the strongest eligible source that can answer the material claim
+5. if no direct source is eligible, select a bounded substitute only when it provides useful evidence and its provenance and proof limits can be stated
+6. if no useful eligible source exists, preserve unresolved status and defer workflow-block classification and recovery to the owning rules
+
+An inaccessible Tier 1 source remains the preferred authority in principle but is not an executable verification path. Conversely, a supplied artifact may directly prove a bounded observed state without proving current authenticated, live, provider, deployment, or stability behavior.
+
 ---
 
 ## 5) External Source Trust Model
@@ -157,6 +181,13 @@ A source should be downgraded when:
 - it is stale for a time-sensitive claim
 - it is vague/marketing-shaped where technical specificity is required
 - it cannot be traced to a credible authority for the claim being made
+
+### 5.4 Eligibility versus trust
+Eligibility and trust are separate axes:
+- `action-safety.md` determines whether the current mechanism is capable, authorized, and approved to access a source
+- this chain ranks only eligible sources for the claim being answered
+- source tier alone does not determine claim fit
+- bounded substitutes retain their artifact-specific evidence limits even when they are the strongest reachable source
 
 ---
 
@@ -201,10 +232,14 @@ If a source makes a claim that is internally incoherent or trivially contradicte
 
 ### 7.3 Honest fallback
 If verification remains incomplete after reasonable checking:
+- use the strongest reachable authorized claim-fit source or useful bounded substitute
+- identify source provenance and artifact type when a substitute is used
+- state what the selected evidence proves and cannot prove
 - separate what is verified from what is only likely
-- say what remains unresolved
+- say what remains unresolved and what capability, authorization, or accessible evidence would enable stronger verification
 - give the best bounded recommendation available
 - do not block unnecessarily if a narrower truthful answer is still possible
+- do not duplicate approval, credential/session, workflow-block, or retry handling
 
 ---
 
@@ -242,6 +277,12 @@ Compare at least enough sources to justify why one option is better supported or
 ### 9.5 Design judgments shaped by external constraints
 Use external evidence to ground design choices, but distinguish binding external requirements from ordinary evidence that only informs trade-offs.
 
+### 9.6 Authenticated or private sources
+Consume `action-safety.md` preflight before source selection. A guest/login response or `401` shows the request did not establish required authentication; a `403` shows refusal but does not by itself distinguish missing authentication from insufficient authorization. None alone supports an authenticated Product claim.
+
+### 9.7 Supplied or bounded substitute evidence
+A screenshot, Rendered HTML, rendered text, semantic witness, or sanitized log/network export may support a bounded claim when accessible and authorized. Record provenance when known, apply artifact-specific proof limits, and leave live/current/stability claims open unless matching evidence exists.
+
 ---
 
 ## 10) Anti-Patterns to Avoid
@@ -256,6 +297,10 @@ Use external evidence to ground design choices, but distinguish binding external
 | silently choosing one side of a source conflict | hides uncertainty and trust reasoning | state the conflict and preferred authority |
 | treating a logically broken source as equally credible | preserves bad evidence artificially | downgrade it explicitly |
 | using web search only reactively after being challenged | misses low-cost accuracy gains | use proactive verification triggers |
+| treating an unreachable or unauthorized primary source as an executable path | confuses authority with capability | consume capability/authorization preflight and rank only eligible sources |
+| requesting raw credentials, cookies, tokens, or auth state as a source workaround | bypasses the owning safety boundary | use an approved mechanism or accessible sanitized substitute |
+| upgrading supplied rendered evidence into complete live/runtime proof | projects beyond the witness type | state artifact-specific provenance and proof limits |
+| duplicating retry or approval logic inside source trust | creates competing authority | defer those decisions to `action-safety.md` |
 
 ---
 
@@ -280,7 +325,8 @@ Use external evidence to ground design choices, but distinguish binding external
 | [../evidence-discipline.md](../evidence-discipline.md) | Owns factual discipline, claim thresholds, proof-aware grounding, and contradiction behavior |
 | [../accurate-communication.md](../accurate-communication.md) | Owns wording shape for source conflict and evidence-strength communication |
 | [../communication-register.md](../communication-register.md) | Owns evidence-calibrated agreement and disagreement posture |
-| [../action-safety.md](../action-safety.md) | Owns retry, stop, and escalation behavior after WebSearch/WebFetch failures |
+| [../action-safety.md](../action-safety.md) | Owns capability/authorization preflight, approval-sensitive external action, credential/session-material boundaries, and retry/failure handling; this chain consumes the resulting eligible-source boundary |
+| [../refusal-and-recovery.md](../refusal-and-recovery.md) | Owns workflow-block classification and recovery output when no eligible direct source or useful bounded substitute exists |
 | [../worker-routing-and-context.md](../worker-routing-and-context.md) | Owns when broad external research should be delegated before leader raw-source absorption |
 
 ---

@@ -1,8 +1,8 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.31
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.32
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -77,6 +77,8 @@ P146 refinement: this owner must make non-trivial analysis/design proactively co
 
 P147 refinement: this owner must separate goal, checkable premise, proposed path, and requested action before material expansion; inspect current ownership, sibling roles, consumers, dependencies, and completed verification; protect a verified narrow baseline from unsupported reopening; proactively interrupt a false-premise route while preserving the valid goal; and use a narrow discriminating check when evidence remains incomplete. Broader architecture is evidence-earned and must carry its own state, migration, failure, and verification obligations.
 
+Case 17 refinement: this owner must distinguish proof reachable within the current execution state from terminal proof gated by approval, environment state, or unavailable capability; complete all independent reachable proof before stopping; preserve whether gated proof remains part of the current Goal or forms a distinct successor live-verification Goal; retain the exact terminal proof obligation and resume condition; and prevent unchanged retries when no approval, state, or capability change can produce new evidence.
+
 P073-12 refinement: this owner is the sole decision boundary for direct continuation, candidate-goal surfacing, advisory `/goal` eligibility, clarification, or no successor. It hands the selected posture to `goal-authoring-and-route-support.md` for construction and to `explanation-and-presentation.md` for rendering.
 
 ---
@@ -89,6 +91,10 @@ P073-12 refinement: this owner is the sole decision boundary for direct continua
 - Preserve lane decomposition and next-lane continuation semantics without taking delegation or bounded-I/O ownership away from `worker-routing-and-context.md` and `safe-io.md`.
 - Preserve proactive completeness for non-trivial analysis/design while keeping simple work direct and recommendations evidence-calibrated and advisory.
 - Preserve selected design-slice obligation extraction and the rule that uncovered obligations continue execution instead of allowing headline-output-only closeout.
+- Preserve reachable-proof closure so a blocked terminal check does not cause other independent current checks to be skipped.
+- Preserve the boundary between current-Goal proof and a distinct successor live-verification Goal; required current proof cannot be reclassified merely to enable closeout.
+- Preserve terminal proof obligations, prerequisite approval/state/capability, observable pass/fail signal, and meaningful resume trigger across a legitimate stop.
+- Preserve stop behavior when unchanged approval/state/capability gates make another attempt non-discriminating, while leaving retry classification and approval mechanics with their canonical owners.
 - Preserve migration continuation until the canonical convergence owner’s cutover, disconnection, retirement, quarantine-separation, and inactivity-proof gates close.
 - Preserve ordered phase-shaped continuation handling so current-phase reuse and truthful subphase fit are evaluated before any new-major phase selection.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
@@ -106,3 +112,5 @@ Historical detail remains in changelog or execution-disconnected quarantine/prov
 ## Verification
 
 Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
+
+Semantic review must also confirm both proof-reachability branches: required live proof keeps the current Goal blocked, while genuinely distinct later live proof is preserved as an unselected successor Goal. The runtime text must require reachable checks before stopping and must not promise retries without an enabling approval, state, or capability change.

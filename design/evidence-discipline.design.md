@@ -1,8 +1,8 @@
 # Design - Evidence Discipline
 
 > **Parent Rule:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.8
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/evidence-discipline.changelog.md](../changelog/evidence-discipline.changelog.md)
 
 ---
@@ -31,12 +31,16 @@ P120 refinement: this owner should now keep correction scope as an evidence-earn
 
 P146 refinement: this owner should require two-sided migration proof—positive target behavior/selection evidence plus proportionate negative former-path inactivity and discovery evidence—while preserving `NOT_FOUND_IN_CHECKED_SCOPE` versus `STRONG_ABSENCE_CLAIM` and rejecting target tests, file movement, or one grep as migration-complete proof.
 
+Version 1.8 refinement: this owner should distinguish supplied rendered-artifact contents from their unverified provenance and live equivalence; define witness-specific proof boundaries for screenshots, Rendered HTML, rendered text or semantic witnesses, sanitized console, log, or network exports, and authenticated harness evidence; require checked cross-witness correlation; and keep shared examples portable through `<supplied-rendered-artifact>` rather than machine-local paths.
+
 ---
 
 ## Runtime Requirements
 
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
+- Preserve `USER_PROVIDED` provenance versus directly inspected `OBSERVED_LOCAL` artifact content, witness-specific proof limits, and checked same-target/run/time correlation before combining rendered or harness evidence.
+- Keep shared artifact examples portable and prohibit machine-local paths, hosts, or auth-state locations from becoming doctrine defaults.
 - Keep metadata linked to this design and the chain changelog.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
@@ -52,7 +56,7 @@ Historical detail remains in changelog or backup/provenance surfaces, not as par
 
 ## Verification
 
-Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
+Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope. It must also confirm all five supplied-artifact witness types retain distinct proof limits, provenance remains separate from inspected content, cross-witness correlation is checked, no machine-local path or auth-state location became a shared default, and one authenticated harness pass is not presented as stability.
 
 ---
 

@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Release note:** `v10.64 / P148` adds verified original-creation chronology for governed Patch filenames, matching `Created At`/Creation Evidence, exact-reference migration integrity, and the reusable RULES-owned `script/patch-timeline.mjs`. Thirty-two focused Tool tests, independent Tool/governance reviews, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, exact 27-path canonical convergence, two-pass root 19/19 parity, immutable annotated tag, GitHub Release, and fresh-public master/tag reproduction passed. The Runtime Rule payload remains exactly 19 files and excludes the Tool; actual NodeClaw Patch migration remains a separate unselected goal.
+> **Release note:** `v10.64 / P148` is the latest published release and adds verified original-creation chronology for governed Patch filenames, matching `Created At`/Creation Evidence, exact-reference migration integrity, and the reusable RULES-owned `script/patch-timeline.mjs`. Thirty-two focused Tool tests, independent Tool/governance reviews, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, exact 27-path canonical convergence, two-pass root 19/19 parity, immutable annotated tag, GitHub Release, and fresh-public master/tag reproduction passed. Active candidate `v10.65 / P149` adds proof reachability, authenticated/private capability preflight, deterministic no-retry, reachable-authorized source selection, and supplied rendered-artifact proof limits across five existing Runtime Rules; candidate verification and publication remain open. The Runtime Rule payload remains exactly 19 files.
 
 <!-- CTA Buttons -->
 <p>
@@ -231,9 +231,9 @@ These capabilities summarize the current operating model at the front-page level
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | Deterministic precedence plus advisory durable expansion and internally routed bounded-support boundaries |
-| [`evidence-discipline.md`](evidence-discipline.md) | Evidence discipline | Verify-first factual reasoning, scoped lookup discipline, proof-aware uncertainty, and real-over-mock behavior |
+| [`evidence-discipline.md`](evidence-discipline.md) | Evidence discipline | Verify-first reasoning plus witness-specific proof limits for supplied rendered artifacts and authenticated harness results |
 | [`refusal-and-recovery.md`](refusal-and-recovery.md) | Refusal and recovery chain | Normalized intent classification plus recoverable blocked-path responses |
-| [`action-safety.md`](action-safety.md) | Action safety | Intent verification, destructive confirmation, topology discipline, emergency posture, retry boundaries, and duplicate/stale Agent Team failure classification |
+| [`action-safety.md`](action-safety.md) | Action safety | Consequential-action gates plus authenticated/private capability preflight, bounded correction, and deterministic retry stop |
 
 ---
 
@@ -257,8 +257,8 @@ These capabilities summarize the current operating model at the front-page level
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`coding-discipline.md`](coding-discipline.md) | Coding execution discipline | Maintainable structure, proportionate verification, and tactical-to-strategic convergence |
-| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Selects direct continuation, candidate goals, advisory posture, clarification, or no successor |
-| [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs the execution-selected goal and preserves verified `Plan reference` and `/plan` overflow guards |
+| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Selects continuation and successor posture while preserving reachable closure and explicitly selected terminal proof |
+| [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs proof-layer-aware goals, orders prerequisites, and preserves verified `Plan reference` and `/plan` overflow guards |
 | [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective lane and owns checked Agent Team reuse/steer/wait/partition/respawn decisions |
 | [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves design then conditional diagram startup, creates Patch chronology from one UTC instant, governs live `/phase`, and separates TODO from live tasks |
 
@@ -273,20 +273,21 @@ These capabilities summarize the current operating model at the front-page level
 | [`document-governance.md`](document-governance.md) | Document governance baseline | One authority model for README/design/diagram/changelog/patch/history, including verified timestamped Patch identity, plus conditional diagram synchronization and UDVC-1 |
 | [`document-integrity.md`](document-integrity.md) | Document integrity | Cross-reference consistency, evidence/hash-bound Patch rename propagation, archive preservation, rollover boundaries, and no-drift / no-delete-by-hygiene discipline |
 | [`safe-io.md`](safe-io.md) | Safe file and terminal I/O | Bounded reading/output, parent-index-first reads, and rollover signals for oversized entrypoints |
-| [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External source trust | Proactive web-backed verification, source ranking, and conflict-aware evidence grounding |
+| [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External source trust | Ranks reachable authorized claim-fit sources and bounded substitutes after capability preflight |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance | Keeps memory scoped, compact, path-aware, and subordinate to checked current evidence |
 | [`portable-implementation-and-hardcoding-control.md`](portable-implementation-and-hardcoding-control.md) | Portability defaults | Prevents machine-local assumptions from becoming shared contracts |
 
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Candidate `v10.64 / P148` adds verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and a reusable repository Tool; integrated verification and release remain pending.
-- Released `v10.63` remains immutable and keeps the Case 17 queue/worker-lease goal's plan and proof inside that slice while retry/backoff and status visibility remain deferred sibling notes.
+- Candidate `v10.65 / P149` advances five existing Runtime Rule triads for proof reachability, selected terminal-gate preservation, authenticated/private capability preflight, deterministic no-retry, reachable-authorized source selection, and bounded supplied rendered evidence.
+- Focused doctrine/scenario/triad and exact governance/allowlist/protected-byte/mode/link checks pass; Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews also pass. Exact candidate commit/approval, real Runtime Rule installation, publication, and fresh-public verification remain open.
+- Released `v10.64 / P148` remains immutable and provides verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and the repository-only Patch timeline Tool.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
-- Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.63
+- Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `<user-runtime-rules>` is a downstream user-scope install target.
+- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.64
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -652,7 +653,7 @@ artifact-initiation-control.design.md
 - the active runtime scope stayed limited to the then-README-installed 41 root rule files
 - final source state was recorded at 4,051 lines / 31,316 words / 231,675 bytes
 - runtime install into `~/.claude/rules/` happened only after the separate install gate opened
-- latest child `P073-15` preserves the 19-Rule boundary and prepares v10.63 to keep queue/lease plan and proof bounded while retaining retry/status only as deferred sibling notes outside execution and proof
+- child `P073-15` preserved the 19-Rule boundary in released v10.63 by keeping queue/lease plan and proof bounded while retaining retry/status only as deferred sibling notes outside execution and proof
 - parity passed with no missing active files or hash mismatches
 - co-located runtime files outside the source-owned install set remained observed-only and untouched
 
@@ -1068,7 +1069,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: candidate `v10.64 / P148` advances three Runtime Rule triads and adds the repository-only Patch timeline Tool while the active install set remains exactly 19; focused Tool tests, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, and disposable installation pass, while final review, canonical/root, publication, and fresh-public gates remain pending.
+- Source state: candidate `v10.65 / P149` advances five existing Runtime Rule triads while the active install set remains exactly 19; focused doctrine/scenario/triad and exact governance checks, Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews pass, while exact candidate commit/approval, real Runtime Rule installation, publication, and fresh-public gates remain pending.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
@@ -1082,9 +1083,10 @@ Result: ✅ Verified from actual files
 ### Evidence discipline
 
 - Current README meaning: proof-seeking, premise checking, and claim-state boundaries stay separate.
-- Scope: fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, completed-baseline evidence, and binding constraints.
+- Scope: fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, completed-baseline evidence, binding constraints, and witness-specific supplied-artifact proof.
+- Supplied evidence: screenshots, Rendered HTML, rendered text/semantic witnesses, sanitized exports, and authenticated harness results remain useful without being projected into unsupported live, authenticated, complete, or stable claims.
 - Correction behavior: preserve a valid goal while correcting a false premise; retract invalidated assistant advice with the failed premise, contrary evidence, corrected route, and remaining gate.
-- Impact: reduces overclaim, premise momentum, floating recommendation, sycophantic agreement, and hallucination risk.
+- Impact: reduces overclaim, premise momentum, floating recommendation, sycophantic agreement, repeated impossible access attempts, and hallucination risk.
 
 ### Phase execution
 
@@ -1194,7 +1196,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.63 |
+  <b>Version</b>: 10.64 |
   <b>Last Updated</b>: 2026-08-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

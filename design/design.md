@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.64
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
+> **Current Version:** 10.65
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
 
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.64` keeps the same 19 body-sufficient source-owned Runtime Rules while adding verified original-creation chronology for governed Patch artifacts. `document-governance.md` owns the canonical identity/evidence contract, `phase-todo-artifact.md` owns one-instant exclusive creation and exact Phase linkage, `document-integrity.md` owns evidence/hash-bound migration and reference convergence, and the repository-only `script/patch-timeline.mjs` Tool remains outside the Runtime Rule installation payload.
+The active target model for candidate `v10.65` keeps the same 19 body-sufficient source-owned Runtime Rules while adding proof-reachability, authenticated/private capability, deterministic retry, reachable-source, and supplied-rendered-artifact evidence contracts across five existing owners. Released `v10.64` remains the latest published baseline and retains verified Patch chronology plus the repository-only `script/patch-timeline.mjs` Tool outside the Runtime Rule installation payload.
 
 ---
 
@@ -36,6 +36,12 @@ Current target-state priorities:
 - new Patch creation captures the instant once, creates exclusively, emits exact direct references, and preserves creation identity across revisions and governed moves
 - legacy Patch migration remains evidence/hash-bound, updates only resolved exact references, blocks ambiguous or colliding rows, preserves suspended archives, and requires explicit verify/rollback rather than automatic fallback
 - `script/patch-timeline.mjs` is dependency-free repository tooling for inventory, evidence audit, planning, creation, apply, verification, and rollback; it never enters the ordered 19-Rule Runtime payload
+- governed Goal construction distinguishes required proof, current reachable proof, successor/excluded proof, and route prerequisites; an explicitly selected live terminal gate remains binding rather than being demoted for difficulty
+- execution closes a source/local Goal only at its selected reachable layer and surfaces genuinely distinct downstream Product proof as a prerequisite-bearing successor without claiming live completion
+- authenticated/private access starts with target, network, tool/session, authorization, approval, and bounded-substitute preflight; one evidence-backed correction may run before deterministic `NO_RETRY_UNTIL_CHANGE`
+- guest/login or `401` shows required authentication was not established; `403` shows refusal while authentication-versus-authorization cause remains unresolved; none alone proves the authenticated Product is broken
+- external verification ranks only reachable authorized claim-fit sources after capability preflight, while approval, credential, and retry ownership remains with action safety
+- screenshots, Rendered HTML, rendered text/semantic witnesses, sanitized console/log/network exports, and authenticated harness evidence remain useful only within their witness-specific proof boundaries
 - runtime rules stay as body-sufficient active behavior contracts
 - one complete canonical owner should retain each mechanism; consumers keep only activation, local consequence, handoff, or the minimum synchronized exact copy needed to prevent a likely execution, safety, verification, or ordering error
 - supporting explanation stays opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action
@@ -146,6 +152,8 @@ Release validation for this master design chain should confirm:
 - this parent remains compact and body-sufficient
 - child shards are reachable and role-correct
 - runtime/design/changelog versions align
+- the five proof/auth/evidence triads advance together while the other 14 Runtime Rules remain byte-identical and the ordered inventory stays exactly 19
+- Cases 17/12/04 plus matrix/coverage exercise reachable closure, selected terminal-gate preservation, authenticated capability, deterministic retry, and supplied-artifact proof limits
 - forward-valid phase grammar explicitly includes `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
 - observed alphanumeric phase forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous
 - observed project shape, extracted doctrine, selected target form, and any equivalence-claim basis stay distinct when checked examples ground governance recommendations

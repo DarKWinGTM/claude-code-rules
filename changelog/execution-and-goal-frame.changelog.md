@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.31
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.32
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.32 | 2026-08-10 | **[Added reachable proof closure and terminal live-verification goal boundaries](#version-132)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.31 | 2026-08-09 | **[Made advisory goal eligibility execution-owned](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.30 | 2026-08-09 | **[Added premise-before-expansion and completed-baseline protection](#version-130)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.29 | 2026-08-09 | **[Added proactive design completeness and migration convergence continuation](#version-129)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -46,6 +47,21 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-132"></a>
+## Version 1.32: Added reachable proof closure and terminal live-verification goal boundaries
+
+**Date:** 2026-08-10
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Required execution to complete all independent proof reachable in the current state before stopping at an approval, state, or capability gate.
+- Distinguished proof required by the current Goal from a separate successor live-verification Goal, preventing both premature closeout and indefinite extension of an already satisfied bounded Goal.
+- Required terminal proof obligations, prerequisites, pass/fail signals, and meaningful resume triggers to remain explicit across a legitimate stop.
+- Prevented unchanged retries or implied automatic future execution when approval, environment state, or required capability has not changed.
+
+### Summary
+This version closes the proof-reachability execution gap by preserving all reachable proof, retaining gated terminal proof without misclassifying it, and stopping honestly when another attempt cannot produce new evidence.
 
 <a id="version-131"></a>
 ## Version 1.31: Made advisory goal eligibility execution-owned

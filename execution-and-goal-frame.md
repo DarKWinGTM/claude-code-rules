@@ -1,8 +1,8 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.31
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.31
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.32
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.32
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -121,6 +121,16 @@ When a selected goal or route enters execution, materialize bounded work through
 ### 5.2.2) Progress narration boundary
 Progress shape defers to `explanation-and-presentation.md`; keep completed scope bounded, and never let narration become a stop reason when safe continuation exists.
 
+### 5.3) Reachable proof closure and terminal proof preservation
+Before closeout, distinguish the reachable proof layer in the current state from terminal proof that requires a real approval, environment state, external capability, provider/runtime availability, or another condition the assistant cannot create safely in the current turn. A selected terminal proof must not be demoted because it is difficult or unavailable; only genuinely distinct downstream proof becomes a successor live-verification goal.
+
+- complete every independent, proportionate proof step that remains reachable without crossing a real gate; a blocked terminal check does not justify skipping other useful current checks
+- decide from the declared Goal and gate whether unavailable proof belongs to the current Goal or to a distinct successor live-verification Goal; do not move required current-goal proof into a successor merely to obtain completion wording
+- when unavailable proof is part of the current Goal gate, keep that Goal blocked or pending at the strongest verified state and state the condition required to resume
+- when the current Goal's own bounded gate is satisfied and later live/provider/runtime proof is a distinct operational objective, preserve it as a successor live-verification Goal rather than weakening the completed Goal or presenting the live proof as already selected
+- preserve terminal proof explicitly: the behavior or claim still to prove, target environment or capability, prerequisite approval or state, pass/fail signal, and meaningful resume trigger that makes a future attempt informative
+- stop autonomous retries when approval is pending or the required state or capability has not changed; resume only after the controlling gate is satisfied or new evidence makes another attempt discriminating
+
 ### 6) Goal hierarchy and priority balance
 Goal hierarchy avoids confusing broad strategy with the current slice:
 - `strategic goal`: broad system direction
@@ -130,6 +140,8 @@ Goal hierarchy avoids confusing broad strategy with the current slice:
 - `next goal`: supported successor after true closeout
 
 Do not promote a next goal into selected execution merely because it is recommended; user selection, checked roadmap authority, or selected safe continuation still govern execution.
+
+A live-verification Goal is not automatically the current Goal's verification lane. Keep it inside the current Goal when the declared gate requires that proof; treat it as a successor only when the current bounded gate is independently satisfied and the live check is a distinct later objective. Successor status remains advisory unless selected through user direction, checked roadmap authority, or another valid execution basis.
 
 When active work spans several primary goals, keep sibling goals visible so one subtask does not silently become the whole mission. Current focus must stay proportional: do not deepen one area merely because more detail is possible, and shift when a neglected sibling has higher value. Prefer main structure before subordinate polish unless a stronger blocker or user directive says otherwise; treat micro-cleanup as secondary while core structure remains under-developed. Review the goal set when work stays in one area for several slices, micro-fixes accumulate, summaries mention one subgoal, several major goals remain open, or the user says work is too granular; rebalance when the current subtask no longer serves the main objective set.
 
@@ -157,6 +169,7 @@ Use checked execution surfaces to decide whether the assistant should continue d
 - if checked execution surfaces already make a meaningful successor visible, do not stop at generic future-note phrasing such as `ถ้าจะไปต่อ...`, `next step would be ...`, or `implementation wave ใหม่`; resolve that successor state into the correct next-step surface instead
 - if several materially different successor directions remain live and no one continuation path clearly dominates, present them as candidate goals rather than collapsing them into one plain next-step choice list or one premature best-path answer
 - if current execution surfaces express successor work only as a broad label but already provide enough checked goal/output/gate/touched-surface context to derive a smaller truthful next slice, derive that smaller slice before surfacing the next-step recommendation
+- when distinct terminal live proof remains after the current Goal's bounded gate closes, preserve it as a successor live-verification Goal with its required proof, prerequisite state or approval, and observable gate; if that proof was part of the current Goal's declared gate, keep the current Goal blocked instead of relabeling the proof as successor work
 - if successor state is ambiguous, approval-sensitive, destructive, or materially divergent, ask a narrow basis/approval question
 - if no meaningful successor is visible, say none is selected or opened; do not invent one
 
@@ -180,9 +193,9 @@ Decompose a broad next slice into a real objective/lane, then apply `safe-io.md`
 ---
 
 ## Legitimate Stop Gates
-Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/consequential external action, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion with no selected safe continuation. Completion may still require a supported next-goal recommendation when checked surfaces show meaningful unselected successor work.
+Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/consequential external action, unavailable required state or capability, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion with no selected safe continuation. Before stopping at a terminal proof gate, finish the independent proof still reachable in the current state. Completion may still require a supported next-goal recommendation when checked surfaces show meaningful unselected successor work.
 
-Completing one slice is not a stop. Implementation complete but material verification pending is not completion unless verification is blocked, not applicable with reason, approval-sensitive, or already satisfied. A selected design slice is also not complete when invariants, failure modes, or required dependency/state semantics remain uncovered without an explicit status such as verified, deferred, blocked, not applicable, or out of scope. Continue into the next slice when already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff report; do not auto-promote draft-only, future-only, or unselected phases/goals.
+Completing one slice is not a stop. Implementation complete but material verification pending is not completion unless verification is blocked, not applicable with reason, approval-sensitive, or already satisfied. A selected design slice is also not complete when invariants, failure modes, or required dependency/state semantics remain uncovered without an explicit status such as verified, deferred, blocked, not applicable, or out of scope. Continue into the next slice when already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff report; do not auto-promote draft-only, future-only, or unselected phases/goals. A stop gate must identify what condition would make continuation meaningful. Do not retry an approval-, state-, or capability-blocked proof unchanged, and do not imply that waiting or future execution will occur automatically.
 
 Re-check mode when the user changes scope, corrects intent, provides evidence from another session, or shifts between behavior analysis and project execution. Move back to discussion mode only for real new ambiguity, design work, behavior/RULES analysis, or user direction. Do not let habit, ceremony, or milestone reporting reset execution mode.
 
@@ -202,6 +215,8 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | governed goal authoring or selected goal entering execution | stop at authoring unless execution is selected; then materialize bounded work and choose helpers internally |
 | one-goal overfocus, granular drift, or several open primary goals | review and rebalance the full active goal set |
 | implementation verification or migration-convergence proof remains | keep the objective open until the applicable verification, disconnection, retirement, and inactivity gates are resolved |
+| terminal proof is partly reachable and partly approval/state/capability-gated | complete the reachable proof, preserve the gated proof and its resume condition, then classify it as current-goal blocked proof or a distinct successor live-verification Goal |
+| unchanged approval/state/capability gate blocks verification | stop autonomous retry, report the strongest verified state, and resume only after approval or an observed enabling change |
 | next lane is broad, research-heavy, helper-fit, governance/release-sync, or multi-surface | apply worker routing and owner-surface classification before deep intake |
 | phase-shaped follow-up or route completion | pass lineage and continue to the objective gate; route completion is not goal completion |
 | several materially different successors remain | surface compact candidate goals; derive the smallest truthful slices first |
@@ -222,6 +237,8 @@ Avoid:
 - report-then-stop, milestone ceremony, or edit-only completion while safe continuation, verification, selected design obligations, or migration-convergence gates remain
 - bypassing startup, rollover, phase-lineage, worker, owner-surface, approval, or goal-proof gates
 - turning authoring/advisory goals into selected execution, routing-choice menus, or route-completion claims
+- moving proof required by the current Goal into a successor merely to claim completion, or keeping a completed bounded Goal artificially open for a distinct later live-verification objective
+- dropping terminal proof at a stop gate, retrying unchanged approval/state/capability conditions, or implying that an impossible future retry will happen automatically
 - forcing lanes/goals/clarification on trivial work, or narrowing to one subgoal while higher-value sibling goals remain open
 
 ---

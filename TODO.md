@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-08-09
 > **Current Release:** v10.64 published and fresh-public-tag verified
-> **Active Wave:** none selected
+> **Active Wave:** P149 / candidate v10.65 proof reachability and authenticated evidence
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,15 @@
 
 ## Active / In Progress
 
-No RULES release wave is currently selected.
+- [ ] **P149 / candidate v10.65 proof reachability and authenticated evidence** is active in the clean candidate workspace.
+  - [x] Added Cases 17/12/04 plus matrix/coverage branches for reachable proof closure, selected live terminal-gate preservation, authenticated/private capability preflight, deterministic no-retry, and bounded supplied rendered evidence.
+  - [x] Advanced five existing Runtime Rule/design/changelog triads without adding a twentieth Runtime Rule.
+  - [x] Synchronized the P149 Phase, timestamped Patch, Patch changelog, v10.65 shard, master design/changelog, phase summary, and README.
+  - [x] Verified the frozen 29-path scope, five changed and 14 protected Runtime Rules, exact 19-file inventory, links/modes/bodies, fixtures, Patch timeline regression, disposable install, idempotence, and independent reviews.
+    - Corrected the independently found HTTP `403` semantics and active-phase baseline wording, then reran focused checks; doctrine and release/no-drift reviews pass. The final approval packet remains open.
+  - [ ] Prepare the exact candidate SHA/scope approval packet before real Runtime Rule installation, push, annotated v10.65 tag, GitHub Release, or dirty-checkout reconciliation.
+  - Phase: [phase-149-proof-reachability-and-authenticated-evidence.md](phase/phase-149-proof-reachability-and-authenticated-evidence.md)
+  - Patch: [2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md](patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md)
 
 ---
 

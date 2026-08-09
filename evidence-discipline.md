@@ -1,8 +1,8 @@
 # Evidence Discipline
 
-> **Current Version:** 1.7
-> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.8
+> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.8
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
 
 ---
@@ -55,6 +55,25 @@ Prefer real APIs, services, data, config, runtime paths, and local equivalents w
 
 Mock/local evidence cannot prove live/provider/runtime/deploy behavior or justify `working`, `fixed`, `live`, `verified`, or `production-ready` wording for the real system. Never hide a mock behind hardcoded success or placeholder behavior.
 
+### 4.1) Supplied rendered artifacts and authenticated harness evidence
+`<supplied-rendered-artifact>` is a portable semantic placeholder for an accessible artifact supplied through an approved path; it must not be replaced in shared doctrine by a workstation path, localhost URL, private hostname, cookie location, or another machine-local value.
+
+Treat the artifact as `USER_PROVIDED` for provenance. After direct inspection, its visible or serialized contents may support `OBSERVED_LOCAL` claims only inside the inspected artifact scope; claimed origin, capture time, target equivalence, authenticated state, completeness, and current-live status remain unverified unless separately checked.
+
+Record the witness type, source or capture time when known, checked scope, sanitization or redaction, authenticated mechanism when applicable, and material omissions. Unknown provenance lowers claim scope; it does not make the artifact unusable.
+
+Correlate multiple witnesses only when their target, run or session, capture window, and provenance linkage are checked. A witness for one evidence dimension does not silently prove another.
+
+| Witness | Supports in checked scope | Does not prove alone |
+|---|---|---|
+| Screenshot | visible pixels, viewport, and displayed state at capture time | DOM or semantic structure, hidden state, interaction/network/auth correctness, other breakpoints, current-live state, or stability |
+| Rendered HTML | supplied rendered markup or DOM snapshot, included attributes/content, and directly exposed privacy/security signals | visual geometry, focus/animation, interaction outcome, network success, current authenticated session, or live equivalence |
+| Rendered text or semantic witness | supplied text, labels, roles, headings, states, and semantic relationships represented by the witness | visual layout, clipping/overlap, color/contrast, animation, focus rendering, or responsive geometry |
+| Sanitized console/log/network export | preserved entries, requests, responses, statuses, timing, and errors included after sanitization | omitted or redacted events, absence of an event, complete runtime sequence, UI state, or stability outside the export slice |
+| Authenticated harness evidence | the authorized authenticated path, asserted identity or role where checked, observed behavior, and assertions for that run | other identities or roles, untested flows, production-wide behavior, repeated reliability, or long-term stability from one pass |
+
+The final column states what each witness cannot prove alone. A screenshot, Rendered HTML, rendered text or semantic witness, or sanitized export can justify artifact-bounded analysis, but live, current, authenticated, or stable wording requires matching evidence. One authenticated harness pass is runtime evidence for that authorized run, not stability proof.
+
 ### 5) Uncertainty honesty
 When evidence is incomplete or conflicting, expose what is known, inferred, and unresolved instead of inventing specifics.
 
@@ -66,7 +85,7 @@ When evidence is incomplete or conflicting, expose what is known, inferred, and 
 |---|---|---|
 | `AUTHORITATIVE_EXTERNAL` | trusted external source directly relevant to the factual claim (API docs, specs, provider behavior) | highest for external factual claims |
 | `OBSERVED_LOCAL` | direct local/project evidence inside checked scope: file, grep, command, test, git observation | highest for local facts inside inspected scope; weaker than governed semantic authority for file meaning |
-| `USER_PROVIDED` | fact, constraint, intent, preference, direction, or environment detail from the user | high as input evidence and direction; factual endorsement or technical contradiction still needs relevant evidence |
+| `USER_PROVIDED` | fact, constraint, intent, preference, direction, environment detail, or supplied artifact from the user | high as input or provenance evidence; inspected artifact contents may become direct observed evidence in that artifact scope, while origin, live equivalence, and authenticated state still require checking |
 | `RECALLED_PATH_MATCHED_CONTEXT` | applicable path-scoped memory that may aid continuity but is not current verified repo truth | useful context; exact current-state claims require recheck |
 | `EVIDENCE_BACKED_INFERENCE` | reasoned conclusion from observed facts | medium |
 | `WORKING_HYPOTHESIS` | plausible but unproven explanation or direction | low |
@@ -105,6 +124,7 @@ External evidence receives `AUTHORITATIVE_EXTERNAL` strength only when the exter
 | fact or factual endorsement | direct authoritative/observed evidence in relevant scope | use factual wording; otherwise acknowledge or verify |
 | preference/direction or concern | user statement | accept direction or raise verification priority without treating it as proof |
 | substantial analysis/recommendation | practical material evidence where proportional | check first; keep remaining premises labeled and bounded |
+| rendered, visual, semantic, network, or authenticated-runtime claim | a directly inspected witness whose type and checked scope match the claim | name witness type, provenance, sanitization, and run scope; do not project screenshot → DOM/network/auth, HTML/text → visual geometry, sanitized export → absence/completeness, or one harness pass → stability |
 | supplier/model/path-specific fix scope | evidence that local doctrine differs or the shared-mechanism explanation is weaker | earn the narrowing; do not choose it for patch convenience |
 | binding constraint | hard requirement, safety boundary, authoritative rule, or verified contradiction | bind only the supported constraint |
 | direct contradiction | contrary evidence in the same scope | cite it and correct the claim, not the person by default |
@@ -122,6 +142,9 @@ Verify material technical claims, project paths/symbols/config/runtime values, c
 Operational sequence:
 1. identify the material factual question
 2. seek proportionate local or authoritative external evidence
+
+For a supplied rendered artifact or authenticated harness result, identify the witness type, provenance and capture scope, sanitization, authorization and run scope, and the exact claim dimension before classifying the evidence.
+
 3. classify evidence and claim state
 4. state what it proves, suggests, and leaves unresolved
 5. bind only supported hard constraints; otherwise continue with labeled assumptions or hypotheses
@@ -138,7 +161,7 @@ Verification status labels: ✅ **Verified**, ⚠️ **Unverified**, ❌ **Not F
 ---
 
 ## Anti-Patterns
-Avoid fabricated or unsupported claims; preference treated as proof; inference presented as fact/cause; plausible symptoms collapsed into verified root cause; limited non-findings presented as absence; target tests or one grep presented as migration completion; git/cleanup state treated as disposal authority; person-directed correction without contrary evidence; ordinary evidence treated as a rigid lock; or fake/simulated/placeholder behavior presented as real, persistent, integrated, live, or complete.
+Avoid fabricated or unsupported claims; preference treated as proof; inference presented as fact/cause; plausible symptoms collapsed into verified root cause; limited non-findings presented as absence; target tests or one grep presented as migration completion; git/cleanup state treated as disposal authority; person-directed correction without contrary evidence; ordinary evidence treated as a rigid lock; supplied artifact provenance treated as independently verified origin/auth/live equivalence; screenshot, Rendered HTML, semantic witness, or sanitized export projected beyond its evidence dimension; one authenticated harness pass presented as stability; or fake/simulated/placeholder behavior presented as real, persistent, integrated, live, or complete.
 
 ---
 

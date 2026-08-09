@@ -1,8 +1,8 @@
 # Design - Action Safety
 
 > **Parent Rule:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.4
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.5
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/action-safety.changelog.md](../changelog/action-safety.changelog.md)
 
 ---
@@ -27,6 +27,8 @@ P146 refinement: completed migrations and authority replacements must converge t
 
 P073-12 refinement: `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` is a `LIKELY_SYSTEMIC` / `STOP_AND_ESCALATE` failure profile that blocks unchanged same-role respawn while state is unresolved. `worker-routing-and-context.md` owns inspection and the reuse/steer/wait/partition/respawn lifecycle decision.
 
+v1.5 refinement: authenticated/private access begins with a bounded capability preflight covering target and evidence objective, network reachability, tool/browser support, approved session mechanism, user authorization, consequential-action approval, and accessible bounded substitutes. A guest/login response or `401` shows that required authentication was not established for the request. A `403` shows refusal and may reflect missing authentication or insufficient authorization; it does not identify which by itself. None alone proves failure of the authenticated Product. One evidence-backed target or mechanism correction may run when it materially changes the checked mechanism; if the corrected route still lacks authorized supported capability, the failure remains `DETERMINISTIC_NON_RETRIABLE` / `NO_RETRY_UNTIL_CHANGE`. The correction must not bypass approval or secret-handling boundaries, and raw credentials, cookies, tokens, private keys, or session-state dumps must not become convenience substitutes.
+
 ---
 
 ## Runtime Requirements
@@ -35,6 +37,7 @@ P073-12 refinement: `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` is a `LIKE
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Require migration/cutover closure to prove one active authority, disconnected former execution edges, retired bridges, and inactive quarantine/history.
 - Keep restoration explicit, approved, exact-source-bound, replacement-only, and followed by single-authority verification; never create an automatic fallback engine.
+- Require authenticated/private capability and authorization preflight before access, preserve approval and secret boundaries, allow only one discriminating evidence-backed mechanism correction, and stop unchanged retries until a named relevant state changes.
 - Keep metadata linked to this design and the chain changelog.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 

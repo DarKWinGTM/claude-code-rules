@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.20
+> **Current Version:** 2.21
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P148 / v10.64 released and fresh-public-tag verified; no RULES release phase active
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Status:** P149 / candidate v10.65 active; candidate commit and approval-gate preparation in progress
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,11 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- No RULES release phase is currently selected.
+- **P149:** [Proof reachability and authenticated evidence](phase-149-proof-reachability-and-authenticated-evidence.md)
+  - Output: candidate v10.65 advances five existing Runtime Rule triads and three scenario families so source/local Goals can close at the selected reachable proof layer, explicitly selected live terminal gates remain binding, authenticated/private capability is preflighted, unchanged impossible retries stop, and supplied rendered artifacts remain claim-bounded.
+  - Gate: exact frozen 29-path scope, five changed and 14 protected Runtime Rules, 19-file inventory, independent reviews, exact candidate approval, real Runtime Rule installation, publication, and fresh-public proof.
+  - Current evidence: governance synchronization, automated candidate checks, Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews pass; exact candidate commit/approval and approval-gated install/publication remain open.
+  - Patch: [Proof reachability and authenticated evidence](../patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md).
 
 ### Blocked Predecessor
 
@@ -76,80 +80,61 @@ Earlier released phase-map detail remains preserved in the [2026-08-09 pre-rollo
 
 ---
 
-## P148 Lineage and Lane Map
+## P149 Lineage and Lane Map
 
 ### Lineage
 
-No RULES release phase is active. P073-15 and P147 are closed, while P148 introduces a distinct Patch-governance and reusable-Tool capability with its own migration, verification, install, and release gates. Current-phase and existing-family child fit are therefore ruled out; P148 is the smallest truthful new major.
+P148 / v10.64 is released and closed. P149 changes five existing Runtime Rule owners and adds a distinct proof-reachability, authenticated-capability, retry, and supplied-evidence family with its own scenario, installation, and publication gates. It is not a residual child of Patch chronology or the earlier Case 17 route-scope correction family, so P149 is the smallest truthful new major.
 
 ### Lanes
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Tool | `script/patch-timeline.mjs` plus focused Node tests | filename/metadata/evidence, manifest, exact reference, create/apply/verify/rollback, archive preservation | verified in candidate; 32 tests and independent review pass |
-| Doctrine | three Runtime Rule/design/changelog triads | owner separation, no ID/index, no inferred timestamps, substantive bodies | verified in candidate; independent governance review passes |
-| Governed integration | Patch, Case 09, matrix/coverage, Phase/TODO/changelog/README | exact links, modes, candidate-safe state | candidate verification passed; canonical convergence pending |
+| Scenario/TestKit | Cases 17/12/04 plus matrix/coverage | reachable closure, terminal-gate preservation, capability preflight, deterministic retry, supplied-artifact limits | implemented; focused checks pass |
+| Doctrine | five existing Runtime Rule/design/changelog triads | versions/session/links, owner boundaries, no twentieth Rule | implemented; triad check passes |
+| Governed integration | P149 Phase/Patch/release shard plus master design/changelog, TODO, summary, README | exact links, candidate-safe wording, frozen scope | verified in candidate |
+| Candidate verification | allowlist/protected bytes, fixtures, Patch timeline, disposable install, independent reviews | 29 paths, five changed Rules, 14 protected Rules, 19-file payload | verified in candidate; independent reviews pass |
+| Runtime installation | approved clean candidate → user runtime | exact approval packet, 19/19 parity, idempotence, unrelated-file preservation | requires approval |
+| Publication | public master, annotated v10.65, Release, fresh clones | exact SHA/scope, immutable identities, fresh-public reproduction | requires approval |
+
+---
+
+## P148 Lineage and Lane Map
+
+### Lineage
+
+P073-15 and P147 were closed, while P148 introduced a distinct Patch-governance and reusable-Tool capability with its own migration, verification, install, and release gates. Current-phase and existing-family child fit were therefore ruled out; P148 was the smallest truthful new major.
+
+### Lanes
+
+| Lane | Owner/output | Verification gate | Status |
+|---|---|---|---|
+| Tool | `script/patch-timeline.mjs` plus focused Node tests | filename/metadata/evidence, manifest, exact reference, create/apply/verify/rollback, archive preservation | verified and released; 32 tests and independent review pass |
+| Doctrine | three Runtime Rule/design/changelog triads | owner separation, no ID/index, no inferred timestamps, substantive bodies | verified and released; independent governance review passes |
+| Governed integration | Patch, Case 09, matrix/coverage, Phase/TODO/changelog/README | exact links, modes, truthful lifecycle state | verified and released; canonical convergence passed |
 | NodeClaw audit | 576 selected and 199 preserved files | before/after Git and filesystem zero-mutation witnesses | verified read-only; 0 mutation rows and 576 evidence blockers |
 | Canonical/root | exact allowlist and 19 installed Runtime Rules | overlap safety, 19/19 parity, two-pass idempotence, Tool excluded | verified; 27-path parity and two-pass 19/19 install pass |
 | Publication | public master, annotated v10.64, Release, fresh clones, closeout | immutable identity and fresh-public reproduction | verified and released; documentation-only closeout published |
 
 ---
 
-## P073-15 Lineage and Lane Map
+## Earlier Lineage References
 
-### Lineage
-
-P073-14 and v10.62 are published and immutable. P073-15 corrects the residual bounded-goal route-scope contradiction inside the same Case 17 owner-boundary verification family without introducing a new Runtime Rule, capability, installer behavior, or architecture family. Reopening P073-14 or creating a new major is not justified.
-
-### Lanes
-
-| Lane | Owner/output | Verification gate | Status |
-|---|---|---|---|
-| Scenario correction | queue/lease-only plan and proof; retry/status as deferred sibling notes | section-bounded positive/forbidden checks plus independent pre-publication and fresh-tag whole-file reviews | verified and released |
-| Governance | exact nine-path P073-15/v10.63 release plus eight-path closeout | links, modes, truthful lifecycle state, immutable v10.60-v10.63 | verified and closed |
-| Protected state | 19 Runtime Rules, triads, installers/fixtures, prior releases | byte identity and exact ordered inventory | verified unchanged |
-| Canonical convergence | eight exact file copies plus bounded TODO anchor merge | release-owned parity with unrelated canonical TODO/plugin work preserved | verified |
-| Root installation | unchanged 19-file canonical payload installed twice | 19/19 byte/mode parity, manifest convergence, no unrelated mutation/quarantine | verified idempotent |
-| Integration/release | public master/tag/Release/fresh clones | exact scope, immutable annotated tag, GitHub Release, fresh-tag proof | verified and released |
-
----
-
-## P073-13 Lineage and Lane Map
-
-### Lineage
-
-P073-12 is completed and immutable. P073-13 repairs a failed integrated Case 17 scenario-verification gate inside the same owner-boundary family while preserving every Runtime Rule and install payload, so the smallest truthful identity is the existing-family child `073-13`; reopening P073-12 or creating a new major is not justified.
-
-### Lanes
-
-| Lane | Owner/output | Verification gate | Status |
-|---|---|---|---|
-| Scenario correction | candidate/advisory separation, bounded goal, and owner map | tagged v10.61 scope verified; residual visible ordering and route-branch defects transferred to P073-14 | released; superseded gate owned by P073-14 |
-| Governance | exact nine-path P073-13/v10.61 set | links, modes, truthful lifecycle wording, immutable v10.60 | verified and released |
-| Protected state | 19 Runtime Rules, triads, installers/fixtures, root install | byte identity and exact ordered inventory | verified unchanged |
-| Integration/release | canonical, public master/tag/Release/fresh clone | 9/9 parity, fixtures, disposable install, annotated tag, fresh-tag proof | verified and released |
-
----
-
-## P147 Lineage and Lane Map
-
-### Lineage
-
-P146 is released and closed. P147-01 overlaps P146's design-completeness concern, but P147 also repairs independent changelog-owner and helper-authority contracts with distinct outputs and gates. The current/child fit therefore does not truthfully contain the combined wave; P147 is a new major correction family.
-
-### Lanes
-
-| Child | Owner/output | Verification gate | Status |
-|---|---|---|---|
-| P147-01 | `execution-and-goal-frame` + `communication-register` triads | false/supported/incomplete premise branches, completed baseline, explicit retraction | verified and released |
-| P147-02 | `phase-todo-artifact` triad | active shard vs inactive history ownership; no fallback owner | verified and released |
-| P147-03 | `authority-and-scope` triad | advisory durable expansion vs internally invoked bounded helper topology | verified and released |
-| Integration | master docs, playground, canonical/root, public release | allowlist, unchanged owners, fixtures, parity, release/fresh clone | verified and released |
+P073-13, P073-15, and P147 are released historical families. Their lineage, lane, verification, and rollback detail remains reachable through their dedicated phase files, the [2026-08-09 pre-rollover snapshot](history/2026-08-09-pre-rollover-SUMMARY.md), and the [released phase archive](done/released-phase-summary-archive.md); they no longer occupy detailed active-entrypoint space.
 
 ---
 
 ## Selected Semantic Coverage
 
+- **Proof reachability:** governed Goals identify required proof, current reachable proof, successor/excluded layers, and prerequisite state without treating prerequisite completion as proof.
+- **Reachable closure:** a truthfully source/local Goal closes at its selected reachable layer; a genuinely distinct downstream Product proof becomes an explicit prerequisite-bearing successor.
+- **Terminal-gate preservation:** authenticated/live Product proof explicitly selected as the current terminal gate remains binding until passed or explicitly narrowed.
+- **Authenticated capability:** target, network, tool/session mechanism, authorization, approval, and bounded substitutes are classified before private access.
+- **Deterministic retry:** after at most one checked discriminating correction, unchanged capability failure becomes `DETERMINISTIC_NON_RETRIABLE / NO_RETRY_UNTIL_CHANGE`.
+- **Access witness:** a guest/login response or `401` shows required authentication was not established; `403` shows refusal but leaves missing-authentication versus insufficient-authorization cause unresolved; none alone proves Product failure.
+- **Source eligibility:** external verification ranks reachable authorized claim-fit sources or bounded substitutes after capability preflight.
+- **Supplied evidence:** screenshot, Rendered HTML, rendered text/semantic witness, sanitized console/log/network export, and authenticated harness results remain bounded to their directly inspected evidence dimensions.
+- **Protected scope:** this wave adds no Runtime Rule, installer feature, raw secret/session path, machine-local shared default, universal release doctrine, or dirty-checkout mutation.
 - **Patch chronology:** timestamped semantic filenames and matching metadata represent verified original creation time; revisions and moves preserve that identity.
 - **Creation evidence:** direct creator/transcript/birthtime/operator evidence is admissible; mtime/ctime and indirect chronology remain prohibited.
 - **Safe lifecycle:** creation captures UTC once and fails exclusively on collision; no Patch ID/index or auto-suffix exists.
@@ -172,40 +157,39 @@ P146 is released and closed. P147-01 overlaps P146's design-completeness concern
 
 ## Development Verification / TestKit Coverage
 
-Selected route: focused `node:test` Tool coverage, Case 09 positive/forbidden-negative assertions, exact triad/link/mode checks, read-only NodeClaw audit, unchanged installer fixture matrices, disposable installation, canonical convergence, two-pass root installation, and fresh public master/tag proof.
+Selected route: `new_testkit_scenario` through Cases 17/12/04 plus exact doctrine/triad/allowlist/protected-byte checks, Bash/PowerShell installer fixtures, Patch timeline regression, disposable installation, independent reviews, approval-gated runtime installation, and fresh-public verification.
 
 Required checks:
-- Timestamp grammar, real UTC calendar instant, filename/metadata equivalence, and authoritative Creation Evidence pass.
-- mtime/ctime and ambiguous legacy evidence remain blockers.
-- Creation captures the clock once, defaults dry-run, requires the matching approval hash, and refuses collisions exclusively.
-- Manifest output is deterministic; source/reference hash or mode drift blocks apply.
-- Only exact governed references change; wildcard doctrine and serialized payloads remain excluded.
-- Apply/verify proves target convergence and former-path inactivity; rollback is explicit and stops on post-apply drift.
-- Suspended archive files remain path/byte/mode identical and absent from mutation rows.
-- NodeClaw inventory is exactly 576 selected and 199 preserved with zero before/after mutation.
-- Exactly three Runtime Rule triads advance; the other 16 Runtime Rules remain byte-identical.
-- The Tool, tests, fixtures, Patch, design, changelog, TODO, and Phase artifacts remain outside the 19-file install payload.
-- Bash/PowerShell installer matrices, disposable installation, canonical overlap checks, and two-pass root 19/19 parity/idempotence pass.
-- Public-master/tag/Release/fresh-clone proof passes before closeout.
+- A source-bounded Goal closes at its selected reachable proof layer and a distinct Product proof remains an explicit successor.
+- An explicitly selected authenticated/live Product terminal gate remains inside the current Goal until passed or explicitly narrowed.
+- Authenticated/private capability and authorization are preflighted before access; guest/login or `401` indicates required authentication was not established, while `403` indicates refusal without identifying authentication versus authorization cause.
+- At most one evidence-backed discriminating correction runs before deterministic `NO_RETRY_UNTIL_CHANGE`.
+- Screenshots, Rendered HTML, rendered text/semantic witnesses, sanitized exports, and authenticated harness results remain within their canonical proof limits.
+- No raw credential/session material, machine-local SMB/GVFS path, private shared default, or universal repository publication requirement enters the candidate.
+- Exactly five Runtime Rules advance; the other 14 remain byte-identical and the ordered inventory stays exactly 19.
+- The frozen scope remains exactly 29 paths with no deletion, symlink change, unexpected file, or mode change.
+- Links, versions, sessions, master maps, substantive bodies, and candidate-safe lifecycle wording align.
+- Bash/PowerShell installer fixtures, Patch timeline regression, disposable installation, second-pass idempotence, and exclusion of governed/support files from runtime scope pass.
+- Independent doctrine and release/no-drift reviews pass before the exact install/publication approval packet is presented.
+- Real Runtime Rule installation, public master, annotated v10.65, GitHub Release, and fresh-public master/tag proof pass before closeout.
 
-Current evidence: focused Tool suite passes 32 tests, including stable creation-time replay, metadata/URI/count guards, and final hash/mode revalidation before replacement or removal; NodeClaw read-only proof returned 576 selected, 199 preserved, 0 mutation rows, 576 evidence blockers, and identical repeated Patch/Git witnesses; Bash/PowerShell installer matrices and a two-pass disposable 19-Rule install pass with the Tool excluded. The exact 27-path candidate synchronized to canonical with the unrelated TODO/plugin suffix and 292 unrelated status entries preserved; canonical/root installation passed 19/19 byte-and-mode parity, 19 manifest rows, Tool exclusion, no quarantine, and identical second-pass state. Public master and fresh master/tag checkouts reproduce release commit `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5`, 32 tests, the 19-Rule payload, Tool exclusion, fixture proof, and second-pass idempotence. Annotated tag object `aba1ab0775188aa9ae65165a19c30e9138210014` and the published non-draft/non-prerelease GitHub Release are verified.
+Current evidence: focused doctrine, scenario, triad, governance/allowlist/protected-byte/mode/link, and README checks pass. Bash and PowerShell installer fixtures pass; all 32 Patch timeline regression tests pass; the P149 Patch inventories as compliant; and a post-repair two-pass disposable installation proves 19/19 byte-and-mode parity, identical second-pass state, governed/support exclusion, and unrelated-file preservation. Independent doctrine and release/no-drift reviews pass after correcting HTTP `403` semantics and active-phase baseline wording. Exact candidate commit/approval packet, real Runtime Rule installation, publication, and fresh-public proof remain pending.
 
 ---
 
 ## Rollback / Containment
 
-- Before publication, discard or revert only the scoped clean-lane P148 allowlist if a gate fails; do not mutate the dirty backup checkout or unrelated canonical/root files.
-- Stop canonical synchronization on unexplained overlap; preserve the known unrelated TODO/plugin block through a bounded anchor merge.
-- Patch apply and rollback require exact manifest/journal hashes and explicit execution; the Tool persists a file-and-directory-synced journal before mutation, rejects ancestor symlinks, uses synced no-clobber source publication and atomic reference replacement, and makes no untested kernel power-loss guarantee; no automatic fallback or archive activation is allowed.
-- NodeClaw remains read-only; a validation failure blocks RULES publication rather than triggering NodeClaw repair.
-- Root installation must fail closed on unrelated mutation, quarantine creation, Tool inclusion, manifest drift, or non-idempotence.
-- After publication, correct defects through a later release; never amend or force-move public v10.58-v10.64 tags.
+- Before publication, revert only the clean candidate's frozen 29-path P149 allowlist; do not mutate the dirty backup checkout or unrelated canonical/root files.
+- Stop on unexpected paths, deletion, symlink/mode change, protected-byte drift, test/review failure, runtime-scope widening, or remote-master change.
+- Real Runtime Rule installation, push, annotated tag, GitHub Release, and dirty-checkout reconciliation require an exact SHA/scope/target/evidence packet and explicit approval.
+- Do not request or transfer raw credentials, cookies, bearer tokens, private keys, or auth-state dumps to bypass a capability block.
+- Preserve v10.64 and all earlier published tags/releases immutably; if v10.65 is later published, correct defects through a later release rather than moving it.
 
 ---
 
 ## Next State
 
-P148 / v10.64 is released and fresh-public-tag verified. Tool and three-triad implementation, 32 focused tests, governed scenario assertions, NodeClaw 576/199 zero-mutation proof, installer matrices, independent Tool/governance reviews, exact 27-path canonical parity, two-pass root 19/19 installation, immutable annotated tag, GitHub Release, and fresh-public master/tag reproduction passed. This documentation-only closeout records the result without moving v10.64; no next RULES release phase is selected.
+P149 / candidate v10.65 is active. The five owner triads, Cases 17/12/04 plus matrix/coverage, and governance surfaces are synchronized. Focused doctrine/scenario/triad/governance checks, Bash/PowerShell fixtures, 32 Patch timeline tests, compliant Patch inventory, post-repair two-pass disposable 19/19 installation, and independent doctrine plus release/no-drift reviews pass. Exact candidate commit/approval packet, real Runtime Rule installation, publication, and fresh-public proof remain open. Released v10.64 remains the latest immutable public release.
 
 ---
 

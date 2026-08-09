@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES should proactively complete materially underspecified non-trivial analysis/design, surface several real next-step options as candidate goals at a decision boundary, and keep the answer easy-first, compact-but-complete, evidence-clear, and decision-ready instead of merely mirroring the prompt, collapsing too early, manufacturing alternatives, stopping at a generic future note, or sprawling into dense prose. It also shows how execution selects advisory eligibility and hands that posture to goal-authoring, which may use bounded internal planning to shape the advisory `/goal` before presentation renders it. Once the goal is selected, goal-authoring should keep compact route support inside the same goal-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is materially needed, without turning route detail into new goal conditions or treating helper output or route completion as goal completion.
+This case family shows how RULES should proactively complete materially underspecified non-trivial analysis/design, surface several real next-step options as candidate goals at a decision boundary, and keep the answer easy-first, compact-but-complete, evidence-clear, and decision-ready instead of merely mirroring the prompt, collapsing too early, manufacturing alternatives, stopping at a generic future note, or sprawling into dense prose. It also shows how execution selects advisory eligibility and hands that posture to goal-authoring, which may use bounded internal planning to shape the advisory `/goal` before presentation renders it. Once the goal is selected, goal-authoring should keep compact route support inside the same goal-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is materially needed, without turning route detail into new goal conditions or treating helper output or route completion as goal completion. A goal must also name a required proof layer that is reachable inside its selected scope: source/local proof may close a source-bounded goal while deployment/install/restart/Product proof remains an explicit successor, but a selected live terminal proof remains binding and cannot be demoted merely because it is difficult or external.
 
 ---
 
@@ -15,8 +15,8 @@ This case family shows how RULES should proactively complete materially underspe
 
 ## Governing rules
 
-- `execution-and-goal-frame.md` — verify decision-changing premises and current ownership before broader architecture, preserve a checked completed baseline, proactively complete material non-trivial design, compare only real alternatives, recommend the best-supported route, and select direct continuation, candidate goals, advisory `/goal` eligibility, clarification, or no successor before handing the posture to goal-authoring
-- `goal-authoring-and-route-support.md` — receive the execution-selected posture, construct the bounded goal artifact, choose subordinate route support, enforce durable route-file and `Plan reference` validity, and open `/plan` only when route detail overflows the goal-centric surface or standalone planning is explicitly selected
+- `execution-and-goal-frame.md` — verify decision-changing premises and current ownership before broader architecture, preserve a checked completed baseline, proactively complete material non-trivial design, compare only real alternatives, recommend the best-supported route, select direct continuation/candidate/advisory posture, and decide whether downstream live verification belongs to the current goal or an explicit successor
+- `goal-authoring-and-route-support.md` — receive the execution-selected posture, construct the bounded goal artifact with its required proof layer and current reachable layer, order route prerequisites, preserve an explicitly selected terminal gate, enforce durable route-file and `Plan reference` validity, and open `/plan` only when route detail overflows the goal-centric surface or standalone planning is explicitly selected
 - `phase-todo-artifact.md` — let checked design, phase, roadmap, TODO, task, and implementation surfaces supply bounded goal evidence, then preserve selected-goal phase/task linkage and verification gates after execution begins without constructing or promoting `/goal`
 - `worker-routing-and-context.md` — keep native subagent help minimally scoped, internal-only, and leader-verified when it assists goal-authoring with analysis, route drafting, verification ordering, testing, or verified durable plan-file preparation
 - `explanation-and-presentation.md` — render the execution-selected posture without selecting or promoting it, keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output or bounded helper output
@@ -47,6 +47,10 @@ Current RULES require the assistant to:
 - let goal-authoring open `/plan` only when overflow route detail or explicitly requested standalone planning is still needed instead of treating it as the ordinary paired next surface
 - keep any bounded internal helper output subordinate to the advisory or selected goal so route support remains support rather than a second visible owner
 - return closeout to the goal gate instead of treating finished plan steps, helper output, route drafts, or plan references as sufficient proof by themselves
+- name the required proof layer, current reachable layer, and any excluded or successor proof layers when deployment/install/restart/authentication materially separates source proof from Product proof
+- close a source-bounded goal when its selected source/local proof passes; keep downstream live proof as an explicit successor rather than an accidental blocker
+- keep a selected live terminal proof inside the current goal until it passes or the user explicitly narrows the goal; external difficulty alone is not authority to demote it
+- order route prerequisites before downstream proof and do not repeat a live check while the runtime still runs unchanged source/config
 - open non-trivial answers with plain-language orientation, use a small table when several axes matter, explain identifiers by role, and end with a concise decision-ready close when that structure improves understanding
 - separate verified fact, evidence-backed inference, and open hypothesis visibly enough for a user to judge confidence correctly
 
@@ -101,6 +105,40 @@ Expected behavior: preserve the valid goal of disconnecting retired data, but re
 - The implementation currently omits those material obligations but includes several unrelated abstraction ideas for hypothetical future providers.
 
 Expected behavior: do not call the implementation complete from the happy-path test. Cover the selected behavior/state/integration/failure/observability/verification obligations or mark each one explicitly deferred, blocked, not applicable, or out of scope with a real reason/owner where needed. Remove or defer unrelated speculative abstractions instead of using completeness as permission to overdesign.
+
+### Proof-reachability and terminal-gate variant
+
+- A source change is fully implemented and passes focused plus local integration checks.
+- Product proof requires push/deploy or install, runtime restart/reload, confirmation of the loaded source/version, and then an authenticated live check.
+- Those external state changes are not part of the current source-bounded goal.
+
+Expected bounded goal:
+
+```text
+required proof layer: local integration verified
+current reachable layer: local integration verified
+successor proof layer: Product live verified after deploy/install/restart
+```
+
+Expected behavior: close the current source-bounded goal at the selected reachable layer and surface the live Product check as a separate successor gate with its prerequisites. Do not describe the current goal as live-verified.
+
+Counter-variant: if the selected goal explicitly says its terminal proof is authenticated Product behavior, that selected live terminal proof stays inside the current goal. The goal remains open until the proof passes or the user explicitly narrows the goal; the assistant must not demote it merely because deployment, authentication, or restart is difficult.
+
+Route order:
+
+```text
+source change
+→ focused verification
+→ local integration verification
+→ exact source/version identity
+→ approval for deploy/install when required
+→ deploy/install
+→ restart/reload
+→ verify loaded version
+→ live Product proof
+```
+
+If the live route is checked before the required state changes and still serves old source/config, classify the attempt as unable to add signal and do not repeat it unchanged.
 
 ---
 

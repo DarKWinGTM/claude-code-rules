@@ -1,14 +1,15 @@
 # Changelog - External Verification and Source Trust
 
 > **Parent Document:** [../external-verification-and-source-trust.md](../external-verification-and-source-trust.md)
-> **Current Version:** 1.6
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.7
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-08-10 | **[Added capability-bound authorized source selection and bounded substitutes](#version-17)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.6 | 2026-08-09 | **[Compacted source-trust integration handoffs](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.5 | 2026-08-08 | **[Separated public evidence lookup from consequential external action](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.4 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -20,6 +21,22 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs proactive external verification, source-reliability ranking, corroboration expectations, and source-conflict handling for WebSearch/WebFetch-backed factual work | |
 
 ---
+
+<a id="version-17"></a>
+## Version 1.7: Added capability-bound authorized source selection and bounded substitutes
+
+**Date:** 2026-08-10
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Required authenticated, private, local-only, and mechanism-constrained verification to consume capability and authorization preflight from `action-safety.md` before source selection.
+- Defined source eligibility separately from source trust and required selection of the strongest reachable authorized claim-fit source.
+- Added bounded-substitute handling for supplied screenshots, rendered artifacts, sanitized exports, and public authorities, with explicit provenance and proof limits.
+- Preserved `action-safety.md` ownership of approval, credential/session-material boundaries, and retry/failure behavior.
+- Preserved `refusal-and-recovery.md` ownership of workflow-block classification and recovery when no eligible source exists.
+
+### Summary
+External verification now starts from the eligible-source boundary produced by action safety, then selects the strongest claim-fit authorized source or a clearly bounded substitute without turning source trust into a second approval, credential, or retry authority.
 
 <a id="version-16"></a>
 ## Version 1.6: Compacted source-trust integration handoffs

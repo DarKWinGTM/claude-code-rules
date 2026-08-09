@@ -21,17 +21,17 @@ Required baseline axes in this matrix:
 
 | Axis | Values |
 |---|---|
-| Request type | setup / diagnosis / design / implementation / migration-cutover / restoration / docs sync / risky action / external fact / explanation / audit / visual QA |
-| Evidence state | verified / partial / conflicting / missing / user concern only / transcript-grounded |
+| Request type | setup / diagnosis / design / implementation / migration-cutover / restoration / docs sync / risky action / external fact / authenticated private check / explanation / audit / visual QA |
+| Evidence state | verified / partial / conflicting / missing / user concern only / transcript-grounded / supplied rendered artifact |
 | Scope clarity | clear / mixed / ambiguous |
 | Risk level | low / medium / high |
-| Expected rule response | continue / complete material design surface / recommend best-supported path / verify first / ask / route worker / NEED_CONTEXT / refuse with path / confirm before mutate / keep migration open / audit before closeout |
+| Expected rule response | continue / complete material design surface / recommend best-supported path / verify first / ask / route worker / NEED_CONTEXT / refuse with path / confirm before mutate / keep migration open / proof reachability split / NO_RETRY_UNTIL_CHANGE / bounded supplied-evidence analysis / audit before closeout |
 
 ---
 
 ## Grounded operational-modeling axes
 
-These axes help shape more realistic operational case branches:
+These axes help shape more realistic operational case branches. New proof/auth dimensions include `proof reachability`, `authenticated capability`, and `supplied rendered artifact`.
 - turn count when a multi-step trace is still useful as supporting illustration
 - user behavior
 - evidence source
@@ -59,6 +59,10 @@ These axes help shape more realistic operational case branches:
 | Verification posture | review only / focused test / scenario-style check / smoke check / live check required / not applicable |
 | Portability boundary | portable placeholder / env-config binding / observed local fact / machine-scoped contract |
 | Continuation state | discussion / execution / verification / closeout / roadmap recommendation |
+| Required proof layer | source implemented / focused tested / local integration verified / installed verified / restarted runtime verified / live Product verified / stability verified |
+| Proof reachability | reachable now / requires approval / requires external state change / requires user action / unavailable with current capability / not applicable |
+| Authenticated capability | authorized session available / one bounded correction available / unavailable until state change |
+| Supplied rendered evidence | screenshot / Rendered HTML / rendered text / semantic page witness / sanitized console-log-network export / authenticated harness result |
 
 ---
 
@@ -95,6 +99,9 @@ These axes help shape more realistic operational case branches:
 | M27 | an ordinary design edit and a structural/visual-authority edit need startup posture | allow diagram `not required` for the ordinary edit; require diagram evaluation after design for the structural/visual branch without automatic subject-diagram creation | governed artifact lifecycle |
 | M28 | several successors remain and one may become advisory `/goal` | execution selects posture, goal-authoring constructs at most one selected advisory artifact, and presentation renders without promotion authority | authority collision resolver; communication and presentation calibration; proactive goal surfacing |
 | M29 | new and legacy Patch artifacts need chronological identity while some creation evidence is ambiguous and one archive is suspended | capture one UTC instant for new exclusive creation; use timestamped semantic filename plus matching metadata; block ambiguous legacy rows; update exact governed references through a hash-bound manifest; preserve the suspended archive; create no ID/index | governed artifact lifecycle |
+| M30 | source/local implementation passes, but Product proof requires deploy/install/restart outside the current bounded goal | close the source-bounded goal at its selected reachable proof layer; surface Product live verification as a prerequisite-bearing successor without claiming live proof | proactive goal surfacing and decision-ready explanation; status ladder and completion-claim audit |
+| M31 | an explicitly selected goal requires authenticated live Product proof, but deployment/auth capability is not ready | keep the terminal gate binding; classify the prerequisite/capability block and do not demote the goal without explicit user narrowing | proactive goal surfacing and decision-ready explanation; destructive action and topology gate |
+| M32 | a private page returns login/`401`/`403`, one checked target correction still has no authorized session, and the user supplies Rendered HTML | use the checked guest-only/no-session mechanism to classify the witness; treat login/`401` as missing required authentication and `403` as refusal with authentication-versus-authorization cause unresolved; stop unchanged retry and analyze the supplied artifact within its proof boundary | workflow-blocked visual QA; destructive action and topology gate; external, memory, and portability boundary |
 
 ---
 
