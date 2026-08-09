@@ -3,7 +3,7 @@
 > **Current Version:** 2.20
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P148 / v10.64 Patch timeline governance and RULES Tool active
+> **Status:** P148 / v10.64 released and fresh-public-tag verified; no RULES release phase active
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,11 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P148:** [Patch timeline governance and RULES Tool](phase-148-patch-timeline-governance-and-rules-tool.md)
-  - Goal: make governed Patch chronology derive from verified original creation time and provide a reusable evidence/hash-gated migration Tool without Patch IDs or an index.
-  - Output: three advanced Runtime Rule triads, `script/patch-timeline.mjs`, focused tests, updated Case 09 coverage, read-only NodeClaw 576/199 audit, canonical/root convergence, and v10.64 publication.
-  - Gate: Tool and doctrine tests, exact references and archive preservation, NodeClaw zero mutation, exact 19-Rule install boundary, two-pass root parity, immutable annotated tag, GitHub Release, and fresh-public reproduction.
-  - Patch: [Patch timeline governance and RULES Tool](../patch/2026-08-09T13-49-15Z--patch-timeline-governance-and-rules-tool.patch.md).
+- No RULES release phase is currently selected.
 
 ### Blocked Predecessor
 
@@ -36,6 +32,13 @@ This file is the compact active roadmap/index. Start here for current execution 
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
 
 ### Most Recently Completed
+
+- **P148:** [Patch timeline governance and RULES Tool](phase-148-patch-timeline-governance-and-rules-tool.md)
+  - Output: v10.64 adds verified original-creation Patch chronology, three aligned owner triads, the reusable dependency-free `script/patch-timeline.mjs` Tool, and governed lifecycle coverage without Patch IDs/indexes or Runtime Rule payload expansion.
+  - Gate: 32 focused Tool tests, independent Tool/governance reviews, exact references and archive preservation, NodeClaw 576-selected/199-preserved zero mutation, exact 27-path canonical parity, two-pass canonical/root and fresh-public 19/19 installation, Bash/PowerShell fixtures, immutable annotated tag, GitHub Release identity, and fresh-public master/tag reproduction passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.64
+  - Identity: release commit `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5`; annotated tag object `aba1ab0775188aa9ae65165a19c30e9138210014`.
+  - Patch: [Patch timeline governance and RULES Tool](../patch/2026-08-09T13-49-15Z--patch-timeline-governance-and-rules-tool.patch.md).
 
 - **P073-15:** [Case 17 bounded-goal route-scope correction](phase-073-15-case-17-bounded-goal-route-scope-correction.md)
   - Output: v10.63 keeps queue/worker-lease as the only selected plan/proof slice and retains retry/backoff plus status visibility solely as deferred sibling notes outside execution and proof.
@@ -88,7 +91,7 @@ No RULES release phase is active. P073-15 and P147 are closed, while P148 introd
 | Governed integration | Patch, Case 09, matrix/coverage, Phase/TODO/changelog/README | exact links, modes, candidate-safe state | candidate verification passed; canonical convergence pending |
 | NodeClaw audit | 576 selected and 199 preserved files | before/after Git and filesystem zero-mutation witnesses | verified read-only; 0 mutation rows and 576 evidence blockers |
 | Canonical/root | exact allowlist and 19 installed Runtime Rules | overlap safety, 19/19 parity, two-pass idempotence, Tool excluded | verified; 27-path parity and two-pass 19/19 install pass |
-| Publication | public master, annotated v10.64, Release, fresh clones, closeout | immutable identity and fresh-public reproduction | pending |
+| Publication | public master, annotated v10.64, Release, fresh clones, closeout | immutable identity and fresh-public reproduction | verified and released; documentation-only closeout active |
 
 ---
 
@@ -185,7 +188,7 @@ Required checks:
 - Bash/PowerShell installer matrices, disposable installation, canonical overlap checks, and two-pass root 19/19 parity/idempotence pass.
 - Public-master/tag/Release/fresh-clone proof passes before closeout.
 
-Current evidence: focused Tool suite passes 32 tests, including stable creation-time replay, metadata/URI/count guards, and final hash/mode revalidation before replacement or removal; NodeClaw read-only proof returned 576 selected, 199 preserved, 0 mutation rows, 576 evidence blockers, and identical repeated Patch/Git witnesses; Bash/PowerShell installer matrices and a two-pass disposable 19-Rule install pass with the Tool excluded. The exact 27-path candidate is synchronized to canonical with the unrelated TODO/plugin suffix and 292 unrelated status entries preserved; canonical/root installation passes 19/19 byte-and-mode parity, 19 manifest rows, Tool exclusion, no quarantine, and identical second-pass state. Candidate verification and independent Tool/governance reviews pass; publication remains pending.
+Current evidence: focused Tool suite passes 32 tests, including stable creation-time replay, metadata/URI/count guards, and final hash/mode revalidation before replacement or removal; NodeClaw read-only proof returned 576 selected, 199 preserved, 0 mutation rows, 576 evidence blockers, and identical repeated Patch/Git witnesses; Bash/PowerShell installer matrices and a two-pass disposable 19-Rule install pass with the Tool excluded. The exact 27-path candidate synchronized to canonical with the unrelated TODO/plugin suffix and 292 unrelated status entries preserved; canonical/root installation passed 19/19 byte-and-mode parity, 19 manifest rows, Tool exclusion, no quarantine, and identical second-pass state. Public master and fresh master/tag checkouts reproduce release commit `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5`, 32 tests, the 19-Rule payload, Tool exclusion, fixture proof, and second-pass idempotence. Annotated tag object `aba1ab0775188aa9ae65165a19c30e9138210014` and the published non-draft/non-prerelease GitHub Release are verified.
 
 ---
 
@@ -202,7 +205,7 @@ Current evidence: focused Tool suite passes 32 tests, including stable creation-
 
 ## Next State
 
-P148 / v10.64 is active. Tool and three-triad implementation, 32 focused tests, governed scenario assertions, NodeClaw 576/199 zero-mutation proof, installer matrices, independent Tool/governance reviews, exact 27-path canonical parity, and two-pass root 19/19 installation pass. Publication, fresh-public reproduction, and documentation-only closeout remain open.
+P148 / v10.64 is released and fresh-public-tag verified. Tool and three-triad implementation, 32 focused tests, governed scenario assertions, NodeClaw 576/199 zero-mutation proof, installer matrices, independent Tool/governance reviews, exact 27-path canonical parity, two-pass root 19/19 installation, immutable annotated tag, GitHub Release, and fresh-public master/tag reproduction passed. This documentation-only closeout records the result without moving v10.64; no next RULES release phase is selected.
 
 ---
 

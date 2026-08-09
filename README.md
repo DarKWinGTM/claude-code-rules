@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.64</b><br><sub>Patch Timeline Candidate</sub>
+  <b>v10.64</b><br><sub>Patch Timeline Governance</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Active</b><br><sub>P148 verification</sub>
+  <b>Released</b><br><sub>Fresh-tag verified</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Candidate note:** `v10.64 / P148` adds verified original-creation chronology for governed Patch filenames, matching `Created At`/Creation Evidence, exact-reference migration integrity, and a reusable RULES-owned `script/patch-timeline.mjs`. Focused Tool tests, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, and disposable installation pass; final review, canonical/root installation, publication, and fresh-tag verification remain pending. The Runtime Rule payload stays exactly 19 files and excludes the Tool.
+> **Release note:** `v10.64 / P148` adds verified original-creation chronology for governed Patch filenames, matching `Created At`/Creation Evidence, exact-reference migration integrity, and the reusable RULES-owned `script/patch-timeline.mjs`. Thirty-two focused Tool tests, independent Tool/governance reviews, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, exact 27-path canonical convergence, two-pass root 19/19 parity, immutable annotated tag, GitHub Release, and fresh-public master/tag reproduction passed. The Runtime Rule payload remains exactly 19 files and excludes the Tool; actual NodeClaw Patch migration remains a separate unselected goal.
 
 <!-- CTA Buttons -->
 <p>

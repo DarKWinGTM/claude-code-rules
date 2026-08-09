@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.64 candidate; v10.63 remains published and immutable
-> **Active Wave:** P148 Patch timeline governance and RULES Tool
+> **Current Release:** v10.64 published and fresh-public-tag verified
+> **Active Wave:** none selected
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,18 +10,17 @@
 
 ## Active / In Progress
 
-- [ ] **P148 / v10.64 Patch timeline governance and RULES Tool**
-  - [x] Lock public/canonical/root baseline, select P148/v10.64, create the timestamped governed Patch, and implement the focused Tool suite.
-  - [x] Advance the document-governance 1.20, phase-todo-artifact 1.35, and document-integrity 1.13 triads.
-  - [x] Finish Case 09/matrix/coverage, README, release shard, daily history, and candidate-safe governance synchronization.
-  - [x] Prove NodeClaw read-only counts at 576 selected plus 199 preserved with 0 mutation rows, 576 evidence blockers, and identical repeated Patch/Git witnesses.
-  - [ ] Publish v10.64, fresh-public verify, and close out without moving the tag; candidate/canonical 27-path parity and two-pass root 19/19 installation already pass.
-  - Patch: [Patch timeline governance and RULES Tool](patch/2026-08-09T13-49-15Z--patch-timeline-governance-and-rules-tool.patch.md).
+No RULES release wave is currently selected.
 
 ---
 
 ## Recently Completed
 
+- [x] **P148 / v10.64 Patch timeline governance and RULES Tool** was synchronized to canonical, installed into the root profile, pushed to public `master`, annotated-tagged, released, and fresh-public master/tag verified.
+  - Added verified original-creation UTC Patch identity, matching `Created At`/Creation Evidence, exact-reference migration integrity, and the reusable dependency-free `script/patch-timeline.mjs` Tool without Patch IDs or an index.
+  - Verified 32 focused Tool tests, independent Tool/governance reviews, the NodeClaw 576-selected/199-preserved zero-mutation audit, Bash/PowerShell fixtures, exact 27-path canonical parity, two-pass root and fresh-public 19/19 installation parity/idempotence, Tool exclusion, and no quarantine.
+  - Published release commit `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5` at immutable annotated tag object `aba1ab0775188aa9ae65165a19c30e9138210014`; actual NodeClaw Patch migration remains unselected.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.64
 - [x] **memory-context-intelligence v0.1.79 / package 0.9.31 corrective public-skill alignment** was pushed on the dedicated corrective branch, annotated-tagged, released, and fresh-tag verified.
   - Corrected the immutable v0.9.30 metadata defect by aligning the manifest, analysis skill, and init skill at `0.9.31`; also corrected user-scope config wording, evidence/release descriptions, and the native-agent design shard metadata.
   - Verified exact 17-path plugin scope with zero deletions, focused `21 passed`, source/clean-candidate/fresh-tag full suites `132 passed`, plugin validation PASS, remote branch/tag parity at `5e58f018a2b057ffdd009aeca3d88146e0cfab20`, and non-draft/non-prerelease GitHub Release identity.

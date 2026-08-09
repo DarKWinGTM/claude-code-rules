@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 148
-> **Status:** Active — implementation and verification in progress
+> **Status:** Completed — released and fresh-public-tag verified
 > **Target Release:** v10.64
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -36,14 +36,14 @@ Give governed Patch artifacts deterministic chronological identity from verified
 
 | Obligation | Implementation state | Terminal disposition |
 |---|---|---|
-| Timestamped semantic filename and matching metadata | implemented | verification pending |
-| Original-creation meaning and admissible evidence | implemented | verification pending |
-| No Patch ID/index or collision suffix fallback | implemented | verification pending |
-| One-time UTC capture and exclusive create | implemented | verification pending |
-| Exact reference resolution and relative-path recomputation | implemented | verification pending |
-| Manifest/source/reference hash and mode gates | implemented | verification pending |
-| Suspended archive preservation and serialized/wildcard exclusion | implemented | verification pending |
-| Explicit apply/verify/rollback without automatic fallback | implemented | verification pending |
+| Timestamped semantic filename and matching metadata | implemented | verified |
+| Original-creation meaning and admissible evidence | implemented | verified |
+| No Patch ID/index or collision suffix fallback | implemented | verified |
+| One-time UTC capture and exclusive create | implemented | verified |
+| Exact reference resolution and relative-path recomputation | implemented | verified |
+| Manifest/source/reference hash and mode gates | implemented | verified |
+| Suspended archive preservation and serialized/wildcard exclusion | implemented | verified |
+| Explicit apply/verify/rollback without automatic fallback | implemented | verified |
 | NodeClaw existing-Patch rename | not started | out of scope |
 
 ## Lane Map
@@ -83,7 +83,7 @@ Required checks:
 - Tool and governed artifacts stay outside the exact 19-file Runtime Rule payload;
 - Bash/PowerShell fixtures, disposable install, two-pass root parity/idempotence, public/tag/Release identity, and fresh-clone reproduction pass.
 
-Current evidence: focused Tool suite passes 32 tests, including stable creation-time replay, metadata/URI/count guards, and final hash/mode revalidation before replacement or removal; NodeClaw read-only proof returned 576 selected, 199 preserved, 0 mutation rows, and identical repeated before/after Patch and Git witnesses; Bash/PowerShell installer matrices, a two-pass disposable 19-Rule install, and independent Tool/governance reviews pass with the Tool excluded. The exact 27-path candidate is synchronized to canonical with unrelated state preserved, and two canonical root-install passes prove 19/19 byte-and-mode parity, 19 manifest rows, no Tool installation, no quarantine, and identical converged state. Publication and fresh-public evidence remain pending.
+Current evidence: focused Tool suite passes 32 tests, including stable creation-time replay, metadata/URI/count guards, and final hash/mode revalidation before replacement or removal; NodeClaw read-only proof returned 576 selected, 199 preserved, 0 mutation rows, and identical repeated before/after Patch and Git witnesses; Bash/PowerShell installer matrices, a two-pass disposable 19-Rule install, and independent Tool/governance reviews pass with the Tool excluded. The exact 27-path candidate synchronized to canonical with unrelated state preserved, and two canonical root-install passes proved 19/19 byte-and-mode parity, 19 manifest rows, no Tool installation, no quarantine, and identical converged state. Public master and fresh master/tag checkouts reproduced release commit `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5`, 32 tests, fixture proof, and two-pass 19-Rule installation. Annotated tag object `aba1ab0775188aa9ae65165a19c30e9138210014` peels to the release commit, and the GitHub Release is published, non-draft, and non-prerelease.
 
 ## Entry Conditions and Out of Scope
 
@@ -128,3 +128,12 @@ Rollback/containment:
 - Candidate/canonical/root parity and two-pass idempotence pass with unrelated files preserved.
 - Public master, immutable annotated v10.64, GitHub Release, and fresh-public tag reproduce the verified result.
 - Documentation-only closeout is pushed without moving v10.64.
+
+## Closeout
+
+- Release commit: `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5`.
+- Immutable annotated tag object: `aba1ab0775188aa9ae65165a19c30e9138210014`, peeled to the release commit.
+- GitHub Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.64 — published, non-draft, non-prerelease.
+- Fresh public master and tag reproduced the 32-test Tool suite, Bash/PowerShell fixtures, exact 19-Rule payload, Tool exclusion, and two-pass installation idempotence.
+- Canonical/root 19/19 parity remains verified, prior v10.60-v10.63 tag objects remain unchanged, and NodeClaw remained read-only at 576 selected plus 199 preserved Patch files.
+- Actual NodeClaw Patch migration remains a separate unselected goal.
