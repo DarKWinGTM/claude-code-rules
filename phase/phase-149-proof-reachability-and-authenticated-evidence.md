@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 149
-> **Status:** Active — corrective six-triad verification and renewed approval-packet preparation in progress
+> **Status:** Active — corrected verification passed, renewed exact approval pending
 > **Target Release:** v10.65
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -40,8 +40,8 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 |---|---|---|
 | Reachable proof-layer Goal fields and prerequisite ordering | implemented | verified |
 | Source/local closure versus successor Product proof | implemented | verified |
-| Explicit live-gate selection; no assistant-inferred live acceptance | implemented | verification pending |
-| Task-list reconciliation and optional live-successor separation | implemented | verification pending |
+| Explicit live-gate selection; no assistant-inferred live acceptance | implemented | verified |
+| Task-list reconciliation and optional live-successor separation | implemented | verified |
 | Authenticated/private capability and authorization preflight | implemented | verified |
 | One bounded discriminating correction and deterministic no-retry | implemented | verified |
 | Guest/login and 401 authentication boundary plus 403 refusal uncertainty | implemented | verified |
@@ -87,7 +87,7 @@ Required checks:
 - Bash/PowerShell fixtures, Patch timeline regression, disposable installation, second-pass idempotence, links, body sufficiency, and no governed/support runtime installation pass.
 - Real runtime installation and public publication remain blocked until the exact candidate SHA/scope packet is explicitly approved.
 
-Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. Before publication, user-reported Goal-loop and task-list evidence expanded source to six triads and 32 paths. Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass. Independent reviews, renewed commit/approval, runtime reinstallation, publication, and fresh-public proof remain pending.
+Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. Before publication, user-reported Goal-loop and task-list evidence expanded source to six triads and 32 paths. Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, two-pass disposable 19/19 installation, and corrected doctrine/release reviews pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
 
 ## Entry Conditions and Out of Scope
 

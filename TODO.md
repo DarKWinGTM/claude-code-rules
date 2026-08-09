@@ -18,7 +18,8 @@
     - Source/code Goals must not infer live acceptance; optional rendered/live observation becomes an unselected successor task, while explicitly required unavailable live proof blocks without unchanged retry.
     - Focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass.
   - [x] Resynchronized the P149 Phase, timestamped Patch, Patch changelog, v10.65 shard, master design/changelog, phase summary, and README for six changed and 13 protected Runtime Rules.
-  - [ ] Complete corrected independent reviews, establish the corrected candidate commit, and prepare a renewed exact SHA/scope approval packet before runtime reinstallation, push, annotated v10.65 tag, or GitHub Release; dirty-checkout reconciliation remains excluded.
+  - [x] Completed corrected doctrine and release/no-drift reviews and established the corrected candidate source.
+  - [ ] Prepare and obtain renewed exact SHA/scope approval before runtime reinstallation, push, annotated v10.65 tag, or GitHub Release; dirty-checkout reconciliation remains excluded.
   - Phase: [phase-149-proof-reachability-and-authenticated-evidence.md](phase/phase-149-proof-reachability-and-authenticated-evidence.md)
   - Patch: [2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md](patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md)
 

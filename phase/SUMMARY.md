@@ -3,7 +3,7 @@
 > **Current Version:** 2.21
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P149 / candidate v10.65 active; corrective six-triad verification and renewed approval-packet preparation in progress
+> **Status:** P149 / candidate v10.65 active; corrected verification passed, renewed exact approval pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -24,7 +24,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 - **P149:** [Proof reachability and authenticated evidence](phase-149-proof-reachability-and-authenticated-evidence.md)
   - Output: candidate v10.65 advances six existing Runtime Rule triads and three scenario families so source/code Goals close at appropriate reachable proof, live acceptance cannot be inferred by the assistant, optional live tasks become successors, explicitly required unavailable live proof stops without retry loops, authenticated/private capability is preflighted, and supplied rendered artifacts remain claim-bounded.
   - Gate: exact expanded 32-path scope, six changed and 13 protected Runtime Rules, 19-file inventory, corrected independent reviews, renewed exact candidate approval, runtime reinstallation, publication, and fresh-public proof.
-  - Current evidence: the earlier 29-path candidate passed all checks, was explicitly approved, and was installed into the 19-Rule runtime. User-reported Goal-loop and task-list evidence reopened source before publication; expanded focused/six-triad/governance checks, fixtures, Patch regression, and disposable 19/19 installation pass. Corrected independent reviews, commit, and renewed packet remain open; no push/tag/Release occurred.
+  - Current evidence: the earlier 29-path candidate passed all checks, was explicitly approved, and was installed into the 19-Rule runtime. User-reported Goal-loop and task-list evidence reopened source before publication; expanded focused/six-triad/governance checks, fixtures, Patch regression, disposable 19/19 installation, and corrected independent reviews pass. Renewed exact approval, runtime reinstallation, and publication remain open. No push/tag/Release occurred.
   - Patch: [Proof reachability and authenticated evidence](../patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md).
 
 ### Blocked Predecessor
@@ -93,7 +93,7 @@ P148 / v10.64 is released and closed. P149 changes six existing Runtime Rule own
 | Scenario/TestKit | Cases 17/12/04 plus matrix/coverage | reachable closure, terminal-gate preservation, capability preflight, deterministic retry, supplied-artifact limits | implemented; focused checks pass |
 | Doctrine | six existing Runtime Rule/design/changelog triads | versions/session/links, owner boundaries, no twentieth Rule | corrected; six-triad check passes |
 | Governed integration | P149 Phase/Patch/release shard plus master design/changelog, TODO, summary, README | exact links, candidate-safe wording, expanded scope | corrected in source |
-| Candidate verification | allowlist/protected bytes, fixtures, Patch timeline, disposable install, independent reviews | 32 paths, six changed Rules, 13 protected Rules, 19-file payload | automated/disposable checks pass; independent reviews pending |
+| Candidate verification | allowlist/protected bytes, fixtures, Patch timeline, disposable install, independent reviews | 32 paths, six changed Rules, 13 protected Rules, 19-file payload | verified; corrected independent reviews pass |
 | Runtime installation | approved clean candidate → user runtime | exact approval packet, 19/19 parity, idempotence, unrelated-file preservation | requires approval |
 | Publication | public master, annotated v10.65, Release, fresh clones | exact SHA/scope, immutable identities, fresh-public reproduction | requires approval |
 
@@ -174,7 +174,7 @@ Required checks:
 - Independent doctrine and release/no-drift reviews pass before the exact install/publication approval packet is presented.
 - Real Runtime Rule installation, public master, annotated v10.65, GitHub Release, and fresh-public master/tag proof pass before closeout.
 
-Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. User-reported Goal-loop and task-list evidence reopened source before publication. The expanded six-triad/32-path correction passes focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation. Corrected independent reviews, commit/approval, runtime reinstallation, publication, and fresh-public proof remain pending.
+Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. User-reported Goal-loop and task-list evidence reopened source before publication. The expanded six-triad/32-path correction passes focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation. Corrected independent reviews pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
 
 ---
 
@@ -190,7 +190,7 @@ Current evidence: the earlier five-triad/29-path candidate passed all gates, was
 
 ## Next State
 
-P149 / candidate v10.65 is active. User-reported Goal-loop and task-list evidence expanded the candidate to six owner triads and 32 paths after the approved earlier candidate was installed but before publication. Corrected automated, fixture, Patch, and disposable-install checks pass; independent reviews, exact commit/approval, runtime reinstallation, publication, and fresh-public proof remain open. Released v10.64 remains the latest immutable public release.
+P149 / candidate v10.65 is active. User-reported Goal-loop and task-list evidence expanded the candidate to six owner triads and 32 paths after the approved earlier candidate was installed but before publication. Corrected automated, fixture, Patch, disposable-install, and independent review gates pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain open. Released v10.64 remains the latest immutable public release.
 
 ---
 

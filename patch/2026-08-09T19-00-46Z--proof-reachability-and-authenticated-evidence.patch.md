@@ -67,7 +67,7 @@ The selected model separates proof-layer ownership from route prerequisites. Goa
 - The earlier five-triad/29-path candidate passed focused checks, fixtures, 32 Patch timeline tests, disposable 19/19 installation, and independent reviews, then was explicitly approved and installed into the runtime.
 - Before publication, user-reported Goal-loop and task-list evidence expanded this review to six changed and 13 protected Runtime Rules across exactly 32 paths while the ordered inventory remains 19.
 - Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation cover explicit live-gate selection, M33, task reconciliation, optional live-successor separation, and deterministic no-retry.
-- Corrected independent reviews, exact commit/approval, runtime reinstallation, push, annotated tag, GitHub Release, and fresh-public verification remain gated and are not yet claimed by this Patch.
+- Corrected doctrine and release/no-drift reviews pass. Renewed exact approval, runtime reinstallation, push, annotated tag, GitHub Release, and fresh-public verification remain gated and are not claimed by this Patch.
 
 ## Rollback Approach
 
