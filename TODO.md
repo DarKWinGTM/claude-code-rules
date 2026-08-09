@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-09
-> **Current Release:** v10.62 Case 17 goal-first route-branch correction candidate
-> **Active Wave:** P073-14 / v10.62
+> **Current Release:** v10.62 published — semantic closeout blocked
+> **Active Wave:** P073-14 blocked; corrective release not yet selected
 > **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,10 +10,10 @@
 
 ## Active / In Progress
 
-- [ ] **P073-14 / v10.62 Case 17 goal-first route-branch correction**
-  - Place advisory `/goal` before visible route-support blocks and model compact-in-goal versus `/plan` as alternative goal-authoring branches completed before presentation renders.
-  - Preserve candidate/advisory separation, queue/worker-lease-only goal scope, subordinate retry/status notes, no actual `Plan reference:`, and all 19 Runtime Rules/root installation unchanged.
-  - Gate: exact nine-path/mode/link scope, full positive/forbidden assertions, independent whole-file review, protected bytes, fixtures, disposable install, canonical/public/tag parity, immutable older releases, and fresh-public-tag proof.
+- [ ] **P073-14 / v10.62 semantic closeout is blocked after publication.**
+  - Technical publication passed: exact nine paths, protected bytes, Bash/PowerShell fixtures, disposable install, canonical/public/tag parity, annotated tag, and GitHub Release identity.
+  - Semantic blocker: the queue/worker-lease-only goal still schedules retry/status sibling candidates as plan and verification obligations.
+  - Required next state: keep v10.62 immutable and open a later corrective release only after selection; retry/status must remain deferred sibling notes rather than executable or proof requirements.
 
 ---
 

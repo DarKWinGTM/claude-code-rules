@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-14
-> **Status:** Active — release candidate preparation
+> **Status:** Blocked after release — semantic closeout failed; corrective release required
 > **Target Release:** v10.62
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -156,7 +156,20 @@ Containment:
 
 ## Current Verification
 
-Prepared candidate scope only. Semantic, protected-byte, fixture, canonical, public-master, annotated-tag, GitHub Release, and fresh-public-tag verification remain pending.
+Verified publication and technical evidence:
+- release commit: `3d76d93b8fd4d813aee2521a63106f4b14df80ad`
+- annotated v10.62 tag object: `4246218bbdb9b5a082f0a14a9111ec2d8b9cee13`
+- tag peeled commit: `3d76d93b8fd4d813aee2521a63106f4b14df80ad`
+- GitHub Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
+- exact nine-path/mode/link and protected-byte gates: passed
+- Bash/PowerShell fixture matrices and disposable installation: passed
+- candidate/canonical parity and 19/19 canonical/root Runtime Rule parity: passed without root reinstall
+- fresh-public-master and fresh-public-tag static/fixture/disposable-install reproduction: passed
+- v10.60 and v10.61 immutable tag objects and peeled release commits: unchanged
+
+Semantic closeout result: **failed**. A delayed whole-file doctrine review confirmed that the queue/worker-lease-only `/goal` still turns retry/backoff and status visibility into ordered `Plan draft` steps and required verification checks. Those sibling candidates may remain deferred/subordinate notes, but they cannot be execution or proof obligations for the bounded goal.
+
+The v10.62 tag is immutable and Case 17 remains identical to its tagged bytes. P073-14 cannot close successfully; correction requires a later release rather than moving or amending v10.62.
 
 ## Exit Criteria
 

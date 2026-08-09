@@ -3,7 +3,7 @@
 > **Current Version:** 2.18
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P073-14 / v10.62 active — goal-first route-branch correction candidate
+> **Status:** P073-14 / v10.62 published; semantic closeout blocked; corrective release not yet selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,10 +21,11 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P073-14:** [Case 17 goal-first route-branch correction](phase-073-14-case-17-goal-first-route-branch-correction.md)
-  - Output: v10.62 makes the advisory `/goal` visible before subordinate route support and models compact-in-goal versus `/plan` as alternative goal-authoring branches completed before presentation renders.
-  - Gate: full-file ordering/branch assertions and independent doctrine review, exact nine-path/mode/link checks, protected-byte identity, unchanged fixtures/disposable install, canonical parity, immutable older releases, and fresh-public-tag proof.
-  - Patch: none; the one-scenario correction is directly reviewable.
+- **P073-14:** [Case 17 goal-first route-branch correction](phase-073-14-case-17-goal-first-route-branch-correction.md) — blocked after release.
+  - Published output: v10.62 makes the advisory `/goal` visible before subordinate route support and models compact-in-goal versus `/plan` as alternative goal-authoring branches.
+  - Blocker: the bounded queue/worker-lease goal still promotes retry/status sibling candidates into ordered plan and verification obligations, so the whole-file semantic gate failed.
+  - Required convergence: preserve immutable v10.62 and correct the remaining scope contradiction through a later selected release.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
 
 ### Most Recently Completed
 
@@ -67,10 +68,10 @@ P073-13 and v10.61 are completed and immutable. P073-14 repairs the residual vis
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Scenario correction | goal-first visible example and alternative route branches | advisory `/goal` precedes support; goal-authoring completes one branch before presentation renders | active |
-| Governance | exact nine-path P073-14/v10.62 set | links, modes, truthful candidate wording, immutable v10.60/v10.61 | active |
-| Protected state | 19 Runtime Rules, triads, installers/fixtures, root install | byte identity and exact ordered inventory | pending verification |
-| Integration/release | canonical, public master/tag/Release/fresh clone | 9/9 parity, fixtures, disposable install, annotated tag, fresh-tag proof | pending |
+| Scenario correction | goal-first visible example and alternative route branches | visible ordering/branch checks pass; bounded-goal route scope still contradicts subordinate retry/status status | blocked |
+| Governance | exact nine-path P073-14/v10.62 set | links, modes, truthful failure closeout, immutable v10.60/v10.61/v10.62 | failure closeout active |
+| Protected state | 19 Runtime Rules, triads, installers/fixtures, root install | byte identity and exact ordered inventory | verified unchanged |
+| Integration/release | canonical, public master/tag/Release/fresh clone | 9/9 parity, fixtures, disposable install, annotated tag, fresh-tag technical proof | published and technically verified; semantic gate failed |
 
 ---
 
@@ -138,7 +139,7 @@ Required checks:
 - Bash and PowerShell manifest order and fixture matrices plus disposable installation pass without mutating root Rules.
 - Candidate/canonical parity passes before publication; public-master/tag/Release/fresh-clone proof passes before closeout.
 
-Current evidence: public baseline `a6ad591a9888eabf15709032b3e73a39cacca270`, canonical/public equality for the existing correction paths, 19/19 source/canonical/root Runtime Rule parity, immutable v10.61 tag object `114d0fb9856fac59c6283f8868c3727c37e0a5cf`, and immutable v10.60 tag object `b1bc48e3221001675c9a59293cc469e9540cfd9c` are verified. P073-14 candidate semantic, fixture, canonical, publication, and fresh-tag gates remain pending.
+Current evidence: release commit `3d76d93b8fd4d813aee2521a63106f4b14df80ad`, annotated v10.62 tag object `4246218bbdb9b5a082f0a14a9111ec2d8b9cee13`, GitHub Release, exact nine-path/mode/link checks, protected source identity, 19/19 source/canonical/root Runtime Rule parity, Bash/PowerShell fixtures, disposable install, and fresh-public-master/tag technical reproduction pass. A delayed whole-file doctrine review failed the bounded-goal route-scope gate because retry/status remain executable plan and verification steps. v10.61 and v10.60 tag objects remain unchanged.
 
 ---
 
@@ -154,7 +155,7 @@ Current evidence: public baseline `a6ad591a9888eabf15709032b3e73a39cacca270`, ca
 
 ## Next State
 
-P073-14 / v10.62 is the selected active correction. Publication remains blocked until semantic, protected-byte, fixture, canonical, public-master, annotated-tag, GitHub Release, and fresh-public-tag gates pass. v10.61 and v10.60 remain immutable.
+No corrective successor is selected yet. `v10.62` remains anchored to immutable release commit `3d76d93b8fd4d813aee2521a63106f4b14df80ad`, but P073-14 semantic closeout is blocked. A later release must remove retry/status from the queue/lease goal's executable plan and verification route while retaining them only as deferred sibling notes. v10.61 and v10.60 remain immutable.
 
 ---
 

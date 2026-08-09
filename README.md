@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Prepared</b><br><sub>Release verification pending</sub>
+  <b>Released</b><br><sub>Semantic closeout blocked</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Release candidate note:** `v10.62` makes the Case 17 advisory `/goal` visible before subordinate route support and models compact-in-goal support versus `/plan` as alternative goal-authoring branches completed before presentation renders. Candidate/advisory separation, bounded queue/worker-lease scope, subordinate retry/status notes, and the no-`Plan reference:` boundary remain intact. The 19 Runtime Rules and root installation remain unchanged; release verification is pending.
+> **Release note:** `v10.62` makes the Case 17 advisory `/goal` visible before subordinate route support and models compact-in-goal support versus `/plan` as alternative goal-authoring branches. Publication, fixtures, canonical parity, and fresh-tag technical checks passed, but semantic closeout is blocked: retry/backoff and status visibility still appear as executable plan and verification obligations despite the `/goal` being scoped only to queue ordering and worker lease. The 19 Runtime Rules and root installation remain unchanged; immutable v10.62 requires a later corrective release.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,13 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Prepared `v10.62` corrects Case 17 goal-first visible ordering and alternative route-branch semantics while keeping the 19-file Bash and PowerShell runtime boundary unchanged.
-- Candidate/advisory separation and queue/worker-lease-only scope remain preserved; full semantic, protected-byte, fixture, canonical, public, tag, Release, and fresh-tag verification remain pending.
+- Released `v10.62` corrects Case 17 goal-first visible ordering and alternative route-branch semantics while keeping the 19-file Bash and PowerShell runtime boundary unchanged.
+- Technical release verification passed, but whole-file semantic closeout failed because retry/status remain executable route and verification obligations outside the queue/worker-lease-only goal scope.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Latest released baseline remains v10.61 while v10.62 verification is pending: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.61
+- Latest published release (semantic closeout blocked): https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -652,7 +652,7 @@ artifact-initiation-control.design.md
 - the active runtime scope stayed limited to the then-README-installed 41 root rule files
 - final source state was recorded at 4,051 lines / 31,316 words / 231,675 bytes
 - runtime install into `~/.claude/rules/` happened only after the separate install gate opened
-- active child `P073-14` preserves the 19-Rule boundary and corrects Case 17 goal-first visible ordering plus alternative route branches for the v10.62 release gate
+- latest child `P073-14` preserves the 19-Rule boundary and records v10.62 publication, but semantic closeout remains blocked until a later release removes retry/status from the queue/lease goal's executable route and verification gate
 - parity passed with no missing active files or hash mismatches
 - co-located runtime files outside the source-owned install set remained observed-only and untouched
 
@@ -1068,7 +1068,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: prepared `v10.62` keeps all 19 root Rules byte-identical while correcting Case 17 visible ordering and route-branch lifecycle; integrated semantic, fixture, canonical, public-master, annotated-tag, GitHub Release, and fresh-public-tag verification remain pending.
+- Source state: released `v10.62` keeps all 19 root Rules byte-identical while correcting Case 17 visible ordering and route-branch lifecycle; fixture, canonical, public-master, annotated-tag, GitHub Release, and fresh-public-tag technical checks pass, but whole-file semantic closeout remains blocked by the retry/status route-scope contradiction.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
