@@ -123,7 +123,7 @@ Rollback/containment:
 
 ## Exit Criteria
 
-- Five owner triads are aligned, body-sufficient, and scenario-covered.
+- Six owner triads are aligned, body-sufficient, and scenario-covered.
 - Exactly six Runtime Rules change while the other 13 and the 19-file inventory remain protected.
 - Expanded 32-path scope, references, modes, and README current-state wording pass.
 - Fixture suites, Patch timeline regression, disposable install, idempotence, body/parity checks, and independent reviews pass.
