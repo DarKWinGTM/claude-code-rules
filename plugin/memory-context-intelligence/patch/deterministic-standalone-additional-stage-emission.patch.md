@@ -2,7 +2,7 @@
 
 > **Current Version:** 0.1.78
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
-> **Status:** implemented and verified in local source/test/smoke scope; external release pending
+> **Status:** implemented, released as package 0.9.30, and fresh-tag verified
 > **Target Design:** [../design/05-additional-staging-and-promotion.design.md](../design/05-additional-staging-and-promotion.design.md)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 
@@ -12,7 +12,7 @@
 
 The plugin already presents advisory Topic cards and already has one-topic packet/emission guards. The missing source contract begins after the user reviews those cards and explicitly selects one or several topics for additional-stage execution.
 
-Current packet emission is too thin for standalone doctrine, retains raw evidence anchors in packet state, supports an active overwrite flag, and does not provide one atomic full-set preflight/write path for a selected multi-topic batch. The approved v0.1.78 design keeps initial analysis read-only while making the later explicit follow-up deterministic and additional-stage-first.
+Before v0.1.78, packet emission was too thin for standalone doctrine, retained raw evidence anchors in packet state, supported an active overwrite flag, and lacked one atomic full-set preflight/write path for a selected multi-topic batch. The delivered v0.1.78 design keeps initial analysis read-only while making the later explicit follow-up deterministic and additional-stage-first.
 
 ## Analysis
 
@@ -156,9 +156,15 @@ Observed verification results:
 
 Covers: local plugin source behavior, package metadata, rich standalone rendering, selection/promotion separation, batch preflight, collision preservation, exclusive writes, containment, and local package structure.
 
-Does not cover: marketplace installation, remote branch/tag parity, GitHub Release publication, fresh-tag execution, or stability over time.
+Post-release evidence:
+- remote branch `mci-release-v0.9.30` equals release commit `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`
+- annotated tag `memory-context-intelligence--v0.9.30` peels to the same commit
+- GitHub Release is published, non-draft, and non-prerelease
+- fresh tagged clone reports manifest `0.9.30`, full suite `132 passed`, and plugin validation PASS
 
-No `fixed`, `runtime/live-verified`, `stable`, or release-ready claim is made beyond this checked scope.
+Does not cover: marketplace installation or stability over time.
+
+No `stable` or broad production-readiness claim is made beyond this checked scope.
 
 ## Rollback approach
 

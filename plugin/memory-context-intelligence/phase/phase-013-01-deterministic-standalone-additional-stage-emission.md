@@ -2,12 +2,12 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 013-01
-> **Current Version:** 0.1.78
-> **Status:** Clean plugin-only release candidate verified; external-action confirmation pending
-> **Target Design:** [../design/design.md](../design/design.md) v0.1.78
+> **Current Version:** 0.1.79
+> **Status:** Active corrective child / package 0.9.31 local verification in progress
+> **Target Design:** [../design/design.md](../design/design.md) v0.1.79
 > **Design References:** [../design/02-topic-list-and-choice-flow.design.md](../design/02-topic-list-and-choice-flow.design.md), [../design/05-additional-staging-and-promotion.design.md](../design/05-additional-staging-and-promotion.design.md), [../design/08-memory-evidence-source-model.design.md](../design/08-memory-evidence-source-model.design.md)
-> **Patch Reference:** [../patch/deterministic-standalone-additional-stage-emission.patch.md](../patch/deterministic-standalone-additional-stage-emission.patch.md)
-> **Changelog Reference:** [../changelog/v0.1.78-deterministic-standalone-additional-stage-emission.changelog.md](../changelog/v0.1.78-deterministic-standalone-additional-stage-emission.changelog.md)
+> **Patch References:** [../patch/deterministic-standalone-additional-stage-emission.patch.md](../patch/deterministic-standalone-additional-stage-emission.patch.md), [../patch/post-release-public-skill-version-alignment.patch.md](../patch/post-release-public-skill-version-alignment.patch.md)
+> **Changelog References:** [../changelog/v0.1.78-deterministic-standalone-additional-stage-emission.changelog.md](../changelog/v0.1.78-deterministic-standalone-additional-stage-emission.changelog.md), [../changelog/v0.1.79-corrective-public-skill-version-alignment.changelog.md](../changelog/v0.1.79-corrective-public-skill-version-alignment.changelog.md)
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 
 ---
@@ -52,7 +52,7 @@ Extend the existing signal → orchestration → packet → emitter chain in pla
 - Existing fifteen runtime trial artifacts remain untouched.
 - Main RULES bodies and Phases 017-018 remain unchanged.
 - `lib/analysis_surface.py`, selected-topic config persistence, public `review`/`packet`, bare `/analysis`, auto flow, external agent spawning, and live-web defaults remain outside scope.
-- Governed version is `0.1.78`; package version becomes `0.9.30` only after runtime verification.
+- Package `0.9.30` remains immutable release evidence; governed version `0.1.79` prepares corrective package `0.9.31` with both public skills aligned.
 - Canonical repository is `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`; the active working tree contains extensive unrelated changes and is not the release staging tree.
 - Release base/tag: `memory-context-intelligence--v0.9.29` at `a70970c`.
 - Release branch/tag/title: `mci-release-v0.9.30`, `memory-context-intelligence--v0.9.30`, `memory-context-intelligence v0.9.30`.
@@ -64,21 +64,23 @@ Extend the existing signal → orchestration → packet → emitter chain in pla
 |---|---|---|---|
 | [013-01-01](phase-013-01-01-evidence-normalization-and-standalone-rendering.md) | Fresh baseline, signal/topic entailment linkage, selection-state separation, normalized evidence, rich standalone renderer | focused signals/orchestration/packet/renderer tests pass | Completed / verified in focused source scope |
 | [013-01-02](phase-013-01-02-atomic-emission-runtime-verification-and-version-sync.md) | Atomic batch preflight, exclusive writes, path/symlink containment, public follow-up state, replay/trial/readiness alignment, isolated smoke, version sync | focused/full tests and temporary-HOME smoke pass; Main RULES unchanged | Completed / verified in local source/test/smoke scope |
-| [013-01-03](phase-013-01-03-plugin-release-and-fresh-tag-verification.md) | Clean plugin-only release candidate, push, annotated tag, GitHub Release, fresh-tag verification | explicit external-action confirmation plus remote/tag/release parity | Active / clean 37-path candidate verified; external-action confirmation pending |
+| [013-01-03](phase-013-01-03-plugin-release-and-fresh-tag-verification.md) | Clean plugin-only release candidate, push, annotated tag, GitHub Release, fresh-tag verification | explicit external-action confirmation plus remote/tag/release parity | Completed / package 0.9.30 released and fresh-tag verified; init-skill metadata defect recorded by successor |
+| [013-01-04](phase-013-01-04-corrective-public-skill-version-alignment.md) | Align both public skills, repair active wording, and prepare immutable corrective package 0.9.31 | focused/full tests, exact clean candidate, new confirmation, corrective release/fresh-tag proof | Active / exact 17-path candidate verified; external-action confirmation pending |
 
 ## Dependency order
 
 ```text
 013-01-01 evidence and standalone body
 → 013-01-02 safe emission and runtime proof
-→ 013-01-03 clean release and public verification
+→ 013-01-03 package 0.9.30 release and public verification
+→ 013-01-04 immutable corrective package alignment
 ```
 
 Do not begin release staging from the dirty main working tree. Do not bump package version before the implementation and full source suite pass.
 
 ## Selected design coverage
 
-The phase remains open until each item receives a terminal disposition:
+The v0.1.78 behavior items remain verified. The phase is reopened only for the v0.1.79 corrective dispositions:
 
 - [x] initial analysis remains read-only/no-write — verified in presentation/skill and full-suite scope
 - [x] explicit later selection uses additional-only authorization — verified in packet, skill, presentation, and trial scopes
@@ -94,10 +96,15 @@ The phase remains open until each item receives a terminal disposition:
 - [x] root/namespace/traversal/symlink containment passes — focused tests and smoke passed
 - [x] isolated smoke does not touch the real runtime additional directory — controlled temporary root verified
 - [x] Main RULES before/after digest is equal — controlled smoke verified the checked 24-file scope
-- [ ] source and clean release-clone full suites pass — source suite passed (`132 passed`); clean release-clone suite remains pending
-- [x] package/governed versions align at `0.9.30` / `0.1.78` — manifest, skill, README, design, changelog, phase, and test surfaces aligned in checked scope
-- [ ] plugin-only staged scope is exact — pending clean release candidate
-- [ ] remote branch, tag, GitHub Release, and fresh tag clone are verified — pending external-action confirmation and release
+- [x] source and clean release-clone full suites pass — both reported `132 passed`
+- [x] package `0.9.30` behavior release is verified — branch/tag/release/fresh clone resolve to `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`
+- [x] v0.9.30 metadata defect is verified — init skill remained `0.9.29`; completion wording is corrected rather than hidden
+- [x] local package `0.9.31` manifest, analysis skill, and init skill align — focused regression passes
+- [x] user-scope config wording, design evidence boundary, changelog tense, and design-04 metadata are repaired locally
+- [x] full source suite and plugin validation pass for v0.9.31 — `132 passed`, validation PASS
+- [x] exact v0.9.30-based corrective staged scope is verified — 17 allowlisted paths, zero deletions, `132 passed`, validation PASS
+- [ ] explicit external-action confirmation covers the final v0.9.31 SHA/scope
+- [ ] remote branch, annotated tag, GitHub Release, and fresh tag clone are verified for v0.9.31
 
 ## Verification route
 

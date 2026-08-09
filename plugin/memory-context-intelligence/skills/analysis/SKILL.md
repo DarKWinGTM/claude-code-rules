@@ -1,7 +1,7 @@
 ---
 name: analysis
 description: Use when the user wants analysis of real work evidence, anchored by memsearch-backed traces and optionally strengthened by durable memory or governance context, so Claude can propose RULES or workflow improvement topics in a proposal-first format.
-version: 0.9.30
+version: 0.9.31
 ---
 
 # Memory Context Intelligence Analysis
@@ -63,7 +63,7 @@ When invoked for normal operator use:
 - keep historical-first as the default scope basis
 - preserve provenance explicitly enough that the user can tell whether the proposal is historical-only or also current-session-confirmed
 - when the runtime payload says no config file is loaded, surface the guided config helper from `config_questions` instead of expecting raw args as the normal UX path
-- expose `suggested_config_path` when present so the operator can see where the project default config file would live
+- expose `suggested_config_path` when present so the operator can see where the user-scope default config file would live
 - keep that guided config helper advisory only; it helps the operator choose config defaults, but it must not be treated as an approved write or automatic config mutation
 - when `source_policy` says a config file was loaded, keep that policy-limited context visible enough that the operator can tell whether source classes, historical shard count, or same-day widening defaults narrowed the run
 - if config policy disabled `trace_evidence` or left only context-only sources in scope, do not let the response overread that run as a promotable live candidate

@@ -3,7 +3,7 @@
 > **Parent Phase:** [phase-013-01-deterministic-standalone-additional-stage-emission.md](phase-013-01-deterministic-standalone-additional-stage-emission.md)
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Current Version:** 0.1.78
-> **Status:** Clean release candidate verified; explicit external-action confirmation pending
+> **Status:** Completed / branch, annotated tag, GitHub Release, and fresh-tag verification passed
 > **Target Design:** [../design/design.md](../design/design.md) v0.1.78
 > **Patch Reference:** [../patch/deterministic-standalone-additional-stage-emission.patch.md](../patch/deterministic-standalone-additional-stage-emission.patch.md)
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
@@ -100,7 +100,7 @@ plugin/memory-context-intelligence/tests/test_signals.py
 
 Run `tests/test_analysis_surface.py` as an unchanged regression check, but do not copy it or `lib/analysis_surface.py`. Do not copy `lib/config_policy.py`, `lib/intake.py`, init-skill files, image/preview/index assets, root `TODO.md`, Main RULES, or other plugins; those are already represented by the v0.9.29 base or outside this release delta.
 
-- [ ] **Step 1: Create a clean temporary clone from the existing release tag**
+- [x] **Step 1: Create a clean temporary clone from the existing release tag**
 
 ```bash
 REPO_URL="https://github.com/DarKWinGTM/claude-code-rules.git"
@@ -112,7 +112,7 @@ git -C "$RELEASE_ROOT" switch -c mci-release-v0.9.30 memory-context-intelligence
 
 Expected: clean branch based at `a70970c`.
 
-- [ ] **Step 2: Copy exactly the release allowlist**
+- [x] **Step 2: Copy exactly the release allowlist**
 
 Create an allowlist file under `/tmp`, then stream only those paths:
 
@@ -166,7 +166,7 @@ tar -C "$SOURCE_ROOT" -cf - -T "$ALLOWLIST_FILE" | tar -C "$RELEASE_ROOT" -xf -
 
 If any listed source path is missing, stop before staging.
 
-- [ ] **Step 3: Verify candidate scope before staging**
+- [x] **Step 3: Verify candidate scope before staging**
 
 ```bash
 git -C "$RELEASE_ROOT" status --short
@@ -176,7 +176,7 @@ git -C "$RELEASE_ROOT" diff --name-only
 
 Expected: every changed path is in the exact plugin allowlist; no root RULES, root TODO, other plugin, deletion, or unexpected generated asset appears.
 
-- [ ] **Step 4: Run focused and full tests in the release clone**
+- [x] **Step 4: Run focused and full tests in the release clone**
 
 ```bash
 cd "$RELEASE_ROOT/plugin/memory-context-intelligence"
@@ -196,7 +196,7 @@ python3 -m pytest -q tests
 
 Expected: PASS from the clean release candidate.
 
-- [ ] **Step 5: Stage exact files and inspect staged scope**
+- [x] **Step 5: Stage exact files and inspect staged scope**
 
 ```bash
 git -C "$RELEASE_ROOT" add --pathspec-from-file="$ALLOWLIST_FILE"
@@ -206,7 +206,7 @@ git -C "$RELEASE_ROOT" diff --cached --name-status
 
 Compare staged paths programmatically with the allowlist. Expected: exact set equality after excluding allowlisted files that are byte-identical to the base tag. No unrelated path is staged.
 
-- [ ] **Step 6: Commit the release candidate**
+- [x] **Step 6: Commit the release candidate**
 
 ```bash
 git -C "$RELEASE_ROOT" commit -m "$(cat <<'EOF'
@@ -225,7 +225,7 @@ Record the commit SHA. Do not push yet.
 
 **External action gate:** Before Step 2, present the exact repository, branch, commit SHA, tag, release title, staged path count, and test results. Obtain explicit action-and-scope confirmation for push + tag + GitHub Release.
 
-- [ ] **Step 1: Verify local release candidate one final time**
+- [x] **Step 1: Verify local release candidate one final time**
 
 ```bash
 git -C "$RELEASE_ROOT" status --short --branch
@@ -236,7 +236,7 @@ python3 -m pytest -q tests
 
 Expected: clean release clone and full suite PASS.
 
-- [ ] **Step 2: Push the dedicated plugin branch after confirmation**
+- [x] **Step 2: Push the dedicated plugin branch after confirmation**
 
 ```bash
 git -C "$RELEASE_ROOT" push -u origin mci-release-v0.9.30
@@ -250,7 +250,7 @@ git -C "$RELEASE_ROOT" ls-remote --heads origin mci-release-v0.9.30
 
 Expected: remote branch SHA equals local release commit SHA.
 
-- [ ] **Step 3: Create and push the annotated package tag**
+- [x] **Step 3: Create and push the annotated package tag**
 
 ```bash
 git -C "$RELEASE_ROOT" tag -a memory-context-intelligence--v0.9.30 \
@@ -260,7 +260,7 @@ git -C "$RELEASE_ROOT" push origin memory-context-intelligence--v0.9.30
 
 Verify the peeled annotated tag resolves to the release commit.
 
-- [ ] **Step 4: Create the GitHub Release**
+- [x] **Step 4: Create the GitHub Release**
 
 ```bash
 gh release create memory-context-intelligence--v0.9.30 \
@@ -282,7 +282,7 @@ EOF
 )"
 ```
 
-- [ ] **Step 5: Verify release identity and fresh tag behavior**
+- [x] **Step 5: Verify release identity and fresh tag behavior**
 
 ```bash
 gh release view memory-context-intelligence--v0.9.30 \
@@ -302,7 +302,7 @@ Expected:
 - full plugin suite passes
 - tag tree contains only the intended plugin delta relative to v0.9.29
 
-- [ ] **Step 6: Record post-release verification without moving the tag**
+- [x] **Step 6: Record post-release verification without moving the tag**
 
 After live verification, update the local source phase summary, this phase, changelog shard, and patch with:
 - branch/commit/tag
@@ -367,3 +367,20 @@ After published tag/release:
 - release deletion/tag deletion requires separate destructive confirmation and is not the default rollback
 
 Main RULES bodies, unrelated RULES changes, other plugins, the fifteen existing additional-stage artifacts, and Phases 017-018 remain protected throughout.
+
+## Closeout verification
+
+Verified results:
+- release base: `memory-context-intelligence--v0.9.29` / `a70970c2e5496c3a46d9d5a3d7b83c30a6ed5dd1`
+- release commit: `02b15e29fe5eaf7c05e0a81d0b92ef4773cfd677`
+- exact release scope: 37 allowlisted plugin paths, zero unexpected paths, zero deletions
+- clean-clone focused suite: `113 passed`
+- clean-clone full suite: `132 passed`
+- candidate and fresh-tag plugin validation: PASS
+- remote branch: `mci-release-v0.9.30` at the release commit
+- annotated tag: `memory-context-intelligence--v0.9.30`, peeled to the release commit
+- GitHub Release: `memory-context-intelligence v0.9.30`, non-draft and non-prerelease
+- release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/memory-context-intelligence--v0.9.30
+- fresh tagged clone: manifest `0.9.30`, full suite `132 passed`, plugin validation PASS
+
+Evidence boundary: released and fresh-tag verified in the checked GitHub/source/test scope. Marketplace installation and stability over time were not tested. The published tag was not moved after release.

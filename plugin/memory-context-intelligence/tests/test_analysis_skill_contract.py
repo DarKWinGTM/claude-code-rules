@@ -180,6 +180,8 @@ class AnalysisSkillContractTests(unittest.TestCase):
         self.assertIn("config_questions", text)
         self.assertIn("guided config helper", text)
         self.assertIn("suggested_config_path", text)
+        self.assertIn("user-scope default config file", text)
+        self.assertNotIn("project default config file", text)
         self.assertIn("when the runtime payload says no config file is loaded", text)
         self.assertIn("/memory-context-intelligence:init", text)
         self.assertIn("~/.claude/memory-context-intelligence.config.json", text)

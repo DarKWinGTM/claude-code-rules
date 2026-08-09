@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.78
+> **Current Version:** 0.1.79
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 > **Selected Parent Model:** generic parent
 > **Selected Chain Shape:** flat-sibling-shards

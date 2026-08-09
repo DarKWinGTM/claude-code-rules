@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** memory-context-intelligence plugin-local governed design chain
-> **Current Version:** 0.1.78
+> **Current Version:** 0.1.79
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 > **Parent Design:** [design.md](design.md)
 
@@ -204,11 +204,10 @@ Current implementation expectations:
 This implemented source model still does **not** claim:
 - interactive config-file writing, auto-save, or automatic config mutation from the guided helper
 - selected-topic persistence inside config
-- implemented proof of the approved standalone `/additional/` normalization/emission target before its source phase and verification gates pass
+- proof beyond the checked standalone `/additional/` source/test/smoke and tagged-release scope; design approval alone is not implementation proof
 - plugin-managed first-response auto-flow proof
-- publication
-- external marketplace release
-- stable-broad readiness
+- marketplace installation or marketplace publication
+- stability over time or stable-broad readiness
 - main RULES promotion
 - main RULES mutation
 - main RULES merge

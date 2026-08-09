@@ -1,8 +1,8 @@
 # memory-context-intelligence
 
-> **Status:** Deterministic selected-topic additional-stage emission is implemented and verified in the local plugin test/smoke scope; `/memory-context-intelligence:analysis` remains read-only and advisory, while package publication and remote release verification remain pending
-> **Current Version:** 0.1.78
-> **Plugin Package Version:** 0.9.30
+> **Status:** Corrective package `0.9.31` is implemented and locally verified to align both public skill versions after the immutable `0.9.30` release; external corrective release verification remains pending
+> **Current Version:** 0.1.79
+> **Plugin Package Version:** 0.9.31
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
 
 ---
