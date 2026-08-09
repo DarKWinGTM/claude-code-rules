@@ -1,6 +1,6 @@
 # Changelog - Accurate Communication Standard
 
-> **Current Version:** 2.42
+> **Current Version:** 2.43
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.43 | 2026-08-09 | **[Added migration lifecycle status wording](#version-243)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.42 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-242)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.41 | 2026-06-11 | **[Added P143 hybrid progress-reporting snapshot wording refinement](#version-241)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 2.40 | 2026-06-07 | **[Added P141 goal-authoring stop-boundary wording refinement](#version-240)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -84,6 +85,20 @@
 | | | Summary: Initial version - later deemed too rigid | |
 
 ---
+
+<a id="version-243"></a>
+## Version 2.43: Added migration lifecycle status wording
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Distinguished `bridge active`, `cut over`, `quarantined`, `retired`, `inactive in checked scope`, `restored`, and `migration complete` wording.
+- Prevented configured wiring, target tests, file movement, and bounded non-findings from being reported as stronger lifecycle states.
+- Required controlled restoration wording to reflect deliberate replacement from an independently verified known-good source and one-authority reproof without implying stability.
+
+### Summary
+This version keeps migration reporting aligned to the exact lifecycle and evidence state instead of collapsing intermediate movement into completion.
 
 <a id="version-242"></a>
 ## Version 2.42: Applied owner-canonical active runtime compression

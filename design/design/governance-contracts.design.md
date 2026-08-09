@@ -1,8 +1,8 @@
 # Governance Contracts - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.13
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd (2026-05-17)
+> **Current Version:** 10.58
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Section:** Active governance contracts
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -71,7 +71,7 @@ When a design or changelog chain is touched for meaningful normalization, classi
 - `single-file-bootstrap`
 - `flat-sibling-shards`
 - `same-stem-subfolder-normalized`
-- `archive-history-fallback`
+- `archive-history-reference-only`
 
 Contract:
 - first decide whether the current folder already fully scopes one chain or is a shared folder containing several chains
@@ -86,7 +86,7 @@ Contract:
 - keep the parent compact as the active authority gateway
 - keep child design shards as active target-state truth
 - keep changelog version shards as parent-indexed detail, not competing authority
-- keep `changelog/done/` as legacy/archive/fallback, not the default active detail path
+- keep `changelog/done/` as inactive reference/provenance history, not the default active detail path, active resolution input, or automatic fallback
 - do not create a redundant same-stem nested folder until chain-shape classification says the current folder is no longer the right namespace and a real shard-opening basis exists
 - keep `observed project shape` as the checked example structure only
 - keep `extracted doctrine` as the reusable governance lesson inferred from that checked structure

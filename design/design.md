@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.57
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
+> **Current Version:** 10.58
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
 
@@ -14,13 +14,15 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.57` keeps the same 19 source-owned runtime Rules as body-sufficient owner contracts, resolves six checked semantic ambiguities, integrates the complete image-derived strategy set through existing canonical owners, and applies owner-canonical compaction without weakening authority, safety, evidence, execution, verification, approval, recovery, or stop mechanisms. Primary source implementation and final integration remain in the context-rich leader session; helper invocation is selected by work shape, with standalone agents for bounded independent axes, parallel standalone dispatch for independent test/metrics/matrix cells, and teammates only for real coordination dependencies.
+The active model for `v10.58` keeps the same 19 source-owned runtime Rules as body-sufficient owner contracts, makes non-trivial analysis and design proactively complete material constraints, dependencies, failure behavior, verification needs, and meaningful alternatives, and requires migrations to converge to one verified active authority. Former material may remain only as execution-disconnected quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority, fallback, or restoration input. Primary source implementation and final integration remain in the context-rich leader session, while helper invocation continues to follow actual work shape.
 
 ---
 
 ## 2) Current Active-State Summary
 
 Current target-state priorities:
+- non-trivial analysis/design should complete the material decision surface, compare only realistic alternatives, consider a simpler sufficient path, and recommend the best-supported route without fabricating project facts or replacing user authority
+- migration/cutover closes only after positive target proof and proportionate negative former-path inactivity proof show exactly one active authority, no active bridge/fallback/dual path, and no normal quarantine read
 - runtime rules stay as body-sufficient active behavior contracts
 - one complete canonical owner should retain each mechanism; consumers keep only activation, local consequence, handoff, or the minimum synchronized exact copy needed to prevent a likely execution, safety, verification, or ordering error
 - supporting explanation stays opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action

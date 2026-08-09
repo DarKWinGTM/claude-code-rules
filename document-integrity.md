@@ -1,7 +1,7 @@
 # Document Integrity
 
-> **Current Version:** 1.10
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.11
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
@@ -24,10 +24,12 @@ For a design/changelog chain selected under `document-governance.md`, verify:
 - exactly one active parent model and no ambiguous generic/semantic coexistence
 - declared chain shape and complete parent map
 - child/version ownership, parent back-links, and no orphan, stale, duplicate, or mixed-mode authority
-- history/fallback remains distinct from ordinary active detail
+- inactive history/reference material remains distinct from ordinary active detail and automatic resolution
 - observed example, extracted doctrine, selected target, and equivalence basis remain distinct when applicable
 
 Keep active entrypoints current and history/done reachable; do not let shards replace `TODO.md` or `phase/SUMMARY.md` navigation. Separate portable/shared references, checked local facts, source/install paths, destination/runtime paths, source-owned runtime scope, and other-owner runtime files. Source/runtime parity and release-ready claims also require active runtime body sufficiency.
+
+For migration-complete or no-drift claims, verify applicable active manifests, imports/dependencies, config, build inputs, deployment inputs, tests/test discovery, generated-input declarations, and acceptance surfaces select only current authority. Quarantine, history, and `done/` paths may remain as provenance references but must not remain active, fallback, generated, or normally discovered inputs. Name the checked scope; a moved file or one non-finding is not enough.
 
 | Reference family | Integrity check |
 |---|---|
@@ -84,7 +86,7 @@ Action modes remain: `REPAIR_NOW`, `DELEGATE_REPAIR`, `PLAN_IN_CURRENT_PHASE`, `
 ## Output and Change-Impact Standards
 Use precise portable placeholders, exact local values only as checked local facts, and stable path/line/symbol references when useful. Wording labels defer to `accurate-communication.md`; avoid vague references or one local path acting as both source and runtime destination.
 
-Renames/moves update imports, links, install examples, governed-doc comments, and dependent paths; symbol/key/command changes update checked usages and examples. Chain changes update maps, back-links, and active/fallback roles together. Runtime parity checks source-owned scope and substantive bodies, not hashes alone. Keep new-file classification unresolved until relevant authority/history and owner scope are checked.
+Renames/moves update imports, links, install examples, governed-doc comments, and dependent paths; symbol/key/command changes update checked usages and examples. Chain changes update maps, back-links, and active/inactive reference roles together. Runtime parity checks source-owned scope and substantive bodies, not hashes alone. Keep new-file classification unresolved until relevant authority/history and owner scope are checked.
 
 ---
 
@@ -94,6 +96,7 @@ Renames/moves update imports, links, install examples, governed-doc comments, an
 |---|---|
 | new/renamed/moved file, symbol, config key, command | update related references and verify consistency across checked scope |
 | sync/no-drift/closeout/release-ready claim | verify impacted files/sections, worker handoffs, and body sufficiency |
+| migration-complete or authority-replacement no-drift claim | verify active manifests/imports/config/build/deployment/tests/generated inputs/acceptance select current authority and inactive paths remain reference-only |
 | sharded design or changelog structure | verify parent index/shard map, shard-to-parent back-links, selected-shard scope |
 | touched governed document shows God pressure | route to split/shard/rollover repair with preserved links |
 | active entrypoint hits soft/hard size/thrash trigger | roll over into daily history/done shards with bidirectional references |
@@ -104,7 +107,7 @@ Renames/moves update imports, links, install examples, governed-doc comments, an
 ---
 
 ## Anti-Patterns
-Avoid duplicate authority/junk artifacts; classifying new, untracked, co-located, or shared-destination files without owner scope; any deletion justified only by size/status/cleanup/hygiene/isolation/worktree/sandbox/context pressure; orphan or root-replacing shards; unverified no-loss/no-drift claims; worker handoffs treated as proof; or vague/machine-local references presented as portable authority.
+Avoid duplicate authority/junk artifacts; classifying new, untracked, co-located, or shared-destination files without owner scope; any deletion justified only by size/status/cleanup/hygiene/isolation/worktree/sandbox/context pressure; orphan or root-replacing shards; unverified no-loss/no-drift or migration-complete claims; inactive/quarantined/history paths retained as active, fallback, generated, or discovery inputs; worker handoffs treated as proof; or vague/machine-local references presented as portable authority.
 
 ---
 

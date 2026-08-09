@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.13
+> **Current Version:** 2.14
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** No active phase; P073-11 completed, installed, pushed, tagged, released, and fresh-clone audited in v10.57
+> **Status:** P146 active for v10.58 strategic design completeness and single-authority migration convergence
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-05-08-pre-rollover-SUMMARY.md](history/2026-05-08-pre-rollover-SUMMARY.md)
@@ -23,7 +23,11 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ### Active
 
-- None.
+- **P146:** [phase-146-active-runtime-strategic-completeness-and-authority-convergence.md](phase-146-active-runtime-strategic-completeness-and-authority-convergence.md)
+  - Output: v10.58 strengthens proactive non-trivial design collaboration and makes completed migrations converge to one verified active authority with external execution-disconnected quarantine and controlled restoration.
+  - Children: [P146-01 proactive analysis/design completeness](phase-146-01-proactive-analysis-and-design-completeness.md); [P146-02 single-authority migration/quarantine](phase-146-02-single-authority-migration-and-quarantine.md).
+  - Current gate: runtime doctrine, governed sync, combined scenario/static checks, matched Bash/PowerShell fixture matrices, and canonical/root installation proof pass in checked scope. Clean publication identity and fresh-public-clone verification remain open.
+  - Patches: [proactive completeness](../patch/proactive-analysis-and-design-completeness.patch.md); [migration/quarantine](../patch/single-authority-migration-and-quarantine.patch.md).
 
 ### Most Recently Completed
 
@@ -361,6 +365,14 @@ Active scans should start here, then follow `history/` or `done/` links only whe
 
 ## Verification Focus
 
+Active v10.58 / P146 verification:
+- Active Runtime Rule inventory is the same 19 files; exactly nine changed triads align and the other ten runtime chains remain unchanged in candidate scope
+- proactive-design variants must prove material completeness, real-alternative comparison, simpler-path handling, evidence boundaries, and anti-overdesign
+- migration proof must combine target behavior with former-path inactivity, external quarantine, no fallback/dual read-write/discovery linkage, and one active authority
+- Bash and PowerShell fixture matrices passed in candidate scope, including ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases
+- exact 50-path allowlist, allowlisted local Markdown links, literals, force words, body sufficiency, README surgical diff, 19/19 candidate/canonical/root parity, exact manifest order, quarantine inactivity, and four unrelated-file preservation checks pass
+- root installation is verified in the named scope; pushed, tagged, released, migration-complete, and fresh-clone-verified wording remains blocked until publication identity and fresh public-clone checks run
+
 Released v10.57 verification:
 - `v10.57 / P073-11` keeps the Active Runtime Rule inventory at 19 and resolves the six checked semantic ambiguities through existing canonical owners
 - released payload is 254,032 bytes, 3,092 lines, and 33,038 words: 19,689 bytes (7.19%) below v10.54 and 151,882 bytes (37.42%) below the checked 405,914-byte baseline
@@ -372,6 +384,12 @@ Released v10.57 verification:
 ---
 
 ## Rollback / Containment
+
+For active v10.58 / P146:
+- revert only scoped clean-lane changes before publication; stop canonical synchronization on overlapping unrelated edits
+- quarantine remains preservation-only and never authorizes deletion or normal fallback
+- runtime restoration requires explicit approval, exact known-good source verification, deliberate replacement, unrelated-file preservation, and one-authority reproof
+- after publication, use a corrective release and never force-move the public tag
 
 For released v10.57:
 - use a corrective commit and new release for post-publication defects; never force-move the public tag

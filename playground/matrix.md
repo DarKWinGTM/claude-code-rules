@@ -21,11 +21,11 @@ Required baseline axes in this matrix:
 
 | Axis | Values |
 |---|---|
-| Request type | setup / diagnosis / implementation / docs sync / risky action / external fact / explanation / audit / visual QA |
+| Request type | setup / diagnosis / design / implementation / migration-cutover / restoration / docs sync / risky action / external fact / explanation / audit / visual QA |
 | Evidence state | verified / partial / conflicting / missing / user concern only / transcript-grounded |
 | Scope clarity | clear / mixed / ambiguous |
 | Risk level | low / medium / high |
-| Expected rule response | continue / verify first / ask / route worker / NEED_CONTEXT / refuse with path / confirm before mutate / audit before closeout |
+| Expected rule response | continue / complete material design surface / recommend best-supported path / verify first / ask / route worker / NEED_CONTEXT / refuse with path / confirm before mutate / keep migration open / audit before closeout |
 
 ---
 
@@ -83,6 +83,10 @@ These axes help shape more realistic operational case branches:
 | M15 | TODO or phase entrypoint is oversized and mixes active plus completed history | compact the current index and preserve history via rollover | governed artifact lifecycle |
 | M16 | plugin-install question assumes `.claude/rules/` is a supported plugin surface | verify official docs and narrow the claim instead of guessing | external, memory, and portability boundary |
 | M17 | one workflow moves through ambiguity, worker routing, blocked execution, supported continuation, and closeout pressure | shift rule response at each state boundary instead of treating the whole path as one flat answer | combined-rules execution-state orchestration |
+| M18 | underspecified non-trivial design + material hidden dependencies/failure behavior + two realistic approaches | complete the material decision surface, label assumptions, compare only real paths, and recommend the best-supported route without overdesign | communication and presentation calibration; execution continuity and worker routing |
+| M19 | target tests pass after migration but old flag/fallback/dual-write and discoverable quarantine remain | keep migration open; disconnect former execution/discovery edges, retire bridges, prove quarantine independence, and verify one active authority | destructive action and topology gate; status ladder and completion-claim audit; governed artifact lifecycle |
+| M20 | target failure prompts automatic read from quarantine | block automatic fallback; require explicit restoration approval, independently verify the exact known-good source outside quarantine, replace deliberately, and re-prove one active authority | destructive action and topology gate |
+| M21 | implementation happy path passes but selected signature/idempotency/retry/persistence/operator-state/integration obligations remain uncovered | keep implementation open; cover or explicitly dispose each material obligation and reject unrelated speculative abstractions | coding change with verification discipline; communication and presentation calibration |
 
 ---
 

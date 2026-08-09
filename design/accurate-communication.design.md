@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.42
+> **Current Version:** 2.43
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -52,6 +52,7 @@ This chain is the wording owner for:
 - visible evidence-layer wording so mixed-confidence answers can separate verified facts, inference, and hypotheses clearly enough for the reader without relying on tone alone
 - strategy-aware recommendation wording so shared-mechanism readings remain visible when the evidence does not yet justify supplier/model/path-specific scope as a settled fix owner
 - safe-first compression of repeated checklists and examples while preserving the status ladder, claim-state distinctions, evidence-strength wording, working-interpretation wording, and scoped non-finding wording
+- migration lifecycle wording that keeps `bridge active`, `cut over`, `quarantined`, `retired`, `inactive in checked scope`, `restored`, and `migration complete` distinct and prevents configured wiring, target tests, file movement, or bounded non-findings from becoming stronger claims
 
 - goal-request route-support wording so plain goal requests can receive the smallest sufficient route support without requiring users to ask for a `goal plan file`
 - goal-authoring stop-boundary wording so a turn that is only governed goal/plan-file authoring reports the emitted goal artifact plus route support as ready and stops there instead of appending an execution-style choice menu
@@ -69,6 +70,7 @@ Communication failures are often not just factual failures. They are also wordin
 
 Observed failure modes:
 - status messages omit enough context for the recipient to understand impact or action
+- migration updates collapse cutover, quarantine, retirement, restoration, or bounded inactivity into `migration complete`
 - success claims are stated more strongly than the available verification supports
 - prepared/configured/checklist-ready states are collapsed into implemented, tested, live, fixed, or stable wording
 - edited-only coding work is reported as fixed, or fake/local TestKit evidence is reported as live/provider/runtime proof
@@ -132,6 +134,18 @@ Typical mapping:
 | Runtime/live verified | "The real runtime/provider/deploy path was checked" |
 | Fixed | "The reported failure scope was corrected and verified" |
 | Stable | "Repeated or time-based evidence supports continued reliability" |
+
+### 3.2.1 Migration Lifecycle Wording Principle
+Migration wording must identify the actual lifecycle state rather than collapsing preparation, cutover, quarantine, retirement, restoration, and completion.
+
+Required guidance:
+- configured bridge wiring is not `bridge active`; active wording requires checked enablement or use
+- `cut over` means target selection changed, not that former links are fully disconnected
+- `quarantined` means preserved former material is outside active discovery/execution in checked scope, not that all references are retired
+- `retired` means the named bridge or former path is no longer selected in checked scope
+- `inactive in checked scope` remains a bounded non-finding, not global absence
+- `restored` requires explicit approved replacement from an independently verified known-good source plus one-authority reproof, but does not prove stability
+- `migration complete` requires positive target proof and proportionate negative former-path/discovery proof with no active bridge, fallback, dual path, or normal quarantine read
 
 ### 3.3 Evidence-Threshold Wording Principle
 The communication layer should make claim strength legible.

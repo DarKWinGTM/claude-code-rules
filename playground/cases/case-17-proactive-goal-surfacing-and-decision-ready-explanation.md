@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES should surface several materially different next-step options as candidate goals earlier at a real decision boundary, how the answer should stay easy-first, compact-but-complete, structured, evidence-clear, and decision-ready instead of collapsing too early into one path, stopping at a generic future note, or sprawling into dense prose, and how a governed next step may conditionally use internal planning to shape the emitted advisory `/goal` before final emission. Once the goal is selected, the assistant should keep compact route support inside the same goal-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is materially needed, without turning route detail into new goal conditions or treating helper output or route completion as goal completion.
+This case family shows how RULES should proactively complete materially underspecified non-trivial analysis/design, surface several real next-step options as candidate goals at a decision boundary, and keep the answer easy-first, compact-but-complete, evidence-clear, and decision-ready instead of merely mirroring the prompt, collapsing too early, manufacturing alternatives, stopping at a generic future note, or sprawling into dense prose. It also shows how a governed next step may conditionally use internal planning to shape the emitted advisory `/goal` before final emission. Once the goal is selected, the assistant should keep compact route support inside the same goal-centric surface first and open `/plan` only when overflow route detail or explicit standalone planning is materially needed, without turning route detail into new goal conditions or treating helper output or route completion as goal completion.
 
 ---
 
@@ -15,7 +15,7 @@ This case family shows how RULES should surface several materially different nex
 
 ## Governing rules
 
-- `execution-and-goal-frame.md` — allow candidate-goal surfacing at real decision boundaries when several materially different next slices remain live and no one continuation path clearly dominates, then allow route-heavy governed advisory `/goal` creation to conditionally use internal planning before final emission while keeping one integrated goal-centric visible surface, preserving `/goal` as the objective owner, and reserving `/plan` for overflow or explicitly requested standalone route handling once one governed goal is selected
+- `execution-and-goal-frame.md` — proactively inspect material completeness for non-trivial analysis/design, compare only real alternatives, recommend the best-supported route, allow candidate-goal surfacing at real decision boundaries, and keep route-heavy governed advisory `/goal` planning inside one goal-centric visible surface before `/plan` overflow
 - `phase-todo-artifact.md` — let checked phase/roadmap/TODO surfaces shape compact candidate goals from visible unselected next slices, then allow a design-first advisory `/goal` to use conditional internal planning plus optional route context when route synthesis materially helps, keep compact route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed
 - `worker-routing-and-context.md` — keep native subagent help minimally scoped, internal-only, and leader-verified when it is assisting analysis, route drafting, verification ordering, testing, or optional plan-file reference synthesis for pre-goal planning or selected-goal support
 - `explanation-and-presentation.md` — keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output or bounded helper output
@@ -28,6 +28,10 @@ This case family shows how RULES should surface several materially different nex
 ## Rule-enforced fact
 
 Current RULES require the assistant to:
+- keep simple or one-path work direct
+- for non-trivial analysis/design, inspect material outcome/success conditions, constraints, dependencies, state/integration assumptions, failure behavior, and verification instead of waiting for the user to specify every detail
+- compare only realistic alternatives, consider a simpler sufficient path, and recommend the best-supported route with the decisive reason or trade-off
+- preserve checked fact versus assumption/hypothesis and keep materially divergent recommendations advisory rather than silently widening execution
 - continue directly when one safe path is already clearly selected and dominant
 - surface candidate goals when several materially different next slices remain live and no one continuation path clearly dominates
 - keep `/goal` stricter than ordinary candidate goals and preserve its advisory-only status
@@ -67,6 +71,22 @@ Checked transcript-derived example:
 - If that route detail later outgrows the goal-centric surface, `/plan` may still become the overflow or explicitly requested standalone route surface.
 
 Expected behavior: the assistant should not collapse prematurely into one unlabeled recommendation, should not stop at a generic future note when the successor surface is already visible, and should not answer with a long diffuse paragraph. It should surface the next slices as candidate goals, use a small table for the comparison, separate verified facts from inference/hypothesis, then close with one clear recommendation. If the user selects that governed goal and the route remains materially non-trivial, the assistant should keep compact route support inside the same goal-centric surface first and open `/plan` only if overflow route detail or explicit standalone planning is later needed.
+
+### Underspecified design variant
+
+- A user asks to design a durable webhook consumer but supplies only the happy-path payload and destination.
+- Material unstated concerns include delivery semantics, idempotency, authentication/signature verification, retry/backoff ownership, persistence/ordering, dead-letter or operator recovery, observability, and acceptance tests.
+- Two realistic paths exist: direct synchronous processing or durable enqueue-then-process. The checked throughput/durability requirements favor the queue-backed path; if those requirements are absent, the simpler synchronous path may be sufficient.
+
+Expected behavior: explain the missing material decisions, label project-specific unknowns as assumptions, recommend the best-supported path with its decisive trade-off, and define verification. Do not invent provider limits, require every possible safeguard, or make the user design each sub-decision manually. If only one path satisfies checked requirements, recommend it directly without manufacturing an option list.
+
+### Implementation-completeness variant
+
+- A webhook consumer has been implemented and its happy-path focused test passes.
+- The selected scope also requires signature rejection, duplicate-delivery idempotency, retry ownership, persistence failure handling, operator-visible failure state, and an integration check at the queue boundary.
+- The implementation currently omits those material obligations but includes several unrelated abstraction ideas for hypothetical future providers.
+
+Expected behavior: do not call the implementation complete from the happy-path test. Cover the selected behavior/state/integration/failure/observability/verification obligations or mark each one explicitly deferred, blocked, not applicable, or out of scope with a real reason/owner where needed. Remove or defer unrelated speculative abstractions instead of using completeness as permission to overdesign.
 
 ---
 

@@ -1,7 +1,7 @@
 # Evidence Discipline
 
-> **Current Version:** 1.5
-> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.6
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
 
@@ -40,6 +40,15 @@ State the checked evidence, what remains unproven, and the next-best discriminat
 Use actual local files, symbols, config, and command/test output before treating values as known. Name the checked scope and keep exact local values local rather than portable defaults.
 
 A limited non-finding supports `NOT_FOUND_IN_CHECKED_SCOPE`, not absence. `STRONG_ABSENCE_CLAIM` requires authoritative or sufficiently exhaustive evidence. Git state, cleanup, hygiene, isolation, sandbox, or worktree rationale never proves semantic ownership or disposability.
+
+### 3.1) Two-sided migration proof
+Migration or authority-replacement completion requires both positive target proof and negative former-path inactivity proof.
+
+Positive proof should show, where applicable, that target behavior passes the relevant checks; active import, build, config, deployment, install, manifest, read/write, and test-discovery paths select the target; restart/reinstall/rebuild retains the target; and inspection reports one active authority.
+
+Negative proof should check for former imports, dependencies, flags, aliases, dual read/write, shadow activation, automatic fallback, build/deployment/test-discovery edges, and normal execution reads from quarantine or inactive history. Poisoning, renaming, or making quarantine unavailable should not affect normal target behavior. Remaining former references must be classified as provenance-only rather than assumed inactive from location or naming.
+
+One grep, one moved file, or target tests alone support only their checked scope. They do not prove migration completion or global former-path absence.
 
 ### 4) Real implementation and mock boundary
 Prefer real APIs, services, data, config, runtime paths, and local equivalents when available, safe, and proportionate. Mocks/fakes/stubs are allowed for explicit prototypes/examples, bounded test doubles, or when the real path is unavailable, unsafe, costly, or approval-gated; label the substitute, why it exists, and the path to real verification when temporary.
@@ -102,6 +111,7 @@ External evidence receives `AUTHORITATIVE_EXTERNAL` strength only when the exter
 | likely / possible | evidence-backed inference / partial evidence | label inference / hypothesis respectively |
 | governing basis, compacted detail, or memory as current truth | instruction/authority/direct fresh evidence | otherwise ask, use `POST_COMPACT_NEEDS_RECHECK`, or disclose/recheck memory |
 | non-finding / absence | bounded search / authoritative or exhaustive search | use scoped non-finding / strong absence respectively |
+| migration state or completion | positive target proof plus proportionate negative former-path/discovery proof across applicable active edges | name checked scopes; keep completion blocked while bridge, fallback, dual-path, discovery, or inactivity proof remains open |
 | file is disposable | governed semantic authority plus destructive authorization | git/cleanup/isolation state is insufficient |
 
 ---
@@ -128,7 +138,7 @@ Verification status labels: ✅ **Verified**, ⚠️ **Unverified**, ❌ **Not F
 ---
 
 ## Anti-Patterns
-Avoid fabricated or unsupported claims; preference treated as proof; inference presented as fact/cause; plausible symptoms collapsed into verified root cause; limited non-findings presented as absence; git/cleanup state treated as disposal authority; person-directed correction without contrary evidence; ordinary evidence treated as a rigid lock; or fake/simulated/placeholder behavior presented as real, persistent, integrated, live, or complete.
+Avoid fabricated or unsupported claims; preference treated as proof; inference presented as fact/cause; plausible symptoms collapsed into verified root cause; limited non-findings presented as absence; target tests or one grep presented as migration completion; git/cleanup state treated as disposal authority; person-directed correction without contrary evidence; ordinary evidence treated as a rigid lock; or fake/simulated/placeholder behavior presented as real, persistent, integrated, live, or complete.
 
 ---
 

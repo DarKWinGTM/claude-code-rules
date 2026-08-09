@@ -1,8 +1,8 @@
 # Installer Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.56
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
+> **Current Version:** 10.58
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Section:** Project-local Claude Code install architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -19,13 +19,11 @@ It exists so launcher scripts, helper scripts, README guidance, phase execution,
 
 ## Supported Install Surface
 
-The active install surface is:
-- primary target: `<project-root>/.claude/rules/`
-- optional fallback target: `$HOME/.claude/rules/`
+The active install surface is `<project-root>/.claude/rules/`, selected through the explicit project-root input.
 
 Contract:
 - project-local install is the default recommendation
-- global install is an explicit fallback, not the primary model
+- user-level installation is represented only by explicitly selecting the user's home directory as `<project-root>`; it is not a separate implicit mode or authority
 - unsupported non-native harnesses must not be counted as supported for this install surface
 - current checked support for this shard is Claude Code only
 
@@ -48,16 +46,16 @@ Contract:
 
 ## Execution Modes
 
-The installer model supports three execution modes that must converge to the same target contract:
-- launcher-driven local-repo execution from an existing RULES checkout as the primary operator path
-- direct helper execution from a local RULES checkout as a secondary/manual path
-- remote-bootstrap helper execution only as a fallback convenience path when explicitly selected
+The installer model supports three execution paths that converge to the same target contract:
+- launcher-driven execution from an existing RULES checkout as the primary operator path
+- direct helper execution with an explicit local source repo as the secondary/manual path
+- bootstrap cloning only when no explicit or inferred local source is available
 
 Contract:
-- all modes must end by installing the same active runtime set into the same chosen target shape
+- all paths install the same active runtime set into the selected project-root target
 - launcher-first is UX-primary, while helper scripts remain the execution layer underneath
-- the helper may resolve local source first and bootstrap only when local source is unavailable or when fallback mode is explicitly used
-- repo URL and ref override are allowed only as explicit source-selection inputs, not as hidden policy changes
+- explicit local source takes precedence over source inference; source inference takes precedence over bootstrap cloning
+- repo URL and ref inputs apply to bootstrap cloning only and must not silently alter an explicit or inferred local source
 
 ---
 
@@ -79,9 +77,9 @@ Contract:
 Helper scripts are the execution layer.
 
 Contract:
-- helper scripts perform the actual copy/install, manifest ownership, and legacy quarantine behavior
+- helper scripts perform source resolution, active-target ownership preflight, staged copy/install, manifest ownership, and execution-disconnected quarantine handling
 - launcher scripts delegate into helpers instead of re-implementing cleanup or parity logic
-- direct helper execution remains allowed for manual or fallback use, but should not replace launcher-first UX in current guidance
+- direct helper execution remains allowed for manual or bootstrap use, but should not replace launcher-first UX in current guidance
 
 ---
 
@@ -101,15 +99,22 @@ Contract:
 
 ## Install Ownership and Cleanup Contract
 
-The active cleanup contract is owner-aware:
-- install only the active source-owned runtime rule set
-- remove only manifest-owned files that still match the previously recorded install snapshot
-- quarantine legacy files only when their content exactly matches historical blobs from this repo
-- preserve unrelated co-located files by default
+The active ownership and convergence contract is fail-closed:
+- validate manifest filenames and hash fields, reject duplicate records, and reject symlinks/reparse points across the managed `.claude`/rules/quarantine path chain, manifest, and active targets before payload mutation
+- preflight all active target names and every planned quarantine source/type; overwrite only the current source, a matching prior manifest snapshot, or an exact historical repository blob for that path
+- stage the complete 19-file payload and manifest before replacing active targets
+- keep a bounded rollback journal for quarantine moves, active-target replacements, and manifest replacement so a failed commit restores the pre-install state where the installer still owns the moved paths
+- move unchanged obsolete manifest-owned files to `<project-root>/.claude/quarantine/claude-code-rules/<run-id>/` instead of deleting them
+- move retired candidates only after exact historical repository-blob proof
+- evacuate the prior installer-owned in-tree quarantine directory intact into external quarantine without interpreting its contents
+- preserve modified manifest-owned, unmatched, unknown, unrelated, and other-owner files
+- never read external quarantine as normal source, retry, reinstall, fallback, or restoration input
 
 Not allowed:
 - wildcard cleanup by filename alone
-- deleting files merely because they are untracked, old-looking, or co-located
+- deleting files merely because they are untracked, old-looking, co-located, or quarantined
+- path-traversal or directory-like manifest entries
+- overwriting an unowned or modified active-name collision
 - treating other harness/runtime artifacts as RULES-owned without checked ownership evidence
 
 ---
@@ -130,19 +135,28 @@ Required guidance:
 Installer closeout or proof should confirm:
 - launcher scripts exist and drive the selected operator path correctly
 - helper scripts exist and target the selected install surface correctly
-- the active runtime set count remains 19
-- source/destination parity passes for 19/19 files
-- source/destination body sufficiency passes for 19/19 files
-- manifest cleanup and legacy quarantine stay owner-aware
+- manifest filenames/hash fields reject malformed, duplicate, traversal, or directory-like input before payload mutation
+- symlink/reparse-point ancestors under the selected project boundary, direct linked rules/quarantine directories, and manifest/active-target links including broken links fail closed without mutating the external tree or replacing other-owner directory entries
+- unowned or modified active-name collisions fail closed
+- a deterministic later preflight failure leaves the project tree and prior in-tree quarantine unchanged; commit-phase failure uses the rollback journal instead of leaving a mixed payload
+- the active runtime set and ordered Bash/PowerShell manifests remain identical at 19
+- source/destination parity and body sufficiency pass for 19/19 files
+- prior in-tree quarantine, unchanged obsolete manifest-owned files, and repository-matching retired candidates move to external quarantine
+- modified, unmatched, unknown, unrelated, and other-owner files remain unchanged
+- quarantine poisoning, rename, or unavailability does not affect normal reinstall
+- idempotent reinstall creates no active duplicate and performs no automatic restoration
+- controlled restoration uses an independently verified exact known-good source through the normal installer and re-establishes one active authority without reading quarantine
+- matched Bash and PowerShell fixture matrices cover equivalent ownership, quarantine, disconnection, restoration, traversal, and collision cases
 - `git diff --check` remains clean after source edits when source work is in scope
 
 Recommended proof shape:
-- target path used
-- launcher path used
-- installed file count
-- parity result
-- body sufficiency result
-- cleanup boundary statement
+- selected project-root and source path/ref
+- installed file count and manifest order
+- parity and body-sufficiency results
+- quarantine actions and checked inactivity scope
+- unrelated/modified/unmatched preservation results
+- fixture commands and platform results
+- remaining canonical/root/fresh-clone limits
 
 ---
 

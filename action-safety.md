@@ -1,6 +1,6 @@
 # Action Safety
-> **Current Version:** 1.2
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.2
+> **Current Version:** 1.3
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.3
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Before executing destructive, ambiguous, high-impact, topology-changing, or retry-after-failure actions, classify intent and risk, lock authority and rollback direction, gate destructive or topology-expanding steps on explicit confirmation, accelerate response in genuine emergencies without abandoning evidence or approval gates, and bound retries by failure class with honest cooldown reporting.**
+**Core Principle: Before executing destructive, ambiguous, high-impact, topology-changing, migration/cutover, or retry-after-failure actions, classify intent and risk, lock authority and rollback direction, gate destructive or topology-expanding steps on explicit confirmation, require completed migrations to converge to one verified active authority with former material execution-disconnected, accelerate genuine emergencies without abandoning evidence or approval gates, and bound retries by failure class with honest cooldown reporting.**
 
 This rule unifies intent verification, destructive-action confirmation, runtime topology control, emergency response posture, and operational failure / retry handling. It does not replace authority/scope precedence, anti-guessing, evidence/zero-hallucination discipline, or refusal/recovery chains.
 
@@ -73,6 +73,9 @@ Inspect current topology, lock one authority baseline per role/path, and prefer 
 - `runtime authority` = layer authoritative for what should run for a role/path
 - `coordination mechanism` = checked mechanism such as passive shared board, local hook, injected context, tmux transport, recall/memsearch, official Agent Team, external plugin/MCP, or unavailable
 - `topology-changing action` = creates, removes, replaces, reassigns, duplicates, or reroutes runtime entities
+- `compatibility bridge` = an explicitly temporary pre-cutover or transition path connecting current and target behavior; it is not a permanent second authority or automatic fallback
+- `quarantine` = preserved former material outside active discovery and execution paths; it is non-authoritative, not a normal source, fallback, restore source, or deletion authorization
+- `controlled restoration` = an explicitly approved deliberate replacement from an independently verified exact known-good source/tag/commit, not from automatic quarantine lookup, followed by one-authority verification
 - `repair-in-place` / `replacement mutation` / `additive expansion` / `explicit multi-authority mode` = the four delta classes below
 
 ### Delta Classes
@@ -89,6 +92,27 @@ Before mutating, identify current entities, authority baseline, ambiguities, del
 
 ### Mechanism-first design gate
 Before claiming a coordination/runtime design can deliver awareness, requests, interrupts, state sharing, recall, routing, or mutation, classify the checked mechanism and its capability. Passive boards do not prove live delivery; hooks do not prove cross-session transport; injected context does not prove state mutation; tmux input does not prove semantic acceptance; recall does not prove current truth; teams and plugins/MCPs are limited to documented capability.
+
+### Migration, cutover, and authority convergence
+A migration or authority replacement is complete only after the target is verified, cutover selects one active authority, every former execution edge is disconnected, retained former material is outside active discovery, and proportionate inactivity proof passes.
+
+Use this lifecycle:
+```text
+identify current and target authority
+→ declare a compatibility bridge only when required
+→ verify target behavior and rollback direction
+→ approve and execute cutover
+→ disconnect former imports/reads/writes/config/build/deploy/test discovery
+→ move retained former material to external quarantine or inactive history
+→ retire the bridge and prove former-path inactivity
+→ verify exactly one active authority
+```
+
+A compatibility bridge must name its purpose, owner, consumers, authority boundary, observability, retirement trigger, rollback target, and removal/inactivity proof. It must not silently become dual read/write, target-failure fallback, shadow activation, or a permanent parallel source. While a bridge remains active, migration status is not complete.
+
+Quarantine preserves evidence without preserving execution. Normal runtime, install, retry, restart, rebuild, deployment, and test paths must not read it. Its location or label alone is not inactivity proof, and quarantine never authorizes deletion.
+
+Controlled restoration is not an always-connected fallback. It requires explicit action-and-scope approval, independent verification and selection of the exact known-good source/tag/commit, deliberate replacement rather than parallel activation, preservation of unrelated state, and post-restore proof that exactly one authority is active again. Quarantine remains preservation evidence only and must not be consulted automatically or treated as the restoration source.
 
 ### Communication Contract
 When topology control matters, report:
@@ -225,6 +249,10 @@ Honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless
 | restart/rebind/swap current owner | declare replacement delta and rollback direction first |
 | scaling/HA/canary/compare/shadow | enter explicit multi-authority mode with boundaries and retirement plan |
 | temporary debug runtime | define retirement plan before creation |
+| migration or source/path/authority replacement | declare current/target authority, bridge state, cutover, disconnection, quarantine, inactivity proof, and controlled-restoration direction |
+| compatibility bridge remains after cutover | keep migration open; require bounded owner/consumer/observability/retirement/removal proof and block completion wording |
+| quarantine or inactive history could remain discoverable | inspect runtime/install/import/config/build/deployment/test-discovery edges; location or naming alone is insufficient |
+| controlled restoration requested | require explicit action-and-scope approval, exact known-good source verification, deliberate replacement, and post-restore one-authority proof |
 | coordination/runtime design claim | classify checked mechanism before claiming delivery, mutation, or authority behavior |
 | post-mutation success claim | verify topology and checked scope before claiming success |
 | genuine emergency | activate emergency posture; lead with containment; preserve approval gates |
@@ -236,7 +264,7 @@ Honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless
 
 ## Anti-Patterns
 
-Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime without retirement plan; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; same-role respawn while duplicate/stale team-agent state is unresolved.
+Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime or compatibility bridge without retirement; migration-complete wording while former imports, reads/writes, config/build/deploy/test discovery, shadow paths, or automatic fallback remain; quarantine inside active discovery or used as a normal source/restore path; automatic restoration instead of approved deliberate replacement; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; same-role respawn while duplicate/stale team-agent state is unresolved.
 
 Better behavior: classify intent, lock authority, gate destructive or expanding moves on explicit confirmation, accelerate emergencies without abandoning evidence, and bound retries by class with honest reporting.
 

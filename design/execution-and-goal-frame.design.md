@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.28
+> **Current Version:** 1.29
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -73,6 +73,8 @@ P122 refinement: this owner should now preserve explicit `/plan` next-surface re
 
 P144 refinement: leader-owned source implementation is the default after a selected goal enters execution; bounded helper lanes may support research, diagnosis, review, parallel testing, test-only authoring, or exact governed-doc work but remain evidence inputs. Execution must hand helper-fit work to `worker-routing-and-context.md` for actual topology selection and invocation rather than stopping at lane description. Public read-only external lookup is evidence gathering rather than an approval-sensitive external mutation. Genuine emergencies may perform only the smallest safe reversible containment/diagnostic slice before startup when delay increases immediate harm, then immediately return to normal governance and recovery synchronization.
 
+P146 refinement: this owner must make non-trivial analysis/design proactively complete the material decision surface by checking outcome, success conditions, constraints, dependencies, state/integration assumptions, failure behavior, verification, real alternatives, and simpler sufficient paths; recommend the best-supported route without fabrication, overdesign, or user-authority takeover. Migration execution remains open until `action-safety.md` convergence gates—target verification, cutover, former-path disconnection, bridge retirement, quarantine separation, and inactivity proof—are resolved.
+
 ---
 
 ## Runtime Requirements
@@ -81,7 +83,9 @@ P144 refinement: leader-owned source implementation is the default after a selec
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Keep metadata linked to this design and the chain changelog.
 - Preserve lane decomposition and next-lane continuation semantics without taking delegation or bounded-I/O ownership away from `worker-routing-and-context.md` and `safe-io.md`.
+- Preserve proactive completeness for non-trivial analysis/design while keeping simple work direct and recommendations evidence-calibrated and advisory.
 - Preserve selected design-slice obligation extraction and the rule that uncovered obligations continue execution instead of allowing headline-output-only closeout.
+- Preserve migration continuation until the canonical convergence owner’s cutover, disconnection, retirement, quarantine-separation, and inactivity-proof gates close.
 - Preserve ordered phase-shaped continuation handling so current-phase reuse and truthful subphase fit are evaluated before any new-major phase selection.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
@@ -89,9 +93,9 @@ P144 refinement: leader-owned source implementation is the default after a selec
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the current compact active runtime set is selected.
+Former root rules absorbed into this chain are not active runtime authorities after the current compact active runtime set is selected.
 
-Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
+Historical detail remains in changelog or execution-disconnected quarantine/provenance surfaces, never as parallel runtime authority, fallback, or generated execution input.
 
 ---
 

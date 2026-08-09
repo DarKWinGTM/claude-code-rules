@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.23
+> **Current Version:** 1.24
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -19,7 +19,7 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 
 This design owns the target-state shape for natural professional communication, high-signal pruning, anti-sycophancy, and proposal evaluation.
 
-The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on former root files.
 
 P098 refinement: this owner must now also preserve target-state doctrine for natural professional tone, signal pruning, anti-ceremony clarification, and evidence-calibrated agreement or dissent.
 
@@ -63,6 +63,8 @@ P143 refinement: this owner should now preserve hybrid progress-reporting snapsh
 
 P144 refinement: supporting explanation is opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action. This owner decides admission; `explanation-and-presentation.md` owns placement and rendering.
 
+P146 refinement: this owner should preserve proactive completeness findings only when they materially change the recommendation, implementation path, risk, scope, dependency, failure behavior, or verification basis, while pruning speculative completeness theater and leaving exact rendering to `explanation-and-presentation.md`.
+
 P122 refinement: this owner should now preserve explicit `/plan` recommendation wording once planning is the right next surface, so the assistant does not hide the intended handoff behind vague prose about organizing or thinking through the route.
 
 ---
@@ -78,7 +80,7 @@ P122 refinement: this owner should now preserve explicit `/plan` recommendation 
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
+Former root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
 Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
 

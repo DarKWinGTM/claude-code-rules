@@ -1,7 +1,7 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.18
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
@@ -19,11 +19,11 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 
 This design owns the target-state shape for project documentation standards, diagram/design control, changelog control, patch control, and UDVC-1.
 
-The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on former root files.
 
 P099 refinement: this owner must now also preserve governance/release-sync work-shape recognition and owner-aligned lane decomposition for broad multi-surface sync or release-readiness passes.
 
-P101 refinement: this owner should now strongly prefer same-stem parent/index + shard paths for broad design/changelog chains while keeping `changelog/done/` as legacy/archive/fallback rather than the normal active detail path.
+P101 refinement: this owner should now strongly prefer same-stem parent/index + shard paths for broad design/changelog chains while keeping `changelog/done/` as inactive archive/reference history rather than the normal active detail path or an automatic fallback.
 
 P102 refinement: this owner should now explicitly classify governed chain shape, allow flat sibling shards when the current folder already scopes the chain, and require visible append-vs-shard posture before parent design/changelog authorities absorb more detail.
 
@@ -53,6 +53,8 @@ P142 refinement: this owner should now keep reusable phase-authoring scaffolds u
 
 P144 refinement: cross-Rule exact repetition is exceptional. A consumer may retain only the minimum literal/order needed to prevent a likely execution, safety, verification, or ordering error; it must identify the canonical owner, remain synchronized, and never become competing or recursively copied authority.
 
+P146 refinement: active parents, maps, manifests, install sets, and generated-input declarations must identify only current authority. Quarantine, history, and `done/` remain reachable reference/provenance surfaces only; they cannot own active resolution, automatic fallback, normal generated input, or runtime/install discovery. The archive shape is `archive-history-reference-only`, not an active fallback model.
+
 ---
 
 ## Runtime Requirements
@@ -70,9 +72,9 @@ P144 refinement: cross-Rule exact repetition is exceptional. A consumer may reta
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
+Former root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
-Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
+Historical detail remains in changelog or execution-disconnected quarantine/provenance surfaces, not as parallel runtime authority, active input, or automatic fallback.
 
 ---
 

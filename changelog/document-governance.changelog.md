@@ -1,7 +1,7 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.17
+> **Current Version:** 1.18
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.18 | 2026-08-09 | **[Made inactive preservation reference-only after cutover](#version-118)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.17 | 2026-08-08 | **[Compacted document governance and bounded cross-Rule exact copies](#version-117)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.16 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.15 | 2026-06-07 | **[Added P142 template-directory support-boundary refinement](#version-115)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -31,6 +32,20 @@
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-118"></a>
+## Version 1.18: Made inactive preservation reference-only after cutover
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Required active parents, maps, manifests, install sets, and generated-input declarations to identify only current authority.
+- Replaced the active archive/fallback chain shape with `archive-history-reference-only` and kept quarantine/history/`done/` provenance-only.
+- Prohibited inactive preservation surfaces from owning automatic fallback, normal generated input, or runtime/install discovery.
+
+### Summary
+This version prevents preserved former documentation from remaining a parallel or automatically resolved authority after cutover.
 
 <a id="version-117"></a>
 ## Version 1.17: Compacted document governance and bounded cross-Rule exact copies

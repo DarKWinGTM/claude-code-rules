@@ -1,6 +1,6 @@
 # Explanation and Presentation
-> **Current Version:** 1.22
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.22
+> **Current Version:** 1.23
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.23
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
@@ -123,6 +123,7 @@ Use only when useful:
 - **Visible intent read:** one working interpretation under drift risk
 - **Selective clarification:** one outcome-changing question
 - **Root-cause walkthrough:** symptom → evidence → likely cause → next check
+- **Decision-ready recommendation:** `Recommended`, `Why`, material `Constraints / dependencies`, `Main trade-off / failure mode`, and `Verification`
 - **Governing-basis clarification:** materially different frames
 - **Post-compact re-anchor:** objective, carried facts, needs-recheck, next action
 - **Memory-status:** matched path scope, remembered versus freshly checked, needs-recheck
@@ -138,6 +139,8 @@ A short `What happens next`, `Next stage`, or `Next state` block is useful only 
 ### 3) Pattern detail boundaries
 
 A diagnostic snapshot should orient before raw facts. Use compact `Current`, `Checked`, `Meaning`, and `Next` sections only when they improve scanability; keep captured facts separate from inference, pending work, and unavailable exact detail. One implication line should explain why the snapshot matters.
+
+For an underspecified non-trivial analysis or design, the decision-ready recommendation pattern may show `Recommended`, `Why`, material `Constraints / dependencies`, `Main trade-off / failure mode`, and `Verification`. Omit any field that does not change the decision; never pad the shape with speculative concerns, and do not replace the default non-trivial flow, Goal/Output/Gate, or progress snapshots with this pattern.
 
 For scope boundaries, group `What this is` apart from `What this is not`, and `What happens now` apart from `What stays later`. Add `What the user will notice` when product/workflow impact matters. Do not hide active-versus-deferred scope inside one dense paragraph.
 
@@ -219,6 +222,7 @@ A diagram must clarify sequence, branching, dependency, or handoff—not decorat
 | diagnostic/verification status | purpose-first snapshot and next action |
 | outcome-changing ambiguity | one narrow clarification |
 | comparison/recommendation | brief frame, light table when useful, recommended path + reason |
+| underspecified non-trivial analysis/design | optional material-only decision-ready recommendation with constraints/dependencies, main trade-off or failure mode, and verification |
 | scope or identifier confusion | grouped boundaries or meaning-first role walkthrough |
 | phase progress/closeout | delivery/impact/verification/next-state orientation |
 | goal/roadmap completion | compact Goal/Output/Gate when it improves navigation |
@@ -228,7 +232,7 @@ A diagram must clarify sequence, branching, dependency, or handoff—not decorat
 
 ## Anti-Patterns
 
-Avoid buried main points; raw dumps without implication; walls of text; rigid templates for simple answers; decorative/heavy tables; boxed diagrams; hidden scope boundaries; bare identifiers; file/task-only phase closeout; advisory work phrased as selected continuation; generic future notes when a governed successor is visible; wrapper-only language alignment; repeated summaries; optional deep dives becoming second answers; Goal/Output/Gate forced onto trivial replies; deeper same-scope elaboration after the decision is clear; prompt-restating intent reads; and broad clarification when one focused distinction is enough.
+Avoid buried main points; raw dumps without implication; walls of text; rigid templates for simple answers; padded recommendation fields with no decision value; decorative/heavy tables; boxed diagrams; hidden scope boundaries; bare identifiers; file/task-only phase closeout; advisory work phrased as selected continuation; generic future notes when a governed successor is visible; wrapper-only language alignment; repeated summaries; optional deep dives becoming second answers; Goal/Output/Gate forced onto trivial replies; deeper same-scope elaboration after the decision is clear; prompt-restating intent reads; and broad clarification when one focused distinction is enough.
 
 ## Integration
 

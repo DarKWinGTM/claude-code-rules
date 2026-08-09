@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.57</b><br><sub>Semantic Compaction</sub>
+  <b>v10.58</b><br><sub>Authority Convergence</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Verified and published</sub>
+  <b>Candidate</b><br><sub>Verification in progress</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release note:** Released `v10.57` resolves six semantic conflicts, integrates the complete image-strategy owner set, keeps source/final integration leader-owned, and routes standalone, parallel testing/metrics/test-matrix, and coordinated Teammate work by actual dependency shape while preserving the 19-file runtime boundary.
+> **Current candidate note:** `v10.58` adds proactive material design completeness and one-active-authority migration convergence, moves retained former material outside active Rule discovery, and preserves the same 19-file runtime boundary. Combined checks, matched Bash/PowerShell fixture matrices, governed synchronization, and canonical/root 19/19 installation proof pass in checked scope; publication identity and fresh-clone gates remain.
 
 <!-- CTA Buttons -->
 <p>
@@ -129,9 +129,10 @@ Manual/helper path from a local clone:
 - This wave supports Claude Code only. Codex CLI and Gemini CLI are not supported for this install surface in current scope.
 - This runtime-only install copies active rule files only.
 - Cleanup is owner-aware, not wildcard-by-filename.
-- Manifest cleanup removes only files previously installed by this repo and still matching the last recorded install snapshot inside the same project-local target.
-- Legacy cleanup checks old candidate filenames against this repo's git history; only exact historical blob matches are quarantined out of the active project-local runtime path.
-- Files already present in the target `.claude/rules/` directory but outside this repo's recorded install ownership or repo-history proof are preserved by default.
+- Unchanged obsolete manifest-owned files are moved to `<project-root>/.claude/quarantine/claude-code-rules/<run-id>/` instead of being deleted.
+- Retired candidate filenames move only after exact historical Git-blob proof; the prior installer-owned in-tree quarantine directory is evacuated intact to the same external quarantine root.
+- External quarantine is outside active `.claude/rules/` discovery and normal installation never reads it as source, retry, fallback, or restoration input.
+- Files already present in the target `.claude/rules/` directory but outside this repo's recorded ownership or repository-history proof are preserved by default; modified or unowned active-name collisions fail closed.
 - Governed design/changelog/TODO/phase/patch artifacts, inactive history/done surfaces, and `template/phase-authoring-template.md` remain in the repository for maintenance and synchronized updates.
 - Companion plugins are now a recommended follow-up when you want the current full RULES toolchain, but they still install separately from the `.claude/rules/` runtime payload.
 
@@ -279,12 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- The `v10.57` candidate keeps the 19-file Bash and PowerShell runtime boundary unchanged while resolving six semantic ambiguities, integrating the complete strategy set through existing canonical owners, and selecting Subagent/Teammate invocation by work shape instead of delegation by default.
-- The combined active Rule payload is 254,032 bytes, down 19,689 bytes (7.19%) from v10.54 and 151,882 bytes (37.42%) from the checked 405,914-byte baseline.
+- The `v10.58` candidate keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding proportional non-trivial design completeness and one-active-authority migration convergence.
+- Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
+- The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Maintainer closeout still requires README sync, runtime install, source push, and repo release before a RULES wave is considered done.
-- The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces remain outside the runtime payload.
+- Governed synchronization and root runtime installation pass in checked scope; maintainer closeout still requires source push, release identity, and fresh-clone verification.
+- The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
 ---
@@ -399,7 +401,7 @@ Boundary:
 | `./changelog/*.changelog.md` | Per-chain authoritative active parent history/current version state | Active parent changelogs |
 | `./changelog/<chain>/v*.changelog.md` | Same-chain detailed version entries in same-stem nested mode | Version detail shards |
 | `./changelog/v*.changelog.md` beside a compact parent | Flat sibling version-detail shards when the current folder already scopes the chain | Version detail sibling shards |
-| `./changelog/done/*.changelog.md` | Legacy/archive/fallback detailed history outside active scans | Inactive history for audit/rollback/provenance/trace |
+| `./changelog/done/*.changelog.md` | Inactive reference/provenance history outside active scans | Audit/rollback/provenance/trace only; never active resolution or automatic fallback |
 | `./todo/history/*.md` | Daily TODO movement and pre-rollover snapshots outside the active TODO entrypoint | Referenced inactive TODO history |
 | `./todo/done/*.md` | Large completed TODO/task detail outside the active TODO entrypoint | Referenced inactive TODO detail |
 | `./phase/SUMMARY.md` | Compact governed summary/index for live phase planning and current roadmap state | Phase summary doc |
@@ -1064,10 +1066,10 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: released `v10.57` keeps 19 root Rules; Bash/PowerShell disposable, canonical/root, and fresh-clone install parity/body-sufficiency checks pass 19/19, and `playground/` stays outside the install payload.
-- Ownership guard: manifest-owned files are removed only when they still match the last recorded install snapshot, and legacy pre-manifest files are quarantined only when their content exactly matches this repo's git history for that rule path.
-- Boundary: files already present in a shared runtime destination but outside this repo's recorded install ownership or repo-history proof are not cleanup targets by default.
-- Impact: protects install scope and other-owner runtime files while still allowing safe cleanup of this repo's old runtime leftovers, including legacy installs from before the merged-rule transition.
+- Candidate state: `v10.58` keeps 19 root Rules; matched Bash and PowerShell disposable fixture matrices pass ownership, external-quarantine, disconnection, idempotency, controlled-restoration, traversal, and active-name-collision cases. Canonical/root parity and unrelated-file preservation pass; publication identity and fresh-clone reproduction remain release gates.
+- Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
+- Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
+- Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
 
 ### Governed document capacity and automation
 
@@ -1093,7 +1095,7 @@ Result: ✅ Verified from actual files
 ### Completed/history surfaces
 
 - Current README meaning: history, detail, and done surfaces are referenced or inactive by role, not deletion authority.
-- Included surfaces: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, `changelog/<chain>/v*.changelog.md` for indexed version detail, and `changelog/done/` for legacy/archive/fallback history.
+- Included surfaces: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, `changelog/<chain>/v*.changelog.md` for indexed version detail, and `changelog/done/` for inactive reference/provenance history.
 - Boundary: `design/done/` is not a default pattern.
 - Impact: reduces active scan bloat without deleting governed history.
 
@@ -1189,8 +1191,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.57 |
-  <b>Last Updated</b>: 2026-08-08 |
+  <b>Version</b>: 10.58 |
+  <b>Last Updated</b>: 2026-08-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

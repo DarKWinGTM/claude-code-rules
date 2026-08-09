@@ -2,7 +2,7 @@
 
 ## What this case proves
 
-This case family shows how RULES stop cleanup instinct, unsafe deletion, or uncontrolled high-impact mutation from being treated as normal continuation.
+This case family shows how RULES stop cleanup instinct, unsafe deletion, uncontrolled high-impact mutation, or incomplete migration cutover from being treated as normal completion. It also proves that preserved former material must be execution-disconnected and that restoration is an explicit replacement operation rather than an automatic fallback.
 
 ---
 
@@ -15,8 +15,10 @@ This case family shows how RULES stop cleanup instinct, unsafe deletion, or unco
 
 ## Governing rules
 
-- `action-safety.md` — destructive confirmation, topology classes, retry discipline, emergency posture
-- `document-integrity.md` — cleanup/hygiene/worktree/isolation are not deletion authority
+- `action-safety.md` — destructive confirmation, topology classes, migration/cutover convergence, quarantine, controlled restoration, retry discipline, emergency posture
+- `coding-discipline.md` — one active source implementation after cutover; no hidden old import/flag/alias/read-write/fallback path
+- `document-governance.md` — active maps/manifests/install/generated-input surfaces name only current authority; quarantine/history remain reference-only
+- `document-integrity.md` — cleanup/hygiene/worktree/isolation are not deletion authority and migration completion checks active reference/discovery surfaces rather than quarantine naming alone
 - `authority-and-scope.md` — repo-governed meaning outranks git state or cleanup instinct
 - `evidence-discipline.md` — untracked or missing-recognition state is not semantic proof
 - `accurate-communication.md` — state mutation claims must match checked scope
@@ -30,6 +32,9 @@ Current RULES require the assistant to:
 - explain scope, impact, and rollback direction before executing risky mutations
 - avoid using cleanup, hygiene, untracked state, or isolation as deletion authority
 - keep approval-sensitive verification such as real-smoke behind explicit confirmation
+- keep migration open while a compatibility bridge or former execution edge remains
+- require preserved former material to sit outside runtime/install/import/config/build/deployment/test discovery
+- require controlled restoration to use explicit approval and deliberate replacement from an independently verified exact known-good source/tag/commit selected outside quarantine, then re-prove one active authority
 
 ---
 
@@ -50,8 +55,11 @@ Checked transcript-derived examples:
 - User says “clean up these files” but file ownership is unclear.
 - A broken runtime tempts the assistant to start a parallel service instead of inspecting the current owner first.
 - A verification request implies live or real-smoke behavior even though explicit approval has not been given.
+- A migration moves former Markdown Rules into a hidden directory still below `.claude/rules/`; recursive discovery can still load them, so location naming does not prove disconnection.
+- A cutover passes target tests but retains an old environment switch, fallback branch, and dual write; migration must remain open.
+- A rollback request proposes reading quarantine automatically after target failure; this must be rejected in favor of explicit known-good replacement.
 
-Expected behavior: inspect and confirm rather than mutate by instinct.
+Expected behavior: inspect and confirm rather than mutate by instinct; verify target behavior and former-path inactivity; keep quarantine outside active discovery; close only after one active authority remains.
 
 ---
 
@@ -74,12 +82,15 @@ Clean up, mutate, or verify risky state without letting convenience or momentum 
 - Require exact scope, impact, and rollback direction before risky execution.
 - Block cleanup/hygiene reasoning from becoming deletion authority.
 - Keep approval-sensitive verification such as real-smoke behind explicit confirmation.
+- During migration, verify target behavior, active dependency/discovery edges, former-path disconnection, bridge retirement, and quarantine independence before completion.
+- Preserve former material only outside active discovery; poisoning, renaming, or making quarantine unavailable must not affect normal runtime/install/build/test behavior.
+- Restore only after explicit approval from an independently verified exact known-good source selected outside quarantine through deliberate replacement, then verify one authority again.
 
 ---
 
 ## Decision
 
-Risky mutation or real-smoke work stops at an explicit confirmation gate until the approved scope is clear.
+Risky mutation or real-smoke work stops at an explicit confirmation gate until the approved scope is clear. Migration closes only after one active authority and former-path inactivity are verified; restoration remains an approved deliberate replacement, never an automatic fallback.
 
 ---
 
@@ -107,15 +118,19 @@ Risky mutation or real-smoke work stops at an explicit confirmation gate until t
 ## Flow diagram
 
 ```text
-Cleanup or high-impact request arrives
+Cleanup, high-impact, migration, or restoration request arrives
   ↓
-Semantic ownership and blast radius are checked
+Semantic ownership, active authority, and blast radius are checked
   ↓
-Rollover signal or approval-sensitive path is identified
+Approval-sensitive action or migration convergence gate is identified
   ↓
-Delete / live-mutate shortcut is blocked
+Delete / parallel-authority / automatic-fallback shortcut is blocked
   ↓
-Safe reversible action or explicit confirmation path is chosen
+Target is verified and cut over
+  ↓
+Former execution edges are disconnected and quarantine is outside discovery
+  ↓
+One active authority is verified, or explicit restoration approval is requested
 ```
 
 ---

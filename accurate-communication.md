@@ -1,6 +1,6 @@
 # Accurate Communication Standard
-> **Current Version:** 2.42
-> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.42
+> **Current Version:** 2.43
+> **Design:** [design/accurate-communication.design.md](design/accurate-communication.design.md) v2.43
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/accurate-communication.changelog.md](changelog/accurate-communication.changelog.md)
 ---
@@ -34,6 +34,22 @@ Claims must match the real evidence level, especially when readiness can be mist
 - name the checked scope when the result is bounded
 - checklist readiness, local tests, fake adapters, or one-shot smoke checks do not prove live/runtime/provider stability
 - for coding work, align edited/tested/fake-local/live/stable wording to `coding-discipline.md`; fake/local tests or TestKit scenarios do not prove live provider/runtime/deploy behavior
+
+### 2.1) Migration lifecycle wording
+Use migration terms only at their checked lifecycle state:
+
+| Status | Use only when |
+|---|---|
+| `bridge active` | a temporary compatibility path is actually enabled/used in the named scope; configured wiring alone is not active use |
+| `cut over` | active selection moved to the target; former-path disconnection and bridge retirement may still be pending |
+| `quarantined` | retained former material was moved outside active discovery/execution in the checked scope; this does not prove all active references are retired |
+| `retired` | the named bridge or former active path was removed or execution-disconnected and no longer selected in the checked scope |
+| `inactive in checked scope` | bounded negative checks found no activation in the named surfaces; this is not a global absence claim |
+| `restored` | explicit approved replacement from an independently verified known-good source completed and one active authority was reverified; this is not stability proof |
+| `migration complete` | positive target proof and proportionate negative former-path/discovery proof show one active authority with no active bridge, fallback, dual path, or normal quarantine read |
+
+Keep boundaries explicit: `cut over` is not `migration complete`; `quarantined` is not `retired`; `inactive in checked scope` is not global absence; `restored` is not `stable`; configured bridge wiring is not `bridge active`.
+
 ### 3) Evidence-state wording projection
 Use the claim state established by `evidence-discipline.md`; do not recreate or upgrade it here.
 
@@ -106,10 +122,10 @@ When reporting phase progress, phase meaning, next-step reasoning, or phase-back
 ## Application Rules
 Strengthen clarity when status, impact, uncertainty, or next action could be misunderstood. A finding/update should make the situation, evidence state, checked scope, impact, and next action understandable without upgrading partial evidence.
 
-Use compact confidence labels such as `Verified`, `Inference`, and `Hypothesis` when mixed states would otherwise blur. A working interpretation stays visibly provisional and must be re-anchored after correction. Phase closeout states delivery and impact at the tested scope; duplicate-looking worker/session state separates observation from inferred active overlap.
+Use compact confidence labels such as `Verified`, `Inference`, and `Hypothesis` when mixed states would otherwise blur. A working interpretation stays visibly provisional and must be re-anchored after correction. Phase closeout states delivery and impact at the tested scope; duplicate-looking worker/session state separates observation from inferred active overlap. Migration updates name the exact lifecycle state and checked surfaces rather than collapsing cutover, quarantine, retirement, restoration, and completion.
 ---
 ## Anti-Patterns
-Avoid completion words above evidence strength; fake/local checks presented as live proof; preference/inference/hypothesis/non-finding presented as fact; unchecked agreement or contradiction; memory/compacted state presented as fresh truth; identifiers without meaning; setup before purpose; or ceremonial wording that hides status, impact, and next action.
+Avoid completion words above evidence strength; fake/local checks presented as live proof; preference/inference/hypothesis/non-finding presented as fact; cutover/quarantine/target tests presented as migration completion; configured bridge wiring presented as active use; restoration presented as stability; unchecked agreement or contradiction; memory/compacted state presented as fresh truth; identifiers without meaning; setup before purpose; or ceremonial wording that hides status, impact, and next action.
 ---
 ## Snapshot Wording (absorbed from technical-snapshot-communication)
 Report technical snapshots by separating exact captured facts, partial checked facts, inferred implications, and scoped local facts so compact status wording does not overclaim. This section owns bounded wording for compact technical, diagnostic, and verification-status snapshots; evidence taxonomy, snapshot layout, explanation flow, and portability remain owned by their specialist rules.

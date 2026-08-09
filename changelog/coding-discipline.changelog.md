@@ -1,7 +1,7 @@
 # Changelog - Coding Discipline
 
 > **Parent Document:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-08-09 | **[Added implementation completeness and source convergence](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.2 | 2026-06-04 | **[Added P138 semantic code naming and governed-doc comment linkage refinement](#version-12)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | | | Summary: Added semantic/domain/behavior-first identifier doctrine and bounded source-comment linkage to governed docs without turning comments into duplicate documentation. | |
@@ -18,6 +19,20 @@
 | | | Summary: Created `coding-discipline.md` as a body-sufficient merged runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-14"></a>
+## Version 1.4: Added implementation completeness and source convergence
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Added a proportional implementation-completeness gate for material behavior, state/dependency boundaries, integration contracts, failure handling, operational observability when required, and verification.
+- Required post-cutover source convergence so former imports, switches, flags, factories, aliases, dual read/write, shadow implementations, discovery edges, and automatic fallback cannot remain active after migration.
+- Kept compatibility code as an explicitly temporary bridge with retirement/removal proof and rejected speculative abstractions or future-only safeguards.
+
+### Summary
+This version prevents happy-path-only closeout and ensures migrations finish with one active source implementation rather than parallel current/former paths.
 
 <a id="version-13"></a>
 ## Version 1.3: Applied owner-canonical active runtime compression

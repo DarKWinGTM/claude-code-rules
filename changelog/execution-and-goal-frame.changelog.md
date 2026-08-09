@@ -1,6 +1,6 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.28
+> **Current Version:** 1.29
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.29 | 2026-08-09 | **[Added proactive design completeness and migration convergence continuation](#version-129)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.28 | 2026-08-08 | **[Aligned leader-owned source execution and consequential-action boundaries](#version-128)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.27 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-127)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.26 | 2026-06-13 | **[Extracted governed `/goal` authoring into dedicated owner rule](#version-126)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
@@ -43,6 +44,20 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-129"></a>
+## Version 1.29: Added proactive design completeness and migration convergence continuation
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Added a proportional non-trivial analysis/design completeness gate covering outcome, material success conditions, constraints, dependencies, state/integration assumptions, failure behavior, verification, real alternatives, and simpler sufficient paths.
+- Required a best-supported recommendation with the decisive reason or trade-off while preserving evidence states, user authority, simple-task directness, and anti-overdesign boundaries.
+- Kept migration execution open until target verification, cutover, former-path disconnection, bridge retirement, quarantine separation, and inactivity proof are resolved under `action-safety.md`.
+
+### Summary
+This version makes the assistant a more proactive design collaborator without fabrication or scope takeover and prevents migration work from closing before single-authority convergence is proven.
 
 <a id="version-128"></a>
 ## Version 1.28: Aligned leader-owned source execution and consequential-action boundaries

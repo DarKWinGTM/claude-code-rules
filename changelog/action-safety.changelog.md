@@ -1,7 +1,7 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.2
+> **Current Version:** 1.3
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,12 +9,27 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.3 | 2026-08-09 | **[Added single-authority migration convergence and controlled restoration](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.2 | 2026-08-08 | **[Clarified destructive authorization, emergency containment, and runtime entity scope](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.1 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-13"></a>
+## Version 1.3: Added single-authority migration convergence and controlled restoration
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Defined migration/cutover closure as target verification, one selected active authority, former execution-edge disconnection, external quarantine or inactive-history separation, bridge retirement, and proportionate inactivity proof.
+- Bounded compatibility bridges by purpose, owner, consumers, authority boundary, observability, retirement trigger, rollback target, and removal proof; active bridges now block migration-complete wording.
+- Defined quarantine as preserved but execution-disconnected material and controlled restoration as explicitly approved deliberate replacement from an independently verified exact known-good source/tag/commit selected outside quarantine, never an automatic fallback.
+
+### Summary
+This version prevents completed migrations from retaining parallel old/new authority and makes rollback a controlled restoration operation rather than a permanently connected path.
 
 <a id="version-12"></a>
 ## Version 1.2: Clarified destructive authorization, emergency containment, and runtime entity scope

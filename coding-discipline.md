@@ -1,6 +1,6 @@
 # Coding Discipline
-> **Current Version:** 1.3
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.3
+> **Current Version:** 1.4
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.4
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
@@ -50,6 +50,11 @@ Comments may cite governed documents only when the link materially lowers mainte
 
 ### 9) Behavior-preserving refactor
 Refactoring should improve internal structure while preserving externally visible behavior unless behavior change is explicitly part of the task. Separate structural refactor from behavior change when practical. Use small transformations rather than broad rewrites when behavior risk is high. Run relevant tests, type checks, lint, or bounded verification when available. If verification is incomplete, report the limit instead of claiming the code is fixed, clean, or stable.
+
+### 9.1) Implementation completeness gate
+Before treating a non-trivial implementation as ready for closeout, inspect whether the selected outcome still has material gaps in behavior, state/dependency boundaries, integration contracts, failure handling, security-relevant paths, operational observability when needed, or verification. Add only what the current objective and checked evidence justify; do not create unrelated abstractions, speculative safeguards, or compatibility layers for imagined futures.
+
+A visible happy path is insufficient when the selected scope materially depends on error behavior, retries/idempotency, persistence, concurrency, rollback, lifecycle cleanup, or external contracts. Cover the obligation, or mark it explicitly deferred, blocked, not applicable, or out of scope with an owner/reason where needed.
 
 ### 10) Decomposition Decision Gate
 Before expanding or introducing a substantial function, file, module, class, helper, or abstraction:
@@ -190,6 +195,11 @@ Tactical work must stay narrow enough to converge cleanly. Prefer local, reversi
 ### No permanent tactical drift
 Temporary solutions must not become hidden long-term authority. Workarounds, patch stacks, bridges, or compatibility paths require retirement, absorption, or formal promotion when they persist; detect and call out drift early.
 
+### Source convergence after migration
+After cutover, the implementation must have one active source/path/authority for the migrated role. Remove or execution-disconnect former imports, switches, environment flags, factory branches, aliases, dual read/write paths, shadow implementations, build/config/deployment/test-discovery edges, and target-failure fallbacks unless an explicitly approved temporary compatibility bridge still owns them under `action-safety.md`.
+
+Preserved former code belongs only in execution-disconnected quarantine or inactive history outside normal discovery. Compatibility code is a temporary exception with a retirement trigger and proof obligation; it must not remain as permanent parallel architecture. Rollback/restoration deliberately replaces the active source from a verified known-good source and must not activate both paths together.
+
 ### Strategic closure
 Non-trivial systems should end in strategic structure. Stable boundaries, roles, and sequencing belong in strategic authority; design and phase layers should absorb validated tactical learning; final authority should not live in leftover tactical fragments.
 
@@ -230,7 +240,7 @@ When this doctrine materially matters, make these meanings visible: **Strategic 
 
 | Trigger | Required behavior |
 |---|---|
-| non-trivial coding feature | choose verification depth and TestKit/scenario decision before closeout |
+| non-trivial coding feature | inspect implementation completeness, then choose verification depth and TestKit/scenario decision before closeout |
 | bug/debug request | define observed failure/reproduction, hypothesis, signal, fix, and regression check when practical |
 | root-cause diagnosis before patching | separate symptom, leading hypothesis, discriminating check, and evidence boundary before shotgun edits |
 | refactor | preserve behavior and rerun affected tests or state verification limits |
@@ -246,6 +256,8 @@ When this doctrine materially matters, make these meanings visible: **Strategic 
 | patch accumulation | check for tactical drift and promotion need |
 | phase/roadmap planning | let strategic framing dominate |
 | temporary runtime structure | require retirement or absorption path |
+| migration/cutover changes source authority | prove one active source after cutover and remove or execution-disconnect former imports/switches/flags/aliases/read-write/fallback/discovery edges |
+| compatibility implementation remains | treat it as a temporary bridge under `action-safety.md`; require owner, retirement trigger, observability, and removal proof |
 | architecture still emerging | use `TACTICAL_WITH_STRATEGIC_TRACK` |
 | long-lived workaround | require promotion, retirement, or replacement |
 | tactical fix changes code structure | preserve responsibility clarity, avoid avoidable God function/file drift, name convergence if material debt remains |
@@ -263,6 +275,8 @@ Avoid:
 - phase/doc/ticket/patch/changelog IDs in function, variable, helper, class, type, or module names when those tokens are not real external/domain contract terms
 - tagging every function or helper with execution chronology instead of using semantic names plus bounded comments only where they lower maintenance cost
 - local tactical patches that become hidden permanent structure
+- happy-path-only implementation closeout while material state, integration, failure, observability, or verification obligations remain unclassified
+- old/new source paths left active through imports, flags, factories, aliases, dual read/write, shadow code, discovery edges, or automatic target-failure fallback after migration
 - edit-only completion, testing as an afterthought, mandatory TestKit creation for trivial work
 - fake/local pass presented as live proof, refactor without behavior-preservation checks
 - debugging from guesses without a signal, adding tests that do not cover the changed behavior

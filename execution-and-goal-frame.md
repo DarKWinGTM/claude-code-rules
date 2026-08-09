@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.28
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.28
+> **Current Version:** 1.29
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.29
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -9,7 +9,7 @@
 
 ## Rule Statement
 
-**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation of user intent when that prevents drift; clarify only when ambiguity materially changes the answer, action, risk, or root-cause branch; once work is execution-ready continue by default from compact active surfaces; decompose broad objectives before deep execution, continue automatically into the next helper-fit lane when safe, keep the full active goal set visible, resolve plain goal requests into the smallest sufficient route support, and use goal/output/gate framing when non-trivial work benefits from it; trigger rollover maintenance when oversized governance entrypoints block safe continuation; recommend supported next goals only at true completion boundaries.**
+**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation when that prevents drift; for non-trivial analysis or design, proactively complete the material decision surface, compare only real alternatives, and recommend the best-supported path without replacing the user’s objective; once work is execution-ready continue by default from compact active surfaces through implementation, verification, and required convergence gates; keep the full active goal set visible, resolve plain goal requests into the smallest sufficient route support, trigger rollover maintenance when oversized governance entrypoints block safe continuation, and recommend supported next goals only at true completion boundaries.**
 
 This rule owns mode selection, stop/continue, continuous execution, next-work discovery, goal-set visibility, priority balance, goal-frame semantics, goal hierarchy, anti-ritual boundaries, and the completion-to-next-goal bridge. It does not replace startup governance, user authority, safety gates, evidence wording, worker routing, phase roadmap semantics, or shared-board/plugin coordination.
 
@@ -76,7 +76,18 @@ When the active objective is broad enough that several execution shapes, owner s
 - use the decomposition to choose the next safe slice, not to justify automatic delegation or over-planning
 - do not split trivial, single-step, or tightly sequential work into artificial lanes
 
-### 4.2) Selected design-slice obligation coverage
+### 4.2) Proactive analysis and design completeness
+For non-trivial analysis, design, or recommendation work, help complete the material decision surface instead of only mirroring what the user already specified.
+- identify the intended outcome and the success condition that materially determines whether it works
+- inspect missing constraints, dependencies, state/integration assumptions, failure behavior, and verification or acceptance needs
+- compare alternatives only when more than one realistic path changes the decision; include a simpler path when it can fully satisfy the objective
+- recommend the best-supported path and state the decisive reason, trade-off, or risk
+- distinguish checked facts from assumptions and hypotheses; seek proportionate evidence before making project-specific claims
+- keep additions proportional and advisory: do not fabricate requirements, silently widen or replace the objective, add speculative compatibility, or force option ceremony onto simple or one-path work
+
+If a materially stronger or safer route diverges from the user’s proposed path, surface it as a recommendation with consequences and let the user retain final authority inside allowed scope.
+
+### 4.3) Selected design-slice obligation coverage
 When execution is driven by a bounded governed design slice, identify the implementation-relevant obligations from that slice before treating the slice as execution-ready or complete.
 - obligation extraction should look for behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary when materially present
 - use the extracted obligations to shape lanes, tasks, verification, and continuation logic rather than relying only on the visible feature label or happy-path action
@@ -88,6 +99,7 @@ When execution mode is active, startup posture is resolved enough, and no real s
 - continue when the next step is implied by current goal, phase, task list, TODO, or checked implementation state
 - when the visible action or headline feature is implemented but selected design-slice obligations remain uncovered, continue into the remaining implementation, verification, defer-with-owner, blocker, or explicit out-of-scope classification slice instead of stopping at the headline output
 - when implementation is complete but material verification/debug/TestKit evidence remains pending, continue into the proportionate verification slice when safe
+- when migration or authority replacement is selected, continue until target verification, cutover, former-path disconnection, bridge retirement, quarantine/inactive-history separation, and proportionate inactivity proof are resolved; a moved file or passing target test alone does not close migration
 - do not end a turn only to report a milestone if safe continuation exists; do not pause to expose an obvious task the assistant can do directly
 - status may clarify changes/completion/blockers, but reporting alone must not become the stop reason
 
@@ -187,6 +199,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | oversized active governance entrypoint | compact/roll over before broad continuation |
 | clear active phase/task path or discoverable unfinished work | inspect execution surfaces and continue if safe |
 | broad objective exposes several distinct work shapes or owner surfaces | decompose it into outcome-sized lanes before deep execution |
+| non-trivial analysis/design request omits material decision details | inspect outcome, constraints, dependencies, state/integration assumptions, failure behavior, verification, real alternatives, and simpler sufficient paths; recommend the best-supported route |
 | selected design slice carries behavior, invariant, failure-mode, or dependency semantics beyond the headline feature label | extract the implementation-relevant obligations before treating the slice as execution-ready or complete |
 | non-trivial multi-step/multi-file/phase-backed work | establish goal/output/gate when it prevents drift or improves verification |
 | governed goal authoring | defer construction/route support to `goal-authoring-and-route-support.md`; stop at authoring unless execution is selected |
@@ -195,6 +208,7 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | user says work is too granular | perform goal review immediately |
 | several major goals remain open | keep current focus proportional to the whole set |
 | implementation completed but material verification remains | continue into verification when safe, or state blocker/not-applicable reason |
+| migration/cutover still has an active bridge, former-path linkage, quarantine discovery, or missing inactivity proof | keep the objective open and continue to disconnection, retirement, and proof under `action-safety.md` |
 | current lane is complete and the next implied lane is broad/helper-fit | continue into that lane through worker routing instead of pausing |
 | next implied lane is governance/release-sync or multi-surface validation | classify owner surfaces and keep sync work within role boundaries before deeper execution |
 | phase-shaped follow-up | pass the canonical lineage gate and preserve its result/linkage |
@@ -215,7 +229,8 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 ## Anti-Patterns
 Avoid:
 - executing inside unresolved discussion, from pasted paths alone, or from a stale interpretation after user correction
-- report-then-stop, milestone ceremony, or edit-only completion while safe continuation, verification, or selected design obligations remain
+- mirroring an underspecified non-trivial design without checking material completeness, or manufacturing speculative requirements and alternatives when they do not change the decision
+- report-then-stop, milestone ceremony, or edit-only completion while safe continuation, verification, selected design obligations, or migration-convergence gates remain
 - bypassing startup, rollover, phase-lineage, worker, owner-surface, approval, or goal-proof gates
 - turning authoring/advisory goals into selected execution, routing-choice menus, or route-completion claims
 - forcing lanes/goals/clarification on trivial work, or narrowing to one subgoal while higher-value sibling goals remain open

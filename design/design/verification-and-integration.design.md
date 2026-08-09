@@ -1,8 +1,8 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.54
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
+> **Current Version:** 10.58
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -11,44 +11,63 @@
 
 ## Verification Checklist
 
-- [ ] README remains overview-only
-- [ ] Runtime rules remain the active rule layer and stay body-sufficient
-- [ ] Governed design/changelog chains explicitly classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback` before meaningful normalization edits continue
-- [ ] Folder-scoped single-chain namespaces may use `design/design.md` or `changelog/changelog.md` as their one active parent model
-- [ ] Shared folders containing several chains use self-identifying semantic parent filenames
-- [ ] Active doctrine explicitly states that P105 supersedes the older P104 master-only/generic-parent restriction for folder-scoped single-chain namespaces
-- [ ] Exactly one active parent model remains per chain; generic and semantic parents do not coexist as active owners
-- [ ] Single-body chains stay bootstrap-first until a checked `bootstrap_exit_trigger` and `shard_opening_basis` justify shards
-- [ ] Flat sibling shard mode is allowed only when the current folder already scopes the chain and the parent clearly exposes the shard map
-- [ ] Broad governed design/changelog chains still converge to compact parents plus active same-stem shard paths when broad enough to justify normalization
-- [ ] Observed project shape, extracted doctrine, selected target form, and equivalence-claim basis stay distinct when checked examples ground normalization recommendations
-- [ ] No surface describes the selected RULES target form as the literal observed project pattern without checked equivalence proof
-- [ ] Parent/shard and parent/version-shard links remain aligned and non-orphaned across sibling and same-stem modes
-- [ ] Reachable completed P104 phase/patch history is explicitly treated as historical provenance rather than as current authority after P105
-- [ ] Generic and semantic active parents do not remain ambiguous competing steady-state owners for the same chain when chronology is reviewed explicitly
-- [ ] `changelog/done/` stays legacy/archive/fallback rather than the normal active detail path
-- [ ] `TODO.md` and `phase/SUMMARY.md` remain compact active entrypoints with reachable `history/` / `done/` references
-- [ ] The live phase workspace explicitly names `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` as forward-valid numeric forms
-- [ ] Observed alphanumeric phase forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous
-- [ ] Deeper hybrid forms such as `phase-NNN-NN-NNb` are not silently treated as forward-valid grammar
-- [ ] The append-vs-shard gate and `docs_analysis` form are explicit in the touched owner surfaces
-- [ ] Concern, factual claim, goal request, proposal, and assistant next action remain separated before endorsement or continuation where that distinction matters
-- [ ] Evidence-seeking proof-aware reasoning remains grounded in checked evidence when material
-- [ ] Runtime install scope remains the README-listed 19 root runtime rules only
-- [ ] Source/runtime parity and source/destination body sufficiency remain explicit verification gates
+### Runtime and governed authority
+
+- [ ] README remains overview/onboarding/current-state only; detailed target truth, history, execution, and before/after review stay with their owning surfaces
+- [ ] Runtime Rules remain body-sufficient active behavior contracts and the source-owned install inventory remains exactly the ordered 19 root files
+- [ ] Governed design/changelog chains classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-reference-only` before meaningful normalization
+- [ ] Exactly one active parent model remains per chain; inactive history, quarantine, and `done/` never become competing authority, generated input, or automatic fallback
+- [ ] Parent/shard/version links, maps, and back-links resolve across the selected chain shape
+- [ ] `TODO.md` and `phase/SUMMARY.md` remain bodyful active entrypoints with reachable history/done detail; touched size pressure is repaired or assigned a visible governed repair slice
+- [ ] Phase identity stays lineage-first and forward-valid numeric forms remain `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
+- [ ] Non-trivial analysis/design completes material outcome, constraint, dependency, failure, alternative, and verification gaps without fabricating facts or replacing user authority
+- [ ] Implementation closeout covers or explicitly disposes material behavior, state, integration, failure, observability, and verification obligations
+
+### Installer, quarantine, and restoration
+
+- [ ] The [installer architecture](installer-architecture.design.md) and both platform implementations select one project-root target and the same ordered 19-file payload
+- [ ] Manifest validation rejects malformed, duplicate, traversal, or directory-like records before active payload mutation
+- [ ] Symlink/reparse-point ancestors under the selected project boundary, direct linked rules/quarantine directories, and manifest/active-target links including broken links fail closed without modifying external trees or replacing other-owner directory entries
+- [ ] Active-name ownership preflight preserves matching current/prior/historical source-owned files and fails closed on modified or unowned collisions
+- [ ] Every planned quarantine source/type is checked before mutation; deterministic later failures leave the project tree unchanged
+- [ ] The complete active payload and manifest are staged before runtime replacement, with rollback state for quarantine moves, active replacements, and manifest replacement
+- [ ] Unchanged obsolete manifest-owned files, repository-matching retired candidates, and prior installer-owned in-tree quarantine move to external execution-disconnected quarantine rather than being deleted
+- [ ] Modified manifest-owned, unmatched, unknown, unrelated, and other-owner files remain unchanged
+- [ ] External quarantine is absent from active manifests/discovery and is never read by normal install, retry, restart, rebuild, test, fallback, or restoration paths
+- [ ] Quarantine poisoning, rename, or unavailability does not affect normal reinstall; idempotent reruns do not restore former files or create a second authority
+- [ ] Controlled restoration uses an independently verified exact known-good source/tag/commit through the normal installer and re-establishes exactly one active authority without consulting quarantine
+- [ ] Bash and PowerShell fixture matrices cover equivalent ownership, quarantine, disconnection, idempotency, restoration, traversal, collision, parity, and body-sufficiency cases
+
+### Release and evidence boundary
+
+- [ ] Changed-path allowlist, `git diff --check`, changed triad versions, unchanged-chain versions, links, literals, force words, and file modes pass
+- [ ] Candidate/canonical/root parity and body sufficiency pass 19/19 while unrelated runtime files remain byte-identical
+- [ ] Fresh public clone reproduces the installer/scenario proof from the released commit
+- [ ] `implemented`, `tested`, `verified-in-scope`, `installed`, `released`, `fresh-clone-verified`, and `migration complete` wording never outruns the named evidence
 
 ## Integration
 
-Primary related chains:
+Primary runtime/governance owners:
 - `document-governance.md`
 - `document-integrity.md`
 - `phase-todo-artifact.md`
-- `safe-io.md`
-- `communication-register.md`
+- `coding-discipline.md`
+- `action-safety.md`
 - `evidence-discipline.md`
 - `execution-and-goal-frame.md`
 - `accurate-communication.md`
-- `README.md`
-- `TODO.md`
-- `phase/SUMMARY.md`
-- `changelog/changelog.md`
+- `communication-register.md`
+- `explanation-and-presentation.md`
+
+Installer and fixture evidence surfaces:
+- [Installer architecture](installer-architecture.design.md)
+- [`script/setup-claude-code-rules.sh`](../../script/setup-claude-code-rules.sh)
+- [`script/setup-claude-code-rules.ps1`](../../script/setup-claude-code-rules.ps1)
+- [`script/test-setup-claude-code-rules.sh`](../../script/test-setup-claude-code-rules.sh)
+- [`script/test-setup-claude-code-rules.ps1`](../../script/test-setup-claude-code-rules.ps1)
+
+Execution/release entrypoints:
+- [`README.md`](../../README.md)
+- [`TODO.md`](../../TODO.md)
+- [`phase/SUMMARY.md`](../../phase/SUMMARY.md)
+- [`changelog/changelog.md`](../../changelog/changelog.md)

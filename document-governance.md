@@ -1,6 +1,6 @@
 # Document Governance
-> **Current Version:** 1.17
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.17
+> **Current Version:** 1.18
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.18
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
@@ -59,6 +59,8 @@ Role boundaries:
 
 Cross-Rule exact repetition is exceptional: a consumer may retain only the minimum literal/order needed to prevent a likely execution, safety, verification, or ordering error; name the canonical owner, keep the copy synchronized, and never create competing or recursive authority.
 
+Active parents, maps, manifests, install sets, and generated-input declarations must identify only the current authority. Quarantine, history, and `done/` surfaces may remain reachable for provenance, audit, or deliberate rollback analysis, but they cannot own active resolution, automatic fallback, normal generated input, or runtime/install discovery.
+
 ### 3) Scan and work-shape discipline
 
 Start current-state scans from README, active design parents and needed children, active diagram entrypoints when present, active changelog parents and needed version shards, compact TODO, compact `phase/SUMMARY.md`, active phase/patch files, and checked implementation. Open `done/` or archive only through active references or for history, audit, rollback, provenance, or trace reconstruction.
@@ -71,10 +73,10 @@ Before appending, splitting, or normalizing design/changelog, resolve:
 - namespace: one folder-scoped chain or shared multi-chain folder
 - subject and parent: generic parent is valid when the folder fully scopes one chain; shared folders use a self-identifying semantic parent
 - authority: exactly one active parent model; any coexistence is compatibility-only or inactive
-- shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-fallback`
+- shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-reference-only`
 - transition basis: bootstrap exit, shard-opening basis, append-vs-shard reason, and parent-map update
 
-Keep bootstrap while compact and coherent. Use flat siblings for a folder-scoped chain with only a few coherent slices and a declared parent map. Use same-stem normalization for broad, multi-shard, root-heavy, or God-file-prone chains only after a checked opening basis. Archive/history fallback is inactive and never the ordinary active-detail namespace; do not infer a nested directory from the parent filename.
+Keep bootstrap while compact and coherent. Use flat siblings for a folder-scoped chain with only a few coherent slices and a declared parent map. Use same-stem normalization for broad, multi-shard, root-heavy, or God-file-prone chains only after a checked opening basis. Archive/history reference-only material is inactive and never the ordinary active-detail namespace or an automatic resolution path; do not infer a nested directory from the parent filename.
 
 The parent remains a bodyful authority gateway and declares shape/map. Children remain coherent, reachable, back-linked, and non-duplicative. Classify proposed detail as current state, history, verification, risk, or next work before appending; plan repair when destination or authority is ambiguous.
 
@@ -101,7 +103,7 @@ README/onboarding/install follows `portable-implementation-and-hardcoding-contro
 
 ### 1) Active target-state authority
 
-Design describes implementation-relevant current/next target state, durable rationale, invariants, and contracts. It must not absorb changelog history, phase/TODO execution, patch review, audit snapshots, rollback journals, release timelines, or unrelated domains. Historical explanation belongs in reachable changelog surfaces; retained legacy snapshots are historical/reference-only and outside active design authority.
+Design describes implementation-relevant current/next target state, durable rationale, invariants, and contracts. It must not absorb changelog history, phase/TODO execution, patch review, audit snapshots, rollback journals, release timelines, or unrelated domains. Historical explanation belongs in reachable changelog surfaces; retained former snapshots are historical/reference-only and outside active design authority.
 
 Design parents remain bodyful gateways; child shards own coherent active target-state slices, identify parent scope, remain mapped/back-linked, and are not history by default. Retiring or superseding a shard requires design/changelog alignment, never quiet removal or reclassification. There is **no default** `design/done/`.
 
@@ -123,13 +125,13 @@ God pressure exists when design absorbs unrelated domains or other document role
 
 Each chain has one active authoritative parent owning current version, index, shard map when present, and forward navigation. Runtime/design/phase/patch/TODO align to it when applicable. Changelog records synchronized history; it must not become design target state, phase planning, TODO tracking, release dashboarding, or README current-state prose.
 
-Same-chain version detail uses self-identifying `changelog/<chain>/v*.changelog.md` shards with one owner and resolvable parent/back links. Preserve exact historical content during migration unless an explicit governed rewrite is selected. `changelog/done/` is only legacy/archive/completed/fallback history for audit, rollback, provenance, or reconstruction—not ordinary active detail, junk, or deletion authority.
+Same-chain version detail uses self-identifying `changelog/<chain>/v*.changelog.md` shards with one owner and resolvable parent/back links. Preserve exact historical content during migration unless an explicit governed rewrite is selected. `changelog/done/` is only inactive archive/completed reference history for audit, deliberate rollback analysis, provenance, or reconstruction—not ordinary active detail, an automatic fallback path, junk, or deletion authority.
 
 Daily TODO/phase movement stays with their history/done owners. README keeps concise current-state signals; detailed version timelines stay in changelog.
 
 ### 2) Changelog God-file repair
 
-Keep the parent compact as version/index/map/navigation authority; move bulky same-chain detail to chain-scoped version shards, reserve `done/` for fallback history, and route design/phase/TODO/README content to their owners. Do not append release prose that duplicates active surfaces.
+Keep the parent compact as version/index/map/navigation authority; move bulky same-chain detail to chain-scoped version shards, reserve `done/` for inactive reference/provenance history, and route design/phase/TODO/README content to their owners. Do not append release prose that duplicates active surfaces.
 
 ---
 
@@ -211,6 +213,7 @@ When a document mixes target state, history, execution, verification, rollback, 
 | Trigger | Required handling |
 |---|---|
 | new chain or version-impacting behavior | establish design/runtime/changelog alignment through UDVC-1 |
+| migration/cutover or authority replacement | keep active parents/maps/manifests/install/generated-input surfaces current-only; keep quarantine/history reference-only and outside automatic resolution |
 | large active design or bulky version history | shard through the declared parent model; use chain-scoped changelog versions for history |
 | completed/history detail | move only to allowed referenced history/done surfaces; preserve meaning |
 | broad governance/release sync | classify owner-aligned lanes before deep work |
@@ -222,7 +225,7 @@ When a document mixes target state, history, execution, verification, rollback, 
 
 ## Anti-Patterns
 
-Avoid role collapse; ambiguous dual parents; archive fallback as active detail; automatic design-to-diagram mirroring; metadata-only runtime roots; unclassified `sync everything`; broad lanes for tiny fixes; install scope widened into governed/support files; machine-local public defaults; completed content treated as junk; and quiet removal/reclassification instead of governed sharding, rollover, split, or history movement.
+Avoid role collapse; ambiguous dual parents; archive/history used as active detail, automatic fallback, or generated input; automatic design-to-diagram mirroring; metadata-only runtime roots; unclassified `sync everything`; broad lanes for tiny fixes; install scope widened into governed/support files; machine-local public defaults; completed content treated as junk; and quiet removal/reclassification instead of governed sharding, rollover, split, or history movement.
 
 ## Integration
 

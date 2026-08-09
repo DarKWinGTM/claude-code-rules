@@ -1,7 +1,7 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-08-09 | **[Added migration reference and discovery integrity](#version-111)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.10 | 2026-08-08 | **[Corrected active startup ownership and preserved integrity guards](#version-110)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.9 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-19)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.8 | 2026-06-04 | **[Added P138 governed-doc source-comment reference integrity](#version-18)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -23,6 +24,20 @@
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-111"></a>
+## Version 1.11: Added migration reference and discovery integrity
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Required migration-complete/no-drift checks to cover applicable manifests, imports/dependencies, config, build/deployment inputs, tests/test discovery, generated-input declarations, and acceptance surfaces.
+- Required quarantine, history, and `done/` paths to remain reference/provenance-only rather than active, fallback, generated, or normally discovered inputs.
+- Preserved scoped non-finding and no-delete-by-cleanup boundaries.
+
+### Summary
+This version makes one-authority migration integrity depend on checked active reference and discovery surfaces, not file movement or naming alone.
 
 <a id="version-110"></a>
 ## Version 1.10: Corrected active startup ownership and preserved integrity guards

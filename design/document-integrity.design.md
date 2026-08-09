@@ -1,7 +1,7 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
@@ -19,9 +19,9 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 
 This design owns the target-state shape for document consistency, governed rollover, file hygiene, shard links, and active entrypoint integrity.
 
-The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
+The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on former root files.
 
-P101 refinement: this owner should now verify normalized same-stem parent/shard pairs, compact-entrypoint visibility, and prevent archive fallback from silently becoming the active owner path.
+P101 refinement: this owner should now verify normalized same-stem parent/shard pairs, compact-entrypoint visibility, and prevent archive/history reference material from silently becoming the active owner or automatic resolution path.
 
 P102 refinement: this owner should now verify declared chain shape, flat sibling shard maps, and no-orphan/no-mixed-mode drift for chains that intentionally stay in a folder-scoped sibling-shard form before escalating to same-stem nested normalization.
 
@@ -39,6 +39,8 @@ P138 refinement: this owner should now treat governed-doc citations in source co
 
 P144 refinement: required governed startup artifacts are selected by the active owner `phase-todo-artifact.md`; references to retired absorbed owner names remain historical provenance only.
 
+P146 refinement: migration-complete and no-drift integrity must verify applicable manifests, imports/dependencies, config, build/deployment inputs, tests/test discovery, generated-input declarations, and acceptance surfaces select only current authority. Quarantine, history, and `done/` may remain reachable provenance references but must not remain active, fallback, generated, or normally discovered inputs.
+
 ---
 
 ## Runtime Requirements
@@ -53,9 +55,9 @@ P144 refinement: required governed startup artifacts are selected by the active 
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
+Former root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
-Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
+Historical detail remains in changelog or execution-disconnected quarantine/provenance surfaces, not as parallel runtime authority, active input, or automatic fallback.
 
 ---
 

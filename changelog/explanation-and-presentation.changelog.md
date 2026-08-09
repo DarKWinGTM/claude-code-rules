@@ -1,6 +1,6 @@
 # Changelog - Explanation and Presentation
 
-> **Current Version:** 1.22
+> **Current Version:** 1.23
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.23 | 2026-08-09 | **[Added material-only decision-ready recommendation rendering](#version-123)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.22 | 2026-08-08 | **[Compacted presentation while preserving error-prevention explanation](#version-122)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.21 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-121)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.20 | 2026-06-11 | **[Added P143 hybrid progress-snapshot presentation refinement](#version-120)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -35,6 +36,20 @@
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-123"></a>
+## Version 1.23: Added material-only decision-ready recommendation rendering
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Added an optional `Recommended` / `Why` / material constraints or dependencies / main trade-off or failure mode / verification shape for underspecified non-trivial analysis and design.
+- Required immaterial fields and speculative padding to be omitted.
+- Kept the pattern separate from the default non-trivial flow, Goal/Output/Gate, and progress snapshots.
+
+### Summary
+This version renders proactive design completeness in a compact decision-ready form without creating a mandatory template.
 
 <a id="version-122"></a>
 ## Version 1.22: Compacted presentation while preserving error-prevention explanation

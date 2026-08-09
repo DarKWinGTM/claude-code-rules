@@ -1,7 +1,7 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-08-09 | **[Added two-sided migration proof](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.5 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.4 | 2026-05-22 | **[Added P120 strategic correction scope discipline](#version-14)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.3 | 2026-05-20 | **[Added P117 evidence-presentation owner-boundary clarification](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -19,6 +20,20 @@
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-16"></a>
+## Version 1.6: Added two-sided migration proof
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Required migration completion to combine positive target behavior/selection proof with proportionate negative former-path inactivity and discovery proof.
+- Preserved the distinction between `NOT_FOUND_IN_CHECKED_SCOPE` and `STRONG_ABSENCE_CLAIM`.
+- Rejected target tests, file movement, or one grep as sufficient migration-complete evidence.
+
+### Summary
+This version makes one-authority convergence an evidence-backed state rather than an inference from a successful target test or moved file.
 
 <a id="version-15"></a>
 ## Version 1.5: Applied owner-canonical active runtime compression

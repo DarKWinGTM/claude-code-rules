@@ -1,6 +1,6 @@
 # Changelog - Communication Register
 
-> **Current Version:** 1.23
+> **Current Version:** 1.24
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 ---
 
@@ -8,6 +8,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.24 | 2026-08-09 | **[Added decision-relevant completeness admission](#version-124)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.23 | 2026-08-08 | **[Added error-prevention supporting-copy admission](#version-123)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.22 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-122)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.21 | 2026-06-11 | **[Added P143 hybrid progress-snapshot register refinement](#version-121)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -36,6 +37,20 @@
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-124"></a>
+## Version 1.24: Added decision-relevant completeness admission
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Preserved proactive completeness findings when they materially change the recommendation, implementation path, risk, scope, dependency, failure behavior, or verification basis.
+- Required speculative checklists and completeness theater with no decision value to be pruned.
+- Kept content admission separate from the decision-ready rendering owned by `explanation-and-presentation.md`.
+
+### Summary
+This version makes proactive design support visible without turning every non-trivial answer into an exhaustive template.
 
 <a id="version-123"></a>
 ## Version 1.23: Added error-prevention supporting-copy admission

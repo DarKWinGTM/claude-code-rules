@@ -1,7 +1,7 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.3
+> **Current Version:** 1.4
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
@@ -25,6 +25,8 @@ P098 refinement: this owner must now also preserve target-state doctrine for mai
 
 P138 refinement: this owner should now require semantic/domain/behavior-first identifiers and bounded governed-doc source-comment linkage, so source names and comments explain implementation meaning without turning comments into duplicate documentation or stale governance pointers.
 
+P146 refinement: this owner must add a proportional implementation-completeness check for material behavior, state/dependency boundaries, integration contracts, failure handling, required observability, and verification without speculative abstraction. After migration cutover, source structure must converge to one active implementation; former imports, flags, factories, aliases, dual read/write, shadow paths, discovery edges, and automatic fallback are removed or execution-disconnected unless an explicitly bounded temporary bridge remains under `action-safety.md`.
+
 ---
 
 ## Runtime Requirements
@@ -33,6 +35,8 @@ P138 refinement: this owner should now require semantic/domain/behavior-first id
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Preserve semantic/domain/behavior-first naming as coding-time clarity doctrine rather than documentation ceremony.
 - Keep governed-doc citations in source comments bounded to useful purpose, process, constraint, side-effect, or external-contract pointers.
+- Require non-trivial implementation completeness without turning the gate into speculative abstraction or mandatory ceremony.
+- Require post-cutover source convergence and keep any temporary compatibility code explicitly bounded, observable, and retirement-gated.
 - Keep metadata linked to this design and the chain changelog.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
@@ -40,9 +44,9 @@ P138 refinement: this owner should now require semantic/domain/behavior-first id
 
 ## Boundaries
 
-Legacy root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
+Former root rules absorbed into this chain are not active runtime authorities after the current compact 19-Rule set is selected.
 
-Historical detail remains in changelog or backup/provenance surfaces, not as parallel runtime authority.
+Historical detail remains in changelog or execution-disconnected quarantine/provenance surfaces, never as parallel runtime authority or source implementation.
 
 ---
 
