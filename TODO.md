@@ -15,11 +15,12 @@
   - [x] P147-01 runtime/design/changelog triads implement premise-before-expansion, completed-baseline protection, proactive counter-analysis, evidence-shaped agreement, and explicit recommendation retraction.
   - [x] P147-02 runtime/design/changelog triad routes active same-chain version detail to `changelog/<chain>/v*.changelog.md` and inactive completed/reference history to `changelog/done/` when applicable, with no changelog fallback owner.
   - [x] P147-03 runtime/design/changelog triad distinguishes advisory new objective/durable Team expansion from internally invoked bounded helper topology under `worker-routing-and-context.md`.
-  - [ ] Synchronize P147 phase, patch, master design/changelog, playground, and surgical README candidate surfaces.
-  - [ ] Run changed-path, triad, unchanged-owner, scenario, fixture, install, parity, manifest, preservation, and no-drift verification.
-  - [ ] Synchronize the verified allowlist to canonical `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`, install the 19 Active Runtime Rules to `/home/node/.claude/rules`, then verify canonical/root parity and unrelated-file preservation.
-  - [ ] Push clean `master`, create annotated `v10.59`, publish the GitHub Release, and rerun the release gates from a fresh public tag clone.
-  - Gate: do not mark released or fresh-clone verified until task #54 supplies direct evidence; any post-publication defect requires a later corrective release.
+  - [x] Synchronize P147 phase, patch, master design/changelog, playground, and surgical README candidate surfaces.
+  - [x] Run changed-path, triad, unchanged-owner, scenario, fixture, install, parity, manifest, preservation, and no-drift verification.
+  - [x] Synchronize the verified allowlist to canonical `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`, install the 19 Active Runtime Rules to `/home/node/.claude/rules`, and verify 19/19 canonical/root parity plus unrelated-file preservation.
+  - [x] Push the verified candidate to public `master` and rerun static, parity, Bash fixture, and PowerShell fixture gates from a fresh public-master clone.
+  - [ ] Create annotated `v10.59`, publish the GitHub Release, and rerun the final gates from a fresh public tag clone.
+  - Gate: do not mark released or fresh-tag-clone verified until task #54 supplies direct tag/Release evidence; any post-publication defect requires a later corrective release.
 
 ---
 

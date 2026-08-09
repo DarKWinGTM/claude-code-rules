@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active — implementation complete; verification pending
+> **Status:** Active — candidate verification and installation complete; publication identity pending
 > **Target Design:** [../design/design.md](../design/design.md) v10.59
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -46,7 +46,7 @@ Candidate checks:
 - Cases 01/14 preserve user authority, reuse-before-spawn, dependency-based Team escalation, mutation permissions, subordinate output, and leader verification;
 - no routing-choice prompt is required when one bounded helper path is already implied.
 
-Release proof remains pending until installation, publication, and fresh-clone gates pass.
+Candidate helper-authority scenarios, unchanged-owner proof, canonical/root installation, and fresh-public-master checks pass. Release proof remains pending until the annotated tag, GitHub Release identity, and fresh-tag-clone gates pass.
 
 ## 5) Rollback Approach
 

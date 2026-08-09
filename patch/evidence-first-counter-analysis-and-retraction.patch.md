@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active — implementation complete; verification pending
+> **Status:** Active — candidate verification and installation complete; publication identity pending
 > **Target Design:** [../design/design.md](../design/design.md) v10.59
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -64,7 +64,7 @@ Candidate checks:
 - no unsupported `you are right` behavior or forced disagreement remains;
 - the other 17 Runtime Rules remain unchanged for this patch's scope.
 
-Release proof remains pending until installation, publication, and fresh-clone gates pass.
+Candidate semantics, scenarios, canonical/root installation, and fresh-public-master checks pass. Release proof remains pending until the annotated tag, GitHub Release identity, and fresh-tag-clone gates pass.
 
 ## 5) Rollback Approach
 

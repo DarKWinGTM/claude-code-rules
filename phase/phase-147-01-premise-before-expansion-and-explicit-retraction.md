@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Parent Phase:** [phase-147-evidence-first-counter-analysis-and-owner-integrity.md](phase-147-evidence-first-counter-analysis-and-owner-integrity.md)
 > **Phase ID:** 147-01
-> **Status:** Active — implemented; scenario/integration verification pending
+> **Status:** Active — candidate behavior verified; publication identity pending
 > **Target Release:** v10.59
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -57,8 +57,8 @@ Required cases:
 ## Current Disposition
 
 - Runtime/design/changelog implementation: implemented.
-- Focused semantic/version checks and `git diff --check`: passed in candidate scope.
-- Playground, combined static, installation, publication, and fresh-clone gates: pending.
+- Focused semantics, scenario anchors, combined static checks, candidate/canonical/root installation parity, and fresh-public-master verification: passed in candidate scope.
+- Annotated tag, GitHub Release identity, and fresh-tag-clone gates: pending.
 
 ## Risks and Rollback
 
