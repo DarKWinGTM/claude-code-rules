@@ -14,8 +14,8 @@
   - [x] Added Cases 17/12/04 plus matrix/coverage branches for reachable proof closure, selected live terminal-gate preservation, authenticated/private capability preflight, deterministic no-retry, and bounded supplied rendered evidence.
   - [x] Advanced six existing Runtime Rule/design/changelog triads without adding a twentieth Runtime Rule.
   - [x] Installed the explicitly approved earlier 29-path candidate into the 19-Rule runtime and verified first-pass parity; no push, tag, or GitHub Release occurred.
-  - [x] Reverified the expanded 32-path corrective source after user-reported Goal-loop evidence added explicit live-gate selection and task-list reconciliation.
-    - Source/code Goals must not infer live acceptance; optional rendered/live observation becomes an unselected successor task, while explicitly required unavailable live proof blocks without unchanged retry.
+  - [x] Expanded the 32-path corrective source after user-reported Goal-loop evidence added done-point feasibility, in-place Goal/plan repair, explicit live-gate selection, operational-capability-name classification, and task-list reconciliation.
+    - Assistant-authored Goal/plan done points must be evaluated for actual closability and repaired in place when infeasible and unselected; source/code Goals must not infer live acceptance from generic completion wording or Product-facing capability names; optional rendered/live observation becomes an unselected successor task, while explicitly required unavailable live proof blocks without unchanged retry.
     - Focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass.
   - [x] Resynchronized the P149 Phase, timestamped Patch, Patch changelog, v10.65 shard, master design/changelog, phase summary, and README for six changed and 13 protected Runtime Rules.
   - [x] Completed corrected doctrine and release/no-drift reviews and established the corrected candidate source.

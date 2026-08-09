@@ -58,6 +58,8 @@
 ### Changes
 - Required execution to complete all independent proof reachable in the current state before stopping at an approval, state, or capability gate.
 - Distinguished proof required by the current Goal from a separate successor live-verification Goal, preventing both premature closeout and indefinite extension of an already satisfied bounded Goal.
+- Prevented operational nouns or Product-facing capability names from selecting live execution or mutation proof without an explicit done condition, proof gate, scope, or checked authority basis.
+- Added in-place boundary repair when an assistant-authored done point is proven infeasible and was never explicitly selected, preserving reached proof while moving the impossible point to successor scope.
 - Required terminal proof obligations, prerequisites, pass/fail signals, and meaningful resume triggers to remain explicit across a legitimate stop.
 - Prevented unchanged retries or implied automatic future execution when approval, environment state, or required capability has not changed.
 

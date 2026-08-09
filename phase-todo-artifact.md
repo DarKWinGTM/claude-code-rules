@@ -175,6 +175,7 @@ For phase-backed work:
 - split implementation, verification, and governance/release-sync only when combining them hides gates/ownership
 - mark `in_progress` when work begins and `completed` immediately when the slice is actually done
 - before Goal closeout, reconcile every open task against the current Goal's selected proof layer: keep material source/non-live checks in the current task family, but move assistant-inferred or optional live/rendered observation into an unselected successor task so it cannot block code-level completion
+- when Goal/plan preflight or later evidence repairs an assistant-inferred infeasible done point, reconcile the task family immediately: remove that point from current blockers, retain already completed proof, and represent any later operation only as an unselected successor task
 - preserve a verification task while material checks for the selected current proof layer remain; do not preserve optional live proof as if it were a required current verification task
 - if the user or checked governed authority explicitly selected live proof and capability is unavailable, keep that task visibly blocked with its resume condition and apply `NO_RETRY_UNTIL_CHANGE` rather than looping
 - close satisfied implementation and source/non-live verification tasks before surfacing the separate live-verification successor

@@ -13,7 +13,7 @@
 
 ## Objective
 
-Make governed Goals closable at their explicitly selected reachable proof layer while preserving any explicitly selected live terminal gate, and prevent repeated authenticated/private access attempts when the current mechanism cannot authenticate. Keep safe supplied rendered artifacts useful as bounded evidence without projecting them into live, authenticated, complete, or stable proof.
+Make governed Goals and their work plans select done points that can truthfully close in the current scope, repair assistant-inferred infeasible gates in place, preserve any explicitly selected live terminal gate, prevent operational capability names from selecting live proof by inference, and prevent repeated authenticated/private access attempts when the current mechanism cannot authenticate. Keep safe supplied rendered artifacts useful as bounded evidence without projecting them into live, authenticated, complete, or stable proof.
 
 ## Lineage Decision
 
@@ -24,8 +24,8 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 
 ## Expected Output
 
-- Goal authoring records the required proof layer, current reachable layer, successor/excluded layers, and route prerequisites.
-- Execution framing closes source/code Goals at the selected reachable gate, prohibits assistant-inferred live acceptance, and preserves only a live gate explicitly selected by the user or checked governed authority as binding.
+- Goal authoring evaluates proposed done points against scope/environment/capability/approval/proof-path reachability, records the required proof layer, current reachable layer, successor/excluded layers, and route prerequisites, and keeps the work plan ending at the selected current gate.
+- Execution framing repairs an unselected assistant-inferred infeasible Goal/plan gate in place, closes source/code Goals at the selected reachable gate, prohibits assistant-inferred live acceptance from generic wording or operational Product-facing capability names, and preserves only a live gate explicitly selected by the user or checked governed authority as binding.
 - Task reconciliation closes satisfied implementation and source/non-live verification tasks before optional live/rendered observation becomes an unselected successor; explicitly required unavailable live proof remains blocked without unchanged retry.
 - Action safety preflights target, network, tool/session mechanism, authorization, approval, and bounded substitutes before authenticated/private access.
 - Deterministic capability failure stops unchanged retries after at most one evidence-backed discriminating correction.
@@ -38,9 +38,12 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 
 | Obligation | Implementation state | Terminal disposition |
 |---|---|---|
+| Done-point feasibility before Goal/plan emission | implemented | verified |
+| In-place repair for an unselected assistant-inferred infeasible gate | implemented | verified |
 | Reachable proof-layer Goal fields and prerequisite ordering | implemented | verified |
 | Source/local closure versus successor Product proof | implemented | verified |
 | Explicit live-gate selection; no assistant-inferred live acceptance | implemented | verified |
+| Operational capability names do not select live execution or mutation proof | implemented | verified |
 | Task-list reconciliation and optional live-successor separation | implemented | verified |
 | Authenticated/private capability and authorization preflight | implemented | verified |
 | One bounded discriminating correction and deterministic no-retry | implemented | verified |
@@ -75,8 +78,9 @@ Make governed Goals closable at their explicitly selected reachable proof layer 
 Selected route: `new_testkit_scenario` plus exact triad/allowlist/protected-byte checks, Bash/PowerShell installer fixtures, Patch timeline regression, disposable installation, and independent doctrine/release review.
 
 Required checks:
+- Case 17/M34 evaluates whether proposed Goal/plan done points can close in the current environment and repairs an unselected assistant-authored infeasible point in place without a replacement Goal or retry loop.
 - Case 17 closes a source-bounded Goal at its selected reachable layer and keeps distinct Product proof as an explicit successor.
-- Case 17 prevents generic completion wording or assistant inference from selecting live acceptance and keeps authenticated Product proof inside the current Goal only when the user or checked governed authority explicitly selects it.
+- Case 17 prevents generic completion wording, assistant inference, or operational capability names such as pinned-host SSH diagnostics and an exact-request recovery path from selecting live acceptance; authenticated Product proof stays inside the current Goal only when the user or checked governed authority explicitly selects it.
 - Task-list reconciliation closes satisfied code/non-live tasks and routes optional live/rendered observation to an unselected successor; explicitly required unavailable live proof stays blocked without unchanged retry.
 - Cases 12/04 preflight authenticated/private capability before access and stop unchanged retries after deterministic failure.
 - Guest/login or `401` shows required authentication was not established; `403` shows refusal but does not alone distinguish missing authentication from insufficient authorization; none alone proves authenticated Product failure.
@@ -87,7 +91,7 @@ Required checks:
 - Bash/PowerShell fixtures, Patch timeline regression, disposable installation, second-pass idempotence, links, body sufficiency, and no governed/support runtime installation pass.
 - Real runtime installation and public publication remain blocked until the exact candidate SHA/scope packet is explicitly approved.
 
-Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. Before publication, user-reported Goal-loop and task-list evidence expanded source to six triads and 32 paths. Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, two-pass disposable 19/19 installation, and corrected doctrine/release reviews pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
+Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. Before publication, user-reported Goal-loop and task-list evidence expanded source to six triads and 32 paths; later real Goal evidence added the operational-capability-name regression for pinned-host SSH diagnostics/exact-request recovery code and the M34 requirement to assess done-point closability and repair assistant-inferred infeasible Goal/plan gates in place. Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
 
 ## Entry Conditions and Out of Scope
 

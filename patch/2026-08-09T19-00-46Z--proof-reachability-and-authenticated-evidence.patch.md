@@ -12,11 +12,11 @@
 
 ## Context
 
-Governed source/local Goals can become unclosable when they silently require downstream Product proof that depends on deployment, installation, restart, authentication, or another state change outside the selected scope. The same gap can cause repeated private-access attempts without a usable authenticated session and can either discard supplied rendered evidence or overstate it as live proof.
+Governed source/local Goals and their work plans can become unclosable when proposed done points are not evaluated for actual reachability or silently require downstream Product proof that depends on deployment, installation, restart, authentication, or another state change outside the selected scope. The same gap can cause repeated private-access attempts without a usable authenticated session and can either discard supplied rendered evidence or overstate it as live proof.
 
 ## Analysis
 
-The selected model separates proof-layer ownership from route prerequisites. Goal authoring records the required and currently reachable layers; execution framing closes only at the selected gate and preserves any explicitly selected stronger terminal proof. Action safety determines whether authenticated/private access is executable and stops deterministic retries. External verification selects only eligible authorized witnesses. Evidence discipline limits supplied artifacts to what their inspected content can prove.
+The selected model separates proof-layer ownership from route prerequisites. Goal authoring records the required and currently reachable layers and classifies them from explicit done conditions, proof/checks, scope, and checked authority rather than operational nouns or Product-facing capability names; execution framing closes only at the selected gate and preserves any explicitly selected stronger terminal proof. Action safety determines whether authenticated/private access is executable and stops deterministic retries. External verification selects only eligible authorized witnesses. Evidence discipline limits supplied artifacts to what their inspected content can prove.
 
 ## Change Items
 
@@ -24,7 +24,7 @@ The selected model separates proof-layer ownership from route prerequisites. Goa
 
 **Before:** governed Goal construction names proof/checks but does not explicitly separate required proof, current reachable proof, successor/excluded proof, and route prerequisites.
 
-**After:** `goal-authoring-and-route-support.md` owns the proof-layer fields, reachability vocabulary, prerequisite ordering, and explicit terminal-gate preservation in the `/goal` artifact.
+**After:** `goal-authoring-and-route-support.md` owns pre-emission done-point feasibility, proof-layer fields, reachability vocabulary, work-plan output/gate/reachability mapping, in-place repair of unselected infeasible points, prerequisite ordering, explicit terminal-gate preservation, and noun-safe classification so Product-facing diagnostic or recovery capability names cannot select live execution or mutation proof by themselves.
 
 ### 2. Current Goal closure versus successor proof — `additive`
 
@@ -66,7 +66,7 @@ The selected model separates proof-layer ownership from route prerequisites. Goa
 
 - The earlier five-triad/29-path candidate passed focused checks, fixtures, 32 Patch timeline tests, disposable 19/19 installation, and independent reviews, then was explicitly approved and installed into the runtime.
 - Before publication, user-reported Goal-loop and task-list evidence expanded this review to six changed and 13 protected Runtime Rules across exactly 32 paths while the ordered inventory remains 19.
-- Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation cover explicit live-gate selection, M33, task reconciliation, optional live-successor separation, and deterministic no-retry.
+- Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation cover explicit live-gate selection, M33 noun-safe operational-capability classification, M34 done-point feasibility/in-place Goal-plan repair, task reconciliation, optional live-successor separation, and deterministic no-retry.
 - Corrected doctrine and release/no-drift reviews pass. Renewed exact approval, runtime reinstallation, push, annotated tag, GitHub Release, and fresh-public verification remain gated and are not claimed by this Patch.
 
 ## Rollback Approach

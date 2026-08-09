@@ -38,9 +38,14 @@ This design owns the target-state shape for:
 - Receive direct/candidate/advisory posture from `execution-and-goal-frame.md`; do not independently promote a candidate.
 - Keep `/goal` as the objective owner for outcome, proof/checks, scope, and hard guardrails.
 - Encode the selected `required_proof_layer`, material `current_reachable_layer`, and explicitly classified excluded or successor layers only when those distinctions affect the goal.
+- Evaluate proposed done points before Goal emission against scope, current environment, capability, approval, and an observable proof path; assistant-authored source/code Goals default to a terminal gate with a credible executable path inside the selected scope and currently available or approvable capability rather than an unclosable external dependency.
 - For source/code goals, prohibit assistant inference from turning generic completion or verification wording into live Product acceptance; live proof stays excluded or successor unless the user or checked governed authority explicitly selects it.
+- Classify proof from explicit done conditions, proof/checks, scope, and checked governing authority rather than operational nouns or Product-facing capability names; implementing diagnostics, deployment-support, recovery, or mutation-capable code does not select live execution or mutation proof by itself.
 - Preserve an explicitly selected terminal proof as binding; expose prerequisite or blocker gaps instead of demoting it.
+- Repair an assistant-inferred infeasible done point in place when checked evidence shows the current scope cannot close it and no user/governed authority selected it; move the proof to excluded or successor scope without restarting the Goal or looping, while treating difficulty, duration, or remaining implementation work alone as insufficient evidence of infeasibility.
 - Order capability and state prerequisites before dependent proof and prevent unchanged checks that cannot add signal.
+- Require route support to map planned slices to output, gate, and reachability; the current plan ends at the selected Goal proof while excluded or successor operations stay outside the blocking sequence unless explicitly selected.
+- Repair infeasible assistant-authored plan gates in place with the Goal boundary rather than making `/plan` a second objective or forcing a replacement Goal.
 - Keep `/plan` as route-only support when overflow route detail or explicit standalone planning is materially needed.
 - Keep route-only plan files from reading like completion proof.
 - Keep phase/task materialization and execution posture outside this owner.
@@ -64,7 +69,7 @@ Historical detail remains in changelog, not as a parallel runtime authority.
 
 Release validation should confirm the parent runtime file exists at source root, links to this design and its changelog, ships in the active runtime install set when install is in scope, and leaves `execution-and-goal-frame.md` plus `phase-todo-artifact.md` with only their execution/task-surface bridges instead of the full duplicated `/goal` authoring contract.
 
-Case 17 M30/M31 validation must confirm that a source-bounded goal can close at its selected reachable source/local proof while Product proof remains a prerequisite-bearing successor; generic `complete`, `verify`, `working`, or `done` wording does not select live proof; only the user or checked governed authority can explicitly keep authenticated live proof as the terminal gate; route prerequisites precede dependent live proof; and simple goals remain compact without mandatory proof-layer ceremony.
+Case 17 M30/M31/M33/M34 validation must confirm that proposed done points receive a feasibility/reachability check before Goal emission; a source-bounded goal can close at its selected reachable source/local proof while Product proof remains a prerequisite-bearing successor; generic `complete`, `verify`, `working`, or `done` wording and operational capability names such as pinned-host SSH diagnostics or an exact-request recovery path do not select live proof; an assistant-inferred infeasible done point is repaired in place rather than causing a new-Goal or retry loop; only the user or checked governed authority can explicitly keep authenticated live proof as the terminal gate; route prerequisites precede dependent live proof; and simple goals remain compact without mandatory proof-layer ceremony.
 
 ---
 

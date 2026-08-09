@@ -22,9 +22,9 @@ This file is the compact active roadmap/index. Start here for current execution 
 ### Active
 
 - **P149:** [Proof reachability and authenticated evidence](phase-149-proof-reachability-and-authenticated-evidence.md)
-  - Output: candidate v10.65 advances six existing Runtime Rule triads and three scenario families so source/code Goals close at appropriate reachable proof, live acceptance cannot be inferred by the assistant, optional live tasks become successors, explicitly required unavailable live proof stops without retry loops, authenticated/private capability is preflighted, and supplied rendered artifacts remain claim-bounded.
+  - Output: candidate v10.65 advances six existing Runtime Rule triads and three scenario families so proposed Goal/plan done points are assessed for actual closability, assistant-inferred infeasible gates are repaired in place, source/code Goals close at appropriate reachable proof, live acceptance cannot be inferred from generic wording or operational Product-facing capability names, optional live tasks become successors, explicitly required unavailable live proof stops without retry loops, authenticated/private capability is preflighted, and supplied rendered artifacts remain claim-bounded.
   - Gate: exact expanded 32-path scope, six changed and 13 protected Runtime Rules, 19-file inventory, corrected independent reviews, renewed exact candidate approval, runtime reinstallation, publication, and fresh-public proof.
-  - Current evidence: the earlier 29-path candidate passed all checks, was explicitly approved, and was installed into the 19-Rule runtime. User-reported Goal-loop and task-list evidence reopened source before publication; expanded focused/six-triad/governance checks, fixtures, Patch regression, disposable 19/19 installation, and corrected independent reviews pass. Renewed exact approval, runtime reinstallation, and publication remain open. No push/tag/Release occurred.
+  - Current evidence: the earlier 29-path candidate passed all checks, was explicitly approved, and was installed into the 19-Rule runtime. User-reported Goal-loop, work-plan, and task-list evidence reopened source before publication; the expanded M33/M34 focused/six-triad/governance checks, fixtures, Patch regression, disposable 19/19 installation, and corrected independent reviews pass. Renewed exact approval, runtime reinstallation, and publication remain open. No push/tag/Release occurred.
   - Patch: [Proof reachability and authenticated evidence](../patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md).
 
 ### Blocked Predecessor
@@ -126,9 +126,12 @@ P073-13, P073-15, and P147 are released historical families. Their lineage, lane
 
 ## Selected Semantic Coverage
 
+- **Done-point feasibility:** proposed Goal/plan completion points are assessed against current scope, environment, capability, approval, and observable proof path before they become binding.
 - **Proof reachability:** governed Goals identify required proof, current reachable proof, successor/excluded layers, and prerequisite state without treating prerequisite completion as proof.
+- **In-place repair:** an assistant-inferred infeasible Goal/plan point that was never explicitly selected moves to successor scope without requiring a replacement Goal or retry loop; tasks reconcile immediately.
 - **Reachable closure:** a truthfully source/local Goal closes at its selected reachable layer; a genuinely distinct downstream Product proof becomes an explicit prerequisite-bearing successor.
 - **Terminal-gate preservation:** authenticated/live Product proof explicitly selected as the current terminal gate remains binding until passed or explicitly narrowed.
+- **Noun-safe proof classification:** Product-facing names such as pinned-host SSH diagnostics, exact-request recovery, database, or mutation-capable code do not select live execution or mutation proof; the declared done condition, proof gate, scope, and checked authority control.
 - **Authenticated capability:** target, network, tool/session mechanism, authorization, approval, and bounded substitutes are classified before private access.
 - **Deterministic retry:** after at most one checked discriminating correction, unchanged capability failure becomes `DETERMINISTIC_NON_RETRIABLE / NO_RETRY_UNTIL_CHANGE`.
 - **Access witness:** a guest/login response or `401` shows required authentication was not established; `403` shows refusal but leaves missing-authentication versus insufficient-authorization cause unresolved; none alone proves Product failure.
@@ -160,7 +163,9 @@ P073-13, P073-15, and P147 are released historical families. Their lineage, lane
 Selected route: `new_testkit_scenario` through Cases 17/12/04 plus exact doctrine/triad/allowlist/protected-byte checks, Bash/PowerShell installer fixtures, Patch timeline regression, disposable installation, independent reviews, approval-gated runtime installation, and fresh-public verification.
 
 Required checks:
+- Proposed Goal/plan done points receive a closability check before emission; M34 repairs an unselected assistant-authored infeasible point in place rather than requiring a replacement Goal or impossible retries.
 - A source-bounded Goal closes at its selected reachable proof layer and a distinct Product proof remains an explicit successor.
+- Operational capability names do not select live proof; the pinned-host SSH diagnostic and exact-request recovery variant closes at codebase + non-live proof while deploy/restart/runtime/live result/mutation/apply remain successors.
 - An explicitly selected authenticated/live Product terminal gate remains inside the current Goal until passed or explicitly narrowed.
 - Authenticated/private capability and authorization are preflighted before access; guest/login or `401` indicates required authentication was not established, while `403` indicates refusal without identifying authentication versus authorization cause.
 - At most one evidence-backed discriminating correction runs before deterministic `NO_RETRY_UNTIL_CHANGE`.
@@ -174,7 +179,7 @@ Required checks:
 - Independent doctrine and release/no-drift reviews pass before the exact install/publication approval packet is presented.
 - Real Runtime Rule installation, public master, annotated v10.65, GitHub Release, and fresh-public master/tag proof pass before closeout.
 
-Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. User-reported Goal-loop and task-list evidence reopened source before publication. The expanded six-triad/32-path correction passes focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation. Corrected independent reviews pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
+Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. User-reported Goal-loop, work-plan, and task-list evidence reopened source before publication. The expanded six-triad/32-path correction passes M33/M34-focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation. Corrected independent reviews pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
 
 ---
 

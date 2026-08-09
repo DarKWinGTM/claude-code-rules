@@ -60,12 +60,13 @@
 
 ### Changes
 - Required task-list reconciliation against the selected current proof layer before Goal closeout.
+- Required immediate task-family reconciliation when Goal/plan feasibility repair moves an assistant-inferred infeasible done point out of the current gate.
 - Kept material source/non-live verification tasks current while moving optional or assistant-inferred live/rendered observation to an unselected successor task.
 - Required explicitly selected but unavailable live proof to remain visibly blocked with a resume condition and `NO_RETRY_UNTIL_CHANGE` instead of repeated attempts.
 - Required satisfied implementation and code-level verification tasks to close before a separate live-verification successor is surfaced.
 
 ### Summary
-Live task state now follows the selected proof boundary: code-level completion cannot be held open by optional live observation, while genuinely required unavailable live proof stops as a visible blocker rather than an unstopable loop.
+Live task state now follows the selected proof boundary: code-level completion cannot be held open by optional live observation, while genuinely required unavailable live proof stops as a visible blocker rather than a non-terminating loop.
 
 <a id="version-135"></a>
 ## Version 1.35: Added deterministic Patch creation lifecycle

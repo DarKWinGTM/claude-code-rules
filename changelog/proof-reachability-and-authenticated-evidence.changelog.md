@@ -22,5 +22,5 @@
 
 - Created the Patch from one directly captured UTC instant after exact collision preflight.
 - Defined reviewable before/after changes for six existing Runtime Rule owner triads without adding a twentieth Runtime Rule.
-- Added scenario and matrix coverage for reachable proof closure, explicit live-gate selection, task-list successor separation, authenticated/private capability preflight, deterministic no-retry, and supplied rendered-artifact proof limits.
+- Added scenario and matrix coverage for done-point feasibility, in-place Goal/plan repair, reachable proof closure, explicit live-gate selection, noun-safe operational-capability classification, task-list successor separation, authenticated/private capability preflight, deterministic no-retry, and supplied rendered-artifact proof limits.
 - Kept raw credentials/session material, hardcoded machine-local paths, universal repository publication doctrine, dirty-checkout mutation, real Runtime Rule installation, and public release actions outside the unapproved scope.

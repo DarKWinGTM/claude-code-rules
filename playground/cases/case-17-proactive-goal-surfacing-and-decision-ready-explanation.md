@@ -124,7 +124,32 @@ Expected behavior: close the current source-bounded goal at the selected reachab
 
 Selection boundary: live proof can become the current terminal gate only when the user or checked governed authority explicitly selects authenticated/deployed/installed/restarted Product behavior as the acceptance criterion. An assistant-authored recommendation is advisory and cannot silently promote that proof into the active goal.
 
-Counter-variant: if that stronger authority explicitly selects authenticated Product behavior as terminal proof, the selected live terminal proof stays inside the current goal. The goal remains open until the proof passes or the user explicitly narrows the goal; the assistant must not demote it merely because deployment, authentication, or restart is difficult.
+Operational-capability-name variant:
+
+- The current Goal implements pinned-host SSH diagnostic capability and an exact-request recovery path.
+- The explicit done condition is codebase completion plus focused/full non-live checks, including local or test-database concurrency where selected.
+- Product deployment, restart, runtime observation, live SSH/database results, retained-record mutation, and recovery apply are explicitly excluded from current completion and require later approvals.
+
+Expected proof model:
+
+```text
+required proof layer: codebase + non-live verification
+current reachable layer: codebase + non-live verification
+successor proof layers: deploy/restart/runtime/live SSH or database result/retained-record mutation/recovery apply
+live selection: false
+```
+
+Expected behavior: classify from the explicit done condition, proof gate, scope, and checked authority—not from operational nouns such as `SSH diagnostics`, `recovery path`, `database`, or `Product`. Implementing an operational capability does not select executing that capability against the live Product. Do not keep the source/code Goal open on deploy, restart, authenticated access, live observation, data mutation, or recovery apply.
+
+Counter-variant: if that stronger authority explicitly selects authenticated Product behavior, a live SSH/database result, retained-record mutation, or recovery apply as terminal proof, the selected live terminal proof stays inside the current goal. The goal remains open until the proof passes or the user explicitly narrows the goal; the assistant must not demote it merely because deployment, authentication, restart, or mutation is difficult.
+
+Unclosable done-point repair variant:
+
+- An assistant-authored work plan incorrectly places Product deployment, restart, and authenticated runtime observation in the current Goal's mandatory done points.
+- Goal/plan preflight or later checked evidence shows that the current environment cannot deploy, restart, or authenticate, and the user or checked governed authority never selected those live results as terminal proof.
+- Source implementation and all selected non-live checks pass.
+
+Expected behavior: repair the existing Goal and plan in place. Set the current terminal gate to the strongest truthful source/non-live proof already selected by the real scope, preserve completed evidence, move the infeasible operational points to unselected successor scope, reconcile the task list, and close the current Goal. Do not require the user to create a replacement Goal and do not keep retrying the impossible points. This repair is forbidden when the user or checked governed authority explicitly selected the live terminal proof, and it must not trigger merely because the implementation is difficult, long-running, or still has reachable work remaining.
 
 Route order:
 

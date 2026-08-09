@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active target model for candidate `v10.65` keeps the same 19 body-sufficient source-owned Runtime Rules while adding proof-reachability, authenticated/private capability, deterministic retry, reachable-source, and supplied-rendered-artifact evidence contracts across five existing owners. Released `v10.64` remains the latest published baseline and retains verified Patch chronology plus the repository-only `script/patch-timeline.mjs` Tool outside the Runtime Rule installation payload.
+The active target model for candidate `v10.65` keeps the same 19 body-sufficient source-owned Runtime Rules while adding proof-reachability, operational-capability-name classification, task reconciliation, authenticated/private capability, deterministic retry, reachable-source, and supplied-rendered-artifact evidence contracts across six existing owners. Released `v10.64` remains the latest published baseline and retains verified Patch chronology plus the repository-only `script/patch-timeline.mjs` Tool outside the Runtime Rule installation payload.
 
 ---
 
@@ -36,7 +36,7 @@ Current target-state priorities:
 - new Patch creation captures the instant once, creates exclusively, emits exact direct references, and preserves creation identity across revisions and governed moves
 - legacy Patch migration remains evidence/hash-bound, updates only resolved exact references, blocks ambiguous or colliding rows, preserves suspended archives, and requires explicit verify/rollback rather than automatic fallback
 - `script/patch-timeline.mjs` is dependency-free repository tooling for inventory, evidence audit, planning, creation, apply, verification, and rollback; it never enters the ordered 19-Rule Runtime payload
-- governed Goal construction distinguishes required proof, current reachable proof, successor/excluded proof, and route prerequisites; source/code goals cannot infer live acceptance from generic completion wording, while a live terminal gate explicitly selected by the user or checked governed authority remains binding
+- governed Goal construction evaluates proposed done points for reachability before emission, distinguishes required proof, current reachable proof, successor/excluded proof, and route prerequisites, and repairs assistant-inferred infeasible Goal/plan gates in place; source/code goals cannot infer live acceptance from generic completion wording or operational Product-facing capability names, while a live terminal gate explicitly selected by the user or checked governed authority remains binding
 - execution closes a source/local Goal at its selected reachable layer, surfaces genuinely distinct downstream Product proof as a prerequisite-bearing successor, and stops unavailable explicitly required live proof without unchanged retry
 - live task reconciliation closes satisfied implementation and source/non-live verification tasks before optional live/rendered observation is surfaced as an unselected successor; required unavailable live proof remains visibly blocked with a resume condition
 - authenticated/private access starts with target, network, tool/session, authorization, approval, and bounded-substitute preflight; one evidence-backed correction may run before deterministic `NO_RETRY_UNTIL_CHANGE`

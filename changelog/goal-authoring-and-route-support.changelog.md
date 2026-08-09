@@ -24,8 +24,12 @@
 
 ### Changes
 - Added material-only construction of required, currently reachable, and explicitly excluded or successor proof layers.
+- Added pre-emission done-point feasibility assessment against scope, environment, capability, approval, and observable proof path.
 - Required route prerequisites to precede dependent proof checks and prohibited unchanged checks that cannot add signal.
 - Preserved explicitly selected terminal proof as binding when capability or prerequisite gaps block immediate verification.
+- Required proof classification to follow explicit done conditions, proof/checks, scope, and checked authority rather than operational nouns or Product-facing capability names.
+- Added in-place repair for assistant-inferred infeasible done points so they become excluded or successor proof instead of forcing a new Goal or a non-terminating retry loop.
+- Required work plans to map each slice to output, gate, and reachability, end at the selected Goal proof, and keep unselected operational successors outside the blocking task sequence.
 - Kept current-versus-successor scope selection with execution/user authority and retained route support as subordinate to `/goal`.
 
 ### Summary
