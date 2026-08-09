@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-12
-> **Status:** Active — candidate/canonical/root verified; publication pending
+> **Status:** Completed — released and fresh-public-tag verified
 > **Target Release:** v10.60
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -134,9 +134,9 @@ Implementation coverage:
 - Integration-tail and body compaction: verified at 7,214 bytes, 141 lines, and 1,286 words reduced
 - governed synchronization: verified inside the exact 77-path allowlist with zero newly introduced broken links
 - canonical synchronization/root installation: verified at 77/77 and 19/19 parity with unrelated root files preserved
-- public release/fresh-tag proof: not started
+- public release/fresh-tag proof: verified at release commit `33ad330120b88461978c408bc6a857e269e4c73d`, annotated tag object `b1bc48e3221001675c9a59293cc469e9540cfd9c`, GitHub Release, and fresh-tag static/fixture/disposable-install reproduction
 
-Candidate, canonical, and root installation obligations are verified in scope. Terminal release disposition remains open until public `master`, annotated tag, GitHub Release, fresh-tag reproduction, and documentation-only closeout pass.
+All nine semantic obligations, installation/parity gates, publication identity checks, and fresh-public-tag proof are verified. The documentation-only closeout commit may advance `master`, but immutable `v10.60` remains on the verified release commit.
 
 ## Exit Criteria
 

@@ -3,7 +3,7 @@
 > **Current Version:** 2.16
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
-> **Status:** P073-12 active for v10.60; candidate/canonical/root verified and publication pending
+> **Status:** P073-12 / v10.60 released and fresh-public-tag verified; no active phase selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,12 +21,15 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P073-12:** [runtime owner-boundary repair and bounded compression](phase-073-12-runtime-owner-boundary-repair-and-bounded-compression.md)
-  - Output: repair goal/diagram/Agent-Team owner boundaries, compact repeated context across all 19 Runtime Rules, synchronize the exact 77-path release set, install, and publish v10.60.
-  - Gate: semantic scenarios, protected literals/force words, all-19 triads, fixture matrices, disposable install, candidate/canonical/root parity, immutable annotated tag, GitHub Release identity, and fresh-public-tag proof.
-  - Patch: [runtime owner-boundary repair and bounded compression](../patch/runtime-owner-boundary-repair-and-bounded-compression.patch.md).
+- None selected.
 
 ### Most Recently Completed
+
+- **P073-12:** [runtime owner-boundary repair and bounded compression](phase-073-12-runtime-owner-boundary-repair-and-bounded-compression.md)
+  - Output: v10.60 repairs goal/diagram/Agent-Team owner boundaries, compacts repeated context across all 19 Runtime Rules, synchronizes the exact 77-path release set, and preserves the 19-file active inventory.
+  - Gate: semantic scenarios, protected literals/force words, all-19 triads, fixture matrices, disposable install, candidate/canonical/root/public-tag parity, immutable annotated tag, GitHub Release identity, and fresh-public-tag proof passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.60
+  - Patch: [runtime owner-boundary repair and bounded compression](../patch/runtime-owner-boundary-repair-and-bounded-compression.patch.md).
 
 - **P147:** [phase-147-evidence-first-counter-analysis-and-owner-integrity.md](phase-147-evidence-first-counter-analysis-and-owner-integrity.md)
   - Output: v10.59 adds premise-before-expansion, completed-baseline protection, proactive counter-analysis, explicit recommendation retraction, corrected changelog owner vocabulary, and bounded-helper authority clarification without widening the 19-Rule runtime set.
@@ -55,11 +58,11 @@ P073-09/10/11 own the existing 19-Rule compression, body-sufficiency, installati
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Goal posture | execution decision → goal construction → presentation rendering | direct/candidate/advisory/clarification/none branches and exact artifact order | verified in candidate scope |
-| Diagram posture | conditional startup and sync after design | ordinary-design `not required` plus structural/visual required branch | verified in candidate scope |
-| Agent Team lifecycle | safety classification → worker lifecycle audit | no unchanged retry; reuse/steer/wait/partition/respawn decision stays worker-owned | verified in candidate scope |
-| Compression | all 19 Runtime Rules/triads | protected literals, force words, body sufficiency, measured reduction | verified: 7,214 bytes / 141 lines / 1,286 words reduced |
-| Integration/release | exact 77 paths, canonical/root/public state | fixtures, install, parity, tag/Release/fresh clone | candidate/canonical/root verified; publication pending |
+| Goal posture | execution decision → goal construction → presentation rendering | direct/candidate/advisory/clarification/none branches and exact artifact order | verified and released |
+| Diagram posture | conditional startup and sync after design | ordinary-design `not required` plus structural/visual required branch | verified and released |
+| Agent Team lifecycle | safety classification → worker lifecycle audit | no unchanged retry; reuse/steer/wait/partition/respawn decision stays worker-owned | verified and released |
+| Compression | all 19 Runtime Rules/triads | protected literals, force words, body sufficiency, measured reduction | verified and released: 7,214 bytes / 141 lines / 1,286 words reduced |
+| Integration/release | exact 77 paths, canonical/root/public state | fixtures, install, parity, tag/Release/fresh clone | verified and released |
 
 ---
 
@@ -104,7 +107,7 @@ Required checks:
 - Bash and PowerShell manifest order and fixture matrices, disposable install, unrelated-file preservation, and no unexpected quarantine.
 - Candidate/canonical/root parity before publication; public-master/tag/Release/fresh-clone proof before closeout.
 
-Current evidence: the exact 77-path scope, three semantic-owner families, protected literals/force-word retention, all-19 triad versions/body sufficiency, zero newly introduced broken links, `git diff --check`, README anchors/mode, ordered Bash/PowerShell manifests and passing fixture matrices, disposable install, 77/77 candidate/canonical parity, 19/19 canonical/root parity, unrelated root-file preservation, and no unexpected quarantine pass. Runtime Rules measure 266,520 bytes, 3,075 lines, and 34,266 words: reductions of 7,214 bytes, 141 lines, and 1,286 words from the frozen baseline. Publication and fresh-public-tag proof remain pending.
+Current evidence: the exact 77-path scope, three semantic-owner families, protected literals/force-word retention, all-19 triad versions/body sufficiency, zero newly introduced broken links, `git diff --check`, README anchors/mode, ordered Bash/PowerShell manifests and passing fixture matrices, disposable install, 77/77 candidate/canonical parity, 19/19 canonical/root parity, unrelated root-file preservation, public `master`, annotated `v10.60` tag, GitHub Release identity, and fresh-public-tag static/fixture/disposable-install reproduction pass. Runtime Rules measure 266,520 bytes, 3,075 lines, and 34,266 words: reductions of 7,214 bytes, 141 lines, and 1,286 words from the frozen baseline.
 
 ---
 
@@ -120,7 +123,7 @@ Current evidence: the exact 77-path scope, three semantic-owner families, protec
 
 ## Next State
 
-Publish the verified candidate through clean public `master`, annotated `v10.60`, and GitHub Release; then verify a fresh public tag clone before the documentation-only closeout commit. The tag remains immutable.
+No successor phase or goal is selected. `v10.60` remains anchored to immutable release commit `33ad330120b88461978c408bc6a857e269e4c73d`; future defects require a later corrective release.
 
 ---
 

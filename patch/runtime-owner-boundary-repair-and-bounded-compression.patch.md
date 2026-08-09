@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Current Version:** 1.0
-> **Status:** Active — candidate/canonical/root verified; publication pending
+> **Status:** Completed — released and fresh-public-tag verified
 > **Target Design:** [../design/design.md](../design/design.md) v10.60
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -98,7 +98,7 @@ Required installation/release proof:
 - clean `master` push, immutable annotated `v10.60`, GitHub Release identity, and fresh public tag clone rerun
 - documentation-only closeout only after fresh-tag proof; the tag remains on the verified release commit
 
-Current evidence: candidate static/semantic/link/registry/force/body/fixture/disposable-install gates, 77/77 candidate/canonical parity, 19/19 canonical/root parity, and unrelated-file preservation pass. Publication, tag/Release identity, fresh-public-tag reproduction, and closeout remain pending.
+Current evidence: candidate static/semantic/link/registry/force/body/fixture/disposable-install gates, 77/77 candidate/canonical parity, 19/19 canonical/root parity, unrelated-file preservation, public `master`, annotated `v10.60`, GitHub Release identity, and fresh-public-tag static/fixture/disposable-install reproduction pass. The immutable tag remains on release commit `33ad330120b88461978c408bc6a857e269e4c73d`.
 
 ## 5) Rollback Approach
 
