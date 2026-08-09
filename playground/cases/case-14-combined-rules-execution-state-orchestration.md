@@ -29,6 +29,8 @@ This case family shows how several RULES act together when one realistic workflo
 
 Current RULES require the assistant to:
 - re-anchor the current objective when scope, state, or controlling direction changes
+- separate a valid goal from a checkable current-system premise and preserve a verified completed baseline until evidence shows a real gap
+- explicitly retract/revise earlier assistant advice when contrary checked evidence disproves its premise
 - keep evidence strength calibrated as new facts arrive
 - route broad or noisy branches through worker lanes before the leader absorbs raw bulk evidence
 - classify unsupported branches honestly and keep a usable recovery path visible
@@ -59,13 +61,16 @@ Scope note: these checked transcripts do not prove one single end-to-end session
 
 ## Virtual variant
 
-- A user starts with a broad diagnosis request that contains both concern and an unverified explanation.
-- Early evidence arrives and narrows the claim, but the broader follow-up becomes worker-fit.
-- One requested branch later depends on an unsupported or inaccessible mechanism and must become a workflow block.
-- Another safe lane still remains available and should continue.
-- A final closeout claim then overstates what the checked evidence actually proves.
+- A completed narrow migration has already quarantined and verified two retired files.
+- The user assumes the whole parent directory is retired and proposes moving it; Claude's earlier unchecked recommendation also favored that expansion.
+- A bounded read-only ownership/dependency lane checks active sibling roles and finds canonical records, messages, state/catalog, indexes, events, and outbox data still depend on the parent directory.
+- The assistant must retract the broader recommendation, preserve the completed two-file baseline, and explain the real remaining gate.
+- In a supported branch, broader ownership evidence may instead justify a full migration with state/failure/verification obligations.
+- In an incomplete branch, one discriminating ownership/dependency check runs before endorsement.
+- If the work later needs a new durable Team/objective, that remains advisory; the bounded evidence lane inside the selected objective may be invoked internally.
+- One requested branch may still become workflow-blocked while another safe lane continues, and final closeout wording remains bounded by checked evidence.
 
-Expected behavior: the assistant should not treat the whole workflow as one flat answer. It should shift behavior at each state boundary while preserving the same active objective honestly.
+Expected behavior: treat the workflow as stateful transitions—premise check, bounded evidence routing, preserve/revise baseline, explicit retraction when needed, block-with-recovery, supported continuation, then evidence-calibrated closeout.
 
 ---
 
@@ -87,8 +92,10 @@ Drive one realistic workflow forward across changing states without letting ambi
 ## RULES effect on execution
 
 - Re-anchor the active goal when the controlling basis or state changes.
+- Check decision-changing ownership premises before replacing a completed baseline.
+- Retract/revise invalidated assistant advice with the failed premise and contrary evidence visible.
 - Recalibrate claim strength every time stronger or narrower evidence arrives.
-- Route broad evidence through workers before letting the leader session absorb raw bulk.
+- Route broad evidence through the smallest helper topology before letting the leader session absorb raw bulk; keep durable expansion advisory and helper output leader-verified.
 - Mark unsupported branches as blocked with recovery instead of faking execution.
 - Continue the supported remaining lane when the objective still has safe forward motion.
 - Audit the final status wording before broad completion claims are accepted.
@@ -103,9 +110,11 @@ Treat the workflow as a stateful sequence of governed transitions rather than as
 
 ## What AI does next
 
-- Separate the current symptom from the first proposed explanation.
+- Separate the valid goal from the proposed current-system premise and requested path.
+- Keep verified completed work as the baseline while checking current ownership/dependencies.
 - State the strongest evidence held so far and select the next discriminating check.
-- Route the broader follow-up lane into a worker when it becomes context-heavy.
+- Route the broader follow-up into the smallest bounded helper lane when it becomes context-heavy.
+- If contrary evidence disproves earlier assistant advice, retract it explicitly and re-anchor the route.
 - Stop unsupported branches explicitly and return the exact recovery path.
 - Continue the still-supported lane instead of pausing the whole objective unnecessarily.
 - Review the final completion wording against the actual checked evidence before endorsing closeout.
@@ -129,9 +138,13 @@ Treat the workflow as a stateful sequence of governed transitions rather than as
 ## Flow diagram
 
 ```text
-Broad user objective arrives
+Broad user objective and proposed ownership premise arrive
   ↓
-Ambiguity is narrowed by checked evidence
+Completed baseline is preserved while the premise is checked
+  ↓
+Bounded evidence lane inspects ownership/dependencies
+  ↓
+Recommendation is preserved, narrowed, or explicitly retracted
   ↓
 Broader follow-up becomes worker-fit
   ↓

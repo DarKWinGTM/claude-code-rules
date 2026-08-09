@@ -1,6 +1,6 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.32
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.32
+> **Current Version:** 1.33
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.33
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
@@ -48,7 +48,7 @@ Emergency exception: when delay materially increases immediate harm, `action-saf
 
 ### 2) Repair and phase/patch boundaries
 
-When God-artifact pressure cannot be repaired safely in place, resolve its owner immediately: design sharding → design; bulky version history → changelog/fallback; TODO accumulation → TODO history/done; God Phase → phase lineage; God Patch → patch; non-trivial cross-surface repair → live tasks. Use existing authority when it fits, create when ownership is clear, and ask only for real ambiguity.
+When God-artifact pressure cannot be repaired safely in place, resolve its owner immediately: design sharding → design; active same-chain version detail → `changelog/<chain>/v*.changelog.md`; inactive completed/reference history → `changelog/done/` when that governed role applies; TODO accumulation → TODO history/done; God Phase → phase lineage; God Patch → patch; non-trivial cross-surface repair → live tasks. No fallback owner or automatic resolution path exists for changelog content. Use existing authority when it fits, create when ownership is clear, and ask only for real ambiguity.
 
 Clear staged work may be `use existing`, `create now`, or `ask now`; `create now` still passes the lineage gate and never implies a new major. Patch is non-default during greenfield/baseline work unless a real before/after review surface exists or the user requests it.
 

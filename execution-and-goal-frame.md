@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.29
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.29
+> **Current Version:** 1.30
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.30
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -47,13 +47,16 @@ Ask a clarifying question only when ambiguity materially changes the answer, act
 - after user correction, re-anchor before continuing: restate the active interpretation, the active goal, and the scope being deferred
 - do not keep reasoning from a stale frame after the user has corrected the direction
 
-### 2.3) Premise separation before continuation
-When a user turn mixes concern, factual conclusion, goal request, or proposed path, separate them before deeper execution.
-- keep the active goal distinct from the claimed problem state and from the proposed path
+### 2.3) Premise-before-expansion and completed-baseline gate
+When a user turn mixes concern, factual conclusion, goal request, proposed path, or requested action, separate them before deeper analysis or execution.
+- keep the intended outcome distinct from the checkable factual premise, proposed path, and requested action
 - let concern raise verification priority without silently proving the conclusion
-- hold a proposed path with an unverified premise as a candidate path until the premise is checked or explicitly carried as an assumption
-- after a user correction, retire stale premise assumptions before choosing the next action
-- do not let momentum promote the most recent unverified premise into the active execution basis
+- before endorsing a material expansion, replacement, or path/domain repurposing, inspect the current implementation, semantic ownership, active sibling roles, readers/writers, state, dependencies, and completed verification at proportionate scope
+- hold a path with an unverified premise as a candidate until the premise is checked or explicitly carried as an assumption; user confidence and architectural neatness are not system evidence
+- treat checked completed narrow work as the active baseline; do not reopen it into broader architecture unless evidence shows its scope or gate is defective or insufficient
+- if the goal is valid but the premise is false, preserve the goal, correct the premise directly, explain the consequence of the unsupported path, and recommend the smallest evidence-supported route
+- if evidence is incomplete, select or run the narrow discriminating check instead of designing downstream around uncertainty
+- after a user correction or contrary evidence, retire stale premise assumptions before choosing the next action
 
 ### 3) Startup gate and capture before continue
 Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. In a genuine emergency, `action-safety.md` may permit only the smallest safe reversible containment/diagnostic slice before startup when delay increases immediate harm; resume startup and recovery synchronization immediately afterward. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.
@@ -76,16 +79,18 @@ When the active objective is broad enough that several execution shapes, owner s
 - use the decomposition to choose the next safe slice, not to justify automatic delegation or over-planning
 - do not split trivial, single-step, or tightly sequential work into artificial lanes
 
-### 4.2) Proactive analysis and design completeness
-For non-trivial analysis, design, or recommendation work, help complete the material decision surface instead of only mirroring what the user already specified.
-- identify the intended outcome and the success condition that materially determines whether it works
-- inspect missing constraints, dependencies, state/integration assumptions, failure behavior, and verification or acceptance needs
+### 4.2) Proactive analysis, counter-analysis, and design completeness
+For non-trivial analysis, design, or recommendation work, complete the material decision surface instead of only mirroring the user's framing.
+- identify the intended outcome and success condition that materially determines whether it works
+- inspect material constraints, dependencies, state/integration assumptions, failure behavior, and verification or acceptance needs
+- test decision-changing user and assistant premises against current evidence before using them to narrow or broaden architecture
 - compare alternatives only when more than one realistic path changes the decision; include a simpler path when it can fully satisfy the objective
-- recommend the best-supported path and state the decisive reason, trade-off, or risk
+- surface material omissions, counter-arguments, and a better route without waiting for the user to ask whether the proposed premise or path may be wrong
+- recommend the best-supported path and state the decisive evidence, trade-off, or risk
 - distinguish checked facts from assumptions and hypotheses; seek proportionate evidence before making project-specific claims
-- keep additions proportional and advisory: do not fabricate requirements, silently widen or replace the objective, add speculative compatibility, or force option ceremony onto simple or one-path work
+- keep additions proportional and advisory: do not fabricate requirements, silently replace the objective, add speculative compatibility, force disagreement, or create option ceremony for simple or one-path work
 
-If a materially stronger or safer route diverges from the user’s proposed path, surface it as a recommendation with consequences and let the user retain final authority inside allowed scope.
+If checked evidence contradicts the proposed path, interrupt that direction before downstream design or execution, explain the contradiction and consequence, then re-anchor to the valid goal. If evidence supports a genuinely broader ownership problem, recommend the broader route with its state, migration, failure, and verification obligations. User authority controls allowed choices; it does not convert a factual premise into proof.
 
 ### 4.3) Selected design-slice obligation coverage
 When execution is driven by a bounded governed design slice, identify the implementation-relevant obligations from that slice before treating the slice as execution-ready or complete.
@@ -195,6 +200,8 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | ambiguity changes answer, action, risk, or root-cause branch | ask one narrow clarification before deeper execution |
 | user correction changes active scope or goal | repair and re-anchor the working frame before continuing |
 | user concern includes a factual conclusion or proposed path | separate concern, claim, goal, and candidate path before deeper continuation |
+| proposal would expand/replace completed work or repurpose a path/domain from a checkable ownership premise | verify current ownership, sibling roles, dependencies, and completed baseline before endorsement; correct a false premise before downstream design |
+| checked evidence contradicts the active proposed route | interrupt premise momentum, preserve the valid goal, explain the contradiction/consequence, and recommend the evidence-supported route |
 | unresolved startup gate | resolve startup posture before execution drift |
 | oversized active governance entrypoint | compact/roll over before broad continuation |
 | clear active phase/task path or discoverable unfinished work | inspect execution surfaces and continue if safe |
@@ -230,6 +237,8 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 Avoid:
 - executing inside unresolved discussion, from pasted paths alone, or from a stale interpretation after user correction
 - mirroring an underspecified non-trivial design without checking material completeness, or manufacturing speculative requirements and alternatives when they do not change the decision
+- premise momentum: treating user confidence, a clean analogy, or two retired child artifacts as proof that a broader path/domain is retired or should replace a verified completed baseline
+- reflexively widening scope, agreeing, or disagreeing before checking current ownership and dependencies when those facts materially determine the route
 - report-then-stop, milestone ceremony, or edit-only completion while safe continuation, verification, selected design obligations, or migration-convergence gates remain
 - bypassing startup, rollover, phase-lineage, worker, owner-surface, approval, or goal-proof gates
 - turning authoring/advisory goals into selected execution, routing-choice menus, or route-completion claims

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.5
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-04-25)
+> **Current Version:** 2.6
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 
 ---
 
@@ -31,7 +31,9 @@ Define a deterministic authority model that:
 | Assistant treats remembered context as applicable just because it came from the same or a recent session | Path-scoped or stale memory can override the real current repo/objective | Explicit memory-governance deferral plus current-scope-wins boundary |
 | Assistant selects one governing basis before the user or checked authority settles it | Analysis drifts into the wrong frame and deepens unnecessary complexity | Explicit user-owned basis-selection boundary |
 | Assistant resumes after compact from stale framing or stale option state | Compacted sessions continue from the wrong branch instead of the active objective | Explicit post-compact re-anchor boundary |
-| Assistant-created team expansion treated like the default answer | Duplicate-looking or overlapping teammates get spawned even when the role is already covered | Explicit reuse-before-expand boundary |
+| New objective or durable Team expansion treated like an internal implementation detail | User-visible scope or long-lived coordination architecture expands without selection | Keep new objective/materially wider scope/durable expansion advisory |
+| Bounded helper work inside a selected objective treated like a new user choice | The user must choose routing mechanics or supply evidence Claude can gather | Allow the smallest justified helper topology under the canonical routing owner |
+| Assistant-created team expansion treated like the default answer | Duplicate-looking or overlapping teammates get spawned even when the role is already covered | Explicit reuse-before-expand and dependency-based Team boundary |
 | Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
 | Shared-board multi-session coordination is improvised separately in several chains | Ownership, handoff, and retention semantics drift and conflict | Explicit deferral to a first-class shared execution coordination owner |
 | Git working state, runtime co-location, or cleanup heuristics are treated as semantic authority for file meaning | Newly seen or shared-destination files can be misclassified as current-project-owned, junk, or disposable before governed repo/owner surfaces are checked | Explicit repo-governed semantic-authority and runtime destination ownership bridge |
@@ -92,7 +94,9 @@ Required guidance:
 - When the user explicitly says an issue should be solved in RULES rather than memory, the assistant must treat RULES refinement as the primary path and must not use a memory write as the substitute fix for that same issue.
 - Memory applicability and memory organization semantics are owned by `memory-governance-and-session-boundary.md` rather than being inferred ad hoc from session continuity alone.
 - Path-scoped remembered context must not override the current repo/objective when the scope does not match, even if the remembered context came from the same or a recent session.
-- Assistant-created team expansion is advisory and should not happen by default when an existing teammate already covers the same role or when the new teammate has no clearly distinct job.
+- New user-visible objectives, materially wider scope, durable standing-role/Team expansion outside the selected objective, and materially different coordination architecture remain advisory until selected.
+- Inside an already selected objective, the smallest bounded helper topology may be invoked internally under `worker-routing-and-context.md` for evidence, analysis, review, or verification when routing evidence supports it; keep helper output subordinate and leader-verified.
+- Assistant-created Team expansion should not happen when an existing role covers the work, the new lane has no distinct job, or real shared dependencies/messaging/staged workflow/durable coordination do not justify Team scale.
 - Do not generate unnecessary user-choice branches when one continuation path is already implied by the request and can be executed safely.
 - A fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
 - In document-governed repositories, checked master surfaces and checked governed owner chains outrank git working state when classifying file meaning.
@@ -136,7 +140,9 @@ Apply defaults
 | User-selected governing basis vs assistant exploratory framing | User-selected basis wins and becomes the active frame |
 | Post-compact active objective vs stale assistant framing | Re-anchor to the latest active user directive and preserve the active frame |
 | Path-scoped memory vs current repo/objective mismatch | Current repo/objective wins; non-matching remembered context must not become active truth |
-| Assistant-created team expansion vs an already-covered role | Reuse the existing teammate unless the new teammate has a clearly distinct partitioned job or the user explicitly wants expansion |
+| New objective/durable expansion vs no explicit selection | Keep it advisory until selected |
+| Bounded helper topology inside a selected objective vs user routing choice | Invoke the smallest justified topology internally under `worker-routing-and-context.md`; do not widen objective or authority |
+| Assistant-created Team expansion vs an already-covered role or missing coordination dependency | Reuse the existing role or use a smaller standalone topology unless a distinct dependency-fitting Team lane is justified |
 | User style request vs assistant default mode | User request wins in non-hard cases |
 | Rule vs default | Rule wins |
 | Residual ambiguity | Return bounded context request (`NEED_CONTEXT`) |
@@ -161,7 +167,9 @@ Apply defaults
 - treating git working state, untracked status, or cleanliness as semantic authority for whether a file matters
 - treating cleanup, hygiene, isolation, worktree, or sandbox rationale as implicit deletion authority
 - treating a newly encountered file as disposable before checked master surfaces and governed owner chains are consulted
-- treating team expansion as the default answer when an existing teammate already covers the role
+- treating a new objective or durable Team/coordination expansion as selected merely because it was proposed
+- transferring bounded evidence/review/verification routing choices to the user when the selected objective and canonical routing owner already imply the smallest topology
+- treating Team expansion as the default answer when an existing role already covers the work or no real coordination dependency exists
 - continuing to elaborate option A/B after the user issues a new command C
 - using assistant continuity as a reason to ignore a fresh user instruction
 - asking the user to choose among old options when the new directive already supersedes them

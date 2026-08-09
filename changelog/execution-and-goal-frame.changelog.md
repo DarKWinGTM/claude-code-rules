@@ -1,6 +1,6 @@
 # Changelog - Execution and Goal Frame
 
-> **Current Version:** 1.29
+> **Current Version:** 1.30
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.30 | 2026-08-09 | **[Added premise-before-expansion and completed-baseline protection](#version-130)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.29 | 2026-08-09 | **[Added proactive design completeness and migration convergence continuation](#version-129)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.28 | 2026-08-08 | **[Aligned leader-owned source execution and consequential-action boundaries](#version-128)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.27 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-127)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -44,6 +45,21 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-130"></a>
+## Version 1.30: Added premise-before-expansion and completed-baseline protection
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Separated intended outcome, checkable premise, proposed path, and requested action before material expansion or replacement.
+- Required proportionate inspection of current ownership, sibling roles, readers/writers, dependencies, and completed verification before endorsing broader architecture.
+- Protected verified narrow completed work as the active baseline, added proactive false-premise intervention, and required a discriminating check when evidence remains incomplete.
+- Kept evidence-supported broader migration available with explicit state, failure, and verification obligations rather than forcing reflexive disagreement.
+
+### Summary
+This version prevents premise momentum from turning a valid goal into unsupported broader architecture and makes proactive counter-analysis part of execution framing.
 
 <a id="version-129"></a>
 ## Version 1.29: Added proactive design completeness and migration convergence continuation

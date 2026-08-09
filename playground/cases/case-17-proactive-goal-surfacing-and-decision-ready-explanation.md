@@ -15,7 +15,7 @@ This case family shows how RULES should proactively complete materially underspe
 
 ## Governing rules
 
-- `execution-and-goal-frame.md` — proactively inspect material completeness for non-trivial analysis/design, compare only real alternatives, recommend the best-supported route, allow candidate-goal surfacing at real decision boundaries, and keep route-heavy governed advisory `/goal` planning inside one goal-centric visible surface before `/plan` overflow
+- `execution-and-goal-frame.md` — verify decision-changing premises and current ownership before broader architecture, preserve a checked completed baseline, proactively complete material non-trivial design, compare only real alternatives, recommend the best-supported route, allow candidate-goal surfacing at real decision boundaries, and keep route-heavy governed advisory `/goal` planning inside one goal-centric visible surface before `/plan` overflow
 - `phase-todo-artifact.md` — let checked phase/roadmap/TODO surfaces shape compact candidate goals from visible unselected next slices, then allow a design-first advisory `/goal` to use conditional internal planning plus optional route context when route synthesis materially helps, keep compact route support inside the selected goal surface first, and open `/plan` only when overflow route detail or explicit standalone planning is materially needed
 - `worker-routing-and-context.md` — keep native subagent help minimally scoped, internal-only, and leader-verified when it is assisting analysis, route drafting, verification ordering, testing, or optional plan-file reference synthesis for pre-goal planning or selected-goal support
 - `explanation-and-presentation.md` — keep the answer easy-first, use a small table when several axes matter, group the explanation by concept, and keep selected-goal output distinct from plan-route output or bounded helper output
@@ -32,6 +32,8 @@ Current RULES require the assistant to:
 - for non-trivial analysis/design, inspect material outcome/success conditions, constraints, dependencies, state/integration assumptions, failure behavior, and verification instead of waiting for the user to specify every detail
 - compare only realistic alternatives, consider a simpler sufficient path, and recommend the best-supported route with the decisive reason or trade-off
 - preserve checked fact versus assumption/hypothesis and keep materially divergent recommendations advisory rather than silently widening execution
+- before recommending expansion/replacement, separate the valid goal from the checkable current-system premise and inspect semantic ownership, active sibling roles, dependencies, and completed verification
+- preserve a checked completed narrow baseline until evidence shows a real gap; if the premise is false, interrupt the unsupported route and recommend the smallest evidence-supported path
 - continue directly when one safe path is already clearly selected and dominant
 - surface candidate goals when several materially different next slices remain live and no one continuation path clearly dominates
 - keep `/goal` stricter than ordinary candidate goals and preserve its advisory-only status
@@ -80,6 +82,14 @@ Expected behavior: the assistant should not collapse prematurely into one unlabe
 
 Expected behavior: explain the missing material decisions, label project-specific unknowns as assumptions, recommend the best-supported path with its decisive trade-off, and define verification. Do not invent provider limits, require every possible safeguard, or make the user design each sub-decision manually. If only one path satisfies checked requirements, recommend it directly without manufacturing an option list.
 
+### Premise-before-expansion variant
+
+- A completed migration has verified that two retired child index files were moved out of an active data directory.
+- The user assumes the whole parent directory contains only retired data and proposes moving the directory into quarantine.
+- Current source inspection shows the parent still owns canonical records, messages, state/catalog data, per-user/monthly indexes, events, and notification outbox state.
+
+Expected behavior: preserve the valid goal of disconnecting retired data, but reject the whole-directory premise before designing downstream. Explain which active sibling roles contradict the proposal, keep the verified two-file migration as the baseline, and recommend no broader move unless additional checked evidence proves a real domain-wide ownership problem. If the evidence is incomplete, select the narrow ownership/dependency check rather than endorsing or rejecting from confidence alone.
+
 ### Implementation-completeness variant
 
 - A webhook consumer has been implemented and its happy-path focused test passes.
@@ -109,6 +119,8 @@ Understand the system quickly, compare the live next directions clearly, decide 
 
 ## RULES effect on execution
 
+- Before ranking paths, verify any current-system ownership premise that would reopen completed work or broaden architecture.
+- If the premise is false, preserve the valid goal and completed baseline, explain the contradiction, and recommend the smallest supported route.
 - Do not continue directly if no one path clearly dominates.
 - Surface the live next slices as candidate goals.
 - Start with a short plain-language summary before technical details.

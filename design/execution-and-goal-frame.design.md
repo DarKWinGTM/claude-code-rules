@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.29
+> **Current Version:** 1.30
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -74,6 +74,8 @@ P122 refinement: this owner should now preserve explicit `/plan` next-surface re
 P144 refinement: leader-owned source implementation is the default after a selected goal enters execution; bounded helper lanes may support research, diagnosis, review, parallel testing, test-only authoring, or exact governed-doc work but remain evidence inputs. Execution must hand helper-fit work to `worker-routing-and-context.md` for actual topology selection and invocation rather than stopping at lane description. Public read-only external lookup is evidence gathering rather than an approval-sensitive external mutation. Genuine emergencies may perform only the smallest safe reversible containment/diagnostic slice before startup when delay increases immediate harm, then immediately return to normal governance and recovery synchronization.
 
 P146 refinement: this owner must make non-trivial analysis/design proactively complete the material decision surface by checking outcome, success conditions, constraints, dependencies, state/integration assumptions, failure behavior, verification, real alternatives, and simpler sufficient paths; recommend the best-supported route without fabrication, overdesign, or user-authority takeover. Migration execution remains open until `action-safety.md` convergence gates—target verification, cutover, former-path disconnection, bridge retirement, quarantine separation, and inactivity proof—are resolved.
+
+P147 refinement: this owner must separate goal, checkable premise, proposed path, and requested action before material expansion; inspect current ownership, sibling roles, consumers, dependencies, and completed verification; protect a verified narrow baseline from unsupported reopening; proactively interrupt a false-premise route while preserving the valid goal; and use a narrow discriminating check when evidence remains incomplete. Broader architecture is evidence-earned and must carry its own state, migration, failure, and verification obligations.
 
 ---
 

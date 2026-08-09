@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.58</b><br><sub>Authority Convergence</sub>
+  <b>v10.59</b><br><sub>Evidence-First Counter-Analysis</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Verified and published</sub>
+  <b>Candidate</b><br><sub>Verification and publication pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current release note:** Released `v10.58` adds proactive material design completeness and one-active-authority migration convergence, moves retained former material outside active Rule discovery, and preserves the same 19-file runtime boundary. Combined checks, matched Bash/PowerShell fixture matrices, governed synchronization, canonical/root 19/19 installation proof, publication identity, and fresh public-clone reproduction pass in the released scope.
+> **Candidate release note:** `v10.59` adds premise-before-expansion, completed-baseline protection, proactive counter-analysis, explicit recommendation retraction, corrected changelog owner vocabulary, and a clear boundary between advisory durable expansion and internally invoked bounded helper support. The public released baseline remains `v10.58`; candidate verification, installation, publication, and fresh-clone proof are pending.
 
 <!-- CTA Buttons -->
 <p>
@@ -196,15 +196,15 @@ These capabilities summarize the current operating model at the front-page level
 
 - **Evidence-First Accuracy** — Evidence-grounded reasoning is the current baseline for material claims.
   - Seek practical proof before substantial reasoning when the question depends on current facts
+  - Check decision-changing ownership/dependency premises before recommending broader architecture
   - Keep verified fact, inference, hypothesis, and scoped non-finding separate
-  - Use evidence as grounding rather than an automatic decision lock
-  - Avoid guessing local paths, values, symbols, or config
+  - Preserve a checked completed baseline until evidence shows a real gap
 
 - **Anti-Sycophancy** — User direction is respected without turning agreement into false proof.
-  - Evaluate proposals before agreement-shaped wording
-  - Keep safe user-selected direction separate from factual or quality endorsement
-  - Use checked evidence for material agreement, recommendation, and challenge
-  - Prefer claim-focused corrections and constructive dissent when fit or proof conflicts
+  - Keep allowed-direction acceptance separate from factual confirmation and best-route endorsement
+  - Preserve a valid goal while correcting an unsupported premise and recommending the evidence-supported route
+  - Explicitly retract or revise earlier assistant advice when contrary checked evidence disproves its premise
+  - Avoid both reflexive agreement and artificial disagreement
 
 - **Security First** — Safety and action boundaries remain first-pass concerns.
   - Prefer real systems over simulated success when implementation truth matters
@@ -230,7 +230,7 @@ These capabilities summarize the current operating model at the front-page level
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | Deterministic precedence for user direction, hard boundaries, governed repo authority, and advisory future work |
+| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | Deterministic precedence plus advisory durable expansion and internally routed bounded-support boundaries |
 | [`evidence-discipline.md`](evidence-discipline.md) | Evidence discipline | Verify-first factual reasoning, scoped lookup discipline, proof-aware uncertainty, and real-over-mock behavior |
 | [`refusal-and-recovery.md`](refusal-and-recovery.md) | Refusal and recovery chain | Normalized intent classification plus recoverable blocked-path responses |
 | [`action-safety.md`](action-safety.md) | Action safety | Intent verification, destructive confirmation, topology discipline, emergency posture, and retry boundaries |
@@ -280,12 +280,13 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.58` keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding proportional non-trivial design completeness and one-active-authority migration convergence.
+- Candidate `v10.59` keeps the 19-file Bash and PowerShell runtime boundary unchanged while adding premise-before-expansion, completed-baseline protection, evidence-shaped agreement/retraction, corrected changelog ownership, and bounded-helper authority clarification.
+- The public released baseline remains `v10.58` until candidate verification, installation, publication identity, and fresh-clone reproduction pass.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `/home/node/.claude/rules` is a downstream install target.
-- Governed synchronization, root runtime installation, source push, annotated tag, GitHub Release identity, and fresh public-clone verification pass in the released scope.
+- Governed synchronization and release gates are pending for v10.59; do not read candidate implementation as installation, publication, or fresh-clone proof.
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1079,9 +1080,10 @@ Result: ✅ Verified from actual files
 
 ### Evidence discipline
 
-- Current README meaning: proof-seeking and claim-state boundaries stay separate.
-- Scope: fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, and binding constraints.
-- Impact: reduces overclaim, floating recommendation, sycophantic agreement, and hallucination risk.
+- Current README meaning: proof-seeking, premise checking, and claim-state boundaries stay separate.
+- Scope: fact, preference/direction, factual endorsement, inference, hypothesis, uncertainty, memory, scoped non-finding, completed-baseline evidence, and binding constraints.
+- Correction behavior: preserve a valid goal while correcting a false premise; retract invalidated assistant advice with the failed premise, contrary evidence, corrected route, and remaining gate.
+- Impact: reduces overclaim, premise momentum, floating recommendation, sycophantic agreement, and hallucination risk.
 
 ### Phase execution
 
@@ -1191,7 +1193,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.58 |
+  <b>Version</b>: 10.59 candidate |
   <b>Last Updated</b>: 2026-08-09 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>

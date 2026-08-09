@@ -1,7 +1,7 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.24
+> **Current Version:** 1.25
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
@@ -64,6 +64,8 @@ P143 refinement: this owner should now preserve hybrid progress-reporting snapsh
 P144 refinement: supporting explanation is opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action. This owner decides admission; `explanation-and-presentation.md` owns placement and rendering.
 
 P146 refinement: this owner should preserve proactive completeness findings only when they materially change the recommendation, implementation path, risk, scope, dependency, failure behavior, or verification basis, while pruning speculative completeness theater and leaving exact rendering to `explanation-and-presentation.md`.
+
+P147 refinement: this owner must distinguish allowed-direction acceptance, factual confirmation, and best-route endorsement; prohibit agreement-shaped claims above checked evidence; state a valid goal and false premise separately; and require explicit recommendation retraction when later evidence disproves the assistant's earlier path by naming the failed premise, contrary evidence, corrected recommendation, and remaining gate.
 
 P122 refinement: this owner should now preserve explicit `/plan` recommendation wording once planning is the right next surface, so the assistant does not hide the intended handoff behind vague prose about organizing or thinking through the route.
 

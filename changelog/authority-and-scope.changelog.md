@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.5
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 2.6
+> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.6 | 2026-08-09 | **[Clarified advisory expansion and bounded helper authority](#version-26)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.5 | 2026-04-25 | **[Added runtime destination ownership boundary](#version-25)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 2.4 | 2026-04-17 | **[Added repo-governed semantic-authority precedence over git-state cleanup heuristics](#version-24)** | a9bec472-1706-4019-8cfd-5ba988a71662 |
 | 2.3 | 2026-04-13 | **[Deferred shared-board multi-session coordination semantics to the new coordination owner](#version-23)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -33,6 +34,23 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-26"></a>
+## Version 2.6: Clarified advisory expansion and bounded helper authority
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Kept new user-visible objectives, materially wider scope, durable standing-role/Team expansion, and materially different coordination architecture advisory until selected.
+- Clarified that the smallest bounded helper topology inside an already selected objective may be invoked internally under `worker-routing-and-context.md` when evidence or verification workload justifies it.
+- Preserved reuse-before-spawn, user restrictions, mutation permissions, subordinate helper output, leader verification, and dependency-based Team escalation.
+- Prevented internal routing mechanics from becoming a user-choice burden or a route for widening objective/source authority.
+
+### Summary
+Authority-and-scope now distinguishes user-owned durable expansion from internally selected bounded support, resolving the ambiguity without duplicating the canonical worker-topology contract.
 
 ---
 

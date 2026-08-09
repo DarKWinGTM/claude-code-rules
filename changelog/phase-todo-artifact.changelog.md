@@ -1,6 +1,6 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
-> **Current Version:** 1.32
+> **Current Version:** 1.33
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 
 ---
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.33 | 2026-08-09 | **[Corrected changelog owner vocabulary](#version-133)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.32 | 2026-08-08 | **[Compacted phase/TODO governance and clarified closeout semantics](#version-132)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.31 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.30 | 2026-06-13 | **[Extracted governed `/goal` authoring out of phase/TODO execution surfaces](#version-130)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
@@ -46,6 +47,20 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-133"></a>
+## Version 1.33: Corrected changelog owner vocabulary
+
+**Date:** 2026-08-09
+**Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+
+### Changes
+- Replaced the undefined `changelog/fallback` routing token with the governed active-detail owner `changelog/<chain>/v*.changelog.md`.
+- Kept inactive completed/reference history under `changelog/done/` only when that role applies.
+- Explicitly rejected a changelog fallback owner or automatic resolution path while deferring full chain doctrine to `document-governance.md`.
+
+### Summary
+This version aligns phase/TODO startup repair routing with the actual changelog authority model and removes an undefined fallback concept.
 
 <a id="version-132"></a>
 ## Version 1.32: Compacted phase/TODO governance and clarified closeout semantics

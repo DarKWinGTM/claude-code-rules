@@ -28,6 +28,7 @@ This case family shows how RULES keep design, changelog, TODO, phase, patch, and
 Current RULES require the assistant to:
 - open or reuse the correct governed surfaces before meaningful work drifts
 - keep design as target-state truth, changelog as version/history authority, TODO as compact durable index, phase as staged execution, and patch as before/after review
+- keep the active changelog parent as current-version/map/navigation authority, indexed same-chain shards as active version detail, and `changelog/done/` as inactive reference/provenance history rather than a fallback owner
 - preserve history by rollover or sharding rather than deletion when files grow too large
 - verify cross-surface sync before claiming no-drift or release-ready status
 
@@ -50,8 +51,9 @@ Supporting repo-scope master-surface sync behavior is also recorded in `playgrou
 - A new design family is needed but README is the only edited file.
 - `TODO.md` grows by absorbing completed closeout history directly into the active section.
 - A patch starts behaving like a live phase workspace instead of a before/after review surface.
+- A repair instruction calls indexed active changelog version detail `fallback` and treats inactive `changelog/done/` history as an ordinary resolution source.
 
-Expected behavior: create or repair the proper owner surface instead of overloading the wrong one.
+Expected behavior: create or repair the proper owner surface instead of overloading the wrong one. Correct the changelog roles explicitly: active parent for current version/map/navigation, indexed same-chain shard for active detail, inactive `done/` for reference/provenance only, and no fallback owner.
 
 ---
 
@@ -72,6 +74,7 @@ Repair or extend governed documentation without letting current-state, history, 
 ## RULES effect on execution
 
 - Choose the correct owner surface before editing.
+- Route changelog current state, indexed active detail, and inactive history to distinct governed roles without fallback semantics.
 - Preserve history by rollover or sharding instead of deletion.
 - Verify cross-surface sync before claiming no-drift or release readiness.
 

@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.58
+> **Current Version:** 10.59
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,19 +14,25 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active model for `v10.58` keeps the same 19 source-owned runtime Rules as body-sufficient owner contracts, makes non-trivial analysis and design proactively complete material constraints, dependencies, failure behavior, verification needs, and meaningful alternatives, and requires migrations to converge to one verified active authority. Former material may remain only as execution-disconnected quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority, fallback, or restoration input. Primary source implementation and final integration remain in the context-rich leader session, while helper invocation continues to follow actual work shape.
+The active model for `v10.59` keeps the same 19 source-owned runtime Rules as body-sufficient owner contracts and extends proactive design participation with premise-before-expansion: decision-changing current-system premises are checked against ownership, sibling roles, dependencies, and completed verification before broader architecture is endorsed. A valid goal is preserved when its proposed premise is corrected; checked completed work remains the baseline until evidence shows a real gap; invalidated assistant recommendations are explicitly retracted and re-anchored. Active changelog detail and inactive history keep distinct governed owners, while bounded helper topology may reduce user research burden inside a selected objective without turning new objective/durable Team expansion into implicit authority.
 
 ---
 
 ## 2) Current Active-State Summary
 
 Current target-state priorities:
-- non-trivial analysis/design should complete the material decision surface, compare only realistic alternatives, consider a simpler sufficient path, and recommend the best-supported route without fabricating project facts or replacing user authority
+- separate a valid goal from its checkable factual premise, proposed path, and requested action before material expansion or replacement
+- verify current semantic ownership, active sibling roles, readers/writers, state, dependencies, and completed proof when a false premise would materially change architecture, behavior, risk, or scope
+- keep a checked completed narrow implementation as the active baseline until evidence shows its scope or gate is defective; use a discriminating check when evidence remains incomplete
+- preserve the valid goal when correcting a false premise, explain the consequence of the unsupported path, and recommend the smallest evidence-supported route
+- distinguish allowed-direction acceptance, factual confirmation, and best-route endorsement; invalidated assistant advice must be explicitly withdrawn/revised with the failed premise, contrary evidence, corrected recommendation, and remaining gate
+- non-trivial analysis/design should complete the material decision surface, compare only realistic alternatives, consider a simpler sufficient path, and recommend the best-supported route without fabricating project facts, forcing disagreement, or replacing user authority
 - migration/cutover closes only after positive target proof and proportionate negative former-path inactivity proof show exactly one active authority, no active bridge/fallback/dual path, and no normal quarantine read
 - runtime rules stay as body-sufficient active behavior contracts
 - one complete canonical owner should retain each mechanism; consumers keep only activation, local consequence, handoff, or the minimum synchronized exact copy needed to prevent a likely execution, safety, verification, or ordering error
 - supporting explanation stays opt-in and non-repetitive, but becomes required when silence would hide material risk, ambiguity, irreversible consequence, verification limits, required confirmation/recovery, or a necessary next action
 - source implementation and final integration stay leader-owned by default; helper lanes remain bounded to research, evidence filtering, diagnosis, audit/review, independent testing, test-only authoring, or explicitly assigned non-overlapping governed-document synchronization
+- new user-visible objective, materially wider scope, durable standing-role/Team expansion, or different coordination architecture remains advisory until selected; inside a selected objective, the smallest justified bounded helper topology is internally invokable under the canonical routing owner without widening source/objective authority
 - invocation follows work shape: one standalone agent for one independent axis; parallel standalone agents launched together for independent test/metrics/matrix cells; teammates only for shared dependencies, staged coordinated testing, cross-lane messaging, or durable role ownership
 - reuse or steer an aligned active worker before spawning another; group potentially related failures in one diagnosis lane; return helper results through leader fan-in, selected-anchor verification, source repair, and proportionate rerun
 - operational runtime workers/jobs/entities remain distinct from Claude subagents and Agent Team teammates
@@ -82,8 +88,8 @@ Current target-state priorities:
 - flow/process/queue/order/concurrency explanations may prefer an overview → small table → grouped explanation → concise summary shape when that structure reduces cognitive load
 - nested keys should normally be explained parent → child, and UI mental model versus storage model should stay explicit when that distinction matters to understanding
 - readable grouping of verified fact, inference, and hypothesis belongs to the communication owners, while proof thresholds and evidence semantics stay with `evidence-discipline.md`
-- `TODO.md` and `phase/SUMMARY.md` stay compact active entrypoints, with `history/` and `done/` as normalized overflow paths
-- current release and version authority stay in active parent changelogs, while bulky same-chain detail moves to chain-scoped version shards
+- `TODO.md` and `phase/SUMMARY.md` stay compact bodyful active entrypoints, with exact pre-rollover snapshots and `history/` / `done/` references preserving completed detail
+- current version, map, and navigation authority stay in active parent changelogs; indexed active same-chain version detail stays in chain-scoped version shards; `changelog/done/` remains inactive reference/provenance history rather than a fallback owner
 - concern, factual claim, goal request, proposal, and assistant next action should stay separated before endorsement or continuation
 - a governed `playground/` family may show how RULES change AI behavior in practice, but it must keep `rule-enforced fact`, `observed case`, and `virtual variant` visibly separate
 - transcript-derived observed cases inside the playground must include exact checked paths and anchor hints rather than loose storytelling

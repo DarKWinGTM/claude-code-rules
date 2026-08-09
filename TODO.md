@@ -2,309 +2,52 @@
 
 > **Last Updated:** 2026-08-09
 > **Current Release:** v10.58 strategic design completeness and authority convergence
-> **Active Wave:** none; P146 release closeout completed
-> **History:** [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md); [pre-rollover TODO snapshot](todo/history/2026-05-08-pre-rollover-TODO.md)
-> **Done Detail:** [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
+> **Active Wave:** P147 / v10.59 evidence-first counter-analysis and owner-integrity corrections
+> **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
+> **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
-## ✅ Completed
+## Active / In Progress
 
-- [x] P146 / v10.58 strategic design completeness and authority convergence was completed, installed, pushed to `master`, tagged, released, and fresh-public-clone verified.
-  - Delivered: proactive non-trivial analysis/design completeness through existing owners; implementation-completeness and one-active-authority migration convergence; execution-disconnected external quarantine; fail-closed ownership/path/link preflight; staged 19-file payload plus manifest; bounded installer rollback state; matched Bash/PowerShell fixtures.
-  - Verified: nine changed triads and ten unchanged runtime chains; exact 19-file inventory/body and 50-path allowlist; links/literals/force words/scenarios; 19/19 candidate/canonical/root/fresh-clone parity; exact manifest order; four unrelated runtime files preserved; no retired source-owned Rule under the active tree; clean master, annotated tag, and GitHub Release identity.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.58
-
-- [x] P073-11 / v10.57 runtime owner semantic conflict resolution and compression was completed, installed, pushed to `master`, tagged, and released.
-  - Delivered: six semantic settlements, complete image-strategy owner integration, leader-owned source/final integration, explicit standalone-versus-parallel-versus-Team invocation routing with testing/metrics/test-matrix specialization, ten runtime/design version alignments, and owner-canonical compaction of the 19 Active Runtime Rules.
-  - Verified: 254,032 bytes / 3,092 lines / 33,038 words; body sufficiency 19/19; exact literal and invocation registries; 39-path canonical parity; 10/10 triads; changed-scope links; README 7/7 surgical diff and mode `100644`; Bash/PowerShell disposable, canonical/root, and fresh-clone install parity 19/19; remote master, annotated tag, and GitHub Release identity.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.57
-
-- [x] v10.56 installer-design verification correction was completed, pushed to `master`, tagged, and released.
-  - Verified: the active installer architecture now consistently requires a 19-file runtime count, 19/19 parity, and 19/19 body sufficiency; Bash and PowerShell manifests remain identical at 19 Rules; README, master changelog, TODO, phase summary, installer design, remote master, tag, and GitHub release align; runtime Rule bytes and versions remain unchanged from v10.54.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.56
-
-- [x] v10.55 phase-summary current-state correction was completed, pushed to `master`, tagged, and released.
-  - Verified: stale P138 open-wave and rollback wording was removed from the active `phase/SUMMARY.md`; the entrypoint now reports no active phase, keeps v10.53/P145 as the latest phase-backed release, and identifies v10.55 as the current repository release; README, master changelog, TODO, phase summary, remote master, tag, and GitHub release align; the v10.54 runtime payload remains unchanged at 19 Rules with canonical/runtime hash parity.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.55
-
-- [x] v10.54 active runtime Rule compression was completed, installed, pushed to `master`, tagged, and released.
-  - Verified: 15 runtime owner Rules were compressed and version-aligned with their design/changelog chains; the active payload is 273,721 bytes versus the checked 405,914-byte baseline (32.57% reduction); the source-owned install set remains 19 root Rules; active 18-versus-19 inventory drift was corrected; `git diff --check`, metadata/link/body checks, temporary installation, 19/19 source/runtime parity, remote master, tag, and GitHub release checks passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.54
-
-- [x] P145 / v10.53 source-first scope guard and repo-authority enforcement was completed, installed, pushed to `master`, tagged, and released.
-  - Verified: repo-root `CLAUDE.md` now explicitly says RULES work starts from the checked source-controlled repository first; `/home/node/.claude/rules` is treated as a downstream install target rather than source authority; runtime-first edits are outside the default path unless the task is explicitly runtime-only emergency or install-verification work; README current-state/release-facing wording matches the new guard; `TODO.md`, `phase/SUMMARY.md`, this release wave's phase/patch/master-changelog/detail surfaces align to `v10.53 / P145`; runtime install/update verification was rerun from the checked source repo; selected runtime parity checks passed in checked scope; `git push` to `master`, tag `v10.53`, and GitHub release verification all passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.53
-
-- [x] P143 / v10.51 hybrid progress-reporting surface alignment was completed, installed, pushed to `master`, tagged, and released.
-  - Verified: the selected runtime owners now support a shared hybrid progress snapshot for non-trivial in-flight work using `Current`, `Done so far`, `In progress`, `Remaining`, `Blockers / Notes`, and `Next`; `Done so far` is explicitly bounded to checked scope; progress narration no longer reads like a stop gate or milestone-only pause when safe continuation exists; the P141 route-only `/goal` authoring boundary remains intact with no default execution-mode menu leakage; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.51 / P143` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.51`, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.51
-
-
-- [x] P142 / v10.50 phase authoring template relocation and runtime-boundary clarification was completed, installed, pushed to `master`, tagged, and released.
-  - Verified: `phase-implementation-template.md` no longer sits in the root active product RULES surface; `template/phase-authoring-template.md` now carries the support-only / non-runtime / non-authority role explicitly; checked active references now use the template-directory path where current-state authority requires it; active phase doctrine remains explicit in `phase-todo-artifact.md` plus governed `phase/` surfaces; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.50 / P142` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.50`, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.50
-
-
-- [x] P141 / v10.49 governed `/goal` routing-choice surface hardening was completed, installed, pushed to `master`, tagged, and released.
-  - Verified: governed goal/plan-file authoring now stops at the emitted goal artifact plus subordinate route support when execution was not yet selected; authoring-only turns no longer append a default `Subagent-Driven` / `Inline Execution` menu; execution-transition wording now reports the chosen action/result or current stop boundary rather than a routing-label menu; touched design/changelog/TODO/phase/patch/current-state surfaces are aligned to one `v10.49 / P141` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and push to `master`, tag `v10.49`, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.49
-
-
-- [x] P140 / v10.48 design-slice semantic coverage was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: selected governed design slices now require semantic coverage before phase/task closeout; implementation-relevant semantic items are explicit when materially present as behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary; selected semantic items now receive explicit status classification as `implemented`, `verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`; execution and closeout can no longer stop at a visible headline output while selected invariants, failure modes, durability, or dependency semantics remain silently uncovered; touched design/changelog/TODO/phase/patch surfaces are aligned to one `v10.48 / P140` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.48` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.48
-
-- [x] P139 / v10.47 goal route support and execution posture selection was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: plain goal requests now trigger planning-depth resolution and receive the smallest sufficient route support when the work is governed/non-trivial/route-heavy; users no longer need to say `goal plan file` to receive proper governed route support; `/goal` remains the objective owner while any plan file remains route-only support; durable `Plan reference:` now means the route-only plan file already exists in checked scope or was successfully written in the same governed authoring flow; selected `/goal` or selected plan execution no longer exposes `Subagent-Driven` vs `Inline Execution` as a default user-facing choice menu; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.47 / P139` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.47` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.47
-
-- [x] P138 / v10.46 semantic code naming and code-doc comment linkage was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: source-code identifiers now stay semantic/domain/behavior-first unless a literal token is itself a real external/domain contract term; governed-doc links in source comments are now bounded to maintenance-helpful cases, with stable design/contract references preferred by default and phase/changelog/patch references kept narrow to provenance, migration, compatibility, tactical bridge, or rollback context; governed-doc citations inside source comments are now treated as checked references that must be updated or removed when paths, headings, owner roles, or nearby behavior change; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.46 / P138` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.46` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.46
-
-- [x] P137 / v10.45 Subagent-Driven-first execution routing was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: selected, execution-ready, non-trivial plan-backed or goal-backed work now prefers Subagent-Driven execution first after a checked suitability gate; Inline Execution remains available only as a checked direct-handling exception when more effective for the current slice; `/goal` remains the objective owner while the plan file remains route-only support and not completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.45 / P137` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.45` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.45
-
-- [x] P136 / v10.44 goal-first Plan reference ordering was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: copied durable-plan-backed governed `/goal` artifacts now keep `/goal` first and `Plan reference:` after it inside the same copied artifact; P135 plan-file-first authoring remains intact; `/goal` remains the objective owner while the plan file remains route-only support and not completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.44 / P136` baseline; touched runtime-owner install/update verification passed with source/runtime parity + body sufficiency in checked scope; `git diff --check` passed; and branch/default-branch/tag/release evidence is aligned to the promoted `v10.44` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.44
-
-- [x] P135 / v10.43 governed goal auto-plan-file authoring was completed, pushed, mirrored to the remote default branch, and released.
-  - Verified: `execution-and-goal-frame.md`, `phase-todo-artifact.md`, `document-integrity.md`, and the aligned presentation/communication owners now require actual governed `/goal` authoring with durable route support to write the route-only plan file before final goal emission; the final copied goal artifact carries the exact in-artifact `Plan reference`; the assistant no longer leaves save-plan or rerun-`/goal` loops as normal behavior when no real stop gate exists; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the plan file remains route-only support and not authority or completion proof; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.43 / P135` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.43` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.43
-
-- [x] P134 / v10.42 copyable goal plan-reference hardening was completed, pushed, mirrored to the remote default branch, and released.
-  - Verified: `execution-and-goal-frame.md`, `phase-todo-artifact.md`, and `explanation-and-presentation.md` now require any durable plan-backed governed `/goal` to keep `Plan reference` inside the same copied goal artifact; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the plan file remains route-only support and not authority or completion proof; the advisory `/goal` block template now keeps the plan pointer inside the same copied artifact; touched design/changelog/README/TODO/phase/patch surfaces are aligned to one `v10.42 / P134` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.42` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.42
-
-- [x] P133 / v10.41 Quick Start companion-plugin setup was completed, pushed, mirrored to the remote default branch, and released.
-  - Verified: the root README now includes a Quick Start companion-plugin setup block immediately after the runtime-rule install notes; the block points operators to install `governed-docs` and `memory-context-intelligence` from the local marketplace, keeps plugin install separate from the `.claude/rules/` runtime payload, preserves `memory-context-intelligence` first use as `/memory-context-intelligence:init` followed by `/memory-context-intelligence:analysis`, and syncs touched README/TODO/phase/patch/changelog surfaces to one `v10.41 / P133` baseline; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.41` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.41
-
-- [x] P132 / v10.40 companion plugin READMEs and image guidance was completed, pushed, mirrored to the remote default branch, and released.
-  - Verified: `plugin/governed-docs/img/GOD.png` and `plugin/memory-context-intelligence/img/MCI.png` now exist; both plugin READMEs include clearer top-level guidance plus image references; the root README now introduces the two companion plugins and their roles; touched README/TODO/phase/patch/changelog surfaces are aligned; plugin/runtime boundary wording stays intact; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.40` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.40
-
-- [x] P131 / v10.39 RULES diagram infrastructure doctrine was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: `diagram/` is now required governed-docs infrastructure for RULES; governed diagram authority stays under `diagram/` only; `diagram/STRUCTURE.md` is now the mandatory compact active whole-project diagram-side entrypoint; `diagram/STRUCTURE.md` owns concept/folder/topology/boundary/navigation mapping; `design/**` remains semantic authority if text and diagram differ; future `diagram/history/` / `diagram/done/` remain preservation infrastructure rather than cleanup authority; touched README/design/changelog/TODO/phase/patch surfaces are aligned; runtime install/update verification passed for the touched active runtime owners; parity/body sufficiency in checked scope passed; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.39` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.39
-
-- [x] P130 / v10.38 always-on plan-file-backed goal model was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: any actual governed `/goal` creation now prepares a full detailed plan file before final goal emission; emitted governed `/goal` output now references that route file through `Plan reference`; `/goal` remains the objective owner for outcome/proof/scope/guardrails; the referenced plan file remains route-only support and not objective authority or completion proof; visible `/plan` remains explicit standalone planning, later route revision, or overflow only; touched README/design/changelog/TODO/phase/patch surfaces are aligned; runtime install/update verification passed with 18 active source/runtime rule files plus manifest; source/destination body sufficiency and targeted parity for touched runtime owners passed; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.38` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.38
-
-
-- [x] P129 / v10.37 Kroki-compatible governed diagram doctrine was completed, pushed, mirrored to the remote default branch, and released.
-  - Verified: governed `diagram/` source is now mandatory Kroki-compatible; allowed breadth is defined as all formats that are both Kroki-compatible and governance-suitable; `design/` remains semantic authority; `diagram/STRUCTURE.md` is now a bodyful whole-project detailed visual structure authority; subject diagrams are positioned as zoom-in / decomposition views of the global structure; inline answer/phase-local text diagrams are explicitly kept outside governed source truth unless promoted; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; branch/default-branch/tag/release evidence is aligned to the promoted `v10.37` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.37
-
-- [x] P128 / v10.36 RULES unified diagram doctrine correction was completed, pushed, mirrored to the remote default branch, and released.
-  - Verified: RULES now recognizes `diagram/` as a dedicated governed visual lane; `diagram/STRUCTURE.md` is present as the whole-repo visual anchor; integrated subject diagrams are the default visual posture; automatic design-shard mirroring was rejected; plugin-first fragmented companion assumptions were withdrawn from active current-state doctrine; touched README/design/TODO/phase/changelog/patch surfaces are aligned; `git diff --check` passed; temporary project-local install proof passed with 18 active runtime rule markdown files; touched runtime-owner parity matched for `document-governance.md` and `explanation-and-presentation.md`; reconciled branch/default-branch/tag/release evidence is aligned to the promoted `v10.36` state.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.36
-
-
-- [x] P127 / v10.35 README Core Capabilities list and doctrine framing was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: the old Core Capabilities grid/table is gone; every capability now appears in a readable list; wording explains active doctrine/current-state behavior rather than phase/release chronology; Runtime Context Discipline now stays front-page scoped; touched README/design/changelog/TODO/phase/patch sync is complete; runtime install into a checked project-local `.claude/rules/` target, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.35
-  - Historical note: this wave refines front-page capability presentation only; it does not reopen the earlier phase-grammar execution doctrine as the meaning of the capabilities themselves.
-
-- [x] P126 / v10.34 explicit phase grammar forms and legacy-only alphanumeric handling was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched owners now make `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN` explicit forward-valid numeric execution forms; observed `phase-NNN-NNa` forms remain preserved as legacy-only unless a later doctrine explicitly normalizes them; deeper hybrid forms such as `phase-NNN-NN-NNb` are not forward-valid grammar by default; touched master/design/changelog/TODO/phase/patch sync is complete; no NodeClaw phase-file rename/migration was performed in this wave; `playground/` still stays outside the active runtime install payload; runtime install into a checked project-local `.claude/rules/` target, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.34
-  - Historical note: the NodeClaw evidence informed the doctrine selection, but the release wave did not rename NodeClaw files; observed alphanumeric forms remain legacy-only until a later normalization wave is explicitly selected.
-
-- [x] P125 / v10.33 integrated goal-with-planning objective was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched owners now keep route-heavy governed `/goal` work on one integrated goal-centric visible surface by default, allow internal planning / plan-mode-style support only when necessary, keep compact `Plan draft` / `Plan basis` / `Verification / testing route` / `Plan reference` support subordinate to the goal surface, keep `/plan` as overflow or explicitly requested standalone route handling only, and preserve simple-goal direct emission; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.33
-  - Published at `2026-05-30T15:59:23Z`.
-  - Historical note: P124 remains an unreleased predecessor draft preserved as the narrower pre-goal plan-backed stage that led into this released model.
-
-- [x] P123 / v10.31 goal internal native subagent assistance refinement was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched owners now let `/goal` conditionally use internal native subagent assistance for analysis, verification, testing, and bounded plan drafting when selected governed goals remain non-trivial or route-heavy while still keeping `/goal` as the objective owner, `/plan` as the route owner, helper behavior internal-only, and leader-owned synthesis/proof wording as the completion authority; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.31
-  - Release tag `v10.31` resolves to commit `22974c982ea3f3c51ed0a42cdf945da7c6e0f82e`.
-  - Published at `2026-05-28T10:14:31Z`.
-
-- [x] P122 / v10.30 goal-to-plan default next-surface hardening was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched owners now explicitly recommend `/plan` as the default next surface when a selected governed goal remains route-heavy while still keeping `/goal` as the objective owner, `/plan` as the route owner, and goal-gate closeout as the completion proof owner; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch verification, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.30
-  - Release tag `v10.30` resolves to commit `c22a6c09a16d3cea4fc522f9ac2a39160ce7d717`.
-  - Published at `2026-05-27T20:53:00Z`.
-
-- [x] P121 / v10.29 goal-to-plan bridge doctrine was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched owners now keep `/goal` as the objective owner and `/plan` as the route owner, bridge governed non-trivial goals into planning without making planning mandatory for every goal, and return closeout to the goal gate instead of route completion alone; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.29
-  - Release tag `v10.29` resolves to commit `d30c378b0be3593cea131e0c10c521f52749f48f`.
-  - Published at `2026-05-27T10:41:28Z`.
-
-- [x] P120 / v10.28 strategic correction posture hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched strategic-reasoning owners now make correction reasoning start from system logic before local symptoms, treat supplier/model/path-specific narrowing as a scope conclusion earned from evidence, prefer shared mechanisms before local exceptions, and keep local exceptions as evidence-earned options rather than reflex defaults; the updated `case-10-external-memory-and-portability-boundary.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.28
-  - Release tag `v10.28` resolves to commit `6a69e8c98bda1b58631f5b055f827df3519a2dda`.
-  - Published at `2026-05-22T14:21:29Z`.
-
-- [x] P119 / v10.27 active-exchange language alignment hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched language-alignment owners now make active-exchange language the default for goal-shaped output even without a direct language instruction, explicit language requests remain a stronger override, exact literals such as `/goal`, file paths, identifiers, version tags, and query parameters stay token-scoped instead of turning the whole block into an exact literal, and wrapper-only translation is explicitly rejected; the updated `case-16-end-to-end-language-aligned-goal-surface.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.27
-  - Release tag `v10.27` resolves to commit `54943578d587b1a0deb4bdfda8d402ab065fe111`.
-  - Published at `2026-05-21T02:15:51Z`.
-
-- [x] P118 / v10.26 successor-surfacing bridge hardening follow-up was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched successor-surfacing bridge owners now reject generic future-note closeout when meaningful successor work is already visible, candidate goals surface more clearly when several successor directions remain live, and smaller bounded successor slices are derived from checked execution surfaces instead of echoing broad future labels; the updated `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` is present; touched master/design/changelog/TODO/phase/patch sync is complete; `playground/` still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.26
-  - Release tag `v10.26` resolves to commit `b0b4b46fba2725b1abad4d6d4768647a897f2249`.
-  - Published at `2026-05-20T17:54:46Z`.
-
-- [x] P117 / v10.25 proactive goal surfacing and decision-ready response style refinement was completed, installed, pushed, mirrored to the remote default branch, and released.
-  - Verified: touched owners now surface candidate goals more proactively at real decision boundaries when no one path clearly dominates; default non-trivial answers now encode plain-language summary first, small-table-when-useful, grouped explanation, identifier-meaning-first wording, visible verified/inference/hypothesis separation, and concise decision-ready close; `case-17-proactive-goal-surfacing-and-decision-ready-explanation.md` and the playground index update are present; touched master/design/changelog/TODO/phase/patch sync is complete; playground still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, remote default-branch update, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.25
-  - Release tag `v10.25` resolves to commit `0a32fa1c81a81739094ab94c9e6e8627d024bc03`.
-  - Published at `2026-05-20T13:05:37Z`.
-
-- [x] P116 / v10.24 end-to-end language-aligned goal surface refinement was completed, installed, pushed, and released.
-  - Verified: touched runtime owners teach end-to-end dominant-session-language behavior across candidate goals, advisory `/goal`, recommendation labels, and recap/closing lines; exact literals remain preservable where they should stay exact; `case-16-end-to-end-language-aligned-goal-surface.md` and the playground index update are present; touched master/design/changelog/TODO/phase/patch sync is complete; playground still stays outside the active runtime install payload; runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.24
-  - Release tag `v10.24` resolves to commit `68f623e26d46e381fc098ff87f04daf99b3e7818`.
-  - Published at `2026-05-20T09:53:32Z`.
-
-- [x] P115 / v10.23 language-aware candidate-goal promotion playground case update was completed, installed, pushed, and released.
-  - Verified: `case-15-language-aware-candidate-goal-promotion.md`, playground index update, touched master/design/changelog/TODO/phase/patch sync, playground still excluded from the active runtime install payload, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.23
-  - Release tag `v10.23` resolves to commit `f434a3b31baa3532d933687545ec3f2b3f229c60`.
-  - Published at `2026-05-20T08:59:56Z`.
-- [x] P114 / v10.22 language-aware candidate goal and goal-command doctrine was completed, installed, pushed, and released.
-  - Verified: dominant-session-language ownership for candidate goals and promoted `/goal`, candidate-goal-first successor recommendation mode, selective promotion from candidate goal to governed `/goal`, two Thai-first governed examples, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.22
-  - Release tag `v10.22` resolves to commit `3313fb193f96d5f18c6a6d45c7864e9971c8569d`.
-  - Published at `2026-05-20T08:24:10Z`.
-- [x] P113 / v10.21 governed-work-only goal context sourcing doctrine was completed, installed, pushed, and released.
-  - Verified: governed-work-only `/goal` trigger doctrine, exact mandatory governed-surface trigger conditions, design-first governed `/goal` sourcing order, material-only changelog/patch/README inclusion, compact advisory output guidance, two concrete `/goal` examples, runtime install into `~/.claude/rules`, 18/18 source/runtime parity, source/destination body sufficiency, `git diff --check`, branch push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.21
-  - Release tag `v10.21` resolves to commit `53f80777bd3b0ec9d5ad84165bcd58e6e726c4f2`.
-  - Published at `2026-05-20T07:54:14Z`.
-- [x] P112 / v10.20 grounded playground transcript cases and realism upgrade was completed, installed, pushed, and released.
-  - Verified: transcript-grounded observed entries with exact checked transcript paths plus anchor hints, richer multi-turn scenario traces, stronger flow explanations, two grounded new scenario families, README pointer-level integration, project-local 18/18 source/runtime parity, source/destination body sufficiency, `playground/` excluded from `.claude/rules/`, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.20
-  - Release tag `v10.20` resolves to commit `4851338417501a391e7dc505d0b049d7fb6209db`.
-  - Published at `2026-05-19T03:51:01Z`.
-- [x] P111 / v10.19 RULES playground family behavior scenarios was completed, installed, pushed, and released.
-  - Verified: governed non-runtime playground family baseline, 10 scenario-family case files, prompt/response examples, lightweight flow diagrams, full 18-rule coverage map, virtual-case matrix, README pointer-level integration, project-local 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.19
-  - Release tag `v10.19` resolves to commit `e3e0bdfe255c2370085abcfebbb25a6544de9a1b`.
-  - Published at `2026-05-19T01:39:59Z`.
-- [x] P110 / v10.18 project-local Claude Code install architecture and explanation clarity doctrine was completed, installed, pushed, and released.
-  - Verified: launcher-first clone → project install UX, helper execution layer preservation, dedicated installer architecture design, meaning-first identifier explanation doctrine updates, launcher-driven Bash/PowerShell install proof, project-local 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.18
-  - Release tag `v10.18` resolves to commit `b1ee4100b471b96a975c22a480137b81fa5efc8a`.
-  - Published at `2026-05-19T00:42:14Z`.
-- [x] P109 / v10.17 lineage-first phase selection and subphase enforcement was completed, installed, pushed, and released.
-  - Verified: strict current-phase → subphase → new-major fall-through enforcement, explicit why-not-current / why-not-subphase basis, touched companion/master-surface sync, README-driven runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.17
-  - Release tag `v10.17` resolves to commit `a330d414c6fd20febf2222288651cc166d0c62b0`.
-  - Published at `2026-05-18T14:01:40Z`.
-- [x] P108 / v10.16 worker-routing runtime compaction and owner redistribution was completed, installed, pushed, and released.
-  - Verified: worker-routing compaction below the performance threshold, owner redistribution into document-integrity/document-governance, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.16
-  - Release tag `v10.16` resolves to commit `731624622af67e68869469d74f419d5c67a6752d`.
-  - Published at `2026-05-18T05:01:02Z`.
-- [x] P107 / v10.15 explicit goal-command suggestion doctrine was completed, installed, pushed, and released.
-  - Verified: `/goal` trigger doctrine, compact `/goal` output shape, `/goal` sourcing/writing doctrine, advisory/pruning guards, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.15
-  - Release tag `v10.15` resolves to commit `771a4769b65910cf28b9c7e6c30145551a88cec8`.
-  - Published at `2026-05-18T02:34:32Z`.
-- [x] P106 / v10.14 parent-model supersession and adherence validation was completed, installed, pushed, and released.
-  - Verified: active-doctrine supersession precedence, selected historical guard wording, chronology/adherence verification hardening, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.14
-  - Release tag `v10.14` resolves to commit `3e163fc7be7922230155ef0f184f2484b73509a6`.
-  - Published at `2026-05-17T23:36:10Z`.
-- [x] P105 / v10.13 folder-scoped generic parent and single-parent authority was completed, installed, pushed, and released.
-  - Verified: folder-scoped generic-parent allowance, single-parent-authority integrity, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.13
-  - Release tag `v10.13` resolves to commit `b1eba20b8c31041afd794625650a1107d8702e05`.
-  - Published at `2026-05-17T13:43:03Z`.
-- [x] P104 / v10.12 semantic parent naming and bootstrap-first design normalization was completed, installed, pushed, and released.
-  - Verified: naming/bootstrap integrity in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.12
-  - Release tag `v10.12` resolves to commit `a5dfb34ab7a26dc91bff3861ca3425bf00c99d8a`.
-  - Published at `2026-05-17T09:16:12Z`.
-- [x] P103 / v10.11 observed-shape, extracted-doctrine, and selected-target separation was completed, installed, pushed, and released.
-  - Verified: wording/equivalence integrity in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.11
-  - Release tag `v10.11` resolves to commit `a764f7aaa08a5d2193013d2fd6480f0bba3f88c6`.
-  - Published at `2026-05-17T07:01:37Z`.
-- [x] P102 / v10.10 chain-shape normalization and append-vs-shard gate was completed, installed, pushed, and released.
-  - Verified: chain-shape doctrine consistency in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.10
-  - Release tag `v10.10` resolves to commit `941fde875dedc2cede3db6f4bee2d144c4b029c3`.
-  - Published at `2026-05-17T01:55:18Z`.
-- [x] P101 / v10.09 governed path normalization and premise-separation was completed, installed, pushed, and released.
-  - Verified: normalization integrity, touched-owner/companion consistency in checked scope, runtime install, 18/18 source/runtime parity, source/destination body sufficiency, `master` push, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.09
-  - Release tag `v10.09` resolves to commit `c883b8617ebfda89ff8dc288533dffe835d6785b`.
-  - Published at `2026-05-17T00:52:06Z`.
-- [x] P100 / v10.08 safe-first active runtime compression was completed, installed, pushed, and released.
-  - Verified: preserve-mechanism review, 18/18 parity/body sufficiency, owner-link validation, runtime install, source/runtime parity, source/destination body sufficiency, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.08
-- [x] P099 / v10.07 proactive subagent efficiency and lane templates was completed, installed, pushed, and released.
-  - Verified: 18/18 parity/body sufficiency, owner-link validation, runtime install, source/runtime parity, source/destination body sufficiency, and GitHub release verification passed.
-  - Release URL: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.07
-- [x] `memory-context-intelligence` phase 029 shared darkwingtm marketplace bridge design resolution was completed.
-  - Selected design: keep active runtime marketplace `darkwingtm` mapped to `/home/node/workplace/AWCLOUD/TEMPLATE/PLUGIN`; do not use `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin` as the active runtime marketplace root; later add `memory-context-intelligence` as an extra entry inside `/home/node/workplace/AWCLOUD/TEMPLATE/PLUGIN/.claude-plugin/marketplace.json` with source `../RULES/plugin/memory-context-intelligence`; keep `/home/node/workplace/AWCLOUD/TEMPLATE/PLUGIN/memory-context-intelligence/` as deprecated historical docs only, not the active plugin package.
-  - Rejected alternatives: remapping `darkwingtm` to `TEMPLATE/RULES/plugin` would break existing shared-marketplace plugins; creating a second active package under `TEMPLATE/PLUGIN` would create source drift and duplicate truth.
-  - Boundary: docs-only; no plugin install state, settings, marketplace registry, installed plugins, cache, source package runtime contents, or `/additional/` material was intentionally mutated. Phase 030 remains planned / approval-sensitive for bridge-entry implementation plus marketplace availability / install / uninstall reproof after explicit approval.
-- [x] `memory-context-intelligence` phase 028 restored darkwingtm shared-marketplace governance sync was completed.
-  - Verified in governed docs scope: active source package remains `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/memory-context-intelligence/`; active runtime marketplace mapping is restored to `darkwingtm` -> `/home/node/workplace/AWCLOUD/TEMPLATE/PLUGIN`; the restored shared marketplace does not include `memory-context-intelligence`; and `memory-context-intelligence@darkwingtm` is not currently installed/enabled there.
-  - Reclassification: phases 025-027 remain completed historical checked evidence from the temporary/remapped `darkwingtm` state, not current runtime truth after the marketplace restore; retained cache/data from the old proof is evidence only, not active install state.
-  - Boundary: docs-only; no plugin install state, settings, marketplace registry, cache, source package runtime contents, or `/additional/` material was intentionally mutated. Publication, external marketplace release, slash-command/chat invocation proof, stable/broad production readiness, main RULES promotion/mutation/merge, and current `memory-context-intelligence@darkwingtm` install/enablement remain unclaimed.
-- [x] `memory-context-intelligence` phase 027 darkwingtm uninstall lifecycle closeout remains completed historical evidence.
-  - Verified in historical checked local scope: `claude plugin uninstall --scope local --keep-data "memory-context-intelligence@darkwingtm"` succeeded from `/home/node/workplace/AWCLOUD/CLAUDE`; normal and bare plugin lists no longer included `memory-context-intelligence@darkwingtm`; bare details exited `1` with plugin not found.
-  - Historical surfaces recorded: the then-effective `darkwingtm` marketplace registration remained retained, `/home/node/workplace/AWCLOUD/CLAUDE/.claude/settings.local.json` had no `memory-context-intelligence` reference, `/home/node/.claude/plugins/installed_plugins.json` no longer had the `memory-context-intelligence@darkwingtm` key, and `/home/node/.claude/plugins/cache/darkwingtm/memory-context-intelligence/0.9.0` remained present with `.orphaned_at` value `1779155486899`.
-  - Current boundary: after the marketplace restore to `/home/node/workplace/AWCLOUD/TEMPLATE/PLUGIN`, this is not current target-state proof; retained cache/data is evidence only, not active install state. The source package and `/additional/` trial material remain preserved; slash-command/chat invocation, publication, external marketplace release, stable/broad production readiness, and main RULES promotion/mutation/merge remain unclaimed.
-- [x] `memory-context-intelligence` phase 026 darkwingtm local-scope persistent install proof remains completed historical evidence.
-  - Verified in historical checked local scope: `claude plugin install --scope local "memory-context-intelligence@darkwingtm"` succeeded from `/home/node/workplace/AWCLOUD/CLAUDE`; normal and bare CLI checks showed `memory-context-intelligence@darkwingtm` installed with `scope: "local"`, `enabled: true`, project path `/home/node/workplace/AWCLOUD/CLAUDE`, and cache path `/home/node/.claude/plugins/cache/darkwingtm/memory-context-intelligence/0.9.0`.
-  - Historical surfaces recorded: `/home/node/workplace/AWCLOUD/CLAUDE/.claude/settings.local.json`, `/home/node/.claude/plugins/known_marketplaces.json`, `/home/node/.claude/plugins/installed_plugins.json`, `/home/node/.claude/plugins/cache/darkwingtm/memory-context-intelligence/0.9.0`, cached manifest identity, and `/home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/.claude-plugin/marketplace.json`.
-  - Current boundary: after the marketplace restore to `/home/node/workplace/AWCLOUD/TEMPLATE/PLUGIN`, this is not current installed/enabled state for `memory-context-intelligence@darkwingtm`; slash-command/chat invocation, publication, external marketplace release, stable/broad production readiness, main RULES promotion/mutation/merge, and `/additional/` behavior change remain unclaimed.
-- [x] `memory-context-intelligence` phase 025 darkwingtm session split proof remains completed historical evidence.
-  - Verified in historical recorded docs scope: `claude plugin list --available --json` proved marketplace-qualified availability for `memory-context-intelligence@darkwingtm` under the temporary/remapped `darkwingtm` state, while `claude --bare --plugin-dir "/home/node/workplace/AWCLOUD/TEMPLATE/RULES/plugin/memory-context-intelligence" plugin list --json` separately proved session-only disk loading as `memory-context-intelligence@inline` with `scope: "session"`.
-  - Current boundary: after the marketplace restore to `/home/node/workplace/AWCLOUD/TEMPLATE/PLUGIN`, this no longer represents current runtime truth or current `memory-context-intelligence@darkwingtm` availability under the restored shared marketplace.
-- [x] `memory-context-intelligence` phases 019-023 remain completed checked-local installability evidence, now reclassified as transitional namespace proof.
-  - Verified: phase 019 planning/installability contract, phase 020 source-side manifest/local marketplace bootstrap, phase 021 session-only inline load proof, phase 022 local-scope persistent CLI install proof as `memory-context-intelligence@rules-local`, and phase 023 reload/new-process evidence reuse plus approved uninstall-only closeout are completed.
-  - Reclassification: under the later selected namespace basis, phases 020-023 prove `@inline` / `rules-local` behavior only; they do not prove selected target install ID `memory-context-intelligence@darkwingtm` persistent install or uninstall lifecycle behavior.
-  - Boundary: prior evidence is preserved as checked local lifecycle evidence only, not publication, external marketplace release, slash-command/chat invocation proof, stable/broad production readiness, main RULES promotion, main RULES mutation, main RULES merge, or final darkwingtm persistent install proof.
-- [x] Earlier completed release closeout detail was compacted into [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md).
+- [ ] **P147 / v10.59 evidence-first counter-analysis and owner-integrity corrections**
+  - Parent: [phase/phase-147-evidence-first-counter-analysis-and-owner-integrity.md](phase/phase-147-evidence-first-counter-analysis-and-owner-integrity.md)
+  - [x] P147-01 runtime/design/changelog triads implement premise-before-expansion, completed-baseline protection, proactive counter-analysis, evidence-shaped agreement, and explicit recommendation retraction.
+  - [x] P147-02 runtime/design/changelog triad routes active same-chain version detail to `changelog/<chain>/v*.changelog.md` and inactive completed/reference history to `changelog/done/` when applicable, with no changelog fallback owner.
+  - [x] P147-03 runtime/design/changelog triad distinguishes advisory new objective/durable Team expansion from internally invoked bounded helper topology under `worker-routing-and-context.md`.
+  - [ ] Synchronize P147 phase, patch, master design/changelog, playground, and surgical README candidate surfaces.
+  - [ ] Run changed-path, triad, unchanged-owner, scenario, fixture, install, parity, manifest, preservation, and no-drift verification.
+  - [ ] Synchronize the verified allowlist to canonical `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`, install the 19 Active Runtime Rules to `/home/node/.claude/rules`, then verify canonical/root parity and unrelated-file preservation.
+  - [ ] Push clean `master`, create annotated `v10.59`, publish the GitHub Release, and rerun the release gates from a fresh public tag clone.
+  - Gate: do not mark released or fresh-clone verified until task #54 supplies direct evidence; any post-publication defect requires a later corrective release.
 
 ---
 
-## 📋 Tasks To Do
+## Recently Completed
 
-### Active / In Progress
-
-### Deferred / Not Selected
-
-- [ ] After v10.58 release closeout, open a bounded governance-maintenance slice to roll completed bulk out of `TODO.md` and `phase/SUMMARY.md` while preserving bodyful active entrypoints and bidirectional history/done references.
-  - Reason: `TODO.md` exceeds the hard 50 KB rollover signal and `phase/SUMMARY.md` is near that threshold; this release keeps only current P146 edits local and records the repair owner instead of widening the release allowlist mid-wave.
-  - Gate: classify current/deferred/completed content, preserve reachable snapshots, keep active P146 state in the entrypoints, update references both ways, and verify no active item or retained history is lost.
-- [ ] `memory-context-intelligence` phase 030 darkwingtm reproof after shared-marketplace resolution remains planned / approval-sensitive.
-  - Scope: implement the selected shared-marketplace bridge entry, then reprove `memory-context-intelligence@darkwingtm` marketplace availability, install, and uninstall only after explicit action-and-scope approval.
-  - Gate: recheck current runtime state, preserve other `darkwingtm` plugins or document an approved rollback/containment path, and avoid install/enable/registry/cache mutation until explicit action-and-scope approval exists.
-- [ ] `memory-context-intelligence` phases 017-018 promotion and merge work remains deferred.
-  - Scope: phases 001-016 remain completed concept/runtime/readiness work; phases 019-023 remain completed checked-local installability evidence but are transitional under the selected `darkwingtm` namespace basis; phase 024 completed docs-only namespace governance sync; phases 025-027 remain completed historical checked evidence from the temporary/remapped `darkwingtm` state; phase 028 completed docs-only restored shared-marketplace governance sync; phase 029 completed docs-only shared-marketplace bridge design selection; phase 030 remains separate approval-sensitive shared-marketplace bridge/reproof work; phases 017-018 remain separate main RULES promotion/merge work.
-  - Gate: use `~/.claude/rules/additional/` as the trial stage before any main RULES merge, but treat phase-013 emission, phase-014 replay output, phase-015 live trial output, phase-016 readiness output, phase-019 planning, phase-020 source-side bootstrap, phase-021 session-only inline load proof, phase-022 local-scope persistent CLI install proof, phase-023 uninstall-only closeout, phase-024 namespace sync, phases 025-027 historical proof, phase-028 governance sync, phase-029 selected design, and phase-030 future bridge/reproof planning as trial material, validation evidence, checked-scope readiness evidence, planning evidence, transitional namespace evidence, historical lifecycle evidence, docs-only governance evidence, selected design evidence, or approval-sensitive future planning only; publication, external marketplace release, slash-command/chat invocation proof, stable or broad production readiness, main RULES promotion, main RULES mutation, and main RULES merge remain unperformed and unselected.
-- [ ] Master governance density rollover remains deferred.
-  - Scope: large active `changelog/changelog.md` history and release-history-heavy master README/design sections.
-  - Gate: open a dedicated repair phase or patch before claiming full active-entrypoint God-document cleanup.
-- [ ] Automated validation script for documentation compliance remains deferred by user.
-- [ ] Integration testing for design/changelog/rule/TODO integration paths remains deferred by user.
+- [x] **P146 / v10.58 strategic design completeness and authority convergence** was installed, pushed to `master`, tagged, released, and fresh-public-clone verified.
+  - Delivered proactive non-trivial analysis/design completeness, one-active-authority migration convergence, execution-disconnected external quarantine, controlled restoration, and hardened Bash/PowerShell installer ownership/path/link handling.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.58
+- [x] **P073-11 / v10.57 runtime owner semantic conflict resolution and compression** was installed, pushed, tagged, released, and verified.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.57
+- Earlier completed release detail remains reachable through the [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md), [rules release closeouts](todo/done/rules-release-closeouts.md), and dedicated completed phase/patch/changelog files.
 
 ---
 
-## 📜 History
+## Deferred / Not Selected
 
-### Active history surfaces
+- [ ] `memory-context-intelligence` phase 030 shared-marketplace bridge/reproof remains planned and approval-sensitive.
+  - Gate: recheck current runtime state and obtain explicit action-and-scope approval before marketplace/install/enable/registry/cache mutation.
+- [ ] `memory-context-intelligence` phases 017-018 main RULES promotion/merge remain deferred; trial and historical evidence do not authorize promotion.
+- [ ] Master governance density repair for large changelog/README/design history remains deferred to a dedicated owner-specific repair slice.
+- [ ] Automated documentation-compliance validation and broad integration testing remain deferred by user direction.
 
-- Daily movement: [todo/history/2026-05-16.md](todo/history/2026-05-16.md)
-- Earlier daily movement: [todo/history/2026-05-08.md](todo/history/2026-05-08.md)
-- Pre-rollover snapshot: [todo/history/2026-05-08-pre-rollover-TODO.md](todo/history/2026-05-08-pre-rollover-TODO.md)
-- Large completed detail shards: [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
+---
+
+## History and Preservation
+
+- Current rollover movement: [todo/history/2026-08-09.md](todo/history/2026-08-09.md)
+- Exact pre-rollover active entrypoint: [todo/history/2026-08-09-pre-rollover-TODO.md](todo/history/2026-08-09-pre-rollover-TODO.md)
+- Earlier daily movement: [todo/history/2026-05-16.md](todo/history/2026-05-16.md); [todo/history/2026-05-08.md](todo/history/2026-05-08.md)
+- Earlier pre-rollover snapshot: [todo/history/2026-05-08-pre-rollover-TODO.md](todo/history/2026-05-08-pre-rollover-TODO.md)
+- Completed-detail archive: [todo/done/rules-release-closeouts.md](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)

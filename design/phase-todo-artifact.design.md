@@ -1,7 +1,7 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.32
+> **Current Version:** 1.33
 > **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
@@ -80,6 +80,8 @@ P121 refinement: this owner should now preserve a governed selected-goal to `/pl
 P122 refinement: this owner should now preserve an explicit `/plan` next-surface recommendation in execution surfaces once that route-heavy bridge is active, rather than leaving planning only as an implied option in prose.
 
 P144 refinement: phase/task surfaces distinguish implementation coverage (`not started` or `implemented`) from terminal disposition (`verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`); `implemented` is intermediate while material verification remains. In genuine emergencies, only the smallest safe reversible containment/diagnostic action may precede full startup when delay increases immediate harm, and startup/recovery synchronization resumes immediately afterward. Worker routing may attach bounded helper lanes, but leader-owned source implementation remains the default.
+
+P147 refinement: repair routing must use real changelog owners: active same-chain version detail belongs in `changelog/<chain>/v*.changelog.md`, while inactive completed/reference history may use `changelog/done/` when applicable. No fallback owner, automatic resolution path, or restoration mechanism exists for changelog content.
 
 ---
 
