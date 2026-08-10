@@ -136,12 +136,12 @@ Visual-QA request arrives
 Target, network, tool, auth-session, authorization, and substitute capability are checked
   ↓
 Direct route is reachable and authorized?
-  ├─ yes → capture/check the authorized live route
-  └─ no  → classify the workflow block and stop unchanged retries
-              ↓
-         Accessible supplied rendered artifact exists?
-           ├─ yes → analyze it with artifact-specific proof limits
-           └─ no  → return the exact recovery path
+  yes → capture/check the authorized live route
+  no → classify the workflow block and stop unchanged retries
+    ↓
+    Accessible supplied rendered artifact exists?
+      yes → analyze it with artifact-specific proof limits
+      no → return the exact recovery path
 ```
 
 ---

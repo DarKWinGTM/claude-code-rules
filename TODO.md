@@ -2,7 +2,7 @@
 
 > **Last Updated:** 2026-08-10
 > **Current Release:** v10.65 published and immutable; post-publication diagram-format gate failed
-> **Active Wave:** P149-01 / selected v10.66 playground flow-diagram format correction
+> **Active Wave:** P149-01 / candidate v10.66 playground flow-diagram format correction
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,13 +10,14 @@
 
 ## Active / In Progress
 
-- [ ] **P149-01 / selected v10.66 playground flow-diagram format correction** owns the residual P149 Scenario/TestKit defect.
-  - [x] Verified the correction is limited to Case 04 and Case 12 presentation: remove P149-introduced U+2500–U+257F branch glyphs while preserving branch wording, ordering, proof strength, and owner boundaries.
-  - [x] Selected existing-family child lineage; no Runtime Rule, design-shard, per-rule changelog, installer, fixture, matrix, coverage, or Patch change is required.
-  - [ ] Reconcile immutable v10.65 publication and its failed delayed format gate before creating the P149-01/v10.66 release artifacts.
-  - [ ] Verify the exact corrective scopes, protected bytes, Unicode/semantic assertions, links, fixtures, two-pass disposable 19/19 installation, and independent reviews.
+- [ ] **P149-01 / candidate v10.66 playground flow-diagram format correction** owns the residual P149 Scenario/TestKit defect.
+  - [x] Reconciled immutable v10.65 publication and its delayed failed diagram-format gate without changing the tagged release.
+  - [x] Created the existing-family child and v10.66 release shard; Patch posture is `none`.
+  - [x] Corrected only Case 04 and Case 12 presentation by removing P149-introduced U+2500–U+257F branch glyphs while preserving branch wording, ordering, proof strength, and owner boundaries.
+  - [x] Kept Runtime Rules, design shards/per-rule changelogs, installers/fixtures, Case 17, matrix/coverage, and Patch artifacts outside the corrective mutation scope.
+  - [ ] Verify exact nine/twelve/thirteen-path scopes, protected bytes, Unicode/semantic assertions, links, fixtures, two-pass disposable 19/19 installation, and independent reviews.
   - [ ] Prepare a new exact SHA/scope approval packet before any v10.66 push, annotated tag, or GitHub Release; real runtime reinstallation and dirty-checkout reconciliation remain excluded.
-  - Parent: P149 / immutable v10.65.
+  - Phase: [phase-149-01-playground-flow-diagram-format-correction.md](phase/phase-149-01-playground-flow-diagram-format-correction.md)
   - Patch: none; the two-scenario formatting diff is directly reviewable.
 
 ---

@@ -137,12 +137,12 @@ Cleanup, high-impact, migration, restoration, or private-verification request ar
 Semantic ownership, active authority, capability, authorization, and blast radius are checked
   ↓
 Private access path?
-  ├─ yes → preflight network/tool/session/approval/substitute capability
-  │          ↓
-  │        one evidence-backed correction may run
-  │          ↓
-  │        still blocked → NO_RETRY_UNTIL_CHANGE
-  └─ no  → continue normal action classification
+  yes → preflight network/tool/session/approval/substitute capability
+    ↓
+    one evidence-backed correction may run
+    ↓
+    still blocked → NO_RETRY_UNTIL_CHANGE
+  no → continue normal action classification
   ↓
 Approval-sensitive action or migration convergence gate is identified
   ↓

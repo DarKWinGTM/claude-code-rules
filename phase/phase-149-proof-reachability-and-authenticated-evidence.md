@@ -133,4 +133,4 @@ Rollback/containment:
 - Exactly six Runtime Rules changed while the other 13 and the 19-file inventory remained protected.
 - The 32-path release, references, modes, fixtures, Patch regression, installation parity, publication, and fresh-public technical checks passed.
 - The delayed Case 04/12 diagram-format failure is preserved rather than retroactively passed.
-- Corrective ownership is transferred to selected child P149-01/v10.66; P149 and v10.65 remain immutable.
+- Corrective ownership is transferred to child [P149-01](phase-149-01-playground-flow-diagram-format-correction.md) and [candidate v10.66](../changelog/changelog/v10.66-playground-flow-diagram-format-correction.changelog.md#version-1066); P149 and v10.65 remain immutable.

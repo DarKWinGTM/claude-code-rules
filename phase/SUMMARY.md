@@ -3,7 +3,7 @@
 > **Current Version:** 2.21
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P149 / immutable v10.65 released; post-publication diagram-format gate failed; P149-01 / v10.66 selected
+> **Status:** P149-01 / candidate v10.66 active; local correction verified, exact publication approval pending
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,10 +21,10 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P149-01 / v10.66 selected:** playground flow-diagram format correction.
+- **P149-01:** [Playground flow-diagram format correction](phase-149-01-playground-flow-diagram-format-correction.md) — active candidate for v10.66.
   - Output: remove P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams without changing branch wording, ordering, proof strength, or owner boundaries.
-  - Gate: exact child-phase release scope, zero U+2500–U+257F characters in the corrected scenarios, semantic preservation, protected 19-Rule and installer identity, fixture/disposable-install evidence, exact approval, immutable v10.66 publication, and fresh-public proof.
-  - Current evidence: the verified local correction is limited to two scenario files and passes focused scenario checks, added-line/full-file Unicode scans, `git diff --check`, and an independent presentation review. Governed P149-01/v10.66 artifacts and release approval remain open.
+  - Gate: exact nine/twelve/thirteen-path scopes, zero U+2500–U+257F characters in the corrected scenarios and added release lines, semantic preservation, protected 19-Rule and installer identity, fixture/disposable-install evidence, independent reviews, exact approval, immutable v10.66 publication, and fresh-public proof.
+  - Current evidence: the correction is limited to two scenario files and passes focused scenario checks, added-line/full-file Unicode scans, `git diff --check`, and an independent presentation review. Governed child/release artifacts are implemented; exact candidate verification and publication approval remain open.
   - Patch: none; the two-scenario formatting diff is directly reviewable.
 
 ### Blocked Predecessor
@@ -199,7 +199,7 @@ Current evidence: P149 / v10.65 was installed, published from release commit `2e
 
 ## Next State
 
-P149 / v10.65 is published and immutable with its delayed diagram-format failure preserved. P149-01 / v10.66 is selected to correct only the Case 04/12 flow-diagram presentation while keeping semantics, all 19 Runtime Rules, installers, matrix/coverage, Case 17, and the P149 Patch unchanged. Governed child artifacts, exact verification, approval, publication, fresh-public proof, and a separately approved post-release closeout remain open.
+P149 / v10.65 is published and immutable with its delayed diagram-format failure preserved. P149-01 / candidate v10.66 now owns the implemented Case 04/12 flow-diagram correction while keeping semantics, all 19 Runtime Rules, installers, matrix/coverage, Case 17, and the P149 Patch unchanged. Exact candidate verification, approval, publication, fresh-public proof, and a separately approved post-release closeout remain open.
 
 ---
 
