@@ -98,8 +98,8 @@ P149 / v10.65 introduced the distinct proof-reachability and authenticated-evide
 |---|---|---|---|
 | P149 released capability | six Runtime Rule triads plus Cases 17/12/04 | doctrine, runtime parity, publication, fresh-public technical reproduction | released; historical diagram-format gate failed |
 | P149-01 scenario correction | Case 04 and Case 12 flow diagrams | zero Box Drawing characters; branch semantics unchanged | selected; local two-file correction verified |
-| Corrective governance | child Phase, release shard, README/TODO/summary/changelog/history | truthful v10.65 failure record, exact links/modes/scopes | pending implementation |
-| Protected state | 19 Runtime Rules, designs/per-rule changelogs, installers/fixtures, Case 17, matrix/coverage, P149 Patch | byte/mode identity against immutable v10.65 | pending exact verification |
+| Corrective governance | child Phase, release shard, README/TODO/summary/changelog/history | truthful v10.65 failure record, exact links/modes/scopes | implemented; local integrity gates passed |
+| Protected state | 19 Runtime Rules, designs/per-rule changelogs, installers/fixtures, Case 17, matrix/coverage, P149 Patch | byte/mode identity against immutable v10.65 | verified against immutable v10.65 |
 | Publication | public master, annotated v10.66, Release, fresh clones | exact approval, immutable identities, fresh-public reproduction | requires approval; no runtime reinstall required |
 
 ---
