@@ -1,32 +1,31 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-08-09
-> **Current Release:** v10.64 published and fresh-public-tag verified
-> **Active Wave:** P149 / candidate v10.65 proof reachability and authenticated evidence
-> **History:** [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
+> **Last Updated:** 2026-08-10
+> **Current Release:** v10.65 published and immutable; post-publication diagram-format gate failed
+> **Active Wave:** P149-01 / selected v10.66 playground flow-diagram format correction
+> **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
 ## Active / In Progress
 
-- [ ] **P149 / candidate v10.65 proof reachability and authenticated evidence** is active in the clean candidate workspace.
-  - [x] Added Cases 17/12/04 plus matrix/coverage branches for reachable proof closure, selected live terminal-gate preservation, authenticated/private capability preflight, deterministic no-retry, and bounded supplied rendered evidence.
-  - [x] Advanced six existing Runtime Rule/design/changelog triads without adding a twentieth Runtime Rule.
-  - [x] Installed the explicitly approved earlier 29-path candidate into the 19-Rule runtime and verified first-pass parity; no push, tag, or GitHub Release occurred.
-  - [x] Expanded the 32-path corrective source after user-reported Goal-loop evidence added done-point feasibility, in-place Goal/plan repair, explicit live-gate selection, operational-capability-name classification, and task-list reconciliation.
-    - Assistant-authored Goal/plan done points must be evaluated for actual closability and repaired in place when infeasible and unselected; source/code Goals must not infer live acceptance from generic completion wording or Product-facing capability names; optional rendered/live observation becomes an unselected successor task, while explicitly required unavailable live proof blocks without unchanged retry.
-    - Focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass.
-  - [x] Resynchronized the P149 Phase, timestamped Patch, Patch changelog, v10.65 shard, master design/changelog, phase summary, and README for six changed and 13 protected Runtime Rules.
-  - [x] Completed corrected doctrine and release/no-drift reviews and established the corrected candidate source.
-  - [ ] Prepare and obtain renewed exact SHA/scope approval before runtime reinstallation, push, annotated v10.65 tag, or GitHub Release; dirty-checkout reconciliation remains excluded.
-  - Phase: [phase-149-proof-reachability-and-authenticated-evidence.md](phase/phase-149-proof-reachability-and-authenticated-evidence.md)
-  - Patch: [2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md](patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md)
+- [ ] **P149-01 / selected v10.66 playground flow-diagram format correction** owns the residual P149 Scenario/TestKit defect.
+  - [x] Verified the correction is limited to Case 04 and Case 12 presentation: remove P149-introduced U+2500–U+257F branch glyphs while preserving branch wording, ordering, proof strength, and owner boundaries.
+  - [x] Selected existing-family child lineage; no Runtime Rule, design-shard, per-rule changelog, installer, fixture, matrix, coverage, or Patch change is required.
+  - [ ] Reconcile immutable v10.65 publication and its failed delayed format gate before creating the P149-01/v10.66 release artifacts.
+  - [ ] Verify the exact corrective scopes, protected bytes, Unicode/semantic assertions, links, fixtures, two-pass disposable 19/19 installation, and independent reviews.
+  - [ ] Prepare a new exact SHA/scope approval packet before any v10.66 push, annotated tag, or GitHub Release; real runtime reinstallation and dirty-checkout reconciliation remain excluded.
+  - Parent: P149 / immutable v10.65.
+  - Patch: none; the two-scenario formatting diff is directly reviewable.
 
 ---
 
 ## Recently Completed
 
+- [x] **P149 / v10.65 proof reachability and authenticated evidence** was installed, pushed to public `master`, annotated-tagged, released, and fresh-public technically verified.
+  - Published release commit `2e751bbb620eb68527e5a67eb6348196a67727e7` at immutable annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.65
+  - A delayed audit found prohibited Unicode Box Drawing characters introduced in Case 04 and Case 12. The historical v10.65 diagram-format gate remains failed; P149-01/v10.66 owns the prospective correction without changing v10.65.
 - [x] **P148 / v10.64 Patch timeline governance and RULES Tool** was synchronized to canonical, installed into the root profile, pushed to public `master`, annotated-tagged, released, and fresh-public master/tag verified.
   - Added verified original-creation UTC Patch identity, matching `Created At`/Creation Evidence, exact-reference migration integrity, and the reusable dependency-free `script/patch-timeline.mjs` Tool without Patch IDs or an index.
   - Verified 32 focused Tool tests, independent Tool/governance reviews, the NodeClaw 576-selected/199-preserved zero-mutation audit, Bash/PowerShell fixtures, exact 27-path canonical parity, two-pass root and fresh-public 19/19 installation parity/idempotence, Tool exclusion, and no quarantine.

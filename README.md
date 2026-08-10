@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.64</b><br><sub>Patch Timeline Governance</sub>
+  <b>v10.65</b><br><sub>Proof Reachability</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Fresh-tag verified</sub>
+  <b>Released</b><br><sub>Format follow-up selected</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Release note:** `v10.64 / P148` is the latest published release and adds verified original-creation chronology for governed Patch filenames, matching `Created At`/Creation Evidence, exact-reference migration integrity, and the reusable RULES-owned `script/patch-timeline.mjs`. Thirty-two focused Tool tests, independent Tool/governance reviews, NodeClaw read-only 576/199 zero-mutation proof, installer matrices, exact 27-path canonical convergence, two-pass root 19/19 parity, immutable annotated tag, GitHub Release, and fresh-public master/tag reproduction passed. Active candidate `v10.65 / P149` adds done-point feasibility assessment, proof reachability, in-place Goal/plan repair, explicit live-gate selection, operational-capability-name classification, task-list successor separation, authenticated/private capability preflight, deterministic no-retry, reachable-authorized source selection, and supplied rendered-artifact proof limits across six existing Runtime Rules; renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain open. The Runtime Rule payload remains exactly 19 files.
+> **Release note:** `v10.65 / P149` is published and immutable at release commit `2e751bbb620eb68527e5a67eb6348196a67727e7` and annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`. It adds done-point feasibility, proof reachability, in-place Goal/plan repair, explicit live-gate selection, task-list successor separation, authenticated/private capability preflight, deterministic no-retry, reachable-authorized source selection, and supplied rendered-artifact proof limits across six Runtime Rules; runtime parity and fresh-public technical verification passed. A delayed format audit found prohibited Unicode Box Drawing characters in P149 Cases 04 and 12, so the v10.65 diagram-format gate remains failed and immutable. Corrective child `P149-01 / v10.66` is selected; the Runtime Rule payload remains exactly 19 unchanged files.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,14 +280,14 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Candidate `v10.65 / P149` advances six existing Runtime Rule triads for proof reachability, explicit live-gate selection, task-list reconciliation, authenticated/private capability preflight, deterministic no-retry, reachable-authorized source selection, and bounded supplied rendered evidence.
-- The earlier 29-path packet was explicitly approved and installed into the 19-Rule runtime, then user-reported Goal-loop cases reopened the source before publication. The corrected 32-path candidate now evaluates whether proposed Goal/plan done points can close in the current environment, repairs assistant-inferred infeasible points in place, and rejects both generic-wording inference and noun-trigger inference from Product-facing diagnostic or recovery capability names. Renewed exact approval, runtime reinstallation, publication, and fresh-public verification remain pending. No push, tag, or GitHub Release occurred.
+- Released `v10.65 / P149` advances six existing Runtime Rule triads for proof reachability, explicit live-gate selection, task-list reconciliation, authenticated/private capability preflight, deterministic no-retry, reachable-authorized source selection, and bounded supplied rendered evidence.
+- The exact 32-path release, 19-Rule runtime installation, immutable annotated tag, GitHub Release, and fresh-public technical reproduction passed. A delayed audit then found that P149-introduced Case 04/12 flow diagrams violate the existing no-frame format contract; v10.65 remains immutable with that gate failed, and selected child `P149-01 / v10.66` owns the formatting-only correction.
 - Released `v10.64 / P148` remains immutable and provides verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and the repository-only Patch timeline Tool.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `<user-runtime-rules>` is a downstream user-scope install target.
-- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.64
+- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.65
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1069,7 +1069,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: candidate `v10.65 / P149` now advances six existing Runtime Rule triads while the active install set remains exactly 19. The approved earlier candidate was installed but not published; user-reported source/code Goal looping reopened the candidate to add done-point feasibility and in-place Goal/plan repair, prohibit assistant-inferred live acceptance including inference from operational capability names, and reconcile optional live tasks into successor scope. Renewed exact approval, runtime reinstallation, publication, and fresh-public gates remain pending.
+- Source state: released `v10.65 / P149` advances six existing Runtime Rule triads while the active install set remains exactly 19. Runtime installation, publication, immutable annotated tag, GitHub Release, and fresh-public technical checks passed; a delayed audit found prohibited Unicode Box Drawing characters in P149 Cases 04 and 12, so the historical v10.65 format gate remains failed and selected child `P149-01 / v10.66` owns the formatting-only correction.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.

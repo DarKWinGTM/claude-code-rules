@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 149
-> **Status:** Active — corrected verification passed, renewed exact approval pending
+> **Status:** Released — immutable v10.65; post-publication diagram-format gate failed; corrective child P149-01 selected
 > **Target Release:** v10.65
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -32,7 +32,7 @@ Make governed Goals and their work plans select done points that can truthfully 
 - External verification selects only reachable authorized sources after capability preflight.
 - Evidence discipline defines claim boundaries for screenshots, Rendered HTML, rendered text/semantic witnesses, sanitized console/log/network exports, and authenticated harness results.
 - Cases 17, 12, and 04 plus matrix/coverage make the positive and forbidden-negative branches inspectable.
-- Candidate, Runtime Rule installation, publication, and fresh-public verification preserve exactly 19 Runtime Rules.
+- Candidate construction, Runtime Rule installation, publication, and fresh-public verification preserve exactly 19 Runtime Rules.
 
 ## Selected Semantic Coverage
 
@@ -50,17 +50,18 @@ Make governed Goals and their work plans select done points that can truthfully 
 | Guest/login and 401 authentication boundary plus 403 refusal uncertainty | implemented | verified |
 | Reachable authorized external-source selection | implemented | verified |
 | Supplied rendered-artifact and authenticated-harness proof limits | implemented | verified |
-| Real Runtime Rule installation | not started | requires approval |
-| Public push, annotated tag, Release, and fresh-public proof | not started | requires approval |
+| Real Runtime Rule installation | implemented | verified — 19/19 parity and idempotence passed |
+| Public push, annotated tag, Release, and fresh-public technical proof | implemented | verified |
+| Case 04/12 no-frame diagram format | implemented in v10.65 | failed after delayed audit; P149-01 owns correction |
 
 ## Lane Map
 
 1. **Scenario/TestKit:** Cases 17/12/04 plus matrix and coverage define proof-reachability, terminal-gate, authenticated-capability, retry, and supplied-artifact branches.
 2. **Doctrine triads:** advance six existing Runtime Rule/design/changelog owners without adding a twentieth Runtime Rule.
 3. **Governed integration:** synchronize this Phase, its Patch and Patch changelog, release shard, master design/changelog, TODO, phase summary, and README.
-4. **Candidate verification:** run doctrine/scenario/triad assertions, protected-byte and allowlist checks, fixture suites, Patch timeline regression, disposable install, and independent reviews.
-5. **Approval-gated installation/publication:** prepare one exact SHA/scope packet before real Runtime Rule installation, push, annotated tag, GitHub Release, or dirty-checkout reconciliation.
-6. **Fresh-public proof:** independently verify public master and tag, 19-Rule payload, fixtures, installation idempotence, release identity, and earlier-tag immutability.
+4. **Candidate verification:** doctrine/scenario/triad assertions, protected-byte and allowlist checks, fixture suites, Patch timeline regression, disposable install, and independent reviews passed before publication.
+5. **Installation/publication:** exact approval preceded real 19-Rule installation, fast-forward push, annotated v10.65 tag, and GitHub Release; dirty-checkout reconciliation remained excluded.
+6. **Fresh-public proof and delayed audit:** public master/tag, 19-Rule payload, fixtures, idempotence, release identity, and earlier-tag immutability passed; a later SHA-bound review found the Case 04/12 no-frame violation and selected P149-01/v10.66 as convergence owner.
 
 ## Affected Artifacts
 
@@ -89,17 +90,17 @@ Required checks:
 - Exactly six Runtime Rules change; the other 13 remain byte-identical and the ordered inventory remains exactly 19.
 - The expanded candidate scope remains exactly 32 paths with no deletion, symlink change, or mode change.
 - Bash/PowerShell fixtures, Patch timeline regression, disposable installation, second-pass idempotence, links, body sufficiency, and no governed/support runtime installation pass.
-- Real runtime installation and public publication remain blocked until the exact candidate SHA/scope packet is explicitly approved.
+- Exact candidate approval preceded real runtime installation and public publication; both completed without widening the 19-Rule payload.
 
-Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. Before publication, user-reported Goal-loop and task-list evidence expanded source to six triads and 32 paths; later real Goal evidence added the operational-capability-name regression for pinned-host SSH diagnostics/exact-request recovery code and the M34 requirement to assess done-point closability and repair assistant-inferred infeasible Goal/plan gates in place. Corrected doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
+Current evidence: the final six-triad/32-path candidate passed doctrine/scenario/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, independent reviews, and two-pass disposable installation. After exact approval, real runtime installation passed 19/19 byte-and-mode parity and idempotence; v10.65 was published from commit `2e751bbb620eb68527e5a67eb6348196a67727e7` at annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`, with GitHub Release and fresh-public technical reproduction. A delayed SHA-bound audit then found prohibited Unicode Box Drawing characters introduced in the Case 04 and Case 12 flow diagrams. The v10.65 format gate remains failed, and selected child P149-01/v10.66 owns the prospective correction.
 
 ## Entry Conditions and Out of Scope
 
-Entry conditions:
-- clean candidate baseline is public `master` commit `2aebef62c27d3c9dd2c40e47ac2ab732dbec110c`;
-- immutable v10.64 tag object `aba1ab0775188aa9ae65165a19c30e9138210014` peels to release commit `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5`;
+Entry conditions at phase opening:
+- clean candidate baseline was public `master` commit `2aebef62c27d3c9dd2c40e47ac2ab732dbec110c`;
+- immutable v10.64 tag object `aba1ab0775188aa9ae65165a19c30e9138210014` peeled to release commit `fe44a0af3885b2cf64d3556b6b3e620b9078e5c5`;
 - no P149 phase, v10.65 tag, or v10.65 GitHub Release existed at baseline check;
-- the dirty backup checkout is not source or publication authority and its relevant pre-existing allowlist paths matched the public baseline.
+- the dirty backup checkout was not source or publication authority.
 
 Out of scope:
 - a new Runtime Rule or installer feature;
@@ -117,20 +118,19 @@ Risks:
 - leaving unreachable downstream proof inside a source-bounded Goal can make the Goal unclosable;
 - repeated guest requests can waste attempts without adding evidence;
 - supplied artifacts can be overprojected into live/authenticated/stability claims;
-- publication can overwrite unrelated dirty state or drift from the approved candidate.
+- positive scenario semantics can pass while presentation still violates the active no-frame format contract.
 
 Rollback/containment:
-- before publication, revert only the clean candidate's expanded 32-path allowlist;
-- stop on any unexpected path, deletion, mode/symlink change, triad mismatch, protected-byte drift, fixture failure, or remote-master change;
-- keep real Runtime Rule installation, push, tag, Release, and dirty-checkout reconciliation behind exact action-and-scope approval;
-- after publication, preserve v10.65 immutably and correct defects through a later release rather than moving the tag.
+- preserve immutable v10.65 and its failed format-gate record;
+- correct the residual presentation defect only through selected child P149-01/v10.66;
+- stop on unexpected paths, semantic change, mode/symlink drift, protected-byte drift, fixture failure, or remote-master change;
+- keep v10.66 publication and any later documentation-only closeout behind separate exact action-and-scope approvals;
+- keep dirty-checkout reconciliation excluded.
 
 ## Exit Criteria
 
-- Six owner triads are aligned, body-sufficient, and scenario-covered.
-- Exactly six Runtime Rules change while the other 13 and the 19-file inventory remain protected.
-- Expanded 32-path scope, references, modes, and README current-state wording pass.
-- Fixture suites, Patch timeline regression, disposable install, idempotence, body/parity checks, and independent reviews pass.
-- The exact candidate approval packet is accepted before real runtime installation or publication.
-- Runtime installation proves 19/19 parity and second-pass idempotence.
-- Public master, immutable annotated v10.65, GitHub Release, and fresh-public master/tag reproduce the verified result.
+- Six owner triads are aligned, body-sufficient, installed, and published in immutable v10.65.
+- Exactly six Runtime Rules changed while the other 13 and the 19-file inventory remained protected.
+- The 32-path release, references, modes, fixtures, Patch regression, installation parity, publication, and fresh-public technical checks passed.
+- The delayed Case 04/12 diagram-format failure is preserved rather than retroactively passed.
+- Corrective ownership is transferred to selected child P149-01/v10.66; P149 and v10.65 remain immutable.

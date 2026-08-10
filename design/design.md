@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active target model for candidate `v10.65` keeps the same 19 body-sufficient source-owned Runtime Rules while adding proof-reachability, operational-capability-name classification, task reconciliation, authenticated/private capability, deterministic retry, reachable-source, and supplied-rendered-artifact evidence contracts across six existing owners. Released `v10.64` remains the latest published baseline and retains verified Patch chronology plus the repository-only `script/patch-timeline.mjs` Tool outside the Runtime Rule installation payload.
+The active target model released in `v10.65` keeps the same 19 body-sufficient source-owned Runtime Rules while adding proof-reachability, operational-capability-name classification, task reconciliation, authenticated/private capability, deterministic retry, reachable-source, and supplied-rendered-artifact evidence contracts across six existing owners. The target-state contracts remain current; a delayed audit found a presentation-only no-frame violation in two P149 scenarios, and selected child `P149-01 / v10.66` owns that correction without changing design semantics or the Runtime Rule payload. Released `v10.64` remains the immutable Patch-chronology predecessor and retains the repository-only `script/patch-timeline.mjs` Tool outside runtime installation.
 
 ---
 

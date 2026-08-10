@@ -3,9 +3,9 @@
 > **Current Version:** 2.21
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P149 / candidate v10.65 active; corrected verification passed, renewed exact approval pending
+> **Status:** P149 / immutable v10.65 released; post-publication diagram-format gate failed; P149-01 / v10.66 selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
-> **Daily History:** [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
+> **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
 > **Completed Detail:** [done/released-phase-summary-archive.md](done/released-phase-summary-archive.md); [done/](done/)
 
@@ -21,13 +21,19 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P149:** [Proof reachability and authenticated evidence](phase-149-proof-reachability-and-authenticated-evidence.md)
-  - Output: candidate v10.65 advances six existing Runtime Rule triads and three scenario families so proposed Goal/plan done points are assessed for actual closability, assistant-inferred infeasible gates are repaired in place, source/code Goals close at appropriate reachable proof, live acceptance cannot be inferred from generic wording or operational Product-facing capability names, optional live tasks become successors, explicitly required unavailable live proof stops without retry loops, authenticated/private capability is preflighted, and supplied rendered artifacts remain claim-bounded.
-  - Gate: exact expanded 32-path scope, six changed and 13 protected Runtime Rules, 19-file inventory, corrected independent reviews, renewed exact candidate approval, runtime reinstallation, publication, and fresh-public proof.
-  - Current evidence: the earlier 29-path candidate passed all checks, was explicitly approved, and was installed into the 19-Rule runtime. User-reported Goal-loop, work-plan, and task-list evidence reopened source before publication; the expanded M33/M34 focused/six-triad/governance checks, fixtures, Patch regression, disposable 19/19 installation, and corrected independent reviews pass. Renewed exact approval, runtime reinstallation, and publication remain open. No push/tag/Release occurred.
-  - Patch: [Proof reachability and authenticated evidence](../patch/2026-08-09T19-00-46Z--proof-reachability-and-authenticated-evidence.patch.md).
+- **P149-01 / v10.66 selected:** playground flow-diagram format correction.
+  - Output: remove P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams without changing branch wording, ordering, proof strength, or owner boundaries.
+  - Gate: exact child-phase release scope, zero U+2500–U+257F characters in the corrected scenarios, semantic preservation, protected 19-Rule and installer identity, fixture/disposable-install evidence, exact approval, immutable v10.66 publication, and fresh-public proof.
+  - Current evidence: the verified local correction is limited to two scenario files and passes focused scenario checks, added-line/full-file Unicode scans, `git diff --check`, and an independent presentation review. Governed P149-01/v10.66 artifacts and release approval remain open.
+  - Patch: none; the two-scenario formatting diff is directly reviewable.
 
 ### Blocked Predecessor
+
+- **P149:** [Proof reachability and authenticated evidence](phase-149-proof-reachability-and-authenticated-evidence.md) — immutable v10.65 published; post-publication diagram-format gate failed.
+  - Published output: six Runtime Rule triads and Cases 17/12/04 implement closable proof-layer goals, authenticated/private capability preflight, deterministic no-retry, and bounded supplied-artifact evidence.
+  - Blocker: a delayed SHA-bound audit found P149-introduced Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams, contrary to the existing no-frame contract.
+  - Convergence owner: selected child P149-01/v10.66; immutable v10.65 remains unchanged.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.65
 
 - **P073-14:** [Case 17 goal-first route-branch correction](phase-073-14-case-17-goal-first-route-branch-correction.md) — v10.62 published; semantic closeout blocked.
   - Published output: v10.62 makes the advisory `/goal` visible before subordinate route support and models compact-in-goal versus `/plan` as alternative goal-authoring branches.
@@ -84,18 +90,17 @@ Earlier released phase-map detail remains preserved in the [2026-08-09 pre-rollo
 
 ### Lineage
 
-P148 / v10.64 is released and closed. P149 changes six existing Runtime Rule owners and adds a distinct proof-reachability, explicit live-gate selection, task reconciliation, authenticated-capability, retry, and supplied-evidence family with its own scenario, installation, and publication gates. It is not a residual child of Patch chronology or the earlier Case 17 route-scope correction family, so P149 is the smallest truthful new major.
+P149 / v10.65 introduced the distinct proof-reachability and authenticated-evidence family and was published immutably. Its doctrine, runtime installation, and public technical reproduction passed, but a delayed audit found a residual presentation defect in two P149 Scenario/TestKit files. Because the correction changes no capability, Runtime Rule, architecture, or scenario family, selected `P149-01 / v10.66` is the smallest truthful existing-family child; P149 and v10.65 must not be reopened or amended.
 
 ### Lanes
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Scenario/TestKit | Cases 17/12/04 plus matrix/coverage | reachable closure, terminal-gate preservation, capability preflight, deterministic retry, supplied-artifact limits | implemented; focused checks pass |
-| Doctrine | six existing Runtime Rule/design/changelog triads | versions/session/links, owner boundaries, no twentieth Rule | corrected; six-triad check passes |
-| Governed integration | P149 Phase/Patch/release shard plus master design/changelog, TODO, summary, README | exact links, candidate-safe wording, expanded scope | corrected in source |
-| Candidate verification | allowlist/protected bytes, fixtures, Patch timeline, disposable install, independent reviews | 32 paths, six changed Rules, 13 protected Rules, 19-file payload | verified; corrected independent reviews pass |
-| Runtime installation | approved clean candidate → user runtime | exact approval packet, 19/19 parity, idempotence, unrelated-file preservation | requires approval |
-| Publication | public master, annotated v10.65, Release, fresh clones | exact SHA/scope, immutable identities, fresh-public reproduction | requires approval |
+| P149 released capability | six Runtime Rule triads plus Cases 17/12/04 | doctrine, runtime parity, publication, fresh-public technical reproduction | released; historical diagram-format gate failed |
+| P149-01 scenario correction | Case 04 and Case 12 flow diagrams | zero Box Drawing characters; branch semantics unchanged | selected; local two-file correction verified |
+| Corrective governance | child Phase, release shard, README/TODO/summary/changelog/history | truthful v10.65 failure record, exact links/modes/scopes | pending implementation |
+| Protected state | 19 Runtime Rules, designs/per-rule changelogs, installers/fixtures, Case 17, matrix/coverage, P149 Patch | byte/mode identity against immutable v10.65 | pending exact verification |
+| Publication | public master, annotated v10.66, Release, fresh clones | exact approval, immutable identities, fresh-public reproduction | requires approval; no runtime reinstall required |
 
 ---
 
@@ -179,23 +184,22 @@ Required checks:
 - Independent doctrine and release/no-drift reviews pass before the exact install/publication approval packet is presented.
 - Real Runtime Rule installation, public master, annotated v10.65, GitHub Release, and fresh-public master/tag proof pass before closeout.
 
-Current evidence: the earlier five-triad/29-path candidate passed all gates, was explicitly approved, and was installed. User-reported Goal-loop, work-plan, and task-list evidence reopened source before publication. The expanded six-triad/32-path correction passes M33/M34-focused doctrine/scenario/six-triad/governance checks, Bash/PowerShell fixtures, 32 Patch tests, compliant Patch inventory, and two-pass disposable 19/19 installation. Corrected independent reviews pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain pending.
+Current evidence: P149 / v10.65 was installed, published from release commit `2e751bbb620eb68527e5a67eb6348196a67727e7`, annotated-tagged at object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`, released, and fresh-public technically reproduced. A delayed SHA-bound audit then found P149-introduced Box Drawing characters in Cases 04 and 12. The historical v10.65 format gate remains failed; selected child P149-01/v10.66 owns the verified local two-file formatting correction.
 
 ---
 
 ## Rollback / Containment
 
-- Before publication, revert only the clean candidate's expanded 32-path P149 allowlist; do not mutate the dirty backup checkout or unrelated canonical/root files.
-- Stop on unexpected paths, deletion, symlink/mode change, protected-byte drift, test/review failure, runtime-scope widening, or remote-master change.
-- Real Runtime Rule installation, push, annotated tag, GitHub Release, and dirty-checkout reconciliation require an exact SHA/scope/target/evidence packet and explicit approval.
-- Do not request or transfer raw credentials, cookies, bearer tokens, private keys, or auth-state dumps to bypass a capability block.
-- Preserve v10.64 and all earlier published tags/releases immutably; if v10.65 is later published, correct defects through a later release rather than moving it.
+- Preserve immutable v10.65 and all earlier tags/Releases; correct the format defect only through selected child P149-01/v10.66.
+- Stop on unexpected paths, deletion, symlink/mode change, protected-byte drift, semantic change in Cases 04/12, test/review failure, or remote-master change.
+- v10.66 push, annotated tag, GitHub Release, and any later closeout push each require their exact SHA/scope/target/evidence packet and explicit approval.
+- Do not reinstall unchanged Runtime Rules, mutate the dirty backup checkout, or request raw credential/session material.
 
 ---
 
 ## Next State
 
-P149 / candidate v10.65 is active. User-reported Goal-loop and task-list evidence expanded the candidate to six owner triads and 32 paths after the approved earlier candidate was installed but before publication. Corrected automated, fixture, Patch, disposable-install, and independent review gates pass. Renewed exact approval, runtime reinstallation, publication, and fresh-public proof remain open. Released v10.64 remains the latest immutable public release.
+P149 / v10.65 is published and immutable with its delayed diagram-format failure preserved. P149-01 / v10.66 is selected to correct only the Case 04/12 flow-diagram presentation while keeping semantics, all 19 Runtime Rules, installers, matrix/coverage, Case 17, and the P149 Patch unchanged. Governed child artifacts, exact verification, approval, publication, fresh-public proof, and a separately approved post-release closeout remain open.
 
 ---
 
