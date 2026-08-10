@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-10
-> **Current Release:** v10.65 published and immutable; post-publication diagram-format gate failed
-> **Active Wave:** P149-01 / candidate v10.66 playground flow-diagram format correction
+> **Current Release:** v10.66 published, immutable, and fresh-public verified
+> **Active Wave:** none selected after P149-01/v10.66 closeout
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,20 +10,18 @@
 
 ## Active / In Progress
 
-- [ ] **P149-01 / candidate v10.66 playground flow-diagram format correction** owns the residual P149 Scenario/TestKit defect.
-  - [x] Reconciled immutable v10.65 publication and its delayed failed diagram-format gate without changing the tagged release.
-  - [x] Created the existing-family child and v10.66 release shard; Patch posture is `none`.
-  - [x] Corrected only Case 04 and Case 12 presentation by removing P149-introduced U+2500–U+257F branch glyphs while preserving branch wording, ordering, proof strength, and owner boundaries.
-  - [x] Kept Runtime Rules, design shards/per-rule changelogs, installers/fixtures, Case 17, matrix/coverage, and Patch artifacts outside the corrective mutation scope.
-  - [ ] Verify exact nine/twelve/thirteen-path scopes, protected bytes, Unicode/semantic assertions, links, fixtures, two-pass disposable 19/19 installation, and independent reviews.
-  - [ ] Prepare a new exact SHA/scope approval packet before any v10.66 push, annotated tag, or GitHub Release; real runtime reinstallation and dirty-checkout reconciliation remain excluded.
-  - Phase: [phase-149-01-playground-flow-diagram-format-correction.md](phase/phase-149-01-playground-flow-diagram-format-correction.md)
-  - Patch: none; the two-scenario formatting diff is directly reviewable.
+No release wave is currently selected.
+
+The separately approval-gated v10.66 documentation closeout records already-verified public facts only; it does not change the immutable tag, Release, scenario files, or Runtime Rule payload.
 
 ---
 
 ## Recently Completed
 
+- [x] **P149-01 / v10.66 playground flow-diagram format correction** was fast-forwarded to public `master`, annotated-tagged, released, and fresh-public master/tag verified.
+  - Published release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at immutable annotated tag object `f785e254d844b895340328c3c689a728ae449384`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66
+  - Verified exact 9/12/1 commit scopes and 13-path cumulative scope, zero U+2500–U+257F characters in the corrected scenarios and added Markdown lines, semantic preservation, protected bytes, links/modes, independent reviews, Bash/PowerShell fixtures, and two-pass disposable 19/19 installations locally and from fresh public master/tag clones.
+  - All 19 Runtime Rules and installers remained unchanged, so no real runtime reinstall was required. Patch posture remained `none`.
 - [x] **P149 / v10.65 proof reachability and authenticated evidence** was installed, pushed to public `master`, annotated-tagged, released, and fresh-public technically verified.
   - Published release commit `2e751bbb620eb68527e5a67eb6348196a67727e7` at immutable annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.65
   - A delayed audit found prohibited Unicode Box Drawing characters introduced in Case 04 and Case 12. The historical v10.65 diagram-format gate remains failed; P149-01/v10.66 owns the prospective correction without changing v10.65.

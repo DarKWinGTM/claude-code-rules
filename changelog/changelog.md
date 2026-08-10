@@ -12,7 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.66 | 2026-08-10 | **[Corrective candidate playground flow-diagram format correction](changelog/v10.66-playground-flow-diagram-format-correction.changelog.md#version-1066)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
+| 10.66 | 2026-08-10 | **[Released playground flow-diagram format correction](changelog/v10.66-playground-flow-diagram-format-correction.changelog.md#version-1066)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 10.65 | 2026-08-09 | **[Released proof reachability and authenticated evidence — post-publication diagram-format gate failed](changelog/v10.65-proof-reachability-and-authenticated-evidence.changelog.md#version-1065)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 10.64 | 2026-08-09 | **[Released Patch timeline governance and RULES Tool](changelog/v10.64-patch-timeline-governance-and-rules-tool.changelog.md#version-1064)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 10.63 | 2026-08-09 | **[Released Case 17 bounded-goal route-scope correction](changelog/v10.63-case-17-bounded-goal-route-scope-correction.changelog.md#version-1063)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |

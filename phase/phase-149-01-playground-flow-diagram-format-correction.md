@@ -3,7 +3,7 @@
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Parent Phase:** [P149](phase-149-proof-reachability-and-authenticated-evidence.md)
 > **Phase ID:** 149-01
-> **Status:** Active — local correction verified; exact publication approval pending
+> **Status:** Completed — immutable v10.66 released and fresh-public master/tag verified
 > **Target Release:** v10.66
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -98,11 +98,12 @@ The cumulative delta from immutable v10.65 through Commit B is exactly thirteen 
 
 ### Lane 4 - Publication and closeout
 
-- prepare one exact SHA/scope packet before public v10.66 mutation;
-- publish only by fast-forward, create a new annotated v10.66 tag, and create a non-draft/non-prerelease GitHub Release;
-- fresh-clone public master and v10.66 independently and rerun the correction gates;
-- after public proof, prepare a separate exact eight-path documentation-only closeout packet;
-- never reinstall unchanged Runtime Rules or move v10.65.
+- Exact publication packet SHA-256 `f37e1e9ac5608a9e42feca86948cb518e1577260d85e5abaa199bc2e51c83649` was explicitly approved.
+- Public `master` fast-forwarded to release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` without force.
+- Annotated v10.66 tag object `f785e254d844b895340328c3c689a728ae449384` peels to the release commit.
+- GitHub Release https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66 is published, non-draft, and non-prerelease.
+- Independent fresh clones of public master and v10.66 passed the correction, fixture, protected-byte, and two-pass disposable-install gates.
+- This exact eight-path documentation-only closeout remains separately approval-gated; unchanged Runtime Rules were not reinstalled and immutable v10.65 was not moved.
 
 ## Development Verification / TestKit Coverage
 
@@ -126,6 +127,17 @@ Forbidden assertions:
 - repository-wide zero-glyph claim beyond the two corrected files and added release lines;
 - retroactive claim that v10.65 passed the failed diagram-format gate;
 - public v10.66 identity before publication evidence exists.
+
+## Verified Publication Evidence
+
+- release commit: `d8bffccaa304b949a713b40cd7dd2e7da4f6486e`;
+- annotated tag object: `f785e254d844b895340328c3c689a728ae449384`;
+- peeled tag commit: `d8bffccaa304b949a713b40cd7dd2e7da4f6486e`;
+- Release notes SHA-256: `bf391d578f48260dc298f235c1b7c5cc69dc89fb1710ab744918ec9accb5be18`;
+- GitHub Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66;
+- fresh-public master and tag trees were identical and retained immutable v10.65 identities;
+- both fresh clones passed exact cumulative scope, links, Unicode, semantic preservation, protected Runtime Rule bytes, Bash/PowerShell fixtures, and two-pass disposable 19/19 installation;
+- no real runtime reinstall occurred or was required.
 
 ## Out of Scope
 
@@ -156,15 +168,15 @@ Containment:
 
 ## Rollback
 
-Before publication, keep the commits isolated on the corrective branch. If a gate fails, add a new corrective commit and regenerate evidence rather than rewriting an approved SHA. During publication, never force push or move/delete an existing tag or Release. After publication, v10.66 becomes immutable; later defects require a later release.
+Before publication, the commits remained isolated on the corrective branch and the lifecycle audit blocker was repaired through a new commit rather than rewriting the approved chain. Publication used fast-forward push only. v10.66 is now immutable; never force push, move/delete its tag or Release, or rewrite its scenario contents through this closeout. Later defects require a later release.
 
 ## Exit Criteria
 
-- exact nine/twelve/thirteen path scopes and modes pass;
+- exact 9/12/1 commit scopes, 13-path cumulative scope, and expected modes passed;
 - the two scenarios contain no U+2500–U+257F characters and preserve semantics;
-- protected Runtime Rule and repository surfaces remain unchanged;
-- Bash/PowerShell fixtures and two-pass disposable 19/19 installation pass;
-- independent reviews pass;
-- exact publication approval is accepted;
-- public master, immutable annotated v10.66, GitHub Release, and fresh-public master/tag checks pass;
-- separately approved eight-path post-release closeout records the final public evidence without moving v10.66.
+- protected Runtime Rule and repository surfaces remained unchanged;
+- local and fresh-public Bash/PowerShell fixtures plus two-pass disposable 19/19 installations passed;
+- independent presentation and release/no-drift reviews passed;
+- exact publication approval was accepted;
+- public master, immutable annotated v10.66, GitHub Release, and fresh-public master/tag checks passed;
+- this eight-path post-release closeout records the final public evidence without moving v10.66 and requires its own exact push approval.

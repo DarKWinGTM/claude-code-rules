@@ -3,7 +3,7 @@
 > **Current Version:** 2.21
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P149-01 / candidate v10.66 active; local correction verified, exact publication approval pending
+> **Status:** P149-01 completed — immutable v10.66 released and fresh-public verified; no next phase selected
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,11 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P149-01:** [Playground flow-diagram format correction](phase-149-01-playground-flow-diagram-format-correction.md) — active candidate for v10.66.
-  - Output: remove P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams without changing branch wording, ordering, proof strength, or owner boundaries.
-  - Gate: exact nine/twelve/thirteen-path scopes, zero U+2500–U+257F characters in the corrected scenarios and added release lines, semantic preservation, protected 19-Rule and installer identity, fixture/disposable-install evidence, independent reviews, exact approval, immutable v10.66 publication, and fresh-public proof.
-  - Current evidence: the correction is limited to two scenario files and passes focused scenario checks, added-line/full-file Unicode scans, `git diff --check`, and an independent presentation review. Governed child/release artifacts are implemented; exact candidate verification and publication approval remain open.
-  - Patch: none; the two-scenario formatting diff is directly reviewable.
+No release phase is currently selected.
 
 ### Blocked Predecessor
 
@@ -42,6 +38,13 @@ This file is the compact active roadmap/index. Start here for current execution 
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
 
 ### Most Recently Completed
+
+- **P149-01:** [Playground flow-diagram format correction](phase-149-01-playground-flow-diagram-format-correction.md)
+  - Output: v10.66 removes P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams without changing branch wording, ordering, proof strength, or owner boundaries.
+  - Gate: exact 9/12/1 commit scopes and 13-path cumulative scope, Unicode and semantic-preservation checks, protected-byte and link/mode integrity, independent reviews, Bash/PowerShell fixtures, immutable publication, and fresh-public master/tag two-pass disposable 19/19 verification passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66
+  - Identity: release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e`; annotated tag object `f785e254d844b895340328c3c689a728ae449384`.
+  - Runtime boundary: all 19 Runtime Rules and installers remained unchanged; no real runtime reinstall was required. Patch: none.
 
 - **P148:** [Patch timeline governance and RULES Tool](phase-148-patch-timeline-governance-and-rules-tool.md)
   - Output: v10.64 adds verified original-creation Patch chronology, three aligned owner triads, the reusable dependency-free `script/patch-timeline.mjs` Tool, and governed lifecycle coverage without Patch IDs/indexes or Runtime Rule payload expansion.
@@ -97,10 +100,10 @@ P149 / v10.65 introduced the distinct proof-reachability and authenticated-evide
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
 | P149 released capability | six Runtime Rule triads plus Cases 17/12/04 | doctrine, runtime parity, publication, fresh-public technical reproduction | released; historical diagram-format gate failed |
-| P149-01 scenario correction | Case 04 and Case 12 flow diagrams | zero Box Drawing characters; branch semantics unchanged | selected; local two-file correction verified |
-| Corrective governance | child Phase, release shard, README/TODO/summary/changelog/history | truthful v10.65 failure record, exact links/modes/scopes | implemented; local integrity gates passed |
-| Protected state | 19 Runtime Rules, designs/per-rule changelogs, installers/fixtures, Case 17, matrix/coverage, P149 Patch | byte/mode identity against immutable v10.65 | verified against immutable v10.65 |
-| Publication | public master, annotated v10.66, Release, fresh clones | exact approval, immutable identities, fresh-public reproduction | requires approval; no runtime reinstall required |
+| P149-01 scenario correction | Case 04 and Case 12 flow diagrams | zero Box Drawing characters; branch semantics unchanged | released and fresh-public verified |
+| Corrective governance | child Phase, release shard, README/TODO/summary/changelog/history | truthful v10.65 failure record, exact links/modes/scopes | completed |
+| Protected state | 19 Runtime Rules, designs/per-rule changelogs, installers/fixtures, Case 17, matrix/coverage, P149 Patch | byte/mode identity against immutable v10.65 | verified unchanged |
+| Publication | public master, annotated v10.66, Release, fresh clones | exact approval, immutable identities, fresh-public reproduction | released and verified; no runtime reinstall required |
 
 ---
 
@@ -184,7 +187,7 @@ Required checks:
 - Independent doctrine and release/no-drift reviews pass before the exact install/publication approval packet is presented.
 - Real Runtime Rule installation, public master, annotated v10.65, GitHub Release, and fresh-public master/tag proof pass before closeout.
 
-Current evidence: P149 / v10.65 was installed, published from release commit `2e751bbb620eb68527e5a67eb6348196a67727e7`, annotated-tagged at object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`, released, and fresh-public technically reproduced. A delayed SHA-bound audit then found P149-introduced Box Drawing characters in Cases 04 and 12. The historical v10.65 format gate remains failed; selected child P149-01/v10.66 owns the verified local two-file formatting correction.
+Current evidence: P149 / v10.65 was installed and published immutably, after which a delayed SHA-bound audit found P149-introduced Box Drawing characters in Cases 04 and 12; its historical format gate remains failed. P149-01 published the prospective correction as v10.66 from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`. Public master/tag scope, Unicode, semantics, protected bytes, fixtures, and two-pass disposable 19/19 installation were fresh-clone verified without a real runtime reinstall.
 
 ---
 
@@ -199,7 +202,7 @@ Current evidence: P149 / v10.65 was installed, published from release commit `2e
 
 ## Next State
 
-P149 / v10.65 is published and immutable with its delayed diagram-format failure preserved. P149-01 / candidate v10.66 now owns the implemented Case 04/12 flow-diagram correction while keeping semantics, all 19 Runtime Rules, installers, matrix/coverage, Case 17, and the P149 Patch unchanged. Exact candidate verification, approval, publication, fresh-public proof, and a separately approved post-release closeout remain open.
+P149 / v10.65 remains published and immutable with its delayed diagram-format failure preserved. P149-01 / v10.66 is released and fresh-public verified, with scenario semantics, all 19 Runtime Rules, installers, matrix/coverage, Case 17, and the P149 Patch unchanged. No next release phase is selected; the documentation-only closeout remains separately approval-gated until pushed.
 
 ---
 

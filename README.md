@@ -25,7 +25,7 @@
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Corrective candidate</b><br><sub>Local verification passed</sub>
+  <b>Released</b><br><sub>Fresh-public verified</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Corrective candidate note:** `v10.66 / P149-01` removes P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams while preserving branch wording, ordering, proof strength, and owner boundaries. Existing `explanation-and-presentation.md` v1.24 already owns the no-frame contract, so no Runtime Rule, design shard, per-rule changelog, installer, matrix, coverage, or Patch change is included. Immutable `v10.65 / P149` remains published with its delayed diagram-format failure recorded; the Runtime Rule payload remains exactly 19 unchanged files. Local scope, Unicode, semantic, fixture, disposable-install, and independent-review gates must pass before exact publication approval.
+> **Released correction:** `v10.66 / P149-01` removes P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams while preserving branch wording, ordering, proof strength, and owner boundaries. It was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at immutable annotated tag object `f785e254d844b895340328c3c689a728ae449384`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66. Fresh-public master/tag verification passed. Existing `explanation-and-presentation.md` v1.24 remains the no-frame owner, all 19 Runtime Rules remain unchanged, and immutable `v10.65 / P149` retains its historical failed diagram-format gate.
 
 <!-- CTA Buttons -->
 <p>
@@ -280,8 +280,9 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Corrective candidate `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
-- All 19 Runtime Rules, owner triads, installers, Case 17, matrix/coverage, and Patch artifacts remain protected byte-for-byte. The correction requires disposable parity evidence only, not a real runtime reinstall.
+- Released `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
+- The correction was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`, and fresh-public master/tag verification passed.
+- All 19 Runtime Rules, owner triads, installers, Case 17, matrix/coverage, and Patch artifacts remain protected byte-for-byte. No real runtime reinstall was required.
 - Released `v10.65 / P149` remains immutable at release commit `2e751bbb620eb68527e5a67eb6348196a67727e7` and annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`, with its delayed diagram-format failure preserved.
 - Released `v10.64 / P148` remains immutable and provides verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and the repository-only Patch timeline Tool.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
@@ -1070,7 +1071,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: corrective candidate `v10.66 / P149-01` changes only the Case 04/12 flow-diagram presentation plus governed lifecycle surfaces; all 19 Runtime Rules and installer sources remain unchanged. Immutable v10.65 retains its historical failed diagram-format gate. Exact verification and publication approval remain pending; no v10.66 public identity is claimed by this snapshot.
+- Source state: released `v10.66 / P149-01` changes only the Case 04/12 flow-diagram presentation plus governed lifecycle surfaces; all 19 Runtime Rules and installer sources remain unchanged. Public master and immutable annotated v10.66 were fresh-clone verified, while immutable v10.65 retains its historical failed diagram-format gate. No real runtime reinstall was required.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
