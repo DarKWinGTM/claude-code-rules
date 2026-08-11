@@ -3,7 +3,7 @@
 > **Current Version:** 2.24
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P151 active — v10.68 Active Project Root authority and payload-versus-project convergence candidate
+> **Status:** no active phase — P151/v10.68 released, fresh-public verified, and installed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,11 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P151:** [Active Project Root source authority](phase-151-active-project-root-source-authority.md) — v10.68 candidate active.
-  - Goal: make the user- or project-selected Active Project Root the sole development and governed-source authority, with `/tmp`, worktrees, clean clones, and alternate checkouts limited to read-only evidence or disposable verification.
-  - Output: two Runtime owner triads, corrected project-local guidance, master governed sync, and Case 19/M41-M45 without changing the exact 19-Rule inventory.
-  - Gate: two changed/17 protected Runtime Rules, plugin zero drift, Case 19, fixtures, two-pass disposable install, independent reviews, and separate Runtime payload parity versus Active Project Root convergence results.
-  - Patch: [Active Project Root Source Authority](../patch/2026-08-11T08-29-05Z--active-project-root-source-authority.patch.md).
+No active phase is selected.
 
 ### Blocked Predecessor
 
@@ -42,6 +38,14 @@ This file is the compact active roadmap/index. Start here for current execution 
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
 
 ### Most Recently Completed
+
+- **P151:** [Active Project Root source authority](phase-151-active-project-root-source-authority.md)
+  - Output: v10.68 makes the user- or project-selected Active Project Root the sole development and governed-source authority, limits alternate locations to evidence/disposable verification, and separates exact Runtime payload parity from full-project convergence through two Runtime owner triads and Case 19/M41-M45.
+  - Gate: exact 22-path scope, two changed/17 protected Runtime Rules, four ordered 19-file arrays, 366 links, Bash/PowerShell fixtures, Patch tests 32/32, 179/0 Patch inventory, disposable and real two-pass 19/19 installations, independent reviews, fresh-public tag proof, and plugin zero drift passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68
+  - Identity: release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f`; annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a`.
+  - Runtime boundary: exactly two Runtime Rules changed; the other 17 and ordered 19-file inventory remained protected. The approved prior installed state is preserved at `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`.
+  - Patch: [Active Project Root Source Authority](../patch/2026-08-11T08-29-05Z--active-project-root-source-authority.patch.md).
 
 - **P150:** [Architecture conformance and no-fork gates](phase-150-architecture-conformance-and-no-fork-gates.md)
   - Output: v10.67 binds material architecture mutation to active design and the existing owner/producer/state/readers/writers/consumers path, distinguishes regressions from verified capability gaps, and blocks invented-path functional success from satisfying architecture completion.
@@ -107,11 +111,11 @@ P151 is a distinct new major because it changes two Runtime Rule owner contracts
 
 | Lane | Owner/output | Verification gate | Status |
 |---|---|---|---|
-| Root baseline/startup | Active Project Root audit, plugin baseline, P151 phase/TODO/Patch/summary | exact root identity, no non-plugin pre-existing drift, plugin exclusion | verified in local candidate scope |
-| Runtime doctrine | authority and integrity Runtime/design/changelog triads plus project-local `CLAUDE.md` | root-only development, proof-layer separation, two changed/17 protected | verified in local candidate scope |
-| Master governed sync | master design shards, README, changelog, TODO, phase, Patch | links, versions, candidate-safe wording, stale template reference repair | verified in local candidate scope |
-| Scenario evidence | Case 19, M41-M45, coverage/index, bounded observed evidence | five branches and fact/observed/virtual separation | verified in local candidate scope |
-| Verification/publication/install | static checks, fixtures, disposable payload, plugin comparison, reviews, approval packets | no plugin drift; payload and project proof reported separately; exact approval before consequential action | local candidate checks passed; publication/install blocked pending approval |
+| Root baseline/startup | Active Project Root audit, plugin baseline, P151 phase/TODO/Patch/summary | exact root identity, no non-plugin pre-existing drift, plugin exclusion | completed |
+| Runtime doctrine | authority and integrity Runtime/design/changelog triads plus project-local `CLAUDE.md` | root-only development, proof-layer separation, two changed/17 protected | completed |
+| Master governed sync | master design shards, README, changelog, TODO, phase, Patch | links, versions, released wording, stale template reference repair | completed |
+| Scenario evidence | Case 19, M41-M45, coverage/index, bounded observed evidence | five branches and fact/observed/virtual separation | completed |
+| Verification/publication/install | static checks, fixtures, disposable payload, plugin comparison, reviews, publication, rollback, real install | no plugin drift; payload and project proof reported separately; exact approval before consequential action | completed after exact approvals |
 
 ---
 
@@ -169,7 +173,7 @@ Required checks:
 - Bash and available PowerShell fixtures plus two-pass disposable installation pass with 19/19 byte/mode/order/body parity, idempotence, unrelated-file preservation, and governed/plugin/support/template/playground exclusion.
 - Independent doctrine and release/no-drift reviews pass before exact publication or real-install approval packets are presented.
 
-Current evidence: the pre-wave audit checked local `master`, local `HEAD`, upstream, and public `origin/master` equal at `7b172a6f7c1c8e1f576788372ab8d8b9bcfdfe82`, ahead/behind `0/0`. The local candidate passes the exact 22-path non-plugin allowlist, two changed/17 protected Runtime Rules, four identical ordered 19-file arrays, 366 local-link targets, Case 19/M41-M45 assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, and 179/0 Patch inventory. The final plugin comparison matches the verification-only baseline at 1,188 entries: 63 modified tracked, 1,125 untracked, 1,187 regular files, and one symlink; baseline mode `0600` and SHA-256 `20f806be4450ef7e6f1b8457f20107e1f6e5ebdbf741b346b2fe51ad5c8a3688` remain intact. Independent reviews found two material status/evidence-label issues; both were corrected, and both bounded rechecks passed with no remaining material finding. Publication and real installation remain unverified and approval-gated.
+Current evidence: release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f` was fast-forwarded from the Active Project Root to public `master`; immutable annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a` and the non-draft/non-prerelease GitHub Release select that commit. The exact 22-path scope, two changed/17 protected Runtime Rules, four identical ordered 19-file arrays, 366 local-link targets, Case 19/M41-M45 assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, 179/0 Patch inventory, independent review corrections, and fresh-public full-history tag fixtures pass. The final plugin comparison matches all 1,188 baseline entries. The owner-only rollback snapshot is `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`; two-pass real installation passes 19/19 byte-mode parity, identical second-pass state, and unrelated-file preservation.
 
 ---
 
@@ -184,7 +188,7 @@ Current evidence: the pre-wave audit checked local `master`, local `HEAD`, upstr
 
 ## Next State
 
-P151 / v10.68 is locally verified in the Active Project Root. The governed startup, plugin preservation baseline, Patch, two Runtime/design/changelog owner triads, project-local guidance, master governed sync, and Case 19/M41-M45 exist; candidate checks and plugin zero-drift comparison pass. Two independent review findings were corrected, and their bounded rechecks pass. The exact commit/push approval packet is ready; annotated tag/Release, real installation, and post-release closeout remain later separate approval gates.
+P151 / v10.68 is complete: released, fresh-public verified, and installed from the immutable tag with rollback protection and plugin zero drift. No successor phase is selected. The post-release documentation closeout is implemented locally and remains the only pending commit/push approval gate.
 
 ---
 

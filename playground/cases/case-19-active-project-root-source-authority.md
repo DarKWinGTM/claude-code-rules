@@ -9,7 +9,7 @@ This case family shows how RULES prevent development from moving to a clean `/tm
 ## Scenario family
 
 - Primary family: Active Project Root source authority
-- Current status: v10.68 candidate implementation; checked incident evidence and five virtual/verification branches present; initial focused checks pass and final candidate recheck is pending
+- Current status: released v10.68 behavior; checked incident evidence and five virtual/verification branches passed local and fresh-public release checks
 
 ---
 
@@ -27,7 +27,7 @@ This case family shows how RULES prevent development from moving to a clean `/tm
 
 ## Rule-enforced fact
 
-The selected v10.68 candidate Runtime Rules require the assistant to:
+The released v10.68 Runtime Rules require the assistant to:
 
 - resolve one Active Project Root from current user direction or checked project-local authority before meaningful mutation
 - keep source, Runtime Rule, governed document, config, script, test, plugin/support/tooling, commit-source, and publication-source mutation inside that root
@@ -59,7 +59,7 @@ Checked transcript-derived evidence:
 
 ## Mixed dialogue — checked failure pattern with virtual governed response
 
-**Dialogue label:** mixed. Turn 1 abstracts the checked assistant rationale that created the alternate-path failure; Turn 2 abstracts the checked user correction. Turns 3-5 are virtual examples of the v10.68 candidate rule-enforced continuation. None are presented as verbatim transcript quotations.
+**Dialogue label:** mixed. Turn 1 abstracts the checked assistant rationale that created the alternate-path failure; Turn 2 abstracts the checked user correction. Turns 3-5 are virtual examples of the released v10.68 rule-enforced continuation. None are presented as verbatim transcript quotations.
 
 1. **Assistant:** “The root has unrelated local plugin work, so I will use a clean `/tmp` checkout for this release and sync it back afterward.”
 2. **User:** “Do not fork development into `/tmp`; the Active Project Root must remain the development source.”

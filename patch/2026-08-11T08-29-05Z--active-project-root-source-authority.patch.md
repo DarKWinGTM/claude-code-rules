@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** locally verified candidate — publication and installation pending approval
+> **Status:** completed — v10.68 released, fresh-public verified, and installed
 > **Created At:** 2026-08-11T08:29:05Z
 > **Creation Evidence:** direct creator event
 > **Target Design:** design/design.md v10.68
@@ -86,7 +86,7 @@ Completion: blocked
 - Report Runtime payload parity and Active Project Root convergence separately.
 - Obtain independent doctrine and release/no-drift reviews before preparing exact publication or real-install approval packets.
 
-Current status: local candidate verification passes. The checked evidence includes the exact 22-path non-plugin allowlist, two changed/17 protected Runtime Rules, four identical ordered 19-file arrays, 366 local-link targets, Case 19/M41-M45 assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, 179/0 Patch inventory, and a final 1,188-entry plugin baseline match. Two independent review findings were corrected, and both bounded rechecks pass with no remaining material finding. Publication, immutable v10.68 tag/Release, real runtime installation, and post-release closeout are not yet approved or verified.
+Current status: completed. Local candidate verification passed the exact 22-path non-plugin allowlist, two changed/17 protected Runtime Rules, four identical ordered 19-file arrays, 366 local-link targets, Case 19/M41-M45 assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, 179/0 Patch inventory, independent review corrections, and the final 1,188-entry plugin baseline match. Release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f`, annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a`, GitHub Release, fresh-public full-history fixtures, owner-only rollback snapshot, and two-pass real 19/19 installation are verified. The post-release documentation closeout remains a separate commit/push approval gate.
 
 ## Rollback Approach
 

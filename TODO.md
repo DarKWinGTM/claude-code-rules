@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-11
-> **Current Release:** v10.67 published, fresh-public verified, installed, and immutable; v10.68 candidate active
-> **Active Wave:** P151 / v10.68 Active Project Root source authority
+> **Current Release:** v10.68 published, fresh-public verified, installed, and immutable
+> **Active Wave:** none selected; P151 complete
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,21 +10,18 @@
 
 ## Active / In Progress
 
-- [ ] **P151 / v10.68 Active Project Root source authority** — implement and verify the no-fork development contract directly in `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`.
-  - [x] Audit local/public committed identity and classify the pre-existing working tree.
-  - [x] Capture the verification-only `plugin/**` path/status/mode/hash baseline and exclude `plugin/**` from mutation.
-  - [x] Open [P151](phase/phase-151-active-project-root-source-authority.md) and the governed [Patch](patch/2026-08-11T08-29-05Z--active-project-root-source-authority.patch.md).
-  - [x] Complete the `authority-and-scope` 2.8 and `document-integrity` 1.14 Runtime/design/changelog triads.
-  - [x] Replace project-local clean-clone/worktree sync-back guidance with Active Project Root-only development guidance.
-  - [x] Synchronize master design, repository/verification shards, README, master changelog, TODO, phase, and Patch at v10.68 candidate state.
-  - [x] Add Case 19/M41-M45 with fact/observed/virtual evidence boundaries.
-  - [x] Verify two changed/17 protected Runtime Rules, exact ordered 19-file payload, fixtures, two-pass disposable install, links/modes/bodies, and no unexpected file shape.
-  - [x] Compare final `plugin/**` state to the initial baseline with zero drift.
-  - [x] Run independent doctrine and release/no-drift reviews, resolve their two material findings, and prepare the candidate approval packet; do not push, tag, release, or install into the real runtime before approval.
+No active RULES release wave is selected.
 
 ---
 
 ## Recently Completed
+
+- [x] **P151 / v10.68 Active Project Root source authority** was committed and fast-forwarded from the Active Project Root, annotated-tagged, released, fresh-public verified, and installed.
+  - Delivered `authority-and-scope.md` 2.8 and `document-integrity.md` 1.14 with Case 19/M41-M45 while preserving the exact ordered 19-Rule runtime inventory.
+  - Verified the exact 22-path release scope, two advanced and 17 byte/mode-protected Runtime Rules, four identical installer arrays, 366 local links, Bash/PowerShell fixtures, Patch tests 32/32, 179/0 Patch inventory, two-pass disposable install, and independent review corrections.
+  - Preserved all 1,188 pre-existing `plugin/**` baseline entries with zero drift: 63 modified tracked, 1,125 untracked, 1,187 regular files, and one symlink.
+  - Published release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f` at immutable annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68
+  - Fresh-public full-history tag fixtures passed. Captured owner-only rollback snapshot `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`, then installed the exact released payload twice with 19/19 byte-mode parity, identical second pass, and unrelated-file preservation.
 
 - [x] **P150 / v10.67 architecture conformance and no-fork gates** was fast-forwarded to public `master`, annotated-tagged, released, fresh-public verified, and installed.
   - Published release commit `bd3aa36ff0d7c7712270750249031f362968854c` at immutable annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67

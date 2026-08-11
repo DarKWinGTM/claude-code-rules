@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.68 candidate</b><br><sub>Active Project Root Authority</sub>
+  <b>v10.68 released</b><br><sub>Active Project Root Authority</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Candidate active</b><br><sub>v10.67 remains released</sub>
+  <b>Released & installed</b><br><sub>v10.68 verified</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Candidate locally verified:** `v10.68 / P151` locks development and governed source to the user- or project-selected Active Project Root and separates exact Runtime payload parity from full-project convergence. `/tmp`, worktrees, clean clones, and alternate checkouts remain read-only evidence/reference or disposable-verification surfaces rather than implementation, commit, or release authority. Case 19/M41-M45, local fixtures, disposable installation, independent review, and plugin zero-drift checks pass in candidate scope. Latest immutable released and installed state remains `v10.67 / P150`: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67.
+> **Released and installed:** `v10.68 / P151` locks development and governed source to the user- or project-selected Active Project Root and separates exact Runtime payload parity from full-project convergence. `/tmp`, worktrees, clean clones, and alternate checkouts remain read-only evidence/reference or disposable-verification surfaces rather than implementation, commit, or release authority. Case 19/M41-M45, local and fresh-public fixtures, two-pass installation, independent review, and plugin zero-drift checks pass. Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68.
 
 <!-- CTA Buttons -->
 <p>
@@ -282,9 +282,10 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Candidate `v10.68 / P151` advances `authority-and-scope.md` to 2.8 and `document-integrity.md` to 1.14 so development stays in one user- or project-selected Active Project Root and exact Runtime payload parity cannot be mistaken for full-project convergence.
-- Case 19/M41-M45, plugin zero-drift comparison, Bash/PowerShell fixtures, Patch tests, two-pass disposable installation, and independent reviews pass in local candidate scope; publication and real installation remain pending, so the candidate does not claim released, installed, or live-verified status.
-- Latest immutable release remains `v10.67 / P150`, release commit `bd3aa36ff0d7c7712270750249031f362968854c`, annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`, and Release URL https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67. Its Case 18/M35-M40 architecture-conformance evidence and two-pass installed 19/19 payload remain preserved.
+- Released `v10.68 / P151` advances `authority-and-scope.md` to 2.8 and `document-integrity.md` to 1.14 so development stays in one user- or project-selected Active Project Root and exact Runtime payload parity cannot be mistaken for full-project convergence.
+- Case 19/M41-M45, plugin zero-drift comparison, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable and real installation, independent reviews, and fresh-public tag checks pass.
+- Release identity: commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f`, annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a`, Release https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68, and owner-only preinstall rollback snapshot `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`.
+- Immutable `v10.67 / P150` remains the architecture-conformance predecessor at release commit `bd3aa36ff0d7c7712270750249031f362968854c` and annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`.
 - Released `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
 - The correction was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`, and fresh-public master/tag verification passed.
 - All 19 Runtime Rules, owner triads, installers, Case 17, matrix/coverage, and Patch artifacts remain protected byte-for-byte. No real runtime reinstall was required.
@@ -1076,7 +1077,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: `v10.68 / P151` is a locally verified candidate advancing exactly two Runtime Rules for Active Project Root authority and payload-versus-project proof separation; Case 19, candidate fixtures, disposable installation, independent reviews, and plugin preservation checks pass. Publication and real installation remain pending. Published `v10.67 / P150` remains the latest immutable released and installed state.
+- Source state: `v10.68 / P151` is released and installed, advancing exactly two Runtime Rules for Active Project Root authority and payload-versus-project proof separation; Case 19, local and fresh-public fixtures, disposable and real installation, independent reviews, and plugin preservation checks pass. `v10.67 / P150` remains the immutable architecture-conformance predecessor.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.

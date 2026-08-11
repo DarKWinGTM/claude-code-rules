@@ -2,9 +2,9 @@
 
 > **Phase ID:** P151
 > **Current Version:** 1.0
-> **Status:** active
+> **Status:** completed — v10.68 released, fresh-public verified, and installed
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Target Release:** v10.68 candidate
+> **Target Release:** v10.68 released
 > **Design References:** [Master design](../design/design.md); [Authority and scope](../design/authority-and-scope.design.md); [Document integrity](../design/document-integrity.design.md); [Repository model](../design/design/repository-model.design.md); [Verification and integration](../design/design/verification-and-integration.design.md)
 > **Patch References:** [Active Project Root Source Authority](../patch/2026-08-11T08-29-05Z--active-project-root-source-authority.patch.md)
 > **Full history:** [Master changelog](../changelog/changelog.md)
@@ -28,7 +28,7 @@ P151 is a new major phase because it changes two Runtime owner contracts and add
 - `authority-and-scope.md` defines Active Project Root selection, precedence, and no-bypass behavior.
 - `document-integrity.md` separates Runtime payload parity from Active Project Root full-project convergence.
 - Project-local `CLAUDE.md` requires development directly in `/home/node/workplace/AWCLOUD/TEMPLATE/RULES` and removes clean-clone/worktree sync-back guidance.
-- Master design, changelog, README, TODO, phase, and Patch surfaces align to v10.68 candidate state.
+- Master design, changelog, README, TODO, phase, and Patch surfaces align to released v10.68 state.
 - Case 19 and M41-M45 exercise forbidden alternate development, root-only work, disposable verification, blocked-root stop behavior, and mixed proof results.
 - The Runtime inventory remains exactly 19; only two Runtime Rule triads advance.
 - Pre-existing `plugin/**` state remains path/status/mode/byte preserved.
@@ -69,7 +69,7 @@ P151 may close only when:
 | Split or unexplained source state blocks closeout | implemented in selected integrity Runtime/design owner | verified in local candidate scope |
 | Case 19/M41-M45 | implemented with checked observed and virtual evidence boundaries | verified in local candidate scope |
 | Plugin zero drift | final 1,188-entry baseline comparison passed | verified in local candidate scope |
-| Publication and real install | not started | approval-gated |
+| Publication and real install | released and installed from immutable v10.68 tag | verified in released scope |
 
 ## Lanes
 
@@ -79,8 +79,8 @@ P151 may close only when:
 | Runtime doctrine | authority and integrity Runtime/design/changelog triads; project-local `CLAUDE.md` | exact owner split, no duplicate destructive/tactical taxonomy, two changed/17 protected | verified in local candidate scope |
 | Master governed sync | master design shards, README, changelog, TODO, phase, Patch | versions, links, candidate-safe wording, stale template reference repair | verified in local candidate scope |
 | Scenario evidence | Case 19, M41-M45, coverage/index, bounded observed evidence | fact/observed/virtual separation and five required branches | verified in local candidate scope |
-| Verification | static checks, fixtures, disposable install, plugin baseline comparison, independent reviews | payload and full-project proof separated; zero plugin drift | local candidate checks passed; approval-gated lifecycle remains |
-| Publication/install | commit/push, immutable tag/Release, rollback snapshot, real 19-Rule install | separate exact action-and-scope approval for each consequential stage | blocked pending approval |
+| Verification | static checks, fixtures, disposable install, plugin baseline comparison, independent reviews | payload and full-project proof separated; zero plugin drift | completed in local and fresh-public scope |
+| Publication/install | commit/push, immutable tag/Release, rollback snapshot, real 19-Rule install | separate exact action-and-scope approval for each consequential stage | completed after exact approvals |
 
 ## Affected Artifacts
 
@@ -168,4 +168,4 @@ After publication, immutable tags and Releases are never moved or deleted; corre
 
 ## Current State
 
-P151 is locally verified in the Active Project Root. Both Runtime/design/changelog owner triads, project-local guidance, master governed surfaces, and Case 19/M41-M45 are present. The exact 22-path non-plugin allowlist, two changed/17 protected Runtime Rules, four ordered installer arrays, 366 local links, focused scenario assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, 179/0 Patch inventory, and final 1,188-entry plugin baseline comparison pass. Independent reviews found two material status/evidence-label issues; both were corrected, and both bounded rechecks passed with no remaining material finding. Publication and real installation remain approval-gated and pending.
+P151 is complete. Release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f` was fast-forwarded from the Active Project Root to public `master`, immutable annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a` selects that commit, and the non-draft/non-prerelease Release is https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68. Fresh-public full-history tag fixtures pass. The exact 22-path release scope, two changed/17 protected Runtime Rules, four ordered installer arrays, 366 local links, Case 19/M41-M45, Bash/PowerShell fixtures, Patch tests 32/32, 179/0 Patch inventory, independent review corrections, and final 1,188-entry plugin baseline comparison pass. The owner-only rollback snapshot is `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`; two-pass real installation passes 19/19 byte-mode parity, identical second-pass state, and unrelated-file preservation.
