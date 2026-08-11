@@ -1,11 +1,11 @@
 # Authority and scope
-> **Current Version:** 2.7
-> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 2.8
+> **Design:** [design/authority-and-scope.design.md](design/authority-and-scope.design.md) v2.8
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/authority-and-scope.changelog.md](changelog/authority-and-scope.changelog.md)
 ---
 ## Rule Statement
-**Core Principle: User authority is the default owner of direction inside non-hard-boundary space, and assistant-generated options are advisory rather than binding unless the user explicitly selects one.**
+**Core Principle: User authority is the default owner of direction inside non-hard-boundary space, assistant-generated options remain advisory until selected, and project development stays inside the user- or project-selected Active Project Root rather than silently moving to an alternate source authority.**
 ---
 ## Core Contract
 - Apply the highest-priority applicable rule within scope.
@@ -22,6 +22,10 @@
 - Mode selection and continuous execution defer to `execution-and-goal-frame.md`.
 - Shared-board, plugin, and external coordination/runtime mechanics stay outside Main RULES current doctrine unless the user provides another active authority surface.
 - Runtime co-location is not ownership authority: a file in a shared runtime directory is not automatically governed by the current source project.
+- Resolve and lock the Active Project Root before meaningful project mutation. All source, governed-document, config, script, test, plugin/support/tooling, commit-source, and publication-source changes remain inside that root.
+- A clean clone, worktree, alternate checkout, `/tmp`, public remote, tag, or release is an evidence/reference or disposable-verification surface only; it cannot replace, shadow, or bypass the Active Project Root because it is cleaner, isolated, published, newer, or more convenient.
+- Dirty, modified, or untracked state does not independently prove semantic ownership, but it must be inspected and preserved pending owner classification; it never authorizes moving development elsewhere or replacing the Active Project Root.
+- If work cannot continue safely in the Active Project Root, stop with the exact blocker and recovery condition instead of creating an alternate implementation lane. Only a fresh user directive or checked project authority may select another Active Project Root.
 - Fresh user directives changing scope, task, action, output, or mode override previous option framing immediately.
 - After compact, re-anchor to the latest active user directive and governing basis; do not let stale framing, stale option branches, or compressed-away detail become active truth unless surviving evidence justifies it.
 ---
@@ -44,6 +48,7 @@ Key terms:
 - **fresh user directive** = newer user instruction changing requested scope, task, action, output, or mode
 - **explicit selection** = user clearly chooses an option, proposal, branch, or governing basis
 - **post-compact resume** = continuation after compaction where exact prior evidence may be compressed away
+- **Active Project Root** = the canonical development workspace selected by current user direction or checked project-local authority for the active objective; assistant routing, cleanliness, isolation, or publication state cannot change it
 ---
 ## Repository-Governed Semantic Authority
 When governed master surfaces/history define file meaning, resolve semantic authority in this order:
@@ -58,6 +63,13 @@ When governed master surfaces/history define file meaning, resolve semantic auth
 - runtime co-location must not outrank source/project ownership
 - for destination/runtime files outside the current source-owned install set, resolve owner/project scope before classification, cleanup, or deletion is considered
 - if master surfaces or governed chains could explain a file, check them before treating it as non-governed or disposable
+
+## Active Project Root Authority
+The Active Project Root is the sole development authority for the selected project objective. Source and governed mutations, commits, and release-source state must originate there.
+
+Temporary or alternate locations may capture read-only evidence, command output, extracted fixtures, or disposable verification results. Their mutations are discarded and do not count as implementation; any useful source change must be made and verified in the Active Project Root.
+
+A dirty or noisy root is an inspection signal, not permission to fork development. Inspect the current branch, tracked and untracked state, project components, ownership, and blockers in place. If safe continuation is blocked, report the exact blocker rather than developing in a cleaner path and syncing back later.
 ---
 ## Conflict Resolution Contract
 ```text
@@ -78,6 +90,7 @@ Settlements:
 - Fresh directive vs previous options: fresh directive wins unless explicitly selected.
 - RULES-first directive vs memory convenience: fix governing rule/system path first.
 - Checked master/governed surfaces vs git state: governed surfaces win; git is local evidence only.
+- Selected Active Project Root vs a cleaner clone/worktree/`/tmp`/public source: the Active Project Root remains the sole development authority until the user or checked project authority changes it.
 - Cleanup/isolation heuristic vs unresolved file meaning: heuristic loses; check master surfaces and governed owners first.
 - User-selected governing basis vs assistant exploratory framing: selected basis wins and becomes active frame.
 - Post-compact objective vs stale assistant framing: re-anchor to latest directive and active frame.
@@ -96,8 +109,12 @@ Use fresh-directive override strongly when the user gives a new command, changes
 - once an objective is selected, allow the smallest justified bounded helper topology to gather evidence or verify work without transferring objective/source authority or asking the user to choose internal routing labels
 - preserve the latest selected basis/active frame after compact and recheck exact compressed-away detail when material
 - apply the memory-governance chain for remembered context; do not infer applicability from same/recent session continuity alone
+- when the Active Project Root is dirty or another checkout appears easier, inspect and continue in the selected root or stop on a real blocker; do not create an alternate development authority
 - if the new directive is ambiguous, ask about that directive rather than reverting to old options
 - absent a user style request, keep neutral professional mode rather than inventing a persona
+---
+## Anti-Patterns
+Avoid developing, maintaining governed state, committing, or publishing from a clean clone, worktree, alternate checkout, or `/tmp` while the selected Active Project Root remains elsewhere; treating disposable verification mutations as implementation; replacing a dirty root from public or released state; or using convenience, isolation, cleanliness, or worker topology to switch source authority.
 ---
 ## Integration
 Related owners: [accurate-communication.md](accurate-communication.md) and [explanation-and-presentation.md](explanation-and-presentation.md) (visible re-anchor/presentation); [worker-routing-and-context.md](worker-routing-and-context.md) (bounded helpers); [refusal-and-recovery.md](refusal-and-recovery.md) (hard-boundary outcomes and recovery).

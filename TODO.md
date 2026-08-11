@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-11
-> **Current Release:** v10.67 published, fresh-public verified, installed, and immutable
-> **Active Wave:** none selected; P150 / v10.67 completed
+> **Current Release:** v10.67 published, fresh-public verified, installed, and immutable; v10.68 candidate active
+> **Active Wave:** P151 / v10.68 Active Project Root source authority
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,17 @@
 
 ## Active / In Progress
 
-- No governed release wave is active. The next RULES objective must pass normal design/TODO/phase/Patch startup and lineage checks before implementation.
+- [ ] **P151 / v10.68 Active Project Root source authority** — implement and verify the no-fork development contract directly in `/home/node/workplace/AWCLOUD/TEMPLATE/RULES`.
+  - [x] Audit local/public committed identity and classify the pre-existing working tree.
+  - [x] Capture the verification-only `plugin/**` path/status/mode/hash baseline and exclude `plugin/**` from mutation.
+  - [x] Open [P151](phase/phase-151-active-project-root-source-authority.md) and the governed [Patch](patch/2026-08-11T08-29-05Z--active-project-root-source-authority.patch.md).
+  - [x] Complete the `authority-and-scope` 2.8 and `document-integrity` 1.14 Runtime/design/changelog triads.
+  - [x] Replace project-local clean-clone/worktree sync-back guidance with Active Project Root-only development guidance.
+  - [x] Synchronize master design, repository/verification shards, README, master changelog, TODO, phase, and Patch at v10.68 candidate state.
+  - [x] Add Case 19/M41-M45 with fact/observed/virtual evidence boundaries.
+  - [x] Verify two changed/17 protected Runtime Rules, exact ordered 19-file payload, fixtures, two-pass disposable install, links/modes/bodies, and no unexpected file shape.
+  - [x] Compare final `plugin/**` state to the initial baseline with zero drift.
+  - [x] Run independent doctrine and release/no-drift reviews, resolve their two material findings, and prepare the candidate approval packet; do not push, tag, release, or install into the real runtime before approval.
 
 ---
 

@@ -1,8 +1,8 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.13
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.14
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
 ---
@@ -45,6 +45,8 @@ P073-12 refinement: conditionally selected diagram surfaces count as governed st
 
 P148 refinement: Patch timeline migration requires an evidence- and SHA-256-bound manifest, exact-target reference resolution, correct relative-path recomputation, serialized/wildcard exclusions, suspended-archive preservation sentinels, explicit apply approval, exclusive owner-only manifest/journal output where supported, a rollback journal persisted before mutation, atomic reference replacement, post-apply former-path inactivity proof, and explicit journal/hash-gated rollback across unchanged, staged, or applied states. Ambiguous creation evidence remains blocked rather than inferred from mtime/ctime or indirect chronology.
 
+P151 refinement: this owner must distinguish selected Runtime payload parity from full-project convergence in the Active Project Root. Payload/candidate/tag/release/fresh-clone equality proves only its named subset and cannot authorize root replacement. Full-project convergence checks relevant Runtime, governed, source/config, scripts/tests, plugin/support/tooling, generated-input, mode, and classified modified/untracked surfaces; split or unexplained state blocks no-drift and closeout wording.
+
 ---
 
 ## Runtime Requirements
@@ -52,6 +54,8 @@ P148 refinement: Patch timeline migration requires an evidence- and SHA-256-boun
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
 - Treat source-comment citations to governed docs as reference surfaces that need checked-path and checked-role maintenance when nearby behavior changes.
+- Consume the Active Project Root authority from `authority-and-scope.md`; do not redefine root selection locally.
+- Keep Runtime payload parity and full-project convergence as separate proof layers, preserve local-only/unclassified state pending owner decision, and block closeout while source/governed authority is split across locations.
 - Keep metadata linked to this design and the chain changelog.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
@@ -67,4 +71,4 @@ Historical detail remains in changelog or execution-disconnected quarantine/prov
 
 ## Verification
 
-Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
+Release validation should confirm the parent runtime file exists in the Active Project Root, has substantive body content, links to this design and its changelog, and matches the installed runtime copy when runtime install is in scope. It must report Runtime payload parity separately from full-project convergence and block whole-project/no-drift wording while relevant local source, governed, plugin, support, tooling, generated-input, mode, or classified working state remains split or unexplained.

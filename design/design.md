@@ -3,7 +3,7 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.67
+> **Current Version:** 10.68
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
@@ -14,13 +14,18 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active `v10.67 / P150` target keeps the same 19 body-sufficient source-owned Runtime Rules while adding a deterministic architecture-conformance pipeline across three existing owners: execution triggers design-bound preflight before architecture-bearing source mutation, action safety classifies the exact topology delta and approval boundary, and coding discipline distinguishes regression from verified capability gap before requiring functional plus architecture-fitness proof. Case 18 and M35-M40 exercise route-owner fork, existing-path regression, invented-path functional success, bounded repair, approved expansion, and no-fork correction. Released `v10.66` remains the immutable presentation-only predecessor, and released `v10.64` retains the repository-only `script/patch-timeline.mjs` Tool outside runtime installation.
+The active `v10.68 / P151` target keeps the same 19 body-sufficient source-owned Runtime Rules while advancing two existing owners. Authority and scope locks source/governed development, commit-source, and publication-source state to the user- or project-selected Active Project Root; document integrity distinguishes the exact Runtime installation payload from full-project convergence and blocks closeout when source state remains split or unexplained. Case 19 and M41-M45 exercise forbidden alternate development, correct root-only work, disposable evidence locations, blocked-root stop behavior, and mixed proof results. Released `v10.67 / P150` remains the immutable architecture-conformance predecessor, and released `v10.64` retains the repository-only `script/patch-timeline.mjs` Tool outside runtime installation.
 
 ---
 
 ## 2) Current Active-State Summary
 
 Current target-state priorities:
+- resolve one Active Project Root from current user direction or checked project-local authority before meaningful mutation, and keep all source/governed/config/script/test/plugin-support-tooling/commit/release input there
+- limit `/tmp`, worktrees, clean clones, alternate checkouts, public remotes, tags, and Releases to read-only evidence/reference or disposable verification unless user/project authority explicitly selects another root
+- inspect and preserve dirty, modified, and untracked root state pending owner classification; a real blocker stops work with an exact recovery condition rather than creating an alternate implementation lane
+- distinguish Runtime payload parity from full-project convergence: payload equality proves only the selected ordered install set, while project convergence is evaluated from the Active Project Root across relevant project state
+- block sync, no-drift, closeout, or root replacement when project state remains split or unexplained even if candidate/tag/release/fresh-clone/installed payload parity passes
 - keep successor posture ownership deterministic: `execution-and-goal-frame.md` selects direct/candidate/advisory/clarification/none, `goal-authoring-and-route-support.md` constructs the selected goal and route support, and `explanation-and-presentation.md` renders it
 - evaluate diagram posture after design only when structure, visual authority, diagram relationships, visual topology, or existing diagram correctness changes; ordinary design edits may use `not required`
 - classify `AGENT_TEAM_DUPLICATE_OR_STALE_TEAMMATE_PRESENCE` in action safety, block unchanged retry while unresolved, and leave reuse/steer/wait/partition/respawn decisions to worker routing
@@ -158,8 +163,10 @@ Release validation for this master design chain should confirm:
 - this parent remains compact and body-sufficient
 - child shards are reachable and role-correct
 - runtime/design/changelog versions align
-- the execution, action-safety, and coding-discipline triads advance together to 1.33/1.6/1.6 while the other 16 Runtime Rules remain byte-and-mode identical and the ordered inventory stays exactly 19
-- Case 18 plus its August observed log and M35-M40 provide a labeled mixed dialogue, exact checked transcript evidence, fact/observed/virtual separation, design-bound architecture mutation, route-owner fork prevention, regression-versus-gap diagnosis, invented-path functional false-positive rejection, bounded repair, approved expansion, no-fork correction, and functional-plus-conformance verification
+- the authority-and-scope and document-integrity triads advance together to 2.8/1.14 while the other 17 Runtime Rules remain byte-and-mode identical and the ordered inventory stays exactly 19
+- Case 19 and M41-M45 cover forbidden alternate development, correct root-only mutation with preserved dirty state, disposable evidence/installation locations, blocked-root stop behavior, and Runtime-payload-PASS/project-convergence-BLOCKED results
+- final `plugin/**` path/status/mode/hash state equals the pre-wave verification-only baseline while all P151 mutation remains inside the Active Project Root
+- Case 18 remains protected evidence for architecture mutation preflight, regression-versus-gap diagnosis, invented-path functional false-positive rejection, bounded repair, approved expansion, no-fork correction, and functional-plus-conformance verification
 - Cases 17/12/04 remain protected evidence for reachable closure, explicit live-gate selection, task-list successor separation, authenticated capability, deterministic retry, and supplied-artifact proof limits
 - forward-valid phase grammar explicitly includes `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
 - observed alphanumeric phase forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous

@@ -21,5 +21,6 @@ For every RULES improvement wave, normal governed sync is not enough by itself. 
 - For RULES work, start from the checked source-controlled repository first.
 - Treat `/home/node/.claude/rules` as an installed runtime target, not as the source authority.
 - Do not start by editing the installed runtime copy unless the user explicitly chooses a runtime-only emergency or install-verification task.
-- If a clean clone/worktree is needed because a local checkout is dirty, complete the source update there first, then sync the local checkout from the released source state.
+- `/home/node/workplace/AWCLOUD/TEMPLATE/RULES` is this project's Active Project Root. Inspect and preserve dirty state and continue development there; do not move source/governed edits, commits, or release-source work to a clean clone, worktree, alternate checkout, or `/tmp`.
+- Temporary locations may be used only for read-only evidence or disposable verification. If the Active Project Root blocks safe continuation, stop and report the exact blocker; never replace or sync the root from public/released state merely to make it clean.
 - When install is in scope, install from the checked source repo and verify source/runtime parity plus body sufficiency afterward.

@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 2.8
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.8 | 2026-08-11 | **[Locked development to the Active Project Root](#version-28)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 2.7 | 2026-08-09 | **[Compacted authority integration handoffs](#version-27)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.6 | 2026-08-09 | **[Clarified advisory expansion and bounded helper authority](#version-26)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.5 | 2026-04-25 | **[Added runtime destination ownership boundary](#version-25)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -35,6 +36,24 @@
 | | | Summary: Synchronized authority rule and design to deterministic conflict-resolution behavior | |
 | 1.0 | 2026-02-01 | **[Standardization](#version-10-standardization)** | a77b77ae-ef2a-49f6-93d9-f78c8ac2d2f7 |
 | | | Summary: Migrated to standard template | |
+
+---
+
+<a id="version-28"></a>
+## Version 2.8: Locked development to the Active Project Root
+
+**Date:** 2026-08-11
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Defined the Active Project Root as the canonical development workspace selected by current user direction or checked project-local authority.
+- Required all source, governed-document, config, script, test, plugin/support/tooling, commit-source, and publication-source mutation to remain inside that root.
+- Limited clean clones, worktrees, alternate checkouts, `/tmp`, public remotes, tags, and Releases to evidence/reference or disposable-verification roles unless user/project authority explicitly selects another root.
+- Required dirty, modified, and untracked state to be inspected and preserved pending owner classification instead of being used as bypass or replacement authority.
+- Required an exact blocker and recovery condition when the Active Project Root cannot be changed safely, with no alternate implementation lane.
+
+### Summary
+Authority-and-scope now prevents assistant-selected source-authority forks: the active objective develops, commits, and publishes from one user- or project-selected root, while alternate locations remain non-authoritative evidence or disposable verification.
 
 ---
 

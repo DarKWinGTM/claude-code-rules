@@ -1,14 +1,15 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.13
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.14
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.14 | 2026-08-11 | **[Separated Runtime payload parity from Active Project Root convergence](#version-114)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.13 | 2026-08-09 | **[Added evidence-bound Patch rename and reference integrity](#version-113)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.12 | 2026-08-09 | **[Aligned startup-selected diagram artifacts and compact handoffs](#version-112)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.11 | 2026-08-09 | **[Added migration reference and discovery integrity](#version-111)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -24,6 +25,24 @@
 | 1.1 | 2026-05-17 | **[Added P101 normalized parent-shard integrity refinement](#version-11)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-114"></a>
+## Version 1.14: Separated Runtime payload parity from Active Project Root convergence
+
+**Date:** 2026-08-11
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Consumed Active Project Root selection from `authority-and-scope.md` without creating a competing root owner.
+- Defined Runtime payload parity as proof limited to the selected ordered install payload, including order, modes, bodies, manifests, and destination state.
+- Defined full-project convergence from the Active Project Root across relevant Runtime, governed, source/config, scripts/tests, plugin/support/tooling, generated-input, mode, and classified modified/untracked state.
+- Blocked sync, no-drift, closeout, and root replacement while source or governed authority remains split across locations or canonical-only components remain unexplained.
+- Preserved local-only and unclassified paths pending owner/disposition decisions and required explicit mixed-proof wording when payload and project results differ.
+
+### Summary
+Document integrity now prevents a correct 19-file payload, tag, release, fresh clone, or candidate from being mistaken for whole-project convergence or used to replace the Active Project Root.
 
 ---
 

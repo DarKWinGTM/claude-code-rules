@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.67</b><br><sub>Architecture Conformance</sub>
+  <b>v10.68 candidate</b><br><sub>Active Project Root Authority</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released + installed</b><br><sub>Fresh-public verified</sub>
+  <b>Candidate active</b><br><sub>v10.67 remains released</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Released and installed:** `v10.67 / P150` adds design-bound architecture mutation, canonical topology-delta preflight, regression-versus-capability-gap diagnosis, and functional-plus-architecture-fitness verification across three existing Runtime Rule owners. Case 18, its August observed record, and M35-M40 cover owner/route fork prevention, existing-path repair, invented-path false-positive tests, approved expansion, and no-fork correction. Release commit `bd3aa36ff0d7c7712270750249031f362968854c` is preserved by annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`; fresh-public master/tag verification and the exact two-pass 19-Rule installation passed. Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67.
+> **Candidate locally verified:** `v10.68 / P151` locks development and governed source to the user- or project-selected Active Project Root and separates exact Runtime payload parity from full-project convergence. `/tmp`, worktrees, clean clones, and alternate checkouts remain read-only evidence/reference or disposable-verification surfaces rather than implementation, commit, or release authority. Case 19/M41-M45, local fixtures, disposable installation, independent review, and plugin zero-drift checks pass in candidate scope. Latest immutable released and installed state remains `v10.67 / P150`: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67.
 
 <!-- CTA Buttons -->
 <p>
@@ -216,7 +216,8 @@ These capabilities summarize the current operating model at the front-page level
 - **Runtime Context Discipline** — The runtime layer stays compact, body-sufficient, and limited to doctrine the assistant must apply now.
   - Keep the 19 active runtime rules focused on live behavioral guidance rather than historical rollout detail
   - Keep design as target-state authority, changelog as version/history authority, and TODO/phase as execution surfaces
-  - Verify install scope, parity, and body sufficiency before claiming runtime synchronization
+  - Keep project development in the selected Active Project Root; temporary paths provide read-only evidence or disposable verification, not source authority
+  - Verify Runtime payload parity separately from full-project convergence and block closeout when project state remains split or unexplained
   - Preserve the project-local `.claude/rules/` install contract while keeping non-runtime governance artifacts out of the runtime payload
 
 ---
@@ -231,7 +232,7 @@ These capabilities summarize the current operating model at the front-page level
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | Deterministic precedence plus advisory durable expansion and internally routed bounded-support boundaries |
+| [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | Deterministic precedence, user-owned scope, and one Active Project Root for source/governed/commit/release authority |
 | [`evidence-discipline.md`](evidence-discipline.md) | Evidence discipline | Verify-first reasoning plus witness-specific proof limits for supplied rendered artifacts and authenticated harness results |
 | [`refusal-and-recovery.md`](refusal-and-recovery.md) | Refusal and recovery chain | Normalized intent classification plus recoverable blocked-path responses |
 | [`action-safety.md`](action-safety.md) | Action safety | Consequential-action gates plus design-conformance architecture delta classification, exact approval boundaries, and deterministic retry stop |
@@ -272,7 +273,7 @@ These capabilities summarize the current operating model at the front-page level
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
 | [`document-governance.md`](document-governance.md) | Document governance baseline | One authority model for README/design/diagram/changelog/patch/history, including verified timestamped Patch identity, plus conditional diagram synchronization and UDVC-1 |
-| [`document-integrity.md`](document-integrity.md) | Document integrity | Cross-reference consistency, evidence/hash-bound Patch rename propagation, archive preservation, rollover boundaries, and no-drift / no-delete-by-hygiene discipline |
+| [`document-integrity.md`](document-integrity.md) | Document integrity | Cross-reference integrity, payload-versus-project proof separation, split-source closeout blocking, preservation, and no-delete/root-replacement-by-hygiene discipline |
 | [`safe-io.md`](safe-io.md) | Safe file and terminal I/O | Bounded reading/output, parent-index-first reads, and rollover signals for oversized entrypoints |
 | [`external-verification-and-source-trust.md`](external-verification-and-source-trust.md) | External source trust | Ranks reachable authorized claim-fit sources and bounded substitutes after capability preflight |
 | [`memory-governance-and-session-boundary.md`](memory-governance-and-session-boundary.md) | Memory governance | Keeps memory scoped, compact, path-aware, and subordinate to checked current evidence |
@@ -281,9 +282,9 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- Released `v10.67 / P150` advances `execution-and-goal-frame.md` to 1.33, `action-safety.md` to 1.6, and `coding-discipline.md` to 1.6 for architecture-bearing mutation preflight, no-fork correction, regression-versus-gap diagnosis, and architecture fitness verification.
-- Case 18, its August observed-evidence record, and M35-M40 exercise route-owner fork, existing-path regression, invented-path functional false positives, bounded repair, design-backed approved expansion, and stale-work reconciliation; the runtime inventory remains exactly 19, fresh-public master/tag verification passed, and the released payload was installed twice with 19/19 byte-and-mode parity and an identical second pass.
-- The release commit is `bd3aa36ff0d7c7712270750249031f362968854c`, annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`, and Release URL https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67.
+- Candidate `v10.68 / P151` advances `authority-and-scope.md` to 2.8 and `document-integrity.md` to 1.14 so development stays in one user- or project-selected Active Project Root and exact Runtime payload parity cannot be mistaken for full-project convergence.
+- Case 19/M41-M45, plugin zero-drift comparison, Bash/PowerShell fixtures, Patch tests, two-pass disposable installation, and independent reviews pass in local candidate scope; publication and real installation remain pending, so the candidate does not claim released, installed, or live-verified status.
+- Latest immutable release remains `v10.67 / P150`, release commit `bd3aa36ff0d7c7712270750249031f362968854c`, annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`, and Release URL https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67. Its Case 18/M35-M40 architecture-conformance evidence and two-pass installed 19/19 payload remain preserved.
 - Released `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
 - The correction was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`, and fresh-public master/tag verification passed.
 - All 19 Runtime Rules, owner triads, installers, Case 17, matrix/coverage, and Patch artifacts remain protected byte-for-byte. No real runtime reinstall was required.
@@ -292,8 +293,8 @@ Current source state:
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
-- Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `<user-runtime-rules>` is a downstream user-scope install target.
-- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66
+- Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked Active Project Root is the development/commit/release-source authority, while temporary locations are read-only evidence or disposable verification and `<user-runtime-rules>` remains a downstream install target.
+- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1075,7 +1076,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: published `v10.67 / P150` is the latest immutable release. It advances exactly three Runtime Rules for architecture-conformance/no-fork behavior while protecting the other 16 and preserving the ordered 19-file installer payload; fresh-public master/tag verification and the exact two-pass real installation passed.
+- Source state: `v10.68 / P151` is a locally verified candidate advancing exactly two Runtime Rules for Active Project Root authority and payload-versus-project proof separation; Case 19, candidate fixtures, disposable installation, independent reviews, and plugin preservation checks pass. Publication and real installation remain pending. Published `v10.67 / P150` remains the latest immutable released and installed state.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.

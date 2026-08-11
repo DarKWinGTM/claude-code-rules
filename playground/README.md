@@ -66,7 +66,7 @@ The required realistic multi-turn dialogue is supporting illustration only; the 
 - [coverage.md](coverage.md) — maps all 19 active runtime rules to at least one scenario family
 - [matrix.md](matrix.md) — virtual operational-case matrix across decision and execution axes
 - [templates/case-template.md](templates/case-template.md) — standard shape for future case additions
-- [observed/2026-08.md](observed/2026-08.md) — current observed evidence for Case 18
+- [observed/2026-08.md](observed/2026-08.md) — current observed evidence for Cases 18 and 19
 - [observed/2026-05.md](observed/2026-05.md) — earlier observed-case log
 
 ---
@@ -91,6 +91,7 @@ The required realistic multi-turn dialogue is supporting illustration only; the 
 16. [case-16-end-to-end-language-aligned-goal-surface.md](cases/case-16-end-to-end-language-aligned-goal-surface.md)
 17. [case-17-proactive-goal-surfacing-and-decision-ready-explanation.md](cases/case-17-proactive-goal-surfacing-and-decision-ready-explanation.md)
 18. [case-18-architecture-conformance-and-no-fork-gates.md](cases/case-18-architecture-conformance-and-no-fork-gates.md)
+19. [case-19-active-project-root-source-authority.md](cases/case-19-active-project-root-source-authority.md)
 
 ---
 

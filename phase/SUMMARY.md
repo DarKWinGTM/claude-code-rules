@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.23
+> **Current Version:** 2.24
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P150 completed — immutable v10.67 is fresh-public verified and the exact released 19-Rule payload is installed
+> **Status:** P151 active — v10.68 Active Project Root authority and payload-versus-project convergence candidate
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,11 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- No active release phase is selected. Open the next governed objective only after design/TODO/phase/Patch startup and lineage checks identify its owner, output, and verification gate.
+- **P151:** [Active Project Root source authority](phase-151-active-project-root-source-authority.md) — v10.68 candidate active.
+  - Goal: make the user- or project-selected Active Project Root the sole development and governed-source authority, with `/tmp`, worktrees, clean clones, and alternate checkouts limited to read-only evidence or disposable verification.
+  - Output: two Runtime owner triads, corrected project-local guidance, master governed sync, and Case 19/M41-M45 without changing the exact 19-Rule inventory.
+  - Gate: two changed/17 protected Runtime Rules, plugin zero drift, Case 19, fixtures, two-pass disposable install, independent reviews, and separate Runtime payload parity versus Active Project Root convergence results.
+  - Patch: [Active Project Root Source Authority](../patch/2026-08-11T08-29-05Z--active-project-root-source-authority.patch.md).
 
 ### Blocked Predecessor
 
@@ -97,6 +101,20 @@ Earlier released phase-map detail remains preserved in the [2026-08-09 pre-rollo
 
 ---
 
+## P151 Lineage and Lane Map
+
+P151 is a distinct new major because it changes two Runtime Rule owner contracts and adds a new source-authority Scenario/TestKit family. It does not extend P150 architecture-path conformance: P150 governs mutation inside the selected architecture, while P151 governs which project root may own development and how project convergence is proved.
+
+| Lane | Owner/output | Verification gate | Status |
+|---|---|---|---|
+| Root baseline/startup | Active Project Root audit, plugin baseline, P151 phase/TODO/Patch/summary | exact root identity, no non-plugin pre-existing drift, plugin exclusion | verified in local candidate scope |
+| Runtime doctrine | authority and integrity Runtime/design/changelog triads plus project-local `CLAUDE.md` | root-only development, proof-layer separation, two changed/17 protected | verified in local candidate scope |
+| Master governed sync | master design shards, README, changelog, TODO, phase, Patch | links, versions, candidate-safe wording, stale template reference repair | verified in local candidate scope |
+| Scenario evidence | Case 19, M41-M45, coverage/index, bounded observed evidence | five branches and fact/observed/virtual separation | verified in local candidate scope |
+| Verification/publication/install | static checks, fixtures, disposable payload, plugin comparison, reviews, approval packets | no plugin drift; payload and project proof reported separately; exact approval before consequential action | local candidate checks passed; publication/install blocked pending approval |
+
+---
+
 ## P150 Lineage and Lane Map
 
 P150 is a distinct new major because it changes three Runtime Rule owner contracts and adds a new architecture-conformance Scenario/TestKit family rather than extending P149 proof reachability or its P149-01 presentation correction.
@@ -119,54 +137,54 @@ P149/P149-01, P148, P073-13 through P073-15, and P147 are released historical fa
 
 ## Selected Semantic Coverage
 
-- **Architecture mutation preflight:** material route/service/client/transport/registry/state/read-write/fallback/authority change binds to active design and the current owner/producer/state/readers/writers/consumers/dependencies before source editing.
-- **Regression-versus-gap:** a missing field or output is classified as existing-path regression, state/config drift, dormant/disconnected path, contract mismatch, unresolved state, or verified capability gap before infrastructure is proposed.
-- **Delta ownership:** incomplete design/owner/security/rollback evidence stays `OBSERVE_ONLY`; bounded in-authority defects use `REPAIR_IN_PLACE`; additive, authority-replacement, and multi-authority changes require exact action-and-scope approval.
-- **Design-backed expansion:** existing-owner insufficiency may justify expansion, but active design may independently select a new architecture; either path still uses the canonical safety approval boundary.
-- **Architecture fitness:** functional proof passes through the selected design path and negative checks reject unauthorized alternate owners, routes, clients, transports, registries, state keys, dual read/write, shadows, fallback, and discovery.
-- **No-fork correction:** user or checked-design rejection retires stale tasks, plans, tests, and source branches rather than preserving an alternate path through sunk work.
-- **Ordinary repair:** local mapping or transformation correction inside the selected authority remains proportionate and does not inherit topology-expansion ceremony.
-- **Protected runtime:** exactly three Runtime Rule triads advance; the other 16 rules and the ordered 19-file installer/fixture inventory remain protected.
-- **Evidence shape:** Case 18 separates rule-enforced fact, checked observed evidence, and virtual branches; its mixed dialogue is labeled and the checked local transcript path is recorded as evidence, not portable runtime doctrine.
-- **Governed density:** README and master changelog broad repair is deferred to a dedicated post-P150 document owner; current edits remain exact and bounded.
-- **Out of scope:** project-specific application/data migration, installer behavior changes, a new Runtime Rule, dirty-backup reconciliation, and unapproved publication or real installation.
+- **Active Project Root:** current user direction or checked project-local authority selects one canonical development workspace for the active objective.
+- **Root-only mutation:** source, Runtime Rule, governed document, config, script, test, plugin/support/tooling, commit-source, and publication-source mutation stays inside that root.
+- **Alternate-path boundary:** `/tmp`, worktrees, clean clones, alternate checkouts, public remotes, tags, and Releases remain read-only evidence/reference or disposable-verification surfaces unless user/project authority explicitly selects another root.
+- **Dirty-root handling:** modified or untracked state is inspected, owner-classified, and preserved pending decision; it neither proves ownership nor authorizes bypass, replacement, or sync-back from public state.
+- **Blocked-root behavior:** permission, conflict, or ownership ambiguity produces an exact stop/recovery condition rather than an alternate implementation lane.
+- **Proof separation:** Runtime payload parity proves only the selected ordered installation payload; full-project convergence checks the relevant source set from the Active Project Root.
+- **Mixed proof:** payload success cannot close the objective while project source/governed/plugin/support/tooling/generated-input/mode or classified working state remains split or unexplained.
+- **Protected runtime:** exactly two Runtime Rule triads advance; the other 17 and the ordered 19-file installer/fixture inventory remain protected.
+- **Evidence shape:** Case 19 separates rule-enforced doctrine, checked incident evidence when exact anchors are available, and virtual M41-M45 branches.
+- **Project-local binding:** `CLAUDE.md` names the checked local Active Project Root; portable Main RULES uses the semantic term rather than exporting the workstation path.
+- **Out of scope:** `plugin/**` mutation, a new Runtime Rule, root replacement, alternate-checkout development, force push, unapproved publication, and unapproved real installation.
 
 ---
 
 ## Development Verification / TestKit Coverage
 
-Selected route: `new_testkit_scenario` through Case 18, with Cases 17/12/04 protected as prior-family evidence, plus exact doctrine/triad/allowlist/protected-byte checks, Bash/PowerShell installer fixtures, Patch compliance, disposable installation, independent reviews, approval-gated runtime installation, and fresh-public verification.
+Selected route: `new_testkit_scenario` through Case 19, with Case 18 protected as prior-family evidence, plus exact doctrine/triad/allowlist/protected-byte checks, Bash/PowerShell installer fixtures, Patch compliance, two-pass disposable installation, plugin baseline comparison, and independent reviews.
 
 Required checks:
-- Material architecture-bearing mutation invokes the design/safety preflight before source editing, while ordinary bounded repair remains proportionate.
-- Missing field/output evidence is classified through the existing owner/producer/state/readers/writers/consumers chain before a capability gap is accepted.
-- Design-backed expansion or replacement is classified by `action-safety.md` and receives exact approval without requiring existing-owner insufficiency as the only valid design basis.
-- Functional success for an unauthorized alternate path remains architecture-incomplete; negative alternate-authority checks and the one-authority invariant must pass.
-- User or checked-design no-fork correction retires stale tasks, plans, tests, and source branches rather than preserving the rejected path through sunk work.
-- Case 18 includes a realistic labeled four-turn mixed dialogue, explicit fact/observed/virtual separation, exact checked transcript evidence, and M35-M40 mapping.
-- Exactly three Runtime Rules advance; the other 16 remain byte-and-mode identical and all four installer/fixture arrays preserve the exact ordered 19-file payload.
-- The repaired candidate has no deletion, rename, symlink, submodule, binary, or tracked mode drift; exact path count and manifest are regenerated after final edits.
-- Links, versions, sessions, master maps, substantive bodies, Patch creation evidence, density-defer owner, and candidate-safe lifecycle wording align.
-- Bash/PowerShell installer fixtures, Patch timeline regression, disposable installation, second-pass idempotence, and exclusion of governed/playground files from runtime scope pass.
-- Independent doctrine/security, payload, and release/no-drift reviews pass before the exact install/publication approval packet is presented.
-- Exact approved publication, fresh-public verification, rollback snapshot, real Runtime Rule installation, and installed parity pass before closeout.
+- `authority-and-scope.md` is the sole owner of Active Project Root selection; consumers reference rather than redefine that authority.
+- Active project contracts contain no positive clean-clone/worktree/alternate-checkout/`/tmp` development or sync-back guidance.
+- Temporary paths remain valid for bounded read-only evidence and disposable verification, but their mutations never count as implementation.
+- A dirty or blocked Active Project Root causes inspection or an explicit stop/recovery condition, never assistant-selected alternate development.
+- `document-integrity.md` states explicitly that Runtime payload parity is not full-project convergence and blocks mixed-proof closeout.
+- Case 19 maps forbidden alternate development, correct root-only work, disposable evidence, blocked-root stop behavior, and two-layer proof to M41-M45.
+- Exactly two Runtime Rules advance; the other 17 remain byte-and-mode identical and all installer/fixture arrays preserve the exact ordered 19-file payload.
+- The candidate has no deletion, rename, symlink, submodule, binary, unexpected mode, or mutation outside the approved P151 allowlist.
+- Final `plugin/**` path/status/mode/hash state equals the initial verification-only baseline with zero drift.
+- Links, versions, sessions, master maps, substantive bodies, Patch creation evidence, and candidate-safe lifecycle wording align.
+- Bash and available PowerShell fixtures plus two-pass disposable installation pass with 19/19 byte/mode/order/body parity, idempotence, unrelated-file preservation, and governed/plugin/support/template/playground exclusion.
+- Independent doctrine and release/no-drift reviews pass before exact publication or real-install approval packets are presented.
 
-Current evidence: release commit `bd3aa36ff0d7c7712270750249031f362968854c` preserves the repaired 25-path candidate at immutable annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`. Focused Case 18/triad assertions, metadata/link/mode/shape and protected-byte checks, Bash/PowerShell fixtures, Patch timeline 32/32, Patch inventory 173/0, two-pass disposable installation, and independent doctrine/security, payload, and release/no-drift reviews passed. Fresh public master/tag clones reproduced the approved tree and gates. The exact public-tag payload then passed two real `/home/node/.claude/rules` installation passes at 19/19 byte-and-mode parity with identical second pass, ownership-manifest convergence, unrelated-file preservation, and no unexpected quarantine. Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67.
+Current evidence: the pre-wave audit checked local `master`, local `HEAD`, upstream, and public `origin/master` equal at `7b172a6f7c1c8e1f576788372ab8d8b9bcfdfe82`, ahead/behind `0/0`. The local candidate passes the exact 22-path non-plugin allowlist, two changed/17 protected Runtime Rules, four identical ordered 19-file arrays, 366 local-link targets, Case 19/M41-M45 assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, and 179/0 Patch inventory. The final plugin comparison matches the verification-only baseline at 1,188 entries: 63 modified tracked, 1,125 untracked, 1,187 regular files, and one symlink; baseline mode `0600` and SHA-256 `20f806be4450ef7e6f1b8457f20107e1f6e5ebdbf741b346b2fe51ad5c8a3688` remain intact. Independent reviews found two material status/evidence-label issues; both were corrected, and both bounded rechecks passed with no remaining material finding. Publication and real installation remain unverified and approval-gated.
 
 ---
 
 ## Rollback / Containment
 
-- Preserve immutable release commit `bd3aa36ff0d7c7712270750249031f362968854c`, annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`, and the v10.67 GitHub Release; use a later release for any defect.
-- Preserve the approved pre-install byte-and-mode rollback snapshot at `/home/node/.claude/rules-rollback/v10.67-bd3aa36ff0d7c7712270750249031f362968854c-preinstall`; installation passed, so restoration was not required.
-- Keep the dirty backup checkout, unrelated repository/runtime state, and non-runtime governed/playground artifacts outside the 19-Rule install authority.
-- Any later public closeout or correction remains a separate exact SHA/scope/target/evidence action and must not move the immutable tag.
+- Preserve all pre-existing `plugin/**` paths, statuses, modes, and bytes against the verification-only baseline; any drift blocks continuation.
+- Before publication, rollback is limited to the P151 allowlist inside the Active Project Root and must not reset, clean, restore, checkout, stash, replace, or sync the root from another location.
+- Preserve immutable v10.67 release commit `bd3aa36ff0d7c7712270750249031f362968854c`, tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`, Release, and installed rollback snapshot; P151 uses a later release rather than mutating them.
+- Commit/push, annotated v10.68 tag/Release, real installation, and post-release closeout each remain separate exact action-and-scope approval gates.
 
 ---
 
 ## Next State
 
-P150 / v10.67 is completed. Immutable publication, fresh-public master/tag verification, rollback capture, and two-pass real installation passed. No successor release phase is selected; the next governed objective must establish its own owner, output, and verification gate.
+P151 / v10.68 is locally verified in the Active Project Root. The governed startup, plugin preservation baseline, Patch, two Runtime/design/changelog owner triads, project-local guidance, master governed sync, and Case 19/M41-M45 exist; candidate checks and plugin zero-drift comparison pass. Two independent review findings were corrected, and their bounded rechecks pass. The exact commit/push approval packet is ready; annotated tag/Release, real installation, and post-release closeout remain later separate approval gates.
 
 ---
 

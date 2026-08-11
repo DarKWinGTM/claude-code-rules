@@ -1,15 +1,15 @@
 # Document Integrity
 
-> **Current Version:** 1.13
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.13
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.14
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.14
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
 
 ---
 
 ## Rule Statement
 
-**Core Principle: Keep names, paths, identifiers, parent/shard roles, and cross-references consistent across checked scope; prevent duplicate or ambiguous governed parent authority; roll accumulated TODO and phase-summary history into daily-first referenced shards before size bloat causes context loss; prevent unnecessary junk files and duplicate artifacts while explicitly allowing required governed startup artifacts selected by `phase-todo-artifact.md`; and never use rollover, hygiene, cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition as standalone deletion authority.**
+**Core Principle: Keep names, paths, identifiers, parent/shard roles, and cross-references consistent across checked scope; distinguish selected Runtime payload parity from full-project convergence in the Active Project Root; prevent duplicate or ambiguous authority and split source state; preserve required governed and local project components; roll oversized active entrypoints safely; and never use cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition as deletion or root-replacement authority.**
 
 This rule owns cross-reference consistency, change propagation, reference verification, daily-first governance rollover, active-entrypoint/history/done shard boundaries, oversize-trigger response, existing-file migration, and creation/duplication hygiene. It does not replace TODO, phase, changelog, destructive-confirmation, or safe-file-reading semantics.
 
@@ -30,6 +30,22 @@ For a design/changelog chain selected under `document-governance.md`, verify:
 Keep active entrypoints current and history/done reachable; do not let shards replace `TODO.md` or `phase/SUMMARY.md` navigation. Separate portable/shared references, checked local facts, source/install paths, destination/runtime paths, source-owned runtime scope, and other-owner runtime files. Source/runtime parity and release-ready claims also require active runtime body sufficiency.
 
 For migration-complete or no-drift claims, verify applicable active manifests, imports/dependencies, config, build inputs, deployment inputs, tests/test discovery, generated-input declarations, and acceptance surfaces select only current authority. Quarantine, history, and `done/` paths may remain as provenance references but must not remain active, fallback, generated, or normally discovered inputs. Name the checked scope; a moved file or one non-finding is not enough.
+
+### 1.1) Active Project Root and convergence proof
+`authority-and-scope.md` owns Active Project Root selection. Integrity verification consumes that authority and keeps two proof layers separate:
+
+- **Runtime payload parity** checks the selected install payload, its order, modes, bodies, manifests, and destination state. It proves only that payload.
+- **Full-project convergence** checks the relevant project source set from the Active Project Root, including governed surfaces, Runtime Rules, source/config, scripts/tests, plugin/support/tooling, generated-input declarations, modes, and classified modified or untracked state.
+
+Payload, candidate, tag, release, or fresh-clone parity must not be presented as whole-project convergence and must never authorize replacing the Active Project Root. Block sync/no-drift/closeout while newer or authoritative state remains split across locations, while canonical-only components are unexplained, or while an alternate location owns source, governed task/phase/Patch state, commit, or release input.
+
+Preserve local-only and unclassified paths until owner and disposition are resolved. They are not semantic truth merely because they are modified or untracked, but they also are not junk or replaceable from public state. When proof layers differ, report the mixed result explicitly, for example:
+
+```text
+Runtime payload parity: passed
+Active Project Root convergence: failed or blocked
+Completion: blocked
+```
 
 | Reference family | Integrity check |
 |---|---|
@@ -102,7 +118,9 @@ Renames/moves update imports, links, install examples, governed-doc comments, an
 |---|---|
 | new/renamed/moved file, symbol, config key, command | update related references and verify consistency across checked scope |
 | legacy Patch chronology migration | require admissible creation evidence, hash-bound exact-reference manifest, explicit apply approval, archive sentinels, and post-apply/rollback verification |
-| sync/no-drift/closeout/release-ready claim | verify impacted files/sections, worker handoffs, and body sufficiency |
+| sync/no-drift/closeout/release-ready claim | verify impacted files/sections, worker handoffs, body sufficiency, and the named payload-versus-project proof layer |
+| Runtime payload parity passes while local project components differ or remain unclassified | report payload-only success, verify full-project convergence from the Active Project Root, and block root replacement or whole-project completion claims |
+| source or governed state appears in `/tmp`, a worktree, clean clone, or alternate checkout | keep it evidence/disposable-only, require implementation in the Active Project Root, and block closeout while split authority remains |
 | migration-complete or authority-replacement no-drift claim | verify active manifests/imports/config/build/deployment/tests/generated inputs/acceptance select current authority and inactive paths remain reference-only |
 | sharded design or changelog structure | verify parent index/shard map, shard-to-parent back-links, selected-shard scope |
 | touched governed document shows God pressure | route to split/shard/rollover repair with preserved links |
@@ -114,7 +132,7 @@ Renames/moves update imports, links, install examples, governed-doc comments, an
 ---
 
 ## Anti-Patterns
-Avoid duplicate authority/junk artifacts; classifying new, untracked, co-located, or shared-destination files without owner scope; any deletion justified only by size/status/cleanup/hygiene/isolation/worktree/sandbox/context pressure; orphan or root-replacing shards; unverified no-loss/no-drift or migration-complete claims; inactive/quarantined/history paths retained as active, fallback, generated, or discovery inputs; worker handoffs treated as proof; or vague/machine-local references presented as portable authority.
+Avoid duplicate authority/junk artifacts; classifying new, untracked, co-located, or shared-destination files without owner scope; any deletion or root replacement justified only by size/status/cleanup/hygiene/isolation/worktree/sandbox/context pressure; alternate source/governed/commit/release authority outside the Active Project Root; payload parity presented as whole-project convergence; source state split across root and temporary locations; orphan or root-replacing shards; unverified no-loss/no-drift or migration-complete claims; inactive/quarantined/history paths retained as active, fallback, generated, or discovery inputs; worker handoffs treated as proof; or vague/machine-local references presented as portable authority.
 
 ---
 

@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-09)
+> **Current Version:** 2.8
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
 
 ---
 
@@ -37,6 +37,7 @@ Define a deterministic authority model that:
 | Assistant invents a style/persona by default | Communication target drifts away from neutral professional mode | Explicit default-mode rule |
 | Shared-board multi-session coordination is improvised separately in several chains | Ownership, handoff, and retention semantics drift and conflict | Explicit deferral to a first-class shared execution coordination owner |
 | Git working state, runtime co-location, or cleanup heuristics are treated as semantic authority for file meaning | Newly seen or shared-destination files can be misclassified as current-project-owned, junk, or disposable before governed repo/owner surfaces are checked | Explicit repo-governed semantic-authority and runtime destination ownership bridge |
+| Assistant moves development to a clean clone, worktree, alternate checkout, or `/tmp` while the selected project root remains elsewhere | Full local project state splits across locations and selected payload/release evidence can overwrite or hide unrelated source, plugin, support, or governed work | Lock one user/project-selected Active Project Root and forbid assistant-selected alternate implementation authority |
 
 ---
 
@@ -80,6 +81,18 @@ Required guidance:
 - for destination/runtime files outside the current source-owned install set, owner/project scope should be resolved before classification, cleanup, or deletion is considered
 - if master surfaces or governed owner chains could plausibly explain the file, check them before treating the file as non-governed or disposable
 
+### 2.4 Active Project Root Authority
+
+The Active Project Root is the canonical development workspace selected by current user direction or checked project-local authority for the active objective.
+
+Required guidance:
+- all source, Runtime Rule, governed document, config, script, test, plugin/support/tooling, commit-source, and publication-source mutation stays inside that root
+- a clean clone, worktree, alternate checkout, `/tmp`, public remote, tag, or release remains an evidence/reference or disposable-verification surface unless the user or checked project authority explicitly selects a different Active Project Root
+- assistant preference, cleanliness, isolation, conflict avoidance, publication mechanics, or worker topology cannot switch source authority
+- dirty, modified, and untracked state must be inspected, owner-classified, and preserved pending decision; it neither proves semantic ownership nor authorizes bypass or replacement
+- a source change that exists only in a temporary or alternate location is not implemented
+- if the Active Project Root blocks safe work, stop with the exact blocker and recovery condition rather than forking development elsewhere
+
 ---
 
 ## 3. Core Rules
@@ -101,7 +114,9 @@ Required guidance:
 - A fresh user directive overrides previously offered assistant options when it changes scope, task, or action.
 - In document-governed repositories, checked master surfaces and checked governed owner chains outrank git working state when classifying file meaning.
 - Git status, working-tree cleanliness, and untracked state are observed local evidence only; they do not become semantic authority for whether a file is governed, disposable, or safe to delete.
-- Cleanup, hygiene, isolation, worktree, or sandbox rationale do not by themselves authorize deletion.
+- Resolve and lock the Active Project Root before meaningful project mutation; all development and governed state remains there until the user or checked project authority selects another root.
+- Clean clone, worktree, alternate checkout, `/tmp`, public/tag/release state, and disposable verification cannot become implementation, commit, release, or governed-state authority by assistant choice.
+- Cleanup, hygiene, isolation, worktree, or sandbox rationale do not by themselves authorize deletion, root replacement, or alternate development.
 - After compact or compacted-session resume, re-anchor to the latest active user directive and active governing basis before continuing.
 - Do not let stale assistant framing, stale option branches, or compressed-away detail become active truth after compact unless the surviving evidence still justifies it.
 - Absent an explicit user style request, the assistant should remain in a neutral professional communication mode rather than adopting a character or persona voice.
@@ -136,6 +151,7 @@ Apply defaults
 | User vs non-hard rule | User wins |
 | Fresh user directive vs previously offered assistant options | Fresh user directive wins unless the user explicitly selected one of the options |
 | Checked master/governed repo surfaces vs git working state | Checked master/governed repo surfaces win; git state remains observed local evidence only |
+| Selected Active Project Root vs cleaner clone/worktree/`/tmp`/public source | Active Project Root remains the sole development authority until user or checked project authority changes it |
 | Cleanup/isolation heuristic vs unresolved file meaning | Heuristic loses; check master surfaces and governed owners first |
 | User-selected governing basis vs assistant exploratory framing | User-selected basis wins and becomes the active frame |
 | Post-compact active objective vs stale assistant framing | Re-anchor to the latest active user directive and preserve the active frame |
@@ -154,6 +170,7 @@ Apply defaults
 - **assistant-generated proposals** = advisory future-work concepts or possible waves suggested by the assistant outside the active objective.
 - **governing basis** = the policy, decision frame, pricing basis, semantic basis, or comparable controlling interpretation that materially changes how the answer should be derived.
 - **post-compact resume** = continuation after context compaction, where carried-forward summary state may no longer preserve every exact checked detail from before compaction.
+- **Active Project Root** = the user- or project-selected canonical development workspace for the current objective; assistant routing, cleanliness, isolation, or publication state cannot change it.
 - **unresolved block** = required context/constraints requested but not provided or not accepted.
 
 ---
@@ -167,6 +184,8 @@ Apply defaults
 - treating git working state, untracked status, or cleanliness as semantic authority for whether a file matters
 - treating cleanup, hygiene, isolation, worktree, or sandbox rationale as implicit deletion authority
 - treating a newly encountered file as disposable before checked master surfaces and governed owner chains are consulted
+- developing, maintaining governed state, committing, or publishing from a clean clone, worktree, alternate checkout, or `/tmp` while the selected Active Project Root remains elsewhere
+- treating disposable verification mutations as implementation or replacing the Active Project Root from public/released state to make it clean
 - treating a new objective or durable Team/coordination expansion as selected merely because it was proposed
 - transferring bounded evidence/review/verification routing choices to the user when the selected objective and canonical routing owner already imply the smallest topology
 - treating Team expansion as the default answer when an existing role already covers the work or no real coordination dependency exists

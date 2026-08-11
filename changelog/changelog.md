@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.67
+> **Current Version:** 10.68
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -12,6 +12,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.68 | 2026-08-11 | **[Opened Active Project Root source authority candidate](changelog/v10.68-active-project-root-source-authority.changelog.md#version-1068)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 10.67 | 2026-08-11 | **[Released architecture conformance and no-fork gates](changelog/v10.67-architecture-conformance-and-no-fork-gates.changelog.md#version-1067)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 10.66 | 2026-08-10 | **[Released playground flow-diagram format correction](changelog/v10.66-playground-flow-diagram-format-correction.changelog.md#version-1066)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 10.65 | 2026-08-09 | **[Released proof reachability and authenticated evidence — post-publication diagram-format gate failed](changelog/v10.65-proof-reachability-and-authenticated-evidence.changelog.md#version-1065)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |

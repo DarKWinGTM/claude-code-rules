@@ -1,7 +1,7 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.67
+> **Current Version:** 10.68
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -14,7 +14,12 @@
 ### Runtime and governed authority
 
 - [ ] README remains overview/onboarding/current-state only; detailed target truth, history, execution, and before/after review stay with their owning surfaces
+- [ ] Current user direction or checked project-local authority identifies one Active Project Root before meaningful mutation, and every source/governed/config/script/test/plugin-support-tooling/commit/release input originates there
+- [ ] `/tmp`, worktrees, clean clones, alternate checkouts, public remotes, tags, and Releases are read-only evidence/reference or disposable-verification surfaces unless user/project authority explicitly selects another root
+- [ ] Dirty, modified, and untracked root state is inspected and preserved pending owner classification; a permission/conflict/ownership blocker stops work with an exact recovery condition rather than creating an alternate implementation lane
 - [ ] Runtime Rules remain body-sufficient active behavior contracts and the source-owned install inventory remains exactly the ordered 19 root files
+- [ ] Runtime payload parity proves only the selected order/modes/bodies/manifests/destination set; full-project convergence is checked separately from the Active Project Root across relevant governed/source/config/scripts/tests/plugin/support/tooling/generated-input/mode/classified-working-state surfaces
+- [ ] Candidate/tag/release/fresh-clone/installed payload equality never authorizes Active Project Root replacement or whole-project/no-drift wording while source state remains split or unexplained
 - [ ] Governed design/changelog chains classify `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-reference-only` before meaningful normalization
 - [ ] Exactly one active parent model remains per chain; inactive history, quarantine, and `done/` never become competing authority, generated input, or automatic fallback
 - [ ] Parent/shard/version links, maps, and back-links resolve across the selected chain shape
@@ -52,11 +57,14 @@
 ### Release and evidence boundary
 
 - [ ] Changed-path allowlist, `git diff --check`, changed triad versions, unchanged-chain versions, links, literals, force words, and file modes pass
-- [ ] Case 18 and M35-M40 cover route-owner fork, regression-versus-gap, invented-path functional PASS with conformance failure, ordinary repair, approved design-backed expansion, and no-fork correction
-- [ ] Exactly the execution 1.33, action safety 1.6, and coding discipline 1.6 Runtime/design/changelog triads advance; the other 16 Runtime Rules remain byte-and-mode identical
+- [ ] Case 19 and M41-M45 cover forbidden alternate development, correct root-only work, disposable evidence, blocked-root stop behavior, and Runtime-payload-PASS/project-convergence-BLOCKED results
+- [ ] Case 18/M35-M40 remain protected architecture-conformance evidence and are not rewritten into project-root authority
+- [ ] Exactly the authority-and-scope 2.8 and document-integrity 1.14 Runtime/design/changelog triads advance; the other 17 Runtime Rules remain byte-and-mode identical
+- [ ] Final `plugin/**` path/status/mode/hash state equals the pre-wave verification-only baseline, with no mutation outside the P151 allowlist
 - [ ] Bash/PowerShell installer and fixture arrays preserve the same exact ordered 19-file Runtime payload
-- [ ] Candidate/canonical/root parity and body sufficiency pass 19/19 while unrelated runtime files remain byte-identical
-- [ ] Fresh public clone reproduces the installer/scenario proof from the released commit
+- [ ] Two-pass disposable installation from the Active Project Root passes 19/19 order/mode/body parity, idempotence, unrelated-file preservation, and governed/plugin/support/template/playground exclusion
+- [ ] Runtime payload parity and Active Project Root convergence are reported separately; mixed proof blocks completion
+- [ ] Fresh public clone reproduction is required only after separately approved publication from the Active Project Root
 - [ ] `implemented`, `tested`, `verified-in-scope`, `installed`, `released`, `fresh-clone-verified`, and `migration complete` wording never outruns the named evidence
 
 ## Integration
