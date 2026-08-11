@@ -1,8 +1,8 @@
 # Playground Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.54
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
+> **Current Version:** 10.67
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
 > **Section:** Governed playground family for RULES behavior scenarios
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -22,6 +22,8 @@ For `v10.23 / P115`, the family may also add a focused case family showing domin
 For `v10.24 / P116`, the family may also add a focused case family showing end-to-end language alignment across candidate-goal labels, promoted `/goal`, wrapper labels, recap lines, and exact-literal preservation when current RULES behavior justifies that scenario split.
 
 For `v10.25 / P117`, the family may also add a focused case family showing more proactive candidate-goal surfacing at real decision boundaries plus the requested decision-ready explanation shape when current RULES behavior justifies that scenario split.
+
+For `v10.67 / P150`, the family adds Case 18 for architecture conformance and no-fork gates. The scenario must bind architecture-bearing source mutation to active design and the existing owner/producer/state/readers/writers/consumers path, distinguish regression from verified capability gap, show that passing functional tests for an invented path do not satisfy architecture completion, and preserve ordinary bounded repair plus explicitly approved design-backed expansion controls.
 
 ---
 
@@ -130,14 +132,15 @@ Original baseline scenario families:
 9. governed artifact lifecycle
 10. external, memory, and portability boundary
 
-Grounded expansion patterns already justified by checked transcript evidence in this wave:
+Additional scenario families justified by checked transcript evidence and governed behavior coverage:
 11. status ladder and completion-claim audit
 12. workflow-blocked visual QA
-
-Additional focused scenario-family expansion justified by current governed behavior coverage in the current family:
-13. language-aware candidate-goal promotion
-14. end-to-end language-aligned goal surface
-15. proactive goal surfacing and decision-ready explanation
+13. live execution surface arbitration
+14. combined-rules execution-state orchestration
+15. language-aware candidate-goal promotion
+16. end-to-end language-aligned goal surface
+17. proactive goal surfacing and decision-ready explanation
+18. architecture conformance and no-fork gates
 
 ---
 
@@ -214,6 +217,7 @@ Playground closeout or proof should confirm:
 - each scenario visibly separates `rule-enforced fact`, `observed case`, and `virtual variant`
 - transcript-derived observed cases cite exact checked transcript paths and anchor hints
 - updated dialogues use richer multi-turn traces where relevant
+- Case 18 covers all six P150 branches and keeps functional success distinct from architecture-conformance and one-authority proof
 - `playground/coverage.md` maps all 19 active runtime rules to at least one scenario family
 - `playground/matrix.md` uses explicit virtual-case axes plus realism axes
 - README keeps only a compact pointer to the playground family

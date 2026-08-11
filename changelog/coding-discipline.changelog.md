@@ -1,14 +1,15 @@
 # Changelog - Coding Discipline
 
 > **Parent Document:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.5
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.6
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-08-11 | **[Added regression-gap diagnosis and architecture fitness verification](#version-16)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.5 | 2026-08-09 | **[Compacted coding integration handoffs](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.4 | 2026-08-09 | **[Added implementation completeness and source convergence](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -20,6 +21,22 @@
 | | | Summary: Created `coding-discipline.md` as a body-sufficient merged runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-16"></a>
+## Version 1.6: Added regression-gap diagnosis and architecture fitness verification
+
+**Date:** 2026-08-11
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Required missing fields, outputs, route results, configuration values, or consumer-visible values to be traced through the existing governed owner/producer/state/readers/writers/consumers path before new infrastructure is proposed.
+- Added explicit classification for existing-path regression, state/config drift, dormant or disconnected path, contract mismatch, unresolved state, and verified capability gap.
+- Routed only verified capability gaps into the canonical design/safety/approval boundary; ordinary regressions remain bounded current-authority repair.
+- Added architecture fitness verification: positive proof through the selected path plus proportionate negative checks against unauthorized alternate owners, routes, services, clients, transports, registries, state keys, dual read/write, shadow paths, fallbacks, and discovery edges.
+- Clarified that passing functional tests for an unapproved or design-divergent path cannot satisfy architecture or completion gates.
+
+### Summary
+This version prevents existing-path defects from being mistaken for missing architecture and keeps functional success separate from governed architecture conformance.
 
 <a id="version-15"></a>
 ## Version 1.5: Compacted coding integration handoffs

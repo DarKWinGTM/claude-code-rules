@@ -1,7 +1,7 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.5
+> **Current Version:** 1.6
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-08-11 | **[Added design-conformance architecture delta preflight](#version-16)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.5 | 2026-08-10 | **[Added authenticated/private capability preflight and deterministic retry stop](#version-15)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.4 | 2026-08-09 | **[Separated Agent Team failure posture from worker lifecycle](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-08-09 | **[Added single-authority migration convergence and controlled restoration](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -18,6 +19,22 @@
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-16"></a>
+## Version 1.6: Added design-conformance architecture delta preflight
+
+**Date:** 2026-08-11
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Added the canonical architecture delta preflight binding active design, current owner/producer/state/readers/writers/consumers/dependencies, last-known-working path, proposed delta, absorption check, security boundary, approval, and rollback/retirement direction.
+- Defined a fork as another owner or execution path for an already governed role, regardless of private, internal, temporary, diagnostic, adapter, compatibility, or fallback labeling.
+- Kept incomplete or ambiguous architecture at `OBSERVE_ONLY` and bounded in-authority defects at `REPAIR_IN_PLACE`.
+- Classified checked replacement as `REPLACEMENT_MUTATION` and new/parallel authority as `ADDITIVE_EXPANSION` through the existing topology model.
+- Preserved explicit approval for additive expansion, multi-authority mode, and authority-baseline changes; a verified capability gap justifies a proposal but not approval.
+
+### Summary
+This version makes architecture expansion design-bound, one-authority-aware, and approval-gated without turning ordinary current-owner repair into topology ceremony.
 
 <a id="version-15"></a>
 ## Version 1.5: Added authenticated/private capability preflight and deterministic retry stop

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-08-10
-> **Current Release:** v10.66 published, immutable, and fresh-public verified
-> **Active Wave:** none selected after P149-01/v10.66 closeout
+> **Last Updated:** 2026-08-11
+> **Current Release:** v10.67 candidate active; v10.66 remains latest published and immutable
+> **Active Wave:** P150 / v10.67 architecture conformance and no-fork gates
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,9 +10,17 @@
 
 ## Active / In Progress
 
-No release wave is currently selected.
-
-The separately approval-gated v10.66 documentation closeout records already-verified public facts only; it does not change the immutable tag, Release, scenario files, or Runtime Rule payload.
+- [ ] **P150 / v10.67 architecture conformance and no-fork gates** is active on a clean public-master candidate.
+  - Goal: bind architecture-bearing source mutation to active design and the existing owner/producer/state/readers/writers/consumers path before implementation.
+  - Selected owners: `execution-and-goal-frame.md`, `action-safety.md`, and `coding-discipline.md`; no new Runtime Rule or installer inventory change.
+  - Verification: one Case 18 family covers route-owner fork, regression-versus-gap, invented-path tests, ordinary repair, approved expansion, and no-fork correction lock.
+  - Governance: [P150](phase/phase-150-architecture-conformance-and-no-fork-gates.md) and [Patch](patch/2026-08-11T05-01-55Z--architecture-conformance-and-no-fork-gates.patch.md); diagram posture `not required`.
+  - Implemented in candidate scope: Case 18/M35-M40, three advanced designs, three Runtime Rule gates, three per-rule changelogs, master design/changelog, release shard, README, phase/TODO/Patch, and playground synchronization.
+  - Verified on the repaired 25-path candidate: focused Case 18/triad assertions, metadata, links/anchors, whitespace/modes, no-Box-Drawing checks, three-changed/16-protected Runtime Rules, unchanged 19-file arrays, Bash/PowerShell fixtures, Patch tests 32/32, and two-pass disposable 19/19 installation passed.
+  - Repair scope added two required integration design shards and one August observed-evidence log while keeping governed/playground content outside the Runtime payload.
+  - Independent doctrine/security, fresh 25-path payload, and final release/no-drift re-reviews pass; the exact Patch creator event is anchored.
+  - Current gate: create the local candidate commit, regenerate the exact commit-bound publication/install evidence packet, and request explicit approval before any public or real-install mutation.
+  - Publication and real runtime installation remain separate exact SHA/scope approval-gated actions.
 
 ---
 
@@ -75,7 +83,7 @@ The separately approval-gated v10.66 documentation closeout records already-veri
 - [ ] `memory-context-intelligence` phase 030 shared-marketplace bridge/reproof remains planned and approval-sensitive.
   - Gate: recheck current runtime state and obtain explicit action-and-scope approval before marketplace/install/enable/registry/cache mutation.
 - [ ] `memory-context-intelligence` phases 017-018 main RULES promotion/merge remain deferred; trial and historical evidence do not authorize promotion.
-- [ ] Master governance density repair for large changelog/README/design history remains deferred to a dedicated owner-specific repair slice.
+- [ ] README and master changelog density repair remains deferred to a dedicated post-P150 `document-integrity` / `document-governance` phase; P150 uses exact anchored edits only, and the repair must open before the next broad absorption into either parent. Master-design pressure remains part of the same owner review.
 - [ ] Automated documentation-compliance validation and broad integration testing remain deferred by user direction.
 
 ---

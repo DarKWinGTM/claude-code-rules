@@ -1,6 +1,6 @@
 # Action Safety
-> **Current Version:** 1.5
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.5
+> **Current Version:** 1.6
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.6
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
@@ -104,6 +104,39 @@ Inspect current topology, lock one authority baseline per role/path, and prefer 
 
 ### Mutation gate
 Before mutating, identify current entities, authority baseline, ambiguities, delta class, coordination mechanism when relevant, multi-authority state, authorization, and rollback/retirement direction. If any gate is missing, remain `OBSERVE_ONLY` and request evidence/input.
+
+### Design-conformance architecture delta preflight
+Before material source work adds, relocates, duplicates, replaces, or reroutes an architecture-bearing role, bind the proposed change to the checked design and current authority path. This applies to routes/endpoints, services/runtime entities, clients/adapters, queues/event transports, registries, cache/state/database keys, credential/secret transports, reader/writer paths, fallbacks, and authority owners.
+
+Record the decision-changing fields:
+```text
+active_design_slice: ...
+current_owner: ...
+current_producer: ...
+current_state_or_transport: ...
+current_readers: ...
+current_writers: ...
+current_consumers: ...
+current_dependencies: ...
+last_known_working_path: ...
+observed_failure: ...
+proposed_delta: ...
+existing_owner_absorption_check: ...
+security_boundary: ...
+authority_change: ...
+approval_state: <not needed | pending | approved>
+rollback_or_retirement: ...
+```
+
+A fork exists when another owner or execution path is introduced for a role already governed by an active authority. Labels such as `private`, `internal`, `temporary`, `diagnostic`, `adapter`, `compatibility`, or `fallback` do not bypass this classification.
+
+Classify the result through the existing delta model:
+- missing or materially ambiguous design, owner, state flow, consumer/dependency, security, or rollback evidence → `OBSERVE_ONLY`; run the narrow discriminating check before source mutation
+- bounded defect that the current authority can satisfy without a parallel owner/path → `REPAIR_IN_PLACE`
+- checked design-backed replacement of the current owner/path → `REPLACEMENT_MUTATION`, with authorization and rollback direction proportionate to impact
+- new or parallel owner/path, duplicate transport/client/registry/key, dual read/write, shadow route, or automatic fallback → `ADDITIVE_EXPANSION`
+
+`ADDITIVE_EXPANSION`, explicit multi-authority mode, and authority-baseline changes require explicit approval tied to the exact delta and scope. A verified capability gap may justify proposing one of those classes, but it does not approve the mutation. Ordinary local implementation inside a checked existing owner remains proportionate.
 
 ### Mechanism-first design gate
 Before claiming a coordination/runtime design can deliver awareness, requests, interrupts, state sharing, recall, routing, or mutation, classify the checked mechanism and its capability. Passive boards do not prove live delivery; hooks do not prove cross-session transport; injected context does not prove state mutation; tmux input does not prove semantic acceptance; recall does not prove current truth; teams and plugins/MCPs are limited to documented capability.
@@ -263,6 +296,8 @@ Honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless
 | ambiguous destructive term (`copy into`, `merge`, `clean up`, `isolate`, etc.) | clarify intent before acting |
 | cleanup/hygiene/isolation framing on repo file | treat as high risk; require stronger semantic authority and explicit delete authorization |
 | unclear topology or conflicting authorities | inspect entities/baseline; clarify owner before mutating |
+| material route/service/client/adapter/transport/registry/key/read-write/fallback/owner mutation | bind the active design and existing authority path, complete the architecture delta preflight, and classify the exact topology delta before source mutation |
+| private/internal/temporary/diagnostic/compatibility path for a governed role | treat the alternate owner/path as a fork candidate; labeling does not bypass `ADDITIVE_EXPANSION` or approval |
 | starting another server/container/worker/target | classify `ADDITIVE_EXPANSION`; justify; request approval |
 | restart/rebind/swap current owner | declare replacement delta and rollback direction first |
 | scaling/HA/canary/compare/shadow | enter explicit multi-authority mode with boundaries and retirement plan |
@@ -283,7 +318,7 @@ Honesty: `attempts_used` must reflect real attempts; cooldown is guidance unless
 
 ## Anti-Patterns
 
-Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime or compatibility bridge without retirement; migration-complete wording while former imports, reads/writes, config/build/deploy/test discovery, shadow paths, or automatic fallback remain; quarantine inside active discovery or used as a normal source/restore path; automatic restoration instead of approved deliberate replacement; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; probing authenticated/private targets before capability and authorization preflight; treating a guest/login response, `401`, or `403` as authenticated-Product failure or treating `403` alone as proof of missing authentication; requesting raw credentials, cookies, tokens, private keys, or session dumps to compensate for missing supported capability; treating speculative URL changes as evidence-backed corrections; retrying the same guest-only or unsupported mechanism after the deterministic block is known; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; unchanged same-role respawn while duplicate/stale Agent Team teammate state is unresolved.
+Avoid: cleanup/hygiene/isolation/worktree rationale used as deletion authority; vague approval standing in for action-and-scope-tied destructive confirmation; architecture-bearing source mutation before active-design/current-authority preflight; private/internal/temporary/diagnostic/adapter/compatibility/fallback labeling used to hide a fork; debug-by-expansion or accidental parallel authority; implicit authority switch, silent delta escalation, or unapproved additive expansion; temporary runtime or compatibility bridge without retirement; migration-complete wording while former imports, reads/writes, config/build/deploy/test discovery, shadow paths, or automatic fallback remain; quarantine inside active discovery or used as a normal source/restore path; automatic restoration instead of approved deliberate replacement; unsupported "topology fixed" claims after mutation; emergency language used to bypass destructive-action confirmation; guessing root cause under pressure; treating temporary mitigation as permanent fix; skipping documentation of assumptions and pending verification; overriding user direction outside hard-boundary constraints; probing authenticated/private targets before capability and authorization preflight; treating a guest/login response, `401`, or `403` as authenticated-Product failure or treating `403` alone as proof of missing authentication; requesting raw credentials, cookies, tokens, private keys, or session dumps to compensate for missing supported capability; treating speculative URL changes as evidence-backed corrections; retrying the same guest-only or unsupported mechanism after the deterministic block is known; retrying deterministic failures without state change; claiming retries occurred when no real attempt happened; replacing provider `Retry-After` with a guessed delay; looping past the aggregate retry cap; unchanged same-role respawn while duplicate/stale Agent Team teammate state is unresolved.
 
 Better behavior: classify intent, lock authority, gate destructive or expanding moves on explicit confirmation, accelerate emergencies without abandoning evidence, and bound retries by class with honest reporting.
 

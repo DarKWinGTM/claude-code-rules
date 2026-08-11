@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.32
+> **Current Version:** 1.33
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.33 | 2026-08-11 | **[Added architecture-bearing mutation trigger and no-fork correction lock](#version-133)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.32 | 2026-08-10 | **[Added reachable proof closure and terminal live-verification goal boundaries](#version-132)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.31 | 2026-08-09 | **[Made advisory goal eligibility execution-owned](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.30 | 2026-08-09 | **[Added premise-before-expansion and completed-baseline protection](#version-130)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -48,6 +49,22 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-133"></a>
+## Version 1.33: Added architecture-bearing mutation trigger and no-fork correction lock
+
+**Date:** 2026-08-11
+**Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+
+### Changes
+- Added a pre-source-mutation trigger for material route, service, client, adapter, transport, registry, state-key, credential-transport, reader/writer, fallback, and authority-owner changes.
+- Required the selected design slice and current owner/producer/state/readers/writers/consumers/dependencies/last-known-working path to be checked before implementation momentum begins.
+- Handed topology classification and approval to `action-safety.md` while preserving evidence/cause and coding-verification ownership in their canonical rules.
+- Made user or checked-design no-fork correction retire stale premises and reconcile incompatible pending tasks, plans, tests, and source branches.
+- Kept ordinary local implementation and bounded current-authority repair proportionate.
+
+### Summary
+This version stops architecture-bearing implementation from inventing a path before the governed design and existing authority are understood, while keeping ordinary repair lightweight and correction-aware.
 
 <a id="version-132"></a>
 ## Version 1.32: Added reachable proof closure and terminal live-verification goal boundaries

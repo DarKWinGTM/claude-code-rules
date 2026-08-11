@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.65
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-09)
+> **Current Version:** 10.67
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
 
@@ -14,7 +14,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-The active target model released in `v10.65` keeps the same 19 body-sufficient source-owned Runtime Rules while adding proof-reachability, operational-capability-name classification, task reconciliation, authenticated/private capability, deterministic retry, reachable-source, and supplied-rendered-artifact evidence contracts across six existing owners. The target-state contracts remain current; a delayed audit found a presentation-only no-frame violation in two P149 scenarios, and selected child `P149-01 / v10.66` owns that correction without changing design semantics or the Runtime Rule payload. Released `v10.64` remains the immutable Patch-chronology predecessor and retains the repository-only `script/patch-timeline.mjs` Tool outside runtime installation.
+The active `v10.67 / P150` target keeps the same 19 body-sufficient source-owned Runtime Rules while adding a deterministic architecture-conformance pipeline across three existing owners: execution triggers design-bound preflight before architecture-bearing source mutation, action safety classifies the exact topology delta and approval boundary, and coding discipline distinguishes regression from verified capability gap before requiring functional plus architecture-fitness proof. Case 18 and M35-M40 exercise route-owner fork, existing-path regression, invented-path functional success, bounded repair, approved expansion, and no-fork correction. Released `v10.66` remains the immutable presentation-only predecessor, and released `v10.64` retains the repository-only `script/patch-timeline.mjs` Tool outside runtime installation.
 
 ---
 
@@ -27,6 +27,11 @@ Current target-state priorities:
 - keep one complete canonical owner per mechanism and compact consumers to activation, local consequence, exact error-prevention literal/order, or handoff only
 - separate a valid goal from its checkable factual premise, proposed path, and requested action before material expansion or replacement
 - verify current semantic ownership, active sibling roles, readers/writers, state, dependencies, and completed proof when a false premise would materially change architecture, behavior, risk, or scope
+- before material route/service/client/adapter/transport/registry/state-key/credential-transport/reader-writer/fallback/authority mutation, bind the selected design slice to the existing owner, producer, state or transport, readers, writers, consumers, dependencies, and last-known-working path
+- keep incomplete architecture at `OBSERVE_ONLY`, bounded existing-authority defects at `REPAIR_IN_PLACE`, and additive/multi-authority/baseline-authority changes behind exact approval; private/internal/temporary/diagnostic/compatibility/fallback labels do not exempt a fork
+- distinguish existing-path regression, state/config drift, dormant/disconnected path, contract mismatch, unresolved state, and verified capability gap before proposing infrastructure
+- require architecture-bearing work to pass functional proof through the selected path plus proportionate negative architecture-fitness checks; passing tests for an unapproved invented path do not close the objective
+- treat user or checked-design no-fork correction as an active constraint that retires stale premises and reconciles incompatible tasks, plans, tests, and source branches
 - keep a checked completed narrow implementation as the active baseline until evidence shows its scope or gate is defective; use a discriminating check when evidence remains incomplete
 - preserve the valid goal when correcting a false premise, explain the consequence of the unsupported path, and recommend the smallest evidence-supported route
 - distinguish allowed-direction acceptance, factual confirmation, and best-route endorsement; invalidated assistant advice must be explicitly withdrawn/revised with the failed premise, contrary evidence, corrected recommendation, and remaining gate
@@ -153,8 +158,9 @@ Release validation for this master design chain should confirm:
 - this parent remains compact and body-sufficient
 - child shards are reachable and role-correct
 - runtime/design/changelog versions align
-- the six proof/auth/evidence/task triads advance together while the other 13 Runtime Rules remain byte-identical and the ordered inventory stays exactly 19
-- Cases 17/12/04 plus matrix/coverage exercise reachable closure, explicit live-gate selection, task-list successor separation, authenticated capability, deterministic retry, and supplied-artifact proof limits
+- the execution, action-safety, and coding-discipline triads advance together to 1.33/1.6/1.6 while the other 16 Runtime Rules remain byte-and-mode identical and the ordered inventory stays exactly 19
+- Case 18 plus its August observed log and M35-M40 provide a labeled mixed dialogue, exact checked transcript evidence, fact/observed/virtual separation, design-bound architecture mutation, route-owner fork prevention, regression-versus-gap diagnosis, invented-path functional false-positive rejection, bounded repair, approved expansion, no-fork correction, and functional-plus-conformance verification
+- Cases 17/12/04 remain protected evidence for reachable closure, explicit live-gate selection, task-list successor separation, authenticated capability, deterministic retry, and supplied-artifact proof limits
 - forward-valid phase grammar explicitly includes `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`
 - observed alphanumeric phase forms are classified explicitly as legacy-only or normalized by selected doctrine rather than left ambiguous
 - observed project shape, extracted doctrine, selected target form, and any equivalence-claim basis stay distinct when checked examples ground governance recommendations

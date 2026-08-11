@@ -1,7 +1,7 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.32
+> **Current Version:** 1.33
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
@@ -77,6 +77,8 @@ P146 refinement: this owner must make non-trivial analysis/design proactively co
 
 P147 refinement: this owner must separate goal, checkable premise, proposed path, and requested action before material expansion; inspect current ownership, sibling roles, consumers, dependencies, and completed verification; protect a verified narrow baseline from unsupported reopening; proactively interrupt a false-premise route while preserving the valid goal; and use a narrow discriminating check when evidence remains incomplete. Broader architecture is evidence-earned and must carry its own state, migration, failure, and verification obligations.
 
+P150 / v1.33 refinement: material architecture-bearing source mutation must activate a design-conformance handoff before implementation. Route, service, client, adapter, queue/event transport, registry, state key, credential transport, reader/writer, fallback, or authority-owner additions/relocations require the selected design slice and current owner/producer/state/readers/writers/consumers/dependencies/last-known-working path to be checked first. This execution owner triggers and preserves the gate but leaves delta classes and approval with `action-safety.md`, cause/evidence strength with `evidence-discipline.md`, and coding diagnosis/fitness checks with `coding-discipline.md`. A user correction or checked design constraint that rejects a fork, parallel authority, alternate transport, or new owner retires the stale premise and requires incompatible pending tasks, plans, tests, and source branches to be reconciled before continuation.
+
 Case 17 refinement: this owner must distinguish proof reachable within the current execution state from terminal proof gated by approval, environment state, or unavailable capability; complete all independent reachable proof before stopping; preserve whether gated proof remains part of the current Goal or forms a distinct successor live-verification Goal; classify from the declared done condition, proof gate, scope, and checked authority rather than operational nouns or Product-facing capability names; retain the exact terminal proof obligation and resume condition; and prevent unchanged retries when no approval, state, or capability change can produce new evidence.
 
 P073-12 refinement: this owner is the sole decision boundary for direct continuation, candidate-goal surfacing, advisory `/goal` eligibility, clarification, or no successor. It hands the selected posture to `goal-authoring-and-route-support.md` for construction and to `explanation-and-presentation.md` for rendering.
@@ -98,6 +100,8 @@ P073-12 refinement: this owner is the sole decision boundary for direct continua
 - Preserve terminal proof obligations, prerequisite approval/state/capability, observable pass/fail signal, and meaningful resume trigger across a legitimate stop.
 - Preserve stop behavior when unchanged approval/state/capability gates make another attempt non-discriminating, while leaving retry classification and approval mechanics with their canonical owners.
 - Preserve migration continuation until the canonical convergence owner’s cutover, disconnection, retirement, quarantine-separation, and inactivity-proof gates close.
+- Trigger the canonical architecture delta preflight before material architecture-bearing source mutation and keep unknown/incomplete architecture state from becoming implementation momentum.
+- Treat user/design no-fork correction as an active execution constraint that retires incompatible premises and reconciles pending tasks, plans, tests, and source branches.
 - Preserve ordered phase-shaped continuation handling so current-phase reuse and truthful subphase fit are evaluated before any new-major phase selection.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
@@ -116,3 +120,5 @@ Historical detail remains in changelog or execution-disconnected quarantine/prov
 Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
 
 Semantic review must also confirm the proof-reachability branches: proposed done points are assessed for immediate closability before Goal emission; a source/code Goal without explicit live acceptance closes at its selected source/non-live gate and preserves later live proof as an unselected successor; an assistant-inferred infeasible done point is repaired in place; while live proof explicitly selected by the user or checked governed authority keeps the current Goal blocked. Generic completion wording, assistant inference, and operational capability names such as pinned-host SSH diagnostics or exact-request recovery paths must not select live proof. The runtime text must require reachable checks before stopping and must not promise retries without an enabling approval, state, or capability change.
+
+Architecture-conformance review must confirm that material architecture-bearing mutations invoke the safety owner before source editing, preserve ordinary bounded repair without topology ceremony, and invalidate stale additive tasks/tests after a no-fork correction. Case 18 must stop an owner/route fork before mutation while allowing a checked in-authority repair and an explicitly approved verified capability expansion.

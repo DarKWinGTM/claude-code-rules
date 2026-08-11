@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.66</b><br><sub>Diagram Format Correction</sub>
+  <b>v10.67</b><br><sub>Architecture Conformance</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released</b><br><sub>Fresh-public verified</sub>
+  <b>Candidate verified</b><br><sub>Publication pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Released correction:** `v10.66 / P149-01` removes P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams while preserving branch wording, ordering, proof strength, and owner boundaries. It was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at immutable annotated tag object `f785e254d844b895340328c3c689a728ae449384`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66. Fresh-public master/tag verification passed. Existing `explanation-and-presentation.md` v1.24 remains the no-frame owner, all 19 Runtime Rules remain unchanged, and immutable `v10.65 / P149` retains its historical failed diagram-format gate.
+> **Verified candidate:** `v10.67 / P150` adds design-bound architecture mutation, canonical topology-delta preflight, regression-versus-capability-gap diagnosis, and functional-plus-architecture-fitness verification across three existing Runtime Rule owners. Case 18, its August observed record, and M35-M40 cover owner/route fork prevention, existing-path repair, invented-path false-positive tests, approved expansion, and no-fork correction. The exact 25-path candidate and 19-Rule payload passed local and independent candidate gates; commit binding, publication, and real installation remain pending exact evidence-bound approval. Latest published release remains immutable `v10.66`: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66.
 
 <!-- CTA Buttons -->
 <p>
@@ -210,7 +210,8 @@ These capabilities summarize the current operating model at the front-page level
   - Prefer real systems over simulated success when implementation truth matters
   - Avoid mock implementations by default unless the scope explicitly calls for them
   - Verify configurations before making strong runtime or readiness claims
-  - Require intent clarity before destructive or high-impact actions
+  - Bind material architecture mutation to active design and the existing owner/state/consumer path before source edits
+  - Require exact delta classification and approval before additive, replacement-authority, or multi-authority topology
 
 - **Runtime Context Discipline** — The runtime layer stays compact, body-sufficient, and limited to doctrine the assistant must apply now.
   - Keep the 19 active runtime rules focused on live behavioral guidance rather than historical rollout detail
@@ -233,7 +234,7 @@ These capabilities summarize the current operating model at the front-page level
 | [`authority-and-scope.md`](authority-and-scope.md) | Decision hierarchy | Deterministic precedence plus advisory durable expansion and internally routed bounded-support boundaries |
 | [`evidence-discipline.md`](evidence-discipline.md) | Evidence discipline | Verify-first reasoning plus witness-specific proof limits for supplied rendered artifacts and authenticated harness results |
 | [`refusal-and-recovery.md`](refusal-and-recovery.md) | Refusal and recovery chain | Normalized intent classification plus recoverable blocked-path responses |
-| [`action-safety.md`](action-safety.md) | Action safety | Consequential-action gates plus authenticated/private capability preflight, bounded correction, and deterministic retry stop |
+| [`action-safety.md`](action-safety.md) | Action safety | Consequential-action gates plus design-conformance architecture delta classification, exact approval boundaries, and deterministic retry stop |
 
 ---
 
@@ -256,8 +257,8 @@ These capabilities summarize the current operating model at the front-page level
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`coding-discipline.md`](coding-discipline.md) | Coding execution discipline | Maintainable structure, proportionate verification, and tactical-to-strategic convergence |
-| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Selects continuation and successor posture while preserving reachable closure and explicitly selected terminal proof |
+| [`coding-discipline.md`](coding-discipline.md) | Coding execution discipline | Maintainable structure plus regression-versus-capability-gap diagnosis and functional/architecture-fitness verification |
+| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Activates design-bound architecture preflight, retires rejected fork branches, and preserves reachable closure |
 | [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs proof-layer-aware goals, orders prerequisites, and preserves verified `Plan reference` and `/plan` overflow guards |
 | [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective lane and owns checked Agent Team reuse/steer/wait/partition/respawn decisions |
 | [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves design then conditional diagram startup, creates Patch chronology from one UTC instant, governs live `/phase`, and separates TODO from live tasks |
@@ -280,6 +281,8 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
+- Candidate `v10.67 / P150` advances `execution-and-goal-frame.md` to 1.33, `action-safety.md` to 1.6, and `coding-discipline.md` to 1.6 for architecture-bearing mutation preflight, no-fork correction, regression-versus-gap diagnosis, and architecture fitness verification.
+- Case 18, its August observed-evidence record, and M35-M40 exercise route-owner fork, existing-path regression, invented-path functional false positives, bounded repair, design-backed approved expansion, and stale-work reconciliation; the runtime inventory remains exactly 19 and repaired-candidate verification/publication/installation are still pending.
 - Released `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
 - The correction was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`, and fresh-public master/tag verification passed.
 - All 19 Runtime Rules, owner triads, installers, Case 17, matrix/coverage, and Patch artifacts remain protected byte-for-byte. No real runtime reinstall was required.
@@ -289,7 +292,7 @@ Current source state:
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked repository is authority and `<user-runtime-rules>` is a downstream user-scope install target.
-- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.65
+- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1071,7 +1074,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: released `v10.66 / P149-01` changes only the Case 04/12 flow-diagram presentation plus governed lifecycle surfaces; all 19 Runtime Rules and installer sources remain unchanged. Public master and immutable annotated v10.66 were fresh-clone verified, while immutable v10.65 retains its historical failed diagram-format gate. No real runtime reinstall was required.
+- Source state: published `v10.66 / P149-01` remains the latest immutable release. The active `v10.67 / P150` source candidate advances exactly three Runtime Rules for architecture-conformance/no-fork behavior while protecting the other 16 and preserving the ordered 19-file installer payload; repaired-candidate verification, publication, and real installation remain pending and approval-gated.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.

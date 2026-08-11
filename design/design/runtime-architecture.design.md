@@ -1,8 +1,8 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.60
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045 (2026-08-08)
+> **Current Version:** 10.67
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -16,15 +16,15 @@ The active runtime inventory contains 19 source-owned root rule files.
 | # | Rule | Design Doc | Purpose |
 |---|---|---|---|
 | 1 | `accurate-communication.md` | `accurate-communication.design.md v2.44` | Evidence-calibrated status, claim-state wording, meaning-first identifier gloss, and phase closeout wording |
-| 2 | `action-safety.md` | `action-safety.design.md v1.4` | Destructive/high-impact action safety, topology control, emergency posture, and bounded retry handling |
+| 2 | `action-safety.md` | `action-safety.design.md v1.6` | Consequential-action safety plus design-conformance architecture delta classification, exact approval boundaries, one-authority topology, emergency posture, and bounded retry handling |
 | 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.1` | Direct-user transparency plus audience-appropriate generated public/operator/customer disclosure |
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.7` | User authority, hard-boundary precedence, and source/project ownership boundaries |
-| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.5` | Maintainable code structure, verification strategy, coding/debug root-cause narrowing, and tactical-to-strategic convergence |
+| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.6` | Maintainable code structure, regression-versus-capability-gap diagnosis, functional plus architecture-fitness verification, and tactical-to-strategic convergence |
 | 6 | `communication-register.md` | `communication-register.design.md v1.26` | Natural professional tone, user-aligned easy explanation, anti-over-agreement, and signal discipline |
 | 7 | `document-governance.md` | `document-governance.design.md v1.19` | Repository document roles, parent/shard authority, append-vs-shard doctrine, patch governance, and UDVC-1 |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.12` | Cross-reference consistency, rollover integrity, document-density/God-file repair, and no-delete-by-cleanup discipline |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.7` | Verify-first factual discipline, concern-vs-conclusion discipline, scoped non-findings, and real-vs-mock boundaries |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.31` | Discussion/execution mode, visible intent read, premise separation, next-work boundaries, and lineage-first phase-shaped continuation |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.33` | Discussion/execution mode, architecture-bearing pre-mutation trigger, no-fork correction lock, reachable goal closure, and lineage-first continuation |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.24` | Plain-language explanation, meaning-first identifier walkthroughs, diagram discipline, and concise action framing |
 | 12 | `goal-authoring-and-route-support.md` | `goal-authoring-and-route-support.design.md v1.2` | Governed `/goal` construction, subordinate route support, and verified `Plan reference` boundaries |
 | 13 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.6` | External source verification, trust ranking, corroboration, and source-conflict handling |
@@ -45,11 +45,11 @@ The active runtime inventory contains 19 source-owned root rule files.
 
 ### Evidence, Authority, and Safety
 - Rules: `evidence-discipline`, `authority-and-scope`, `refusal-and-recovery`, `action-safety`
-- Purpose: separate verified fact from inference, preserve user authority inside hard boundaries, recover safely from blocked requests, and gate destructive or high-impact action
+- Purpose: separate verified fact from inference, preserve user authority inside hard boundaries, recover safely from blocked requests, and classify design-bound architecture deltas before approval-sensitive authority expansion
 
 ### Execution, Coding, and Worker Control
 - Rules: `execution-and-goal-frame`, `goal-authoring-and-route-support`, `coding-discipline`, `worker-routing-and-context`, `safe-io`
-- Purpose: keep active work goal-aligned, maintainable, proportionately verified, context-safe, and delegated only when worker lanes add value
+- Purpose: keep active work goal-aligned, bind architecture-bearing mutation to checked design, distinguish regression from real capability expansion, verify architecture fitness, and delegate only when worker lanes add value
 
 ### Governance, Memory, and Portability
 - Rules: `document-governance`, `document-integrity`, `phase-todo-artifact`, `memory-governance-and-session-boundary`, `portable-implementation-and-hardcoding-control`, `external-verification-and-source-trust`

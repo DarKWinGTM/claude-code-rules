@@ -1,7 +1,7 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.32
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.32
+> **Current Version:** 1.33
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.33
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
@@ -55,6 +55,15 @@ Apply `evidence-discipline.md` to separate concern, premise, goal, path, and req
 - if the goal is valid but the premise is false, preserve the goal, correct the premise directly, explain the consequence of the unsupported path, and recommend the smallest evidence-supported route
 - if evidence is incomplete, select or run the narrow discriminating check instead of designing downstream around uncertainty
 - after a user correction or contrary evidence, retire stale premise assumptions before choosing the next action
+
+### 2.4) Architecture-bearing mutation trigger
+Before material source work adds, relocates, duplicates, or replaces a route/endpoint, service/runtime entity, client/adapter, queue/event transport, registry, cache/state/database key, credential/secret transport, reader/writer path, fallback, or authority owner, inspect the selected active design slice and the current architecture path.
+
+The check must identify the current owner, producer, state or transport, readers, writers, consumers, dependencies, and last-known-working path at proportionate scope. Then hand the proposed mutation to the canonical design-conformance architecture delta preflight in `action-safety.md`; execution does not invent a topology class or approval boundary locally.
+
+Incomplete architecture knowledge must not become implementation momentum. Keep the path at `OBSERVE_ONLY` until a discriminating check resolves the material unknown, or use `REPAIR_IN_PLACE` when checked evidence shows a bounded defect inside the current authority. Ordinary local changes that do not add, relocate, duplicate, replace, or reroute an architecture role remain proportionate and do not require topology ceremony.
+
+A user correction or checked design constraint that rejects a fork, parallel authority, alternate transport, or new owner becomes an active execution constraint. Retire the stale premise and reconcile incompatible pending tasks, plans, tests, and source branches before continuing; passing work built around the rejected path does not preserve that path as a candidate authority.
 
 ### 3) Startup gate and capture before continue
 Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/diagram/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. In a genuine emergency, `action-safety.md` may permit only the smallest safe reversible containment/diagnostic slice before startup when delay increases immediate harm; resume startup and recovery synchronization immediately afterward. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.
@@ -212,6 +221,8 @@ Re-check mode when the user changes scope, corrects intent, provides evidence fr
 | pasted project evidence or AI/RULES behavior question | classify intent before project exploration; stay discussion unless project inspection is requested or required for bounded proof |
 | drift-risk prompt, outcome-changing ambiguity, or user correction | use a short working interpretation, one narrow clarification when needed, and re-anchor after correction |
 | concern/proposed path or expansion from a checkable premise | separate goal/premise/path, verify ownership/dependencies/completed baseline, and interrupt a contradicted route while preserving the valid goal |
+| material architecture-bearing source mutation | inspect the selected design and current owner/producer/state/readers/writers/consumers/dependencies, then invoke the canonical architecture delta preflight before implementation |
+| user or checked design rejects a fork/parallel authority | retire the stale premise and reconcile incompatible tasks, plans, tests, and source branches before continuing |
 | unresolved startup or oversized active entrypoint | resolve startup posture or preservation-first rollover before broad continuation |
 | broad objective or underspecified non-trivial analysis/design | decompose outcome-sized lanes and complete material constraints, dependencies, failure behavior, alternatives, and verification |
 | selected design obligations exceed the headline output | extract and track behavior, invariants, failure modes, dependencies, and dispositions before completion |
@@ -237,6 +248,8 @@ Avoid:
 - executing inside unresolved discussion, from pasted paths alone, or from a stale interpretation after user correction
 - mirroring an underspecified non-trivial design without checking material completeness, or manufacturing speculative requirements and alternatives when they do not change the decision
 - premise momentum: treating user confidence, a clean analogy, or two retired child artifacts as proof that a broader path/domain is retired or should replace a verified completed baseline
+- architecture momentum: adding or relocating a route, service, client, transport, registry, state key, read/write path, fallback, or owner before checking the selected design and existing authority path
+- preserving stale additive tasks, tests, or source branches after the user or checked design rejects the fork they depend on
 - reflexively widening scope, agreeing, or disagreeing before checking current ownership and dependencies when those facts materially determine the route
 - report-then-stop, milestone ceremony, or edit-only completion while safe continuation, verification, selected design obligations, or migration-convergence gates remain
 - bypassing startup, rollover, phase-lineage, worker, owner-surface, approval, or goal-proof gates

@@ -1,7 +1,7 @@
 # Coding Discipline
-> **Current Version:** 1.5
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.5
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.6
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.6
+> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
 
@@ -140,6 +140,34 @@ For bugs, failures, flaky behavior, or complex integration, identify the observe
 
 If reproduction is unavailable, state the missing evidence and use bounded diagnostics. If implementation proceeds before cause is proven, label it hypothesis-driven. Re-anchor the reproduction target after user correction; do not shotgun-edit several speculative causes.
 
+### 3.1) Regression-versus-architecture-gap decision gate
+A missing field, output, route result, configuration value, or consumer-visible value does not by itself prove that the architecture lacks a transport or owner. Before adding infrastructure, map the expected active design contract, owner, producer, state or transport, readers, writers, consumers, dependencies, and last-known-working evidence at proportionate scope.
+
+Classify the checked condition as one of:
+- `existing-path regression`: the governed path exists and should satisfy the requirement, but current behavior is defective
+- `state/config drift`: the path exists, but current state or configuration diverges from the selected contract
+- `dormant_or_disconnected_existing_path`: implementation exists but is not currently connected through the intended active edges
+- `contract mismatch`: producer, stored state, transport, or consumer expectations disagree
+- `unresolved`: evidence does not yet distinguish the realistic branches
+- `verified_capability_gap`: checked evidence shows the existing path is absent, the current owner cannot satisfy the selected requirement, or active design explicitly selects new architecture
+
+Use the smallest discriminating check that separates the leading classification from realistic competitors. Regression, drift, disconnection, and mismatch default to bounded repair of the current authority; unresolved state stays diagnostic. A verified capability gap permits an architecture proposal only through the design-conformance delta and approval owner in `action-safety.md`.
+
+### 3.2) Architecture fitness verification
+For architecture-bearing work, functional verification and architecture-conformance verification are separate obligations.
+
+Positive proof should show that required behavior passes through the selected design path, the intended producer-state/transport-consumer chain works, the selected authority remains active, and an approved replacement selects the target when replacement is in scope.
+
+Negative proof should proportionately check that normal source, import, config, build, deployment, install, runtime, and test-discovery edges do not activate an unauthorized alternate owner/route/service/client/adapter/transport/registry/state key, dual read/write, shadow path, or automatic fallback. Scope these checks to the architecture roles affected by the change; do not turn a bounded repair into a whole-system absence ritual.
+
+Tests written for an unapproved or design-divergent path can show that the invented implementation behaves as written, but they cannot satisfy the objective's architecture or completion gate. A mixed result must stay explicit:
+```text
+functional behavior: passed
+architecture conformance: failed
+one-authority invariant: failed
+completion: blocked
+```
+
 ### 4) TestKit / scenario decision contract
 For non-trivial coding work, select one verification route explicitly:
 - `existing_test`: an existing focused/regression test covers the behavior
@@ -243,6 +271,8 @@ When this doctrine materially matters, make these meanings visible: **Strategic 
 | non-trivial coding feature | inspect implementation completeness, then choose verification depth and TestKit/scenario decision before closeout |
 | bug/debug request | define observed failure/reproduction, hypothesis, signal, fix, and regression check when practical |
 | root-cause diagnosis before patching | separate symptom, leading hypothesis, discriminating check, and evidence boundary before shotgun edits |
+| missing field/output/route result/config/consumer value suggests new infrastructure | classify regression, drift, disconnected path, mismatch, unresolved state, or verified capability gap before architecture expansion |
+| architecture-bearing implementation | require functional proof through the selected path plus proportionate negative architecture-fitness checks against unauthorized alternate authority |
 | refactor | preserve behavior and rerun affected tests or state verification limits |
 | integration/provider/runtime/payment/auth/privacy work | fake/local verification first, then explicit smoke/live decision and safety boundary |
 | scenario-like flow | prefer TestKit/scenario harness or explain why focused tests are stronger |
@@ -280,6 +310,8 @@ Avoid:
 - edit-only completion, testing as an afterthought, mandatory TestKit creation for trivial work
 - fake/local pass presented as live proof, refactor without behavior-preservation checks
 - debugging from guesses without a signal, adding tests that do not cover the changed behavior
+- treating a missing field/output/route result/config/consumer value as proof of a capability gap without tracing the existing governed path
+- accepting passing tests for an unapproved or design-divergent path as architecture or completion proof
 - shotgun edits across several speculative causes before a discriminating check narrows the branch
 - running broad/noisy tests without worker filtering when appropriate
 - reporting fixed/stable beyond checked evidence
