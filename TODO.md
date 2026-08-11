@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-08-11
-> **Current Release:** v10.67 candidate active; v10.66 remains latest published and immutable
-> **Active Wave:** P150 / v10.67 architecture conformance and no-fork gates
+> **Current Release:** v10.67 published, fresh-public verified, installed, and immutable
+> **Active Wave:** none selected; P150 / v10.67 completed
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,22 +10,17 @@
 
 ## Active / In Progress
 
-- [ ] **P150 / v10.67 architecture conformance and no-fork gates** is active on a clean public-master candidate.
-  - Goal: bind architecture-bearing source mutation to active design and the existing owner/producer/state/readers/writers/consumers path before implementation.
-  - Selected owners: `execution-and-goal-frame.md`, `action-safety.md`, and `coding-discipline.md`; no new Runtime Rule or installer inventory change.
-  - Verification: one Case 18 family covers route-owner fork, regression-versus-gap, invented-path tests, ordinary repair, approved expansion, and no-fork correction lock.
-  - Governance: [P150](phase/phase-150-architecture-conformance-and-no-fork-gates.md) and [Patch](patch/2026-08-11T05-01-55Z--architecture-conformance-and-no-fork-gates.patch.md); diagram posture `not required`.
-  - Implemented in candidate scope: Case 18/M35-M40, three advanced designs, three Runtime Rule gates, three per-rule changelogs, master design/changelog, release shard, README, phase/TODO/Patch, and playground synchronization.
-  - Verified on the repaired 25-path candidate: focused Case 18/triad assertions, metadata, links/anchors, whitespace/modes, no-Box-Drawing checks, three-changed/16-protected Runtime Rules, unchanged 19-file arrays, Bash/PowerShell fixtures, Patch tests 32/32, and two-pass disposable 19/19 installation passed.
-  - Repair scope added two required integration design shards and one August observed-evidence log while keeping governed/playground content outside the Runtime payload.
-  - Independent doctrine/security, fresh 25-path payload, and final release/no-drift re-reviews pass; the exact Patch creator event is anchored.
-  - Current gate: create the local candidate commit, regenerate the exact commit-bound publication/install evidence packet, and request explicit approval before any public or real-install mutation.
-  - Publication and real runtime installation remain separate exact SHA/scope approval-gated actions.
+- No governed release wave is active. The next RULES objective must pass normal design/TODO/phase/Patch startup and lineage checks before implementation.
 
 ---
 
 ## Recently Completed
 
+- [x] **P150 / v10.67 architecture conformance and no-fork gates** was fast-forwarded to public `master`, annotated-tagged, released, fresh-public verified, and installed.
+  - Published release commit `bd3aa36ff0d7c7712270750249031f362968854c` at immutable annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67
+  - Verified exact 25-path scope, three changed and 16 byte/mode-protected Runtime Rules, exact ordered 19-file arrays, Case 18/M35-M40, links/modes, Bash/PowerShell fixtures, Patch tests 32/32, Patch inventory 173/0, and fresh-public master/tag reproduction.
+  - Captured the approved rollback snapshot at `/home/node/.claude/rules-rollback/v10.67-bd3aa36ff0d7c7712270750249031f362968854c-preinstall`, then installed the exact public-tag payload twice with 19/19 byte-and-mode parity, identical second pass, ownership-manifest convergence, unrelated-file preservation, and no unexpected quarantine.
+  - The runtime inventory remains exactly 19. The dirty backup checkout and unrelated repository/runtime state remained excluded.
 - [x] **P149-01 / v10.66 playground flow-diagram format correction** was fast-forwarded to public `master`, annotated-tagged, released, and fresh-public master/tag verified.
   - Published release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at immutable annotated tag object `f785e254d844b895340328c3c689a728ae449384`; Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.66
   - Verified exact 9/12/1 commit scopes and 13-path cumulative scope, zero U+2500–U+257F characters in the corrected scenarios and added Markdown lines, semantic preservation, protected bytes, links/modes, independent reviews, Bash/PowerShell fixtures, and two-pass disposable 19/19 installations locally and from fresh public master/tag clones.

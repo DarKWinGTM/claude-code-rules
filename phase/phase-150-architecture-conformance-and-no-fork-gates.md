@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 150
-> **Status:** Active — exact 25-path candidate verification and all independent reviews pass; local commit and approval packet next
+> **Status:** Completed — immutable v10.67 is fresh-public verified and the exact released 19-Rule payload is installed
 > **Target Release:** v10.67
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -39,14 +39,14 @@ active design slice
 
 | Obligation | Implementation state | Terminal disposition |
 |---|---|---|
-| Architecture-bearing mutations activate a design-conformance preflight | implemented | pending verification |
-| Existing architecture is mapped before route/service/client/state/authority expansion | implemented | pending verification |
-| Missing output or a sanitized field does not prove a missing architecture | implemented | pending verification |
-| Design-backed `ADDITIVE_EXPANSION` or authority change requires exact delta boundaries and explicit approval; existing-owner insufficiency is one possible justification, not a universal prerequisite | implemented | pending verification |
-| User/design no-fork correction invalidates stale additive branches, tasks, and tests | implemented | pending verification |
-| Functional tests for an invented path cannot satisfy architecture completion | implemented | pending verification |
-| Ordinary bounded repair remains proportionate and does not require topology ceremony | implemented | pending verification |
-| A verified capability gap may proceed through design, safety, approval, and retirement gates | implemented | pending verification |
+| Architecture-bearing mutations activate a design-conformance preflight | implemented | verified |
+| Existing architecture is mapped before route/service/client/state/authority expansion | implemented | verified |
+| Missing output or a sanitized field does not prove a missing architecture | implemented | verified |
+| Design-backed `ADDITIVE_EXPANSION` or authority change requires exact delta boundaries and explicit approval; existing-owner insufficiency is one possible justification, not a universal prerequisite | implemented | verified |
+| User/design no-fork correction invalidates stale additive branches, tasks, and tests | implemented | verified |
+| Functional tests for an invented path cannot satisfy architecture completion | implemented | verified |
+| Ordinary bounded repair remains proportionate and does not require topology ceremony | implemented | verified |
+| A verified capability gap may proceed through design, safety, approval, and retirement gates | implemented | verified |
 
 ## Work Lanes
 
@@ -98,13 +98,13 @@ Do not add a Runtime Rule or change installer inventory/order.
 
 ### Lane 5 - Governance and release synchronization
 
-**Status:** synchronized and independently verified in candidate scope; local commit and evidence-packet binding next.
+**Status:** completed; released identity, fresh-public evidence, and installed-state proof are synchronized in the post-release closeout.
 
 Align the three rule changelogs, master and integration design shards, master changelog, README, TODO, phase, Patch, observed evidence, and playground surfaces. Use lifecycle-neutral wording before publication and checked released wording only after immutable public evidence exists.
 
 ### Lane 6 - Verification, publication, installation, and closeout
 
-**Status:** repaired-candidate local verification and all independent reviews pass; local commit and exact approval-packet preparation next.
+**Status:** completed; exact approval, immutable publication, fresh-public verification, rollback capture, and two-pass real installation passed.
 
 - Focused GREEN assertions passed for the four Runtime doctrine anchors, repaired Case 18, and M35-M40.
 - Verify exact changed paths, links, versions, modes, sessions, protected bytes, and 19-file manifest order.
@@ -127,7 +127,9 @@ Verified in the current candidate scope:
 - Bash/PowerShell fixtures and Patch timeline suite passed; Patch inventory remains 173 selected/0 preserved with one timestamp-equivalent target, and transcript tool result `call_NiaIFNoeco6la1TCYkWD6Aq1` anchors the admissible exact creator event;
 - two-pass disposable installation passed 19/19 byte-and-mode parity with identical second pass, manifest presence, and unrelated sentinel preservation.
 
-Independent doctrine/security, fresh 25-path payload, and final release/no-drift re-reviews pass with no remaining findings in their checked scopes. Exact Patch creation evidence is anchored. Candidate commit and approval-packet preparation are now unblocked.
+Independent doctrine/security, fresh 25-path payload, and final release/no-drift re-reviews passed with no remaining findings in their checked scopes. Exact Patch creation evidence is anchored. Approval packet SHA-256 `1d94d87f65b2a7cd3a42bd4e7f69e4bc29fc90448cb6e0cc9d7823f0686f194b` authorized release commit `bd3aa36ff0d7c7712270750249031f362968854c`, annotated tag `v10.67`, GitHub Release publication, fresh-public verification, rollback capture, and exact real installation.
+
+Fresh public `master` and `v10.67` reproduced the approved commit/tree, 25-path scope, 19-Rule payload, fixtures, Patch tests 32/32, and two-pass disposable installation. The real install snapshot is preserved at `/home/node/.claude/rules-rollback/v10.67-bd3aa36ff0d7c7712270750249031f362968854c-preinstall` with snapshot-manifest SHA-256 `a1aaf44ef106e617cb581bfdfc382ef67b889c7f67d3534b343a0698c3806807`; `/home/node/.claude/rules` passed two installation passes at 19/19 byte-and-mode parity with identical second pass, ownership-manifest convergence, unrelated-file preservation, and no unexpected quarantine.
 
 Required positive assertions:
 
@@ -177,7 +179,7 @@ Containment:
 
 ## Rollback
 
-Before publication, keep all candidate commits on the isolated branch and correct defects through new commits rather than rewriting an approved chain. Publication uses fast-forward only. Before real installation, capture byte-and-mode state for the exact installed 19-rule set and bind rollback to that snapshot. After publication, never move/delete the v10.67 tag or Release; later defects require a later release.
+Publication completed by one approved fast-forward from public baseline `3983bb0f88aba10ba7980610ed4ff0e6db137d28` to release commit `bd3aa36ff0d7c7712270750249031f362968854c`. The exact prior installed 19-rule state remains available in the approved rollback snapshot; installation passed, so restoration was not needed. Never move/delete the `v10.67` tag or Release; later defects require a later release. The dirty backup checkout remains outside this phase.
 
 ## Exit Criteria
 
@@ -190,3 +192,5 @@ Before publication, keep all candidate commits on the isolated branch and correc
 - exact publication approval is accepted and immutable v10.67 is fresh-public verified;
 - exact installed-payload approval is accepted and `/home/node/.claude/rules` reaches 19/19 byte-and-mode parity with idempotent second pass;
 - post-release active surfaces record delivery, impact, checked proof, and remaining limits without moving the immutable release.
+
+All exit criteria passed in the checked scopes. This documentation-only closeout records the released and installed state without modifying the immutable `v10.67` tag.

@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.22
+> **Current Version:** 2.23
 > **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
 > **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** P150 active — exact candidate and all independent reviews pass; local commit and approval packet next
+> **Status:** P150 completed — immutable v10.67 is fresh-public verified and the exact released 19-Rule payload is installed
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,13 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active
 
-- **P150:** [Architecture conformance and no-fork gates](phase-150-architecture-conformance-and-no-fork-gates.md) — active; target v10.67.
-  - Goal: require design and existing architecture mapping before material route/service/client/state/authority mutation, distinguish regressions from verified capability gaps, and prevent invented-path functional tests from satisfying architecture completion.
-  - Owners: `execution-and-goal-frame.md`, `action-safety.md`, and `coding-discipline.md`; the active Runtime Rule inventory remains exactly 19.
-  - Current state: the repaired 25-path candidate passes focused Case 18/triad assertions, metadata/link/mode/shape checks, protected Runtime payload checks, Bash/PowerShell fixtures, Patch tests 32/32, and two-pass disposable 19/19 installation. Exact Patch creation evidence and all independent doctrine/security, payload, and release/no-drift reviews pass.
-  - Current gate: create the local candidate commit and bind the exact publication/install evidence packet for explicit approval.
-  - Patch: [Architecture Conformance and No-Fork Gates](../patch/2026-08-11T05-01-55Z--architecture-conformance-and-no-fork-gates.patch.md).
-  - External boundary: public push/tag/Release and real runtime installation require exact SHA/scope evidence packets and explicit approval.
+- No active release phase is selected. Open the next governed objective only after design/TODO/phase/Patch startup and lineage checks identify its owner, output, and verification gate.
 
 ### Blocked Predecessor
 
@@ -44,6 +38,14 @@ This file is the compact active roadmap/index. Start here for current execution 
   - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.62
 
 ### Most Recently Completed
+
+- **P150:** [Architecture conformance and no-fork gates](phase-150-architecture-conformance-and-no-fork-gates.md)
+  - Output: v10.67 binds material architecture mutation to active design and the existing owner/producer/state/readers/writers/consumers path, distinguishes regressions from verified capability gaps, and blocks invented-path functional success from satisfying architecture completion.
+  - Gate: exact 25-path scope, Case 18/M35-M40, three advanced Runtime Rule triads, 16 protected Runtime Rules, exact 19-file arrays, independent reviews, Bash/PowerShell fixtures, Patch tests 32/32, immutable publication, fresh-public master/tag reproduction, rollback capture, and two-pass real 19/19 installation passed.
+  - Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67
+  - Identity: release commit `bd3aa36ff0d7c7712270750249031f362968854c`; annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`.
+  - Runtime boundary: exactly three Runtime Rules changed; the other 16 and ordered 19-file inventory remained protected. The approved prior installed state is preserved at `/home/node/.claude/rules-rollback/v10.67-bd3aa36ff0d7c7712270750249031f362968854c-preinstall`.
+  - Patch: [Architecture Conformance and No-Fork Gates](../patch/2026-08-11T05-01-55Z--architecture-conformance-and-no-fork-gates.patch.md).
 
 - **P149-01:** [Playground flow-diagram format correction](phase-149-01-playground-flow-diagram-format-correction.md)
   - Output: v10.66 removes P149-introduced Unicode Box Drawing characters from the Case 04 and Case 12 flow diagrams without changing branch wording, ordering, proof strength, or owner boundaries.
@@ -105,7 +107,7 @@ P150 is a distinct new major because it changes three Runtime Rule owner contrac
 | Design target | three owner designs plus runtime/verification integration shards | owner split, 1.33/1.6/1.6, architecture delta and fitness boundaries | local checks and doctrine re-review pass |
 | Runtime doctrine | execution, action safety, coding discipline | exactly three changed, 16 protected, body-sufficient owner contracts | local and fresh independent payload audit pass |
 | Governed sync | README, TODO, summary, phase, Patch, master design/changelog, release shard | links, sessions, lifecycle wording, density defer owner, Patch evidence | candidate checks and release re-review pass |
-| Verification/publication/install | focused/full checks, fixtures, disposable payload, exact packets, fresh-public and installed parity | no unresolved review finding; exact approval before each consequential action | candidate verified; commit/packet next; publication/install pending |
+| Verification/publication/install | focused/full checks, fixtures, disposable payload, exact packets, fresh-public and installed parity | no unresolved review finding; exact approval before each consequential action | completed; immutable release, fresh-public proof, rollback capture, and two-pass real install pass |
 
 ---
 
@@ -149,22 +151,22 @@ Required checks:
 - Independent doctrine/security, payload, and release/no-drift reviews pass before the exact install/publication approval packet is presented.
 - Exact approved publication, fresh-public verification, rollback snapshot, real Runtime Rule installation, and installed parity pass before closeout.
 
-Current evidence: the repaired 25-path candidate passes focused Case 18/triad assertions, exact metadata/link/mode/shape and protected-byte checks, Bash/PowerShell fixtures, Patch timeline 32/32, and two-pass disposable 19/19 installation. Fresh independent doctrine/security, payload, and final release/no-drift reviews pass. Case 18, integration-shard, Patch wording, summary-state, and touched-entrypoint-governance findings are repaired; transcript result `call_NiaIFNoeco6la1TCYkWD6Aq1` anchors the exact Patch creator event. Local commit and exact packet binding are next. Published immutable v10.66 remains the public predecessor.
+Current evidence: release commit `bd3aa36ff0d7c7712270750249031f362968854c` preserves the repaired 25-path candidate at immutable annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`. Focused Case 18/triad assertions, metadata/link/mode/shape and protected-byte checks, Bash/PowerShell fixtures, Patch timeline 32/32, Patch inventory 173/0, two-pass disposable installation, and independent doctrine/security, payload, and release/no-drift reviews passed. Fresh public master/tag clones reproduced the approved tree and gates. The exact public-tag payload then passed two real `/home/node/.claude/rules` installation passes at 19/19 byte-and-mode parity with identical second pass, ownership-manifest convergence, unrelated-file preservation, and no unexpected quarantine. Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67.
 
 ---
 
 ## Rollback / Containment
 
-- Keep P150 on the isolated candidate branch until repaired-candidate verification and exact approval pass; never mutate the dirty backup checkout.
-- Stop on unexpected paths, deletion, rename, symlink/submodule/binary/mode drift, protected-byte or inventory drift, unresolved Patch creation evidence, failed test/review, or public-master movement.
-- Public master push, annotated v10.67 tag, GitHub Release, real runtime installation, and any later closeout each require their own exact SHA/scope/target/evidence approval.
-- Before real installation, capture exact byte-and-mode rollback state for the current installed 19-rule payload. After publication, preserve immutable identities and use a later release for any defect.
+- Preserve immutable release commit `bd3aa36ff0d7c7712270750249031f362968854c`, annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`, and the v10.67 GitHub Release; use a later release for any defect.
+- Preserve the approved pre-install byte-and-mode rollback snapshot at `/home/node/.claude/rules-rollback/v10.67-bd3aa36ff0d7c7712270750249031f362968854c-preinstall`; installation passed, so restoration was not required.
+- Keep the dirty backup checkout, unrelated repository/runtime state, and non-runtime governed/playground artifacts outside the 19-Rule install authority.
+- Any later public closeout or correction remains a separate exact SHA/scope/target/evidence action and must not move the immutable tag.
 
 ---
 
 ## Next State
 
-P150 / v10.67 is the active release phase. Candidate verification and all independent reviews pass; the immediate next state is the local candidate commit and exact commit-bound publication/install packet. Published immutable v10.66 remains the predecessor, and no public or real-install mutation is authorized yet.
+P150 / v10.67 is completed. Immutable publication, fresh-public master/tag verification, rollback capture, and two-pass real installation passed. No successor release phase is selected; the next governed objective must establish its own owner, output, and verification gate.
 
 ---
 
