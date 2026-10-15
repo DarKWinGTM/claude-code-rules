@@ -1,14 +1,15 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.6
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.7
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.7 | 2026-09-30 | **[Compacted canonical action and retry gates](#version-17)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.6 | 2026-08-11 | **[Added design-conformance architecture delta preflight](#version-16)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.5 | 2026-08-10 | **[Added authenticated/private capability preflight and deterministic retry stop](#version-15)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.4 | 2026-08-09 | **[Separated Agent Team failure posture from worker lifecycle](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -19,6 +20,17 @@
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-17"></a>
+## Version 1.7: Compacted canonical action and retry gates
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated repeated destructive/private/topology/emergency/retry guidance, report templates and mirrored trigger/anti-pattern prose into one executable gate per class.
+- Preserved exact action/scope approval, auth/capability/approval distinctions, architecture delta fields/classes, bridge/quarantine/restoration boundaries and all retry profiles/caps/provider-wait honesty.
+- Kept scoped ordinary current-owner handling proportionate; safety requirements are not optional-control trade-offs.
+- P073-16 source candidate; installation and real operational evidence remain separately checked.
 
 <a id="version-16"></a>
 ## Version 1.6: Added design-conformance architecture delta preflight

@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-08-11
-> **Current Release:** v10.68 published, fresh-public verified, installed, and immutable
-> **Active Wave:** none selected; P151 complete
+> **Last Updated:** 2026-10-15
+> **Current Release:** v10.68 immutable published predecessor; v10.72 source/install verified, selected publication receipt pending
+> **Active Wave:** P073-19 final docs and full Main publication
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,11 +10,26 @@
 
 ## Active / In Progress
 
-No active RULES release wave is selected.
-
----
+- [ ] **P073-19 / v10.72 docs cadence and task-evidence handoff:** six Runtime/design owners and four virtual scenario families are implemented and locally verified; exact Main19 installation passed with thirteen unchanged and other-owner/global preservation. Candidate21/21 synthetic decisions matched; baseline20 matched and one ordering response was partial, not a manufactured RED. Final docs/publication task remains open until scoped commit/push/tag/Release and public-payload proof are recorded. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md), [history](changelog/changelog/v10.72-docs-sync-and-task-handoff.changelog.md), [publication receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
 
 ## Recently Completed
+
+- [x] **P073-18 / local v10.71 source-install slice:** coding1.8 and execution1.35 implement one generic contract-first development method from fourteen lenses; no per-case Main or new additional files.
+  - Fourteen clause checks, nine safeguards, twelve virtual scenarios and Bash/PowerShell installer fixtures passed; runtime19 bytes/modes/metadata/body/manifest matched source without quarantine. Other17 Main/shared/global/additional2 and protected finite baseline remained unchanged.
+  - User-selected order: source edits → tests → install → one final docs sync. Main19 is177,387 characters (+2,512/about1.44%); exact tokens and causal AI benefit are not measured.
+  - Final paired-version/history/reference/scoped-diff/protection checks passed; docs were synchronized once after installation. Original runtime19+manifest are preserved at `/home/node/.claude/rules-rollback/v10.71-7194487f-preinstall-044nk41t/`. No commit/push/tag/release selected.
+
+- [x] **P073-17 / local v10.70 source-install slice:** improved actual-action reporting in accurate2.46, presentation1.26 and register1.28; installed the checked nineteen-file payload.
+  - Source clauses and twelve virtual Case 05 examples distinguish inspection/no-op/planning/applied/failed/rollback and source/installed/published states without mandatory report headings. Existing completion, proof, safety and continuation contracts remain intact.
+  - Source/history/version/reference checks, both Bash/PowerShell installer fixtures and real 19/19 bytes/modes/metadata/body/ownership-manifest checks passed. Other16 Main, additional2, shared/global and all 2,331 out-of-scope source files/links are unchanged; no quarantine action occurred.
+  - Main19 now totals 174,875 Unicode characters (+2,060, about1.19%). Durable original20 recovery snapshots are under `/home/node/.claude/rules-rollback/v10.70-adda8afb-preinstall-ufm1nr1c/` outside Rules discovery.
+  - Live tasks23/24 close at this bounded source/install gate. Current-session reload/model effectiveness and commit/push/tag/release are not selected; the full maintainer release wave remains unpublished.
+
+- [x] **P073-16 / local v10.69 source-install slice:** compacted Main19, preserved semantic/safety boundaries, evaluated original JSONL evidence, installed and verified the approved runtime set, and applied exact additional cleanup.
+  - Final Main19: 329,074 → 172,815 Unicode characters / 330,466 → 174,137 UTF-8 bytes (47.48% character reduction). Additional15: 73,566 → 3,233 characters after removing13 and retaining two unique trials.
+  - Final measured cohort: 440,393 → 213,801 characters (51.45%); exact tokens are not measured and the earlier 150k-character warning is not resolved by this scope.
+  - Semantic source checks, original changelog suffix19/19, Bash/PowerShell fixtures, exact root parity19/19, scoped cleanup/retained-trial parity and protected global/shared state passed. Plugin files/status match the pre-conditional-repair checkpoint; no broad whole-project convergence claim.
+  - Source/install closeout is not a released maintainer wave. Commit/push/tag/release were not selected; v10.68 remains the latest published release.
 
 - [x] **P151 / v10.68 Active Project Root source authority** was committed and fast-forwarded from the Active Project Root, annotated-tagged, released, fresh-public verified, and installed.
   - Delivered `authority-and-scope.md` 2.8 and `document-integrity.md` 1.14 with Case 19/M41-M45 while preserving the exact ordered 19-Rule runtime inventory.
@@ -82,10 +97,13 @@ No active RULES release wave is selected.
 
 ## Deferred / Not Selected
 
+- [ ] **P073-16 conditional trial follow-up:** original same-outcome status conflict and candidate-generation incident were not found in checked JSONL scope. No Main status delta or plugin repair was promoted; the two unique trials remain at their original runtime paths.
+  - Gate: admissible original witness plus matching source/regression boundary, or a fresh user-selected synthetic-regression repair scope. Live task18 remains visibly deferred; availability or missing evaluation does not prove ineffective doctrine.
+- **Local v10.69/v10.70/v10.71 publication disposition:** now selected as the approved Main baseline of P073-19/v10.72 above, not a deferred or separately tagged release. Preserve each original unpublished closeout; plugin/support/additional changes remain excluded.
 - [ ] `memory-context-intelligence` phase 030 shared-marketplace bridge/reproof remains planned and approval-sensitive.
   - Gate: recheck current runtime state and obtain explicit action-and-scope approval before marketplace/install/enable/registry/cache mutation.
 - [ ] `memory-context-intelligence` phases 017-018 main RULES promotion/merge remain deferred; trial and historical evidence do not authorize promotion.
-- [ ] README and master changelog density repair remains deferred to a dedicated post-P150 `document-integrity` / `document-governance` phase; P150 uses exact anchored edits only, and the repair must open before the next broad absorption into either parent. Master-design pressure remains part of the same owner review.
+- [ ] README and master changelog density repair remains deferred to a dedicated post-P150 `document-integrity` / `document-governance` phase; P150 uses exact anchored edits only, and the repair must open before the next broad absorption into either parent. Master-design and execution/task/register-changelog density remain part of the same owner review; P073-19 keeps bounded anchored updates and preserved history, not broad parent absorption.
 - [ ] Automated documentation-compliance validation and broad integration testing remain deferred by user direction.
 
 ---

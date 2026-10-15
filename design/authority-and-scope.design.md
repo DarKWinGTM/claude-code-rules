@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** Claude Code Rules System
-> **Current Version:** 2.8
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
+> **Current Version:** 2.9
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01 (2026-09-30)
 
 ---
 
@@ -17,6 +17,8 @@ Define a deterministic authority model that:
 - Prevents ambiguity in conflict resolution
 - Prevents selective compliance and loophole behavior
 - Keeps hard safety boundaries non-overridable
+
+Selected [runtime compaction](design/runtime-compaction.design.md) consolidates precedence, fresh selection, Active Project Root and governed file meaning into one mechanism-preserving contract. Bounded helpers remain subordinate to the selected objective; neither peer messages nor coordination state grants user/source authority. Memory, cleanliness and shared runtime co-location cannot override the checked owner.
 
 ### 1.2 Problem Statement
 

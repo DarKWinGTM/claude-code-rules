@@ -1,8 +1,8 @@
 # Design - Communication Register
 
 > **Parent Rule:** [../communication-register.md](../communication-register.md)
-> **Current Version:** 1.26
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.29
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [../changelog/communication-register.changelog.md](../changelog/communication-register.changelog.md)
 
 ---
@@ -11,7 +11,11 @@
 
 `communication-register.md` is the active runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent.
 
-It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
+The [runtime compaction](design/runtime-compaction.design.md) baseline consolidates natural/easy-language and high-signal admission, preserving dominant-language exact literals, truth-over-pleasing and four-step explicit retraction. Purpose/layout belongs presentation and evidence/status meaning accurate communication; brevity cannot conceal necessary risks or proof limits.
+
+Action/status reporting uses an ordinary-language action and outcome before phase/task/parity/proof/owner labels. Exact paths, identifiers and necessary technical terms remain supporting evidence, not a substitute for explaining what changed or what a check established. Remove repeated conclusions and process narration that adds no decision value, but retain material failure, side effects and limits. This language priority does not redefine action-state truth, report ordering, proof selection or execution authority.
+
+User-facing output addresses the user, not an unmarked peer. Separate the source of information, intended recipient and effect on the work. Necessary peer coordination uses the actual targeted channel; a public acknowledgment is not delivery to a peer. Report material peer results to the user through their impact, attributing peer-reported versus Main-verified evidence when that difference matters. Suppress idle/closure ACK echoes that change no state, risk or action; still answer direct user input and disclose real blockers/failures. No mandatory prefix on every message and no claim of control over harness-generated notifications.
 
 ---
 

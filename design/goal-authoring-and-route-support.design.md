@@ -1,8 +1,8 @@
 # Design - Goal Authoring and Route Support
 
 > **Parent Rule:** [../goal-authoring-and-route-support.md](../goal-authoring-and-route-support.md)
-> **Current Version:** 1.3
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.4
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/goal-authoring-and-route-support.changelog.md](../changelog/goal-authoring-and-route-support.changelog.md)
 
 ---
@@ -12,6 +12,8 @@
 `goal-authoring-and-route-support.md` is the active runtime owner for governed `/goal` authoring, route-support extraction, `Plan reference` discipline, and selected-goal overflow handling into `/plan`.
 
 It separates detailed goal-authoring doctrine from execution continuity and phase/task shaping so the runtime layer can stay compact without duplicating the same `/goal` contract across several root rules. It encodes execution- or user-selected proof layering and route-prerequisite ordering without independently deciding whether a proof obligation belongs to the current goal or a successor.
+
+Selected [runtime compaction](design/runtime-compaction.design.md) retains proof schema, reachability preflight, route prerequisite/Plan-reference lifecycle and exact copied-artifact order here. Full current-versus-successor proof selection/closure stays with execution; local safeguards preserve explicit terminal proof and prevent unavailable inferred live acceptance.
 
 ---
 

@@ -1,8 +1,8 @@
 # Design - Refusal and Recovery Chain
 
 > **Parent Rule:** [../refusal-and-recovery.md](../refusal-and-recovery.md)
-> **Current Version:** 1.4
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.5
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/refusal-and-recovery.changelog.md](../changelog/refusal-and-recovery.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 `refusal-and-recovery.md` is the active runtime owner for wrapper normalization, refusal classification, refusal minimization, and actionable recovery paths.
 
-It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
+Selected [runtime compaction](design/runtime-compaction.design.md) keeps one normalization → checked condition/class/decision → safe-now/recovery mapping. Exact refusal classes, decision outputs and recovery meanings remain explicit; authorized destructive intent consumes the safety confirmation gate rather than becoming an automatic prohibition.
 
 ---
 

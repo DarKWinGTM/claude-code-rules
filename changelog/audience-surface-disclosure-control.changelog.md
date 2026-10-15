@@ -1,8 +1,8 @@
 # Changelog - Audience Surface Disclosure Control
 
 > **Parent Document:** [../audience-surface-disclosure-control.md](../audience-surface-disclosure-control.md)
-> **Current Version:** 1.1
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.2
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 
 ---
 
@@ -10,11 +10,21 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.2 | 2026-09-30 | **[Compacted audience classification and disclosure](#version-12)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.1 | 2026-08-09 | **[Compacted disclosure integration handoffs](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-05-07 | **[Created direct-user-transparent audience-surface disclosure owner](#version-10)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | | | Summary: Created a first-class runtime/design/changelog chain for full direct-user transparency plus audience-appropriate generated public/operator/customer/log/demo/external artifact disclosure boundaries | |
 
 ---
+
+<a id="version-12"></a>
+## Version 1.2: Compacted audience classification and disclosure
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated repeated classification/flow/anti-pattern text while retaining direct-owner transparency, all sensitive categories and safe public action/limit/support clarity.
+- User-selected disclosure still respects hard privacy/security gates; P073-16 source compaction only.
 
 <a id="version-11"></a>
 ## Version 1.1: Compacted disclosure integration handoffs

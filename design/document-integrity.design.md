@@ -1,8 +1,8 @@
 # Design - Document Integrity
 
 > **Parent Rule:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.14
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.15
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/document-integrity.changelog.md](../changelog/document-integrity.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 `document-integrity.md` is the active runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline.
 
-It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
+Selected [runtime compaction](design/runtime-compaction.design.md) consolidates preservation/reference/trigger prose without weakening payload-versus-project proof, source-root ownership, daily-first lossless rollover, hash-bound Patch manifests/journals/sentinels or leader verification. Artifact-role authority remains governance-owned; hygiene is never removal permission.
 
 ---
 

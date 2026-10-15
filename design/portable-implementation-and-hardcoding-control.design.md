@@ -3,14 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb (2026-04-09)
+> **Current Version:** 1.6
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01 (2026-09-30)
 
 ---
 
 ## 1) Goal
 
-Define one first-class rule chain for preventing non-portable implementation behavior in shared artifacts.
+Define one first-class rule chain for preventing non-portable implementation behavior in shared artifacts. Selected [runtime compaction](design/runtime-compaction.design.md) consolidates representation/binding/exception decisions while preserving exact semantic/env notation, source/destination separation and legitimate observed-local/machine-scoped use.
 
 The chain should ensure that:
 - shared implementation artifacts stay portable by default
@@ -63,7 +63,7 @@ P100 refinement: this owner may compress repeated drift/correction/checklist pre
 - validation/checklist expectations for detecting portability violations
 
 ### 3.2 Out of Scope
-- local path lookup mechanics themselves (owned by `no-variable-guessing`)
+- local path lookup mechanics themselves (owned by `evidence-discipline`)
 - wording strength for local evidence reporting (owned by `accurate-communication`)
 - refusal/recovery behavior when configuration is missing
 - generic code-style questions unrelated to portability or environment binding
@@ -265,12 +265,11 @@ This keeps the semantic owner clear while still leaving application work availab
 ## 10) Integration
 
 Related chains:
-- [../no-variable-guessing.md](../no-variable-guessing.md)
+- [../evidence-discipline.md](../evidence-discipline.md)
 - [../accurate-communication.md](../accurate-communication.md)
-- [../project-documentation-standards.md](../project-documentation-standards.md)
-- [../document-consistency.md](../document-consistency.md)
-- [../strict-file-hygiene.md](../strict-file-hygiene.md)
-- [../tactical-strategic-programming.md](../tactical-strategic-programming.md)
+- [../document-governance.md](../document-governance.md)
+- [../document-integrity.md](../document-integrity.md)
+- [../coding-discipline.md](../coding-discipline.md)
 
 ---
 

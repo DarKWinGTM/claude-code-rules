@@ -1,8 +1,8 @@
 # Changelog - Portable Implementation and Hardcoding Control
 
 > **Parent Document:** [../portable-implementation-and-hardcoding-control.md](../portable-implementation-and-hardcoding-control.md)
-> **Current Version:** 1.4
-> **Session:** 11c4bd2f-216e-4779-81bf-26d34a4fcaeb
+> **Current Version:** 1.6
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.6 | 2026-09-30 | **[Aligned current owner references after compaction](#version-16)** | adda8afb-6edf-466b-add9-b9649b718e01 |
+| 1.5 | 2026-09-30 | **[Consolidated portable representation and local exceptions](#version-15)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.4 | 2026-08-09 | **[Compacted portability integration handoffs](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-05-17 | **[Applied P100 safe-first compression refinement](#version-13)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
 | 1.2 | 2026-04-09 | **[Extended portability rules to reusable support/package source artifacts](#version-12)** | 11c4bd2f-216e-4779-81bf-26d34a4fcaeb |
@@ -19,6 +21,24 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs portable implementation defaults, late-bound environment resolution, scoped local observations, and anti-hardcoding discipline for shared artifacts | |
 
 ---
+
+<a id="version-16"></a>
+## Version 1.6: Aligned current owner references after compaction
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Repointed design integration links to current evidence, document, integrity and coding owners after absorbed legacy chains were removed from the active runtime set.
+- No portability mechanism changed; this is a source-governance correction and remains unpublished.
+
+<a id="version-15"></a>
+## Version 1.5: Consolidated portable representation and local exceptions
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated late-binding/representation/drift reminders while preserving exact placeholder/env vocabulary and public source-versus-destination separation.
+- Retained checked-local/tool/forensic/machine-scoped exceptions and domain-literal distinction; P073-16 source compaction without local-state mutation.
 
 <a id="version-14"></a>
 ## Version 1.4: Compacted portability integration handoffs

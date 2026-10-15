@@ -1,14 +1,16 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.9
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-10-15 | **[Distinguished temporary run captures from source-tool implementation](#version-19)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
+| 1.8 | 2026-09-30 | **[Consolidated bounded read and output gates](#version-18)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.7 | 2026-08-09 | **[Compacted bounded-I/O integration handoffs](#version-17)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.6 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.5 | 2026-05-17 | **[Added P103 observed-example wording and equivalence-boundary refinement](#version-15)** | 1f1873d2-0feb-485f-a5ff-d383254590dd |
@@ -21,6 +23,26 @@
 | | | Summary: Created `safe-io.md` as a body-sufficient merged runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-19"></a>
+## Version 1.9: Temporary captures versus source tools
+
+**Date:** 2026-10-15
+**Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+
+- Allowed session-unique temporary output or existing project-owned output roots under their contracts while retaining bounded capture, exit/status/stderr visibility and material failure reporting.
+- Clarified that stray repo-local debug artifacts differ from legitimate source tools and governed test fixtures; temporary captures are not a default implementation owner.
+- Kept source-tool lifecycle canonical in Coding Discipline through one consumer pointer rather than duplicate policy; no blanket temporary-storage ban or automatic cleanup authority.
+
+<a id="version-18"></a>
+## Version 1.8: Consolidated bounded read and output gates
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Compacted repeated read/output reminders into file, aggregate-burst, parent-first and command-capture duties.
+- Preserved exact threshold shape, scope/truncation/failure visibility, unique temporary output and preservation-first maintenance.
+- Routing remains net-benefit-owned rather than automatic delegation; P073-16 source-only change.
 
 <a id="version-17"></a>
 ## Version 1.7: Compacted bounded-I/O integration handoffs

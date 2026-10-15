@@ -1,14 +1,15 @@
 # Changelog - External Verification and Source Trust
 
 > **Parent Document:** [../external-verification-and-source-trust.md](../external-verification-and-source-trust.md)
-> **Current Version:** 1.7
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.8
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-09-30 | **[Consolidated eligible-source trust and conflict handling](#version-18)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.7 | 2026-08-10 | **[Added capability-bound authorized source selection and bounded substitutes](#version-17)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.6 | 2026-08-09 | **[Compacted source-trust integration handoffs](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.5 | 2026-08-08 | **[Separated public evidence lookup from consequential external action](#version-15)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -21,6 +22,16 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs proactive external verification, source-reliability ranking, corroboration expectations, and source-conflict handling for WebSearch/WebFetch-backed factual work | |
 
 ---
+
+<a id="version-18"></a>
+## Version 1.8: Consolidated eligible-source trust and conflict handling
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Removed repeated trigger/corroboration/approval prose while keeping eligibility before trust, the six-tier ladder, source-fit criteria and conflict recovery.
+- Preserved single-primary-source low-risk sufficiency and proportionate corroboration for high-impact, weak, conflicting or version-sensitive premises.
+- Kept approval/retry and evidence thresholds in their canonical owners; P073-16 unpublished source compaction.
 
 <a id="version-17"></a>
 ## Version 1.7: Added capability-bound authorized source selection and bounded substitutes

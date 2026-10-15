@@ -62,6 +62,19 @@ Expected behavior: create or repair the proper owner surface instead of overload
 
 ---
 
+### Virtual docs-cadence and task-handoff variants
+
+These are declared synthetic inputs under the current [execution](../../execution-and-goal-frame.md), [task](../../phase-todo-artifact.md) and [document](../../document-governance.md) owners. They do not establish historical frequency, task-file deletion or causal model improvement.
+
+| ID | Input | Expected action and nearest boundary |
+|---|---|---|
+| S1a | A1 → A2 → A3 are attempts inside one approved contract; matching checks are still in progress. | Continue implementation/checks; keep useful working detail in tasks and batch settled result/history, not a full design/changelog rewrite per attempt. |
+| S1b | The next action materially changes an unsettled selected API contract. | Normalize/resolve design and required approval before that dependent action; docs-last is not design-last. Runtime Rule Markdown is implementation when Rules themselves are being changed. |
+| S3a | Technical tasks pass; durable docs are owed; completed and pending details remain retrievable but may become unavailable after final completion. | Initialize real finalization before all relevant tasks close; hand off technical evidence, read relevant completed/pending details, reconcile source/design/proof, synthesize and verify durable owners, then close finalization last in the selected family. An open task is not a persistence guarantee. |
+| S3b | No durable docs delta exists; the board also has another session's work. | Close the selected verified outcome without a dummy docs task or sentinel; do not hold or close unrelated work. Missing evidence never authorizes board reset/recreation. |
+| S5a | One owner and two references change; other documents have no semantic/reference delta. | Update only affected meaning/references; no artificial diff or task-transcript dump. Preserve meaningful history and any independently useful single-use boundary. |
+| S5b | A framework/helper/broad test or retrospective Patch is suggested solely to make the checklist look complete. | Reuse sufficient existing proof/owners; no unselected framework, helper, test or retrospective Patch. A genuinely triggered Patch remains prospective. |
+
 ## User objective
 
 Repair or extend governed documentation without letting current-state, history, and owner roles drift into one overloaded surface.

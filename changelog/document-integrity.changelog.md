@@ -1,14 +1,15 @@
 # Changelog - Document Integrity
 
 > **Parent Document:** [../document-integrity.md](../document-integrity.md)
-> **Current Version:** 1.14
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.15
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.15 | 2026-09-30 | **[Consolidated reference and preservation proof](#version-115)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.14 | 2026-08-11 | **[Separated Runtime payload parity from Active Project Root convergence](#version-114)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.13 | 2026-08-09 | **[Added evidence-bound Patch rename and reference integrity](#version-113)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.12 | 2026-08-09 | **[Aligned startup-selected diagram artifacts and compact handoffs](#version-112)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -27,6 +28,16 @@
 | | | Summary: Created `document-integrity.md` as a body-sufficient merged runtime owner for cross-reference consistency, rollover integrity, hygiene boundaries, and no-delete-by-cleanup discipline in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-115"></a>
+## Version 1.15: Consolidated reference and preservation proof
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated repeated no-delete/reference/rollover triggers into owner-specific integrity gates, retaining all repair dispositions and scanability thresholds.
+- Preserved Runtime payload versus Active Project Root convergence, exact Patch hash/mode manifest and pre-mutation journal, atomic references, archive sentinels and explicit rollback stop conditions.
+- Kept meaning/history/leader/body verification distinct from byte parity; P073-16 source-only change without history relocation.
 
 <a id="version-114"></a>
 ## Version 1.14: Separated Runtime payload parity from Active Project Root convergence

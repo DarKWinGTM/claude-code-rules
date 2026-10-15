@@ -1,14 +1,15 @@
 # Changelog - Refusal and Recovery Chain
 
 > **Parent Document:** [../refusal-and-recovery.md](../refusal-and-recovery.md)
-> **Current Version:** 1.4
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.5
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.5 | 2026-09-30 | **[Consolidated refusal decisions and recovery](#version-15)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.4 | 2026-08-09 | **[Compacted refusal integration handoffs](#version-14)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.3 | 2026-08-08 | **[Corrected destructive confirmation ordering](#version-13)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.2 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -17,6 +18,16 @@
 | | | Summary: Created `refusal-and-recovery.md` as a body-sufficient merged runtime owner for wrapper normalization, refusal classification, refusal minimization, and actionable recovery paths in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-15"></a>
+## Version 1.5: Consolidated refusal decisions and recovery
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Unified repeated normalization/taxonomy/activation clauses into one checked-condition decision table and actionable recovery contract.
+- Preserved four decision outputs, three refusal classes, five recovery meanings, scoped security help and exact destructive confirmation ordering.
+- P073-16 source-only compaction; confirmation and hard boundaries are unchanged.
 
 <a id="version-14"></a>
 ## Version 1.4: Compacted refusal integration handoffs

@@ -1,8 +1,8 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.36
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.38
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
 ---
@@ -11,6 +11,8 @@
 
 `phase-todo-artifact.md` is the active runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking.
 
+Selected [runtime compaction](design/runtime-compaction.design.md) consolidates repeated admission/lineage/status decisions while preserving startup triggers, exact Patch references, current-phase→family-child→major fall-through, material semantic dispositions and durable/live separation. Execution owns complete proof selection; task consumers preserve reconciliation effects and required blocked/resume states without copying that contract. A new explicit status-conflict delta requires original same-outcome evidence, not a summary-only inference.
+
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 
 ---
@@ -18,6 +20,14 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 ## Scope
 
 This design owns the target-state shape for artifact initiation control, phase implementation, and TODO standards.
+
+### Working record and finalization handoff
+
+Outcome-sized tasks may hold ordered substep checklists, selected decisions, actual changes/checks, evidence pointers and remaining obligations in the working language; an explicit Thai checklist request stays Thai. Keep only continuation-relevant detail, not a command-by-command transcript. Checkpoint a real handoff, blocker or state-loss risk without creating a new artifact or full docs sync per step.
+
+When the selected family owes durable documentation, initialize a real docs-finalization task before all relevant tasks close. Technical tasks may close at their own verified gates after their evidence is handed to that task. Finalization reads relevant completed and pending task details, reconciles them with source/design/proof, synthesizes the appropriate durable owners and verifies the handoff before completing last in that family. Do not wait for an empty board and then mine transcripts. A still-open task is not a persistence guarantee; neither physical deletion nor any particular harness cleanup mechanism is assumed.
+
+Without a documentation obligation, do not invent a final task or hold a dummy sentinel. Do not hold or close another session's unrelated work. If evidence is unavailable, preserve checked facts, missing coverage and the enabling resume condition; do not reset/recreate the board or fabricate prior results. The board is coordination state, not semantic authority over checked implementation or proof.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 

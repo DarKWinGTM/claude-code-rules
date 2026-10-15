@@ -1,77 +1,37 @@
 # Safe I/O (File Reading + Terminal Output)
-
-> **Current Version:** 1.7
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.9
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.9
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
-
----
 
 ## Rule Statement
 
-**Core Principle: Bound I/O operations — file reading and terminal output — so session stays responsive, paths are verified before factual claims, large/risky files use partial reads or searches, worker-fit aggregate read/output bursts are delegated before leader raw absorption when that is the safer context-budget choice, command output cannot flood context or hide material failures, governed design/changelog chains are read through their declared compact parent first whether they use flat sibling or same-stem shard mode, and oversized active governance entrypoints or autocompact thrash are treated as rollover-maintenance signals.**
+**Core Principle: Read/capture the smallest useful scope without flooding context or hiding failures. Verify paths, start governed chains at their compact parent, and narrow or route a material aggregate burst before further raw absorption. Oversized entrypoints need preservation-first maintenance, not deletion.**
 
----
+## Bounded File Intake
 
-## Core Contract
+Prefer `Read` for known files and search tools for paths/symbols; Bash reading only when dedicated tools do not fit or shell output is requested. Verify existence/source authority before local claims. Large source uses targeted `offset`/`limit`; report partial scope. Logs/maps/SVG/HTML/unknown JSON/generated/minified/base64/binary-like files use bounded previews/search, not raw full reads unless exact content is necessary. On tool-limit overflow narrow ranges/search rather than repeat full reads.
 
-### 1) Prefer dedicated read tools
+## Aggregate Burst Gate
 
-Prefer `Read` for known files and search tools for locating files/symbols. Use Bash reading only when dedicated tools don't fit or the user needs shell output.
+Before broad intake define the factual question, likely owner and raw-content versus filtered-result need. A worker-fit burst has one decisive high-risk signal or two moderate signals: repo-wide search plus follow-up reads, multiple authority surfaces, parent plus multiple shards, mixed code/docs/output, dense documents, noisy tests/builds/logs or repeated post-compact offset/reread churn.
 
-- verify path existence or source authority before relying on local file claims
-- use `offset`/`limit` for large files
-- avoid raw full reads of large/minified/generated/binary-like files
-- report partial scope when only part of a file was read
+Narrow first; if the burst remains, invoke [worker-routing-and-context.md](worker-routing-and-context.md)'s net-benefit/topology gate before “one more” raw read. Detection is not automatic delegation. Known bounded files, exact edit/verification ranges, final anchors, tight interactive sequence, high overlap, unavailable tooling or explicit direction may justify direct handling; state a narrow exception only when a beneficial unresolved burst remains. This owner controls capture/detection, routing controls workers/briefs/permissions/handoffs.
 
-### 2) Bounded output by default (file reading)
+## Parent-first Governed Reading
 
-File reading should not flood the session.
+Read the declared active design/changelog parent for authority/shape/map before opening the selected flat sibling or same-stem child. Do not infer a subfolder from filename or absorb all shards. Report parent/child checked scope; design children are active target truth, not automatically history. Open `changelog/done/` only through active reference or history/audit/rollback/provenance need. Keep observed example, extracted doctrine, selected target and verified equivalence distinct under [document-governance.md](document-governance.md).
 
-- normal source files: read a bounded range when large
-- minified/bundled/generated files: preview/search only unless exact full content is necessary
-- logs, maps, SVG, HTML, unknown JSON, base64-like files: targeted search or small preview
-- if output exceeds tool limits, switch to narrower offsets/searches rather than rereading the whole file
+If active entrypoint size/failed reads/compact thrash blocks useful intake, inspect only enough current state for [document-integrity.md](document-integrity.md)'s lossless rollover. Resume at compact active entry; retained history stays reference-driven.
 
-### 3) Aggregate read/output burst detection
-Before broad absorption, define the question, likely authority surface, and whether the leader needs raw content or a filtered result. Read or search only the smallest scope needed.
+## Commands and Temporary Output
 
-A burst is worker-fit when one decisive high-risk signal or two moderate signals are present, including repo-wide search plus follow-up reads, several authority surfaces for one claim, parent plus multiple shards, mixed code/docs/command output, dense active documents, noisy logs/tests/builds, or repeated offset/reread churn after compact.
+Use direct low-output tools when sufficient. Before high-output shell/log/build/search/HTTP work choose deterministic line/character caps, capture/filter strategy and session-unique temporary output or an existing project-owned output root under its contract. Never dump unknown recursive output, bodies, generated/minified/binary/base64 into the conversation.
 
-When the gate fires, narrow the I/O or invoke `worker-routing-and-context.md` before further raw leader absorption. Do not continue with "one more" broad read. Direct handling remains allowed for narrow known files, exact edit/verification ranges, final anchor checks, tightly sequential interactive work, unavailable worker tooling, explicit user direction, or a stated narrow exception. A bounded excerpt supports only its checked scope.
+Temporary captures are run artifacts, not the default home for reusable tool/test implementation; [coding-discipline.md](coding-discipline.md) owns that lifecycle. Avoid ordinary stray repo-local debug artifacts without excluding legitimate source tools or governed test fixtures.
 
-Safe I/O owns burst detection and bounded capture. Worker Routing owns topology, dispatch, lane contracts, and handoff quality.
+Keep command, exit status, material stderr and failure summary visible. Disclose truncation/partial scope and persisted output location; caps are not verification and cannot hide a failure. Prefer focused reruns/searches over blind expansion; cross-file/multi-pass output passes the aggregate gate. Temporary cleanup is permitted; repo-file removal still needs [action-safety.md](action-safety.md)'s destructive confirmation.
 
-### 4) Parent-first governed-chain reading
-For sharded design or changelog chains, read the compact active parent first for authority, declared shape, map, and selection guidance. Then open only the named sibling or same-stem child needed for the active question.
+## Boundaries
 
-- do not infer a nested directory from the parent filename or absorb the whole shard set
-- broad consistency/history audits may trigger the aggregate-burst gate
-- report the checked parent/shard scope
-- treat design children as active target-state truth, not history/done by default
-- open `changelog/done/` only through an active reference or history/audit/rollback/provenance need
-- when reading an example, keep observed shape, extracted doctrine, selected target, and equivalence basis distinct
-
-### 5) Oversized governance entrypoints
-When an active entrypoint exceeds practical read limits or causes compact thrash, inspect only enough current state to invoke the rollover contract in `document-integrity.md`. After rollover, start from the compact active entrypoint and open history/done only through an active reference or audit/rollback/provenance need.
-
-### 6) Command and temporary-output safety
-Use direct tools for known low-output work. When shell or high-output commands are necessary, choose deterministic line/character caps, capture/filter strategy, and session-unique `/tmp` output before running them.
-
-- do not dump unknown logs, builds, recursive searches, HTTP bodies, generated/minified data, or binary/base64-like content into the conversation
-- keep command, exit status, material stderr, and failure summary visible
-- disclose truncation, partial scope, and where persisted output can be reviewed
-- use focused searches/reruns instead of expanding noisy output blindly
-- avoid repo-local ordinary debug artifacts; temporary cleanup is allowed, while repo-file deletion follows destructive confirmation
-- route multi-pass or cross-file output review through the aggregate-burst gate
-
----
-
-## Anti-Patterns
-
-Avoid unbounded or repeated broad reads; whole-scope claims from excerpts; bypassing active parents/maps; delaying burst routing until raw context is already absorbed; hiding failures or truncation; treating output caps as verification; and creating persistent repo debug output for ordinary command review.
-
----
-
-## Integration
-Related owners: [worker-routing-and-context.md](worker-routing-and-context.md) (topology/handoffs after burst detection); [document-governance.md](document-governance.md) and [document-integrity.md](document-integrity.md) (chain/reference/rollover); [evidence-discipline.md](evidence-discipline.md) (claim scope); [action-safety.md](action-safety.md) (risky commands/failures/destruction).
+No whole-system claim from bounded excerpts, late routing after raw flood, parent/map bypass, repeated unbounded reads or silent output loss. [evidence-discipline.md](evidence-discipline.md) governs claim scope; document and safety owners preserve authority/history/approval while this contract keeps I/O responsive.

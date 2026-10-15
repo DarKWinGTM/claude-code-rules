@@ -1,8 +1,8 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.36
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.38
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.38 | 2026-10-15 | **[Added real finalization task and evidence-before-last-closure handoff](#version-138)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
+| 1.37 | 2026-09-30 | **[Compacted outcome admission lineage and task consequences](#version-137)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.36 | 2026-08-10 | **[Added proof-layer task reconciliation and live-successor separation](#version-136)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.35 | 2026-08-09 | **[Added deterministic Patch creation lifecycle](#version-135)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.34 | 2026-08-09 | **[Added conditional diagram startup posture](#version-134)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -51,6 +53,29 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-138"></a>
+## Version 1.38: Real finalization and task-evidence handoff
+
+**Date:** 2026-10-15
+**Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+
+- Kept ordered, working-language substeps/decisions/changes/actual checks/evidence/remaining obligations inside outcome-sized tasks, not command-sized tasks or transcript logs.
+- Required a real docs-finalization task when durable docs are owed, initialized before all relevant tasks close; technical evidence is handed off and completed/pending details reconciled with source/design/proof before finalization closes last in its family.
+- Preserved no-doc/no-dummy and unrelated-session boundaries, truthful missing-evidence/resume handling, and the distinction between board coordination and semantic authority. An open task is not a persistence guarantee; physical deletion and harness cleanup cause are not asserted.
+- [P073-19](../phase/phase-073-19-docs-sync-and-task-handoff.md) records the synthetic S3 ordering clarification and retained proof/lineage boundaries.
+
+<a id="version-137"></a>
+## Version 1.37: Compacted outcome admission lineage and task consequences
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated startup triggers, strict current→family-child→major lineage, phase/TODO roles and outcome-sized live task lifecycle.
+- Kept exact Patch references/creation, semantic dispositions, meaningful verification and optional-live versus selected-proof task reconciliation while deferring full proof selection to execution.
+- Baseline-to-current review restored explicit child-local summary/phase ID/status, design references and TODO/changelog coordination before installation; these remain child obligations, not only summary responsibilities.
+- Preserved explicit user-requested detailed tracking without task-per-command policy; conditional additional status delta awaits original evidence rather than assumed adoption.
+- P073-16 source candidate; history remains reachable and unrelated execution state preserved.
 
 <a id="version-136"></a>
 ## Version 1.36: Proof-layer task reconciliation and live-successor separation

@@ -1,8 +1,8 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.24
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.26
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
 ---
@@ -11,7 +11,11 @@
 
 `explanation-and-presentation.md` is the active runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing.
 
-It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
+The [runtime compaction](design/runtime-compaction.design.md) baseline retains one purpose-first Claim/Mechanism/Implication flow, practical patterns/snapshots, evidence-aware closeout and unframed diagrams. Goal rendering consumes selected posture and preserves copied order without re-owning construction; tone, identifier meaning and proof thresholds stay in their canonical owners.
+
+Material execution updates, closeouts and status questions lead with the direct answer and current outcome in ordinary language, then relevant actions/changes, matching check results and material remaining work/reasons. A short paragraph or a few bullets may satisfy this sequence; no fixed five-heading template or empty section is required. Do not append an old proposal to a status answer by default; when it changes the current decision, separate it visibly as advisory/not executed. In-flight progress cannot read as completed work, and reporting does not interrupt safe selected continuation.
+
+Read-only, no-op and plan-only replies make their non-edit/non-execution state explicit when confusion is plausible; trivial lookups remain direct. Accurate communication owns action/current-state truth and verification strength, while register owns language/signal pruning. Presentation neither invents proof/approval gates nor claims installed files guarantee model behavior.
 
 ---
 

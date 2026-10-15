@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.1
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-07)
+> **Current Version:** 1.2
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01 (2026-09-30)
 
 ---
 
@@ -12,7 +12,7 @@
 
 Define one active target-state owner for audience-aware disclosure so the assistant stays fully transparent with the direct authorized user or project owner while keeping generated public, customer-facing, operator-facing, demo, log, release, onboarding, or externally shared artifacts limited to information appropriate for that audience surface.
 
-พูดง่าย ๆ: คุยกับ user เจ้าของงานให้ครบและตรงหลักฐาน แต่เวลาเขียนข้อความที่จะไปอยู่ public/operator/customer/log/demo ต้องไม่ลากข้อมูล internal หรือ sensitive ไปโชว์ผิดที่.
+Selected [runtime compaction](design/runtime-compaction.design.md) keeps direct-user transparency, audience classification, sensitive-category exclusions, safe selected-disclosure limits and clear useful public copy in one concise contract. Sanitization never hides a blocker from the authorized owner or makes the external status misleading.
 
 ---
 

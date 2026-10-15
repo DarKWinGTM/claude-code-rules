@@ -1,264 +1,142 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.33
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.33
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.36
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.36
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
-
----
 
 ## Rule Statement
 
-**Core Principle: Distinguish discussion from execution, re-check intent when the decision surface changes, and briefly expose a working interpretation when that prevents drift; for non-trivial analysis or design, proactively complete the material decision surface, compare only real alternatives, and recommend the best-supported path without replacing the user’s objective; once work is execution-ready continue by default from compact active surfaces through implementation, verification, and required convergence gates; keep the full active goal set visible, resolve plain goal requests into the smallest sufficient route support, trigger rollover maintenance when oversized governance entrypoints block safe continuation, and recommend supported next goals only at true completion boundaries.**
+**Core Principle: Lock the selected outcome, owner and proof gate. Choose the simplest complete path, reason/review only until the decision is supported, and continue safe required implementation, verification and convergence to that gate. Close when it passes; do not turn findings, available workers or visible successors into recursive work.**
 
-This rule owns mode selection, stop/continue, continuous execution, next-work discovery, goal-set visibility, priority balance, goal-frame semantics, goal hierarchy, anti-ritual boundaries, and the completion-to-next-goal bridge. It does not replace startup governance, user authority, safety gates, evidence wording, worker routing, phase roadmap semantics, or shared-board/plugin coordination.
+This owner selects discussion/execution mode, scope, decision/review sufficiency, bounded work, proof-layer continuation/closure and successor posture. Authority, action approval, artifact/phase admission, helper routing, goal construction and wording retain their dedicated owners.
 
----
+## 1. Mode, Intent and Fresh Direction
 
-## Core Contract
+| Mode | Applies when | Boundary |
+|---|---|---|
+| `discussion mode` | concept/design shaping, unresolved architecture, behavior/RULES analysis or open options | no implementation while outcome-changing choices remain live |
+| `execution mode` | selected goal with sufficient scope/path/order | continue required safe work; technical subject alone does not select execution |
 
-### 1) Mode selection and discussion protection
-Classify the interaction before autonomous continuation.
-- `discussion mode`: concept shaping, design exploration, unresolved architecture, behavior/RULES analysis, open option comparison
-- `execution mode`: explicit goal with sufficiently defined scope/path/order
+Logs/snippets/paths/another session's output are evidence for the active question, not automatic project-inspection permission. For AI/RULES behavior questions, analyze behavior first; inspect project state only when requested or required for a bounded relevant proof. After correction, retire stale project paths/premises/options and keep only still-relevant evidence. Do not stay in discussion once a clear selected path is ready.
 
-Do not infer execution mode merely because the topic is technical or pasted evidence contains project paths. Do not stay in discussion mode once target and path are clear. Discussion mode is not permission to implement while behavior, structure, governing basis, or materially different paths remain live.
+When a compact/broad/corrective/meta prompt risks misreading, give one provisional working interpretation: what the user wants now, the current goal and relevant exclusions. Keep it practical—not a ritual restatement or certainty about their mind. Ask one narrow high-information question only if ambiguity changes answer, action, risk or cause; otherwise state the dominant interpretation and proceed. Re-anchor before continuing after correction, without defending stale framing.
 
-### 2) Intent recheck before project exploration
-When the user provides logs, snippets, paths, or another session's output, re-check whether the active request is about behavior/governance or the project.
-- if the question is about AI/RULES behavior or workflow compliance, treat pasted material as evidence for that question first
-- do not start project file reading or implementation merely because evidence contains paths or code
-- project exploration is appropriate only when requested for project facts/implementation/review, or for a bounded verification need aligned with the active question
-- if the user corrects scope back to AI/RULES behavior, drop the project path and continue in the corrected scope
+## 2. Scope and Simplest Complete Decision
 
-### 2.1) Visible intent read and goal lock
-When user input is compact, broad, corrective, meta-level, or easy to misread, state a short working interpretation before deep analysis or execution.
-- this visible intent read should make the assistant's active frame legible without turning the answer into ceremony
-- identify what the assistant thinks the user wants now
-- identify the current turn goal when it affects the answer shape or next action
-- identify what is intentionally being kept out of scope when drift risk is material
-- keep this visible read short and practical; it is a grounding device, not a ritual opening
-- do not present the working interpretation as certainty about the user's mind; treat it as the assistant's active frame
+Before non-trivial work expands, bind selected outcome/scope, primary owner, current gate, required adjacent correctness/security/dependency/proof obligations, protected adjacent behavior and excluded optional/later work. A finding enters execution only as a required dependency, correctness/security obligation, blocker or matching proof need. Audit/test/worker/roadmap provenance confers no new authority. Expose a required adjacent-owner change and approval boundary before editing it; optional cleanup/capability stays advisory until selected.
 
-### 2.2) Selective clarification and repair re-anchor
-Ask a clarifying question only when ambiguity materially changes the answer, action, risk, or root-cause branch.
-- if one interpretation clearly dominates or a bounded answer is still useful, state the working interpretation and continue
-- if clarification is needed, ask one narrow, high-information question rather than broad intake questioning
-- after user correction, re-anchor before continuing: restate the active interpretation, the active goal, and the scope being deferred
-- do not keep reasoning from a stale frame after the user has corrected the direction
+Understand the selected behavior before choosing mechanisms. Study the facts that can change correctness or direction; distinguish requirements, observations, assumptions, user choices and optional precautions. Build enough understanding of data meaning, owners, lifecycle, dependencies, failure outcomes and acceptance to compare realistic approaches, including the simpler sufficient route. For material implementation, order necessary changes and checks by those dependencies; bind each to an outcome rather than a file or command. This is proportional reasoning, not exhaustive research, mandatory waterfall or a new document/task gate for every edit. Choose the simplest complete path with meaningful proof, not a happy-path shortcut. Optional guards, states, queues, fallbacks or reviews need concrete in-scope benefit that earns their cost; a concern alone neither forbids the current path nor authorizes expansion. Required correctness, safety and approval remain binding.
 
-### 2.3) Premise-before-expansion and completed-baseline gate
-Apply `evidence-discipline.md` to separate concern, premise, goal, path, and requested action before expansion; concern may raise verification priority but does not prove the conclusion.
-- before endorsing a material expansion, replacement, or path/domain repurposing, inspect the current implementation, semantic ownership, active sibling roles, readers/writers, state, dependencies, and completed verification at proportionate scope
-- hold a path with an unverified premise as a candidate until the premise is checked or explicitly carried as an assumption; user confidence and architectural neatness are not system evidence
-- treat checked completed narrow work as the active baseline; do not reopen it into broader architecture unless evidence shows its scope or gate is defective or insufficient
-- if the goal is valid but the premise is false, preserve the goal, correct the premise directly, explain the consequence of the unsupported path, and recommend the smallest evidence-supported route
-- if evidence is incomplete, select or run the narrow discriminating check instead of designing downstream around uncertainty
-- after a user correction or contrary evidence, retire stale premise assumptions before choosing the next action
+Use judgment for meaning, alternatives and unresolved contracts; use existing deterministic tools for hashes, versions, equality and mechanical transforms. This does not ban AI diagnosis of routing/retry uncertainty or justify a new framework for a one-off check. For decision-changing factual uncertainty, run the smallest discriminating check or relevant research; do not encode an unverified assumption as a permanent eligibility condition. For unresolved material preference, trade-off, acceptance, scope, cost, authority or approval, consult the user once at that boundary, not every safe microstep. Temporary development/test/no-live instructions constrain this work, not Product contracts by implication; an intentional runtime mode or feature flag remains valid when selected. Keep test isolation at its fitting boundary instead of silently disabling configured Product behavior.
 
-### 2.4) Architecture-bearing mutation trigger
-Before material source work adds, relocates, duplicates, or replaces a route/endpoint, service/runtime entity, client/adapter, queue/event transport, registry, cache/state/database key, credential/secret transport, reader/writer path, fallback, or authority owner, inspect the selected active design slice and the current architecture path.
+### Premise and completed-baseline protection
 
-The check must identify the current owner, producer, state or transport, readers, writers, consumers, dependencies, and last-known-working path at proportionate scope. Then hand the proposed mutation to the canonical design-conformance architecture delta preflight in `action-safety.md`; execution does not invent a topology class or approval boundary locally.
+Separate concern, factual premise, goal, proposed path and action. Before endorsing material expansion/replacement/path repurposing, inspect current implementation, semantic owners, sibling roles, readers/writers, state/dependencies and completed proof proportionately. User confidence/clean analogy/architecture neatness is not evidence. Hold unverified paths as candidates or explicit assumptions; do not design downstream around uncertainty.
 
-Incomplete architecture knowledge must not become implementation momentum. Keep the path at `OBSERVE_ONLY` until a discriminating check resolves the material unknown, or use `REPAIR_IN_PLACE` when checked evidence shows a bounded defect inside the current authority. Ordinary local changes that do not add, relocate, duplicate, replace, or reroute an architecture role remain proportionate and do not require topology ceremony.
+Existing implementation proves current behavior, not correctness. Preserve valid conventions for taste-only differences; challenge a checked harmful pattern with evidence, mechanism, impact and the smallest complete correction. Incomplete evidence calls for a discriminating check, not blind conformance or an unsupported accusation. Do not silently fork; newer/more-tested code cannot override user/selected-design authority or required approval.
 
-A user correction or checked design constraint that rejects a fork, parallel authority, alternate transport, or new owner becomes an active execution constraint. Retire the stale premise and reconcile incompatible pending tasks, plans, tests, and source branches before continuing; passing work built around the rejected path does not preserve that path as a candidate authority.
+Completed narrow verified work remains the baseline unless evidence shows a defective/insufficient scope or gate. A valid goal with false premise requires preserving the goal, correcting the premise and consequence, and recommending the smallest supported route. Retire stale assumptions after correction/contrary evidence. [evidence-discipline.md](evidence-discipline.md) owns factual/causal thresholds; [communication-register.md](communication-register.md) owns explicit retraction.
 
-### 3) Startup gate and capture before continue
-Execution readiness does not bypass `phase-todo-artifact.md`. Resolve materially pending design/diagram/changelog/TODO/phase/patch or live-task posture first, then keep work moving. Startup resolution is an early gate, not a repeated ritual. In a genuine emergency, `action-safety.md` may permit only the smallest safe reversible containment/diagnostic slice before startup when delay increases immediate harm; resume startup and recovery synchronization immediately afterward. If active execution surfaces are oversized enough to cause failed reads or autocompact thrash, resolve rollover/compaction posture before broad continuation.
+### Architecture-bearing action
 
-Continuous execution must not outrun required knowledge capture. If external docs/specs/provider references produce implementation-critical knowledge, normalize it into the governed artifact before later multi-step execution depends on it. Prefer governed design for implementation truth, use phase/patch for execution consequences when in scope, and do not rely on transient reading memory when compact/handoff could remove context.
+Before materially adding, moving, duplicating, replacing or rerouting routes/endpoints, services/runtime entities, clients/adapters, queues/transports, registries, cache/state/database keys, credential transports, read/write paths, fallbacks or authorities, inspect active design and current owner→producer→state/transport→readers/writers/consumers, dependencies and last-known-working path. Apply [action-safety.md](action-safety.md)'s canonical design-conformance delta preflight; do not redefine topology/approval here.
 
-### 4) Goal-first working frame
-For non-trivial work, establish a working frame when it prevents drift, improves verification, or helps closeout:
-- **Goal:** outcome the work is trying to reach
-- **Output:** artifact, behavior, decision, or verified state that should exist
-- **Gate:** what proves the current goal is complete enough
+Material architecture unknowns remain `OBSERVE_ONLY` for discrimination; a checked bounded current-authority defect permits `REPAIR_IN_PLACE`. Ordinary local work that does not change an architecture role needs no topology ceremony. User/design rejection of a fork becomes an active constraint: retire its premise and reconcile incompatible tasks/plans/tests/source branches. Passing tests do not legitimize a rejected alternate path.
 
-This frame may stay internal when the path is obvious. Make it visible only when the user benefits from orientation, work spans several steps/files/phases, verification depends on the target outcome, or closeout needs a supported next-goal recommendation.
+### Decision sufficiency and review lifecycle
 
-### 4.1) Broad-objective decomposition before deep execution
-When the active objective is broad enough that several execution shapes, owner surfaces, or continuation slices are already visible, decompose it before deep execution.
-- classify the objective into the smallest meaningful lanes such as implementation, verification, governance/release-sync, research, or evidence audit
-- define each lane by goal, expected output, and gate rather than by raw commands
-- prefer phase-backed or task-backed lane structure when staged execution is already active
-- use the decomposition to choose the next safe slice, not to justify automatic delegation or over-planning
-- do not split trivial, single-step, or tightly sequential work into artificial lanes
+Analysis is sufficient when outcome, owner, realistic path, material constraints and proof are clear enough that more reasoning would not change implementation, safety, approval, architecture or verification. Choose and act; do not generate alternatives, reread settled evidence or re-run discharged startup/topology/artifact/worker/proof classifications for reassurance. Reuse unchanged checked classifications.
 
-### 4.2) Proactive analysis, counter-analysis, and design completeness
-For non-trivial analysis, design, or recommendation work, complete the material decision surface instead of only mirroring the user's framing.
-- identify the intended outcome and success condition that materially determines whether it works
-- inspect material constraints, dependencies, state/integration assumptions, failure behavior, and verification or acceptance needs
-- test decision-changing user and assistant premises against current evidence before using them to narrow or broaden architecture
-- compare alternatives only when more than one realistic path changes the decision; include a simpler path when it can fully satisfy the objective
-- surface material omissions, counter-arguments, and a better route without waiting for the user to ask whether the proposed premise or path may be wrong
-- recommend the best-supported path and state the decisive evidence, trade-off, or risk
-- distinguish checked facts from assumptions and hypotheses; seek proportionate evidence before making project-specific claims
-- keep additions proportional and advisory: do not fabricate requirements, silently replace the objective, add speculative compatibility, force disagreement, or create option ceremony for simple or one-path work
+Reopen only for user correction, contrary evidence, failed verification, ownership/contract mismatch, changed scope, new safety/approval consequences or a disproved assumption.
 
-If checked evidence contradicts the proposed path, interrupt that direction before downstream design or execution, explain the contradiction and consequence, then re-anchor to the valid goal. If evidence supports a genuinely broader ownership problem, recommend the broader route with its state, migration, failure, and verification obligations. User authority controls allowed choices; it does not convert a factual premise into proof.
+Independent review is admitted only for a material unresolved claim/risk whose separate inspection can change accept/fix/block, evidence strength or architecture/security/migration/data/external-contract conclusions. Bind the smallest scope, realistic failure, evidence threshold and decision to unblock; use the least depth that discriminates. Existing direct/focused/regression proof or previous review suffices when it answers the selected gate. Non-triviality, file count, reviewer availability and closeout proximity are not review authority.
 
-### 4.3) Selected design-slice obligation coverage
-When execution is driven by a bounded governed design slice, identify the implementation-relevant obligations from that slice before treating the slice as execution-ready or complete.
-- obligation extraction should look for behavior, invariant, failure mode, required dependency/state requirement, acceptance/verification clue, and explicit out-of-scope boundary when materially present
-- use the extracted obligations to shape lanes, tasks, verification, and continuation logic rather than relying only on the visible feature label or happy-path action
-- if checked context is still too thin to tell whether a design item is a real obligation or only background context, inspect the selected design slice further before closing execution around a narrower headline
-- compact execution surfaces do not need to restate the whole design body, but they must keep enough semantic coverage visible that selected obligations are not silently dropped from the active slice
+Close review once its question is answered, findings are admitted/dispositioned through Scope Lock, and affected-anchor leader checks plus matching regression/architecture/security/privacy/lifecycle/external-contract proof pass. Optional style/wording findings or PASS do not open another cycle. Re-review only after a changed owner/contract/authority/boundary/lifecycle, widened scope, failure, contrary evidence or unresolved original uncertainty; inspect changed/failing anchors rather than repeat broad audit. A second lens needs a genuinely independent unresolved risk/conflict, not reassurance.
 
-### 5) Continuous execution
-When execution mode is active, startup posture is resolved enough, and no real stop gate exists, continue the active objective.
-- continue when the next step is implied by current goal, phase, task list, TODO, or checked implementation state
-- when the visible action or headline feature is implemented but selected design-slice obligations remain uncovered, continue into the remaining implementation, verification, defer-with-owner, blocker, or explicit out-of-scope classification slice instead of stopping at the headline output
-- when implementation is complete but material verification/debug/TestKit evidence remains pending, continue into the proportionate verification slice when safe
-- when migration or authority replacement is selected, continue until target verification, cutover, former-path disconnection, bridge retirement, quarantine/inactive-history separation, and proportionate inactivity proof are resolved; a moved file or passing target test alone does not close migration
-- do not end a turn only to report a milestone if safe continuation exists; do not pause to expose an obvious task the assistant can do directly
-- status may clarify changes/completion/blockers, but reporting alone must not become the stop reason
+## 3. Bounded Work, Completeness and Startup
 
-### 5.1) Auto-next-lane continuation
-When the current lane closes and the next lane in the same objective is already implied, continue automatically instead of pausing for milestone narration.
-- broad, noisy, or naturally independent next lanes pass through `worker-routing-and-context.md` before deep raw absorption
-- if the next lane is phase-backed, preserve its phase linkage in task and phase surfaces before deeper execution
-- if the next lane is governance/release-sync or multi-surface validation, classify the owner surfaces first instead of collapsing it into a vague `sync everything` pass
-- do not auto-continue into approval-sensitive, destructive, materially divergent, or clearly user-choice-sensitive work
+One selected outcome, primary owner, required adjacent obligations and matching gate form one unit. Setup/reads/edits/tests/review/corrective follow-up are actions within it, not automatic goals/tasks/phases/lanes. Split only for independently acceptable outputs, differing owner/approval/rollback/resume boundaries, or a hidden material gate. Commands/files/helpers/test cases/worker messages do not define units.
 
-### 5.2) Goal/plan authoring-to-execution transition
-Goal and route-support construction defer to `goal-authoring-and-route-support.md`. Authoring-only turns stop at that surface unless execution is separately selected or clearly implied.
+For broad objectives with several real outputs/owners/gates, decompose before deep work into the smallest useful outcome lanes (implementation, proof, governance/release-sync, research/evidence as needed). This is not automatic delegation or over-planning. Do not split a tightly sequential same-owner one-gate flow artificially. [phase-todo-artifact.md](phase-todo-artifact.md) owns task/artifact/phase admission and lineage.
 
-When a selected goal or route enters execution, materialize bounded work through `phase-todo-artifact.md` and select helpers through `worker-routing-and-context.md`. Ask one substantive question only when objective, scope, gate, access, or approval is insufficient; route or helper completion does not close the objective gate.
+Non-trivial analysis/design must complete the material decision surface: intended success, constraints/dependencies/state/integration assumptions, failure behavior and acceptance. Verify material premises, compare only realistic alternatives that change the decision—including a simpler sufficient route—and expose material omissions/counterarguments/better paths without waiting for field-by-field prompts. Recommend with decisive evidence/trade-off; no invented requirements, forced disagreement, speculative compatibility or silent goal replacement.
 
-### 5.2.2) Progress narration boundary
-Progress shape defers to `explanation-and-presentation.md`; keep completed scope bounded, and never let narration become a stop reason when safe continuation exists.
+Extract selected design-slice behavior, invariants, failure modes, required state/dependencies, acceptance/proof clues and explicit exclusions before declaring execution-ready/complete. Thin evidence requires another targeted design read, not closing around a narrower headline. Compact task/phase records preserve material semantic coverage without restating the whole blueprint; every item ultimately becomes verified, deferred, blocked, not applicable or out of scope.
 
-### 5.3) Reachable proof closure and terminal proof preservation
-Before closeout, distinguish the reachable proof layer in the current state from terminal proof that requires a real approval, environment state, external capability, provider/runtime availability, or another condition the assistant cannot create safely in the current turn. A selected terminal proof must not be demoted because it is difficult or unavailable; only genuinely distinct downstream proof becomes a successor live-verification goal.
+Resolve only materially triggered startup surfaces, not a separate ceremony for every absent design/diagram/changelog/TODO/phase/patch/task. Oversized active entrypoints that block work need preservation-first rollover before broad continuation. Genuine emergency safety exceptions may permit the smallest reversible containment/diagnostic slice first; resume governance afterward. Normalize implementation-critical external docs/spec knowledge into its governed owner before dependent multi-step work/handoff, not transient recall alone.
 
-- complete every independent, proportionate proof step that remains reachable without crossing a real gate; a blocked terminal check does not justify skipping other useful current checks
-- when the active objective is a source/code goal and neither the user nor checked governed authority explicitly selected live acceptance, close at its source/non-live gate and place authenticated/deployed/installed/restarted Product proof in a distinct successor live-verification Goal
-- generic completion or verification wording is not live-proof selection; assistant inference must not turn unavailable live proof into a current-goal blocker
-- operational nouns and Product-facing capability names do not select live proof by themselves; decide from the declared done condition, proof gate, scope, and checked authority even when the code implements diagnostics, deployment support, recovery, or mutation-capable behavior
-- if an assistant-authored done point is later proven infeasible in the current scope and was not explicitly selected by the user or checked governed authority, repair the Goal boundary in place: preserve completed source/non-live proof, move the infeasible proof to excluded or successor scope, reconcile tasks, and close without requiring a replacement Goal or unchanged retry loop
-- decide from the declared Goal and gate whether unavailable proof belongs to the current Goal or to a distinct successor live-verification Goal; do not move required current-goal proof into a successor merely to obtain completion wording
-- when unavailable proof is part of the current Goal gate, keep that Goal blocked or pending at the strongest verified state and state the condition required to resume
-- when the current Goal's own bounded gate is satisfied and later live/provider/runtime proof is a distinct operational objective, preserve it as a successor live-verification Goal rather than weakening the completed Goal or presenting the live proof as already selected
-- preserve terminal proof explicitly: the behavior or claim still to prove, target environment or capability, prerequisite approval or state, pass/fail signal, and meaningful resume trigger that makes a future attempt informative
-- stop autonomous retries when approval is pending or the required state or capability has not changed; resume only after the controlling gate is satisfied or new evidence makes another attempt discriminating
+A Goal/Output/Gate frame helps drift/proof/navigation only when useful; keep internal for obvious paths. It describes outcome, expected artifact/behavior and completion proof, never substitutes for real implementation/design/evidence or interrupts safe phases.
 
-### 6) Goal hierarchy and priority balance
-Goal hierarchy avoids confusing broad strategy with the current slice:
-- `strategic goal`: broad system direction
-- `current goal`: active objective being executed now
-- `execution goal`: concrete work slice now being performed
-- `verification goal`: evidence or gate that proves completion
-- `next goal`: supported successor after true closeout
+## 4. Required Continuation and Selected Proof
 
-Do not promote a next goal into selected execution merely because it is recommended; user selection, checked roadmap authority, or selected safe continuation still govern execution.
+In execution with startup resolved and no real gate, continue only locked required work, selected semantics, matching proof or material convergence. Headline implementation does not close uncovered behavior/failure/state/proof obligations: finish, verify, explicitly defer-with-owner, block or classify exclusions. Continue safe required tests/debug/scenarios after edits rather than milestone-only stopping.
 
-A live-verification Goal is not automatically the current Goal's verification lane. Keep it inside the current Goal when the declared gate requires that proof; treat it as a successor only when the current bounded gate is independently satisfied and the live check is a distinct later objective. Successor status remains advisory unless selected through user direction, checked roadmap authority, or another valid execution basis.
+Do not interrupt each implementation attempt with full docs sync. Keep useful provisional alternatives in the working record; synthesize result/history once the bounded outcome settles and matching checks pass. Material design/contract or approval prerequisites still precede dependent action. A failure, security stop or handoff may need a minimum resume-critical checkpoint, not a fixed/complete claim. [document-governance.md](document-governance.md) owns role-based synthesis; [phase-todo-artifact.md](phase-todo-artifact.md) owns evidence handoff before final task closure.
 
-When active work spans several primary goals, keep sibling goals visible so one subtask does not silently become the whole mission. Current focus must stay proportional: do not deepen one area merely because more detail is possible, and shift when a neglected sibling has higher value. Prefer main structure before subordinate polish unless a stronger blocker or user directive says otherwise; treat micro-cleanup as secondary while core structure remains under-developed. Review the goal set when work stays in one area for several slices, micro-fixes accumulate, summaries mention one subgoal, several major goals remain open, or the user says work is too granular; rebalance when the current subtask no longer serves the main objective set.
+If another lane serves the same selected outcome/gate, continue without a report-only pause. Preserve applicable phase/task linkage, classify already-selected governance owners (not vague “sync everything”), and narrow/filter a broad independent evidence slice before helper routing. Optional findings/successors, consequential approval-sensitive steps or materially divergent/user-choice-sensitive paths do not auto-continue. [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) own routing/capture; high-overlap, bounded, sequential and interactive work may stay direct.
 
-### 7) Triggered visibility and anti-ritual boundary
-Goal framing is navigation, not ceremony.
-- do not force `Goal / Output / Gate` blocks into trivial answers, one-step lookups, or obvious safe continuation
-- do not stop between selected safe phases only to restate the goal
-- do not use goal framing as a substitute for real design, phase, TODO, implementation, or verification evidence
-- keep visible goal framing compact and decision-oriented
-- preserve selected safe continuation as first-class behavior
+Goal/plan authoring stops at the requested artifact unless execution is separately selected or clearly implied. Selected execution receives only admitted task/helper structure; route/helper/plan completion is not objective proof. [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) owns construction/route support.
 
-### 8) God artifact continuation
-Detected touched-scope God artifact pressure is active continuation when governed execution is already underway.
-- continue into safe local repair when the split is clear and low-risk
-- create or extend a visible repair slice when repair is broad but belongs to the active objective
-- route phase-shaped repair through phase lineage before opening a new major phase; route reviewable before/after repair through patch posture
-- stop only for real ambiguity, approval-sensitive scope, destructive action, missing authority, or completed objective with no selected repair path
+### Reachable proof closure and terminal proof preservation
 
-Reporting that God pressure exists is not a legitimate stop when repair or planning is already clear.
+Use the declared Goal/done condition/proof gate/scope and checked authority to distinguish current required proof from distinct downstream proof. Complete every independent proportionate check reachable now; one blocked terminal check does not excuse skipping the others.
 
-### 9) Decision-boundary and completion-to-next-goal bridge
-Use checked execution surfaces to decide whether the assistant should continue directly, surface candidate goals, or promote one governed candidate into advisory `/goal`.
-- if a selected, unblocked current or next goal exists in the same objective or phase chain and safe continuation is still clearly dominant, continue rather than converting the state into a proposal
-- if meaningful successor work is implied by design, phase roadmap, TODO, or checked implementation state but is not selected/opened, recommend it as an advisory next goal with why/output/gate
-- if checked execution surfaces already make a meaningful successor visible, do not stop at generic future-note phrasing such as `ถ้าจะไปต่อ...`, `next step would be ...`, or `implementation wave ใหม่`; resolve that successor state into the correct next-step surface instead
-- if several materially different successor directions remain live and no one continuation path clearly dominates, present them as candidate goals rather than collapsing them into one plain next-step choice list or one premature best-path answer
-- if current execution surfaces express successor work only as a broad label but already provide enough checked goal/output/gate/touched-surface context to derive a smaller truthful next slice, derive that smaller slice before surfacing the next-step recommendation
-- when distinct terminal live proof remains after the current Goal's bounded gate closes, preserve it as a successor live-verification Goal with its required proof, prerequisite state or approval, and observable gate; if that proof was part of the current Goal's declared gate, keep the current Goal blocked instead of relabeling the proof as successor work
-- if successor state is ambiguous, approval-sensitive, destructive, or materially divergent, ask a narrow basis/approval question
-- if no meaningful successor is visible, say none is selected or opened; do not invent one
+- Source/code goals close at source/non-live proof unless user or checked governed authority explicitly selects live acceptance. Generic completion/verification words, operational nouns or Product capabilities (diagnostics/deployment support/recovery/mutation) do not select live proof. Assistant inference must not invent an unavailable live blocker.
+- Explicitly required terminal proof remains binding despite difficulty or unavailable approval/state/environment/provider/runtime/capability. Keep the current Goal blocked/pending at its strongest verified state; never move required proof to a successor merely to obtain completion wording.
+- Only genuinely distinct downstream authenticated/deployed/installed/restarted/live proof becomes an advisory successor after the current bounded gate passes. Preserve it without weakening the completed Goal or falsely selecting its operation.
+- If an assistant-inferred done point proves infeasible in scope and no user/governed authority selected it, repair the existing Goal/plan boundary: preserve completed source proof, classify the infeasible point excluded/successor, reconcile tasks and close without a replacement Goal or unchanged retry loop. Remaining work/difficulty alone does not prove infeasibility.
 
-This bridge is primarily closeout behavior, but candidate-goal surfacing is also valid at real decision boundaries where several materially different next slices remain live and direct continuation no longer clearly dominates. It must not block phase 1 → 2 → 3 continuation when those phases are already selected, safe, and unblocked.
+For outstanding terminal proof, preserve behavior/claim, target environment/capability, prerequisite approval/state, observable pass/fail and meaningful resume trigger. Stop retries while approval or required state/capability is unchanged; resume only after the enabling condition/new discriminating evidence. Do not imply actual waiting or automatic future execution.
 
-### 9.1) Goal-surface handoff
-This rule decides whether a boundary calls for direct continuation, candidate goals, one advisory `/goal`, a narrow clarification, or no successor. Safe selected continuation wins over proposal emission, and advisory goals remain unselected execution. `goal-authoring-and-route-support.md` owns construction, route support, `/plan` overflow, and copied-artifact rules.
+When migration/authority replacement is the selected completion gate, continue through target proof, approved cutover, former-path disconnection, bridge retirement, inactive-history separation and proportionate inactivity proof. A move/target test alone does not complete migration. An explicitly staged cutover/replacement slice can close at its own gate while later approved bridge retirement stays visible; do not label it full migration complete. [action-safety.md](action-safety.md) owns lifecycle/approval and [evidence-discipline.md](evidence-discipline.md) owns two-sided proof.
 
----
+## 5. Closure, Priorities and Next Work
 
-## Active Next-Work Discovery
-In execution mode, discover the next slice from the current task list, then active phase/`phase/SUMMARY.md`, compact `TODO.md`, and checked implementation state. Follow history/done only through active references; prefer unfinished work and unblocked lanes in the same objective before opening a fresh one. Completed objectives use design/roadmap/TODO/tasks/implementation as successor evidence.
-
-Helper-fit support slices receive bounded routing before deep execution. Oversized governance files are maintenance triggers, not execution surfaces. Phase-shaped work passes the canonical lineage gate in `phase-todo-artifact.md`; no new major by momentum, and a selected major preserves failed current/child basis.
-
----
-
-## Worker Routing Before Broad Continuation
-Decompose a broad next slice into a real objective/lane, then apply `safe-io.md` and `worker-routing-and-context.md` before raw broad reading, research, tests/logs, release/no-drift review, or multi-surface validation. Momentum never bypasses the burst/worker gate; dispatch broad independent work before leader absorption or record a narrow direct-handling reason. Trivial, low-output, tightly sequential, exact-range, or interactive work may remain direct.
-
----
-
-## Legitimate Stop Gates
-Stop only for missing evidence/input/access, real technical blocker, approval-sensitive/destructive/consequential external action, unavailable required state or capability, unresolved governing basis that changes the answer, new path-changing ambiguity, or active objective completion with no selected safe continuation. Before stopping at a terminal proof gate, finish the independent proof still reachable in the current state. Completion may still require a supported next-goal recommendation when checked surfaces show meaningful unselected successor work.
-
-Completing one slice is not a stop. Implementation complete but material verification pending is not completion unless verification is blocked, not applicable with reason, approval-sensitive, or already satisfied. A selected design slice is also not complete when invariants, failure modes, or required dependency/state semantics remain uncovered without an explicit status such as verified, deferred, blocked, not applicable, or out of scope. Continue into the next slice when already the implied active path; treat related follow-up as a lineage checkpoint rather than automatic new-major boundary; do not turn every phase boundary into a handoff report; do not auto-promote draft-only, future-only, or unselected phases/goals. A stop gate must identify what condition would make continuation meaningful. Do not retry an approval-, state-, or capability-blocked proof unchanged, and do not imply that waiting or future execution will occur automatically.
-
-Re-check mode when the user changes scope, corrects intent, provides evidence from another session, or shifts between behavior analysis and project execution. Move back to discussion mode only for real new ambiguity, design work, behavior/RULES analysis, or user direction. Do not let habit, ceremony, or milestone reporting reset execution mode.
-
----
-
-## Trigger Model
-| Trigger | Required behavior |
+| Goal level | Meaning |
 |---|---|
-| explicit continue intent or discoverable active work | preserve execution mode and continue unless a real stop gate exists |
-| pasted project evidence or AI/RULES behavior question | classify intent before project exploration; stay discussion unless project inspection is requested or required for bounded proof |
-| drift-risk prompt, outcome-changing ambiguity, or user correction | use a short working interpretation, one narrow clarification when needed, and re-anchor after correction |
-| concern/proposed path or expansion from a checkable premise | separate goal/premise/path, verify ownership/dependencies/completed baseline, and interrupt a contradicted route while preserving the valid goal |
-| material architecture-bearing source mutation | inspect the selected design and current owner/producer/state/readers/writers/consumers/dependencies, then invoke the canonical architecture delta preflight before implementation |
-| user or checked design rejects a fork/parallel authority | retire the stale premise and reconcile incompatible tasks, plans, tests, and source branches before continuing |
-| unresolved startup or oversized active entrypoint | resolve startup posture or preservation-first rollover before broad continuation |
-| broad objective or underspecified non-trivial analysis/design | decompose outcome-sized lanes and complete material constraints, dependencies, failure behavior, alternatives, and verification |
-| selected design obligations exceed the headline output | extract and track behavior, invariants, failure modes, dependencies, and dispositions before completion |
-| non-trivial multi-step/phase-backed work | establish goal/output/gate when useful and keep current phase/task linkage visible |
-| governed goal authoring or selected goal entering execution | stop at authoring unless execution is selected; then materialize bounded work and choose helpers internally |
-| one-goal overfocus, granular drift, or several open primary goals | review and rebalance the full active goal set |
-| implementation verification or migration-convergence proof remains | keep the objective open until the applicable verification, disconnection, retirement, and inactivity gates are resolved |
-| terminal proof is partly reachable and partly approval/state/capability-gated | complete the reachable proof, preserve the gated proof and its resume condition, then classify it as current-goal blocked proof or a distinct successor live-verification Goal |
-| unchanged approval/state/capability gate blocks verification | stop autonomous retry, report the strongest verified state, and resume only after approval or an observed enabling change |
-| next lane is broad, research-heavy, helper-fit, governance/release-sync, or multi-surface | apply worker routing and owner-surface classification before deep intake |
-| phase-shaped follow-up or route completion | pass lineage and continue to the objective gate; route completion is not goal completion |
-| several materially different successors remain | surface compact candidate goals; derive the smallest truthful slices first |
-| a meaningful unselected successor is visible at true completion | recommend it with why/output/gate rather than a generic future note |
-| milestone-only pause drift | continue after reporting when safe |
-| open concept/design/behavior work | stay in discussion mode |
-| unresolved governing basis | ask for basis selection before deep execution |
-| approval-sensitive step | stop for confirmation under the stronger owner |
+| strategic | broad direction |
+| current | selected objective |
+| execution | concrete current slice |
+| verification | evidence that closes its gate |
+| next | supported successor after true closure, not selected by recommendation alone |
 
----
+Keep checked selected sibling goals visible without merging them into an unbounded unit or drifting into unselected siblings. Prioritize core structure before micro-polish unless a real blocker/user direction says otherwise. Re-scope accumulating micro-fixes rather than recursively open work. A live-verification Goal belongs to the current objective only when its declared gate requires it; otherwise independently satisfied source work remains complete and downstream proof is advisory.
 
-## Anti-Patterns
-Avoid:
-- executing inside unresolved discussion, from pasted paths alone, or from a stale interpretation after user correction
-- mirroring an underspecified non-trivial design without checking material completeness, or manufacturing speculative requirements and alternatives when they do not change the decision
-- premise momentum: treating user confidence, a clean analogy, or two retired child artifacts as proof that a broader path/domain is retired or should replace a verified completed baseline
-- architecture momentum: adding or relocating a route, service, client, transport, registry, state key, read/write path, fallback, or owner before checking the selected design and existing authority path
-- preserving stale additive tasks, tests, or source branches after the user or checked design rejects the fork they depend on
-- reflexively widening scope, agreeing, or disagreeing before checking current ownership and dependencies when those facts materially determine the route
-- report-then-stop, milestone ceremony, or edit-only completion while safe continuation, verification, selected design obligations, or migration-convergence gates remain
-- bypassing startup, rollover, phase-lineage, worker, owner-surface, approval, or goal-proof gates
-- turning authoring/advisory goals into selected execution, routing-choice menus, or route-completion claims
-- moving proof required by the current Goal into a successor merely to claim completion, or keeping a completed bounded Goal artificially open for a distinct later live-verification objective
-- dropping terminal proof at a stop gate, retrying unchanged approval/state/capability conditions, or implying that an impossible future retry will happen automatically
-- forcing lanes/goals/clarification on trivial work, or narrowing to one subgoal while higher-value sibling goals remain open
+After locked outcome/gate pass, close before optional cleanup/refactor/capability/extra proof. Tasks/audits/workers/tests may reveal evidence but cannot spawn successor tasks/phases/plans/workers/goals by themselves. Merge required same-owner fixes, surface true blocker/approval, and leave unrelated work unselected. Do not search after completion merely to manufacture work.
 
----
+Touched God pressure enters continuation only if it materially impairs selected correctness/maintainability and its repair is clear/required. Proceed with safe local cohesive repair; batch broad selected repair by responsibility, not helper/file. Phase/Patch only for real staging/review. Ambiguity, destruction, missing authority or unselected repair is a stop gate; reporting unrelated pressure grants no execution authority.
+
+### Completion-to-next-goal bridge
+
+Use checked task/phase/TODO/implementation state to decide:
+- required unblocked same-goal lane → continue, do not recast as proposal
+- gate satisfied with useful already-visible unselected work → close first, offer advisory why/output/gate; no task/phase/plan/helper/artifact until selection
+- several materially different paths → compact decision-relevant candidate goals; derive the smallest truthful slice, not a vague future label
+- outcome-changing ambiguity/approval → narrow substantive question only when user must decide now
+- no material successor → close without future-work appendix
+
+This owner selects direct continuation, candidates, one advisory `/goal`, clarification or none. Goal-authoring constructs; presentation renders. Advisory command/route eligibility follows [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md), including transcript-visible proof/prerequisites; the bridge is not a second objective or roadmap auto-execution.
+
+## Active Discovery and Stop Boundaries
+
+Discover required next action from Scope Lock/gate, then confirm against applicable live tasks, active phase/SUMMARY, compact TODO and checked implementation. Follow history/done only through active references; use unfinished required same-unit work before any new objective. The task owner resolves lineage/admission and material status reconciliation; coordination records are not independent semantic proof.
+
+Stop for missing evidence/input/access, real technical blocker, approval-sensitive/consequential/destructive action, required unavailable state/capability, unresolved governing basis or path-changing ambiguity. State exact reason and resume condition at strongest verified state, finish independent reachable proof first, and never retry an unchanged gate. Close when selected proof passes—even with optional improvement visible. An internal step/milestone is not closure while selected semantics/proof/convergence remain; conversely an independently complete source goal cannot stay open for optional live proof.
+
+Re-check mode after user correction, evidence or scope/action shift. Discussion restarts only for genuine new design/behavior ambiguity or user direction, not habit/ceremony/status narration.
+
+## Trigger Dispatch and Anti-Drift
+
+- corrective/pasted/meta input → intent/mode recheck, not unsolicited project edits
+- material premise/architecture change → check current path; hold unsupported expansion and apply safety owner
+- broad objective → scope and outcome-sized decomposition, not command/file tasks
+- proposed review → decision-changing risk admission; bounded closure, no reassurance chain
+- implementation/selected semantics/proof pending → safe required continuation
+- gate pass or unchanged blocker → close/stop, no recursive next work
+
+Never use concern as proof, tests for a rejected fork as approval, availability as a work assignment, report-only pauses as gates, or optional future proof as a blocker. Do not demote selected terminal proof or promote authoring/advisory work into execution. Required adjacent changes and real constraints stay visible without ritual gates for every microstep.
 
 ## Integration
-Related owners: [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) (goal/route construction); [phase-todo-artifact.md](phase-todo-artifact.md) (startup/lineage/tasks); [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) (routing/intake); [coding-discipline.md](coding-discipline.md) (implementation verification); [action-safety.md](action-safety.md) (approval gates); [accurate-communication.md](accurate-communication.md) and [explanation-and-presentation.md](explanation-and-presentation.md) (wording/rendering).
+
+Authority/action: [authority-and-scope.md](authority-and-scope.md), [action-safety.md](action-safety.md). Artifacts/goal/routing: [phase-todo-artifact.md](phase-todo-artifact.md), [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md), [worker-routing-and-context.md](worker-routing-and-context.md), [safe-io.md](safe-io.md). Proof/wording: [coding-discipline.md](coding-discipline.md), [evidence-discipline.md](evidence-discipline.md), [accurate-communication.md](accurate-communication.md), [explanation-and-presentation.md](explanation-and-presentation.md).

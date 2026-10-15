@@ -1,13 +1,16 @@
 # Changelog - Explanation and Presentation
 
-> **Current Version:** 1.24
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
+> **Current Version:** 1.26
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.26 | 2026-09-30 | **[Put current execution outcomes before reporting detail](#version-126)** | adda8afb-6edf-466b-add9-b9649b718e01 |
+| 1.25 | 2026-09-30 | **[Consolidated explanation patterns and bounded closeout](#version-125)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.24 | 2026-08-09 | **[Made goal presentation rendering-only](#version-124)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.23 | 2026-08-09 | **[Added material-only decision-ready recommendation rendering](#version-123)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.22 | 2026-08-08 | **[Compacted presentation while preserving error-prevention explanation](#version-122)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -37,6 +40,26 @@
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-126"></a>
+## Version 1.26: Put current execution outcomes before reporting detail
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Material execution/status replies lead with the direct current outcome, followed by relevant actions/changes, matching checks/results and material remainder/reasons.
+- Kept paragraphs/bullets flexible without mandatory headings; read-only/no-op/plan-only state is clarified when it could otherwise imply execution.
+- Older proposals do not automatically attach to status answers; necessary proposals remain visibly advisory/not executed. In-flight snapshots and safe selected continuation remain unchanged.
+- P073-17 source candidate; virtual reporting examples belong to existing Case 05, not observed model-effect claims.
+
+<a id="version-125"></a>
+## Version 1.25: Consolidated explanation patterns and bounded closeout
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Merged repeated purpose/pattern/snapshot/closeout text while preserving plain mechanism/implication, concrete clarifiers, scope groups and unframed diagrams.
+- Preserved rendering-only Goal posture and exact copy order; added missing parent backlink without selecting successor work.
 
 <a id="version-124"></a>
 ## Version 1.24: Made goal presentation rendering-only

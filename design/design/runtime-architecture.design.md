@@ -1,56 +1,43 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.67
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
+> **Current Version:** 10.72
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 (2026-10-15)
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
-> **Status:** Active target-state shard
-
----
+> **Status:** Active target-state shard; source/install baseline, publication proof tracked separately
 
 ## Active Runtime Inventory
 
-The active runtime inventory contains 19 source-owned root rule files.
+Exactly nineteen source-owned root Rules retain one body-sufficient owner per responsibility. Same-owner compaction is governed by [runtime-compaction.design.md](runtime-compaction.design.md); support trials and plugins do not enter this Main payload.
 
-| # | Rule | Design Doc | Purpose |
+| # | Rule | Paired design version | Responsibility |
 |---|---|---|---|
-| 1 | `accurate-communication.md` | `accurate-communication.design.md v2.44` | Evidence-calibrated status, claim-state wording, meaning-first identifier gloss, and phase closeout wording |
-| 2 | `action-safety.md` | `action-safety.design.md v1.6` | Consequential-action safety plus design-conformance architecture delta classification, exact approval boundaries, one-authority topology, emergency posture, and bounded retry handling |
-| 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.1` | Direct-user transparency plus audience-appropriate generated public/operator/customer disclosure |
-| 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.7` | User authority, hard-boundary precedence, and source/project ownership boundaries |
-| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.6` | Maintainable code structure, regression-versus-capability-gap diagnosis, functional plus architecture-fitness verification, and tactical-to-strategic convergence |
-| 6 | `communication-register.md` | `communication-register.design.md v1.26` | Natural professional tone, user-aligned easy explanation, anti-over-agreement, and signal discipline |
-| 7 | `document-governance.md` | `document-governance.design.md v1.19` | Repository document roles, parent/shard authority, append-vs-shard doctrine, patch governance, and UDVC-1 |
-| 8 | `document-integrity.md` | `document-integrity.design.md v1.12` | Cross-reference consistency, rollover integrity, document-density/God-file repair, and no-delete-by-cleanup discipline |
-| 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.7` | Verify-first factual discipline, concern-vs-conclusion discipline, scoped non-findings, and real-vs-mock boundaries |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.33` | Discussion/execution mode, architecture-bearing pre-mutation trigger, no-fork correction lock, reachable goal closure, and lineage-first continuation |
-| 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.24` | Plain-language explanation, meaning-first identifier walkthroughs, diagram discipline, and concise action framing |
-| 12 | `goal-authoring-and-route-support.md` | `goal-authoring-and-route-support.design.md v1.2` | Governed `/goal` construction, subordinate route support, and verified `Plan reference` boundaries |
-| 13 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.6` | External source verification, trust ranking, corroboration, and source-conflict handling |
-| 14 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v1.8` | Scoped memory governance, compact memory index behavior, path scope, and optional recall boundaries |
-| 15 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.34` | Startup artifact posture, phase execution, compact TODO/phase entrypoints, live task tracking, and lineage-first phase identity selection |
-| 16 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.4` | Portable defaults, late-bound environment resolution, and source/destination notation discipline |
-| 17 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.4` | Wrapper normalization, refusal classification, minimization, and recovery paths |
-| 18 | `safe-io.md` | `safe-io.design.md v1.7` | Bounded file reading/output with parent-first and smallest-shard-first behavior |
-| 19 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.17` | Intent taxonomy, worker routing, diagnosis-first mixed-intent handling, and the routing decision boundary for document-heavy work |
-
----
+| 1 | `accurate-communication.md` | `accurate-communication.design.md v2.46` | actual-action/current-state reporting, claim/status strength, identifier meaning and capture labels |
+| 2 | `action-safety.md` | `action-safety.design.md v1.7` | destructive/private/topology/emergency/retry gates |
+| 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.2` | direct-user transparency and generated audience disclosure |
+| 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.9` | user precedence, advisory selection and Active Project Root |
+| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.9` | contract-first coding, reusable source-tool/probe lifecycle, debug, architecture fitness and proportionate tests |
+| 6 | `communication-register.md` | `communication-register.design.md v1.29` | plain action/outcome language, user/peer recipient clarity, signal, agreement and explicit retraction |
+| 7 | `document-governance.md` | `document-governance.design.md v1.22` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
+| 8 | `document-integrity.md` | `document-integrity.design.md v1.15` | references, lossless rollover, payload/project proof and preservation |
+| 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.9` | evidence kinds/claim states, cause/nonfinding/mock/witness limits |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.36` | fact-led route/cadence, evidence-backed codebase challenge, mode/scope, proof selection and closure |
+| 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.26` | current-outcome-first reporting, flexible snapshots, purpose/mechanism/layout, unframed diagrams and rendering |
+| 12 | `goal-authoring-and-route-support.md` | `goal-authoring-and-route-support.design.md v1.4` | checked Goal construction, proof slots and verified route/Plan-reference lifecycle |
+| 13 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.8` | eligible source ranking/corroboration/conflicts |
+| 14 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v2.0` | path/freshness applicability, active meaning hooks and optional recall |
+| 15 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.38` | startup/task admission, strict lineage, semantic coverage and evidence handoff before final closure |
+| 16 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.6` | late-bound portable forms, local exceptions and source/destination notation |
+| 17 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.5` | normalized request/class/decision and actionable recovery |
+| 18 | `safe-io.md` | `safe-io.design.md v1.9` | bounded run capture versus source-tool ownership, parent-first intake and burst detection |
+| 19 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.18` | helper net benefit/topology/brief/lifecycle/handoff and main verification |
 
 ## Category View
 
-### Communication, Explanation, and Disclosure
-- Rules: `accurate-communication`, `communication-register`, `explanation-and-presentation`, `audience-surface-disclosure-control`
-- Purpose: keep user-facing communication clear, evidence-calibrated, naturally professional, readable, and audience-safe
+- Communication/disclosure: accurate, register, presentation and audience owners make explanations clear and evidence-bounded.
+- Evidence/authority/safety: evidence, authority, refusal and safety preserve checked facts, user choices and consequential boundaries.
+- Execution/coding/helpers: execution, goal, coding, worker and Safe I/O keep source work complete, bounded and verifiable.
+- Governance/context: document, integrity, phase, memory, portability and external trust preserve coherent artifact/context authority.
 
-### Evidence, Authority, and Safety
-- Rules: `evidence-discipline`, `authority-and-scope`, `refusal-and-recovery`, `action-safety`
-- Purpose: separate verified fact from inference, preserve user authority inside hard boundaries, recover safely from blocked requests, and classify design-bound architecture deltas before approval-sensitive authority expansion
-
-### Execution, Coding, and Worker Control
-- Rules: `execution-and-goal-frame`, `goal-authoring-and-route-support`, `coding-discipline`, `worker-routing-and-context`, `safe-io`
-- Purpose: keep active work goal-aligned, bind architecture-bearing mutation to checked design, distinguish regression from real capability expansion, verify architecture fitness, and delegate only when worker lanes add value
-
-### Governance, Memory, and Portability
-- Rules: `document-governance`, `document-integrity`, `phase-todo-artifact`, `memory-governance-and-session-boundary`, `portable-implementation-and-hardcoding-control`, `external-verification-and-source-trust`
-- Purpose: keep repository docs governed, path-normalized when broad, cross-references consistent, startup/phase/TODO surfaces aligned, memory scoped, shared artifacts portable, and external facts source-ranked
+Consumers retain activation/local consequence and necessary synchronized literals, not another complete contract. Runtime copies are downstream from the selected source root; payload parity does not prove full-project convergence or future AI effectiveness.

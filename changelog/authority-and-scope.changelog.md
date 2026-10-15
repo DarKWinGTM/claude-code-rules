@@ -1,8 +1,8 @@
 # Changelog - Authority and Scope
 
 > **Parent Document:** [../authority-and-scope.md](../authority-and-scope.md)
-> **Current Version:** 2.8
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 2.9
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.9 | 2026-09-30 | **[Consolidated authority and source-root decisions](#version-29)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 2.8 | 2026-08-11 | **[Locked development to the Active Project Root](#version-28)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 2.7 | 2026-08-09 | **[Compacted authority integration handoffs](#version-27)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.6 | 2026-08-09 | **[Clarified advisory expansion and bounded helper authority](#version-26)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -38,6 +39,16 @@
 | | | Summary: Migrated to standard template | |
 
 ---
+
+<a id="version-29"></a>
+## Version 2.9: Consolidated authority and source-root decisions
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Replaced mirrored hierarchy/settlement/application lists with one precedence/selection contract and one checked Active Project Root/file-meaning boundary.
+- Preserved fresh direction, hard boundaries, advisory expansion, subordinate helpers, dirty-state preservation, memory deferral and other-owner runtime scope.
+- P073-16 unpublished source candidate; no installation or whole-project convergence follows from this change alone.
 
 <a id="version-28"></a>
 ## Version 2.8: Locked development to the Active Project Root

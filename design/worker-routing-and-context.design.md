@@ -1,8 +1,8 @@
 # Design - Worker Routing and Context Control
 
 > **Parent Rule:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
-> **Current Version:** 1.17
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.18
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/worker-routing-and-context.changelog.md](../changelog/worker-routing-and-context.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 `worker-routing-and-context.md` is the active runtime owner for leader-context protection, worker routing, custom-agent selection, and the routing decision boundary for document-heavy work.
 
-It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
+Selected [runtime compaction](design/runtime-compaction.design.md) keeps one net-benefit/topology/brief/lifecycle/handoff mechanism, preserving leader-owned source, exact subordinate write gates, shared-state isolation, reuse-before-spawn, specialist selection and affected-anchor review closure. Capture thresholds remain Safe I/O-owned; filtering never transfers authority or invents tasks.
 
 P098 refinement remains part of target state: intent taxonomy, routing implications, diagnosis-first mixed-intent handling, and context-safe worker selection.
 

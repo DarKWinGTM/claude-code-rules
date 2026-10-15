@@ -1,13 +1,17 @@
 # Changelog - Communication Register
 
-> **Current Version:** 1.26
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Parent Document:** [../communication-register.md](../communication-register.md)
+> **Current Version:** 1.29
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.29 | 2026-10-15 | **[Separated user replies from peer coordination and idle ACK echoes](#version-129)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
+| 1.28 | 2026-09-30 | **[Prioritized ordinary-language action and outcome reporting](#version-128)** | adda8afb-6edf-466b-add9-b9649b718e01 |
+| 1.27 | 2026-09-30 | **[Consolidated natural register and explicit retraction](#version-127)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.26 | 2026-08-09 | **[Compacted communication owner handoffs](#version-126)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.25 | 2026-08-09 | **[Added evidence-shaped agreement and explicit recommendation retraction](#version-125)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.24 | 2026-08-09 | **[Added decision-relevant completeness admission](#version-124)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -39,6 +43,37 @@
 | | | Summary: Created `communication-register.md` as a body-sufficient merged runtime owner for natural professional tone, signal discipline, and evidence-calibrated agreement or dissent in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-129"></a>
+## Version 1.29: Recipient clarity and useful peer results
+
+**Date:** 2026-10-15
+**Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+
+- Made user-facing output address the user; necessary peer coordination uses its actual targeted channel, not an ambiguous public acknowledgment.
+- Required material peer results to explain user-relevant impact and distinguish peer-reported from Main-verified when material; idle/closure ACKs without state/risk/action changes are not echoed.
+- Preserved direct-user answers, blockers/failures, ordinary language and retraction; no mandatory recipient prefix or claim of controlling harness notifications.
+- [Case 05](../playground/cases/case-05-communication-and-presentation-calibration.md) adds declared virtual recipient variants; [P073-19](../phase/phase-073-19-docs-sync-and-task-handoff.md) records synthetic interpretation limits.
+
+<a id="version-128"></a>
+## Version 1.28: Prioritized ordinary-language action and outcome reporting
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Action/status reporting states plain-language action and outcome before internal phase/task/parity/proof/owner labels while preserving necessary exact technical evidence.
+- Pruned process narration that adds no understanding/decision value; retained material failures, side effects and limits rather than hiding them for brevity.
+- Reporting truth remains accurate communication's responsibility and ordering/layout remains presentation's; no duplicate reporting owner or workflow/proof/permission mechanism is added.
+- P073-17 source candidate; previous language, signal, agreement and explicit-retraction semantics remain intact.
+
+<a id="version-127"></a>
+## Version 1.27: Consolidated natural register and explicit retraction
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated repeated tone/easy-language/signal clauses while keeping necessary support, dominant-language exact literals and truth-over-pleasing evaluation.
+- Retained explicit failed-premise/evidence/recommendation/gate retraction; added missing parent backlink. P073-16 unpublished candidate.
 
 <a id="version-126"></a>
 ## Version 1.26: Compacted communication owner handoffs

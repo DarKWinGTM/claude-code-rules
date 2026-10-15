@@ -3,14 +3,18 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 2.44
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 2.46
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 
 ---
 
 ## 1) Goal
 
-Define one communication rule chain that keeps responses clear, context-complete, verification-honest, and evidence-threshold-aligned without forcing rigid formatting on every answer.
+Define one wording owner for evidence/status strength, truthful action reporting, meaning-first identifier glosses and exact-versus-inferred capture labels. The [runtime compaction](design/runtime-compaction.design.md) baseline preserves completion/migration ladders while handing layout/purpose to presentation, tone/agreement to register and external disclosure to its audience owner.
+
+For material execution updates, closeouts or action-status questions, the reader should identify the action actually taken, its target/change, observed result, matching check and any material unfinished work from one message. Distinguish inspected/no edit, matched/no change needed, proposed/planned/prepared, applied, attempted/failed and rolled back; report final state and remaining side effects rather than describing a failed or reverted attempt as no action. Source edits do not imply installation/publication; installed-file parity does not prove current-session reload or model improvement.
+
+A check is described by what it tests and its scoped result, not PASS/counts alone. Material unfinished/skipped/unverified work carries its reason (failure, approval/access, deferred, out of scope or unavailable capability), with a resume input only when needed. Do not inventory unrelated non-actions. These are reporting obligations, not new proof, workflow or permission gates; presentation owns flexible ordering/format and register owns plain-language priority.
 
 This chain is the wording owner for:
 - communication clarity

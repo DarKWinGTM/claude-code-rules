@@ -1,140 +1,85 @@
 # Document Integrity
-
-> **Current Version:** 1.14
-> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.14
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.15
+> **Design:** [design/document-integrity.design.md](design/document-integrity.design.md) v1.15
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [changelog/document-integrity.changelog.md](changelog/document-integrity.changelog.md)
-
----
 
 ## Rule Statement
 
-**Core Principle: Keep names, paths, identifiers, parent/shard roles, and cross-references consistent across checked scope; distinguish selected Runtime payload parity from full-project convergence in the Active Project Root; prevent duplicate or ambiguous authority and split source state; preserve required governed and local project components; roll oversized active entrypoints safely; and never use cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition as deletion or root-replacement authority.**
+**Core Principle: Preserve names, roles, references, history and project state across the checked change. Distinguish Runtime payload parity from Active Project Root convergence; prevent split/duplicate authority, roll oversized entrypoints without losing meaning, and never derive deletion or root replacement from size, cleanliness, isolation or missing recognition.**
 
-This rule owns cross-reference consistency, change propagation, reference verification, daily-first governance rollover, active-entrypoint/history/done shard boundaries, oversize-trigger response, existing-file migration, and creation/duplication hygiene. It does not replace TODO, phase, changelog, destructive-confirmation, or safe-file-reading semantics.
+This owner verifies cross-reference/chain/rollover integrity and file hygiene. [document-governance.md](document-governance.md) owns roles/chain selection/body eligibility; [authority-and-scope.md](authority-and-scope.md) selects the Active Project Root; [action-safety.md](action-safety.md) approves destructive operations.
 
----
+## Propagate and Verify Changed Contracts
 
-## Core Contract
+Resolve concrete paths/symbols/keys/commands or mark unknown; propagate changes through relevant imports, config/build/deploy/install examples, tests/discovery, links and source-comment document references. Rename/move requires recomputed relative paths, not basename guesses. Symbol/key/command changes update checked consumers/examples. Bounded excerpts/nonfindings prove only their scope.
 
-### 1) Cross-reference and governed-chain consistency
-Keep names, paths, identifiers, and references consistent across checked scope; verify concrete targets or mark them unknown, propagate rename/move/key/command changes, and keep non-findings scoped. Governed-document references in source comments are checked dependencies and must be updated or removed when their target moves.
+For selected design/changelog chains verify one active generic/semantic parent, declared shape/complete map, child/version ownership/backlinks, no orphan/stale/duplicate/mixed authority, and inactive reference separation. Keep observed example, extracted doctrine, selected target and equivalence basis distinct. Chain changes update map/backlinks and active/inactive roles together.
 
-For a design/changelog chain selected under `document-governance.md`, verify:
-- exactly one active parent model and no ambiguous generic/semantic coexistence
-- declared chain shape and complete parent map
-- child/version ownership, parent back-links, and no orphan, stale, duplicate, or mixed-mode authority
-- inactive history/reference material remains distinct from ordinary active detail and automatic resolution
-- observed example, extracted doctrine, selected target, and equivalence basis remain distinct when applicable
+Bodyful TODO/phase summary remains navigation; shards/history cannot replace it. Separate portable/shared references, checked local values, source/install and destination/runtime paths, source-owned payload and other-owner files. No runtime parity/no-drift/release-ready claim from hashes without substantive bodies.
 
-Keep active entrypoints current and history/done reachable; do not let shards replace `TODO.md` or `phase/SUMMARY.md` navigation. Separate portable/shared references, checked local facts, source/install paths, destination/runtime paths, source-owned runtime scope, and other-owner runtime files. Source/runtime parity and release-ready claims also require active runtime body sufficiency.
+For migration/authority replacement, verify applicable manifests/imports/dependencies/config/build/deploy/tests/discovery/generated inputs/acceptance select current authority only. History/done/quarantine is provenance, never active/fallback/generated/normal-discovery input. [evidence-discipline.md](evidence-discipline.md) owns two-sided proof; one moved file or grep is insufficient.
 
-For migration-complete or no-drift claims, verify applicable active manifests, imports/dependencies, config, build inputs, deployment inputs, tests/test discovery, generated-input declarations, and acceptance surfaces select only current authority. Quarantine, history, and `done/` paths may remain as provenance references but must not remain active, fallback, generated, or normally discovered inputs. Name the checked scope; a moved file or one non-finding is not enough.
+## Payload Versus Project Convergence
 
-### 1.1) Active Project Root and convergence proof
-`authority-and-scope.md` owns Active Project Root selection. Integrity verification consumes that authority and keeps two proof layers separate:
+| Proof layer | Required checked scope |
+|---|---|
+| Runtime payload parity | selected ordered install payload, bytes/modes/bodies/manifests and destination state |
+| Full-project convergence | relevant Active Project Root source/config/Rules/governance/scripts/tests/plugin/support/tooling/generated declarations/modes and classified modified/untracked state |
 
-- **Runtime payload parity** checks the selected install payload, its order, modes, bodies, manifests, and destination state. It proves only that payload.
-- **Full-project convergence** checks the relevant project source set from the Active Project Root, including governed surfaces, Runtime Rules, source/config, scripts/tests, plugin/support/tooling, generated-input declarations, modes, and classified modified or untracked state.
+Payload/candidate/tag/release/clone parity cannot stand for whole-project convergence or authorize root replacement. Preserve local-only/unclassified paths until owner/disposition is resolved: modified/untracked is neither semantic truth nor junk replaceable from public state. Block applicable sync/no-drift/closeout while authoritative/newer state is split, canonical-only components unexplained, or alternate locations own source/task/phase/Patch/commit/release inputs. Disposable verification changes are not implementation.
 
-Payload, candidate, tag, release, or fresh-clone parity must not be presented as whole-project convergence and must never authorize replacing the Active Project Root. Block sync/no-drift/closeout while newer or authoritative state remains split across locations, while canonical-only components are unexplained, or while an alternate location owns source, governed task/phase/Patch state, commit, or release input.
-
-Preserve local-only and unclassified paths until owner and disposition are resolved. They are not semantic truth merely because they are modified or untracked, but they also are not junk or replaceable from public state. When proof layers differ, report the mixed result explicitly, for example:
-
+Report mixed results explicitly rather than hide the failed layer:
 ```text
 Runtime payload parity: passed
 Active Project Root convergence: failed or blocked
 Completion: blocked
 ```
 
-| Reference family | Integrity check |
-|---|---|
-| path, symbol, command, config | resolve from the relevant file/search/command scope and propagate dependents |
-| governed parent/shard/history | parent role, declared map, back-link, active/inactive role, no competing authority |
-| source comment → governed doc | cited path/anchor resolves after changes |
-| source-owned runtime set | checked inventory and substantive bodies |
-| shared destination / other owner | resolve owner/project scope before classification |
-| local or machine-specific value | label checked local scope; defer portable defaults to `portable-implementation-and-hardcoding-control.md` |
+Name exactly which layer/scope passed. A bounded payload task may report payload-only success; it cannot close unresolved required project convergence.
 
-Patch timeline migration requires a deterministic evidence manifest before mutation. Each selected row records admissible original-creation evidence, old/new exact paths, source SHA-256 and mode, dependent governed-reference hashes/modes, and the proposed metadata change. mtime/ctime or another indirect chronology signal cannot fill an evidence gap; ambiguous rows remain blocked.
+## Evidence-bound Patch Timeline Migration
 
-Reference propagation resolves each exact Patch path to its actual old target and recomputes the correct relative path after rename. Update exact references in Phase, design, changelog, TODO/history/done, and Patch companion history; do not globally replace basenames, rewrite wildcard examples such as `patch/*.patch.md`, or modify serialized request/transcript payloads by default. An explicitly suspended archive is a preservation sentinel: retain its names, bytes, modes, and inactive/disconnected role, and exclude it from active mutation rows.
+Before mutation build a deterministic manifest: each selected row has admissible original-creation evidence, old/new exact paths, source SHA-256/mode, dependent governed-reference hashes/modes and proposed metadata. Indirect chronology such as mtime/ctime cannot fill a gap; ambiguous rows stay blocked.
 
-Apply requires unchanged manifest/source/reference hashes plus explicit action-and-scope approval. Write generated manifest/journal files exclusively with owner-only permissions where the filesystem supports them. Persist the rollback journal before the first mutation, replace reference files atomically, and keep explicit rollback able to classify unchanged, staged, and applied journal states without treating it as an automatic fallback. Verification checks the target filename/metadata, updated exact references, former-path inactivity, and preserved archive state together; rollback stops on any state outside the journal's original/applied hashes and modes. A Patch migration remains incomplete while any selected row is ambiguous, any exact old reference remains active, or any preserved archive participates in normal discovery or execution.
+Resolve each exact reference to its real old target and recompute relative links after rename across Phase/design/changelog/TODO/history/done/Patch companion history. No global basename replacement, wildcard-example rewrite (`patch/*.patch.md`) or serialized request/transcript mutation by default. Explicitly suspended archive is a sentinel: preserve names/bytes/modes/inactive-disconnected role and exclude it from mutation rows.
 
-### 2) God-file, worker-gate, and delegated-repair consistency
+Apply only with unchanged manifest/source/reference hashes and explicit action/scope approval. Create generated manifest/journal exclusively with owner-only permissions where supported. Persist rollback journal **before first mutation**, replace references atomically, and classify unchanged/staged/applied states. Rollback is deliberate, not automatic fallback; stop on any hashes/modes outside original/applied journal states.
 
-A sync must not move content into the wrong owner or overload one active file: verify current state, target-state design, version history, execution tracking, phase execution, patch review, and rollback detail remain in their owning surfaces; when a touched document is split, sharded, or rolled over, verify parent/index links, shard maps, back-links, and child/history/done references; include God Phase and God Patch split decisions in no-drift review when phase or patch files are touched; do not claim sync/no-drift if active docs became role-overloaded even though versions and links match.
+Verify target filename/metadata, exact updated references, former-path inactivity and preserved sentinel together. Selected ambiguous rows, active old references or archive normal discovery keep migration incomplete. [document-governance.md](document-governance.md) owns exact timestamp/metadata/admissible evidence, not this operational journal.
 
-A no-drift/sync/closeout/release-ready claim is invalid when: (a) touched governed documents still have unresolved God pressure neither repaired nor represented as a visible governed repair slice (repaired splits reflected in links/indexes; planned repair has a visible owner in task/TODO/phase/patch/changelog; broad deferred repair labeled as deferred; unresolved ambiguity surfaced as a blocker); (b) the leader skipped worker-first filtering for a worker-fit aggregate read with no narrow direct-handling exception recorded (worker handoff must return filtered findings, conflicts, exact anchors, and leader verification needs; leader must verify selected anchors; direct leader handling is limited to narrow known files, exact edit/verify ranges, or a stated narrow exception); or (c) worker-edited governed documents have not been leader-verified. Worker handoff is input, not proof.
-
-Leader verification must check: meaning preservation and authority-role boundaries; history/done reachability and cross-reference resolution; version alignment across runtime/design/changelog surfaces; phase and patch links when touched; README install-array safety when install/onboarding surfaces are touched; source-owned runtime install scope and active runtime body sufficiency. Skipped or incomplete verification is a blocker.
-
-### 3) Active entrypoints and daily-first rollover
-`TODO.md` and `phase/SUMMARY.md` remain bodyful current-state entrypoints; history/done never replaces root navigation.
+## Bodyful Entry and Preservation-first Rollover
 
 ```text
 TODO.md → todo/history/YYYY-MM-DD*.md → todo/done/<task-or-wave>.md
 phase/SUMMARY.md → phase/history/YYYY-MM-DD*.md → phase/done/phase-NNN-*.md
 ```
 
-Daily history stores movement/snapshots; `done/` stores larger completed detail. All moved content remains inactive-by-default, parent-linked, back-linked, and reachable.
+Daily history stores movement/snapshots; done stores larger completed detail. Moved content stays inactive-by-default, parent-linked/backlinked/reachable. Current/pending/deferred remains visible in compact active entrypoints.
 
-### 4) Trigger and migration contract
-Consider rollover around 250–300 lines, 25–30 KB, history larger than current content, or 200+ lines to reach current state. Require it before further broad absorption around 500 lines, 50 KB, failed/oversized reads, repeated compact refill, or autocompact thrash. These are scanability triggers, never deletion authority.
+Consider rollover at 250–300 lines, 25–30 KB, history exceeding current content or 200+ lines to reach current state. Require it before further broad absorption at roughly 500 lines/50 KB, failed oversized reads, repeated compact refill or autocompact thrash. These are scanability signals, not deletion permission.
 
-For an oversized entrypoint: preserve a reachable snapshot; classify current, pending/deferred, completed, daily, and historical content; keep current/pending state in the entrypoint; move only the appropriate bulk; update references both ways; and verify no active item or retained history was lost.
+Preserve a reachable snapshot → classify current/pending-deferred/completed/daily/historical → move only suitable bulk → update both directions → verify no active item/retained history lost. File size, completed/inactive status, context bloat or convenience cannot justify deletion.
 
-Rollover preserves meaning. File size, completed/inactive status, context bloat, cleanup, hygiene, or convenience never authorizes deletion.
+## Density, Owner Repair and Leader Verification
 
-### 5) Density and God-document repair
-Keep active lines concept-focused and separate current state, history, verification, risks, exclusions, and next work when they mix. Repair clear low-risk touched density now; otherwise create a visible owner-specific repair slice. TODO/phase accumulation routes to their history/done surfaces, while active design truth uses design sharding rather than rollover history.
+Keep current truth/history/proof/risks/exclusions/next work concept-focused and correctly owned; version/link parity does not excuse role overload. Clear low-risk touched density is repaired locally; otherwise record visible owner-specific planned/deferred/blocked repair. TODO/phase overflow uses history/done; active design truth uses coherent sharding. God Phase/Patch decisions remain explicit when those owners are touched.
 
-Delegated repair requires bounded exact artifacts/anchors, meaning preservation, history reachability, stable authority roles, and non-destructive behavior. Ambiguous authority, history/destructive risk, or analysis-only scope blocks routine delegated edits. Verify future read cost after non-trivial governance changes.
+Disposition modes: `REPAIR_NOW`, `DELEGATE_REPAIR`, `PLAN_IN_CURRENT_PHASE`, `OPEN_REPAIR_PATCH`, `OPEN_NEW_PHASE_OR_SUBPHASE`, `BLOCK_CLOSEOUT`, `ASK_ONLY_IF_AMBIGUOUS`. Their names are not permission for artifacts, a new major or mutation; startup/lineage still apply.
 
-Action modes remain: `REPAIR_NOW`, `DELEGATE_REPAIR`, `PLAN_IN_CURRENT_PHASE`, `OPEN_REPAIR_PATCH`, `OPEN_NEW_PHASE_OR_SUBPHASE`, `BLOCK_CLOSEOUT`, `ASK_ONLY_IF_AMBIGUOUS`.
+Before sync/no-drift/closeout/release-ready verify:
+- meaning and authority-role boundaries, parent/maps/backlinks/history-done reachability and current references
+- runtime/design/changelog versions, selected phase/Patch links, source-owned install array safety and substantive Runtime bodies
+- touched God pressure repaired or visibly owned/planned/deferred; ambiguity surfaced as blocker
+- required helper-fit burst was narrowed/routed under capture/routing owners or a valid narrow direct exception recorded
+- every worker-authored governed edit and selected decision-changing anchor leader-verified
 
-### 6) File hygiene
-- edit the existing fitting authority before creating a parallel one
-- create only required functional code/config, user-requested documents, governed startup artifacts—including conditionally selected diagram surfaces—chosen by `phase-todo-artifact.md`, or short-lived `/tmp` files
-- do not create unrequested summaries/checkpoints/work plans, duplicate authorities, or version-suffixed copies such as `-v2`, `_final`, `_backup`, `_draft`, or `_old`
-- ask when artifact need or ownership is ambiguous; required-startup status does not authorize arbitrary creation or deletion
-- resolve owner/project scope before classifying files in shared destinations
-- keep reusable artifacts portable unless explicitly machine-scoped
-- hygiene, cleanup, isolation, worktree, sandbox, runtime co-location, untracked state, or missing recognition never authorizes deletion; removal requires stronger semantic authority and destructive confirmation
+Worker handoffs are filtered evidence, not proof. [worker-routing-and-context.md](worker-routing-and-context.md) owns net benefit/brief/write limits; [safe-io.md](safe-io.md) owns burst narrowing. Known files/exact edit/proof ranges, tight interactive sequence, high overlap, unavailable tools or explicit direction may justify direct handling. Incomplete required verification blocks the corresponding claim.
 
----
+Non-trivial split/shard/rollover repairs verify future read cost as well as references/preservation. Delegated edits require exact non-overlapping artifacts/anchors, stable meaning/history/roles and non-destructive permission; ambiguous authority/history/destructive risk or analysis-only scope prevents routine repair.
 
-## Output and Change-Impact Standards
-Use precise portable placeholders, exact local values only as checked local facts, and stable path/line/symbol references when useful. Wording labels defer to `accurate-communication.md`; avoid vague references or one local path acting as both source and runtime destination.
+## Creation and Hygiene Boundaries
 
-Renames/moves update imports, links, install examples, governed-doc comments, and dependent paths; symbol/key/command changes update checked usages and examples. Chain changes update maps, back-links, and active/inactive reference roles together. Runtime parity checks source-owned scope and substantive bodies, not hashes alone. Keep new-file classification unresolved until relevant authority/history and owner scope are checked.
+Use the existing fitting owner first. Create only required functional code/config, requested documents, startup-selected governed artifacts (including conditional diagrams), or short-lived `/tmp` evidence. No unrequested summaries/checkpoints/plans/duplicate authority/version-suffixed `-v2`, `_final`, `_backup`, `_draft`, `_old` copies. Ask only for real need/ownership ambiguity; startup never authorizes arbitrary creation/deletion.
 
----
-
-## Trigger Model
-
-| Trigger | Required behavior |
-|---|---|
-| new/renamed/moved file, symbol, config key, command | update related references and verify consistency across checked scope |
-| legacy Patch chronology migration | require admissible creation evidence, hash-bound exact-reference manifest, explicit apply approval, archive sentinels, and post-apply/rollback verification |
-| sync/no-drift/closeout/release-ready claim | verify impacted files/sections, worker handoffs, body sufficiency, and the named payload-versus-project proof layer |
-| Runtime payload parity passes while local project components differ or remain unclassified | report payload-only success, verify full-project convergence from the Active Project Root, and block root replacement or whole-project completion claims |
-| source or governed state appears in `/tmp`, a worktree, clean clone, or alternate checkout | keep it evidence/disposable-only, require implementation in the Active Project Root, and block closeout while split authority remains |
-| migration-complete or authority-replacement no-drift claim | verify active manifests/imports/config/build/deployment/tests/generated inputs/acceptance select current authority and inactive paths remain reference-only |
-| sharded design or changelog structure | verify parent index/shard map, shard-to-parent back-links, selected-shard scope |
-| touched governed document shows God pressure | route to split/shard/rollover repair with preserved links |
-| active entrypoint hits soft/hard size/thrash trigger | roll over into daily history/done shards with bidirectional references |
-| oversized existing `TODO.md`/`phase/SUMMARY.md` | migrate with snapshot, classification, and reference integrity |
-| new/unclear file appears | check master surfaces, resolve owner/project scope, keep classification unresolved when incomplete |
-| cleanup/hygiene/isolation/co-location rationale for deletion | stop; require stronger semantic authority plus destructive-confirmation owner |
-
----
-
-## Anti-Patterns
-Avoid duplicate authority/junk artifacts; classifying new, untracked, co-located, or shared-destination files without owner scope; any deletion or root replacement justified only by size/status/cleanup/hygiene/isolation/worktree/sandbox/context pressure; alternate source/governed/commit/release authority outside the Active Project Root; payload parity presented as whole-project convergence; source state split across root and temporary locations; orphan or root-replacing shards; unverified no-loss/no-drift or migration-complete claims; inactive/quarantined/history paths retained as active, fallback, generated, or discovery inputs; worker handoffs treated as proof; or vague/machine-local references presented as portable authority.
-
----
-
-## Integration
-Related owners: [document-governance.md](document-governance.md) (roles/chains/runtime bodies); [phase-todo-artifact.md](phase-todo-artifact.md) and [execution-and-goal-frame.md](execution-and-goal-frame.md) (startup/continuation); [safe-io.md](safe-io.md) and [evidence-discipline.md](evidence-discipline.md) (bounded checks/claims); [action-safety.md](action-safety.md) and [authority-and-scope.md](authority-and-scope.md) (destruction/ownership); [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) (portable references).
+Resolve shared-destination owners before classification. Keep reusable artifacts portable, exact local facts scoped. Cleanup/hygiene/isolation/worktree/sandbox/co-location/untracked state/missing recognition never establishes disposability or root replacement; semantic authority and explicit destructive confirmation remain required. [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) owns notation/binding, [accurate-communication.md](accurate-communication.md) claim wording, and [phase-todo-artifact.md](phase-todo-artifact.md)/[execution-and-goal-frame.md](execution-and-goal-frame.md) startup/continuation.

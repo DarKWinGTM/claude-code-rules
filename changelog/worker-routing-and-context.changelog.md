@@ -1,13 +1,15 @@
 # Changelog - Worker Routing and Context Control
 
-> **Current Version:** 1.17
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Parent Document:** [../worker-routing-and-context.md](../worker-routing-and-context.md)
+> **Current Version:** 1.18
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.18 | 2026-09-30 | **[Consolidated helper routing and lifecycle](#version-118)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.17 | 2026-08-09 | **[Owned Agent Team teammate lifecycle after failure classification](#version-117)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.16 | 2026-08-08 | **[Established leader-owned source and explicit helper invocation routing](#version-116)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.15 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-115)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -31,6 +33,16 @@
 | | | Summary: Created `worker-routing-and-context.md` as a body-sufficient merged runtime owner for leader-context protection, worker routing, custom-agent selection, and document-density control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-118"></a>
+## Version 1.18: Consolidated helper routing and lifecycle
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Unified repeated net-benefit, invocation, read-only/write limits, role-reuse and handoff requirements while preserving main source/final-proof responsibility.
+- Retained exact lifecycle fields, standalone-versus-Team restrictions, parallel state safety, specialist order and affected-anchor review closure.
+- Added the missing parent backlink; P073-16 source compaction does not select more workers or change coordination transport.
 
 <a id="version-117"></a>
 ## Version 1.17: Owned Agent Team teammate lifecycle after failure classification

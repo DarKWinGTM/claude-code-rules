@@ -1,8 +1,8 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.33
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.36
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -11,6 +11,8 @@
 
 `execution-and-goal-frame.md` is the active runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries.
 
+Selected [runtime compaction](design/runtime-compaction.design.md) keeps the complete scope/decision/proof/review/closure mechanism here; goal and task consumers retain schema/status consequences only. Choose the simplest complete path; distinguish facts, assumptions, requirements and user choices. Optional controls need concrete in-scope necessity/net benefit, factual uncertainty gets a discriminating check, and material user-owned trade-offs get consultation. Stop at decision sufficiency or the selected gate and reopen only for invalidating evidence, without weakening explicit terminal proof or safety approval.
+
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 
 ---
@@ -18,6 +20,18 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 ## Scope
 
 This design owns the target-state shape for execution continuity, goal-set review, priority balance, and completion-to-next-goal framing.
+
+Understand selected behavior and decision-changing facts before mechanism selection; establish enough data/owner/lifecycle/dependency/failure/acceptance context to compare realistic approaches and order required changes and proof. This is proportional reasoning, not mandatory waterfall, exhaustive research or per-edit artifacts. [Coding Discipline](coding-discipline.design.md) owns predicates/state/representation details; this owner selects the outcome, route, scope and proof.
+
+Temporary development/test/no-live constraints govern execution, not Product behavior by implication. Test isolation stays at its fitting boundary; selected runtime modes/feature flags remain valid. Unverified assumptions must not become permanent eligibility conditions. Preserve user choices, safety/approval, valid completed work and selected terminal proof.
+
+### Decision and documentation cadence
+
+Once the selected outcome, owner, route, material facts and proof are sufficient, continue required implementation and checks rather than reopening analysis or synchronizing all documents per attempt. Provisional alternatives within the approved contract stay in the working record only as useful; synthesize result/history after the bounded outcome settles and matching checks pass. A material target/contract conflict or missing approval must be resolved before dependent action. A failure, security stop or handoff may require a minimum resume-critical record without implying repair or finalization. [Document Governance](document-governance.design.md) owns document-role routing; [Phase, TODO, and Artifact Initiation](phase-todo-artifact.design.md) owns task-evidence handoff.
+
+Existing implementation establishes current behavior, not correctness. Keep valid conventions for taste-only differences; challenge a checked harmful pattern with its evidence, mechanism, impact and smallest complete correction. If evidence is incomplete, investigate rather than endorse either pattern. Do not silently fork or treat newer/more-tested code as authority over the user or selected design; approval remains with its owner.
+
+Use judgment for meaning, options and unresolved contracts, and existing deterministic tools for hashes, versions, equality and mechanical transformations. AI may diagnose routing/retry uncertainty; this distinction neither bans that reasoning nor warrants a new automation framework for a one-off check.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 

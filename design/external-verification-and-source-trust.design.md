@@ -3,8 +3,8 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.7
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.8
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/external-verification-and-source-trust.changelog.md](../changelog/external-verification-and-source-trust.changelog.md)
 
 ---
@@ -22,7 +22,7 @@ Define one first-class rule chain for proactive external verification and source
 - selects the strongest reachable authorized claim-fit source, or a bounded substitute with explicit provenance and proof limits when the preferred direct source is unavailable
 - handles external source conflicts honestly without drifting into either passivity or overclaiming
 
-This chain should increase factual accuracy and proof-aware recommendation quality while preserving the existing burden-of-proof, contradiction, user-authority, and communication contracts owned by adjacent rules.
+Selected [runtime compaction](design/runtime-compaction.design.md) keeps one eligibility → claim-fit trust ranking → corroboration/conflict mechanism. Safety owns authenticated capability/approval/retry; evidence owns witness/proof thresholds. Primary-source preference, low-risk single-source sufficiency, high-impact corroboration and bounded substitute recovery remain explicit.
 
 P120 refinement: this owner should now also make provider-, supplier-, model-, or path-specific narrowing an evidence-earned scope decision rather than a default convenience recommendation, requiring broader corroboration when the narrower local doctrine claim would materially change the chosen fix owner.
 

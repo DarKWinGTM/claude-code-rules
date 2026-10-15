@@ -1,240 +1,103 @@
 # Document Governance
-> **Current Version:** 1.20
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.20
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.22
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.22
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
 
----
-
 ## Rule Statement
 
-**Core Principle: Govern documentation through one owner per role: runtime Rules are body-sufficient behavior contracts, design is active textual target-state truth, `diagram/` is the required Kroki-compatible visual lane, changelog owns version/history, TODO and phase own execution state, and patch owns before/after review. Resolve namespace, parent authority, and chain shape before growth; preserve reachable history, compact active entrypoints, portable onboarding, and source-owned install scope.**
+**Core Principle: One artifact owns each role: runtime behavior, textual design, visual structure, version/history, execution or before/after review. Resolve chain authority before growth; preserve substantive active bodies and reachable inactive history without turning preservation into runtime fallback.**
 
-พูดง่าย ๆ: README คือ front page, design คือ textual truth, `diagram/` คือ visual lane, changelog คือ version/history, phase/TODO คือ execution, patch คือ before/after review, และแต่ละ role ต้องมี owner เดียว.
+พูดง่าย ๆ: README บอกภาพรวม; design บอกเป้าหมาย; diagram แสดงโครงสร้าง; changelog เก็บ version/history; TODO/phase ติดตามงาน; Patch ใช้ review สิ่งที่จะเปลี่ยน.
 
----
+## Roles, Navigation and Sync
 
-## Part A — Repository Documentation Baseline
-
-### 1) Required surfaces and roles
-
-| Surface | Primary role |
+| Authority | Role and valid form |
 |---|---|
-| `README.md` | overview, onboarding, current-state front page; not detailed history |
-| `design/*.design.md`, `design/<slug>/*.design.md` | active target behavior, contract, rationale, and coherent child shards |
-| `diagram/STRUCTURE.md` | mandatory compact, bodyful whole-project visual structure authority and diagram entrypoint |
-| `diagram/*.design.md`, `diagram/<subject>/*.design.md` | Kroki-compatible integrated subject diagrams and justified visual shards |
-| `changelog/*.changelog.md` | active current-version authority, index, map, and navigation |
-| `changelog/<chain>/v*.changelog.md` | indexed same-chain version detail |
-| `TODO.md` | compact durable current execution index, not the primary live board |
-| `phase/SUMMARY.md`, `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, `phase/phase-NNN-NN-NN-*.md` | live staged execution and provenance |
-| `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md` | governed chronological before/after review outside live phase planning |
-| allowed `history/` / `done/` surfaces | inactive referenced history/detail, never cleanup authority |
+| `README.md` | current capability/overview/onboarding/front page, not detailed release chronology |
+| `design/*.design.md`, `design/<slug>/*.design.md` | active target behavior/contracts/rationale and coherent child slices |
+| `diagram/STRUCTURE.md` | mandatory compact bodyful whole-project visual structure/entrypoint |
+| `diagram/*.design.md`, `diagram/<subject>/*.design.md` | Kroki-compatible integrated subject diagrams/justified visual shards |
+| `changelog/*.changelog.md` | one active current-version/index/map/navigation parent |
+| `changelog/<chain>/v*.changelog.md` | indexed self-identifying same-chain version detail |
+| `TODO.md` | compact durable current index, not primary live board |
+| `phase/SUMMARY.md`, `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, `phase/phase-NNN-NN-NN-*.md` | live staged execution/provenance, not target truth |
+| `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md` | chronological before/during-execution review, not live phase planning |
 
-Allowed preservation surfaces are `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, `changelog/done/`, and when diagram rollover is needed, `diagram/history/` plus `diagram/done/`. Active changelog detail shards remain under `changelog/<chain>/v*.changelog.md`. Design has **no default** `design/done/`; it remains active blueprint authority until superseded. Helper/support surfaces such as `template/**`, `support/**`, and `plugin/**` are non-governed unless explicitly promoted.
+Allowed inactive preservation: `todo/history/`, `todo/done/`, `phase/history/`, `phase/done/`, `patch/done/`, `changelog/done/`; diagram rollover may use `diagram/history/` and `diagram/done/`. Design has **no default** `design/done/`: a child stays active blueprint until explicitly superseded. `template/**`, `support/**`, `plugin/**` remain support/non-governed unless explicitly promoted. Completed/inactive is not junk or deletion authority; active parents keep history reachable.
 
-Completed or inactive status is not junk classification or deletion authorization. Active entrypoints must keep moved history reachable.
+Default sync: design → diagram when materially triggered → runtime rule → changelog → TODO → affected Patch metadata final sync. This is ownership/dependency order, not recurrence after every attempt. Design/approval prerequisites precede dependent implementation; [execution-and-goal-frame.md](execution-and-goal-frame.md) owns result-sync cadence. Markdown Runtime Rules are source implementation, not final-result bookkeeping. Use real session identifiers. [phase-todo-artifact.md](phase-todo-artifact.md) owns initiation/lineage and task-evidence handoff; no artifact opens merely because another exists.
 
-### 2) Governance order and role boundaries
+Synthesize settled decisions and actual results by role: design holds the selected target, changelog the material change/history, phase/TODO execution/proof/remaining obligations. Update only affected owners and required references; no semantic/reference delta needs no artificial diff. Do not dump tentative iterations or task transcripts into every document, erase meaningful history to manufacture a final-only narrative, or create a retrospective Patch merely to fill a checklist. A triggered Patch remains prospective before/during execution.
 
-Default sync order:
-1. design
-2. diagram when triggered by `phase-todo-artifact.md`
-3. runtime rule
-4. changelog
-5. TODO
-6. patch metadata final sync when affected
+Start scans at README, compact active design/changelog parents and selected children, diagram entrypoint when applicable, TODO, phase summary/active children, selected Patch and implementation. Open history/done/archive through references or a history/audit/rollback/provenance need. Classify broad work as focused edit, owner-aligned sync, release/no-drift audit, rollover or review; split by actual owners without tiny-fix lanes. Capture/routing belongs to [safe-io.md](safe-io.md) and [worker-routing-and-context.md](worker-routing-and-context.md).
 
-Active governed metadata uses real session identifiers, never placeholders.
+Design cannot absorb chronology/audit snapshots/execution/rollback journals; changelog cannot become target design/roadmap/TODO/README prose; phase cannot become design/Patch or source naming authority; Patch cannot become generic plans/retrospective summaries. Source comments are bounded rationale/references, not parallel policy. Cross-Rule repetition is exceptional: retain only a synchronized literal/order/local consequence preventing a likely execution/safety/proof error and name its complete owner.
 
-Role boundaries:
-- README describes active capability/current state in user-facing terms; do not make phase/release chronology the capability definition.
-- Design owns target state, not changelog history, TODO/phase execution, patch review, or completed-work storage.
-- Diagram visually synthesizes project structure but never outranks design semantic truth.
-- Changelog owns current version and history, not phase definitions or design target state.
-- Phase owns staged execution, not design, patch, or source naming authority; chronology must not become function/class/module/route/config naming.
-- Patch owns tactical before/after review, not durable design or live execution.
-- Source comments may explain local rationale or point to governed documents, but remain bounded pointers rather than parallel authority.
-- Helper/support artifacts do not gain authority from proximity.
+Active parents/maps/manifests/install/generated inputs select current authority only. History/done/quarantine is reachable provenance, not active resolution, automatic fallback, generated input or normal runtime/install discovery. [document-integrity.md](document-integrity.md) owns reference/inactivity and losslessness checks.
 
-Cross-Rule exact repetition is exceptional: a consumer may retain only the minimum literal/order needed to prevent a likely execution, safety, verification, or ordering error; name the canonical owner, keep the copy synchronized, and never create competing or recursive authority.
+## Design and Changelog Chain Selection
 
-Active parents, maps, manifests, install sets, and generated-input declarations must identify only the current authority. Quarantine, history, and `done/` surfaces may remain reachable for provenance, audit, or deliberate rollback analysis, but they cannot own active resolution, automatic fallback, normal generated input, or runtime/install discovery.
+Before append/split/normalize resolve namespace, actual subject, one active parent, shape and opening basis:
+- a fully folder-scoped single chain may use a generic parent; shared multi-chain folders need semantic self-identifying parents
+- coexistence is explicitly compatibility-only or inactive, never ambiguous dual authority
+- `single-file-bootstrap`: retain while compact/coherent
+- `flat-sibling-shards`: few coherent folder-scoped slices with declared parent map
+- `same-stem-subfolder-normalized`: broad/multi-shard/root-heavy/God-pressure chain with checked opening basis
+- `archive-history-reference-only`: inactive reference, never ordinary active detail/fallback
 
-### 3) Scan and work-shape discipline
+Record bootstrap exit/shard opening/append basis and map updates; do not infer nested directories from a filename. Parents stay bodyful gateways declaring shape/map; children identify scope, backlink, remain reachable/coherent/nonduplicative. Classify proposed detail as current state/history/verification/risk/next work before growth. Owner ambiguity stops the affected append, not unrelated safe work.
 
-Start current-state scans from README, active design parents and needed children, active diagram entrypoints when present, active changelog parents and needed version shards, compact TODO, compact `phase/SUMMARY.md`, active phase/patch files, and checked implementation. Open `done/` or archive only through active references or for history, audit, rollback, provenance, or trace reconstruction.
+Keep observed project example, extracted doctrine, selected target and verified equivalence separate. Placeholder examples and stricter inspired targets are not facts about the observed project.
 
-Before broad governance work, classify it as focused edit, owner-aligned sync, release/no-drift audit, rollover, or before/after patch review. Decompose broad work by owner—design, diagram, runtime, changelog, TODO/phase, patch metadata, release audit—without forcing lanes for a tiny local fix. `worker-routing-and-context.md` owns helper topology; `safe-io.md` owns bounded intake.
+### Design requirements
 
-### 4) Governed chain model
+Design holds implementation-relevant current/next behavior, invariants, contracts and durable rationale. Normalize external requirements before/alongside dependent multi-step implementation: constrained component, values/fields/flows/states/auth/callback/acceptance, sent/accepted/stored/validated/rejected forms and background limits. Do not rely on transient reading alone.
 
-Before appending, splitting, or normalizing design/changelog, resolve:
-- namespace: one folder-scoped chain or shared multi-chain folder
-- subject and parent: generic parent is valid when the folder fully scopes one chain; shared folders use a self-identifying semantic parent
-- authority: exactly one active parent model; any coexistence is compatibility-only or inactive
-- shape: `single-file-bootstrap`, `flat-sibling-shards`, `same-stem-subfolder-normalized`, or `archive-history-reference-only`
-- transition basis: bootstrap exit, shard-opening basis, append-vs-shard reason, and parent-map update
+Align design version with runtime `Current Version`/`Design` and changelog authority; paired navigation uses `Full history`, not copied historical sections. Retirement/supersession requires explicit design/changelog alignment, not quiet reclassification. For mixed domains/roles shard coherent active truth through the parent, route history to changelog and sequencing/review to phase/Patch.
 
-Keep bootstrap while compact and coherent. Use flat siblings for a folder-scoped chain with only a few coherent slices and a declared parent map. Use same-stem normalization for broad, multi-shard, root-heavy, or God-file-prone chains only after a checked opening basis. Archive/history reference-only material is inactive and never the ordinary active-detail namespace or an automatic resolution path; do not infer a nested directory from the parent filename.
+### Changelog requirements
 
-The parent remains a bodyful authority gateway and declares shape/map. Children remain coherent, reachable, back-linked, and non-duplicative. Classify proposed detail as current state, history, verification, risk, or next work before appending; plan repair when destination or authority is ambiguous.
+One active parent owns current version/index/map/forward routes. Indexed chain-scoped version shards retain exact history during migration unless governed rewriting is selected. `changelog/done/` is inactive archive/provenance for audit/deliberate rollback analysis, not ordinary detail, automatic resolution or restoration authority. Keep daily TODO/phase movement with their owners and README concise. Repair bulky parents by mapped version shards, not duplicate release dashboards.
 
-When examples inform doctrine, keep `observed project shape`, `extracted doctrine`, `selected target form`, and equivalence evidence distinct. Placeholder names are examples; do not claim exact equivalence without checked proof.
+## Governed Diagram Lane
 
-### 5) Governed diagram lane
+Use dedicated `diagram/`, not design children or plugin previews as visual authority. Source is always Kroki-compatible: portable, text-governable, review/diff-friendly and semantically stable. Bodyful `diagram/STRUCTURE.md` maps concepts, source/code/folder topology, authority boundaries, relationships and deeper routes—not a shallow router.
 
-RULES uses dedicated `diagram/` governed infrastructure rather than design shards or plugin previews.
-- governed source must always be Kroki-compatible and governance-suitable: text-governable, diff/review-friendly, semantically stable, and portable
-- `diagram/STRUCTURE.md` is mandatory, compact, active, and bodyful—not a shallow router—and maps main concepts, source/code/folder topology, authority boundaries, diagram relationships, and deeper routes
-- `diagram/<subject>.design.md` is the default integrated zoom-in/decomposition view
-- open `diagram/<subject>/` children only for real visual complexity or distinct visual questions; do not mirror design shards automatically
-- if diagram and design differ, design remains semantic authority
-- inline answer/status/phase diagrams do not become governed source truth automatically; plugin/preview/manifest/report output stays support-only and must not become source truth
-- diagram history/done preserves prior state or completed detail; it never authorizes deletion
+Default zoom-in is integrated `diagram/<subject>.design.md`; subfolders open only for real visual complexity/distinct questions, never automatic design-shard mirrors. Design outranks conflicting visual meaning. Inline answer/status/phase diagrams and preview/manifest/report output do not become governed truth by proximity. Preserve prior visual history through allowed history/done without deletion-by-status.
 
-### 6) Public onboarding and install scope
+## Patch Review and Creation Identity
 
-README/onboarding/install follows `portable-implementation-and-hardcoding-control.md`. Public install scope includes only the current source-owned active runtime set, not every file co-located in a shared destination.
+A Patch shows **what will change** before/during execution. Each item has target/stable locator, before/current, after/target, and one type: `additive`, `replacement`, `deletion`, `restructuring`. Keep Context, Analysis, Change items, Verification and Rollback approach. Use snippets/tables/diffs/anchored hunks/command replacements sufficient to compare; locators may be path/heading/symbol/key/route/schema/query/command.
 
----
+A governance-only Patch may omit snippets only when explicitly non-code/non-snippet/conceptual-structural and runtime edits are excluded. External constraints point to normalized design, not a transient source-reading memory. One coherent review family per Patch; divergent targets/types/review/rollback require proportionate split. `/patch` never owns live phase storage/index; `patch/done/` is inactive retained review history.
 
-## Part B — Design Governance
+### Exact filename
 
-### 1) Active target-state authority
-
-Design describes implementation-relevant current/next target state, durable rationale, invariants, and contracts. It must not absorb changelog history, phase/TODO execution, patch review, audit snapshots, rollback journals, release timelines, or unrelated domains. Historical explanation belongs in reachable changelog surfaces; retained former snapshots are historical/reference-only and outside active design authority.
-
-Design parents remain bodyful gateways; child shards own coherent active target-state slices, identify parent scope, remain mapped/back-linked, and are not history by default. Retiring or superseding a shard requires design/changelog alignment, never quiet removal or reclassification. There is **no default** `design/done/`.
-
-### 2) External requirements and alignment
-
-When external docs, APIs, or provider references materially constrain implementation, normalize the implementation truth into design before or alongside dependent multi-step work. Capture the requirement, constrained component, relevant values/fields/parameters/flows/states/auth/callback/acceptance rules, what is sent/accepted/stored/validated/rejected, and what remains source-side background.
-
-For each governed chain, align design version with runtime `Current Version`, runtime `Design` reference, and changelog `Current Version`. This alignment does not authorize duplicated changelog history. Paired design navigation is limited to `Full history`; do not embed detailed changelog sections or duplicate historical summaries in active design.
-
-### 3) Design God-file repair
-
-God pressure exists when design absorbs unrelated domains or other document roles. Keep current target truth, shard coherent active scope through a compact parent, move history to changelog, keep sequencing in phase and before/after review in patch, and split unrelated domains. Touched unresolved pressure must be repaired or visibly planned/deferred/blocked before sync or closeout.
-
----
-
-## Part C — Changelog Governance
-
-### 1) Active version authority
-
-Each chain has one active authoritative parent owning current version, index, shard map when present, and forward navigation. Runtime/design/phase/patch/TODO align to it when applicable. Changelog records synchronized history; it must not become design target state, phase planning, TODO tracking, release dashboarding, or README current-state prose.
-
-Same-chain version detail uses self-identifying `changelog/<chain>/v*.changelog.md` shards with one owner and resolvable parent/back links. Preserve exact historical content during migration unless an explicit governed rewrite is selected. `changelog/done/` is only inactive archive/completed reference history for audit, deliberate rollback analysis, provenance, or reconstruction—not ordinary active detail, an automatic fallback path, junk, or deletion authority.
-
-Daily TODO/phase movement stays with their history/done owners. README keeps concise current-state signals; detailed version timelines stay in changelog.
-
-### 2) Changelog God-file repair
-
-Keep the parent compact as version/index/map/navigation authority; move bulky same-chain detail to chain-scoped version shards, reserve `done/` for inactive reference/provenance history, and route design/phase/TODO/README content to their owners. Do not append release prose that duplicates active surfaces.
-
----
-
-## Part D — Patch Governance
-
-### 1) Meaning, location, and chronological identity
-
-A patch is a governed before/during-execution review artifact showing **what will change**. Each change item identifies a target artifact or stable locator, current/before state, target/after state, and one change type: `additive`, `replacement`, `deletion`, or `restructuring`.
-
-A patch is not a retrospective/phase summary, rollout dashboard, prose-only recap, deletion authority, or generic plan. Active review uses `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md`; completed history may move to `patch/done/` without changing the filename timestamp. The timestamp is UTC to seconds, `--` separates chronology from meaning, and the slug is lowercase ASCII kebab-case. The exact filename contract is:
-
+Active `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md`; completion may move to `patch/done/` without altering chronology. UTC to seconds, `--` chronology/meaning separator, lowercase ASCII kebab-case slug:
 ```regex
 ^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}Z--[a-z0-9]+(?:-[a-z0-9]+)*\.patch\.md$
 ```
 
-The filename timestamp is the Patch artifact's verified original creation instant. It is not last modification, metadata-change, phase, release, completion, archive-copy, or move-to-`done/` time. Revisions and governed moves preserve the original timestamp. Do not create Patch IDs, Patch registries, or `patch/INDEX.md`; chronological identity comes from the filename and semantic identity from the slug. Generic `patch.md`, version suffixes, copy/final suffixes, and collision auto-suffixing are invalid.
+Timestamp is verified original creation, not edit/phase/release/completion/copy/move time. Revisions preserve it. No Patch ID/registry/`patch/INDEX.md`, generic `patch.md`, version/copy/final/collision suffix or guessed timestamp.
 
-### 2) Metadata, creation evidence, and alignment
+### Metadata and evidence
 
-Patch metadata requires `Current Version`, `Session`, `Status`, `Created At`, `Creation Evidence`, `Target Design`, and `Full history`. `Created At` uses the matching ISO-8601 UTC form `YYYY-MM-DDTHH:mm:ssZ`; filename and metadata must represent the same instant. Its changelog metadata requires `Parent Document`, `Current Version`, and `Session`.
+Required Patch fields: `Current Version`, `Session`, `Status`, `Created At`, `Creation Evidence`, `Target Design`, `Full history`; companion changelog: `Parent Document`, `Current Version`, `Session`. `Created At` is matching `YYYY-MM-DDTHH:mm:ssZ`, derived with filename from one captured UTC instant. Create exclusively; fail on collision.
 
-Admissible creation evidence is a direct creator event, a transcript event explicitly confirming creation, verified filesystem birthtime not contradicted by copy/restore evidence, or authoritative external/operator-provided creation evidence. mtime, ctime, alphabetical order, Phase number/date, changelog date alone, Git first-add without creation proof, session UUID alone, and directory position are not creation evidence. A legacy Patch without admissible evidence remains legacy and blocks an evidence-complete migration row; do not infer or fabricate a timestamp.
+Admissible evidence: direct creator event, creation-confirming transcript event, verified filesystem birthtime not contradicted by copy/restore, or authoritative external/operator creation evidence. mtime/ctime, alphabetical/directory order, Phase/date, changelog date alone, Git first-add without creation proof and session UUID are insufficient. Missing evidence remains legacy and blocks an evidence-complete row.
 
-Use real session IDs in active artifacts; `LEGACY-*` is historical-only when original data is unavailable. Align patch and patch-changelog versions, resolve `Target Design` to an existing design/version, and perform final patch metadata sync in governance order. Metadata integrity does not make patch version authority or transfer design/phase ownership. An explicitly suspended archive may preserve legacy names only while it remains inactive, execution-disconnected, outside normal discovery, and unchanged by the active migration. `script/patch-timeline.mjs` is the reusable repository Tool for this contract; it and its tests/fixtures remain outside the active Runtime Rule installation payload.
+Align Patch/companion versions and existing target design/version; `LEGACY-*` is historical-only. Metadata does not transfer version/design/phase authority. Suspended archives preserve legacy names only while unchanged, inactive and execution/discovery-disconnected. [document-integrity.md](document-integrity.md) owns hash-bound manifest/journal/rename/reference/rollback proof. Repository Tool `script/patch-timeline.mjs` and tests/fixtures stay outside Runtime installation.
 
-### 3) Reviewability
+## UDVC-1 Runtime Eligibility
 
-Every patch includes:
-1. Context
-2. Analysis
-3. Change items
-4. Verification
-5. Rollback approach
+UDVC-1 is the only governed RULES version mechanism; the role ledger remains one authority per role. Design/changelog cannot replace a missing runtime body or prove its behavior. README install arrays define only the source-owned active Runtime set, not design/changelog/TODO/phase/Patch/support or all co-located destination files.
 
-Each change item provides enough comparison detail through before/after snippets, current/target tables, unified diffs, anchored hunks, or scoped command/config replacements. Stable locators may be path, heading, symbol, query, key path, route, command label, schema object/table/column, or another precise anchor.
+Active root Runtime Rules require `Current Version`, `Design`, `Session`, `Full history`; `Design:` is canonical, `Based on:` retired. Eligibility requires source-root existence, canonical aligned metadata, substantive rule/operational guidance and relevant boundaries/triggers/anti-patterns/proof/integration—not metadata or a pointer alone. Missing body, mixed metadata, widened payload or hash-only checks invalidate install/parity/release-ready claims. Verify body sufficiency in addition to bytes/modes.
 
-A non-code/governance-only patch may omit snippets only when it explicitly declares itself non-code/non-snippet, says the surface is conceptual/governance/structural, and keeps runtime edits out of scope.
+Public README/onboarding/install separates portable source and destination under [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md). Resolve other-owner scope before managing shared runtime files.
 
-When external requirements drive the change, point to normalized design truth and summarize only the review-relevant constraint; patch never replaces design or transiently relies on reading memory.
+## Repair and Integrity Gate
 
-### 4) Patch/phase boundary and God Patch repair
-
-Patch owns before/after review; phase owns live staged execution. `/patch` must not become the live phase-plan namespace, active phase index, or per-phase execution storage. `patch/done/` is inactive history, not junk or default active input.
-
-Keep each patch centered on one coherent review family. Split when targets, change types, review boundaries, or rollback paths diverge; keep execution in phase and history in changelog; preserve reviewability and block closeout while touched God Patch pressure is unresolved or unplanned.
-
----
-
-## Part E — Unified Version-Control Governance (UDVC-1)
-
-### 1) One mechanism and one authority per role
-
-UDVC-1 is the only version-governance mechanism for governed RULES chains; do not introduce parallel authorities.
-- root runtime rule → loaded, active behavior contract
-- design → active target-state and rationale authority
-- changelog → current version and history authority
-- `TODO.md` → durable execution index
-- `phase/` → live staged execution
-- `patch/` → before/after review
-
-Design cannot replace the runtime body, and changelog claims cannot prove runtime behavior when the root body is missing. README install arrays define the source-owned active runtime set and must not widen it to design/changelog/TODO/phase/patch/support files.
-
-### 2) Runtime metadata and body sufficiency
-
-Root active runtime Rules require:
-- `Current Version`
-- `Design`
-- `Session`
-- `Full history`
-
-`Design:` is canonical; `Based on:` is retired in active root metadata.
-
-A README-listed runtime Rule is invalid if metadata-only. It needs a substantive rule statement/behavior contract, operational guidance, relevant boundaries/triggers/anti-patterns/verification/integration, and enough body to differ from a design pointer. Source/runtime parity must include body sufficiency, not hashes alone; check substantive bodies before claiming no-drift, runtime parity, release readiness, or active Rule install success.
-
-A runtime file is eligible for install/parity claims only when it exists at source root, has canonical metadata and substantive body, aligns runtime/design/changelog versions, and stays inside source-owned install scope. Missing metadata/body, mixed `Based on`/`Design`, hash-only proof, or widened install scope invalidates the claim.
-
----
-
-## Alignment and Repair Gate
-
-Keep applicable versions, real session IDs, parent/map/back links, reachable history, body sufficiency, source-owned install scope, phase/patch boundaries, owner-aligned sync, and portable source/destination wording aligned. Runtime co-location does not grant ownership; resolve owner/project scope before managing or deleting another owner's file.
-
-When a document mixes target state, history, execution, verification, rollback, roadmap, or operations, preserve its primary role and route detail to the correct owner. Preserve history; overload repair is not deletion authority. Touched God pressure must be repaired or visibly planned, deferred, or blocked before sync/closeout.
-
-## Trigger Model
-
-| Trigger | Required handling |
-|---|---|
-| new chain or version-impacting behavior | establish design/runtime/changelog alignment through UDVC-1 |
-| migration/cutover or authority replacement | keep active parents/maps/manifests/install/generated-input surfaces current-only; keep quarantine/history reference-only and outside automatic resolution |
-| large active design or bulky version history | shard through the declared parent model; use chain-scoped changelog versions for history |
-| completed/history detail | move only to allowed referenced history/done surfaces; preserve meaning |
-| broad governance/release sync | classify owner-aligned lanes before deep work |
-| before/after review need | use patch outside phase planning |
-| README release sync | update concise current-state sections, not timelines |
-| metadata-only runtime root | treat active install/parity state as invalid |
-| public onboarding/install | apply portable binding and source-owned runtime scope |
-| mixed-role touched document | repair clear overload or create an owner-specific visible repair slice |
-
-## Anti-Patterns
-
-Avoid role collapse; ambiguous dual parents; archive/history used as active detail, automatic fallback, or generated input; automatic design-to-diagram mirroring; metadata-only runtime roots; unclassified `sync everything`; broad lanes for tiny fixes; install scope widened into governed/support files; machine-local public defaults; completed content treated as junk; and quiet removal/reclassification instead of governed sharding, rollover, split, or history movement.
-
-## Integration
-Related owners: [document-integrity.md](document-integrity.md) and [phase-todo-artifact.md](phase-todo-artifact.md) (references/preservation/startup); [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) (binding/onboarding); [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) (routing/intake); [accurate-communication.md](accurate-communication.md) and [coding-discipline.md](coding-discipline.md) (claim/coding verification).
+Keep meaning, versions/sessions, parent/map/backlinks, reachable history, current-only inputs, body sufficiency and source-owned install scope aligned. Touched mixed-role/God pressure needs safe local repair or a visible owner-specific planned/deferred/blocked disposition before sync/closeout. History preservation is mandatory, not deletion authority. [document-integrity.md](document-integrity.md) verifies propagation/rollover; [coding-discipline.md](coding-discipline.md) and [accurate-communication.md](accurate-communication.md) govern tested completion claims.

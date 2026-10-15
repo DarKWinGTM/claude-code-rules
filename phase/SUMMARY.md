@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.24
-> **Target Design:** [../design/phase-implementation.design.md](../design/phase-implementation.design.md) v2.35
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
-> **Status:** no active phase — P151/v10.68 released, fresh-public verified, and installed
+> **Current Version:** 2.28
+> **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.38
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Status:** P073-19 source/install verified; final docs and full publication selected. Prior unpublished Main slices remain preserved; Release receipt owns post-commit publication proof.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -19,9 +19,38 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ## Active Phase Roadmap
 
-### Active
+### Current Source/Install/Publication Slice
 
-No active phase is selected.
+- **P073-19:** [Docs cadence and task-evidence handoff](phase-073-19-docs-sync-and-task-handoff.md) — source/install verified; final docs/publication required.
+  - Six existing owners clarify prerequisite-aware docs cadence, real evidence-before-last-closure handoff, affected-owner synthesis, factual codebase challenge, user/peer recipient clarity and project-owned tooling versus bounded probes. Main19 membership remains unchanged; no new Rule/framework/Product action.
+  - Candidate21 synthetic decisions conform; baseline20 conform and S3a partially specifies ordering. Linux/Bash fixtures, exact19 installed parity, thirteen unchanged and other-owner/global preservation passed. This is not causal model-effect/current-session reload or whole-project proof.
+  - One real final task received completed/pending source/install evidence before closure. User selected full publication including the Main10.69–10.71 baseline, excluding plugin/support/global/shared/additional and unrelated shared-file hunks. [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) owns actual post-commit identity/proof.
+  - Same P073 family sibling; current P073-18 cannot absorb this distinct outcome. Diagram/Patch: not required. Existing density repair stays visibly deferred, not a broad rewrite.
+
+### Prior Completed Source/Install Slice
+
+- **P073-18:** [Evidence-led coding workflow](phase-073-18-evidence-led-coding-workflow.md) — bounded source/install/docs scope verified, unpublished.
+  - Output: coding1.8 and execution1.35 teach behavior/fact/data/owner/lifecycle understanding before conditions/mechanisms, dependency-shaped work/proof and safe canonical reuse/state/persistence; no fourteen-rule or additional set.
+  - Source/install proof: fourteen clause checks, nine safeguards, twelve virtual scenarios, both installer fixture suites and root19 bytes/modes/metadata/body/manifest passed; other17/shared/global/additional2 unchanged. Main19:177,387 characters (+2,512/about1.44%).
+  - User order: source → matching tests → root installation → one final docs sync. Final triad/history/reference/protection/scoped-diff checks passed; task8 closes this bounded gate. Current-session/model-effect and publication are excluded.
+  - Lineage: sibling in the existing P073 runtime-owner/install family. Patch/diagram/new additional: not required. Prior results/history and exact recovery remain in linked children.
+
+### Latest Completed Source/Install Slice
+
+- **P073-17:** [Action reporting clarity](phase-073-17-action-reporting-clarity.md) — bounded source/install scope verified; unpublished.
+  - Output: three existing communication owners explain actual actions/results/checks/material remainder, put current plain-language outcomes first and avoid mandatory report headings or old-proposal attachment.
+  - Gate passed: doctrine/twelve virtual examples, triad/history/reference/body/mode checks, both installer fixture suites, exact19 source→root bytes/modes/manifest and unchanged16/additional2/shared/global/unrelated source. Main19 is 174,875 characters (+2,060 from the before snapshot).
+  - Lineage: sibling in the P073 runtime-owner/install family, not a new major or a reopening of P073-16. Patch/diagram: not required.
+  - Tasks23/24 close at the bounded source/install gate; no successor is selected. Original runtime20 recovery snapshots are outside Rules discovery. Publication and current-session/model-effect proof remain unselected.
+
+### Earlier Completed Source/Install Slice
+
+- **P073-16:** [Proportionate runtime compaction and additional convergence](phase-073-16-proportionate-runtime-compaction-and-additional-convergence.md) — bounded source/install scope complete; unpublished.
+  - Output: compacted the same body-sufficient Main19, preserved reasoning/closure and safety boundaries, evaluated original JSONL evidence, and removed only approved redundant trials after Main parity.
+  - Gate: material clause/exception coverage, metadata/version/refs, focused fixtures, final measured size, exact19 source→root parity, scoped cleanup and durable rollback passed.
+  - Lineage: existing P073 runtime compaction/owner/install family; no new major. CLAUDE/frameworks/shared rules remain protected.
+  - Publication: commit/push/tag/release not authorized; v10.68 remains latest released baseline. Patch: none.
+  - Source [target shard](../design/design/runtime-compaction.design.md); detailed verification/rollback in the child phase. Task18/plugin repair is explicitly deferred until its original-regression gate is met; retained2 trials are not new Main authority.
 
 ### Blocked Predecessor
 
@@ -139,7 +168,7 @@ P149/P149-01, P148, P073-13 through P073-15, and P147 are released historical fa
 
 ---
 
-## Selected Semantic Coverage
+## P151 Historical Semantic Coverage
 
 - **Active Project Root:** current user direction or checked project-local authority selects one canonical development workspace for the active objective.
 - **Root-only mutation:** source, Runtime Rule, governed document, config, script, test, plugin/support/tooling, commit-source, and publication-source mutation stays inside that root.
@@ -155,7 +184,7 @@ P149/P149-01, P148, P073-13 through P073-15, and P147 are released historical fa
 
 ---
 
-## Development Verification / TestKit Coverage
+## P151 Historical Development Verification / TestKit Coverage
 
 Selected route: `new_testkit_scenario` through Case 19, with Case 18 protected as prior-family evidence, plus exact doctrine/triad/allowlist/protected-byte checks, Bash/PowerShell installer fixtures, Patch compliance, two-pass disposable installation, plugin baseline comparison, and independent reviews.
 
@@ -173,11 +202,13 @@ Required checks:
 - Bash and available PowerShell fixtures plus two-pass disposable installation pass with 19/19 byte/mode/order/body parity, idempotence, unrelated-file preservation, and governed/plugin/support/template/playground exclusion.
 - Independent doctrine and release/no-drift reviews pass before exact publication or real-install approval packets are presented.
 
-Current evidence: release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f` was fast-forwarded from the Active Project Root to public `master`; immutable annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a` and the non-draft/non-prerelease GitHub Release select that commit. The exact 22-path scope, two changed/17 protected Runtime Rules, four identical ordered 19-file arrays, 366 local-link targets, Case 19/M41-M45 assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, 179/0 Patch inventory, independent review corrections, and fresh-public full-history tag fixtures pass. The final plugin comparison matches all 1,188 baseline entries. The owner-only rollback snapshot is `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`; two-pass real installation passes 19/19 byte-mode parity, identical second-pass state, and unrelated-file preservation.
+P151 historical release evidence: release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f` was fast-forwarded from the Active Project Root to public `master`; immutable annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a` and the non-draft/non-prerelease GitHub Release select that commit. The exact 22-path scope, two changed/17 protected Runtime Rules, four identical ordered 19-file arrays, 366 local-link targets, Case 19/M41-M45 assertions, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable 19/19 installation, 179/0 Patch inventory, independent review corrections, and fresh-public full-history tag fixtures pass. The final plugin comparison matches all 1,188 baseline entries. The owner-only rollback snapshot is `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`; two-pass real installation passes 19/19 byte-mode parity, identical second-pass state, and unrelated-file preservation.
 
 ---
 
-## Rollback / Containment
+## P151 Historical Rollback / Containment
+
+Current P073-19 source/install recovery is governed by its [child phase](phase-073-19-docs-sync-and-task-handoff.md#preservation-and-deliberate-recovery). Prior P073-18 recovery remains in its [child phase](phase-073-18-evidence-led-coding-workflow.md#preservation-recovery-and-evidence). Prior P073-16 recovery stays reachable through its [child phase](phase-073-16-proportionate-runtime-compaction-and-additional-convergence.md#risks-preservation-and-rollback); the following P151 record remains historical.
 
 - Preserve all pre-existing `plugin/**` paths, statuses, modes, and bytes against the verification-only baseline; any drift blocks continuation.
 - Before publication, rollback is limited to the P151 allowlist inside the Active Project Root and must not reset, clean, restore, checkout, stash, replace, or sync the root from another location.
@@ -188,7 +219,7 @@ Current evidence: release commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f` was 
 
 ## Next State
 
-P151 / v10.68 is complete: released, fresh-public verified, and installed from the immutable tag with rollback protection and plugin zero drift. No successor phase is selected. The post-release documentation closeout is implemented locally and remains the only pending commit/push approval gate.
+P073-19 source/installation gates passed and the real final docs/publication task remains active until the linked Release records scoped publication and public-payload proof. Publication is explicitly selected, not an advisory successor; original P073-16–18 unpublished histories remain intact as the approved Main baseline. No Product, plugin/support/additional change, live model-effect gate or optional successor is opened. v10.68/P151 remains the immutable checked published predecessor of this source snapshot.
 
 ---
 

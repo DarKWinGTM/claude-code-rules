@@ -1,14 +1,16 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.20
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.22
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.22 | 2026-10-15 | **[Clarified sync order, role-based synthesis and affected-owner-only updates](#version-122)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
+| 1.21 | 2026-09-30 | **[Compacted artifact roles and family contracts](#version-121)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.20 | 2026-08-09 | **[Added verified Patch creation timeline identity](#version-120)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.19 | 2026-08-09 | **[Added conditional diagram sync and compact owner handoffs](#version-119)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.18 | 2026-08-09 | **[Made inactive preservation reference-only after cutover](#version-118)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -34,6 +36,27 @@
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-122"></a>
+## Version 1.22: Sync order and role-based synthesis
+
+**Date:** 2026-10-15
+**Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+
+- Defined sync order as dependency/ownership order rather than recurrence per attempt, while preserving prerequisite design/approval and treating Runtime Rule Markdown as source implementation.
+- Routed settled target, change history and execution/proof/remaining obligations to their proper owners; only affected meaning and required references need edits, with no artificial diff or task-transcript duplication.
+- Preserved meaningful history and prospective triggered Patch semantics; a retrospective checklist Patch is not required. Task-evidence handoff and cadence remain with their canonical owners.
+- [P073-19](../phase/phase-073-19-docs-sync-and-task-handoff.md) preserves scenario, installation and publication boundaries.
+
+<a id="version-121"></a>
+## Version 1.21: Compacted artifact roles and family contracts
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated role/sync/active-input repetition while preserving parent selection, diagram lane, design/changelog ownership and substantive Runtime eligibility.
+- Retained exact Patch grammar, creation-evidence exclusions, metadata/reviewability and inactive archive boundaries; operational migration proof stays integrity-owned.
+- P073-16 unpublished source candidate; no active-history removal or install-array widening.
 
 <a id="version-120"></a>
 ## Version 1.20: Added verified Patch creation timeline identity

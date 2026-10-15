@@ -1,13 +1,16 @@
 # Changelog - Accurate Communication Standard
 
-> **Current Version:** 2.44
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Parent Document:** [../accurate-communication.md](../accurate-communication.md)
+> **Current Version:** 2.46
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.46 | 2026-09-30 | **[Made actual action and final-state reporting explicit](#version-246)** | adda8afb-6edf-466b-add9-b9649b718e01 |
+| 2.45 | 2026-09-30 | **[Compacted evidence and capture wording](#version-245)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 2.44 | 2026-08-09 | **[Compacted cross-owner integration wording](#version-244)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.43 | 2026-08-09 | **[Added migration lifecycle status wording](#version-243)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 2.42 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-242)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -86,6 +89,26 @@
 | | | Summary: Initial version - later deemed too rigid | |
 
 ---
+
+<a id="version-246"></a>
+## Version 2.46: Made actual action and final-state reporting explicit
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Added compact action/target/result/check/material-remainder wording that distinguishes inspected/no-op, planned/prepared, applied, failed attempts and rollback final state.
+- Kept source, installed and published states distinct; installed-file parity does not establish open-session reload or model-effect improvement.
+- Checks describe what they verify and their scoped result; material skipped/unverified work names its reason without inventorying unrelated non-actions or introducing a new proof/permission gate.
+- P073-17 source candidate; existing completion/migration/evidence boundaries and historical entries remain preserved.
+
+<a id="version-245"></a>
+## Version 2.45: Compacted evidence and capture wording
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Kept completion/migration ladders, evidence-state wording, identifier roles and capture-versus-inference distinctions while removing mirrored tone/layout/proof contracts.
+- Added missing parent backlink; P073-16 source compaction does not prove runtime compliance or stability.
 
 <a id="version-244"></a>
 ## Version 2.44: Compacted cross-owner integration wording

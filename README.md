@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.68 released</b><br><sub>Active Project Root Authority</sub>
+  <b>v10.72 source verified</b><br><sub>Docs Cadence & Task Handoff</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released & installed</b><br><sub>v10.68 verified</sub>
+  <b>Installed & verified</b><br><sub>Publication receipt pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Released and installed:** `v10.68 / P151` locks development and governed source to the user- or project-selected Active Project Root and separates exact Runtime payload parity from full-project convergence. `/tmp`, worktrees, clean clones, and alternate checkouts remain read-only evidence/reference or disposable-verification surfaces rather than implementation, commit, or release authority. Case 19/M41-M45, local and fresh-public fixtures, two-pass installation, independent review, and plugin zero-drift checks pass. Release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68.
+> **Current source:** `v10.72 / P073-19` keeps implementation moving within approved contracts, batches settled docs, preserves task evidence before final closure, separates user replies from peer coordination, and extends project-owned tools instead of throwaway runners. Six existing owners changed; all 19 installed files match source and the other 13 remain unchanged. Paired synthetic interpretation and Linux/Bash installer checks passed, not live model-effect proof. Full publication is selected, including the earlier Main v10.69–v10.71 baseline; actual publication facts belong to the [v10.72 Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
 
 <!-- CTA Buttons -->
 <p>
@@ -258,8 +258,8 @@ These capabilities summarize the current operating model at the front-page level
 
 | Rule | Purpose | Key Benefit |
 |:-----|:--------|:------------|
-| [`coding-discipline.md`](coding-discipline.md) | Coding execution discipline | Maintainable structure plus regression-versus-capability-gap diagnosis and functional/architecture-fitness verification |
-| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Execution continuity and goal framing | Activates design-bound architecture preflight, retires rejected fork branches, and preserves reachable closure |
+| [`coding-discipline.md`](coding-discipline.md) | Contract-first coding discipline | Semantic predicates/state/ownership, maintainability, regression-gap diagnosis and proportionate functional/architecture proof |
+| [`execution-and-goal-frame.md`](execution-and-goal-frame.md) | Evidence-led development and goal framing | Understands behavior before mechanisms, orders necessary work/proof, and preserves architecture, scope and reachable closure |
 | [`goal-authoring-and-route-support.md`](goal-authoring-and-route-support.md) | Governed `/goal` authoring and route support | Constructs proof-layer-aware goals, orders prerequisites, and preserves verified `Plan reference` and `/plan` overflow guards |
 | [`worker-routing-and-context.md`](worker-routing-and-context.md) | Worker routing and context control | Uses the smallest effective lane and owns checked Agent Team reuse/steer/wait/partition/respawn decisions |
 | [`phase-todo-artifact.md`](phase-todo-artifact.md) | Artifact initiation, phase, and TODO doctrine | Resolves design then conditional diagram startup, creates Patch chronology from one UTC instant, governs live `/phase`, and separates TODO from live tasks |
@@ -282,20 +282,30 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
+- `v10.72 / P073-19` refines six existing owners inside the unchanged [nineteen-owner inventory](design/design/runtime-architecture.design.md): prerequisite-aware docs cadence, real task-evidence finalization, affected-owner synthesis, user/peer recipient clarity and reusable project tooling with bounded temporary probes.
+- Design/approval still precedes dependent action; result/history sync follows settled matching proof. Harmful conventions may be challenged with evidence without silent forks. Useful single-use boundaries, deterministic tools, temporary captures and contracted output roots remain valid; no framework, additional Rule or blanket temporary-storage ban is introduced.
+- Candidate21/21 synthetic interpretation decisions matched expected actions; baseline20 matched and one task-handoff ordering response was partial. Linux/Bash fixtures passed once. Exact19 installed bytes/modes/metadata/body/ownership hashes match source, with other13 Main and other-owner/global files unchanged. Main19 is182,834 Unicode characters (+5,447/about3.07%); tokens, current-session reload and causal model benefit are not measured. [History](changelog/changelog/v10.72-docs-sync-and-task-handoff.changelog.md) and [phase](phase/phase-073-19-docs-sync-and-task-handoff.md) retain proof/limits.
+- Earlier Main [v10.71 contract-first coding](changelog/changelog/v10.71-evidence-led-coding-workflow.changelog.md) and [v10.70 action reporting](changelog/changelog/v10.70-action-reporting-clarity.changelog.md) remain the approved baseline, along with compaction below. They were unpublished slices at their original closeouts, not separately released tags.
+
+Historical local compaction result (`v10.69 / P073-16`, not the current size measurement):
+- Main19 measured 329,074 → 172,815 Unicode characters (47.48% reduction); UTF-8 bytes: 330,466 → 174,137. Exact tokens were not measured and this did not resolve the earlier context limit.
+- Additional15 measured 73,566 → 3,233 characters after the approved removal of 13 files, with two unique hypotheses retained. That measured cohort was 440,393 → 213,801 characters (51.45%); 150k-character headroom was not reached. See [compaction design](design/design/runtime-compaction.design.md), [preserved candidate history](changelog/changelog/v10.69-proportionate-runtime-compaction.changelog.md), and [completed source/install phase](phase/phase-073-16-proportionate-runtime-compaction-and-additional-convergence.md).
+
+Historical published baseline (not current-candidate verification):
 - Released `v10.68 / P151` advances `authority-and-scope.md` to 2.8 and `document-integrity.md` to 1.14 so development stays in one user- or project-selected Active Project Root and exact Runtime payload parity cannot be mistaken for full-project convergence.
 - Case 19/M41-M45, plugin zero-drift comparison, Bash/PowerShell fixtures, Patch tests 32/32, two-pass disposable and real installation, independent reviews, and fresh-public tag checks pass.
 - Release identity: commit `04c1c91faa6cff50cdb61b3d31c82cbb3c23819f`, annotated tag object `2a68d0e09511f879327831b5f21170399cf7be2a`, Release https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68, and owner-only preinstall rollback snapshot `/home/node/.claude/rules-rollback/v10.68-04c1c91faa6cff50cdb61b3d31c82cbb3c23819f-preinstall`.
 - Immutable `v10.67 / P150` remains the architecture-conformance predecessor at release commit `bd3aa36ff0d7c7712270750249031f362968854c` and annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`.
 - Released `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
 - The correction was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`, and fresh-public master/tag verification passed.
-- All 19 Runtime Rules, owner triads, installers, Case 17, matrix/coverage, and Patch artifacts remain protected byte-for-byte. No real runtime reinstall was required.
+- For the historical v10.66 scenario-only correction, all nineteen Runtime Rules, owner triads, installers, Case 17, matrix/coverage and Patch artifacts were protected byte-for-byte; that release required no real runtime reinstall. This is not a claim about the current v10.72 source.
 - Released `v10.65 / P149` remains immutable at release commit `2e751bbb620eb68527e5a67eb6348196a67727e7` and annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`, with its delayed diagram-format failure preserved.
 - Released `v10.64 / P148` remains immutable and provides verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and the repository-only Patch timeline Tool.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked Active Project Root is the development/commit/release-source authority, while temporary locations are read-only evidence or disposable verification and `<user-runtime-rules>` remains a downstream install target.
-- Latest published release: https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.67
+- Latest checked published predecessor: [v10.68](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68). Main v10.69–v10.71 is selected into v10.72; its [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) owns post-commit publication identity and checks.
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
@@ -1077,7 +1087,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: `v10.68 / P151` is released and installed, advancing exactly two Runtime Rules for Active Project Root authority and payload-versus-project proof separation; Case 19, local and fresh-public fixtures, disposable and real installation, independent reviews, and plugin preservation checks pass. `v10.67 / P150` remains the immutable architecture-conformance predecessor.
+- Source state: v10.72 preserves the nineteen-owner set with six cadence/handoff/communication/tooling refinements; paired synthetic interpretation, Linux/Bash fixtures and exact19 source-installed parity passed. Prior compaction/action-reporting/coding slices remain historical evidence, not fresh publication or model-effect proof.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.

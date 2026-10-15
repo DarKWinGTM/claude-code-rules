@@ -1,166 +1,110 @@
 # Coding Discipline
-> **Current Version:** 1.6
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.6
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.9
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.9
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
 
----
-
 ## Rule Statement
 
-**Core Principle: Code with maintainable structure, proportionate verification, and tactical-to-strategic convergence. Preserve responsibility clarity, decompose only when it lowers real change cost, carry a verification strategy before completion claims, and anchor tactical work to a declared strategic target with a visible convergence path.**
+**Core Principle: Choose the smallest complete implementation inside the selected direction and checked owner. Keep responsibilities, canonical state and side effects clear; add structure and verification only for material needs; preserve behavior during refactor; and close at the objective's selected proof level. Temporary paths or material debt require convergence, correctly owned final-form work does not.**
 
-This rule covers coding-time responsibility, decomposition, semantic source naming, helper-function necessity, source-code comment discipline, bounded code-to-document linkage, behavior-preserving refactor, verification strategy, debug signal selection, TestKit/scenario decisions, evidence-calibrated closeout, tactical entry, strategic target, convergence, and anti-drift posture.
-
-พูดง่าย ๆ: เขียนโค้ดให้คนแก้ต่อได้ง่าย, พิสูจน์ได้ว่าของจริงใช้ได้แค่ไหน, และ tactical ต้องมีปลายทาง strategic ไม่ใช่ชั่วคราวถาวร.
-
----
+พูดง่าย ๆ: โค้ดต้องครบและแก้ง่าย แต่ไม่เพิ่ม abstraction, state, guard หรือขั้นทดสอบเพียงเพราะทำได้; รักษาความหมายและขอบเขตที่จำเป็นจริง.
 
 ## Part A — Maintainable Code Structure
 
-### 1) Maintainability as change-cost
-Maintainability means future readers can understand, test, modify, extend, or repair code with low surprise. Optimize for readable intent, clear responsibility, testability, and visible side effects. Treat shorter files, more helpers, or extra layers as useful only when they reduce real change cost. Separate current pressure from speculative futures.
+### Responsibility and smallest useful decomposition
 
-### 2) Responsibility by reason-to-change
-Group or split code by why it changes, not by a fixed template. Keep cohesive logic together when it changes for one reason; separate responsibilities that change for different reasons or are tested/owned differently. Inspect mixed business rules, orchestration, UI, persistence, integrations, validation, formatting, config, logging, and error handling. Reuse existing project structure when adequate.
+Maintainability is low future change cost: readers can understand, test, modify and repair code with little surprise. Optimize readable intent, clear ownership, testability and visible side effects—not file/helper counts. Group by reason to change; keep cohesive logic together and separate business rules, orchestration, UI, persistence, integrations, validation, formatting, config or operational handling only when their ownership/change/test axes differ. Reuse fitting project structure.
 
-### 2.1) Semantic source naming
-Source identifiers should describe domain meaning, behavior, state, or responsibility before execution history. Function, variable, helper, class, type, module, and test-helper names must stay semantic/domain/behavior-first unless an external interface forces a literal token. Do not put phase IDs, document IDs, ticket IDs, patch IDs, changelog versions, roadmap labels, or temporary review names into source identifiers merely to show where the code came from. Those tokens belong in governed documents or in bounded source comments only when they materially aid maintenance. An artifact token may appear in code only when it is itself a real external/domain contract term, protocol value, stored data value, public API field, migration identifier, compatibility alias, or operator-facing literal that the system must preserve.
+Before selecting a material condition, representation or structure, understand the requested behavior, valid inputs, failure consequences, semantic owner, lifecycle, callers and useful proof. Trace the existing path; derive predicates and controls from checked contracts rather than a familiar pattern or one sample. Compare only realistic alternatives, including a simpler sufficient route. Scale this work to the decision: no mandatory worksheet, document or checklist for every `if` or small edit. Assess accumulated concerns and aliases together; individually small additions can create a hidden owner. Length and smells are investigation signals, not verdicts; preserve uncertainty when ownership or decomposition is unclear.
 
-### 3) Code smell as trigger, not verdict
-Treat God function/file, long method, large class, helper inflation, shotgun surgery, divergent change, feature envy, primitive obsession, hidden dependency, comment spam, stale comments, and speculative generality as investigation signals. Do not refactor solely because a unit is long; do not extract helpers merely because extraction is possible. Decide from cohesion, coupling, change axes, testability, navigation cost, comment usefulness, and implementation risk. Preserve uncertainty when the right split is not yet clear.
+| Checked condition | Required proportionate decision |
+|---|---|
+| cohesive responsibility, inline flow clearer | keep local; do not extract obvious expressions, assignments or wrappers |
+| meaningful concept/process/test/side-effect step | extract only if the name and boundary reduce cognitive load and improve clarity/testability |
+| different ownership, change reason, state/dependency lifecycle or test boundary | split a cohesive responsibility family; keep navigation/call flow easier afterward |
+| shared behavior with the same meaning and reason to change | extract; coincidentally similar business rules may remain duplicated rather than falsely coupled |
+| another value for an existing concept | identify canonical owner/form first; reuse it unless a distinct stage, lifecycle or contract earns a new representation |
+| speculative interface/factory/strategy/plugin-like variation | avoid, simplify or justify from current variation/isolation evidence, not imagined futures |
+| immediate repair safer than a justified structural split | bounded tactical edit with target owner, remaining material debt and convergence trigger |
 
-### 4) Smallest useful decomposition
-Choose the smallest structural move that improves real maintainability. Prefer clear local code before extraction when inline flow is easier to read. Extract a named local step only when the name adds meaning or test/side-effect boundaries. Split modules/files only when responsibilities or change axes materially differ. Add interfaces, factories, strategies, or plugin-like abstractions only when current evidence justifies variation or isolation. Keep navigation and call flow easier after the split, not harder. If a tactical direct edit is safest now, name the convergence path when material structure debt remains.
+Helpers must earn indirection: a real concept, rule, process, reusable behavior or useful test/side-effect boundary should be clearer than inline code. Single-use helpers need meaningful names. Avoid trivial one-line/pass-through wrappers, excessive parameter threading and call-chain hopping; inline helpers with no semantic value.
 
-### 5) Helper-function necessity
-Helper functions must earn their indirection cost. Extract when the name captures a real concept, business rule, process step, reusable behavior, testable unit, or side-effect boundary better than inline code. Do not create helpers for obvious expressions, trivial assignments, one-line wrappers, or simple sequential code clearer inline. Avoid pass-through helper chains and inline helpers whose body is as clear as the name. Single-use helpers are allowed only when the name materially clarifies intent, process, or boundary. Helper names must not encode phase, ticket, document, patch, or changelog provenance unless that token is a real domain or external contract term.
+For checked God-function/file pressure, inventory responsibility clusters, weigh under- versus over-decomposition, choose a cohesive family/subsystem seam, preserve behavior, and verify both behavior and structural improvement. Clear low-risk touched repair should proceed; bound broad/runtime-critical repair rather than big-bang rewrite. Progress requires moved responsibility/decision ownership, reduced original burden or materially clearer state/dependency/test boundaries—not extra files, aliases, facades or delegation chains. Batch by responsibility, not one helper/task/phase/patch.
 
-### 6) Wrong-abstraction guardrail
-Duplication can be safer than coupling unrelated concepts behind a false shared abstraction. Do not merge code merely because it looks similar. Extract shared behavior only when the underlying concept and reason to change are genuinely shared. Prefer short-lived duplication over premature abstraction that makes future change harder. Remove or simplify speculative generality when it adds indirection without current value.
+### Semantic source naming
 
-### 7) Explicit dependency and state-boundary
-Make important dependencies and state flow visible enough to reason about. Avoid hidden global or ambient state when explicit dependency passing is reasonable. Bind config/environment at edges instead of scattering through domain logic. Separate pure transformation from side effects when it improves testing and clarity. Keep error handling and logging close to the boundary where they have operational meaning.
+Function, variable, helper, class, type, module and test-helper identifiers describe domain meaning, behavior, state or responsibility—not phase/document/ticket/patch/changelog/roadmap/review provenance. Necessary chronology belongs in governed documents or bounded useful source comments. Preserve literal tokens only for real external/domain contracts: protocol/stored values, API fields, migration identifiers, compatibility aliases or operator-facing literals. Derive names from checked project meaning, not placeholder examples.
 
-### 8) Appropriate source-code explanation
-Names and structure explain normal flow first; comments explain what code cannot express clearly enough. Add concise comments for purpose, why, business rule, process order, constraint, side effect, external contract, compatibility workaround, security/performance/concurrency caveat, or operational consequence otherwise hard to understand. Avoid comments that repeat syntax, narrate every line, or compensate for unclear names/structure. Update or remove nearby comments when behavior changes; stale comments are worse than missing comments. Do not invent explanatory comments for behavior not verified from code, tests, docs, or user-provided requirements. Keep broad policy/spec/architecture authority in governed docs, not oversized source comments.
+### Canonical state and deliberate transformations
 
-Comments may cite governed documents only when the link materially lowers maintenance cost, such as preserving durable rationale, an external contract constraint, a migration boundary, compatibility workaround, or rollback context. Prefer stable design or contract references by default when source code needs a durable rationale link. Phase, changelog, patch, ticket, or route-plan references should stay narrow: provenance for a temporary tactical bridge, migration, compatibility exception, rollback note, or reviewed before/after change that would be costly to rediscover. Do not tag every function, helper, class, or branch with execution chronology; ordinary source names and structure should remain readable without carrying phase/doc/ticket history.
+Variables, fields, parameters and config/stored/derived values represent domain/process state. Understand their meaning, units, provenance and lifecycle before comparing them or making them prerequisites. Required/optional applies to the selected operation; absence, empty, known zero, unknown and invalid are distinct where the contract distinguishes them. Validate supplied data and required inputs without inventing equality, arithmetic, presence or fallback rules from field names or one observed shape. Diagnostic metadata becomes a decision input only through an explicit contract, not mere availability.
 
-### 9) Behavior-preserving refactor
-Refactoring should improve internal structure while preserving externally visible behavior unless behavior change is explicitly part of the task. Separate structural refactor from behavior change when practical. Use small transformations rather than broad rewrites when behavior risk is high. Run relevant tests, type checks, lint, or bounded verification when available. If verification is incomplete, report the limit instead of claiming the code is fixed, clean, or stable.
+Within a responsibility boundary, one concept has one evident current owner and canonical representation for ordinary consumers. Parse/validate at ingress, normalize at the semantic owner, resolve policy at its owning layer and format at egress. Consumers use canonical values/decisions rather than repeating coercion, defaults, compatibility interpretation or adjudication. Reuse validation/transformation/computation only while its input and relevant assumptions remain valid; mutation, fresh reads, trust changes or transaction/recovery contracts may require another check. A new function or consumer alone is not a new trust boundary. Canonical results do not override genuine new contradictions or required safeguards.
 
-### 9.1) Implementation completeness gate
-Before treating a non-trivial implementation as ready for closeout, inspect whether the selected outcome still has material gaps in behavior, state/dependency boundaries, integration contracts, failure handling, security-relevant paths, operational observability when needed, or verification. Add only what the current objective and checked evidence justify; do not create unrelated abstractions, speculative safeguards, or compatibility layers for imagined futures.
+Before adding another identifier/state slot, inspect owner, writers/readers, mutation boundary and normalization path. Keep genuine raw, validated, normalized-domain, policy-resolved, persisted, audit and presentation stages when their contracts differ; make transitions legible instead of minimizing names. Match access and persistence to consumer needs, avoiding repeated broad traversal or per-entity copies without a distinct purpose. Retain fidelity, diagnostics, audit, historical recovery, comparison/round-trip needs and required fresh/race checks; fewer keys/copies alone is not improvement. A shared editor or management surface need not move persistence or create a second policy authority.
 
-A visible happy path is insufficient when the selected scope materially depends on error behavior, retries/idempotency, persistence, concurrency, rollback, lifecycle cleanup, or external contracts. Cover the obligation, or mark it explicitly deferred, blocked, not applicable, or out of scope with an owner/reason where needed.
+Make dependency/state/transform flow explicit; avoid hidden ambient state and bind environment/config at edges. Scope initialization, ordinary processing, retry and recovery conditions to their lifecycle; define outcome transitions from the owning completion/failure contract rather than a sticky first error or latest event alone. Preserve independent dimensions such as delivery, integrity and settlement. Trace producer/selector → state → consumer before weakening a rejecting guard: reconcile incompatible selection and acceptance contracts at their actual owner. Separate pure transformation from side effects when useful; keep normalization, errors and logging at their boundary. Move behavior or introduce a type only when it clarifies responsibility or reduces real errors.
 
-### 10) Decomposition Decision Gate
-Before expanding or introducing a substantial function, file, module, class, helper, or abstraction:
-- cohesive, small, one reason to change → keep local and clear
-- obvious expression or trivial assignment → keep inline; do not extract a helper
-- repeated named step inside one flow → extract only when the name improves understanding
-- new identifier would carry phase/doc/ticket/patch/changelog provenance → prefer a semantic behavior/domain name and move any necessary provenance to a bounded comment or governed document
-- mixed responsibilities or different change reasons → split by responsibility/module boundary
-- side-effect boundary mixed with pure logic → separate orchestration from pure transformation when useful
-- same concept in multiple places → extract only when concept and reason to change match
-- similar code with different business meaning → allow duplication until the real abstraction is clear
-- non-obvious process/constraint/business rule/side effect → use a named helper and/or concise comment when it reduces cognitive load
-- tactical shortcut → keep bounded and name convergence when debt is material
-- abstraction for imagined future only → avoid, remove, or justify from current evidence
+### Names, comments and governed references
 
-### 11) Helper Function Decision Gate
-Before extracting a helper, answer:
-1. Does the helper name express a real concept, rule, process step, reusable behavior, testable unit, or side-effect boundary better than the inline code?
-2. Does the helper name stay semantic/domain/behavior-first instead of encoding phase, ticket, document, patch, or changelog provenance?
-3. Is the logic complex enough that a named step lowers cognitive load?
-4. Is repeated logic genuinely the same concept and reason to change?
-5. Does extraction improve testability, side-effect separation, or future change locality?
-6. Does extraction avoid excessive parameter threading and call-chain hopping?
-7. Would inline code be clearer?
+Names/structure explain normal flow; concise comments explain otherwise non-obvious purpose, why, business rule, order, constraint, side effect, external contract, compatibility, security/performance/concurrency caveat or operational consequence. Prefer clearer code over compensating comments. Do not narrate syntax, every line or unverified behavior. Update/remove stale nearby comments after changes; keep broad policy/spec/architecture in governed documents.
 
-If the inline form is clearer or the helper adds no semantic value, do not extract; keep the code local or inline the helper back.
+A governed citation must lower maintenance cost. Prefer stable design/contract rationale; phase/changelog/patch/ticket/route provenance stays narrow to temporary bridges, migration, compatibility, rollback or costly-to-rediscover reviewed changes. Do not tag ordinary functions/helpers/classes/branches with execution chronology. Comments must remain true, verified, useful and local.
 
-### 12) Source-Code Comment Decision Gate
-Before adding or leaving a comment, answer:
-1. Does the comment explain purpose, why, process order, constraint, side effect, external contract, or business rule not obvious from code?
-2. Would clearer naming, structure, or a better helper remove the need for this comment?
-3. If it cites a governed document, does that reference materially lower maintenance cost, and would a stable design/contract reference be the better durable link?
-4. If it cites a phase, changelog, patch, ticket, or route-plan artifact, is the reference narrowly needed for provenance, a temporary tactical bridge, migration, compatibility, or rollback context?
-5. Is the comment still true after the change?
-6. Is the comment concise enough to stay local rather than become durable documentation?
-7. Is the behavior verified well enough to explain it?
+### Refactor and implementation completeness
 
-If the comment repeats syntax, narrates obvious code, is stale, tags ordinary code with execution chronology, or belongs in governed docs, remove or rewrite it.
+Refactor preserves externally visible behavior unless change is explicitly selected. Separate structure and behavior changes when practical; use small transformations when behavior risk is high. Run relevant focused/regression tests, type checks, lint or bounded verification; incomplete proof limits claims of fixed/clean/stable.
 
-### 13) Smell Trigger Model
+Before non-trivial closeout, inspect material behavior, state/dependency, integration, failure, security, needed observability and verification gaps in the selected outcome. Happy path alone is insufficient when scope depends on errors, retries/idempotency, persistence, concurrency, rollback, cleanup or external contracts. Cover each material obligation or explicitly mark deferred, blocked, not applicable or out of scope with owner/reason where needed.
 
-| Smell | Signals | Required response |
-|---|---|---|
-| God function / God file | too many concerns or change reasons in one unit | inspect whether orchestration, domain logic, validation, side effects, formatting, or ownership should split |
-| Helper-function inflation | helpers add navigation cost without semantic value | inline trivial wrappers or keep cohesive logic local |
-| Long method / large object | sequence or object responsibility hard to scan/verify | extract named steps or separate collaborators only when names/boundaries improve understanding |
-| Divergent change / shotgun surgery | one axis touches too many places, or one unit changes for unrelated reasons | separate unrelated axes, or consolidate only a genuinely shared concept |
-| Feature envy / primitive obsession | behavior or raw values live far from better owner | move logic toward the better owner or introduce a type/helper only when it reduces errors or clarifies behavior |
-| Hidden dependency | behavior relies on global/ambient/implicit state | make dependency/state flow explicit where practical |
-| Chronology-coded identifier | source names carry phase, ticket, document, patch, or changelog labels instead of domain/behavior meaning | rename toward semantic responsibility unless the token is a real external/domain contract term |
-| Comment spam / stale comment | comments repeat syntax, no longer match behavior, or tag ordinary code with execution chronology | remove noise, improve names/structure, or update verified explanation |
-| Speculative generality | abstraction exists for a future not currently needed | simplify, defer, or justify from current evidence |
-
----
+A risk observation or test obligation does not itself authorize a production guard, new state/path, queue or architecture. Choose controls from checked requirements and the actual writers, readers, data sensitivity, lifecycle and failure model—not an imagined topology. A demonstrated failure or concrete in-scope risk earns a control only when it improves the authorized outcome better than a simpler path; required safety need not wait for an incident. Preserve identity, authorization, integrity, atomicity, privacy and recovery obligations even when simplifying. Consult on material acceptance, ownership, cost or scope changes through the execution/safety owners; do not invent speculative compatibility layers or extend negative proof beyond affected roles.
 
 ## Part B — Development Verification Strategy
 
-### 1) Verification strategy as a coding default
-Before or alongside non-trivial coding work, identify the behavior under change, the risk of being wrong, the debug signal that would show failure/success, and the smallest useful verification depth. Do not wait until after implementation to invent testing posture.
-- classify whether the work changes behavior, structure only, integration, config/runtime behavior, data flow, security-sensitive behavior, or documentation/governance only
-- choose verification depth from the actual behavior/risk/signal available, not from a rigid command template
-- make the TestKit/scenario decision explicit when behavior is scenario-like, multi-step, integration-heavy, or safety-sensitive
-- if verification is not applicable or not practical, state the narrow reason and preserve evidence limits
-- do not claim fixed, working, stable, or release-ready from edits alone
+### Select the smallest meaningful proof
 
-### 2) Verification depth model
-Use the smallest verification layer that gives meaningful signal.
+Before or alongside non-trivial work, identify changed behavior/type of change, material risk, failure/success signal and useful proof depth. Do not invent testing posture after implementation. Scenario-like, multi-step, integration or safety work requires an explicit TestKit/scenario decision; no meaningful/practical test must carry its narrow reason. Edits/scaffolds alone never prove working/fixed/release-ready.
 
-| Work shape | Default verification posture |
+| Work shape | Verification posture |
 |---|---|
-| typo, docs-only, metadata-only, no behavior change | review or no test with reason |
-| small pure logic or UI behavior change | unit or focused test when available |
-| refactor intended to preserve behavior | existing focused/regression tests for the affected behavior |
-| integration, adapter, API, database, queue, or event behavior | integration/fake-adapter/contract test when practical |
-| multi-step user/system flow | scenario harness, TestKit, or equivalent workflow test |
-| payment, auth, secrets, quota, runtime, provider, external dependency, or privacy-sensitive behavior | fake/local first plus explicit smoke/live decision and safety boundary |
-| production/shared-state/destructive path | approval-sensitive verification gate plus rollback/containment owner |
+| typo/docs/metadata with no behavior change | review or no test with reason |
+| small pure logic/UI change | focused/unit test when available |
+| behavior-preserving refactor | existing affected focused/regression tests |
+| API/adapter/database/queue/event integration | practical integration/fake-adapter/contract check |
+| multi-step user/system flow | scenario/TestKit or equivalent workflow check |
+| payment/auth/secrets/quota/runtime/provider/privacy | fake/local first; explicit smoke/live choice with safety/environment gate |
+| production/shared-state/destructive operation | approval-sensitive verification with rollback/containment owner |
 
-Strategy, not ceremony. A stronger existing test may replace a new scenario; a scenario harness may replace fragile ad hoc checks; a live check remains conditional on user approval, safety, and environment readiness.
+Strategy, not ceremony: a stronger existing test may replace a new scenario; a harness may replace fragile ad hoc checks. Each test/review should reproduce/protect changed behavior, check a material contract or close the selected gate. Include representative valid forms and the nearest meaningful failure/unchanged boundary; do not teach production logic one fixture shape. Correctness, architecture conformance and performance are distinct claims requiring matching evidence. Expand only for a decision-changing failure/risk, not broad noisy reruns or reassurance reviews. Live checks remain conditional on selected scope, approval, safety and readiness.
 
-### 3) Debug and root-cause strategy
-For bugs, failures, flaky behavior, or complex integration, identify the observed failure/reproduction target, working hypothesis, and discriminating signal before patching. Prefer a failing focused test, reproduction, scenario, fixture/fake, log/report, or failure injection that cuts away competing explanations.
+Select one route explicitly for non-trivial coding: `existing_test`, `new_focused_test`, `new_testkit_scenario`, `smoke_check`, `live_check_required`, or `not_applicable_with_reason`. Do not reflexively create TestKit for every task or silently skip a material verification decision.
 
-If reproduction is unavailable, state the missing evidence and use bounded diagnostics. If implementation proceeds before cause is proven, label it hypothesis-driven. Re-anchor the reproduction target after user correction; do not shotgun-edit several speculative causes.
+### Debug and root-cause discrimination
 
-### 3.1) Regression-versus-architecture-gap decision gate
-A missing field, output, route result, configuration value, or consumer-visible value does not by itself prove that the architecture lacks a transport or owner. Before adding infrastructure, map the expected active design contract, owner, producer, state or transport, readers, writers, consumers, dependencies, and last-known-working evidence at proportionate scope.
+For bugs/failures/flakiness/integration, identify observed symptom/reproduction, working hypothesis and smallest discriminating signal before fixing. Prefer a failing focused test, fixture/fake, scenario, log/report or failure injection that separates realistic causes. Missing reproduction calls for bounded diagnostics and an evidence limit; implementation before confirmed cause is hypothesis-driven. Re-anchor after correction; do not shotgun-edit several speculative causes. Cause/confidence thresholds belong to [evidence-discipline.md](evidence-discipline.md).
 
-Classify the checked condition as one of:
-- `existing-path regression`: the governed path exists and should satisfy the requirement, but current behavior is defective
-- `state/config drift`: the path exists, but current state or configuration diverges from the selected contract
-- `dormant_or_disconnected_existing_path`: implementation exists but is not currently connected through the intended active edges
-- `contract mismatch`: producer, stored state, transport, or consumer expectations disagree
-- `unresolved`: evidence does not yet distinguish the realistic branches
-- `verified_capability_gap`: checked evidence shows the existing path is absent, the current owner cannot satisfy the selected requirement, or active design explicitly selects new architecture
+### Regression versus architecture gap
 
-Use the smallest discriminating check that separates the leading classification from realistic competitors. Regression, drift, disconnection, and mismatch default to bounded repair of the current authority; unresolved state stays diagnostic. A verified capability gap permits an architecture proposal only through the design-conformance delta and approval owner in `action-safety.md`.
+A missing field/output/route/config/consumer value does not prove missing architecture. Trace the active design contract, current owner/producer/state or transport, readers/writers/consumers/dependencies and last-known-working path before adding infrastructure.
 
-### 3.2) Architecture fitness verification
-For architecture-bearing work, functional verification and architecture-conformance verification are separate obligations.
+| Classification | Meaning and next action |
+|---|---|
+| `existing-path regression` | governed path exists but is defective → repair current owner |
+| `state/config drift` | state/config differs from selected contract → bounded correction |
+| `dormant_or_disconnected_existing_path` | implementation exists but intended active edges are disconnected → reconnect verified path |
+| `contract mismatch` | producer/state/transport/consumer expectations disagree → reconcile contract |
+| `unresolved` | evidence does not distinguish realistic branches → discriminating diagnosis, not infrastructure |
+| `verified_capability_gap` | checked path absent/incapable or active design selects new architecture → proposal through safety delta/approval gate |
 
-Positive proof should show that required behavior passes through the selected design path, the intended producer-state/transport-consumer chain works, the selected authority remains active, and an approved replacement selects the target when replacement is in scope.
+Use the smallest check separating the leading classification from realistic competitors. A verified gap justifies a proposal, never automatic mutation. [action-safety.md](action-safety.md) owns design-conformance delta classification and authorization.
 
-Negative proof should proportionately check that normal source, import, config, build, deployment, install, runtime, and test-discovery edges do not activate an unauthorized alternate owner/route/service/client/adapter/transport/registry/state key, dual read/write, shadow path, or automatic fallback. Scope these checks to the architecture roles affected by the change; do not turn a bounded repair into a whole-system absence ritual.
+### Functional and architecture-fitness proof
 
-Tests written for an unapproved or design-divergent path can show that the invented implementation behaves as written, but they cannot satisfy the objective's architecture or completion gate. A mixed result must stay explicit:
+Architecture-bearing work has separate functional and design-conformance obligations. Positive proof must exercise the selected producer→state/transport→consumer chain and approved target selection. Negative proof proportionately checks affected/relied-upon source/import/config/build/deployment/install/runtime/test-discovery edges against unauthorized alternate owners/routes/services/clients/adapters/transports/registries/state keys, dual read/write, shadow paths and fallback. Do not turn bounded repair into whole-system absence ritual or a production guard by default.
+
+Tests for an unapproved/divergent path prove only its invented behavior, not architecture/completion. Report mixed evidence explicitly:
 ```text
 functional behavior: passed
 architecture conformance: failed
@@ -168,156 +112,59 @@ one-authority invariant: failed
 completion: blocked
 ```
 
-### 4) TestKit / scenario decision contract
-For non-trivial coding work, select one verification route explicitly:
-- `existing_test`: an existing focused/regression test covers the behavior
-- `new_focused_test`: a small new test should be added
-- `new_testkit_scenario`: a scenario/TestKit path should be added or extended
-- `smoke_check`: a lightweight end-to-end or runtime check is appropriate
-- `live_check_required`: live/provider/runtime verification is needed and approval/environment gating applies
-- `not_applicable_with_reason`: no meaningful test applies, with a short reason
+### Canonical-state verification
 
-Do not create TestKit scenarios for every task by reflex. Do not skip the decision silently when behavior risk is material.
+Normalization/state consolidation proof checks the semantic path: representative external/prior forms map correctly; required idempotence holds; ordinary consumers use canonical meaning; retained raw/persisted/compatibility/audit/presentation forms satisfy distinct contracts; former aliases/writers/fallback owners/normalization paths are inactive in checked scope. Renaming, deleting variables or centralizing syntax alone does not prove one-source-of-truth convergence.
 
-### 5) Evidence boundary and closeout discipline
+### Closeout and continuation
 
-| Coding evidence | Maximum claim in scope | Boundary |
-|---|---|---|
-| source edited | implemented | not fixed/working without checks |
-| focused/unit/regression passed | tested / verified-in-scope | not whole-system or live proof |
-| fake/local scenario passed | fake/local verified-in-scope | not provider/runtime/deploy proof |
-| one smoke check passed | runtime-checked once | not stable over time |
-| real provider/runtime/deploy checked | runtime/live-verified | not stable without repeated evidence |
-| reported failure reproduced and corrected with matching evidence | fixed in checked scope | not global/all-edge-case stability |
-| no test run | not tested | no verified-behavior claim |
+| Evidence | Maximum scoped claim |
+|---|---|
+| source edited, no check | implemented / not tested, not working/fixed |
+| focused/unit/regression passed | tested / verified-in-scope, not whole-system/live |
+| fake/local scenario passed | fake/local verified-in-scope, not provider/deploy |
+| one smoke passed | runtime-checked once, not stability |
+| real provider/runtime/deploy checked | runtime/live-verified, not repeated reliability |
+| matching reproduced failure corrected and checked | fixed in checked scope, not all edge cases |
 
-Coding closeout should include the compact verification record when material:
-```text
-Verification:
-- Ran: <commands/scenarios/checks or not run>
-- Result: <passed/failed/not run>
-- Covers: <behavior/scope>
-- Does not cover: <live/provider/runtime/deploy/edge cases if material>
-- Confidence: <evidence-calibrated wording>
-```
-
-### 6) Phase, TODO, and continuation behavior
-For phase-backed coding work, phase records should show `Development Verification / TestKit Coverage` or equivalent when verification materially affects exit criteria. Live task lists should include or preserve a verification slice for non-trivial coding work when implementation and verification are distinct outcomes. Execution continuity should continue from implementation into verification when no real stop gate exists.
-
----
+For material closeout report checks/commands and result, covered scope, relevant exclusions and evidence-calibrated confidence. [accurate-communication.md](accurate-communication.md) owns status wording; [execution-and-goal-frame.md](execution-and-goal-frame.md) owns selected proof, continuation and closure. Continue safe required verification after implementation, not milestone-only stopping. Phase records include `Development Verification / TestKit Coverage` or equivalent when exit criteria depend on it; preserve a distinct verification task only when acceptance/owner/resume boundaries justify separation.
 
 ## Part C — Tactical/Strategic Programming
 
-### Tactical entry
-Tactical work is allowed when it materially improves startup speed, learning speed, or immediate execution. Keep it bounded and temporary unless explicitly promoted; do not require complete strategic design before useful implementation can begin.
+### Source tools and temporary work
 
-### Strategic target
-Every tactical move must point toward a declared strategic target. Identify the intended end-state before or alongside tactical execution; do not let local progress define the long-term direction by itself; do not proceed tactically when no strategic target can be named.
+Before writing a substantive workflow/browser/test script, inspect fitting project tools, harnesses, fixtures and test owners. Reuse or extend the authorized semantic owner rather than a parallel throwaway runner in temporary storage. Orchestration, assertions, setup/cleanup or evidence normalization needed for reproducibility/continued use are source-tool candidates from the first run. Keep reusable logic separate from run arguments/config and outputs; never copy credentials, browser profiles or secret-bearing captures into source.
 
-### Mandatory convergence
-Every tactical path must show how it converges into strategic structure: absorbed, promoted, replaced, or retired; the future structure it converges into; and the trigger for strategic closure. Temporary structure must not remain indefinitely undefined.
+A genuinely short-lived discriminating probe/inline transform without a durable role may remain temporary; do not create a permanent tool/framework for every command. If a probe becomes a reusable requirement, absorb validated relevant logic into the fitting owner before claiming that tooling complete, not just move the raw file or retain a second implementation. Missing owner/permission leaves a pointer and explicit blocked/deferred obligation; it does not authorize Suite assignment, a parallel runner or a legacy temporary-file sweep. [safe-io.md](safe-io.md) owns output capture, not source-tool lifecycle.
 
-### Bounded tactical scope
-Tactical work must stay narrow enough to converge cleanly. Prefer local, reversible, low-blast-radius moves; do not let tactical entry silently expand into broad unplanned architecture; do not let machine-local paths, hosts, or install assumptions become defaults unless explicitly machine-scoped. Broader portable-default and anti-hardcoding ownership defers to `portable-implementation-and-hardcoding-control.md`.
+### Tactical scope and convergence
 
-### No permanent tactical drift
-Temporary solutions must not become hidden long-term authority. Workarounds, patch stacks, bridges, or compatibility paths require retirement, absorption, or formal promotion when they persist; detect and call out drift early.
+Tactical work is valid within selected strategy, or the checked current owner/contract when no separate strategy is selected: final-form local changes, focused diagnosis, reversible experiments, containment and bounded implementation. `TACTICAL` does not mean temporary debt. Correctly owned final-form work may close through proportionate proof without strategic ceremony or extra design/phase/convergence artifacts.
 
-### Source convergence after migration
-After cutover, the implementation must have one active source/path/authority for the migrated role. Remove or execution-disconnect former imports, switches, environment flags, factory branches, aliases, dual read/write paths, shadow implementations, build/config/deployment/test-discovery edges, and target-failure fallbacks unless an explicitly approved temporary compatibility bridge still owns them under `action-safety.md`.
+Tactical steps must not redefine architecture, ownership or scope. A separately declared target and convergence path is mandatory for workaround/compatibility bridge/provisional owner, material structure debt, emerging architecture or target divergence. Name target, bounded current slice, remaining temporary structure/debt, absorption/promotion/replacement/retirement path and closure trigger. If material target/closure is unclear, clarify before the temporary structure becomes authority. Expose this framing only when it changes a decision or preserves a real obligation.
 
-Preserved former code belongs only in execution-disconnected quarantine or inactive history outside normal discovery. Compatibility code is a temporary exception with a retirement trigger and proof obligation; it must not remain as permanent parallel architecture. Rollback/restoration deliberately replaces the active source from a verified known-good source and must not activate both paths together.
+Prefer local, reversible, low-blast-radius work; bound it so convergence remains feasible. No machine-local path/host/install assumption becomes a portable default unless explicitly machine-scoped; [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md) owns edge binding. Persisting workarounds/patch stacks require retirement, absorption or formal promotion, not hidden permanence.
 
-### Strategic closure
-Non-trivial systems should end in strategic structure. Stable boundaries, roles, and sequencing belong in strategic authority; design and phase layers should absorb validated tactical learning; final authority should not live in leftover tactical fragments.
-
-### Classification and Decision Model
-
-| Mode | Meaning | Typical use |
-|---|---|---|
-| `TACTICAL` | local bounded execution slice | patch artifact, focused fix, immediate unblock |
-| `STRATEGIC` | directional/architectural planning layer | design, roadmap, phased execution, boundary setting |
-| `TACTICAL_WITH_STRATEGIC_TRACK` | tactical execution with target and convergence path | fast-start implementation under strategic control |
-
-Before non-trivial tactical execution, answer:
-1. Is this tactical, strategic, or tactical-with-strategic-track?
-2. What is the strategic target?
-3. What is the tactical slice now?
-4. How does it converge?
-5. What triggers promotion to strategic closure?
-
-If answers 2-5 are unclear, clarify strategy before tactical execution.
-
-### Artifact Map
-
-| Artifact type | Default role |
+| Mode | Role |
 |---|---|
-| `design/*.design.md` | strategic target-state authority |
-| `phase/SUMMARY.md` + child phase files | strategic execution program |
-| `patch/<context>.patch.md` or root `<context>.patch.md` | tactical change artifact |
-| `TODO.md` | tactical execution tracking |
-| runtime temporary workaround | tactical implementation device |
-| stable architecture authority | strategic end-state |
+| `TACTICAL` | bounded local execution/repair |
+| `STRATEGIC` | target architecture/direction and staged program |
+| `TACTICAL_WITH_STRATEGIC_TRACK` | bounded tactical work with emerging/material-debt target and convergence |
 
-### Communication Shape
-When this doctrine materially matters, make these meanings visible: **Strategic target**, **Tactical now**, **Why tactical first**, **Convergence path**, and **Strategic end-state**. Equivalent headings acceptable if the meaning stays explicit.
+After migration cutover keep one active source/path/authority for the migrated role. Disconnect former imports/switches/env flags/factory branches/aliases/dual reads-writes/shadow/build-config-deploy-test discovery/target-failure fallback unless an explicitly approved temporary bridge owns them. Retained former code is execution-disconnected quarantine/inactive history, never normal discovery, fallback or restoration source. [action-safety.md](action-safety.md) owns bridge lifecycle/approval, deliberate known-good restoration and one-authority verification; [evidence-discipline.md](evidence-discipline.md) owns two-sided proof. While an approved bridge remains, migration is not complete.
 
----
+[document-governance.md](document-governance.md) owns artifact forms: design is target truth, phase is staged execution, TODO durable tracking, and timestamped `patch/YYYY-MM-DDTHH-mm-ssZ--<semantic-slug>.patch.md` before/after review. Do not invent generic/root Patch forms or require artifacts for every local final-form change. Absorb validated temporary learning into the correct strategic owner at closure.
 
-## Trigger Model
+## Trigger Dispatch and Boundaries
 
-| Trigger | Required behavior |
-|---|---|
-| non-trivial coding feature | inspect implementation completeness, then choose verification depth and TestKit/scenario decision before closeout |
-| bug/debug request | define observed failure/reproduction, hypothesis, signal, fix, and regression check when practical |
-| root-cause diagnosis before patching | separate symptom, leading hypothesis, discriminating check, and evidence boundary before shotgun edits |
-| missing field/output/route result/config/consumer value suggests new infrastructure | classify regression, drift, disconnected path, mismatch, unresolved state, or verified capability gap before architecture expansion |
-| architecture-bearing implementation | require functional proof through the selected path plus proportionate negative architecture-fitness checks against unauthorized alternate authority |
-| refactor | preserve behavior and rerun affected tests or state verification limits |
-| integration/provider/runtime/payment/auth/privacy work | fake/local verification first, then explicit smoke/live decision and safety boundary |
-| scenario-like flow | prefer TestKit/scenario harness or explain why focused tests are stronger |
-| implementation completed but not tested | continue to verification when safe instead of stopping at edit-only progress |
-| checklist/config/scaffold readiness | report prepared/configured/implemented only; do not claim tested, verified, live, fixed, or stable without matching evidence |
-| trivial no-behavior change | avoid ceremony; mark test not applicable with reason when needed |
-| broad/growing function/file | inspect for God/responsibility split before continuing to grow |
-| source identifier includes phase/doc/ticket/patch/changelog history | rename toward domain/behavior meaning unless the token is a real external/domain contract term |
-| source comment cites governed execution artifacts | prefer stable design/contract references for durable rationale; keep phase/changelog/patch/ticket references narrow to provenance, migration, compatibility, tactical bridge, or rollback context |
-| fast local fix in unclear terrain | allow only with strategic target and convergence path |
-| patch accumulation | check for tactical drift and promotion need |
-| phase/roadmap planning | let strategic framing dominate |
-| temporary runtime structure | require retirement or absorption path |
-| migration/cutover changes source authority | prove one active source after cutover and remove or execution-disconnect former imports/switches/flags/aliases/read-write/fallback/discovery edges |
-| compatibility implementation remains | treat it as a temporary bridge under `action-safety.md`; require owner, retirement trigger, observability, and removal proof |
-| architecture still emerging | use `TACTICAL_WITH_STRATEGIC_TRACK` |
-| long-lived workaround | require promotion, retirement, or replacement |
-| tactical fix changes code structure | preserve responsibility clarity, avoid avoidable God function/file drift, name convergence if material debt remains |
+- material source/state growth or a smell → Part A ownership/representation/decomposition gate; detection alone is not repair
+- refactor or selected implementation → behavior preservation/completeness and Part B matching proof
+- bug/missing value → discrimination and regression/gap classification before architecture
+- changed architecture/state authority → selected path proof plus safety delta/approval; former-path inactivity only for affected migration scope
+- temporary debt/path → Part C target and closure trigger; final-form local work needs no ceremonial track
 
----
-
-## Anti-Patterns
-
-Avoid:
-- fixed line-count policing, template-first architecture, splitting every function into tiny fragments
-- helper wrappers for obvious expressions, pass-through helper chains
-- interfaces/factories/strategies for one current use, merging coincidental duplication
-- refactor-plus-behavior-change without a boundary, rewriting a whole file for one smell
-- syntax-narrating comments, stale comments
-- phase/doc/ticket/patch/changelog IDs in function, variable, helper, class, type, or module names when those tokens are not real external/domain contract terms
-- tagging every function or helper with execution chronology instead of using semantic names plus bounded comments only where they lower maintenance cost
-- local tactical patches that become hidden permanent structure
-- happy-path-only implementation closeout while material state, integration, failure, observability, or verification obligations remain unclassified
-- old/new source paths left active through imports, flags, factories, aliases, dual read/write, shadow code, discovery edges, or automatic target-failure fallback after migration
-- edit-only completion, testing as an afterthought, mandatory TestKit creation for trivial work
-- fake/local pass presented as live proof, refactor without behavior-preservation checks
-- debugging from guesses without a signal, adding tests that do not cover the changed behavior
-- treating a missing field/output/route result/config/consumer value as proof of a capability gap without tracing the existing governed path
-- accepting passing tests for an unapproved or design-divergent path as architecture or completion proof
-- shotgun edits across several speculative causes before a discriminating check narrows the branch
-- running broad/noisy tests without worker filtering when appropriate
-- reporting fixed/stable beyond checked evidence
-- tactical entry without a declared strategic target or convergence path
-
----
+Never replace semantic decisions with line counts, template architecture, identifier counts, facades or helper proliferation. Never infer capacity gaps from symptoms, safety from local/fake passes, stability from one smoke, or migration completion from target tests while dual paths remain. Verification, guards, comments and abstractions must serve the selected outcome—not manufacture future work.
 
 ## Integration
-Related owners: [accurate-communication.md](accurate-communication.md) and [evidence-discipline.md](evidence-discipline.md) (claim strength); [phase-todo-artifact.md](phase-todo-artifact.md) and [execution-and-goal-frame.md](execution-and-goal-frame.md) (verification continuation); [worker-routing-and-context.md](worker-routing-and-context.md) and [action-safety.md](action-safety.md) (noisy/live checks); [document-governance.md](document-governance.md), [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md), and [explanation-and-presentation.md](explanation-and-presentation.md) (artifact/binding/presentation ownership).
+
+Claim thresholds: [evidence-discipline.md](evidence-discipline.md), [accurate-communication.md](accurate-communication.md). Scope/proof/artifacts: [execution-and-goal-frame.md](execution-and-goal-frame.md), [phase-todo-artifact.md](phase-todo-artifact.md), [document-governance.md](document-governance.md). Risk/worker/binding: [action-safety.md](action-safety.md), [worker-routing-and-context.md](worker-routing-and-context.md), [portable-implementation-and-hardcoding-control.md](portable-implementation-and-hardcoding-control.md). Presentation: [explanation-and-presentation.md](explanation-and-presentation.md).

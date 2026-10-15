@@ -1,20 +1,31 @@
 # Changelog - Goal Authoring and Route Support
 
 > **Parent Document:** [../goal-authoring-and-route-support.md](../goal-authoring-and-route-support.md)
-> **Current Version:** 1.3
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.4
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.4 | 2026-09-30 | **[Compacted goal schema and route lifecycle](#version-14)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.3 | 2026-08-10 | **[Bounded goal proof layers and terminal-gate preservation](#version-13)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.2 | 2026-08-09 | **[Made goal construction consume execution-selected posture](#version-12)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.1 | 2026-08-08 | **[Applied owner-canonical active runtime compression](#version-11)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.0 | 2026-06-13 | **[Created governed `/goal` route-support owner chain](#version-10)** | 8b04beb0-b5ef-4500-a3f5-558bcedd088a |
 
 ---
+
+<a id="version-14"></a>
+## Version 1.4: Compacted goal schema and route lifecycle
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Kept governed sourcing, proof slots/reachability labels, prerequisite order, Plan-reference validity, authoring stop and exact copied order while consuming execution-selected proof policy.
+- Removed mirrored full proof/closure and anti-pattern repetition without independently changing current-versus-successor selection or weakening explicit terminal proof.
+- P073-16 source candidate; no installed command/live behavior proof follows from text edits.
 
 <a id="version-13"></a>
 ## Version 1.3: Bounded goal proof layers and terminal-gate preservation

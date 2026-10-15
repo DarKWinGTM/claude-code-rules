@@ -3,12 +3,14 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 1.8
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5 (2026-05-08)
+> **Current Version:** 2.0
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01 (2026-09-30)
 
 ---
 
 ## 1) Goal
+
+Selected [runtime compaction](design/runtime-compaction.design.md) preserves meaning-visible active hooks, declared Scope/Memory-base relative paths, path-specific applicability/freshness and optional recall without repeating index/lifecycle/no-size-deletion constraints. This source contract does not authorize migrating or pruning live memory.
 
 Define one first-class rule chain for memory governance and session-boundary behavior so the assistant:
 - uses memory as reusable context rather than as active authority
@@ -30,7 +32,7 @@ This chain should make memory usage deterministic, reviewable, visible enough to
 
 The current RULES stack already has useful adjacent protections:
 - `authority-and-scope` keeps fresh user directives above stale assistant framing
-- `accurate-communication` and `evidence-grounded-burden-of-proof` keep carry-forward detail from being overstated as verified fact
+- `accurate-communication` and `evidence-discipline` keep carry-forward detail from being overstated as verified fact
 - compact/post-compact waves already tightened re-anchor behavior after context compaction
 - v1.6 memory governance already treats loader warnings, truncation risk, and index bloat as maintenance triggers
 
@@ -91,9 +93,9 @@ This chain owns what memory means, how memory scope applies, and how root memory
 It does not replace:
 - `authority-and-scope.md` for overall precedence
 - `accurate-communication.md` for wording shape
-- `evidence-grounded-burden-of-proof.md` for claim-strength thresholds
-- `answer-presentation.md` for compact layout patterns
-- `safe-file-reading.md` for bounded file-reading mechanics
+- `evidence-discipline.md` for claim-strength thresholds
+- `explanation-and-presentation.md` for compact layout patterns
+- `safe-io.md` for bounded file-reading mechanics
 
 ---
 
@@ -391,10 +393,10 @@ This design defines the governance contract for that target shape. It does not r
 |------|--------------|
 | [../authority-and-scope.md](../authority-and-scope.md) | Precedence stays there; memory applicability defers here |
 | [../accurate-communication.md](../accurate-communication.md) | Wording for memory-derived context and recheck disclosure stays there |
-| [../evidence-grounded-burden-of-proof.md](../evidence-grounded-burden-of-proof.md) | Evidence thresholds for memory-derived claims stay there |
-| [../answer-presentation.md](../answer-presentation.md) | Compact memory-status / scope-re-anchor layout stays there |
-| [../safe-file-reading.md](../safe-file-reading.md) | Bounded reading and oversized root-index maintenance signals stay there |
-| [../project-documentation-standards.md](../project-documentation-standards.md) | Repository doc-role governance remains separate |
+| [../evidence-discipline.md](../evidence-discipline.md) | Evidence thresholds for memory-derived claims stay there |
+| [../explanation-and-presentation.md](../explanation-and-presentation.md) | Compact memory-status / scope-re-anchor layout stays there |
+| [../safe-io.md](../safe-io.md) | Bounded reading and oversized root-index maintenance signals stay there |
+| [../document-governance.md](../document-governance.md) | Repository doc-role governance remains separate |
 
 ---
 

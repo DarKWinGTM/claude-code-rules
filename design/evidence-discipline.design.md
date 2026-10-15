@@ -1,8 +1,8 @@
 # Design - Evidence Discipline
 
 > **Parent Rule:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.8
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.9
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/evidence-discipline.changelog.md](../changelog/evidence-discipline.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 `evidence-discipline.md` is the active runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior.
 
-It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
+Selected [runtime compaction](design/runtime-compaction.design.md) keeps evidence kinds and claim states distinct while merging mirrored threshold/protocol text. Preserve causal/nonfinding/memory/mock/witness limits and two-sided migration proof. Availability of an instruction does not demonstrate its use, effect or causal utility; missing evaluation/duplicate doctrine is not tested-no-benefit.
 
 ---
 

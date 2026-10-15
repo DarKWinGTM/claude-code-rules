@@ -1,8 +1,8 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.33
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.36
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 
 ---
 
@@ -10,6 +10,9 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.36 | 2026-10-15 | **[Separated result-sync cadence from prerequisites and enabled factual codebase challenge](#version-136)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
+| 1.35 | 2026-09-30 | **[Evidence-led development ordering and workflow boundaries](#version-135)** | 7194487f-fe8b-4383-8756-3db4c5612392 |
+| 1.34 | 2026-09-30 | **[Compacted execution and simplest-complete decision boundaries](#version-134)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.33 | 2026-08-11 | **[Added architecture-bearing mutation trigger and no-fork correction lock](#version-133)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.32 | 2026-08-10 | **[Added reachable proof closure and terminal live-verification goal boundaries](#version-132)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.31 | 2026-08-09 | **[Made advisory goal eligibility execution-owned](#version-131)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -49,6 +52,39 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-136"></a>
+## Version 1.36: Result-sync cadence and factual codebase challenge
+
+**Date:** 2026-10-15
+**Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+
+- Clarified continuous implementation/checks within settled contracts, with result/history synchronization after the bounded outcome passes matching proof; material design/approval prerequisites and resume-critical failure/handoff records remain required.
+- Distinguished valid taste-only conventions from checked harmful patterns: evidence, mechanism, impact and smallest correction support discussion without silent forks or recency/test-based authority substitution.
+- Routed mechanical equality/version/hash work to existing deterministic tools while retaining judgment for contracts and routing/retry diagnosis; no new automation framework is required.
+- [P073-19](../phase/phase-073-19-docs-sync-and-task-handoff.md) records paired synthetic interpretation, source safeguards and installation proof with their limits; no historical root-cause or causal model-benefit claim.
+
+<a id="version-135"></a>
+## Version 1.35: Evidence-led development ordering and workflow boundaries
+
+**Date:** 2026-09-30
+**Session:** 7194487f-fe8b-4383-8756-3db4c5612392
+
+- Replaced existing decision paragraphs with proportional behavior/fact understanding, realistic design selection and dependency-ordered implementation/proof, without exhaustive research, mandatory waterfall or per-condition artifacts.
+- Prevented unverified assumptions and temporary development/test/no-live restrictions from becoming permanent Product eligibility semantics; intentional selected runtime modes/feature flags remain valid.
+- Kept user-owned choices, required correctness/safety/approval, premise protection, architecture boundaries, review sufficiency, selected proof and continuation/closure contracts intact.
+- Source text/scenario/fixture and nineteen-file root installation checks passed before the user-selected one final docs sync. No additional files or model-effect/publication claim. Detailed scope/proof: [P073-18](../phase/phase-073-18-evidence-led-coding-workflow.md).
+
+<a id="version-134"></a>
+## Version 1.34: Compacted execution and simplest-complete decision boundaries
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated repeated scope, mode, review, continuation, selected-proof and closure doctrine in its canonical owner; consumers retain local schema/status effects.
+- Made optional-control net benefit, factual discrimination versus substantive consultation, and simplest-complete design explicit without weakening required correctness or safety.
+- Preserved explicit terminal proof, repair of infeasible assistant-inferred gates, no-fork constraints, design-slice completeness, current-lane continuation and no recursive successors.
+- Source candidate for P073-16; runtime AI compliance and installation require their own matching evidence.
 
 <a id="version-133"></a>
 ## Version 1.33: Added architecture-bearing mutation trigger and no-fork correction lock

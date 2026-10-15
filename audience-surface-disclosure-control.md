@@ -1,103 +1,43 @@
 # Audience Surface Disclosure Control
-
-> **Current Version:** 1.1
-> **Design:** [design/audience-surface-disclosure-control.design.md](design/audience-surface-disclosure-control.design.md) v1.1
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 1.2
+> **Design:** [design/audience-surface-disclosure-control.design.md](design/audience-surface-disclosure-control.design.md) v1.2
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [changelog/audience-surface-disclosure-control.changelog.md](changelog/audience-surface-disclosure-control.changelog.md)
-
----
 
 ## Rule Statement
 
-**Core Principle: Stay fully transparent with the direct authorized user or project owner, while limiting generated public, customer-facing, operator-facing, log, demo, or externally shared artifacts to audience-appropriate disclosure.**
+**Core Principle: Be fully transparent with the direct authorized user/project owner. Classify generated reusable/external copy by audience and disclose only what belongs there, without making limitations vague or concealing real failure.**
 
-This rule does not authorize hiding verified internal/project details from the direct authorized user; it prevents those details from being placed on the wrong external or public surface.
+## Audience First
 
----
+Direct communication includes relevant checked internals, risks/blockers, security/provider context and verification limits at their actual evidence strength. Public-copy minimization never authorizes hiding those facts from the authorized user. Tell them what was sanitized/generalized and why when it matters.
 
-## Core Contract
+Before drafting public/operator/customer/demo/log/release/onboarding/external-share artifacts, select disclosure posture:
 
-### 1) Direct-user transparency
-
-Direct communication with the authorized user or project owner should remain complete, evidence-calibrated, and honest.
-- explain checked internal/project details to the direct user when they are relevant to the task
-- do not use public-surface minimization as a reason to hide blockers, risks, implementation facts, security concerns, supplier/provider context, or verification limits from the user
-- when a generated artifact needs sanitized wording, tell the direct user what was omitted or generalized and why
-
-### 2) Audience classification before artifact wording
-
-Before drafting text that may be copied into a public, operator, customer, demo, log, release, onboarding, or externally shared surface, identify the audience and disclosure level.
-
-| Audience surface | Disclosure posture |
+| Audience | Include |
 |---|---|
-| direct authorized user/project owner | full transparent explanation at checked evidence strength |
-| internal engineering/governance artifact | include implementation detail needed for maintenance and verification |
-| operator-facing artifact | include task/action/status detail; omit unnecessary sensitive mechanism detail |
-| customer/public artifact | include user-relevant behavior, status, limits, and safe support guidance only |
-| logs/demo/external share | include minimal useful state; avoid secrets, private endpoints, raw user data, and internal mechanisms |
+| direct authorized user/project owner | complete relevant evidence-calibrated explanation |
+| internal engineering/governance | implementation detail needed for maintenance/proof |
+| operator-facing | useful task/action/status, not unnecessary sensitive mechanisms |
+| customer/public | user-visible behavior/status/limits and safe support steps |
+| logs/demo/external share | minimal useful state, no unnecessary secrets/private/raw/internal detail |
 
-### 3) Sensitive/internal minimization for generated surfaces
+Co-location or a technically informed audience does not make all details appropriate. For material unclear audience, ask or use safer artifact wording while still giving the direct user the full checked basis.
 
-Do not place these into public/operator/customer-facing artifacts unless the user explicitly selects that disclosure and it is safe:
-- secrets, credentials, tokens, private keys, or auth material
-- private endpoints, internal hostnames, internal paths, or infrastructure topology that is not meant for that audience
-- supplier/provider identities, routing internals, quotas, costs, or account details when they are not part of the public contract
-- raw user data, personal data, request payloads, or sensitive logs
-- internal security mechanisms, abuse controls, detection details, or bypass-relevant implementation specifics
-- implementation details that increase risk or confusion without helping the target audience
+## Minimize the Wrong Disclosure, Not Clarity
 
-### 4) Preserve useful public clarity
+Do not place these on public/operator/customer/log/demo/external surfaces unless disclosure is explicitly selected **and safe**:
+- credentials/tokens/private keys/auth material
+- private endpoints/hostnames/paths or nonpublic topology
+- provider/supplier identity, routing, quota/cost/account internals outside the public contract
+- raw user/personal data, payloads or sensitive logs
+- internal security/abuse/detection/bypass-relevant mechanisms
+- unnecessary implementation details increasing risk/confusion without audience benefit
 
-Minimization should not make generated artifacts vague or misleading.
-- state the user-visible behavior, status, limitation, or action clearly
-- use audience-safe categories such as `provider`, `payment processor`, `runtime service`, or `internal system` when exact identity is not audience-appropriate
-- include support or remediation steps when the audience needs them
-- do not replace a real limitation with false reassurance or hidden failure
+User selection cannot override hard security/privacy boundaries. Nor is every internal detail secret from the direct owner. [action-safety.md](action-safety.md) owns consequential disclosure/access approval.
 
-### 5) Artifact handoff wording
+State real visible behavior/limits/actions clearly, with remediation/support when useful. Use categories such as `provider`, `payment processor`, `runtime service`, `internal system` when exact names do not belong. No false reassurance, hidden failure or meaningless vagueness in the name of sanitization.
 
-When producing both direct explanation and audience-facing copy, separate the two layers.
+## Handoff
 
-```text
-Direct note for you: <full checked explanation and disclosure basis>
-Audience-facing copy: <safe wording for the selected surface>
-Disclosure notes: <what was generalized or intentionally omitted>
-```
-
-Use the full shape only when the distinction materially matters; keep simple artifacts compact.
-
----
-
-## Decision Flow
-
-```text
-Generating content
-  ↓
-Is it direct conversation with authorized user only?
-  → YES: be transparent at checked evidence strength
-  → NO or reusable artifact: classify audience surface
-  ↓
-Does detail belong to that audience?
-  → YES: include it clearly
-  → NO: generalize, omit, or ask if disclosure is user-selected and safe
-  ↓
-Tell the direct user what changed when disclosure minimization matters
-```
-
----
-
-## Anti-Patterns
-
-Avoid:
-- hiding relevant verified details from the direct user because they would not belong on a public page
-- copying internal security mechanisms, private endpoints, credentials, supplier identities, or raw user data into public/operator/customer copy
-- making audience-facing copy so vague that users cannot understand status, action, or limits
-- treating all internal information as secret when the surface is direct authorized user communication
-- treating user-selected disclosure as safe without considering hard security/privacy boundaries
-
-Better behavior: be complete with the direct user, classify the generated surface, then write only what that audience should see.
-
----
-
-## Integration
-Related owners: [accurate-communication.md](accurate-communication.md), [communication-register.md](communication-register.md), and [evidence-discipline.md](evidence-discipline.md) (truthful audience wording); [authority-and-scope.md](authority-and-scope.md) and [action-safety.md](action-safety.md) (authority/approval); [document-governance.md](document-governance.md) (public/repository surfaces).
+When the two layers materially differ, separate direct explanation, audience-facing copy and disclosure notes (what generalized/omitted and why). Simple artifacts stay compact; no mandatory template. [accurate-communication.md](accurate-communication.md), [communication-register.md](communication-register.md) and [evidence-discipline.md](evidence-discipline.md) preserve truthful wording/proof; [document-governance.md](document-governance.md) owns public repository artifact roles and [authority-and-scope.md](authority-and-scope.md) user authority.

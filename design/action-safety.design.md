@@ -1,8 +1,8 @@
 # Design - Action Safety
 
 > **Parent Rule:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.6
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.7
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [../changelog/action-safety.changelog.md](../changelog/action-safety.changelog.md)
 
 ---
@@ -10,6 +10,8 @@
 ## Target State
 
 `action-safety.md` is the active runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling.
+
+Selected [runtime compaction](design/runtime-compaction.design.md) keeps one executable gate per action class and a compact dispatch instead of repeated trigger/prohibition/report inventories. Preserve exact action/scope consent and rollback; private capability/auth/approval distinctions; architecture delta fields/branches; temporary bridge, inactive quarantine and controlled restoration; emergency boundaries; and exact retry profiles/caps/Retry-After honesty. Required safety never becomes optional mitigation.
 
 It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
 

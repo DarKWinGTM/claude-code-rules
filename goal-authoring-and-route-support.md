@@ -1,146 +1,86 @@
 # Goal Authoring and Route Support
-> **Current Version:** 1.3
-> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.3
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.4
+> **Design:** [design/goal-authoring-and-route-support.design.md](design/goal-authoring-and-route-support.design.md) v1.4
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 > **Full history:** [changelog/goal-authoring-and-route-support.changelog.md](changelog/goal-authoring-and-route-support.changelog.md)
-
----
 
 ## Rule Statement
 
-**Core Principle: Keep `/goal` as the objective authority surface, keep route support subordinate to that goal, source governed goal artifacts from checked execution surfaces rather than improvised prose, and open `/plan` only when route detail no longer fits safely inside the goal-centric surface.**
+**Core Principle: `/goal` owns outcome, completion proof, scope and hard guardrails. Construct it from checked governing context, keep route support subordinate, and open `/plan` only for route overflow or an explicit planning request. Goal construction never selects its own successor, execution or weaker proof.**
 
-พูดง่าย ๆ: `/goal` บอกว่าจะทำอะไรและอะไรนับว่าทำเสร็จ ส่วน route support บอกว่าจะเดินไปทางไหนโดยไม่แย่งความเป็นเจ้าของ objective.
+พูดง่าย ๆ: `/goal` บอกว่าจะทำอะไรและอะไรนับว่าเสร็จ; route บอกลำดับที่จำเป็น ไม่สร้าง objective อีกอัน.
 
----
+## Goal Construction and Sources
 
-## Core Contract
+A plain governed goal request is enough for planning-depth resolution; do not require special “goal plan file” wording. [execution-and-goal-frame.md](execution-and-goal-frame.md) selects direct continuation, candidate goals, one advisory `/goal`, clarification or none. Receive that posture rather than independently promote candidates. Several materially different directions remain prose candidate goals until one is selected/sufficiently bounded.
 
-### 1) Plain governed goal requests are enough
-When the user plainly asks for a governed goal, that request is enough to trigger planning-depth resolution.
+Use governed sources only when materially repo-governed: current source-tree multi-step/phase/design work, runtime-rule/doc/release/parity/proof work, or current-state/review truth. Do not pull heavy context into trivial/non-governed work. Sourcing order:
+1. design for target truth and meaning of done
+2. current phase, live tasks, TODO and checked implementation for applicable execution state
+3. changelog when version/release/current state matters
+4. Patch when before/after boundary matters
+5. README when user-facing/install/front-page state matters
 
-Required guidance:
-- do not require wording such as `goal plan file` before deciding what route support is needed
-- keep `/goal` as the objective owner for outcome, proof/checks, scope, and hard guardrails
-- if the current turn is only goal or plan-file authoring, stop at the final goal artifact plus subordinate route support unless execution is also selected or clearly implied elsewhere
+Translate checked context into one bounded artifact, not improvised requirement prose:
 
-### 2) Source governed `/goal` from checked execution surfaces
-When the requested or successor objective is repo-governed and depends materially on current execution state, source the goal from checked governed surfaces rather than improvised prose.
+| Slot | Meaning |
+|---|---|
+| candidate goal label / done condition | selected outcome and observable completion |
+| `required_proof_layer` | current Goal's selected terminal gate, not maximum imaginable proof |
+| `current_reachable_layer` | strongest currently available/approved proof; expose a gap, do not call weaker proof complete |
+| `excluded_or_successor_layers` | explicitly classify materially distinct later/excluded proof |
+| route prerequisites | state/access/identity/approval/deployment/restart/capability changes before dependent proof |
+| scope / keep constraints / stop bound | bounded change, protected behavior and runaway stop if needed |
 
-Use this sourcing order:
-- design first for target-state truth and authoritative meaning of done
-- active execution surfaces next: current phase, built-in task list, `TODO.md`, and checked implementation state
-- changelog only when version/release/current-state truth materially shapes completion
-- patch only when before/after review boundaries materially shape the objective
-- README only when front-page current-state, install guidance, or user-visible repo impact materially shapes completion
+Keep only decision-changing slots; a simple goal uses one direct proof/check. Before emission/starting, test every proposed done point against scope, current environment/capability/approval and a credible observable proof path. Reachability labels are `REACHABLE_NOW`, `REQUIRES_APPROVAL`, `REQUIRES_EXTERNAL_STATE_CHANGE`, `REQUIRES_USER_ACTION`, `UNAVAILABLE_WITH_CURRENT_CAPABILITY`, `NOT_APPLICABLE`.
 
-Governed-surface context is mandatory only when the request or successor objective is materially repo-governed, such as:
-- multi-step work inside the current source tree
-- phase-backed or lane-backed work
-- design target-state truth materially shaping the objective
-- runtime-rule-impacting, doc-sync, release-sync, parity, or verification work
-- current-state, release, or review truth depending materially on changelog, patch, or README alignment
+Consume execution's proof-selection contract: a source/code goal cannot infer authenticated/live/deployed/installed/restarted Product proof from “done/working/verify,” operational nouns or diagnostic/recovery/mutation capabilities. Such proof is excluded/successor unless explicitly selected by user/governed authority. Explicit terminal proof remains binding despite unavailable capability; record prerequisites/blocker instead of demotion. Repair an infeasible assistant-inferred gate in the existing Goal/plan and reconcile tasks; remaining work/duration/difficulty alone is not infeasibility.
 
-### 3) Translate governed context into one bounded goal artifact
-When a governed `/goal` is appropriate, translate checked execution context into these concept slots:
-- candidate goal label
-- done condition
-- `required_proof_layer`: the proof layer selected as the current goal's completion gate
-- `current_reachable_layer`: the strongest proof reachable in the selected scope with currently available and approved capability
-- `excluded_or_successor_layers` when materially different, with each layer classified explicitly as excluded or successor
-- route prerequisites when a later proof layer depends on state, access, approval, deployment, restart, or another capability change
-- scope boundary
-- keep constraints
-- stop bound when runaway continuation is a risk
+An advisory `/goal` stays unselected execution. Do not construct it from unresolved approval-sensitive/destructive/divergent work. Emit a copyable advisory command only if its required proof or checked prerequisite path can become transcript-visible; already selected unreachable proof may instead be honestly blocked. This rule encodes selected proof, never moves required proof to a successor just for closure.
 
-Required guidance:
-- keep only the parts needed to define completion, proof, scope, and hard guardrails
-- before finalizing or starting a Goal, evaluate every proposed done point against the selected scope, current environment, available capability, required approval, and a real path to observable proof; an assistant-authored source/code Goal should default to a terminal gate with a credible executable path inside the selected scope and currently available or approvable capability, while later or currently infeasible proof stays excluded or successor unless the user or checked governed authority explicitly selects it
-- bind `required_proof_layer` to the current goal's selected completion gate, not to the strongest imaginable whole-system proof
-- for a source/code goal, must not infer live, authenticated, deployed, installed, or restarted Product proof into `required_proof_layer`; absent explicit selection by the user or checked governed authority, keep that proof in `excluded_or_successor_layers`
-- generic wording such as `complete`, `verify`, `working`, or `done` does not explicitly select live proof, and an assistant-authored recommendation cannot promote live proof into the current goal's terminal gate by assistant inference
-- classify proof selection from the Goal's explicit done condition, proof/checks, scope, and checked governing authority—not from operational nouns or Product-facing capability names in the outcome; implementing diagnostic, deployment-support, recovery, or mutation-capable code does not select deploy, restart, authenticated access, live observation, data mutation, or recovery apply as current proof unless the user or checked governed authority explicitly selects that proof
-- use `current_reachable_layer` to expose a real proof gap; do not present it as completion when it is weaker than `required_proof_layer`
-- classify proof outside the current goal explicitly as excluded or successor; do not turn it into an accidental blocker or silently drop it
-- if an explicitly selected terminal proof is stronger than the current reachable layer, keep that proof inside the current goal and keep the goal open with its prerequisite or blocker; difficulty, externality, or unavailable capability does not demote it
-- classify material proof reachability as `REACHABLE_NOW`, `REQUIRES_APPROVAL`, `REQUIRES_EXTERNAL_STATE_CHANGE`, `REQUIRES_USER_ACTION`, `UNAVAILABLE_WITH_CURRENT_CAPABILITY`, or `NOT_APPLICABLE`; the label exposes the gate but does not change an explicitly selected terminal proof
-- do not freeze an assistant-inferred infeasible done point into the Goal: if preflight or later checked evidence shows it cannot close in the current scope and no user/governed authority selected it, repair the Goal boundary in place and move that proof to excluded or successor scope rather than forcing a new Goal or a non-terminating retry loop; difficulty, duration, or remaining implementation work alone does not prove infeasibility
-- when several successor directions remain live, surface compact candidate goals before promoting any one into `/goal`
-- if checked surfaces already define a smaller truthful successor slice, derive that smaller slice instead of emitting a broad future label
-- for an advisory `/goal`, do not emit a copyable command unless the required proof, or a checked prerequisite path to it, can become transcript-visible; an already selected terminal proof remains binding and may be reported blocked rather than demoted
+## Smallest Sufficient Route
 
-### 4) Route-support and durable `Plan reference` contract
-Choose the smallest route support that safely serves the goal:
-- direct `/goal` wording for a simple bounded objective
-- compact non-durable route notes when ordering matters but still fits the goal-centric surface
-- a durable route-only plan file only when complexity or later execution materially needs persistence
-- one narrow substantive clarification about the work when objective, scope, or gate is not bounded enough
+| Need | Route support |
+|---|---|
+| simple bounded goal | direct `/goal` |
+| useful ordering that fits compactly | non-durable route notes inside/adjacent to the goal |
+| complexity or later continuation materially needs persistence | durable route-only file |
+| outcome-changing scope/gate unknown | one substantive work question, not routing-choice labels |
 
-Order prerequisites that change state, identity, access, approval, or runtime capability before dependent proof checks. Before accepting route support, map each planned slice to its output, gate, and reachability; the current plan must end at the current Goal's selected terminal proof, while excluded or successor operations remain outside the blocking task sequence unless explicitly selected. Do not repeat a downstream check unchanged while unmet prerequisites mean it cannot add signal. If an active plan contains an assistant-inferred infeasible done point, repair the plan in place with the Goal boundary rather than making `/plan` a second objective or forcing a replacement Goal. Route prerequisites remain subordinate: they do not replace the goal's proof gate or become completion proof by themselves.
+Order enabling state/identity/access/approval/runtime prerequisites before dependent checks. Map each slice to output/gate/reachability; the route ends at selected Goal proof. Excluded or unselected successor operations are outside blocking task order. Unmet unchanged prerequisites mean repeated downstream checks add no signal. Repair route drift with the Goal rather than make `/plan` a second objective or force replacement goals.
 
-Ask about the work itself, not routing labels. Do not force trivial goals into durable plan files or pull broad governed context into trivial non-governed work.
+Internal reasoning, bounded helper analysis, log/test triage and verification ordering support authoring only when useful. They are not objective authority/proof. Main synthesis and construction remain responsible; [worker-routing-and-context.md](worker-routing-and-context.md) owns support selection.
 
-A durable `Plan reference` requires a route-only plan file that exists in checked scope or was successfully written and verified in the same authoring flow. Never emit it from intention, draft text, or an unwritten file; report a creation/verification blocker instead. Canonical artifact order is defined in section 9.
+### Durable Plan-reference lifecycle
 
-### 5) Internal support remains subordinate
-Internal analysis, route drafting, verification ordering, testing/log triage, and bounded helper lanes may support goal authoring when materially useful. They remain subordinate route support: not a second objective surface, independent authority, or completion proof.
+`Plan reference` is valid only for a checked existing route-only file or one successfully written and verified during this authoring flow. Never emit an intention, draft or unwritten path; surface the write/verification blocker. When the flow can safely write/verify required route support, do it without save-plan confirmation or asking the user to invoke `/goal` again.
 
-When the same authoring flow can write and verify required durable route support, do not ask whether to save it and do not ask the user to invoke `/goal` again.
+For a selected goal keep route inside the goal-centric presentation first. `/plan` is overflow for meaningful sequence/task/phase/owner/verification detail or explicit standalone planning—not the default second command. `/goal` retains outcome/done/proof/scope/hard guards; `/plan` retains route/sequence/task/owner order. Route/helper/plan completion cannot close an open objective gate.
 
-### 6) Authoring stop boundary
-If the current turn is only goal or route-support authoring, stop at the final goal artifact plus subordinate route support. Do not append a default execution-style choice menu or begin execution unless execution is separately selected or clearly implied. Preserve internal routing labels only when workflow behavior itself or exact artifact wording is under discussion.
+## Authoring Stop and Exact Artifact
 
-### 7) Selected advisory-goal and `/plan` boundaries
-`execution-and-goal-frame.md` decides whether a boundary calls for direct continuation, candidate goals, one advisory `/goal`, clarification, or no successor. This rule receives that selected posture and constructs the bounded goal artifact; it does not independently promote a candidate.
+Authoring-only requests stop at final Goal plus subordinate route support unless execution is separately selected or clearly implied. Do not begin execution or append `Subagent-Driven`/`Inline Execution` menus. Preserve internal routing labels only when the workflow/literal itself is under discussion.
 
-An advisory `/goal` remains unselected execution. Do not construct one from approval-sensitive, destructive, or materially divergent work unless the execution owner has resolved the required basis or approval.
+Use the dominant exchange language unless explicitly changed. Keep `/goal`, paths, version tags, identifiers and query parameters exact; translating only wrapper labels while leaving the body in another language is insufficient. [explanation-and-presentation.md](explanation-and-presentation.md) renders the selected artifact; it does not promote or change its authority.
 
-Goal-authoring encodes the proof-layer posture selected by execution or the user; it does not independently move proof between the current goal and successor scope. An explicitly selected terminal proof remains the current goal's terminal gate until it passes or the user explicitly narrows the goal.
-
-For a selected goal, keep route detail inside the goal-centric surface first. Open `/plan` only when sequence, task/phase breakdown, verification/owner ordering, explicit standalone planning, or route size no longer fits compactly.
-
-`/goal` owns outcome, done condition, proof/checks, scope, and hard guardrails. `/plan` owns route, sequence, task breakdown, owner ordering, and overflow route detail. Repair route drift instead of letting `/plan` replace the selected objective. Route, helper, or plan completion never closes the goal while its proof or gate remains open.
-
-### 8) Language and exact-literal boundary
-Follow the dominant language of the active exchange unless the user explicitly chooses another. Preserve exact literals such as `/goal`, paths, version tags, identifiers, and query parameters; do not translate only the wrapper while leaving the goal body in another language.
-
-### 9) Canonical copyable artifact
-When durable route support is present, use this order inside one copied artifact:
-
+With verified durable support, use one copied artifact in this order:
 ```text
-/goal <outcome + required transcript-visible proof/checks + bounded scope + keep constraints + material proof-layer/prerequisite distinctions + optional stop bound>
+/goal <outcome + required transcript-visible proof/checks + bounded scope + keep constraints + material proof/prerequisite distinctions + optional stop bound>
 Plan reference: <exact route-only plan path>
 ```
 
-Include proof-layer distinctions and route prerequisites only when they materially differ; simple goals keep one direct proof/check statement. Wrapper text may surround the artifact; omit `Plan reference` when no verified durable plan file exists.
+Omit `Plan reference` without a verified durable file. Include layer/prerequisite distinctions only when material; wrapper text is allowed but cannot carry the sole durable pointer outside the copied artifact.
 
----
+## Trigger Dispatch and Boundaries
 
-## Application Boundary
+- plain governed goal → checked construction and smallest route, no special syntax required
+- source/code done point → credible reachable proof; preserve explicit terminal selection and classify others
+- durable route → write/verify first, then `/goal` followed by `Plan reference:`
+- authoring only → stop at artifact, no execution-choice ceremony
+- selected route too large → `/plan` overflow without replacing objective
 
-This rule is the sole semantic owner for governed `/goal` construction after execution selects the posture, route-support selection, durable plan-file lifecycle and `Plan reference`, internal authoring support, authoring stop, selected-goal `/plan` overflow, goal-versus-route authority, and goal-artifact language/exact-literal rules.
-
-`execution-and-goal-frame.md` owns continuation and candidate/advisory eligibility; `explanation-and-presentation.md` owns rendering. Other satellite rules retain only local task, topology, evidence-wording, or tone consequences.
-
----
-
-## Anti-Patterns
-
-Avoid:
-- emitting an unwritten/unchecked `Plan reference` or placing it before `/goal`
-- treating helper output or route drafts as objective authority
-- appending `Subagent-Driven` / `Inline Execution` menus after pure goal/plan-file authoring
-- forcing durable plan files for trivial or already direct goals
-- teaching `/plan` as the default next surface for every route-heavy goal
-- collapsing several materially different successor directions into one premature `/goal`
-- treating route completion as goal completion
-- demoting an explicitly selected terminal proof because it is external, difficult, approval-gated, or not currently reachable
-- treating a weaker current reachable layer as if it satisfied a stronger required proof layer
-- importing excluded or successor proof into the current goal accidentally, or leaving its status ambiguous
-- running dependent proof before route prerequisites can make the check informative
-- pulling heavy governed context into trivial non-governed next steps
-
----
+No fake Plan reference, heavy sourcing/durable plans for trivial work, candidate promotion from route convenience, or weaker proof presented as selected completion.
 
 ## Integration
-Related owners: [phase-todo-artifact.md](phase-todo-artifact.md) (goal-linked tasks/execution surfaces); [execution-and-goal-frame.md](execution-and-goal-frame.md) (mode/continuation/next-goal decisions); [accurate-communication.md](accurate-communication.md) (evidence-strength wording); [explanation-and-presentation.md](explanation-and-presentation.md) (goal rendering).
+
+Decision/closure: [execution-and-goal-frame.md](execution-and-goal-frame.md). Task/phase: [phase-todo-artifact.md](phase-todo-artifact.md). Claim strength/rendering: [accurate-communication.md](accurate-communication.md), [explanation-and-presentation.md](explanation-and-presentation.md).

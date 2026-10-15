@@ -1,14 +1,15 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.8
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.9
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.9 | 2026-09-30 | **[Compacted evidence thresholds and utility boundaries](#version-19)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.8 | 2026-08-10 | **[Added supplied rendered-artifact proof boundaries](#version-18)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.7 | 2026-08-09 | **[Compacted evidence integration handoffs](#version-17)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.6 | 2026-08-09 | **[Added two-sided migration proof](#version-16)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -22,6 +23,16 @@
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-19"></a>
+## Version 1.9: Compacted evidence thresholds and utility boundaries
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated repeated thresholds/protocol/anti-pattern text while preserving evidence-kind versus claim-state registries, root-cause/nonfinding and supplied-witness limits.
+- Made instruction availability distinct from application/outcome/causal benefit; missing evaluation or duplication cannot be called a failed test.
+- Preserved real/fake/local/live and two-sided migration boundaries; P073-16 source candidate, not measured future-agent behavior.
 
 <a id="version-18"></a>
 ## Version 1.8: Added supplied rendered-artifact proof boundaries

@@ -1,8 +1,8 @@
 # Design - Safe I/O
 
 > **Parent Rule:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.7
-> **Session:** 92c4d51e-eb02-4299-823a-1a6b8270f045
+> **Current Version:** 1.9
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [../changelog/safe-io.changelog.md](../changelog/safe-io.changelog.md)
 
 ---
@@ -11,7 +11,7 @@
 
 `safe-io.md` is the active runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior.
 
-It consolidates previously separate rule chains into one body-sufficient runtime rule while preserving the behavior needed at execution time.
+Selected [runtime compaction](design/runtime-compaction.design.md) consolidates read/output reminders while preserving dedicated-tool preference, deterministic caps, material failure visibility, parent-first chain intake, burst threshold/narrow-or-route timing and compact-thrash maintenance. Routing owns topology/permissions, not this capture contract.
 
 P099 refinement extends the target state with delegate-first aggregate read/output burst signals, explicit burst-risk posture, and tighter coordination with worker-routing when leader raw intake would become the expensive path.
 
@@ -24,6 +24,8 @@ P100 refinement: this owner may compress repeated burst-signal presentation and 
 This design owns the target-state shape for safe file reading, safe terminal output, sharded design/changelog reads, and high-output command control.
 
 It also owns read/output-side delegation triggers for aggregate-read bursts and noisy command flows, while leaving routing topology and worker orchestration to `worker-routing-and-context.md`.
+
+Temporary output capture is distinct from reusable tool/test implementation, whose lifecycle belongs to [Coding Discipline](coding-discipline.design.md). Use session-unique temporary output or an existing project-owned output root under its contract. Prevent stray repo-local debug artifacts without excluding legitimate source tools or governed test fixtures, and without treating temporary storage as a default implementation owner. Preserve deterministic caps, terminal exit status and material failure visibility.
 
 The runtime rule should stay compact enough to load as an active rule, but substantive enough to guide behavior without relying on deleted legacy root files.
 

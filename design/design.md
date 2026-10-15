@@ -3,10 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.68
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
+> **Current Version:** 10.72
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 (2026-10-15)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
+> **Selected Target:** v10.72 docs cadence, task-evidence handoff, recipient clarity and project-owned tooling within the existing nineteen owners; Main v10.69–v10.71 baseline retained
 
 ---
 
@@ -14,7 +15,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Released `v10.68 / P151` keeps the same 19 body-sufficient source-owned Runtime Rules while advancing two existing owners. Authority and scope locks source/governed development, commit-source, and publication-source state to the user- or project-selected Active Project Root; document integrity distinguishes the exact Runtime installation payload from full-project convergence and blocks closeout when source state remains split or unexplained. Case 19 and M41-M45 exercise forbidden alternate development, correct root-only work, disposable evidence locations, blocked-root stop behavior, and mixed proof results. Released `v10.67 / P150` remains the immutable architecture-conformance predecessor, and released `v10.64` retains the repository-only `script/patch-timeline.mjs` Tool outside runtime installation.
+Selected `v10.72 / P073-19` keeps the fact/contract-first coding baseline and refines six existing owners. [Execution](execution-and-goal-frame.design.md) separates prerequisite design/approval from batched result sync, enables evidence-backed challenge of harmful conventions and uses deterministic tools for mechanical facts. [Tasks](phase-todo-artifact.design.md) preserve working evidence and finalize durable docs before last family closure; [document governance](document-governance.design.md) synthesizes only affected owners. [Register](communication-register.design.md) separates user replies from peer coordination; [coding](coding-discipline.design.md) owns reusable tools versus temporary probes, with [Safe I/O](safe-io.design.md) limited to capture/output consequences. The same nineteen substantive owners, meaningful history, [compaction](design/runtime-compaction.design.md), safety/proof/source-root boundaries and prior action reporting remain. No additional Rule, framework, blanket temporary-storage ban or Product change is selected. Version, implementation/proof and publication history belong to their existing owners.
 
 ---
 
@@ -136,6 +137,7 @@ Open the smallest shard that answers the question.
 
 - [repository-model.design.md](design/repository-model.design.md) — active surface roles and normalized documentation model
 - [runtime-architecture.design.md](design/runtime-architecture.design.md) — 19-rule runtime inventory and category view
+- [runtime-compaction.design.md](design/runtime-compaction.design.md) — unchanged compaction, mechanism preservation, additional disposition and source/install boundaries; v10.69 measurement history remains in changelog
 - [governance-contracts.design.md](design/governance-contracts.design.md) — metadata, sync order, startup, phase, rollover, and memory contracts
 - [installer-architecture.design.md](design/installer-architecture.design.md) — project-local Claude Code helper install contract, cleanup boundary, and verification model
 - [playground-architecture.design.md](design/playground-architecture.design.md) — governed playground family role, fact/observed/virtual separation, coverage model, and update flow
@@ -163,9 +165,10 @@ Release validation for this master design chain should confirm:
 - this parent remains compact and body-sufficient
 - child shards are reachable and role-correct
 - runtime/design/changelog versions align
-- the authority-and-scope and document-integrity triads advance together to 2.8/1.14 while the other 17 Runtime Rules remain byte-and-mode identical and the ordered inventory stays exactly 19
-- Case 19 and M41-M45 cover forbidden alternate development, correct root-only mutation with preserved dirty state, disposable evidence/installation locations, blocked-root stop behavior, and Runtime-payload-PASS/project-convergence-BLOCKED results
-- final `plugin/**` path/status/mode/hash state equals the pre-wave verification-only baseline while all P151 mutation remains inside the Active Project Root
+- all nineteen owner triads match the current [runtime inventory](design/runtime-architecture.design.md); ordered installer scope stays exactly nineteen
+- material before/after trigger/action/exception/force/proof coverage passes, not only size/registry matching
+- Case 19/M41-M45 remain protected source-root/proof-layer examples; they are not new live AI behavior evidence
+- plugin changes are limited to an exact demonstrated source-local defect if its gate passes; unrelated state is preserved and checkpoint proof is labeled by its actual capture scope
 - Case 18 remains protected evidence for architecture mutation preflight, regression-versus-gap diagnosis, invented-path functional false-positive rejection, bounded repair, approved expansion, no-fork correction, and functional-plus-conformance verification
 - Cases 17/12/04 remain protected evidence for reachable closure, explicit live-gate selection, task-list successor separation, authenticated capability, deterministic retry, and supplied-artifact proof limits
 - forward-valid phase grammar explicitly includes `phase-NNN`, `phase-NNN-NN`, and `phase-NNN-NN-NN`

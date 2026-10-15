@@ -1,8 +1,8 @@
 # Changelog - Memory Governance and Session Boundary
 
 > **Parent Document:** [../memory-governance-and-session-boundary.md](../memory-governance-and-session-boundary.md)
-> **Current Version:** 1.8
-> **Session:** d42465eb-30a7-4bc8-b9d6-03e52306e9a5
+> **Current Version:** 2.0
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 
 ---
 
@@ -10,6 +10,8 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 2.0 | 2026-09-30 | **[Aligned current owner references after compaction](#version-20)** | adda8afb-6edf-466b-add9-b9649b718e01 |
+| 1.9 | 2026-09-30 | **[Compacted scoped memory and active-index contract](#version-19)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.8 | 2026-08-09 | **[Compacted memory integration handoffs](#version-18)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
 | 1.7 | 2026-05-08 | **[Added Memory-base relative root-index compaction](#version-17)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
 | 1.6 | 2026-05-07 | **[Added memory index overflow maintenance trigger](#version-16)** | d42465eb-30a7-4bc8-b9d6-03e52306e9a5 |
@@ -22,6 +24,24 @@
 | | | Summary: Created a new design/runtime/changelog triad that governs memory role boundaries, root `MEMORY.md` index behavior, `global/path/archive` taxonomy, path-primary applicability, session provenance, canonical `SCOPE.md`, and archive lifecycle | |
 
 ---
+
+<a id="version-20"></a>
+## Version 2.0: Aligned current owner references after compaction
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Repointed memory-boundary integration links to current evidence, presentation, Safe I/O and document-governance owners after legacy chains were absorbed.
+- No memory migration/index mutation occurred; this is a source-governance correction and remains unpublished.
+
+<a id="version-19"></a>
+## Version 1.9: Compacted scoped memory and active-index contract
+
+**Date:** 2026-09-30
+**Session:** adda8afb-6edf-466b-add9-b9649b718e01
+
+- Consolidated applicability/freshness/index/lifecycle wording while preserving one active hook, Scope/Memory-base relative notation, path precedence and inactive archive.
+- Optional recall remains supplemental and memory remains context; P073-16 changes no live memory files or indexes.
 
 <a id="version-18"></a>
 ## Version 1.8: Compacted memory integration handoffs

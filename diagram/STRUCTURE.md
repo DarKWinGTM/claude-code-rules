@@ -4,7 +4,7 @@
 > **Current Doctrine Basis:** [../docs/superpowers/specs/2026-06-02-rules-diagram-infrastructure-doctrine.md](../docs/superpowers/specs/2026-06-02-rules-diagram-infrastructure-doctrine.md)
 > **Design Alignment:** [../design/document-governance.design.md](../design/document-governance.design.md)
 > **Current Doctrine State:** P131 diagram infrastructure refinement
-> **Session:** 1f1873d2-0feb-485f-a5ff-d383254590dd
+> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
 
 ---
 
@@ -100,7 +100,7 @@ flowchart TB
     DocsSP["docs/superpowers/<br/>Specs / plans / supporting design material"]
     Playground["playground/<br/>Governed non-runtime behavior cases"]
     Plugin["plugin/<br/>Optional downstream support packages"]
-    Template["phase-implementation-template.md<br/>Helper, not authority"]
+    Template["template/phase-authoring-template.md<br/>Helper, not authority"]
   end
 
   README --> RootRules

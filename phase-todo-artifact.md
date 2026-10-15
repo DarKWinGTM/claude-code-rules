@@ -1,224 +1,125 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.36
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.36
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e
+> **Current Version:** 1.38
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.38
+> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
----
-
 ## Rule Statement
 
-**Core Principle: Resolve required design/diagram/changelog/TODO/phase/patch and live-task posture before governed work drifts; use phases only when staged execution adds value; keep `phase/SUMMARY.md` and `TODO.md` compact; and use the built-in task list as live state for non-trivial execution. Preserve strict phase lineage, selected-design semantic coverage, verification-before-closeout, and bounded helper-lane linkage without transferring source ownership.**
+**Core Principle: Activate artifacts, phases and live tasks only for real ownership/persistence/output gates. Track bounded outcomes rather than commands/files/helpers, preserve strict lineage and selected semantic proof, and keep durable/live state compact. Findings and available helpers do not recursively generate work.**
 
-พูดง่าย ๆ: lock ก่อนว่า artifact ไหนเป็น owner, ใช้ phase เมื่อมี stage/gate จริง, `TODO.md` เป็น durable index, และ built-in tasks เป็น live board.
+พูดง่าย ๆ: หลายคำสั่งเป็นงานเดียวได้; เปิดเอกสาร/task/phaseเมื่อมีหน้าที่จริง และจบตามผลลัพธ์ที่เลือก.
 
----
+## Part A — Artifact Startup and Ownership
 
-## Part A — Artifact Initiation and Startup
+Before meaningful governed work resolve relevant surfaces as `use existing`, `create now`, `ask now`, `not required`; live tasks as `initialize now` or `not required`. Lightweight exploration may precede this boundary; target planning, staged rollout/durable decomposition/Patch review may not. One checked outcome/owner classification discharges all non-triggered surfaces together—no ritual per absent artifact. Reuse fitting authority; ask only about material ownership/scope/workflow/approval ambiguity. Re-evaluate affected posture only if work shape changes. Retrospective artifacts are repair, not normal startup; `trivial`, cleanup or `not required` never authorizes removal.
 
-### 1) Startup posture
+Default order: design → diagram when triggered → changelog → TODO → phase → Patch.
 
-Before meaningful governed work, resolve each relevant surface as:
-- `use existing`
-- `create now`
-- `ask now`
-- `not required`
-
-For the built-in task list use `initialize now` or `not required`.
-
-Lightweight exploration may precede this boundary, but target-state planning, multi-file governed planning/execution, rollout sequencing, TODO decomposition, or patch review does not. Reuse fitting authority; create only when needed; ask when ownership, scope, workflow, or approval-sensitive meaning is ambiguous. Retrospective artifact creation is repair, not the normal path. If trivial work expands, rerun startup resolution. Never use `trivial`, cleanup, or `not required` as removal authority.
-
-Default startup order:
-1. design
-2. diagram when materially triggered
-3. changelog
-4. TODO
-5. phase
-6. patch
-
-Required triggers:
-- **Design:** new/materially changed target behavior, policy, contract, or architecture
-- **Diagram:** work materially changes project structure, visual authority, diagram relationships, visual architecture/folder topology, or an existing governed diagram's correctness; ordinary design edits may use `not required`, and no subject diagram opens automatically
-- **Changelog:** new governed chain or version-impacting behavior
-- **TODO:** multi-step, persistent, tracked, or multi-slice work
-- **Live task list:** active non-trivial work; expected for phase-backed execution
-- **Phase:** meaningful stages, dependencies, verification/rollback gates, multi-system/owner coordination, or explicit request
-- **Patch:** useful governed before/after review surface
-
-When Patch posture is `create now`, capture one UTC instant to seconds and derive both the filename and `Created At` metadata from that same value under the exact contract in `document-governance.md`. Create the target exclusively, fail on collision, and never overwrite or invent `-v2`, `_final`, `_copy`, or another suffix. Record auditable `Creation Evidence`; moving or completing the Patch preserves its original timestamp.
-
-Emergency exception: when delay materially increases immediate harm, `action-safety.md` may permit only the smallest safe reversible containment/diagnostic action before this sequence. Approval-sensitive work remains gated; startup/recovery synchronization resumes immediately afterward.
-
-### 2) Repair and phase/patch boundaries
-
-When God-artifact pressure cannot be repaired safely in place, resolve its owner immediately: design sharding → design; active same-chain version detail → `changelog/<chain>/v*.changelog.md`; inactive completed/reference history → `changelog/done/` when that governed role applies; TODO accumulation → TODO history/done; God Phase → phase lineage; God Patch → patch; non-trivial cross-surface repair → live tasks. No fallback owner or automatic resolution path exists for changelog content. Use existing authority when it fits, create when ownership is clear, and ask only for real ambiguity.
-
-Clear staged work may be `use existing`, `create now`, or `ask now`; `create now` still passes the lineage gate and never implies a new major. Patch is non-default during greenfield/baseline work unless a real before/after review surface exists or the user requests it.
-
-When posture affects continuation, state whether work is lightweight or governed, the relevant posture/reason, and any gate before proceeding. Keep rendering compact but do not hide unresolved required surfaces.
-
-### 3) Governed-chain startup decision
-
-When startup may append, split, or normalize design/changelog, apply `document-governance.md` and record only decision-changing state:
-
-```text
-docs_analysis:
-- document_role: <design | changelog>
-- namespace_and_subject: <scope + real chain subject>
-- active_parent: <checked file + generic/semantic model + coexistence state>
-- selected_chain_shape: <canonical shape>
-- transition_basis: <bootstrap exit, shard opening, or append-vs-shard reason>
-- action: <append | sibling shard | same-stem child | normalize | history/done>
-- example_basis: <observed/extracted/selected/equivalence state when an example is used>
-- integrity_updates: <map, backlinks, current/version alignment, orphan prevention>
-```
-
-Resolve ambiguity before deeper edits; do not restate chain doctrine or append merely because no shard exists.
-
----
-
-## Part B — Phase Implementation
-
-### 1) Phase workspace and applicability
-
-Use phases for meaningful stages, rollout/migration, dependency sequencing, verification/rollback/containment gates, multi-system/owner coordination, or design/TODO/changelog movement. Do not force phases onto one obvious low-risk change, an ordinary checklist, or filler stages.
-
-When phases are used:
-- `phase/SUMMARY.md` is the mandatory compact live roadmap/index
-- active execution files live under `phase/`
-- forward-valid forms are `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, and `phase/phase-NNN-NN-NN-*.md`
-- observed alphanumeric forms such as `phase-NNN-NNa-*.md` remain legacy-only unless later doctrine normalizes them
-- daily movement may use `phase/history/YYYY-MM-DD*.md`; completed detail may use `phase/done/`
-- live phase files never live inside patch artifacts
-
-`phase/history/` is referenced movement history; `phase/done/` is inactive completed history. Active scans begin at compact `phase/SUMMARY.md` and active child files.
-
-### 2) Identity grammar and strict lineage gate
-
-Identity grammar:
-- major: `NNN`
-- subphase: `NNN-NN`
-- nested child: `NNN-NN-NN`
-- `NNN-NNa` is legacy-only; deeper hybrids such as `NNN-NN-NNb` are not forward-valid unless later doctrine normalizes them
-
-Choose the smallest truthful identity through strict fall-through, not a menu:
-1. **Update current active phase first** when checked summary, active child, and phase-linked tasks still share the execution slice, goal, output, gate, dependency path, or rollback boundary.
-2. **Create an existing-family child second** when current phase cannot absorb the work but the same bounded gate/rollout family continues. A major parent opens `NNN-NN`; a subphase opens `NNN-NN-NN`.
-3. **Create a new major third** only after evidence rules out current and child fit and the work forms a distinct top-level rollout family, capability/output, verification/release gate, or rollback boundary. Record why current and child failed.
-4. Ask or record the governing basis when several lineages remain plausible.
-
-A new file, completed current phase, task continuation, fresh concern wording, or milestone closeout is not itself a lineage break. Child fit requires shared goal/output/gate meaning, immediate parent lineage, and bounded rollout continuity—not broad topic similarity.
-
-A God Phase carries independently completable primary goals, unrelated outputs/gates/rollback boundaries, or mixed roadmap/changelog/TODO/patch/execution roles. Repair through the same lineage gate, update summary/tasks when navigation changes, preserve legacy grammar, and block closeout until touched pressure is repaired or visibly planned.
-
-### 3) Design-to-phase synthesis and lanes
-
-`/phase` consumes normalized design truth and governed patch review one-way; it is not target-state authority. Derive outcome-sized phases from design by dependency, risk, rollout boundary, output, and verification gate. Update summary, active children, and phase-linked live tasks when posture is `create now` or `use existing`, and continue phase-by-phase unless a real stop gate exists.
-
-Ask only when design ambiguity, materially different rollout choices, missing access, destructive/high-impact action, or approval-sensitive scope changes the route.
-
-For broad phase-backed objectives, define bounded implementation, verification, governance/release-sync, evidence-audit, or research lanes by goal, output, and gate. Lane changes still pass lineage; do not scaffold trivial/tightly sequential work. `worker-routing-and-context.md` may attach bounded helper support, while phase retains the staged map and source ownership remains with the leader.
-
-### 4) Selected design-slice semantic coverage
-
-Before a selected design slice is called implemented or complete:
-- identify the selected section/shard/target subset
-- extract material behavior, invariant, failure mode, required dependency/state, acceptance/verification clue, and explicit out-of-scope boundary
-- keep enough coverage in phase/task surfaces to prevent silent loss without copying the whole design
-- track implementation coverage as `not started` or `implemented`; `implemented` is intermediate while material verification remains
-- assign terminal disposition before closeout: `verified`, `deferred`, `blocked`, `not applicable`, or `out of scope`
-- keep deferred/blocked/not-applicable/out-of-scope status visible
-
-A headline output does not close uncovered durability, recovery, retry, idempotency, rollback, or other selected semantics. Phase tracks execution coverage; it must not become a second design authority.
-
-### 5) Roadmap, goal, and patch linkage
-
-When evidence supports forecasting, `phase/SUMMARY.md` should carry a bounded roadmap/matrix with goal, output, gate, dependencies, deliverables, and status: `active`, `selected`, `implied-unblocked`, `proposal`, `blocked`, `needs-approval`, or `none opened`. Roadmap context is not automatic execution authority. Before ending closeout, inspect checked roadmap and goal surfaces; when meaningful successor work exists, name it with why/output/gate.
-
-Design, active phase, built-in tasks, TODO, and checked implementation state supply governed goal evidence; release/review surfaces matter only when they affect completion. Phase/tasks preserve selected-goal linkage and its verification gate; goal construction belongs to `goal-authoring-and-route-support.md`.
-
-When patch is used, `phase/SUMMARY.md` names the exact timestamped governing Patch path(s), and each patch-derived child has exact `Patch References`; do not replace exact links with a Patch ID, index lookup, basename-only guess, or wildcard. Use explicit `none` only when Patch is genuinely unnecessary.
-
-### 6) Phase responsibility and closeout
-
-`phase/SUMMARY.md` owns the compact global execution picture: context, target, risk/constraints, dependencies, phase/roadmap map, active child and history/done pointers, lineage, design/patch references, handoffs, TODO/changelog coordination, end-to-end verification, next-goal basis, and overall rollback. Its normalized compact form must preserve current status, active-or-latest-completed phase visibility, verification focus, rollback/containment state, and explicit history/done references. Push detailed execution into children/history/done.
-
-Each active child defines or maps to:
-- summary/phase ID/status, design references, patch references or `none`
-- objective, why, expected output, completion/verification gate, entry conditions, and out-of-scope
-- selected design slice/semantic status and lane ordering when applicable
-- affected artifacts, TODO/changelog coordination, checklist
-- Development Verification / TestKit Coverage when coding verification affects exit
-- verification/exit/closeout, risks/rollback, and meaningful next possibilities
-
-Child phases own local verification and rollback/containment; summary owns end-to-end verification and overall rollback. Closeout reports delivered capability/behavior/governance/verification gate, user/system impact, evidence-aligned verification, explicit semantic-item dispositions, relevant next-phase state, and a supported successor recommendation when one exists—not just files/tasks/audit state.
-
----
-
-## Part C — TODO and Live Tasks
-
-### 1) Durable versus live state
-
-`TODO.md` is the compact durable current execution index, not version authority or the primary live board. It must not absorb live execution, detailed history, phase roadmap, release notes, or verification logs; version detail belongs in changelog and staged-execution detail in phase. Keep release/active-wave context, compact completed highlights, still-visible active/deferred items, and reachable history/done links; roll accumulated history under `document-integrity.md` without losing current/deferred visibility.
-
-The built-in task list is live execution state for non-trivial work: planned, in-progress, and completed slices. It is not a governed repository document and does not replace TODO durability.
-
-Use live tasks by default for work with 3+ steps, multiple files/stages, continuation across slices, active phases, distinct lanes, or separate implementation/verification outcomes. Do not force them onto trivial isolated lookup/fix work.
-
-### 2) Phase-linked task shaping
-
-For phase-backed work:
-- inspect current `/phase` first; execute current phase before later phases
-- keep lineage and phase context visible in task subject/description
-- shape outcome-sized tasks around output and gate, not individual commands
-- split implementation, verification, and governance/release-sync only when combining them hides gates/ownership
-- mark `in_progress` when work begins and `completed` immediately when the slice is actually done
-- before Goal closeout, reconcile every open task against the current Goal's selected proof layer: keep material source/non-live checks in the current task family, but move assistant-inferred or optional live/rendered observation into an unselected successor task so it cannot block code-level completion
-- when Goal/plan preflight or later evidence repairs an assistant-inferred infeasible done point, reconcile the task family immediately: remove that point from current blockers, retain already completed proof, and represent any later operation only as an unselected successor task
-- preserve a verification task while material checks for the selected current proof layer remain; do not preserve optional live proof as if it were a required current verification task
-- if the user or checked governed authority explicitly selected live proof and capability is unavailable, keep that task visibly blocked with its resume condition and apply `NO_RETRY_UNTIL_CHANGE` rather than looping
-- close satisfied implementation and source/non-live verification tasks before surfacing the separate live-verification successor
-- discover next work from the task list, then active phase, summary, TODO, and checked implementation
-
-When a selected non-trivial goal/plan enters execution, materialize bounded tasks before deep continuation. Authoring alone does not trigger execution. Keep goal/plan linkage; ask one substantive question only when objective, scope, gate, access, or approval is insufficient. Worker helper topology belongs to `worker-routing-and-context.md`.
-
-Progress rendering belongs to `explanation-and-presentation.md`; do not turn task/phase state into a dashboard or stop ceremony.
-
-### 3) Tracking failure, simplicity, and sync
-
-If live task creation/update fails, determine whether tracking is material. Repair task title/scope/phase linkage before claiming non-trivial phase-backed work synchronized. A bounded research/review lane may continue when tracking is non-material, but report the limit; never use task friction to skip required durable sync. Restore material tracking before broad continuation.
-
-Pending sections contain only pending items. Completed work belongs in Completed/History/referenced `todo/done/`. Avoid counters, priority grids, per-task timestamps, deadlines, telemetry blocks, and one-task-per-command overhead.
-
-When governance changes governed artifacts, TODO sync order remains:
-1. design
-2. runtime rule
-3. changelog
-4. TODO, including rollover references when triggered
-
-Later sync does not weaken early startup or live-task requirements.
-
----
-
-## Trigger Model
-
-| Trigger | Required handling |
+| Surface | Real trigger |
 |---|---|
-| new chain or multi-file governed change | resolve design, conditional diagram, changelog, TODO, phase/patch, and live-task posture |
-| staged/rollout/verification gates | establish phase through strict lineage and synthesize current-phase work from design truth |
-| broad phase objective or governance/release-sync | define outcome-sized lanes/tasks and separate gates when ownership would blur |
-| selected design semantics exceed headline output | extract obligations and explicit implementation/terminal states |
-| active phase/lane or selected goal execution | expose phase context, materialize bounded tasks, and continue current-phase-first |
-| oversized TODO/summary or God Phase/TODO | use preservation-first rollover/repair while keeping active navigation |
-| implementation done but selected source/non-live verification remains | keep that verification visible; do not close early |
-| optional or assistant-inferred live proof remains after the code gate passes | close satisfied current tasks and route live proof to an unselected successor task; do not leave it as a current blocker |
-| explicitly selected live proof is unavailable | keep the live task blocked with a resume condition and stop unchanged retry under `NO_RETRY_UNTIL_CHANGE` |
-| objective complete with meaningful successor | report the supported next phase/wave/goal with why/output/gate |
+| design | new/material target behavior, policy, contract or architecture |
+| diagram | changed structure/visual authority/relationships/topology or existing diagram correctness; ordinary design edits may be `not required`, no automatic subject diagram |
+| changelog | new governed chain or version-impacting behavior |
+| TODO | execution must persist beyond interaction, spans real slices or needs durable index—not command count |
+| live tasks | independently meaningful acceptance/block/handoff/resume gates, phase work, material continuity or explicit tracking request |
+| phase | independent stages/dependencies/approval/proof/rollback, rollout/multi-owner integration or explicit request—not individual helpers/files |
+| Patch | before/after review/rollback boundary adds real value or user requests it—not ordinary edits/greenfield by reflex |
 
-## Anti-Patterns
+When Patch is `create now`, capture one UTC instant to seconds and derive filename plus `Created At` from that value. Follow [document-governance.md](document-governance.md)'s exact grammar/evidence; create exclusively, fail on collision, no overwrite/suffix fallback. Revisions/moves preserve original creation identity. Emergency startup exception belongs to action safety: only smallest safe reversible containment/diagnosis when delay materially increases harm, with normal recording resumed immediately.
 
-Avoid unresolved startup posture; `create now` or task continuation treated as automatic new-major authority; `not required`/cleanup as deletion authority; filler phases/lanes; invalid forward phase grammar; God Phase/TODO bodies; history replacing active entrypoints; live tasks replacing durable state; authoring treated as execution; hidden goal/phase/gate context; closeout before selected semantic disposition or verification; optional live observation left as a blocker after the current code gate passes; unchanged retry against unavailable live capability; and file/task-only closeout without delivery, impact, and evidence.
+### Touched artifact pressure
+
+When density/God pressure materially affects selected work and cannot safely stay local, route to the real owner: design active sharding; changelog same-chain `changelog/<chain>/v*.changelog.md`; inactive applicable history `changelog/done/`; TODO/phase history/done; God Phase via lineage; God Patch via review family. No changelog fallback authority. Clear fitting owner permits reuse/create; ambiguity requires a bounded question. Unrelated pressure stays advisory. `create now` never implies a new major; task/phase slices need independent outputs/gates, not extracted helper count.
+
+State lightweight/governed posture and unresolved gate only when it changes continuation. [document-integrity.md](document-integrity.md) owns preservation, rollover and no-loss proof.
+
+### Governed-chain startup
+
+Before append/split/normalize design/changelog, apply the document owner and record decision-changing `docs_analysis`:
+- `document_role`, `namespace_and_subject`
+- `active_parent` with generic/semantic/coexistence basis
+- `selected_chain_shape`, `transition_basis` (bootstrap exit/shard/append basis)
+- `action` (`append | sibling shard | same-stem child | normalize | history/done`)
+- `example_basis` (observed/extracted/selected/equivalence when used)
+- `integrity_updates` (map/backlinks/version/orphan prevention)
+
+Do not infer nested detail from a filename or append merely because no shard exists. Resolve authority ambiguity before growth; do not restate the whole chain contract.
+
+## Part B — Phase Execution and Lineage
+
+Phases are for selected real staging/rollout/dependency/approval/proof/rollback/owner boundaries, not one same-owner outcome plus focused tests or filler stages. Active navigation is mandatory bodyful `phase/SUMMARY.md` → active child files; live execution never resides inside Patch artifacts. Daily movement is `phase/history/YYYY-MM-DD*.md`; completed detail is inactive `phase/done/`, reachable through active references.
+
+Forward-valid paths: `phase/phase-NNN-*.md`, `phase/phase-NNN-NN-*.md`, `phase/phase-NNN-NN-NN-*.md`. Major `NNN`, subphase `NNN-NN`, nested child `NNN-NN-NN`; observed `NNN-NNa` is legacy-only; deeper hybrid `NNN-NN-NNb` is not forward-valid unless later doctrine explicitly normalizes it.
+
+### Strict fall-through, not a menu
+
+1. **Update current active phase first** if checked summary/child/tasks share execution slice, goal/output/gate, dependency or rollback boundary.
+2. **Existing-family child second** if current cannot absorb but bounded rollout/gate family continues: major opens `NNN-NN`, subphase opens `NNN-NN-NN`.
+3. **New major third** only when checked current/child fit fails and a distinct top-level capability/output/rollout/proof-release/rollback family exists; record failed earlier bases.
+4. Ask/record governing basis only when several lineages remain materially plausible.
+
+A new file, completed phase, continued task, fresh concern or milestone is not a lineage break. Topic similarity alone does not prove child fit: shared meaning, immediate lineage and bounded rollout must match.
+
+A God Phase mixes independent primary goals/unrelated outputs/gates/rollback or design/changelog/TODO/Patch roles. Repair via the same lineage gate, update navigation/tasks, preserve legacy history and block closeout until touched pressure is repaired or visibly planned.
+
+### Design-to-phase synthesis and coverage
+
+`/phase` consumes normalized design/Patch review one-way, never replaces target truth. Derive outcome stages by dependencies, risk, rollout/output/proof; update summary/active children/live tasks when selected. Keep setup/edit/focused check/correction together for one gate; responsibility-family repair is not one phase per helper/facade/file. Helpers remain subordinate and main source integration stays leader-owned.
+
+For each selected design slice identify behavior/invariants/failure modes/state-dependencies/acceptance clues/exclusions. Preserve concise coverage in phase/tasks, not the whole design. Track `not started` or `implemented` (intermediate until material proof); final disposition is `verified`, `deferred`, `blocked`, `not applicable`, `out of scope`, visibly preserving pending semantics. Headline output cannot hide uncovered durability/recovery/retry/idempotency/rollback.
+
+### Summary, child and reference roles
+
+Summary owns compact global context/target/risk/dependency/roadmap, active-or-latest-completed visibility, lineage/design/Patch links, handoffs/TODO/changelog, end-to-end proof and overall rollback. Each active child defines or maps to its summary, phase ID/status, design references and local TODO/changelog coordination. Children own objective/why/output/gate/entry/exclusions, selected semantics, affected artifacts/checklist, local verification/containment and decision-relevant already-governed next state. Coding exits show `Development Verification / TestKit Coverage` or equivalent. Move detailed history to referenced history/done rather than overload active bodies.
+
+When evidence supports forecasting, roadmap entries name goal/output/gate/dependencies/deliverables and `active`, `selected`, `implied-unblocked`, `proposal`, `blocked`, `needs-approval`, `none opened`. Visibility is not automatic execution. [execution-and-goal-frame.md](execution-and-goal-frame.md) owns continuation/successor posture; goal construction belongs to its goal-authoring owner.
+
+Summary and Patch-derived children name exact timestamped `Patch References`; no ID/index/basename/wildcard guess. `none` is valid only if Patch is genuinely unnecessary. Closeout states delivered behavior and impact, matching proof/limits, semantic dispositions and actual next-phase state—not merely files/tasks/audit counts.
+
+## Part C — Durable TODO and Live Tasks
+
+`TODO.md` is a compact durable current index, not version authority, primary live board, roadmap, release timeline or log dump. Keep active/deferred items, release/wave context and brief completed highlights with reachable history/done. Version detail belongs changelog; stage detail belongs phase. Live tasks coordinate independently acceptable planned/in-progress/completed outcomes without replacing TODO persistence.
+
+Admit tasks for two or more meaningful outcomes/gates, phase-backed work, material handoff/continuity, or explicit user request. Several commands/files or implementation plus its focused test are not sufficient alone. One outcome stays one task unless distinct owner/approval/rollback/proof/resume conditions justify split. Keep useful ordered substeps, selected decisions, changes, actual checks, evidence pointers and remaining obligations inside those tasks, in the working language; honor an explicit Thai checklist request. Checkpoint real continuation/handoff risk, not every command. Do not create tasks from every finding/helper/worker lane.
+
+### Phase-linked task lifecycle
+
+- inspect current phase and execute selected current work before unselected later phases; subject/description keeps phase/goal linkage when applicable
+- shape by accepted output/gate; separate implementation/proof/governance only for real acceptance/owner/resume distinctions
+- merge required same-owner corrective findings into current task; leave optional cleanup/successors unselected
+- mark `in_progress` before work and `completed` promptly only when its bounded gate is actually satisfied
+- preserve selected semantic/proof coverage and material verification tasks, including blocked state/resume when required capability is unavailable
+- discover next work from tasks → active phase/SUMMARY → compact TODO → checked implementation; history/done through active references only
+
+Consume execution's proof-selection policy rather than reconstruct it: close satisfied source/non-live tasks before optional live/rendered observation, which stays excluded/advisory without a task until selected. If preflight repairs an infeasible assistant-inferred Goal/plan point, remove that accidental blocker immediately and retain completed proof; explicitly selected live proof remains blocked with its enabling condition under `NO_RETRY_UNTIL_CHANGE`. Do not silently demote required proof or leave optional proof blocking the current family.
+
+Materialize tasks for selected execution only when admitted; authoring alone is not execution. Worker support cannot manufacture task boundaries. Ask one substantive work question only for insufficient scope/gate/access/approval, never internal routing menus. Progress layout belongs to presentation and must not become a dashboard or pause ceremony.
+
+### Evidence handoff and finalization
+
+When a selected family owes durable docs, initialize a real docs-finalization task before all relevant tasks close. Technical tasks may close at their verified gates after handing off their evidence. Finalization reads relevant completed and pending task details, checks them against source/design/proof, synthesizes the fitting durable owners and verifies that handoff before completing last in that family. Do not empty the board first and then recover details from transcripts. An outstanding task is not a persistence guarantee; no particular cleanup/deletion mechanism is assumed.
+
+No docs obligation means no invented final task or dummy sentinel. Do not hold or close unrelated/other-session tasks. Missing evidence requires an honest coverage limit and resume condition, not board reset/recreation or fabricated prior results. [document-governance.md](document-governance.md) owns synthesis by document role, not raw task-log duplication.
+
+### Tracking failures and synchronization
+
+If task creation/update fails, decide whether tracking is material. Repair title/scope/phase linkage before non-trivial phase-backed sync/closeout; bounded research may continue if tracking is non-material with its limitation stated. Task friction cannot excuse required durable state. Do not infer ownership/completion solely from convenient board status; checked design/implementation/proof remains stronger evidence.
+
+Pending sections contain pending work only; completed detail goes to completed/history/referenced done. Avoid counters/priority grids/per-task timestamps/deadlines/telemetry and task-per-command overhead. Governance TODO order is design → runtime rule → changelog → TODO (plus required rollover links); late sync does not replace startup.
+
+## Trigger Dispatch and Boundaries
+
+- material governed outcome → classify once, activate only real owner surfaces
+- independently staged rollout/approval/proof → strict phase lineage and semantic coverage
+- selected Goal/phase execution → outcome-sized task admission, visible owner/gate
+- selected proof pending → required verification remains; optional live successor does not
+- oversized active entrypoint → preservation-first owner repair, never deletion by size
+- bounded gate passes → reconcile/close tasks; successor visibility does not select its execution
+
+No filler phases, one task/phase/Patch per microstep, automatic new major, orphan history, second design authority, edit-only completion, unchanged retry or unselected successor scaffolding.
 
 ## Integration
-Related owners: [document-governance.md](document-governance.md) and [document-integrity.md](document-integrity.md) (roles/preservation/rollover); [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) (routing/intake); [coding-discipline.md](coding-discipline.md) (verification/TestKit); [execution-and-goal-frame.md](execution-and-goal-frame.md) and [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md) (continuation/goal route).
+
+Artifact/chain/integrity: [document-governance.md](document-governance.md), [document-integrity.md](document-integrity.md). Work/proof/goal: [execution-and-goal-frame.md](execution-and-goal-frame.md), [goal-authoring-and-route-support.md](goal-authoring-and-route-support.md), [coding-discipline.md](coding-discipline.md). Helper/capture: [worker-routing-and-context.md](worker-routing-and-context.md), [safe-io.md](safe-io.md).
