@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-10-15
-> **Current Release:** v10.68 immutable published predecessor; v10.72 source/install verified, selected publication receipt pending
-> **Active Wave:** P073-19 final docs and full Main publication
+> **Current Release:** v10.72 published; source/install, fresh public-tag payload and Release receipt verified
+> **Active Wave:** none selected; P073-19 publication/proof and final receipt recorded
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,9 +10,11 @@
 
 ## Active / In Progress
 
-- [ ] **P073-19 / v10.72 docs cadence and task-evidence handoff:** six Runtime/design owners and four virtual scenario families are implemented and locally verified; exact Main19 installation passed with thirteen unchanged and other-owner/global preservation. Candidate21/21 synthetic decisions matched; baseline20 matched and one ordering response was partial, not a manufactured RED. Final docs/publication task remains open until scoped commit/push/tag/Release and public-payload proof are recorded. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md), [history](changelog/changelog/v10.72-docs-sync-and-task-handoff.changelog.md), [publication receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
+No active Main execution slice is selected; P073-19 source/install, publication proof and final receipt are recorded below.
 
 ## Recently Completed
+
+- [x] **P073-19 / v10.72 docs cadence and task-evidence handoff:** six existing owners and four virtual scenario families verified; source Main19 installed with thirteen unchanged and other-owner/global preservation. Candidate21 synthetic decisions conform; baseline20 conform and one ordering response was partial. Exact77-path commit `d6f6dec8c8c4cad8d2e790bc79f2d22967ef1e12` was atomically fast-forward published with immutable annotated tag object `24e00938201207ba4d28ebb9fef59d9af31a980a`; the non-draft/non-prerelease Release receipt, fresh public payload and empty-target Main19 installation were checked. Final docs received actual evidence before last task closure; no model-effect or whole-project claim. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md), [history](changelog/changelog/v10.72-docs-sync-and-task-handoff.changelog.md), [receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
 
 - [x] **P073-18 / local v10.71 source-install slice:** coding1.8 and execution1.35 implement one generic contract-first development method from fourteen lenses; no per-case Main or new additional files.
   - Fourteen clause checks, nine safeguards, twelve virtual scenarios and Bash/PowerShell installer fixtures passed; runtime19 bytes/modes/metadata/body/manifest matched source without quarantine. Other17 Main/shared/global/additional2 and protected finite baseline remained unchanged.
@@ -99,7 +101,6 @@
 
 - [ ] **P073-16 conditional trial follow-up:** original same-outcome status conflict and candidate-generation incident were not found in checked JSONL scope. No Main status delta or plugin repair was promoted; the two unique trials remain at their original runtime paths.
   - Gate: admissible original witness plus matching source/regression boundary, or a fresh user-selected synthetic-regression repair scope. Live task18 remains visibly deferred; availability or missing evaluation does not prove ineffective doctrine.
-- **Local v10.69/v10.70/v10.71 publication disposition:** now selected as the approved Main baseline of P073-19/v10.72 above, not a deferred or separately tagged release. Preserve each original unpublished closeout; plugin/support/additional changes remain excluded.
 - [ ] `memory-context-intelligence` phase 030 shared-marketplace bridge/reproof remains planned and approval-sensitive.
   - Gate: recheck current runtime state and obtain explicit action-and-scope approval before marketplace/install/enable/registry/cache mutation.
 - [ ] `memory-context-intelligence` phases 017-018 main RULES promotion/merge remain deferred; trial and historical evidence do not authorize promotion.

@@ -1,9 +1,9 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.72 (source/install verified; publication receipt pending)
+> **Current Version:** 10.72 (published; source/install and fresh public-tag payload verified)
 > **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
-> **Latest Published Version:** 10.68
+> **Latest Published Version:** 10.72
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
 
@@ -13,7 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
-| 10.72 | 2026-10-15 | **[Docs cadence, task-evidence handoff and reusable tooling — source/install verified; Release receipt owns publication](changelog/v10.72-docs-sync-and-task-handoff.changelog.md#version-1072)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
+| 10.72 | 2026-10-15 | **[Released docs cadence, task-evidence handoff and reusable tooling — source/install and public-tag proof verified](changelog/v10.72-docs-sync-and-task-handoff.changelog.md#version-1072)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 10.71 | 2026-09-30 | **[Evidence-led coding workflow — unpublished source/install candidate](changelog/v10.71-evidence-led-coding-workflow.changelog.md#version-1071)** | 7194487f-fe8b-4383-8756-3db4c5612392 |
 | 10.70 | 2026-09-30 | **[Action reporting clarity — unpublished source/install candidate](changelog/v10.70-action-reporting-clarity.changelog.md#version-1070)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 10.69 | 2026-09-30 | **[Proportionate Runtime compaction — unpublished source/install candidate](changelog/v10.69-proportionate-runtime-compaction.changelog.md#version-1069)** | adda8afb-6edf-466b-add9-b9649b718e01 |

@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-19
-> **Status:** Source/install verified; final docs and required publication tracked by the receipt below
+> **Status:** Source/install and full publication verified; receipt handed to final docs before last task closure
 > **Target Version:** 10.72
 > **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -64,6 +64,8 @@ Existing README/master and owner-changelog density remains a visibly owned defer
 
 ## Required Publication and Final State
 
-This source snapshot records verified local source/installation and the selected finalization route; it does not assert future publication. Exact staged Main scope must preserve unrelated hunks, align source/installed Main19, pass versions/body/history/reference checks and use non-force fast-forward publication from the canonical root. Remote drift, authentication, collision or scope ambiguity blocks only the affected publication gate with its enabling condition; no force/reset or successor demotion is authorized.
+The immutable tagged snapshot recorded verified local source/installation before publication. Actual release commit `d6f6dec8c8c4cad8d2e790bc79f2d22967ef1e12` and annotated tag object `24e00938201207ba4d28ebb9fef59d9af31a980a` were atomically published by non-force fast-forward from the canonical root. Remote master/tag identity and the non-draft/non-prerelease Release were checked; its body matches the verified receipt. An initial CLI notes-file open failed before creation; the same approved content was successfully submitted through its documented stdin mechanism, without a commit/tag change.
 
-The linked Release is the durable post-commit receipt for the exact commit/tag identity, public payload/install checks, preserved scope and final result. The final task remains open until that receipt is populated from actual checks; the tag is never moved to retrofit later facts. No Product/live effectiveness, open-session reload, stability, whole-project convergence or optional successor is claimed.
+Fresh public-tag checkout matched all77 selected paths and Git modes. The existing unchanged Bash helper installed its Main19 into a new empty disposable target: exit0, exact bytes/modes/SHA/Git-blob/ordered-manifest parity, no unexpected Runtime files or quarantine. Existing root Main19 still matches the candidate; excluded plugin/support/shared-file hunks remain preserved locally.
+
+The linked Release now holds the durable post-commit identity and public payload/install receipt. This narrow current-status reconciliation does not move the tag or rewrite the earlier source/install histories. The real final docs task receives this evidence before its last closure; no successor is opened. No Product/live effectiveness, open-session reload, stability or whole-project convergence is claimed.

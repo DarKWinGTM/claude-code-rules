@@ -3,7 +3,7 @@
 > **Current Version:** 2.28
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.38
 > **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
-> **Status:** P073-19 source/install verified; final docs and full publication selected. Prior unpublished Main slices remain preserved; Release receipt owns post-commit publication proof.
+> **Status:** P073-19 source/install and full publication verified; final receipt handed to docs finalization. Prior unpublished Main histories remain preserved; no successor selected.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -19,12 +19,12 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ## Active Phase Roadmap
 
-### Current Source/Install/Publication Slice
+### Latest Verified Source/Install/Publication Slice
 
-- **P073-19:** [Docs cadence and task-evidence handoff](phase-073-19-docs-sync-and-task-handoff.md) — source/install verified; final docs/publication required.
+- **P073-19:** [Docs cadence and task-evidence handoff](phase-073-19-docs-sync-and-task-handoff.md) — source/install and full publication verified.
   - Six existing owners clarify prerequisite-aware docs cadence, real evidence-before-last-closure handoff, affected-owner synthesis, factual codebase challenge, user/peer recipient clarity and project-owned tooling versus bounded probes. Main19 membership remains unchanged; no new Rule/framework/Product action.
   - Candidate21 synthetic decisions conform; baseline20 conform and S3a partially specifies ordering. Linux/Bash fixtures, exact19 installed parity, thirteen unchanged and other-owner/global preservation passed. This is not causal model-effect/current-session reload or whole-project proof.
-  - One real final task received completed/pending source/install evidence before closure. User selected full publication including the Main10.69–10.71 baseline, excluding plugin/support/global/shared/additional and unrelated shared-file hunks. [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) owns actual post-commit identity/proof.
+  - One real final task received completed/pending source/install evidence before closure. Full publication includes the Main10.69–10.71 baseline and excludes plugin/support/global/shared/additional and unrelated shared-file hunks. Release commit `d6f6dec8c8c4cad8d2e790bc79f2d22967ef1e12`, immutable annotated tag object `24e00938201207ba4d28ebb9fef59d9af31a980a`, exact public77 payload and fresh disposable Main19 installation passed. The non-draft/non-prerelease [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) records actual proof.
   - Same P073 family sibling; current P073-18 cannot absorb this distinct outcome. Diagram/Patch: not required. Existing density repair stays visibly deferred, not a broad rewrite.
 
 ### Prior Completed Source/Install Slice
@@ -219,7 +219,7 @@ Current P073-19 source/install recovery is governed by its [child phase](phase-0
 
 ## Next State
 
-P073-19 source/installation gates passed and the real final docs/publication task remains active until the linked Release records scoped publication and public-payload proof. Publication is explicitly selected, not an advisory successor; original P073-16–18 unpublished histories remain intact as the approved Main baseline. No Product, plugin/support/additional change, live model-effect gate or optional successor is opened. v10.68/P151 remains the immutable checked published predecessor of this source snapshot.
+P073-19 source/install, scoped publication, exact public-tag payload, disposable installation and Release receipt gates passed. The real final task receives this narrow status reconciliation before closing last; no new phase or successor is selected. Original P073-16–18 unpublished histories remain intact as the included Main baseline; v10.68/P151 remains the immutable published predecessor. Product, plugin/support/additional changes and model-effect proof remain outside scope.
 
 ---
 

@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.72 source verified</b><br><sub>Docs Cadence & Task Handoff</sub>
+  <b>v10.72 released</b><br><sub>Docs Cadence & Task Handoff</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Installed & verified</b><br><sub>Publication receipt pending</sub>
+  <b>Installed & published</b><br><sub>Public tag verified</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.72 / P073-19` keeps implementation moving within approved contracts, batches settled docs, preserves task evidence before final closure, separates user replies from peer coordination, and extends project-owned tools instead of throwaway runners. Six existing owners changed; all 19 installed files match source and the other 13 remain unchanged. Paired synthetic interpretation and Linux/Bash installer checks passed, not live model-effect proof. Full publication is selected, including the earlier Main v10.69–v10.71 baseline; actual publication facts belong to the [v10.72 Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
+> **Current source:** `v10.72 / P073-19` keeps implementation moving within approved contracts, batches settled docs, preserves task evidence before final closure, separates user replies from peer coordination, and extends project-owned tools instead of throwaway runners. Six existing owners changed; all 19 installed files match source and the other 13 remain unchanged. Paired synthetic interpretation and Linux/Bash installer checks passed, not live model-effect proof. Main v10.69–v10.71 is included in the published v10.72 baseline; the exact public tag and a fresh disposable installation were verified. Actual commit/tag identity and checks are in the [v10.72 Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
 
 <!-- CTA Buttons -->
 <p>
@@ -305,7 +305,7 @@ Historical published baseline (not current-candidate verification):
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked Active Project Root is the development/commit/release-source authority, while temporary locations are read-only evidence or disposable verification and `<user-runtime-rules>` remains a downstream install target.
-- Latest checked published predecessor: [v10.68](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68). Main v10.69–v10.71 is selected into v10.72; its [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) owns post-commit publication identity and checks.
+- Current published release: [v10.72](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72), commit `d6f6dec8c8c4cad8d2e790bc79f2d22967ef1e12`; exact public77 payload and fresh Main19 installation verified. [v10.68](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68) remains its immutable published predecessor; Main v10.69–v10.71 histories are included without separate release tags.
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 
