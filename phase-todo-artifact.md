@@ -1,7 +1,7 @@
 # Phase, TODO, and Artifact Initiation
-> **Current Version:** 1.38
-> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.38
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.39
+> **Design:** [design/phase-todo-artifact.design.md](design/phase-todo-artifact.design.md) v1.39
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [changelog/phase-todo-artifact.changelog.md](changelog/phase-todo-artifact.changelog.md)
 > **Absorbed:** artifact-initiation-control v1.9, phase-implementation v2.35, todo-standards v2.28
 
@@ -99,7 +99,7 @@ Materialize tasks for selected execution only when admitted; authoring alone is 
 
 ### Evidence handoff and finalization
 
-When a selected family owes durable docs, initialize a real docs-finalization task before all relevant tasks close. Technical tasks may close at their verified gates after handing off their evidence. Finalization reads relevant completed and pending task details, checks them against source/design/proof, synthesizes the fitting durable owners and verifies that handoff before completing last in that family. Do not empty the board first and then recover details from transcripts. An outstanding task is not a persistence guarantee; no particular cleanup/deletion mechanism is assumed.
+When a selected family owes durable docs, reuse its fitting docs-finalization task or initialize one before all relevant tasks close; do not duplicate an existing finalization gate. Keep necessary evidence/handoff/affected-owner sync as ordered substeps in the related task, not new docs tasks per command or case unless an independent owner, acceptance or resume boundary earns one. Finalization dependencies gate its completion, not task-local handoff or supported interim sync under [execution-and-goal-frame.md](execution-and-goal-frame.md); required proof remains binding. Technical tasks may close at their verified gates after handing off their evidence. Finalization reads relevant completed and pending task details, checks them against source/design/proof, reconciles the fitting durable owners and verifies that handoff before completing last in that family; it is not the first opportunity to document work. Do not empty the board first and then recover details from transcripts. An outstanding task is not a persistence guarantee; no particular cleanup/deletion mechanism is assumed.
 
 No docs obligation means no invented final task or dummy sentinel. Do not hold or close unrelated/other-session tasks. Missing evidence requires an honest coverage limit and resume condition, not board reset/recreation or fabricated prior results. [document-governance.md](document-governance.md) owns synthesis by document role, not raw task-log duplication.
 

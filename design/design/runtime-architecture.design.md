@@ -1,8 +1,8 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.72
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 (2026-10-15)
+> **Current Version:** 10.73
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c (2026-10-16)
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard; source/install baseline, publication proof tracked separately
@@ -22,12 +22,12 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | 7 | `document-governance.md` | `document-governance.design.md v1.22` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.15` | references, lossless rollover, payload/project proof and preservation |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.9` | evidence kinds/claim states, cause/nonfinding/mock/witness limits |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.36` | fact-led route/cadence, evidence-backed codebase challenge, mode/scope, proof selection and closure |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.37` | fact-led route/cadence, evidence-backed codebase challenge, mode/scope, proof selection and closure |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.26` | current-outcome-first reporting, flexible snapshots, purpose/mechanism/layout, unframed diagrams and rendering |
 | 12 | `goal-authoring-and-route-support.md` | `goal-authoring-and-route-support.design.md v1.4` | checked Goal construction, proof slots and verified route/Plan-reference lifecycle |
 | 13 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.8` | eligible source ranking/corroboration/conflicts |
 | 14 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v2.0` | path/freshness applicability, active meaning hooks and optional recall |
-| 15 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.38` | startup/task admission, strict lineage, semantic coverage and evidence handoff before final closure |
+| 15 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.39` | startup/task admission, strict lineage, semantic coverage and evidence handoff before final closure |
 | 16 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.6` | late-bound portable forms, local exceptions and source/destination notation |
 | 17 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.5` | normalized request/class/decision and actionable recovery |
 | 18 | `safe-io.md` | `safe-io.design.md v1.9` | bounded run capture versus source-tool ownership, parent-first intake and burst detection |

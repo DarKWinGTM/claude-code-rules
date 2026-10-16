@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.72
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 (2026-10-15)
+> **Current Version:** 10.73
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c (2026-10-16)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.72 docs cadence, task-evidence handoff, recipient clarity and project-owned tooling within the existing nineteen owners; Main v10.69–v10.71 baseline retained
+> **Selected Target:** v10.73 clarifies intermediate docs sync and final reconciliation in two existing owners; the published v10.72 nineteen-owner baseline remains intact
 
 ---
 
@@ -15,7 +15,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.72 / P073-19` keeps the fact/contract-first coding baseline and refines six existing owners. [Execution](execution-and-goal-frame.design.md) separates prerequisite design/approval from batched result sync, enables evidence-backed challenge of harmful conventions and uses deterministic tools for mechanical facts. [Tasks](phase-todo-artifact.design.md) preserve working evidence and finalize durable docs before last family closure; [document governance](document-governance.design.md) synthesizes only affected owners. [Register](communication-register.design.md) separates user replies from peer coordination; [coding](coding-discipline.design.md) owns reusable tools versus temporary probes, with [Safe I/O](safe-io.design.md) limited to capture/output consequences. The same nineteen substantive owners, meaningful history, [compaction](design/runtime-compaction.design.md), safety/proof/source-root boundaries and prior action reporting remain. No additional Rule, framework, blanket temporary-storage ban or Product change is selected. Version, implementation/proof and publication history belong to their existing owners.
+Selected `v10.73 / P073-19` clarifies two owners within the published v10.72 baseline. [Execution](execution-and-goal-frame.design.md) permits affected-owner sync at settled sub-outcomes or necessary handoffs without interrupting each implementation attempt. [Tasks](phase-todo-artifact.design.md) reuse the real finalization task, keep interim evidence/sync substeps with their outcomes, and treat finalization dependencies as closure gates rather than a ban on supported interim updates. Final reconciliation is not the first documentation opportunity, and a pending task is not a persistence guarantee. [Document governance](document-governance.design.md) retains document-role ownership; prior recipient clarity, reusable tooling, fact/contract-first coding and [compaction](design/runtime-compaction.design.md) remain unchanged. The same nineteen substantive owners, meaningful history, safety/proof/source-root boundaries and required design/approval prerequisites remain. No new Rule, task-retention hook, framework, per-case docs task or Product change is selected. Version, implementation/proof and publication history belong to their existing owners.
 
 ---
 

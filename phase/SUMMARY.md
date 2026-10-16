@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.28
-> **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.38
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
-> **Status:** P073-19 source/install and full publication verified; final receipt handed to docs finalization. Prior unpublished Main histories remain preserved; no successor selected.
+> **Current Version:** 2.29
+> **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Status:** P073-19 v10.73 source/install verified; docs/publication finalization active. v10.72 proof preserved; no unrelated successor selected.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -18,6 +18,10 @@ This file is the compact active roadmap/index. Start here for current execution 
 ---
 
 ## Active Phase Roadmap
+
+### Active Follow-up
+
+- **P073-19 / v10.73:** [Interim sync and final reconciliation](phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation) reuses the same phase because outcome, two owners, proof and recovery fit. Execution1.37 permits supported interim updates without per-attempt interruption; Tasks1.39 keeps handoff substeps local and reuses the last-family finalization gate. Source conformance/history/triads/references, A–F synthetic semantic walkthrough and Linux/Bash fixtures passed. Actual Main19 bytes/modes/body/ordered-manifest parity passed with other17 and protected runtime/global entries unchanged; no quarantine. Tasks9/10 handed evidence to final task11 before closing. Documentation/publication finalization remains active; v10.72 receipts below are preserved baseline. No new Rule, phase, retention hook, Patch or diagram; no model/session-reload/task-retention or whole-project claim.
 
 ### Latest Verified Source/Install/Publication Slice
 

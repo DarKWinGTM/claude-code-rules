@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-10-15
-> **Current Release:** v10.72 published; source/install, fresh public-tag payload and Release receipt verified
-> **Active Wave:** none selected; P073-19 publication/proof and final receipt recorded
+> **Last Updated:** 2026-10-16
+> **Current Release:** v10.72 published; v10.73 two-owner source/install verified, documentation/publication finalization active
+> **Active Wave:** P073-19 v10.73 interim-sync/final-reconciliation clarification
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-No active Main execution slice is selected; P073-19 source/install, publication proof and final receipt are recorded below.
+- [ ] **P073-19 / v10.73 interim sync and final reconciliation:** Execution1.37/Tasks1.39 source conformance, A–F synthetic semantic review, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries remain unchanged. Technical tasks handed evidence to the real finalizer before closing; affected docs/publication finalization remains active. Required proof, prerequisites and no-persistence-guarantee boundaries remain; unrelated plugin/shared/additional and pre-existing hunks stay excluded. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation).
 
 ## Recently Completed
 

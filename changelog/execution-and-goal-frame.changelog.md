@@ -1,8 +1,8 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.36
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.37
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.37 | 2026-10-16 | **[Clarified supported interim docs sync without implementation interruption](#version-137)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.36 | 2026-10-15 | **[Separated result-sync cadence from prerequisites and enabled factual codebase challenge](#version-136)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.35 | 2026-09-30 | **[Evidence-led development ordering and workflow boundaries](#version-135)** | 7194487f-fe8b-4383-8756-3db4c5612392 |
 | 1.34 | 2026-09-30 | **[Compacted execution and simplest-complete decision boundaries](#version-134)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -52,6 +53,17 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-137"></a>
+## Version 1.37: Supported interim docs sync and final reconciliation
+
+**Date:** 2026-10-16
+**Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+
+- Clarified that settled sub-outcomes and necessary handoffs may sync affected result/history owners during execution with matching proof, without waiting for unrelated unfinished cases.
+- Kept full docs sync out of each attempt or live implementation/check sequence; final reconciliation does not postpone all documentation or create per-attempt gates.
+- Preserved prerequisite design/contract/approval, truthful minimum failure/handoff checkpoints, selected proof and document/task ownership. This is a two-owner clarification, not a new Rule or persistence mechanism.
+- Source/install/publication evidence belongs to the [P073-19 follow-up](../phase/phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation).
 
 <a id="version-136"></a>
 ## Version 1.36: Result-sync cadence and factual codebase challenge

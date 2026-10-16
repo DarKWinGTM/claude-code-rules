@@ -1,8 +1,8 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.36
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.37
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -27,7 +27,7 @@ Temporary development/test/no-live constraints govern execution, not Product beh
 
 ### Decision and documentation cadence
 
-Once the selected outcome, owner, route, material facts and proof are sufficient, continue required implementation and checks rather than reopening analysis or synchronizing all documents per attempt. Provisional alternatives within the approved contract stay in the working record only as useful; synthesize result/history after the bounded outcome settles and matching checks pass. A material target/contract conflict or missing approval must be resolved before dependent action. A failure, security stop or handoff may require a minimum resume-critical record without implying repair or finalization. [Document Governance](document-governance.design.md) owns document-role routing; [Phase, TODO, and Artifact Initiation](phase-todo-artifact.design.md) owns task-evidence handoff.
+Once the selected outcome, owner, route, material facts and proof are sufficient, continue required implementation and checks rather than reopening analysis or synchronizing all documents per attempt. Sync affected result/history owners at settled sub-outcome or necessary handoff boundaries during execution when matching proof supports that result; unrelated unfinished cases need not delay it. Final reconciliation does not postpone every documentation update until the whole family ends. Do not interrupt a live implementation/check sequence for full docs sync or turn each attempt into a documentation gate; keep useful provisional alternatives in the working record. A material target/contract conflict or missing approval must be resolved before dependent action. A failure, security stop or handoff may require a minimum resume-critical record without implying repair or finalization. [Document Governance](document-governance.design.md) owns document-role routing; [Phase, TODO, and Artifact Initiation](phase-todo-artifact.design.md) owns task-evidence handoff.
 
 Existing implementation establishes current behavior, not correctness. Keep valid conventions for taste-only differences; challenge a checked harmful pattern with its evidence, mechanism, impact and smallest complete correction. If evidence is incomplete, investigate rather than endorse either pattern. Do not silently fork or treat newer/more-tested code as authority over the user or selected design; approval remains with its owner.
 

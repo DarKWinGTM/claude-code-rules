@@ -1,8 +1,8 @@
 # Changelog - Phase, TODO, and Artifact Initiation
 
 > **Parent Document:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.38
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.39
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.39 | 2026-10-16 | **[Separated task-local docs handoff from final reconciliation closure](#version-139)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.38 | 2026-10-15 | **[Added real finalization task and evidence-before-last-closure handoff](#version-138)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.37 | 2026-09-30 | **[Compacted outcome admission lineage and task consequences](#version-137)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.36 | 2026-08-10 | **[Added proof-layer task reconciliation and live-successor separation](#version-136)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
@@ -53,6 +54,17 @@
 | | | Summary: Created `phase-todo-artifact.md` as a body-sufficient merged runtime owner for startup artifact posture, phase execution, TODO durability, and live task tracking in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-139"></a>
+## Version 1.39: Task-local handoff and final reconciliation
+
+**Date:** 2026-10-16
+**Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+
+- Reuse the fitting docs-finalization task instead of duplicating it; necessary interim evidence/handoff/sync stays in the related task's ordered substeps unless an independent owner, acceptance or resume boundary warrants a task.
+- Finalization dependencies govern completion, not whether supported task-local interim updates may occur; required proof is not bypassed and technical tasks still close only at their verified gates after evidence handoff.
+- Preserved final completed/pending reconciliation and last-family closure, no empty-board-first recovery, no dummy sentinel, unrelated-session boundaries and the explicit lack of a technical persistence guarantee.
+- The [P073-19 follow-up](../phase/phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation) owns the bounded proof and release status.
 
 <a id="version-138"></a>
 ## Version 1.38: Real finalization and task-evidence handoff

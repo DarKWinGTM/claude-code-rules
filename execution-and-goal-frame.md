@@ -1,8 +1,8 @@
 # Execution and Goal Frame
 
-> **Current Version:** 1.36
-> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.36
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.37
+> **Design:** [design/execution-and-goal-frame.design.md](design/execution-and-goal-frame.design.md) v1.37
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [changelog/execution-and-goal-frame.changelog.md](changelog/execution-and-goal-frame.changelog.md)
 
 ## Rule Statement
@@ -72,7 +72,7 @@ A Goal/Output/Gate frame helps drift/proof/navigation only when useful; keep int
 
 In execution with startup resolved and no real gate, continue only locked required work, selected semantics, matching proof or material convergence. Headline implementation does not close uncovered behavior/failure/state/proof obligations: finish, verify, explicitly defer-with-owner, block or classify exclusions. Continue safe required tests/debug/scenarios after edits rather than milestone-only stopping.
 
-Do not interrupt each implementation attempt with full docs sync. Keep useful provisional alternatives in the working record; synthesize result/history once the bounded outcome settles and matching checks pass. Material design/contract or approval prerequisites still precede dependent action. A failure, security stop or handoff may need a minimum resume-critical checkpoint, not a fixed/complete claim. [document-governance.md](document-governance.md) owns role-based synthesis; [phase-todo-artifact.md](phase-todo-artifact.md) owns evidence handoff before final task closure.
+Do not interrupt each implementation attempt or a live implementation/check sequence with full docs sync. Sync affected result/history owners at settled sub-outcome or necessary handoff boundaries during execution, supported by matching proof; unrelated unfinished cases need not delay that update. Final reconciliation is not a reason to postpone all documentation until the whole family ends or turn each attempt into a docs gate. Keep useful provisional alternatives in the working record. Material design/contract or approval prerequisites still precede dependent action. A failure, security stop or handoff may need a minimum resume-critical checkpoint, not a fixed/complete claim. [document-governance.md](document-governance.md) owns role-based synthesis; [phase-todo-artifact.md](phase-todo-artifact.md) owns task-local handoff and final reconciliation.
 
 If another lane serves the same selected outcome/gate, continue without a report-only pause. Preserve applicable phase/task linkage, classify already-selected governance owners (not vague “sync everything”), and narrow/filter a broad independent evidence slice before helper routing. Optional findings/successors, consequential approval-sensitive steps or materially divergent/user-choice-sensitive paths do not auto-continue. [worker-routing-and-context.md](worker-routing-and-context.md) and [safe-io.md](safe-io.md) own routing/capture; high-overlap, bounded, sequential and interactive work may stay direct.
 

@@ -2,13 +2,31 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-19
-> **Status:** Source/install and full publication verified; receipt handed to final docs before last task closure
-> **Target Version:** 10.72
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Status:** v10.73 source/install verified; docs/publication finalization active; v10.72 proof retained below
+> **Target Version:** 10.73
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
-> **Design References:** [Execution](../design/execution-and-goal-frame.design.md) v1.36; [Tasks](../design/phase-todo-artifact.design.md) v1.38; [Documents](../design/document-governance.design.md) v1.22; [Register](../design/communication-register.design.md) v1.29; [Coding](../design/coding-discipline.design.md) v1.9; [Safe I/O](../design/safe-io.design.md) v1.9; [Master](../design/design.md)
+> **Design References:** [Execution](../design/execution-and-goal-frame.design.md) v1.37; [Tasks](../design/phase-todo-artifact.design.md) v1.39; [Documents](../design/document-governance.design.md) v1.22; [Register](../design/communication-register.design.md) v1.29; [Coding](../design/coding-discipline.design.md) v1.9; [Safe I/O](../design/safe-io.design.md) v1.9; [Master](../design/design.md)
 > **Patch References:** none — selected finite source diff, exact preimages and paired interpretation suffice; no new prospective review boundary
 > **Publication Receipt:** [v10.72 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72)
+
+## v10.73 Follow-up: Interim Sync and Final Reconciliation
+
+The user selected a clarification of the same docs-cadence/handoff outcome plus installation, push and release. Reuse this current phase because owner, output, proof and recovery remain in the existing slice; no new child/major, Patch, diagram or Rule is needed. Existing paired owner designs remain compact semantic single-file chains; the master index maps them, owner changelogs append without rewriting history, and the master changelog opens its normal mapped v10.73 shard. Existing density repair stays deferred with its current owner.
+
+- Execution1.37: supported affected-owner updates at settled sub-outcome or necessary handoff boundaries during execution; no full docs sync per attempt/live check sequence and no blanket end-only deferral. Design/contract/approval prerequisites and required proof remain binding.
+- Tasks1.39: reuse one real finalization gate, keep necessary interim evidence/sync in related task substeps, and distinguish final completion dependencies from supported interim handoff. Preserve last-family reconciliation, no empty-board-first, no dummy sentinel, unrelated-session boundaries and no persistence guarantee.
+- Tasks9/10/11 track source/proof, runtime installation and real docs/publication finalization. Task11 exists before the technical tasks close and will receive their evidence. Only these two Runtime owners change; the other seventeen, plugin/shared/additional/global contents and pre-existing unrelated source changes stay outside this publication delta.
+- Development Verification route: `existing_test` installer fixtures plus focused clause/scenario, version/history/reference and protected-scope checks. Text conformance is not causal model-effect, open-session reload or host task-retention proof. Installer source is unchanged; no new runner or platform feature is selected.
+- Current state: source clarification and selected Linux/Bash installation verified; task11 is reconciling affected documents and publication. The v10.72 delivered scope and receipts below are historical verified baseline, not proof of this follow-up.
+
+### Follow-up Development Verification / TestKit Coverage
+
+Existing Bash installer fixtures exited0. Focused source checks verified the exact Runtime paragraph/metadata deltas, retained proof/approval/no-dummy/persistence safeguards, nineteen triads/inventory, history suffixes, references and scoped whitespace; 1,022 protected tracked paths remained unchanged. Independent A–F synthetic semantic walkthrough found no material contradiction in attempts, unrelated blocked work, partial handoff, prerequisites, last-family closure and no-doc/other-session cases. These are text/interpretation checks, not executed workflow or model-effect proof.
+
+The canonical launcher installed Main19 into the approved current target with exit0. All19 bytes/modes/metadata/substantive bodies and ordered SHA/Git-blob manifest match source; two changed, seventeen did not. Eight protected runtime/global entries and the discovery path set stayed unchanged; no quarantine occurred. Original19+manifest and a durable prepared-before-mutation journal remain outside discovery at `<user-home>/.claude/rules-rollback/v10.73-<session-short>-preinstall-<run-id>/`, now applied-and-verified. Main19 is183,628 Unicode characters (+794/about0.43%). An initial census included non-runtime root Markdown; the verifier was corrected to the declared inventory without source repair.
+
+Task11 received source/install evidence before technical tasks9/10 closed and reads those completed details against source/design/proof. Publication and fresh public payload/install verification remain required. Runtime Rules, installer and other-owner preservation do not imply current-session reload, causal model benefit, host task retention, Windows proof or full-project convergence; dirty plugin/support/shared-file changes remain excluded.
 
 ## Objective and Lineage
 

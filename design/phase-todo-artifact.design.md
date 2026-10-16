@@ -1,8 +1,8 @@
 # Design - Phase, TODO, and Artifact Initiation
 
 > **Parent Rule:** [../phase-todo-artifact.md](../phase-todo-artifact.md)
-> **Current Version:** 1.38
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.39
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [../changelog/phase-todo-artifact.changelog.md](../changelog/phase-todo-artifact.changelog.md)
 
 ---
@@ -25,7 +25,7 @@ This design owns the target-state shape for artifact initiation control, phase i
 
 Outcome-sized tasks may hold ordered substep checklists, selected decisions, actual changes/checks, evidence pointers and remaining obligations in the working language; an explicit Thai checklist request stays Thai. Keep only continuation-relevant detail, not a command-by-command transcript. Checkpoint a real handoff, blocker or state-loss risk without creating a new artifact or full docs sync per step.
 
-When the selected family owes durable documentation, initialize a real docs-finalization task before all relevant tasks close. Technical tasks may close at their own verified gates after their evidence is handed to that task. Finalization reads relevant completed and pending task details, reconciles them with source/design/proof, synthesizes the appropriate durable owners and verifies the handoff before completing last in that family. Do not wait for an empty board and then mine transcripts. A still-open task is not a persistence guarantee; neither physical deletion nor any particular harness cleanup mechanism is assumed.
+When the selected family owes durable documentation, reuse its fitting docs-finalization task or initialize one before all relevant tasks close; do not duplicate an existing finalization gate. Place necessary evidence capture, handoff and affected-owner sync in the related task's ordered substeps, not a new docs task per command or case unless an independent owner, acceptance or resume boundary earns one. Finalization dependencies govern its completion, not whether technical tasks may hand off settled evidence or sync supported partial results during execution; they do not bypass required proof. Technical tasks may close at their own verified gates after handing off their evidence. Finalization reads relevant completed and pending task details, reconciles them with source/design/proof, synthesizes and checks the appropriate durable owners, then completes last in that family. It is final reconciliation, not the first opportunity to document work. Do not wait for an empty board and then mine transcripts. A still-open task is not a persistence guarantee; neither physical deletion nor any particular harness cleanup mechanism is assumed.
 
 Without a documentation obligation, do not invent a final task or hold a dummy sentinel. Do not hold or close another session's unrelated work. If evidence is unavailable, preserve checked facts, missing coverage and the enabling resume condition; do not reset/recreate the board or fabricate prior results. The board is coordination state, not semantic authority over checked implementation or proof.
 

@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.72 released</b><br><sub>Docs Cadence & Task Handoff</sub>
+  <b>v10.73 source</b><br><sub>Interim Sync & Final Reconciliation</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Installed & published</b><br><sub>Public tag verified</sub>
+  <b>Source/install verified</b><br><sub>Publication pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.72 / P073-19` keeps implementation moving within approved contracts, batches settled docs, preserves task evidence before final closure, separates user replies from peer coordination, and extends project-owned tools instead of throwaway runners. Six existing owners changed; all 19 installed files match source and the other 13 remain unchanged. Paired synthetic interpretation and Linux/Bash installer checks passed, not live model-effect proof. Main v10.69–v10.71 is included in the published v10.72 baseline; the exact public tag and a fresh disposable installation were verified. Actual commit/tag identity and checks are in the [v10.72 Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
+> **Current source:** `v10.73 / P073-19` clarifies intermediate docs sync and final reconciliation in two existing owners. Update affected documents at settled sub-outcomes or necessary handoffs without full-sync interruption per attempt; keep interim evidence with its task and reuse one real finalization gate. Required proof, design/approval prerequisites and no-persistence-guarantee boundaries remain intact. The same 19 Runtime Rules are installed with exact source parity; v10.73 publication remains pending. The [published v10.72 baseline](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) and its historical proof remain unchanged.
 
 <!-- CTA Buttons -->
 <p>
@@ -282,10 +282,10 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- `v10.72 / P073-19` refines six existing owners inside the unchanged [nineteen-owner inventory](design/design/runtime-architecture.design.md): prerequisite-aware docs cadence, real task-evidence finalization, affected-owner synthesis, user/peer recipient clarity and reusable project tooling with bounded temporary probes.
-- Design/approval still precedes dependent action; result/history sync follows settled matching proof. Harmful conventions may be challenged with evidence without silent forks. Useful single-use boundaries, deterministic tools, temporary captures and contracted output roots remain valid; no framework, additional Rule or blanket temporary-storage ban is introduced.
-- Candidate21/21 synthetic interpretation decisions matched expected actions; baseline20 matched and one task-handoff ordering response was partial. Linux/Bash fixtures passed once. Exact19 installed bytes/modes/metadata/body/ownership hashes match source, with other13 Main and other-owner/global files unchanged. Main19 is182,834 Unicode characters (+5,447/about3.07%); tokens, current-session reload and causal model benefit are not measured. [History](changelog/changelog/v10.72-docs-sync-and-task-handoff.changelog.md) and [phase](phase/phase-073-19-docs-sync-and-task-handoff.md) retain proof/limits.
-- Earlier Main [v10.71 contract-first coding](changelog/changelog/v10.71-evidence-led-coding-workflow.changelog.md) and [v10.70 action reporting](changelog/changelog/v10.70-action-reporting-clarity.changelog.md) remain the approved baseline, along with compaction below. They were unpublished slices at their original closeouts, not separately released tags.
+- `v10.73 / P073-19` clarifies two existing owners in the unchanged [nineteen-owner inventory](design/design/runtime-architecture.design.md). Execution1.37 allows supported affected-owner sync at settled sub-outcomes or necessary handoffs without interrupting each attempt/live check sequence; Tasks1.39 keeps evidence/sync substeps with their outcome, reuses the real finalizer and makes final reconciliation the last gate, not the first documentation opportunity.
+- Required proof and design/contract/approval prerequisites remain binding. No new Rule, per-case docs-task requirement, retention hook, board-reset policy or task-persistence guarantee is introduced. Unrelated unfinished cases need not delay a supported update, but their own unpassed gates remain open.
+- Focused source conformance, nineteen triads/inventory, preserved history/references and scoped diff checks passed; the independent A–F synthetic semantic walkthrough found no material contradiction. Existing Linux/Bash installer fixtures passed. Actual Main19 bytes/modes/metadata/substantive bodies and ordered ownership hashes match source; the other17 Main and protected other-owner/global entries remain unchanged. Main19 is183,628 Unicode characters (+794/about0.43%); characters are not tokens or measured model benefit. [History](changelog/changelog/v10.73-interim-docs-sync-and-final-reconciliation.changelog.md) and [phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation) retain proof/limits.
+- Published [v10.72 cadence/handoff/tooling](changelog/changelog/v10.72-docs-sync-and-task-handoff.changelog.md), earlier [v10.71 contract-first coding](changelog/changelog/v10.71-evidence-led-coding-workflow.changelog.md), [v10.70 action reporting](changelog/changelog/v10.70-action-reporting-clarity.changelog.md) and compaction below remain the preserved baseline. The v10.69–v10.71 slices were unpublished at their original closeouts, not separately released tags.
 
 Historical local compaction result (`v10.69 / P073-16`, not the current size measurement):
 - Main19 measured 329,074 → 172,815 Unicode characters (47.48% reduction); UTF-8 bytes: 330,466 → 174,137. Exact tokens were not measured and this did not resolve the earlier context limit.
@@ -298,7 +298,7 @@ Historical published baseline (not current-candidate verification):
 - Immutable `v10.67 / P150` remains the architecture-conformance predecessor at release commit `bd3aa36ff0d7c7712270750249031f362968854c` and annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`.
 - Released `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
 - The correction was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`, and fresh-public master/tag verification passed.
-- For the historical v10.66 scenario-only correction, all nineteen Runtime Rules, owner triads, installers, Case 17, matrix/coverage and Patch artifacts were protected byte-for-byte; that release required no real runtime reinstall. This is not a claim about the current v10.72 source.
+- For the historical v10.66 scenario-only correction, all nineteen Runtime Rules, owner triads, installers, Case 17, matrix/coverage and Patch artifacts were protected byte-for-byte; that release required no real runtime reinstall. This is not a claim about the current v10.73 source.
 - Released `v10.65 / P149` remains immutable at release commit `2e751bbb620eb68527e5a67eb6348196a67727e7` and annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`, with its delayed diagram-format failure preserved.
 - Released `v10.64 / P148` remains immutable and provides verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and the repository-only Patch timeline Tool.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
@@ -1087,7 +1087,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: v10.72 preserves the nineteen-owner set with six cadence/handoff/communication/tooling refinements; paired synthetic interpretation, Linux/Bash fixtures and exact19 source-installed parity passed. Prior compaction/action-reporting/coding slices remain historical evidence, not fresh publication or model-effect proof.
+- Source state: v10.73 preserves the nineteen-owner set and clarifies only interim sync/final reconciliation in Execution1.37 and Tasks1.39. Focused source conformance, independent A–F synthetic interpretation, Linux/Bash fixtures and actual exact19 bytes/modes/body/ordered-manifest parity passed; other17 and protected other-owner/global entries remain unchanged. Prior cadence/tooling/compaction/action-reporting/coding slices remain historical evidence, not fresh model-effect proof.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
