@@ -1,7 +1,7 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.73
+> **Current Version:** 10.74
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c (2026-10-16)
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -19,10 +19,10 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.9` | user precedence, advisory selection and Active Project Root |
 | 5 | `coding-discipline.md` | `coding-discipline.design.md v1.9` | contract-first coding, reusable source-tool/probe lifecycle, debug, architecture fitness and proportionate tests |
 | 6 | `communication-register.md` | `communication-register.design.md v1.29` | plain action/outcome language, user/peer recipient clarity, signal, agreement and explicit retraction |
-| 7 | `document-governance.md` | `document-governance.design.md v1.22` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
+| 7 | `document-governance.md` | `document-governance.design.md v1.23` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.15` | references, lossless rollover, payload/project proof and preservation |
 | 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.9` | evidence kinds/claim states, cause/nonfinding/mock/witness limits |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.37` | fact-led route/cadence, evidence-backed codebase challenge, mode/scope, proof selection and closure |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.38` | fact-led route/cadence, evidence-backed codebase challenge, mode/scope, proof selection and closure |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.26` | current-outcome-first reporting, flexible snapshots, purpose/mechanism/layout, unframed diagrams and rendering |
 | 12 | `goal-authoring-and-route-support.md` | `goal-authoring-and-route-support.design.md v1.4` | checked Goal construction, proof slots and verified route/Plan-reference lifecycle |
 | 13 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.8` | eligible source ranking/corroboration/conflicts |

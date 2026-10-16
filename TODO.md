@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-10-16
-> **Current Release:** v10.73 published; source/install, remote identity, fresh public payload/install and Release receipt verified
-> **Active Wave:** none selected; P073-19 v10.73 source/install/publication and final receipt recorded
+> **Current Release:** v10.73 published; v10.74 source/install verified, documentation/publication finalization active
+> **Active Wave:** P073-19 v10.74 work-preserving settled synthesis
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-No active Main execution slice is selected; P073-19 v10.73 source/install, publication proof and final receipt are recorded below.
+- [ ] **P073-19 / v10.74 work-preserving settled synthesis:** Execution1.38/Documents1.23 exact-delta/triad/history/reference checks, A–H synthetic interpretation, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed. Task policy1.39, other17 and protected runtime/global entries remain unchanged; no quarantine. Technical evidence reached final task3 before closure; affected docs/publication finalization is active. No new Rule/checkpoint/checklist or unrelated plugin scope. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption).
 
 ## Recently Completed
 

@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.73
+> **Current Version:** 10.74
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c (2026-10-16)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.73 clarifies intermediate docs sync and final reconciliation in two existing owners; the published v10.72 nineteen-owner baseline remains intact
+> **Selected Target:** v10.74 refines work-preserving settled synthesis and decision-focused document content in two existing owners; task handoff and the nineteen-owner baseline remain intact
 
 ---
 
@@ -15,7 +15,7 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.73 / P073-19` clarifies two owners within the published v10.72 baseline. [Execution](execution-and-goal-frame.design.md) permits affected-owner sync at settled sub-outcomes or necessary handoffs without interrupting each implementation attempt. [Tasks](phase-todo-artifact.design.md) reuse the real finalization task, keep interim evidence/sync substeps with their outcomes, and treat finalization dependencies as closure gates rather than a ban on supported interim updates. Final reconciliation is not the first documentation opportunity, and a pending task is not a persistence guarantee. [Document governance](document-governance.design.md) retains document-role ownership; prior recipient clarity, reusable tooling, fact/contract-first coding and [compaction](design/runtime-compaction.design.md) remain unchanged. The same nineteen substantive owners, meaningful history, safety/proof/source-root boundaries and required design/approval prerequisites remain. No new Rule, task-retention hook, framework, per-case docs task or Product change is selected. Version, implementation/proof and publication history belong to their existing owners.
+Selected `v10.74 / P073-19` refines two owners within the published baseline. [Execution](execution-and-goal-frame.design.md) treats documentation as synthesis supporting uninterrupted work: tasks/working records hold continuation-relevant evolving detail, and proof-supported conclusions enter affected documents when settled enough for reference or handoff at a natural work boundary, not automatically after each change/check/task. [Document governance](document-governance.design.md) leads with the selected direction and necessary rationale/proof/limits/pending obligations; exploratory alternatives remain supporting context according to lasting decision value, not equal-weight current choices or a transcript. [Tasks](phase-todo-artifact.design.md) retain existing evidence handoff and last-family reconciliation. Design/contract/approval prerequisites, truthful recovery checkpoints and meaningful history remain intact; this is neither an end-only sync ban nor final-only success/deletion policy. The same nineteen substantive owners, safety/proof/source-root boundaries, prior communication/tooling/coding and [compaction](design/runtime-compaction.design.md) remain. No new Rule, automatic checkpoint, per-case docs task, framework or Product change is selected. Version, execution/proof and publication history belong to their existing owners.
 
 ---
 

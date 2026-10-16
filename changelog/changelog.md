@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.73 (source/install and publication verified)
+> **Current Version:** 10.74 (source/install verified; publication pending)
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Latest Published Version:** 10.73
 > **Version Shards:** [changelog/](changelog/)
@@ -13,6 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.74 | 2026-10-16 | **[Work-preserving settled synthesis and selected-direction content](changelog/v10.74-work-preserving-docs-synthesis.changelog.md#version-1074)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 10.73 | 2026-10-16 | **[Released interim docs sync and final reconciliation — source/install and public-tag proof verified](changelog/v10.73-interim-docs-sync-and-final-reconciliation.changelog.md#version-1073)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 10.72 | 2026-10-15 | **[Released docs cadence, task-evidence handoff and reusable tooling — source/install and public-tag proof verified](changelog/v10.72-docs-sync-and-task-handoff.changelog.md#version-1072)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 10.71 | 2026-09-30 | **[Evidence-led coding workflow — unpublished source/install candidate](changelog/v10.71-evidence-led-coding-workflow.changelog.md#version-1071)** | 7194487f-fe8b-4383-8756-3db4c5612392 |

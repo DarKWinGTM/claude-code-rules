@@ -1,7 +1,7 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.37
+> **Current Version:** 1.38
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 
 ---
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.38 | 2026-10-16 | **[Refined work-preserving settled synthesis instead of progress-driven sync](#version-138)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.37 | 2026-10-16 | **[Clarified supported interim docs sync without implementation interruption](#version-137)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.36 | 2026-10-15 | **[Separated result-sync cadence from prerequisites and enabled factual codebase challenge](#version-136)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.35 | 2026-09-30 | **[Evidence-led development ordering and workflow boundaries](#version-135)** | 7194487f-fe8b-4383-8756-3db4c5612392 |
@@ -53,6 +54,17 @@
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-138"></a>
+## Version 1.38: Work-preserving settled synthesis
+
+**Date:** 2026-10-16
+**Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+
+- Reframed docs cadence as synthesis supporting uninterrupted work, with continuation-relevant evolving detail in task/working records rather than progress-driven document updates.
+- Favored proof-supported conclusions sufficiently settled for reference or handoff at natural work boundaries; changed details, passed checks and completed tasks do not themselves create sync checkpoints.
+- Preserved timely independent settled updates, required design/contract/approval prerequisites, truthful minimum resume records and existing evidence/finalization ownership. No automatic cadence, checklist or new Rule is introduced.
+- Matching source/install/publication proof belongs to the [P073-19 v10.74 follow-up](../phase/phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption).
 
 <a id="version-137"></a>
 ## Version 1.37: Supported interim docs sync and final reconciliation

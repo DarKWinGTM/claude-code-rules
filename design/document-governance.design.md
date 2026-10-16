@@ -1,8 +1,8 @@
 # Design - Document Governance
 
 > **Parent Rule:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.22
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.23
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [../changelog/document-governance.changelog.md](../changelog/document-governance.changelog.md)
 
 ---
@@ -13,7 +13,7 @@
 
 Selected [runtime compaction](design/runtime-compaction.design.md) keeps one artifact-role ledger with family-specific requirements, body-sufficient UDVC-1 runtime eligibility and exact Patch creation/review contracts. Chain selection, active/inactive input boundaries and conditional diagram authority remain intact; reference/journal/rollover proof belongs to integrity rather than repeated governance lists.
 
-Synchronization order is an ownership/dependency order, not a demand to rewrite every surface after each attempt. Resolve selected target/contract and approval prerequisites before dependent implementation; working alternatives within that contract need not enter durable history. After the bounded outcome settles and matching checks pass, synthesize final decisions, actual material changes, proof/limits and remaining obligations by role: design owns the selected target; changelog owns change history; phase/TODO own execution state. Preserve meaningful history rather than erase it to manufacture a final-only narrative.
+Synchronization order is an ownership/dependency order, not a demand to rewrite every surface after each attempt. Resolve selected target/contract and approval prerequisites before dependent implementation. Synthesis leads with the settled selected direction and the rationale, actual results/proof, limits and pending obligations needed to understand and maintain it. Exploratory or unselected approaches are supporting context where they still explain material trade-offs, constraints, recovery or costly rediscovery, not equal-weight current choices or a transcript; their mere existence need not create another artifact. Design owns the selected target; changelog the material change/history; phase/TODO execution/proof/remaining obligations. Preserve meaningful history without making the main account an experiment log or a final-only success narrative.
 
 Update only affected owners and required references; no semantic/reference delta permits no-op, not artificial edits. Do not copy task logs into every document or create a retrospective Patch just to complete a checklist. A triggered Patch remains prospective before/during execution. Markdown Runtime Rules are source implementation, not result bookkeeping that must wait until final docs. [Execution](execution-and-goal-frame.design.md) owns cadence and [tasks](phase-todo-artifact.design.md) owns evidence handoff.
 

@@ -1,7 +1,7 @@
 # Document Governance
-> **Current Version:** 1.22
-> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.22
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.23
+> **Design:** [design/document-governance.design.md](design/document-governance.design.md) v1.23
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [changelog/document-governance.changelog.md](changelog/document-governance.changelog.md)
 > **Absorbed:** project-documentation-standards v2.41, document-design-control v1.12, document-changelog-control v4.12, document-patch-control v2.9, unified-version-control-system v1.3
 
@@ -29,7 +29,7 @@ Allowed inactive preservation: `todo/history/`, `todo/done/`, `phase/history/`, 
 
 Default sync: design → diagram when materially triggered → runtime rule → changelog → TODO → affected Patch metadata final sync. This is ownership/dependency order, not recurrence after every attempt. Design/approval prerequisites precede dependent implementation; [execution-and-goal-frame.md](execution-and-goal-frame.md) owns result-sync cadence. Markdown Runtime Rules are source implementation, not final-result bookkeeping. Use real session identifiers. [phase-todo-artifact.md](phase-todo-artifact.md) owns initiation/lineage and task-evidence handoff; no artifact opens merely because another exists.
 
-Synthesize settled decisions and actual results by role: design holds the selected target, changelog the material change/history, phase/TODO execution/proof/remaining obligations. Update only affected owners and required references; no semantic/reference delta needs no artificial diff. Do not dump tentative iterations or task transcripts into every document, erase meaningful history to manufacture a final-only narrative, or create a retrospective Patch merely to fill a checklist. A triggered Patch remains prospective before/during execution.
+Synthesize settled decisions and actual results by role, leading with the selected direction and the rationale, proof, limits and pending obligations needed to understand and maintain it. Exploratory or unselected approaches are supporting context where they still explain material trade-offs, constraints, recovery or costly rediscovery, not equal-weight current choices or a transcript; their mere existence need not create another artifact. Design owns the selected target; changelog the material change/history; phase/TODO execution/proof/remaining obligations. Update affected owners/references only; no semantic/reference delta needs no artificial diff. Preserve meaningful history without copying tentative iterations/task logs into every document, manufacturing a final-only success narrative or creating a retrospective checklist Patch. A triggered Patch remains prospective before/during execution.
 
 Start scans at README, compact active design/changelog parents and selected children, diagram entrypoint when applicable, TODO, phase summary/active children, selected Patch and implementation. Open history/done/archive through references or a history/audit/rollback/provenance need. Classify broad work as focused edit, owner-aligned sync, release/no-drift audit, rollover or review; split by actual owners without tiny-fix lanes. Capture/routing belongs to [safe-io.md](safe-io.md) and [worker-routing-and-context.md](worker-routing-and-context.md).
 

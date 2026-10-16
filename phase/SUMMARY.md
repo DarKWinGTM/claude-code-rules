@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.29
+> **Current Version:** 2.30
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
-> **Status:** P073-19 v10.73 source/install/publication proof verified; final receipt reconciled. v10.72 proof preserved; no successor selected.
+> **Status:** P073-19 v10.74 source/install verified; docs/publication finalization active. Prior proof preserved; no unrelated successor selected.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -19,7 +19,11 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ## Active Phase Roadmap
 
-### Latest Verified Follow-up
+### Active Follow-up
+
+- **P073-19 / v10.74:** [Settled synthesis without work interruption](phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption) refines Execution1.38/Documents1.23 in the same phase/output/proof/recovery family. Task/working records support evolving details; documents synthesize settled conclusions without interrupting work and lead with the selected direction rather than all experiments. Task policy1.39 and proof/prerequisite/history boundaries stay intact. Source conformance/triads/history/references, A–H synthetic interpretation and Linux/Bash fixtures passed. Actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries remain unchanged, no quarantine. Tasks1/2 handed evidence to final task3 before closing; docs/publication finalization remains active. No new Rule/checkpoint/checklist/phase/Patch/diagram or plugin scope.
+
+### Preserved v10.73 Verified Follow-up
 
 - **P073-19 / v10.73:** [Interim sync and final reconciliation](phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation) reuses the same phase because outcome, two owners, proof and recovery fit. Execution1.37 permits supported interim updates without per-attempt interruption; Tasks1.39 keeps handoff substeps local and reuses the last-family finalization gate. Source conformance/history/triads/references, A–F synthetic semantic walkthrough and Linux/Bash fixtures passed. Actual Main19 bytes/modes/body/ordered-manifest parity passed with other17 and protected runtime/global entries unchanged; no quarantine. Tasks9/10 handed evidence to final task11 before closing. Source commit `41fcec7529d629b557572da792e1b53205e9e756` and immutable annotated tag object `4349aa6427a5f96f414be40bb496ff6c6e2892db` were atomically non-force fast-forward published; the [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73), remote identity, fresh public tree/selected14 paths and isolated exact Main19 installation passed. The tagged pre-publication record stays immutable; this receipt supplies actual post-commit proof. v10.72 below is preserved baseline; no successor is opened. No new Rule, phase, retention hook, Patch or diagram; no model/session-reload/task-retention or whole-project claim.
 

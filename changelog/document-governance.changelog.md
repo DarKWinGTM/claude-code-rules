@@ -1,14 +1,15 @@
 # Changelog - Document Governance
 
 > **Parent Document:** [../document-governance.md](../document-governance.md)
-> **Current Version:** 1.22
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.23
+> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.23 | 2026-10-16 | **[Refined selected-direction synthesis and value-based exploratory context](#version-123)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.22 | 2026-10-15 | **[Clarified sync order, role-based synthesis and affected-owner-only updates](#version-122)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.21 | 2026-09-30 | **[Compacted artifact roles and family contracts](#version-121)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.20 | 2026-08-09 | **[Added verified Patch creation timeline identity](#version-120)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -36,6 +37,17 @@
 | | | Summary: Created `document-governance.md` as a body-sufficient merged runtime owner for repository document roles, design/changelog/patch governance, and runtime rule version control in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-123"></a>
+## Version 1.23: Selected-direction synthesis and useful context
+
+**Date:** 2026-10-16
+**Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+
+- Led document synthesis with the selected direction and rationale/proof/limits/pending obligations needed to understand and maintain it, rather than replaying the exploration process.
+- Positioned exploratory/unselected approaches as supporting context according to lasting trade-off, constraint, recovery or rediscovery value, not equal-weight current choices or a reason to create another artifact.
+- Preserved artifact-role ownership, affected-only changes, meaningful history, truthful pending states and prospective Patch semantics. This is content-selection guidance, not permission to delete history or hide unsuccessful/unverified outcomes.
+- Matching proof and publication belong to the [P073-19 v10.74 follow-up](../phase/phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption).
 
 <a id="version-122"></a>
 ## Version 1.22: Sync order and role-based synthesis

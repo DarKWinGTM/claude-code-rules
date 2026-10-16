@@ -2,13 +2,29 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-19
-> **Status:** v10.73 source/install/publication verified; final receipt reconciled; v10.72 proof retained below
-> **Target Version:** 10.73
+> **Status:** v10.74 source/install verified; docs/publication finalization active; prior proof retained below
+> **Target Version:** 10.74
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
-> **Design References:** [Execution](../design/execution-and-goal-frame.design.md) v1.37; [Tasks](../design/phase-todo-artifact.design.md) v1.39; [Documents](../design/document-governance.design.md) v1.22; [Register](../design/communication-register.design.md) v1.29; [Coding](../design/coding-discipline.design.md) v1.9; [Safe I/O](../design/safe-io.design.md) v1.9; [Master](../design/design.md)
+> **Design References:** [Execution](../design/execution-and-goal-frame.design.md) v1.38; [Tasks](../design/phase-todo-artifact.design.md) v1.39; [Documents](../design/document-governance.design.md) v1.23; [Register](../design/communication-register.design.md) v1.29; [Coding](../design/coding-discipline.design.md) v1.9; [Safe I/O](../design/safe-io.design.md) v1.9; [Master](../design/design.md)
 > **Patch References:** none — selected finite source diff, exact preimages and paired interpretation suffice; no new prospective review boundary
 > **Publication Receipt:** [v10.73 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73); immutable [v10.72 baseline](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72)
+
+## v10.74 Follow-up: Settled Synthesis Without Work Interruption
+
+This user-selected refinement stays in P073-19 because the docs-cadence/synthesis output, existing owners, proof and recovery fit the current slice. Execution1.38 favors task-backed, proof-supported settled synthesis at natural work boundaries without automatic change/check/task checkpoints. Documents1.23 leads with the chosen direction and necessary rationale/proof/limits/pending obligations; exploratory alternatives are useful supporting context, not a transcript or equal-weight current choices. Task policy1.39, prerequisites, partial handoff, meaningful history and nineteen-owner membership remain intact. No new Rule, phase, Patch, diagram, checklist, archival artifact or plugin change is selected; existing density repair remains with its deferred owner.
+
+Owner designs retain their semantic single-file shape, with one master map; owner changelogs append while retaining prior detail, and the master opens its normal v10.74 version shard. Tasks1/2/3 track source/proof, installed payload and final docs/publication respectively; the real finalizer exists before technical closure and receives their evidence. Pre-existing dirty/untracked work stays preserved and excluded from publication.
+
+### Development Verification / TestKit Coverage
+
+Selected route: `existing_test` Bash installer fixtures plus exact-delta/triad/history/reference/preservation checks and bounded synthetic semantic walkthrough A–H. The walkthrough covers evolving experiments, selected-direction synthesis, non-automatic checkpoints, prerequisites, truthful partial handoff, history preservation, unchanged task finalization and pending proof. This is text/fixture proof, not an observed incident or model-effect experiment. Source-root installation, matching runtime bytes/modes/bodies/ordered manifest and fresh-public publication receipt are required before closure; Windows/model reload/task-retention guarantees and whole-project convergence are excluded.
+
+Current state: source/proof and actual Linux/Bash installation gates passed; final task3 is synthesizing docs and publication. Exact two-paragraph/metadata deltas, safeguards, nineteen triads/inventory, owner-history suffixes, references and scoped whitespace passed. The1,023 tracked and1,142 untracked protected source entries matched baseline. Independent A–H synthetic walkthrough found no material contradiction; it is source interpretation, not model/workflow runtime evidence.
+
+The canonical launcher exited0. Main19 bytes/modes/metadata/substantive bodies and ordered SHA/Git-blob manifest match source; two changed, seventeen including Tasks1.39 stayed unchanged. Eight other-owner/runtime/global entries and discovery paths remained intact; no quarantine. Original19+manifest and a prepared-before-overwrite durable journal remain outside discovery at `<user-home>/.claude/rules-rollback/v10.74-<session-short>-preinstall-<run-id>/`, now applied-and-verified. Main19 is184,068 Unicode characters (+440/about0.24%), not measured tokens or model benefit.
+
+Task3 received source/install evidence before technical tasks1/2 closed, then checked their details against source/design/proof for this synthesis. Publication/fresh-public receipt remains required; prior v10.73/v10.72 proof below remains historical baseline. No Windows/session-reload/task-retention/full-project claim or unrelated plugin scope is introduced.
 
 ## v10.73 Follow-up: Interim Sync and Final Reconciliation
 
