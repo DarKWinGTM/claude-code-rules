@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-10-16
-> **Current Release:** v10.73 published; v10.74 source/install verified, documentation/publication finalization active
-> **Active Wave:** P073-19 v10.74 work-preserving settled synthesis
+> **Current Release:** v10.74 published; source/install, remote identity, fresh public payload/install and Release receipt verified
+> **Active Wave:** none selected; P073-19 v10.74 source/install/publication and final receipt recorded
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,9 +10,11 @@
 
 ## Active / In Progress
 
-- [ ] **P073-19 / v10.74 work-preserving settled synthesis:** Execution1.38/Documents1.23 exact-delta/triad/history/reference checks, A–H synthetic interpretation, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed. Task policy1.39, other17 and protected runtime/global entries remain unchanged; no quarantine. Technical evidence reached final task3 before closure; affected docs/publication finalization is active. No new Rule/checkpoint/checklist or unrelated plugin scope. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption).
+No active Main execution slice is selected; P073-19 v10.74 source/install, publication proof and final receipt are recorded below.
 
 ## Recently Completed
+
+- [x] **P073-19 / v10.74 work-preserving settled synthesis:** Execution1.38/Documents1.23 favor task-backed settled synthesis without interrupting work, leading docs with the chosen direction and useful supporting context rather than all experiments. Tasks1.39, proof/prerequisite/history boundaries remain unchanged; no new Rule/checkpoint/checklist. Source integrity, A–H synthetic interpretation, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries unchanged. Source commit `201ca64b46e34a13e472c2392a02a86c5dfb893b` and immutable annotated tag object `4ca8c7434c56b4790a5c803a1655eeeb346dc122` were atomically non-force fast-forward published; remote identity, fresh public tree/selected14 paths, isolated Main19 installation and Release receipt verified. Evidence reached final task3 before technical closure; unrelated local plugin/shared-file hunks remain preserved/unpublished. No model/session-reload/retention/Windows/whole-project claim; no successor selected. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption), [history](changelog/changelog/v10.74-work-preserving-docs-synthesis.changelog.md), [receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.74).
 
 - [x] **P073-19 / v10.73 interim sync and final reconciliation:** Execution1.37/Tasks1.39 clarify supported interim updates and task-local evidence with one reused last-family finalizer; no new Rule, hook or persistence guarantee. Source conformance/triads/history/references, A–F synthetic semantic review, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries remained unchanged. Source commit `41fcec7529d629b557572da792e1b53205e9e756` and immutable annotated tag object `4349aa6427a5f96f414be40bb496ff6c6e2892db` were atomically non-force fast-forward published; remote identity, fresh public tree/selected14 paths, isolated exact Main19 installation and Release receipt verified. Technical evidence reached final task11 before closure; unrelated local plugin/shared-file hunks remain preserved and unpublished. No model-effect, session-reload, task-retention or whole-project claim; no successor selected. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation), [history](changelog/changelog/v10.73-interim-docs-sync-and-final-reconciliation.changelog.md), [receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73).
 

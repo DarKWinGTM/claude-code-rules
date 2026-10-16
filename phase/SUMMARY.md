@@ -3,7 +3,7 @@
 > **Current Version:** 2.30
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
-> **Status:** P073-19 v10.74 source/install verified; docs/publication finalization active. Prior proof preserved; no unrelated successor selected.
+> **Status:** P073-19 v10.74 source/install/publication verified; final receipt reconciled. Prior proof preserved; no successor selected.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -19,9 +19,9 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ## Active Phase Roadmap
 
-### Active Follow-up
+### Latest Verified Follow-up
 
-- **P073-19 / v10.74:** [Settled synthesis without work interruption](phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption) refines Execution1.38/Documents1.23 in the same phase/output/proof/recovery family. Task/working records support evolving details; documents synthesize settled conclusions without interrupting work and lead with the selected direction rather than all experiments. Task policy1.39 and proof/prerequisite/history boundaries stay intact. Source conformance/triads/history/references, A–H synthetic interpretation and Linux/Bash fixtures passed. Actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries remain unchanged, no quarantine. Tasks1/2 handed evidence to final task3 before closing; docs/publication finalization remains active. No new Rule/checkpoint/checklist/phase/Patch/diagram or plugin scope.
+- **P073-19 / v10.74:** [Settled synthesis without work interruption](phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption) refines Execution1.38/Documents1.23 in the same phase/output/proof/recovery family. Task/working records support evolving details; documents synthesize settled conclusions without interrupting work and lead with the selected direction rather than all experiments. Task policy1.39 and proof/prerequisite/history boundaries stay intact. Source conformance/triads/history/references, A–H synthetic interpretation and Linux/Bash fixtures passed. Actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries remain unchanged, no quarantine. Tasks1/2 handed evidence to final task3 before closing. Source commit `201ca64b46e34a13e472c2392a02a86c5dfb893b` and immutable annotated tag object `4ca8c7434c56b4790a5c803a1655eeeb346dc122` were atomically non-force fast-forward published; remote identity, [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.74), fresh public tree/selected14-path Git-mode payload and isolated exact Main19 installation passed. The tagged pre-publication snapshot stays immutable; this receipt supplies post-commit proof. No successor is opened; no model/session-reload/task-retention/Windows/whole-project claim. No new Rule/checkpoint/checklist/phase/Patch/diagram or plugin scope.
 
 ### Preserved v10.73 Verified Follow-up
 

@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.74 source</b><br><sub>Work-Preserving Docs Synthesis</sub>
+  <b>v10.74</b><br><sub>Work-Preserving Docs Synthesis</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Source/install verified</b><br><sub>Publication pending</sub>
+  <b>Released & verified</b><br><sub>Source/install + public-tag proof</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.74 / P073-19` treats documentation as settled synthesis supporting uninterrupted work. Task/working records hold evolving detail; documents lead with the selected direction and necessary rationale/proof/limits, with exploratory alternatives as useful supporting context rather than a transcript. No automatic change/check/task sync checkpoints are introduced. Required design/approval, truthful partial handoff, pending proof, meaningful history and Tasks1.39 finalization remain intact. Main19 is installed with exact source parity; v10.74 publication remains pending. The immutable [v10.73 baseline](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73) and its historical proof are preserved.
+> **Current source:** `v10.74 / P073-19` treats documentation as settled synthesis supporting uninterrupted work. Task/working records hold evolving detail; documents lead with the selected direction and necessary rationale/proof/limits, with exploratory alternatives as useful supporting context rather than a transcript. No automatic change/check/task sync checkpoints are introduced. Required design/approval, truthful partial handoff, pending proof, meaningful history and Tasks1.39 finalization remain intact. Main19 is installed with exact source parity. The [v10.74 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.74), remote identity, fresh public payload and isolated Main19 installation are verified; the immutable v10.73 baseline and its historical proof remain preserved.
 
 <!-- CTA Buttons -->
 <p>
@@ -305,7 +305,7 @@ Historical published baseline (not current-candidate verification):
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked Active Project Root is the development/commit/release-source authority, while temporary locations are read-only evidence or disposable verification and `<user-runtime-rules>` remains a downstream install target.
-- Current published release: [v10.73](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73), source commit `41fcec7529d629b557572da792e1b53205e9e756`, immutable annotated tag object `4349aa6427a5f96f414be40bb496ff6c6e2892db`; remote identity, fresh public tree/selected14-path payload and isolated exact Main19 installation verified. The tagged snapshot records pre-publication source/install proof; this current-status receipt does not move the tag. [v10.72](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) remains the immutable published predecessor; Main v10.69–v10.71 histories are included without separate release tags.
+- Current published release: [v10.74](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.74), source commit `201ca64b46e34a13e472c2392a02a86c5dfb893b`, immutable annotated tag object `4ca8c7434c56b4790a5c803a1655eeeb346dc122`; remote identity, fresh public tree/selected14-path payload and isolated exact Main19 installation verified. The tagged snapshot records pre-publication source/install proof; this current-status receipt does not move the tag. [v10.73](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73) remains the immutable published predecessor; earlier histories retain their original proof/publication boundaries.
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 

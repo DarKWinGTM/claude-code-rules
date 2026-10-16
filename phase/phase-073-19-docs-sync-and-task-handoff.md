@@ -2,13 +2,13 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-19
-> **Status:** v10.74 source/install verified; docs/publication finalization active; prior proof retained below
+> **Status:** v10.74 source/install/publication verified; final receipt reconciled; prior proof retained below
 > **Target Version:** 10.74
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Design References:** [Execution](../design/execution-and-goal-frame.design.md) v1.38; [Tasks](../design/phase-todo-artifact.design.md) v1.39; [Documents](../design/document-governance.design.md) v1.23; [Register](../design/communication-register.design.md) v1.29; [Coding](../design/coding-discipline.design.md) v1.9; [Safe I/O](../design/safe-io.design.md) v1.9; [Master](../design/design.md)
 > **Patch References:** none — selected finite source diff, exact preimages and paired interpretation suffice; no new prospective review boundary
-> **Publication Receipt:** [v10.73 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73); immutable [v10.72 baseline](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72)
+> **Publication Receipt:** [v10.74 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.74); immutable [v10.73](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73) / [v10.72](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) baselines
 
 ## v10.74 Follow-up: Settled Synthesis Without Work Interruption
 
@@ -20,11 +20,15 @@ Owner designs retain their semantic single-file shape, with one master map; owne
 
 Selected route: `existing_test` Bash installer fixtures plus exact-delta/triad/history/reference/preservation checks and bounded synthetic semantic walkthrough A–H. The walkthrough covers evolving experiments, selected-direction synthesis, non-automatic checkpoints, prerequisites, truthful partial handoff, history preservation, unchanged task finalization and pending proof. This is text/fixture proof, not an observed incident or model-effect experiment. Source-root installation, matching runtime bytes/modes/bodies/ordered manifest and fresh-public publication receipt are required before closure; Windows/model reload/task-retention guarantees and whole-project convergence are excluded.
 
-Current state: source/proof and actual Linux/Bash installation gates passed; final task3 is synthesizing docs and publication. Exact two-paragraph/metadata deltas, safeguards, nineteen triads/inventory, owner-history suffixes, references and scoped whitespace passed. The1,023 tracked and1,142 untracked protected source entries matched baseline. Independent A–H synthetic walkthrough found no material contradiction; it is source interpretation, not model/workflow runtime evidence.
+Current state: source/proof, actual Linux/Bash installation and publication gates passed; final task3 reconciles actual receipts before last closure, with no successor opened. Exact two-paragraph/metadata deltas, safeguards, nineteen triads/inventory, owner-history suffixes, references and scoped whitespace passed. The1,023 tracked and1,142 untracked protected source entries matched baseline. Independent A–H synthetic walkthrough found no material contradiction; it is source interpretation, not model/workflow runtime evidence.
 
 The canonical launcher exited0. Main19 bytes/modes/metadata/substantive bodies and ordered SHA/Git-blob manifest match source; two changed, seventeen including Tasks1.39 stayed unchanged. Eight other-owner/runtime/global entries and discovery paths remained intact; no quarantine. Original19+manifest and a prepared-before-overwrite durable journal remain outside discovery at `<user-home>/.claude/rules-rollback/v10.74-<session-short>-preinstall-<run-id>/`, now applied-and-verified. Main19 is184,068 Unicode characters (+440/about0.24%), not measured tokens or model benefit.
 
-Task3 received source/install evidence before technical tasks1/2 closed, then checked their details against source/design/proof for this synthesis. Publication/fresh-public receipt remains required; prior v10.73/v10.72 proof below remains historical baseline. No Windows/session-reload/task-retention/full-project claim or unrelated plugin scope is introduced.
+Task3 received source/install evidence before technical tasks1/2 closed, then checked their details against source/design/proof for this synthesis. The fourteen-path Main-only staged projection checked480 local references without missing paths/anchors and excluded pre-existing TODO/plugin hunks while retaining them locally.
+
+Source commit `201ca64b46e34a13e472c2392a02a86c5dfb893b` and immutable annotated tag object `4ca8c7434c56b4790a5c803a1655eeeb346dc122` were atomically non-force fast-forward published from the canonical root. Remote master/tag and the non-draft/non-prerelease v10.74 Release were verified. Fresh public tag tree/selected fourteen paths/Git modes matched; the unchanged canonical helper installed public Main19 into a new empty target with exit0 and exact bytes/modes/SHA/Git-blob/ordered-manifest parity, no unexpected files or quarantine.
+
+The tagged snapshot retains pre-publication source/install proof; the Release and narrow current-status receipt provide actual post-commit identity/proof without moving the tag or modifying Runtime bodies. Prior v10.73/v10.72 proof remains historical baseline. No Windows/session-reload/task-retention/full-project claim or unrelated plugin scope is introduced.
 
 ## v10.73 Follow-up: Interim Sync and Final Reconciliation
 
