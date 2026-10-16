@@ -3,7 +3,7 @@
 > **Current Version:** 2.29
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
 > **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
-> **Status:** P073-19 v10.73 source/install verified; docs/publication finalization active. v10.72 proof preserved; no unrelated successor selected.
+> **Status:** P073-19 v10.73 source/install/publication proof verified; final receipt reconciled. v10.72 proof preserved; no successor selected.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -19,13 +19,13 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ## Active Phase Roadmap
 
-### Active Follow-up
+### Latest Verified Follow-up
 
-- **P073-19 / v10.73:** [Interim sync and final reconciliation](phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation) reuses the same phase because outcome, two owners, proof and recovery fit. Execution1.37 permits supported interim updates without per-attempt interruption; Tasks1.39 keeps handoff substeps local and reuses the last-family finalization gate. Source conformance/history/triads/references, A–F synthetic semantic walkthrough and Linux/Bash fixtures passed. Actual Main19 bytes/modes/body/ordered-manifest parity passed with other17 and protected runtime/global entries unchanged; no quarantine. Tasks9/10 handed evidence to final task11 before closing. Documentation/publication finalization remains active; v10.72 receipts below are preserved baseline. No new Rule, phase, retention hook, Patch or diagram; no model/session-reload/task-retention or whole-project claim.
+- **P073-19 / v10.73:** [Interim sync and final reconciliation](phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation) reuses the same phase because outcome, two owners, proof and recovery fit. Execution1.37 permits supported interim updates without per-attempt interruption; Tasks1.39 keeps handoff substeps local and reuses the last-family finalization gate. Source conformance/history/triads/references, A–F synthetic semantic walkthrough and Linux/Bash fixtures passed. Actual Main19 bytes/modes/body/ordered-manifest parity passed with other17 and protected runtime/global entries unchanged; no quarantine. Tasks9/10 handed evidence to final task11 before closing. Source commit `41fcec7529d629b557572da792e1b53205e9e756` and immutable annotated tag object `4349aa6427a5f96f414be40bb496ff6c6e2892db` were atomically non-force fast-forward published; the [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73), remote identity, fresh public tree/selected14 paths and isolated exact Main19 installation passed. The tagged pre-publication record stays immutable; this receipt supplies actual post-commit proof. v10.72 below is preserved baseline; no successor is opened. No new Rule, phase, retention hook, Patch or diagram; no model/session-reload/task-retention or whole-project claim.
 
-### Latest Verified Source/Install/Publication Slice
+### Preserved v10.72 Source/Install/Publication Baseline
 
-- **P073-19:** [Docs cadence and task-evidence handoff](phase-073-19-docs-sync-and-task-handoff.md) — source/install and full publication verified.
+- **P073-19 / v10.72:** [Docs cadence and task-evidence handoff](phase-073-19-docs-sync-and-task-handoff.md) — source/install and full publication verified.
   - Six existing owners clarify prerequisite-aware docs cadence, real evidence-before-last-closure handoff, affected-owner synthesis, factual codebase challenge, user/peer recipient clarity and project-owned tooling versus bounded probes. Main19 membership remains unchanged; no new Rule/framework/Product action.
   - Candidate21 synthetic decisions conform; baseline20 conform and S3a partially specifies ordering. Linux/Bash fixtures, exact19 installed parity, thirteen unchanged and other-owner/global preservation passed. This is not causal model-effect/current-session reload or whole-project proof.
   - One real final task received completed/pending source/install evidence before closure. Full publication includes the Main10.69–10.71 baseline and excludes plugin/support/global/shared/additional and unrelated shared-file hunks. Release commit `d6f6dec8c8c4cad8d2e790bc79f2d22967ef1e12`, immutable annotated tag object `24e00938201207ba4d28ebb9fef59d9af31a980a`, exact public77 payload and fresh disposable Main19 installation passed. The non-draft/non-prerelease [Release receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) records actual proof.

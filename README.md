@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.73 source</b><br><sub>Interim Sync & Final Reconciliation</sub>
+  <b>v10.73</b><br><sub>Interim Sync & Final Reconciliation</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Source/install verified</b><br><sub>Publication pending</sub>
+  <b>Released & verified</b><br><sub>Source/install + public-tag proof</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.73 / P073-19` clarifies intermediate docs sync and final reconciliation in two existing owners. Update affected documents at settled sub-outcomes or necessary handoffs without full-sync interruption per attempt; keep interim evidence with its task and reuse one real finalization gate. Required proof, design/approval prerequisites and no-persistence-guarantee boundaries remain intact. The same 19 Runtime Rules are installed with exact source parity; v10.73 publication remains pending. The [published v10.72 baseline](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) and its historical proof remain unchanged.
+> **Current source:** `v10.73 / P073-19` clarifies intermediate docs sync and final reconciliation in two existing owners. Update affected documents at settled sub-outcomes or necessary handoffs without full-sync interruption per attempt; keep interim evidence with its task and reuse one real finalization gate. Required proof, design/approval prerequisites and no-persistence-guarantee boundaries remain intact. The same 19 Runtime Rules are installed with exact source parity. The [v10.73 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73), remote commit/tag, fresh public payload and isolated Main19 installation are verified; the immutable v10.72 baseline and its historical proof remain unchanged.
 
 <!-- CTA Buttons -->
 <p>
@@ -305,7 +305,7 @@ Historical published baseline (not current-candidate verification):
 - The installer validates manifest ownership and duplicate/path/link safety, stages the complete active payload and manifest, quarantines only evidence-matched former content, preserves unrelated/modified/unmatched files, and rolls back installer-owned moves/replacements if commit fails.
 - Authority order, safety and approval gates, evidence states, execution/verification boundaries, recovery paths, exact enums/literals, and stop conditions remain required combined-runtime behavior.
 - Repo-root `CLAUDE.md` keeps source-first maintenance explicit: the checked Active Project Root is the development/commit/release-source authority, while temporary locations are read-only evidence or disposable verification and `<user-runtime-rules>` remains a downstream install target.
-- Current published release: [v10.72](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72), commit `d6f6dec8c8c4cad8d2e790bc79f2d22967ef1e12`; exact public77 payload and fresh Main19 installation verified. [v10.68](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.68) remains its immutable published predecessor; Main v10.69–v10.71 histories are included without separate release tags.
+- Current published release: [v10.73](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73), source commit `41fcec7529d629b557572da792e1b53205e9e756`, immutable annotated tag object `4349aa6427a5f96f414be40bb496ff6c6e2892db`; remote identity, fresh public tree/selected14-path payload and isolated exact Main19 installation verified. The tagged snapshot records pre-publication source/install proof; this current-status receipt does not move the tag. [v10.72](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72) remains the immutable published predecessor; Main v10.69–v10.71 histories are included without separate release tags.
 - The active install set remains 19 source-owned root Rules; governed design/changelog/TODO/phase/playground surfaces and quarantine remain outside the runtime payload.
 </div>
 

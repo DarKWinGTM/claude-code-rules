@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-10-16
-> **Current Release:** v10.72 published; v10.73 two-owner source/install verified, documentation/publication finalization active
-> **Active Wave:** P073-19 v10.73 interim-sync/final-reconciliation clarification
+> **Current Release:** v10.73 published; source/install, remote identity, fresh public payload/install and Release receipt verified
+> **Active Wave:** none selected; P073-19 v10.73 source/install/publication and final receipt recorded
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,9 +10,11 @@
 
 ## Active / In Progress
 
-- [ ] **P073-19 / v10.73 interim sync and final reconciliation:** Execution1.37/Tasks1.39 source conformance, A–F synthetic semantic review, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries remain unchanged. Technical tasks handed evidence to the real finalizer before closing; affected docs/publication finalization remains active. Required proof, prerequisites and no-persistence-guarantee boundaries remain; unrelated plugin/shared/additional and pre-existing hunks stay excluded. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation).
+No active Main execution slice is selected; P073-19 v10.73 source/install, publication proof and final receipt are recorded below.
 
 ## Recently Completed
+
+- [x] **P073-19 / v10.73 interim sync and final reconciliation:** Execution1.37/Tasks1.39 clarify supported interim updates and task-local evidence with one reused last-family finalizer; no new Rule, hook or persistence guarantee. Source conformance/triads/history/references, A–F synthetic semantic review, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries remained unchanged. Source commit `41fcec7529d629b557572da792e1b53205e9e756` and immutable annotated tag object `4349aa6427a5f96f414be40bb496ff6c6e2892db` were atomically non-force fast-forward published; remote identity, fresh public tree/selected14 paths, isolated exact Main19 installation and Release receipt verified. Technical evidence reached final task11 before closure; unrelated local plugin/shared-file hunks remain preserved and unpublished. No model-effect, session-reload, task-retention or whole-project claim; no successor selected. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1073-follow-up-interim-sync-and-final-reconciliation), [history](changelog/changelog/v10.73-interim-docs-sync-and-final-reconciliation.changelog.md), [receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.73).
 
 - [x] **P073-19 / v10.72 docs cadence and task-evidence handoff:** six existing owners and four virtual scenario families verified; source Main19 installed with thirteen unchanged and other-owner/global preservation. Candidate21 synthetic decisions conform; baseline20 conform and one ordering response was partial. Exact77-path commit `d6f6dec8c8c4cad8d2e790bc79f2d22967ef1e12` was atomically fast-forward published with immutable annotated tag object `24e00938201207ba4d28ebb9fef59d9af31a980a`; the non-draft/non-prerelease Release receipt, fresh public payload and empty-target Main19 installation were checked. Final docs received actual evidence before last task closure; no model-effect or whole-project claim. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md), [history](changelog/changelog/v10.72-docs-sync-and-task-handoff.changelog.md), [receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.72).
 
