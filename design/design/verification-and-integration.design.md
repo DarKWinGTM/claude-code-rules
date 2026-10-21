@@ -1,8 +1,8 @@
 # Verification and Integration - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.68
-> **Session:** 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e (2026-08-11)
+> **Current Version:** 10.75
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821 (2026-10-21)
 > **Section:** Verification checklist and integration
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard
@@ -58,9 +58,11 @@
 
 - [ ] Changed-path allowlist, `git diff --check`, changed triad versions, unchanged-chain versions, links, literals, force words, and file modes pass
 - [ ] Case 19 and M41-M45 cover forbidden alternate development, correct root-only work, disposable evidence, blocked-root stop behavior, and Runtime-payload-PASS/project-convergence-BLOCKED results
+- [ ] Cases 04/02 and M46-M53 cover unknown consequential outcome before replay and preparse input/record/retention bounds, including known-no-effect retries and direct small reads that remain allowed
+- [ ] Full bound reader contexts exercise selected allowed/stop/near-miss branches; static clauses and synthetic interpretation do not establish causal model benefit, historical incident repair or live operational/resource behavior
 - [ ] Case 18/M35-M40 remain protected architecture-conformance evidence and are not rewritten into project-root authority
-- [ ] Exactly the authority-and-scope 2.8 and document-integrity 1.14 Runtime/design/changelog triads advance; the other 17 Runtime Rules remain byte-and-mode identical
-- [ ] Final `plugin/**` path/status/mode/hash state equals the pre-wave verification-only baseline, with no mutation outside the P151 allowlist
+- [ ] Only the selected wave's owner triads advance; runtime inventory/maps match their versions and every unselected Runtime Rule remains byte-and-mode identical
+- [ ] Final unrelated `plugin/**`, support, diagram and shared-file hunks remain equal to the checked pre-wave state; the source commit contains only the selected allowlist
 - [ ] Bash/PowerShell installer and fixture arrays preserve the same exact ordered 19-file Runtime payload
 - [ ] Two-pass disposable installation from the Active Project Root passes 19/19 order/mode/body parity, idempotence, unrelated-file preservation, and governed/plugin/support/template/playground exclusion
 - [ ] Runtime payload parity and Active Project Root convergence are reported separately; mixed proof blocks completion

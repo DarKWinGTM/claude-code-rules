@@ -1,8 +1,8 @@
 # Design - Safe I/O
 
 > **Parent Rule:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.9
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/safe-io.changelog.md](../changelog/safe-io.changelog.md)
 
 ---
@@ -41,6 +41,9 @@ P103 refinement: this owner should now keep observed example shape wording separ
 
 - Keep the root runtime rule as the active behavior contract.
 - Preserve absorbed-rule semantics that affect real execution decisions.
+- For large, unknown or untrusted evidence, select input-byte, individual-record and retained-result bounds before decode/parse/materialization; use bounded streaming and cap or reject oversized records before parse. Output truncation and count-only limits are not allocation bounds; account for decoded expansion as well.
+- Use a fixed byte watermark for concurrently appended logs. Report skipped records, byte limits and partial coverage; preserve direct known-small/exact bounded reads and visible command failures. If the selected format cannot be handled within the available bounded mechanism, stop for a safe narrower artifact or supported tool rather than silently load everything.
+- Keep this contract on assistant evidence intake, not Product/runtime resource policy, cgroup/container changes or a new runner.
 - Keep metadata linked to this design and the chain changelog.
 - Keep the compact merged runtime set at 19 active root Rules; historical phase work must not become a new root Rule by itself.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
@@ -60,6 +63,8 @@ Read/output burst detection stays here; worker topology selection, lane template
 ## Verification
 
 Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
+
+Input validation uses focused written-contract checks and paired Case 02 virtual scenarios: unknown/large records are bounded before parse, count/output-only caps are insufficient, decoded expansion and growing-log watermarks remain bounded, skipped evidence is disclosed, and known-small reads stay direct. This proves the selected written contract and synthetic interpretation, not memory performance or live model behavior.
 
 P099 validation should also confirm the runtime body contains delegate-first burst signals, burst-risk wording in the I/O risk model, and command/read flow updates without widening the active runtime set.
 

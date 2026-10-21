@@ -1,8 +1,8 @@
 # Design - Action Safety
 
 > **Parent Rule:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.7
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.8
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/action-safety.changelog.md](../changelog/action-safety.changelog.md)
 
 ---
@@ -45,6 +45,8 @@ P150 / v1.6 refinement: this owner must provide the canonical design-conformance
 - Own the architecture delta classes and approval boundary for material architecture-bearing source mutation after execution triggers the preflight.
 - Require active design and the existing architecture path to be checked before authority expansion; incomplete state remains `OBSERVE_ONLY` and ordinary in-authority repair remains proportionate.
 - Treat another owner/route/transport/client/registry/state key/reader-writer/fallback for an already governed role as a fork regardless of private, internal, temporary, diagnostic, adapter, compatibility, or fallback labeling.
+- Reconcile unknown consequential outcomes before replay: a timeout, lost response or controller failure after dispatch does not establish no effect. Use the same operation identity and its canonical completion witness through an already authorized existing path, or an existing idempotent replay contract checked for that identity/payload/window. Preserve independently completed effects; unresolved replay remains `NO_RETRY_UNTIL_CHANGE`.
+- Keep known-no-effect failures and checked safe replay eligible under their existing profile, aggregate budget, approval and provider-wait gates. Reconciliation does not authorize a new writer, state, probe or rollback path, automatic compensation, or repeating already completed work.
 - Keep metadata linked to this design and the chain changelog.
 - Avoid reintroducing split root rules unless a future governed phase selects that structure.
 
@@ -61,5 +63,7 @@ Historical detail remains in changelog or execution-disconnected quarantine/prov
 ## Verification
 
 Release validation should confirm the parent runtime file exists at source root, has substantive body content, links to this design, links to its changelog, and matches the installed runtime copy when runtime install is in scope.
+
+Outcome validation uses focused written-contract checks and paired Case 04 virtual scenarios: unknown post-dispatch result stops replay, canonical completion preserves success despite controller failure, checked idempotent replay and known-no-effect retries remain eligible, and missing authorization cannot be bypassed by reconciliation. Text checks and synthetic interpretation do not prove operational safety or model benefit.
 
 Architecture-delta validation must confirm Case 18 keeps unresolved architecture at `OBSERVE_ONLY`, selects `REPAIR_IN_PLACE` for a bounded existing-path regression, blocks unapproved alternate owners/routes/transports/clients/keys/read-write paths/fallbacks, and permits only an exact design-backed and explicitly approved verified capability expansion or replacement with rollback/retirement direction.

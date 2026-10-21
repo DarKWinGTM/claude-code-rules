@@ -1,8 +1,8 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.74
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c (2026-10-16)
+> **Current Version:** 10.75
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821 (2026-10-21)
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard; source/install baseline, publication proof tracked separately
@@ -14,7 +14,7 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | # | Rule | Paired design version | Responsibility |
 |---|---|---|---|
 | 1 | `accurate-communication.md` | `accurate-communication.design.md v2.46` | actual-action/current-state reporting, claim/status strength, identifier meaning and capture labels |
-| 2 | `action-safety.md` | `action-safety.design.md v1.7` | destructive/private/topology/emergency/retry gates |
+| 2 | `action-safety.md` | `action-safety.design.md v1.8` | destructive/private/topology/emergency/retry gates, same-operation outcome reconciliation |
 | 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.2` | direct-user transparency and generated audience disclosure |
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.9` | user precedence, advisory selection and Active Project Root |
 | 5 | `coding-discipline.md` | `coding-discipline.design.md v1.9` | contract-first coding, reusable source-tool/probe lifecycle, debug, architecture fitness and proportionate tests |
@@ -30,7 +30,7 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | 15 | `phase-todo-artifact.md` | `phase-todo-artifact.design.md v1.39` | startup/task admission, strict lineage, semantic coverage and evidence handoff before final closure |
 | 16 | `portable-implementation-and-hardcoding-control.md` | `portable-implementation-and-hardcoding-control.design.md v1.6` | late-bound portable forms, local exceptions and source/destination notation |
 | 17 | `refusal-and-recovery.md` | `refusal-and-recovery.design.md v1.5` | normalized request/class/decision and actionable recovery |
-| 18 | `safe-io.md` | `safe-io.design.md v1.9` | bounded run capture versus source-tool ownership, parent-first intake and burst detection |
+| 18 | `safe-io.md` | `safe-io.design.md v1.10` | preparse input/record/retention bounds, bounded capture versus source-tool ownership, parent-first intake and burst detection |
 | 19 | `worker-routing-and-context.md` | `worker-routing-and-context.design.md v1.18` | helper net benefit/topology/brief/lifecycle/handoff and main verification |
 
 ## Category View

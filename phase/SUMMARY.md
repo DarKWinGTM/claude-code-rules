@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.30
+> **Current Version:** 2.31
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
-> **Status:** P073-19 v10.74 source/install/publication verified; final receipt reconciled. Prior proof preserved; no successor selected.
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Status:** P073-20/v10.75 active; two source contracts, focused checks, native fixtures and exact runtime installation verified; synthetic interpretation verified; publication pending. P073-19/v10.74 preserved.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -18,6 +18,10 @@ This file is the compact active roadmap/index. Start here for current execution 
 ---
 
 ## Active Phase Roadmap
+
+### Selected Current Slice
+
+- **P073-20 / v10.75:** [Operation outcome and bounded input](phase-073-20-operation-outcome-and-bounded-input.md) refines Action Safety1.8/Safe I/O1.10 in the existing P073 owner/install family. Focused written-contract baseline failed for four missing contracts; final six checks pass. Node38/38, Bash/PowerShell fixtures on Linux, selected source preservation and exact runtime19 parity passed with other17/protected5 unchanged/no quarantine. Full19 A–L before/candidate synthetic interpretations conform12/12 each. Managed Skill extractions and parent absorption verified separately; scoped publication proof remains pending. The [prospective Patch](../patch/2026-10-21T14-40-02Z--operation-outcome-and-bounded-input.patch.md) owns before/after review; nineteen-owner membership and unrelated dirty state remain protected. Managed Skills are a separate user-scope gate, not release payload. No successor selected.
 
 ### Latest Verified Follow-up
 

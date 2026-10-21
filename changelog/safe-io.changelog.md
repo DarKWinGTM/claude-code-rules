@@ -1,14 +1,15 @@
 # Changelog - Safe I/O
 
 > **Parent Document:** [../safe-io.md](../safe-io.md)
-> **Current Version:** 1.9
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-10-21 | **[Bounded evidence allocation before parsing](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.9 | 2026-10-15 | **[Distinguished temporary run captures from source-tool implementation](#version-19)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.8 | 2026-09-30 | **[Consolidated bounded read and output gates](#version-18)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.7 | 2026-08-09 | **[Compacted bounded-I/O integration handoffs](#version-17)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -23,6 +24,16 @@
 | | | Summary: Created `safe-io.md` as a body-sufficient merged runtime owner for bounded file reading and terminal output with parent-index-first and worker-first behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-110"></a>
+## Version 1.10: Bounded evidence allocation before parsing
+
+**Date:** 2026-10-21
+**Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+
+- Require input-byte, individual-record and retained-result bounds before decode/parse/materialization for large, unknown or untrusted evidence, with bounded streaming and oversized-record rejection before parse.
+- Distinguish output/count caps from input-memory bounds; preserve decoded-expansion accounting, fixed-watermark reads of growing logs and skipped/partial-coverage disclosure.
+- Preserve direct known-small/exact bounded reads, failure visibility and existing routing ownership. No Product resource policy, cgroup/container change or new runner is authorized; scoped source/synthetic/install proof is tracked in [P073-20](../phase/phase-073-20-operation-outcome-and-bounded-input.md), not claimed as measured memory or model improvement.
 
 <a id="version-19"></a>
 ## Version 1.9: Temporary captures versus source tools

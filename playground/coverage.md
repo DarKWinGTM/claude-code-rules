@@ -60,5 +60,6 @@ This file proves that the playground baseline and grounded transcript upgrades c
 Coverage outcome for the grounded playground:
 - all 19 active runtime rules are still mapped to at least one scenario family
 - additional scenario families expand realism and observed evidence density without changing runtime install scope; Case 17 and M33 prohibit assistant-inferred live acceptance for source/code goals, M34 covers pre-emission feasibility and in-place Goal/plan repair, Case 18/M35-M40 cover design-bound architecture mutation and functional-plus-conformance verification, and Case 19 plus the August observed log and M41-M45 cover Active Project Root authority, no alternate implementation lane, and payload-versus-project proof separation
+- Cases 04/02 and virtual M46–M53 cover unknown-outcome reconciliation and preparse evidence bounds respectively; authored rows are not observed incidents or proof of operational/model effectiveness, and exercised synthetic/source evidence is recorded in [P073-20](../phase/phase-073-20-operation-outcome-and-bounded-input.md)
 - several rules intentionally appear in more than one family because the same owner shapes behavior across several situations
 - the matrix is rule-grounded, not capability-invented

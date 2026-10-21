@@ -36,6 +36,7 @@ Current RULES require the assistant to:
 - run an authenticated/private capability preflight before attempting private access
 - allow one bounded evidence-backed correction only when checked evidence changes the target or mechanism materially
 - classify the remaining capability/auth failure as deterministic and stop every unchanged retry until authorization, session mechanism, accessible evidence, or runtime state changes
+- distinguish unknown post-dispatch outcome from known-no-effect failure, preserve independently completed effects, and stop replay until same-operation canonical completion/no-effect evidence or a checked existing safe-replay contract resolves it
 - keep migration open while a compatibility bridge or former execution edge remains
 - require preserved former material to sit outside runtime/install/import/config/build/deployment/test discovery
 - require controlled restoration to use explicit approval and deliberate replacement from an independently verified exact known-good source/tag/commit selected outside quarantine, then re-prove one active authority
@@ -65,6 +66,11 @@ Checked transcript-derived examples:
 - A private Product page is fetched with a guest-only mechanism. That checked mechanism establishes that the current witness is unauthenticated; a login response or `401` is consistent with missing required authentication, while `403` shows refusal and does not by itself identify authentication versus authorization failure.
 - Checked evidence shows that `localhost` mismatches the approved session domain, so one correction to the exact authenticated development domain may be attempted.
 - If the corrected target still lacks an approved session mechanism, repeating it unchanged is prohibited until capability, authorization, supplied evidence, or runtime state changes.
+
+- A consequential request times out after dispatch with no completion witness; stop replay under `OPERATION_OUTCOME_UNKNOWN` / `NO_RETRY_UNTIL_CHANGE`, name the missing witness and do not invent a probe or writer (M46).
+- A controller fails after canonical operation evidence confirms completion; preserve that result and do not repeat or compensate completed work (M47).
+- A checked existing idempotent replay contract covers the exact identity, payload and window; replay remains eligible only under prior approval/profile/budget/provider waits (M48).
+- A checked transport failure occurred before dispatch with no effect; normal matching safe-retry rules still apply without a new reconciliation ceremony (M49).
 
 Expected behavior: inspect and confirm rather than mutate by instinct; preflight authenticated/private capability before access; allow one discriminating mechanism correction; stop deterministic unchanged retries; verify target behavior and former-path inactivity; keep quarantine outside active discovery; close only after one active authority remains.
 

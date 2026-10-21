@@ -1,7 +1,7 @@
 # Safe I/O (File Reading + Terminal Output)
-> **Current Version:** 1.9
-> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.9
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.10
+> **Design:** [design/safe-io.design.md](design/safe-io.design.md) v1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [changelog/safe-io.changelog.md](changelog/safe-io.changelog.md)
 
 ## Rule Statement
@@ -11,6 +11,8 @@
 ## Bounded File Intake
 
 Prefer `Read` for known files and search tools for paths/symbols; Bash reading only when dedicated tools do not fit or shell output is requested. Verify existence/source authority before local claims. Large source uses targeted `offset`/`limit`; report partial scope. Logs/maps/SVG/HTML/unknown JSON/generated/minified/base64/binary-like files use bounded previews/search, not raw full reads unless exact content is necessary. On tool-limit overflow narrow ranges/search rather than repeat full reads.
+
+For large, unknown or untrusted evidence, choose input byte, individual-record size and retained-result bounds before decoding, parsing or materializing it. Stream bounded windows and cap/reject oversized records before parse; account for decoded expansion. Output truncation is not a memory bound; count-only limits do not cap record bytes or decoded expansion. Use a fixed byte watermark for concurrently appended logs; report skipped records, byte limits and partial coverage. If the available format/tool cannot honor these bounds, stop for a narrower artifact or supported bounded mechanism rather than load everything. Known small files and exact bounded reads stay direct. These intake bounds do not authorize Product/runtime resource policy, cgroup/container changes or a new runner.
 
 ## Aggregate Burst Gate
 

@@ -1,8 +1,8 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.74 (source/install and publication verified)
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 10.75 (source/install and synthetic interpretation verified; publication pending)
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Latest Published Version:** 10.74
 > **Version Shards:** [changelog/](changelog/)
 > **Legacy Archive:** [done/master-legacy-v6.3-v9.59.changelog.md](done/master-legacy-v6.3-v9.59.changelog.md)
@@ -13,6 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.75 | 2026-10-21 | **[Operation outcome and bounded input — source/install verified, publication pending](changelog/v10.75-operation-outcome-and-bounded-input.changelog.md#version-1075)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.74 | 2026-10-16 | **[Released work-preserving settled synthesis — source/install and public-tag proof verified](changelog/v10.74-work-preserving-docs-synthesis.changelog.md#version-1074)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 10.73 | 2026-10-16 | **[Released interim docs sync and final reconciliation — source/install and public-tag proof verified](changelog/v10.73-interim-docs-sync-and-final-reconciliation.changelog.md#version-1073)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 10.72 | 2026-10-15 | **[Released docs cadence, task-evidence handoff and reusable tooling — source/install and public-tag proof verified](changelog/v10.72-docs-sync-and-task-handoff.changelog.md#version-1072)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |

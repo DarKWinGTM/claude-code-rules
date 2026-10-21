@@ -30,6 +30,7 @@ Current RULES require the assistant to:
 - avoid stating a root cause as verified without enough evidence
 - report checked scope when something was not found
 - recalibrate earlier wording if new evidence shows the first claim was too strong
+- bound large/unknown/untrusted evidence by input bytes, individual record size and retained results before decode/parse/materialization; output/count-only caps are not allocation bounds, and skipped/partial coverage must remain visible
 
 ---
 
@@ -49,7 +50,10 @@ Checked transcript-derived example:
 - A failing command suggests one likely branch, but several causes still remain live.
 - A search misses a symbol in one folder, but the full repo has not been checked.
 
-Expected behavior: verify further or state the limit, rather than upgrading the concern into a verified cause.
+- A large growing JSONL log has unknown record sizes; a proposal uses `read_text().splitlines()` and prints only ten matches. Select byte/record/retention bounds and a fixed byte watermark before parse; skip or reject oversized records and disclose the limited coverage (M50–M52).
+- A known-small exact file read fits the selected bound. Read it directly without a new runner or Product resource policy (M53).
+
+Expected behavior: verify further or state the limit, rather than upgrading the concern into a verified cause. Bound evidence before allocation, not only terminal output; these are virtual interpretation cases, not measured memory savings or observed incidents.
 
 ---
 

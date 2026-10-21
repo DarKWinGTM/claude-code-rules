@@ -1,14 +1,15 @@
 # Changelog - Action Safety
 
 > **Parent Document:** [../action-safety.md](../action-safety.md)
-> **Current Version:** 1.7
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.8
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.8 | 2026-10-21 | **[Reconciled unknown consequential outcomes before replay](#version-18)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.7 | 2026-09-30 | **[Compacted canonical action and retry gates](#version-17)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.6 | 2026-08-11 | **[Added design-conformance architecture delta preflight](#version-16)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.5 | 2026-08-10 | **[Added authenticated/private capability preflight and deterministic retry stop](#version-15)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
@@ -20,6 +21,16 @@
 | | | Summary: Created `action-safety.md` as a body-sufficient merged runtime owner for destructive/high-impact action safety, runtime topology control, emergency posture, and operational failure handling in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-18"></a>
+## Version 1.8: Reconciled unknown consequential outcomes before replay
+
+**Date:** 2026-10-21
+**Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+
+- Distinguished unknown post-dispatch outcome from a known-no-effect failure; require same-operation canonical completion/no-effect evidence or an existing checked idempotent replay contract before replay.
+- Preserve independent completed effects, stop unresolved replay under `NO_RETRY_UNTIL_CHANGE`, and retain existing safe-retry profiles, aggregate caps, approval and provider waits.
+- Keep reconciliation on authorized existing paths without authorizing another writer/state/probe/rollback path. This is a user-selected preventive refinement, not a proven historical incident fix; scoped proof is tracked in [P073-20](../phase/phase-073-20-operation-outcome-and-bounded-input.md).
 
 <a id="version-17"></a>
 ## Version 1.7: Compacted canonical action and retry gates

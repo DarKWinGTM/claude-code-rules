@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-10-16
+> **Last Updated:** 2026-10-21
 > **Current Release:** v10.74 published; source/install, remote identity, fresh public payload/install and Release receipt verified
-> **Active Wave:** none selected; P073-19 v10.74 source/install/publication and final receipt recorded
+> **Active Wave:** P073-20/v10.75 operation outcome and bounded input; source/install and synthetic interpretation verified; publication pending.
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-No active Main execution slice is selected; P073-19 v10.74 source/install, publication proof and final receipt are recorded below.
+- [ ] **P073-20 / v10.75:** Action Safety1.8 and Safe I/O1.10 implemented; focused6/6, Node38/38, Bash/PowerShell installer fixtures on Linux and exact user-runtime19 parity passed, with other17/protected5/no quarantine. Selected source conformance/preservation and full19 A–L before/candidate synthetic interpretation passed12/12 each. Both managed global Skills and parent absorption verified separately; scoped commit/push/Release/fresh-public proof remains pending. [Phase](phase/phase-073-20-operation-outcome-and-bounded-input.md), [history](changelog/changelog/v10.75-operation-outcome-and-bounded-input.changelog.md), [prospective Patch](patch/2026-10-21T14-40-02Z--operation-outcome-and-bounded-input.patch.md). Managed Skill extractions are separately user-scoped, not Main Runtime/release payload; prior P073-19/v10.74 remains closed.
 
 ## Recently Completed
 

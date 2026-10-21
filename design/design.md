@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.74
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c (2026-10-16)
+> **Current Version:** 10.75
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821 (2026-10-21)
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.74 refines work-preserving settled synthesis and decision-focused document content in two existing owners; task handoff and the nineteen-owner baseline remain intact
+> **Selected Target:** v10.75 refines same-operation outcome reconciliation in Action Safety and preparse evidence bounds in Safe I/O; the nineteen-owner baseline and all prior approval/proof boundaries remain intact
 
 ---
 
@@ -15,7 +15,9 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.74 / P073-19` refines two owners within the published baseline. [Execution](execution-and-goal-frame.design.md) treats documentation as synthesis supporting uninterrupted work: tasks/working records hold continuation-relevant evolving detail, and proof-supported conclusions enter affected documents when settled enough for reference or handoff at a natural work boundary, not automatically after each change/check/task. [Document governance](document-governance.design.md) leads with the selected direction and necessary rationale/proof/limits/pending obligations; exploratory alternatives remain supporting context according to lasting decision value, not equal-weight current choices or a transcript. [Tasks](phase-todo-artifact.design.md) retain existing evidence handoff and last-family reconciliation. Design/contract/approval prerequisites, truthful recovery checkpoints and meaningful history remain intact; this is neither an end-only sync ban nor final-only success/deletion policy. The same nineteen substantive owners, safety/proof/source-root boundaries, prior communication/tooling/coding and [compaction](design/runtime-compaction.design.md) remain. No new Rule, automatic checkpoint, per-case docs task, framework or Product change is selected. Version, execution/proof and publication history belong to their existing owners.
+Selected `v10.75 / P073-20` refines [Action Safety](action-safety.design.md) v1.8 and [Safe I/O](safe-io.design.md) v1.10 inside their current roles. Unknown consequential outcomes require same-operation reconciliation or checked safe replay before retry; large/unknown/untrusted evidence requires byte, record and retention bounds before decode/parse/materialization. Known-no-effect retries and direct small reads remain proportionate. No new Rule, Product state/writer/probe/rollback path, runtime resource policy or runner is selected. User-scope managed Skill extractions remain outside the Main Runtime payload and release boundary.
+
+The preserved `v10.74 / P073-19` baseline refines documentation cadence within existing owners. [Execution](execution-and-goal-frame.design.md) treats documentation as synthesis supporting uninterrupted work: tasks/working records hold continuation-relevant evolving detail, and proof-supported conclusions enter affected documents when settled enough for reference or handoff at a natural work boundary, not automatically after each change/check/task. [Document governance](document-governance.design.md) leads with the selected direction and necessary rationale/proof/limits/pending obligations; exploratory alternatives remain supporting context according to lasting decision value, not equal-weight current choices or a transcript. [Tasks](phase-todo-artifact.design.md) retain existing evidence handoff and last-family reconciliation. Design/contract/approval prerequisites, truthful recovery checkpoints and meaningful history remain intact; this is neither an end-only sync ban nor final-only success/deletion policy. The same nineteen substantive owners, safety/proof/source-root boundaries, prior communication/tooling/coding and [compaction](design/runtime-compaction.design.md) remain. No new Rule, automatic checkpoint, per-case docs task, framework or Product change is selected. Version, execution/proof and publication history belong to their existing owners.
 
 ---
 

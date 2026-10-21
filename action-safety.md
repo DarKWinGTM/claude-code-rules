@@ -1,7 +1,7 @@
 # Action Safety
-> **Current Version:** 1.7
-> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.7
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.8
+> **Design:** [design/action-safety.design.md](design/action-safety.design.md) v1.8
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [changelog/action-safety.changelog.md](changelog/action-safety.changelog.md)
 > **Absorbed:** functional-intent-verification, emergency-protocol, runtime-topology-control, operational-failure-handling
 
@@ -94,6 +94,8 @@ Only when startup delay materially increases harm may the smallest safe reversib
 
 Classify before retry; apply a matching case profile before generic defaults. One user-facing objective has one aggregate budget across tools/wrappers/providers/domains. Same input/path/permission/policy/dependency failures need real change, not another attempt. Similar failures across 2+ tools/domains or 3 same-turn occurrences signal systemic risk; diagnose/coordinate. Stop earlier if cost/blast radius/churn grows without signal.
 
+An unknown outcome after dispatch is not a known-no-effect failure. Before replaying a consequential operation after timeout, lost response or controller failure, reconcile the same operation's identity and canonical completion witness through an authorized existing path, or verify an existing idempotent replay contract covers that identity, payload and window. Preserve independently committed/completed effects. If neither establishes completion, no effect or safe replay, use `OPERATION_OUTCOME_UNKNOWN` / `NO_RETRY_UNTIL_CHANGE` and name the missing witness or enabling state; no new writer, state, probe or rollback path is authorized. Known-no-effect failure or checked safe replay retains its matching profile, budget, approval and provider wait.
+
 | `failure_class` | `retry_posture` | Autonomous budget / guidance |
 |---|---|---|
 | `POTENTIALLY_TRANSIENT` | `AUTONOMOUS_RETRY_ALLOWED` | up to 2 rounds; recommended 2s then10s unless provider specifies wait |
@@ -104,6 +106,7 @@ Same-objective aggregate maximum **3 autonomous retry rounds per turn**. Immedia
 
 | `case_id` | Matching posture and recovery |
 |---|---|
+| `OPERATION_OUTCOME_UNKNOWN` | outcome unresolved / `NO_RETRY_UNTIL_CHANGE`; 0 replay attempts until same-operation completion/no-effect evidence or checked safe replay resolves the gate; preserve independent completed effects |
 | `WEB_SEARCH_TIMEOUT` | transient;1 safe low-blast probe without provider wait; identical repeat becomes systemic |
 | `WEB_SEARCH_429_WITH_RETRY_AFTER` | provider-constrained transient / `STOP_AND_ESCALATE`; no immediate retry, report actual provider wait |
 | `WEB_SEARCH_5XX_OR_PROVIDER_UNAVAILABLE` | transient first;1 safe confirmation; repeated provider-side signal systemic |
