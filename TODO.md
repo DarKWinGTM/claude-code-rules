@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
 > **Last Updated:** 2026-10-21
-> **Current Release:** v10.74 published; source/install, remote identity, fresh public payload/install and Release receipt verified
-> **Active Wave:** P073-20/v10.75 operation outcome and bounded input; source/install and synthetic interpretation verified; publication pending.
+> **Current Release:** v10.75 published; source/install, remote identity, fresh public payload/install and Release receipt verified
+> **Active Wave:** none selected; P073-20/v10.75 source/install/publication and final receipt recorded
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,9 +10,11 @@
 
 ## Active / In Progress
 
-- [ ] **P073-20 / v10.75:** Action Safety1.8 and Safe I/O1.10 implemented; focused6/6, Node38/38, Bash/PowerShell installer fixtures on Linux and exact user-runtime19 parity passed, with other17/protected5/no quarantine. Selected source conformance/preservation and full19 A–L before/candidate synthetic interpretation passed12/12 each. Both managed global Skills and parent absorption verified separately; scoped commit/push/Release/fresh-public proof remains pending. [Phase](phase/phase-073-20-operation-outcome-and-bounded-input.md), [history](changelog/changelog/v10.75-operation-outcome-and-bounded-input.changelog.md), [prospective Patch](patch/2026-10-21T14-40-02Z--operation-outcome-and-bounded-input.patch.md). Managed Skill extractions are separately user-scoped, not Main Runtime/release payload; prior P073-19/v10.74 remains closed.
+No active Main execution slice is selected; P073-20/v10.75 source/install, managed Skill and publication proof are reconciled below.
 
 ## Recently Completed
+
+- [x] **P073-20 / v10.75 operation outcome and bounded input:** Action Safety1.8/Safe I/O1.10 keep the nineteen-owner set; focused6/6, Node38/38, Bash/PowerShell fixtures on Linux, source conformance/preservation and exact runtime19 parity passed with other17/protected5/no quarantine. Full19 baseline/candidate A–L synthetic decisions conform12/12 each; no causal model benefit claimed. Separate managed global Skills and pointer-only parent absorption preserve six-case interpretation and existing owners. Source commit `87c5ef3462d04de5be70fd941d8263c7548cff67` and immutable annotated tag `afc3b0dbe7e8cc5b7ce106c7876750cb158a5e5d` were atomically non-force published; [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.75), fresh public tree/selected21 paths and isolated Main19 install verified. Tasks3/4 handed proof to final task5; unrelated local plugin/support/diagram/TODO hunks remain preserved/unpublished. [Phase](phase/phase-073-20-operation-outcome-and-bounded-input.md), [history](changelog/changelog/v10.75-operation-outcome-and-bounded-input.changelog.md), [Patch](patch/2026-10-21T14-40-02Z--operation-outcome-and-bounded-input.patch.md). No successor selected.
 
 - [x] **P073-19 / v10.74 work-preserving settled synthesis:** Execution1.38/Documents1.23 favor task-backed settled synthesis without interrupting work, leading docs with the chosen direction and useful supporting context rather than all experiments. Tasks1.39, proof/prerequisite/history boundaries remain unchanged; no new Rule/checkpoint/checklist. Source integrity, A–H synthetic interpretation, Linux/Bash fixtures and actual Main19 bytes/modes/body/ordered-manifest parity passed; other17 and protected runtime/global entries unchanged. Source commit `201ca64b46e34a13e472c2392a02a86c5dfb893b` and immutable annotated tag object `4ca8c7434c56b4790a5c803a1655eeeb346dc122` were atomically non-force fast-forward published; remote identity, fresh public tree/selected14 paths, isolated Main19 installation and Release receipt verified. Evidence reached final task3 before technical closure; unrelated local plugin/shared-file hunks remain preserved/unpublished. No model/session-reload/retention/Windows/whole-project claim; no successor selected. [Phase](phase/phase-073-19-docs-sync-and-task-handoff.md#v1074-follow-up-settled-synthesis-without-work-interruption), [history](changelog/changelog/v10.74-work-preserving-docs-synthesis.changelog.md), [receipt](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.74).
 

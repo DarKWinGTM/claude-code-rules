@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
-> **Status:** active
+> **Status:** completed — source/install and v10.75 publication/fresh-public proof verified
 > **Created At:** 2026-10-21T14:40:02Z
 > **Creation Evidence:** direct creator event in session 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Target Design:** [Action Safety](../design/action-safety.design.md) v1.8; [Safe I/O](../design/safe-io.design.md) v1.10

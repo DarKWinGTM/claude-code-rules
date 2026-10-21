@@ -3,7 +3,7 @@
 > **Current Version:** 2.31
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
-> **Status:** P073-20/v10.75 active; two source contracts, focused checks, native fixtures and exact runtime installation verified; synthetic interpretation verified; publication pending. P073-19/v10.74 preserved.
+> **Status:** P073-20/v10.75 source/install, synthetic interpretation, managed Skills and publication/fresh-public proof verified; final receipt reconciled. P073-19/v10.74 preserved; no successor selected.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -19,9 +19,9 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ## Active Phase Roadmap
 
-### Selected Current Slice
+### Latest Completed Slice
 
-- **P073-20 / v10.75:** [Operation outcome and bounded input](phase-073-20-operation-outcome-and-bounded-input.md) refines Action Safety1.8/Safe I/O1.10 in the existing P073 owner/install family. Focused written-contract baseline failed for four missing contracts; final six checks pass. Node38/38, Bash/PowerShell fixtures on Linux, selected source preservation and exact runtime19 parity passed with other17/protected5 unchanged/no quarantine. Full19 A–L before/candidate synthetic interpretations conform12/12 each. Managed Skill extractions and parent absorption verified separately; scoped publication proof remains pending. The [prospective Patch](../patch/2026-10-21T14-40-02Z--operation-outcome-and-bounded-input.patch.md) owns before/after review; nineteen-owner membership and unrelated dirty state remain protected. Managed Skills are a separate user-scope gate, not release payload. No successor selected.
+- **P073-20 / v10.75:** [Operation outcome and bounded input](phase-073-20-operation-outcome-and-bounded-input.md) refines Action Safety1.8/Safe I/O1.10 in the existing P073 owner/install family. Focused written-contract baseline failed for four missing contracts; final six checks pass. Node38/38, Bash/PowerShell fixtures on Linux, selected source preservation and exact runtime19 parity passed with other17/protected5 unchanged/no quarantine. Full19 A–L before/candidate synthetic interpretations conform12/12 each. Managed Skill extractions and parent absorption verified separately. Source commit `87c5ef3462d04de5be70fd941d8263c7548cff67` and immutable annotated tag object `afc3b0dbe7e8cc5b7ce106c7876750cb158a5e5d` were atomically non-force fast-forward published; [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.75), remote identity, fresh public tree/selected21-path payload and isolated Main19 installation passed. The tagged pre-publication record stays immutable; this receipt records actual later proof. The [prospective Patch](../patch/2026-10-21T14-40-02Z--operation-outcome-and-bounded-input.patch.md) owns before/after review; nineteen-owner membership and unrelated dirty state remain protected. Managed Skills are a separate user-scope gate, not release payload. No successor selected.
 
 ### Latest Verified Follow-up
 
