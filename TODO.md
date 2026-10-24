@@ -1,8 +1,8 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-10-21
+> **Last Updated:** 2026-10-25
 > **Current Release:** v10.75 published; source/install, remote identity, fresh public payload/install and Release receipt verified
-> **Active Wave:** none selected; P073-20/v10.75 source/install/publication and final receipt recorded
+> **Active Wave:** P073-21/v10.76 source/guidance, separate managed landing and Main19 installation verified in scope; final docs/scoped publication pending. P073-20/v10.75 remains closed
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
@@ -10,7 +10,7 @@
 
 ## Active / In Progress
 
-No active Main execution slice is selected; P073-20/v10.75 source/install, managed Skill and publication proof are reconciled below.
+- [ ] **P073-21 / v10.76:** [Owner-aligned workflow enrichment](phase/phase-073-21-owner-aligned-workflow-enrichment.md) has verified three Rule triads, candidate A–Q interpretation, written15/15 within Node47/47, native Linux fixtures, four separate managed Skill landings and exact Main19 installation/preservation. Baseline interpretation and managed sweep-precheck limits remain explicit in the phase; no model-benefit claim. Tasks2/3/4 hand evidence to finalizer5 for final docs/scoped immutable publication and fresh-public proof, still pending. Unrelated plugin/support/diagram/TODO hunks stay preserved. [Prospective Patch](patch/2026-10-24T18-36-22Z--owner-aligned-workflow-enrichment.patch.md).
 
 ## Recently Completed
 

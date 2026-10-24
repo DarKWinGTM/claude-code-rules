@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.75</b><br><sub>Operation Outcome &amp; Bounded Input</sub>
+  <b>v10.76</b><br><sub>Owner-aligned Workflow Enrichment</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>Released &amp; verified</b><br><sub>Source/install + public-tag proof</sub>
+  <b>Installed · verified in scope</b><br><sub>Publication pending</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.75 / P073-20` clarifies when an operation can be retried safely and how large evidence is bounded before parsing. Action Safety1.8 preserves completed effects and stops unresolved consequential replay; Safe I/O1.10 adds byte/record/retention bounds while keeping direct small reads. The same nineteen owners remain. Focused written-contract, Bash/PowerShell fixtures on Linux and actual exact nineteen-rule installation passed. Full-nineteen synthetic interpretation conformed in both before and candidate packets. The [v10.75 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.75), remote/tag identity, fresh public payload and isolated Main19 installation are verified; [v10.74](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.74) remains immutable. No model-benefit or active-session reload claim.
+> **Current source:** `v10.76 / P073-21` enriches three existing owners: caller-first prevention and workflow proof in Coding1.10, decisive assumptions and bound receipts in Evidence1.10, and complete inventories/visible needed action in Presentation1.27. The same nineteen Runtime Rules and existing safety/scope/proof boundaries remain. Written-contract15/15 (within Node47/47), native installer fixtures on Linux, candidate A–Q synthetic interpretation and actual Main19 installation pass in scope; publication remains pending in the [phase](phase/phase-073-21-owner-aligned-workflow-enrichment.md). The [v10.75 Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.75) remains the latest verified published baseline. Four separately managed user Skills landed outside the Main installation/release payload; these checks do not establish causal model benefit or active-session reload.
 
 <!-- CTA Buttons -->
 <p>
@@ -282,8 +282,11 @@ These capabilities summarize the current operating model at the front-page level
 **📊 Active Runtime Rules: 19**
 
 Current source state:
-- `v10.75 / P073-20` refines Action Safety1.8 and Safe I/O1.10 without changing the [nineteen-owner inventory](design/design/runtime-architecture.design.md). Unknown consequential outcomes require same-operation completion/no-effect evidence or an existing checked safe-replay contract before replay; large/unknown/untrusted input is bounded before decode/parse/materialization. Known-no-effect retries and small direct reads retain their existing gates.
-- Focused written-contract6/6, combined Node38/38 and both native installer fixture suites passed on Linux. Exact user-runtime19 bytes/modes/substantive bodies/ordered manifest, unchanged17/protected5 and selected source/history/reference/preservation checks passed; no quarantine. Full-nineteen separate-reader A–L interpretation conformed12/12 in both baseline and candidate packets; no causal model-benefit claim. The v10.75 Release, exact public-tag payload and isolated Main19 installation are verified. [History](changelog/changelog/v10.75-operation-outcome-and-bounded-input.changelog.md), [phase](phase/phase-073-20-operation-outcome-and-bounded-input.md) and [prospective Patch](patch/2026-10-21T14-40-02Z--operation-outcome-and-bounded-input.patch.md) own detail. User-scope Skills are separately managed and never part of the Main Runtime/release payload.
+- `v10.76 / P073-21` integrates useful enrichment at existing owners rather than copy pstack or treat existing coverage as proof against improvement. Coding1.10 adds caller-first/prevention/proof binding; Evidence1.10 adds decisive assumptions and receipt limits; Presentation1.27 keeps complete inventory/disposition separate from priority and makes needed action visible. Execution1.38/Worker1.18 and the [nineteen-owner inventory](design/design/runtime-architecture.design.md) remain unchanged in membership.
+- Written-contract15/15 is included in combined Node47/47; Bash and PowerShell installer fixtures pass on Linux. All40 candidate reader files match canonical content and its seventeen A–Q synthetic decisions conform; the initial baseline reader used newer ambient guidance in four answers, so it is not a clean comparative-effect experiment. Actual ordered Main19 bytes/modes/substantive bodies/SHA256+Git-blob manifest match source; other16 and five protected runtime/global files remain unchanged, with no new quarantine. Four separately managed Skill parents and three references landed exactly; they are not Main Runtime/release payload. Scoped publication/fresh-public proof remains pending; [history](changelog/changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md), [phase](phase/phase-073-21-owner-aligned-workflow-enrichment.md) and [prospective Patch](patch/2026-10-24T18-36-22Z--owner-aligned-workflow-enrichment.patch.md) retain proof and limits.
+
+Preserved v10.75 source/install/publication baseline:
+- Action Safety1.8/Safe I/O1.10, written-contract6/6, combined Node38/38, native fixtures on Linux, exact Main19 installation and immutable Release/fresh-public payload were verified. Full-nineteen before/candidate interpretation conformed12/12 each without a causal model-benefit claim. [History](changelog/changelog/v10.75-operation-outcome-and-bounded-input.changelog.md) and [phase](phase/phase-073-20-operation-outcome-and-bounded-input.md) preserve detail.
 
 Preserved v10.74 source/install/publication baseline:
 - `v10.74 / P073-19` refines two existing owners in the unchanged [nineteen-owner inventory](design/design/runtime-architecture.design.md). Execution1.38 favors proof-supported settled synthesis at natural work boundaries without interrupting implementation/debug/check flow; changed details, passed checks and completed tasks do not themselves create sync checkpoints. Documents1.23 leads with the chosen direction and necessary rationale/proof/limits/pending obligations; exploratory alternatives are supporting context according to lasting decision value, not equal-weight choices or a transcript.
@@ -302,7 +305,7 @@ Historical published baseline (not current-candidate verification):
 - Immutable `v10.67 / P150` remains the architecture-conformance predecessor at release commit `bd3aa36ff0d7c7712270750249031f362968854c` and annotated tag object `24c3b8982c9e8ad01456bb6139a9e6cee9246fa7`.
 - Released `v10.66 / P149-01` replaces prohibited Unicode Box Drawing markers in the Case 04 and Case 12 flow diagrams with allowed arrows and indentation; scenario semantics remain unchanged.
 - The correction was published from release commit `d8bffccaa304b949a713b40cd7dd2e7da4f6486e` at annotated tag object `f785e254d844b895340328c3c689a728ae449384`, and fresh-public master/tag verification passed.
-- For the historical v10.66 scenario-only correction, all nineteen Runtime Rules, owner triads, installers, Case 17, matrix/coverage and Patch artifacts were protected byte-for-byte; that release required no real runtime reinstall. This is not a claim about the current v10.75 source.
+- For the historical v10.66 scenario-only correction, all nineteen Runtime Rules, owner triads, installers, Case 17, matrix/coverage and Patch artifacts were protected byte-for-byte; that release required no real runtime reinstall. This is not a claim about the current v10.76 source.
 - Released `v10.65 / P149` remains immutable at release commit `2e751bbb620eb68527e5a67eb6348196a67727e7` and annotated tag object `cc7d322d3b1e4e7785373370d2d3c9eb8a8a395e`, with its delayed diagram-format failure preserved.
 - Released `v10.64 / P148` remains immutable and provides verified timestamped Patch identity, deterministic creation, safe exact-reference migration, and the repository-only Patch timeline Tool.
 - Former source-owned material may remain only in execution-disconnected external quarantine or inactive reference/provenance history; normal runtime, install, build, deployment, and test paths must not use it as authority or fallback.
@@ -1091,7 +1094,7 @@ Result: ✅ Verified from actual files
 ### Runtime install boundary
 
 - Current README meaning: the Quick Start block installs the compact 19-rule source-owned active runtime set and uses owner-aware cleanup instead of filename-only deletion.
-- Source state: v10.75 preserves the nineteen-owner set and refines unknown-outcome reconciliation in Action Safety1.8 and preparse evidence bounds in Safe I/O1.10. Focused6/6, Node38/38, Bash/PowerShell fixtures on Linux and actual exact19 bytes/modes/body/ordered-manifest parity passed; other17 and protected5 remain unchanged. Full-nineteen separate-reader A–L interpretation conformed12/12 in both baseline and candidate packets; no causal model-benefit claim. The v10.75 Release, exact public-tag payload and isolated Main19 installation are verified. Prior verified releases remain historical evidence, not fresh model-effect proof.
+- Source state: v10.76 preserves the nineteen-owner set while enriching Coding1.10, Evidence1.10 and Presentation1.27. Written-contract15/15 within Node47/47, Bash/PowerShell fixtures on Linux, candidate A–Q synthetic interpretation and actual Main19 bytes/modes/body/ordered-manifest parity pass; other16 and protected5 remain unchanged, with no new quarantine. Publication/fresh-public proof is pending; the current [phase](phase/phase-073-21-owner-aligned-workflow-enrichment.md) records actual progress and interpretation limits. Prior v10.75 publication remains historical evidence, not proof of model benefit or session reload.
 - Ownership guard: unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine; modified, unmatched, unknown, unrelated, and other-owner files remain untouched.
 - Boundary: external quarantine is outside active Rules discovery and normal install never reads it as source, fallback, or restoration input.
 - Impact: protects the one-active-authority runtime boundary without deleting preserved former material or widening this repo's ownership over shared destinations.
@@ -1218,8 +1221,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.64 |
-  <b>Last Updated</b>: 2026-08-09 |
+  <b>Version</b>: 10.76 |
+  <b>Last Updated</b>: 2026-10-25 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

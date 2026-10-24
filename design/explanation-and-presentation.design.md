@@ -1,8 +1,8 @@
 # Design - Explanation and Presentation
 
 > **Parent Rule:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.26
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.27
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/explanation-and-presentation.changelog.md](../changelog/explanation-and-presentation.changelog.md)
 
 ---
@@ -18,6 +18,12 @@ Material execution updates, closeouts and status questions lead with the direct 
 Read-only, no-op and plan-only replies make their non-edit/non-execution state explicit when confusion is plausible; trivial lookups remain direct. Accurate communication owns action/current-state truth and verification strength, while register owns language/signal pruning. Presentation neither invents proof/approval gates nor claims installed files guarantee model behavior.
 
 ---
+
+### Complete inventories and visible decisions
+
+Preserve each in-scope item and its disposition when the user requests the complete inventory. Priority may identify a recommended subset but must not silently replace the requested coverage. Combine useful overlapping items only while retaining traceable meaning and explaining the merge; existing coverage alone is not a dismissal reason.
+
+Make the material needed action/decision, dependency and consequence easy to locate through content-fit grouping and selective emphasis. Keep the necessary evidence or limit beside it rather than burying the action after a long technical paragraph. No fixed headings, emphasis on every term or promise of color/underline/renderer effects that were not actually shown.
 
 ## Scope
 

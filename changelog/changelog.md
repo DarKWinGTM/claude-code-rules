@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.75 (source/install, synthetic interpretation and publication verified)
+> **Current Version:** 10.76 (source/guidance/install verified in scope; publication pending)
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Latest Published Version:** 10.75
 > **Version Shards:** [changelog/](changelog/)
@@ -13,6 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.76 | 2026-10-25 | **[Owner-aligned workflow enrichment - selected source/install/publication wave](changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md#version-1076)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.75 | 2026-10-21 | **[Released operation outcome and bounded input — source/install and public-tag proof verified](changelog/v10.75-operation-outcome-and-bounded-input.changelog.md#version-1075)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.74 | 2026-10-16 | **[Released work-preserving settled synthesis — source/install and public-tag proof verified](changelog/v10.74-work-preserving-docs-synthesis.changelog.md#version-1074)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 10.73 | 2026-10-16 | **[Released interim docs sync and final reconciliation — source/install and public-tag proof verified](changelog/v10.73-interim-docs-sync-and-final-reconciliation.changelog.md#version-1073)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |

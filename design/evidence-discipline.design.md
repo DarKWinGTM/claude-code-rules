@@ -1,8 +1,8 @@
 # Design - Evidence Discipline
 
 > **Parent Rule:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.9
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/evidence-discipline.changelog.md](../changelog/evidence-discipline.changelog.md)
 
 ---
@@ -34,6 +34,12 @@ P146 refinement: this owner should require two-sided migration proof—positive 
 Version 1.8 refinement: this owner should distinguish supplied rendered-artifact contents from their unverified provenance and live equivalence; define witness-specific proof boundaries for screenshots, Rendered HTML, rendered text or semantic witnesses, sanitized console, log, or network exports, and authenticated harness evidence; require checked cross-witness correlation; and keep shared examples portable through `<supplied-rendered-artifact>` rather than machine-local paths.
 
 ---
+
+### Decisive assumptions and structured witnesses
+
+Identify the assumption whose failure changes the diagnosis or recommendation. Inspect indirect consumers, dependencies, shipped versions, local patches or timing only when they bear on that assumption; choose the smallest disproof check and keep missing or contradictory evidence conditional. This enriches existing verify-first discipline without a universal dependency checklist.
+
+Structured or timestamped receipts remain witnesses rather than self-certifying truth. Bind the claimed result to the actual command/selector, relevant source/test/environment and reached terminal evidence; missing fields remain unobserved. Reuse the existing producer/report owner and do not create another journal, receipt schema or semantic authority from a proof obligation.
 
 ## Runtime Requirements
 

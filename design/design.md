@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.75
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821 (2026-10-21)
+> **Current Version:** 10.76
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.75 refines same-operation outcome reconciliation in Action Safety and preparse evidence bounds in Safe I/O; the nineteen-owner baseline and all prior approval/proof boundaries remain intact
+> **Selected Target:** v10.76 enriches caller-first prevention/proof binding, decisive assumptions/receipts and complete inventories/visible action in three existing owners; the nineteen-owner baseline and prior approval/proof boundaries remain intact
 
 ---
 
@@ -15,7 +15,9 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.75 / P073-20` refines [Action Safety](action-safety.design.md) v1.8 and [Safe I/O](safe-io.design.md) v1.10 inside their current roles. Unknown consequential outcomes require same-operation reconciliation or checked safe replay before retry; large/unknown/untrusted evidence requires byte, record and retention bounds before decode/parse/materialization. Known-no-effect retries and direct small reads remain proportionate. No new Rule, Product state/writer/probe/rollback path, runtime resource policy or runner is selected. User-scope managed Skill extractions remain outside the Main Runtime payload and release boundary.
+Selected `v10.76 / P073-21` enriches [Coding Discipline](coding-discipline.design.md) v1.10, [Evidence Discipline](evidence-discipline.design.md) v1.10 and [Explanation and Presentation](explanation-and-presentation.design.md) v1.27. Caller usage and failure semantics precede interface structure; the smallest prevention lever stays at its checked owner. Selected workflow proof distinguishes selector admission, reached assertions, terminal outcome and remaining proof. Decisive assumptions use relevant actual implementation evidence; structured receipts require matching bindings. Complete requested inventories retain disposition before priority, and necessary action stays visible through flexible grouping/emphasis. Existing ownership enables enrichment rather than declaring the incumbent best. Execution1.38 and Worker1.18, nineteen membership and all prior safety/proof/approval boundaries remain unchanged; separate managed Skill procedures are outside the Main payload/release.
+
+Preserved `v10.75 / P073-20` refines [Action Safety](action-safety.design.md) v1.8 and [Safe I/O](safe-io.design.md) v1.10 inside their current roles. Unknown consequential outcomes require same-operation reconciliation or checked safe replay before retry; large/unknown/untrusted evidence requires byte, record and retention bounds before decode/parse/materialization. Known-no-effect retries and direct small reads remain proportionate. No new Rule, Product state/writer/probe/rollback path, runtime resource policy or runner is selected. User-scope managed Skill extractions remain outside the Main Runtime payload and release boundary.
 
 The preserved `v10.74 / P073-19` baseline refines documentation cadence within existing owners. [Execution](execution-and-goal-frame.design.md) treats documentation as synthesis supporting uninterrupted work: tasks/working records hold continuation-relevant evolving detail, and proof-supported conclusions enter affected documents when settled enough for reference or handoff at a natural work boundary, not automatically after each change/check/task. [Document governance](document-governance.design.md) leads with the selected direction and necessary rationale/proof/limits/pending obligations; exploratory alternatives remain supporting context according to lasting decision value, not equal-weight current choices or a transcript. [Tasks](phase-todo-artifact.design.md) retain existing evidence handoff and last-family reconciliation. Design/contract/approval prerequisites, truthful recovery checkpoints and meaningful history remain intact; this is neither an end-only sync ban nor final-only success/deletion policy. The same nineteen substantive owners, safety/proof/source-root boundaries, prior communication/tooling/coding and [compaction](design/runtime-compaction.design.md) remain. No new Rule, automatic checkpoint, per-case docs task, framework or Product change is selected. Version, execution/proof and publication history belong to their existing owners.
 

@@ -1,14 +1,15 @@
 # Changelog - Coding Discipline
 
 > **Parent Document:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.9
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-10-25 | **[Added caller-first prevention and bound workflow proof](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.9 | 2026-10-15 | **[Added project-owned reusable tooling and bounded probe absorption](#version-19)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
 | 1.8 | 2026-09-30 | **[General contract-first coding and semantic conditions](#version-18)** | 7194487f-fe8b-4383-8756-3db4c5612392 |
 | 1.7 | 2026-09-30 | **[Compacted decisions and bounded optional controls](#version-17)** | adda8afb-6edf-466b-add9-b9649b718e01 |
@@ -24,6 +25,17 @@
 | | | Summary: Created `coding-discipline.md` as a body-sufficient merged runtime owner for maintainable code structure, proportionate verification, and tactical-to-strategic convergence in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-110"></a>
+## Version 1.10: Caller-first prevention and bound workflow proof
+
+**Date:** 2026-10-25
+**Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+
+- Added caller usage/input/output/failure before types/signatures/modules and the smallest effective prevention lever at the checked code/type/schema/validator/Tool/Skill/Rule owner.
+- Existing coverage identifies an absorption point, not proof against useful enrichment; a correction alone does not authorize architecture or persistent machinery.
+- Connected selected core contract, owner case/selector admission, actual reached assertions, terminal outcome and remaining proof through the existing runner/report owner; small work and sufficient proof require no new inventory or runner.
+- Cases07 and focused written contracts carry scoped acceptance. [P073-21](../phase/phase-073-21-owner-aligned-workflow-enrichment.md) owns actual proof/install/publication state; no model-benefit or historical-defect claim.
 
 <a id="version-19"></a>
 ## Version 1.9: Reusable tooling and temporary probes

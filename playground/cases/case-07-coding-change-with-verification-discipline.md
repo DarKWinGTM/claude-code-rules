@@ -82,6 +82,18 @@ These synthetic S9 inputs exercise [Coding Discipline](../../coding-discipline.m
 | S9c | Validated probe logic becomes a reusable requirement; the fitting project tool is in scope but Suite changes are not authorized. | Absorb relevant validated logic into the existing tool before claiming tooling complete; do not copy the raw probe, self-assign Suite work or create a parallel runner. |
 | S9d | Fitting source owner/permission is missing; outputs include an authenticated browser profile. | Preserve a safe evidence pointer and explicit blocked/deferred absorption obligation; obtain the missing authority before mutation. Do not copy credentials, profiles or secret-bearing captures into source, or sweep old temporary files. |
 
+### Caller-first prevention and selected proof variants
+
+These declared virtual cases extend Coding1.10 without adding an observed incident or executable model-evaluation result.
+
+| Input | Expected decision and nearest boundary |
+|---|---|
+| A new interface is proposed from internal helpers while actual callers need a different failure result. | Work from caller usage/input/output/failure, then types/signatures/module boundary and implementation; preserve the selected contract rather than add layers for internal elegance. |
+| A malformed value is preventable at an existing schema validator, but a new Rule or service is proposed. | Use the smallest effective mechanism at the checked owner; enrich related guidance only for a distinct reusable need. No automatic architecture or permanent Tool from a correction. |
+| An existing Rule covers the principle and a new technique clarifies the operational step. | Integrate the useful complementary detail instead of discarding it because the topic already has an owner; do not duplicate authority. |
+| A core workflow case exists in the registry but the selected suite excludes it, or fail-fast stops before its assertion. | Distinguish registered, admitted, executed, reached and terminal states; report the remaining selected proof and use the existing runner/report rather than claim coverage from the test name. |
+| A focused small edit already has sufficient passing proof. | Close at that selected gate without a new inventory, runner, receipt schema, design arena or dependency worksheet. |
+
 ## User objective
 
 Make a code change or bug fix without overstating completion before the relevant verification actually runs.

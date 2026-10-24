@@ -1,14 +1,15 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.9
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.10 | 2026-10-25 | **[Added decisive assumptions and bound structured witnesses](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.9 | 2026-09-30 | **[Compacted evidence thresholds and utility boundaries](#version-19)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.8 | 2026-08-10 | **[Added supplied rendered-artifact proof boundaries](#version-18)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
 | 1.7 | 2026-08-09 | **[Compacted evidence integration handoffs](#version-17)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -23,6 +24,17 @@
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-110"></a>
+## Version 1.10: Decisive assumptions and structured witnesses
+
+**Date:** 2026-10-25
+**Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+
+- Made decisive assumptions and relevant indirect consumer/dependency/shipped-version/local-patch/timing checks explicit, with the smallest disproof check and conditional missing/contrary evidence.
+- Structured/timestamped receipts need command/selector, artifact/environment and reached terminal evidence; missing fields remain unobserved rather than passed.
+- Reused existing evidence/report owners without a new journal/schema mandate; retained all witness, substitute, cause and migration proof limits.
+- Case02 and focused written contracts carry scoped acceptance; [P073-21](../phase/phase-073-21-owner-aligned-workflow-enrichment.md) owns the selected verification/install/publication record.
 
 <a id="version-19"></a>
 ## Version 1.9: Compacted evidence thresholds and utility boundaries

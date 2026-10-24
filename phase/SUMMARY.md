@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.31
+> **Current Version:** 2.32
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
-> **Status:** P073-20/v10.75 source/install, synthetic interpretation, managed Skills and publication/fresh-public proof verified; final receipt reconciled. P073-19/v10.74 preserved; no successor selected.
+> **Status:** P073-21/v10.76 source/guidance, separate managed landing and Main19 installation verified in scope; final documentation/publication pending. P073-20/v10.75 and prior verified slices remain preserved.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -18,6 +18,10 @@ This file is the compact active roadmap/index. Start here for current execution 
 ---
 
 ## Active Phase Roadmap
+
+### Active Slice
+
+- **P073-21 / v10.76:** [Owner-aligned workflow enrichment](phase-073-21-owner-aligned-workflow-enrichment.md) integrates caller-first/prevention/proof binding in Coding1.10, decisive assumptions/bound receipts in Evidence1.10, and complete inventories/visible action in Presentation1.27. Execution1.38/Worker1.18 and Main19 membership remain unchanged. Written15/15 within Node47/47, native fixtures on Linux, candidate A–Q interpretation, four separate managed Skill landings and actual Main19 parity/preservation pass. Baseline interpretation and managed process limits remain in the child; Skills are never release payload. Final docs/scoped publication/fresh-public proof is pending; the [prospective Patch](../patch/2026-10-24T18-36-22Z--owner-aligned-workflow-enrichment.patch.md) preserves before/after review. Tasks2/3/4 hand off to finalizer5; unrelated dirty source state remains protected.
 
 ### Latest Completed Slice
 

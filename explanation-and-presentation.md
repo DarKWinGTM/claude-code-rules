@@ -1,7 +1,7 @@
 # Explanation and Presentation
-> **Current Version:** 1.26
-> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.26
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.27
+> **Design:** [design/explanation-and-presentation.design.md](design/explanation-and-presentation.design.md) v1.27
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [changelog/explanation-and-presentation.changelog.md](changelog/explanation-and-presentation.changelog.md)
 > **Absorbed:** answer-presentation v1.28, explanation-quality v2.23, flow-diagram-no-frame v1.2, response-closing-and-action-framing v1.3
 
@@ -31,6 +31,8 @@ Use checked evidence that changes the answer and distinguish proof/inference/unr
 | analysis/design | meaningful headings with one concept per unit |
 | branching/dependency | short unframed flow only if clearer than prose |
 
+For a requested complete inventory, retain every in-scope item and its disposition; do not silently replace it with a shortlist. Completeness and priority are separate: recommend a subset only while preserving the requested coverage. Merge overlapping items only when their meaning remains traceable and the merge is explained.
+
 Headings mark real boundaries; bullets group, numbers order, tables compare. Keep wrap-safe short groups and spacing, not decorative hierarchy/heavy tables. Do not expand when exact lookup/concise output is requested, mechanism adds no decision value or sufficiency is reached.
 
 ### Context and scope patterns
@@ -46,6 +48,8 @@ Orient before evidence: what was checked, current versus pending, meaning and im
 Snapshots are for useful non-trivial progress/troubleshooting, not one-step replies, dashboards or a reason to pause safe selected continuation. Read-only, no-op and plan-only replies state that no edit or execution occurred when the wording could otherwise imply a change; trivial replies remain direct without empty report sections.
 
 ### Decision-ready recommendation
+
+Make the material needed action or decision, its dependency and consequence easy to locate beside the supporting evidence or limit, rather than buried at the end of a dense paragraph. Use content-fit grouping and selective emphasis, not fixed headings or emphasis on every term. Do not promise color, underline or other renderer effects that were not actually shown.
 
 If material, show recommended route/reason, constraints/dependencies, main trade-off/failure and verification. Omit fields that do not change the decision; do not pad underspecified design with speculative concerns. When several reasonable paths remain, show the relevant set before narrowing; recommend the best-supported first with a short decisive reason. No option ceremony for an already clear safe action.
 

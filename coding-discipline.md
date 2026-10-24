@@ -1,7 +1,7 @@
 # Coding Discipline
-> **Current Version:** 1.9
-> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.9
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.10
+> **Design:** [design/coding-discipline.design.md](design/coding-discipline.design.md) v1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [changelog/coding-discipline.changelog.md](changelog/coding-discipline.changelog.md)
 > **Absorbed:** maintainable-code-structure-and-decomposition v1.2, development-verification-and-debug-strategy v1.1, tactical-strategic-programming v1.3
 
@@ -28,6 +28,8 @@ Before selecting a material condition, representation or structure, understand t
 | another value for an existing concept | identify canonical owner/form first; reuse it unless a distinct stage, lifecycle or contract earns a new representation |
 | speculative interface/factory/strategy/plugin-like variation | avoid, simplify or justify from current variation/isolation evidence, not imagined futures |
 | immediate repair safer than a justified structural split | bounded tactical edit with target owner, remaining material debt and convergence trigger |
+
+For material interface design, start with concrete caller usage, input/output and failure semantics, then types/signatures and module boundaries before implementation. Trace affected consumers where their contracts change the decision; do not impose a design arena on small edits.
 
 Helpers must earn indirection: a real concept, rule, process, reusable behavior or useful test/side-effect boundary should be clearer than inline code. Single-use helpers need meaningful names. Avoid trivial one-line/pass-through wrappers, excessive parameter threading and call-chain hopping; inline helpers with no semantic value.
 
@@ -59,6 +61,8 @@ Refactor preserves externally visible behavior unless change is explicitly selec
 
 Before non-trivial closeout, inspect material behavior, state/dependency, integration, failure, security, needed observability and verification gaps in the selected outcome. Happy path alone is insufficient when scope depends on errors, retries/idempotency, persistence, concurrency, rollback, cleanup or external contracts. Cover each material obligation or explicitly mark deferred, blocked, not applicable or out of scope with owner/reason where needed.
 
+Choose the smallest effective prevention mechanism at its checked owner: code, type/schema, validator, Tool, Skill or Rule. Existing coverage identifies an absorption point, not proof that enrichment is unnecessary; merge useful complementary detail without duplicating authority. A correction alone does not authorize new architecture or persistent machinery.
+
 A risk observation or test obligation does not itself authorize a production guard, new state/path, queue or architecture. Choose controls from checked requirements and the actual writers, readers, data sensitivity, lifecycle and failure model—not an imagined topology. A demonstrated failure or concrete in-scope risk earns a control only when it improves the authorized outcome better than a simpler path; required safety need not wait for an incident. Preserve identity, authorization, integrity, atomicity, privacy and recovery obligations even when simplifying. Consult on material acceptance, ownership, cost or scope changes through the execution/safety owners; do not invent speculative compatibility layers or extend negative proof beyond affected roles.
 
 ## Part B — Development Verification Strategy
@@ -78,6 +82,8 @@ Before or alongside non-trivial work, identify changed behavior/type of change, 
 | production/shared-state/destructive operation | approval-sensitive verification with rollback/containment owner |
 
 Strategy, not ceremony: a stronger existing test may replace a new scenario; a harness may replace fragile ad hoc checks. Each test/review should reproduce/protect changed behavior, check a material contract or close the selected gate. Include representative valid forms and the nearest meaningful failure/unchanged boundary; do not teach production logic one fixture shape. Correctness, architecture conformance and performance are distinct claims requiring matching evidence. Expand only for a decision-changing failure/risk, not broad noisy reruns or reassurance reviews. Live checks remain conditional on selected scope, approval, safety and readiness.
+
+For a selected workflow-coverage claim, connect the selected core contract → exact owner case and selector admission → execution and assertions reached → terminal outcome → remaining proof. A registered or selected case is not executed coverage. Reuse the existing runner/report owner and retain gaps; this is not a new inventory, runner or receipt mandate for small work or already sufficient proof. Detailed receipt reconciliation remains a selected procedure, not another test-admission authority.
 
 Select one route explicitly for non-trivial coding: `existing_test`, `new_focused_test`, `new_testkit_scenario`, `smoke_check`, `live_check_required`, or `not_applicable_with_reason`. Do not reflexively create TestKit for every task or silently skip a material verification decision.
 

@@ -1,14 +1,15 @@
 # Changelog - Explanation and Presentation
 
 > **Parent Document:** [../explanation-and-presentation.md](../explanation-and-presentation.md)
-> **Current Version:** 1.26
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.27
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 ---
 
 ## Version History (Unified)
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.27 | 2026-10-25 | **[Preserved complete inventories and visible needed action](#version-127)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.26 | 2026-09-30 | **[Put current execution outcomes before reporting detail](#version-126)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.25 | 2026-09-30 | **[Consolidated explanation patterns and bounded closeout](#version-125)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.24 | 2026-08-09 | **[Made goal presentation rendering-only](#version-124)** | 92c4d51e-eb02-4299-823a-1a6b8270f045 |
@@ -40,6 +41,17 @@
 | | | Summary: Created `explanation-and-presentation.md` as a body-sufficient merged runtime owner for plain-language explanation, scan-friendly presentation, diagram discipline, and concise action framing in the compact 18-rule runtime set. | |
 
 ---
+
+<a id="version-127"></a>
+## Version 1.27: Complete inventories and visible action
+
+**Date:** 2026-10-25
+**Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+
+- Preserved each requested inventory item and its disposition before priority; no silent replacement with a shortlist, and meaningful merges remain traceable.
+- Made material needed action/decision, dependency and consequence easy to locate near evidence/limits through flexible grouping and selective emphasis rather than a fixed template.
+- Rejected promises of color/underline/renderer effects that were not actually shown; kept outcome-first reporting, evidence strength, goal rendering and no-frame diagrams unchanged.
+- Case05 and focused written contracts carry scoped acceptance; [P073-21](../phase/phase-073-21-owner-aligned-workflow-enrichment.md) owns actual verification and release state, not a model-effect claim.
 
 <a id="version-126"></a>
 ## Version 1.26: Put current execution outcomes before reporting detail

@@ -1,8 +1,8 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.75
-> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821 (2026-10-21)
+> **Current Version:** 10.76
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
 > **Status:** Active target-state shard; source/install baseline, publication proof tracked separately
@@ -17,13 +17,13 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | 2 | `action-safety.md` | `action-safety.design.md v1.8` | destructive/private/topology/emergency/retry gates, same-operation outcome reconciliation |
 | 3 | `audience-surface-disclosure-control.md` | `audience-surface-disclosure-control.design.md v1.2` | direct-user transparency and generated audience disclosure |
 | 4 | `authority-and-scope.md` | `authority-and-scope.design.md v2.9` | user precedence, advisory selection and Active Project Root |
-| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.9` | contract-first coding, reusable source-tool/probe lifecycle, debug, architecture fitness and proportionate tests |
+| 5 | `coding-discipline.md` | `coding-discipline.design.md v1.10` | caller-first/prevention-owner coding, bound workflow proof, source-tool/probe lifecycle, debug and architecture fitness |
 | 6 | `communication-register.md` | `communication-register.design.md v1.29` | plain action/outcome language, user/peer recipient clarity, signal, agreement and explicit retraction |
 | 7 | `document-governance.md` | `document-governance.design.md v1.23` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.15` | references, lossless rollover, payload/project proof and preservation |
-| 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.9` | evidence kinds/claim states, cause/nonfinding/mock/witness limits |
+| 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.10` | decisive assumptions, bound receipts, evidence kinds/claim states and cause/nonfinding/mock/witness limits |
 | 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.38` | fact-led route/cadence, evidence-backed codebase challenge, mode/scope, proof selection and closure |
-| 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.26` | current-outcome-first reporting, flexible snapshots, purpose/mechanism/layout, unframed diagrams and rendering |
+| 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.27` | complete inventories, visible needed action, outcome-first reporting, flexible grouping and unframed diagrams |
 | 12 | `goal-authoring-and-route-support.md` | `goal-authoring-and-route-support.design.md v1.4` | checked Goal construction, proof slots and verified route/Plan-reference lifecycle |
 | 13 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.8` | eligible source ranking/corroboration/conflicts |
 | 14 | `memory-governance-and-session-boundary.md` | `memory-governance-and-session-boundary.design.md v2.0` | path/freshness applicability, active meaning hooks and optional recall |

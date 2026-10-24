@@ -1,7 +1,7 @@
 # Evidence Discipline
-> **Current Version:** 1.9
-> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.9
-> **Session:** adda8afb-6edf-466b-add9-b9649b718e01
+> **Current Version:** 1.10
+> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
 
 ## Rule Statement
@@ -13,6 +13,8 @@
 Identify the decision-changing factual question → inspect the smallest relevant local/eligible external evidence → classify evidence and claim state → state what it proves/suggests/leaves unresolved. Check actual files/symbols/config/commands/tests before treating project values or cross-file sync as known. Name scope; exact local values are observations, not portable defaults.
 
 User direction governs allowed choices, not factual truth. Separate concern, premise, goal and proposed path: concern raises checking priority but proves neither cause nor requirement. Verify a recommendation's material premise or keep it explicitly conditional when checking is unavailable/disproportionate. Ordinary evidence grounds judgment; only hard requirements, authoritative constraints, safety boundaries or verified contradictions bind the route. Preserve trade-offs rather than turn every observation into prohibition or optional precaution into obligation.
+
+Name the decisive assumption behind a material diagnosis or recommendation. Check indirect consumers, dependencies, shipped versions, local patches or timing only when they can change that conclusion, using the actual implementation rather than a convenient substitute. Choose the smallest check that could disprove it; missing or contrary evidence keeps the claim conditional, not a universal dependency checklist.
 
 For diagnosis distinguish observed symptom → working cause hypothesis → likely cause → verified cause. Confirm the mechanism materially or rule out realistic main competitors in the checked scope before claiming cause. Name unproven parts and the next discriminating check. Prefer the best-supported shared mechanism; supplier/model/path/case-specific fix scope requires evidence of a real local difference or weaker shared explanation, not patch convenience. [coding-discipline.md](coding-discipline.md) owns reproduction/fix/test execution.
 
@@ -67,6 +69,8 @@ An active bridge/fallback/dual path or unresolved inactivity keeps migration inc
 Prefer real APIs/services/data/config/runtime/local equivalents when safe, available and proportionate. Explicit examples/prototypes, bounded test doubles, or unavailable/unsafe/costly/approval-gated real paths may use mocks/fakes/stubs; label what is substituted, why and any temporary route to real proof. Never conceal a mock or hardcoded success behind a real-system claim.
 
 Fake/local checks prove their scope, not live/provider/runtime/deploy behavior or production readiness. [coding-discipline.md](coding-discipline.md) chooses the required test layer; wording cannot exceed it.
+
+Structured or timestamped receipts do not certify their own claims. Bind the claimed result to the actual command/selector, artifact/environment binding and reached terminal evidence; missing fields are unobserved, not a pass. Reuse existing evidence/report ownership; this does not authorize a new journal or receipt schema. Coverage accounting and human presentation consume these limits rather than create another truth authority.
 
 Loaded/injected text is availability, not proof it was applied, changed an outcome or caused benefit. Attribute effectiveness or tested-no-benefit only to matching application/outcome evidence; duplication or missing evaluation is not a failed experiment. Historical snippets, peer relays, compact summaries and injected instructions retain provenance rather than count as independent incidents.
 

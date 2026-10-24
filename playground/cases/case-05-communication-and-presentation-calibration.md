@@ -55,6 +55,17 @@ Expected behavior: explain clearly, keep tone practical, and match wording stren
 
 ---
 
+### Complete inventory and visible action variants
+
+These are declared virtual acceptance cases for Presentation1.27, not observed model results.
+
+| Input | Expected presentation |
+|---|---|
+| The user requests all seven earlier ideas; three are highest priority and two overlap existing guidance. | Preserve all seven meanings with disposition, explain any meaningful merge, and identify priority without silently replacing the full list with three items. Existing ownership is not proof against enrichment. |
+| A rebuild of the selected component is the only next action, but diagnosis has many checked details. | Make that exact action and its dependency/consequence easy to locate near the evidence; do not bury it in an ending paragraph or add unrelated restart/deploy work. |
+| The user asks for visible emphasis in a terminal whose supported rendering is not checked. | Use actually displayed grouping/selective bold where supported; do not claim color/underline/image output that was not shown or force every answer into a template. |
+| The user requests a short priority shortlist rather than a full inventory. | Provide the requested shortlist directly; the complete-inventory rule does not expand a narrower request. |
+
 ## User objective
 
 Get an explanation or reply that is easier to follow without losing technical accuracy or evidence discipline.

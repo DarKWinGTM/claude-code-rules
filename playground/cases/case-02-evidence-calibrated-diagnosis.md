@@ -57,6 +57,17 @@ Expected behavior: verify further or state the limit, rather than upgrading the 
 
 ---
 
+### Decisive-assumption and receipt variants
+
+These are declared virtual acceptance cases for Evidence1.10, not newly observed incidents.
+
+| Input | Expected decision and nearest boundary |
+|---|---|
+| A recommendation is safe only if the shipped dependency does not call the consumer synchronously; a generic latest-version example is available. | Name that decisive assumption, inspect the actual shipped version/local patches and consumer timing, and select the smallest disproof check; do not infer the current implementation from the generic example. |
+| A distant dependency cannot change the selected conclusion, or an exact small source check already settles it. | Stop at sufficient evidence; no full dependency checklist or new harness. |
+| A timestamped structured receipt says PASS but omits argv/selector or matching reached assertions. | Treat the omitted binding as unobserved, not a pass; use the existing owner-produced witness or report the limit, without a second journal/schema. |
+| The actual implementation contradicts the decisive assumption after an earlier recommendation. | Keep the goal, withdraw the unsupported route and state the smallest evidence-backed continuation; no architecture from the concern alone. |
+
 ## User objective
 
 Understand a visible failure without turning the first plausible explanation into a verified root cause too early.

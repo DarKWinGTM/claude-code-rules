@@ -1,8 +1,8 @@
 # Design - Coding Discipline
 
 > **Parent Rule:** [../coding-discipline.md](../coding-discipline.md)
-> **Current Version:** 1.9
-> **Session:** b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2
+> **Current Version:** 1.10
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/coding-discipline.changelog.md](../changelog/coding-discipline.changelog.md)
 
 ---
@@ -31,6 +31,12 @@ Study decision-changing facts and the selected behavior before choosing predicat
 - Match access/persistence and protections to actual consumers, writers, sensitivity and failure models. Preserve raw/policy/domain stages, audit/fidelity/round-trip/history recovery, atomicity, authorization, privacy and real concurrency needs. Correctness and performance require different evidence.
 
 These are one general development method, not project-specific exceptions, fourteen independent rules or new additional trials.
+
+### Caller-first design, prevention and proof binding
+
+For material interfaces, start with concrete caller usage, input/output and failure semantics, then derive types/signatures, module boundaries and implementation. Trace indirect consumers where their contracts change the decision; do not impose a design arena or worksheet on small edits. Choose the smallest effective code, type/schema, validator, Tool, Skill or Rule at its checked owner. Existing coverage is an integration point for useful enrichment, not a declaration that the incumbent is best; a correction alone grants no architecture expansion.
+
+When claiming workflow coverage, connect the selected core contract to the owner case/selector admission, execution/assertions actually reached, terminal outcome and remaining proof. Reuse existing runner/report evidence and preserve its gaps, not a new mandatory inventory/runner/receipt. General proof selection remains here; detailed receipt accounting stays with its selected procedure and evidence thresholds stay with [Evidence Discipline](evidence-discipline.design.md).
 
 ### Reusable tools and temporary work
 
