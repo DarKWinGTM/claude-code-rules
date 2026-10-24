@@ -2,7 +2,7 @@
 
 > **Summary File:** [SUMMARY.md](SUMMARY.md)
 > **Phase ID:** 073-21
-> **Status:** source/guidance/managed/install verified in scope; scoped publication and fresh-public proof pending
+> **Status:** completed in checked scope; source/guidance, managed/install, public release and fresh-public proof verified
 > **Target Version:** 10.76
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
@@ -43,7 +43,7 @@ Preserve pre-existing dirty/untracked/index content, including shared TODO hunks
 2. Three owner triads, selected Cases02/05/07 and the existing written-contract test were updated. Matching written, synthetic and preservation checks passed within the limits below.
 3. Four exact managed Skill changes landed through the existing proposal/promoter mechanism; selected parents/references, named account, ledger continuity and preserved contents were independently checked.
 4. Native fixtures and actual canonical Main19 installation passed with owner-only recovery originals outside discovery and other-owner preservation.
-5. Final affected-document/scoped-index reconciliation, non-force source push, immutable annotated tag/Release, fresh-public payload/isolated install and receipt are pending.
+5. Final affected-document/scoped-index reconciliation, non-force source push, immutable annotated tag/Release, fresh-public payload/isolated install and receipt are complete in the checked scope. The source commit/tag snapshot remains immutable; this post-publication document receipt is a later commit.
 
 Tasks2/3/4 handed source, managed and install evidence to last-family finalizer5 before technical closure. Task5 owns the remaining publication gate; no finding opens another objective automatically.
 
@@ -86,4 +86,4 @@ Source/runtime recovery is a deliberate exact approved action, not fallback, roo
 
 ## Current Disposition
 
-Source/guidance contracts, separate selected managed landing and actual Main19 installation are verified in scope. Scoped publication and fresh-public proof remain pending. No current-session reload, causal model benefit, performance gain, Windows OS coverage, repeated stability or whole-project convergence claim; no successor selected.
+Source/guidance contracts, separate selected managed landing, actual Main19 installation, atomic non-force publication, immutable tag/Release and fresh-public selected23-path/isolated19 installation are verified in scope. No current-session reload, causal model benefit, performance gain, Windows OS coverage, repeated stability or whole-project convergence claim; no successor selected. The managed pre-drain orphan-sweep precheck was not recorded, so global Skill-tree/sweep-absence proof is excluded.

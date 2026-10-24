@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
-> **Status:** applied; source/guidance/managed/install verified in scope, scoped publication pending
+> **Status:** applied and published; source/guidance/managed/install/public proof verified in scope
 > **Created At:** 2026-10-24T18:36:22Z
 > **Creation Evidence:** direct creator event in session 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Target Design:** [Coding](../design/coding-discipline.design.md) v1.10; [Evidence](../design/evidence-discipline.design.md) v1.10; [Presentation](../design/explanation-and-presentation.design.md) v1.27
@@ -60,7 +60,7 @@ Update only selected v10.76/P073-21 claims and links, preserving prior history a
 
 The selected checks are focused written-contract RED/GREEN (a missing written clause is not a Product failure), existing Node/Patch and Bash/PowerShell fixtures, complete source-bound synthetic reader contexts, exact nineteen-file runtime installation and other-owner preservation. Written15/15 within Node47/47, native fixtures on Linux, candidate A–Q interpretation, selected managed parent/reference landing and actual Main19 parity/preservation passed. The initial baseline reader mixed in newer guidance in four answers; corrected baseline anchors do not make it a pristine comparative experiment. The managed orphan-sweep precheck was not recorded, so global sweep-absence proof is excluded. The [phase](../phase/phase-073-21-owner-aligned-workflow-enrichment.md) owns detailed execution evidence, corrections and limits.
 
-Scoped non-force source publication, immutable tag/Release and exact fresh-public payload/isolated installation remain pending. Preserve this prospective before/after review and original creation identity. These checks do not prove causal model improvement, automatic session reload, Windows OS behavior or whole-project convergence.
+Scoped non-force source publication, immutable tag/Release and exact fresh-public payload/isolated installation passed: source commit `ebdb668bb7b8c6e0e76744eca81e4b90994921f8`, annotated tag object `204ff3a0360b690c99e5c073f3f36d565265ac23`, [GitHub Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.76), selected23-path public payload and isolated exact19 installation. Preserve this before/after review and original creation identity; this later receipt does not move the tag. These checks do not prove causal model improvement, automatic session reload, Windows OS behavior, repeated stability or whole-project convergence.
 
 ## Rollback Approach
 
