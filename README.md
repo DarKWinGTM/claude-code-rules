@@ -167,21 +167,45 @@ Recommended first use after install:
 
 ### 🤖 AI-Assisted Install Prompt
 
-If you want Claude Code to install this repo for you into the current project's `.claude/rules/` target, use this prompt:
+Use this prompt to install the active Runtime Rules and both companion plugins for the current project. The plugins include their bundled Skills and agents; they install separately from `.claude/rules/`.
 
 ```text
-Install this rules repo for me from:
+Install the active runtime rules and these companion plugins from:
 https://github.com/DarKWinGTM/claude-code-rules
 
-Requirements:
-- clone the repo first
-- run the launcher script from the cloned repo, not a raw helper fetch as the default path
-- install only the active runtime rule set into the current project's .claude/rules/
-- use manifest-owned cleanup only inside that same project-local target
-- do not delete unrelated co-located rules in that project-local .claude/rules/ directory
-- do not install files from suspend/, support/, plugin/, design/, changelog/, phase/, patch/, or TODO.md
-- verify the installed files after copying
-- report exactly what was installed
+Companion plugins:
+- governed-docs
+- memory-context-intelligence
+
+Source and target:
+- Record the current project root before cloning or changing directories; keep it as the installation target throughout.
+- Clone the repo first without overwriting an existing checkout. Use <rules-repo-root> for the verified clone and <project-root> for the original target project.
+- Read the repo's install instructions, plugin marketplace manifest and selected plugin READMEs/manifests before installation.
+
+Runtime rules:
+- Run the platform launcher from the cloned repo with an explicit --project-root / -ProjectRoot pointing to <project-root>, not a raw helper fetch as the default path.
+- Install only the installer-selected active runtime rule set into <project-root>/.claude/rules/.
+- Use the existing installer's manifest-owned cleanup for that same target only; preserve unrelated, modified, unknown and other-owner rules. Stop on a protected-file collision instead of overwriting it.
+- Do not copy suspend/, support/, plugin/, design/, changelog/, phase/, patch/, TODO.md or standalone Skills/agents into .claude/rules/. This exclusion applies to the rules payload, not to the separate plugin installation below.
+
+Companion plugins and bundled components:
+- Check the installed Claude Code version and native plugin command help before changing plugin state. Require project-scoped plugin installation; if unsupported, report this step as blocked instead of silently installing globally, manually copying components or upgrading Claude Code.
+- Read <rules-repo-root>/plugin/.claude-plugin/marketplace.json and verify both selected entries and the declared marketplace name (currently darkwingtm).
+- Register <rules-repo-root>/plugin through the native plugin marketplace command, or reuse a matching existing registration. Stop on a same-name/different-source conflict; do not remove or replace an unrelated marketplace.
+- Run the following from <project-root>, using the verified marketplace name:
+  claude plugin marketplace add "<rules-repo-root>/plugin"
+  claude plugin install governed-docs@darkwingtm --scope project
+  claude plugin install memory-context-intelligence@darkwingtm --scope project
+- Skip marketplace registration if an equivalent registration already exists. Reuse an already matching project installation rather than creating a duplicate.
+- Keep plugin enablement project-scoped and preserve unrelated settings/plugins. Claude Code may store marketplace registration and plugin caches in its normal user-level storage; report that separately from project enablement and never copy caches into .claude/rules/.
+- Install bundled Skills, agents and required resources through each plugin package. Do not create duplicate standalone copies in .claude/skills/ or .claude/agents/.
+- Do not run document repairs, historical analysis, initialization or promotion workflows merely to verify installation.
+
+Verification and report:
+- Verify the installed rule names, count, source bytes and ownership manifest, and confirm unrelated target rules were preserved.
+- Verify each plugin's installed name, version, source and effective enabled scope through the supported plugin manager. Check bundled Skill/agent discovery when the session supports it.
+- Distinguish installed files/configuration from active-session loading. If reload or restart is required, report the exact next step and mark activation/discovery pending until observed.
+- Report the source revision, target project, exact rule list, installed plugins and bundled component inventory, verification results and any blocked step. Do not claim a blocked or unobserved step passed.
 ```
 
 Codex CLI and Gemini CLI are not supported for this install surface in the current wave.
