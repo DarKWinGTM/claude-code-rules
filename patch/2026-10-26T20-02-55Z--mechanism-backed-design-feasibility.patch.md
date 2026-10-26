@@ -2,7 +2,7 @@
 
 > **Current Version:** 1.0
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
-> **Status:** two Runtime-owner changes applied and released; separate managed Skill change blocked before stage
+> **Status:** two Runtime-owner changes applied and released; separate managed Skill change landed and verified
 > **Created At:** 2026-10-26T20:02:55Z
 > **Creation Evidence:** direct creator event in session 8176a2ea-c50d-48aa-9367-d0328016f821; exclusive createPatch invocation before Runtime mutation
 > **Target Design:** [Execution](../design/execution-and-goal-frame.design.md) v1.39; [Evidence](../design/evidence-discipline.design.md) v1.11
@@ -45,7 +45,7 @@ After/target: narrowly include design-feasibility investigation in the trigger, 
 
 ## Verification
 
-Use the existing written-contract test and Cases02/07 with explicit virtual labels. Baseline/candidate full source-bound Main19/selected Skill packets exercise allowed, contradiction, stop and routine/no-trigger paths plus one unchanged diagnosis control. Preserve genuine baseline passes; written/synthetic checks do not prove historical incident repair or causal AI improvement. Run existing native Bash/PowerShell and Patch fixtures. Then verify actual selected managed landing, canonical root Main19 parity/preservation, scoped publication identity and fresh-public tagged payload/isolated installation. No live Product/paid provider proof is selected. Post-application status: two Runtime-owner deltas, root installation and Main publication/public-payload checks are verified; the managed Skill item remains blocked before stage, not implemented in the library. [P073-22](../phase/phase-073-22-mechanism-backed-design-feasibility.md) holds reached proof, exact release identity and the remaining gate; this Patch retains its original creation identity and before/after review role.
+Use the existing written-contract test and Cases02/07 with explicit virtual labels. Baseline/candidate full source-bound Main19/selected Skill packets exercise allowed, contradiction, stop and routine/no-trigger paths plus one unchanged diagnosis control. Preserve genuine baseline passes; written/synthetic checks do not prove historical incident repair or causal AI improvement. Run existing native Bash/PowerShell and Patch fixtures. Then verify actual selected managed landing, canonical root Main19 parity/preservation, scoped publication identity and fresh-public tagged payload/isolated installation. No live Product/paid provider proof is selected. Post-application status: two Runtime-owner deltas, root installation, Main publication/public-payload checks and the separate managed Skill landing are verified-in-scope. The managed operation used one update plus a corrective patch for one transcription typo; final parent/reference bytes match the selected candidate and unrelated subfiles/modes are preserved. [P073-22](../phase/phase-073-22-mechanism-backed-design-feasibility.md) holds reached proof, exact release identity and the withdrawn overstrict queue blocker; this Patch retains its original creation identity and before/after review role.
 
 ## Rollback Approach
 
