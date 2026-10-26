@@ -19,13 +19,13 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.77 candidate</b><br><sub>Mechanism-backed Design Feasibility</sub>
+  <b>v10.77</b><br><sub>Mechanism-backed Design Feasibility</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
 </td>
 <td align="center" width="200">
-  <b>v10.76 released</b><br><sub>Installed · public proof verified</sub>
+  <b>Rules released</b><br><sub>Installed · separate Skill blocked</sub>
 </td>
 <td align="center" width="200">
   <b>Source-first scope</b><br><sub>Repo first, runtime second</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.77 / P073-22` enriches Execution1.39 and Evidence1.11 for mechanism-backed design feasibility. Distinguish tentative methods from explicit constraints, check pivotal platform-to-consumer effects before costly endorsement, and investigate novel ideas without treating missing precedent as impossibility or novelty. Written-contract20/20 is included in Node52/52, native Linux fixtures pass, full source-bound readers support the virtual textual outcomes, and actual root Main19 installation/parity is verified. Publication remains pending; [`v10.76`](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.76) is the latest published release. The separate managed user-Skill update is blocked before stage and is not repository install/release payload; the full selected wave remains incomplete. The [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md) records the distinct gates and limits; no causal model benefit or active-session reload is claimed.
+> **Current source:** [`v10.77 / P073-22`](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.77) enriches Execution1.39 and Evidence1.11 for mechanism-backed design feasibility. Distinguish tentative methods from explicit constraints, check pivotal platform-to-consumer effects before costly endorsement, and investigate novel ideas without treating missing precedent as impossibility or novelty. Written-contract20/20 is included in Node52/52; native Linux fixtures, source-bound textual interpretation, actual root Main19 parity and fresh-public tagged payload/isolated installation are verified at their stated layers. The Main Runtime is published, but the separate managed user-Skill update remains blocked before stage and is not bundled in this release; the full selected wave remains incomplete. The [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md) records the proof and remaining gate; no causal model benefit or active-session reload is claimed.
 
 <!-- CTA Buttons -->
 <p>
@@ -307,14 +307,15 @@ These capabilities summarize the current operating model at the front-page level
 
 </div>
 
-**Current source state: `v10.77 / P073-22` — source/root verified, publication pending**
+**Current source state: `v10.77 / P073-22` — Main Runtime released; separate Skill blocked**
 
 Execution1.39 checks the pivotal actual platform/control/consumer link before endorsing dependent design; Evidence1.11 keeps missing precedent separate from impossibility and novelty. Tentative user methods, explicit constraints, provisional exploration and selected proof/approval remain distinct.
 
 - Written-contract20/20 is included in Node52/52; Bash/PowerShell installer fixtures pass on Linux.
 - Both full source-bound readers support eight virtual textual decisions plus the retained diagnosis control. Baseline guidance already supports these outcomes, and ambient/rubric influence means this is not a causal behavior comparison.
 - Actual root installation matches Main19 source bytes/modes/substantive bodies/ordered ownership manifest. The other seventeen Rules and five pre-install protected files remain unchanged, with no new quarantine.
-- Publication/fresh-public proof is pending. The separately managed user-Skill update is blocked before stage; no direct library/config change or substitute Skill was made. This is not repository-release payload, but its selected landing gate keeps the full wave open.
+- Source commit `32dc030ddc09fad4f20df6506a68b256764450be`, immutable annotated tag `v10.77` and the non-draft [GitHub Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.77) are verified. Fresh-public proof pins that tag to the same commit, checks all nineteen selected source/doc/test paths and Git modes, and verifies one isolated Main19 installation from the public payload.
+- The separately managed user-Skill update is blocked before stage; no intent, direct library/config change or substitute Skill was made. This is not repository-release payload, but its selected landing gate keeps the full wave open. Later receipt-only documentation does not move the tag or change Runtime/install semantics.
 
 [P073-22](phase/phase-073-22-mechanism-backed-design-feasibility.md) and [history](changelog/changelog/v10.77-mechanism-backed-design-feasibility.changelog.md) retain the proof and blocker.
 
@@ -1157,12 +1158,12 @@ Result: ✅ Verified from actual files
   - The Quick Start block installs the compact, source-owned set of 19 active Runtime Rules.
   - Cleanup is owner-aware, not based on filenames alone.
 
-- **Source candidate — v10.77:**
+- **Released Main Runtime — v10.77:**
   - Execution1.39 and Evidence1.11 enrich existing owners; membership remains nineteen and the other seventeen Runtime bodies/modes are unchanged.
   - Written-contract **20/20** is included in Node **52/52**; Bash and PowerShell installer fixtures pass on Linux, not a Windows OS run.
   - Full source-bound interpretation supports the selected textual cases; actual root Main19 bytes/modes/body/ordered-manifest parity and protected-file preservation pass with no new quarantine.
-  - Publication/fresh-public proof remains pending in the [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md). The separate managed user-Skill landing is blocked before stage, keeping the full wave open; it is not repository-release payload.
-  - [v10.76](changelog/changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md) remains the published baseline. Synthetic/source checks establish neither historical-project fixes, causal model benefit nor session reload.
+  - Immutable tag/source identity, the [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.77), fresh-public selected payload/Git modes and one isolated Main19 installation are verified in the [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md).
+  - Separate managed user-Skill landing is blocked before stage and keeps the full wave open; it is not bundled release payload. [v10.76](changelog/changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md) remains preserved historical evidence. Synthetic/source checks establish neither historical-project fixes, causal model benefit nor session reload.
 
 - **Ownership guard:**
   - Unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine.
@@ -1294,7 +1295,7 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.77 candidate |
+  <b>Version</b>: 10.77 |
   <b>Last Updated</b>: 2026-10-27 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
