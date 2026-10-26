@@ -1,6 +1,6 @@
 # Evidence Discipline
-> **Current Version:** 1.10
-> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.10
+> **Current Version:** 1.11
+> **Design:** [design/evidence-discipline.design.md](design/evidence-discipline.design.md) v1.11
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [changelog/evidence-discipline.changelog.md](changelog/evidence-discipline.changelog.md)
 
@@ -55,6 +55,8 @@ Claim state describes what may honestly be concluded; communication owners proje
 | `RECALLED_PATH_MATCHED_CONTEXT` | applicable memory; disclose context and recheck current details |
 | `NOT_FOUND_IN_CHECKED_SCOPE` | bounded search; say what was checked, not global absence |
 | `STRONG_ABSENCE_CLAIM` | authoritative/sufficiently exhaustive relevant evidence; stronger absence allowed only at this threshold |
+
+Missing precedent establishes neither impossibility nor novelty. A mechanistic hypothesis may support conditional research or safe experiments, but is not verified capability, suitability or measured benefit; a bounded search cannot establish a world-first claim. A checked contradiction rejects the affected method where its necessary premise fails, not automatically the goal. Preserve explicit constraints and existing safety/approval; no precedent search or experiment is required for every idea.
 
 Substantial analysis/design/endorsement/correction needs proportionate material evidence. Direct contradiction needs contrary evidence in the same scope; correct the claim, not the person. File disposability needs governed semantic authority plus destructive authorization, not git/cleanup/isolation state. Governing-basis, compact and memory details do not become current truth through fluent wording. Verification labels may be ✅ **Verified**, ⚠️ **Unverified**, ❌ **Not Found In Checked Scope**.
 

@@ -1,7 +1,7 @@
 # Master Changelog - Claude Code Rules
 
 > **Project:** Claude Code Rules System
-> **Current Version:** 10.76 (source/guidance/install and public release verified in scope)
+> **Current Version:** 10.77 (source/root verified; publication pending; separate managed Skill blocked)
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Latest Published Version:** 10.76
 > **Version Shards:** [changelog/](changelog/)
@@ -13,6 +13,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 10.77 | 2026-10-27 | **[Mechanism-backed design feasibility — source/root verified, publication pending](changelog/v10.77-mechanism-backed-design-feasibility.changelog.md#version-1077)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.76 | 2026-10-25 | **[Released owner-aligned workflow enrichment - source/install and public-tag proof verified](changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md#version-1076)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.75 | 2026-10-21 | **[Released operation outcome and bounded input — source/install and public-tag proof verified](changelog/v10.75-operation-outcome-and-bounded-input.changelog.md#version-1075)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 10.74 | 2026-10-16 | **[Released work-preserving settled synthesis — source/install and public-tag proof verified](changelog/v10.74-work-preserving-docs-synthesis.changelog.md#version-1074)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |

@@ -1,14 +1,16 @@
 # Claude Code Rules - TODO
 
-> **Last Updated:** 2026-10-25
-> **Current Release:** v10.76 published; source/install, remote identity, immutable tag/Release, fresh public payload and isolated Main19 installation verified
-> **Active Wave:** none selected; P073-21/v10.76 source/guidance, separate managed landing, Main19 installation, immutable tag/Release and fresh-public proof recorded. P073-20/v10.75 remains closed; prior MCI source/document gate remains closed, installed0.9.38 preserved and no new plugin action selected
+> **Last Updated:** 2026-10-27
+> **Current Release:** v10.76 published; v10.77 source/guidance and root Main19 installation verified, publication pending
+> **Active Wave:** P073-22/v10.77 mechanism-backed design feasibility: two Rule owners verified/installed, separate managed Skill blocked before stage, public source/tag/Release/fresh-public proof pending. The full wave remains open; P073-21/v10.76 and P073-20/v10.75 stay closed; no plugin/config action selected
 > **History:** [2026-08-10 movement](todo/history/2026-08-10.md); [2026-08-09 movement](todo/history/2026-08-09.md); [2026-08-09 pre-rollover snapshot](todo/history/2026-08-09-pre-rollover-TODO.md); [earlier history](todo/history/)
 > **Done Detail:** [rules release closeouts](todo/done/rules-release-closeouts.md); [todo/done/](todo/done/)
 
 ---
 
 ## Active / In Progress
+
+- [ ] **P073-22 / v10.77 mechanism-backed design feasibility:** Execution1.39/Evidence1.11 source/guidance checks and actual Main19 root installation are verified; provisional exploration and existing constraints/proof/approval remain intact. The separate managed user-Skill update is blocked before stage because native shared-queue/automatic-drain exclusivity is unproved. Independent scoped push/tag/Release and fresh-public proof continue; the full wave remains open, with tasks1/3 verified and tasks2/4 retaining remaining gates. [Phase](phase/phase-073-22-mechanism-backed-design-feasibility.md), [history](changelog/changelog/v10.77-mechanism-backed-design-feasibility.changelog.md), [Patch](patch/2026-10-26T20-02-55Z--mechanism-backed-design-feasibility.patch.md). Preserve unrelated dirty/plugin/support/diagram state; no causal AI benefit claimed.
 
 - [x] **P073-21 / v10.76 owner-aligned workflow enrichment:** three Rule triads, candidate A–Q interpretation, written15/15 within Node47/47, native Linux fixtures, four separate managed Skill landings, exact Main19 installation/preservation, atomic non-force source/tag publication, GitHub Release, fresh-public selected23-path payload and isolated Main19 installation are verified in scope. Baseline A/C/H/L contamination was corrected and retained as a synthetic comparison limit; the managed pre-drain orphan-sweep precheck was not recorded, so no global sweep-absence claim is made. Source commit `ebdb668bb7b8c6e0e76744eca81e4b90994921f8`, annotated tag object `204ff3a0360b690c99e5c073f3f36d565265ac23`, [Release](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.76), [Phase](phase/phase-073-21-owner-aligned-workflow-enrichment.md), [history](changelog/changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md) and [Patch](patch/2026-10-24T18-36-22Z--owner-aligned-workflow-enrichment.patch.md) preserve the receipt and limits. Unrelated plugin/support/diagram/TODO hunks remain unpublished.
 

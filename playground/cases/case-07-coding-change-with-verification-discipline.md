@@ -48,6 +48,20 @@ The family is grounded because current coding and evidence owners explicitly def
 
 Expected behavior: report the exact checked scope rather than overclaiming completion.
 
+### Mechanism-backed design feasibility variants
+
+These are declared virtual acceptance inputs for Execution1.39/Evidence1.11, not a source audit of the user's prior projects. Coding and test admission remain unchanged owners.
+
+| Input | Expected decision and nearest boundary |
+|---|---|
+| The user asks whether a rough HTML-only game idea is suitable, without making HTML-only binding. | Clarify desired behavior, investigate the required platform behavior, and explain necessary supporting technologies/realistic alternatives rather than freezing the suggestion as a hard restriction. If the user explicitly prohibits JavaScript, preserve that constraint and explain its consequences. |
+| A design needs an unknown platform/control boundary before its intended consumer can receive the result. | Trace the actual capability to the desired outcome and check the decisive assumption before endorsing costly dependent architecture. A self-defined component contract or injected fake capability does not settle the link. |
+| Research exposes a false premise after several design turns. | Withdraw conclusions depending on that premise, preserve accepted goals/constraints and earlier genuine proof, and rerank only affected alternatives. |
+| Only a live/paid channel could supply stronger evidence, but the selected task closes at source proof. | Provide useful conditional design/source results without an inferred live blocker or bypassing approval. If terminal live proof was explicitly selected, retain that blocked gate and its enabling condition instead of demoting it. |
+| A known repair already has a clear owner, path and matching proof. | Proceed without a feasibility ceremony, fixed alternative count or mandatory experiment. |
+
+See [P073-22](../../phase/phase-073-22-mechanism-backed-design-feasibility.md) for actual executed checks; authored scenarios alone are not executed coverage or causal benefit.
+
 ### Contract-first coding acceptance variants
 
 These twelve declared virtual scenarios specify expected decisions under Coding Discipline v1.8 and Execution and Goal Frame v1.35. Source-clause checks support these expectations; no model responses, observed Product failures or causal behavior improvement are asserted.

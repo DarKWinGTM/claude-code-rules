@@ -1,8 +1,8 @@
 # Design - Execution and Goal Frame
 
 > **Parent Rule:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.38
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 1.39
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/execution-and-goal-frame.changelog.md](../changelog/execution-and-goal-frame.changelog.md)
 
 ---
@@ -21,7 +21,7 @@ It consolidates previously separate rule chains into one body-sufficient runtime
 
 This design owns the target-state shape for execution continuity, goal-set review, priority balance, and completion-to-next-goal framing.
 
-Understand selected behavior and decision-changing facts before mechanism selection; establish enough data/owner/lifecycle/dependency/failure/acceptance context to compare realistic approaches and order required changes and proof. This is proportional reasoning, not mandatory waterfall, exhaustive research or per-edit artifacts. [Coding Discipline](coding-discipline.design.md) owns predicates/state/representation details; this owner selects the outcome, route, scope and proof.
+Understand selected behavior and decision-changing facts before mechanism selection; establish enough data/owner/lifecycle/dependency/failure/acceptance context to compare realistic approaches and order required changes and proof. Distinguish a tentative user method from an explicit constraint, and investigate technical unknowns rather than asking the user to guess platform capabilities. For a pivotal design assumption, connect actual platform capability and the controllable operation/transport boundary to the intended consumer and desired outcome before endorsing costly dependent elaboration. A component check defined around our own assumed behavior does not establish that causal link. Prioritize source/contract inspection or the smallest authorized check/reversible experiment by consequence and reversal cost; revise affected options from the result. Provisional design remains valid without treating an unresolved premise as settled fact. This is proportional reasoning, not mandatory waterfall, exhaustive research, fixed alternative counts, per-design PoC/live proof or per-edit artifacts. User-owned constraints, decisions and existing safety/approval remain binding. [Coding Discipline](coding-discipline.design.md) owns predicates/state/representation and test execution; [Evidence Discipline](evidence-discipline.design.md) owns claim and nonfinding thresholds.
 
 Temporary development/test/no-live constraints govern execution, not Product behavior by implication. Test isolation stays at its fitting boundary; selected runtime modes/feature flags remain valid. Unverified assumptions must not become permanent eligibility conditions. Preserve user choices, safety/approval, valid completed work and selected terminal proof.
 

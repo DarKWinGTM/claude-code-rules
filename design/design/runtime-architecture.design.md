@@ -1,7 +1,7 @@
 # Runtime Architecture - RULES System Design
 
 > **Parent Design:** [../design.md](../design.md)
-> **Current Version:** 10.76
+> **Current Version:** 10.77
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Section:** Rule architecture
 > **Full history:** [../../changelog/changelog.md](../../changelog/changelog.md)
@@ -21,8 +21,8 @@ Exactly nineteen source-owned root Rules retain one body-sufficient owner per re
 | 6 | `communication-register.md` | `communication-register.design.md v1.29` | plain action/outcome language, user/peer recipient clarity, signal, agreement and explicit retraction |
 | 7 | `document-governance.md` | `document-governance.design.md v1.23` | artifact roles, affected-owner synthesis, chain selection, diagram/Patch and UDVC-1 eligibility |
 | 8 | `document-integrity.md` | `document-integrity.design.md v1.15` | references, lossless rollover, payload/project proof and preservation |
-| 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.10` | decisive assumptions, bound receipts, evidence kinds/claim states and cause/nonfinding/mock/witness limits |
-| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.38` | fact-led route/cadence, evidence-backed codebase challenge, mode/scope, proof selection and closure |
+| 9 | `evidence-discipline.md` | `evidence-discipline.design.md v1.11` | conditional feasibility, missing-precedent limits, decisive assumptions, bound receipts and evidence/claim/witness thresholds |
+| 10 | `execution-and-goal-frame.md` | `execution-and-goal-frame.design.md v1.39` | tentative method versus constraint, pivotal mechanism-to-outcome checks, fact-led route/cadence, mode/scope, proof selection and closure |
 | 11 | `explanation-and-presentation.md` | `explanation-and-presentation.design.md v1.27` | complete inventories, visible needed action, outcome-first reporting, flexible grouping and unframed diagrams |
 | 12 | `goal-authoring-and-route-support.md` | `goal-authoring-and-route-support.design.md v1.4` | checked Goal construction, proof slots and verified route/Plan-reference lifecycle |
 | 13 | `external-verification-and-source-trust.md` | `external-verification-and-source-trust.design.md v1.8` | eligible source ranking/corroboration/conflicts |

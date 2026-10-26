@@ -1,8 +1,8 @@
 # Changelog - Execution and Goal Frame
 
 > **Parent Document:** [../execution-and-goal-frame.md](../execution-and-goal-frame.md)
-> **Current Version:** 1.38
-> **Session:** 4a8d9ac0-ecf9-40c4-961e-634583157b6c
+> **Current Version:** 1.39
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 
 ---
 
@@ -10,6 +10,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.39 | 2026-10-27 | **[Connected pivotal mechanism checks to intended outcomes without blocking exploration](#version-139)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.38 | 2026-10-16 | **[Refined work-preserving settled synthesis instead of progress-driven sync](#version-138)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.37 | 2026-10-16 | **[Clarified supported interim docs sync without implementation interruption](#version-137)** | 4a8d9ac0-ecf9-40c4-961e-634583157b6c |
 | 1.36 | 2026-10-15 | **[Separated result-sync cadence from prerequisites and enabled factual codebase challenge](#version-136)** | b8a3c38a-53b5-4d7d-a9ac-6a6f082911b2 |
@@ -52,6 +53,19 @@
 | | | Summary: Extended `execution-and-goal-frame.md` so the merged runtime owner now covers visible intent read, selective clarification, repair re-anchor, and next-work boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `execution-and-goal-frame.md` as a body-sufficient merged runtime owner for discussion/execution mode selection, continuous execution, goal framing, and next-work boundaries in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-139"></a>
+## Version 1.39: Mechanism-backed design feasibility
+
+**Date:** 2026-10-27
+**Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+
+- Separate tentative user methods from binding constraints; investigate technical unknowns without asking the user to guess capabilities.
+- Before endorsing costly dependent elaboration, connect the actual platform/control boundary through the intended consumer to the desired outcome; self-defined component checks alone do not establish that causal link.
+- Preserve provisional design and reversible experiments. Select the smallest decision-changing source/contract check or authorized experiment without universal PoC/live/alternative-count/artifact gates.
+- Existing scope, approval, no-fork, selected terminal proof and source/non-live closure remain unchanged. Source/guidance/install/publication proof is tracked in [P073-22](../phase/phase-073-22-mechanism-backed-design-feasibility.md); no causal AI benefit is asserted.
 
 ---
 

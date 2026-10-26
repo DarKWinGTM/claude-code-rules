@@ -1,7 +1,7 @@
 # Changelog - Evidence Discipline
 
 > **Parent Document:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 ---
 
@@ -9,6 +9,7 @@
 
 | Version | Date | Changes | Session ID |
 |---------|------|---------|------------|
+| 1.11 | 2026-10-27 | **[Distinguished missing precedent from impossibility and novelty](#version-111)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.10 | 2026-10-25 | **[Added decisive assumptions and bound structured witnesses](#version-110)** | 8176a2ea-c50d-48aa-9367-d0328016f821 |
 | 1.9 | 2026-09-30 | **[Compacted evidence thresholds and utility boundaries](#version-19)** | adda8afb-6edf-466b-add9-b9649b718e01 |
 | 1.8 | 2026-08-10 | **[Added supplied rendered-artifact proof boundaries](#version-18)** | 48a3ef9b-50cf-4574-8f00-4f6b6e28f76e |
@@ -22,6 +23,19 @@
 | | | Summary: Extended `evidence-discipline.md` so the merged runtime owner now covers root-cause evidence thresholds, claim-state separation, and real-vs-mock boundaries for the P098 intent-grounding conversation doctrine release wave. | |
 | 1.0 | 2026-05-16 | **[Created merged runtime owner chain](#version-10)** | 6ecc64cf-8eed-497a-9b84-02f5d5228ee3 |
 | | | Summary: Created `evidence-discipline.md` as a body-sufficient merged runtime owner for verify-first factual discipline, burden-of-proof boundaries, scoped non-findings, and real-vs-mock behavior in the compact 18-rule runtime set. | |
+
+---
+
+<a id="version-111"></a>
+## Version 1.11: Missing precedent and conditional feasibility
+
+**Date:** 2026-10-27
+**Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+
+- Missing precedent establishes neither impossibility nor novelty; bounded search cannot establish a world-first claim.
+- Mechanistic hypotheses may support conditional research or safe experiments, not verified capability, suitability or measured benefit.
+- A checked contradiction rejects only the affected method where its premise fails, not automatically the goal. Preserve explicit constraints/safety/approval without requiring precedent searches or experiments for every idea.
+- Existing evidence kinds, claim states and substitute/benefit thresholds remain unchanged. Selected checks and terminal gates are tracked in [P073-22](../phase/phase-073-22-mechanism-backed-design-feasibility.md), not evidence of a historical incident repair or behavioral benefit.
 
 ---
 

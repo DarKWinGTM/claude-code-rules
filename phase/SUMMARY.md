@@ -1,9 +1,9 @@
 # RULES Phase Summary
 
-> **Current Version:** 2.32
+> **Current Version:** 2.33
 > **Target Design:** [../design/phase-todo-artifact.design.md](../design/phase-todo-artifact.design.md) v1.39
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
-> **Status:** P073-21/v10.76 source/guidance, separate managed landing, Main19 installation, immutable tag/Release and fresh-public proof verified in scope; no active successor selected. P073-20/v10.75 and prior verified slices remain preserved.
+> **Status:** P073-22/v10.77 source/guidance and root Main19 installation are verified-in-scope; publication pending and the separate managed Skill is blocked before stage. The full wave remains open; P073-21/v10.76 and earlier slices remain closed.
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Daily History:** [history/2026-08-10.md](history/2026-08-10.md); [history/2026-08-09.md](history/2026-08-09.md); [history/2026-05-16.md](history/2026-05-16.md); [history/2026-05-08.md](history/2026-05-08.md)
 > **Pre-Rollover Snapshot:** [history/2026-08-09-pre-rollover-SUMMARY.md](history/2026-08-09-pre-rollover-SUMMARY.md)
@@ -21,7 +21,7 @@ This file is the compact active roadmap/index. Start here for current execution 
 
 ### Active Slice
 
-- No active slice selected. P073-21/v10.76 is closed in the checked scope: written15/15 within Node47/47, native Linux fixtures, candidate A–Q interpretation with explicit baseline/causal limits, four separate managed Skill landings, actual Main19 parity/preservation, atomic non-force source/tag publication, GitHub Release, fresh-public selected23-path payload and isolated Main19 installation all have matching receipts. The [phase](phase-073-21-owner-aligned-workflow-enrichment.md), [history](../changelog/changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md) and [Patch](../patch/2026-10-24T18-36-22Z--owner-aligned-workflow-enrichment.patch.md) preserve details; unrelated dirty source state remains protected and no successor is selected.
+- **P073-22 / v10.77 is active:** [Mechanism-backed design feasibility](phase-073-22-mechanism-backed-design-feasibility.md) enriches Execution1.39/Evidence1.11 and a separate existing user Skill. Source/guidance proof and actual root Main19 installation are verified; the separate managed Skill is blocked before stage because the native shared queue has no proven exclusive automatic landing window. Independent scoped push/immutable tag/GitHub Release, fresh-public proof and final reconciliation remain pending; the full two-Rule-plus-Skill wave cannot close until its managed gate is resolved. Tasks1–4 preserve distinct gates; the last finalizer receives evidence before closure. [History](../changelog/changelog/v10.77-mechanism-backed-design-feasibility.changelog.md) and the prospective [Patch](../patch/2026-10-26T20-02-55Z--mechanism-backed-design-feasibility.patch.md) own version/review detail. P073-21 stays closed; no new major, plugin action or causal AI-benefit claim.
 
 ### Latest Completed Slice
 

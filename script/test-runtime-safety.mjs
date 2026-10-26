@@ -10,6 +10,7 @@ const action = source('action-safety.md');
 const intake = source('safe-io.md');
 const coding = source('coding-discipline.md');
 const evidence = source('evidence-discipline.md');
+const execution = source('execution-and-goal-frame.md');
 const presentation = source('explanation-and-presentation.md');
 const requiresClause = (text, pattern) => assert.ok(pattern.test(text), `Missing written contract: ${pattern.source}`);
 
@@ -92,7 +93,42 @@ test('material next actions are visible without rigid templates or invented rend
   requiresClause(presentation, /Do not promise color, underline or other renderer effects that were not actually shown/);
 });
 
-for (const name of ['action-safety', 'safe-io', 'coding-discipline', 'evidence-discipline', 'explanation-and-presentation']) {
+test('tentative user methods stay distinct from binding constraints and technical facts', () => {
+  const premise = execution.split('### Premise and completed-baseline protection')[1]?.split('### Architecture-bearing action')[0];
+  assert.ok(premise, 'the existing premise owner must remain active');
+  requiresClause(premise, /tentative user method[\s\S]*explicit constraint/i);
+  requiresClause(premise, /Investigate decision-changing technical unknowns/);
+  requiresClause(premise, /user-owned preferences[\s\S]*approval/);
+  requiresClause(premise, /provisional design[\s\S]*reversible experiments/);
+  requiresClause(premise, /settled facts[\s\S]*costly dependent/);
+});
+
+test('pivotal design checks connect an actual control boundary to the intended outcome', () => {
+  const decision = execution.split('## 2. Scope and Simplest Complete Decision')[1]?.split('### Architecture-bearing action')[0];
+  assert.ok(decision, 'the existing decision owner must remain active');
+  requiresClause(decision, /pivotal design assumption/);
+  requiresClause(decision, /actual platform[\s\S]*control boundary[\s\S]*intended consumer[\s\S]*desired outcome/);
+  requiresClause(decision, /component[\s\S]*defined ourselves[\s\S]*causal link/);
+  requiresClause(decision, /source\/contract inspection[\s\S]*smallest authorized[\s\S]*reversible experiment/);
+  requiresClause(decision, /not a PoC, live check, alternative count or artifact mandate for every design/);
+});
+
+test('missing precedent supports neither impossibility nor a world-first claim', () => {
+  requiresClause(evidence, /Missing precedent[\s\S]*neither impossibility nor novelty/);
+  requiresClause(evidence, /mechanistic hypothesis[\s\S]*conditional research[\s\S]*safe experiments/);
+  requiresClause(evidence, /not verified capability, suitability or measured benefit/);
+  requiresClause(evidence, /contradiction rejects the affected method[\s\S]*not automatically the goal/);
+  requiresClause(evidence, /no precedent search or experiment is required for every idea/);
+});
+
+test('feasibility enrichment preserves selected proof and consequential-action boundaries', () => {
+  requiresClause(execution, /Source\/code goals close at source\/non-live proof unless user or checked governed authority explicitly selects live acceptance/);
+  requiresClause(execution, /Explicitly required terminal proof remains binding/);
+  requiresClause(execution, /Do not silently fork/);
+  requiresClause(evidence, /Fake\/local checks prove their scope, not live\/provider\/runtime\/deploy behavior/);
+});
+
+for (const name of ['action-safety', 'safe-io', 'coding-discipline', 'evidence-discipline', 'execution-and-goal-frame', 'explanation-and-presentation']) {
   test(`${name} retains one aligned substantive runtime, design and changelog chain`, () => {
     const runtime = source(`${name}.md`);
     const design = source(`design/${name}.design.md`);
@@ -102,7 +138,7 @@ for (const name of ['action-safety', 'safe-io', 'coding-discipline', 'evidence-d
     assert.equal(version(design), version(runtime));
     assert.equal(version(changelog), version(runtime));
     assert.ok(runtime.includes(`[design/${name}.design.md](design/${name}.design.md) v${version(runtime)}`));
-    requiresClause(runtime, /## (?:Integration and )?Boundaries|## Trigger Dispatch and Boundaries/);
+    requiresClause(runtime, /## (?:Integration and )?Boundaries|## Trigger Dispatch and (?:Boundaries|Anti-Drift)/);
     requiresClause(design, /## Verification/);
     assert.ok(runtime.length > 2000, 'metadata alone is not an active Runtime body');
   });

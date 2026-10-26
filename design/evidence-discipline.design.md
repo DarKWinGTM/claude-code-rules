@@ -1,7 +1,7 @@
 # Design - Evidence Discipline
 
 > **Parent Rule:** [../evidence-discipline.md](../evidence-discipline.md)
-> **Current Version:** 1.10
+> **Current Version:** 1.11
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/evidence-discipline.changelog.md](../changelog/evidence-discipline.changelog.md)
 
@@ -37,7 +37,7 @@ Version 1.8 refinement: this owner should distinguish supplied rendered-artifact
 
 ### Decisive assumptions and structured witnesses
 
-Identify the assumption whose failure changes the diagnosis or recommendation. Inspect indirect consumers, dependencies, shipped versions, local patches or timing only when they bear on that assumption; choose the smallest disproof check and keep missing or contradictory evidence conditional. This enriches existing verify-first discipline without a universal dependency checklist.
+Identify the assumption whose failure changes the diagnosis or recommendation. Inspect indirect consumers, dependencies, shipped versions, local patches or timing only when they bear on that assumption; choose the smallest disproof check and keep missing evidence conditional. Distinguish an unresolved premise from a checked contradiction: the latter rejects only the affected method in the checked scope, not automatically the user's goal. Missing precedent supports neither impossibility nor novelty. A mechanism-backed hypothesis may justify conditional research or safe experiments, but does not establish verified capability, suitability or measured benefit. Preserve existing kinds/states and matched benefit/novelty proof; do not require precedent searches or experiments for every idea. This enriches existing verify-first discipline without a universal dependency checklist.
 
 Structured or timestamped receipts remain witnesses rather than self-certifying truth. Bind the claimed result to the actual command/selector, relevant source/test/environment and reached terminal evidence; missing fields remain unobserved. Reuse the existing producer/report owner and do not create another journal, receipt schema or semantic authority from a proof obligation.
 

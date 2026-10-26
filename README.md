@@ -19,7 +19,7 @@
 <table>
 <tr>
 <td align="center" width="200">
-  <b>v10.76</b><br><sub>Owner-aligned Workflow Enrichment</sub>
+  <b>v10.77 candidate</b><br><sub>Mechanism-backed Design Feasibility</sub>
 </td>
 <td align="center" width="200">
   <b>19</b><br><sub>Active Runtime Rules</sub>
@@ -33,7 +33,7 @@
 </tr>
 </table>
 
-> **Current source:** `v10.76 / P073-21` enriches three existing owners: caller-first prevention and workflow proof in Coding1.10, decisive assumptions and bound receipts in Evidence1.10, and complete inventories/visible needed action in Presentation1.27. The same nineteen Runtime Rules and existing safety/scope/proof boundaries remain. Written-contract15/15 (within Node47/47), native installer fixtures on Linux, candidate A–Q synthetic interpretation, actual Main19 installation and fresh-public exact19 installation pass in scope. Source commit `ebdb668bb7b8c6e0e76744eca81e4b90994921f8` is published at immutable tag [`v10.76`](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.76); the [phase](phase/phase-073-21-owner-aligned-workflow-enrichment.md) records the proof boundaries. Four separately managed user Skills landed outside the Main installation/release payload; these checks do not establish causal model benefit, active-session reload or repeated stability.
+> **Current source:** `v10.77 / P073-22` enriches Execution1.39 and Evidence1.11 for mechanism-backed design feasibility. Distinguish tentative methods from explicit constraints, check pivotal platform-to-consumer effects before costly endorsement, and investigate novel ideas without treating missing precedent as impossibility or novelty. Written-contract20/20 is included in Node52/52, native Linux fixtures pass, full source-bound readers support the virtual textual outcomes, and actual root Main19 installation/parity is verified. Publication remains pending; [`v10.76`](https://github.com/DarKWinGTM/claude-code-rules/releases/tag/v10.76) is the latest published release. The separate managed user-Skill update is blocked before stage and is not repository install/release payload; the full selected wave remains incomplete. The [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md) records the distinct gates and limits; no causal model benefit or active-session reload is claimed.
 
 <!-- CTA Buttons -->
 <p>
@@ -307,7 +307,18 @@ These capabilities summarize the current operating model at the front-page level
 
 </div>
 
-**Current source state: `v10.76 / P073-21`**
+**Current source state: `v10.77 / P073-22` — source/root verified, publication pending**
+
+Execution1.39 checks the pivotal actual platform/control/consumer link before endorsing dependent design; Evidence1.11 keeps missing precedent separate from impossibility and novelty. Tentative user methods, explicit constraints, provisional exploration and selected proof/approval remain distinct.
+
+- Written-contract20/20 is included in Node52/52; Bash/PowerShell installer fixtures pass on Linux.
+- Both full source-bound readers support eight virtual textual decisions plus the retained diagnosis control. Baseline guidance already supports these outcomes, and ambient/rubric influence means this is not a causal behavior comparison.
+- Actual root installation matches Main19 source bytes/modes/substantive bodies/ordered ownership manifest. The other seventeen Rules and five pre-install protected files remain unchanged, with no new quarantine.
+- Publication/fresh-public proof is pending. The separately managed user-Skill update is blocked before stage; no direct library/config change or substitute Skill was made. This is not repository-release payload, but its selected landing gate keeps the full wave open.
+
+[P073-22](phase/phase-073-22-mechanism-backed-design-feasibility.md) and [history](changelog/changelog/v10.77-mechanism-backed-design-feasibility.changelog.md) retain the proof and blocker.
+
+**Preserved released baseline: `v10.76 / P073-21`**
 
 Useful pstack methods enrich existing owners rather than replace the whole system or dismiss improvements because related guidance already exists.
 
@@ -1146,13 +1157,12 @@ Result: ✅ Verified from actual files
   - The Quick Start block installs the compact, source-owned set of 19 active Runtime Rules.
   - Cleanup is owner-aware, not based on filenames alone.
 
-- **Source state — v10.76:**
-  - Coding 1.10, Evidence 1.10 and Presentation 1.27 enrich existing owners; membership remains nineteen.
-  - Written-contract **15/15** is included in Node **47/47**; Bash and PowerShell fixtures pass on Linux.
-  - Candidate A–Q synthetic interpretation and actual Main19 bytes/modes/body/ordered-manifest parity pass.
-  - The other 16 Rules and five protected files remain unchanged, with no new quarantine.
-  - Publication and fresh-public payload/isolated installation are verified. The [phase](phase/phase-073-21-owner-aligned-workflow-enrichment.md) records the matching proof and interpretation limits.
-  - Prior v10.75 publication remains historical evidence, not proof of model benefit or session reload.
+- **Source candidate — v10.77:**
+  - Execution1.39 and Evidence1.11 enrich existing owners; membership remains nineteen and the other seventeen Runtime bodies/modes are unchanged.
+  - Written-contract **20/20** is included in Node **52/52**; Bash and PowerShell installer fixtures pass on Linux, not a Windows OS run.
+  - Full source-bound interpretation supports the selected textual cases; actual root Main19 bytes/modes/body/ordered-manifest parity and protected-file preservation pass with no new quarantine.
+  - Publication/fresh-public proof remains pending in the [phase](phase/phase-073-22-mechanism-backed-design-feasibility.md). The separate managed user-Skill landing is blocked before stage, keeping the full wave open; it is not repository-release payload.
+  - [v10.76](changelog/changelog/v10.76-owner-aligned-workflow-enrichment.changelog.md) remains the published baseline. Synthetic/source checks establish neither historical-project fixes, causal model benefit nor session reload.
 
 - **Ownership guard:**
   - Unchanged obsolete manifest-owned files and exact repository-matching retired candidates move to external quarantine.
@@ -1284,8 +1294,8 @@ Personal rule set and configuration framework for Claude Code CLI.
 ---
 
 <p>
-  <b>Version</b>: 10.76 |
-  <b>Last Updated</b>: 2026-10-25 |
+  <b>Version</b>: 10.77 candidate |
+  <b>Last Updated</b>: 2026-10-27 |
   <b>Framework</b>: Sophisticated AI Framework with Constitutional Governance
 </p>
 

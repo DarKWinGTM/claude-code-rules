@@ -3,11 +3,11 @@
 ## 0) Document Control
 
 > **Parent Scope:** RULES System Design
-> **Current Version:** 10.76
+> **Current Version:** 10.77
 > **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
 > **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
 > **Shard Directory:** [design/](design/)
-> **Selected Target:** v10.76 enriches caller-first prevention/proof binding, decisive assumptions/receipts and complete inventories/visible action in three existing owners; the nineteen-owner baseline and prior approval/proof boundaries remain intact
+> **Selected Target:** v10.77 connects pivotal platform/control/consumer mechanisms to intended outcomes in Execution1.39 and distinguishes missing precedent from impossibility/novelty in Evidence1.11; provisional exploration, nineteen-owner membership and prior approval/proof boundaries remain intact
 
 ---
 
@@ -15,7 +15,9 @@
 
 Define the active-state architecture for the RULES repository so it teaches one deterministic governance model and avoids accidental rule-poisoning through mixed authority signals.
 
-Selected `v10.76 / P073-21` enriches [Coding Discipline](coding-discipline.design.md) v1.10, [Evidence Discipline](evidence-discipline.design.md) v1.10 and [Explanation and Presentation](explanation-and-presentation.design.md) v1.27. Caller usage and failure semantics precede interface structure; the smallest prevention lever stays at its checked owner. Selected workflow proof distinguishes selector admission, reached assertions, terminal outcome and remaining proof. Decisive assumptions use relevant actual implementation evidence; structured receipts require matching bindings. Complete requested inventories retain disposition before priority, and necessary action stays visible through flexible grouping/emphasis. Existing ownership enables enrichment rather than declaring the incumbent best. Execution1.38 and Worker1.18, nineteen membership and all prior safety/proof/approval boundaries remain unchanged; separate managed Skill procedures are outside the Main payload/release.
+Selected `v10.77 / P073-22` enriches [Execution](execution-and-goal-frame.design.md) v1.39 and [Evidence](evidence-discipline.design.md) v1.11 within the existing nineteen owners. Treat user-suggested methods as tentative unless binding constraints are explicit. Investigate decisive technical unknowns and connect the actual platform/control boundary through its intended consumer to the user's desired outcome before endorsing costly dependent elaboration; self-defined component checks do not establish that causal link. Provisional design, source/contract inspection and appropriate authorized reversible experiments remain available. Missing precedent proves neither impossibility nor novelty, and a mechanism-backed hypothesis is not verified capability, suitability or benefit. Routine/already-supported work needs no universal PoC, live check, precedent search, alternative count or new artifact. The separate managed research-synthesis procedure remains user-library content, not Main install or repository-release payload. [P073-22](../phase/phase-073-22-mechanism-backed-design-feasibility.md) owns staged proof/publication, not this target design.
+
+Preserved `v10.76 / P073-21` enriches [Coding Discipline](coding-discipline.design.md) v1.10, [Evidence Discipline](evidence-discipline.design.md) v1.10 and [Explanation and Presentation](explanation-and-presentation.design.md) v1.27. Caller usage and failure semantics precede interface structure; the smallest prevention lever stays at its checked owner. Selected workflow proof distinguishes selector admission, reached assertions, terminal outcome and remaining proof. Decisive assumptions use relevant actual implementation evidence; structured receipts require matching bindings. Complete requested inventories retain disposition before priority, and necessary action stays visible through flexible grouping/emphasis. Existing ownership enables enrichment rather than declaring the incumbent best. Execution1.38 and Worker1.18, nineteen membership and all prior safety/proof/approval boundaries remain unchanged; separate managed Skill procedures are outside the Main payload/release.
 
 Preserved `v10.75 / P073-20` refines [Action Safety](action-safety.design.md) v1.8 and [Safe I/O](safe-io.design.md) v1.10 inside their current roles. Unknown consequential outcomes require same-operation reconciliation or checked safe replay before retry; large/unknown/untrusted evidence requires byte, record and retention bounds before decode/parse/materialization. Known-no-effect retries and direct small reads remain proportionate. No new Rule, Product state/writer/probe/rollback path, runtime resource policy or runner is selected. User-scope managed Skill extractions remain outside the Main Runtime payload and release boundary.
 

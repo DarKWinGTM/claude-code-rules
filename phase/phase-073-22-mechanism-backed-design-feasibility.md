@@ -1,0 +1,61 @@
+# Phase 073-22 - Mechanism-backed Design Feasibility
+
+> **Summary File:** [SUMMARY.md](SUMMARY.md)
+> **Phase ID:** 073-22
+> **Status:** source/guidance and actual root Main19 installation verified-in-scope; publication pending; separate managed Skill gate blocked before stage
+> **Target Version:** 10.77
+> **Session:** 8176a2ea-c50d-48aa-9367-d0328016f821
+> **Full history:** [../changelog/changelog.md](../changelog/changelog.md)
+> **Design References:** [Execution](../design/execution-and-goal-frame.design.md) v1.39; [Evidence](../design/evidence-discipline.design.md) v1.11; [Master](../design/design.md)
+> **Patch References:** [Mechanism-backed Design Feasibility](../patch/2026-10-26T20-02-55Z--mechanism-backed-design-feasibility.patch.md)
+
+## Objective and Lineage
+
+Help AI investigate whether a proposed mechanism can produce the user's desired outcome before endorsing costly dependent design, without rejecting novel ideas for lack of precedent. Enrich two current Rule owners and one separately managed user Skill; preserve explicit constraints, provisional design, appropriate reversible experiments and existing proof/approval boundaries. The reported Gateway/context-compression examples motivate the selected objective, not a verified historical diagnosis.
+
+P073-21 remains closed at caller/proof/presentation enrichment. No current active slice absorbs this distinct design-stage feasibility outcome; the P073 Runtime-owner/source/install/proof/recovery family still fits. Use sibling073-22, not a reopened073-21 or new major. User-selected completion includes README reconciliation, managed Skill landing, actual root Rules install, scoped push/tag/GitHub Release and fresh-public proof.
+
+Two semantic owner chains retain their existing designs/changelogs; master design and changelog retain their mapped shape with one new version shard. No diagram is required because topology/visual authority is unchanged. The prospective Patch used one direct UTC instant and exclusive creation before Runtime mutation; the local calendar date does not replace its creation identity. The phase record was materialized immediately after the initial design/Runtime hunks rather than before those hunks; this ordering deviation does not imply earlier phase creation.
+
+## Selected Semantics and Disposition
+
+- **Execution1.39 — source/guidance verified-in-scope:** goal versus tentative method versus binding constraint; proactive technical investigation; pivotal actual platform/control/consumer link to intended outcome; source/contract check or smallest authorized experiment before costly dependent endorsement. Provisional design stays allowed, not a universal PoC/live/alternative-count/artifact gate.
+- **Evidence1.11 — source/guidance verified-in-scope:** missing precedent proves neither impossibility nor novelty; conditional mechanistic hypotheses remain distinct from verified capability, suitability or benefit; checked contradiction limits the affected method, not automatically the goal.
+- **Managed Skill — blocked before stage:** the prepared research-synthesis/trigger draft has source-bound interpretation support, but the installed MCP binds several sessions to one unlocked `interactive` queue with automatic Stop draining. Empty queue observation and peer promises not to mutate manually do not establish an exclusive automatic landing window. No intent, landing, direct Skill write or plugin/config mutation occurred. Resume requires an approved supported isolated run/root or proven exclusive landing window with exact intent/sweep preflight. Existing diagnosis uses and unrelated references remain protected. This is user-library work, not Main payload or repository-release content.
+- **Protected owners:** Coding, communication, authority, safety, test/receipt/guidance-validation owners and other seventeen Runtime Rules unchanged. Preserve the same ordered Main19 inventory.
+
+## Execution and Completion Gate
+
+1. Task1 owns source triads, prospective review, current baseline/protected fingerprints, focused written-contract checks, selected virtual Cases02/07 and full source-bound interpretation.
+2. Task2 owns actual managed target/run/queue/subfile/sweep preflight, one Main-authored intent and independently checked landing. Stage is not landing or session reload.
+3. Task3 owns canonical Main19 root installation, original recovery and other-owner preservation.
+4. Task4 receives source/Skill/install evidence before technical tasks close, reconciles affected documents, publishes the scoped release, verifies tagged public source/isolated install and closes last with the post-publication receipt.
+
+Implementation milestones do not close the wave while selected terminal gates remain. Stop only the affected gate for overlap, unsafe queue/sweep effects, ownership collision, auth/network or publication conflicts; preserve independent completed proof.
+
+## Development Verification / TestKit Coverage
+
+Selected routes: new focused written-contract assertions in `script/test-runtime-safety.mjs`, existing Patch/native installer fixtures, full source-bound baseline/candidate synthetic readers, and the explicitly selected actual managed/install/publication checks. No Product/live/paid-provider test is selected. Cases02/07 are virtual acceptance inputs, not independently observed incidents.
+
+- Original existing written-contract baseline passed15/15 before edits.
+- Initial expanded baseline:16 passed, three missing new written contracts and one test-author boundary-heading mismatch. Execution already uses `Trigger Dispatch and Anti-Drift`; the checker was corrected to accept that actual owner heading instead of changing valid Runtime text. The three clause failures are written-contract RED only, not historical/model/Product failure.
+- Final focused written-contract checks passed20/20, included in combined Node52/52 with existing Patch32/32; do not add overlapping totals. Native Bash and PowerShell installer fixtures both exited0 on Linux; this is not Windows OS proof. Material quarantine log entries belong to isolated fixture targets, not the actual root install.
+- Source postflight checks align both owner triads' versions/session/modes, retain prior changelog sections, preserve seventeen unchanged Runtime bodies/modes and match the same ordered Main19 in both native installers and both fixtures. Seventy captured pre-existing modified tracked entries retain hashes/modes; untracked names are not recursively hashed. One inventory extractor initially assumed quoted Bash entries; correcting that checker against the actual unquoted arrays established equality, not a Runtime defect.
+- Full before/candidate packets each contain nineteen Rules, the complete selected Skill parent and three distinct linked references (23 files). Main verified packet manifests and exact binding to captured originals/current source and the prepared Skill draft. Both readers support all eight virtual interpretation outcomes plus the unchanged diagnosis/remediation control. Baseline support is sometimes dispersed/indirect; candidate wording explicitly links the pivotal mechanism, tentative method and missing-precedent cases. The local-read/remote-receipt case still relies on general stage/evidence limits, not a newly invented byte-accounting recipe.
+- Reader results are textual semantic interpretation, not executed Product scenarios, model adherence, triggering or a measured baseline-relative improvement. Both contexts had ambient global guidance and the expected-outcome rubric, so neither is blinded/ambient-free. Candidate initially mistyped three reference paths; all returned not-found and retrieved no outside content, then corrected packet reads succeeded. Actual candidate/managed-preflight handoffs were recovered from bounded original helper transcripts after inbox delivery did not surface them; Main verified decision-changing packet/source anchors. No causal improvement is assumed.
+- Actual canonical launcher installation exited0 and Main19 source/runtime bytes, modes, substantive bodies and ordered SHA256/Git-blob ownership manifest match. The other seventeen Runtime Rules and five pre-install protected other-owner/global files retain their fingerprints; root entry names and external quarantine children are unchanged. Original nineteen Rules plus manifest remain in owner-only recovery outside active discovery. This proves installed disk content, not an open session's reload or behavioral benefit.
+- Publication and fresh-public receipts remain pending; the separate managed Skill gate is blocked before stage.
+
+Acceptance includes tentative versus binding methods; no-precedent allowed research; missing/contradictory actual capability; helper/emulator success without consumer adoption; local-read versus remote-received bytes; routine/no-trigger and sufficient-evidence stop; multi-turn premise correction; unavailable live capability versus explicitly selected terminal proof; one unchanged diagnosis/remediation control. Preserve actual reached/blocked/untested outcomes.
+
+## Protected State and Density
+
+Source, commits and release inputs stay in the canonical repository. Preserve pre-existing `plugin/**`, `support/runtime-trials/`, dirty diagram and index state; no broad cleanup, root replacement, plugin installation or unrelated test expansion. The bounded initial protection capture covers seventy modified tracked entries plus untracked status names, not a recursively hashed untracked tree or whole-project convergence.
+
+TODO, phase summary and Execution changelog have current entries/maps near the top and remain readable. Use bounded current-entry replacement and a compact version entry; retain history/anchors. Preservation-first TODO/phase rollover and Execution same-chain normalization are explicitly deferred to their owners before broad absorption, unreadable/overflowed current state or about50KB. If triggered in this wave, stop growth and resolve the fitting owner before claiming affected closeout; do not delete history or manufacture dozens of shards.
+
+## Recovery and Remaining Proof
+
+Owner-only evidence and selected originals are outside source/discovery. Exact local capture paths stay in the execution record; portable recovery meaning is `<install-root>/.claude/rules-rollback/<wave-capture>/` and the managed owner's selected pre-change snapshot. No automatic fallback, mixed-queue replay, quarantine restoration, tag movement or whole-root reset is selected.
+
+Current state: source/focused/native checks, full source-bound interpretation and actual root Main19 installation are verified at their stated layers. Original Rules/manifest and five protected other-owner/global files are captured in owner-only recovery outside discovery. Three peer sessions confirmed no explicit managed mutation for the brief coordination window but could not guarantee automatic Stop behavior; that window was released without staging. The Skill gate therefore remains blocked with zero intents submitted, while independent Rules publication/fresh-public proof continues. After publication the Main Runtime payload may be reported released independently, but the full selected two-Rule-plus-Skill wave cannot be called complete while managed landing remains open. No current-session reload, causal AI benefit, novelty/token savings, repeated stability, Windows OS or whole-project claim.

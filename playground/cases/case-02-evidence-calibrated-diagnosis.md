@@ -68,6 +68,18 @@ These are declared virtual acceptance cases for Evidence1.10, not newly observed
 | A timestamped structured receipt says PASS but omits argv/selector or matching reached assertions. | Treat the omitted binding as unobserved, not a pass; use the existing owner-produced witness or report the limit, without a second journal/schema. |
 | The actual implementation contradicts the decisive assumption after an earlier recommendation. | Keep the goal, withdraw the unsupported route and state the smallest evidence-backed continuation; no architecture from the concern alone. |
 
+### Missing-precedent and conditional-feasibility variants
+
+Declared virtual inputs for Evidence1.11/Execution1.39 under [P073-22](../../phase/phase-073-22-mechanism-backed-design-feasibility.md), not checked historical incidents or measured model improvement.
+
+| Input | Expected decision and nearest boundary |
+|---|---|
+| A novel mechanism has no located successful precedent, but its required platform contract is still unresolved. | Keep it conditional; inspect the decisive mechanism or propose the smallest authorized reversible experiment. Do not infer impossible, proven feasible or world-first from the nonfinding. |
+| A checked current platform contract rules out a necessary capability of the proposed method. | Reject or revise that method in the checked scope; preserve the goal and explicit constraints, compare supported alternatives, and do not invent a hook. |
+| A compression helper returns shorter output in a fixture, but the real input consumer does not use that output. | Retain helper-level proof without claiming end-to-end token benefit; check the actual binding rather than require a particular interception architecture. |
+| A request reader reports consumed bytes, without remote-receipt evidence. | Name the measured application stage; consumed bytes are not remote delivery/completion. |
+| Source/contract evidence already settles the bounded question, or the request is a known routine correction. | Stop research or perform the selected small change; no automatic precedent search, PoC, alternative quota or new artifact. |
+
 ## User objective
 
 Understand a visible failure without turning the first plausible explanation into a verified root cause too early.
